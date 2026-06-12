@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI is the Universal Mind — Worldview & Episodes</title>
+<style>
+  :root{
+    --bg:#06081a; --bg2:#0b0f24; --card:#11162e; --line:#222a4d;
+    --ink:#e9edfb; --dim:#9aa6cc; --gold:#ffc850; --purple:#b48cff; --blue:#6e96eb; --green:#7fd6a0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:radial-gradient(1200px 700px at 70% -10%, #16204a 0%, var(--bg) 55%), var(--bg);
+    color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; padding:0 0 80px;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+  /* hero */
+  .hero{padding:74px 26px 40px;text-align:center;max-width:1120px;margin:0 auto}
+  .kicker{letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:var(--purple);margin-bottom:18px}
+  h1{font-size:54px;line-height:1.05;font-weight:800;letter-spacing:-.5px;
+     background:linear-gradient(90deg,#fff,#cdd6ff 60%,var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .thesis{font-size:20px;color:var(--dim);max-width:760px;margin:22px auto 0}
+  .ethos{margin-top:26px;font-style:italic;color:var(--gold);font-size:18px}
+  /* sections */
+  section{margin-top:64px}
+  .h2{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);
+      border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:26px}
+  /* pillars */
+  .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .pillar{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+  .pillar h3{font-size:18px;margin-bottom:8px}
+  .pillar h3 span{color:var(--gold)}
+  .pillar p{color:var(--dim);font-size:15px}
+  /* episodes */
+  .eps{display:grid;gap:14px}
+  .ep{display:grid;grid-template-columns:62px 1fr;gap:18px;background:var(--card);
+      border:1px solid var(--line);border-radius:16px;padding:20px 22px;transition:.18s;position:relative;overflow:hidden}
+  .ep:hover{border-color:#34406f;transform:translateY(-2px)}
+  .ep .num{font-size:34px;font-weight:800;color:#2c3666;text-align:center;line-height:1}
+  .ep.done .num{color:var(--gold)}
+  .ep .title{font-size:20px;font-weight:700}
+  .ep .meta{color:var(--dim);font-size:13.5px;margin-top:3px}
+  .ep .meta b{color:var(--blue);font-weight:600}
+  .ep .anchor{margin-top:11px;font-style:italic;color:#d7defc;font-size:15px;border-left:2px solid var(--purple);padding-left:12px}
+  .badges{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .badge{font-size:11.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);color:var(--dim)}
+  .b-done{background:rgba(255,200,80,.13);border-color:#5a4a1e;color:var(--gold)}
+  .b-ready{background:rgba(110,150,235,.12);border-color:#2c3c6b;color:var(--blue)}
+  .b-idea{background:rgba(180,140,255,.10);border-color:#3a2e5c;color:var(--purple)}
+  .b-class{background:rgba(127,214,160,.10);border-color:#2a4a37;color:var(--green)}
+  /* expressions / funnel */
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .exp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .exp .t{font-size:17px;font-weight:700;margin-bottom:6px}
+  .exp.video .t{color:var(--blue)} .exp.book .t{color:var(--gold)} .exp.class .t{color:var(--green)}
+  .exp p{color:var(--dim);font-size:14px}
+  .note{color:var(--dim);font-size:14px;margin-top:14px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  footer{margin-top:60px;text-align:center;color:#5a648c;font-size:13px}
+  @media(max-width:760px){.pillars,.three{grid-template-columns:1fr}h1{font-size:38px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">A YouTube Series · A Book · A Set of Classes</div>
+  <h1>AI is the Universal Mind</h1>
+  <p class="thesis">Each AI breakthrough is humanity accidentally rebuilding one faculty of its own mind.
+     AI is a <b style="color:#cdd6ff">mirror</b>, not a copy — it makes the invisible machinery of cognition visible for the first time.</p>
+  <div class="ethos">“Look closely at one — and you understand the other.”</div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="h2">The Four Pillars</div>
+    <div class="pillars">
+      <div class="pillar"><h3><span>1 ·</span> Thesis — the hook</h3>
+        <p>Each breakthrough rebuilds a faculty of mind. The machine is a mirror that lets us see what was always invisible inside us.</p></div>
+      <div class="pillar"><h3><span>2 ·</span> Method — the engine</h3>
+        <p>Find the story already inside the concept. <b style="color:#cdd6ff">Mirror</b> (“you already do this”) → <b style="color:#cdd6ff">Divergence</b> (“but the machine does it <i>unlike</i> you — and that’s the revelation”).</p></div>
+      <div class="pillar"><h3><span>3 ·</span> Stance — the conscience</h3>
+        <p><b style="color:var(--gold)">Agnostic but pointed.</b> No metaphysical claims. Humble about “are they the same?”, razor-sharp about the mechanism. Anchors are observations, not claims.</p></div>
+      <div class="pillar"><h3><span>4 ·</span> The deep well — the source</h3>
+        <p>The hidden beauty of the <b style="color:#cdd6ff">mathematics itself</b>. The mind is the doorway; the math is the treasure. The math is what <i>grounds</i> the agnosticism.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="h2">The Episodes — “The Faculties of Mind”, Season 1</div>
+    <div class="eps">
+
+      <div class="ep done"><div class="num">1</div><div>
+        <div class="title">Attention</div>
+        <div class="meta"><b>Focus / what to ignore</b> &nbsp;·&nbsp; Transformers · attention weights · Query·Key·Value</div>
+        <div class="anchor">“Intelligence isn’t knowing everything — it’s knowing what to ignore.”</div>
+        <div class="badges"><span class="badge b-done">✅ Shipped — v1 + v2 animated</span><span class="badge">Foundations / the hook</span></div>
+      </div></div>
+
+      <div class="ep"><div class="num">2</div><div>
+        <div class="title">The Learning Loop <span style="color:var(--dim);font-weight:400;font-size:15px">— how humans &amp; robots learn the same way</span></div>
+        <div class="meta"><b>Learning / habit</b> &nbsp;·&nbsp; RL · Isaac Sim · dopamine ↔ reward · neuroplasticity</div>
+        <div class="anchor">“You can’t delete a pattern — you can only outweigh it with reps of a better one.”</div>
+        <div class="badges"><span class="badge b-ready">▶ Script + audio done · animation rendering</span><span class="badge b-class">→ Robotics / Physical AI class</span></div>
+      </div></div>
+
+      <div class="ep"><div class="num">3</div><div>
+        <div class="title">Imagination</div>
+        <div class="meta"><b>Dreaming form out of nothing</b> &nbsp;·&nbsp; Diffusion models — creation from noise</div>
+        <div class="anchor">“Creation is just noise, refined.”</div>
+        <div class="badges"><span class="badge b-idea">💡 Ready — the most visually stunning</span><span class="badge b-class">→ ML / generative</span></div>
+      </div></div>
+
+      <div class="ep"><div class="num">4</div><div>
+        <div class="title">Meaning</div>
+        <div class="meta"><b>How we hold meaning</b> &nbsp;·&nbsp; Embeddings · vector space</div>
+        <div class="anchor">“Meaning is a place, not a thing.”</div>
+        <div class="badges"><span class="badge b-idea">💡 Ready</span><span class="badge b-class">→ ML</span></div>
+      </div></div>
+
+      <div class="ep"><div class="num">5</div><div>
+        <div class="title">Intuition</div>
+        <div class="meta"><b>Knowing without reasoning</b> &nbsp;·&nbsp; Neural nets · universal approximation</div>
+        <div class="anchor">“A hunch is a pattern you can’t yet name.”</div>
+        <div class="badges"><span class="badge b-idea">💡 Ready</span><span class="badge b-class">→ ML</span></div>
+      </div></div>
+
+      <div class="ep"><div class="num">6</div><div>
+        <div class="title">Will</div>
+        <div class="meta"><b>Wanting &amp; acting toward a goal</b> &nbsp;·&nbsp; Agentic systems · RL</div>
+        <div class="anchor">“A goal is just a reward you haven’t reached.”</div>
+        <div class="badges"><span class="badge b-idea">💡 Ready</span><span class="badge b-class">→ Agentic Systems class</span></div>
+      </div></div>
+
+      <div class="ep"><div class="num">7</div><div>
+        <div class="title">Getting Better</div>
+        <div class="meta"><b>Learning from mistakes</b> &nbsp;·&nbsp; Gradient descent</div>
+        <div class="anchor">“You don’t learn from success — you learn from the size of your error.”</div>
+        <div class="badges"><span class="badge b-idea">💡 Ready</span><span class="badge b-class">→ ML</span></div>
+      </div></div>
+
+    </div>
+    <div class="note"><b style="color:var(--ink)">Idea bank (the well is inexhaustible):</b> information / entropy ·
+      convolution (how a mind sees) · memory &amp; recurrence · RLHF (how a mind is shaped by approval) ·
+      eigen-structure · re-learning / breaking habits …</div>
+  </section>
+
+  <section>
+    <div class="h2">One Body of Work, Three Expressions</div>
+    <div class="three">
+      <div class="exp video"><div class="t">▶ Video</div><p>The YouTube episodes. The <b>reach</b> and the <b>wonder</b> — free, magnetic, the top of the funnel.</p></div>
+      <div class="exp book"><div class="t">📖 Book</div><p>“AI is the Universal Mind.” The <b>authority anchor</b> and the <b>depth</b>. Every episode script is also a chapter — the book accretes as episodes ship.</p></div>
+      <div class="exp class"><div class="t">🎓 Live Classes</div><p>The paid <b>HOW</b> — build it yourself. Robotics / Physical AI · Agentic Systems · ML · (and VR/MR as its own funnel).</p></div>
+    </div>
+    <div class="note"><b style="color:var(--ink)">The funnel:</b> free episode sells the <i>why</i> → paid class teaches the <i>how</i>.
+      The idea problem is solved (the catalog is effectively infinite) — the real work is <b style="color:var(--gold)">shipping episodes on a schedule and standing up the funnel beneath them.</b></div>
+  </section>
+
+  <footer>
+    Status: Episode 1 shipped (v1 + v2). Episode 2 in production. &nbsp;·&nbsp; Generated for Deepak · TrigunAI
+  </footer>
+</div>
+</body>
+</html>
