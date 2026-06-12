@@ -419,20 +419,44 @@ Recommendation ranking:
 | Cinematography B2B services | Zero customer traction | If organic interest surfaces |
 | Robotics teleop B2B | Solo founder bandwidth | After courses generate revenue |
 | Lower body physics | Dependency chain | After courses generate revenue |
-| Dance/forest community | Personal, not business | Never monetize — keep personal |
+| Flow Art Dance ("Beyond the Mind") | **No longer paused — now Movement II of the unified vision (12 Jun 2026).** Sequences in after Movement I (AI/mind) episodes establish the channel | Content + course taught via the FlowArt Trigun Studio VR app; integrity-of-practice protected |
 
 ---
 
-## THE DANCE COMMUNITY — EXPLICIT BOUNDARY
+## THE UNIFIED VISION — "THE UNIVERSAL MIND, AND BEYOND IT" (updated 2026-06-12)
 
-The "dancing forest" / dance community work is **personal, not commercial.** It is:
-- A growing community of dancers
-- Fed by the Quest VR app's existing dance/meditation features
-- Not a revenue source, not part of the business plan
-- Not mentioned in pitch decks, grant applications, or investor conversations
+**The previous "dance is personal, never monetize" boundary is REVERSED — by Deepak's
+explicit, conscious decision (12 June 2026).** It was paused before not because it must stay
+non-commercial, but because the *connecting path* wasn't clear. The path is now clear, so
+the boundary that protected a *separation* no longer serves the *unity*.
 
-This boundary protects the community from commercialization pressure and the business from
-distraction.
+The worldview is now ONE story in two movements:
+
+- **Movement I — "AI is the Universal Mind."** Understand the machinery of mind: attention,
+  learning, will, imagination. The intellectual half. (The YouTube series + book + build-skill
+  classes already in motion.)
+- **Movement II — "Beyond the Mind" / Flow Art Dance.** The embodied, experiential half:
+  flow state, ecstatic / EDM / techno dance, the **"pause between the beats"** technique
+  Deepak uses to enter flow and dance for hours *gaining* energy. Taught as content (YouTube
+  + book) AND as a practice/course, with the **FlowArt Trigun Studio VR app** (Meta alpha) as
+  the delivery tool — students enter their own dancing environment instead of an expensive,
+  time-consuming physical venue.
+
+**Why this is unity, not distraction:** instead of two competing businesses, it's one
+worldview with one funnel. Episode 2 already proves the bridge — *flow is the lived
+experience of the basal-ganglia autopilot* (the thinking mind quieting, the trained pattern
+running free). "Understand the mind → transcend the mind" is a single arc across three
+substrates: the trained robot policy, the dancer in flow, the basal ganglia on autopilot.
+Deepak has genuine depth in BOTH (6 years of flow dance; build-level AI) — so he can teach both.
+
+**Two things this OS still protects:**
+1. **Sequencing, not splitting.** Unity of *vision* ≠ doing everything at once. One person,
+   finite hours. Movement I (AI/mind episodes) is shipping now; Movement II (flow/beyond-mind
+   episodes + course) sequences in as a deliberate track, not a parallel scramble. The merge
+   *reduces* focus risk — guard that by sequencing.
+2. **The integrity of the practice.** Don't let a content calendar kill the thing that gives
+   the energy. The "pause between the beats" is sacred before it is content. Monetize the
+   teaching of flow without contaminating the experience of flow.
 
 ---
 

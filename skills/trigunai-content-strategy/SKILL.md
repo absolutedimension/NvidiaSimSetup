@@ -58,6 +58,24 @@ Status key: ✅ shipped · 📄 research/script ready · 💡 idea seeded
 > convolution (how a mind sees), recurrence/memory, backprop-through-time, attention-as-graph,
 > embeddings-as-geometry, RLHF (how a mind is shaped by approval).
 
+## The full arc — TWO MOVEMENTS (unified 12 Jun 2026)
+
+The worldview is one story in two movements:
+- **Movement I — "AI is the Universal Mind."** Understand the machinery of mind (the episode
+  catalog above: attention, learning, will…). The intellectual half.
+- **Movement II — "Beyond the Mind" (Flow Art Dance).** The embodied half: flow state,
+  ecstatic / EDM / techno dance, the **"pause between the beats"** technique — entering flow,
+  dancing for hours and *gaining* energy. Taught as content (its own episodes + book chapters)
+  AND as a practice/course, delivered via the **FlowArt Trigun Studio VR app** (Meta alpha) so
+  students enter their own dancing environment instead of an expensive physical venue.
+
+The bridge is already in the catalog: **Episode 2 (the basal-ganglia autopilot) is the
+neuroscience of flow** — the thinking mind quieting, the trained pattern running free. One arc:
+*understand the mind → transcend it.* Movement II episodes will get their own rows once Deepak
+provides the practical techniques (planned). **Sequence Movement II after Movement I establishes
+the channel — unity of vision, not parallel execution.** Protect the integrity of the practice:
+the pause between the beats is sacred before it is content.
+
 ## The funnel (free episodes → paid live classes)
 
 **Free YouTube episode = the WHY (wonder). Paid live class = the HOW (build it).** Tightest
