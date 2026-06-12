@@ -1,25 +1,24 @@
 #!/usr/bin/env python3
 """
-Driver: render Episode 1 via the Manim engine.
-Per scene: Manim transparent .mov (timed to frozen audio) → composite → clip → concat.
-- IMAGE scenes (3,4,9): Ken-Burns hero image as the backdrop, Manim text/glow on top.
-- Other scenes: reactive circuit_mind shader backdrop, Manim on top.
-Usage: python3 render_ep01_manim.py            # all 10, then concat
-       python3 render_ep01_manim.py 3,4,9       # re-render those, then re-concat all 10
+Driver: Episode 1 via Manim engine + per-scene contextual-abstract background CLIPS.
+Every scene = its background clip (stretched to fill) with the Manim text/diagram on top.
+Hero scenes (3,4,9) use the LTX hero clips (party/spotlight/brain); the rest use the
+contextual-abstract bg clips (bg_sNN.mp4). The FINAL scene (10) also gets the spinning
+TrigunAI logo screen-blended in — no separate outro.
+Usage: python3 render_ep01_manim.py            # all 10, concat
+       python3 render_ep01_manim.py 6,7         # re-render those, re-concat all 10
 """
 import os, sys, glob, subprocess
-sys.path.insert(0, "/home/ubuntu/video-creator-backend")
-from services.shader_service import render_shader_video
-
 HOME="/home/ubuntu"
 BUILD=f"{HOME}/youtube_series/ep01_build"
-ASSETS=f"{HOME}/youtube_series/assets"
+CLIPDIR=f"{HOME}/youtube_series/clips"
 WORK=f"{HOME}/youtube_series/ep01_manim_build"; os.makedirs(WORK, exist_ok=True)
 OUT=f"{HOME}/youtube_series/ep01_manim_v3.mp4"
+SPIN=f"{HOME}/youtube_series/assets/trigun_spin_1080.mp4"
 W,H,FPS=1920,1080,30
-IMG={3:"img_party_crowd.png",4:"img_spotlight_field.png",9:"img_mind_network_head.png"}
-CLIPDIR=f"{HOME}/youtube_series/clips"
-CLIPS={3:"party.mp4",4:"spotlight.mp4",9:"brain.mp4"}   # LTX-Video animated hero clips
+ALLBG={1:"bg_s01.mp4",2:"bg_s02.mp4",3:"party.mp4",4:"spotlight.mp4",5:"bg_s05.mp4",
+       6:"bg_s06.mp4",7:"bg_s07.mp4",8:"bg_s08.mp4",9:"brain.mp4",10:"bg_s10.mp4"}
+LOGO_SCENE=10
 
 def dur(p):
     r=subprocess.run(["ffprobe","-v","quiet","-show_entries","format=duration","-of","csv=p=0",p],
@@ -29,53 +28,43 @@ def dur(p):
 
 arg=sys.argv[1] if len(sys.argv)>1 else "all"
 todo=list(range(1,11)) if arg=="all" else [int(x) for x in arg.split(",")]
+COVER="scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080"
 
 for i in todo:
-    sc=f"S{i:02d}"; audio=f"{BUILD}/s{i:02d}.mp3"; D=dur(audio); NF=int(D*FPS)
+    sc=f"S{i:02d}"; audio=f"{BUILD}/s{i:02d}.mp3"; D=dur(audio)
     print(f">> {sc}: {D:.1f}s — manim", flush=True)
     env=dict(os.environ, SCENE_DUR=f"{D}")
     r=subprocess.run(["python3","-m","manim","-r","1920,1080","--fps","30","--transparent",
-                      "--disable_caching","-o",sc,"ep01_manim.py",sc],
-                     cwd=HOME, env=env, capture_output=True, text=True)
+                      "--disable_caching","-o",sc,"ep01_manim.py",sc], cwd=HOME, env=env, capture_output=True, text=True)
     movs=glob.glob(f"{HOME}/media/videos/ep01_manim/**/{sc}.mov", recursive=True)
     if not movs:
         print(f"   !! no mov {sc}\n{r.stderr[-1500:]}", flush=True); continue
     mov=movs[0]; clip=os.path.join(WORK,f"{sc}.mp4")
-    clipsrc=f"{CLIPDIR}/{CLIPS[i]}" if i in CLIPS and os.path.exists(f"{CLIPDIR}/{CLIPS[i]}") else None
-    if clipsrc:  # LTX animated hero clip, stretched to fill the scene, Manim text on top
-        cdur=dur(clipsrc); factor=D/max(0.1,cdur)
-        fc=(f"[0:v]setpts={factor:.4f}*PTS,fps={FPS},scale=1920:1080:force_original_aspect_ratio=increase,"
-            f"crop=1920:1080[bg];[1:v]scale=1920:1080[mg];[bg][mg]overlay=0:0:format=auto[v]")
-        cp=subprocess.run(["ffmpeg","-y","-i",clipsrc,"-i",mov,"-i",audio,
-            "-filter_complex",fc,"-map","[v]","-map","2:a","-c:v","libx264","-crf","20",
-            "-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-shortest",clip], capture_output=True, text=True)
-        print(f"   hero-CLIP composite (x{factor:.1f} stretch)", flush=True)
-    elif i in IMG:  # fallback: Ken-Burns still
-        img=f"{ASSETS}/{IMG[i]}"
-        kb=(f"[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,"
-            f"zoompan=z='min(zoom+0.00035,1.16)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
-            f"d={NF}:s=1920x1080:fps={FPS}[bg];[1:v]scale=1920:1080[mg];[bg][mg]overlay=0:0:format=auto[v]")
-        cp=subprocess.run(["ffmpeg","-y","-i",img,"-i",mov,"-i",audio,
-            "-filter_complex",kb,"-map","[v]","-map","2:a","-c:v","libx264","-crf","20",
-            "-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-shortest",clip], capture_output=True, text=True)
-        print(f"   image-scene composite (still fallback)", flush=True)
-    else:  # reactive shader backdrop
-        bg=os.path.join(WORK,f"{sc}_bg.mp4")
-        render_shader_video(shader_name="neon_panels",audio_path=audio,output_path=bg,duration=D,fps=FPS,width=W,height=H)
-        cp=subprocess.run(["ffmpeg","-y","-i",bg,"-i",mov,"-i",audio,
-            "-filter_complex","[1:v]scale=1920:1080[mg];[0:v][mg]overlay=0:0:format=auto[v]",
-            "-map","[v]","-map","2:a","-c:v","libx264","-crf","20","-pix_fmt","yuv420p",
-            "-c:a","aac","-b:a","192k","-shortest",clip], capture_output=True, text=True)
+    bgsrc=f"{CLIPDIR}/{ALLBG[i]}"; cdur=dur(bgsrc); F=D/max(0.1,cdur)
+    if i==LOGO_SCENE and os.path.exists(SPIN):
+        fc=(f"[0:v]setpts={F:.4f}*PTS,fps={FPS},{COVER}[bg];[1:v]scale=1920:1080[mg];"
+            f"[bg][mg]overlay=0:0:format=auto[base];"
+            f"[3:v]scale=460:460,fps={FPS},pad=1920:1080:(1920-460)/2:600:black[lg];"
+            f"[base][lg]blend=all_mode=screen,format=yuv420p[v]")
+        cmd=["ffmpeg","-y","-i",bgsrc,"-i",mov,"-i",audio,"-stream_loop","-1","-t",f"{D}","-i",SPIN,
+             "-filter_complex",fc,"-map","[v]","-map","2:a","-c:v","libx264","-crf","20",
+             "-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-shortest",clip]
+        tag="+ logo"
+    else:
+        fc=(f"[0:v]setpts={F:.4f}*PTS,fps={FPS},{COVER}[bg];[1:v]scale=1920:1080[mg];"
+            f"[bg][mg]overlay=0:0:format=auto[v]")
+        cmd=["ffmpeg","-y","-i",bgsrc,"-i",mov,"-i",audio,"-filter_complex",fc,"-map","[v]","-map","2:a",
+             "-c:v","libx264","-crf","20","-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-shortest",clip]
+        tag=""
+    cp=subprocess.run(cmd, capture_output=True, text=True)
     if cp.returncode!=0:
         print(f"   !! composite fail {sc}\n{cp.stderr[-1200:]}", flush=True); continue
-    print(f"   {sc} clip done", flush=True)
+    print(f"   {sc} done (bg={ALLBG[i]} x{F:.1f} {tag})", flush=True)
 
-# always re-concat all 10 from whatever is in WORK
 clips=sorted(glob.glob(f"{WORK}/S??.mp4"))
 if len(clips)==10:
-    lst=os.path.join(WORK,"concat.txt")
-    open(lst,"w").write("".join(f"file '{c}'\n" for c in clips))
+    lst=os.path.join(WORK,"concat.txt"); open(lst,"w").write("".join(f"file '{c}'\n" for c in clips))
     subprocess.run(["ffmpeg","-y","-f","concat","-safe","0","-i",lst,"-c","copy",OUT],capture_output=True)
     print(f"\n✅ DONE: {OUT} ({dur(OUT):.1f}s)", flush=True)
 else:
-    print(f"\n(have {len(clips)}/10 clips — not concatenating yet)", flush=True)
+    print(f"\n(have {len(clips)}/10 clips)", flush=True)
