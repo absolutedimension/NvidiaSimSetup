@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup && ./checkpoint.sh 'auto-checkpoint (session end)' >> /tmp/trigunai_checkpoint.log 2>&1"
+          }
+        ]
+      }
+    ]
+  }
+}
