@@ -41,15 +41,14 @@ for i in todo:
         print(f"   !! no mov {sc}\n{r.stderr[-1500:]}", flush=True); continue
     mov=movs[0]; clip=os.path.join(WORK,f"{sc}.mp4")
     bgsrc=f"{CLIPDIR}/{ALLBG[i]}"; cdur=dur(bgsrc); F=D/max(0.1,cdur)
-    if i==LOGO_SCENE and os.path.exists(SPIN):
+    if i==LOGO_SCENE and os.path.exists(f"{CLIPDIR}/outro.mp4"):
+        # final scene: the spin-logo blurred-fill (dark, premium) IS the bg; anchor text on top
+        bgsrc=f"{CLIPDIR}/outro.mp4"; cdur=dur(bgsrc); F=D/max(0.1,cdur)
         fc=(f"[0:v]setpts={F:.4f}*PTS,fps={FPS},{COVER}[bg];[1:v]scale=1920:1080[mg];"
-            f"[bg][mg]overlay=0:0:format=auto[base];"
-            f"[3:v]scale=460:460,fps={FPS},pad=1920:1080:(1920-460)/2:600:black[lg];"
-            f"[base][lg]blend=all_mode=screen,format=yuv420p[v]")
-        cmd=["ffmpeg","-y","-i",bgsrc,"-i",mov,"-i",audio,"-stream_loop","-1","-t",f"{D}","-i",SPIN,
-             "-filter_complex",fc,"-map","[v]","-map","2:a","-c:v","libx264","-crf","20",
-             "-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-shortest",clip]
-        tag="+ logo"
+            f"[bg][mg]overlay=0:0:format=auto[v]")
+        cmd=["ffmpeg","-y","-i",bgsrc,"-i",mov,"-i",audio,"-filter_complex",fc,"-map","[v]","-map","2:a",
+             "-c:v","libx264","-crf","20","-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-shortest",clip]
+        tag="+ spin logo bg"
     else:
         fc=(f"[0:v]setpts={F:.4f}*PTS,fps={FPS},{COVER}[bg];[1:v]scale=1920:1080[mg];"
             f"[bg][mg]overlay=0:0:format=auto[v]")
