@@ -73,6 +73,23 @@ problem is solved (catalog above is effectively infinite); the real constraint i
 episodes on a schedule + standing up the funnel.** Lead paid classes with deepest expertise
 (VR shipped) even though robotics is the most exciting.
 
+## Three expressions of one body of work (write once, express thrice)
+
+The worldview is multi-format by nature. The SAME IP becomes:
+1. **Video** — the YouTube episodes (reach / wonder).
+2. **Book** — *AI is the Universal Mind* (authority anchor / depth). **Dual-purpose rule:
+   every episode script is also a book chapter** — write once, edit lightly for the page;
+   the episode's generated visuals become the book's figures (as Deepak's research PDF
+   already does). The book **accretes from shipping episodes** — never written as a separate
+   months-long project that blocks revenue.
+3. **Live classes** — the paid HOW (revenue).
+
+**Book sequencing (honest):** episodes build the audience → the audience pulls the book into
+existence → the book amplifies authority and funnels into the classes. Self-publish (Amazon
+KDP, ebook + print-on-demand) only once there's a season of chapters + an audience that wants
+it. The agnostic-but-pointed stance breathes best on the page (room to sit with open
+questions) — the book is where the *depth* lives, video is where the *wonder* lives.
+
 ## How agents use this file
 
 - **CEO agent:** at content-strategy moments, read this for the current state; the catalog's
