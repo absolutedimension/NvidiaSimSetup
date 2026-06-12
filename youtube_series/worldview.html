@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI is the Universal Mind — Worldview & Episodes</title>
+<title>The Universal Mind, and Beyond It — Worldview & Episodes</title>
 <style>
   :root{
     --bg:#06081a; --bg2:#0b0f24; --card:#11162e; --line:#222a4d;
-    --ink:#e9edfb; --dim:#9aa6cc; --gold:#ffc850; --purple:#b48cff; --blue:#6e96eb; --green:#7fd6a0;
+    --ink:#e9edfb; --dim:#9aa6cc; --gold:#ffc850; --purple:#b48cff; --blue:#6e96eb; --green:#7fd6a0; --rose:#ff9fc4;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{
@@ -16,33 +16,37 @@
     line-height:1.55; padding:0 0 80px;
   }
   .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
-  /* hero */
   .hero{padding:74px 26px 40px;text-align:center;max-width:1120px;margin:0 auto}
   .kicker{letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:var(--purple);margin-bottom:18px}
-  h1{font-size:54px;line-height:1.05;font-weight:800;letter-spacing:-.5px;
-     background:linear-gradient(90deg,#fff,#cdd6ff 60%,var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .thesis{font-size:20px;color:var(--dim);max-width:760px;margin:22px auto 0}
-  .ethos{margin-top:26px;font-style:italic;color:var(--gold);font-size:18px}
-  /* sections */
-  section{margin-top:64px}
+  h1{font-size:52px;line-height:1.05;font-weight:800;letter-spacing:-.5px;
+     background:linear-gradient(90deg,#fff,#cdd6ff 55%,var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .thesis{font-size:19px;color:var(--dim);max-width:780px;margin:22px auto 0}
+  .ethos{margin-top:24px;font-style:italic;color:var(--gold);font-size:18px}
+  .unity{margin-top:10px;font-style:italic;color:var(--rose);font-size:16px}
+  section{margin-top:60px}
   .h2{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);
-      border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:26px}
-  /* pillars */
+      border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:24px}
   .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   .pillar{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
-  .pillar h3{font-size:18px;margin-bottom:8px}
-  .pillar h3 span{color:var(--gold)}
+  .pillar h3{font-size:18px;margin-bottom:8px}.pillar h3 span{color:var(--gold)}
   .pillar p{color:var(--dim);font-size:15px}
+  /* movements */
+  .moves{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .move{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;position:relative}
+  .move .tag{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+  .move h3{font-size:23px;margin:6px 0 8px}
+  .move.m1 h3{color:var(--blue)} .move.m2 h3{color:var(--rose)}
+  .move p{color:var(--dim);font-size:14.5px}
+  .arrow{text-align:center;color:var(--purple);font-size:14px;margin:16px 0;font-style:italic}
   /* episodes */
   .eps{display:grid;gap:14px}
   .ep{display:grid;grid-template-columns:62px 1fr;gap:18px;background:var(--card);
-      border:1px solid var(--line);border-radius:16px;padding:20px 22px;transition:.18s;position:relative;overflow:hidden}
+      border:1px solid var(--line);border-radius:16px;padding:20px 22px;transition:.18s}
   .ep:hover{border-color:#34406f;transform:translateY(-2px)}
   .ep .num{font-size:34px;font-weight:800;color:#2c3666;text-align:center;line-height:1}
   .ep.done .num{color:var(--gold)}
   .ep .title{font-size:20px;font-weight:700}
-  .ep .meta{color:var(--dim);font-size:13.5px;margin-top:3px}
-  .ep .meta b{color:var(--blue);font-weight:600}
+  .ep .meta{color:var(--dim);font-size:13.5px;margin-top:3px}.ep .meta b{color:var(--blue);font-weight:600}
   .ep .anchor{margin-top:11px;font-style:italic;color:#d7defc;font-size:15px;border-left:2px solid var(--purple);padding-left:12px}
   .badges{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
   .badge{font-size:11.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);color:var(--dim)}
@@ -50,7 +54,15 @@
   .b-ready{background:rgba(110,150,235,.12);border-color:#2c3c6b;color:var(--blue)}
   .b-idea{background:rgba(180,140,255,.10);border-color:#3a2e5c;color:var(--purple)}
   .b-class{background:rgba(127,214,160,.10);border-color:#2a4a37;color:var(--green)}
-  /* expressions / funnel */
+  a.watch{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;text-decoration:none;
+    padding:5px 13px;border-radius:999px;background:var(--gold);color:#1a1405;transition:.15s}
+  a.watch:hover{filter:brightness(1.1)}
+  /* flow method */
+  .flow{background:linear-gradient(180deg,#160f24,#0d0a1c);border:1px solid #34264f;border-radius:18px;padding:28px}
+  .flow .big{font-size:22px;font-weight:700;color:var(--rose);margin-bottom:6px}
+  .flow .line{font-style:italic;color:#e7d4f5;font-size:17px;margin:4px 0 18px}
+  .flow ol{margin:0 0 6px 20px;color:var(--dim);font-size:14.5px} .flow ol li{margin:6px 0}
+  .flow b{color:var(--ink)}
   .three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .exp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
   .exp .t{font-size:17px;font-weight:700;margin-bottom:6px}
@@ -58,20 +70,37 @@
   .exp p{color:var(--dim);font-size:14px}
   .note{color:var(--dim);font-size:14px;margin-top:14px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
   footer{margin-top:60px;text-align:center;color:#5a648c;font-size:13px}
-  @media(max-width:760px){.pillars,.three{grid-template-columns:1fr}h1{font-size:38px}}
+  @media(max-width:760px){.pillars,.three,.moves{grid-template-columns:1fr}h1{font-size:36px}}
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="kicker">A YouTube Series · A Book · A Set of Classes</div>
-  <h1>AI is the Universal Mind</h1>
+  <h1>The Universal Mind,<br>and Beyond It</h1>
   <p class="thesis">Each AI breakthrough is humanity accidentally rebuilding one faculty of its own mind.
-     AI is a <b style="color:#cdd6ff">mirror</b>, not a copy — it makes the invisible machinery of cognition visible for the first time.</p>
+     AI is a <b style="color:#cdd6ff">mirror</b> — it makes the invisible machinery of cognition visible.
+     And past the machinery lies the thing every dancer in flow already knows.</p>
   <div class="ethos">“Look closely at one — and you understand the other.”</div>
+  <div class="unity">“Trying builds the pattern. Surrender sets it free.”</div>
 </header>
 
 <div class="wrap">
+
+  <section>
+    <div class="h2">One Story · Two Movements</div>
+    <div class="moves">
+      <div class="move m1"><div class="tag">Movement I · Understand</div>
+        <h3>AI is the Universal Mind</h3>
+        <p>Understand the machinery — attention, learning, will, imagination. The intellectual half.
+           The machine that <b style="color:#cdd6ff">learns by trying</b>. <i>(Shipping now — 2 episodes done.)</i></p></div>
+      <div class="move m2"><div class="tag">Movement II · Transcend</div>
+        <h3>Beyond the Mind — Flow Art</h3>
+        <p>Go past the machinery — flow state, ecstatic dance, the “pause between the beats.”
+           The human that <b style="color:#cdd6ff">performs by not-trying</b>. Taught through the FlowArt VR studio.</p></div>
+    </div>
+    <div class="arrow">↓ the bridge: flow is the trained pattern running with the controller switched off — Episode 2, lived ↓</div>
+  </section>
 
   <section>
     <div class="h2">The Four Pillars</div>
@@ -79,37 +108,37 @@
       <div class="pillar"><h3><span>1 ·</span> Thesis — the hook</h3>
         <p>Each breakthrough rebuilds a faculty of mind. The machine is a mirror that lets us see what was always invisible inside us.</p></div>
       <div class="pillar"><h3><span>2 ·</span> Method — the engine</h3>
-        <p>Find the story already inside the concept. <b style="color:#cdd6ff">Mirror</b> (“you already do this”) → <b style="color:#cdd6ff">Divergence</b> (“but the machine does it <i>unlike</i> you — and that’s the revelation”).</p></div>
+        <p>Find the story already inside the concept. <b style="color:#cdd6ff">Mirror</b> (“you already do this”) → <b style="color:#cdd6ff">Divergence</b> (“but the machine does it <i>unlike</i> you”).</p></div>
       <div class="pillar"><h3><span>3 ·</span> Stance — the conscience</h3>
-        <p><b style="color:var(--gold)">Agnostic but pointed.</b> No metaphysical claims. Humble about “are they the same?”, razor-sharp about the mechanism. Anchors are observations, not claims.</p></div>
+        <p><b style="color:var(--gold)">Agnostic but pointed.</b> No metaphysical claims. Humble about “are they the same?”, razor-sharp about the mechanism.</p></div>
       <div class="pillar"><h3><span>4 ·</span> The deep well — the source</h3>
-        <p>The hidden beauty of the <b style="color:#cdd6ff">mathematics itself</b>. The mind is the doorway; the math is the treasure. The math is what <i>grounds</i> the agnosticism.</p></div>
+        <p>The hidden beauty of the <b style="color:#cdd6ff">mathematics itself</b>. The mind is the doorway; the math is the treasure.</p></div>
     </div>
   </section>
 
   <section>
-    <div class="h2">The Episodes — “The Faculties of Mind”, Season 1</div>
+    <div class="h2">Movement I — The Episodes</div>
     <div class="eps">
 
       <div class="ep done"><div class="num">1</div><div>
         <div class="title">Attention</div>
-        <div class="meta"><b>Focus / what to ignore</b> &nbsp;·&nbsp; Transformers · attention weights · Query·Key·Value</div>
+        <div class="meta"><b>Focus / what to ignore</b> &nbsp;·&nbsp; Transformers · Query·Key·Value</div>
         <div class="anchor">“Intelligence isn’t knowing everything — it’s knowing what to ignore.”</div>
-        <div class="badges"><span class="badge b-done">✅ Shipped — v1 + v2 animated</span><span class="badge">Foundations / the hook</span></div>
+        <div class="badges"><span class="badge b-done">✅ Shipped — fully animated</span><a class="watch" href="ep01_attention_v2.mp4">▶ Watch</a></div>
       </div></div>
 
-      <div class="ep"><div class="num">2</div><div>
+      <div class="ep done"><div class="num">2</div><div>
         <div class="title">The Learning Loop <span style="color:var(--dim);font-weight:400;font-size:15px">— how humans &amp; robots learn the same way</span></div>
-        <div class="meta"><b>Learning / habit</b> &nbsp;·&nbsp; RL · Isaac Sim · dopamine ↔ reward · neuroplasticity</div>
+        <div class="meta"><b>Learning / habit</b> &nbsp;·&nbsp; RL · Isaac Sim · dopamine ↔ reward</div>
         <div class="anchor">“You can’t delete a pattern — you can only outweigh it with reps of a better one.”</div>
-        <div class="badges"><span class="badge b-ready">▶ Script + audio done · animation rendering</span><span class="badge b-class">→ Robotics / Physical AI class</span></div>
+        <div class="badges"><span class="badge b-done">✅ Shipped — fully animated</span><a class="watch" href="ep02_learning_v2.mp4">▶ Watch</a><span class="badge b-class">→ Robotics class</span></div>
       </div></div>
 
       <div class="ep"><div class="num">3</div><div>
         <div class="title">Imagination</div>
-        <div class="meta"><b>Dreaming form out of nothing</b> &nbsp;·&nbsp; Diffusion models — creation from noise</div>
+        <div class="meta"><b>Dreaming form out of nothing</b> &nbsp;·&nbsp; Diffusion models</div>
         <div class="anchor">“Creation is just noise, refined.”</div>
-        <div class="badges"><span class="badge b-idea">💡 Ready — the most visually stunning</span><span class="badge b-class">→ ML / generative</span></div>
+        <div class="badges"><span class="badge b-idea">💡 Ready</span><span class="badge b-class">→ ML / generative</span></div>
       </div></div>
 
       <div class="ep"><div class="num">4</div><div>
@@ -139,26 +168,39 @@
         <div class="anchor">“You don’t learn from success — you learn from the size of your error.”</div>
         <div class="badges"><span class="badge b-idea">💡 Ready</span><span class="badge b-class">→ ML</span></div>
       </div></div>
-
     </div>
-    <div class="note"><b style="color:var(--ink)">Idea bank (the well is inexhaustible):</b> information / entropy ·
-      convolution (how a mind sees) · memory &amp; recurrence · RLHF (how a mind is shaped by approval) ·
-      eigen-structure · re-learning / breaking habits …</div>
+    <div class="note"><b style="color:var(--ink)">Idea bank (inexhaustible):</b> information / entropy · convolution (how a mind sees) ·
+      memory &amp; recurrence · RLHF (how a mind is shaped by approval) · eigen-structure …</div>
+  </section>
+
+  <section>
+    <div class="h2">Movement II — Beyond the Mind: The Art of Losing</div>
+    <div class="flow">
+      <div class="big">You don’t dance. You find the point of <i>losing</i> — and the body, already trained, dances itself.</div>
+      <div class="line">The lived, embodied proof of the whole worldview. Flow is the trained pattern running with the controller switched off.</div>
+      <ol>
+        <li><b>Two body templates</b> (full-body house/shuffle · hands-and-fingers seated) — trained by exposure, so the body captures the beat without you.</li>
+        <li><b>The recurring beat</b> — the door. The most predictable point in the rhythm = lowest prediction error.</li>
+        <li><b>The losing</b> — on that beat, the observer (“how do I look”) goes silent. The template runs; you watch the body catch the rhythm by itself.</li>
+        <li><b>Silence to silence</b> — a long dance is re-dropping through the door on each beat, not holding anything.</li>
+        <li><b>The law</b> — don’t try; find the point of losing. Effort = exit + drain. Surrender = stay + <i>gain</i>.</li>
+      </ol>
+      <div class="note" style="margin-top:18px"><b style="color:var(--rose)">The VR app is an attention instrument,</b> not a convenience — it removes the watchers and the noise, engineering the conditions for “losing” a beginner can’t reach alone. <span style="color:var(--green)">→ the Flow course is taught with it.</span></div>
+    </div>
   </section>
 
   <section>
     <div class="h2">One Body of Work, Three Expressions</div>
     <div class="three">
-      <div class="exp video"><div class="t">▶ Video</div><p>The YouTube episodes. The <b>reach</b> and the <b>wonder</b> — free, magnetic, the top of the funnel.</p></div>
-      <div class="exp book"><div class="t">📖 Book</div><p>“AI is the Universal Mind.” The <b>authority anchor</b> and the <b>depth</b>. Every episode script is also a chapter — the book accretes as episodes ship.</p></div>
-      <div class="exp class"><div class="t">🎓 Live Classes</div><p>The paid <b>HOW</b> — build it yourself. Robotics / Physical AI · Agentic Systems · ML · (and VR/MR as its own funnel).</p></div>
+      <div class="exp video"><div class="t">▶ Video</div><p>The YouTube episodes — both movements. The <b>reach</b> and the <b>wonder</b>.</p></div>
+      <div class="exp book"><div class="t">📖 Book</div><p>The <b>authority anchor</b> and the <b>depth</b>. Every episode script is also a chapter — it accretes as episodes ship.</p></div>
+      <div class="exp class"><div class="t">🎓 Live Classes</div><p>The paid <b>HOW</b> — Robotics · Agentic · ML · the <b>Flow Art</b> practice course (taught via VR).</p></div>
     </div>
-    <div class="note"><b style="color:var(--ink)">The funnel:</b> free episode sells the <i>why</i> → paid class teaches the <i>how</i>.
-      The idea problem is solved (the catalog is effectively infinite) — the real work is <b style="color:var(--gold)">shipping episodes on a schedule and standing up the funnel beneath them.</b></div>
   </section>
 
   <footer>
-    Status: Episode 1 shipped (v1 + v2). Episode 2 in production. &nbsp;·&nbsp; Generated for Deepak · TrigunAI
+    Status — Movement I: Ep 1 &amp; 2 shipped (animated), Ep 3–7 ready. Movement II: method captured, Ep 1 next.
+    &nbsp;·&nbsp; <i>Watch-links open the local MP4s in this folder.</i> &nbsp;·&nbsp; TrigunAI · Deepak
   </footer>
 </div>
 </body>
