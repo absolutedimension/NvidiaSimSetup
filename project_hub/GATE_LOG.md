@@ -26,3 +26,9 @@
 | 2026-06-08 | Landing page prototype | Product | ✅ Done | Interactive video-style, two journeys, running locally | Deepak |
 | 2026-06-08 | F5-TTS voice — quality check | Video Pipeline | ✅ Approved | Female slow (0.75) sounds good, male also approved | Deepak |
 | 2026-06-08 | Learning shaders — quality check | Video Pipeline | ⏳ Pending review | 5 ultra-slow shaders rendered, awaiting Deepak feedback | Deepak |
+| 2026-06-12 | Unified vision — "Universal Mind, and Beyond It" | Strategy | ✅ Locked | Two movements (AI/mind + flow); dance boundary reversed by founder decision | Deepak |
+| 2026-06-12 | Ep 1 (Attention) — audio + pace | Content | ✅ Approved | "audio is good, pace very good" (male en-IN, -4%) | Deepak |
+| 2026-06-12 | Ep 1 (Attention) — v2 fully animated | Content | ✅ Shipped | ep01_attention_v2.mp4 (5:41) — 10 bespoke scenes | Deepak |
+| 2026-06-12 | Ep 2 (Learning Loop) — words + audio gate | Content | ✅ Approved | "words are good" → "mp3 is good" | Deepak |
+| 2026-06-12 | Ep 2 (Learning Loop) — v2 fully animated | Content | ✅ Shipped | ep02_learning_v2.mp4 (7:49) — 13 scenes, RAM-disk render | Deepak |
+| 2026-06-12 | Flow Art Method captured + crystallization | Content II | ✅ Approved | "yes" — "the art of losing" / "trying builds the pattern, surrender sets it free" felt true | Deepak |

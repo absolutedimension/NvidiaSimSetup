@@ -1,16 +1,35 @@
 # TrigunAI — CEO Briefing
 
-> Last updated: 2026-06-08 by CEO session (massive build session — education pivot + video platform)
+> Last updated: 2026-06-12 by CEO session (the unified-vision session — worldview + 2 shipped episodes + flow merge)
+> ⭐ Full context: memory `project-ai-universal-mind.md` + skill `trigunai-content-strategy` + `youtube_series/`.
 
 ---
 
 ## 🔥 Needs your attention
 
-1. **Course launch July 18 is 40 days away.** Video Creator tool is built. Now use it to produce Module 1 content.
-2. **learn.trigunai.com is LIVE.** Video Creator deployed on Azure with SSL. Backend connected to EC2 GPU.
-3. **Landing page prototype running locally** at localhost:5175. Needs video assets + deploy to trigunai.com.
-4. **EC2 is running and billing ~$1/hr.** Stop it when not actively rendering. All tools persist on EBS.
-5. **Hallo2 lip-sync** had OOM issues on full-length videos. Chunking approach works (chunk_00 succeeded). Lower priority — animated slides + voice is the production path.
+1. **The direction crystallized into one vision: "AI is the Universal Mind, and Beyond It."** Two
+   movements — Movement I (AI/mind episodes) + Movement II (Beyond-mind / Flow Art Dance). This is now
+   the primary content/business direction. See `youtube_series/worldview.html` for the whole thing on one screen.
+2. **TWO episodes are SHIPPED, fully animated** — `youtube_series/ep01_attention_v2.mp4` (Attention) and
+   `ep02_learning_v2.mp4` (The Learning Loop). Watchable. This is real product, not a plan.
+3. **THE NEXT MOVE THAT MATTERS (and it's not a new build):** publish Episode 1 publicly (YouTube),
+   put Ep 2 behind it, start an email list, and sell ONE live cohort to Deepak's existing network.
+   Shipping + funnel is the constraint now — *not* ideas (ideas are a settled firehose).
+4. **EC2 g5.2xlarge (i-047…, us-east-1) billing ~$1/hr.** Stop it when not rendering. Note: render
+   frames to /dev/shm (RAM), not EBS — EBS frame-writes starved sshd (SSH timed out mid-render).
+5. **Dance boundary REVERSED by Deepak's explicit decision** — flow is now Movement II, monetizable.
+   Guardrails: sequence (don't split focus); protect the integrity of the practice.
+6. **The Manifesto Film is PARKED** as the season culmination (Deepak's call) — not now. Don't restart it.
+
+### What shipped this session (2026-06-12)
+- Unified worldview locked (4 pillars + agnostic-but-pointed stance + two movements) across the
+  `SERIES_BIBLE.md`, `trigunai-content-strategy` skill, and CEO OS.
+- Ep 1 (v1 static + v2 animated) and Ep 2 (animated) rendered end-to-end; `worldview.html` dashboard.
+- `FLOW_ART_METHOD.md` — Deepak's flow technique captured + mapped to the framework.
+- Staged audio-gated pipeline + RAM-disk render fix codified in `production-video-trigunai`.
+- CEO tooling: `ceo_work_scan.py` (work scanner), `checkpoint.sh` (one-command git checkpoint +
+  skill mirror), `skills/` mirrored into repo, git initialized (14 checkpoints).
+- Business model researched (income stack, drop Udemy, live cohorts, AI-literacy tailwind).
 
 ---
 
