@@ -70,7 +70,16 @@
   .exp p{color:var(--dim);font-size:14px}
   .note{color:var(--dim);font-size:14px;margin-top:14px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
   footer{margin-top:60px;text-align:center;color:#5a648c;font-size:13px}
-  @media(max-width:760px){.pillars,.three,.moves{grid-template-columns:1fr}h1{font-size:36px}}
+  /* featured player */
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .feature video{width:100%;border-radius:12px;display:block;background:#000;aspect-ratio:16/9}
+  .langtabs{display:flex;gap:10px;margin-bottom:16px;align-items:center;flex-wrap:wrap}
+  .langtabs button{font-size:13.5px;font-weight:600;padding:7px 18px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line);background:transparent;color:var(--dim);transition:.15s}
+  .langtabs button.active{background:var(--gold);color:#1a1405;border-color:var(--gold)}
+  .langtabs .lbl{margin-left:auto;color:var(--dim);font-size:12.5px}
+  a.watch.hi{background:var(--purple);color:#160f24}
+  @media(max-width:760px){.pillars,.three,.moves{grid-template-columns:1fr}h1{font-size:36px}.langtabs .lbl{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -117,6 +126,21 @@
   </section>
 
   <section>
+    <div class="h2">▶ Featured — Episode 1: Attention</div>
+    <div class="feature">
+      <div class="langtabs">
+        <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+        <button id="btn-hi" onclick="setLang('hi')">हिंदी · Hindi</button>
+        <span class="lbl">Premium animated · word-synced captions · research-grounded focus-audio bed</span>
+      </div>
+      <video id="ep1video" controls preload="metadata">
+        <source id="ep1src" src="ep01_FINAL_focus.mp4" type="video/mp4">
+        Your browser doesn’t support embedded video.
+      </video>
+    </div>
+  </section>
+
+  <section>
     <div class="h2">Movement I — The Episodes</div>
     <div class="eps">
 
@@ -124,7 +148,7 @@
         <div class="title">Attention</div>
         <div class="meta"><b>Focus / what to ignore</b> &nbsp;·&nbsp; Transformers · Query·Key·Value</div>
         <div class="anchor">“Intelligence isn’t knowing everything — it’s knowing what to ignore.”</div>
-        <div class="badges"><span class="badge b-done">✅ Shipped — fully animated</span><a class="watch" href="ep01_FINAL.mp4">▶ Watch</a><a class="badge" href="EP01_attention_script.html">📄 Script</a></div>
+        <div class="badges"><span class="badge b-done">✅ Shipped — animated · focus audio · bilingual</span><a class="watch" href="ep01_FINAL_focus.mp4">▶ Watch (EN)</a><a class="watch hi" href="ep01_hi_FINAL_focus.mp4">▶ देखें (हिंदी)</a><a class="badge" href="EP01_attention_script.html">📄 Script</a></div>
       </div></div>
 
       <div class="ep done"><div class="num">2</div><div>
@@ -199,9 +223,19 @@
   </section>
 
   <footer>
-    Status — Movement I: Ep 1 &amp; 2 shipped (animated), Ep 3–7 ready. Movement II: method captured, Ep 1 next.
+    Status — Movement I: Ep 1 shipped bilingual (EN + हिंदी, focus audio), Ep 2 animated, Ep 3–7 ready. Movement II: method captured, Ep 1 next.
     &nbsp;·&nbsp; <i>Watch-links open the local MP4s in this folder.</i> &nbsp;·&nbsp; TrigunAI · Deepak
   </footer>
 </div>
+
+<script>
+function setLang(l){
+  var v=document.getElementById('ep1video'), s=document.getElementById('ep1src');
+  s.src = (l==='hi') ? 'ep01_hi_FINAL_focus.mp4' : 'ep01_FINAL_focus.mp4';
+  v.load();
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  document.getElementById('btn-hi').classList.toggle('active', l==='hi');
+}
+</script>
 </body>
 </html>

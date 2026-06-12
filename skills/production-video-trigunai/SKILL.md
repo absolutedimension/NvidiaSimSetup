@@ -9,8 +9,12 @@ description: >
   video", "module video", "explainer video", "welcome video", "intro video",
   "talking head / lip-sync video", "video with shader background", "animated
   motion graphics video", "narrated video", "YouTube video from this script",
-  or asks to render / compose / assemble a video. The agent gathers the brief,
-  then drives the full pipeline to a verified final MP4.
+  "series episode", "Manim episode", "kinetic captions", "focus / background
+  music", "bilingual / Hindi version", "localize / translate a video", or asks
+  to render / compose / assemble a video. The agent gathers the brief, then
+  drives the full pipeline to a verified final MP4. For the premium series
+  recipe (Manim engine + contextual AI backgrounds + word-synced captions +
+  focus-audio bed + EN/Hindi localization) see Mode C / §9.
 ---
 
 # TrigunAI Production Video Agent
@@ -250,3 +254,53 @@ which shader/voice/presenter/mode were used, and the verification frames you che
 Then ask the user to watch with sound and say **"lock it"** or what to tune (timing,
 copy, colors, shader, music, presenter). Once locked, that build is the reusable template
 for the next videos in the series.
+
+---
+
+## 9. Mode C — SERIES EPISODE pipeline (latest · the flagship "AI is the Universal Mind" recipe)
+
+The premium recipe used to ship **Episode 1: Attention** bilingual (EN + हिंदी). Richer than
+Modes A/B: it replaces PIL motion-graphics + shader bg with a **Manim engine + contextual AI
+backgrounds + word-synced kinetic captions + a research-grounded focus-audio bed**, and adds a
+**one-swap localization** path. All files live in `NvidiaSimSetup/youtube_series/` (Mac) and
+`/home/ubuntu/youtube_series/` (EC2). **Full reference: `youtube_series/EPISODE_PIPELINE.md`.**
+
+### The stack (per language)
+| Stage | Script | Output |
+|---|---|---|
+| Script | `EPNN_*_script.md` (scene blocks with `narration: \|`) | narration + on-screen text |
+| **Audio gate** | `gen_audio.py` (edge-tts `en-IN-PrabhatNeural`, rate −4%) | `epNN_build/sNN.mp3` + full preview → **human approves** |
+| Manim engine | `epNN_manim.py` — 10 `MovingCameraScene` scenes, rendered `--transparent` (.mov w/ alpha) | per-scene motion graphics |
+| Backgrounds | per-scene **contextual** clips: image-gen (gpt-image-1.5) → **LTX-Video i2v** (`gen_scene_bgs.py`, `image_to_clip.py`); hero scenes use LTX hero clips. Then **boomerang** each clip (`forward + reversed`) for seamless loops | `clips/bg_sNN_boom.mp4` |
+| Driver | `render_epNN_manim.py` — per scene: loop bg (native speed) + text-safe scrim + manim overlay + frozen audio; **final scene = split layout** (text top / spinning Trigun logo bottom) | `SNN.mp4` |
+| Captions | `make_caps_fx.py` (faster-whisper word timing) → `caption_fx.py` (Poppins **line-reveal** kinetic caption, fixed lower-third) | captioned scenes |
+| Build | `build_epNN.py` (scenes → captions → **concat-FILTER re-encode**) | `epNN_FINAL.mp4` |
+| **Focus bed** | `focus_audio.py` (12 Hz isochronic + warm pad + pink noise) + `focus_mix.py` (−20 dB, sidechain duck under voice) | `epNN_FINAL_focus.mp4` |
+
+### Bilingual / localization — minimal swaps (backgrounds, logo, focus bed are SHARED)
+| Swap | Script |
+|---|---|
+| Narration → target lang | `translate_voice_hi.py` (LiteLLM `gpt-4o-mini` translate + edge-tts `hi-IN-MadhurNeural`) → `epNN_hi_build/` + `hindi_script.json` |
+| On-screen text → script | `epNN_manim_hi.py` (font **`Mukta`** for Devanagari; keep Latin tech terms in Latin) |
+| Captions → target lang | `make_caps_fx_hi.py` (**caption TEXT from the approved `hindi_script.json` = perfect spelling**, whisper for TIMING only) + `caption_fx_hi.py` (Mukta) |
+| Driver / build | `render_epNN_manim_hi.py` + `build_epNN_hi.py` (reuse the SAME bg clips + logo) |
+
+### Mode-C gotchas (in addition to §6)
+- **Concat with the filter + re-encode, never `-c copy`** — chained `-c copy` inflates duration /
+  corrupts timestamps. Use `[i:v][i:a]…concat=n=N:v=1:a=1` in one pass.
+- **Boomerang every bg clip** — a native `-stream_loop` hard-cuts at the seam (visible "replay");
+  `forward + reversed` removes it. (Do NOT `setpts`-stretch a short clip to fill — it stutters.)
+- **Manim frames can starve EBS I/O** → render to `/dev/shm` (RAM disk) if SSH freezes.
+- **Devanagari = Mukta** (installed in `~/.local/share/fonts`, pairs with the Poppins look);
+  Noto Sans Devanagari is the fallback.
+- **Captions: use the script for TEXT, whisper for TIMING** — auto-transcription drops Hindi
+  nukta/diacritics (e.g. पढ़ते→पडते). The approved script text is the source of truth.
+- **Focus bed is language-agnostic** — generate at each video's exact duration; settings locked:
+  12 Hz isochronic, root D3 (146.8 Hz), −20 dB, `sidechaincompress threshold=0.022:ratio=9:attack=5:release=320` so speech always wins. Evidence: amplitude-modulation 12–20 Hz boosts sustained attention (Northeastern 2024); pink noise masks distraction.
+- **Prototype ONE scene** (manim + bg + caption) before any full ~40-min build — catches font/
+  layout/order bugs cheaply.
+
+### Status
+Ep1 shipped bilingual: `ep01_FINAL_focus.mp4` (EN, 341s) + `ep01_hi_FINAL_focus.mp4` (HI, 408s),
+both surfaced in `youtube_series/worldview.html` (embedded player w/ EN/हिंदी toggle).
+Next episodes: drop a new script into this exact machine.
