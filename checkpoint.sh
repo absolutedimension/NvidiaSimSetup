@@ -10,8 +10,9 @@ cd "$(dirname "$0")"
 
 MSG="${*:-checkpoint $(date '+%Y-%m-%d %H:%M')}"
 
-# 1. refresh the work digest (best-effort; never blocks a commit)
+# 1. refresh the work digest + mirror skills (best-effort; never blocks a commit)
 python3 project_hub/tools/ceo_work_scan.py --days 14 >/dev/null 2>&1 || true
+./sync_skills.sh >/dev/null 2>&1 || true
 
 # 2. stage everything (respecting .gitignore)
 git add -A
