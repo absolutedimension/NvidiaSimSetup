@@ -71,6 +71,28 @@ is the wonder.
 
 - **Every episode ends on its anchor line** — the one-sentence compression of the idea.
 
+## The deep well — mathematical beauty is the engine (the source, not the title)
+
+The inexhaustible source of episodes is the **hidden beauty of the mathematics itself.**
+Every beautiful mathematical idea is a potential episode. But the **mind is the doorway,
+the math is the treasure**: we keep the magnetic "faculty of mind" frame on the *outside*
+(it's what people click), and reveal the mathematical beauty on the *inside* (it's what
+makes the episode unforgettable). Never retitle the show "the beauty of mathematics" —
+almost nobody clicks that; everybody clicks "how a mind works."
+
+The math is also what **grounds the agnostic-but-pointed stance**: the mathematical
+structure is the observable, undeniable thing we *point* to; the mind=machine identity
+stays the open question. *"I don't claim they're the same — but here's the same piece of
+mathematics in both. Watch."* Math = the "pointed." Metaphysics = the "agnostic."
+
+Seed ideas (each smuggles math inside a mind frame):
+- **Diffusion = creation from disturbance** → "Imagination: a mind dreaming form out of
+  noise." (anchor: *creation is just noise, refined*) — likely the most *visually* stunning
+  episode (noise → image literally emerging on screen).
+- **Universal approximation** → "Intuition: the mind that can model anything." Any rule of
+  reality — even ones we can't write down — captured from examples.
+- (and attention, gradient descent, embeddings, information, eigen-structure, …)
+
 ## Season 1 — the map (faculty ↔ architecture)
 
 Ship in this order. Open with the most magnetic hook, not the foundations.

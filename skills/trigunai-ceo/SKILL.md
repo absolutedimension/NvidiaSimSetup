@@ -233,6 +233,12 @@ reflect one person's bandwidth, not two. If the plan assumes two people working,
 
 **"I'm exhausted / I can't do all of this / what do I cut"** → System 7
 
+**"What episode next / the series / AI is the universal mind / content plan / episode list"**
+→ the **`trigunai-content-strategy`** skill holds the content brain: the series worldview
+(thesis · mirror+divergence method · agnostic-but-pointed stance · the mathematical deep
+well), the MASTER EPISODE CATALOG (status of every episode), and the episode→paid-class
+funnel. Read it for the current content state; its catalog Status column is ground truth.
+
 When multiple systems are relevant: name which ones. Address each in sequence. Do not blend.
 
 ---
