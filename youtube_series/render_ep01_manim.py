@@ -61,7 +61,7 @@ for i in todo:
         print(f"   image-scene composite (still fallback)", flush=True)
     else:  # reactive shader backdrop
         bg=os.path.join(WORK,f"{sc}_bg.mp4")
-        render_shader_video(shader_name="circuit_mind",audio_path=audio,output_path=bg,duration=D,fps=FPS,width=W,height=H)
+        render_shader_video(shader_name="neon_panels",audio_path=audio,output_path=bg,duration=D,fps=FPS,width=W,height=H)
         cp=subprocess.run(["ffmpeg","-y","-i",bg,"-i",mov,"-i",audio,
             "-filter_complex","[1:v]scale=1920:1080[mg];[0:v][mg]overlay=0:0:format=auto[v]",
             "-map","[v]","-map","2:a","-c:v","libx264","-crf","20","-pix_fmt","yuv420p",
