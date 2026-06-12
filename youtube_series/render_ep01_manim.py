@@ -16,8 +16,8 @@ WORK=f"{HOME}/youtube_series/ep01_manim_build"; os.makedirs(WORK, exist_ok=True)
 OUT=f"{HOME}/youtube_series/ep01_manim_v3.mp4"
 SPIN=f"{HOME}/youtube_series/assets/trigun_spin_1080.mp4"
 W,H,FPS=1920,1080,30
-ALLBG={1:"bg_s01.mp4",2:"bg_s02.mp4",3:"party.mp4",4:"spotlight.mp4",5:"bg_s05.mp4",
-       6:"bg_s06.mp4",7:"bg_s07.mp4",8:"bg_s08.mp4",9:"brain.mp4",10:"bg_s10.mp4"}
+ALLBG={1:"bg_s01_boom.mp4",2:"bg_s02_boom.mp4",3:"party_boom.mp4",4:"spotlight_boom.mp4",5:"bg_s05_boom.mp4",
+       6:"bg_s06_boom.mp4",7:"bg_s07_boom.mp4",8:"bg_s08_boom.mp4",9:"brain_boom.mp4",10:"bg_s10.mp4"}
 LOGO_SCENE=10
 
 def dur(p):
