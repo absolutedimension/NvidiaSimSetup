@@ -18,6 +18,8 @@ WORK=f"{HOME}/youtube_series/ep01_manim_build"; os.makedirs(WORK, exist_ok=True)
 OUT=f"{HOME}/youtube_series/ep01_manim_v3.mp4"
 W,H,FPS=1920,1080,30
 IMG={3:"img_party_crowd.png",4:"img_spotlight_field.png",9:"img_mind_network_head.png"}
+CLIPDIR=f"{HOME}/youtube_series/clips"
+CLIPS={3:"party.mp4",4:"spotlight.mp4",9:"brain.mp4"}   # LTX-Video animated hero clips
 
 def dur(p):
     r=subprocess.run(["ffprobe","-v","quiet","-show_entries","format=duration","-of","csv=p=0",p],
@@ -39,7 +41,16 @@ for i in todo:
     if not movs:
         print(f"   !! no mov {sc}\n{r.stderr[-1500:]}", flush=True); continue
     mov=movs[0]; clip=os.path.join(WORK,f"{sc}.mp4")
-    if i in IMG:  # Ken-Burns hero image backdrop
+    clipsrc=f"{CLIPDIR}/{CLIPS[i]}" if i in CLIPS and os.path.exists(f"{CLIPDIR}/{CLIPS[i]}") else None
+    if clipsrc:  # LTX animated hero clip, stretched to fill the scene, Manim text on top
+        cdur=dur(clipsrc); factor=D/max(0.1,cdur)
+        fc=(f"[0:v]setpts={factor:.4f}*PTS,fps={FPS},scale=1920:1080:force_original_aspect_ratio=increase,"
+            f"crop=1920:1080[bg];[1:v]scale=1920:1080[mg];[bg][mg]overlay=0:0:format=auto[v]")
+        cp=subprocess.run(["ffmpeg","-y","-i",clipsrc,"-i",mov,"-i",audio,
+            "-filter_complex",fc,"-map","[v]","-map","2:a","-c:v","libx264","-crf","20",
+            "-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-shortest",clip], capture_output=True, text=True)
+        print(f"   hero-CLIP composite (x{factor:.1f} stretch)", flush=True)
+    elif i in IMG:  # fallback: Ken-Burns still
         img=f"{ASSETS}/{IMG[i]}"
         kb=(f"[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,"
             f"zoompan=z='min(zoom+0.00035,1.16)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
@@ -47,7 +58,7 @@ for i in todo:
         cp=subprocess.run(["ffmpeg","-y","-i",img,"-i",mov,"-i",audio,
             "-filter_complex",kb,"-map","[v]","-map","2:a","-c:v","libx264","-crf","20",
             "-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-shortest",clip], capture_output=True, text=True)
-        print(f"   image-scene composite", flush=True)
+        print(f"   image-scene composite (still fallback)", flush=True)
     else:  # reactive shader backdrop
         bg=os.path.join(WORK,f"{sc}_bg.mp4")
         render_shader_video(shader_name="circuit_mind",audio_path=audio,output_path=bg,duration=D,fps=FPS,width=W,height=H)
