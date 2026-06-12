@@ -1,0 +1,76 @@
+{
+  "mp3": "/Users/deepakkumarrai/Downloads/audiobook (1).mp3",
+  "duration": 507.3649886621315,
+  "tempo": 135.99917763157896,
+  "fps": 50.0,
+  "num_segments": 6,
+  "schedule_string": "30:BEAUTY,3135:SOLITUDE,6241:EPIC,12502:HERO,18745:ENERGY,25000:INTIMATE",
+  "schedule": [
+    {
+      "step": 30,
+      "time": 0.6,
+      "mode": "BEAUTY"
+    },
+    {
+      "step": 3135,
+      "time": 62.7,
+      "mode": "SOLITUDE"
+    },
+    {
+      "step": 6241,
+      "time": 124.82,
+      "mode": "EPIC"
+    },
+    {
+      "step": 12502,
+      "time": 250.04,
+      "mode": "HERO"
+    },
+    {
+      "step": 18745,
+      "time": 374.9,
+      "mode": "ENERGY"
+    },
+    {
+      "step": 25000,
+      "time": 500.0,
+      "mode": "INTIMATE"
+    }
+  ],
+  "analysis_windows": [
+    {
+      "time": 0.0,
+      "step": 0,
+      "mode": "BEAUTY",
+      "energy": 0.131,
+      "spectral": 0.142,
+      "beat_density": 2.25,
+      "onset_density": 2.75,
+      "scores": {
+        "HERO": 0.997,
+        "INTIMATE": 0.6,
+        "EPIC": 0.972,
+        "ENERGY": 1.113,
+        "SOLITUDE": 1.535,
+        "BEAUTY": 0.347
+      }
+    },
+    {
+      "time": 500.0,
+      "step": 25000,
+      "mode": "INTIMATE",
+      "energy": 0.119,
+      "spectral": 0.186,
+      "beat_density": 1.49,
+      "onset_density": 3.12,
+      "scores": {
+        "HERO": 0.982,
+        "INTIMATE": 0.037,
+        "EPIC": 0.877,
+        "ENERGY": 1.431,
+        "SOLITUDE": 1.042,
+        "BEAUTY": 0.327
+      }
+    }
+  ]
+}

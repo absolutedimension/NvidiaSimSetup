@@ -1,0 +1,77 @@
+{
+  "mission": "VR Dance Concert Cinematographer",
+  "last_updated": "2026-05-24T02:55:00Z",
+  "phases": {
+    "A1": {
+      "name": "Mocap playback in sim",
+      "owner": "training",
+      "status": "done",
+      "gate": "30s screen recording, user visual sign-off",
+      "subjective": false,
+      "notes": "Stick figure renders via OVRTX confirmed"
+    },
+    "A2": {
+      "name": "Orbital camera baseline MP4",
+      "owner": "training",
+      "status": "in_progress",
+      "gate": "User says 'looks like drone filmed a dancer'",
+      "subjective": true,
+      "notes": "25s USDA baked, OVRTX render pending"
+    },
+    "A3": {
+      "name": "Cinematography reward function",
+      "owner": "training",
+      "status": "pending",
+      "gate": "All unit tests pass, reward on A2 baseline is sane",
+      "subjective": false,
+      "notes": ""
+    },
+    "A4": {
+      "name": "PPO training + 10 sample MP4s",
+      "owner": "training",
+      "status": "pending",
+      "gate": "7/10 MP4s beat orbital baseline (user vote)",
+      "subjective": true,
+      "notes": ""
+    },
+    "A5": {
+      "name": "Bake trajectory to GLB + previs",
+      "owner": "both",
+      "status": "pending",
+      "gate": "GLB plays in Gurulok VR, user approves",
+      "subjective": true,
+      "notes": ""
+    },
+    "A6": {
+      "name": "Distill to ONNX",
+      "owner": "training",
+      "status": "pending",
+      "gate": "Numerical equivalence test passes",
+      "subjective": false,
+      "notes": ""
+    },
+    "B": {
+      "name": "Sim-to-real DR pass",
+      "owner": "training",
+      "status": "pending",
+      "gate": "ONNX generalizes across DR conditions",
+      "subjective": false,
+      "notes": ""
+    },
+    "C": {
+      "name": "Starling 2 hardware deploy",
+      "owner": "hardware",
+      "status": "pending",
+      "gate": "Live test on indoor stage",
+      "subjective": false,
+      "notes": ""
+    }
+  },
+  "artifacts": [],
+  "handoffs": [],
+  "ec2": {
+    "instance_id": "i-047ebf759f2386e71",
+    "last_known_ip": "54.162.225.64",
+    "status": "running"
+  }
+}

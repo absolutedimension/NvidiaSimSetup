@@ -1,0 +1,1156 @@
+{
+  "audio_file": "narration_pitch.mp3",
+  "duration": 28.368938,
+  "model": "1abfe86b-e047-4eed-858a-35e5625b41ee",
+  "full_text": "Trigonite Innovations is an early stage DTEK company building the connective tissue physical AI for visual capture. We combine motion capture data, reinforcement learning, and VR validation to train autonomous camera policies, software cinematographers that learn from data and deploy to real hardware. Our current focus is dance performance and live event cinematography. We work with mock up libraries, train custom policies, and deliver them in formats that drop into both creative pipelines and drone hardware.",
+  "words": [
+    {
+      "word": "trigonite",
+      "start": 0.08,
+      "end": 0.48,
+      "confidence": 0.7742513,
+      "punctuated_word": "Trigonite"
+    },
+    {
+      "word": "innovations",
+      "start": 0.48,
+      "end": 0.98,
+      "confidence": 0.9748535,
+      "punctuated_word": "Innovations"
+    },
+    {
+      "word": "is",
+      "start": 1.04,
+      "end": 1.28,
+      "confidence": 0.9980469,
+      "punctuated_word": "is"
+    },
+    {
+      "word": "an",
+      "start": 1.28,
+      "end": 1.36,
+      "confidence": 1.0,
+      "punctuated_word": "an"
+    },
+    {
+      "word": "early",
+      "start": 1.36,
+      "end": 1.68,
+      "confidence": 1.0,
+      "punctuated_word": "early"
+    },
+    {
+      "word": "stage",
+      "start": 1.68,
+      "end": 2.0,
+      "confidence": 1.0,
+      "punctuated_word": "stage"
+    },
+    {
+      "word": "dtek",
+      "start": 2.0,
+      "end": 2.48,
+      "confidence": 0.5194499,
+      "punctuated_word": "DTEK"
+    },
+    {
+      "word": "company",
+      "start": 2.48,
+      "end": 2.8,
+      "confidence": 0.99609375,
+      "punctuated_word": "company"
+    },
+    {
+      "word": "building",
+      "start": 2.8,
+      "end": 3.12,
+      "confidence": 0.9472656,
+      "punctuated_word": "building"
+    },
+    {
+      "word": "the",
+      "start": 3.12,
+      "end": 3.28,
+      "confidence": 0.98828125,
+      "punctuated_word": "the"
+    },
+    {
+      "word": "connective",
+      "start": 3.28,
+      "end": 3.76,
+      "confidence": 0.9995117,
+      "punctuated_word": "connective"
+    },
+    {
+      "word": "tissue",
+      "start": 3.76,
+      "end": 4.16,
+      "confidence": 0.99902344,
+      "punctuated_word": "tissue"
+    },
+    {
+      "word": "physical",
+      "start": 4.16,
+      "end": 4.64,
+      "confidence": 0.5234375,
+      "punctuated_word": "physical"
+    },
+    {
+      "word": "ai",
+      "start": 4.64,
+      "end": 4.88,
+      "confidence": 0.99316406,
+      "punctuated_word": "AI"
+    },
+    {
+      "word": "for",
+      "start": 4.88,
+      "end": 5.12,
+      "confidence": 1.0,
+      "punctuated_word": "for"
+    },
+    {
+      "word": "visual",
+      "start": 5.12,
+      "end": 5.44,
+      "confidence": 0.9980469,
+      "punctuated_word": "visual"
+    },
+    {
+      "word": "capture",
+      "start": 5.44,
+      "end": 5.94,
+      "confidence": 0.9995117,
+      "punctuated_word": "capture."
+    },
+    {
+      "word": "we",
+      "start": 6.16,
+      "end": 6.3199997,
+      "confidence": 1.0,
+      "punctuated_word": "We"
+    },
+    {
+      "word": "combine",
+      "start": 6.3199997,
+      "end": 6.72,
+      "confidence": 0.94921875,
+      "punctuated_word": "combine"
+    },
+    {
+      "word": "motion",
+      "start": 6.72,
+      "end": 7.12,
+      "confidence": 1.0,
+      "punctuated_word": "motion"
+    },
+    {
+      "word": "capture",
+      "start": 7.12,
+      "end": 7.44,
+      "confidence": 0.99609375,
+      "punctuated_word": "capture"
+    },
+    {
+      "word": "data",
+      "start": 7.44,
+      "end": 7.9199996,
+      "confidence": 0.9980469,
+      "punctuated_word": "data,"
+    },
+    {
+      "word": "reinforcement",
+      "start": 7.9199996,
+      "end": 8.42,
+      "confidence": 1.0,
+      "punctuated_word": "reinforcement"
+    },
+    {
+      "word": "learning",
+      "start": 8.639999,
+      "end": 9.12,
+      "confidence": 0.9946289,
+      "punctuated_word": "learning,"
+    },
+    {
+      "word": "and",
+      "start": 9.12,
+      "end": 9.28,
+      "confidence": 1.0,
+      "punctuated_word": "and"
+    },
+    {
+      "word": "vr",
+      "start": 9.28,
+      "end": 9.679999,
+      "confidence": 0.99609375,
+      "punctuated_word": "VR"
+    },
+    {
+      "word": "validation",
+      "start": 9.679999,
+      "end": 10.16,
+      "confidence": 0.79003906,
+      "punctuated_word": "validation"
+    },
+    {
+      "word": "to",
+      "start": 10.16,
+      "end": 10.32,
+      "confidence": 0.99902344,
+      "punctuated_word": "to"
+    },
+    {
+      "word": "train",
+      "start": 10.32,
+      "end": 10.719999,
+      "confidence": 0.9980469,
+      "punctuated_word": "train"
+    },
+    {
+      "word": "autonomous",
+      "start": 10.719999,
+      "end": 11.2,
+      "confidence": 0.9921875,
+      "punctuated_word": "autonomous"
+    },
+    {
+      "word": "camera",
+      "start": 11.2,
+      "end": 11.599999,
+      "confidence": 1.0,
+      "punctuated_word": "camera"
+    },
+    {
+      "word": "policies",
+      "start": 11.599999,
+      "end": 12.099999,
+      "confidence": 0.80908203,
+      "punctuated_word": "policies,"
+    },
+    {
+      "word": "software",
+      "start": 12.735,
+      "end": 13.215,
+      "confidence": 0.9970703,
+      "punctuated_word": "software"
+    },
+    {
+      "word": "cinematographers",
+      "start": 13.215,
+      "end": 13.715,
+      "confidence": 0.9977214,
+      "punctuated_word": "cinematographers"
+    },
+    {
+      "word": "that",
+      "start": 14.015,
+      "end": 14.255,
+      "confidence": 0.9980469,
+      "punctuated_word": "that"
+    },
+    {
+      "word": "learn",
+      "start": 14.255,
+      "end": 14.495,
+      "confidence": 0.9970703,
+      "punctuated_word": "learn"
+    },
+    {
+      "word": "from",
+      "start": 14.495,
+      "end": 14.655,
+      "confidence": 1.0,
+      "punctuated_word": "from"
+    },
+    {
+      "word": "data",
+      "start": 14.655,
+      "end": 15.055,
+      "confidence": 1.0,
+      "punctuated_word": "data"
+    },
+    {
+      "word": "and",
+      "start": 15.055,
+      "end": 15.215,
+      "confidence": 0.99121094,
+      "punctuated_word": "and"
+    },
+    {
+      "word": "deploy",
+      "start": 15.215,
+      "end": 15.615,
+      "confidence": 0.9951172,
+      "punctuated_word": "deploy"
+    },
+    {
+      "word": "to",
+      "start": 15.615,
+      "end": 15.695,
+      "confidence": 0.9116211,
+      "punctuated_word": "to"
+    },
+    {
+      "word": "real",
+      "start": 15.695,
+      "end": 15.934999,
+      "confidence": 1.0,
+      "punctuated_word": "real"
+    },
+    {
+      "word": "hardware",
+      "start": 15.934999,
+      "end": 16.435,
+      "confidence": 0.99853516,
+      "punctuated_word": "hardware."
+    },
+    {
+      "word": "our",
+      "start": 16.575,
+      "end": 16.735,
+      "confidence": 1.0,
+      "punctuated_word": "Our"
+    },
+    {
+      "word": "current",
+      "start": 16.735,
+      "end": 17.055,
+      "confidence": 1.0,
+      "punctuated_word": "current"
+    },
+    {
+      "word": "focus",
+      "start": 17.055,
+      "end": 17.375,
+      "confidence": 0.99902344,
+      "punctuated_word": "focus"
+    },
+    {
+      "word": "is",
+      "start": 17.375,
+      "end": 17.535,
+      "confidence": 1.0,
+      "punctuated_word": "is"
+    },
+    {
+      "word": "dance",
+      "start": 17.535,
+      "end": 17.935,
+      "confidence": 0.9980469,
+      "punctuated_word": "dance"
+    },
+    {
+      "word": "performance",
+      "start": 17.935,
+      "end": 18.415,
+      "confidence": 0.9902344,
+      "punctuated_word": "performance"
+    },
+    {
+      "word": "and",
+      "start": 18.415,
+      "end": 18.654999,
+      "confidence": 0.9506836,
+      "punctuated_word": "and"
+    },
+    {
+      "word": "live",
+      "start": 18.654999,
+      "end": 18.895,
+      "confidence": 1.0,
+      "punctuated_word": "live"
+    },
+    {
+      "word": "event",
+      "start": 18.895,
+      "end": 19.295,
+      "confidence": 0.93359375,
+      "punctuated_word": "event"
+    },
+    {
+      "word": "cinematography",
+      "start": 19.295,
+      "end": 19.795,
+      "confidence": 1.0,
+      "punctuated_word": "cinematography."
+    },
+    {
+      "word": "we",
+      "start": 20.373938,
+      "end": 20.613937,
+      "confidence": 1.0,
+      "punctuated_word": "We"
+    },
+    {
+      "word": "work",
+      "start": 20.613937,
+      "end": 20.773937,
+      "confidence": 0.99902344,
+      "punctuated_word": "work"
+    },
+    {
+      "word": "with",
+      "start": 20.773937,
+      "end": 20.853937,
+      "confidence": 1.0,
+      "punctuated_word": "with"
+    },
+    {
+      "word": "mock",
+      "start": 20.853937,
+      "end": 21.253937,
+      "confidence": 0.8125,
+      "punctuated_word": "mock"
+    },
+    {
+      "word": "up",
+      "start": 21.253937,
+      "end": 21.493938,
+      "confidence": 0.88720703,
+      "punctuated_word": "up"
+    },
+    {
+      "word": "libraries",
+      "start": 21.493938,
+      "end": 21.993938,
+      "confidence": 0.9111328,
+      "punctuated_word": "libraries,"
+    },
+    {
+      "word": "train",
+      "start": 22.053938,
+      "end": 22.373938,
+      "confidence": 0.98828125,
+      "punctuated_word": "train"
+    },
+    {
+      "word": "custom",
+      "start": 22.373938,
+      "end": 22.773937,
+      "confidence": 0.9941406,
+      "punctuated_word": "custom"
+    },
+    {
+      "word": "policies",
+      "start": 22.773937,
+      "end": 23.273937,
+      "confidence": 0.96118164,
+      "punctuated_word": "policies,"
+    },
+    {
+      "word": "and",
+      "start": 23.733938,
+      "end": 24.053938,
+      "confidence": 1.0,
+      "punctuated_word": "and"
+    },
+    {
+      "word": "deliver",
+      "start": 24.053938,
+      "end": 24.373938,
+      "confidence": 1.0,
+      "punctuated_word": "deliver"
+    },
+    {
+      "word": "them",
+      "start": 24.373938,
+      "end": 24.613937,
+      "confidence": 1.0,
+      "punctuated_word": "them"
+    },
+    {
+      "word": "in",
+      "start": 24.613937,
+      "end": 24.693937,
+      "confidence": 0.99902344,
+      "punctuated_word": "in"
+    },
+    {
+      "word": "formats",
+      "start": 24.693937,
+      "end": 25.173937,
+      "confidence": 0.99902344,
+      "punctuated_word": "formats"
+    },
+    {
+      "word": "that",
+      "start": 25.173937,
+      "end": 25.333939,
+      "confidence": 0.99902344,
+      "punctuated_word": "that"
+    },
+    {
+      "word": "drop",
+      "start": 25.333939,
+      "end": 25.653938,
+      "confidence": 0.9951172,
+      "punctuated_word": "drop"
+    },
+    {
+      "word": "into",
+      "start": 25.653938,
+      "end": 25.973938,
+      "confidence": 0.99121094,
+      "punctuated_word": "into"
+    },
+    {
+      "word": "both",
+      "start": 25.973938,
+      "end": 26.213938,
+      "confidence": 0.9951172,
+      "punctuated_word": "both"
+    },
+    {
+      "word": "creative",
+      "start": 26.213938,
+      "end": 26.613937,
+      "confidence": 0.99902344,
+      "punctuated_word": "creative"
+    },
+    {
+      "word": "pipelines",
+      "start": 26.613937,
+      "end": 27.113937,
+      "confidence": 0.99902344,
+      "punctuated_word": "pipelines"
+    },
+    {
+      "word": "and",
+      "start": 27.173937,
+      "end": 27.413937,
+      "confidence": 0.9921875,
+      "punctuated_word": "and"
+    },
+    {
+      "word": "drone",
+      "start": 27.413937,
+      "end": 27.733936,
+      "confidence": 0.9980469,
+      "punctuated_word": "drone"
+    },
+    {
+      "word": "hardware",
+      "start": 27.733936,
+      "end": 28.233936,
+      "confidence": 0.9995117,
+      "punctuated_word": "hardware."
+    }
+  ],
+  "paragraphs": {
+    "transcript": "\nTrigonite Innovations is an early stage DTEK company building the connective tissue physical AI for visual capture. We combine motion capture data, reinforcement learning, and VR validation to train autonomous camera policies, software cinematographers that learn from data and deploy to real hardware. Our current focus is dance performance and live event cinematography. We work with mock up libraries, train custom policies, and deliver them in formats that drop into both creative pipelines and drone hardware.",
+    "paragraphs": [
+      {
+        "sentences": [
+          {
+            "text": "Trigonite Innovations is an early stage DTEK company building the connective tissue physical AI for visual capture.",
+            "start": 0.08,
+            "end": 5.94
+          },
+          {
+            "text": "We combine motion capture data, reinforcement learning, and VR validation to train autonomous camera policies, software cinematographers that learn from data and deploy to real hardware.",
+            "start": 6.16,
+            "end": 16.435
+          },
+          {
+            "text": "Our current focus is dance performance and live event cinematography.",
+            "start": 16.575,
+            "end": 19.795
+          },
+          {
+            "text": "We work with mock up libraries, train custom policies, and deliver them in formats that drop into both creative pipelines and drone hardware.",
+            "start": 20.373938,
+            "end": 28.233936
+          }
+        ],
+        "num_words": 76,
+        "start": 0.08,
+        "end": 28.233936
+      }
+    ]
+  },
+  "utterances": [
+    {
+      "start": 0.08,
+      "end": 12.099999,
+      "confidence": 0.9447937,
+      "channel": 0,
+      "transcript": "Trigonite Innovations is an early stage DTEK company building the connective tissue physical AI for visual capture. We combine motion capture data, reinforcement learning, and VR validation to train autonomous camera policies,",
+      "words": [
+        {
+          "word": "trigonite",
+          "start": 0.08,
+          "end": 0.48,
+          "confidence": 0.7742513,
+          "punctuated_word": "Trigonite"
+        },
+        {
+          "word": "innovations",
+          "start": 0.48,
+          "end": 0.98,
+          "confidence": 0.9748535,
+          "punctuated_word": "Innovations"
+        },
+        {
+          "word": "is",
+          "start": 1.04,
+          "end": 1.28,
+          "confidence": 0.9980469,
+          "punctuated_word": "is"
+        },
+        {
+          "word": "an",
+          "start": 1.28,
+          "end": 1.36,
+          "confidence": 1.0,
+          "punctuated_word": "an"
+        },
+        {
+          "word": "early",
+          "start": 1.36,
+          "end": 1.68,
+          "confidence": 1.0,
+          "punctuated_word": "early"
+        },
+        {
+          "word": "stage",
+          "start": 1.68,
+          "end": 2.0,
+          "confidence": 1.0,
+          "punctuated_word": "stage"
+        },
+        {
+          "word": "dtek",
+          "start": 2.0,
+          "end": 2.48,
+          "confidence": 0.5194499,
+          "punctuated_word": "DTEK"
+        },
+        {
+          "word": "company",
+          "start": 2.48,
+          "end": 2.8,
+          "confidence": 0.99609375,
+          "punctuated_word": "company"
+        },
+        {
+          "word": "building",
+          "start": 2.8,
+          "end": 3.12,
+          "confidence": 0.9472656,
+          "punctuated_word": "building"
+        },
+        {
+          "word": "the",
+          "start": 3.12,
+          "end": 3.28,
+          "confidence": 0.98828125,
+          "punctuated_word": "the"
+        },
+        {
+          "word": "connective",
+          "start": 3.28,
+          "end": 3.76,
+          "confidence": 0.9995117,
+          "punctuated_word": "connective"
+        },
+        {
+          "word": "tissue",
+          "start": 3.76,
+          "end": 4.16,
+          "confidence": 0.99902344,
+          "punctuated_word": "tissue"
+        },
+        {
+          "word": "physical",
+          "start": 4.16,
+          "end": 4.64,
+          "confidence": 0.5234375,
+          "punctuated_word": "physical"
+        },
+        {
+          "word": "ai",
+          "start": 4.64,
+          "end": 4.88,
+          "confidence": 0.99316406,
+          "punctuated_word": "AI"
+        },
+        {
+          "word": "for",
+          "start": 4.88,
+          "end": 5.12,
+          "confidence": 1.0,
+          "punctuated_word": "for"
+        },
+        {
+          "word": "visual",
+          "start": 5.12,
+          "end": 5.44,
+          "confidence": 0.9980469,
+          "punctuated_word": "visual"
+        },
+        {
+          "word": "capture",
+          "start": 5.44,
+          "end": 5.94,
+          "confidence": 0.9995117,
+          "punctuated_word": "capture."
+        },
+        {
+          "word": "we",
+          "start": 6.16,
+          "end": 6.3199997,
+          "confidence": 1.0,
+          "punctuated_word": "We"
+        },
+        {
+          "word": "combine",
+          "start": 6.3199997,
+          "end": 6.72,
+          "confidence": 0.94921875,
+          "punctuated_word": "combine"
+        },
+        {
+          "word": "motion",
+          "start": 6.72,
+          "end": 7.12,
+          "confidence": 1.0,
+          "punctuated_word": "motion"
+        },
+        {
+          "word": "capture",
+          "start": 7.12,
+          "end": 7.44,
+          "confidence": 0.99609375,
+          "punctuated_word": "capture"
+        },
+        {
+          "word": "data",
+          "start": 7.44,
+          "end": 7.9199996,
+          "confidence": 0.9980469,
+          "punctuated_word": "data,"
+        },
+        {
+          "word": "reinforcement",
+          "start": 7.9199996,
+          "end": 8.42,
+          "confidence": 1.0,
+          "punctuated_word": "reinforcement"
+        },
+        {
+          "word": "learning",
+          "start": 8.639999,
+          "end": 9.12,
+          "confidence": 0.9946289,
+          "punctuated_word": "learning,"
+        },
+        {
+          "word": "and",
+          "start": 9.12,
+          "end": 9.28,
+          "confidence": 1.0,
+          "punctuated_word": "and"
+        },
+        {
+          "word": "vr",
+          "start": 9.28,
+          "end": 9.679999,
+          "confidence": 0.99609375,
+          "punctuated_word": "VR"
+        },
+        {
+          "word": "validation",
+          "start": 9.679999,
+          "end": 10.16,
+          "confidence": 0.79003906,
+          "punctuated_word": "validation"
+        },
+        {
+          "word": "to",
+          "start": 10.16,
+          "end": 10.32,
+          "confidence": 0.99902344,
+          "punctuated_word": "to"
+        },
+        {
+          "word": "train",
+          "start": 10.32,
+          "end": 10.719999,
+          "confidence": 0.9980469,
+          "punctuated_word": "train"
+        },
+        {
+          "word": "autonomous",
+          "start": 10.719999,
+          "end": 11.2,
+          "confidence": 0.9921875,
+          "punctuated_word": "autonomous"
+        },
+        {
+          "word": "camera",
+          "start": 11.2,
+          "end": 11.599999,
+          "confidence": 1.0,
+          "punctuated_word": "camera"
+        },
+        {
+          "word": "policies",
+          "start": 11.599999,
+          "end": 12.099999,
+          "confidence": 0.80908203,
+          "punctuated_word": "policies,"
+        }
+      ],
+      "id": "3ed4ecff-22ec-4f67-83b7-109215cc9943"
+    },
+    {
+      "start": 12.735,
+      "end": 13.715,
+      "confidence": 0.9973959,
+      "channel": 0,
+      "transcript": "software cinematographers",
+      "words": [
+        {
+          "word": "software",
+          "start": 12.735,
+          "end": 13.215,
+          "confidence": 0.9970703,
+          "punctuated_word": "software"
+        },
+        {
+          "word": "cinematographers",
+          "start": 13.215,
+          "end": 13.715,
+          "confidence": 0.9977214,
+          "punctuated_word": "cinematographers"
+        }
+      ],
+      "id": "7e8bc99f-298f-49ac-a052-ef09dbdfa8b4"
+    },
+    {
+      "start": 14.015,
+      "end": 19.795,
+      "confidence": 0.98753595,
+      "channel": 0,
+      "transcript": "that learn from data and deploy to real hardware. Our current focus is dance performance and live event cinematography.",
+      "words": [
+        {
+          "word": "that",
+          "start": 14.015,
+          "end": 14.255,
+          "confidence": 0.9980469,
+          "punctuated_word": "that"
+        },
+        {
+          "word": "learn",
+          "start": 14.255,
+          "end": 14.495,
+          "confidence": 0.9970703,
+          "punctuated_word": "learn"
+        },
+        {
+          "word": "from",
+          "start": 14.495,
+          "end": 14.655,
+          "confidence": 1.0,
+          "punctuated_word": "from"
+        },
+        {
+          "word": "data",
+          "start": 14.655,
+          "end": 15.055,
+          "confidence": 1.0,
+          "punctuated_word": "data"
+        },
+        {
+          "word": "and",
+          "start": 15.055,
+          "end": 15.215,
+          "confidence": 0.99121094,
+          "punctuated_word": "and"
+        },
+        {
+          "word": "deploy",
+          "start": 15.215,
+          "end": 15.615,
+          "confidence": 0.9951172,
+          "punctuated_word": "deploy"
+        },
+        {
+          "word": "to",
+          "start": 15.615,
+          "end": 15.695,
+          "confidence": 0.9116211,
+          "punctuated_word": "to"
+        },
+        {
+          "word": "real",
+          "start": 15.695,
+          "end": 15.934999,
+          "confidence": 1.0,
+          "punctuated_word": "real"
+        },
+        {
+          "word": "hardware",
+          "start": 15.934999,
+          "end": 16.435,
+          "confidence": 0.99853516,
+          "punctuated_word": "hardware."
+        },
+        {
+          "word": "our",
+          "start": 16.575,
+          "end": 16.735,
+          "confidence": 1.0,
+          "punctuated_word": "Our"
+        },
+        {
+          "word": "current",
+          "start": 16.735,
+          "end": 17.055,
+          "confidence": 1.0,
+          "punctuated_word": "current"
+        },
+        {
+          "word": "focus",
+          "start": 17.055,
+          "end": 17.375,
+          "confidence": 0.99902344,
+          "punctuated_word": "focus"
+        },
+        {
+          "word": "is",
+          "start": 17.375,
+          "end": 17.535,
+          "confidence": 1.0,
+          "punctuated_word": "is"
+        },
+        {
+          "word": "dance",
+          "start": 17.535,
+          "end": 17.935,
+          "confidence": 0.9980469,
+          "punctuated_word": "dance"
+        },
+        {
+          "word": "performance",
+          "start": 17.935,
+          "end": 18.415,
+          "confidence": 0.9902344,
+          "punctuated_word": "performance"
+        },
+        {
+          "word": "and",
+          "start": 18.415,
+          "end": 18.654999,
+          "confidence": 0.9506836,
+          "punctuated_word": "and"
+        },
+        {
+          "word": "live",
+          "start": 18.654999,
+          "end": 18.895,
+          "confidence": 1.0,
+          "punctuated_word": "live"
+        },
+        {
+          "word": "event",
+          "start": 18.895,
+          "end": 19.295,
+          "confidence": 0.93359375,
+          "punctuated_word": "event"
+        },
+        {
+          "word": "cinematography",
+          "start": 19.295,
+          "end": 19.795,
+          "confidence": 1.0,
+          "punctuated_word": "cinematography."
+        }
+      ],
+      "id": "644ed7b6-5833-495e-bb25-ed232bf62471"
+    },
+    {
+      "start": 20.373938,
+      "end": 23.273937,
+      "confidence": 0.9503852,
+      "channel": 0,
+      "transcript": "We work with mock up libraries, train custom policies,",
+      "words": [
+        {
+          "word": "we",
+          "start": 20.373938,
+          "end": 20.613937,
+          "confidence": 1.0,
+          "punctuated_word": "We"
+        },
+        {
+          "word": "work",
+          "start": 20.613937,
+          "end": 20.773937,
+          "confidence": 0.99902344,
+          "punctuated_word": "work"
+        },
+        {
+          "word": "with",
+          "start": 20.773937,
+          "end": 20.853937,
+          "confidence": 1.0,
+          "punctuated_word": "with"
+        },
+        {
+          "word": "mock",
+          "start": 20.853937,
+          "end": 21.253937,
+          "confidence": 0.8125,
+          "punctuated_word": "mock"
+        },
+        {
+          "word": "up",
+          "start": 21.253937,
+          "end": 21.493938,
+          "confidence": 0.88720703,
+          "punctuated_word": "up"
+        },
+        {
+          "word": "libraries",
+          "start": 21.493938,
+          "end": 21.993938,
+          "confidence": 0.9111328,
+          "punctuated_word": "libraries,"
+        },
+        {
+          "word": "train",
+          "start": 22.053938,
+          "end": 22.373938,
+          "confidence": 0.98828125,
+          "punctuated_word": "train"
+        },
+        {
+          "word": "custom",
+          "start": 22.373938,
+          "end": 22.773937,
+          "confidence": 0.9941406,
+          "punctuated_word": "custom"
+        },
+        {
+          "word": "policies",
+          "start": 22.773937,
+          "end": 23.273937,
+          "confidence": 0.96118164,
+          "punctuated_word": "policies,"
+        }
+      ],
+      "id": "90c2a7c4-6a6e-4175-a97d-3b8de4e4bbf5"
+    },
+    {
+      "start": 23.733938,
+      "end": 28.233936,
+      "confidence": 0.99759346,
+      "channel": 0,
+      "transcript": "and deliver them in formats that drop into both creative pipelines and drone hardware.",
+      "words": [
+        {
+          "word": "and",
+          "start": 23.733938,
+          "end": 24.053938,
+          "confidence": 1.0,
+          "punctuated_word": "and"
+        },
+        {
+          "word": "deliver",
+          "start": 24.053938,
+          "end": 24.373938,
+          "confidence": 1.0,
+          "punctuated_word": "deliver"
+        },
+        {
+          "word": "them",
+          "start": 24.373938,
+          "end": 24.613937,
+          "confidence": 1.0,
+          "punctuated_word": "them"
+        },
+        {
+          "word": "in",
+          "start": 24.613937,
+          "end": 24.693937,
+          "confidence": 0.99902344,
+          "punctuated_word": "in"
+        },
+        {
+          "word": "formats",
+          "start": 24.693937,
+          "end": 25.173937,
+          "confidence": 0.99902344,
+          "punctuated_word": "formats"
+        },
+        {
+          "word": "that",
+          "start": 25.173937,
+          "end": 25.333939,
+          "confidence": 0.99902344,
+          "punctuated_word": "that"
+        },
+        {
+          "word": "drop",
+          "start": 25.333939,
+          "end": 25.653938,
+          "confidence": 0.9951172,
+          "punctuated_word": "drop"
+        },
+        {
+          "word": "into",
+          "start": 25.653938,
+          "end": 25.973938,
+          "confidence": 0.99121094,
+          "punctuated_word": "into"
+        },
+        {
+          "word": "both",
+          "start": 25.973938,
+          "end": 26.213938,
+          "confidence": 0.9951172,
+          "punctuated_word": "both"
+        },
+        {
+          "word": "creative",
+          "start": 26.213938,
+          "end": 26.613937,
+          "confidence": 0.99902344,
+          "punctuated_word": "creative"
+        },
+        {
+          "word": "pipelines",
+          "start": 26.613937,
+          "end": 27.113937,
+          "confidence": 0.99902344,
+          "punctuated_word": "pipelines"
+        },
+        {
+          "word": "and",
+          "start": 27.173937,
+          "end": 27.413937,
+          "confidence": 0.9921875,
+          "punctuated_word": "and"
+        },
+        {
+          "word": "drone",
+          "start": 27.413937,
+          "end": 27.733936,
+          "confidence": 0.9980469,
+          "punctuated_word": "drone"
+        },
+        {
+          "word": "hardware",
+          "start": 27.733936,
+          "end": 28.233936,
+          "confidence": 0.9995117,
+          "punctuated_word": "hardware."
+        }
+      ],
+      "id": "8ee1f369-aa4e-44c7-8731-ef310549f087"
+    }
+  ]
+}

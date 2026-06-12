@@ -1,0 +1,232 @@
+{
+  "mp3": "/Users/deepakkumarrai/Downloads/cosmic-hypnotic.mp3",
+  "duration": 90.0,
+  "tempo": 60.09265988372093,
+  "fps": 50.0,
+  "num_segments": 10,
+  "schedule_string": "0:INTIMATE,514:ENERGY,751:HERO,1494:BEAUTY,1892:INTIMATE,2387:BEAUTY,2882:EPIC,3229:BEAUTY,3774:SOLITUDE,4024:BEAUTY",
+  "schedule": [
+    {
+      "step": 0,
+      "time": 0.0,
+      "mode": "INTIMATE"
+    },
+    {
+      "step": 514,
+      "time": 10.28,
+      "mode": "ENERGY"
+    },
+    {
+      "step": 751,
+      "time": 15.02,
+      "mode": "HERO"
+    },
+    {
+      "step": 1494,
+      "time": 29.88,
+      "mode": "BEAUTY"
+    },
+    {
+      "step": 1892,
+      "time": 37.84,
+      "mode": "INTIMATE"
+    },
+    {
+      "step": 2387,
+      "time": 47.74,
+      "mode": "BEAUTY"
+    },
+    {
+      "step": 2882,
+      "time": 57.64,
+      "mode": "EPIC"
+    },
+    {
+      "step": 3229,
+      "time": 64.58,
+      "mode": "BEAUTY"
+    },
+    {
+      "step": 3774,
+      "time": 75.48,
+      "mode": "SOLITUDE"
+    },
+    {
+      "step": 4024,
+      "time": 80.48,
+      "mode": "BEAUTY"
+    }
+  ],
+  "analysis_windows": [
+    {
+      "time": 0.0,
+      "step": 0,
+      "mode": "INTIMATE",
+      "energy": 0.013,
+      "spectral": 0.12,
+      "beat_density": 0.0,
+      "onset_density": 0.0,
+      "scores": {
+        "HERO": 3.053,
+        "INTIMATE": 0.0,
+        "EPIC": 2.853,
+        "ENERGY": 3.773,
+        "SOLITUDE": 0.0,
+        "BEAUTY": 1.303
+      }
+    },
+    {
+      "time": 10.0,
+      "step": 500,
+      "mode": "BEAUTY",
+      "energy": 0.188,
+      "spectral": 0.199,
+      "beat_density": 1.0,
+      "onset_density": 4.2,
+      "scores": {
+        "HERO": 1.225,
+        "INTIMATE": 0.36,
+        "EPIC": 0.725,
+        "ENERGY": 1.424,
+        "SOLITUDE": 0.97,
+        "BEAUTY": 0.175
+      }
+    },
+    {
+      "time": 15.0,
+      "step": 750,
+      "mode": "INTIMATE",
+      "energy": 0.135,
+      "spectral": 0.231,
+      "beat_density": 1.0,
+      "onset_density": 3.8,
+      "scores": {
+        "HERO": 1.299,
+        "INTIMATE": 0.24,
+        "EPIC": 0.799,
+        "ENERGY": 1.59,
+        "SOLITUDE": 0.85,
+        "BEAUTY": 0.249
+      }
+    },
+    {
+      "time": 30.0,
+      "step": 1500,
+      "mode": "BEAUTY",
+      "energy": 0.35,
+      "spectral": 0.214,
+      "beat_density": 1.0,
+      "onset_density": 3.8,
+      "scores": {
+        "HERO": 0.885,
+        "INTIMATE": 0.34,
+        "EPIC": 0.385,
+        "ENERGY": 1.16,
+        "SOLITUDE": 1.05,
+        "BEAUTY": 0.136
+      }
+    },
+    {
+      "time": 37.5,
+      "step": 1875,
+      "mode": "INTIMATE",
+      "energy": 0.356,
+      "spectral": 0.137,
+      "beat_density": 1.0,
+      "onset_density": 3.0,
+      "scores": {
+        "HERO": 0.95,
+        "INTIMATE": 0.113,
+        "EPIC": 0.45,
+        "ENERGY": 1.387,
+        "SOLITUDE": 0.823,
+        "BEAUTY": 0.213
+      }
+    },
+    {
+      "time": 47.5,
+      "step": 2375,
+      "mode": "BEAUTY",
+      "energy": 0.408,
+      "spectral": 0.145,
+      "beat_density": 1.0,
+      "onset_density": 4.4,
+      "scores": {
+        "HERO": 0.839,
+        "INTIMATE": 0.635,
+        "EPIC": 0.339,
+        "ENERGY": 0.985,
+        "SOLITUDE": 1.345,
+        "BEAUTY": 0.205
+      }
+    },
+    {
+      "time": 57.5,
+      "step": 2875,
+      "mode": "INTIMATE",
+      "energy": 0.247,
+      "spectral": 0.139,
+      "beat_density": 1.0,
+      "onset_density": 2.4,
+      "scores": {
+        "HERO": 1.168,
+        "INTIMATE": 0.0,
+        "EPIC": 0.848,
+        "ENERGY": 1.786,
+        "SOLITUDE": 0.43,
+        "BEAUTY": 0.211
+      }
+    },
+    {
+      "time": 65.0,
+      "step": 3250,
+      "mode": "BEAUTY",
+      "energy": 0.319,
+      "spectral": 0.153,
+      "beat_density": 1.0,
+      "onset_density": 3.8,
+      "scores": {
+        "HERO": 1.008,
+        "INTIMATE": 0.278,
+        "EPIC": 0.508,
+        "ENERGY": 1.222,
+        "SOLITUDE": 0.988,
+        "BEAUTY": 0.197
+      }
+    },
+    {
+      "time": 75.0,
+      "step": 3750,
+      "mode": "INTIMATE",
+      "energy": 0.343,
+      "spectral": 0.134,
+      "beat_density": 1.0,
+      "onset_density": 2.8,
+      "scores": {
+        "HERO": 0.98,
+        "INTIMATE": 0.086,
+        "EPIC": 0.54,
+        "ENERGY": 1.474,
+        "SOLITUDE": 0.736,
+        "BEAUTY": 0.216
+      }
+    },
+    {
+      "time": 80.0,
+      "step": 4000,
+      "mode": "BEAUTY",
+      "energy": 0.465,
+      "spectral": 0.108,
+      "beat_density": 1.0,
+      "onset_density": 2.2,
+      "scores": {
+        "HERO": 0.763,
+        "INTIMATE": 0.329,
+        "EPIC": 0.532,
+        "ENERGY": 1.411,
+        "SOLITUDE": 0.799,
+        "BEAUTY": 0.242
+      }
+    }
+  ]
+}

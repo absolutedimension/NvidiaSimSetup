@@ -1,0 +1,36 @@
+# Scene Composer Agent — sits beside the existing Material/Physics/Texture
+# agent compose files at ~/content-agents/apps/*/docker-compose.yml.
+#
+# Usage on EC2:
+#   cd ~/content-agents/apps/scene_composer_service
+#   docker compose --env-file ../../.env up -d
+#
+# Network: uses host networking so localhost:8004 (Texture Agent) is reachable
+# directly without DNS shenanigans. The existing agent stacks already do this.
+
+services:
+  scene-composer-service:
+    container_name: scene-composer-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: scene-composer:latest
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      COMPOSER_SCRIPTS_DIR: /opt/scripts
+      COMPOSER_OUT_BASE: /data/cities
+      # host networking → texture agent at localhost
+      COMPOSER_TEXTURE_AGENT_BASE: http://localhost:8004
+      COMPOSER_PYTHON: /usr/local/bin/python
+    volumes:
+      # The three pipeline scripts (osm_to_usd.py, city_add_colliders.py,
+      # city_enrich_textures.py) and the optional usd_to_glb.py.
+      - /home/ubuntu/NvidiaSimSetup/webxr-showcase/scripts:/opt/scripts:ro
+      # City outputs land on the EBS-persistent path so they survive stop/start.
+      - /home/ubuntu/assets/cities:/data/cities
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8005/health', timeout=2)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

@@ -1,0 +1,19 @@
+{
+  "description": "Pre-recorded voice command timeline for the 90-second demo reel",
+  "total_duration_seconds": 90,
+  "commands": [
+    {"time": 0.0,   "spoken": "beauty",   "mode": "BEAUTY",   "display": "🎙️ \"Beauty\""},
+    {"time": 8.0,   "spoken": "hero",     "mode": "HERO",     "display": "🎙️ \"Hero\""},
+    {"time": 15.0,  "spoken": "closer",   "param": "distance", "delta": -0.5, "display": "🎙️ \"Closer\""},
+    {"time": 20.0,  "spoken": "intimate", "mode": "INTIMATE", "display": "🎙️ \"Intimate\""},
+    {"time": 30.0,  "spoken": "epic",     "mode": "EPIC",     "display": "🎙️ \"Epic\""},
+    {"time": 40.0,  "spoken": "energy",   "mode": "ENERGY",   "display": "🎙️ \"Energy\""},
+    {"time": 55.0,  "spoken": "solitude", "mode": "SOLITUDE", "display": "🎙️ \"Solitude\""},
+    {"time": 65.0,  "spoken": "beauty",   "mode": "BEAUTY",   "display": "🎙️ \"Beauty\""},
+    {"time": 75.0,  "spoken": "hero",     "mode": "HERO",     "display": "🎙️ \"Hero\""},
+    {"time": 82.0,  "spoken": "hold",     "control": "pause", "display": "🎙️ \"Hold\""},
+    {"time": 85.0,  "spoken": "resume",   "control": "play",  "display": "🎙️ \"Resume\""}
+  ],
+  "mode_order": ["BEAUTY", "HERO", "INTIMATE", "EPIC", "ENERGY", "SOLITUDE"],
+  "notes": "Each mode gets 8-15 seconds of screen time. BEAUTY bookends the reel for a clean open/close."
+}

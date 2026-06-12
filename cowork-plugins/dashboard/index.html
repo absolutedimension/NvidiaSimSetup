@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrigunAI Mission Control</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #14141f;
+    --surface2: #1c1c2e;
+    --border: #2a2a3e;
+    --text: #e0e0e8;
+    --text-dim: #8888a0;
+    --accent: #7c5cfc;
+    --accent-glow: rgba(124, 92, 252, 0.15);
+    --green: #34d399;
+    --green-dim: rgba(52, 211, 153, 0.15);
+    --yellow: #fbbf24;
+    --yellow-dim: rgba(251, 191, 36, 0.15);
+    --red: #f87171;
+    --red-dim: rgba(248, 113, 113, 0.15);
+    --blue: #60a5fa;
+    --blue-dim: rgba(96, 165, 250, 0.15);
+    --orange: #fb923c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  .header {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+  }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .logo {
+    width: 40px; height: 40px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: bold; color: white;
+  }
+  .header h1 { font-size: 20px; font-weight: 600; letter-spacing: -0.5px; }
+  .header .mission-tag {
+    font-size: 12px; color: var(--accent);
+    background: var(--accent-glow);
+    padding: 4px 10px; border-radius: 12px;
+    border: 1px solid rgba(124, 92, 252, 0.3);
+  }
+  .header-right { display: flex; align-items: center; gap: 12px; }
+  .ec2-status {
+    font-size: 12px; color: var(--text-dim);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .ec2-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green);
+  }
+
+  /* Main layout */
+  .main { padding: 24px 32px; display: flex; flex-direction: column; gap: 24px; }
+
+  /* Phase pipeline */
+  .section-title {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--text-dim); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  .pipeline {
+    display: flex; align-items: center; gap: 0;
+    overflow-x: auto; padding: 8px 0;
+  }
+  .phase-node {
+    display: flex; flex-direction: column; align-items: center;
+    min-width: 100px; cursor: pointer; position: relative;
+  }
+  .phase-circle {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  .phase-node.done .phase-circle {
+    border-color: var(--green); background: var(--green-dim); color: var(--green);
+    box-shadow: 0 0 12px rgba(52, 211, 153, 0.2);
+  }
+  .phase-node.in_progress .phase-circle {
+    border-color: var(--yellow); background: var(--yellow-dim); color: var(--yellow);
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.2);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .phase-node.pending .phase-circle {
+    border-color: var(--border); color: var(--text-dim);
+  }
+  .phase-label {
+    margin-top: 8px; font-size: 10px; color: var(--text-dim);
+    text-align: center; max-width: 90px; line-height: 1.3;
+  }
+  .phase-connector {
+    width: 40px; height: 2px; background: var(--border);
+    flex-shrink: 0;
+  }
+  .phase-connector.done { background: var(--green); }
+  .subjective-badge {
+    position: absolute; top: -6px; right: -6px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--orange); color: white;
+    font-size: 8px; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; z-index: 2;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 12px rgba(251, 191, 36, 0.2); }
+    50% { box-shadow: 0 0 24px rgba(251, 191, 36, 0.4); }
+  }
+
+  /* Phase detail panel */
+  .phase-detail {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: none;
+  }
+  .phase-detail.visible { display: block; }
+  .phase-detail h3 { font-size: 15px; margin-bottom: 8px; }
+  .phase-detail .gate {
+    font-size: 12px; color: var(--text-dim);
+    padding: 8px 12px; background: var(--surface2);
+    border-radius: 8px; margin-top: 8px;
+    border-left: 3px solid var(--accent);
+  }
+  .phase-detail .gate.subjective { border-left-color: var(--orange); }
+  .phase-detail .notes {
+    font-size: 12px; color: var(--text-dim); margin-top: 8px; font-style: italic;
+  }
+  .status-chip {
+    display: inline-block; font-size: 11px; padding: 2px 8px;
+    border-radius: 8px; font-weight: 600; margin-left: 8px;
+  }
+  .status-chip.done { background: var(--green-dim); color: var(--green); }
+  .status-chip.in_progress { background: var(--yellow-dim); color: var(--yellow); }
+  .status-chip.pending { background: rgba(136,136,160,0.15); color: var(--text-dim); }
+
+  /* Agent cards */
+  .agents-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  .agent-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+  .agent-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px var(--accent-glow);
+  }
+  .agent-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+  }
+  .agent-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .agent-icon.training { background: var(--blue-dim); }
+  .agent-icon.orchestrator { background: var(--accent-glow); }
+  .agent-icon.vr { background: var(--green-dim); }
+  .agent-name { font-size: 14px; font-weight: 600; }
+  .agent-role { font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+  .agent-capabilities {
+    list-style: none; margin-top: 12px;
+  }
+  .agent-capabilities li {
+    font-size: 11px; color: var(--text-dim); padding: 3px 0;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .agent-capabilities li::before {
+    content: '>'; color: var(--accent); font-weight: bold;
+  }
+  .agent-actions { margin-top: 16px; display: flex; gap: 8px; }
+  .btn {
+    padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface2); color: var(--text); font-size: 11px;
+    font-family: inherit; cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .btn:hover { border-color: var(--accent); background: var(--accent-glow); }
+  .btn.primary {
+    background: var(--accent); border-color: var(--accent); color: white;
+  }
+  .btn.primary:hover { background: #6b4ce0; }
+
+  /* Handoff & artifacts section */
+  .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .panel h3 {
+    font-size: 13px; font-weight: 600; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .file-list { list-style: none; }
+  .file-list li {
+    font-size: 11px; padding: 6px 10px;
+    border-radius: 6px; margin-bottom: 4px;
+    display: flex; align-items: center; gap: 8px;
+    background: var(--surface2);
+  }
+  .file-list li .file-icon { opacity: 0.5; }
+  .file-list li .file-name { flex: 1; }
+  .file-list li .file-meta { color: var(--text-dim); font-size: 10px; }
+
+  .empty-state {
+    font-size: 12px; color: var(--text-dim); text-align: center;
+    padding: 20px; font-style: italic;
+  }
+
+  /* Quick commands */
+  .commands-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex; align-items: center; gap: 12px;
+    flex-wrap: wrap;
+  }
+  .commands-bar .label {
+    font-size: 11px; color: var(--text-dim); white-space: nowrap;
+  }
+  .cmd-chip {
+    font-size: 11px; padding: 5px 12px; border-radius: 6px;
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--accent); cursor: pointer; font-family: inherit;
+    transition: all 0.2s;
+  }
+  .cmd-chip:hover { border-color: var(--accent); background: var(--accent-glow); }
+  .cmd-chip.copied {
+    border-color: var(--green); color: var(--green); background: var(--green-dim);
+  }
+
+  /* Toast */
+  .toast {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--green); color: white; padding: 10px 20px;
+    border-radius: 8px; font-size: 12px; font-family: inherit;
+    opacity: 0; transform: translateY(10px);
+    transition: all 0.3s ease; pointer-events: none;
+    z-index: 100;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .agents-grid { grid-template-columns: 1fr; }
+    .bottom-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">T</div>
+    <div>
+      <h1>TrigunAI Mission Control</h1>
+      <span class="mission-tag" id="mission-name">Loading...</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="ec2-status">
+      <div class="ec2-dot" id="ec2-dot"></div>
+      <span id="ec2-label">EC2: checking...</span>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- Phase Pipeline -->
+  <div>
+    <div class="section-title">Mission Pipeline</div>
+    <div class="pipeline" id="pipeline"></div>
+    <div class="phase-detail" id="phase-detail"></div>
+  </div>
+
+  <!-- Agent Cards -->
+  <div>
+    <div class="section-title">Agents</div>
+    <div class="agents-grid">
+
+      <div class="agent-card">
+        <div class="agent-header">
+          <div class="agent-icon orchestrator">&#9881;</div>
+          <div>
+            <div class="agent-name">Orchestrator</div>
+            <div class="agent-role">Handoff generator + phase tracker</div>
+          </div>
+        </div>
+        <ul class="agent-capabilities">
+          <li>Generate Training &harr; VR handoff docs</li>
+          <li>Evaluate phase gate readiness</li>
+          <li>Enforce subjective approval checkpoints</li>
+          <li>Track artifacts and delivery contracts</li>
+        </ul>
+        <div class="agent-actions">
+          <button class="btn primary" onclick="launchAgent('trigunai-orchestrator')">Open Chat</button>
+          <button class="btn" onclick="copyCmd('/skill trigunai-orchestrator')">Copy Command</button>
+        </div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header">
+          <div class="agent-icon training">&#9889;</div>
+          <div>
+            <div class="agent-name">Training Agent</div>
+            <div class="agent-role">Mac + EC2 &middot; Isaac Sim + OVRTX</div>
+          </div>
+        </div>
+        <ul class="agent-capabilities">
+          <li>Mocap parsing (pose.bin v1/v2)</li>
+          <li>USDA baking + OVRTX rendering</li>
+          <li>PPO training + reward design</li>
+          <li>GLB export + ONNX distillation</li>
+        </ul>
+        <div class="agent-actions">
+          <button class="btn primary" onclick="launchAgent('trigunai-training')">Open Chat</button>
+          <button class="btn" onclick="copyCmd('/skill trigunai-training')">Copy Command</button>
+        </div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header">
+          <div class="agent-icon vr">&#127918;</div>
+          <div>
+            <div class="agent-name">VR Agent</div>
+            <div class="agent-role">Windows &middot; Unity + Quest 3</div>
+          </div>
+        </div>
+        <ul class="agent-capabilities">
+          <li>GLB integration in GurulokInnerJourney</li>
+          <li>Mocap recording (84 joints @ 60Hz)</li>
+          <li>Quest APK builds + Meta alpha uploads</li>
+          <li>Subjective VR testing + feedback</li>
+        </ul>
+        <div class="agent-actions">
+          <button class="btn primary" onclick="launchAgent('trigunai-vr')">Open Chat</button>
+          <button class="btn" onclick="copyCmd('/skill trigunai-vr')">Copy Command</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Quick Commands -->
+  <div>
+    <div class="section-title">Quick Commands (click to copy)</div>
+    <div class="commands-bar">
+      <span class="label">Orchestrator:</span>
+      <button class="cmd-chip" onclick="copyCmd('what phase are we in')">what phase are we in</button>
+      <button class="cmd-chip" onclick="copyCmd('hand off to VR')">hand off to VR</button>
+      <button class="cmd-chip" onclick="copyCmd('is A2 ready to ship')">is A2 ready?</button>
+      <span class="label">Training:</span>
+      <button class="cmd-chip" onclick="copyCmd('render the 25s dancer orbital MP4')">render MP4</button>
+      <button class="cmd-chip" onclick="copyCmd('parse the latest mocap session')">parse mocap</button>
+      <button class="cmd-chip" onclick="copyCmd('check EC2 services health')">EC2 health</button>
+      <span class="label">VR:</span>
+      <button class="cmd-chip" onclick="copyCmd('integrate trained_cinematographer_v1.glb into Unity')">integrate GLB</button>
+      <button class="cmd-chip" onclick="copyCmd('record 5 new mocap sessions for variety')">record mocap</button>
+    </div>
+  </div>
+
+  <!-- Bottom grid: Handoffs + Artifacts -->
+  <div class="bottom-grid">
+    <div class="panel">
+      <h3>&#128196; Recent Handoffs</h3>
+      <ul class="file-list" id="handoff-list">
+        <li>
+          <span class="file-icon">&#128195;</span>
+          <span class="file-name">CINEMATOGRAPHY_HANDOFF.md</span>
+          <span class="file-meta">repo root</span>
+        </li>
+        <li>
+          <span class="file-icon">&#128195;</span>
+          <span class="file-name">TRAINING_SIDE_BRIEF.md</span>
+          <span class="file-meta">cinematography/</span>
+        </li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>&#128230; Artifacts</h3>
+      <ul class="file-list" id="artifact-list">
+        <li>
+          <span class="file-icon">&#127916;</span>
+          <span class="file-name">dancer_orbital_25s.usda</span>
+          <span class="file-meta">1.8 MB &middot; EC2</span>
+        </li>
+        <li>
+          <span class="file-icon">&#128640;</span>
+          <span class="file-name">parse_pose_bin.py</span>
+          <span class="file-meta">cinematography/</span>
+        </li>
+        <li>
+          <span class="file-icon">&#128640;</span>
+          <span class="file-name">bake_dancer_usda.py</span>
+          <span class="file-meta">cinematography/</span>
+        </li>
+        <li>
+          <span class="file-icon">&#128640;</span>
+          <span class="file-name">render_dancer_mp4.py</span>
+          <span class="file-meta">cinematography/</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Coordinate Systems reference -->
+  <div class="panel">
+    <h3>&#127760; Coordinate Systems</h3>
+    <table style="width:100%; font-size:11px; border-collapse:collapse; margin-top:8px;">
+      <thead>
+        <tr style="color:var(--text-dim); text-align:left; border-bottom:1px solid var(--border);">
+          <th style="padding:6px;">System</th>
+          <th style="padding:6px;">Hand</th>
+          <th style="padding:6px;">Up</th>
+          <th style="padding:6px;">Position</th>
+          <th style="padding:6px;">Quaternion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:6px;">Unity (mocap)</td><td>Left</td><td>Y</td><td>identity</td><td>(x,y,z,w)</td></tr>
+        <tr style="background:var(--surface2);"><td style="padding:6px;">USD (OVRTX)</td><td>Right</td><td>Y</td><td>Z-negate</td><td>(x,y,-z,w)</td></tr>
+        <tr><td style="padding:6px;">Isaac Sim (RL)</td><td>Right</td><td>Z</td><td>Y&harr;Z swap</td><td>(x,z,y,w)</td></tr>
+        <tr style="background:var(--surface2);"><td style="padding:6px;">glTF (delivery)</td><td>Right</td><td>Y</td><td>= USD</td><td>= USD</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+  // Phase data — loaded from status.json
+  let statusData = null;
+
+  async function loadStatus() {
+    try {
+      const resp = await fetch('status.json');
+      statusData = resp.ok ? await resp.json() : null;
+    } catch (e) {
+      statusData = null;
+    }
+    if (statusData) render();
+  }
+
+  function render() {
+    // Mission name
+    document.getElementById('mission-name').textContent = statusData.mission;
+
+    // EC2 status
+    const ec2 = statusData.ec2;
+    const dot = document.getElementById('ec2-dot');
+    const label = document.getElementById('ec2-label');
+    dot.style.background = ec2.status === 'running' ? 'var(--green)' : 'var(--red)';
+    dot.style.boxShadow = ec2.status === 'running' ? '0 0 6px var(--green)' : '0 0 6px var(--red)';
+    label.textContent = `EC2: ${ec2.status} (${ec2.last_known_ip})`;
+
+    // Pipeline
+    const pipeline = document.getElementById('pipeline');
+    pipeline.innerHTML = '';
+    const phaseKeys = Object.keys(statusData.phases);
+    phaseKeys.forEach((key, i) => {
+      const p = statusData.phases[key];
+      // Node
+      const node = document.createElement('div');
+      node.className = `phase-node ${p.status}`;
+      node.onclick = () => showPhaseDetail(key, p);
+
+      const circle = document.createElement('div');
+      circle.className = 'phase-circle';
+      circle.textContent = key;
+      node.appendChild(circle);
+
+      if (p.subjective) {
+        const badge = document.createElement('div');
+        badge.className = 'subjective-badge';
+        badge.textContent = 'S';
+        badge.title = 'Subjective approval required';
+        circle.appendChild(badge);
+      }
+
+      const label = document.createElement('div');
+      label.className = 'phase-label';
+      label.textContent = p.name;
+      node.appendChild(label);
+
+      pipeline.appendChild(node);
+
+      // Connector (except last)
+      if (i < phaseKeys.length - 1) {
+        const conn = document.createElement('div');
+        conn.className = `phase-connector ${p.status === 'done' ? 'done' : ''}`;
+        pipeline.appendChild(conn);
+      }
+    });
+  }
+
+  function showPhaseDetail(key, phase) {
+    const detail = document.getElementById('phase-detail');
+    const statusClass = phase.status;
+    const statusLabel = phase.status.replace('_', ' ');
+    detail.innerHTML = `
+      <h3>${key}: ${phase.name}
+        <span class="status-chip ${statusClass}">${statusLabel}</span>
+      </h3>
+      <div class="gate ${phase.subjective ? 'subjective' : ''}">
+        <strong>Gate:</strong> ${phase.gate}
+        ${phase.subjective ? '<br><em style="color:var(--orange);">Requires explicit user approval</em>' : ''}
+      </div>
+      ${phase.notes ? `<div class="notes">${phase.notes}</div>` : ''}
+      <div style="margin-top:12px; font-size:11px; color:var(--text-dim);">
+        Owner: <strong>${phase.owner}</strong>
+      </div>
+    `;
+    detail.classList.add('visible');
+  }
+
+  // Agent launcher — opens terminal with claude command
+  function launchAgent(skillName) {
+    const cmd = `claude --skill ${skillName}`;
+    // Try to open terminal (macOS)
+    const appleScript = `tell application "Terminal" to do script "cd ${escapeShell('/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup')} && claude"`;
+    // Fall back to copying command
+    copyCmd(`/skill ${skillName}`);
+    showToast(`Copied "/skill ${skillName}" — paste it in your Claude Code terminal`);
+  }
+
+  function escapeShell(s) { return s.replace(/'/g, "'\\''"); }
+
+  // Copy to clipboard
+  function copyCmd(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast(`Copied: ${text}`);
+    });
+    // Visual feedback on the button
+    if (event && event.target) {
+      const btn = event.target;
+      btn.classList.add('copied');
+      setTimeout(() => btn.classList.remove('copied'), 1500);
+    }
+  }
+
+  // Toast notification
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  }
+
+  // Init
+  loadStatus();
+  // Auto-refresh every 30s
+  setInterval(loadStatus, 30000);
+</script>
+
+</body>
+</html>

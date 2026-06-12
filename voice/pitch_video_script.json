@@ -1,0 +1,13 @@
+{
+  "description": "Mode schedule for 30-second pitch video, timed to narration content",
+  "total_duration_seconds": 30,
+  "commands": [
+    {"time": 0.0,  "mode": "BEAUTY",   "display": "BEAUTY",   "narration": "Trigunaï Innovations... deep-tech company"},
+    {"time": 5.0,  "mode": "HERO",     "display": "HERO",     "narration": "connective tissue of physical AI"},
+    {"time": 10.0, "mode": "EPIC",     "display": "EPIC",     "narration": "train autonomous camera policies"},
+    {"time": 15.0, "mode": "ENERGY",   "display": "ENERGY",   "narration": "deploy to real hardware"},
+    {"time": 19.0, "mode": "INTIMATE", "display": "INTIMATE", "narration": "dance, performance, live event"},
+    {"time": 24.0, "mode": "HERO",     "display": "HERO",     "narration": "creative pipelines and drone hardware"}
+  ],
+  "mode_order": ["BEAUTY", "HERO", "EPIC", "ENERGY", "INTIMATE", "HERO"]
+}

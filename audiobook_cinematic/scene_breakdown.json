@@ -1,0 +1,150 @@
+{
+  "title": "The Sound of Resonance",
+  "emotional_arc": "A journey of self-discovery and artistic awakening through the power of music.",
+  "total_duration": 507.4,
+  "num_scenes": 14,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "start_time": 2.5,
+      "end_time": 10.5,
+      "duration": 8.0,
+      "emotion": "reflective",
+      "mode": "BEAUTY",
+      "dialogue_excerpt": "int ancient music conservatory dep dust motes float through shafts of amber light...",
+      "shot_note": "Wide shot capturing the serene beauty of the conservatory, amber light filtering through dust."
+    },
+    {
+      "scene_number": 2,
+      "start_time": 10.5,
+      "end_time": 16.2,
+      "duration": 5.7,
+      "emotion": "reflective",
+      "mode": "BEAUTY",
+      "dialogue_excerpt": "shelves of crumbling manuscripts line the walls a massive pipe organ dominates...",
+      "shot_note": "Close-up on the manuscripts, then a slow pan to the imposing pipe organ."
+    },
+    {
+      "scene_number": 3,
+      "start_time": 16.2,
+      "end_time": 26.3,
+      "duration": 10.1,
+      "emotion": "tense",
+      "mode": "INTIMATE",
+      "dialogue_excerpt": "professor miriam voss sixties sharp eyed and severe paces before a chalkboard...",
+      "shot_note": "Tight framing on Professor Miriam as she paces, her expression serious."
+    },
+    {
+      "scene_number": 4,
+      "start_time": 26.3,
+      "end_time": 40.2,
+      "duration": 13.9,
+      "emotion": "tense",
+      "mode": "INTIMATE",
+      "dialogue_excerpt": "skeptical drums his fingers on his desk lena 20 and skeptical drums his fingers...",
+      "shot_note": "Close-ups on the students' reactions, capturing their skepticism and tension."
+    },
+    {
+      "scene_number": 5,
+      "start_time": 40.2,
+      "end_time": 53.5,
+      "duration": 13.3,
+      "emotion": "curious",
+      "mode": "INTIMATE",
+      "dialogue_excerpt": "most of you enrolled in this conservatory to learn scales harmonics perhaps...",
+      "shot_note": "Medium shot of Miriam addressing the class, her tone both challenging and inviting."
+    },
+    {
+      "scene_number": 6,
+      "start_time": 53.5,
+      "end_time": 67.6,
+      "duration": 14.1,
+      "emotion": "mysterious",
+      "mode": "EPIC",
+      "dialogue_excerpt": "not a yoda it translates loosely from the ancient sanskrit tradition...",
+      "shot_note": "Wide shot as the camera pulls back, revealing the grandeur of the conservatory."
+    },
+    {
+      "scene_number": 7,
+      "start_time": 67.6,
+      "end_time": 81.6,
+      "duration": 14.0,
+      "emotion": "mysterious",
+      "mode": "EPIC",
+      "dialogue_excerpt": "a legend a being said to exist not in flesh but in resonance...",
+      "shot_note": "A sweeping shot of the room, emphasizing the mystical atmosphere."
+    },
+    {
+      "scene_number": 8,
+      "start_time": 81.6,
+      "end_time": 130.6,
+      "duration": 49.0,
+      "emotion": "tense",
+      "mode": "ENERGY",
+      "dialogue_excerpt": "to summon it one must play the brahma sequence perfectly without hesitation...",
+      "shot_note": "Fast cuts between the students' anxious faces and the chalkboard as the stakes rise."
+    },
+    {
+      "scene_number": 9,
+      "start_time": 130.6,
+      "end_time": 145.1,
+      "duration": 14.5,
+      "emotion": "reflective",
+      "mode": "SOLITUDE",
+      "dialogue_excerpt": "int ancient music conservatory practice hall night later the grand pipe organ...",
+      "shot_note": "A still shot of the organ in darkness, creating an atmosphere of solitude."
+    },
+    {
+      "scene_number": 10,
+      "start_time": 145.1,
+      "end_time": 178.9,
+      "duration": 33.8,
+      "emotion": "tender",
+      "mode": "INTIMATE",
+      "dialogue_excerpt": "you're really going to try it someone has to theo miriam said said miriam said...",
+      "shot_note": "Close-ups of Theo and Lena as they share a moment of vulnerability."
+    },
+    {
+      "scene_number": 11,
+      "start_time": 178.9,
+      "end_time": 304.9,
+      "duration": 126.0,
+      "emotion": "intense",
+      "mode": "HERO",
+      "dialogue_excerpt": "the first notes rise low trembling impossibly resonant not just heard but felt...",
+      "shot_note": "Dynamic camera movements capturing the intensity of Theo's performance."
+    },
+    {
+      "scene_number": 12,
+      "start_time": 304.9,
+      "end_time": 388.8,
+      "duration": 83.9,
+      "emotion": "revelatory",
+      "mode": "HERO",
+      "dialogue_excerpt": "i heard everything what do you mean everything every piece of music...",
+      "shot_note": "Grand shots of the characters' reactions as Theo reveals his transformation."
+    },
+    {
+      "scene_number": 13,
+      "start_time": 388.8,
+      "end_time": 464.6,
+      "duration": 75.8,
+      "emotion": "reflective",
+      "mode": "INTIMATE",
+      "dialogue_excerpt": "what happens now theo stands he picks up the manuscript he holds it for a moment...",
+      "shot_note": "Close-ups on Theo's contemplative expressions as he decides his next steps."
+    },
+    {
+      "scene_number": 14,
+      "start_time": 464.6,
+      "end_time": 507.4,
+      "duration": 42.8,
+      "emotion": "peaceful",
+      "mode": "SOLITUDE",
+      "dialogue_excerpt": "in the darkness the instrument seems to very faintly as if still remembering...",
+      "shot_note": "Slow pull away from the organ, leaving a lingering sense of peace and reflection."
+    }
+  ],
+  "mode_schedule": "125:BEAUTY,525:BEAUTY,810:INTIMATE,1315:INTIMATE,2010:INTIMATE,2675:EPIC,3379:EPIC,4079:ENERGY,6530:SOLITUDE,7255:INTIMATE,8945:HERO,15244:HERO,19440:INTIMATE,23230:SOLITUDE",
+  "fps": 50.0
+}

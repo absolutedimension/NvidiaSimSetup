@@ -1,0 +1,17 @@
+{
+  "name": "manhattan_times_sq",
+  "center_lat": 40.758,
+  "center_lon": -73.9855,
+  "radius_m": 500.0,
+  "bbox": {
+    "south": 40.753508444125046,
+    "west": -73.99142965152078,
+    "north": 40.76249155587496,
+    "east": -73.97957034847923
+  },
+  "buildings_written": 866,
+  "height_min_m": 2.6,
+  "height_max_m": 366.0,
+  "height_mean_m": 28.26717090069284,
+  "usd_path": "/home/ubuntu/assets/cities/manhattan_times_sq/city.usd"
+}

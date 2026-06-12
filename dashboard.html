@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrigunAI Course Launch — July 18</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0f; color: #e0e0e0; min-height: 100vh; }
+
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 24px 32px; border-bottom: 1px solid #2a2a4a; position: sticky; top: 0; z-index: 100; }
+  .header h1 { font-size: 22px; font-weight: 700; color: #fff; }
+  .header-sub { color: #888; font-size: 13px; margin-top: 4px; }
+  .header-stats { display: flex; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .stat-value { font-size: 28px; font-weight: 800; }
+  .stat-value.green { color: #4ade80; }
+  .stat-value.amber { color: #fbbf24; }
+  .stat-value.red { color: #f87171; }
+  .stat-value.blue { color: #60a5fa; }
+  .stat-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+  .progress-bar-outer { width: 100%; background: #1e1e2e; border-radius: 8px; height: 10px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-inner { height: 100%; border-radius: 8px; transition: width 0.5s ease; }
+
+  .timeline { display: flex; gap: 0; margin: 20px 32px 0; overflow-x: auto; padding-bottom: 8px; }
+  .week-pill { flex: 1; min-width: 80px; text-align: center; padding: 8px 12px; font-size: 12px; font-weight: 600; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; color: #888; }
+  .week-pill:hover { color: #fff; background: #1a1a2e; }
+  .week-pill.active { color: #60a5fa; border-bottom-color: #60a5fa; }
+  .week-pill.current-week { background: #1a1a2e; border-radius: 8px 8px 0 0; }
+  .week-pill .week-progress { font-size: 10px; color: #666; margin-top: 2px; }
+
+  .main { padding: 20px 32px 80px; }
+
+  .today-banner { background: linear-gradient(135deg, #1e3a5f 0%, #1a2744 100%); border: 1px solid #2a4a6a; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .today-banner h2 { font-size: 16px; color: #60a5fa; margin-bottom: 4px; }
+  .today-banner .date { font-size: 13px; color: #888; }
+
+  .day-group { margin-bottom: 20px; }
+  .day-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; padding: 8px 0; }
+  .day-num { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; background: #1e1e2e; color: #888; flex-shrink: 0; }
+  .day-num.today { background: #2563eb; color: #fff; box-shadow: 0 0 12px rgba(37,99,235,0.4); }
+  .day-num.done { background: #166534; color: #4ade80; }
+  .day-num.future { background: #1e1e2e; color: #555; }
+  .day-date { font-size: 13px; color: #888; }
+  .day-date.today { color: #60a5fa; font-weight: 600; }
+
+  .task { display: flex; align-items: flex-start; gap: 12px; padding: 10px 16px; margin-bottom: 4px; border-radius: 8px; cursor: pointer; transition: all 0.15s; background: #12121a; border: 1px solid #1e1e2e; }
+  .task:hover { background: #1a1a28; border-color: #2a2a4a; }
+  .task.completed { opacity: 0.5; }
+  .task.completed .task-text { text-decoration: line-through; color: #666; }
+
+  .checkbox { width: 22px; height: 22px; border-radius: 6px; border: 2px solid #444; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; transition: all 0.15s; }
+  .checkbox.checked { background: #166534; border-color: #4ade80; }
+  .checkbox.checked::after { content: "\2713"; color: #4ade80; font-size: 14px; font-weight: 700; }
+
+  .task-content { flex: 1; }
+  .task-text { font-size: 14px; line-height: 1.5; }
+  .task-meta { display: flex; gap: 8px; margin-top: 4px; }
+  .tag { font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .tag-A { background: #1e3a5f; color: #60a5fa; }
+  .tag-B { background: #3b1f4e; color: #c084fc; }
+  .tag-C { background: #1f3d1f; color: #4ade80; }
+  .tag-hours { background: #2a2a1a; color: #fbbf24; }
+
+  .gate { background: linear-gradient(135deg, #2a1a0a 0%, #1a1208 100%); border: 1px solid #5a3a1a; border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+  .gate h3 { color: #fbbf24; font-size: 14px; margin-bottom: 8px; }
+  .gate-items { list-style: none; }
+  .gate-items li { font-size: 13px; color: #ccc; padding: 4px 0; padding-left: 20px; position: relative; }
+  .gate-items li::before { content: "○"; position: absolute; left: 0; color: #fbbf24; }
+  .gate-items li.gate-passed::before { content: "●"; color: #4ade80; }
+
+  .phase-divider { text-align: center; padding: 24px 0; margin: 16px 0; border-top: 1px solid #1e1e2e; }
+  .phase-divider span { background: #0a0a0f; padding: 0 16px; color: #fbbf24; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #2a2a4a; background: transparent; color: #888; font-size: 12px; cursor: pointer; transition: all 0.15s; }
+  .filter-btn:hover { border-color: #60a5fa; color: #60a5fa; }
+  .filter-btn.active { background: #1e3a5f; border-color: #60a5fa; color: #60a5fa; }
+
+  @media (max-width: 600px) {
+    .header { padding: 16px; }
+    .main { padding: 16px 16px 80px; }
+    .header-stats { gap: 16px; }
+    .stat-value { font-size: 22px; }
+    .timeline { margin: 16px 16px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Course Launch Dashboard</h1>
+  <div class="header-sub">Build & Ship Your First VR/MR App — July 18 Launch</div>
+  <div class="header-stats">
+    <div class="stat"><div class="stat-value blue" id="days-left">43</div><div class="stat-label">Days Left</div></div>
+    <div class="stat"><div class="stat-value green" id="tasks-done">0</div><div class="stat-label">Done</div></div>
+    <div class="stat"><div class="stat-value amber" id="tasks-total">0</div><div class="stat-label">Total</div></div>
+    <div class="stat"><div class="stat-value" id="pct-complete">0%</div><div class="stat-label">Complete</div></div>
+  </div>
+  <div class="progress-bar-outer"><div class="progress-bar-inner" id="progress-bar" style="width:0%; background: linear-gradient(90deg, #2563eb, #4ade80);"></div></div>
+</div>
+
+<div class="timeline" id="timeline"></div>
+
+<div class="main">
+  <div class="today-banner">
+    <h2 id="today-title">Today</h2>
+    <div class="date" id="today-date"></div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="today">Today</button>
+    <button class="filter-btn" data-filter="A">Course Content</button>
+    <button class="filter-btn" data-filter="B">VR Classroom</button>
+    <button class="filter-btn" data-filter="C">Marketing</button>
+    <button class="filter-btn" data-filter="incomplete">Remaining</button>
+  </div>
+
+  <div id="tasks-container"></div>
+</div>
+
+<script>
+const LAUNCH_DATE = new Date(2026, 6, 18); // July 18, 2026
+const START_DATE  = new Date(2026, 5, 5);  // June 5, 2026
+
+const TASKS = [
+  // PHASE 1: DESIGN — Week 1
+  { day:1, date:"Thu Jun 5",  track:"A", text:"Pick ONE course. Research Udemy/Coursera competition. Document unique angle.", deliverable:"COURSE_SELECTION.md", hours:4, week:1, phase:"Design" },
+  { day:1, date:"Thu Jun 5",  track:"A", text:"Define the student persona. Who are they? What job? 3 concrete outcomes.", deliverable:"Student persona doc", hours:2, week:1, phase:"Design" },
+  { day:2, date:"Fri Jun 6",  track:"A", text:"Module breakdown: 11 modules with titles, descriptions, learning outcomes, estimated lengths. Includes AI coding agent workflow (Module 2) as core differentiator.", deliverable:"COURSE_OUTLINE.md", hours:4, week:1, phase:"Design" },
+  { day:2, date:"Fri Jun 6",  track:"C", text:"Set up Udemy instructor account. Understand requirements (intro video, course image, min length, pricing).", deliverable:"Udemy account created", hours:2, week:1, phase:"Design" },
+  { day:3, date:"Sat Jun 7",  track:"A", text:"Script Module 1 in full — spoken word + screen plan. This becomes YouTube teaser.", deliverable:"Module 1 script", hours:5, week:1, phase:"Design" },
+  { day:4, date:"Sun Jun 8",  track:"A", text:"Script Modules 2-3.", deliverable:"Module 2-3 scripts", hours:5, week:1, phase:"Design" },
+  { day:5, date:"Mon Jun 9",  track:"A", text:"Script Modules 4-5.", deliverable:"Module 4-5 scripts", hours:5, week:1, phase:"Design" },
+  { day:5, date:"Mon Jun 9",  track:"C", text:"YouTube channel setup — name, banner, description, thumbnail template.", deliverable:"YouTube channel ready", hours:1, week:1, phase:"Design" },
+  { day:6, date:"Tue Jun 10", track:"A", text:"Script Modules 6-7.", deliverable:"Module 6-7 scripts", hours:5, week:1, phase:"Design" },
+  { day:7, date:"Wed Jun 11", track:"A", text:"Script Modules 8-10 (remaining).", deliverable:"All scripts complete", hours:5, week:1, phase:"Design" },
+  { day:7, date:"Wed Jun 11", track:"B", text:"VR classroom design sketch — feature list, MVP scope, what's post-launch.", deliverable:"VR_CLASSROOM_DESIGN.md", hours:2, week:1, phase:"Design" },
+
+  // Week 1 GATE
+  { day:7, date:"Wed Jun 11", track:"GATE", text:"WEEK 1 GATE: All modules scripted? Udemy account set up? YouTube ready? VR classroom scoped?", deliverable:"Gate check", hours:0, week:1, phase:"Design", isGate:true },
+
+  // PHASE 1: DESIGN — Week 2
+  { day:8,  date:"Thu Jun 12", track:"A", text:"Review all scripts end-to-end. Does the course flow? Cut redundancy.", deliverable:"Revised scripts", hours:3, week:2, phase:"Design" },
+  { day:8,  date:"Thu Jun 12", track:"A", text:"Prepare recording environment — screen recording (OBS), mic test, camera, slide templates.", deliverable:"30-sec test clip looks good", hours:3, week:2, phase:"Design" },
+  { day:9,  date:"Fri Jun 13", track:"A", text:"Record Module 1 — this is YouTube teaser + Udemy preview. Re-record if needed.", deliverable:"Module 1 raw video", hours:4, week:2, phase:"Produce" },
+  { day:9,  date:"Fri Jun 13", track:"A", text:"Edit Module 1 — trim, add screen captures, intro/outro.", deliverable:"Module 1 final video", hours:2, week:2, phase:"Produce" },
+  { day:10, date:"Sat Jun 14", track:"C", text:"Upload Module 1 to YouTube as free teaser. Optimize title, description, thumbnail, tags.", deliverable:"YouTube video #1 live", hours:2, week:2, phase:"Produce" },
+  { day:10, date:"Sat Jun 14", track:"A", text:"Record Modules 2-3.", deliverable:"Modules 2-3 raw video", hours:4, week:2, phase:"Produce" },
+  { day:11, date:"Sun Jun 15", track:"A", text:"Record Modules 4-5.", deliverable:"Modules 4-5 raw video", hours:4, week:2, phase:"Produce" },
+  { day:11, date:"Sun Jun 15", track:"B", text:"VR classroom: start building — Unity project, basic room, voice setup.", deliverable:"Unity project with VR room", hours:2, week:2, phase:"Produce" },
+  { day:12, date:"Mon Jun 16", track:"A", text:"Record Modules 6-7.", deliverable:"Modules 6-7 raw video", hours:4, week:2, phase:"Produce" },
+  { day:12, date:"Mon Jun 16", track:"A", text:"Edit Modules 2-4. Batch edit.", deliverable:"Modules 2-4 final video", hours:2, week:2, phase:"Produce" },
+  { day:13, date:"Tue Jun 17", track:"A", text:"Record Modules 8-10.", deliverable:"All modules recorded (raw)", hours:5, week:2, phase:"Produce" },
+  { day:13, date:"Tue Jun 17", track:"B", text:"VR classroom: screen share + voice + student positions.", deliverable:"Basic VR classroom", hours:3, week:2, phase:"Produce" },
+  { day:14, date:"Wed Jun 18", track:"A", text:"Edit Modules 5-10. Marathon edit session.", deliverable:"All modules edited & final", hours:6, week:2, phase:"Produce" },
+
+  // Week 2 GATE
+  { day:14, date:"Wed Jun 18", track:"GATE", text:"WEEK 2 GATE: All modules recorded + edited? YouTube #1 live? VR classroom building?", deliverable:"Gate check", hours:0, week:2, phase:"Produce", isGate:true },
+
+  // PHASE 2: PRODUCE + BUILD — Week 3
+  { day:15, date:"Thu Jun 19", track:"C", text:"Create Udemy course listing — title, description, what you'll learn, requirements, target audience, image.", deliverable:"Draft Udemy listing", hours:3, week:3, phase:"Produce" },
+  { day:15, date:"Thu Jun 19", track:"C", text:"Upload first 3 modules to Udemy.", deliverable:"3 modules on Udemy (draft)", hours:1, week:3, phase:"Produce" },
+  { day:16, date:"Fri Jun 20", track:"C", text:"Upload remaining modules to Udemy. Set pricing. Write promo copy.", deliverable:"All modules uploaded", hours:2, week:3, phase:"Produce" },
+  { day:16, date:"Fri Jun 20", track:"C", text:"Record Udemy intro video (2 min, face-to-camera, what students learn).", deliverable:"Udemy intro video", hours:2, week:3, phase:"Produce" },
+  { day:16, date:"Fri Jun 20", track:"B", text:"VR classroom: student join flow — link/code entry, Quest app update path.", deliverable:"Student entry working", hours:2, week:3, phase:"Produce" },
+  { day:17, date:"Sat Jun 21", track:"C", text:"YouTube video #2 — most \"wow\" module topic, 10-min free version, CTA to full course.", deliverable:"YouTube #2 live", hours:3, week:3, phase:"Produce" },
+  { day:17, date:"Sat Jun 21", track:"B", text:"VR classroom: presentation mode — slides/screen content visible to students.", deliverable:"Presentation mode working", hours:3, week:3, phase:"Produce" },
+  { day:18, date:"Sun Jun 22", track:"B", text:"VR classroom: self-test on two devices (teacher + student). Bug list.", deliverable:"Test report", hours:3, week:3, phase:"Produce" },
+  { day:18, date:"Sun Jun 22", track:"C", text:"Create course landing page (Notion/Carrd/trigunai.com). Description, price, enroll button.", deliverable:"Landing page live", hours:3, week:3, phase:"Produce" },
+  { day:19, date:"Mon Jun 23", track:"C", text:"Submit Udemy course for review (takes 2-5 business days — submit NOW for buffer).", deliverable:"Udemy submission confirmed", hours:1, week:3, phase:"Produce" },
+  { day:19, date:"Mon Jun 23", track:"B", text:"VR classroom: fix bugs from self-test.", deliverable:"Bugs fixed", hours:3, week:3, phase:"Produce" },
+  { day:19, date:"Mon Jun 23", track:"C", text:"Student acquisition research — 10 communities where target students hang out.", deliverable:"STUDENT_CHANNELS.md", hours:2, week:3, phase:"Produce" },
+  { day:20, date:"Tue Jun 24", track:"B", text:"VR classroom: polish + Quest APK build.", deliverable:"APK ready", hours:4, week:3, phase:"Produce" },
+  { day:20, date:"Tue Jun 24", track:"C", text:"Write 3 community posts (value-first, not salesy). Save for pre-enrollment week.", deliverable:"3 draft posts", hours:2, week:3, phase:"Produce" },
+  { day:21, date:"Wed Jun 25", track:"B", text:"VR classroom: test with 1 real person. 15-min live class simulation.", deliverable:"Live test passed", hours:3, week:3, phase:"Produce" },
+  { day:21, date:"Wed Jun 25", track:"C", text:"Create promo assets — thumbnails, social graphics, 30-sec video teaser.", deliverable:"5+ promo assets", hours:2, week:3, phase:"Produce" },
+
+  // Week 3 GATE
+  { day:21, date:"Wed Jun 25", track:"GATE", text:"WEEK 3 GATE: Udemy submitted? Landing page live? YouTube #2 live? VR classroom tested? 10 communities found?", deliverable:"Gate check", hours:0, week:3, phase:"Produce", isGate:true },
+
+  // PHASE 2 — Week 4
+  { day:22, date:"Thu Jun 26", track:"C", text:"Open pre-enrollment — early bird discount (20-30% off). Share on personal social.", deliverable:"Pre-enrollment live", hours:2, week:4, phase:"Sell" },
+  { day:22, date:"Thu Jun 26", track:"C", text:"Post in 3 communities (the drafted posts).", deliverable:"3 posts live", hours:2, week:4, phase:"Sell" },
+  { day:22, date:"Thu Jun 26", track:"A", text:"Record bonus content — Q&A video, common mistakes, resource list.", deliverable:"1-2 bonus videos", hours:3, week:4, phase:"Sell" },
+  { day:23, date:"Fri Jun 27", track:"C", text:"Post in 3 more communities. Different angle per community.", deliverable:"6 total posts", hours:2, week:4, phase:"Sell" },
+  { day:23, date:"Fri Jun 27", track:"C", text:"LinkedIn post — personal story + course announcement.", deliverable:"LinkedIn post live", hours:1, week:4, phase:"Sell" },
+  { day:23, date:"Fri Jun 27", track:"B", text:"VR classroom: final polish from Week 3 test feedback.", deliverable:"VR classroom release-ready", hours:3, week:4, phase:"Sell" },
+  { day:24, date:"Sat Jun 28", track:"C", text:"YouTube video #3 — \"5 things I wish I knew before building my first VR app.\"", deliverable:"YouTube #3 live", hours:3, week:4, phase:"Sell" },
+  { day:24, date:"Sat Jun 28", track:"C", text:"Check Udemy review status. If rejected, fix and resubmit same day.", deliverable:"Udemy status check", hours:1, week:4, phase:"Sell" },
+  { day:25, date:"Sun Jun 29", track:"C", text:"Post in remaining 4 communities.", deliverable:"All 10 communities reached", hours:2, week:4, phase:"Sell" },
+  { day:25, date:"Sun Jun 29", track:"C", text:"Email/DM outreach — 20+ personal messages to LinkedIn connections, college contacts.", deliverable:"20+ DMs sent", hours:3, week:4, phase:"Sell" },
+  { day:26, date:"Mon Jun 30", track:"C", text:"Check pre-enrollment numbers. Where did they come from? Double down on what works.", deliverable:"Pre-enrollment count + source analysis", hours:1, week:4, phase:"Sell" },
+  { day:26, date:"Mon Jun 30", track:"C", text:"Respond to ALL comments/questions on YouTube, posts, DMs.", deliverable:"All engagement responded to", hours:2, week:4, phase:"Sell" },
+  { day:27, date:"Tue Jul 1",  track:"C", text:"Second wave community posts — new angle: behind-the-scenes or student question.", deliverable:"3 new posts", hours:2, week:4, phase:"Sell" },
+  { day:28, date:"Wed Jul 2",  track:"C", text:"MID-POINT REVIEW. Count: pre-enrollments, YouTube views, engagement. Honest assessment.", deliverable:"MIDPOINT_REVIEW.md", hours:2, week:4, phase:"Sell" },
+
+  // Week 4 GATE
+  { day:28, date:"Wed Jul 2", track:"GATE", text:"WEEK 4 GATE (CRITICAL): Pre-enrollments >= 3? Udemy approved? YouTube views? VR classroom ready? If 0 pre-enrollments: STOP and diagnose.", deliverable:"Go/No-Go decision", hours:0, week:4, phase:"Sell", isGate:true },
+
+  // PHASE 3: LAUNCH — Week 5
+  { day:29, date:"Thu Jul 3",  track:"A", text:"Final QA — watch every module end-to-end. Fix audio issues, re-record weak sections.", deliverable:"All content finalized", hours:4, week:5, phase:"Launch" },
+  { day:30, date:"Fri Jul 4",  track:"C", text:"YouTube video #4 — \"What you'll build in this course.\" Show final project. Strong CTA.", deliverable:"YouTube #4 live", hours:3, week:5, phase:"Launch" },
+  { day:31, date:"Sat Jul 5",  track:"C", text:"Pre-enrollment reminder — \"7 days left for early bird pricing.\" Post everywhere.", deliverable:"Reminder posted", hours:3, week:5, phase:"Launch" },
+  { day:32, date:"Sun Jul 6",  track:"B", text:"VR classroom dry run — practice teaching Module 1 in VR. Time it.", deliverable:"Dry run complete", hours:3, week:5, phase:"Launch" },
+  { day:33, date:"Mon Jul 7",  track:"C", text:"Schedule first live VR class (July 19-20). Announce it.", deliverable:"Live class date announced", hours:2, week:5, phase:"Launch" },
+  { day:34, date:"Tue Jul 8",  track:"C", text:"Personal outreach round 2 — DM everyone who liked/commented. \"Course launches in 10 days.\"", deliverable:"Outreach round 2", hours:3, week:5, phase:"Launch" },
+  { day:35, date:"Wed Jul 9",  track:"C", text:"Pre-enrollment count check. This is the July 10 early warning.", deliverable:"Count check", hours:1, week:5, phase:"Launch" },
+
+  // Week 5 GATE
+  { day:35, date:"Wed Jul 9", track:"GATE", text:"WEEK 5 GATE: All content finalized? First VR class scheduled? Pre-enrollments >= 5? If 0: execute stop condition.", deliverable:"Gate check", hours:0, week:5, phase:"Launch", isGate:true },
+
+  // PHASE 3 — Week 6 (Launch Week)
+  { day:36, date:"Thu Jul 10", track:"C", text:"\"Last chance for early bird\" push. Verify Udemy is live. Update landing page.", deliverable:"Final pricing live", hours:3, week:6, phase:"Launch" },
+  { day:37, date:"Fri Jul 11", track:"C", text:"YouTube video #5 — launch countdown, full walkthrough of what students get.", deliverable:"YouTube #5 live", hours:3, week:6, phase:"Launch" },
+  { day:38, date:"Sat Jul 12", track:"C", text:"Prep launch-day social posts (schedule them). Draft launch email.", deliverable:"Launch posts scheduled", hours:2, week:6, phase:"Launch" },
+  { day:39, date:"Sun Jul 13", track:"-", text:"REST DAY. Seriously. You've been going 5 weeks straight.", deliverable:"Rest", hours:0, week:6, phase:"Launch" },
+  { day:40, date:"Mon Jul 14", track:"C", text:"Final check — all listings live, VR classroom APK ready, payment flow tested.", deliverable:"All systems go", hours:3, week:6, phase:"Launch" },
+  { day:41, date:"Tue Jul 15", track:"C", text:"\"3 days to launch\" teaser. Share beta tester feedback if available.", deliverable:"Teaser posted", hours:2, week:6, phase:"Launch" },
+  { day:42, date:"Wed Jul 16", track:"C", text:"Test entire student journey: find course -> enroll -> access content -> join VR classroom.", deliverable:"Journey tested", hours:3, week:6, phase:"Launch" },
+  { day:43, date:"Thu Jul 17", track:"C", text:"Pre-launch night. Everything ready. Schedule launch posts for tomorrow morning.", deliverable:"Posts scheduled", hours:1, week:6, phase:"Launch" },
+  { day:44, date:"Fri Jul 18", track:"C", text:"LAUNCH DAY. Post everywhere. Udemy live. Landing page live. YouTube launch video. First enrollments.", deliverable:"LAUNCHED", hours:4, week:6, phase:"Launch" },
+];
+
+// State
+let completedTasks = JSON.parse(localStorage.getItem('trigunai-launch-completed') || '{}');
+let activeWeek = null;
+let activeFilter = 'all';
+
+function getToday() {
+  return new Date();
+}
+
+function getDayNumber() {
+  const today = getToday();
+  const diff = Math.floor((today - START_DATE) / (1000 * 60 * 60 * 24)) + 1;
+  return Math.max(1, Math.min(diff, 44));
+}
+
+function getDaysLeft() {
+  const today = getToday();
+  const diff = Math.ceil((LAUNCH_DATE - today) / (1000 * 60 * 60 * 24));
+  return Math.max(0, diff);
+}
+
+function getCurrentWeek() {
+  const d = getDayNumber();
+  if (d <= 7) return 1;
+  if (d <= 14) return 2;
+  if (d <= 21) return 3;
+  if (d <= 28) return 4;
+  if (d <= 35) return 5;
+  return 6;
+}
+
+function toggleTask(idx) {
+  const key = `task-${idx}`;
+  if (completedTasks[key]) {
+    delete completedTasks[key];
+  } else {
+    completedTasks[key] = Date.now();
+  }
+  localStorage.setItem('trigunai-launch-completed', JSON.stringify(completedTasks));
+  render();
+}
+
+function setFilter(f) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
+  render();
+}
+
+function setWeek(w) {
+  activeWeek = (activeWeek === w) ? null : w;
+  render();
+}
+
+function render() {
+  const currentDay = getDayNumber();
+  const daysLeft = getDaysLeft();
+  const currentWeek = getCurrentWeek();
+
+  // Stats
+  const totalTasks = TASKS.filter(t => !t.isGate).length;
+  const doneTasks = TASKS.filter((t, i) => !t.isGate && completedTasks[`task-${i}`]).length;
+  const pct = totalTasks > 0 ? Math.round((doneTasks / totalTasks) * 100) : 0;
+
+  document.getElementById('days-left').textContent = daysLeft;
+  document.getElementById('days-left').className = `stat-value ${daysLeft > 20 ? 'blue' : daysLeft > 7 ? 'amber' : 'red'}`;
+  document.getElementById('tasks-done').textContent = doneTasks;
+  document.getElementById('tasks-total').textContent = totalTasks;
+  document.getElementById('pct-complete').textContent = pct + '%';
+  document.getElementById('pct-complete').className = `stat-value ${pct >= 80 ? 'green' : pct >= 40 ? 'amber' : 'blue'}`;
+  document.getElementById('progress-bar').style.width = pct + '%';
+
+  // Today banner
+  const today = getToday();
+  const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('today-title').textContent = `Day ${currentDay} of 44`;
+  document.getElementById('today-date').textContent = `${dayNames[today.getDay()]}, ${monthNames[today.getMonth()]} ${today.getDate()} — ${daysLeft} days to launch`;
+
+  // Timeline
+  const timelineEl = document.getElementById('timeline');
+  const weekLabels = ['Week 1\nDesign', 'Week 2\nRecord', 'Week 3\nBuild', 'Week 4\nSell', 'Week 5\nPush', 'Week 6\nLaunch'];
+  let timelineHtml = '';
+  for (let w = 1; w <= 6; w++) {
+    const weekTasks = TASKS.filter((t, i) => t.week === w && !t.isGate);
+    const weekDone = weekTasks.filter((t, i) => {
+      const origIdx = TASKS.indexOf(t);
+      return completedTasks[`task-${origIdx}`];
+    }).length;
+    const isActive = activeWeek === w;
+    const isCurrent = currentWeek === w;
+    timelineHtml += `<div class="week-pill ${isActive ? 'active' : ''} ${isCurrent ? 'current-week' : ''}" onclick="setWeek(${w})">
+      ${weekLabels[w-1].split('\n')[0]}<br><small>${weekLabels[w-1].split('\n')[1]}</small>
+      <div class="week-progress">${weekDone}/${weekTasks.length}</div>
+    </div>`;
+  }
+  timelineEl.innerHTML = timelineHtml;
+
+  // Tasks
+  const container = document.getElementById('tasks-container');
+  let html = '';
+  let lastDay = 0;
+  let lastPhase = '';
+
+  const filteredTasks = TASKS.map((t, i) => ({...t, idx: i})).filter(t => {
+    if (activeWeek && t.week !== activeWeek) return false;
+    if (activeFilter === 'today' && t.day !== currentDay) return false;
+    if (activeFilter === 'A' && t.track !== 'A') return false;
+    if (activeFilter === 'B' && t.track !== 'B') return false;
+    if (activeFilter === 'C' && t.track !== 'C') return false;
+    if (activeFilter === 'incomplete' && (completedTasks[`task-${t.idx}`] || t.isGate)) return false;
+    return true;
+  });
+
+  for (const t of filteredTasks) {
+    // Phase divider
+    if (t.phase !== lastPhase && !activeWeek) {
+      if (lastPhase) {
+        html += `<div class="phase-divider"><span>Phase: ${t.phase}</span></div>`;
+      }
+      lastPhase = t.phase;
+    }
+
+    // Day header
+    if (t.day !== lastDay) {
+      lastDay = t.day;
+      const dayClass = t.day === currentDay ? 'today' : (completedTasks[`task-${t.idx}`] || t.day < currentDay ? 'done' : 'future');
+      const dateClass = t.day === currentDay ? 'today' : '';
+      html += `<div class="day-header">
+        <div class="day-num ${dayClass}">${t.day}</div>
+        <div class="day-date ${dateClass}">${t.date}${t.day === currentDay ? ' — TODAY' : ''}</div>
+      </div>`;
+    }
+
+    if (t.isGate) {
+      html += `<div class="gate"><h3>GATE CHECK</h3><p style="font-size:13px;color:#ccc;">${t.text}</p></div>`;
+    } else {
+      const done = completedTasks[`task-${t.idx}`];
+      const trackColors = { A: 'tag-A', B: 'tag-B', C: 'tag-C', '-': '' };
+      const trackLabels = { A: 'Content', B: 'VR Build', C: 'Marketing', '-': 'Rest' };
+      html += `<div class="task ${done ? 'completed' : ''}" onclick="toggleTask(${t.idx})">
+        <div class="checkbox ${done ? 'checked' : ''}"></div>
+        <div class="task-content">
+          <div class="task-text">${t.text}</div>
+          <div class="task-meta">
+            <span class="tag ${trackColors[t.track] || ''}">${trackLabels[t.track] || t.track}</span>
+            ${t.hours ? `<span class="tag tag-hours">${t.hours}h</span>` : ''}
+            ${t.deliverable ? `<span style="font-size:11px;color:#666;">→ ${t.deliverable}</span>` : ''}
+          </div>
+        </div>
+      </div>`;
+    }
+  }
+
+  if (filteredTasks.length === 0) {
+    html = `<div style="text-align:center;padding:40px;color:#555;">No tasks match this filter.</div>`;
+  }
+
+  container.innerHTML = html;
+}
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => setFilter(btn.dataset.filter));
+});
+
+// Initial render
+render();
+</script>
+</body>
+</html>

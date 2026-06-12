@@ -1,0 +1,55 @@
+{
+  "version": "v5d_steady",
+  "obs_dim": 20,
+  "act_dim": 4,
+  "obs_layout": [
+    {"name": "lin_vel_b", "start": 0, "end": 3, "desc": "drone body-frame linear velocity"},
+    {"name": "ang_vel_b", "start": 3, "end": 6, "desc": "drone body-frame angular velocity"},
+    {"name": "gravity_b", "start": 6, "end": 9, "desc": "projected gravity in body frame"},
+    {"name": "rel_dancer_b", "start": 9, "end": 12, "desc": "relative performer position in body frame"},
+    {"name": "rel_vel_b", "start": 12, "end": 15, "desc": "performer velocity in body frame"},
+    {"name": "distance", "start": 15, "end": 16, "desc": "scalar distance to performer"},
+    {"name": "azimuth", "start": 16, "end": 17, "desc": "horizontal angle to performer (rad)"},
+    {"name": "elevation", "start": 17, "end": 18, "desc": "vertical angle to performer (rad)"},
+    {"name": "stillness_time", "start": 18, "end": 19, "desc": "seconds drone has been still, divided by 5.0 for normalization"},
+    {"name": "hold_quality", "start": 19, "end": 20, "desc": "current composition quality (0-1), r_look_at * (1-speed_clamped)"}
+  ],
+  "act_layout": [
+    {"name": "thrust", "idx": 0, "desc": "vertical thrust [-1,1] -> 0..thrust_max"},
+    {"name": "roll_moment", "idx": 1, "desc": "roll torque [-1,1] * moment_scale"},
+    {"name": "pitch_moment", "idx": 2, "desc": "pitch torque [-1,1] * moment_scale"},
+    {"name": "yaw_moment", "idx": 3, "desc": "yaw torque [-1,1] * moment_scale"}
+  ],
+  "physics": {
+    "robot_mass_kg": 0.28,
+    "thrust_to_weight": 3.6,
+    "moment_scale": 0.01,
+    "gravity": 9.81,
+    "sim_dt": 0.01,
+    "decimation": 2,
+    "policy_hz": 50,
+    "linear_damping": 2.0,
+    "angular_damping": 3.0,
+    "action_ema_alpha": 0.15
+  },
+  "coord_system": {
+    "training": "isaac_sim_z_up_right_hand",
+    "unity": "y_up_left_hand",
+    "transform_pos": "(x, y, z)_isaac -> (x, z, y)_unity",
+    "transform_quat": "(qw, qx, qy, qz)_isaac -> (qw, qx, qz, qy)_unity then negate qz for handedness"
+  },
+  "behavior": {
+    "mode": "STEADY",
+    "description": "Camera finds optimal filming position, holds absolutely still facing performer, then smoothly relocates to a new angle. 99.7% of frames below 0.3 m/s, median speed 0.029 m/s.",
+    "ideal_distance_m": 3.0,
+    "safety_radius_m": 1.5
+  },
+  "training": {
+    "epochs": 1000,
+    "best_reward": 17.41,
+    "envs": 4096,
+    "architecture": "MLP [128, 128] ELU",
+    "framework": "rl_games PPO"
+  },
+  "source_checkpoint": "/workspace/isaaclab/logs/rl_games/cinematographer_v5_steady/2026-05-26_06-54-54/nn/cinematographer_v5_steady.pth"
+}

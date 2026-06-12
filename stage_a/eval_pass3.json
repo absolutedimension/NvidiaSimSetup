@@ -1,0 +1,17 @@
+{
+  "checkpoint": "/workspace/isaaclab/stage_a_runs/full_run_4_64envs/checkpoints/best_agent.pt",
+  "num_envs": 64,
+  "episodes_completed": 64,
+  "successes": 0,
+  "collisions": 16,
+  "success_rate": 0.0,
+  "collision_rate": 0.25,
+  "mean_final_distance_m": 100.0,
+  "acceptance": {
+    "success_target": 0.8,
+    "collision_target": 0.1,
+    "success_pass": false,
+    "collision_pass": false,
+    "overall_pass": false
+  }
+}

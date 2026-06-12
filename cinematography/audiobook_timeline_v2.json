@@ -1,0 +1,188 @@
+{
+  "mp3": "/Users/deepakkumarrai/Downloads/audiobook (1).mp3",
+  "duration": 507.3649886621315,
+  "tempo": 135.99917763157896,
+  "fps": 50.0,
+  "num_segments": 8,
+  "schedule_string": "30:BEAUTY,6307:HERO,6534:EPIC,10653:ENERGY,10869:BEAUTY,24441:ENERGY,24672:SOLITUDE,25128:INTIMATE",
+  "schedule": [
+    {
+      "step": 30,
+      "time": 0.6,
+      "mode": "BEAUTY"
+    },
+    {
+      "step": 6307,
+      "time": 126.14,
+      "mode": "HERO"
+    },
+    {
+      "step": 6534,
+      "time": 130.68,
+      "mode": "EPIC"
+    },
+    {
+      "step": 10653,
+      "time": 213.06,
+      "mode": "ENERGY"
+    },
+    {
+      "step": 10869,
+      "time": 217.38,
+      "mode": "BEAUTY"
+    },
+    {
+      "step": 24441,
+      "time": 488.82,
+      "mode": "ENERGY"
+    },
+    {
+      "step": 24672,
+      "time": 493.44,
+      "mode": "SOLITUDE"
+    },
+    {
+      "step": 25128,
+      "time": 502.56,
+      "mode": "INTIMATE"
+    }
+  ],
+  "analysis_windows": [
+    {
+      "time": 0.0,
+      "step": 0,
+      "mode": "BEAUTY",
+      "energy": 0.073,
+      "spectral": 0.105,
+      "beat_density": 2.33,
+      "onset_density": 2.67,
+      "scores": {
+        "HERO": 1.149,
+        "INTIMATE": 0.667,
+        "EPIC": 1.149,
+        "ENERGY": 1.254,
+        "SOLITUDE": 1.577,
+        "BEAUTY": 0.499
+      }
+    },
+    {
+      "time": 126.0,
+      "step": 6300,
+      "mode": "INTIMATE",
+      "energy": 0.07,
+      "spectral": 0.082,
+      "beat_density": 2.33,
+      "onset_density": 0.33,
+      "scores": {
+        "HERO": 1.679,
+        "INTIMATE": 0.685,
+        "EPIC": 1.879,
+        "ENERGY": 1.961,
+        "SOLITUDE": 1.227,
+        "BEAUTY": 0.729
+      }
+    },
+    {
+      "time": 130.5,
+      "step": 6525,
+      "mode": "BEAUTY",
+      "energy": 0.137,
+      "spectral": 0.185,
+      "beat_density": 2.33,
+      "onset_density": 3.0,
+      "scores": {
+        "HERO": 0.941,
+        "INTIMATE": 0.667,
+        "EPIC": 0.841,
+        "ENERGY": 1.025,
+        "SOLITUDE": 1.677,
+        "BEAUTY": 0.291
+      }
+    },
+    {
+      "time": 213.0,
+      "step": 10650,
+      "mode": "ENERGY",
+      "energy": 0.43,
+      "spectral": 0.232,
+      "beat_density": 2.33,
+      "onset_density": 6.0,
+      "scores": {
+        "HERO": 0.308,
+        "INTIMATE": 1.826,
+        "EPIC": 0.208,
+        "ENERGY": 0.141,
+        "SOLITUDE": 2.936,
+        "BEAUTY": 0.418
+      }
+    },
+    {
+      "time": 217.5,
+      "step": 10875,
+      "mode": "BEAUTY",
+      "energy": 0.186,
+      "spectral": 0.193,
+      "beat_density": 2.0,
+      "onset_density": 3.33,
+      "scores": {
+        "HERO": 0.836,
+        "INTIMATE": 0.5,
+        "EPIC": 0.736,
+        "ENERGY": 0.829,
+        "SOLITUDE": 1.51,
+        "BEAUTY": 0.186
+      }
+    },
+    {
+      "time": 489.0,
+      "step": 24450,
+      "mode": "ENERGY",
+      "energy": 0.395,
+      "spectral": 0.21,
+      "beat_density": 2.33,
+      "onset_density": 6.0,
+      "scores": {
+        "HERO": 0.4,
+        "INTIMATE": 1.757,
+        "EPIC": 0.3,
+        "ENERGY": 0.21,
+        "SOLITUDE": 2.867,
+        "BEAUTY": 0.44
+      }
+    },
+    {
+      "time": 493.5,
+      "step": 24675,
+      "mode": "BEAUTY",
+      "energy": 0.176,
+      "spectral": 0.197,
+      "beat_density": 2.33,
+      "onset_density": 3.33,
+      "scores": {
+        "HERO": 0.851,
+        "INTIMATE": 0.767,
+        "EPIC": 0.751,
+        "ENERGY": 0.848,
+        "SOLITUDE": 1.777,
+        "BEAUTY": 0.201
+      }
+    },
+    {
+      "time": 502.5,
+      "step": 25125,
+      "mode": "INTIMATE",
+      "energy": 0.125,
+      "spectral": 0.176,
+      "beat_density": 1.67,
+      "onset_density": 2.67,
+      "scores": {
+        "HERO": 0.974,
+        "INTIMATE": 0.133,
+        "EPIC": 0.974,
+        "ENERGY": 1.416,
+        "SOLITUDE": 1.043,
+        "BEAUTY": 0.324
+      }
+    }
+  ]
+}

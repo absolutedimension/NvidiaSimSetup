@@ -1,0 +1,12 @@
+{
+  "reach": 6,
+  "smoothness": 5,
+  "stability": 7,
+  "efficiency": 6,
+  "overall": 6,
+  "issues": [
+    "Drifted away from goal",
+    "Some oscillation in movement"
+  ],
+  "verdict": "needs-more-training"
+}
