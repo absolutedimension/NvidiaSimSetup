@@ -88,39 +88,26 @@ class S02(Base):  # "Attention Is All You Need" -> branching models
                LaggedStartMap(FadeIn, chips, shift=UP*0.2, lag_ratio=0.15), rt=2.2)
         self.hold()
 
-class S03(Base):  # cocktail party — crowd of dots, one voice lights up
+class S03(Base):  # cocktail party — the IMAGE carries it; manim adds title + caption + life
     def construct(self):
         self.ambient(4)
-        title = Text("The cocktail party", font_size=44, color=INK).to_edge(UP, buff=1.0)
-        crowd = VGroup()
-        for _ in range(48):
-            d = Dot(radius=0.10, color=BLUE).set_opacity(0.35)
-            d.move_to([random.uniform(-6,6), random.uniform(-2.6,1.6), 0]); crowd.add(d)
-        self.P(FadeIn(title), LaggedStartMap(FadeIn, crowd, lag_ratio=0.02), rt=1.6)
-        one = crowd[20]
-        glow = spark(GOLD, 0.18).move_to(one)
-        rings = VGroup(*[Circle(radius=r, color=GOLD, stroke_opacity=0.0) for r in [0.4,0.8,1.2]]).move_to(one)
-        self.P(crowd.animate.set_opacity(0.15), FadeIn(glow), rt=1.0)
+        title = Text("The cocktail party", font_size=46, color=INK).to_edge(UP, buff=0.9)
+        cap = Text("one voice cuts through — your name", font_size=30, color=GOLD).next_to(title, DOWN, buff=0.25)
+        self.P(FadeIn(title, shift=DOWN*0.2), rt=1.0)
+        self.P(FadeIn(cap, shift=UP*0.2), rt=0.9)
+        # a soft highlight ring breathing over the glowing figure in the image (center-right)
+        rings = VGroup(*[Circle(radius=r, color=GOLD, stroke_opacity=0.0) for r in [0.5,0.9]]).move_to([1.1,-0.2,0])
         for ring in rings:
-            self.P(ring.animate.set_stroke(opacity=0.6).scale(1.6), rt=0.5, rate_func=there_and_back)
-        cap = Text("one voice cuts through — your name", font_size=28, color=GOLD).next_to(title, DOWN)
-        self.P(FadeIn(cap, shift=UP*0.2), rt=0.8)
+            self.P(ring.animate.set_stroke(opacity=0.5).scale(1.5), rt=0.6, rate_func=there_and_back)
         self.hold()
 
-class S04(Base):  # spotlight chooses one
+class S04(Base):  # spotlight — the IMAGE carries it; manim adds title + caption + life
     def construct(self):
         self.ambient(3)
-        title = Text("A spotlight that chooses what to ignore", font_size=40, color=INK).to_edge(UP, buff=1.0)
-        items = VGroup()
-        for _ in range(28):
-            d = Dot(radius=0.12, color=GREY).set_opacity(0.4)
-            d.move_to([random.uniform(-5.5,5.5), random.uniform(-2.4,1.4),0]); items.add(d)
-        self.P(FadeIn(title), FadeIn(items), rt=1.2)
-        chosen = items[14]
-        beam = spark(GOLD, 0.22).move_to(items[0])
-        self.P(FadeIn(beam), rt=0.5)
-        self.P(beam.animate.move_to(chosen), items.animate.set_opacity(0.12), rt=1.6, rate_func=smooth)
-        self.P(chosen.animate.set_color(GOLD).set_opacity(1).scale(1.6), Flash(chosen, color=GOLD), rt=0.9)
+        title = Text("A spotlight that chooses what to ignore", font_size=42, color=INK).to_edge(UP, buff=0.9)
+        cap = Text("your mind is always choosing what to ignore", font_size=28, color=GOLD).next_to(title, DOWN, buff=0.25)
+        self.P(FadeIn(title, shift=DOWN*0.2), rt=1.0)
+        self.P(FadeIn(cap, shift=UP*0.2), rt=0.9)
         self.hold()
 
 class S05(Base):  # how does a machine look back — scanning pulse
@@ -200,24 +187,13 @@ class S08(Base):  # multiply into a lattice
         self.P(layers.animate.shift(UP*0.3).set_opacity(0.7), rt=1.2, rate_func=there_and_back)
         self.hold()
 
-class S09(Base):  # tool -> mirror (network forms a head outline)
+class S09(Base):  # tool -> mirror — the brain-network IMAGE carries it; manim adds the title
     def construct(self):
         self.ambient(4)
-        title = Text("We built a tool. We got a mirror.", font_size=44, color=INK).to_edge(UP, buff=1.0)
-        # rough head outline of nodes
-        pts = []
-        for a in np.linspace(-PI/2, PI*1.3, 22):
-            pts.append([1.6*math.cos(a), 1.9*math.sin(a)+ -0.3, 0])
-        nodes = VGroup(*[Dot(radius=0.06, color=PURPLE) for _ in pts])
-        for d,p in zip(nodes,pts): d.move_to(p)
-        edges = VGroup()
-        for i in range(len(pts)):
-            for j in range(i+1,len(pts)):
-                if np.linalg.norm(np.array(pts[i])-np.array(pts[j]))<1.4:
-                    edges.add(Line(pts[i],pts[j], color=PURPLE, stroke_opacity=0.25))
-        self.P(FadeIn(title), rt=0.8)
-        self.P(LaggedStartMap(GrowFromCenter, nodes, lag_ratio=0.04), Create(edges, lag_ratio=0.02), rt=2.4)
-        self.P(nodes.animate.set_color(GOLD), rt=1.0)
+        title = Text("We built a tool. We got a mirror.", font_size=46, color=INK).to_edge(UP, buff=0.9)
+        cap = Text("attention — made visible for the first time", font_size=28, color=GOLD).next_to(title, DOWN, buff=0.25)
+        self.P(FadeIn(title, shift=DOWN*0.2), rt=1.0)
+        self.P(FadeIn(cap, shift=UP*0.2), rt=0.9)
         self.hold()
 
 class S10(Base):  # anchor
