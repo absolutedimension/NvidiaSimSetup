@@ -27,6 +27,34 @@ Deepak — curious builder, not a lecturer. The voice is "let me show you someth
 blew my mind," not "today we will learn." First person. Real wonder. The credibility is
 "I build these systems and here's what I keep noticing."
 
+## Editorial stance — AGNOSTIC BUT POINTED (governs every episode)
+
+We make **no metaphysical claim.** We never assert the machine mind and the human mind
+are the same thing. The thesis ("each breakthrough rebuilds a faculty of mind") is held
+as a **lens we look through honestly**, not a truth we're selling.
+
+> *"I don't claim to know if the machine mind and the human mind are the same thing.
+> But every time I look closely at one, I understand the other better. Watch."*
+
+**The one rule that makes it work: humble about the cosmic question, razor-sharp about the
+concept.** The agnosticism applies ONLY to the big "are they the same?" question — which we
+never answer. About the actual mechanism (how attention works, what a weight is) we are
+precise, confident, exact. Vague-on-both = mush; the "pointed" is what saves the "agnostic."
+
+What this forbids: "AI is conscious," "AI literally is your mind," mysticism, hype, any claim
+we can't back. What it permits: all the wonder, the mirror, and leaving the deep question open.
+
+**Anchor lines are OBSERVATIONS, not claims** — something true of both mind and machine that
+lets the viewer feel the resonance without being told what to conclude.
+(e.g. *"Intelligence isn't knowing everything — it's knowing what to ignore."*)
+
+**The divergence stays unresolved.** When the machine differs from the mind (e.g. parallel
+vs. serial attention), don't explain it away — let it sit. "Same job, different machinery.
+I don't know what to make of that yet. But I can't stop thinking about it." That open door
+is the wonder.
+
+**Series ethos / recurring close:** *"Look closely at one — and you understand the other."*
+
 ## The format (every episode, no exceptions)
 
 - **Length:** 6–10 minutes
