@@ -102,7 +102,7 @@
       <div class="move m1"><div class="tag">Movement I · Understand</div>
         <h3>AI is the Universal Mind</h3>
         <p>Understand the machinery — attention, learning, will, imagination. The intellectual half.
-           The machine that <b style="color:#cdd6ff">learns by trying</b>. <i>(Shipping now — 3 episodes done, bilingual.)</i></p></div>
+           The machine that <b style="color:#cdd6ff">learns by trying</b>. <i>(Shipping now — 2 episodes done.)</i></p></div>
       <div class="move m2"><div class="tag">Movement II · Transcend</div>
         <h3>Beyond the Mind — Flow Art</h3>
         <p>Go past the machinery — flow state, ecstatic dance, the “pause between the beats.”
@@ -131,7 +131,6 @@
       <div class="langtabs">
         <button id="ep-1" class="active" onclick="setEp('1')">Ep.1 — Attention</button>
         <button id="ep-2" onclick="setEp('2')">Ep.2 — The Learning Loop</button>
-        <button id="ep-3" onclick="setEp('3')">Ep.3 — Imagination</button>
       </div>
       <div class="langtabs">
         <button id="btn-en" class="active" onclick="setLang('en')">English</button>
@@ -163,11 +162,11 @@
         <div class="badges"><span class="badge b-done">✅ Shipped — animated · focus audio · bilingual</span><a class="watch" href="ep02_FINAL_focus.mp4">▶ Watch (EN)</a><a class="watch hi" href="ep02_hi_FINAL_focus.mp4">▶ देखें (हिंदी)</a><a class="badge" href="EP02_learning_loop_script.html">📄 Script</a><span class="badge b-class">→ Robotics class</span></div>
       </div></div>
 
-      <div class="ep done"><div class="num">3</div><div>
+      <div class="ep"><div class="num">3</div><div>
         <div class="title">Imagination</div>
-        <div class="meta"><b>Dreaming form out of nothing</b> &nbsp;·&nbsp; Diffusion models (noise → image)</div>
+        <div class="meta"><b>Dreaming form out of nothing</b> &nbsp;·&nbsp; Diffusion models</div>
         <div class="anchor">“Creation is just noise, refined.”</div>
-        <div class="badges"><span class="badge b-done">✅ Shipped — animated · focus audio · bilingual</span><a class="watch" href="ep03_FINAL_focus.mp4">▶ Watch (EN)</a><a class="watch hi" href="ep03_hi_FINAL_focus.mp4">▶ देखें (हिंदी)</a><a class="badge" href="EP03_imagination_script.html">📄 Script</a><span class="badge b-class">→ ML / generative</span></div>
+        <div class="badges"><span class="badge b-idea">💡 Ready</span><span class="badge b-class">→ ML / generative</span></div>
       </div></div>
 
       <div class="ep"><div class="num">4</div><div>
@@ -228,7 +227,7 @@
   </section>
 
   <footer>
-    Status — Movement I: Ep 1, 2 &amp; 3 shipped bilingual (EN + हिंदी, focus audio), Ep 4–7 ready. Movement II: method captured, Ep 1 next.
+    Status — Movement I: Ep 1 &amp; 2 shipped bilingual (EN + हिंदी, focus audio), Ep 3–7 ready. Movement II: method captured, Ep 1 next.
     &nbsp;·&nbsp; <i>Watch-links open the local MP4s in this folder.</i> &nbsp;·&nbsp; TrigunAI · Deepak
   </footer>
 </div>
@@ -236,14 +235,12 @@
 <script>
 var EP='1', LANG='en';
 var SRC={ '1':{en:'ep01_FINAL_focus.mp4', hi:'ep01_hi_FINAL_focus.mp4'},
-          '2':{en:'ep02_FINAL_focus.mp4', hi:'ep02_hi_FINAL_focus.mp4'},
-          '3':{en:'ep03_FINAL_focus.mp4', hi:'ep03_hi_FINAL_focus.mp4'} };
+          '2':{en:'ep02_FINAL_focus.mp4', hi:'ep02_hi_FINAL_focus.mp4'} };
 function upd(){
   var v=document.getElementById('ep1video'), s=document.getElementById('ep1src');
   s.src=SRC[EP][LANG]; v.load();
   document.getElementById('ep-1').classList.toggle('active', EP==='1');
   document.getElementById('ep-2').classList.toggle('active', EP==='2');
-  document.getElementById('ep-3').classList.toggle('active', EP==='3');
   document.getElementById('btn-en').classList.toggle('active', LANG==='en');
   document.getElementById('btn-hi').classList.toggle('active', LANG==='hi');
 }
