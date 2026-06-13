@@ -1,11 +1,21 @@
 # TrigunAI — CEO Briefing
 
-> Last updated: 2026-06-12 by CEO session (the unified-vision session — worldview + 2 shipped episodes + flow merge)
-> ⭐ Full context: memory `project-ai-universal-mind.md` + skill `trigunai-content-strategy` + `youtube_series/`.
+> Last updated: 2026-06-13 by CEO session (course catalog locked — 3-course tiered launch, infra moat, monetization tiers)
+> ⭐ Full context: `COURSE_CATALOG.md` + memory `project-ai-universal-mind.md` + skill `trigunai-content-strategy` + `youtube_series/`.
 
 ---
 
 ## 🔥 Needs your attention
+
+0. **COURSE CATALOG LOCKED (2026-06-13) → `COURSE_CATALOG.md`.** Series = free funnel; each
+   episode → a faculty → a technology → a course. **VR's 3 roles:** own course (deepest skill) +
+   embodiment layer of Physical AI + the VR classroom that delivers live classes. **July 18 =
+   3-course tiered launch:** VR/MR **fully complete** (flagship — Module 1 scripted, `COURSE_OUTLINE.md`),
+   Agentic + ML **drip-launched** (curriculum + first 2–3 modules + buy button on, rest weekly; ML
+   sequenced last — most competitive). **Moat = provided GPU/Isaac-Sim + VR delivery → ₹50k live
+   cohort, but that's course #4/post-launch, NOT a launch-day promise.** Tradeoff on record:
+   3 *fully-polished* courses in 35 days solo = ~50+hrs/wk → date slips; tiered model is the de-risked path.
+   **This week's move (Deepak chose): publish Ep1 public + open email list + gate Ep2 — distribution, zero new rendering.**
 
 1. **The direction crystallized into one vision: "AI is the Universal Mind, and Beyond It."** Two
    movements — Movement I (AI/mind episodes) + Movement II (Beyond-mind / Flow Art Dance). This is now

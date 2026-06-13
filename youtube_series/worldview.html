@@ -126,8 +126,12 @@
   </section>
 
   <section>
-    <div class="h2">▶ Featured — Episode 1: Attention</div>
+    <div class="h2">▶ Featured — Watch the Episodes</div>
     <div class="feature">
+      <div class="langtabs">
+        <button id="ep-1" class="active" onclick="setEp('1')">Ep.1 — Attention</button>
+        <button id="ep-2" onclick="setEp('2')">Ep.2 — The Learning Loop</button>
+      </div>
       <div class="langtabs">
         <button id="btn-en" class="active" onclick="setLang('en')">English</button>
         <button id="btn-hi" onclick="setLang('hi')">हिंदी · Hindi</button>
@@ -155,7 +159,7 @@
         <div class="title">The Learning Loop <span style="color:var(--dim);font-weight:400;font-size:15px">— how humans &amp; robots learn the same way</span></div>
         <div class="meta"><b>Learning / habit</b> &nbsp;·&nbsp; RL · Isaac Sim · dopamine ↔ reward</div>
         <div class="anchor">“You can’t delete a pattern — you can only outweigh it with reps of a better one.”</div>
-        <div class="badges"><span class="badge b-done">✅ Shipped — fully animated</span><a class="watch" href="ep02_learning_v2.mp4">▶ Watch</a><a class="badge" href="EP02_learning_loop_script.html">📄 Script</a><span class="badge b-class">→ Robotics class</span></div>
+        <div class="badges"><span class="badge b-done">✅ Shipped — animated · focus audio · bilingual</span><a class="watch" href="ep02_FINAL_focus.mp4">▶ Watch (EN)</a><a class="watch hi" href="ep02_hi_FINAL_focus.mp4">▶ देखें (हिंदी)</a><a class="badge" href="EP02_learning_loop_script.html">📄 Script</a><span class="badge b-class">→ Robotics class</span></div>
       </div></div>
 
       <div class="ep"><div class="num">3</div><div>
@@ -223,19 +227,25 @@
   </section>
 
   <footer>
-    Status — Movement I: Ep 1 shipped bilingual (EN + हिंदी, focus audio), Ep 2 animated, Ep 3–7 ready. Movement II: method captured, Ep 1 next.
+    Status — Movement I: Ep 1 &amp; 2 shipped bilingual (EN + हिंदी, focus audio), Ep 3–7 ready. Movement II: method captured, Ep 1 next.
     &nbsp;·&nbsp; <i>Watch-links open the local MP4s in this folder.</i> &nbsp;·&nbsp; TrigunAI · Deepak
   </footer>
 </div>
 
 <script>
-function setLang(l){
+var EP='1', LANG='en';
+var SRC={ '1':{en:'ep01_FINAL_focus.mp4', hi:'ep01_hi_FINAL_focus.mp4'},
+          '2':{en:'ep02_FINAL_focus.mp4', hi:'ep02_hi_FINAL_focus.mp4'} };
+function upd(){
   var v=document.getElementById('ep1video'), s=document.getElementById('ep1src');
-  s.src = (l==='hi') ? 'ep01_hi_FINAL_focus.mp4' : 'ep01_FINAL_focus.mp4';
-  v.load();
-  document.getElementById('btn-en').classList.toggle('active', l==='en');
-  document.getElementById('btn-hi').classList.toggle('active', l==='hi');
+  s.src=SRC[EP][LANG]; v.load();
+  document.getElementById('ep-1').classList.toggle('active', EP==='1');
+  document.getElementById('ep-2').classList.toggle('active', EP==='2');
+  document.getElementById('btn-en').classList.toggle('active', LANG==='en');
+  document.getElementById('btn-hi').classList.toggle('active', LANG==='hi');
 }
+function setEp(e){ EP=e; upd(); }
+function setLang(l){ LANG=l; upd(); }
 </script>
 </body>
 </html>
