@@ -56,6 +56,18 @@ def ep3():   # imagination — noise resolving into gold form
     img=dots(img,70,(760,1200),(150,580),[GOLD,(255,235,200)],1,3,(60,170),5)
     return img
 
+def ep4():   # meaning — bright "word" points in space, constellation feel
+    a=base(); a=glow(a,900,330,400,(120,150,235),0.10)
+    a=glow(a,860,250,120,GOLD,1.0,2.4); a=glow(a,1060,360,120,GOLD,1.0,2.4)
+    a=glow(a,940,520,110,GOLD,0.9,2.4); a=glow(a,900,360,70,(255,240,210),1.0,2.0)
+    img=finish(a); img=dots(img,160,(560,1260),(60,680),[BLUE,DIMW,PURPLE,GOLD],1,4,(40,150),14)
+    return img
+def ep5():   # intuition — one bright firing node within a network
+    a=base(); a=glow(a,930,350,420,(120,150,235),0.12); a=glow(a,930,350,230,GOLD,1.2,2.6); a=glow(a,930,350,80,(255,240,210),1.0,2.0)
+    a=glow(a,760,250,70,GOLD,0.6,2.4); a=glow(a,1110,470,70,GOLD,0.6,2.4)
+    img=finish(a); img=dots(img,140,(560,1260),(60,680),[BLUE,DIMW,PURPLE,GOLD],1,4,(40,150),15)
+    return img
+
 def font(path,size): return ImageFont.truetype(path,size,layout_engine=ImageFont.Layout.RAQM)
 def wrap(d,txt,fn,maxw):
     out=[]; cur=""
@@ -100,6 +112,10 @@ JOBS=[
  (ep2,"आदत मिटती नहीं","एपिसोड 2 · सीखने का चक्र","hi","thumb_ep02_hi"),
  (ep3,"CREATION FROM NOISE","EP 3 · IMAGINATION","en","thumb_ep03_en"),
  (ep3,"शोर से सृजन","एपिसोड 3 · कल्पना","hi","thumb_ep03_hi"),
+ (ep4,"MEANING IS A PLACE","EP 4 · MEANING","en","thumb_ep04_en"),
+ (ep4,"अर्थ एक स्थान है","एपिसोड 4 · अर्थ","hi","thumb_ep04_hi"),
+ (ep5,"WHAT IS A HUNCH?","EP 5 · INTUITION","en","thumb_ep05_en"),
+ (ep5,"अंदेशा क्या है?","एपिसोड 5 · अंतर्ज्ञान","hi","thumb_ep05_hi"),
 ]
 for fn,big,tag,lang,name in JOBS: compose(fn,big,tag,lang,name)
 print("done ->",OUT)

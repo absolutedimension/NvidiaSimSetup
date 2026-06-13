@@ -1,0 +1,100 @@
+{
+  "playlist": "AI इज़ द यूनिवर्सल माइंड",
+  "episodes": [
+    {
+      "id": "ep01hi",
+      "video": "ep01_hi_FINAL_focus.mp4",
+      "title": "Attention: हर AI के पीछे का विचार — और आपका अपना दिमाग | AI इज़ द यूनिवर्सल माइंड #1",
+      "desc_file": "desc_ep01_hi.txt",
+      "tags": [
+        "AI",
+        "हिंदी",
+        "Attention",
+        "ध्यान",
+        "ArtificialIntelligence",
+        "MachineLearning",
+        "ChatGPT",
+        "AI in Hindi",
+        "टेक्नोलॉजी"
+      ],
+      "thumbnail": "thumbs/out/thumb_ep01_hi.jpg",
+      "lang": "hi",
+      "privacy": "public"
+    },
+    {
+      "id": "ep02hi",
+      "video": "ep02_hi_FINAL_focus.mp4",
+      "title": "इंसान और रोबोट बिल्कुल एक ही तरह से कैसे सीखते हैं? | AI इज़ द यूनिवर्सल माइंड #2",
+      "desc_file": "desc_ep02_hi.txt",
+      "tags": [
+        "AI",
+        "हिंदी",
+        "MachineLearning",
+        "रोबोटिक्स",
+        "ReinforcementLearning",
+        "ArtificialIntelligence",
+        "AI in Hindi",
+        "टेक्नोलॉजी"
+      ],
+      "thumbnail": "thumbs/out/thumb_ep02_hi.jpg",
+      "lang": "hi",
+      "privacy": "private"
+    },
+    {
+      "id": "ep03hi",
+      "video": "ep03_hi_FINAL_focus.mp4",
+      "title": "AI कल्पना कैसे करता है: शुद्ध शोर से सृजन | AI इज़ द यूनिवर्सल माइंड #3",
+      "desc_file": "desc_ep03_hi.txt",
+      "tags": [
+        "AI",
+        "हिंदी",
+        "GenerativeAI",
+        "Diffusion",
+        "ArtificialIntelligence",
+        "AI in Hindi",
+        "टेक्नोलॉजी"
+      ],
+      "thumbnail": "thumbs/out/thumb_ep03_hi.jpg",
+      "lang": "hi",
+      "privacy": "private"
+    },
+    {
+      "id": "ep04hi",
+      "video": "ep04_hi_FINAL_focus.mp4",
+      "title": "AI अर्थ को कैसे समझता है: शब्द अंतरिक्ष में बिंदु | AI इज़ द यूनिवर्सल माइंड #4",
+      "desc_file": "desc_ep04_hi.txt",
+      "tags": [
+        "AI",
+        "हिंदी",
+        "Embeddings",
+        "MachineLearning",
+        "NLP",
+        "ArtificialIntelligence",
+        "AI in Hindi",
+        "टेक्नोलॉजी"
+      ],
+      "thumbnail": "thumbs/out/thumb_ep04_hi.jpg",
+      "lang": "hi",
+      "privacy": "private"
+    },
+    {
+      "id": "ep05hi",
+      "video": "ep05_hi_FINAL_focus.mp4",
+      "title": "AI में अंतर्ज्ञान कैसे आता है: न्यूरल नेटवर्क | AI इज़ द यूनिवर्सल माइंड #5",
+      "desc_file": "desc_ep05_hi.txt",
+      "tags": [
+        "AI",
+        "हिंदी",
+        "NeuralNetworks",
+        "DeepLearning",
+        "MachineLearning",
+        "ArtificialIntelligence",
+        "AI in Hindi",
+        "टेक्नोलॉजी"
+      ],
+      "thumbnail": "thumbs/out/thumb_ep05_hi.jpg",
+      "lang": "hi",
+      "privacy": "private"
+    }
+  ]
+}
