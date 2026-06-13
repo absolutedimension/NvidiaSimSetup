@@ -299,6 +299,18 @@ backgrounds + word-synced kinetic captions + a research-grounded focus-audio bed
   12 Hz isochronic, root D3 (146.8 Hz), −20 dB, `sidechaincompress threshold=0.022:ratio=9:attack=5:release=320` so speech always wins. Evidence: amplitude-modulation 12–20 Hz boosts sustained attention (Northeastern 2024); pink noise masks distraction.
 - **Prototype ONE scene** (manim + bg + caption) before any full ~40-min build — catches font/
   layout/order bugs cheaply.
+- **Detached background jobs can die silently** — a `setsid nohup … &` translation/build launched
+  from a shell that then exits may be killed before producing output (its log stays 0 bytes). For the
+  Hindi translation specifically: run it SYNCHRONOUSLY (or verify `epNN_hi_build/{sNN.mp3,hindi_script.json}`
+  exist) BEFORE launching the dependent Hindi build. Don't chain a build onto an unverified detached job.
+- **Fail-fast on missing inputs** — the Hindi build must assert its inputs exist before STEP 1, e.g.
+  `assert all(os.path.exists(f"{BUILD}/s{i:02d}.mp3") for i in range(1,N+1)) and os.path.exists(f"{BUILD}/hindi_script.json")`.
+  Without it, render_*_hi renders N scenes on zero-duration audio and captions fail N times — a wasted
+  ~40-min build that looks like it "completed" (Ep3 hit exactly this).
+- **`set_opacity()` fills hollow shapes** — Manim's `set_opacity` sets BOTH stroke AND fill opacity, so a
+  `Circle(stroke_opacity=…)` outline animated via `.animate.set_opacity(x)` renders as a SOLID disc
+  (Ep3's "emerging face" became a filled smiley). To keep an outline hollow while fading, animate
+  `.animate.set_stroke(opacity=x)` instead, or fade the VGroup with FadeIn/FadeOut.
 
 ### Status
 Ep1 shipped bilingual: `ep01_FINAL_focus.mp4` (EN, 341s) + `ep01_hi_FINAL_focus.mp4` (HI, 408s),
