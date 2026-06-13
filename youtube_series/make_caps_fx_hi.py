@@ -5,7 +5,7 @@ Usage: python3 make_caps_fx_hi.py <audio.mp3> <scene_video.mp4> <out.mp4>"""
 import os, sys, json, subprocess, glob, re
 
 audio, vid, out = sys.argv[1], sys.argv[2], sys.argv[3]
-SCRIPT="/home/ubuntu/youtube_series/ep01_hi_build/hindi_script.json"
+SCRIPT=os.path.join(os.path.dirname(audio),"hindi_script.json")   # same dir as the audio
 
 def dur(p):
     r=subprocess.run(["ffprobe","-v","quiet","-show_entries","format=duration","-of","csv=p=0",p],capture_output=True,text=True)

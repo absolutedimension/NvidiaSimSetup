@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Ep2 driver (Mode C): ep02_manim.py (13 scenes) + per-scene Ep2 contextual bg (boomerang) + logo finish.
-Usage: python3 render_ep02_manim.py [all|6,7]"""
+"""HINDI Ep2 driver: ep02_manim_hi.py (Devanagari) + SAME Ep2 bg clips + logo finish.
+Usage: python3 render_ep02_manim_hi.py [all|6,7]"""
 import os, sys, glob, subprocess
 HOME="/home/ubuntu"
-BUILD=f"{HOME}/youtube_series/ep02_build"
-CLIPDIR=f"{HOME}/youtube_series/clips"
-WORK=f"{HOME}/youtube_series/ep02_manim_build"; os.makedirs(WORK, exist_ok=True)
+BUILD=f"{HOME}/youtube_series/ep02_hi_build"          # Hindi audio
+CLIPDIR=f"{HOME}/youtube_series/clips"                # SAME bg clips
+WORK=f"{HOME}/youtube_series/ep02_manim_hi_build"; os.makedirs(WORK, exist_ok=True)
 SPIN=f"{HOME}/youtube_series/assets/trigun_spin_1080.mp4"
 W,H,FPS=1920,1080,30
 ALLBG={i:f"bg_ep02_s{i:02d}_boom.mp4" for i in range(1,14)}
@@ -22,11 +22,11 @@ COVER="scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080"
 
 for i in todo:
     sc=f"S{i:02d}"; audio=f"{BUILD}/s{i:02d}.mp3"; D=dur(audio)
-    print(f">> {sc}: {D:.1f}s — manim", flush=True)
+    print(f">> {sc}: {D:.1f}s — manim(hi)", flush=True)
     env=dict(os.environ, SCENE_DUR=f"{D}")
     r=subprocess.run(["python3","-m","manim","-r","1920,1080","--fps","30","--transparent",
-                      "--disable_caching","-o",sc,"ep02_manim.py",sc], cwd=HOME, env=env, capture_output=True, text=True)
-    movs=glob.glob(f"{HOME}/media/videos/ep02_manim/**/{sc}.mov", recursive=True)
+                      "--disable_caching","-o",sc,"ep02_manim_hi.py",sc], cwd=HOME, env=env, capture_output=True, text=True)
+    movs=glob.glob(f"{HOME}/media/videos/ep02_manim_hi/**/{sc}.mov", recursive=True)
     if not movs:
         print(f"   !! no mov {sc}\n{r.stderr[-1500:]}", flush=True); continue
     mov=movs[0]; clip=os.path.join(WORK,f"{sc}.mp4")
@@ -50,4 +50,4 @@ for i in todo:
     print(f"   {sc} done (bg={ALLBG[i]} · {tag})", flush=True)
 
 clips=sorted(glob.glob(f"{WORK}/S??.mp4"))
-print(f"\n(have {len(clips)}/13 scene clips)", flush=True)
+print(f"\n(have {len(clips)}/13 hi scene clips)", flush=True)

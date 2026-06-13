@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Translate Ep1 narration -> Hindi (via LiteLLM) + generate Hindi per-scene TTS + full preview."""
-import re, os, asyncio, subprocess, json, requests
+import re, os, sys, asyncio, subprocess, json, requests
 import edge_tts
 
 KEY="sk-trigunai-master-key-2026"
-SCRIPT="/home/ubuntu/EP01_attention_script.md"
-OUT="/home/ubuntu/youtube_series/ep01_hi_build"; os.makedirs(OUT,exist_ok=True)
+SCRIPT=sys.argv[1] if len(sys.argv)>1 else "/home/ubuntu/EP01_attention_script.md"
+OUT=sys.argv[2] if len(sys.argv)>2 else "/home/ubuntu/youtube_series/ep01_hi_build"
+os.makedirs(OUT,exist_ok=True)
 VOICE="hi-IN-MadhurNeural"; RATE="-4%"; GAP=0.45
 
 def parse_scenes(path):
