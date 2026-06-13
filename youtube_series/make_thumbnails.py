@@ -68,6 +68,19 @@ def ep5():   # intuition — one bright firing node within a network
     img=finish(a); img=dots(img,140,(560,1260),(60,680),[BLUE,DIMW,PURPLE,GOLD],1,4,(40,150),15)
     return img
 
+def ep6():   # will — a goal-point and the pull toward it
+    a=base(); a=glow(a,1030,360,300,(120,150,235),0.10); a=glow(a,1030,360,200,GOLD,1.2,2.6); a=glow(a,1030,360,72,(255,240,210),1.0,2.0)
+    a=ring(a,1030,360,150,10,GOLD,0.7)
+    img=finish(a)
+    # converging trail of points pulling toward the goal
+    ov=Image.new("RGBA",(W,H),(0,0,0,0)); dd=ImageDraw.Draw(ov); rng=random.Random(6)
+    for t in range(60):
+        f=t/60.0; x=560+f*420+rng.uniform(-14,14); y=440-f*70+rng.uniform(-14,14); r=2+f*3
+        op=int(70+f*150); dd.ellipse([x-r,y-r,x+r,y+r],fill=(255,201,82,op))
+    img=Image.alpha_composite(img,ov)
+    img=dots(img,90,(540,1240),(60,680),[BLUE,DIMW,PURPLE],1,3,(40,140),16)
+    return img
+
 def font(path,size): return ImageFont.truetype(path,size,layout_engine=ImageFont.Layout.RAQM)
 def wrap(d,txt,fn,maxw):
     out=[]; cur=""
@@ -116,6 +129,8 @@ JOBS=[
  (ep4,"अर्थ एक स्थान है","एपिसोड 4 · अर्थ","hi","thumb_ep04_hi"),
  (ep5,"WHAT IS A HUNCH?","EP 5 · INTUITION","en","thumb_ep05_en"),
  (ep5,"अंदेशा क्या है?","एपिसोड 5 · अंतर्ज्ञान","hi","thumb_ep05_hi"),
+ (ep6,"WHAT IS WANTING?","EP 6 · WILL","en","thumb_ep06_en"),
+ (ep6,"चाह क्या है?","एपिसोड 6 · इच्छा","hi","thumb_ep06_hi"),
 ]
 for fn,big,tag,lang,name in JOBS: compose(fn,big,tag,lang,name)
 print("done ->",OUT)
