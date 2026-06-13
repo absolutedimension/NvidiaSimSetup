@@ -13,7 +13,7 @@ class Caps(MovingCameraScene):
             s=float(p["start"])
             if s>t+0.02:
                 self.wait(s-t); t=s
-            g=Text(p["text"].strip(), font="Mukta", weight=BOLD, font_size=56, color=INK).move_to(Y)
+            g=Text(p["text"].strip(), font="Mukta", weight=BOLD, font_size=42, color=INK).move_to(Y)
             if g.width>16: g.scale(16/g.width)
             x0=g.get_left()[0]-0.3; topy=g.get_top()[1]+0.22; boty=g.get_bottom()[1]-0.22
             ln  =Line([x0,topy,0],[x0,boty,0],color=PURP).set_stroke(width=8)
