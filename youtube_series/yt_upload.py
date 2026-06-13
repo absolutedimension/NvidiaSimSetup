@@ -130,9 +130,23 @@ def main():
     rp.add_argument("--privacy", default=None, choices=["public","unlisted","private"])
     tp = sub.add_parser("thumbs")
     tp.add_argument("manifest")
+    pp = sub.add_parser("publish")
+    pp.add_argument("manifest")
     a = ap.parse_args()
     if a.cmd == "auth":
         get_creds(); print("✅ auth complete — token.json saved."); return
+    if a.cmd == "publish":
+        man = json.load(open(a.manifest)); yt = svc(); state = load_state()
+        for ep in man["episodes"]:
+            vid = state.get(ep["id"], {}).get("video_id")
+            if not vid: print(f"  skip {ep['id']} (not uploaded)", flush=True); continue
+            try:
+                yt.videos().update(part="status", body={"id": vid,
+                    "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False}}).execute()
+                print(f"  ✅ {ep['id']} → public (https://youtu.be/{vid})", flush=True)
+            except Exception as e:
+                print(f"  !! {ep['id']} failed: {e}", flush=True)
+        print("\n== publish done ==", flush=True); return
     if a.cmd == "thumbs":
         man = json.load(open(a.manifest)); yt = svc(); state = load_state()
         for ep in man["episodes"]:
