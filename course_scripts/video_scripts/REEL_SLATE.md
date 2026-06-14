@@ -58,10 +58,14 @@ No invented student counts / testimonials / "trusted by" / revenue. No price num
 "free for now"). Clarity, not healing. No hustle / faceless-channel energy. Only the 3 sourced
 stats may appear (WEF 59%, edX +109%, NASSCOM India #1).
 
-## Status (2026-06-14)
-- ✅ **VR/MR, Agentic, ML** — rendered, branded, delivered (`course_assets/ad_out/<slug>/<slug>_BRANDED.mp4`).
-  Female voice + LTX moving-video bg + held captions + logo/URL. Audio approved by Deepak.
-- ⏳ **Brand reel, 5 episode reels, Physical AI** — scripts written; render with the same
-  `render_reel3.py` pipeline (add their DATA entries: image prompt + LTX motion prompt + caption).
-- 🔧 Follow-ups: install **ACE-Step** for true cinematic music (currently ambient pad); optional
-  softer gradient scrim to kill the faint band seam.
+## Status (2026-06-14) — ALL 10 DELIVERED ✅
+All in `course_assets/ad_out/<slug>/` (`_BRANDED.mp4` for the 3 course reels, `_FINAL.mp4` for the rest).
+Every reel: 9:16, female voice (Neerja), LTX moving-video bg, held gold captions, logo + learn.trigunai.com,
+and **ACE-Step cinematic music** (model downloaded to `~/ComfyUI/models/checkpoints/ace_step_v1_3.5b.safetensors`,
+generated via `ace_music.py` through ComfyUI; the 3 course reels were re-muxed to ACE after install).
+- Course (hard CTA): VR/MR, Agentic, ML · Physical AI (waitlist)
+- Funnel (soft CTA): Brand (Universal Mind), Ep1 Attention, Ep2 Learning, Ep3 Imagination, Ep4 Meaning, Ep5 Intuition
+- Drivers: `render_reel4.py` (all-LTX, 7-build DATA), `gen_reel_audio.py` (10-build narration), `ace_music.py`.
+- Episode reels use LTX themed bg (NOT episode footage — the episodes' burned-in captions clashed/cropped).
+- 🔧 Optional polish later: softer gradient scrim to remove the faint band seam; Hindi twins via localize path.
+- ⚠️ Not yet uploaded to YouTube/socials or posted — these are the source MP4s, ready to publish.

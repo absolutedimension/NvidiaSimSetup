@@ -29,4 +29,4 @@ print("== STEP 4: focus bed ==",flush=True)
 subprocess.run(["python3","focus_audio.py","--dur",str(int(float(d))),"--beat","12","--out","/tmp/bed_ep07_en.wav"],cwd=HOME)
 FOC=f"{HOME}/youtube_series/ep07_FINAL_focus.mp4"
 subprocess.run(["python3","focus_mix.py",OUT,"/tmp/bed_ep07_en.wav",FOC],cwd=HOME)
-print(f"\n✅ EP03_EN_DONE: {FOC}",flush=True)
+print(f"\n✅ EP07_EN_DONE: {FOC}",flush=True)

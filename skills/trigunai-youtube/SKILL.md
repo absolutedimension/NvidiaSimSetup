@@ -94,6 +94,10 @@ Deps (one-time): `pip3 install --user google-api-python-client google-auth-oauth
 | thumbnail `403 forbidden` | channel not verified | youtube.com/verify on that channel, then `thumbs` |
 | upload OK but no thumbnail/playlist | non-fatal (logged) | re-run `thumbs` / check playlist title |
 | `ModuleNotFoundError: google_auth_oauthlib` | default `python3` changed (e.g. to a fresh 3.14); deps live under the 3.9 | run with **`/usr/bin/python3`** (Python 3.9, has the deps + made the tokens). Prefix every command: `PY=/usr/bin/python3; $PY yt_upload.py ...` |
+| `uploadLimitExceeded` "exceeded the number of videos" | YouTube **daily upload cap** (young channels ~15/day across all videos+shorts) | wait ~24h, re-run the same `run` — state file skips the done ones, uploads only the remainder |
+
+## Shorts (vertical reels)
+Shorts = normal uploads of vertical (1080×1920) clips < 3 min; YouTube auto-classifies them (add **#Shorts** to the title). Manifest: `yt_manifest_shorts.json` — entries use **inline `description`** (not desc_file), **no `thumbnail`** (Shorts use the clip), **no `playlist`**. Video paths are relative to `youtube_series/` (e.g. `../course_assets/ad_out/<reel>/<file>.mp4`). Upload: `run yt_manifest_shorts.json --substack <url>`. Reels live in `course_assets/ad_out/reel_*/` (prefer `*_FINAL.mp4`, else `*_BRANDED.mp4`).
 
 Full context + channel IDs in memory `reference-youtube-channels.md`. Series content brain:
 skill `trigunai-content-strategy`. Production: `production-video-trigunai`.
