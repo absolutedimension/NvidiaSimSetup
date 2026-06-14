@@ -50,7 +50,7 @@ Status key: ✅ shipped · 📄 research/script ready · 💡 idea seeded
 | 3 | **Imagination** | Dreaming form out of nothing | Diffusion models (creation from noise, refined) | "Creation is just noise, refined." | ✅ **shipped bilingual** (EN `ep03_FINAL_focus` + HI) | ML / generative |
 | 4 | **Meaning** | How we hold meaning | Embeddings · vector space | "Meaning is a place, not a thing." | ✅ **shipped bilingual** (EN `ep04_FINAL_focus` 6:05 + HI `ep04_hi_FINAL_focus` 7:11) | ML |
 | 5 | **Intuition** | Knowing without reasoning; modeling anything | Neural nets · universal approximation | "A hunch is a pattern you can't yet name." | 💡 idea | ML |
-| 6 | **Will** | Wanting and acting toward a goal | Agentic systems · RL | "A goal is just a reward you haven't reached." | 💡 idea | **Agentic Systems** |
+| 6 | **Will** | Wanting and acting toward a goal | Agentic systems · RL | "A goal is just a reward you haven't reached." | ✅ **shipped bilingual** (EN `ep06_FINAL_focus` + HI; published to YouTube) | **Agentic Systems** |
 | 7 | **Getting Better** | Learning from mistakes | Gradient descent | "You don't learn from success — you learn from the size of your error." | 💡 idea | ML |
 | — | **Re-Learning / breaking habits** (could be a short, or a beat inside Ep 2) | Changing a burned-in pattern | Catastrophic forgetting ↔ relapse | "You cannot delete a pattern; you can only outvote it." | 💡 from the PDF | Robotics / self-dev crossover |
 
@@ -117,4 +117,4 @@ questions) — the book is where the *depth* lives, video is where the *wonder* 
   (frame via the 4 pillars + 5-beat arc), then `production-video-trigunai` (staged pipeline).
 - **When a new idea/research arrives:** add a row here (and a seed line in `SERIES_BIBLE.md`).
 
-*Last updated 2026-06-13. Episodes 1–4 shipped bilingual (EN+HI): Attention, Learning Loop, Imagination, Meaning. Next non-✅: Ep5 — Intuition (neural nets / universal approximation).*
+*Last updated 2026-06-13. Episodes 1–6 shipped bilingual (EN+HI) AND published to YouTube (both channels public): Attention, Learning Loop, Imagination, Meaning, Intuition, Will. Next non-✅: Ep7 — Getting Better (gradient descent / learning from error).*

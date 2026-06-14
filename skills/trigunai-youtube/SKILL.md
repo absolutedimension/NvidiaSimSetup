@@ -93,6 +93,7 @@ Deps (one-time): `pip3 install --user google-api-python-client google-auth-oauth
 | Hindi token binds to "Deepak Kumar" | wrong channel picked / cached | revoke app access, re-auth, pick "TrigunAI हिंदी" |
 | thumbnail `403 forbidden` | channel not verified | youtube.com/verify on that channel, then `thumbs` |
 | upload OK but no thumbnail/playlist | non-fatal (logged) | re-run `thumbs` / check playlist title |
+| `ModuleNotFoundError: google_auth_oauthlib` | default `python3` changed (e.g. to a fresh 3.14); deps live under the 3.9 | run with **`/usr/bin/python3`** (Python 3.9, has the deps + made the tokens). Prefix every command: `PY=/usr/bin/python3; $PY yt_upload.py ...` |
 
 Full context + channel IDs in memory `reference-youtube-channels.md`. Series content brain:
 skill `trigunai-content-strategy`. Production: `production-video-trigunai`.
