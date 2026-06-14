@@ -101,6 +101,26 @@
       "thumbnail": "thumbs/out/thumb_ep05_en.jpg",
       "lang": "en",
       "privacy": "private"
+    },
+    {
+      "id": "ep06",
+      "video": "ep06_FINAL_focus.mp4",
+      "title": "How AI Wants Things: Agents, Goals & Reward | AI is the Universal Mind #6",
+      "desc_file": "desc_ep06.txt",
+      "tags": [
+        "AI",
+        "AI agents",
+        "agentic AI",
+        "reinforcement learning",
+        "objective function",
+        "machine learning",
+        "autonomous agents",
+        "how AI works",
+        "artificial intelligence"
+      ],
+      "thumbnail": "thumbs/out/thumb_ep06_en.jpg",
+      "lang": "en",
+      "privacy": "public"
     }
   ]
 }

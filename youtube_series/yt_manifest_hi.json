@@ -95,6 +95,26 @@
       "thumbnail": "thumbs/out/thumb_ep05_hi.jpg",
       "lang": "hi",
       "privacy": "private"
+    },
+    {
+      "id": "ep06hi",
+      "video": "ep06_hi_FINAL_focus.mp4",
+      "title": "AI कुछ कैसे चाहता है: एजेंट, लक्ष्य और रिवॉर्ड | AI इज़ द यूनिवर्सल माइंड #6",
+      "desc_file": "desc_ep06_hi.txt",
+      "tags": [
+        "AI",
+        "हिंदी",
+        "AIagents",
+        "AgenticAI",
+        "ReinforcementLearning",
+        "MachineLearning",
+        "ArtificialIntelligence",
+        "AI in Hindi",
+        "टेक्नोलॉजी"
+      ],
+      "thumbnail": "thumbs/out/thumb_ep06_hi.jpg",
+      "lang": "hi",
+      "privacy": "public"
     }
   ]
 }
