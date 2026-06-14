@@ -164,7 +164,7 @@ class S09(Base):  # where the analogy breaks — fixed unquestioned objective
     def construct(self):
         self.ambient(3)
         t=self.title("Where the analogy breaks")
-        obj=VGroup(Rectangle(width=4,height=0.7,corner_radius=0.0,color=GOLD).set_stroke(width=2),Text("OBJECTIVE",font_size=24,color=GOLD)).arrange(ORIGIN).to_edge(UP,buff=1.9)
+        obj=VGroup(Rectangle(width=4,height=0.7,color=GOLD).set_stroke(width=2),Text("OBJECTIVE",font_size=24,color=GOLD)).arrange(ORIGIN).to_edge(UP,buff=1.9)
         g=goal(GOLD).move_to(RIGHT*4+DOWN*0.5); ag=spark(BLUE,0.2).move_to(LEFT*4+DOWN*0.5)
         self.P(FadeIn(t,shift=DOWN*0.2),FadeIn(obj),FadeIn(g),FadeIn(ag),rt=1.4)
         chain=DashedLine(obj.get_bottom(),ag.get_center(),color=DIM,dash_length=0.12)
