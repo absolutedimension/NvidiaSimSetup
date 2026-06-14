@@ -121,6 +121,25 @@
       "thumbnail": "thumbs/out/thumb_ep06_en.jpg",
       "lang": "en",
       "privacy": "public"
+    },
+    {
+      "id": "ep07",
+      "video": "ep07_FINAL_focus.mp4",
+      "title": "How AI Gets Better: Gradient Descent & Learning From Error | AI is the Universal Mind #7",
+      "desc_file": "desc_ep07.txt",
+      "tags": [
+        "AI",
+        "gradient descent",
+        "backpropagation",
+        "deep learning",
+        "machine learning",
+        "how AI learns",
+        "neural networks",
+        "artificial intelligence"
+      ],
+      "thumbnail": "thumbs/out/thumb_ep07_en.jpg",
+      "lang": "en",
+      "privacy": "public"
     }
   ]
 }

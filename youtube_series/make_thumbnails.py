@@ -81,6 +81,23 @@ def ep6():   # will — a goal-point and the pull toward it
     img=dots(img,90,(540,1240),(60,680),[BLUE,DIMW,PURPLE],1,3,(40,140),16)
     return img
 
+def ep7():   # getting better — a glowing point descending into a valley (gradient descent)
+    CX,TOP,DEPTH,Wd=1010,250,300,300   # valley center x, rim y, depth, half-width
+    def vy(x): return TOP + DEPTH*(1-((x-CX)/Wd)**2)   # bowl: low at edges, deep (high y) at center
+    a=base(); a=glow(a,CX,TOP+DEPTH,300,GOLD,0.35,2.4); a=glow(a,CX,TOP+DEPTH,120,(255,240,210),0.5,2.0)
+    img=finish(a)
+    ov=Image.new("RGBA",(W,H),(0,0,0,0)); dd=ImageDraw.Draw(ov)
+    pts=[(x,vy(x)) for x in range(CX-Wd,CX+Wd+1,4)]
+    dd.line(pts,fill=(150,168,205,160),width=5)
+    for k,xx in enumerate([CX-260,CX-190,CX-120,CX-55]):   # ball rolling down the slope
+        yy=vy(xx); r=7+k*2; op=90+k*35
+        dd.ellipse([xx-r,yy-r,xx+r,yy+r],fill=(255,201,82,op))
+    bx,by=CX,vy(CX)                                          # bright ball settled at the minimum
+    dd.ellipse([bx-17,by-17,bx+17,by+17],fill=(255,240,210,255))
+    img=Image.alpha_composite(img,ov)
+    img=dots(img,80,(560,1260),(40,300),[BLUE,DIMW,PURPLE],1,3,(40,130),17)
+    return img
+
 def font(path,size): return ImageFont.truetype(path,size,layout_engine=ImageFont.Layout.RAQM)
 def wrap(d,txt,fn,maxw):
     out=[]; cur=""
@@ -131,6 +148,8 @@ JOBS=[
  (ep5,"अंदेशा क्या है?","एपिसोड 5 · अंतर्ज्ञान","hi","thumb_ep05_hi"),
  (ep6,"WHAT IS WANTING?","EP 6 · WILL","en","thumb_ep06_en"),
  (ep6,"चाह क्या है?","एपिसोड 6 · इच्छा","hi","thumb_ep06_hi"),
+ (ep7,"LEARN FROM ERROR","EP 7 · GETTING BETTER","en","thumb_ep07_en"),
+ (ep7,"ग़लती से सीखो","एपिसोड 7 · बेहतर होना","hi","thumb_ep07_hi"),
 ]
 for fn,big,tag,lang,name in JOBS: compose(fn,big,tag,lang,name)
 print("done ->",OUT)

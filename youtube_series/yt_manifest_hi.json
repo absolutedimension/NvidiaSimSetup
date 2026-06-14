@@ -115,6 +115,25 @@
       "thumbnail": "thumbs/out/thumb_ep06_hi.jpg",
       "lang": "hi",
       "privacy": "public"
+    },
+    {
+      "id": "ep07hi",
+      "video": "ep07_hi_FINAL_focus.mp4",
+      "title": "AI बेहतर कैसे होता है: ग्रेडिएंट डिसेंट और ग़लती से सीखना | AI इज़ द यूनिवर्सल माइंड #7",
+      "desc_file": "desc_ep07_hi.txt",
+      "tags": [
+        "AI",
+        "हिंदी",
+        "GradientDescent",
+        "DeepLearning",
+        "MachineLearning",
+        "ArtificialIntelligence",
+        "AI in Hindi",
+        "टेक्नोलॉजी"
+      ],
+      "thumbnail": "thumbs/out/thumb_ep07_hi.jpg",
+      "lang": "hi",
+      "privacy": "public"
     }
   ]
 }
