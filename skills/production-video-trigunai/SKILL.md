@@ -303,10 +303,34 @@ backgrounds + word-synced kinetic captions + a research-grounded focus-audio bed
   from a shell that then exits may be killed before producing output (its log stays 0 bytes). For the
   Hindi translation specifically: run it SYNCHRONOUSLY (or verify `epNN_hi_build/{sNN.mp3,hindi_script.json}`
   exist) BEFORE launching the dependent Hindi build. Don't chain a build onto an unverified detached job.
+- **Azure content-filter false-positives on Hindi translation** — a single scene's full narration can
+  trip Azure's content policy (`ContentPolicyViolationError`, HTTP 400) even when it's benign (Ep6 scene_08:
+  dopamine/willpower phrasing). It's deterministic, so retrying the whole block won't help. `translate_voice_hi.py`
+  now falls back to translating that block SENTENCE-BY-SENTENCE (the filter trips on the full-context combo,
+  not the parts), keeping English for any fragment that still filters. Also: the background image-gen and the
+  translation share the proxy — concurrent load makes calls flaky, so the translate retry loop is necessary.
+- **ComfyUI does NOT auto-start on boot** — unlike the Docker agents, ComfyUI (port 8188, for LTX bg clips)
+  must be started manually after a box restart: `cd ~/ComfyUI && setsid nohup ~/comfyenv/bin/python main.py
+  --listen 127.0.0.1 --port 8188 >/tmp/comfyui.log 2>&1 & disown`. Backgrounds (gen_scene_bgs_*) silently
+  fail their LTX clip step without it. The litellm proxy + agents DO auto-start; ComfyUI and the isaaclab
+  container do not.
 - **Fail-fast on missing inputs** — the Hindi build must assert its inputs exist before STEP 1, e.g.
   `assert all(os.path.exists(f"{BUILD}/s{i:02d}.mp3") for i in range(1,N+1)) and os.path.exists(f"{BUILD}/hindi_script.json")`.
   Without it, render_*_hi renders N scenes on zero-duration audio and captions fail N times — a wasted
   ~40-min build that looks like it "completed" (Ep3 hit exactly this).
+- **Degenerate (zero-length) Arrows HANG the Manim render** — placing arrow endpoints at `random` positions
+  can drop one on top of the source, giving a zero-length `Arrow` that hangs cairo indefinitely (Ep6 S08:
+  random "temptation" points landing on the "you" point). The render process stalls with no error and no
+  output .mov — looks identical to a slow scene. Use FIXED, well-separated endpoint coordinates for arrow
+  fans, never `random.uniform` near the source.
+- **`LaggedStartMap(GrowArrow, …)` over multiple semi-transparent arrows → `'hex'` AttributeError** —
+  `GrowArrow` animates the tip, and growing several arrows with `stroke_opacity<1` at once breaks tip color
+  interpolation (`ArrowTriangleFilledTip has no attribute 'hex'`). A single `GrowArrow(arrow)` is fine; the
+  fan is not. Use `LaggedStartMap(FadeIn, …)` for arrow fans. (Same `.hex` class as GrowFromCenter-on-Text.)
+- **Each scene renders in a fresh subprocess** — `render_*_manim.py` runs `python3 -m manim … engine.py SNN`
+  per scene, re-reading the engine file each time. So you can hot-patch a not-yet-rendered scene mid-build:
+  push the fixed engine and the running build picks it up when it reaches that scene — no restart, no
+  re-rendering the scenes already done. Verify the fix with a standalone `-o SNNTEST` render first.
 - **`set_opacity()` fills hollow shapes** — Manim's `set_opacity` sets BOTH stroke AND fill opacity, so a
   `Circle(stroke_opacity=…)` outline animated via `.animate.set_opacity(x)` renders as a SOLID disc
   (Ep3's "emerging face" became a filled smiley). To keep an outline hollow while fading, animate

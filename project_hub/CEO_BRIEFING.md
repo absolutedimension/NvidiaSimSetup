@@ -1,11 +1,24 @@
 # TrigunAI — CEO Briefing
 
-> Last updated: 2026-06-13 by CEO session (course catalog locked — 3-course tiered launch, infra moat, monetization tiers)
-> ⭐ Full context: `COURSE_CATALOG.md` + memory `project-ai-universal-mind.md` + skill `trigunai-content-strategy` + `youtube_series/`.
+> Last updated: 2026-06-14 by CEO session (brand thesis + personas + financial model crystallized; full course indexes + landing-page brand handoff written; CEO OS → v4.2)
+> ⭐ Full context: `COURSE_CATALOG.md` + `COURSE_INDEXES.md` + `USER_RESEARCH.md` + `landing-page-handoff/BRAND_HANDOFF.md` + memory `project-ai-universal-mind.md` + skill `trigunai-content-strategy` + `youtube_series/`.
 
 ---
 
 ## 🔥 Needs your attention
+
+-1. **STRATEGY CRYSTALLIZED (2026-06-14) → CEO OS now v4.2 ("BRAND, AUDIENCE & MONEY" section).**
+   (a) **Brand thesis** held at 3 layers — poetic "AI is the Universal Mind" / operational *mirror* /
+   market (sells) — as a *lens, not a proven law*; metacognition = capstone Ep 8 bridging into Movement II.
+   (b) **4 personas:** A "Curious Mind" = funnel magnet (watches free); B Future-Proofer + C Crossover-Pro
+   (non-IT) + D Builder = the **buyers**. **Watchers ≠ buyers** — aim Register CTAs at B/C/D. (`USER_RESEARCH.md`, sourced.)
+   (c) **Financial model:** value ladder, **live cohort = the profit engine**, *"free to understand · paid to
+   transform"*; **first money = pre-sell ONE cohort to the network** (= cash + validation). (d) **Decision on
+   record:** the video pipeline is the **workshop, not a product** — teach it (parked Course 5), do NOT sell
+   B2B pipeline-SaaS. (e) **Everything free now** — all 5 episodes public EN+HI; course CTA = free waitlist, not a price.
+   Deliverables written: `COURSE_INDEXES.md` (4 courses full module indexes + Course 5 parked), `USER_RESEARCH.md`,
+   `landing-page-handoff/{BRAND_HANDOFF.md, COURSES_HANDOFF.md, courses.ts}`. **Next real-work item is still
+   recording (VR Mod 2–3, Agentic Mod 1–2) + standing up the free waitlist forms — not more strategy docs.**
 
 0. **COURSE CATALOG LOCKED (2026-06-13) → `COURSE_CATALOG.md`.** Series = free funnel; each
    episode → a faculty → a technology → a course. **VR's 3 roles:** own course (deepest skill) +

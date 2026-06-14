@@ -144,9 +144,10 @@ class S08(Base):
         g=goal(GOLD).move_to(RIGHT*4+DOWN*0.2)
         self.P(FadeIn(t,shift=DOWN*0.2),FadeIn(you),FadeIn(g),rt=1.4)
         aim=Arrow(you[0].get_center(),g.get_center(),color=GOLD,buff=0.5,stroke_width=4)
-        temps=VGroup(*[VGroup(spark(ROSE,0.14)).move_to([random.uniform(-3,1),random.uniform(-2.4,2),0]) for _ in range(4)])
+        _toff=[[-1.0,-1.9],[1.2,-1.3],[-1.3,1.6],[0.8,1.3]]   # fixed, all well clear of 'you' (no zero-len arrows)
+        temps=VGroup(*[spark(ROSE,0.14).move_to([ox,oy,0]) for ox,oy in _toff])
         tugs=VGroup(*[Arrow(you[0].get_center(),tm.get_center(),color=ROSE,buff=0.3,stroke_width=2,stroke_opacity=0.5) for tm in temps])
-        self.P(GrowArrow(aim),rt=0.9); self.P(LaggedStartMap(FadeIn,temps,lag_ratio=0.1),LaggedStartMap(GrowArrow,tugs,lag_ratio=0.1),rt=1.4)
+        self.P(GrowArrow(aim),rt=0.9); self.P(LaggedStartMap(FadeIn,temps,lag_ratio=0.1),LaggedStartMap(FadeIn,tugs,lag_ratio=0.1),rt=1.4)
         self.P(self.cap("दूर के लक्ष्य को पास वालों के विरुद्ध थामो",g,buff=0.6,size=24).animate.set_opacity(1),rt=0.9)
         self.hold()
 
