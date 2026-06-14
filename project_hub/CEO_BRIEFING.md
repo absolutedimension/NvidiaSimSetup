@@ -1,11 +1,24 @@
 # TrigunAI — CEO Briefing
 
-> Last updated: 2026-06-14 by CEO session (brand thesis + personas + financial model crystallized; full course indexes + landing-page brand handoff written; CEO OS → v4.2)
+> Last updated: 2026-06-15 by CEO session (NEW music pipeline built — see item 🎵 below). Prior: 2026-06-14 brand thesis + personas + financial model crystallized; CEO OS → v4.2.
 > ⭐ Full context: `COURSE_CATALOG.md` + `COURSE_INDEXES.md` + `USER_RESEARCH.md` + `landing-page-handoff/BRAND_HANDOFF.md` + memory `project-ai-universal-mind.md` + skill `trigunai-content-strategy` + `youtube_series/`.
 
 ---
 
 ## 🔥 Needs your attention
+
+🎵 **NEW CAPABILITY — MUSIC PIPELINE built & validated (2026-06-15).** End-to-end, automatic,
+   **copyright-clean** music factory on the existing EC2 A10G — the audio sibling of the video
+   pipeline. Engine = **ACE-Step** (MIT license, trained on licensed+royalty-free+synthetic data
+   → every output safe to monetize). One command `make_music.py` → generate → extend to ANY length
+   (seamless crossfades) → optional isochronic tones / 432Hz tuning → master → MP3. **Proven:** EN pop,
+   Hindi ghazal, reference-style match, 30-min house+beta-isochronic, 432Hz raga, sitar meditation.
+   Skill: **`production-music-trigunai`**. Docs: `MUSIC_PIPELINE_RESEARCH.md`, memory `project-music-pipeline`.
+   **Honest framing (per OS):** this is a TOOL not a product — value = original owned music beds for
+   episodes (replace isochronic), music for Flow-Art/Movement II, and a potential **faceless
+   copyright-clean music YouTube channel** (Deepak plans a NEW channel for music uploads later — proven
+   format: Raga Heal 63k / Jason Lewis 640k subs). Next: M2 = two synthetic AI singers (RVC). **Do NOT
+   let it derail July 18 course launch** — schedule singer work around it.
 
 -1. **STRATEGY CRYSTALLIZED (2026-06-14) → CEO OS now v4.2 ("BRAND, AUDIENCE & MONEY" section).**
    (a) **Brand thesis** held at 3 layers — poetic "AI is the Universal Mind" / operational *mirror* /

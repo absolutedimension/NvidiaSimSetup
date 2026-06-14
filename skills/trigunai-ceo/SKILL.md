@@ -121,6 +121,7 @@ pay premium for "I built this, here's exactly how" over "here's the documentatio
 | Workstream | New role | Status |
 |---|---|---|
 | **Video production pipeline** | **Core tool** — creates YouTube content + course explanations | Active, repurposed |
+| **Music production pipeline** | **Tool** — copyright-clean music (ACE-Step) for episode beds + Flow-Art/Movement II + a planned faceless music YouTube channel | Built & validated 2026-06-15 (`production-music-trigunai`). Tool, NOT a product/SaaS pivot. |
 | **Drone cinematography** | **Production tool** — shoots video for courses + live VR with proper camera angles | Continues as content tool |
 | **Dance/forest community** | **Personal project** — community of dancers, NO business revenue | Explicitly non-commercial |
 | **Quest VR app** | **Becomes the classroom** — Deepak builds it, simple VR app | Deepak-owned, will build |
