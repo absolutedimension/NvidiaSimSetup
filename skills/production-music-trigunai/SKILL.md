@@ -130,10 +130,17 @@ For vocals: write lyrics with `[verse]` / `[chorus]` / `[bridge]` tags; native s
 
 ## 6. Roadmap beyond M1 (what's NOT built yet)
 
-- **M2 — Own AI singers (synthetic personas):** train 2 RVC voice models (`Trigun-Ravi` M /
-  `Trigun-Maya` F) so vocals carry a consistent owned identity. Pipeline: ACE-Step vocal →
-  Demucs stem-split → RVC convert → remix → master. Decision on record (2026-06-15): **fully
-  synthetic** voices (no human recording dependency). Tools: RVC v2, Demucs `htdemucs_ft`.
+- **M2 — Own AI singers ✅ BUILT 2026-06-15.** **Trigun-Maya (F) + Trigun-Ravi (M)** working.
+  **Uses seed-vc zero-shot singing voice conversion, NOT RVC** (this box's torch 2.12 / py3.12
+  breaks RVC's `fairseq`/HuBERT — seed-vc needs no training, just a fixed reference clip per
+  singer = permanent identity). Tool: **`singerize.py`** (runs in `~/m2_venv`):
+  `singerize.py --input song.wav --singer maya|ravi --out out.mp3` → Demucs split → seed-vc
+  convert vocal (`--f0-condition True --auto-f0-adjust True`) → remix with instrumental → master.
+  Singer refs: `/home/ubuntu/singers/{maya,ravi}_ref.wav` (seeded from F5-TTS female_calm/male_calm).
+  Add a singer = drop a clean 15–20 s ref clip in `singers/`. Env: `m2_venv` (demucs+torchcodec) +
+  `~/seed-vc` repo. Flags: `--semitone` (int) `--steps`(30) `--cfg`(0.7) `--vocal-only`.
+  NEXT polish: better singing-reference clips (sung, not spoken) → more natural; wire `--singer`
+  into make_music.py for fully end-to-end vocal songs.
 - **M3 — Full automation:** LLM (LiteLLM proxy :4000 → Azure) writes lyrics from a theme →
   song → singer → master, zero manual steps.
 - **M4 — Integrate:** original music beds for YouTube episodes (replace isochronic), Flow-Art /
