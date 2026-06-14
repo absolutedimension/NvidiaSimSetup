@@ -139,8 +139,13 @@ For vocals: write lyrics with `[verse]` / `[chorus]` / `[bridge]` tags; native s
   Singer refs: `/home/ubuntu/singers/{maya,ravi}_ref.wav` (seeded from F5-TTS female_calm/male_calm).
   Add a singer = drop a clean 15–20 s ref clip in `singers/`. Env: `m2_venv` (demucs+torchcodec) +
   `~/seed-vc` repo. Flags: `--semitone` (int) `--steps`(30) `--cfg`(0.7) `--vocal-only`.
-  NEXT polish: better singing-reference clips (sung, not spoken) → more natural; wire `--singer`
-  into make_music.py for fully end-to-end vocal songs.
+  **Status (user verdict 2026-06-15): both singers GOOD on English.** ⚠️ **Known issue — HINDI
+  ACCENT:** Maya/Ravi carry an English/neutral accent that doesn't sound natively Hindi on
+  Hindi/Urdu lyrics (ghazal). Deferred — "we'll see later." Likely fixes when revisited:
+  (a) seed the singer reference from a **native Hindi sung clip** (currently F5-TTS English
+  voices); (b) keep ACE-Step's own Hindi vocal for Hindi songs and only singer-convert English;
+  (c) try a Hindi-trained voice reference. NEXT polish overall: sung (not spoken) reference clips
+  → more natural; wire `--singer` into make_music.py for end-to-end vocal songs (= M3).
 - **M3 — Full automation:** LLM (LiteLLM proxy :4000 → Azure) writes lyrics from a theme →
   song → singer → master, zero manual steps.
 - **M4 — Integrate:** original music beds for YouTube episodes (replace isochronic), Flow-Art /
