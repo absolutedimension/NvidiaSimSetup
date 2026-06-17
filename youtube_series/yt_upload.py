@@ -91,7 +91,7 @@ def upload_one(yt, ep, playlist_title, substack, privacy, state):
                     "defaultLanguage": ep.get("lang", "en"),
                     "defaultAudioLanguage": ep.get("lang", "en")},
         "status": {"privacyStatus": privacy or ep.get("privacy", "public"),
-                   "selfDeclaredMadeForKids": False},
+                   "embeddable": True, "selfDeclaredMadeForKids": False},
     }
     print(f">> {eid}: uploading '{ep['title'][:60]}...'", flush=True)
     media = MediaFileUpload(video, chunksize=8*1024*1024, resumable=True, mimetype="video/mp4")
@@ -145,8 +145,9 @@ def main():
             if not vid: print(f"  skip {ep['id']} (not uploaded)", flush=True); continue
             try:
                 yt.videos().update(part="status", body={"id": vid,
-                    "status": {"privacyStatus": to, "selfDeclaredMadeForKids": False}}).execute()
-                print(f"  ✅ {ep['id']} → {to} (https://youtu.be/{vid})", flush=True)
+                    "status": {"privacyStatus": to, "embeddable": True,
+                               "selfDeclaredMadeForKids": False}}).execute()
+                print(f"  ✅ {ep['id']} → {to} + embeddable (https://youtu.be/{vid})", flush=True)
             except Exception as e:
                 print(f"  !! {ep['id']} failed: {e}", flush=True)
         print("\n== publish done ==", flush=True); return
