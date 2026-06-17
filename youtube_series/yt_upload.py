@@ -133,6 +133,8 @@ def main():
     pp = sub.add_parser("publish")
     pp.add_argument("manifest")
     pp.add_argument("--to", default="public", choices=["public","unlisted","private"])
+    lp = sub.add_parser("playlist")
+    lp.add_argument("manifest")
     a = ap.parse_args()
     if a.cmd == "auth":
         get_creds(); print("✅ auth complete — token.json saved."); return
@@ -148,6 +150,29 @@ def main():
             except Exception as e:
                 print(f"  !! {ep['id']} failed: {e}", flush=True)
         print("\n== publish done ==", flush=True); return
+    if a.cmd == "playlist":
+        man = json.load(open(a.manifest)); yt = svc(); state = load_state()
+        title = man.get("playlist")
+        if not title: print("!! manifest has no 'playlist' field", flush=True); return
+        pid = ensure_playlist(yt, title, state)
+        existing = set()
+        try:
+            req = yt.playlistItems().list(part="contentDetails", playlistId=pid, maxResults=50)
+            while req:
+                r = req.execute()
+                for it in r.get("items", []): existing.add(it["contentDetails"]["videoId"])
+                req = yt.playlistItems().list_next(req, r)
+        except Exception as e:
+            print(f"  (couldn't read existing items — assuming empty: {str(e)[:60]})", flush=True)
+        for ep in man["episodes"]:
+            vid = state.get(ep["id"], {}).get("video_id")
+            if not vid: print(f"  skip {ep['id']} (not uploaded)", flush=True); continue
+            if vid in existing: print(f"  = {ep['id']} already in playlist", flush=True); continue
+            try:
+                add_to_playlist(yt, pid, vid); print(f"  ✅ {ep['id']} → playlist", flush=True)
+            except Exception as e:
+                print(f"  !! {ep['id']} failed: {e}", flush=True)
+        print(f"\n== playlist '{title}' done → https://www.youtube.com/playlist?list={pid}", flush=True); return
     if a.cmd == "thumbs":
         man = json.load(open(a.manifest)); yt = svc(); state = load_state()
         for ep in man["episodes"]:

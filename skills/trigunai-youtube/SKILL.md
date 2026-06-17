@@ -43,7 +43,17 @@ YT_TOKEN=token_hi.json python3 yt_upload.py publish yt_manifest_hi.json
 
 # (re)set thumbnails on already-uploaded videos (needs channel verified):
 YT_TOKEN=token_hi.json python3 yt_upload.py thumbs yt_manifest_hi.json
+
+# set visibility on already-uploaded videos (public/unlisted/private):
+python3 yt_upload.py publish yt_manifest_modules.json --to public
+
+# create the manifest's playlist (man["playlist"]) + add all its uploaded videos in order:
+python3 yt_upload.py playlist yt_manifest_modules.json
+YT_TOKEN=token_hi.json python3 yt_upload.py playlist yt_manifest_modules_hi.json
 ```
+> Note: a just-created playlist 404s on read for a few seconds (eventual consistency) — the
+> `playlist` cmd handles it (assumes empty + adds). VR/MR course playlists already exist:
+> EN `PLEaZLvG-MxKEfSwGSd9RYNTs_qKxlqgOi` · HI `PLLtodSCjWL8UKAnDHQmkVeW6VhErDnWNg`.
 
 State of what's uploaded → `yt_uploaded.json` (video_ids; safe to re-run, skips done).
 Deps (one-time): `pip3 install --user google-api-python-client google-auth-oauthlib google-auth-httplib2`.
