@@ -64,18 +64,24 @@ provided-infra for the July 18 launch. Pilot it with course #2, after revenue + 
 
 ---
 
-## 4. Monetization stack (tiered)
+## 4. Monetization model (LOCKED 2026-06-17 — recorded free, live = paid)
 
-| Tier | What | Price | Platform | When |
-|---|---|---|---|---|
-| Free | YouTube episodes | ₹0 | YouTube | now — the funnel |
-| Membership | Channel membership: early access, Q&A, bonus | ~₹99–499/mo | YouTube | once 3–4 eps public |
-| Recorded course | Self-paced, all modules | ~₹1.5–5k | Udemy + own site | **July 18 launch** |
-| **Live + infra** | Live VR classes + provided GPU + hands-on build | **₹50k+** | VR app + EC2 | **course #2+, post-launch** |
+**Founder decision (2026-06-17): the recorded course is FREE and PUBLIC on YouTube — it's the
+hook + reference. The ONLY chargeable product is LIVE CLASSES.** (Reversed the earlier
+membership-gated plan.)
 
-Recorded-everywhere builds reach; the **₹50k live-infra cohort is where the money is.**
-The recorded course is the proof that earns the right to sell the 50k tier.
-Use YouTube *efficiently*: every episode ends in an email capture → list → course offer.
+| Tier | What | Price | Platform |
+|---|---|---|---|
+| Free | YouTube series + shorts + **full recorded VR/MR course (9 modules, EN+HI, public)** | ₹0 | YouTube |
+| **Paid — LIVE classes** | Live VR/MR cohort taught by Deepak + provided GPU/Isaac-Sim infra + hands-on build + community | **the chargeable product** (₹ TBD; cohort/seat or ₹50k premium) | VR app + EC2 + learn.trigunai.com |
+
+**Why this works:** free recorded content is the strongest top-of-funnel (max reach, builds
+trust, "I built this, here's how"); the live cohort is what people actually pay for — real-time
+help, accountability, a working GPU, community. Recorded videos are the *reference* students
+return to; the live class is the *transformation*.
+**Watch-out (CEO):** revenue now depends entirely on actually *running* live classes (Deepak's
+time, scheduling, a cohort offer). The recorded library can't be re-sold once it's free — so the
+live offer + its pricing is the whole business. Stand that up next.
 
 ---
 

@@ -1,4 +1,4 @@
-# VR/MR Course — module embed map (unlisted YouTube; gate behind membership on your platform)
+# VR/MR Course — module map (PUBLIC on YouTube; free hook for paid LIVE CLASSES)
 
 | # | Module | English (embed) | Hindi (embed) |
 |---|---|---|---|
@@ -13,4 +13,4 @@
 | 9 | Mixed Reality | https://youtu.be/2QqkLqp-0pU | https://youtu.be/7_QLFdoH0Bg |
 
 **Embed code:** `<iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>`
-**Status:** unlisted (link-only). Gate behind login/payment on the membership platform.
+**Status:** PUBLIC on both channels (free hook + reference). Revenue = paid LIVE CLASSES only (cohort + provided GPU/Isaac-Sim).
