@@ -1,11 +1,44 @@
 # TrigunAI — CEO Briefing
 
-> Last updated: 2026-06-15 by CEO session (NEW music pipeline built — see item 🎵 below). Prior: 2026-06-14 brand thesis + personas + financial model crystallized; CEO OS → v4.2.
+> Last updated: 2026-06-16 by CEO session (COURSE-FIRST RESET — see item 🚨 below). Prior: 2026-06-15 music pipeline; 2026-06-14 brand thesis + personas + financial model; CEO OS → v4.2.
 > ⭐ Full context: `COURSE_CATALOG.md` + `COURSE_INDEXES.md` + `USER_RESEARCH.md` + `landing-page-handoff/BRAND_HANDOFF.md` + memory `project-ai-universal-mind.md` + skill `trigunai-content-strategy` + `youtube_series/`.
 
 ---
 
 ## 🔥 Needs your attention
+
+🟢 **TWO-ENGINE MODEL LOCKED (2026-06-17 → CEO OS v5.0).** Deepak's decision on record: the
+   company runs **two coupled engines** and this **supersedes the 16-Jun single-course freeze**.
+   (A) **Learning Engine** (Deepak) — courses + revenue; learn.trigunai.com live, 9/11 VR/MR
+   modules public, 4 courses listed, **0 paid / 3 users / 6 free enrollments**. (B) **Physical AI
+   Engine** — **Avinash reactivated, 100% on ModusXR** (Android XR Catalyst) + Deepak co-leads the
+   drone policy; physical-ai.trigunai.com live, seeking seed for hardware only. **Gate stays
+   revenue-weighted (Deepak's call):** track fundraising in parallel but push first paid enrollment
+   as primary. **The hard, unchanged truth the OS holds: 0 rupees have cleared — the revenue model
+   is BUILT but UNVALIDATED, and the "students-train-the-drone" flywheel has zero turning parts yet
+   (no robotics course, no hardware, no student labor).** Single highest-value gap = **a live way to
+   pay + the first payment.** Slip risk on July 18 went UP with focus split — name it when the week
+   drifts to build/raise/research instead of "did anyone pay." Full detail: CEO OS §"THE TWO-ENGINE
+   MODEL (17 JUNE 2026)". *Source: 17-Jun strategic direction handoff, checked against ground truth.*
+
+🚨 **COURSE-FIRST RESET (2026-06-16, 32 days to July 18) — SUPERSEDED by the two-engine lock above,
+   but the revenue-gate discipline carries forward. Decision on record: Deepak chose "Still
+   July 18, course-first now."** Work-scanner ground truth for the prior 14 days = Ep4–7 + YouTube
+   pipeline + Shorts + music M0–M2 + strategy docs. **Zero recorded course modules. Zero live waitlist
+   form.** The funnel got fatter; the product behind it is still at zero. The OS flagged this as the
+   founding-stage trap (fat funnel, nothing to convert into) and the music pipeline was explicitly
+   self-flagged "do NOT derail July 18" — then consumed the run-up. **Correction locked:**
+   - **FREEZE** new content + tools (no Ep8, no music channel, no new pipeline) until launch.
+   - Launch **ONE course = VR/MR** (flagship). Agentic/ML drip is OFF the critical path — only if ahead by Jul 7.
+   - Launch button = **free waitlist → pre-sell ONE live cohort to the network** (not a Udemy price).
+   - **Week-by-week reset (this session):** W1 (Jun 16–22) waitlist form LIVE + record VR/MR Module 1
+     + 1 teaser → gate: waitlist live + Mod1 recorded. W2 record Mod 2–3, DM network to waitlist →
+     ≥10 signups. W3 record Mod 4–5 + landing page live + open cohort pre-sell (VR classroom only if
+     not behind, else Zoom-live) → ≥5 interested; **stop-condition: zero signups by Jul 6 = CTA/topic
+     not landing, diagnose.** W4 finish modules + first live test + pre-enroll push → ≥5 committed.
+     Launch Jul 14–18 → **decision gate: ≥5 paying/committed or diagnose, don't slip silently.**
+   - **The waitlist form is the single most-deferred, highest-value item — it is the only pre-launch
+     validation signal. Stand it up first.**
 
 🎵 **NEW CAPABILITY — MUSIC PIPELINE built & validated (2026-06-15).** End-to-end, automatic,
    **copyright-clean** music factory on the existing EC2 A10G — the audio sibling of the video
