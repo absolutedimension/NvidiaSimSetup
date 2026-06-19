@@ -1,0 +1,37 @@
+{
+  "episodes": [
+    {
+      "id": "agent_explainer",
+      "video": "../course_assets/intro_out/What_is_an_AI_Agent_v2.mp4",
+      "title": "What is an AI Agent? — Explained Simply",
+      "description": "A clear, plain-English explainer: what an AI agent actually is, how it differs from a chatbot, and why it matters.\n\n▶ Full course (free): Build Agentic Systems — https://www.youtube.com/playlist?list=PLEaZLvG-MxKEld6WNVp8HZ0lQGYWbcMBE\n🔔 Live cohort + more → {substack}\n\n#AIagents #AgenticAI #AI #LLM #artificialintelligence",
+      "tags": [
+        "AI agents",
+        "what is an AI agent",
+        "agentic AI",
+        "AI explained",
+        "LLM",
+        "artificial intelligence",
+        "AI agent vs chatbot"
+      ],
+      "lang": "en",
+      "privacy": "public"
+    },
+    {
+      "id": "agent_explainer_school",
+      "video": "../course_assets/intro_out/What_is_an_Agent_School.mp4",
+      "title": "What is an AI Agent? — Explained for School Students",
+      "description": "What is an AI agent? Explained simply, for students — no jargon. The clearest 90 seconds on AI agents you'll watch.\n\n▶ Full course (free): Build Agentic Systems — https://www.youtube.com/playlist?list=PLEaZLvG-MxKEld6WNVp8HZ0lQGYWbcMBE\n🔔 Live cohort + more → {substack}\n\n#AIagents #AgenticAI #AI #explained #artificialintelligence",
+      "tags": [
+        "AI agents",
+        "what is an AI agent",
+        "AI for students",
+        "AI explained simply",
+        "agentic AI",
+        "artificial intelligence"
+      ],
+      "lang": "en",
+      "privacy": "public"
+    }
+  ]
+}
