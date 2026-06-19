@@ -106,6 +106,12 @@ Deps (one-time): `pip3 install --user google-api-python-client google-auth-oauth
 | `ModuleNotFoundError: google_auth_oauthlib` | default `python3` changed (e.g. to a fresh 3.14); deps live under the 3.9 | run with **`/usr/bin/python3`** (Python 3.9, has the deps + made the tokens). Prefix every command: `PY=/usr/bin/python3; $PY yt_upload.py ...` |
 | `uploadLimitExceeded` "exceeded the number of videos" | YouTube **daily upload cap** (young channels ~15/day across all videos+shorts) | wait ~24h, re-run the same `run` — state file skips the done ones, uploads only the remainder |
 
+## Playback speed (voice too fast?)
+YouTube has **NO creator-set default playback speed** — it's per-viewer only. To make a video
+*play slower by default*, bake it into the file before upload (pitch-preserved audio):
+`ffmpeg -i in.mp4 -filter_complex "[0:v]setpts=PTS/0.85[v];[0:a]atempo=0.85[a]" -map "[v]" -map "[a]" -c:v libx264 -crf 20 -pix_fmt yuv420p -c:a aac -b:a 192k out.mp4`
+(0.85 = 18% slower/longer; `atempo` keeps pitch natural. Agentic course was baked at 0.85.)
+
 ## Shorts (vertical reels)
 Shorts = normal uploads of vertical (1080×1920) clips < 3 min; YouTube auto-classifies them (add **#Shorts** to the title). Manifest: `yt_manifest_shorts.json` — entries use **inline `description`** (not desc_file), **no `thumbnail`** (Shorts use the clip), **no `playlist`**. Video paths are relative to `youtube_series/` (e.g. `../course_assets/ad_out/<reel>/<file>.mp4`). Upload: `run yt_manifest_shorts.json --substack <url>`. Reels live in `course_assets/ad_out/reel_*/` (prefer `*_FINAL.mp4`, else `*_BRANDED.mp4`).
 
