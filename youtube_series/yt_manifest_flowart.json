@@ -1,0 +1,49 @@
+{
+  "playlist": "Flow State & Focus Music",
+  "episodes": [
+    {
+      "id": "flow_dance",
+      "video": "../course_assets/intro_out/breath_techno_60min.mp4",
+      "title": "1 Hour Flow State Music — Hypnotic Techno + 10 Hz Alpha | Dance, Movement & Creative Flow",
+      "desc_file": "flowart/desc_flow_dance.txt",
+      "thumbnail": "flowart/out/thumb_flow_dance.jpg",
+      "tags": [
+        "flow state music",
+        "flow art dance",
+        "techno",
+        "isochronic tones",
+        "alpha waves",
+        "focus music",
+        "dance music",
+        "brainwave entrainment",
+        "1 hour music",
+        "ecstatic dance",
+        "movement music"
+      ],
+      "lang": "en",
+      "privacy": "public"
+    },
+    {
+      "id": "flow_focus",
+      "video": "../course_assets/intro_out/neon_tunnel_lotus_60min.mp4",
+      "title": "1 Hour Deep Focus Music — Deep House + Beta Isochronic Tones | Study, Memory & Deep Work",
+      "desc_file": "flowart/desc_flow_focus.txt",
+      "thumbnail": "flowart/out/thumb_flow_focus.jpg",
+      "tags": [
+        "deep focus music",
+        "study music",
+        "deep house",
+        "isochronic tones",
+        "beta waves",
+        "concentration music",
+        "deep work",
+        "brainwave entrainment",
+        "1 hour music",
+        "memory music",
+        "focus"
+      ],
+      "lang": "en",
+      "privacy": "public"
+    }
+  ]
+}
