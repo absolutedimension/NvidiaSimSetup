@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% block title %}TrigunAI LMS{% endblock %}</title>
+<link rel="stylesheet" href="/static/app.css" />
+</head>
+<body>
+{% if student %}
+<div class="topbar">
+  <a class="brand" href="/dashboard"><span class="gem"></span> TrigunAI</a>
+  <div class="spacer"></div>
+  <a class="chip hideph" href="/setup" title="Your coding setup">🧰 Setup</a>
+  {% if student.is_admin %}<a class="chip hideph" href="/admin" title="Admin">⚙ Admin</a>{% endif %}
+  <div class="chip level hideph" title="Builder level">
+    <span class="ic">★</span> Lvl {{ stats.level }}
+    <span class="levelbar"><i style="width:{{ stats.pct }}%"></i></span>
+  </div>
+  <div class="chip streak" title="Day streak"><span class="ic">🔥</span> <span id="hdrStreak">{{ stats.streak }}</span></div>
+  <div class="chip gems" title="Gems"><span class="ic">💎</span> <span id="hdrGems">{{ stats.gems }}</span></div>
+  <a class="avatar" href="/logout" title="{{ student.email }} — log out">
+    {{ (student.name or student.email)[0]|upper }}
+  </a>
+</div>
+{% endif %}
+<div class="page">
+  {% block content %}{% endblock %}
+</div>
+<script src="/static/celebrate.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

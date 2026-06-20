@@ -301,6 +301,29 @@ with "Avinash will help" is wrong; a plan that assumes Deepak drives ModusXR is 
 well), the MASTER EPISODE CATALOG (status of every episode), and the episode→paid-class
 funnel. Read it for the current content state; its catalog Status column is ground truth.
 
+**"Make a reel / short / promo / teaser / marketing video / thumbnail / title / LinkedIn post
+/ caption / ad / hook" — ANY outward-facing marketing creative** → **load the
+`content-marketing-emotion-connect` skill FIRST**, before any pixel is rendered or any line is
+written. It is the emotional-communication OS: it holds the brand's emotional core (wonder +
+agency — *"I needed a world that didn't exist, so I built it myself"*), the buyer transformation
+arc (never sell to a Stage-1 stranger), the 4 content pillars, the per-format blueprints (reels/
+shorts/long-video/thumbnail/LinkedIn/email), the hook bank, and the emotion guardrails (no
+fear-mongering, no hustle, no healing claims, no inflated proof). **The order is always: define
+the FEELING + pillar + stage + hook + CTA there → then hand the brief to `production-video-trigunai`
+/ `faceless-explainer-trigunai` to render → then to `trigunai-marketing` to distribute. Never
+render before the feeling is defined.** Distribution strategy still lives in `trigunai-marketing`;
+*what makes it connect* lives in `content-marketing-emotion-connect`.
+
+**"Run today's content / what do I post today / daily delivery / ship today's post / this week's
+content / batch this week"** → load the **`content-daily-engine`** skill: the operating arm that
+turns the 30-day calendar (`marketing_pipeline/03_CONTENT_CALENDAR_30DAY.md`) into a shipped post
+each day. It resolves today's slot (`scripts/today.py`), produces it through
+`content-marketing-emotion-connect`, gates on the checklist, hands to render + distribution, and
+logs to `marketing_pipeline/CONTENT_LOG.md`. **That log is cross-session evidence of what shipped**
+— read it at session start (the work-scanner can't see posts that touch no file). Guard the weekly
+engine: the **Saturday free intro class** + the **Friday invite** are the gate-movers; protect them
+over any other post.
+
 When multiple systems are relevant: name which ones. Address each in sequence. Do not blend.
 
 ---
@@ -626,11 +649,18 @@ Front-load the design work (local, $0) before spinning up EC2 for recording.
 
 **Deepak's actual job right now, in priority order (Learning Engine = his lane):**
 
-1. **Turn on a way to pay.** Stand up the cohort pre-sell / paid wall (even a manual
-   invoice or Razorpay link). Without it, every other "live in production" fact is zero
-   revenue. This is THE gate.
-2. **Get the first payment.** Pre-sell ONE VR/MR live cohort to the existing network. One
-   cleared payment validates more than the whole platform did.
+1. **Turn on a way to pay — and it's already on.** PAYMENT MECHANISM LOCKED (2026-06-19,
+   Deepak's call): **DIRECT BANK TRANSFER to the Trigunaï Innovations Pvt Ltd current account
+   — no payment link, no Razorpay, no UPI collect, no gateway/integration.** For a handful of
+   cohort seats this is the fastest clean rupee (zero platform fee, real company revenue on the
+   P&L for DPIIT/grants). So there is NO "stand up a paid wall" task left — the only thing
+   between zero and one is *sending the bank details to a warm lead and confirming the transfer*.
+   Do not let "build a payment system" re-enter the plan; the mechanism exists. This is THE gate.
+2. **Get the first payment.** Send buyer #1 (the VR/MR ₹35k warm yes) the bank details + amount
+   + start date; close via transfer screenshot/UTR. A named warm yes beats topic strategy —
+   close the lead who already said yes before chasing the more-built Agentic payment page. One
+   cleared payment validates more than the whole platform did. (Close templates:
+   `agentic_cohort/PAYMENT_CLOSE_MESSAGES.md`, now bank-transfer form.)
 3. **Finish the flagship.** Modules 10–11; make the dashboard signup→pay path frictionless.
 4. **Welcome email + live-class scheduling.** The two small builds that convert a silent
    signup into an engaged lead (the roadmap flagged both as ~2–3hr).
@@ -651,6 +681,8 @@ The multi-agent system built for cinematography now serves the education mission
 
 | Agent | Skill | New role |
 |---|---|---|
+| **Emotion-Connect** | `content-marketing-emotion-connect` | **The emotional OS for ALL marketing creative.** Load FIRST whenever making a reel/short/promo/marketing video/thumbnail/title/LinkedIn post — defines the feeling, pillar, arc-stage, hook + CTA *before* anything is rendered or distributed |
+| **Daily Engine** | `content-daily-engine` | **The daily operating arm.** Run each day to ship the calendar's slot: resolves today (`today.py`) → emotion-connect → checklist → render → distribute → logs to `CONTENT_LOG.md`. Guards the Sat class + Fri invite |
 | Training Agent | `trigunai-training` | Renders course content videos via Blender EEVEE pipeline |
 | VR Agent | `trigunai-vr` | Deepak uses this skill when building the VR classroom |
 | Orchestrator | `trigunai-orchestrator` | Available if cross-workstream coordination needed |
@@ -679,13 +711,38 @@ file to know everything.
    session across ALL projects tied to this login (session titles, which agent ran,
    the task asked, files written, git commits). It is ground truth — the briefing is
    a claim, the work log is evidence. When they disagree, trust the work log and say so.
-2. **Read `project_hub/CEO_BRIEFING.md`** — the narrative picture
-3. **Check `project_hub/feedback/*_to_ceo*.md`** for pending decisions
-4. **Check calendar: how many days until July 18?**
-5. **Compare:** what the WORK_LOG shows shipped vs. what the launch plan needs this week.
+2. **Scan the latest email** (Gmail is connected; deepak@trigunai.com). Load the Gmail
+   tools via ToolSearch (`select:...__search_threads,...__get_thread`) and pull ~12 days.
+   **WHY THIS IS NON-OPTIONAL:** the work scanner only sees Claude *Code* sessions and only
+   digests them by **files written + git commits** — so any action that touches no file
+   (sending an email, booking a call, an API call) is INVISIBLE to it, and **Claude
+   *Desktop* sessions are not stored as readable transcripts at all** (binary Electron/
+   LevelDB). Email is therefore the one ledger that captures what Deepak (or another agent
+   session, on any device/app) actually *did*. Scan it every time.
+   - **`in:sent newer_than:12d` IS THE CROSS-SESSION ACTIVITY LEDGER — read it FIRST.**
+     Whatever Deepak sent from any Claude surface or his phone lands here. This is how you
+     learn what happened without him telling you (cohort welcome emails → student names;
+     outreach blasts → which channel he's working; investor/grant replies). E.g. it has
+     surfaced 3 real cohort students by name + a 30+ college cold-outreach campaign that
+     left zero trace in the work log.
+   - **Revenue truth (inbox, `-in:sent`)** — any student payment / transfer / UTR / invoice
+     reply. The inbox is the *independent check on the gate*: no payment email ⇒ gate stays
+     0 regardless of what a status doc claims. Search `(payment OR transfer OR UTR OR NEFT
+     OR invoice OR enrolment)`.
+   - **Real students vs. Deepak's own testing** — auth/sign-in/"welcome to your cohort"
+     emails addressed `to: deepak@trigunai.com` are him testing the LMS, NOT students.
+     Bookings from `booktest_*@example.com` are test rows. Don't count self-tests as traction.
+   - **Outreach health** — bounces ("Address not found") = a bad list burning effort.
+   - **Capital/grants/compliance** — Capital Connect, DPIIT/DSC/INC-20A, grant deadlines, investor replies.
+   - **Founder-bandwidth signals** — anything affecting runway/commitment (name gently, no judgment).
+   Fold what you find into the briefing update. Email is evidence, ranked alongside the work log.
+3. **Read `project_hub/CEO_BRIEFING.md`** — the narrative picture
+4. **Check `project_hub/feedback/*_to_ceo*.md`** for pending decisions
+5. **Check calendar: how many days until July 18?**
+6. **Compare:** what the WORK_LOG + inbox show vs. what the launch plan needs this week.
    If the work was tooling/planning while the plan needed recorded course content,
    name that gap. If git commits are near zero, flag that work is uncommitted (no
-   shipped checkpoint).
+   shipped checkpoint). If "activity" turns out to be self-testing, say so.
 
 ### The weekly question (every Monday):
 
@@ -719,4 +776,7 @@ workshop-not-product decision. See "BRAND, AUDIENCE & MONEY — CRYSTALLIZED (20
 *v5.0 (17 Jun): TWO-ENGINE model — Learning (Deepak) ‖ Physical AI (Avinash on ModusXR + Deepak
 drone co-lead). Avinash reactivated (was sleeping partner). 16-Jun single-course freeze retired.
 Gate stays revenue-weighted: 0 paid is still 0 paid. See "THE TWO-ENGINE MODEL (17 JUNE 2026)".*
+*v5.1 (21 Jun): wired in `content-marketing-emotion-connect` — the emotional-communication OS
+loaded FIRST before any reel/short/marketing video/post is made (emotion → render → distribute).
+Implements `marketing_pipeline/02_CONTENT_STRATEGY.md`.*
 *Built honestly.*

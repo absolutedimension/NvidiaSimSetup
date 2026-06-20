@@ -131,7 +131,7 @@ def render_slide(title, body="", accent_color="blue", layout="center",
             draw.text((W//2, 130), subtitle, fill=color,
                       font=_font(FONT_REG, 26), anchor="mm")
 
-        points = bullet_points or body.split("\n") if body else []
+        points = bullet_points or (body.split("\n") if body else [])
         y = 220
         for i, point in enumerate(points):
             if not point.strip():

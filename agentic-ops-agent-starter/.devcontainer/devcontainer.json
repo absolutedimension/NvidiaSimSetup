@@ -1,0 +1,21 @@
+{
+  "name": "Agentic AI Cohort — Ops Agent",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": "pip install -r requirements.txt && ([ -f .env ] || cp .env.example .env)",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "ms-python.python"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "github.copilot.chat.agent.enabled": true
+      }
+    }
+  },
+  "postAttachCommand": {
+    "welcome": "echo '\\n🚀 Your agent environment is ready. Add your API key to .env, then run:  python run.py \"hello\"\\n'"
+  }
+}

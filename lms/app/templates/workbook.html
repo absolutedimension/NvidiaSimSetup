@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Week {{ week }} workbook · TrigunAI LMS{% endblock %}
+{% block content %}
+<a href="/dashboard" style="color:var(--muted);font-size:14px;">← Back to journey</a>
+<h1 style="margin-top:10px;">Week {{ week }} workbook{% if module %} — {{ module.title }}{% endif %}</h1>
+<p class="lead">Open your laptop ~40 minutes a day. Tick each rep — students who do the daily reps ship a working agent.</p>
+
+<div class="wbgoal">🎯 Do a little every day. Each tick = gems. The gold one is what you bring to Friday — worth the most.</div>
+
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px;">
+  <a class="btn green" href="/static/starter.zip" download>⬇ Download starter code</a>
+  <a class="btn ghost" href="/setup">🧰 Choose your coding tool</a>
+  {% if starter_repo %}
+  <a class="btn ghost" href="https://codespaces.new/{{ starter_repo }}?quickstart=1" target="_blank" rel="noopener">▶ Open in browser (Codespaces)</a>
+  {% endif %}
+</div>
+
+{% for t in tasks %}
+<div class="task {{ 'bring' if t.is_bring }} {{ 'rest' if t.focus=='Rest' }} {{ 'done' if t.id in done }}"
+     data-id="{{ t.id }}" {% if t.focus != 'Rest' %}onclick="toggleTask(this)"{% endif %}>
+  {% if t.focus != 'Rest' %}<div class="box">✓</div>{% else %}<div class="box" style="border-style:dashed;"></div>{% endif %}
+  <div class="body">
+    <div class="day">{{ t.day }} {{ t.day_date }} · {{ t.focus }}{% if t.is_bring %} · ★ bring to Friday{% endif %}</div>
+    <p class="txt">{{ t.task }}</p>
+  </div>
+  {% if t.minutes %}<div class="min">{{ t.minutes }} min</div>{% endif %}
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function toggleTask(el){
+  const id = el.dataset.id;
+  const res = await fetch(`/api/workbook/task/${id}/toggle`, {method:'POST'});
+  const data = await res.json();
+  el.classList.toggle('done', data.done);
+  if(data.done){
+    celebrate(data.celebrate || 'coin', data.celebrate==='bring' ? {text:'Friday-ready! 🚀'} : {});
+  }
+  if(data.stats){
+    document.getElementById('hdrGems').textContent = data.stats.gems;
+    document.getElementById('hdrStreak').textContent = data.stats.streak;
+  }
+}
+</script>
+{% endblock %}

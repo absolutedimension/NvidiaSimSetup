@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log in · TrigunAI LMS</title>
+<link rel="stylesheet" href="/static/app.css" />
+</head>
+<body>
+<div class="auth">
+  <div class="gem"></div>
+  <h1>Build Agentic AI Systems</h1>
+  <p>Cohort 1 · live learning. Enter your enrolled email and we'll send you a one-tap login link.</p>
+  {% if error %}<div class="err">{{ error }}</div>{% endif %}
+  <form method="post" action="/login">
+    <input type="email" name="email" placeholder="you@email.com" required autofocus />
+    <button class="btn" type="submit">Send my login link</button>
+  </form>
+  <p style="font-size:12.5px;margin-top:18px;">No password needed. The link works once and expires shortly.</p>
+</div>
+</body>
+</html>

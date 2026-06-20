@@ -1,0 +1,7 @@
+{
+  "id": "student-internship-invite",
+  "channel": "email",
+  "subject": "Build a real VR app as your final-year project (+ internship certificate)",
+  "html": "emails/student_internship_invite.html",
+  "audience": "lists/students.csv"
+}

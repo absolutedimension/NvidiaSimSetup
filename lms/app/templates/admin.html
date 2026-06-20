@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Admin · TrigunAI LMS{% endblock %}
+{% block content %}
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+  <h1 style="margin:0;">Cohort 1 — student tracking</h1>
+  <span class="tag date">Week {{ current_week }}</span>
+  <a class="btn ghost" href="/admin/api/export.csv" style="margin-left:auto;">⬇ Export CSV</a>
+</div>
+<p class="lead">Live progress for every enrolled student. Click a student to copy a login link to hand them.</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 22px;">
+  <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;">
+    <div style="font-size:13px;color:var(--muted);">Students</div>
+    <div style="font-size:24px;font-weight:600;">{{ rows|length }}</div>
+  </div>
+  <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;">
+    <div style="font-size:13px;color:var(--muted);">Active (streak ≥1)</div>
+    <div style="font-size:24px;font-weight:600;">{{ rows|selectattr('streak','greaterthan',0)|list|length }}</div>
+  </div>
+  <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;">
+    <div style="font-size:13px;color:var(--muted);">Lessons done (total)</div>
+    <div style="font-size:24px;font-weight:600;">{{ rows|sum(attribute='lessons_done') }}</div>
+  </div>
+</div>
+
+<div style="background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;">
+<table style="width:100%;border-collapse:collapse;font-size:14px;">
+  <thead>
+    <tr style="background:#f7f8fc;text-align:left;color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:.3px;">
+      <th style="padding:11px 14px;">Student</th>
+      <th style="padding:11px 8px;">Lvl</th>
+      <th style="padding:11px 8px;">Gems</th>
+      <th style="padding:11px 8px;">🔥</th>
+      <th style="padding:11px 8px;">Lessons</th>
+      <th style="padding:11px 8px;">Tasks</th>
+      <th style="padding:11px 8px;">Last active</th>
+      <th style="padding:11px 14px;"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in rows %}
+    <tr style="border-top:1px solid var(--line);">
+      <td style="padding:11px 14px;">
+        <div style="font-weight:500;">{{ r.name }}{% if r.is_admin %} <span class="tag date">admin</span>{% endif %}</div>
+        <div style="color:var(--muted);font-size:12.5px;">{{ r.email }}</div>
+      </td>
+      <td style="padding:11px 8px;">{{ r.level }}</td>
+      <td style="padding:11px 8px;">💎 {{ r.gems }}</td>
+      <td style="padding:11px 8px;">{{ r.streak }}</td>
+      <td style="padding:11px 8px;">{{ r.lessons_done }}</td>
+      <td style="padding:11px 8px;">{{ r.tasks_done }}</td>
+      <td style="padding:11px 8px;color:var(--muted);">{{ r.last_active }}</td>
+      <td style="padding:11px 14px;"><button class="btn ghost" style="padding:6px 12px;font-size:12.5px;" onclick="link({{ r.id }})">Login link</button></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function link(id){
+  const res = await fetch(`/admin/api/login-link/${id}`);
+  const d = await res.json();
+  await navigator.clipboard.writeText(d.link).catch(()=>{});
+  alert("Login link for "+d.email+" copied to clipboard:\n\n"+d.link);
+}
+</script>
+{% endblock %}

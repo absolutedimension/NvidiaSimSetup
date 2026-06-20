@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Choose your coding setup · TrigunAI LMS{% endblock %}
+{% block content %}
+<a href="/dashboard" style="color:var(--muted);font-size:14px;">← Back to journey</a>
+<h1 style="margin-top:10px;">Choose your free coding setup</h1>
+<p class="lead">You'll write code with an AI coding agent. Pick the free option that fits you — they all
+have a free tier, and most have a free student plan. You can change this anytime. (+10💎 for choosing.)</p>
+
+<div class="wbgoal" style="margin:0 0 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+  <span><b style="font-weight:500;">Step 1 — get the starter code.</b> Works with every tool below (no GitHub needed):</span>
+  <a class="btn green" href="/static/starter.zip" download style="margin-left:auto;">⬇ Download starter (ZIP)</a>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px;">
+  {% for o in options %}
+  <div class="card setupcard {{ 'current' if o.id==chosen }}" data-id="{{ o.id }}"
+       style="{{ 'border:2px solid var(--indigo);' if o.id==chosen }}">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <h3 style="margin:0;">{{ o.name }}</h3>
+      {% if o.recommended %}<span class="tag" style="background:var(--lav-bg);color:var(--lav-deep);">★ Recommended</span>{% endif %}
+      {% if o.id==chosen %}<span class="tag done">✓ Your choice</span>{% endif %}
+      <span class="tag date">{{ o.type }}</span>
+    </div>
+    <p style="margin:8px 0 4px;"><b style="font-weight:500;">Free tier:</b> {{ o.free }}</p>
+    <p style="margin:0 0 4px;"><b style="font-weight:500;">Students:</b> {{ o.student }}</p>
+    <p style="margin:0;color:var(--muted);font-size:13.5px;">{{ o.note }}</p>
+    <div class="meta">
+      <a class="btn ghost" href="{{ o.url }}" target="_blank" rel="noopener">{{ o.cta }} ↗</a>
+      {% if o.id=='codespaces' and starter_repo %}
+        <a class="btn green" href="https://codespaces.new/{{ starter_repo }}?quickstart=1" target="_blank" rel="noopener">▶ Open environment</a>
+      {% endif %}
+      <button class="btn {{ 'dis' if o.id==chosen }}" onclick="choose('{{ o.id }}', this)">
+        {{ '✓ Selected' if o.id==chosen else 'Use this' }}
+      </button>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="wbgoal" style="margin-top:20px;">
+  💡 Whichever you pick, your in-lesson <b>TrigunAI guide</b> is always free and unlimited — use it
+  anytime you're stuck, and it explains things using examples from your world.
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function choose(id, btn){
+  const res = await fetch('/api/setup/choose', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({choice:id})});
+  const d = await res.json();
+  if(!d.ok) return;
+  if(d.points && window.celebrate) celebrate('coin');
+  if(d.stats){ document.getElementById('hdrGems').textContent=d.stats.gems; }
+  document.querySelectorAll('.setupcard').forEach(c=>{
+    const sel = c.dataset.id===d.chosen;
+    c.style.border = sel ? '2px solid var(--indigo)' : '';
+    const b = c.querySelector('button');
+    b.textContent = sel ? '✓ Selected' : 'Use this';
+    b.classList.toggle('dis', sel);
+  });
+}
+</script>
+{% endblock %}

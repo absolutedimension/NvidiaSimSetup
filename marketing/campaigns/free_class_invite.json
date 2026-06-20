@@ -1,0 +1,7 @@
+{
+  "id": "free-class-invite",
+  "channel": "email",
+  "subject": "Free live class: build a VR app with AI (this week)",
+  "html": "emails/free_class_invite.html",
+  "audience": "lists/waitlist.csv"
+}

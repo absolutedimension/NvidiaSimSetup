@@ -59,6 +59,11 @@ demo_package/
 UsdSkelExamples/
 **/textures/
 
+# ── Runtime databases / state (may accumulate PII — never commit) ──
+*.db
+*.sqlite
+*.sqlite3
+
 # ── Secrets / keys ─────────────────────────────────────────────
 *.pem
 .env
@@ -83,3 +88,6 @@ youtube_series/client_secret.json
 youtube_series/token.json
 youtube_series/yt_uploaded.json
 youtube_series/token_*.json
+marketing/.env
+marketing/publish_state.json
+marketing/lists/*.csv

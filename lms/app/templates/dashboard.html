@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Your journey · TrigunAI LMS{% endblock %}
+{% block content %}
+<h1>{{ greeting }}</h1>
+<p class="lead">Your 13-week journey. Watch the module, do the lesson, tick your daily reps — and walk into Friday with something to show.</p>
+
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px;">
+  <a class="btn ghost" href="/setup">🧰 Set up your coding tool (free)</a>
+  <a class="btn ghost" href="/static/starter.zip" download>⬇ Starter code</a>
+  {% if starter_repo %}<a class="btn green" href="https://codespaces.new/{{ starter_repo }}?quickstart=1" target="_blank" rel="noopener">▶ Open in browser</a>{% endif %}
+</div>
+
+{% if ask %}
+<div id="askCard" style="background:var(--lav-bg);border:1px solid var(--lav-bd);border-radius:16px;padding:16px 18px;margin:0 0 22px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+    <span class="brand" style="font-size:13px;color:var(--lav-deep);"><span class="gem" style="width:16px;height:16px;"></span> Help us teach you better</span>
+    <button onclick="skipAsk()" style="margin-left:auto;background:none;border:none;color:var(--muted);font:inherit;font-size:13px;cursor:pointer;">Skip</button>
+  </div>
+  <div id="askQ" style="font-weight:500;font-size:15px;margin-bottom:10px;" data-key="{{ ask.key }}">{{ ask.q }}</div>
+  <div style="display:flex;gap:8px;">
+    <input id="askIn" placeholder="{{ ask.ph }}" style="flex:1;border:1.5px solid var(--lav-bd);border-radius:10px;padding:11px 13px;font:inherit;font-size:14.5px;" />
+    <button class="btn" onclick="saveAsk()">Save</button>
+  </div>
+  <div style="font-size:12px;color:var(--muted);margin-top:8px;">Optional — but the more we know, the more your lessons use examples from your world. +5💎 each.</div>
+</div>
+{% endif %}
+
+<div class="journey">
+  {% for r in rows %}
+  <div class="node">
+    <div class="rail">
+      <div class="dot {{ r.state }}">{% if r.state=='done' %}✓{% else %}{{ r.week }}{% endif %}</div>
+      {% if not loop.last %}<div class="line {% if r.state=='done' %}fill{% endif %}"></div>{% endif %}
+    </div>
+    <div class="card {{ 'current' if r.state=='current' }}">
+      <div class="wk">Week {{ r.week }} · {{ r.date }}</div>
+      <h3>{{ r.title }}</h3>
+      <p>{{ r.summary }}</p>
+      <div class="meta">
+        {% if r.lesson_done %}<span class="tag done">✓ Lesson done</span>{% endif %}
+        <span class="tag date">📅 Fri {{ r.date }}</span>
+        {% if r.week > current_week %}<span class="tag soon">Upcoming</span>{% endif %}
+
+        {% if r.lesson_available %}
+          <a class="btn green" href="/lesson/{{ r.lesson_slug }}">
+            {{ '↻ Replay lesson' if r.lesson_done else '▶ Start lesson' }}
+          </a>
+        {% elif r.lesson_slug %}
+          <button class="btn dis">Lesson coming soon</button>
+        {% endif %}
+        {% if r.week >= 1 %}
+          <a class="btn ghost" href="/workbook/{{ r.week }}">📋 Workbook</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function skipAsk(){ const c=document.getElementById('askCard'); if(c) c.style.display='none'; }
+async function saveAsk(){
+  const q=document.getElementById('askQ'), inp=document.getElementById('askIn');
+  const key=q.dataset.key, value=inp.value.trim();
+  if(!value){ inp.focus(); return; }
+  const res=await fetch('/api/profile/capture',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key,value,source:'prompt'})});
+  const data=await res.json();
+  if(data.stats){ document.getElementById('hdrGems').textContent=data.stats.gems; document.getElementById('hdrStreak').textContent=data.stats.streak; }
+  if(window.celebrate) celebrate('coin');
+  if(data.next){ q.dataset.key=data.next.key; q.textContent=data.next.q; inp.value=''; inp.placeholder=data.next.ph; inp.focus(); }
+  else { skipAsk(); }
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Enter' && document.activeElement && document.activeElement.id==='askIn') saveAsk(); });
+</script>
+{% endblock %}

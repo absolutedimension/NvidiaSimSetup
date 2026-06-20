@@ -1,11 +1,93 @@
 # TrigunAI — CEO Briefing
 
-> Last updated: 2026-06-16 by CEO session (COURSE-FIRST RESET — see item 🚨 below). Prior: 2026-06-15 music pipeline; 2026-06-14 brand thesis + personas + financial model; CEO OS → v4.2.
+> Last updated: 2026-06-20 by CEO session (3 INVOICES IN FLIGHT — see 🟡 below). Prior: 2026-06-16 COURSE-FIRST RESET; 2026-06-15 music pipeline; 2026-06-14 brand thesis + personas + financial model; CEO OS → v4.2.
 > ⭐ Full context: `COURSE_CATALOG.md` + `COURSE_INDEXES.md` + `USER_RESEARCH.md` + `landing-page-handoff/BRAND_HANDOFF.md` + memory `project-ai-universal-mind.md` + skill `trigunai-content-strategy` + `youtube_series/`.
 
 ---
 
 ## 🔥 Needs your attention
+
+🟡 **3 INVOICES IN FLIGHT — DECISION JUN 26 — STILL 0 PAID (updated 2026-06-20).** Real progress: the
+   **Agentic Systems** cohort ran its **intro class (delivered)**, **3 students registered**, and a
+   **₹35k invoice was sent to all three** with bank details shared. **Hard deadline: before Friday
+   2026-06-26** (same for all 3). Potential = **₹1.05L** (3 × ₹35k). This is the strongest commercial
+   position the company has held — a delivered conversion event + 3 invoiced leads with a deadline is
+   a *real sales process*, not the prior "one warm verbal yes."
+   **BUT THE GATE HAS NOT MOVED. An invoice sent ≠ a rupee cleared.** Three invoices can land 3/2/1/0.
+   Honest headline stays **0 paid** until a transfer hits the **Trigunaï Innovations Pvt Ltd current
+   account** (confirm via screenshot/UTR). No "we have revenue," no grant/investor line about a sold
+   cohort, until money clears. (Anti-pattern #1.)
+   **The waiting window is active, not passive:**
+   (a) **Wed 2026-06-24 checkpoint** — anyone not transferred ~2 days pre-deadline gets the light
+       nudge (Message B in `agentic_cohort/PAYMENT_CLOSE_MESSAGES.md`); hesitation → Message C, and
+       **write the objection down.**
+   (b) **Same-day onboarding** — the moment one clears, send Discord invite + `Cohort1_Start_Here.zip`
+       that day; "2 seats taken, 1 left" is honest scarsity to close the other two.
+   (c) Mechanism = **DIRECT BANK TRANSFER** (Deepak's call, 2026-06-19) — no link/Razorpay/gateway;
+       clean company revenue for P&L / DPIIT / grants.
+   **On Jun 26: record the real number** (e.g. 0→2 paid = ₹70k) and update this headline. Next target
+   after first clear = **10 paid (~₹3.5L)**. Cohort revenue = non-dilutive capital that can self-fund
+   the <$250k Physical AI hardware → reduces VC need; funding/investor intros hold until ~10 paid.
+   **Students > investor meetings. A cleared payment > a sent invoice.**
+
+🟢 **FIRST INVESTOR INTRO — Vintage Capita[l] (2026-06-20, via NVIDIA Capital Connect).** NVIDIA's VC
+   Alliance (`vcalliance@nvidia.com`) formally introduced Trigunaï to **Vintage Capital — contact
+   Juliene Datun, `juliene@vintagecapita.com`** and shared the v2 pitch deck. This is the FIRST real
+   investor conversation produced by the Capital Connect approval — the physical-ai/fundraise track is
+   no longer theoretical. **Action required by NVIDIA's process:** reply-all **with a calendar link
+   (mandatory)** to move forward. Per the OS 2-business-day VC-response SLA → **reply by Tue Jun 23**
+   with a Calendly link; keep the *call itself* next week so it doesn't eat the cohort-close week.
+   **CEO frame (hold it):** an intro is NOT a term sheet, and <$250k pre-revenue is angel/grant-shaped,
+   not classic VC — this does not move the gate (anti-patterns #18/#19). The strongest thing to walk
+   into that call with is *"we just closed our first paid cohort"* — so Friday's ₹35k close serves the
+   fundraise too. Take the intro (cheap, warm, good signal); do not let prepping a VC deck displace the
+   payment chase. ⚠️ Minor: the intro lists Deepak as **CTO** (Capital Connect profile artifact) while
+   the OS has Deepak = CEO — reconcile the title before the call.
+
+📧 **EMAIL SCAN (2026-06-20, deepak@trigunai.com inbox, last 12 days).** Independent check on the gate:
+   - **NO payment / transfer / UTR email anywhere.** Confirms the gate: **0 paid**, 3 invoices still
+     pending Jun 26. The inbox is the independent witness — a status doc can claim a sale; the bank/
+     student email is the proof, and it isn't there yet.
+   - **The 3 cohort students are REAL and now NAMED:** Deepak sent personalised "Welcome aboard — Cohort 1
+     of Build Agentic AI Systems" emails (Jun 19) to **Aditya, Kritansh, and Gauri.** These are the 3
+     registered. (Surfaced only via `in:sent` — invisible to the work scanner because sending email
+     writes no file.) ⚠️ **Sequencing flag:** welcoming them as "in Cohort 1" *before the ₹35k clears*
+     can undercut the close's urgency ("you're already in" weakens "transfer to lock your seat"). Keep
+     the Jun 26 payment as the real confirmation; the seat is reserved, not secured, until the UTR lands.
+   - **Beware self-test noise:** the 4 "LMS sign-in / welcome" emails `to: deepak@trigunai.com` + the
+     "intro session booked" rows (`deepak@trigunai.com`, `booktest_*@example.com`) are Deepak testing the
+     stack, NOT students. (New infra: a separate **`lms.trigunai.com`** cohort LMS via Azure Comm Services.)
+   - **Large college cold-outreach blast is running and partly broken.** Deepak emailed **30+** engineering-
+     college Principals / T&P Officers across Bihar (Government Engineering Colleges of many districts,
+     Siwan, Saharsa, Supaul, Patna Sahib, Millia Kishanganj, AZMET, CV Raman, APJ Abdul Kalam Women's,
+     Rashtrakavi Ramdhari, …) pitching Trigunaï. Several **bounced** ("Address not found": pkec.ac.in,
+     apjakwit, bpmcemadhepura, exalteducation). **CEO read:** this is a real new channel but a cold,
+     low-conversion, partly-dead-list one — 28 days out it should NOT outrank closing the 3 warm invoices.
+     Verify addresses before any further batch; park the blast until after Jun 26.
+   - **Compliance watch:** older thread shows an **INC-20A filing** issue (via registerkaro, ~Mar 2026
+     deadline passed) — confirm it's resolved; an unfiled INC-20A carries penalties and can bite at
+     DPIIT/grant diligence.
+   - **Capital Connect APPROVED** (ICC email confirms — discoverable to NVIDIA's VC network). **DSC/eKYC**
+     application received & processing (Pantasign) — feeds DPIIT. **StartupGrantsIndia**: multiple grant
+     deadlines closing Jun 17–25 (some within 48h) — System 5, gaps-only.
+   - ⚠️ **Founder-bandwidth signal (name gently, no judgment):** an NVIDIA "application received" email for
+     a full-time **Software Engineer, Robotics – Isaac Lab** role (JR2013817). If Deepak is exploring a
+     job, that's a real runway/commitment input the OS should hold honestly — ask, don't assume.
+
+💰 **NVIDIA INCEPTION PROFILE + CAPITAL CONNECT — DONE & SUBMITTED (2026-06-18).** Cleaned the
+   whole Inception profile to honest two-engine truth: (a) **2 products** — *Immersive XR Studio*
+   (Shipping) + *Physical AI: drone RL + ModusXR* (Developing); removed false tech claims (Llama,
+   Audio2Face, AR SDK, CCCL). (b) **Company section** — killed the fabricated "GPUaaS / A100-H100
+   data-centre rental, Eastern India's first" description (that business does not exist), headcount→2,
+   dropped Cloud Services, added Robotics/Simulation. (c) **Capital Connect application SUBMITTED**:
+   Pre-Seed · **<$250k** · Term Sheet No (caught a false pre-filled "Yes") · ARR/YoY N/A · no lead ·
+   close ~Oct 2026 · deck = new 2-engine **`outreach/Trigunai_Company_Pitch_v2.pdf`** (replaces the
+   old GPUaaS deck). **APPROVED 2026-06-18 — profile discoverable to NVIDIA's VC network for 3 months
+   (~to 2026-09-18); re-request after if still raising. Approval = discoverable, NOT funded (NVIDIA
+   guarantees no VC connection).** **CEO read on record:** <$250k pre-revenue is **angel/grant-shaped, not classic
+   VC** → the non-dilutive grant list is the better-fit instrument for the hardware; Capital Connect
+   is a low-cost parallel shot. **Committed to a 2-business-day VC-response SLA — batch VC inquiries so
+   they don't derail the July launch (revenue stays primary).** Detail: memory `reference-nvidia-inception-profile`.
 
 🟢 **TWO-ENGINE MODEL LOCKED (2026-06-17 → CEO OS v5.0).** Deepak's decision on record: the
    company runs **two coupled engines** and this **supersedes the 16-Jun single-course freeze**.
