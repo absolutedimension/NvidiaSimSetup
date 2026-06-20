@@ -62,6 +62,7 @@ def main():
     ap.add_argument("--seg-len", type=float, default=180.0, help="per-segment gen seconds")
     ap.add_argument("--unique", type=int, default=4, help="distinct segments to generate")
     ap.add_argument("--xfade", type=float, default=6.0, help="crossfade seconds between joins")
+    ap.add_argument("--bpm", type=int, default=0, help="lock tempo (improves flow across joins)")
     ap.add_argument("--freq", choices=list(ISO_FREQ), help="isochronic entrainment band")
     ap.add_argument("--iso-db", type=float, default=-20.0, help="isochronic tone level (dB)")
     ap.add_argument("--tune432", action="store_true")
@@ -79,6 +80,10 @@ def main():
     prompt = a.prompt or preset.get("prompt")
     if not prompt:
         ap.error("need --style or --prompt")
+    if a.bpm:
+        # tempo lock => independently-generated segments stay beat-consistent, so
+        # crossfade joins don't break the groove ("loses flow at some points")
+        prompt = f"exactly {a.bpm} BPM, steady constant tempo, seamless continuous groove, " + prompt
     lyrics = a.lyrics if a.lyrics is not None else preset.get("lyrics", "[inst]")
     if a.lyrics_file:
         lyrics = open(a.lyrics_file, encoding="utf-8").read()
