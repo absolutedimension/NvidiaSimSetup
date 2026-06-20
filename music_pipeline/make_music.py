@@ -25,6 +25,12 @@ PRESETS = {
         prompt="indian classical, sitar lead, sarangi, gentle tabla, slow, soothing, meditative, deep relaxation, "
                "ambient, calming, raga, instrumental, no vocals",
         lyrics="[inst]", lufs=-16.0, tune432=False),
+    "techno-hypnotic": dict(
+        prompt="hypnotic techno, driving four-on-the-floor kick, rolling deep bassline, "
+               "repetitive hypnotic groove, dark warehouse club, analog synth stabs, modular bleeps, "
+               "slowly building tension and release, immersive, trance-inducing, ecstatic peak-time "
+               "energy, continuous DJ set, propulsive, instrumental, no vocals",
+        lyrics="[inst]", lufs=-12.0, tune432=False),
     "lofi": dict(
         prompt="lofi hip hop, chill study beats, mellow, warm vinyl, soft piano, boom bap drums, relaxed, "
                "instrumental, no vocals",
@@ -72,6 +78,7 @@ def main():
     ap.add_argument("--ref-strength", type=float, default=0.5)
     ap.add_argument("--seed", type=int, default=100)
     ap.add_argument("--steps", type=int, default=60)
+    ap.add_argument("--cpu-offload", action="store_true", help="lower VRAM (coexist with other GPU jobs); slower")
     ap.add_argument("--workdir", default="/home/ubuntu/music_out/_m1work")
     ap.add_argument("--out", required=True, help="final mp3 path")
     a = ap.parse_args()
@@ -98,7 +105,7 @@ def main():
     from acestep.pipeline_ace_step import ACEStepPipeline
     print(f"[m1] style={a.style} target={a.minutes}min freq={a.freq} 432={tune432}", flush=True)
     t0 = time.time()
-    pipe = ACEStepPipeline(checkpoint_dir="", dtype="bfloat16", cpu_offload=False)
+    pipe = ACEStepPipeline(checkpoint_dir="", dtype="bfloat16", cpu_offload=a.cpu_offload)
     print(f"[m1] model ready in {time.time()-t0:.1f}s", flush=True)
 
     n_unique = max(1, a.unique if target_s > a.seg_len else 1)

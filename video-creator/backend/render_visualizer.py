@@ -17,6 +17,8 @@ ap.add_argument("--fps", type=int, default=30)
 ap.add_argument("--w", type=int, default=1920)
 ap.add_argument("--h", type=int, default=1080)
 ap.add_argument("--shader", default="/home/ubuntu/video-creator-backend/shaders/neon_tunnel_lotus.glsl")
+ap.add_argument("--crf", type=int, default=22, help="x264 quality (lower=better; 16-18=high)")
+ap.add_argument("--preset", default="veryfast", help="x264 preset (slow=better quality)")
 a = ap.parse_args()
 
 import moderngl
@@ -42,7 +44,7 @@ for n in ["u_time","u_resolution","u_rms","u_bass","u_treble","u_onset"]:
 os.makedirs(os.path.dirname(os.path.abspath(a.out)) or ".", exist_ok=True)
 ff = subprocess.Popen(
     ["ffmpeg","-y","-f","rawvideo","-pix_fmt","rgb24","-s",f"{W}x{H}","-r",str(FPS),
-     "-i","pipe:0","-c:v","libx264","-preset","veryfast","-crf","22","-pix_fmt","yuv420p", a.out],
+     "-i","pipe:0","-c:v","libx264","-preset",a.preset,"-crf",str(a.crf),"-pix_fmt","yuv420p", a.out],
     stdin=subprocess.PIPE, stderr=subprocess.DEVNULL)
 
 print(f"[viz] {total} frames @ {W}x{H} -> {a.out}", flush=True)
