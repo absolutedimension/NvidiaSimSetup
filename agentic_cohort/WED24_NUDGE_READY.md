@@ -4,8 +4,9 @@
 > This is Message B (the light nudge) from `PAYMENT_CLOSE_MESSAGES.md`. Hard deadline Fri 26 Jun.
 > Gate truth: still **0 paid** until a UTR hits the Trigunaï Innovations Pvt Ltd current account.
 
-## ⚠️ ONE blank left before sending
-1. **[DATE]** — the cohort start date (e.g. "Saturday 28 June, 7pm IST"). ← still need this from Deepak.
+## ✅ Ready to send — both blanks filled
+- **Start date:** Cohort 1 starts **this Friday, 26 June 2026** (Session 0 kickoff). *(Add the time before sending, e.g. "7pm IST" — and the Meet link if you have it.)*
+- **NOTE — start = payment deadline (both Fri 26):** that's deliberate urgency. The nudge says "we start Friday, transfer before then to be in Session 1." Anyone not paid by Friday misses kickoff — honest scarcity that closes.
 
 ✅ **Bank details (filled):**
 > **A/c name:** Trigunaï Innovations Private Limited
@@ -17,15 +18,15 @@
 ---
 
 ### → Aditya
-Hi Aditya — just making sure this didn't get buried. Seats for Cohort 1 of **Build Agentic AI Systems** are limited to 3 and we kick off **[DATE]**. If the live cohort's a yes, transfer **₹35,000** to the account I sent (A/c: Trigunaï Innovations Pvt Ltd) and ping me the screenshot/UTR — seat's locked and I'll send your Discord invite + starter repo the same day.
+Hi Aditya — just making sure this didn't get buried. Seats for Cohort 1 of **Build Agentic AI Systems** are limited to 3 and we kick off **this Friday, 26 June**. If the live cohort's a yes, transfer **₹35,000** to the account I sent (A/c: Trigunaï Innovations Pvt Ltd) and ping me the screenshot/UTR — seat's locked and I'll send your Discord invite + starter repo the same day.
 If it's a "not now," totally fine — tell me what's holding you and I'll be straight about whether this cohort's the right fit. — Deepak
 
 ### → Kritansh
-Hi Kritansh — just making sure this didn't slip by. Cohort 1 of **Build Agentic AI Systems** is capped at 3 seats and we start **[DATE]**. If you're in, transfer **₹35,000** to the account I sent (A/c: Trigunaï Innovations Pvt Ltd) and send me the screenshot/UTR — I'll confirm your seat right away and get you the Discord invite + starter repo.
+Hi Kritansh — just making sure this didn't slip by. Cohort 1 of **Build Agentic AI Systems** is capped at 3 seats and we start **this Friday, 26 June**. If you're in, transfer **₹35,000** to the account I sent (A/c: Trigunaï Innovations Pvt Ltd) and send me the screenshot/UTR — I'll confirm your seat right away and get you the Discord invite + starter repo.
 If now's not the time, no problem — just tell me what's holding you and I'll give you an honest read. — Deepak
 
 ### → Gauri
-Hi Gauri — checking this reached you. Seats for Cohort 1 of **Build Agentic AI Systems** are limited to 3 and we begin **[DATE]**. If the live cohort's a yes, transfer **₹35,000** to the account I shared (A/c: Trigunaï Innovations Pvt Ltd) and ping me the screenshot/UTR — seat confirmed, and I'll send your Discord invite + starter repo.
+Hi Gauri — checking this reached you. Seats for Cohort 1 of **Build Agentic AI Systems** are limited to 3 and we begin **this Friday, 26 June**. If the live cohort's a yes, transfer **₹35,000** to the account I shared (A/c: Trigunaï Innovations Pvt Ltd) and ping me the screenshot/UTR — seat confirmed, and I'll send your Discord invite + starter repo.
 If it's a "not yet," that's okay — tell me what's holding you back and I'll be straight about the fit. — Deepak
 
 ---

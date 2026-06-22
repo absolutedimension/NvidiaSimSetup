@@ -3,7 +3,7 @@
 > Output > hours · gate-first (Blocks 1+3 are revenue). One row per day.
 
 ## 2026-06-22 Mon  (gate: 0 paid)
-- [x] 1 Marketing  (2h)   — target: prep Wed-24 close nudge → artifact: agentic_cohort/WED24_NUDGE_READY.md (3 nudges ready; SEND queued Wed-24; needs start-date + bank-details filled)
+- [x] 1 Marketing  (2h)   — target: prep Wed-24 close nudge → artifact: agentic_cohort/WED24_NUDGE_READY.md (3 nudges FULLY send-ready: start=Fri 26 Jun + HDFC bank details filled; SEND Wed-24. Add time/Meet link before sending)
 - [ ] 2 Robotics   (2h)   — target: parked this week                 → artifact:
 - [x] 3 Course     (4h)   — target: write next Agentic live-class outline/script scene  → artifact: agentic_cohort/SESSION_1_FIRST_AGENT.md (full 90-min Session-1 build plan: live agent-loop code + failure table + BYOA personalization)
 - [ ] 4 FlowArt/VR (2h)   — target: 1 build step toward Live OR 1 channel-content piece  → artifact:
