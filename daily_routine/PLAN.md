@@ -20,6 +20,7 @@
 ## 3 Course  ⭐ (revenue — the product itself)
 - [ ] Write the next Agentic cohort live-class outline / script scene @model:sonnet
 - [ ] Design the flow/arc for one VR/MR module (curriculum reasoning) @model:opus
+- [ ] Add a "secure tool binding" beat to the Agentic cohort (Module 3/8) — validate paths/inputs before the tool handler runs (from 2026-06-22 tech scan: 82% of MCP servers vulnerable) @model:sonnet
 
 ## 4 FlowArt/VR
 - [ ] Push the Flow Art Dance VR app one build step toward Live (Windows/Unity box) @model:sonnet
