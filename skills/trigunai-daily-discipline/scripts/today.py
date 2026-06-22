@@ -40,6 +40,16 @@ BLOCKS = [
 ]
 GATE_BLOCKS = {"1 Marketing", "3 Course"}  # the two that move revenue
 
+# Default Claude model per block when PLAN.md gives no @model tag.
+# Cheapest-that-works: haiku=mechanical, sonnet=the middle, opus=hard reasoning only.
+DEFAULT_MODEL = {
+    "1 Marketing": "sonnet",
+    "2 Robotics": "sonnet",   # running training is mechanical; escalate to opus for reward design/debug
+    "3 Course": "sonnet",     # escalate to opus for curriculum/flow design or hard concepts
+    "4 FlowArt/VR": "sonnet",
+    "5 TechScan": "haiku",
+}
+
 # weekday -> special gate note
 SPECIAL = {
     4: "🔑 FRIDAY — Block 1 IS the free-intro-class INVITE (LinkedIn + email). Fills Saturday's room.",
@@ -61,6 +71,40 @@ def log_path() -> pathlib.Path:
     if env:
         return pathlib.Path(env)
     return repo_root() / "daily_routine" / "ROUTINE_LOG.md"
+
+
+def plan_path() -> pathlib.Path:
+    env = os.environ.get("ROUTINE_PLAN")
+    if env:
+        return pathlib.Path(env)
+    return repo_root() / "daily_routine" / "PLAN.md"
+
+
+PLAN_SECTION = re.compile(r"^##\s+(\d)\b")
+TASK_LINE = re.compile(r"^\s*-\s*\[ \]\s*(.+)$")
+MODEL_TAG = re.compile(r"@model:(haiku|sonnet|opus)", re.I)
+
+
+def parse_plan(path: pathlib.Path):
+    """Return {block-digit: (task_text, model_or_None)} = first unchecked task per block."""
+    out = {}
+    if not path.exists():
+        return out
+    cur = None
+    for line in path.read_text(encoding="utf-8").splitlines():
+        m = PLAN_SECTION.match(line)
+        if m:
+            cur = m.group(1)
+            continue
+        if cur and cur not in out:
+            t = TASK_LINE.match(line)
+            if t:
+                text = t.group(1).strip()
+                mm = MODEL_TAG.search(text)
+                model = mm.group(1).lower() if mm else None
+                text = MODEL_TAG.sub("", text).strip()
+                out[cur] = (text, model)
+    return out
 
 
 DAY_HDR = re.compile(r"^##\s+(\d{4}-\d{2}-\d{2})\b")
@@ -181,11 +225,19 @@ def print_day(d: datetime.date, days):
     print("═" * 70)
     total = 0
     done_today = days.get(d.isoformat(), set())
+    plan = parse_plan(plan_path())
     for key, hrs, skill, crit in BLOCKS:
         total += hrs
         mark = "✅" if key in done_today else "▢"
         gate = " ⭐" if key in GATE_BLOCKS else "  "
+        digit = key.split()[0]
+        task, model = plan.get(digit, (None, None))
+        model = model or DEFAULT_MODEL.get(key, "sonnet")
         print(f"  {mark}{gate} {key.ljust(13)} {hrs}h  → {skill}")
+        if task:
+            print(f"         TODAY: {task}   [model: {model}]")
+        else:
+            print(f"         TODAY: (set one in daily_routine/PLAN.md)   [model: {model}]")
         print(f"         done = {crit}")
     print("─" * 70)
     print(f"  Total: {total}h   (⭐ = revenue gate block — protect first)")

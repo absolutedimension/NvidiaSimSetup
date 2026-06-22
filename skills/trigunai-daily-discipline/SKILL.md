@@ -33,8 +33,40 @@ description: >
 >    1 (Marketing) + 3 (Course) directly feed that gate — they are non-negotiable. Blocks 2, 4,
 >    5 are upside/IP/input. If a day collapses, **protect 1 + 3, drop the rest** without guilt.
 >
-> Log: `daily_routine/ROUTINE_LOG.md` (this skill writes it). Resolver: `scripts/today.py`.
-> Owner: Deepak. Cadence: daily.
+> Log: `daily_routine/ROUTINE_LOG.md` (this skill writes it). Plan: `daily_routine/PLAN.md`
+> (today's concrete tasks). Resolver: `scripts/today.py`. Owner: Deepak. Cadence: daily.
+
+---
+
+## 0. HOW YOUR SYSTEM WORKS — the 30-second reminder (shown every day)
+
+**Three layers, three hats — don't mix them:**
+- **Direction** = `trigunai-ceo` — truth, the gate, strategy, grants, pitch. Open it **Mondays + for
+  real decisions**, NOT to make things.
+- **Rhythm** = THIS skill (`trigunai-daily-discipline`) — your **daily front door**. It sets today's
+  tasks, picks the model, and holds you accountable.
+- **Execution** = the specialist skills — they make the thing. One session each, named `D#·…`.
+
+**The map — open the skill that OWNS the work (not CEO):**
+reel/post → `content-daily-engine` · course script → `video-script-writer-trigunai` ·
+web/app → `trigunai-dev` · drone → `trigunai-training` · VR / Flow-Art → `trigunai-vr` ·
+music → `production-music-trigunai` · YouTube → `trigunai-youtube` · strategy/gate → `trigunai-ceo`.
+*(Full operating model: `HOW_I_RUN_TRIGUNAI.md`.)*
+
+**Sessions don't share memory — FILES do.** Read the plan/log at start, write the log at end.
+Today's tasks live in `daily_routine/PLAN.md`; what you shipped goes in `daily_routine/ROUTINE_LOG.md`.
+
+**Use the cheapest model that does the job (spend tokens intelligently):**
+
+| Model | Cost | Use for |
+|---|---|---|
+| **Haiku** | cheapest | mechanical — uploads, running scripts, file ops, quick web lookups, the tech-scan summary |
+| **Sonnet** | mid | the broad middle — most coding, writing scripts/content, content production, VR/Unity work |
+| **Opus** | priciest | hard reasoning only — CEO/strategy, curriculum & flow design, tricky debugging, RL reward design |
+
+> **Rule:** start at the cheapest model that could plausibly do it; escalate only when it struggles.
+> Don't run Opus for an upload; don't run Haiku for strategy. Each `PLAN.md` task carries an
+> `@model:` tag and the morning brief prints it per block — **set that model when you open the session.**
 
 ---
 
@@ -124,8 +156,11 @@ description: >
    ```bash
    python3 ~/.claude/skills/trigunai-daily-discipline/scripts/today.py --new
    ```
-3. **Set the one target per block** (what *specifically* ships today). Keep it small enough to
-   actually finish in the hours. Vague targets are how blocks die.
+3. **Read today's tasks from the plan.** The resolver prints, per block, the top unchecked item in
+   `daily_routine/PLAN.md` as **TODAY:** plus the **[model: …]** to run it on. That *is* your task
+   list — you don't have to invent it each morning; you maintain `PLAN.md` and the brief surfaces it.
+   Confirm/adjust the top item per block, then set its target small enough to finish in the hours.
+   (Edit `PLAN.md` whenever priorities shift — reorder so the right thing is on top.)
 4. **Honor today's special slot** (the resolver flags it):
    - **Fri** → Block 1 *is* the **free-intro-class INVITE** (LinkedIn + email). This fills Saturday.
    - **Sat** → Block 1 *is* **running the free live intro class** — the conversion event. Book 1:1s after.
