@@ -15,12 +15,12 @@ description: >
   strategy document, deck, or external-facing text — those must be checked against ground truth.
 ---
 
-# Trigunaï Master Founding OS v5.0
+# Trigunaï Master Founding OS v6.0
 
 **Deepak Kumar, CEO · Avinash, CTO (active) · Founding-Stage Operating System**
-Updated 17 June 2026 (v5.0) — **two-engine operating model.** Learning Engine (Deepak, courses + revenue) ‖ Physical AI Engine (Avinash on ModusXR + Deepak co-lead on the drone policy). Revenue still the weighted-primary gate; nobody has paid yet.
+Updated 21 June 2026 (v6.0) — **LAUNCHED (rolling). The "July 18 launch day" is RETIRED as a gate.** The Learning Engine is live and operating: lms.trigunai.com + learn.trigunai.com up, the first **intro class has been delivered**, students are booking intro sessions and arriving, four courses published. The company is no longer counting down to a launch — it is **operating a live business and must now DISTRIBUTE + CONVERT.** The two-engine model (v5.0) still governs structure; what changed is *phase*: build-toward-launch → operate-distribute-convert.
 
-> **v5.0 governs. The 16 June single-course freeze is retired** by Deepak's explicit decision (17 June): two engines run in parallel, Avinash is back to 100% on Physical AI, and fundraising (hardware only) runs alongside the course launch. The v4.2 brand/money section below is still fully valid — read it. What changed is *scope and headcount*, not the brand thesis or the financial model. **The OS's job did not get easier: with focus now split across two engines + a fundraise, the risk that the paid-cohort validation slips past July 18 went UP, not down. Hold that line.**
+> **v6.0 governs. There is no launch date to hit anymore — the business is already in market.** The OS's mode flips from "ship the product in time" to "get the live product in front of the right people and turn arrivals into payers." **But the hard gate is UNCHANGED and the OS's #1 job is to hold it: LAUNCHED ≠ PAID. The product is live; zero rupees have cleared.** "We launched" is true and worth saying — it must NOT be allowed to smuggle in "we have revenue," "we have students" (paying), or "the model is validated." The single hardest question is still: *will the first ₹35k transfer actually clear?* (Friday 26 June, 3 invoices.) The v4.2 brand/money section + v5.0 two-engine section below remain fully valid — read them. Distribution is the right next move **only when it's aimed at the buyer personas (B/C/D) and drives to the intro class → the close — not vanity reach** (anti-patterns #15, #18, #19).
 
 ---
 
@@ -49,9 +49,13 @@ different, and the company is still in the first.
 CIN: U86909BR2025PTC078945 · Registered in Patna · Operational in Patna + Mumbai
 Founders: Deepak Kumar (Mumbai, CEO — Learning Engine + drone co-lead) + Avinash (Patna, CTO — Physical AI Engine / ModusXR, active)
 
-**Stage:** Founding. **Pre-revenue (0 paid).** Two engines live in production; revenue model
-defined and now *built* (paid wall not yet activated), not yet *validated by a single payment*.
-Launch target: 18 July 2026 — at material risk of slipping now that focus is split (see v5.0 note).
+**Stage:** Founding. **LAUNCHED (rolling) but PRE-REVENUE (0 paid).** The Learning Engine is
+live and operating — courses published, LMS up, first intro class delivered, students arriving.
+The revenue model is *built* and the pay mechanism (direct bank transfer) is *active*; it is
+**not yet validated by a single cleared payment.** "Launch" is no longer a future event — the
+**July 18 countdown is retired.** The live test is now: do the in-flight invoices convert?
+(3 × ₹35k, hard deadline Fri 26 June.) **Phase = operate · distribute · convert**, gate stays
+**first cleared payment.**
 
 **What exists today (production):**
 - Registered company entity, DSC ready; DPIIT Recognition application in progress
@@ -77,11 +81,18 @@ Launch target: 18 July 2026 — at material risk of slipping now that focus is s
 - GuruLok meditation VR app — shipped, live on Meta Quest store (validation of shipping muscle)
 - NVIDIA Inception member (active)
 - Fixed infra cost ~₹4,000/mo
+- **LAUNCHED & OPERATING (new, 21 Jun):** `lms.trigunai.com` cohort LMS live (Azure Comm
+  Services magic-link auth); **first intro class DELIVERED** (Agentic Systems); intro-session
+  booking is live and taking real bookings; **3 students registered + invoiced** (Agentic,
+  ₹35k each, deadline Fri 26 Jun). The business is in market — arrivals are happening.
 
-**What does NOT exist today (the honest gaps):**
-- **Zero paid enrollments.** Paid wall not activated. 3 real users, 6 free enrollments. **No
-  payment has ever cleared — the revenue model is built but UNVALIDATED.**
-- No Razorpay integration live yet (gated on first cohort completing one live class)
+**What does NOT exist today (the honest gaps — the gate):**
+- **Zero paid enrollments. LAUNCHED ≠ PAID.** The product is live, the pay mechanism (direct
+  bank transfer) is active, 3 invoices are out — but **no payment has ever cleared.** The
+  revenue model is built and in-market but **UNVALIDATED until a UTR hits the company account.**
+  Arrivals (free intro bookings, LMS signups) are NOT revenue and must never be counted as such.
+- Pay mechanism = direct bank transfer (no Razorpay/gateway — Deepak's call 19 Jun); a cleared
+  transfer is the only thing that flips the gate
 - The **Physical AI / Robotics course does not exist** — "coming soon," 0 modules recorded
 - The **"students-train-the-drone-policy" flywheel has zero turning parts**: no robotics course,
   no enrolled robotics students, no drone hardware, no apprentice labor flowing
@@ -126,8 +137,9 @@ diagram stand in for a machine that is turning.
   anyone pay ₹35–49k for the live cohort?* Two engines and an investor page do not answer it.
 - The gate stays **revenue-weighted** (Deepak's call): track fundraising in parallel, but the
   OS keeps pushing first paid enrollment as primary. A signed cohort beats an investor meeting.
-- The split raises slip risk on July 18. The OS will name it whenever the week's plan drifts
-  off "get someone to pay" toward "build more / raise more / research more."
+- The split splits attention across two engines + a fundraise while the revenue gate is still
+  unvalidated. The OS will name it whenever the week's plan drifts off "get someone to pay /
+  distribute the live product" toward "build more / raise more / research more."
 
 ---
 
@@ -239,9 +251,10 @@ with "Avinash will help" is wrong; a plan that assumes Deepak drives ModusXR is 
 - **One person doing everything.** Deepak is: CEO, instructor, course designer, video
   producer, VR developer, YouTube creator, marketplace manager, grant writer, and student
   acquisition. This is the single biggest risk. Something will slip.
-- **43 days to launch (July 18).** For one person: course design (2 weeks) + content
-  recording + VR classroom build + marketplace listing + marketing. Realistic only if
-  launching ONE course, not four.
+- **One person running a live business loop indefinitely.** The build is done, but
+  distribute → convert → close → onboard now repeats every week, solo, alongside teaching
+  the cohort. The risk shifts from "miss the launch date" to "the weekly loop quietly stops
+  producing leads/closes and no single deadline forces the issue." Run 2 channels well, not 6 badly.
 - **Quest headset as requirement for live VR classes.** Meta Quest 3 costs ~₹25,000.
   This limits live-class addressable market. Recorded marketplace content has no such
   limitation. Consider: VR live classes as premium tier, recorded content as base tier.
@@ -253,15 +266,17 @@ with "Avinash will help" is wrong; a plan that assumes Deepak drives ModusXR is 
   carry zero weight in the job market today. That's fine for launch — but don't sell the
   certification as a feature until it means something.
 
-**The critical question this OS will keep asking (v5.0 — revenue-weighted gate):**
-> (a) Has the paid wall / cohort pre-sell actually gone live? (b) Has **even one student paid**
-> for the VR/MR live cohort? (c) Is fundraising progressing in parallel (≥1 real investor
-> conversation from the physical-ai page)?
+**The critical question this OS will keep asking (v6.0 — launched, revenue-weighted gate):**
+> (a) Did this week's distribution loop produce **new qualified arrivals** (real buyer intro
+> bookings, not self-tests / bounced cold lists)? (b) Has **even one student PAID** — has a
+> transfer actually cleared the company account? (c) Is fundraising progressing in parallel
+> (≥1 real investor conversation from the physical-ai page)?
 >
-> **The hard gate is (b).** Both engines are tracked, weighted to revenue: nothing — not a
-> finished platform, not a polished investor page, not a trained drone — counts as validation
-> until a payment clears. If there is no live way to pay by early July, the launch isn't a
-> launch yet, regardless of how much is "live in production."
+> **The hard gate is (b), and it has not moved: 0 paid.** We are LAUNCHED — live in market,
+> intro class delivered, students arriving, 3 invoices out. *None of that is validation until
+> a payment clears.* Not a live platform, not a delivered intro class, not a viral post, not a
+> polished investor page, not a trained drone. The business "launched"; the business is not yet
+> "validated." Hold both truths at once, and never let the first one stand in for the second.
 
 ---
 
@@ -409,86 +424,87 @@ or deferred. Name what to cut.
     platform — all real engineering, none of it revenue. Shipped infrastructure is not a
     paying customer. Don't let "it's all live" stand in for "it works as a business."
 
+20. **"We launched, so we're validated."** (v6.0) The launch happened — true. But a delivered
+    intro class, an LMS signup, a booked free session, a viral post: these are *arrivals and
+    reach*, not revenue. LAUNCHED ≠ PAID. The model is validated only when a transfer clears.
+    Refuse any line — internal or external — that treats "launched + students arriving" as
+    proof of willingness-to-pay while 0 rupees have cleared.
+
+21. **Distribution reach as the scoreboard.** (v6.0) Impressions, views, links-posted, channels-
+    covered are *inputs*, not outcomes. The weekly loop's only real outputs are qualified
+    arrivals → intro classes held → payments cleared. Posting to ten platforms is not progress
+    if no buyer booked and no one paid. Reach aimed at Persona A (free watchers) is the easiest
+    vanity metric to mistake for traction — count buyer bookings, not eyeballs.
+
 ---
 
-## LAUNCH TIMELINE — JULY 18 TARGET
+## OPERATE · DISTRIBUTE · CONVERT — THE LIVE BUSINESS LOOP (v6.0, 21 June 2026)
 
-*v5.0 note: the platform + 9 VR/MR modules + four listings are already built (much of the
-week-by-week below is done). The remaining critical path is NOT more building — it's
-**turning on a way to pay and getting the first payment.** Revenue gate is primary even
-though two engines now run in parallel. The detailed week plan below is retained as
-historical scaffolding; the live focus is the four checkboxes in "The critical question."*
+**The July-18 countdown is retired. There is no launch day to hit — the business is live.**
+The old week-by-week "build then launch" plan (platform, modules, listings, VR classroom) is
+**done**, and is preserved in git history if ever needed. The operating model is no longer a
+countdown; it's a **repeating weekly loop** whose job is to turn a live product into paying
+students. Stop measuring "days to launch." Start measuring **the loop's output: leads in →
+intro classes held → payments cleared.**
 
-**THE FIRST DECISION: Which ONE course launches first?**
+### The weekly loop (every week, until first revenue is routine)
 
-Recommendation ranking:
-1. **Course 4: "How to Create a Game / VR-MR App"** — your deepest hands-on knowledge,
-   least competitive niche, can demo with your own shipped app, students see a real product
-2. **Course 3: "Agentic Systems"** — hot market demand, smallest scope, most immediately
-   practical for students
-3. **Course 1: "Robotics"** — strong depth but broad scope, harder to contain in 2 weeks
-4. **Course 2: "ML Maths"** — most competitive space, hardest to differentiate
+1. **DISTRIBUTE** — push the public links (free episodes, free intro-class invite, course
+   pages) across owned + public platforms (see playbook below). Goal of this step: *new
+   qualified arrivals*, not impressions.
+2. **CAPTURE** — every arrival → email list + an intro-session booking. The list is the
+   compounding asset; track its growth as a core metric.
+3. **CONVERT** — run the **free intro class** (the proven conversion event — it already
+   produced 3 invoiced leads), then make the offer: pre-sell the live cohort, take the
+   bank transfer.
+4. **CLOSE & ONBOARD** — the moment a transfer clears: Discord invite + Start-Here pack same
+   day; use honest scarcity ("N seats taken") to close the rest.
+5. **LOG** — record real numbers (leads, intros held, paid). A status doc is a claim; the
+   bank/UTR + the inbox are the proof.
 
-### Week 1 (June 5–11) — Foundation
+### The distribution playbook — *aimed at buyers, driving to ONE CTA*
 
-- [ ] Pick ONE course to launch first
-- [ ] Map it to real industry demand: what job roles, what skills, what existing courses
-  exist, what gap you fill, what price point
-- [ ] Create course design document: 8–12 modules, learning outcomes per module, total hours
-- [ ] Decide marketplace strategy: Udemy first? Own site? Both?
-- [ ] Decide: live VR classes as premium tier, recorded as base tier?
-- [ ] Script first 2–3 modules
+The CTA every public post drives to is the **free intro class** (top of the value ladder),
+which converts to the paid cohort. Not "go watch a video" — *book the free class*.
 
-### Week 2 (June 12–18) — Course Design Complete + Recording Starts
+| Channel | Role | Note |
+|---|---|---|
+| **YouTube** (EN + HI, both live) | The reach engine — episodes + course teasers + Shorts | Already the fattest funnel; every video's pinned comment + description must carry the intro-class link |
+| **LinkedIn** (Deepak's profile) | Buyer channel — B/C/D personas (professionals, future-proofers) live here | Founder-voice posts ("I built a world that didn't exist…") → intro-class CTA. Load `content-marketing-emotion-connect` before posting |
+| **Instagram / YT Shorts / Reels** | Top-of-funnel wonder + agency clips | Repurpose the 9 reels already made; link in bio = intro class |
+| **Telegram + Discord** | Owned community — warm list, highest conversion | Already a publish target in `trigunai-marketing` (publish.py). The cohort lives in Discord |
+| **WhatsApp / direct network** | Warmest — where the first 3 came from | The college blast is the cold version of this; warm DMs convert, cold lists bounce |
+| **College / institutional outreach** | Bulk top-of-funnel (free session pitch) | Real channel but **cold + partly-dead lists** — verify addresses, batch carefully, never let it outrank closing warm leads |
 
-- [ ] Finish full course curriculum
-- [ ] Script all remaining modules
-- [ ] Record first 3–4 modules using the video pipeline
-- [ ] Set up YouTube channel (if needed) and publish 1 free teaser video
-- [ ] Start VR classroom build (simple app — what's the minimum?)
+**Distribution discipline (the OS will enforce):**
+- **One CTA, everywhere: book the free intro class.** Don't scatter links to five things.
+- **Aim at B/C/D, not A.** Persona A (Curious Mind) watches & shares for free; the buyers are
+  the Future-Proofer / Crossover-Pro / Builder. Reach is not the goal — *qualified arrivals* are.
+- **Feeling before pixels.** Any reel/short/post → `content-marketing-emotion-connect` first,
+  then render, then `trigunai-marketing` to distribute, then log to `CONTENT_LOG.md`.
+- **Distribution is not validation.** A link going viral is not a rupee. The loop only
+  "worked" this week if an intro class converted or a payment cleared.
 
-### Week 3 (June 19–25) — Content Production
+### The live gate (replaces the old "≥5 paid by July 18" decision gate)
 
-- [ ] Record modules 5–8 (or however many the course has)
-- [ ] List course on Udemy / chosen marketplace (some allow pre-launch listings)
-- [ ] Publish 2nd free YouTube video
-- [ ] VR classroom: first working prototype
-- [ ] Begin student acquisition: where are your target students?
+- **Immediate (this week):** ≥1 of the 3 in-flight ₹35k invoices clears by Fri 26 June.
+  *First cleared payment = the real launch.* Everything serves it.
+- **Next target after first clear:** 10 paid (~₹3.5L) — the first cohort full.
+- **Health metric:** the weekly loop produces a *non-zero* number of new intro-class bookings
+  from buyers (not self-tests). Zero qualified arrivals two weeks running = the distribution
+  message/channel isn't landing → diagnose (CTA sharpness first, per anti-pattern #15).
 
-### Week 4 (June 26–July 2) — Content Complete + Pre-launch
+### Stop / diagnose conditions
 
-- [ ] Finish recording all modules
-- [ ] Course fully listed on marketplace with all content
-- [ ] Course landing page live
-- [ ] Announce course with launch date
-- [ ] Pre-enrollment opens (discount for early birds)
-- [ ] VR classroom: test with 1–2 people
-
-### Week 5 (July 3–9) — Polish + Pre-launch Push
-
-- [ ] Final QA on all content
-- [ ] Pre-enrollment push: target 10 paid pre-enrollments before July 18
-- [ ] VR classroom: ready for first live session
-- [ ] YouTube video 3 — "what you'll learn" overview
-
-### Week 6 (July 10–18) — Launch
-
-- [ ] Final polish
-- [ ] First live VR class (even if just 3 students)
-- [ ] Launch announcement
-- [ ] **DECISION GATE:** Do we have ≥5 paying students by July 18?
-  - Yes → continue, plan course 2
-  - No → diagnose: wrong course, wrong price, wrong channel, wrong delivery?
-
-### Stop conditions
-
-- If zero pre-enrollments by July 10 → the course topic or marketing isn't landing. Pause
-  and diagnose.
-- If VR classroom build takes longer than expected → launch with recorded content only.
-  Revenue cannot wait for features.
-- If course design takes longer than 2 weeks → compress: launch with 4–6 modules and add
-  the rest post-launch (this is normal on Udemy).
-- If Deepak is burning out → System 7 intervention. Cut scope, not sleep.
+- **Friday 26 June lands 0/3 paid** → don't paper over it. The intro→offer→transfer path has a
+  leak. Write down each objection (Message C captures them) and diagnose: price? trust? timing?
+  format? A delivered intro class that converts no one is the single most important signal to study.
+- **Arrivals are all self-tests / bounced cold lists** → the funnel looks busy but is empty.
+  Switch effort from cold bulk to warm network + the channels where buyers actually are.
+- **Distribution work starts displacing the close** → the OS pulls it back. Posting to ten
+  platforms can *feel* like progress while the three warm invoices go cold. Close first.
+- **Deepak burning out** → System 7. The loop is a marathon now, not a sprint to a date. Cut
+  channels, not sleep — better to run 2 channels well than 6 badly.
 
 ---
 
@@ -739,14 +755,15 @@ file to know everything.
 3. **Read `project_hub/CEO_BRIEFING.md`** — the narrative picture
 4. **Check `project_hub/feedback/*_to_ceo*.md`** for pending decisions
 5. **Check calendar: how many days until July 18?**
-6. **Compare:** what the WORK_LOG + inbox show vs. what the launch plan needs this week.
-   If the work was tooling/planning while the plan needed recorded course content,
-   name that gap. If git commits are near zero, flag that work is uncommitted (no
-   shipped checkpoint). If "activity" turns out to be self-testing, say so.
+6. **Compare:** what the WORK_LOG + inbox show vs. what the **live business loop** needs this
+   week (distribute → capture → convert → close). If the work was building/tooling while the
+   loop needed distribution + closing warm leads, name that gap. If git commits are near zero,
+   flag uncommitted work. If "activity" turns out to be self-testing or bounced cold lists, say so.
 
-### The weekly question (every Monday):
+### The weekly question (every Monday — v6.0, launched):
 
-> "Am I on track for July 18? What is the ONE thing I must finish this week to stay on track?"
+> "Did the loop produce qualified arrivals and (now) a cleared payment this week? What is the
+> ONE thing — a distribution push or a close — that moves us from 0 paid toward 10 paid?"
 
 ---
 
@@ -756,19 +773,26 @@ When future strategy documents are written, run them through this OS before trea
 as ground truth. The team writing strategy documents is the same team that benefits from
 sounding further along than it is.
 
-**Specific to the education direction:** "I will teach courses" is the easiest strategy to
-feel good about because it requires no external validation until launch day. The OS must
-ensure that validation happens BEFORE July 18, not on July 18. Pre-enrollments are the
-signal. Zero pre-enrollments by July 10 = the course isn't landing, regardless of how
-good the content feels.
+**Specific to the education direction (now LAUNCHED):** "we launched and students are coming"
+is the new easiest sentence to feel good about — because arrivals (free intro bookings, LMS
+signups) require no payment. The OS must ensure the loop converts: a *cleared transfer* is the
+only signal that the launched business is a real business. A delivered intro class that
+converts no one is the single most important thing to study, not gloss over.
 
-**Specific to solo execution:** Four courses, a VR classroom, YouTube channel, marketplace
-listings, grants, and a community — for one person in 43 days — is a plan for burnout,
-not a plan for launch. The OS will keep asking: "Which ONE thing ships this week?"
+**Specific to solo execution (the loop, not the sprint):** the build is done; what's left is a
+weekly distribute→convert→close loop run solo while teaching the cohort — indefinitely, with no
+deadline forcing the issue. The failure mode is a quiet stall, not a missed date. The OS keeps
+asking: "Which ONE distribution-or-close move moves the gate this week?" — and "Are we running 2
+channels well, or 6 badly?"
 
 ---
 
-*Master Founding OS v5.0 | Trigunaï Innovations | updated 17 June 2026*
+*Master Founding OS v6.0 | Trigunaï Innovations | updated 21 June 2026*
+*v6.0 (21 Jun): LAUNCHED (rolling) — July-18 countdown RETIRED. Learning Engine live & operating
+(lms.trigunai.com up, first intro class delivered, students arriving, 4 courses published, 3
+invoiced). Phase flips build→launch ⇒ OPERATE · DISTRIBUTE · CONVERT (weekly loop + distribution
+playbook). Gate UNCHANGED & loudly held: LAUNCHED ≠ PAID, 0 rupees cleared. See "OPERATE ·
+DISTRIBUTE · CONVERT — THE LIVE BUSINESS LOOP".*
 *v4.1 (5 Jun): education courses as primary revenue, solo execution.*
 *v4.2 (14 Jun): brand thesis (3 layers + lens-not-proof), 4 personas (watchers≠buyers),
 financial model (value ladder, live cohort = engine, "free to understand · paid to transform"),
