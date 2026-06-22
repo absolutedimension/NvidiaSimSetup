@@ -4,11 +4,15 @@
 > This is Message B (the light nudge) from `PAYMENT_CLOSE_MESSAGES.md`. Hard deadline Fri 26 Jun.
 > Gate truth: still **0 paid** until a UTR hits the Trigunaï Innovations Pvt Ltd current account.
 
-## ⚠️ Fill these TWO blanks before sending (only Deepak has them)
-1. **[DATE]** — the cohort start date (e.g. "Saturday 28 June, 7pm IST").
-2. **[BANK DETAILS]** — A/c name: Trigunaï Innovations Pvt Ltd · A/c no: ____ · IFSC: ____ · Bank/branch: ____ (+ optional UPI).
+## ⚠️ ONE blank left before sending
+1. **[DATE]** — the cohort start date (e.g. "Saturday 28 June, 7pm IST"). ← still need this from Deepak.
 
-*(These were already shared with the invoices on Jun 19, so Wednesday you can just say "the account I sent" — but having them inline lets you re-paste if asked.)*
+✅ **Bank details (filled):**
+> **A/c name:** Trigunaï Innovations Private Limited
+> **A/c no:** 50200088377205 · **IFSC:** HDFC0002643 · **Bank:** HDFC Bank
+> *(PAN AAMCT2881K · GST 10AAMCT2881K1Z4 — for the invoice, not the nudge)*
+
+*(These were already shared with the invoices on Jun 19, so Wednesday you can just say "the account I sent" — the block above lets you re-paste if asked.)*
 
 ---
 

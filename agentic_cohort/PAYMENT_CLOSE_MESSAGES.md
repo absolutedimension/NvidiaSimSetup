@@ -8,11 +8,11 @@ Razorpay, no UPI collect, no gateway.** For a handful of seats this is the faste
 rupee: send the warm lead the company bank details + amount + start date, they NEFT/IMPS the money,
 you confirm receipt. Zero integration, zero platform fee, money lands straight in the account.
 
-**Before sending, have ready (paste into the `[BANK DETAILS]` block below):**
-- Account name: **Trigunaï Innovations Pvt Ltd** (use the registered company account, not personal)
-- Account number + IFSC + bank/branch
-- (Optional, for convenience) a UPI ID pointing at the same account
-- A line asking them to **send the transfer screenshot/UTR** so you can confirm and send onboarding
+**Company bank account (filled — use this `[BANK DETAILS]` block):**
+- **A/c name:** Trigunaï Innovations Private Limited
+- **A/c no:** 50200088377205  ·  **IFSC:** HDFC0002643  ·  **Bank:** HDFC Bank
+- PAN AAMCT2881K · GST 10AAMCT2881K1Z4 (invoice fields)
+- Always ask them to **send the transfer screenshot/UTR** so you can confirm receipt and send onboarding.
 
 > ⚠️ Use the **company** current account so it's clean revenue on the books (matters for DPIIT/grants
 > + the first real ₹ on the P&L). Avoid a personal account for company cohort fees.
