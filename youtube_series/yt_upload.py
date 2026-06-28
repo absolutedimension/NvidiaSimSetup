@@ -135,6 +135,9 @@ def main():
     pp.add_argument("--to", default="public", choices=["public","unlisted","private"])
     lp = sub.add_parser("playlist")
     lp.add_argument("manifest")
+    dp = sub.add_parser("describe")
+    dp.add_argument("manifest")
+    dp.add_argument("--substack", default="")
     a = ap.parse_args()
     if a.cmd == "auth":
         get_creds(); print("✅ auth complete — token.json saved."); return
@@ -151,6 +154,22 @@ def main():
             except Exception as e:
                 print(f"  !! {ep['id']} failed: {e}", flush=True)
         print("\n== publish done ==", flush=True); return
+    if a.cmd == "describe":
+        man = json.load(open(a.manifest)); yt = svc(); state = load_state(); sub = a.substack
+        cat = man.get("categoryId", CATEGORY_EDUCATION)
+        for ep in man["episodes"]:
+            vid = state.get(ep["id"], {}).get("video_id")
+            if not vid: print(f"  skip {ep['id']} (not uploaded)", flush=True); continue
+            desc = open(os.path.join(HERE, ep["desc_file"])).read() if ep.get("desc_file") else ep.get("description","")
+            desc = desc.replace("{substack}", sub or "")
+            body = {"id": vid, "snippet": {"title": ep["title"], "description": desc,
+                    "tags": ep.get("tags", []), "categoryId": cat, "defaultLanguage": ep.get("lang","en")}}
+            try:
+                yt.videos().update(part="snippet", body=body).execute()
+                print(f"  ✅ {ep['id']} snippet updated (cat {cat})", flush=True)
+            except Exception as e:
+                print(f"  !! {ep['id']}: {e}", flush=True)
+        print("\n== describe done ==", flush=True); return
     if a.cmd == "playlist":
         man = json.load(open(a.manifest)); yt = svc(); state = load_state()
         title = man.get("playlist")
