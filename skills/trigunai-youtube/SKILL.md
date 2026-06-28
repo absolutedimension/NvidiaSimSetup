@@ -102,6 +102,7 @@ Deps (one-time): `pip3 install --user google-api-python-client google-auth-oauth
 | `403 org_internal` at consent | consent screen is Internal | switch to External + add test user |
 | Hindi token binds to "Deepak Kumar" | wrong channel picked / cached | revoke app access, re-auth, pick "TrigunAI हिंदी" |
 | thumbnail `403 forbidden` | channel not verified | youtube.com/verify on that channel, then `thumbs` |
+| video "removed because it was too long" / disappears | **unverified channel = 15-min upload cap** | verify the channel (phone, or 6-sec-video/ID for 3rd+); >15-min videos (e.g. 1-hr music) ONLY work after verification — then RE-UPLOAD (removed ones don't return) |
 | upload OK but no thumbnail/playlist | non-fatal (logged) | re-run `thumbs` / check playlist title |
 | `ModuleNotFoundError: google_auth_oauthlib` | default `python3` changed (e.g. to a fresh 3.14); deps live under the 3.9 | run with **`/usr/bin/python3`** (Python 3.9, has the deps + made the tokens). Prefix every command: `PY=/usr/bin/python3; $PY yt_upload.py ...` |
 | `uploadLimitExceeded` "exceeded the number of videos" | YouTube **daily upload cap** (young channels ~15/day across all videos+shorts) | wait ~24h, re-run the same `run` — state file skips the done ones, uploads only the remainder |
