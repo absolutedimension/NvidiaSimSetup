@@ -1,104 +1,95 @@
 #!/usr/bin/env python3
-"""grammar_generate.py — arrange a core groove into a full track that FOLLOWS a
-learned DJ grammar (from grammar_extract.py). Encodes the DJ's rules:
-constant bed (bass+drone+kick), hats as the energy lever, short breakdowns that
-keep bass+drone but drop hats, and the DJ's plateau energy arc.
+"""grammar_generate.py (v3 — ONE locked groove, slow arc) — hypnotic techno needs a
+CONSISTENT rhythm that the listener locks into; interest comes from elements slowly
+entering/leaving over a long arc, NOT from the groove changing.
 
-Splits the core into stems (Demucs) and band-splits drums -> kick (low) + hats (high)
-so hats can be automated independently. Runs on the EC2 box (m2_venv demucs + soundfile).
+So: take ONE core groove, seamlessly loop it (crossfade the loop seam = no click, same
+rhythm), and apply ONE clean arc — slow build (drone -> kick -> bass -> hats enter
+gradually) -> HOLD the peak -> gradual wind-down (strip back, end on the drone). Hats are
+the last-in/first-out energy lever; bass+drone+kick are the locked bed (learned grammar).
 
-Usage: python3 grammar_generate.py --core CORE.mp3 --grammar grammar.json --minutes 8 --out OUT.wav
+Usage: python3 grammar_generate.py --core CORE.mp3 --minutes 15 --out OUT.wav
+Runs on the EC2 box (m2_venv demucs + soundfile + scipy).
 """
-import argparse, os, subprocess, glob, json, sys
+import argparse, os, subprocess, glob, sys
 import numpy as np, soundfile as sf
+from scipy.signal import butter, sosfilt
 
 def sh(c):
-    r = subprocess.run(c, shell=True, capture_output=True, text=True)
+    r=subprocess.run(c,shell=True,capture_output=True,text=True)
     if r.returncode: sys.stderr.write(r.stderr[-1500:]); raise SystemExit(f"failed: {c}")
     return r.stdout
 
-ap = argparse.ArgumentParser()
+ap=argparse.ArgumentParser()
 ap.add_argument("--core", required=True)
-ap.add_argument("--grammar", required=True)
-ap.add_argument("--minutes", type=float, default=8.0)
+ap.add_argument("--minutes", type=float, default=15.0)
 ap.add_argument("--out", required=True)
+ap.add_argument("--break-at", type=float, default=0.62, help="one short breakdown at this track fraction (0=none)")
 ap.add_argument("--work", default="/home/ubuntu/dj_engine/_genwork")
-a = ap.parse_args()
-SR = 44100; T = int(a.minutes*60*SR)
+a=ap.parse_args()
+SR=44100; T=int(a.minutes*60*SR); X=int(4.0*SR)
 os.makedirs(a.work, exist_ok=True)
-G = json.load(open(a.grammar))
 
-# 1. Demucs split the core (cache)
-cb = os.path.splitext(os.path.basename(a.core))[0]
-stemdir = f"{a.work}/dem/htdemucs/{cb}"
-if not os.path.exists(f"{stemdir}/bass.wav"):
+def lp(x,f): return sosfilt(butter(4,f/(SR/2),btype="low",output="sos"),x).astype(np.float32)
+def hp(x,f): return sosfilt(butter(4,f/(SR/2),btype="high",output="sos"),x).astype(np.float32)
+
+# demucs the ONE core
+cb=os.path.splitext(os.path.basename(a.core))[0]; sd=f"{a.work}/dem/htdemucs/{cb}"
+if not os.path.exists(f"{sd}/bass.wav"):
     print("[gen] demucs split...", flush=True)
     sh(f'/home/ubuntu/m2_venv/bin/python -m demucs -n htdemucs -o "{a.work}/dem" "{a.core}"')
-    stemdir = glob.glob(f"{a.work}/dem/htdemucs/*")[0]
+    sd=glob.glob(f"{a.work}/dem/htdemucs/{cb}*")[0]
+def rd(n):
+    y,_=sf.read(f"{sd}/{n}.wav", always_2d=True); return y.mean(axis=1).astype(np.float32)
+dr=rd("drums"); kick=lp(dr,180); hats=hp(dr,2500); bass=rd("bass"); other=rd("other")
 
-def load(name):
-    y,_ = sf.read(f"{stemdir}/{name}.wav", always_2d=True); y = y.mean(axis=1)
-    if len(y) < T: y = np.tile(y, int(np.ceil(T/len(y))))
-    return y[:T].astype(np.float32)
+# seamless loop a stem to length T (crossfade the loop seam -> same groove, no click)
+fin=np.linspace(0,1,X,dtype=np.float32); fout=fin[::-1]
+def loop_to(y,T):
+    if len(y)>=T+X: return y[:T]
+    out=y.copy()
+    while len(out)<T+X:
+        out=np.concatenate([out[:-X], out[-X:]*fout + y[:X]*fin, y[X:]])
+    return out[:T].astype(np.float32)
+kick=loop_to(kick,T); hats=loop_to(hats,T); bass=loop_to(bass,T); other=loop_to(other,T)
 
-drums = load("drums"); bass = load("bass"); other = load("other")
+# ONE clean arc: slow build -> hold peak -> gradual wind-down. Control points = (track-frac, gain).
+def env(points):
+    x=np.linspace(0,1,T); e=np.interp(x,[p[0] for p in points],[p[1] for p in points])
+    c=np.cumsum(np.insert(e,0,0.0)); k=int(1.5*SR); s=(c[k:]-c[:-k])/k
+    pad=len(e)-len(s); return np.concatenate([np.full(pad//2,s[0]),s,np.full(pad-pad//2,s[-1])]).astype(np.float32)
 
-# band-split drums -> kick (low) + hats (high), so hats = independent lever
-from scipy.signal import butter, sosfilt
-def lp(x, f): return sosfilt(butter(4, f/(SR/2), btype="low", output="sos"), x).astype(np.float32)
-def hp(x, f): return sosfilt(butter(4, f/(SR/2), btype="high", output="sos"), x).astype(np.float32)
-kick = lp(drums, 180); hats = hp(drums, 2500)
+# optional ONE short breakdown (drop kick+hats, keep bass+drone) — learned: ~60s, retains bed
+bk=a.break_at
+def with_break(pts, drop):  # drop the element around the breakdown if 'drop'
+    if bk<=0: return pts
+    return pts  # breakdown applied separately below via mask
 
-# 2. build a section plan that FOLLOWS the grammar
-secdur = G["section_durations_s"]
-D = {t: secdur.get(t, {}).get("median", 90) for t in ["intro/ambient","build","peak","breakdown","groove"]}
-bk_per_hr = G["breakdowns_per_hour"]["mean"]
-# template sequence (the DJ's transition habit: intro -> alternating build/peak, periodic breakdowns, outro)
-plan = [("intro/ambient", D["intro/ambient"])]
-t_used = plan[0][1]; toggle = 0; since_bk = 0
-target_bk_gap = 3600.0 / max(0.5, bk_per_hr)
-while t_used < a.minutes*60 - D["peak"]:
-    if since_bk >= target_bk_gap:
-        plan.append(("breakdown", D["breakdown"])); since_bk = 0; t_used += D["breakdown"]; continue
-    ty = "build" if toggle == 0 else "peak"; toggle ^= 1
-    plan.append((ty, D[ty])); t_used += D[ty]; since_bk += D[ty]
-plan.append(("outro", D["peak"]*0.6))
-# scale plan to exactly target
-tot = sum(d for _, d in plan); plan = [(t, d*a.minutes*60/tot) for t, d in plan]
+drone = env([(0,0.55),(0.04,0.80),(0.86,0.85),(0.95,0.70),(1.0,0.20)])   # bed: always, fade last
+kickE = env([(0,0.0),(0.07,0.0),(0.22,1.0),(0.88,1.0),(0.97,0.0)])        # builds in by ~22%, out at end
+bassE = env([(0,0.0),(0.13,0.0),(0.32,1.0),(0.86,1.0),(0.95,0.0)])        # in by ~32%
+hatsE = env([(0,0.0),(0.34,0.0),(0.50,1.0),(0.80,1.0),(0.88,0.0)])        # LAST in (~50%), FIRST out (~80%)
 
-# per-section element gains, from the grammar's roles
-# bed = bass+drone+kick (retained); hats = lever (off in breakdown/intro); stab~other
-def gains(ty):
-    if ty == "intro/ambient": return dict(kick=0.0, bass=0.35, other=0.7, hats=0.0)
-    if ty == "breakdown":     return dict(kick=0.0, bass=0.85, other=0.9, hats=0.0)  # keep bass+drone, drop kick+hats
-    if ty == "outro":         return dict(kick=0.3, bass=0.6, other=0.7, hats=0.1)
-    if ty == "build":         return dict(kick=1.0, bass=1.0, other=0.9, hats=0.6)
-    return dict(kick=1.0, bass=1.0, other=1.0, hats=1.0)  # peak/groove
+# apply one short breakdown: ~60s window centered at bk -> dip kick+hats to 0, keep bass+drone
+if bk>0:
+    w=int(60*SR); c0=int(bk*T); s0=max(0,c0-w//2); s1=min(T,c0+w//2)
+    ramp=int(6*SR)
+    m=np.ones(T,np.float32)
+    m[s0:s1]=0.0
+    # smooth the breakdown mask edges
+    if s0-ramp>0: m[s0-ramp:s0]=np.linspace(1,0,ramp)
+    if s1+ramp<T: m[s1:s1+ramp]=np.linspace(0,1,ramp)
+    kickE=kickE*m; hatsE=hatsE*m
 
-# 3. build smooth sample-envelopes per element + an overall plateau energy curve
-arc = np.array(G["energy_arc_24"])
-def smooth(e, k):
-    c = np.cumsum(np.insert(e, 0, 0.0)); s = (c[k:]-c[:-k])/k
-    pad = len(e)-len(s); return np.concatenate([np.full(pad//2, s[0]), s, np.full(pad-pad//2, s[-1])])
-envs = {e: np.zeros(T, np.float32) for e in ["kick","bass","other","hats"]}
-i0 = 0
-bounds = []
-for ty, d in plan:
-    i1 = min(T, i0 + int(d*SR)); g = gains(ty)
-    for e in envs: envs[e][i0:i1] = g[e]
-    bounds.append((i0, i1, ty)); i0 = i1
-for e in envs: envs[e] = smooth(envs[e], int(1.0*SR)).astype(np.float32)   # 1s ramps
-# overall plateau gain from the DJ's energy arc
-xe = np.linspace(0,1,T); plate = np.interp(xe, np.linspace(0,1,len(arc)), arc/arc.max())
-plate = smooth(plate, int(2.0*SR)).astype(np.float32)
+mix = kick*kickE + bass*bassE + other*drone + hats*hatsE
+# overall energy: slow rise -> plateau -> gentle decline
+plate=env([(0,0.55),(0.30,1.0),(0.80,1.0),(1.0,0.45)])
+mix=mix*(0.6+0.4*plate)
+mix=mix/(np.max(np.abs(mix))+1e-6)*0.97
+sf.write(a.out,mix,SR)
 
-mix = (kick*envs["kick"] + bass*envs["bass"] + other*envs["other"] + hats*envs["hats"]) * (0.55 + 0.45*plate)
-mix = mix/(np.max(np.abs(mix))+1e-6)*0.97
-sf.write(a.out, mix, SR)
-
-# report the arc + section plan
-n=24; w=len(mix)//n
-en=np.array([np.sqrt(np.mean(mix[i*w:(i+1)*w]**2)) for i in range(n)]); en/=en.max()
-print("[gen] plan:", " ".join(f"{t.split('/')[0][:4]}{int(d)}s" for t,d in plan))
-print("[gen] energy arc:", "".join(" ▁▂▃▄▅▆▇█"[min(8,int(v*8))] for v in en))
+n=28; w=len(mix)//n
+e=np.array([np.sqrt(np.mean(mix[i*w:(i+1)*w]**2)) for i in range(n)]); e/=e.max()
+print("[gen] ONE locked groove, slow build -> hold -> wind-down" + (f" + breakdown @ {int(bk*100)}%" if bk>0 else ""))
+print("[gen] arc:", "".join(" ▁▂▃▄▅▆▇█"[min(8,int(v*8))] for v in e))
 print(f"[gen] DONE -> {a.out}")
