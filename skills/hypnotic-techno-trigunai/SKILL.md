@@ -5,12 +5,15 @@ description: >
   copyright-clean continuous hypnotic techno (a "let-loose / lose-yourself" DJ-set vibe) with an
   embedded alpha isochronic flow tone, then burn a user-supplied audio-reactive GLSL shader on top
   into a finished MP4, any length (2 min to 2 hours). The skill ASKS YOU TO PASTE THE SHADER CODE
-  to use for the visual. Use when the user wants: "hypnotic techno video", "techno session +
-  visualizer", "let loose techno", "ecstatic dance techno", "isochronic techno", "make a techno
-  visualizer", "continuous techno set with visuals", or to recreate the techno-+-shader video
-  pipeline (Flow-Art / Movement II). For deep house / focus instead, use
-  `isochronic-deephouse-trigunai`. Music engine = ACE-Step on the EC2 A10G; video engine = the
-  shader renderer in video-creator/backend.
+  to use for the visual. ALSO makes the MUSIC alone (structured Burmeister-style hypnotic techno —
+  one locked groove, slow build, breakdowns, wind-down) via the DJ arrangement engine; the shader
+  burn is optional. Use when the user wants: "make hypnotic techno", "make a techno track / set",
+  "1-hour techno set", "hypnotic techno music", "Burmeister-style techno", "hypnotic techno video",
+  "techno session + visualizer", "let loose techno", "ecstatic dance techno", "isochronic techno",
+  "make a techno visualizer", "continuous techno set", or to recreate the techno (+optional shader)
+  pipeline (Flow-Art / Movement II). For deep house / focus instead, use `isochronic-deephouse-trigunai`;
+  to learn a NEW DJ's style use `learn-dj-style-trigunai`. Music engine = ACE-Step + arrangement engine
+  on the EC2 A10G; video engine = the shader renderer in video-creator/backend.
 ---
 
 # Hypnotic Techno Visualizer — end to end
@@ -45,25 +48,43 @@ video render barely uses the GPU, so it coexists fine.
 
 ---
 
-## 1. Generate the music (ACE-Step)
+## 1. Generate the music — STRUCTURED arrangement (the proven Burmeister-style recipe) ⭐
 
-Tool: `make_music.py` (repo `music_pipeline/make_music.py`, on box `/home/ubuntu/make_music.py`,
-runs in `~/acestep_venv`). Push the latest copy first: `scp -i $PEM music_pipeline/make_music.py ubuntu@$EC2_IP:/home/ubuntu/`.
+Do **NOT** just loop `make_music.py` — that gives a flat groove that "constantly changes / never builds".
+Use the **DJ arrangement engine** so the track has a real journey: **ONE locked groove** + slow
+filter-OPEN build → long hypnotic hold with **breakdowns** → gradual wind-down, mastered. This is the
+proven v3→v9 recipe (a learned Burmeister grammar drives it). Box: stable EIP `34.192.145.204`. Push the
+latest `make_music.py` + `dj_engine/grammar_generate.py` first.
 
 ```bash
-ssh -i "$PEM" ubuntu@$EC2_IP 'cd /home/ubuntu && nohup ~/acestep_venv/bin/python make_music.py \
-  --style techno-hypnotic --freq alpha --minutes <N> \
-  --seg-len 240 --unique 12 --xfade 16 --bpm 130 \
-  --out /home/ubuntu/music_out/techno_alpha_<N>min.mp3 > /tmp/tk.log 2>&1 & echo pid=$!'
-```
-- `--bpm 130` (locked) + long `--xfade 16` make it mix like a **continuous DJ set** — segments stay
-  tempo-consistent so the groove never breaks ("continuous / hypnotic"). This is THE flow fix.
-- `--freq alpha` = 10 Hz isochronic (flow/let-loose). Synthesizes a 210 Hz carrier gated at 10 Hz,
-  mixes under the music at −20 dB; `techno-hypnotic` preset masters to club level (−12 LUFS).
-- For 1 hr use `--unique 12`, `--seg-len 240`. Watch `grep '\[m1\]' /tmp/tk.log`; wait for `[m1] DONE`.
+PEM=~/.ssh/trigunai_key.pem; EC2_IP=34.192.145.204
+# a) clean CORE groove (dark, bass-dominant, 123 BPM). One core = one distinct track; vary --seed for variety.
+ssh -i $PEM ubuntu@$EC2_IP '~/acestep_venv/bin/python make_music.py --style techno-hypnotic \
+  --minutes 4 --seg-len 240 --unique 1 --bpm 123 --seed 11 --out music_out/techno_core.mp3'
 
-**Why copyright-clean:** ACE-Step is MIT-licensed, trained on licensed + royalty-free + synthetic
-data — output is safe to monetize.
+# b) ARRANGE it into a structured track (runs in audio_pipeline/venv). --breaks = breakdown positions.
+ssh -i $PEM ubuntu@$EC2_IP 'source ~/audio_pipeline/venv/bin/activate; cd ~ && \
+  python3 -u dj_engine/grammar_generate.py --core music_out/techno_core.mp3 --minutes <N> \
+    --breaks 0.40,0.70 --out dj_engine/techno_<N>min.wav'
+
+# c) MASTER chain (punch + clarity + glue + loud) -> final mp3
+ssh -i $PEM ubuntu@$EC2_IP 'ffmpeg -y -i dj_engine/techno_<N>min.wav -af \
+  "highpass=f=28,acompressor=threshold=-20dB:ratio=2.5:attack=5:release=150:makeup=2,treble=g=2.5:f=3500,loudnorm=I=-10:TP=-1:LRA=9" \
+  -b:a 192k dj_engine/techno_<N>min.mp3 && rm dj_engine/techno_<N>min.wav'
+```
+- **The recipe (proven):** single core, seamless-loop crossfade (consistent hypnotic rhythm); slow build
+  with a low-pass filter that OPENS up (kick stays OUT of the filter = clear beat from early); drone→kick
+  →bass→hats enter gradually; hold the peak; breakdowns drop kick+hats but KEEP the bass; gradual wind-down.
+- **No constant piano** (the melodic stem is removed) and **isochronic is OFF by default** for this
+  style (pure music — user pref). To add a *light* flow tone, mix a **−30 dB** 10 Hz-gated 210 Hz carrier
+  before loudnorm (§2 has the synth); keep it faint, never heavy.
+- **Length:** prototype ~15 min, open it, get approval, then render full 30/60 min. 60-min needs ~10 GB RAM
+  (`free -g`); `rm` the `.wav` after mastering. More breakdowns for longer tracks (e.g. `--breaks 0.33,0.58,0.80`).
+- **5 tracks at once:** `dj_engine/batch_5tracks.sh` (one per core, varied breakdowns).
+- **To learn a NEW DJ's style** (not just make this one) → use the `learn-dj-style-trigunai` skill.
+
+**Why copyright-clean:** ACE-Step (MIT, royalty-free/synthetic training data) makes the cores; the
+arrangement is ours. Safe to monetize. Tools: `~/make_music.py`, `~/dj_engine/grammar_generate.py` (repo `music_pipeline/`).
 
 ---
 
@@ -125,31 +146,40 @@ out vec4 fragColor;          // NOT gl_FragColor
 
 ---
 
-## 5. Render — the fast renderer
+## 5. Render — the fast renderer (ALWAYS GPU-encode with `--encoder nvenc`)
 
 Tool: `render_visualizer.py` (repo `video-creator/backend/render_visualizer.py`, on box
-`/home/ubuntu/render_visualizer.py`, runs in `audio_pipeline/venv`). NumPy vertical flip ≈66 fps
-@1080p. **Output is VIDEO ONLY → mux the audio after.**
+`/home/ubuntu/render_visualizer.py`, runs in `audio_pipeline/venv`). The shader is drawn on the A10G
+(instant); the only slow step is the H.264 **encode**. **Always pass `--encoder nvenc`** so the
+encode runs on the A10G's hardware H.264 chip (NVENC) instead of the CPU's `libx264` — that's the
+difference between ~16 fps and ~80–100 fps at 1080p (≈6× faster). `--push` the latest renderer first;
+old copies on the box may lack the `--encoder` flag. **Output is VIDEO ONLY → mux the audio after.**
 
 ```bash
-# PROTOTYPE FIRST (short clip → open for approval)
+# PROTOTYPE FIRST (short clip → open for approval) — GPU-encoded
 ssh -i "$PEM" ubuntu@$EC2_IP 'source /home/ubuntu/audio_pipeline/venv/bin/activate; cd /home/ubuntu && \
   python3 render_visualizer.py --shader video-creator-backend/shaders/<name>.glsl \
-  --audio music_out/techno_alpha_<N>min.mp3 --out /home/ubuntu/proto.mp4 --dur 15 --fps 30 --w 1920 --h 1080'
+  --audio music_out/techno_alpha_<N>min.mp3 --out /home/ubuntu/proto.mp4 \
+  --dur 15 --fps 30 --w 1920 --h 1080 --crf 16 --encoder nvenc'
 # extract a frame, scp back, Read it; mux a short audio slice + open on Mac for approval.
 
-# FULL high-quality render (CRF 16; medium preset; detached) + mux
+# FULL high-quality render (cq 16; GPU NVENC; detached) + mux
 ssh -i "$PEM" ubuntu@$EC2_IP 'source /home/ubuntu/audio_pipeline/venv/bin/activate; cd /home/ubuntu && nohup bash -lc "
   python3 render_visualizer.py --shader video-creator-backend/shaders/<name>.glsl \
     --audio music_out/techno_alpha_<N>min.mp3 --out /home/ubuntu/tk_silent.mp4 \
-    --dur <N*60> --fps 30 --w 1920 --h 1080 --crf 16 --preset medium ;
+    --dur <N*60> --fps 30 --w 1920 --h 1080 --crf 16 --encoder nvenc ;
   ffmpeg -y -i tk_silent.mp4 -i music_out/techno_alpha_<N>min.mp3 -map 0:v -map 1:a \
     -c:v copy -c:a aac -b:a 256k -shortest /home/ubuntu/techno_visual_<N>min.mp4 ;
   echo ALLDONE" > /tmp/tkrender.log 2>&1 & echo pid=$!'
 ```
-- **CRF is the quality knob** (16–18 = high); preset only trades render-time for file-size at that
-  quality (`medium` ≈ 34 fps; `veryfast` ≈ 66 fps; `slow` ≈ 20 fps).
-- 60 min = 108k frames ≈ 30–45 min at CRF16/medium. Run detached; watch for `ALLDONE`.
+- **`--encoder nvenc`** = GPU hardware encode (default for every render). `--crf 16` becomes NVENC's
+  `-cq 16` (high quality, `-rc vbr -tune hq -preset p5` baked in). `--encoder x264` is the CPU
+  fallback only — slower, and the only reason to use it is if NVENC is unavailable.
+- The slow path was never the GPU drawing or the shader — it was CPU `libx264`. A strong GPU does
+  **nothing** for software encoding; you must move the encode onto NVENC to get the speedup.
+- 60 min = 108k frames ≈ **~18–20 min with `--encoder nvenc`** (was ~30–105 min on CPU x264,
+  depending on shader weight). Run detached; watch for `ALLDONE`. Confirm it's really GPU-encoding
+  with `nvidia-smi --query-gpu=utilization.encoder --format=csv,noheader` (should be >0%).
 
 ---
 
