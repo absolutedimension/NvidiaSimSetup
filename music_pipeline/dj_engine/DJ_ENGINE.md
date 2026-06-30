@@ -5,7 +5,15 @@ elements, introduced in what order, with what build/breakdown structure), so our
 *tracks* (with a story arc) instead of loops. Get stronger as more of this DJ's tracks are fed in.
 
 Reference DJ/track seed: `cosmic-hypnotic.mp3` (72 min, 123 BPM, F# minor — see fingerprint in
-`MUSIC_PIPELINE_RESEARCH.md`). More tracks from the same DJ to be added by Deepak.
+`MUSIC_PIPELINE_RESEARCH.md`).
+
+**The teacher DJ = Michael Burmeister** (Wiesbaden/Frankfurt; hypnotic/chill dub-techno ~120–140 BPM).
+His own bio names the exact skill we're learning: *"a strong sense for dramaturgy and timing... building
+tension and releasing it... evolving layers, rolling percussion."* Catalog: **33 sets** (mostly 1–1.5 hr,
+a few 2–3.5 hr) ≈ 40+ hrs. **Corpus download:** YouTube ([channel](https://www.youtube.com/channel/UCO4ZN3_WDIDD2HbytexL1-w))
+bot-blocks the AWS datacenter IP ("confirm you're not a bot"), so we pull from **SoundCloud**
+([user-448192862](https://soundcloud.com/user-448192862/tracks)) via `yt-dlp` (HLS aac 160k) →
+`/home/ubuntu/dj_engine/burmeister/*.mp3`. Corpus is TEACHER material only (per copyright stance).
 
 > **Copyright stance (non-negotiable):** the reference tracks are *teachers*, never source material
 > in our output. We learn the STYLE/STRUCTURE (not copyrightable) and the ELEMENT CHARACTER, then
@@ -61,6 +69,21 @@ Encode as a template/Markov-ish model the arranger samples from → drives a reb
 → The DJ's signature = patient long-form, drone-bedded, **hat-and-breakdown-driven** energy control.
 
 ---
+
+## ⭐ FINAL DELIVERABLE — a reusable "learn-any-DJ" SKILL (Deepak's req 2026-06-30)
+Once the pipeline (A→B→C→generation) is proven end-to-end on Burmeister, **wrap it as a skill**
+(working name `learn-dj-style-trigunai`) so Deepak can point it at ANY DJ and get a style engine:
+1. **Input** = a DJ name / channel / SoundCloud profile (or a folder of their sets).
+2. **Gather** = yt-dlp the catalog (SoundCloud preferred — YT bot-blocks the AWS IP) → corpus folder.
+3. **Analyze** = run `dj_arrangement_analysis.py` on every set → JSON timelines.
+4. **Learn grammar** = extract the shared arrangement rules (section lengths, element-entry order,
+   breakdown/build signatures, energy-curve, hat/percussion usage) → a per-DJ `grammar.json`.
+5. **Element library** = recreate the DJ's element palette copyright-clean (audio2audio + band-limit).
+6. **Generate** = arranger samples the DJ's grammar + clean elements → a new track *in that DJ's style*,
+   copyright-clean.
+The skill stores each DJ as a profile under `dj_engine/<dj-slug>/` (corpus refs, grammar.json,
+elements/) so the library of learnable DJs grows. Build the skill only AFTER C + generation work on
+Burmeister — a skill must encode a PROVEN flow, not a hoped-for one.
 
 ## Status / next
 - ✅ A: analyzer built + first track mapped.
