@@ -69,8 +69,9 @@ def with_break(pts, drop):  # drop the element around the breakdown if 'drop'
 # constant tonal layer the listener disliked -> REMOVE it (keep only a faint SUB-filtered
 # trace at the peak for warmth, no piano tone).
 other_warm = lp(other, 200) * 0.30          # kill the piano tone, keep only low warmth
+# kick comes in EARLY + clear so the beat establishes during the build (the "background beat")
+kickE = env([(0,0.0),(0.03,0.35),(0.12,1.0),(0.88,1.0),(0.96,0.0)])
 bassE = env([(0,0.0),(0.05,0.30),(0.25,1.0),(0.86,1.0),(0.96,0.0)])  # faint rumble early -> full by 25%
-kickE = env([(0,0.0),(0.10,0.0),(0.22,1.0),(0.88,1.0),(0.96,0.0)])   # kick in by ~22%
 hatsE = env([(0,0.0),(0.40,0.0),(0.52,1.0),(0.80,1.0),(0.86,0.0)])   # hats LAST in (~52%) / FIRST out (~80%)
 warmE = env([(0,0.0),(0.45,0.0),(0.55,1.0),(0.78,1.0),(0.85,0.0)])   # faint warmth only around the peak
 
@@ -82,13 +83,13 @@ if bk>0:
     if s1+ramp<T: m[s1:s1+ramp]=np.linspace(0,1,ramp)
     kickE=kickE*m; hatsE=hatsE*m
 
-mix = kick*kickE + bass*bassE + hats*hatsE + other_warm*warmE
-
-# SMOOTH BUILD via a filter that opens up: intro is muffled (low-passed), opens to full by the
-# peak, closes again at the outro. Blend a low-passed copy with the full mix by an "openness" env.
-muff = lp(mix, 500)
+# SMOOTH BUILD: the filter opens on the SYNTH/HAT content only (muffled->open). The KICK stays
+# crisp the whole time so the beat is clear from early in the build.
+bedmix = bass*bassE + hats*hatsE + other_warm*warmE
+muff = lp(bedmix, 500)
 openE = env([(0,0.10),(0.40,1.0),(0.78,1.0),(1.0,0.30)])
-mix = muff*(1.0-openE) + mix*openE
+bedmix = muff*(1.0-openE) + bedmix*openE
+mix = bedmix + kick*kickE                      # clear, unfiltered beat on top
 
 # overall energy: slow rise -> plateau -> gentle decline
 plate=env([(0,0.50),(0.32,1.0),(0.80,1.0),(1.0,0.45)])
