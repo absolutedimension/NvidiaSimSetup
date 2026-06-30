@@ -26,10 +26,12 @@ PRESETS = {
                "ambient, calming, raga, instrumental, no vocals",
         lyrics="[inst]", lufs=-16.0, tune432=False),
     "techno-hypnotic": dict(
-        prompt="hypnotic techno, driving four-on-the-floor kick, rolling deep bassline, "
-               "repetitive hypnotic groove, dark warehouse club, analog synth stabs, modular bleeps, "
-               "slowly building tension and release, immersive, trance-inducing, ecstatic peak-time "
-               "energy, continuous DJ set, propulsive, instrumental, no vocals",
+        # tuned to the "cosmic-hypnotic" fingerprint: 123 BPM, F# minor, ~92% bass energy,
+        # dark / low brightness, minimal highs, steady 4-on-the-floor, continuous.
+        prompt="hypnotic techno, deep rolling sub-bass, dark dub techno, F# minor, brooding "
+               "hypnotic groove, four-on-the-floor kick, 123 bpm, bass-dominant, minimal highs, "
+               "muffled warm low-end, immersive, trance-inducing, repetitive, modular bleeps low "
+               "in the mix, deep warehouse, cosmic, continuous DJ set, instrumental, no vocals",
         lyrics="[inst]", lufs=-12.0, tune432=False),
     "lofi": dict(
         prompt="lofi hip hop, chill study beats, mellow, warm vinyl, soft piano, boom bap drums, relaxed, "
