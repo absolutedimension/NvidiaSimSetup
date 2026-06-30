@@ -65,25 +65,33 @@ def with_break(pts, drop):  # drop the element around the breakdown if 'drop'
     if bk<=0: return pts
     return pts  # breakdown applied separately below via mask
 
-drone = env([(0,0.55),(0.04,0.80),(0.86,0.85),(0.95,0.70),(1.0,0.20)])   # bed: always, fade last
-kickE = env([(0,0.0),(0.07,0.0),(0.22,1.0),(0.88,1.0),(0.97,0.0)])        # builds in by ~22%, out at end
-bassE = env([(0,0.0),(0.13,0.0),(0.32,1.0),(0.86,1.0),(0.95,0.0)])        # in by ~32%
-hatsE = env([(0,0.0),(0.34,0.0),(0.50,1.0),(0.80,1.0),(0.88,0.0)])        # LAST in (~50%), FIRST out (~80%)
+# the bed is bass (rolling engine) + kick; hats = lever. The melodic "other"/piano is the
+# constant tonal layer the listener disliked -> REMOVE it (keep only a faint SUB-filtered
+# trace at the peak for warmth, no piano tone).
+other_warm = lp(other, 200) * 0.30          # kill the piano tone, keep only low warmth
+bassE = env([(0,0.0),(0.05,0.30),(0.25,1.0),(0.86,1.0),(0.96,0.0)])  # faint rumble early -> full by 25%
+kickE = env([(0,0.0),(0.10,0.0),(0.22,1.0),(0.88,1.0),(0.96,0.0)])   # kick in by ~22%
+hatsE = env([(0,0.0),(0.40,0.0),(0.52,1.0),(0.80,1.0),(0.86,0.0)])   # hats LAST in (~52%) / FIRST out (~80%)
+warmE = env([(0,0.0),(0.45,0.0),(0.55,1.0),(0.78,1.0),(0.85,0.0)])   # faint warmth only around the peak
 
-# apply one short breakdown: ~60s window centered at bk -> dip kick+hats to 0, keep bass+drone
+# one short breakdown: drop kick+hats, keep bass (his signature)
 if bk>0:
-    w=int(60*SR); c0=int(bk*T); s0=max(0,c0-w//2); s1=min(T,c0+w//2)
-    ramp=int(6*SR)
-    m=np.ones(T,np.float32)
-    m[s0:s1]=0.0
-    # smooth the breakdown mask edges
+    w=int(60*SR); c0=int(bk*T); s0=max(0,c0-w//2); s1=min(T,c0+w//2); ramp=int(6*SR)
+    m=np.ones(T,np.float32); m[s0:s1]=0.0
     if s0-ramp>0: m[s0-ramp:s0]=np.linspace(1,0,ramp)
     if s1+ramp<T: m[s1:s1+ramp]=np.linspace(0,1,ramp)
     kickE=kickE*m; hatsE=hatsE*m
 
-mix = kick*kickE + bass*bassE + other*drone + hats*hatsE
+mix = kick*kickE + bass*bassE + hats*hatsE + other_warm*warmE
+
+# SMOOTH BUILD via a filter that opens up: intro is muffled (low-passed), opens to full by the
+# peak, closes again at the outro. Blend a low-passed copy with the full mix by an "openness" env.
+muff = lp(mix, 500)
+openE = env([(0,0.10),(0.40,1.0),(0.78,1.0),(1.0,0.30)])
+mix = muff*(1.0-openE) + mix*openE
+
 # overall energy: slow rise -> plateau -> gentle decline
-plate=env([(0,0.55),(0.30,1.0),(0.80,1.0),(1.0,0.45)])
+plate=env([(0,0.50),(0.32,1.0),(0.80,1.0),(1.0,0.45)])
 mix=mix*(0.6+0.4*plate)
 mix=mix/(np.max(np.abs(mix))+1e-6)*0.97
 sf.write(a.out,mix,SR)
