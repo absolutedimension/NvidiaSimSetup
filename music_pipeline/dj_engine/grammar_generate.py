@@ -24,7 +24,7 @@ ap=argparse.ArgumentParser()
 ap.add_argument("--core", required=True)
 ap.add_argument("--minutes", type=float, default=15.0)
 ap.add_argument("--out", required=True)
-ap.add_argument("--break-at", type=float, default=0.62, help="one short breakdown at this track fraction (0=none)")
+ap.add_argument("--breaks", default="0.62", help="comma-separated breakdown fractions, e.g. 0.40,0.70")
 ap.add_argument("--work", default="/home/ubuntu/dj_engine/_genwork")
 a=ap.parse_args()
 SR=44100; T=int(a.minutes*60*SR); X=int(4.0*SR)
@@ -60,10 +60,7 @@ def env(points):
     pad=len(e)-len(s); return np.concatenate([np.full(pad//2,s[0]),s,np.full(pad-pad//2,s[-1])]).astype(np.float32)
 
 # optional ONE short breakdown (drop kick+hats, keep bass+drone) — learned: ~60s, retains bed
-bk=a.break_at
-def with_break(pts, drop):  # drop the element around the breakdown if 'drop'
-    if bk<=0: return pts
-    return pts  # breakdown applied separately below via mask
+breaks=[float(x) for x in a.breaks.split(",") if x.strip() and 0.0<float(x)<1.0]
 
 # the bed is bass (rolling engine) + kick; hats = lever. The melodic "other"/piano is the
 # constant tonal layer the listener disliked -> REMOVE it (keep only a faint SUB-filtered
@@ -75,8 +72,8 @@ bassE = env([(0,0.0),(0.05,0.30),(0.25,1.0),(0.86,1.0),(0.96,0.0)])  # faint rum
 hatsE = env([(0,0.0),(0.40,0.0),(0.52,1.0),(0.80,1.0),(0.86,0.0)])   # hats LAST in (~52%) / FIRST out (~80%)
 warmE = env([(0,0.0),(0.45,0.0),(0.55,1.0),(0.78,1.0),(0.85,0.0)])   # faint warmth only around the peak
 
-# one short breakdown: drop kick+hats, keep bass (his signature)
-if bk>0:
+# short breakdowns: drop kick+hats, keep bass (his signature) — ~60s each
+for bk in breaks:
     w=int(60*SR); c0=int(bk*T); s0=max(0,c0-w//2); s1=min(T,c0+w//2); ramp=int(6*SR)
     m=np.ones(T,np.float32); m[s0:s1]=0.0
     if s0-ramp>0: m[s0-ramp:s0]=np.linspace(1,0,ramp)
@@ -99,6 +96,6 @@ sf.write(a.out,mix,SR)
 
 n=28; w=len(mix)//n
 e=np.array([np.sqrt(np.mean(mix[i*w:(i+1)*w]**2)) for i in range(n)]); e/=e.max()
-print("[gen] ONE locked groove, slow build -> hold -> wind-down" + (f" + breakdown @ {int(bk*100)}%" if bk>0 else ""))
+print("[gen] ONE locked groove, slow build -> hold -> wind-down + breakdowns @ " + ",".join(f"{int(b*100)}%" for b in breaks))
 print("[gen] arc:", "".join(" ▁▂▃▄▅▆▇█"[min(8,int(v*8))] for v in e))
 print(f"[gen] DONE -> {a.out}")
