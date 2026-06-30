@@ -12,7 +12,7 @@ Usage: python3 grammar_generate.py --core CORE.mp3 --minutes 15 --out OUT.wav
 Runs on the EC2 box (m2_venv demucs + soundfile + scipy).
 """
 import argparse, os, subprocess, glob, sys
-import numpy as np, soundfile as sf
+import numpy as np, soundfile as sf, librosa
 from scipy.signal import butter, sosfilt
 
 def sh(c):
