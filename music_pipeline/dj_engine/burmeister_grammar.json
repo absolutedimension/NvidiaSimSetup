@@ -1,0 +1,127 @@
+{
+  "dj": "burmeister",
+  "n_tracks": 18,
+  "track_minutes": {
+    "mean": 78.6,
+    "median": 74.2
+  },
+  "sections_per_track": {
+    "mean": 24.3,
+    "median": 23.5
+  },
+  "section_durations_s": {
+    "intro/ambient": {
+      "mean": 92.9,
+      "median": 60.0
+    },
+    "breakdown": {
+      "mean": 114.5,
+      "median": 60.0
+    },
+    "build": {
+      "mean": 201.7,
+      "median": 150.0
+    },
+    "peak": {
+      "mean": 219.0,
+      "median": 150.0
+    },
+    "groove": {
+      "mean": 94.3,
+      "median": 60.0
+    }
+  },
+  "element_active_fraction": {
+    "sub": 0.82,
+    "kick+bass": 0.94,
+    "bassline": 0.93,
+    "drone": 0.87,
+    "stab": 0.77,
+    "hats": 0.62
+  },
+  "element_entry_order": [
+    "bassline",
+    "sub",
+    "kick+bass",
+    "drone",
+    "stab",
+    "hats"
+  ],
+  "element_mean_entry_s": {
+    "sub": 26,
+    "kick+bass": 35,
+    "bassline": 23,
+    "drone": 55,
+    "stab": 198,
+    "hats": 255
+  },
+  "intro_ambient_fraction": 0.28,
+  "intro_dur_s": {
+    "mean": 210.0,
+    "median": 165.0
+  },
+  "breakdowns_per_hour": {
+    "mean": 1.3,
+    "median": 0.8
+  },
+  "breakdown_dur_s": {
+    "mean": 114.5,
+    "median": 60.0
+  },
+  "breakdown_retains": {
+    "sub": 0.24,
+    "kick+bass": 0.0,
+    "bassline": 0.76,
+    "drone": 0.73,
+    "stab": 0.7,
+    "hats": 0.33
+  },
+  "energy_arc_24": [
+    0.58,
+    0.74,
+    0.75,
+    0.77,
+    0.71,
+    0.75,
+    0.76,
+    0.76,
+    0.74,
+    0.8,
+    0.73,
+    0.71,
+    0.74,
+    0.75,
+    0.77,
+    0.74,
+    0.74,
+    0.72,
+    0.76,
+    0.76,
+    0.75,
+    0.75,
+    0.72,
+    0.26
+  ],
+  "section_transitions": {
+    "peak->peak": 126,
+    "build->build": 64,
+    "peak->build": 63,
+    "build->peak": 60,
+    "peak->breakdown": 20,
+    "breakdown->peak": 17,
+    "breakdown->build": 9,
+    "build->groove": 8,
+    "build->intro/ambient": 8,
+    "groove->build": 6,
+    "build->breakdown": 6,
+    "groove->peak": 6,
+    "peak->intro/ambient": 6,
+    "peak->groove": 5,
+    "intro/ambient->breakdown": 4,
+    "intro/ambient->peak": 4,
+    "breakdown->breakdown": 3,
+    "intro/ambient->build": 2,
+    "groove->intro/ambient": 1,
+    "breakdown->intro/ambient": 1
+  }
+}
