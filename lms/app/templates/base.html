@@ -4,14 +4,21 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{% block title %}TrigunAI LMS{% endblock %}</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/static/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/static/brand/favicon-16.png" />
+<link rel="apple-touch-icon" href="/static/brand/apple-touch-icon.png" />
+<link rel="manifest" href="/static/brand/site.webmanifest" />
+<meta name="theme-color" content="#0E0E14" />
 <link rel="stylesheet" href="/static/app.css" />
 </head>
 <body>
 {% if student %}
 <div class="topbar">
-  <a class="brand" href="/dashboard"><span class="gem"></span> TrigunAI</a>
+  <a class="brand" href="/dashboard"><img class="brandmark" src="/static/brand/acharya-mark.png" alt="Acharya" /> Acharya</a>
+  <span class="chip hideph" title="Your current course" style="max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">📚 {{ course_title(student.course) }}</span>
   <div class="spacer"></div>
   <a class="chip hideph" href="/setup" title="Your coding setup">🧰 Setup</a>
+  <a class="chip hideph" href="/account" title="Subscription & billing">💳 Account</a>
   {% if student.is_admin %}<a class="chip hideph" href="/admin" title="Admin">⚙ Admin</a>{% endif %}
   <div class="chip level hideph" title="Builder level">
     <span class="ic">★</span> Lvl {{ stats.level }}
@@ -19,9 +26,11 @@
   </div>
   <div class="chip streak" title="Day streak"><span class="ic">🔥</span> <span id="hdrStreak">{{ stats.streak }}</span></div>
   <div class="chip gems" title="Gems"><span class="ic">💎</span> <span id="hdrGems">{{ stats.gems }}</span></div>
-  <a class="avatar" href="/logout" title="{{ student.email }} — log out">
+  <a class="avatar" href="/account" title="{{ student.email }} — account &amp; billing">
     {{ (student.name or student.email)[0]|upper }}
   </a>
+  <a class="chip logout" href="/logout" title="Log out of your account"
+     aria-label="Log out"><span class="ic">↩</span><span class="ltext">Log out</span></a>
 </div>
 {% endif %}
 <div class="page">

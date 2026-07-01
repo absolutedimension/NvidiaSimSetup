@@ -1,54 +1,165 @@
 {% extends "base.html" %}
 {% block title %}Admin · TrigunAI LMS{% endblock %}
 {% block content %}
-<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-  <h1 style="margin:0;">Cohort 1 — student tracking</h1>
-  <span class="tag date">Week {{ current_week }}</span>
-  <a class="btn ghost" href="/admin/api/export.csv" style="margin-left:auto;">⬇ Export CSV</a>
-</div>
-<p class="lead">Live progress for every enrolled student. Click a student to copy a login link to hand them.</p>
+<style>
+  .ad-h { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:4px; }
+  .ad-sec { font-size:13px; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:.5px; margin:28px 0 12px; }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; }
+  .stat { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
+  .stat .k { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.3px; }
+  .stat .v { font-size:26px; font-weight:700; letter-spacing:-.02em; margin-top:2px; color:var(--gold); }
+  .stat .s { font-size:12px; color:var(--muted); margin-top:2px; }
+  .stat.hi { background:linear-gradient(135deg,var(--surface-2),var(--surface)); border-color:var(--line); }
+  .stat.money { background:linear-gradient(135deg,rgba(95,174,126,.12),var(--surface)); border-color:rgba(95,174,126,.30); }
+  .stat.money .v { color:var(--green); }
+  .stat.warn .v { color:var(--danger); }
+  .panel { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+  .panel h3 { margin:0 0 12px; font-size:15px; font-family:var(--serif); color:var(--ink); }
+  .row { display:flex; justify-content:space-between; padding:7px 0; border-top:1px solid var(--line); font-size:14px; color:var(--ink); }
+  .row:first-of-type { border-top:none; }
+  .row .n { color:var(--muted); }
+  .bar { height:7px; background:var(--surface-2); border-radius:99px; overflow:hidden; margin-top:6px; }
+  .bar > i { display:block; height:100%; background:var(--gold); border-radius:99px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .funnel { display:flex; gap:8px; align-items:stretch; flex-wrap:wrap; }
+  .fstep { flex:1; min-width:120px; background:var(--surface-2); border:1px solid var(--line); border-radius:12px; padding:12px 14px; text-align:center; }
+  .fstep .fv { font-size:22px; font-weight:700; color:var(--gold); } .fstep .fk { font-size:12px; color:var(--muted); }
+  @media (max-width:720px){ .two { grid-template-columns:1fr; } }
+</style>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 22px;">
-  <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;">
-    <div style="font-size:13px;color:var(--muted);">Students</div>
-    <div style="font-size:24px;font-weight:600;">{{ rows|length }}</div>
+<div class="ad-h">
+  <h1 style="margin:0;">System dashboard</h1>
+  <span class="tag date">Self-paced · subscriptions · analytics</span>
+  <a class="btn ghost" href="/admin/api/export.csv" style="margin-left:auto;">⬇ Export students CSV</a>
+</div>
+<p class="lead" style="margin:6px 0 0;">Live data for <strong>acharya.trigunai.com</strong> — the whole LMS — auto-refreshes every 60s. <span style="color:var(--muted);">lms.trigunai.com and the retired learn.trigunai.com both 301-redirect here, so every learner now shows up in this one dashboard.</span></p>
+
+<!-- ===== Revenue & subscriptions ===== -->
+<div class="ad-sec">💳 Revenue &amp; subscriptions</div>
+<div class="tiles">
+  <div class="stat money"><div class="k">MRR</div><div class="v">₹{{ m.subs.mrr }}</div><div class="s">≈ ₹{{ m.subs.arr }}/yr · {{ m.subs.active }} paying</div></div>
+  <div class="stat hi"><div class="k">Active subs</div><div class="v">{{ m.subs.active }}</div><div class="s">billing at ₹499/mo</div></div>
+  <div class="stat"><div class="k">Trial · card</div><div class="v">{{ m.subs.trial_card }}</div><div class="s">auto-converts</div></div>
+  <div class="stat"><div class="k">Trial · no-card</div><div class="v">{{ m.subs.trial_nocard }}</div><div class="s">must subscribe to keep</div></div>
+  <div class="stat warn"><div class="k">Past due</div><div class="v">{{ m.subs.past_due }}</div><div class="s">payment failed</div></div>
+  <div class="stat"><div class="k">Cancelled</div><div class="v">{{ m.subs.cancelled }}</div></div>
+  <div class="stat"><div class="k">Trial expired</div><div class="v">{{ m.subs.trial_expired }}</div><div class="s">lost — re-engage</div></div>
+  <div class="stat"><div class="k">Grandfathered</div><div class="v">{{ m.subs.grandfathered }}</div><div class="s">comped / cohort</div></div>
+</div>
+
+<!-- ===== Funnel ===== -->
+<div class="ad-sec">🛒 Conversion funnel (7 days)</div>
+<div class="funnel">
+  <div class="fstep"><div class="fv">{{ m.funnel.visitors_7d }}</div><div class="fk">Unique visitors</div></div>
+  <div class="fstep"><div class="fv">{{ m.funnel.pricing_views_7d }}</div><div class="fk">Viewed pricing</div></div>
+  <div class="fstep"><div class="fv">{{ m.funnel.trials_7d }}</div><div class="fk">Started a trial</div></div>
+  <div class="fstep"><div class="fv">{{ m.funnel.paying }}</div><div class="fk">Paying now</div></div>
+</div>
+
+<!-- ===== Growth + Learning ===== -->
+<div class="ad-sec">📈 Growth &amp; learning</div>
+<div class="tiles">
+  <div class="stat"><div class="k">Total students</div><div class="v">{{ m.growth.total }}</div></div>
+  <div class="stat"><div class="k">New · 24h</div><div class="v">{{ m.growth.new_24h }}</div></div>
+  <div class="stat"><div class="k">New · 7d</div><div class="v">{{ m.growth.new_7d }}</div></div>
+  <div class="stat"><div class="k">Lessons done</div><div class="v">{{ m.learning.done }}</div><div class="s">{{ m.learning.done_7d }} in last 7d</div></div>
+  <div class="stat"><div class="k">In progress</div><div class="v">{{ m.learning.in_progress }}</div></div>
+  <div class="stat"><div class="k">Active users · 24h</div><div class="v">{{ m.web.active_users_24h }}</div></div>
+</div>
+<div class="two" style="margin-top:14px;">
+  <div class="panel">
+    <h3>Students by course</h3>
+    {% for cid, n in m.growth.by_course %}
+    <div class="row"><span>{{ course_titles.get(cid, cid) }}</span><span class="n">{{ n }}</span></div>
+    {% else %}<div class="row n">No data yet</div>{% endfor %}
   </div>
-  <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;">
-    <div style="font-size:13px;color:var(--muted);">Active (streak ≥1)</div>
-    <div style="font-size:24px;font-weight:600;">{{ rows|selectattr('streak','greaterthan',0)|list|length }}</div>
-  </div>
-  <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;">
-    <div style="font-size:13px;color:var(--muted);">Lessons done (total)</div>
-    <div style="font-size:24px;font-weight:600;">{{ rows|sum(attribute='lessons_done') }}</div>
+  <div class="panel">
+    <h3>Most-completed lessons</h3>
+    {% for title, n in m.learning.top_lessons %}
+    <div class="row"><span>{{ title }}</span><span class="n">{{ n }}</span></div>
+    {% else %}<div class="row n">No completions yet</div>{% endfor %}
   </div>
 </div>
 
-<div style="background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;">
-<table style="width:100%;border-collapse:collapse;font-size:14px;">
+<!-- ===== Website analytics ===== -->
+<div class="ad-sec">🌐 Website analytics</div>
+<div class="tiles">
+  <div class="stat"><div class="k">Page views · 24h</div><div class="v">{{ m.web.pv_24h }}</div></div>
+  <div class="stat"><div class="k">Page views · 7d</div><div class="v">{{ m.web.pv_7d }}</div><div class="s">{{ m.web.pv_30d }} in 30d</div></div>
+  <div class="stat"><div class="k">Unique visitors · 24h</div><div class="v">{{ m.web.uv_24h }}</div></div>
+  <div class="stat"><div class="k">Unique visitors · 7d</div><div class="v">{{ m.web.uv_7d }}</div></div>
+</div>
+<div class="two" style="margin-top:14px;">
+  <div class="panel">
+    <h3>Top pages (7d)</h3>
+    {% for path, n in m.web.top_pages %}
+    <div class="row"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:75%;">{{ path }}</span><span class="n">{{ n }}</span></div>
+    {% else %}<div class="row n">No page views yet</div>{% endfor %}
+  </div>
+  <div class="panel">
+    <h3>Top referrers (7d)</h3>
+    {% for ref, n in m.web.top_refs %}
+    <div class="row"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:75%;">{{ ref }}</span><span class="n">{{ n }}</span></div>
+    {% else %}<div class="row n">No referrers yet (direct traffic)</div>{% endfor %}
+  </div>
+</div>
+
+<!-- ===== Recent activity ===== -->
+<div class="ad-sec">📚 Course requests ({{ req_pending }} pending)</div>
+{% if course_requests %}
+<div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;font-size:14px;min-width:560px;color:var(--ink);">
   <thead>
-    <tr style="background:#f7f8fc;text-align:left;color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:.3px;">
+    <tr style="background:var(--surface-2);text-align:left;color:var(--gold);font-size:12.5px;text-transform:uppercase;letter-spacing:.3px;">
+      <th style="padding:11px 14px;">Requested topic</th>
+      <th style="padding:11px 8px;">Who</th>
+      <th style="padding:11px 8px;">Via</th>
+      <th style="padding:11px 8px;">When</th>
+      <th style="padding:11px 8px;">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in course_requests %}
+    <tr style="border-top:1px solid var(--line);">
+      <td style="padding:11px 14px;font-weight:500;">{{ r.topic }}</td>
+      <td style="padding:11px 8px;color:var(--muted);">{{ r.email or r.phone or '—' }}</td>
+      <td style="padding:11px 8px;"><span class="tag date">{{ r.source }}</span></td>
+      <td style="padding:11px 8px;color:var(--muted);">{{ r.created_at.strftime('%b %d') }}</td>
+      <td style="padding:11px 8px;"><span class="tag {{ 'done' if r.status=='ready' else 'soon' }}">{{ r.status }}</span></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% else %}
+<p style="color:var(--muted);font-size:14px;margin:0 0 8px;">No course requests yet — they'll appear here as learners ask (WhatsApp menu option 11, or the web form on /login).</p>
+{% endif %}
+
+<div class="ad-sec">⚡ Recent activity</div>
+<div class="panel">
+  {% for e in m.recent %}
+  <div class="row"><span>{{ e.type }}</span><span class="n">{{ e.when }}</span></div>
+  {% else %}<div class="row n">No recent events</div>{% endfor %}
+</div>
+
+<!-- ===== Students table ===== -->
+<div class="ad-sec">👥 All students ({{ rows|length }})</div>
+<div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;font-size:14px;min-width:560px;color:var(--ink);">
+  <thead>
+    <tr style="background:var(--surface-2);text-align:left;color:var(--gold);font-size:12.5px;text-transform:uppercase;letter-spacing:.3px;">
       <th style="padding:11px 14px;">Student</th>
-      <th style="padding:11px 8px;">Lvl</th>
-      <th style="padding:11px 8px;">Gems</th>
-      <th style="padding:11px 8px;">🔥</th>
-      <th style="padding:11px 8px;">Lessons</th>
-      <th style="padding:11px 8px;">Tasks</th>
-      <th style="padding:11px 8px;">Last active</th>
-      <th style="padding:11px 14px;"></th>
+      <th style="padding:11px 8px;">Lvl</th><th style="padding:11px 8px;">Gems</th><th style="padding:11px 8px;">🔥</th>
+      <th style="padding:11px 8px;">Lessons</th><th style="padding:11px 8px;">Last active</th><th style="padding:11px 14px;"></th>
     </tr>
   </thead>
   <tbody>
     {% for r in rows %}
     <tr style="border-top:1px solid var(--line);">
-      <td style="padding:11px 14px;">
-        <div style="font-weight:500;">{{ r.name }}{% if r.is_admin %} <span class="tag date">admin</span>{% endif %}</div>
-        <div style="color:var(--muted);font-size:12.5px;">{{ r.email }}</div>
-      </td>
-      <td style="padding:11px 8px;">{{ r.level }}</td>
-      <td style="padding:11px 8px;">💎 {{ r.gems }}</td>
-      <td style="padding:11px 8px;">{{ r.streak }}</td>
-      <td style="padding:11px 8px;">{{ r.lessons_done }}</td>
-      <td style="padding:11px 8px;">{{ r.tasks_done }}</td>
+      <td style="padding:11px 14px;"><div style="font-weight:500;">{{ r.name }}{% if r.is_admin %} <span class="tag date">admin</span>{% endif %}</div>
+        <div style="color:var(--muted);font-size:12.5px;">{{ r.email }}</div></td>
+      <td style="padding:11px 8px;">{{ r.level }}</td><td style="padding:11px 8px;">💎 {{ r.gems }}</td>
+      <td style="padding:11px 8px;">{{ r.streak }}</td><td style="padding:11px 8px;">{{ r.lessons_done }}</td>
       <td style="padding:11px 8px;color:var(--muted);">{{ r.last_active }}</td>
       <td style="padding:11px 14px;"><button class="btn ghost" style="padding:6px 12px;font-size:12.5px;" onclick="link({{ r.id }})">Login link</button></td>
     </tr>
@@ -64,7 +175,8 @@ async function link(id){
   const res = await fetch(`/admin/api/login-link/${id}`);
   const d = await res.json();
   await navigator.clipboard.writeText(d.link).catch(()=>{});
-  alert("Login link for "+d.email+" copied to clipboard:\n\n"+d.link);
+  alert("Login link for "+d.email+" copied:\n\n"+d.link);
 }
+setTimeout(()=>location.reload(), 60000);  // live refresh
 </script>
 {% endblock %}

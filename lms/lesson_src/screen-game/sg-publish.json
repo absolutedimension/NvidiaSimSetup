@@ -1,0 +1,153 @@
+{
+  "slug": "sg-publish",
+  "title": "Publish your game",
+  "steps": [
+    { "type": "intro",
+      "art": "🎮 → 📦 → 🌍",
+      "prompt": "Your game runs on your machine. How do players get it?",
+      "sub": "Publishing is its own short pipeline: build for a platform, package it, write a listing, release. By the end you'll pick your platform and lay out your release steps.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "What does 'build' actually mean when you publish a game?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Sending your whole Unity project folder to each player to open in Unity." },
+        { "t": "Packaging the project into a standalone app for a target platform (a .exe, a web build, an .apk)." },
+        { "t": "Just sharing a video of the game playing." }
+      ],
+      "correct": 1,
+      "why": "A build turns your project into something players can run WITHOUT Unity — a Windows .exe, a browser (WebGL) build, or an Android .apk. They never see your project; they get a finished, self-contained app for their device.",
+      "hints": [
+        "Players don't have Unity — so they can't open your project folder.",
+        "Think of the output as a finished app, not the source."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Three common places to release a flat-screen game.",
+      "sub": "Tap each card. Pick whichever fits your game and audience.",
+      "cards": [
+        { "em": "💻", "h": "PC (.exe)", "b": "A downloadable Windows/Mac app. Great for jams and direct shares — players download and run it." },
+        { "em": "🕹️", "h": "itch.io (web/download)", "b": "An indie storefront. Upload a WebGL build that plays in the browser, or a downloadable. Free, instant, no gatekeeper." },
+        { "em": "📱", "h": "Play Store (.apk)", "b": "Android phones. Bigger reach but has fees, review, and store requirements — more steps to clear." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Which platform fits each goal best?",
+      "sub": "Tap a goal, then tap the platform that fits.",
+      "buckets": ["💻 PC .exe", "🕹️ itch.io (web)", "📱 Play Store"],
+      "items": [
+        { "t": "Let anyone play instantly in a browser, no install", "b": 1 },
+        { "t": "Reach players on their Android phones", "b": 2 },
+        { "t": "Hand a downloadable build to a friend to test", "b": 0 },
+        { "t": "Share a game-jam entry the fastest, with zero review", "b": 1 },
+        { "t": "Get into an official app store with a review process", "b": 2 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "'Plays in a browser, no install' is itch.io's WebGL build.",
+        "Anything that says 'app store' or 'Android phones' is the Play Store."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Beyond the build file, what does a release also need to actually get played?",
+      "sub": "Think about a player landing on your game cold.",
+      "options": [
+        { "t": "Nothing — uploading the file is the whole job." },
+        { "t": "A listing: a title, screenshots, a short description, and controls — so players know what it is and how to play." },
+        { "t": "A full marketing agency before you can post anything." }
+      ],
+      "correct": 1,
+      "why": "A raw build with no context gets ignored. A listing — title, a couple of screenshots, a one-line pitch, and the controls — is what turns a file into something a stranger will try. It's small, but it's the difference between 'downloaded' and 'skipped'.",
+      "hints": [
+        "Imagine seeing your game's name and nothing else — would you click play?",
+        "Players need to know WHAT it is and HOW to control it before they start."
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the release steps in order.",
+      "sub": "From a finished game on your machine to players clicking play.",
+      "chips": [
+        "Write the listing: title, screenshots, description, controls",
+        "Pick the target platform (PC / itch.io / Play Store)",
+        "Build the project for that platform",
+        "Publish / release it and share the link"
+      ],
+      "correct": [1, 2, 0, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't build until you know what you're building FOR.",
+        "Decide where → make the build → describe it → ship it."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk your finished maze game to its first players via itch.io.",
+      "sub": "At each turn, pick the right next move. The release log fills in.",
+      "goal": "Get the maze game playable by strangers on itch.io.",
+      "turns": [
+        { "situation": "The game is done in Unity and you want anyone to play it instantly.",
+          "q": "Which platform fits that goal?",
+          "options": ["itch.io with a WebGL build — plays in the browser, no install", "Only a Windows .exe nobody can run on a phone", "Don't publish; just keep it on your laptop"],
+          "correct": 0, "log": "🕹️ Chose itch.io + WebGL (instant browser play)." },
+        { "situation": "You picked the platform. Unity is set to WebGL.",
+          "q": "What's the next concrete step?",
+          "options": ["Build the project → Unity produces the WebGL files", "Email players your project folder", "Upload a screenshot as the game"],
+          "correct": 0, "log": "📦 Built WebGL → got the playable web files." },
+        { "situation": "You have the build files. The itch.io page is blank.",
+          "q": "Before you publish, what do you add?",
+          "options": ["A listing: title, screenshots, a one-line pitch, and the controls", "Nothing — leave it blank to be mysterious", "The full Unity source code for players to compile"],
+          "correct": 0, "log": "📝 Wrote listing: title + 2 screenshots + controls (arrow keys)." },
+        { "situation": "Build uploaded, listing written.",
+          "q": "Final move?",
+          "options": ["Publish the page and share the link", "Delete the build to save space", "Wait a year before releasing"],
+          "correct": 0, "log": "🌍 Published → shared the itch.io link. Strangers can play. Done." }
+      ],
+      "hints": [
+        "Order: pick platform → build → write listing → publish.",
+        "'Instant, no install' points straight at a WebGL build on itch.io."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "A build lets players run the game without having Unity installed.", "answer": true,
+          "why": "Right — that's the whole point of building: a self-contained app for the target device, no Unity required." },
+        { "t": "The same Unity project can be built for several platforms by changing the build target.", "answer": true,
+          "why": "Yes — one project, many builds. Switch the target to PC, WebGL, or Android and build again." },
+        { "t": "Publishing to the Play Store and posting on itch.io take exactly the same effort.", "answer": false,
+          "why": "No — the Play Store adds a developer fee, review, and store requirements. itch.io is near-instant with no gatekeeper." },
+        { "t": "A good listing (title, screenshots, controls) is optional fluff that doesn't affect plays.", "answer": false,
+          "why": "No — the listing is how a stranger decides to click play. A bare file with no context usually gets skipped." }
+      ],
+      "hints": [
+        "Recall what a 'build' frees the player from needing.",
+        "Compare the friction of an app store vs. an open indie page."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Plan the first release of YOUR game.",
+      "fields": [
+        { "k": "goal", "label": "Where will you publish your game first, and why?", "ph": "e.g. itch.io WebGL so friends can play instantly in a browser" },
+        { "k": "stop", "label": "Write your one-line pitch for the listing:", "ph": "e.g. A cat races through a robot-filled maze to grab the glowing key." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "You want the fastest path from 'done' to 'a stranger played it'. Which plan?",
+      "sub": "One route has the least friction for a first release.",
+      "options": [
+        { "t": "Go straight for the Play Store — clear the fee and review first." },
+        { "t": "Build a WebGL version, write a quick itch.io listing, publish, share the link." },
+        { "t": "Wait until the game is flawless and has 50 levels, then release." }
+      ],
+      "correct": 1,
+      "why": "itch.io + a WebGL build is the lowest-friction first release: no store fee, no review queue, plays in any browser. The Play Store adds gates, and 'wait until it's perfect' means it ships never. Get it in front of real players fast, then iterate.",
+      "hints": [
+        "Which option has no review queue and no install step?",
+        "'Perfect first' usually means 'never' — favour shipping a small, real version."
+      ] },
+
+    { "type": "done" }
+  ]
+}

@@ -98,6 +98,21 @@ def ep7():   # getting better — a glowing point descending into a valley (grad
     img=dots(img,80,(560,1260),(40,300),[BLUE,DIMW,PURPLE],1,3,(40,130),17)
     return img
 
+def ep8():   # the neuron — one bright firing neuron wired into a small network
+    a=base(); a=glow(a,960,360,440,(120,150,235),0.12)
+    a=glow(a,960,360,230,GOLD,1.2,2.6); a=glow(a,960,360,82,(255,240,210),1.0,2.0)
+    a=ring(a,960,360,150,12,GOLD,0.8)
+    # satellite neurons feeding in
+    sat=[(740,230),(720,470),(1180,250),(1190,480)]
+    for sx,sy in sat: a=glow(a,sx,sy,70,(120,150,235),0.7,2.4)
+    img=finish(a)
+    ov=Image.new("RGBA",(W,H),(0,0,0,0)); dd=ImageDraw.Draw(ov)
+    for sx,sy in sat: dd.line([(sx,sy),(960,360)],fill=(255,201,82,90),width=4)
+    for sx,sy in sat: dd.ellipse([sx-12,sy-12,sx+12,sy+12],fill=(150,180,235,220))
+    img=Image.alpha_composite(img,ov)
+    img=dots(img,110,(560,1260),(40,680),[BLUE,DIMW,PURPLE,GOLD],1,4,(40,150),28)
+    return img
+
 def font(path,size): return ImageFont.truetype(path,size,layout_engine=ImageFont.Layout.RAQM)
 def wrap(d,txt,fn,maxw):
     out=[]; cur=""
@@ -150,6 +165,8 @@ JOBS=[
  (ep6,"चाह क्या है?","एपिसोड 6 · इच्छा","hi","thumb_ep06_hi"),
  (ep7,"LEARN FROM ERROR","EP 7 · GETTING BETTER","en","thumb_ep07_en"),
  (ep7,"ग़लती से सीखो","एपिसोड 7 · बेहतर होना","hi","thumb_ep07_hi"),
+ (ep8,"WHAT IS A NEURAL NET?","EP 8 · THE NEURON","en","thumb_ep08_en"),
+ (ep8,"न्यूरल नेट क्या है?","एपिसोड 8 · न्यूरॉन","hi","thumb_ep08_hi"),
 ]
 for fn,big,tag,lang,name in JOBS: compose(fn,big,tag,lang,name)
 print("done ->",OUT)

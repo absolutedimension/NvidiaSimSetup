@@ -1,0 +1,162 @@
+{
+  "slug": "responsible-ai-gate",
+  "title": "Ship it responsibly: drift, fairness & the gate",
+  "steps": [
+    { "type": "intro",
+      "art": "🚀 → 📉 → 🔁",
+      "prompt": "Your model hit 95% accuracy in the demo. Why might it be unsafe — and quietly getting worse — by next quarter?",
+      "sub": "Shipping an AI feature isn't a finish line, it's the start of a long tail you have to fund. By the end you'll spot model drift, catch the 95%-accurate-but-unfair trap, and run a responsible-AI ship gate before any AI feature goes live.",
+      "cta": "Start" },
+
+    { "type": "reveal",
+      "prompt": "The lifecycle doesn't end at deploy.",
+      "sub": "Tap each stage — note where most PMs stop, and where the real work lives.",
+      "cards": [
+        { "em": "🗂️", "h": "Data → Train → Eval", "b": "Gather data, train the model, measure it on a held-out set. This is the part everyone budgets for." },
+        { "em": "🚀", "h": "Deploy", "b": "It goes live. Tempting to call it 'done' here — but the world is about to start changing underneath it." },
+        { "em": "📡", "h": "Monitor (the long tail)", "b": "Watch live accuracy, drift, and fairness in production. This costs money every month, not once." },
+        { "em": "🔁", "h": "Retrain", "b": "When monitoring trips a trigger, gather fresh data and retrain. A PM must fund this loop, not just the first launch." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "A teammate says: 'The model passed eval at 95%, so we're done — ship and move on.' What's the PM-level correction?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Agree — a 95% eval score means the model is finished." },
+        { "t": "Deploy is the START of monitoring + retraining, which must be funded as an ongoing cost." },
+        { "t": "Re-run eval one more time to be safe, then never touch it again." }
+      ],
+      "correct": 1,
+      "why": "Eval measures the model against yesterday's data. The moment it's live, the world starts drifting and accuracy decays. The lifecycle is data → train → eval → deploy → MONITOR → retrain — and monitor + retrain are a recurring line item a PM has to budget for, not a one-time launch task.",
+      "hints": [
+        "What happens to the data the model sees AFTER it ships?",
+        "Which two stages come after 'deploy' — and how often do they run?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Two ways a live model rots.",
+      "sub": "Tap each — these are the two flavors of model drift.",
+      "cards": [
+        { "em": "📥", "h": "Data drift", "b": "The INPUTS change. New slang in support tickets, a younger user mix, a new product category. The questions coming in no longer look like the training data." },
+        { "em": "🔀", "h": "Concept drift", "b": "The input→output RELATIONSHIP changes. Fraudsters invent new tricks, so the same features now mean something different. The rules of the game moved." },
+        { "em": "📉", "h": "Both decay accuracy", "b": "Either way, the model that scored 95% in eval silently loses points in production — which is exactly why you monitor and retrain." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Data drift or concept drift? Sort each scenario.",
+      "sub": "Tap a scenario, then a bin. Ask: did the INPUTS change, or the input→output RELATIONSHIP?",
+      "buckets": ["📥 Data drift (inputs change)", "🔀 Concept drift (input→output rule changes)"],
+      "items": [
+        { "t": "Gen-Z users flood your app and start using slang the model has never seen", "b": 0 },
+        { "t": "Fraudsters discover a new scam pattern, so 'normal-looking' transactions are now fraud", "b": 1 },
+        { "t": "A new region launches; incoming support questions are in a dialect not in training data", "b": 0 },
+        { "t": "Post-pandemic, the same shopping signals that meant 'will buy' now mean 'just browsing'", "b": 1 },
+        { "t": "Your camera supplier changes, so product photos suddenly have a warmer color tint", "b": 0 },
+        { "t": "A new tax law changes what counts as a 'risky' loan, flipping the old approve/deny logic", "b": 1 }
+      ],
+      "constraints": ["All 6 sorted", "Every one correct"],
+      "hints": [
+        "Data drift = the things coming IN look different. Concept drift = the same input now leads to a DIFFERENT correct answer.",
+        "If the world's rules moved (fraud, law, behavior shift), it's concept drift. If just the input distribution moved (new slang, new users, new tint), it's data drift."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Inference vs training cost — true or false?",
+      "sub": "Tap each, then check together. This drives your unit economics.",
+      "statements": [
+        { "t": "Training is mostly a one-time capital cost; inference is a per-request running cost that scales with usage.", "answer": true,
+          "why": "Right. You train once (big upfront bill), but every single user request costs you again at inference time — and for LLM products that running cost can dwarf training." },
+        { "t": "A bigger model always improves quality with no downside.", "answer": false,
+          "why": "No — a bigger model usually means better quality BUT higher latency and higher per-request cost. It's a trade-off, not a free win." },
+        { "t": "Caching, RAG, smaller models, and routing easy cases to a cheap model are all ways to control inference cost.", "answer": true,
+          "why": "Yes — these are the PM's levers: cache repeat answers, retrieve instead of using a huge model, pick a smaller model, or route simple requests to a cheap model and only hard ones to the expensive one." }
+      ],
+      "hints": [
+        "Which cost do you pay once, and which do you pay on every request?",
+        "Bigger model = better answers, but what happens to latency and cost per call?"
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Your hiring-screen model is 95% accurate OVERALL. Legal asks if it's safe to ship. What's the right next question?",
+      "sub": "The aggregate number is hiding something. What do you check?",
+      "options": [
+        { "t": "Nothing — 95% overall is high, ship it." },
+        { "t": "Check accuracy PER subgroup — a model can be 95% overall yet ~60% for a minority group the aggregate drowns out." },
+        { "t": "Just retrain on more data; accuracy will reach 99% and fairness takes care of itself." }
+      ],
+      "correct": 1,
+      "why": "A high overall score is an average — and a small subgroup barely moves it. A model can be 95% overall and only ~60% for a minority subgroup, which in hiring, credit, or health is a real harm to real people. Always measure performance PER subgroup, not just in aggregate. More data alone doesn't guarantee fairness.",
+      "hints": [
+        "An average can be high while a small slice is terrible. How do you see that slice?",
+        "Who gets hurt if the 5% of errors all land on one group?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The Responsible-AI Ship Gate.",
+      "sub": "Tap each check. Run ALL of these before shipping ANY AI feature.",
+      "cards": [
+        { "em": "⚖️", "h": "Per-subgroup accuracy", "b": "Measure performance for each subgroup, not just overall. Catch the 95%-but-60%-for-a-minority trap before users do." },
+        { "em": "🔍", "h": "Explainability", "b": "Can you explain a decision to the level the domain needs? A loan denial or a medical flag needs a 'why' — a movie pick may not." },
+        { "em": "🔒", "h": "Privacy", "b": "Minimal data, real consent, a deletion path, and PII protected. E.g. Acharya, our tutor, keeps only what it needs and lets a learner delete their data." },
+        { "em": "📡", "h": "Drift monitoring + retrain trigger", "b": "A dashboard watching live accuracy/drift, and a defined threshold that fires a retrain. Fund the long tail, don't hope." },
+        { "em": "🙋", "h": "Human-in-the-loop", "b": "An escalation path for high-stakes or low-confidence cases — Acharya hands a stuck learner to a human instead of guessing." },
+        { "em": "📛", "h": "Named owner + rollback", "b": "One accountable person for outcomes, plus a rollback plan. 'The algorithm did it' is not an acceptable answer." }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Which of these belong on the Responsible-AI ship gate? Tap ALL that apply.",
+      "sub": "Pick every check you'd require before shipping an AI feature.",
+      "chips": [
+        "Per-subgroup accuracy (not just overall)",
+        "Explainability to the level the domain needs",
+        "Privacy: minimal data, consent, deletion path, PII protected",
+        "Drift monitoring with a retrain trigger",
+        "Human-in-the-loop / escalation for high-stakes or low-confidence cases",
+        "A named owner accountable for outcomes + a rollback plan",
+        "Highest possible overall accuracy is enough on its own",
+        "Ship fast and patch fairness later if someone complains"
+      ],
+      "correct": [0, 1, 2, 3, 4, 5],
+      "why": "The first six ARE the gate: per-subgroup accuracy, domain-appropriate explainability, privacy, drift monitoring + retrain trigger, a human escalation path, and a named owner with a rollback plan. The last two are the traps — a high overall number hides subgroup harm, and 'patch it later' means real people get hurt first. 'The algorithm did it' is never acceptable.",
+      "hints": [
+        "Six of these you just tapped through on the gate cards.",
+        "Two chips describe shortcuts that skip accountability or hide subgroup harm — leave those out."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Acharya (our AI tutor) gives a confident but WRONG answer on a high-stakes exam question. Which gate check would have caught this?",
+      "sub": "Map the failure to the missing check.",
+      "options": [
+        { "t": "A bigger model — quality fixes everything." },
+        { "t": "A human-in-the-loop / escalation path for high-stakes or low-confidence cases." },
+        { "t": "More marketing so users expect occasional mistakes." }
+      ],
+      "correct": 1,
+      "why": "High-stakes or low-confidence cases should route to a human instead of letting the model answer alone. An escalation path means a stuck or exam-critical learner gets a human, not a confident hallucination. Bigger models still make mistakes — the safeguard is the loop, not raw capability.",
+      "hints": [
+        "Which gate check is specifically about high-stakes or low-confidence situations?",
+        "Who should the model hand off to when the cost of being wrong is high?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Naming the weak spot in YOUR product is how this sticks.",
+      "fields": [
+        { "k": "work", "label": "Which Responsible-AI gate check does your product most need right now — and why?", "ph": "e.g. drift monitoring — our fraud model has no retrain trigger and rules keep changing" },
+        { "k": "goal", "label": "What's one concrete step you'd take this month to close that gap?", "ph": "e.g. add a per-subgroup accuracy dashboard before the next release" }
+      ] },
+
+    { "type": "order",
+      "prompt": "Put the AI lifecycle in order — including the part that never ends.",
+      "sub": "Tap the stages in the right sequence.",
+      "chips": ["Deploy to production", "Monitor for drift + fairness in the wild", "Train the model", "Retrain when a trigger fires", "Gather & prepare data", "Evaluate on a held-out set"],
+      "correct": [4, 2, 5, 0, 1, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "Start with the raw material (data) and end with the loop that keeps it alive.",
+        "data → train → eval → deploy → monitor → retrain. Monitor and retrain are the long tail you fund."
+      ] },
+
+    { "type": "done" }
+  ]
+}

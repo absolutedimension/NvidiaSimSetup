@@ -1,0 +1,513 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@page { size: A4; margin: 15mm 14mm; }
+@page cover { margin: 0; }
+* { box-sizing: border-box; }
+body { font-family: "Helvetica Neue", Arial, "Apple Color Emoji", sans-serif;
+       color: #23222e; font-size: 9.6pt; line-height: 1.5;
+       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+/* ---------- COVER ---------- */
+.cover { page: cover; height: 297mm; width: 210mm; background: #0E0E14; color: #EDE7D6;
+         display: flex; flex-direction: column; align-items: center; justify-content: center;
+         text-align: center; page-break-after: always; position: relative; }
+.cover .glow { position:absolute; top:0; left:0; right:0; bottom:0;
+   background: radial-gradient(circle at 50% 38%, rgba(212,162,58,0.16), rgba(14,14,20,0) 60%); }
+.cover img { width: 120px; height: 120px; border-radius: 22px; margin-bottom: 26px; position: relative; }
+.cover h1 { font-family: Georgia, "Times New Roman", serif; font-size: 52pt; letter-spacing: 2px;
+   margin: 0; color: #E8C66B; font-weight: 600; position: relative; }
+.cover .sanskrit { color:#b9a878; font-size: 11pt; letter-spacing: 6px; margin-top: 6px; text-transform: uppercase; }
+.cover .rule { width: 120px; height: 2px; background: linear-gradient(90deg, transparent, #D4A23A, transparent);
+   margin: 26px 0; position: relative; }
+.cover h2 { font-family: Georgia, serif; font-weight: 400; font-size: 16pt; color: #EDE7D6;
+   margin: 0 0 6px; position: relative; }
+.cover .sub { color:#9b8f72; font-size: 10.5pt; max-width: 360px; position: relative; }
+.cover .foot { position: absolute; bottom: 30mm; color:#7e745c; font-size: 9pt; letter-spacing: 1px; }
+.cover .tag  { position:absolute; top: 26mm; color:#8a7c58; font-size:8.5pt; letter-spacing:3px; text-transform:uppercase; }
+
+/* ---------- BODY ---------- */
+h1 { font-family: Georgia, serif; color:#1C1B2E; font-size: 19pt; margin: 26px 0 4px;
+     border-bottom: 2px solid #D4A23A; padding-bottom: 5px; }
+h2 { font-family: Georgia, serif; color:#A9781C; font-size: 14pt; margin: 22px 0 6px; }
+h3 { font-family: Georgia, serif; color:#1C1B2E; font-size: 11pt; margin: 16px 0 4px; }
+h2, h3 { page-break-after: avoid; }
+p { margin: 6px 0; }
+a { color:#A9781C; text-decoration: none; }
+strong { color:#1C1B2E; }
+ul, ol { margin: 6px 0 6px 18px; padding: 0; }
+li { margin: 3px 0; }
+hr { border: none; border-top: 1px solid #e7ddc6; margin: 18px 0; }
+
+blockquote { margin: 10px 0; padding: 8px 14px; background: #FBF6EA;
+   border-left: 4px solid #D4A23A; color:#4a4738; font-style: italic; }
+
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 8.8pt; page-break-inside: avoid; }
+th { background: #1C1B2E; color:#EDE7D6; text-align: left; padding: 6px 8px; font-weight: 600; }
+td { border-bottom: 1px solid #ece3cd; padding: 5px 8px; vertical-align: top; }
+tr:nth-child(even) td { background: #FBF8F1; }
+
+pre { background: #0E0E14; color:#cfc6ad; font-family: "SF Mono","Menlo",monospace; font-size: 7.4pt;
+   line-height: 1.4; padding: 11px 13px; border-radius: 6px; border-left: 3px solid #D4A23A;
+   overflow: hidden; white-space: pre; page-break-inside: avoid; }
+code { font-family: "SF Mono","Menlo",monospace; font-size: 8.4pt; background:#F3ECDB; color:#8a5a12;
+   padding: 1px 4px; border-radius: 3px; }
+pre code { background: none; color: inherit; padding: 0; font-size: 7.4pt; }
+h2 { page-break-inside: avoid; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="glow"></div>
+  <div class="tag">TrigunAI Innovations</div>
+  <img src="file:///Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/brand_logo/logo_gold.png" alt="TrigunAI"/>
+  <h1>Acharya</h1>
+  <div class="sanskrit">the guide · आचार्य</div>
+  <div class="rule"></div>
+  <h2>The TrigunAI Tutor Pipeline</h2>
+  <div class="sub">How a live AI tutor and a reinforcement-learning engine
+  teach — and keep getting better. The whole system, explained.</div>
+  <div class="foot">Internal &amp; Confidential  ·  2026-06-29</div>
+</div>
+<h2>0. TL;DR (read this first)</h2>
+<p>We run a live, one-on-one AI tutor called <strong>Acharya</strong> that teaches people to build AI
+(over WhatsApp + web). Separately, we're building a <strong>reinforcement-learning system that
+learns <em>how to teach better</em></strong> by practising against a simulated student. A privacy-safe
+<strong>data loop</strong> feeds what real students do back into that simulator, so the teaching keeps
+improving. Today the live tutor works and is pedagogically strong; the RL engine works
+end-to-end as research; the data loop is plumbed and just started collecting.</p>
+<pre><code>   REAL STUDENTS  ──►  ACHARYA (live tutor)  ──►  learning data
+        ▲                                              │
+        │                                              ▼
+   better teaching  ◄──  RL ENGINE (simulator + trained policy)  ◄── calibration
+</code></pre>
+<p>That circle is the whole product thesis: <strong>teaching that measurably gets better over time.</strong></p>
+<hr />
+<h2>1. The question that started it</h2>
+<blockquote>
+<p>"Is there a scientifically-proven <em>best</em> teaching system — not just information
+transfer — and can we train one?"</p>
+</blockquote>
+<p>The honest answer:</p>
+<ol>
+<li><strong>There is no magic pre-trained "teacher model."</strong> Teaching quality comes from <em>method</em>
+   (pedagogy) layered on a capable language model — not from special weights.</li>
+<li><strong>The method that works is well-established by learning science</strong>: explain one idea at a
+   time, make the learner <em>recall</em> before you tell them, give immediate specific feedback,
+   space the review out over days, and actively <em>repair wrong mental models</em>. Done 1-on-1,
+   this is worth roughly <strong>+2 standard deviations</strong> over a classroom lecture (Bloom's "2-sigma").</li>
+<li><strong>The extra margin on top</strong> — <em>which</em> concept/question/hint to give <em>next</em> — is a
+   sequencing decision you can <strong>learn with reinforcement learning</strong>.</li>
+</ol>
+<p>So we built two things: a <strong>live tutor that already uses the proven method</strong>, and an <strong>RL
+engine that learns the optimal sequencing</strong> and feeds improvements back. The rest of this
+doc explains both and how they connect.</p>
+<hr />
+<h2>2. The two halves of the system</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>A. The Live Product</strong></th>
+<th><strong>B. The Research Engine</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What it is</td>
+<td>Acharya — a real AI tutor students talk to</td>
+<td>An RL system that learns to teach, in simulation</td>
+</tr>
+<tr>
+<td>Where it runs</td>
+<td>The Gurukul VM (<code>20.219.2.53</code>)</td>
+<td><code>tutor_rl/</code> in this repo (laptop/GPU)</td>
+</tr>
+<tr>
+<td>Who touches it</td>
+<td>Real students, over WhatsApp + web</td>
+<td>Us, offline</td>
+</tr>
+<tr>
+<td>Status</td>
+<td><strong>Live, in daily use</strong></td>
+<td><strong>Works end-to-end as research</strong></td>
+</tr>
+<tr>
+<td>Risk model</td>
+<td>Never disrupt students</td>
+<td>Free to experiment</td>
+</tr>
+</tbody>
+</table>
+<p>They are deliberately separate. The research engine can run wild without ever touching a
+real student; only <em>vetted</em> improvements cross over into the live tutor.</p>
+<hr />
+<h2>3. Half A — the live tutor (Acharya)</h2>
+<h3>3.1 What a student experiences</h3>
+<p>A student messages a WhatsApp number (or uses the web chat). Acharya, a warm "guru"
+persona, teaches them to build AI agents <strong>one concept at a time, on their own project</strong>,
+in short back-and-forth turns. Every day it also sends a quick "recall" question to refresh
+something they learned earlier.</p>
+<h3>3.2 The pieces (all on the VM)</h3>
+<pre><code>WhatsApp / Web
+      │  (a student message)
+      ▼
+┌─────────────────────────────────────────────────────────────┐
+│  wa_bridge.mjs   — the live message handler                  │
+│   • loads the student's Learner Profile                      │
+│   • injects it into the agent                                │
+│   • gets Acharya's reply, sends it back                      │
+│   • IN THE BACKGROUND: updates the profile + logs an event   │
+└───────────────┬─────────────────────────────────────────────┘
+                │ runs
+                ▼
+┌─────────────────────────────────────────────────────────────┐
+│  OpenClaw agent (&quot;Acharya&quot;)  +  gurukul-tutor SKILL.md       │
+│   = the persona + the TEACHING METHOD (the pedagogy)         │
+└─────────────────────────────────────────────────────────────┘
+
+  Daily, on a timer (wa-srs.timer, 09:00 IST):
+┌─────────────────────────────────────────────────────────────┐
+│  srs_cron.mjs — sends each student their most-overdue        │
+│  spaced-repetition recall question (via an approved template)│
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>3.3 The teaching method (the important part)</h3>
+<p>The method lives in <strong><code>gurukul-tutor/SKILL.md</code></strong>. It already encodes the proven principles:</p>
+<ul>
+<li><strong>One concept at a time</strong>, taught in a strict prerequisite order (no skipping).</li>
+<li><strong>Mastery gate</strong>: don't advance until the student can answer a check question unaided.</li>
+<li><strong>Spaced repetition (SRS)</strong>: each learned concept comes back for review at expanding
+  intervals (1 → 3 → 7 → 16 → 30 days), via the daily ping.</li>
+<li><strong>A Learner Model</strong> per student: what they know, what they're shaky on, their
+  misconceptions, their streak, their personal interests (used to tailor examples).</li>
+</ul>
+<p>On 2026-06-29 we added the two highest-value upgrades the research pointed to:
+- <strong>Elicit-before-explain</strong> — make the student <em>guess/predict first</em>, then reveal. A real
+  attempt before being told makes the idea stick far better.
+- <strong>Misconception repair</strong> — when a wrong answer reveals a <em>specific wrong model</em>, don't just
+  re-explain; <strong>name it, break it with a counterexample, then re-check.</strong></p>
+<h3>3.4 Who "owns" what (a key safety design)</h3>
+<p>The chatty AI proposes soft updates ("this concept was discussed", "new misconception
+spotted"), but <strong>the code owns mastery and scheduling</strong> — only a <em>deterministically graded
+correct recall</em> promotes a concept to "solid" and advances its review schedule. This stops
+the language model from rubber-stamping progress it didn't verify.</p>
+<h3>3.5 The WhatsApp channel (made fully live 2026-06-29)</h3>
+<p>Proactive messages (the daily recall, broadcasts) require <strong>Meta-approved templates</strong>.
+Now in place:
+- <strong>Production WABA</strong> (WhatsApp Business Account) id <code>1017321330664208</code> ("TrigunAI Innovations").
+- Templates <strong><code>gurukul_recall</code></strong> (daily SRS ping) and <strong><code>gurukul_announce</code></strong> (broadcasts),
+  both <strong>APPROVED</strong>, English (US).
+- <strong><code>wa-srs.timer</code></strong> fires daily at 03:30 UTC / 09:00 IST.
+- <em>Caveat:</em> templates are currently <strong>Marketing</strong> category (~6× the cost of <strong>Utility</strong> in
+  India) — recategorize before scaling.</p>
+<hr />
+<h2>4. Half B — the research engine (<code>tutor_rl/</code>)</h2>
+<p>The goal: <strong>learn the optimal teaching sequence</strong> instead of hand-writing it. This is a
+reinforcement-learning problem, and it's the same shape as TrigunAI's drone work
+(train a policy in a simulator, transfer to reality).</p>
+<h3>4.1 The core analogy (why we're good at this)</h3>
+<table>
+<thead>
+<tr>
+<th>Drone RL (we already do this)</th>
+<th>Tutor RL (this engine)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physics simulator</td>
+<td><strong>Student simulator</strong></td>
+</tr>
+<tr>
+<td>Drone control policy</td>
+<td><strong>Tutor policy</strong> (the agent)</td>
+</tr>
+<tr>
+<td>Sensor readings (partial view)</td>
+<td>Student's answers (we can't see their true mind)</td>
+</tr>
+<tr>
+<td>Motor command</td>
+<td>Teaching move (ask / explain / hint / practise / review)</td>
+</tr>
+<tr>
+<td>Reward = reached the goal</td>
+<td>Reward = <strong>the student actually learned (and retained) it</strong></td>
+</tr>
+<tr>
+<td>Real-world flight test</td>
+<td><strong>Real students</strong> — used only to <em>judge</em>, never to train on</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 The student simulator (the heart of it)</h3>
+<p>To train a tutor you need something to teach. We can't train against thousands of real
+humans, so we <strong>simulate a student</strong> — exactly like simulating physics for the drone.</p>
+<p>Each simulated student has a hidden inner state: how much they know of each concept, which
+<strong>misconceptions</strong> they hold, their mood (confidence/frustration/engagement), and personal
+traits (learning speed, forgetting rate). The tutor <strong>can't see this directly</strong> — it only
+sees the student's answers and has to <em>infer</em> what they know (just like drone sensors vs.
+true physics).</p>
+<p>Every teaching move updates that hidden state using <strong>learning-science rules</strong>:
+- a good recall attempt at the right difficulty → durable learning;
+- just <em>telling</em> the answer → tiny gain, and it <em>reinforces</em> misconceptions;
+- spacing + practice → the concept <em>consolidates</em> (forgets slower);
+- too-hard repeatedly → frustration → the student disengages.</p>
+<p>The <strong>reward</strong> is measured on a <em>held-out quiz</em> (questions not used in teaching, so the
+tutor can't "teach to the test"), plus a <strong>retention re-test after simulated forgetting</strong> —
+so cramming loses and real teaching wins.</p>
+<h3>4.3 The tutor (the thing being trained)</h3>
+<p>A policy that, given what it can observe, picks the next move: which concept, ask vs. tell,
+hint level, when to review, when to stop. We train it with a simple RL algorithm (REINFORCE)
+against thousands of <em>randomly varied</em> simulated students (so it generalizes, not memorizes).</p>
+<h3>4.4 What the research run found (honest)</h3>
+<p>Against 300 unseen simulated students, the RL tutor:
+- <strong>learned real pedagogy from scratch</strong> — it <em>never</em> answer-dumps, and it <strong>repairs more
+  misconceptions than any other tutor</strong>;
+- <strong>beats</strong> random / answer-dumping / fixed-order teaching;
+- but <strong>does not yet beat a strong hand-built Socratic tutor</strong> on retained learning (−16%) —
+  expected for a tiny linear model, and we deliberately didn't over-tune an uncalibrated sim.</p>
+<p><strong>The most useful output wasn't the score — it was the lesson</strong>: the engine told us <em>which</em>
+levers matter most (no answer-dumping; active misconception repair). We then applied exactly
+those to the live Acharya prompt (§3.3). That is the research engine paying off immediately.</p>
+<hr />
+<h2>5. The loop that connects them (the flywheel)</h2>
+<p>This is what makes the whole thing compound instead of being two disconnected projects.</p>
+<pre><code> ┌──────────────────────────────────────────────────────────────────────┐
+ │ 1. Real students learn with Acharya (Half A)                          │
+ │      → the bridge records de-identified learning events               │
+ │        (which concept, recall correct/wrong, misconceptions)          │
+ │                          │                                            │
+ │                          ▼                                            │
+ │ 2. CALIBRATION (tutor_rl/calibration/)                                │
+ │      → aggregate those events ON THE VM into stats only               │
+ │        (no names, no transcripts ever leave the box)                  │
+ │      → fit the simulator's parameters to match real students          │
+ │                          │                                            │
+ │                          ▼                                            │
+ │ 3. The simulator becomes FAITHFUL to real learners (Half B)           │
+ │      → retrain / improve the tutor policy against it                  │
+ │                          │                                            │
+ │                          ▼                                            │
+ │ 4. Vetted improvements cross into Acharya's method (Half A)           │
+ │      → real students get better teaching → back to step 1             │
+ └──────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>The golden rule:</strong> real students are the <strong>judge, never the training set</strong> — the
+"eye outside the optimizer." If the simulator's score improves but real-student learning
+doesn't, the <em>simulator</em> is wrong and we fix it. (Same discipline as the drone pipeline's
+independent visual critic.)</p>
+<h3>Privacy by design</h3>
+<p>Calibration runs <strong>on the VM</strong> and emits <strong>only counts and distributions</strong> — concept-state
+tallies, misconception frequencies, recall-success rates. No student names, phone numbers,
+or message text are ever copied off the box.</p>
+<h3>Current state of the loop (honest)</h3>
+<ul>
+<li>The capture mechanism is <strong>well-built and now active</strong> (event logging went live 2026-06-29).</li>
+<li>First pull: <strong>33 real misconceptions captured</strong> from 7 students — richer and different from
+  our hand-written guesses (proving the loop's value).</li>
+<li><strong>Still too thin</strong> to fully calibrate (small cohort; the daily recall loop only just got
+  unblocked). The plumbing is done; the data sharpens as the cohort grows and answers the
+  daily recalls (which now actually send).</li>
+</ul>
+<hr />
+<h2>6. Follow one student (the whole system in a story)</h2>
+<ol>
+<li><strong>Priya</strong> messages the WhatsApp number. <code>wa_bridge</code> loads her (empty) profile, Acharya
+   welcomes her and asks <em>why</em> she wants to learn AI agents.</li>
+<li>Acharya starts at concept #1. Using <strong>elicit-before-explain</strong>, it asks her to <em>guess</em> what
+   makes something an "agent" vs. a chatbot. She guesses "it talks back."</li>
+<li>That's a <strong>known misconception</strong> ("agent = chatbot"). Acharya <strong>repairs</strong> it: "that's the
+   common trap — then how does a chatbot <em>book your flight</em>?" — a counterexample. Then it
+   explains the real idea and asks a check question. She gets it → concept marked progressing.</li>
+<li>In the background, <code>wa_bridge</code> updates her Learner Profile and writes a <strong>learning event</strong>
+   (<code>concept discussed</code>, <code>misconception repaired</code>).</li>
+<li>Three days later, <strong><code>wa-srs.timer</code></strong> fires; <code>srs_cron</code> sends her a <code>gurukul_recall</code> ping:
+   <em>"Quick recall: agent vs chatbot?"</em> She answers correctly → the code grades it → the
+   concept becomes <strong>"solid"</strong> and its next review is pushed further out (spaced repetition).</li>
+<li>Every week, <strong>calibration</strong> aggregates everyone's events (de-identified) → the <strong>simulator</strong>
+   learns that "agent = chatbot" is a common, sticky misconception → we <strong>retrain the policy</strong>
+   and, if it confirms a better tactic, <strong>update Acharya's method</strong> → Priya's cohort-mates get
+   a better lesson. The circle closes.</li>
+</ol>
+<hr />
+<h2>7. Component reference (where everything lives)</h2>
+<h3>Live tutor (on the VM <code>dk_trigun@20.219.2.53</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Thing</th>
+<th>Path / id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Message handler</td>
+<td><code>~/wa_bridge.mjs</code> (systemd <code>wa-bridge</code>)</td>
+</tr>
+<tr>
+<td>Teaching method</td>
+<td><code>~/.openclaw/workspace/skills/gurukul-tutor/SKILL.md</code></td>
+</tr>
+<tr>
+<td>Daily recall engine</td>
+<td><code>~/.openclaw/gurukul/srs_cron.mjs</code> (systemd <code>wa-srs.timer</code>, 09:00 IST)</td>
+</tr>
+<tr>
+<td>Student profiles</td>
+<td><code>~/.openclaw/students/&lt;wa_id&gt;.json</code></td>
+</tr>
+<tr>
+<td>Learning-event stream</td>
+<td><code>~/.openclaw/gurukul/events.jsonl</code></td>
+</tr>
+<tr>
+<td>Course concept banks</td>
+<td><code>~/.openclaw/gurukul/courses/&lt;course&gt;.json</code></td>
+</tr>
+<tr>
+<td>WhatsApp config</td>
+<td><code>~/.openclaw/wa_cloud.env</code> (WABA <code>1017321330664208</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3>Research engine (this repo, <code>tutor_rl/</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Thing</th>
+<th>Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Design spec</td>
+<td><code>TUTOR_RL_STUDENT_SIMULATOR_SPEC.md</code> (repo root)</td>
+</tr>
+<tr>
+<td>Skills + misconception bank</td>
+<td><code>tutor_rl/knowledge.py</code></td>
+</tr>
+<tr>
+<td>The student simulator</td>
+<td><code>tutor_rl/student_env.py</code></td>
+</tr>
+<tr>
+<td>Tutors (baselines + RL policy)</td>
+<td><code>tutor_rl/tutors.py</code></td>
+</tr>
+<tr>
+<td>Validate the sim's "physics"</td>
+<td><code>tutor_rl/test_physics.py</code></td>
+</tr>
+<tr>
+<td>Train the RL tutor</td>
+<td><code>tutor_rl/train.py</code></td>
+</tr>
+<tr>
+<td>Evaluate vs baselines</td>
+<td><code>tutor_rl/evaluate.py</code></td>
+</tr>
+<tr>
+<td>Realistic LLM student (demos)</td>
+<td><code>tutor_rl/llm_student.py</code></td>
+</tr>
+<tr>
+<td>Distil RL → training data</td>
+<td><code>tutor_rl/gen_sft_data.py</code></td>
+</tr>
+<tr>
+<td><strong>Calibration flywheel</strong></td>
+<td><code>tutor_rl/calibration/</code> + <code>tutor_rl/calibrate.py</code></td>
+</tr>
+<tr>
+<td>Engine README</td>
+<td><code>tutor_rl/README.md</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. How to operate it</h2>
+<p><strong>Research engine (laptop, only needs <code>numpy</code>):</strong></p>
+<pre><code class="language-bash">cd tutor_rl
+python3 test_physics.py     # validate the simulator behaves sanely
+python3 evaluate.py         # train the RL tutor + compare to baselines
+</code></pre>
+<p><strong>Refresh calibration from real (de-identified) data:</strong></p>
+<pre><code class="language-bash">bash tutor_rl/calibration/refresh.sh   # pulls VM stats, recalibrates the simulator
+</code></pre>
+<p><strong>Check the live WhatsApp templates (read-only):</strong></p>
+<pre><code class="language-bash">ssh -i ~/.ssh/gurukul_key dk_trigun@20.219.2.53 'node /tmp/wa_setup_templates.mjs'
+</code></pre>
+<p><strong>Golden rules when touching the live tutor:</strong>
+- Never restart <code>wa-bridge</code> while a student may be mid-conversation.
+- Skill (method) changes deploy by file copy — no restart, picked up next session.
+- See the <code>maintain-trigunai-system</code> skill before any change to a live property.</p>
+<hr />
+<h2>9. Status at a glance</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acharya live tutor (WhatsApp + web)</td>
+<td>✅ Live, daily use</td>
+</tr>
+<tr>
+<td>Proven teaching method in the prompt</td>
+<td>✅ Strong; upgraded 2026-06-29 (elicit-first + misconception repair)</td>
+</tr>
+<tr>
+<td>WhatsApp automated messaging (templates + SRS timer)</td>
+<td>✅ Live (Marketing category — recategorize before scale)</td>
+</tr>
+<tr>
+<td>RL research engine (sim + train + eval)</td>
+<td>✅ Works end-to-end</td>
+</tr>
+<tr>
+<td>Calibration flywheel (real → sim)</td>
+<td>✅ Plumbed + privacy-safe; data still thin</td>
+</tr>
+<tr>
+<td>RL tutor beating the hand-built tutor</td>
+<td>⏳ Needs bigger policy (MLP+PPO) + more real data</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10. Honest limits (don't oversell)</h2>
+<ul>
+<li>The simulator runs on <strong>learning-science priors, not yet fully calibrated</strong> to real
+  students. Tutor <em>rankings</em> are meaningful; absolute numbers aren't "real learning gains."</li>
+<li>The RL policy is small (linear) — enough to prove learning beats heuristics on the easy
+  baselines, not enough to beat a strong hand-built tutor yet.</li>
+<li><strong>Most of the teaching gain is the <em>method</em>, not the learned sequencer</strong> — which is why the
+  free, today win was improving Acharya's prompt. The RL sequencer is the <em>additional</em> margin.</li>
+<li>The flywheel is real but <strong>data-thin</strong> until the cohort grows and the daily recalls
+  accumulate answers.</li>
+</ul>
+<hr />
+<h2>11. Glossary</h2>
+<ul>
+<li><strong>Acharya</strong> — our live AI tutor persona (Sanskrit for "teacher/guide").</li>
+<li><strong>SRS (Spaced Repetition)</strong> — reviewing a concept at expanding intervals so it sticks.</li>
+<li><strong>Mastery gate</strong> — don't advance until the student proves they understood.</li>
+<li><strong>Misconception</strong> — a <em>specific wrong mental model</em> (not just "didn't know").</li>
+<li><strong>Learner Profile / Learner Model</strong> — the per-student record of what they know.</li>
+<li><strong>Reinforcement Learning (RL)</strong> — learning by trial-and-error to maximize a reward.</li>
+<li><strong>Policy</strong> — the trained decision-maker (here: the tutor choosing its next move).</li>
+<li><strong>Student simulator</strong> — a fake-but-realistic student the tutor practises on.</li>
+<li><strong>Calibration</strong> — tuning the simulator so it matches real students.</li>
+<li><strong>Flywheel</strong> — the self-reinforcing loop: real data → better sim → better tutor → better
+  teaching → more/better real data.</li>
+<li><strong>WABA</strong> — WhatsApp Business Account (owns the phone number + message templates).</li>
+<li><strong>Bloom's 2-sigma</strong> — the finding that 1-on-1 mastery tutoring ≈ +2 std-devs over lectures.</li>
+</ul>
+<hr />
+<p><em>Companion docs: <code>TUTOR_RL_STUDENT_SIMULATOR_SPEC.md</code> (deep design of the simulator),
+<code>tutor_rl/README.md</code> (how to run the engine), and the <code>maintain-trigunai-system</code> skill
+(operating the live properties safely).</em></p></body></html>

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Account · TrigunAI{% endblock %}
+{% block content %}
+<div style="max-width:640px;margin:0 auto;">
+  <h1 style="font-size:26px;margin:8px 0 4px;">Account &amp; billing</h1>
+  <p style="color:#5b6478;margin:0 0 22px;">{{ student.email }}</p>
+
+  <div style="background:#fff;border:1px solid #e7e9f0;border-radius:16px;padding:22px 24px;box-shadow:0 10px 30px rgba(20,24,45,.05);">
+    {% set st = sub.status %}
+    {% if st == 'grandfathered' %}
+      <div style="font-size:15px;font-weight:600;color:#16a34a;">★ Founding cohort — full access</div>
+      <p style="color:#5b6478;margin:8px 0 0;">You're an early member. You have complete access to every course and the tutor, with no subscription required. Thank you for being here from the start. 🙏</p>
+
+    {% elif st == 'trialing' and sub.nocard_trial %}
+      <div style="font-size:15px;font-weight:600;color:#2d5bff;">✨ Free trial — {{ sub.days_left }} day{{ '' if sub.days_left==1 else 's' }} left</div>
+      <p style="color:#2b3145;margin:8px 0 0;">You're on a no-card free trial with full access until
+        <b>{{ sub.trial_end.strftime('%d %b %Y') }}</b>. To keep using the platform after that, subscribe for ₹{{ sub.price }}/month.</p>
+      <a href="/pricing" style="display:inline-block;margin-top:12px;background:#2d5bff;color:#fff;border-radius:10px;padding:11px 18px;text-decoration:none;font-weight:600;">Subscribe to continue</a>
+
+    {% elif st == 'trialing' %}
+      <div style="font-size:15px;font-weight:600;color:#2d5bff;">✨ Free trial active</div>
+      <p style="color:#2b3145;margin:8px 0 0;">You have full access. Your first payment of <b>₹{{ sub.price }}</b> is scheduled for
+        {% if sub.trial_end %}<b>{{ sub.trial_end.strftime('%d %b %Y') }}</b>{% else %}the end of your {{ sub.trial_days }}-day trial{% endif %}.
+        Cancel before then and you won't be charged.</p>
+
+    {% elif st == 'active' %}
+      <div style="font-size:15px;font-weight:600;color:#16a34a;">✓ Subscription active</div>
+      <p style="color:#2b3145;margin:8px 0 0;">₹{{ sub.price }}/month{% if sub.current_period_end %} · renews <b>{{ sub.current_period_end.strftime('%d %b %Y') }}</b>{% endif %}.</p>
+
+    {% elif st == 'past_due' %}
+      <div style="font-size:15px;font-weight:600;color:#b42318;">⚠ Payment needs attention</div>
+      <p style="color:#2b3145;margin:8px 0 0;">Your last payment didn't go through. Start a fresh subscription to keep your access.</p>
+      <a href="/pricing" style="display:inline-block;margin-top:12px;background:#2d5bff;color:#fff;border-radius:10px;padding:11px 18px;text-decoration:none;font-weight:600;">Fix payment</a>
+
+    {% elif st == 'cancelled' %}
+      <div style="font-size:15px;font-weight:600;color:#5b6478;">Subscription cancelled</div>
+      <p style="color:#2b3145;margin:8px 0 0;">
+        {% if sub.current_period_end and sub.has_access %}You keep access until <b>{{ sub.current_period_end.strftime('%d %b %Y') }}</b>.{% else %}Your access has ended.{% endif %}
+        You can re-subscribe anytime.</p>
+      <a href="/pricing" style="display:inline-block;margin-top:12px;background:#2d5bff;color:#fff;border-radius:10px;padding:11px 18px;text-decoration:none;font-weight:600;">Re-subscribe</a>
+
+    {% else %}
+      <div style="font-size:15px;font-weight:600;color:#5b6478;">No active subscription</div>
+      <p style="color:#2b3145;margin:8px 0 0;">Start your {{ sub.trial_days }}-day free trial to unlock every course and your AI tutor.</p>
+      <a href="/pricing" style="display:inline-block;margin-top:12px;background:#2d5bff;color:#fff;border-radius:10px;padding:11px 18px;text-decoration:none;font-weight:600;">Start free trial</a>
+    {% endif %}
+  </div>
+
+  {% if st in ['trialing','active'] and not sub.nocard_trial %}
+  <div style="margin-top:18px;text-align:center;">
+    <button id="cancelBtn" onclick="cancelSub()"
+      style="background:none;border:0;color:#8a90a2;font-size:13.5px;cursor:pointer;text-decoration:underline;">
+      Cancel subscription
+    </button>
+    <div id="cancelMsg" style="display:none;margin-top:10px;font-size:14px;"></div>
+  </div>
+  {% endif %}
+
+  <p style="color:#9aa0b0;font-size:12.5px;margin-top:26px;text-align:center;">
+    Questions about billing? Email <a href="mailto:deepak@trigunai.com" style="color:#7a8296;">deepak@trigunai.com</a>.
+  </p>
+</div>
+
+<script>
+async function cancelSub(){
+  if(!confirm("Cancel your subscription? You'll keep access until the end of your current period (or, during a free trial, you simply won't be charged).")) return;
+  const btn=document.getElementById('cancelBtn'), msg=document.getElementById('cancelMsg');
+  btn.disabled=true; btn.textContent='Cancelling…';
+  try{
+    const r=await fetch('/api/subscription/cancel',{method:'POST'});
+    const j=await r.json();
+    if(r.ok){ msg.style.color='#16a34a'; msg.textContent='Done — your subscription is cancelled.'; msg.style.display='block';
+              setTimeout(()=>location.reload(),1400); }
+    else { msg.style.color='#b42318'; msg.textContent=j.error||'Could not cancel — please email us.'; msg.style.display='block'; btn.disabled=false; btn.textContent='Cancel subscription'; }
+  }catch(e){ msg.style.color='#b42318'; msg.textContent='Network error.'; msg.style.display='block'; btn.disabled=false; btn.textContent='Cancel subscription'; }
+}
+</script>
+{% endblock %}

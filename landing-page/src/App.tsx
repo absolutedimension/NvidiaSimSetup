@@ -1,5 +1,6 @@
-import { useRef, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { motion, type Variants } from 'framer-motion';
+import Viewer from './Viewer';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // EDIT THESE after you create the accounts (Deepak):
@@ -78,6 +79,15 @@ const COURSES = [
 ];
 
 export default function App() {
+  // tiny hash router — no dependency. #/viewer → RTX USD viewer, else marketing.
+  const [route, setRoute] = useState(() => window.location.hash.replace(/\?.*$/, ''));
+  useEffect(() => {
+    const onHash = () => setRoute(window.location.hash.replace(/\?.*$/, ''));
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+  if (route === '#/viewer') return <Viewer />;
+
   return (
     <div className="relative w-full">
       <Particles />
@@ -87,10 +97,15 @@ export default function App() {
       {/* Nav */}
       <nav className="sticky top-0 z-30 flex items-center justify-between border-b border-white/5 bg-black/40 px-6 py-4 backdrop-blur-md">
         <span className="font-semibold tracking-wide">TrigunAI</span>
-        <a href={SUBSTACK_URL} target="_blank" rel="noreferrer"
-          className="rounded-full px-5 py-2 text-sm font-semibold text-black" style={{ background: GOLD }}>
-          Subscribe
-        </a>
+        <div className="flex items-center gap-4">
+          <a href="#/viewer" className="text-sm font-medium text-white/70 transition hover:text-white">
+            RTX&nbsp;Viewer
+          </a>
+          <a href={SUBSTACK_URL} target="_blank" rel="noreferrer"
+            className="rounded-full px-5 py-2 text-sm font-semibold text-black" style={{ background: GOLD }}>
+            Subscribe
+          </a>
+        </div>
       </nav>
 
       {/* Hero */}
@@ -117,6 +132,11 @@ export default function App() {
           </a>
           <SubscribeButton label="Get Episode 2 free" large />
         </motion.div>
+        <motion.a initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}
+          href="#/viewer"
+          className="mt-6 inline-flex items-center gap-2 text-sm text-white/50 transition hover:text-white/90">
+          🛰️ Try the live RTX USD viewer — rendered on our own GPU
+        </motion.a>
         <p className="mt-6 text-sm text-white/40">Free animated episodes · new ones land in your inbox first</p>
       </header>
 

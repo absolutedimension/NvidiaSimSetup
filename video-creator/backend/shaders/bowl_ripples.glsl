@@ -34,7 +34,7 @@ vec2 rot2D(vec2 p, float a) { float c=cos(a), s=sin(a); return vec2(c*p.x - s*p.
 
 void main() {
   float uTime=u_time; vec2 uRes=u_resolution;
-  float uSubBass=u_bass, uMids=u_rms, uHighs=u_treble;
+  float uSubBass=u_bass, uBass=u_bass, uMids=u_rms, uHighs=u_treble;
   float uRMS=u_rms, uCentroid=u_treble, uFlatness=u_treble*0.5;
   float uFlux=u_onset, uOnset=u_onset, uSilence=clamp(1.0-u_rms*2.0,0.0,1.0);
   float E = clamp(u_rms*1.2 + u_bass*0.5, 0.0, 1.2);   // overall energy (drives the dynamics)

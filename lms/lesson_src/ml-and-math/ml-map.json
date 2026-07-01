@@ -1,0 +1,141 @@
+{
+  "slug": "ml-map",
+  "title": "The map: what ML really is",
+  "steps": [
+    { "type": "intro",
+      "art": "🗺️ → 🧠",
+      "prompt": "What IS machine learning, really?",
+      "sub": "In a normal program, YOU write the rules. ML flips that: you show it examples, and it writes the rules itself. By the end you'll have a clean map — the three ways machines learn, and where each one lives in the real world.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "A normal program vs an ML model — what's the real difference?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "ML runs faster than a normal program." },
+        { "t": "In a normal program YOU write the rules; an ML model learns the rules from data." },
+        { "t": "ML doesn't use code at all." }
+      ],
+      "correct": 1,
+      "why": "That's the whole flip. To detect spam the old way, you'd hand-write rules ('if it says FREE MONEY…'). ML instead reads thousands of emails already labelled spam/not-spam and figures out the pattern itself. You bring examples; it writes the rules. Speed and code are beside the point.",
+      "hints": [
+        "Who comes up with the rules — you, or the machine?",
+        "Think spam filter: do you list every spammy phrase, or show it examples and let it learn?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Three ways a machine can learn.",
+      "sub": "Tap each card. These three cover almost everything in ML.",
+      "cards": [
+        { "em": "🏷️", "h": "Supervised", "b": "Learn from labelled examples. Photos tagged 'cat'/'dog' → predict the label on a new photo. You give the answers." },
+        { "em": "🔍", "h": "Unsupervised", "b": "No labels — find hidden structure on its own. e.g. group 10,000 customers into natural segments nobody defined." },
+        { "em": "🎮", "h": "Reinforcement (RL)", "b": "Learn by reward. Try an action, get a score, do more of what scores well. How a game-playing or robot policy learns." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Which kind of learning is each task?",
+      "sub": "Tap a task, then its bin.",
+      "buckets": ["🏷️ Supervised", "🔍 Unsupervised", "🎮 Reinforcement"],
+      "items": [
+        { "t": "Predict house price from past sales (each with its known price)", "b": 0 },
+        { "t": "Group shoppers into segments nobody labelled in advance", "b": 1 },
+        { "t": "Teach a drone to fly to a target — reward it for getting closer", "b": 2 },
+        { "t": "Tell spam from not-spam, trained on emails already marked spam", "b": 0 },
+        { "t": "Find natural clusters of songs with no genre tags", "b": 1 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Are the right answers (labels) given up front? → supervised.",
+        "No labels, just 'find the groups' → unsupervised. Learns from reward/score → RL."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "You have a million product photos with NO labels, and you want to discover natural groupings. Which approach?",
+      "sub": "Match the tool to the situation.",
+      "options": [
+        { "t": "Supervised — train on the labels" },
+        { "t": "Unsupervised — find structure without labels" },
+        { "t": "Reinforcement — reward good actions" }
+      ],
+      "correct": 1,
+      "why": "No labels exist, and you're not rewarding actions — you just want hidden structure to surface. That's unsupervised (clustering). Supervised needs labels you don't have; RL needs a reward signal and actions, which there are none of here.",
+      "hints": [
+        "Do you have any labels to learn from? Are there actions to reward?",
+        "No labels + no reward + 'find the groups' points at exactly one of the three."
+      ] },
+
+    { "type": "tf",
+      "prompt": "True or false?",
+      "sub": "Tap each, then check all at once.",
+      "statements": [
+        { "t": "In supervised learning you must provide the correct answers (labels) to learn from.", "answer": true,
+          "why": "Yes — 'supervised' means a teacher's answers are present. Without labels it can't be supervised." },
+        { "t": "Unsupervised learning needs a human to label every example first.", "answer": false,
+          "why": "The opposite — its whole point is working with UNlabelled data and finding structure itself." },
+        { "t": "Reinforcement learning improves by trying actions and reacting to a reward signal.", "answer": true,
+          "why": "Right — try, get scored, lean toward what scores well. That's the RL loop." },
+        { "t": "ChatGPT-style models are a totally separate fourth category, unrelated to these three.", "answer": false,
+          "why": "Not separate — they're built mostly on supervised learning (predict the next word) plus a dose of RL (from human feedback). They sit on this same map." }
+      ],
+      "hints": [
+        "Read each word literally: 'supervised' implies a supervisor's answers.",
+        "Which one learns from a reward instead of from given answers?"
+      ] },
+
+    { "type": "order",
+      "prompt": "Put a supervised project in order, from start to finish.",
+      "sub": "Tap the steps in the order they happen.",
+      "chips": ["Use it on brand-new data it never saw", "Collect labelled examples (inputs + correct answers)", "Train: let the model learn the input→answer pattern"],
+      "correct": [1, 2, 0],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't train before you have the labelled examples.",
+        "Gather data → train on it → then deploy on new, unseen data."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Why this is the 'faculties of mind, made buildable'.",
+      "sub": "Tap each card — the bigger picture behind the map.",
+      "cards": [
+        { "em": "👁️", "h": "Recognising", "b": "Supervised learning = the mind's faculty of recognising — 'I've seen this kind of thing before, it's a cat.'" },
+        { "em": "🧩", "h": "Finding order", "b": "Unsupervised = seeing patterns and groupings nobody pointed out — the mind organising raw experience." },
+        { "em": "🎯", "h": "Learning by consequence", "b": "RL = the faculty of learning from results — touch the hot stove once, never again." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Big-picture check: what's the one thing all three kinds of ML share?",
+      "sub": "What makes them all 'machine learning'?",
+      "options": [
+        { "t": "They all require labelled data." },
+        { "t": "They all improve from data/experience instead of from hand-written rules." },
+        { "t": "They all play games." }
+      ],
+      "correct": 1,
+      "why": "That's the thread. Labels are only in supervised; games are only some RL. But all three share the core flip from lesson one — they get better from data or experience rather than from rules a human typed out by hand.",
+      "hints": [
+        "Two of these are true for only ONE of the three kinds.",
+        "Go back to the very first idea: where do the rules come from?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make the map yours.",
+      "sub": "Not graded. Naming a real example from your world makes the rest of this course click.",
+      "fields": [
+        { "k": "work", "label": "What do you work on or study most?", "ph": "e.g. run a Shopify store / CS student / marketing" },
+        { "k": "goal", "label": "Name one thing in YOUR world ML could learn — and guess which of the three it'd be:", "ph": "e.g. predict which customers will churn — supervised" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Lock it in: tap EVERY true statement about ML.",
+      "sub": "Some are tempting but wrong. Pick only the true ones.",
+      "chips": ["The model learns rules from data", "Supervised learning uses labelled examples", "Unsupervised learning needs labels", "RL learns from a reward signal", "ML is just a faster normal program with the same hand-written rules"],
+      "correct": [0, 1, 3],
+      "why": "True: it learns rules from data, supervised uses labels, RL learns from reward. False: unsupervised needs NO labels, and ML is fundamentally different from a normal program — the machine writes the rules, you don't.",
+      "hints": [
+        "Two of these contradict things you just sorted.",
+        "Recall: who writes the rules, and which kind of learning has no labels?"
+      ] },
+
+    { "type": "done" }
+  ]
+}

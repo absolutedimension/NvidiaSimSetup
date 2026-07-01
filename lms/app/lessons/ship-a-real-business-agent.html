@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Ship a real business agent · TrigunAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script src="/static/celebrate.js"></script>
+<style>
+:root{--bg:#fff;--ink:#2b2b33;--muted:#8a8a99;--lav-bg:#eef0fb;--lav-bd:#c9d0f5;--lav-deep:#3a44b8;--indigo:#5b63e6;--green:#22c55e;--green-dk:#15803d;--red:#ef4444;--red-bg:#fdecec;--btn:#2d2d33;--btn-dis:#e6e6ec;--rb:11px;--shadow:0 8px 24px rgba(30,30,60,.06);}
+*{box-sizing:border-box;}html,body{margin:0;height:100%;}
+body{font-family:'Poppins',-apple-system,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh;}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+header{display:flex;align-items:center;gap:18px;padding:16px 26px;border-bottom:1px solid #f0f0f5;}
+.x-btn{border:none;background:none;font-size:22px;color:var(--muted);cursor:pointer;line-height:1;}
+.bar{flex:1;height:12px;border-radius:99px;background:#eceef2;overflow:hidden;}.bar>i{display:block;height:100%;width:0;background:var(--green);border-radius:99px;transition:width .45s cubic-bezier(.4,1.3,.5,1);}
+.dots{display:flex;gap:7px;}.dots>span{width:8px;height:8px;border-radius:50%;background:#dcdce4;transition:background .3s;}.dots>span.on{background:var(--green);}
+.streak{font-weight:500;font-size:15px;color:var(--muted);}
+main{flex:1;display:flex;justify-content:center;padding:40px 24px 130px;}
+.stage{width:100%;max-width:620px;animation:rise .4s ease;}
+@keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.prompt{font-size:20px;font-weight:500;line-height:1.45;margin:0 0 8px;}.sub{font-size:15.5px;color:var(--muted);line-height:1.6;margin:0 0 22px;}.intro-art{font-size:46px;text-align:center;margin:18px 0 26px;}
+.constraints{border:1.5px solid var(--lav-bd);border-radius:14px;padding:12px 16px;margin:0 0 18px;background:#fafbff;transition:border-color .3s;}.constraints.done{border-color:var(--green);}
+.crow{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--ink);padding:4px 0;}.crow .ic{width:18px;flex:0 0 18px;}.crow.met{color:var(--green-dk);}
+.opts{display:flex;flex-direction:column;gap:12px;margin:0 0 8px;}
+.opt{display:flex;align-items:center;gap:12px;text-align:left;border:1.5px solid var(--lav-bd);background:#fff;border-radius:var(--rb);padding:15px 16px;font:inherit;font-size:15.5px;color:var(--ink);cursor:pointer;transition:.15s;width:100%;}
+.opt:hover{background:var(--lav-bg);}.opt .tick{width:22px;height:22px;flex:0 0 22px;border-radius:50%;border:2px solid var(--lav-bd);}
+.opt.sel{border-color:var(--indigo);background:var(--lav-bg);}.opt.sel .tick{border-color:var(--indigo);background:var(--indigo);box-shadow:inset 0 0 0 3px #fff;}
+.opt.correct{border-color:var(--green);background:#effaf1;}.opt.correct .tick{border-color:var(--green);background:var(--green);box-shadow:inset 0 0 0 3px #fff;}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);}.opt.dim{opacity:.5;}
+.cards4{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.pcard{border:1.5px solid var(--lav-bd);background:var(--lav-bg);border-radius:14px;padding:14px 16px;cursor:pointer;transition:.18s;}.pcard:hover{transform:translateY(-2px);box-shadow:var(--shadow);}.pcard.opened{background:#fff;border-color:var(--indigo);}
+.pcard h4{margin:0 0 4px;font-size:15.5px;font-weight:600;color:var(--lav-deep);display:flex;align-items:center;gap:8px;}.pcard .body{font-size:13.5px;color:var(--muted);line-height:1.55;max-height:0;overflow:hidden;transition:max-height .3s;}.pcard.opened .body{max-height:200px;margin-top:6px;}.pcard .em{font-size:22px;}
+.tray{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;}
+.chip{border:1.5px solid var(--lav-bd);background:#fff;border-radius:var(--rb);padding:9px 14px;font-size:14px;cursor:pointer;transition:.15s;font-family:inherit;color:var(--ink);}.chip:hover{background:var(--lav-bg);}.chip.sel{border-color:var(--indigo);background:var(--indigo);color:#fff;}.chip.ok{border-color:var(--green);background:#effaf1;color:var(--green-dk);}.chip.bad{border-color:var(--red);background:var(--red-bg);color:#b42318;}
+.field{margin:0 0 16px;}.field label{display:block;font-size:14px;font-weight:500;margin:0 0 6px;}.field input,.field textarea{width:100%;border:1.5px solid var(--lav-bd);border-radius:var(--rb);padding:12px 14px;font:inherit;font-size:15px;}.field textarea{resize:vertical;min-height:80px;}.field input:focus,.field textarea:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(91,99,230,.12);}
+.fb{border-radius:14px;padding:14px 16px;margin:16px 0 0;font-size:14.5px;line-height:1.55;display:none;}.fb.show{display:block;animation:rise .25s ease;}.fb.ok{background:#effaf1;color:var(--green-dk);}.fb.no{background:var(--red-bg);color:#b42318;}
+.done-wrap{text-align:center;padding:10px 0;}.done-badge{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#7c83f3,#4a52d6);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;animation:pop .5s cubic-bezier(.3,1.5,.5,1);}.done-badge svg{width:44px;height:44px;color:#fff;}
+@keyframes pop{from{transform:scale(.2);opacity:0;}to{transform:scale(1);opacity:1;}}
+.gem-count{font-size:56px;font-weight:600;color:var(--lav-deep);margin:14px 0 6px;line-height:1;}
+footer{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #f0f0f5;padding:16px 24px;display:flex;justify-content:center;}
+.actions{width:100%;max-width:620px;display:flex;gap:12px;align-items:center;justify-content:flex-end;}
+.startover{display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--muted);font:inherit;font-size:14px;cursor:pointer;margin-right:auto;}
+.pill{border:none;border-radius:99px;padding:14px 40px;font:inherit;font-weight:500;font-size:16px;color:#fff;background:var(--btn);cursor:pointer;transition:.15s;}.pill:hover{filter:brightness(1.12);}.pill.disabled{background:var(--btn-dis);color:#b3b3bd;cursor:not-allowed;pointer-events:none;}.pill.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--lav-bd);}.pill.cta{background:linear-gradient(135deg,#5b63e6,#3a44b8);font-size:17px;padding:16px 48px;}
+.koji-launch{position:fixed;left:22px;bottom:22px;width:54px;height:54px;border:none;cursor:pointer;background:none;z-index:40;}.koji-launch .gem{width:54px;height:54px;background:linear-gradient(135deg,#7c83f3,#4a52d6);transform:rotate(45deg);border-radius:14px;box-shadow:0 6px 18px rgba(74,82,214,.4);}
+.tutor{position:fixed;top:0;bottom:0;left:0;width:340px;background:#fff;border-right:1px solid #eee;z-index:50;transform:translateX(-105%);transition:transform .3s cubic-bezier(.4,1,.4,1);display:flex;flex-direction:column;}.tutor.open{transform:none;}
+.tutor .thead{display:flex;align-items:center;gap:10px;padding:18px 18px 12px;border-bottom:1px solid #f2f2f7;}.tutor .thead .mini{width:26px;height:26px;background:linear-gradient(135deg,#7c83f3,#4a52d6);transform:rotate(45deg);border-radius:7px;}.tutor .thead b{font-size:15px;font-weight:600;}.tutor .tclose{margin-left:auto;border:none;background:none;font-size:20px;color:var(--muted);cursor:pointer;}
+.msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}.msg{max-width:85%;font-size:14px;line-height:1.5;padding:10px 13px;border-radius:14px;}.msg.bot{background:#eef0fb;color:#3a44b8;border-bottom-left-radius:4px;align-self:flex-start;}.msg.me{background:var(--lav-bg);color:var(--lav-deep);border-bottom-right-radius:4px;align-self:flex-end;}
+.quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px;}.quick button{border:1.5px solid var(--lav-bd);background:#fff;border-radius:99px;padding:7px 13px;font:inherit;font-size:12.5px;color:var(--lav-deep);cursor:pointer;}
+.tinput{display:flex;gap:8px;padding:12px 16px;border-top:1px solid #f2f2f7;}.tinput input{flex:1;border:1.5px solid var(--lav-bd);border-radius:99px;padding:10px 14px;font:inherit;font-size:13.5px;}.tinput input:focus{outline:none;border-color:var(--indigo);}.tinput button{border:none;background:var(--indigo);color:#fff;border-radius:99px;width:40px;cursor:pointer;font-size:16px;}
+@media(max-width:560px){.cards4{grid-template-columns:1fr;}.tutor{width:88%;}.pill{padding:14px 28px;}}
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="/static/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/static/brand/favicon-16.png" />
+<link rel="apple-touch-icon" href="/static/brand/apple-touch-icon.png" />
+<link rel="manifest" href="/static/brand/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+<h2 class="sr-only">Ship a real business agent — playbook format, packaging, measuring time saved.</h2>
+<header>
+  <button class="x-btn" onclick="window.location.href=(window.LMS?'/dashboard':'about:blank')">&times;</button>
+  <div class="bar"><i id="barfill"></i></div><div class="dots" id="dots"></div>
+  <div class="streak"><span id="gems">0</span></div>
+</header>
+<main><div class="stage" id="stage"></div></main>
+<footer><div class="actions" id="actions"></div></footer>
+<button class="koji-launch" id="kojiLaunch"><span class="gem"></span></button>
+<aside class="tutor" id="tutor">
+  <div class="thead"><span class="mini"></span><div><b>TrigunAI guide</b><small>final module — ship it</small></div><button class="tclose" id="tclose">&times;</button></div>
+  <div class="msgs" id="msgs"></div><div class="quick" id="quick"></div>
+  <div class="tinput"><input id="tin" placeholder="Ask your guide…"/><button id="tsend">&rarr;</button></div>
+</aside>
+<script>
+const STEPS=[
+  {type:'intro',art:'📦 → 💼',
+   prompt:'Ship a real business agent',
+   sub:"This is the final module. Everything you've built — tools, memory, planning, guardrails, multi-agent, deployment — comes together here. We're not shipping a demo. We're shipping a business asset that saves measurable time, runs without supervision, and earns trust.",
+   cta:'Let\'s finish strong'},
+
+  {type:'mcq',
+   prompt:'What makes an agent a "business asset" rather than a "tech demo"?',
+   sub:'',
+   options:[
+     {t:'It uses the latest model.'},
+     {t:'It runs automatically on schedule, handles failure gracefully, and saves measurable time for a real person — week after week without human babysitting.'},
+     {t:'It was built in under a weekend.'}
+   ],
+   correct:1,
+   why:'A tech demo impresses once. A business asset compounds. The test: "Is this saving someone real time every week, reliably, without me touching it?" If the agent needs manual restarts, produces inconsistent quality, or only works when you\'re watching — it\'s still a demo. The business-asset threshold requires: scheduled execution, failure recovery, consistent output quality, and measurable impact.',
+   hints:['Think about what makes software "production" vs "prototype" in any context.','Would you be comfortable if this ran while you were asleep?']},
+
+  {type:'reveal',
+   prompt:'The 5-section agent playbook — every business agent ships with one.',
+   sub:'Tap each card. This is the document your agent needs before it\'s "done".',
+   cards:[
+     {em:'🎯',h:'What it does', b:'One sentence: the job the agent does, the trigger, and the output. Example: "Every morning at 7am, reads my inbox, extracts tasks and decisions, and posts a prioritised brief to Slack #deepak-brief."'},
+     {em:'🛠️',h:'Tools & integrations', b:'List every external system the agent touches (Gmail, Sheets, Notion, Slack, etc.), what permissions it needs, and what it can and cannot do with each. A future maintainer should be able to set this up cold from this list.'},
+     {em:'🛡️',h:'Guardrails', b:'What the agent validates before acting. What triggers human approval. What the failure alert looks like and where it goes. What the budget cap is. If these are undocumented, the next person to touch it will remove them.'},
+     {em:'📊',h:'Success metric', b:'How you measure that the agent is working. Must be in concrete time: "Saves Deepak 45 min/day reviewing inbox. Measured as: number of action items missed per week vs baseline." Without this, "it seems to work" is the only signal.'},
+     {em:'🔁',h:'Handoff & maintenance', b:'Where the code lives. How to restart it if it breaks. Who to alert. How to update the prompt. If you\'re the only person who can maintain this, it\'s a liability, not an asset.'}
+   ]},
+
+  {type:'mcq',
+   prompt:'You built a lead-enrichment agent. It\'s been running for 2 weeks. How do you prove it\'s working to your CEO?',
+   sub:'',
+   options:[
+     {t:'Show them the code.'},
+     {t:'Show them: X leads enriched per week, Y minutes saved vs manual process, Z% accuracy on the fields it fills (verified spot-check vs ground truth).'},
+     {t:'Show them the agent\'s Slack notifications.'}
+   ],
+   correct:1,
+   why:'Business stakeholders buy outcomes, not features. "The agent runs" is not a business metric. The right proof: volume (how many records/week), time saved (compare to how long the manual task took × number of times/week), and quality (spot-check 10% of outputs for accuracy). This data is also what tells YOU if the agent is actually improving over time or quietly degrading.',
+   hints:['If you had to justify this agent\'s existence in a 30-second executive update, what would you say?','What would a business owner actually care about: the tech, or the outcome?']},
+
+  {type:'multi',
+   prompt:'Which of these belong in every agent\'s "success metric" section?',
+   sub:'Select all that apply.',
+   chips:['Time saved per week vs manual baseline','Model name and version used','Number of successful runs per week','Failure rate (failed runs / total runs)','The developer\'s name','Quality spot-check: % of outputs verified correct'],
+   correct:[0,2,3,5],
+   why:'Time saved, run volume, failure rate, and quality spot-check are the four operational metrics that actually tell you if the agent is a net positive. Model version and developer name belong in the technical docs, not the success metric section.',
+   hints:['Which metrics would you put on a dashboard to know if this agent is healthy?','What would trigger you to investigate the agent? Low quality? High failure rate? Drop in volume?']},
+
+  {type:'mcq',
+   prompt:'You\'re handing your agent to a colleague who\'s never seen it before. What\'s the single most important thing to include in the handoff?',
+   sub:'',
+   options:[
+     {t:'The complete git history.'},
+     {t:'The 5-section playbook + the restart / recovery procedure in plain English.'},
+     {t:'The full system prompt verbatim.'}
+   ],
+   correct:1,
+   why:'Git history and system prompts are useful but won\'t help someone who doesn\'t know why the agent exists, what systems it touches, or what to do when it fails. The restart/recovery procedure is the highest-value piece — it\'s the thing that turns a 3 AM alert from a crisis into a 5-minute fix. Write it as if the reader has never seen the code.',
+   hints:['If the agent breaks at 2 AM and your colleague is the on-call, what do they need?','The most valuable documentation is the thing that prevents a 3 AM call to you.']},
+
+  {type:'reflect',capture:true,
+   prompt:'Write your agent\'s one-sentence pitch.',
+   sub:'The final capstone question. This is what you\'ll present on Demo Day.',
+   fields:[
+     {k:'agent_pitch',label:'Complete this sentence: "My agent [does what] [for whom] [how often] — saving [how much time] per [week/month]."',ph:'e.g. My agent reads my Gmail every morning, extracts tasks and decisions, and posts a brief to Slack — saving me 45 min/day of inbox review.'},
+     {k:'success_metric',label:'How will you measure it\'s working? (be concrete)',ph:'e.g. Track: tasks correctly extracted / total tasks in inbox. Target: >85% accuracy. Measure weekly.'}
+   ]},
+
+  {type:'done'}
+];
+
+const $=s=>document.querySelector(s);
+const stage=$('#stage'),actions=$('#actions');
+let idx=0,gems=0,perfect=true;
+function lms(p){return(window.LMS&&window.LMS.api?window.LMS.api:'')+p;}
+let stepStart=Date.now(), attemptNo=1;
+function lmsEvent(correct,extra){ if(!window.LMS) return; var s=(typeof STEPS!=='undefined'&&STEPS[idx])?STEPS[idx]:{}; var body=Object.assign({step:idx,type:s.type||'',concept:s.concept||'',correct:!!correct,attempt_no:attemptNo,latency_ms:Date.now()-stepStart},extra||{}); fetch(lms('/progress'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).catch(function(){}); }
+function markWrong(extra){ perfect=false; lmsEvent(false,extra); attemptNo++; }
+function lmsIntervention(kind){ lmsEvent(false,{action:(kind==='tutor'?'tutor_ask':'hint'),intervention:kind}); }
+function lmsProgress(){if(!window.LMS)return;fetch(lms('/progress'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({step:idx,correct:true})}).catch(()=>{});}
+function lmsComplete(){if(!window.LMS)return Promise.resolve(null);return fetch(lms('/complete'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({score:gems,perfect:perfect})}).then(r=>r.json()).catch(()=>null);}
+function lmsCapture(key,value){if(!window.LMS||!value)return;fetch('/api/profile/capture',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key,value,source:'lesson'})}).catch(()=>{});}
+let work={},answered=false;
+function buildDots(){const d=$('#dots');d.innerHTML='';STEPS.forEach(()=>{const s=document.createElement('span');d.appendChild(s);});}
+function progress(){$('#barfill').style.width=(idx/(STEPS.length-1))*100+'%';[...$('#dots').children].forEach((s,i)=>s.classList.toggle('on',i<=idx));$('#gems').textContent=gems;}
+function go(n){idx=n;answered=false;work={};stepStart=Date.now();attemptNo=1;render();}
+function nextStep(){if(idx<STEPS.length-1)go(idx+1);}
+function award(n){gems+=n;$('#gems').textContent=gems;}
+function setActions(h){actions.innerHTML=h;}
+function primary(label,fn,disabled){const b=document.createElement('button');b.className='pill'+(disabled?' disabled':'');b.textContent=label;if(!disabled)b.onclick=fn;return b;}
+function startOver(fn){const b=document.createElement('button');b.className='startover';b.innerHTML='&#8635; Start over';b.onclick=fn;return b;}
+function feedback(ok,text){let fb=$('#fb');if(!fb){fb=document.createElement('div');fb.id='fb';fb.className='fb';stage.appendChild(fb);}fb.className='fb show '+(ok?'ok':'no');fb.innerHTML=text;}
+function showWhy(text){feedback(true,'<b>Here\'s why:</b><br>'+text);setActions('');actions.appendChild(primary('Got it',()=>{award(10);nextStep();}));}
+function render(){const step=STEPS[idx];progress();stage.innerHTML='';setActions('');({intro:rIntro,mcq:rMcq,reveal:rReveal,multi:rMulti,reflect:rReflect,done:rDone})[step.type](step);}
+function head(step){if(step.art)stage.insertAdjacentHTML('beforeend',`<div class="intro-art">${step.art}</div>`);stage.insertAdjacentHTML('beforeend',`<p class="prompt">${step.prompt}</p>`);if(step.sub)stage.insertAdjacentHTML('beforeend',`<p class="sub">${step.sub}</p>`);}
+function rIntro(step){head(step);actions.appendChild(primary(step.cta||'Continue',nextStep));}
+function rMcq(step){head(step);const wrap=document.createElement('div');wrap.className='opts';step.options.forEach((o,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="tick"></span><span>${o.t}</span>`;b.onclick=()=>{if(answered)return;work.sel=i;[...wrap.children].forEach(c=>c.classList.remove('sel'));b.classList.add('sel');renderMcqActions(step,wrap);};wrap.appendChild(b);});stage.appendChild(wrap);renderMcqActions(step,wrap);}
+function renderMcqActions(step,wrap){setActions('');actions.appendChild(primary('Check',()=>checkMcq(step,wrap),work.sel===undefined));}
+function checkMcq(step,wrap){answered=true;const ok=work.sel===step.correct;[...wrap.children].forEach((c,i)=>{if(i===step.correct)c.classList.add('correct');else if(i===work.sel)c.classList.add('wrong');else c.classList.add('dim');});if(ok){award(10);lmsProgress();feedback(true,'<b>Correct.</b>');setActions('');const wb=primary('Why?',()=>showWhy(step.why));wb.classList.add('ghost');wb.style.padding='8px 18px';wb.style.fontSize='14px';const sk=primary('Continue',()=>{award(10);nextStep();});sk.classList.add('ghost');sk.style.padding='8px 18px';sk.style.fontSize='14px';const w2=document.createElement('div');w2.style='display:flex;gap:10px;';w2.appendChild(wb);w2.appendChild(sk);actions.appendChild(w2);}else{markWrong();feedback(false,'Not quite.');nudge(step,true);setActions('');actions.appendChild(primary('Continue',()=>{feedback(true,'<b>Why:</b> '+step.why);setActions('');actions.appendChild(primary('Got it',nextStep));}));}}
+function rReveal(step){head(step);const grid=document.createElement('div');grid.className='cards4';let opened=0;step.cards.forEach(c=>{const card=document.createElement('div');card.className='pcard';card.innerHTML=`<h4><span class="em">${c.em}</span>${c.h}</h4><div class="body">${c.b}</div>`;card.onclick=()=>{if(!card.classList.contains('opened')){card.classList.add('opened');opened++;if(opened===step.cards.length)enableContinue();}};grid.appendChild(card);});stage.appendChild(grid);const cont=primary('Continue',nextStep,true);actions.appendChild(cont);function enableContinue(){cont.classList.remove('disabled');cont.onclick=nextStep;}}
+function rMulti(step){head(step);work.multi=new Set();const wrap=document.createElement('div');wrap.className='tray';step.chips.forEach((c,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=c;b.onclick=()=>{if(answered)return;if(work.multi.has(i)){work.multi.delete(i);b.classList.remove('sel');}else{work.multi.add(i);b.classList.add('sel');}renderMultiActions(step);};wrap.appendChild(b);});stage.appendChild(wrap);work._mwrap=wrap;renderMultiActions(step);}
+function renderMultiActions(step){setActions('');actions.appendChild(startOver(()=>go(idx)));actions.appendChild(primary('Check',()=>checkMulti(step),work.multi.size===0));}
+function checkMulti(step){const chosen=[...work.multi].sort((a,b)=>a-b),correct=[...step.correct].sort((a,b)=>a-b);const ok=chosen.length===correct.length&&chosen.every((v,k)=>v===correct[k]);if(ok){answered=true;[...work._mwrap.children].forEach((b,i)=>{b.classList.remove('sel');if(step.correct.includes(i))b.classList.add('ok');else b.classList.add('bad');});award(15);lmsProgress();feedback(true,'<b>Exactly right.</b>',step.why);setActions('');actions.appendChild(primary('Continue',()=>{award(10);nextStep();}));}else{markWrong();feedback(false,'Not quite — try again.');nudge(step,true);setActions('');actions.appendChild(startOver(()=>go(idx)));actions.appendChild(primary('Check',()=>checkMulti(step)));}}
+function rReflect(step){head(step);step.fields.forEach(f=>{const el=f.k==='agent_pitch'?'textarea':'input';const d=document.createElement('div');d.className='field';d.innerHTML=`<label>${f.label}</label><${el} id="f_${f.k}" placeholder="${f.ph}"></${el}>`;stage.appendChild(d);});const inputs=step.fields.map(f=>$('#f_'+f.k));const btn=document.createElement('button');btn.className='pill disabled';btn.textContent='Submit my pitch';btn.onclick=()=>{if(btn.classList.contains('disabled'))return;if(step.capture)inputs.forEach((i,ix)=>lmsCapture(step.fields[ix].k,i.value.trim()));feedback(true,'<b>Pitch saved.</b> This is your Demo Day opener. See you Friday.');setActions('');actions.appendChild(primary('Finish course →',()=>{award(25);nextStep();}));};actions.appendChild(btn);inputs.forEach(i=>i.addEventListener('input',()=>{btn.classList.toggle('disabled',!inputs.every(x=>x.value.trim().length>8));}));}
+function rDone(){progress();stage.innerHTML=`<div class="done-wrap">
+<div class="done-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+<p class="prompt" style="font-size:24px;">Course complete.</p>
+<div class="gem-count">${gems} gems</div>
+<p class="sub">You went from "what is an agent?" to building one that runs in production, saves real time, and earns trust — without handholding.</p>
+<div style="text-align:left;display:inline-block;margin:18px 0;">
+<div class="crow met"><span class="ic">✓</span>M1 What is an agent</div>
+<div class="crow met"><span class="ic">✓</span>M2 First tool-calling agent</div>
+<div class="crow met"><span class="ic">✓</span>M3 Tools and integrations</div>
+<div class="crow met"><span class="ic">✓</span>M4 Memory and context</div>
+<div class="crow met"><span class="ic">✓</span>M5 Planning and multi-step</div>
+<div class="crow met"><span class="ic">✓</span>M6 Reliability and guardrails</div>
+<div class="crow met"><span class="ic">✓</span>M7 Multi-agent systems</div>
+<div class="crow met"><span class="ic">✓</span>M8 Deploy your agent</div>
+<div class="crow met"><span class="ic">✓</span>M9 Ship a real business agent</div>
+</div>
+<p class="sub">Demo Day is your stage. Show the agent. Show the time saved. Show the playbook.</p>
+</div>`;
+setActions('');
+actions.appendChild(startOver(()=>{gems=0;perfect=true;go(0);}));
+const a=document.createElement('a');a.href=(window.LMS?'/dashboard':'#');a.className='pill cta';a.textContent='To my dashboard →';actions.appendChild(a);
+lmsComplete().then(d=>{if(window.celebrate)celebrate('course',{text:'Course complete! ⭐'});});
+}
+const tutor=$('#tutor'),msgs=$('#msgs'),quick=$('#quick');let convo=[];
+$('#kojiLaunch').onclick=()=>openTutor();$('#tclose').onclick=()=>tutor.classList.remove('open');
+function openTutor(){tutor.classList.add('open');if(!msgs.children.length){const g='Ask me anything about shipping your agent or the playbook format.';bot(g);convo.push({role:'assistant',content:g});}renderQuick();$('#tin').focus();}
+function bot(t){const m=document.createElement('div');m.className='msg bot';m.textContent=t;msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight;}
+function me(t){const m=document.createElement('div');m.className='msg me';m.textContent=t;msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight;}
+function botTyping(){const m=document.createElement('div');m.className='msg bot';m.textContent='…';m.style.opacity='.6';msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight;return m;}
+function problemContext(){const s=STEPS[idx];return s?`Step: ${s.type}. Prompt: "${s.prompt}".`:'';}
+function fallbackHint(){const h=(STEPS[idx]&&STEPS[idx].hints)||[];return h[0]||'What part is unclear?';}
+async function askGuide(text,opts){opts=opts||{}; lmsIntervention(opts.auto?'hint':'tutor');if(!opts.auto)me(text);convo.push({role:'user',content:text});const typing=botTyping();let reply=null;try{if(window.LMS){const res=await fetch('/api/tutor/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({history:convo,problem:problemContext()})});const d=await res.json();reply=d.reply;}}catch(e){}typing.remove();const out=reply||fallbackHint();bot(out);convo.push({role:'assistant',content:out});}
+function nudge(step,auto){if(auto)tutor.classList.add('open');renderQuick();askGuide('I answered wrong. Socratic hint please.',{auto:true});}
+function renderQuick(){quick.innerHTML='';['Why wrong?','Help me phrase my pitch','I\'m stuck'].forEach(q=>{const b=document.createElement('button');b.textContent=q;b.onclick=()=>askGuide(q==='I\'m stuck'?"I'm stuck, smallest next step?":'Ask me: '+q);quick.appendChild(b);});}
+$('#tsend').onclick=sendTin;$('#tin').addEventListener('keydown',e=>{if(e.key==='Enter')sendTin();});
+function sendTin(){const v=$('#tin').value.trim();if(!v)return;$('#tin').value='';askGuide(v);}
+buildDots();render();
+</script>
+</body>
+</html>

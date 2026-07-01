@@ -1,0 +1,145 @@
+{
+  "slug": "mus-lyrics",
+  "title": "Lyrics to song",
+  "steps": [
+    { "type": "intro",
+      "art": "✍️ → 🎤",
+      "prompt": "You wrote some lyrics. How do they become an actually-sung track?",
+      "sub": "A vocal-capable model can sing your words — but only if you steer it. By the end you'll know how to write a prompt that controls style, genre, mood and BPM, and how to hand lyrics over so they come back sung.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "You type just \"make a song\" and hit go. What do you most likely get?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Exactly the song in your head — the model reads your mind." },
+        { "t": "A generic, random track — fine quality, but not in any style you chose." },
+        { "t": "An error, because every model needs lyrics to run." }
+      ],
+      "correct": 1,
+      "why": "A vague prompt gives a vague result. The model will produce something listenable, but with no genre, mood, or tempo specified, it just guesses — so you get a generic track that's nobody's vision in particular. Steering is what makes it yours. (And no — lyrics are optional; you can generate instrumentals.)",
+      "hints": [
+        "The model can't read your mind. If you don't say the style, who chooses it?",
+        "Vague in, vague out. What's missing from 'make a song'?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The 4 dials a good prompt sets.",
+      "sub": "Tap each card. These are the knobs that turn 'a song' into YOUR song.",
+      "cards": [
+        { "em": "🎸", "h": "Genre / Style", "b": "The lane: lofi, pop, ghazal, EDM, acoustic ballad. Sets the whole sound." },
+        { "em": "💗", "h": "Mood", "b": "The feeling: dreamy, dark, hopeful, energetic. Shapes melody and energy." },
+        { "em": "🥁", "h": "BPM / Tempo", "b": "Beats per minute — speed. ~70 = chill study, ~128 = dance floor." },
+        { "em": "🎹", "h": "Instruments", "b": "What you hear: piano, 808s, sitar, strings. Defines the texture." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Sort each phrase: which dial is it setting?",
+      "sub": "Tap a phrase, then tap the dial it controls.",
+      "buckets": ["🎸 Genre", "💗 Mood", "🥁 BPM", "🎹 Instruments"],
+      "items": [
+        { "t": "\"lofi hip-hop\"", "b": 0 },
+        { "t": "\"melancholic, rainy-night feel\"", "b": 1 },
+        { "t": "\"85 BPM\"", "b": 2 },
+        { "t": "\"warm Rhodes piano and soft vinyl crackle\"", "b": 3 },
+        { "t": "\"acoustic ballad\"", "b": 0 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "A number with 'BPM' is always the tempo dial.",
+        "A named lane (lofi, ballad) is genre; a named sound (piano, crackle) is an instrument."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Which prompt will give you the most controlled, repeatable result?",
+      "sub": "Same song idea, three ways of asking.",
+      "options": [
+        { "t": "\"a sad song\"" },
+        { "t": "\"melancholic acoustic ballad, 75 BPM, soft fingerpicked guitar and strings, intimate vocal\"" },
+        { "t": "\"make it really good and emotional and amazing please\"" }
+      ],
+      "correct": 1,
+      "why": "The middle prompt sets every dial — genre, mood, BPM, instruments and vocal feel — so the model has clear targets and you can reproduce or tweak it. 'A sad song' is too vague, and piling on adjectives like 'amazing' gives the model nothing concrete to act on. Specific beats enthusiastic.",
+      "hints": [
+        "Which one names the genre AND the tempo AND the instruments?",
+        "'Amazing' isn't a setting the model can dial. Concrete musical terms are."
+      ] },
+
+    { "type": "order",
+      "prompt": "You've written lyrics. Tap the steps to turn them into a sung track.",
+      "sub": "This is the lyrics-to-song flow end to end.",
+      "chips": ["Write a style prompt (genre, mood, BPM)", "Hand BOTH the lyrics and the style to a vocal-capable model", "Write or paste your lyrics", "The model sings the lyrics and returns audio"],
+      "correct": [2, 0, 1, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You need the words AND the style before you can hand them over together.",
+        "The singing happens LAST — it's the model's output, not your input."
+      ] },
+
+    { "type": "tf",
+      "prompt": "True or false — about getting lyrics sung.",
+      "sub": "Tap True or False for each, then check.",
+      "statements": [
+        { "t": "Lyrics alone are enough — you don't need to tell the model a style.", "answer": false,
+          "why": "No — lyrics give the WORDS, but without a style prompt the model guesses the genre, mood and tempo. You hand over both: lyrics + style." },
+        { "t": "You need a vocal-capable model (like ACE-Step) for it to actually SING your words.", "answer": true,
+          "why": "Right — an instrumental-only model won't sing. A vocal-capable model is what turns your written lines into a sung performance." },
+        { "t": "Structure tags like [Verse] and [Chorus] in your lyrics help the model phrase the song.", "answer": true,
+          "why": "Yes — marking sections tells the model where verses, choruses and hooks go, so it phrases and shapes the song the way you intended." },
+        { "t": "Once generated, the BPM and genre are locked forever and can never be changed.", "answer": false,
+          "why": "No — change the prompt and regenerate. The dials are exactly what you tweak between takes to hunt for the version you want." }
+      ],
+      "hints": [
+        "Remember: lyrics = words, prompt = style. Do you really only need one?",
+        "If the prompt is just text you can edit, can you re-run it differently?"
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk a real lyrics-to-song run.",
+      "sub": "Pick the next move at each step. The log fills in as you go.",
+      "goal": "Turn your written chorus into an upbeat pop track that sings it.",
+      "turns": [
+        { "situation": "You have a chorus written down but no style chosen. You hit generate with ONLY the lyrics.",
+          "q": "What's the risk?",
+          "options": ["The model guesses a random genre/tempo — it may come back as a slow ballad, not pop", "It will perfectly match the pop song in your head", "It refuses to run"],
+          "correct": 0, "log": "⚠️ Lyrics only → style is a guess" },
+        { "situation": "You add a style prompt to steer it.",
+          "q": "Which prompt actually controls the result?",
+          "options": ["\"upbeat pop, 120 BPM, bright synths, energetic female vocal\"", "\"something cool\"", "\"a song with words\""],
+          "correct": 0, "log": "📝 Style → upbeat pop, 120 BPM, bright synths" },
+        { "situation": "You mark your lyrics with [Verse] and [Chorus] tags and hand both over.",
+          "q": "Why add the section tags?",
+          "options": ["So the model phrases verses and the chorus correctly", "Tags are decoration and do nothing", "To make the file bigger"],
+          "correct": 0, "log": "🏷️ Lyrics tagged [Verse]/[Chorus] + style → model" },
+        { "situation": "The model returns a track. It's pop and on-tempo, but the chorus melody is a bit flat.",
+          "q": "What's the natural next move?",
+          "options": ["Tweak the prompt (e.g. 'soaring chorus') and regenerate", "Accept it — output can never change", "Switch to a non-vocal model"],
+          "correct": 0, "log": "🔁 Tweak prompt → regenerate · 🎤 sung pop track" }
+      ],
+      "hints": [
+        "Lyrics steer the words; the prompt steers the sound. You need both.",
+        "Between takes, the prompt is your steering wheel — adjust and re-run."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Sketch the prompt for the track you want to make — bring real words.",
+      "fields": [
+        { "k": "goal", "label": "Your style prompt — genre, mood, BPM, instruments:", "ph": "e.g. dreamy lofi, 80 BPM, warm Rhodes piano, mellow night mood" },
+        { "k": "interest", "label": "A line of lyrics you'd want sung (or 'instrumental'):", "ph": "e.g. 'city lights blur as the rain comes down' — or just 'instrumental'" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Tap ALL the things a good music prompt should specify.",
+      "sub": "Some belong in the prompt; some are the wrong stage entirely.",
+      "chips": ["Genre / style", "Mood", "BPM / tempo", "Instruments", "The exact MP3 file size", "Your Wi-Fi password"],
+      "correct": [0, 1, 2, 3],
+      "why": "A strong prompt sets genre, mood, BPM and instruments — the musical dials the model can act on. File size is decided later at export, and your Wi-Fi password obviously has nothing to do with steering the music.",
+      "hints": [
+        "Think back to the 4 dial cards.",
+        "If it isn't a MUSICAL choice the model can act on, it doesn't belong in the prompt."
+      ] },
+
+    { "type": "done" }
+  ]
+}

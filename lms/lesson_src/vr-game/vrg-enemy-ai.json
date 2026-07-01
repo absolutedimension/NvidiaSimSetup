@@ -1,0 +1,151 @@
+{
+  "slug": "vrg-enemy-ai",
+  "title": "Enemy AI",
+  "steps": [
+    { "type": "intro",
+      "art": "🧟 → 🎯",
+      "prompt": "How do you make an enemy that isn't boring?",
+      "sub": "An enemy that just stands there is a prop. Real game enemies switch between behaviors and chase you across the room. By the end you'll know the state machine + pathfinding combo and trace an enemy from idle to attack.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "What's the simplest way to give an enemy 'intelligence' — different behavior at different times?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "A bigger, more realistic 3D model" },
+        { "t": "A state machine — a small set of behaviors (idle, chase, attack) with rules to switch between them" },
+        { "t": "Faster movement speed" }
+      ],
+      "correct": 1,
+      "why": "Most game-enemy 'AI' is a state machine: a handful of named behaviors and the rules that move between them. It's simple, predictable, and easy to debug — far more useful than a fancy model or raw speed, which don't change WHAT the enemy decides to do.",
+      "hints": [
+        "It's about behavior switching, not how the enemy looks or how fast it runs.",
+        "Think a small set of named modes — idle, chase, attack — with rules to flip between them."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "A basic enemy = 3 states + the glue.",
+      "sub": "Tap each card. These three states cover most simple enemies.",
+      "cards": [
+        { "em": "😴", "h": "Idle", "b": "Default. Stand or patrol, watch for the player. Switch to Chase when the player gets close enough." },
+        { "em": "🏃", "h": "Chase", "b": "Pathfind toward the player's position. Switch to Attack in range, back to Idle if the player escapes." },
+        { "em": "⚔️", "h": "Attack", "b": "Swing / shoot at the player. Return to Chase if the player steps out of attack range." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Sort each behavior into the state where it belongs.",
+      "sub": "Tap a behavior, then its state.",
+      "buckets": ["😴 Idle", "🏃 Chase", "⚔️ Attack"],
+      "items": [
+        { "t": "Patrol back and forth, scanning for the player", "b": 0 },
+        { "t": "Run a path toward the player's current spot", "b": 1 },
+        { "t": "Swing a club when the player is within reach", "b": 2 },
+        { "t": "Wait quietly until something comes near", "b": 0 },
+        { "t": "Recompute the route as the player keeps moving", "b": 1 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "If the enemy isn't reacting to you yet, it's idle.",
+        "Moving toward you = chase. Hitting you = attack."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "In Chase, the enemy needs to walk to you — but there's a wall between you. How does it get around it?",
+      "sub": "Walking straight at the player would mean head-butting the wall.",
+      "options": [
+        { "t": "Pathfinding — it computes a route around obstacles (e.g. a NavMesh)" },
+        { "t": "It teleports next to the player" },
+        { "t": "It waits until the player walks back into the open" }
+      ],
+      "correct": 0,
+      "why": "Chase needs pathfinding: Unity bakes a NavMesh (a map of walkable space), and the enemy asks it for a route that goes AROUND the wall to reach you. Moving in a straight line would just jam it into geometry; teleporting would feel cheap and break immersion.",
+      "hints": [
+        "How does the enemy know which way is walkable around an obstacle?",
+        "Unity bakes a 'walkable map' and the enemy follows a route on it."
+      ] },
+
+    { "type": "tf",
+      "prompt": "State machine + pathfinding — true or false?",
+      "sub": "Tap each, then check all at once.",
+      "statements": [
+        { "t": "An enemy can be in two states (idle AND attack) at the same time.", "answer": false,
+          "why": "No — a state machine is in exactly ONE state at a time. That's what keeps behavior clear and bug-free: it's idle, OR chasing, OR attacking, never two at once." },
+        { "t": "The rules that move the enemy between states are called transitions.", "answer": true,
+          "why": "Right — a transition is the condition that flips one state to another, like 'player within 8 m → switch Idle to Chase'. The states are the behaviors; transitions are the glue." },
+        { "t": "Pathfinding is only needed in the Attack state.", "answer": false,
+          "why": "No — pathfinding lives in Chase, where the enemy has to travel to you around obstacles. In Attack it's usually already next to you and just swinging." }
+      ],
+      "hints": [
+        "How many states is a state machine in at once?",
+        "Which state involves actually traveling across the room?"
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the enemy's life in order, from spawn to landing a hit.",
+      "sub": "This is one full pass through the state machine.",
+      "chips": [
+        "Attack: player in reach → swing",
+        "Idle: patrol and watch",
+        "Chase: pathfind toward the player",
+        "Transition: player gets close → leave Idle"
+      ],
+      "correct": [1, 3, 2, 0],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "Every enemy starts in its default behavior before it notices you.",
+        "Idle → (player near) → Chase → (in range) → Attack."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk a goblin through its state machine as the player sneaks up.",
+      "sub": "Pick the enemy's next decision at each step. The AI log fills in as you go.",
+      "goal": "Goblin: idle → notice player → chase around a crate → attack.",
+      "turns": [
+        { "situation": "The goblin spawns and patrols a corridor. No player in sight yet.",
+          "q": "What state is it in, and what is it doing?",
+          "options": ["Idle — patrol and scan for the player", "Attack — swing at nothing", "Chase — run at full speed at a wall"],
+          "correct": 0, "log": "😴 Idle → patrolling, scanning" },
+        { "situation": "The player steps within 8 m. The 'player near' transition fires.",
+          "q": "What does the state machine do?",
+          "options": ["Switch to Chase and request a path to the player", "Stay idle forever", "Jump straight to Attack from across the room"],
+          "correct": 0, "log": "🏃 Transition → Chase, path requested" },
+        { "situation": "There's a crate directly between the goblin and the player.",
+          "q": "How does Chase handle the crate?",
+          "options": ["Follow the NavMesh path that routes around the crate", "Walk straight into the crate and get stuck", "Give up and go back to idle"],
+          "correct": 0, "log": "🧭 Chase → path routes around the crate" },
+        { "situation": "The goblin reaches melee range of the player.",
+          "q": "What's the final transition?",
+          "options": ["Switch to Attack and swing", "Keep chasing past the player", "Return to spawn"],
+          "correct": 0, "log": "⚔️ Transition → Attack, swing lands" }
+      ],
+      "hints": [
+        "Idle until you're noticed, chase (with pathfinding) to reach you, attack in range.",
+        "Each arrow in the log is a transition firing because a condition became true."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Your enemy chases you forever — even after you run far away and break line of sight. What's missing?",
+      "sub": "Think about which part of the state machine is incomplete.",
+      "options": [
+        { "t": "A transition OUT of Chase — e.g. 'player too far / lost → back to Idle'" },
+        { "t": "A more detailed enemy model" },
+        { "t": "Higher movement speed" }
+      ],
+      "correct": 0,
+      "why": "States need exits, not just entrances. If Chase has no transition back to Idle, the enemy is trapped chasing forever. Adding a rule like 'lost the player for 5 s → return to Idle' completes the loop. Models and speed don't fix missing transitions.",
+      "hints": [
+        "It can ENTER chase but can never LEAVE. What kind of rule is missing?",
+        "Every state needs a way out, not just a way in."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours — design YOUR enemy.",
+      "sub": "Not graded. We'll use this to shape later spawning and difficulty examples.",
+      "fields": [
+        { "k": "goal", "label": "Describe one enemy in your game and its 3 states:", "ph": "e.g. a drone: idle = hover and scan, chase = fly toward me, attack = fire a laser" },
+        { "k": "interest", "label": "What's the transition that makes it START chasing the player?", "ph": "e.g. when I come within 10 m, or when I shoot near it" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

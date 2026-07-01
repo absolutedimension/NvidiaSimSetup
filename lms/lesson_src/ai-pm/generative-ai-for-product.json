@@ -1,0 +1,143 @@
+{
+  "slug": "generative-ai-for-product",
+  "title": "Generative AI for product",
+  "steps": [
+    { "type": "intro",
+      "art": "🏷️ → ✍️",
+      "prompt": "When should your feature GENERATE something — and when should it just decide?",
+      "sub": "Generative AI writes, draws, codes, and speaks — but it also hallucinates, forgets, and never gives the same answer twice. By the end you'll know generative vs discriminative, the LLM traits you must design around, how to tame hallucination, and the cheapest build rung that gets the job done.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "What's the core difference between a discriminative and a generative model?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Discriminative models are bigger; generative models are smaller." },
+        { "t": "Discriminative models PRODUCE a label (classify/score); generative models PRODUCE new content by modelling the data distribution." },
+        { "t": "Discriminative models run in the cloud; generative models run on-device." }
+      ],
+      "correct": 1,
+      "why": "A discriminative model answers 'which bucket / what score?' — spam-or-not, fraud risk 0.92, this image is a cat. A generative model answers 'make me a new one' — write the reply, draw the image, finish the code. One DECIDES about existing input; the other PRODUCES new output. Size and where it runs are irrelevant to the distinction.",
+      "hints": [
+        "One picks a LABEL for what you give it. The other CREATES something that wasn't there.",
+        "Think 'classify/score' versus 'write/draw/code'."
+      ] },
+
+    { "type": "classify",
+      "prompt": "Sort each task: does it DISCRIMINATE (label/score) or GENERATE (produce content)?",
+      "sub": "Tap a task, then a bin.",
+      "buckets": ["🏷️ Discriminative", "✍️ Generative"],
+      "items": [
+        { "t": "Flag a support ticket as 'urgent' or 'normal'", "b": 0 },
+        { "t": "Draft a reply to the support ticket", "b": 1 },
+        { "t": "Score a loan application's default risk", "b": 0 },
+        { "t": "Write product-description copy for a new SKU", "b": 1 },
+        { "t": "Detect whether an image contains a defect", "b": 0 },
+        { "t": "Generate alt-text describing the image", "b": 1 }
+      ],
+      "constraints": ["All 6 sorted", "Every one correct"],
+      "hints": [
+        "If the output is one of a fixed set of answers (a label or a number), it's discriminative.",
+        "If the output is fresh content the model authored, it's generative."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Four LLM traits a PM must design AROUND — not wait out.",
+      "sub": "Tap each card. These are properties of the material, like concrete cures or wood warps.",
+      "cards": [
+        { "em": "🌐", "h": "Emergent generality", "b": "One model, many tasks — summarise, translate, classify, code — just by changing the prompt. Your 'feature' might be a prompt, not a new model." },
+        { "em": "🎭", "h": "Hallucination", "b": "It can be fluent, confident, and WRONG. This is a product RISK to manage, not a bug to wait for a patch on. Design guardrails." },
+        { "em": "🪟", "h": "Context window", "b": "The model only sees a bounded amount of text per call. Too much input and the oldest context falls off the edge. Budget your tokens." },
+        { "em": "🎲", "h": "Non-determinism", "b": "Same prompt → different output. Great for variety, painful for tests and trust. Pin it down where users expect consistency." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Your tutor app confidently tells a student a wrong historical date, phrased perfectly. What IS this, and how should a PM treat it?",
+      "sub": "This is TrigunAI's Acharya tutor — the stakes are real.",
+      "options": [
+        { "t": "A rare glitch — ship it and wait for the model vendor to fix it." },
+        { "t": "Hallucination — an inherent LLM trait to design guardrails around (grounding, citations, human check)." },
+        { "t": "A prompt typo — once the prompt is perfect, it can never happen again." }
+      ],
+      "correct": 1,
+      "why": "Fluent-and-confident-but-wrong is hallucination, and it's intrinsic to how LLMs generate text — they predict plausible words, not verified facts. You can't prompt it away entirely. A PM treats it as a standing product risk: ground answers in trusted data (Acharya pulls from its own concept bank via RAG), constrain outputs, and keep a verification step. Waiting for a vendor fix is not a plan.",
+      "hints": [
+        "Fluent + confident + wrong has a name in GenAI.",
+        "Is this something you eliminate, or something you build defences around?"
+      ] },
+
+    { "type": "multi",
+      "prompt": "Tap EVERY effective way to mitigate hallucination in a product.",
+      "sub": "Pick all that genuinely reduce or catch wrong-but-confident output.",
+      "chips": ["Ground answers with retrieval (RAG) over trusted data", "Ask the model to include citations / sources", "Constrain the output to a strict format (e.g. JSON, fixed options)", "Add a verification / critic pass that checks the output", "Keep a human in the loop for high-stakes answers", "Just raise the temperature so it's more creative"],
+      "correct": [0, 1, 2, 3, 4],
+      "why": "Grounding (RAG), citations, constrained output, a critic/verification pass, and a human check all reduce or surface hallucination — they pin the model to real data and add a second set of eyes. TrigunAI uses exactly this critic pattern: a VLM grades the drone-flight footage and returns 'broken' when it can't even SEE the drone, catching silent failures the optimiser missed. Raising temperature does the opposite — more randomness, more invention, more hallucination.",
+      "hints": [
+        "Four of these add either trusted DATA, a second CHECK, or a tighter FORMAT.",
+        "Which one makes the model MORE inventive — the wrong direction?"
+      ] },
+
+    { "type": "order",
+      "prompt": "The build ladder — order it from cheapest to climb to most expensive.",
+      "sub": "Tap the rungs in order. Rule: climb only as far as value requires.",
+      "chips": ["Fine-tune the model on your examples", "Prompt-only (just instruct a base model)", "Train your own model from scratch", "RAG (ground the base model in your own data)"],
+      "correct": [1, 3, 0, 2],
+      "why": "Prompt-only → RAG → fine-tune → train-your-own, cheapest first. Start by just instructing a strong base model. If it needs your facts, ground it with RAG. If it needs your STYLE or a narrow skill prompting can't reach, fine-tune. Training your own model is rarely justified — huge cost, data, and risk. The discipline: the cheapest rung that works wins. Most products never climb past RAG.",
+      "constraints": ["Order is correct"],
+      "hints": [
+        "Which needs the LEAST setup — just writing instructions?",
+        "Grounding in your data comes before changing the model's weights; training from scratch is the last resort."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "A production prompt is CODE. Here's the 6-part skeleton.",
+      "sub": "Tap each card — these are the parts of a prompt worth versioning.",
+      "cards": [
+        { "em": "🎩", "h": "Role / persona", "b": "Who the model should act as: 'You are a patient Sanskrit tutor.' Sets tone and expertise." },
+        { "em": "🎯", "h": "Clear task", "b": "The one job, stated plainly: 'Explain this concept to a beginner in 3 steps.'" },
+        { "em": "📎", "h": "Context / data", "b": "The grounding material — the retrieved doc, the user's history, the concept-bank entry. This is where RAG plugs in." },
+        { "em": "🚧", "h": "Constraints", "b": "The guardrails: 'Max 80 words. If unsure, say so. Never invent a date.'" },
+        { "em": "📐", "h": "Output format", "b": "The exact shape: JSON with these keys, or a numbered list. Makes the output testable and parseable." },
+        { "em": "💡", "h": "Examples (few-shot)", "b": "One or two worked examples of input→good output. Add 'think step by step' (chain-of-thought) for hard reasoning." }
+      ] },
+
+    { "type": "tf",
+      "prompt": "True or false — prompt engineering & GenAI fit.",
+      "sub": "Tap each, then check together.",
+      "statements": [
+        { "t": "A production prompt should be versioned and tested on a fixed set, like code.", "answer": true,
+          "why": "Yes — prompts drift and regress. Version them, keep a fixed eval set, and re-run it before shipping changes so you catch when a 'small tweak' breaks 10% of cases." },
+        { "t": "Adding 'think step by step' (chain-of-thought) helps on hard reasoning tasks.", "answer": true,
+          "why": "Right — an explicit reasoning instruction often improves multi-step problems. It costs more tokens, so reserve it for tasks that actually need it." },
+        { "t": "Generative AI is the right choice when the task needs exactly ONE correct, verifiable answer.", "answer": false,
+          "why": "False — a single exact answer (a tax total, a lookup) wants deterministic logic or a discriminative model. GenAI shines on generative/transformative tasks where many good outputs exist." },
+        { "t": "Once a prompt works in a demo, it never needs to be re-tested.", "answer": false,
+          "why": "False — model updates, new inputs, and edits all cause regressions. Treat the prompt like code with a test suite, not a one-time setup." }
+      ],
+      "hints": [
+        "Two statements describe treating prompts like engineering artefacts.",
+        "Which trait makes GenAI a BAD fit for 'one exact right answer'?"
+      ] },
+
+    { "type": "multi",
+      "prompt": "'Should this feature use generative AI?' — tap EVERY question a PM should ask first.",
+      "sub": "Pick all that belong on the checklist before committing.",
+      "chips": ["Is the task generative / transformative, rather than needing one exact answer?", "Can we tolerate or detect hallucination — or do we need RAG + a human check?", "Does the input fit the context window, and what's the per-call cost & latency?", "What's the cheapest rung that works (prompt → RAG → fine-tune)?", "How will we EVAL the outputs and catch regressions over time?", "Is the feature on the home screen?"],
+      "correct": [0, 1, 2, 3, 4],
+      "why": "The first five are the real gate: task fit, hallucination tolerance, context/cost/latency, the cheapest build rung, and an eval plan. Where the feature lives on screen is a design question, not a GenAI-feasibility one. Run this checklist BEFORE you commit — it's cheaper to say 'a rule does this better' on a whiteboard than after a quarter of build.",
+      "hints": [
+        "Five are about fit, risk, cost, build cost, and measurement.",
+        "Which chip is about UI placement, not whether GenAI is the right tool?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Naming a real feature locks the whole lesson in.",
+      "fields": [
+        { "k": "goal", "label": "One feature you'd build with generative AI:", "ph": "e.g. auto-draft replies to customer emails, summarise long PDFs" },
+        { "k": "work", "label": "Which build rung does it need — and how would you guard against hallucination?", "ph": "e.g. RAG over our help docs + citations + human review for refunds" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

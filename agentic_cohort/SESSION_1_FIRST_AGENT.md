@@ -14,10 +14,18 @@ If everyone's loop ticks with a tool call by the end, the session succeeded. Not
 ---
 
 ## Pre-flight (you, 5 min before)
-- Starter repo on the `session-1` branch open in your editor + terminal.
-- `.env` has a working key; `python run.py "hello"` ticks once (the Session-0 baseline).
+- Starter repo is built + verified at `agentic_cohort/starter_repo/` (run.py, tools.py, agent.py,
+  broken_tool_demo.py, README, .env.example). Open it in your editor + terminal.
+- **DO THIS LIVE WITH YOUR REAL KEY before class** (the only thing not yet rehearsed, needs network):
+  `cp .env.example .env` → paste key → `pip install -r requirements.txt` →
+  `python run.py "hello"` (Session-0 tick) → `python agent.py "What time is it in Tokyo right now?"`
+  (you should see the `⚙ get_time(...)` line then the answer). If either errors, fix BEFORE class.
 - Shared progress sheet open (the use-case column from Session 0).
-- One deliberately-broken example ready (a tool with a wrong return type) for the debugging beat.
+- Deliberately-broken example is ready: `python broken_tool_demo.py` (shows crash vs. safe_call fix)
+  — already verified to run with no key needed.
+
+> Verified 2026-06-25: tools.py, broken_tool_demo.py, and all imports run clean on Python 3.9.6
+> (zoneinfo OK). The ONE unrehearsed step is the live API call — do it with your key before class.
 
 ---
 

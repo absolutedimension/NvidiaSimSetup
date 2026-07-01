@@ -1,0 +1,135 @@
+{
+  "slug": "phys-reward",
+  "title": "Designing the reward",
+  "steps": [
+    { "type": "intro",
+      "art": "🎁 → 🤖 → 🤔",
+      "prompt": "What's the hardest part of RL — the algorithm, or the reward?",
+      "sub": "Plot twist: the reward. A robot optimizes EXACTLY what you reward — not what you meant. By the end you'll spot reward-hacking and craft a reward for 'walk to the goal' that can't be gamed.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "Golden rule of reward design — finish the sentence: 'You get the behavior you ___.'",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "...hope for. The robot reads your intentions and does what you meant." },
+        { "t": "...reward. The robot maximizes the exact number you give it — your intention is invisible to it." },
+        { "t": "...pay for. Bigger GPU budgets give better behavior automatically." }
+      ],
+      "correct": 1,
+      "why": "The robot can't read your mind — it only sees the reward number. It will relentlessly maximize that number, even in ways you never intended. So the reward IS the spec: get it slightly wrong and you get behavior that's technically high-scoring but useless. This is why reward design, not the algorithm, is the real craft of RL.",
+      "hints": [
+        "The robot optimizes a NUMBER. Which sentence is about the number you actually give it?",
+        "Your good intentions never reach the robot — only the reward does."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "What is reward-hacking?",
+      "sub": "Tap each card. This is the failure mode that ambushes every beginner.",
+      "cards": [
+        { "em": "🎯", "h": "The trap", "b": "The robot finds a sneaky way to score high on your reward WITHOUT doing the task you actually wanted." },
+        { "em": "🏃", "h": "Classic example", "b": "Reward a robot for forward velocity → it learns to dive forward and fall, racking up speed while face-planting." },
+        { "em": "🤸", "h": "Another", "b": "Reward 'height of the head' to make it stand → it does a handstand, or throws itself upward. High score, wrong behavior." },
+        { "em": "🛡️", "h": "The fix", "b": "Reward the full intent, not a shortcut: combine progress + staying upright + smooth motion + penalties for cheating." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Goal: a robot should WALK to a goal post. Sort each reward idea: solid, or hackable?",
+      "sub": "Tap an item, then tap a bin. Think like a sneaky robot.",
+      "buckets": ["✅ Solid reward", "💀 Robot will hack this"],
+      "items": [
+        { "t": "+1 only when it ends standing AT the goal, +small per step closer while upright", "b": 0 },
+        { "t": "+1 for every cm of forward speed, nothing else", "b": 1 },
+        { "t": "Reward = its head height (to make it tall)", "b": 1 },
+        { "t": "Distance-closed to goal, MINUS a penalty if it falls or jerks wildly", "b": 0 },
+        { "t": "+100 the instant any body part touches the goal post", "b": 1 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Ask of each: 'Could the robot score high while doing something dumb?' If yes, it's hackable.",
+        "Rewarding raw speed → it dives. Rewarding head height → it does a handstand. Rewarding 'touch the post' → it lunges and falls onto it."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "You reward a cleaning robot +1 for every speck of dirt it picks up. What does it learn?",
+      "sub": "Think about the literal number it's maximizing.",
+      "options": [
+        { "t": "To clean the house thoroughly and stop when it's spotless." },
+        { "t": "To dump dirt back on the floor so it can pick the same speck up again, forever." },
+        { "t": "To politely ask the human where the dirt is." }
+      ],
+      "correct": 1,
+      "why": "Classic reward-hacking. You rewarded 'pickups', not 'a clean floor'. Re-dumping and re-collecting the same dirt maximizes pickups infinitely — a perfect score, a filthy house. The fix: reward the END STATE you want (floor measured clean), not a proxy action that can be looped.",
+      "hints": [
+        "It maximizes 'number of pickups', not 'cleanliness'. How do you get infinite pickups?",
+        "If re-dumping dirt earns more reward, the robot will re-dump dirt."
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the reward-design loop in the order a good RL engineer works.",
+      "sub": "Reward design is iterative — you almost never get it right on try one.",
+      "chips": [
+        "Watch the trained robot — did it do what you MEANT?",
+        "Write a first reward for the intended behavior",
+        "Spot the hack / wrong behavior it found",
+        "Add penalties or terms to close the loophole, then retrain"
+      ],
+      "correct": [1, 0, 2, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't watch a robot you haven't given a reward and trained yet.",
+        "Write it → watch it → catch the cheat → patch the reward → repeat."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk through tuning a 'walk to the goal' reward over three rounds.",
+      "sub": "At each round, pick the fix a good engineer makes. The log shows what the robot did.",
+      "goal": "Get the robot to walk upright to the goal post and stay there.",
+      "turns": [
+        { "situation": "Round 1 reward: +1 per unit of forward speed. You hit train and watch.",
+          "q": "The robot dives forward and belly-flops, scoring tons of speed. What do you do?",
+          "options": ["Add a penalty for falling / the torso dropping low", "Reward even MORE speed", "Conclude the robot can't learn and quit"],
+          "correct": 0, "log": "💀 Hack: dives for speed → add a 'stay upright' penalty." },
+        { "situation": "Round 2: now it shuffles upright but stops 2 m short of the goal, milking small steps for step-rewards.",
+          "q": "It walks but never arrives. How do you redirect it?",
+          "options": ["Reward distance CLOSED to the goal (and a bonus for reaching it), not raw stepping", "Remove all rewards and hope", "Reward it for standing perfectly still"],
+          "correct": 0, "log": "🎯 Reward progress-to-goal + arrival bonus." },
+        { "situation": "Round 3: it reaches the goal but sprints there flailing wildly, looking nothing like walking.",
+          "q": "It arrives, but the motion is a violent mess. Final tweak?",
+          "options": ["Add a small penalty for jerky, high-energy motion to encourage smooth steps", "Double every reward at once", "Reward flailing, since it got there"],
+          "correct": 0, "log": "✨ Add smoothness penalty → clean upright walk to goal." }
+      ],
+      "hints": [
+        "Each round, the robot exploits a loophole — your job is to close it with a penalty or a better term.",
+        "Good walking reward = progress to goal + stay upright + arrive + move smoothly."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Quick myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "If a policy scores high reward but behaves wrongly, the reward — not the robot — is the bug.", "answer": true,
+          "why": "Right — the robot did its job: maximize the number. A high score with bad behavior means your reward didn't capture what you meant. Fix the reward." },
+        { "t": "Rewarding a robot for raw forward speed reliably produces graceful walking.", "answer": false,
+          "why": "No — it tends to dive forward and fall to rack up speed. Graceful walking needs extra terms: stay upright, move smoothly, reach the goal." },
+        { "t": "Reward design is usually one-and-done; you rarely need to iterate.", "answer": false,
+          "why": "No — you almost always watch, catch a hack, patch the reward, and retrain, often many rounds. Iteration IS the craft." },
+        { "t": "Rewarding the END STATE you want is safer than rewarding a loopable proxy action.", "answer": true,
+          "why": "Yes — 'floor is clean' can't be farmed the way 'pick up a speck' can. Reward the outcome, not a proxy that can be looped." }
+      ],
+      "hints": [
+        "Remember: the robot optimizes the number, not your intention.",
+        "Did the cleaning robot and the diving robot find loopholes? What kind of reward stops that?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. We'll use it to pressure-test reward thinking on a task you care about.",
+      "fields": [
+        { "k": "goal", "label": "Pick a robot task you'd want to train (from your work or a hobby). What's the behavior you actually want?", "ph": "e.g. a robot that carries a tray of drinks across a room without spilling" },
+        { "k": "stop", "label": "Now think like a sneaky robot — how might it HACK a naive reward for that task?", "ph": "e.g. if I reward 'reach the table', it might sprint and dump the tray on the way" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RL basics for control · TrigunAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="/static/celebrate.js"></script>
+<style>
+  :root{
+    --bg:#ffffff; --ink:#2b2b33; --muted:#8a8a99; --line:#ececf2;
+    --lav-bg:#eef0fb; --lav-bd:#c9d0f5; --lav-deep:#3a44b8;
+    --indigo:#5b63e6; --indigo-dk:#4a52d6;
+    --grey-fill:#eceef4; --accepted:#9aa0ad;
+    --green:#22c55e; --green-dk:#15803d;
+    --red:#ef4444; --red-bg:#fdecec;
+    --btn:#2d2d33; --btn-dis:#e6e6ec;
+    --rc:18px; --rb:11px;
+    --shadow:0 1px 2px rgba(30,30,60,.05),0 8px 24px rgba(30,30,60,.06);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{
+    font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink); background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    display:flex; flex-direction:column; min-height:100vh;
+  }
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+  /* ---------- top bar ---------- */
+  header{display:flex;align-items:center;gap:18px;padding:16px 26px;border-bottom:1px solid #f0f0f5;}
+  .x-btn{border:none;background:none;font-size:22px;color:var(--muted);cursor:pointer;line-height:1;}
+  .bar{flex:1;height:12px;border-radius:99px;background:#eceef2;overflow:hidden;}
+  .bar > i{display:block;height:100%;width:0;background:var(--green);border-radius:99px;transition:width .45s cubic-bezier(.4,1.3,.5,1);}
+  .dots{display:flex;gap:7px;}
+  .dots > span{width:8px;height:8px;border-radius:50%;background:#dcdce4;transition:background .3s;}
+  .dots > span.on{background:var(--green);}
+  .streak{display:flex;align-items:center;gap:6px;color:var(--muted);font-weight:500;font-size:15px;}
+  .streak svg{width:18px;height:18px;}
+
+  /* ---------- stage ---------- */
+  main{flex:1;display:flex;justify-content:center;padding:40px 24px 130px;}
+  .stage{width:100%;max-width:620px;animation:rise .4s ease;}
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .prompt{font-size:20px;font-weight:500;line-height:1.45;margin:0 0 8px;}
+  .sub{font-size:15.5px;color:var(--muted);line-height:1.6;margin:0 0 22px;}
+  .intro-art{font-size:46px;text-align:center;margin:18px 0 26px;}
+
+  /* constraint checklist */
+  .constraints{border:1.5px solid var(--lav-bd);border-radius:14px;padding:12px 16px;margin:0 0 18px;background:#fafbff;transition:border-color .3s;}
+  .constraints.done{border-color:var(--green);}
+  .crow{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--ink);padding:4px 0;}
+  .crow .ic{width:18px;height:18px;flex:0 0 18px;color:var(--muted);transition:color .3s;}
+  .crow.met .ic{color:var(--green);}
+  .crow.met{color:var(--green-dk);}
+
+  /* options (MCQ) */
+  .opts{display:flex;flex-direction:column;gap:12px;margin:0 0 8px;}
+  .opt{display:flex;align-items:center;gap:12px;text-align:left;border:1.5px solid var(--lav-bd);background:#fff;
+       border-radius:var(--rb);padding:15px 16px;font:inherit;font-size:15.5px;color:var(--ink);cursor:pointer;
+       transition:.15s;width:100%;}
+  .opt:hover{background:var(--lav-bg);}
+  .opt .tick{width:22px;height:22px;flex:0 0 22px;border-radius:50%;border:2px solid var(--lav-bd);}
+  .opt.sel{border-color:var(--indigo);background:var(--lav-bg);}
+  .opt.sel .tick{border-color:var(--indigo);background:var(--indigo);box-shadow:inset 0 0 0 3px #fff;}
+  .opt.correct{border-color:var(--green);background:#effaf1;}
+  .opt.correct .tick{border-color:var(--green);background:var(--green);box-shadow:inset 0 0 0 3px #fff;}
+  .opt.wrong{border-color:var(--red);background:var(--red-bg);}
+  .opt.dim{opacity:.5;}
+
+  /* reveal cards */
+  .cards4{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .pcard{border:1.5px solid var(--lav-bd);background:var(--lav-bg);border-radius:14px;padding:14px 16px;cursor:pointer;transition:.18s;}
+  .pcard:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+  .pcard.opened{background:#fff;border-color:var(--indigo);}
+  .pcard h4{margin:0 0 4px;font-size:15.5px;font-weight:600;color:var(--lav-deep);display:flex;align-items:center;gap:8px;}
+  .pcard .body{font-size:13.5px;color:var(--muted);line-height:1.55;max-height:0;overflow:hidden;transition:max-height .3s;}
+  .pcard.opened .body{max-height:140px;margin-top:6px;}
+  .pcard .em{font-size:22px;}
+
+  /* classify */
+  .buckets{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 18px;}
+  .bucket{border:1.5px dashed var(--lav-bd);border-radius:14px;min-height:78px;padding:10px;background:#fafbff;transition:.15s;}
+  .bucket.target{border-color:var(--indigo);background:var(--lav-bg);}
+  .bucket .blabel{font-size:12.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;}
+  .tray{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;}
+  .chip{border:1.5px solid var(--lav-bd);background:#fff;border-radius:var(--rb);padding:9px 14px;font-size:14px;
+        cursor:pointer;transition:.15s;font-family:inherit;color:var(--ink);}
+  .chip:hover{background:var(--lav-bg);}
+  .chip.sel{border-color:var(--indigo);background:var(--indigo);color:#fff;}
+  .chip.placed{border-color:var(--lav-bd);background:#fff;}
+  .chip.ok{border-color:var(--green);background:#effaf1;color:var(--green-dk);}
+  .chip.bad{border-color:var(--red);background:var(--red-bg);color:#b42318;}
+  .bucket .holder{display:flex;flex-wrap:wrap;gap:8px;}
+
+  /* order / loop builder */
+  .seq{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:54px;border:1.5px solid var(--lav-bd);
+       border-radius:14px;padding:12px;margin:0 0 14px;background:#fafbff;}
+  .seq .slot{font-size:13.5px;color:var(--muted);}
+  .arrow{color:var(--muted);font-size:14px;}
+
+  /* reflect */
+  .field{margin:0 0 16px;}
+  .field label{display:block;font-size:14px;font-weight:500;margin:0 0 6px;}
+  .field input{width:100%;border:1.5px solid var(--lav-bd);border-radius:var(--rb);padding:12px 14px;font:inherit;font-size:15px;}
+  .field input:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(91,99,230,.12);}
+
+  /* feedback strip */
+  .fb{border-radius:14px;padding:14px 16px;margin:16px 0 0;font-size:14.5px;line-height:1.55;display:none;}
+  .fb.show{display:block;animation:rise .25s ease;}
+  .fb.ok{background:#effaf1;color:var(--green-dk);}
+  .fb.no{background:var(--red-bg);color:#b42318;}
+  .fb .why{margin-top:10px;display:flex;gap:10px;}
+
+  /* done */
+  .done-wrap{text-align:center;padding:10px 0;}
+  .done-badge{width:84px;height:84px;border-radius:50%;background:#effaf1;display:flex;align-items:center;justify-content:center;
+              margin:0 auto 18px;animation:pop .5s cubic-bezier(.3,1.5,.5,1);}
+  .done-badge svg{width:44px;height:44px;color:var(--green);}
+  @keyframes pop{from{transform:scale(.2);opacity:0;}to{transform:scale(1);opacity:1;}}
+  .summary{display:inline-block;text-align:left;margin:14px auto 0;}
+  .summary .crow{font-size:15px;}
+
+  /* footer / actions */
+  footer{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #f0f0f5;
+         padding:16px 24px;display:flex;justify-content:center;}
+  .actions{width:100%;max-width:620px;display:flex;gap:12px;align-items:center;justify-content:flex-end;}
+  .startover{display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--muted);font:inherit;
+             font-size:14px;cursor:pointer;margin-right:auto;}
+  .startover:hover{color:var(--ink);}
+  .pill{border:none;border-radius:99px;padding:14px 40px;font:inherit;font-weight:500;font-size:16px;color:#fff;
+        background:var(--btn);cursor:pointer;transition:.15s;}
+  .pill:hover{filter:brightness(1.12);}
+  .pill:active{transform:scale(.98);}
+  .pill.disabled{background:var(--btn-dis);color:#b3b3bd;cursor:not-allowed;pointer-events:none;}
+  .pill.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--lav-bd);}
+
+  /* ---------- tutor (Koji) ---------- */
+  .koji-launch{position:fixed;left:22px;bottom:22px;width:54px;height:54px;border:none;cursor:pointer;background:none;z-index:40;
+               transition:transform .2s;}
+  .koji-launch:hover{transform:scale(1.08) rotate(-6deg);}
+  .koji-launch .gem{width:54px;height:54px;background:linear-gradient(135deg,#7c83f3,#4a52d6);transform:rotate(45deg);
+                    border-radius:14px;box-shadow:0 6px 18px rgba(74,82,214,.4);}
+  .koji-launch .gem::after{content:'';position:absolute;inset:14px;background:#fff;border-radius:6px;transform:rotate(0);}
+  .tutor{position:fixed;top:0;bottom:0;left:0;width:340px;background:#fff;border-right:1px solid #eee;z-index:50;
+         transform:translateX(-105%);transition:transform .3s cubic-bezier(.4,1,.4,1);display:flex;flex-direction:column;
+         box-shadow:6px 0 28px rgba(30,30,60,.10);}
+  .tutor.open{transform:none;}
+  .tutor .thead{display:flex;align-items:center;gap:10px;padding:18px 18px 12px;border-bottom:1px solid #f2f2f7;}
+  .tutor .thead .mini{width:26px;height:26px;background:linear-gradient(135deg,#7c83f3,#4a52d6);transform:rotate(45deg);border-radius:7px;}
+  .tutor .thead b{font-size:15px;font-weight:600;}
+  .tutor .thead small{color:var(--muted);font-size:12px;display:block;}
+  .tutor .tclose{margin-left:auto;border:none;background:none;font-size:20px;color:var(--muted);cursor:pointer;}
+  .msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
+  .msg{max-width:85%;font-size:14px;line-height:1.5;padding:10px 13px;border-radius:14px;}
+  .msg.bot{background:#eef0fb;color:#3a44b8;border-bottom-left-radius:4px;align-self:flex-start;}
+  .msg.me{background:var(--lav-bg);color:var(--lav-deep);border-bottom-right-radius:4px;align-self:flex-end;}
+  .quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px;}
+  .quick button{border:1.5px solid var(--lav-bd);background:#fff;border-radius:99px;padding:7px 13px;font:inherit;font-size:12.5px;
+                color:var(--lav-deep);cursor:pointer;}
+  .quick button:hover{background:var(--lav-bg);}
+  .tinput{display:flex;gap:8px;padding:12px 16px;border-top:1px solid #f2f2f7;}
+  .tinput input{flex:1;border:1.5px solid var(--lav-bd);border-radius:99px;padding:10px 14px;font:inherit;font-size:13.5px;}
+  .tinput input:focus{outline:none;border-color:var(--indigo);}
+  .tinput button{border:none;background:var(--indigo);color:#fff;border-radius:99px;width:40px;cursor:pointer;font-size:16px;}
+
+  @media(max-width:560px){
+    .cards4,.buckets{grid-template-columns:1fr;}
+    .tutor{width:88%;}
+    .pill{padding:14px 28px;}
+  }
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="/static/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/static/brand/favicon-16.png" />
+<link rel="apple-touch-icon" href="/static/brand/apple-touch-icon.png" />
+<link rel="manifest" href="/static/brand/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+  <h2 class="sr-only">Interactive lesson: what is an AI agent — goal, brain, tools, and the loop.</h2>
+
+  <header>
+    <button class="x-btn" aria-label="Exit to journey" onclick="window.location.href=(window.LMS?'/dashboard':'about:blank')">&times;</button>
+    <div class="bar"><i id="barfill"></i></div>
+    <div class="dots" id="dots"></div>
+    <div class="streak" title="Gems earned">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12l3 5-9 13L3 8z" stroke="#cfcfda" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span id="gems">0</span>
+    </div>
+  </header>
+
+  <main><div class="stage" id="stage"></div></main>
+
+  <footer><div class="actions" id="actions"></div></footer>
+
+  <!-- Tutor (TrigunAI guide) -->
+  <button class="koji-launch" id="kojiLaunch" aria-label="Ask your TrigunAI guide"><span class="gem"></span></button>
+  <aside class="tutor" id="tutor" aria-label="TrigunAI guide">
+    <div class="thead">
+      <span class="mini"></span>
+      <div><b>TrigunAI guide</b><small>here to guide, not hand you answers</small></div>
+      <button class="tclose" id="tclose" aria-label="Close guide">&times;</button>
+    </div>
+    <div class="msgs" id="msgs"></div>
+    <div class="quick" id="quick"></div>
+    <div class="tinput">
+      <input id="tin" placeholder="Ask your guide…" />
+      <button id="tsend" aria-label="Send">&rarr;</button>
+    </div>
+  </aside>
+
+<script>
+/* ===================== LESSON CONTENT ===================== */
+/* ===================== LESSON CONTENT ===================== */
+const STEPS = [
+  {
+    "type": "intro",
+    "art": "🦿 → 🎁 → 🔁",
+    "prompt": "How does a robot learn to move with nobody showing it the moves?",
+    "sub": "No one writes the perfect walk. The robot tries, gets a score, adjusts, and tries again — thousands of times. That's reinforcement learning. By the end you'll name its four parts and trace a robot earning its first reward.",
+    "cta": "Start"
+  },
+  {
+    "type": "mcq",
+    "prompt": "First instinct — a robot is learning to stand up. How does RL actually teach it?",
+    "sub": "Pick one, then check.",
+    "options": [
+      {
+        "t": "An engineer types the exact angle for every joint at every instant."
+      },
+      {
+        "t": "The robot tries random-ish moves, gets a higher score when it stays upright longer, and shifts toward whatever earned more score."
+      },
+      {
+        "t": "The robot copies a video of a human standing up, frame by frame."
+      }
+    ],
+    "correct": 1,
+    "why": "Reinforcement learning is trial-and-error with a score. The robot acts, the world hands back a reward (higher for staying up), and it nudges its behavior toward whatever earned more. No human dictates the joint angles, and it's not copying a video — it discovers the skill by chasing reward.",
+    "hints": [
+      "The word is 'reinforcement' — something gets reinforced when it works.",
+      "Nobody hand-types the moves. What signal tells the robot a try went well?"
+    ]
+  },
+  {
+    "type": "reveal",
+    "prompt": "The four parts of every RL setup — framed for movement.",
+    "sub": "Tap each card. Memorize these four; the whole field is built on them.",
+    "cards": [
+      {
+        "em": "🧠",
+        "h": "Agent",
+        "b": "The decider — the policy in the robot's 'brain' that picks the next action: how much torque to send each joint."
+      },
+      {
+        "em": "🌍",
+        "h": "Environment",
+        "b": "The simulated world + the robot's body. It takes the action and returns the new state plus a reward."
+      },
+      {
+        "em": "🎁",
+        "h": "Reward",
+        "b": "A number scoring how good that move was. Higher for moving toward the goal, lower for falling."
+      },
+      {
+        "em": "🎬",
+        "h": "Episode",
+        "b": "One full attempt — start, act, act, act, until it succeeds, falls, or time runs out. Then reset and try again."
+      }
+    ]
+  },
+  {
+    "type": "classify",
+    "prompt": "A robot arm is learning to reach a target. Sort each piece into the right RL part.",
+    "sub": "Tap an item, then tap the part it belongs to.",
+    "buckets": [
+      "Agent",
+      "Environment",
+      "Reward",
+      "Episode"
+    ],
+    "items": [
+      {
+        "t": "The policy deciding how to swing the arm next",
+        "b": 0
+      },
+      {
+        "t": "The simulated table, target, and arm's physics",
+        "b": 1
+      },
+      {
+        "t": "+1 when the hand gets closer to the target",
+        "b": 2
+      },
+      {
+        "t": "One attempt: start → reach → reset, capped at 5 seconds",
+        "b": 3
+      }
+    ],
+    "constraints": [
+      "All 4 placed",
+      "Every match correct"
+    ],
+    "hints": [
+      "The AGENT decides; the ENVIRONMENT reacts and scores.",
+      "The REWARD is the number; the EPISODE is one whole try from start to reset."
+    ]
+  },
+  {
+    "type": "mcq",
+    "prompt": "In RL, which part DECIDES the action, and which part JUDGES it?",
+    "sub": "Two halves of every RL loop. Don't mix them up.",
+    "options": [
+      {
+        "t": "The environment decides the action; the agent judges it."
+      },
+      {
+        "t": "The agent decides the action; the environment returns the new state and the reward."
+      },
+      {
+        "t": "The reward decides the action; the episode judges it."
+      }
+    ],
+    "correct": 1,
+    "why": "The agent (the policy) is the decider — it chooses the action. The environment is the judge and the world — it applies the action, evolves the physics, and hands back the new state plus a reward. Reward and episode are pieces the environment produces, not deciders.",
+    "hints": [
+      "Which part has the 'brain' that picks a move? That's the decider.",
+      "Which part is the world that reacts and hands back a score? That's the judge."
+    ]
+  },
+  {
+    "type": "order",
+    "prompt": "Tap the steps of one turn of the RL loop in order — then it repeats.",
+    "sub": "This little cycle runs over and over within every episode.",
+    "chips": [
+      "Environment returns the new state + a reward",
+      "Agent observes the current state",
+      "Agent picks an action (joint torques)",
+      "Agent updates itself to earn more reward next time"
+    ],
+    "correct": [
+      1,
+      2,
+      0,
+      3
+    ],
+    "constraints": [
+      "Loop order is correct"
+    ],
+    "hints": [
+      "It has to SEE the situation before it can choose a move.",
+      "Observe → act → get the score → learn from it, then loop."
+    ]
+  },
+  {
+    "type": "trace",
+    "prompt": "Watch a real run. Walk a hopping robot through its first few RL turns.",
+    "sub": "At each turn, pick the move that fits how RL learns. The log fills in as you go.",
+    "goal": "Learn to hop forward without falling. Reward = +1 per cm moved forward, big penalty for falling.",
+    "turns": [
+      {
+        "situation": "Episode 1 begins. The robot stands at the start, knowing nothing about hopping.",
+        "q": "What does the agent do on its very first move?",
+        "options": [
+          "Try a roughly-random action and see what reward comes back",
+          "Refuse to move until an engineer types the perfect hop",
+          "Copy a YouTube video of a kangaroo"
+        ],
+        "correct": 0,
+        "log": "🧠 Agent → tries a random-ish leg push."
+      },
+      {
+        "situation": "The push made it lurch forward 3 cm, then it wobbled but stayed up.",
+        "q": "The environment now responds. What does it hand back?",
+        "options": [
+          "A new state (robot tilted, moved 3 cm) plus reward +3",
+          "Nothing — RL gives no feedback",
+          "The exact correct next action to take"
+        ],
+        "correct": 0,
+        "log": "🌍 Environment → new state + reward +3"
+      },
+      {
+        "situation": "It got +3 for that push. A different jerky move earlier had given it -10 (a fall).",
+        "q": "What does the agent do with these two results?",
+        "options": [
+          "Shift toward moves like the +3 one, away from the -10 one",
+          "Ignore the rewards and keep acting randomly forever",
+          "Quit, because one move already worked"
+        ],
+        "correct": 0,
+        "log": "📈 Agent updates → favor +3 push, avoid the fall."
+      },
+      {
+        "situation": "This attempt ends — it fell after 8 cm. Time and progress logged.",
+        "q": "One try is over. What happens next in RL?",
+        "options": [
+          "Reset to the start and run another episode, a bit smarter",
+          "Stop forever — RL trains on a single attempt",
+          "Keep the robot frozen where it fell"
+        ],
+        "correct": 0,
+        "log": "🔁 Episode ends → reset → Episode 2 (slightly better)."
+      }
+    ],
+    "hints": [
+      "RL learns by trying, scoring, and adjusting — over MANY episodes.",
+      "Higher reward = do more of that. Lower reward = do less of that."
+    ]
+  },
+  {
+    "type": "tf",
+    "prompt": "Quick myth-check — true or false?",
+    "sub": "Tap True or False for each, then check all at once.",
+    "statements": [
+      {
+        "t": "In RL, an engineer hand-writes the correct action for every situation.",
+        "answer": false,
+        "why": "No — that's the whole point of RL. The robot discovers good actions by trial-and-error guided by reward, instead of being told each move."
+      },
+      {
+        "t": "An episode is one full attempt, after which the robot resets and tries again.",
+        "answer": true,
+        "why": "Right — an episode runs from start until success, failure, or time-out, then resets. Learning happens across thousands of episodes."
+      },
+      {
+        "t": "Reward is feedback the environment gives back, not a command the agent sends out.",
+        "answer": true,
+        "why": "Correct — the agent sends an action; the environment sends back the new state and a reward number. Reward flows toward the agent."
+      },
+      {
+        "t": "The agent and the environment are just two names for the same thing.",
+        "answer": false,
+        "why": "No — they're two halves. The agent is the decider (the policy); the environment is the world that reacts and scores. Keeping them separate is key to understanding RL."
+      }
+    ],
+    "hints": [
+      "Recall the loop: observe → act → get reward → update.",
+      "Who decides, and who judges? Those are two different parts."
+    ]
+  },
+  {
+    "type": "reflect",
+    "capture": true,
+    "prompt": "Make it yours.",
+    "sub": "Not graded. It helps us frame RL in something you'd actually want to teach a robot.",
+    "fields": [
+      {
+        "k": "interest",
+        "label": "Name one motor skill you'd want a robot to learn by trial-and-error (pull from a hobby or your work):",
+        "ph": "e.g. balance on a skateboard / pour a coffee without spilling / climb stairs"
+      },
+      {
+        "k": "goal",
+        "label": "For that skill, what single number would you reward to push it in the right direction?",
+        "ph": "e.g. +1 per second balanced, big penalty if it tips over"
+      }
+    ]
+  },
+  {
+    "type": "done"
+  }
+];
+
+/* ===================== ENGINE ===================== */
+const $ = s => document.querySelector(s);
+const stage = $('#stage'), actions = $('#actions');
+let idx = 0, gems = 0, perfect = true;
+let stepStart = Date.now();   // reset on each step render — time-on-step is a struggle signal
+let attemptNo = 1;            // attempts within the current step
+function lms(p){ return (window.LMS && window.LMS.api ? window.LMS.api : '') + p; }
+// One learning-loop beacon per graded attempt / intervention. Fire-and-forget.
+function lmsEvent(correct, extra){
+  if(!window.LMS) return;
+  const s = (typeof STEPS!=='undefined' && STEPS[idx]) ? STEPS[idx] : {};
+  const body = Object.assign({
+    step: idx, type: s.type||'', concept: s.concept||'',
+    correct: !!correct, attempt_no: attemptNo, latency_ms: Date.now()-stepStart
+  }, extra||{});
+  fetch(lms('/progress'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).catch(()=>{});
+}
+function lmsProgress(){ lmsEvent(true); }                                  // correct path (back-compat)
+function markWrong(extra){ perfect = false; lmsEvent(false, extra); attemptNo++; }  // wrong attempt + capture
+function lmsIntervention(kind){ lmsEvent(false, {action:(kind==='tutor'?'tutor_ask':'hint'), intervention:kind}); }
+function lmsComplete(){ if(!window.LMS) return Promise.resolve(null); return fetch(lms('/complete'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({score:gems,perfect:perfect})}).then(r=>r.json()).catch(()=>null); }
+function lmsCapture(key,value){ if(!window.LMS||!value) return; fetch('/api/profile/capture',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key:key,value:value,source:'lesson'})}).catch(()=>{}); }
+let work = {};          // per-step scratch state
+let answered = false;   // whether current step's Check has been resolved
+
+function buildDots(){
+  const d = $('#dots'); d.innerHTML='';
+  STEPS.forEach(()=>{ const s=document.createElement('span'); d.appendChild(s); });
+}
+function progress(){
+  $('#barfill').style.width = (idx/(STEPS.length-1))*100 + '%';
+  [...$('#dots').children].forEach((s,i)=> s.classList.toggle('on', i<=idx));
+  $('#gems').textContent = gems;
+}
+function go(n){ idx=n; answered=false; work={}; stepStart=Date.now(); attemptNo=1; render(); }
+function nextStep(){ if(idx<STEPS.length-1) go(idx+1); }
+function award(n){ gems+=n; $('#gems').textContent=gems; }
+
+/* ---- footer button helpers ---- */
+function setActions(html){ actions.innerHTML = html; }
+function primary(label,fn,disabled){
+  const b=document.createElement('button');
+  b.className='pill'+(disabled?' disabled':''); b.textContent=label;
+  if(!disabled) b.onclick=fn;
+  return b;
+}
+function startOver(fn){
+  const b=document.createElement('button');
+  b.className='startover'; b.innerHTML='&#8635; Start over'; b.onclick=fn; return b;
+}
+
+/* ---- feedback strip ---- */
+function feedback(ok, text, withWhy){
+  let fb=$('#fb');
+  if(!fb){ fb=document.createElement('div'); fb.id='fb'; fb.className='fb'; stage.appendChild(fb); }
+  fb.className='fb show '+(ok?'ok':'no');
+  fb.innerHTML = text;
+  if(ok && withWhy){
+    const wrap=document.createElement('div'); wrap.className='why';
+    const w=primary('Why?', ()=>showWhy(withWhy)); w.classList.add('ghost'); w.style.padding='8px 18px'; w.style.fontSize='14px';
+    const sk=document.createElement('button'); sk.className='pill ghost'; sk.style.padding='8px 18px'; sk.style.fontSize='14px';
+    sk.textContent='Skip explanation'; sk.onclick=()=>{award(10);nextStep();};
+    wrap.appendChild(w); wrap.appendChild(sk); fb.appendChild(wrap);
+  }
+}
+function showWhy(text){
+  feedback(true, '<b>Here’s why:</b><br>'+text);
+  setActions(''); actions.appendChild(primary('Got it', ()=>{award(10);nextStep();}));
+}
+
+/* ===================== RENDERERS ===================== */
+function render(){
+  const step = STEPS[idx];
+  progress();
+  stage.innerHTML='';
+  setActions('');
+  ({ intro:rIntro, mcq:rMcq, reveal:rReveal, classify:rClassify, order:rOrder, reflect:rReflect, tf:rTf, trace:rTrace, multi:rMulti, done:rDone })[step.type](step);
+}
+
+function head(step){
+  if(step.art) stage.insertAdjacentHTML('beforeend', `<div class="intro-art">${step.art}</div>`);
+  stage.insertAdjacentHTML('beforeend', `<p class="prompt">${step.prompt}</p>`);
+  if(step.sub) stage.insertAdjacentHTML('beforeend', `<p class="sub">${step.sub}</p>`);
+}
+
+/* ---- intro ---- */
+function rIntro(step){
+  head(step);
+  actions.appendChild(primary(step.cta||'Continue', nextStep));
+}
+
+/* ---- multiple choice ---- */
+function rMcq(step){
+  head(step);
+  const wrap=document.createElement('div'); wrap.className='opts';
+  step.options.forEach((o,i)=>{
+    const b=document.createElement('button'); b.className='opt';
+    b.innerHTML=`<span class="tick"></span><span>${o.t}</span>`;
+    b.onclick=()=>{ if(answered) return; work.sel=i; [...wrap.children].forEach(c=>c.classList.remove('sel')); b.classList.add('sel'); renderMcqActions(step,wrap); };
+    wrap.appendChild(b);
+  });
+  stage.appendChild(wrap);
+  renderMcqActions(step,wrap);
+}
+function renderMcqActions(step,wrap){
+  setActions('');
+  actions.appendChild(primary('Check', ()=>checkMcq(step,wrap), work.sel===undefined));
+}
+function checkMcq(step,wrap){
+  answered=true;
+  const ok = work.sel===step.correct;
+  [...wrap.children].forEach((c,i)=>{
+    if(i===step.correct) c.classList.add('correct');
+    else if(i===work.sel) c.classList.add('wrong');
+    else c.classList.add('dim');
+  });
+  if(ok){ award(10); lmsProgress(); feedback(true,'<b>Correct.</b>', step.why); setActions(''); }
+  else{
+    markWrong();
+    feedback(false,'Not quite — see the highlighted answer. Want a hand?');
+    nudge(step,true);
+    setActions('');
+    actions.appendChild(primary('Continue', ()=>{ feedback(true,'<b>Why:</b> '+step.why); setActions(''); actions.appendChild(primary('Got it',nextStep)); }));
+  }
+}
+
+/* ---- reveal 4 cards ---- */
+function rReveal(step){
+  head(step);
+  const grid=document.createElement('div'); grid.className='cards4'; let opened=0;
+  step.cards.forEach(c=>{
+    const card=document.createElement('div'); card.className='pcard';
+    card.innerHTML=`<h4><span class="em">${c.em}</span>${c.h}</h4><div class="body">${c.b}</div>`;
+    card.onclick=()=>{ if(!card.classList.contains('opened')){card.classList.add('opened');opened++; if(opened===step.cards.length) enableContinue();} };
+    grid.appendChild(card);
+  });
+  stage.appendChild(grid);
+  const cont=primary('Continue', nextStep, true); actions.appendChild(cont);
+  function enableContinue(){ cont.classList.remove('disabled'); cont.onclick=nextStep; }
+}
+
+/* ---- classify (tap item, tap bucket) ---- */
+function rClassify(step){
+  head(step);
+  work.place={}; // itemIndex -> bucketIndex
+  const cons=document.createElement('div'); cons.className='constraints';
+  cons.innerHTML=step.constraints.map(c=>`<div class="crow"><span class="ic">○</span>${c}</div>`).join('');
+  stage.appendChild(cons);
+
+  const bwrap=document.createElement('div'); bwrap.className='buckets';
+  step.buckets.forEach((name,bi)=>{
+    const bk=document.createElement('div'); bk.className='bucket'; bk.dataset.bi=bi;
+    bk.innerHTML=`<div class="blabel">${name}</div><div class="holder"></div>`;
+    bk.onclick=()=>{ if(work.selItem!=null){ placeItem(work.selItem, bi); } };
+    bwrap.appendChild(bk);
+  });
+  stage.appendChild(bwrap);
+
+  const tray=document.createElement('div'); tray.className='tray'; tray.id='tray';
+  step.items.forEach((it,ii)=>{
+    const c=document.createElement('button'); c.className='chip'; c.dataset.ii=ii; c.textContent=it.t;
+    c.onclick=()=>selectItem(ii,c);
+    tray.appendChild(c);
+  });
+  stage.appendChild(tray);
+  renderClassifyActions(step);
+
+  function selectItem(ii,c){
+    if(answered) return;
+    work.selItem = (work.selItem===ii?null:ii);
+    document.querySelectorAll('#tray .chip, .holder .chip').forEach(x=>x.classList.remove('sel'));
+    if(work.selItem!=null) c.classList.add('sel');
+  }
+  function placeItem(ii,bi){
+    if(answered) return;
+    work.place[ii]=bi; work.selItem=null;
+    // re-render chips into holders / tray
+    const placedIdx=Object.keys(work.place).map(Number);
+    document.querySelectorAll('.holder').forEach(h=>h.innerHTML='');
+    document.querySelectorAll('#tray .chip').forEach(ch=>ch.style.display='');
+    step.items.forEach((it,k)=>{
+      if(work.place[k]!=null){
+        document.querySelector(`#tray .chip[data-ii="${k}"]`).style.display='none';
+        const holder=document.querySelector(`.bucket[data-bi="${work.place[k]}"] .holder`);
+        const c=document.createElement('button'); c.className='chip placed'; c.textContent=it.t;
+        c.onclick=()=>{ if(answered) return; delete work.place[k]; render(); restoreWork(step); };
+        holder.appendChild(c);
+      }
+    });
+    renderClassifyActions(step);
+  }
+}
+function restoreWork(step){ /* placeholder for future persistence */ }
+function renderClassifyActions(step){
+  const all = Object.keys(work.place||{}).length===step.items.length;
+  setActions('');
+  actions.appendChild(startOver(()=>go(idx)));
+  actions.appendChild(primary('Check', ()=>checkClassify(step), !all));
+}
+function checkClassify(step){
+  answered=true;
+  let allCorrect=true;
+  step.items.forEach((it,ii)=>{
+    const correct = work.place[ii]===it.b;
+    if(!correct) allCorrect=false;
+    const chip=[...document.querySelectorAll('.holder .chip')].find(c=>c.textContent===it.t);
+    if(chip) chip.classList.add(correct?'ok':'bad');
+  });
+  const cons=stage.querySelector('.constraints');
+  cons.children[0].classList.add('met'); cons.children[0].querySelector('.ic').textContent='✓';
+  if(allCorrect){ cons.children[1].classList.add('met'); cons.children[1].querySelector('.ic').textContent='✓'; cons.classList.add('done'); }
+  if(allCorrect){ award(15); lmsProgress(); feedback(true,'<b>All four matched.</b> That’s the whole anatomy of an agent — goal, brain, tools, and the loop that stops.'); setActions(''); actions.appendChild(primary('Continue',nextStep)); }
+  else{ markWrong(); feedback(false,'Some matches are off (shown in red). Tap the red chips to move them, then check again.'); nudge(step,true); answered=false;
+        setActions(''); actions.appendChild(startOver(()=>go(idx))); actions.appendChild(primary('Check',()=>checkClassify(step))); }
+}
+
+/* ---- order (loop builder) ---- */
+function rOrder(step){
+  head(step);
+  work.seq=[];
+  const cons=document.createElement('div'); cons.className='constraints';
+  cons.innerHTML=`<div class="crow"><span class="ic">○</span>${step.constraints[0]}</div>`;
+  stage.appendChild(cons);
+
+  const seq=document.createElement('div'); seq.className='seq'; seq.id='seq';
+  seq.innerHTML='<span class="slot">Tap the steps below in order…</span>';
+  stage.appendChild(seq);
+
+  const tray=document.createElement('div'); tray.className='tray'; tray.id='otray';
+  step.chips.forEach((t,ci)=>{
+    const c=document.createElement('button'); c.className='chip'; c.dataset.ci=ci; c.textContent=t;
+    c.onclick=()=>{ if(answered||work.seq.includes(ci)) return; work.seq.push(ci); c.style.display='none'; drawSeq(step); };
+    tray.appendChild(c);
+  });
+  stage.appendChild(tray);
+  renderOrderActions(step);
+}
+function drawSeq(step){
+  const seq=$('#seq'); seq.innerHTML='';
+  work.seq.forEach((ci,pos)=>{
+    if(pos) seq.insertAdjacentHTML('beforeend','<span class="arrow">→</span>');
+    const c=document.createElement('button'); c.className='chip placed'; c.textContent=step.chips[ci];
+    c.onclick=()=>{ if(answered) return; work.seq.splice(pos,1); document.querySelector(`#otray .chip[data-ci="${ci}"]`).style.display=''; drawSeq(step); };
+    seq.appendChild(c);
+  });
+  if(work.seq.length){ seq.insertAdjacentHTML('beforeend','<span class="arrow">→ 🔁 repeat</span>'); }
+  else seq.innerHTML='<span class="slot">Tap the steps below in order…</span>';
+  renderOrderActions(step);
+}
+function renderOrderActions(step){
+  setActions('');
+  actions.appendChild(startOver(()=>go(idx)));
+  actions.appendChild(primary('Check',()=>checkOrder(step), work.seq.length!==step.chips.length));
+}
+function checkOrder(step){
+  const ok = JSON.stringify(work.seq)===JSON.stringify(step.correct);
+  const cons=stage.querySelector('.constraints');
+  if(ok){
+    answered=true; cons.children[0].classList.add('met'); cons.children[0].querySelector('.ic').textContent='✓'; cons.classList.add('done');
+    award(15); lmsProgress(); feedback(true,'<b>That’s the loop.</b> Think → act → observe, then back to think — over and over until the goal is met. Almost every agent you’ll ever build is this cycle.');
+    setActions(''); actions.appendChild(primary('Continue',nextStep));
+  }else{
+    markWrong();
+    feedback(false,'Not that order. Tap a step in the sequence to send it back, and try again.');
+    nudge(step,true);
+  }
+}
+
+/* ---- reflect ---- */
+function rReflect(step){
+  head(step);
+  step.fields.forEach(f=>{
+    const d=document.createElement('div'); d.className='field';
+    d.innerHTML=`<label>${f.label}</label><input id="f_${f.k}" placeholder="${f.ph}" />`;
+    stage.appendChild(d);
+  });
+  const inputs=step.fields.map(f=>$('#f_'+f.k));
+  const btn=document.createElement('button'); btn.className='pill disabled'; btn.textContent='Save & finish';
+  btn.onclick=()=>{
+    if(btn.classList.contains('disabled')) return;
+    if(step.capture){ inputs.forEach((i,ix)=> lmsCapture(step.fields[ix].k, i.value.trim())); }
+    const msg = step.fields.some(f=>f.k==='goal')
+      ? '<b>Locked in.</b> Bring these two lines to Friday — they’re the first thing we put into your config.py. A clear goal and a clear stop condition is 80% of a working agent.'
+      : '<b>Got it — thanks.</b> We’ll use this to explain things with examples from your world, not generic ones.';
+    feedback(true, msg);
+    setActions(''); actions.appendChild(primary('Continue',()=>{award(20);nextStep();}));
+  };
+  actions.appendChild(btn);
+  inputs.forEach(i=>i.addEventListener('input',()=>{
+    const ok=inputs.every(x=>x.value.trim().length>2);
+    btn.classList.toggle('disabled',!ok);
+  }));
+}
+
+/* ---- true / false set ---- */
+function rTf(step){
+  head(step);
+  work.tf={};
+  const wrap=document.createElement('div'); wrap.style.cssText='display:flex;flex-direction:column;gap:12px;';
+  step.statements.forEach((s,i)=>{
+    const row=document.createElement('div');
+    row.style.cssText='border:1.5px solid var(--lav-bd);border-radius:11px;padding:12px 14px;';
+    const txt=document.createElement('div'); txt.style.cssText='font-size:15px;margin-bottom:10px;'; txt.textContent=s.t; row.appendChild(txt);
+    const btns=document.createElement('div'); btns.style.cssText='display:flex;gap:8px;';
+    ['True','False'].forEach((lab,bi)=>{
+      const b=document.createElement('button'); b.className='opt'; b.style.cssText='flex:1;justify-content:center;padding:9px;'; b.textContent=lab;
+      b.onclick=()=>{ if(answered) return; work.tf[i]=(bi===0); [...btns.children].forEach(c=>c.classList.remove('sel')); b.classList.add('sel'); renderTfActions(step); };
+      btns.appendChild(b);
+    });
+    row.appendChild(btns); wrap.appendChild(row);
+  });
+  stage.appendChild(wrap);
+  work._tfwrap=wrap; renderTfActions(step);
+}
+function renderTfActions(step){
+  const all=Object.keys(work.tf).length===step.statements.length;
+  setActions(''); actions.appendChild(primary('Check', ()=>checkTf(step), !all));
+}
+function checkTf(step){
+  answered=true; let allCorrect=true; const wrap=work._tfwrap;
+  step.statements.forEach((s,i)=>{
+    const row=wrap.children[i], btns=row.children[1];
+    const correct = work.tf[i]===s.answer; if(!correct) allCorrect=false;
+    btns.children[work.tf[i]?0:1].classList.add(correct?'correct':'wrong');
+    if(!correct) btns.children[s.answer?0:1].classList.add('correct');
+    const w=document.createElement('div'); w.style.cssText='font-size:13px;color:var(--muted);margin-top:9px;'; w.textContent=s.why; row.appendChild(w);
+  });
+  if(allCorrect){ award(15); lmsProgress(); feedback(true,'<b>All correct — myths busted.</b>'); }
+  else { markWrong(); feedback(false,'A couple were off — the corrected answers and the why are under each.'); nudge(step,true); }
+  setActions(''); actions.appendChild(primary('Continue',nextStep));
+}
+
+/* ---- trace (walk the loop) ---- */
+function rTrace(step){
+  head(step);
+  work.turn=0;
+  const goal=document.createElement('div');
+  goal.style.cssText='background:var(--lav-bg);border:1px solid var(--lav-bd);border-radius:12px;padding:11px 14px;margin:0 0 14px;color:var(--lav-deep);font-size:14.5px;';
+  goal.innerHTML='🎯 <b style="font-weight:500;">Goal:</b> '+step.goal; stage.appendChild(goal);
+  const log=document.createElement('div'); log.id='tracelog'; log.style.cssText='display:flex;flex-direction:column;gap:6px;margin:0 0 14px;'; stage.appendChild(log);
+  const box=document.createElement('div'); box.id='turnbox'; stage.appendChild(box);
+  renderTurn(step);
+}
+function renderTurn(step){
+  const t=step.turns[work.turn], box=$('#turnbox'); box.innerHTML='';
+  const sit=document.createElement('p'); sit.className='sub'; sit.style.margin='0 0 12px'; sit.textContent='Turn '+(work.turn+1)+'/'+step.turns.length+' — '+t.situation; box.appendChild(sit);
+  const q=document.createElement('p'); q.className='prompt'; q.style.fontSize='17px'; q.textContent=t.q; box.appendChild(q);
+  const opts=document.createElement('div'); opts.className='opts';
+  t.options.forEach((o,i)=>{ const b=document.createElement('button'); b.className='opt'; b.innerHTML='<span class="tick"></span><span>'+o+'</span>'; b.onclick=()=>pickTurn(step,i,b,opts); opts.appendChild(b); });
+  box.appendChild(opts); setActions('');
+}
+function pickTurn(step,i,b,opts){
+  const t=step.turns[work.turn];
+  if(i===t.correct){
+    [...opts.children].forEach(c=>c.classList.add('dim')); b.classList.remove('dim'); b.classList.add('correct');
+    const row=document.createElement('div'); row.style.cssText='font-size:13.5px;color:var(--green-dk);background:#effaf1;border-radius:8px;padding:7px 11px;'; row.textContent=t.log; $('#tracelog').appendChild(row);
+    award(8); lmsProgress(); work.turn++;
+    if(work.turn>=step.turns.length){ feedback(true,'<b>That’s a full agent run.</b> Think → act → observe, looping until the stop condition (inbox empty) was met. Every agent you build runs this exact cycle.'); setActions(''); actions.appendChild(primary('Continue',nextStep)); }
+    else setTimeout(()=>renderTurn(step), 380);
+  } else {
+    markWrong(); b.classList.add('wrong'); feedback(false,'Not the agent’s move here — think about where it is in the loop right now.'); nudge(step,true);
+  }
+}
+
+/* ---- multi-select (build the definition) ---- */
+function rMulti(step){
+  head(step); work.multi=new Set();
+  const wrap=document.createElement('div'); wrap.className='tray';
+  step.chips.forEach((c,i)=>{ const b=document.createElement('button'); b.className='chip'; b.textContent=c;
+    b.onclick=()=>{ if(answered) return; if(work.multi.has(i)){work.multi.delete(i);b.classList.remove('sel');} else {work.multi.add(i);b.classList.add('sel');} renderMultiActions(step); };
+    wrap.appendChild(b); });
+  stage.appendChild(wrap); work._mwrap=wrap; renderMultiActions(step);
+}
+function renderMultiActions(step){
+  setActions(''); actions.appendChild(startOver(()=>go(idx)));
+  actions.appendChild(primary('Check', ()=>checkMulti(step), work.multi.size===0));
+}
+function checkMulti(step){
+  const chosen=[...work.multi].sort((a,b)=>a-b), correct=[...step.correct].sort((a,b)=>a-b);
+  const ok = chosen.length===correct.length && chosen.every((v,k)=>v===correct[k]);
+  if(ok){ answered=true; [...work._mwrap.children].forEach((b,i)=>{ if(step.correct.includes(i)) b.classList.add('ok'); }); award(15); lmsProgress(); feedback(true,'<b>That’s the definition.</b>', step.why); setActions(''); }
+  else { markWrong(); feedback(false,'Not quite — pick exactly the parts that DEFINE an agent (a UI and a database are common, but optional). Adjust and check again.'); nudge(step,true); setActions(''); actions.appendChild(startOver(()=>go(idx))); actions.appendChild(primary('Check',()=>checkMulti(step))); }
+}
+
+/* ---- done ---- */
+function rDone(){
+  progress();
+  stage.innerHTML=`
+    <div class="done-wrap">
+      <div class="done-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <p class="prompt">You can explain what an agent is.</p>
+      <p class="sub">An agent = <b>Goal</b> + <b>Brain</b> + <b>Tools</b> + <b>Loop</b> (until it stops). That’s the spine of everything we build over the next 3 months.</p>
+      <div class="summary">
+        <div class="crow met"><span class="ic">✓</span>Goal — the real job you want done</div>
+        <div class="crow met"><span class="ic">✓</span>Brain — an LLM decides each step</div>
+        <div class="crow met"><span class="ic">✓</span>Tools — what it can actually DO</div>
+        <div class="crow met"><span class="ic">✓</span>Loop — think → act → observe, until done</div>
+      </div>
+      <p class="sub" style="margin-top:22px;">Earned <b>${gems} gems</b> · Bring your one-line use-case to Friday 5 PM.</p>
+    </div>`;
+  setActions('');
+  actions.appendChild(startOver(()=>{gems=0;perfect=true;go(0);}));
+  const a=document.createElement('a'); a.href=(window.LMS?'/dashboard':'#'); a.className='pill'; a.textContent='Back to my journey →';
+  actions.appendChild(a);
+  lmsComplete().then(d=>{ if(window.celebrate){ celebrate('lesson',{text:(d&&d.fresh===false)?'Nice — replayed!':'Lesson complete! 🎉'}); } });
+}
+
+/* ===================== TRIGUNAI GUIDE (LLM tutor) ===================== */
+const tutor=$('#tutor'), msgs=$('#msgs'), quick=$('#quick');
+let convo=[];
+$('#kojiLaunch').onclick=()=>openTutor();
+$('#tclose').onclick=()=>tutor.classList.remove('open');
+function openTutor(){
+  tutor.classList.add('open');
+  if(!msgs.children.length){
+    const g="Hi — I'm your TrigunAI guide. I won't hand you answers, but I'll ask the right question to get you unstuck. What are you thinking?";
+    bot(g); convo.push({role:'assistant',content:g});
+  }
+  renderQuick(); $('#tin').focus();
+}
+function bot(t){ const m=document.createElement('div'); m.className='msg bot'; m.textContent=t; msgs.appendChild(m); msgs.scrollTop=msgs.scrollHeight; }
+function me(t){ const m=document.createElement('div'); m.className='msg me'; m.textContent=t; msgs.appendChild(m); msgs.scrollTop=msgs.scrollHeight; }
+function botTyping(){ const m=document.createElement('div'); m.className='msg bot'; m.textContent='…'; m.style.opacity='.6'; msgs.appendChild(m); msgs.scrollTop=msgs.scrollHeight; return m; }
+
+function problemContext(){
+  const s=STEPS[idx]; if(!s) return '';
+  let p=`Step type: ${s.type}. Prompt: "${s.prompt}".`;
+  if(s.sub) p+=` Framing: ${s.sub}`;
+  if(s.type==='mcq'){
+    p+='\nOptions:\n'+s.options.map((o,i)=>`  [${i}] ${o.t}${i===s.correct?'  <-- CORRECT, never reveal':''}`).join('\n');
+    if(work.sel!==undefined && work.sel!==null && work.sel!==s.correct) p+=`\nThe learner just picked [${work.sel}], which is wrong.`;
+  }else if(s.type==='classify'){
+    p+='\nMatch each item to one of: '+s.buckets.join(', ')+'.\nCorrect matches (never reveal): '+s.items.map(it=>`"${it.t}" -> ${s.buckets[it.b]}`).join('; ');
+  }else if(s.type==='order'){
+    p+='\nOrder these into the agent loop: '+s.chips.join(' / ')+'.\nCorrect order (never reveal): '+s.correct.map(i=>s.chips[i]).join(' -> ');
+  }else if(s.type==='reflect'){
+    p+='\nThis is the learner reflecting on their OWN use-case. No single right answer — help them make it concrete.';
+  }
+  return p;
+}
+function fallbackHint(text){
+  const h=(STEPS[idx]&&STEPS[idx].hints)||[];
+  if(/wrong/i.test(text)) return h[0]||"Let's look together — what made you pick that?";
+  if(/stuck/i.test(text)) return h[h.length-1]||"Re-read the prompt and name the ONE thing it's asking for.";
+  if(/world|example|my /i.test(text)) return "Picture a task from your own day — how would the 4 parts (goal, brain, tools, loop) map onto it?";
+  return h[0]||"Which part is confusing? Name it and we'll zoom in.";
+}
+async function askGuide(text, opts){
+  opts=opts||{};
+  lmsIntervention(opts.auto ? 'hint' : 'tutor');   // an intervention was shown before the next attempt
+  if(!opts.auto) me(text);
+  convo.push({role:'user',content:text});
+  const typing=botTyping();
+  let reply=null;
+  try{
+    if(window.LMS){
+      const res=await fetch('/api/tutor/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({history:convo,problem:problemContext()})});
+      const d=await res.json(); reply=d.reply;
+    }
+  }catch(e){}
+  typing.remove();
+  const out = reply || fallbackHint(text);
+  bot(out); convo.push({role:'assistant',content:out});
+}
+function nudge(step, auto){
+  if(auto) tutor.classList.add('open');
+  renderQuick();
+  askGuide("I just answered this wrong. Give me a Socratic hint — don't tell me the answer.", {auto:true});
+}
+function renderQuick(){
+  quick.innerHTML='';
+  const qs=['Why was my answer wrong?','Give me a hint','Explain it in my world','I’m stuck'];
+  qs.forEach(q=>{ const b=document.createElement('button'); b.textContent=q; b.onclick=()=>{
+    const msg = q==='Explain it in my world'
+      ? 'Explain this concept using an example from MY own work or interests.'
+      : (q==='I’m stuck' ? "I'm totally stuck — give me the smallest next step." : q);
+    askGuide(msg);
+  }; quick.appendChild(b); });
+}
+$('#tsend').onclick=sendTin; $('#tin').addEventListener('keydown',e=>{if(e.key==='Enter')sendTin();});
+function sendTin(){ const v=$('#tin').value.trim(); if(!v) return; $('#tin').value=''; askGuide(v); }
+
+/* ===================== BOOT ===================== */
+buildDots(); render();
+</script>
+</body>
+</html>

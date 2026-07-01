@@ -1,0 +1,143 @@
+{
+  "slug": "vid-voices",
+  "title": "AI voices (TTS)",
+  "steps": [
+    { "type": "intro",
+      "art": "📄 → 🎙️",
+      "prompt": "No mic, no voice actor — so why does it sound human?",
+      "sub": "A script that reads great on paper can sound robotic out loud. The fix isn't a fancier model — it's writing for the ear. By the end you'll script a line that a TTS voice can deliver naturally.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "Same meaning, two scripts. Which one will a TTS voice read more naturally?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "\"Notwithstanding the aforementioned considerations, one must acknowledge that battery degradation, which is a function of thermal exposure, accelerates considerably.\"" },
+        { "t": "\"Here's the thing about batteries. Heat wears them out. The hotter your phone gets, the faster it dies.\"" }
+      ],
+      "correct": 1,
+      "why": "TTS reads exactly what you write. Long, clause-stacked sentences make the voice rush and run out of breath; short sentences give it room to land. The second version is written for listening — and it's the one a real narrator would actually say.",
+      "hints": [
+        "Read both out loud. Which one makes YOU run out of breath?",
+        "Spoken language is short and direct. Written-for-the-page language stacks clauses."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "What TTS gives you — and what it asks back.",
+      "sub": "Tap each card. This is the deal you're making with the voice model.",
+      "cards": [
+        { "em": "🗣️", "h": "Natural narration", "b": "A model like F5-TTS turns plain text into clear, human-sounding speech — no recording session." },
+        { "em": "🌍", "h": "Voices + languages", "b": "Pick a voice and a language. Same script, narrated as a calm woman, a warm man, in English or Hindi." },
+        { "em": "✂️", "h": "Short sentences", "b": "It reads what you write. Short lines = clean pacing. Long ones = a breathless rush." },
+        { "em": "❗", "h": "Punctuation = pacing", "b": "Commas are small pauses, periods are full stops. Your punctuation is the voice's breathing." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Which lines are written for the EAR, and which for the page?",
+      "sub": "Tap a line, then the bin. The ear ones are TTS-ready.",
+      "buckets": ["👂 For the ear (TTS-ready)", "📄 For the page (will sound robotic)"],
+      "items": [
+        { "t": "\"Want longer battery life? Stop charging overnight.\"", "b": 0 },
+        { "t": "\"It is recommended that users refrain from prolonged charging cycles during nocturnal periods.\"", "b": 1 },
+        { "t": "\"Three quick tips. First, lower your screen brightness.\"", "b": 0 },
+        { "t": "\"The aforementioned device, having been subjected to elevated temperatures, exhibits diminished longevity.\"", "b": 1 }
+      ],
+      "constraints": ["All 4 sorted", "Every one correct"],
+      "hints": [
+        "Could you say it out loud to a friend without sounding strange?",
+        "\"Aforementioned\", \"it is recommended that\" — nobody talks like that. That's page language."
+      ] },
+
+    { "type": "order",
+      "prompt": "Order the steps to script a clean voiceover scene.",
+      "sub": "Tap them first to last.",
+      "chips": ["Read it aloud and cut anything that trips your tongue", "Write the idea in plain spoken sentences", "Break long sentences into short ones", "Add punctuation to cue the pauses", "Pick a voice + language and generate the narration"],
+      "correct": [1, 2, 3, 0, 4],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't punctuate or trim a line that isn't written yet.",
+        "The read-aloud test comes right before you commit to TTS — it's your last check."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Fix a robotic line, step by step.",
+      "sub": "A creator wrote one dense sentence and the TTS read it badly. Pick the next move.",
+      "goal": "Turn one breathless sentence into natural narration.",
+      "turns": [
+        { "situation": "The draft: \"Although many people believe charging overnight is harmless, the truth is that keeping a battery at 100% for hours, especially in a warm room, slowly wears down its capacity over time.\" The voice rushes and runs out of air.",
+          "q": "First fix?",
+          "options": ["Add more adjectives to make it richer", "Split it into short sentences", "Generate it again on a different voice and hope"],
+          "correct": 1, "log": "✂️ Split → \"Charging overnight isn't harmless. A full battery in a warm room slowly wears out.\"" },
+        { "situation": "Now two short sentences. But it's flat — no pause before the payoff.",
+          "q": "What gives the voice pacing?",
+          "options": ["Punctuation — a comma or a period where you'd breathe", "ALL CAPS on the key word", "Removing every comma so it flows faster"],
+          "correct": 0, "log": "❗ Punctuation → \"Charging overnight isn't harmless. Here's why: heat plus a full battery wears it out.\"" },
+        { "situation": "Reads cleanly on screen. You haven't heard it yet.",
+          "q": "Last check before you commit?",
+          "options": ["Read it aloud yourself to catch any tongue-twister", "Publish immediately", "Make it twice as long for value"],
+          "correct": 0, "log": "👂 Read-aloud → smooth, no stumbles" },
+        { "situation": "The line is clean and spoken-friendly. Audience is Hindi-speaking, calm tone.",
+          "q": "Final step?",
+          "options": ["Pick a calm voice + Hindi, then generate the narration", "Keep it in English regardless of the audience", "Skip TTS and type the words on screen instead"],
+          "correct": 0, "log": "🎙️ TTS → calm Hindi narration.wav ✅" }
+      ],
+      "hints": [
+        "Order: split → punctuate → read aloud → generate.",
+        "Matching voice and language to your actual audience is part of the craft, not an afterthought."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Voice myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "TTS interprets your meaning, so messy punctuation doesn't matter.", "answer": false,
+          "why": "False — TTS reads your text literally. Commas and periods become its pauses and breaths. Sloppy punctuation makes sloppy pacing." },
+        { "t": "The same script can be narrated in multiple voices and languages.", "answer": true,
+          "why": "True — that's a superpower of TTS. One script becomes an English calm-female read and a Hindi warm-male read without re-recording anything." },
+        { "t": "Longer, denser sentences make AI narration sound smarter.", "answer": false,
+          "why": "False — they make it sound breathless and robotic. Short spoken sentences are what sound human and confident." },
+        { "t": "Reading your script out loud is the cheapest way to catch lines that will sound bad.", "answer": true,
+          "why": "True — your own mouth finds the tongue-twisters and run-ons before you ever generate audio. It costs nothing and saves re-renders." }
+      ],
+      "hints": [
+        "Think about what punctuation literally does to a voice.",
+        "Spoken-friendly = short. Page-friendly = dense."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Your video targets busy Hindi-speaking parents and the mood is reassuring. Which voice choice fits best?",
+      "sub": "Match the voice to the audience and the feeling.",
+      "options": [
+        { "t": "A fast, hype English voice — energy sells." },
+        { "t": "A calm, warm Hindi voice — it matches both the audience's language and the reassuring tone." },
+        { "t": "Whatever voice is the default — viewers don't notice." }
+      ],
+      "correct": 1,
+      "why": "Voice is a content decision, not a default. The language has to match the audience, and the delivery (calm/warm) has to match the mood. A hype English read fights both. Viewers absolutely notice when the voice doesn't fit the feeling.",
+      "hints": [
+        "Two things must match: the audience's language and the video's mood.",
+        "A reassuring topic read in a hype voice feels wrong, even if the words are right."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours — pick your narrator.",
+      "sub": "Not graded. We'll use this to suggest TTS settings for your channel.",
+      "fields": [
+        { "k": "interest", "label": "Who's your audience, and what language do they want?", "ph": "e.g. Indian college students, Hindi / global devs, English" },
+        { "k": "goal", "label": "Describe your ideal narrator voice in 3 words:", "ph": "e.g. calm, warm, trustworthy / fast, fun, energetic" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Tap ALL the habits that make a script TTS-ready.",
+      "sub": "Some sound helpful but actually hurt the read. Pick only the ones that help.",
+      "chips": ["Short, spoken sentences", "Punctuation that cues pauses", "Reading it aloud before generating", "Matching voice + language to the audience", "Long clause-stacked sentences", "Big rare vocabulary to sound smart"],
+      "correct": [0, 1, 2, 3],
+      "why": "Writing for the ear = short sentences, intentional punctuation, the read-aloud test, and a voice/language that fits the audience. Clause-stacking and rare vocabulary push the read back toward robotic page-language.",
+      "hints": [
+        "Recall the cards: short sentences, punctuation, voices/languages.",
+        "If a habit makes a human narrator stumble, it'll make TTS stumble too."
+      ] },
+
+    { "type": "done" }
+  ]
+}

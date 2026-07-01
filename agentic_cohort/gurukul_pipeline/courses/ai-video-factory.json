@@ -1,0 +1,18 @@
+{
+  "course_id": "ai-video-factory",
+  "name": "Build Your AI Video Factory — The Craft of AI-Assisted Storytelling",
+  "order": ["video_stack","tts_scripting","ai_voices","motion_graphics","contextual_bg","kinetic_captions","music_beds","compositing","localization","copyright_clean"],
+  "assessments": {},
+  "concepts": {
+    "video_stack":      {"module":1,"hook":"Faceless AI slop vs a video that means something — is the difference the tools, or the craft?","recall":"What does an AI video pipeline assemble?","answer":"script -> AI voice -> visuals/motion graphics -> captions -> music -> compositing -> render"},
+    "tts_scripting":    {"module":2,"hook":"A script that reads great on paper sounds robotic spoken. How do you write for the ear?","recall":"How do you script for AI voice (TTS)?","answer":"short sentences, natural phrasing, punctuation that cues pacing — write for listening"},
+    "ai_voices":        {"module":3,"hook":"No mic, no voice actor — yet a clear human narrator. What makes that?","recall":"What does a TTS model (e.g. F5-TTS) give you?","answer":"natural human-sounding narration from text, in multiple voices/languages"},
+    "motion_graphics":  {"module":4,"hook":"Talking over a static slide loses people. What makes the visuals move with the words?","recall":"What does a tool like Manim add?","answer":"precise animated motion graphics / diagrams synced to the narration"},
+    "contextual_bg":    {"module":5,"hook":"Why generate a background per scene instead of one stock loop?","recall":"Why contextual AI backgrounds?","answer":"visuals that match the words hold attention — generated per-scene from the script"},
+    "kinetic_captions": {"module":6,"hook":"Most viewers watch muted. What keeps them following + boosts retention?","recall":"What are word-synced kinetic captions, and why?","answer":"captions that highlight word-by-word in time — retention + accessibility"},
+    "music_beds":       {"module":7,"hook":"Silence under narration feels flat; loud music buries it. What's the balance?","recall":"What's a music / focus-audio bed for?","answer":"a soft background track that sets emotion without competing with the voice"},
+    "compositing":      {"module":8,"hook":"Voice, visuals, captions, music — separate files. How do they become one video?","recall":"What does compositing + GPU render do?","answer":"layer all elements on one timeline and render the final MP4"},
+    "localization":     {"module":9,"hook":"One video, two languages, same visuals. How?","recall":"How do you make a bilingual/localized version?","answer":"re-narrate + re-caption in the other language over the same visuals"},
+    "copyright_clean":  {"module":10,"hook":"You want to monetize it without a takedown. What makes a video safe?","recall":"Why 'copyright-clean', and how?","answer":"use license-safe assets + models so every video is safe to monetize"}
+  }
+}

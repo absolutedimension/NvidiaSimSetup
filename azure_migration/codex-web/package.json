@@ -1,0 +1,13 @@
+{
+  "name": "codex-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Thin web client to drive the Codex agent (Azure OpenAI) on this VM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

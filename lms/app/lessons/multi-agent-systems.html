@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Multi-agent systems · TrigunAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script src="/static/celebrate.js"></script>
+<style>
+:root{--bg:#fff;--ink:#2b2b33;--muted:#8a8a99;--lav-bg:#eef0fb;--lav-bd:#c9d0f5;--lav-deep:#3a44b8;--indigo:#5b63e6;--green:#22c55e;--green-dk:#15803d;--red:#ef4444;--red-bg:#fdecec;--btn:#2d2d33;--btn-dis:#e6e6ec;--rb:11px;--shadow:0 8px 24px rgba(30,30,60,.06);}
+*{box-sizing:border-box;}html,body{margin:0;height:100%;}
+body{font-family:'Poppins',-apple-system,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh;}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+header{display:flex;align-items:center;gap:18px;padding:16px 26px;border-bottom:1px solid #f0f0f5;}
+.x-btn{border:none;background:none;font-size:22px;color:var(--muted);cursor:pointer;line-height:1;}
+.bar{flex:1;height:12px;border-radius:99px;background:#eceef2;overflow:hidden;}.bar>i{display:block;height:100%;width:0;background:var(--green);border-radius:99px;transition:width .45s cubic-bezier(.4,1.3,.5,1);}
+.dots{display:flex;gap:7px;}.dots>span{width:8px;height:8px;border-radius:50%;background:#dcdce4;transition:background .3s;}.dots>span.on{background:var(--green);}
+.streak{font-weight:500;font-size:15px;color:var(--muted);}
+main{flex:1;display:flex;justify-content:center;padding:40px 24px 130px;}
+.stage{width:100%;max-width:620px;animation:rise .4s ease;}
+@keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.prompt{font-size:20px;font-weight:500;line-height:1.45;margin:0 0 8px;}.sub{font-size:15.5px;color:var(--muted);line-height:1.6;margin:0 0 22px;}.intro-art{font-size:46px;text-align:center;margin:18px 0 26px;}
+.constraints{border:1.5px solid var(--lav-bd);border-radius:14px;padding:12px 16px;margin:0 0 18px;background:#fafbff;transition:border-color .3s;}.constraints.done{border-color:var(--green);}
+.crow{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--ink);padding:4px 0;}.crow .ic{width:18px;flex:0 0 18px;}.crow.met{color:var(--green-dk);}
+.opts{display:flex;flex-direction:column;gap:12px;margin:0 0 8px;}
+.opt{display:flex;align-items:center;gap:12px;text-align:left;border:1.5px solid var(--lav-bd);background:#fff;border-radius:var(--rb);padding:15px 16px;font:inherit;font-size:15.5px;color:var(--ink);cursor:pointer;transition:.15s;width:100%;}
+.opt:hover{background:var(--lav-bg);}.opt .tick{width:22px;height:22px;flex:0 0 22px;border-radius:50%;border:2px solid var(--lav-bd);}
+.opt.sel{border-color:var(--indigo);background:var(--lav-bg);}.opt.sel .tick{border-color:var(--indigo);background:var(--indigo);box-shadow:inset 0 0 0 3px #fff;}
+.opt.correct{border-color:var(--green);background:#effaf1;}.opt.correct .tick{border-color:var(--green);background:var(--green);box-shadow:inset 0 0 0 3px #fff;}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);}.opt.dim{opacity:.5;}
+.cards4{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.pcard{border:1.5px solid var(--lav-bd);background:var(--lav-bg);border-radius:14px;padding:14px 16px;cursor:pointer;transition:.18s;}.pcard:hover{transform:translateY(-2px);box-shadow:var(--shadow);}.pcard.opened{background:#fff;border-color:var(--indigo);}
+.pcard h4{margin:0 0 4px;font-size:15.5px;font-weight:600;color:var(--lav-deep);display:flex;align-items:center;gap:8px;}.pcard .body{font-size:13.5px;color:var(--muted);line-height:1.55;max-height:0;overflow:hidden;transition:max-height .3s;}.pcard.opened .body{max-height:200px;margin-top:6px;}.pcard .em{font-size:22px;}
+.buckets{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 18px;}
+.bucket{border:1.5px dashed var(--lav-bd);border-radius:14px;min-height:78px;padding:10px;background:#fafbff;}.bucket .blabel{font-size:12.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;}.bucket .holder{display:flex;flex-wrap:wrap;gap:8px;}
+.tray{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;}
+.chip{border:1.5px solid var(--lav-bd);background:#fff;border-radius:var(--rb);padding:9px 14px;font-size:14px;cursor:pointer;transition:.15s;font-family:inherit;color:var(--ink);}.chip:hover{background:var(--lav-bg);}.chip.sel{border-color:var(--indigo);background:var(--indigo);color:#fff;}.chip.placed{border-color:var(--lav-bd);background:#fff;}.chip.ok{border-color:var(--green);background:#effaf1;color:var(--green-dk);}.chip.bad{border-color:var(--red);background:var(--red-bg);color:#b42318;}
+.field{margin:0 0 16px;}.field label{display:block;font-size:14px;font-weight:500;margin:0 0 6px;}.field input{width:100%;border:1.5px solid var(--lav-bd);border-radius:var(--rb);padding:12px 14px;font:inherit;font-size:15px;}.field input:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(91,99,230,.12);}
+.fb{border-radius:14px;padding:14px 16px;margin:16px 0 0;font-size:14.5px;line-height:1.55;display:none;}.fb.show{display:block;animation:rise .25s ease;}.fb.ok{background:#effaf1;color:var(--green-dk);}.fb.no{background:var(--red-bg);color:#b42318;}
+.done-wrap{text-align:center;padding:10px 0;}.done-badge{width:84px;height:84px;border-radius:50%;background:#effaf1;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;animation:pop .5s cubic-bezier(.3,1.5,.5,1);}.done-badge svg{width:44px;height:44px;color:var(--green);}
+@keyframes pop{from{transform:scale(.2);opacity:0;}to{transform:scale(1);opacity:1;}}
+footer{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #f0f0f5;padding:16px 24px;display:flex;justify-content:center;}
+.actions{width:100%;max-width:620px;display:flex;gap:12px;align-items:center;justify-content:flex-end;}
+.startover{display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--muted);font:inherit;font-size:14px;cursor:pointer;margin-right:auto;}
+.pill{border:none;border-radius:99px;padding:14px 40px;font:inherit;font-weight:500;font-size:16px;color:#fff;background:var(--btn);cursor:pointer;transition:.15s;}.pill:hover{filter:brightness(1.12);}.pill.disabled{background:var(--btn-dis);color:#b3b3bd;cursor:not-allowed;pointer-events:none;}.pill.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--lav-bd);}
+.koji-launch{position:fixed;left:22px;bottom:22px;width:54px;height:54px;border:none;cursor:pointer;background:none;z-index:40;}.koji-launch .gem{width:54px;height:54px;background:linear-gradient(135deg,#7c83f3,#4a52d6);transform:rotate(45deg);border-radius:14px;box-shadow:0 6px 18px rgba(74,82,214,.4);}
+.tutor{position:fixed;top:0;bottom:0;left:0;width:340px;background:#fff;border-right:1px solid #eee;z-index:50;transform:translateX(-105%);transition:transform .3s cubic-bezier(.4,1,.4,1);display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(30,30,60,.10);}.tutor.open{transform:none;}
+.tutor .thead{display:flex;align-items:center;gap:10px;padding:18px 18px 12px;border-bottom:1px solid #f2f2f7;}.tutor .thead .mini{width:26px;height:26px;background:linear-gradient(135deg,#7c83f3,#4a52d6);transform:rotate(45deg);border-radius:7px;}.tutor .thead b{font-size:15px;font-weight:600;}.tutor .tclose{margin-left:auto;border:none;background:none;font-size:20px;color:var(--muted);cursor:pointer;}
+.msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}.msg{max-width:85%;font-size:14px;line-height:1.5;padding:10px 13px;border-radius:14px;}.msg.bot{background:#eef0fb;color:#3a44b8;border-bottom-left-radius:4px;align-self:flex-start;}.msg.me{background:var(--lav-bg);color:var(--lav-deep);border-bottom-right-radius:4px;align-self:flex-end;}
+.quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px;}.quick button{border:1.5px solid var(--lav-bd);background:#fff;border-radius:99px;padding:7px 13px;font:inherit;font-size:12.5px;color:var(--lav-deep);cursor:pointer;}
+.tinput{display:flex;gap:8px;padding:12px 16px;border-top:1px solid #f2f2f7;}.tinput input{flex:1;border:1.5px solid var(--lav-bd);border-radius:99px;padding:10px 14px;font:inherit;font-size:13.5px;}.tinput input:focus{outline:none;border-color:var(--indigo);}.tinput button{border:none;background:var(--indigo);color:#fff;border-radius:99px;width:40px;cursor:pointer;font-size:16px;}
+@media(max-width:560px){.cards4,.buckets{grid-template-columns:1fr;}.tutor{width:88%;}.pill{padding:14px 28px;}}
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="/static/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/static/brand/favicon-16.png" />
+<link rel="apple-touch-icon" href="/static/brand/apple-touch-icon.png" />
+<link rel="manifest" href="/static/brand/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+<h2 class="sr-only">Multi-agent systems — orchestrator, workers, handoff format, when NOT to use multi-agent.</h2>
+<header>
+  <button class="x-btn" onclick="window.location.href=(window.LMS?'/dashboard':'about:blank')">&times;</button>
+  <div class="bar"><i id="barfill"></i></div><div class="dots" id="dots"></div>
+  <div class="streak"><span id="gems">0</span></div>
+</header>
+<main><div class="stage" id="stage"></div></main>
+<footer><div class="actions" id="actions"></div></footer>
+<button class="koji-launch" id="kojiLaunch"><span class="gem"></span></button>
+<aside class="tutor" id="tutor">
+  <div class="thead"><span class="mini"></span><div><b>TrigunAI guide</b><small>multi-agent questions</small></div><button class="tclose" id="tclose">&times;</button></div>
+  <div class="msgs" id="msgs"></div><div class="quick" id="quick"></div>
+  <div class="tinput"><input id="tin" placeholder="Ask your guide…"/><button id="tsend">&rarr;</button></div>
+</aside>
+<script>
+const STEPS=[
+  {type:'intro',art:'🤖🤖',
+   prompt:'Multi-agent systems',
+   sub:"One agent handles one conversation. But some jobs are too big, too parallel, or too specialised for a single agent. This lesson teaches the orchestrator-worker pattern — the most practical multi-agent shape — and when NOT to add agents.",
+   cta:'Start'},
+
+  {type:'mcq',
+   prompt:'What is the core job of the "orchestrator" agent in an orchestrator-worker system?',
+   sub:'',
+   options:[
+     {t:'The orchestrator directly executes every tool call.'},
+     {t:'The orchestrator breaks the goal into subtasks, assigns each subtask to a worker agent, and assembles the final result from the workers\' outputs.'},
+     {t:'The orchestrator stores the memory for all other agents.'}
+   ],
+   correct:1,
+   why:'The orchestrator is the project manager, not the worker. It decomposes the goal, hands off subtasks with clear instructions and the data needed, waits for results, and synthesises the final output. It never does the domain work itself — that\'s the worker\'s job. This separation of concerns is what makes multi-agent systems scalable.',
+   hints:['Think of a team: who sets the tasks vs who does the tasks?','The orchestrator should not be reading emails or writing code — who does that?']},
+
+  {type:'reveal',
+   prompt:'The 4 components of a well-designed multi-agent system.',
+   sub:'Tap each card.',
+   cards:[
+     {em:'🎯',h:'Orchestrator', b:'A single agent that owns the goal. It plans subtasks, routes each one to the right worker, and assembles the final output. It\'s the ONLY agent that sees the original goal and final context.'},
+     {em:'🔧',h:'Worker agents', b:'Specialised agents with a focused job: one for research, one for writing, one for code review. Each receives a clear task description + the data it needs — nothing more. Workers don\'t know about each other.'},
+     {em:'📋',h:'Handoff format', b:'The orchestrator passes work to workers as structured messages: {task, context, output_format, constraints}. Workers return structured results in the same shape. Never pass raw conversation history — it blows up context and costs.'},
+     {em:'✅',h:'Result aggregation', b:'The orchestrator receives each worker\'s output, validates it, and merges it into the final answer. If a worker fails, the orchestrator decides: retry, skip, or escalate to a human checkpoint.'}
+   ]},
+
+  {type:'classify',
+   prompt:'Sort each scenario: needs a SINGLE agent, or a MULTI-AGENT system.',
+   sub:'',
+   buckets:['Single agent is enough','Multi-agent needed'],
+   items:[
+     {t:'Answer a customer support question from a knowledge base',b:0},
+     {t:'Research 50 leads in parallel, enrich each with LinkedIn data, then draft personalised emails for all',b:1},
+     {t:'Classify an incoming invoice as "pay" or "hold"',b:0},
+     {t:'Run a competitor analysis: one agent researches pricing, another researches features, a third drafts the summary',b:1},
+     {t:'Summarise a single document and save it to Notion',b:0},
+     {t:'Nightly job: crawl 200 product pages, extract structured data from each, and write a trend report',b:1}
+   ],
+   constraints:['All 6 sorted','All correct'],
+   hints:['If a single LLM context window can hold the whole task, one agent is enough.','Parallelism (many independent subtasks) and specialisation (different skills for different parts) are the signals for multi-agent.']},
+
+  {type:'mcq',
+   prompt:'You\'re designing a multi-agent pipeline. What should the orchestrator pass to each worker?',
+   sub:'Choose the most efficient handoff.',
+   options:[
+     {t:'The full conversation history from the start of the session.'},
+     {t:'A focused JSON object: the task description, the relevant data for that task, the expected output format, and any constraints.'},
+     {t:'A natural-language chat message: "Hey, can you research this for me?"'}
+   ],
+   correct:1,
+   why:'Passing the full conversation history is expensive and introduces irrelevant noise into each worker\'s context. Natural-language chat messages are ambiguous — the worker wastes tokens clarifying. The right handoff is a focused, structured payload: exactly what the worker needs to do its job, no more. Structured handoffs also make it easy to validate the worker\'s output against the expected schema.',
+   hints:['What does "minimum context needed" mean for an agent receiving a task?','If the worker needs to read 10 000 tokens of history to find the 50 tokens it actually needs — what\'s the cost?']},
+
+  {type:'mcq',
+   prompt:'When should you NOT use multi-agent, even if the task seems complex?',
+   sub:'Pick the honest answer.',
+   options:[
+     {t:'When the total task fits in one LLM\'s context window and the steps are sequential, not parallel.'},
+     {t:'When you want to impress stakeholders.'},
+     {t:'When you are using Claude — Claude handles everything in one call.'}
+   ],
+   correct:0,
+   why:'Multi-agent adds overhead: more API calls, more complexity, more failure points, higher latency. If the whole task fits in one context window and each step depends on the previous (no parallelism), a single well-prompted agent with ReAct is simpler, cheaper, and more reliable. The rule: add agents when you need PARALLELISM or SPECIALISATION — not to seem sophisticated.',
+   hints:['What does multi-agent add that a single agent can\'t do? When is that actually needed?','If all steps must run in sequence and the whole thing fits in one context, what does a second agent actually give you?']},
+
+  {type:'tf',
+   prompt:'True or false — test your understanding of multi-agent design.',
+   sub:'',
+   statements:[
+     {t:'Workers in a multi-agent system should share a single context window so they can see each other\'s work.',answer:false,why:'Workers should be isolated. Each gets only the data it needs. Shared context means irrelevant noise, higher cost, and potential for one worker\'s error to corrupt another\'s output.'},
+     {t:'Multi-agent systems have more failure points than single-agent systems.',answer:true,why:'Correct — every worker is a potential failure point. Each handoff is a potential format mismatch. Orchestrator + N workers = N+1 things that can fail. This is a real cost of complexity — offset only when parallelism/specialisation justify it.'},
+     {t:'The orchestrator should do the domain work itself to reduce the number of API calls.',answer:false,why:'No — the orchestrator\'s job is decomposition and assembly, not execution. If it does domain work, it becomes a single point of failure and loses the benefit of specialisation.'},
+     {t:'A structured handoff format (not free-form chat) makes multi-agent pipelines easier to debug.',answer:true,why:'Correct — structured payloads are inspectable, loggable, and testable. If a worker fails, you can see exactly what it received and what it returned.'}
+   ]},
+
+  {type:'reflect',capture:true,
+   prompt:'Design your multi-agent use case.',
+   sub:'',
+   fields:[
+     {k:'orchestrator_goal',label:'What goal would benefit from multiple specialised agents in your work?',ph:'e.g. nightly: scrape 30 job boards, extract requirements, match to my skill profile, draft application emails'},
+     {k:'worker_split',label:'Name the 2-3 worker roles (what does each one specialise in?):',ph:'e.g. Worker 1: scraper — Worker 2: skill matcher — Worker 3: email drafter'}
+   ]},
+
+  {type:'done'}
+];
+
+const $=s=>document.querySelector(s);
+const stage=$('#stage'),actions=$('#actions');
+let idx=0,gems=0,perfect=true;
+function lms(p){return(window.LMS&&window.LMS.api?window.LMS.api:'')+p;}
+let stepStart=Date.now(), attemptNo=1;
+function lmsEvent(correct,extra){ if(!window.LMS) return; var s=(typeof STEPS!=='undefined'&&STEPS[idx])?STEPS[idx]:{}; var body=Object.assign({step:idx,type:s.type||'',concept:s.concept||'',correct:!!correct,attempt_no:attemptNo,latency_ms:Date.now()-stepStart},extra||{}); fetch(lms('/progress'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).catch(function(){}); }
+function markWrong(extra){ perfect=false; lmsEvent(false,extra); attemptNo++; }
+function lmsIntervention(kind){ lmsEvent(false,{action:(kind==='tutor'?'tutor_ask':'hint'),intervention:kind}); }
+function lmsProgress(){if(!window.LMS)return;fetch(lms('/progress'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({step:idx,correct:true})}).catch(()=>{});}
+function lmsComplete(){if(!window.LMS)return Promise.resolve(null);return fetch(lms('/complete'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({score:gems,perfect:perfect})}).then(r=>r.json()).catch(()=>null);}
+function lmsCapture(key,value){if(!window.LMS||!value)return;fetch('/api/profile/capture',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key,value,source:'lesson'})}).catch(()=>{});}
+let work={},answered=false;
+function buildDots(){const d=$('#dots');d.innerHTML='';STEPS.forEach(()=>{const s=document.createElement('span');d.appendChild(s);});}
+function progress(){$('#barfill').style.width=(idx/(STEPS.length-1))*100+'%';[...$('#dots').children].forEach((s,i)=>s.classList.toggle('on',i<=idx));$('#gems').textContent=gems;}
+function go(n){idx=n;answered=false;work={};stepStart=Date.now();attemptNo=1;render();}
+function nextStep(){if(idx<STEPS.length-1)go(idx+1);}
+function award(n){gems+=n;$('#gems').textContent=gems;}
+function setActions(h){actions.innerHTML=h;}
+function primary(label,fn,disabled){const b=document.createElement('button');b.className='pill'+(disabled?' disabled':'');b.textContent=label;if(!disabled)b.onclick=fn;return b;}
+function startOver(fn){const b=document.createElement('button');b.className='startover';b.innerHTML='&#8635; Start over';b.onclick=fn;return b;}
+function feedback(ok,text){let fb=$('#fb');if(!fb){fb=document.createElement('div');fb.id='fb';fb.className='fb';stage.appendChild(fb);}fb.className='fb show '+(ok?'ok':'no');fb.innerHTML=text;}
+function showWhy(text){feedback(true,'<b>Here\'s why:</b><br>'+text);setActions('');actions.appendChild(primary('Got it',()=>{award(10);nextStep();}));}
+function render(){const step=STEPS[idx];progress();stage.innerHTML='';setActions('');({intro:rIntro,mcq:rMcq,reveal:rReveal,classify:rClassify,tf:rTf,reflect:rReflect,done:rDone})[step.type](step);}
+function head(step){if(step.art)stage.insertAdjacentHTML('beforeend',`<div class="intro-art">${step.art}</div>`);stage.insertAdjacentHTML('beforeend',`<p class="prompt">${step.prompt}</p>`);if(step.sub)stage.insertAdjacentHTML('beforeend',`<p class="sub">${step.sub}</p>`);}
+function rIntro(step){head(step);actions.appendChild(primary(step.cta||'Continue',nextStep));}
+function rMcq(step){head(step);const wrap=document.createElement('div');wrap.className='opts';step.options.forEach((o,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="tick"></span><span>${o.t}</span>`;b.onclick=()=>{if(answered)return;work.sel=i;[...wrap.children].forEach(c=>c.classList.remove('sel'));b.classList.add('sel');renderMcqActions(step,wrap);};wrap.appendChild(b);});stage.appendChild(wrap);renderMcqActions(step,wrap);}
+function renderMcqActions(step,wrap){setActions('');actions.appendChild(primary('Check',()=>checkMcq(step,wrap),work.sel===undefined));}
+function checkMcq(step,wrap){answered=true;const ok=work.sel===step.correct;[...wrap.children].forEach((c,i)=>{if(i===step.correct)c.classList.add('correct');else if(i===work.sel)c.classList.add('wrong');else c.classList.add('dim');});if(ok){award(10);lmsProgress();feedback(true,'<b>Correct.</b>');setActions('');const wb=primary('Why?',()=>showWhy(step.why));wb.classList.add('ghost');wb.style.padding='8px 18px';wb.style.fontSize='14px';const sk=primary('Continue',()=>{award(10);nextStep();});sk.classList.add('ghost');sk.style.padding='8px 18px';sk.style.fontSize='14px';const w2=document.createElement('div');w2.style='display:flex;gap:10px;';w2.appendChild(wb);w2.appendChild(sk);actions.appendChild(w2);}else{markWrong();feedback(false,'Not quite.');nudge(step,true);setActions('');actions.appendChild(primary('Continue',()=>{feedback(true,'<b>Why:</b> '+step.why);setActions('');actions.appendChild(primary('Got it',nextStep));}));}}
+function rReveal(step){head(step);const grid=document.createElement('div');grid.className='cards4';let opened=0;step.cards.forEach(c=>{const card=document.createElement('div');card.className='pcard';card.innerHTML=`<h4><span class="em">${c.em}</span>${c.h}</h4><div class="body">${c.b}</div>`;card.onclick=()=>{if(!card.classList.contains('opened')){card.classList.add('opened');opened++;if(opened===step.cards.length)enableContinue();}};grid.appendChild(card);});stage.appendChild(grid);const cont=primary('Continue',nextStep,true);actions.appendChild(cont);function enableContinue(){cont.classList.remove('disabled');cont.onclick=nextStep;}}
+function rClassify(step){head(step);work.place={};const cons=document.createElement('div');cons.className='constraints';cons.innerHTML=step.constraints.map(c=>`<div class="crow"><span class="ic">○</span>${c}</div>`).join('');stage.appendChild(cons);const bwrap=document.createElement('div');bwrap.className='buckets';step.buckets.forEach((name,bi)=>{const bk=document.createElement('div');bk.className='bucket';bk.dataset.bi=bi;bk.innerHTML=`<div class="blabel">${name}</div><div class="holder"></div>`;bk.onclick=()=>{if(work.selItem!=null)placeItem(work.selItem,bi);};bwrap.appendChild(bk);});stage.appendChild(bwrap);const tray=document.createElement('div');tray.className='tray';tray.id='tray';step.items.forEach((it,ii)=>{const c=document.createElement('button');c.className='chip';c.dataset.ii=ii;c.textContent=it.t;c.onclick=()=>selectItem(ii,c);tray.appendChild(c);});stage.appendChild(tray);renderClassifyActions(step);function selectItem(ii,c){if(answered)return;work.selItem=(work.selItem===ii?null:ii);document.querySelectorAll('#tray .chip, .holder .chip').forEach(x=>x.classList.remove('sel'));if(work.selItem!=null)c.classList.add('sel');}function placeItem(ii,bi){if(answered)return;work.place[ii]=bi;work.selItem=null;document.querySelectorAll('.holder').forEach(h=>h.innerHTML='');document.querySelectorAll('#tray .chip').forEach(ch=>ch.style.display='');step.items.forEach((it,k)=>{if(work.place[k]!=null){document.querySelector(`#tray .chip[data-ii="${k}"]`).style.display='none';const holder=document.querySelector(`.bucket[data-bi="${work.place[k]}"] .holder`);const c=document.createElement('button');c.className='chip placed';c.textContent=it.t;c.onclick=()=>{if(answered)return;delete work.place[k];render();};holder.appendChild(c);}});renderClassifyActions(step);}}
+function renderClassifyActions(step){const all=Object.keys(work.place||{}).length===step.items.length;setActions('');actions.appendChild(startOver(()=>go(idx)));actions.appendChild(primary('Check',()=>checkClassify(step),!all));}
+function checkClassify(step){answered=true;let allCorrect=true;step.items.forEach((it,ii)=>{const correct=work.place[ii]===it.b;if(!correct)allCorrect=false;const chip=[...document.querySelectorAll('.holder .chip')].find(c=>c.textContent===it.t);if(chip)chip.classList.add(correct?'ok':'bad');});const cons=stage.querySelector('.constraints');cons.children[0].classList.add('met');cons.children[0].querySelector('.ic').textContent='✓';if(allCorrect){cons.children[1].classList.add('met');cons.children[1].querySelector('.ic').textContent='✓';cons.classList.add('done');}if(allCorrect){award(15);lmsProgress();feedback(true,'<b>All sorted correctly.</b>');setActions('');actions.appendChild(primary('Continue',nextStep));}else{markWrong();feedback(false,'Some are off.');nudge(step,true);answered=false;setActions('');actions.appendChild(startOver(()=>go(idx)));actions.appendChild(primary('Check',()=>checkClassify(step)));}}
+function rTf(step){head(step);work.tf={};const wrap=document.createElement('div');wrap.style.cssText='display:flex;flex-direction:column;gap:12px;';step.statements.forEach((s,i)=>{const row=document.createElement('div');row.style.cssText='border:1.5px solid var(--lav-bd);border-radius:11px;padding:12px 14px;';const txt=document.createElement('div');txt.style.cssText='font-size:15px;margin-bottom:10px;';txt.textContent=s.t;row.appendChild(txt);const btns=document.createElement('div');btns.style.cssText='display:flex;gap:8px;';['True','False'].forEach((lab,bi)=>{const b=document.createElement('button');b.className='opt';b.style.cssText='flex:1;justify-content:center;padding:9px;';b.textContent=lab;b.onclick=()=>{if(answered)return;work.tf[i]=(bi===0);[...btns.children].forEach(c=>c.classList.remove('sel'));b.classList.add('sel');renderTfActions(step);};btns.appendChild(b);});row.appendChild(btns);wrap.appendChild(row);});stage.appendChild(wrap);work._tfwrap=wrap;renderTfActions(step);}
+function renderTfActions(step){const all=Object.keys(work.tf).length===step.statements.length;setActions('');actions.appendChild(primary('Check',()=>checkTf(step),!all));}
+function checkTf(step){answered=true;let allCorrect=true;const wrap=work._tfwrap;step.statements.forEach((s,i)=>{const row=wrap.children[i],btns=row.children[1];const correct=work.tf[i]===s.answer;if(!correct)allCorrect=false;btns.children[work.tf[i]?0:1].classList.add(correct?'correct':'wrong');if(!correct)btns.children[s.answer?0:1].classList.add('correct');const w=document.createElement('div');w.style.cssText='font-size:13px;color:var(--muted);margin-top:9px;';w.textContent=s.why;row.appendChild(w);});if(allCorrect){award(15);lmsProgress();feedback(true,'<b>All correct.</b>');}else{markWrong();feedback(false,'Some were off.');}setActions('');actions.appendChild(primary('Continue',nextStep));}
+function rReflect(step){head(step);step.fields.forEach(f=>{const d=document.createElement('div');d.className='field';d.innerHTML=`<label>${f.label}</label><input id="f_${f.k}" placeholder="${f.ph}"/>`;stage.appendChild(d);});const inputs=step.fields.map(f=>$('#f_'+f.k));const btn=document.createElement('button');btn.className='pill disabled';btn.textContent='Save & continue';btn.onclick=()=>{if(btn.classList.contains('disabled'))return;if(step.capture)inputs.forEach((i,ix)=>lmsCapture(step.fields[ix].k,i.value.trim()));feedback(true,'<b>Saved.</b> Bring this to Friday.');setActions('');actions.appendChild(primary('Continue',()=>{award(20);nextStep();}));};actions.appendChild(btn);inputs.forEach(i=>i.addEventListener('input',()=>{btn.classList.toggle('disabled',!inputs.every(x=>x.value.trim().length>2));}));}
+function rDone(){progress();stage.innerHTML=`<div class="done-wrap"><div class="done-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="prompt">Your agent can command a team.</p><p class="sub">Orchestrator decomposes. Workers specialise. Structured handoffs keep costs low and failures debuggable. Add agents only for parallelism or specialisation — not complexity.</p><div style="text-align:left;display:inline-block"><div class="crow met"><span class="ic">✓</span>Orchestrator = decompose + assign + assemble</div><div class="crow met"><span class="ic">✓</span>Workers = focused, isolated, structured output</div><div class="crow met"><span class="ic">✓</span>Handoff = structured payload, not full history</div><div class="crow met"><span class="ic">✓</span>Add multi-agent for parallelism or specialisation only</div></div><p class="sub" style="margin-top:22px;">Earned <b>${gems} gems</b> · Bring your worker-split design to Friday.</p></div>`;setActions('');actions.appendChild(startOver(()=>{gems=0;perfect=true;go(0);}));const a=document.createElement('a');a.href=(window.LMS?'/dashboard':'#');a.className='pill';a.textContent='Back to my journey →';actions.appendChild(a);lmsComplete().then(d=>{if(window.celebrate)celebrate('lesson',{text:'Lesson complete! 🎉'});});}
+const tutor=$('#tutor'),msgs=$('#msgs'),quick=$('#quick');let convo=[];
+$('#kojiLaunch').onclick=()=>openTutor();$('#tclose').onclick=()=>tutor.classList.remove('open');
+function openTutor(){tutor.classList.add('open');if(!msgs.children.length){const g='Ask me about orchestrators, workers, or handoff formats.';bot(g);convo.push({role:'assistant',content:g});}renderQuick();$('#tin').focus();}
+function bot(t){const m=document.createElement('div');m.className='msg bot';m.textContent=t;msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight;}
+function me(t){const m=document.createElement('div');m.className='msg me';m.textContent=t;msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight;}
+function botTyping(){const m=document.createElement('div');m.className='msg bot';m.textContent='…';m.style.opacity='.6';msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight;return m;}
+function problemContext(){const s=STEPS[idx];return s?`Step: ${s.type}. Prompt: "${s.prompt}".`:'';}
+function fallbackHint(t){const h=(STEPS[idx]&&STEPS[idx].hints)||[];return h[0]||'Which part is unclear?';}
+async function askGuide(text,opts){opts=opts||{}; lmsIntervention(opts.auto?'hint':'tutor');if(!opts.auto)me(text);convo.push({role:'user',content:text});const typing=botTyping();let reply=null;try{if(window.LMS){const res=await fetch('/api/tutor/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({history:convo,problem:problemContext()})});const d=await res.json();reply=d.reply;}}catch(e){}typing.remove();const out=reply||fallbackHint(text);bot(out);convo.push({role:'assistant',content:out});}
+function nudge(step,auto){if(auto)tutor.classList.add('open');renderQuick();askGuide('I answered wrong. Socratic hint.',{auto:true});}
+function renderQuick(){quick.innerHTML='';['Why wrong?','Hint','Stuck'].forEach(q=>{const b=document.createElement('button');b.textContent=q;b.onclick=()=>askGuide(q==='Stuck'?"I'm totally stuck":q==='Hint'?'Give me a hint':'Why was my answer wrong?');quick.appendChild(b);});}
+$('#tsend').onclick=sendTin;$('#tin').addEventListener('keydown',e=>{if(e.key==='Enter')sendTin();});
+function sendTin(){const v=$('#tin').value.trim();if(!v)return;$('#tin').value='';askGuide(v);}
+buildDots();render();
+</script>
+</body>
+</html>

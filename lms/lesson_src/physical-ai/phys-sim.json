@@ -1,0 +1,119 @@
+{
+  "slug": "phys-sim",
+  "title": "Why train in simulation",
+  "steps": [
+    { "type": "intro",
+      "art": "🤖 → 🖥️ → 🌍",
+      "prompt": "Why train a robot in a video game first?",
+      "sub": "Before a real robot ever moves, we teach it inside a simulator — a physics-accurate video game of itself. By the end you'll know what a digital twin is, the three reasons we train in sim first, and the one catch when we cross back to reality.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "First instinct — a robotics team wants a robot dog to learn to walk. What do they do FIRST?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Build the real dog and let it fall over on concrete a few thousand times until it learns." },
+        { "t": "Build a physics-accurate virtual copy of the dog and let it try to walk inside a simulator." },
+        { "t": "Write the exact walking motion by hand, joint by joint, and hope it works." }
+      ],
+      "correct": 1,
+      "why": "Learning to walk takes thousands of clumsy, falling-over attempts. On a real robot each fall risks cracked joints and burned-out motors — slow and expensive. In a simulator the dog can fall ten thousand times for free, then we move the learned skill to the real robot. Hand-writing every joint angle almost never produces natural movement.",
+      "hints": [
+        "Learning a motor skill means failing many, many times. Where is failing cheap and safe?",
+        "Real hardware breaks when it falls. A virtual copy doesn't."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Three reasons we train in simulation first.",
+      "sub": "Tap each card. These three are the whole pitch for sim.",
+      "cards": [
+        { "em": "🛡️", "h": "Safe", "b": "A robot can fall, crash, or flail with zero broken hardware and no one hurt. Mistakes cost nothing." },
+        { "em": "⚡", "h": "Fast", "b": "Sim can run faster than real time, and a GPU runs thousands of copies at once — years of practice in hours." },
+        { "em": "💸", "h": "Cheap", "b": "No motors to replace, no lab to rent, no human to supervise each try. Failure is free, so you can fail a lot." }
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Meet the digital twin.",
+      "sub": "Tap each card. This is the one term to remember from this lesson.",
+      "cards": [
+        { "em": "👯", "h": "A virtual copy", "b": "A digital twin is a virtual version of the real robot AND its environment — built to behave like the real thing." },
+        { "em": "⚖️", "h": "Physics-accurate", "b": "It has the robot's real mass, joint limits, friction, and gravity — so what it learns transfers to reality." },
+        { "em": "🏟️", "h": "Train and test in it", "b": "You train the robot's skill in the twin, watch it, break it, fix it — all before touching real hardware." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Which of these is a true digital twin of a warehouse robot — not just a cartoon of one?",
+      "sub": "Pick the one built to behave like the real robot.",
+      "options": [
+        { "t": "A pretty 3D drawing of the robot that looks right but has no weight, no gravity, no friction." },
+        { "t": "A model with the robot's real mass, motor limits, wheel friction, and the shelves it must dodge — all under simulated gravity." },
+        { "t": "A photo of the robot on the company website." }
+      ],
+      "correct": 1,
+      "why": "A digital twin isn't about looking right — it's about behaving right. It needs the real physics (mass, friction, joint limits, gravity) and the real surroundings, so a skill learned in the twin actually works on the metal robot. A drawing or photo has no physics, so nothing learned on it would transfer.",
+      "hints": [
+        "A twin has to BEHAVE like the real robot, not just look like it.",
+        "Which option mentions mass, friction, and gravity — the things that make movement realistic?"
+      ] },
+
+    { "type": "classify",
+      "prompt": "Sort each task: is simulation a great fit, or a poor fit?",
+      "sub": "Tap an item, then tap a bin.",
+      "buckets": ["✅ Great for sim", "⚠️ Poor fit for sim"],
+      "items": [
+        { "t": "Letting a robot arm try 50,000 grasps to learn picking", "b": 0 },
+        { "t": "Teaching a drone to recover from a stall without crashing real drones", "b": 0 },
+        { "t": "Final sign-off that the robot is safe to ship to a customer's factory", "b": 1 },
+        { "t": "Running 4,000 robot copies in parallel to learn walking overnight", "b": 0 },
+        { "t": "Measuring the exact smell and dust of the real warehouse floor", "b": 1 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Sim shines when you need MANY cheap, safe, repeatable tries.",
+        "Sim is weak when you need the messy, exact truth of the real world — final safety sign-off, real dust and wear."
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the stages of the sim-to-real idea in order.",
+      "sub": "This is the journey from virtual practice to a working real robot.",
+      "chips": [
+        "Deploy the learned skill onto the real robot",
+        "Build a digital twin of the robot + its world",
+        "Train the skill in the simulator (thousands of tries)"
+      ],
+      "correct": [1, 2, 0],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't train inside a twin you haven't built yet.",
+        "Build it → practice in it → then cross over to the real robot."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Quick myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "Because sim runs many robot copies at once on a GPU, it can pack years of practice into a few hours.", "answer": true,
+          "why": "Yes — running thousands of parallel copies is the superpower of GPU simulation. That parallelism is exactly why sim is so much faster than one real robot trying one thing at a time." },
+        { "t": "A skill learned in simulation always works perfectly on the real robot, with no surprises.", "answer": false,
+          "why": "No — the sim is never a perfect copy of reality (slightly off friction, wear, sensor noise). That difference is the 'reality gap', and it's the catch we manage when crossing from sim to real." },
+        { "t": "A digital twin needs to match the real robot's physics, not just its looks.", "answer": true,
+          "why": "Right — looks don't transfer, physics does. The twin needs real mass, friction, and joint limits so the learned skill carries over to hardware." },
+        { "t": "Training on the real robot first is the cheap, safe way to start.", "answer": false,
+          "why": "No — real hardware is the expensive, risky place to fail. We fail cheaply in sim first, then move the polished skill to the real robot." }
+      ],
+      "hints": [
+        "Think about why teams bother with sim at all: safe, fast, cheap.",
+        "Is the simulator a PERFECT copy of reality, or a very close one?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. We use this to ground the rest of the course in something you actually care about.",
+      "fields": [
+        { "k": "interest", "label": "Picture a robot doing one task you'd love to see (from your work, hobby, or daily life). What's the task?", "ph": "e.g. a robot that waters my garden / sorts my workshop tools / folds laundry" },
+        { "k": "why", "label": "Why would training that robot in simulation first be safer or cheaper than on the real thing?", "ph": "e.g. it could drop my plants 1000 times in sim before touching a real one" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "course_id": "ml-and-math",
+  "name": "Machine Learning & Its Math — The Faculties of Mind, Made Buildable",
+  "thesis": "Understand and build the core of modern ML — the math you actually need, then neural nets, embeddings, diffusion, attention, and training. Intuition first, code second, math demystified.",
+  "order": ["what_is_ml","ml_types","vectors","dot_product","gradient","neuron","network_layers","forward_pass","loss","backprop","training_loop","tensors","autograd","embeddings","vector_search","autoencoder","diffusion","attention","transformer","overfitting","evaluation"],
+  "assessments": {},
+  "concepts": {
+    "what_is_ml":     {"module":1,"hook":"A normal program: you write the rules. ML flips it. What does the machine produce that you DIDN'T write?","recall":"What does an ML model learn, vs a normal program?","answer":"it learns the rules/patterns FROM data, instead of you coding them"},
+    "ml_types":       {"module":1,"hook":"Three ways a machine learns: one has answers, one finds hidden structure, one learns by reward. Name them.","recall":"Supervised vs unsupervised vs RL — one line each?","answer":"supervised = learn from labeled examples; unsupervised = find structure in unlabeled data; RL = learn by reward"},
+    "vectors":        {"module":2,"hook":"A word, an image, a user — ML turns each into the same thing: a list of numbers. What's that list called?","recall":"What is a vector, and why is everything in ML one?","answer":"an ordered list of numbers; it places any 'thing' as a point in space so math can work on it"},
+    "dot_product":    {"module":2,"hook":"How does a machine decide two things are 'similar'? One tiny operation does it.","recall":"What does the dot product tell you about two vectors?","answer":"how aligned/similar they are — the basis of similarity"},
+    "gradient":       {"module":2,"hook":"The model is wrong. Which way should it nudge its numbers to be LESS wrong? What points the way?","recall":"What does a gradient tell a model?","answer":"the direction (and steepness) to change the weights to reduce the error"},
+    "neuron":         {"module":3,"hook":"All of deep learning is one tiny unit, repeated. What does a single neuron actually do?","recall":"What does one neuron compute?","answer":"a weighted sum of its inputs, then a nonlinearity (activation)"},
+    "network_layers": {"module":3,"hook":"Stack neurons into layers and something powerful appears. What can a deep network represent?","recall":"What is a neural network, in essence?","answer":"a function approximator — it learns to map inputs to outputs"},
+    "forward_pass":   {"module":3,"hook":"Data goes in, a prediction comes out. What's that left-to-right computation called?","recall":"What happens in the forward pass?","answer":"inputs flow through the layers to produce a prediction"},
+    "loss":           {"module":4,"hook":"Before a model can improve, it must know HOW wrong it is. What turns 'wrong' into a number?","recall":"What is a loss function?","answer":"a number measuring how far the prediction is from the target"},
+    "backprop":       {"module":4,"hook":"The error shows up at the output — but the blame lives in weights deep inside. How does it travel back?","recall":"What does backpropagation do?","answer":"sends the error backward through the network to compute each weight's gradient"},
+    "training_loop":  {"module":4,"hook":"Learning is one loop run thousands of times. Name its steps.","recall":"The steps of the training loop?","answer":"forward -> compute loss -> backprop -> update weights, repeat"},
+    "tensors":        {"module":5,"hook":"PyTorch's basic object holds your data AND runs on a GPU. What is it?","recall":"What is a tensor?","answer":"a multi-dimensional array (like a vector/matrix) that can run on CPU or GPU"},
+    "autograd":       {"module":5,"hook":"You coded backprop by hand once. PyTorch hands it to you free. What feature?","recall":"What does autograd give you?","answer":"automatic differentiation — it computes the gradients for you"},
+    "embeddings":     {"module":6,"hook":"How can a machine 'know' king - man + woman ≈ queen? Meaning becomes what?","recall":"What is an embedding?","answer":"a vector that holds meaning as geometry — similar things sit close together"},
+    "vector_search":  {"module":6,"hook":"Millions of embeddings, one query. How do you find the closest meaning, fast?","recall":"What is vector / similarity search?","answer":"find the nearest vectors (cosine/distance) to a query — semantic retrieval"},
+    "autoencoder":    {"module":7,"hook":"Squeeze an image down to a few numbers, then rebuild it. What learns that compressed essence?","recall":"What does an autoencoder learn?","answer":"to encode data into a small latent code and decode it back — the essence of the data"},
+    "diffusion":      {"module":7,"hook":"Start from pure noise and denoise step by step into a picture. What family of model is that?","recall":"How does a diffusion model generate an image?","answer":"it learns to reverse noise — denoising step by step from random noise into data"},
+    "attention":      {"module":8,"hook":"To understand a word, a model must look at the RIGHT other words. What mechanism lets it?","recall":"What does attention do?","answer":"lets the model weigh which other tokens matter for each token"},
+    "transformer":    {"module":8,"hook":"The architecture behind every LLM. What's it built from?","recall":"What is a transformer built from?","answer":"stacked attention + feed-forward blocks, processing all tokens in parallel (no recurrence)"},
+    "overfitting":    {"module":9,"hook":"Your model aces the training data but flops on new data. What's that — and one fix?","recall":"What is overfitting, and one way to fight it?","answer":"memorizing training data instead of generalizing; fix with more data / regularization / dropout"},
+    "evaluation":     {"module":9,"hook":"How do you KNOW the model is good, not just lucky?","recall":"How do you properly evaluate a model?","answer":"test on held-out data it never trained on, with the right metric"}
+  }
+}

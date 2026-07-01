@@ -173,6 +173,11 @@
     .pill{padding:14px 28px;}
   }
 </style>
+<link rel="icon" type="image/png" sizes="32x32" href="/static/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/static/brand/favicon-16.png" />
+<link rel="apple-touch-icon" href="/static/brand/apple-touch-icon.png" />
+<link rel="manifest" href="/static/brand/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
 </head>
 <body>
   <h2 class="sr-only">Interactive lesson: what is an AI agent — goal, brain, tools, and the loop.</h2>
@@ -383,6 +388,10 @@ const $ = s => document.querySelector(s);
 const stage = $('#stage'), actions = $('#actions');
 let idx = 0, gems = 0, perfect = true;
 function lms(p){ return (window.LMS && window.LMS.api ? window.LMS.api : '') + p; }
+let stepStart=Date.now(), attemptNo=1;
+function lmsEvent(correct,extra){ if(!window.LMS) return; var s=(typeof STEPS!=='undefined'&&STEPS[idx])?STEPS[idx]:{}; var body=Object.assign({step:idx,type:s.type||'',concept:s.concept||'',correct:!!correct,attempt_no:attemptNo,latency_ms:Date.now()-stepStart},extra||{}); fetch(lms('/progress'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).catch(function(){}); }
+function markWrong(extra){ perfect=false; lmsEvent(false,extra); attemptNo++; }
+function lmsIntervention(kind){ lmsEvent(false,{action:(kind==='tutor'?'tutor_ask':'hint'),intervention:kind}); }
 function lmsProgress(){ if(!window.LMS) return; fetch(lms('/progress'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({step:idx,correct:true})}).catch(()=>{}); }
 function lmsComplete(){ if(!window.LMS) return Promise.resolve(null); return fetch(lms('/complete'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({score:gems,perfect:perfect})}).then(r=>r.json()).catch(()=>null); }
 function lmsCapture(key,value){ if(!window.LMS||!value) return; fetch('/api/profile/capture',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key:key,value:value,source:'lesson'})}).catch(()=>{}); }
@@ -398,7 +407,7 @@ function progress(){
   [...$('#dots').children].forEach((s,i)=> s.classList.toggle('on', i<=idx));
   $('#gems').textContent = gems;
 }
-function go(n){ idx=n; answered=false; work={}; render(); }
+function go(n){ idx=n; answered=false; work={};stepStart=Date.now();attemptNo=1; render(); }
 function nextStep(){ if(idx<STEPS.length-1) go(idx+1); }
 function award(n){ gems+=n; $('#gems').textContent=gems; }
 
@@ -482,7 +491,7 @@ function checkMcq(step,wrap){
   });
   if(ok){ award(10); lmsProgress(); feedback(true,'<b>Correct.</b>', step.why); setActions(''); }
   else{
-    perfect=false;
+    markWrong();
     feedback(false,'Not quite — see the highlighted answer. Want a hand?');
     nudge(step,true);
     setActions('');
@@ -576,7 +585,7 @@ function checkClassify(step){
   cons.children[0].classList.add('met'); cons.children[0].querySelector('.ic').textContent='✓';
   if(allCorrect){ cons.children[1].classList.add('met'); cons.children[1].querySelector('.ic').textContent='✓'; cons.classList.add('done'); }
   if(allCorrect){ award(15); lmsProgress(); feedback(true,'<b>All four matched.</b> That’s the whole anatomy of an agent — goal, brain, tools, and the loop that stops.'); setActions(''); actions.appendChild(primary('Continue',nextStep)); }
-  else{ perfect=false; feedback(false,'Some matches are off (shown in red). Tap the red chips to move them, then check again.'); nudge(step,true); answered=false;
+  else{ markWrong(); feedback(false,'Some matches are off (shown in red). Tap the red chips to move them, then check again.'); nudge(step,true); answered=false;
         setActions(''); actions.appendChild(startOver(()=>go(idx))); actions.appendChild(primary('Check',()=>checkClassify(step))); }
 }
 
@@ -626,7 +635,7 @@ function checkOrder(step){
     award(15); lmsProgress(); feedback(true,'<b>That’s the loop.</b> Think → act → observe, then back to think — over and over until the goal is met. Almost every agent you’ll ever build is this cycle.');
     setActions(''); actions.appendChild(primary('Continue',nextStep));
   }else{
-    perfect=false;
+    markWrong();
     feedback(false,'Not that order. Tap a step in the sequence to send it back, and try again.');
     nudge(step,true);
   }
@@ -692,7 +701,7 @@ function checkTf(step){
     const w=document.createElement('div'); w.style.cssText='font-size:13px;color:var(--muted);margin-top:9px;'; w.textContent=s.why; row.appendChild(w);
   });
   if(allCorrect){ award(15); lmsProgress(); feedback(true,'<b>All correct — myths busted.</b>'); }
-  else { perfect=false; feedback(false,'A couple were off — the corrected answers and the why are under each.'); nudge(step,true); }
+  else { markWrong(); feedback(false,'A couple were off — the corrected answers and the why are under each.'); nudge(step,true); }
   setActions(''); actions.appendChild(primary('Continue',nextStep));
 }
 
@@ -724,7 +733,7 @@ function pickTurn(step,i,b,opts){
     if(work.turn>=step.turns.length){ feedback(true,'<b>That’s a full agent run.</b> Think → act → observe, looping until the stop condition (inbox empty) was met. Every agent you build runs this exact cycle.'); setActions(''); actions.appendChild(primary('Continue',nextStep)); }
     else setTimeout(()=>renderTurn(step), 380);
   } else {
-    perfect=false; b.classList.add('wrong'); feedback(false,'Not the agent’s move here — think about where it is in the loop right now.'); nudge(step,true);
+    markWrong(); b.classList.add('wrong'); feedback(false,'Not the agent’s move here — think about where it is in the loop right now.'); nudge(step,true);
   }
 }
 
@@ -745,7 +754,7 @@ function checkMulti(step){
   const chosen=[...work.multi].sort((a,b)=>a-b), correct=[...step.correct].sort((a,b)=>a-b);
   const ok = chosen.length===correct.length && chosen.every((v,k)=>v===correct[k]);
   if(ok){ answered=true; [...work._mwrap.children].forEach((b,i)=>{ if(step.correct.includes(i)) b.classList.add('ok'); }); award(15); lmsProgress(); feedback(true,'<b>That’s the definition.</b>', step.why); setActions(''); }
-  else { perfect=false; feedback(false,'Not quite — pick exactly the parts that DEFINE an agent (a UI and a database are common, but optional). Adjust and check again.'); nudge(step,true); setActions(''); actions.appendChild(startOver(()=>go(idx))); actions.appendChild(primary('Check',()=>checkMulti(step))); }
+  else { markWrong(); feedback(false,'Not quite — pick exactly the parts that DEFINE an agent (a UI and a database are common, but optional). Adjust and check again.'); nudge(step,true); setActions(''); actions.appendChild(startOver(()=>go(idx))); actions.appendChild(primary('Check',()=>checkMulti(step))); }
 }
 
 /* ---- done ---- */
@@ -812,7 +821,7 @@ function fallbackHint(text){
   return h[0]||"Which part is confusing? Name it and we'll zoom in.";
 }
 async function askGuide(text, opts){
-  opts=opts||{};
+  opts=opts||{}; lmsIntervention(opts.auto?'hint':'tutor');
   if(!opts.auto) me(text);
   convo.push({role:'user',content:text});
   const typing=botTyping();

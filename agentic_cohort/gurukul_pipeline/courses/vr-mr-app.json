@@ -1,0 +1,22 @@
+{
+  "course_id": "vr-mr-app",
+  "name": "Build & Ship Your First VR/MR App — AI-Powered Development with Unity & Meta Quest",
+  "order": ["xr_setup","ai_vr_workflow","vr_prompt","hand_interaction","haptics","world_space_ui","vr_environment","spatial_audio","vr_locomotion","vr_persistence","vr_multiplayer","mr_passthrough","vr_performance","ship_to_store"],
+  "assessments": {},
+  "concepts": {
+    "xr_setup":       {"module":1,"hook":"Before a single line of VR code, your headset must talk to Unity. What stack connects them?","recall":"What do you need to build VR for Quest in Unity?","answer":"Unity 6 + the Meta XR SDK, with the Android/Quest build target + an XR rig"},
+    "ai_vr_workflow": {"module":2,"hook":"You don't hand-type every C# line anymore. What's the modern VR build loop?","recall":"The AI-assisted VR workflow?","answer":"describe it in English -> the agent writes the C# -> test in VR -> iterate"},
+    "vr_prompt":      {"module":2,"hook":"Two prompts to a coding agent: one gets working VR, one gets junk. What's the difference?","recall":"What makes a good VR feature prompt?","answer":"the goal + Unity/XR context + constraints + how to verify it in the headset"},
+    "hand_interaction":{"module":3,"hook":"In VR your hands ARE the controller. How do you let a user grab a virtual object?","recall":"How do you make an object grabbable in VR?","answer":"hand/controller tracking + a grab-interactable + physics (rigidbody)"},
+    "haptics":        {"module":3,"hook":"A grab with no feedback feels fake. What makes virtual touch feel real?","recall":"What does haptic feedback add?","answer":"a controller vibration on interaction — it makes virtual touch feel physical"},
+    "world_space_ui": {"module":4,"hook":"A flat screen-menu pasted over VR makes people sick. What UI actually works?","recall":"What UI works in VR, and why?","answer":"world-space UI (panels placed in 3D) with poke/laser interaction — not a screen overlay"},
+    "vr_environment": {"module":5,"hook":"A grey room isn't an experience. What turns a demo into a place?","recall":"What makes VR feel like a real place?","answer":"a skybox, Quest-friendly lighting, particles, and spatial audio"},
+    "spatial_audio":  {"module":5,"hook":"A sound that comes from everywhere breaks immersion. What fixes it?","recall":"What is spatial audio in VR?","answer":"sound positioned in 3D so it comes from the right direction + distance"},
+    "vr_locomotion":  {"module":6,"hook":"Move a user the wrong way in VR and they feel sick. Name the comfort-safe options.","recall":"VR locomotion options + comfort?","answer":"teleport, smooth move, snap turn, comfort vignette — and let the user choose"},
+    "vr_persistence": {"module":7,"hook":"A user returns tomorrow — how does the app remember them?","recall":"How do you persist progress across VR sessions?","answer":"PlayerPrefs / JSON saved locally + a Menu->Session->Summary state machine"},
+    "vr_multiplayer": {"module":8,"hook":"Two headsets, one shared room. What makes that possible?","recall":"What's needed for shared/multiplayer VR?","answer":"networking (Photon Fusion), networked head+hand avatars, and spatial voice"},
+    "mr_passthrough": {"module":9,"hook":"VR meets your real room — a virtual object on your real table. Which Quest 3 feature?","recall":"What do passthrough + Scene API + anchors give you?","answer":"mixed reality — see your real room and pin virtual objects to it (spatial anchors)"},
+    "vr_performance": {"module":10,"hook":"Drop below 72fps in VR and users feel sick. How do you hold the frame?","recall":"How do you keep VR at 72fps?","answer":"profiler + draw-call batching + ASTC textures + fewer/optimized draw calls"},
+    "ship_to_store":  {"module":11,"hook":"It works in your headset — now get it on the Meta Store. The path?","recall":"Steps to ship a Quest app?","answer":"dev account, keystore-signed release APK, store listing + privacy/age rating, submit for review"}
+  }
+}

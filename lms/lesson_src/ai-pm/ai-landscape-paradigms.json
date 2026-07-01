@@ -1,0 +1,135 @@
+{
+  "slug": "ai-landscape-paradigms",
+  "title": "AI vs ML vs DL, and the learning paradigms",
+  "steps": [
+    { "type": "intro",
+      "art": "🧠 ⊃ 📊 ⊃ 🕸️",
+      "prompt": "When a teammate says 'let's add AI', what are they actually asking you to build?",
+      "sub": "AI, ML, deep learning, data science — the words get used as if they're the same thing, and as a PM that confusion costs you scope and budget. By the end you'll be able to place each one on a map, name the four ways machines learn, and run a quick 'is this even an AI problem?' check before you write the spec.",
+      "cta": "Start" },
+
+    { "type": "reveal",
+      "prompt": "The map: AI ⊃ ML ⊃ Deep Learning, with Data Science alongside.",
+      "sub": "Tap each card — this is the hierarchy you'll keep in your head.",
+      "cards": [
+        { "em": "🧠", "h": "AI — the goal", "b": "The broad ambition: machines doing things that normally need human intelligence. A goal, not a single technique. Hand-coded rules count too." },
+        { "em": "📊", "h": "ML — a way to do AI", "b": "Instead of coding rules by hand, the machine LEARNS patterns from data. Acharya scoring lesson difficulty from past attempts is ML." },
+        { "em": "🕸️", "h": "Deep Learning — ML with deep nets", "b": "ML using multi-layer neural networks that learn the features themselves, straight from raw pixels, audio, or text. LLMs live here." },
+        { "em": "🔬", "h": "Data Science — the discipline", "b": "Extracting insight from data: stats, dashboards, experiments, and ML too. It OVERLAPS the others — not strictly inside the AI nesting." }
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap from broadest goal to narrowest technique.",
+      "sub": "Build the nesting: outermost first.",
+      "chips": ["Deep Learning (ML with multi-layer neural nets)", "AI (machines doing things that need intelligence)", "Machine Learning (learning patterns from data)"],
+      "correct": [1, 2, 0],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "Which is the big ambition, and which is one specific tool inside it?",
+        "AI is the umbrella; Deep Learning is a slice of ML, which is a slice of AI."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Where does Data Science sit in this picture?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "It's the innermost circle, inside Deep Learning." },
+        { "t": "It's a discipline that OVERLAPS AI/ML — sharing tools, not strictly nested inside or outside." },
+        { "t": "It's the same thing as AI, just a newer name." }
+      ],
+      "correct": 1,
+      "why": "Data Science is the practice of getting insight from data — that includes plain statistics and dashboards that aren't AI at all, AND machine learning that is. So it isn't a ring inside the AI nesting; it overlaps. A churn dashboard is data science with no ML; a churn-prediction model is data science AND ML.",
+      "hints": [
+        "Does every data science task involve a learning model? Think dashboards and A/B tests.",
+        "Overlapping circles, not a clean nested ring."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Four ways a machine can learn.",
+      "sub": "Tap each card — you'll sort real products into these next.",
+      "cards": [
+        { "em": "🏷️", "h": "Supervised", "b": "Labeled examples: input → known answer. The model learns to predict the label. Spam filter, churn prediction, rating a lesson's difficulty." },
+        { "em": "🔍", "h": "Unsupervised", "b": "No labels. The model finds structure on its own — clusters, groupings, topics. Customer segmentation, discovering themes in support tickets." },
+        { "em": "🎮", "h": "Reinforcement", "b": "A reward signal, not answers. The agent tries actions and learns which maximize reward. Our drone flight policy; a tutoring policy that picks the next question." },
+        { "em": "🧩", "h": "Self-supervised", "b": "Raw data invents its own labels (predict the next word, the missing patch). Learns general representations. It's how LLMs get pre-trained." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Sort each product into the paradigm it uses.",
+      "sub": "Tap an item, then a bin.",
+      "buckets": ["🏷️ Supervised", "🔍 Unsupervised", "🎮 Reinforcement"],
+      "items": [
+        { "t": "Spam filter trained on emails labeled spam / not-spam", "b": 0 },
+        { "t": "Predicting which subscribers will churn next month", "b": 0 },
+        { "t": "LMS scoring how hard a lesson is, from past pass/fail data", "b": 0 },
+        { "t": "Grouping customers into segments nobody defined in advance", "b": 1 },
+        { "t": "Discovering recurring topics across thousands of support tickets", "b": 1 },
+        { "t": "The drone policy learning to fly A→B from a reward signal", "b": 2 }
+      ],
+      "constraints": ["All 6 sorted", "Every one correct"],
+      "hints": [
+        "Is there a known right answer to copy (label), no answer at all (find structure), or a reward to chase?",
+        "Segmentation and topic discovery have no labels. The drone has a reward, not labeled answers."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "How does an LLM like the one behind Acharya get pre-trained?",
+      "sub": "Match it to the right paradigm.",
+      "options": [
+        { "t": "Humans hand-label billions of sentences with the 'correct output' (supervised)." },
+        { "t": "It predicts hidden parts of raw text — labels invented from the data itself (self-supervised)." },
+        { "t": "It's given a reward each time it pleases a user, with no text to read first." }
+      ],
+      "correct": 1,
+      "why": "LLMs are pre-trained self-supervised: take raw text, hide the next word, ask the model to predict it — the data is its own answer key, so no human labeling is needed at this stage. That's what makes training on the whole internet possible. (Later, reinforcement-style fine-tuning with human feedback polishes behavior, but the heavy lifting is self-supervised.)",
+      "hints": [
+        "Could humans possibly hand-label the entire internet? What's the cheaper trick?",
+        "The label is 'the next word' — taken straight from the text itself."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The big innovation: learned representations.",
+      "sub": "Tap each card — this is why modern AI took off.",
+      "cards": [
+        { "em": "✋", "h": "The old way", "b": "Experts hand-crafted the 'features' — edge detectors for images, keyword lists for text. Slow, brittle, capped by human imagination." },
+        { "em": "🤖", "h": "The shift", "b": "Modern AI LEARNS the features (representations) straight from raw data. No one hand-codes what a 'cat ear' looks like — the network discovers it." },
+        { "em": "⚡", "h": "What unlocked it", "b": "Three things lined up: cheap parallel compute (GPUs), abundant data, and better algorithms. That combo made deep representation learning practical." }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Is this even an AI/ML problem? Tap EVERY signal that says 'yes, ML could fit'.",
+      "sub": "A quick feasibility gut-check before you spec it.",
+      "chips": ["There's a pattern in the data a human could in principle learn", "We have enough representative data to learn from", "Being wrong sometimes is acceptable", "The rule is fixed and exact, like 'tax = 18% of price'", "A simple heuristic would already get ~80% of the value"],
+      "correct": [0, 1, 2],
+      "why": "ML fits when there's a learnable pattern, you have enough representative data, and occasional mistakes are tolerable. The last two are red flags AGAINST ML: a fixed exact rule ('tax = 18%') is just code — don't train a model to do arithmetic. And if a simple heuristic already gets 80% of the value, ship that first; ML is the expensive option you reach for when the heuristic stalls.",
+      "hints": [
+        "Three green lights, two red flags. Which two argue for plain code instead?",
+        "Exact rules and 'a heuristic already wins' both mean: don't build a model yet."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Lock it in: which framing should a PM bring to the kickoff?",
+      "sub": "One pulls the project in the right direction.",
+      "options": [
+        { "t": "'Add AI' — keep it broad so the team has freedom." },
+        { "t": "'This is a supervised problem: we have labeled churn data, ~80k accounts, and a wrong guess just triggers a retention email — low cost.'" },
+        { "t": "'Use deep learning because it's the most advanced.'" }
+      ],
+      "correct": 1,
+      "why": "The strong framing names the paradigm (supervised), confirms there's data (~80k labeled accounts), and states the cost of being wrong (low — just an email). That tells engineering what to build and tells you it's worth doing. 'Add AI' is too vague to scope; 'use deep learning because it's advanced' picks a tool before the problem — exactly backwards.",
+      "hints": [
+        "Which option names the paradigm AND the data AND the cost of an error?",
+        "Picking 'deep learning' before defining the problem is choosing a hammer before seeing the nail."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Tying it to your real world is what makes it stick.",
+      "fields": [
+        { "k": "interest", "label": "Pick a product or feature you care about. Which paradigm fits it — supervised, unsupervised, reinforcement, or self-supervised?", "ph": "e.g. recommend next lesson → reinforcement / supervised" },
+        { "k": "work", "label": "Run the gut-check on it: is there a learnable pattern, enough data, and is being wrong sometimes OK — or would a simple rule do?", "ph": "e.g. enough tagged tickets to learn from; a rule misses the long tail" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

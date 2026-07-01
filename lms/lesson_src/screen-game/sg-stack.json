@@ -1,0 +1,136 @@
+{
+  "slug": "sg-stack",
+  "title": "The three-tool stack",
+  "steps": [
+    { "type": "intro",
+      "art": "🎨 → 🎮 → 🤖",
+      "prompt": "What does it actually take to build a game?",
+      "sub": "Not one giant app — three tools, each doing one job, handing off to the next. By the end you'll name all three, know what each is for, and trace how a model becomes a playable game.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "First instinct — which single tool builds a whole flat-screen game by itself?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Blender — it makes the 3D models, so it must run the game too." },
+        { "t": "None of them alone — you combine three tools, each doing one part." },
+        { "t": "Unity — it has everything, so you never need anything else." }
+      ],
+      "correct": 1,
+      "why": "No single tool does it all well. You make assets in one (Blender), run the game in another (Unity), and write the behaviour code with a third (an AI coding agent). Blender can't run gameplay; Unity can host code but you still have to write it. The stack is the point.",
+      "hints": [
+        "Each tool here is great at ONE thing and weak at the others.",
+        "Think 'assets', 'engine', and 'code' — that's three different jobs."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Meet the three tools.",
+      "sub": "Tap each card. These three are your whole stack.",
+      "cards": [
+        { "em": "🎨", "h": "Blender", "b": "Makes the 3D stuff: characters, props, environments. Then exports them out as files." },
+        { "em": "🎮", "h": "Unity", "b": "The engine. It assembles the scene, runs physics, draws every frame, and builds the final game." },
+        { "em": "🤖", "h": "AI coding agent", "b": "Writes the C# scripts — the behaviour, like 'jump on spacebar' — from your plain-English description." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Whose job is it? Sort each task to the right tool.",
+      "sub": "Tap a task, then tap the tool that owns it.",
+      "buckets": ["🎨 Blender", "🎮 Unity", "🤖 AI coding agent"],
+      "items": [
+        { "t": "Model a low-poly spaceship", "b": 0 },
+        { "t": "Run physics so the ship collides with asteroids", "b": 1 },
+        { "t": "Write the C# that fires a laser on click", "b": 2 },
+        { "t": "Sculpt the asteroid rocks", "b": 0 },
+        { "t": "Build the final .exe players download", "b": 1 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "If it's about SHAPING 3D geometry, it's Blender. If it's about RUNNING the game, it's Unity.",
+        "Anything that is a script / behaviour / rule written in C# is the coding agent's job."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "You modelled a hero in Blender. To get it into the game, what has to happen next?",
+      "sub": "Think about the hand-off between tools.",
+      "options": [
+        { "t": "Nothing — Unity reads Blender's mind and the model just appears." },
+        { "t": "Export the model from Blender, then import that file into Unity." },
+        { "t": "Re-model the whole hero again from scratch inside Unity." }
+      ],
+      "correct": 1,
+      "why": "Tools hand off through files. Blender exports the model (FBX or GLTF), and Unity imports that file into the project. You never rebuild the model in Unity — you bring it across. (That import step is its own lesson.)",
+      "hints": [
+        "The tools don't share memory — they share files.",
+        "One side exports, the other side imports."
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the hand-offs in the order a model travels to become playable.",
+      "sub": "Each tool finishes its job, then passes to the next.",
+      "chips": [
+        "Unity runs the scene; the coding agent's script makes the hero move",
+        "Blender models the hero and exports it",
+        "Unity imports the model into the scene"
+      ],
+      "correct": [1, 2, 0],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "Start with where the asset is born.",
+        "Make it → bring it in → make it do something."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "Unity is where the model is shaped and sculpted, vertex by vertex.", "answer": false,
+          "why": "No — shaping geometry is Blender's job. Unity assembles and runs; it isn't a modelling tool." },
+        { "t": "The AI coding agent writes the C# behaviour so you don't hand-type all of it.", "answer": true,
+          "why": "Right — you describe the behaviour in plain English and the agent writes the script. You still test and tweak it." },
+        { "t": "You could skip Blender and still make a game with just boxes and spheres.", "answer": true,
+          "why": "True — Unity has built-in primitive shapes. Many first games are pure cubes. Blender matters once you want custom art." },
+        { "t": "Each tool keeps the others' files in sync automatically over the internet.", "answer": false,
+          "why": "No — the hand-off is manual: you export from one tool and import into the next. Nothing syncs on its own." }
+      ],
+      "hints": [
+        "Map each claim back to the three cards: who shapes, who runs, who codes?",
+        "Remember the hand-off is files you move yourself."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "A beginner says: 'I'll just learn Unity and ignore the other two.' What breaks first?",
+      "sub": "Think about what Unity alone can and can't give you.",
+      "options": [
+        { "t": "Nothing — Unity alone is genuinely enough for any game." },
+        { "t": "You'll have an engine but no custom art and no behaviour code — an empty stage." },
+        { "t": "Unity refuses to open without Blender installed." }
+      ],
+      "correct": 1,
+      "why": "Unity is the stage and the projector — but a stage with no actors and no script is just an empty room. You still need assets (Blender, or primitives) and behaviour (the coding agent writes the C#). Learning all three is what makes a real game.",
+      "hints": [
+        "Unity runs the game — but runs WHAT, exactly?",
+        "An engine with no art and no code has nothing to show or do."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Now make it yours.",
+      "sub": "Not graded. Picture the game you want to build — we'll keep tailoring examples to it.",
+      "fields": [
+        { "k": "goal", "label": "In one line, what game do you want to build?", "ph": "e.g. a top-down maze where a cat dodges robots" },
+        { "k": "interest", "label": "Name one custom asset you'd model in Blender for it:", "ph": "e.g. the cat character / a glowing key / a spaceship" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Build the stack: tap the three tools that make a flat-screen game.",
+      "sub": "Some of these are real software but aren't part of this core stack. Pick only the three.",
+      "chips": ["Blender (assets)", "Unity (engine)", "An AI coding agent (the C#)", "Photoshop", "A spreadsheet", "A video editor"],
+      "correct": [0, 1, 2],
+      "why": "The core stack is Blender + Unity + an AI coding agent: make the assets, run them in the engine, and write the behaviour. Photoshop or a video editor can help around the edges, but they aren't what turns a model into a playable game.",
+      "hints": [
+        "Three jobs: make the art, run the game, write the code.",
+        "Map each tool to one of those three jobs — the extras don't fit any of them."
+      ] },
+
+    { "type": "done" }
+  ]
+}

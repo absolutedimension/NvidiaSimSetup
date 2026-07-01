@@ -1,0 +1,198 @@
+{
+  "slug": "the-aipm-one-pager",
+  "title": "The AIPM one-pager",
+  "steps": [
+    { "type": "intro",
+      "art": "🧩 → 📄 → 🚀",
+      "prompt": "How do you decide — on ONE page — whether an AI product is worth building, and how not to ship a confidently wrong one?",
+      "sub": "This is the capstone. Everything from the course — feasibility, data, metrics, responsible AI, ops — folds into a single reusable one-pager you fill in before any AI product. By the end you'll know all 8 sections in order, why the METRIC is the most dangerous line on the page, and you'll have scoped a real product of your own with it.",
+      "cta": "Start" },
+
+    { "type": "reveal",
+      "prompt": "The AIPM one-pager — 8 sections, top to bottom.",
+      "sub": "Tap each card. This is the whole page.",
+      "cards": [
+        { "em": "🎯", "h": "1. Problem & user", "b": "The job-to-be-done, for whom — and the COST of being wrong. A wrong loan denial costs more than a wrong song recommendation." },
+        { "em": "🤔", "h": "2. Is AI the right tool?", "b": "Three gates: does a pattern exist, does data exist, are errors tolerable? If any is 'no', stop or use rules." },
+        { "em": "🗃️", "h": "3. Data plan", "b": "Sources, rights/consent, who labels it, how fresh it stays, where the bias gaps are." },
+        { "em": "🪜", "h": "4. Approach", "b": "Non-ML baseline FIRST. Then model family / build-buy-API. For GenAI, climb the rung: prompt → RAG → fine-tune." },
+        { "em": "📊", "h": "5. Success metrics", "b": "A business metric + a model metric + a GUARDRAIL metric. And how you'll A/B test it." },
+        { "em": "⚖️", "h": "6. Responsible-AI gate", "b": "Fairness, privacy, explainability, human-in-the-loop — with a named owner." },
+        { "em": "🔧", "h": "7. Ops", "b": "Monitoring, drift detection, retraining cadence, and a rollback plan for when it goes wrong." },
+        { "em": "⚠️", "h": "8. Risks & cold-start", "b": "What kills this product — and what the first-run feels like BEFORE the model is any good." }
+      ] },
+
+    { "type": "order",
+      "prompt": "Put the 8 sections of the one-pager in the order you fill them in.",
+      "sub": "Tap them top-to-bottom, the way the page reads.",
+      "chips": [
+        "Data plan",
+        "Problem & user",
+        "Success metrics",
+        "Is AI the right tool?",
+        "Risks & cold-start",
+        "Approach",
+        "Ops",
+        "Responsible-AI gate"
+      ],
+      "correct": [1, 3, 0, 5, 2, 7, 6, 4],
+      "constraints": ["Order is correct"],
+      "why": "Problem first (you can't judge anything without the job-to-be-done), then 'is AI even right', then the data that makes it possible, then approach, then how you'll measure it, then the responsible-AI gate, then ops to keep it alive, and finally the risks/cold-start reality check. Each section depends on the ones above it — that's why the order is the order.",
+      "hints": [
+        "You can't pick metrics or data before you know the PROBLEM and whether AI is the right tool at all.",
+        "Build → measure → govern → operate → stress-test: Approach, then Metrics, then Responsible-AI, then Ops, then Risks."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Section 2 asks 'is AI the right tool?'. Which situation should make you walk away (or use plain rules)?",
+      "sub": "One of these fails a gate.",
+      "options": [
+        { "t": "Lots of clean historical examples exist and the pattern is learnable." },
+        { "t": "There's no underlying pattern — outcomes are essentially random — yet a single wrong call is catastrophic." },
+        { "t": "The task has a real pattern and occasional small errors are tolerable." }
+      ],
+      "correct": 1,
+      "why": "AI learns patterns from data. If there's NO pattern to learn AND errors aren't tolerable, you've failed two gates at once — a model will just launder randomness into confident-looking output. That's the worst case: it looks intelligent while being noise. The other two situations are exactly where AI fits.",
+      "hints": [
+        "AI needs a pattern to exist and errors to be survivable. Which option has neither?",
+        "A model trained on randomness still outputs confident answers — that's the trap."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Section 5 is a trap. The metric IS the product spec.",
+      "sub": "Tap each card — this is the heart of the lesson.",
+      "cards": [
+        { "em": "🎯", "h": "The model optimizes EXACTLY what you measure", "b": "Not what you meant — what you wrote down. The metric isn't a report card; it's the instruction the optimizer obeys literally." },
+        { "em": "🎭", "h": "A wrong metric → a confidently wrong product", "b": "Optimize 'watch time' and you may get rage-bait. Optimize 'tickets closed' and the bot closes them WITHOUT solving anything. It hits your number and fails the user." },
+        { "em": "🛡️", "h": "So you ALSO define a guardrail metric", "b": "A second number that must NOT get worse while the main metric climbs. It's the leash on gaming — e.g. 'watch time up, BUT reported-content rate flat'." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "TrigunAI's drone story. The RL policy's numerical REWARD dropped from epoch 100 to epoch 500, but a separate VLM judge rated the 500-iter flight visually BETTER. What's the real lesson?",
+      "sub": "This is the metric trap in the wild. Pick the deepest reading.",
+      "options": [
+        { "t": "The VLM judge was broken — trust the reward number, it's the objective truth." },
+        { "t": "The reward measures what PPO optimizes (a formula); the VLM measures what humans actually value. They diverge by design — so you need an eye OUTSIDE the optimizer." },
+        { "t": "Training failed — a falling reward always means the model got worse." }
+      ],
+      "correct": 1,
+      "why": "The reward number is just the formula the optimizer maximizes — it is NOT a measure of 'good flying'. The policy can score lower on the formula while flying in a way humans judge as cleaner. That gap is the whole point: if your only judge is the thing being optimized, you can't catch the case where it games the metric. The VLM is the guardrail/outside-eye. Same reason an AIPM never lets the model's own optimization target be the sole definition of success.",
+      "hints": [
+        "Reward = the formula PPO is climbing. Is that the same thing as 'looks like good flying' to a human?",
+        "When the optimizer grades its own work, who catches the gaming? You need a judge it can't optimize against."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Run a real product through the one-pager: 'Acharya should auto-grade student answers.'",
+      "sub": "You're the AIPM. Pick the right call at each section.",
+      "goal": "Scope Acharya auto-grading section-by-section, choosing the responsible call each time.",
+      "turns": [
+        { "situation": "Section 1 — Problem & user. Acharya tutors students on WhatsApp; grading every free-text answer by hand doesn't scale. A wrong grade can discourage a learner or pass someone who didn't get it.",
+          "q": "What belongs on the 'cost of being wrong' line?",
+          "options": [
+            "A wrong grade demoralizes a correct student or gives false confidence to a confused one — high human cost, so errors are NOT cheap.",
+            "There is no cost; it's just a number.",
+            "The only cost is server time."
+          ],
+          "correct": 0,
+          "log": "📒 §1 Problem: scale grading; cost-of-wrong = damaged trust + mis-taught learner → errors matter" },
+        { "situation": "Section 2 — Is AI the right tool? Grading short conceptual answers has a learnable pattern (we have past graded answers), and a human can review borderline cases.",
+          "q": "Verdict on the three gates?",
+          "options": [
+            "Pattern exists + data exists + errors tolerable (with a human reviewing low-confidence ones) → AI fits, with a human in the loop.",
+            "No pattern exists, so don't build it.",
+            "Skip the gates — auto-grading is obviously fine."
+          ],
+          "correct": 0,
+          "log": "📒 §2 Fit: yes — pattern + data + tolerable errors, gated by human review on low confidence" },
+        { "situation": "Section 4 — Approach. The team wants to fine-tune a model on day one.",
+          "q": "What's the disciplined first move?",
+          "options": [
+            "Start with a baseline: a prompt that asks an LLM to grade against a rubric. Only climb to RAG (pull the rubric/model answer) or fine-tuning if the baseline isn't good enough.",
+            "Fine-tune immediately — baselines are a waste of time.",
+            "Build a custom model from scratch before trying anything simpler."
+          ],
+          "correct": 0,
+          "log": "📒 §4 Approach: baseline = rubric prompt; climb prompt→RAG→fine-tune only if needed" },
+        { "situation": "Section 5 — Success metrics. Someone proposes optimizing for 'agreement with the answer key'.",
+          "q": "What's missing, and why is a guardrail vital here?",
+          "options": [
+            "Add a guardrail: false-pass rate on confused students must stay low. Pure 'agreement with key' can be gamed by always grading lenient — students feel good, learn nothing.",
+            "Agreement with the key is enough on its own.",
+            "Drop metrics entirely; trust the model."
+          ],
+          "correct": 0,
+          "log": "✅ §5 Metrics: business (less manual grading) + model (agreement) + GUARDRAIL (false-pass rate flat) + A/B vs human grader" }
+      ],
+      "hints": [
+        "At each step, the responsible AIPM call is the one that respects the human cost and resists shortcuts.",
+        "Section 4 is always 'baseline first'; Section 5 always needs a guardrail next to the headline metric."
+      ] },
+
+    { "type": "classify",
+      "prompt": "Sort each line into the right section of the one-pager.",
+      "sub": "Tap a line, then its section. This is the whole page in practice.",
+      "buckets": ["🗃️ Data plan", "📊 Metrics (incl. guardrail)", "⚖️ Responsible-AI", "🔧 Ops"],
+      "items": [
+        { "t": "'Do we have consent to use these chat logs for training?'", "b": 0 },
+        { "t": "'Watch the false-pass rate so the model can't game leniency.'", "b": 1 },
+        { "t": "'A named owner reviews fairness across student languages.'", "b": 2 },
+        { "t": "'Alert if grading accuracy drifts after a new student cohort joins.'", "b": 3 },
+        { "t": "'Are any student groups missing from our labeled examples?'", "b": 0 },
+        { "t": "'One-tap rollback to the previous model if quality drops.'", "b": 3 },
+        { "t": "'Business metric: hours of manual grading saved per week.'", "b": 1 }
+      ],
+      "constraints": ["All 7 sorted", "Every one correct"],
+      "hints": [
+        "Consent, labels, and bias gaps live in the Data plan; drift, alerts, and rollback live in Ops.",
+        "Anything about WHO is treated fairly + a named owner is the Responsible-AI gate; numbers you optimize/protect are Metrics."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Capstone myth-check — true or false?",
+      "sub": "Tap each, then check together.",
+      "statements": [
+        { "t": "You should try a non-ML baseline before reaching for a model.", "answer": true,
+          "why": "Yes — the baseline tells you whether ML even earns its complexity, and gives you a number to beat." },
+        { "t": "A model optimizes what you intended, not what you literally measured.", "answer": false,
+          "why": "False — it optimizes the measured metric LITERALLY. That gap between intent and metric is the central AIPM failure mode." },
+        { "t": "A guardrail metric exists to catch the main metric being gamed.", "answer": true,
+          "why": "Right — it's the second number that must not degrade while the headline metric climbs, your leash on gaming." },
+        { "t": "If the model's own training reward goes up, the product is definitely better for users.", "answer": false,
+          "why": "False — the drone case proved reward and human value can diverge. You need a judge outside the optimizer." },
+        { "t": "The responsible-AI gate should have a named owner, not just a checklist.", "answer": true,
+          "why": "Yes — fairness/privacy/explainability without an accountable owner is a checkbox nobody enforces." }
+      ],
+      "hints": [
+        "Two of these are the metric trap restated — both are false.",
+        "Baseline-first, guardrails, and a named owner are all things this lesson said to DO."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours — name the product you'll scope.",
+      "sub": "Not graded. Pick a real one; the one-pager only works on something concrete.",
+      "fields": [
+        { "k": "goal", "label": "What AI product or feature will YOU scope with this one-pager?", "ph": "e.g. auto-tag support tickets, recommend the next lesson, draft sales replies" },
+        { "k": "stop", "label": "For that product, what's the GUARDRAIL metric — the number that must not get worse?", "ph": "e.g. false-escalation rate, unsubscribe rate, fairness gap across user groups" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Lock it in: tap EVERY true statement about the AIPM one-pager.",
+      "sub": "Pick only the true ones.",
+      "chips": [
+        "Section 1 names the user, the job, and the cost of being wrong",
+        "Approach starts with a non-ML baseline before a model",
+        "Metrics pair a headline metric with a guardrail metric",
+        "A model optimizes exactly what you measure, not what you meant",
+        "If training reward rises, you never need a judge outside the optimizer"
+      ],
+      "correct": [0, 1, 2, 3],
+      "why": "The first four are the spine of the page: define the user and the cost of error, baseline before modeling, headline + guardrail metrics, and the hard truth that the model obeys the metric literally. The last is false — the drone reward-vs-VLM divergence is exactly why you keep an eye outside the optimizer.",
+      "hints": [
+        "Four of these you just ordered, traced, and sorted.",
+        "Which statement contradicts the drone reward-vs-VLM story?"
+      ] },
+
+    { "type": "done" }
+  ]
+}

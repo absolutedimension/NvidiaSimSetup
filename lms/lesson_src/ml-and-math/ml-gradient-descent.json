@@ -1,0 +1,152 @@
+{
+  "slug": "ml-gradient-descent",
+  "title": "Getting better: gradient descent",
+  "steps": [
+    { "type": "intro",
+      "art": "🏔️ → 📉",
+      "prompt": "How does a model actually GET better?",
+      "sub": "It's one move, repeated thousands of times: measure how wrong you are, then take a small step downhill. That's gradient descent — the engine inside almost all of ML. By the end you'll have walked one downhill step by hand.",
+      "cta": "Start" },
+
+    { "type": "reveal",
+      "prompt": "The three words you need.",
+      "sub": "Tap each card. Everything here is built from these.",
+      "cards": [
+        { "em": "📏", "h": "Loss", "b": "ONE number for how wrong the model is right now. Big loss = very wrong. The goal is to make it small." },
+        { "em": "🧭", "h": "Gradient", "b": "The compass: which way to nudge the weights to make the loss smaller. Points downhill on the error landscape." },
+        { "em": "👣", "h": "Learning rate", "b": "How BIG a step you take downhill each time. Too small = crawls forever. Too big = overshoots and bounces." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Before a model can improve, what must it have first?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "A way to measure how wrong it is — a loss." },
+        { "t": "A bigger GPU." },
+        { "t": "The final answer, handed to it." }
+      ],
+      "correct": 0,
+      "why": "You can't get better at something you can't measure. Loss turns 'wrong' into a single number, so 'improve' becomes a concrete target: make that number smaller. Without it there's no signal to learn from — hardware and answers don't substitute for a yardstick.",
+      "hints": [
+        "How do you know you've improved if you can't score how wrong you are?",
+        "It's the thing that turns 'wrong' into a number."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "You're on a foggy hillside and want to reach the bottom. With no map, what's the smart move?",
+      "sub": "This IS gradient descent.",
+      "options": [
+        { "t": "Stand still — too risky." },
+        { "t": "Feel which way slopes downhill, take a small step, then feel again." },
+        { "t": "Sprint in a random direction." }
+      ],
+      "correct": 1,
+      "why": "That's exactly the algorithm. You can't see the bottom (the best weights), but at your feet you can feel which way is down (the gradient). Step a little that way, re-check, repeat. Each step lowers the loss. Random sprints or standing still won't reliably reach the valley.",
+      "hints": [
+        "You can't see the whole hill — but you can feel the slope right where you stand.",
+        "Small step downhill, re-check, repeat. What's that match?"
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the training loop steps in order — then it repeats.",
+      "sub": "This little cycle runs thousands of times until the loss stops dropping.",
+      "chips": ["Compute the loss (how wrong?)", "Forward pass: make a prediction", "Update the weights a small step downhill", "Backprop: get the gradient (which way is downhill?)"],
+      "correct": [1, 0, 3, 2],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You must make a prediction before you can score how wrong it is.",
+        "Predict → measure wrongness → find downhill direction → step. Then loop."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "What 'backprop' really means.",
+      "sub": "Tap each card — it's less scary than it sounds.",
+      "cards": [
+        { "em": "🎯", "h": "The error is at the end", "b": "You only see the mistake at the output — the prediction was off by some amount." },
+        { "em": "🔙", "h": "Blame travels back", "b": "Backprop sends that error backward through the layers, working out how much EACH weight contributed to the mistake." },
+        { "em": "🧭", "h": "Out comes the gradient", "b": "For every weight you learn 'nudge me up' or 'nudge me down' — that's the gradient the update step uses." }
+      ] },
+
+    { "type": "trace",
+      "prompt": "Take one gradient-descent step by hand.",
+      "sub": "A weight is 5. The gradient says 'slope is +2 (going UP this way)'. Learning rate is 0.1.",
+      "goal": "Update one weight: w = 5, gradient = +2, learning rate = 0.1.",
+      "turns": [
+        { "situation": "Gradient is +2 — that direction goes UPHILL (more loss). To DESCEND, we move the opposite way.",
+          "q": "To lower the loss, should the weight go up or down?",
+          "options": ["Down — move against the gradient", "Up — follow the gradient", "Stay the same"],
+          "correct": 0, "log": "📒 descend = move opposite the +2 slope → decrease w" },
+        { "situation": "The step size is learning_rate × gradient = 0.1 × 2.",
+          "q": "How big is the step?",
+          "options": ["0.2", "2.0", "0.02"],
+          "correct": 0, "log": "📒 step size = 0.1 × 2 = 0.2" },
+        { "situation": "Old weight is 5. We move DOWN by the step of 0.2.",
+          "q": "What's the new weight?",
+          "options": ["4.8", "5.2", "3.0"],
+          "correct": 0, "log": "✅ new weight = 5 − 0.2 = 4.8 (one step downhill)" }
+      ],
+      "hints": [
+        "Descending means going AGAINST the gradient's direction.",
+        "new = old − (learning_rate × gradient) = 5 − 0.2."
+      ] },
+
+    { "type": "classify",
+      "prompt": "Learning rate gone wrong — sort each symptom.",
+      "sub": "Tap a symptom, then whether the rate is too big or too small.",
+      "buckets": ["🐢 Too small", "🚀 Too big"],
+      "items": [
+        { "t": "Loss barely moves after thousands of steps — painfully slow", "b": 0 },
+        { "t": "Loss bounces wildly up and down, never settling", "b": 1 },
+        { "t": "Training takes forever to reach a good answer", "b": 0 },
+        { "t": "The model overshoots the valley and diverges", "b": 1 }
+      ],
+      "constraints": ["All 4 sorted", "Every one correct"],
+      "hints": [
+        "Tiny steps → slow, crawling progress. Huge steps → overshoot and bounce.",
+        "'Barely moves' and 'forever' = too small. 'Bounces' and 'overshoots' = too big."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Myth-check — true or false?",
+      "sub": "Tap each, then check together.",
+      "statements": [
+        { "t": "Gradient descent reaches the best weights in a single giant step.", "answer": false,
+          "why": "No — it's many small steps. One step only nudges things slightly less wrong; the magic is in repeating." },
+        { "t": "The loss is a single number measuring how wrong the model currently is.", "answer": true,
+          "why": "Right — one number to minimise. Lowering it IS the whole training goal." },
+        { "t": "To lower the loss, you move the weights AGAINST the gradient.", "answer": true,
+          "why": "Yes — the gradient points uphill (more loss), so you step the opposite way to descend." },
+        { "t": "A learning rate that's too large can make training overshoot and bounce around.", "answer": true,
+          "why": "Correct — big steps leap over the valley instead of settling into it." }
+      ],
+      "hints": [
+        "Recall the foggy hill: was it one leap or many small steps?",
+        "Which direction lowers loss — with the gradient, or against it?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make the loop yours.",
+      "sub": "Not graded. Tying it to a real goal makes it stick.",
+      "fields": [
+        { "k": "goal", "label": "Name a skill YOU got better at by small repeated steps (your own 'gradient descent'):", "ph": "e.g. learning guitar, public speaking, cooking" },
+        { "k": "why", "label": "What was your 'loss' — the thing you were trying to make smaller each time?", "ph": "e.g. number of wrong chords, nervousness" }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "One sentence: what is gradient descent?",
+      "sub": "The whole lesson in a line.",
+      "options": [
+        { "t": "Repeatedly nudging the weights a small step in the direction that lowers the loss." },
+        { "t": "Picking the best model from a menu of pre-trained ones." },
+        { "t": "Adding more layers until the network is deep enough." }
+      ],
+      "correct": 0,
+      "why": "That's it exactly — measure loss, find the downhill direction (gradient), step a little (learning rate), repeat. It's not model-shopping or adding layers; it's the iterative downhill walk that does the actual learning.",
+      "hints": [
+        "It's an action you repeat, not a one-time choice.",
+        "Loss + downhill + small step + repeat = ?"
+      ] },
+
+    { "type": "done" }
+  ]
+}

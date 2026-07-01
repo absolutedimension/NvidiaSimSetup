@@ -1,0 +1,144 @@
+{
+  "slug": "mus-master",
+  "title": "Mixing & mastering",
+  "steps": [
+    { "type": "intro",
+      "art": "🎚️ → 📈 → 🎧",
+      "prompt": "All the parts exist — but it sounds muddy and quiet. What turns it pro?",
+      "sub": "Two final stages do it: mixing (balance the parts) then mastering (loudness + polish). By the end you'll know what each does, why order matters, and why a permissive model keeps every track copyright-clean.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "Your generated track sounds muddy — the vocal is buried under the bass. First fix?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Mastering — push the whole track louder and hope the vocal surfaces." },
+        { "t": "Mixing — balance the levels, EQ and panning so each part has its own space." },
+        { "t": "Re-record it with a real band." }
+      ],
+      "correct": 1,
+      "why": "Muddy = a balance problem INSIDE the track, which is exactly what mixing fixes: set levels, carve EQ, and pan parts so the vocal and bass aren't fighting. Mastering can't un-bury a vocal — it works on the finished whole, not the individual parts. Mix first, master second.",
+      "hints": [
+        "The problem is parts fighting each other. Which stage works on the PARTS?",
+        "Loudness won't separate two parts that overlap. What balances them?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The mixer's three tools.",
+      "sub": "Tap each card. These three carve space so every part is heard.",
+      "cards": [
+        { "em": "🔊", "h": "Levels", "b": "How loud each part is relative to the others. The vocal should sit on top." },
+        { "em": "🎛️", "h": "EQ", "b": "Boost/cut frequencies so parts don't clash — e.g. trim bass so the vocal cuts through." },
+        { "em": "↔️", "h": "Panning", "b": "Place parts left↔right in the stereo field so they don't pile up in the center." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Mixing job or mastering job?",
+      "sub": "Tap each item, then drop it in the right bin.",
+      "buckets": ["🎚️ Mixing", "📈 Mastering"],
+      "items": [
+        { "t": "Turn the bass down so it stops drowning the vocal", "b": 0 },
+        { "t": "Bring the whole finished track to -9 LUFS so it's as loud as streaming songs", "b": 1 },
+        { "t": "Pan the rhythm guitar slightly to the left", "b": 0 },
+        { "t": "Apply a limiter to stop the final master from clipping", "b": 1 },
+        { "t": "EQ the kick and bass so they don't clash", "b": 0 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "If it works on ONE part inside the song, it's mixing.",
+        "If it treats the WHOLE finished track as one object (loudness, limiting), it's mastering."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "What's the single most important job of mastering?",
+      "sub": "Beyond just 'make it louder'.",
+      "options": [
+        { "t": "Make it sound consistent and pro-loud on every device — earbuds, phone, car." },
+        { "t": "Add new instruments the mix was missing." },
+        { "t": "Translate the lyrics into another language." }
+      ],
+      "correct": 0,
+      "why": "Mastering polishes the finished mix as one object: bring it to a target loudness and smooth the tone so it holds up everywhere it plays. That cross-device consistency — sounding good on cheap earbuds AND a car system — is the whole point. Adding instruments is a mix/arrangement job, not mastering.",
+      "hints": [
+        "Think about WHERE your track will be heard. What problem does that create?",
+        "Mastering is the last polish on the WHOLE track, not a place to add parts."
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the finishing steps in the correct order.",
+      "sub": "From a rough generated track to a publishable file.",
+      "chips": ["Master: target loudness + limiting", "Mix: balance levels, EQ, panning", "Export the copyright-clean final file", "Start from the raw generated multitrack"],
+      "correct": [3, 1, 0, 2],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You must balance the parts BEFORE you polish the whole.",
+        "Mastering comes right before the final export."
+      ] },
+
+    { "type": "tf",
+      "prompt": "True or false — finishing & rights.",
+      "sub": "Tap True or False for each, then check.",
+      "statements": [
+        { "t": "You should master first, then mix.", "answer": false,
+          "why": "No — mix first (balance the parts), THEN master (polish the whole). Mastering a badly balanced track just makes the imbalance loud." },
+        { "t": "Mastering helps your track sound consistent across different speakers and devices.", "answer": true,
+          "why": "Yes — that cross-device consistency is exactly what mastering delivers, so your track holds up on earbuds, phones and car systems alike." },
+        { "t": "Using a permissively-licensed model (e.g. ACE-Step, MIT) makes tracks safe to monetize.", "answer": true,
+          "why": "Right — a permissive license means the audio it generates is yours to use commercially, so you can publish and earn with low takedown risk. That's 'copyright-clean'." },
+        { "t": "A loud master can rescue a mix where the vocal is completely buried.", "answer": false,
+          "why": "No — mastering raises the whole track together, so a buried vocal just gets louder while still buried. Fix balance in the MIX first." }
+      ],
+      "hints": [
+        "Remember the order — which stage comes first?",
+        "Why does 'copyright-clean' matter the moment you want to make money from a track?"
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk a rough track to a publishable file.",
+      "sub": "Pick the next move at each step. The log fills in as you go.",
+      "goal": "Finish a generated track so it's pro-loud, clean on every device, and safe to monetize.",
+      "turns": [
+        { "situation": "You have a raw generated track. The vocal is buried and the kick clashes with the bass.",
+          "q": "What's the FIRST finishing move?",
+          "options": ["Mix — level, EQ and pan so every part has space", "Master it loud right away", "Publish it as-is"],
+          "correct": 0, "log": "🎚️ Mix → vocal up, EQ kick vs bass, pan guitar" },
+        { "situation": "The mix is balanced and clear, but it's noticeably quieter than playlist tracks.",
+          "q": "What's next?",
+          "options": ["Master — bring to target loudness with limiting", "Re-mix it from scratch", "Add more lyrics"],
+          "correct": 0, "log": "📈 Master → -9 LUFS, limiter on, tone smoothed" },
+        { "situation": "It's loud and polished. You test it on phone, earbuds and a car.",
+          "q": "Why does this device check matter?",
+          "options": ["Mastering's job is consistency everywhere — confirm it holds up", "It doesn't; only earbuds matter", "To make the file smaller"],
+          "correct": 0, "log": "🎧 Checks out on phone / earbuds / car" },
+        { "situation": "It sounds pro on every device. You're about to publish and monetize it.",
+          "q": "What makes publishing it low-risk?",
+          "options": ["It was made with a permissively-licensed model — copyright-clean", "Nothing — every track risks takedown", "You added a louder limiter"],
+          "correct": 0, "log": "✅ Permissive license → safe to monetize · export" }
+      ],
+      "hints": [
+        "Order: mix → master → check → export. Don't skip ahead.",
+        "The monetization safety comes from the MODEL'S license, not the loudness."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Think about the track you want to ship and where it'll live.",
+      "fields": [
+        { "k": "goal", "label": "Where will your finished track be published?", "ph": "e.g. YouTube background music, Spotify, my meditation app" },
+        { "k": "why", "label": "Why does copyright-clean matter for YOUR plan?", "ph": "e.g. I want to monetize every video with zero takedown risk" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Tap ALL the jobs that belong to MASTERING (not mixing).",
+      "sub": "Some of these are mixing jobs. Pick only the mastering ones.",
+      "chips": ["Target loudness (LUFS)", "Final limiting to prevent clipping", "Consistency across devices", "Pan a guitar left", "EQ one part vs another", "Turn down a buried bass"],
+      "correct": [0, 1, 2],
+      "why": "Mastering works on the finished whole: target loudness, final limiting, and cross-device consistency. Panning, per-part EQ, and turning down a specific buried part are all MIXING jobs — they act on individual parts inside the track.",
+      "hints": [
+        "Mastering treats the song as ONE object. Mixing touches individual parts.",
+        "Anything about a single instrument's level or placement is mixing, not mastering."
+      ] },
+
+    { "type": "done" }
+  ]
+}

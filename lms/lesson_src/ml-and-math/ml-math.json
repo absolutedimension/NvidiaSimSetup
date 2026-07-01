@@ -1,0 +1,154 @@
+{
+  "slug": "ml-math",
+  "title": "The math you actually need",
+  "steps": [
+    { "type": "intro",
+      "art": "🔢 → 🧠",
+      "prompt": "Afraid of the math? Read this first.",
+      "sub": "Almost all of ML rests on just FOUR ideas — and none of them are scary once you picture them. Vectors, dot products, matrices, gradients. By the end you'll know what each one IS and why it powers everything.",
+      "cta": "Start" },
+
+    { "type": "reveal",
+      "prompt": "The four ideas, in plain pictures.",
+      "sub": "Tap each card. This is the whole toolkit.",
+      "cards": [
+        { "em": "📍", "h": "Vector", "b": "An ordered list of numbers. It places a 'thing' as a point in space. [height, weight] is a 2-number vector — a dot on a graph." },
+        { "em": "🤝", "h": "Dot product", "b": "Multiply matching numbers, add them up. One number that says how ALIGNED two vectors are — the basis of 'similar'." },
+        { "em": "📊", "h": "Matrix", "b": "A grid of numbers — a stack of vectors. It transforms vectors: rotate, stretch, project. A layer of a neural net IS a matrix." },
+        { "em": "📉", "h": "Gradient", "b": "Which way is downhill? It points the direction to nudge the numbers to make the error smaller. The compass of learning." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "What IS a vector, really?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "A single number, like 7." },
+        { "t": "An ordered list of numbers that places a thing as a point in space." },
+        { "t": "A picture file." }
+      ],
+      "correct": 1,
+      "why": "A vector is just an ordered list — [5.6, 60] could be a person's [height, weight], a single dot on a graph. ML turns EVERYTHING — a word, an image, a user — into a vector, so it can all live in the same space and math can work on it. One number alone is a 'scalar', not a vector.",
+      "hints": [
+        "Is it one number, or a list of them in a fixed order?",
+        "Think of a dot on a graph: how many numbers do you need to place it?"
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Two arrows point almost the SAME way. What does their dot product look like?",
+      "sub": "Dot product measures alignment.",
+      "options": [
+        { "t": "A big positive number — they're aligned/similar." },
+        { "t": "Zero — they have nothing to do with each other." },
+        { "t": "A big negative number — they're opposites." }
+      ],
+      "correct": 0,
+      "why": "Same direction → big positive dot product → 'very similar'. At right angles → zero → 'unrelated'. Opposite directions → negative → 'opposites'. This one number is how search engines and recommenders decide two things are alike.",
+      "hints": [
+        "Aligned arrows agree. Does 'agree' read as big-positive, zero, or negative?",
+        "Right angle = 0, opposite = negative. So same-direction = ?"
+      ] },
+
+    { "type": "classify",
+      "prompt": "Which of the four ideas does each job?",
+      "sub": "Tap a job, then the idea that does it.",
+      "buckets": ["📍 Vector", "🤝 Dot product", "📊 Matrix", "📉 Gradient"],
+      "items": [
+        { "t": "Turn the word 'king' into a list of 300 numbers", "b": 0 },
+        { "t": "Score how similar two product descriptions are", "b": 1 },
+        { "t": "Transform a whole batch of vectors in one neural-net layer", "b": 2 },
+        { "t": "Tell the model which way to nudge weights to be less wrong", "b": 3 },
+        { "t": "Represent a user as a point so we can find similar users", "b": 0 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Representing a thing as a list of numbers = vector. Measuring 'alike' = dot product.",
+        "Transforming many vectors at once = matrix. Pointing toward less error = gradient."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Compute a dot product by hand — slowly.",
+      "sub": "Two tiny vectors: a = [2, 3], b = [4, 1]. Pick the next move each turn.",
+      "goal": "Dot product of a = [2, 3] and b = [4, 1].",
+      "turns": [
+        { "situation": "Step 1: multiply the FIRST numbers of each vector together.",
+          "q": "2 × 4 = ?",
+          "options": ["8", "6", "24"],
+          "correct": 0, "log": "📒 first pair: 2 × 4 = 8" },
+        { "situation": "Step 2: now multiply the SECOND numbers together.",
+          "q": "3 × 1 = ?",
+          "options": ["3", "4", "31"],
+          "correct": 0, "log": "📒 second pair: 3 × 1 = 3" },
+        { "situation": "Step 3: the dot product is the SUM of those products.",
+          "q": "8 + 3 = ?",
+          "options": ["11", "24", "5"],
+          "correct": 0, "log": "✅ dot product = 8 + 3 = 11" }
+      ],
+      "hints": [
+        "Multiply matching positions, then add all the results.",
+        "It's only: (first×first) + (second×second)."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "What a matrix actually DOES.",
+      "sub": "Tap each card — matrices feel abstract until you see them as machines.",
+      "cards": [
+        { "em": "🔄", "h": "It's a transformer", "b": "Feed a vector in, get a new vector out — rotated, stretched, or squished. A function for vectors." },
+        { "em": "🧱", "h": "A net layer is a matrix", "b": "Each neural-net layer multiplies your vector by a matrix of weights. Learning = adjusting those numbers." },
+        { "em": "⚡", "h": "Why GPUs love them", "b": "Matrix multiply is the same op repeated thousands of times — exactly what a GPU does fast. That's why ML needs GPUs." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "The model is wrong. The gradient tells it…?",
+      "sub": "Picture standing on a hill in fog.",
+      "options": [
+        { "t": "The exact correct answer." },
+        { "t": "Which direction (and how steeply) to change the numbers to reduce the error." },
+        { "t": "How many layers the network has." }
+      ],
+      "correct": 1,
+      "why": "A gradient is a compass, not an answer. Standing in fog on an error 'hill', it points which way is downhill (less error) and how steep it is. The model takes a small step that way, again and again. It never hands you the answer — it hands you the DIRECTION.",
+      "hints": [
+        "Downhill in fog: you don't see the bottom, but you know which way slopes down.",
+        "It's a direction-to-improve, not the final answer."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Myth-check — true or false?",
+      "sub": "Tap each, then check together.",
+      "statements": [
+        { "t": "You need years of advanced calculus before you can understand how ML works.", "answer": false,
+          "why": "No — the four intuitions here (vector, dot product, matrix, gradient) carry you a very long way. Depth comes later, and optionally." },
+        { "t": "A dot product collapses two vectors into a single number measuring alignment.", "answer": true,
+          "why": "Exactly — multiply matching numbers, sum them, get one number for how aligned they are." },
+        { "t": "A matrix can transform a vector into a new vector.", "answer": true,
+          "why": "Right — that's its job: vector in, transformed vector out. A neural-net layer is one such matrix." },
+        { "t": "A gradient hands the model the final correct answer directly.", "answer": false,
+          "why": "No — it gives the DIRECTION to improve, not the answer. The model steps that way repeatedly to get better." }
+      ],
+      "hints": [
+        "Two of these overstate what's needed or what a gradient gives you.",
+        "Recall: gradient = compass (direction), not the destination (answer)."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Anchor it to you.",
+      "sub": "Not graded. Naming where you'll meet these makes them stick.",
+      "fields": [
+        { "k": "interest", "label": "One hobby or interest of yours (we'll use it for examples):", "ph": "e.g. cricket, cooking, music" },
+        { "k": "goal", "label": "Which of the four ideas felt least scary now — and where might you use it?", "ph": "e.g. dot product, to find similar songs" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Build the toolkit: tap EVERY true statement.",
+      "sub": "Pick only the true ones.",
+      "chips": ["A vector places a thing as a point in space", "The dot product measures alignment/similarity", "A matrix transforms vectors", "A gradient points the way to LESS error", "You must master calculus before learning ML"],
+      "correct": [0, 1, 2, 3],
+      "why": "All four core ideas are true as stated. The last is the myth: the intuitions you just learned take you remarkably far — heavy calculus is optional and comes later.",
+      "hints": [
+        "Four of these are the toolkit you just built.",
+        "Which statement is a fear, not a fact?"
+      ] },
+
+    { "type": "done" }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "slug": "vrmr-interaction",
+  "title": "Hands & controllers",
+  "steps": [
+    { "type": "intro",
+      "art": "✋ → 📦",
+      "prompt": "In VR, your hands ARE the controller.",
+      "sub": "The thing that makes VR feel magical isn't the visuals — it's reaching out and grabbing something. By the end you'll know exactly what it takes to make a virtual object grabbable, throwable, and touchable.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "You want the user to be able to pick up a virtual mug. What does the mug need?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Just a nice 3D model — VR makes everything grabbable automatically" },
+        { "t": "A grab-interactable component plus a Rigidbody, so hands can latch on and physics can take over" },
+        { "t": "A brighter material so the user can see it" }
+      ],
+      "correct": 1,
+      "why": "A model is just geometry — the engine has no idea it's holdable. A grab-interactable component is what tells the hand 'you can latch onto this,' and a Rigidbody is what gives it mass so that when you let go, it falls instead of floating. Together they turn a static model into something your hands can actually pick up.",
+      "hints": [
+        "A 3D model alone is just a shape with no behaviour — something has to say 'this is grabbable.'",
+        "And once you let go, what makes it fall? Think physics."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The 3 ingredients of a grabbable object.",
+      "sub": "Tap each card. Miss one and the grab feels broken.",
+      "cards": [
+        { "em": "✋", "h": "Hand / controller tracking", "b": "The headset knows where your real hands are and shows them in the scene. This is the input." },
+        { "em": "🤝", "h": "Grab interactable", "b": "A component on the object that says 'a hand can latch onto me' and handles the attach when you grip." },
+        { "em": "⚖️", "h": "Rigidbody (physics)", "b": "Gives the object mass and gravity, so when you release it, it falls, bounces, and can be thrown." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Which feature does each behaviour come from?",
+      "sub": "Tap an item, then a bin.",
+      "buckets": ["✋ Hand tracking", "🤝 Grab interactable", "⚖️ Rigidbody / physics", "📳 Haptics"],
+      "items": [
+        { "t": "Your real hand appears and moves in the scene", "b": 0 },
+        { "t": "The ball sticks to your palm when you close your grip", "b": 1 },
+        { "t": "The ball flies in an arc and bounces when you throw it", "b": 2 },
+        { "t": "The controller buzzes the instant you touch the ball", "b": 3 }
+      ],
+      "constraints": ["All 4 sorted", "Every one correct"],
+      "hints": [
+        "Tracking is about SEEING your hands; the interactable is about LATCHING ON.",
+        "Flying-and-bouncing is physics; the buzz is the feedback in your hand."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "A grab with no feedback feels fake. What makes virtual touch feel physical?",
+      "sub": "This is the cheapest upgrade in all of VR.",
+      "options": [
+        { "t": "Making the object bigger" },
+        { "t": "A short haptic buzz in the controller the moment you touch or grab" },
+        { "t": "A loud sound effect every time" }
+      ],
+      "correct": 1,
+      "why": "Haptics — a tiny vibration in the controller — is what closes the loop between seeing and feeling. When the buzz fires the instant your hand meets the object, your brain reads it as a real touch. It's one line of code, it costs almost nothing, and it's the difference between 'a floating model' and 'a thing I touched.'",
+      "hints": [
+        "Touch in real life has a feeling. What can the controller produce that mimics that?",
+        "It's not visual and it's not audio — it's something you feel in your hand."
+      ] },
+
+    { "type": "order",
+      "prompt": "Walk a single throw through, step by step.",
+      "sub": "Tap the events in the order they happen when a user grabs and throws a ball.",
+      "chips": [
+        "You release — the Rigidbody takes the hand's velocity and the ball flies",
+        "Your tracked hand reaches the ball",
+        "The ball lands and bounces with physics",
+        "You grip — the grab-interactable attaches the ball and a haptic buzz fires"
+      ],
+      "correct": [1, 3, 0, 2],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "Nothing happens until your hand actually reaches the ball.",
+        "Grab, then throw, then land — physics only takes over after you let go."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Trace a full grab-and-throw with all four features working together.",
+      "sub": "Pick the next move at each turn. The log fills in as you go.",
+      "goal": "Let the user pick up a ball, feel it, throw it, and watch it bounce.",
+      "turns": [
+        { "situation": "The ball sits on a table. The user reaches toward it with a tracked hand.",
+          "q": "What feature is letting the user's hand appear and move?",
+          "options": ["Hand / controller tracking", "Rigidbody physics", "A bright material"],
+          "correct": 0, "log": "✋ Hand tracking → user's hand reaches the ball" },
+        { "situation": "The hand closes on the ball and grips.",
+          "q": "Two things should happen at once. Which is it?",
+          "options": ["The grab-interactable attaches the ball AND a haptic buzz confirms the touch", "The ball deletes itself", "Nothing — wait for a button press"],
+          "correct": 0, "log": "🤝 Grab interactable → ball attaches  ·  📳 Haptic buzz → touch confirmed" },
+        { "situation": "The user swings their arm and opens their hand to release.",
+          "q": "What gives the ball its flight?",
+          "options": ["The Rigidbody inherits the hand's velocity and the ball flies in an arc", "The ball stays frozen in mid-air", "The hand keeps holding it forever"],
+          "correct": 0, "log": "⚖️ Rigidbody → ball flies with the throw's velocity" },
+        { "situation": "The ball arcs across the room toward the floor.",
+          "q": "What happens when it lands?",
+          "options": ["Physics makes it bounce and settle — a believable throw", "It passes through the floor", "It teleports back to the hand"],
+          "correct": 0, "log": "✅ Ball bounces and settles — grab→feel→throw complete." }
+      ],
+      "hints": [
+        "Match each moment to one of the four features: tracking, interactable, physics, haptics.",
+        "The buzz fires on grab; physics only takes over on release."
+      ] },
+
+    { "type": "tf",
+      "prompt": "True or false — interaction myth-check.",
+      "sub": "Tap each, then check all at once.",
+      "statements": [
+        { "t": "Adding a Rigidbody is what lets a thrown object fly and bounce realistically.", "answer": true,
+          "why": "True. The Rigidbody gives the object mass and gravity and inherits your hand's velocity on release — that's what makes a throw feel real." },
+        { "t": "Haptic feedback is expensive and only worth it for big-budget apps.", "answer": false,
+          "why": "False. A haptic buzz is roughly one line of code and almost free to run — yet it's one of the biggest immersion upgrades you can add. Beginners should use it everywhere." },
+        { "t": "A 3D model becomes grabbable on its own, with no extra components.", "answer": false,
+          "why": "False. A raw model is just geometry. It needs a grab-interactable to latch onto a hand and a Rigidbody for physics before it's actually grabbable." }
+      ],
+      "hints": [
+        "Recall the three ingredients of a grabbable object.",
+        "How many lines did the haptic buzz take?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "What will the user GRAB in your app?",
+      "sub": "Not graded. We'll use it to make the interaction examples about your world.",
+      "fields": [
+        { "k": "goal", "label": "One object in your app the user should be able to pick up, and what should feel right about it:", "ph": "e.g. a teacup that's light and clinks when set down / a sword that's heavy and swings with weight" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

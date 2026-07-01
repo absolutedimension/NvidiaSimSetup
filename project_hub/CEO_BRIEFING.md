@@ -1,6 +1,14 @@
 # TrigunAI — CEO Briefing
 
-> Last updated: 2026-06-20 by CEO session (3 INVOICES IN FLIGHT — see 🟡 below). Prior: 2026-06-16 COURSE-FIRST RESET; 2026-06-15 music pipeline; 2026-06-14 brand thesis + personas + financial model; CEO OS → v4.2.
+> Last updated: 2026-06-21 by CEO session (CEO OS → **v6.0 LAUNCHED**). Prior: 2026-06-20 (3 invoices in flight); 2026-06-16 COURSE-FIRST RESET; 2026-06-14 brand thesis + personas + financial model.
+
+> 🚀 **PHASE CHANGE (2026-06-21 → CEO OS v6.0): LAUNCHED (rolling). The July-18 countdown is RETIRED.**
+> The Learning Engine is live and operating — lms.trigunai.com up, **first intro class delivered**,
+> students booking + arriving, 4 courses published, 3 invoiced. The OS mode flips from *build-toward-launch*
+> → **OPERATE · DISTRIBUTE · CONVERT** (a repeating weekly loop + a distribution playbook across public
+> platforms, every link driving to ONE CTA = the free intro class → the cohort close). **Gate UNCHANGED
+> and loudly held: LAUNCHED ≠ PAID. 0 rupees have cleared.** Arrivals/reach are not revenue; only a cleared
+> transfer validates. The 🟡 below (3 × ₹35k, Fri 26 Jun) is the first real test of the convert step.
 > ⭐ Full context: `COURSE_CATALOG.md` + `COURSE_INDEXES.md` + `USER_RESEARCH.md` + `landing-page-handoff/BRAND_HANDOFF.md` + memory `project-ai-universal-mind.md` + skill `trigunai-content-strategy` + `youtube_series/`.
 
 ---

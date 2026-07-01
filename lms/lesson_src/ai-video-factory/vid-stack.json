@@ -1,0 +1,150 @@
+{
+  "slug": "vid-stack",
+  "title": "The AI video stack",
+  "steps": [
+    { "type": "intro",
+      "art": "📝 → 🎬",
+      "prompt": "How does one prompt become a finished video?",
+      "sub": "Faceless AI \"slop\" and a video that actually lands look the same at a glance — but one is assembled with intent. By the end you'll be able to name every stage of the pipeline and say what each one adds.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "First instinct — what is an AI video pipeline, really?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "One magic model that takes a topic and outputs a finished MP4." },
+        { "t": "An assembly line of stages — script, voice, visuals, captions, music — each making one file, then composited together." },
+        { "t": "A folder of stock clips you stitch together by hand." }
+      ],
+      "correct": 1,
+      "why": "There's no single button. A pipeline is an assembly line: each stage produces one ingredient (a script, a narration WAV, visuals, a caption track, a music bed), and a final compositing step layers them on one timeline and renders the MP4. Thinking in stages is what lets you fix or upgrade any one part without redoing the whole thing.",
+      "hints": [
+        "If it were one magic model, you couldn't swap the voice without redoing the visuals. Can you?",
+        "Each stage hands its output to the next — like a factory line, not a single machine."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The 6 stages of the stack.",
+      "sub": "Tap each card. These six, in order, turn an idea into a video.",
+      "cards": [
+        { "em": "📝", "h": "Script", "b": "The words. The spine everything else syncs to. No good script, no good video." },
+        { "em": "🎙️", "h": "AI voice", "b": "TTS turns the script into clear human-sounding narration — no mic, no voice actor." },
+        { "em": "🎨", "h": "Visuals", "b": "Per-scene backgrounds, footage, or motion graphics that match what's being said." },
+        { "em": "🔤", "h": "Captions", "b": "Word-synced on-screen text. Most viewers watch muted — this keeps them following." },
+        { "em": "🎵", "h": "Music", "b": "A soft bed under the voice that sets emotion without burying the narration." },
+        { "em": "🎬", "h": "Render", "b": "Compositing layers every element on one timeline and renders the final MP4." }
+      ] },
+
+    { "type": "order",
+      "prompt": "Put the pipeline stages in the order they run.",
+      "sub": "Tap them from first to last. One feeds the next.",
+      "chips": ["Generate visuals for each scene", "Write the script", "Turn the script into AI narration", "Composite + render the final MP4", "Add word-synced captions", "Lay a soft music bed under the voice"],
+      "correct": [1, 2, 0, 4, 5, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "Everything syncs to the words — so what has to exist first?",
+        "Captions and visuals both follow the narration's timing; compositing is always last because it needs all the pieces."
+      ] },
+
+    { "type": "classify",
+      "prompt": "What does each stage actually ADD? Sort each job.",
+      "sub": "Tap a job, then the stage it belongs to.",
+      "buckets": ["🎙️ AI voice", "🎨 Visuals", "🔤 Captions", "🎵 Music"],
+      "items": [
+        { "t": "Lets muted viewers follow every word", "b": 2 },
+        { "t": "Gives the video a human narrator with no mic", "b": 0 },
+        { "t": "Sets the emotional tone without competing with the voice", "b": 3 },
+        { "t": "Keeps eyes on screen by matching the words to what's shown", "b": 1 }
+      ],
+      "constraints": ["All 4 sorted", "Every one correct"],
+      "hints": [
+        "One of these is about sound under the talking; one is about text on top of it.",
+        "Visuals hold attention with the eyes; captions hold attention for the muted; music holds the mood."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk one scene through the stack.",
+      "sub": "You're making a 60-second short, \"Why your phone battery dies fast.\" Pick the next move at each stage.",
+      "goal": "Turn the topic into a finished, watchable scene.",
+      "turns": [
+        { "situation": "You have a topic and a blank timeline. Nothing else exists yet.",
+          "q": "What do you produce first?",
+          "options": ["The script line for this scene", "The music bed", "The final render"],
+          "correct": 0, "log": "📝 Script → \"Lithium batteries hate heat — here's why.\"" },
+        { "situation": "The script line is written. You need a narrator but have no mic.",
+          "q": "What's the next stage?",
+          "options": ["Render the MP4 now", "Run the line through TTS to get narration audio", "Add captions before there's any audio"],
+          "correct": 1, "log": "🎙️ AI voice → narration.wav (4.2s)" },
+        { "situation": "You have a 4.2s narration clip. The screen is still blank.",
+          "q": "What does the scene need now?",
+          "options": ["A visual that matches \"battery + heat\" for these 4.2s", "Another copy of the same audio", "To skip straight to publishing"],
+          "correct": 0, "log": "🎨 Visuals → close-up of a warm phone, 4.2s" },
+        { "situation": "Script, voice, and visuals exist as separate files. Muted viewers see nothing readable.",
+          "q": "What two layers finish the scene before render?",
+          "options": ["Word-synced captions, then a soft music bed", "Two more visuals", "Nothing — it's done"],
+          "correct": 0, "log": "🔤 Captions + 🎵 Music → all layers ready" },
+        { "situation": "All four ingredients are aligned on the timeline.",
+          "q": "What's the final stage?",
+          "options": ["Composite all layers and render the MP4", "Rewrite the script", "Re-record the voice"],
+          "correct": 0, "log": "🎬 Render → scene01.mp4 ✅" }
+      ],
+      "hints": [
+        "Follow the same order as the cards: script → voice → visuals → captions → music → render.",
+        "Compositing is last because it needs every other piece to already exist."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Myth-check the stack — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "The script is just a starting note — the rest of the pipeline can ignore it.", "answer": false,
+          "why": "False — the script is the spine. Voice reads it, captions are its words, visuals and music are timed to it. A weak script makes every later stage weaker." },
+        { "t": "You can swap the music bed without re-rendering the voice or visuals.", "answer": true,
+          "why": "True — because each stage produces a separate file, you can change one ingredient and re-composite. That modularity is the whole point of thinking in stages." },
+        { "t": "Compositing happens first, before you have any of the pieces.", "answer": false,
+          "why": "False — compositing is last. It layers the script-driven voice, visuals, captions, and music onto one timeline and renders the MP4. It needs the pieces to exist first." },
+        { "t": "Captions and a music bed both raise watch-time, but in different ways.", "answer": true,
+          "why": "True — captions keep muted viewers reading along (retention + accessibility); a soft music bed holds emotional tone so people don't drop off in silence." }
+      ],
+      "hints": [
+        "Trace the dependencies: what does each later stage need from an earlier one?",
+        "Modularity means separate files — change one, re-composite, done."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "A creator's video has crisp voice, slick captions, and music — but viewers drop off in the first 10 seconds. Which stage is most likely the real problem?",
+      "sub": "Think about what every other stage depends on.",
+      "options": [
+        { "t": "The render quality — bump the resolution." },
+        { "t": "The script — if the words don't hook, polish on the other stages can't save it." },
+        { "t": "The music — make it louder." }
+      ],
+      "correct": 1,
+      "why": "Production polish can't rescue a weak opening. Voice, visuals, captions, and music all amplify the script — if the words don't earn the first 10 seconds, there's nothing to amplify. The stack makes a good idea shine; it can't manufacture one.",
+      "hints": [
+        "Louder music or higher resolution won't fix a boring first line.",
+        "Every stage is downstream of the words. Fix the source, not the symptoms."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours — your first video idea.",
+      "sub": "Not graded. We'll use this to tailor examples to your actual channel.",
+      "fields": [
+        { "k": "work", "label": "What's your channel or content about (or what would it be)?", "ph": "e.g. budget travel tips / explaining crypto / my bakery" },
+        { "k": "goal", "label": "One video you'd ship first — topic in a line:", "ph": "e.g. 3 mistakes new sourdough bakers make" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Build the stack: tap ALL the stages that belong in an AI video pipeline.",
+      "sub": "A couple of these sound techy but aren't stages of the pipeline. Pick only the real ones.",
+      "chips": ["Script", "AI voice (TTS)", "Per-scene visuals", "Word-synced captions", "A music bed", "Compositing + render", "A subscriber count", "A thumbnail color palette"],
+      "correct": [0, 1, 2, 3, 4, 5],
+      "why": "The stack is Script → Voice → Visuals → Captions → Music → Render. A subscriber count and a color palette matter for a channel, but neither is a stage that produces an ingredient of the video itself.",
+      "hints": [
+        "Recall the six cards you opened — those are the stages.",
+        "If it doesn't produce a file that gets composited into the video, it's not a pipeline stage."
+      ] },
+
+    { "type": "done" }
+  ]
+}

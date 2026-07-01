@@ -121,31 +121,258 @@ WORKBOOK = {
     ], "bring": "Your FINAL working agent — ready to demo on Demo Day."},
 }
 
-# week 1 lesson is built & available; later weeks get authored on the weekly drip
+# week, slug, title, gems, available, sort  (sort orders multiple lessons within a week)
 LESSONS = [
-    (1, "what-is-an-agent", "What is an agent?", 100, True),
+    (1,  "goal-to-agent",                 "The big idea: from a goal to an agent", 100, True, 0),
+    (1,  "what-is-an-agent",              "Anatomy: brain, tools & the loop",      100, True, 1),
+    (2,  "first-tool-calling-agent",      "Your first tool-calling agent", 100, True, 0),
+    (3,  "tools-and-integrations",        "Tools & integrations",          100, True, 0),
+    (4,  "memory-and-context",            "Memory & context",              100, True, 0),
+    (5,  "planning-and-multi-step",       "Planning & multi-step",         100, True, 0),
+    (7,  "reliability-and-guardrails",    "Reliability & guardrails",      100, True, 0),
+    (8,  "multi-agent-systems",           "Multi-agent systems",           100, True, 0),
+    (9,  "deploy-your-agent",             "Deploy your agent",             100, True, 0),
+    (10, "ship-a-real-business-agent",    "Ship a real business agent",    100, True, 0),
+]
+
+# ---- Course 2: Command the Coding Agent — Crack the Remote SWE Job ----
+SWE_MODULES = [
+    (0,  "Start", "Setup + the Job Machine starts", "", "Tools, résumé rebuild, application tracker — the machine starts Week 1"),
+    (1,  "W1", "Complexity + arrays & hashing",     "", "Big-O, arrays/strings, hashing, two pointers, sliding window"),
+    (2,  "W2", "Linear structures, search & trees", "", "Stacks/queues, binary search, linked lists, trees, tries"),
+    (3,  "W3", "Recursion, backtracking & graphs",  "", "Subsets/permutations, BFS/DFS, topological sort, union-find"),
+    (4,  "W4", "Advanced DP, greedy & heaps",        "", "DP patterns, greedy, heaps/top-K, intervals + first mock"),
+    (5,  "W5", "Low-Level Design (LLD)",             "", "OOP, SOLID, the top-5 patterns, API/class design"),
+    (6,  "W6", "High-Level Design I",                "", "HLD frame, estimation, caching, databases, load balancing, CAP"),
+    (7,  "W7", "High-Level Design II",               "", "Queues/streaming, sharding, replication, rate limiting, reliability"),
+    (8,  "W8", "HLD case studies (the canon)",       "", "Design end-to-end with tradeoffs spoken aloud"),
+    (9,  "W9", "The AI-command interview round",     "", "Direct the coding agent & verify its output — the TrigunAI signature"),
+    (10, "W10","AI pair-programming under pressure", "", "Command AI in final rounds without losing correctness"),
+    (11, "W11","Targeted revision + your stack",     "", "Close the gaps; the offer stage"),
+    (12, "W12","Capstone + close the offer",         "", "Full-loop polish, demo, negotiate, accept"),
+]
+SWE_LESSONS = [
+    (1,  "swe-complexity",     "Complexity & the operator's eye", 100, True, 0),
+    (5,  "swe-lld",            "Low-Level Design essentials",     100, True, 0),
+    (6,  "swe-hld",            "High-Level Design foundations",   100, True, 0),
+    (9,  "swe-command-agent",  "Commanding the coding agent",     100, True, 0),
+]
+
+# ---- Course 3: Machine Learning & Its Math — The Faculties of Mind, Made Buildable ----
+ML_MODULES = [
+    (1,  "M1", "The map",                            "", "What ML is · the faculties-of-mind frame · supervised / unsupervised / RL"),
+    (2,  "M2", "The math you actually need",          "", "Vectors, matrices, dot products, gradients — visual & intuitive"),
+    (3,  "M3", "Intuition = function approximation",  "", "A neuron, a layer, a network, the forward pass — by hand"),
+    (4,  "M4", "Getting better = gradient descent",   "", "Loss, backpropagation, the training loop — coded from scratch"),
+    (5,  "M5", "From scratch → PyTorch",              "", "Tensors, autograd, the modern GPU workflow"),
+    (6,  "M6", "Meaning = embeddings & vector space", "", "Word/image embeddings, similarity, vector search"),
+    (7,  "M7", "Imagination = generative models",     "", "Autoencoders → diffusion intuition → a tiny generator"),
+    (8,  "M8", "Attention & transformers",            "", "Why attention won + a minimal transformer block"),
+    (9,  "M9", "Training in practice",                "", "Data, overfitting, regularization, evaluation, GPU training"),
+    (10, "M10","A real ML project, end-to-end",       "", "Train, evaluate & show a classifier / embedding-search / generator"),
+]
+ML_LESSONS = [
+    (1,  "ml-map",              "The map: what ML really is",        100, True, 0),
+    (2,  "ml-math",             "The math you actually need",        100, True, 0),
+    (4,  "ml-gradient-descent", "Getting better: gradient descent",  100, True, 0),
+    (6,  "ml-embeddings",       "Meaning: embeddings & vector space",100, True, 0),
+    (8,  "ml-transformers",     "Attention & transformers",          100, True, 0),
+]
+PHYS_LESSONS = [
+    (1,  "phys-sim",            "Why train in simulation",           100, True, 0),
+    (3,  "phys-rl",             "RL basics for control",             100, True, 0),
+    (4,  "phys-reward",         "Designing the reward",              100, True, 0),
+    (8,  "phys-deploy",         "Deploy & watch your policy",        100, True, 0),
+]
+VRMR_LESSONS = [
+    (1,  "vrmr-setup",          "Setup: Unity, Quest & your dev world", 100, True, 0),
+    (2,  "vrmr-ai-partner",     "Building VR with your AI coding partner", 100, True, 0),
+    (3,  "vrmr-interaction",    "Hands & controllers",               100, True, 0),
+    (11, "vrmr-ship",           "Ship it to the Meta Store",         100, True, 0),
+]
+VRGAME_LESSONS = [
+    (1,  "vrg-loop",            "Setup & the game loop",             100, True, 0),
+    (2,  "vrg-mechanic",        "Core mechanic & physics",           100, True, 0),
+    (3,  "vrg-enemy-ai",        "Enemy AI",                          100, True, 0),
+    (9,  "vrg-ship",            "Ship your VR game",                 100, True, 0),
+]
+SCRGAME_LESSONS = [
+    (1,  "sg-stack",            "The three-tool stack",              100, True, 0),
+    (3,  "sg-import",           "Blender -> Unity import pipeline",  100, True, 0),
+    (5,  "sg-mechanic",         "Core mechanic & game loop",         100, True, 0),
+    (11, "sg-publish",          "Publish your game",                 100, True, 0),
+]
+AIVID_LESSONS = [
+    (1,  "vid-stack",           "The AI video stack",                100, True, 0),
+    (3,  "vid-voices",          "AI voices (TTS)",                   100, True, 0),
+    (6,  "vid-captions",        "Word-synced kinetic captions",      100, True, 0),
+    (10, "vid-publish",         "Publish at scale",                  100, True, 0),
+]
+AIMUS_LESSONS = [
+    (1,  "mus-stack",           "The AI music stack",                100, True, 0),
+    (3,  "mus-lyrics",          "Lyrics to song",                    100, True, 0),
+    (5,  "mus-singer",          "Build your AI singer",              100, True, 0),
+    (7,  "mus-master",          "Mixing & mastering",                100, True, 0),
+]
+
+# ---- Courses 4-9 (journeys; lessons drip later) ----
+VRMR_MODULES = [
+    (1,"M1","Setup — Unity, Quest & your dev environment","","Unity 6 + Meta XR SDK, a room running on your headset"),
+    (2,"M2","Your AI coding partner — building VR with Claude Code","","Describe it in English -> the agent writes the C# -> test in VR"),
+    (3,"M3","Hands & controllers — interacting with the world","","Hand tracking, grab/throw with physics, haptics"),
+    (4,"M4","VR UI — menus, buttons & panels that work","","World-space UI, poke + laser interaction"),
+    (5,"M5","Environment & audio — making VR feel like a place","","Skyboxes, Quest lighting, particles, spatial audio"),
+    (6,"M6","Locomotion — moving without getting sick","","Teleport, smooth move, snap turn, comfort vignette"),
+    (7,"M7","Saving data & session logic","","PlayerPrefs + JSON, a Menu->Session->Summary state machine"),
+    (8,"M8","Multiplayer basics — sharing VR with others","","Photon Fusion, networked avatars, spatial voice"),
+    (9,"M9","Mixed reality & passthrough","","Quest 3 passthrough, Scene API, spatial anchors"),
+    (10,"M10","Performance & polish — Quest-ready","","Profiler, batching, ASTC textures, 72fps, the VRC checklist"),
+    (11,"M11","Ship it — from build to the Meta Store","","Dev account, keystore, release APK, store listing, submit"),
+]
+PHYSAI_MODULES = [
+    (1,"M1","Simulation & digital twins","","Why train in sim first; the digital-twin idea"),
+    (2,"M2","Isaac Sim / Isaac Lab setup (provided)","","Into the NVIDIA stack on provided GPU"),
+    (3,"M3","RL basics for control","","Agents, environments, rewards, episodes — aimed at movement"),
+    (4,"M4","Designing the reward","","Shaping behavior through what you reward"),
+    (5,"M5","Training your first policy","","Run PPO, read the curves, reach the goal"),
+    (6,"M6","Sim-to-real concepts","","Domain randomization, the reality gap"),
+    (7,"M7","Teleoperation & VR embodiment","","Drive & watch the policy from a Quest headset"),
+    (8,"M8","Deploy & view your trained policy","","Export, render, watch your robot run in VR"),
+]
+AIVID_MODULES = [
+    (1,"M1","The AI video stack","","Script -> voice -> visuals -> captions -> music -> render"),
+    (2,"M2","Scripting for TTS","","Write for the ear — pacing, phrasing, punctuation"),
+    (3,"M3","AI voices (F5-TTS)","","Natural narration from text, many voices/languages"),
+    (4,"M4","Motion graphics (Manim)","","Animated graphics synced to narration"),
+    (5,"M5","Contextual AI backgrounds","","Per-scene visuals that match the words"),
+    (6,"M6","Word-synced kinetic captions","","Word-by-word highlight for retention + accessibility"),
+    (7,"M7","Music + focus-audio beds","","A soft bed that sets emotion under the voice"),
+    (8,"M8","Compositing & GPU render","","Layer it all on one timeline, render the MP4"),
+    (9,"M9","Bilingual / localization","","Re-narrate + re-caption over the same visuals"),
+    (10,"M10","Publishing & channel craft","","Copyright-clean, at scale, to your channel"),
+]
+VRGAME_MODULES = [
+    (1,"M1","Setup & the game loop","","Unity + Meta XR + the per-frame loop"),
+    (2,"M2","Core mechanics & physics","","Your central verb + grab/throw/collide with physics"),
+    (3,"M3","Enemy AI","","State machines + pathfinding toward the player"),
+    (4,"M4","Game feel / juice","","Hit-stop, particles, haptics, sound, shake"),
+    (5,"M5","Levels & spawning","","Prefabs, spawners, a difficulty curve"),
+    (6,"M6","Audio","","Spatial SFX + music for immersion"),
+    (7,"M7","Score & saving","","Scoring + persistence across sessions"),
+    (8,"M8","Performance","","Hold 72fps — batching, textures"),
+    (9,"M9","Ship to the Meta Store","","Dev account, signed APK, listing, submit"),
+]
+SCRGAME_MODULES = [
+    (1,"M1","Setup — Blender + Unity + AI","","The three-tool stack for a flat-screen game"),
+    (2,"M2","Modeling in Blender","","Models, characters, props — then export"),
+    (3,"M3","Import pipeline to Unity","","FBX/GLTF + textures, materials, colliders"),
+    (4,"M4","AI-assisted coding","","Describe behavior in English -> the agent writes C#"),
+    (5,"M5","Core mechanic & game loop","","The central verb run every frame"),
+    (6,"M6","Character movement","","Input (keyboard/touch) -> a controller"),
+    (7,"M7","Camera systems","","Follow + frame the player"),
+    (8,"M8","UI / HUD","","Menus, score/health, pause on a canvas"),
+    (9,"M9","Audio","","SFX + music for feedback and mood"),
+    (10,"M10","Mobile build & performance","","Touch controls, frame budget, Android/iOS"),
+    (11,"M11","Publish","","Build for the platform, list it, release"),
+]
+AIMUS_MODULES = [
+    (1,"M1","The AI music stack","","Prompt/lyrics -> generate -> mix -> master"),
+    (2,"M2","Prompt to music","","Steer style/genre/mood/instruments/BPM"),
+    (3,"M3","Lyrics to song","","Feed lyrics + a style, the model sings them"),
+    (4,"M4","Styles — beats, lofi, focus, meditation","","One engine, many genres"),
+    (5,"M5","Build your AI singer (RVC)","","Train a voice, apply it to the vocals"),
+    (6,"M6","Mixing","","Balance levels / EQ / panning"),
+    (7,"M7","Mastering","","Loudness / EQ / limiting — pro + consistent"),
+    (8,"M8","Focus / binaural audio","","Isochronic/binaural tones for focus + calm"),
+    (9,"M9","Copyright-clean","","A permissive model so it's safe to monetize"),
+    (10,"M10","Deliver & publish","","A mastered MP3/WAV ready to ship"),
+]
+
+AIPM_LESSONS = [
+    (1, "ai-pm-mindset",             "The AI PM mindset",                               100, True, 0),
+    (2, "ai-landscape-paradigms",    "AI vs ML vs DL, and the learning paradigms",      100, True, 0),
+    (4, "ai-data-foundations",       "Data foundations & feasibility",                  100, True, 0),
+    (5, "responsible-ai-gate",       "Ship it responsibly: drift, fairness & the gate", 100, True, 0),
+    (6, "generative-ai-for-product", "Generative AI for product",                       100, True, 0),
+    (8, "the-aipm-one-pager",        "The AIPM one-pager",                              100, True, 0),
+]
+
+AIPM_MODULES = [
+    (1,"M1","The AI PM mindset","","PM as translator between value, user need & what data makes possible · the 5 shifts"),
+    (2,"M2","AI landscape I","","AI vs ML vs DL vs Data Science · supervised / unsupervised / RL · is this even an ML problem?"),
+    (3,"M3","AI landscape II + AI-first","","Problem shape -> model family · design for the wrong answer · cold-start · the feedback loop"),
+    (4,"M4","AI/ML strategy I — data foundations","","Value x feasibility · build/buy/API · the non-ML baseline · data quality, splits, leakage, bias"),
+    (5,"M5","AI/ML strategy II — ship it responsibly","","MLOps lifecycle · drift · latency/cost · fairness, privacy, explainability, human-in-the-loop"),
+    (6,"M6","Generative AI for product","","Generative vs discriminative · LLMs, hallucination, context window · prompt -> RAG -> fine-tune · prompt engineering"),
+    (7,"M7","Reading a model — linear regression","","Features, fitting, error · R-squared / MAE / RMSE · overfitting vs underfitting · trust the test set"),
+    (8,"M8","Capstone — the AIPM one-pager","","Scope a real AI product end to end: problem -> data -> approach -> metrics -> responsible-AI -> ops"),
 ]
 
 
+def _migrate():
+    """Add the course columns to existing Postgres tables (no-op if already there / on SQLite)."""
+    from sqlalchemy import text
+    for stmt in (
+        "ALTER TABLE modules ADD COLUMN IF NOT EXISTS course VARCHAR(40) DEFAULT 'agentic'",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS course VARCHAR(40) DEFAULT 'agentic'",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS phone VARCHAR(20) DEFAULT ''",
+        "ALTER TABLE course_requests ADD COLUMN IF NOT EXISTS source VARCHAR(20) DEFAULT 'whatsapp'",
+        # subscription columns — sub_status added WITHOUT a server default so existing rows
+        # are NULL exactly once (the grandfather step below keys on that). New ORM inserts
+        # get 'none' from the model-side default.
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS sub_status VARCHAR(20)",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS rzp_customer_id VARCHAR(40) DEFAULT ''",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS rzp_subscription_id VARCHAR(40) DEFAULT ''",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS trial_end TIMESTAMP NULL",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS current_period_end TIMESTAMP NULL",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS data_loop_consent BOOLEAN DEFAULT TRUE",
+        # GRANDFATHER (one-time): every student that exists when the column is first added is
+        # NULL → mark grandfathered (full access forever, never paywalled). Re-running matches
+        # nothing because new signups are 'none' (not NULL), so it's idempotent.
+        "UPDATE students SET sub_status='grandfathered' WHERE sub_status IS NULL",
+    ):
+        try:
+            with engine.begin() as conn:
+                conn.execute(text(stmt))
+        except Exception as exc:
+            print(f"[migrate] skip: {exc}")
+
+
 def run():
+    _migrate()
     Base.metadata.create_all(engine)
     db = SessionLocal()
     try:
-        mod_by_week = {}
-        for week, code, title, sdate, summary in MODULES:
-            m = db.query(Module).filter_by(week=week).first()
-            if not m:
-                m = Module(week=week, code=code, title=title, session_date=sdate,
-                           summary=summary, sort=week)
-                db.add(m)
-                db.flush()
-            mod_by_week[week] = m
+        mod_by_key = {}
+        for course, mods in (("agentic", MODULES), ("remote-swe", SWE_MODULES), ("ml-and-math", ML_MODULES),
+                             ("vr-mr-app", VRMR_MODULES), ("physical-ai", PHYSAI_MODULES), ("ai-video-factory", AIVID_MODULES),
+                             ("vr-game", VRGAME_MODULES), ("screen-game", SCRGAME_MODULES), ("ai-music-factory", AIMUS_MODULES),
+                             ("ai-pm", AIPM_MODULES)):
+            for week, code, title, sdate, summary in mods:
+                m = db.query(Module).filter_by(course=course, week=week).first()
+                if not m:
+                    m = Module(course=course, week=week, code=code, title=title,
+                               session_date=sdate, summary=summary, sort=week)
+                    db.add(m)
+                    db.flush()
+                else:
+                    m.course, m.code, m.title, m.summary = course, code, title, summary
+                mod_by_key[(course, week)] = m
 
-        for week, slug, title, gems, available in LESSONS:
-            l = db.query(Lesson).filter_by(slug=slug).first()
-            if not l:
-                db.add(Lesson(module_id=mod_by_week[week].id, slug=slug, title=title,
-                              max_gems=gems, available=available, sort=0))
+        for course, lessons in (("agentic", LESSONS), ("remote-swe", SWE_LESSONS), ("ml-and-math", ML_LESSONS),
+                                ("physical-ai", PHYS_LESSONS), ("vr-mr-app", VRMR_LESSONS), ("vr-game", VRGAME_LESSONS),
+                                ("screen-game", SCRGAME_LESSONS), ("ai-video-factory", AIVID_LESSONS), ("ai-music-factory", AIMUS_LESSONS),
+                                ("ai-pm", AIPM_LESSONS)):
+            for week, slug, title, gems, available, sort in lessons:
+                l = db.query(Lesson).filter_by(slug=slug).first()
+                if not l:
+                    db.add(Lesson(module_id=mod_by_key[(course, week)].id, slug=slug, title=title,
+                                  max_gems=gems, available=available, sort=sort))
+                else:
+                    l.module_id = mod_by_key[(course, week)].id
+                    l.title = title
+                    l.sort = sort
+                    l.available = available
 
         for week, data in WORKBOOK.items():
             existing = db.query(WorkbookTask).filter_by(week=week).count()
@@ -159,13 +386,14 @@ def run():
             db.add(WorkbookTask(week=week, day="Fri", day_date="", focus="Bring to Friday",
                                 task=data["bring"], minutes=0, is_bring=True, sort=sort))
 
-        # demo accounts
-        for email, name, admin in [
-            ("deepak@trigunai.com", "Deepak", True),
-            ("student@example.com", "Test Student", False),
+        # demo accounts (email, name, admin, course)
+        for email, name, admin, course in [
+            ("deepak@trigunai.com", "Deepak", True, "agentic"),
+            ("student@example.com", "Test Student", False, "agentic"),
+            ("swe@example.com", "SWE Test Student", False, "remote-swe"),
         ]:
             if not db.query(Student).filter_by(email=email).first():
-                db.add(Student(email=email, name=name, is_admin=admin))
+                db.add(Student(email=email, name=name, is_admin=admin, course=course))
 
         db.commit()
         print(f"Seeded {len(MODULES)} modules, {len(LESSONS)} lessons, "

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What is an agent? — from a goal · TrigunAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="/static/celebrate.js"></script>
+<style>
+  :root{
+    --bg:#ffffff; --ink:#2b2b33; --muted:#8a8a99; --line:#ececf2;
+    --lav-bg:#eef0fb; --lav-bd:#c9d0f5; --lav-deep:#3a44b8;
+    --indigo:#5b63e6; --indigo-dk:#4a52d6;
+    --grey-fill:#eceef4; --accepted:#9aa0ad;
+    --green:#22c55e; --green-dk:#15803d;
+    --red:#ef4444; --red-bg:#fdecec;
+    --gold:#d99a2b; --gold-bg:#fbf1da; --gold-bd:#e8c98c;
+    --btn:#2d2d33; --btn-dis:#e6e6ec;
+    --rc:18px; --rb:11px;
+    --shadow:0 1px 2px rgba(30,30,60,.05),0 8px 24px rgba(30,30,60,.06);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{
+    font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink); background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    display:flex; flex-direction:column; min-height:100vh;
+  }
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+  header{display:flex;align-items:center;gap:18px;padding:16px 26px;border-bottom:1px solid #f0f0f5;}
+  .x-btn{border:none;background:none;font-size:22px;color:var(--muted);cursor:pointer;line-height:1;}
+  .bar{flex:1;height:12px;border-radius:99px;background:#eceef2;overflow:hidden;}
+  .bar > i{display:block;height:100%;width:0;background:var(--green);border-radius:99px;transition:width .45s cubic-bezier(.4,1.3,.5,1);}
+  .dots{display:flex;gap:7px;}
+  .dots > span{width:8px;height:8px;border-radius:50%;background:#dcdce4;transition:background .3s;}
+  .dots > span.on{background:var(--green);}
+  .streak{display:flex;align-items:center;gap:6px;color:var(--muted);font-weight:500;font-size:15px;}
+  .streak svg{width:18px;height:18px;}
+
+  main{flex:1;display:flex;justify-content:center;padding:40px 24px 130px;}
+  .stage{width:100%;max-width:640px;animation:rise .4s ease;}
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .prompt{font-size:20px;font-weight:500;line-height:1.45;margin:0 0 8px;}
+  .sub{font-size:15.5px;color:var(--muted);line-height:1.6;margin:0 0 22px;}
+  .intro-art{font-size:46px;text-align:center;margin:18px 0 26px;}
+  .lesson-img{width:100%;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);margin:0 0 20px;display:block;}
+  .keyline{border-left:3px solid var(--indigo);background:var(--lav-bg);border-radius:0 12px 12px 0;
+           padding:12px 16px;margin:0 0 20px;font-size:15.5px;color:var(--lav-deep);line-height:1.55;}
+  .keyline.gold{border-left-color:var(--gold);background:var(--gold-bg);color:#8a5a12;}
+
+  .constraints{border:1.5px solid var(--lav-bd);border-radius:14px;padding:12px 16px;margin:0 0 18px;background:#fafbff;transition:border-color .3s;}
+  .constraints.done{border-color:var(--green);}
+  .crow{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--ink);padding:4px 0;}
+  .crow .ic{width:18px;height:18px;flex:0 0 18px;color:var(--muted);transition:color .3s;}
+  .crow.met .ic{color:var(--green);}
+  .crow.met{color:var(--green-dk);}
+
+  .opts{display:flex;flex-direction:column;gap:12px;margin:0 0 8px;}
+  .opt{display:flex;align-items:center;gap:12px;text-align:left;border:1.5px solid var(--lav-bd);background:#fff;
+       border-radius:var(--rb);padding:15px 16px;font:inherit;font-size:15.5px;color:var(--ink);cursor:pointer;
+       transition:.15s;width:100%;}
+  .opt:hover{background:var(--lav-bg);}
+  .opt .tick{width:22px;height:22px;flex:0 0 22px;border-radius:50%;border:2px solid var(--lav-bd);}
+  .opt.sel{border-color:var(--indigo);background:var(--lav-bg);}
+  .opt.sel .tick{border-color:var(--indigo);background:var(--indigo);box-shadow:inset 0 0 0 3px #fff;}
+  .opt.correct{border-color:var(--green);background:#effaf1;}
+  .opt.correct .tick{border-color:var(--green);background:var(--green);box-shadow:inset 0 0 0 3px #fff;}
+  .opt.wrong{border-color:var(--red);background:var(--red-bg);}
+  .opt.dim{opacity:.5;}
+
+  .cards4{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .pcard{border:1.5px solid var(--lav-bd);background:var(--lav-bg);border-radius:14px;padding:14px 16px;cursor:pointer;transition:.18s;}
+  .pcard:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+  .pcard.opened{background:#fff;border-color:var(--indigo);}
+  .pcard h4{margin:0 0 4px;font-size:15.5px;font-weight:600;color:var(--lav-deep);display:flex;align-items:center;gap:8px;}
+  .pcard .body{font-size:13.5px;color:var(--muted);line-height:1.55;max-height:0;overflow:hidden;transition:max-height .3s;}
+  .pcard.opened .body{max-height:160px;margin-top:6px;}
+  .pcard .em{font-size:22px;}
+
+  .buckets{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 18px;}
+  .bucket{border:1.5px dashed var(--lav-bd);border-radius:14px;min-height:78px;padding:10px;background:#fafbff;transition:.15s;}
+  .bucket.target{border-color:var(--indigo);background:var(--lav-bg);}
+  .bucket .blabel{font-size:12.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;}
+  .tray{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;}
+  .chip{border:1.5px solid var(--lav-bd);background:#fff;border-radius:var(--rb);padding:9px 14px;font-size:14px;
+        cursor:pointer;transition:.15s;font-family:inherit;color:var(--ink);}
+  .chip:hover{background:var(--lav-bg);}
+  .chip.sel{border-color:var(--indigo);background:var(--indigo);color:#fff;}
+  .chip.placed{border-color:var(--lav-bd);background:#fff;}
+  .chip.ok{border-color:var(--green);background:#effaf1;color:var(--green-dk);}
+  .chip.bad{border-color:var(--red);background:var(--red-bg);color:#b42318;}
+  .bucket .holder{display:flex;flex-wrap:wrap;gap:8px;}
+
+  .seq{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:54px;border:1.5px solid var(--lav-bd);
+       border-radius:14px;padding:12px;margin:0 0 14px;background:#fafbff;}
+  .seq .slot{font-size:13.5px;color:var(--muted);}
+  .arrow{color:var(--muted);font-size:14px;}
+
+  .field{margin:0 0 16px;}
+  .field label{display:block;font-size:14px;font-weight:500;margin:0 0 6px;}
+  .field input{width:100%;border:1.5px solid var(--lav-bd);border-radius:var(--rb);padding:12px 14px;font:inherit;font-size:15px;}
+  .field input:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(91,99,230,.12);}
+
+  .fb{border-radius:14px;padding:14px 16px;margin:16px 0 0;font-size:14.5px;line-height:1.55;display:none;}
+  .fb.show{display:block;animation:rise .25s ease;}
+  .fb.ok{background:#effaf1;color:var(--green-dk);}
+  .fb.no{background:var(--red-bg);color:#b42318;}
+  .fb .why{margin-top:10px;display:flex;gap:10px;}
+
+  .done-wrap{text-align:center;padding:10px 0;}
+  .done-badge{width:84px;height:84px;border-radius:50%;background:#effaf1;display:flex;align-items:center;justify-content:center;
+              margin:0 auto 18px;animation:pop .5s cubic-bezier(.3,1.5,.5,1);}
+  .done-badge svg{width:44px;height:44px;color:var(--green);}
+  @keyframes pop{from{transform:scale(.2);opacity:0;}to{transform:scale(1);opacity:1;}}
+  .summary{display:inline-block;text-align:left;margin:14px auto 0;}
+  .summary .crow{font-size:15px;}
+
+  footer{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #f0f0f5;
+         padding:16px 24px;display:flex;justify-content:center;}
+  .actions{width:100%;max-width:640px;display:flex;gap:12px;align-items:center;justify-content:flex-end;}
+  .startover{display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--muted);font:inherit;
+             font-size:14px;cursor:pointer;margin-right:auto;}
+  .startover:hover{color:var(--ink);}
+  .pill{border:none;border-radius:99px;padding:14px 40px;font:inherit;font-weight:500;font-size:16px;color:#fff;
+        background:var(--btn);cursor:pointer;transition:.15s;}
+  .pill:hover{filter:brightness(1.12);}
+  .pill:active{transform:scale(.98);}
+  .pill.disabled{background:var(--btn-dis);color:#b3b3bd;cursor:not-allowed;pointer-events:none;}
+  .pill.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--lav-bd);}
+
+  .koji-launch{position:fixed;left:22px;bottom:22px;width:54px;height:54px;border:none;cursor:pointer;background:none;z-index:40;
+               transition:transform .2s;}
+  .koji-launch:hover{transform:scale(1.08) rotate(-6deg);}
+  .koji-launch .gem{width:54px;height:54px;background:linear-gradient(135deg,#7c83f3,#4a52d6);transform:rotate(45deg);
+                    border-radius:14px;box-shadow:0 6px 18px rgba(74,82,214,.4);}
+  .koji-launch .gem::after{content:'';position:absolute;inset:14px;background:#fff;border-radius:6px;transform:rotate(0);}
+  .tutor{position:fixed;top:0;bottom:0;left:0;width:340px;background:#fff;border-right:1px solid #eee;z-index:50;
+         transform:translateX(-105%);transition:transform .3s cubic-bezier(.4,1,.4,1);display:flex;flex-direction:column;
+         box-shadow:6px 0 28px rgba(30,30,60,.10);}
+  .tutor.open{transform:none;}
+  .tutor .thead{display:flex;align-items:center;gap:10px;padding:18px 18px 12px;border-bottom:1px solid #f2f2f7;}
+  .tutor .thead .mini{width:26px;height:26px;background:linear-gradient(135deg,#7c83f3,#4a52d6);transform:rotate(45deg);border-radius:7px;}
+  .tutor .thead b{font-size:15px;font-weight:600;}
+  .tutor .thead small{color:var(--muted);font-size:12px;display:block;}
+  .tutor .tclose{margin-left:auto;border:none;background:none;font-size:20px;color:var(--muted);cursor:pointer;}
+  .msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
+  .msg{max-width:85%;font-size:14px;line-height:1.5;padding:10px 13px;border-radius:14px;}
+  .msg.bot{background:#eef0fb;color:#3a44b8;border-bottom-left-radius:4px;align-self:flex-start;}
+  .msg.me{background:var(--lav-bg);color:var(--lav-deep);border-bottom-right-radius:4px;align-self:flex-end;}
+  .quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px;}
+  .quick button{border:1.5px solid var(--lav-bd);background:#fff;border-radius:99px;padding:7px 13px;font:inherit;font-size:12.5px;
+                color:var(--lav-deep);cursor:pointer;}
+  .quick button:hover{background:var(--lav-bg);}
+  .tinput{display:flex;gap:8px;padding:12px 16px;border-top:1px solid #f2f2f7;}
+  .tinput input{flex:1;border:1.5px solid var(--lav-bd);border-radius:99px;padding:10px 14px;font:inherit;font-size:13.5px;}
+  .tinput input:focus{outline:none;border-color:var(--indigo);}
+  .tinput button{border:none;background:var(--indigo);color:#fff;border-radius:99px;width:40px;cursor:pointer;font-size:16px;}
+
+  @media(max-width:560px){
+    .cards4,.buckets{grid-template-columns:1fr;}
+    .tutor{width:88%;}
+    .pill{padding:14px 28px;}
+  }
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="/static/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/static/brand/favicon-16.png" />
+<link rel="apple-touch-icon" href="/static/brand/apple-touch-icon.png" />
+<link rel="manifest" href="/static/brand/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+  <h2 class="sr-only">Interactive lesson: what is an agent — seen from the inside of a goal.</h2>
+
+  <header>
+    <button class="x-btn" aria-label="Exit to journey" onclick="window.location.href=(window.LMS?'/dashboard':'about:blank')">&times;</button>
+    <div class="bar"><i id="barfill"></i></div>
+    <div class="dots" id="dots"></div>
+    <div class="streak" title="Gems earned">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12l3 5-9 13L3 8z" stroke="#cfcfda" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span id="gems">0</span>
+    </div>
+  </header>
+
+  <main><div class="stage" id="stage"></div></main>
+
+  <footer><div class="actions" id="actions"></div></footer>
+
+  <button class="koji-launch" id="kojiLaunch" aria-label="Ask your TrigunAI guide"><span class="gem"></span></button>
+  <aside class="tutor" id="tutor" aria-label="TrigunAI guide">
+    <div class="thead">
+      <span class="mini"></span>
+      <div><b>TrigunAI guide</b><small>here to guide, not hand you answers</small></div>
+      <button class="tclose" id="tclose" aria-label="Close guide">&times;</button>
+    </div>
+    <div class="msgs" id="msgs"></div>
+    <div class="quick" id="quick"></div>
+    <div class="tinput">
+      <input id="tin" placeholder="Ask your guide…" />
+      <button id="tsend" aria-label="Send">&rarr;</button>
+    </div>
+  </aside>
+
+<script>
+/* ===================== LESSON CONTENT — from a Goal to an Agent ===================== */
+const IMG = '/static/lessons/goal-to-agent/';
+const STEPS = [
+
+  { type:'intro',
+    art:'🎯 → 🔁 → 🤖',
+    prompt:'What is an agent? Let’s discover it — not define it.',
+    sub:"We won’t start with code or AI. We’ll start with something you already know better than any engineer: wanting something. By the end, you’ll see that an “agent” was hiding inside every goal you’ve ever had.",
+    cta:'Begin' },
+
+  /* ---- Beat 1: the wanting ---- */
+  { type:'reveal',
+    img:'d1.png',
+    prompt:'Step 1 — Everything starts with a wanting.',
+    sub:'Dream, Desire, Goal, Outcome — different words, but one shape: a state that does NOT exist yet, that you pull yourself toward. Tap each to feel the difference.',
+    cards:[
+      {em:'🌫️',h:'Dream',   b:'Far and fuzzy. It pulls you, but it isn’t dated yet.'},
+      {em:'🔥',h:'Desire',  b:'The fuel. The “why”. The reason you move at all.'},
+      {em:'🎯',h:'Goal',    b:'A dream that got named, dated, and committed to.'},
+      {em:'🏁',h:'Outcome', b:'The measurable end-state you’ll point at and say “done.”'}
+    ] },
+
+  { type:'mcq',
+    prompt:'So what is a goal, really?',
+    sub:'Pick the one that captures the shape we just saw.',
+    options:[
+      {t:'A task you finish in one action.'},
+      {t:'A future state you are committed to bringing into reality.'},
+      {t:'A feeling that comes and goes.'},
+      {t:'Something only big companies have.'}
+    ],
+    correct:1,
+    why:'A goal is a future state you’re committed to bringing into reality. “You, now” on one end; “the wanting” on the other; and something in you leans across the gap. Hold onto that picture — everything else grows out of it.',
+    hints:[
+      'It’s not the fuel and it’s not one action. It’s the place you’re heading.',
+      'Which option describes a *future state you’re pulling toward*?'
+    ] },
+
+  /* ---- Beat 2: inside a goal = activity + feedback ---- */
+  { type:'mcq',
+    img:'d2.png',
+    prompt:'Step 2 — Now zoom INSIDE a goal. What do you actually find?',
+    sub:'Look closely at the picture before you answer.',
+    options:[
+      {t:'One single, clean action.'},
+      {t:'A structure: many activities running in a direction — each sensing where it is and feeding a correction back to you.'},
+      {t:'Nothing — a goal is just a wish.'},
+      {t:'One big push of willpower.'}
+    ],
+    correct:1,
+    why:'Zoom into any goal and you never find one action. You find a structure of many activities — and each one senses where it is and feeds a correction back into your system (your skill, state, resources). You try → you get a result → that result changes you → your next try is different.',
+    hints:[
+      'Count the boxes in the picture — is it one thing, or many?',
+      'Notice the dashed arrows looping back. What are they carrying?'
+    ] },
+
+  { type:'order',
+    prompt:'Name the real unit of a goal — put the mini-cycle in order.',
+    sub:'This tiny cycle is what one “activity” actually is. Tap the steps in the order they happen — then it repeats.',
+    chips:['Act (do the thing)','Sense (where am I?)','Read the feedback','Adjust'],
+    correct:[1,0,2,3],
+    constraints:['Cycle order is correct'],
+    why:'The unit of a goal is not “an action.” It’s an activity + its feedback loop: sense → act → read feedback → adjust, again and again. That feedback is the whole secret — a thermostat is smart not because it heats, but because it reads the room and adjusts. So are you.',
+    hints:[
+      'Before you act, what must you know first?',
+      'After you act, what tells you whether it worked — and what do you do with that?'
+    ] },
+
+  /* ---- Beat 3: small / medium / hard ---- */
+  { type:'classify',
+    img:'d3.png',
+    prompt:'Step 3 — The same structure at every size. Sort these goals.',
+    sub:'A hard goal isn’t a different KIND of thing — it’s the same loop, just more of them. Tap a goal, then tap its size.',
+    buckets:['🫖 Small','📜 Medium','🏗️ Hard'],
+    items:[
+      {t:'Make a cup of tea', b:0},
+      {t:'Reply to one message', b:0},
+      {t:'Clear a certification', b:1},
+      {t:'Get fit in 6 months', b:1},
+      {t:'Build a company', b:2},
+      {t:'Launch a product', b:2}
+    ],
+    constraints:['All 6 sorted','Every one correct'],
+    why:'Small, medium, hard — the structure is identical. The harder the goal, the MORE activities and feedback loops, all forced to converge into one direction. Difficulty is just count + orchestration, not a new kind of thing.',
+    hints:[
+      'Roughly how many “activity + feedback” loops does each one need — a few, dozens, or thousands?',
+      'Tea and a single reply are seconds of work. A company is thousands of loops aimed one way.'
+    ] },
+
+  /* ---- Beat 4: the smallest unit = agent ---- */
+  { type:'mcq',
+    img:'d4.png',
+    prompt:'Step 4 — Keep zooming into the smallest piece of the goal.',
+    sub:'You reach a unit you can’t usefully split further — it senses its slice of the world, decides, acts, and reads the feedback to adjust. What is that smallest self-running unit called?',
+    options:[
+      {t:'A tool'},
+      {t:'A chatbot'},
+      {t:'An agent'},
+      {t:'A database'}
+    ],
+    correct:2,
+    why:'That smallest self-running unit — the thing that senses, decides, acts, and adjusts on its own toward a sub-goal — is an agent. The agent was never an exotic new thing. It’s just the smallest piece of “going after a goal” that can run itself.',
+    hints:[
+      'It’s the thing DOING the sensing-deciding-acting — not the thing it uses (a tool).',
+      'It runs its own little loop on its own. We have one word for that.'
+    ] },
+
+  { type:'order',
+    prompt:'Trace the agent’s own micro-loop.',
+    sub:'Inside that smallest unit runs a four-beat cycle. Tap them in order — then it repeats until its sub-goal is met.',
+    chips:['Sense','Decide','Act','Feedback'],
+    correct:[0,1,2,3],
+    constraints:['Loop order is correct'],
+    why:'Sense → Decide → Act → Feedback → (repeat). This is the agent loop. Almost every agent you will ever build — human or AI — is this cycle, run over and over until a sub-goal is reached.',
+    hints:[
+      'It mirrors the activity loop from Step 2.',
+      'Perceive the world, choose a move, do it, read what happened — then go again.'
+    ] },
+
+  /* ---- Beat 5: goal = agentic system ---- */
+  { type:'mcq',
+    img:'d5.png',
+    prompt:'Step 5 — Put it together. If the smallest unit is an agent…',
+    sub:'…and a goal is many such units, interconnected, aimed in one direction — then a goal is a…?',
+    options:[
+      {t:'a single agent'},
+      {t:'a complex agentic (multi-agent) system'},
+      {t:'just a to-do list'},
+      {t:'a chatbot with extra steps'}
+    ],
+    correct:1,
+    why:'Any goal — any future projection — is a complex agentic system: a hierarchy with the goal on top, sub-goals beneath, and agents at the leaves doing the real sensing and acting. You’ve been running multi-agent systems your whole life — you just called them “plans.” This course teaches you to build one deliberately, in software.',
+    hints:[
+      'One agent is the smallest leaf. The whole goal is built of many of them.',
+      'Many agents, interconnected, one direction — what’s that called?'
+    ] },
+
+  /* ---- Beat 6: human <-> AI same loop ---- */
+  { type:'classify',
+    img:'d6.png',
+    prompt:'Step 6 — Now bring in AI. It’s the same loop, in software.',
+    sub:'Match each step of the loop to what an AI agent actually does. Tap an action, then tap its loop-step.',
+    buckets:['👀 Perceive','🧠 Decide','🛠️ Act','🔁 Observe'],
+    items:[
+      {t:'read input · context · tool results', b:0},
+      {t:'the LLM reasons about the next move', b:1},
+      {t:'call a tool / API', b:2},
+      {t:'read the result, then loop again', b:3}
+    ],
+    constraints:['All 4 matched','Every match correct'],
+    why:'Perceive → Decide → Act → Observe. A human does it with eyes, mind, and hands; an AI agent does it with context, an LLM, and tools. Same shape, different material.',
+    hints:[
+      'Which step is “the thinking”? That’s the LLM.',
+      '“Call a tool / API” is the DOING step — Act.'
+    ] },
+
+  { type:'tf',
+    prompt:'The line that separates a chatbot from an agent — true or false?',
+    sub:'Tap True or False for each, then check them together.',
+    statements:[
+      { t:'A chatbot answers once and stops; an agent runs the loop until the job is done.', answer:true,
+        why:'Exactly. A chatbot is perceive → decide → reply → stop. An agent closes the loop: it observes what happened and goes again, until its sub-goal is met.' },
+      { t:'An agent is just a chatbot with a nicer interface.', answer:false,
+        why:'No — the loop, the autonomy, and the ability to act with tools make it fundamentally different.' },
+      { t:'Feedback is optional decoration in a goal.', answer:false,
+        why:'No — feedback IS the intelligence. Remove it and the agent (or the human) can act but never improve or know when to stop.' },
+      { t:'Any goal can be seen as a system of smaller agents.', answer:true,
+        why:'Yes — that’s the whole insight of this lesson. Future projection = multi-agent system.' }
+    ],
+    hints:[
+      'Think back to the chatbot-vs-agent line on the picture.',
+      'What did the dashed feedback arrows in Step 2 actually carry?'
+    ] },
+
+  /* ---- Beat 7: make it yours (BYOA seed) ---- */
+  { type:'reflect', capture:true,
+    prompt:'Step 7 — Make it yours.',
+    sub:'In this cohort you’ll turn a real goal of YOURS into a working agent (your BYOA). Bring these two lines to Friday 5 PM — they’re the seed of your project.',
+    fields:[
+      {k:'goal', label:'A real, repetitive goal of yours we could turn into an agent:', ph:'e.g. Sort my new Gmail leads into a sheet every morning'},
+      {k:'agent_task', label:'The smallest task (one agent) inside that goal:', ph:'e.g. read each new email and decide if it’s a lead'}
+    ] },
+
+  { type:'multi',
+    prompt:'Lock the definition — tap ALL the parts that make something an agent.',
+    sub:'Some of these show up in lots of software but aren’t what makes an agent. Pick only the ones that do.',
+    chips:['A goal (or sub-goal)','It senses its world','It decides its own next move','It can act (tools)','It loops on feedback until done','A fancy user interface','A database'],
+    correct:[0,1,2,3,4],
+    why:'An agent = a goal + sensing + deciding + acting + a feedback loop that runs until done. A nice UI or a database are common in software but optional — plenty of great agents run in a plain terminal with neither.',
+    hints:[
+      'Re-read the four-beat loop you ordered twice in this lesson.',
+      'Could an agent still work with no screen and no database? Then those aren’t what define it.'
+    ] },
+
+  { type:'done' }
+];
+
+/* ===================== ENGINE ===================== */
+const $ = s => document.querySelector(s);
+const stage = $('#stage'), actions = $('#actions');
+let idx = 0, gems = 0, perfect = true;
+function lms(p){ return (window.LMS && window.LMS.api ? window.LMS.api : '') + p; }
+let stepStart=Date.now(), attemptNo=1;
+function lmsEvent(correct,extra){ if(!window.LMS) return; var s=(typeof STEPS!=='undefined'&&STEPS[idx])?STEPS[idx]:{}; var body=Object.assign({step:idx,type:s.type||'',concept:s.concept||'',correct:!!correct,attempt_no:attemptNo,latency_ms:Date.now()-stepStart},extra||{}); fetch(lms('/progress'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).catch(function(){}); }
+function markWrong(extra){ perfect=false; lmsEvent(false,extra); attemptNo++; }
+function lmsIntervention(kind){ lmsEvent(false,{action:(kind==='tutor'?'tutor_ask':'hint'),intervention:kind}); }
+function lmsProgress(){ if(!window.LMS) return; fetch(lms('/progress'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({step:idx,correct:true})}).catch(()=>{}); }
+function lmsComplete(){ if(!window.LMS) return Promise.resolve(null); return fetch(lms('/complete'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({score:gems,perfect:perfect})}).then(r=>r.json()).catch(()=>null); }
+function lmsCapture(key,value){ if(!window.LMS||!value) return; fetch('/api/profile/capture',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key:key,value:value,source:'lesson'})}).catch(()=>{}); }
+let work = {};
+let answered = false;
+
+function buildDots(){
+  const d = $('#dots'); d.innerHTML='';
+  STEPS.forEach(()=>{ const s=document.createElement('span'); d.appendChild(s); });
+}
+function progress(){
+  $('#barfill').style.width = (idx/(STEPS.length-1))*100 + '%';
+  [...$('#dots').children].forEach((s,i)=> s.classList.toggle('on', i<=idx));
+  $('#gems').textContent = gems;
+}
+function go(n){ idx=n; answered=false; work={};stepStart=Date.now();attemptNo=1; render(); }
+function nextStep(){ if(idx<STEPS.length-1) go(idx+1); }
+function award(n){ gems+=n; $('#gems').textContent=gems; }
+
+function setActions(html){ actions.innerHTML = html; }
+function primary(label,fn,disabled){
+  const b=document.createElement('button');
+  b.className='pill'+(disabled?' disabled':''); b.textContent=label;
+  if(!disabled) b.onclick=fn;
+  return b;
+}
+function startOver(fn){
+  const b=document.createElement('button');
+  b.className='startover'; b.innerHTML='&#8635; Start over'; b.onclick=fn; return b;
+}
+
+function feedback(ok, text, withWhy){
+  let fb=$('#fb');
+  if(!fb){ fb=document.createElement('div'); fb.id='fb'; fb.className='fb'; stage.appendChild(fb); }
+  fb.className='fb show '+(ok?'ok':'no');
+  fb.innerHTML = text;
+  if(ok && withWhy){
+    const wrap=document.createElement('div'); wrap.className='why';
+    const w=primary('Why?', ()=>showWhy(withWhy)); w.classList.add('ghost'); w.style.padding='8px 18px'; w.style.fontSize='14px';
+    const sk=document.createElement('button'); sk.className='pill ghost'; sk.style.padding='8px 18px'; sk.style.fontSize='14px';
+    sk.textContent='Skip explanation'; sk.onclick=()=>{award(10);nextStep();};
+    wrap.appendChild(w); wrap.appendChild(sk); fb.appendChild(wrap);
+  }
+}
+function showWhy(text){
+  feedback(true, '<b>Here’s why:</b><br>'+text);
+  setActions(''); actions.appendChild(primary('Got it', ()=>{award(10);nextStep();}));
+}
+
+function render(){
+  const step = STEPS[idx];
+  progress();
+  stage.innerHTML='';
+  setActions('');
+  ({ intro:rIntro, mcq:rMcq, reveal:rReveal, classify:rClassify, order:rOrder, reflect:rReflect, tf:rTf, multi:rMulti, done:rDone })[step.type](step);
+}
+
+function head(step){
+  if(step.art) stage.insertAdjacentHTML('beforeend', `<div class="intro-art">${step.art}</div>`);
+  stage.insertAdjacentHTML('beforeend', `<p class="prompt">${step.prompt}</p>`);
+  if(step.sub) stage.insertAdjacentHTML('beforeend', `<p class="sub">${step.sub}</p>`);
+  if(step.img) stage.insertAdjacentHTML('beforeend', `<img class="lesson-img" src="${IMG}${step.img}" alt="lesson diagram" />`);
+}
+
+function rIntro(step){
+  head(step);
+  actions.appendChild(primary(step.cta||'Continue', nextStep));
+}
+
+function rMcq(step){
+  head(step);
+  const wrap=document.createElement('div'); wrap.className='opts';
+  step.options.forEach((o,i)=>{
+    const b=document.createElement('button'); b.className='opt';
+    b.innerHTML=`<span class="tick"></span><span>${o.t}</span>`;
+    b.onclick=()=>{ if(answered) return; work.sel=i; [...wrap.children].forEach(c=>c.classList.remove('sel')); b.classList.add('sel'); renderMcqActions(step,wrap); };
+    wrap.appendChild(b);
+  });
+  stage.appendChild(wrap);
+  renderMcqActions(step,wrap);
+}
+function renderMcqActions(step,wrap){
+  setActions('');
+  actions.appendChild(primary('Check', ()=>checkMcq(step,wrap), work.sel===undefined));
+}
+function checkMcq(step,wrap){
+  answered=true;
+  const ok = work.sel===step.correct;
+  [...wrap.children].forEach((c,i)=>{
+    if(i===step.correct) c.classList.add('correct');
+    else if(i===work.sel) c.classList.add('wrong');
+    else c.classList.add('dim');
+  });
+  if(ok){ award(10); lmsProgress(); feedback(true,'<b>Yes.</b>', step.why); setActions(''); }
+  else{
+    markWrong();
+    feedback(false,'Not quite — see the highlighted answer. Want a hand?');
+    nudge(step,true);
+    setActions('');
+    actions.appendChild(primary('Continue', ()=>{ feedback(true,'<b>Why:</b> '+step.why); setActions(''); actions.appendChild(primary('Got it',nextStep)); }));
+  }
+}
+
+function rReveal(step){
+  head(step);
+  const grid=document.createElement('div'); grid.className='cards4'; let opened=0;
+  step.cards.forEach(c=>{
+    const card=document.createElement('div'); card.className='pcard';
+    card.innerHTML=`<h4><span class="em">${c.em}</span>${c.h}</h4><div class="body">${c.b}</div>`;
+    card.onclick=()=>{ if(!card.classList.contains('opened')){card.classList.add('opened');opened++; if(opened===step.cards.length) enableContinue();} };
+    grid.appendChild(card);
+  });
+  stage.appendChild(grid);
+  const cont=primary('Continue', nextStep, true); actions.appendChild(cont);
+  function enableContinue(){ cont.classList.remove('disabled'); cont.onclick=nextStep; }
+}
+
+function rClassify(step){
+  head(step);
+  work.place={};
+  const cons=document.createElement('div'); cons.className='constraints';
+  cons.innerHTML=step.constraints.map(c=>`<div class="crow"><span class="ic">○</span>${c}</div>`).join('');
+  stage.appendChild(cons);
+
+  const bwrap=document.createElement('div'); bwrap.className='buckets';
+  step.buckets.forEach((name,bi)=>{
+    const bk=document.createElement('div'); bk.className='bucket'; bk.dataset.bi=bi;
+    bk.innerHTML=`<div class="blabel">${name}</div><div class="holder"></div>`;
+    bk.onclick=()=>{ if(work.selItem!=null){ placeItem(work.selItem, bi); } };
+    bwrap.appendChild(bk);
+  });
+  stage.appendChild(bwrap);
+
+  const tray=document.createElement('div'); tray.className='tray'; tray.id='tray';
+  step.items.forEach((it,ii)=>{
+    const c=document.createElement('button'); c.className='chip'; c.dataset.ii=ii; c.textContent=it.t;
+    c.onclick=()=>selectItem(ii,c);
+    tray.appendChild(c);
+  });
+  stage.appendChild(tray);
+  renderClassifyActions(step);
+
+  function selectItem(ii,c){
+    if(answered) return;
+    work.selItem = (work.selItem===ii?null:ii);
+    document.querySelectorAll('#tray .chip, .holder .chip').forEach(x=>x.classList.remove('sel'));
+    if(work.selItem!=null) c.classList.add('sel');
+  }
+  function placeItem(ii,bi){
+    if(answered) return;
+    work.place[ii]=bi; work.selItem=null;
+    document.querySelectorAll('.holder').forEach(h=>h.innerHTML='');
+    document.querySelectorAll('#tray .chip').forEach(ch=>ch.style.display='');
+    step.items.forEach((it,k)=>{
+      if(work.place[k]!=null){
+        document.querySelector(`#tray .chip[data-ii="${k}"]`).style.display='none';
+        const holder=document.querySelector(`.bucket[data-bi="${work.place[k]}"] .holder`);
+        const c=document.createElement('button'); c.className='chip placed'; c.textContent=it.t;
+        c.onclick=()=>{ if(answered) return; delete work.place[k]; render(); };
+        holder.appendChild(c);
+      }
+    });
+    renderClassifyActions(step);
+  }
+}
+function renderClassifyActions(step){
+  const all = Object.keys(work.place||{}).length===step.items.length;
+  setActions('');
+  actions.appendChild(startOver(()=>go(idx)));
+  actions.appendChild(primary('Check', ()=>checkClassify(step), !all));
+}
+function checkClassify(step){
+  answered=true;
+  let allCorrect=true;
+  step.items.forEach((it,ii)=>{
+    const correct = work.place[ii]===it.b;
+    if(!correct) allCorrect=false;
+    const chip=[...document.querySelectorAll('.holder .chip')].find(c=>c.textContent===it.t);
+    if(chip) chip.classList.add(correct?'ok':'bad');
+  });
+  const cons=stage.querySelector('.constraints');
+  cons.children[0].classList.add('met'); cons.children[0].querySelector('.ic').textContent='✓';
+  if(allCorrect){ cons.children[1].classList.add('met'); cons.children[1].querySelector('.ic').textContent='✓'; cons.classList.add('done'); }
+  if(allCorrect){ award(15); lmsProgress(); feedback(true,'<b>All matched.</b>', step.why); setActions(''); actions.appendChild(primary('Continue',nextStep)); }
+  else{ markWrong(); feedback(false,'Some matches are off (in red). Tap a red chip to move it, then check again.'); nudge(step,true); answered=false;
+        setActions(''); actions.appendChild(startOver(()=>go(idx))); actions.appendChild(primary('Check',()=>checkClassify(step))); }
+}
+
+function rOrder(step){
+  head(step);
+  work.seq=[];
+  const cons=document.createElement('div'); cons.className='constraints';
+  cons.innerHTML=`<div class="crow"><span class="ic">○</span>${step.constraints[0]}</div>`;
+  stage.appendChild(cons);
+
+  const seq=document.createElement('div'); seq.className='seq'; seq.id='seq';
+  seq.innerHTML='<span class="slot">Tap the steps below in order…</span>';
+  stage.appendChild(seq);
+
+  const tray=document.createElement('div'); tray.className='tray'; tray.id='otray';
+  step.chips.forEach((t,ci)=>{
+    const c=document.createElement('button'); c.className='chip'; c.dataset.ci=ci; c.textContent=t;
+    c.onclick=()=>{ if(answered||work.seq.includes(ci)) return; work.seq.push(ci); c.style.display='none'; drawSeq(step); };
+    tray.appendChild(c);
+  });
+  stage.appendChild(tray);
+  renderOrderActions(step);
+}
+function drawSeq(step){
+  const seq=$('#seq'); seq.innerHTML='';
+  work.seq.forEach((ci,pos)=>{
+    if(pos) seq.insertAdjacentHTML('beforeend','<span class="arrow">→</span>');
+    const c=document.createElement('button'); c.className='chip placed'; c.textContent=step.chips[ci];
+    c.onclick=()=>{ if(answered) return; work.seq.splice(pos,1); document.querySelector(`#otray .chip[data-ci="${ci}"]`).style.display=''; drawSeq(step); };
+    seq.appendChild(c);
+  });
+  if(work.seq.length){ seq.insertAdjacentHTML('beforeend','<span class="arrow">→ 🔁 repeat</span>'); }
+  else seq.innerHTML='<span class="slot">Tap the steps below in order…</span>';
+  renderOrderActions(step);
+}
+function renderOrderActions(step){
+  setActions('');
+  actions.appendChild(startOver(()=>go(idx)));
+  actions.appendChild(primary('Check',()=>checkOrder(step), work.seq.length!==step.chips.length));
+}
+function checkOrder(step){
+  const ok = JSON.stringify(work.seq)===JSON.stringify(step.correct);
+  const cons=stage.querySelector('.constraints');
+  if(ok){
+    answered=true; cons.children[0].classList.add('met'); cons.children[0].querySelector('.ic').textContent='✓'; cons.classList.add('done');
+    award(15); lmsProgress(); feedback(true,'<b>That’s the cycle.</b>', step.why);
+    setActions(''); actions.appendChild(primary('Continue',nextStep));
+  }else{
+    markWrong();
+    feedback(false,'Not that order. Tap a step in the sequence to send it back, and try again.');
+    nudge(step,true);
+  }
+}
+
+function rReflect(step){
+  head(step);
+  step.fields.forEach(f=>{
+    const d=document.createElement('div'); d.className='field';
+    d.innerHTML=`<label>${f.label}</label><input id="f_${f.k}" placeholder="${f.ph}" />`;
+    stage.appendChild(d);
+  });
+  const inputs=step.fields.map(f=>$('#f_'+f.k));
+  const btn=document.createElement('button'); btn.className='pill disabled'; btn.textContent='Save & continue';
+  btn.onclick=()=>{
+    if(btn.classList.contains('disabled')) return;
+    if(step.capture){ inputs.forEach((i,ix)=> lmsCapture(step.fields[ix].k, i.value.trim())); }
+    feedback(true, '<b>Locked in.</b> Bring these two lines to Friday 5 PM — a clear goal and the smallest agent inside it is the seed of your whole project.');
+    setActions(''); actions.appendChild(primary('Continue',()=>{award(20);nextStep();}));
+  };
+  actions.appendChild(btn);
+  inputs.forEach(i=>i.addEventListener('input',()=>{
+    const ok=inputs.every(x=>x.value.trim().length>2);
+    btn.classList.toggle('disabled',!ok);
+  }));
+}
+
+function rTf(step){
+  head(step);
+  work.tf={};
+  const wrap=document.createElement('div'); wrap.style.cssText='display:flex;flex-direction:column;gap:12px;';
+  step.statements.forEach((s,i)=>{
+    const row=document.createElement('div');
+    row.style.cssText='border:1.5px solid var(--lav-bd);border-radius:11px;padding:12px 14px;';
+    const txt=document.createElement('div'); txt.style.cssText='font-size:15px;margin-bottom:10px;'; txt.textContent=s.t; row.appendChild(txt);
+    const btns=document.createElement('div'); btns.style.cssText='display:flex;gap:8px;';
+    ['True','False'].forEach((lab,bi)=>{
+      const b=document.createElement('button'); b.className='opt'; b.style.cssText='flex:1;justify-content:center;padding:9px;'; b.textContent=lab;
+      b.onclick=()=>{ if(answered) return; work.tf[i]=(bi===0); [...btns.children].forEach(c=>c.classList.remove('sel')); b.classList.add('sel'); renderTfActions(step); };
+      btns.appendChild(b);
+    });
+    row.appendChild(btns); wrap.appendChild(row);
+  });
+  stage.appendChild(wrap);
+  work._tfwrap=wrap; renderTfActions(step);
+}
+function renderTfActions(step){
+  const all=Object.keys(work.tf).length===step.statements.length;
+  setActions(''); actions.appendChild(primary('Check', ()=>checkTf(step), !all));
+}
+function checkTf(step){
+  answered=true; let allCorrect=true; const wrap=work._tfwrap;
+  step.statements.forEach((s,i)=>{
+    const row=wrap.children[i], btns=row.children[1];
+    const correct = work.tf[i]===s.answer; if(!correct) allCorrect=false;
+    btns.children[work.tf[i]?0:1].classList.add(correct?'correct':'wrong');
+    if(!correct) btns.children[s.answer?0:1].classList.add('correct');
+    const w=document.createElement('div'); w.style.cssText='font-size:13px;color:var(--muted);margin-top:9px;'; w.textContent=s.why; row.appendChild(w);
+  });
+  if(allCorrect){ award(15); lmsProgress(); feedback(true,'<b>All correct.</b> You can tell a chatbot from an agent now.'); }
+  else { markWrong(); feedback(false,'A couple were off — the corrected answers and the why are under each.'); nudge(step,true); }
+  setActions(''); actions.appendChild(primary('Continue',nextStep));
+}
+
+function rMulti(step){
+  head(step); work.multi=new Set();
+  const wrap=document.createElement('div'); wrap.className='tray';
+  step.chips.forEach((c,i)=>{ const b=document.createElement('button'); b.className='chip'; b.textContent=c;
+    b.onclick=()=>{ if(answered) return; if(work.multi.has(i)){work.multi.delete(i);b.classList.remove('sel');} else {work.multi.add(i);b.classList.add('sel');} renderMultiActions(step); };
+    wrap.appendChild(b); });
+  stage.appendChild(wrap); work._mwrap=wrap; renderMultiActions(step);
+}
+function renderMultiActions(step){
+  setActions(''); actions.appendChild(startOver(()=>go(idx)));
+  actions.appendChild(primary('Check', ()=>checkMulti(step), work.multi.size===0));
+}
+function checkMulti(step){
+  const chosen=[...work.multi].sort((a,b)=>a-b), correct=[...step.correct].sort((a,b)=>a-b);
+  const ok = chosen.length===correct.length && chosen.every((v,k)=>v===correct[k]);
+  if(ok){ answered=true; [...work._mwrap.children].forEach((b,i)=>{ if(step.correct.includes(i)) b.classList.add('ok'); }); award(15); lmsProgress(); feedback(true,'<b>That’s the definition.</b>', step.why); setActions(''); }
+  else { markWrong(); feedback(false,'Not quite — pick exactly the parts that DEFINE an agent (a UI and a database are common, but optional). Adjust and check again.'); nudge(step,true); setActions(''); actions.appendChild(startOver(()=>go(idx))); actions.appendChild(primary('Check',()=>checkMulti(step))); }
+}
+
+function rDone(){
+  progress();
+  stage.innerHTML=`
+    <div class="done-wrap">
+      <div class="done-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <p class="prompt">You discovered the agent — from the inside of a goal.</p>
+      <p class="sub">A <b>goal</b> is a future state you pull toward. Break it down far enough and the smallest self-running piece is an <b>agent</b> — sense → decide → act → feedback, looping until done. So every goal is really a <b>multi-agent system</b>.</p>
+      <div class="summary">
+        <div class="crow met"><span class="ic">✓</span>A goal = a future state you’re committed to</div>
+        <div class="crow met"><span class="ic">✓</span>Inside it: activities + feedback, in one direction</div>
+        <div class="crow met"><span class="ic">✓</span>The smallest self-running unit = an agent</div>
+        <div class="crow met"><span class="ic">✓</span>So a goal = a complex agentic system</div>
+        <div class="crow met"><span class="ic">✓</span>AI agent = the same loop, made of an LLM + tools</div>
+      </div>
+      <p class="sub" style="margin-top:22px;">Earned <b>${gems} gems</b> · Bring your goal + smallest-agent to Friday 5 PM.</p>
+    </div>`;
+  setActions('');
+  actions.appendChild(startOver(()=>{gems=0;perfect=true;go(0);}));
+  const a=document.createElement('a'); a.href=(window.LMS?'/dashboard':'#'); a.className='pill'; a.textContent='Back to my journey →';
+  actions.appendChild(a);
+  lmsComplete().then(d=>{ if(window.celebrate){ celebrate('lesson',{text:(d&&d.fresh===false)?'Nice — replayed!':'Lesson complete! 🎉'}); } });
+}
+
+/* ===================== TRIGUNAI GUIDE (LLM tutor) ===================== */
+const tutor=$('#tutor'), msgs=$('#msgs'), quick=$('#quick');
+let convo=[];
+$('#kojiLaunch').onclick=()=>openTutor();
+$('#tclose').onclick=()=>tutor.classList.remove('open');
+function openTutor(){
+  tutor.classList.add('open');
+  if(!msgs.children.length){
+    const g="Hi — I'm your TrigunAI guide. I won't hand you answers, but I'll ask the right question to get you unstuck. What are you thinking?";
+    bot(g); convo.push({role:'assistant',content:g});
+  }
+  renderQuick(); $('#tin').focus();
+}
+function bot(t){ const m=document.createElement('div'); m.className='msg bot'; m.textContent=t; msgs.appendChild(m); msgs.scrollTop=msgs.scrollHeight; }
+function me(t){ const m=document.createElement('div'); m.className='msg me'; m.textContent=t; msgs.appendChild(m); msgs.scrollTop=msgs.scrollHeight; }
+function botTyping(){ const m=document.createElement('div'); m.className='msg bot'; m.textContent='…'; m.style.opacity='.6'; msgs.appendChild(m); msgs.scrollTop=msgs.scrollHeight; return m; }
+
+function problemContext(){
+  const s=STEPS[idx]; if(!s) return '';
+  let p=`Step type: ${s.type}. Prompt: "${s.prompt}".`;
+  if(s.sub) p+=` Framing: ${s.sub}`;
+  if(s.type==='mcq'){
+    p+='\nOptions:\n'+s.options.map((o,i)=>`  [${i}] ${o.t}${i===s.correct?'  <-- CORRECT, never reveal':''}`).join('\n');
+    if(work.sel!==undefined && work.sel!==null && work.sel!==s.correct) p+=`\nThe learner just picked [${work.sel}], which is wrong.`;
+  }else if(s.type==='classify'){
+    p+='\nMatch each item to one of: '+s.buckets.join(', ')+'.\nCorrect matches (never reveal): '+s.items.map(it=>`"${it.t}" -> ${s.buckets[it.b]}`).join('; ');
+  }else if(s.type==='order'){
+    p+='\nOrder these into the loop: '+s.chips.join(' / ')+'.\nCorrect order (never reveal): '+s.correct.map(i=>s.chips[i]).join(' -> ');
+  }else if(s.type==='reflect'){
+    p+='\nThis is the learner reflecting on their OWN goal/use-case. No single right answer — help them make it concrete and small.';
+  }
+  return p;
+}
+function fallbackHint(text){
+  const h=(STEPS[idx]&&STEPS[idx].hints)||[];
+  if(/wrong/i.test(text)) return h[0]||"Let's look together — what made you pick that?";
+  if(/stuck/i.test(text)) return h[h.length-1]||"Re-read the prompt and name the ONE thing it's asking for.";
+  if(/world|example|my /i.test(text)) return "Picture a goal from your own life — how would 'activities + feedback' map onto it?";
+  return h[0]||"Which part is confusing? Name it and we'll zoom in.";
+}
+async function askGuide(text, opts){
+  opts=opts||{}; lmsIntervention(opts.auto?'hint':'tutor');
+  if(!opts.auto) me(text);
+  convo.push({role:'user',content:text});
+  const typing=botTyping();
+  let reply=null;
+  try{
+    if(window.LMS){
+      const res=await fetch('/api/tutor/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({history:convo,problem:problemContext()})});
+      const d=await res.json(); reply=d.reply;
+    }
+  }catch(e){}
+  typing.remove();
+  const out = reply || fallbackHint(text);
+  bot(out); convo.push({role:'assistant',content:out});
+}
+function nudge(step, auto){
+  if(auto) tutor.classList.add('open');
+  renderQuick();
+  askGuide("I just answered this wrong. Give me a Socratic hint — don't tell me the answer.", {auto:true});
+}
+function renderQuick(){
+  quick.innerHTML='';
+  const qs=['Why was my answer wrong?','Give me a hint','Explain it in my world','I’m stuck'];
+  qs.forEach(q=>{ const b=document.createElement('button'); b.textContent=q; b.onclick=()=>{
+    const msg = q==='Explain it in my world'
+      ? 'Explain this concept using an example from MY own life or work.'
+      : (q==='I’m stuck' ? "I'm totally stuck — give me the smallest next step." : q);
+    askGuide(msg);
+  }; quick.appendChild(b); });
+}
+$('#tsend').onclick=sendTin; $('#tin').addEventListener('keydown',e=>{if(e.key==='Enter')sendTin();});
+function sendTin(){ const v=$('#tin').value.trim(); if(!v) return; $('#tin').value=''; askGuide(v); }
+
+/* ===================== BOOT ===================== */
+buildDots(); render();
+</script>
+</body>
+</html>

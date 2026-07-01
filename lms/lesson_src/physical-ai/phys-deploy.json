@@ -1,0 +1,137 @@
+{
+  "slug": "phys-deploy",
+  "title": "Deploy & watch your policy",
+  "steps": [
+    { "type": "intro",
+      "art": "📦 → 🎬 → 🤖",
+      "prompt": "Training's done — now what do you actually DO with it?",
+      "sub": "When training finishes you get a 'policy' — the robot's learned brain. By the end you'll know how to export it, render it to watch, and tell a good policy from a clumsy one at a glance.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "First instinct — training just finished. What did you actually end up with?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "A video file of the robot, ready to post online." },
+        { "t": "A trained policy — a saved 'brain' that maps what the robot senses to the action it should take." },
+        { "t": "Nothing reusable; you'd have to retrain from scratch every time you want the robot to move." }
+      ],
+      "correct": 1,
+      "why": "The output of RL training is a policy: a saved function (often a small neural network) that takes the robot's observation and returns an action. It's the learned skill itself — you can export it once and reuse it forever to control the robot, in sim or on real hardware, without retraining.",
+      "hints": [
+        "RL trains a decision-maker. What's the saved form of that decision-maker called?",
+        "It maps observation → action. That mapping is the thing you keep."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "From trained policy to something you can watch.",
+      "sub": "Tap each card. Three steps turn a checkpoint into a video.",
+      "cards": [
+        { "em": "📦", "h": "Export", "b": "Save the policy to a portable file (e.g. ONNX) so it runs outside the training setup — in a renderer, sim, or on the robot." },
+        { "em": "▶️", "h": "Roll it out", "b": "Run the policy in the simulator: feed it observations, let it pick actions, and record the robot's motion frame by frame." },
+        { "em": "🎬", "h": "Render", "b": "Turn that recorded run into a video (MP4) so you — and a human reviewer — can actually SEE how the robot behaves." }
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the deploy-and-watch steps in the order you'd run them.",
+      "sub": "From 'training finished' to 'watching the clip'.",
+      "chips": [
+        "Render the recorded motion into an MP4 you can watch",
+        "Export the trained policy to a portable file",
+        "Roll out the policy in the simulator and record each frame"
+      ],
+      "correct": [1, 2, 0],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't run a policy you haven't exported out of the trainer yet.",
+        "Export → roll out (record) → render the recording to video."
+      ] },
+
+    { "type": "classify",
+      "prompt": "You watch the rendered clip. Sort each thing you see: good policy, or bad policy?",
+      "sub": "Tap an item, then tap a bin. This is exactly how a reviewer eyeballs a run.",
+      "buckets": ["✅ Good policy", "❌ Bad policy"],
+      "items": [
+        { "t": "Robot walks smoothly and reaches the goal post", "b": 0 },
+        { "t": "Robot trembles, vibrates, and never settles", "b": 1 },
+        { "t": "Robot dives forward and face-plants for speed", "b": 1 },
+        { "t": "Robot moves with steady, efficient, natural-looking steps", "b": 0 },
+        { "t": "Robot spins in place and never makes progress", "b": 1 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Good = reaches the goal, looks smooth and natural, stays upright.",
+        "Bad = the reward-hacking and jitter symptoms: diving, trembling, spinning, never arriving."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Your robot reaches the goal in the clip — but it twitches violently the whole way and looks like it's seizing. What does this most likely mean?",
+      "sub": "A good policy isn't just 'did it arrive'.",
+      "options": [
+        { "t": "It's a great policy — arriving is all that matters." },
+        { "t": "The reward rewarded reaching the goal but not smooth motion, so the policy is jerky — likely worth a smoothness penalty and a retrain." },
+        { "t": "The render is broken; the policy is definitely perfect." }
+      ],
+      "correct": 1,
+      "why": "Reaching the goal is necessary but not sufficient. Violent twitching usually means the reward didn't penalize jerky, high-energy motion — so the policy found a thrashy way to get there. A jittery real robot wears out motors and is unsafe, so you'd add a smoothness term and retrain. This is why we WATCH, not just read the reward number.",
+      "hints": [
+        "Did the reward say anything about HOW it should move, or only that it should arrive?",
+        "Twitchy motion is a classic sign of a missing smoothness penalty."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk through a real deploy-and-review session, end to end.",
+      "sub": "At each step, pick the right next move. The log fills in as you go.",
+      "goal": "Take a freshly trained walking policy and decide if it's ready to ship.",
+      "turns": [
+        { "situation": "Training just finished and saved a checkpoint of the policy.",
+          "q": "What's your FIRST move to get it ready to use?",
+          "options": ["Export the policy to a portable file like ONNX", "Post it to social media", "Delete the checkpoint and retrain"],
+          "correct": 0, "log": "📦 Export → policy.onnx" },
+        { "situation": "The policy is exported. You want to see it actually move.",
+          "q": "What next?",
+          "options": ["Roll it out in the simulator and record the motion", "Guess how it looks from the reward number alone", "Ship it straight to a real robot, unseen"],
+          "correct": 0, "log": "▶️ Roll out in sim → motion recorded." },
+        { "situation": "You have a recorded run sitting in the simulator's memory.",
+          "q": "How do you actually watch it?",
+          "options": ["Render the recording into an MP4 and play it", "Read the raw numbers and imagine the video", "Throw the recording away"],
+          "correct": 0, "log": "🎬 Render → walk_policy.mp4" },
+        { "situation": "You watch the clip: the robot walks smoothly and stops right at the goal post.",
+          "q": "What's the verdict?",
+          "options": ["Good policy — smooth, upright, reaches the goal → ship it", "Bad policy — it didn't crash, so it must be broken", "Inconclusive — you can't judge a policy by watching it"],
+          "correct": 0, "log": "✅ Verdict: smooth + on-goal → ship it." }
+      ],
+      "hints": [
+        "Remember the pipeline: export → roll out → render → watch and judge.",
+        "A good run looks smooth, stays upright, and reaches the goal."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Quick myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "A trained policy can be exported once and reused to control the robot without retraining.", "answer": true,
+          "why": "Right — the policy is the saved skill. Export it (e.g. to ONNX) and run it anytime to control the robot in sim or reality." },
+        { "t": "Reaching the goal is enough to call a policy good, regardless of how it moves.", "answer": false,
+          "why": "No — a policy that arrives by twitching violently or diving is still bad. Smooth, stable, efficient motion matters for safety and real hardware." },
+        { "t": "Rendering the policy to a video lets a human actually SEE behavior the reward number hides.", "answer": true,
+          "why": "Yes — the reward number can look great while the motion looks awful. Watching the rendered clip catches reward-hacking and jitter the number misses." },
+        { "t": "The very first trained policy is usually the final one — you rarely need another round.", "answer": false,
+          "why": "No — watching the clip often reveals a problem (jitter, diving, falling short), sending you back to tweak the reward and retrain. Deploy-and-watch closes the loop." }
+      ],
+      "hints": [
+        "Think about what 'export' buys you, and whether arriving alone makes a policy good.",
+        "Why bother rendering at all? Because numbers can lie about how movement LOOKS."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. This ties the whole pipeline back to a robot you'd actually want to ship.",
+      "fields": [
+        { "k": "goal", "label": "Think of the robot task you'd most want to train and watch. When you press play on the clip, what does SUCCESS look like?", "ph": "e.g. it walks across the room and sets the cup down gently, no spill" },
+        { "k": "stop", "label": "What would you see in the video that tells you 'not ready — go back and fix the reward'?", "ph": "e.g. it gets there but jerks and slams the cup down" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

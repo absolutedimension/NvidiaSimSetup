@@ -1,145 +1,166 @@
 {
-  "playlist": "AI is the Universal Mind",
-  "episodes": [
-    {
-      "id": "ep01",
-      "video": "ep01_FINAL_focus.mp4",
-      "title": "Attention: The Idea Behind Every AI — and Your Own Mind | AI is the Universal Mind #1",
-      "desc_file": "desc_ep01.txt",
-      "tags": [
-        "AI",
-        "attention",
-        "transformers",
-        "machine learning",
-        "ChatGPT",
-        "how AI works",
-        "AI explained",
-        "neural networks",
-        "deep learning",
-        "artificial intelligence"
-      ],
-      "thumbnail": "thumbs/out/thumb_ep01_en.jpg",
-      "lang": "en",
-      "privacy": "public"
-    },
-    {
-      "id": "ep02",
-      "video": "ep02_FINAL_focus.mp4",
-      "title": "How Humans and Robots Learn the Exact Same Way | AI is the Universal Mind #2",
-      "desc_file": "desc_ep02.txt",
-      "tags": [
-        "AI",
-        "reinforcement learning",
-        "machine learning",
-        "robotics",
-        "neuroscience",
-        "dopamine",
-        "how learning works",
-        "Isaac Sim",
-        "artificial intelligence",
-        "habits"
-      ],
-      "thumbnail": "thumbs/out/thumb_ep02_en.jpg",
-      "lang": "en",
-      "privacy": "private"
-    },
-    {
-      "id": "ep03",
-      "video": "ep03_FINAL_focus.mp4",
-      "title": "How AI Imagines: Creation From Pure Noise | AI is the Universal Mind #3",
-      "desc_file": "desc_ep03.txt",
-      "tags": [
-        "AI",
-        "diffusion",
-        "stable diffusion",
-        "generative AI",
-        "Midjourney",
-        "DALL-E",
-        "how AI creates images",
-        "machine learning",
-        "artificial intelligence"
-      ],
-      "thumbnail": "thumbs/out/thumb_ep03_en.jpg",
-      "lang": "en",
-      "privacy": "private"
-    },
-    {
-      "id": "ep04",
-      "video": "ep04_FINAL_focus.mp4",
-      "title": "How AI Understands Meaning: Words as Points in Space | AI is the Universal Mind #4",
-      "desc_file": "desc_ep04.txt",
-      "tags": [
-        "AI",
-        "embeddings",
-        "vector space",
-        "word2vec",
-        "NLP",
-        "machine learning",
-        "how AI understands language",
-        "artificial intelligence",
-        "deep learning"
-      ],
-      "thumbnail": "thumbs/out/thumb_ep04_en.jpg",
-      "lang": "en",
-      "privacy": "private"
-    },
-    {
-      "id": "ep05",
-      "video": "ep05_FINAL_focus.mp4",
-      "title": "How AI Has Intuition: Neural Networks & Universal Approximation | AI is the Universal Mind #5",
-      "desc_file": "desc_ep05.txt",
-      "tags": [
-        "AI",
-        "neural networks",
-        "deep learning",
-        "intuition",
-        "machine learning",
-        "universal approximation",
-        "how AI works",
-        "artificial intelligence"
-      ],
-      "thumbnail": "thumbs/out/thumb_ep05_en.jpg",
-      "lang": "en",
-      "privacy": "private"
-    },
-    {
-      "id": "ep06",
-      "video": "ep06_FINAL_focus.mp4",
-      "title": "How AI Wants Things: Agents, Goals & Reward | AI is the Universal Mind #6",
-      "desc_file": "desc_ep06.txt",
-      "tags": [
-        "AI",
-        "AI agents",
-        "agentic AI",
-        "reinforcement learning",
-        "objective function",
-        "machine learning",
-        "autonomous agents",
-        "how AI works",
-        "artificial intelligence"
-      ],
-      "thumbnail": "thumbs/out/thumb_ep06_en.jpg",
-      "lang": "en",
-      "privacy": "public"
-    },
-    {
-      "id": "ep07",
-      "video": "ep07_FINAL_focus.mp4",
-      "title": "How AI Gets Better: Gradient Descent & Learning From Error | AI is the Universal Mind #7",
-      "desc_file": "desc_ep07.txt",
-      "tags": [
-        "AI",
-        "gradient descent",
-        "backpropagation",
-        "deep learning",
-        "machine learning",
-        "how AI learns",
-        "neural networks",
-        "artificial intelligence"
-      ],
-      "thumbnail": "thumbs/out/thumb_ep07_en.jpg",
-      "lang": "en",
-      "privacy": "public"
-    }
-  ]
+ "playlist": "AI is the Universal Mind",
+ "episodes": [
+  {
+   "id": "ep01",
+   "video": "ep01_FINAL_focus.mp4",
+   "title": "Attention: The Idea Behind Every AI — and Your Own Mind | AI is the Universal Mind #1",
+   "desc_file": "desc_ep01.txt",
+   "tags": [
+    "AI",
+    "attention",
+    "transformers",
+    "machine learning",
+    "ChatGPT",
+    "how AI works",
+    "AI explained",
+    "neural networks",
+    "deep learning",
+    "artificial intelligence"
+   ],
+   "thumbnail": "thumbs/out/thumb_ep01_en.jpg",
+   "lang": "en",
+   "privacy": "public"
+  },
+  {
+   "id": "ep02",
+   "video": "ep02_FINAL_focus.mp4",
+   "title": "How Humans and Robots Learn the Exact Same Way | AI is the Universal Mind #2",
+   "desc_file": "desc_ep02.txt",
+   "tags": [
+    "AI",
+    "reinforcement learning",
+    "machine learning",
+    "robotics",
+    "neuroscience",
+    "dopamine",
+    "how learning works",
+    "Isaac Sim",
+    "artificial intelligence",
+    "habits"
+   ],
+   "thumbnail": "thumbs/out/thumb_ep02_en.jpg",
+   "lang": "en",
+   "privacy": "private"
+  },
+  {
+   "id": "ep03",
+   "video": "ep03_FINAL_focus.mp4",
+   "title": "How AI Imagines: Creation From Pure Noise | AI is the Universal Mind #3",
+   "desc_file": "desc_ep03.txt",
+   "tags": [
+    "AI",
+    "diffusion",
+    "stable diffusion",
+    "generative AI",
+    "Midjourney",
+    "DALL-E",
+    "how AI creates images",
+    "machine learning",
+    "artificial intelligence"
+   ],
+   "thumbnail": "thumbs/out/thumb_ep03_en.jpg",
+   "lang": "en",
+   "privacy": "private"
+  },
+  {
+   "id": "ep04",
+   "video": "ep04_FINAL_focus.mp4",
+   "title": "How AI Understands Meaning: Words as Points in Space | AI is the Universal Mind #4",
+   "desc_file": "desc_ep04.txt",
+   "tags": [
+    "AI",
+    "embeddings",
+    "vector space",
+    "word2vec",
+    "NLP",
+    "machine learning",
+    "how AI understands language",
+    "artificial intelligence",
+    "deep learning"
+   ],
+   "thumbnail": "thumbs/out/thumb_ep04_en.jpg",
+   "lang": "en",
+   "privacy": "private"
+  },
+  {
+   "id": "ep05",
+   "video": "ep05_FINAL_focus.mp4",
+   "title": "How AI Has Intuition: Neural Networks & Universal Approximation | AI is the Universal Mind #5",
+   "desc_file": "desc_ep05.txt",
+   "tags": [
+    "AI",
+    "neural networks",
+    "deep learning",
+    "intuition",
+    "machine learning",
+    "universal approximation",
+    "how AI works",
+    "artificial intelligence"
+   ],
+   "thumbnail": "thumbs/out/thumb_ep05_en.jpg",
+   "lang": "en",
+   "privacy": "private"
+  },
+  {
+   "id": "ep06",
+   "video": "ep06_FINAL_focus.mp4",
+   "title": "How AI Wants Things: Agents, Goals & Reward | AI is the Universal Mind #6",
+   "desc_file": "desc_ep06.txt",
+   "tags": [
+    "AI",
+    "AI agents",
+    "agentic AI",
+    "reinforcement learning",
+    "objective function",
+    "machine learning",
+    "autonomous agents",
+    "how AI works",
+    "artificial intelligence"
+   ],
+   "thumbnail": "thumbs/out/thumb_ep06_en.jpg",
+   "lang": "en",
+   "privacy": "public"
+  },
+  {
+   "id": "ep07",
+   "video": "ep07_FINAL_focus.mp4",
+   "title": "How AI Gets Better: Gradient Descent & Learning From Error | AI is the Universal Mind #7",
+   "desc_file": "desc_ep07.txt",
+   "tags": [
+    "AI",
+    "gradient descent",
+    "backpropagation",
+    "deep learning",
+    "machine learning",
+    "how AI learns",
+    "neural networks",
+    "artificial intelligence"
+   ],
+   "thumbnail": "thumbs/out/thumb_ep07_en.jpg",
+   "lang": "en",
+   "privacy": "public"
+  },
+  {
+   "id": "ep08",
+   "video": "ep08_FINAL_focus.mp4",
+   "title": "What Is a Neural Network? How a Machine Learns to See a Number | AI is the Universal Mind #8",
+   "desc_file": "desc_ep08.txt",
+   "tags": [
+    "AI",
+    "neural networks",
+    "deep learning",
+    "machine learning",
+    "how AI works",
+    "MNIST",
+    "neural network explained",
+    "neurons",
+    "weights and biases",
+    "artificial intelligence"
+   ],
+   "thumbnail": "thumbs/out/thumb_ep08_en.jpg",
+   "lang": "en",
+   "privacy": "public"
+  }
+ ]
 }

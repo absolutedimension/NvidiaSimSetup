@@ -1,65 +1,225 @@
 {% extends "base.html" %}
-{% block title %}Your journey · TrigunAI LMS{% endblock %}
+{% block title %}Acharya · Your AI tutor · TrigunAI{% endblock %}
 {% block content %}
-<h1>{{ greeting }}</h1>
-<p class="lead">Your 13-week journey. Watch the module, do the lesson, tick your daily reps — and walk into Friday with something to show.</p>
+<style>
+  /* ---- Acharya dark-gold theme (harmonizes with the dark app) ---- */
+  /* local aliases mapped onto the app.css Acharya tokens */
+  :root { --gold-dk:var(--gold-deep); --gold-ink:var(--bg); --gold-soft:var(--surface-2); --gold-bd:var(--line); }
 
-<div style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px;">
-  <a class="btn ghost" href="/setup">🧰 Set up your coding tool (free)</a>
-  <a class="btn ghost" href="/static/starter.zip" download>⬇ Starter code</a>
-  {% if starter_repo %}<a class="btn green" href="https://codespaces.new/{{ starter_repo }}?quickstart=1" target="_blank" rel="noopener">▶ Open in browser</a>{% endif %}
-</div>
+  .dash-top { display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; margin:0 0 16px; }
+  .dash-top h1 { margin:0 0 4px; font-size:24px; letter-spacing:-.02em; font-family:var(--serif); color:var(--gold-bright); }
+  .dash-top .lead-sm { margin:0; color:var(--muted); font-size:14.5px; }
+  .dash-top .spacer { flex:1; }
+  .btn-lessons { display:inline-flex; align-items:center; gap:9px; border:none; cursor:pointer;
+    background:linear-gradient(135deg,var(--gold),var(--gold-deep)); color:var(--bg); font-weight:700; font-size:15px; font-family:inherit;
+    padding:13px 22px; border-radius:14px; box-shadow:0 8px 22px rgba(212,162,58,.32);
+    transition:transform .15s, box-shadow .15s, background .15s; }
+  .btn-lessons:hover { background:linear-gradient(135deg,var(--gold-bright),var(--gold)); transform:translateY(-2px); box-shadow:0 12px 28px rgba(212,162,58,.42); }
+  .btn-lessons .pip { background:var(--bg); color:var(--gold-bright); font-size:11px; font-weight:700;
+    border-radius:99px; padding:1px 8px; }
 
-{% if ask %}
-<div id="askCard" style="background:var(--lav-bg);border:1px solid var(--lav-bd);border-radius:16px;padding:16px 18px;margin:0 0 22px;">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-    <span class="brand" style="font-size:13px;color:var(--lav-deep);"><span class="gem" style="width:16px;height:16px;"></span> Help us teach you better</span>
-    <button onclick="skipAsk()" style="margin-left:auto;background:none;border:none;color:var(--muted);font:inherit;font-size:13px;cursor:pointer;">Skip</button>
-  </div>
-  <div id="askQ" style="font-weight:500;font-size:15px;margin-bottom:10px;" data-key="{{ ask.key }}">{{ ask.q }}</div>
-  <div style="display:flex;gap:8px;">
-    <input id="askIn" placeholder="{{ ask.ph }}" style="flex:1;border:1.5px solid var(--lav-bd);border-radius:10px;padding:11px 13px;font:inherit;font-size:14.5px;" />
-    <button class="btn" onclick="saveAsk()">Save</button>
-  </div>
-  <div style="font-size:12px;color:var(--muted);margin-top:8px;">Optional — but the more we know, the more your lessons use examples from your world. +5💎 each.</div>
+  /* ---- Live-classes upsell (offline → live) ---- */
+  .live-upsell { display:block; margin:0 0 16px; border-radius:16px; padding:1.6px;
+    background:linear-gradient(115deg,var(--gold-deep),var(--gold),var(--gold-bright),var(--sanskrit),var(--gold),var(--gold-deep));
+    background-size:260% 260%; animation:ach-flow 10s ease-in-out infinite;
+    box-shadow:0 8px 24px rgba(212,162,58,.18); transition:transform .15s, box-shadow .15s; }
+  .live-upsell:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(212,162,58,.28); }
+  .lu-inner { display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    background:var(--surface); border-radius:14.6px; padding:13px 16px; }
+  .lu-text { flex:1; min-width:170px; }
+  .lu-title { font-size:15.5px; font-weight:600; color:var(--ink); }
+  .lu-sub { font-size:13px; color:var(--muted); margin-top:3px; line-height:1.5; }
+  .lu-cta { display:inline-flex; align-items:center; gap:8px; white-space:nowrap;
+    background:linear-gradient(135deg,var(--gold),var(--gold-deep)); color:var(--bg); font-weight:700; font-size:14px;
+    padding:11px 18px; border-radius:12px; box-shadow:0 6px 16px rgba(212,162,58,.35); }
+
+  /* ---- Acharya hero with a living, flowing "shader" border ---- */
+  .acharya-hero { position:relative; padding:2.5px; border-radius:22px;
+    background:linear-gradient(115deg,var(--gold-deep),var(--gold),var(--gold-bright),var(--sanskrit),var(--gold-bright),var(--gold),var(--gold-deep));
+    background-size:280% 280%;
+    box-shadow:0 16px 46px rgba(0,0,0,.45), 0 0 26px rgba(232,198,107,.12);
+    animation:ach-flow 9s ease-in-out infinite; }
+  @keyframes ach-flow { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+  @media (prefers-reduced-motion: reduce){ .acharya-hero, .live-upsell { animation:none; } }
+  .acharya-inner { border-radius:19.5px; overflow:hidden; background:var(--surface); }
+  .acharya-head { display:flex; align-items:center; gap:11px; padding:14px 20px;
+    background:linear-gradient(120deg,var(--surface-2),#221d12); color:var(--gold-bright); border-bottom:1px solid var(--line); }
+  .acharya-head .lamp { font-size:22px; }
+  .acharya-head .who { font-weight:700; font-size:16px; letter-spacing:.01em; font-family:var(--serif); color:var(--gold-bright); }
+  .acharya-head .sub { font-size:12.5px; color:var(--muted); }
+  .acharya-head .online { margin-left:auto; font-size:12px; display:flex; align-items:center; gap:6px; color:var(--green-dk); }
+  .acharya-head .dot { width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 8px var(--green); }
+  .acharya-frame { width:100%; height:min(70vh,660px); min-height:440px; border:0; display:block; background:var(--surface); }
+  .acharya-fallback { padding:40px; text-align:center; color:var(--muted); }
+
+  /* ---- lessons side drawer ---- */
+  .drawer-ov { position:fixed; inset:0; background:rgba(0,0,0,.62); backdrop-filter:blur(2px);
+    opacity:0; pointer-events:none; transition:opacity .25s; z-index:60; }
+  .drawer-ov.open { opacity:1; pointer-events:auto; }
+  .drawer { position:fixed; top:0; right:0; height:100vh; width:min(460px,92vw); background:var(--surface);
+    box-shadow:-18px 0 50px rgba(0,0,0,.55); transform:translateX(102%); transition:transform .3s cubic-bezier(.3,.8,.3,1);
+    z-index:61; display:flex; flex-direction:column; }
+  .drawer.open { transform:translateX(0); }
+  .drawer-head { display:flex; align-items:center; gap:10px; padding:18px 20px; border-bottom:1px solid var(--line);
+    background:var(--surface-2); }
+  .drawer-head h2 { margin:0; font-size:17px; font-family:var(--serif); color:var(--gold-bright); }
+  .drawer-head .drawer-x { margin-left:auto; border:none; background:none; font-size:20px; color:var(--muted); cursor:pointer; line-height:1; }
+  .drawer-body { padding:18px 18px 60px; overflow-y:auto; flex:1; }
+
+  /* lesson buttons → gold accent */
+  .drawer-body .btn.lesson { background:linear-gradient(135deg,var(--gold),var(--gold-deep)); color:var(--bg); border:none; font-weight:600;
+    box-shadow:0 4px 12px rgba(212,162,58,.30); }
+  .drawer-body .btn.lesson:hover { background:linear-gradient(135deg,var(--gold-bright),var(--gold)); }
+  .drawer-body .btn.lesson.done { background:var(--green-bg); color:var(--green-dk); border:1px solid var(--green); box-shadow:none; }
+
+  /* ---- mobile: Acharya chat fills the screen ---- */
+  @media (max-width:720px){
+    .page { padding:10px 10px 14px; max-width:100%;
+      min-height:calc(100dvh - 54px); display:flex; flex-direction:column; }
+    .dash-top { margin:0 0 8px; }
+    .dash-top h1, .dash-top .lead-sm { display:none; }
+    .acharya-hero { flex:1; display:flex; flex-direction:column; min-height:360px;
+      padding:2px; border-radius:18px; }
+    .acharya-inner { flex:1; display:flex; flex-direction:column; min-height:0; border-radius:16px; }
+    .acharya-frame { flex:1; height:auto; min-height:0; }
+    .live-upsell { margin:0 0 8px; }
+    .lu-inner { padding:10px 13px; gap:10px; }
+    .lu-sub { display:none; }
+    .lu-title { font-size:14px; }
+    .lu-cta { padding:9px 14px; font-size:13px; }
+  }
+</style>
+
+{% if sub and sub.status in ['trialing','active','cancelled','past_due'] %}
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-radius:12px;padding:10px 15px;margin:0 0 16px;font-size:13.5px;
+  {% if sub.status=='trialing' %}background:var(--surface-2);border:1px solid var(--line);color:var(--ink);{% elif sub.status=='active' %}background:var(--green-bg);border:1px solid var(--green);color:var(--green-dk);{% elif sub.status=='past_due' %}background:rgba(224,144,127,.12);border:1px solid var(--danger);color:var(--danger);{% else %}background:var(--surface-2);border:1px solid var(--line);color:var(--muted);{% endif %}">
+  {% if sub.status=='trialing' and sub.nocard_trial %}
+    <span>✨ <b>Free trial — {{ sub.days_left }} day{{ '' if sub.days_left==1 else 's' }} left.</b> Subscribe before <b>{{ sub.trial_end.strftime('%d %b %Y') }}</b> to keep access (₹{{ sub.price }}/mo).</span>
+    <a href="/pricing" style="color:var(--gold-bright);font-weight:600;">Subscribe →</a>
+  {% elif sub.status=='trialing' %}
+    <span>✨ <b>Free trial active</b> — first payment of ₹{{ sub.price }} on <b>{{ sub.trial_end.strftime('%d %b %Y') if sub.trial_end else 'day '+sub.trial_days|string }}</b>.</span>
+  {% elif sub.status=='active' %}
+    <span>✓ <b>Subscription active</b>{% if sub.current_period_end %} — renews {{ sub.current_period_end.strftime('%d %b %Y') }}{% endif %}.</span>
+  {% elif sub.status=='past_due' %}
+    <span>⚠ <b>Payment needs attention.</b></span> <a href="/account" style="color:var(--danger);font-weight:600;">Fix it →</a>
+  {% else %}
+    <span>Subscription cancelled{% if sub.current_period_end %} — access until {{ sub.current_period_end.strftime('%d %b %Y') }}{% endif %}.</span> <a href="/pricing" style="color:var(--gold-bright);font-weight:600;">Re-subscribe</a>
+  {% endif %}
+  <a href="/account" style="margin-left:auto;color:inherit;opacity:.7;text-decoration:underline;">Manage</a>
 </div>
 {% endif %}
 
-<div class="journey">
-  {% for r in rows %}
-  <div class="node">
-    <div class="rail">
-      <div class="dot {{ r.state }}">{% if r.state=='done' %}✓{% else %}{{ r.week }}{% endif %}</div>
-      {% if not loop.last %}<div class="line {% if r.state=='done' %}fill{% endif %}"></div>{% endif %}
+{% if not is_live %}
+<a class="live-upsell" href="{{ upgrade_url }}" target="_blank" rel="noopener"
+   title="Reserve your live seat — book your first session">
+  <div class="lu-inner">
+    <div class="lu-text">
+      <div class="lu-title">🎥 Upgrade to <b>Live Classes</b></div>
+      <div class="lu-sub">A focused live cohort with certification, real practical projects, and dev infra provided (GPU machines &amp; tools) — book a 1:1 intro session to start.</div>
     </div>
-    <div class="card {{ 'current' if r.state=='current' }}">
-      <div class="wk">Week {{ r.week }} · {{ r.date }}</div>
-      <h3>{{ r.title }}</h3>
-      <p>{{ r.summary }}</p>
-      <div class="meta">
-        {% if r.lesson_done %}<span class="tag done">✓ Lesson done</span>{% endif %}
-        <span class="tag date">📅 Fri {{ r.date }}</span>
-        {% if r.week > current_week %}<span class="tag soon">Upcoming</span>{% endif %}
+    <span class="lu-cta">Upgrade to Live →</span>
+  </div>
+</a>
+{% endif %}
 
-        {% if r.lesson_available %}
-          <a class="btn green" href="/lesson/{{ r.lesson_slug }}">
-            {{ '↻ Replay lesson' if r.lesson_done else '▶ Start lesson' }}
-          </a>
-        {% elif r.lesson_slug %}
-          <button class="btn dis">Lesson coming soon</button>
-        {% endif %}
-        {% if r.week >= 1 %}
-          <a class="btn ghost" href="/workbook/{{ r.week }}">📋 Workbook</a>
-        {% endif %}
+<div class="dash-top">
+  <div>
+    <h1>{{ greeting }}</h1>
+    <p class="lead-sm">Your personal AI guide, <b>Acharya</b>, is here — ask anything, anytime. When you're ready to practise, open your lessons.</p>
+  </div>
+  <div class="spacer"></div>
+  <button class="btn-lessons" onclick="openLessons()">📚 My Lessons <span class="pip" id="lessonPip">{{ rows|length }}</span></button>
+</div>
+
+<!-- ===== Acharya = the hero ===== -->
+<div class="acharya-hero">
+  <div class="acharya-inner">
+    <div class="acharya-head">
+      <span class="lamp">🪔</span>
+      <div>
+        <div class="who">Acharya</div>
+        <div class="sub">Your personal AI tutor · {{ course_title(student.course) }}</div>
       </div>
+      <span class="online"><span class="dot"></span> online</span>
+    </div>
+    {% if chat_url %}
+      <iframe class="acharya-frame" src="{{ chat_url }}" title="Acharya — your AI tutor"
+              allow="microphone; clipboard-write"></iframe>
+    {% else %}
+      <div class="acharya-fallback">Acharya is warming up. Refresh in a moment, or <a href="/setup">set up your tools</a>.</div>
+    {% endif %}
+  </div>
+</div>
+
+<!-- ===== Lessons side drawer ===== -->
+<div class="drawer-ov" id="drawerOv" onclick="closeLessons()"></div>
+<aside class="drawer" id="lessonsDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <h2>📚 Your lessons</h2>
+    <button class="drawer-x" onclick="closeLessons()" aria-label="Close">✕</button>
+  </div>
+  <div class="drawer-body">
+
+    {% if ask %}
+    <div id="askCard" style="background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 18px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span style="font-size:13px;font-weight:600;color:var(--gold-bright);">✨ Help Acharya teach you better</span>
+        <button onclick="skipAsk()" style="margin-left:auto;background:none;border:none;color:var(--muted);font:inherit;font-size:13px;cursor:pointer;">Skip</button>
+      </div>
+      <div id="askQ" style="font-weight:500;font-size:14.5px;margin-bottom:10px;color:var(--ink);" data-key="{{ ask.key }}">{{ ask.q }}</div>
+      <div style="display:flex;gap:8px;">
+        <input id="askIn" placeholder="{{ ask.ph }}" style="flex:1;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:14px;" />
+        <button class="btn" onclick="saveAsk()">Save</button>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin-top:8px;">+5💎 each — your lessons start using examples from your world.</div>
+    </div>
+    {% endif %}
+
+    <div class="journey">
+      {% for r in rows %}
+      <div class="node">
+        <div class="rail">
+          <div class="dot {{ r.state }}">{% if r.state=='done' %}✓{% else %}{{ r.week }}{% endif %}</div>
+          {% if not loop.last %}<div class="line {% if r.state=='done' %}fill{% endif %}"></div>{% endif %}
+        </div>
+        <div class="card {{ 'current' if r.state=='current' }}">
+          <div class="wk">Week {{ r.week }} · {{ r.date }}</div>
+          <h3>{{ r.title }}</h3>
+          <p>{{ r.summary }}</p>
+          <div class="meta">
+            {% if r.lesson_done %}<span class="tag done">✓ Lesson done</span>{% endif %}
+            {% if r.week > current_week %}<span class="tag soon">Upcoming</span>{% endif %}
+            {% for ls in r.lessons %}
+              {% if ls.available %}
+                <a class="btn lesson {{ 'done' if ls.done }}" href="/lesson/{{ ls.slug }}">
+                  {% if r.lessons|length > 1 %}{{ '✓ ' if ls.done else '▶ ' }}{{ ls.title }}{% else %}{{ '↻ Replay lesson' if ls.done else '▶ Start lesson' }}{% endif %}
+                </a>
+              {% else %}
+                <button class="btn dis">{{ ls.title if r.lessons|length > 1 else 'Lesson' }} — coming soon</button>
+              {% endif %}
+            {% endfor %}
+            {% if r.week >= 1 %}<a class="btn ghost" href="/workbook/{{ r.week }}">📋 Workbook</a>{% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;">
+      <a class="btn ghost" href="/setup">🧰 Set up your coding tool</a>
+      <a class="btn ghost" href="/static/starter.zip" download>⬇ Starter code</a>
+      {% if starter_repo %}<a class="btn ghost" href="https://codespaces.new/{{ starter_repo }}?quickstart=1" target="_blank" rel="noopener">▶ Open in browser</a>{% endif %}
     </div>
   </div>
-  {% endfor %}
-</div>
+</aside>
 {% endblock %}
 
 {% block scripts %}
 <script>
+function openLessons(){ document.getElementById('lessonsDrawer').classList.add('open'); document.getElementById('drawerOv').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeLessons(){ document.getElementById('lessonsDrawer').classList.remove('open'); document.getElementById('drawerOv').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLessons(); });
+
 function skipAsk(){ const c=document.getElementById('askCard'); if(c) c.style.display='none'; }
 async function saveAsk(){
   const q=document.getElementById('askQ'), inp=document.getElementById('askIn');

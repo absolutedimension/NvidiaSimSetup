@@ -1,0 +1,145 @@
+{
+  "slug": "mus-singer",
+  "title": "Build your AI singer",
+  "steps": [
+    { "type": "intro",
+      "art": "🎤 → 🧬 → 🎙️",
+      "prompt": "Want ONE consistent voice across every track you make?",
+      "sub": "Each generation gives you a different singer. To build a brand, you need the SAME voice every time. By the end you'll understand voice conversion (RVC): train one voice, then stamp it onto any vocal you generate.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "Your problem: every track you generate has a different-sounding singer. What fixes it?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Generate more tracks until two happen to match by luck." },
+        { "t": "Train ONE voice model, then convert every generated vocal to that same voice." },
+        { "t": "Turn off vocals entirely and only make instrumentals." }
+      ],
+      "correct": 1,
+      "why": "Voice conversion (RVC) lets you train a single target voice once, then apply it to any vocal — so every track sings in your signature voice. Hoping two random takes match is hopeless, and dropping vocals throws away the whole point. Train once, reuse everywhere.",
+      "hints": [
+        "You want the SAME voice every time. Random generation can't promise that.",
+        "What if you could 'convert' any vocal to a single fixed voice you trained?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "What voice conversion (RVC) actually does.",
+      "sub": "Tap each card. This is the whole idea in four pieces.",
+      "cards": [
+        { "em": "🎯", "h": "Target voice", "b": "The one voice you want to own — your AI singer's identity." },
+        { "em": "📚", "h": "Train", "b": "Feed clean samples of that target voice so the model learns its timbre." },
+        { "em": "🎙️", "h": "Source vocal", "b": "Any generated vocal — the WORDS and melody you want sung." },
+        { "em": "🔁", "h": "Convert", "b": "Re-voice the source so it keeps the notes/words but sounds like your target." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "When you convert a vocal with RVC, what is KEPT and what is REPLACED?",
+      "sub": "This is the core of how it works.",
+      "options": [
+        { "t": "It keeps the melody and words, and replaces the voice's identity (timbre)." },
+        { "t": "It keeps the voice and replaces the lyrics with new ones." },
+        { "t": "It replaces everything — melody, words and voice all change." }
+      ],
+      "correct": 0,
+      "why": "Voice conversion preserves the performance — the notes sung and the words — and swaps only the timbre (who it sounds like). That's exactly why it's powerful: you generate any vocal you like, then stamp your singer's identity on top without losing the song.",
+      "hints": [
+        "The word is voice CONVERSION — what's being converted, the song or the singer?",
+        "You generated the melody and lyrics already. You only want to change WHO sings them."
+      ] },
+
+    { "type": "classify",
+      "prompt": "Training a good voice model: helpful or harmful?",
+      "sub": "Tap each item, then drop it in the right bin.",
+      "buckets": ["✅ Helps training", "🚫 Hurts training"],
+      "items": [
+        { "t": "Clean, dry vocal samples of ONE consistent voice", "b": 0 },
+        { "t": "Background music and noise mixed into the samples", "b": 1 },
+        { "t": "Enough total minutes to cover the voice's range", "b": 0 },
+        { "t": "A mix of three different people's voices in one dataset", "b": 1 },
+        { "t": "Consistent recording quality across all clips", "b": 0 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "You're teaching the model ONE identity. What blurs that identity?",
+        "Noise and multiple speakers confuse the model about who it's learning."
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the steps to build and use your AI singer.",
+      "sub": "From zero to a converted track in your own voice.",
+      "chips": ["Generate a vocal track (the words + melody you want)", "Collect clean samples of your target voice", "Train the RVC voice model on those samples", "Convert the generated vocal to your trained voice"],
+      "correct": [1, 2, 0, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "Before you can train, you need the samples to train ON.",
+        "Conversion is the final step — it needs both a trained voice AND a vocal to convert."
+      ] },
+
+    { "type": "tf",
+      "prompt": "True or false — about your AI singer.",
+      "sub": "Tap True or False for each, then check.",
+      "statements": [
+        { "t": "You train the voice once, then reuse it across many future tracks.", "answer": true,
+          "why": "Right — that's the payoff. One training run gives you a reusable voice you can stamp onto every new vocal, building a consistent identity." },
+        { "t": "Voice conversion writes new lyrics for you.", "answer": false,
+          "why": "No — RVC changes WHO sings, not WHAT is sung. The words come from the source vocal you generated; conversion only swaps the timbre." },
+        { "t": "Noisy, music-bleeding samples make a cleaner trained voice.", "answer": false,
+          "why": "No — noise and background music confuse the model. Clean, dry, single-voice samples produce a cleaner, more faithful trained voice." },
+        { "t": "Using a consistent AI singer helps you build a recognizable brand.", "answer": true,
+          "why": "Yes — a signature voice across all your tracks makes your catalog instantly recognizable, just like a real artist's voice does." }
+      ],
+      "hints": [
+        "Remember what conversion keeps (the song) vs. swaps (the voice).",
+        "Garbage in, garbage out — what kind of samples train a clean voice?"
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk a real 'build my singer' run.",
+      "sub": "Pick the next move at each step. The log fills in as you go.",
+      "goal": "Make two different songs that BOTH sing in your one signature voice.",
+      "turns": [
+        { "situation": "You've decided on a target voice you want to own. You have nothing trained yet.",
+          "q": "What's the first thing RVC needs?",
+          "options": ["Clean, dry samples of that one target voice", "Two finished songs already", "A noisy live recording with a crowd"],
+          "correct": 0, "log": "📚 Collect clean samples of the target voice" },
+        { "situation": "You've gathered good samples of a single, consistent voice.",
+          "q": "What do you do with them?",
+          "options": ["Train the RVC voice model on them", "Convert them to a random voice", "Delete half of them at random"],
+          "correct": 0, "log": "🧬 Train → RVC voice model ready" },
+        { "situation": "Your voice model is trained. You generate Song A (a pop hook, default singer).",
+          "q": "How do you make Song A sing in YOUR voice?",
+          "options": ["Convert Song A's vocal to your trained voice", "Re-train the model on Song A", "Rewrite Song A's lyrics"],
+          "correct": 0, "log": "🔁 Convert Song A → your signature voice" },
+        { "situation": "Now you generate Song B (a totally different ballad, different default singer).",
+          "q": "Do you need to train again for Song B?",
+          "options": ["No — reuse the same trained voice, just convert Song B too", "Yes — train a whole new model", "No — Song B can't use the voice"],
+          "correct": 0, "log": "🔁 Convert Song B → same voice · ✅ consistent singer" }
+      ],
+      "hints": [
+        "The order is: samples → train → generate → convert.",
+        "Training is a one-time cost. Once trained, you just keep CONVERTING new vocals."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Design the singer behind your music idea.",
+      "fields": [
+        { "k": "interest", "label": "Describe the signature voice you'd want to own:", "ph": "e.g. warm, breathy female alto; or a deep mellow male croon" },
+        { "k": "goal", "label": "Where would this one voice show up across your catalog?", "ph": "e.g. all my lofi study tracks + my meditation channel" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Tap ALL the true statements about voice conversion (RVC).",
+      "sub": "Some are real; some are myths. Pick only the real ones.",
+      "chips": ["It gives you ONE consistent voice across tracks", "It's trained once, then reused", "Clean single-voice samples train best", "It keeps the song, swaps the timbre", "It writes the lyrics for you", "It needs noisy samples to work"],
+      "correct": [0, 1, 2, 3],
+      "why": "RVC gives you a reusable, consistent voice: train once on clean single-voice samples, then convert any generated vocal — keeping the words and melody while swapping the timbre. It does NOT write lyrics (those come from the source vocal) and noisy samples hurt, not help.",
+      "hints": [
+        "Think back to the cards and the 'keep vs. swap' question.",
+        "Two of these are the exact opposite of how good training works."
+      ] },
+
+    { "type": "done" }
+  ]
+}

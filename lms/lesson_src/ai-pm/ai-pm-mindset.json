@@ -1,0 +1,168 @@
+{
+  "slug": "ai-pm-mindset",
+  "title": "The AI PM mindset",
+  "steps": [
+    { "type": "intro",
+      "art": "💼 ↔ 🙋 ↔ 🤖",
+      "prompt": "What's the ONE thing an AI PM does that nobody else on the team can?",
+      "sub": "You're not here to become an ML engineer. You're here to stand in the middle — translating between business value, user need, and what's technically possible — so the team makes good bets. By the end you'll think in the 5 shifts that hit every product the moment it LEARNS from data instead of following rules you wrote.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "Where does an AI PM's unique value actually come from?",
+      "sub": "Pick the truest one, then check.",
+      "options": [
+        { "t": "Writing the model code so engineers don't have to." },
+        { "t": "Translating between business value, user need, and what's technically/data-wise POSSIBLE — so the team bets well." },
+        { "t": "Knowing more ML math than the data scientists." }
+      ],
+      "correct": 1,
+      "why": "The AI PM sits at the intersection of three forces — what's worth money (business), what people actually need (user), and what the data and models can realistically do (feasibility). You don't out-code the engineers or out-math the scientists. You make the bets nobody else is positioned to make, and you talk credibly to ML/data teams. That translation IS the job.",
+      "hints": [
+        "It's a position, not a skill you out-compete a specialist on.",
+        "Three circles overlap: business, user, feasibility. You live in the overlap."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The 5 shifts when a product LEARNS instead of following your rules.",
+      "sub": "Tap each card. These are what change the moment ML enters the product.",
+      "cards": [
+        { "em": "🎲", "h": "1 · Probabilistic, not deterministic", "b": "It's right MOST of the time, not every time. You ship a percentage and DESIGN for the wrong %. Acharya the tutor will sometimes answer wrong — the product is the safety net around that, not the model alone." },
+        { "em": "🛢️", "h": "2 · Data is raw material, moat, AND risk", "b": "No good data, no product. Great proprietary data is your moat. Bad/biased/illegal data is your biggest liability. The data strategy IS the product strategy." },
+        { "em": "🎯", "h": "3 · The metric defines the behaviour", "b": "A model optimizes EXACTLY what you measure — not what you meant. Pick the metric carelessly and you ship the wrong product perfectly. This is the central failure mode." },
+        { "em": "🧪", "h": "4 · Feasibility is uncertain until you build", "b": "Nobody can promise it'll work upfront. You de-risk with spikes, baselines, and quick experiments — not guarantees. 'Can we even do this?' is answered by building, fast and cheap." },
+        { "em": "🔁", "h": "5 · The human loop never fully closes", "b": "Eval, monitoring, drift, fairness, privacy — these are ongoing OPERATIONS, not a launch checklist you tick once. The product is alive after ship; the world changes and the model goes stale." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Acharya, our AI tutor, gives a wrong answer to 1 student in 20. The team panics: 'the model is broken!' What's the AI PM's mindset?",
+      "sub": "Which response shows you've internalized shift #1?",
+      "options": [
+        { "t": "Agreed — a wrong answer means the model failed. Block launch until it's 100% correct." },
+        { "t": "It's probabilistic — it's right most of the time. The real job is designing for the wrong 5%: show sources, let students flag, add a 'not sure' path." },
+        { "t": "Ignore it — 1 in 20 is rare enough that students won't notice." }
+      ],
+      "correct": 1,
+      "why": "Demanding 100% means you'll never ship — learning systems are probabilistic by nature. And ignoring the 5% is how you lose trust. The mature move is to accept the wrong percentage exists and build the product AROUND it: confidence signals, sources, a feedback button, graceful 'I'm not sure' answers. You ship the right %, and you design for the wrong one.",
+      "hints": [
+        "100% correct is not on the menu for a learning system. So what IS the job?",
+        "Shift #1 said: ship the right %, and DESIGN for the wrong %."
+      ] },
+
+    { "type": "classify",
+      "prompt": "Each product question below belongs to one of the 5 shifts. Sort them.",
+      "sub": "Tap a question, then the shift it's really probing.",
+      "buckets": ["🎲 Probabilistic", "🛢️ Data = strategy", "🎯 Metric = behaviour", "🔁 Ongoing ops"],
+      "items": [
+        { "t": "'What happens when the model is confidently wrong, and how do users recover?'", "b": 0 },
+        { "t": "'Do we have the legal right to use this data, and is it representative of our real users?'", "b": 1 },
+        { "t": "'If we optimize for watch-time, will it start recommending junk that just keeps people scrolling?'", "b": 2 },
+        { "t": "'Who watches for drift and fairness 3 months after launch, and how often?'", "b": 3 },
+        { "t": "'Our proprietary lesson data — is THAT actually our moat versus a competitor?'", "b": 1 },
+        { "t": "'We hit our accuracy number but users hate it — did we measure the wrong thing?'", "b": 2 }
+      ],
+      "constraints": ["All 6 sorted", "Every one correct"],
+      "hints": [
+        "Match the WORRY in each question to the shift that names that worry.",
+        "Anything about legal/representative/moat → data. Anything about 'optimized the wrong number' → metric."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "A team builds a job-recommender and tells the model: maximize click-through. It learns to recommend mostly clickbait gigs. What went wrong?",
+      "sub": "This is the most common AI-product failure. Name it.",
+      "options": [
+        { "t": "The model was too small — buy more GPUs." },
+        { "t": "The metric defined the behaviour: it optimized clicks EXACTLY, not 'good jobs for this user'. The target was wrong, so the product is wrong." },
+        { "t": "Users behaved unexpectedly — nothing the team could have done." }
+      ],
+      "correct": 1,
+      "why": "This is shift #3, the central failure mode. The model did its job perfectly — it maximized what you measured. You measured clicks; you got clicks, even on junk. The model has no idea you 'meant' good job matches. The AI PM's most important upstream decision is choosing a metric that actually proxies the outcome you want (e.g. applications + interviews + good fit, not raw clicks).",
+      "hints": [
+        "The model didn't disobey — it obeyed too well. Obeyed WHAT?",
+        "Shift #3: a model optimizes exactly what you measure."
+      ] },
+
+    { "type": "order",
+      "prompt": "Put the AIPM loop in order — from raw problem to a feedback flywheel.",
+      "sub": "Tap the steps in the order a disciplined AI PM runs them.",
+      "chips": [
+        "Define the problem & the outcome you want",
+        "Ask: is AI even the right tool here?",
+        "Check the data — available, legal, representative?",
+        "Build a baseline (often non-ML) to beat",
+        "Train the model",
+        "Offline eval against the baseline",
+        "Online eval — A/B test on real users",
+        "Ship behind guardrails",
+        "Monitor for drift",
+        "Feed results back into the data"
+      ],
+      "correct": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "Two gates come BEFORE you touch a model: is AI right, and is the data OK?",
+        "Always set a baseline before the model — so offline eval has something to beat. Online (A/B) comes after offline."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Before training anything, why does a sharp AI PM insist on a baseline — often a dumb non-ML rule?",
+      "sub": "We did this with the drone RL policy too. Why bother?",
+      "options": [
+        { "t": "To pad the timeline so the project looks bigger." },
+        { "t": "So 'is the fancy model actually worth it?' has an answer — and to de-risk feasibility cheaply before committing." },
+        { "t": "Baselines are just tradition; they don't really change decisions." }
+      ],
+      "correct": 1,
+      "why": "A baseline gives offline eval a number to beat and answers feasibility fast and cheap (shift #4). If a one-line heuristic ('recommend most-popular') already gets you 80% of the value, a heavy model may not be worth its cost and risk. With the drone policy, a simple controller is the bar the learned policy has to clearly beat — otherwise why take on a black box? Baselines turn 'we think AI helps' into 'AI beats the baseline by X'.",
+      "hints": [
+        "What does offline eval compare the model AGAINST?",
+        "Shift #4: you de-risk feasibility with spikes and baselines, not promises."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Myth-check the AI PM mindset — true or false?",
+      "sub": "Tap each, then check together.",
+      "statements": [
+        { "t": "An AI PM's job is to write the model so they don't depend on ML engineers.", "answer": false,
+          "why": "No — the job is to translate between business, user, and feasibility and talk credibly to ML/data teams, not to replace them." },
+        { "t": "A learning product is probabilistic — you ship the right % and design for the wrong %.", "answer": true,
+          "why": "Yes — that's shift #1. 100% correct isn't on the menu; the product is the safety net around the wrong percentage." },
+        { "t": "Once the metric is set, the model will optimize what you MEANT, not just what you measured.", "answer": false,
+          "why": "False — and it's the central failure mode. It optimizes exactly what you measure. Clickbait happens when clicks were the metric." },
+        { "t": "Eval, drift-monitoring, fairness and privacy are ongoing operations, not a one-time launch checklist.", "answer": true,
+          "why": "Yes — shift #5. The world shifts after launch, models go stale, so the human loop never fully closes." }
+      ],
+      "hints": [
+        "Two of these describe the SHIFTS correctly; two are tempting traps.",
+        "The model optimizes what you MEASURE, not what you mean — that flips one statement to false."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Tying this to your real work is what makes it stick.",
+      "fields": [
+        { "k": "work", "label": "What product or feature do you (or want to) work on where ML could learn from data?", "ph": "e.g. support-ticket routing, a recommender, a tutor like Acharya" },
+        { "k": "goal", "label": "For that product, name the metric you'd optimize — and one way it could backfire (shift #3):", "ph": "e.g. optimize 'replies sent' → agents close tickets without solving them" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Lock it in: tap EVERY statement that's part of the AI PM mindset.",
+      "sub": "Pick only the true ones.",
+      "chips": [
+        "Translate between business value, user need, and what's technically possible",
+        "Learning products are probabilistic — design for the wrong %",
+        "The data strategy IS the product strategy",
+        "A model optimizes exactly what you measure",
+        "De-risk feasibility with baselines and spikes, not guarantees",
+        "Eval and monitoring end at launch — it's a one-time checklist"
+      ],
+      "correct": [0, 1, 2, 3, 4],
+      "why": "The first five ARE the mindset: you live in the business/user/feasibility overlap; learning systems are probabilistic; data strategy is product strategy; the metric defines behaviour; and feasibility gets de-risked by building. The last is false — eval, drift, fairness and privacy are ongoing operations (shift #5), not something you tick once and forget.",
+      "hints": [
+        "Five of these you just sorted, traced, and ordered.",
+        "Which one contradicts shift #5 (the loop never fully closes)?"
+      ] },
+
+    { "type": "done" }
+  ]
+}

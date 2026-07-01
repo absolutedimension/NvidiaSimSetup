@@ -1,0 +1,154 @@
+{
+  "slug": "sg-import",
+  "title": "Blender → Unity import pipeline",
+  "steps": [
+    { "type": "intro",
+      "art": "🎨 📦 → 🎮",
+      "prompt": "Your model looks perfect in Blender. Will it look right in Unity?",
+      "sub": "Not automatically. Getting a model across cleanly is a small pipeline: export the right file, import it, fix materials, add a collider. By the end you'll run that pipeline in order.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "First instinct — how does a Blender model reach Unity?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Save the .blend file and open it directly as the game." },
+        { "t": "Export to a shared 3D format like FBX or GLTF, then import that file into Unity." },
+        { "t": "Take a screenshot of the model and drag the image in." }
+      ],
+      "correct": 1,
+      "why": "Tools talk through interchange formats. Blender exports FBX or GLTF — formats Unity understands — and you drop that file into Unity's project. A screenshot is flat (no 3D), and a raw .blend isn't how you ship assets into a clean pipeline.",
+      "hints": [
+        "Unity can't read Blender's native brain — it needs a shared language.",
+        "FBX and GLTF are the two common 'everyone understands me' 3D formats."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "What actually travels across — and what doesn't.",
+      "sub": "Tap each card. These are the four things to get right.",
+      "cards": [
+        { "em": "📦", "h": "The mesh", "b": "The geometry itself — the shape, the vertices. This crosses over reliably in FBX/GLTF." },
+        { "em": "🖼️", "h": "Textures", "b": "The image files (color, normal, roughness). They often DON'T auto-embed — you may import them and re-link." },
+        { "em": "🎨", "h": "Materials", "b": "How the surface looks. Blender's material may not survive — you rebuild it on Unity's shader." },
+        { "em": "🧱", "h": "Collider", "b": "An invisible shape Unity adds so the model can collide. It is NOT in the model — you add it in Unity." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Where does each thing get handled?",
+      "sub": "Tap an item, then tap the tool where you do it.",
+      "buckets": ["🎨 In Blender (before export)", "🎮 In Unity (after import)"],
+      "items": [
+        { "t": "Apply scale and rotation so the model isn't sideways", "b": 0 },
+        { "t": "Add a Box Collider so the player can stand on it", "b": 1 },
+        { "t": "Re-link the texture images to the material", "b": 1 },
+        { "t": "Make sure the export includes UVs and the mesh", "b": 0 },
+        { "t": "Assign the material to Unity's Standard shader", "b": 1 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Anything about preparing or exporting the model happens in Blender first.",
+        "Colliders, shader hookup, and re-linking textures are all done after the model is inside Unity."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "You imported the model. It's there — but solid magenta / hot pink. What does that mean?",
+      "sub": "Pink is Unity's universal 'something's wrong' color.",
+      "options": [
+        { "t": "The mesh failed to import and there's no geometry." },
+        { "t": "The material can't find its texture or shader — the link is broken." },
+        { "t": "The model is too big for Unity to render." }
+      ],
+      "correct": 1,
+      "why": "Magenta is Unity's missing-material flag: the mesh is fine, but the material has no working shader/texture. The fix is in the Unity pipeline — assign a shader (e.g. Standard) and re-link the texture maps. It's the single most common import surprise.",
+      "hints": [
+        "If the SHAPE is visible, the mesh imported fine — so it's not geometry.",
+        "Pink in Unity almost always points at the material, not the mesh."
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the import pipeline steps in the right order.",
+      "sub": "From a finished Blender model to a model that behaves in the scene.",
+      "chips": [
+        "In Unity, fix the material and re-link textures",
+        "Export the model from Blender as FBX/GLTF",
+        "Add a collider so it interacts physically",
+        "Drag the exported file into Unity's project"
+      ],
+      "correct": [1, 3, 0, 2],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "It can't be in Unity before it leaves Blender.",
+        "Get it in, make it look right, then make it solid."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk a real model — a treasure chest — through the pipeline.",
+      "sub": "At each turn, pick the right next move. The log fills in as you go.",
+      "goal": "Get the chest into Unity looking right and standing on the floor.",
+      "turns": [
+        { "situation": "The chest is modelled in Blender. It's leaning 15° because you rotated it while building.",
+          "q": "Before exporting, what's the smart first move?",
+          "options": ["Apply the rotation so its 'rest' pose is upright", "Export it leaning — fix it later in Unity", "Delete it and start over"],
+          "correct": 0, "log": "🎨 Applied transforms → chest sits upright at zero rotation." },
+        { "situation": "The chest is clean. You need it in Unity.",
+          "q": "How does it get there?",
+          "options": ["Export as FBX/GLTF, then drag that file into Unity", "Email the .blend to yourself", "Re-model it inside Unity"],
+          "correct": 0, "log": "📦 Exported chest.fbx → dragged into Unity project." },
+        { "situation": "It appears in the scene — but it's solid magenta.",
+          "q": "What's going on, and what do you do?",
+          "options": ["Material link is broken — assign a shader and re-link its texture", "The mesh is missing — re-export", "Unity is broken — restart the computer"],
+          "correct": 0, "log": "🎨 Assigned Standard shader + re-linked wood texture → chest looks right." },
+        { "situation": "The chest looks great, but the player walks straight through it.",
+          "q": "What's missing?",
+          "options": ["A collider — add one so it's physically solid", "More textures", "A second copy of the chest"],
+          "correct": 0, "log": "🧱 Added Box Collider → player can stand on the chest. Done." }
+      ],
+      "hints": [
+        "The pipeline order is: prep → export/import → fix material → add collider.",
+        "Magenta = material. Walk-through = no collider. Each symptom maps to one step."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "Exporting from Blender always carries the materials over perfectly into Unity.", "answer": false,
+          "why": "No — materials and textures often need rebuilding or re-linking in Unity. The mesh travels reliably; the look frequently doesn't." },
+        { "t": "A model with no collider will be visible but not physically solid.", "answer": true,
+          "why": "Right — without a collider the player and physics pass straight through it. Visuals and physics are separate." },
+        { "t": "FBX and GLTF are formats both Blender and Unity understand.", "answer": true,
+          "why": "Yes — they're interchange formats made for moving 3D assets between tools." },
+        { "t": "If you forget to apply scale in Blender, your model can import wildly too big or tiny.", "answer": true,
+          "why": "True — unapplied scale carries strange numbers across, so the chest might import 100× too large. Applying transforms first avoids it." }
+      ],
+      "hints": [
+        "Remember which things cross reliably (mesh) and which don't (materials/textures).",
+        "Visible and solid are two different problems with two different fixes."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Picture importing one asset from YOUR game idea.",
+      "fields": [
+        { "k": "interest", "label": "Which asset will you import first?", "ph": "e.g. my robot enemy / the treasure key / the spaceship" },
+        { "k": "stop", "label": "How will you know the import worked?", "ph": "e.g. it shows the right texture AND the player can't walk through it" }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Last check — which order avoids the most pain?",
+      "sub": "One ordering catches problems early; the others find them too late.",
+      "options": [
+        { "t": "Add the collider in Blender, then never touch materials." },
+        { "t": "Prep in Blender → import → fix materials → add collider, testing after each." },
+        { "t": "Import everything at once, ship it, and fix whatever players report." }
+      ],
+      "correct": 1,
+      "why": "Prep first, bring it in, make it look right, then make it solid — testing at each step means you know exactly which stage broke when something's off. Colliders aren't a Blender export, and shipping untested invites the magenta-and-fall-through bugs to surface in front of players.",
+      "hints": [
+        "You want the smallest possible gap between 'I changed something' and 'I saw if it worked'.",
+        "Colliders are a Unity step, not a Blender one."
+      ] },
+
+    { "type": "done" }
+  ]
+}

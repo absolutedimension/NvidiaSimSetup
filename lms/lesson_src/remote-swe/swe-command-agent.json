@@ -1,0 +1,135 @@
+{
+  "slug": "swe-command-agent",
+  "title": "Commanding the coding agent",
+  "steps": [
+    { "type": "intro",
+      "art": "🗣️ → 🤖 → ✅",
+      "prompt": "AI writes the code in seconds. So what are you paid for?",
+      "sub": "This is the round that lands the offer — and the one AI can't sit for you. By the end you'll run the operator's loop: write a tight spec, delegate to the agent, REVIEW its output like a senior, and correct it under interview pressure. You direct AI. You don't fear it.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "In the AI era, when the agent can type faster than you ever could — what is the engineer's actual value?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Typing code quickly from memory." },
+        { "t": "Directing + verifying the agent — judgment, decomposition, and review. You own the spec and the gate, not the keystrokes." },
+        { "t": "Memorising more syntax than the AI knows." }
+      ],
+      "correct": 1,
+      "why": "Code generation is now cheap and fast. What stays scarce — and what every interview is really testing — is judgment: breaking a vague problem into a clear spec, delegating it, then catching what the agent got subtly wrong. You become the senior reviewer of an infinitely fast junior. That shift IS the job.",
+      "hints": [
+        "If the agent does the typing, what's left that only a human does well?",
+        "Think: spec, delegate, review, correct — which of those can't be outsourced?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The operator's loop: spec → delegate → review → correct.",
+      "sub": "Tap each card. This is the TrigunAI signature — run it on every problem.",
+      "cards": [
+        { "em": "📝", "h": "Spec", "b": "State the goal, constraints, edge cases, and the complexity target BEFORE the agent writes anything. A vague prompt gets vague code." },
+        { "em": "🤖", "h": "Delegate", "b": "Hand the well-scoped task to the agent. Let it draft fast — you don't write the boilerplate." },
+        { "em": "🔍", "h": "Review", "b": "Read the output like a senior: is the complexity right? does it handle empty/null/huge inputs? did it over-engineer?" },
+        { "em": "🛠️", "h": "Correct", "b": "Redirect precisely: 'this is O(n²), use a hash set' — not 'try again.' Then re-review. Loop until it's actually right." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "The agent's solution runs and passes the happy-path example. Why is a senior still not done?",
+      "sub": "This is the moment juniors ship and seniors keep going.",
+      "options": [
+        { "t": "They're done — it passed the test, that's the whole job." },
+        { "t": "Passing the happy path proves nothing about complexity, edge cases, or whether it used the right approach. Those are exactly what break in production and in follow-up questions." },
+        { "t": "They should rewrite it from scratch by hand to be safe." }
+      ],
+      "correct": 1,
+      "why": "'Runs on the example' is the floor. Before trusting the agent you verify three things: the complexity (is it secretly O(n²)?), the edge cases (empty input, one element, duplicates, overflow, nulls), and the approach (did it over-engineer a 5-pattern monster for a 3-line problem?). That review is the value you add over the raw agent output.",
+      "hints": [
+        "What does 'passes one example' actually guarantee? Almost nothing.",
+        "Three checks: complexity, edge cases, right approach."
+      ] },
+
+    { "type": "classify",
+      "prompt": "Sort each line: is it good DIRECTING, or a junior anti-pattern?",
+      "sub": "Tap an item, then a bin. How you talk to the agent decides what you get back.",
+      "buckets": ["🎯 Good directing", "🚫 Anti-pattern"],
+      "items": [
+        { "t": "\"Make it O(n) with a hash map; handle the empty-array case.\"", "b": 0 },
+        { "t": "\"Just make it work somehow.\"", "b": 1 },
+        { "t": "\"Add an edge-case test for duplicates, then re-run.\"", "b": 0 },
+        { "t": "Copy-pasting the output without reading it.", "b": 1 },
+        { "t": "\"State the time + space complexity of your solution.\"", "b": 0 },
+        { "t": "Accepting a 5-pattern design for a problem that needs none.", "b": 1 }
+      ],
+      "constraints": ["All 6 sorted", "Every one correct"],
+      "hints": [
+        "Good directing is SPECIFIC — names the target, the constraint, the edge case.",
+        "Trusting blindly or asking vaguely is where it goes wrong."
+      ] },
+
+    { "type": "order",
+      "prompt": "Put the operator's loop in order for one interview problem.",
+      "sub": "Run this every time and you'll look senior even when the agent does the typing.",
+      "chips": ["Write a tight spec: goal, constraints, edge cases, complexity target", "Delegate the draft to the agent", "Review: check complexity, edge cases, and approach", "Correct with a precise redirect, then re-review until right"],
+      "correct": [0, 1, 2, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't delegate cleanly until you've written the spec.",
+        "Review comes before correction; correction loops back to review."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Run a live round: 'find the longest substring with no repeating characters.' Command the agent.",
+      "sub": "The interviewer is watching HOW you direct and verify, not whether you can type it.",
+      "goal": "Get a correct, O(n), edge-case-safe solution — by directing the agent.",
+      "turns": [
+        { "situation": "You've got the problem. The agent is ready.",
+          "q": "What's your FIRST move?",
+          "options": ["Spec it: 'sliding window, O(n) target, handle empty string and all-same'", "Tell it 'write some code'", "Start hand-typing the solution yourself"],
+          "correct": 0, "log": "📝 Spec → sliding window, O(n), edge: empty + all-same." },
+        { "situation": "The agent returns a solution using two nested loops. It passes 'abcabcbb'.",
+          "q": "It passed the example. Your call?",
+          "options": ["Flag it: that's O(n²) — redirect to a sliding window with a seen-set", "Approve — it passed", "Ask for more comments and ship"],
+          "correct": 0, "log": "🔍 Caught O(n²) → redirect to sliding window." },
+        { "situation": "The agent rewrites it as a proper O(n) sliding window.",
+          "q": "Before you approve, what do you demand?",
+          "options": ["Test the edge cases: empty string, single char, all identical chars", "Nothing — O(n) is enough", "Add three design patterns"],
+          "correct": 0, "log": "🛠️ Edge cases requested → empty + single + all-same all pass." },
+        { "situation": "Complexity is O(n), edge cases pass, approach is clean.",
+          "q": "Final step in front of the interviewer?",
+          "options": ["Own it: explain WHY it's O(n) and the tradeoff, as if you authored it", "Say 'the AI did it' and shrug", "Loop forever asking for more changes"],
+          "correct": 0, "log": "✅ Owned the solution + reasoning. Offer-grade answer." }
+      ],
+      "hints": [
+        "Spec, catch the cost, demand edge cases, then own the reasoning.",
+        "The interviewer hires the judgment, so you must explain it as your own."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Commanding-the-agent myth-check — true or false?",
+      "sub": "Tap True or False for each, then check.",
+      "statements": [
+        { "t": "If the agent's code passes the example, you can trust it and move on.", "answer": false,
+          "why": "No — happy-path pass is the floor. You still verify complexity, edge cases, and that it didn't over-engineer before trusting it." },
+        { "t": "A precise redirect ('use a hash set, it's O(n)') beats a vague one ('try again').", "answer": true,
+          "why": "Right — specific direction gets the fix on the first try; 'try again' often gets you a different wrong answer. Directing is a skill." },
+        { "t": "In the AI era you no longer need to understand complexity or design — the agent handles it.", "answer": false,
+          "why": "No — you can only REVIEW and CORRECT what you understand. Your DSA + design knowledge is exactly what lets you catch the agent's mistakes. The agent raises the bar, it doesn't remove it." },
+        { "t": "You should be able to explain the agent's final solution as if you wrote it yourself.", "answer": true,
+          "why": "Yes — in the interview you OWN the answer. 'The AI did it' fails you; explaining the why, the complexity, and the tradeoffs is what gets the offer." }
+      ],
+      "hints": [
+        "Trust is earned by verification, not by a single passing test.",
+        "Understanding is what makes review possible — it doesn't go away."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. This is your operator's pledge for the job hunt.",
+      "fields": [
+        { "k": "goal", "label": "In one line — the kind of remote SWE role where 'directs + verifies AI' is your edge:", "ph": "e.g. backend engineer who ships clean, reviewed, fast code with AI" },
+        { "k": "stop", "label": "Write your verify-before-trust rule — the three things you'll check on EVERY agent output:", "ph": "e.g. complexity, edge cases, did it over-engineer?" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

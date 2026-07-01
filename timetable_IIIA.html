@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Class III A — Timetable</title>
+<style>
+  @page { size: A4 landscape; margin: 8mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+    background: #ffffff;
+    color: #1f2937;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .sheet {
+    width: 281mm;
+    margin: 0 auto;
+    padding: 4mm 4mm 2mm;
+  }
+
+  /* ---------- Header ---------- */
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 45%, #db2777 100%);
+    color: #fff;
+    border-radius: 14px;
+    padding: 12px 22px;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 10px rgba(79,70,229,.25);
+  }
+  .head .cls {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .head .school {
+    text-align: right;
+    line-height: 1.35;
+  }
+  .head .school b { font-size: 17px; font-weight: 700; }
+  .head .school span { font-size: 11px; opacity: .9; display: block; }
+
+  /* ---------- Table ---------- */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 3px;
+    table-layout: fixed;
+  }
+  th, td {
+    border-radius: 8px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+  thead th {
+    background: #1e293b;
+    color: #fff;
+    padding: 6px 2px;
+    font-size: 12px;
+  }
+  thead th .time { font-size: 8.5px; font-weight: 400; opacity: .8; display: block; margin-top: 2px; }
+  .corner { background: #0f172a !important; font-size: 13px; }
+
+  .daycol {
+    color: #fff;
+    font-size: 19px;
+    font-weight: 800;
+    width: 64px;
+    letter-spacing: 1px;
+  }
+  .d-mon { background: #ef4444; }
+  .d-tue { background: #f59e0b; }
+  .d-wed { background: #10b981; }
+  .d-thu { background: #3b82f6; }
+  .d-fri { background: #8b5cf6; }
+
+  td.cell {
+    padding: 7px 3px;
+    height: 64px;
+    border: 1.5px solid rgba(0,0,0,.06);
+  }
+  td.cell .subj {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  td.cell .teach {
+    font-size: 9px;
+    color: #475569;
+    margin-top: 4px;
+    line-height: 1.15;
+  }
+
+  .recess {
+    background: #fde68a;
+    color: #92400e;
+    font-weight: 700;
+    font-size: 11px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    width: 26px;
+    letter-spacing: 2px;
+  }
+
+  /* ---------- Subject colour families ---------- */
+  .lang   { background: #fee2e2; }   /* English / Hindi / Marathi / ML / FL */
+  .math   { background: #dbeafe; }   /* Math */
+  .sci    { background: #dcfce7; }   /* Science / Sci Act */
+  .arts   { background: #fce7f3; }   /* Art / Music / Dance */
+  .phys   { background: #ffedd5; }   /* Band/Ath / Yoga / PE / TG / A/C */
+  .social { background: #ccfbf1; }   /* Ss / VE */
+  .other  { background: #ede9fe; }   /* Library / Computer / Assembly */
+
+  /* ---------- Legend ---------- */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 10.5px;
+    color: #334155;
+  }
+  .legend .item { display: flex; align-items: center; gap: 5px; }
+  .legend .sw { width: 14px; height: 14px; border-radius: 4px; border: 1px solid rgba(0,0,0,.08); }
+  .foot {
+    text-align: center;
+    margin-top: 7px;
+    font-size: 9px;
+    color: #94a3b8;
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="head">
+    <div class="cls">III&nbsp;A</div>
+    <div class="school">
+      <b>Children's Academy</b>
+      <span>Atmaram Sawant Marg, Mumbai</span>
+      <span>Weekly Class Timetable</span>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="corner">DAY</th>
+        <th>1<span class="time">1:05–1:34</span></th>
+        <th>2<span class="time">1:34–2:03</span></th>
+        <th>3<span class="time">2:03–2:32</span></th>
+        <th>4<span class="time">2:32–3:01</span></th>
+        <th style="background:#b45309">R<span class="time">3:01–3:19</span></th>
+        <th>5<span class="time">3:19–3:48</span></th>
+        <th>6<span class="time">3:48–4:17</span></th>
+        <th>7<span class="time">4:17–4:46</span></th>
+        <th>8<span class="time">4:46–5:15</span></th>
+        <th>9<span class="time">5:15–5:44</span></th>
+        <th>10<span class="time">5:44–6:12</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- MONDAY -->
+      <tr>
+        <td class="daycol d-mon">MON</td>
+        <td class="cell phys" colspan="2"><div class="subj">Band / Ath</div><div class="teach">Jignesh / Rohit</div></td>
+        <td class="cell lang"><div class="subj">ML</div><div class="teach">Pushpa</div></td>
+        <td class="cell arts"><div class="subj">Dance</div></td>
+        <td class="recess" rowspan="5">RECESS</td>
+        <td class="cell math" colspan="2"><div class="subj">Math</div><div class="teach">Pushpa</div></td>
+        <td class="cell phys"><div class="subj">TG</div><div class="teach">Jignesh</div></td>
+        <td class="cell sci"><div class="subj">Sci Act</div><div class="teach">Pushpa</div></td>
+        <td class="cell lang" colspan="2"><div class="subj">Hindi</div><div class="teach">Poonam</div></td>
+      </tr>
+      <!-- TUESDAY -->
+      <tr>
+        <td class="daycol d-tue">TUE</td>
+        <td class="cell other"><div class="subj">Assembly</div><div class="teach">Priscilla / Nik / Pushpa / Gauri / Pooja / Divya / Geetha / Ashwathy</div></td>
+        <td class="cell lang"><div class="subj">Marathi</div><div class="teach">Gayatri</div></td>
+        <td class="cell lang" colspan="2"><div class="subj">Hindi</div><div class="teach">Poonam</div></td>
+        <td class="cell phys"><div class="subj">Yoga</div><div class="teach">Rohit</div></td>
+        <td class="cell lang" colspan="2"><div class="subj">English</div><div class="teach">Pooja B</div></td>
+        <td class="cell social"><div class="subj">Ss</div><div class="teach">Priscilla</div></td>
+        <td class="cell sci" colspan="2"><div class="subj">Science</div><div class="teach">Pushpa</div></td>
+      </tr>
+      <!-- WEDNESDAY -->
+      <tr>
+        <td class="daycol d-wed">WED</td>
+        <td class="cell other"><div class="subj">Library</div><div class="teach">Jignesh / Rohit</div></td>
+        <td class="cell arts"><div class="subj">Art</div><div class="teach">Jignesh / Rohit</div></td>
+        <td class="cell phys"><div class="subj">J-PE TT</div><div class="teach">Nik</div></td>
+        <td class="cell lang"><div class="subj">English</div><div class="teach">Pooja B</div></td>
+        <td class="cell lang"><div class="subj">English</div><div class="teach">Pooja B</div></td>
+        <td class="cell social" colspan="2"><div class="subj">Ss</div><div class="teach">Priscilla</div></td>
+        <td class="cell math" colspan="2"><div class="subj">Math</div><div class="teach">Pushpa</div></td>
+        <td class="cell lang"><div class="subj">English</div><div class="teach">Pooja B</div></td>
+      </tr>
+      <!-- THURSDAY -->
+      <tr>
+        <td class="daycol d-thu">THU</td>
+        <td class="cell lang" colspan="2"><div class="subj">English</div><div class="teach">Pooja B</div></td>
+        <td class="cell other" colspan="2"><div class="subj">Computer</div><div class="teach">Geetha</div></td>
+        <td class="cell sci" colspan="2"><div class="subj">Science</div><div class="teach">Pushpa</div></td>
+        <td class="cell phys" colspan="2"><div class="subj">A / C</div><div class="teach">Omkar</div></td>
+        <td class="cell math" colspan="2"><div class="subj">Math</div><div class="teach">Pushpa</div></td>
+      </tr>
+      <!-- FRIDAY -->
+      <tr>
+        <td class="daycol d-fri">FRI</td>
+        <td class="cell lang"><div class="subj">FL</div><div class="teach">Nik</div></td>
+        <td class="cell social" colspan="2"><div class="subj">Ss</div><div class="teach">Priscilla</div></td>
+        <td class="cell arts"><div class="subj">Dance</div></td>
+        <td class="cell lang" colspan="2"><div class="subj">Hindi</div><div class="teach">Poonam</div></td>
+        <td class="cell arts"><div class="subj">Music</div><div class="teach">M/V / Shanti</div></td>
+        <td class="cell sci"><div class="subj">Sci Act</div><div class="teach">Pushpa</div></td>
+        <td class="cell lang"><div class="subj">English</div><div class="teach">Pooja B</div></td>
+        <td class="cell social"><div class="subj">VE</div><div class="teach">Pooja B</div></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="legend">
+    <div class="item"><span class="sw lang"></span>Languages (Eng · Hindi · Marathi · ML · FL)</div>
+    <div class="item"><span class="sw math"></span>Math</div>
+    <div class="item"><span class="sw sci"></span>Science</div>
+    <div class="item"><span class="sw arts"></span>Arts (Art · Music · Dance)</div>
+    <div class="item"><span class="sw phys"></span>Physical (Band/Ath · Yoga · PE · TG · A/C)</div>
+    <div class="item"><span class="sw social"></span>Social (Ss · VE)</div>
+    <div class="item"><span class="sw other"></span>Library · Computer · Assembly</div>
+  </div>
+
+  <div class="foot">Children's Academy, Atmaram Sawant Marg, Mumbai &nbsp;•&nbsp; Timetable generated 6/19/2026</div>
+
+</div>
+</body>
+</html>

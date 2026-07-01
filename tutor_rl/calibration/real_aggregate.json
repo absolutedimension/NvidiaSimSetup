@@ -1,0 +1,106 @@
+{
+  "generated_utc": "2026-06-29T14:47:49.380Z",
+  "n_students": 7,
+  "n_events": 0,
+  "recall_by_concept": {},
+  "discussed_by_concept": {},
+  "n_with_concepts": 1,
+  "n_with_misconceptions": 2,
+  "concept_states": {
+    "music_stack": {
+      "shaky": 1
+    },
+    "prompt_to_music": {
+      "shaky": 1
+    },
+    "lyrics_to_song": {
+      "shaky": 1
+    },
+    "ai_singer": {
+      "not_seen": 1
+    },
+    "mixing": {
+      "shaky": 1
+    },
+    "mastering": {
+      "shaky": 1
+    },
+    "focus_audio": {
+      "shaky": 1
+    }
+  },
+  "misconception_frequency": {
+    "misunderstanding of o(n) vs o(n²)": 1,
+    "meaning of constants in big-o notation": 1,
+    "understanding nested loops in big-o notation": 1,
+    "confusion about the exact computation time vs growth estimation": 1,
+    "confusion about the impact of i/o operations on big-o classification": 1,
+    "confusion regarding nested loops resulting in o(n²) instead of o(n)": 1,
+    "philosophical interpretation of big-o notation": 1,
+    "confusion related to big-o for nested loops with different inputs versus the sam": 1,
+    "assuming all ai-generated music is copyright-free without checking licensing.": 1,
+    "not understanding that different voice styles can change the emotional impact of": 1,
+    "failing to recognize the importance of balancing visuals with audio in a devotio": 1,
+    "overlooking the need for clarity in spoken meanings to effectively convey messag": 1,
+    "neglecting to consider the cultural significance of music elements in devotional": 1,
+    "believing that any music style can work uniformly for all types of shlokas.": 1,
+    "not realizing the significance of voice clarity and pacing in conveying the mean": 1,
+    "making music too cinematic and drowning the shloka.": 1,
+    "chasing maximum loudness rather than clarity and warmth in devotional content.": 1,
+    "overlooking the need to lower music during spoken content to maintain focus.": 1,
+    "assuming all music with a traditional style is automatically copyright-clear.": 1,
+    "using vague prompts for music production instead of clear, detailed instructions": 1,
+    "underestimating the importance of using clear pronunciation when chanting or nar": 1,
+    "neglecting to ensure the audio quality is consistent across recordings.": 1,
+    "not prioritizing creating and publishing content over achieving perfection.": 1,
+    "failing to adequately space audio elements for more impactful delivery.": 1,
+    "overlooking the need for consistent visual themes throughout video productions.": 1,
+    "misunderstanding the importance of music dynamics in creating a meditative atmos": 1,
+    "not ensuring that the background music is appropriately soft during narrations.": 1,
+    "not fully grasping the importance of testing audio quality on different platform": 1,
+    "failing to maintain consistent volume across various segments.": 1,
+    "neglecting to review the clarity of chanting and understanding of meanings in pu": 1,
+    "overlooking the importance of feedback and audience reception in content iterati": 1,
+    "not clarifying what file names represent in the video creation process.": 1,
+    "assuming that using advanced editing tools like premiere pro is necessary for qu": 1
+  },
+  "srs_boxes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "srs_box_by_concept": {
+    "music_stack": [
+      0
+    ],
+    "prompt_to_music": [
+      0
+    ],
+    "lyrics_to_song": [
+      0
+    ],
+    "mixing": [
+      0
+    ],
+    "mastering": [
+      0
+    ],
+    "focus_audio": [
+      0
+    ]
+  },
+  "module_distribution": {
+    "2": 7
+  },
+  "streak": {
+    "n": 7,
+    "mean": 14.428571428571429,
+    "max": 60
+  },
+  "active_days": {
+    "mean": 2.092560841049383
+  }
+}

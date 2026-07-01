@@ -1,0 +1,144 @@
+{
+  "slug": "sg-mechanic",
+  "title": "Core mechanic & game loop",
+  "steps": [
+    { "type": "intro",
+      "art": "🕹️ → 🔁 → 🖼️",
+      "prompt": "What is a game, under the hood?",
+      "sub": "It's one tiny cycle run dozens of times a second: read input, update the world, draw the frame. By the end you'll name your game's core verb and trace one frame through the loop.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "What's the 'core mechanic' of a game?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "The menu screen and the settings panel." },
+        { "t": "The one central action the whole game is built around — the verb you do over and over." },
+        { "t": "The list of credits at the end." }
+      ],
+      "correct": 1,
+      "why": "A core mechanic is a verb: jump, shoot, stack, match, dodge. Tetris is 'rotate-and-drop'. Flappy Bird is 'flap'. It's the action you repeat constantly — everything else (menus, score, art) is built around it.",
+      "hints": [
+        "Think of one word the player DOES again and again.",
+        "Menus and credits aren't the thing you actually play."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Every frame, the game runs this same little cycle.",
+      "sub": "Tap each card. This three-step loop is the heartbeat of every game.",
+      "cards": [
+        { "em": "🎮", "h": "Input", "b": "Read what the player is doing right now — a key held, a screen tapped, a stick pushed." },
+        { "em": "⚙️", "h": "Update", "b": "Change the world: move the character, check collisions, apply gravity, update the score." },
+        { "em": "🖼️", "h": "Render", "b": "Draw the new state to the screen — one frame. Then it all repeats, 30–60 times a second." }
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the three stages in the order they run each frame.",
+      "sub": "This order repeats every single frame.",
+      "chips": ["Render (draw the frame)", "Input (read the player)", "Update (move things, check collisions)"],
+      "correct": [1, 2, 0],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't move the character before you know what the player pressed.",
+        "Read → change → draw. Drawing is always last."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Why read input and update FIRST, and render LAST — every frame?",
+      "sub": "Think about what would look wrong if you flipped it.",
+      "options": [
+        { "t": "It's just tradition; the order doesn't matter." },
+        { "t": "You must know the new state before you draw it, or the frame shows stale, last-frame positions." },
+        { "t": "Rendering is the slowest part, so it has to go first to warm up." }
+      ],
+      "correct": 1,
+      "why": "Render shows the current state. If you draw before updating, the player presses 'right' but sees the character where it was last frame — input feels laggy and broken. Read input, move the world, THEN draw the result. That's why render is last.",
+      "hints": [
+        "What does 'render' actually draw — the old positions or the new ones?",
+        "If you draw before you move, the screen is always one frame behind."
+      ] },
+
+    { "type": "classify",
+      "prompt": "Sort each line of game code into its loop stage.",
+      "sub": "Tap an item, then tap the stage it belongs to.",
+      "buckets": ["🎮 Input", "⚙️ Update", "🖼️ Render"],
+      "items": [
+        { "t": "Check if the right-arrow key is held", "b": 0 },
+        { "t": "Move the player 5 units to the right", "b": 1 },
+        { "t": "Apply gravity so the player falls", "b": 1 },
+        { "t": "Read the touch position on screen", "b": 0 },
+        { "t": "Draw the player sprite at its new spot", "b": 2 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Reading a key or a touch is Input. Drawing pixels is Render.",
+        "Moving, falling, colliding — anything that CHANGES the world — is Update."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk one frame of a simple runner. Player is holding 'right' and there's a wall ahead.",
+      "sub": "At each turn, pick what the loop does next. The frame log fills in.",
+      "goal": "Process one frame correctly: read, update, draw.",
+      "turns": [
+        { "situation": "A new frame begins. The player is holding the right-arrow key.",
+          "q": "What does the loop do first?",
+          "options": ["Read input → note that 'right' is held", "Draw the screen immediately", "Quit the game"],
+          "correct": 0, "log": "🎮 Input → right key is held." },
+        { "situation": "Input is read. The player wants to move right, but there's a wall 2 units ahead.",
+          "q": "What happens in Update?",
+          "options": ["Move right, but the collision check stops the player at the wall", "Draw the wall and the player", "Read the key again"],
+          "correct": 0, "log": "⚙️ Update → tried +5 right, collision clamps player to the wall." },
+        { "situation": "The world state is now updated: player is pressed against the wall.",
+          "q": "What's the final stage of this frame?",
+          "options": ["Render → draw the player at the wall", "Update again", "Stop the loop forever"],
+          "correct": 0, "log": "🖼️ Render → frame drawn with player at the wall." },
+        { "situation": "The frame is done and drawn.",
+          "q": "What happens next?",
+          "options": ["Loop back → start the next frame with Input again", "The game ends", "Skip input for the next 100 frames"],
+          "correct": 0, "log": "🔁 Next frame begins → Input → Update → Render, again." }
+      ],
+      "hints": [
+        "The loop is always Input → Update → Render, then it repeats.",
+        "Collision is part of Update — it changes the world before anything is drawn."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "The game loop runs once when the game starts, then stops.", "answer": false,
+          "why": "No — it runs continuously, many times a second, for as long as the game is playing. One run = one frame." },
+        { "t": "Movement code (read keys, change position) belongs in the per-frame update.", "answer": true,
+          "why": "Right — movement is read-input-then-update, and it has to happen every frame so the character responds in real time." },
+        { "t": "A solid core mechanic is usually one repeatable verb, not a dozen unrelated systems.", "answer": true,
+          "why": "Yes — great small games nail ONE verb (flap, match, dodge) and build everything around it." },
+        { "t": "On a phone, the loop disappears — touch games don't have a game loop.", "answer": false,
+          "why": "No — same loop. Only the INPUT stage changes: it reads touches instead of keys. Update and render are identical." }
+      ],
+      "hints": [
+        "Picture the runner trace — did the loop run once or every frame?",
+        "Keyboard vs touch only swaps what Input reads; the loop stays the same."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Pin down the heartbeat of YOUR game.",
+      "fields": [
+        { "k": "goal", "label": "In one verb, what's your game's core mechanic?", "ph": "e.g. dodge / stack / shoot / climb" },
+        { "k": "tools", "label": "What input drives it on keyboard AND on touch?", "ph": "e.g. arrow keys on PC, swipe left/right on phone" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Tap EVERYTHING that happens inside the per-frame Update stage.",
+      "sub": "Some of these belong to other stages or run only once. Pick only the per-frame Update work.",
+      "chips": ["Move the player from input", "Apply gravity", "Check collisions", "Draw the frame to screen", "Show the studio logo on launch", "Update the score"],
+      "correct": [0, 1, 2, 5],
+      "why": "Update is where the WORLD changes each frame: movement, gravity, collisions, score. Drawing the frame is Render, and the studio logo on launch happens once at startup — neither is per-frame Update.",
+      "hints": [
+        "Update = changing the world state. What's the odd one that draws pixels?",
+        "A launch logo happens once, not every frame."
+      ] },
+
+    { "type": "done" }
+  ]
+}

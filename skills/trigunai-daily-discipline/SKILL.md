@@ -49,7 +49,7 @@ description: >
 
 **The map — open the skill that OWNS the work (not CEO):**
 reel/post → `content-daily-engine` · course script → `video-script-writer-trigunai` ·
-web/app → `trigunai-dev` · drone → `trigunai-training` · VR / Flow-Art → `trigunai-vr` ·
+web/app → `trigunai-dev` · drone pipeline → `trigunai-drone-pipeline` · general sim → `trigunai-training` · VR / Flow-Art → `trigunai-vr` ·
 music → `production-music-trigunai` · YouTube → `trigunai-youtube` · strategy/gate → `trigunai-ceo`.
 *(Full operating model: `HOW_I_RUN_TRIGUNAI.md`.)*
 
@@ -129,7 +129,7 @@ Today's tasks live in `daily_routine/PLAN.md`; what you shipped goes in `daily_r
 | # | Block | Hrs | Owns the work (load this skill) | Engine | DONE = (the logged artifact) |
 |---|---|---|---|---|---|
 | **1** | **Marketing** — reels/videos posted to public platforms for the courses | 2h | `content-daily-engine` → `content-marketing-emotion-connect` → render → `trigunai-marketing` | A · **Revenue** | ≥1 asset **posted publicly** today, driving to the intro-class CTA + logged with the link |
-| **2** | **Robotics AI** — training the drone policy | 2h | `trigunai-training` | B · IP/fundraise | One concrete advance: a train run launched, a checkpoint, a trajectory export, or a VLM eval — with the path/number logged |
+| **2** | **Robotics AI** — training the drone policy | 2h | `trigunai-drone-pipeline` (full pipeline: train → export → render → VLM eval → GLB) or `trigunai-training` (general sim work) | B · IP/fundraise | One concrete advance: a train run launched, a checkpoint, a trajectory export, or a VLM eval — with the path/number logged |
 | **3** | **Course mastery + scripting + flow design** — learn the material in depth, turn it into script + flow | 4h | `trigunai-content-strategy` + `video-script-writer-trigunai` | A · **Revenue (the product itself)** | A captured artifact: a module outline, a script scene, or a flow/lesson design — **written down**, not just "studied" |
 | **4** | **Flow Art Dance** — push the VR app to Live + make YouTube channel content | 2h | `trigunai-vr` + `production-video-trigunai` / `production-music-trigunai` + `trigunai-youtube` | Movement II | A build step toward Live OR a piece of channel content shipped — logged |
 | **5** | **Tech scan** — what's new in the market/tech | 1h | `WebSearch` / `deep-research` | Input | **3 items + 1 "so-what for TrigunAI" line** captured in the log. Browsing with no note ≠ done |
@@ -178,8 +178,10 @@ artifact and gets logged.
   runs it through the emotion OS, renders, distributes, and logs to `CONTENT_LOG.md`). Block 1 is
   "done" when something is **publicly posted** with the intro-class CTA. *Reach is not the score —
   registrations are.*
-- **Block 2 (Drone):** invoke `trigunai-training`. Start the EC2 box only when actually training
-  (~$1/hr — stop it after). Log the checkpoint path / reward / eval verdict.
+- **Block 2 (Drone):** invoke `trigunai-drone-pipeline` for the full chain (Isaac Lab PPO →
+  trajectory export → OVRTX render → VLM quality gate → animated GLB delivery) or
+  `trigunai-training` for general sim/rendering work. Start the EC2 box only when actually
+  training (~$1/hr — stop it after). Log the checkpoint path / reward / eval verdict.
 - **Block 3 (Course):** invoke `trigunai-content-strategy` to pick what to deepen, then
   `video-script-writer-trigunai` to convert the learning into a script/flow artifact. The trap
   here is infinite study — **end every Block-3 session with a written file**, even a rough one.

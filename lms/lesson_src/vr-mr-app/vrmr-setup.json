@@ -1,0 +1,124 @@
+{
+  "slug": "vrmr-setup",
+  "title": "Setup: Unity, Quest & your dev world",
+  "steps": [
+    { "type": "intro",
+      "art": "🖥️ → 🥽",
+      "prompt": "What does it actually take to build VR?",
+      "sub": "Before a single line of code, your Quest headset has to talk to Unity on your computer. By the end of this you'll know every piece of the stack, what each one does, and how a built scene jumps from your editor onto your face.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "You want to build a VR app for the Meta Quest. Which combo gets you there?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "A web browser and some JavaScript" },
+        { "t": "Unity (the game engine) + the Meta XR SDK + the Quest headset" },
+        { "t": "Just the Quest headset — it has a built-in app builder" }
+      ],
+      "correct": 1,
+      "why": "Unity is the engine that renders your 3D world and runs your logic. The Meta XR SDK is the bridge that teaches Unity how to talk to Quest hardware — head, hands, passthrough. The headset is where it runs. Remove any one and you can't ship VR for Quest. A browser can do WebXR, but that's a different (more limited) path, not the Unity + Quest stack this course builds on.",
+      "hints": [
+        "VR needs three things: something to BUILD the world, something to CONNECT to the hardware, and the hardware itself.",
+        "The engine alone doesn't know what a Quest controller is — something has to bridge them."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The 3 pieces of your VR dev stack.",
+      "sub": "Tap each card. These three show up in every project you'll ever build.",
+      "cards": [
+        { "em": "🎮", "h": "Unity", "b": "The game engine. It draws your 3D scene, runs your C# scripts, and exports a Quest app. Use Unity 6 for this course." },
+        { "em": "🔌", "h": "Meta XR SDK", "b": "The bridge. It hands Unity the head position, hand tracking, controllers and passthrough — everything Quest-specific." },
+        { "em": "🥽", "h": "Quest headset", "b": "Where it runs. A standalone Android computer on your face — so your build target is Android." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Inside the Quest, what kind of computer is actually running your app?",
+      "sub": "This decides what you set your build target to.",
+      "options": [
+        { "t": "A Windows PC — so you build for Windows" },
+        { "t": "A standalone Android device — so you build for Android" },
+        { "t": "A web server — so you build a website" }
+      ],
+      "correct": 1,
+      "why": "A Quest is a self-contained Android computer with a mobile chip — no PC required to run a shipped app. That's why, in Unity's Build Settings, you switch the platform to Android. Forget this and Unity builds a desktop app the headset can't run. It's the single most common first-day mistake.",
+      "hints": [
+        "The Quest runs on its own — it's not tethered to a PC when you ship.",
+        "Its operating system is the same family that phones use."
+      ] },
+
+    { "type": "classify",
+      "prompt": "Each setup task — does it happen in UNITY, or on the HEADSET?",
+      "sub": "Tap an item, then a bin.",
+      "buckets": ["🖥️ In Unity (on your PC)", "🥽 On the Quest headset"],
+      "items": [
+        { "t": "Switch the build platform to Android", "b": 0 },
+        { "t": "Import the Meta XR SDK package", "b": 0 },
+        { "t": "Turn on Developer Mode in the Meta Quest app", "b": 1 },
+        { "t": "Add the XR Origin (camera rig) to your scene", "b": 0 },
+        { "t": "Put the headset on to see your room running", "b": 1 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Building, importing, and editing the scene all happen on your computer.",
+        "Anything physical — flipping Developer Mode, wearing it to test — happens on the device."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "In your Unity scene, the regular Main Camera won't track your head. What do you add so the headset drives the view?",
+      "sub": "This is the one object that makes a scene 'VR'.",
+      "options": [
+        { "t": "A brighter light" },
+        { "t": "An XR Origin / camera rig — it maps your real head and hands into the scene" },
+        { "t": "A second Main Camera" }
+      ],
+      "correct": 1,
+      "why": "A normal camera sits still where you place it. The XR Origin (the camera rig from the Meta XR SDK) is the object that reads your real head and hand positions each frame and moves the in-scene camera and hand objects to match. Without it, you'd render a static view that ignores where you look — not VR at all.",
+      "hints": [
+        "A fixed camera can't follow your head — you need a rig built for tracking.",
+        "It came in with the Meta XR SDK, and it represents YOU inside the scene."
+      ] },
+
+    { "type": "order",
+      "prompt": "Put the first-run steps in order — from empty Unity to your room on your face.",
+      "sub": "Tap them in the sequence you'd actually do them.",
+      "chips": [
+        "Build & deploy the scene to the connected headset",
+        "Create a Unity project and import the Meta XR SDK",
+        "Switch the build target to Android",
+        "Add the XR Origin rig to the scene"
+      ],
+      "correct": [1, 2, 3, 0],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't add an XR rig before you have a project and the SDK that provides it.",
+        "Deploying to the headset is always the last thing — everything else is prep."
+      ] },
+
+    { "type": "tf",
+      "prompt": "True or false — quick gut-check on the stack.",
+      "sub": "Tap each, then check all at once.",
+      "statements": [
+        { "t": "You must own a Quest to test — there's no way to preview VR from the editor.", "answer": false,
+          "why": "False. Tools like Meta's Quest Link / Air Link let you preview your scene live in the headset straight from Unity's Play button, and the editor can simulate basic XR input — though a real device test before shipping is still essential." },
+        { "t": "The Meta XR SDK is what gives Unity access to hands, controllers and passthrough.", "answer": true,
+          "why": "True. Plain Unity has no idea what a Quest is. The SDK is the bridge that exposes all the headset-specific features to your project." },
+        { "t": "Because the Quest is an Android device, you set the build target to Android.", "answer": true,
+          "why": "True. The shipped app runs on the Quest's onboard Android system, so Android is the build platform — not Windows or Mac." }
+      ],
+      "hints": [
+        "Think about how you previewed a scene without putting the headset on.",
+        "Recall which piece bridges Unity to the Quest hardware."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "What's the VR app YOU want to build?",
+      "sub": "Not graded. We'll use it to make every later example about your idea — so jot down whatever's in your head.",
+      "fields": [
+        { "k": "goal", "label": "In one line, the VR/MR app you want to ship by the end of this course:", "ph": "e.g. a calm meditation room / a mini archery game / a 3D product viewer for my shop" },
+        { "k": "interest", "label": "One real place or thing you'd love to recreate in VR:", "ph": "e.g. my grandmother's kitchen, a basketball court, a planetarium" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

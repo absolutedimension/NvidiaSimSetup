@@ -17,11 +17,22 @@ class Student(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     email: Mapped[str] = mapped_column(String(255), unique=True, index=True)
     name: Mapped[str] = mapped_column(String(120), default="")
+    course: Mapped[str] = mapped_column(String(40), default="agentic")     # agentic | remote-swe
+    phone: Mapped[str] = mapped_column(String(20), default="")             # WhatsApp number, if onboarded via WA
     plan: Mapped[str] = mapped_column(String(40), default="full")          # full | emi
     status: Mapped[str] = mapped_column(String(20), default="active")      # active | paused
     is_admin: Mapped[bool] = mapped_column(Boolean, default=False)
     enrolled_at: Mapped[datetime] = mapped_column(DateTime, default=now)
     last_active_at: Mapped[datetime] = mapped_column(DateTime, default=now)
+    # ---- subscription (Razorpay) ----
+    # sub_status: none | created | trialing | active | past_due | cancelled | grandfathered
+    sub_status: Mapped[str] = mapped_column(String(20), default="none", index=True)
+    rzp_customer_id: Mapped[str] = mapped_column(String(40), default="")
+    rzp_subscription_id: Mapped[str] = mapped_column(String(40), default="", index=True)
+    trial_end: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    current_period_end: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    # ---- learning-loop data consent (the "your usage improves Acharya" surface) ----
+    data_loop_consent: Mapped[bool] = mapped_column(Boolean, default=True)
 
 
 class MagicToken(Base):
@@ -36,6 +47,7 @@ class MagicToken(Base):
 class Module(Base):
     __tablename__ = "modules"
     id: Mapped[int] = mapped_column(primary_key=True)
+    course: Mapped[str] = mapped_column(String(40), default="agentic", index=True)
     week: Mapped[int] = mapped_column(Integer, index=True)
     code: Mapped[str] = mapped_column(String(40))
     title: Mapped[str] = mapped_column(String(200))
@@ -134,10 +146,60 @@ class LearnerFact(Base):
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=now, onupdate=now)
 
 
+class Visit(Base):
+    """Lightweight, privacy-friendly page-view log for website analytics.
+    `anon` = a daily-salted hash of ip+ua (no raw IP stored). student_id set when logged in."""
+    __tablename__ = "visits"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    path: Mapped[str] = mapped_column(String(200), index=True)
+    ref: Mapped[str] = mapped_column(String(200), default="")
+    anon: Mapped[str] = mapped_column(String(40), index=True)
+    student_id: Mapped[int | None] = mapped_column(nullable=True, index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
 class Event(Base):
     __tablename__ = "events"
     id: Mapped[int] = mapped_column(primary_key=True)
     student_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
     type: Mapped[str] = mapped_column(String(40))
     payload: Mapped[dict] = mapped_column(JSON, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class LearningEvent(Base):
+    """The trainable record of HOW a learner learns — every graded attempt, on web or
+    WhatsApp, keyed by concept. This is the loop's raw material: a knowledge-tracing model
+    fits on (student_anon, concept_id, outcome, created_at) and the RL teaching simulator
+    calibrates on it. NEVER store free text here (reflect prose / chat) — only outcomes +
+    small tokens. Exports use student_anon (a salted hash), never the raw student_id."""
+    __tablename__ = "learning_events"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    student_anon: Mapped[str] = mapped_column(String(40), index=True)   # stable per-student pseudonym
+    course: Mapped[str] = mapped_column(String(40), default="", index=True)
+    surface: Mapped[str] = mapped_column(String(12), default="web")     # web | whatsapp
+    concept_id: Mapped[str] = mapped_column(String(80), default="", index=True)  # the trainable key
+    lesson_slug: Mapped[str] = mapped_column(String(80), default="")
+    step_index: Mapped[int] = mapped_column(Integer, default=0)
+    step_type: Mapped[str] = mapped_column(String(20), default="")      # mcq|match|order|truefalse|recall|reflect
+    action: Mapped[str] = mapped_column(String(16), default="attempt")  # attempt|hint|tutor_ask|reveal|complete
+    outcome: Mapped[str] = mapped_column(String(10), default="")        # correct|wrong|partial|na
+    attempt_no: Mapped[int] = mapped_column(Integer, default=1)
+    chosen: Mapped[str] = mapped_column(String(40), default="")         # option index/token — never free text
+    intervention: Mapped[str] = mapped_column(String(12), default="none")  # none|hint|tutor|example
+    latency_ms: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class CourseRequest(Base):
+    """A learner asked Acharya (on WhatsApp) for a course we don't offer yet. Deepak builds it,
+    then notifies them on the same number. status: requested | building | ready."""
+    __tablename__ = "course_requests"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    topic: Mapped[str] = mapped_column(String(200))
+    email: Mapped[str] = mapped_column(String(255), default="")
+    phone: Mapped[str] = mapped_column(String(20), default="", index=True)
+    source: Mapped[str] = mapped_column(String(20), default="whatsapp")    # whatsapp | web
+    status: Mapped[str] = mapped_column(String(20), default="requested")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)

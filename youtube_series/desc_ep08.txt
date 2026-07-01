@@ -1,0 +1,37 @@
+You can recognize a scrawled "3" in an instant — and you couldn't explain the rule if you tried.
+Episode 8 builds the machine that does the same thing: a NEURAL NETWORK, from a single neuron up
+to a system that reads a handwritten digit.
+
+In this episode:
+• What the machine actually sees — a 28×28 grid of 784 brightness numbers, no shapes at all
+• What a neuron really is — a thing that holds one number between 0 and 1
+• Input and output layers — the picture as neurons, and ten neurons for the ten digits
+• Hidden layers — the hopeful idea that pixels become edges, edges become parts, parts become digits
+• Weights — how much one neuron listens to another
+• The weighted sum, the bias, and the "squish" — the complete life of a single neuron
+• ~13,000 knobs, and why "learning" is just finding the right setting
+
+The punchline: a neural network is not a brain and not magic — it's one big function, a stack of
+weighted sums and gentle squishes, repeated layer after layer.
+
+Episode 8 of "AI is the Universal Mind."
+
+🔔 Get every new episode + the course → {substack}
+
+⏱ Chapters
+00:00 You see a three — how?
+00:32 Ten thousand threes, one idea
+01:03 What the machine actually sees
+01:47 What a neuron really is
+02:24 The input layer
+02:57 The output layer
+03:36 Hidden layers
+04:23 Why build it in layers
+05:04 Weights
+05:43 The weighted sum
+06:15 The bias
+06:51 The squish
+07:33 ~13,000 knobs to tune
+08:14 Just one big function
+
+#AI #neuralnetworks #deeplearning #machinelearning #howAIworks #MNIST #AIexplained #neurons #artificialintelligence

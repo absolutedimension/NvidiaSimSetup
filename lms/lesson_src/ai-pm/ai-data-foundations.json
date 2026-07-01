@@ -1,0 +1,174 @@
+{
+  "slug": "ai-data-foundations",
+  "title": "Data foundations & feasibility",
+  "steps": [
+    { "type": "intro",
+      "art": "💡 × ⚙️ → 📊",
+      "prompt": "Why do most AI products die on the data, not the algorithm?",
+      "sub": "Great models are everywhere now. The hard part is picking the RIGHT bet and proving the data can actually carry it. By the end you'll prioritize AI initiatives by value × feasibility, demand a non-ML baseline, spot data leakage before it burns you, and run a data-readiness check on a real product.",
+      "cta": "Start" },
+
+    { "type": "reveal",
+      "prompt": "The PM's four guardrails before any AI build.",
+      "sub": "Tap each card — these are the whole lesson in miniature.",
+      "cards": [
+        { "em": "🎯", "h": "Value × Feasibility", "b": "Plot every idea on business value vs technical/data feasibility. Ship high-value/high-feasibility first; time-box the high-value/low-feasibility ones as research spikes." },
+        { "em": "📏", "h": "Define the baseline", "b": "Always name the non-ML way (even 'predict the average'). If a simple rule already clears the bar, ML must beat it by enough to justify its cost." },
+        { "em": "🗃️", "h": "Data is the constraint", "b": "Missing, dirty, biased, or not-legally-usable data kills more AI products than weak algorithms ever do." },
+        { "em": "🕳️", "h": "Trust the test score", "b": "If test data leaks into training, your metrics look amazing — then collapse in production. Trust the held-out number, never the training one." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Three candidate AI bets. Where does each one go?",
+      "sub": "Tap an initiative, then a bin. Think value AND feasibility.",
+      "buckets": ["🚀 Build now (high value, high feasibility)", "🔬 Research spike (high value, low feasibility)", "🔌 Just use an API (commodity capability)"],
+      "items": [
+        { "t": "Predict which students will churn next month — we have 2 years of clean engagement + payment data", "b": 0 },
+        { "t": "A tutor that grades free-text essays as reliably as a human examiner — we have almost no graded examples yet", "b": 1 },
+        { "t": "Translate a lesson from English to Hindi inside the app", "b": 2 },
+        { "t": "Auto-tag uploaded lesson PDFs by topic — we have thousands of labelled past lessons", "b": 0 },
+        { "t": "Generic OCR to pull text out of scanned worksheets", "b": 2 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "If the capability is a commodity (OCR, translation, generic LLM) and isn't your moat, lean API — don't build it.",
+        "High value but you can't yet prove it's doable on your data = a time-boxed spike, NOT a committed roadmap item."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "A high-value idea looks technically shaky right now. What's the right call?",
+      "sub": "You're allocating next quarter's roadmap.",
+      "options": [
+        { "t": "Commit it to the roadmap with a hard ship date — high value means we must deliver it." },
+        { "t": "Run a time-boxed research spike to de-risk feasibility before committing anything." },
+        { "t": "Drop it forever — low feasibility means it's not worth touching." }
+      ],
+      "correct": 1,
+      "why": "High-value/low-feasibility ideas are the classic trap: too valuable to ignore, too risky to promise. You buy information with a small, time-boxed spike — can the data support it? does a model beat baseline? — and only THEN decide to commit, kill, or re-scope. Promising a ship date before you've proven feasibility is how teams blow a quarter.",
+      "hints": [
+        "Committing a ship date to something you can't yet prove is doable is how quarters get burned.",
+        "What's the cheapest way to BUY information about feasibility before betting the roadmap?"
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Build it, buy it, or call an API? You need text translation inside your app.",
+      "sub": "Translation isn't your product's secret sauce.",
+      "options": [
+        { "t": "Build your own translation model — owning everything is always safer." },
+        { "t": "Use a translation API — it's a commodity; build only where data/quality is your moat." },
+        { "t": "Skip the feature — translation is impossible to do well." }
+      ],
+      "correct": 1,
+      "why": "Translation, generic OCR, and generic LLM chat are commodities — mature APIs do them better than you can cheaply build. Reserve your scarce build effort for the capability where YOUR proprietary data or quality bar is a genuine moat (e.g. tutoring on your own curriculum). Building a commodity from scratch spends moat-budget on something a customer can't tell apart.",
+      "hints": [
+        "Is translation the thing customers choose YOU for, or table stakes anyone can buy?",
+        "Build where your data/quality is a moat; buy or API the commodities."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Baselines & the data constraint — true or false?",
+      "sub": "Tap each, then check together.",
+      "statements": [
+        { "t": "You should always define a non-ML baseline (even 'predict the average') before starting an ML project.", "answer": true,
+          "why": "Yes — the baseline is the bar. If a dumb rule already clears it, the ML project has to beat it by enough to justify its ongoing cost." },
+        { "t": "If a simple rule already meets the business bar, the ML version only needs to roughly tie it to be worth building.", "answer": false,
+          "why": "No — ML carries real ongoing cost (data pipelines, monitoring, drift, on-call). It must beat the baseline by ENOUGH to justify that, not just tie." },
+        { "t": "Most AI products fail because the team didn't have a clever enough algorithm.", "answer": false,
+          "why": "No — they mostly fail on DATA: missing, dirty, biased, or not legally usable. 'We have a great algorithm' is almost never the real bottleneck." },
+        { "t": "Data that the team has no legal right or consent to use for this purpose is effectively unusable, no matter how good it is.", "answer": true,
+          "why": "Right — rights and consent are a hard gate. Great data you can't legally use for THIS purpose is, for the project, no data at all." }
+      ],
+      "hints": [
+        "A baseline is the bar to beat; remember ML has ongoing cost, not just one-time cost.",
+        "Where do most AI products actually break — the model, or the data feeding it?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Train / validation / test — and the leak that fakes success.",
+      "sub": "Tap each card. This split is your honesty mechanism.",
+      "cards": [
+        { "em": "📚", "h": "Train = learn", "b": "The data the model studies to fit its parameters. The model is allowed to 'see' this." },
+        { "em": "🎚️", "h": "Validation = tune", "b": "A separate slice for picking settings (which model, which knobs). Used to tune — never the final verdict." },
+        { "em": "🔒", "h": "Test = honest estimate", "b": "A held-out slice the model never touched. This is your best guess at real-world performance — guard it." },
+        { "em": "🕳️", "h": "Leakage = the trap", "b": "If test (or future) info sneaks into training, scores look brilliant in the lab, then crater in production. Trust the clean test number." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Your model scores 99% in testing but flops in production. The engineer admits the test rows were also used during training. What happened?",
+      "sub": "This is the single most common metric trap in AI products.",
+      "options": [
+        { "t": "The production users are just unusual — the 99% is the real number." },
+        { "t": "Data leakage — test data leaked into training, inflating the score. The honest number is much lower." },
+        { "t": "The model is overconfident; lowering the threshold will fix the gap." }
+      ],
+      "correct": 1,
+      "why": "Classic data leakage. When test rows are seen during training, the model effectively memorizes the answers, so the 'test' score measures recall, not generalization. It looks like 99% in the lab and collapses on truly unseen production data. The fix is a clean held-out test set the model never touches — and as PM, you trust THAT number, never the inflated training one.",
+      "hints": [
+        "If the model already saw the test rows while learning, what is the test score really measuring?",
+        "A score that's great in the lab but bad in production is the signature of leakage, not unusual users."
+      ] },
+
+    { "type": "multi",
+      "prompt": "Data-readiness check: tap EVERY question a PM must answer before greenlighting an ML build.",
+      "sub": "Pick all that belong on the gate.",
+      "chips": [
+        "Is the data representative of real production inputs?",
+        "Is it labelled well — and who keeps labelling it going forward?",
+        "Do we have the rights/consent to use it for THIS purpose?",
+        "Does it stay fresh via a pipeline, not a one-off dump?",
+        "What biases or gaps exist — and who could get hurt?",
+        "What's the non-ML baseline we must beat?",
+        "Is the algorithm the trendiest one on social media this week?"
+      ],
+      "correct": [0, 1, 2, 3, 4, 5],
+      "why": "The first six are the data-readiness gate: representative, labelled (with an ongoing labelling plan), legally usable, kept fresh by a pipeline, audited for bias/harm, and measured against a baseline. The last one — chasing the trendiest algorithm — is exactly the distraction this lesson warns against. Data readiness, not algorithm fashion, decides whether the product survives.",
+      "hints": [
+        "Everything about the DATA and the BASELINE belongs on the gate.",
+        "One chip is about algorithm hype, not readiness — leave it out."
+      ] },
+
+    { "type": "classify",
+      "prompt": "TrigunAI gut-check: would each idea pass the data-readiness gate today?",
+      "sub": "Tap an idea, then a bin — judge the DATA, not the dream.",
+      "buckets": ["✅ Likely passes the gate", "⚠️ Blocked on data (not on the algorithm)"],
+      "items": [
+        { "t": "Summarize each published lesson — we have thousands of clean lesson texts and a generic LLM to call", "b": 0 },
+        { "t": "Predict student churn — but we've only run for 3 weeks, so almost no one has actually churned yet", "b": 1 },
+        { "t": "Auto-grade essays like a human examiner — we have only a handful of hand-graded examples and no labelling plan", "b": 1 },
+        { "t": "Recommend the next lesson — we have months of representative click + completion data", "b": 0 }
+      ],
+      "constraints": ["All 4 sorted", "Every one correct"],
+      "hints": [
+        "No labels, no history, or unrepresentative data = blocked on data, however good the model is.",
+        "Plenty of clean, representative, rights-clear data + a clear baseline = likely passes."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Run the gate on something you actually want to build.",
+      "fields": [
+        { "k": "work", "label": "Name one AI feature you'd love to ship. What data would it stand on?", "ph": "e.g. predict churn — needs 12+ months of engagement + payment history" },
+        { "k": "goal", "label": "Which data-readiness question is your biggest risk — and what's the non-ML baseline?", "ph": "e.g. risk = no labels yet; baseline = flag anyone inactive 14+ days" }
+      ] },
+
+    { "type": "tf",
+      "prompt": "Lock it in — last true/false.",
+      "sub": "Tap each, then check together.",
+      "statements": [
+        { "t": "High-value but low-feasibility ideas should be time-boxed research spikes, not committed roadmap items.", "answer": true,
+          "why": "Right — you de-risk with a small spike before committing, instead of promising a ship date you can't yet back." },
+        { "t": "For a commodity capability that isn't your moat, prefer an API over building from scratch.", "answer": true,
+          "why": "Yes — save build effort for where your data/quality is a real moat; buy the commodities." },
+        { "t": "A held-out test set the model never saw gives a more honest estimate than the training score.", "answer": true,
+          "why": "Correct — that's the whole point of the split. Trust the clean test number; the training number is biased upward." },
+        { "t": "Once you've collected data once, you're set — AI products don't need an ongoing data pipeline.", "answer": false,
+          "why": "No — a one-off dump goes stale. Real products need data kept fresh by a pipeline, plus ongoing labelling and bias monitoring." }
+      ],
+      "hints": [
+        "Three of these you just practised; one describes the 'one-off dump' anti-pattern.",
+        "Which statement ignores that data and the world keep changing?"
+      ] },
+
+    { "type": "done" }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "slug": "vrg-ship",
+  "title": "Ship your VR game",
+  "steps": [
+    { "type": "intro",
+      "art": "🐢 → 🚀",
+      "prompt": "It's fun. Now how do real players get it?",
+      "sub": "Two gates stand between your build and players: it must hold 72fps, and it must travel the store path — dev account, signed APK, listing, review. By the end you'll know both, in order.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "Before you even think about the store, what's the hard performance bar a VR game must hold?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "A pretty main menu" },
+        { "t": "A steady 72fps — drop below and players get motion sick" },
+        { "t": "At least 100 enemies on screen" }
+      ],
+      "correct": 1,
+      "why": "On Quest, the bar is a rock-steady 72fps (~13.9 ms per frame). Below it, the world judders and players feel sick — and Meta will reject a build that performs badly. Menus and enemy counts don't matter if the frame rate isn't there.",
+      "hints": [
+        "It's the same number from the game-loop lesson — the frame budget.",
+        "Comfort in VR is non-negotiable; what frame rate keeps players from feeling sick?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "3 common ways to claw back frame rate.",
+      "sub": "Tap each card. These are the first knobs you turn to hit 72fps.",
+      "cards": [
+        { "em": "📦", "h": "Batch draw calls", "b": "Each material/mesh the GPU draws separately is a 'draw call'. Combine meshes & share materials so the GPU does fewer, bigger jobs." },
+        { "em": "🖼️", "h": "Shrink textures", "b": "4K textures eat memory and bandwidth on a mobile GPU. Drop to 1K/2K — players rarely notice, the headset thanks you." },
+        { "em": "🔺", "h": "Cut poly count", "b": "Fewer triangles per model = less to transform each frame. Use lower-poly meshes or LODs for distant objects." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Sort each action: does it help PERFORMANCE, or is it part of the SHIP path?",
+      "sub": "Tap an item, then a bin.",
+      "buckets": ["⚡ Performance (hit 72fps)", "📤 Ship (get to players)"],
+      "items": [
+        { "t": "Combine meshes to cut draw calls", "b": 0 },
+        { "t": "Create a Meta developer account", "b": 1 },
+        { "t": "Drop textures from 4K to 1K", "b": 0 },
+        { "t": "Build a signed APK", "b": 1 },
+        { "t": "Submit the store listing for review", "b": 1 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Performance = making each frame cheaper. Ship = paperwork + packaging to reach players.",
+        "Accounts, APKs, listings, and review are all part of getting it OUT the door."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Your game runs at 72fps. To put it on the Quest store, what's the FIRST thing you need?",
+      "sub": "You can't upload anything without this.",
+      "options": [
+        { "t": "A signed APK" },
+        { "t": "A Meta developer account (and an app created in the dashboard)" },
+        { "t": "Five-star reviews" }
+      ],
+      "correct": 1,
+      "why": "The store path starts with identity: a Meta developer account and an app entry in the dashboard. Only then can you build a signed APK and attach it to that app. Reviews come after the game is live, not before.",
+      "hints": [
+        "Before you can build or upload, the store needs to know WHO you are.",
+        "Reviews require the game to already be published. What comes first?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The ship path: 4 stops.",
+      "sub": "Tap each card. This is the journey from a working build to a live store page.",
+      "cards": [
+        { "em": "🪪", "h": "Dev account", "b": "Register as a Meta developer and create the app entry in the dashboard. This is your store identity." },
+        { "em": "📦", "h": "Signed APK", "b": "Build a release APK signed with your keystore — Meta only accepts signed builds, and the signature proves it's really yours." },
+        { "em": "📝", "h": "Store listing", "b": "Title, description, screenshots, a trailer, age rating, comfort level. This is the page players actually see." },
+        { "em": "🔍", "h": "Submit for review", "b": "Meta tests your build for performance, comfort, and policy. Pass → it goes live; fail → fix the notes and resubmit." }
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the ship steps in the order you'd actually do them.",
+      "sub": "From a finished, fast-enough build to a game players can download.",
+      "chips": [
+        "Submit for review",
+        "Create a Meta developer account + app entry",
+        "Fill in the store listing (screenshots, description)",
+        "Build and upload a signed APK"
+      ],
+      "correct": [1, 3, 2, 0],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You need the identity before you can upload a build.",
+        "Account → APK → listing → review. Review is always last."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk your finished VR game from your laptop to a live store page.",
+      "sub": "Pick the right next move at each gate. The release log fills in as you go.",
+      "goal": "Get a 72fps build published on the Quest store.",
+      "turns": [
+        { "situation": "Your game is fun, but in a busy scene it dips to ~55fps and feels juddery.",
+          "q": "What do you do before anything store-related?",
+          "options": ["Optimize: batch draw calls, shrink textures, cut polys until it holds 72fps", "Submit it anyway and hope reviewers don't notice", "Add more enemies to make it impressive"],
+          "correct": 0, "log": "⚡ Optimize → steady 72fps reached" },
+        { "situation": "Performance is solid. You want it on the Quest store but have no developer presence yet.",
+          "q": "What's the first store step?",
+          "options": ["Create a Meta developer account and an app entry", "Build the APK first with no account", "Write the reviews yourself"],
+          "correct": 0, "log": "🪪 Dev account + app entry created" },
+        { "situation": "The app entry exists. Now you need an actual build to upload.",
+          "q": "What kind of build does Meta require?",
+          "options": ["A signed release APK", "An unsigned debug APK", "Just the Unity project folder"],
+          "correct": 0, "log": "📦 Signed APK built + uploaded" },
+        { "situation": "The build is uploaded and the listing (screenshots, description, comfort rating) is filled in.",
+          "q": "Final step to reach players?",
+          "options": ["Submit for review and wait for Meta's pass", "Email players the APK directly", "Delete the app entry"],
+          "correct": 0, "log": "🔍 Submitted → review → live 🎉" }
+      ],
+      "hints": [
+        "Fix performance first, then identity, then build, then listing, then review.",
+        "You can't submit for review until there's a signed build AND a filled-in listing."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Shipping myth-check — true or false?",
+      "sub": "Tap each, then check all at once.",
+      "statements": [
+        { "t": "Meta can reject a build purely for poor performance, even if it's fun.", "answer": true,
+          "why": "Yes — comfort is policy. A build that can't hold frame rate makes players sick, so Meta will fail it in review regardless of how good the gameplay is. Fix performance before you submit." },
+        { "t": "You can upload an unsigned debug APK to the store.", "answer": false,
+          "why": "No — the store only accepts a SIGNED release APK. The signature ties the build to your keystore and proves it's genuinely yours; debug builds are rejected." },
+        { "t": "Submitting for review is the last step, after the listing and the signed build are ready.", "answer": true,
+          "why": "Right — review is the final gate. Meta needs a complete listing and an uploaded signed build before there's anything to review." }
+      ],
+      "hints": [
+        "Think about why a juddery game is a comfort (and therefore policy) problem.",
+        "What's always the very last action — and what must exist before it?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours — plan YOUR ship.",
+      "sub": "Not graded. This becomes your release checklist for the game you're building.",
+      "fields": [
+        { "k": "goal", "label": "What's the ONE optimization you suspect your game will need first?", "ph": "e.g. shrink my 4K wall textures, or merge the repeated crates to cut draw calls" },
+        { "k": "stop", "label": "What's the last thing you'll do before you hit Submit for review?", "ph": "e.g. record a 30s trailer + 5 screenshots and set the comfort rating to Comfortable" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

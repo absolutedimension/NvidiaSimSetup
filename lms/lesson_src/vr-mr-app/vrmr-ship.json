@@ -1,0 +1,125 @@
+{
+  "slug": "vrmr-ship",
+  "title": "Ship it to the Meta Store",
+  "steps": [
+    { "type": "intro",
+      "art": "🥽 → 🏪",
+      "prompt": "It works in your headset. Now get it on the Meta Store.",
+      "sub": "Building a great VR app and publishing one are two different skills. By the end you'll know the exact path from 'runs on my device' to 'people can download it' — accounts, signing, the release build, the listing, and submission.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "Your app runs perfectly when you build straight to your own headset. Can you submit that same build to the store?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Yes — if it runs on your Quest, it's store-ready as-is" },
+        { "t": "No — the store needs a signed RELEASE build, plus a dev account and a store listing" },
+        { "t": "No — you have to rewrite the whole app in a different engine first" }
+      ],
+      "correct": 1,
+      "why": "A test build that runs on your own device is a 'development' build — it isn't signed for distribution and has no store identity. To publish, you need a registered developer account, a release build signed with a keystore (so the store can verify it's really from you), and a store listing with all the metadata. The code is the same; the packaging and paperwork are what change.",
+      "hints": [
+        "Running on YOUR device is a low bar — the store has to trust it came from you and is safe for others.",
+        "Think about what's missing: identity, a signature, and a public page."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The 4 things shipping needs that testing didn't.",
+      "sub": "Tap each card. These are the gates between 'works for me' and 'on the store.'",
+      "cards": [
+        { "em": "🪪", "h": "Developer account", "b": "A registered Meta developer org. This is your identity as a publisher — required before you can submit anything." },
+        { "em": "🔑", "h": "Keystore", "b": "A signing key you create once and keep forever. It signs your build so the store can prove it's really from you. Lose it and you can't update the app." },
+        { "em": "📦", "h": "Release build", "b": "A signed, optimised build (a release APK) — not the debug build you've been testing with." },
+        { "em": "📝", "h": "Store listing", "b": "The public page: title, description, screenshots, a privacy policy, and an age rating." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Each item — is it for TESTING on your own device, or for SHIPPING to the store?",
+      "sub": "Tap an item, then a bin.",
+      "buckets": ["🧪 Testing on your device", "🏪 Shipping to the store"],
+      "items": [
+        { "t": "A debug build deployed over USB to your Quest", "b": 0 },
+        { "t": "A keystore-signed release build", "b": 1 },
+        { "t": "A registered Meta developer account", "b": 1 },
+        { "t": "Screenshots, description, and an age rating", "b": 1 },
+        { "t": "Putting the headset on to try a new feature you just added", "b": 0 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Quick, private, over-a-cable steps are testing.",
+        "Anything involving signing, an account, or a public page is shipping."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Why does the release build have to be signed with a keystore — and why must you never lose that keystore?",
+      "sub": "This trips up first-time publishers more than anything else.",
+      "options": [
+        { "t": "It just makes the file smaller" },
+        { "t": "The signature proves the build is really from you; the SAME key is required to publish updates, so losing it means you can't update your app" },
+        { "t": "It's optional decoration the store ignores" }
+      ],
+      "correct": 1,
+      "why": "The keystore signature is the store's proof of authorship — it ties every build to the same trusted publisher. Critically, updates must be signed with the same key as the original. If you lose your keystore, the store won't accept your update as the 'same app,' and you're locked out of patching it. That's why you create it once and back it up carefully.",
+      "hints": [
+        "A signature answers the question 'is this really from the same developer?'",
+        "Think about what happens to version 2 if the key that signed version 1 is gone."
+      ] },
+
+    { "type": "order",
+      "prompt": "Put the path to publication in order.",
+      "sub": "Tap the steps from finished app to submitted.",
+      "chips": [
+        "Fill in the store listing — description, screenshots, age rating",
+        "Register a Meta developer account",
+        "Create a keystore and produce a signed release build",
+        "Submit the build for review"
+      ],
+      "correct": [1, 2, 0, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You need an account before you can do anything else as a publisher.",
+        "You can't submit until you have both a signed build AND a finished listing."
+      ] },
+
+    { "type": "tf",
+      "prompt": "True or false — shipping myth-check.",
+      "sub": "Tap each, then check all at once.",
+      "statements": [
+        { "t": "Once you hit submit, the app is instantly live for everyone to download.", "answer": false,
+          "why": "False. Submission sends it into review — Meta checks the build, the content, and the listing first. Approval (and going live) comes after, not the instant you click submit." },
+        { "t": "You must sign your updates with the same keystore you used for the first release.", "answer": true,
+          "why": "True. The store identifies your app by its signing key. A different key reads as a different app — which is why backing up your keystore forever matters." },
+        { "t": "A privacy policy and age rating are part of the store listing, not optional extras.", "answer": true,
+          "why": "True. The listing isn't just marketing copy — a privacy policy and an accurate age rating are required metadata, and a submission without them gets rejected." }
+      ],
+      "hints": [
+        "Think about whether 'submit' and 'live' are the same moment.",
+        "Recall why the keystore had to be kept forever."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Your submission comes back rejected because the listing is missing a privacy policy. What's the fix?",
+      "sub": "Real submissions get bounced for small gaps like this.",
+      "options": [
+        { "t": "Rewrite the whole app from scratch" },
+        { "t": "Add the missing privacy policy to the listing and resubmit — the build itself is fine" },
+        { "t": "Create a brand-new keystore and re-sign everything" }
+      ],
+      "correct": 1,
+      "why": "A rejection for a missing listing item is a paperwork fix, not a code problem. The signed build is still valid — you complete the listing (here, add the privacy policy) and resubmit. Rewriting the app or making a new keystore would be wrong (and a new keystore would actually break your ability to update later).",
+      "hints": [
+        "The rejection was about the LISTING, not the build — so what actually needs changing?",
+        "Don't touch the keystore — that key is the one thing you must keep stable."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Draft YOUR store listing in one breath.",
+      "sub": "Not graded. This is the seed of the page real users will read before they download your app.",
+      "fields": [
+        { "k": "goal", "label": "Your app's store title and a one-line description:", "ph": "e.g. 'Calm Room — a 5-minute guided breathing space in VR'" },
+        { "k": "why", "label": "Who is it for, and why would they download it?", "ph": "e.g. stressed students who want a quiet place to reset between classes" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

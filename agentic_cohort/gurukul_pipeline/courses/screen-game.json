@@ -1,0 +1,20 @@
+{
+  "course_id": "screen-game",
+  "name": "Build & Ship a Game with Blender + Unity",
+  "order": ["screen_game_setup","blender_modeling","import_pipeline","ai_coding_game","game_mechanic","character_movement","camera_systems","game_ui","game_audio2","mobile_touch","game_perf_mobile","publish_game"],
+  "assessments": {},
+  "concepts": {
+    "screen_game_setup":{"module":1,"hook":"Three tools make one flat-screen game. Name them.","recall":"The stack for a flat-screen game?","answer":"Blender (assets) + Unity (engine) + an AI coding agent (the C#)"},
+    "blender_modeling": {"module":2,"hook":"Before you code a game you need things to put in it. Where do the 3D assets come from?","recall":"What do you make in Blender for a game?","answer":"the 3D models / characters / props, then export them for Unity"},
+    "import_pipeline":  {"module":2,"hook":"Your Blender model has to show up in Unity correctly. How?","recall":"How do Blender assets get into Unity?","answer":"export FBX/GLTF + textures -> import to Unity, set materials + colliders"},
+    "ai_coding_game":   {"module":3,"hook":"You don't hand-write all the C#. How does an AI agent build the game with you?","recall":"How does an AI agent help build the game?","answer":"describe the behavior in English -> it writes the C# -> you test + iterate"},
+    "game_mechanic":    {"module":4,"hook":"What's the one central action your whole game is built around?","recall":"Core mechanic + game loop?","answer":"the central verb run every frame: input -> update -> render"},
+    "character_movement":{"module":5,"hook":"A character that won't move isn't a game. How do you drive it?","recall":"How do you move a character (PC + mobile)?","answer":"input (keyboard/touch) -> a controller moving it via physics/transform"},
+    "camera_systems":   {"module":6,"hook":"The player only sees what the camera shows. What's its job?","recall":"Role of the camera in a screen game?","answer":"follow + frame the player — it's the player's window into the world"},
+    "game_ui":          {"module":7,"hook":"Score, health, menus — where do they live?","recall":"What UI does a game need?","answer":"menus, a HUD (score/health), pause — built on a canvas"},
+    "game_audio2":      {"module":8,"hook":"Why does even a simple game feel dead without sound?","recall":"Role of audio in a game?","answer":"SFX + music give feedback and set the mood — they make actions feel real"},
+    "mobile_touch":     {"module":9,"hook":"Same game, now on a phone. What has to change?","recall":"What's different shipping to mobile?","answer":"touch controls + a tighter performance budget + orientation + Android/iOS build settings"},
+    "game_perf_mobile": {"module":10,"hook":"A phone isn't a gaming PC. How do you keep it smooth?","recall":"How do you keep a mobile game smooth?","answer":"limit draw calls + poly count, compress textures, hit the frame budget"},
+    "publish_game":     {"module":11,"hook":"It's done — get it in front of players. How?","recall":"How do you publish a flat-screen game?","answer":"build for the platform (PC/itch.io/Play Store), make a listing, release"}
+  }
+}

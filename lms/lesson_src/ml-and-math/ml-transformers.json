@@ -1,0 +1,162 @@
+{
+  "slug": "ml-transformers",
+  "title": "Attention & transformers",
+  "steps": [
+    { "type": "intro",
+      "art": "👀 → 🔤",
+      "prompt": "Why does every modern AI run on 'attention'?",
+      "sub": "To understand a word, a model must look at the RIGHT other words. That's attention — and the transformer is just attention stacked into a tower. By the end you'll know what attention does, what a transformer block holds, and why it beat everything before it.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "In 'The animal didn't cross the street because IT was too tired' — what does a model need to figure out 'it'?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Just read the words left to right and hope." },
+        { "t": "Look back at the other words and decide 'it' refers to 'animal', not 'street'." },
+        { "t": "Count the letters in the sentence." }
+      ],
+      "correct": 1,
+      "why": "Understanding 'it' means looking at the right earlier word and weighting it heavily — 'animal' matters here, 'street' doesn't. That selective looking-at-the-right-words IS attention. Reading blindly or counting letters can't resolve the reference.",
+      "hints": [
+        "Which earlier word does 'it' point to — and how would the model know?",
+        "It has to focus on 'animal' more than 'street'. What's that focusing called?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "What attention actually does.",
+      "sub": "Tap each card. This is the heart of it.",
+      "cards": [
+        { "em": "🙋", "h": "Each word asks", "b": "Every token sends out a 'query': which other words should I pay attention to right now?" },
+        { "em": "🏷️", "h": "Others answer", "b": "Every token also has a 'key' (what it offers). Query meets keys → a relevance score for each other word." },
+        { "em": "⚖️", "h": "Weighted blend", "b": "The word pulls in a weighted mix of the others' 'values' — more from relevant words, less from irrelevant ones. Now each word's meaning is shaped by context." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "In one line, what does attention let a model do?",
+      "sub": "The essence.",
+      "options": [
+        { "t": "Weigh which other tokens matter for understanding each token." },
+        { "t": "Make the model run on a GPU." },
+        { "t": "Compress the text to save memory." }
+      ],
+      "correct": 0,
+      "why": "Attention is a weighting mechanism: for each word, it decides how much every other word should count toward that word's meaning. It's not about hardware or compression — it's about context, letting each token 'see' the relevant rest of the sentence.",
+      "hints": [
+        "It's about deciding what to FOCUS on, per word.",
+        "Weighing which other tokens matter — that's the one-liner."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Why attention beat what came before (RNNs).",
+      "sub": "Tap each card — this is why transformers won.",
+      "cards": [
+        { "em": "🐌", "h": "Old way: one word at a time", "b": "RNNs read left-to-right, sequentially. Long sentences = long chains, and early words fade by the end." },
+        { "em": "⚡", "h": "New way: all at once", "b": "Attention looks at ALL words in parallel — no waiting in line. Perfect for GPUs, so training scales massively." },
+        { "em": "🌉", "h": "No distance penalty", "b": "Word 1 can attend directly to word 100 with no fading. Long-range links stay strong." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Old RNN way vs new attention way — sort each trait.",
+      "sub": "Tap a trait, then its bin.",
+      "buckets": ["🐌 RNN (old)", "⚡ Attention (new)"],
+      "items": [
+        { "t": "Processes words one at a time, in sequence", "b": 0 },
+        { "t": "Processes all words in parallel", "b": 1 },
+        { "t": "Early words fade over long sentences", "b": 0 },
+        { "t": "Word 1 can link directly to word 100, no fading", "b": 1 },
+        { "t": "Hard to use a GPU's full power", "b": 0 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Sequential + fading + GPU-unfriendly = the old way.",
+        "Parallel + long-range links that stay strong = attention."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "A minimal transformer block.",
+      "sub": "Tap each card — stack this block N times and you get an LLM.",
+      "cards": [
+        { "em": "👀", "h": "Attention layer", "b": "Each token mixes in context from the other tokens — the part you just learned." },
+        { "em": "🧮", "h": "Feed-forward layer", "b": "A small per-token neural net that further processes each token's now-contextual vector." },
+        { "em": "🔁", "h": "Stack it deep", "b": "Repeat the block many times (12, 96, …). Each layer builds richer understanding. That tower IS the transformer." }
+      ] },
+
+    { "type": "order",
+      "prompt": "Trace one token through a transformer block, in order.",
+      "sub": "Tap the steps in the order they happen.",
+      "chips": ["Feed-forward layer processes each token further", "Token enters as a vector (its embedding)", "Attention mixes in context from other tokens", "Pass the result up to the next block"],
+      "correct": [1, 2, 0, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "It starts as an embedding before any mixing happens.",
+        "Embedding in → attention (context) → feed-forward → up to next block."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Watch attention resolve a pronoun.",
+      "sub": "Sentence: 'The trophy didn't fit in the suitcase because it was too big.' Pick the next move each turn.",
+      "goal": "Use attention to figure out what 'it' refers to.",
+      "turns": [
+        { "situation": "The model reaches the word 'it' and must understand what it refers to.",
+          "q": "What does the attention mechanism do first?",
+          "options": ["Send a query from 'it' to score every other word's relevance", "Ignore the rest of the sentence", "Pick the nearest word automatically"],
+          "correct": 0, "log": "🙋 'it' queries the sentence for relevant words" },
+        { "situation": "Scores come back. 'Too big' suggests the thing that was too LARGE to fit.",
+          "q": "Which word should get the highest attention weight?",
+          "options": ["'trophy' — the thing that was too big", "'suitcase' — it was the small one", "'because'"],
+          "correct": 0, "log": "⚖️ highest weight → 'trophy'" },
+        { "situation": "Attention blends in mostly 'trophy'. The word 'it' is now understood in context.",
+          "q": "What has the model effectively decided?",
+          "options": ["'it' = the trophy", "'it' = the suitcase", "'it' = nothing"],
+          "correct": 0, "log": "✅ 'it' resolved to 'trophy' via attention" }
+      ],
+      "hints": [
+        "'Too big' is the clue — which object couldn't fit because of its size?",
+        "Attention puts the most weight on the most relevant word, then blends it in."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Myth-check — true or false?",
+      "sub": "Tap each, then check together.",
+      "statements": [
+        { "t": "Attention lets each token weigh how much every other token matters to it.", "answer": true,
+          "why": "Yes — that per-token weighting of all the others is exactly what attention computes." },
+        { "t": "Transformers must read words strictly one at a time, like older RNNs.", "answer": false,
+          "why": "No — they process all tokens in parallel. That parallelism is a big reason they scale and win." },
+        { "t": "A transformer is built from stacked attention + feed-forward blocks.", "answer": true,
+          "why": "Right — that repeated block, many layers deep, is the whole architecture behind modern LLMs." },
+        { "t": "Attention can directly link a word to a far-away word with no fading.", "answer": true,
+          "why": "Yes — unlike RNNs, distance doesn't weaken the link; word 1 can attend straight to word 100." }
+      ],
+      "hints": [
+        "Recall what you sorted: which way is parallel, which is one-at-a-time?",
+        "Two statements are true about attention's strengths; one wrongly makes it sequential."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Connecting it to your goal makes it stick.",
+      "fields": [
+        { "k": "work", "label": "Where do you (or will you) use a transformer-based AI in your work?", "ph": "e.g. chatbot for support, summarising docs, code help" },
+        { "k": "goal", "label": "In your own words, why does 'looking at the right other words' matter for that use?", "ph": "e.g. it has to track which ticket detail the question refers to" }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Final check: why do transformers underlie nearly all modern AI?",
+      "sub": "Tie it together.",
+      "options": [
+        { "t": "They use less electricity than any other model." },
+        { "t": "Attention gives rich context AND runs in parallel, so they scale to huge data and sizes." },
+        { "t": "They never make mistakes." }
+      ],
+      "correct": 1,
+      "why": "The winning combo: attention captures context (including long-range), and it's parallel, so it rides GPUs to enormous scale. That scalability — not low power or perfection — is why transformers power today's LLMs, vision, and more.",
+      "hints": [
+        "Two reasons together: good at context, AND fast to scale.",
+        "Think parallelism + long-range context, not power or perfection."
+      ] },
+
+    { "type": "done" }
+  ]
+}

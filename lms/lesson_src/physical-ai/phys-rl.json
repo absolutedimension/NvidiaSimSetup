@@ -1,0 +1,138 @@
+{
+  "slug": "phys-rl",
+  "title": "RL basics for control",
+  "steps": [
+    { "type": "intro",
+      "art": "🦿 → 🎁 → 🔁",
+      "prompt": "How does a robot learn to move with nobody showing it the moves?",
+      "sub": "No one writes the perfect walk. The robot tries, gets a score, adjusts, and tries again — thousands of times. That's reinforcement learning. By the end you'll name its four parts and trace a robot earning its first reward.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "First instinct — a robot is learning to stand up. How does RL actually teach it?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "An engineer types the exact angle for every joint at every instant." },
+        { "t": "The robot tries random-ish moves, gets a higher score when it stays upright longer, and shifts toward whatever earned more score." },
+        { "t": "The robot copies a video of a human standing up, frame by frame." }
+      ],
+      "correct": 1,
+      "why": "Reinforcement learning is trial-and-error with a score. The robot acts, the world hands back a reward (higher for staying up), and it nudges its behavior toward whatever earned more. No human dictates the joint angles, and it's not copying a video — it discovers the skill by chasing reward.",
+      "hints": [
+        "The word is 'reinforcement' — something gets reinforced when it works.",
+        "Nobody hand-types the moves. What signal tells the robot a try went well?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The four parts of every RL setup — framed for movement.",
+      "sub": "Tap each card. Memorize these four; the whole field is built on them.",
+      "cards": [
+        { "em": "🧠", "h": "Agent", "b": "The decider — the policy in the robot's 'brain' that picks the next action: how much torque to send each joint." },
+        { "em": "🌍", "h": "Environment", "b": "The simulated world + the robot's body. It takes the action and returns the new state plus a reward." },
+        { "em": "🎁", "h": "Reward", "b": "A number scoring how good that move was. Higher for moving toward the goal, lower for falling." },
+        { "em": "🎬", "h": "Episode", "b": "One full attempt — start, act, act, act, until it succeeds, falls, or time runs out. Then reset and try again." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "A robot arm is learning to reach a target. Sort each piece into the right RL part.",
+      "sub": "Tap an item, then tap the part it belongs to.",
+      "buckets": ["Agent", "Environment", "Reward", "Episode"],
+      "items": [
+        { "t": "The policy deciding how to swing the arm next", "b": 0 },
+        { "t": "The simulated table, target, and arm's physics", "b": 1 },
+        { "t": "+1 when the hand gets closer to the target", "b": 2 },
+        { "t": "One attempt: start → reach → reset, capped at 5 seconds", "b": 3 }
+      ],
+      "constraints": ["All 4 placed", "Every match correct"],
+      "hints": [
+        "The AGENT decides; the ENVIRONMENT reacts and scores.",
+        "The REWARD is the number; the EPISODE is one whole try from start to reset."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "In RL, which part DECIDES the action, and which part JUDGES it?",
+      "sub": "Two halves of every RL loop. Don't mix them up.",
+      "options": [
+        { "t": "The environment decides the action; the agent judges it." },
+        { "t": "The agent decides the action; the environment returns the new state and the reward." },
+        { "t": "The reward decides the action; the episode judges it." }
+      ],
+      "correct": 1,
+      "why": "The agent (the policy) is the decider — it chooses the action. The environment is the judge and the world — it applies the action, evolves the physics, and hands back the new state plus a reward. Reward and episode are pieces the environment produces, not deciders.",
+      "hints": [
+        "Which part has the 'brain' that picks a move? That's the decider.",
+        "Which part is the world that reacts and hands back a score? That's the judge."
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the steps of one turn of the RL loop in order — then it repeats.",
+      "sub": "This little cycle runs over and over within every episode.",
+      "chips": [
+        "Environment returns the new state + a reward",
+        "Agent observes the current state",
+        "Agent picks an action (joint torques)",
+        "Agent updates itself to earn more reward next time"
+      ],
+      "correct": [1, 2, 0, 3],
+      "constraints": ["Loop order is correct"],
+      "hints": [
+        "It has to SEE the situation before it can choose a move.",
+        "Observe → act → get the score → learn from it, then loop."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Watch a real run. Walk a hopping robot through its first few RL turns.",
+      "sub": "At each turn, pick the move that fits how RL learns. The log fills in as you go.",
+      "goal": "Learn to hop forward without falling. Reward = +1 per cm moved forward, big penalty for falling.",
+      "turns": [
+        { "situation": "Episode 1 begins. The robot stands at the start, knowing nothing about hopping.",
+          "q": "What does the agent do on its very first move?",
+          "options": ["Try a roughly-random action and see what reward comes back", "Refuse to move until an engineer types the perfect hop", "Copy a YouTube video of a kangaroo"],
+          "correct": 0, "log": "🧠 Agent → tries a random-ish leg push." },
+        { "situation": "The push made it lurch forward 3 cm, then it wobbled but stayed up.",
+          "q": "The environment now responds. What does it hand back?",
+          "options": ["A new state (robot tilted, moved 3 cm) plus reward +3", "Nothing — RL gives no feedback", "The exact correct next action to take"],
+          "correct": 0, "log": "🌍 Environment → new state + reward +3" },
+        { "situation": "It got +3 for that push. A different jerky move earlier had given it -10 (a fall).",
+          "q": "What does the agent do with these two results?",
+          "options": ["Shift toward moves like the +3 one, away from the -10 one", "Ignore the rewards and keep acting randomly forever", "Quit, because one move already worked"],
+          "correct": 0, "log": "📈 Agent updates → favor +3 push, avoid the fall." },
+        { "situation": "This attempt ends — it fell after 8 cm. Time and progress logged.",
+          "q": "One try is over. What happens next in RL?",
+          "options": ["Reset to the start and run another episode, a bit smarter", "Stop forever — RL trains on a single attempt", "Keep the robot frozen where it fell"],
+          "correct": 0, "log": "🔁 Episode ends → reset → Episode 2 (slightly better)." }
+      ],
+      "hints": [
+        "RL learns by trying, scoring, and adjusting — over MANY episodes.",
+        "Higher reward = do more of that. Lower reward = do less of that."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Quick myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "In RL, an engineer hand-writes the correct action for every situation.", "answer": false,
+          "why": "No — that's the whole point of RL. The robot discovers good actions by trial-and-error guided by reward, instead of being told each move." },
+        { "t": "An episode is one full attempt, after which the robot resets and tries again.", "answer": true,
+          "why": "Right — an episode runs from start until success, failure, or time-out, then resets. Learning happens across thousands of episodes." },
+        { "t": "Reward is feedback the environment gives back, not a command the agent sends out.", "answer": true,
+          "why": "Correct — the agent sends an action; the environment sends back the new state and a reward number. Reward flows toward the agent." },
+        { "t": "The agent and the environment are just two names for the same thing.", "answer": false,
+          "why": "No — they're two halves. The agent is the decider (the policy); the environment is the world that reacts and scores. Keeping them separate is key to understanding RL." }
+      ],
+      "hints": [
+        "Recall the loop: observe → act → get reward → update.",
+        "Who decides, and who judges? Those are two different parts."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. It helps us frame RL in something you'd actually want to teach a robot.",
+      "fields": [
+        { "k": "interest", "label": "Name one motor skill you'd want a robot to learn by trial-and-error (pull from a hobby or your work):", "ph": "e.g. balance on a skateboard / pour a coffee without spilling / climb stairs" },
+        { "k": "goal", "label": "For that skill, what single number would you reward to push it in the right direction?", "ph": "e.g. +1 per second balanced, big penalty if it tips over" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

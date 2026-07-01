@@ -1,0 +1,142 @@
+{
+  "course_id": "agentic",
+  "name": "Building Agentic AI Systems",
+  "order": [
+    "agent_loop",
+    "agent_vs_chatbot",
+    "llm_core",
+    "tool_is_fn",
+    "tool_schema",
+    "tool_boundary",
+    "context_limit",
+    "memory_types",
+    "rag",
+    "decomposition",
+    "react",
+    "self_correction",
+    "stopping",
+    "handoffs",
+    "orchestrator",
+    "evaluation",
+    "guardrails",
+    "cost"
+  ],
+  "assessments": {
+    "2": {
+      "title": "What an Agent Is",
+      "url": "https://lms.trigunai.com/lesson/what-is-an-agent"
+    },
+    "3": {
+      "title": "Tool Use",
+      "url": "https://lms.trigunai.com/lesson/first-tool-calling-agent"
+    },
+    "4": {
+      "title": "Memory & Context",
+      "url": "https://lms.trigunai.com/lesson/memory-and-context"
+    },
+    "5": {
+      "title": "Planning & Multi-step",
+      "url": "https://lms.trigunai.com/lesson/planning-and-multi-step"
+    },
+    "7": {
+      "title": "Multi-Agent Systems",
+      "url": "https://lms.trigunai.com/lesson/multi-agent-systems"
+    },
+    "8": {
+      "title": "Reliability & Guardrails",
+      "url": "https://lms.trigunai.com/lesson/reliability-and-guardrails"
+    }
+  },
+  "concepts": {
+    "agent_loop": {
+      "module": 2,
+      "recall": "No peeking \u2014 name the 4 steps of the agent loop, in order.",
+      "answer": "perceive \u2192 decide \u2192 act \u2192 observe, then loop"
+    },
+    "agent_vs_chatbot": {
+      "module": 2,
+      "recall": "In one line: what makes an agent different from a chatbot?",
+      "answer": "an agent ACTS via tools, observes the result, and loops; a chatbot just replies"
+    },
+    "llm_core": {
+      "module": 2,
+      "recall": "What is the LLM's job inside an agent?",
+      "answer": "it's the reasoning core \u2014 it decides the next action; your code executes it"
+    },
+    "tool_is_fn": {
+      "module": 3,
+      "recall": "When a model 'uses a tool', whose code actually runs the function?",
+      "answer": "YOUR code runs it; the model only requests the call"
+    },
+    "tool_schema": {
+      "module": 3,
+      "recall": "What part of a tool makes the model decide WHEN to use it?",
+      "answer": "the tool's description / schema"
+    },
+    "tool_boundary": {
+      "module": 3,
+      "recall": "Where do agents fail most, and how do you design for it?",
+      "answer": "at the tool boundary \u2014 wrap calls, return a clean error string the model can read, retry"
+    },
+    "context_limit": {
+      "module": 4,
+      "recall": "Why does an agent 'forget' earlier steps \u2014 what's the limit called?",
+      "answer": "the finite context window; old turns fall out"
+    },
+    "memory_types": {
+      "module": 4,
+      "recall": "Short-term vs long-term memory in an agent \u2014 what goes in each?",
+      "answer": "short = this task's turns; long = facts/preferences persisted across tasks"
+    },
+    "rag": {
+      "module": 4,
+      "recall": "What does RAG do for an agent?",
+      "answer": "retrieves only the relevant chunks (vector search) and feeds them into context"
+    },
+    "decomposition": {
+      "module": 5,
+      "recall": "What does planning let an agent do that a single call can't?",
+      "answer": "break a big goal into sub-steps, execute them, and re-plan"
+    },
+    "react": {
+      "module": 5,
+      "recall": "What is the ReAct / plan-execute loop?",
+      "answer": "reason \u2192 act \u2192 observe the result \u2192 reason again"
+    },
+    "self_correction": {
+      "module": 5,
+      "recall": "How does a good agent self-correct mid-task?",
+      "answer": "it observes the failed result and re-plans instead of charging ahead"
+    },
+    "stopping": {
+      "module": 5,
+      "recall": "Two ways to stop an agent loop safely?",
+      "answer": "a done-condition + a max_turns cap"
+    },
+    "handoffs": {
+      "module": 7,
+      "recall": "Why split work across multiple agents?",
+      "answer": "specialised roles do their part better; an orchestrator routes between them"
+    },
+    "orchestrator": {
+      "module": 7,
+      "recall": "What does an orchestrator do in a multi-agent system?",
+      "answer": "routes work to the right worker agent and manages handoffs"
+    },
+    "evaluation": {
+      "module": 8,
+      "recall": "How do you actually KNOW an agent works (not just in the demo)?",
+      "answer": "an eval harness \u2014 test cases scored automatically, not vibes"
+    },
+    "guardrails": {
+      "module": 8,
+      "recall": "Name two production guardrails an agent needs.",
+      "answer": "input validation, output checks, retries, cost caps"
+    },
+    "cost": {
+      "module": 8,
+      "recall": "What drives an agent's cost, and one way to cut it?",
+      "answer": "tokens \u00d7 turns; trim context / cache / fewer loops / cheaper model"
+    }
+  }
+}

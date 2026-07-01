@@ -1,0 +1,150 @@
+{
+  "slug": "swe-hld",
+  "title": "High-Level Design foundations",
+  "steps": [
+    { "type": "intro",
+      "art": "🔗 → 🌐",
+      "prompt": "\"Design a URL shortener.\"",
+      "sub": "It sounds small — until the interviewer adds 'for a billion links and 100M reads a second.' By the end of this you'll have the HLD frame in your pocket: clarify, estimate, then reach for caching, the right database, load balancing — and explain the CAP tradeoff without sweating.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "Interviewer: 'design Twitter's feed.' What do you do BEFORE drawing a single box?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Draw the whole architecture from memory as fast as possible." },
+        { "t": "Clarify functional + non-functional requirements, then ESTIMATE the scale — reads/sec, writes/sec, storage." },
+        { "t": "Pick a database and start there." }
+      ],
+      "correct": 1,
+      "why": "Every strong HLD answer opens the same way: nail the requirements (what must it do? how fast? how available?), then do back-of-envelope math — 'say 100M daily users, ~10 reads each = ~1B reads/day ≈ ~12K reads/sec.' Those numbers DRIVE every later decision. Drawing boxes before estimating is the surest way to over- or under-build.",
+      "hints": [
+        "Boxes are downstream of numbers. What must you know first?",
+        "The opening move is always: requirements, then a scale estimate."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The HLD building blocks you'll wire together.",
+      "sub": "Tap each card — these five cover most system-design rounds.",
+      "cards": [
+        { "em": "⚖️", "h": "Load Balancer", "b": "Sits in front, spreads traffic across servers. L4 = fast, transport-level (IP/port). L7 = smarter, reads the request (route by URL/header)." },
+        { "em": "⚡", "h": "Cache", "b": "Keeps hot data in memory (Redis). Turns a 50ms DB read into a sub-ms hit. The cheapest way to 10× read latency." },
+        { "em": "🗄️", "h": "Database", "b": "The source of truth. SQL for structured + transactions; NoSQL for scale + flexible schema. Shard it when one box can't hold the data." },
+        { "em": "📬", "h": "Message Queue", "b": "Decouples services. Producer drops a job, consumer picks it up later — absorbs spikes, lets things run async." },
+        { "em": "🌍", "h": "CDN", "b": "Caches static content (images, JS) at edge locations near users — cuts latency and offloads your origin servers." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Your reads are hammering the database and latency is climbing. What's the cheapest fix that buys the biggest win?",
+      "sub": "This is the move interviewers expect you to reach for instantly.",
+      "options": [
+        { "t": "Buy a much bigger database server." },
+        { "t": "Add a cache (e.g. Redis) in front for hot reads — most requests hit memory, the DB only sees misses." },
+        { "t": "Rewrite the app in a faster language." }
+      ],
+      "correct": 1,
+      "why": "Caching is the highest-leverage move for read-heavy systems. A read-through / cache-aside layer absorbs the popular queries in memory, so the DB load drops dramatically and latency goes sub-millisecond on hits. You then mention an eviction policy (LRU/LFU) and how you handle stale data — that depth is what scores.",
+      "hints": [
+        "Read-heavy + slow DB → what layer sits between app and DB?",
+        "It keeps hot data in memory so most reads never touch the database."
+      ] },
+
+    { "type": "classify",
+      "prompt": "SQL or NoSQL? Sort each requirement by what it pushes you toward.",
+      "sub": "Tap an item, then a bin. The deciding question: do you need transactions + structure, or scale + flexibility?",
+      "buckets": ["🧮 Lean SQL", "📦 Lean NoSQL"],
+      "items": [
+        { "t": "bank transfers that must never lose money (ACID transactions)", "b": 0 },
+        { "t": "a billion flexible, ever-changing user-activity events", "b": 1 },
+        { "t": "strong relationships + complex JOINs across tables", "b": 0 },
+        { "t": "massive horizontal scale across many cheap nodes", "b": 1 },
+        { "t": "a strict, well-known schema that rarely changes", "b": 0 },
+        { "t": "a schema that varies per document and evolves fast", "b": 1 }
+      ],
+      "constraints": ["All 6 sorted", "Every one correct"],
+      "hints": [
+        "Need ACID, JOINs, a fixed schema? That's classic SQL territory.",
+        "Need to scale out horizontally with flexible, changing data? NoSQL."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "CAP — the tradeoff you'll be asked to defend.",
+      "sub": "Tap each card. The trick: CAP only bites DURING a network partition.",
+      "cards": [
+        { "em": "🧩", "h": "C — Consistency", "b": "Every read sees the latest write. All nodes agree right now." },
+        { "em": "🟢", "h": "A — Availability", "b": "Every request gets a (non-error) response, even if it might be slightly stale." },
+        { "em": "✂️", "h": "P — Partition tolerance", "b": "The system keeps working when the network splits nodes apart. On a distributed system, partitions WILL happen — so P is non-negotiable." },
+        { "em": "⚖️", "h": "The real choice", "b": "Since P is forced, the actual decision under a partition is C vs A. Banking → pick C. Social feed → pick A (a slightly stale tweet is fine)." }
+      ] },
+
+    { "type": "tf",
+      "prompt": "HLD myth-check — true or false?",
+      "sub": "Tap True or False for each, then check.",
+      "statements": [
+        { "t": "You can have all three of Consistency, Availability, and Partition tolerance at the same time.", "answer": false,
+          "why": "No — CAP says pick 2 of 3. In a distributed system partitions are unavoidable (P is forced), so the genuine choice under a partition is C vs A." },
+        { "t": "Estimating QPS and storage early helps you justify every later design choice.", "answer": true,
+          "why": "Right — the numbers tell you whether you need sharding, how big the cache should be, how many servers. Estimation is the backbone of a credible HLD answer." },
+        { "t": "A cache makes writes faster.", "answer": false,
+          "why": "Mostly no — caches primarily speed up READS. Writes still go to the source of truth, and you must decide write-through vs write-back and how to invalidate stale cache entries." },
+        { "t": "An L7 load balancer can route requests based on the URL path or headers.", "answer": true,
+          "why": "Yes — L7 operates at the application layer, so it can read the request and route '/images/*' to one pool and '/api/*' to another. L4 only sees IP/port." }
+      ],
+      "hints": [
+        "CAP forces a choice — you don't get all three.",
+        "Caches help the read path; writes are a separate concern."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Design the URL shortener live. Make each call as the interviewer probes.",
+      "sub": "Goal stays on screen. Pick the move that shows HLD judgment.",
+      "goal": "Shorten 1B URLs; handle 100M redirects/sec, mostly reads.",
+      "turns": [
+        { "situation": "Interviewer: 'where do you start?'",
+          "q": "Your opening move?",
+          "options": ["Clarify scope + estimate: read:write ratio, storage for 1B URLs", "Draw five servers immediately", "Pick MongoDB and move on"],
+          "correct": 0, "log": "📐 Estimate → heavy reads, ~100:1 read:write, ~ a few TB storage." },
+        { "situation": "Reads massively outnumber writes. The DB alone can't take 100M reads/sec.",
+          "q": "What do you add to the read path?",
+          "options": ["A cache (Redis) for hot short-codes, in front of the DB", "More columns on the table", "Nothing — let the DB handle it"],
+          "correct": 0, "log": "⚡ Cache layer → most redirects served from memory." },
+        { "situation": "Traffic comes from one big region; one app server is saturating.",
+          "q": "What sits in front of your app servers?",
+          "options": ["A load balancer spreading traffic across many servers", "A single bigger server", "A second copy of the database only"],
+          "correct": 0, "log": "⚖️ Load balancer → traffic spread across the fleet." },
+        { "situation": "Interviewer: 'a network partition hits between data centers. Stale redirect or downtime?'",
+          "q": "What's your CAP call here, and why?",
+          "options": ["Favour Availability — a slightly stale redirect beats a dead link", "Favour Consistency and return errors during the partition", "Refuse to answer — CAP is theoretical"],
+          "correct": 0, "log": "✅ Chose A over C: a stale-but-working redirect is the right tradeoff for this product." }
+      ],
+      "hints": [
+        "Numbers first, then cache, then load balancing, then defend the CAP call.",
+        "For a redirect service, 'always works, maybe slightly stale' beats 'down'."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "AI drafts you a full HLD diagram in one shot. What's the operator's job under interview pressure?",
+      "sub": "The agent can draw boxes. It can't own the tradeoffs.",
+      "options": [
+        { "t": "Read the diagram back word for word — it's already complete." },
+        { "t": "Pressure-test it: do the estimates support this? where's the bottleneck? what's the CAP call? — and defend each choice as YOUR reasoning." },
+        { "t": "Add every component you can think of to look thorough." }
+      ],
+      "correct": 1,
+      "why": "AI gives you a plausible diagram; it doesn't give you judgment. The interviewer is testing whether YOU understand why each box is there, where it breaks at scale, and which tradeoffs you accepted. Your value is the reasoning — stress-test the agent's draft against the numbers and own the answer.",
+      "hints": [
+        "A diagram isn't an argument. What does the interviewer actually grade?",
+        "Every box needs a 'because the estimate says…' behind it."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Tie HLD to the role you want.",
+      "fields": [
+        { "k": "interest", "label": "Pick a product you'd love to reverse-engineer as HLD practice:", "ph": "e.g. WhatsApp, Uber, YouTube, a ticket-booking site" },
+        { "k": "goal", "label": "Which HLD building block do you most want to get fluent in first?", "ph": "e.g. caching, sharding databases, the CAP tradeoff, load balancing" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "course_id": "ai-music-factory",
+  "name": "Build Your AI Music Factory",
+  "order": ["music_stack","prompt_to_music","lyrics_to_song","music_styles","ai_singer","mixing","mastering","focus_audio","copyright_clean_music","deliver_music"],
+  "assessments": {},
+  "concepts": {
+    "music_stack":         {"module":1,"hook":"From a single prompt to a finished, mastered track — what does the pipeline do?","recall":"What does an AI music pipeline do?","answer":"prompt/lyrics -> generate audio -> mix -> master -> a finished track"},
+    "prompt_to_music":     {"module":2,"hook":"Vague prompt = generic track. How do you steer the model?","recall":"How do you steer an AI music model?","answer":"a prompt describing style/genre/mood/instruments/BPM (+ optional lyrics)"},
+    "lyrics_to_song":      {"module":3,"hook":"You wrote lyrics. How do they become an actually-sung track?","recall":"How do you turn your lyrics into a sung song?","answer":"feed lyrics + a style to a vocal-capable model (e.g. ACE-Step) and it sings them"},
+    "music_styles":        {"module":4,"hook":"One engine, many genres. Name a few you can make.","recall":"Name a few makeable styles.","answer":"songs, beats, lofi, ambient, focus/study, 432Hz meditation, ghazal"},
+    "ai_singer":           {"module":5,"hook":"Want one consistent voice across all your tracks? Build your own ___.","recall":"How do you build your own AI singer?","answer":"voice conversion (RVC) — train a voice model and apply it to the generated vocals"},
+    "mixing":              {"module":6,"hook":"All the parts exist but it sounds muddy. What step fixes the balance?","recall":"What is mixing?","answer":"balancing levels / EQ / panning of the parts into one coherent track"},
+    "mastering":           {"module":7,"hook":"Your track is quiet next to Spotify songs. What's the final polish?","recall":"What is mastering, and why?","answer":"final loudness / EQ / limiting so it sounds pro + consistent across devices"},
+    "focus_audio":         {"module":8,"hook":"Focus + meditation music hides a trick beat under the melody. What?","recall":"What are isochronic / binaural tones for?","answer":"rhythmic tones (beta/alpha/theta) layered in to aid focus or relaxation"},
+    "copyright_clean_music":{"module":9,"hook":"You want to monetize every track with zero takedown risk. What makes that safe?","recall":"Why 'copyright-clean', and how?","answer":"a permissively-licensed model (e.g. ACE-Step, MIT) so every track is safe to monetize"},
+    "deliver_music":       {"module":10,"hook":"The track's done in the studio. What's the final output?","recall":"Final output of the pipeline?","answer":"a mastered MP3/WAV ready to publish"}
+  }
+}

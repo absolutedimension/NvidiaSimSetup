@@ -1,0 +1,150 @@
+{
+  "slug": "vrg-mechanic",
+  "title": "Core mechanic & physics",
+  "steps": [
+    { "type": "intro",
+      "art": "🤜 → 🏐",
+      "prompt": "What makes grabbing a thing FEEL real?",
+      "sub": "Every great game has one central verb — grab, throw, slice, climb. In VR that verb has to feel real, and that feeling comes from the physics engine. By the end you'll name your game's core verb and know why a thrown object flies right.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "Beat Saber, Job Simulator, Gorilla Tag — each is built around ONE main action. What's that called?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "The graphics style" },
+        { "t": "The core mechanic — the central verb the whole game is built around" },
+        { "t": "The menu system" }
+      ],
+      "correct": 1,
+      "why": "The core mechanic is the one repeated action the game is designed around: slice in Beat Saber, grab-and-use in Job Simulator, climb in Gorilla Tag. Nail that one verb and the game has a spine; everything else hangs off it.",
+      "hints": [
+        "Beat Saber = slice. Gorilla Tag = climb. What category is that?",
+        "It's a verb, not a look — the thing the player does over and over."
+      ] },
+
+    { "type": "classify",
+      "prompt": "Each VR game, one core verb. Sort each game to its main mechanic.",
+      "sub": "Tap a game, then the verb that defines it.",
+      "buckets": ["🗡️ Slice", "🤲 Grab & use", "🧗 Climb"],
+      "items": [
+        { "t": "Beat Saber", "b": 0 },
+        { "t": "Fruit Ninja VR", "b": 0 },
+        { "t": "Job Simulator", "b": 1 },
+        { "t": "Cooking sim where you pick up pans", "b": 1 },
+        { "t": "Gorilla Tag", "b": 2 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Ask: what is your HAND mostly doing in this game?",
+        "Slicing cuts through things; grabbing picks up and uses; climbing pulls you up surfaces."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Why a thrown ball flies right: 2 physics parts.",
+      "sub": "Tap each. These two are what make objects feel real instead of floaty.",
+      "cards": [
+        { "em": "⚖️", "h": "Rigidbody", "b": "Tells Unity 'this object obeys physics': it has mass, gravity pulls it, and it keeps your hand's velocity when you let go — so it actually flies." },
+        { "em": "🧱", "h": "Collider", "b": "The invisible shape Unity uses to detect contact — so the ball BOUNCES off the wall instead of passing through it." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "You grab a ball and throw it — but it just drops straight down instead of flying. What's most likely wrong?",
+      "sub": "Think about which physics piece carries the throw.",
+      "options": [
+        { "t": "The collider is too big" },
+        { "t": "The ball has no Rigidbody, so it never picked up your hand's velocity when released" },
+        { "t": "The headset frame rate is too high" }
+      ],
+      "correct": 1,
+      "why": "A throw works because the Rigidbody inherits your hand's velocity at the moment of release and carries it forward. With no Rigidbody (or with it frozen), there's nothing to remember the throw — it just falls. The collider only handles contact, not flight.",
+      "hints": [
+        "What gives an object velocity and mass when you let go?",
+        "A collider decides what it hits. Something else decides how it MOVES."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Rigidbody vs collider — true or false?",
+      "sub": "Tap each, then check all at once.",
+      "statements": [
+        { "t": "A collider is what lets two objects detect that they've touched.", "answer": true,
+          "why": "Yes — colliders are the contact shapes. No collider, no collision: objects slide through each other like ghosts." },
+        { "t": "A Rigidbody is what makes an object obey gravity and keep momentum.", "answer": true,
+          "why": "Right — the Rigidbody hands the object over to the physics engine, so gravity pulls it and a throw carries velocity." },
+        { "t": "You should move a physics object by directly setting its position every frame.", "answer": false,
+          "why": "No — fighting the physics engine by teleporting position causes jitter and tunneling. Let the Rigidbody move it, or push it with forces/velocity, so collisions stay believable." }
+      ],
+      "hints": [
+        "One part is about CONTACT, the other is about MOTION.",
+        "If you teleport a physics object every frame, what happens when it should have bounced?"
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the steps of a grab-and-throw in the order they happen.",
+      "sub": "This is the lifecycle of your core mechanic, one toss start to finish.",
+      "chips": [
+        "Release: hand velocity transfers to the Rigidbody → it flies",
+        "Hand collider overlaps the ball + trigger pressed",
+        "While held: the ball follows the hand each frame",
+        "Ball's collider hits the wall → it bounces"
+      ],
+      "correct": [1, 2, 0, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "First the hand has to actually reach and grab the ball.",
+        "Grab → hold → release → impact. The bounce comes after it's flying."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk through a single throw in a VR basketball game.",
+      "sub": "Pick the next move at each step. The physics log fills in as you go.",
+      "goal": "Throw the ball so it arcs and bounces off the backboard.",
+      "turns": [
+        { "situation": "The player's hand reaches the ball and presses the grip button.",
+          "q": "What should happen on grab?",
+          "options": ["Attach the ball to the hand so it follows each frame", "Immediately launch the ball forward", "Disable the ball's collider permanently"],
+          "correct": 0, "log": "🤲 Grab → ball parented to hand, following" },
+        { "situation": "The player swings their arm forward fast and releases the grip.",
+          "q": "On release, what makes it actually fly?",
+          "options": ["Transfer the hand's current velocity to the ball's Rigidbody", "Set the ball's position to the hoop instantly", "Freeze the Rigidbody so it can't move"],
+          "correct": 0, "log": "🚀 Release → hand velocity → Rigidbody, ball arcs" },
+        { "situation": "The ball is mid-air, arcing toward the backboard. Gravity is pulling it down.",
+          "q": "What keeps the arc looking real?",
+          "options": ["The Rigidbody + gravity integrate motion every physics step", "The game pauses until the ball lands", "Render skips the ball to save frames"],
+          "correct": 0, "log": "⚖️ Flight → gravity + momentum each step" },
+        { "situation": "The ball reaches the backboard.",
+          "q": "What detects and resolves the hit?",
+          "options": ["The ball's collider meets the backboard's collider → bounce", "Nothing — it passes through the board", "The throw is cancelled"],
+          "correct": 0, "log": "🧱 Collide → bounce off backboard" }
+      ],
+      "hints": [
+        "Grab attaches, release transfers velocity, gravity arcs it, colliders bounce it.",
+        "The throw 'works' only because the Rigidbody remembered how fast your hand was moving."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Your sword passes straight through the enemy instead of hitting it. Both have Rigidbodies. What's the likely fix?",
+      "sub": "Reason from what each physics part does.",
+      "options": [
+        { "t": "Add or fix the colliders so contact is actually detected" },
+        { "t": "Increase the sword's mass to 1000" },
+        { "t": "Lower the frame rate" }
+      ],
+      "correct": 0,
+      "why": "Rigidbodies give objects motion, but COLLIDERS are what register the touch. If the sword phases through, the contact shapes are missing, wrong-sized, or set to non-colliding — fix the colliders, not the mass or frame rate.",
+      "hints": [
+        "Motion is fine — it's the TOUCH that isn't registering.",
+        "Which part is the invisible contact shape?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours — pin down YOUR core mechanic.",
+      "sub": "Not graded. We'll build the rest of the course around this one verb.",
+      "fields": [
+        { "k": "goal", "label": "Your game's ONE core verb (the action repeated most):", "ph": "e.g. throw, slice, grab-and-stack, shoot a bow, deflect" },
+        { "k": "interest", "label": "Name one object that verb acts on, and one thing it should collide with:", "ph": "e.g. throw a knife (object) that sticks into a wooden target (collider)" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

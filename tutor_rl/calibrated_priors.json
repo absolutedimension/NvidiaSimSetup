@@ -1,0 +1,48 @@
+{
+  "source": "acharya_real_aggregate",
+  "generated_from": "2026-06-29T14:47:49.380Z",
+  "n_students": 7,
+  "fields": {
+    "misconception_candidates": {
+      "misunderstanding of o(n) vs o(n\u00b2)": 0.14285714285714285,
+      "meaning of constants in big-o notation": 0.14285714285714285,
+      "understanding nested loops in big-o notation": 0.14285714285714285,
+      "confusion about the exact computation time vs growth estimation": 0.14285714285714285,
+      "confusion about the impact of i/o operations on big-o classification": 0.14285714285714285,
+      "confusion regarding nested loops resulting in o(n\u00b2) instead of o(n)": 0.14285714285714285,
+      "philosophical interpretation of big-o notation": 0.14285714285714285,
+      "confusion related to big-o for nested loops with different inputs versus the sam": 0.14285714285714285,
+      "assuming all ai-generated music is copyright-free without checking licensing.": 0.14285714285714285,
+      "not understanding that different voice styles can change the emotional impact of": 0.14285714285714285,
+      "failing to recognize the importance of balancing visuals with audio in a devotio": 0.14285714285714285,
+      "overlooking the need for clarity in spoken meanings to effectively convey messag": 0.14285714285714285,
+      "neglecting to consider the cultural significance of music elements in devotional": 0.14285714285714285,
+      "believing that any music style can work uniformly for all types of shlokas.": 0.14285714285714285,
+      "not realizing the significance of voice clarity and pacing in conveying the mean": 0.14285714285714285,
+      "making music too cinematic and drowning the shloka.": 0.14285714285714285,
+      "chasing maximum loudness rather than clarity and warmth in devotional content.": 0.14285714285714285,
+      "overlooking the need to lower music during spoken content to maintain focus.": 0.14285714285714285,
+      "assuming all music with a traditional style is automatically copyright-clear.": 0.14285714285714285,
+      "using vague prompts for music production instead of clear, detailed instructions": 0.14285714285714285,
+      "underestimating the importance of using clear pronunciation when chanting or nar": 0.14285714285714285,
+      "neglecting to ensure the audio quality is consistent across recordings.": 0.14285714285714285,
+      "not prioritizing creating and publishing content over achieving perfection.": 0.14285714285714285,
+      "failing to adequately space audio elements for more impactful delivery.": 0.14285714285714285,
+      "overlooking the need for consistent visual themes throughout video productions.": 0.14285714285714285,
+      "misunderstanding the importance of music dynamics in creating a meditative atmos": 0.14285714285714285,
+      "not ensuring that the background music is appropriately soft during narrations.": 0.14285714285714285,
+      "not fully grasping the importance of testing audio quality on different platform": 0.14285714285714285,
+      "failing to maintain consistent volume across various segments.": 0.14285714285714285,
+      "neglecting to review the clarity of chanting and understanding of meanings in pu": 0.14285714285714285,
+      "overlooking the importance of feedback and audience reception in content iterati": 0.14285714285714285,
+      "not clarifying what file names represent in the video creation process.": 0.14285714285714285,
+      "assuming that using advanced editing tools like premiere pro is necessary for qu": 0.14285714285714285
+    },
+    "srs_mean_box": 0.0,
+    "engagement": {
+      "streak_mean": 14.428571428571429,
+      "streak_max": 60,
+      "active_days_mean": 2.092560841049383
+    }
+  }
+}

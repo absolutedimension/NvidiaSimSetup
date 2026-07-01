@@ -1,0 +1,144 @@
+{
+  "slug": "vid-captions",
+  "title": "Word-synced kinetic captions",
+  "steps": [
+    { "type": "intro",
+      "art": "🔇 → 🔤",
+      "prompt": "Most viewers watch with the sound OFF. So what keeps them watching?",
+      "sub": "A wall of static subtitles is easy to ignore. Captions that light up word-by-word, in time with the voice, pull the eye along. By the end you'll know why they boost watch-time — and how to do them right.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "What makes a caption \"kinetic\" instead of a plain subtitle?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "It's a big block of all the scene's text, shown the whole time." },
+        { "t": "Each word highlights exactly as it's spoken, so the eye follows the voice in real time." },
+        { "t": "It's the same subtitle file you'd burn into a DVD." }
+      ],
+      "correct": 1,
+      "why": "Kinetic = moving with the voice. Instead of a static block you read once and tune out, the current word lights up the instant it's spoken. That live sync is what holds a muted viewer's attention through the whole scene.",
+      "hints": [
+        "\"Kinetic\" means moving. What's moving here?",
+        "A static block you read in one second. A word-by-word highlight you follow for the whole line."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Why word-synced captions earn their place.",
+      "sub": "Tap each card. Three reasons they're worth the extra step.",
+      "cards": [
+        { "em": "🔇", "h": "Muted viewers", "b": "On phones, most feeds autoplay silent. Captions ARE your narration for them." },
+        { "em": "👀", "h": "Retention", "b": "The highlight gives the eye something to track, so people stay through the scene instead of swiping." },
+        { "em": "♿", "h": "Accessibility", "b": "Deaf and hard-of-hearing viewers, and anyone in a noisy place, can follow every word." },
+        { "em": "⏱️", "h": "Synced to the voice", "b": "Timing comes from the narration audio — each word appears exactly when it's said." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Caption choices: which help retention, which hurt it?",
+      "sub": "Tap a choice, then the bin.",
+      "buckets": ["✅ Helps watch-time", "❌ Hurts watch-time"],
+      "items": [
+        { "t": "Highlighting the current word as it's spoken", "b": 0 },
+        { "t": "Dumping a whole paragraph on screen at once", "b": 1 },
+        { "t": "1–4 words on screen at a time, kept in sync", "b": 0 },
+        { "t": "Tiny text crammed into the very bottom edge", "b": 1 }
+      ],
+      "constraints": ["All 4 sorted", "Every one correct"],
+      "hints": [
+        "What can a thumb-scrolling viewer actually read in half a second?",
+        "If they have to pause and squint, you've lost them. Big, short, synced wins."
+      ] },
+
+    { "type": "order",
+      "prompt": "Order the steps to produce word-synced captions.",
+      "sub": "Tap them first to last.",
+      "chips": ["Generate the narration audio from the script", "Get per-word timestamps from the audio", "Style the caption (big, readable, on-brand)", "Render captions burned onto the video, synced to those timestamps"],
+      "correct": [0, 1, 2, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't time captions to a voice that doesn't exist yet.",
+        "Timestamps come from the audio; styling and rendering come after you know the timing."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Add captions to a finished scene.",
+      "sub": "You have narration + visuals. Pick the next move to get captions that lift retention.",
+      "goal": "Produce word-synced captions that hold muted viewers.",
+      "turns": [
+        { "situation": "You have narration.wav: \"Stop charging overnight. It quietly kills your battery.\" No captions yet.",
+          "q": "First thing you need before you can sync anything?",
+          "options": ["Per-word timestamps from the audio", "A louder music bed", "A different font, picked at random"],
+          "correct": 0, "log": "⏱️ Timestamps → \"Stop\"@0.0s \"charging\"@0.4s …" },
+        { "situation": "You have a timestamp for every word. Now you decide how text appears.",
+          "q": "Which layout holds a muted phone viewer best?",
+          "options": ["The whole sentence as a tiny block, full duration", "1–4 big words at a time, the current one highlighted", "No captions — the visuals are enough"],
+          "correct": 1, "log": "🔤 Style → 2-3 big words, current word highlighted" },
+        { "situation": "Words pop on screen, but they all appear at once instead of in time.",
+          "q": "What's broken, and what fixes it?",
+          "options": ["Bind each word's appearance to its timestamp", "Make the font bigger and ignore timing", "Speed up the whole video"],
+          "correct": 0, "log": "🔗 Sync → each word lights up as it's spoken" },
+        { "situation": "Captions now track the voice perfectly, big and readable.",
+          "q": "Why does this version keep viewers longer?",
+          "options": ["It gives the eye a moving target and serves the muted majority", "It makes the file larger", "It hides the visuals"],
+          "correct": 0, "log": "✅ Word-synced captions → retention up" }
+      ],
+      "hints": [
+        "Order: timestamps → style → sync → render.",
+        "The win is a moving highlight that muted viewers can follow word by word."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Caption myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "Captions only matter for accessibility, not for views.", "answer": false,
+          "why": "False — accessibility is one real reason, but the bigger commercial reason is that most feed views are muted. Captions are your narration for them, and they directly raise retention." },
+        { "t": "Word-by-word highlighting gives the eye a moving target that holds attention.", "answer": true,
+          "why": "True — a static block gets read once and ignored; a live highlight keeps pulling the eye along with the voice, scene after scene." },
+        { "t": "Caption timing should come from the narration audio.", "answer": true,
+          "why": "True — per-word timestamps from the audio are what let each word appear exactly when it's spoken. Eyeballing the timing drifts out of sync." },
+        { "t": "Cramming the full paragraph on screen is fine as long as it's readable.", "answer": false,
+          "why": "False — a wall of text gets skimmed and tuned out. A few big words at a time, synced and highlighted, is what actually holds people." }
+      ],
+      "hints": [
+        "Think about how YOU watch a feed with the sound off.",
+        "Sync comes from the audio; less text on screen reads faster."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Two creators post the same 30-second tip. One uses static subtitles, one uses word-synced kinetic captions. The kinetic one gets noticeably higher average watch-time. Why?",
+      "sub": "Pick the best explanation.",
+      "options": [
+        { "t": "Kinetic captions make the audio louder." },
+        { "t": "The moving highlight keeps muted viewers actively reading instead of swiping away." },
+        { "t": "The algorithm just prefers fancier effects." }
+      ],
+      "correct": 1,
+      "why": "It's not magic or volume — it's attention. Most of those views are silent, and a live word-by-word highlight gives the eye a reason to stay on each beat. Static subtitles get glanced at once; kinetic ones are followed the whole way through.",
+      "hints": [
+        "The audio is identical in both. So it's not about sound.",
+        "What does a moving highlight do for a viewer who can't hear it?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours — your caption style.",
+      "sub": "Not graded. We'll use this to suggest a caption look for your channel.",
+      "fields": [
+        { "k": "interest", "label": "Where will most of your views happen (muted-heavy or sound-on)?", "ph": "e.g. Instagram Reels (muted) / a podcast clips channel" },
+        { "k": "goal", "label": "Your caption vibe in a few words (color, size, energy):", "ph": "e.g. big bold white, yellow highlight, punchy" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Tap ALL the things that make captions boost watch-time.",
+      "sub": "Some of these feel right but actually drag retention down. Pick only the helpers.",
+      "chips": ["Word-by-word highlighting", "Timing pulled from the narration audio", "A few big words at a time", "Readable size and placement", "A full paragraph shown at once", "Tiny text jammed at the screen edge"],
+      "correct": [0, 1, 2, 3],
+      "why": "Retention comes from a live highlight, timing taken from the audio, short bursts of big readable text. A full paragraph or tiny edge text both make viewers skim and swipe.",
+      "hints": [
+        "Recall the cards: muted viewers, retention, accessibility, synced.",
+        "If it makes a muted phone viewer squint or stop reading, it hurts watch-time."
+      ] },
+
+    { "type": "done" }
+  ]
+}

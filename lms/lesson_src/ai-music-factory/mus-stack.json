@@ -1,0 +1,143 @@
+{
+  "slug": "mus-stack",
+  "title": "The AI music stack",
+  "steps": [
+    { "type": "intro",
+      "art": "💬 → 🎚️ → 🎧",
+      "prompt": "How does a sentence become a finished song?",
+      "sub": "You type \"upbeat lofi for studying\" and out comes a real, polished track. That's not one button — it's a small assembly line. By the end of this you'll know every stage, what each one does, and why the order matters.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "First instinct — what does an AI music pipeline actually do?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Plays back songs that already exist, like a streaming app." },
+        { "t": "Takes your prompt or lyrics, generates audio, then mixes and masters it into a finished track." },
+        { "t": "Records you singing and auto-tunes your voice." }
+      ],
+      "correct": 1,
+      "why": "A music pipeline starts from your intent (a prompt and/or lyrics), generates raw audio, then cleans it up through mixing and mastering — ending in a finished, shippable track. It isn't a player (no new audio is made) and it isn't a vocal recorder (you don't sing into it).",
+      "hints": [
+        "Two of these only handle audio that already exists. Which one creates new audio AND finishes it?",
+        "Think 'factory line', not 'play button'. What comes IN, what comes OUT?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The 4 stages of the stack.",
+      "sub": "Tap each card. These four turn an idea into a track you can publish.",
+      "cards": [
+        { "em": "📝", "h": "Prompt / Lyrics", "b": "Your intent in words: style, genre, mood, BPM — plus optional lyrics to be sung." },
+        { "em": "🎼", "h": "Generate", "b": "The model turns that intent into raw audio — vocals and/or instruments." },
+        { "em": "🎚️", "h": "Mix", "b": "Balance the parts: levels, EQ, panning — so nothing is muddy or buried." },
+        { "em": "📈", "h": "Master", "b": "Final loudness + polish so it sounds pro and consistent on every device." }
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the 4 stages in the order they run.",
+      "sub": "Each stage feeds the next — get the order wrong and you're polishing nothing.",
+      "chips": ["Mix the parts into a balanced track", "Write the prompt / lyrics", "Master for final loudness & polish", "Generate the raw audio"],
+      "correct": [1, 3, 0, 2],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't generate audio before you've told it what you want.",
+        "Mastering is the LAST polish — it only makes sense after the parts are already mixed."
+      ] },
+
+    { "type": "classify",
+      "prompt": "Which stage owns each job?",
+      "sub": "Tap an item, then tap the stage it belongs to.",
+      "buckets": ["📝 Prompt/Lyrics", "🎼 Generate", "🎚️ Mix", "📈 Master"],
+      "items": [
+        { "t": "\"Dreamy 90 BPM lofi, mellow, rainy mood\"", "b": 0 },
+        { "t": "Model produces a 2-minute raw audio file", "b": 1 },
+        { "t": "Turn the bass down so it stops drowning the vocal", "b": 2 },
+        { "t": "Push the whole track to -9 LUFS so it's as loud as Spotify songs", "b": 3 },
+        { "t": "Words the singer should actually sing", "b": 0 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Anything you write in WORDS before any audio exists is the prompt/lyrics stage.",
+        "'Balance the parts' = mix. 'Final loudness for every device' = master."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Why split 'mix' and 'master' into two stages instead of one?",
+      "sub": "They sound similar but do different jobs.",
+      "options": [
+        { "t": "There's no real difference — it's just two names for the same step." },
+        { "t": "Mixing balances the parts WITHIN the track; mastering polishes the FINISHED track as a whole for loudness and consistency across devices." },
+        { "t": "Mixing is for vocals and mastering is only for instruments." }
+      ],
+      "correct": 1,
+      "why": "Mixing works inside the song — getting drums, bass and vocals to sit together. Mastering treats the already-mixed song as one finished object and makes it loud, even, and consistent whether it plays on earbuds, a phone speaker, or a car. Different scope, different goal — that's why they're separate.",
+      "hints": [
+        "One stage looks at the PARTS inside the song. The other looks at the WHOLE finished song.",
+        "Which step is about 'sounds pro on every device'?"
+      ] },
+
+    { "type": "tf",
+      "prompt": "Quick check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "The same engine and pipeline can make a song, a lofi beat, or focus music — only the prompt changes.", "answer": true,
+          "why": "Yes — the stages stay the same; you steer the output by changing what you ask for. One factory, many products." },
+        { "t": "If you skip mastering, your track will play just as loud as commercial songs.", "answer": false,
+          "why": "No — without mastering your track is usually quieter and less consistent, so it feels weak next to mastered Spotify tracks. Mastering is the loudness/polish step." },
+        { "t": "The output of the pipeline is a finished audio file (like an MP3 or WAV) ready to publish.", "answer": true,
+          "why": "Right — that finished, mastered file is the whole point. Everything before it exists to produce it." }
+      ],
+      "hints": [
+        "Think about why 'one engine, many genres' is a selling point.",
+        "Mastering is the loudness step — what happens to volume if you skip it?"
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk one idea through the whole stack.",
+      "sub": "Pick the next move at each stage. The log fills in as you go.",
+      "goal": "Turn \"calm piano study music\" into a finished, shippable track.",
+      "turns": [
+        { "situation": "You have an idea in your head: calm piano music for studying. Nothing exists yet.",
+          "q": "What's the FIRST thing the pipeline needs?",
+          "options": ["A prompt describing the style, mood and BPM", "Start mastering immediately", "Mix the parts that don't exist yet"],
+          "correct": 0, "log": "📝 Prompt → \"calm solo piano, 70 BPM, study mood\"" },
+        { "situation": "The prompt is set. The model is ready to run.",
+          "q": "What happens next?",
+          "options": ["Generate the raw audio from the prompt", "Publish it to Spotify already", "Write more lyrics"],
+          "correct": 0, "log": "🎼 Generate → raw 2-min piano audio" },
+        { "situation": "You have raw audio, but the low piano notes feel boomy and uneven.",
+          "q": "Which stage fixes the balance?",
+          "options": ["Mix — EQ and level the parts so it sits cleanly", "Master — that's only for final loudness", "Re-write the prompt from scratch"],
+          "correct": 0, "log": "🎚️ Mix → tame the boomy lows, even out levels" },
+        { "situation": "It's mixed and clean, but quiet compared to other study playlists.",
+          "q": "Last stage — what makes it match commercial loudness on every device?",
+          "options": ["Master — final loudness and polish", "Generate it again", "Stop, it's already done"],
+          "correct": 0, "log": "📈 Master → bring to target loudness · ✅ finished track" }
+      ],
+      "hints": [
+        "Follow the four stages in order: prompt → generate → mix → master.",
+        "'Balance the parts' is mixing. 'Match commercial loudness' is mastering."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Picture the FIRST track you'd build with this factory — we'll keep coming back to it.",
+      "fields": [
+        { "k": "goal", "label": "In one line — the track you want to make first:", "ph": "e.g. an upbeat lofi beat for my YouTube intros" },
+        { "k": "why", "label": "Who's it for / where would it play?", "ph": "e.g. background music for my coding streams" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Build the definition: tap ALL the stages of the AI music stack.",
+      "sub": "Some of these sound musical but aren't stages of THIS pipeline. Pick only the real ones.",
+      "chips": ["Prompt / lyrics", "Generate audio", "Mix", "Master", "Buy a microphone", "Hire a session drummer"],
+      "correct": [0, 1, 2, 3],
+      "why": "The stack is Prompt/Lyrics → Generate → Mix → Master. A microphone or a session drummer belong to traditional recording — the whole point here is that the model generates the audio for you, so neither is part of the pipeline.",
+      "hints": [
+        "Think back to the 4 cards you opened.",
+        "Anything that involves recording real people is NOT part of this generate-it-with-AI stack."
+      ] },
+
+    { "type": "done" }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "slug": "swe-lld",
+  "title": "Low-Level Design essentials",
+  "steps": [
+    { "type": "intro",
+      "art": "🅿️ → 🧩",
+      "prompt": "\"Design a parking lot.\"",
+      "sub": "The interviewer says five words and goes quiet. No spec, no schema — just you and a whiteboard. By the end of this you'll turn a vague prompt into clean classes, lean on SOLID so a senior nods instead of flinches, and pick the one or two design patterns that actually earn their place.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "First move when you hear 'design a parking lot' — what do you do BEFORE writing any class?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Immediately write a ParkingLot class with 200 lines." },
+        { "t": "Ask clarifying questions: vehicle types? multiple floors? how do we charge? — then list the nouns that become your classes." },
+        { "t": "Pick a design pattern first and bend the problem to fit it." }
+      ],
+      "correct": 1,
+      "why": "LLD starts with requirements, not code. Clarify the scope (motorbikes vs trucks? hourly vs flat fee? multiple entrances?), then pull the NOUNS out of the problem — ParkingLot, Level, Spot, Vehicle, Ticket. Nouns become classes; verbs become methods. Jumping to code or forcing a pattern is the junior tell.",
+      "hints": [
+        "A senior never writes code on assumptions. What comes before the first class?",
+        "In the problem statement, the nouns are your candidate classes."
+      ] },
+
+    { "type": "classify",
+      "prompt": "From the parking-lot prompt, sort each word: is it a CLASS (noun) or a BEHAVIOUR (method)?",
+      "sub": "Tap an item, then a bin. This is how you decompose any vague LLD prompt.",
+      "buckets": ["🧱 Class (a noun)", "⚙️ Behaviour (a method)"],
+      "items": [
+        { "t": "Vehicle", "b": 0 },
+        { "t": "park a car", "b": 1 },
+        { "t": "ParkingSpot", "b": 0 },
+        { "t": "calculate the fee", "b": 1 },
+        { "t": "Ticket", "b": 0 },
+        { "t": "find the nearest free spot", "b": 1 }
+      ],
+      "constraints": ["All 6 sorted", "Every one correct"],
+      "hints": [
+        "If you can hold it as a 'thing' in the system, it's a class.",
+        "If it's an action the system DOES, it's a method on some class."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "SOLID — five rules a senior reads your design against.",
+      "sub": "Tap each card. You don't need to recite them; you need to FEEL when one is broken.",
+      "cards": [
+        { "em": "🎯", "h": "S — Single Responsibility", "b": "One class, one reason to change. A Ticket holds ticket data; it doesn't ALSO charge the credit card. Split those." },
+        { "em": "🔓", "h": "O — Open/Closed", "b": "Open to extend, closed to modify. Add a new vehicle type without editing existing parking logic — add a subclass, don't touch the old code." },
+        { "em": "🔁", "h": "L — Liskov Substitution", "b": "A subclass must work anywhere its parent does. If Truck breaks code that expected a Vehicle, your hierarchy is lying." },
+        { "em": "✂️", "h": "I — Interface Segregation", "b": "Small, focused interfaces. Don't force an ElectricSpot to implement methods it doesn't use. Many thin interfaces beat one fat one." },
+        { "em": "🔌", "h": "D — Dependency Inversion", "b": "Depend on abstractions, not concretes. PaymentProcessor depends on a PaymentMethod interface, not on 'Visa' directly — so you can swap in PayPal." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "AI generates: Vehicle → Car → SportsCar → RedSportsCar → RedSportsCarWith20InchRims. A senior engineer winces. Which principle is screaming?",
+      "sub": "This is the most common LLD smell AI produces.",
+      "options": [
+        { "t": "Single Responsibility — the class does too much." },
+        { "t": "Open/Closed plus 'composition over inheritance' — a deep, rigid inheritance tree is fragile; model the variations as DATA/components, not subclasses." },
+        { "t": "Liskov Substitution — the red car can't replace the blue one." }
+      ],
+      "correct": 1,
+      "why": "Deep inheritance is brittle: every new combination (colour × engine × rims) spawns a new class, and changing the base ripples everywhere. The senior fix is composition — a Car HAS a Colour, HAS an Engine, HAS Wheels. You compose features as fields instead of exploding the hierarchy. 'Composition over inheritance' is the single most useful LLD instinct.",
+      "hints": [
+        "Count the layers. What happens when you add one more variation?",
+        "Should 'red' and '20-inch rims' be SUBCLASSES, or just fields the object HAS?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The handful of design patterns that actually earn their place.",
+      "sub": "Tap each. AI loves pattern-soup; you bring the few that solve a real problem.",
+      "cards": [
+        { "em": "🔀", "h": "Strategy", "b": "Swap an algorithm at runtime. A FeeCalculator with an HourlyStrategy or a FlatStrategy — pick the behaviour without if/else sprawl." },
+        { "em": "🏭", "h": "Factory", "b": "Centralise object creation. A VehicleFactory turns a string ('truck') into the right object, so creation logic lives in ONE place." },
+        { "em": "📡", "h": "Observer", "b": "Pub-sub. When a spot frees up, notify the display board and the app — without the spot knowing who's listening." },
+        { "em": "🧩", "h": "Singleton", "b": "Exactly one instance. The ParkingLot manager — one source of truth. Use sparingly; it's easy to abuse." },
+        { "em": "🎁", "h": "Decorator", "b": "Wrap an object to add behaviour. Add 'reserved' or 'EV charging' to a base Spot without subclassing every combination." }
+      ] },
+
+    { "type": "tf",
+      "prompt": "LLD myth-check — true or false?",
+      "sub": "Tap True or False for each, then check.",
+      "statements": [
+        { "t": "The more design patterns you cram into the answer, the more senior you look.", "answer": false,
+          "why": "No — pattern-soup is a junior tell. Seniors use the FEWEST patterns that solve the real problem and can justify each one. An unjustified Singleton hurts you." },
+        { "t": "'Composition over inheritance' means prefer HAS-A relationships over deep IS-A trees.", "answer": true,
+          "why": "Right — a Car HAS an Engine is more flexible than a deep SportsCar-extends-Car-extends-Vehicle chain. Composition keeps the design bendable." },
+        { "t": "A class that both stores order data AND sends emails violates Single Responsibility.", "answer": true,
+          "why": "Yes — two reasons to change (data shape changes, email system changes) means two responsibilities. Split into Order and an EmailService." },
+        { "t": "You should design the full database schema before defining any classes in an LLD round.", "answer": false,
+          "why": "No — LLD is about classes, responsibilities, and relationships. Schema is a detail that follows. Start from nouns → classes → methods → interactions." }
+      ],
+      "hints": [
+        "Think about what makes a senior FLINCH versus nod.",
+        "Single Responsibility = one reason to change per class."
+      ] },
+
+    { "type": "order",
+      "prompt": "Put the LLD answer flow in the order a senior runs it.",
+      "sub": "Same skeleton works for parking lot, elevator, vending machine — anything.",
+      "chips": ["Clarify requirements + scope", "Pull out the core classes (nouns)", "Define each class's responsibilities + methods", "Apply a pattern only where it removes real pain", "Check the design against SOLID"],
+      "correct": [0, 1, 2, 3, 4],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't name classes until you know what's in scope.",
+        "Patterns and the SOLID review come AFTER you have classes with responsibilities."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Mid-interview, AI gives you a clean-looking parking-lot design. What's the operator's job before you present it?",
+      "sub": "The agent wrote the code. You still own the answer.",
+      "options": [
+        { "t": "Read it aloud verbatim — it's already clean." },
+        { "t": "Verify the responsibilities are split (SOLID), the inheritance isn't too deep, and every pattern it used is justified — then present it as YOUR design with reasons." },
+        { "t": "Ask AI to add three more patterns to look impressive." }
+      ],
+      "correct": 1,
+      "why": "In the AI era, the agent drafts; you direct and verify. You scan for SRP violations, over-deep inheritance, and unjustified patterns — then you OWN the design by explaining the tradeoffs out loud. The interviewer is buying your judgment, not the agent's typing speed.",
+      "hints": [
+        "Clean-looking ≠ defensible. What's your review checklist?",
+        "You must be able to JUSTIFY every class and pattern as if you wrote it."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Tie LLD to your own job hunt.",
+      "fields": [
+        { "k": "interest", "label": "Name a system you actually use daily — we'll use it as your LLD practice prompt:", "ph": "e.g. Spotify, an ATM, an elevator, a food-delivery app" },
+        { "k": "goal", "label": "What's the one LLD smell you'll now watch for in AI's code?", "ph": "e.g. deep inheritance, a class doing two jobs, unjustified patterns" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "course_id": "vr-game",
+  "name": "Build a Fully Immersive VR Game",
+  "order": ["vr_game_setup","game_loop","core_mechanic","physics_interaction","enemy_ai","game_feel","spawning_levels","game_audio","score_save","vr_game_perf","ship_vr_game"],
+  "assessments": {},
+  "concepts": {
+    "vr_game_setup":     {"module":1,"hook":"Before any gameplay, what's the base you build a VR game on?","recall":"What's the base for a VR game in Unity?","answer":"Unity + Meta XR SDK + an XR rig + a game loop"},
+    "game_loop":         {"module":1,"hook":"Every game is one thing repeated 72 times a second. What?","recall":"What is the game loop?","answer":"the per-frame cycle of input -> update -> render"},
+    "core_mechanic":     {"module":2,"hook":"Every great game has ONE central verb. What's a 'mechanic'?","recall":"What is a core game mechanic?","answer":"the central repeated action the game is built around (grab, shoot, climb...)"},
+    "physics_interaction":{"module":2,"hook":"Why does grabbing and throwing feel real in a good VR game?","recall":"Why does physics matter in a VR game?","answer":"grab/throw/collide feel real when driven by the physics engine (rigidbodies + colliders)"},
+    "enemy_ai":          {"module":3,"hook":"An enemy that just stands there is boring. How do you give it 'intelligence'?","recall":"How do simple enemy AIs work?","answer":"a state machine (idle -> chase -> attack) + pathfinding toward the player"},
+    "game_feel":         {"module":4,"hook":"Two games, identical rules — one feels amazing, one flat. What's the difference?","recall":"What is 'game feel' / juice?","answer":"feedback polish — hit-stop, particles, haptics, sound, shake — that makes actions satisfying"},
+    "spawning_levels":   {"module":5,"hook":"How do you fill a level with enemies/items that scale in difficulty?","recall":"How do you build levels / spawn content?","answer":"prefabs + spawners + a difficulty curve across levels"},
+    "game_audio":        {"module":6,"hook":"Mute a great VR game and it dies. Why?","recall":"Role of audio + spatial sound in a VR game?","answer":"spatial SFX + music drive immersion and tell the player what's happening"},
+    "score_save":        {"module":7,"hook":"A high score nobody can beat tomorrow is no fun. How do you keep it?","recall":"How do you persist score/progress?","answer":"PlayerPrefs / JSON + a scoring system saved across sessions"},
+    "vr_game_perf":      {"module":8,"hook":"A laggy VR game makes players sick. What's the bar?","recall":"Performance target for a VR game?","answer":"hold 72fps — batch draw calls, optimize textures + poly count"},
+    "ship_vr_game":      {"module":9,"hook":"It's fun and runs well — now get it to players. How?","recall":"How do you ship a VR game?","answer":"Meta dev account, signed APK, store listing, submit for review"}
+  }
+}

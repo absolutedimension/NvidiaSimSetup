@@ -1,0 +1,140 @@
+{
+  "slug": "vrg-loop",
+  "title": "Setup & the game loop",
+  "steps": [
+    { "type": "intro",
+      "art": "🎮 → 🔁",
+      "prompt": "What actually runs a VR game?",
+      "sub": "Before any sword-swinging or spell-casting, every VR game is the same tiny cycle repeated 72 times a second. By the end you'll know the base you build on and be able to trace one frame from controller to headset.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "You open Unity to start a VR game. What's the very first base you need before any gameplay?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "A finished 3D level with enemies already placed" },
+        { "t": "Unity + the Meta XR SDK + an XR rig (a camera + hands that follow the headset)" },
+        { "t": "A multiplayer server so friends can join" }
+      ],
+      "correct": 1,
+      "why": "The base is Unity (the engine), the Meta XR SDK (the bridge to the Quest's tracking), and an XR rig — a camera and hand objects that move with the real headset and controllers. Levels, enemies, and multiplayer all come later and need this base to even render.",
+      "hints": [
+        "You can't place enemies in a world the headset can't see yet. What lets Unity talk to the Quest?",
+        "Think 'engine + the SDK that reads the headset + the rig that becomes your eyes and hands'."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The base of a VR game has 3 layers.",
+      "sub": "Tap each card. These three stack up before you write a line of gameplay.",
+      "cards": [
+        { "em": "🛠️", "h": "Unity", "b": "The game engine — it renders 3D, runs physics, and calls your code every frame." },
+        { "em": "🥽", "h": "Meta XR SDK", "b": "The bridge to the Quest: head & hand tracking, controller buttons, the VR display." },
+        { "em": "🧍", "h": "XR rig", "b": "A camera that is your eyes + two hand objects that follow your real controllers in the scene." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Sort each piece: is it part of the BASE you set up first, or GAMEPLAY you add later?",
+      "sub": "Tap an item, then a bin.",
+      "buckets": ["🧱 Base (set up first)", "🎯 Gameplay (later)"],
+      "items": [
+        { "t": "Install the Meta XR SDK", "b": 0 },
+        { "t": "Add an XR rig (camera + hands)", "b": 0 },
+        { "t": "Make a sword you can grab", "b": 1 },
+        { "t": "Spawn waves of zombies", "b": 1 },
+        { "t": "Set the Unity project to Android / Quest", "b": 0 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "If the headset couldn't even render without it, it's base.",
+        "A sword and zombies are fun stuff — but they need the rig and SDK to exist first."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Now the heart of it: a VR game is really ONE thing repeated ~72 times a second. What is that one thing called?",
+      "sub": "This repeated cycle is the engine's heartbeat.",
+      "options": [
+        { "t": "The render pipeline" },
+        { "t": "The game loop — input → update → render, once per frame" },
+        { "t": "The physics solver" }
+      ],
+      "correct": 1,
+      "why": "The game loop is the per-frame cycle: read input, update the world, draw it. Unity runs it for you — your Update() code is one slice of it. Rendering and physics are steps INSIDE the loop, not the loop itself.",
+      "hints": [
+        "It's the whole cycle, not one stage of it.",
+        "Input, then update the world, then draw — over and over. What's the name for that cycle?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "One frame = three jobs.",
+      "sub": "Tap each. This trio runs every single frame.",
+      "cards": [
+        { "em": "🎮", "h": "Input", "b": "Read the headset pose and controllers: where are the hands, is the trigger held?" },
+        { "em": "⚙️", "h": "Update", "b": "Move the world: physics steps, enemy AI thinks, your grabbed sword follows your hand." },
+        { "em": "🖼️", "h": "Render", "b": "Draw the scene twice — once per eye — and send it to the headset display." }
+      ] },
+
+    { "type": "order",
+      "prompt": "Tap the 3 jobs in the order they run in a single frame.",
+      "sub": "Then the whole thing repeats next frame.",
+      "chips": ["Render the scene to both eyes", "Read input (head + hands)", "Update the world (physics, AI, logic)"],
+      "correct": [1, 2, 0],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't move the world based on a trigger press you haven't read yet.",
+        "Sense first, then change the world, then show the result. Input → update → render."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk one frame through the loop — the player flicks their wrist to swing a sword.",
+      "sub": "Pick the next move at each step. The frame log fills in as you go.",
+      "goal": "Render one correct frame at 72fps while the player swings.",
+      "turns": [
+        { "situation": "A new frame begins. The player has moved their controller and is holding the trigger.",
+          "q": "What does the loop do FIRST?",
+          "options": ["Read input: new hand position + trigger held", "Render last frame's image again", "Decide the game is over"],
+          "correct": 0, "log": "🎮 Input → hand moved, trigger = held" },
+        { "situation": "It now knows the hand's new position and that the sword is grabbed.",
+          "q": "What's next, before anything is drawn?",
+          "options": ["Update: move the sword to follow the hand, run physics", "Render immediately with the old sword position", "Read input a second time"],
+          "correct": 0, "log": "⚙️ Update → sword follows hand, physics steps" },
+        { "situation": "The world is now up to date for this instant — sword in its new pose.",
+          "q": "What's the last job of this frame?",
+          "options": ["Render the scene to both eyes and show it", "Skip drawing to save time", "Wait for the next button press"],
+          "correct": 0, "log": "🖼️ Render → drawn per-eye, sent to headset" },
+        { "situation": "The frame is done in under ~13.9 ms (the budget for 72fps).",
+          "q": "What happens now?",
+          "options": ["Loop again → start the next frame's input", "Stop the game", "Render the same frame forever"],
+          "correct": 0, "log": "🔁 Loop → next frame begins" }
+      ],
+      "hints": [
+        "Same order every frame: input → update → render.",
+        "72fps means each full loop must finish in about 13.9 milliseconds."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Frame-rate myth-check — true or false?",
+      "sub": "Tap each, then check all at once.",
+      "statements": [
+        { "t": "If a frame takes too long, the headset drops below 72fps and players can feel sick.", "answer": true,
+          "why": "Right — VR is unforgiving. Miss the ~13.9 ms frame budget and the world judders, which causes real motion sickness. Holding 72fps is a hard requirement, not a nice-to-have." },
+        { "t": "You write the game loop yourself with a giant while(true).", "answer": false,
+          "why": "No — Unity owns the loop. You hook into it by putting code in Update() (and FixedUpdate() for physics). Unity calls those for you every frame." },
+        { "t": "Input always has to be read before you update the world for that frame.", "answer": true,
+          "why": "Yes — you can't move the sword to follow a hand you haven't read yet. Input feeds update, update feeds render." }
+      ],
+      "hints": [
+        "Think about why a stutter in VR feels so much worse than on a flat screen.",
+        "Who actually calls Update() — you, or the engine?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours — picture YOUR VR game.",
+      "sub": "Not graded. We'll use this to shape examples around the game you actually want to build.",
+      "fields": [
+        { "k": "goal", "label": "In one line, what's the VR game you want to build?", "ph": "e.g. a bow-and-arrow castle defense / a zero-gravity ping-pong / a kitchen where you cook under pressure" },
+        { "k": "interest", "label": "What's the ONE thing the player does most in it?", "ph": "e.g. shoot arrows, throw, slice, dodge, climb" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

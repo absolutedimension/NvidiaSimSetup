@@ -1,0 +1,147 @@
+{
+  "slug": "swe-complexity",
+  "title": "Complexity & the operator's eye",
+  "steps": [
+    { "type": "intro",
+      "art": "🐢 → 🐇",
+      "prompt": "How fast is this code, really?",
+      "sub": "AI hands you a 'clever' solution in three seconds. Looks fine. Runs on the example. But will it survive a million-row input — or quietly time out? By the end of this you'll read the cost off any solution at a glance, and catch O(n²) wearing a clever disguise.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "First instinct — what does Big-O actually measure?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "How many seconds the code takes to run on your laptop." },
+        { "t": "How the work (time or memory) GROWS as the input gets bigger." },
+        { "t": "How many lines of code the solution has." }
+      ],
+      "correct": 1,
+      "why": "Big-O is about GROWTH, not stopwatch seconds. Your laptop's speed, the language, the weather — none of that matters. O(n) means 'double the input, roughly double the work.' O(n²) means 'double the input, 4× the work.' That shape is what decides whether you survive a million rows.",
+      "hints": [
+        "Two of these depend on your specific machine or your typing. Big-O ignores both.",
+        "It answers: when the input gets 10× bigger, how much MORE work happens?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The five costs you'll meet 95% of the time.",
+      "sub": "Tap each card. Memorise the shape, not the math.",
+      "cards": [
+        { "em": "⚡", "h": "O(1) — constant", "b": "Same work no matter the size. Hash-map lookup, array index. The dream." },
+        { "em": "🪵", "h": "O(log n) — logarithmic", "b": "Halve the problem each step. Binary search on a sorted array. A million items → ~20 steps." },
+        { "em": "📋", "h": "O(n) — linear", "b": "Touch each item once. A single for-loop over the input. Usually 'good enough'." },
+        { "em": "🔀", "h": "O(n log n) — linearithmic", "b": "The speed limit for sorting/comparison. A clean nested-ish solution. This is your target on most array problems." },
+        { "em": "🐌", "h": "O(n²) — quadratic", "b": "A loop INSIDE a loop over the same data. Fine for n=100, a disaster at n=1,000,000. The classic interview trap." }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Read each code shape — which cost is it?",
+      "sub": "Tap an item, then a bin. This is the operator's core reflex.",
+      "buckets": ["O(n) linear", "O(n²) quadratic", "O(log n) / O(n log n)"],
+      "items": [
+        { "t": "one for-loop summing every element once", "b": 0 },
+        { "t": "a for-loop, and inside it ANOTHER for-loop over the same array", "b": 1 },
+        { "t": "binary search: halve the range each step", "b": 2 },
+        { "t": "scan the array once, storing seen values in a hash set", "b": 0 },
+        { "t": "for each element, scan all the others to find a pair", "b": 1 },
+        { "t": "sort the array, then walk it once", "b": 2 }
+      ],
+      "constraints": ["All 6 sorted", "Every one correct"],
+      "hints": [
+        "A loop nested inside another loop over the SAME n is the quadratic tell.",
+        "Sorting is O(n log n). 'Halve it each step' is the log signature."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "AI gives you this for 'find the two numbers that sum to target': for each number, loop through all the others looking for its partner. It passes the example. Your move?",
+      "sub": "You're the operator reviewing the agent's work.",
+      "options": [
+        { "t": "Ship it — it returns the correct answer on the test case." },
+        { "t": "Flag it: that's a loop-in-a-loop, O(n²). Ask for a hash-map version that's O(n)." },
+        { "t": "Rewrite the whole thing in a faster language." }
+      ],
+      "correct": 1,
+      "why": "Correctness on one example is the floor, not the finish line. 'For each, scan the rest' is the textbook O(n²) pattern. The operator's move: recognise it instantly and redirect — 'use a hash set of seen values, check target − x in one pass.' That's O(n). Same answer, survives a million inputs.",
+      "hints": [
+        "Correct ≠ efficient. What's the COST shape of 'for each, scan all the others'?",
+        "A 'have I seen its partner?' question is exactly what a hash set makes O(1)."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Operator myth-check — true or false?",
+      "sub": "Tap True or False for each, then check all at once.",
+      "statements": [
+        { "t": "O(2n) and O(n) are treated as the same complexity.", "answer": true,
+          "why": "Yes — Big-O drops constant factors. 2n, 5n, 100n are all O(n). We care about the SHAPE of growth, not the multiplier." },
+        { "t": "An O(n²) solution is always too slow to use.", "answer": false,
+          "why": "No — for small, bounded n (say n ≤ 1000) O(n²) is perfectly fine and often simpler. The danger is only when n can be large. Knowing the input size is part of the judgment." },
+        { "t": "Time complexity is the only thing that matters; you can ignore memory.", "answer": false,
+          "why": "No — space complexity counts too. The hash-map trick trades O(n) extra memory for speed. Interviewers love asking 'can you do it with O(1) space?'" },
+        { "t": "On a sorted input, you should suspect a faster-than-linear solution exists.", "answer": true,
+          "why": "Right — 'sorted' is a giant hint. It usually unlocks binary search O(log n) or two-pointers O(n), beating the brute-force O(n²)." }
+      ],
+      "hints": [
+        "Big-O keeps the growth shape and throws away constants.",
+        "Think about WHEN a slow-looking solution is actually acceptable."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk a real review: AI just sent you a solution. Decide each move.",
+      "sub": "You're under interview pressure. The interviewer is watching you read the cost.",
+      "goal": "Approve only an efficient, correct solution to 'does this array have any duplicates?'",
+      "turns": [
+        { "situation": "AI's first attempt: two nested loops comparing every pair of elements.",
+          "q": "What do you say out loud first?",
+          "options": ["\"This is O(n²) — for each element it scans the rest. Let's improve it.\"", "\"Looks great, ship it.\"", "\"Add more comments and we're done.\""],
+          "correct": 0, "log": "🔍 Spotted: nested loops over same array → O(n²)." },
+        { "situation": "You ask for a better approach. The interviewer nods.",
+          "q": "What do you direct the agent toward?",
+          "options": ["A hash set: add each element, return true the moment you see a repeat", "Sorting it three times to be safe", "A bigger machine"],
+          "correct": 0, "log": "🧠 Direct → 'use a seen-set, O(n) time, O(n) space.'" },
+        { "situation": "AI returns the hash-set version. It passes the example.",
+          "q": "Before approving, what's your last check?",
+          "options": ["Confirm the complexity AND an edge case (empty array, all-same)", "Nothing — it passed the example", "Ask it to rewrite in assembly"],
+          "correct": 0, "log": "✅ O(n) verified + edge cases checked. Approved." }
+      ],
+      "hints": [
+        "The operator names the cost before touching the keyboard.",
+        "Final gate = complexity is right AND the edge cases hold."
+      ] },
+
+    { "type": "order",
+      "prompt": "Put the operator's review loop in order.",
+      "sub": "This is the habit that makes you look senior in any interview.",
+      "chips": ["Read the code and name its Big-O", "Decide if that cost is acceptable for the input size", "Direct a faster approach if it's not", "Verify correctness + edge cases before approving"],
+      "correct": [0, 1, 2, 3],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "You can't judge 'acceptable' until you've named the cost.",
+        "Naming the cost comes first; verifying correctness is the final gate."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Why must YOU read the complexity off the agent's code, instead of trusting it?",
+      "sub": "This is the whole reason complexity still matters in the AI era.",
+      "options": [
+        { "t": "Because AI never writes correct code." },
+        { "t": "Because AI optimises for 'looks plausible and passes the example' — it'll happily hand you an O(n²) solution dressed as clever, and only your eye catches it before it ships." },
+        { "t": "Because reading Big-O is required by company policy." }
+      ],
+      "correct": 1,
+      "why": "AI is a fast, confident pattern-matcher — not a guarantee of efficiency. It often produces correct-but-slow code that sails through the happy path. In the interview AND on the job, you are the reviewer: the value you add is the eye that reads the cost and redirects. That's the operator's mindset this whole course is built on.",
+      "hints": [
+        "Think about what 'passes the example' does and doesn't prove.",
+        "If AI writes the code, what is the human now paid to do?"
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. Tie this to the remote SWE job you're chasing.",
+      "fields": [
+        { "k": "goal", "label": "What kind of remote SWE role are you targeting (so we tune examples to it)?", "ph": "e.g. backend Python, full-stack React, data engineering" },
+        { "k": "stop", "label": "Write your one-line complexity reflex — the question you'll ask of every AI solution from now on:", "ph": "e.g. \"What's the Big-O, and is that OK for my input size?\"" }
+      ] },
+
+    { "type": "done" }
+  ]
+}

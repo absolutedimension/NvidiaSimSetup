@@ -1,0 +1,153 @@
+{
+  "slug": "ml-embeddings",
+  "title": "Meaning: embeddings & vector space",
+  "steps": [
+    { "type": "intro",
+      "art": "👑 − 👨 + 👩 ≈ 👸",
+      "prompt": "How can a machine 'know' that king − man + woman ≈ queen?",
+      "sub": "The trick: turn meaning into geometry. Every word, image, or product becomes a point in space, and similar things sit close together. By the end you'll understand embeddings, similarity, and how vector search finds 'the closest meaning'.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "What is an embedding?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "A picture of a word." },
+        { "t": "A vector (list of numbers) that holds a thing's meaning as a position in space." },
+        { "t": "A dictionary definition stored as text." }
+      ],
+      "correct": 1,
+      "why": "An embedding turns a word/image/user into a list of numbers placed in space, where the POSITION carries meaning. 'Cat' and 'kitten' land close; 'cat' and 'asteroid' land far. It's not a picture or a text definition — it's geometry, so math can compare meanings.",
+      "hints": [
+        "It's the same 'list of numbers placed in space' idea from the vectors lesson.",
+        "What carries the meaning — the letters, or the position in space?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Why meaning-as-geometry is magic.",
+      "sub": "Tap each card.",
+      "cards": [
+        { "em": "📍", "h": "Position = meaning", "b": "Each thing is a point. WHERE it sits encodes what it means — learned from how words are used together." },
+        { "em": "📐", "h": "Closeness = similarity", "b": "Two points near each other mean similar things. 'Tea' sits near 'coffee', far from 'bicycle'." },
+        { "em": "➕", "h": "Directions = relationships", "b": "The 'arrow' from man→woman is the same gender direction as king→queen. So king − man + woman lands near queen." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "In embedding space, what does it MEAN that two points are close together?",
+      "sub": "Closeness has a meaning here.",
+      "options": [
+        { "t": "The two things are spelled similarly." },
+        { "t": "The two things have similar meaning." },
+        { "t": "The two things were added on the same day." }
+      ],
+      "correct": 1,
+      "why": "Distance encodes meaning, not spelling. 'Cat' and 'kitten' sit close (similar meaning) even though spelled differently; 'cat' and 'cot' are spelled alike but land far apart. That's the whole point — geometry tracks meaning.",
+      "hints": [
+        "Would 'cat' and 'kitten' be close because of spelling, or meaning?",
+        "'Cat' and 'cot' look alike but mean very different things. Which wins — letters or meaning?"
+      ] },
+
+    { "type": "classify",
+      "prompt": "Near or far? Sort each pair in embedding space.",
+      "sub": "Tap a pair, then a bin.",
+      "buckets": ["🤝 Close (similar)", "↔️ Far (unrelated)"],
+      "items": [
+        { "t": "'dog' and 'puppy'", "b": 0 },
+        { "t": "'Paris' and 'France'", "b": 0 },
+        { "t": "'banana' and 'spreadsheet'", "b": 1 },
+        { "t": "'happy' and 'joyful'", "b": 0 },
+        { "t": "'guitar' and 'thermostat'", "b": 1 }
+      ],
+      "constraints": ["All 5 sorted", "Every one correct"],
+      "hints": [
+        "Do the two words show up in similar contexts / mean related things?",
+        "Synonyms and tightly-related pairs sit close; random unrelated pairs sit far."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk the famous analogy: king − man + woman ≈ ?",
+      "sub": "Think in directions (arrows) between points.",
+      "goal": "Solve king − man + woman using embedding directions.",
+      "turns": [
+        { "situation": "Start at the point for 'king'.",
+          "q": "First we subtract 'man'. What does removing the 'man' direction strip away?",
+          "options": ["The maleness — leaving roughly 'royalty'", "The royalty — leaving 'man'", "Nothing changes"],
+          "correct": 0, "log": "📒 king − man ≈ 'royalty', gender removed" },
+        { "situation": "Now we ADD the 'woman' direction to that royalty point.",
+          "q": "Adding 'woman' puts back which trait?",
+          "options": ["Femaleness — now 'female royalty'", "Maleness again", "It becomes 'man'"],
+          "correct": 0, "log": "📒 + woman → royalty + female" },
+        { "situation": "Royalty + female — which point are we now standing nearest?",
+          "q": "Closest word?",
+          "options": ["queen", "prince", "castle"],
+          "correct": 0, "log": "✅ king − man + woman ≈ queen" }
+      ],
+      "hints": [
+        "Subtracting a direction removes that trait; adding one puts a trait in.",
+        "Royalty (from king−man) plus female (from +woman) = ?"
+      ] },
+
+    { "type": "reveal",
+      "prompt": "Vector search: finding the closest meaning, fast.",
+      "sub": "Tap each card — this powers semantic search and RAG.",
+      "cards": [
+        { "em": "🔢", "h": "Embed everything", "b": "Turn every document (or product, or image) into a vector once, and store them." },
+        { "em": "🔎", "h": "Embed the query", "b": "Turn the user's question into a vector too — same space as the documents." },
+        { "em": "📐", "h": "Find the nearest", "b": "Return the stored vectors CLOSEST to the query vector. That's semantic search — by meaning, not keywords." }
+      ] },
+
+    { "type": "mcq",
+      "prompt": "You search 'cheap flights to Goa' but a doc says 'budget airfare to Goa' (no shared keywords). Why can vector search still find it?",
+      "sub": "Keyword search would miss it. Why does this work?",
+      "options": [
+        { "t": "It checks spelling distance between the words." },
+        { "t": "Both phrases embed to NEARBY points because they mean the same thing." },
+        { "t": "It got lucky." }
+      ],
+      "correct": 1,
+      "why": "'Cheap' and 'budget', 'flights' and 'airfare' carry the same meaning, so both phrases land at nearby points in embedding space. Vector search matches by closeness-in-meaning, not by shared letters — which is exactly why it beats old keyword search.",
+      "hints": [
+        "Keyword search needs the SAME words. What does vector search match on instead?",
+        "'Cheap'≈'budget', 'flights'≈'airfare' — so their points are near each other."
+      ] },
+
+    { "type": "tf",
+      "prompt": "Myth-check — true or false?",
+      "sub": "Tap each, then check together.",
+      "statements": [
+        { "t": "Embeddings store meaning as a position in space.", "answer": true,
+          "why": "Yes — the position is the meaning. Nearby points mean similar things." },
+        { "t": "In embedding space, closeness means the words are spelled alike.", "answer": false,
+          "why": "No — closeness means similar MEANING. 'Cat'/'kitten' are close despite different spelling." },
+        { "t": "Vector search matches by meaning, so it can find results with no shared keywords.", "answer": true,
+          "why": "Right — it returns the nearest vectors, so 'budget airfare' matches 'cheap flights'." },
+        { "t": "Directions in embedding space can capture relationships like male→female.", "answer": true,
+          "why": "Yes — that consistent 'gender arrow' is what makes king − man + woman ≈ queen work." }
+      ],
+      "hints": [
+        "Recall: does closeness track spelling or meaning?",
+        "Think about why no-shared-keyword search still works."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Make it yours.",
+      "sub": "Not graded. A real use from your world locks the idea in.",
+      "fields": [
+        { "k": "work", "label": "What do you work on where 'find similar things' would help?", "ph": "e.g. match support tickets, recommend products" },
+        { "k": "goal", "label": "Describe one thing you'd embed and search by meaning:", "ph": "e.g. embed help articles, find the closest to a user's question" }
+      ] },
+
+    { "type": "multi",
+      "prompt": "Lock it in: tap EVERY true statement about embeddings.",
+      "sub": "Pick only the true ones.",
+      "chips": ["An embedding turns meaning into a position in space", "Closeness in the space means similar meaning", "Directions can encode relationships (man→woman)", "Vector search finds the nearest vectors to a query", "Embeddings match only on identical keywords"],
+      "correct": [0, 1, 2, 3],
+      "why": "The first four are the core of embeddings: meaning-as-position, closeness-as-similarity, directions-as-relationships, and nearest-neighbour vector search. The last is false — matching by meaning is precisely what lets it find results with NO shared keywords.",
+      "hints": [
+        "Four of these you just sorted and traced.",
+        "Which statement describes OLD keyword search, not embeddings?"
+      ] },
+
+    { "type": "done" }
+  ]
+}

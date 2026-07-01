@@ -1,0 +1,19 @@
+{
+  "course_id": "physical-ai",
+  "name": "Physical AI — Train a Robot in Simulation and Watch It Learn",
+  "order": ["why_simulate","digital_twin","isaac_stack","rl_loop","agent_env","obs_action","reward_shaping","ppo_training","reality_gap","teleoperation","policy_deploy"],
+  "assessments": {},
+  "concepts": {
+    "why_simulate":  {"module":1,"hook":"We train robots in a simulator before the real world. Why not just use the real robot?","recall":"Why train robots in simulation first?","answer":"safe, fast, cheap, massively parallel — thousands of tries with no broken hardware"},
+    "digital_twin":  {"module":1,"hook":"The robot in sim has to behave like the real one. What's that virtual copy called?","recall":"What is a digital twin?","answer":"a physics-accurate virtual copy of the robot + environment to train and test in"},
+    "isaac_stack":   {"module":2,"hook":"NVIDIA gives you the GPU simulator AND the RL framework. What are they?","recall":"What are Isaac Sim / Isaac Lab for?","answer":"a GPU physics simulator + an RL framework to train robot control policies"},
+    "rl_loop":       {"module":3,"hook":"A robot learns to move with NO one telling it the right moves. How?","recall":"The RL loop — agent, environment, reward, episode?","answer":"agent acts -> environment returns new state + reward -> agent updates to earn more reward, over episodes"},
+    "agent_env":     {"module":3,"hook":"Two halves of every RL setup. Which decides, which judges?","recall":"Agent vs environment in RL?","answer":"agent = the policy choosing actions; environment = the world returning state + reward"},
+    "obs_action":    {"module":3,"hook":"The policy needs to SEE something and DO something. What are those two called?","recall":"Observation space vs action space?","answer":"observation = what the policy senses; action = what it can control (joint torques, etc.)"},
+    "reward_shaping":{"module":4,"hook":"The thing that makes or breaks a policy isn't the algorithm. What is it?","recall":"Why is reward design the craft of RL?","answer":"the policy optimizes exactly what you reward — a bad reward gets gamed / wrong behavior"},
+    "ppo_training":  {"module":5,"hook":"You hit train and watch the curves. What algorithm, and what proves it's learning?","recall":"What does PPO do, and what shows learning?","answer":"PPO improves the policy from collected experience; a rising reward curve = it's learning"},
+    "reality_gap":   {"module":6,"hook":"Perfect in sim, clumsy in reality. What's that gap — and the fix?","recall":"The reality gap + domain randomization?","answer":"sim != real differences; randomize sim physics/visuals so the policy generalizes to the real world"},
+    "teleoperation": {"module":7,"hook":"Step inside the simulator and drive the robot yourself. Why would you?","recall":"What is teleoperation / VR embodiment in robotics?","answer":"a human drives/demonstrates the robot (e.g. from a Quest) — for control + collecting demo data"},
+    "policy_deploy": {"module":8,"hook":"Training's done. How do you actually USE the trained policy?","recall":"How do you run a trained policy after training?","answer":"export it (e.g. ONNX) and run it to control the robot in sim or reality"}
+  }
+}

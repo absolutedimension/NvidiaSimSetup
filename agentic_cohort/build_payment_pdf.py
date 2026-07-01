@@ -27,43 +27,43 @@ HTML = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><style>
 @page {{ size:A4; margin:0; }}
 * {{ box-sizing:border-box; margin:0; padding:0; }}
 html,body {{ background:#08080c; -webkit-print-color-adjust:exact; print-color-adjust:exact; }}
-body {{ font:11px/1.5 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:#e7e7ef; }}
-.page {{ padding:12mm 12mm 9mm; min-height:297mm; }}
-.head {{ text-align:center; padding-bottom:12px; border-bottom:1px solid #23232f; }}
-.head .mark {{ height:88px; }}
-.head .wm {{ font-family:Arial,Helvetica,sans-serif; font-weight:800; letter-spacing:5px; font-size:16px; color:#eef0fe; margin-top:6px; }}
-.head .wmsub {{ font-size:8px; letter-spacing:3px; color:#8a8a9c; margin-top:3px; }}
-.pill {{ display:inline-block; font-size:9.5px; font-weight:700; letter-spacing:.9px; color:#b9a7ff;
-  background:rgba(124,92,246,.12); border:1px solid rgba(124,92,246,.35); padding:4px 11px; border-radius:999px; margin:7px 0 7px; }}
-.head h1 {{ font-size:21px; }}
-.head p {{ color:#9494a8; font-size:11.5px; margin-top:4px; }}
-h2 {{ font-size:12.5px; margin:16px 0 8px; color:#cfcfe0; }}
+body {{ font:10px/1.4 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:#e7e7ef; }}
+.page {{ padding:8mm 12mm 6mm; min-height:297mm; }}
+.head {{ text-align:center; padding-bottom:8px; border-bottom:1px solid #23232f; }}
+.head .mark {{ height:64px; }}
+.head .wm {{ font-family:Arial,Helvetica,sans-serif; font-weight:800; letter-spacing:5px; font-size:13px; color:#eef0fe; margin-top:4px; }}
+.head .wmsub {{ font-size:7px; letter-spacing:3px; color:#8a8a9c; margin-top:2px; }}
+.pill {{ display:inline-block; font-size:8.5px; font-weight:700; letter-spacing:.9px; color:#b9a7ff;
+  background:rgba(124,92,246,.12); border:1px solid rgba(124,92,246,.35); padding:3px 9px; border-radius:999px; margin:5px 0 5px; }}
+.head h1 {{ font-size:17px; }}
+.head p {{ color:#9494a8; font-size:10px; margin-top:3px; }}
+h2 {{ font-size:11px; margin:10px 0 6px; color:#cfcfe0; }}
 ul {{ list-style:none; }}
 li {{ padding-left:15px; position:relative; margin-bottom:4px; font-size:10.5px; color:#bcbccf; }}
 li::before {{ content:"✓"; position:absolute; left:0; color:#34d399; font-weight:700; }}
-.plans {{ display:flex; gap:12px; margin-top:4px; }}
-.plan {{ flex:1; background:#13131c; border:1px solid #23232f; border-radius:12px; padding:16px; position:relative; }}
+.plans {{ display:flex; gap:10px; margin-top:4px; }}
+.plan {{ flex:1; background:#13131c; border:1px solid #23232f; border-radius:10px; padding:10px 14px; position:relative; }}
 .plan.best {{ border-color:#7c5cf6; }}
 .plan .tag {{ position:absolute; top:-10px; left:14px; font-size:9px; font-weight:800; letter-spacing:.5px;
   background:linear-gradient(90deg,#6366f1,#a855f7); color:#fff; padding:3px 9px; border-radius:999px; }}
-.plan h3 {{ font-size:12px; color:#9494a8; font-weight:600; }}
-.plan .price {{ font-size:27px; font-weight:800; color:#f2f2f7; margin-top:3px; }}
-.plan .price small {{ font-size:13px; color:#9494a8; font-weight:500; }}
-.plan p {{ font-size:10px; color:#9494a8; margin-top:6px; }}
+.plan h3 {{ font-size:10px; color:#9494a8; font-weight:600; }}
+.plan .price {{ font-size:22px; font-weight:800; color:#f2f2f7; margin-top:2px; }}
+.plan .price small {{ font-size:11px; color:#9494a8; font-weight:500; }}
+.plan p {{ font-size:9px; color:#9494a8; margin-top:4px; }}
 .acct {{ background:#101018; border:1px solid #23232f; border-radius:12px; padding:6px 16px; }}
-.acct .r {{ display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid #1a1a24; }}
+.acct .r {{ display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #1a1a24; }}
 .acct .r:last-child {{ border-bottom:none; }}
-.acct .k {{ color:#9494a8; font-size:10.5px; }}
-.acct .v {{ font-weight:700; font-size:12.5px; color:#f2f2f7; letter-spacing:.3px; }}
+.acct .k {{ color:#9494a8; font-size:9.5px; }}
+.acct .v {{ font-weight:700; font-size:11px; color:#f2f2f7; letter-spacing:.3px; }}
 table {{ width:100%; border-collapse:collapse; }}
 th {{ text-align:left; font-size:9px; letter-spacing:.5px; text-transform:uppercase; color:#7d7d92; padding:6px 8px; border-bottom:1px solid #2a2a38; }}
 td {{ padding:7px 8px; border-bottom:1px solid #1a1a24; font-size:10.5px; }}
 td.wk {{ font-weight:700; color:#a78bfa; }}
-.note {{ background:rgba(251,191,36,.07); border:1px solid rgba(251,191,36,.25); border-radius:9px; padding:10px 13px; margin-top:10px; font-size:10px; color:#e8d9a8; }}
-.confirm {{ background:linear-gradient(90deg,rgba(99,102,241,.10),rgba(168,85,247,.10)); border:1px solid #2c2740; border-radius:11px; padding:13px 15px; margin-top:6px; }}
+.note {{ background:rgba(251,191,36,.07); border:1px solid rgba(251,191,36,.25); border-radius:8px; padding:7px 11px; margin-top:7px; font-size:9px; color:#e8d9a8; }}
+.confirm {{ background:linear-gradient(90deg,rgba(99,102,241,.10),rgba(168,85,247,.10)); border:1px solid #2c2740; border-radius:10px; padding:9px 13px; margin-top:5px; }}
 .confirm b {{ color:#c4b5fd; }}
-.confirm .big {{ font-size:13px; font-weight:700; color:#f2f2f7; margin:6px 0 2px; }}
-.legal {{ margin-top:16px; padding-top:9px; border-top:1px solid #23232f; font-size:8.8px; color:#74748a; line-height:1.55; text-align:center; }}
+.confirm .big {{ font-size:11px; font-weight:700; color:#f2f2f7; margin:4px 0 2px; }}
+.legal {{ margin-top:10px; padding-top:7px; border-top:1px solid #23232f; font-size:8px; color:#74748a; line-height:1.5; text-align:center; }}
 .legal b {{ color:#9494a8; }}
 </style></head><body><div class="page">
 

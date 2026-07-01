@@ -1,0 +1,134 @@
+{
+  "slug": "vrmr-ai-partner",
+  "title": "Building VR with your AI coding partner",
+  "steps": [
+    { "type": "intro",
+      "art": "💬 → 💻 → 🥽",
+      "prompt": "You don't hand-type every line of C# anymore.",
+      "sub": "The modern way to build VR: you describe the behaviour in plain English, an AI coding agent writes the C#, and you test it in the headset. By the end you'll know the loop cold — and how to write a prompt that gets working VR instead of junk.",
+      "cta": "Start" },
+
+    { "type": "mcq",
+      "prompt": "What's your real job in the AI-assisted VR workflow?",
+      "sub": "Pick one, then check.",
+      "options": [
+        { "t": "Memorise the whole Unity C# API so you can type every line yourself" },
+        { "t": "Clearly describe the behaviour you want, then test what the agent built in VR" },
+        { "t": "Wait for the agent to read your mind and ship the app" }
+      ],
+      "correct": 1,
+      "why": "The agent is good at writing code; it's bad at knowing what you actually want and whether it feels right in the headset. Your job shifts to two things it can't do: describing the goal precisely, and judging the result in VR. You become the director, not the typist.",
+      "hints": [
+        "The agent handles the syntax. What's left for a human to do well?",
+        "Two of these treat you as either a robot or a bystander. The real role is in between."
+      ] },
+
+    { "type": "order",
+      "prompt": "Put the AI-assisted build loop in order.",
+      "sub": "This little cycle repeats for every feature you add.",
+      "chips": [
+        "Test it in the headset",
+        "Describe the behaviour you want in English",
+        "Iterate — tell the agent what to fix",
+        "The agent writes the C#"
+      ],
+      "correct": [1, 3, 0, 2],
+      "constraints": ["Order is correct"],
+      "hints": [
+        "It starts with you saying what you want — the agent can't write code for nothing.",
+        "You only know what to fix AFTER you've felt it in VR."
+      ] },
+
+    { "type": "reveal",
+      "prompt": "The 4 parts of a prompt that gets working VR.",
+      "sub": "Tap each card. Drop any one and you get code that compiles but feels wrong.",
+      "cards": [
+        { "em": "🎯", "h": "Goal", "b": "What you want to happen, in plain words. e.g. 'When I grab the cube, it sticks to my hand.'" },
+        { "em": "🧩", "h": "Context", "b": "Tell it the stack: 'Unity 6, Meta XR SDK, the cube has a Rigidbody and an XR Grab Interactable.'" },
+        { "em": "🚧", "h": "Constraints", "b": "The rules: 'It must drop when I release, and never pass through the table.'" },
+        { "em": "✅", "h": "How to verify", "b": "How you'll check it: 'I should be able to pick it up, throw it, and watch it land.'" }
+      ] },
+
+    { "type": "classify",
+      "prompt": "Goal, Context, Constraint, or Verify? Sort each line of a real prompt.",
+      "sub": "Tap an item, then a bin.",
+      "buckets": ["🎯 Goal", "🧩 Context", "🚧 Constraint", "✅ Verify"],
+      "items": [
+        { "t": "When the user pokes the red button, the door slides open.", "b": 0 },
+        { "t": "I'm on Unity 6 with the Meta XR SDK; the door is a child of an XR Origin scene.", "b": 1 },
+        { "t": "The door must not open if the user is more than 2 metres away.", "b": 2 },
+        { "t": "I should be able to walk up, poke the button, and see the door slide.", "b": 3 }
+      ],
+      "constraints": ["All 4 sorted", "Every one correct"],
+      "hints": [
+        "The Goal is the thing that should happen; the Verify is how you'll know it worked.",
+        "Context describes your setup; a Constraint is a rule it must obey."
+      ] },
+
+    { "type": "mcq",
+      "prompt": "Two prompts. Which one gets you working VR?",
+      "sub": "Read both carefully.",
+      "options": [
+        { "t": "'Make my VR game better.'" },
+        { "t": "'In my Unity 6 + Meta XR scene, make the wooden cube grabbable: when I grab it with either hand it should follow my hand, and when I release it should fall with physics. I'll test by picking it up and dropping it.'" }
+      ],
+      "correct": 1,
+      "why": "The first prompt has no goal, no context, no way to check it — the agent has to guess everything, and it'll guess wrong. The second names the exact behaviour, the stack, the constraint (falls with physics) and how you'll verify it. The agent now writes code that targets your real scene, not a generic one.",
+      "hints": [
+        "One of these could mean a hundred different things. Which one is precise?",
+        "Look for the prompt that tells the agent the stack AND how you'll test it."
+      ] },
+
+    { "type": "trace",
+      "prompt": "Walk one feature through the loop with your AI partner.",
+      "sub": "Pick the next move at each turn. The log fills in as you go.",
+      "goal": "Make a virtual lamp turn on when the user pinches it.",
+      "turns": [
+        { "situation": "You have an empty scene with a lamp model. You want it to light up on a pinch.",
+          "q": "What's your FIRST move?",
+          "options": ["Describe the behaviour + stack + how you'll test it to the agent", "Open the C# file and start typing the pinch logic yourself", "Build to the headset and hope it already works"],
+          "correct": 0, "log": "💬 You → 'In Unity 6 + Meta XR, when I pinch the lamp, turn its light on. I'll test by pinching it.'" },
+        { "situation": "The agent wrote a script that toggles the lamp's light on a pinch gesture and attached it.",
+          "q": "What do you do before trusting it?",
+          "options": ["Build to the headset and actually pinch the lamp", "Assume it works and move to the next feature", "Ask the agent to rewrite it three more times for safety"],
+          "correct": 0, "log": "🛠️ Agent → wrote LampPinch.cs  ·  🥽 You → build & test in VR" },
+        { "situation": "In the headset, the lamp lights up — but it only works for your right hand, not your left.",
+          "q": "How do you fix it?",
+          "options": ["Tell the agent exactly what's wrong: 'it only responds to the right hand; make both hands work'", "Give up on left-hand support", "Delete the script and start the whole project over"],
+          "correct": 0, "log": "🔁 You → 'Only the right hand works — handle both hands.'  ·  Agent → updated" },
+        { "situation": "You re-test. Both hands now turn the lamp on. It feels right.",
+          "q": "The feature is done. What did this whole sequence demonstrate?",
+          "options": ["Describe → agent writes → test in VR → iterate, until it feels right", "That you should always write VR code by hand", "That the agent never makes mistakes"],
+          "correct": 0, "log": "✅ Feature shipped via the describe→write→test→iterate loop." }
+      ],
+      "hints": [
+        "Every turn mirrors the 4-step loop: describe, agent writes, test in VR, iterate.",
+        "You never trust the agent blindly — the headset test is the truth."
+      ] },
+
+    { "type": "tf",
+      "prompt": "True or false — myth-check on working with an AI partner.",
+      "sub": "Tap each, then check all at once.",
+      "statements": [
+        { "t": "A vague prompt like 'make it cool' produces just as good a result as a precise one.", "answer": false,
+          "why": "False. The agent can only build what you describe. Vague in, vague out — precise prompts with goal, context and constraints are what produce working VR." },
+        { "t": "You should test the agent's code in the headset before trusting it.", "answer": true,
+          "why": "True. Code that compiles can still feel wrong in VR. The headset test is the only real check — it's the 'test' half of the loop." },
+        { "t": "Using an AI agent means you never need to understand what the code does.", "answer": false,
+          "why": "False. You don't type every line, but you still need to read, judge and direct the code — especially when something feels off and you have to tell the agent precisely what to fix." }
+      ],
+      "hints": [
+        "Think back to the two prompts — did vagueness work?",
+        "Remember why the headset test exists in the loop."
+      ] },
+
+    { "type": "reflect", "capture": true,
+      "prompt": "Write the first prompt for YOUR app.",
+      "sub": "Not graded. Bring this to your build session — it's the literal first thing you'll hand the agent.",
+      "fields": [
+        { "k": "goal", "label": "One behaviour in your app, as a prompt (goal + how you'll test it):", "ph": "e.g. When I grab the bow and pull the string back, an arrow should appear. I'll test by drawing and releasing." }
+      ] },
+
+    { "type": "done" }
+  ]
+}
