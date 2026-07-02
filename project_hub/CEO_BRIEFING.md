@@ -15,6 +15,26 @@
 
 ## 🔥 Needs your attention
 
+🔴 **PMF AUDIT (2026-07-02, CEO session — full evidence pull: work log + inbox + live LMS Postgres).**
+   **The Jun-26 close FAILED: 0 of 3 × ₹35k cleared.** No payment/UTR email exists; the cohort ran
+   anyway (Session 0 delivered Jun 26 to Aditya + Kritansh; Gauri no-showed), followed by soft
+   enrolment nudges (Jun 27) and a re-engagement email to Aditya (Jun 29, "you've been away").
+   **The objection diagnosis (Message C discipline) never happened — do it now, it's the most
+   valuable data in the company.** Meanwhile a silent price pivot happened: ₹35k bank transfer →
+   ₹499/mo Razorpay subscriptions (account fully activated Jul 1; only 2 × ₹5 self-test subs, auto-refunded).
+   **DB ground truth:** 11 students total, ~6 are self-tests/founders; real external = Kritansh (the ONE
+   genuinely engaged user — lessons across Jun 26–Jul 1), Aditya (1 touch, gone quiet), Ansh (1 touch).
+   0 learning_events (flag off). Traffic = bots + self (wp-probe paths visible). Course requests (4):
+   **ALL organic demand asked for EXAM PREP (NEET, Railway, Class-10 maths, Class-11/12 bio) — none
+   asked for the AI courses being sold.** 2 teacher-onboarding leads in day 1 of the teacher GTM
+   (1 looks like a test number). ⚠️ WABA billing broken since Jun 29 — **WhatsApp messages NOT
+   delivering** (5 Meta alerts + "payment method needed" Jul 1); Acharya's only warm channel is dark.
+   ⚠️ Founder signal: KPMG applications ×2 + resume sent (Jun 27–29) — runway/commitment input, hold honestly.
+   **Last-14-day effort:** 56 sessions/93 commits, heavily music/DJ/shader/FlowArt pipelines — build
+   velocity high, customer-contact volume ≈ zero. Full analysis + PMF search plan delivered in the
+   2026-07-02 CEO session; memory: `project-pmf-audit-202607`.
+
+
 🟡 **3 INVOICES IN FLIGHT — DECISION JUN 26 — STILL 0 PAID (updated 2026-06-20).** Real progress: the
    **Agentic Systems** cohort ran its **intro class (delivered)**, **3 students registered**, and a
    **₹35k invoice was sent to all three** with bank details shared. **Hard deadline: before Friday
