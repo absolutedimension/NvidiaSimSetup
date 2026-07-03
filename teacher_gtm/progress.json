@@ -1,0 +1,38 @@
+{
+  "test_name": "Teacher B2B2C PMF test",
+  "start": "2026-07-03",
+  "end": "2026-07-23",
+  "targets": {
+    "conversations": 30,
+    "pilots_booked": 3,
+    "pilots_live": 2,
+    "paid": 1
+  },
+  "days": [
+    {
+      "date": "2026-07-02",
+      "queued": 10,
+      "conversations": 0,
+      "qualified": 0,
+      "pilots_booked": 0,
+      "pilots_live": 0,
+      "paid": 0,
+      "revenue": 0,
+      "note": "Day-0 prep: queued 10 Patna NEET/JEE small-centre leads (5 with live numbers) for Day-1 dialing. Non-payer interviews still 0/3."
+    }
+  ],
+  "interviews": {
+    "aditya": {
+      "done": false,
+      "note": ""
+    },
+    "kritansh": {
+      "done": false,
+      "note": ""
+    },
+    "gauri": {
+      "done": false,
+      "note": ""
+    }
+  }
+}

@@ -27,5 +27,5 @@
 
 | Date | Queued | Conversations | Qualified | Pilots booked | Paid | Note |
 |---|---|---|---|---|---|---|
-| _(no days logged yet)_ | | | | | | |
+| 2026-07-02 | 10 | 0 | 0 | 0 | 0 | Day-0 prep: queued 10 Patna NEET/JEE small-centre leads (5 w |
 

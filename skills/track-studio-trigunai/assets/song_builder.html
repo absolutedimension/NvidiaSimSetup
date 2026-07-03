@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrigunAI — Hypnotic Techno Song Builder</title>
+<style>
+  :root{
+    --bg:#0e0b06; --panel:#181206; --panel2:#211807; --line:#3a2b0e;
+    --gold:#d9a441; --gold2:#f0c96a; --ink:#efe6d2; --dim:#a4906a; --on:#7bd88f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#241a08,var(--bg));
+    color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;
+    padding:0 0 260px}
+  header{padding:26px 22px 12px;text-align:center}
+  header h1{margin:0;font-size:26px;color:var(--gold2);letter-spacing:.5px;font-weight:700}
+  header p{margin:6px 0 0;color:var(--dim);font-size:13.5px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 18px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:14px;padding:16px 18px;margin:14px 0;box-shadow:0 6px 24px #0007}
+  .card h2{margin:0 0 4px;font-size:15px;color:var(--gold);text-transform:uppercase;letter-spacing:1.2px}
+  .card .sub{color:var(--dim);font-size:12px;margin:0 0 12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  label.f{display:block;font-size:12px;color:var(--dim);margin:0 0 4px}
+  input[type=text],select,input[type=number]{width:100%;background:#0c0900;border:1px solid var(--line);
+    color:var(--ink);border-radius:8px;padding:8px 10px;font-size:13px}
+  .row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed #2a2008}
+  .row:last-child{border-bottom:none}
+  .play{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);
+    background:#1c1405;color:var(--gold2);font-size:14px;cursor:pointer;transition:.15s}
+  .play:hover{background:var(--gold);color:#160f00}
+  .play.playing{background:var(--gold2);color:#160f00}
+  .nm{flex:0 0 118px;font-size:13px}
+  .nm small{display:block;color:var(--dim);font-size:11px}
+  .tog{flex:0 0 auto;position:relative;width:44px;height:24px;border-radius:20px;background:#2a2008;
+    border:1px solid var(--line);cursor:pointer;transition:.15s}
+  .tog.on{background:#274f2f;border-color:var(--on)}
+  .tog::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;
+    background:#c8b078;transition:.15s}
+  .tog.on::after{left:22px;background:var(--on)}
+  .lvl{flex:1;display:flex;align-items:center;gap:8px}
+  .lvl input{flex:1}
+  .lvl b{flex:0 0 46px;text-align:right;font-size:12px;color:var(--gold2);font-variant-numeric:tabular-nums}
+  input[type=range]{-webkit-appearance:none;height:4px;background:#3a2b0e;border-radius:3px}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:50%;
+    background:var(--gold2);cursor:pointer;border:0}
+  .pick{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{display:flex;align-items:center;gap:6px;background:#0c0900;border:1px solid var(--line);
+    border-radius:20px;padding:5px 6px 5px 5px;cursor:pointer;font-size:12.5px}
+  .chip .play{width:26px;height:26px;font-size:11px}
+  .chip.sel{border-color:var(--gold2);background:#241905;color:var(--gold2)}
+  .chip span{padding-right:6px}
+  .foot{position:fixed;left:0;right:0;bottom:0;background:#0a0700f2;border-top:1px solid var(--line);
+    padding:12px 16px;backdrop-filter:blur(6px)}
+  .foot .wrap{display:flex;gap:12px;align-items:stretch}
+  textarea{flex:1;height:150px;background:#0c0900;border:1px solid var(--line);color:var(--gold2);
+    border-radius:10px;padding:10px;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;resize:none}
+  .btns{display:flex;flex-direction:column;gap:8px;flex:0 0 190px}
+  .btn{border:1px solid var(--gold);background:#1c1405;color:var(--gold2);border-radius:10px;
+    padding:10px;font-size:13px;cursor:pointer;font-weight:600}
+  .btn:hover{background:var(--gold);color:#160f00}
+  .btn.big{background:var(--gold);color:#160f00}
+  .hint{color:var(--dim);font-size:11px;text-align:center;margin-top:4px}
+</style>
+</head>
+<body>
+<header>
+  <h1>◈ Hypnotic Techno — Song Builder</h1>
+  <p>Audition every real sample, pick your combination, tune the knobs → copy the config → hand it to Claude to render.</p>
+</header>
+
+<div class="wrap">
+
+  <!-- CORE -->
+  <div class="card">
+    <h2>1 · Core</h2>
+    <p class="sub">The track skeleton — tempo, length, key, and where the big drop lands.</p>
+    <div class="grid">
+      <div><label class="f">Title / intention</label><input type="text" id="title" placeholder="e.g. Soham Descent"></div>
+      <div><label class="f">Length (minutes)</label><input type="number" id="minutes" value="7" min="2" max="60" step="1"></div>
+      <div><label class="f">Tempo — BPM <b id="bpmv" style="color:var(--gold2)">122</b></label>
+        <input type="range" id="bpm" min="110" max="135" value="122" style="width:100%"></div>
+      <div><label class="f">Key / mode</label>
+        <select id="key">
+          <option>F# minor</option><option>F# Phrygian (Indian)</option><option>A minor</option>
+          <option>C minor</option><option>D Phrygian (Indian)</option><option>E minor</option><option>G# minor</option>
+        </select></div>
+      <div><label class="f">Drop position <b id="dropv" style="color:var(--gold2)">0.48</b></label>
+        <input type="range" id="drop" min="0.30" max="0.62" value="0.48" step="0.01" style="width:100%"></div>
+      <div><label class="f">Energy arc</label>
+        <select id="energy">
+          <option value="build-plateau-breakdown-winddown">Build → long plateau → breakdown → wind-down (default)</option>
+          <option value="slow-meditative-rise">Slow meditative rise, no big drop</option>
+          <option value="early-drop-sustain">Early drop → long sustained peak</option>
+          <option value="waves">Waves — repeated build/breakdown cycles</option>
+        </select></div>
+    </div>
+  </div>
+
+  <!-- RHYTHM & BASS -->
+  <div class="card">
+    <h2>2 · Rhythm &amp; Bass</h2>
+    <p class="sub">▶ audition · toggle to include · slider = level in dB (the real engine knob). Louder = higher (0 loudest).</p>
+    <div id="stemRows"></div>
+  </div>
+
+  <!-- SYNTH / DESIGNED -->
+  <div class="card">
+    <h2>2b · Designed elements (synth) ✦</h2>
+    <p class="sub">Generated from scratch by DSP — 100% unique &amp; copyright-clean. ▶ audition, tap to use. Pick these <i>instead of / alongside</i> the sampled stems above for a one-of-a-kind palette.</p>
+    <label class="f">Kick</label><div class="pick" id="synKick"></div>
+    <label class="f" style="margin-top:10px">Bass</label><div class="pick" id="synBass"></div>
+    <label class="f" style="margin-top:10px">Drone</label><div class="pick" id="synDrone"></div>
+    <label class="f" style="margin-top:10px">Stab / Hats</label><div class="pick" id="synOther"></div>
+  </div>
+
+  <!-- UNIQUE FULL SET -->
+  <div class="card" style="border-color:#3a5">
+    <h2>2c · Your unique generated set — v1 ✦✦</h2>
+    <p class="sub">A COMPLETE stem set I synthesized from scratch (F# minor, 123 BPM, 8-bar loops). 100% unique &amp; copyright-clean. ▶ audition each — this is a drop-in palette for a whole track.</p>
+    <div class="pick" id="uniqPick"></div>
+  </div>
+
+  <!-- MELODIC ACCENTS -->
+  <div class="card">
+    <h2>3 · Melodic accents (Indian)</h2>
+    <p class="sub">Sitar &amp; bansuri phrases that layer over the peak. ▶ to hear, tap to include.</p>
+    <div class="pick" id="accentPick"></div>
+  </div>
+
+  <!-- VOCALS -->
+  <div class="card">
+    <h2>4 · Vocals — mantra / naam jaap</h2>
+    <p class="sub">Real human CC0 recordings (that's why they sound human). Pick the chant + the female voice; add optional layers.</p>
+
+    <label class="f" style="margin-top:6px">Mantra / naam jaap chant — pick one</label>
+    <div class="pick" id="mantraPick"></div>
+
+    <label class="f" style="margin-top:14px">Female voice (melodic wash) — pick one</label>
+    <div class="pick" id="femalePick"></div>
+
+    <label class="f" style="margin-top:14px">Optional extra layers (humming · vocalise · deep male)</label>
+    <div class="pick" id="extraPick"></div>
+
+    <div class="grid" style="margin-top:14px">
+      <div><label class="f">Density</label><select id="vdensity">
+        <option value="occasional">Occasional (default)</option><option value="sparse">Sparse</option><option value="frequent">Frequent</option></select></div>
+      <div><label class="f">Role</label><select id="vrole">
+        <option value="accent+wash">Mantra accent + female wash (default)</option>
+        <option value="lead">Lead chant up front</option>
+        <option value="background">Background only</option>
+        <option value="call-response">Call &amp; response</option></select></div>
+      <div><label class="f">Voices start at (sec)</label><input type="number" id="vstart" value="40" min="0" max="120"></div>
+    </div>
+  </div>
+
+  <!-- FINISH -->
+  <div class="card">
+    <h2>5 · Finish</h2>
+    <div class="grid">
+      <div><label class="f">Isochronic brainwave tone</label><select id="iso">
+        <option value="off">Off (default)</option><option value="alpha">Alpha ~10Hz (focus)</option><option value="theta">Theta ~6Hz (deep meditative)</option></select></div>
+      <div><label class="f">Deliver</label><select id="deliver">
+        <option value="audio">Mastered audio only</option>
+        <option value="audio+video" selected>Audio + Flower-of-Life visualizer</option>
+        <option value="audio+video+upload">Audio + video + upload to FlowArt</option></select></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- STICKY CONFIG -->
+<div class="foot"><div class="wrap">
+  <textarea id="cfg" readonly></textarea>
+  <div class="btns">
+    <button class="btn big" id="blend">▶ Preview blend</button>
+    <button class="btn" id="copy">⧉ Copy config</button>
+    <div class="hint">Paste this to Claude → “render this”</div>
+  </div>
+</div></div>
+
+<script>
+const S = f => "samples/"+f;
+// ---- data ----
+const STEMS = [
+  {id:"kick",  nm:"Kick",   dsc:"the pulse",        lvl:0,   on:true},
+  {id:"bass",  nm:"Bass",   dsc:"sub bassline",     lvl:-17, on:true},
+  {id:"bass2", nm:"Bass 2", dsc:"mid bass (peak)",  lvl:-18, on:true},
+  {id:"drone", nm:"Drone",  dsc:"chord / pad",      lvl:-23, on:true},
+  {id:"stab",  nm:"Stab",   dsc:"chord hit",        lvl:-26, on:true},
+  {id:"perc",  nm:"Perc",   dsc:"percussion",       lvl:-25, on:true},
+  {id:"hats",  nm:"Hats",   dsc:"hi-hats",          lvl:-21, on:true},
+];
+const ACCENTS=[{id:"sitar_1",nm:"Sitar 1"},{id:"sitar_2",nm:"Sitar 2"},
+  {id:"bansuri_1",nm:"Bansuri 1"},{id:"bansuri_2",nm:"Bansuri 2"},{id:"bansuri_3",nm:"Bansuri 3"}];
+const MANTRA=[{id:"mantra_1",nm:"Mantra 1"},{id:"mantra_2",nm:"Mantra 2"},{id:"mantra_3",nm:"Mantra 3"},{id:"mantra_4",nm:"Mantra 4"}];
+const FEMALE=[{id:"female_choir",nm:"Choir aah"},{id:"female_drone",nm:"Solo drone"},
+  {id:"female_3",nm:"Female 3"},{id:"female_4",nm:"Female 4"},{id:"female_humming",nm:"Humming melody"}];
+const EXTRA=[{id:"humming_1",nm:"Humming 1"},{id:"humming_2",nm:"Humming 2"},{id:"humming_3",nm:"Humming 3"},
+  {id:"vocalise_1",nm:"Vocalise 1"},{id:"vocalise_2",nm:"Vocalise 2"},{id:"vocalise_3",nm:"Vocalise 3"},
+  {id:"male_1",nm:"Deep male 1"},{id:"male_2",nm:"Deep male 2"},{id:"male_3",nm:"Deep male 3"}];
+
+const SYN_KICK=[{id:"synth_kick_punchy",nm:"Punchy"},{id:"synth_kick_deep",nm:"Deep"}];
+const SYN_BASS=[{id:"synth_bass_sub",nm:"Sub"},{id:"synth_bass_reese",nm:"Reese"}];
+const SYN_DRONE=[{id:"synth_drone_warm",nm:"Warm"},{id:"synth_drone_bright",nm:"Bright"}];
+const SYN_OTHER=[{id:"synth_stab",nm:"Synth stab"},{id:"synth_hats",nm:"Synth hats"}];
+const UNIQ=[{id:"uniq_kick",nm:"Kick"},{id:"uniq_bass",nm:"Bass"},{id:"uniq_bass2",nm:"Bass2"},{id:"uniq_hats",nm:"Hats"},{id:"uniq_perc",nm:"Perc"},{id:"uniq_drone",nm:"Drone"},{id:"uniq_stab",nm:"Stab"}];
+const state={accents:new Set(["sitar_1","bansuri_1"]),mantra:"mantra_2",female:"female_choir",extra:new Set(),synth:new Set()};
+
+// ---- audio ----
+let cur=null,curBtn=null;
+function play(file,btn){
+  if(cur){cur.pause();cur.currentTime=0;} if(curBtn)curBtn.classList.remove("playing");
+  if(curBtn===btn && cur){cur=null;curBtn=null;return;}
+  cur=new Audio(S(file)); cur.play(); curBtn=btn; btn.classList.add("playing");
+  cur.onended=()=>btn.classList.remove("playing");
+}
+function g(db){return Math.pow(10,db/20);}
+
+// ---- render stems ----
+const sr=document.getElementById("stemRows");
+STEMS.forEach(s=>{
+  const r=document.createElement("div");r.className="row";
+  r.innerHTML=`<button class="play">▶</button>
+    <div class="nm">${s.nm}<small>${s.dsc}</small></div>
+    <div class="tog ${s.on?'on':''}"></div>
+    <div class="lvl"><input type="range" min="-30" max="0" step="1" value="${s.lvl}"><b>${s.lvl} dB</b></div>`;
+  r.querySelector(".play").onclick=e=>play(s.id+".mp3",e.currentTarget);
+  const tog=r.querySelector(".tog");tog.onclick=()=>{s.on=!s.on;tog.classList.toggle("on",s.on);build();};
+  const rng=r.querySelector("input"),bb=r.querySelector("b");
+  rng.oninput=()=>{s.lvl=+rng.value;bb.textContent=rng.value+" dB";build();};
+  sr.appendChild(r);
+});
+
+// ---- render chip pickers ----
+function chips(host,arr,multi,key){
+  const el=document.getElementById(host);
+  arr.forEach(a=>{
+    const c=document.createElement("div");c.className="chip";
+    c.innerHTML=`<button class="play">▶</button><span>${a.nm}</span>`;
+    c.querySelector(".play").onclick=e=>{e.stopPropagation();play(a.id+".mp3",e.currentTarget);};
+    function refresh(){const on=multi?state[key].has(a.id):state[key]===a.id;c.classList.toggle("sel",on);}
+    c.onclick=()=>{
+      if(multi){state[key].has(a.id)?state[key].delete(a.id):state[key].add(a.id);}
+      else{state[key]=(state[key]===a.id&&host!=="mantraPick"&&host!=="femalePick")?null:a.id;}
+      el.querySelectorAll(".chip").forEach((ch,i)=>{const id=arr[i].id;
+        const on=multi?state[key].has(id):state[key]===id;ch.classList.toggle("sel",on);});
+      build();
+    };
+    el.appendChild(c);refresh();
+  });
+}
+chips("synKick",SYN_KICK,true,"synth");
+chips("synBass",SYN_BASS,true,"synth");
+chips("synDrone",SYN_DRONE,true,"synth");
+chips("synOther",SYN_OTHER,true,"synth");
+chips("uniqPick",UNIQ,false,null);
+chips("accentPick",ACCENTS,true,"accents");
+chips("mantraPick",MANTRA,false,"mantra");
+chips("femalePick",FEMALE,false,"female");
+chips("extraPick",EXTRA,true,"extra");
+
+// ---- blend preview ----
+document.getElementById("blend").onclick=function(){
+  const layers=[...STEMS.filter(s=>s.on).map(s=>({f:s.id,v:g(s.lvl)}))];
+  [...state.synth].forEach(a=>layers.push({f:a,v:a.includes('kick')?0.95:a.includes('bass')?0.5:0.4}));
+  if(state.mantra)layers.push({f:state.mantra,v:0.8});
+  if(state.female)layers.push({f:state.female,v:0.6});
+  [...state.accents].forEach(a=>layers.push({f:a,v:0.5}));
+  [...state.extra].forEach(a=>layers.push({f:a,v:0.5}));
+  window._blend&&window._blend.forEach(a=>a.pause());
+  window._blend=layers.map(l=>{const a=new Audio(S(l.f+".mp3"));a.volume=Math.min(1,l.v);a.play();return a;});
+};
+
+// ---- build config ----
+function build(){
+  const stems={};STEMS.forEach(s=>stems[s.id]={on:s.on,level_db:s.lvl});
+  const cfg={
+    title:document.getElementById("title").value||"untitled",
+    genre:"hypnotic techno + mantra",
+    bpm:+document.getElementById("bpm").value,
+    minutes:+document.getElementById("minutes").value,
+    key:document.getElementById("key").value,
+    drop:+document.getElementById("drop").value,
+    energy:document.getElementById("energy").value,
+    stems,
+    synth_elements:[...state.synth],
+    accents:{sitar:[...state.accents].filter(x=>x.startsWith("sitar")),
+             bansuri:[...state.accents].filter(x=>x.startsWith("bansuri"))},
+    vocals:{mantra:state.mantra,female:state.female,extra:[...state.extra],
+      density:document.getElementById("vdensity").value,
+      role:document.getElementById("vrole").value,
+      start_sec:+document.getElementById("vstart").value},
+    isochronic:document.getElementById("iso").value,
+    deliver:document.getElementById("deliver").value
+  };
+  document.getElementById("cfg").value=JSON.stringify(cfg,null,2);
+}
+["title","minutes","key","energy","vdensity","vrole","vstart","iso","deliver"].forEach(id=>
+  document.getElementById(id).addEventListener("input",build));
+const bpm=document.getElementById("bpm");bpm.oninput=()=>{document.getElementById("bpmv").textContent=bpm.value;build();};
+const drop=document.getElementById("drop");drop.oninput=()=>{document.getElementById("dropv").textContent=(+drop.value).toFixed(2);build();};
+document.getElementById("copy").onclick=()=>{const t=document.getElementById("cfg");t.select();
+  navigator.clipboard.writeText(t.value);document.getElementById("copy").textContent="✓ Copied";
+  setTimeout(()=>document.getElementById("copy").textContent="⧉ Copy config",1200);};
+build();
+</script>
+</body>
+</html>

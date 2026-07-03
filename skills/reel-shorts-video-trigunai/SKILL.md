@@ -1,33 +1,35 @@
 ---
-name: product-video-trigunai
+name: reel-shorts-video-trigunai
 description: >
-  Product / marketing video factory for TrigunAI — the e-commerce & ad sibling of
-  production-video-trigunai. Turns a product (name + a few images or just a
-  description) into a finished, vertical (9:16) ad reel: 3-second hook, product
-  hero shots with Ken-Burns motion, b-roll / LTX motion clips, BIG center kinetic
-  captions, a punchy VO, and a music-forward bed — all on the EC2 A10G box. Two
-  sub-modes: polished-ad and UGC-style (looks phone-shot, casual avatar holding
-  the product). Use whenever the user wants to MAKE a marketing/product video:
-  "product video", "product showcase", "product demo", "ad", "ad reel", "ad
-  creative", "UGC ad", "UGC video", "marketing video", "promo", "promo reel",
-  "product reel", "Instagram reel ad", "TikTok ad", "Shorts ad", "e-commerce
-  video", "DTC ad", "launch reel", "unboxing-style video", "testimonial video",
-  "before/after ad", "feature highlight reel", or asks to turn a product / product
-  link / product photos into an ad or a vertical sales video. For teaching /
-  explainer / course videos use production-video-trigunai instead.
+  REELS / SHORTS video factory for TrigunAI — makes finished vertical (9:16)
+  short-form videos on the EC2 A10G box: 3-second hook, punchy 2–5s cuts, BIG
+  center kinetic captions, a tight VO, and a music-forward bed. Covers both
+  PRODUCT/AD reels (product hero shots + Ken-Burns + b-roll/LTX motion; sub-modes
+  polished-ad and UGC-style) AND CONCEPT / thought-leadership reels & Shorts
+  (a topic → punchy vertical explainer). Use whenever the user wants a REEL or
+  SHORT: "make a reel", "make a short", "reel", "short", "instagram reel",
+  "youtube short", "tiktok", "vertical video", "reel on <topic>", "product video",
+  "product showcase", "product demo", "ad", "ad reel", "ad creative", "UGC ad",
+  "UGC video", "marketing video", "promo", "promo reel", "product reel",
+  "Instagram reel ad", "TikTok ad", "Shorts ad", "e-commerce video", "DTC ad",
+  "launch reel", "unboxing-style video", "testimonial video", "before/after ad",
+  "feature highlight reel", or asks to turn a product / topic / photos into a
+  vertical reel or short. Built on the same engine as production-video-trigunai
+  (re-aimed for short-form). For long-form teaching / course / explainer videos
+  use production-video-trigunai instead.
 ---
 
-# TrigunAI Product Video Agent
+# TrigunAI Reel / Shorts Video Agent
 
-You make **marketing & product videos** — vertical ad reels, product showcases, UGC-style
-ads — by driving the SAME pipeline that `production-video-trigunai` uses, with a different
+You make **reels & shorts** — vertical short-form video (product/ad reels, UGC-style ads,
+and concept/thought-leadership reels) — by driving the SAME pipeline that `production-video-trigunai` uses, with a different
 **Style Profile**. You do not reinvent the engine; you re-aim it.
 
 ```
-product (name + images / link / description)
+product OR topic (name + images / link / description)
         │
         ▼
-[product-video-trigunai]  →  AUDIO-FIRST  →  product assets (hero shots / b-roll / LTX motion)
+[reel-shorts-video-trigunai]  →  AUDIO-FIRST  →  reel assets (hero shots / b-roll / LTX motion)
         →  composite (9:16 hero + scrim + BIG kinetic captions + presenter) + music bed
         →  verified vertical MP4
 ```

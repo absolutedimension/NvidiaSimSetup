@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "source": "marketing_pipeline/SOCIAL_15DAY_PLAN.md",
+    "window": "2026-07-03 to 2026-07-17",
+    "timezone": "Asia/Kolkata",
+    "posting_windows": { "ig_fb": "19:00-21:00", "linkedin": "08:00-10:00", "shorts": "any" },
+    "routing": {
+      "auto_post": ["instagram", "facebook", "youtube_short", "youtube_flowart"],
+      "deliver_to_owner_manual": ["linkedin", "carousel", "stories"]
+    },
+    "ctas": {
+      "A": "Message Acharya free on WhatsApp -> wa.me/919135255107",
+      "C": "All courses -> acharya.trigunai.com",
+      "T": "Coaching teacher? Reply TEACHER -> wa.me/919135255107?text=TEACHER",
+      "offer": "30 min/day for 7 days = 1 year of Acharya free."
+    },
+    "honesty_guardrail": "No fabricated testimonials or student counts. Teacher 'case' posts must be real or framed as 'here's how it would work'. Founding-Learner offer is marketing-only (no auto-grant)."
+  },
+  "days": [
+    { "date": "2026-07-03", "day": 1, "pillar": "acharya",
+      "hero_reel": { "brief": "Ask Acharya: screen-record it solving a real NEET/JEE doubt at 9pm", "style": "screen-record + kinetic captions", "cta": "A", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Founder post: 'We built an AI tutor that lives in WhatsApp - here's why' + demo clip", "cta": "A" },
+      "stories": ["poll: Where do you get stuck studying?"] },
+
+    { "date": "2026-07-04", "day": 2, "pillar": "learn60",
+      "carousel": { "brief": "6 cards: '3 words that explain how AI thinks' (attention)", "cta": "C" },
+      "linkedin": { "brief": "repost the carousel as a PDF document" },
+      "stories": ["repost carousel card 1"] },
+
+    { "date": "2026-07-05", "day": 3, "pillar": "universal_mind",
+      "hero_reel": { "brief": "Brand reel: 'AI is the Universal Mind' (reuse reel_brand_universal_mind if available, else regenerate)", "style": "shader background + concept captions", "cta": "", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Reflective text post: the thesis in 4 lines" },
+      "stories": ["quote card"] },
+
+    { "date": "2026-07-06", "day": 4, "pillar": "teachers",
+      "hero_reel": { "brief": "Teachers: 'Your students have doubts at midnight. Now you have an answer.'", "style": "reel or carousel, teacher-facing", "cta": "T", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Lead post: the Rs 4,999 'your own tutor under your name' pitch -> reply TEACHER", "cta": "T" },
+      "stories": ["Tag a teacher"] },
+
+    { "date": "2026-07-07", "day": 5, "pillar": "acharya",
+      "hero_reel": { "brief": "Founding-Learner offer: '30 min/day x 7 days = 1 year free'", "style": "punchy offer reel", "cta": "offer", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Post: the offer, framed as 'we're betting on consistency, not price'" },
+      "stories": ["countdown sticker to the offer"] },
+
+    { "date": "2026-07-08", "day": 6, "pillar": "build_in_public",
+      "hero_reel": { "brief": "Behind-the-scenes: training a robot policy in NVIDIA Isaac Sim (drone/robotics clip)", "style": "sim footage + captions", "cta": "", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Founder post: 'What we're building besides courses: Physical AI' (NVIDIA Inception)" },
+      "stories": ["raw desk/build shot"] },
+
+    { "date": "2026-07-09", "day": 7, "pillar": "learn60",
+      "carousel": { "brief": "'VR dev used to need a studio. Now it needs a workflow.' (VR course)", "cta": "C" },
+      "linkedin": { "brief": "Document carousel, B2B angle: 'upskilling your team'" },
+      "stories": ["repost + 'DM for the course'"] },
+
+    { "date": "2026-07-10", "day": 8, "pillar": "acharya",
+      "hero_reel": { "brief": "Ask Acharya #2: different subject (bio/physics), show the weekly report", "style": "screen-record + captions", "cta": "A", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Post: 'one-on-one tutoring that scales - how Acharya adapts per learner'", "cta": "A" },
+      "flowart_music": { "brief": "Drop a 1-hr focus-music video (shader-reactive)", "platforms": ["youtube_flowart"] },
+      "stories": ["FlowArt teaser"] },
+
+    { "date": "2026-07-11", "day": 9, "pillar": "universal_mind",
+      "hero_reel": { "brief": "Episode clip: Imagination / 'can a machine imagine?'", "style": "episode repurpose", "cta": "", "platforms": ["instagram","facebook","youtube_short"] },
+      "stories": ["poll: Which idea hits hardest?"] },
+
+    { "date": "2026-07-12", "day": 10, "pillar": "founder_story",
+      "hero_reel": { "brief": "'I needed a world that didn't exist, so I built it.' founder note (reel or image)", "style": "founder note, warm", "cta": "", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Founder personal post: the origin story (wonder + agency)" },
+      "stories": ["personal photo + text"] },
+
+    { "date": "2026-07-13", "day": 11, "pillar": "teachers",
+      "hero_reel": { "brief": "Teacher testimonial-style / 'how a batch of 30 uses Acharya' (REAL or framed as 'how it would work' - honesty guardrail)", "style": "teacher-facing reel", "cta": "T", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Lead post #2: case-framed (a Patna NEET centre trial - must be real) -> reply TEACHER", "cta": "T" },
+      "stories": ["teacher FAQ"] },
+
+    { "date": "2026-07-14", "day": 12, "pillar": "learn60",
+      "carousel": { "brief": "'Agentic AI in 5 cards - what an AI agent actually is' (agentic course)", "cta": "C" },
+      "linkedin": { "brief": "Doc carousel, B2B: 'agents at work'" },
+      "stories": ["card repost"] },
+
+    { "date": "2026-07-15", "day": 13, "pillar": "acharya",
+      "hero_reel": { "brief": "Multilingual: Acharya answering in Hindi + English", "style": "screen-record bilingual + captions", "cta": "A", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Post: 'learning in your own language - why we built Acharya bilingual'" },
+      "stories": ["Hindi poll"] },
+
+    { "date": "2026-07-16", "day": 14, "pillar": "build_in_public",
+      "hero_reel": { "brief": "ModusXR / Physical AI teaser - 'AI leaving the screen'", "style": "teaser reel", "cta": "", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Founder post: the two-engine company (learning + embodied AI)" },
+      "stories": ["build clip"] },
+
+    { "date": "2026-07-17", "day": 15, "pillar": "acharya",
+      "hero_reel": { "brief": "Recap + strong CTA: 'This week on TrigunAI + start free'", "style": "recap reel", "cta": "A", "platforms": ["instagram","facebook","youtube_short"] },
+      "linkedin": { "brief": "Post: fortnight recap + 'follow the build'" },
+      "flowart_music": { "brief": "2nd focus-music drop", "platforms": ["youtube_flowart"] },
+      "stories": ["link sticker to Acharya"] }
+  ]
+}
