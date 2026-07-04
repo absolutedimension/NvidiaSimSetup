@@ -48,3 +48,21 @@ Tomorrow's lead domino: Fri 06-26 = COHORT KICKOFF (5pm IST) + payment deadline.
 Reflection: [closed 06-27] COHORT LAUNCHED. Session 1 ran live Fri 5pm. 2 of 3 invited joined (1 of the 3 did not convert to a start) and are now training in lms.trigunai.com + using their AI tutor on web + WhatsApp — real, active engagement of the live product. BUT THE GATE IS UNMOVED: payment is VERBALLY CONFIRMED ("they'll pay in the coming week"), 0 rupees cleared. Promised ≠ paid (anti-pattern #20). Strategic risk now live: both students already have full value (live class + LMS + AI tutor) BEFORE paying — the collection leverage is weakest exactly when access is granted. Block 1 box stays [ ] until a UTR hits the account.
 Tomorrow's lead domino: COLLECT. Get a hard pay date from each of the 2 students (not "this week" — a day), send account details + a one-line frictionless ask, and confirm a UTR. The gate flips on the first cleared transfer, nothing else.
 
+## 2026-07-03 Fri  (gate: 0 paid)
+- [ ] 1 Marketing  (2h)   — target: …            → artifact:
+- [ ] 2 Robotics   (2h)   — target: …            → artifact:
+- [ ] 3 Course     (4h)   — target: …            → artifact:
+- [ ] 4 FlowArt/VR (2h)   — target: …            → artifact:
+- [ ] 5 TechScan   (1h)   — target: …            → artifact:
+Reflection:
+Tomorrow's lead domino:
+
+## 2026-07-04 Sat  (gate: 0 paid)
+- [ ] 1 Marketing  (2h)   — target: …            → artifact:
+- [ ] 2 Robotics   (2h)   — target: …            → artifact:
+- [ ] 3 Course     (4h)   — target: …            → artifact:
+- [ ] 4 FlowArt/VR (2h)   — target: …            → artifact:
+- [ ] 5 TechScan   (1h)   — target: …            → artifact:
+Reflection:
+Tomorrow's lead domino:
+

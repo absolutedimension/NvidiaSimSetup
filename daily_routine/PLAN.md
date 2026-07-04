@@ -9,10 +9,10 @@
 > haiku = mechanical (uploads, scripts, lookups) · sonnet = the middle (most coding/writing) ·
 > opus = hard reasoning only (strategy, curriculum/flow design, tricky debugging, RL reward design).
 
-## 1 Marketing  ⭐ (revenue — do first)
-- [ ] Send the Wed-24 nudge to the 3 invoiced leads (Aditya, Kritansh, Gauri) — Message B, bank-transfer + Fri-26 deadline + honest scarcity @model:sonnet
-- [ ] Cut 1 "wonder" Short (EN+HI) from an episode, post w/ intro-class CTA @model:sonnet
-- [ ] (Fri) Free-intro-class INVITE — LinkedIn post + email the list @model:sonnet
+## 1 Marketing  ⭐ (revenue — do first)  — NOW = the Teacher B2B2C PMF test (Day 1 of 21, window 07-03→07-23)
+- [ ] Run teacher outreach: book the 3 non-payer interviews (Aditya, Kritansh, Gauri) + hold ~2 teacher conversations (pull 6 fresh numbers, dial), log every call same-day → via `teacher-outreach-engine` @model:sonnet
+- [ ] Cut 1 "wonder" Short (EN+HI) from an episode, post w/ CTA @model:sonnet
+- [ ] (old cohort motion — DEAD: Jun-26 ₹35k close failed 0/3; those 3 leads are now interview targets above)
 
 ## 2 Robotics
 - [ ] (parked — resume later) next: 500-iter retrain + VLM eval on the drone policy @model:opus

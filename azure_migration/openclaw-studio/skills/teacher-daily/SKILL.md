@@ -1,12 +1,29 @@
 ---
 name: teacher-daily
-description: "The DAILY chief-of-staff for Deepak's teacher B2B outreach sprint (teacher_gtm 15-day PMF test). Runs each morning at 9am IST: reads today's plan + the progress dashboard, digs fresh teacher leads for Deepak to verify+call, and sends a Telegram morning brief (who to call, targets, Priyanshu's list, tonight's interview, today's technical task). Through the day it LOGS call outcomes when Deepak reports them (progress.py), builds a pilot's concept bank when one is booked, and drafts scorecards/reports. It does NOT make calls (human-only) — it runs everything AROUND the calls and pings Deepak on Telegram only when it needs input or a decision. Triggers: 'run teacher outreach', 'teacher daily', 'log my calls', 'todays teacher brief', 'source teacher leads', cron daily-9am."
+description: "The DAILY chief-of-staff for Deepak's teacher B2B outreach sprint (teacher_gtm 15-day PMF test). Runs each morning at 9am IST: reads today's plan + the progress dashboard, digs fresh teacher leads for Deepak to verify+call, and sends a Telegram morning brief (who to call, targets, Priyanshu's list, tonight's interview, today's technical task). Through the day it LOGS call outcomes when Deepak reports them (progress.py), builds a pilot's concept bank when one is booked, and drafts scorecards/reports. It does NOT make calls or build dialers here — the Maya/Plivo voice agent on Gurukul does the calling — it runs everything AROUND the calls and pings Deepak on Telegram only when it needs input or a decision. Triggers: 'run teacher outreach', 'teacher daily', 'log my calls', 'todays teacher brief', 'source teacher leads', cron daily-9am."
 metadata: { "openclaw": { "emoji": "🎓", "requires": { "bins": ["python3"] } } }
 ---
 
 # teacher-daily — Teacher Outreach Chief-of-Staff
 
 Runs the teacher B2B sprint's daily loop AROUND Deepak's calls. **The calls are human-only** (the scoreboard = conversations→pilots→₹4,999 paid); this agent does the brief, sourcing, logging, and build work, and pings Deepak on Telegram for anything only he can do.
+
+## ⚠️ CALLING IS OWNED BY MAYA (Plivo / Gurukul) — do NOT build a dialer on this box
+The actual outbound calling to teachers is handled by the **Maya voice agent** — Azure **gpt-realtime**
+speech-to-speech over **Plivo**, from the Indian number **+91 22 6423 0921** — running on the **Gurukul VM**
+(`dk_trigun@20.219.2.53`), with its own daily *approve-then-call* scheduler (see the **content-marketing-bot**
+skill §6 + §6.9a). That is a SEPARATE system from this box.
+
+**Hard rules for THIS box:**
+- **NEVER** set up a Twilio dialer, a "power-dial" job, a "call-you-first-then-bridge" job, or place ANY
+  outbound call from here. This box has no telephony role.
+- If Deepak says **"call without asking" / "start calling"**, that means *approve Maya's daily list* (tap the
+  Telegram Approve link that Maya's planner sends) — it does **NOT** mean build a dialer here. If unsure, tell
+  him "Maya on Gurukul handles calling — approve today's list via the Telegram link," and do nothing else.
+- Phone-verified leads now live at `~/leads/all_leads.csv` **on Gurukul** (Google Places), fed to Maya. Your
+  Azure-Maps sourcing here is *supplementary intel* only.
+- Your role stays: morning brief, lead sourcing/intel, and logging outcomes Deepak reports. Maya dials; you support around it.
+
 
 Kit lives at `~/teacher_gtm/` on the box: `15DAY_PLAN.md`, `DAY{N}_BRIEF.md`, `progress.py` (+ `progress.json`), `03_CONVERSATION_LOG.md`, `02_CONVERSATION_SCRIPT.md`, `06_SOURCING_CHANNELS.md`, `CALLER_BRIEF_PRIYANSHU.md`.
 

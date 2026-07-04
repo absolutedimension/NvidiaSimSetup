@@ -6,7 +6,7 @@ Half-duplex: caller audio is ignored while Maya is speaking (matches "don't inte
 Env (~/voicebot_wa/wa_voice.env + plivo.env): AZURE_OPENAI_API_KEY (maya-india-aoai), PLIVO_AUTH_ID, PLIVO_AUTH_TOKEN
 Run: uvicorn maya_rt_bridge:app --host 0.0.0.0 --port 7863
 """
-import os, json, asyncio, urllib.request
+import os, json, asyncio, time, urllib.request
 from fastapi import FastAPI, WebSocket, Request, Response
 import websockets
 
@@ -25,6 +25,9 @@ INSTRUCTIONS = (
     "OPEN with a genuinely POLITE, soft greeting, e.g.: 'नमस्ते जी! आपका दिन शुभ हो। मैं TrigunAI से माया बोल रही हूँ — "
     "क्या मैं आपका एक मिनट ले सकती हूँ?' Then warmly find out if they are in the teaching/coaching/tuition field, or "
     "want to earn or grow by teaching. "
+    "CRITICAL: Greet and introduce yourself ONLY ONCE — in your very first line. After that, NEVER say 'नमस्ते' or "
+    "re-introduce yourself or repeat the opening question again. Always continue naturally from what the caller just said. "
+    "If you didn't catch their reply, ask a SHORT clarifying question — but never restart or re-greet. "
     "YOUR ONLY JOB: figure out (a) whether this person is in the teaching field (or wants to earn/scale by teaching), and "
     "(b) whether they'd be interested in plugging modern AI into their teaching so they can teach MORE children with LESS "
     "effort and scale/earn more. Do NOT probe which subject or course they teach — that's not needed. NEVER mention any "
@@ -55,10 +58,17 @@ async def health():
     return {"ok": True, "agent": "maya-rt-bridge"}
 
 @app.api_route("/realtime-answer", methods=["GET", "POST"])
-async def answer(_r: Request):
+async def answer(request: Request):
+    from urllib.parse import urlencode
+    ctx = {k: request.query_params.get(k, "") for k in ("name", "city", "segment")}
+    su = STREAM_WSS
+    qs = urlencode({k: v for k, v in ctx.items() if v})
+    if qs:
+        su = f"{STREAM_WSS}?{qs}"
+    su = su.replace("&", "&amp;")   # XML-escape ampersands for Plivo
     xml = ('<?xml version="1.0" encoding="UTF-8"?><Response>'
            f'<Stream bidirectional="true" keepCallAlive="true" '
-           f'contentType="audio/x-mulaw;rate=8000" audioTrack="inbound">{STREAM_WSS}</Stream></Response>')
+           f'contentType="audio/x-mulaw;rate=8000" audioTrack="inbound">{su}</Stream></Response>')
     return Response(content=xml, media_type="application/xml")
 
 import base64
@@ -104,12 +114,23 @@ async def stream(plivo_ws: WebSocket):
         if m.get("event") == "start":
             stream_id = m["start"]["streamId"]; call_id = m["start"].get("callId"); break
 
+    # per-call caller context (passed as query params by the runner) — Maya sounds informed
+    q = plivo_ws.query_params
+    name = q.get("name", ""); city = q.get("city", ""); segment = q.get("segment", "")
+    instr = INSTRUCTIONS
+    if name:
+        who = f"'{name}'"
+        if segment: who += f" (a {segment} coaching/tuition)"
+        if city: who += f" in {city}"
+        instr += (f" CALL CONTEXT: You are calling {who}. Use this naturally — you may warmly confirm you've "
+                  "reached the right place; do NOT robotically read out the full listing name.")
+
     az = await websockets.connect(RT_URL, additional_headers={"api-key": AOAI_KEY},
                                   open_timeout=15, max_size=None)
     await az.recv()  # session.created
     await az.send(json.dumps({"type": "session.update", "session": {
         "modalities": ["audio", "text"],
-        "instructions": INSTRUCTIONS,
+        "instructions": instr,
         "voice": VOICE,
         "input_audio_format": "g711_ulaw",
         "output_audio_format": "g711_ulaw",
@@ -130,7 +151,7 @@ async def stream(plivo_ws: WebSocket):
         print("TRANSCRIPT " + line, flush=True)
 
     ended = asyncio.Event()
-    state = {"maya_speaking": True, "buf": ""}   # start True so greeting isn't interrupted
+    state = {"maya_speaking": True, "buf": "", "resp_bytes": 0, "first_audio": None}
 
     async def plivo_to_az():
         try:
@@ -152,10 +173,14 @@ async def stream(plivo_ws: WebSocket):
             async for raw in az:
                 m = json.loads(raw); t = m.get("type", "")
                 if t.endswith("audio.delta") and m.get("delta"):
+                    if state["first_audio"] is None:
+                        state["first_audio"] = time.monotonic()
+                    state["resp_bytes"] += len(base64.b64decode(m["delta"]))  # g711 8kHz: 8000 bytes/sec
                     await plivo_ws.send_text(json.dumps({"event": "playAudio", "media": {
                         "contentType": "audio/x-mulaw", "sampleRate": 8000, "payload": m["delta"]}}))
                 elif t == "response.created":
                     state["maya_speaking"] = True; state["buf"] = ""
+                    state["resp_bytes"] = 0; state["first_audio"] = None
                 elif t.endswith("audio_transcript.delta"):
                     state["buf"] += m.get("delta", "")
                 elif t == "conversation.item.input_audio_transcription.completed":
@@ -165,7 +190,11 @@ async def stream(plivo_ws: WebSocket):
                 elif t == "response.done":
                     state["maya_speaking"] = False
                     if any(c in state["buf"] for c in CLOSERS):
-                        await asyncio.sleep(2.0); ended.set(); break
+                        # wait for the buffered closing audio to finish playing on the caller side
+                        dur = state["resp_bytes"] / 8000.0
+                        elapsed = (time.monotonic() - state["first_audio"]) if state["first_audio"] else 0.0
+                        await asyncio.sleep(max(1.0, dur - elapsed + 1.5))
+                        ended.set(); break
         except Exception:
             pass
         finally:

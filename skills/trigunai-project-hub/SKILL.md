@@ -1,17 +1,159 @@
 ---
 name: trigunai-project-hub
 description: >
-  Central nervous system for TrigunAI's multi-agent project. Manages the CEO briefing,
-  cross-agent feedback, artifact registry, and data inventory. Use when the user says
-  "update CEO", "what's the status", "brief me", "update the hub", "where's the file",
-  "track this artifact", "send feedback to training/VR agent", "what did the other agent do",
-  "project status", "data inventory", "where are my checkpoints", "what's on EC2",
-  "what's ephemeral", or at the END of any work session to post updates. Also proactively
-  trigger after any agent completes a phase gate, produces a deliverable, or encounters a
-  blocker. Any agent finishing work should update the hub before closing.
+  THE control tower / front door for ALL of TrigunAI's systems. Two jobs: (1) ROUTER —
+  map any request to the ONE skill that owns it, and name the VM/repo/Azure-sub it lives on
+  (§A routing table, §B topology); (2) the multi-agent PROJECT HUB for the sim/training
+  work (CEO briefing, cross-agent feedback, artifact registry, data inventory — Part 2).
+  Load this FIRST for anything cross-system or when you're unsure which skill/VM/repo owns
+  a thing. Use when the user says "which skill / what owns this", "where does X live",
+  "control tower", "route this", "my whole system", "get control of everything",
+  "what's live / what's paused", "update CEO", "what's the status", "brief me",
+  "update the hub", "where's the file", "track this artifact", "send feedback to
+  training/VR agent", "where are my checkpoints", "what's on EC2", "what's ephemeral",
+  or at the END of any work session to post updates. Also proactively trigger after any
+  agent completes a phase gate, produces a deliverable, or hits a blocker.
 ---
 
-# TrigunAI Project Hub
+# TrigunAI Control Tower + Project Hub
+
+This skill is the **single front door** to everything TrigunAI runs. Part 1 (§A–§C) routes
+any request to the skill that owns it and tells you which VM/repo/Azure-subscription it lives
+on. Part 2 (§1–§10) is the original multi-agent project hub for the sim/training workstreams.
+
+**Rule: this skill does not DO the work — it dispatches.** Read the routing table, load the
+owning skill, hand off. Only §1–§10 (status/briefing/artifacts) are done here directly.
+
+---
+
+## §A. Master routing table — request → owning skill
+
+Find the row that matches the intent, load that skill. (Grouped; most-load-bearing first.)
+
+### Live product / web (anything on a `trigunai.com` domain)
+| If the request is about… | Load skill |
+|---|---|
+| Sites, LMS, Acharya WhatsApp **bridge**, billing/Razorpay, lessons, pricing, SEO, dashboards — **any live trigunai.com property** | **`maintain-trigunai-system`** |
+| Add a NEW course (tutor concept bank + LMS catalog + detail page) | `add-trigunai-course` |
+
+### Autonomous engines (the self-running box)
+| If the request is about… | Load skill |
+|---|---|
+| Operate/debug/extend the daily **content engine**, **teacher-outreach automation**, **Maya voice-calling**, render farm, or cron | **`content-marketing-bot`** |
+
+### Strategy / founder OS
+| If the request is about… | Load skill |
+|---|---|
+| Strategy, weekly review, funding/grants/DPIIT, pricing calls, brand, the honesty **Witness** gate | **`trigunai-ceo`** |
+| The daily 5-block routine + discipline log | `trigunai-daily-discipline` |
+| Biz dev / partnerships | `trigunai-bizdev` |
+
+### Daily delivery loops
+| If the request is about… | Load skill |
+|---|---|
+| Ship TODAY's marketing content (resolve calendar → produce → post) | `content-daily-engine` |
+| Daily teacher outreach (source leads, call, log, progress) | `teacher-outreach-engine` |
+
+### Content production (make an asset)
+| If the request is about… | Load skill |
+|---|---|
+| The emotional OS for ANY marketing creative (do this first when making content) | `content-marketing-emotion-connect` |
+| Make a narrated / production video | `production-video-trigunai` |
+| Write a video script (feeds the production skill) | `video-script-writer-trigunai` |
+| Faceless explainer video | `faceless-explainer-trigunai` |
+| Episode catalog / series strategy | `trigunai-content-strategy` |
+
+### Music / FlowArt
+| If the request is about… | Load skill |
+|---|---|
+| Guided step-by-step track builder | `track-studio-trigunai` |
+| Hypnotic techno set (+ optional visualizer) | `hypnotic-techno-trigunai` |
+| Deep-house / focus / isochronic session | `isochronic-deephouse-trigunai` |
+| Learn a specific DJ's style → generative engine | `learn-dj-style-trigunai` |
+| Raw music production engine | `production-music-trigunai` |
+| Turn a track into an audio-reactive shader video | `shader-reactive-pattern-music` |
+
+### Distribution / publish
+| If the request is about… | Load skill |
+|---|---|
+| Multi-channel publisher (email/Telegram/Discord/YouTube) | `trigunai-marketing` |
+| Instagram + Facebook Reels | `trigunai-social-reels` |
+| YouTube — both channels | `trigunai-youtube` · English `trigunai-yt-english` · Hindi `trigunai-yt-hindi` · FlowArt `trigunai-yt-flowart` |
+
+### Engineering / simulation pipelines
+| If the request is about… | Load skill |
+|---|---|
+| Default full-stack dev anywhere in the repo | **`trigunai-dev`** |
+| Isaac Sim/Lab training, RL, reward design, OVRTX render, EC2 | `trigunai-training` |
+| Drone A→B pipeline | `trigunai-drone-pipeline` |
+| Lower-body physics prediction | `trigunai-lower-body-physics` |
+| VR / Unity / Quest 3 (Gurulok) | `trigunai-vr` |
+| Lighting / stage design | `trigunai-lighting` · `trigunai-stage` |
+| Cross Mac↔Windows handoffs, mission phase gates | `trigunai-orchestrator` |
+| Autonomously execute a locked sprint / ADR | `trigunai-executor` |
+| Table-read directing | `trigunai-table-read-director` |
+| Add a new OpenClaw skill | `add-openclaw-skill` |
+
+Cross-agent status / CEO briefing / artifact registry for the sim-training project → **stay here**, see §1–§10.
+
+---
+
+## §B. System topology — where every system physically lives
+
+Verified from Azure IMDS + the maintain-trigunai-system map. **The two engines run on two
+DIFFERENT VMs in two regions/subscriptions — don't conflate them.**
+
+| System | Host | Azure region · sub | Repo (edit here) | Owning skill |
+|---|---|---|---|---|
+| **Acharya WhatsApp bridge** (`wa_bridge.mjs`, Caddy `gurukul.trigunai.com`, `/webhook`→:8788) | **Gurukul VM** `20.219.2.53` `gurukul-prod` (ssh `dk_trigun`, key `~/.ssh/gurukul_key`) | **Central India** · `cc469e97` (`trigunai-gurukul-rg`) | `NvidiaSimSetup/agentic_cohort/` | `maintain-trigunai-system` |
+| **Maya voice-calling** (`voicebot_wa/`, systemd `maya-*`, `/realtime*`) | **same Gurukul VM** `20.219.2.53` | Central India · `cc469e97` | `azure_migration/openclaw-studio/` | `content-marketing-bot` (§6) |
+| **Content engine + teacher automation** (OpenClaw, `openclaw cron`) | **OpenClaw box** `20.120.226.5` `hearmenow-agentic-system` (ssh user `hearmenow-agentic-system`, key `~/Downloads/hearmenow-agentic-system_key.pem`) | **westus2** · `c959dffc` | `azure_migration/openclaw-studio/` (+ repo `skills/`) | `content-marketing-bot` |
+| **LMS / Acharya site** (`acharya.` + `lms.trigunai.com`, gold landing) | Azure Container App `lms` | `cb656d95` · registry `trigunaicr` | `NvidiaSimSetup/lms` | `maintain-trigunai-system` |
+| **Public sites** (`trigunai.com`, `studio.`, `learn.`→301) | Azure Container App `triguai-frontend` (nginx host-routes 3 domains) | `7db80eaf` · `triguai-prod` · registry `triguaiacr` | `ShaderStudio` (`landing/` + `deployment/`) | `maintain-trigunai-system` |
+| **Render / training farm** | EC2 A10G EIP `34.192.145.204` (us-east-1) + T4 fallback | AWS us-east-1 | `NvidiaSimSetup/` | `trigunai-training` / `content-marketing-bot` |
+
+⚠️ Traps baked in from experience: the Gurukul VM hosts **both** Acharya and Maya — never break
+`/webhook`→Acharya when touching Maya. Public landing lives in **ShaderStudio**, not
+`NvidiaSimSetup/landing-page/` (stale). LMS edits never go in ShaderStudio and vice-versa.
+
+---
+
+## §C. Live / paused status pointers
+
+Don't guess what's running — check the source of truth:
+
+| Question | Where the answer is |
+|---|---|
+| Is the content engine / teacher engine paused? | OpenClaw box: `~/.openclaw/PAUSE_DAILY` / `PAUSE_TEACHER` present = paused |
+| What posted / what called today? | `~/.openclaw/content_log.md` · `~/teacher_gtm/progress.json` · `~/leads/call_results.csv` |
+| Are the cron engines firing? | `openclaw cron list` / `openclaw cron runs` (on OpenClaw box) |
+| Are the live sites up? | `curl -s -o /dev/null -w '%{http_code}' https://acharya.trigunai.com/healthz` (+ trigunai.com, studio) |
+| Is the Acharya bridge / Maya up? | Gurukul VM: `pm2 list` (wa-bridge) · `systemctl is-active maya-realtime` |
+| Current sim-training project state | Part 2 → `project_hub/CEO_BRIEFING.md` |
+
+Deep operational detail for each system lives in its owning skill — this table only tells you
+**where to look**, then load that skill.
+
+### §C.1 `hub status` — run the live board
+
+When the user says **"hub status"**, "is everything up", "status board", "health check",
+run the bundled script and show its output verbatim:
+
+```bash
+bash ~/Documents/01_Active/NvidiaSimSetup/skills/trigunai-project-hub/hub_status.sh
+```
+
+Read-only, ~15 s. Checks, in one screen: the 5 live sites (HTTP codes), the Gurukul VM
+(Acharya app on :8788 + Maya realtime/scheduler systemd), and the OpenClaw box (content +
+teacher PAUSE flags, cron 3/3, last content-log line). Needs both SSH keys
+(`~/.ssh/gurukul_key`, `~/Downloads/hearmenow-agentic-system_key.pem`). Health signals worth
+knowing: the Acharya **bridge** is healthy when `gurukul.trigunai.com/webhook` answers **403**
+(app-level auth rejection = up); `/healthz` does NOT exist on the bridge. `pm2 list` is empty
+under `dk_trigun`, so the script checks the app port directly instead of pm2.
+
+---
+
+# Part 2 — Multi-agent Project Hub (sim / training workstreams)
 
 You are the **central nervous system** for TrigunAI's multi-agent project. You maintain
 the single source of truth that all agents and the CEO read.
