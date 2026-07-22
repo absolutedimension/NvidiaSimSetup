@@ -68,6 +68,18 @@ ACHARYA_THUMBS = {
     "ai-music-factory": [5, 1.5],
     "ai-pm":            [2, 3.0],
 }
+# ── Student exam-prep product (acharya.trigunai.com/exam-prep) ──────────────────
+# Each exam maps to an assessment "subject" the adaptive engine serves. Phase 1 = curated
+# packs (the 5 below); dynamic per-topic generation for any exam is Phase 2.
+EXAMS = [
+    {"id": "neet",     "subject": "neet-biology", "title": "NEET",     "tag": "Medical entrance",    "emoji": "🧬"},
+    {"id": "jee",      "subject": "jee-physics",  "title": "JEE",      "tag": "Engineering entrance", "emoji": "⚛️"},
+    {"id": "class10",  "subject": "class10",      "title": "Class 10", "tag": "Boards · Sci + Math",  "emoji": "📘"},
+    {"id": "class12",  "subject": "class12",      "title": "Class 12", "tag": "Boards · PCM",         "emoji": "📗"},
+    {"id": "commerce", "subject": "commerce",     "title": "Commerce", "tag": "Class 11-12",          "emoji": "📊"},
+]
+EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
+
 # Canonical domain. acharya.trigunai.com serves the whole app; lms.trigunai.com 301-redirects here.
 CANONICAL_HOST = "acharya.trigunai.com"
 ACHARYA_HOSTS = {CANONICAL_HOST}
@@ -275,6 +287,92 @@ def verify(request: Request, token: str, course: str = "", phone: str = "", db: 
         notify.notify_admin(f"🎓 New signup — {student.email} · {COURSE_TITLES.get(student.course, student.course)} · {total} learners total")
     request.session["sid"] = student.id
     return RedirectResponse("/dashboard", status_code=302)
+
+
+# ---------- student exam-prep funnel (acharya.trigunai.com/exam-prep) ----------
+def _set_fact(db, student, key, value, source="prompt"):
+    """Upsert a single LearnerFact (student_id, key) — used to store the chosen exam etc."""
+    f = db.query(LearnerFact).filter_by(student_id=student.id, key=key).first()
+    if f:
+        f.value = value
+    else:
+        db.add(LearnerFact(student_id=student.id, key=key, value=value, source=source))
+
+
+@app.get("/exam-prep", response_class=HTMLResponse)
+def exam_prep(request: Request, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    resume_exam = EXAMS[0]["id"]
+    if student:
+        f = db.query(LearnerFact).filter_by(student_id=student.id, key="exam").first()
+        if f and f.value in EXAM_SUBJECT:
+            resume_exam = f.value
+    return templates.TemplateResponse(request, "exam_prep.html",
+                                      {"exams": EXAMS, "student": student, "resume_exam": resume_exam,
+                                       "jsonld": seo.exam_prep_jsonld(EXAMS)})
+
+
+@app.post("/exam-prep/start")
+def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form(""),
+                    phone: str = Form(""), db: Session = Depends(get_db)):
+    """Instant free signup: email → account + session → straight into the assessment.
+    No magic-link round-trip for the free tier (the magic link stays the re-login path)."""
+    email = email.lower().strip()
+    ex = exam.strip() if exam.strip() in EXAM_SUBJECT else EXAMS[0]["id"]
+    if "@" not in email or "." not in email.split("@")[-1]:
+        return templates.TemplateResponse(request, "exam_prep.html",
+                                          {"exams": EXAMS, "student": None, "resume_exam": ex,
+                                           "jsonld": seo.exam_prep_jsonld(EXAMS),
+                                           "error": "Please enter a valid email."})
+    existed = db.query(Student).filter_by(email=email).first() is not None
+    student = get_or_create_student(db, email)
+    _set_fact(db, student, "exam", ex)
+    p = "".join(c for c in phone if c.isdigit())[:15]
+    if p and not student.phone:
+        student.phone = p
+    db.commit()
+    if not existed:
+        total = db.query(Student).count()
+        notify.notify_admin(f"🎯 New student (exam-prep) — {student.email} · {ex} · {total} learners total")
+    request.session["sid"] = student.id
+    return RedirectResponse(f"/exam-prep/test?exam={ex}", status_code=302)
+
+
+@app.get("/exam-prep/test", response_class=HTMLResponse)
+def exam_prep_test(request: Request, exam: str = "", db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep", status_code=302)
+    subject = EXAM_SUBJECT.get(exam.strip(), EXAM_SUBJECT[EXAMS[0]["id"]])
+    html = (BASE / "static" / "exam" / "assess.html").read_text(encoding="utf-8")
+    inject = f"<script>window.__SUBJECT={subject!r};window.__STUDENT=true;</script>"
+    return HTMLResponse(html.replace("</head>", inject + "</head>", 1))
+
+
+@app.post("/api/assess/complete")
+async def assess_complete(request: Request, db: Session = Depends(get_db)):
+    """Persist a finished assessment's per-topic diagnosis to the student's account
+    (as LearningEvent rows, consent-gated). Session cookie authenticates — no token."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    subject = str(body.get("subject", ""))[:40]
+    results = body.get("results", []) or []
+    outcome_map = {"solid": "correct", "shaky": "partial", "weak": "wrong"}
+    for r in results:
+        if not isinstance(r, dict):
+            continue
+        log_learning_event(db, student, surface="web",
+                           concept_id=str(r.get("topic", ""))[:80],
+                           step_type="mcq", action="complete",
+                           outcome=outcome_map.get(str(r.get("status", "")), "na"))
+    _set_fact(db, student, "last_exam", subject)
+    db.commit()
+    return JSONResponse({"ok": True})
 
 
 @app.post("/logout")
@@ -943,14 +1041,19 @@ async def web_course_request(request: Request, db: Session = Depends(get_db)):
     topic = (body.get("topic") or "").strip()[:200]
     email = (body.get("email") or "").lower().strip()
     phone = "".join(c for c in (body.get("phone") or "") if c.isdigit())[:15]
-    if not topic or "@" not in email or "." not in email.split("@")[-1]:
-        return JSONResponse({"error": "topic and a valid email are required"}, status_code=400)
-    dup = db.query(CourseRequest).filter_by(email=email, topic=topic, status="requested").first()
+    has_email = "@" in email and "." in email.split("@")[-1]
+    has_phone = len(phone) >= 8
+    # A teacher "Book a demo" lead may prefer WhatsApp/call — accept a valid email OR a phone.
+    if not topic or not (has_email or has_phone):
+        return JSONResponse({"error": "topic and a contact (email or phone) are required"}, status_code=400)
+    dup_q = db.query(CourseRequest).filter_by(topic=topic, status="requested")
+    dup = dup_q.filter_by(email=email).first() if has_email else dup_q.filter_by(phone=phone).first()
     if not dup:
         db.add(CourseRequest(topic=topic, email=email, phone=phone, source="web"))
         db.commit()
         pending = db.query(CourseRequest).filter_by(status="requested").count()
-        notify.notify_admin(f"📚 Course request (web) — '{topic}' · {email} · {pending} pending")
+        contact = email if has_email else ("+" + phone)
+        notify.notify_admin(f"📚 Course/demo request (web) — '{topic}' · {contact} · {pending} pending")
     return JSONResponse({"ok": True})
 
 

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Google tag (gtag.js) — Ads conversion tracking (AW-18339354528) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18339354528"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18339354528');
+  // Student "free signup" conversion. Create the conversion action in Google Ads
+  // (Goals → Conversions → New → Website), paste its label below (AW-18339354528/xxxxx).
+  window.TRIGUNAI_STUDENT_CONV = 'AW-18339354528/REPLACE_WITH_STUDENT_LABEL';
+  function trigunaiConv(){
+    try{ if(window.TRIGUNAI_STUDENT_CONV.indexOf('REPLACE')<0) gtag('event','conversion',{'send_to':window.TRIGUNAI_STUDENT_CONV}); }catch(e){}
+    return true; // never block the submit
+  }
+</script>
+<title>Acharya — free AI practice tests that find your weak topics · JEE, NEET & boards</title>
+<meta name="description" content="Acharya gives you short adaptive practice tests for JEE, NEET, and Class 10 & 12 boards — in English or हिंदी. It doesn't just score you: it finds your exact weak topics from your answers and tells you what to revise next. Free to start, 14-day trial, then ₹199/month." />
+<link rel="canonical" href="https://acharya.trigunai.com/exam-prep" />
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Acharya — AI practice tests that find your weak topics · JEE · NEET · boards" />
+<meta property="og:description" content="Short adaptive tests in English or हिंदी that find your exact weak topics — not just a score. Free to start; ₹199/mo after a 14-day trial." />
+<meta property="og:url" content="https://acharya.trigunai.com/exam-prep" />
+<meta property="og:image" content="/static/brand/acharya-mark.png" />
+{% if jsonld %}<script type="application/ld+json">{{ jsonld|safe }}</script>{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#FDF6EC; --bg2:#F6E7D3; --ink:#2A2018; --gold:#C2591F; --gold-deep:#A8481A;
+    --sanskrit:#B4712F; --muted:#7A6A57; --faint:#A08A72; --line:rgba(168,72,26,.16);
+    --card:#FFFFFF; --card-edge:rgba(168,72,26,.12); --green:#2FA968;
+    --serif:"Bricolage Grotesque", Georgia, serif;
+    --sans:"Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --deva:"Tiro Devanagari Hindi", serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:linear-gradient(180deg,#FDF6EC 0%,#FBEAD6 46%,#F7E0C8 100%);background-attachment:fixed;
+       color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+  .nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:rgba(253,246,236,.82);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--serif);font-size:21px;font-weight:800;letter-spacing:-.3px}
+  .brand img{width:28px;height:28px;border-radius:7px}
+  .brand small{font-family:var(--sans);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .nav-right{display:flex;align-items:center;gap:18px;font-size:13.5px;font-weight:600;color:var(--muted)}
+  .nav-right a:hover{color:var(--gold)}
+
+  .hero{padding:52px 22px 26px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 440px at 78% 4%, rgba(233,150,74,.26), rgba(253,246,236,0) 60%);pointer-events:none}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;text-align:center}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 15px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.62);color:var(--gold);font-family:var(--deva);font-size:14px;margin-bottom:20px}
+  .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold-deep)}
+  h1.title{font-family:var(--serif);font-weight:800;font-size:clamp(34px,5.6vw,60px);line-height:1.02;letter-spacing:-1.2px}
+  h1.title .accent{color:var(--gold)}
+  .sub{color:var(--muted);font-size:clamp(16px,2.1vw,19px);max-width:640px;margin:18px auto 0;line-height:1.55}
+  .sub b{color:var(--ink);font-weight:600}
+
+  /* start card */
+  .start{max-width:660px;margin:30px auto 0;background:var(--card);border:1px solid var(--gold-deep);border-radius:22px;
+     padding:26px 26px 24px;box-shadow:0 24px 60px rgba(120,60,20,.14),0 0 70px rgba(233,150,74,.07);text-align:left}
+  .start .lead{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--gold-deep);margin-bottom:4px}
+  .start .lead2{color:var(--muted);font-size:13.5px;margin-bottom:15px}
+  .exams{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+  .exam{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;
+     border:1.5px solid var(--line);background:#FBF3EA;border-radius:13px;padding:12px 8px;cursor:pointer;transition:.13s}
+  .exam:hover{border-color:var(--gold)}
+  .exam input{position:absolute;opacity:0;pointer-events:none}
+  .exam .ex-emoji{font-size:22px}
+  .exam b{font-size:14px;font-weight:700}
+  .exam small{font-size:10.5px;color:var(--faint);line-height:1.2}
+  .exam:has(input:checked){border-color:var(--gold-deep);background:#FFF3E6;box-shadow:0 0 0 2px rgba(194,89,31,.16)}
+  .exam.more{cursor:default;opacity:.6;justify-content:center}
+  .fields{display:flex;flex-direction:column;gap:10px}
+  .fields input{width:100%;background:#FBF3EA;border:1.5px solid var(--line);border-radius:12px;color:var(--ink);
+     font-family:var(--sans);font-size:16px;padding:13px 15px}
+  .fields input:focus{outline:none;border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(194,89,31,.13)}
+  .btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;color:#fff;background:var(--gold-deep);
+     border:none;border-radius:13px;font-family:var(--sans);font-weight:800;font-size:16px;padding:15px;cursor:pointer;
+     box-shadow:0 10px 26px rgba(168,72,26,.24);transition:transform .15s ease,box-shadow .15s ease}
+  .btn-gold:hover{transform:translateY(-1px);box-shadow:0 14px 34px rgba(168,72,26,.32)}
+  .start .fine{text-align:center;color:var(--faint);font-size:12.5px;margin-top:11px}
+  .start .fine b{color:var(--gold-deep)}
+  .msg{text-align:center;font-size:13.5px;margin-top:8px;min-height:16px}
+  .msg.err{color:#c23b22}
+
+  .wa-alt{max-width:660px;margin:14px auto 0;text-align:center;color:var(--muted);font-size:14px}
+  .wa-alt a{color:var(--green);font-weight:700}
+
+  section.block{padding:44px 0;border-top:1px solid rgba(168,72,26,.08)}
+  .kicker{text-align:center;color:var(--gold-deep);font-size:12px;letter-spacing:3.5px;text-transform:uppercase;margin-bottom:10px}
+  .h2{font-family:var(--serif);font-weight:700;font-size:clamp(26px,4.2vw,38px);text-align:center;line-height:1.08;margin-bottom:10px}
+  .h2 em{color:var(--gold);font-style:italic}
+  .blurb{text-align:center;color:var(--muted);max-width:620px;margin:0 auto 30px}
+  .steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:15px;max-width:840px;margin:0 auto}
+  .steps li{background:var(--card);border:1px solid var(--card-edge);border-radius:14px;padding:20px}
+  .steps .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(212,162,58,.14);
+     border:1px solid var(--line);color:var(--gold);font-size:13px;font-weight:700;margin-bottom:10px}
+  .steps p{color:var(--ink);font-size:14.5px}
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto}
+  .vcard{background:var(--card);border:1px solid var(--card-edge);border-radius:16px;padding:24px}
+  .vcard .ico{font-size:23px;margin-bottom:10px}
+  .vcard h3{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--gold);margin-bottom:6px}
+  .vcard p{color:var(--muted);font-size:14.5px}
+  .price-note{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(160deg,#FFF6EA,#FFFDF9);
+     border:1px solid var(--gold-deep);border-radius:18px;padding:26px 28px;box-shadow:0 20px 50px rgba(120,60,20,.12)}
+  .price-note .big{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);margin-bottom:8px}
+  .price-note .amt{color:var(--gold);font-weight:800}
+  .price-note p{color:var(--muted);font-size:14px}
+  .final{text-align:center;padding:56px 22px}
+  .final h2{font-family:var(--serif);font-size:clamp(28px,5vw,44px);color:var(--gold);font-weight:700;margin-bottom:14px}
+  .final p{color:var(--muted);max-width:460px;margin:0 auto 22px}
+  footer{border-top:1px solid var(--line);padding:26px 0;color:var(--faint);font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  footer a:hover{color:var(--gold)}
+  .flinks{display:flex;gap:16px;flex-wrap:wrap}
+  .resume{max-width:660px;margin:22px auto 0;background:#EAF7EF;border:1px solid rgba(47,169,104,.3);border-radius:14px;
+     padding:14px 18px;text-align:center;color:var(--ink);font-size:14.5px}
+  .resume a{color:var(--gold-deep);font-weight:700}
+  @media(max-width:720px){.steps,.trio{grid-template-columns:1fr}.exams{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/exam-prep"><img src="/static/brand/trigunai-mark.png" alt="TrigunAI" />Acharya<small>for Students</small></a>
+    <div class="nav-right">
+      <a href="/">For teachers ↗</a>
+      <a href="/login">Sign in</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="pill">आचार्य · your AI exam-prep coach</div>
+    <h1 class="title">Find your <span class="accent">weak topics</span><br/>before the exam does.</h1>
+    <p class="sub">Take a short <b>adaptive test</b> for your exam — in English or हिंदी. Acharya doesn't just
+       score you: it finds your <b>exact weak topics</b> from your answers and tells you what to revise next.</p>
+
+    {% if student %}
+    <div class="resume">Welcome back, <b>{{ student.email }}</b> — <a href="/exam-prep/test?exam={{ resume_exam }}">continue your test →</a></div>
+    {% endif %}
+
+    <form class="start" method="post" action="/exam-prep/start" id="startform">
+      <div class="lead">Start free in 10 seconds</div>
+      <div class="lead2">Pick your exam, drop your email — no password, no payment.</div>
+      <div class="exams">
+        {% for e in exams %}
+        <label class="exam">
+          <input type="radio" name="exam" value="{{ e.id }}" {% if loop.first %}checked{% endif %} />
+          <span class="ex-emoji">{{ e.emoji }}</span><b>{{ e.title }}</b><small>{{ e.tag }}</small>
+        </label>
+        {% endfor %}
+        <div class="exam more"><span class="ex-emoji">＋</span><b>More</b><small>coming soon</small></div>
+      </div>
+      <div class="fields">
+        <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required />
+        <input type="tel" name="phone" placeholder="WhatsApp number (optional)" inputmode="tel" />
+        <button type="submit" class="btn-gold" onclick="trigunaiConv()">Start my free test →</button>
+      </div>
+      <div class="fine">🔒 Free to start · <b>14-day trial</b> · then ₹199/mo · cancel anytime</div>
+      <div class="msg{% if error %} err{% endif %}" id="msg" role="status">{% if error %}{{ error }}{% endif %}</div>
+    </form>
+
+    <div class="wa-alt">On your phone? <a href="https://wa.me/919135255107?text=quiz" target="_blank" rel="noopener" onclick="trigunaiConv()">Scan / tap to start on WhatsApp →</a></div>
+  </div>
+</header>
+
+<section class="block">
+  <div class="wrap">
+    <div class="kicker">How it works</div>
+    <h2 class="h2">One short test.<br/>A clear map of what to <em>study next</em>.</h2>
+    <ul class="steps">
+      <li><span class="n">1</span><p><b>Pick your exam &amp; start free</b> — email on web, or scan on WhatsApp. No password, no card.</p></li>
+      <li><span class="n">2</span><p><b>Take a 5-question adaptive test.</b> Get one wrong and it gets easier — to find your real level, not just fail you.</p></li>
+      <li><span class="n">3</span><p><b>Get your weak-spot report.</b> Exactly which topics are solid, shaky, or weak — and what to revise first.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="kicker">Why it's different</div>
+    <h2 class="h2">Not just a score. A <em>diagnosis</em>.</h2>
+    <p class="blurb">Any app can mark you right or wrong. Acharya reads <b>how</b> you answered and turns it into a plan.</p>
+    <div class="trio">
+      <div class="vcard"><div class="ico">🗺️</div><h3>Finds your weak topics</h3>
+        <p>Every answer maps to a topic — solid, shaky or weak, and whether it's your basics or the application that broke.</p></div>
+      <div class="vcard"><div class="ico">🎚️</div><h3>Adapts to you</h3>
+        <p>Miss a question and it drops to an easier one, so a weak spot gets <em>located</em> — never just marked wrong.</p></div>
+      <div class="vcard"><div class="ico">🗣️</div><h3>English or हिंदी</h3>
+        <p>Every question in both languages — tap to switch anytime. Study the way you're comfortable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="price-note">
+      <div class="big">Free to start. <span class="amt">₹199/month</span> after your 14-day trial.</div>
+      <p>Join free and take your first tests today — no card needed. Keep testing free for 14 days; continue for ₹199/mo, cancel anytime.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <h2>Know exactly where you stand.</h2>
+  <p>Start free — pick your exam and take your first test in under a minute.</p>
+  <a class="btn-gold" href="#startform" style="max-width:320px;margin:0 auto" onclick="document.getElementById('startform').scrollIntoView({behavior:'smooth'});document.querySelector('#startform input[type=email]').focus();return false;">Start my free test →</a>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© TrigunAI Innovations · आचार्य</div>
+    <div class="flinks">
+      <a href="/exam-prep">Exam prep</a>
+      <a href="/">For teachers</a>
+      <a href="/login">Sign in</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Client-side guard: don't submit without an email (the browser handles required, this is just nicer UX). */
+(function(){
+  var f=document.getElementById('startform'), msg=document.getElementById('msg');
+  if(!f) return;
+  f.addEventListener('submit', function(e){
+    var email=(f.email.value||'').trim();
+    if(email.indexOf('@')<1 || email.indexOf('.')<0){ e.preventDefault(); msg.className='msg err'; msg.textContent='Please enter a valid email.'; f.email.focus(); return; }
+    msg.className='msg'; msg.textContent='Setting up your test…';
+  });
+})();
+</script>
+</body>
+</html>
