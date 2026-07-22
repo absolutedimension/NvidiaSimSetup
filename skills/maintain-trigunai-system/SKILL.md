@@ -320,7 +320,14 @@ Offline marketing assets: `NvidiaSimSetup/acharya_pamphlet/` — A4 bilingual sc
 (rendered via headless Chrome `--print-to-pdf`). The repos also have their own `CLAUDE.md`.
 
 ## 8. Current state snapshot (2026-07-01) — live versions + what exists
-- **lms = v61** · **triguai-frontend = v106** (bump from these).
+- **lms = v63** · **triguai-frontend = v107** (bump from these). ⚠️ tag-reuse gotcha: a stale `lms:v62`
+  already existed, so `--image lms:v62` did NOT roll a new revision — ALWAYS bump to a brand-new tag.
+- **Landings REPOSITIONED to assessment-only (2026-07-22, lms:v63 + triguai-frontend:v107):** both
+  `acharya.trigunai.com` (`acharya.html`) and `trigunai.com` (`ShaderStudio/landing/index.html`) now sell
+  Acharya as an **AI assessment engine** ("you teach, Acharya tests & tracks") — tutor/Goal-OS LEAD removed,
+  Skill-Development links kept. acharya.html has a 6-card feature grid + teacher-dashboard (labeled a live
+  PREVIEW) + teacher/student benefits. Positioning source of truth for landings = the assessment reposition,
+  not the old discipline/Goal-OS copy. See [[project-acharya-assessment-system]].
 - **SEO / AI-SEO refreshed to the Goal-OS / discipline brand 2026-07-20** (lms:v61 `app/seo.py` + `acharya.html`
   head; triguai-frontend:v106 `landing/index.html` head): llms.txt now leads with "Acharya brings discipline
   to learning" + a "what makes Acharya different (guru, not a genie)" section (Goal OS · mastery gate ·
