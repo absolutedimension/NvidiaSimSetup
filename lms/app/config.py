@@ -52,6 +52,15 @@ class Settings:
     # Dark by default; flip to "1" once the consent copy ("your usage improves Acharya") is live.
     LOOP_CAPTURE_ENABLED = os.getenv("LOOP_CAPTURE_ENABLED", "0") == "1"
 
+    # ---- Student exam-prep assessment plan (₹199/mo) — a SEPARATE, parallel Razorpay track ----
+    # Its OWN master switch, independent of SUBS_ENABLED (the ₹499 course plan). While False the
+    # assessment gate is a no-op — /exam-prep stays free for everyone (the soft-launch state).
+    # To go live: create a ₹199/month plan in Razorpay, set RZP_ASSESS_PLAN_ID, flip ASSESS_ENABLED=1.
+    ASSESS_ENABLED = os.getenv("ASSESS_ENABLED", "false").lower() in ("1", "true", "yes")
+    RZP_ASSESS_PLAN_ID = os.getenv("RZP_ASSESS_PLAN_ID", "").strip()   # ₹199/month plan, created in Razorpay
+    ASSESS_PRICE_INR = int(os.getenv("ASSESS_PRICE_INR", "199"))
+    ASSESS_TRIAL_DAYS = int(os.getenv("ASSESS_TRIAL_DAYS", "14"))
+
     @property
     def is_sqlite(self) -> bool:
         return self.DATABASE_URL.startswith("sqlite")

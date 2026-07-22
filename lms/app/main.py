@@ -219,6 +219,31 @@ def has_access(student: Student) -> bool:
     return False
 
 
+def has_assessment_access(db: Session, student: Student) -> bool:
+    """Gate for the ₹199 exam-prep assessment plan (a SEPARATE track from has_access). When
+    ASSESS_ENABLED is False this is ALWAYS True — /exam-prep stays free for everyone (the
+    soft-launch state), so deploying this changes NOTHING until we flip it on. On the first gated
+    access AFTER it's enabled, a 14-day free trial starts LAZILY, so the clock begins when the
+    paywall goes live — no existing signup is retroactively expired."""
+    if not settings.ASSESS_ENABLED:
+        return True
+    if student.is_admin:
+        return True
+    st = student.assess_status or "none"
+    if st in ("active", "comped"):
+        return True
+    if st == "trialing":
+        if student.rzp_assess_subscription_id:      # card on file — Razorpay manages it
+            return True
+        return bool(student.assess_trial_end and student.assess_trial_end > datetime.utcnow())
+    if st == "none":                                 # lazy-start the 14-day trial on first gated access
+        student.assess_status = "trialing"
+        student.assess_trial_end = datetime.utcnow() + timedelta(days=settings.ASSESS_TRIAL_DAYS)
+        db.commit()
+        return True
+    return False   # expired / cancelled → must subscribe
+
+
 def chat_url_for(email: str, course: str = "agentic") -> str:
     """Signed, 1-hour link to the Acharya web chat (same secret as the Gurukul bridge). Carries the course."""
     if not settings.CHAT_SECRET:
@@ -350,6 +375,8 @@ def exam_prep_test(request: Request, exam: str = "", q: str = "", db: Session = 
     student = current_student(request, db)
     if not student:
         return RedirectResponse("/exam-prep", status_code=302)
+    if not has_assessment_access(db, student):
+        return RedirectResponse("/exam-prep/upgrade", status_code=302)
     exam = exam.strip()
     qtext = (q or "").strip()[:80]
     ex = next((e for e in EXAMS if e["id"] == exam), None)
@@ -404,6 +431,8 @@ def assess_generate(request: Request, q: str = "", db: Session = Depends(get_db)
     student = current_student(request, db)
     if not student:
         return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    if not has_assessment_access(db, student):
+        return JSONResponse({"ok": False, "error": "trial_over", "redirect": "/exam-prep/upgrade"}, status_code=402)
     qtext = (q or "").strip()[:80]
     if not qtext:
         return JSONResponse({"ok": False, "error": "no exam"}, status_code=400)
@@ -546,6 +575,90 @@ def api_trial_skip(request: Request, db: Session = Depends(get_db)):
     return JSONResponse({"ok": True, "redirect": "/dashboard"})
 
 
+# ---------- student assessment plan (₹199/mo) billing — a SEPARATE, parallel track ----------
+def _assess_view(student: Student) -> dict:
+    st = student.assess_status or "none"
+    nocard = (st == "trialing" and not student.rzp_assess_subscription_id)
+    active_trial = bool(student.assess_trial_end and student.assess_trial_end > datetime.utcnow())
+    days_left = 0
+    if student.assess_trial_end:
+        secs = (student.assess_trial_end - datetime.utcnow()).total_seconds()
+        days_left = max(0, int((secs + 86399) // 86400))
+    return {"status": st, "price": settings.ASSESS_PRICE_INR, "trial_days": settings.ASSESS_TRIAL_DAYS,
+            "enabled": settings.ASSESS_ENABLED, "configured": billing.configured_assess(),
+            "active_trial": nocard and active_trial, "expired": nocard and not active_trial,
+            "days_left": days_left, "key_id": settings.RZP_KEY_ID}
+
+
+@app.get("/exam-prep/upgrade", response_class=HTMLResponse)
+def exam_prep_upgrade(request: Request, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep", status_code=302)
+    return templates.TemplateResponse(request, "exam_prep_upgrade.html",
+                                      {"student": student, "sub": _assess_view(student)})
+
+
+@app.post("/api/assess/subscribe")
+async def api_assess_subscribe(request: Request, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"error": "login required", "redirect": "/login"}, status_code=401)
+    if student.assess_status == "active" or (student.assess_status == "trialing" and student.rzp_assess_subscription_id):
+        return JSONResponse({"error": "already subscribed", "redirect": "/exam-prep"}, status_code=400)
+    if not billing.configured_assess():
+        return JSONResponse({"error": "Assessment billing is not configured yet."}, status_code=503)
+    body = await request.json() if request.headers.get("content-type", "").startswith("application/json") else {}
+    contact = (body.get("contact") or "").strip()
+    already_trialed = student.assess_trial_end is not None    # used their free trial → charge now (trial_days=0)
+    try:
+        sub = await run_in_threadpool(
+            billing.create_subscription, student.name, student.email, "exam-prep", contact,
+            student.rzp_assess_customer_id, 0 if already_trialed else settings.ASSESS_TRIAL_DAYS,
+            settings.RZP_ASSESS_PLAN_ID, None, {"email": student.email, "plan": "assessment"},
+        )
+    except Exception as exc:
+        return JSONResponse({"error": f"Could not start subscription: {exc}"}, status_code=502)
+    student.rzp_assess_subscription_id = sub["id"]
+    student.rzp_assess_customer_id = sub["customer_id"]
+    student.assess_status = "created"
+    db.commit()
+    return JSONResponse({"ok": True, "subscription_id": sub["id"], "key_id": settings.RZP_KEY_ID,
+                         "redirect": sub["short_url"], "name": student.name or student.email.split("@")[0],
+                         "email": student.email})
+
+
+@app.get("/billing/assess/return")
+def billing_assess_return(request: Request, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    if student and student.assess_status == "created":
+        student.assess_status = "trialing"
+        db.commit()
+        notify.notify_admin(f"💳 Assessment card trial started — {student.email}")
+    return RedirectResponse("/exam-prep", status_code=302)
+
+
+def _apply_assess_webhook(db: Session, student: Student, entity: dict):
+    """Mirror of the course webhook logic, but on the assess_* columns."""
+    new_status = billing.map_status(entity.get("status", ""))
+    if new_status != "none":
+        old = student.assess_status
+        student.assess_status = new_status
+        if new_status != old:
+            if new_status == "active":
+                notify.notify_admin(f"💰 New ASSESSMENT subscriber — {student.email} · ₹{settings.ASSESS_PRICE_INR}/mo")
+            elif new_status == "cancelled":
+                notify.notify_admin(f"⚠️ Assessment subscription cancelled — {student.email}")
+    ce = billing.ts_to_dt(entity.get("current_end"))
+    if ce:
+        student.assess_period_end = ce
+    se = billing.ts_to_dt(entity.get("start_at") or entity.get("charge_at"))
+    if se and not student.assess_trial_end:
+        student.assess_trial_end = se
+    db.commit()
+    return JSONResponse({"ok": True, "track": "assess", "status": student.assess_status})
+
+
 @app.post("/webhook/razorpay")
 async def razorpay_webhook(request: Request, db: Session = Depends(get_db)):
     raw = await request.body()
@@ -560,6 +673,9 @@ async def razorpay_webhook(request: Request, db: Session = Depends(get_db)):
         return JSONResponse({"ok": True, "ignored": evt.get("event")})
     student = db.query(Student).filter_by(rzp_subscription_id=sub_id).first()
     if not student:
+        astudent = db.query(Student).filter_by(rzp_assess_subscription_id=sub_id).first()
+        if astudent:                                    # a ₹199 assessment-plan event
+            return _apply_assess_webhook(db, astudent, entity)
         return JSONResponse({"ok": True, "no_match": sub_id})
     new_status = billing.map_status(entity.get("status", ""))
     if new_status != "none":

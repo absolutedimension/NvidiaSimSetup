@@ -25,13 +25,23 @@ except Exception:  # SDK not installed in some envs — keep import soft
     razorpay = None
 
 
+def _keys_ok() -> bool:
+    return bool(razorpay and settings.RZP_KEY_ID and settings.RZP_KEY_SECRET)
+
+
 def configured() -> bool:
-    return bool(razorpay and settings.RZP_KEY_ID and settings.RZP_KEY_SECRET and settings.RZP_PLAN_ID)
+    """The ₹499 course plan is fully configured (keys + course plan id)."""
+    return _keys_ok() and bool(settings.RZP_PLAN_ID)
+
+
+def configured_assess() -> bool:
+    """The ₹199 student-assessment plan is fully configured (keys + assess plan id)."""
+    return _keys_ok() and bool(settings.RZP_ASSESS_PLAN_ID)
 
 
 def _client():
-    if not configured():
-        raise RuntimeError("Razorpay not configured (RZP_KEY_ID / RZP_KEY_SECRET / RZP_PLAN_ID).")
+    if not _keys_ok():
+        raise RuntimeError("Razorpay keys not configured (RZP_KEY_ID / RZP_KEY_SECRET).")
     c = razorpay.Client(auth=(settings.RZP_KEY_ID, settings.RZP_KEY_SECRET))
     c.set_app_details({"title": "TrigunAI-LMS", "version": "1.0"})
     return c
@@ -47,7 +57,9 @@ def ensure_customer(client, name: str, email: str, contact: str = "") -> str:
 
 
 def create_subscription(name: str, email: str, course: str, contact: str = "",
-                        customer_id: str = "", trial_days: int | None = None) -> dict:
+                        customer_id: str = "", trial_days: int | None = None,
+                        plan_id: str | None = None, total_count: int | None = None,
+                        notes: dict | None = None) -> dict:
     """Create a subscription. Returns the Razorpay subscription dict (has `id` and
     `short_url` — redirect the user to short_url to authorise the mandate).
 
@@ -62,11 +74,11 @@ def create_subscription(name: str, email: str, course: str, contact: str = "",
     client = _client()
     td = settings.TRIAL_DAYS if trial_days is None else int(trial_days)
     payload = {
-        "plan_id": settings.RZP_PLAN_ID,
-        "total_count": settings.SUB_TOTAL_COUNT,
+        "plan_id": plan_id or settings.RZP_PLAN_ID,
+        "total_count": total_count or settings.SUB_TOTAL_COUNT,
         "quantity": 1,
         "customer_notify": 1,
-        "notes": {"email": email, "course": course},
+        "notes": notes or {"email": email, "course": course},
     }
     start_at = 0
     if td > 0:

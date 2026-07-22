@@ -31,6 +31,14 @@ class Student(Base):
     rzp_subscription_id: Mapped[str] = mapped_column(String(40), default="", index=True)
     trial_end: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     current_period_end: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    # ---- student exam-prep assessment plan (₹199/mo) — a SEPARATE Razorpay track, independent of
+    # the ₹499 course subscription above. Default 'none' (NOT grandfathered — the assessment plan is
+    # a fresh paid track even for the existing cohort). Gated by has_assessment_access(). ----
+    assess_status: Mapped[str] = mapped_column(String(20), default="none", index=True)  # none|trialing|active|past_due|cancelled|comped
+    rzp_assess_customer_id: Mapped[str] = mapped_column(String(40), default="")
+    rzp_assess_subscription_id: Mapped[str] = mapped_column(String(40), default="", index=True)
+    assess_trial_end: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    assess_period_end: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     # ---- learning-loop data consent (the "your usage improves Acharya" surface) ----
     data_loop_consent: Mapped[bool] = mapped_column(Boolean, default=True)
 

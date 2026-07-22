@@ -326,6 +326,15 @@ def _migrate():
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS trial_end TIMESTAMP NULL",
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS current_period_end TIMESTAMP NULL",
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS data_loop_consent BOOLEAN DEFAULT TRUE",
+        # student assessment plan (₹199) — a SEPARATE track. DEFAULT 'none' (NOT NULL), and NO
+        # grandfather UPDATE below — the assessment plan is a fresh paid track even for the existing
+        # cohort (auto-comping it to everyone would be the footgun). Trial starts lazily on first
+        # gated access (see has_assessment_access), so no one is retroactively expired when it's enabled.
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS assess_status VARCHAR(20) DEFAULT 'none'",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS rzp_assess_customer_id VARCHAR(40) DEFAULT ''",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS rzp_assess_subscription_id VARCHAR(40) DEFAULT ''",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS assess_trial_end TIMESTAMP NULL",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS assess_period_end TIMESTAMP NULL",
         # GRANDFATHER (one-time): every student that exists when the column is first added is
         # NULL → mark grandfathered (full access forever, never paywalled). Re-running matches
         # nothing because new signups are 'none' (not NULL), so it's idempotent.
