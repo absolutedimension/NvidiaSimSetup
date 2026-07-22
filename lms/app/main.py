@@ -365,13 +365,14 @@ def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form("
         total = db.query(Student).count()
         notify.notify_admin(f"🎯 New student (exam-prep) — {student.email} · {label} · {total} learners total")
     request.session["sid"] = student.id
+    newq = "&new=1" if not existed else ""   # mark a genuinely-new account → fires the Ads signup conversion
     if qtext:
-        return RedirectResponse(f"/exam-prep/test?q={quote(qtext)}", status_code=302)
-    return RedirectResponse(f"/exam-prep/test?exam={ex}", status_code=302)
+        return RedirectResponse(f"/exam-prep/test?q={quote(qtext)}{newq}", status_code=302)
+    return RedirectResponse(f"/exam-prep/test?exam={ex}{newq}", status_code=302)
 
 
 @app.get("/exam-prep/test", response_class=HTMLResponse)
-def exam_prep_test(request: Request, exam: str = "", q: str = "", db: Session = Depends(get_db)):
+def exam_prep_test(request: Request, exam: str = "", q: str = "", new: str = "", db: Session = Depends(get_db)):
     student = current_student(request, db)
     if not student:
         return RedirectResponse("/exam-prep", status_code=302)
@@ -388,6 +389,14 @@ def exam_prep_test(request: Request, exam: str = "", q: str = "", db: Session = 
                   f"window.__GEN_TITLE={qtext!r};</script>")
     else:                                               # fallback → first curated exam
         inject = f"<script>window.__STUDENT=true;window.__SUBJECT={EXAM_SUBJECT[EXAMS[0]['id']]!r};</script>"
+    # Google Ads "free signup" conversion — fires ONCE, only for a genuinely-new account (new=1),
+    # here on the page where the student is actually using the product. Inert until the label is set.
+    if new == "1" and settings.STUDENT_SIGNUP_CONV_LABEL and settings.ADS_CONVERSION_ID:
+        cid, lbl = settings.ADS_CONVERSION_ID, settings.STUDENT_SIGNUP_CONV_LABEL
+        inject += (f'<script async src="https://www.googletagmanager.com/gtag/js?id={cid}"></script>'
+                   f'<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'
+                   f"gtag('js',new Date());gtag('config','{cid}');"
+                   f"gtag('event','conversion',{{'send_to':'{cid}/{lbl}'}});</script>")
     html = (BASE / "static" / "exam" / "assess.html").read_text(encoding="utf-8")
     return HTMLResponse(html.replace("</head>", inject + "</head>", 1))
 

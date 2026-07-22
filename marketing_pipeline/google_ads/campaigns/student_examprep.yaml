@@ -1,0 +1,97 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# CAMPAIGN SPEC — Acharya exam-prep (STUDENTS: JEE / NEET / boards)
+# One file = one campaign. The CLI reads it; or paste it into the Google Ads UI.
+# Goal: drive students into a FREE SIGNUP (email → account → using the adaptive
+# test directly). The tracked conversion = that signup (fires on /exam-prep/test
+# ?new=1, a real new account — not a click). Optimize toward it.
+#
+# BEFORE launching: create the "Student free signup" conversion action in Google
+# Ads (Goals → Conversions → New → Website), take its LABEL, and set it on the LMS
+# container:  az containerapp update -n lms -g trigunai-video-creator \
+#               --set-env-vars STUDENT_SIGNUP_CONV_LABEL=<label>
+# Until that env is set the tag stays silent (no double-firing, no fake counts).
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: "Acharya · Student Exam-Prep · 2026-07"
+status: PAUSED            # ALWAYS starts paused — review in the UI, then enable. Never auto-spends.
+
+budget:
+  daily_inr: 300         # ₹300/day. Exam-prep demand is national, so give it a bit more than the Patna teacher test.
+
+bidding:
+  # Start MANUAL_CPC to gather the first signups cheaply, THEN switch to "Maximize Conversions"
+  # in the UI once the Student-free-signup conversion has ~15-30 conversions of data.
+  strategy: MANUAL_CPC
+  max_cpc_inr: 10        # student clicks are cheaper than owner clicks; keeps the budget spread wide
+
+schedule:
+  start_date: "2026-07-22"   # set to when you flip it on
+  end_date:   "2026-08-12"   # ~3 weeks; auto-stops here
+
+geo:
+  locations: ["India"]       # exam-prep demand is national (unlike the Bihar-focused teacher campaign)
+languages: ["English", "Hindi"]
+
+final_url: "https://acharya.trigunai.com/exam-prep"   # the student landing (has the gtag + signup)
+
+ad_group:
+  name: "exam-weak-areas"
+
+# ── KEYWORDS — the STUDENT's intent in the student's words. match: phrase (controlled). ──
+keywords:
+  # weak-area / diagnosis intent (Acharya's exact wedge)
+  - { text: "find my weak topics",            match: PHRASE }
+  - { text: "neet weak areas test",           match: PHRASE }
+  - { text: "jee weak topics",                match: PHRASE }
+  - { text: "which chapters am i weak in",    match: PHRASE }
+  # practice-test intent
+  - { text: "neet mock test free",            match: PHRASE }
+  - { text: "jee practice test online",       match: PHRASE }
+  - { text: "free online test for neet",      match: PHRASE }
+  - { text: "chapter wise test for jee",      match: PHRASE }
+  - { text: "class 10 practice test",         match: PHRASE }
+  - { text: "class 12 physics practice questions", match: PHRASE }
+  - { text: "cbse board practice test",       match: PHRASE }
+  # adaptive / AI intent
+  - { text: "ai practice test for neet",      match: PHRASE }
+  - { text: "adaptive test for jee",          match: PHRASE }
+  - { text: "ai study weakness analysis",     match: PHRASE }
+  # Hindi transliteration
+  - { text: "neet ki taiyari test",           match: PHRASE }
+  - { text: "jee practice test hindi",        match: PHRASE }
+  - { text: "board exam ke liye test",        match: PHRASE }
+
+# ── NEGATIVE KEYWORDS — filter the wrong crowd. NOTE: unlike the teacher campaign we do NOT
+#    block pdf/notes/free — students search exactly those. We block teacher/owner + job-seeker intent. ──
+negative_keywords:
+  - { text: "teacher",       match: BROAD }
+  - { text: "coaching center", match: PHRASE }
+  - { text: "coaching institute", match: PHRASE }
+  - { text: "franchise",     match: BROAD }
+  - { text: "admission",     match: BROAD }
+  - { text: "counselling",   match: BROAD }
+  - { text: "college",       match: BROAD }
+  - { text: "job",           match: BROAD }
+  - { text: "vacancy",       match: BROAD }
+  - { text: "salary",        match: BROAD }
+
+# ── RESPONSIVE SEARCH AD — headlines ≤30 chars, descriptions ≤90 chars. ──
+ad:
+  headlines:
+    - "Find Your Weak Topics"
+    - "Free NEET & JEE Practice Test"
+    - "AI Test That Finds Your Gaps"
+    - "Not Just a Score — a Plan"
+    - "Adaptive Test · JEE NEET Boards"
+    - "Know What to Revise Next"
+    - "Free Practice Test · Hindi Too"
+    - "Test Your Weak Chapters"
+    - "Acharya · AI Exam Prep"
+    - "Start Free — No Card Needed"
+    - "Class 10 & 12 Practice Tests"
+    - "Weak-Area Diagnosis, Free"
+  descriptions:
+    - "Short adaptive test that finds your exact weak topics — not just a score. Start free."
+    - "JEE, NEET & board practice tests in English or हिंदी. See what to revise next. Free."
+    - "Wrong answer? It gets easier — to find your real level. Free, no card, no app."
+    - "Enter your email and start — Acharya shows exactly which chapters are weak."

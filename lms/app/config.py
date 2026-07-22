@@ -61,6 +61,14 @@ class Settings:
     ASSESS_PRICE_INR = int(os.getenv("ASSESS_PRICE_INR", "199"))
     ASSESS_TRIAL_DAYS = int(os.getenv("ASSESS_TRIAL_DAYS", "14"))
 
+    # ---- Google Ads (student exam-prep funnel) ----
+    # The CONVERSION = a completed free signup (a new student who lands in the test = "entered + using"),
+    # fired once on /exam-prep/test?new=1 — NOT on the click. Set STUDENT_SIGNUP_CONV_LABEL after you
+    # create the "Student free signup" conversion action in Google Ads (its value is like "abcDEF123");
+    # until it's set the conversion tag simply doesn't fire.
+    ADS_CONVERSION_ID = os.getenv("ADS_CONVERSION_ID", "AW-18339354528").strip()
+    STUDENT_SIGNUP_CONV_LABEL = os.getenv("STUDENT_SIGNUP_CONV_LABEL", "").strip()
+
     @property
     def is_sqlite(self) -> bool:
         return self.DATABASE_URL.startswith("sqlite")

@@ -3,20 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- Google tag (gtag.js) — Ads conversion tracking (AW-18339354528) -->
+<!-- Google tag (gtag.js) — AW-18339354528. Loaded for page/remarketing tagging. The FREE-SIGNUP
+     CONVERSION fires server-side on /exam-prep/test?new=1 (a genuinely new account now using the
+     product), NOT on this click — so the conversion counts real signups, not button taps. -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18339354528"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18339354528');
-  // Student "free signup" conversion. Create the conversion action in Google Ads
-  // (Goals → Conversions → New → Website), paste its label below (AW-18339354528/xxxxx).
-  window.TRIGUNAI_STUDENT_CONV = 'AW-18339354528/REPLACE_WITH_STUDENT_LABEL';
-  function trigunaiConv(){
-    try{ if(window.TRIGUNAI_STUDENT_CONV.indexOf('REPLACE')<0) gtag('event','conversion',{'send_to':window.TRIGUNAI_STUDENT_CONV}); }catch(e){}
-    return true; // never block the submit
-  }
 </script>
 <title>Acharya — free AI practice tests that find your weak topics · JEE, NEET & boards</title>
 <meta name="description" content="Acharya gives you short adaptive practice tests for JEE, NEET, and Class 10 & 12 boards — in English or हिंदी. It doesn't just score you: it finds your exact weak topics from your answers and tells you what to revise next. Free to start, 14-day trial, then ₹199/month." />
@@ -171,13 +166,13 @@
       <div class="fields">
         <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required />
         <input type="tel" name="phone" placeholder="WhatsApp number (optional)" inputmode="tel" />
-        <button type="submit" class="btn-gold" onclick="trigunaiConv()">Start my free test →</button>
+        <button type="submit" class="btn-gold">Start my free test →</button>
       </div>
       <div class="fine">🔒 Free to start · <b>14-day trial</b> · then ₹199/mo · cancel anytime</div>
       <div class="msg{% if error %} err{% endif %}" id="msg" role="status">{% if error %}{{ error }}{% endif %}</div>
     </form>
 
-    <div class="wa-alt">On your phone? <a href="https://wa.me/919135255107?text=quiz" target="_blank" rel="noopener" onclick="trigunaiConv()">Scan / tap to start on WhatsApp →</a></div>
+    <div class="wa-alt">On your phone? <a href="https://wa.me/919135255107?text=quiz" target="_blank" rel="noopener">Scan / tap to start on WhatsApp →</a></div>
   </div>
 </header>
 
