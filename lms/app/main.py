@@ -1,6 +1,7 @@
 import base64
 import hashlib
 import hmac
+import re
 import time
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -10,16 +11,17 @@ from fastapi import Depends, FastAPI, Form, HTTPException, Request
 from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse, PlainTextResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
-from . import analytics, billing, catalog, course_details, gamify, legal, notify, personalize, seo, tutor
+from . import analytics, assess_gen, billing, catalog, course_details, gamify, legal, notify, personalize, seo, tutor
 from .config import settings
 from .db import get_db
 from .emailer import send_magic_link
 from .models import (
-    CourseRequest, LearnerFact, Lesson, LessonProgress, LearningEvent, Module, Student, TaskCompletion, WorkbookTask, now,
+    AssessmentItem, CourseRequest, LearnerFact, Lesson, LessonProgress, LearningEvent, Module, Student, TaskCompletion, WorkbookTask, now,
 )
 from .security import consume_magic_token, get_or_create_student, issue_magic_token
 
@@ -314,10 +316,12 @@ def exam_prep(request: Request, db: Session = Depends(get_db)):
 
 @app.post("/exam-prep/start")
 def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form(""),
-                    phone: str = Form(""), db: Session = Depends(get_db)):
+                    phone: str = Form(""), q: str = Form(""), db: Session = Depends(get_db)):
     """Instant free signup: email → account + session → straight into the assessment.
-    No magic-link round-trip for the free tier (the magic link stays the re-login path)."""
+    No magic-link round-trip for the free tier (the magic link stays the re-login path).
+    `q` = a free-text exam/topic → a dynamically-generated test; otherwise a curated exam."""
     email = email.lower().strip()
+    qtext = (q or "").strip()[:80]
     ex = exam.strip() if exam.strip() in EXAM_SUBJECT else EXAMS[0]["id"]
     if "@" not in email or "." not in email.split("@")[-1]:
         return templates.TemplateResponse(request, "exam_prep.html",
@@ -326,26 +330,38 @@ def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form("
                                            "error": "Please enter a valid email."})
     existed = db.query(Student).filter_by(email=email).first() is not None
     student = get_or_create_student(db, email)
-    _set_fact(db, student, "exam", ex)
+    label = ("q:" + qtext) if qtext else ex
+    _set_fact(db, student, "exam", label)
     p = "".join(c for c in phone if c.isdigit())[:15]
     if p and not student.phone:
         student.phone = p
     db.commit()
     if not existed:
         total = db.query(Student).count()
-        notify.notify_admin(f"🎯 New student (exam-prep) — {student.email} · {ex} · {total} learners total")
+        notify.notify_admin(f"🎯 New student (exam-prep) — {student.email} · {label} · {total} learners total")
     request.session["sid"] = student.id
+    if qtext:
+        return RedirectResponse(f"/exam-prep/test?q={quote(qtext)}", status_code=302)
     return RedirectResponse(f"/exam-prep/test?exam={ex}", status_code=302)
 
 
 @app.get("/exam-prep/test", response_class=HTMLResponse)
-def exam_prep_test(request: Request, exam: str = "", db: Session = Depends(get_db)):
+def exam_prep_test(request: Request, exam: str = "", q: str = "", db: Session = Depends(get_db)):
     student = current_student(request, db)
     if not student:
         return RedirectResponse("/exam-prep", status_code=302)
-    subject = EXAM_SUBJECT.get(exam.strip(), EXAM_SUBJECT[EXAMS[0]["id"]])
+    exam = exam.strip()
+    qtext = (q or "").strip()[:80]
+    ex = next((e for e in EXAMS if e["id"] == exam), None)
+    if ex and ex.get("subject"):                       # curated exam → instant, no LLM
+        inject = f"<script>window.__STUDENT=true;window.__SUBJECT={ex['subject']!r};</script>"
+    elif qtext:                                         # free-text exam → dynamic generation
+        gen = f"/api/assess/generate?q={quote(qtext)}"
+        inject = (f"<script>window.__STUDENT=true;window.__GEN_URL={gen!r};"
+                  f"window.__GEN_TITLE={qtext!r};</script>")
+    else:                                               # fallback → first curated exam
+        inject = f"<script>window.__STUDENT=true;window.__SUBJECT={EXAM_SUBJECT[EXAMS[0]['id']]!r};</script>"
     html = (BASE / "static" / "exam" / "assess.html").read_text(encoding="utf-8")
-    inject = f"<script>window.__SUBJECT={subject!r};window.__STUDENT=true;</script>"
     return HTMLResponse(html.replace("</head>", inject + "</head>", 1))
 
 
@@ -373,6 +389,47 @@ async def assess_complete(request: Request, db: Session = Depends(get_db)):
     _set_fact(db, student, "last_exam", subject)
     db.commit()
     return JSONResponse({"ok": True})
+
+
+def _exam_key(qtext: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", qtext.lower()).strip("-")[:60]
+    return "q:" + (slug or "exam")
+
+
+@app.get("/api/assess/generate")
+def assess_generate(request: Request, q: str = "", db: Session = Depends(get_db)):
+    """Return a validated, cached (or freshly generated) adaptive pack for a free-text exam/topic.
+    Cold start = generate → key-withheld verify → cache; warm requests are instant from the bank.
+    Code owns the score; only questions whose key an independent solve reproduced are ever served."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    qtext = (q or "").strip()[:80]
+    if not qtext:
+        return JSONResponse({"ok": False, "error": "no exam"}, status_code=400)
+    key = _exam_key(qtext)
+    WANT = 5
+    items = (db.query(AssessmentItem).filter_by(exam_key=key, status="validated")
+             .order_by(func.random()).limit(WANT).all())
+    if len(items) < WANT and assess_gen.available():
+        try:
+            validated = assess_gen.generate_validated(qtext, want=8)
+        except Exception as exc:
+            print(f"[assess] generate failed: {exc}")
+            validated = []
+        for v in validated:
+            db.add(AssessmentItem(exam_key=key, exam_title=qtext[:120],
+                                  qtype=v.get("type", "mcq"), payload=v, model=assess_gen.GEN_MODEL_NOTE))
+        if validated:
+            db.commit()
+        items = (db.query(AssessmentItem).filter_by(exam_key=key, status="validated")
+                 .order_by(func.random()).limit(WANT).all())
+    if len(items) < 3:
+        return JSONResponse({"ok": False,
+                             "error": "Couldn't prepare enough questions for that — try a more specific exam or topic."})
+    cands = [it.payload for it in items]
+    pack = assess_gen.build_pack(qtext, cands, topic_line={"en": qtext, "hi": qtext})
+    return JSONResponse({"ok": True, "pack": pack})
 
 
 @app.post("/logout")

@@ -271,13 +271,9 @@ const T={
 
 /* ============================ ENGINE ============================ */
 const params=new URLSearchParams(location.search);
-const S=SUBJECTS[window.__SUBJECT||params.get('subject')]||SUBJECTS['neet-biology'];
 let LANG=params.get('lang')==='hi'?'hi':'en';
-const TOTAL=S.questions.length; const GRADED=S.questions.filter(q=>q.type!=='long').length; let score=0;
+let S, TOTAL, GRADED, score=0;   // set by boot() once the pack (curated or generated) is ready
 const log=document.getElementById('log'),fill=document.getElementById('fill'),plabel=document.getElementById('plabel'),pscore=document.getElementById('pscore');
-document.getElementById('hsub').textContent=S.title+' · '+S.topic[LANG];
-document.querySelectorAll('.langtog button').forEach(b=>{b.classList.toggle('on',b.dataset.l===LANG);
-  b.onclick=()=>{ if(b.dataset.l===LANG) return; params.set('lang',b.dataset.l); params.set('subject',params.get('subject')||'neet-biology'); location.search=params.toString(); };});
 const el=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;};
 const add=n=>{const r=document.createElement('div');r.className='row';r.appendChild(n);log.appendChild(r);log.scrollTop=log.scrollHeight;return r;};
 const say=h=>{const d=document.createElement('div');d.className='say';d.innerHTML='<div class="who">ACHARYA</div>'+h;add(d);};
@@ -456,6 +452,32 @@ function scorecard(results,transcript){
   }
   add(el(`<button class="btn ghost full" onclick="location.reload()">${T[LANG].restart}</button>`));
 }
-run();
+// ── boot: a pack (curated SUBJECTS entry, injected window.__PACK, or a generated one) drives everything
+const GEN={
+  en:{msg:t=>`✍️ Preparing your <b>${t}</b> test — Acharya is writing fresh questions for you. This takes a few seconds the first time…`,
+      err:"Sorry — couldn't prepare that test right now. Please try again, or pick a listed exam."},
+  hi:{msg:t=>`✍️ आपका <b>${t}</b> टेस्ट तैयार हो रहा है — आचार्य आपके लिए नए सवाल लिख रहे हैं। पहली बार कुछ सेकंड लगते हैं…`,
+      err:"माफ़ करें — अभी वह टेस्ट तैयार नहीं हो सका। फिर से कोशिश करें, या दी गई किसी exam को चुनें।"}};
+function boot(pack){
+  S=pack; TOTAL=S.questions.length; GRADED=S.questions.filter(q=>q.type!=='long').length; score=0;
+  document.getElementById('hsub').textContent=S.title+(S.topic?' · '+S.topic[LANG]:'');
+  document.querySelectorAll('.langtog button').forEach(b=>{b.classList.toggle('on',b.dataset.l===LANG);
+    b.onclick=()=>{ if(b.dataset.l===LANG) return; params.set('lang',b.dataset.l); location.search=params.toString(); };});
+  run();
+}
+async function prepareThenRun(){
+  const title=window.__GEN_TITLE||'exam';
+  plabel.textContent='…'; pscore.textContent='';
+  add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>${GEN[LANG].msg(title)}</div></div>`));
+  try{
+    const r=await fetch(window.__GEN_URL,{credentials:'same-origin'});
+    const j=await r.json();
+    if(!j||!j.ok||!j.pack||!j.pack.questions||!j.pack.questions.length) throw new Error((j&&j.error)||'gen');
+    clear(); boot(j.pack);
+  }catch(e){ clear(); add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>${GEN[LANG].err}</div></div>`)); }
+}
+if(window.__PACK){ boot(window.__PACK); }
+else if(window.__GEN_URL){ prepareThenRun(); }
+else { boot(SUBJECTS[window.__SUBJECT||params.get('subject')]||SUBJECTS['neet-biology']); }
 </script>
 </body></html>
