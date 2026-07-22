@@ -320,7 +320,7 @@ Offline marketing assets: `NvidiaSimSetup/acharya_pamphlet/` — A4 bilingual sc
 (rendered via headless Chrome `--print-to-pdf`). The repos also have their own `CLAUDE.md`.
 
 ## 8. Current state snapshot (2026-07-01) — live versions + what exists
-- **lms = v72** · **triguai-frontend = v107** (bump from these). ⚠️ tag-reuse gotcha: a stale `lms:v62`
+- **lms = v73** · **triguai-frontend = v107** (bump from these). ⚠️ tag-reuse gotcha: a stale `lms:v62`
   already existed, so `--image lms:v62` did NOT roll a new revision — ALWAYS bump to a brand-new tag.
 - **Acharya for STUDENTS — `/exam-prep` SHIPPED (Phase 1, lms:v64, 2026-07-22):** a self-serve student
   exam-prep assessment product on the LMS — `/exam-prep` landing + instant email signup (`POST /exam-prep/start`
