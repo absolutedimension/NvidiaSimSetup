@@ -556,6 +556,27 @@ COMP_PROMPT = {
 }
 
 
+@app.post("/api/comp/validate")
+async def comp_validate(request: Request, db: Session = Depends(get_db)):
+    """Fast LLM gate: is this a genuine, testable topic? Runs BEFORE the slow generation so the
+    student gets instant feedback. Returns {ok, valid, topic (normalized), message (fix-it hint)}."""
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    topic = (body.get("topic") or "").strip()[:80]
+    if len(topic) < 2:
+        return JSONResponse({"ok": True, "valid": False, "message": "Type an exam or subject topic to test on."})
+    if not assess_gen.available():
+        return JSONResponse({"ok": True, "valid": True, "topic": topic})
+    try:
+        res = assess_gen.validate_topic(topic)
+    except Exception as exc:
+        print(f"[comp] validate failed: {exc}")
+        res = {"valid": True, "topic": topic, "message": ""}
+    return JSONResponse({"ok": True, **res})
+
+
 @app.post("/api/comp/start")
 async def comp_start(request: Request, db: Session = Depends(get_db)):
     """Start the 11-question competition: load/generate a validated bank, serve a KEYLESS set,

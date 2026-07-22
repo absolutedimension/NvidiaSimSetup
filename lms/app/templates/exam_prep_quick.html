@@ -52,6 +52,17 @@
  .subrow select{flex:1;background:#FBF3EA;border:1.5px solid var(--line);border-radius:10px;padding:10px 11px;font-size:14.5px;font-family:inherit;color:var(--ink);font-weight:600}
  .waalt{text-align:center;margin-top:14px;font-size:14px;color:var(--muted);background:#EAF7EF;border:1px solid rgba(47,169,104,.28);border-radius:12px;padding:11px}
  .waalt a{color:#128C7E;font-weight:800;text-decoration:none}
+ .pick{margin-top:14px}
+ .pick label{display:block;font-size:12px;font-weight:800;color:var(--gold2);margin-bottom:6px}
+ .pick input{width:100%;background:#FBF3EA;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15.5px;font-family:inherit;color:var(--ink)}
+ .pick input:focus{outline:none;border-color:var(--gold2);box-shadow:0 0 0 3px rgba(194,89,31,.13)}
+ .pick .hint{font-size:11.5px;color:var(--faint);margin-top:6px}
+ .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+ .chip{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;font-size:12.5px;font-weight:700;color:var(--gold2);cursor:pointer;font-family:inherit}
+ .chip:hover{border-color:var(--gold);background:#FFFBF6}
+ .vmsg{font-size:13px;margin-top:10px;min-height:16px;color:var(--muted)}.vmsg.err{color:var(--bad)}
+ .skiprow{text-align:center;margin-top:12px}
+ .skiprow a{color:var(--muted);font-size:13px;text-decoration:underline;cursor:pointer}.skiprow a:hover{color:var(--gold2)}
  .feats{display:flex;flex-direction:column;gap:5px;margin-top:6px}
  .feats .ft{font-size:12.8px;color:var(--ink);line-height:1.35}
  .ladder{display:flex;flex-direction:column;gap:5px;margin-top:6px}
@@ -111,7 +122,11 @@ const T = {
    sc:(s,n)=>`You scored <b>${s}/${n}</b>. Register to claim your free access + see your full weak-spot report.`,
    review:"📖 See the answers", email:"you@email.com", claim:"Claim my free access →", or:"or",
    fine:"Free · no card · English or हिंदी", yourAns:"Your answer:", correctAns:"Correct:",
-   waAlt:"📱 Prefer WhatsApp?", waLink:"Take the test right in WhatsApp →"},
+   waAlt:"📱 Prefer WhatsApp?", waLink:"Take the test right in WhatsApp →",
+   pickH:"What do you want to be tested on?", pickPh:"e.g. NEET Biology, or JEE Rotational Motion",
+   pickHint:"Tip: an exam + a chapter works best.", pickEmpty:"Type a topic or exam to start.",
+   checking:"Checking your topic…", invalid:"Please enter a real exam or subject topic (add a chapter if it helps).",
+   skipLink:"Skip the challenge — just log in →", skipH:"Log in & start practising free", skipP:"Free to try — no card, no password.", login:"Log in free →"},
  hi:{qof:(i,n)=>`सवाल ${i} / ${n}`, tf:["सही","ग़लत"], next:"अगला →", finish:"पूरा करें →",
    hookH:'🏆 <span style="color:var(--gold)">180 दिन तक FREE</span> जीतें।',
    hookP:`एक serious ${NC}-सवाल challenge — easy, medium & hard मिला-जुला। ~5 मिनट। जितना ज़्यादा score, उतने दिन FREE।`,
@@ -127,7 +142,11 @@ const T = {
    sc:(s,n)=>`आपने <b>${s}/${n}</b> किए। Register करके free access + पूरी weak-spot report पाएँ।`,
    review:"📖 जवाब देखें", email:"you@email.com", claim:"मेरी free access क्लेम करें →", or:"या",
    fine:"Free · कोई card नहीं · English या हिंदी", yourAns:"आपका जवाब:", correctAns:"सही:",
-   waAlt:"📱 WhatsApp पसंद है?", waLink:"WhatsApp में ही टेस्ट दें →"},
+   waAlt:"📱 WhatsApp पसंद है?", waLink:"WhatsApp में ही टेस्ट दें →",
+   pickH:"किस पर टेस्ट देना है?", pickPh:"जैसे NEET Biology, या JEE Rotational Motion",
+   pickHint:"Tip: exam + chapter सबसे अच्छा।", pickEmpty:"शुरू करने के लिए topic या exam लिखें।",
+   checking:"आपका topic जाँच रहे हैं…", invalid:"कृपया एक असली exam या subject topic लिखें (chapter जोड़ें तो बेहतर)।",
+   skipLink:"Challenge छोड़ें — सीधे log in करें →", skipH:"Log in करें & फ्री practice शुरू करें", skipP:"फ्री · कोई card नहीं · कोई password नहीं।", login:"फ्री log in →"},
 };
 const params=new URLSearchParams(location.search);
 let LANG=params.get('lang')==='hi'?'hi':'en';
@@ -140,6 +159,8 @@ document.querySelectorAll('.langtog button').forEach(b=>{b.classList.toggle('on'
   b.onclick=()=>{ if(b.dataset.l===LANG) return; params.set('lang',b.dataset.l); location.search=params.toString(); };});
 
 let COMP=null, QS=[], ANS=[], idx=0, tId=null, left=SECS;
+let curExam=EXAM||'', curQ=QTXT||'';
+const SUGGEST = EXAMS.map(e=>e.title).concat(["Thermodynamics","Organic Chemistry","Trigonometry","Cell Biology","Indian Polity"]);
 function fmt(s){const m=Math.floor(s/60);return m+':'+String(s%60).padStart(2,'0');}
 function startTimer(){ left=SECS; timerEl.style.display='block'; timerEl.textContent=fmt(left);
   tId=setInterval(()=>{ left--; timerEl.textContent=fmt(Math.max(0,left)); if(left<=30)timerEl.classList.add('low');
@@ -171,11 +192,12 @@ function renderQ(i){
   add(card); add(nb);
 }
 
-function startComp(){
+function startComp(exam,q){
+  curExam=exam||''; curQ=q||'';
   clear(); plabel.textContent=''; fill.style.width='0%';
   add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div><span class="spin"></span>${T[LANG].preparing}</div></div>`));
   fetch('/api/comp/start',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
-    body:JSON.stringify({exam:EXAM||'', q:QTXT||''})})
+    body:JSON.stringify({exam:curExam, q:curQ})})
     .then(r=>r.json()).then(j=>{
       if(!j||!j.ok||!j.questions||!j.questions.length){ clear(); add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>${(j&&j.error)||T[LANG].genErr}</div></div>`)); return; }
       COMP=j.comp_id; QS=j.questions; ANS=new Array(QS.length).fill(null); idx=0; startTimer(); renderQ(0);
@@ -192,7 +214,6 @@ function finish(timeUp){
 }
 
 function result(j){
-  clear();
   const revItems=(j.review||[]).map((r,i)=>{
     const badge=r.ok?'<span class="rv-b ok">✓</span>':'<span class="rv-b no">✕</span>';
     let corr=''; if(r.type==='mcq'){ const opts=(r[LANG]||r.en).opts||[]; corr=opts[r.correct]!==undefined?opts[r.correct]:''; }
@@ -200,25 +221,50 @@ function result(j){
     const ex=(r[LANG]||r.en).explain||'';
     return `<div class="rv-q">${badge}<div><b>${T[LANG].correctAns}</b> ${corr}${ex?`<div class="rv-e">${ex}</div>`:''}</div></div>`;
   }).join('');
+  const top=`<div class="earn">${T[LANG].earnedH(j.days)}</div><div class="sc">${T[LANG].sc(j.score,j.total)}</div>`;
+  renderGate(top, j.earn||'', `<details class="review"><summary>${T[LANG].review}</summary>${revItems}</details>`);
+}
+
+function renderGate(topHtml, earn, extraHtml){
+  clear(); fill.style.width='100%'; plabel.textContent=''; timerEl.style.display='none';
+  window.__EARN=earn||'';
   const g=el(`<div class="gate">
-    <div class="earn">${T[LANG].earnedH(j.days)}</div>
-    <div class="sc">${T[LANG].sc(j.score,j.total)}</div>
+    ${topHtml}
     <div class="gbtn" id="gbtn"></div>
     ${GCID?`<div class="orline">${T[LANG].or}</div>`:''}
     <form method="post" action="/exam-prep/start" id="emf">
-      <input type="hidden" name="exam" value="${EXAM||''}"><input type="hidden" name="q" value="${QTXT||''}">
-      <input type="hidden" name="earn" value="${j.earn||''}">
+      <input type="hidden" name="exam" value="${curExam||''}"><input type="hidden" name="q" value="${curQ||''}">
+      <input type="hidden" name="earn" value="${earn||''}">
       <input type="email" name="email" placeholder="${T[LANG].email}" autocomplete="email" required>
-      <button class="btn" type="submit">${T[LANG].claim}</button>
+      <button class="btn" type="submit">${earn?T[LANG].claim:T[LANG].login}</button>
     </form>
     <div class="gmsg" id="gmsg"></div>
     <div class="fine">🔒 ${T[LANG].fine}</div>
-    <details class="review"><summary>${T[LANG].review}</summary>${revItems}</details>
+    ${extraHtml||''}
   </div>`);
   add(g);
-  window.__EARN=j.earn||'';
   document.getElementById('emf').addEventListener('submit',()=>{document.getElementById('gmsg').textContent='…';});
   if(GCID) initGoogle();
+}
+
+function skip(){ resolvePicker(); renderGate(`<div class="earn">${T[LANG].skipH}</div><div class="sc">${T[LANG].skipP}</div>`, '', ''); }
+
+function resolvePicker(){
+  const inp=document.getElementById('topicin'); const val=(inp?inp.value:'').trim();
+  const cur=EXAMS.find(e=> e.id.toLowerCase()===val.toLowerCase() || e.title.toLowerCase()===val.toLowerCase());
+  curExam = cur? cur.id : (EXAM||EXAMS[0].id); curQ='';
+}
+
+function resolveAndStart(){
+  const inp=document.getElementById('topicin'), vmsg=document.getElementById('vmsg');
+  const val=(inp.value||'').trim();
+  if(val.length<2){ vmsg.className='vmsg err'; vmsg.textContent=T[LANG].pickEmpty; inp.focus(); return; }
+  const cur=EXAMS.find(e=> e.id.toLowerCase()===val.toLowerCase() || e.title.toLowerCase()===val.toLowerCase());
+  if(cur){ startComp(cur.id, ''); return; }   // curated → preset (instant)
+  vmsg.className='vmsg'; vmsg.innerHTML=`<span class="spin"></span>${T[LANG].checking}`;
+  fetch('/api/comp/validate',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',body:JSON.stringify({topic:val})})
+    .then(r=>r.json()).then(j=>{ if(j&&j.ok&&j.valid){ vmsg.textContent=''; startComp('', j.topic||val); } else { vmsg.className='vmsg err'; vmsg.textContent=(j&&j.message)||T[LANG].invalid; } })
+    .catch(()=>{ vmsg.className='vmsg err'; vmsg.textContent=T[LANG].invalid; });
 }
 
 function initGoogle(){
@@ -233,7 +279,7 @@ function initGoogle(){
 function onGoogle(resp){
   const gmsg=document.getElementById('gmsg'); if(gmsg) gmsg.textContent='…';
   fetch('/api/auth/google',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
-    body:JSON.stringify({credential:resp.credential, exam:EXAM||'', q:QTXT||'', earn:window.__EARN||''})})
+    body:JSON.stringify({credential:resp.credential, exam:curExam||'', q:curQ||'', earn:window.__EARN||''})})
     .then(r=>r.json()).then(j=>{ if(j&&j.ok&&j.redirect){ location.href=j.redirect; } else if(gmsg){ gmsg.className='gmsg err'; gmsg.textContent=(j&&j.error)||'Sign-in failed — use email.'; } })
     .catch(()=>{ if(gmsg){ gmsg.className='gmsg err'; gmsg.textContent='Network error — use email.'; } });
 }
@@ -241,23 +287,32 @@ function onGoogle(resp){
 function intro(){
   clear(); plabel.textContent=''; fill.style.width='0%'; timerEl.style.display='none';
   document.getElementById('hsub').textContent = T[LANG].hookH.replace(/<[^>]+>/g,'');
-  const opts=EXAMS.map(e=>`<option value="${e.id}" ${e.id===EXAM?'selected':''}>${e.title}</option>`).join('');
   const lad=T[LANG].ladder.map(([a,b])=>`<div class="lr"><span>${a}</span><b>${b}</b></div>`).join('');
   const fts=T[LANG].feats.map(f=>`<div class="ft">${f}</div>`).join('');
+  const chips=SUGGEST.map(s=>`<button class="chip" type="button" data-t="${s}">${s}</button>`).join('');
+  const preset = EXAM ? ((EXAMS.find(e=>e.id===EXAM)||{}).title||'') : (QTXT||'');
   const card=el(`<div class="qcard">
     <div class="say"><div class="who">ACHARYA</div>${T[LANG].hookH}<br><span style="color:var(--muted);font-size:13px">${T[LANG].hookP}</span></div>
-    ${EXAMS.length?`<div class="subrow"><label>${T[LANG].forSub}</label><select id="subsel">${opts}</select></div>`:''}
+    <div class="pick">
+      <label>${T[LANG].pickH}</label>
+      <input id="topicin" type="text" placeholder="${T[LANG].pickPh}" autocomplete="off" value="${preset}">
+      <div class="hint">${T[LANG].pickHint}</div>
+      <div class="chips">${chips}</div>
+    </div>
+    <div class="vmsg" id="vmsg"></div>
     <div class="say" style="margin-top:14px;font-size:12px;color:var(--gold2);font-weight:800">${T[LANG].featsH}</div>
     <div class="feats">${fts}</div>
     <div class="say" style="margin-top:12px;font-size:12px;color:var(--gold2);font-weight:800">${T[LANG].ladderH}</div>
     <div class="ladder">${lad}</div>
   </div>`);
   add(card);
-  const sel=card.querySelector('#subsel');
-  if(sel) sel.onchange=()=>{ params.set('exam',sel.value); location.search=params.toString(); };
-  const b=el(`<button class="btn">${T[LANG].start}</button>`); b.onclick=()=>startComp(); add(b);
+  const inp=card.querySelector('#topicin');
+  card.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{ inp.value=c.dataset.t; inp.focus(); const vm=document.getElementById('vmsg'); if(vm){vm.className='vmsg';vm.textContent='';} });
+  const b=el(`<button class="btn">${T[LANG].start}</button>`); b.onclick=()=>resolveAndStart(); add(b);
   const wa=`https://wa.me/919135255107?text=${encodeURIComponent('quiz '+(EXAM||''))}`;
   add(el(`<div class="waalt">${T[LANG].waAlt} <a href="${wa}" target="_blank" rel="noopener">${T[LANG].waLink}</a></div>`));
+  add(el(`<div class="skiprow"><a id="skiplink">${T[LANG].skipLink}</a></div>`));
+  document.getElementById('skiplink').onclick=()=>skip();
 }
 intro();
 </script>

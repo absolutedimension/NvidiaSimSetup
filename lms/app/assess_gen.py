@@ -47,6 +47,36 @@ def _azure_json(system: str, user: str, *, max_tokens: int = 1600, temperature: 
         return None
 
 
+# ---------------------------------------------------------------- topic validation
+_VALIDATE_SYSTEM = (
+    "You are a strict gatekeeper for an exam-practice test generator. Given a user's input, decide if it "
+    "is a genuine, testable ACADEMIC / competitive-exam / school subject or topic you can write fair, "
+    "factual multiple-choice questions on. Output STRICT JSON only — no prose."
+)
+
+
+def validate_topic(topic: str) -> dict:
+    """Return {'valid': bool, 'topic': <clean testable title>, 'message': <fix-it hint if invalid/vague>}."""
+    user = (
+        f'Input: "{topic}"\n'
+        'Return JSON exactly: {"valid": true|false, "topic": "<a clean, specific, testable title, <=60 chars, '
+        "e.g. 'JEE Physics — Rotational Motion' or 'Class 10 — Trigonometry'>\", "
+        '"message": "<if invalid or too vague: ONE short friendly line telling them how to fix it (add an '
+        'exam or a chapter); otherwise an empty string>"}\n'
+        "Rules: valid=false for gibberish, empty, offensive/unsafe input, a person/brand/company name, or "
+        "anything that is NOT an academic or exam-prep topic. If it is a real but broad subject (e.g. "
+        '"physics"), set valid=true and narrow "topic" to something specific and testable.'
+    )
+    out = _azure_json(_VALIDATE_SYSTEM, user, max_tokens=200, temperature=0.0)
+    if not isinstance(out, dict):
+        t = (topic or "").strip()
+        return {"valid": len(t) >= 3, "topic": t[:60],
+                "message": "" if len(t) >= 3 else "Type an exam or subject topic to test on."}
+    return {"valid": bool(out.get("valid")),
+            "topic": (str(out.get("topic") or topic)).strip()[:60],
+            "message": (str(out.get("message") or "")).strip()[:160]}
+
+
 # ---------------------------------------------------------------- generation
 _GEN_SYSTEM = (
     "You are an expert question-writer for Indian competitive and school/board exams (JEE, NEET, "
