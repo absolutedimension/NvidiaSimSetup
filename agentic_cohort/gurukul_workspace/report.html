@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover"/>
+<title>Acharya — Your Report & Improvement</title>
+<style>
+ :root{--canvas:#FBF4EA;--panel:#fff;--ink:#2A2018;--muted:#8A7A66;--line:#EFE0CE;--gold:#C2591F;--gold2:#A8481A;
+   --good:#1f8b52;--goodbg:#E9F6EE;--bad:#C23B22;--badbg:#FBEBE7;--cream:#FAF5EC}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ body{background:var(--canvas);font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans Devanagari",Arial,sans-serif;color:var(--ink);display:flex;justify-content:center}
+ .wrap{width:100%;max-width:560px;min-height:100dvh;background:var(--canvas)}
+ header{display:flex;align-items:center;gap:11px;padding:14px 18px;background:linear-gradient(120deg,#E8934A,#C2591F);color:#fff;position:sticky;top:0;z-index:5}
+ header .ava{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:19px;flex:0 0 auto}
+ header .t{font-weight:700;font-size:15px} header .s{font-size:12px;color:rgba(255,255,255,.85);margin-top:1px}
+ .body{padding:16px 16px 34px}
+ .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 17px;margin-bottom:13px;box-shadow:0 2px 8px rgba(120,60,20,.05)}
+ .sumrow{display:flex;align-items:center;gap:16px}
+ .ring{width:92px;height:92px;flex:0 0 auto;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:conic-gradient(var(--good) calc(var(--p)*1%),#EEE1CF 0);position:relative}
+ .ring::before{content:"";position:absolute;inset:8px;background:#fff;border-radius:50%}
+ .ring b{position:relative;font-size:22px;color:var(--good)} .ring span{position:relative;font-size:10.5px;color:var(--muted)}
+ .sumtxt b{font-size:16px} .sumtxt .m{font-size:13px;color:var(--muted);margin-top:3px}
+ .lbl{font-size:11.5px;font-weight:800;letter-spacing:.04em;margin:2px 0 8px}
+ .lbl.s{color:var(--good)} .lbl.w{color:var(--bad)}
+ .tag{display:inline-block;font-size:12px;font-weight:600;border-radius:8px;padding:5px 10px;margin:0 5px 6px 0}
+ .tag.s{background:var(--goodbg);color:#116b41} .tag.w{background:var(--badbg);color:#9c3220}
+ .misc{background:var(--badbg);border-radius:10px;padding:9px 12px;font-size:12.5px;color:#9c3220;margin-top:8px;line-height:1.5}
+ .suggest{background:linear-gradient(160deg,#FFF6EA,#FBEAD6);border:1.5px solid var(--gold);border-radius:14px;padding:15px 16px;margin-bottom:13px}
+ .suggest .sh{font-size:12px;font-weight:800;color:var(--gold2);margin-bottom:6px}
+ .suggest p{font-size:14px;line-height:1.5;margin:0 0 11px}
+ .btn{background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:12px;padding:13px 20px;font-size:14.5px;font-weight:700;cursor:pointer;font-family:inherit;transition:.13s}
+ .btn:active{transform:scale(.98)} .btn.full{width:100%} .btn.ghost{background:#fff;color:var(--gold2);border:1.5px solid var(--line)}
+ .btn.g{background:linear-gradient(135deg,#1f8b52,#177544)} .btn.r{background:#fff;color:var(--gold2);border:1.5px solid var(--line)}
+ .prog{padding:10px 2px 12px}
+ .prog .bar{height:7px;background:#EEE1CF;border-radius:99px;overflow:hidden} .prog .fill{height:100%;width:0;background:linear-gradient(90deg,#E8934A,#C2591F);transition:width .4s}
+ .prog .l{font-size:11.5px;color:var(--muted);font-weight:600;margin-top:6px}
+ .q .tag2{display:inline-block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--gold2);background:var(--cream);border-radius:6px;padding:3px 8px;margin-bottom:10px}
+ .q .qt{font-size:16px;font-weight:600;line-height:1.5;margin-bottom:14px}
+ .ans{background:var(--goodbg);border:1px solid #BFE6CF;border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.5;color:#116b41;margin:6px 0 12px}
+ .ans b{color:#0d6b3f}
+ .rate{display:flex;gap:10px}
+ .center{text-align:center;padding:40px 10px;color:var(--muted)}
+ .foot{text-align:center;font-size:11.5px;color:var(--muted);padding:12px 8px 0} .foot b{color:var(--gold2)}
+</style></head>
+<body>
+<div class="wrap">
+  <header><div class="ava">🪔</div><div><div class="t">Your Report &amp; Improvement</div><div class="s" id="hsub">Acharya · loading…</div></div></header>
+  <div class="body" id="body"><div class="center">Loading your report…</div></div>
+</div>
+<script>
+const token=new URLSearchParams(location.search).get('t')||'';
+const body=document.getElementById('body'),hsub=document.getElementById('hsub');
+const el=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;};
+let DATA=null;
+
+async function load(){
+  try{
+    const r=await fetch('/report/api?t='+encodeURIComponent(token));
+    if(!r.ok){ body.innerHTML='<div class="center">⚠️ Your link expired. Reopen from the chat.</div>'; return; }
+    DATA=await r.json(); renderReport();
+  }catch(e){ body.innerHTML='<div class="center">⚠️ Could not load. Try again.</div>'; }
+}
+function renderReport(){
+  const d=DATA; hsub.textContent=(d.name?d.name+' · ':'')+d.course;
+  const pct=d.total?Math.round(d.solid/d.total*100):0;
+  const strongTags=d.strong.length?d.strong.map(s=>`<span class="tag s">${s.name}</span>`).join(''):'<span class="tag s" style="opacity:.6">—</span>';
+  const weakTags=d.weak.length?d.weak.map(w=>`<span class="tag w">${w.name}</span>`).join(''):'<span class="tag w" style="opacity:.6">none 🎉</span>';
+  const misc=d.misconceptions&&d.misconceptions.length?`<div class="misc">🔎 <b>Watch out:</b> ${d.misconceptions[d.misconceptions.length-1]}</div>`:'';
+  body.innerHTML='';
+  body.appendChild(el(`<div class="card"><div class="sumrow">
+     <div class="ring" style="--p:${pct}"><b>${pct}%</b><span>mastered</span></div>
+     <div class="sumtxt"><b>${d.solid} of ${d.total} concepts solid</b><div class="m">🔥 ${d.streak}-day streak · ${d.shaky} to strengthen</div></div>
+   </div></div>`));
+  body.appendChild(el(`<div class="card">
+     <div class="lbl s">💪 YOUR STRONG AREAS (${d.strong.length})</div><div>${strongTags}</div>
+     <div class="lbl w" style="margin-top:14px">⚠️ NEEDS WORK (${d.weak.length})</div><div>${weakTags}</div>
+     ${misc}</div>`));
+  const sug=el(`<div class="suggest"><div class="sh">🎯 ACHARYA SUGGESTS</div><p>${d.suggestion}</p></div>`);
+  if(d.weak.length){ const b=el(`<button class="btn full">Start a quick revision test →</button>`); b.onclick=startTest; sug.appendChild(b); }
+  body.appendChild(sug);
+  body.appendChild(el(`<div class="foot">👨‍🏫 This is your real progress — the same picture your teacher sees. <b>Strengthen a weak topic and watch it turn green.</b></div>`));
+}
+
+// ---- self-review test on weak concepts (reveal answer → honest self-rate → updates mastery) ----
+let items=[],idx=0,mastered=0;
+function startTest(){ items=DATA.weak.slice(); idx=0; mastered=0; nextQ(); }
+function nextQ(){
+  if(idx>=items.length) return finish();
+  const it=items[idx];
+  body.innerHTML='';
+  const p=el(`<div class="prog"><div class="bar"><div class="fill" style="width:${idx/items.length*100}%"></div></div><div class="l">Concept ${idx+1} of ${items.length} · retrieval practice</div></div>`);
+  const card=el(`<div class="card q"><span class="tag2">${it.name}</span><div class="qt">${it.recall||('Recall: '+it.name)}</div>
+     <button class="btn ghost full" id="show">Show answer</button></div>`);
+  body.appendChild(p); body.appendChild(card);
+  card.querySelector('#show').onclick=()=>{
+    card.querySelector('#show').remove();
+    card.appendChild(el(`<div class="ans">✅ <b>${it.answer||'—'}</b></div>`));
+    const rate=el(`<div class="rate"><button class="btn g" style="flex:1">✅ I knew it</button><button class="btn r" style="flex:1">🔁 Review again</button></div>`);
+    card.appendChild(rate);
+    rate.children[0].onclick=()=>grade(it,true);
+    rate.children[1].onclick=()=>grade(it,false);
+  };
+}
+async function grade(it,got){
+  if(got) mastered++;
+  try{ await fetch('/report/grade',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token,concept:it.key,got})}); }catch(e){}
+  idx++; nextQ();
+}
+function finish(){
+  body.innerHTML='';
+  body.appendChild(el(`<div class="card" style="text-align:center;padding:26px 18px">
+     <div style="font-size:40px">🎉</div>
+     <h3 style="font-size:18px;margin:6px 0 4px">Revision done!</h3>
+     <p style="font-size:14px;color:var(--muted);margin-bottom:4px">You reviewed <b style="color:var(--ink)">${items.length}</b> topics${mastered?` and marked <b style="color:var(--good)">${mastered}</b> as mastered ✅`:''}.</p>
+     <p style="font-size:13px;color:var(--muted)">Your report is updated — the mastered ones just turned green.</p></div>`));
+  const b=el(`<button class="btn full">← Back to my report</button>`); b.onclick=load; body.appendChild(b);
+}
+load();
+</script>
+</body></html>

@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover"/>
+<title>Acharya — Assessment</title>
+<style>
+ :root{--canvas:#FFFDF9;--panel:#fff;--ink:#2A2018;--muted:#8A7A66;--line:#EFE0CE;--gold:#C2591F;--gold2:#A8481A;
+   --good:#1f8b52;--goodbg:#E9F6EE;--bad:#C23B22;--badbg:#FBEBE7;--cream:#FAF5EC}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ html,body{height:100%}
+ body{background:var(--canvas);font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans Devanagari",Arial,sans-serif;color:var(--ink);display:flex;justify-content:center}
+ .wrap{width:100%;max-width:560px;height:100dvh;display:flex;flex-direction:column;background:var(--canvas)}
+ header{display:flex;align-items:center;gap:11px;padding:12px 16px;background:linear-gradient(120deg,#E8934A,#C2591F);color:#fff;position:sticky;top:0;z-index:2}
+ header .ava{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:19px;flex:0 0 auto}
+ header .tt{flex:1;min-width:0} header .t{font-weight:700;font-size:15px} header .s{font-size:11.5px;color:rgba(255,255,255,.85);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .langtog{display:flex;background:rgba(255,255,255,.15);border-radius:99px;padding:2px;flex:0 0 auto;border:1px solid rgba(255,255,255,.25)}
+ .langtog button{border:none;background:transparent;color:rgba(255,255,255,.8);font-weight:800;font-size:12.5px;padding:5px 11px;border-radius:99px;cursor:pointer;font-family:inherit}
+ .langtog button.on{background:#fff;color:var(--gold2)}
+ .prog{padding:10px 18px 4px}
+ .prog .bar{height:7px;background:#EEE1CF;border-radius:99px;overflow:hidden}
+ .prog .fill{height:100%;width:0;background:linear-gradient(90deg,#E8934A,#C2591F);border-radius:99px;transition:width .5s cubic-bezier(.4,1,.4,1)}
+ .prog .lbl{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:5px;font-weight:600}
+ #log{flex:1;overflow-y:auto;padding:14px 16px 24px;display:flex;flex-direction:column;gap:13px}
+ .row{animation:rise .3s cubic-bezier(.2,.7,.3,1) both}
+ @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+ .say{max-width:92%;font-size:14.5px;line-height:1.55}
+ .say .who{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.03em;margin-bottom:3px}
+ .qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px 16px 14px;box-shadow:0 3px 12px rgba(120,60,20,.06)}
+ .qtag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold2);background:var(--cream);border-radius:6px;padding:3px 8px;margin-bottom:9px}
+ .qtag.easy{color:#0d7a53;background:#E9F6EE}
+ .qtext{font-size:15.5px;font-weight:600;line-height:1.5;margin-bottom:13px}
+ .opt{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:12px 13px;margin-top:9px;font-size:14.5px;cursor:pointer;transition:.13s;color:var(--ink)}
+ .opt:hover{border-color:var(--gold);background:#FFFBF6} .opt:active{transform:scale(.985)}
+ .opt .badge{width:26px;height:26px;flex:0 0 auto;border-radius:8px;background:var(--cream);color:var(--gold2);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+ .opt.correct{border-color:var(--good);background:var(--goodbg)} .opt.correct .badge{background:var(--good);color:#fff}
+ .opt.wrong{border-color:var(--bad);background:var(--badbg)} .opt.wrong .badge{background:var(--bad);color:#fff}
+ .opt.dim{opacity:.5} .opt .mark{margin-left:auto;font-weight:800}
+ .tf{display:flex;gap:11px;margin-top:6px}
+ .tf button{flex:1;padding:15px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:.13s;color:var(--ink);font-family:inherit}
+ .tf button:hover{border-color:var(--gold);background:#FFFBF6}
+ .tf button.correct{border-color:var(--good);background:var(--goodbg);color:var(--good)}
+ .tf button.wrong{border-color:var(--bad);background:var(--badbg);color:var(--bad)}
+ .match{display:flex;gap:12px;margin-top:6px}
+ .match .col{flex:1;display:flex;flex-direction:column;gap:9px}
+ .mitem{padding:11px 10px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:13px;cursor:pointer;transition:.13s;text-align:center;font-weight:600}
+ .mitem:hover{border-color:var(--gold)} .mitem.sel{border-color:var(--gold);background:#FFF3E6}
+ .mitem.ok{border-color:var(--good);background:var(--goodbg);color:#116b41;cursor:default}
+ .mitem.no{border-color:var(--bad);background:var(--badbg);color:#9c3220;cursor:default}
+ .inrow{display:flex;gap:9px;margin-top:6px}
+ .inrow input{flex:1;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px;outline:none}
+ .inrow input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(194,89,31,.13)}
+ textarea.long{width:100%;min-height:96px;border:1.5px solid var(--line);border-radius:13px;padding:12px 14px;font-size:14.5px;outline:none;resize:vertical;font-family:inherit;margin-top:4px}
+ textarea.long:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(194,89,31,.13)}
+ .btn{background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:12px;padding:12px 20px;font-size:14.5px;font-weight:700;cursor:pointer;transition:.13s;flex:0 0 auto;font-family:inherit}
+ .btn:hover{transform:translateY(-1px);box-shadow:0 6px 15px rgba(168,72,26,.32)} .btn:active{transform:scale(.97)}
+ .btn.full{width:100%;margin-top:11px} .btn.ghost{background:#fff;color:var(--gold2);border:1.5px solid var(--line)}
+ .fb{margin-top:11px;padding:11px 13px;border-radius:12px;font-size:13.5px;line-height:1.5}
+ .fb.ok{background:var(--goodbg);color:#116b41;border:1px solid #BFE6CF}
+ .fb.no{background:var(--badbg);color:#9c3220;border:1px solid #F0C9BF}
+ .hint{margin-top:10px;padding:11px 13px;border-radius:12px;background:#FFF7E9;border:1px dashed #E7BE7C;font-size:13.5px;line-height:1.5}
+ .hint b{color:var(--gold2)}
+ .score{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px 18px;text-align:center;box-shadow:0 6px 20px rgba(120,60,20,.08)}
+ .score .ring{width:104px;height:104px;margin:4px auto 10px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:conic-gradient(var(--gold) calc(var(--p)*1%),#EEE1CF 0);position:relative}
+ .score .ring::before{content:"";position:absolute;inset:9px;background:#fff;border-radius:50%}
+ .score .ring b{position:relative;font-size:26px;color:var(--gold2)} .score .ring span{position:relative;font-size:11px;color:var(--muted)}
+ .score h3{font-size:17px;margin-bottom:3px} .score .sub{font-size:13px;color:var(--muted);margin-bottom:14px}
+ .brk{text-align:left;display:flex;flex-direction:column;gap:8px;margin-top:6px}
+ .brk .r{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;background:var(--cream);border-radius:10px;padding:9px 12px}
+ .chip{font-size:11px;font-weight:700;border-radius:20px;padding:3px 10px;flex:0 0 auto}
+ .chip.good{background:var(--goodbg);color:#116b41} .chip.weak{background:var(--badbg);color:#9c3220}
+ .footnote{text-align:center;font-size:11px;color:var(--muted);padding:8px 8px 2px} .footnote b{color:var(--gold2)}
+</style></head>
+<body>
+<div class="wrap">
+  <header><div class="ava">🪔</div>
+    <div class="tt"><div class="t">Acharya</div><div class="s" id="hsub">Assessment</div></div>
+    <div class="langtog"><button data-l="en">EN</button><button data-l="hi">हिं</button></div>
+  </header>
+  <div class="prog"><div class="bar"><div class="fill" id="fill"></div></div>
+    <div class="lbl"><span id="plabel">—</span><span id="pscore">—</span></div></div>
+  <div id="log"></div>
+</div>
+<script>
+/* ============================ BILINGUAL QUESTION BANKS (curated, accurate) ============================ */
+const SUBJECTS = {
+"neet-biology":{title:"NEET Biology",
+ topic:{en:"Cell Biology & Genetics",hi:"कोशिका विज्ञान और आनुवंशिकी"},
+ intro:{en:"Namaste 🙏 A quick <b>NEET Biology</b> adaptive test — 5 questions. Just tap. Get one wrong and I'll make it easier.",
+        hi:"नमस्ते 🙏 <b>NEET Biology</b> का क्विक adaptive टेस्ट — 5 सवाल। बस tap करें। ग़लत हुआ तो मैं आसान कर दूँगा।"},
+ topicMap:[{en:"Cell organelles",hi:"कोशिका अंगक"},{en:"DNA & Genetics",hi:"DNA और आनुवंशिकी"},{en:"Organelle functions",hi:"अंगकों के कार्य"},{en:"Chromosomes",hi:"गुणसूत्र"},{en:"Diffusion & Osmosis",hi:"Diffusion और Osmosis"}],
+ questions:[
+  {type:"mcq",correct:1,
+   en:{tag:"Cell Biology",q:"Which organelle is called the 'powerhouse of the cell'?",opts:["Ribosome","Mitochondria","Golgi body","Nucleus"],explain:"Mitochondria produces ATP (energy)."},
+   hi:{tag:"कोशिका विज्ञान",q:"कोशिका का 'powerhouse' किस अंगक (organelle) को कहते हैं?",opts:["राइबोसोम","माइटोकॉन्ड्रिया","गॉल्जी बॉडी","केंद्रक"],explain:"माइटोकॉन्ड्रिया ATP (ऊर्जा) बनाता है।"},
+   adaptive:{correct:0,hint:{en:"'Powerhouse' = energy house. Where is the cell's energy (ATP) made?",hi:"'Powerhouse' = ऊर्जा घर। कोशिका की ऊर्जा (ATP) कहाँ बनती है?"},
+    en:{tag:"Basics",q:"The cell's energy (ATP) is made in the…",opts:["Mitochondria","Cell wall","Vacuole"],explain:"Right — mitochondria = energy factory."},
+    hi:{tag:"बेसिक्स",q:"कोशिका की ऊर्जा (ATP) कहाँ बनती है?",opts:["माइटोकॉन्ड्रिया","कोशिका भित्ति","रिक्तिका"],explain:"सही — माइटोकॉन्ड्रिया = ऊर्जा फ़ैक्ट्री।"}}},
+  {type:"truefalse",answer:true,
+   en:{tag:"Genetics",q:"In DNA, Adenine (A) always pairs with Thymine (T).",explain:"A–T (2 H-bonds), G–C (3). This is the base-pairing rule."},
+   hi:{tag:"आनुवंशिकी",q:"DNA में Adenine (A) हमेशा Thymine (T) के साथ जुड़ता है।",explain:"A–T (2 H-bond), G–C (3)। यही base-pairing नियम है।"}},
+  {type:"match",pairs:{0:0,1:1,2:2},
+   en:{tag:"Match the following",q:"Match each organelle to its function:",left:["Mitochondria","Ribosome","Chloroplast"],right:["Energy (ATP)","Protein synthesis","Photosynthesis"]},
+   hi:{tag:"जोड़ी मिलाएँ",q:"हर अंगक को उसके कार्य से जोड़ें:",left:["माइटोकॉन्ड्रिया","राइबोसोम","क्लोरोप्लास्ट"],right:["ऊर्जा (ATP)","प्रोटीन संश्लेषण","प्रकाश-संश्लेषण"]}},
+  {type:"numeric",answer:46,
+   en:{tag:"Numerical",q:"How many chromosomes are in a normal human diploid cell?",explain:"23 pairs = 46 chromosomes."},
+   hi:{tag:"संख्यात्मक",q:"एक सामान्य मानव द्विगुणित (diploid) कोशिका में कितने गुणसूत्र होते हैं?",explain:"23 जोड़े = 46 गुणसूत्र।"}},
+  {type:"long",
+   en:{tag:"Long answer",q:"In your own words, what is the difference between diffusion and osmosis?",model:"Diffusion is any particle moving from high→low concentration; osmosis is specifically water moving across a semipermeable membrane."},
+   hi:{tag:"दीर्घ उत्तर",q:"अपने शब्दों में — diffusion और osmosis में क्या फ़र्क है?",model:"Diffusion = किसी भी कण का high→low सांद्रता की ओर प्रवाह; osmosis = सिर्फ़ पानी का semipermeable membrane के आर-पार प्रवाह।"}}
+ ]},
+
+"jee-physics":{title:"JEE Physics",
+ topic:{en:"Mechanics — Newton's Laws",hi:"यांत्रिकी — न्यूटन के नियम"},
+ intro:{en:"Namaste 🙏 A quick <b>JEE Physics</b> adaptive test — 5 questions. Tap to answer.",hi:"नमस्ते 🙏 <b>JEE Physics</b> का क्विक adaptive टेस्ट — 5 सवाल। tap करके जवाब दें।"},
+ topicMap:[{en:"Newton's 2nd law",hi:"न्यूटन का दूसरा नियम"},{en:"Inertia / 1st law",hi:"जड़त्व / पहला नियम"},{en:"Units",hi:"इकाइयाँ"},{en:"Force calculation",hi:"बल की गणना"},{en:"Newton's 3rd law",hi:"न्यूटन का तीसरा नियम"}],
+ questions:[
+  {type:"mcq",correct:0,
+   en:{tag:"Newton's Laws",q:"Newton's second law gives which formula?",opts:["F = m·a","F = m·v","F = m/a","F = m·g·h"],explain:"Force = mass × acceleration."},
+   hi:{tag:"न्यूटन के नियम",q:"न्यूटन का दूसरा नियम कौन-सा सूत्र देता है?",opts:["F = m·a","F = m·v","F = m/a","F = m·g·h"],explain:"बल = द्रव्यमान × त्वरण।"},
+   adaptive:{correct:0,hint:{en:"Force depends on two things — how heavy (mass) and how fast the speed changes (acceleration).",hi:"बल दो चीज़ों पर निर्भर — कितना भारी (द्रव्यमान) और कितनी तेज़ी से गति बदले (त्वरण)।"},
+    en:{tag:"Basics",q:"Force depends on which two things?",opts:["Mass and acceleration","Colour and size","Time and temperature"],explain:"F = m·a — mass and acceleration."},
+    hi:{tag:"बेसिक्स",q:"बल किन दो चीज़ों पर निर्भर करता है?",opts:["द्रव्यमान और त्वरण","रंग और आकार","समय और तापमान"],explain:"F = m·a — द्रव्यमान और त्वरण।"}}},
+  {type:"truefalse",answer:true,
+   en:{tag:"Newton's 1st Law",q:"If an object moves at uniform velocity, the net force on it is zero.",explain:"Constant velocity ⇒ no acceleration ⇒ net force = 0."},
+   hi:{tag:"न्यूटन का पहला नियम",q:"अगर वस्तु एकसमान वेग (uniform velocity) से चल रही है, तो उस पर कुल बल शून्य है।",explain:"स्थिर वेग ⇒ त्वरण नहीं ⇒ कुल बल = 0।"}},
+  {type:"match",pairs:{0:0,1:1,2:2},
+   en:{tag:"Match the following",q:"Match each quantity to its unit:",left:["Velocity","Acceleration","Force"],right:["m/s","m/s²","Newton"]},
+   hi:{tag:"जोड़ी मिलाएँ",q:"हर राशि को उसकी इकाई से जोड़ें:",left:["वेग","त्वरण","बल"],right:["m/s","m/s²","न्यूटन"]}},
+  {type:"numeric",answer:10,unit:"N",
+   en:{tag:"Numerical",q:"A 2 kg object accelerates at 5 m/s². Force = ? (Newton)",explain:"F = m·a = 2 × 5 = 10 N."},
+   hi:{tag:"संख्यात्मक",q:"2 kg की वस्तु 5 m/s² से त्वरित हो रही है। बल = ? (न्यूटन)",explain:"F = m·a = 2 × 5 = 10 N।"}},
+  {type:"long",
+   en:{tag:"Long answer",q:"State Newton's third law in your own words + one everyday example.",model:"Newton's third law: every action has an equal and opposite reaction. Example: a rocket pushes gas down (action) → the rocket goes up (reaction)."},
+   hi:{tag:"दीर्घ उत्तर",q:"न्यूटन का तीसरा नियम अपने शब्दों में + एक रोज़मर्रा का उदाहरण।",model:"न्यूटन का तीसरा नियम: हर क्रिया की बराबर और विपरीत प्रतिक्रिया होती है। उदाहरण: रॉकेट गैस नीचे फेंकता है (क्रिया) → रॉकेट ऊपर जाता है (प्रतिक्रिया)।"}}
+ ]},
+
+"class10":{title:"Class 10 Science-Math",
+ topic:{en:"Science + Math foundation",hi:"विज्ञान + गणित (आधार)"},
+ intro:{en:"Namaste 🙏 A quick <b>Class 10</b> adaptive test — Science + Math, 5 questions. Tap.",hi:"नमस्ते 🙏 <b>Class 10</b> का क्विक adaptive टेस्ट — विज्ञान + गणित, 5 सवाल। tap करें।"},
+ topicMap:[{en:"Chemical formulas",hi:"रासायनिक सूत्र"},{en:"Acids & pH",hi:"अम्ल और pH"},{en:"pH scale",hi:"pH स्केल"},{en:"Pythagoras theorem",hi:"पाइथागोरस"},{en:"Photosynthesis",hi:"प्रकाश-संश्लेषण"}],
+ questions:[
+  {type:"mcq",correct:1,
+   en:{tag:"Chemistry",q:"What is the chemical formula of water?",opts:["CO₂","H₂O","O₂","H₂O₂"],explain:"Two hydrogen + one oxygen = H₂O."},
+   hi:{tag:"रसायन",q:"पानी का रासायनिक सूत्र क्या है?",opts:["CO₂","H₂O","O₂","H₂O₂"],explain:"दो हाइड्रोजन + एक ऑक्सीजन = H₂O।"},
+   adaptive:{correct:0,hint:{en:"'H' = Hydrogen, 'O' = Oxygen. Water has 2 hydrogen and 1 oxygen.",hi:"'H' = हाइड्रोजन, 'O' = ऑक्सीजन। पानी में 2 हाइड्रोजन और 1 ऑक्सीजन।"},
+    en:{tag:"Basics",q:"How many hydrogen atoms are in one molecule of water?",opts:["2","1","3"],explain:"2 hydrogen — so H₂O."},
+    hi:{tag:"बेसिक्स",q:"पानी के एक अणु में कितने हाइड्रोजन परमाणु होते हैं?",opts:["2","1","3"],explain:"2 हाइड्रोजन — इसलिए H₂O।"}}},
+  {type:"truefalse",answer:true,
+   en:{tag:"Chemistry",q:"An acid has a pH value less than 7.",explain:"Acid: pH < 7, Base: pH > 7, Neutral: pH = 7."},
+   hi:{tag:"रसायन",q:"अम्ल (acid) का pH मान 7 से कम होता है।",explain:"अम्ल: pH < 7, क्षार: pH > 7, उदासीन: pH = 7।"}},
+  {type:"match",pairs:{0:0,1:1,2:2},
+   en:{tag:"Match the following",q:"Match the pH to its nature:",left:["Acid","Base","Neutral"],right:["pH < 7","pH > 7","pH = 7"]},
+   hi:{tag:"जोड़ी मिलाएँ",q:"pH मान को उसकी प्रकृति से जोड़ें:",left:["अम्ल","क्षार","उदासीन"],right:["pH < 7","pH > 7","pH = 7"]}},
+  {type:"numeric",answer:5,
+   en:{tag:"Math · Pythagoras",q:"A right triangle has two sides 3 and 4. Length of the hypotenuse = ?",explain:"√(3² + 4²) = √25 = 5."},
+   hi:{tag:"गणित · पाइथागोरस",q:"एक समकोण त्रिभुज की दो भुजाएँ 3 और 4 हैं। कर्ण (hypotenuse) की लंबाई = ?",explain:"√(3² + 4²) = √25 = 5।"}},
+  {type:"long",
+   en:{tag:"Long answer",q:"In a line or two, what is photosynthesis?",model:"Photosynthesis: plants make their own food from CO₂ + water + sunlight → glucose + oxygen (using chlorophyll)."},
+   hi:{tag:"दीर्घ उत्तर",q:"एक-दो line में — प्रकाश-संश्लेषण क्या है?",model:"प्रकाश-संश्लेषण: पौधे CO₂ + पानी + सूरज की रोशनी से भोजन बनाते हैं → ग्लूकोज़ + ऑक्सीजन (क्लोरोफिल की मदद से)।"}}
+ ]},
+
+"class12":{title:"Class 12 Board",
+ topic:{en:"Physics + Chemistry",hi:"भौतिकी + रसायन"},
+ intro:{en:"Namaste 🙏 A quick <b>Class 12 Board</b> adaptive test — Physics + Chemistry, 5 questions.",hi:"नमस्ते 🙏 <b>Class 12 Board</b> का क्विक adaptive टेस्ट — भौतिकी + रसायन, 5 सवाल।"},
+ topicMap:[{en:"Ohm's Law",hi:"ओम का नियम"},{en:"Series circuits",hi:"श्रेणी परिपथ"},{en:"SI Units",hi:"SI इकाइयाँ"},{en:"Current calculation",hi:"धारा की गणना"},{en:"EM induction",hi:"विद्युत-चुंबकीय प्रेरण"}],
+ questions:[
+  {type:"mcq",correct:1,
+   en:{tag:"Current Electricity",q:"By Ohm's law, Voltage (V) = ?",opts:["I / R","I × R","I + R","I × R²"],explain:"V = I × R (current × resistance)."},
+   hi:{tag:"विद्युत धारा",q:"ओम के नियम के अनुसार, वोल्टेज (V) = ?",opts:["I / R","I × R","I + R","I × R²"],explain:"V = I × R (धारा × प्रतिरोध)।"},
+   adaptive:{correct:0,hint:{en:"Ohm's law: Voltage equals the product of current and resistance.",hi:"ओम का नियम: वोल्टेज धारा और प्रतिरोध के गुणनफल (product) के बराबर होता है।"},
+    en:{tag:"Basics",q:"Voltage equals current ___ resistance.",opts:["× (product)","+ (sum)","− (difference)"],explain:"V = I × R — product."},
+    hi:{tag:"बेसिक्स",q:"वोल्टेज = धारा ___ प्रतिरोध।",opts:["× (गुणनफल)","+ (जोड़)","− (घटाव)"],explain:"V = I × R — गुणनफल।"}}},
+  {type:"truefalse",answer:true,
+   en:{tag:"Circuits",q:"In a series circuit, the current is the same at every point.",explain:"Series = one path, so current is the same everywhere."},
+   hi:{tag:"परिपथ",q:"श्रेणी परिपथ (series circuit) में हर बिंदु पर धारा समान होती है।",explain:"श्रेणी = एक ही रास्ता, इसलिए धारा हर जगह समान।"}},
+  {type:"match",pairs:{0:0,1:1,2:2},
+   en:{tag:"Match the following",q:"Match each quantity to its SI unit:",left:["Current","Voltage","Resistance"],right:["Ampere","Volt","Ohm"]},
+   hi:{tag:"जोड़ी मिलाएँ",q:"हर राशि को उसकी SI इकाई से जोड़ें:",left:["धारा","वोल्टेज","प्रतिरोध"],right:["एम्पियर","वोल्ट","ओम"]}},
+  {type:"numeric",answer:0.5,unit:"A",
+   en:{tag:"Numerical",q:"A circuit has 5 V and 10 Ω. Current (I = V/R) = ? (Ampere)",explain:"I = V/R = 5 / 10 = 0.5 A."},
+   hi:{tag:"संख्यात्मक",q:"एक परिपथ में 5 V और 10 Ω है। धारा (I = V/R) = ? (एम्पियर)",explain:"I = V/R = 5 / 10 = 0.5 A।"}},
+  {type:"long",
+   en:{tag:"Long answer",q:"Explain electromagnetic induction in your own words.",model:"Electromagnetic induction: a changing magnetic flux induces an EMF/current. Faraday: EMF = −dΦ/dt — the faster the flux changes, the greater the induced EMF."},
+   hi:{tag:"दीर्घ उत्तर",q:"विद्युत-चुंबकीय प्रेरण (electromagnetic induction) अपने शब्दों में समझाएँ।",model:"विद्युत-चुंबकीय प्रेरण: बदलता चुंबकीय flux एक EMF/धारा प्रेरित करता है। फैराडे: EMF = −dΦ/dt — flux जितनी तेज़ी से बदले, उतना ज़्यादा induced EMF।"}}
+ ]},
+
+"commerce":{title:"Class 11-12 Commerce",
+ topic:{en:"Accountancy + Economics",hi:"लेखाशास्त्र + अर्थशास्त्र"},
+ intro:{en:"Namaste 🙏 A quick <b>Commerce</b> adaptive test — Accountancy + Economics, 5 questions.",hi:"नमस्ते 🙏 <b>Commerce</b> का क्विक adaptive टेस्ट — लेखाशास्त्र + अर्थशास्त्र, 5 सवाल।"},
+ topicMap:[{en:"Accounting equation",hi:"लेखांकन समीकरण"},{en:"Journal vs Ledger",hi:"Journal vs Ledger"},{en:"Assets/Liab./Capital",hi:"संपत्ति/देनदारी/पूँजी"},{en:"Capital calculation",hi:"पूँजी की गणना"},{en:"Double-entry",hi:"Double-entry प्रणाली"}],
+ questions:[
+  {type:"mcq",correct:1,
+   en:{tag:"Accountancy",q:"By the accounting equation: Assets = ?",opts:["Capital − Liabilities","Liabilities + Capital","Income − Expense","Debit − Credit"],explain:"Assets = Liabilities + Capital. Both sides always balance."},
+   hi:{tag:"लेखाशास्त्र",q:"लेखांकन समीकरण के अनुसार: संपत्ति (Assets) = ?",opts:["पूँजी − देनदारियाँ","देनदारियाँ + पूँजी","आय − व्यय","डेबिट − क्रेडिट"],explain:"Assets = Liabilities + Capital। दोनों पक्ष हमेशा बराबर।"},
+   adaptive:{correct:0,hint:{en:"What the business has (Assets) = what the owner put in (Capital) + what came from outside (Liabilities).",hi:"जो business के पास है (संपत्ति) = जो मालिक ने लगाया (पूँजी) + जो बाहर से आया (देनदारियाँ)।"},
+    en:{tag:"Basics",q:"In the accounting equation, both sides are always ___.",opts:["equal","opposite","zero"],explain:"Equal — that's the core of double-entry."},
+    hi:{tag:"बेसिक्स",q:"लेखांकन समीकरण में दोनों पक्ष हमेशा ___ रहते हैं।",opts:["बराबर","विपरीत","शून्य"],explain:"बराबर — यही double-entry का मूल है।"}}},
+  {type:"truefalse",answer:false,
+   en:{tag:"Accountancy",q:"The Journal is called the 'book of final entry'.",explain:"Journal = book of ORIGINAL entry; Ledger = book of FINAL entry."},
+   hi:{tag:"लेखाशास्त्र",q:"जर्नल (Journal) को 'book of final entry' कहते हैं।",explain:"जर्नल = मूल प्रविष्टि (original entry); खाता-बही (Ledger) = अंतिम प्रविष्टि (final entry)।"}},
+  {type:"match",pairs:{0:0,1:1,2:2},
+   en:{tag:"Match the following",q:"Match each term to its meaning:",left:["Assets","Liabilities","Capital"],right:["What the business owns","What the business owes","Owner's money"]},
+   hi:{tag:"जोड़ी मिलाएँ",q:"हर शब्द को उसके अर्थ से जोड़ें:",left:["संपत्ति","देनदारियाँ","पूँजी"],right:["business के पास","business पर देना","मालिक का पैसा"]}},
+  {type:"numeric",answer:120,unit:"₹",
+   en:{tag:"Numerical",q:"Assets are ₹200 and Liabilities are ₹80. Capital = ? (₹)",explain:"Capital = Assets − Liabilities = 200 − 80 = 120."},
+   hi:{tag:"संख्यात्मक",q:"संपत्ति ₹200 और देनदारियाँ ₹80 हैं। पूँजी (Capital) = ? (₹)",explain:"Capital = Assets − Liabilities = 200 − 80 = 120।"}},
+  {type:"long",
+   en:{tag:"Long answer",q:"What is the double-entry system, in your own words?",model:"Double-entry: every transaction affects two accounts — one debit and one equal credit — so the books always balance."},
+   hi:{tag:"दीर्घ उत्तर",q:"double-entry प्रणाली क्या है — अपने शब्दों में?",model:"Double-entry: हर लेन-देन दो खातों को प्रभावित करता है — एक debit और एक बराबर credit — इसलिए किताबें हमेशा balance रहती हैं।"}}
+ ]}
+};
+
+/* ============================ UI STRINGS ============================ */
+const T={
+ en:{ready:"Ready",qof:i=>`Question ${i} of ${TOTAL}`,score:"Score",start:"Start test →",next:"Next question →",results:"See results →",check:"Check",submit:"Submit answer",checking:"Acharya is checking…",typePh:"Type your answer in your own words…",tf:["True","False"],
+   longNo:"No worries — this one isn't clear yet. Here's the ideal answer, learn it 👇",longYes:"Got your answer 👍 Compare it with the ideal answer 👇",
+   corr:"✅ Correct! ",wrong:"❌ ",wrongAns:(a,u)=>`❌ Correct answer: ${a}${u?" "+u:""}. `,matchOk:"✅ All matched correctly!",matchNo:"❌ Some pairs were wrong.",
+   adaptLead:"No problem 👍 let's lock the basics with an easier one —",remember:"💡 Remember: ",complete:"Test complete 🎉",
+   solid:"Solid",shaky:"Shaky",weakL:"Weak",
+   scored:(s,t)=>`You scored <b>${s}/${t}</b> 👏`,
+   allSolid:"Everything solid — ready for advanced questions! 🎯",
+   weakList:w=>`Weak: <b>${w}</b>.`,
+   suggWeak:r=>r.depth==='basics'?`🎯 Suggested: <b>${r.topic.en}</b> — even the basics need work → assign a basics-first drill.`:r.depth==='application'?`🎯 Suggested: <b>${r.topic.en}</b> — basics are OK but application is weak → assign practice questions.`:`🎯 Suggested: <b>${r.topic.en}</b> is weak → assign a targeted drill.`,
+   foot:"👨‍🏫 These weak-spots come from your <b>actual answers</b> — the same picture (and this exact next step) is ready on the teacher's dashboard.",restart:"↻ Restart test"},
+ hi:{ready:"तैयार",qof:i=>`सवाल ${i} / ${TOTAL}`,score:"स्कोर",start:"टेस्ट शुरू करें →",next:"अगला सवाल →",results:"नतीजा देखें →",check:"जाँचें",submit:"जवाब सबमिट करें",checking:"आचार्य जाँच रहे हैं…",typePh:"अपने शब्दों में लिखें…",tf:["सही","ग़लत"],
+   longNo:"कोई बात नहीं — अभी यह साफ़ नहीं है। सही जवाब यह रहा, इसे समझ लो 👇",longYes:"आपका जवाब मिल गया 👍 अब इसे सही जवाब से मिलाकर देखो 👇",
+   corr:"✅ सही! ",wrong:"❌ ",wrongAns:(a,u)=>`❌ सही जवाब: ${a}${u?" "+u:""}। `,matchOk:"✅ सब सही जोड़े!",matchNo:"❌ कुछ जोड़े ग़लत थे।",
+   adaptLead:"कोई बात नहीं 👍 एक आसान सवाल से बेसिक्स पक्के करते हैं —",remember:"💡 याद करो: ",complete:"टेस्ट पूरा 🎉",
+   solid:"ठीक",shaky:"कच्चा",weakL:"कमज़ोर",
+   scored:(s,t)=>`आपने <b>${s}/${t}</b> किए 👏`,
+   allSolid:"सब solid — advanced questions के लिए तैयार! 🎯",
+   weakList:w=>`कमज़ोर: <b>${w}</b>।`,
+   suggWeak:r=>r.depth==='basics'?`🎯 सुझाव: <b>${r.topic.hi}</b> — basics ही कच्चे हैं → basics-first drill assign करें।`:r.depth==='application'?`🎯 सुझाव: <b>${r.topic.hi}</b> — basics ठीक, पर application कमज़ोर → practice questions दें।`:`🎯 सुझाव: <b>${r.topic.hi}</b> कमज़ोर है → एक targeted drill दें।`,
+   foot:"👨‍🏫 ये weak-spots आपके <b>असली जवाबों</b> से निकले हैं — यही तस्वीर (और यही next step) teacher के dashboard पर तैयार।",restart:"↻ फिर से टेस्ट"}
+};
+
+/* ============================ ENGINE ============================ */
+const params=new URLSearchParams(location.search);
+const S=SUBJECTS[params.get('subject')]||SUBJECTS['neet-biology'];
+let LANG=params.get('lang')==='hi'?'hi':'en';
+const TOTAL=S.questions.length; const GRADED=S.questions.filter(q=>q.type!=='long').length; let score=0;
+const log=document.getElementById('log'),fill=document.getElementById('fill'),plabel=document.getElementById('plabel'),pscore=document.getElementById('pscore');
+document.getElementById('hsub').textContent=S.title+' · '+S.topic[LANG];
+document.querySelectorAll('.langtog button').forEach(b=>{b.classList.toggle('on',b.dataset.l===LANG);
+  b.onclick=()=>{ if(b.dataset.l===LANG) return; params.set('lang',b.dataset.l); params.set('subject',params.get('subject')||'neet-biology'); location.search=params.toString(); };});
+const el=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;};
+const add=n=>{const r=document.createElement('div');r.className='row';r.appendChild(n);log.appendChild(r);log.scrollTop=log.scrollHeight;return r;};
+const say=h=>{const d=document.createElement('div');d.className='say';d.innerHTML='<div class="who">ACHARYA</div>'+h;add(d);};
+const clear=()=>{log.innerHTML='';};
+const wait=m=>new Promise(r=>setTimeout(r,m));
+function setHeader(i){fill.style.width=(i/TOTAL*100)+'%';plabel.textContent=T[LANG].qof(i+1);pscore.textContent=T[LANG].score+' '+score;}
+function advance(res,ok,label){const b=el(`<button class="btn full">${label||T[LANG].next}</button>`);b.onclick=()=>{b.disabled=true;res(ok);};add(b);log.scrollTop=log.scrollHeight;}
+const L=q=>q[LANG];  // language view of a question
+
+function mcq(q,last){return new Promise(res=>{const v=L(q);
+  const card=el(`<div class="qcard"><span class="qtag ${q.easy?'easy':''}">${v.tag}</span><div class="qtext">${v.q}</div></div>`);
+  const B=['A','B','C','D'];
+  v.opts.forEach((o,i)=>{const b=el(`<button class="opt"><span class="badge">${B[i]}</span><span>${o}</span></button>`);
+    b.onclick=()=>{[...card.querySelectorAll('.opt')].forEach(x=>{x.onclick=null;x.classList.add('dim');});
+      const c=card.querySelectorAll('.opt')[q.correct];c.classList.remove('dim');c.classList.add('correct');
+      const ok=i===q.correct;
+      if(!ok){b.classList.remove('dim');b.classList.add('wrong');b.appendChild(el('<span class="mark">✕</span>'));}
+      else b.appendChild(el('<span class="mark" style="color:var(--good)">✓</span>'));
+      card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrong}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
+    card.appendChild(b);});
+  add(card);});}
+
+function truefalse(q,last){return new Promise(res=>{const v=L(q);
+  const card=el(`<div class="qcard"><span class="qtag">${v.tag}</span><div class="qtext">${v.q}</div><div class="tf"></div></div>`);
+  const w=card.querySelector('.tf');
+  [[T[LANG].tf[0],true],[T[LANG].tf[1],false]].forEach(([t,val])=>{const b=el(`<button>${t}</button>`);
+    b.onclick=()=>{w.querySelectorAll('button').forEach(x=>x.onclick=null);const ok=val===q.answer;
+      w.querySelectorAll('button')[q.answer?0:1].classList.add('correct');if(!ok)b.classList.add('wrong');
+      card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrong}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
+    w.appendChild(b);});
+  add(card);});}
+
+function match(q,last){return new Promise(res=>{const v=L(q);
+  const card=el(`<div class="qcard"><span class="qtag">${v.tag}</span><div class="qtext">${v.q}</div><div class="match"><div class="col" id="L"></div><div class="col" id="R"></div></div></div>`);
+  const CL=card.querySelector('#L'),CR=card.querySelector('#R');
+  v.left.forEach((t,i)=>CL.appendChild(el(`<div class="mitem" data-i="${i}">${t}</div>`)));
+  v.right.forEach((t,i)=>CR.appendChild(el(`<div class="mitem" data-i="${i}">${t}</div>`)));
+  let sel=null,made=0,wrong=0,n=v.left.length;
+  CL.querySelectorAll('.mitem').forEach(m=>m.onclick=()=>{if(m.classList.contains('ok')||m.classList.contains('no'))return;
+    CL.querySelectorAll('.mitem').forEach(x=>x.classList.remove('sel'));m.classList.add('sel');sel=+m.dataset.i;});
+  CR.querySelectorAll('.mitem').forEach(m=>m.onclick=()=>{if(sel===null||m.classList.contains('ok')||m.classList.contains('no'))return;
+    const ri=+m.dataset.i,lEl=CL.querySelector(`[data-i="${sel}"]`),good=q.pairs[sel]===ri;
+    lEl.classList.remove('sel');[lEl,m].forEach(x=>x.classList.add(good?'ok':'no'));if(!good)wrong++;sel=null;made++;
+    if(made===n){const ok=wrong===0;
+      card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].matchOk:T[LANG].matchNo}</div>`));advance(res,ok,last?T[LANG].results:null);}});
+  add(card);});}
+
+function numeric(q,last){return new Promise(res=>{const v=L(q);
+  const card=el(`<div class="qcard"><span class="qtag">${v.tag}</span><div class="qtext">${v.q}</div><div class="inrow"><input type="number" inputmode="decimal" placeholder="${q.unit?q.unit:'?'}"/><button class="btn">${T[LANG].check}</button></div></div>`);
+  const inp=card.querySelector('input'),btn=card.querySelector('button');
+  btn.onclick=()=>{if(inp.value==='')return;btn.onclick=null;inp.disabled=true;const ok=Math.abs(parseFloat(inp.value)-q.answer)<1e-6;
+    inp.style.borderColor=ok?'var(--good)':'var(--bad)';inp.style.background=ok?'var(--goodbg)':'var(--badbg)';
+    card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrongAns(q.answer,q.unit)}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
+  add(card);});}
+
+// Free text can't be truthfully auto-graded in a static demo, so we NEVER fake a "correct".
+// We only detect attempt vs non-attempt, and reveal the ideal answer to compare — always honest.
+function long(q,last){return new Promise(res=>{const v=L(q);
+  const card=el(`<div class="qcard"><span class="qtag">${v.tag}</span><div class="qtext">${v.q}</div><textarea class="long" placeholder="${T[LANG].typePh}"></textarea><button class="btn full">${T[LANG].submit}</button></div>`);
+  const btn=card.querySelector('button'),ta=card.querySelector('textarea');
+  btn.onclick=async()=>{const t=ta.value.trim();if(t.length<1){ta.focus();return;}btn.onclick=null;ta.disabled=true;btn.textContent=T[LANG].checking;
+    await wait(1100);btn.style.display='none';
+    const dunno=/^(i\s*)?(nhi|nahi|nahin|na|no|nope|dunno|idk|don'?t\s*know|no\s*idea|pata\s*(nahi|nhi)|nahi\s*pata|nhi\s*pata|kuch\s*(nahi|nhi)|blank|skip|\?+|\.+|-+)\s*$/i.test(t.toLowerCase());
+    const notAttempt=dunno||t.replace(/\s+/g,'').length<8;
+    const lead=notAttempt?T[LANG].longNo:T[LANG].longYes;
+    card.appendChild(el(`<div class="hint">${lead}<br><br><b>${v.model}</b></div>`));
+    log.scrollTop=log.scrollHeight;advance(res,true,last?T[LANG].results:null);};
+  add(card);});}
+
+const RENDER={mcq,truefalse,match,numeric,long};
+const render=(q,last)=>RENDER[q.type](q,last);
+
+function intro(){return new Promise(res=>{clear();fill.style.width='0%';plabel.textContent=T[LANG].ready;pscore.textContent=T[LANG].score+' 0';
+  add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>${S.intro[LANG]}</div></div>`));
+  const b=el(`<button class="btn full">${T[LANG].start}</button>`);b.onclick=()=>res();add(b);});}
+
+async function run(){
+  await intro();
+  const results=[];   // {topic:{en,hi}, status:'solid'|'shaky'|'weak', depth:'basics'|'application'|null} — built from ACTUAL answers
+  for(let i=0;i<TOTAL;i++){
+    const q=S.questions[i],last=(i===TOTAL-1),topic=S.topicMap[i];
+    clear();setHeader(i);
+    const ok=await render(q,last && !q.adaptive);
+    if(q.type==='long'){ /* free text: honestly not auto-graded, so excluded from the diagnosis */ }
+    else if(ok){ score++; results.push({topic,status:'solid',depth:null}); }
+    else if(q.adaptive){
+      clear();setHeader(i);
+      say(T[LANG].adaptLead);
+      if(q.adaptive.hint) add(el(`<div class="hint">${T[LANG].remember}${q.adaptive.hint[LANG]}</div>`));
+      const a={type:q.adaptive.type||'mcq',easy:true,correct:q.adaptive.correct,answer:q.adaptive.answer,unit:q.adaptive.unit,pairs:q.adaptive.pairs,en:q.adaptive.en,hi:q.adaptive.hi};
+      const aok=await render(a,last);   // did they pass the BASIC version? decides the DEPTH of the gap
+      results.push({topic,status:aok?'shaky':'weak',depth:aok?'application':'basics'});
+    } else {
+      results.push({topic,status:'weak',depth:null});
+    }
+  }
+  clear();fill.style.width='100%';plabel.textContent=T[LANG].complete;pscore.textContent=T[LANG].score+' '+score+'/'+GRADED;
+  scorecard(results);
+}
+function scorecard(results){
+  const pct=GRADED?Math.round(score/GRADED*100):0;
+  const lab={solid:T[LANG].solid,shaky:T[LANG].shaky,weak:T[LANG].weakL};
+  const rows=results.map(r=>`<div class="r"><span>${r.topic[LANG]}</span><span class="chip ${r.status==='solid'?'good':'weak'}">${lab[r.status]}</span></div>`).join('');
+  const weakRes=results.filter(r=>r.status!=='solid');
+  const pri=weakRes.find(r=>r.depth==='basics')||weakRes.find(r=>r.depth==='application')||weakRes[0];
+  const weakNames=weakRes.map(r=>r.topic[LANG]).join(', ');
+  add(el(`<div class="score"><div class="ring" style="--p:${pct}"><b>${pct}%</b><span>${score}/${GRADED}</span></div>
+    <h3>${T[LANG].complete}</h3><div class="sub">${S.title} · ${S.topic[LANG]}</div><div class="brk">${rows}</div></div>`));
+  let msg=T[LANG].scored(score,GRADED);
+  if(weakRes.length) msg+=' '+T[LANG].weakList(weakNames)+'<br><br>'+T[LANG].suggWeak(pri);
+  else msg+='<br><br>'+T[LANG].allSolid;
+  say(msg);
+  add(el(`<div class="footnote">${T[LANG].foot}</div>`));
+  add(el(`<button class="btn ghost full" onclick="location.reload()">${T[LANG].restart}</button>`));
+}
+run();
+</script>
+</body></html>

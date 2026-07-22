@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>Acharya — Assessment (prototype)</title>
+<style>
+ :root{
+   --canvas:#FFFDF9; --panel:#fff; --ink:#2A2018; --muted:#8A7A66; --line:#EFE0CE;
+   --gold:#C2591F; --gold2:#A8481A; --good:#1f8b52; --goodbg:#E9F6EE; --bad:#C23B22; --badbg:#FBEBE7;
+   --cream:#FAF5EC;
+ }
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ body{background:#EAE2D6;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);
+   min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px}
+ .phone{width:100%;max-width:430px;height:min(880px,94vh);background:var(--canvas);border-radius:26px;
+   overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 70px rgba(120,60,20,.28)}
+ header{display:flex;align-items:center;gap:11px;padding:14px 18px;background:linear-gradient(120deg,#E8934A,#C2591F);color:#fff}
+ header .ava{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+   display:flex;align-items:center;justify-content:center;font-size:20px}
+ header .t{font-weight:700;font-size:15.5px}
+ header .s{font-size:12px;color:rgba(255,255,255,.8);margin-top:1px}
+ /* progress */
+ .prog{padding:10px 18px 4px;background:var(--canvas)}
+ .prog .bar{height:7px;background:#EEE1CF;border-radius:99px;overflow:hidden}
+ .prog .fill{height:100%;width:0;background:linear-gradient(90deg,#E8934A,#C2591F);border-radius:99px;transition:width .5s cubic-bezier(.4,1,.4,1)}
+ .prog .lbl{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:5px;font-weight:600}
+ #log{flex:1;overflow-y:auto;padding:14px 16px 20px;display:flex;flex-direction:column;gap:13px}
+ .row{animation:rise .3s cubic-bezier(.2,.7,.3,1) both}
+ @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+ /* acharya text */
+ .say{max-width:88%;font-size:14.5px;line-height:1.5;color:var(--ink)}
+ .say .who{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.03em;margin-bottom:3px}
+ /* question card */
+ .qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px 16px 14px;
+   box-shadow:0 3px 12px rgba(120,60,20,.06)}
+ .qtag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+   color:var(--gold2);background:var(--cream);border-radius:6px;padding:3px 8px;margin-bottom:9px}
+ .qtag.easy{color:#0d7a53;background:#E9F6EE}
+ .qtext{font-size:15.5px;font-weight:600;line-height:1.45;margin-bottom:13px}
+ /* mcq options */
+ .opt{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);
+   border-radius:13px;padding:12px 13px;margin-top:9px;font-size:14.5px;cursor:pointer;transition:.13s;color:var(--ink)}
+ .opt:hover{border-color:var(--gold);background:#FFFBF6}
+ .opt:active{transform:scale(.985)}
+ .opt .badge{width:26px;height:26px;flex:0 0 auto;border-radius:8px;background:var(--cream);color:var(--gold2);
+   font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+ .opt.correct{border-color:var(--good);background:var(--goodbg)} .opt.correct .badge{background:var(--good);color:#fff}
+ .opt.wrong{border-color:var(--bad);background:var(--badbg)} .opt.wrong .badge{background:var(--bad);color:#fff}
+ .opt.dim{opacity:.5}
+ .opt .mark{margin-left:auto;font-weight:800}
+ /* true/false */
+ .tf{display:flex;gap:11px;margin-top:6px}
+ .tf button{flex:1;padding:15px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:.13s;color:var(--ink)}
+ .tf button:hover{border-color:var(--gold);background:#FFFBF6}
+ .tf button.correct{border-color:var(--good);background:var(--goodbg);color:var(--good)}
+ .tf button.wrong{border-color:var(--bad);background:var(--badbg);color:var(--bad)}
+ /* match */
+ .match{display:flex;gap:12px;margin-top:6px}
+ .match .col{flex:1;display:flex;flex-direction:column;gap:9px}
+ .mitem{padding:11px 12px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:13.5px;cursor:pointer;transition:.13s;text-align:center;font-weight:600}
+ .mitem:hover{border-color:var(--gold)}
+ .mitem.sel{border-color:var(--gold);background:#FFF3E6}
+ .mitem.done{cursor:default}
+ .mitem[data-pair="1"].done{border-color:#3B82F6;background:#EFF5FF;color:#2563EB}
+ .mitem[data-pair="2"].done{border-color:#8B5CF6;background:#F4F0FF;color:#7C3AED}
+ .mitem[data-pair="3"].done{border-color:#0EA5A0;background:#E9F8F7;color:#0E8F8A}
+ /* numeric + text input */
+ .inrow{display:flex;gap:9px;margin-top:6px}
+ .inrow input{flex:1;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px;outline:none}
+ .inrow input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(194,89,31,.13)}
+ textarea.long{width:100%;min-height:96px;border:1.5px solid var(--line);border-radius:13px;padding:12px 14px;font-size:14.5px;
+   outline:none;resize:vertical;font-family:inherit;margin-top:4px}
+ textarea.long:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(194,89,31,.13)}
+ .btn{background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:12px;padding:12px 20px;
+   font-size:14.5px;font-weight:700;cursor:pointer;transition:.13s;flex:0 0 auto}
+ .btn:hover{transform:translateY(-1px);box-shadow:0 6px 15px rgba(168,72,26,.32)}
+ .btn:active{transform:scale(.97)} .btn.full{width:100%;margin-top:11px}
+ .btn.ghost{background:#fff;color:var(--gold2);border:1.5px solid var(--line)}
+ /* feedback + hint */
+ .fb{margin-top:11px;padding:11px 13px;border-radius:12px;font-size:13.5px;line-height:1.45}
+ .fb.ok{background:var(--goodbg);color:#116b41;border:1px solid #BFE6CF}
+ .fb.no{background:var(--badbg);color:#9c3220;border:1px solid #F0C9BF}
+ .hint{margin-top:10px;padding:11px 13px;border-radius:12px;background:#FFF7E9;border:1px dashed #E7BE7C;font-size:13.5px;line-height:1.45}
+ .hint b{color:var(--gold2)}
+ /* score card */
+ .score{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px 18px;text-align:center;box-shadow:0 6px 20px rgba(120,60,20,.08)}
+ .score .ring{width:104px;height:104px;margin:4px auto 10px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+   background:conic-gradient(var(--gold) calc(var(--p)*1%), #EEE1CF 0);position:relative}
+ .score .ring::before{content:"";position:absolute;inset:9px;background:#fff;border-radius:50%}
+ .score .ring b{position:relative;font-size:26px;color:var(--gold2)} .score .ring span{position:relative;font-size:11px;color:var(--muted)}
+ .score h3{font-size:17px;margin-bottom:3px} .score .sub{font-size:13px;color:var(--muted);margin-bottom:14px}
+ .brk{text-align:left;display:flex;flex-direction:column;gap:8px;margin-top:6px}
+ .brk .r{display:flex;align-items:center;justify-content:space-between;font-size:13px;background:var(--cream);border-radius:10px;padding:9px 12px}
+ .chip{font-size:11px;font-weight:700;border-radius:20px;padding:3px 10px}
+ .chip.good{background:var(--goodbg);color:#116b41} .chip.weak{background:var(--badbg);color:#9c3220}
+ .footnote{text-align:center;font-size:11px;color:var(--muted);padding:8px 0 2px}
+ .footnote b{color:var(--gold2)}
+</style></head>
+<body>
+<div class="phone">
+  <header>
+    <div class="ava">🪔</div>
+    <div><div class="t">Acharya</div><div class="s">Assessment Mode · Thermodynamics</div></div>
+  </header>
+  <div class="prog"><div class="bar"><div class="fill" id="fill"></div></div>
+    <div class="lbl"><span id="plabel">Question 1 of 5</span><span id="pscore">Score 0</span></div></div>
+  <div id="log"></div>
+</div>
+<script>
+const log=document.getElementById('log'), fill=document.getElementById('fill'),
+      plabel=document.getElementById('plabel'), pscore=document.getElementById('pscore');
+let qNum=0, total=5, score=0, idx=0;
+function setProg(){ fill.style.width=(qNum/total*100)+'%'; plabel.textContent='Question '+Math.min(qNum,total)+' of '+total; pscore.textContent='Score '+score; }
+function add(node){ const r=document.createElement('div'); r.className='row'; r.appendChild(node); log.appendChild(r); log.scrollTop=log.scrollHeight; return r; }
+function say(html){ const d=document.createElement('div'); d.className='say'; d.innerHTML='<div class="who">ACHARYA</div>'+html; add(d); }
+function el(html){ const t=document.createElement('template'); t.innerHTML=html.trim(); return t.content.firstChild; }
+function wait(ms){ return new Promise(r=>setTimeout(r,ms)); }
+
+// ---------- widgets ----------
+function mcq({tag,easy,q,opts,correct,explain,onDone}){
+  qNum++; setProg();
+  const card=el(`<div class="qcard"><span class="qtag ${easy?'easy':''}">${tag}</span><div class="qtext">${q}</div></div>`);
+  const letters=['A','B','C','D'];
+  opts.forEach((o,i)=>{
+    const b=el(`<button class="opt"><span class="badge">${letters[i]}</span><span>${o}</span></button>`);
+    b.onclick=()=>{
+      [...card.querySelectorAll('.opt')].forEach(x=>{x.onclick=null;x.classList.add('dim');});
+      card.querySelectorAll('.opt')[correct].classList.remove('dim');card.querySelectorAll('.opt')[correct].classList.add('correct');
+      const ok=i===correct;
+      if(!ok){b.classList.remove('dim');b.classList.add('wrong');b.querySelector('.badge').after(el('<span class="mark">✕</span>'));}
+      else{score++;setProg();b.querySelector('.badge').after(el('<span class="mark" style="color:var(--good)">✓</span>'));}
+      const fb=el(`<div class="fb ${ok?'ok':'no'}">${ok?'✅ Sahi! ':'❌ '} ${explain}</div>`);
+      card.appendChild(fb); log.scrollTop=log.scrollHeight;
+      onDone(ok);
+    };
+    card.appendChild(b);
+  });
+  add(card);
+}
+function truefalse({tag,q,answer,explain,onDone}){
+  qNum++; setProg();
+  const card=el(`<div class="qcard"><span class="qtag">${tag}</span><div class="qtext">${q}</div><div class="tf"></div></div>`);
+  const wrap=card.querySelector('.tf');
+  [['True',true],['False',false]].forEach(([t,v])=>{
+    const b=el(`<button>${t}</button>`);
+    b.onclick=()=>{ wrap.querySelectorAll('button').forEach(x=>x.onclick=null);
+      const ok=v===answer;
+      wrap.querySelectorAll('button')[answer?0:1].classList.add('correct');
+      if(!ok) b.classList.add('wrong');
+      if(ok){score++;setProg();}
+      card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?'✅ ':'❌ '}${explain}</div>`));
+      log.scrollTop=log.scrollHeight; onDone(ok);
+    };
+    wrap.appendChild(b);
+  });
+  add(card);
+}
+function match({tag,q,left,right,pairs,onDone}){ // pairs: leftIndex->rightIndex
+  qNum++; setProg();
+  const card=el(`<div class="qcard"><span class="qtag">${tag}</span><div class="qtext">${q}</div>
+    <div class="match"><div class="col" id="L"></div><div class="col" id="R"></div></div></div>`);
+  const L=card.querySelector('#L'), R=card.querySelector('#R');
+  left.forEach((t,i)=>{const m=el(`<div class="mitem" data-i="${i}">${t}</div>`);L.appendChild(m);});
+  right.forEach((t,i)=>{const m=el(`<div class="mitem" data-i="${i}">${t}</div>`);R.appendChild(m);});
+  let selL=null, made=0, pairColor=0;
+  L.querySelectorAll('.mitem').forEach(m=>m.onclick=()=>{ if(m.classList.contains('done'))return;
+    L.querySelectorAll('.mitem').forEach(x=>x.classList.remove('sel')); m.classList.add('sel'); selL=+m.dataset.i; });
+  R.querySelectorAll('.mitem').forEach(m=>m.onclick=()=>{ if(selL===null||m.classList.contains('done'))return;
+    const ri=+m.dataset.i; pairColor++; const lEl=L.querySelector(`[data-i="${selL}"]`);
+    const right_ok = pairs[selL]===ri;
+    [lEl,m].forEach(x=>{x.classList.remove('sel');x.classList.add('done');x.dataset.pair=(pairColor);});
+    if(!right_ok){lEl.style.borderColor='var(--bad)';m.style.borderColor='var(--bad)';lEl.style.background=m.style.background='var(--badbg)';lEl.style.color=m.style.color='#9c3220';}
+    selL=null; made++;
+    if(made===left.length){ let allok=true; for(const k in pairs){} // score if all correct
+      // recompute correctness
+      const correctCount = Object.keys(pairs).filter(li=>true).length;
+      // simple: check each made pair by color storage — approximate: treat correct if none marked bad
+      const anyBad = card.querySelector('.mitem[style*="var(--bad)"]');
+      if(!anyBad){score++;setProg();}
+      card.appendChild(el(`<div class="fb ${anyBad?'no':'ok'}">${anyBad?'❌ Kuch pairs galat — ':'✅ Sab sahi jode! '} formula ↔ quantity mapping.</div>`));
+      log.scrollTop=log.scrollHeight; onDone(!anyBad);
+    }
+  });
+  add(card);
+}
+function numeric({tag,q,answer,unit,explain,onDone}){
+  qNum++; setProg();
+  const card=el(`<div class="qcard"><span class="qtag">${tag}</span><div class="qtext">${q}</div>
+    <div class="inrow"><input type="number" inputmode="decimal" placeholder="Answer${unit?' ('+unit+')':''}"/><button class="btn">Check</button></div></div>`);
+  const inp=card.querySelector('input'), btn=card.querySelector('button');
+  btn.onclick=()=>{ btn.onclick=null;inp.disabled=true;
+    const ok=Math.abs(parseFloat(inp.value)-answer)<1e-6;
+    if(ok){score++;setProg();}
+    inp.style.borderColor=ok?'var(--good)':'var(--bad)';inp.style.background=ok?'var(--goodbg)':'var(--badbg)';
+    card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?'✅ Sahi! ':'❌ Sahi jawab '+answer+(unit?' '+unit:'')+'. '}${explain}</div>`));
+    log.scrollTop=log.scrollHeight; onDone(ok);
+  };
+  add(card);
+}
+function longans({tag,q,onDone}){
+  qNum++; setProg();
+  const card=el(`<div class="qcard"><span class="qtag">${tag}</span><div class="qtext">${q}</div>
+    <textarea class="long" placeholder="Type your answer in your own words…"></textarea>
+    <button class="btn full">Submit answer</button></div>`);
+  const btn=card.querySelector('button'), ta=card.querySelector('textarea');
+  btn.onclick=async()=>{ if(ta.value.trim().length<4){ta.focus();return;} btn.onclick=null;ta.disabled=true;btn.textContent='Acharya is checking…';
+    await wait(1300); btn.style.display='none';
+    score++;setProg();
+    card.appendChild(el(`<div class="fb ok">✅ Accha likha! Aapne "first law" ka core pakda — energy conserve hoti hai. <br>Ek line aur add karo: ΔU = Q − W. Isse answer complete ho jaata.</div>`));
+    log.scrollTop=log.scrollHeight; onDone(true);
+  };
+  add(card);
+}
+function scorecard(){
+  fill.style.width='100%'; plabel.textContent='Test complete'; pscore.textContent='Score '+score+'/'+total;
+  const pct=Math.round(score/total*100);
+  const card=el(`<div class="score">
+    <div class="ring" style="--p:${pct}"><b>${pct}%</b><span>${score}/${total}</span></div>
+    <h3>Test complete 🎉</h3><div class="sub">Thermodynamics · adaptive quiz</div>
+    <div class="brk">
+      <div class="r"><span>First Law of Thermodynamics</span><span class="chip good">Solid</span></div>
+      <div class="r"><span>Work &amp; Internal Energy</span><span class="chip good">Solid</span></div>
+      <div class="r"><span>Latent Heat</span><span class="chip weak">Weak — revise</span></div>
+      <div class="r"><span>Specific Heat (basics)</span><span class="chip weak">Weak — revise</span></div>
+    </div></div>`);
+  add(card);
+  say(`Aapne <b>${score}/${total}</b> kiye 👏 Do cheezein weak hain — <b>Latent Heat</b> aur <b>Specific Heat basics</b>. Kal in dono ka ek chhota drill karenge — Goal OS mein lock kar diya. 🎯`);
+  add(el(`<div class="footnote">👨‍🏫 Yeh sab aapke teacher ke dashboard par bhi dikh raha hai — <b>kaun test de raha hai, kaun kahan weak hai</b>.</div>`));
+  add(el(`<button class="btn ghost full" onclick="location.reload()">↻ Restart demo</button>`));
+}
+
+// ---------- scripted adaptive sequence ----------
+async function run(){
+  say('Namaste 🙏 Aaj <b>Thermodynamics</b> ka ek quick test — 5 sawaal. Sirf <b>tap</b> karo. Galti hui toh main aasan kar dunga. Chalo! 👇');
+  await wait(700);
+  // Q1 MCQ (medium) — branches to adaptive-easy on wrong
+  mcq({tag:'Thermodynamics · MCQ', q:'First law of thermodynamics kis cheez ka conservation batata hai?',
+    opts:['Momentum','Energy','Charge','Mass'], correct:1,
+    explain:'First law = energy conservation: ΔU = Q − W.',
+    onDone:async(ok)=>{
+      if(!ok){
+        await wait(500);
+        say('Koi baat nahi 👍 Ek aasan sawaal se basics pakke karte hain —');
+        add(el(`<div class="hint">💡 <b>Yaad karo:</b> "Thermo-dynamics" = <b>heat (thermo)</b> + <b>motion/energy (dynamics)</b>. Yeh energy ke baare mein hai.</div>`));
+        await wait(500);
+        mcq({tag:'Basics · MCQ', easy:true, q:'Energy na banti hai na nasht hoti — sirf ______ hoti hai.',
+          opts:['transfer/convert','destroy','multiply'], correct:0,
+          explain:'Energy sirf ek roop se doosre mein badalti hai — yahi conservation hai.',
+          onDone:async()=>{ await wait(600); step2(); }});
+      } else { await wait(700); step2(); }
+    }});
+}
+async function step2(){
+  truefalse({tag:'Thermodynamics · True/False', q:'Adiabatic process mein system aur surroundings ke beech heat exchange hota hai.',
+    answer:false, explain:'Adiabatic = NO heat exchange (Q = 0). Isliye False.',
+    onDone:async()=>{ await wait(700); step3(); }});
+}
+async function step3(){
+  match({tag:'Match the following', q:'Quantity ko uske formula/unit se jodo:',
+    left:['Work','Heat','Internal Energy'], right:['P·ΔV','Joule','ΔU'],
+    pairs:{0:0,1:1,2:2},
+    onDone:async()=>{ await wait(700); step4(); }});
+}
+async function step4(){
+  numeric({tag:'Numerical', q:'Ek gas ko 200 J heat di gayi aur usne 50 J work kiya. Internal energy mein change (ΔU) = ?',
+    answer:150, unit:'J', explain:'ΔU = Q − W = 200 − 50 = 150 J.',
+    onDone:async()=>{ await wait(700); step5(); }});
+}
+async function step5(){
+  say('Aakhri sawaal — yeh <b>likhna</b> hai (apne shabdon mein). ✍️');
+  longans({tag:'Long answer', q:'First law of thermodynamics ko apne shabdon mein samjhao.',
+    onDone:async()=>{ await wait(800); scorecard(); }});
+}
+run();
+</script>
+</body></html>

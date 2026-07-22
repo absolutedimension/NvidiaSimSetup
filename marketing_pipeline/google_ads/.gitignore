@@ -1,0 +1,4 @@
+google-ads.yaml
+*.refresh_token
+.venv/
+__pycache__/

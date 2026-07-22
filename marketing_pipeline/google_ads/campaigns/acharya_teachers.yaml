@@ -1,0 +1,86 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# CAMPAIGN SPEC — Acharya demand-sensor (teachers / coaching owners)
+# One file = one campaign. Copy this to start a new campaign; the CLI reads it.
+# Goal: SENSE whether anyone digitally searches for what Acharya solves, and in
+# which words. Not brand-building — a paid instrument that returns the buyer's
+# real vocabulary + a click→demo conversion rate for ~₹3k.
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: "Acharya · Teachers Demand Sensor · 2026-07"
+status: PAUSED            # ALWAYS starts paused — you review in the UI, then enable. Never auto-spends.
+
+budget:
+  daily_inr: 200         # ₹200/day × ~14 days ≈ ₹2,800 total (Google caps monthly at 30.4×daily)
+  # To hard-cap total spend, also set start/end below (~2 weeks) and watch `report`.
+
+bidding:
+  strategy: MANUAL_CPC    # most predictable for a small test; switch to MAXIMIZE_CLICKS later
+  max_cpc_inr: 12         # ceiling per click; keeps a ₹3k budget from burning on one expensive word
+
+schedule:
+  start_date: "2026-07-22"   # YYYY-MM-DD — set to when you flip it on
+  end_date:   "2026-08-05"   # ~2 weeks; the campaign auto-stops here
+
+geo:
+  # Sense demand where your buyers are. Start Bihar-focused (aligns with Rohan's Patna field motion);
+  # widen to ["India"] if you want national volume for the ₹3k.
+  locations: ["Bihar, India", "Jharkhand, India", "Uttar Pradesh, India"]
+languages: ["English", "Hindi"]
+
+final_url: "https://gurukul.trigunai.com/demo"   # where clicks land (the demo launcher). See README on adding conversion tracking.
+
+ad_group:
+  name: "coaching-owner-pain"
+
+# ── KEYWORDS — the buyer's PAIN in the buyer's words (NOT the category name). ──
+# match: phrase (controlled) — the sensor tells you which of these actually get searched/clicked.
+keywords:
+  - { text: "app for coaching institute",   match: PHRASE }
+  - { text: "coaching management app",       match: PHRASE }
+  - { text: "app for my coaching classes",   match: PHRASE }
+  - { text: "student doubt solving app",     match: PHRASE }
+  - { text: "doubt clearing app for students", match: PHRASE }
+  - { text: "ai tutor for students",         match: PHRASE }
+  - { text: "ai doubt solver",               match: PHRASE }
+  - { text: "classplus alternative",         match: PHRASE }
+  - { text: "teachmint alternative",         match: PHRASE }
+  - { text: "app for tuition classes",       match: PHRASE }
+  - { text: "tuition management app",        match: PHRASE }
+  - { text: "whatsapp bot for teaching",     match: PHRASE }
+  - { text: "ai teaching assistant",         match: PHRASE }
+  - { text: "coaching ke liye app",          match: PHRASE }   # Hindi transliteration
+  - { text: "students ke doubt solve karne wala app", match: PHRASE }
+
+# ── NEGATIVE KEYWORDS — filter out the wrong crowd (job-seekers, freebie-hunters). ──
+negative_keywords:
+  - { text: "job",      match: BROAD }
+  - { text: "jobs",     match: BROAD }
+  - { text: "vacancy",  match: BROAD }
+  - { text: "salary",   match: BROAD }
+  - { text: "sarkari",  match: BROAD }
+  - { text: "govt",     match: BROAD }
+  - { text: "free download", match: PHRASE }
+  - { text: "crack",    match: BROAD }
+  - { text: "pdf",      match: BROAD }
+  - { text: "notes",    match: BROAD }
+
+# ── RESPONSIVE SEARCH AD — headlines ≤30 chars, descriptions ≤90 chars. ──
+ad:
+  headlines:
+    - "AI Teaching Assistant"
+    - "Acharya — AI Tutor for You"
+    - "24/7 Student Doubt Solving"
+    - "AI Tutor Under Your Brand"
+    - "For Coaching & Tuition Owners"
+    - "Your Students, Taught by AI"
+    - "Cut Repetitive Doubt Work"
+    - "AI That Teaches, Not Chats"
+    - "WhatsApp AI Tutor"
+    - "Free Live Demo for Teachers"
+    - "Built for Indian Teachers"
+    - "Try the Acharya Demo"
+  descriptions:
+    - "AI teaching assistant that solves your students' doubts 24/7 — in your name."
+    - "See it live: give a subject, watch Acharya teach it in Hindi. Free demo."
+    - "For tuition & coaching owners: cut doubt-solving load, keep students on track."
+    - "Not ChatGPT — a guru that won't let students fake it. Try the free demo."

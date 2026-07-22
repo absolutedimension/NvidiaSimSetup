@@ -1,0 +1,9 @@
+# Copy this to  google-ads.yaml  and fill in the 5 values (see SETUP_CREDENTIALS.md).
+# google-ads.yaml is gitignored — it holds secrets, never commit it.
+
+developer_token: "YOUR_DEVELOPER_TOKEN"          # from your Manager (MCC) account → API Center
+client_id: "YOUR_OAUTH_CLIENT_ID.apps.googleusercontent.com"
+client_secret: "YOUR_OAUTH_CLIENT_SECRET"
+refresh_token: "YOUR_OAUTH_REFRESH_TOKEN"        # from the OAuth consent flow (SETUP step 4)
+login_customer_id: "1234567890"                   # your MCC (manager) account id, digits only, no dashes
+use_proto_plus: True

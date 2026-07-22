@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"/>
+<title>Acharya · TrigunAI Gurukul</title>
+<style>
+  :root{
+    --bg:#FFFDFB; --canvas:#FFFDFB; --panel:#ffffff; --line:#F0E4D5; --text:#2A2018; --muted:#8A7A66;
+    --bot:#FAF5EC; --botline:#EDE0CD; --me:#A8481A; --me-text:#ffffff; --accent:#C2591F; --accent2:#A8481A; --code:#F0E4D4;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; height:100%; background:var(--bg); color:var(--text);
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap{ display:flex; flex-direction:column; height:100dvh; max-width:780px; margin:0 auto;
+    background:var(--canvas); box-shadow:0 0 40px rgba(120,60,20,.06); }
+  header{ display:flex; align-items:center; gap:12px; padding:15px 20px;
+    background:linear-gradient(120deg,#E8934A,#C2591F); color:#fff;
+    position:sticky; top:0; z-index:2; box-shadow:0 2px 10px rgba(168,72,26,.12); }
+  header .ava{ width:44px; height:44px; border-radius:50%;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.30);
+    display:flex; align-items:center; justify-content:center; overflow:hidden; flex:0 0 auto;
+    box-shadow:inset 0 1px 2px rgba(255,255,255,.25); }
+  header .ava img{ width:31px; height:31px; object-fit:contain; }
+  header .t{ font-weight:680; font-size:16px; letter-spacing:-.01em; }
+  header .s{ font-size:12.5px; color:rgba(255,255,255,.78); margin-top:1px; }
+  /* embedded inside the LMS dashboard iframe → the parent already shows the Acharya header,
+     so hide our own to avoid a double header and give the chat the full height. */
+  body.embedded header{ display:none; }
+  #log{ flex:1; overflow-y:auto; padding:22px 18px 8px; display:flex; flex-direction:column; gap:14px;
+    background:var(--canvas); scroll-behavior:smooth;
+    overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+  .row{ display:flex; animation:rise .26s cubic-bezier(.22,.7,.3,1) both; }
+  .row.me{ justify-content:flex-end; }
+  @keyframes rise{ from{opacity:0; transform:translateY(9px);} to{opacity:1; transform:translateY(0);} }
+  @media (prefers-reduced-motion: reduce){ .row{ animation:none; } #log{ scroll-behavior:auto; } }
+  .msg{ max-width:80%; padding:12px 16px; border-radius:20px; line-height:1.5; font-size:15px;
+    word-wrap:break-word; overflow-wrap:anywhere; }
+  /* Acharya messages = ONE soft full-width row highlight, NO box hugging the text */
+  .row.bot{ background:var(--bot); border-radius:14px; padding:10px 16px; }
+  .msg.bot{ background:transparent; color:var(--text); border:none; box-shadow:none;
+    border-radius:0; padding:0; max-width:100%; }
+  .me .msg{ background:linear-gradient(135deg,#C2591F,#A8481A); color:var(--me-text);
+    border-bottom-right-radius:6px; box-shadow:0 5px 16px rgba(168,72,26,.24); }
+  .msg strong{ font-weight:670; } .msg em{ font-style:italic; }
+  .msg a{ color:var(--accent); } .me .msg a{ color:#FFDFC2; }
+  .msg code{ background:var(--code); padding:1.5px 6px; border-radius:6px; font-size:13.5px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+  .me .msg code{ background:rgba(255,255,255,.16); }
+  .msg pre{ background:#2A2018; color:#F3E9DC; padding:13px 15px; border-radius:12px; overflow-x:auto;
+    font-size:13px; margin:8px 0; }
+  .msg pre code{ background:none; padding:0; color:inherit; }
+  .typing{ display:flex; gap:5px; padding:4px 2px; background:transparent; border:none;
+    border-radius:0; width:fit-content; box-shadow:none; }
+  .typing span{ width:7px; height:7px; background:#D9BFA6; border-radius:50%; animation:b 1.2s infinite; }
+  .typing span:nth-child(2){animation-delay:.18s} .typing span:nth-child(3){animation-delay:.36s}
+  @keyframes b{ 0%,60%,100%{opacity:.35;transform:translateY(0)} 30%{opacity:1;transform:translateY(-4px)} }
+
+  /* --- Composer: floating white bar docked at the bottom --- */
+  form{ display:flex; flex-direction:column; gap:8px;
+    padding:10px 14px calc(12px + env(safe-area-inset-bottom));
+    background:var(--panel); border-top:1px solid var(--line); }
+  .composer{ display:flex; gap:8px; align-items:center; }
+  /* small persistent language hint at the input */
+  .langhint{ font-size:11px; line-height:1.3; color:var(--muted); text-align:center; padding:1px 8px 0; }
+  .langhint svg{ width:12px; height:12px; vertical-align:-2px; margin-right:3px; opacity:.75; }
+  .langhint b{ color:var(--accent2); font-weight:650; }
+  #inp{ flex:1; resize:none; border:1px solid var(--line); background:#fff; color:var(--text);
+    border-radius:24px; padding:12px 18px; font-size:15px; max-height:130px; outline:none;
+    transition:border-color .15s, box-shadow .15s; font-family:inherit; }
+  #inp:focus{ border-color:#E0A56A; box-shadow:0 0 0 3px rgba(194,89,31,.14); }
+
+  /* --- Buttons: premium round controls with inline SVG icons --- */
+  #mic,#rd,#send{ flex:0 0 auto; width:47px; height:47px; border-radius:50%; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:transform .15s, background .15s, box-shadow .15s, color .15s, border-color .15s; }
+  #mic svg,#rd svg,#send svg{ width:21px; height:21px; display:block; }
+  /* mic + read-aloud: soft outline buttons */
+  #mic,#rd{ background:#fff; color:var(--accent); border:1px solid var(--line); }
+  #mic:hover,#rd:hover{ transform:translateY(-1px); box-shadow:0 5px 14px rgba(168,72,26,.16); border-color:#E7C6A6; }
+  #mic:active,#rd:active{ transform:scale(.95); }
+  /* send: filled gold */
+  #send{ background:linear-gradient(135deg,#C2591F,#A8481A); color:#fff; border:none;
+    box-shadow:0 5px 14px rgba(168,72,26,.30); }
+  #send svg{ margin-left:-1px; }
+  #send:hover{ transform:translateY(-1px); box-shadow:0 7px 18px rgba(168,72,26,.42); }
+  #send:active{ transform:translateY(0) scale(.96); }
+  #send:disabled{ opacity:.45; box-shadow:none; transform:none; }
+  /* mic actively listening */
+  #mic.on{ background:linear-gradient(135deg,#C2591F,#A8481A); color:#fff; border-color:transparent; animation:mpulse 1.15s infinite; }
+  @keyframes mpulse{ 0%{box-shadow:0 0 0 0 rgba(194,89,31,.45)} 70%{box-shadow:0 0 0 12px rgba(194,89,31,0)} 100%{box-shadow:0 0 0 0 rgba(194,89,31,0)} }
+  /* read-aloud enabled */
+  #rd.on{ background:linear-gradient(135deg,#C2591F,#A8481A); color:#fff; border-color:transparent; box-shadow:0 4px 12px rgba(168,72,26,.28); }
+  .hidden{ display:none !important; }
+  /* tiny voice-status hint above the input */
+  #vhint{ font-size:12px; color:var(--muted); text-align:center; padding:2px 0 0; min-height:0;
+    transition:opacity .2s; }
+  #vhint:empty{ display:none; }
+
+  @media (max-width:600px){ #log{padding:14px 10px 6px;} .msg{max-width:88%; font-size:14.5px; padding:11px 14px;} .row.bot{padding:9px 14px;} header{padding:11px 14px;}
+    #mic,#rd,#send{width:41px;height:41px;} #mic svg,#rd svg,#send svg{width:19px;height:19px;} .composer{gap:5px;}
+    #inp{padding:10px 15px; font-size:14px;} .langhint{font-size:10.5px;} }
+
+  /* --- Embedded inside LMS dashboard iframe: make chat feel like ONE clean surface, not a box-in-box --- */
+  body.embedded { background: transparent; }
+  body.embedded .wrap { background: transparent; box-shadow: none; max-width: 100%; }
+  body.embedded #log { background: transparent; padding: 20px 18px 8px; }
+  body.embedded form { background: transparent; border-top: 1px solid rgba(168, 72, 26, 0.08); box-shadow:none; padding-top: 10px; }
+  body.embedded .row { background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; }
+  body.embedded .row.bot { background: transparent !important; border: none !important; box-shadow: none !important; }
+  body.embedded .row.me  { background: transparent !important; border: none !important; box-shadow: none !important; }
+  body.embedded .msg.bot {
+    background: #ffffff;
+    border: 1px solid rgba(168, 72, 26, 0.10);
+    box-shadow: 0 1px 3px rgba(120, 60, 20, 0.05);
+    border-bottom-left-radius: 6px;
+    max-width: 78%;
+  }
+  body.embedded .me .msg { max-width: 78%; }
+  body.embedded #inp { background: #ffffff; border: 1px solid rgba(168, 72, 26, 0.14); }
+  body.embedded .typing { background: #ffffff; border: 1px solid rgba(168, 72, 26, 0.10); }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="ava"><img src="https://acharya.trigunai.com/static/brand/trigunai-mark.png" alt="Acharya" onerror="this.style.display='none'"/></div>
+    <div><div class="t">Acharya</div><div class="s">your AI guru · TrigunAI Gurukul</div></div>
+    <a id="reportlink" href="#" style="margin-left:auto;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:99px;white-space:nowrap">📊 My Report</a>
+  </header>
+  <div id="log"></div>
+  <div id="vhint"></div>
+  <form id="f">
+    <div class="langhint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span>Any language — just say <b>"talk to me in Hindi"</b> (or your language).</span>
+    </div>
+    <div class="composer">
+      <button id="mic" type="button" aria-label="Talk to Acharya" title="Tap to talk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11.5" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21.5"/><line x1="8" y1="21.5" x2="16" y2="21.5"/></svg>
+      </button>
+      <textarea id="inp" rows="1" placeholder="Message Acharya…" autocomplete="off"></textarea>
+      <button id="rd" type="button" aria-label="Read answers aloud" title="Read answers aloud">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.5 6 9H2.5v6H6l5 4.5V4.5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>
+      </button>
+      <button id="send" type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+      </button>
+    </div>
+  </form>
+</div>
+<script>
+// Hide our own header when shown inside the LMS dashboard iframe (parent renders one).
+try{ if(window.self!==window.top) document.body.classList.add('embedded'); }catch(e){ document.body.classList.add('embedded'); }
+
+const log=document.getElementById('log'), inp=document.getElementById('inp'),
+      f=document.getElementById('f'), sendBtn=document.getElementById('send'),
+      micBtn=document.getElementById('mic'), rdBtn=document.getElementById('rd'),
+      vhint=document.getElementById('vhint');
+const token=new URLSearchParams(location.search).get('t')||'';
+(function(){var rl=document.getElementById('reportlink'); if(rl){ if(token) rl.href='/report?t='+encodeURIComponent(token); else rl.style.display='none'; }})();
+
+function md(t){
+  t=t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  t=t.replace(/```(\w*)\n?([\s\S]*?)```/g,(_,l,c)=>`<pre><code>${c.replace(/\n+$/,'')}</code></pre>`);
+  t=t.replace(/`([^`\n]+)`/g,'<code>$1</code>')
+     .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+     .replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g,'$1<em>$2</em>')
+     .replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>');
+  return t.split(/(<pre>[\s\S]*?<\/pre>)/).map(s=>s.startsWith('<pre>')?s:s.replace(/\n/g,'<br>')).join('');
+}
+function add(text,who){ const r=document.createElement('div'); r.className='row '+who;
+  const d=document.createElement('div'); d.className='msg '+who;
+  if(who==='bot') d.innerHTML=md(text); else d.textContent=text;
+  r.appendChild(d); log.appendChild(r); log.scrollTop=log.scrollHeight; return r; }
+function typing(){ const r=document.createElement('div'); r.className='row bot';
+  r.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
+  log.appendChild(r); log.scrollTop=log.scrollHeight; return r; }
+inp.addEventListener('input',()=>{ inp.style.height='auto'; inp.style.height=Math.min(inp.scrollHeight,130)+'px'; });
+inp.addEventListener('keydown',e=>{ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); f.requestSubmit(); }});
+
+/* ---------- VOICE: talk (speech-to-text) + read aloud (text-to-speech) ---------- */
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+const synth = window.speechSynthesis;
+let readAloud = false;      // when on, spoken answers for every reply
+let listening = false;
+let rec = null;
+let speakNext = false;      // speak the very next reply (set when input came from the mic)
+
+function hasDevanagari(s){ return /[ऀ-ॿ]/.test(s); }
+// plain text for TTS: strip markdown / code / urls so it reads naturally
+function forSpeech(t){
+  return t.replace(/```[\s\S]*?```/g,' code block ')
+          .replace(/`([^`]+)`/g,'$1')
+          .replace(/\*\*(.+?)\*\*/g,'$1').replace(/\*(.+?)\*/g,'$1')
+          .replace(/https?:\/\/[^\s]+/g,' link ')
+          .replace(/[#>_]/g,'').trim();
+}
+function pickVoice(hindi){
+  const vs = synth.getVoices();
+  if(!vs.length) return null;
+  const want = hindi ? ['hi-IN'] : ['en-IN','en-GB','en-US'];
+  for(const w of want){ const v = vs.find(v=>v.lang && v.lang.toLowerCase().startsWith(w.toLowerCase())); if(v) return v; }
+  return vs.find(v=>/en/i.test(v.lang)) || vs[0];
+}
+let curAudio = null;
+function stopSpeaking(){
+  try{ if(curAudio){ curAudio.pause(); curAudio=null; } }catch(e){}
+  try{ if(synth) synth.cancel(); }catch(e){}
+}
+// Natural Azure neural voice via server proxy (Hindi/English); browser voice is the fallback.
+function speak(text){
+  const clean = forSpeech(text); if(!clean) return;
+  stopSpeaking();
+  try{
+    const a = new Audio('/chat/tts?text=' + encodeURIComponent(clean.slice(0,1500)));
+    curAudio = a;
+    a.onerror = ()=>{ if(curAudio===a){ curAudio=null; browserSpeak(clean); } };
+    a.play().catch(()=>{ if(curAudio===a){ curAudio=null; browserSpeak(clean); } });
+  }catch(e){ browserSpeak(clean); }
+}
+function browserSpeak(clean){
+  if(!synth) return;
+  try{
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(clean);
+    const hi = hasDevanagari(clean);
+    u.lang = hi ? 'hi-IN' : 'en-IN';
+    const v = pickVoice(hi); if(v) u.voice = v;
+    u.rate = 1.0; u.pitch = 1.0;
+    synth.speak(u);
+  }catch(e){}
+}
+// voices load async in some browsers
+if(synth && synth.onvoiceschanged !== undefined){ synth.onvoiceschanged = ()=>{}; }
+
+function stopListening(){ listening=false; micBtn.classList.remove('on'); vhint.textContent=''; try{ rec&&rec.stop(); }catch(e){} }
+function startListening(){
+  if(!SR){ return; }
+  if(listening){ stopListening(); return; }
+  stopSpeaking();                          // don't listen to our own voice
+  rec = new SR();
+  rec.lang = 'en-IN';                      // handles English + common Hinglish; Hindi speech still transcribes
+  rec.interimResults = true;
+  rec.maxAlternatives = 1;
+  rec.continuous = false;
+  let finalText = '';
+  rec.onstart = ()=>{ listening=true; micBtn.classList.add('on'); vhint.textContent='Listening… speak your question'; };
+  rec.onresult = (e)=>{
+    let interim='';
+    for(let i=e.resultIndex;i<e.results.length;i++){
+      const tr=e.results[i][0].transcript;
+      if(e.results[i].isFinal) finalText+=tr; else interim+=tr;
+    }
+    inp.value = (finalText+interim).trim();
+    inp.style.height='auto'; inp.style.height=Math.min(inp.scrollHeight,130)+'px';
+  };
+  rec.onerror = (e)=>{ vhint.textContent = (e.error==='not-allowed'||e.error==='service-not-allowed')
+      ? 'Microphone blocked — allow mic access in your browser.' : ''; stopListening(); };
+  rec.onend = ()=>{
+    micBtn.classList.remove('on'); listening=false; vhint.textContent='';
+    const v = inp.value.trim();
+    if(v){ speakNext = true; send(v); }     // answer will be spoken back
+  };
+  try{ rec.start(); }catch(e){ stopListening(); }
+}
+micBtn.addEventListener('click', startListening);
+rdBtn.addEventListener('click', ()=>{ readAloud=!readAloud; rdBtn.classList.toggle('on',readAloud);
+  if(!readAloud) stopSpeaking(); });
+// Mic needs browser speech-recognition; read-aloud works for everyone (Azure neural voice).
+if(!SR){ micBtn.classList.add('hidden'); }
+
+async function send(text){
+  const spoke = speakNext; speakNext = false;
+  add(text,'me'); inp.value=''; inp.style.height='auto'; sendBtn.disabled=true; micBtn.disabled=true;
+  const t=typing();
+  try{ const r=await fetch('/chat/api',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({token,message:text})});
+    const j=await r.json(); t.remove();
+    const reply = j.reply||'Hmm — try that again.';
+    add(reply,'bot');
+    if(readAloud || spoke) speak(reply);
+  }catch(e){ t.remove(); add('Connection hiccup — please resend.','bot'); }
+  sendBtn.disabled=false; micBtn.disabled=false; inp.focus();
+}
+f.addEventListener('submit',e=>{ e.preventDefault(); const v=inp.value.trim(); if(v) send(v); });
+add("Namaste 🙏 I'm **Acharya**, your personal guru. **Type** your question, or tap the mic to **talk** — I'll teach it, not just answer it.",'bot');
+inp.focus();
+</script>
+</body>
+</html>

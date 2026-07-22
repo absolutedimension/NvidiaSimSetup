@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover"/>
+<title>Acharya — Teacher Dashboard</title>
+<style>
+ :root{--canvas:#FBF4EA;--panel:#fff;--ink:#2A2018;--muted:#8A7A66;--line:#EFE0CE;--gold:#C2591F;--gold2:#A8481A;
+   --good:#1f8b52;--goodbg:#E9F6EE;--warn:#C77A1B;--warnbg:#FDF3E3;--bad:#C23B22;--badbg:#FBEBE7;--cream:#FAF5EC;--blue:#2b6cb0}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ body{background:var(--canvas);font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans Devanagari",Arial,sans-serif;color:var(--ink);display:flex;justify-content:center}
+ .wrap{width:100%;max-width:560px;min-height:100dvh;background:var(--canvas)}
+ header{padding:14px 18px;background:linear-gradient(120deg,#E8934A,#C2591F);color:#fff;position:sticky;top:0;z-index:5}
+ header .top{display:flex;align-items:center;gap:11px}
+ header .ava{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:19px}
+ header .t{font-weight:700;font-size:15px} header .s{font-size:12px;color:rgba(255,255,255,.85);margin-top:1px}
+ .body{padding:14px 14px 30px}
+ .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:13px}
+ .stat{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:11px 8px;text-align:center}
+ .stat b{display:block;font-size:20px;color:var(--gold2)} .stat span{font-size:10.5px;color:var(--muted);line-height:1.2;display:block;margin-top:2px}
+ .stat.warn b{color:var(--bad)}
+ .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin-bottom:13px;box-shadow:0 2px 8px rgba(120,60,20,.05)}
+ h2{font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--gold2);font-weight:800;margin:18px 4px 9px;display:flex;align-items:center;gap:7px}
+ h2 .n{background:var(--bad);color:#fff;border-radius:20px;font-size:11px;padding:1px 8px}
+ .ttl{font-size:14px;font-weight:800;color:var(--gold2);margin-bottom:11px}
+ /* class distribution stacked bar */
+ .dist{display:flex;height:34px;border-radius:9px;overflow:hidden;margin-bottom:7px}
+ .dist .seg{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px}
+ .dist .g{background:var(--good)} .dist .a{background:var(--warn)} .dist .b{background:var(--bad)}
+ .legend{display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+ .legend i{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:4px;vertical-align:middle}
+ /* weak-topic heatmap */
+ .heat{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+ .hchip{font-size:12px;font-weight:700;border-radius:8px;padding:6px 10px;color:#7a1f10}
+ .batchbtn{display:block;width:100%;background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:12px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;margin-top:13px}
+ .batchbtn:active{transform:scale(.98)}
+ /* student cards */
+ .stu{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(120,60,20,.05)}
+ .stu.att{border-color:#F0C9BF;background:#FEF8F6}
+ .srow{display:flex;align-items:center;gap:11px;cursor:pointer}
+ .stu .pic{width:38px;height:38px;flex:0 0 auto;border-radius:50%;background:var(--cream);color:var(--gold2);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+ .stu .nm{flex:1;min-width:0} .stu .nm b{font-size:14.5px} .stu .nm .meta{font-size:12px;color:var(--muted);margin-top:1px}
+ .chip{font-size:10.5px;font-weight:700;border-radius:20px;padding:3px 9px;flex:0 0 auto}
+ .chip.done{background:var(--goodbg);color:#116b41} .chip.pend{background:var(--warnbg);color:#9a5a12} .chip.low{background:var(--badbg);color:#9c3220}
+ .score{width:50px;flex:0 0 auto;text-align:right} .score b{font-size:16px} .score.hi b{color:var(--good)} .score.mid b{color:var(--warn)} .score.lo b{color:var(--bad)} .score.na b{color:var(--muted);font-size:13px}
+ .caret{color:var(--muted);font-size:18px;transition:.2s} .stu.open .caret{transform:rotate(90deg)}
+ .detail{display:none;margin-top:13px;padding-top:13px;border-top:1px dashed var(--line)}
+ .stu.open .detail{display:block;animation:fade .2s both}
+ @keyframes fade{from{opacity:0}to{opacity:1}}
+ .mlabel{font-size:11px;font-weight:700;color:var(--muted);margin:2px 0 7px;letter-spacing:.03em}
+ .mrow{display:flex;align-items:center;gap:9px;margin-bottom:7px;font-size:12.5px}
+ .mrow .tn{flex:0 0 130px} .mrow .track{flex:1;height:8px;background:#EEE1CF;border-radius:99px;overflow:hidden}
+ .mrow .bar{display:block;height:100%;border-radius:99px} .mrow .pc{width:34px;text-align:right;font-weight:700;font-size:12px;color:var(--muted)}
+ /* SWOT strong/weak */
+ .swot{display:flex;gap:10px;margin:12px 0 4px}
+ .swot .col{flex:1} .swot .h{font-size:11px;font-weight:800;margin-bottom:6px} .swot .sh{color:var(--good)} .swot .wh{color:var(--bad)}
+ .tag{display:inline-block;font-size:11.5px;font-weight:600;border-radius:7px;padding:4px 8px;margin:0 4px 5px 0}
+ .tag.s{background:var(--goodbg);color:#116b41} .tag.w{background:var(--badbg);color:#9c3220}
+ /* trend */
+ .trend{display:flex;align-items:center;gap:9px;background:var(--cream);border-radius:10px;padding:8px 11px;margin:8px 0}
+ .trend .lab{font-size:11px;font-weight:700;color:var(--muted)} .trend .val{font-size:12.5px;font-weight:800}
+ .trend .up{color:var(--good)} .trend .down{color:var(--bad)} .trend .flat{color:var(--warn)}
+ /* suggestion — the magic */
+ .suggest{background:linear-gradient(160deg,#FFF6EA,#FBEAD6);border:1.5px solid var(--gold);border-radius:13px;padding:12px 13px;margin:10px 0}
+ .suggest .sh{font-size:11.5px;font-weight:800;color:var(--gold2);margin-bottom:5px;display:flex;align-items:center;gap:5px}
+ .suggest p{font-size:13px;line-height:1.5;margin:0 0 9px}
+ .suggest .do{background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:10px;padding:9px 15px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+ .suggest .do:active{transform:scale(.97)}
+ .controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+ .ctl{flex:1 1 46%;display:flex;align-items:center;justify-content:center;gap:6px;border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:10px;font-size:12.5px;font-weight:700;color:var(--gold2);cursor:pointer;transition:.13s;font-family:inherit}
+ .ctl:hover{border-color:var(--gold);background:#FFFBF6} .ctl:active{transform:scale(.97)}
+ .foot{text-align:center;font-size:11px;color:var(--muted);padding:14px 10px 0} .foot b{color:var(--gold2)}
+ #toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:#2A2018;color:#fff;padding:11px 18px;border-radius:12px;font-size:13.5px;font-weight:600;opacity:0;transition:.28s;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:90%;text-align:center}
+ #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style></head>
+<body>
+<div class="wrap">
+  <header><div class="top"><div class="ava">🪔</div>
+    <div><div class="t">MCM Academy · Teacher Dashboard</div><div class="s">Class 12 Physics · powered by Acharya</div></div></div>
+  </header>
+  <div class="body">
+    <div class="stats">
+      <div class="stat"><b>24</b><span>students</span></div>
+      <div class="stat"><b>18</b><span>tested today</span></div>
+      <div class="stat"><b>74%</b><span>avg score</span></div>
+      <div class="stat warn"><b>3</b><span>need attention</span></div>
+    </div>
+
+    <!-- CLASS AT A GLANCE -->
+    <div class="card">
+      <div class="ttl">📊 Class at a glance</div>
+      <div class="dist">
+        <div class="seg g" style="flex:8">8</div>
+        <div class="seg a" style="flex:11">11</div>
+        <div class="seg b" style="flex:5">5</div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i>Strong (80%+) · 8</span>
+        <span><i style="background:var(--warn)"></i>Average · 11</span>
+        <span><i style="background:var(--bad)"></i>Needs help · 5</span>
+      </div>
+      <div class="mlabel" style="margin-top:14px">WHERE THE CLASS IS WEAK (tap = assign a test)</div>
+      <div class="heat" id="heat"></div>
+      <button class="batchbtn" onclick="toast('✅ Wave Optics test assigned to the whole batch — sabko WhatsApp par mil jaayega')">📝 Assign a Wave Optics test to the whole batch →</button>
+    </div>
+
+    <h2>⚠️ Needs attention <span class="n">3</span></h2>
+    <div id="attList"></div>
+
+    <h2>All students</h2>
+    <div id="allList"></div>
+
+    <div class="foot">👨‍🏫 <b>Acharya doesn't just track — it tells you what to do for each student.</b><br>You teach; the analysis + the next step is ready.</div>
+  </div>
+</div>
+<div id="toast"></div>
+<script>
+// out of 24 students, how many are weak in each topic
+const WEAK_TOPICS=[["Wave Optics",12],["Current Electricity",7],["Magnetism",5],["Modern Physics",4],["Electrostatics",3]];
+
+const STUDENTS=[
+ {n:"Sneha Gupta",st:"low",score:52,attn:true,meta:"Tested · needs help",
+  topics:[["Current Electricity",35],["Electrostatics",40],["Magnetism",55],["Ray Optics",60]],
+  trend:[38,45,52], sugg:"Weak in Current Electricity & Electrostatics (basics not clear). Assign a <b>basics-first remedial test</b>, then a 10-min revision. Likely to jump to ~70%.",
+  act:"✅ Basics-first Current Electricity test assigned to Sneha + revision locked"},
+ {n:"Amit Raj",st:"pend",score:null,attn:true,meta:"No test in 3 days",
+  topics:[["Current Electricity",50],["Ray Optics",45],["Electrostatics",70]],
+  trend:[70,65,null], sugg:"Was at 65% and slipping — now 3 days silent. <b>Send a reminder + a short confidence-building test</b> to pull him back before he drops off.",
+  act:"✅ Reminder + a short easy test sent to Amit to re-engage him"},
+ {n:"Anjali Sharma",st:"pend",score:null,attn:true,meta:"Today's test pending",
+  topics:[["Electrostatics",65],["Ray Optics",55]],
+  trend:[60,62,null], sugg:"Steady ~60% but hasn't taken today's test. <b>Send today's test link</b> — she just needs the nudge.",
+  act:"✅ Today's test link sent to Anjali"},
+ {n:"Rahul Kumar",st:"done",score:80,meta:"Tested · strong",
+  topics:[["Electrostatics",90],["Current Electricity",85],["Magnetism",80],["Wave Optics",50]],
+  trend:[68,75,80], sugg:"Strong & improving. One gap: <b>Wave Optics</b>. Assign a targeted Wave Optics test to push him past 90%.",
+  act:"✅ Targeted Wave Optics test assigned to Rahul"},
+ {n:"Vikash Yadav",st:"done",score:70,meta:"Tested · plateaued",
+  topics:[["Current Electricity",80],["Electrostatics",75],["Ray Optics",70],["Magnetism",45]],
+  trend:[72,68,70], sugg:"Stuck at ~70% for weeks. <b>Magnetism</b> is the block. Assign a Magnetism drill — clearing it should unlock his jump.",
+  act:"✅ Magnetism drill assigned to Vikash"},
+ {n:"Rohit Verma",st:"done",score:88,meta:"Tested · top-tier",
+  topics:[["Electrostatics",95],["Current Electricity",90],["Wave Optics",80],["Modern Physics",70]],
+  trend:[80,85,88], sugg:"Top performer, still improving. <b>Give advanced / previous-year questions</b> in Modern Physics to stretch him.",
+  act:"✅ Advanced Modern Physics (PYQ) set assigned to Rohit"},
+ {n:"Priya Singh",st:"done",score:92,meta:"Tested · excellent",
+  topics:[["Electrostatics",95],["Current Electricity",95],["Magnetism",90],["Wave Optics",85]],
+  trend:[88,90,92], sugg:"Consistently excellent. <b>Ready for advanced questions</b> — and could mentor a weaker peer (great for retention).",
+  act:"✅ Advanced set assigned to Priya + paired as peer-mentor"},
+ {n:"Karan Mehta",st:"done",score:64,meta:"Tested · recovering",
+  topics:[["Ray Optics",70],["Electrostatics",60],["Current Electricity",55],["Wave Optics",40]],
+  trend:[60,58,64], sugg:"Recovering after a dip. Weak in <b>Wave Optics & Current Electricity</b>. Assign short drills on both — small wins to build momentum.",
+  act:"✅ Short Wave Optics + Current Electricity drills assigned to Karan"}
+];
+
+const el=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;};
+let TID;
+function toast(m){const t=document.getElementById('toast');t.innerHTML=m;t.classList.add('show');clearTimeout(TID);TID=setTimeout(()=>t.classList.remove('show'),2800);}
+const initials=n=>n.split(' ').map(w=>w[0]).slice(0,2).join('');
+const barColor=v=>v>=75?'var(--good)':v>=55?'var(--warn)':'var(--bad)';
+const scoreClass=s=>s==null?'na':s>=80?'hi':s>=60?'mid':'lo';
+const chip=st=>st==='done'?'<span class="chip done">Tested ✓</span>':st==='pend'?'<span class="chip pend">Pending</span>':'<span class="chip low">Needs help</span>';
+
+// weak-topic heatmap (colour intensity by how many of 24 are weak)
+const heat=document.getElementById('heat');
+WEAK_TOPICS.forEach(([t,c])=>{const i=c/24; const bg=`rgba(194,59,34,${(0.12+i*0.75).toFixed(2)})`;
+  const el2=el(`<span class="hchip" style="background:${bg}">${t} · ${c}/24</span>`);
+  el2.style.cursor='pointer'; el2.onclick=()=>toast(`✅ ${t} test assigned to the ${c} weak students`);
+  heat.appendChild(el2);});
+
+function sparkline(tr){const pts=tr.filter(x=>x!=null); if(pts.length<2) return '';
+  const W=64,H=22,max=100; const step=W/(pts.length-1);
+  const xy=pts.map((v,i)=>`${(i*step).toFixed(1)},${(H-v/max*H).toFixed(1)}`).join(' ');
+  const last=pts[pts.length-1]; const lx=(pts.length-1)*step, ly=H-last/max*H;
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="overflow:visible"><polyline points="${xy}" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="2.6" fill="var(--gold2)"/></svg>`;}
+function trendInfo(tr){const p=tr.filter(x=>x!=null); if(p.length<2) return {cls:'flat',txt:'—',arrow:'→'};
+  const d=p[p.length-1]-p[0]; if(d>=4) return {cls:'up',txt:`+${d}% improving`,arrow:'↑'}; if(d<=-4) return {cls:'down',txt:`${d}% dropping`,arrow:'↓'}; return {cls:'flat',txt:'steady',arrow:'→'};}
+
+function studentCard(stu){
+  const strong=stu.topics.filter(([,v])=>v>=75).map(([t])=>t);
+  const weak=stu.topics.filter(([,v])=>v<55).map(([t])=>t);
+  const tr=trendInfo(stu.trend);
+  const card=el(`<div class="stu ${stu.attn?'att':''}">
+    <div class="srow">
+      <div class="pic">${initials(stu.n)}</div>
+      <div class="nm"><b>${stu.n}</b><div class="meta">${stu.meta}</div></div>
+      ${chip(stu.st)}
+      <div class="score ${scoreClass(stu.score)}"><b>${stu.score==null?'—':stu.score+'%'}</b></div>
+      <div class="caret">›</div>
+    </div>
+    <div class="detail">
+      <div class="mlabel">TOPIC-WISE MASTERY</div>
+      ${stu.topics.map(([t,v])=>`<div class="mrow"><span class="tn">${t}</span><span class="track"><span class="bar" style="width:${v}%;background:${barColor(v)}"></span></span><span class="pc">${v}%</span></div>`).join('')}
+      <div class="swot">
+        <div class="col"><div class="h sh">💪 Strong</div>${strong.length?strong.map(t=>`<span class="tag s">${t}</span>`).join(''):'<span class="tag s" style="opacity:.6">—</span>'}</div>
+        <div class="col"><div class="h wh">⚠️ Weak</div>${weak.length?weak.map(t=>`<span class="tag w">${t}</span>`).join(''):'<span class="tag w" style="opacity:.6">none</span>'}</div>
+      </div>
+      <div class="trend"><span class="lab">TREND</span>${sparkline(stu.trend)}<span class="val ${tr.cls}">${tr.arrow} ${tr.txt}</span></div>
+      <div class="suggest">
+        <div class="sh">🎯 Acharya suggests</div>
+        <p>${stu.sugg}</p>
+        <button class="do">Do it →</button>
+      </div>
+      <div class="mlabel">MANUAL CONTROLS</div>
+      <div class="controls">
+        <button class="ctl" data-a="assign">📝 Assign test</button>
+        <button class="ctl" data-a="nudge">🔔 Send reminder</button>
+        <button class="ctl" data-a="goal">🎯 Set goal</button>
+        <button class="ctl" data-a="lock">🔁 Lock revision</button>
+      </div>
+    </div>
+  </div>`);
+  card.querySelector('.srow').onclick=()=>card.classList.toggle('open');
+  card.querySelector('.suggest .do').onclick=e=>{e.stopPropagation();toast(stu.act);};
+  const first=(weak[0]||stu.topics[0][0]);
+  const acts={assign:`✅ ${first} test assigned to ${stu.n}`,nudge:`✅ Reminder sent to ${stu.n}`,goal:`✅ Goal set for ${stu.n} 🎯`,lock:`✅ ${first} revision locked for ${stu.n}`};
+  card.querySelectorAll('.ctl').forEach(b=>b.onclick=e=>{e.stopPropagation();toast(acts[b.dataset.a]);});
+  return card;
+}
+const attList=document.getElementById('attList'), allList=document.getElementById('allList');
+STUDENTS.filter(s=>s.attn).forEach(s=>attList.appendChild(studentCard(s)));
+STUDENTS.forEach(s=>allList.appendChild(studentCard(s)));
+</script>
+</body></html>

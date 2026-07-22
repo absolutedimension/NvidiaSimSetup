@@ -1,0 +1,190 @@
+{
+  "course_id": "class11-12-commerce",
+  "name": "Class 11-12 Commerce — Accountancy, Business Studies & Economics",
+  "order": [
+    "accounting_equation",
+    "double_entry",
+    "journal_ledger",
+    "trial_balance",
+    "depreciation",
+    "final_accounts_adjustments",
+    "partnership_fundamentals",
+    "goodwill",
+    "company_shares",
+    "cash_flow",
+    "ratio_analysis",
+    "forms_of_business",
+    "principles_of_management",
+    "functions_of_management",
+    "financial_markets",
+    "marketing_mix",
+    "consumer_protection",
+    "measures_central_tendency",
+    "dispersion",
+    "correlation",
+    "demand_elasticity",
+    "cost_production",
+    "market_forms",
+    "national_income",
+    "money_banking",
+    "govt_budget"
+  ],
+  "concepts": {
+    "accounting_equation": {
+      "module": 1,
+      "hook": "Buy a ₹50,000 laptop for your shop with borrowed money and your cash barely moves — yet your books must still balance to the last rupee. What invisible rule forces both sides to stay equal, always?",
+      "recall": "State the accounting equation and why it never breaks after a transaction.",
+      "answer": "Assets = Liabilities + Capital — every transaction touches at least two accounts by equal amounts, so the two sides always stay equal"
+    },
+    "double_entry": {
+      "module": 1,
+      "hook": "A single sale is written down twice, in two different places, every single time — and accountants insist this 'extra work' is exactly what makes fraud almost impossible. Why write everything twice?",
+      "recall": "State the golden rules of debit and credit for personal, real, and nominal accounts.",
+      "answer": "Personal: debit the receiver, credit the giver; Real: debit what comes in, credit what goes out; Nominal: debit expenses/losses, credit incomes/gains"
+    },
+    "journal_ledger": {
+      "module": 1,
+      "hook": "A day's transactions are first scribbled in date-order in one book, then torn apart and re-sorted account-by-account in another. Why not just keep one book and save the effort?",
+      "recall": "What is the difference between the journal and the ledger, and which is the 'book of final entry'?",
+      "answer": "Journal = book of original (chronological) entry; ledger = book of final entry, sorted account-wise — posting moves entries from journal to ledger"
+    },
+    "trial_balance": {
+      "module": 1,
+      "hook": "One list of all your balances that must total equal on both sides — if it matches, you breathe easy. But a perfectly matched trial balance can still be hiding errors. Which ones slip right through?",
+      "recall": "Name two kinds of error a trial balance will NOT detect.",
+      "answer": "Errors of omission (transaction fully missed), errors of principle, compensating errors, wrong-account posting — any error that keeps total debits = total credits stays hidden"
+    },
+    "depreciation": {
+      "module": 2,
+      "hook": "A new delivery van loses value the moment it leaves the showroom, and keeps losing it every year even while parked in the garage. Accountants must record this silent loss — but by how much, and why does profit depend on it?",
+      "recall": "Contrast the straight-line method and the written-down-value method of depreciation.",
+      "answer": "SLM: a fixed amount every year on the original cost; WDV: a fixed % on the reducing book value, so the yearly charge falls over time"
+    },
+    "final_accounts_adjustments": {
+      "module": 2,
+      "hook": "Rent paid in March for April, salary earned by workers but not yet paid — the calendar and the cash never quite line up. How do accountants make the profit reflect the year that actually earned it?",
+      "recall": "Difference between an outstanding expense and a prepaid expense, and how each affects the final accounts.",
+      "answer": "Outstanding = incurred but not yet paid (added to the expense, shown as a liability); prepaid = paid in advance (subtracted from the expense, shown as an asset) — the accrual concept matches cost to the right period"
+    },
+    "partnership_fundamentals": {
+      "module": 3,
+      "hook": "Three friends start a business — one puts in more money, another does more work. At year end, who gets how much? Get the split wrong and a friendship ends in court. What decides the share?",
+      "recall": "With no partnership deed, what does the Partnership Act say about profit sharing and interest on capital?",
+      "answer": "Profits shared EQUALLY, no interest on capital, no salary to any partner, but 6% p.a. interest on a partner's loan to the firm"
+    },
+    "goodwill": {
+      "module": 3,
+      "hook": "Two identical sweet shops — same size, same street, same halwai — yet one sells for ₹10 lakh more. You're paying for something you can't touch or see. What is it, and how do you put a number on it?",
+      "recall": "What is goodwill, and name two methods of valuing it.",
+      "answer": "Goodwill = the value of a firm's reputation/earning power above its net assets; valued by the average-profit, super-profit, or capitalisation methods"
+    },
+    "company_shares": {
+      "module": 3,
+      "hook": "A company chops its ownership into thousands of tiny paper slips and sells them to total strangers — and somehow raises crores without a single bank loan. How does one share turn a stranger into a part-owner?",
+      "recall": "For the holder, what is the difference between a share and a debenture?",
+      "answer": "A shareholder is an OWNER (dividend, voting rights, variable return); a debenture-holder is a LENDER/creditor (fixed interest, no vote, repaid before owners)"
+    },
+    "cash_flow": {
+      "module": 3,
+      "hook": "A company shows fat profits on paper but can't pay its electricity bill. The profit column says one thing, the bank balance says another. Which statement exposes where the cash actually went?",
+      "recall": "Name the three activities a cash flow statement is split into, with one example of each.",
+      "answer": "Operating (cash from core business), Investing (buying/selling assets), Financing (issuing shares, raising/repaying loans, paying dividends)"
+    },
+    "ratio_analysis": {
+      "module": 3,
+      "hook": "Two companies each earn ₹1 crore profit — but one is about to collapse and the other is thriving. A single number can tell them apart. How do ratios see what raw profit hides?",
+      "recall": "What does the current ratio measure, and what is its ideal value?",
+      "answer": "Current ratio = current assets / current liabilities — it measures short-term liquidity (ability to pay near-term dues); ideal ≈ 2:1"
+    },
+    "forms_of_business": {
+      "module": 4,
+      "hook": "A chaiwala and Reliance are both 'businesses' — but if the chai stall drowns in debt the owner can lose his house, while no company failure can touch Ambani's personal home. What legal line separates them?",
+      "recall": "Key difference between a sole proprietorship and a company regarding liability.",
+      "answer": "A sole proprietor has UNLIMITED liability (personal assets at risk); a company is a separate legal person with LIMITED liability (owners can lose only what they invested)"
+    },
+    "principles_of_management": {
+      "module": 4,
+      "hook": "A century ago one man timed factory workers with a stopwatch and doubled their output; another wrote 14 rules that still run companies today. Why do these century-old ideas still decide how your office works?",
+      "recall": "Contrast Taylor's scientific management with Fayol's principles of management.",
+      "answer": "Taylor: shop-floor EFFICIENCY — time-and-motion study, 'one best way' for a task; Fayol: top-level ADMINISTRATION — 14 general principles (unity of command, division of work, etc.)"
+    },
+    "functions_of_management": {
+      "module": 4,
+      "hook": "A manager who never lifts a single product can still make or break the whole company. Strip away the meetings — what are the five things a manager is actually DOING all day?",
+      "recall": "List the functions of management in sequence and name the 'first' function.",
+      "answer": "Planning (first — deciding in advance what to do), Organising, Staffing, Directing, Controlling — planning bridges where we are and where we want to be"
+    },
+    "financial_markets": {
+      "module": 5,
+      "hook": "Your idle savings and a startup's need for crores meet in a 'place' with no building you can ever walk into. How does money flow from a saver in Patna to a company in Mumbai without the two ever meeting?",
+      "recall": "Difference between the money market and the capital market.",
+      "answer": "Money market = SHORT-term funds (< 1 year: treasury bills, commercial paper); capital market = LONG-term funds (shares, debentures, bonds)"
+    },
+    "marketing_mix": {
+      "module": 5,
+      "hook": "The same cold drink costs ₹20 at a shop and ₹200 in a hotel — same liquid, ten times the price, and people pay happily. Marketing isn't just the advertisement. What four levers is the company really pulling?",
+      "recall": "Name the 4 Ps of the marketing mix.",
+      "answer": "Product, Price, Place (distribution), Promotion — the controllable variables a firm blends to serve its target market"
+    },
+    "consumer_protection": {
+      "module": 5,
+      "hook": "Buy a phone that dies in a week and the shopkeeper just shrugs. But the law quietly hands every buyer a weapon most never use. What rights do you secretly have the moment you pay?",
+      "recall": "Name any three rights of a consumer under the Consumer Protection Act.",
+      "answer": "Right to safety, right to be informed, right to choose, right to be heard, right to seek redressal, right to consumer education (any three)"
+    },
+    "measures_central_tendency": {
+      "module": 6,
+      "hook": "Ten people sit in a room and Ambani walks in — suddenly the 'average' income is crores, though not one person in the room feels a rupee richer. Which average just lied, and which one still tells the truth?",
+      "recall": "When is the median preferred over the mean, and why?",
+      "answer": "The median is preferred when data has extreme values/outliers — the mean gets dragged by extremes, but the median (the middle value) is not distorted"
+    },
+    "dispersion": {
+      "module": 6,
+      "hook": "Two batsmen both average 50 runs a match — yet you'd bet your money on one over the other without hesitation. The average hides everything. What single number reveals who's reliable and who's a gamble?",
+      "recall": "What does standard deviation measure, and what does a high value indicate?",
+      "answer": "Standard deviation measures the spread of the data around the mean; a high value means high variability/inconsistency"
+    },
+    "correlation": {
+      "module": 6,
+      "hook": "Ice-cream sales and drowning deaths rise together every summer — so does ice cream cause drowning? One number measures how two things move together, but it can fool you badly. How?",
+      "recall": "What do correlation coefficients of +1, 0 and −1 mean — and does correlation prove causation?",
+      "answer": "+1 = perfect positive, 0 = no linear relation, −1 = perfect negative; correlation does NOT imply causation (a hidden third factor — here, summer heat — can drive both)"
+    },
+    "demand_elasticity": {
+      "module": 7,
+      "hook": "Petrol prices double and people barely cut back, but if pizza doubles they switch to something else overnight. Same size price rise, opposite reactions. What decides how badly a price change hurts demand?",
+      "recall": "Define price elasticity of demand and name one factor that makes demand inelastic.",
+      "answer": "PED = % change in quantity demanded ÷ % change in price; demand is inelastic for necessities, goods with no close substitutes, or goods taking a small share of income"
+    },
+    "cost_production": {
+      "module": 7,
+      "hook": "A factory pays the same rent whether it makes 0 chairs or 1,000, but the wood bill grows with every chair. Why does the cost per chair fall at first, then start climbing again?",
+      "recall": "Distinguish fixed cost from variable cost, and explain why average cost is U-shaped.",
+      "answer": "Fixed cost stays constant with output; variable cost rises with output. Average cost falls first (fixed cost spread over more units) then rises (law of diminishing returns) — hence the U-shape"
+    },
+    "market_forms": {
+      "module": 7,
+      "hook": "One seller of railways, thousands of sellers of vegetables, a handful of telecom giants — the number of sellers secretly sets the price you pay. Why can a monopolist charge what he likes but a sabziwala can't?",
+      "recall": "Contrast perfect competition and monopoly on number of sellers and price control.",
+      "answer": "Perfect competition: very many sellers, identical product, each firm is a price-TAKER; monopoly: a single seller with no close substitute, the firm is a price-MAKER"
+    },
+    "national_income": {
+      "module": 8,
+      "hook": "How do you add up an entire nation — the software Bengaluru writes, the wheat a Punjab farmer grows, the haircut in your gali — into one single number? And why is a maid's salary counted but a mother's identical work at home is not?",
+      "recall": "What is GDP, and why are only final goods (not intermediate goods) counted?",
+      "answer": "GDP = the market value of all FINAL goods and services produced within a country in a year; intermediate goods are excluded to avoid double counting"
+    },
+    "money_banking": {
+      "module": 8,
+      "hook": "You deposit ₹1,000 in a bank, and through nothing but bookkeeping the banking system turns it into several thousand rupees of new money — without printing a single note. How does a bank create money out of your deposit?",
+      "recall": "What is the money multiplier, and how does the Cash Reserve Ratio (CRR) affect money creation?",
+      "answer": "Money multiplier = 1/CRR — banks lend out deposits (keeping only the reserve), the loans get re-deposited and re-lent; a higher CRR means less credit creation"
+    },
+    "govt_budget": {
+      "module": 8,
+      "hook": "A government, like a household, can spend more than it earns — but unlike you it can do so for decades and even call it good policy. What is a fiscal deficit, and when is running one actually smart?",
+      "recall": "Difference between revenue deficit and fiscal deficit.",
+      "answer": "Revenue deficit = revenue expenditure exceeds revenue receipts; fiscal deficit = total expenditure exceeds total receipts excluding borrowings (i.e. the government's total borrowing need for the year)"
+    }
+  }
+}
