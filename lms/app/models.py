@@ -217,6 +217,18 @@ class AssessmentItem(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
 
 
+class CompSession(Base):
+    """A live 'earn your access' competition attempt. The served questions + correct keys are
+    kept HERE (server-side) so the client never sees the answers — the test is scored on submit.
+    Short-lived: created on /api/comp/start, deleted on /api/comp/submit (or expires)."""
+    __tablename__ = "comp_sessions"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    comp_id: Mapped[str] = mapped_column(String(48), unique=True, index=True)
+    exam: Mapped[str] = mapped_column(String(60), default="")
+    data: Mapped[dict] = mapped_column(JSON, default=dict)   # the 11 questions WITH keys + explains
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
 class CourseRequest(Base):
     """A learner asked Acharya (on WhatsApp) for a course we don't offer yet. Deepak builds it,
     then notifies them on the same number. status: requested | building | ready."""

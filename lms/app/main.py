@@ -2,6 +2,7 @@ import base64
 import hashlib
 import hmac
 import re
+import secrets
 import time
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -16,12 +17,12 @@ from sqlalchemy.orm import Session
 from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
-from . import analytics, assess_gen, billing, catalog, course_details, gamify, legal, notify, personalize, seo, tutor
+from . import analytics, assess_gen, billing, catalog, course_details, gamify, legal, notify, personalize, seo, teasers, tutor
 from .config import settings
 from .db import get_db
 from .emailer import send_magic_link
 from .models import (
-    AssessmentItem, CourseRequest, LearnerFact, Lesson, LessonProgress, LearningEvent, Module, Student, TaskCompletion, WorkbookTask, now,
+    AssessmentItem, CompSession, CourseRequest, LearnerFact, Lesson, LessonProgress, LearningEvent, Module, Student, TaskCompletion, WorkbookTask, now,
 )
 from .security import consume_magic_token, get_or_create_student, issue_magic_token
 
@@ -326,6 +327,57 @@ def _set_fact(db, student, key, value, source="prompt"):
         db.add(LearnerFact(student_id=student.id, key=key, value=value, source=source))
 
 
+# ── "Earn your free access" — the ad hook: an 11-question competition → earn 1-12 months free ──
+COMP_N = 11             # questions in the competition
+COMP_SECONDS = 300      # ~5 minutes, exam-style
+
+
+def _earned_days(score: int, total: int) -> int:
+    """Days of free access earned by the competition score. Everyone who ATTEMPTS earns >= 1 month;
+    a perfect score earns a full year. Ladder (score/total): 100%→12mo, ≥80%→9mo, ≥60%→6mo,
+    ≥40%→4mo, ≥20%→2mo, else 1mo."""
+    if total <= 0:
+        return 30
+    pct = score / total
+    if pct >= 0.999: return 365
+    if pct >= 0.80:  return 270
+    if pct >= 0.60:  return 180
+    if pct >= 0.40:  return 120
+    if pct >= 0.20:  return 60
+    return 30
+
+
+def _sign_earn(days: int) -> str:
+    """Tamper-proof token certifying server-scored earned days — carried to registration to claim."""
+    exp = int(time.time()) + 3600
+    msg = f"{int(days)}|{exp}"
+    sig = hmac.new(settings.SECRET_KEY.encode(), msg.encode(), hashlib.sha256).hexdigest()[:16]
+    return base64.urlsafe_b64encode(f"{msg}|{sig}".encode()).decode().rstrip("=")
+
+
+def _verify_earn(tok: str):
+    try:
+        raw = base64.urlsafe_b64decode(tok + "=" * (-len(tok) % 4)).decode()
+        days, exp, sig = raw.split("|")
+        good = hmac.new(settings.SECRET_KEY.encode(), f"{days}|{exp}".encode(), hashlib.sha256).hexdigest()[:16]
+        if not hmac.compare_digest(good, sig) or int(exp) < int(time.time()):
+            return None
+        d = int(days)
+        return d if 1 <= d <= 365 else None
+    except Exception:
+        return None
+
+
+def _bank_days(db, student, days: int):
+    """Bank earned free-access days into the assessment trial window (never shortens it)."""
+    end = datetime.utcnow() + timedelta(days=int(days))
+    if not student.assess_trial_end or end > student.assess_trial_end:
+        student.assess_trial_end = end
+    if (student.assess_status or "none") in ("", "none"):
+        student.assess_status = "trialing"
+    _set_fact(db, student, "earned_days", str(int(days)))
+
+
 @app.get("/exam-prep", response_class=HTMLResponse)
 def exam_prep(request: Request, db: Session = Depends(get_db)):
     student = current_student(request, db)
@@ -341,10 +393,12 @@ def exam_prep(request: Request, db: Session = Depends(get_db)):
 
 @app.post("/exam-prep/start")
 def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form(""),
-                    phone: str = Form(""), q: str = Form(""), db: Session = Depends(get_db)):
+                    phone: str = Form(""), q: str = Form(""), earn: str = Form(""),
+                    db: Session = Depends(get_db)):
     """Instant free signup: email → account + session → straight into the assessment.
     No magic-link round-trip for the free tier (the magic link stays the re-login path).
-    `q` = a free-text exam/topic → a dynamically-generated test; otherwise a curated exam."""
+    `q` = a free-text exam/topic → a dynamically-generated test; otherwise a curated exam.
+    `earn` = a signed token from the competition → banks the server-scored earned free-access days."""
     email = email.lower().strip()
     qtext = (q or "").strip()[:80]
     ex = exam.strip() if exam.strip() in EXAM_SUBJECT else EXAMS[0]["id"]
@@ -357,6 +411,9 @@ def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form("
     student = get_or_create_student(db, email)
     label = ("q:" + qtext) if qtext else ex
     _set_fact(db, student, "exam", label)
+    _d = _verify_earn(earn.strip()) if earn.strip() else None
+    if _d:
+        _bank_days(db, student, _d)
     p = "".join(c for c in phone if c.isdigit())[:15]
     if p and not student.phone:
         student.phone = p
@@ -468,6 +525,181 @@ def assess_generate(request: Request, q: str = "", db: Session = Depends(get_db)
     cands = [it.payload for it in items]
     pack = assess_gen.build_pack(qtext, cands, topic_line={"en": qtext, "hi": qtext})
     return JSONResponse({"ok": True, "pack": pack})
+
+
+@app.get("/exam-prep/quick", response_class=HTMLResponse)
+def exam_prep_quick(request: Request, exam: str = "", q: str = "", db: Session = Depends(get_db)):
+    """The AD LANDING: a 3-question teaser (easy/med/hard) → One-Tap/email register (no magic
+    link) → the full assessment. If already logged in, skip straight to the full test."""
+    student = current_student(request, db)
+    exam = exam.strip()
+    qtext = (q or "").strip()[:80]
+    if student and has_assessment_access(db, student):
+        if qtext:
+            return RedirectResponse(f"/exam-prep/test?q={quote(qtext)}", status_code=302)
+        return RedirectResponse(f"/exam-prep/test?exam={exam or EXAMS[0]['id']}", status_code=302)
+    import json as _json
+    picker = [{"id": e["id"], "title": e["title"]} for e in EXAMS]
+    return templates.TemplateResponse(request, "exam_prep_quick.html", {
+        "exams_json": _json.dumps(picker, ensure_ascii=False),
+        "exam": exam, "q": qtext, "seconds": COMP_SECONDS, "ncomp": COMP_N,
+        "google_client_id": settings.GOOGLE_CLIENT_ID,
+    })
+
+
+COMP_PROMPT = {
+    "neet":     "NEET UG — Biology, Physics and Chemistry — a MIX of easy, medium and hard questions",
+    "jee":      "JEE Main — Physics, Chemistry and Mathematics — a MIX of easy, medium and hard questions",
+    "class10":  "CBSE Class 10 — Science and Mathematics — a MIX of easy, medium and hard questions",
+    "class12":  "CBSE Class 12 — Physics and Chemistry — a MIX of easy, medium and hard questions",
+    "commerce": "Class 11-12 Commerce — Accountancy and Economics — a MIX of easy, medium and hard questions",
+}
+
+
+@app.post("/api/comp/start")
+async def comp_start(request: Request, db: Session = Depends(get_db)):
+    """Start the 11-question competition: load/generate a validated bank, serve a KEYLESS set,
+    stash the answers server-side (CompSession). Anonymous — no login yet."""
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    exam = (body.get("exam") or "").strip()
+    qtext = (body.get("q") or "").strip()[:80]
+    if qtext:
+        key = "comp:q:" + _exam_key(qtext)[2:]
+        title = qtext + " — a mix of easy, medium and hard questions"
+    else:
+        key = "comp:" + (exam if exam in COMP_PROMPT else "general")
+        title = COMP_PROMPT.get(exam, "General aptitude and reasoning for competitive exams — a mix of easy, medium and hard questions")
+    def _bank_count():
+        return db.query(AssessmentItem).filter_by(exam_key=key, status="validated").count()
+    # Build the bank in BATCHES of ~8 (one LLM call for ~17 bilingual Qs overflows the token budget
+    # and returns invalid JSON). A few batches accumulate enough validated items, then it's cached.
+    tries = 0
+    while _bank_count() < COMP_N + 4 and assess_gen.available() and tries < 3:
+        tries += 1
+        try:
+            validated = assess_gen.generate_validated(title, want=8)
+        except Exception as exc:
+            print(f"[comp] gen failed: {exc}")
+            validated = []
+        for v in validated:
+            db.add(AssessmentItem(exam_key=key, exam_title=title[:120],
+                                  qtype=v.get("type", "mcq"), payload=v, model=assess_gen.GEN_MODEL_NOTE))
+        if validated:
+            db.commit()
+        else:
+            break
+    items = (db.query(AssessmentItem).filter_by(exam_key=key, status="validated")
+             .order_by(func.random()).limit(COMP_N).all())
+    if len(items) < 6:
+        return JSONResponse({"ok": False, "error": "Couldn't prepare the challenge — please try another exam."})
+    qs = [it.payload for it in items]
+    comp_id = secrets.token_urlsafe(24)
+    # opportunistic cleanup of stale competition sessions
+    db.query(CompSession).filter(CompSession.created_at < datetime.utcnow() - timedelta(hours=3)).delete()
+    db.add(CompSession(comp_id=comp_id, exam=(qtext or exam)[:60], data={"qs": qs}))
+    db.commit()
+    client_qs = []
+    for q in qs:
+        cq = {"type": q.get("type", "mcq"), "topic": q.get("topic", {})}
+        for lang in ("en", "hi"):
+            v = q.get(lang, {})
+            cq[lang] = ({"q": v.get("q", ""), "opts": v.get("opts", [])}
+                        if q.get("type") == "mcq" else {"q": v.get("q", "")})
+        client_qs.append(cq)
+    return JSONResponse({"ok": True, "comp_id": comp_id, "seconds": COMP_SECONDS, "n": len(qs), "questions": client_qs})
+
+
+@app.post("/api/comp/submit")
+async def comp_submit(request: Request, db: Session = Depends(get_db)):
+    """Score the competition SERVER-SIDE against the stashed keys, return score + earned months +
+    a signed earn-token (carried to registration to claim the free days) + the answer review."""
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    comp_id = (body.get("comp_id") or "").strip()
+    answers = body.get("answers") or []
+    cs = db.query(CompSession).filter_by(comp_id=comp_id).first()
+    if not cs:
+        return JSONResponse({"ok": False, "error": "This challenge expired — please start again."}, status_code=400)
+    qs = (cs.data or {}).get("qs", [])
+    score = 0
+    review = []
+    for i, q in enumerate(qs):
+        a = answers[i] if i < len(answers) else None
+        if q.get("type") == "mcq":
+            correct = q.get("correct")
+            ok = isinstance(a, int) and a == correct
+        else:
+            correct = bool(q.get("answer"))
+            ok = isinstance(a, bool) and a == correct
+        if ok:
+            score += 1
+        rv = {"type": q.get("type", "mcq"), "correct": correct, "your": a, "ok": ok,
+              "en": {"explain": q.get("en", {}).get("explain", "")},
+              "hi": {"explain": q.get("hi", {}).get("explain", "")}}
+        if q.get("type") == "mcq":
+            rv["en"]["opts"] = q.get("en", {}).get("opts", [])
+            rv["hi"]["opts"] = q.get("hi", {}).get("opts", [])
+        review.append(rv)
+    total = len(qs)
+    days = _earned_days(score, total)
+    db.delete(cs)
+    db.commit()
+    return JSONResponse({"ok": True, "score": score, "total": total, "months": round(days / 30),
+                         "days": days, "earn": _sign_earn(days), "review": review})
+
+
+@app.post("/api/auth/google")
+async def api_auth_google(request: Request, db: Session = Depends(get_db)):
+    """Register/sign-in with a Google One Tap credential — a VERIFIED email, NO magic link.
+    Verifies the ID token with Google, then creates + logs in the student directly."""
+    if not settings.GOOGLE_CLIENT_ID:
+        return JSONResponse({"ok": False, "error": "google sign-in not configured"}, status_code=503)
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    cred = (body.get("credential") or "").strip()
+    exam = (body.get("exam") or "").strip()
+    qtext = (body.get("q") or "").strip()[:80]
+    earn = str(body.get("earn") or "").strip()
+    if not cred:
+        return JSONResponse({"ok": False, "error": "no credential"}, status_code=400)
+    import json as _json, urllib.request, urllib.parse
+    try:
+        vurl = "https://oauth2.googleapis.com/tokeninfo?" + urllib.parse.urlencode({"id_token": cred})
+        with urllib.request.urlopen(vurl, timeout=10) as resp:
+            tok = _json.loads(resp.read().decode())
+    except Exception as exc:
+        print(f"[google-auth] verify failed: {exc}")
+        return JSONResponse({"ok": False, "error": "verify failed"}, status_code=400)
+    if tok.get("aud") != settings.GOOGLE_CLIENT_ID or str(tok.get("email_verified")).lower() != "true":
+        return JSONResponse({"ok": False, "error": "invalid token"}, status_code=400)
+    email = (tok.get("email") or "").lower().strip()
+    if "@" not in email:
+        return JSONResponse({"ok": False, "error": "no email"}, status_code=400)
+    existed = db.query(Student).filter_by(email=email).first() is not None
+    student = get_or_create_student(db, email)
+    nm = (tok.get("name") or tok.get("given_name") or "")[:120]
+    if nm and not student.name:
+        student.name = nm
+    label = ("q:" + qtext) if qtext else (exam if exam in EXAM_SUBJECT else EXAMS[0]["id"])
+    _set_fact(db, student, "exam", label)
+    _d = _verify_earn(earn) if earn else None
+    if _d:
+        _bank_days(db, student, _d)
+    db.commit()
+    if not existed:
+        total = db.query(Student).count()
+        notify.notify_admin(f"🎯 New student (Google · exam-prep) — {student.email} · {label} · {total} learners total")
+    request.session["sid"] = student.id
+    newq = "&new=1" if not existed else ""
+    dest = (f"/exam-prep/test?q={quote(qtext)}{newq}" if qtext else f"/exam-prep/test?exam={label}{newq}")
+    return JSONResponse({"ok": True, "redirect": dest})
 
 
 @app.post("/logout")

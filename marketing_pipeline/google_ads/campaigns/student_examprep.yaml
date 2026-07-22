@@ -32,7 +32,12 @@ geo:
   locations: ["India"]       # exam-prep demand is national (unlike the Bihar-focused teacher campaign)
 languages: ["English", "Hindi"]
 
-final_url: "https://acharya.trigunai.com/exam-prep"   # the student landing (has the gtag + signup)
+final_url: "https://acharya.trigunai.com/exam-prep/quick"   # AD LANDING: 3-question teaser → 1-tap/email register → full test.
+# Per-ad-group targeting: append the exam so the teaser matches the search, e.g.
+#   NEET ad group   → https://acharya.trigunai.com/exam-prep/quick?exam=neet
+#   JEE ad group    → …/exam-prep/quick?exam=jee
+#   Boards ad group → …/exam-prep/quick?exam=class10  (or class12)
+# No ?exam = a general aptitude teaser. (The plain /exam-prep landing stays for organic/SEO.)
 
 ad_group:
   name: "exam-weak-areas"

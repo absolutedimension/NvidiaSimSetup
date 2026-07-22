@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18339354528"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18339354528');</script>
+<title>Win up to 1 year FREE — the Acharya challenge</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+{% if google_client_id %}<script src="https://accounts.google.com/gsi/client" async defer></script>{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+<style>
+ :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;
+   --card:#fff;--good:#1f8b52;--goodbg:#E9F6EE;--bad:#C23B22;--badbg:#FBEBE7;--cream:#FAF5EC;--green:#2FA968;
+   --serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif;--deva:"Tiro Devanagari Hindi",serif}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ html,body{min-height:100%}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 60%,#F7E0C8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;display:flex;justify-content:center}
+ .wrap{width:100%;max-width:560px;min-height:100dvh;display:flex;flex-direction:column}
+ header{display:flex;align-items:center;gap:10px;padding:12px 16px;background:linear-gradient(120deg,#E8934A,#C2591F);color:#fff;position:sticky;top:0;z-index:3}
+ header .ava{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:17px}
+ header .tt{flex:1;min-width:0}header .t{font-family:var(--serif);font-weight:800;font-size:16px}header .s{font-size:11.5px;color:rgba(255,255,255,.9)}
+ header .timer{font-weight:800;font-size:15px;background:rgba(0,0,0,.16);border-radius:10px;padding:5px 10px;font-variant-numeric:tabular-nums;display:none}
+ header .timer.low{background:rgba(0,0,0,.28);animation:pulse 1s infinite}@keyframes pulse{50%{opacity:.55}}
+ .langtog{display:flex;background:rgba(255,255,255,.15);border-radius:99px;padding:2px;border:1px solid rgba(255,255,255,.25)}
+ .langtog button{border:none;background:transparent;color:rgba(255,255,255,.85);font-weight:800;font-size:12px;padding:5px 10px;border-radius:99px;cursor:pointer;font-family:inherit}
+ .langtog button.on{background:#fff;color:var(--gold2)}
+ .prog{padding:10px 18px 2px}.prog .bar{height:6px;background:#EEE1CF;border-radius:99px;overflow:hidden}
+ .prog .fill{height:100%;width:0;background:linear-gradient(90deg,#E8934A,#C2591F);border-radius:99px;transition:width .35s}
+ .prog .lbl{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:5px;font-weight:700}
+ #log{flex:1;overflow-y:auto;padding:14px 16px 26px;display:flex;flex-direction:column;gap:13px}
+ .row{animation:rise .28s cubic-bezier(.2,.7,.3,1) both}@keyframes rise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+ .say{font-size:14.5px;line-height:1.55}.say .who{font-size:11px;font-weight:800;color:var(--gold);letter-spacing:.03em;margin-bottom:3px}
+ .qcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 16px 14px;box-shadow:0 3px 12px rgba(120,60,20,.06)}
+ .qtag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--gold2);background:var(--cream);border-radius:6px;padding:3px 8px;margin-bottom:9px}
+ .qtext{font-size:15.5px;font-weight:600;line-height:1.5;margin-bottom:13px}
+ .opt{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:12px 13px;margin-top:9px;font-size:14.5px;cursor:pointer;transition:.12s;color:var(--ink)}
+ .opt:hover{border-color:var(--gold);background:#FFFBF6}.opt:active{transform:scale(.985)}
+ .opt.sel{border-color:var(--gold2);background:#FFF3E6;box-shadow:0 0 0 2px rgba(194,89,31,.16)}
+ .opt .badge{width:26px;height:26px;flex:0 0 auto;border-radius:8px;background:var(--cream);color:var(--gold2);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+ .opt.sel .badge{background:var(--gold2);color:#fff}
+ .tf{display:flex;gap:11px;margin-top:6px}
+ .tf button{flex:1;padding:15px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font-size:15px;font-weight:800;cursor:pointer;color:var(--ink);font-family:inherit;transition:.12s}
+ .tf button:hover{border-color:var(--gold)}.tf button.sel{border-color:var(--gold2);background:#FFF3E6;color:var(--gold2)}
+ .btn{background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:12px;padding:13px 20px;font-size:15px;font-weight:800;cursor:pointer;transition:.12s;font-family:inherit;width:100%;margin-top:12px}
+ .btn:hover{transform:translateY(-1px);box-shadow:0 6px 15px rgba(168,72,26,.32)}.btn:disabled{opacity:.5;cursor:default;transform:none}
+ .btn.ghost{background:#fff;color:var(--gold2);border:1.5px solid var(--line)}
+ .subrow{display:flex;align-items:center;gap:9px;margin-top:14px;font-size:13.5px;color:var(--muted)}
+ .subrow label{font-weight:700;flex:0 0 auto}
+ .subrow select{flex:1;background:#FBF3EA;border:1.5px solid var(--line);border-radius:10px;padding:10px 11px;font-size:14.5px;font-family:inherit;color:var(--ink);font-weight:600}
+ .ladder{display:flex;flex-direction:column;gap:5px;margin-top:14px}
+ .ladder .lr{display:flex;justify-content:space-between;font-size:12.5px;background:var(--cream);border-radius:8px;padding:7px 11px}
+ .ladder .lr b{color:var(--gold2)}
+ .spin{display:inline-block;width:16px;height:16px;border:2.5px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-3px;margin-right:7px}@keyframes sp{to{transform:rotate(360deg)}}
+ .gate{background:var(--card);border:1.5px solid var(--gold2);border-radius:20px;padding:22px 18px;box-shadow:0 16px 46px rgba(120,60,20,.16);text-align:center}
+ .gate .earn{font-family:var(--serif);font-size:25px;font-weight:800;line-height:1.12;margin-bottom:6px}.gate .earn .g{color:var(--gold)}
+ .gate .sc{font-size:14px;color:var(--muted);margin-bottom:16px}.gate .sc b{color:var(--ink)}
+ .gbtn{display:flex;justify-content:center;margin-bottom:6px;min-height:44px}
+ .orline{display:flex;align-items:center;gap:10px;color:var(--faint);font-size:12px;margin:12px 2px}.orline::before,.orline::after{content:"";flex:1;height:1px;background:var(--line)}
+ .gate input{width:100%;background:#FBF3EA;border:1.5px solid var(--line);border-radius:12px;color:var(--ink);font-family:inherit;font-size:16px;padding:13px 15px}
+ .gate input:focus{outline:none;border-color:var(--gold2);box-shadow:0 0 0 3px rgba(194,89,31,.13)}
+ .gate .fine{color:var(--faint);font-size:12px;margin-top:11px}.gmsg{font-size:13px;margin-top:8px;min-height:16px}.gmsg.err{color:var(--bad)}
+ details.review{margin-top:12px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+ details.review summary{cursor:pointer;padding:12px 15px;font-weight:700;font-size:13.5px;color:var(--gold2);list-style:none}
+ details.review summary::-webkit-details-marker{display:none}
+ .rv-q{display:flex;gap:9px;padding:10px 14px;border-top:1px solid var(--cream);font-size:13px}
+ .rv-b{width:20px;height:20px;flex:0 0 auto;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;margin-top:1px}
+ .rv-b.ok{background:var(--good)}.rv-b.no{background:var(--bad)}
+ .rv-e{color:var(--muted);font-size:12.5px;margin-top:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="ava">🏆</div>
+    <div class="tt"><div class="t">Acharya Challenge</div><div class="s" id="hsub">Win up to 1 year free</div></div>
+    <div class="timer" id="timer">5:00</div>
+    <div class="langtog"><button data-l="en">EN</button><button data-l="hi">हिं</button></div>
+  </header>
+  <div class="prog"><div class="bar"><div class="fill" id="fill"></div></div>
+    <div class="lbl"><span id="plabel">—</span><span id="pscore"></span></div></div>
+  <div id="log"></div>
+</div>
+
+<script>
+const EXAM = {{ exam|tojson }};
+const QTXT = {{ q|tojson }};
+const GCID = {{ google_client_id|tojson }};
+const EXAMS = {{ exams_json|safe }};
+const SECS = {{ seconds }};
+const NC = {{ ncomp }};
+const T = {
+ en:{qof:(i,n)=>`Question ${i} of ${n}`, tf:["True","False"], next:"Next →", finish:"Finish →",
+   hookH:'🏆 Win up to <span style="color:var(--gold)">1 YEAR FREE</span>.',
+   hookP:`A serious ${NC}-question challenge — mixed easy, medium & hard. ~5 minutes. The higher you score, the more months you study FREE.`,
+   forSub:"Your exam:", start:`Start the challenge →`,
+   ladder:[["Score 100%","12 months 🏆"],["80%+","9 months"],["60%+","6 months"],["40%+","4 months"],["20%+","2 months"],["Just attempt","1 month"]],
+   ladderH:"Earn free access:",
+   preparing:"Setting up your challenge — fresh questions, just for you…",
+   genErr:"Couldn't start the challenge — please try another exam.",
+   submitting:"Scoring your challenge…", timeUp:"⏰ Time's up! Scoring…",
+   earnedH:m=>`🎉 You earned <span class="g">${m} month${m>1?'s':''} FREE</span>!`,
+   sc:(s,n)=>`You scored <b>${s}/${n}</b>. Register to claim your free access + see your full weak-spot report.`,
+   review:"📖 See the answers", email:"you@email.com", claim:"Claim my free access →", or:"or",
+   fine:"Free · no card · English or हिंदी", yourAns:"Your answer:", correctAns:"Correct:"},
+ hi:{qof:(i,n)=>`सवाल ${i} / ${n}`, tf:["सही","ग़लत"], next:"अगला →", finish:"पूरा करें →",
+   hookH:'🏆 <span style="color:var(--gold)">1 साल तक FREE</span> जीतें।',
+   hookP:`एक serious ${NC}-सवाल challenge — easy, medium & hard मिला-जुला। ~5 मिनट। जितना ज़्यादा score, उतने महीने FREE।`,
+   forSub:"आपका exam:", start:`Challenge शुरू करें →`,
+   ladder:[["100% score","12 महीने 🏆"],["80%+","9 महीने"],["60%+","6 महीने"],["40%+","4 महीने"],["20%+","2 महीने"],["सिर्फ़ attempt","1 महीना"]],
+   ladderH:"Free access कमाएँ:",
+   preparing:"आपका challenge तैयार हो रहा है — नए सवाल, सिर्फ़ आपके लिए…",
+   genErr:"Challenge शुरू नहीं हो सका — कोई दूसरा exam चुनें।",
+   submitting:"आपका challenge जाँचा जा रहा है…", timeUp:"⏰ समय ख़त्म! जाँच रहे हैं…",
+   earnedH:m=>`🎉 आपने <span class="g">${m} महीने FREE</span> कमाए!`,
+   sc:(s,n)=>`आपने <b>${s}/${n}</b> किए। Register करके free access + पूरी weak-spot report पाएँ।`,
+   review:"📖 जवाब देखें", email:"you@email.com", claim:"मेरी free access क्लेम करें →", or:"या",
+   fine:"Free · कोई card नहीं · English या हिंदी", yourAns:"आपका जवाब:", correctAns:"सही:"},
+};
+const params=new URLSearchParams(location.search);
+let LANG=params.get('lang')==='hi'?'hi':'en';
+const log=document.getElementById('log'),fill=document.getElementById('fill'),plabel=document.getElementById('plabel'),
+      pscore=document.getElementById('pscore'),timerEl=document.getElementById('timer');
+const el=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;};
+const add=n=>{const r=document.createElement('div');r.className='row';r.appendChild(n);log.appendChild(r);log.scrollTop=log.scrollHeight;return r;};
+const clear=()=>{log.innerHTML='';};
+document.querySelectorAll('.langtog button').forEach(b=>{b.classList.toggle('on',b.dataset.l===LANG);
+  b.onclick=()=>{ if(b.dataset.l===LANG) return; params.set('lang',b.dataset.l); location.search=params.toString(); };});
+
+let COMP=null, QS=[], ANS=[], idx=0, tId=null, left=SECS;
+function fmt(s){const m=Math.floor(s/60);return m+':'+String(s%60).padStart(2,'0');}
+function startTimer(){ left=SECS; timerEl.style.display='block'; timerEl.textContent=fmt(left);
+  tId=setInterval(()=>{ left--; timerEl.textContent=fmt(Math.max(0,left)); if(left<=30)timerEl.classList.add('low');
+    if(left<=0){ clearInterval(tId); finish(true); } },1000); }
+function stopTimer(){ if(tId)clearInterval(tId); timerEl.style.display='none'; }
+function setHead(i){ fill.style.width=(i/QS.length*100)+'%'; plabel.textContent=T[LANG].qof(i+1,QS.length); }
+
+function renderQ(i){
+  clear(); setHead(i); const q=QS[i], v=q[LANG]||q.en;
+  const card=el(`<div class="qcard"><span class="qtag">${T[LANG].qof(i+1,QS.length)}</span><div class="qtext">${v.q}</div></div>`);
+  let chosen = ANS[i];
+  const nb=el(`<button class="btn" disabled>${i===QS.length-1?T[LANG].finish:T[LANG].next}</button>`);
+  if(q.type==='truefalse'){
+    const w=el('<div class="tf"></div>');
+    [[T[LANG].tf[0],true],[T[LANG].tf[1],false]].forEach(([t,val])=>{const b=el(`<button>${t}</button>`);
+      if(chosen===val)b.classList.add('sel');
+      b.onclick=()=>{ w.querySelectorAll('button').forEach(x=>x.classList.remove('sel')); b.classList.add('sel'); ANS[i]=val; nb.disabled=false; };
+      w.appendChild(b);});
+    card.appendChild(w);
+  } else {
+    const B=['A','B','C','D','E'];
+    (v.opts||[]).forEach((o,k)=>{const b=el(`<button class="opt"><span class="badge">${B[k]}</span><span>${o}</span></button>`);
+      if(chosen===k)b.classList.add('sel');
+      b.onclick=()=>{ card.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel')); b.classList.add('sel'); ANS[i]=k; nb.disabled=false; };
+      card.appendChild(b);});
+  }
+  if(ANS[i]!=null && ANS[i]!==undefined) nb.disabled=false;
+  nb.onclick=()=>{ if(i===QS.length-1) finish(false); else renderQ(i+1); };
+  add(card); add(nb);
+}
+
+function startComp(){
+  clear(); plabel.textContent=''; fill.style.width='0%';
+  add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div><span class="spin"></span>${T[LANG].preparing}</div></div>`));
+  fetch('/api/comp/start',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+    body:JSON.stringify({exam:EXAM||'', q:QTXT||''})})
+    .then(r=>r.json()).then(j=>{
+      if(!j||!j.ok||!j.questions||!j.questions.length){ clear(); add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>${(j&&j.error)||T[LANG].genErr}</div></div>`)); return; }
+      COMP=j.comp_id; QS=j.questions; ANS=new Array(QS.length).fill(null); idx=0; startTimer(); renderQ(0);
+    }).catch(()=>{ clear(); add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>${T[LANG].genErr}</div></div>`)); });
+}
+
+function finish(timeUp){
+  stopTimer(); clear(); fill.style.width='100%'; plabel.textContent='';
+  add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div><span class="spin"></span>${timeUp?T[LANG].timeUp:T[LANG].submitting}</div></div>`));
+  fetch('/api/comp/submit',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+    body:JSON.stringify({comp_id:COMP, answers:ANS})})
+    .then(r=>r.json()).then(j=>{ if(!j||!j.ok){ clear(); add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>${(j&&j.error)||'Something went wrong.'}</div></div>`)); return; } result(j); })
+    .catch(()=>{ clear(); add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>Network error — please retry.</div></div>`)); });
+}
+
+function result(j){
+  clear();
+  const revItems=(j.review||[]).map((r,i)=>{
+    const badge=r.ok?'<span class="rv-b ok">✓</span>':'<span class="rv-b no">✕</span>';
+    let corr=''; if(r.type==='mcq'){ const opts=(r[LANG]||r.en).opts||[]; corr=opts[r.correct]!==undefined?opts[r.correct]:''; }
+    else { corr=r.correct?T[LANG].tf[0]:T[LANG].tf[1]; }
+    const ex=(r[LANG]||r.en).explain||'';
+    return `<div class="rv-q">${badge}<div><b>${T[LANG].correctAns}</b> ${corr}${ex?`<div class="rv-e">${ex}</div>`:''}</div></div>`;
+  }).join('');
+  const g=el(`<div class="gate">
+    <div class="earn">${T[LANG].earnedH(j.months)}</div>
+    <div class="sc">${T[LANG].sc(j.score,j.total)}</div>
+    <div class="gbtn" id="gbtn"></div>
+    ${GCID?`<div class="orline">${T[LANG].or}</div>`:''}
+    <form method="post" action="/exam-prep/start" id="emf">
+      <input type="hidden" name="exam" value="${EXAM||''}"><input type="hidden" name="q" value="${QTXT||''}">
+      <input type="hidden" name="earn" value="${j.earn||''}">
+      <input type="email" name="email" placeholder="${T[LANG].email}" autocomplete="email" required>
+      <button class="btn" type="submit">${T[LANG].claim}</button>
+    </form>
+    <div class="gmsg" id="gmsg"></div>
+    <div class="fine">🔒 ${T[LANG].fine}</div>
+    <details class="review"><summary>${T[LANG].review}</summary>${revItems}</details>
+  </div>`);
+  add(g);
+  window.__EARN=j.earn||'';
+  document.getElementById('emf').addEventListener('submit',()=>{document.getElementById('gmsg').textContent='…';});
+  if(GCID) initGoogle();
+}
+
+function initGoogle(){
+  (function ready(){
+    if(!(window.google&&google.accounts&&google.accounts.id)){ return setTimeout(ready,300); }
+    google.accounts.id.initialize({client_id:GCID, callback:onGoogle, auto_select:false, cancel_on_tap_outside:false});
+    const host=document.getElementById('gbtn');
+    if(host) google.accounts.id.renderButton(host,{type:'standard',theme:'outline',size:'large',text:'continue_with',shape:'pill',width:300});
+    google.accounts.id.prompt();
+  })();
+}
+function onGoogle(resp){
+  const gmsg=document.getElementById('gmsg'); if(gmsg) gmsg.textContent='…';
+  fetch('/api/auth/google',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+    body:JSON.stringify({credential:resp.credential, exam:EXAM||'', q:QTXT||'', earn:window.__EARN||''})})
+    .then(r=>r.json()).then(j=>{ if(j&&j.ok&&j.redirect){ location.href=j.redirect; } else if(gmsg){ gmsg.className='gmsg err'; gmsg.textContent=(j&&j.error)||'Sign-in failed — use email.'; } })
+    .catch(()=>{ if(gmsg){ gmsg.className='gmsg err'; gmsg.textContent='Network error — use email.'; } });
+}
+
+function intro(){
+  clear(); plabel.textContent=''; fill.style.width='0%'; timerEl.style.display='none';
+  document.getElementById('hsub').textContent = T[LANG].hookH.replace(/<[^>]+>/g,'');
+  const opts=EXAMS.map(e=>`<option value="${e.id}" ${e.id===EXAM?'selected':''}>${e.title}</option>`).join('');
+  const lad=T[LANG].ladder.map(([a,b])=>`<div class="lr"><span>${a}</span><b>${b}</b></div>`).join('');
+  const card=el(`<div class="qcard">
+    <div class="say"><div class="who">ACHARYA</div>${T[LANG].hookH}<br><span style="color:var(--muted);font-size:13px">${T[LANG].hookP}</span></div>
+    ${EXAMS.length?`<div class="subrow"><label>${T[LANG].forSub}</label><select id="subsel">${opts}</select></div>`:''}
+    <div class="say" style="margin-top:12px;font-size:12px;color:var(--gold2);font-weight:800">${T[LANG].ladderH}</div>
+    <div class="ladder">${lad}</div>
+  </div>`);
+  add(card);
+  const sel=card.querySelector('#subsel');
+  if(sel) sel.onchange=()=>{ params.set('exam',sel.value); location.search=params.toString(); };
+  const b=el(`<button class="btn">${T[LANG].start}</button>`); b.onclick=()=>startComp(); add(b);
+}
+intro();
+</script>
+</body>
+</html>

@@ -69,6 +69,11 @@ class Settings:
     ADS_CONVERSION_ID = os.getenv("ADS_CONVERSION_ID", "AW-18339354528").strip()
     STUDENT_SIGNUP_CONV_LABEL = os.getenv("STUDENT_SIGNUP_CONV_LABEL", "").strip()
 
+    # Google One Tap sign-in (register with ONE TAP, no magic link) for the ad teaser funnel.
+    # Set GOOGLE_CLIENT_ID to a Web OAuth 2.0 Client ID (Google Cloud Console → Credentials;
+    # authorized JS origin = https://acharya.trigunai.com). Empty = One Tap hidden, email path only.
+    GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "").strip()
+
     @property
     def is_sqlite(self) -> bool:
         return self.DATABASE_URL.startswith("sqlite")
