@@ -327,7 +327,7 @@ Offline marketing assets: `NvidiaSimSetup/acharya_pamphlet/` — A4 bilingual sc
   → session, no magic-link) + `/exam-prep/test` (serves `static/exam/assess.html`, an account-aware engine copy)
   + `POST /api/assess/complete` (consent-gated LearningEvent) + student SEO in `seo.py` (`exam_prep_jsonld`,
   ₹199). `EXAMS` catalog in `main.py`. Free→14-day→₹199/mo, paywall NOT enforced yet (SUBS_ENABLED off).
-  P2 dynamic LLM test-gen (free-text ANY exam → generate+key-withheld-validate+cache, `assess_gen.py` + `AssessmentItem` + `/api/assess/generate`) SHIPPED lms:v65. P3 parallel ₹199 billing track SHIPPED lms:v66 READY-BUT-OFF (`ASSESS_ENABLED` off; to go live: create ₹199 Razorpay plan → set `RZP_ASSESS_PLAN_ID`+`ASSESS_ENABLED=1`). Roadmap left: P4 Google Ads. Full plan + decisions:
+  P2 dynamic LLM test-gen (free-text ANY exam → generate+key-withheld-validate+cache, `assess_gen.py` + `AssessmentItem` + `/api/assess/generate`) SHIPPED lms:v65. P3 ₹199 billing SHIPPED lms:v66 + **Razorpay plan `plan_TGUbS3pdWbA3di` CREATED & wired** (`RZP_ASSESS_PLAN_ID` set; webhook already covers it). Assessment still FREE — ONLY lever left = `ASSESS_ENABLED=1` to enforce the paywall (held per soft-launch). Roadmap left: P4 Google Ads. Full plan + decisions:
   [[project-acharya-student-product]].
 - **Landings REPOSITIONED to assessment-only (2026-07-22, lms:v63 + triguai-frontend:v107):** both
   `acharya.trigunai.com` (`acharya.html`) and `trigunai.com` (`ShaderStudio/landing/index.html`) now sell
