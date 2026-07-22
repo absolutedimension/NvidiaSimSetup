@@ -334,16 +334,16 @@ COMP_SECONDS = 300      # ~5 minutes, exam-style
 
 def _earned_days(score: int, total: int) -> int:
     """DAYS of free access earned by the competition score. Everyone who ATTEMPTS earns >= 14 days;
-    a perfect score earns 180 days. Ladder (score/total): 100%→180d, ≥80%→120d, ≥60%→90d,
-    ≥40%→60d, ≥20%→30d, else 14d."""
+    a perfect score earns 60 days (a ~2-month subscription). Ladder (score/total): 100%→60d, ≥80%→50d,
+    ≥60%→40d, ≥40%→30d, ≥20%→20d, else 14d."""
     if total <= 0:
         return 14
     pct = score / total
-    if pct >= 0.999: return 180
-    if pct >= 0.80:  return 120
-    if pct >= 0.60:  return 90
-    if pct >= 0.40:  return 60
-    if pct >= 0.20:  return 30
+    if pct >= 0.999: return 60
+    if pct >= 0.80:  return 50
+    if pct >= 0.60:  return 40
+    if pct >= 0.40:  return 30
+    if pct >= 0.20:  return 20
     return 14
 
 

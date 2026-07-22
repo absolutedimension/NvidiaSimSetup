@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18339354528"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18339354528');</script>
-<title>Win up to 180 days FREE — the Acharya challenge</title>
+<title>Win up to 60 days FREE — the Acharya challenge</title>
 <link rel="icon" href="/static/brand/favicon-32.png" />
 {% if google_client_id %}<script src="https://accounts.google.com/gsi/client" async defer></script>{% endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -90,7 +90,7 @@
 <div class="wrap">
   <header>
     <div class="ava">🏆</div>
-    <div class="tt"><div class="t">Acharya Challenge</div><div class="s" id="hsub">Win up to 180 days free</div></div>
+    <div class="tt"><div class="t">Acharya Challenge</div><div class="s" id="hsub">Win up to 60 days free</div></div>
     <div class="timer" id="timer">5:00</div>
     <div class="langtog"><button data-l="en">EN</button><button data-l="hi">हिं</button></div>
   </header>
@@ -108,12 +108,12 @@ const SECS = {{ seconds }};
 const NC = {{ ncomp }};
 const T = {
  en:{qof:(i,n)=>`Question ${i} of ${n}`, tf:["True","False"], next:"Next →", finish:"Finish →",
-   hookH:'🏆 Win up to <span style="color:var(--gold)">180 DAYS FREE</span>.',
+   hookH:'🏆 Win up to <span style="color:var(--gold)">60 DAYS FREE</span>.',
    hookP:`A serious ${NC}-question challenge — mixed easy, medium & hard. ~5 minutes. The higher you score, the more days you study FREE.`,
    forSub:"Your exam:", start:`Start the challenge →`,
    featsH:"Your daily assessment engine — you unlock:",
    feats:["📅 A fresh adaptive test every day","📈 Improvement & growth tracking","🧠 An engine that gets smarter each day","🎯 Your exact weak topics — fixed"],
-   ladder:[["Score 100%","180 days 🏆"],["80%+","120 days"],["60%+","90 days"],["40%+","60 days"],["20%+","30 days"],["Just attempt","14 days"]],
+   ladder:[["Score 100%","60 days 🏆"],["80%+","50 days"],["60%+","40 days"],["40%+","30 days"],["20%+","20 days"],["Just attempt","14 days"]],
    ladderH:"Earn free access:",
    preparing:"Setting up your challenge — fresh questions, just for you…",
    genErr:"Couldn't start the challenge — please try another exam.",
@@ -128,12 +128,12 @@ const T = {
    checking:"Checking your topic…", invalid:"Please enter a real exam or subject topic (add a chapter if it helps).",
    skipLink:"Skip the challenge — just log in →", skipH:"Log in & start practising free", skipP:"Free to try — no card, no password.", login:"Log in free →"},
  hi:{qof:(i,n)=>`सवाल ${i} / ${n}`, tf:["सही","ग़लत"], next:"अगला →", finish:"पूरा करें →",
-   hookH:'🏆 <span style="color:var(--gold)">180 दिन तक FREE</span> जीतें।',
+   hookH:'🏆 <span style="color:var(--gold)">60 दिन तक FREE</span> जीतें।',
    hookP:`एक serious ${NC}-सवाल challenge — easy, medium & hard मिला-जुला। ~5 मिनट। जितना ज़्यादा score, उतने दिन FREE।`,
    forSub:"आपका exam:", start:`Challenge शुरू करें →`,
    featsH:"आपका daily assessment engine — आपको मिलेगा:",
    feats:["📅 रोज़ एक नया adaptive टेस्ट","📈 Improvement & growth tracking","🧠 हर दिन smarter होता engine","🎯 आपके कमज़ोर टॉपिक — ठीक"],
-   ladder:[["100% score","180 दिन 🏆"],["80%+","120 दिन"],["60%+","90 दिन"],["40%+","60 दिन"],["20%+","30 दिन"],["सिर्फ़ attempt","14 दिन"]],
+   ladder:[["100% score","60 दिन 🏆"],["80%+","50 दिन"],["60%+","40 दिन"],["40%+","30 दिन"],["20%+","20 दिन"],["सिर्फ़ attempt","14 दिन"]],
    ladderH:"Free access कमाएँ:",
    preparing:"आपका challenge तैयार हो रहा है — नए सवाल, सिर्फ़ आपके लिए…",
    genErr:"Challenge शुरू नहीं हो सका — कोई दूसरा exam चुनें।",
