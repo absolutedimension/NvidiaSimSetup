@@ -68,7 +68,26 @@
  .brk .r{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;background:var(--cream);border-radius:10px;padding:9px 12px}
  .chip{font-size:11px;font-weight:700;border-radius:20px;padding:3px 10px;flex:0 0 auto}
  .chip.good{background:var(--goodbg);color:#116b41} .chip.weak{background:var(--badbg);color:#9c3220}
+ .chip.shaky{background:#FFF3E0;color:#9a5a12}
  .footnote{text-align:center;font-size:11px;color:var(--muted);padding:8px 8px 2px} .footnote b{color:var(--gold2)}
+ /* #4 confidence calibration */
+ .conf{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:11px}
+ .conf .cq{font-weight:700;font-size:13.5px;color:var(--muted);margin-right:2px}
+ .cbtn{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:8px 15px;font-size:13.5px;font-weight:700;cursor:pointer;color:var(--gold2);font-family:inherit;transition:.13s}
+ .cbtn:hover{border-color:var(--gold);background:#FFFBF6} .cbtn.sel{border-color:var(--gold);background:#FFF3E6} .cbtn.dim{opacity:.4}
+ /* #6 reviewable transcript */
+ .review{margin-top:11px;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+ .review summary{list-style:none;cursor:pointer;padding:13px 15px;font-weight:700;font-size:14px;color:var(--gold2)}
+ .review summary::-webkit-details-marker{display:none}
+ .review[open] summary{border-bottom:1px solid var(--line)}
+ .rv-body{padding:4px 14px 10px}
+ .rv-q{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--cream)}
+ .rv-q:last-child{border-bottom:none}
+ .rv-b{width:22px;height:22px;flex:0 0 auto;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;margin-top:1px}
+ .rv-b.ok{background:var(--good)} .rv-b.no{background:var(--bad)} .rv-b.na{background:var(--gold)}
+ .rv-c{flex:1;min-width:0} .rv-t{font-size:13.5px;font-weight:600;line-height:1.4}
+ .rv-a{font-size:13px;color:#116b41;margin-top:3px} .rv-a b{color:var(--muted);font-weight:700}
+ .rv-e{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.45}
 </style></head>
 <body>
 <div class="wrap">
@@ -221,7 +240,14 @@ const T={
    allSolid:"Everything solid — ready for advanced questions! 🎯",
    weakList:w=>`Weak: <b>${w}</b>.`,
    suggWeak:r=>r.depth==='basics'?`🎯 Suggested: <b>${r.topic.en}</b> — even the basics need work → assign a basics-first drill.`:r.depth==='application'?`🎯 Suggested: <b>${r.topic.en}</b> — basics are OK but application is weak → assign practice questions.`:`🎯 Suggested: <b>${r.topic.en}</b> is weak → assign a targeted drill.`,
-   foot:"👨‍🏫 These weak-spots come from your <b>actual answers</b> — the same picture (and this exact next step) is ready on the teacher's dashboard.",restart:"↻ Restart test"},
+   foot:"👨‍🏫 These weak-spots come from your <b>actual answers</b> — the same picture (and this exact next step) is ready on the teacher's dashboard.",
+   shakyNote:n=>`⏳ Hesitated on <b>${n}</b> — the answer was right, but slow. A quick timed revision makes it automatic.`,
+   shareLabel:"↗ Share my report on WhatsApp",
+   shareText:(p,w,u)=>`I scored ${p}% on Acharya's ${S.title} test${w?`. Spots to improve: ${w}`:''}. Try the free adaptive test 👉 ${u}`,
+   sureQ:"Were you sure?",sure:"😎 Sure",unsure:"🤔 Not sure",
+   confWrong:n=>`🧠 <b>${n}</b> answer${n>1?'s':''} you were <b>sure</b> about turned out wrong — that's the most important thing to fix (a confident misconception hides until it's tested).`,
+   reviewLbl:"📖 Review your answers",ansLbl:"Correct:",teacherView:"👨‍🏫 See the teacher's view →",
+   restart:"↻ Restart test"},
  hi:{ready:"तैयार",qof:i=>`सवाल ${i} / ${TOTAL}`,score:"स्कोर",start:"टेस्ट शुरू करें →",next:"अगला सवाल →",results:"नतीजा देखें →",check:"जाँचें",submit:"जवाब सबमिट करें",checking:"आचार्य जाँच रहे हैं…",typePh:"अपने शब्दों में लिखें…",tf:["सही","ग़लत"],
    longNo:"कोई बात नहीं — अभी यह साफ़ नहीं है। सही जवाब यह रहा, इसे समझ लो 👇",longYes:"आपका जवाब मिल गया 👍 अब इसे सही जवाब से मिलाकर देखो 👇",
    corr:"✅ सही! ",wrong:"❌ ",wrongAns:(a,u)=>`❌ सही जवाब: ${a}${u?" "+u:""}। `,matchOk:"✅ सब सही जोड़े!",matchNo:"❌ कुछ जोड़े ग़लत थे।",
@@ -231,7 +257,14 @@ const T={
    allSolid:"सब solid — advanced questions के लिए तैयार! 🎯",
    weakList:w=>`कमज़ोर: <b>${w}</b>।`,
    suggWeak:r=>r.depth==='basics'?`🎯 सुझाव: <b>${r.topic.hi}</b> — basics ही कच्चे हैं → basics-first drill assign करें।`:r.depth==='application'?`🎯 सुझाव: <b>${r.topic.hi}</b> — basics ठीक, पर application कमज़ोर → practice questions दें।`:`🎯 सुझाव: <b>${r.topic.hi}</b> कमज़ोर है → एक targeted drill दें।`,
-   foot:"👨‍🏫 ये weak-spots आपके <b>असली जवाबों</b> से निकले हैं — यही तस्वीर (और यही next step) teacher के dashboard पर तैयार।",restart:"↻ फिर से टेस्ट"}
+   foot:"👨‍🏫 ये weak-spots आपके <b>असली जवाबों</b> से निकले हैं — यही तस्वीर (और यही next step) teacher के dashboard पर तैयार।",
+   shakyNote:n=>`⏳ <b>${n}</b> पर हिचकिचाहट — जवाब सही था पर धीमा। एक quick timed revision से यह automatic हो जाएगा।`,
+   shareLabel:"↗ WhatsApp पर मेरी report भेजें",
+   shareText:(p,w,u)=>`मैंने Acharya के ${S.title} टेस्ट में ${p}% score किया${w?`। सुधारने लायक: ${w}`:''}। free adaptive टेस्ट करके देखो 👉 ${u}`,
+   sureQ:"पक्का यकीन था?",sure:"😎 पक्का",unsure:"🤔 यकीन नहीं",
+   confWrong:n=>`🧠 <b>${n}</b> जवाब जिन पर आपको <b>पक्का यकीन</b> था, वो ग़लत निकले — यही सबसे ज़रूरी सुधार है (पक्के यकीन वाली ग़लती टेस्ट होने तक छिपी रहती है)।`,
+   reviewLbl:"📖 अपने जवाब देखें",ansLbl:"सही जवाब:",teacherView:"👨‍🏫 teacher को कैसा दिखता है →",
+   restart:"↻ फिर से टेस्ट"}
 };
 
 /* ============================ ENGINE ============================ */
@@ -249,16 +282,27 @@ const say=h=>{const d=document.createElement('div');d.className='say';d.innerHTM
 const clear=()=>{log.innerHTML='';};
 const wait=m=>new Promise(r=>setTimeout(r,m));
 function setHeader(i){fill.style.width=(i/TOTAL*100)+'%';plabel.textContent=T[LANG].qof(i+1);pscore.textContent=T[LANG].score+' '+score;}
-function advance(res,ok,label){const b=el(`<button class="btn full">${label||T[LANG].next}</button>`);b.onclick=()=>{b.disabled=true;res(ok);};add(b);log.scrollTop=log.scrollHeight;}
+function nextBtn(res,ok,label){const b=el(`<button class="btn full">${label||T[LANG].next}</button>`);b.onclick=()=>{b.disabled=true;res(ok);};add(b);log.scrollTop=log.scrollHeight;}
+function advance(res,ok,label){
+  if(!(CONF&&curGraded)){nextBtn(res,ok,label);return;}
+  // #4 ask calibration BEFORE moving on; "sure + wrong" = the confidently-wrong signal.
+  const box=el(`<div class="conf"><span class="cq">${T[LANG].sureQ}</span><button class="cbtn" data-s="1">${T[LANG].sure}</button><button class="cbtn" data-s="0">${T[LANG].unsure}</button></div>`);
+  box.querySelectorAll('.cbtn').forEach(b=>b.onclick=()=>{
+    const sure=b.dataset.s==='1'; confLog.push({ok,sure});
+    box.querySelectorAll('.cbtn').forEach(x=>{x.onclick=null;if(x!==b)x.classList.add('dim');});b.classList.add('sel');
+    nextBtn(res,ok,label);});
+  add(box);log.scrollTop=log.scrollHeight;}
 const L=q=>q[LANG];  // language view of a question
 
 function mcq(q,last){return new Promise(res=>{const v=L(q);
   const card=el(`<div class="qcard"><span class="qtag ${q.easy?'easy':''}">${v.tag}</span><div class="qtext">${v.q}</div></div>`);
   const B=['A','B','C','D'];
-  v.opts.forEach((o,i)=>{const b=el(`<button class="opt"><span class="badge">${B[i]}</span><span>${o}</span></button>`);
+  const order=shuffle(v.opts.map((o,i)=>i));   // #5 randomize display order; original index decides correctness
+  order.forEach((origI,pos)=>{const o=v.opts[origI];const b=el(`<button class="opt"><span class="badge">${B[pos]}</span><span>${o}</span></button>`);
+    b.dataset.c=(origI===q.correct)?'1':'';
     b.onclick=()=>{[...card.querySelectorAll('.opt')].forEach(x=>{x.onclick=null;x.classList.add('dim');});
-      const c=card.querySelectorAll('.opt')[q.correct];c.classList.remove('dim');c.classList.add('correct');
-      const ok=i===q.correct;
+      const c=card.querySelector('.opt[data-c="1"]');c.classList.remove('dim');c.classList.add('correct');
+      const ok=origI===q.correct;
       if(!ok){b.classList.remove('dim');b.classList.add('wrong');b.appendChild(el('<span class="mark">✕</span>'));}
       else b.appendChild(el('<span class="mark" style="color:var(--good)">✓</span>'));
       card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrong}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
@@ -279,7 +323,8 @@ function match(q,last){return new Promise(res=>{const v=L(q);
   const card=el(`<div class="qcard"><span class="qtag">${v.tag}</span><div class="qtext">${v.q}</div><div class="match"><div class="col" id="L"></div><div class="col" id="R"></div></div></div>`);
   const CL=card.querySelector('#L'),CR=card.querySelector('#R');
   v.left.forEach((t,i)=>CL.appendChild(el(`<div class="mitem" data-i="${i}">${t}</div>`)));
-  v.right.forEach((t,i)=>CR.appendChild(el(`<div class="mitem" data-i="${i}">${t}</div>`)));
+  // #5 shuffle right column (data-i stays the ORIGINAL index, so pair-checking is unchanged)
+  shuffle(v.right.map((t,i)=>i)).forEach(i=>CR.appendChild(el(`<div class="mitem" data-i="${i}">${v.right[i]}</div>`)));
   let sel=null,made=0,wrong=0,n=v.left.length;
   CL.querySelectorAll('.mitem').forEach(m=>m.onclick=()=>{if(m.classList.contains('ok')||m.classList.contains('no'))return;
     CL.querySelectorAll('.mitem').forEach(x=>x.classList.remove('sel'));m.classList.add('sel');sel=+m.dataset.i;});
@@ -314,6 +359,12 @@ function long(q,last){return new Promise(res=>{const v=L(q);
 
 const RENDER={mcq,truefalse,match,numeric,long};
 const render=(q,last)=>RENDER[q.type](q,last);
+// #2 per-type "slow" thresholds (ms). Correct-but-slow ⇒ hesitation ⇒ status 'shaky'.
+const SLOW={mcq:13000,truefalse:9000,numeric:20000,match:22000};
+// #5 Fisher-Yates shuffle — so options/pairs aren't in a canned, position-leaking order.
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+// #4 confidence-calibration (opt-in via ?confidence=1): captures "sure vs not sure" per graded answer.
+const CONF=params.get('confidence')==='1'; const confLog=[]; let curGraded=true;
 
 function intro(){return new Promise(res=>{clear();fill.style.width='0%';plabel.textContent=T[LANG].ready;pscore.textContent=T[LANG].score+' 0';
   add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>${S.intro[LANG]}</div></div>`));
@@ -322,12 +373,18 @@ function intro(){return new Promise(res=>{clear();fill.style.width='0%';plabel.t
 async function run(){
   await intro();
   const results=[];   // {topic:{en,hi}, status:'solid'|'shaky'|'weak', depth:'basics'|'application'|null} — built from ACTUAL answers
+  const transcript=[];   // #6 per-question record for the end-of-test "review your answers"
   for(let i=0;i<TOTAL;i++){
     const q=S.questions[i],last=(i===TOTAL-1),topic=S.topicMap[i];
     clear();setHeader(i);
+    curGraded=q.type!=='long';   // #4 long answers aren't graded → no calibration prompt
+    const t0=performance.now();
     const ok=await render(q,last && !q.adaptive);
+    const dt=performance.now()-t0;
     if(q.type==='long'){ /* free text: honestly not auto-graded, so excluded from the diagnosis */ }
-    else if(ok){ score++; results.push({topic,status:'solid',depth:null}); }
+    else if(ok){ score++;
+      const slow=dt>(SLOW[q.type]||14000);
+      results.push({topic,status:slow?'shaky':'solid',depth:slow?'hesitation':null}); }
     else if(q.adaptive){
       clear();setHeader(i);
       say(T[LANG].adaptLead);
@@ -338,23 +395,53 @@ async function run(){
     } else {
       results.push({topic,status:'weak',depth:null});
     }
+    transcript.push({q:L(q).q, a:answerText(q,L(q)), explain:L(q).explain||'', ok:q.type==='long'?null:ok, type:q.type});
   }
   clear();fill.style.width='100%';plabel.textContent=T[LANG].complete;pscore.textContent=T[LANG].score+' '+score+'/'+GRADED;
-  scorecard(results);
+  scorecard(results,transcript);
 }
-function scorecard(results){
+// #6 the correct answer as display text, per question type — for the review list
+function answerText(q,v){
+  if(q.type==='mcq') return v.opts[q.correct];
+  if(q.type==='truefalse') return q.answer?T[LANG].tf[0]:T[LANG].tf[1];
+  if(q.type==='numeric') return q.answer+(q.unit?' '+q.unit:'');
+  if(q.type==='match') return v.left.map((l,i)=>`${l} → ${v.right[q.pairs[i]]}`).join(' · ');
+  if(q.type==='long') return v.model;
+  return '';
+}
+function scorecard(results,transcript){
   const pct=GRADED?Math.round(score/GRADED*100):0;
   const lab={solid:T[LANG].solid,shaky:T[LANG].shaky,weak:T[LANG].weakL};
-  const rows=results.map(r=>`<div class="r"><span>${r.topic[LANG]}</span><span class="chip ${r.status==='solid'?'good':'weak'}">${lab[r.status]}</span></div>`).join('');
-  const weakRes=results.filter(r=>r.status!=='solid');
-  const pri=weakRes.find(r=>r.depth==='basics')||weakRes.find(r=>r.depth==='application')||weakRes[0];
+  const chipCls={solid:'good',shaky:'shaky',weak:'weak'};
+  const rows=results.map(r=>`<div class="r"><span>${r.topic[LANG]}</span><span class="chip ${chipCls[r.status]}">${lab[r.status]}</span></div>`).join('');
+  const weakRes=results.filter(r=>r.status==='weak');
+  const shakyRes=results.filter(r=>r.status==='shaky');
+  // priority next-step: real weakness first, then an application-level gap. Pure hesitation never becomes a "drill".
+  const pri=weakRes.find(r=>r.depth==='basics')||weakRes[0]||shakyRes.find(r=>r.depth==='application');
   const weakNames=weakRes.map(r=>r.topic[LANG]).join(', ');
+  const shakyNames=shakyRes.map(r=>r.topic[LANG]).join(', ');
   add(el(`<div class="score"><div class="ring" style="--p:${pct}"><b>${pct}%</b><span>${score}/${GRADED}</span></div>
     <h3>${T[LANG].complete}</h3><div class="sub">${S.title} · ${S.topic[LANG]}</div><div class="brk">${rows}</div></div>`));
   let msg=T[LANG].scored(score,GRADED);
-  if(weakRes.length) msg+=' '+T[LANG].weakList(weakNames)+'<br><br>'+T[LANG].suggWeak(pri);
-  else msg+='<br><br>'+T[LANG].allSolid;
+  if(weakRes.length) msg+=' '+T[LANG].weakList(weakNames);
+  if(shakyRes.length) msg+='<br><br>'+T[LANG].shakyNote(shakyNames);
+  if(pri) msg+='<br><br>'+T[LANG].suggWeak(pri);
+  else if(!weakRes.length&&!shakyRes.length) msg+='<br><br>'+T[LANG].allSolid;
   say(msg);
+  // #4 confidently-wrong = the highest-value teaching signal (sure, but wrong)
+  if(CONF){const cw=confLog.filter(c=>!c.ok&&c.sure).length; if(cw) say(T[LANG].confWrong(cw));}
+  // #1 WhatsApp share — turns a score into a spreadable report + reproduces this exact test via the link
+  const improve=[...weakRes,...shakyRes].map(r=>r.topic[LANG]).join(', ');
+  const sp=new URLSearchParams();sp.set('subject',params.get('subject')||'neet-biology');sp.set('lang',LANG);
+  const shareUrl=location.origin+location.pathname+'?'+sp.toString();
+  const wa='https://wa.me/?text='+encodeURIComponent(T[LANG].shareText(pct,improve,shareUrl));
+  add(el(`<a class="btn full" href="${wa}" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#25D366,#128C7E);text-decoration:none;text-align:center;display:block">${T[LANG].shareLabel}</a>`));
+  // #6 reviewable transcript — a score becomes a study artifact worth keeping
+  const revItems=transcript.map(t=>{const badge=t.ok===null?'<span class="rv-b na">✎</span>':t.ok?'<span class="rv-b ok">✓</span>':'<span class="rv-b no">✕</span>';
+    return `<div class="rv-q">${badge}<div class="rv-c"><div class="rv-t">${t.q}</div><div class="rv-a"><b>${T[LANG].ansLbl}</b> ${t.a}</div>${t.explain?`<div class="rv-e">${t.explain}</div>`:''}</div></div>`;}).join('');
+  add(el(`<details class="review"><summary>${T[LANG].reviewLbl}</summary><div class="rv-body">${revItems}</div></details>`));
+  // #3 close the demo loop — the same answers, seen from the teacher's side
+  add(el(`<a class="btn ghost full" href="/dashboard" target="_blank" rel="noopener">${T[LANG].teacherView}</a>`));
   add(el(`<div class="footnote">${T[LANG].foot}</div>`));
   add(el(`<button class="btn ghost full" onclick="location.reload()">${T[LANG].restart}</button>`));
 }
