@@ -320,14 +320,14 @@ Offline marketing assets: `NvidiaSimSetup/acharya_pamphlet/` — A4 bilingual sc
 (rendered via headless Chrome `--print-to-pdf`). The repos also have their own `CLAUDE.md`.
 
 ## 8. Current state snapshot (2026-07-01) — live versions + what exists
-- **lms = v66** · **triguai-frontend = v107** (bump from these). ⚠️ tag-reuse gotcha: a stale `lms:v62`
+- **lms = v67** · **triguai-frontend = v107** (bump from these). ⚠️ tag-reuse gotcha: a stale `lms:v62`
   already existed, so `--image lms:v62` did NOT roll a new revision — ALWAYS bump to a brand-new tag.
 - **Acharya for STUDENTS — `/exam-prep` SHIPPED (Phase 1, lms:v64, 2026-07-22):** a self-serve student
   exam-prep assessment product on the LMS — `/exam-prep` landing + instant email signup (`POST /exam-prep/start`
   → session, no magic-link) + `/exam-prep/test` (serves `static/exam/assess.html`, an account-aware engine copy)
   + `POST /api/assess/complete` (consent-gated LearningEvent) + student SEO in `seo.py` (`exam_prep_jsonld`,
   ₹199). `EXAMS` catalog in `main.py`. Free→14-day→₹199/mo, paywall NOT enforced yet (SUBS_ENABLED off).
-  P2 dynamic LLM test-gen (free-text ANY exam → generate+key-withheld-validate+cache, `assess_gen.py` + `AssessmentItem` + `/api/assess/generate`) SHIPPED lms:v65. P3 ₹199 billing SHIPPED lms:v66 + **Razorpay plan `plan_TGUbS3pdWbA3di` CREATED & wired** (`RZP_ASSESS_PLAN_ID` set; webhook already covers it). Assessment still FREE — ONLY lever left = `ASSESS_ENABLED=1` to enforce the paywall (held per soft-launch). Roadmap left: P4 Google Ads. Full plan + decisions:
+  P2 dynamic LLM test-gen (free-text ANY exam → generate+key-withheld-validate+cache, `assess_gen.py` + `AssessmentItem` + `/api/assess/generate`) SHIPPED lms:v65. P3 ₹199 billing SHIPPED lms:v66 + **Razorpay plan `plan_TGUbS3pdWbA3di` CREATED & wired** (`RZP_ASSESS_PLAN_ID` set; webhook already covers it). Assessment still FREE — lever to enforce paywall = `ASSESS_ENABLED=1` (held per soft-launch). P4 Google Ads signup-conversion WIRED lms:v67 (`STUDENT_SIGNUP_CONV_LABEL` env, inert until set; campaign yaml ready) — remaining = Deepak creates the Ads conversion action + launches. Roadmap left: P4 Google Ads. Full plan + decisions:
   [[project-acharya-student-product]].
 - **Landings REPOSITIONED to assessment-only (2026-07-22, lms:v63 + triguai-frontend:v107):** both
   `acharya.trigunai.com` (`acharya.html`) and `trigunai.com` (`ShaderStudio/landing/index.html`) now sell
