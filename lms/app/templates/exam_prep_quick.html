@@ -50,7 +50,9 @@
  .subrow{display:flex;align-items:center;gap:9px;margin-top:14px;font-size:13.5px;color:var(--muted)}
  .subrow label{font-weight:700;flex:0 0 auto}
  .subrow select{flex:1;background:#FBF3EA;border:1.5px solid var(--line);border-radius:10px;padding:10px 11px;font-size:14.5px;font-family:inherit;color:var(--ink);font-weight:600}
- .ladder{display:flex;flex-direction:column;gap:5px;margin-top:14px}
+ .feats{display:flex;flex-direction:column;gap:5px;margin-top:6px}
+ .feats .ft{font-size:12.8px;color:var(--ink);line-height:1.35}
+ .ladder{display:flex;flex-direction:column;gap:5px;margin-top:6px}
  .ladder .lr{display:flex;justify-content:space-between;font-size:12.5px;background:var(--cream);border-radius:8px;padding:7px 11px}
  .ladder .lr b{color:var(--gold2)}
  .spin{display:inline-block;width:16px;height:16px;border:2.5px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-3px;margin-right:7px}@keyframes sp{to{transform:rotate(360deg)}}
@@ -94,27 +96,31 @@ const NC = {{ ncomp }};
 const T = {
  en:{qof:(i,n)=>`Question ${i} of ${n}`, tf:["True","False"], next:"Next →", finish:"Finish →",
    hookH:'🏆 Win up to <span style="color:var(--gold)">1 YEAR FREE</span>.',
-   hookP:`A serious ${NC}-question challenge — mixed easy, medium & hard. ~5 minutes. The higher you score, the more months you study FREE.`,
+   hookP:`A serious ${NC}-question challenge — mixed easy, medium & hard. ~5 minutes. The higher you score, the more days you study FREE.`,
    forSub:"Your exam:", start:`Start the challenge →`,
-   ladder:[["Score 100%","12 months 🏆"],["80%+","9 months"],["60%+","6 months"],["40%+","4 months"],["20%+","2 months"],["Just attempt","1 month"]],
+   featsH:"Your daily assessment engine — you unlock:",
+   feats:["📅 A fresh adaptive test every day","📈 Improvement & growth tracking","🧠 An engine that gets smarter each day","🎯 Your exact weak topics — fixed"],
+   ladder:[["Score 100%","365 days 🏆"],["80%+","180 days"],["60%+","90 days"],["40%+","45 days"],["20%+","30 days"],["Just attempt","14 days"]],
    ladderH:"Earn free access:",
    preparing:"Setting up your challenge — fresh questions, just for you…",
    genErr:"Couldn't start the challenge — please try another exam.",
    submitting:"Scoring your challenge…", timeUp:"⏰ Time's up! Scoring…",
-   earnedH:m=>`🎉 You earned <span class="g">${m} month${m>1?'s':''} FREE</span>!`,
+   earnedH:d=>`🎉 You earned <span class="g">${d} days FREE</span>!`,
    sc:(s,n)=>`You scored <b>${s}/${n}</b>. Register to claim your free access + see your full weak-spot report.`,
    review:"📖 See the answers", email:"you@email.com", claim:"Claim my free access →", or:"or",
    fine:"Free · no card · English or हिंदी", yourAns:"Your answer:", correctAns:"Correct:"},
  hi:{qof:(i,n)=>`सवाल ${i} / ${n}`, tf:["सही","ग़लत"], next:"अगला →", finish:"पूरा करें →",
    hookH:'🏆 <span style="color:var(--gold)">1 साल तक FREE</span> जीतें।',
-   hookP:`एक serious ${NC}-सवाल challenge — easy, medium & hard मिला-जुला। ~5 मिनट। जितना ज़्यादा score, उतने महीने FREE।`,
+   hookP:`एक serious ${NC}-सवाल challenge — easy, medium & hard मिला-जुला। ~5 मिनट। जितना ज़्यादा score, उतने दिन FREE।`,
    forSub:"आपका exam:", start:`Challenge शुरू करें →`,
-   ladder:[["100% score","12 महीने 🏆"],["80%+","9 महीने"],["60%+","6 महीने"],["40%+","4 महीने"],["20%+","2 महीने"],["सिर्फ़ attempt","1 महीना"]],
+   featsH:"आपका daily assessment engine — आपको मिलेगा:",
+   feats:["📅 रोज़ एक नया adaptive टेस्ट","📈 Improvement & growth tracking","🧠 हर दिन smarter होता engine","🎯 आपके कमज़ोर टॉपिक — ठीक"],
+   ladder:[["100% score","365 दिन 🏆"],["80%+","180 दिन"],["60%+","90 दिन"],["40%+","45 दिन"],["20%+","30 दिन"],["सिर्फ़ attempt","14 दिन"]],
    ladderH:"Free access कमाएँ:",
    preparing:"आपका challenge तैयार हो रहा है — नए सवाल, सिर्फ़ आपके लिए…",
    genErr:"Challenge शुरू नहीं हो सका — कोई दूसरा exam चुनें।",
    submitting:"आपका challenge जाँचा जा रहा है…", timeUp:"⏰ समय ख़त्म! जाँच रहे हैं…",
-   earnedH:m=>`🎉 आपने <span class="g">${m} महीने FREE</span> कमाए!`,
+   earnedH:d=>`🎉 आपने <span class="g">${d} दिन FREE</span> कमाए!`,
    sc:(s,n)=>`आपने <b>${s}/${n}</b> किए। Register करके free access + पूरी weak-spot report पाएँ।`,
    review:"📖 जवाब देखें", email:"you@email.com", claim:"मेरी free access क्लेम करें →", or:"या",
    fine:"Free · कोई card नहीं · English या हिंदी", yourAns:"आपका जवाब:", correctAns:"सही:"},
@@ -191,7 +197,7 @@ function result(j){
     return `<div class="rv-q">${badge}<div><b>${T[LANG].correctAns}</b> ${corr}${ex?`<div class="rv-e">${ex}</div>`:''}</div></div>`;
   }).join('');
   const g=el(`<div class="gate">
-    <div class="earn">${T[LANG].earnedH(j.months)}</div>
+    <div class="earn">${T[LANG].earnedH(j.days)}</div>
     <div class="sc">${T[LANG].sc(j.score,j.total)}</div>
     <div class="gbtn" id="gbtn"></div>
     ${GCID?`<div class="orline">${T[LANG].or}</div>`:''}
@@ -233,9 +239,12 @@ function intro(){
   document.getElementById('hsub').textContent = T[LANG].hookH.replace(/<[^>]+>/g,'');
   const opts=EXAMS.map(e=>`<option value="${e.id}" ${e.id===EXAM?'selected':''}>${e.title}</option>`).join('');
   const lad=T[LANG].ladder.map(([a,b])=>`<div class="lr"><span>${a}</span><b>${b}</b></div>`).join('');
+  const fts=T[LANG].feats.map(f=>`<div class="ft">${f}</div>`).join('');
   const card=el(`<div class="qcard">
     <div class="say"><div class="who">ACHARYA</div>${T[LANG].hookH}<br><span style="color:var(--muted);font-size:13px">${T[LANG].hookP}</span></div>
     ${EXAMS.length?`<div class="subrow"><label>${T[LANG].forSub}</label><select id="subsel">${opts}</select></div>`:''}
+    <div class="say" style="margin-top:14px;font-size:12px;color:var(--gold2);font-weight:800">${T[LANG].featsH}</div>
+    <div class="feats">${fts}</div>
     <div class="say" style="margin-top:12px;font-size:12px;color:var(--gold2);font-weight:800">${T[LANG].ladderH}</div>
     <div class="ladder">${lad}</div>
   </div>`);

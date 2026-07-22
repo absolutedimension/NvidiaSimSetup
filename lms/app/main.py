@@ -333,18 +333,18 @@ COMP_SECONDS = 300      # ~5 minutes, exam-style
 
 
 def _earned_days(score: int, total: int) -> int:
-    """Days of free access earned by the competition score. Everyone who ATTEMPTS earns >= 1 month;
-    a perfect score earns a full year. Ladder (score/total): 100%→12mo, ≥80%→9mo, ≥60%→6mo,
-    ≥40%→4mo, ≥20%→2mo, else 1mo."""
+    """DAYS of free access earned by the competition score. Everyone who ATTEMPTS earns >= 14 days;
+    a perfect score earns a full year. Ladder (score/total): 100%→365d, ≥80%→180d, ≥60%→90d,
+    ≥40%→45d, ≥20%→30d, else 14d."""
     if total <= 0:
-        return 30
+        return 14
     pct = score / total
     if pct >= 0.999: return 365
-    if pct >= 0.80:  return 270
-    if pct >= 0.60:  return 180
-    if pct >= 0.40:  return 120
-    if pct >= 0.20:  return 60
-    return 30
+    if pct >= 0.80:  return 180
+    if pct >= 0.60:  return 90
+    if pct >= 0.40:  return 45
+    if pct >= 0.20:  return 30
+    return 14
 
 
 def _sign_earn(days: int) -> str:
