@@ -50,6 +50,8 @@
  .subrow{display:flex;align-items:center;gap:9px;margin-top:14px;font-size:13.5px;color:var(--muted)}
  .subrow label{font-weight:700;flex:0 0 auto}
  .subrow select{flex:1;background:#FBF3EA;border:1.5px solid var(--line);border-radius:10px;padding:10px 11px;font-size:14.5px;font-family:inherit;color:var(--ink);font-weight:600}
+ .waalt{text-align:center;margin-top:14px;font-size:14px;color:var(--muted);background:#EAF7EF;border:1px solid rgba(47,169,104,.28);border-radius:12px;padding:11px}
+ .waalt a{color:#128C7E;font-weight:800;text-decoration:none}
  .feats{display:flex;flex-direction:column;gap:5px;margin-top:6px}
  .feats .ft{font-size:12.8px;color:var(--ink);line-height:1.35}
  .ladder{display:flex;flex-direction:column;gap:5px;margin-top:6px}
@@ -108,7 +110,8 @@ const T = {
    earnedH:d=>`🎉 You earned <span class="g">${d} days FREE</span>!`,
    sc:(s,n)=>`You scored <b>${s}/${n}</b>. Register to claim your free access + see your full weak-spot report.`,
    review:"📖 See the answers", email:"you@email.com", claim:"Claim my free access →", or:"or",
-   fine:"Free · no card · English or हिंदी", yourAns:"Your answer:", correctAns:"Correct:"},
+   fine:"Free · no card · English or हिंदी", yourAns:"Your answer:", correctAns:"Correct:",
+   waAlt:"📱 Prefer WhatsApp?", waLink:"Take the test right in WhatsApp →"},
  hi:{qof:(i,n)=>`सवाल ${i} / ${n}`, tf:["सही","ग़लत"], next:"अगला →", finish:"पूरा करें →",
    hookH:'🏆 <span style="color:var(--gold)">180 दिन तक FREE</span> जीतें।',
    hookP:`एक serious ${NC}-सवाल challenge — easy, medium & hard मिला-जुला। ~5 मिनट। जितना ज़्यादा score, उतने दिन FREE।`,
@@ -123,7 +126,8 @@ const T = {
    earnedH:d=>`🎉 आपने <span class="g">${d} दिन FREE</span> कमाए!`,
    sc:(s,n)=>`आपने <b>${s}/${n}</b> किए। Register करके free access + पूरी weak-spot report पाएँ।`,
    review:"📖 जवाब देखें", email:"you@email.com", claim:"मेरी free access क्लेम करें →", or:"या",
-   fine:"Free · कोई card नहीं · English या हिंदी", yourAns:"आपका जवाब:", correctAns:"सही:"},
+   fine:"Free · कोई card नहीं · English या हिंदी", yourAns:"आपका जवाब:", correctAns:"सही:",
+   waAlt:"📱 WhatsApp पसंद है?", waLink:"WhatsApp में ही टेस्ट दें →"},
 };
 const params=new URLSearchParams(location.search);
 let LANG=params.get('lang')==='hi'?'hi':'en';
@@ -252,6 +256,8 @@ function intro(){
   const sel=card.querySelector('#subsel');
   if(sel) sel.onchange=()=>{ params.set('exam',sel.value); location.search=params.toString(); };
   const b=el(`<button class="btn">${T[LANG].start}</button>`); b.onclick=()=>startComp(); add(b);
+  const wa=`https://wa.me/919135255107?text=${encodeURIComponent('quiz '+(EXAM||''))}`;
+  add(el(`<div class="waalt">${T[LANG].waAlt} <a href="${wa}" target="_blank" rel="noopener">${T[LANG].waLink}</a></div>`));
 }
 intro();
 </script>
