@@ -198,6 +198,94 @@ ssh -i ~/.ssh/gurukul_key dk_trigun@20.219.2.53
 > student may be mid-conversation. Adding a course bank = `scp` only (no restart). Bridge code changes: only
 > in a verified-quiet window. Read-only diagnostics anytime. See [[feedback-gurukul-live-no-disrupt]].
 
+**Acharya's TEACHING BEHAVIOR (the prompt/method) lives in 3 workspace files** — edit these to change
+how Acharya teaches (not the bridge): `~/.openclaw/workspace/IDENTITY.md` (who), `SOUL.md` (how — the
+**8 teaching laws**), `skills/gurukul-tutor/SKILL.md` (method + concept bank + SRS + deep-work session).
+- ⚠️ **The gateway CACHES these at startup** — a `scp` alone does NOT take effect; you MUST
+  `systemctl --user restart openclaw-gateway.service` to load changes. (This is separate from the
+  no-restart rule for course *banks*, which ARE read fresh.)
+- **Safe deploy recipe:** back up on VM → `scp` → confirm quiet (`find ~/.openclaw/students -name '*.json' -mmin -8 | wc -l` == 0) → restart `openclaw-gateway.service` → verify `is-active gateway wa-bridge`.
+- **Services (all systemd `--user`):** `openclaw-gateway.service` (the brain, caches workspace/skills),
+  `wa-bridge.service` (WhatsApp relay), `wa-dashboard.service` (read-only admin dash at :8790 — safe to
+  restart anytime, never touches students), `wa-srs.timer` (daily recall cron), `acharya-tts.service`
+  (:7870 — Azure neural TTS proxy for the web-chat 🔊 read-aloud; Caddy `/chat/tts*`→7870; source in
+  `agentic_cohort/gurukul_tts/`; change voice via TTS_VOICE env; safe to restart — the old browser
+  `speechSynthesis` is now just the fallback).
+- **Version-controlled copy** of all these live files: `agentic_cohort/gurukul_workspace/` (edit repo → scp → restart).
+- **Dhyan focus/deep-understanding upgrade SHIPPED 2026-07-18** (SOUL laws 7-8: prove-it + calibration;
+  mastery gate needs explain+transfer; deep-work session; dashboard exposes `confidently_wrong`). Full
+  context: [[project-dhyan-focus-agent]] · `DHYAN_AGENT_SPEC.md`.
+- **Goal OS SHIPPED 2026-07-19** — the tutor now SETS + CONFIRMS + HOLDS each student's goal (Deepak's own
+  discipline system, productized per-student). `SOUL.md` gained section "THE GOAL YOU HOLD (Goal OS)";
+  `skills/gurukul-tutor/SKILL.md` gained the "🎯 GOAL OS" section (assisted articulation — Acharya *writes*
+  the goal from course+`byoa_goal`+progress, student confirms; stores `goal`/`goal_deadline`/`goal_confirmed`;
+  **retrofit rule** sets it ONCE for existing students who lack it; every session's focused step points at the
+  locked goal). Deployed via the safe recipe (backup `.bak.20260719_132703` → scp → gateway restart). First
+  live case = Kritansh (916396844362, agentic M3); opener sent via `gurukul_announce` template (he was outside
+  the 24h window). ⚠️ Only FULLY-onboarded profiles (name/email) route to the tutor — bare test numbers hit
+  the bridge course-request path, so smoke-test the tutor only with a real onboarded student. Brand/measurement
+  context: `ACHARYA_BRAND_SOUL.md` (discipline = the category), `LEARNING_PROGRESS_MODEL.md` (power-mean p≈0.5
+  real-progress metric). Full context: [[project-dhyan-focus-agent]].
+- **Goal OS v2 — silent-student watcher + demo (2026-07-20)** — retrofit now a MANDATORY first-turn gate (goal
+  set before any lesson resumes). New VM cron `~/goal_os_watch.py` (daily 04:30 UTC `--send`): re-engages
+  `goal_confirmed` students who go silent (goal-anchored msg via `gurukul_announce` template) + writes teacher
+  report `~/.openclaw/gurukul/slipping_report.json`. Gated on `goal_confirmed` (never messages ex-team/stray
+  numbers). Demo: `demo_arjun/demo_neha/demo_rahul` profiles + **viewer page `gurukul.trigunai.com/demo-goalos`**
+  (Caddy static, linked from `/demo`) for Rohan's field pitch. Full context: [[project-dhyan-focus-agent]].
+
+**Gurukul Caddy routes + web-chat VOICE + demo pages (added 2026-07-18).** `gurukul.trigunai.com` is
+Caddy (`/etc/caddy/Caddyfile`, the `gurukul.trigunai.com` block). It routes per-path with a **catch-all
+`handle { reverse_proxy localhost:8788 }` = the bridge** (serves `/chat`, `/chat/api`, `/webhook`). To add
+a page/endpoint: insert a `handle /<path> {…}` BEFORE that catch-all → `sudo caddy validate --config
+/tmp/… --adapter caddyfile` → install → **graceful `sudo systemctl reload caddy`** (never a hard restart;
+backups `Caddyfile.bak.*`). **Never touch the catch-all** or you break the bridge/chat.
+- **Web-chat 🔊 read-aloud = Azure NEURAL TTS** (the old browser `speechSynthesis` was "cheap"; it's now
+  just the fallback). Service `acharya-tts.service` (:7870, systemd --user, reads `AZURE_SPEECH_KEY` from
+  `~/voicebot_wa/wa_voice.env`) → Azure Speech REST → audio/mpeg. Caddy `handle /chat/tts*`→7870.
+  `chat.html` (`~/.openclaw/gurukul/chat.html`, **read fresh per request → scp = live, no restart**)
+  `speak()` fetches `/chat/tts` + plays `Audio()`. **Change the voice** = `TTS_VOICE` env (`hi-IN-SwaraNeural`
+  default · Ananya · Madhur · en-IN). Source + README: `agentic_cohort/gurukul_tts/`.
+- **Patna field-DEMO pages** (Rohan): `/demo` (launcher, 4 subject tap-buttons), `/demo-guide` (full guide +
+  what-to-test + real-student proof), `/demo-journey` (LIVE anonymized real-student proof, regenerated by
+  `~/.openclaw/gurukul/gen_journey.mjs` from a real profile). All = Caddy static → `/var/www/gurukul-demo/
+  {demo,guide,journey}.html`; edit repo `teacher_gtm/demo_launcher/` → scp to that dir → **live instantly**.
+- **Demo course tenants** = 4 tutor concept banks (`neet-biology`/`jee-physics`/`class10-science-math`/
+  `class12-board`; repo `agentic_cohort/gurukul_pipeline/courses/`, VM `~/.openclaw/gurukul/courses/`).
+  Delivery = tokened `/chat?t=<token>` links (in `DEMO_PLAYBOOK.md`); demo profiles `web_demo-*@trigunai.com`
+  pre-seeded past onboarding. Built via the `add-trigunai-course` skill. See [[project-rohan-field-caller]].
+
+---
+
+## 4.5 Acharya ASSESSMENT system (2026-07-22) — served by the bridge/Caddy on the Gurukul VM
+
+**The pitch pivot:** Rohan sells Acharya as an **AI assessment engine** — *"you teach; Acharya tests &
+tracks"* (non-threatening; doubt-solving is commoditised). Money move = **auto-detect weak students +
+one-tap suggested test**. Full context + resume notes: [[project-acharya-assessment-system]].
+
+**Live URLs (all `gurukul.trigunai.com`, behind Caddy → bridge `~/wa_bridge.mjs`):**
+| URL | What | Repo file → VM path | Deploy |
+|---|---|---|---|
+| `/assess?subject=…` | adaptive test, EN/हिं, 5 subjects; diagnosis from real answers + adaptive depth; honest long-answer | `teacher_gtm/assessment_demo/assess.html` → `/var/www/gurukul-demo/` | scp (Caddy `handle /assess`) |
+| `/demo` `/demo-guide` | Rohan launcher + guide (assessment-framed, killer-feature card) | `teacher_gtm/demo_launcher/{demo,guide}.html` → `/var/www/gurukul-demo/` | scp |
+| `/dashboard` | teacher SWOT dashboard (class-at-a-glance + per-student SWOT + trend + "Do it" suggestion). **PREVIEW — not live-wired** | `teacher_gtm/assessment_demo/dashboard.html` → `/var/www/gurukul-demo/` | scp (Caddy `handle /dashboard`) |
+| `/report?t=<token>` | STUDENT "Report & Improvement": **real SWOT from profile** + self-review test that updates mastery. LIVE for Kritansh. "📊 My Report" link in chat header | `agentic_cohort/gurukul_workspace/report.html` → `~/.openclaw/gurukul/report.html` | scp (bridge `GET /report`, reads fresh) |
+| WhatsApp `quiz <subj>` | native tap-button MCQ/TF → score + weak-topics. To +91 91352 55107 | in `bridge.mjs` (`WA_QUIZ` bank) | bridge redeploy |
+
+**Bridge endpoints added to `wa_bridge.mjs`** (repo `agentic_cohort/whatsapp_cloud_bridge/bridge.mjs` ==
+live): `GET /report` (page), `GET /report/api?t=` (SWOT JSON), `POST /report/grade` (single-concept
+mastery update — minimal, never downgrades a solid), plus the **WhatsApp quiz engine**
+(`sendWhatsAppButtons` + `maybeHandleQuiz` + `WA_QUIZ`). Token = same `email|course|exp|hmac(CHAT_SECRET)`
+as `/chat`; profile resolved via `loadIdentity()[email] || sanitizeEmail(email)`. ⚠️ Bridge edits need
+a **quiet-window `systemctl --user restart wa-bridge`** (§4 no-disrupt rule); test writes on a THROWAWAY
+token/number first (never Kritansh's live profile — back it up).
+
+**Honest state (hold in the pitch):** dashboard is a populated PREVIEW (real product = pipe test →
+per-student mastery → class dashboard); WhatsApp = 3-opt MCQ+TF only (button limit, rich widgets
+web-only); question banks are curated demo sets. **Next want:** inline "assessment mode" INSIDE the web
+chat (widgets rendered in `chat.html` via structured payloads — same marker pattern the bridge uses for
+image-gen). To add a subject to `/assess`: edit `SUBJECTS`+`topicMap` in `assess.html`; to a WhatsApp
+quiz: edit `WA_QUIZ` in `bridge.mjs`.
+
 ---
 
 ## 5. Cross-system bridge (shared `BRIDGE_KEY`)
@@ -232,7 +320,21 @@ Offline marketing assets: `NvidiaSimSetup/acharya_pamphlet/` — A4 bilingual sc
 (rendered via headless Chrome `--print-to-pdf`). The repos also have their own `CLAUDE.md`.
 
 ## 8. Current state snapshot (2026-07-01) — live versions + what exists
-- **lms ≈ v50** · **triguai-frontend ≈ v97** (bump from these). SEO note (lms:v50): `seo.py` `/pricing`
+- **lms = v61** · **triguai-frontend = v106** (bump from these).
+- **SEO / AI-SEO refreshed to the Goal-OS / discipline brand 2026-07-20** (lms:v61 `app/seo.py` + `acharya.html`
+  head; triguai-frontend:v106 `landing/index.html` head): llms.txt now leads with "Acharya brings discipline
+  to learning" + a "what makes Acharya different (guru, not a genie)" section (Goal OS · mastery gate ·
+  silent-student catch); 3 new FAQ JSON-LD entries answer the AI-assistant queries ("different from ChatGPT?",
+  "what is Goal OS?", "how does Acharya keep students disciplined?"); EducationalOrganization schema gained a
+  brand description; page titles + meta + OG on both acharya.trigunai.com & trigunai.com carry the new hook.
+  Retired `learn.trigunai.com` refs in seo.py/sameAs → `acharya.trigunai.com`.
+- **Goal-OS / "discipline in learning" branding SHIPPED to all landings 2026-07-20** (soul = `ACHARYA_BRAND_SOUL.md`):
+  acharya.trigunai.com (lms:v60) gained hero badge "guru, not a genie" + a new **"Every answer is free now — the
+  discipline to actually learn isn't"** section (`#goalos`: Goal OS = holds each student's goal + one focused step/day
+  + won't-let-them-fake-it trio); trigunai.com (triguai-frontend:v105) gained a hero discipline line + a Goal-OS line
+  in the teacher band; Rohan's field demo pages (`/demo` + `/demo-guide`, `teacher_gtm/demo_launcher/` → scp to VM
+  `/var/www/gurukul-demo/`, live instantly) gained a "Goal OS — bachche COMPLETE karte हैं" money-move + flagship
+  feature. Honest framing throughout (describes behavior, no results promises — Goal OS is live but unproven). SEO note (lms:v50): `seo.py` `/pricing`
   uses schema.org **`Service`, NOT `Product`** (Product snippets demand `review`/`aggregateRating` we won't
   fabricate — 0 real reviews); teacher offering has its own `Service` JSON-LD + FAQ + `llms.txt` section.
 - **acharya.trigunai.com = canonical** (lms.* + learn.* → 301 acharya). Homepage leads with Acharya.
