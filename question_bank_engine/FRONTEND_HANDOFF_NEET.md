@@ -1,7 +1,8 @@
 # examgen API — Frontend Handoff (NEET: Biology + Physics + Chemistry)
 
-**Status (2026-07-23):** NEET is live on the same API as IIT JEE. All three NEET subjects
-are ingested, tagged against a chapter taxonomy, and verified.
+**Status (2026-07-23):** NEET is live on the same API as IIT JEE — **~33k verified
+questions** across Biology / Physics / Chemistry, tagged, ~99–100% with worked solutions.
+The LMS wiring is already in code (see §4); verify + deploy is the only step left.
 
 > Companion to `FRONTEND_HANDOFF_IIT.md` (JEE Advanced + JEE Main). **Same base URL,
 > same auth, same request/response contract** — only the `exam`/`subject` strings change.
@@ -69,42 +70,61 @@ Example:
 
 ---
 
-## 4. Wiring NEET into the student LMS
+## 4. LMS integration — mostly wired already
 
-Same two-file change as the IIT handoff §6:
+The student LMS (`lms/`, served at `acharya.trigunai.com/exam-prep`) proxies `/examgen`
+server-side so the API key never reaches the browser. **The NEET wiring is already in the
+LMS code** — you do NOT need to re-add it. Verify + deploy is the only step left.
 
-1. `lms/app/examgen.py` → add to `RAG_SUBJECTS`:
-   ```python
-   "neet-biology":   {"label": "NEET Biology",   "exam": "NEET", "subject": "Biology",   "match": [...]},
-   "neet-physics":   {"label": "NEET Physics",   "exam": "NEET", "subject": "Physics",   "match": [...]},
-   "neet-chemistry": {"label": "NEET Chemistry", "exam": "NEET", "subject": "Chemistry", "match": [...]},
-   ```
-2. `lms/app/main.py` → add matching `EXAMS` entries so they appear at `/exam-prep`.
-3. Deploy `lms:vN` (see the `maintain-trigunai-system` skill).
+Already present (confirm, don't re-create):
 
-No API change needed.
+- `lms/app/examgen.py` → `RAG_SUBJECTS` has `neet-biology`, `neet-physics`,
+  `neet-chemistry` (with `exam:"NEET"`, the right `subject`, and title `match` phrases).
+- `lms/app/examgen.py` → `GOALS["neet"]` maps the NEET goal to those three subjects
+  (order: Biology, Physics, Chemistry — Biology is the default).
+- `lms/app/main.py` → `EXAMS` has `{"id":"neet","subject":"neet-biology","title":"NEET",…}`
+  as the first entry, so NEET shows on `/exam-prep`.
+- `EXAMGEN_URL` defaults to `https://gurukul.trigunai.com/examgen` (the always-on VM) and
+  `EXAMGEN_KEY` is the container secret — both already set.
+
+**Status at handoff:** `acharya.trigunai.com/exam-prep` already renders NEET. But
+`lms/app/examgen.py` is untracked in git and `lms/app/main.py` has uncommitted local
+edits — so **before relying on it, confirm the running container actually has this code**
+and commit it. Deploy path is owned by the `maintain-trigunai-system` skill (`lms:vN`).
+
+**Verify checklist (5 min):**
+```bash
+# 1. backend banks are live
+curl -s "https://gurukul.trigunai.com/examgen/health"          # bank_verified ~44k
+curl -sG "https://gurukul.trigunai.com/examgen/chapters" \
+     --data-urlencode "exam=NEET" --data-urlencode "subject=Biology" | head
+# 2. student path end-to-end: log in at acharya.trigunai.com/exam-prep, pick NEET,
+#    start a Biology practice test, confirm questions render (LaTeX + options + solution).
+```
+
+If you build a **custom** NEET UI instead of the LMS flow, call `/examgen` directly per
+§1–§3 (server-side, Bearer key). No backend change is needed for either path.
 
 ---
 
 ## 5. Quality notes (honest)
 
-- **Biology text bank** (~600 of the 832) is NCERT-style recall Q&A, not verbatim past
-  papers. Keys were spot-audited by hand: **25/25 correct**. Good for practice and as RAG
-  exemplars; it is not a substitute for a real past paper.
-- **Image-sourced questions** (NEET 2024/25/26, ~465) are real past-paper questions with
-  official keys. A hand audit of 12 found **11/12 keys correct**; the one failure was a
-  mis-transcribed *option text* from the vision model, not a wrong key.
-  → Treat the occasional garbled option as a known limitation of the image path. The
-  solution pass flags questions where an independent solve disagrees with the official
-  key (`solution_needs_review`), which surfaces most of these.
-- **74 diagram questions** (42 Physics, 21 Chemistry, 11 Biology) carry `needs_figure`
-  and are excluded from automatic solving — they need the figure to answer. They are
-  still valid exemplars and still served.
-- **90 questions carry `solution_needs_review`** (55 Bio / 15 Phy / 20 Chem): an
-  independent solve disagreed with the official key. The stored solution argues toward
-  the **official** answer (students never see the contradicting one), and the row is
-  flagged for human adjudication. No frontend impact.
-- Figures are served from `https://gurukul.trigunai.com/examgen/figures/<id>.png`
-  (previously pointed at the EC2 GPU box, which 404'd whenever that box was off).
+- **Bulk source is `datavorous/entrance-exam-dataset`** (~33k of the NEET rows): real
+  past-paper-style Qs, pre-keyed and pre-solved. The correct answer is cross-checked two
+  independent ways at ingest and disagreements are dropped — **0 disagreements across
+  49,771 rows**. Hand-audited key samples were correct.
+- **Real NEET 2024–26 papers** (~465, image-sourced via vision) carry official keys; a
+  hand audit found 11/12 keys correct — the miss was a mis-transcribed *option text*, not
+  a wrong key. Treat occasional garbled option text as a known image-path limit.
+- **~74 diagram questions** carry `needs_figure` and are excluded from auto-solving (they
+  need the figure to answer). Still valid exemplars, still served.
+- **~90 questions carry `solution_needs_review`** — an independent solve disagreed with
+  the official key. The stored solution argues toward the **official** answer (students
+  never see the contradicting one) and the row is flagged for human adjudication. **No
+  frontend impact.**
+- **LaTeX everywhere** — `stem`, `options[].text`, `solution` contain `$...$` / `\mathrm{}`.
+  Render with KaTeX/MathJax (same as JEE). Figures: inline `figure_svg` if present, else
+  `<img src=figure_url>` (served from `https://gurukul.trigunai.com/examgen/figures/…`).
+- **NEET difficulty is 2–3**, not 3–4. Ask for `"difficulty":"2-3"`.
 
 **Questions / key access:** Deepak (deepak@trigunai.com).
