@@ -13,9 +13,11 @@ are ingested, tagged against a chapter taxonomy, and verified.
 
 | `exam` | `subject` | Chapters | Exemplar Qs | Worked solutions | Source |
 |---|---|---|---|---|---|
-| `NEET` | `Biology` | 36 | 832 | 821 (100% of non-diagram) | NCERT-style text bank + real NEET 2024/25/26 papers |
-| `NEET` | `Physics` | 25 | 129 | 87 (100% of non-diagram) | real NEET 2024/25/26 papers |
-| `NEET` | `Chemistry` | 25 | 104 | 83 (100% of non-diagram) | real NEET 2024/25/26 papers |
+| `NEET` | `Biology` | 38 | **13,961** | 100% of non-diagram | datavorous entrance-exam bank + NCERT text + real NEET 2024–26 papers |
+| `NEET` | `Physics` | 32 | **5,343** | 100% of non-diagram | datavorous entrance-exam bank + real NEET 2024–26 papers |
+| `NEET` | `Chemistry` | 35 | **13,507** | ~99% of non-diagram | datavorous entrance-exam bank + real NEET 2024–26 papers |
+
+> Scaled up 2026-07-23 from ~1k to ~33k via `datavorous/entrance-exam-dataset` (pre-tagged, pre-keyed, pre-solved). Every chapter now has exemplars.
 
 **Exact strings matter** — `"NEET"` and `"Biology"` / `"Physics"` / `"Chemistry"` verbatim.
 Note NEET uses **`Biology`**, not the paper's `Botany`/`Zoology` split — those are folded
@@ -25,15 +27,11 @@ Difficulty band: NEET content sits at **2–3** (JEE Advanced is 3–4). Ask for
 
 ---
 
-## 2. The one NEET-specific behaviour: borrowed exemplars
+## 2. Chapters
 
-NEET Physics and Chemistry have only ~130 and ~104 real questions spread over ~25
-chapters, which is too thin to retrieve 3 same-chapter exemplars for every topic. NEET
-Phy/Chem sit on the **same syllabus as JEE Main**, so when a chapter has nothing of its
-own, the generator borrows JEE Main exemplars for that chapter and still authors at the
-NEET difficulty you asked for.
-
-This shows up in `GET /chapters`:
+NEET now has its own deep bank per subject with NEET-specific chapter names (derived from
+the datavorous source), so **there is no exemplar borrowing anymore** — every chapter
+generates from real NEET questions.
 
 ```
 GET /chapters?exam=NEET&subject=Physics
@@ -41,18 +39,18 @@ GET /chapters?exam=NEET&subject=Physics
 ```json
 {
   "exam": "NEET", "subject": "Physics",
-  "exemplar_fallback_exam": "JEE Main",
+  "exemplar_fallback_exam": null,
   "chapters": [
-    {"chapter": "Current Electricity", "concepts": [...],
-     "exemplars_banked": 174,      // what the generator can actually draw on
-     "exemplars_own": 12}          // real NEET questions specifically
+    {"chapter": "Laws of Motion", "concepts": [],
+     "exemplars_banked": 295, "exemplars_own": 295}
   ]
 }
 ```
 
-- **Keep filtering on `exemplars_banked > 0`** — unchanged behaviour, nothing to migrate.
-- `exemplars_own` is informational (e.g. to badge "from real NEET papers").
-- `exemplar_fallback_exam` is `null` for Biology and for all JEE banks.
+- Filter on `exemplars_banked > 0` (all NEET chapters now satisfy this).
+- `exemplars_own` == `exemplars_banked` for NEET (no borrowing).
+- NEET chapter names are NEET's own (e.g. "Laws of Motion", "p Block Elements (Group 15,
+  16, 17 & 18)") — do **not** assume they equal the JEE chapter names.
 
 ---
 
