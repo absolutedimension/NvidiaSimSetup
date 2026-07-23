@@ -11,11 +11,11 @@ are ingested, tagged against a chapter taxonomy, and verified.
 
 ## 1. What's available
 
-| `exam` | `subject` | Chapters | Exemplar Qs | Source |
-|---|---|---|---|---|
-| `NEET` | `Biology` | 36 | 832 | NCERT-style text bank + real NEET 2024/25/26 papers |
-| `NEET` | `Physics` | 25 | 129 | real NEET 2024/25/26 papers |
-| `NEET` | `Chemistry` | 25 | 104 | real NEET 2024/25/26 papers |
+| `exam` | `subject` | Chapters | Exemplar Qs | Worked solutions | Source |
+|---|---|---|---|---|---|
+| `NEET` | `Biology` | 36 | 832 | 821 (100% of non-diagram) | NCERT-style text bank + real NEET 2024/25/26 papers |
+| `NEET` | `Physics` | 25 | 129 | 87 (100% of non-diagram) | real NEET 2024/25/26 papers |
+| `NEET` | `Chemistry` | 25 | 104 | 83 (100% of non-diagram) | real NEET 2024/25/26 papers |
 
 **Exact strings matter** — `"NEET"` and `"Biology"` / `"Physics"` / `"Chemistry"` verbatim.
 Note NEET uses **`Biology`**, not the paper's `Botany`/`Zoology` split — those are folded
@@ -99,8 +99,13 @@ No API change needed.
   → Treat the occasional garbled option as a known limitation of the image path. The
   solution pass flags questions where an independent solve disagrees with the official
   key (`solution_needs_review`), which surfaces most of these.
-- **~74 diagram questions** (42 Physics, 21 Chemistry, 11 Biology) carry `needs_figure`
-  and are excluded from automatic solving — they need the figure to answer.
+- **74 diagram questions** (42 Physics, 21 Chemistry, 11 Biology) carry `needs_figure`
+  and are excluded from automatic solving — they need the figure to answer. They are
+  still valid exemplars and still served.
+- **90 questions carry `solution_needs_review`** (55 Bio / 15 Phy / 20 Chem): an
+  independent solve disagreed with the official key. The stored solution argues toward
+  the **official** answer (students never see the contradicting one), and the row is
+  flagged for human adjudication. No frontend impact.
 - Figures are served from `https://gurukul.trigunai.com/examgen/figures/<id>.png`
   (previously pointed at the EC2 GPU box, which 404'd whenever that box was off).
 
