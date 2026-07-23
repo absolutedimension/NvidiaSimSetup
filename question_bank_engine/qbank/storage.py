@@ -6,7 +6,7 @@ import os
 import sqlite3
 
 from . import config
-from .models import Question
+from .models import Question, unescape_newlines
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS questions (
@@ -125,6 +125,9 @@ class Store:
         return [self._row_to_q(cur, r) for r in cur.fetchall()]
 
     def set_solution(self, qid, solution, extra_issue=None):
+        # central choke point for LLM-authored solutions -> normalise escaped newlines
+        # here rather than in each caller (see models.unescape_newlines)
+        solution = unescape_newlines(solution)
         row = self.con.execute("SELECT validation_issues FROM questions WHERE id=?", (qid,)).fetchone()
         issues = json.loads(row[0] or "[]") if row and row[0] else []
         if extra_issue and extra_issue not in issues:
@@ -207,6 +210,52 @@ class Store:
             d["options"] = json.loads(d["options"] or "[]")
             out.append(d)
         return out
+
+    def pool_questions(self, exam=None, subject=None, chapter=None, qtype=None,
+                       dmin=None, dmax=None, exclude_ids=None, limit=10) -> list[dict]:
+        """Serve PRE-GENERATED pool questions (generated=1, verified=1) INSTANTLY — no LLM.
+        This is the frontend's hot path: draw from the shared pool, passing exclude_ids
+        (already-seen) so a student never repeats. Randomised so the shared pool spreads
+        evenly across students. Live /generate is only for power users who drain a cell."""
+        where = ["verified=1", "COALESCE(generated,0)=1", "duplicate_of IS NULL"]
+        args = []
+        for col, val in (("exam", exam), ("subject", subject), ("chapter", chapter), ("qtype", qtype)):
+            if val:
+                where.append(f"{col}=?")
+                args.append(val)
+        if dmin is not None:
+            where.append("difficulty>=?")
+            args.append(dmin)
+        if dmax is not None:
+            where.append("difficulty<=?")
+            args.append(dmax)
+        if exclude_ids:
+            where.append("id NOT IN (%s)" % ",".join("?" * len(exclude_ids)))
+            args.extend(exclude_ids)
+        sql = ("SELECT * FROM questions WHERE " + " AND ".join(where) +
+               " ORDER BY RANDOM() LIMIT %d" % int(limit))
+        cur = self.con.execute(sql, args)
+        cols = [d[0] for d in cur.description]
+        out = []
+        for r in cur.fetchall():
+            d = dict(zip(cols, r))
+            d["options"] = json.loads(d["options"] or "[]")
+            out.append(d)
+        return out
+
+    def pool_stats(self, exam=None, subject=None) -> dict:
+        """Coverage of the pre-generated pool keyed by (chapter, difficulty, qtype).
+        Powers batch-fill (skip cells already at target — makes the fill RESUMABLE) and
+        an ops view of pool depth per topic."""
+        where = ["verified=1", "COALESCE(generated,0)=1", "duplicate_of IS NULL", "chapter IS NOT NULL"]
+        args = []
+        for col, val in (("exam", exam), ("subject", subject)):
+            if val:
+                where.append(f"{col}=?")
+                args.append(val)
+        sql = ("SELECT chapter, difficulty, qtype, COUNT(*) FROM questions WHERE " +
+               " AND ".join(where) + " GROUP BY chapter, difficulty, qtype")
+        return {(ch, d, qt): n for ch, d, qt, n in self.con.execute(sql, args).fetchall()}
 
     def sample(self, n: int = 3, verified_only: bool = True) -> list[dict]:
         q = "SELECT * FROM questions WHERE duplicate_of IS NULL"
