@@ -193,5 +193,22 @@ TAXONOMIES = {
 }
 
 
+# Where to borrow RAG exemplars when a chapter is thin in its own exam.
+# NEET Physics/Chemistry sit on the same syllabus as JEE Main but we hold only ~140
+# real NEET questions per subject, spread over ~30 chapters — far too few to retrieve
+# 3 same-chapter exemplars. JEE Main questions of the requested DIFFICULTY are a
+# faithful stand-in; the generator authors at the requested difficulty regardless.
+# Only ever used AFTER the question's own exam has been tried.
+EXEMPLAR_FALLBACK = {
+    ("NEET", "Physics"): ("JEE Main", "Physics"),
+    ("NEET", "Chemistry"): ("JEE Main", "Chemistry"),
+}
+
+
 def get_taxonomy(exam: str, subject: str):
     return TAXONOMIES.get((exam, subject)) or TAXONOMIES.get(("JEE Advanced", "Physics"))
+
+
+def exemplar_fallback(exam: str, subject: str):
+    """(exam, subject) to borrow exemplars from, or None."""
+    return EXEMPLAR_FALLBACK.get((exam, subject))

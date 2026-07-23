@@ -297,6 +297,50 @@ def image_id_prefix(exam: str, subject: str) -> str:
     return slug
 
 
+_LABEL_CORE = re.compile(r"[A-Za-z0-9]+")
+
+
+def letterize_options(opts: list[dict], answer: str) -> tuple[list[dict], str]:
+    """Normalise numerically-labelled options + index-style answer keys to A/B/C/D.
+
+    NEET papers print options as (1)(2)(3)(4) and Reja1 gives the key as an option
+    INDEX ("1"), whereas JEE Advanced papers use (A)(B)(C)(D). The bank standardises
+    on letters — the validator, `answers_match` and the frontend all assume A-D — so
+    a numeric paper is normalised here rather than special-cased everywhere else.
+
+    Three shapes are handled:
+      labels 1,2,3,4  / (1)(2)(3)(4)  -> relabelled A-D, answer mapped by value
+      labels A,B,C,D with a numeric key -> answer mapped POSITIONALLY (1 -> first label)
+      already-lettered labels + letter key -> untouched
+
+    Positional mapping is deliberately limited to 4-option questions, the NEET/JEE
+    standard: a 5+-option extraction is a vision mis-parse, and guessing its key
+    would put a wrong answer into the bank."""
+    if not opts:
+        return opts, answer
+    cores = []
+    for o in opts:
+        m = _LABEL_CORE.search(str(o.get("label", "")))
+        cores.append(m.group(0) if m else "")
+    ans = (answer or "").strip().upper()
+
+    if all(c.isdigit() and 1 <= int(c) <= 26 for c in cores if c) and any(cores):
+        mapping = {c: chr(64 + int(c)) for c in cores if c}   # "1" -> "A"
+        for o, c in zip(opts, cores):
+            o["label"] = mapping.get(c, o.get("label"))
+        # single digits only: a multi-answer key is "13" = options 1 and 3
+        return opts, "".join(mapping.get(t, t) for t in re.findall(r"\d|[A-Z]", ans))
+
+    if ans.isdigit() and len(opts) == 4 and all(c.isalpha() for c in cores if c):
+        # letters already, but the key is a 1-based index into the printed order
+        for o, c in zip(opts, cores):
+            o["label"] = c.upper()
+        idx = int(ans)
+        if 1 <= idx <= len(opts):
+            return opts, str(opts[idx - 1]["label"])
+    return opts, answer
+
+
 def from_image_row(row: dict, llm, exam: str = "JEE Advanced", subject: str = "Physics") -> Question | None:
     """Download the question image, structure it with the vision LLM, attach the
     metadata answer. Returns None if the model can't read it."""
@@ -319,6 +363,8 @@ def from_image_row(row: dict, llm, exam: str = "JEE Advanced", subject: str = "P
     except Exception:
         alist = [str(row["correct_answer"])]
     answer = "".join(str(x) for x in alist) if need else str(alist[0])
+    if need:
+        opts, answer = letterize_options(opts, answer)
     h = content_hash(stem)
     year = row.get("exam_year")
     qid = f"{image_id_prefix(exam, subject)}_{year}_{row.get('question_id')}"
