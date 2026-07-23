@@ -53,6 +53,14 @@ def main():
     gf.add_argument("--limit", type=int, default=None)
     gf.add_argument("--llm-validate", action="store_true", help="also run the LLM well-formedness check (slow)")
 
+    dv = sub.add_parser("ingest-datavorous", help="ingest the datavorous entrance-exam bank (pre-tagged+keyed+solved HTML)")
+    dv.add_argument("--dataset", default="datavorous/entrance-exam-dataset")
+    dv.add_argument("--exam", default="NEET", help="exam tag to keep (NEET / JEE Main / JEE Advanced)")
+    dv.add_argument("--subjects", default=None, help="comma-separated subjects to keep (default: all)")
+    dv.add_argument("--difficulty", type=int, default=2)
+    dv.add_argument("--limit", type=int, default=None)
+    dv.add_argument("--llm-validate", action="store_true")
+
     nb = sub.add_parser("ingest-neet-bio", help="ingest a text NEET Biology bank (sweatSmile schema)")
     nb.add_argument("--dataset", default="sweatSmile/neet-biology-qa")
     nb.add_argument("--subject-name", default="Biology")
@@ -107,6 +115,19 @@ def main():
     q.add_argument("--difficulty", default=None, help="e.g. '3' or '3-4'")
     q.add_argument("-n", type=int, default=10)
 
+    bg = sub.add_parser("batch-generate", help="PRE-FILL the shared question pool across a subject's taxonomy (frontend serves instantly)")
+    bg.add_argument("--exam", default="JEE Advanced")
+    bg.add_argument("--subject", default="Physics")
+    bg.add_argument("--per-cell", type=int, default=15, help="target Qs per chapter×difficulty×type cell")
+    bg.add_argument("--difficulties", default="2-3,3-4", help="comma-separated difficulty bands")
+    bg.add_argument("--types", default="MCQ_single", help="comma-separated qtypes")
+    bg.add_argument("--chapter", default=None, help="limit to one chapter")
+    bg.add_argument("--exemplars", type=int, default=3)
+
+    pst = sub.add_parser("pool-stats", help="coverage of the pre-generated shared pool")
+    pst.add_argument("--exam", default="JEE Advanced")
+    pst.add_argument("--subject", default="Physics")
+
     g = sub.add_parser("generate", help="RAG-generate a NEW test from tagged exemplars")
     g.add_argument("--exam", default="JEE Advanced")
     g.add_argument("--subject", default="Physics")
@@ -152,6 +173,15 @@ def main():
                                     subject=args.subject, year=args.year)
             _print_report(r)
 
+    elif args.cmd == "ingest-datavorous":
+        subs = set(s.strip() for s in args.subjects.split(",")) if args.subjects else None
+        r = pipeline.ingest_datavorous(
+            dataset=args.dataset, want_exam=args.exam, subjects=subs,
+            limit=args.limit, default_difficulty=args.difficulty,
+            llm_validate=args.llm_validate)
+        print(f"  skipped_wrong_subject: {r.get('skipped_wrong_subject')}")
+        _print_report(r)
+
     elif args.cmd == "ingest-neet-bio":
         r = pipeline.ingest_neet_bio(
             dataset=args.dataset, subject_name=args.subject_name, exam=args.exam,
@@ -195,6 +225,28 @@ def main():
 
     elif args.cmd == "stats":
         print(json.dumps(Store().stats(), indent=2))
+
+    elif args.cmd == "batch-generate":
+        def _prog(ch, band, qt, g, need, total):
+            tag = "full, skip" if need == 0 else f"+{g}/{need} new"
+            print(f"  [{ch[:34]:34s} | {band} | {qt}]  {tag}  (pool now {total})")
+        r = pipeline.batch_generate(
+            exam=args.exam, subject=args.subject, per_cell=args.per_cell,
+            difficulties=tuple(x.strip() for x in args.difficulties.split(",")),
+            qtypes=tuple(x.strip() for x in args.types.split(",")),
+            chapters=[args.chapter] if args.chapter else None,
+            k_exemplars=args.exemplars, on_progress=_prog)
+        print(json.dumps(r, indent=2))
+
+    elif args.cmd == "pool-stats":
+        st = Store().pool_stats(args.exam, args.subject)
+        by_ch = {}
+        for (ch, d, qt), n in st.items():
+            by_ch[ch] = by_ch.get(ch, 0) + n
+        total = sum(by_ch.values())
+        print(f"Pre-generated pool · {args.exam} {args.subject}: {total} questions across {len(by_ch)} chapters")
+        for ch, n in sorted(by_ch.items(), key=lambda x: -x[1]):
+            print(f"  {n:5d}  {ch}")
 
     elif args.cmd == "tag":
         from qbank import tagger

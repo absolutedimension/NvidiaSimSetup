@@ -70,6 +70,46 @@ def ingest_grafite(dataset="ruh-ai/grafite-jee-mains-qna-no-img", subject="physi
     return rep
 
 
+def ingest_datavorous(dataset="datavorous/entrance-exam-dataset", want_exam="NEET",
+                      subjects=None, limit=None, default_difficulty=2, llm_validate=False,
+                      store: Store | None = None, llm: LLM | None = None) -> dict:
+    """Ingest the datavorous entrance-exam bank — pre-tagged (subject/chapter/exam),
+    pre-keyed (li.correct, cross-checked vs correct_option) and pre-solved (answer),
+    all in HTML. No LLM needed. `want_exam` picks the exam by tag; `subjects` (a set of
+    canonical subject names) optionally narrows further. Rule-based validation by
+    default — the keys are already cross-checked in the extractor."""
+    from datasets import load_dataset
+    store = store or Store()
+    llm = llm if llm is not None else LLM()
+
+    ds = load_dataset(dataset, split="train")
+    questions, seen_bad_exam, seen_bad_subj = [], 0, 0
+    for r in ds:
+        if want_exam not in (r.get("tags") or ""):
+            seen_bad_exam += 1
+            continue
+        q = extractor.from_datavorous_row(r, want_exam=want_exam,
+                                          default_difficulty=default_difficulty)
+        if not q:
+            continue
+        if subjects and q.subject not in subjects:
+            seen_bad_subj += 1
+            continue
+        questions.append(q)
+        if limit and len(questions) >= limit:
+            break
+
+    cleaner.clean(questions)
+    cleaner.flag_duplicates(questions, existing_hashes=store.existing_hashes())
+    validator.validate(questions, llm=(llm if llm_validate else None))
+    for q in questions:
+        store.upsert(q)
+
+    rep = _report(questions, llm)
+    rep["skipped_wrong_subject"] = seen_bad_subj
+    return rep
+
+
 def ingest_neet_bio(dataset="sweatSmile/neet-biology-qa", exam="NEET", subject_name="Biology",
                     limit=None, default_difficulty=2, llm_validate=False,
                     store: Store | None = None, llm: LLM | None = None) -> dict:
@@ -289,6 +329,64 @@ def backfill_image_figures(dataset="Reja1/jee-neet-benchmark", exam_prefix="JEE"
         except Exception:
             pass
     return {"dataset_rows": len(rows), "figures_saved": saved, "not_in_bank": missing}
+
+
+def batch_generate(exam="JEE Advanced", subject="Physics", per_cell=15,
+                   difficulties=("2-3", "3-4"), qtypes=("MCQ_single",),
+                   chapters=None, k_exemplars=3, store: Store | None = None,
+                   llm: LLM | None = None, on_progress=None) -> dict:
+    """PRE-FILL the shared question pool across a subject's taxonomy so the frontend can
+    serve questions INSTANTLY (no LLM in the hot path). For each
+    (chapter × difficulty-band × qtype) cell it tops up to `per_cell` verified questions,
+    SKIPPING cells already at target — so the fill is resumable and idempotent. The
+    generated Qs persist automatically (generator.generate_test upserts them with
+    generated=1, verified=1); `pool_questions` then serves them. Run it in the background
+    per subject; re-run any time to top up drained cells.
+
+    This is the batch engine behind the 'shared pool + live top-up for power users' model:
+    everyone reads the pool; live /generate only fires when an active student drains a cell.
+    """
+    from . import generator, syllabus
+    store = store or Store()
+    llm = llm if llm is not None else LLM()
+    if not llm.ok:
+        return {"error": f"LLM required for generation: {llm.last_error}"}
+
+    tax = syllabus.get_taxonomy(exam, subject)
+    chapter_list = chapters or list(tax.keys())
+    have = store.pool_stats(exam, subject)          # (chapter, difficulty, qtype) -> count
+    made = cells = skipped = failed = 0
+
+    for ch in chapter_list:
+        for band in difficulties:
+            lo, hi = int(band.split("-")[0]), int(band.split("-")[-1])
+            for qt in qtypes:
+                cells += 1
+                existing = sum(v for (c, d, t), v in have.items()
+                               if c == ch and t == qt and d is not None and lo <= d <= hi)
+                need = per_cell - existing
+                if need <= 0:
+                    skipped += 1
+                    if on_progress:
+                        on_progress(ch, band, qt, 0, 0, existing)
+                    continue
+                spec = {"exam": exam, "subject": subject, "chapter": ch, "concept": None,
+                        "qtype": qt, "dmin": lo, "dmax": hi, "require_figure": False}
+                try:
+                    rep = generator.generate_test(store, spec, llm=llm, count=need,
+                                                  k_exemplars=k_exemplars)
+                except Exception:
+                    failed += 1
+                    continue
+                g = rep.get("generated", 0)
+                made += g
+                if on_progress:
+                    on_progress(ch, band, qt, g, need, existing + g)
+
+    return {"exam": exam, "subject": subject, "per_cell_target": per_cell,
+            "cells": cells, "cells_skipped_full": skipped, "cells_failed": failed,
+            "questions_generated": made,
+            "pool_total_now": sum(store.pool_stats(exam, subject).values())}
 
 
 def _report(questions, llm) -> dict:

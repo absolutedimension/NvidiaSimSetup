@@ -164,6 +164,131 @@ def from_grafite_row(row, exam="JEE Main", subject="Physics", default_difficulty
     )
 
 
+# --- datavorous entrance-exam path (pre-tagged + pre-solved HTML) ------------
+# Source: datavorous/entrance-exam-dataset — ~97k rows (NEET + JEE Main/Advanced).
+# tags = "['Subject','Chapter','Exam', ...]" (Python-literal string). options is HTML
+# <ul><li class="correct"?> with option-label + option-data. The correct answer is
+# marked TWO independent ways: the li.correct class AND correct_option's <span
+# class="option-value">TEXT</span>. We use the li.correct class for the letter, and
+# cross-check it against the value text — a built-in free key validator. `answer`
+# holds a worked solution. No LLM needed (tagged + keyed + solved already).
+_DV_LI = re.compile(r'<li class="(correct|)"[^>]*>(.*?)</li>', re.S | re.I)
+_DV_LABEL = re.compile(r'option-label">\s*([A-Z])\s*<', re.S)
+_DV_DATA = re.compile(r'option-data">(.*?)</span>', re.S)
+_DV_SVG = re.compile(r"<svg.*?</svg>", re.S | re.I)
+_DV_VALUE = re.compile(r'option-value">(.*?)</span>', re.S)
+
+
+def _dv_text(t):
+    """datavorous fields are HTML (sub/sup/div/svg checkmark) beside $...$ LaTeX."""
+    import html as _html
+    t = _DV_SVG.sub(" ", t or "")
+    t = _HTML_SUB.sub(r"_{\1}", t)
+    t = _HTML_SUP.sub(r"^{\1}", t)
+    t = _HTML_IMG.sub(" ", t)
+    t = re.sub(r"<[^>]+>", " ", t)
+    t = _html.unescape(t)
+    return re.sub(r"[ \t]+", " ", t).replace("\r", " ").strip()
+
+
+def _dv_tags(raw):
+    """"['Biology','Environmental Issues','NEET']" -> ['Biology','Environmental Issues','NEET']."""
+    import ast
+    try:
+        v = ast.literal_eval(raw or "[]")
+        return [str(x).strip() for x in v] if isinstance(v, (list, tuple)) else []
+    except Exception:
+        return []
+
+
+# datavorous Biology chapter names are the same NCERT chapters as our hand-authored
+# NEET_BIOLOGY taxonomy, but with punctuation/plural variants. Canonicalise to the
+# clean taxonomy names so /chapters + retrieval match. (Physics/Chemistry adopt
+# datavorous's names as canonical instead — they had no clean taxonomy of their own.)
+_DV_BIO_CHAPTER = {
+    "Human Health and Diseases": "Human Health and Disease",
+    "Biotechnology - Principles and Processes": "Biotechnology: Principles and Processes",
+    "Cell - The Unit of Life": "Cell: The Unit of Life",
+    "Biodiversity and its Conservation": "Biodiversity and Conservation",
+    "Plant - Growth and Development": "Plant Growth and Development",
+    "Biotechnology and Its Applications": "Biotechnology and its Applications",
+    "Biomolecules (B)": "Biomolecules",
+}
+
+
+def from_datavorous_row(row, want_exam="NEET", default_difficulty=2):
+    """datavorous row -> Question, or None if unusable / wrong exam.
+
+    Cross-checks the li.correct letter against the correct_option value text; if they
+    disagree the row is dropped (a mislabelled key would poison the bank). `want_exam`
+    filters by the exam tag ('NEET' / 'JEE Main' / 'JEE Advanced')."""
+    tags = _dv_tags(row.get("tags"))
+    if not tags:
+        return None
+    tagset = {t for t in tags}
+    if want_exam not in tagset:
+        return None
+    subject = tags[0]
+    # datavorous chapters are already clean prose ("Human Health and Diseases"), NOT
+    # slugs — use them verbatim so the DB names match, and the derived taxonomy lines
+    # up exactly with /chapters. (Running _humanize_slug here capitalised "and"/"of".)
+    chapter = tags[1].strip() if len(tags) > 1 and tags[1].strip() else None
+    # normalise subject to our canonical names
+    subject = {"Maths": "Mathematics", "Math": "Mathematics"}.get(subject, subject)
+    if subject == "Biology" and chapter in _DV_BIO_CHAPTER:
+        chapter = _DV_BIO_CHAPTER[chapter]
+
+    stem = _dv_text(row.get("question"))
+    if len(stem) < 12:
+        return None
+
+    opts, correct_lab = [], None
+    for m in _DV_LI.finditer(row.get("options") or ""):
+        cls, body = m.group(1), m.group(2)
+        lm = _DV_LABEL.search(body)
+        if not lm:
+            continue
+        lab = lm.group(1)
+        dm = _DV_DATA.search(body)
+        data = _dv_text(dm.group(1)) if dm else ""
+        opts.append({"label": lab, "text": data})
+        if cls.lower() == "correct":
+            correct_lab = lab
+
+    # integer/numeric rows: options == "None", answer lives in correct_option value
+    cv = _DV_VALUE.search(row.get("correct_option") or "")
+    cval = _dv_text(cv.group(1)) if cv else None
+
+    if len(opts) >= 2:
+        qtype = "MCQ_single"
+        if correct_lab is None:
+            return None
+        # cross-check the li.correct letter against the value text
+        if cval:
+            matches = [o["label"] for o in opts if o["text"] and o["text"] == cval]
+            if len(matches) == 1 and matches[0] != correct_lab:
+                return None                 # markers disagree -> untrustworthy key, drop
+        answer = correct_lab
+    else:
+        # no option list -> integer/numeric; the value text IS the answer
+        if not cval:
+            return None
+        qtype = "integer" if re.fullmatch(r"-?\d+", cval) else "numeric"
+        opts, answer = [], cval
+
+    solution = _dv_text(row.get("answer"))
+    diff = default_difficulty + (1 if qtype in ("integer", "numeric") else 0)
+    h = content_hash(stem)
+    src_exam = want_exam
+    prefix = {"NEET": "neet", "JEE Main": "jee_main", "JEE Advanced": "jee_adv"}.get(src_exam, "dv")
+    sub_slug = re.sub(r"[^a-z]", "", subject.lower())[:4]
+    return Question(
+        id=f"{prefix}_{sub_slug}_dv_{h[:12]}", exam=src_exam, subject=subject, stem=stem,
+        qtype=qtype, options=opts, correct_answer=answer, solution=solution,
+        chapter=chapter, difficulty=diff, source=f"{src_exam} (datavorous)", hash=h,
+    )
+
+
 # --- NEET Biology text path (sweatSmile/neet-biology-qa) ---------------------
 # Rows are {question, subject, choices:[4 strings], answer:"A"|"1"} — no chapter, no
 # solution, so tagging + solving happen downstream. Options arrive UNLABELLED (a plain

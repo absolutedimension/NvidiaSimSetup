@@ -174,6 +174,8 @@ from .jee_main_physics import JEE_MAIN_PHYSICS
 from .jee_main_chemistry import JEE_MAIN_CHEMISTRY
 from .jee_main_maths import JEE_MAIN_MATHS
 from .neet_biology import NEET_BIOLOGY
+from .neet_physics import NEET_PHYSICS
+from .neet_chemistry import NEET_CHEMISTRY
 
 # Registry so other exams/subjects slot in with the same interface.
 TAXONOMIES = {
@@ -185,24 +187,21 @@ TAXONOMIES = {
     # questions, same topics) — reuse the grafite-derived taxonomies for tagging.
     ("JEE Advanced", "Chemistry"): JEE_MAIN_CHEMISTRY,
     ("JEE Advanced", "Mathematics"): JEE_MAIN_MATHS,
-    # NEET: Physics/Chemistry are (an easier slice of) the same syllabus as JEE Main,
-    # so they reuse those chapter taxonomies. Biology is NEET-only — NCERT chapters.
-    ("NEET", "Physics"): JEE_MAIN_PHYSICS,
-    ("NEET", "Chemistry"): JEE_MAIN_CHEMISTRY,
+    # NEET: all three subjects now have their own chapter taxonomies derived from the
+    # datavorous NEET bank (the dominant source, ~40k Qs). NEET's chapter vocabulary
+    # is NEET-specific — it does NOT match JEE Main's — so it must not reuse them.
+    ("NEET", "Physics"): NEET_PHYSICS,
+    ("NEET", "Chemistry"): NEET_CHEMISTRY,
     ("NEET", "Biology"): NEET_BIOLOGY,
 }
 
 
-# Where to borrow RAG exemplars when a chapter is thin in its own exam.
-# NEET Physics/Chemistry sit on the same syllabus as JEE Main but we hold only ~140
-# real NEET questions per subject, spread over ~30 chapters — far too few to retrieve
-# 3 same-chapter exemplars. JEE Main questions of the requested DIFFICULTY are a
-# faithful stand-in; the generator authors at the requested difficulty regardless.
-# Only ever used AFTER the question's own exam has been tried.
-EXEMPLAR_FALLBACK = {
-    ("NEET", "Physics"): ("JEE Main", "Physics"),
-    ("NEET", "Chemistry"): ("JEE Main", "Chemistry"),
-}
+# Where to borrow RAG exemplars when a chapter is thin in its own exam. NEET Physics/
+# Chemistry USED to borrow from JEE Main (when we held only ~130 real NEET Qs each),
+# but the datavorous ingest gave NEET its own deep bank (~5k Phy, ~13k Chem) under
+# NEET-specific chapter names that do NOT match JEE Main's — so borrowing is now both
+# unnecessary and wrong. Left empty; re-add an entry only for a genuinely thin subject.
+EXEMPLAR_FALLBACK = {}
 
 
 def get_taxonomy(exam: str, subject: str):

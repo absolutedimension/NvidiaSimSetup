@@ -1,0 +1,42 @@
+"""NEET Chemistry taxonomy — derived from the datavorous entrance-exam
+bank (the dominant NEET source). Chapter names are datavorous's own, so the
+ingested questions match /chapters exactly. Keyword signatures are minimal
+because these questions arrive pre-tagged; the chapter LIST is the point."""
+
+NEET_CHEMISTRY = {
+    "p Block Elements (Group 15, 16, 17 & 18)": {"keywords": ['block', 'elements', 'group'], "concepts": {}},
+    "Chemical Bonding and Molecular Structure": {"keywords": ['chemical', 'bonding', 'molecular', 'structure'], "concepts": {}},
+    "General Organic Chemistry": {"keywords": ['general', 'organic', 'chemistry'], "concepts": {}},
+    "d and f Block Elements": {"keywords": ['block', 'elements'], "concepts": {}},
+    "Biomolecules": {"keywords": ['biomolecules'], "concepts": {}},
+    "Hydrocarbons": {"keywords": ['hydrocarbons'], "concepts": {}},
+    "Coordination Compounds": {"keywords": ['coordination', 'compounds'], "concepts": {}},
+    "s Block Elements": {"keywords": ['block', 'elements'], "concepts": {}},
+    "Solid State": {"keywords": ['solid', 'state'], "concepts": {}},
+    "Structure of Atom": {"keywords": ['structure', 'atom'], "concepts": {}},
+    "Alcohols Phenols and Ethers": {"keywords": ['alcohols', 'phenols', 'ethers'], "concepts": {}},
+    "Ionic Equilibrium": {"keywords": ['ionic', 'equilibrium'], "concepts": {}},
+    "Surface Chemistry": {"keywords": ['surface', 'chemistry'], "concepts": {}},
+    "p Block Elements (Group 13 & 14)": {"keywords": ['block', 'elements', 'group'], "concepts": {}},
+    "Chemical Kinetics": {"keywords": ['chemical', 'kinetics'], "concepts": {}},
+    "Thermodynamics (C)": {"keywords": ['thermodynamics'], "concepts": {}},
+    "Electrochemistry": {"keywords": ['electrochemistry'], "concepts": {}},
+    "Haloalkanes and Haloarenes": {"keywords": ['haloalkanes', 'haloarenes'], "concepts": {}},
+    "Solutions": {"keywords": ['solutions'], "concepts": {}},
+    "Redox Reactions": {"keywords": ['redox', 'reactions'], "concepts": {}},
+    "Classification of Elements and Periodicity in Properties": {"keywords": ['classification', 'elements', 'periodicity'], "concepts": {}},
+    "Chemistry in Everyday Life": {"keywords": ['chemistry', 'everyday', 'life'], "concepts": {}},
+    "States of Matter": {"keywords": ['states', 'matter'], "concepts": {}},
+    "Hydrogen": {"keywords": ['hydrogen'], "concepts": {}},
+    "Some Basic Concepts of Chemistry": {"keywords": ['some', 'basic', 'concepts', 'chemistry'], "concepts": {}},
+    "Polymers": {"keywords": ['polymers'], "concepts": {}},
+    "Amines": {"keywords": ['amines'], "concepts": {}},
+    "Environmental Chemistry": {"keywords": ['environmental', 'chemistry'], "concepts": {}},
+    "General Principles and Processes of Isolation of Metals": {"keywords": ['general', 'processes', 'isolation', 'metals'], "concepts": {}},
+    "Aldehydes and Ketones": {"keywords": ['aldehydes', 'ketones'], "concepts": {}},
+    "Aldehydes, Ketones and Carboxylic Acids": {"keywords": ['aldehydes', 'ketones', 'carboxylic', 'acids'], "concepts": {}},
+    "Chemical Equilibrium": {"keywords": ['chemical', 'equilibrium'], "concepts": {}},
+    "Carboxylic Acid Derivatives": {"keywords": ['carboxylic', 'acid', 'derivatives'], "concepts": {}},
+    "Compounds Containing Nitrogen": {"keywords": ['compounds', 'containing', 'nitrogen'], "concepts": {}},
+    "Chemical Kinetics And Nuclear Chemistry": {"keywords": ['chemical', 'kinetics', 'nuclear', 'chemistry'], "concepts": {}},
+}
