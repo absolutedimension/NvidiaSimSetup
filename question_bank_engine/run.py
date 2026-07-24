@@ -60,6 +60,7 @@ def main():
     dv.add_argument("--difficulty", type=int, default=2)
     dv.add_argument("--limit", type=int, default=None)
     dv.add_argument("--llm-validate", action="store_true")
+    dv.add_argument("--figures-only", action="store_true", help="ingest ONLY <img> diagram rows (add diagram Qs to an exam whose text bank already exists)")
 
     nb = sub.add_parser("ingest-neet-bio", help="ingest a text NEET Biology bank (sweatSmile schema)")
     nb.add_argument("--dataset", default="sweatSmile/neet-biology-qa")
@@ -178,7 +179,7 @@ def main():
         r = pipeline.ingest_datavorous(
             dataset=args.dataset, want_exam=args.exam, subjects=subs,
             limit=args.limit, default_difficulty=args.difficulty,
-            llm_validate=args.llm_validate)
+            llm_validate=args.llm_validate, figures_only=args.figures_only)
         print(f"  skipped_wrong_subject: {r.get('skipped_wrong_subject')}")
         _print_report(r)
 

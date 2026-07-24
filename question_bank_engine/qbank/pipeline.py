@@ -72,21 +72,31 @@ def ingest_grafite(dataset="ruh-ai/grafite-jee-mains-qna-no-img", subject="physi
 
 def ingest_datavorous(dataset="datavorous/entrance-exam-dataset", want_exam="NEET",
                       subjects=None, limit=None, default_difficulty=2, llm_validate=False,
+                      figures_only=False,
                       store: Store | None = None, llm: LLM | None = None) -> dict:
     """Ingest the datavorous entrance-exam bank — pre-tagged (subject/chapter/exam),
     pre-keyed (li.correct, cross-checked vs correct_option) and pre-solved (answer),
     all in HTML. No LLM needed. `want_exam` picks the exam by tag; `subjects` (a set of
     canonical subject names) optionally narrows further. Rule-based validation by
-    default — the keys are already cross-checked in the extractor."""
+    default — the keys are already cross-checked in the extractor.
+
+    `figures_only=True` ingests ONLY rows carrying an <img> diagram — used to ADD the
+    diagram questions of an exam whose text bank already exists from another source
+    (e.g. JEE Main from grafite), without re-importing/duplicating its text questions.
+    figure recovery (recover_datavorous_figures.py) then attaches the actual images."""
     from datasets import load_dataset
     store = store or Store()
     llm = llm if llm is not None else LLM()
 
     ds = load_dataset(dataset, split="train")
-    questions, seen_bad_exam, seen_bad_subj = [], 0, 0
+    questions, seen_bad_exam, seen_bad_subj, seen_no_fig = [], 0, 0, 0
     for r in ds:
         if want_exam not in (r.get("tags") or ""):
             seen_bad_exam += 1
+            continue
+        if figures_only and not extractor._HTML_IMG.search(
+                (r.get("question") or "") + " " + (r.get("options") or "")):
+            seen_no_fig += 1
             continue
         q = extractor.from_datavorous_row(r, want_exam=want_exam,
                                           default_difficulty=default_difficulty)
@@ -95,6 +105,11 @@ def ingest_datavorous(dataset="datavorous/entrance-exam-dataset", want_exam="NEE
         if subjects and q.subject not in subjects:
             seen_bad_subj += 1
             continue
+        if figures_only:
+            # datavorous chapter names only partly match an exam that already has a
+            # taxonomy from another source (JEE), so clear the chapter → these land as
+            # UNTAGGED and `run.py tag` LLM-classifies them into the existing taxonomy.
+            q.chapter = None
         questions.append(q)
         if limit and len(questions) >= limit:
             break
