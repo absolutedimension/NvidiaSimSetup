@@ -74,6 +74,17 @@ class Settings:
     # authorized JS origin = https://acharya.trigunai.com). Empty = One Tap hidden, email path only.
     GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "").strip()
 
+    # ---- RAG question generator (the /examgen API — authentic exam-paper style) ----
+    # High-quality, past-paper-imitating question generation, currently IIT-JEE Physics only.
+    # The LMS proxies it server-side (key never reaches the browser). Empty URL = RAG off →
+    # every subject falls back to the in-LMS generator (assess_gen).
+    # MIGRATED 2026-07-23 to the ALWAYS-ON Gurukul VM so the exam generator survives the EC2 GPU
+    # box being stopped. The default MUST stay on gurukul — the old rtx.trigunai.com host lives on
+    # the EC2 box that gets powered off, so falling back to it would silently break generation.
+    EXAMGEN_URL = os.getenv("EXAMGEN_URL", "https://gurukul.trigunai.com/examgen").strip().rstrip("/")
+    EXAMGEN_KEY = os.getenv("EXAMGEN_KEY", "").strip()
+    EXAMGEN_TIMEOUT = int(os.getenv("EXAMGEN_TIMEOUT", "230"))
+
     @property
     def is_sqlite(self) -> bool:
         return self.DATABASE_URL.startswith("sqlite")

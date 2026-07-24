@@ -12,9 +12,9 @@
   .dash-top .spacer { flex:1; }
   .btn-lessons { display:inline-flex; align-items:center; gap:9px; border:none; cursor:pointer;
     background:linear-gradient(135deg,var(--gold),var(--gold-deep)); color:var(--bg); font-weight:700; font-size:15px; font-family:inherit;
-    padding:13px 22px; border-radius:14px; box-shadow:0 8px 22px rgba(212,162,58,.32);
+    padding:13px 22px; border-radius:14px; box-shadow:0 8px 22px rgba(194, 89, 31,.32);
     transition:transform .15s, box-shadow .15s, background .15s; }
-  .btn-lessons:hover { background:linear-gradient(135deg,var(--gold-bright),var(--gold)); transform:translateY(-2px); box-shadow:0 12px 28px rgba(212,162,58,.42); }
+  .btn-lessons:hover { background:linear-gradient(135deg,var(--gold-bright),var(--gold)); transform:translateY(-2px); box-shadow:0 12px 28px rgba(194, 89, 31,.42); }
   .btn-lessons .pip { background:var(--bg); color:var(--gold-bright); font-size:11px; font-weight:700;
     border-radius:99px; padding:1px 8px; }
 
@@ -22,8 +22,8 @@
   .live-upsell { display:block; margin:0 0 16px; border-radius:16px; padding:1.6px;
     background:linear-gradient(115deg,var(--gold-deep),var(--gold),var(--gold-bright),var(--sanskrit),var(--gold),var(--gold-deep));
     background-size:260% 260%; animation:ach-flow 10s ease-in-out infinite;
-    box-shadow:0 8px 24px rgba(212,162,58,.18); transition:transform .15s, box-shadow .15s; }
-  .live-upsell:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(212,162,58,.28); }
+    box-shadow:0 8px 24px rgba(194, 89, 31,.18); transition:transform .15s, box-shadow .15s; }
+  .live-upsell:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(194, 89, 31,.28); }
   .lu-inner { display:flex; align-items:center; gap:14px; flex-wrap:wrap;
     background:var(--surface); border-radius:14.6px; padding:13px 16px; }
   .lu-text { flex:1; min-width:170px; }
@@ -31,7 +31,7 @@
   .lu-sub { font-size:13px; color:var(--muted); margin-top:3px; line-height:1.5; }
   .lu-cta { display:inline-flex; align-items:center; gap:8px; white-space:nowrap;
     background:linear-gradient(135deg,var(--gold),var(--gold-deep)); color:var(--bg); font-weight:700; font-size:14px;
-    padding:11px 18px; border-radius:12px; box-shadow:0 6px 16px rgba(212,162,58,.35); }
+    padding:11px 18px; border-radius:12px; box-shadow:0 6px 16px rgba(194, 89, 31,.35); }
 
   /* ---- Acharya hero with a living, flowing "shader" border ---- */
   .acharya-hero { position:relative; padding:2.5px; border-radius:22px;
@@ -44,7 +44,7 @@
   .acharya-inner { border-radius:19.5px; overflow:hidden; background:var(--surface); }
   .acharya-head { display:flex; align-items:center; gap:11px; padding:14px 20px;
     background:linear-gradient(120deg,var(--surface-2),#221d12); color:var(--gold-bright); border-bottom:1px solid var(--line); }
-  .acharya-head .lamp { font-size:22px; }
+  .acharya-head .lamp { width:30px; height:30px; object-fit:contain; border-radius:8px; background:#221b12; padding:3px; box-sizing:border-box; flex:0 0 auto; }
   .acharya-head .who { font-weight:700; font-size:16px; letter-spacing:.01em; font-family:var(--serif); color:var(--gold-bright); }
   .acharya-head .sub { font-size:12.5px; color:var(--muted); }
   .acharya-head .online { margin-left:auto; font-size:12px; display:flex; align-items:center; gap:6px; color:var(--green-dk); }
@@ -68,7 +68,7 @@
 
   /* lesson buttons → gold accent */
   .drawer-body .btn.lesson { background:linear-gradient(135deg,var(--gold),var(--gold-deep)); color:var(--bg); border:none; font-weight:600;
-    box-shadow:0 4px 12px rgba(212,162,58,.30); }
+    box-shadow:0 4px 12px rgba(194, 89, 31,.30); }
   .drawer-body .btn.lesson:hover { background:linear-gradient(135deg,var(--gold-bright),var(--gold)); }
   .drawer-body .btn.lesson.done { background:var(--green-bg); color:var(--green-dk); border:1px solid var(--green); box-shadow:none; }
 
@@ -135,7 +135,7 @@
 <div class="acharya-hero">
   <div class="acharya-inner">
     <div class="acharya-head">
-      <span class="lamp">🪔</span>
+      <img class="lamp" src="/static/brand/trigunai-mark.png" alt="Acharya" />
       <div>
         <div class="who">Acharya</div>
         <div class="sub">Your personal AI tutor · {{ course_title(student.course) }}</div>

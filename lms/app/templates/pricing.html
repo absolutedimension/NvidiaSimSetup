@@ -16,52 +16,52 @@
 <script type="application/ld+json">{{ jsonld|safe }}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="/static/brand/favicon-32.png" />
 <link rel="stylesheet" href="/static/app.css" />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <style>
-  body{background:#0E0E14;color:#EDE7D6;font-family:'Inter',system-ui,-apple-system,sans-serif;
-       background-image:radial-gradient(900px 480px at 50% -120px,rgba(212,162,58,.10),transparent 70%);}
+  body{background:#FDF6EC;color:#EDE7D6;font-family:'Figtree',system-ui,-apple-system,sans-serif;
+       background-image:radial-gradient(900px 480px at 50% -120px,rgba(194, 89, 31,.10),transparent 70%);}
   .wrap{max-width:920px;margin:0 auto;padding:32px 20px 64px;}
   .top{display:flex;align-items:center;gap:10px;margin-bottom:28px;}
   .top img{height:30px;}
   .top strong{color:#EDE7D6;}
   .top .sp{flex:1;}
   .top a{color:#9b8f72;text-decoration:none;font-size:14px;}
-  .top a:hover{color:#E8C66B;}
+  .top a:hover{color:#C2591F;}
   .hero{text-align:center;padding:18px 0 8px;}
-  .hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:46px;line-height:1.1;
+  .hero h1{font-family:'Bricolage Grotesque',Georgia,serif;font-weight:700;font-size:46px;line-height:1.1;
            margin:0 0 12px;letter-spacing:-.01em;color:#EDE7D6;}
   .hero p{font-size:18px;color:#9b8f72;margin:0 auto;max-width:620px;}
-  .hero p b{color:#E8C66B;}
-  .card{margin:34px auto 0;max-width:440px;background:#15151f;border:1px solid rgba(212,162,58,.45);border-radius:16px;
-        box-shadow:0 16px 40px rgba(0,0,0,.45),0 0 0 1px rgba(232,198,107,.12),0 0 50px rgba(212,162,58,.12);
+  .hero p b{color:#C2591F;}
+  .card{margin:34px auto 0;max-width:440px;background:#FFFFFF;border:1px solid rgba(194, 89, 31,.45);border-radius:16px;
+        box-shadow:0 16px 40px rgba(0,0,0,.45),0 0 0 1px rgba(232,198,107,.12),0 0 50px rgba(194, 89, 31,.12);
         padding:30px 28px;text-align:center;}
-  .price{font-family:'Cormorant Garamond',Georgia,serif;font-size:58px;font-weight:700;letter-spacing:-.02em;color:#E8C66B;}
-  .price small{font-family:'Inter',sans-serif;font-size:17px;color:#9b8f72;font-weight:500;}
+  .price{font-family:'Bricolage Grotesque',Georgia,serif;font-size:58px;font-weight:700;letter-spacing:-.02em;color:#C2591F;}
+  .price small{font-family:'Figtree',sans-serif;font-size:17px;color:#9b8f72;font-weight:500;}
   .trial{display:inline-block;margin:10px 0 4px;background:rgba(95,174,126,.13);color:#5fae7e;font-weight:600;
          font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid rgba(95,174,126,.3);}
   ul.feat{list-style:none;padding:0;margin:20px 0 8px;text-align:left;}
   ul.feat li{padding:7px 0 7px 28px;position:relative;color:#EDE7D6;font-size:15px;}
   ul.feat li:before{content:"✓";position:absolute;left:0;color:#5fae7e;font-weight:700;}
   .cta{display:block;width:100%;border:0;border-radius:999px;
-       background:linear-gradient(180deg,#f0d486,#d4a23a);color:#1a1505;
+       background:linear-gradient(180deg,#D4703A,#A8481A);color:#FFFFFF;
        font-size:17px;font-weight:600;padding:15px;margin-top:18px;cursor:pointer;text-decoration:none;}
-  .cta:hover{background:linear-gradient(180deg,#f0d486,#e8c66b);}
+  .cta:hover{background:linear-gradient(180deg,#D4703A,#C2591F);}
   .cta.busy{opacity:.6;pointer-events:none;}
-  .cta.ghost{background:transparent;color:#EDE7D6;border:1px solid rgba(212,162,58,.45);}
-  .cta.ghost:hover{background:rgba(212,162,58,.08);color:#E8C66B;}
+  .cta.ghost{background:transparent;color:#EDE7D6;border:1px solid rgba(194, 89, 31,.45);}
+  .cta.ghost:hover{background:rgba(194, 89, 31,.08);color:#C2591F;}
   .orsep{display:flex;align-items:center;gap:12px;color:#7e745c;font-size:12.5px;margin:14px 0 12px;}
-  .orsep:before,.orsep:after{content:"";flex:1;height:1px;background:rgba(255,255,255,.07);}
+  .orsep:before,.orsep:after{content:"";flex:1;height:1px;background:rgba(60, 44, 30,.07);}
   .fine{color:#9b8f72;font-size:12.5px;margin-top:14px;line-height:1.5;}
-  .fine b{color:#E8C66B;}
+  .fine b{color:#C2591F;}
   .courses{margin:42px auto 0;max-width:720px;}
   .courses h3{text-align:center;font-size:15px;color:#7e745c;font-weight:600;text-transform:uppercase;
               letter-spacing:.05em;margin-bottom:14px;}
   .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;}
-  .cgrid div{background:#1a1a24;border:1px solid rgba(212,162,58,.16);border-radius:12px;padding:12px 14px;font-size:14px;color:#EDE7D6;}
+  .cgrid div{background:#FBF3E8;border:1px solid rgba(194, 89, 31,.16);border-radius:12px;padding:12px 14px;font-size:14px;color:#EDE7D6;}
   .err{background:rgba(224,144,127,.12);color:#e0907f;border:1px solid rgba(224,144,127,.35);border-radius:12px;padding:10px 14px;
        margin:16px auto 0;max-width:440px;font-size:14px;display:none;}
-  .note{background:rgba(212,162,58,.10);border:1px solid rgba(212,162,58,.28);color:#E8C66B;border-radius:12px;padding:10px 14px;
+  .note{background:rgba(194, 89, 31,.10);border:1px solid rgba(194, 89, 31,.28);color:#C2591F;border-radius:12px;padding:10px 14px;
         margin:16px auto 0;max-width:440px;font-size:13.5px;}
 </style>
 </head>

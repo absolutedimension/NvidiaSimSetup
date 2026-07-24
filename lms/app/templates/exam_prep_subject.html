@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex" />
+<title>{{ topic.title }} — build a test · Acharya</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+<style>
+ :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;
+   --card:#fff;--good:#1f8b52;--goodbg:#E9F6EE;--cream:#FAF5EC;--green:#2FA968;
+   --serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ html,body{min-height:100%}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 60%,#F7E0C8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;display:flex;justify-content:center}
+ .wrap{width:100%;max-width:600px;min-height:100dvh;display:flex;flex-direction:column}
+ header{display:flex;align-items:center;gap:10px;padding:12px 16px;background:linear-gradient(120deg,#E8934A,#C2591F);color:#fff;position:sticky;top:0;z-index:3}
+ header .ava{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:17px}
+ header .tt{flex:1;min-width:0}header .t{font-family:var(--serif);font-weight:800;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header .s{font-size:11.5px;color:rgba(255,255,255,.9)}
+ header a.back{color:rgba(255,255,255,.9);font-size:13px;font-weight:700;text-decoration:none;background:rgba(0,0,0,.14);padding:6px 11px;border-radius:9px;white-space:nowrap}
+ main{flex:1;padding:16px 16px 120px}
+ .lead{font-size:13.5px;color:var(--muted);margin:2px 2px 16px;line-height:1.5}
+ .lead b{color:var(--ink)}
+ .fullbar{display:flex;align-items:center;gap:11px;background:var(--card);border:1.5px solid var(--gold2);border-radius:14px;padding:13px 15px;margin-bottom:14px;cursor:pointer}
+ .fullbar .m{flex:1}.fullbar .m .nm{font-weight:800;font-size:15px}.fullbar .m .k{font-size:11.5px;color:var(--faint);margin-top:2px}
+ .chap{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:6px 6px 10px;margin-bottom:11px;box-shadow:0 2px 8px rgba(120,60,20,.05)}
+ .chap-h{display:flex;align-items:center;gap:10px;padding:10px 10px 8px}
+ .chap-h .m{flex:1}.chap-h .nm{font-family:var(--serif);font-weight:800;font-size:15.5px}
+ .chap-h .k{font-size:11px;color:var(--faint);margin-top:1px}
+ .chap-h .all{font-size:11.5px;font-weight:800;color:var(--gold2);background:var(--cream);border:none;border-radius:8px;padding:6px 10px;cursor:pointer;font-family:inherit}
+ .concepts{display:flex;flex-wrap:wrap;gap:8px;padding:2px 10px 4px}
+ .cc{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:9px 12px;font-size:13.5px;cursor:pointer;user-select:none;transition:.12s}
+ .cc:hover{border-color:var(--gold)}
+ .cc.on{border-color:var(--gold2);background:#FFF3E6;color:var(--gold2);font-weight:700}
+ .cc .bx{width:16px;height:16px;border-radius:5px;border:1.5px solid var(--faint);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff}
+ .cc.on .bx{background:var(--gold2);border-color:var(--gold2)}
+ .opts{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px;margin:6px 0 2px}
+ .opts .row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+ .opts .row:last-child{margin-bottom:0}
+ .opts .lbl{font-size:12.5px;font-weight:800;color:var(--gold2);width:78px;flex:0 0 auto}
+ .pill{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer;color:var(--ink);font-family:inherit}
+ .pill.on{border-color:var(--gold2);background:#FFF3E6;color:var(--gold2)}
+ .bar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+      background:linear-gradient(180deg,rgba(247,224,200,0),#F7E0C8 40%)}
+ .bar .inner{width:100%;max-width:600px}
+ .go{width:100%;background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:14px;padding:16px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 10px 26px rgba(168,72,26,.28)}
+ .go:disabled{opacity:.5;cursor:default;box-shadow:none}
+ .note{text-align:center;font-size:11.5px;color:var(--faint);margin-top:7px}
+ .prog{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:0 2px 12px;font-size:12.5px;color:var(--muted)}
+ .prog .pc{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:6px 11px;font-weight:700}
+ .suggest{display:flex;align-items:center;gap:11px;background:#FFF7EE;border:1.5px solid var(--gold);border-radius:13px;padding:12px 14px;margin:0 0 14px}
+ .suggest .m{flex:1;font-size:13.5px;line-height:1.4}.suggest .m b{color:var(--gold2)}
+ .suggest button{flex:0 0 auto;background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:10px;padding:9px 14px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit}
+ .cc .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;margin-left:1px}
+ .cc .dot.weak{background:#C23B22}.cc .dot.ok{background:#E0972F}.cc .dot.strong{background:var(--green)}
+ /* coming soon */
+ .soon{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 20px;text-align:center;box-shadow:0 4px 14px rgba(120,60,20,.06);margin-top:8px}
+ .soon .ic{font-size:40px;margin-bottom:10px}
+ .soon h2{font-family:var(--serif);font-weight:800;font-size:21px;margin-bottom:8px}
+ .soon p{color:var(--muted);font-size:14.5px;line-height:1.55;margin-bottom:8px}
+ .soon .ok{display:inline-block;background:var(--goodbg);color:var(--good);font-weight:700;font-size:13px;border-radius:10px;padding:9px 14px;margin:8px 0 4px}
+ .soon a.quick{display:inline-block;margin-top:16px;color:var(--gold2);font-weight:800;font-size:14.5px;text-decoration:none;border:1.5px solid var(--line);border-radius:12px;padding:12px 20px}
+ .soon a.quick:hover{border-color:var(--gold2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="ava">🧪</div>
+    <div class="tt"><div class="t">{{ topic.title }}</div><div class="s">{% if available %}{{ subject_label }} · build your test{% else %}Setting up{% endif %}</div></div>
+    <a class="back" href="/exam-prep/dashboard">← Home</a>
+  </header>
+  <main>
+
+  {% if available %}
+    <div class="lead">Pick <b>one or more subtopics</b> — or the whole subject — and Acharya writes a fresh paper in the <b>real {{ subject_label }} style</b>, new questions every time.</div>
+
+    {% if attempts %}<div class="prog"><span class="pc">📊 {{ attempts }} test{{ '' if attempts == 1 else 's' }} taken</span><span>your mastery shows on each subtopic ↓</span></div>{% endif %}
+    {% if suggest %}<div class="suggest"><div class="m">🎯 Acharya suggests: practise <b>{{ suggest }}</b> — it's your weakest so far.</div><button type="button" id="suggestbtn" data-concept="{{ suggest }}">Practise it →</button></div>{% endif %}
+
+    <div class="fullbar" id="fullbar">
+      <span class="cc" style="pointer-events:none"><span class="bx" id="fullbx"></span></span>
+      <div class="m"><div class="nm">Full subject test</div><div class="k">a mix from every chapter below</div></div>
+    </div>
+
+    {% for c in chapters %}
+      <div class="chap" data-chapter="{{ c.chapter }}">
+        <div class="chap-h">
+          <div class="m"><div class="nm">{{ c.chapter }}</div><div class="k">{{ c.concepts|length }} subtopics · {{ c.exemplars_banked }} past-paper styles</div></div>
+          <button type="button" class="all" data-chapter="{{ c.chapter }}">Select all</button>
+        </div>
+        <div class="concepts">
+          {% for concept in c.concepts %}
+            <span class="cc" data-chapter="{{ c.chapter }}" data-concept="{{ concept }}"><span class="bx"></span>{{ concept }}{% if mastery and mastery.get(concept) is not none %}<span class="dot {{ 'weak' if mastery[concept] < 0.5 else 'ok' if mastery[concept] < 0.75 else 'strong' }}" title="mastery {{ (mastery[concept]*100)|int }}%"></span>{% endif %}</span>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="opts">
+      <div class="row"><span class="lbl">Difficulty</span>
+        <span class="pill" data-diff="{{ ladder.easy }}">Medium</span>
+        <span class="pill on" data-diff="{{ ladder.mix }}">Mix</span>
+        <span class="pill" data-diff="{{ ladder.hard }}">Hard</span>
+      </div>
+      <div class="row"><span class="lbl">Questions</span>
+        <span class="pill on" data-n="5">5</span>
+        <span class="pill" data-n="10">10</span>
+      </div>
+      {# Force-figures ("require_figure") is HIDDEN: on gpt-5.5 it regularly exceeds the request
+         timeout. Diagrams still appear naturally whenever a generated question needs one. #}
+    </div>
+  {% else %}
+    <div class="soon">
+      <div class="ic">🛠️</div>
+      <h2>Your {{ topic.title }} paper is being set up</h2>
+      <p>Acharya builds each subject on a bank of real past-paper questions so every test feels authentic. <b>{{ topic.title }}</b> isn't in the bank yet.</p>
+      {% if just_requested %}<div class="ok">✅ Request submitted — we're setting it up. You'll get it soon.</div>{% else %}<div class="ok">✅ Already requested — it's in the queue.</div>{% endif %}
+      <p style="font-size:13px;color:var(--faint)">Right now only <b>IIT JEE Physics</b> has the full past-paper engine. More subjects are being added.</p>
+      <a class="quick" href="{{ quick_href }}">Take a quick AI test meanwhile →</a>
+    </div>
+  {% endif %}
+  </main>
+</div>
+
+{% if available %}
+<div class="bar"><div class="inner">
+  <button class="go" id="go" disabled>Select a topic to start</button>
+  <div class="note">Fresh questions are written on the spot by GPT-5 — a test takes ~1–2 minutes to prepare. Pick a few different subtopics for more variety.</div>
+</div></div>
+
+<script>
+const SUBJECT = {{ subject_id|tojson }};
+// default diff = whichever pill is pre-selected (the exam's "mix" band: NEET 2-3, JEE 3-4)
+const state = {diff:(document.querySelector('.pill.on[data-diff]')||{dataset:{diff:"3-4"}}).dataset.diff, n:5, fig:"0"};
+function selectedCCs(){ return Array.from(document.querySelectorAll('.cc.on')); }
+function refresh(){
+  const sel = selectedCCs();
+  const go = document.getElementById('go');
+  // full checkbox reflects "all concepts selected"
+  const all = document.querySelectorAll('.cc[data-concept]');
+  const allOn = all.length && sel.length===all.length;
+  document.getElementById('fullbx').textContent = allOn ? '✓' : '';
+  document.getElementById('fullbar').querySelector('.cc').classList.toggle('on', allOn);
+  if(sel.length){ go.disabled=false; go.textContent = `Create test · ${sel.length} topic${sel.length>1?'s':''} →`; }
+  else { go.disabled=true; go.textContent='Select a topic to start'; }
+}
+document.querySelectorAll('.cc[data-concept]').forEach(cc=>{
+  cc.onclick=()=>{ cc.classList.toggle('on'); refresh(); };
+});
+document.querySelectorAll('.all').forEach(btn=>{
+  btn.onclick=()=>{ const ch=btn.dataset.chapter;
+    const ccs=document.querySelectorAll(`.cc[data-chapter="${CSS.escape(ch)}"][data-concept]`);
+    const anyoff=Array.from(ccs).some(c=>!c.classList.contains('on'));
+    ccs.forEach(c=>c.classList.toggle('on', anyoff)); refresh(); };
+});
+document.getElementById('fullbar').onclick=()=>{
+  const all=document.querySelectorAll('.cc[data-concept]');
+  const anyoff=Array.from(all).some(c=>!c.classList.contains('on'));
+  all.forEach(c=>c.classList.toggle('on', anyoff)); refresh();
+};
+document.querySelectorAll('.pill[data-diff]').forEach(p=>p.onclick=()=>{
+  document.querySelectorAll('.pill[data-diff]').forEach(x=>x.classList.remove('on'));
+  p.classList.add('on'); state.diff=p.dataset.diff; });
+document.querySelectorAll('.pill[data-n]').forEach(p=>p.onclick=()=>{
+  document.querySelectorAll('.pill[data-n]').forEach(x=>x.classList.remove('on'));
+  p.classList.add('on'); state.n=parseInt(p.dataset.n,10); });
+document.querySelectorAll('.pill[data-fig]').forEach(p=>p.onclick=()=>{
+  document.querySelectorAll('.pill[data-fig]').forEach(x=>x.classList.remove('on'));
+  p.classList.add('on'); state.fig=p.dataset.fig; });
+const sb=document.getElementById('suggestbtn');
+if(sb){ sb.onclick=()=>{ const c=Array.from(document.querySelectorAll('.cc[data-concept]')).find(x=>x.dataset.concept===sb.dataset.concept);
+  if(c){ if(!c.classList.contains('on'))c.classList.add('on'); c.scrollIntoView({behavior:'smooth',block:'center'}); refresh(); } }; }
+document.getElementById('go').onclick=()=>{
+  const sel = selectedCCs().map(cc=>`${cc.dataset.chapter}::${cc.dataset.concept}`).join('|');
+  if(!sel) return;
+  const title = selectedCCs().length===document.querySelectorAll('.cc[data-concept]').length
+      ? {{ subject_label|tojson }} : selectedCCs().map(c=>c.dataset.concept).slice(0,3).join(', ');
+  const u = `/exam-prep/test?src=examgen&subject=${encodeURIComponent(SUBJECT)}&sel=${encodeURIComponent(sel)}&diff=${encodeURIComponent(state.diff)}&n=${state.n}&fig=${state.fig}&title=${encodeURIComponent(title)}`;
+  location.href = u;
+};
+refresh();
+</script>
+{% endif %}
+</body>
+</html>

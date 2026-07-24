@@ -13,6 +13,7 @@
   gtag('js', new Date());
   gtag('config', 'AW-18339354528');
 </script>
+{% if google_client_id %}<script src="https://accounts.google.com/gsi/client" async defer></script>{% endif %}
 <title>Acharya — free AI practice tests that find your weak topics · JEE, NEET & boards</title>
 <meta name="description" content="Acharya gives you short adaptive practice tests for JEE, NEET, and Class 10 & 12 boards — in English or हिंदी. It doesn't just score you: it finds your exact weak topics from your answers and tells you what to revise next. Free to start, 14-day trial, then ₹199/month." />
 <link rel="canonical" href="https://acharya.trigunai.com/exam-prep" />
@@ -73,11 +74,39 @@
   .exam b{font-size:14px;font-weight:700}
   .exam small{font-size:10.5px;color:var(--faint);line-height:1.2}
   .exam:has(input:checked){border-color:var(--gold-deep);background:#FFF3E6;box-shadow:0 0 0 2px rgba(194,89,31,.16)}
-  .exam.more{cursor:pointer;opacity:.9;justify-content:center;border-style:dashed}
-  .exam.more:hover{opacity:1;border-color:var(--gold)}
-  .qinput{width:100%;background:#FBF3EA;border:1.5px dashed var(--line);border-radius:12px;color:var(--ink);
-     font-family:var(--sans);font-size:15px;padding:12px 15px;margin-bottom:12px}
-  .qinput:focus{outline:none;border-style:solid;border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(194,89,31,.13)}
+  /* coming-soon exams: visible (shows the roadmap) but not selectable */
+  .exam.soon{cursor:not-allowed;opacity:.62;background:#F6EEE4;border-style:dashed}
+  .exam.soon:hover{border-color:var(--line)}
+  .exam .badge{position:absolute;top:6px;right:6px;font-size:8.5px;font-weight:800;letter-spacing:.04em;
+     text-transform:uppercase;color:#A8481A;background:#FBE7D3;border-radius:6px;padding:2px 5px}
+  .exam .live{position:absolute;top:6px;right:6px;font-size:8.5px;font-weight:800;letter-spacing:.04em;
+     text-transform:uppercase;color:#1f8b52;background:#E4F5EC;border-radius:6px;padding:2px 5px}
+  /* prominent secondary paths: WhatsApp + web login */
+  .oralt{max-width:660px;margin:16px auto 0;display:flex;align-items:center;gap:12px;color:var(--faint);font-size:12px;
+     letter-spacing:.14em;text-transform:uppercase}
+  .oralt::before,.oralt::after{content:"";flex:1;height:1px;background:var(--line)}
+  .paths{max-width:660px;margin:12px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .path{display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--line);border-radius:15px;
+     padding:14px 16px;text-decoration:none;transition:.14s}
+  .path:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(120,60,20,.10)}
+  .path .pico{font-size:22px;flex:0 0 auto}
+  .path .pm{min-width:0}
+  .path .pt{font-weight:800;font-size:14.5px;color:var(--ink)}
+  .path .ps{font-size:12px;color:var(--muted);margin-top:1px}
+  .path.wa{border-color:rgba(47,169,104,.45);background:#EFF9F2}
+  .path.wa:hover{border-color:var(--green)}
+  .path.wa .pt{color:#177a45}
+  .path.login{border-color:var(--card-edge)}
+  .path.login:hover{border-color:var(--gold-deep)}
+  .path.login .pt{color:var(--gold-deep)}
+  @media(max-width:560px){.paths{grid-template-columns:1fr}}
+  /* Google sign-in (One-Tap auto-detects a signed-in Google account) */
+  .gauth{display:flex;flex-direction:column;align-items:center;gap:6px;margin:2px 0 2px}
+  .gbtn{display:flex;justify-content:center;min-height:44px}
+  .gmsg{font-size:12.5px;color:var(--muted);min-height:14px}
+  .gmsg.err{color:#c23b22}
+  .orline{display:flex;align-items:center;gap:12px;margin:12px 0 14px;color:var(--faint);font-size:12px}
+  .orline::before,.orline::after{content:"";flex:1;height:1px;background:var(--line)}
   .fields{display:flex;flex-direction:column;gap:10px}
   .fields input{width:100%;background:#FBF3EA;border:1.5px solid var(--line);border-radius:12px;color:var(--ink);
      font-family:var(--sans);font-size:16px;padding:13px 15px}
@@ -154,25 +183,51 @@
       <div class="lead">Start free in 10 seconds</div>
       <div class="lead2">Pick your exam, drop your email — no password, no payment.</div>
       <div class="exams">
+        {% set first_live = exams | selectattr('available') | list | first %}
         {% for e in exams %}
+        {% if e.available %}
         <label class="exam">
-          <input type="radio" name="exam" value="{{ e.id }}" {% if loop.first %}checked{% endif %} />
+          <input type="radio" name="exam" value="{{ e.id }}" {% if (picked and e.id == picked) or (not picked and e.id == first_live.id) %}checked{% endif %} />
+          <span class="live">Live</span>
           <span class="ex-emoji">{{ e.emoji }}</span><b>{{ e.title }}</b><small>{{ e.tag }}</small>
         </label>
+        {% else %}
+        <span class="exam soon" title="Coming soon" aria-disabled="true">
+          <span class="badge">Soon</span>
+          <span class="ex-emoji">{{ e.emoji }}</span><b>{{ e.title }}</b><small>{{ e.tag }}</small>
+        </span>
+        {% endif %}
         {% endfor %}
-        <label class="exam more" onclick="document.getElementById('qinput').focus()"><span class="ex-emoji">＋</span><b>Any exam</b><small>type it below</small></label>
       </div>
-      <input type="text" name="q" id="qinput" class="qinput" placeholder="Or type any exam / topic — UPSC, CAT, SSC, Class 9 Science…" autocomplete="off" />
+
+      {% if google_client_id %}
+      <div class="gauth">
+        <div id="gbtn" class="gbtn"></div>
+        <div class="gmsg" id="gmsg" role="status"></div>
+      </div>
+      <div class="orline"><span>or use your email</span></div>
+      {% endif %}
+
       <div class="fields">
         <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required />
         <input type="tel" name="phone" placeholder="WhatsApp number (optional)" inputmode="tel" />
-        <button type="submit" class="btn-gold">Start my free test →</button>
+        <button type="submit" class="btn-gold">Start my free 14-day trial →</button>
       </div>
-      <div class="fine">🔒 Free to start · <b>14-day trial</b> · then ₹199/mo · cancel anytime</div>
+      <div class="fine">🔒 No card needed · <b>14 days free</b> · then ₹199/mo · cancel anytime</div>
       <div class="msg{% if error %} err{% endif %}" id="msg" role="status">{% if error %}{{ error }}{% endif %}</div>
     </form>
 
-    <div class="wa-alt">On your phone? <a href="https://wa.me/919135255107?text=quiz" target="_blank" rel="noopener">Scan / tap to start on WhatsApp →</a></div>
+    <div class="oralt">or</div>
+    <div class="paths">
+      <a class="path wa" href="{{ wa_link }}" target="_blank" rel="noopener">
+        <span class="pico">📱</span>
+        <span class="pm"><span class="pt">Prefer WhatsApp?</span><span class="ps">Take the test right in WhatsApp →</span></span>
+      </a>
+      <a class="path login" href="/login">
+        <span class="pico">🔑</span>
+        <span class="pm"><span class="pt">Already registered?</span><span class="ps">Log in to your account →</span></span>
+      </a>
+    </div>
   </div>
 </header>
 
@@ -236,18 +291,39 @@
 (function(){
   var f=document.getElementById('startform'), msg=document.getElementById('msg');
   if(!f) return;
-  var qi=document.getElementById('qinput');
-  if(qi){
-    // typing a free-text exam de-selects the preset radios; picking a preset clears the free-text
-    qi.addEventListener('input', function(){ if(qi.value.trim()){ Array.prototype.forEach.call(f.querySelectorAll('input[name=exam]'), function(r){ r.checked=false; }); } });
-    Array.prototype.forEach.call(f.querySelectorAll('input[name=exam]'), function(r){ r.addEventListener('change', function(){ qi.value=''; }); });
-  }
   f.addEventListener('submit', function(e){
     var email=(f.email.value||'').trim();
     if(email.indexOf('@')<1 || email.indexOf('.')<0){ e.preventDefault(); msg.className='msg err'; msg.textContent='Please enter a valid email.'; f.email.focus(); return; }
-    msg.className='msg'; msg.textContent=(qi && qi.value.trim()) ? 'Writing your test…' : 'Setting up your test…';
+    msg.className='msg'; msg.textContent='Setting up your account…';
   });
 })();
+
+/* Google Sign-In + One-Tap (auto-detects a signed-in Google account). Sends the chosen exam so the
+   student's first topic seeds the same as the email path; the server redirects new users to onboarding. */
+var GCID = {{ google_client_id|tojson }};
+function pickedExam(){
+  var r=document.querySelector('#startform input[name=exam]:checked');
+  return r ? r.value : '';
+}
+function onGoogle(resp){
+  var gmsg=document.getElementById('gmsg');
+  if(gmsg){ gmsg.className='gmsg'; gmsg.textContent='Signing you in…'; }
+  fetch('/api/auth/google',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+    body:JSON.stringify({credential:resp.credential, exam:pickedExam()})})
+    .then(function(r){return r.json();})
+    .then(function(j){ if(j&&j.ok&&j.redirect){ location.href=j.redirect; }
+                       else if(gmsg){ gmsg.className='gmsg err'; gmsg.textContent=(j&&j.error)||'Sign-in failed — use email instead.'; } })
+    .catch(function(){ if(gmsg){ gmsg.className='gmsg err'; gmsg.textContent='Network error — use email instead.'; } });
+}
+if(GCID){
+  (function ready(){
+    if(!(window.google&&google.accounts&&google.accounts.id)){ return setTimeout(ready,300); }
+    google.accounts.id.initialize({client_id:GCID, callback:onGoogle, auto_select:false, cancel_on_tap_outside:false});
+    var host=document.getElementById('gbtn');
+    if(host) google.accounts.id.renderButton(host,{type:'standard',theme:'outline',size:'large',text:'continue_with',shape:'pill',width:320});
+    google.accounts.id.prompt();   // One-Tap: auto-detect an existing Google session
+  })();
+}
 </script>
 </body>
 </html>

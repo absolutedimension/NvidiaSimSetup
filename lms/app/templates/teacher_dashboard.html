@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex" />
+<title>Class dashboard — Acharya for Teachers</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+ :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;--card:#fff;--green:#2FA968;
+   --weak:#C23B22;--shaky:#E0972F;--solid:#2FA968;--serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 70%);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100dvh}
+ .wrap{max-width:760px;margin:0 auto;padding:16px 16px 70px}
+ .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+ .brand{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+ .brand .m{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#E8934A,#C2591F);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;font-family:var(--serif)}
+ .brand .n{font-family:var(--serif);font-weight:800;font-size:18px}.brand .s{font-size:11.5px;color:var(--muted)}
+ .nav{display:flex;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px}
+ .nav a{font-size:13px;font-weight:700;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:9px}
+ .nav a.on{background:#FFF3E6;color:var(--gold2)}
+ h1{font-family:var(--serif);font-weight:800;font-size:23px;margin:16px 0 3px}
+ .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+ .sec{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:800;margin:22px 2px 10px}
+ .weakbar{display:flex;flex-wrap:wrap;gap:8px}
+ .wt{background:#FBEBE6;border:1px solid rgba(194,59,34,.3);color:#a83220;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:700}
+ .wt b{color:#7d2417}
+ .stud{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:13px 16px;margin-bottom:9px;border-left:4px solid var(--line)}
+ .stud.weak{border-left-color:var(--weak)}.stud.shaky{border-left-color:var(--shaky)}.stud.solid{border-left-color:var(--solid)}
+ .stud .m{flex:1;min-width:0}
+ .stud .nm{font-weight:700;font-size:15px}
+ .stud .wk{font-size:11.5px;color:var(--muted);margin-top:2px}
+ .pct{font-family:var(--serif);font-weight:800;font-size:18px}
+ .pct.weak{color:var(--weak)}.pct.shaky{color:var(--shaky)}.pct.solid{color:var(--solid)}
+ .flag{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;border-radius:6px;padding:2px 6px;margin-left:8px}
+ .flag.weak{background:#FBE3DD;color:#a83220}
+ .empty{background:var(--card);border:1px dashed var(--line);border-radius:16px;padding:28px 20px;text-align:center;color:var(--muted);font-size:14px}
+ .empty a{color:var(--gold2);font-weight:800;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><div class="m">अ</div><div><div class="n">Acharya</div><div class="s">{{ student.institute or 'class dashboard' }}</div></div></div>
+    <div class="nav"><a href="/teacher">My class</a><a class="on" href="/teacher/dashboard">Dashboard</a><a href="/logout">Log out</a></div>
+  </div>
+
+  <h1>Your class at a glance</h1>
+  <div class="sub">{{ n_sits }} test results across {{ n_tests }} test{{ '' if n_tests == 1 else 's' }} — Acharya flags who needs help.</div>
+
+  {% if students %}
+    {% if class_weak %}
+    <div class="sec">🎯 Topics to teach next (whole class)</div>
+    <div class="weakbar">{% for topic, cnt in class_weak %}<span class="wt">{{ topic }} <b>· {{ cnt }}</b></span>{% endfor %}</div>
+    {% endif %}
+
+    <div class="sec">Every student — weakest first</div>
+    {% for s in students %}
+    <div class="stud {{ s.tier }}">
+      <div class="m">
+        <div class="nm">{{ s.name }}{% if s.tier == 'weak' %}<span class="flag weak">needs help</span>{% endif %}</div>
+        {% if s.weak %}<div class="wk">weak in: {{ s.weak | join(', ') }}</div>{% else %}<div class="wk">{{ s.tests }} test{{ '' if s.tests == 1 else 's' }} · doing well</div>{% endif %}
+      </div>
+      <div class="pct {{ s.tier }}">{{ s.pct }}%</div>
+    </div>
+    {% endfor %}
+  {% else %}
+    <div class="empty">No results yet.<br>Create a test and share the link — as students take it, every one of them shows up here with their weak topics.<br><br><a href="/teacher/new">Create a test →</a></div>
+  {% endif %}
+</div>
+</body>
+</html>

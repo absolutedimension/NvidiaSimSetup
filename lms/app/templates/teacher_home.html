@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex" />
+<title>My class — Acharya for Teachers</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+ :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;--card:#fff;--green:#2FA968;--cream:#FAF5EC;
+   --serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 70%);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100dvh}
+ .wrap{max-width:760px;margin:0 auto;padding:22px 16px 80px}
+ .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+ .brand{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+ .brand .m{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#E8934A,#C2591F);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;font-family:var(--serif)}
+ .brand .n{font-family:var(--serif);font-weight:800;font-size:18px}
+ .brand .s{font-size:11.5px;color:var(--muted)}
+ .nav{display:flex;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px}
+ .nav a{font-size:13px;font-weight:700;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:9px}
+ .nav a.on{background:#FFF3E6;color:var(--gold2)}
+ h1{font-family:var(--serif);font-weight:800;font-size:24px;margin:18px 0 4px}
+ .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+ .create{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border-radius:16px;padding:18px 20px;text-decoration:none;box-shadow:0 12px 30px rgba(168,72,26,.24);margin-bottom:10px}
+ .create .i{font-size:26px}
+ .create .t{font-family:var(--serif);font-weight:800;font-size:18px}
+ .create .k{font-size:12.5px;color:rgba(255,255,255,.9);margin-top:1px}
+ .create .go{margin-left:auto;font-size:22px}
+ a.dash{display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--gold);border-radius:14px;padding:14px 18px;text-decoration:none;color:var(--gold2);font-weight:800;font-size:15px;margin-bottom:24px}
+ a.dash .i{font-size:20px}
+ .lbl{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:800;margin:6px 2px 10px}
+ .test{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;text-decoration:none;color:var(--ink);margin-bottom:10px;box-shadow:0 3px 10px rgba(120,60,20,.05)}
+ .test .m{flex:1;min-width:0}
+ .test .nm{font-weight:800;font-size:15.5px}
+ .test .k{font-size:12px;color:var(--muted);margin-top:2px}
+ .test .cnt{text-align:right;flex:0 0 auto}
+ .test .cnt b{font-size:19px;color:var(--gold2);font-family:var(--serif)}
+ .test .cnt span{display:block;font-size:10.5px;color:var(--faint)}
+ .empty{background:var(--card);border:1px dashed var(--line);border-radius:16px;padding:28px 20px;text-align:center;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><div class="m">अ</div><div><div class="n">Acharya</div><div class="s">{{ student.institute or 'for teachers' }}</div></div></div>
+    <div class="nav"><a class="on" href="/teacher">My class</a><a href="/teacher/dashboard">Dashboard</a><a href="/logout">Log out</a></div>
+  </div>
+
+  <h1>Namaste{{ ', ' + student.name if student.name else '' }} 🙏</h1>
+  <div class="sub">Create a test → share the link with your students → see who's weak in what.</div>
+
+  <a class="create" href="/teacher/chat">
+    <span class="i">💬</span>
+    <span class="m"><div class="t">Chat with Acharya</div><div class="k">just say what you need — a test, class weak spots…</div></span>
+    <span class="go">→</span>
+  </a>
+  <a class="create" href="/teacher/new" style="background:var(--card);color:var(--gold2);border:1.5px solid var(--gold);box-shadow:none">
+    <span class="i">✍️</span>
+    <span class="m"><div class="t" style="color:var(--gold2)">Create a test (form)</div><div class="k" style="color:var(--muted)">JEE or NEET · any chapter · step by step</div></span>
+    <span class="go">→</span>
+  </a>
+  <a class="dash" href="/teacher/dashboard"><span class="i">📊</span> See every student — who's weak, who's slipping →</a>
+
+  <div class="lbl">Your tests</div>
+  {% if tests %}
+    {% for row in tests %}
+    <a class="test" href="/teacher/test/{{ row.t.code }}">
+      <div class="m"><div class="nm">{{ row.t.title }}</div><div class="k">{{ row.t.subject_label }} · {{ row.t.n }} questions · code {{ row.t.code }}</div></div>
+      <div class="cnt"><b>{{ row.sittings }}</b><span>took it</span></div>
+    </a>
+    {% endfor %}
+  {% else %}
+    <div class="empty">No tests yet. Tap <b>Create a test</b> above — your first paper is ready in about a minute.</div>
+  {% endif %}
+</div>
+</body>
+</html>

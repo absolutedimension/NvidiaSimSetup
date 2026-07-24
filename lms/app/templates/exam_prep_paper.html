@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex" />
+<title>{{ paper.title }} — exam mode</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']},startup:{typeset:false}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+ :root{--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;--card:#fff;
+   --good:#1f8b52;--goodbg:#E9F6EE;--bad:#C23B22;--mark:#7C4DBE;--cream:#FAF5EC;
+   --serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ body{background:#FDF6EC;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;display:flex;justify-content:center}
+ .wrap{width:100%;max-width:620px;min-height:100dvh;display:flex;flex-direction:column}
+ header{display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(120deg,#E8934A,#C2591F);color:#fff;position:sticky;top:0;z-index:5}
+ header .tt{flex:1;min-width:0}header .t{font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ header .s{font-size:11px;color:rgba(255,255,255,.9)}
+ .clock{font-weight:800;font-size:15px;background:rgba(0,0,0,.18);border-radius:9px;padding:6px 11px;font-variant-numeric:tabular-nums}
+ .clock.low{background:#C23B22;animation:pulse 1s infinite}@keyframes pulse{50%{opacity:.6}}
+ .pal{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:52px;z-index:4}
+ .pal b{width:100%;font-size:10.5px;color:var(--faint);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1px}
+ .pal button{width:30px;height:30px;border-radius:8px;border:1.5px solid var(--line);background:#fff;font-weight:800;font-size:12px;cursor:pointer;color:var(--muted);font-family:inherit}
+ .pal button.cur{outline:2px solid var(--gold2);outline-offset:1px}
+ .pal button.ans{background:var(--goodbg);border-color:#BFE6CF;color:var(--good)}
+ .pal button.mrk{background:#F3ECFB;border-color:#D6C4EE;color:var(--mark)}
+ main{flex:1;padding:14px 14px 100px}
+ .sec{font-size:11px;font-weight:800;color:var(--gold2);background:var(--cream);border-radius:7px;padding:5px 10px;display:inline-block;margin-bottom:9px}
+ .meta{font-size:11.5px;color:var(--faint);margin-bottom:10px}
+ .qfig{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin:0 0 12px;text-align:center;overflow-x:auto}
+ .qfig svg{max-width:100%;height:auto}
+ .stem{font-size:15px;font-weight:600;line-height:1.6;margin-bottom:14px}
+ .opt{display:flex;align-items:flex-start;gap:11px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:12px 13px;margin-top:9px;font-size:14.5px;cursor:pointer;color:var(--ink);font-family:inherit}
+ .opt:hover{border-color:var(--gold)}
+ .opt.on{border-color:var(--gold2);background:#FFF3E6}
+ .opt .bx{width:24px;height:24px;flex:0 0 auto;border-radius:7px;background:var(--cream);color:var(--gold2);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+ .opt.on .bx{background:var(--gold2);color:#fff}
+ .numin{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;font-size:16px;font-family:inherit;outline:none}
+ .numin:focus{border-color:var(--gold2);box-shadow:0 0 0 3px rgba(194,89,31,.12)}
+ .bar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;background:#fff;border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+ .bar .in{width:100%;max-width:620px;display:flex;gap:8px}
+ .bar button{flex:1;border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:12px;font-size:13.5px;font-weight:800;cursor:pointer;color:var(--ink);font-family:inherit}
+ .bar button.mk{color:var(--mark);border-color:#D6C4EE}
+ .bar button.nx{background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none}
+ .bar button.sub{background:var(--good);color:#fff;border:none}
+ .sheet{position:fixed;inset:0;background:rgba(30,20,12,.55);display:none;align-items:center;justify-content:center;z-index:9;padding:20px}
+ .sheet.on{display:flex}
+ .sheet .c{background:#fff;border-radius:18px;padding:22px;max-width:380px;width:100%;text-align:center}
+ .sheet h3{font-family:var(--serif);font-size:19px;margin-bottom:8px}
+ .sheet p{font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:16px}
+ .sheet .row{display:flex;gap:9px}
+ .sheet button{flex:1;border-radius:11px;padding:12px;font-weight:800;font-size:14px;cursor:pointer;font-family:inherit;border:1.5px solid var(--line);background:#fff;color:var(--ink)}
+ .sheet button.go{background:var(--good);color:#fff;border:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="tt"><div class="t">{{ paper.title }}</div><div class="s">{{ paper.max_marks }} marks · exam mode</div></div>
+    <div class="clock" id="clock">--:--</div>
+  </header>
+  <div class="pal" id="pal"><b>Questions</b></div>
+  <main id="main"></main>
+</div>
+
+<div class="bar"><div class="in">
+  <button id="prev">← Prev</button>
+  <button class="mk" id="mark">⚑ Review</button>
+  <button class="nx" id="next">Next →</button>
+  <button class="sub" id="submit">Submit</button>
+</div></div>
+
+<div class="sheet" id="sheet"><div class="c">
+  <h3>Submit the paper?</h3>
+  <p id="sheetmsg"></p>
+  <div class="row"><button id="cancel">Keep going</button><button class="go" id="confirm">Submit</button></div>
+</div></div>
+
+<script>
+const QS = {{ questions_json|safe }};
+const PAPER_ID = {{ paper.id }}, ATTEMPT_ID = {{ attempt.id }}, MINUTES = {{ paper.minutes }};
+const ans = {}, marked = {};
+let cur = 0, left = MINUTES*60, done = false;
+
+const $=id=>document.getElementById(id);
+const el=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;};
+// MathJax loads async: at first render window.MathJax is still just the CONFIG object, so
+// typesetPromise doesn't exist yet. Poll until the library is really ready, else the very first
+// question renders as raw LaTeX and never recovers.
+function typeset(n){
+  let tries = 0;
+  const go = () => {
+    if (window.MathJax && window.MathJax.typesetPromise) { window.MathJax.typesetPromise([n]).catch(()=>{}); }
+    else if (tries++ < 100) { setTimeout(go, 150); }
+  };
+  go();
+}
+function sanitize(s){ return String(s||'').replace(/<script[\s\S]*?<\/script>/gi,'').replace(/\son\w+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi,''); }
+function answered(i){ const a=ans[QS[i].n]; return !(a===undefined||a===''||(Array.isArray(a)&&!a.length)); }
+
+function palette(){
+  const p=$('pal'); p.innerHTML='<b>Questions</b>';
+  QS.forEach((q,i)=>{ const b=el(`<button>${q.n}</button>`);
+    if(i===cur)b.classList.add('cur'); if(marked[q.n])b.classList.add('mrk'); else if(answered(i))b.classList.add('ans');
+    b.onclick=()=>{cur=i;render();}; p.appendChild(b); });
+}
+function render(){
+  const q=QS[cur], m=$('main'); m.innerHTML='';
+  m.appendChild(el(`<div class="sec">${q.section}</div>`));
+  m.appendChild(el(`<div class="meta">Question ${q.n} of ${QS.length} · ${q.chapter||''} · +${q.marks}${q.neg?` / ${q.neg}`:' / 0'}</div>`));
+  if(q.figure) m.appendChild(el(`<div class="qfig">${sanitize(q.figure)}</div>`));
+  m.appendChild(el(`<div class="stem">${q.stem}</div>`));
+  if(q.qtype==='integer'||q.qtype==='numeric'){
+    const inp=el(`<input class="numin" type="text" inputmode="decimal" placeholder="${q.qtype==='integer'?'Enter an integer':'Enter a value (2 decimals)'}">`);
+    inp.value=ans[q.n]||''; inp.oninput=()=>{ans[q.n]=inp.value.trim();palette();}; m.appendChild(inp);
+  } else {
+    const multi=(q.qtype==='MCQ_multi');
+    (q.options||[]).forEach(o=>{
+      const lab=o.label||''; const b=el(`<button class="opt"><span class="bx">${lab}</span><span>${o.text||''}</span></button>`);
+      const sel=multi?((ans[q.n]||[]).includes(lab)):(ans[q.n]===lab);
+      if(sel)b.classList.add('on');
+      b.onclick=()=>{ if(multi){ const curA=new Set(ans[q.n]||[]); curA.has(lab)?curA.delete(lab):curA.add(lab); ans[q.n]=[...curA]; }
+                      else { ans[q.n]=(ans[q.n]===lab)?'':lab; }
+                      render(); palette(); };
+      m.appendChild(b); });
+    if(multi) m.appendChild(el(`<div class="meta" style="margin-top:10px">One or more options may be correct.</div>`));
+  }
+  $('mark').textContent = marked[q.n]?'⚑ Marked':'⚑ Review';
+  typeset(m); palette();
+}
+$('prev').onclick=()=>{ if(cur>0){cur--;render();} };
+$('next').onclick=()=>{ if(cur<QS.length-1){cur++;render();} };
+$('mark').onclick=()=>{ const n=QS[cur].n; marked[n]=!marked[n]; render(); };
+$('submit').onclick=()=>{
+  const a=QS.filter((_,i)=>answered(i)).length;
+  $('sheetmsg').textContent=`You've answered ${a} of ${QS.length}. ${QS.length-a} unanswered. You can't change answers after submitting.`;
+  $('sheet').classList.add('on');
+};
+$('cancel').onclick=()=>$('sheet').classList.remove('on');
+$('confirm').onclick=()=>submit();
+
+function submit(){
+  if(done) return; done=true;
+  $('confirm').textContent='Scoring…';
+  fetch(`/api/paper/${PAPER_ID}/submit`,{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+    body:JSON.stringify({attempt_id:ATTEMPT_ID,answers:ans})})
+    .then(r=>r.json()).then(j=>{ if(j&&j.ok&&j.redirect) location.href=j.redirect; else {done=false;$('confirm').textContent='Submit';} })
+    .catch(()=>{done=false;$('confirm').textContent='Submit';});
+}
+function tick(){
+  left--; const m=Math.floor(left/60), s=left%60;
+  $('clock').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  if(left<=300)$('clock').classList.add('low');
+  if(left<=0){ clearInterval(tid); submit(); }
+}
+const tid=setInterval(tick,1000);
+$('clock').textContent=`${String(MINUTES).padStart(2,'0')}:00`;
+render();
+</script>
+</body>
+</html>

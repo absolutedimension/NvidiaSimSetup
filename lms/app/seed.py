@@ -335,6 +335,11 @@ def _migrate():
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS rzp_assess_subscription_id VARCHAR(40) DEFAULT ''",
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS assess_trial_end TIMESTAMP NULL",
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS assess_period_end TIMESTAMP NULL",
+        # exam-prep test history: the full paper as sat, so a student can reopen a past test
+        "ALTER TABLE topic_attempts ADD COLUMN IF NOT EXISTS detail JSON DEFAULT '[]'::json",
+        # teacher/institute (B2B): a Student row can also be a teacher who creates class tests
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS is_teacher BOOLEAN DEFAULT FALSE",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS institute VARCHAR(120) DEFAULT ''",
         # GRANDFATHER (one-time): every student that exists when the column is first added is
         # NULL → mark grandfathered (full access forever, never paywalled). Re-running matches
         # nothing because new signups are 'none' (not NULL), so it's idempotent.

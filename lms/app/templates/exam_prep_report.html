@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex" />
+<title>My report &amp; improvement — Acharya</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+ :root{--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;
+   --card:#fff;--good:#1f8b52;--goodbg:#E9F6EE;--bad:#C23B22;--badbg:#FBEBE7;--amber:#E0972F;--amberbg:#FFF3E0;--cream:#FAF5EC;
+   --serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 60%,#F7E0C8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;display:flex;justify-content:center;min-height:100dvh}
+ .wrap{width:100%;max-width:600px;display:flex;flex-direction:column}
+ header{display:flex;align-items:center;gap:10px;padding:12px 16px;background:linear-gradient(120deg,#E8934A,#C2591F);color:#fff;position:sticky;top:0;z-index:3}
+ header .ava{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:17px}
+ header .tt{flex:1;min-width:0}header .t{font-family:var(--serif);font-weight:800;font-size:16px}header .s{font-size:11.5px;color:rgba(255,255,255,.9)}
+ header a.back{color:rgba(255,255,255,.9);font-size:13px;font-weight:700;text-decoration:none;background:rgba(0,0,0,.14);padding:6px 11px;border-radius:9px}
+ main{padding:16px 16px 40px;display:flex;flex-direction:column;gap:14px}
+ .h2{font-family:var(--serif);font-weight:800;font-size:15px;margin:4px 2px 0}
+ .stats{display:flex;gap:10px}
+ .stat{flex:1;background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px 12px;text-align:center;box-shadow:0 2px 8px rgba(120,60,20,.05)}
+ .stat .v{font-family:var(--serif);font-size:24px;font-weight:800;color:var(--gold)}
+ .stat .k{font-size:11px;color:var(--faint);margin-top:2px}
+ .card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px;box-shadow:0 2px 8px rgba(120,60,20,.05)}
+ .lvl{background:linear-gradient(135deg,#2A2018,#3a2c20);color:#fff;border-radius:15px;padding:15px 16px}
+ .lvl .h{font-family:var(--serif);font-weight:800;font-size:15px;margin-bottom:4px}
+ .lvl .p{font-size:12.5px;color:rgba(255,255,255,.82);line-height:1.5}
+ .lvl .badge{display:inline-block;background:var(--gold);color:#fff;font-weight:800;font-size:12px;border-radius:8px;padding:5px 11px;margin-top:9px}
+ .grp{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+ .t{display:inline-flex;align-items:center;gap:6px;border-radius:10px;padding:7px 11px;font-size:12.5px;font-weight:700}
+ .t.s{background:var(--goodbg);color:var(--good)} .t.k{background:var(--amberbg);color:#9a5a12} .t.w{background:var(--badbg);color:#9c3220}
+ .t small{font-weight:600;opacity:.75}
+ .sug{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:13px;padding:11px 13px;margin-top:9px;background:#FFFBF6}
+ .sug .m{flex:1}.sug .nm{font-weight:800;font-size:14px}.sug .k{font-size:11.5px;color:var(--faint);margin-top:2px}
+ .sug a{flex:0 0 auto;background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;text-decoration:none;border-radius:10px;padding:9px 13px;font-size:12.5px;font-weight:800;white-space:nowrap}
+ .att{display:flex;align-items:center;gap:11px;border-bottom:1px solid var(--cream);padding:11px 2px;text-decoration:none;color:inherit}
+ .att:last-child{border-bottom:none}
+ .att .m{flex:1;min-width:0}.att .nm{font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .att .k{font-size:11px;color:var(--faint);margin-top:2px}
+ .att .sc{flex:0 0 auto;font-weight:800;font-size:13px;border-radius:9px;padding:5px 10px}
+ .att .sc.hi{background:var(--goodbg);color:var(--good)} .att .sc.mid{background:var(--amberbg);color:#9a5a12} .att .sc.lo{background:var(--badbg);color:#9c3220}
+ .att .go{color:var(--gold2);font-weight:800;font-size:14px}
+ .empty{color:var(--muted);font-size:13.5px;text-align:center;padding:14px}
+ .spark{display:flex;align-items:flex-end;gap:5px;height:44px;margin-top:9px}
+ .spark i{flex:1;background:linear-gradient(180deg,#E8934A,#C2591F);border-radius:4px 4px 0 0;min-height:3px}
+ .note{font-size:11.5px;color:var(--faint);text-align:center;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="ava">📊</div>
+    <div class="tt"><div class="t">Report &amp; improvement</div><div class="s">your progress, your weak spots</div></div>
+    <a class="back" href="/exam-prep/dashboard">← Home</a>
+  </header>
+  <main>
+
+    <div class="stats">
+      <div class="stat"><div class="v">{{ tests }}</div><div class="k">tests taken</div></div>
+      <div class="stat"><div class="v">{{ avg }}%</div><div class="k">average score</div></div>
+      <div class="stat"><div class="v">{{ overall }}%</div><div class="k">topic mastery</div></div>
+    </div>
+
+    {% if trend and trend|length > 1 %}
+      <div class="card"><div class="h2" style="margin:0">Your last {{ trend|length }} tests</div>
+        <div class="spark">{% for p in trend %}<i style="height:{{ [p, 4]|max }}%"></i>{% endfor %}</div>
+        <div class="note">left = older · right = newest</div>
+      </div>
+    {% endif %}
+
+    {# ---- what Acharya recommends next ---- #}
+    <div class="lvl">
+      <div class="h">🎚️ Recommended difficulty</div>
+      <div class="p">{{ level_why }}.</div>
+      <div class="badge">{{ level_label }}</div>
+    </div>
+
+    {% if suggestions %}
+      <div class="card">
+        <div class="h2" style="margin:0 0 2px">🎯 Practise these next</div>
+        <div class="note" style="text-align:left;margin:2px 0 0">Weakest first — each opens a fresh test at your recommended level.</div>
+        {% for s in suggestions %}
+          <div class="sug">
+            <div class="m"><div class="nm">{{ s.concept }}</div><div class="k">{{ s.pct }}% mastery · {{ s.seen }} question{{ '' if s.seen == 1 else 's' }} seen</div></div>
+            {% if s.href %}<a href="{{ s.href }}">Practise →</a>{% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {# ---- strengths / weak spots (the SWOT) ---- #}
+    <div class="card">
+      <div class="h2" style="margin:0">Where you stand</div>
+      {% if weak %}<div style="margin-top:10px;font-size:12px;font-weight:800;color:var(--bad)">Needs work</div>
+        <div class="grp">{% for t in weak %}<span class="t w">{{ t.c }} <small>{{ t.p }}%</small></span>{% endfor %}</div>{% endif %}
+      {% if shaky %}<div style="margin-top:11px;font-size:12px;font-weight:800;color:#9a5a12">Getting there</div>
+        <div class="grp">{% for t in shaky %}<span class="t k">{{ t.c }} <small>{{ t.p }}%</small></span>{% endfor %}</div>{% endif %}
+      {% if strong %}<div style="margin-top:11px;font-size:12px;font-weight:800;color:var(--good)">Strong</div>
+        <div class="grp">{% for t in strong %}<span class="t s">{{ t.c }} <small>{{ t.p }}%</small></span>{% endfor %}</div>{% endif %}
+      {% if not weak and not shaky and not strong %}
+        <div class="empty">Take a test and your strengths and weak spots will appear here.</div>
+      {% endif %}
+    </div>
+
+    {# ---- every test, saved ---- #}
+    <div class="card">
+      <div class="h2" style="margin:0 0 4px">📚 Your tests</div>
+      {% if attempts %}
+        {% for a in attempts %}
+          {% set pct = (100 * a.score / a.total)|round|int if a.total else 0 %}
+          <a class="att" href="/exam-prep/attempt/{{ a.id }}">
+            <div class="m">
+              <div class="nm">{{ a.title or a.subject }}</div>
+              <div class="k">{{ a.taken_at.strftime('%d %b, %H:%M') }}{% if a.concepts %} · {{ a.concepts|unique|list|join(', ') }}{% endif %}</div>
+            </div>
+            <span class="sc {{ 'hi' if pct >= 70 else 'mid' if pct >= 40 else 'lo' }}">{{ a.score }}/{{ a.total }}</span>
+            <span class="go">›</span>
+          </a>
+        {% endfor %}
+      {% else %}
+        <div class="empty">No tests yet — your completed tests will be saved here.</div>
+      {% endif %}
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

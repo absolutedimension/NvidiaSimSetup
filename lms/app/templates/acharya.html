@@ -18,17 +18,17 @@
     return true;  // never block the click/navigation
   }
 </script>
-<title>Acharya — the AI assessment engine for teachers · you teach, Acharya tests &amp; tracks · TrigunAI</title>
-<meta name="description" content="Acharya is an AI assessment engine for teachers. You teach; Acharya tests every student with short adaptive quizzes on WhatsApp and web (English or हिंदी), finds each student's exact weak spots from their real answers — not just a score — and gives you a dashboard that flags who's slipping and what to assign next. For a single tuition teacher or a whole institute. Book a demo." />
+<title>Acharya — authentic exam-paper generator for JEE, NEET &amp; more · unlimited real-pattern tests · TrigunAI</title>
+<meta name="description" content="Acharya is an AI exam-paper engine. It generates practice tests in the exact pattern of the real exam — JEE, NEET and more — from a bank of tens of thousands of real, solved questions. Students drill unlimited papers free; teachers and institutes generate batch tests in seconds, with a weak-spot dashboard. English or हिंदी. JEE & NEET today; banking, UPSC & boards next." />
 <link rel="canonical" href="https://acharya.trigunai.com/" />
 <link rel="icon" href="/static/brand/favicon-32.png" />
-<meta property="og:title" content="Acharya — you teach, Acharya tests &amp; tracks · आचार्य" />
-<meta property="og:description" content="An AI assessment engine for teachers: short adaptive tests on WhatsApp & web (English or हिंदी), a real weak-spot diagnosis for every student — not just a score — and a dashboard that tells you who's slipping and what to assign next." />
+<meta property="og:title" content="Acharya — real exam papers, unlimited &amp; instant · आचार्य" />
+<meta property="og:description" content="An AI exam-paper engine: generates practice tests in the exact pattern of the real exam (JEE, NEET & more) from tens of thousands of real solved questions. Students practise free; institutes generate batch tests in seconds. English or हिंदी." />
 <meta property="og:image" content="/static/brand/acharya-mark.png" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://acharya.trigunai.com/" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Acharya for Teachers","serviceType":"AI student-assessment engine for coaching teachers and institutes","provider":{"@type":"Organization","name":"TrigunAI Innovations","url":"https://trigunai.com"},"areaServed":"IN","description":"An AI assessment engine for coaching teachers and institutes — for a single tuition teacher or a whole institute: short adaptive tests for every student on WhatsApp and web (English or हिंदी), an automatic weak-spot diagnosis built from each student's real answers, and a teacher dashboard that flags who is slipping and suggests the next test to assign.","offers":{"@type":"Offer","price":"4999","priceCurrency":"INR","description":"From ₹4,999/month — base covers up to 10 students, scales as students grow. No deposit. 14-day free trial."}}
+{"@context":"https://schema.org","@type":"Service","name":"Acharya exam-paper engine","serviceType":"AI exam-paper generator for JEE, NEET and other competitive exams","provider":{"@type":"Organization","name":"TrigunAI Innovations","url":"https://trigunai.com"},"areaServed":"IN","description":"An AI exam-paper generation engine. It produces practice tests in the exact pattern of the real exam — JEE, NEET and more — from a bank of tens of thousands of real, solved questions. Students practise unlimited papers on their own; coaching teachers and institutes generate batch tests in seconds and get a weak-spot dashboard. English or हिंदी. Expanding to banking, UPSC and boards.","offers":{"@type":"Offer","price":"4999","priceCurrency":"INR","description":"Institutes from ₹4,999/month (14-day free trial). Students practise free, then ₹199/month for unlimited tests."}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -94,6 +94,29 @@
        border:1px solid var(--line);background:rgba(255,255,255,.55);
        color:var(--muted);font-size:14px;font-weight:500;max-width:530px;line-height:1.5}
   .badge b{color:var(--gold)}
+
+  /* ---- audience split (top-of-page chooser: student vs teacher) ---- */
+  .split{position:relative;z-index:2;padding:44px 24px 6px}
+  .split-head{text-align:center;max-width:720px;margin:0 auto 26px}
+  .split-head .k{font-family:var(--deva);color:var(--gold);font-size:15px;margin-bottom:8px}
+  .split-head h2{font-family:var(--serif);font-weight:800;font-size:clamp(27px,4.4vw,42px);letter-spacing:-.8px;line-height:1.05}
+  .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:940px;margin:0 auto}
+  .choice{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--card-edge);
+     border-radius:22px;padding:28px 26px;box-shadow:0 14px 40px rgba(120,60,20,.08);
+     transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease}
+  .choice:hover{transform:translateY(-3px);box-shadow:0 22px 54px rgba(120,60,20,.14);border-color:var(--gold-deep)}
+  .choice .tag{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .choice .ico{font-size:34px;margin-bottom:12px;line-height:1}
+  .choice h3{font-family:var(--serif);font-weight:800;font-size:23px;margin-bottom:9px;letter-spacing:-.3px}
+  .choice p{color:var(--muted);font-size:15px;line-height:1.55;flex:1;margin-bottom:20px}
+  .choice p b{color:var(--ink);font-weight:600}
+  .choice .go{align-self:flex-start;font-weight:700;font-size:15px;padding:13px 24px;border-radius:13px;
+     color:#fff;background:var(--gold-deep);box-shadow:0 8px 22px rgba(168,72,26,.22);
+     transition:transform .15s ease, box-shadow .15s ease}
+  .choice .go:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(168,72,26,.3)}
+  .choice.teacher .go{color:var(--ink);background:#fff;border:1px solid var(--line);box-shadow:none}
+  .choice.teacher .go:hover{border-color:var(--gold-deep);color:var(--gold)}
+  @media(max-width:760px){.split-grid{grid-template-columns:1fr}.split{padding-top:30px}}
   /* phone mockup */
   .hero-phone{position:relative;display:flex;justify-content:center}
   .phone{width:288px;background:#fff;border-radius:38px;padding:12px;
@@ -525,11 +548,36 @@ void main() {
   <div class="wrap">
     <a class="brand" href="/"><img src="/static/brand/trigunai-mark.png" alt="TrigunAI" />Acharya<small>for Teachers</small></a>
     <div class="nav-right">
+      <a class="nav-link" href="/exam-prep">For students →</a>
       <a class="nav-link" href="https://trigunai.com/#skill" target="_blank" rel="noopener">Skill Development ↗</a>
       <a class="nav-cta" href="#demo">Book a demo</a>
     </div>
   </div>
 </nav>
+
+<!-- S0 · AUDIENCE SPLIT — student vs teacher (the two doors) -->
+<section class="split">
+  <div class="split-head">
+    <div class="k">नमस्ते · Welcome to Acharya</div>
+    <h2>Are you a student, or a teacher?</h2>
+  </div>
+  <div class="split-grid">
+    <div class="choice student">
+      <div class="tag">For students</div>
+      <div class="ico">🎓</div>
+      <h3>Practise on real exam papers</h3>
+      <p>JEE or NEET — generate <b>unlimited</b> practice tests in the <b>real exam's pattern</b>, with worked solutions, and see your exact weak topics. Free for 14 days, then ₹199/mo. English or हिंदी.</p>
+      <a class="go" href="/exam-prep">Start free →</a>
+    </div>
+    <div class="choice teacher">
+      <div class="tag">For teachers &amp; institutes</div>
+      <div class="ico">👨‍🏫</div>
+      <h3>Generate papers &amp; track every student</h3>
+      <p>Create <b>exam-authentic papers</b> for your whole batch in seconds — then Acharya tests every student and gives you a <b>weak-spot dashboard</b> showing who's slipping and what to assign next.</p>
+      <a class="go" href="#why">See how it works →</a>
+    </div>
+  </div>
+</section>
 
 <!-- S1 · HERO -->
 <header class="hero">
@@ -698,18 +746,17 @@ void main() {
 </script>
   <div class="hero-grid">
     <div class="hero-copy">
-      <div class="hpill">आचार्य · your AI assessment engine</div>
-      <h1 class="title">You teach.<br/><span class="accent">Acharya tests &amp; tracks.</span></h1>
-      <p class="sub">Acharya gives every student short <b>adaptive tests</b> on WhatsApp and web — in English
-         or हिंदी — and turns their answers into a real picture of <b>who knows what</b>. Not just a score:
-         it finds each student's exact weak spots and shows <b>you</b> who's slipping and what to assign
-         next. For a single tuition teacher or a whole institute — under <b>your</b> brand.</p>
+      <div class="hpill">आचार्य · authentic exam-paper engine</div>
+      <h1 class="title">Real exam papers.<br/><span class="accent">Unlimited. Instantly.</span></h1>
+      <p class="sub">Acharya generates practice tests in the <b>exact pattern of the real exam</b> — JEE,
+         NEET and more — drawn from a bank of <b>tens of thousands</b> of real, solved questions. Students
+         drill unlimited papers on their own; teachers set batch tests in seconds. In English or हिंदी.</p>
       <div class="cta-row">
-        <a class="btn btn-gold" href="#demo">Book a demo →</a>
-        <a class="btn btn-ghost" href="#how">See how it works ↓</a>
+        <a class="btn btn-gold" href="/exam-prep">Students — practise free →</a>
+        <a class="btn btn-ghost" href="#demo">Teachers &amp; institutes — book a demo ↓</a>
       </div>
-      <div class="badge">🏅 A <b>guru, not a genie</b> — Acharya doesn't just hand out a mark. It diagnoses
-         <b>why</b> each student is weak and tells you the one thing to do next. You teach; it does the testing.</div>
+      <div class="badge">🏅 Not a question bank — an <b>exam machine</b>. Every paper matches the real exam's
+         pattern, difficulty and topic mix, with worked solutions. <b>JEE &amp; NEET today; banking, UPSC &amp; boards next.</b></div>
     </div>
     <div class="hero-phone">
       <div class="phone">

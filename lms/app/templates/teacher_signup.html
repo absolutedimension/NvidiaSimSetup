@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex" />
+<title>Acharya for Teachers — set up your class</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+{% if google_client_id %}<script src="https://accounts.google.com/gsi/client" async defer></script>{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+ :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;--card:#fff;--green:#2FA968;
+   --serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 60%,#F7E0C8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100dvh;display:flex;justify-content:center;padding:26px 16px 60px}
+ .wrap{width:100%;max-width:520px}
+ .brand{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+ .brand .m{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#E8934A,#C2591F);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;font-family:var(--serif)}
+ .brand .n{font-family:var(--serif);font-weight:800;font-size:19px}
+ .brand .s{font-size:11.5px;color:var(--muted)}
+ h1{font-family:var(--serif);font-weight:800;font-size:27px;line-height:1.15;margin-bottom:8px}
+ h1 span{color:var(--gold)}
+ .lead{font-size:14.5px;color:var(--muted);line-height:1.55;margin-bottom:22px}
+ .card{background:var(--card);border:1.5px solid var(--gold2);border-radius:20px;padding:24px 22px;box-shadow:0 22px 54px rgba(120,60,20,.13)}
+ .gauth{display:flex;flex-direction:column;align-items:center;gap:6px}
+ #gbtn{display:flex;justify-content:center;min-height:44px}
+ .orline{display:flex;align-items:center;gap:12px;margin:16px 0;color:var(--faint);font-size:12px}
+ .orline::before,.orline::after{content:"";flex:1;height:1px;background:var(--line)}
+ label.f{display:block;font-size:12.5px;font-weight:700;color:var(--muted);margin:0 2px 5px}
+ input{width:100%;background:#FBF3EA;border:1.5px solid var(--line);border-radius:12px;color:var(--ink);font-family:var(--sans);font-size:16px;padding:13px 15px;margin-bottom:13px}
+ input:focus{outline:none;border-color:var(--gold2);box-shadow:0 0 0 3px rgba(194,89,31,.13)}
+ .go{width:100%;background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:13px;padding:15px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 10px 26px rgba(168,72,26,.26)}
+ .fine{text-align:center;font-size:12px;color:var(--faint);margin-top:12px}
+ .err{color:#c23b22;font-size:13px;text-align:center;margin-top:8px}
+ .gmsg{font-size:12.5px;color:var(--muted);text-align:center;min-height:14px}
+ .pts{margin:20px 2px 0}
+ .pt{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink);margin-bottom:10px;line-height:1.45}
+ .pt .i{font-size:17px;flex:0 0 auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><div class="m">अ</div><div><div class="n">Acharya</div><div class="s">for teachers &amp; institutes</div></div></div>
+
+  <h1>You teach. <span>Acharya tests &amp; tracks.</span></h1>
+  <p class="lead">Create a JEE or NEET test in seconds, share one link with your students, and see exactly who is weak in which topic — automatically.</p>
+
+  <div class="card">
+    {% if google_client_id %}
+    <div class="gauth"><div id="gbtn"></div><div class="gmsg" id="gmsg"></div></div>
+    <div class="orline">or with your email</div>
+    {% endif %}
+    <form method="post" action="/teacher/signup">
+      <label class="f">Your name</label>
+      <input type="text" name="name" placeholder="e.g. Rakesh Sir" autocomplete="name" />
+      <label class="f">Institute / coaching name</label>
+      <input type="text" name="institute" placeholder="e.g. Brilliant Classes" autocomplete="organization" />
+      <label class="f">Email</label>
+      <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required />
+      <button class="go" type="submit">Set up my class →</button>
+      {% if error %}<div class="err">{{ error }}</div>{% endif %}
+    </form>
+    <div class="fine">🔒 No password, no payment to start.</div>
+  </div>
+
+  <div class="pts">
+    <div class="pt"><span class="i">⚡</span><span><b>Unlimited fresh test papers</b> — any chapter, any difficulty, with answer key + worked solutions, in 30 seconds. Never repeat a paper.</span></div>
+    <div class="pt"><span class="i">🎯</span><span><b>Acharya finds who's weak</b> — every student's exact weak topic, flagged automatically. You just teach.</span></div>
+    <div class="pt"><span class="i">📱</span><span><b>Students need nothing</b> — no app, no signup. They open your link, type their name, and take the test.</span></div>
+  </div>
+</div>
+
+{% if google_client_id %}
+<script>
+var GCID = {{ google_client_id|tojson }};
+function onGoogle(resp){
+  var gmsg=document.getElementById('gmsg'); if(gmsg){gmsg.textContent='Signing you in…';}
+  var inst=(document.querySelector('input[name=institute]')||{}).value||'';
+  fetch('/api/teacher/google',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+    body:JSON.stringify({credential:resp.credential, institute:inst})})
+    .then(function(r){return r.json();})
+    .then(function(j){ if(j&&j.ok&&j.redirect){location.href=j.redirect;} else if(gmsg){gmsg.textContent=(j&&j.error)||'Sign-in failed — use email.';} })
+    .catch(function(){ if(gmsg){gmsg.textContent='Network error — use email.';} });
+}
+if(GCID){(function ready(){
+  if(!(window.google&&google.accounts&&google.accounts.id)){return setTimeout(ready,300);}
+  google.accounts.id.initialize({client_id:GCID, callback:onGoogle, auto_select:false});
+  var h=document.getElementById('gbtn');
+  if(h) google.accounts.id.renderButton(h,{type:'standard',theme:'outline',size:'large',text:'continue_with',shape:'pill',width:300});
+})();}
+</script>
+{% endif %}
+</body>
+</html>

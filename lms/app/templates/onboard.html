@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% block title %}Setup your Acharya · TrigunAI{% endblock %}
+
+{% block content %}
+<style>
+  .onboard-wrap { max-width: 560px; margin: 24px auto; padding: 0 16px; }
+  .onboard-wrap h1 { font-family: 'Cormorant Garamond', serif; font-size: 30px; margin: 0 0 4px; }
+  .onboard-wrap .sub { color: var(--acharya-muted, #a08a5a); margin-bottom: 24px; font-size: 15px; }
+  .step { background: rgba(255,255,255,0.03); border: 1px solid rgba(212,175,55,0.15);
+           border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+  .step-title { font-weight: 600; margin-bottom: 8px; font-size: 15px; color: var(--acharya-gold, #d4af37); }
+  .step-hint { font-size: 13px; color: var(--acharya-muted, #a08a5a); margin-bottom: 12px; }
+  .row-input { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(212,175,55,0.25);
+                background: rgba(0,0,0,0.2); color: #f5efdf; font-size: 15px; box-sizing: border-box; }
+  .row-input:focus { outline: 2px solid var(--acharya-gold, #d4af37); }
+  .btn-primary { background: var(--acharya-gold, #d4af37); color: #1a1408; padding: 14px 20px;
+                  border: none; border-radius: 8px; font-weight: 600; font-size: 16px;
+                  width: 100%; cursor: pointer; margin-top: 8px; }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+  .preview { display: flex; gap: 12px; align-items: center; padding: 14px;
+              border-radius: 10px; margin-top: 8px; background: rgba(0,0,0,0.3); }
+  .preview-logo { width: 42px; height: 42px; border-radius: 8px;
+                   display: grid; place-items: center; font-weight: 700; color: #1a1408; font-size: 18px; }
+  .csv-preview { max-height: 180px; overflow-y: auto; font-size: 13px;
+                  background: rgba(0,0,0,0.25); padding: 8px 12px; border-radius: 6px;
+                  color: #d5c890; }
+  .csv-preview .err { color: #ff8a80; }
+  .csv-preview .ok  { color: #96ec95; }
+  .status-msg { padding: 12px; border-radius: 8px; margin-top: 12px; font-size: 14px; display: none; }
+  .status-msg.ok  { display: block; background: rgba(150,236,149,0.1); color: #96ec95; }
+  .status-msg.err { display: block; background: rgba(255,138,128,0.1); color: #ff8a80; }
+</style>
+
+<div class="onboard-wrap">
+  <h1>Setup your Acharya</h1>
+  <div class="sub" id="teacher-sub">Loading your details…</div>
+
+  <div class="step">
+    <div class="step-title">1 · Confirm your details</div>
+    <div class="step-hint">Pulled from your WhatsApp conversation with Maya.</div>
+    <div style="margin-bottom: 10px;">
+      <label style="font-size:13px; opacity:0.7;">Coaching name</label>
+      <input id="f-name" class="row-input" placeholder="Your coaching name" />
+    </div>
+    <div style="margin-bottom: 10px;">
+      <label style="font-size:13px; opacity:0.7;">Subject &amp; class</label>
+      <input id="f-subject" class="row-input" placeholder="e.g. Physics — Class 11-12 JEE" />
+    </div>
+    <div>
+      <label style="font-size:13px; opacity:0.7;">Approximate student count</label>
+      <input id="f-count" class="row-input" type="number" min="1" placeholder="e.g. 60" />
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-title">2 · Brand — how students will see your Acharya</div>
+    <div style="margin-bottom: 10px;">
+      <label style="font-size:13px; opacity:0.7;">Accent colour</label>
+      <select id="f-color" class="row-input">
+        <option value="default">TrigunAI gold (default)</option>
+        <option value="red">🔴 Red</option>
+        <option value="green">🟢 Green</option>
+        <option value="blue">🔵 Blue</option>
+        <option value="yellow">🟡 Yellow</option>
+        <option value="black">⚫ Black</option>
+      </select>
+    </div>
+    <div>
+      <label style="font-size:13px; opacity:0.7;">Logo (optional — PNG/JPG, under 2 MB)</label>
+      <input id="f-logo" class="row-input" type="file" accept="image/png,image/jpeg" />
+    </div>
+    <div class="preview" id="brand-preview">
+      <div class="preview-logo" id="brand-logo" style="background: #d4af37;">A</div>
+      <div style="line-height: 1.3;">
+        <div style="font-weight: 600;" id="brand-name-preview">Your Acharya</div>
+        <div style="font-size: 12px; opacity: 0.7;">This is how students will see it</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-title">3 · Add your students</div>
+    <div class="step-hint">
+      Paste each student on a new line as: <code>Name, WhatsApp number</code><br />
+      <span style="opacity: 0.7;">Example:</span> <code style="opacity: 0.7;">Aditi Verma, 9876543210</code>
+    </div>
+    <textarea id="f-students" class="row-input" rows="8"
+              placeholder="Aditi Verma, 9876543210&#10;Rahul Kumar, 9123456789"></textarea>
+    <div class="csv-preview" id="csv-preview" style="margin-top: 8px; display: none;"></div>
+  </div>
+
+  <button class="btn-primary" id="submit-btn" disabled>Setup my Acharya →</button>
+  <div class="status-msg" id="status-msg"></div>
+  <p style="text-align: center; margin-top: 16px; font-size: 13px; opacity: 0.6;">
+    Confirm karne ke baad aapka Acharya 5-10 minute mein live ho jaayega.
+  </p>
+</div>
+
+<script>
+(async function() {
+  const token = "{{ token }}";
+  const bot = "{{ bot_base_url }}";  // e.g. https://gurukul.trigunai.com
+
+  const $ = (id) => document.getElementById(id);
+  const status = (msg, cls) => {
+    const el = $("status-msg"); el.className = "status-msg " + cls; el.textContent = msg;
+  };
+
+  // 1. Load teacher context via bot's /lookup_token
+  let ctx = null;
+  try {
+    const r = await fetch(`${bot}/lookup_token/${token}`);
+    ctx = await r.json();
+    if (!ctx.ok) { $("teacher-sub").textContent = "This setup link has expired or already been used."; return; }
+  } catch (e) {
+    $("teacher-sub").textContent = "Could not reach the setup server. Please reply on WhatsApp for help.";
+    return;
+  }
+
+  $("teacher-sub").innerHTML = `Namaste <b>${ctx.coaching_name || "ji"}</b> 🙏 &nbsp; Just 3 quick steps.`;
+  $("f-name").value    = ctx.coaching_name || "";
+  $("f-subject").value = ctx.subject_class || "";
+  $("f-count").value   = ctx.student_count || "";
+  $("f-color").value   = ctx.brand_color   || "default";
+
+  // 2. Live brand preview
+  const colorMap = { default:"#d4af37", red:"#e04a4a", green:"#4ac07a", blue:"#4a8ce0", yellow:"#e0c94a", black:"#222" };
+  const updatePreview = () => {
+    const c = $("f-color").value;
+    const n = ($("f-name").value || "Your Acharya").trim();
+    $("brand-logo").style.background = colorMap[c] || "#d4af37";
+    $("brand-logo").textContent = n[0]?.toUpperCase() || "A";
+    $("brand-name-preview").textContent = n;
+  };
+  ["f-color","f-name"].forEach(id => $(id).addEventListener("input", updatePreview));
+  updatePreview();
+
+  // 3. Logo file preview (optional)
+  $("f-logo").addEventListener("change", (e) => {
+    const f = e.target.files[0]; if (!f) return;
+    if (f.size > 2*1024*1024) { status("Logo too large — please pick one under 2 MB.", "err"); e.target.value=""; return; }
+    const reader = new FileReader();
+    reader.onload = (ev) => { $("brand-logo").innerHTML = `<img src="${ev.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`; };
+    reader.readAsDataURL(f);
+  });
+
+  // 4. CSV parser (live preview + validation)
+  const parseStudents = (text) => {
+    const rows = text.split(/\r?\n/).map(r => r.trim()).filter(Boolean);
+    const parsed = [], errors = [];
+    for (const [i, r] of rows.entries()) {
+      const parts = r.split(",").map(p => p.trim());
+      if (parts.length < 2) { errors.push(`Row ${i+1}: needs "Name, Number"`); continue; }
+      const name = parts[0];
+      const num  = parts[1].replace(/\D/g, "");
+      if (!name) { errors.push(`Row ${i+1}: name is empty`); continue; }
+      if (num.length < 10 || num.length > 13) { errors.push(`Row ${i+1}: number "${parts[1]}" doesn't look like 10-13 digits`); continue; }
+      parsed.push({ name, number: num.length === 10 ? "91" + num : num });
+    }
+    return { parsed, errors };
+  };
+
+  const updateStudentsPreview = () => {
+    const raw = $("f-students").value;
+    const box = $("csv-preview");
+    if (!raw.trim()) { box.style.display = "none"; $("submit-btn").disabled = true; return; }
+    box.style.display = "block";
+    const { parsed, errors } = parseStudents(raw);
+    let html = `<span class="ok">✓ ${parsed.length} valid students</span>`;
+    if (errors.length) html += errors.map(e => `<div class="err">✗ ${e}</div>`).join("");
+    box.innerHTML = html;
+    $("submit-btn").disabled = parsed.length === 0 || errors.length > 0 || !$("f-name").value.trim();
+  };
+  $("f-students").addEventListener("input", updateStudentsPreview);
+  $("f-name").addEventListener("input", updateStudentsPreview);
+
+  // 5. Submit
+  $("submit-btn").addEventListener("click", async () => {
+    $("submit-btn").disabled = true; $("submit-btn").textContent = "Submitting…";
+    const { parsed } = parseStudents($("f-students").value);
+    let logoDataUrl = null;
+    if ($("f-logo").files[0]) {
+      logoDataUrl = await new Promise(res => { const r = new FileReader(); r.onload = () => res(r.result); r.readAsDataURL($("f-logo").files[0]); });
+    }
+    const form = {
+      coaching_name: $("f-name").value.trim(),
+      subject_class: $("f-subject").value.trim(),
+      student_count: $("f-count").value.trim(),
+      brand_color: $("f-color").value,
+      logo_data_url: logoDataUrl,
+      students: parsed,
+    };
+    try {
+      const r = await fetch(`${bot}/onboard_submit/${token}`, {
+        method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(form),
+      });
+      const j = await r.json();
+      if (j.ok) {
+        status(`✅ Ho gaya! Aapka Acharya provision ho raha hai. WhatsApp par live confirmation aayegi 5-10 min mein.`, "ok");
+        $("submit-btn").textContent = "Setup submitted ✓";
+      } else {
+        status(`Kuchh gadbad hui: ${j.error || "unknown"}. Kripya WhatsApp par reply karein.`, "err");
+        $("submit-btn").disabled = false; $("submit-btn").textContent = "Setup my Acharya →";
+      }
+    } catch (e) {
+      status(`Network error: ${e.message}. WhatsApp par reply karein.`, "err");
+      $("submit-btn").disabled = false; $("submit-btn").textContent = "Setup my Acharya →";
+    }
+  });
+})();
+</script>
+{% endblock %}

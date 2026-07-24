@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex" />
+<title>{{ ct.title }} — Acharya</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+ :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;--card:#fff;--green:#2FA968;--cream:#FAF5EC;
+   --weak:#C23B22;--shaky:#E0972F;--solid:#2FA968;--serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 70%);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100dvh}
+ .wrap{max-width:680px;margin:0 auto;padding:16px 16px 70px}
+ header{display:flex;align-items:center;gap:10px;padding:8px 2px 14px}
+ header a.back{color:var(--gold2);font-weight:700;text-decoration:none;font-size:14px}
+ h1{font-family:var(--serif);font-weight:800;font-size:22px;margin:6px 0 2px}
+ .meta{color:var(--muted);font-size:13px;margin-bottom:18px}
+ .share{background:linear-gradient(160deg,#FFF7EE,#FFFDF9);border:1.5px solid var(--gold2);border-radius:16px;padding:16px 18px;margin-bottom:14px}
+ .share .h{font-weight:800;font-size:14px;color:var(--gold2);margin-bottom:9px}
+ .linkrow{display:flex;gap:8px;align-items:center}
+ .linkrow input{flex:1;min-width:0;background:#FBF3EA;border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;font-size:13.5px;font-family:var(--sans);color:var(--ink)}
+ .linkrow button{flex:0 0 auto;background:var(--gold2);color:#fff;border:none;border-radius:10px;padding:11px 14px;font-weight:800;font-size:13px;cursor:pointer;font-family:inherit}
+ .acts{display:flex;gap:9px;margin-top:11px;flex-wrap:wrap}
+ .acts a{flex:1;text-align:center;border-radius:11px;padding:11px;font-weight:800;font-size:13.5px;text-decoration:none}
+ .acts .wa{background:#25D366;color:#fff}
+ .acts .pr{background:var(--card);border:1.5px solid var(--gold);color:var(--gold2)}
+ .stat{display:flex;gap:10px;margin-bottom:16px}
+ .stat .b{flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+ .stat .b b{font-family:var(--serif);font-size:24px;color:var(--gold2);display:block}
+ .stat .b span{font-size:11.5px;color:var(--faint)}
+ .sec{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:800;margin:20px 2px 10px}
+ .weakbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+ .wt{background:#FBEBE6;border:1px solid rgba(194,59,34,.3);color:#a83220;border-radius:10px;padding:7px 11px;font-size:13px;font-weight:700}
+ .wt b{color:#7d2417}
+ .stud{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:13px 16px;margin-bottom:9px}
+ .stud .nm{flex:1;font-weight:700;font-size:15px}
+ .stud .wk{font-size:11.5px;color:var(--muted);margin-top:2px;font-weight:500}
+ .pct{font-family:var(--serif);font-weight:800;font-size:18px;flex:0 0 auto}
+ .pct.weak{color:var(--weak)}.pct.shaky{color:var(--shaky)}.pct.solid{color:var(--solid)}
+ .empty{background:var(--card);border:1px dashed var(--line);border-radius:16px;padding:26px 20px;text-align:center;color:var(--muted);font-size:14px}
+ .refresh{display:block;text-align:center;color:var(--gold2);font-weight:700;font-size:13px;text-decoration:none;margin-top:10px}
+ .copied{color:var(--green);font-size:12px;font-weight:700;margin-top:6px;display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><a class="back" href="/teacher">← My class</a></header>
+  <h1>{{ ct.title }}</h1>
+  <div class="meta">{{ ct.subject_label }} · {{ ct.n }} questions · {% for c in ct.chapters %}{{ c }}{% if not loop.last %}, {% endif %}{% endfor %}</div>
+
+  <div class="share">
+    <div class="h">📲 Share this test with your students</div>
+    <div class="linkrow">
+      <input id="lnk" value="{{ share }}" readonly onclick="this.select()" />
+      <button onclick="cp()">Copy</button>
+    </div>
+    <div class="copied" id="cd">✓ Link copied</div>
+    <div class="acts">
+      <a class="wa" href="https://wa.me/?text={{ ('Take this test: ' + ct.title + ' — ' + share) | urlencode }}" target="_blank" rel="noopener">Share on WhatsApp</a>
+      <a class="pr" href="/teacher/test/{{ ct.code }}/print" target="_blank">🖨️ Print paper</a>
+    </div>
+  </div>
+
+  <div class="stat">
+    <div class="b"><b>{{ n_students }}</b><span>students took it</span></div>
+    <div class="b"><b>{{ avg }}%</b><span>class average</span></div>
+    <div class="b"><b>{{ ct.code }}</b><span>test code</span></div>
+  </div>
+
+  {% if class_weak %}
+  <div class="sec">🎯 Where the class is weak</div>
+  <div class="weakbar">
+    {% for topic, cnt in class_weak %}<span class="wt">{{ topic }} <b>· {{ cnt }}</b></span>{% endfor %}
+  </div>
+  <div class="meta" style="margin-top:8px">The number = how many students are weak in that topic. Teach these next.</div>
+  {% endif %}
+
+  <div class="sec">Students &amp; results</div>
+  {% if sits %}
+    {% for s in sits %}
+    <div class="stud">
+      <div style="flex:1">
+        <div class="nm">{{ s.student_name }}</div>
+        {% if s.weak_topics %}<div class="wk">weak in: {{ s.weak_topics | join(', ') }}</div>{% else %}<div class="wk">no weak topics — strong</div>{% endif %}
+      </div>
+      {% set p = (100 * s.score / s.total) | round | int if s.total else 0 %}
+      <div class="pct {{ 'weak' if p < 40 else ('shaky' if p < 70 else 'solid') }}">{{ p }}%</div>
+    </div>
+    {% endfor %}
+  {% else %}
+    <div class="empty">No one has taken it yet. Share the link above — results appear here live as students finish.</div>
+  {% endif %}
+  <a class="refresh" href="/teacher/test/{{ ct.code }}">↻ Refresh results</a>
+</div>
+<script>
+function cp(){var i=document.getElementById('lnk');i.select();try{document.execCommand('copy');}catch(e){}
+  if(navigator.clipboard)navigator.clipboard.writeText(i.value).catch(function(){});
+  document.getElementById('cd').style.display='block';}
+</script>
+</body>
+</html>

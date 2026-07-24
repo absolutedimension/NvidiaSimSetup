@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18339354528"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18339354528');</script>
-<title>Win up to 60 days FREE — the Acharya challenge</title>
+<title>Free practice test — Acharya exam prep</title>
 <link rel="icon" href="/static/brand/favicon-32.png" />
 {% if google_client_id %}<script src="https://accounts.google.com/gsi/client" async defer></script>{% endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -90,7 +90,7 @@
 <div class="wrap">
   <header>
     <div class="ava">🏆</div>
-    <div class="tt"><div class="t">Acharya Challenge</div><div class="s" id="hsub">Win up to 60 days free</div></div>
+    <div class="tt"><div class="t">Acharya Challenge</div><div class="s" id="hsub">Find your weak topics — free</div></div>
     <div class="timer" id="timer">5:00</div>
     <div class="langtog"><button data-l="en">EN</button><button data-l="hi">हिं</button></div>
   </header>
@@ -108,40 +108,36 @@ const SECS = {{ seconds }};
 const NC = {{ ncomp }};
 const T = {
  en:{qof:(i,n)=>`Question ${i} of ${n}`, tf:["True","False"], next:"Next →", finish:"Finish →",
-   hookH:'🏆 Win up to <span style="color:var(--gold)">60 DAYS FREE</span>.',
-   hookP:`A serious ${NC}-question challenge — mixed easy, medium & hard. ~5 minutes. The higher you score, the more days you study FREE.`,
+   hookH:'🎯 Find your <span style="color:var(--gold)">exact weak topics</span>.',
+   hookP:`A serious ${NC}-question test — mixed easy, medium & hard. ~5 minutes. Acharya finds exactly which topics you're weak in. Free 14-day trial, then ₹199/mo.`,
    forSub:"Your exam:", start:`Start the challenge →`,
    featsH:"Your daily assessment engine — you unlock:",
    feats:["📅 A fresh adaptive test every day","📈 Improvement & growth tracking","🧠 An engine that gets smarter each day","🎯 Your exact weak topics — fixed"],
-   ladder:[["Score 100%","60 days 🏆"],["80%+","50 days"],["60%+","40 days"],["40%+","30 days"],["20%+","20 days"],["Just attempt","14 days"]],
-   ladderH:"Earn free access:",
    preparing:"Setting up your challenge — fresh questions, just for you…",
    genErr:"Couldn't start the challenge — please try another exam.",
    submitting:"Scoring your challenge…", timeUp:"⏰ Time's up! Scoring…",
-   earnedH:d=>`🎉 You earned <span class="g">${d} days FREE</span>!`,
-   sc:(s,n)=>`You scored <b>${s}/${n}</b>. Register to claim your free access + see your full weak-spot report.`,
-   review:"📖 See the answers", email:"you@email.com", claim:"Claim my free access →", or:"or",
-   fine:"Free · no card · English or हिंदी", yourAns:"Your answer:", correctAns:"Correct:",
+   earnedH:d=>`🎉 Your <span class="g">weak-spot report</span> is ready!`,
+   sc:(s,n)=>`You scored <b>${s}/${n}</b>. Sign in to see your full weak-spot report and start your <b>free 14-day trial</b>.`,
+   review:"📖 See the answers", email:"you@email.com", claim:"Start my free trial →", or:"or",
+   fine:"14 days free · no card · then ₹199/mo · English or हिंदी", yourAns:"Your answer:", correctAns:"Correct:",
    waAlt:"📱 Prefer WhatsApp?", waLink:"Take the test right in WhatsApp →",
    pickH:"What do you want to be tested on?", pickPh:"e.g. NEET Biology, or JEE Rotational Motion",
    pickHint:"Tip: an exam + a chapter works best.", pickEmpty:"Type a topic or exam to start.",
    checking:"Checking your topic…", invalid:"Please enter a real exam or subject topic (add a chapter if it helps).",
    skipLink:"Skip the challenge — just log in →", skipH:"Log in & start practising free", skipP:"Free to try — no card, no password.", login:"Log in free →"},
  hi:{qof:(i,n)=>`सवाल ${i} / ${n}`, tf:["सही","ग़लत"], next:"अगला →", finish:"पूरा करें →",
-   hookH:'🏆 <span style="color:var(--gold)">60 दिन तक FREE</span> जीतें।',
-   hookP:`एक serious ${NC}-सवाल challenge — easy, medium & hard मिला-जुला। ~5 मिनट। जितना ज़्यादा score, उतने दिन FREE।`,
+   hookH:'🎯 अपने <span style="color:var(--gold)">कमज़ोर टॉपिक</span> पहचानें।',
+   hookP:`एक serious ${NC}-सवाल टेस्ट — easy, medium & hard मिला-जुला। ~5 मिनट। Acharya बताएगा आप किन टॉपिक में कमज़ोर हैं। 14 दिन FREE, फिर ₹199/mo।`,
    forSub:"आपका exam:", start:`Challenge शुरू करें →`,
    featsH:"आपका daily assessment engine — आपको मिलेगा:",
    feats:["📅 रोज़ एक नया adaptive टेस्ट","📈 Improvement & growth tracking","🧠 हर दिन smarter होता engine","🎯 आपके कमज़ोर टॉपिक — ठीक"],
-   ladder:[["100% score","60 दिन 🏆"],["80%+","50 दिन"],["60%+","40 दिन"],["40%+","30 दिन"],["20%+","20 दिन"],["सिर्फ़ attempt","14 दिन"]],
-   ladderH:"Free access कमाएँ:",
    preparing:"आपका challenge तैयार हो रहा है — नए सवाल, सिर्फ़ आपके लिए…",
    genErr:"Challenge शुरू नहीं हो सका — कोई दूसरा exam चुनें।",
    submitting:"आपका challenge जाँचा जा रहा है…", timeUp:"⏰ समय ख़त्म! जाँच रहे हैं…",
-   earnedH:d=>`🎉 आपने <span class="g">${d} दिन FREE</span> कमाए!`,
-   sc:(s,n)=>`आपने <b>${s}/${n}</b> किए। Register करके free access + पूरी weak-spot report पाएँ।`,
-   review:"📖 जवाब देखें", email:"you@email.com", claim:"मेरी free access क्लेम करें →", or:"या",
-   fine:"Free · कोई card नहीं · English या हिंदी", yourAns:"आपका जवाब:", correctAns:"सही:",
+   earnedH:d=>`🎉 आपकी <span class="g">weak-spot report</span> तैयार है!`,
+   sc:(s,n)=>`आपने <b>${s}/${n}</b> किए। Sign in करके पूरी weak-spot report देखें और <b>14 दिन का free trial</b> शुरू करें।`,
+   review:"📖 जवाब देखें", email:"you@email.com", claim:"मेरा free trial शुरू करें →", or:"या",
+   fine:"14 दिन free · कोई card नहीं · फिर ₹199/mo · English या हिंदी", yourAns:"आपका जवाब:", correctAns:"सही:",
    waAlt:"📱 WhatsApp पसंद है?", waLink:"WhatsApp में ही टेस्ट दें →",
    pickH:"किस पर टेस्ट देना है?", pickPh:"जैसे NEET Biology, या JEE Rotational Motion",
    pickHint:"Tip: exam + chapter सबसे अच्छा।", pickEmpty:"शुरू करने के लिए topic या exam लिखें।",
@@ -234,7 +230,7 @@ function renderGate(topHtml, earn, extraHtml){
     ${GCID?`<div class="orline">${T[LANG].or}</div>`:''}
     <form method="post" action="/exam-prep/start" id="emf">
       <input type="hidden" name="exam" value="${curExam||''}"><input type="hidden" name="q" value="${curQ||''}">
-      <input type="hidden" name="earn" value="${earn||''}">
+      
       <input type="email" name="email" placeholder="${T[LANG].email}" autocomplete="email" required>
       <button class="btn" type="submit">${earn?T[LANG].claim:T[LANG].login}</button>
     </form>
@@ -287,7 +283,6 @@ function onGoogle(resp){
 function intro(){
   clear(); plabel.textContent=''; fill.style.width='0%'; timerEl.style.display='none';
   document.getElementById('hsub').textContent = T[LANG].hookH.replace(/<[^>]+>/g,'');
-  const lad=T[LANG].ladder.map(([a,b])=>`<div class="lr"><span>${a}</span><b>${b}</b></div>`).join('');
   const fts=T[LANG].feats.map(f=>`<div class="ft">${f}</div>`).join('');
   const chips=SUGGEST.map(s=>`<button class="chip" type="button" data-t="${s}">${s}</button>`).join('');
   const preset = EXAM ? ((EXAMS.find(e=>e.id===EXAM)||{}).title||'') : (QTXT||'');
@@ -302,8 +297,6 @@ function intro(){
     <div class="vmsg" id="vmsg"></div>
     <div class="say" style="margin-top:14px;font-size:12px;color:var(--gold2);font-weight:800">${T[LANG].featsH}</div>
     <div class="feats">${fts}</div>
-    <div class="say" style="margin-top:12px;font-size:12px;color:var(--gold2);font-weight:800">${T[LANG].ladderH}</div>
-    <div class="ladder">${lad}</div>
   </div>`);
   add(card);
   const inp=card.querySelector('#topicin');

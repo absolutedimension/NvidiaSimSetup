@@ -29,6 +29,8 @@
  .qtag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold2);background:var(--cream);border-radius:6px;padding:3px 8px;margin-bottom:9px}
  .qtag.easy{color:#0d7a53;background:#E9F6EE}
  .qtext{font-size:15.5px;font-weight:600;line-height:1.5;margin-bottom:13px}
+ .qfig{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin:0 0 12px;text-align:center;overflow-x:auto}
+ .qfig svg{max-width:100%;height:auto;display:inline-block}
  .opt{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:12px 13px;margin-top:9px;font-size:14.5px;cursor:pointer;transition:.13s;color:var(--ink)}
  .opt:hover{border-color:var(--gold);background:#FFFBF6} .opt:active{transform:scale(.985)}
  .opt .badge{width:26px;height:26px;flex:0 0 auto;border-radius:8px;background:var(--cream);color:var(--gold2);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
@@ -88,7 +90,10 @@
  .rv-c{flex:1;min-width:0} .rv-t{font-size:13.5px;font-weight:600;line-height:1.4}
  .rv-a{font-size:13px;color:#116b41;margin-top:3px} .rv-a b{color:var(--muted);font-weight:700}
  .rv-e{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.45}
-</style></head>
+</style>
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']},startup:{typeset:false}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
 <body>
 <div class="wrap">
   <header><div class="ava">🪔</div>
@@ -247,7 +252,7 @@ const T={
    sureQ:"Were you sure?",sure:"😎 Sure",unsure:"🤔 Not sure",
    confWrong:n=>`🧠 <b>${n}</b> answer${n>1?'s':''} you were <b>sure</b> about turned out wrong — that's the most important thing to fix (a confident misconception hides until it's tested).`,
    reviewLbl:"📖 Review your answers",ansLbl:"Correct:",teacherView:"👨‍🏫 See the teacher's view →",
-   another:"🔁 Take another exam →",studFoot:"📊 Your report is saved to your account — keep testing and watch your weak areas shrink.",
+   another:"🏠 My dashboard — days &amp; topics →",studFoot:"📊 Your report is saved to your account — keep testing and watch your weak areas shrink.",
    restart:"↻ Restart test"},
  hi:{ready:"तैयार",qof:i=>`सवाल ${i} / ${TOTAL}`,score:"स्कोर",start:"टेस्ट शुरू करें →",next:"अगला सवाल →",results:"नतीजा देखें →",check:"जाँचें",submit:"जवाब सबमिट करें",checking:"आचार्य जाँच रहे हैं…",typePh:"अपने शब्दों में लिखें…",tf:["सही","ग़लत"],
    longNo:"कोई बात नहीं — अभी यह साफ़ नहीं है। सही जवाब यह रहा, इसे समझ लो 👇",longYes:"आपका जवाब मिल गया 👍 अब इसे सही जवाब से मिलाकर देखो 👇",
@@ -265,7 +270,7 @@ const T={
    sureQ:"पक्का यकीन था?",sure:"😎 पक्का",unsure:"🤔 यकीन नहीं",
    confWrong:n=>`🧠 <b>${n}</b> जवाब जिन पर आपको <b>पक्का यकीन</b> था, वो ग़लत निकले — यही सबसे ज़रूरी सुधार है (पक्के यकीन वाली ग़लती टेस्ट होने तक छिपी रहती है)।`,
    reviewLbl:"📖 अपने जवाब देखें",ansLbl:"सही जवाब:",teacherView:"👨‍🏫 teacher को कैसा दिखता है →",
-   another:"🔁 दूसरा exam लें →",studFoot:"📊 आपकी report आपके account में सेव है — टेस्ट देते रहें और अपनी कमज़ोरियाँ घटते देखें।",
+   another:"🏠 मेरा dashboard — days &amp; topics →",studFoot:"📊 आपकी report आपके account में सेव है — टेस्ट देते रहें और अपनी कमज़ोरियाँ घटते देखें।",
    restart:"↻ फिर से टेस्ट"}
 };
 
@@ -275,7 +280,23 @@ let LANG=params.get('lang')==='hi'?'hi':'en';
 let S, TOTAL, GRADED, score=0;   // set by boot() once the pack (curated or generated) is ready
 const log=document.getElementById('log'),fill=document.getElementById('fill'),plabel=document.getElementById('plabel'),pscore=document.getElementById('pscore');
 const el=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;};
-const add=n=>{const r=document.createElement('div');r.className='row';r.appendChild(n);log.appendChild(r);log.scrollTop=log.scrollHeight;return r;};
+// Render a question's SVG diagram (server-sanitized; strip event handlers + scripts as defense-in-depth).
+function figHTML(q){ if(!q||!q.figure) return '';
+  let svg=String(q.figure).replace(/<script[\s\S]*?<\/script>/gi,'')
+    .replace(/\son\w+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi,'').replace(/javascript:/gi,'');
+  return `<div class="qfig">${svg}</div>`; }
+function fbAdd(card,html){ const n=el(html); card.appendChild(n); typeset(n); return n; }
+// MathJax loads async — at first paint window.MathJax is only the CONFIG object (no typesetPromise
+// yet), so poll until the library is really ready or the content stays as raw LaTeX forever.
+function typeset(node){
+  let tries = 0;
+  const go = () => {
+    if (window.MathJax && window.MathJax.typesetPromise) { window.MathJax.typesetPromise([node]).catch(()=>{}); }
+    else if (tries++ < 100) { setTimeout(go, 150); }
+  };
+  go();
+}
+const add=n=>{const r=document.createElement('div');r.className='row';r.appendChild(n);log.appendChild(r);log.scrollTop=log.scrollHeight;typeset(r);return r;};
 const say=h=>{const d=document.createElement('div');d.className='say';d.innerHTML='<div class="who">ACHARYA</div>'+h;add(d);};
 const clear=()=>{log.innerHTML='';};
 const wait=m=>new Promise(r=>setTimeout(r,m));
@@ -293,7 +314,7 @@ function advance(res,ok,label){
 const L=q=>q[LANG];  // language view of a question
 
 function mcq(q,last){return new Promise(res=>{const v=L(q);
-  const card=el(`<div class="qcard"><span class="qtag ${q.easy?'easy':''}">${v.tag}</span><div class="qtext">${v.q}</div></div>`);
+  const card=el(`<div class="qcard"><span class="qtag ${q.easy?'easy':''}">${v.tag}</span>${figHTML(q)}<div class="qtext">${v.q}</div></div>`);
   const B=['A','B','C','D'];
   const order=shuffle(v.opts.map((o,i)=>i));   // #5 randomize display order; original index decides correctness
   order.forEach((origI,pos)=>{const o=v.opts[origI];const b=el(`<button class="opt"><span class="badge">${B[pos]}</span><span>${o}</span></button>`);
@@ -303,7 +324,7 @@ function mcq(q,last){return new Promise(res=>{const v=L(q);
       const ok=origI===q.correct;
       if(!ok){b.classList.remove('dim');b.classList.add('wrong');b.appendChild(el('<span class="mark">✕</span>'));}
       else b.appendChild(el('<span class="mark" style="color:var(--good)">✓</span>'));
-      card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrong}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
+      fbAdd(card,(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrong}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
     card.appendChild(b);});
   add(card);});}
 
@@ -313,7 +334,7 @@ function truefalse(q,last){return new Promise(res=>{const v=L(q);
   [[T[LANG].tf[0],true],[T[LANG].tf[1],false]].forEach(([t,val])=>{const b=el(`<button>${t}</button>`);
     b.onclick=()=>{w.querySelectorAll('button').forEach(x=>x.onclick=null);const ok=val===q.answer;
       w.querySelectorAll('button')[q.answer?0:1].classList.add('correct');if(!ok)b.classList.add('wrong');
-      card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrong}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
+      fbAdd(card,(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrong}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
     w.appendChild(b);});
   add(card);});}
 
@@ -330,15 +351,15 @@ function match(q,last){return new Promise(res=>{const v=L(q);
     const ri=+m.dataset.i,lEl=CL.querySelector(`[data-i="${sel}"]`),good=q.pairs[sel]===ri;
     lEl.classList.remove('sel');[lEl,m].forEach(x=>x.classList.add(good?'ok':'no'));if(!good)wrong++;sel=null;made++;
     if(made===n){const ok=wrong===0;
-      card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].matchOk:T[LANG].matchNo}</div>`));advance(res,ok,last?T[LANG].results:null);}});
+      fbAdd(card,(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].matchOk:T[LANG].matchNo}</div>`));advance(res,ok,last?T[LANG].results:null);}});
   add(card);});}
 
 function numeric(q,last){return new Promise(res=>{const v=L(q);
-  const card=el(`<div class="qcard"><span class="qtag">${v.tag}</span><div class="qtext">${v.q}</div><div class="inrow"><input type="number" inputmode="decimal" placeholder="${q.unit?q.unit:'?'}"/><button class="btn">${T[LANG].check}</button></div></div>`);
+  const card=el(`<div class="qcard"><span class="qtag">${v.tag}</span>${figHTML(q)}<div class="qtext">${v.q}</div><div class="inrow"><input type="number" inputmode="decimal" placeholder="${q.unit?q.unit:'?'}"/><button class="btn">${T[LANG].check}</button></div></div>`);
   const inp=card.querySelector('input'),btn=card.querySelector('button');
   btn.onclick=()=>{if(inp.value==='')return;btn.onclick=null;inp.disabled=true;const ok=Math.abs(parseFloat(inp.value)-q.answer)<1e-6;
     inp.style.borderColor=ok?'var(--good)':'var(--bad)';inp.style.background=ok?'var(--goodbg)':'var(--badbg)';
-    card.appendChild(el(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrongAns(q.answer,q.unit)}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
+    fbAdd(card,(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrongAns(q.answer,q.unit)}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
   add(card);});}
 
 // Free text can't be truthfully auto-graded in a static demo, so we NEVER fake a "correct".
@@ -411,9 +432,19 @@ function scorecard(results,transcript){
   const pct=GRADED?Math.round(score/GRADED*100):0;
   const lab={solid:T[LANG].solid,shaky:T[LANG].shaky,weak:T[LANG].weakL};
   const chipCls={solid:'good',shaky:'shaky',weak:'weak'};
-  const rows=results.map(r=>`<div class="r"><span>${r.topic[LANG]}</span><span class="chip ${chipCls[r.status]}">${lab[r.status]}</span></div>`).join('');
-  const weakRes=results.filter(r=>r.status==='weak');
-  const shakyRes=results.filter(r=>r.status==='shaky');
+  // AGGREGATE per topic — a 5-question test on one concept must show ONE row, not five identical ones.
+  const byTopic=new Map();
+  results.forEach(r=>{ const k=(r.topic&&(r.topic.en||r.topic[LANG]))||'—';
+    const cur=byTopic.get(k)||{topic:r.topic,n:0,solid:0,shaky:0,weak:0,depth:null};
+    cur.n++; cur[r.status]=(cur[r.status]||0)+1;
+    if(r.status==='weak'&&!cur.depth) cur.depth=r.depth;
+    byTopic.set(k,cur); });
+  const agg=[...byTopic.values()].map(a=>({
+    topic:a.topic, depth:a.depth, n:a.n, right:a.solid,
+    status: a.weak>=Math.max(a.solid,a.shaky) ? 'weak' : (a.shaky>=a.solid ? 'shaky' : 'solid')}));
+  const rows=agg.map(r=>`<div class="r"><span>${r.topic[LANG]}${r.n>1?` <small style="color:var(--muted)">${r.right}/${r.n}</small>`:''}</span><span class="chip ${chipCls[r.status]}">${lab[r.status]}</span></div>`).join('');
+  const weakRes=agg.filter(r=>r.status==='weak');
+  const shakyRes=agg.filter(r=>r.status==='shaky');
   // priority next-step: real weakness first, then an application-level gap. Pure hesitation never becomes a "drill".
   const pri=weakRes.find(r=>r.depth==='basics')||weakRes[0]||shakyRes.find(r=>r.depth==='application');
   const weakNames=weakRes.map(r=>r.topic[LANG]).join(', ');
@@ -440,11 +471,20 @@ function scorecard(results,transcript){
   add(el(`<details class="review"><summary>${T[LANG].reviewLbl}</summary><div class="rv-body">${revItems}</div></details>`));
   // Student mode: persist the diagnosis to the account (session cookie authenticates) + student CTA.
   // Teacher-demo mode: the teacher-view link, as before.
-  if(window.__STUDENT){
-    try{fetch('/api/assess/complete',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
-      body:JSON.stringify({subject:(window.__SUBJECT||''),score:score,graded:GRADED,
+  if(window.__CLASSTEST){
+    // Teacher class-test mode: record the sitting (name is server-side in the session) so the
+    // teacher's dashboard sees this student's real score + weak topics. No account needed.
+    try{fetch(window.__CLASSTEST.sittingUrl,{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+      body:JSON.stringify({code:window.__CLASSTEST.code,score:score,graded:GRADED,
         results:results.map(r=>({topic:r.topic.en,status:r.status,depth:r.depth||null}))})}).catch(()=>{});}catch(e){}
-    add(el(`<a class="btn ghost full" href="/exam-prep">${T[LANG].another}</a>`));
+    add(el(`<div class="footnote" style="text-align:center">✅ ${LANG==='hi'?'जमा हो गया — आपके टीचर को आपका परिणाम दिख जाएगा।':'Submitted — your teacher can now see your result.'}</div>`));
+  } else if(window.__STUDENT){
+    try{fetch('/api/assess/complete',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+      body:JSON.stringify({subject:(window.__SUBJECT||''),title:(window.__TITLE||window.__GEN_TITLE||''),score:score,graded:GRADED,
+        results:results.map(r=>({topic:r.topic.en,status:r.status,depth:r.depth||null})),
+        // full paper so the student can REOPEN this test later from their report
+        detail:(transcript||[]).map(t=>({q:t.q,a:t.a,explain:t.explain||'',ok:t.ok,type:t.type}))})}).catch(()=>{});}catch(e){}
+    add(el(`<a class="btn ghost full" href="/exam-prep/dashboard">${T[LANG].another}</a>`));
     add(el(`<div class="footnote">${T[LANG].studFoot}</div>`));
   } else {
     add(el(`<a class="btn ghost full" href="/dashboard" target="_blank" rel="noopener">${T[LANG].teacherView}</a>`));

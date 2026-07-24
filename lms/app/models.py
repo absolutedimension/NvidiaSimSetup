@@ -1,7 +1,7 @@
 from datetime import datetime, date
 
 from sqlalchemy import (
-    Boolean, Date, DateTime, ForeignKey, Integer, String, Text, UniqueConstraint, JSON
+    Boolean, Date, DateTime, Float, ForeignKey, Integer, String, Text, UniqueConstraint, JSON
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -41,6 +41,10 @@ class Student(Base):
     assess_period_end: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     # ---- learning-loop data consent (the "your usage improves Acharya" surface) ----
     data_loop_consent: Mapped[bool] = mapped_column(Boolean, default=True)
+    # ---- teacher/institute (the B2B side): a teacher signs in and creates class tests. Reuses the
+    # same auth + session as a student; is_teacher just gates the /teacher surface. ----
+    is_teacher: Mapped[bool] = mapped_column(Boolean, default=False)
+    institute: Mapped[str] = mapped_column(String(120), default="")
 
 
 class MagicToken(Base):
@@ -239,4 +243,143 @@ class CourseRequest(Base):
     phone: Mapped[str] = mapped_column(String(20), default="", index=True)
     source: Mapped[str] = mapped_column(String(20), default="whatsapp")    # whatsapp | web
     status: Mapped[str] = mapped_column(String(20), default="requested")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class TopicAttempt(Base):
+    """One completed exam-prep test — the student's own progress history (NOT the consent-gated
+    Acharya learning loop; this is the product's own score-keeping). Powers 'N tests taken'."""
+    __tablename__ = "topic_attempts"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    subject: Mapped[str] = mapped_column(String(40), index=True)   # 'jee-physics' or a curated subject id
+    title: Mapped[str] = mapped_column(String(120), default="")
+    score: Mapped[int] = mapped_column(Integer, default=0)
+    total: Mapped[int] = mapped_column(Integer, default=0)
+    concepts: Mapped[list] = mapped_column(JSON, default=list)     # concept names covered
+    # The full paper as sat: [{q, a (correct answer), explain, ok, type}] — lets the student REOPEN
+    # any past test from their report instead of losing it the moment they leave the results screen.
+    detail: Mapped[list] = mapped_column(JSON, default=list)
+    taken_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class ConceptStat(Base):
+    """Running per-concept mastery for a student within a subject — drives the 'Acharya suggests
+    next' weakest-concept recommendation. correct: solid=1.0, shaky=0.5, weak=0.0."""
+    __tablename__ = "concept_stats"
+    __table_args__ = (UniqueConstraint("student_id", "subject", "concept", name="uq_concept_stat"),)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    subject: Mapped[str] = mapped_column(String(40), index=True)
+    concept: Mapped[str] = mapped_column(String(120))
+    seen: Mapped[int] = mapped_column(Integer, default=0)
+    correct: Mapped[float] = mapped_column(Float, default=0.0)
+    last_at: Mapped[datetime] = mapped_column(DateTime, default=now)
+
+
+class ClassTest(Base):
+    """A test a TEACHER creates for their class. Questions are generated ONCE (examgen) and stored
+    in `pack`, so every student gets the SAME paper instantly — no per-student LLM cost or wait.
+    Shared with students via the short `code` (link /t/<code>). This is the B2B/teacher product."""
+    __tablename__ = "class_tests"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    teacher_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    code: Mapped[str] = mapped_column(String(12), unique=True, index=True)   # short shareable code
+    title: Mapped[str] = mapped_column(String(120), default="")
+    subject_id: Mapped[str] = mapped_column(String(40))                      # jee-physics, neet-biology, …
+    subject_label: Mapped[str] = mapped_column(String(80), default="")
+    chapters: Mapped[list] = mapped_column(JSON, default=list)               # chosen "Chapter::Concept" labels
+    difficulty: Mapped[str] = mapped_column(String(8), default="3-4")
+    n: Mapped[int] = mapped_column(Integer, default=5)
+    pack: Mapped[dict] = mapped_column(JSON, default=dict)                   # the full assess.html pack (keys+solutions)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class ClassSitting(Base):
+    """One student's attempt at a ClassTest — NO student account, just a name. Stores the per-concept
+    result so the teacher dashboard can aggregate class weak-topics and flag who needs help."""
+    __tablename__ = "class_sittings"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    class_test_id: Mapped[int] = mapped_column(ForeignKey("class_tests.id"), index=True)
+    student_name: Mapped[str] = mapped_column(String(80), default="")
+    score: Mapped[int] = mapped_column(Integer, default=0)
+    total: Mapped[int] = mapped_column(Integer, default=0)                   # graded-question count
+    concepts: Mapped[list] = mapped_column(JSON, default=list)               # [{topic, status, depth}]
+    weak_topics: Mapped[list] = mapped_column(JSON, default=list)            # derived weak concept names
+    submitted_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class GenJob(Base):
+    """An async question-generation job. The chat kicks one off, a background thread runs
+    examgen (slow: ~40-55s/question) and writes the result here, and the chat polls this row —
+    so a big paper NEVER blocks the request (the 'Acharya is thinking… then delivers' UX)."""
+    __tablename__ = "gen_jobs"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    token: Mapped[str] = mapped_column(String(24), unique=True, index=True)
+    owner_id: Mapped[int] = mapped_column(Integer, default=0, index=True)   # teacher/student id (0=anon)
+    kind: Mapped[str] = mapped_column(String(20))                           # teacher_test | student_test
+    status: Mapped[str] = mapped_column(String(12), default="pending")      # pending | done | error
+    params: Mapped[dict] = mapped_column(JSON, default=dict)
+    result: Mapped[dict] = mapped_column(JSON, default=dict)                # {code,redirect,...} or {error}
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class SeenQuestion(Base):
+    """Every pool question this student has already been served — passed to /pool as `exclude`
+    so they never re-see a question. (Pool serving is random, so without this a student WILL get
+    repeats across sessions.)"""
+    __tablename__ = "seen_questions"
+    __table_args__ = (UniqueConstraint("student_id", "question_id", name="uq_seen_question"),)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    question_id: Mapped[str] = mapped_column(String(80), index=True)
+    subject: Mapped[str] = mapped_column(String(40), default="", index=True)
+    seen_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class MockPaper(Base):
+    """A SHARED, pre-generated full mock paper — the test series. Deliberately NOT owned by a
+    student: generated once, sat by everyone (exactly how a real test series works), so cost is
+    one-time instead of per-signup and papers are instantly available."""
+    __tablename__ = "mock_papers"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    code: Mapped[str] = mapped_column(String(40), unique=True, index=True)      # 'JEEADV-PHY-01'
+    subject: Mapped[str] = mapped_column(String(40), default="jee-physics", index=True)
+    title: Mapped[str] = mapped_column(String(140), default="")
+    minutes: Mapped[int] = mapped_column(Integer, default=60)
+    max_marks: Mapped[int] = mapped_column(Integer, default=0)
+    # [{n, section, qtype, stem, options[], correct, solution, chapter, concept, marks, neg, figure}]
+    questions: Mapped[list] = mapped_column(JSON, default=list)
+    status: Mapped[str] = mapped_column(String(12), default="draft", index=True)  # draft | ready
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class PaperAttempt(Base):
+    """One student's sitting of a MockPaper — answers, marks (with negative marking), timing."""
+    __tablename__ = "paper_attempts"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    paper_id: Mapped[int] = mapped_column(ForeignKey("mock_papers.id"), index=True)
+    answers: Mapped[dict] = mapped_column(JSON, default=dict)   # {"1": "B", "2": ["A","C"], "3": "9"}
+    score: Mapped[float] = mapped_column(Float, default=0.0)
+    max_score: Mapped[int] = mapped_column(Integer, default=0)
+    correct: Mapped[int] = mapped_column(Integer, default=0)
+    wrong: Mapped[int] = mapped_column(Integer, default=0)
+    skipped: Mapped[int] = mapped_column(Integer, default=0)
+    started_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+    submitted_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+
+
+class StudentTopic(Base):
+    """A topic the exam-prep student is preparing — the unit the ₹199 plan is metered in
+    (up to 5 per student). `topic_key` is a curated exam id (e.g. 'neet') or a free-text slug
+    ('q:rotational-motion'); the student takes adaptive tests per topic from the dashboard.
+    Seeded from the challenge/first exam on signup; grown via /exam-prep/topics/add."""
+    __tablename__ = "student_topics"
+    __table_args__ = (UniqueConstraint("student_id", "topic_key", name="uq_student_topic"),)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    topic_key: Mapped[str] = mapped_column(String(80), index=True)   # exam id, or 'q:<slug>'
+    title: Mapped[str] = mapped_column(String(120), default="")      # display, e.g. 'NEET' or 'JEE Rotational Motion'
+    kind: Mapped[str] = mapped_column(String(10), default="exam")    # exam | custom
     created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)

@@ -17,12 +17,12 @@ from sqlalchemy.orm import Session
 from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
-from . import analytics, assess_gen, billing, catalog, course_details, gamify, legal, notify, personalize, seo, teasers, tutor
+from . import analytics, assess_gen, billing, catalog, course_details, examgen, gamify, legal, mockpaper, notify, personalize, seo, teasers, tutor
 from .config import settings
 from .db import get_db
 from .emailer import send_magic_link
 from .models import (
-    AssessmentItem, CompSession, CourseRequest, LearnerFact, Lesson, LessonProgress, LearningEvent, Module, Student, TaskCompletion, WorkbookTask, now,
+    AssessmentItem, ClassSitting, ClassTest, CompSession, ConceptStat, CourseRequest, GenJob, LearnerFact, Lesson, LessonProgress, LearningEvent, MockPaper, Module, PaperAttempt, SeenQuestion, Student, StudentTopic, TaskCompletion, TopicAttempt, WorkbookTask, now,
 )
 from .security import consume_magic_token, get_or_create_student, issue_magic_token
 
@@ -82,6 +82,23 @@ EXAMS = [
     {"id": "commerce", "subject": "commerce",     "title": "Commerce", "tag": "Class 11-12",          "emoji": "📊"},
 ]
 EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
+
+# The student-landing exam picker. JEE + NEET are LIVE (real RAG banks behind them); the rest are
+# shown as "coming soon" so students see the roadmap but can only START what actually works today.
+# `available: True` ones must have an id in EXAM_SUBJECT so /exam-prep/start accepts them.
+STUDENT_EXAMS = [
+    {"id": "jee",     "title": "JEE / IIT",     "tag": "Engineering entrance", "emoji": "⚛️", "available": True},
+    {"id": "neet",    "title": "NEET",          "tag": "Medical entrance",     "emoji": "🧬", "available": True},
+    {"id": "class10", "title": "CBSE Class 10", "tag": "Boards · Sci + Math",  "emoji": "📘", "available": False},
+    {"id": "class12", "title": "CBSE Class 12", "tag": "Boards · PCM/B",       "emoji": "📗", "available": False},
+    {"id": "cuet",    "title": "CUET",          "tag": "UG entrance",          "emoji": "🎓", "available": False},
+    {"id": "upsc",    "title": "UPSC",          "tag": "Civil Services",       "emoji": "🏛️", "available": False},
+    {"id": "ssc",     "title": "SSC",           "tag": "Govt jobs",            "emoji": "📋", "available": False},
+    {"id": "banking", "title": "Banking",       "tag": "IBPS · SBI",           "emoji": "🏦", "available": False},
+    {"id": "gate",    "title": "GATE",          "tag": "M.Tech · PSU",         "emoji": "⚙️", "available": False},
+    {"id": "cat",     "title": "CAT",           "tag": "MBA entrance",         "emoji": "📊", "available": False},
+    {"id": "clat",    "title": "CLAT",          "tag": "Law entrance",         "emoji": "⚖️", "available": False},
+]
 
 # Canonical domain. acharya.trigunai.com serves the whole app; lms.trigunai.com 301-redirects here.
 CANONICAL_HOST = "acharya.trigunai.com"
@@ -332,62 +349,156 @@ COMP_N = 11             # questions in the competition
 COMP_SECONDS = 300      # ~5 minutes, exam-style
 
 
-def _earned_days(score: int, total: int) -> int:
-    """DAYS of free access earned by the competition score. Everyone who ATTEMPTS earns >= 14 days;
-    a perfect score earns 60 days (a ~2-month subscription). Ladder (score/total): 100%→60d, ≥80%→50d,
-    ≥60%→40d, ≥40%→30d, ≥20%→20d, else 14d."""
-    if total <= 0:
-        return 14
-    pct = score / total
-    if pct >= 0.999: return 60
-    if pct >= 0.80:  return 50
-    if pct >= 0.60:  return 40
-    if pct >= 0.40:  return 30
-    if pct >= 0.20:  return 20
-    return 14
 
 
-def _sign_earn(days: int) -> str:
-    """Tamper-proof token certifying server-scored earned days — carried to registration to claim."""
-    exp = int(time.time()) + 3600
-    msg = f"{int(days)}|{exp}"
-    sig = hmac.new(settings.SECRET_KEY.encode(), msg.encode(), hashlib.sha256).hexdigest()[:16]
-    return base64.urlsafe_b64encode(f"{msg}|{sig}".encode()).decode().rstrip("=")
 
+def _start_trial(db, student):
+    """Give EVERY student the same flat free trial (ASSESS_TRIAL_DAYS, default 14), then ₹199/mo.
 
-def _verify_earn(tok: str):
-    try:
-        raw = base64.urlsafe_b64decode(tok + "=" * (-len(tok) % 4)).decode()
-        days, exp, sig = raw.split("|")
-        good = hmac.new(settings.SECRET_KEY.encode(), f"{days}|{exp}".encode(), hashlib.sha256).hexdigest()[:16]
-        if not hmac.compare_digest(good, sig) or int(exp) < int(time.time()):
-            return None
-        d = int(days)
-        return d if 1 <= d <= 365 else None
-    except Exception:
-        return None
-
-
-def _bank_days(db, student, days: int):
-    """Bank earned free-access days into the assessment trial window (never shortens it)."""
-    end = datetime.utcnow() + timedelta(days=int(days))
+    Replaces the old 'earn 14-60 days by scoring well' competition — one mechanic instead of three
+    overlapping ones (flat trial vs earned days vs paid), which was confusing to explain and to price.
+    Never shortens an existing window."""
+    end = datetime.utcnow() + timedelta(days=settings.ASSESS_TRIAL_DAYS)
     if not student.assess_trial_end or end > student.assess_trial_end:
         student.assess_trial_end = end
     if (student.assess_status or "none") in ("", "none"):
         student.assess_status = "trialing"
-    _set_fact(db, student, "earned_days", str(int(days)))
+
+
+# ── "My topics" — the unit the ₹199 plan is metered in (up to 5 per student) ──
+MAX_TOPICS = 5
+
+
+def _topic_from(exam: str, qtext: str):
+    """(topic_key, title, kind) for a chosen curated exam id OR a free-text topic."""
+    qtext = (qtext or "").strip()[:80]
+    if qtext:
+        return (_exam_key(qtext), qtext[:120], "custom")          # 'q:<slug>'
+    e = next((x for x in EXAMS if x["id"] == exam), None) or EXAMS[0]
+    return (e["id"], e["title"], "exam")
+
+
+def _student_topics(db, student):
+    return (db.query(StudentTopic).filter_by(student_id=student.id)
+            .order_by(StudentTopic.created_at).all())
+
+
+def _add_topic(db, student, topic_key: str, title: str, kind: str = "exam"):
+    """Add a topic (idempotent, capped at MAX_TOPICS). Returns 'added' | 'exists' | 'full'."""
+    existing = _student_topics(db, student)
+    if any(t.topic_key == topic_key for t in existing):
+        return "exists"
+    if len(existing) >= MAX_TOPICS:
+        return "full"
+    db.add(StudentTopic(student_id=student.id, topic_key=topic_key, title=title[:120], kind=kind))
+    return "added"
+
+
+def _seed_topic(db, student, exam: str, qtext: str):
+    """On signup, make the chosen exam/challenge subject the student's first topic."""
+    tk, title, kind = _topic_from(exam, qtext)
+    _add_topic(db, student, tk, title, kind)
+
+
+def _student_goal(db, student, topics=None) -> str:
+    """The student's goal id. EXPLICIT (chosen in onboarding) wins; otherwise inferred from the
+    subjects they're actually practising, so pre-onboarding accounts still get a sane answer."""
+    f = db.query(LearnerFact).filter_by(student_id=student.id, key="goal").first()
+    if f and f.value in examgen.GOALS:
+        return f.value
+    for t in (topics if topics is not None else _student_topics(db, student)):
+        sid = examgen.match_subject(t.title, t.topic_key)
+        g = examgen.goal_of_subject(sid) if sid else None
+        if g:
+            return g
+    hay = " ".join(t.title.lower() for t in (topics if topics is not None else _student_topics(db, student)))
+    if "neet" in hay:
+        return "neet"
+    return ""                                    # unknown — the dashboard says "Exam prep"
+
+
+@app.get("/exam-prep/onboarding", response_class=HTMLResponse)
+def exam_prep_onboarding(request: Request, new: str = "", db: Session = Depends(get_db)):
+    """Explicit goal pick — the first thing a new student sees, and the way any student changes
+    goal later. Replaces inferring the goal from whatever topic happened to get auto-seeded."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    topics = _student_topics(db, student)
+    have = {examgen.match_subject(t.title, t.topic_key) for t in topics}
+    goal = _student_goal(db, student, topics)
+    return templates.TemplateResponse(request, "exam_prep_onboarding.html", {
+        "student": student,
+        "goals": examgen.GOALS,
+        "subjects": examgen.RAG_SUBJECTS,
+        "goal": goal or examgen.DEFAULT_GOAL,
+        "chosen": {s for s in have if s},        # subjects they already have as topics
+        "new": "1" if new == "1" else "",
+        "max_topics": MAX_TOPICS,
+        "first_time": not any(examgen.match_subject(t.title, t.topic_key) for t in topics),
+    })
+
+
+@app.post("/exam-prep/onboarding")
+def exam_prep_onboarding_save(request: Request, goal: str = Form(""), subject: list[str] = Form([]),
+                              new: str = Form(""), db: Session = Depends(get_db)):
+    """Save the chosen goal + seed one topic per chosen subject, then on to the Today screen."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    goal = goal if goal in examgen.GOALS else examgen.DEFAULT_GOAL
+    g = examgen.GOALS[goal]
+    picked = [s for s in subject if s in g["subjects"]] or list(g["subjects"])
+    _set_fact(db, student, "goal", goal, source="prompt")
+
+    # Make room for — and give priority to — the chosen goal's subjects. We prune two kinds of
+    # topic, and NOTHING else (custom 'q:' topics and this goal's own subjects are always kept):
+    #   1. the vague auto-seeded curated id ('JEE'/'NEET' — no subject, detail page just says
+    #      "being set up"); the real per-subject topics below replace it.
+    #   2. RAG subjects that belong to a DIFFERENT goal — so "change goal" actually switches
+    #      instead of piling both exams' subjects up against MAX_TOPICS.
+    # Progress (ConceptStat) is keyed by subject+concept, independent of these rows, so a student
+    # who switches back later keeps their history.
+    for t in _student_topics(db, student):
+        sid = examgen.match_subject(t.title, t.topic_key)
+        if sid and examgen.goal_of_subject(sid) not in (None, goal):
+            db.delete(t)                                        # a different goal's subject
+        elif t.topic_key in EXAM_SUBJECT and not sid:
+            db.delete(t)                                        # vague auto-seeded curated id
+    db.flush()
+
+    for sid in picked:                            # _add_topic enforces MAX_TOPICS + idempotency
+        _add_topic(db, student, sid, examgen.RAG_SUBJECTS[sid]["label"], "exam")
+    db.commit()
+    return RedirectResponse("/exam-prep/dashboard" + ("?new=1" if new == "1" else ""), status_code=302)
+
+
+def _days_left(student) -> int:
+    """Whole free-access days remaining in the assessment window (0 if none/expired)."""
+    if not student.assess_trial_end:
+        return 0
+    secs = (student.assess_trial_end - datetime.utcnow()).total_seconds()
+    if secs <= 0:
+        return 0
+    import math
+    return int(math.ceil(secs / 86400))
 
 
 @app.get("/exam-prep", response_class=HTMLResponse)
-def exam_prep(request: Request, db: Session = Depends(get_db)):
+def exam_prep(request: Request, exam: str = "", db: Session = Depends(get_db)):
     student = current_student(request, db)
     resume_exam = EXAMS[0]["id"]
     if student:
         f = db.query(LearnerFact).filter_by(student_id=student.id, key="exam").first()
         if f and f.value in EXAM_SUBJECT:
             resume_exam = f.value
+    # pre-select a tile if a live exam id came in (e.g. from an ad URL /exam-prep?exam=neet)
+    live = {e["id"] for e in STUDENT_EXAMS if e["available"]}
+    picked = exam.strip() if exam.strip() in live else ""
     return templates.TemplateResponse(request, "exam_prep.html",
-                                      {"exams": EXAMS, "student": student, "resume_exam": resume_exam,
+                                      {"exams": STUDENT_EXAMS, "student": student, "resume_exam": resume_exam,
+                                       "picked": picked, "wa_link": "https://wa.me/919135255107?text=quiz",
+                                       "google_client_id": settings.GOOGLE_CLIENT_ID,
                                        "jsonld": seo.exam_prep_jsonld(EXAMS)})
 
 
@@ -411,9 +522,8 @@ def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form("
     student = get_or_create_student(db, email)
     label = ("q:" + qtext) if qtext else ex
     _set_fact(db, student, "exam", label)
-    _d = _verify_earn(earn.strip()) if earn.strip() else None
-    if _d:
-        _bank_days(db, student, _d)
+    _start_trial(db, student)          # everyone gets the same free trial
+    _seed_topic(db, student, ex, qtext)              # chosen subject → first "my topic"
     p = "".join(c for c in phone if c.isdigit())[:15]
     if p and not student.phone:
         student.phone = p
@@ -422,14 +532,17 @@ def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form("
         total = db.query(Student).count()
         notify.notify_admin(f"🎯 New student (exam-prep) — {student.email} · {label} · {total} learners total")
     request.session["sid"] = student.id
-    newq = "&new=1" if not existed else ""   # mark a genuinely-new account → fires the Ads signup conversion
-    if qtext:
-        return RedirectResponse(f"/exam-prep/test?q={quote(qtext)}{newq}", status_code=302)
-    return RedirectResponse(f"/exam-prep/test?exam={ex}{newq}", status_code=302)
+    # A brand-new student picks their goal first; returning students go straight home.
+    # new=1 rides through onboarding so the Ads signup conversion still fires on the dashboard.
+    if not existed:
+        return RedirectResponse("/exam-prep/onboarding?new=1", status_code=302)
+    return RedirectResponse("/exam-prep/dashboard", status_code=302)
 
 
 @app.get("/exam-prep/test", response_class=HTMLResponse)
-def exam_prep_test(request: Request, exam: str = "", q: str = "", new: str = "", db: Session = Depends(get_db)):
+def exam_prep_test(request: Request, exam: str = "", q: str = "", new: str = "",
+                   src: str = "", subject: str = "", sel: str = "", diff: str = "3-4",
+                   n: int = 5, fig: str = "", title: str = "", db: Session = Depends(get_db)):
     student = current_student(request, db)
     if not student:
         return RedirectResponse("/exam-prep", status_code=302)
@@ -438,7 +551,17 @@ def exam_prep_test(request: Request, exam: str = "", q: str = "", new: str = "",
     exam = exam.strip()
     qtext = (q or "").strip()[:80]
     ex = next((e for e in EXAMS if e["id"] == exam), None)
-    if ex and ex.get("subject"):                       # curated exam → instant, no LLM
+    if src == "examgen" and sel:                        # RAG paper (IIT-JEE Physics) — the subtopic picker
+        subj = subject or "jee-physics"
+        n_clamped = max(1, min(int(n), 15))
+        gen = (f"/api/examgen/generate?subject={quote(subj)}&sel={quote(sel)}"
+               f"&diff={quote(diff)}&n={n_clamped}" + ("&fig=1" if fig == "1" else ""))
+        gtitle = title or examgen.RAG_SUBJECTS.get(subj, {}).get("label", "JEE Physics")
+        # __SUBJECT carries the subject id so /api/assess/complete records progress under it
+        # (boot still uses __GEN_URL — it takes precedence over the curated-SUBJECTS path).
+        inject = (f"<script>window.__STUDENT=true;window.__SUBJECT={subj!r};window.__GEN_URL={gen!r};"
+                  f"window.__GEN_TITLE={gtitle!r};window.__TITLE={gtitle!r};</script>")
+    elif ex and ex.get("subject"):                     # curated exam → instant, no LLM
         inject = f"<script>window.__STUDENT=true;window.__SUBJECT={ex['subject']!r};</script>"
     elif qtext:                                         # free-text exam → dynamic generation
         gen = f"/api/assess/generate?q={quote(qtext)}"
@@ -472,13 +595,55 @@ async def assess_complete(request: Request, db: Session = Depends(get_db)):
     subject = str(body.get("subject", ""))[:40]
     results = body.get("results", []) or []
     outcome_map = {"solid": "correct", "shaky": "partial", "weak": "wrong"}
+    mastery_pts = {"solid": 1.0, "shaky": 0.5, "weak": 0.0}
+    concepts_seen = []
+    _cs_cache: dict = {}   # concept -> ConceptStat pending in this request (see note below)
     for r in results:
         if not isinstance(r, dict):
             continue
+        topic = str(r.get("topic", ""))[:120]
+        status = str(r.get("status", ""))
         log_learning_event(db, student, surface="web",
-                           concept_id=str(r.get("topic", ""))[:80],
+                           concept_id=topic[:80],
                            step_type="mcq", action="complete",
-                           outcome=outcome_map.get(str(r.get("status", "")), "na"))
+                           outcome=outcome_map.get(status, "na"))
+        # Product progress (NOT the consent-gated loop above): running per-concept mastery.
+        if topic and status in mastery_pts:
+            concepts_seen.append(topic)
+            # Reuse within THIS request: a test often repeats a concept (5 questions on one topic).
+            # Re-querying wouldn't see the pending row, so we'd insert a duplicate and blow the
+            # (student, subject, concept) unique constraint — which killed the whole save.
+            cs = _cs_cache.get(topic)
+            if cs is None:
+                cs = db.query(ConceptStat).filter_by(
+                    student_id=student.id, subject=subject, concept=topic).first()
+                if not cs:
+                    cs = ConceptStat(student_id=student.id, subject=subject, concept=topic,
+                                     seen=0, correct=0.0)
+                    db.add(cs)
+                _cs_cache[topic] = cs
+            cs.seen += 1
+            cs.correct += mastery_pts[status]
+            cs.last_at = now()
+    # Save the test itself (score history → "N tests taken").
+    if subject and concepts_seen:
+        try:
+            score = int(body.get("score", 0))
+            total = int(body.get("graded", 0))
+        except Exception:
+            score, total = 0, 0
+        # keep the full paper so the student can reopen this test later (cap the size)
+        detail = body.get("detail") or []
+        if isinstance(detail, list):
+            detail = [{"q": str(d.get("q", ""))[:4000], "a": str(d.get("a", ""))[:800],
+                       "explain": str(d.get("explain", ""))[:6000], "ok": d.get("ok"),
+                       "type": str(d.get("type", ""))[:20]}
+                      for d in detail[:20] if isinstance(d, dict)]
+        else:
+            detail = []
+        db.add(TopicAttempt(student_id=student.id, subject=subject,
+                            title=str(body.get("title", subject))[:120],
+                            score=score, total=total, concepts=concepts_seen, detail=detail))
     _set_fact(db, student, "last_exam", subject)
     db.commit()
     return JSONResponse({"ok": True})
@@ -529,22 +694,16 @@ def assess_generate(request: Request, q: str = "", db: Session = Depends(get_db)
 
 @app.get("/exam-prep/quick", response_class=HTMLResponse)
 def exam_prep_quick(request: Request, exam: str = "", q: str = "", db: Session = Depends(get_db)):
-    """The AD LANDING: a 3-question teaser (easy/med/hard) → One-Tap/email register (no magic
-    link) → the full assessment. If already logged in, skip straight to the full test."""
+    """RETIRED — the 'earn days' 11-question challenge/competition is gone (per the 2026-07-23
+    decision: one flat 14-day trial, no rewards workflow). This URL is kept alive because ad
+    campaigns point at it; it now just forwards to the exam-picker signup (or the dashboard if
+    already logged in), preserving any `?exam=` so the picker can pre-select it."""
     student = current_student(request, db)
+    if student:
+        return RedirectResponse("/exam-prep/dashboard", status_code=302)
     exam = exam.strip()
-    qtext = (q or "").strip()[:80]
-    if student and has_assessment_access(db, student):
-        if qtext:
-            return RedirectResponse(f"/exam-prep/test?q={quote(qtext)}", status_code=302)
-        return RedirectResponse(f"/exam-prep/test?exam={exam or EXAMS[0]['id']}", status_code=302)
-    import json as _json
-    picker = [{"id": e["id"], "title": e["title"]} for e in EXAMS]
-    return templates.TemplateResponse(request, "exam_prep_quick.html", {
-        "exams_json": _json.dumps(picker, ensure_ascii=False),
-        "exam": exam, "q": qtext, "seconds": COMP_SECONDS, "ncomp": COMP_N,
-        "google_client_id": settings.GOOGLE_CLIENT_ID,
-    })
+    dest = "/exam-prep" + (f"?exam={quote(exam)}" if exam else "")
+    return RedirectResponse(dest, status_code=302)
 
 
 COMP_PROMPT = {
@@ -667,11 +826,11 @@ async def comp_submit(request: Request, db: Session = Depends(get_db)):
             rv["hi"]["opts"] = q.get("hi", {}).get("opts", [])
         review.append(rv)
     total = len(qs)
-    days = _earned_days(score, total)
+
     db.delete(cs)
     db.commit()
-    return JSONResponse({"ok": True, "score": score, "total": total, "months": round(days / 30),
-                         "days": days, "earn": _sign_earn(days), "review": review})
+    return JSONResponse({"ok": True, "score": score, "total": total,
+                         "review": review})
 
 
 @app.post("/api/auth/google")
@@ -710,17 +869,1054 @@ async def api_auth_google(request: Request, db: Session = Depends(get_db)):
         student.name = nm
     label = ("q:" + qtext) if qtext else (exam if exam in EXAM_SUBJECT else EXAMS[0]["id"])
     _set_fact(db, student, "exam", label)
-    _d = _verify_earn(earn) if earn else None
-    if _d:
-        _bank_days(db, student, _d)
+    _start_trial(db, student)          # everyone gets the same free trial
+    _seed_topic(db, student, exam if exam in EXAM_SUBJECT else "", qtext)   # subject → first "my topic"
     db.commit()
     if not existed:
         total = db.query(Student).count()
         notify.notify_admin(f"🎯 New student (Google · exam-prep) — {student.email} · {label} · {total} learners total")
     request.session["sid"] = student.id
-    newq = "&new=1" if not existed else ""
-    dest = (f"/exam-prep/test?q={quote(qtext)}{newq}" if qtext else f"/exam-prep/test?exam={label}{newq}")
-    return JSONResponse({"ok": True, "redirect": dest})
+    # New student → goal pick first (new=1 rides through so the Ads conversion still fires on
+    # the dashboard); returning student → straight home.
+    return JSONResponse({"ok": True, "redirect": "/exam-prep/onboarding?new=1" if not existed
+                         else "/exam-prep/dashboard"})
+
+
+def _prep_stats(db, student) -> dict:
+    """Everything the Today screen shows — all DERIVED FROM REAL ANSWERS, nothing invented.
+    (Deliberately no XP / cohort rank: we don't track them, and fake numbers on a student's
+    progress screen are worse than no numbers.)"""
+    stats = [s for s in db.query(ConceptStat).filter_by(student_id=student.id).all() if s.seen]
+    attempts = (db.query(TopicAttempt).filter_by(student_id=student.id)
+                .order_by(TopicAttempt.taken_at.desc()).limit(200).all())
+
+    def m(s):
+        return s.correct / s.seen
+
+    mastery = round(100 * sum(s.correct for s in stats) / sum(s.seen for s in stats)) if stats else 0
+    ranked = sorted(stats, key=m)
+    weakest = ranked[:3]                       # drives Smart Practice targeting
+    # Focus areas must only list genuinely weak topics — showing a 100%-mastery topic under
+    # "lowest mastery = biggest score gains" is just wrong.
+    focus = [s for s in ranked if m(s) < 0.75][:3]
+    strongest = ranked[-1] if ranked else None
+
+    # this week
+    wk = datetime.utcnow() - timedelta(days=7)
+    recent = [a for a in attempts if a.taken_at and a.taken_at >= wk]
+    q_week = sum(a.total or 0 for a in recent)
+    acc_week = round(100 * sum(a.score or 0 for a in recent) / q_week) if q_week else 0
+    chapters_week = len({c for a in recent for c in (a.concepts or [])})
+
+    # streak: consecutive days (ending today or yesterday) with at least one test
+    days = {a.taken_at.date() for a in attempts if a.taken_at}
+    streak, cur = 0, date.today()
+    if cur not in days and (cur - timedelta(days=1)) in days:
+        cur = cur - timedelta(days=1)
+    while cur in days:
+        streak += 1
+        cur -= timedelta(days=1)
+
+    # revision due = practised before, gone cold (>=5 days), not yet solid
+    cold = datetime.utcnow() - timedelta(days=5)
+    due = [s for s in stats if s.last_at and s.last_at < cold and m(s) < 0.75]
+
+    # last 7 sessions, oldest→newest, as % (for the sparkline)
+    graded = [a for a in attempts if a.total]
+    trend = [round(100 * a.score / a.total) for a in reversed(graded[:7])]
+
+    # goal identity — the goal the student CHOSE in onboarding, falling back to inference
+    topics = _student_topics(db, student)
+    goal_id = _student_goal(db, student, topics)
+    if goal_id:
+        goal = examgen.GOALS[goal_id]["label"]
+    else:
+        hay = " ".join(t.title.lower() for t in topics)
+        goal = "Board exams" if "class" in hay else "Exam prep"
+
+    return {
+        "mastery": mastery, "weakest": weakest, "focus": focus, "strongest": strongest,
+        "q_week": q_week, "acc_week": acc_week, "chapters_week": chapters_week,
+        "streak": streak, "due": due, "trend": trend, "goal": goal, "goal_id": goal_id,
+        "tests": len(attempts), "has_data": bool(stats),
+    }
+
+
+@app.get("/exam-prep/smart")
+def exam_prep_smart(request: Request, db: Session = Depends(get_db)):
+    """Smart Practice: build today's set from the student's ACTUAL weak spots — weakest concepts
+    first, then anything gone cold. Falls back to their first topic for a brand-new student."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    st = _prep_stats(db, student)
+    picks = (st["weakest"] or []) + [d for d in st["due"] if d not in (st["weakest"] or [])]
+    # Default to the goal's own first subject — a NEET student must never fall back to JEE Physics.
+    goal = examgen.GOALS.get(st["goal_id"] or examgen.DEFAULT_GOAL, examgen.GOALS[examgen.DEFAULT_GOAL])
+    sel, subject = [], goal["subjects"][0]
+    for s in picks[:3]:
+        ch = _chapter_for_concept(s.subject, s.concept)
+        if ch:
+            sel.append(f"{ch}::{s.concept}")
+            subject = s.subject
+    if not sel:                                   # nothing practised yet → start with a topic
+        topics = _student_topics(db, student)
+        for t in topics:
+            sid = examgen.match_subject(t.title, t.topic_key)
+            if sid:
+                chs = [c for c in examgen.get_chapters(sid) if c.get("exemplars_banked", 0) > 0]
+                if chs:
+                    subject = sid
+                    sel = [f"{chs[0]['chapter']}::{chs[0]['concepts'][0]}"]
+                    break
+    if not sel:
+        return RedirectResponse("/exam-prep/dashboard", status_code=302)
+    diff = examgen.difficulty_for(subject, st["mastery"] / 100)   # on the exam's own band (NEET 2-3, JEE 3-4)
+    return RedirectResponse(
+        f"/exam-prep/test?src=examgen&subject={quote(subject)}&sel={quote('|'.join(sel))}"
+        f"&diff={quote(diff)}&n=10&title={quote('Smart Practice')}", status_code=302)
+
+
+@app.get("/exam-prep/dashboard", response_class=HTMLResponse)
+def exam_prep_dashboard(request: Request, new: str = "", added: str = "", db: Session = Depends(get_db)):
+    """The student HOME — the "Today" screen: goal, real mastery, today's chosen set, the practice
+    modes, focus areas and this week's activity. Every number is derived from actual answers."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    topics = _student_topics(db, student)
+    st = _prep_stats(db, student)
+    hour = (datetime.utcnow() + timedelta(hours=5, minutes=30)).hour     # IST
+    greeting = "Good morning" if hour < 12 else ("Good afternoon" if hour < 17 else "Good evening")
+    # Ads "free signup" conversion — fires ONCE for a genuinely-new account landing here.
+    ads_id = settings.ADS_CONVERSION_ID if (new == "1" and settings.STUDENT_SIGNUP_CONV_LABEL and settings.ADS_CONVERSION_ID) else ""
+    return templates.TemplateResponse(request, "exam_prep_dashboard.html", {
+        "student": student,
+        "topics": topics,
+        "days_left": _days_left(student),
+        "st": st, "greeting": greeting,
+        "paid": (student.assess_status or "none") == "active",
+        "max_topics": MAX_TOPICS,
+        "at_max": len(topics) >= MAX_TOPICS,
+        "price": settings.ASSESS_PRICE_INR,
+        "added": added,
+        "ads_id": ads_id,
+        "ads_label": settings.STUDENT_SIGNUP_CONV_LABEL,
+    })
+
+
+@app.post("/exam-prep/topics/add")
+def exam_prep_topic_add(request: Request, topic: str = Form(""), db: Session = Depends(get_db)):
+    """Add a topic to the student's plan (curated exam or free-text), capped at MAX_TOPICS."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    topic = (topic or "").strip()[:80]
+    if len(topic) < 2:
+        return RedirectResponse("/exam-prep/dashboard", status_code=302)
+    cur = next((e for e in EXAMS if e["id"].lower() == topic.lower()
+                or e["title"].lower() == topic.lower()), None)
+    if cur:
+        reason = _add_topic(db, student, cur["id"], cur["title"], "exam")
+    else:
+        tk, title, kind = _topic_from("", topic)
+        reason = _add_topic(db, student, tk, title, kind)
+    db.commit()
+    return RedirectResponse(f"/exam-prep/dashboard?added={reason}", status_code=302)
+
+
+def _log_examgen_request(db, student, title: str) -> bool:
+    """Log a 'set up the RAG paper for this subject' request (de-duped per email+topic). True if new."""
+    label = f"EXAM-PREP RAG paper: {title}"[:200]
+    if db.query(CourseRequest).filter_by(email=student.email, topic=label).first():
+        return False
+    db.add(CourseRequest(topic=label, email=student.email, phone=student.phone or "", source="web"))
+    db.commit()
+    try:
+        notify.notify_admin(f"📝 RAG test-paper request — {student.email} · {title[:60]}")
+    except Exception:
+        pass
+    return True
+
+
+@app.get("/exam-prep/subject/{topic_id}", response_class=HTMLResponse)
+def exam_prep_subject(request: Request, topic_id: int, db: Session = Depends(get_db)):
+    """Subject detail: pick one/more subtopics → build a custom RAG paper (if the subject is covered),
+    else a 'we're setting it up' message + a logged request (+ a quick-test fallback)."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    if not has_assessment_access(db, student):
+        return RedirectResponse("/exam-prep/upgrade", status_code=302)
+    topic = db.query(StudentTopic).filter_by(id=topic_id, student_id=student.id).first()
+    if not topic:
+        return RedirectResponse("/exam-prep/dashboard", status_code=302)
+    sid = examgen.match_subject(topic.title, topic.topic_key) if examgen.available() else None
+    if sid:
+        chapters = [c for c in examgen.get_chapters(sid) if c.get("exemplars_banked", 0) > 0]
+        if chapters:
+            # progress: per-concept mastery (0..1), test count, and the weakest concept to suggest
+            stats = db.query(ConceptStat).filter_by(student_id=student.id, subject=sid).all()
+            mastery = {s.concept: round(s.correct / s.seen, 2) for s in stats if s.seen}
+            attempts = db.query(TopicAttempt).filter_by(student_id=student.id, subject=sid).count()
+            practised = [s for s in stats if s.seen]
+            weakest = min(practised, key=lambda s: s.correct / s.seen, default=None)
+            suggest = weakest.concept if (weakest and weakest.correct / weakest.seen < 0.7) else None
+            return templates.TemplateResponse(request, "exam_prep_subject.html", {
+                "student": student, "topic": topic, "available": True,
+                "subject_id": sid, "subject_label": examgen.RAG_SUBJECTS[sid]["label"],
+                "chapters": chapters, "mastery": mastery, "attempts": attempts, "suggest": suggest,
+                "ladder": examgen.difficulty_ladder(sid),   # NEET 2/2-3/3 vs JEE 3/3-4/4
+            })
+    # not covered by the RAG yet → coming soon + log the request (once)
+    just_requested = _log_examgen_request(db, student, topic.title)
+    quick = (f"/exam-prep/test?exam={quote(topic.topic_key)}" if topic.kind == "exam"
+             else f"/exam-prep/test?q={quote(topic.title)}")
+    return templates.TemplateResponse(request, "exam_prep_subject.html", {
+        "student": student, "topic": topic, "available": False,
+        "just_requested": just_requested, "quick_href": quick,
+    })
+
+
+def _chapter_for_concept(subject_id: str, concept: str) -> str | None:
+    """Find which chapter a concept belongs to (so a suggestion can link straight to a test)."""
+    for c in examgen.get_chapters(subject_id):
+        if concept in (c.get("concepts") or []):
+            return c.get("chapter")
+    return None
+
+
+@app.get("/exam-prep/report", response_class=HTMLResponse)
+def exam_prep_report(request: Request, db: Session = Depends(get_db)):
+    """Reports & Improvement: every test saved, per-concept strengths/weak spots, what to practise
+    next, and the difficulty level Acharya recommends from the student's actual results."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    attempts = (db.query(TopicAttempt).filter_by(student_id=student.id)
+                .order_by(TopicAttempt.taken_at.desc()).limit(50).all())
+    stats = [s for s in db.query(ConceptStat).filter_by(student_id=student.id).all() if s.seen]
+
+    def mastery(s):
+        return s.correct / s.seen
+
+    strong = sorted([s for s in stats if mastery(s) >= 0.75], key=mastery, reverse=True)
+    shaky = sorted([s for s in stats if 0.5 <= mastery(s) < 0.75], key=mastery)
+    weak = sorted([s for s in stats if mastery(s) < 0.5], key=mastery)
+    graded = [a for a in attempts if a.total]
+    avg = round(100 * sum(a.score for a in graded) / sum(a.total for a in graded)) if graded else 0
+    overall = (sum(s.correct for s in stats) / sum(s.seen for s in stats)) if stats else 0
+    # difficulty Acharya recommends next, from real performance. The TIER (easy/mix/hard) is what
+    # we show; the actual value is resolved per exam band (NEET 2-3 vs JEE 3-4) at link time.
+    tier, level_label, level_why = (
+        ("hard", "Hard", "you're consistently strong — time for harder problems")
+        if overall >= 0.75 else
+        (("mix", "Mix (medium–hard)", "you're solid on most topics — a mix keeps you stretching")
+         if overall >= 0.5 else
+         ("easy", "Medium", "let's lock the basics first, then push the difficulty")))
+    # headline difficulty value, on the student's goal band (for display consistency)
+    goal_subj = examgen.GOALS.get(_student_goal(db, student), {}).get("subjects", [None])[0]
+    level = examgen.difficulty_ladder(goal_subj)[tier] if goal_subj else {"easy": "3", "mix": "3-4", "hard": "4"}[tier]
+    # what to practise next (weakest first), each linking to a ready-made test at that tier — on
+    # ITS OWN subject's band, so a NEET Biology suggestion asks for NEET difficulty, not JEE.
+    picks = (weak + shaky)[:4]
+    suggestions = []
+    for s in picks:
+        ch = _chapter_for_concept(s.subject, s.concept)
+        href = ""
+        if ch:
+            sel = f"{ch}::{s.concept}"
+            s_diff = examgen.difficulty_ladder(s.subject)[tier]
+            href = (f"/exam-prep/test?src=examgen&subject={quote(s.subject)}&sel={quote(sel)}"
+                    f"&diff={quote(s_diff)}&n=5&title={quote(s.concept)}")
+        suggestions.append({"concept": s.concept, "pct": round(100 * mastery(s)),
+                            "seen": s.seen, "href": href})
+    trend = [round(100 * a.score / a.total) for a in reversed(graded[:6]) if a.total]
+    return templates.TemplateResponse(request, "exam_prep_report.html", {
+        "student": student, "attempts": attempts, "tests": len(attempts), "avg": avg,
+        "strong": [{"c": s.concept, "p": round(100 * mastery(s))} for s in strong[:8]],
+        "shaky": [{"c": s.concept, "p": round(100 * mastery(s))} for s in shaky[:8]],
+        "weak": [{"c": s.concept, "p": round(100 * mastery(s))} for s in weak[:8]],
+        "suggestions": suggestions, "level": level, "level_label": level_label, "level_why": level_why,
+        "trend": trend, "overall": round(100 * overall),
+    })
+
+
+@app.get("/exam-prep/attempt/{attempt_id}", response_class=HTMLResponse)
+def exam_prep_attempt(request: Request, attempt_id: int, db: Session = Depends(get_db)):
+    """Reopen a past test exactly as it was sat — questions, correct answers and solutions."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    a = db.query(TopicAttempt).filter_by(id=attempt_id, student_id=student.id).first()
+    if not a:
+        return RedirectResponse("/exam-prep/report", status_code=302)
+    return templates.TemplateResponse(request, "exam_prep_attempt.html", {"student": student, "a": a})
+
+
+@app.get("/exam-prep/papers", response_class=HTMLResponse)
+def exam_prep_papers(request: Request, db: Session = Depends(get_db)):
+    """The test series: the shared, pre-generated full JEE-Advanced-style papers."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    papers = (db.query(MockPaper).filter_by(status="ready")
+              .order_by(MockPaper.code).all())
+    done = {}
+    for a in (db.query(PaperAttempt).filter_by(student_id=student.id)
+              .filter(PaperAttempt.submitted_at.isnot(None)).all()):
+        prev = done.get(a.paper_id)
+        if not prev or a.score > prev.score:
+            done[a.paper_id] = a
+    return templates.TemplateResponse(request, "exam_prep_papers.html", {
+        "student": student, "papers": papers, "done": done,
+        "blueprint": mockpaper.BLUEPRINT, "total_q": mockpaper.TOTAL_Q,
+    })
+
+
+@app.get("/exam-prep/paper/{paper_id}", response_class=HTMLResponse)
+def exam_prep_paper_sit(request: Request, paper_id: int, db: Session = Depends(get_db)):
+    """Sit a paper in exam mode. The correct answers and solutions are STRIPPED before the
+    questions reach the browser — they only come back on the result page after submitting."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    paper = db.query(MockPaper).filter_by(id=paper_id, status="ready").first()
+    if not paper:
+        return RedirectResponse("/exam-prep/papers", status_code=302)
+    safe = [{"n": q.get("n"), "section": q.get("section"), "qtype": q.get("qtype"),
+             "marks": q.get("marks"), "neg": q.get("neg"),
+             "stem": q.get("stem"), "options": q.get("options") or [],
+             "figure": q.get("figure"), "chapter": q.get("chapter")}
+            for q in (paper.questions or [])]
+    att = PaperAttempt(student_id=student.id, paper_id=paper.id,
+                       max_score=paper.max_marks, answers={})
+    db.add(att)
+    db.commit()
+    import json as _json
+    return templates.TemplateResponse(request, "exam_prep_paper.html", {
+        "student": student, "paper": paper, "attempt": att,
+        "questions_json": _json.dumps(safe, ensure_ascii=False),
+        "sections": mockpaper.BLUEPRINT["sections"],
+    })
+
+
+@app.post("/api/paper/{paper_id}/submit")
+async def api_paper_submit(request: Request, paper_id: int, db: Session = Depends(get_db)):
+    """Score a sitting server-side against the JEE Advanced marking scheme."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    paper = db.query(MockPaper).filter_by(id=paper_id, status="ready").first()
+    if not paper:
+        return JSONResponse({"ok": False, "error": "no such paper"}, status_code=404)
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    answers = body.get("answers") or {}
+    att_id = body.get("attempt_id")
+    res = mockpaper.score_attempt(paper.questions or [], answers)
+    att = (db.query(PaperAttempt).filter_by(id=att_id, student_id=student.id).first()
+           if att_id else None)
+    if not att:
+        att = PaperAttempt(student_id=student.id, paper_id=paper.id)
+        db.add(att)
+    att.answers = answers
+    att.score = res["score"]
+    att.max_score = paper.max_marks
+    att.correct, att.wrong, att.skipped = res["correct"], res["wrong"], res["skipped"]
+    att.submitted_at = now()
+    db.commit()
+    return JSONResponse({"ok": True, "redirect": f"/exam-prep/paper/result/{att.id}"})
+
+
+@app.get("/exam-prep/paper/result/{attempt_id}", response_class=HTMLResponse)
+def exam_prep_paper_result(request: Request, attempt_id: int, db: Session = Depends(get_db)):
+    """Scorecard: marks with negative marking, per-question verdict, and full solutions."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    att = db.query(PaperAttempt).filter_by(id=attempt_id, student_id=student.id).first()
+    if not att or not att.submitted_at:
+        return RedirectResponse("/exam-prep/papers", status_code=302)
+    paper = db.get(MockPaper, att.paper_id)
+    res = mockpaper.score_attempt(paper.questions or [], att.answers or {})
+    per = {p["n"]: p for p in res["per_q"]}
+    rows = [{**q, "verdict": per.get(q.get("n"), {})} for q in (paper.questions or [])]
+    pct = round(100 * att.score / att.max_score) if att.max_score else 0
+    return templates.TemplateResponse(request, "exam_prep_paper_result.html", {
+        "student": student, "paper": paper, "att": att, "rows": rows, "pct": pct,
+    })
+
+
+@app.get("/api/examgen/generate")
+def api_examgen_generate(request: Request, subject: str = "jee-physics", sel: str = "",
+                         diff: str = "3-4", n: int = 5, fig: str = "", db: Session = Depends(get_db)):
+    """Server-side proxy to the RAG generator (Bearer key stays here). Returns {ok, pack} for assess.html."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    if not has_assessment_access(db, student):
+        return JSONResponse({"ok": False, "error": "trial_over", "redirect": "/exam-prep/upgrade"}, status_code=402)
+    if not examgen.available():
+        return JSONResponse({"ok": False, "error": "RAG generator not configured"})
+    selections = []
+    for part in (sel or "").split("|"):
+        part = part.strip()
+        if not part:
+            continue
+        if "::" in part:
+            ch, co = part.split("::", 1)
+            selections.append((ch.strip(), co.strip() or None))
+        else:
+            selections.append((part, None))
+    if not selections:
+        return JSONResponse({"ok": False, "error": "Pick at least one topic."})
+    label = examgen.RAG_SUBJECTS.get(subject, {}).get("label", "JEE Physics")
+    # No-repeats: tell the pool which questions this student has already been served.
+    seen = [s.question_id for s in db.query(SeenQuestion)
+            .filter_by(student_id=student.id, subject=subject)
+            .order_by(SeenQuestion.seen_at.desc()).limit(300).all()]
+    pack = examgen.generate_pack(subject, selections, diff, n, label,
+                                 require_figure=(fig == "1"), exclude=seen)
+    if not pack:
+        return JSONResponse({"ok": False, "error": "Couldn't generate that test — please try again."})
+    # record what we just served so it never comes back
+    known = set(seen)
+    for q in pack.get("questions", []):
+        qid = q.get("qid")
+        if qid and str(qid) not in known:
+            db.add(SeenQuestion(student_id=student.id, question_id=str(qid), subject=subject))
+            known.add(str(qid))
+    try:
+        db.commit()
+    except Exception:
+        db.rollback()
+    return JSONResponse({"ok": True, "pack": pack})
+
+
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+# TEACHER / INSTITUTE (B2B) — a teacher creates a REAL JEE/NEET test, shares a link, students take
+# it with NO signup, and the teacher sees real scores + who's weak in which topic. Reuses the same
+# question engine (examgen) and the same assess.html test engine as the student product.
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+
+def current_teacher(request: Request, db: Session):
+    s = current_student(request, db)
+    return s if (s and s.is_teacher) else None
+
+
+def _new_class_code(db) -> str:
+    alpha = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"       # no ambiguous 0/O/1/I
+    for _ in range(30):
+        code = "".join(secrets.choice(alpha) for _ in range(6))
+        if not db.query(ClassTest).filter_by(code=code).first():
+            return code
+    return secrets.token_urlsafe(6)[:8].upper()
+
+
+def _weak_from_concepts(concepts) -> list:
+    """A sitting's [{topic,status}] → weak concept names (weak first, then shaky)."""
+    weak = [c.get("topic") for c in (concepts or []) if c.get("status") == "weak" and c.get("topic")]
+    shaky = [c.get("topic") for c in (concepts or []) if c.get("status") == "shaky" and c.get("topic")]
+    # de-dupe, keep order
+    out, seen = [], set()
+    for x in weak + shaky:
+        if x not in seen:
+            out.append(x); seen.add(x)
+    return out
+
+
+@app.get("/teacher", response_class=HTMLResponse)
+def teacher_home(request: Request, db: Session = Depends(get_db)):
+    """The teacher console. Not a teacher yet → the signup/promote screen; else their class tests."""
+    student = current_student(request, db)
+    if not student or not student.is_teacher:
+        return templates.TemplateResponse(request, "teacher_signup.html", {
+            "student": student, "google_client_id": settings.GOOGLE_CLIENT_ID})
+    tests = (db.query(ClassTest).filter_by(teacher_id=student.id)
+             .order_by(ClassTest.created_at.desc()).all())
+    rows = []
+    for t in tests:
+        rows.append({"t": t, "sittings": db.query(ClassSitting).filter_by(class_test_id=t.id).count()})
+    return templates.TemplateResponse(request, "teacher_home.html", {"student": student, "tests": rows})
+
+
+def _promote_teacher(db, student, name: str, institute: str):
+    student.is_teacher = True
+    if institute:
+        student.institute = institute[:120]
+    if name and not student.name:
+        student.name = name[:120]
+
+
+@app.post("/teacher/signup")
+def teacher_signup(request: Request, email: str = Form(...), name: str = Form(""),
+                   institute: str = Form(""), db: Session = Depends(get_db)):
+    """Instant teacher signup (no magic-link wait) — email → account + session → teacher console."""
+    email = email.lower().strip()
+    if "@" not in email or "." not in email.split("@")[-1]:
+        return templates.TemplateResponse(request, "teacher_signup.html",
+                                          {"student": None, "google_client_id": settings.GOOGLE_CLIENT_ID,
+                                           "error": "Please enter a valid email."})
+    existed = db.query(Student).filter_by(email=email).first() is not None
+    student = get_or_create_student(db, email)
+    _promote_teacher(db, student, name, institute)
+    db.commit()
+    if not existed:
+        notify.notify_admin(f"👩‍🏫 New TEACHER — {student.email} · {institute or '—'}")
+    request.session["sid"] = student.id
+    return RedirectResponse("/teacher", status_code=302)
+
+
+@app.post("/api/teacher/google")
+async def teacher_google(request: Request, db: Session = Depends(get_db)):
+    """Teacher signup/sign-in via Google One-Tap — verified email, no magic link, promotes to teacher."""
+    if not settings.GOOGLE_CLIENT_ID:
+        return JSONResponse({"ok": False, "error": "google sign-in not configured"}, status_code=503)
+    import json as _json, urllib.request, urllib.parse
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    cred = (body.get("credential") or "").strip()
+    institute = (body.get("institute") or "").strip()
+    if not cred:
+        return JSONResponse({"ok": False, "error": "no credential"}, status_code=400)
+    try:
+        vurl = "https://oauth2.googleapis.com/tokeninfo?" + urllib.parse.urlencode({"id_token": cred})
+        with urllib.request.urlopen(vurl, timeout=10) as resp:
+            tok = _json.loads(resp.read().decode())
+    except Exception as exc:
+        print(f"[teacher-google] verify failed: {exc}")
+        return JSONResponse({"ok": False, "error": "verify failed"}, status_code=400)
+    if tok.get("aud") != settings.GOOGLE_CLIENT_ID or str(tok.get("email_verified")).lower() != "true":
+        return JSONResponse({"ok": False, "error": "invalid token"}, status_code=400)
+    email = (tok.get("email") or "").lower().strip()
+    if "@" not in email:
+        return JSONResponse({"ok": False, "error": "no email"}, status_code=400)
+    existed = db.query(Student).filter_by(email=email).first() is not None
+    student = get_or_create_student(db, email)
+    _promote_teacher(db, student, tok.get("name") or "", institute)
+    db.commit()
+    if not existed:
+        notify.notify_admin(f"👩‍🏫 New TEACHER (Google) — {student.email} · {institute or '—'}")
+    request.session["sid"] = student.id
+    return JSONResponse({"ok": True, "redirect": "/teacher"})
+
+
+@app.get("/teacher/chapters")
+def teacher_chapters(request: Request, subject: str = "jee-physics", db: Session = Depends(get_db)):
+    """Chapters (+ concepts) for a subject, for the create-test picker. Teacher-gated."""
+    if not current_teacher(request, db):
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    if subject not in examgen.RAG_SUBJECTS:
+        return JSONResponse({"ok": False, "error": "unknown subject"}, status_code=400)
+    chapters = [c for c in examgen.get_chapters(subject) if c.get("exemplars_banked", 0) > 0]
+    return JSONResponse({"ok": True, "subject": subject,
+                         "label": examgen.RAG_SUBJECTS[subject]["label"],
+                         "ladder": examgen.difficulty_ladder(subject), "chapters": chapters})
+
+
+@app.get("/teacher/new", response_class=HTMLResponse)
+def teacher_new(request: Request, db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return RedirectResponse("/teacher", status_code=302)
+    subs = [{"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"]}
+            for sid in ["jee-physics", "jee-chemistry", "jee-maths",
+                        "neet-biology", "neet-physics", "neet-chemistry"]]
+    return templates.TemplateResponse(request, "teacher_new.html", {"student": teacher, "subjects": subs})
+
+
+@app.post("/api/teacher/create")
+async def teacher_create(request: Request, db: Session = Depends(get_db)):
+    """Generate the test ONCE (examgen) and store it, so every student gets the same paper instantly.
+    Returns the share code. Slow (LLM) — the teacher_new page shows a progress UI while it runs."""
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    if not examgen.available():
+        return JSONResponse({"ok": False, "error": "generator not configured"})
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    subject = (body.get("subject") or "").strip()
+    if subject not in examgen.RAG_SUBJECTS:
+        return JSONResponse({"ok": False, "error": "pick a subject"})
+    sel_raw = body.get("sel") or []                 # ["Chapter::Concept", "Chapter::", ...]
+    diff = (body.get("diff") or examgen.difficulty_ladder(subject)["mix"]).strip()
+    n = max(1, min(int(body.get("n") or 5), 12))
+    title = (body.get("title") or "").strip()[:120]
+    selections = []
+    for part in sel_raw:
+        part = (part or "").strip()
+        if not part:
+            continue
+        if "::" in part:
+            ch, co = part.split("::", 1)
+            selections.append((ch.strip(), co.strip() or None))
+        else:
+            selections.append((part, None))
+    if not selections:
+        return JSONResponse({"ok": False, "error": "Pick at least one chapter."})
+    label = examgen.RAG_SUBJECTS[subject]["label"]
+    pack = await run_in_threadpool(examgen.generate_pack, subject, selections, diff, n, title or label)
+    if not pack or not pack.get("questions"):
+        return JSONResponse({"ok": False, "error": "Couldn't generate the test — please try again."})
+    code = _new_class_code(db)
+    chapters = [f"{c}" + (f" · {co}" if co else "") for c, co in selections]
+    ct = ClassTest(teacher_id=teacher.id, code=code, title=title or f"{label} test",
+                   subject_id=subject, subject_label=label, chapters=chapters,
+                   difficulty=diff, n=len(pack["questions"]), pack=pack)
+    db.add(ct)
+    db.commit()
+    return JSONResponse({"ok": True, "code": code, "redirect": f"/teacher/test/{code}"})
+
+
+def _sittings_for(db, ct) -> list:
+    return (db.query(ClassSitting).filter_by(class_test_id=ct.id)
+            .order_by(ClassSitting.submitted_at.desc()).all())
+
+
+@app.get("/teacher/test/{code}", response_class=HTMLResponse)
+def teacher_test(request: Request, code: str, db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return RedirectResponse("/teacher", status_code=302)
+    ct = db.query(ClassTest).filter_by(code=code, teacher_id=teacher.id).first()
+    if not ct:
+        return RedirectResponse("/teacher", status_code=302)
+    sits = _sittings_for(db, ct)
+    # class weak-topic aggregation
+    weak_count: dict = {}
+    for s in sits:
+        for w in (s.weak_topics or []):
+            weak_count[w] = weak_count.get(w, 0) + 1
+    class_weak = sorted(weak_count.items(), key=lambda kv: -kv[1])[:8]
+    avg = round(sum(s.score for s in sits) / sum(s.total for s in sits) * 100) if sits and sum(s.total for s in sits) else 0
+    share = f"{settings.BASE_URL}/t/{ct.code}"
+    return templates.TemplateResponse(request, "teacher_test.html", {
+        "student": teacher, "ct": ct, "sits": sits, "class_weak": class_weak,
+        "avg": avg, "share": share, "n_students": len(sits)})
+
+
+@app.get("/teacher/test/{code}/print", response_class=HTMLResponse)
+def teacher_test_print(request: Request, code: str, answers: str = "", db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return RedirectResponse("/teacher", status_code=302)
+    ct = db.query(ClassTest).filter_by(code=code, teacher_id=teacher.id).first()
+    if not ct:
+        return RedirectResponse("/teacher", status_code=302)
+    return templates.TemplateResponse(request, "teacher_print.html", {
+        "student": teacher, "ct": ct, "pack": ct.pack, "show_answers": (answers == "1")})
+
+
+@app.get("/teacher/dashboard", response_class=HTMLResponse)
+def teacher_dashboard(request: Request, db: Session = Depends(get_db)):
+    """Across ALL the teacher's tests: class-at-a-glance, weak-topic heatmap, and every student
+    flagged by how they're doing — the 'see & control every student' pitch, on REAL results."""
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return RedirectResponse("/teacher", status_code=302)
+    tests = db.query(ClassTest).filter_by(teacher_id=teacher.id).all()
+    tids = [t.id for t in tests]
+    sits = (db.query(ClassSitting).filter(ClassSitting.class_test_id.in_(tids)).all() if tids else [])
+    # per-student roll-up (by name) + class weak-topic counts
+    by_student: dict = {}
+    weak_count: dict = {}
+    for s in sits:
+        b = by_student.setdefault(s.student_name or "—", {"name": s.student_name or "—", "tests": 0,
+                                                           "score": 0, "total": 0, "weak": {}})
+        b["tests"] += 1; b["score"] += s.score; b["total"] += s.total
+        for w in (s.weak_topics or []):
+            b["weak"][w] = b["weak"].get(w, 0) + 1
+            weak_count[w] = weak_count.get(w, 0) + 1
+    students = []
+    for b in by_student.values():
+        pct = round(b["score"] / b["total"] * 100) if b["total"] else 0
+        tier = "weak" if pct < 40 else ("shaky" if pct < 70 else "solid")
+        top_weak = sorted(b["weak"].items(), key=lambda kv: -kv[1])[:3]
+        students.append({"name": b["name"], "pct": pct, "tier": tier, "tests": b["tests"],
+                         "weak": [w for w, _ in top_weak]})
+    students.sort(key=lambda x: x["pct"])                # weakest first — who needs help
+    class_weak = sorted(weak_count.items(), key=lambda kv: -kv[1])[:10]
+    return templates.TemplateResponse(request, "teacher_dashboard.html", {
+        "student": teacher, "n_tests": len(tests), "n_sits": len(sits),
+        "students": students, "class_weak": class_weak})
+
+
+# ---- student side: take a class test with NO account, just a name ----
+
+@app.get("/t/{code}", response_class=HTMLResponse)
+def class_take_gate(request: Request, code: str, db: Session = Depends(get_db)):
+    ct = db.query(ClassTest).filter_by(code=code).first()
+    if not ct:
+        return HTMLResponse("<h2 style='font-family:sans-serif;padding:40px'>This test link is not valid.</h2>",
+                            status_code=404)
+    # already gave a name this session → straight into the test
+    if request.session.get(f"ct_{code}"):
+        return RedirectResponse(f"/t/{code}/go", status_code=302)
+    return templates.TemplateResponse(request, "class_take.html", {"ct": ct})
+
+
+@app.post("/t/{code}")
+def class_take_start(request: Request, code: str, name: str = Form(...), db: Session = Depends(get_db)):
+    ct = db.query(ClassTest).filter_by(code=code).first()
+    if not ct:
+        return RedirectResponse("/", status_code=302)
+    nm = (name or "").strip()[:80]
+    if len(nm) < 1:
+        return RedirectResponse(f"/t/{code}", status_code=302)
+    request.session[f"ct_{code}"] = nm
+    return RedirectResponse(f"/t/{code}/go", status_code=302)
+
+
+@app.get("/t/{code}/go", response_class=HTMLResponse)
+def class_take_go(request: Request, code: str, db: Session = Depends(get_db)):
+    ct = db.query(ClassTest).filter_by(code=code).first()
+    if not ct:
+        return RedirectResponse("/", status_code=302)
+    if not request.session.get(f"ct_{code}"):
+        return RedirectResponse(f"/t/{code}", status_code=302)
+    import json as _json
+    inject = ("<script>window.__PACK=" + _json.dumps(ct.pack) + ";"
+              "window.__CLASSTEST=" + _json.dumps({"code": code, "sittingUrl": "/api/teacher/sitting"}) + ";"
+              "</script>")
+    html = (BASE / "static" / "exam" / "assess.html").read_text(encoding="utf-8")
+    return HTMLResponse(html.replace("</head>", inject + "</head>", 1))
+
+
+@app.post("/api/teacher/sitting")
+async def teacher_sitting(request: Request, db: Session = Depends(get_db)):
+    """Record a student's class-test attempt (name from session, results from the engine)."""
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    code = (body.get("code") or "").strip()
+    ct = db.query(ClassTest).filter_by(code=code).first()
+    if not ct:
+        return JSONResponse({"ok": False, "error": "unknown test"}, status_code=404)
+    name = request.session.get(f"ct_{code}") or "Student"
+    results = body.get("results") or []
+    concepts = [{"topic": r.get("topic"), "status": r.get("status"), "depth": r.get("depth")}
+                for r in results if r.get("topic")]
+    weak = _weak_from_concepts(concepts)
+    db.add(ClassSitting(class_test_id=ct.id, student_name=name[:80],
+                        score=int(body.get("score") or 0), total=int(body.get("graded") or 0),
+                        concepts=concepts, weak_topics=weak))
+    db.commit()
+    return JSONResponse({"ok": True})
+
+
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+# CHAT LAYER — the conversational front for BOTH roles. It helps a teacher/student ARTICULATE the
+# test they want (chip-guided, free-text accepted) and drives the real deterministic actions.
+# Slow generation runs as a BACKGROUND JOB so nothing times out — the chat shows a "thinking…"
+# bubble and delivers action buttons when ready (the "Claude thinks, then delivers" feel).
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+
+import threading as _threading
+from .db import SessionLocal as _SessionLocal
+
+
+def _run_teacher_test_job(token: str):
+    """Background worker: generate the pack, create the ClassTest, mark the job done. Own DB session
+    (this runs in a thread, so it must NOT share the request's session)."""
+    db = _SessionLocal()
+    try:
+        job = db.query(GenJob).filter_by(token=token).first()
+        if not job:
+            return
+        p = job.params or {}
+        subject = p.get("subject")
+        selections = [(s[0], s[1]) for s in p.get("selections", [])]
+        diff = p.get("diff") or "3-4"
+        n = max(1, min(int(p.get("n") or 5), 20))
+        title = (p.get("title") or "").strip()[:120]
+        label = examgen.RAG_SUBJECTS.get(subject, {}).get("label", "Test")
+        pack = examgen.generate_pack(subject, selections, diff, n, title or label)
+        job = db.query(GenJob).filter_by(token=token).first()
+        if not pack or not pack.get("questions"):
+            job.status = "error"; job.result = {"error": "Couldn't generate that test — please try again."}
+            db.commit(); return
+        code = _new_class_code(db)
+        chapters = [f"{c}" + (f" · {co}" if co else "") for c, co in selections]
+        db.add(ClassTest(teacher_id=job.owner_id, code=code, title=title or f"{label} test",
+                         subject_id=subject, subject_label=label, chapters=chapters,
+                         difficulty=diff, n=len(pack["questions"]), pack=pack))
+        job.status = "done"
+        job.result = {"code": code, "redirect": f"/teacher/test/{code}", "title": title or f"{label} test",
+                      "n": len(pack["questions"]), "subject_label": label,
+                      "share": f"{settings.BASE_URL}/t/{code}"}
+        db.commit()
+    except Exception as exc:
+        try:
+            job = db.query(GenJob).filter_by(token=token).first()
+            if job:
+                job.status = "error"; job.result = {"error": str(exc)[:180]}; db.commit()
+        except Exception:
+            pass
+    finally:
+        db.close()
+
+
+def _kick_teacher_job(db, teacher_id: int, params: dict) -> str:
+    token = secrets.token_urlsafe(12)
+    db.add(GenJob(token=token, owner_id=teacher_id, kind="teacher_test", params=params, status="pending"))
+    db.commit()
+    _threading.Thread(target=_run_teacher_test_job, args=(token,), daemon=True).start()
+    return token
+
+
+@app.get("/api/chat/job/{token}")
+def chat_job(token: str, db: Session = Depends(get_db)):
+    job = db.query(GenJob).filter_by(token=token).first()
+    if not job:
+        return JSONResponse({"ok": False, "error": "unknown job"}, status_code=404)
+    return JSONResponse({"ok": True, "status": job.status, "result": job.result or {}})
+
+
+# ---- chat step function: stateless, driven by the client-held `state` + the latest input ----
+
+def _subject_chips():
+    subs = ["jee-physics", "jee-chemistry", "jee-maths", "neet-biology", "neet-physics", "neet-chemistry"]
+    return [{"label": examgen.RAG_SUBJECTS[s]["label"], "value": "subj:" + s} for s in subs]
+
+
+def _chapter_chips(subject: str):
+    chs = [c for c in examgen.get_chapters(subject) if c.get("exemplars_banked", 0) > 0]
+    chips = [{"label": "✨ Full subject", "value": "full"}]
+    for c in chs[:14]:
+        chips.append({"label": c["chapter"], "value": "chap:" + c["chapter"]})
+    return chips
+
+
+def _diff_chips(subject: str):
+    lad = examgen.difficulty_ladder(subject)
+    return [{"label": "Easy", "value": "diff:" + lad["easy"]},
+            {"label": "Mix", "value": "diff:" + lad["mix"]},
+            {"label": "Hard", "value": "diff:" + lad["hard"]}]
+
+
+def _reply(msg, chips=None, input=False, job=None, nav=None, actions=None, state=None):
+    return {"ok": True, "reply": msg, "chips": chips or [], "input": input,
+            "job": job, "nav": nav, "actions": actions or [], "state": state or {}}
+
+
+def _chat_step(role: str, state: dict, inp: str, db: Session, student):
+    """One conversational turn. Returns the reply dict; state is echoed for the client to hold."""
+    st = dict(state or {})
+    node = st.get("node", "intro")
+    inp = (inp or "").strip()
+    teacher = role == "teacher"
+    who = student.name or ("teacher" if teacher else "there")
+
+    # ---- global chip routing (a chip value can jump the flow regardless of node) ----
+    if inp.startswith("intent:"):
+        node = inp.split(":", 1)[1]
+    elif inp.startswith("subj:"):
+        st["subject"] = inp.split(":", 1)[1]
+        st["subject_label"] = examgen.RAG_SUBJECTS.get(st["subject"], {}).get("label", "Test")
+        st["chapters"] = []
+        node = "chapters"
+    elif inp == "full":
+        st["chapters"] = ["__FULL__"]; node = "difficulty"
+    elif inp.startswith("chap:"):
+        ch = inp.split(":", 1)[1]
+        chs = [c for c in st.get("chapters", []) if c != "__FULL__"]
+        if ch in chs:
+            chs.remove(ch)
+        else:
+            chs.append(ch)
+        st["chapters"] = chs
+        node = "chapters"
+    elif inp == "chapdone":
+        node = "difficulty"
+    elif inp.startswith("diff:"):
+        st["diff"] = inp.split(":", 1)[1]; node = "count"
+    elif inp.startswith("n:"):
+        st["n"] = int(inp.split(":", 1)[1]); node = "confirm"
+    elif inp == "go":
+        node = "generate"
+    elif inp == "restart":
+        st = {}; node = "intro"
+
+    # ---- free text: try to route to an intent / subject at the top of the flow ----
+    elif inp and node in ("intro", "make_test"):
+        sid = examgen.match_subject(inp)
+        low = inp.lower()
+        if sid:
+            st["subject"] = sid; st["subject_label"] = examgen.RAG_SUBJECTS[sid]["label"]
+            st["chapters"] = []; node = "chapters"
+        elif any(w in low for w in ("weak", "report", "progress", "how am i", "class")):
+            node = "class_weak" if teacher else "my_progress"
+        else:
+            node = "make_test"
+
+    # ══════════ nodes ══════════
+    if node == "intro":
+        if teacher:
+            msg = (f"Namaste 🙏 I'm Acharya. Tell me what you need — I'll build it. "
+                   f"You can type it, or tap below.")
+            chips = [{"label": "✍️ Make a test", "value": "intent:make_test"},
+                     {"label": "🎯 Who's weak in my class?", "value": "intent:class_weak"}]
+        else:
+            msg = (f"Namaste 🙏 I'm Acharya. Want a fresh practice test, or your progress? "
+                   f"Just tell me — e.g. \"NEET Biology, genetics, 10 questions\".")
+            chips = [{"label": "✍️ Make me a test", "value": "intent:make_test"},
+                     {"label": "⚡ Practise my weak spots", "value": "intent:smart"},
+                     {"label": "📊 How am I doing?", "value": "intent:my_progress"}]
+        return _reply(msg, chips=chips, input=True, state={**st, "node": "intro"})
+
+    if node in ("make_test",):
+        return _reply("Which subject? (JEE + NEET are ready.)", chips=_subject_chips(),
+                      input=True, state={**st, "node": "make_test"})
+
+    if node == "chapters":
+        sel = [c for c in st.get("chapters", []) if c != "__FULL__"]
+        picked = (" · picked: " + ", ".join(sel)) if sel else ""
+        chips = _chapter_chips(st["subject"])
+        if sel:
+            chips = chips + [{"label": "✅ Done — next", "value": "chapdone"}]
+        return _reply(f"<b>{st['subject_label']}</b> — tap the chapters to cover, or ✨ Full subject.{picked}",
+                      chips=chips, input=True, state={**st, "node": "chapters"})
+
+    if node == "difficulty":
+        return _reply("How hard should it be?", chips=_diff_chips(st["subject"]),
+                      state={**st, "node": "difficulty"})
+
+    if node == "count":
+        opts = [5, 10, 15, 20] if teacher else [5, 10, 15]
+        chips = [{"label": f"{k} questions", "value": f"n:{k}"} for k in opts]
+        return _reply("How many questions?", chips=chips, state={**st, "node": "count"})
+
+    if node == "confirm":
+        sel = [c for c in st.get("chapters", []) if c != "__FULL__"]
+        where = "full subject" if "__FULL__" in st.get("chapters", []) or not sel else ", ".join(sel)
+        st["title"] = f"{st['subject_label']} — {where[:40]}"
+        diff_word = {v: k for k in ("easy", "mix", "hard")
+                     for v in [examgen.difficulty_ladder(st["subject"])[k]]}.get(st.get("diff"), st.get("diff"))
+        tail = ("I'll write fresh questions and give you a share link + printable."
+                if teacher else "I'll write fresh questions for you.")
+        return _reply(f"Ready: <b>{st['subject_label']}</b> · {where} · {diff_word} · <b>{st['n']} questions</b>. {tail}",
+                      chips=[{"label": "▶️ Make it", "value": "go"},
+                             {"label": "↺ Start over", "value": "restart"}],
+                      state={**st, "node": "confirm"})
+
+    if node == "generate":
+        subject = st.get("subject")
+        chs = st.get("chapters", [])
+        if "__FULL__" in chs or not [c for c in chs if c != "__FULL__"]:
+            all_ch = [c["chapter"] for c in examgen.get_chapters(subject) if c.get("exemplars_banked", 0) > 0]
+            selections = [(c, None) for c in all_ch]
+        else:
+            selections = [(c, None) for c in chs if c != "__FULL__"]
+        diff = st.get("diff") or examgen.difficulty_ladder(subject)["mix"]
+        n = int(st.get("n") or 5)
+        title = st.get("title") or examgen.RAG_SUBJECTS[subject]["label"]
+        if teacher:
+            token = _kick_teacher_job(db, student.id, {"subject": subject,
+                     "selections": [[c, co] for c, co in selections], "diff": diff, "n": n, "title": title})
+            return _reply("Writing your test now — fresh questions, never repeated. Give me a moment… ✍️",
+                          job=token, state={"node": "intro"})
+        else:
+            sel = "|".join(f"{c}::" for c, _ in selections[:6])
+            nav = (f"/exam-prep/test?src=examgen&subject={quote(subject)}&sel={quote(sel)}"
+                   f"&diff={quote(diff)}&n={n}&title={quote(title)}")
+            return _reply("Opening your test — I'll write the questions as it loads. All the best! ✍️",
+                          nav=nav, state={"node": "intro"})
+
+    if node == "smart":
+        return _reply("Building a set from your weakest topics… ⚡", nav="/exam-prep/smart",
+                      state={"node": "intro"})
+
+    if node == "my_progress":
+        stx = _prep_stats(db, student)
+        if not stx["has_data"]:
+            return _reply("You haven't taken a test yet — do one and I'll map exactly where you're weak. Ready?",
+                          chips=[{"label": "✍️ Make me a test", "value": "intent:make_test"}],
+                          state={"node": "intro"})
+        focus = ", ".join(s.concept for s in stx["focus"]) or "nothing major"
+        msg = (f"You're at <b>{stx['mastery']}% mastery</b> across {stx['tests']} test(s). "
+               f"This week: {stx['q_week']} questions, {stx['acc_week']}% accuracy. "
+               f"<b>Focus next:</b> {focus}.")
+        return _reply(msg, chips=[{"label": "⚡ Practise those now", "value": "intent:smart"},
+                                  {"label": "📈 Full report", "value": "nav:/exam-prep/report"},
+                                  {"label": "✍️ New test", "value": "intent:make_test"}],
+                      state={"node": "intro"})
+
+    if node == "class_weak":
+        tests = db.query(ClassTest).filter_by(teacher_id=student.id).all()
+        tids = [t.id for t in tests]
+        sits = (db.query(ClassSitting).filter(ClassSitting.class_test_id.in_(tids)).all() if tids else [])
+        if not sits:
+            return _reply("No student results yet. Make a test, share the link, and as students finish "
+                          "I'll show you exactly who's weak in what.",
+                          chips=[{"label": "✍️ Make a test", "value": "intent:make_test"}],
+                          state={"node": "intro"})
+        wc = {}
+        for s in sits:
+            for w in (s.weak_topics or []):
+                wc[w] = wc.get(w, 0) + 1
+        top = sorted(wc.items(), key=lambda kv: -kv[1])[:5]
+        weak_line = ", ".join(f"{t} ({c})" for t, c in top) or "—"
+        names = len({s.student_name for s in sits})
+        msg = (f"Across {len(sits)} result(s) from {names} student(s), the class is weakest in: "
+               f"<b>{weak_line}</b>. Teach these next.")
+        return _reply(msg, chips=[{"label": "📊 Full dashboard", "value": "nav:/teacher/dashboard"},
+                                  {"label": "✍️ Make a test on the weak topic", "value": "intent:make_test"}],
+                      state={"node": "intro"})
+
+    # fallback
+    return _reply("Tell me what you'd like — a test, or your progress.",
+                  chips=([{"label": "✍️ Make a test", "value": "intent:make_test"}]),
+                  input=True, state={"node": "intro"})
+
+
+@app.post("/api/chat/{role}")
+async def chat_api(request: Request, role: str, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    if role == "teacher" and not student.is_teacher:
+        return JSONResponse({"ok": False, "error": "not a teacher"}, status_code=403)
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    state = body.get("state") or {}
+    inp = body.get("input") or ""
+    # a chip can also carry a direct nav (value "nav:/path")
+    if isinstance(inp, str) and inp.startswith("nav:"):
+        return JSONResponse(_reply("Opening that for you…", nav=inp.split(":", 1)[1], state={"node": "intro"}))
+    return JSONResponse(_chat_step("teacher" if role == "teacher" else "student", state, inp, db, student))
+
+
+@app.get("/teacher/chat", response_class=HTMLResponse)
+def teacher_chat(request: Request, db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return RedirectResponse("/teacher", status_code=302)
+    return templates.TemplateResponse(request, "chat_console.html", {
+        "student": teacher, "role": "teacher", "home": "/teacher",
+        "title": "Acharya — Teacher", "sub": teacher.institute or "for teachers"})
+
+
+@app.get("/exam-prep/chat", response_class=HTMLResponse)
+def student_chat(request: Request, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    if not has_assessment_access(db, student):
+        return RedirectResponse("/exam-prep/upgrade", status_code=302)
+    return templates.TemplateResponse(request, "chat_console.html", {
+        "student": student, "role": "student", "home": "/exam-prep/dashboard",
+        "title": "Acharya", "sub": "your exam-prep coach"})
 
 
 @app.post("/logout")
