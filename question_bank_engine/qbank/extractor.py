@@ -277,6 +277,12 @@ def from_datavorous_row(row, want_exam="NEET", default_difficulty=2):
         opts, answer = [], cval
 
     solution = _dv_text(row.get("answer"))
+    # figure dependency: datavorous embeds diagrams as <img> in the question/options HTML,
+    # which _dv_text strips to text — so a stripped question can silently say "as shown in
+    # the figure" with no figure. Flag it (from the raw <img> OR a text figure-reference)
+    # so it's excluded from serving/solving rather than shown incomplete.
+    raw_q = (row.get("question") or "") + " " + (row.get("options") or "")
+    needs_fig = bool(_HTML_IMG.search(raw_q)) or references_figure(stem)
     diff = default_difficulty + (1 if qtype in ("integer", "numeric") else 0)
     h = content_hash(stem)
     src_exam = want_exam
@@ -285,7 +291,8 @@ def from_datavorous_row(row, want_exam="NEET", default_difficulty=2):
     return Question(
         id=f"{prefix}_{sub_slug}_dv_{h[:12]}", exam=src_exam, subject=subject, stem=stem,
         qtype=qtype, options=opts, correct_answer=answer, solution=solution,
-        chapter=chapter, difficulty=diff, source=f"{src_exam} (datavorous)", hash=h,
+        chapter=chapter, difficulty=diff, needs_figure=needs_fig,
+        source=f"{src_exam} (datavorous)", hash=h,
     )
 
 
