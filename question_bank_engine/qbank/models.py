@@ -58,13 +58,56 @@ def unescape_newlines(s: str) -> str:
 # stand without. Used to (a) flag ingested diagram questions and (b) keep generation
 # honest (never emit a figure-less question that requires one).
 _FIG_RE = re.compile(
-    r"\b(figure|fig\.|diagram|as shown|shown in the|circuit shown|"
-    r"the circuit|the graph|graph shown|arrangement shown|shown below|"
-    r"shown above|in the figure|as depicted|the figure)\b", re.I)
+    r"\b(figure|fig\.|diagram|graph|circuit|newman projection|"
+    r"as shown|shown in the|shown below|shown above|as depicted|"
+    r"in the (figure|diagram|graph|circuit)|the (figure|diagram|graph|circuit)|"
+    r"arrangement shown|"
+    # "the/given following <thing that is only drawable>"
+    r"(following|given|above) (structure|structures|compound|compounds|molecule|molecules|"
+    r"carbocation|reaction|reactions|scheme|arrangement|complex|cell|projection|conformation)|"
+    r"structures? of the following)\b", re.I)
+
+# a Column-I/Column-II or List-I/List-II matching question -> the lists live in the figure
+_MATCH_RE = re.compile(
+    r"\b(column\s*-?\s*(i|ii|1|2)\b|list\s*-?\s*(i|ii)\b|match the (following|column|list|reaction|item))",
+    re.I)
+
+# an option whose text is only a bare label/reference (i, ii, P, a) — NOT a plain number,
+# which is a real numeric answer. Roman numerals / P-S / a-d used as option TEXT mean the
+# real answer choices live in the missing figure.
+_BARE_OPT_RE = re.compile(r"^\(?\s*([ivx]{1,4}|[a-d]|[pqrs])\s*\)?[.:]?$", re.I)
+# options that are an ORDERING of such labels: "a>b>c>d", "II < I < IV < III", "P>Q>R"
+_ORDER_OPT_RE = re.compile(r"^[\s(]*[ivxa-dpqrs][\s)]*([<>=,][\s(]*[ivxa-dpqrs][\s)]*)+$", re.I)
+_MCQ = {"MCQ_single", "MCQ_multi"}
 
 
 def references_figure(text: str) -> bool:
-    return bool(_FIG_RE.search(text or ""))
+    t = text or ""
+    return bool(_FIG_RE.search(t) or _MATCH_RE.search(t))
+
+
+def options_are_bare(options) -> bool:
+    """True when MCQ options carry no real content — empty, or just labels/orderings of labels
+    (i, ii, a>b>c) — a sign the answer choices live only in the missing figure. Plain numbers are
+    real answers, NOT bare. Only meaningful for MCQ-type questions (caller checks qtype)."""
+    if not options:
+        return True
+    texts = [str((o.get("text") if isinstance(o, dict) else o) or "").strip() for o in options]
+    if any(t == "" for t in texts):
+        return True
+    return len(texts) >= 2 and all(_BARE_OPT_RE.match(t) or _ORDER_OPT_RE.match(t) for t in texts)
+
+
+def is_figure_dependent(stem: str, options=None, qtype: str = "MCQ_single") -> bool:
+    """A question is figure-dependent (INCOMPLETE without a figure) if its TEXT references a
+    figure/matching-table, or (for MCQs) its options carry no real content. qtype-aware:
+    integer/numeric questions legitimately have empty options, so only the stem is checked.
+    High precision — safe to gate serving on."""
+    if references_figure(stem or ""):
+        return True
+    if qtype in _MCQ and options_are_bare(options or []):
+        return True
+    return False
 
 
 # Valid question types

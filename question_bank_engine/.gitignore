@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+data/
+drop/*.pdf
+figures/
+backups/
+tests_out/
+*.env
+*.sqlite
+*.png
+*.jpg
+*.jpeg
+experiments/*/artifacts/

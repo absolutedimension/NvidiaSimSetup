@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Acharya Question Generator — Test Client</title>
+<!-- MathJax renders the LaTeX in stems/options/solutions. (CDN is fine for this local
+     test page; your production frontend can bundle KaTeX/MathJax instead.) -->
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['\\[','\\]']] },
+                     options: { skipHtmlTags: ['script','style'] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{--bg:#12100c;--card:#1c1810;--gold:#d8b25a;--txt:#efe7d6;--mut:#a99;--line:#3a3223;}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:Inter,system-ui,Arial,sans-serif;line-height:1.5}
+  header{padding:18px 22px;border-bottom:1px solid var(--line)}
+  h1{margin:0;font-size:20px;color:var(--gold);font-weight:600}
+  .sub{color:var(--mut);font-size:13px;margin-top:3px}
+  main{max-width:900px;margin:0 auto;padding:22px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:18px}
+  label{display:block;font-size:12px;color:var(--mut);margin:8px 0 3px}
+  input,select{width:100%;padding:9px;border-radius:7px;border:1px solid var(--line);
+    background:#0d0b08;color:var(--txt);font-size:14px}
+  .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+  button{margin-top:14px;background:var(--gold);color:#1a1509;border:0;padding:11px 18px;
+    border-radius:8px;font-weight:600;font-size:14px;cursor:pointer}
+  button:disabled{opacity:.5;cursor:wait}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+  .qmeta{font-size:12px;color:var(--gold);margin-bottom:8px}
+  .opt{padding:6px 10px;margin:5px 0;border:1px solid var(--line);border-radius:7px}
+  .opt.correct{border-color:var(--gold);background:rgba(216,178,90,.08)}
+  .sol{margin-top:10px;padding:10px;background:#0d0b08;border-radius:7px;font-size:14px;display:none}
+  .toggle{color:var(--gold);cursor:pointer;font-size:13px;margin-top:8px;display:inline-block}
+  .err{color:#e88;font-size:13px} .note{color:var(--mut);font-size:12px}
+  #status{margin-left:10px;color:var(--mut);font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Acharya — Question Generator Test Client</h1>
+  <div class="sub">Live API · <code>https://rtx.trigunai.com/examgen</code> · JEE Advanced Physics (2016–2026)</div>
+</header>
+<main>
+  <div class="panel">
+    <label>API key (paste the QBANK_API_KEY — kept only in this browser tab)</label>
+    <input id="key" type="password" placeholder="Bearer key from Deepak"/>
+    <div class="row">
+      <div><label>Chapter</label><select id="chapter"></select></div>
+      <div><label>Difficulty</label>
+        <select id="difficulty">
+          <option>2</option><option selected>3-4</option><option>3</option>
+          <option>4</option><option>4-5</option><option>5</option>
+        </select></div>
+      <div><label>Type</label>
+        <select id="type">
+          <option value="MCQ_single" selected>MCQ (single)</option>
+          <option value="MCQ_multi">MCQ (multiple)</option>
+          <option value="integer">Integer</option>
+          <option value="numeric">Numeric</option>
+        </select></div>
+      <div><label>Count</label><input id="count" type="number" value="3" min="1" max="20"/></div>
+      <div><label>Require diagram</label>
+        <select id="reqfig"><option value="false">no</option><option value="true">yes (force SVG)</option></select></div>
+    </div>
+    <button id="go">Generate test</button>
+    <span id="status"></span>
+    <div class="note" style="margin-top:8px">Generation is LLM-backed: ~6–12s per question. Be patient.</div>
+    <div id="err" class="err"></div>
+  </div>
+  <div id="out"></div>
+</main>
+
+<script>
+const API = "https://rtx.trigunai.com/examgen";
+const $ = id => document.getElementById(id);
+
+async function loadChapters(){
+  try{
+    const r = await fetch(`${API}/chapters`);
+    const d = await r.json();
+    const sel = $("chapter");
+    d.chapters.filter(c=>c.exemplars_banked>0)
+      .sort((a,b)=>b.exemplars_banked-a.exemplars_banked)
+      .forEach(c=>{
+        const o=document.createElement("option");
+        o.value=c.chapter; o.textContent=`${c.chapter} (${c.exemplars_banked})`;
+        sel.appendChild(o);
+      });
+  }catch(e){ $("err").textContent="Could not load chapters: "+e; }
+}
+
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function renderQuestion(q,i){
+  const opts = (q.options||[]).map(o=>{
+    const correct = (q.correct_answer||"").includes(o.label);
+    return `<div class="opt ${correct?'correct':''}"><b>(${esc(o.label)})</b> ${esc(o.text)}</div>`;
+  }).join("");
+  const numeric = !q.options || q.options.length===0;
+  // figure_svg = inline SVG (generated); figure_url = served PNG (real past-paper)
+  let fig = ``;
+  if (q.figure_svg) fig = `<div style="max-width:420px;margin:8px 0;background:#fff;padding:8px;border-radius:6px">${q.figure_svg}</div>`;
+  else if (q.figure_url) fig = `<img src="${q.figure_url}" alt="figure" style="max-width:100%;margin:8px 0;background:#fff;border-radius:6px"/>`;
+  else if (q.needs_figure) fig = `<div class="note" style="color:#e88">⚠ needs a figure (not available)</div>`;
+  return `<div class="q">
+    <div class="qmeta">Q${i+1} · ${esc(q.chapter)} › ${esc(q.concept||'—')} · difficulty ${q.difficulty} · ${esc(q.qtype)}${q.needs_figure?' · 🖼 figure':''}</div>
+    <div>${esc(q.stem)}</div>
+    ${fig}
+    ${opts}
+    ${numeric?`<div class="opt correct">Answer: ${esc(q.correct_answer)}</div>`:``}
+    <span class="toggle" onclick="this.nextElementSibling.style.display='block'">Show solution ▾</span>
+    <div class="sol">${esc(q.solution)||'(no solution provided)'}</div>
+  </div>`;
+}
+
+$("go").onclick = async () => {
+  const key = $("key").value.trim();
+  if(!key){ $("err").textContent="Enter the API key first."; return; }
+  $("err").textContent=""; $("out").innerHTML="";
+  $("go").disabled=true; $("status").textContent="generating…";
+  try{
+    const res = await fetch(`${API}/generate`,{
+      method:"POST",
+      headers:{"Content-Type":"application/json","Authorization":`Bearer ${key}`},
+      body:JSON.stringify({
+        chapter:$("chapter").value, difficulty:$("difficulty").value,
+        type:$("type").value, count:parseInt($("count").value,10),
+        require_figure: $("reqfig").value === "true"
+      })
+    });
+    if(!res.ok){ throw new Error(`${res.status} ${await res.text()}`); }
+    const test = await res.json();
+    $("status").textContent = `${test.generated} generated · ${test.rejected.length} rejected`;
+    $("out").innerHTML = test.questions.map(renderQuestion).join("");
+    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+  }catch(e){ $("err").textContent="Generate failed: "+e; }
+  finally{ $("go").disabled=false; }
+};
+
+loadChapters();
+</script>
+</body>
+</html>

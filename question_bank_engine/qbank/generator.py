@@ -9,11 +9,13 @@ that is too similar to any exemplar / banked past-paper question is REJECTED and
 regenerated. We learn the pattern; we never resell the paper."""
 import re
 
+import os
 import re
 import xml.etree.ElementTree as ET
 
-from . import cleaner, validator
-from .models import Question, content_hash, normalize_for_hash, references_figure, repair_latex
+from . import cleaner, validator, semantic
+from .models import (Question, content_hash, normalize_for_hash, references_figure,
+                     is_figure_dependent, repair_latex)
 
 
 def _sanitize_svg(svg: str | None) -> str | None:
@@ -45,7 +47,10 @@ def _valid_svg(s: str | None) -> bool:
         return False
     return bool(re.search(r"<(path|line|circle|rect|polygon|polyline|ellipse|text|g)\b", s, re.I))
 
-NOVELTY_MAX_SIM = 0.82   # generated stem must be < this cosine vs any real question
+NOVELTY_MAX_SIM = 0.82   # generated stem must be < this TF-IDF cosine vs any real question
+# semantic (embedding) novelty — catches reworded near-dupes TF-IDF misses. Calibrated from
+# duplicate-pair vs distinct-pair cosine distributions (see diagram_generate/calibrate_semantic).
+SEM_MAX_SIM = float(os.environ.get("QBANK_SEM_MAX_SIM", "0.90"))
 
 
 # --- retrieval ---------------------------------------------------------------
@@ -58,22 +63,29 @@ def retrieve_exemplars(store, spec: dict, k: int = 3) -> list[dict]:
     syllabus.EXEMPLAR_FALLBACK) rather than returning nothing."""
     from . import syllabus
 
+    # pull a WIDER tag-filtered candidate set, then pick k that are semantically diverse
+    # (embeddings) so the generator sees varied patterns, not near-identical exemplars.
+    cand_n = max(k * 5, 15)
+
     def _ladder(exam, subject):
         base = dict(exam=exam, subject=subject, chapter=spec.get("chapter"),
                     include_generated=False)
         for filt in (dict(base, qtype=spec.get("qtype"), dmin=spec.get("dmin"), dmax=spec.get("dmax")),
                      dict(base, dmin=spec.get("dmin"), dmax=spec.get("dmax")),
                      dict(base)):
-            ex = store.retrieve(limit=k, **filt)
+            ex = store.retrieve(limit=cand_n, servable_only=True, **filt)
             if ex:
                 return ex
         return []
 
-    ex = _ladder(spec.get("exam"), spec.get("subject"))
-    if ex:
-        return ex
-    fb = syllabus.exemplar_fallback(spec.get("exam"), spec.get("subject"))
-    return _ladder(*fb) if fb else []
+    cands = _ladder(spec.get("exam"), spec.get("subject"))
+    if not cands:
+        fb = syllabus.exemplar_fallback(spec.get("exam"), spec.get("subject"))
+        cands = _ladder(*fb) if fb else []
+    if not cands:
+        return []
+    idx = semantic.diversify_indices([c["stem"] for c in cands], k)
+    return [cands[i] for i in idx]
 
 
 # --- prompt construction (this IS the RAG) -----------------------------------
@@ -201,6 +213,13 @@ def generate_one(spec, exemplars, llm, idx, mock=False):
 
 def generate_test(store, spec: dict, llm=None, count: int = 5, k_exemplars: int = 3,
                   max_retries: int = 2, mock: bool = False) -> dict:
+    # FIGURE-FIRST routing: a diagram request in a covered subject/chapter is DRAWN
+    # deterministically (correct figure + RDKit-computed answer) instead of LLM-authored SVG.
+    if spec.get("require_figure") and not mock:
+        from . import figuregen
+        if figuregen.can_generate(spec.get("exam"), spec.get("subject"), spec.get("chapter")):
+            return figuregen.generate_test(store, spec, count)
+
     exemplars = retrieve_exemplars(store, spec, k=k_exemplars)
     if not exemplars and not mock:
         return {"error": f"no exemplars for spec {spec} — tag/ingest that chapter first",
@@ -219,19 +238,28 @@ def generate_test(store, spec: dict, llm=None, count: int = 5, k_exemplars: int 
                 rejected.append({"slot": i, "reason": err})
                 break
             issues = validator.rule_check(q)
-            if q.needs_figure and not q.figure_svg:
+            has_fig = bool(q.figure_svg) or bool(getattr(q, "figure_url", None))
+            # never emit a question that refers to a figure it doesn't carry (the incomplete-Q guard)
+            if (q.needs_figure or is_figure_dependent(q.stem, q.options, q.qtype)) and not has_fig:
                 issues.append("figure_required_but_missing")
             if not issues and llm is not None and getattr(llm, "ok", False):
                 issues += validator.llm_check(q, llm)
             sim = novelty(q, ref_pool + [a.stem for a in accepted])
             if sim >= NOVELTY_MAX_SIM:
                 issues.append(f"too_similar_to_bank({sim:.2f})")
+            # semantic novelty (pgvector): catches reworded near-dupes TF-IDF misses. Scoped to
+            # the chapter; includes previously-accepted questions (upserted below), so within-run
+            # semantic repeats are caught too. Degrades to a no-op (0.0) if pgvector is unavailable.
+            sem = semantic.max_similarity(q.stem, spec.get("exam"), spec.get("subject"), spec.get("chapter"))
+            if sem >= SEM_MAX_SIM:
+                issues.append(f"semantically_too_similar({sem:.2f})")
             if issues:
                 if attempt == max_retries:
                     rejected.append({"slot": i, "reason": issues})
                 continue
             q.verified = True
             store.upsert(q)
+            semantic.upsert_embedding(q)   # keep the pgvector novelty pool current
             accepted.append(q)
             ref_pool.append(q.stem)
             break

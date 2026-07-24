@@ -1,0 +1,17 @@
+# Core (rule-based pipeline runs with just the stdlib + these)
+requests
+scikit-learn        # near-duplicate detection (TF-IDF cosine)
+
+# LLM path (validator semantic check + PDF vision extraction)
+openai              # OpenAI-compatible client -> TrigunAI LiteLLM/Azure proxy
+
+# PDF ingestion path (manual-drop of real papers)
+pymupdf             # PDF -> page images / text
+
+# API service (the frontend integration surface)
+fastapi
+uvicorn[standard]
+
+# Production storage (optional; SQLite is default for local/demo)
+# psycopg[binary]   # Postgres
+# pgvector          # vector column for retrieval (Phase 2+)

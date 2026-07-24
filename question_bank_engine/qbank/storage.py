@@ -185,12 +185,17 @@ class Store:
         return dict(self.con.execute(sql, args).fetchall())
 
     def retrieve(self, chapter=None, subject=None, qtype=None, exam=None,
-                 dmin=None, dmax=None, limit=10, include_generated=True) -> list[dict]:
-        """The payoff: pull questions by tag — the exam-generator's read path."""
+                 dmin=None, dmax=None, limit=10, include_generated=True,
+                 servable_only=False) -> list[dict]:
+        """The payoff: pull questions by tag — the exam-generator's read path.
+        servable_only=True excludes figure-dependent-without-figure questions (use for
+        anything shown to a student or fed to the generator as an exemplar)."""
         where = ["verified=1", "duplicate_of IS NULL"]
         args = []
         if not include_generated:
             where.append("COALESCE(generated,0)=0")
+        if servable_only:
+            where.append("(COALESCE(needs_figure,0)=0 OR figure_url IS NOT NULL OR figure_svg IS NOT NULL)")
         for col, val in (("subject", subject), ("chapter", chapter), ("qtype", qtype), ("exam", exam)):
             if val:
                 where.append(f"{col}=?")
@@ -217,7 +222,10 @@ class Store:
         This is the frontend's hot path: draw from the shared pool, passing exclude_ids
         (already-seen) so a student never repeats. Randomised so the shared pool spreads
         evenly across students. Live /generate is only for power users who drain a cell."""
-        where = ["verified=1", "COALESCE(generated,0)=1", "duplicate_of IS NULL"]
+        # HARD SERVING GATE: never serve a question that needs a figure but has none.
+        # Servable = needs no figure, OR it actually carries a figure (clean url or svg).
+        where = ["verified=1", "COALESCE(generated,0)=1", "duplicate_of IS NULL",
+                 "(COALESCE(needs_figure,0)=0 OR figure_url IS NOT NULL OR figure_svg IS NOT NULL)"]
         args = []
         for col, val in (("exam", exam), ("subject", subject), ("chapter", chapter), ("qtype", qtype)):
             if val:
