@@ -79,7 +79,7 @@ EXAMS = [
     {"id": "jee",      "subject": "jee-physics",  "title": "JEE",      "tag": "Engineering entrance", "emoji": "⚛️"},
     {"id": "class10",  "subject": "cbse10-science", "title": "Class 10", "tag": "Boards · Science",   "emoji": "📘"},
     {"id": "class12",  "subject": "cbse12-physics", "title": "Class 12", "tag": "Boards · PCB",        "emoji": "📗"},
-    {"id": "commerce", "subject": "commerce",     "title": "Commerce", "tag": "Class 11-12",          "emoji": "📊"},
+    {"id": "commerce", "subject": "cbse12-accountancy", "title": "Class 12 Commerce", "tag": "Accounts · Economics", "emoji": "📊"},
     {"id": "banking",  "subject": "banking-quant", "title": "Banking", "tag": "IBPS · SBI · RRB",     "emoji": "🏦"},
 ]
 EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
@@ -92,6 +92,7 @@ STUDENT_EXAMS = [
     {"id": "neet",    "title": "NEET",          "tag": "Medical entrance",     "emoji": "🧬", "available": True},
     {"id": "class10", "title": "CBSE Class 10", "tag": "Boards · Science",     "emoji": "📘", "available": True},
     {"id": "class12", "title": "CBSE Class 12", "tag": "Boards · PCB",         "emoji": "📗", "available": True},
+    {"id": "commerce","title": "Class 12 Commerce", "tag": "Accounts · Economics", "emoji": "📊", "available": True},
     {"id": "cuet",    "title": "CUET",          "tag": "UG entrance",          "emoji": "🎓", "available": False},
     {"id": "upsc",    "title": "UPSC",          "tag": "Civil Services",       "emoji": "🏛️", "available": False},
     {"id": "ssc",     "title": "SSC",           "tag": "Govt jobs",            "emoji": "📋", "available": False},

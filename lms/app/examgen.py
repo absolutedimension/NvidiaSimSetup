@@ -4,9 +4,10 @@ Runs on the ALWAYS-ON Gurukul VM (migrated off the EC2 GPU box 2026-07-23) and g
 Azure **gpt-5.5**. The LMS proxies it server-side so the API key never reaches the browser, and
 transforms its LaTeX MCQs (+ optional SVG diagrams) into the assess.html engine's "pack" shape.
 
-Nine exam×subject banks are wired: JEE Advanced + JEE Main (Physics/Chemistry/Maths) and NEET
-(Biology/Physics/Chemistry). Add a subject to RAG_SUBJECTS — and to a GOALS entry — to grow
-coverage; the bank must already exist on the VM."""
+JEE Advanced + JEE Main (Physics/Chemistry/Maths), NEET (Biology/Physics/Chemistry), CBSE boards,
+and Banking Prelims (Quant — a GENERATED bank, not RAG over real past papers, see
+project-banking-quant-generator) are wired. Add a subject to RAG_SUBJECTS — and to a GOALS entry —
+to grow coverage; the bank must already exist on the VM."""
 import json
 import time
 import urllib.request
@@ -64,6 +65,49 @@ RAG_SUBJECTS = {
         "label": "NEET Chemistry", "exam": "NEET", "subject": "Chemistry", "kw": "chem",
         "match": ["neet chemistry", "neet-chemistry", "chemistry neet"],
     },
+    # ---- CBSE Boards ----
+    "cbse10-science": {
+        "label": "Class 10 Science", "exam": "CBSE Class 10", "subject": "Science", "kw": "science",
+        "match": ["cbse class 10 science", "class 10 science", "class10 science", "cbse10-science",
+                  "class 10 board", "10th science", "class 10", "class10"],
+    },
+    "cbse12-physics": {
+        "label": "Class 12 Physics", "exam": "CBSE Class 12", "subject": "Physics", "kw": "physics",
+        "match": ["cbse class 12 physics", "class 12 physics", "class12 physics", "cbse12-physics",
+                  "12th physics"],
+    },
+    "cbse12-chemistry": {
+        "label": "Class 12 Chemistry", "exam": "CBSE Class 12", "subject": "Chemistry", "kw": "chem",
+        "match": ["cbse class 12 chemistry", "class 12 chemistry", "class12 chemistry", "cbse12-chemistry",
+                  "12th chemistry"],
+    },
+    "cbse12-biology": {
+        "label": "Class 12 Biology", "exam": "CBSE Class 12", "subject": "Biology", "kw": "bio",
+        "match": ["cbse class 12 biology", "class 12 biology", "class12 biology", "cbse12-biology",
+                  "12th biology"],
+    },
+    # ---- CBSE Class 12 Commerce (real verified banks: Accountancy ~5.4k, Economics ~3.3k) ----
+    "cbse12-accountancy": {
+        "label": "Class 12 Accountancy", "exam": "CBSE Class 12", "subject": "Accountancy", "kw": "accountancy",
+        "match": ["cbse class 12 accountancy", "class 12 accountancy", "class12 accountancy",
+                  "accountancy", "accounts", "cbse12-accountancy", "12th accountancy", "commerce accountancy"],
+    },
+    "cbse12-economics": {
+        "label": "Class 12 Economics", "exam": "CBSE Class 12", "subject": "Economics", "kw": "economics",
+        "match": ["cbse class 12 economics", "class 12 economics", "class12 economics",
+                  "economics", "cbse12-economics", "12th economics", "commerce economics"],
+    },
+    # ---- Banking (IBPS/SBI/RRB Prelims) ----
+    # GENERATION-first: no ingested past-paper exemplars — the bank behind this is the deterministic
+    # compute-the-answer engine (qbank/quantgen.py), not RAG over real questions. Same /pool + /generate
+    # contract though, so it slots in with zero frontend-engine changes. See project-banking-quant-generator.
+    "banking-quant": {
+        "label": "Banking Quant (IBPS/SBI/RRB)", "exam": "Banking Prelims",
+        "subject": "Quantitative Aptitude", "kw": "quant",
+        "match": ["banking", "ibps", "sbi po", "sbi clerk", "bank po", "bank clerk", "rrb po",
+                  "rrb clerk", "banking prelims", "banking quant", "banking quantitative",
+                  "banking-quant", "quantitative aptitude"],
+    },
 }
 
 # ---- goals: what a student is actually preparing for → the subjects that serve it ----
@@ -81,6 +125,22 @@ GOALS = {
     "neet": {
         "label": "NEET", "tag": "Medical entrance", "emoji": "🧬",
         "subjects": ["neet-biology", "neet-physics", "neet-chemistry"],
+    },
+    "cbse-10": {
+        "label": "CBSE Class 10", "tag": "Boards · Science", "emoji": "📘",
+        "subjects": ["cbse10-science"],
+    },
+    "cbse-12": {
+        "label": "CBSE Class 12", "tag": "Boards · PCB", "emoji": "📗",
+        "subjects": ["cbse12-physics", "cbse12-chemistry", "cbse12-biology"],
+    },
+    "cbse-12-commerce": {
+        "label": "Class 12 Commerce", "tag": "Boards · Commerce", "emoji": "📊",
+        "subjects": ["cbse12-accountancy", "cbse12-economics"],
+    },
+    "banking": {
+        "label": "Banking (IBPS/SBI/RRB)", "tag": "Govt · Banking", "emoji": "🏦",
+        "subjects": ["banking-quant"],
     },
 }
 DEFAULT_GOAL = "jee-advanced"
@@ -102,6 +162,12 @@ DIFFICULTY_LADDER = {
     "NEET":         {"easy": "2",   "mix": "2-3", "hard": "3"},
     "JEE Main":     {"easy": "2-3", "mix": "3",   "hard": "3-4"},
     "JEE Advanced": {"easy": "3",   "mix": "3-4", "hard": "4"},
+    # CBSE boards sit lowest — the NCERT-derived bank is difficulty 2 with some 3.
+    "CBSE Class 10": {"easy": "2", "mix": "2-3", "hard": "3"},
+    "CBSE Class 12": {"easy": "2", "mix": "2-3", "hard": "3"},
+    # Banking Prelims (generated, not tagged by an LLM) — the pool is seeded at exactly these
+    # bands (see project-banking-quant-generator §runbook); keep the ladder matching what's filled.
+    "Banking Prelims": {"easy": "2", "mix": "2-3", "hard": "3"},
 }
 _DEFAULT_LADDER = {"easy": "3", "mix": "3-4", "hard": "4"}
 
