@@ -57,9 +57,21 @@ class Settings:
     # assessment gate is a no-op — /exam-prep stays free for everyone (the soft-launch state).
     # To go live: create a ₹199/month plan in Razorpay, set RZP_ASSESS_PLAN_ID, flip ASSESS_ENABLED=1.
     ASSESS_ENABLED = os.getenv("ASSESS_ENABLED", "false").lower() in ("1", "true", "yes")
-    RZP_ASSESS_PLAN_ID = os.getenv("RZP_ASSESS_PLAN_ID", "").strip()   # ₹199/month plan, created in Razorpay
-    ASSESS_PRICE_INR = int(os.getenv("ASSESS_PRICE_INR", "199"))
+    RZP_ASSESS_PLAN_ID = os.getenv("RZP_ASSESS_PLAN_ID", "").strip()   # monthly plan, created in Razorpay
+    ASSESS_PRICE_INR = int(os.getenv("ASSESS_PRICE_INR", "249"))         # monthly (flexibility tier)
+    ASSESS_PASS_PRICE_INR = int(os.getenv("ASSESS_PASS_PRICE_INR", "1299"))  # "till your exam" Pass — the LEAD offer
     ASSESS_TRIAL_DAYS = int(os.getenv("ASSESS_TRIAL_DAYS", "14"))
+
+    # ---- Teacher / institute (B2B) pricing — land-and-expand (see PRICING_MODEL.md, 2026-07-24) ----
+    # Billing not yet wired; these drive the DISPLAYED tiers on /teacher so the offer is testable on a
+    # real buyer. First-paid closes over WhatsApp/transfer (CONTACT_WA) until Razorpay B2B is live.
+    TEACHER_SOLO_INR = int(os.getenv("TEACHER_SOLO_INR", "999"))          # 1 teacher, <=60 students (the 0->1 wedge)
+    TEACHER_COACHING_INR = int(os.getenv("TEACHER_COACHING_INR", "2999")) # <=300 students, white-label + analytics
+    TEACHER_INSTITUTE_INR = int(os.getenv("TEACHER_INSTITUTE_INR", "7999"))  # unlimited + branding + priority
+
+    # Real contact handles for manual activation while billing is inert (both verified live in templates)
+    CONTACT_WA = os.getenv("CONTACT_WA", "919135255107").strip()         # Acharya WhatsApp (wa.me/<this>)
+    CONTACT_EMAIL = os.getenv("CONTACT_EMAIL", "deepak@trigunai.com").strip()
 
     # ---- Google Ads (student exam-prep funnel) ----
     # The CONVERSION = a completed free signup (a new student who lands in the test = "entered + using"),
@@ -68,6 +80,11 @@ class Settings:
     # until it's set the conversion tag simply doesn't fire.
     ADS_CONVERSION_ID = os.getenv("ADS_CONVERSION_ID", "AW-18339354528").strip()
     STUDENT_SIGNUP_CONV_LABEL = os.getenv("STUDENT_SIGNUP_CONV_LABEL", "").strip()
+
+    # Same pattern, teacher side. CONVERSION = a new teacher account created at /teacher/signup
+    # (email or Google), fired once on landing back at /teacher?new=1. Set TEACHER_SIGNUP_CONV_LABEL
+    # after creating the "Teacher signup" conversion action in Google Ads.
+    TEACHER_SIGNUP_CONV_LABEL = os.getenv("TEACHER_SIGNUP_CONV_LABEL", "").strip()
 
     # Google One Tap sign-in (register with ONE TAP, no magic link) for the ad teaser funnel.
     # Set GOOGLE_CLIENT_ID to a Web OAuth 2.0 Client ID (Google Cloud Console → Credentials;

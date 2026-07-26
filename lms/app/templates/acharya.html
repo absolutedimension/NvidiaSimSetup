@@ -28,7 +28,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://acharya.trigunai.com/" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Acharya exam-paper engine","serviceType":"AI exam-paper generator for JEE, NEET and other competitive exams","provider":{"@type":"Organization","name":"TrigunAI Innovations","url":"https://trigunai.com"},"areaServed":"IN","description":"An AI exam-paper generation engine. It produces practice tests in the exact pattern of the real exam — JEE, NEET and more — from a bank of tens of thousands of real, solved questions. Students practise unlimited papers on their own; coaching teachers and institutes generate batch tests in seconds and get a weak-spot dashboard. English or हिंदी. Expanding to banking, UPSC and boards.","offers":{"@type":"Offer","price":"4999","priceCurrency":"INR","description":"Institutes from ₹4,999/month (14-day free trial). Students practise free, then ₹199/month for unlimited tests."}}
+{"@context":"https://schema.org","@type":"Service","name":"Acharya exam-paper engine","serviceType":"AI exam-paper generator for JEE, NEET and other competitive exams","provider":{"@type":"Organization","name":"TrigunAI Innovations","url":"https://trigunai.com"},"areaServed":"IN","description":"An AI exam-paper generation engine. It produces practice tests in the exact pattern of the real exam — JEE, NEET and more — from a bank of tens of thousands of real, solved questions. Students practise unlimited papers on their own; coaching teachers and institutes generate batch tests in seconds and get a weak-spot dashboard. English or हिंदी. Expanding to banking, UPSC and boards.","offers":{"@type":"Offer","price":"4999","priceCurrency":"INR","description":"Institutes from ₹4,999/month (14-day free trial). Students practise free, then ₹249/month for unlimited tests."}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -100,23 +100,43 @@
   .split-head{text-align:center;max-width:720px;margin:0 auto 26px}
   .split-head .k{font-family:var(--deva);color:var(--gold);font-size:15px;margin-bottom:8px}
   .split-head h2{font-family:var(--serif);font-weight:800;font-size:clamp(27px,4.4vw,42px);letter-spacing:-.8px;line-height:1.05}
-  .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:940px;margin:0 auto}
-  .choice{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--card-edge);
-     border-radius:22px;padding:28px 26px;box-shadow:0 14px 40px rgba(120,60,20,.08);
-     transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease}
-  .choice:hover{transform:translateY(-3px);box-shadow:0 22px 54px rgba(120,60,20,.14);border-color:var(--gold-deep)}
-  .choice .tag{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-  .choice .ico{font-size:34px;margin-bottom:12px;line-height:1}
-  .choice h3{font-family:var(--serif);font-weight:800;font-size:23px;margin-bottom:9px;letter-spacing:-.3px}
-  .choice p{color:var(--muted);font-size:15px;line-height:1.55;flex:1;margin-bottom:20px}
-  .choice p b{color:var(--ink);font-weight:600}
-  .choice .go{align-self:flex-start;font-weight:700;font-size:15px;padding:13px 24px;border-radius:13px;
-     color:#fff;background:var(--gold-deep);box-shadow:0 8px 22px rgba(168,72,26,.22);
-     transition:transform .15s ease, box-shadow .15s ease}
-  .choice .go:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(168,72,26,.3)}
-  .choice.teacher .go{color:var(--ink);background:#fff;border:1px solid var(--line);box-shadow:none}
-  .choice.teacher .go:hover{border-color:var(--gold-deep);color:var(--gold)}
-  @media(max-width:760px){.split-grid{grid-template-columns:1fr}.split{padding-top:30px}}
+  .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:1000px;margin:0 auto;perspective:1200px}
+  .stage{display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;
+     border-radius:26px;padding:10px 6px 6px;transition:transform .2s ease}
+  .stage:hover{transform:translateY(-5px)}
+  .stage:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+  .toon{position:relative;width:300px;max-width:82%;aspect-ratio:230/250;margin-bottom:2px}
+  .toon::after{content:"";position:absolute;left:50%;bottom:8px;width:58%;height:24px;transform:translateX(-50%);
+     background:radial-gradient(50% 50% at 50% 50%, rgba(168,72,26,.30), transparent 72%);filter:blur(2px);z-index:-1}
+  .toon svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 22px 15px rgba(120,60,20,.26))}
+  .toon .eyes{transform-box:fill-box;transform-origin:center;animation:blinkToon 4.6s infinite}
+  .stage.teacher .toon .eyes{animation-delay:-2.3s}
+  @keyframes blinkToon{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(.1)}}
+  .toon .board{transform-box:fill-box;transform-origin:bottom center;animation:waveToon 2.6s ease-in-out infinite}
+  .stage.student .toon .board{animation-delay:-1.1s}
+  @keyframes waveToon{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(6deg)}}
+  .stage .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+     color:var(--gold2);background:rgba(251,236,220,.8);border-radius:99px;padding:5px 13px;margin-bottom:10px}
+  .stage h3{font-family:var(--serif);font-weight:800;font-size:23px;line-height:1.14;letter-spacing:-.3px;margin-bottom:8px}
+  .stage .lead{font-size:14px;line-height:1.55;color:var(--muted);max-width:400px;margin:0 auto 16px}
+  .stage .lead b{color:var(--ink)}
+  .feats{list-style:none;text-align:left;width:100%;max-width:440px;margin:0 auto 20px;padding:15px 17px;
+     background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.34));
+     backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);
+     border:1px solid rgba(255,255,255,.75);border-radius:18px;
+     box-shadow:0 24px 50px -22px rgba(120,60,20,.30), inset 0 1px 0 rgba(255,255,255,.75)}
+  .feats li{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.42;color:var(--ink);padding:8px 2px}
+  .feats li+li{border-top:1px solid rgba(168,72,26,.12)}
+  .feats .i{flex:0 0 auto;font-size:15px;line-height:1.3}
+  .feats b{font-weight:800}
+  .feats .new{color:#fff;background:var(--gold);font-size:9px;font-weight:800;border-radius:5px;padding:1px 5px;margin-right:4px;vertical-align:middle;letter-spacing:.3px}
+  .stage .go{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:15px;border-radius:14px;
+     padding:13px 24px;transition:transform .15s ease}
+  .stage.student .go{color:#fff;background:linear-gradient(135deg,#E8934A,#C2591F);box-shadow:0 12px 26px -8px rgba(168,72,26,.55)}
+  .stage.teacher .go{color:var(--gold2);background:rgba(255,255,255,.7);border:1.5px solid var(--gold)}
+  .stage:hover .go{transform:translateY(-2px)}
+  @media(max-width:820px){.split-grid{grid-template-columns:1fr;gap:52px}.toon{width:260px}}
+  @media(prefers-reduced-motion:reduce){.toon .eyes,.toon .board{animation:none}}
   /* phone mockup */
   .hero-phone{position:relative;display:flex;justify-content:center}
   .phone{width:288px;background:#fff;border-radius:38px;padding:12px;
@@ -562,21 +582,141 @@ void main() {
     <h2>Are you a student, or a teacher?</h2>
   </div>
   <div class="split-grid">
-    <div class="choice student">
+
+    <!-- STUDENT (whole block → /exam-prep) -->
+    <div class="stage student" role="link" tabindex="0" data-href="/exam-prep">
+      <div class="toon">
+        <svg viewBox="0 0 230 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <radialGradient id="skinS" cx="42%" cy="34%" r="70%"><stop offset="0%" stop-color="#FFD9AE"/><stop offset="60%" stop-color="#F4B27C"/><stop offset="100%" stop-color="#E0965C"/></radialGradient>
+            <linearGradient id="hoodS" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8934A"/><stop offset="100%" stop-color="#B84E1B"/></linearGradient>
+            <linearGradient id="capS" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3B2C22"/><stop offset="100%" stop-color="#1F160F"/></linearGradient>
+          </defs>
+          <path d="M60 250 Q56 172 88 154 Q115 143 142 154 Q174 172 170 250 Z" fill="url(#hoodS)"/>
+          <path d="M88 154 Q115 173 142 154" stroke="#7A3410" stroke-width="3" fill="none" opacity=".4"/>
+          <ellipse cx="92" cy="184" rx="24" ry="13" fill="#fff" opacity=".12"/>
+          <path d="M78 160 Q58 184 60 216" stroke="url(#hoodS)" stroke-width="27" fill="none" stroke-linecap="round"/>
+          <path d="M154 162 Q180 152 189 120" stroke="url(#hoodS)" stroke-width="27" fill="none" stroke-linecap="round"/>
+          <circle cx="60" cy="220" r="12" fill="#F0A868"/>
+          <circle cx="190" cy="116" r="13" fill="#F0A868"/>
+          <rect x="104" y="122" width="22" height="26" rx="10" fill="#E0965C"/>
+          <circle cx="115" cy="88" r="52" fill="url(#skinS)"/>
+          <ellipse cx="96" cy="70" rx="20" ry="16" fill="#fff" opacity=".18"/>
+          <circle cx="64" cy="92" r="10" fill="#E0965C"/><circle cx="166" cy="92" r="10" fill="#E0965C"/>
+          <path d="M63 76 Q58 98 70 112 Q64 92 77 82Z" fill="#241812"/>
+          <path d="M167 76 Q172 98 160 112 Q166 92 153 82Z" fill="#241812"/>
+          <path d="M70 62 Q90 32 115 35 Q140 32 160 62 Q150 50 132 53 Q120 42 98 53 Q80 50 70 62Z" fill="#2A1C12"/>
+          <path d="M78 58 Q96 44 115 47 Q134 44 152 58 Q136 50 115 53 Q94 50 78 58Z" fill="#1A1009"/>
+          <g class="eyes">
+            <ellipse cx="98" cy="88" rx="9" ry="11" fill="#fff"/><ellipse cx="132" cy="88" rx="9" ry="11" fill="#fff"/>
+            <circle cx="99" cy="90" r="5.5" fill="#2A1C12"/><circle cx="133" cy="90" r="5.5" fill="#2A1C12"/>
+            <circle cx="101" cy="88" r="2" fill="#fff"/><circle cx="135" cy="88" r="2" fill="#fff"/>
+          </g>
+          <path d="M89 74 Q98 70 108 74" stroke="#2A1C12" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M123 74 Q132 70 141 74" stroke="#2A1C12" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="86" cy="104" rx="7" ry="4.5" fill="#F0895A" opacity=".5"/>
+          <ellipse cx="144" cy="104" rx="7" ry="4.5" fill="#F0895A" opacity=".5"/>
+          <path d="M104 112 Q115 122 126 112" stroke="#9A4B23" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+          <path d="M113 96 Q115 102 118 100" stroke="#C77B4B" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          <ellipse cx="115" cy="46" rx="40" ry="12" fill="url(#capS)"/>
+          <path d="M63 44 L115 26 L167 44 L115 60 Z" fill="url(#capS)"/>
+          <path d="M63 44 L115 26 L167 44 L115 51 Z" fill="#4A382C"/>
+          <circle cx="115" cy="42" r="4" fill="#E8B04A"/>
+          <path d="M115 42 Q150 46 150 60 L150 78" stroke="#E8B04A" stroke-width="3" fill="none"/>
+          <circle cx="150" cy="82" r="6" fill="#E8B04A"/>
+          <g class="board">
+            <rect x="146" y="48" width="86" height="46" rx="10" fill="#B84E1B"/>
+            <rect x="151" y="53" width="76" height="36" rx="6" fill="#fff" opacity=".16"/>
+            <text x="189" y="77" text-anchor="middle" font-family="Figtree,Arial,sans-serif" font-size="15" font-weight="800" fill="#fff" letter-spacing=".4">STUDENT</text>
+          </g>
+        </svg>
+      </div>
       <div class="tag">For students</div>
-      <div class="ico">🎓</div>
       <h3>Practise on real exam papers</h3>
-      <p>JEE or NEET — generate <b>unlimited</b> practice tests in the <b>real exam's pattern</b>, with worked solutions, and see your exact weak topics. Free for 14 days, then ₹199/mo. English or हिंदी.</p>
+      <p class="lead">Unlimited tests in the <b>real exam's pattern</b> — and a tutor that helps you actually understand.</p>
+      <ul class="feats">
+        <li><span class="i">📚</span><span><b>1,42,000+ verified questions</b> — JEE, NEET, CBSE 10 &amp; 12, Banking</span></li>
+        <li><span class="i">✍️</span><span><b>Unlimited</b> real exam-pattern tests, each with a worked solution</span></li>
+        <li><span class="i">🎯</span><span>Adaptive tests that pinpoint your <b>exact weak topics</b></span></li>
+        <li><span class="i">🧑‍🏫</span><span><span class="new">NEW</span>An <b>AI tutor</b> that breaks down &amp; explains any problem, step by step</span></li>
+        <li><span class="i">🌐</span><span>English &amp; हिंदी · free 14 days, then ₹249/mo</span></li>
+      </ul>
       <a class="go" href="/exam-prep">Start free →</a>
     </div>
-    <div class="choice teacher">
+
+    <!-- TEACHER (whole block → /teacher) -->
+    <div class="stage teacher" role="link" tabindex="0" data-href="/teacher">
+      <div class="toon">
+        <svg viewBox="0 0 230 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <radialGradient id="skinT" cx="42%" cy="34%" r="70%"><stop offset="0%" stop-color="#FFD9AE"/><stop offset="60%" stop-color="#EFAE79"/><stop offset="100%" stop-color="#D98C54"/></radialGradient>
+            <linearGradient id="suitT" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3A3A46"/><stop offset="100%" stop-color="#17171E"/></linearGradient>
+            <linearGradient id="tieT" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8934A"/><stop offset="100%" stop-color="#A8481A"/></linearGradient>
+            <linearGradient id="capT" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2C2C36"/><stop offset="100%" stop-color="#121218"/></linearGradient>
+          </defs>
+          <path d="M60 250 Q56 170 88 152 Q115 143 142 152 Q174 170 170 250 Z" fill="url(#suitT)"/>
+          <path d="M99 152 L115 180 L131 152 L135 250 L95 250 Z" fill="#F4EFE6"/>
+          <path d="M99 152 L115 180 L107 214 L88 158 Z" fill="#101018"/>
+          <path d="M131 152 L115 180 L123 214 L142 158 Z" fill="#101018"/>
+          <path d="M115 168 l-8 10 8 10 8 -10 Z" fill="url(#tieT)"/>
+          <path d="M109 188 L115 240 L121 188 Z" fill="url(#tieT)"/>
+          <path d="M78 160 Q58 184 60 216" stroke="url(#suitT)" stroke-width="27" fill="none" stroke-linecap="round"/>
+          <path d="M154 162 Q180 152 189 120" stroke="url(#suitT)" stroke-width="27" fill="none" stroke-linecap="round"/>
+          <circle cx="60" cy="220" r="12" fill="#E7A063"/>
+          <circle cx="190" cy="116" r="13" fill="#E7A063"/>
+          <rect x="105" y="122" width="20" height="24" rx="9" fill="#D98C54"/>
+          <circle cx="115" cy="88" r="52" fill="url(#skinT)"/>
+          <ellipse cx="96" cy="70" rx="20" ry="16" fill="#fff" opacity=".16"/>
+          <circle cx="64" cy="92" r="10" fill="#D98C54"/><circle cx="166" cy="92" r="10" fill="#D98C54"/>
+          <path d="M63 78 Q58 98 70 112 Q64 92 77 84Z" fill="#2E241C"/>
+          <path d="M167 78 Q172 98 160 112 Q166 92 153 84Z" fill="#2E241C"/>
+          <path d="M60 84 Q58 34 115 32 Q172 34 170 84 Q160 54 138 50 Q116 40 92 50 Q70 54 60 84Z" fill="#2E241C"/>
+          <path d="M63 82 Q59 94 67 102 Q63 90 72 84Z" fill="#8A7A66"/>
+          <path d="M167 82 Q171 94 163 102 Q167 90 158 84Z" fill="#8A7A66"/>
+          <g class="eyes">
+            <circle cx="97" cy="91" r="5.5" fill="#2A1C12"/><circle cx="133" cy="91" r="5.5" fill="#2A1C12"/>
+            <circle cx="99" cy="89" r="2" fill="#fff"/><circle cx="135" cy="89" r="2" fill="#fff"/>
+          </g>
+          <circle cx="97" cy="90" r="18" fill="#EAF4FF" opacity=".55" stroke="#6E4415" stroke-width="4.5"/>
+          <circle cx="133" cy="90" r="18" fill="#EAF4FF" opacity=".55" stroke="#6E4415" stroke-width="4.5"/>
+          <path d="M113 87 q2 -3 4 0" stroke="#6E4415" stroke-width="4.5" fill="none"/>
+          <path d="M62 88 l17 -2" stroke="#6E4415" stroke-width="4" stroke-linecap="round"/>
+          <path d="M168 88 l-17 -2" stroke="#6E4415" stroke-width="4" stroke-linecap="round"/>
+          <ellipse cx="90" cy="84" rx="5" ry="7" fill="#fff" opacity=".55"/>
+          <ellipse cx="126" cy="84" rx="5" ry="7" fill="#fff" opacity=".55"/>
+          <path d="M103 114 Q115 124 127 114" stroke="#9A4B23" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+          <path d="M113 98 Q115 104 118 102" stroke="#B9764A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          <path d="M97 120 Q115 136 133 120 Q125 130 115 130 Q105 130 97 120Z" fill="#3A2C22" opacity=".8"/>
+          <g class="board">
+            <rect x="146" y="48" width="86" height="46" rx="10" fill="#22483F"/>
+            <rect x="151" y="53" width="76" height="36" rx="6" fill="#3FB89E" opacity=".28"/>
+            <text x="189" y="77" text-anchor="middle" font-family="Figtree,Arial,sans-serif" font-size="15" font-weight="800" fill="#FFF3E0" letter-spacing=".4">TEACHER</text>
+          </g>
+        </svg>
+      </div>
       <div class="tag">For teachers &amp; institutes</div>
-      <div class="ico">👨‍🏫</div>
       <h3>Generate papers &amp; track every student</h3>
-      <p>Create <b>exam-authentic papers</b> for your whole batch in seconds — then Acharya tests every student and gives you a <b>weak-spot dashboard</b> showing who's slipping and what to assign next.</p>
-      <a class="go" href="#why">See how it works →</a>
+      <p class="lead">Set an exam-authentic test in seconds, share one link, and <b>see exactly who's weak in what</b>.</p>
+      <ul class="feats">
+        <li><span class="i">⚡</span><span>Create an <b>exam-authentic test in seconds</b> — share one link</span></li>
+        <li><span class="i">🧑‍🎓</span><span>Students take with <b>no signup</b> — graded automatically</span></li>
+        <li><span class="i">📊</span><span>Live <b>weak-spot dashboard</b>: who's slipping, in which topic</span></li>
+        <li><span class="i">🖨️</span><span><b>Printable papers</b> with answer key + full worked solutions</span></li>
+        <li><span class="i">🗂️</span><span>Drawn from <b>1,42,000+ verified questions</b> across every exam</span></li>
+      </ul>
+      <a class="go" href="/teacher">Set up my class →</a>
     </div>
+
   </div>
+  <script>
+  (function(){
+    document.querySelectorAll('.split .stage').forEach(function(st){
+      var href=st.getAttribute('data-href');
+      st.addEventListener('click', function(e){ if(e.target.closest('a')) return; if(href) location.href=href; });
+      st.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); if(href) location.href=href; } });
+    });
+  })();
+  </script>
 </section>
 
 <!-- S1 · HERO -->

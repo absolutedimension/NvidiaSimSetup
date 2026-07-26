@@ -36,7 +36,10 @@
  .t small{font-weight:600;opacity:.75}
  .sug{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:13px;padding:11px 13px;margin-top:9px;background:#FFFBF6}
  .sug .m{flex:1}.sug .nm{font-weight:800;font-size:14px}.sug .k{font-size:11.5px;color:var(--faint);margin-top:2px}
- .sug a{flex:0 0 auto;background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;text-decoration:none;border-radius:10px;padding:9px 13px;font-size:12.5px;font-weight:800;white-space:nowrap}
+ .sug .acts{flex:0 0 auto;display:flex;flex-direction:column;gap:6px}
+ .sug a{text-decoration:none;border-radius:10px;padding:9px 13px;font-size:12.5px;font-weight:800;white-space:nowrap;text-align:center}
+ .sug a.learn{background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff}
+ .sug a.prac{background:#fff;color:var(--gold2);border:1.5px solid var(--line)}
  .att{display:flex;align-items:center;gap:11px;border-bottom:1px solid var(--cream);padding:11px 2px;text-decoration:none;color:inherit}
  .att:last-child{border-bottom:none}
  .att .m{flex:1;min-width:0}.att .nm{font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -86,7 +89,10 @@
         {% for s in suggestions %}
           <div class="sug">
             <div class="m"><div class="nm">{{ s.concept }}</div><div class="k">{{ s.pct }}% mastery · {{ s.seen }} question{{ '' if s.seen == 1 else 's' }} seen</div></div>
-            {% if s.href %}<a href="{{ s.href }}">Practise →</a>{% endif %}
+            <div class="acts">
+              {% if s.tutor_href %}<a class="learn" href="{{ s.tutor_href }}">📘 Understand</a>{% endif %}
+              {% if s.href %}<a class="prac" href="{{ s.href }}">Practise →</a>{% endif %}
+            </div>
           </div>
         {% endfor %}
       </div>

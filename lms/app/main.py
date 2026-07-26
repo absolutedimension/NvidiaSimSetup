@@ -77,9 +77,10 @@ ACHARYA_THUMBS = {
 EXAMS = [
     {"id": "neet",     "subject": "neet-biology", "title": "NEET",     "tag": "Medical entrance",    "emoji": "🧬"},
     {"id": "jee",      "subject": "jee-physics",  "title": "JEE",      "tag": "Engineering entrance", "emoji": "⚛️"},
-    {"id": "class10",  "subject": "class10",      "title": "Class 10", "tag": "Boards · Sci + Math",  "emoji": "📘"},
-    {"id": "class12",  "subject": "class12",      "title": "Class 12", "tag": "Boards · PCM",         "emoji": "📗"},
+    {"id": "class10",  "subject": "cbse10-science", "title": "Class 10", "tag": "Boards · Science",   "emoji": "📘"},
+    {"id": "class12",  "subject": "cbse12-physics", "title": "Class 12", "tag": "Boards · PCB",        "emoji": "📗"},
     {"id": "commerce", "subject": "commerce",     "title": "Commerce", "tag": "Class 11-12",          "emoji": "📊"},
+    {"id": "banking",  "subject": "banking-quant", "title": "Banking", "tag": "IBPS · SBI · RRB",     "emoji": "🏦"},
 ]
 EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
 
@@ -89,12 +90,12 @@ EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
 STUDENT_EXAMS = [
     {"id": "jee",     "title": "JEE / IIT",     "tag": "Engineering entrance", "emoji": "⚛️", "available": True},
     {"id": "neet",    "title": "NEET",          "tag": "Medical entrance",     "emoji": "🧬", "available": True},
-    {"id": "class10", "title": "CBSE Class 10", "tag": "Boards · Sci + Math",  "emoji": "📘", "available": False},
-    {"id": "class12", "title": "CBSE Class 12", "tag": "Boards · PCM/B",       "emoji": "📗", "available": False},
+    {"id": "class10", "title": "CBSE Class 10", "tag": "Boards · Science",     "emoji": "📘", "available": True},
+    {"id": "class12", "title": "CBSE Class 12", "tag": "Boards · PCB",         "emoji": "📗", "available": True},
     {"id": "cuet",    "title": "CUET",          "tag": "UG entrance",          "emoji": "🎓", "available": False},
     {"id": "upsc",    "title": "UPSC",          "tag": "Civil Services",       "emoji": "🏛️", "available": False},
     {"id": "ssc",     "title": "SSC",           "tag": "Govt jobs",            "emoji": "📋", "available": False},
-    {"id": "banking", "title": "Banking",       "tag": "IBPS · SBI",           "emoji": "🏦", "available": False},
+    {"id": "banking", "title": "Banking",       "tag": "IBPS · SBI · RRB",     "emoji": "🏦", "available": True},
     {"id": "gate",    "title": "GATE",          "tag": "M.Tech · PSU",         "emoji": "⚙️", "available": False},
     {"id": "cat",     "title": "CAT",           "tag": "MBA entrance",         "emoji": "📊", "available": False},
     {"id": "clat",    "title": "CLAT",          "tag": "Law entrance",         "emoji": "⚖️", "available": False},
@@ -114,6 +115,18 @@ app.mount("/static", StaticFiles(directory=BASE / "static"), name="static")
 templates = Jinja2Templates(directory=str(BASE / "templates"))
 templates.env.cache = None  # avoid jinja2 LRUCache incompat on Python 3.14; negligible at cohort scale
 templates.env.globals["course_title"] = lambda cid: COURSE_TITLES.get(cid, cid)
+# Pricing + contact handles exposed to every template (see PRICING_MODEL.md). Billing may be inert;
+# these drive the DISPLAYED offer so it's testable on a real buyer, with a WhatsApp/email close.
+templates.env.globals["PRICING"] = {
+    "student_pass": settings.ASSESS_PASS_PRICE_INR,   # ₹1,299 "till your exam" — the lead
+    "student_monthly": settings.ASSESS_PRICE_INR,     # ₹249/mo — flexibility
+    "trial_days": settings.ASSESS_TRIAL_DAYS,
+    "teacher_solo": settings.TEACHER_SOLO_INR,        # ₹999
+    "teacher_coaching": settings.TEACHER_COACHING_INR,  # ₹2,999
+    "teacher_institute": settings.TEACHER_INSTITUTE_INR,  # ₹7,999+
+}
+templates.env.globals["CONTACT_WA"] = settings.CONTACT_WA
+templates.env.globals["CONTACT_EMAIL"] = settings.CONTACT_EMAIL
 
 
 @app.middleware("http")
@@ -412,6 +425,10 @@ def _student_goal(db, student, topics=None) -> str:
         if g:
             return g
     hay = " ".join(t.title.lower() for t in (topics if topics is not None else _student_topics(db, student)))
+    if "class 12" in hay:
+        return "cbse-12"
+    if "class 10" in hay:
+        return "cbse-10"
     if "neet" in hay:
         return "neet"
     return ""                                    # unknown — the dashboard says "Exam prep"
@@ -1129,8 +1146,9 @@ def exam_prep_report(request: Request, db: Session = Depends(get_db)):
             s_diff = examgen.difficulty_ladder(s.subject)[tier]
             href = (f"/exam-prep/test?src=examgen&subject={quote(s.subject)}&sel={quote(sel)}"
                     f"&diff={quote(s_diff)}&n=5&title={quote(s.concept)}")
+        tutor_href = (f"/exam-prep/tutor?subject={quote(s.subject)}&concept={quote(s.concept)}")
         suggestions.append({"concept": s.concept, "pct": round(100 * mastery(s)),
-                            "seen": s.seen, "href": href})
+                            "seen": s.seen, "href": href, "tutor_href": tutor_href})
     trend = [round(100 * a.score / a.total) for a in reversed(graded[:6]) if a.total]
     return templates.TemplateResponse(request, "exam_prep_report.html", {
         "student": student, "attempts": attempts, "tests": len(attempts), "avg": avg,
@@ -1152,6 +1170,120 @@ def exam_prep_attempt(request: Request, attempt_id: int, db: Session = Depends(g
     if not a:
         return RedirectResponse("/exam-prep/report", status_code=302)
     return templates.TemplateResponse(request, "exam_prep_attempt.html", {"student": student, "a": a})
+
+
+# ---------------------------------------------------------------------------
+# WEAK-TOPIC TUTOR — a dedicated Acharya tutor per weak concept, anchored to a
+# real exam question of the type the student got wrong. Teaches from the basics,
+# step by step, with the question's diagram, via gpt-4o-mini (app/tutor.py).
+# ---------------------------------------------------------------------------
+def _resolve_chapter(subject_id: str, concept: str) -> str | None:
+    """Best-effort: map a weak-topic label to a real chapter so we can pull an anchor question.
+    Handles concept-under-chapter, concept-IS-a-chapter, and loose/substring matches (a stored
+    label like 'Units' should still resolve to 'Units, Dimensions & Measurement')."""
+    chapters = examgen.get_chapters(subject_id)
+    cl = (concept or "").strip().lower()
+    if not cl:
+        return None
+    for c in chapters:                                   # exact concept under a chapter
+        if concept in (c.get("concepts") or []):
+            return c.get("chapter")
+    for c in chapters:                                   # concept IS a chapter (exact)
+        if (c.get("chapter") or "").strip().lower() == cl:
+            return c.get("chapter")
+    for c in chapters:                                   # loose: substring on chapter or a concept
+        name = (c.get("chapter") or "").lower()
+        if cl in name or name in cl:
+            return c.get("chapter")
+        for x in (c.get("concepts") or []):
+            xl = (x or "").lower()
+            if xl and (cl in xl or xl in cl):
+                return c.get("chapter")
+    return None
+
+
+def _tutor_anchor(subject_id: str, concept: str, difficulty: str):
+    """One representative question for a concept (stem/options/correct/solution/figure), pulled
+    INSTANTLY from the pool. Returns a dict the tutor + template can use, or None if none exists."""
+    ch = _resolve_chapter(subject_id, concept)
+    if not ch:
+        return None
+    # The pool stores questions at specific difficulty bands; the student's mastery-based difficulty
+    # may not match what exists for this concept. Try the requested one, then the subject's whole
+    # ladder (mix/hard/easy), for the exact concept first, then any question in the chapter.
+    ladder = examgen.difficulty_ladder(subject_id)
+    diffs, seen = [], set()
+    for d in [difficulty, ladder.get("mix"), ladder.get("hard"), ladder.get("easy")]:
+        if d and d not in seen:
+            seen.add(d); diffs.append(d)
+    for co in ([concept] if concept else []) + [None]:
+        for d in diffs:
+            qs, _ = examgen.fetch_pool(subject_id, ch, co, d, "MCQ_single", 1)
+            if not qs:
+                continue
+            pq = examgen._to_pack_question(qs[0])
+            if pq:
+                en = pq.get("en", {})
+                opts = en.get("opts", []) or []
+                ci = pq.get("correct", 0)
+                return {
+                    "stem": en.get("q", ""), "options": opts, "correct_index": ci,
+                    "correct_text": opts[ci] if 0 <= ci < len(opts) else "",
+                    "solution": en.get("explain", ""), "figure": pq.get("figure"), "chapter": ch,
+                }
+    return None
+
+
+@app.get("/exam-prep/tutor", response_class=HTMLResponse)
+def exam_prep_tutor(request: Request, subject: str = "", concept: str = "", db: Session = Depends(get_db)):
+    """The dedicated weak-topic tutor screen: an anchor question (with its diagram) + a chat where
+    Acharya teaches that concept from the basics, step by step, revolving around the question."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep", status_code=302)
+    subject = (subject or "").strip()
+    concept = (concept or "").strip()[:120]
+    if subject not in examgen.RAG_SUBJECTS or not concept:
+        return RedirectResponse("/exam-prep/report", status_code=302)
+    cs = db.query(ConceptStat).filter_by(student_id=student.id, subject=subject, concept=concept).first()
+    mastery_pct = round(100 * cs.correct / cs.seen) if (cs and cs.seen) else None
+    diff = examgen.difficulty_for(subject, (mastery_pct or 0) / 100)   # this subject's own band
+    anchor = _tutor_anchor(subject, concept, diff)
+    subj_label = examgen.RAG_SUBJECTS.get(subject, {}).get("label", subject)
+    return templates.TemplateResponse(request, "tutor_console.html", {
+        "student": student, "subject": subject, "subject_label": subj_label,
+        "concept": concept, "mastery_pct": mastery_pct, "anchor": anchor,
+        "tutor_available": tutor.available(),
+    })
+
+
+@app.post("/api/tutor/step")
+async def api_tutor_step(request: Request, db: Session = Depends(get_db)):
+    """One tutor turn. Body: {subject, concept, history:[{role,content}], anchor:{...}}.
+    Returns {reply}. The anchor was server-provided at page load; we hand it to the LLM."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    if not tutor.available():
+        return JSONResponse({"ok": False, "error": "tutor unavailable"}, status_code=503)
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    subject = str(body.get("subject", ""))[:40]
+    concept = str(body.get("concept", ""))[:120]
+    clean = []
+    for m in (body.get("history") or [])[-12:]:
+        if isinstance(m, dict) and m.get("role") in ("user", "assistant") and m.get("content"):
+            clean.append({"role": m["role"], "content": str(m["content"])[:2000]})
+    anchor = body.get("anchor") if isinstance(body.get("anchor"), dict) else None
+    cs = db.query(ConceptStat).filter_by(student_id=student.id, subject=subject, concept=concept).first()
+    mastery_pct = round(100 * cs.correct / cs.seen) if (cs and cs.seen) else None
+    subj_label = examgen.RAG_SUBJECTS.get(subject, {}).get("label", subject)
+    reply = tutor.exam_chat(clean, concept, subj_label, anchor, mastery_pct)
+    if not reply:
+        return JSONResponse({"ok": False, "error": "no reply"}, status_code=502)
+    return JSONResponse({"ok": True, "reply": reply})
 
 
 @app.get("/exam-prep/papers", response_class=HTMLResponse)
@@ -1329,7 +1461,7 @@ def _weak_from_concepts(concepts) -> list:
 
 
 @app.get("/teacher", response_class=HTMLResponse)
-def teacher_home(request: Request, db: Session = Depends(get_db)):
+def teacher_home(request: Request, new: str = "", db: Session = Depends(get_db)):
     """The teacher console. Not a teacher yet → the signup/promote screen; else their class tests."""
     student = current_student(request, db)
     if not student or not student.is_teacher:
@@ -1340,7 +1472,10 @@ def teacher_home(request: Request, db: Session = Depends(get_db)):
     rows = []
     for t in tests:
         rows.append({"t": t, "sittings": db.query(ClassSitting).filter_by(class_test_id=t.id).count()})
-    return templates.TemplateResponse(request, "teacher_home.html", {"student": student, "tests": rows})
+    # Ads "teacher signup" conversion — fires ONCE for a genuinely-new account landing here.
+    ads_id = settings.ADS_CONVERSION_ID if (new == "1" and settings.TEACHER_SIGNUP_CONV_LABEL and settings.ADS_CONVERSION_ID) else ""
+    return templates.TemplateResponse(request, "teacher_home.html", {
+        "student": student, "tests": rows, "ads_id": ads_id, "ads_label": settings.TEACHER_SIGNUP_CONV_LABEL})
 
 
 def _promote_teacher(db, student, name: str, institute: str):
@@ -1367,7 +1502,8 @@ def teacher_signup(request: Request, email: str = Form(...), name: str = Form(""
     if not existed:
         notify.notify_admin(f"👩‍🏫 New TEACHER — {student.email} · {institute or '—'}")
     request.session["sid"] = student.id
-    return RedirectResponse("/teacher", status_code=302)
+    # new=1 rides through so the Ads teacher-signup conversion fires once, on landing at /teacher.
+    return RedirectResponse("/teacher?new=1" if not existed else "/teacher", status_code=302)
 
 
 @app.post("/api/teacher/google")
@@ -1403,7 +1539,7 @@ async def teacher_google(request: Request, db: Session = Depends(get_db)):
     if not existed:
         notify.notify_admin(f"👩‍🏫 New TEACHER (Google) — {student.email} · {institute or '—'}")
     request.session["sid"] = student.id
-    return JSONResponse({"ok": True, "redirect": "/teacher"})
+    return JSONResponse({"ok": True, "redirect": "/teacher?new=1" if not existed else "/teacher"})
 
 
 @app.get("/teacher/chapters")
@@ -1426,7 +1562,7 @@ def teacher_new(request: Request, db: Session = Depends(get_db)):
         return RedirectResponse("/teacher", status_code=302)
     subs = [{"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"]}
             for sid in ["jee-physics", "jee-chemistry", "jee-maths",
-                        "neet-biology", "neet-physics", "neet-chemistry"]]
+                        "neet-biology", "neet-physics", "neet-chemistry", "banking-quant"]]
     return templates.TemplateResponse(request, "teacher_new.html", {"student": teacher, "subjects": subs})
 
 
@@ -1684,7 +1820,8 @@ def chat_job(token: str, db: Session = Depends(get_db)):
 # ---- chat step function: stateless, driven by the client-held `state` + the latest input ----
 
 def _subject_chips():
-    subs = ["jee-physics", "jee-chemistry", "jee-maths", "neet-biology", "neet-physics", "neet-chemistry"]
+    subs = ["jee-physics", "jee-chemistry", "jee-maths", "neet-biology", "neet-physics",
+            "neet-chemistry", "banking-quant"]
     return [{"label": examgen.RAG_SUBJECTS[s]["label"], "value": "subj:" + s} for s in subs]
 
 

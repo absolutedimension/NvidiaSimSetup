@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex" />
+<title>Understand {{ concept }} — Acharya</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+<script>
+ window.MathJax = {
+   tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+   options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+ };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+ :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;--card:#fff;--green:#2FA968;--cream:#FAF5EC;--bad:#C23B22;
+   --serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+ html,body{height:100%}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 70%);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;display:flex;justify-content:center}
+ .wrap{width:100%;max-width:640px;height:100dvh;display:flex;flex-direction:column}
+ header{display:flex;align-items:center;gap:11px;padding:11px 15px;background:linear-gradient(120deg,#E8934A,#C2591F);color:#fff;flex:0 0 auto}
+ header .av{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:19px;font-family:var(--serif);font-weight:800}
+ header .tt{flex:1;min-width:0}
+ header .t{font-family:var(--serif);font-weight:800;font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ header .s{font-size:11.5px;color:rgba(255,255,255,.9)}
+ header a{color:#fff;text-decoration:none;font-size:16px;font-weight:700;background:rgba(0,0,0,.14);padding:6px 11px;border-radius:9px}
+ .feed{flex:1;overflow-y:auto;padding:14px 15px 8px;display:flex;flex-direction:column;gap:11px}
+ /* anchor question card */
+ .qcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 2px 8px rgba(120,60,20,.05)}
+ .qcard .lab{font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--gold2);margin-bottom:7px}
+ .qcard .stem{font-size:14.5px;line-height:1.55}
+ .qcard .fig{margin:11px 0;text-align:center}
+ .qcard .fig svg{max-width:100%;height:auto}
+ .qcard ol{margin:10px 0 0 18px;padding:0;font-size:14px;line-height:1.7}
+ .qcard .reveal{margin-top:11px}
+ .qcard .rbtn{background:#fff;border:1.5px solid var(--gold);color:var(--gold2);border-radius:10px;padding:9px 13px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit}
+ .qcard .sol{margin-top:11px;padding:12px;background:#FBF3EA;border:1px solid var(--line);border-radius:11px;font-size:13.5px;line-height:1.55;display:none}
+ .qcard .sol .ans{font-weight:800;color:var(--green);margin-bottom:6px}
+ .row{display:flex;gap:9px;align-items:flex-end;max-width:100%}
+ .row.me{flex-direction:row-reverse}
+ .av2{width:28px;height:28px;border-radius:8px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;font-family:var(--serif);background:#FFF3E6;border:1px solid var(--line);color:var(--gold2)}
+ .bub{max-width:82%;padding:11px 14px;border-radius:16px;font-size:14.5px;line-height:1.55;white-space:pre-wrap}
+ .bot .bub{background:var(--card);border:1px solid var(--line);border-bottom-left-radius:5px;box-shadow:0 2px 8px rgba(120,60,20,.05)}
+ .me .bub{background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border-bottom-right-radius:5px}
+ .bub b{font-weight:800}
+ .chips{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 2px 37px}
+ .chip{border:1.5px solid var(--gold);background:#fff;color:var(--gold2);border-radius:99px;padding:8px 13px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+ .chip:active{transform:scale(.96)}
+ .think .bub{display:flex;align-items:center;gap:9px}
+ .dots{display:inline-flex;gap:4px}
+ .dots i{width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:.4;animation:bnc 1.2s infinite}
+ .dots i:nth-child(2){animation-delay:.18s}.dots i:nth-child(3){animation-delay:.36s}
+ @keyframes bnc{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+ .think .lbl{font-size:13.5px;color:var(--muted)}
+ .composer{flex:0 0 auto;display:flex;gap:9px;padding:11px 14px calc(11px + env(safe-area-inset-bottom));background:var(--cream);border-top:1px solid var(--line)}
+ .composer input{flex:1;background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:12px 16px;font-size:15px;font-family:var(--sans);color:var(--ink)}
+ .composer input:focus{outline:none;border-color:var(--gold2)}
+ .composer button{flex:0 0 auto;width:46px;height:46px;border-radius:50%;border:none;background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;font-size:19px;cursor:pointer}
+ .composer button:disabled{opacity:.5}
+ .warn{margin:14px;padding:13px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:14px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="av">अ</div>
+    <div class="tt">
+      <div class="t">Understand: {{ concept }}</div>
+      <div class="s">{{ subject_label }}{% if mastery_pct is not none %} · {{ mastery_pct }}% mastery{% endif %} · Acharya tutor</div>
+    </div>
+    <a href="/exam-prep/report" title="Back to report">✕</a>
+  </header>
+
+  <div class="feed" id="feed">
+    {% if anchor and anchor.stem %}
+    <div class="qcard">
+      <div class="lab">🎯 A question of the type you missed</div>
+      <div class="stem">{{ anchor.stem|safe }}</div>
+      {% if anchor.figure %}<div class="fig">{{ anchor.figure|safe }}</div>{% endif %}
+      {% if anchor.options %}
+      <ol type="A">{% for o in anchor.options %}<li>{{ o|safe }}</li>{% endfor %}</ol>
+      {% endif %}
+      <div class="reveal">
+        <button class="rbtn" id="revealBtn" type="button">Show answer &amp; solution</button>
+        <div class="sol" id="sol">
+          {% if anchor.correct_text %}<div class="ans">✓ Correct: {{ anchor.correct_text|safe }}</div>{% endif %}
+          <div>{{ anchor.solution|safe }}</div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if not tutor_available %}
+    <div class="warn">The live tutor is offline right now. Try the practice test for this topic from your report.</div>
+    {% endif %}
+  </div>
+
+  <form class="composer" id="composer" autocomplete="off">
+    <input id="inp" placeholder="Ask anything — “explain simpler”, “in Hindi”, “I’m stuck”…" />
+    <button type="submit" id="send">➤</button>
+  </form>
+</div>
+
+<script>
+var SUBJECT = {{ subject|tojson }};
+var CONCEPT = {{ concept|tojson }};
+var ANCHOR  = {{ (anchor or {})|tojson }};
+var TUTOR_OK = {{ tutor_available|tojson }};
+var HISTORY = [];         // [{role, content}] — the real conversation sent to the LLM
+var busy = false;
+var feed = document.getElementById('feed');
+
+function scroll(){ feed.scrollTop = feed.scrollHeight; }
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+// light markdown on escaped text. NOTE: we do NOT convert \n to <br> — the bubble is
+// white-space:pre-wrap so newlines render naturally AND multi-line display maths ($$…$$ / \[…\])
+// stay in one text node for MathJax (a <br> inside a formula would break it).
+function fmt(s){
+  return esc(s)
+    .replace(/^\s*#{1,6}\s*(.+?)\s*$/gm, '<b>$1</b>')   // ### heading → bold line
+    .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');          // **bold** → bold
+}
+
+// MathJax typeset that waits until the library is actually ready (it loads async)
+function typeset(el){
+  if(window.MathJax && MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(function(){}); }
+  else { setTimeout(function(){ typeset(el); }, 250); }
+}
+
+function addBubble(who, html){
+  var row=document.createElement('div'); row.className='row '+(who==='me'?'me':'bot');
+  row.innerHTML = '<div class="av2">'+(who==='me'?'🧑':'अ')+'</div><div class="bub">'+html+'</div>';
+  feed.appendChild(row); scroll();
+  typeset(row);
+  return row;
+}
+
+var thinkNode=null;
+function showThinking(){
+  var row=document.createElement('div'); row.className='row bot think';
+  row.innerHTML='<div class="av2">अ</div><div class="bub"><span class="dots"><i></i><i></i><i></i></span><span class="lbl">Acharya is thinking…</span></div>';
+  feed.appendChild(row); scroll(); thinkNode=row;
+}
+function hideThinking(){ if(thinkNode)thinkNode.remove(); thinkNode=null; }
+
+function step(){
+  if(busy) return; busy=true; document.getElementById('send').disabled=true; showThinking();
+  fetch('/api/tutor/step',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+    body:JSON.stringify({subject:SUBJECT, concept:CONCEPT, anchor:ANCHOR, history:HISTORY})})
+    .then(function(r){return r.json();})
+    .then(function(r){
+      busy=false; document.getElementById('send').disabled=false; hideThinking();
+      if(!r||!r.ok||!r.reply){ addBubble('bot','Sorry — I couldn’t respond just now. Try asking again.'); return; }
+      HISTORY.push({role:'assistant', content:r.reply});
+      addBubble('bot', fmt(r.reply));
+      document.getElementById('inp').focus();
+    })
+    .catch(function(){ busy=false; document.getElementById('send').disabled=false; hideThinking();
+      addBubble('bot','Network error — try again.'); });
+}
+
+// reveal solution (and typeset the newly-shown maths)
+var rb=document.getElementById('revealBtn');
+if(rb){ rb.onclick=function(){ var s=document.getElementById('sol'); s.style.display='block'; rb.style.display='none'; typeset(s); scroll(); }; }
+
+document.getElementById('composer').addEventListener('submit', function(e){
+  e.preventDefault();
+  var v=document.getElementById('inp').value.trim(); if(!v||busy||!TUTOR_OK) return;
+  document.getElementById('inp').value='';
+  addBubble('me', esc(v));
+  HISTORY.push({role:'user', content:v});
+  step();
+});
+
+// typeset the anchor question on first paint, then kick off the opener lesson
+typeset();
+if(TUTOR_OK){
+  HISTORY.push({role:'user', content:'Help me understand the exact question shown above — nothing else. First tell me what THIS question is really testing and which concept(s) I need for it, then we’ll solve it step by step.'});
+  step();
+}
+</script>
+</body>
+</html>

@@ -16,13 +16,13 @@
  body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 60%,#F7E0C8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100dvh;display:flex;justify-content:center;padding:26px 16px 60px}
  .wrap{width:100%;max-width:520px}
  .brand{display:flex;align-items:center;gap:10px;margin-bottom:22px}
- .brand .m{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#E8934A,#C2591F);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;font-family:var(--serif)}
+ .brand .m{width:42px;height:42px;border-radius:10px;object-fit:contain}
  .brand .n{font-family:var(--serif);font-weight:800;font-size:19px}
  .brand .s{font-size:11.5px;color:var(--muted)}
  h1{font-family:var(--serif);font-weight:800;font-size:27px;line-height:1.15;margin-bottom:8px}
  h1 span{color:var(--gold)}
  .lead{font-size:14.5px;color:var(--muted);line-height:1.55;margin-bottom:22px}
- .card{background:var(--card);border:1.5px solid var(--gold2);border-radius:20px;padding:24px 22px;box-shadow:0 22px 54px rgba(120,60,20,.13)}
+ .card{background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,.4));backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(255,255,255,.75);border-radius:20px;padding:24px 22px;box-shadow:0 30px 64px -26px rgba(120,60,20,.30),inset 0 1px 0 rgba(255,255,255,.8)}
  .gauth{display:flex;flex-direction:column;align-items:center;gap:6px}
  #gbtn{display:flex;justify-content:center;min-height:44px}
  .orline{display:flex;align-items:center;gap:12px;margin:16px 0;color:var(--faint);font-size:12px}
@@ -37,11 +37,24 @@
  .pts{margin:20px 2px 0}
  .pt{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink);margin-bottom:10px;line-height:1.45}
  .pt .i{font-size:17px;flex:0 0 auto}
+ .price-h{font-family:var(--serif);font-weight:800;font-size:19px;margin:30px 2px 4px}
+ .price-s{font-size:13px;color:var(--muted);margin:0 2px 14px}
+ .plans{display:flex;flex-direction:column;gap:11px}
+ .plan{display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.32));backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.7);border-radius:15px;padding:15px 17px;box-shadow:inset 0 1px 0 rgba(255,255,255,.65)}
+ .plan.feat{border:1.5px solid var(--gold2);box-shadow:0 16px 38px -18px rgba(120,60,20,.28),inset 0 1px 0 rgba(255,255,255,.7)}
+ .plan .l .nm{font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:7px}
+ .plan .l .cap{font-size:12.5px;color:var(--muted);margin-top:3px}
+ .plan .r{text-align:right;flex:0 0 auto}
+ .plan .r .p{font-family:var(--serif);font-weight:800;font-size:22px;color:var(--gold)}
+ .plan .r .u{font-size:11px;color:var(--muted)}
+ .tag{font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#fff;background:var(--gold2);border-radius:99px;padding:2px 8px}
+ .price-cta{text-align:center;font-size:13px;color:var(--muted);margin-top:14px;line-height:1.5}
+ .price-cta a{color:var(--gold2);font-weight:700;text-decoration:none}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="brand"><div class="m">अ</div><div><div class="n">Acharya</div><div class="s">for teachers &amp; institutes</div></div></div>
+  <div class="brand"><img class="m" src="/static/brand/trigunai-mark.png" alt="Acharya" /><div><div class="n">Acharya</div><div class="s">for teachers &amp; institutes</div></div></div>
 
   <h1>You teach. <span>Acharya tests &amp; tracks.</span></h1>
   <p class="lead">Create a JEE or NEET test in seconds, share one link with your students, and see exactly who is weak in which topic — automatically.</p>
@@ -68,6 +81,36 @@
     <div class="pt"><span class="i">⚡</span><span><b>Unlimited fresh test papers</b> — any chapter, any difficulty, with answer key + worked solutions, in 30 seconds. Never repeat a paper.</span></div>
     <div class="pt"><span class="i">🎯</span><span><b>Acharya finds who's weak</b> — every student's exact weak topic, flagged automatically. You just teach.</span></div>
     <div class="pt"><span class="i">📱</span><span><b>Students need nothing</b> — no app, no signup. They open your link, type their name, and take the test.</span></div>
+  </div>
+
+  <div class="price-h">Simple pricing</div>
+  <div class="price-s">Free for {{ PRICING.trial_days }} days. Then pick the plan that fits your batch — flat, never per-student.</div>
+  <div class="plans">
+    <div class="plan feat">
+      <div class="l">
+        <div class="nm">Solo Teacher <span class="tag">Start here</span></div>
+        <div class="cap">1 teacher · up to 60 students</div>
+      </div>
+      <div class="r"><div class="p">₹{{ PRICING.teacher_solo }}</div><div class="u">/ month</div></div>
+    </div>
+    <div class="plan">
+      <div class="l">
+        <div class="nm">Coaching</div>
+        <div class="cap">Up to 300 students · white-label + class analytics</div>
+      </div>
+      <div class="r"><div class="p">₹{{ PRICING.teacher_coaching }}</div><div class="u">/ month</div></div>
+    </div>
+    <div class="plan">
+      <div class="l">
+        <div class="nm">Institute</div>
+        <div class="cap">Unlimited students · full branding · priority</div>
+      </div>
+      <div class="r"><div class="p">₹{{ PRICING.teacher_institute }}+</div><div class="u">/ month</div></div>
+    </div>
+  </div>
+  <div class="price-cta">
+    Start free above — no card needed. Pick a plan when your trial ends.<br/>
+    Questions? <a href="https://wa.me/{{ CONTACT_WA }}?text=I%20run%20a%20coaching%20and%20want%20Acharya" target="_blank" rel="noopener">Talk to us on WhatsApp →</a>
   </div>
 </div>
 
