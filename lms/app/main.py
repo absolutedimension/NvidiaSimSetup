@@ -2746,6 +2746,180 @@ def admin_export(request: Request, db: Session = Depends(get_db)):
                     headers={"Content-Disposition": "attachment; filename=cohort_progress.csv"})
 
 
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+# MOBILE API (native Acharya Flutter app) — thin, READ-ONLY JSON re-exposure of data the web
+# templates already render. No new product logic; every value comes from the same helpers the web
+# uses (_prep_stats, the report route, teacher_dashboard). The app authenticates with the SAME
+# session cookie as the browser, so these ride on current_student/current_teacher. Prefix: /api/m/*
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+
+def _concept_json(s) -> dict:
+    return {"concept": s.concept, "subject": s.subject, "seen": s.seen,
+            "pct": round(100 * s.correct / s.seen) if s.seen else 0}
+
+
+def _smart_target(db, student, weakest) -> dict | None:
+    """The single weakest concept → a ready-to-generate test spec (subject, sel, diff, title),
+    identical to what the web Smart Practice builds. The app feeds it straight into generate."""
+    for s in weakest:
+        ch = _chapter_for_concept(s.subject, s.concept)
+        if ch:
+            mastery = (s.correct / s.seen) if s.seen else 0.0
+            return {"subject": s.subject, "sel": f"{ch}::{s.concept}",
+                    "diff": examgen.difficulty_for(s.subject, mastery), "title": s.concept}
+    return None
+
+
+@app.get("/api/m/me")
+def m_me(request: Request, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False}, status_code=401)
+    topics = _student_topics(db, student)
+    return JSONResponse({
+        "ok": True, "email": student.email, "name": student.name or "",
+        "is_teacher": bool(student.is_teacher), "institute": student.institute or "",
+        "goal_id": _student_goal(db, student, topics),
+        "days_left": _days_left(student), "has_access": has_assessment_access(db, student),
+        "subjects": [examgen.match_subject(t.title, t.topic_key) for t in topics],
+    })
+
+
+@app.get("/api/m/home")
+def m_home(request: Request, db: Session = Depends(get_db)):
+    """Everything the native Today screen shows — from _prep_stats (all real, nothing invented)."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False}, status_code=401)
+    st = _prep_stats(db, student)
+    return JSONResponse({
+        "ok": True,
+        "mastery": st["mastery"], "goal": st["goal"], "goal_id": st["goal_id"],
+        "tests": st["tests"], "has_data": st["has_data"], "streak": st["streak"],
+        "q_week": st["q_week"], "acc_week": st["acc_week"], "chapters_week": st["chapters_week"],
+        "trend": st["trend"],
+        "focus": [_concept_json(s) for s in st["focus"]],
+        "weakest": [_concept_json(s) for s in st["weakest"]],
+        "strongest": _concept_json(st["strongest"]) if st["strongest"] else None,
+        "due": [_concept_json(s) for s in st["due"][:5]],
+        "days_left": _days_left(student), "has_access": has_assessment_access(db, student),
+        "smart": _smart_target(db, student, st["weakest"]),
+    })
+
+
+@app.get("/api/m/report")
+def m_report(request: Request, db: Session = Depends(get_db)):
+    """JSON twin of /exam-prep/report — SWOT, recommended difficulty, practise-next, trend."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False}, status_code=401)
+    attempts = (db.query(TopicAttempt).filter_by(student_id=student.id)
+                .order_by(TopicAttempt.taken_at.desc()).limit(50).all())
+    stats = [s for s in db.query(ConceptStat).filter_by(student_id=student.id).all() if s.seen]
+
+    def m(s):
+        return s.correct / s.seen
+
+    strong = sorted([s for s in stats if m(s) >= 0.75], key=m, reverse=True)
+    shaky = sorted([s for s in stats if 0.5 <= m(s) < 0.75], key=m)
+    weak = sorted([s for s in stats if m(s) < 0.5], key=m)
+    graded = [a for a in attempts if a.total]
+    avg = round(100 * sum(a.score for a in graded) / sum(a.total for a in graded)) if graded else 0
+    overall = (sum(s.correct for s in stats) / sum(s.seen for s in stats)) if stats else 0
+    tier, level_label = (("hard", "Hard") if overall >= 0.75 else
+                         (("mix", "Mix (medium–hard)") if overall >= 0.5 else ("easy", "Medium")))
+    suggestions = []
+    for s in (weak + shaky)[:5]:
+        ch = _chapter_for_concept(s.subject, s.concept)
+        spec = None
+        if ch:
+            spec = {"subject": s.subject, "sel": f"{ch}::{s.concept}",
+                    "diff": examgen.difficulty_ladder(s.subject)[tier], "title": s.concept}
+        suggestions.append({"concept": s.concept, "subject": s.subject,
+                            "pct": round(100 * m(s)), "seen": s.seen, "spec": spec})
+    trend = [round(100 * a.score / a.total) for a in reversed(graded[:6]) if a.total]
+    return JSONResponse({
+        "ok": True, "tests": len(attempts), "avg": avg, "overall": round(100 * overall),
+        "level_label": level_label,
+        "strong": [{"c": s.concept, "p": round(100 * m(s))} for s in strong[:8]],
+        "shaky": [{"c": s.concept, "p": round(100 * m(s))} for s in shaky[:8]],
+        "weak": [{"c": s.concept, "p": round(100 * m(s))} for s in weak[:8]],
+        "suggestions": suggestions, "trend": trend,
+        "attempts": [{"id": a.id, "title": a.title, "score": a.score, "total": a.total,
+                      "subject": a.subject} for a in attempts[:20]],
+    })
+
+
+@app.get("/api/m/teacher/tests")
+def m_teacher_tests(request: Request, db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"ok": False}, status_code=401)
+    tests = db.query(ClassTest).filter_by(teacher_id=teacher.id).order_by(ClassTest.id.desc()).all()
+    out = []
+    for t in tests:
+        n_sits = db.query(ClassSitting).filter_by(class_test_id=t.id).count()
+        out.append({"code": t.code, "title": t.title, "subject": t.subject_label,
+                    "n": t.n, "difficulty": t.difficulty, "sittings": n_sits,
+                    "share_url": f"{settings.BASE_URL}/t/{t.code}"})
+    return JSONResponse({"ok": True, "institute": teacher.institute or "", "tests": out})
+
+
+@app.get("/api/m/teacher/test/{code}")
+def m_teacher_test(code: str, request: Request, db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"ok": False}, status_code=401)
+    ct = db.query(ClassTest).filter_by(code=code, teacher_id=teacher.id).first()
+    if not ct:
+        return JSONResponse({"ok": False, "error": "not found"}, status_code=404)
+    sits = _sittings_for(db, ct)
+    weak_count: dict = {}
+    for s in sits:
+        for w in (s.weak_topics or []):
+            weak_count[w] = weak_count.get(w, 0) + 1
+    return JSONResponse({
+        "ok": True, "code": ct.code, "title": ct.title, "subject": ct.subject_label,
+        "n": ct.n, "difficulty": ct.difficulty, "chapters": ct.chapters or [],
+        "share_url": f"{settings.BASE_URL}/t/{ct.code}",
+        "print_url": f"{settings.BASE_URL}/teacher/test/{ct.code}/print?answers=1",
+        "sittings": [{"name": s.student_name, "score": s.score, "total": s.total,
+                      "pct": round(100 * s.score / s.total) if s.total else 0,
+                      "weak": s.weak_topics or []} for s in sits],
+        "class_weak": sorted(weak_count.items(), key=lambda kv: -kv[1])[:10],
+    })
+
+
+@app.get("/api/m/teacher/dashboard")
+def m_teacher_dashboard(request: Request, db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"ok": False}, status_code=401)
+    tests = db.query(ClassTest).filter_by(teacher_id=teacher.id).all()
+    tids = [t.id for t in tests]
+    sits = (db.query(ClassSitting).filter(ClassSitting.class_test_id.in_(tids)).all() if tids else [])
+    by_student: dict = {}
+    weak_count: dict = {}
+    for s in sits:
+        b = by_student.setdefault(s.student_name or "—",
+                                  {"name": s.student_name or "—", "tests": 0, "score": 0, "total": 0, "weak": {}})
+        b["tests"] += 1; b["score"] += s.score; b["total"] += s.total
+        for w in (s.weak_topics or []):
+            b["weak"][w] = b["weak"].get(w, 0) + 1
+            weak_count[w] = weak_count.get(w, 0) + 1
+    students = []
+    for b in by_student.values():
+        pct = round(b["score"] / b["total"] * 100) if b["total"] else 0
+        tier = "weak" if pct < 40 else ("shaky" if pct < 70 else "solid")
+        top_weak = sorted(b["weak"].items(), key=lambda kv: -kv[1])[:3]
+        students.append({"name": b["name"], "pct": pct, "tier": tier, "tests": b["tests"],
+                         "weak": [w for w, _ in top_weak]})
+    students.sort(key=lambda x: x["pct"])
+    return JSONResponse({"ok": True, "n_tests": len(tests), "n_sits": len(sits),
+                         "students": students,
+                         "class_weak": sorted(weak_count.items(), key=lambda kv: -kv[1])[:10]})
+
+
 @app.get("/terms", response_class=HTMLResponse)
 @app.get("/privacy", response_class=HTMLResponse)
 @app.get("/refund", response_class=HTMLResponse)
