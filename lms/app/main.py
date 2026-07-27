@@ -2749,6 +2749,7 @@ def admin_export(request: Request, db: Session = Depends(get_db)):
 @app.get("/terms", response_class=HTMLResponse)
 @app.get("/privacy", response_class=HTMLResponse)
 @app.get("/refund", response_class=HTMLResponse)
+@app.get("/disclaimer", response_class=HTMLResponse)
 @app.get("/contact", response_class=HTMLResponse)
 def policy_page(request: Request):
     slug = request.url.path.strip("/")
