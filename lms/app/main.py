@@ -2080,9 +2080,13 @@ def student_chat(request: Request, db: Session = Depends(get_db)):
 
 @app.post("/logout")
 @app.get("/logout")
-def logout(request: Request):
+def logout(request: Request, db: Session = Depends(get_db)):
+    # Send them back to the landing they came from: teachers → /teacher, students → /exam-prep.
+    # Determine the role BEFORE clearing the session.
+    student = current_student(request, db)
+    dest = "/teacher" if (student and getattr(student, "is_teacher", False)) else "/exam-prep"
     request.session.clear()
-    return RedirectResponse("/login", status_code=302)
+    return RedirectResponse(dest, status_code=302)
 
 
 # ---------- subscriptions (Razorpay) ----------
