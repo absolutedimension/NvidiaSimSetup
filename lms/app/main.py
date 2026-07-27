@@ -2841,12 +2841,35 @@ def m_report(request: Request, db: Session = Depends(get_db)):
     return JSONResponse({
         "ok": True, "tests": len(attempts), "avg": avg, "overall": round(100 * overall),
         "level_label": level_label,
-        "strong": [{"c": s.concept, "p": round(100 * m(s))} for s in strong[:8]],
-        "shaky": [{"c": s.concept, "p": round(100 * m(s))} for s in shaky[:8]],
-        "weak": [{"c": s.concept, "p": round(100 * m(s))} for s in weak[:8]],
+        "strong": [{"c": s.concept, "p": round(100 * m(s)), "s": s.subject} for s in strong[:8]],
+        "shaky": [{"c": s.concept, "p": round(100 * m(s)), "s": s.subject} for s in shaky[:8]],
+        "weak": [{"c": s.concept, "p": round(100 * m(s)), "s": s.subject} for s in weak[:8]],
         "suggestions": suggestions, "trend": trend,
         "attempts": [{"id": a.id, "title": a.title, "score": a.score, "total": a.total,
                       "subject": a.subject} for a in attempts[:20]],
+    })
+
+
+@app.get("/api/m/tutor/anchor")
+def m_tutor_anchor(request: Request, subject: str = "", concept: str = "",
+                   db: Session = Depends(get_db)):
+    """The anchor question the native 'Understand' tutor teaches around — same
+    source as the web tutor (_tutor_anchor), pulled instantly from the pool."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False}, status_code=401)
+    subject = (subject or "").strip()
+    concept = (concept or "").strip()[:120]
+    if subject not in examgen.RAG_SUBJECTS or not concept:
+        return JSONResponse({"ok": False, "error": "bad params"}, status_code=400)
+    cs = db.query(ConceptStat).filter_by(student_id=student.id, subject=subject, concept=concept).first()
+    mastery_pct = round(100 * cs.correct / cs.seen) if (cs and cs.seen) else None
+    diff = examgen.difficulty_for(subject, (mastery_pct or 0) / 100)
+    return JSONResponse({
+        "ok": True, "available": tutor.available(),
+        "subject": subject, "subject_label": examgen.RAG_SUBJECTS[subject]["label"],
+        "concept": concept, "mastery_pct": mastery_pct,
+        "anchor": _tutor_anchor(subject, concept, diff),
     })
 
 
