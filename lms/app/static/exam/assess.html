@@ -59,6 +59,13 @@
  .fb{margin-top:11px;padding:11px 13px;border-radius:12px;font-size:13.5px;line-height:1.5}
  .fb.ok{background:var(--goodbg);color:#116b41;border:1px solid #BFE6CF}
  .fb.no{background:var(--badbg);color:#9c3220;border:1px solid #F0C9BF}
+ /* --- keep long answers / options / equations inside the card (no horizontal overflow) --- */
+ .qcard,.qtext,.fb,.say{overflow-wrap:anywhere;word-break:break-word}
+ .opt{align-items:flex-start}                        /* multi-line option text aligns with the badge */
+ .opt>span:last-child{flex:1;min-width:0;overflow-wrap:anywhere;word-break:break-word}
+ .tf button{overflow-wrap:anywhere;word-break:break-word;min-width:0}
+ .qcard mjx-container,.fb mjx-container{max-width:100%}
+ .qcard mjx-container[display="true"],.fb mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden}
  .hint{margin-top:10px;padding:11px 13px;border-radius:12px;background:#FFF7E9;border:1px dashed #E7BE7C;font-size:13.5px;line-height:1.5}
  .hint b{color:var(--gold2)}
  .score{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px 18px;text-align:center;box-shadow:0 6px 20px rgba(120,60,20,.08)}
