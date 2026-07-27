@@ -108,6 +108,19 @@ RAG_SUBJECTS = {
                   "rrb clerk", "banking prelims", "banking quant", "banking quantitative",
                   "banking-quant", "quantitative aptitude"],
     },
+    # ---- UPSC Civil Services (Preliminary) — REAL past-paper PYQs (2023-2025), not RAG-generated ----
+    "upsc-gs": {
+        "label": "UPSC GS (Prelims)", "exam": "UPSC Civil Services (Preliminary)",
+        "subject": "General Studies", "kw": "gs",
+        "match": ["upsc gs", "upsc general studies", "upsc prelims gs", "civil services gs",
+                  "upsc-gs", "general studies prelims", "ias prelims gs"],
+    },
+    "upsc-csat": {
+        "label": "UPSC CSAT (Prelims)", "exam": "UPSC Civil Services (Preliminary)",
+        "subject": "CSAT", "kw": "csat",
+        "match": ["upsc csat", "csat", "upsc aptitude", "civil services aptitude", "upsc-csat",
+                  "csat prelims"],
+    },
 }
 
 # ---- goals: what a student is actually preparing for → the subjects that serve it ----
@@ -142,6 +155,10 @@ GOALS = {
         "label": "Banking (IBPS/SBI/RRB)", "tag": "Govt · Banking", "emoji": "🏦",
         "subjects": ["banking-quant"],
     },
+    "upsc": {
+        "label": "UPSC Civil Services", "tag": "Civil Services · IAS", "emoji": "🏛️",
+        "subjects": ["upsc-gs", "upsc-csat"],
+    },
 }
 DEFAULT_GOAL = "jee-advanced"
 
@@ -168,6 +185,8 @@ DIFFICULTY_LADDER = {
     # Banking Prelims (generated, not tagged by an LLM) — the pool is seeded at exactly these
     # bands (see project-banking-quant-generator §runbook); keep the ladder matching what's filled.
     "Banking Prelims": {"easy": "2", "mix": "2-3", "hard": "3"},
+    # UPSC PYQs are all stored at difficulty 3 (one mixed prelims paper) — every band maps to 3.
+    "UPSC Civil Services (Preliminary)": {"easy": "3", "mix": "3", "hard": "3"},
 }
 _DEFAULT_LADDER = {"easy": "3", "mix": "3-4", "hard": "4"}
 

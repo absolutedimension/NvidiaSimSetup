@@ -81,6 +81,7 @@ EXAMS = [
     {"id": "class12",  "subject": "cbse12-physics", "title": "Class 12", "tag": "Boards · PCB",        "emoji": "📗"},
     {"id": "commerce", "subject": "cbse12-accountancy", "title": "Class 12 Commerce", "tag": "Accounts · Economics", "emoji": "📊"},
     {"id": "banking",  "subject": "banking-quant", "title": "Banking", "tag": "IBPS · SBI · RRB",     "emoji": "🏦"},
+    {"id": "upsc",     "subject": "upsc-gs",      "title": "UPSC",     "tag": "Civil Services · IAS", "emoji": "🏛️"},
 ]
 EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
 
@@ -94,7 +95,7 @@ STUDENT_EXAMS = [
     {"id": "class12", "title": "CBSE Class 12", "tag": "Boards · PCB",         "emoji": "📗", "available": True},
     {"id": "commerce","title": "Class 12 Commerce", "tag": "Accounts · Economics", "emoji": "📊", "available": True},
     {"id": "cuet",    "title": "CUET",          "tag": "UG entrance",          "emoji": "🎓", "available": False},
-    {"id": "upsc",    "title": "UPSC",          "tag": "Civil Services",       "emoji": "🏛️", "available": False},
+    {"id": "upsc",    "title": "UPSC",          "tag": "Civil Services",       "emoji": "🏛️", "available": True},
     {"id": "ssc",     "title": "SSC",           "tag": "Govt jobs",            "emoji": "📋", "available": False},
     {"id": "banking", "title": "Banking",       "tag": "IBPS · SBI · RRB",     "emoji": "🏦", "available": True},
     {"id": "gate",    "title": "GATE",          "tag": "M.Tech · PSU",         "emoji": "⚙️", "available": False},
@@ -432,6 +433,8 @@ def _student_goal(db, student, topics=None) -> str:
         return "cbse-10"
     if "neet" in hay:
         return "neet"
+    if "upsc" in hay or "civil services" in hay:
+        return "upsc"
     return ""                                    # unknown — the dashboard says "Exam prep"
 
 
