@@ -2080,11 +2080,11 @@ def student_chat(request: Request, db: Session = Depends(get_db)):
 
 @app.post("/logout")
 @app.get("/logout")
-def logout(request: Request, db: Session = Depends(get_db)):
-    # Send them back to the landing they came from: teachers → /teacher, students → /exam-prep.
-    # Determine the role BEFORE clearing the session.
-    student = current_student(request, db)
-    dest = "/teacher" if (student and getattr(student, "is_teacher", False)) else "/exam-prep"
+def logout(request: Request, next: str = ""):
+    # Send them back to the SURFACE they logged out from, not their role flag — a dual-role account
+    # (is_teacher=True) can be using the student area, so keying off is_teacher wrongly bounced students
+    # to /teacher. Teacher pages pass ?next=/teacher; everything else defaults to the student landing.
+    dest = next if next in ("/teacher", "/exam-prep") else "/exam-prep"
     request.session.clear()
     return RedirectResponse(dest, status_code=302)
 

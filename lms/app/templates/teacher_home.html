@@ -48,7 +48,7 @@
 <div class="wrap">
   <div class="top">
     <div class="brand"><div class="m">अ</div><div><div class="n">Acharya</div><div class="s">{{ student.institute or 'for teachers' }}</div></div></div>
-    <div class="nav"><a class="on" href="/teacher">My class</a><a href="/teacher/dashboard">Dashboard</a><a href="/logout">Log out</a></div>
+    <div class="nav"><a class="on" href="/teacher">My class</a><a href="/teacher/dashboard">Dashboard</a><a href="/logout?next=/teacher">Log out</a></div>
   </div>
 
   <h1>Namaste{{ ', ' + student.name if student.name else '' }} 🙏</h1>
