@@ -13,13 +13,14 @@ not a substitute for review by a lawyer before you rely on them commercially.
 """
 
 COMPANY = "TRIGUNAI INNOVATIONS PRIVATE LIMITED"
+CIN = "U86909BR2025PTC078945"               # RoC-Patna · incorporated 12-09-2025
 BRAND = "Acharya"
 PARENT = "TrigunAI Innovations"
 SITE = "acharya.trigunai.com"
 EMAIL = "deepak@trigunai.com"
 PHONE = "+91 91352 55107"
 CITY = "Patna, Bihar"
-ADDRESS = "Patna, Bihar, India"           # replace with the full registered office address
+ADDRESS = "C/O Smt. Rita Yadav, Shivajee Nagar, Sadakat, Patliputra, Patna, Bihar 800013, India"
 JURISDICTION = "Patna, Bihar"
 GRIEVANCE_OFFICER = "Deepak Kumar"
 UPDATED = "27 July 2026"
@@ -41,7 +42,7 @@ LEGAL = {
     "terms": {
         "title": "Terms of Service",
         "html": f"""
-<p>{BRAND} ({SITE}) is an online exam-preparation service operated by {COMPANY} ("we", "us", "our"). By creating an account, opening a shared test link, or otherwise using {BRAND} you agree to these Terms. If you do not agree, please do not use the service.</p>
+<p>{BRAND} ({SITE}) is an online exam-preparation service operated by {COMPANY} (CIN {CIN}), a company registered in India with its registered office at {ADDRESS} ("we", "us", "our"). By creating an account, opening a shared test link, or otherwise using {BRAND} you agree to these Terms. If you do not agree, please do not use the service.</p>
 
 <h2>1. What {BRAND} is — and what it is not</h2>
 <p>{BRAND} helps students and teachers <b>practise</b> for competitive and board exams. We do this by:</p>
@@ -158,9 +159,10 @@ LEGAL = {
 <p>We'd genuinely like to hear from you — questions, bug reports in a question, or help with billing.</p>
 <ul>
 <li><b>Company:</b> {COMPANY} ({PARENT})</li>
+<li><b>CIN:</b> {CIN} (RoC-Patna)</li>
 <li><b>Email:</b> <a href="mailto:{EMAIL}">{EMAIL}</a></li>
 <li><b>Phone / WhatsApp:</b> {PHONE}</li>
-<li><b>Address:</b> {ADDRESS}</li>
+<li><b>Registered office:</b> {ADDRESS}</li>
 <li><b>Grievance Officer:</b> {GRIEVANCE_OFFICER} (for privacy and other complaints)</li>
 </ul>
 <p>We aim to respond to all queries within 1–2 business days, and to resolve formal grievances within 30 days.</p>
