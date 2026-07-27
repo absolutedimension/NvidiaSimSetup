@@ -267,6 +267,20 @@ def get_chapters(subject_id: str = "jee-physics") -> list[dict]:
         return (ent or {}).get("data") or []
 
 
+def chapters_for_ui(subject_id: str = "jee-physics") -> list[dict]:
+    """Chapters to OFFER in the picker (subject page / chat / teacher create).
+
+    Normally = chapters with banked exemplars (RAG can write authentic questions). BUT some live
+    banks are POOL-served with no per-chapter exemplar count: UPSC PYQs are stored `chapter=NULL`
+    (banked=0 on every taxonomy chapter) yet `/pool` returns real questions for the whole subject.
+    Filtering on `exemplars_banked > 0` there hid the entire subject → 'coming soon'. So: prefer
+    banked chapters; if a live subject has a taxonomy but ZERO banked chapters, offer all of them
+    (they draw from the subject pool). Genuinely-empty subjects still return [] → 'coming soon'."""
+    chs = get_chapters(subject_id)
+    banked = [c for c in chs if c.get("exemplars_banked", 0) > 0]
+    return banked or chs
+
+
 def fetch_pool(subject_id: str, chapter: str, concept: str | None = None,
                difficulty: str = "3-4", qtype: str = "MCQ_single", count: int = 5,
                exclude: list[str] | None = None):

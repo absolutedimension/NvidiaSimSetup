@@ -30,6 +30,13 @@
  .chap-h .m{flex:1}.chap-h .nm{font-family:var(--serif);font-weight:800;font-size:15.5px}
  .chap-h .k{font-size:11px;color:var(--faint);margin-top:1px}
  .chap-h .all{font-size:11.5px;font-weight:800;color:var(--gold2);background:var(--cream);border:none;border-radius:8px;padding:6px 10px;cursor:pointer;font-family:inherit}
+ .chap.nosub{padding:0}
+ .chap-h.chsel{cursor:pointer;user-select:none;border-radius:15px;padding:14px 14px}
+ .chap-h.chsel .bx{width:19px;height:19px;flex:0 0 auto;border-radius:6px;border:1.5px solid var(--faint);display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff}
+ .chap-h.chsel.on{background:#FFF3E6}
+ .chap.nosub:has(.chsel.on){border-color:var(--gold2)}
+ .chap-h.chsel.on .bx{background:var(--gold2);border-color:var(--gold2)}
+ .chap-h.chsel.on .nm{color:var(--gold2)}
  .concepts{display:flex;flex-wrap:wrap;gap:8px;padding:2px 10px 4px}
  .cc{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:9px 12px;font-size:13.5px;cursor:pointer;user-select:none;transition:.12s}
  .cc:hover{border-color:var(--gold)}
@@ -75,7 +82,7 @@
   <main>
 
   {% if available %}
-    <div class="lead">Pick <b>one or more subtopics</b> — or the whole subject — and Acharya writes a fresh paper in the <b>real {{ subject_label }} style</b>, new questions every time.</div>
+    <div class="lead">Pick <b>one or more chapters</b> — or the whole subject — and Acharya writes a fresh paper in the <b>real {{ subject_label }} style</b>, new questions every time.</div>
 
     {% if attempts %}<div class="prog"><span class="pc">📊 {{ attempts }} test{{ '' if attempts == 1 else 's' }} taken</span><span>your mastery shows on each subtopic ↓</span></div>{% endif %}
     {% if suggest %}<div class="suggest"><div class="m">🎯 Acharya suggests: practise <b>{{ suggest }}</b> — it's your weakest so far.</div><button type="button" id="suggestbtn" data-concept="{{ suggest }}">Practise it →</button></div>{% endif %}
@@ -86,6 +93,8 @@
     </div>
 
     {% for c in chapters %}
+      {% if c.concepts %}
+      {# chapter HAS subtopics → pick individual subtopics (or Select all) #}
       <div class="chap" data-chapter="{{ c.chapter }}">
         <div class="chap-h">
           <div class="m"><div class="nm">{{ c.chapter }}</div><div class="k">{{ c.concepts|length }} subtopics · {{ c.exemplars_banked }} past-paper styles</div></div>
@@ -97,6 +106,15 @@
           {% endfor %}
         </div>
       </div>
+      {% else %}
+      {# chapter has NO subtopics tagged → the whole chapter is one selectable unit #}
+      <div class="chap nosub" data-chapter="{{ c.chapter }}">
+        <div class="chap-h chsel" data-chapter="{{ c.chapter }}" role="button" tabindex="0">
+          <span class="bx"></span>
+          <div class="m"><div class="nm">{{ c.chapter }}</div><div class="k">{{ c.exemplars_banked }} past-paper styles{% if mastery and mastery.get(c.chapter) is not none %} · mastery {{ (mastery[c.chapter]*100)|int }}%{% endif %}</div></div>
+        </div>
+      </div>
+      {% endif %}
     {% endfor %}
 
     <div class="opts">
@@ -135,31 +153,41 @@
 const SUBJECT = {{ subject_id|tojson }};
 // default diff = whichever pill is pre-selected (the exam's "mix" band: NEET 2-3, JEE 3-4)
 const state = {diff:(document.querySelector('.pill.on[data-diff]')||{dataset:{diff:"3-4"}}).dataset.diff, n:5, fig:"0"};
-function selectedCCs(){ return Array.from(document.querySelectorAll('.cc.on')); }
+// A "unit" is either a subtopic chip (.cc[data-concept]) OR a whole no-subtopic chapter (.chsel).
+function selectedCCs(){ return Array.from(document.querySelectorAll('.cc[data-concept].on')); }
+function selectedChaps(){ return Array.from(document.querySelectorAll('.chsel.on')); }
+function allUnits(){ return document.querySelectorAll('.cc[data-concept], .chsel'); }
+function selCount(){ return selectedCCs().length + selectedChaps().length; }
 function refresh(){
-  const sel = selectedCCs();
+  const n = selCount();
   const go = document.getElementById('go');
-  // full checkbox reflects "all concepts selected"
-  const all = document.querySelectorAll('.cc[data-concept]');
-  const allOn = all.length && sel.length===all.length;
+  // full checkbox reflects "every unit selected"
+  const units = allUnits();
+  const allOn = units.length && n===units.length;
   document.getElementById('fullbx').textContent = allOn ? '✓' : '';
   document.getElementById('fullbar').querySelector('.cc').classList.toggle('on', allOn);
-  if(sel.length){ go.disabled=false; go.textContent = `Create test · ${sel.length} topic${sel.length>1?'s':''} →`; }
+  if(n){ go.disabled=false; go.textContent = `Create test · ${n} topic${n>1?'s':''} →`; }
   else { go.disabled=true; go.textContent='Select a topic to start'; }
 }
 document.querySelectorAll('.cc[data-concept]').forEach(cc=>{
   cc.onclick=()=>{ cc.classList.toggle('on'); refresh(); };
 });
+// whole-chapter selectors (chapters with no subtopics tagged)
+document.querySelectorAll('.chsel').forEach(h=>{
+  const toggle=()=>{ h.classList.toggle('on'); refresh(); };
+  h.onclick=toggle;
+  h.onkeydown=(e)=>{ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(); } };
+});
 document.querySelectorAll('.all').forEach(btn=>{
-  btn.onclick=()=>{ const ch=btn.dataset.chapter;
+  btn.onclick=(e)=>{ e.stopPropagation(); const ch=btn.dataset.chapter;
     const ccs=document.querySelectorAll(`.cc[data-chapter="${CSS.escape(ch)}"][data-concept]`);
     const anyoff=Array.from(ccs).some(c=>!c.classList.contains('on'));
     ccs.forEach(c=>c.classList.toggle('on', anyoff)); refresh(); };
 });
 document.getElementById('fullbar').onclick=()=>{
-  const all=document.querySelectorAll('.cc[data-concept]');
-  const anyoff=Array.from(all).some(c=>!c.classList.contains('on'));
-  all.forEach(c=>c.classList.toggle('on', anyoff)); refresh();
+  const units=allUnits();
+  const anyoff=Array.from(units).some(c=>!c.classList.contains('on'));
+  units.forEach(c=>c.classList.toggle('on', anyoff)); refresh();
 };
 document.querySelectorAll('.pill[data-diff]').forEach(p=>p.onclick=()=>{
   document.querySelectorAll('.pill[data-diff]').forEach(x=>x.classList.remove('on'));
@@ -174,10 +202,13 @@ const sb=document.getElementById('suggestbtn');
 if(sb){ sb.onclick=()=>{ const c=Array.from(document.querySelectorAll('.cc[data-concept]')).find(x=>x.dataset.concept===sb.dataset.concept);
   if(c){ if(!c.classList.contains('on'))c.classList.add('on'); c.scrollIntoView({behavior:'smooth',block:'center'}); refresh(); } }; }
 document.getElementById('go').onclick=()=>{
-  const sel = selectedCCs().map(cc=>`${cc.dataset.chapter}::${cc.dataset.concept}`).join('|');
-  if(!sel) return;
-  const title = selectedCCs().length===document.querySelectorAll('.cc[data-concept]').length
-      ? {{ subject_label|tojson }} : selectedCCs().map(c=>c.dataset.concept).slice(0,3).join(', ');
+  const parts = selectedCCs().map(cc=>`${cc.dataset.chapter}::${cc.dataset.concept}`)
+      .concat(selectedChaps().map(h=>`${h.dataset.chapter}::`));   // "Chapter::" = whole chapter
+  if(!parts.length) return;
+  const sel = parts.join('|');
+  const labels = selectedCCs().map(c=>c.dataset.concept).concat(selectedChaps().map(h=>h.dataset.chapter));
+  const title = (parts.length===allUnits().length)
+      ? {{ subject_label|tojson }} : labels.slice(0,3).join(', ');
   const u = `/exam-prep/test?src=examgen&subject=${encodeURIComponent(SUBJECT)}&sel=${encodeURIComponent(sel)}&diff=${encodeURIComponent(state.diff)}&n=${state.n}&fig=${state.fig}&title=${encodeURIComponent(title)}`;
   location.href = u;
 };

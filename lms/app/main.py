@@ -985,10 +985,12 @@ def exam_prep_smart(request: Request, db: Session = Depends(get_db)):
         for t in topics:
             sid = examgen.match_subject(t.title, t.topic_key)
             if sid:
-                chs = [c for c in examgen.get_chapters(sid) if c.get("exemplars_banked", 0) > 0]
+                chs = examgen.chapters_for_ui(sid)
                 if chs:
                     subject = sid
-                    sel = [f"{chs[0]['chapter']}::{chs[0]['concepts'][0]}"]
+                    concepts0 = chs[0].get("concepts") or []
+                    # a chapter may have no tagged subtopics (e.g. Class 10 Science) → whole-chapter sel
+                    sel = [f"{chs[0]['chapter']}::{concepts0[0]}" if concepts0 else f"{chs[0]['chapter']}::"]
                     break
     if not sel:
         return RedirectResponse("/exam-prep/dashboard", status_code=302)
@@ -1073,8 +1075,14 @@ def exam_prep_subject(request: Request, topic_id: int, db: Session = Depends(get
     if not topic:
         return RedirectResponse("/exam-prep/dashboard", status_code=302)
     sid = examgen.match_subject(topic.title, topic.topic_key) if examgen.available() else None
+    # Fallback: a topic seeded straight from the landing picker is a bare EXAM id ("upsc", "jee",
+    # "class12", "commerce", "neet") whose title ("UPSC", "JEE") match_subject can't resolve to a
+    # single RAG subject. Map it to the exam's PRIMARY subject so it opens the chapter picker instead
+    # of dead-ending on "coming soon". (Multi-subject exams still get per-subject topics at onboarding.)
+    if not sid and examgen.available() and topic.topic_key in EXAM_SUBJECT:
+        sid = EXAM_SUBJECT[topic.topic_key]
     if sid:
-        chapters = [c for c in examgen.get_chapters(sid) if c.get("exemplars_banked", 0) > 0]
+        chapters = examgen.chapters_for_ui(sid)
         if chapters:
             # progress: per-concept mastery (0..1), test count, and the weakest concept to suggest
             stats = db.query(ConceptStat).filter_by(student_id=student.id, subject=sid).all()
@@ -1553,7 +1561,7 @@ def teacher_chapters(request: Request, subject: str = "jee-physics", db: Session
         return JSONResponse({"ok": False, "error": "login"}, status_code=401)
     if subject not in examgen.RAG_SUBJECTS:
         return JSONResponse({"ok": False, "error": "unknown subject"}, status_code=400)
-    chapters = [c for c in examgen.get_chapters(subject) if c.get("exemplars_banked", 0) > 0]
+    chapters = examgen.chapters_for_ui(subject)
     return JSONResponse({"ok": True, "subject": subject,
                          "label": examgen.RAG_SUBJECTS[subject]["label"],
                          "ladder": examgen.difficulty_ladder(subject), "chapters": chapters})
@@ -1823,14 +1831,23 @@ def chat_job(token: str, db: Session = Depends(get_db)):
 
 # ---- chat step function: stateless, driven by the client-held `state` + the latest input ----
 
-def _subject_chips():
-    subs = ["jee-physics", "jee-chemistry", "jee-maths", "neet-biology", "neet-physics",
-            "neet-chemistry", "banking-quant"]
+def _subject_chips(db=None, student=None):
+    """Every LIVE subject (derived from RAG_SUBJECTS so new banks — Class 10/12, Commerce, UPSC —
+    appear automatically; no more stale hardcoded list). The student's goal subjects are floated to
+    the front so their most relevant options come first."""
+    subs = list(examgen.RAG_SUBJECTS.keys())
+    if db is not None and student is not None:
+        try:
+            goal = _student_goal(db, student)
+            pref = [s for s in examgen.GOALS.get(goal, {}).get("subjects", []) if s in subs]
+            subs = pref + [s for s in subs if s not in pref]
+        except Exception:
+            pass
     return [{"label": examgen.RAG_SUBJECTS[s]["label"], "value": "subj:" + s} for s in subs]
 
 
 def _chapter_chips(subject: str):
-    chs = [c for c in examgen.get_chapters(subject) if c.get("exemplars_banked", 0) > 0]
+    chs = examgen.chapters_for_ui(subject)
     chips = [{"label": "✨ Full subject", "value": "full"}]
     for c in chs[:14]:
         chips.append({"label": c["chapter"], "value": "chap:" + c["chapter"]})
@@ -1915,7 +1932,8 @@ def _chat_step(role: str, state: dict, inp: str, db: Session, student):
         return _reply(msg, chips=chips, input=True, state={**st, "node": "intro"})
 
     if node in ("make_test",):
-        return _reply("Which subject? (JEE + NEET are ready.)", chips=_subject_chips(),
+        return _reply("Which subject? (JEE, NEET, CBSE Class 10 &amp; 12, Commerce, Banking &amp; UPSC are ready.)",
+                      chips=_subject_chips(db, None if teacher else student),
                       input=True, state={**st, "node": "make_test"})
 
     if node == "chapters":
@@ -1953,7 +1971,7 @@ def _chat_step(role: str, state: dict, inp: str, db: Session, student):
         subject = st.get("subject")
         chs = st.get("chapters", [])
         if "__FULL__" in chs or not [c for c in chs if c != "__FULL__"]:
-            all_ch = [c["chapter"] for c in examgen.get_chapters(subject) if c.get("exemplars_banked", 0) > 0]
+            all_ch = [c["chapter"] for c in examgen.chapters_for_ui(subject)]
             selections = [(c, None) for c in all_ch]
         else:
             selections = [(c, None) for c in chs if c != "__FULL__"]
