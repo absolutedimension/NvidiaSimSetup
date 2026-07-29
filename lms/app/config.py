@@ -13,6 +13,9 @@ class Settings:
         for e in os.getenv("ADMIN_EMAILS", "deepak@trigunai.com").split(",")
         if e.strip()
     }
+    # Read-only ops "pulse" key — gates GET /admin/api/pulse (the campaign-tracker skill).
+    # Override in prod via env. Rotate by changing PULSE_KEY on the container app.
+    PULSE_KEY = os.getenv("PULSE_KEY", "trigunai-pulse-2026").strip()
     ACS_CONNECTION_STRING = os.getenv("ACS_CONNECTION_STRING", "").strip()
     ACS_SENDER = os.getenv("ACS_SENDER", "DoNotReply@trigunai.com")
     MAGIC_TTL_MIN = int(os.getenv("MAGIC_TTL_MIN", "20"))
@@ -57,8 +60,12 @@ class Settings:
     # assessment gate is a no-op — /exam-prep stays free for everyone (the soft-launch state).
     # To go live: create a ₹199/month plan in Razorpay, set RZP_ASSESS_PLAN_ID, flip ASSESS_ENABLED=1.
     ASSESS_ENABLED = os.getenv("ASSESS_ENABLED", "false").lower() in ("1", "true", "yes")
-    RZP_ASSESS_PLAN_ID = os.getenv("RZP_ASSESS_PLAN_ID", "").strip()   # monthly plan, created in Razorpay
-    ASSESS_PRICE_INR = int(os.getenv("ASSESS_PRICE_INR", "249"))         # monthly (flexibility tier)
+    RZP_ASSESS_PLAN_ID = os.getenv("RZP_ASSESS_PLAN_ID", "").strip()   # STUDENT monthly plan (₹249)
+    ASSESS_PRICE_INR = int(os.getenv("ASSESS_PRICE_INR", "249"))         # student monthly
+    # Teacher/institute tier — a SEPARATE Razorpay plan (min ₹999/mo). Same 14-day trial + gate;
+    # the subscribe flow picks this plan when Student.is_teacher is set.
+    RZP_ASSESS_TEACHER_PLAN_ID = os.getenv("RZP_ASSESS_TEACHER_PLAN_ID", "").strip()  # TEACHER monthly plan (₹999)
+    ASSESS_TEACHER_PRICE_INR = int(os.getenv("ASSESS_TEACHER_PRICE_INR", "999"))       # teacher monthly (from)
     ASSESS_PASS_PRICE_INR = int(os.getenv("ASSESS_PASS_PRICE_INR", "1299"))  # "till your exam" Pass — the LEAD offer
     ASSESS_TRIAL_DAYS = int(os.getenv("ASSESS_TRIAL_DAYS", "14"))
 

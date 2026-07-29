@@ -1637,6 +1637,49 @@ def _link_subjects(db, student, subject_ids):
                                 title=examgen.RAG_SUBJECTS[sid]["label"][:120], kind="exam"))
 
 
+def _student_progress(db, s) -> dict:
+    """Real per-student progress for the teacher roster — derived only from the student's own answers.
+    mastery from ConceptStat when present, else from actual test scores (a class-test-only student still
+    gets a real number); tests = adaptive + account-linked class tests; top weak concepts."""
+    stats = [x for x in db.query(ConceptStat).filter_by(student_id=s.id).all() if x.seen]
+    seen = sum(x.seen for x in stats)
+    corr = sum(x.correct for x in stats)
+    weak = sorted([x for x in stats if x.seen and (x.correct / x.seen) < 0.5],
+                  key=lambda x: x.correct / x.seen)
+    tas = db.query(TopicAttempt).filter_by(student_id=s.id).all()
+    sits = db.query(ClassSitting).filter_by(student_id=s.id).all()
+    graded = ([(a.score, a.total) for a in tas if a.total]
+              + [(x.score, x.total) for x in sits if x.total])
+    tests = len(tas) + len(sits)
+    if seen:
+        mastery = round(100 * corr / seen)
+    elif graded:
+        mastery = round(100 * sum(sc for sc, _ in graded) / sum(t for _, t in graded))
+    else:
+        mastery = 0
+    return {"id": s.id, "name": s.name or s.email.split("@")[0], "email": s.email,
+            "mastery": mastery, "tests": tests, "practised": bool(seen or graded),
+            "weak": [w.concept for w in weak[:3]],
+            "last_active": s.last_active_at}
+
+
+def _roster(db, teacher):
+    """Every linked student of this teacher with real progress, weakest-first (needs-help at top)."""
+    linked = (db.query(Student).filter_by(teacher_id=teacher.id)
+              .order_by(Student.enrolled_at.desc()).all())
+    batches = {b.id: b for b in db.query(TeacherInvite).filter_by(teacher_id=teacher.id).all()}
+    out = []
+    for s in linked:
+        p = _student_progress(db, s)
+        b = batches.get(getattr(s, "batch_id", None))
+        p["batch"] = b.label if b else "—"
+        p["needs_help"] = p["practised"] and p["mastery"] < 40
+        out.append(p)
+    # not-yet-practised last, then weakest mastery first
+    out.sort(key=lambda r: (not r["practised"], r["mastery"]))
+    return out
+
+
 @app.get("/teacher/invites", response_class=HTMLResponse)
 def teacher_invites(request: Request, db: Session = Depends(get_db)):
     teacher = current_teacher(request, db)
@@ -1644,22 +1687,23 @@ def teacher_invites(request: Request, db: Session = Depends(get_db)):
         return RedirectResponse("/teacher", status_code=302)
     invites = (db.query(TeacherInvite).filter_by(teacher_id=teacher.id)
                .order_by(TeacherInvite.created_at.desc()).all())
-    counts = {}
-    for inv in invites:
-        counts[inv.id] = inv  # placeholder; roster count is teacher-wide below
     subs = [{"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"], "exam": g["label"]}
             for sid, g in _teacher_subjects()]
-    roster = db.query(Student).filter_by(teacher_id=teacher.id).count()
-    inv_rows = [{"code": i.code, "label": i.label, "active": i.active,
+    roster = _roster(db, teacher)                        # per-student list with real progress
+    inv_rows = [{"id": i.id, "code": i.code, "label": i.label, "active": i.active,
+                 "count": sum(1 for r in roster if r.get("batch") == i.label),
                  "sublabels": [examgen.RAG_SUBJECTS[s]["label"] for s in (i.subjects or []) if s in examgen.RAG_SUBJECTS],
                  "url": f"{settings.BASE_URL}/join/{i.code}"} for i in invites]
     assigns = (db.query(Assignment).filter_by(teacher_id=teacher.id, active=True)
                .order_by(Assignment.created_at.desc()).all())
+    _bmap = {i.id: i.label for i in invites}
     tests = (db.query(ClassTest).filter_by(teacher_id=teacher.id).order_by(ClassTest.created_at.desc()).limit(20).all())
     return templates.TemplateResponse(request, "teacher_invites.html", {
-        "student": teacher, "invites": inv_rows, "subjects": subs, "roster": roster,
+        "student": teacher, "invites": inv_rows, "subjects": subs,
+        "roster": roster, "roster_count": len(roster),
         "base_url": settings.BASE_URL,
-        "assignments": [{"id": a.id, "title": a.title, "kind": a.kind} for a in assigns],
+        "assignments": [{"id": a.id, "title": a.title, "kind": a.kind,
+                         "batch": _bmap.get(a.invite_id, "All batches")} for a in assigns],
         "tests": [{"code": t.code, "title": t.title or t.subject_label} for t in tests]})
 
 
@@ -1687,8 +1731,17 @@ def join_landing(request: Request, code: str, db: Session = Depends(get_db)):
     teacher = db.query(Student).filter_by(id=inv.teacher_id).first()
     institute = ((teacher.institute if teacher else "") or (teacher.name if teacher else "") or "your teacher")
     sublabels = [examgen.RAG_SUBJECTS[s]["label"] for s in (inv.subjects or []) if s in examgen.RAG_SUBJECTS]
+    me = current_student(request, db)
+    # already this student's batch → straight to their dashboard (no re-signup)
+    if me and not me.is_teacher and me.teacher_id == inv.teacher_id:
+        return RedirectResponse("/exam-prep/dashboard", status_code=302)
+    # a teacher opening their OWN join link (to test) would overwrite this browser's teacher session
+    # with a student one → "logged out on refresh". Warn instead of silently clobbering.
+    teacher_warning = bool(me and me.is_teacher)
     return templates.TemplateResponse(request, "join.html", {
         "code": code, "institute": institute, "label": inv.label, "sublabels": sublabels,
+        "teacher_warning": teacher_warning,
+        "err": request.query_params.get("err", ""),
         "google_client_id": settings.GOOGLE_CLIENT_ID})
 
 
@@ -1701,11 +1754,16 @@ def join_submit(request: Request, code: str, email: str = Form(...), name: str =
     email = email.lower().strip()
     if "@" not in email or "." not in email.split("@")[-1]:
         return RedirectResponse(f"/join/{code}?err=1", status_code=302)
-    existed = db.query(Student).filter_by(email=email).first() is not None
+    existing = db.query(Student).filter_by(email=email).first()
+    # a teacher account can't be a student in a batch — joining would also nuke their teacher session.
+    if existing and existing.is_teacher:
+        return RedirectResponse(f"/join/{code}?err=teacher", status_code=302)
+    existed = existing is not None
     student = get_or_create_student(db, email)
     if name and not student.name:
         student.name = name[:120]
     student.teacher_id = inv.teacher_id                    # link to the institute
+    student.batch_id = inv.id                              # …and to this specific batch
     _link_subjects(db, student, inv.subjects)              # seed the batch's subjects
     db.commit()
     if not existed:
@@ -1719,8 +1777,11 @@ def _student_assignments(db, student):
     section on the student dashboard)."""
     if not student or not getattr(student, "teacher_id", None):
         return []
+    bid = getattr(student, "batch_id", None)
     rows = (db.query(Assignment).filter_by(teacher_id=student.teacher_id, active=True)
-            .order_by(Assignment.created_at.desc()).limit(12).all())
+            .order_by(Assignment.created_at.desc()).all())
+    # batch-scope: an assignment with no batch (invite_id=None) is for ALL batches; else only this one.
+    rows = [a for a in rows if a.invite_id is None or a.invite_id == bid][:12]
     out = []
     for a in rows:
         if a.kind == "smart":
@@ -1746,6 +1807,14 @@ async def teacher_assign(request: Request, db: Session = Depends(get_db)):
     ref = (body.get("ref") or "").strip()[:80]
     if kind not in ("smart", "mock", "classtest"):
         return JSONResponse({"error": "bad kind"}, status_code=400)
+    # optional batch target: an invite_id owned by this teacher, else None = all batches
+    invite_id = body.get("invite_id")
+    try:
+        invite_id = int(invite_id) if invite_id not in (None, "", "all") else None
+    except (TypeError, ValueError):
+        invite_id = None
+    if invite_id is not None and not db.query(TeacherInvite).filter_by(id=invite_id, teacher_id=teacher.id).first():
+        invite_id = None
     sub_label = ""
     title = (body.get("title") or "").strip()[:140]
     if kind == "smart":
@@ -1760,7 +1829,8 @@ async def teacher_assign(request: Request, db: Session = Depends(get_db)):
         if not db.query(ClassTest).filter_by(code=ref, teacher_id=teacher.id).first():
             return JSONResponse({"error": "no such test"}, status_code=400)
         title = title or f"Test {ref}"
-    db.add(Assignment(teacher_id=teacher.id, kind=kind, ref=ref, title=title, subject_label=sub_label))
+    db.add(Assignment(teacher_id=teacher.id, invite_id=invite_id, kind=kind, ref=ref,
+                      title=title, subject_label=sub_label))
     db.commit()
     return JSONResponse({"ok": True})
 
@@ -1775,6 +1845,38 @@ def teacher_assign_remove(request: Request, aid: int, db: Session = Depends(get_
         a.active = False
         db.commit()
     return JSONResponse({"ok": True})
+
+
+@app.get("/teacher/student/{sid}", response_class=HTMLResponse)
+def teacher_student(request: Request, sid: int, db: Session = Depends(get_db)):
+    """A teacher's drill-down on ONE of their linked students — real mastery, weak topics, recent
+    tests, and which assigned tests they've done."""
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return RedirectResponse("/teacher", status_code=302)
+    s = db.query(Student).filter_by(id=sid, teacher_id=teacher.id).first()  # ownership-scoped
+    if not s:
+        return RedirectResponse("/teacher/invites", status_code=302)
+    prog = _student_progress(db, s)
+    batch = db.query(TeacherInvite).filter_by(id=getattr(s, "batch_id", None)).first()
+    subjects = [t.title for t in _student_topics(db, s)]
+    # recent tests (adaptive + account-linked class tests), newest first
+    attempts = (db.query(TopicAttempt).filter_by(student_id=s.id)
+                .order_by(TopicAttempt.taken_at.desc()).limit(10).all())
+    recent = [{"title": a.title or a.subject, "score": a.score, "total": a.total,
+               "pct": round(100 * a.score / a.total) if a.total else 0,
+               "when": a.taken_at.strftime("%d %b")} for a in attempts]
+    sits = (db.query(ClassSitting).filter_by(student_id=s.id)
+            .order_by(ClassSitting.submitted_at.desc()).limit(10).all())
+    for st in sits:
+        ct = db.query(ClassTest).filter_by(id=st.class_test_id).first()
+        recent.append({"title": (ct.title or ct.subject_label) if ct else "Class test",
+                       "score": st.score, "total": st.total,
+                       "pct": round(100 * st.score / st.total) if st.total else 0,
+                       "when": st.submitted_at.strftime("%d %b")})
+    return templates.TemplateResponse(request, "teacher_student.html", {
+        "student": teacher, "s": s, "prog": prog,
+        "batch": batch.label if batch else "—", "subjects": subjects, "recent": recent})
 
 
 @app.get("/teacher/new", response_class=HTMLResponse)
@@ -1914,6 +2016,12 @@ def class_take_gate(request: Request, code: str, db: Session = Depends(get_db)):
     if not ct:
         return HTMLResponse("<h2 style='font-family:sans-serif;padding:40px'>This test link is not valid.</h2>",
                             status_code=404)
+    # a LOGGED-IN student of this institute skips the name gate — we know who they are, and their
+    # result ties to their account (so it rolls up to the teacher roster, not an anonymous name).
+    me = current_student(request, db)
+    if me and not me.is_teacher and me.teacher_id == ct.teacher_id:
+        request.session[f"ct_{code}"] = me.name or me.email.split("@")[0]
+        return RedirectResponse(f"/t/{code}/go", status_code=302)
     # already gave a name this session → straight into the test
     if request.session.get(f"ct_{code}"):
         return RedirectResponse(f"/t/{code}/go", status_code=302)
@@ -1959,11 +2067,16 @@ async def teacher_sitting(request: Request, db: Session = Depends(get_db)):
     if not ct:
         return JSONResponse({"ok": False, "error": "unknown test"}, status_code=404)
     name = request.session.get(f"ct_{code}") or "Student"
+    # if the taker is a logged-in student of THIS institute, tie the sitting to their account.
+    me = current_student(request, db)
+    sid = me.id if (me and not me.is_teacher and me.teacher_id == ct.teacher_id) else None
+    if me and sid:
+        name = me.name or me.email.split("@")[0]
     results = body.get("results") or []
     concepts = [{"topic": r.get("topic"), "status": r.get("status"), "depth": r.get("depth")}
                 for r in results if r.get("topic")]
     weak = _weak_from_concepts(concepts)
-    db.add(ClassSitting(class_test_id=ct.id, student_name=name[:80],
+    db.add(ClassSitting(class_test_id=ct.id, student_id=sid, student_name=name[:80],
                         score=int(body.get("score") or 0), total=int(body.get("graded") or 0),
                         concepts=concepts, weak_topics=weak))
     db.commit()
@@ -3127,8 +3240,10 @@ def _assignments_json(db, student) -> list:
     """Native-friendly assignments for a linked student (kind + ref so the app can act)."""
     if not student or not getattr(student, "teacher_id", None):
         return []
+    bid = getattr(student, "batch_id", None)
     rows = (db.query(Assignment).filter_by(teacher_id=student.teacher_id, active=True)
-            .order_by(Assignment.created_at.desc()).limit(12).all())
+            .order_by(Assignment.created_at.desc()).all())
+    rows = [a for a in rows if a.invite_id is None or a.invite_id == bid][:12]
     return [{"id": a.id, "kind": a.kind, "ref": a.ref,
              "title": a.title or a.subject_label or "Practice", "subject": a.subject_label}
             for a in rows if a.kind in ("smart", "mock", "classtest")]

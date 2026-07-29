@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>My students — invite links · Acharya for Teachers</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+ :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;--card:#fff;--cream:#FAF5EC;--green:#2FA968;
+   --serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 60%,#F7E0C8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100dvh}
+ .wrap{max-width:640px;margin:0 auto;padding:18px 18px 60px}
+ header{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+ header .back{color:var(--gold2);font-weight:700;font-size:13px;text-decoration:none}
+ header .t{font-family:var(--serif);font-weight:800;font-size:20px}
+ .lead{color:var(--muted);font-size:14px;line-height:1.55;margin:4px 0 16px}
+ .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px;box-shadow:0 3px 14px rgba(120,60,20,.06)}
+ .sec{font-weight:800;font-size:13px;color:var(--gold2);text-transform:uppercase;letter-spacing:.4px;margin:2px 0 10px}
+ input.lbl{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;font-size:15px;font-family:var(--sans);margin-bottom:16px}
+ input.lbl:focus{outline:none;border-color:var(--gold)}
+ .subgroup{font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--gold2);margin:12px 0 6px}
+ .subgroup:first-child{margin-top:0}
+ .subs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+ .sub{border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:11px 12px;cursor:pointer;font-weight:700;font-size:13.5px;transition:.12s}
+ .sub.on{border-color:var(--gold2);background:#FFF3E6;color:var(--gold2)}
+ .go{width:100%;background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:12px;padding:15px;font-size:15.5px;font-weight:800;cursor:pointer;margin-top:18px}
+ .go:disabled{opacity:.5}
+ .inv{border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin-top:11px;background:var(--cream)}
+ .inv .nm{font-weight:800;font-size:15px}
+ .inv .sl{font-size:12px;color:var(--muted);margin-top:3px}
+ .inv .lk{display:flex;gap:8px;margin-top:10px}
+ .inv .lk input{flex:1;border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:12.5px;background:#fff;min-width:0}
+ .inv .lk button{border:none;border-radius:9px;padding:9px 13px;font-size:12.5px;font-weight:800;cursor:pointer}
+ .cp{background:var(--gold2);color:#fff}.wa{background:#25D366;color:#fff;text-decoration:none;display:flex;align-items:center}
+ .empty{color:var(--faint);font-size:13.5px;text-align:center;padding:14px}
+ .roster{font-size:13px;color:var(--muted);margin-top:2px}
+ a.stu{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+ a.stu:last-child{border-bottom:none}
+ .stu .av{width:38px;height:38px;border-radius:50%;background:#FFF3E6;color:var(--gold2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+ .stu .who{flex:1;min-width:0}
+ .stu .who b{font-size:14.5px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .stu .who small{font-size:11.5px;color:var(--muted)}
+ .stu .m{text-align:right;flex-shrink:0}
+ .stu .m .pct{font-weight:800;font-size:15px}
+ .stu .m small{font-size:11px;color:var(--faint)}
+ .pill{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:20px;margin-left:6px;vertical-align:middle}
+ .pill.help{background:#FBE4DE;color:var(--gold2)}
+ .pill.new{background:#EAF6EF;color:var(--green)}
+ .weak{color:var(--gold2)} .arrow{color:var(--faint);font-size:18px;flex-shrink:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><a class="back" href="/teacher">← My class</a><div class="t">My students</div></header>
+  <p class="lead">Create a <b>join link</b> for each batch. Share it — students sign in, get <b>exactly the subjects you pick</b>, and every test they take shows up below with their real name and score. <b>{{ roster_count }}</b> student{{ '' if roster_count == 1 else 's' }} joined so far.</p>
+
+  <div class="card">
+    <div class="sec">Your students {% if roster_count %}<span style="color:var(--faint);font-weight:700">· weakest first</span>{% endif %}</div>
+    {% if roster %}
+      {% for r in roster %}
+      <a class="stu" href="/teacher/student/{{ r.id }}">
+        <div class="av">{{ r.name[:1]|upper }}</div>
+        <div class="who">
+          <b>{{ r.name }}{% if r.needs_help %}<span class="pill help">needs help</span>{% elif not r.practised %}<span class="pill new">new</span>{% endif %}</b>
+          <small>{{ r.batch }}{% if r.weak %} · weak: <span class="weak">{{ r.weak|join(', ') }}</span>{% endif %}</small>
+        </div>
+        <div class="m">
+          {% if r.practised %}<div class="pct">{{ r.mastery }}%</div><small>{{ r.tests }} test{{ '' if r.tests==1 else 's' }}</small>
+          {% else %}<small>not started</small>{% endif %}
+        </div>
+        <div class="arrow">›</div>
+      </a>
+      {% endfor %}
+    {% else %}
+      <div class="empty">No students yet. Create a join link below and share it — they'll appear here the moment they join, and their test results roll up automatically.</div>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <div class="sec">Create a join link</div>
+    <input class="lbl" id="label" placeholder="Batch name — e.g. Class 12 PCM, Class 10, Commerce" maxlength="80" />
+    <div class="sec" style="margin-top:4px">Subjects for this batch</div>
+    <div class="subs" id="subs">
+      {% set ns = namespace(cur='') %}
+      {% for s in subjects %}
+        {% if s.exam != ns.cur %}{% set ns.cur = s.exam %}<div class="subgroup" style="grid-column:1/-1">{{ s.exam }}</div>{% endif %}
+        <div class="sub" data-sub="{{ s.id }}">{{ s.label }}</div>
+      {% endfor %}
+    </div>
+    <button class="go" id="create">Create join link</button>
+    <div id="msg" style="text-align:center;font-size:13px;color:var(--muted);margin-top:10px"></div>
+  </div>
+
+  <div class="card">
+    <div class="sec">Assign to your class</div>
+    <p style="font-size:13px;color:var(--muted);margin:-4px 0 12px">The chosen students see this in their <b>“📋 Assigned by you”</b> box on their dashboard.</p>
+    {% if invites %}
+    <select id="abatch" style="width:100%;border:1.5px solid var(--gold);border-radius:11px;padding:12px;font-size:14.5px;font-family:var(--sans);margin-bottom:10px;font-weight:700;color:var(--gold2);background:#FFF9F2">
+      <option value="all">📚 All my batches</option>
+      {% for inv in invites %}<option value="{{ inv.id }}">Only: {{ inv.label }} ({{ inv.count }})</option>{% endfor %}
+    </select>
+    {% endif %}
+    <select id="asub" style="width:100%;border:1.5px solid var(--line);border-radius:11px;padding:12px;font-size:14.5px;font-family:var(--sans);margin-bottom:10px">
+      <option value="">Pick a subject…</option>
+      {% set ns2 = namespace(cur='') %}
+      {% for s in subjects %}
+        {% if s.exam != ns2.cur %}{% set ns2.cur = s.exam %}<optgroup label="{{ s.exam }}">{% endif %}
+        <option value="{{ s.id }}">{{ s.label }}</option>
+      {% endfor %}
+    </select>
+    <div style="display:flex;gap:9px">
+      <button class="go" style="margin:0;flex:1" onclick="assign('smart')">🎯 Assign Smart Practice</button>
+      <button class="go" style="margin:0;flex:1;background:var(--card);color:var(--gold2);border:1.5px solid var(--gold)" onclick="assign('mock')">⏱️ Assign Mock test</button>
+    </div>
+    {% if tests %}
+    <div style="display:flex;gap:9px;margin-top:10px">
+      <select id="atest" style="flex:1;border:1.5px solid var(--line);border-radius:11px;padding:12px;font-size:14px;font-family:var(--sans)">
+        <option value="">A test you created…</option>
+        {% for t in tests %}<option value="{{ t.code }}">{{ t.title }} ({{ t.code }})</option>{% endfor %}
+      </select>
+      <button class="go" style="margin:0" onclick="assignTest()">Assign</button>
+    </div>
+    {% endif %}
+    <div id="amsg" style="text-align:center;font-size:13px;color:var(--muted);margin-top:10px"></div>
+    {% if assignments %}
+    <div style="margin-top:14px;border-top:1px solid var(--line);padding-top:12px">
+      <div style="font-size:12px;font-weight:800;color:var(--gold2);text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px">Currently assigned</div>
+      {% for a in assignments %}
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 0;font-size:13.5px">
+        <span style="flex:1">{{ '🎯' if a.kind=='smart' else ('⏱️' if a.kind=='mock' else '📝') }} {{ a.title }} <small style="color:var(--faint)">· {{ a.batch }}</small></span>
+        <button onclick="unassign({{ a.id }},this)" style="border:none;background:none;color:var(--faint);font-size:12px;font-weight:700;cursor:pointer;text-decoration:underline">remove</button>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <div class="sec">Your join links</div>
+    <div id="list">
+      {% for inv in invites %}
+      <div class="inv">
+        <div class="nm">{{ inv.label }}</div>
+        <div class="sl">{{ inv.sublabels|join(' · ') }}</div>
+        <div class="lk">
+          <input readonly value="{{ inv.url }}" />
+          <button class="cp" onclick="cp(this)">Copy</button>
+          <a class="wa" target="_blank" rel="noopener" href="https://wa.me/?text={{ ('Join our Acharya class (' ~ inv.label ~ '): ' ~ inv.url)|urlencode }}">WhatsApp</a>
+        </div>
+      </div>
+      {% endfor %}
+      {% if not invites %}<div class="empty">No join links yet — create one above.</div>{% endif %}
+    </div>
+  </div>
+</div>
+<script>
+var sel=new Set();
+document.querySelectorAll('.sub').forEach(function(el){el.onclick=function(){var s=el.dataset.sub;if(sel.has(s)){sel.delete(s);el.classList.remove('on');}else{sel.add(s);el.classList.add('on');}};});
+document.getElementById('create').onclick=function(){
+  var btn=this,msg=document.getElementById('msg');
+  if(sel.size===0){msg.textContent='Pick at least one subject.';return;}
+  btn.disabled=true;msg.textContent='Creating…';
+  fetch('/api/teacher/invite',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+    body:JSON.stringify({label:document.getElementById('label').value,subjects:Array.from(sel)})})
+   .then(function(r){return r.json();}).then(function(j){
+     btn.disabled=false;
+     if(j.ok){location.reload();}
+     else{msg.textContent=j.error||'Could not create — try again.';}
+   }).catch(function(){btn.disabled=false;msg.textContent='Network error — try again.';});
+};
+function cp(b){var i=b.parentNode.querySelector('input');i.select();document.execCommand('copy');var t=b.textContent;b.textContent='Copied!';setTimeout(function(){b.textContent=t;},1200);}
+function _assign(payload){var m=document.getElementById('amsg');m.textContent='Assigning…';
+  var bs=document.getElementById('abatch');payload.invite_id=bs?bs.value:'all';
+  fetch('/api/teacher/assign',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',body:JSON.stringify(payload)})
+   .then(function(r){return r.json();}).then(function(j){if(j.ok){location.reload();}else{m.textContent=j.error||'Could not assign.';}}).catch(function(){m.textContent='Network error.';});}
+function assign(kind){var s=document.getElementById('asub').value;if(!s){document.getElementById('amsg').textContent='Pick a subject first.';return;}_assign({kind:kind,ref:s});}
+function assignTest(){var c=document.getElementById('atest').value;if(!c){document.getElementById('amsg').textContent='Pick a test.';return;}_assign({kind:'classtest',ref:c});}
+function unassign(id,b){b.textContent='…';fetch('/api/teacher/assign/'+id+'/remove',{method:'POST',credentials:'same-origin'}).then(function(){location.reload();});}
+</script>
+</body>
+</html>

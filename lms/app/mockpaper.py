@@ -41,6 +41,96 @@ BLUEPRINT = {
 
 TOTAL_Q = sum(s["n"] for s in BLUEPRINT["sections"])            # 17
 MAX_MARKS = sum(s["n"] * s["marks"] for s in BLUEPRINT["sections"])  # 62
+
+# ── Per-goal blueprints for the shared test series (used by tools/build_mock_papers.py) ──
+# Keyed by examgen.GOALS id. `mix` = how many slots each subject-slug gets (multi-subject papers).
+# OBJECTIVE exams only: CBSE boards/commerce are subjective, so we do NOT fake a board mock — those
+# goals fall through to the honest "coming soon" empty state on /exam-prep/papers.
+_MCQ = {"name": "Single correct — one option", "type": "MCQ_single", "partial": 0}
+BLUEPRINTS = {
+    "jee-advanced": {          # the original hard Physics paper (multi-type)
+        "label": "JEE Advanced Physics", "code": "JEEADV-PHY", "minutes": 60, "difficulty": "4",
+        "mix": {"jee-physics": 17}, "sections": BLUEPRINT["sections"],
+    },
+    "neet": {                  # single-correct, +4/-1, Bio-heavy
+        "label": "NEET", "code": "NEET", "minutes": 25, "difficulty": "3",
+        "mix": {"neet-biology": 8, "neet-physics": 4, "neet-chemistry": 4},
+        "sections": [{**_MCQ, "n": 16, "marks": 4, "neg": -1}],
+    },
+    "jee-main": {              # single-correct MCQ + numerical, +4/-1
+        "label": "JEE Main", "code": "JEEMAIN", "minutes": 30, "difficulty": "3",
+        "mix": {"jeemain-physics": 5, "jeemain-chemistry": 5, "jeemain-maths": 5},
+        "sections": [{**_MCQ, "n": 12, "marks": 4, "neg": -1},
+                     {"name": "Numerical value", "type": "numeric", "n": 3, "marks": 4, "neg": 0, "partial": 0}],
+    },
+    "banking": {               # quant aptitude, +1/-0.25
+        "label": "Banking — Quantitative Aptitude", "code": "BANK-QUANT", "minutes": 20, "difficulty": "2",
+        "mix": {"banking-quant": 15},
+        "sections": [{**_MCQ, "n": 15, "marks": 1, "neg": -0.25}],
+    },
+    "upsc": {                  # Prelims GS + CSAT, +2/-0.66
+        "label": "UPSC Civil Services (Prelims)", "code": "UPSC", "minutes": 20, "difficulty": "3",
+        "mix": {"upsc-gs": 10, "upsc-csat": 5},
+        "sections": [{**_MCQ, "n": 15, "marks": 2, "neg": -0.66}],
+    },
+    # ── CBSE boards: real NCERT-sourced OBJECTIVE (MCQ) questions from /pool. 1 mark each, NO
+    # negative marking (board style). These are objective practice papers, not the full subjective
+    # board paper — built via tools/build_pool_papers.py (real questions), not the LLM generator.
+    "cbse-10": {
+        "label": "CBSE Class 10 Science", "code": "CBSE10", "minutes": 20, "kind": "mcq",
+        "mix": {"cbse10-science": 15},
+        "sections": [{**_MCQ, "n": 15, "marks": 1, "neg": 0}],
+    },
+    "cbse-12": {
+        "label": "CBSE Class 12 (PCB)", "code": "CBSE12", "minutes": 25, "kind": "mcq",
+        "mix": {"cbse12-physics": 5, "cbse12-chemistry": 5, "cbse12-biology": 5},
+        "sections": [{**_MCQ, "n": 15, "marks": 1, "neg": 0}],
+    },
+    "cbse-12-commerce": {
+        "label": "CBSE Class 12 Commerce", "code": "CBSE12-COM", "minutes": 20, "kind": "mcq",
+        "mix": {"cbse12-accountancy": 8, "cbse12-economics": 7},
+        "sections": [{**_MCQ, "n": 15, "marks": 1, "neg": 0}],
+    },
+}
+
+# A goal's paper kind: "full" = real objective exam format (JEE/NEET/Banking/UPSC), "mcq" =
+# objective MCQ practice only (CBSE boards — the bank has no subjective board questions yet).
+def paper_kind(goal_id: str) -> str:
+    return BLUEPRINTS.get(goal_id, {}).get("kind", "full")
+
+
+def plan_paper_multi(goal_id: str, chapters_by_subject: dict, seed: int) -> list[dict]:
+    """Plan all slots for one paper of `goal_id`, distributing across the goal's subjects per its
+    `mix`, weighted by banked exemplars. `chapters_by_subject` = {subject_slug: [chapter dicts]}."""
+    bp = BLUEPRINTS[goal_id]
+    rng = random.Random(seed)
+    # flat list of (section) templates, one entry per question slot
+    slot_secs = [sec for sec in bp["sections"] for _ in range(sec["n"])]
+    # assign a subject to each slot per the mix, then shuffle so subjects interleave
+    subj_slots = []
+    for subj, n in bp["mix"].items():
+        subj_slots += [subj] * n
+    rng.shuffle(subj_slots)
+    slots, used = [], {}
+    for sec, subj in zip(slot_secs, subj_slots):
+        # concepts are optional — some subjects (e.g. NEET Physics/Chemistry) bank exemplars but
+        # ship no per-chapter concept list; examgen generates fine from just the chapter.
+        pool = [c for c in (chapters_by_subject.get(subj) or [])
+                if (c.get("exemplars_banked") or 0) > 0] or list(chapters_by_subject.get(subj) or [])
+        if not pool:
+            continue
+        weights = [max(1, c.get("exemplars_banked", 1)) for c in pool]
+        choices = [c for c in pool if used.get((subj, c["chapter"]), 0) < 3] or pool
+        w = [weights[pool.index(c)] for c in choices]
+        ch = rng.choices(choices, weights=w, k=1)[0]
+        used[(subj, ch["chapter"])] = used.get((subj, ch["chapter"]), 0) + 1
+        cons = ch.get("concepts") or []
+        slots.append({"section": sec["name"], "type": sec["type"],
+                      "marks": sec["marks"], "neg": sec["neg"], "partial": sec.get("partial", 0),
+                      "subject": subj, "chapter": ch["chapter"],
+                      "concept": (rng.choice(cons) if cons else ""),
+                      "figure": False})
+    return slots
 SERIES_SIZE = 15          # papers pre-generated and shared with everyone
 DIFFICULTY = "4"          # the real papers cluster hard; a few 3s come through anyway
 

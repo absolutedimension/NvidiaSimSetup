@@ -314,6 +314,7 @@ def _migrate():
     from sqlalchemy import text
     for stmt in (
         "ALTER TABLE modules ADD COLUMN IF NOT EXISTS course VARCHAR(40) DEFAULT 'agentic'",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS teacher_id INTEGER NULL",
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS course VARCHAR(40) DEFAULT 'agentic'",
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS phone VARCHAR(20) DEFAULT ''",
         "ALTER TABLE course_requests ADD COLUMN IF NOT EXISTS source VARCHAR(20) DEFAULT 'whatsapp'",
@@ -340,6 +341,13 @@ def _migrate():
         # teacher/institute (B2B): a Student row can also be a teacher who creates class tests
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS is_teacher BOOLEAN DEFAULT FALSE",
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS institute VARCHAR(120) DEFAULT ''",
+        # institute classroom (B2B2C) — batch-scoping + account-linked results:
+        #  batch_id  = which TeacherInvite (batch) a linked student joined through
+        #  invite_id = which batch an Assignment targets (NULL = all the teacher's batches)
+        #  student_id on a ClassSitting = the logged-in linked student who took it (else anonymous name)
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS batch_id INTEGER NULL",
+        "ALTER TABLE assignments ADD COLUMN IF NOT EXISTS invite_id INTEGER NULL",
+        "ALTER TABLE class_sittings ADD COLUMN IF NOT EXISTS student_id INTEGER NULL",
         # GRANDFATHER (one-time): every student that exists when the column is first added is
         # NULL → mark grandfathered (full access forever, never paywalled). Re-running matches
         # nothing because new signups are 'none' (not NULL), so it's idempotent.

@@ -71,6 +71,11 @@ RAG_SUBJECTS = {
         "match": ["cbse class 10 science", "class 10 science", "class10 science", "cbse10-science",
                   "class 10 board", "10th science", "class 10", "class10"],
     },
+    "cbse10-maths": {
+        "label": "Class 10 Maths", "exam": "CBSE Class 10", "subject": "Mathematics", "kw": "math",
+        "match": ["cbse class 10 maths", "class 10 maths", "class10 maths", "cbse10-maths",
+                  "class 10 mathematics", "class 10 math", "10th maths", "10 maths"],
+    },
     "cbse12-physics": {
         "label": "Class 12 Physics", "exam": "CBSE Class 12", "subject": "Physics", "kw": "physics",
         "match": ["cbse class 12 physics", "class 12 physics", "class12 physics", "cbse12-physics",
@@ -80,6 +85,11 @@ RAG_SUBJECTS = {
         "label": "Class 12 Chemistry", "exam": "CBSE Class 12", "subject": "Chemistry", "kw": "chem",
         "match": ["cbse class 12 chemistry", "class 12 chemistry", "class12 chemistry", "cbse12-chemistry",
                   "12th chemistry"],
+    },
+    "cbse12-maths": {
+        "label": "Class 12 Maths", "exam": "CBSE Class 12", "subject": "Mathematics", "kw": "math",
+        "match": ["cbse class 12 maths", "class 12 maths", "class12 maths", "cbse12-maths",
+                  "class 12 mathematics", "class 12 math", "12th maths", "12 maths"],
     },
     "cbse12-biology": {
         "label": "Class 12 Biology", "exam": "CBSE Class 12", "subject": "Biology", "kw": "bio",
@@ -140,12 +150,12 @@ GOALS = {
         "subjects": ["neet-biology", "neet-physics", "neet-chemistry"],
     },
     "cbse-10": {
-        "label": "CBSE Class 10", "tag": "Boards · Science", "emoji": "📘",
-        "subjects": ["cbse10-science"],
+        "label": "CBSE Class 10", "tag": "Boards · Science + Maths", "emoji": "📘",
+        "subjects": ["cbse10-science", "cbse10-maths"],
     },
     "cbse-12": {
         "label": "CBSE Class 12", "tag": "Boards · PCB", "emoji": "📗",
-        "subjects": ["cbse12-physics", "cbse12-chemistry", "cbse12-biology"],
+        "subjects": ["cbse12-physics", "cbse12-chemistry", "cbse12-maths", "cbse12-biology"],
     },
     "cbse-12-commerce": {
         "label": "Class 12 Commerce", "tag": "Boards · Commerce", "emoji": "📊",

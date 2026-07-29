@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Join {{ institute }} on Acharya</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+ :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;--card:#fff;--cream:#FAF5EC;--green:#2FA968;
+   --serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 60%,#F7E0C8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100dvh;display:flex;justify-content:center;padding:34px 16px 60px}
+ .wrap{width:100%;max-width:440px}
+ .brand{font-family:var(--serif);font-weight:800;font-size:22px;text-align:center;margin-bottom:4px}
+ .brand small{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:2px}
+ .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 22px;margin-top:20px;box-shadow:0 8px 30px rgba(120,60,20,.08)}
+ .badge{display:inline-block;background:#FFF3E6;border:1px solid var(--line);color:var(--gold2);font-weight:700;font-size:12px;border-radius:99px;padding:5px 12px;margin-bottom:12px}
+ h1{font-family:var(--serif);font-weight:800;font-size:23px;line-height:1.15;margin-bottom:6px}
+ .sub{color:var(--muted);font-size:14px;line-height:1.5}
+ .subjects{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 4px}
+ .subjects span{background:var(--cream);border:1px solid var(--line);border-radius:9px;padding:6px 11px;font-size:12.5px;font-weight:700;color:var(--gold2)}
+ form{margin-top:20px;display:flex;flex-direction:column;gap:11px}
+ input{border:1.5px solid var(--line);border-radius:12px;padding:14px 15px;font-size:15px;font-family:var(--sans);background:#fff}
+ input:focus{outline:none;border-color:var(--gold)}
+ button{background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:12px;padding:15px;font-size:15.5px;font-weight:800;cursor:pointer}
+ .fine{font-size:12px;color:var(--faint);text-align:center;margin-top:14px;line-height:1.5}
+ .err{background:#FBE9E4;border:1px solid #F0C9BF;color:#9c3220;border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">Acharya<small>your prep companion</small></div>
+  <div class="card">
+    <span class="badge">🎓 {{ institute }}</span>
+    <h1>Join your class{% if label %} · {{ label }}{% endif %}</h1>
+    <p class="sub">Your teacher has set up Acharya for your batch. Sign in to practise, take mock tests, and see the tests your teacher assigns.</p>
+    {% if sublabels %}
+    <div class="subjects">{% for s in sublabels %}<span>{{ s }}</span>{% endfor %}</div>
+    {% endif %}
+    {% if teacher_warning %}
+    <div class="err" style="margin-top:14px;background:#FFF3E6;border-color:#F0D9BF;color:#8a5314">
+      You're signed in as the <b>teacher</b>. Joining here will switch this browser to a student account
+      (you'll be logged out of the teacher console). To try the student experience, open this link in a
+      <b>private / incognito window</b> instead.
+    </div>
+    {% endif %}
+    {% if err == 'teacher' %}<div class="err" style="margin-top:14px">That email is a teacher account — it can't join a class as a student. Use a different email.</div>
+    {% elif err %}<div class="err" style="margin-top:14px">Please enter a valid email.</div>{% endif %}
+    <form method="post" action="/join/{{ code }}">
+      <input type="text" name="name" placeholder="Your name" autocomplete="name" />
+      <input type="email" name="email" placeholder="Your email" autocomplete="email" required />
+      <button type="submit">Join {{ institute }} →</button>
+    </form>
+    <div class="fine">Free to start. Your teacher can see your test results and assign you practice.</div>
+  </div>
+</div>
+</body>
+</html>

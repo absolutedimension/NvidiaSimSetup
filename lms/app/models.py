@@ -22,6 +22,11 @@ class Student(Base):
     plan: Mapped[str] = mapped_column(String(40), default="full")          # full | emi
     status: Mapped[str] = mapped_column(String(20), default="active")      # active | paused
     is_admin: Mapped[bool] = mapped_column(Boolean, default=False)
+    # B2B2C: if set, this student belongs to a teacher/institute (joined via a teacher's link). Their
+    # subjects are teacher-controlled (they can't add their own) and they see teacher-assigned tests.
+    teacher_id: Mapped[int | None] = mapped_column(ForeignKey("students.id"), nullable=True, index=True)
+    # the specific BATCH (TeacherInvite) this student joined through — scopes their assignments + roster.
+    batch_id: Mapped[int | None] = mapped_column(ForeignKey("teacher_invites.id"), nullable=True, index=True)
     enrolled_at: Mapped[datetime] = mapped_column(DateTime, default=now)
     last_active_at: Mapped[datetime] = mapped_column(DateTime, default=now)
     # ---- subscription (Razorpay) ----
@@ -277,6 +282,37 @@ class ConceptStat(Base):
     last_at: Mapped[datetime] = mapped_column(DateTime, default=now)
 
 
+class TeacherInvite(Base):
+    """A teacher's 'join my class' link (per BATCH). A student who signs up via /join/<code> is
+    LINKED to the teacher (Student.teacher_id) and seeded exactly this batch's subjects — the
+    institute controls the syllabus, the student can't add their own. E.g. 'Class 12 PCM', 'Commerce'."""
+    __tablename__ = "teacher_invites"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    code: Mapped[str] = mapped_column(String(16), unique=True, index=True)
+    teacher_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    label: Mapped[str] = mapped_column(String(80), default="")               # batch name
+    subjects: Mapped[list] = mapped_column(JSON, default=list)               # subject ids this batch studies
+    active: Mapped[bool] = mapped_column(Boolean, default=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now)
+
+
+class Assignment(Base):
+    """A practice/test a TEACHER assigns to their LINKED students (Student.teacher_id). Shows in the
+    student's '📋 Assigned by your teacher' section. kind = smart (adaptive practice on a subject) |
+    mock (a mock paper) | classtest (a shared ClassTest code)."""
+    __tablename__ = "assignments"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    teacher_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    # the BATCH this assignment targets. Null = applies to ALL of the teacher's batches (back-compat).
+    invite_id: Mapped[int | None] = mapped_column(ForeignKey("teacher_invites.id"), nullable=True, index=True)
+    kind: Mapped[str] = mapped_column(String(16))                 # smart | mock | classtest
+    ref: Mapped[str] = mapped_column(String(80), default="")      # subject_id | mock paper id | classtest code
+    title: Mapped[str] = mapped_column(String(140), default="")
+    subject_label: Mapped[str] = mapped_column(String(80), default="")
+    active: Mapped[bool] = mapped_column(Boolean, default=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now)
+
+
 class ClassTest(Base):
     """A test a TEACHER creates for their class. Questions are generated ONCE (examgen) and stored
     in `pack`, so every student gets the SAME paper instantly — no per-student LLM cost or wait.
@@ -301,6 +337,9 @@ class ClassSitting(Base):
     __tablename__ = "class_sittings"
     id: Mapped[int] = mapped_column(primary_key=True)
     class_test_id: Mapped[int] = mapped_column(ForeignKey("class_tests.id"), index=True)
+    # set when the taker is a LOGGED-IN linked student (institute batch) — ties the result to their
+    # account so it rolls up to the teacher roster. Null for anonymous /t/<code> name-gate takers.
+    student_id: Mapped[int | None] = mapped_column(ForeignKey("students.id"), nullable=True, index=True)
     student_name: Mapped[str] = mapped_column(String(80), default="")
     score: Mapped[int] = mapped_column(Integer, default=0)
     total: Mapped[int] = mapped_column(Integer, default=0)                   # graded-question count

@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="robots" content="noindex" />
-<title>Test series — full JEE Advanced papers · Acharya</title>
+<title>Test series — full {{ goal.label }} papers · Acharya</title>
 <link rel="icon" href="/static/brand/favicon-32.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -38,22 +38,29 @@
 <div class="wrap">
   <header>
     <div class="ava">📝</div>
-    <div class="tt"><div class="t">Test series</div><div class="s">full JEE Advanced style papers</div></div>
+    <div class="tt"><div class="t">Test series</div><div class="s">{% if kind == 'mcq' %}{{ goal.label }} · MCQ practice{% else %}full {{ goal.label }} style papers{% endif %}</div></div>
     <a class="back" href="/exam-prep/dashboard">← Home</a>
   </header>
   <main>
 
-    <div class="intro">
-      <div class="h">Full paper, real exam conditions</div>
-      <p>Each paper follows the actual JEE Advanced Physics pattern — same section structure, same
-         question types, same marking, {{ blueprint.minutes }} minutes on the clock. No feedback until you submit.</p>
-      <div class="bp">
-        {% for s in blueprint.sections %}<span>{{ s.n }} × {{ s.name.split('—')[1].strip() }}</span>{% endfor %}
-        <span>{{ total_q }} questions</span><span>{{ blueprint.minutes }} min</span>
-      </div>
-    </div>
-
     {% if papers %}
+      {% set p0 = papers[0] %}
+      <div class="intro">
+        {% if kind == 'mcq' %}
+        <div class="h">MCQ practice — real NCERT questions</div>
+        <p>Objective (MCQ) practice built from real NCERT board questions — {{ p0.questions|length }}
+           questions, {{ p0.minutes }} min, 1 mark each, no negative marking. Note: the full {{ goal.label }}
+           board paper also has written short/long-answer sections — those are coming.</p>
+        {% else %}
+        <div class="h">Full paper, real exam conditions</div>
+        <p>Each paper follows the real {{ goal.label }} pattern — same section structure, same
+           question types, same marking, {{ p0.minutes }} minutes on the clock. No feedback until you submit.</p>
+        {% endif %}
+        <div class="bp">
+          <span>{{ p0.questions|length }} questions</span><span>{{ p0.max_marks }} marks</span><span>{{ p0.minutes }} min</span>
+        </div>
+      </div>
+
       {% for p in papers %}
         {% set a = done.get(p.id) %}
         <a class="p" href="/exam-prep/paper/{{ p.id }}">
@@ -68,9 +75,10 @@
       <div class="note">Papers are the same for everyone — compare your score with other students.</div>
     {% else %}
       <div class="empty">
-        <b>Papers are being prepared.</b><br>
-        The full test series is generating right now — each paper is 17 fresh questions written in the
-        real exam style. Check back shortly.
+        <b>Mock papers for {{ goal.label }} are coming soon.</b><br>
+        Full {{ goal.label }} test papers are being prepared. Meanwhile, sharpen up with
+        <a href="/exam-prep/smart" style="color:var(--gold2);font-weight:700">Smart Practice</a> or
+        <a href="/exam-prep/dashboard" style="color:var(--gold2);font-weight:700">a topic test</a>.
       </div>
     {% endif %}
 

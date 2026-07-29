@@ -1,34 +1,46 @@
 """SEO + AI-SEO (robots.txt, sitemap.xml, llms.txt, JSON-LD structured data).
 
-lms.trigunai.com is mostly a logged-in app; the public, crawlable surface is /login (the course
-catalogue + syllabi), /pricing, and the legal pages. This module makes those discoverable in Google
-AND by AI assistants (ChatGPT, Perplexity, Claude, Gemini) via llms.txt + schema.org structured data.
+acharya.trigunai.com is the product home for Acharya — an AI **exam-prep & assessment engine**.
+It has two sections: **students** (`/exam-prep` — self-serve adaptive practice tests + mock papers
+with weak-topic diagnosis) and **teachers** (`/teacher` — create a real exam-pattern test paper,
+share a no-signup link, get a live weak-topic dashboard for the class). Both are built on a bank of
+46,000+ verified questions across JEE, NEET, CBSE Class 10 & 12, UPSC and Banking.
+
+This module makes those public surfaces discoverable in Google AND by AI assistants (ChatGPT,
+Perplexity, Claude, Gemini) via llms.txt + schema.org structured data. The crawl angle is
+**exam-authentic test papers**, not the older "courses" framing (courses are now secondary).
 """
 import json
 
 SITE = "https://acharya.trigunai.com"   # canonical domain (lms.trigunai.com 301-redirects here)
 BRAND = "TrigunAI"
+PRODUCT = "Acharya"
 LEGAL_NAME = "TRIGUNAI INNOVATIONS PRIVATE LIMITED"
 LOGO = f"{SITE}/static/brand/icon-512.png"
-PRICE = 499
+QBANK_VERIFIED = "46,000+"      # verified questions behind the papers — the real differentiator
+PRICE = 499                     # legacy all-access course subscription (secondary)
 TEACHER_PRICE = 4999
-STUDENT_PRICE = 199          # the self-serve exam-prep assessment plan
+STUDENT_PRICE = 249             # the self-serve exam-prep plan
 STUDENT_TRIAL_DAYS = 14
 WHATSAPP = "+91 91352 55107"
+
+# The exam range the papers cover (live today). Kept in sync with STUDENT_EXAMS(available) in main.py.
+EXAM_RANGE = "JEE, NEET, CBSE Class 10 & 12 (incl. Commerce), UPSC Civil Services and Banking (IBPS / SBI / RRB)"
 
 # Public, indexable pages (path, changefreq, priority)
 PUBLIC_PAGES = [
     ("/", "weekly", "1.0"),
-    ("/exam-prep", "weekly", "1.0"),
-    ("/login", "weekly", "1.0"),
-    ("/pricing", "weekly", "0.9"),
+    ("/exam-prep", "weekly", "1.0"),     # students
+    ("/teacher", "weekly", "1.0"),       # teachers
+    ("/login", "weekly", "0.8"),
+    ("/pricing", "weekly", "0.8"),
     ("/terms", "yearly", "0.3"),
     ("/privacy", "yearly", "0.3"),
     ("/refund", "yearly", "0.3"),
     ("/contact", "yearly", "0.3"),
 ]
 
-# One-line, keyword-rich description per course (id must match COURSES ids in main.py)
+# One-line, keyword-rich description per course (id must match COURSES ids in main.py). Secondary now.
 COURSE_DESC = {
     "agentic": "Build autonomous AI agents that use tools, memory and multi-step planning — from your first tool-calling agent to a real business agent you ship.",
     "remote-swe": "Crack the remote software-engineering job by commanding AI coding agents: data structures & algorithms, low-level and high-level system design, and the AI pair-programming interview.",
@@ -41,48 +53,84 @@ COURSE_DESC = {
     "ai-music-factory": "Build your own AI music studio — turn prompts or lyrics into finished, mastered, copyright-clean songs, and build your own AI singer.",
 }
 
+# General FAQ (used on /login + /pricing) — now led by the test-paper / exam-prep angle.
 FAQ = [
     ("What is TrigunAI / Acharya?",
-     "TrigunAI builds Acharya — an AI teaching assistant that brings discipline to learning. Acharya holds each student's goal and keeps them on track with one focused step a day, on WhatsApp and web, in English or हिंदी. For teachers, coaching institutes and self-learners. TrigunAI also offers project-based courses in AI, machine learning, robotics, VR/MR and more, each taught one-on-one by Acharya."),
-    ("What makes Acharya different from ChatGPT or free AI?",
-     "Free AI answers any question and then forgets you — a genie that grants a wish and vanishes. Acharya is a guru: it brings discipline to learning. It holds each student's goal, gives them one focused step a day toward it, won't mark a concept 'learned' until they can explain it in their own words and apply it to a new example, and re-engages them if they go quiet for days. It doesn't just answer — it makes sure you actually learn and finish."),
-    ("What is Acharya's Goal OS?",
-     "Goal OS is how Acharya keeps every student on track. When a student joins, Acharya helps them set one clear goal, then holds that goal and gives them one focused step a day toward it. If they drift or go silent for several days, Acharya brings them back — anchored to their own goal — and flags it to their teacher. It turns scattered, on-and-off studying into steady progress that actually finishes."),
-    ("How does Acharya keep students disciplined and stop them dropping off?",
-     "Between classes students lose momentum, forget last week's concept and drift away. Acharya carries the teaching into those hours: a daily focused step toward their goal, spaced revision so nothing fades, a mastery check that won't let them fake understanding, and an automatic nudge if they go quiet — so capable-but-scattered students stay on track and complete instead of dropping off. For an institute, that means fewer silent drop-offs and more students who finish."),
-    ("How much does TrigunAI cost?",
-     f"₹{PRICE} per month with a 7-day free trial. You can start with a card or with the no-card 'skip payment' option, and cancel anytime."),
-    ("Do I need coding experience to start?",
-     "No. The courses are beginner-friendly and you build alongside AI coding agents that write the code with you, so non-coders can ship real projects."),
-    ("Is there a free trial?",
-     "Yes — every course is free for 7 days. With the no-card option you can start instantly and only pay ₹499/month if you decide to continue."),
-    ("What can I learn on TrigunAI?",
-     "Agentic AI systems, machine learning and its math, physical AI / robotics in simulation, VR/MR app and game development, building games with Blender and Unity, AI video production, AI music production, and how to crack a remote software-engineering job by commanding AI coding agents."),
-    ("Can I teach my own students on TrigunAI?",
-     f"Yes. Teachers and tutors can run their own class on TrigunAI: your students learn one-on-one with the Acharya AI tutor on WhatsApp in English or हिंदी, and you get a dashboard to manage them. To start, message 'TEACHER' on WhatsApp ({WHATSAPP}) or use the teacher form at {SITE}/login. Pricing is ₹{TEACHER_PRICE}/month for teachers who bring their students; aspiring tutors with no students yet can start on a revenue-share plan."),
+     f"TrigunAI builds Acharya — an AI exam-prep and assessment engine. It generates authentic, "
+     f"exam-pattern practice papers from a bank of {QBANK_VERIFIED} verified questions ({EXAM_RANGE}) "
+     f"and pinpoints exactly which topics are weak. Students practise on their own at "
+     f"{SITE}/exam-prep; teachers and institutes create real test papers and track their class at "
+     f"{SITE}/teacher."),
+    ("What makes Acharya's test papers different?",
+     f"They're exam-authentic and unlimited. Every paper is drawn from {QBANK_VERIFIED} verified, "
+     "human-checked questions plus a RAG generator that writes fresh, copyright-clean questions in the "
+     "real exam pattern — so you never run out of good questions. And Acharya doesn't just score you: "
+     "it reads how you answered every question and tells you exactly which topics to revise next."),
+    ("Which exams can I prepare for?",
+     f"{EXAM_RANGE} are live today, in English or हिंदी. CUET, SSC, GATE, CAT and CLAT are on the way. "
+     "Students get adaptive practice tests and full mock papers; teachers can build a paper for any of these."),
+    ("I'm a teacher — what do I get?",
+     f"Create a real, exam-pattern test paper for JEE, NEET or the boards in minutes, share a link, and "
+     f"your students take it with no signup. You get a live dashboard showing each student's weak topics "
+     f"and the whole class at a glance. Start free at {SITE}/teacher (or message 'TEACHER' on WhatsApp "
+     f"{WHATSAPP})."),
+    ("How does Acharya find my weak topics?",
+     "You take a short adaptive test or a mock paper. Acharya reads every answer — right, wrong, slow, or "
+     "confident-but-wrong — maps each to a topic, and marks it solid, shaky or weak. You get a clear report "
+     "of exactly what to revise first, not just a mark out of 100."),
+    ("How much does it cost?",
+     f"Students can start free — no card — and keep going free for a {STUDENT_TRIAL_DAYS}-day trial; after "
+     f"that it's ₹{STUDENT_PRICE}/month, cancel anytime. Teachers can create and share tests free to start. "
+     f"TrigunAI also offers project-based AI/ML/robotics/VR courses (₹{PRICE}/month, secondary to exam prep)."),
+    ("Do I need an app or a password?",
+     "No. On the web just enter your email and start — no password. On your phone you can start right inside "
+     "WhatsApp in English or हिंदी. Your progress saves to the same account."),
 ]
 
 
 # ── Student exam-prep (self-serve assessment) SEO ──────────────────────────────
 EXAM_DESC = {
-    "neet":     "Free adaptive NEET Biology practice test that finds your weak topics — cell biology, genetics and more — in English or हिंदी, then tells you what to revise next.",
-    "jee":      "Free adaptive JEE Physics practice test that pinpoints your weak topics — mechanics, Newton's laws and more — in English or हिंदी, then tells you what to revise next.",
-    "class10":  "Free adaptive Class 10 board practice test (Science + Math) that finds exactly which chapters are weak, in English or हिंदी.",
-    "class12":  "Free adaptive Class 12 board practice test (Physics + Chemistry) that diagnoses your weak topics, in English or हिंदी.",
-    "commerce": "Free adaptive Commerce practice test (Accountancy + Economics) that finds your weak areas, in English or हिंदी.",
+    "neet":     "Authentic NEET practice tests and mock papers (Biology, Physics, Chemistry) from a verified question bank, with weak-topic diagnosis — English or हिंदी.",
+    "jee":      "Authentic JEE / IIT practice tests and mock papers (Physics, Chemistry, Maths) from a verified question bank, with weak-topic diagnosis — English or हिंदी.",
+    "class10":  "CBSE Class 10 board practice papers (Science + Math) that find exactly which chapters are weak — English or हिंदी.",
+    "class12":  "CBSE Class 12 board practice papers (Physics + Chemistry + Biology) that diagnose your weak topics — English or हिंदी.",
+    "commerce": "CBSE Class 12 Commerce practice papers (Accountancy + Economics) that find your weak areas — English or हिंदी.",
+    "banking":  "Banking exam practice papers (IBPS / SBI / RRB quantitative aptitude) with computed answer keys and weak-area diagnosis.",
+    "upsc":     "UPSC Civil Services (IAS) Prelims practice from real past-paper questions — GS + CSAT — with topic-level diagnosis.",
 }
 
 STUDENT_FAQ = [
+    ("Are these real, exam-pattern papers?",
+     f"Yes. Every question comes from a bank of {QBANK_VERIFIED} verified questions plus a generator that "
+     "writes fresh questions in the real exam pattern — so the papers look and feel like the actual exam and "
+     "you never run out of new ones."),
     ("How does Acharya find my weak topics?",
-     "You take a short adaptive test for your exam. Acharya reads how you answered every question — right, wrong, slow, or confident-but-wrong — and maps each to a topic, marking it solid, shaky or weak. You get a clear report of exactly what to revise first, not just a score."),
+     "Acharya reads how you answered every question — right, wrong, slow, or confident-but-wrong — maps each "
+     "to a topic, and marks it solid, shaky or weak. You get a clear report of what to revise first, not just a score."),
     ("Which exams can I practise for?",
-     "JEE, NEET, and Class 10 & 12 board exams today (Physics, Chemistry, Biology, Math, Commerce). More exams and topic-by-topic tests are being added — every test works in English or हिंदी."),
+     f"{EXAM_RANGE} are live today — practice tests and full mock papers, in English or हिंदी. CUET, SSC, "
+     "GATE, CAT and CLAT are being added."),
     ("Is it really free? What does it cost?",
-     f"You can join and start testing for free — no card needed. Keep going free for a {STUDENT_TRIAL_DAYS}-day trial; to continue after that it's ₹{STUDENT_PRICE}/month, and you can cancel anytime."),
-    ("Do I need an app or a password?",
-     "No. On the web just enter your email and start — no password. On your phone you can start right inside WhatsApp. Your progress is saved to the same account."),
-    ("Are the practice tests in Hindi?",
+     f"You can join and start testing for free — no card needed — for a {STUDENT_TRIAL_DAYS}-day trial; to "
+     f"continue after that it's ₹{STUDENT_PRICE}/month, cancel anytime."),
+    ("Are the papers in Hindi?",
      "Yes. Every question is available in both English and हिंदी — tap to switch language anytime during the test."),
+]
+
+# ── Teacher exam-prep SEO ──────────────────────────────────────────────────────
+TEACHER_FAQ = [
+    ("How do I create a test for my class?",
+     f"Pick the exam and chapters, and Acharya builds an exam-pattern paper from {QBANK_VERIFIED} verified "
+     "questions in minutes. Share the link with your students — they take it with no signup or app."),
+    ("What do I see about my students?",
+     "A live dashboard: each student's weak topics, the whole class at a glance, and a suggested next test for "
+     "students who are slipping. You teach; Acharya tests and tracks."),
+    ("Do my students need to install anything?",
+     "No. They open the link, take the test in the browser (or on WhatsApp) in English or हिंदी, and their "
+     "results flow straight to your dashboard."),
+    ("What does it cost for teachers?",
+     f"You can create and share tests free to start. For teachers who run a full class the plan is "
+     f"₹{TEACHER_PRICE}/month; aspiring tutors with no students yet can start on a revenue-share plan."),
 ]
 
 
@@ -93,7 +141,7 @@ def _exam_items(exams):
             "@type": "ListItem", "position": i,
             "item": {
                 "@type": "Course",
-                "name": f"{e['title']} — AI practice test & weak-topic diagnosis",
+                "name": f"{e['title']} — practice tests, mock papers & weak-topic diagnosis",
                 "description": EXAM_DESC.get(e["id"], e.get("title", "")),
                 "url": f"{SITE}/exam-prep",
                 "provider": {"@type": "Organization", "name": BRAND, "sameAs": "https://trigunai.com"},
@@ -101,7 +149,7 @@ def _exam_items(exams):
                            "price": str(STUDENT_PRICE), "priceCurrency": "INR",
                            "availability": "https://schema.org/InStock", "url": f"{SITE}/exam-prep"},
                 "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online",
-                                      "courseWorkload": "PT10M"},
+                                      "courseWorkload": "PT30M"},
             },
         })
     return items
@@ -110,11 +158,12 @@ def _exam_items(exams):
 def _student_service():
     return {
         "@type": "Service",
-        "name": "Acharya Exam-Prep Assessment",
-        "serviceType": "AI adaptive practice tests and weak-topic diagnosis for exam preparation",
-        "description": (f"Short adaptive practice tests for JEE, NEET and Class 10 & 12 boards, in English or "
-                        f"हिंदी, that find each student's exact weak topics from their answers — not just a score "
-                        f"— and tell them what to revise next. Free to start; ₹{STUDENT_PRICE}/month after a "
+        "name": "Acharya Exam Prep — practice tests & mock papers",
+        "serviceType": "AI exam-prep: adaptive practice tests, mock papers and weak-topic diagnosis",
+        "description": (f"Authentic, exam-pattern practice tests and mock papers for {EXAM_RANGE}, in English "
+                        f"or हिंदी, generated from a bank of {QBANK_VERIFIED} verified questions. Acharya finds "
+                        f"each student's exact weak topics from their answers — not just a score — and tells them "
+                        f"what to revise next. Free to start; ₹{STUDENT_PRICE}/month after a "
                         f"{STUDENT_TRIAL_DAYS}-day free trial."),
         "provider": {"@type": "Organization", "name": BRAND, "url": "https://trigunai.com"},
         "areaServed": "IN",
@@ -134,7 +183,7 @@ def exam_prep_jsonld(exams):
     graph = [
         {"@context": "https://schema.org", **_org()},
         {"@context": "https://schema.org", "@type": "ItemList",
-         "name": "Acharya exam-prep practice tests", "itemListElement": _exam_items(exams)},
+         "name": "Acharya exam-prep practice tests & mock papers", "itemListElement": _exam_items(exams)},
         {"@context": "https://schema.org", **_student_service()},
         {"@context": "https://schema.org", **_student_faq()},
     ]
@@ -148,12 +197,11 @@ def _org():
         "legalName": LEGAL_NAME,
         "url": "https://trigunai.com",
         "logo": LOGO,
-        "description": ("TrigunAI builds Acharya — an AI teaching assistant that brings discipline to "
-                        "learning. Acharya holds each student's goal and keeps them on track, one focused "
-                        "step a day, on WhatsApp and web, in English or हिंदी. A guru, not a genie: it "
-                        "doesn't just answer questions, it makes sure students actually learn and finish. "
-                        "For teachers, coaching institutes, and self-learners, plus project-based courses "
-                        "in AI, machine learning, robotics, and VR/MR."),
+        "description": (f"TrigunAI builds Acharya — an AI exam-prep and assessment engine. It generates "
+                        f"authentic, exam-pattern practice papers and mock tests from a bank of {QBANK_VERIFIED} "
+                        f"verified questions ({EXAM_RANGE}) and pinpoints exactly which topics are weak. For "
+                        f"students preparing on their own and for teachers and coaching institutes who set tests "
+                        f"and track their class. In English or हिंदी, on web and WhatsApp."),
         "sameAs": [
             "https://trigunai.com",
             "https://acharya.trigunai.com",
@@ -191,19 +239,37 @@ def _course_items(courses):
 
 
 def _teacher_service():
-    """The teacher/tutor offering as a Service (not Product — no fabricated reviews)."""
+    """The teacher/institute offering as a Service (not Product — no fabricated reviews)."""
     return {
         "@type": "Service",
-        "name": f"{BRAND} for Teachers — run your own class with Acharya",
-        "serviceType": "AI tutoring platform for teachers and tutors",
-        "description": ("Teachers and tutors run their own class on TrigunAI: your students learn one-on-one "
-                        "with the Acharya AI tutor on WhatsApp in English or हिंदी, and you get a dashboard to "
-                        "manage them. Start by messaging TEACHER on WhatsApp or via the teacher form."),
+        "name": f"{PRODUCT} for Teachers — create exam-pattern test papers & track your class",
+        "serviceType": "AI test-paper generation and class assessment for teachers and coaching institutes",
+        "description": (f"Teachers and institutes create authentic, exam-pattern test papers for JEE, NEET and "
+                        f"the CBSE boards in minutes — drawn from {QBANK_VERIFIED} verified questions — share a "
+                        f"link, and students take the test with no signup. A live dashboard shows each student's "
+                        f"weak topics and the whole class at a glance. You teach; Acharya tests and tracks. Start "
+                        f"free at {SITE}/teacher or message TEACHER on WhatsApp."),
         "provider": {"@type": "Organization", "name": BRAND, "url": "https://trigunai.com"},
         "areaServed": "IN",
         "offers": {"@type": "Offer", "price": str(TEACHER_PRICE), "priceCurrency": "INR",
-                   "availability": "https://schema.org/InStock", "url": f"{SITE}/login#teacherbox"},
+                   "availability": "https://schema.org/InStock", "url": f"{SITE}/teacher"},
     }
+
+
+def _teacher_faq():
+    return {"@type": "FAQPage",
+            "mainEntity": [{"@type": "Question", "name": q,
+                            "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in TEACHER_FAQ]}
+
+
+def teacher_jsonld():
+    """Org + teacher Service + teacher FAQ — the rich block for /teacher."""
+    graph = [
+        {"@context": "https://schema.org", **_org()},
+        {"@context": "https://schema.org", **_teacher_service()},
+        {"@context": "https://schema.org", **_teacher_faq()},
+    ]
+    return json.dumps(graph, ensure_ascii=False)
 
 
 def _faq():
@@ -218,31 +284,33 @@ def _faq():
 
 
 def login_jsonld(courses):
-    """Organization + course catalogue (ItemList of Course) + FAQ — the rich block for /login."""
+    """Organization + exam-prep Service + teacher Service + course catalogue + FAQ — rich block for /login."""
     graph = [
         {"@context": "https://schema.org", **_org()},
+        {"@context": "https://schema.org", **_student_service()},
+        {"@context": "https://schema.org", **_teacher_service()},
         {"@context": "https://schema.org", "@type": "ItemList",
          "name": "TrigunAI Courses", "itemListElement": _course_items(courses)},
-        {"@context": "https://schema.org", **_teacher_service()},
         {"@context": "https://schema.org", **_faq()},
     ]
     return json.dumps(graph, ensure_ascii=False)
 
 
 def pricing_jsonld():
-    """Service/Offer for the subscription + teacher Service + FAQ. Uses schema.org/Service (NOT Product):
-    a subscription isn't a shoppable product, and a Product snippet would demand review/aggregateRating —
-    which we will not fabricate (0 real reviews). Service carries the offer without that requirement."""
+    """Exam-prep Service + teacher Service + legacy course subscription + FAQ. Uses schema.org/Service
+    (NOT Product): a subscription isn't a shoppable product, and a Product snippet would demand
+    review/aggregateRating — which we will not fabricate (0 real reviews)."""
     graph = [
+        {"@context": "https://schema.org", **_student_service()},
+        {"@context": "https://schema.org", **_teacher_service()},
         {"@context": "https://schema.org", "@type": "Service",
-         "name": f"{BRAND} All-Access Subscription",
-         "serviceType": "Online learning subscription",
-         "description": f"Access to every {BRAND} course and the Acharya AI tutor. ₹{PRICE}/month with a 7-day free trial; cancel anytime.",
+         "name": f"{BRAND} All-Access Course Subscription",
+         "serviceType": "Online learning subscription (project-based AI/ML/robotics/VR courses)",
+         "description": f"Access to every {BRAND} project-based course and the Acharya AI tutor. ₹{PRICE}/month with a 7-day free trial; cancel anytime. Secondary to Acharya exam prep.",
          "provider": {"@type": "Organization", "name": BRAND, "url": "https://trigunai.com"},
          "areaServed": "IN",
          "offers": {"@type": "Offer", "price": str(PRICE), "priceCurrency": "INR",
                     "availability": "https://schema.org/InStock", "url": f"{SITE}/pricing"}},
-        {"@context": "https://schema.org", **_teacher_service()},
         {"@context": "https://schema.org", **_faq()},
     ]
     return json.dumps(graph, ensure_ascii=False)
@@ -251,7 +319,7 @@ def pricing_jsonld():
 def robots_txt():
     lines = [
         "# TrigunAI LMS — robots", "User-agent: *",
-        "Allow: /$", "Allow: /exam-prep", "Allow: /login", "Allow: /pricing",
+        "Allow: /$", "Allow: /exam-prep", "Allow: /teacher", "Allow: /login", "Allow: /pricing",
         "Allow: /terms", "Allow: /privacy", "Allow: /refund", "Allow: /contact",
         "Disallow: /dashboard", "Disallow: /account", "Disallow: /setup",
         "Disallow: /auth/", "Disallow: /api/", "Disallow: /admin", "Disallow: /lesson/",
@@ -286,50 +354,50 @@ def sitemap_xml(today: str):
 def llms_txt(courses):
     """AI-readable summary (the llms.txt convention) for ChatGPT/Perplexity/Claude/Gemini."""
     out = [
-        f"# {BRAND} — Acharya, the AI teaching assistant that brings discipline to learning",
+        f"# {BRAND} — Acharya, an AI exam-prep & assessment engine (authentic test papers)",
         "",
-        f"> {BRAND} builds Acharya — an AI teaching assistant that does what free AI can't: it brings "
-        "**discipline to learning**. Acharya holds each student's goal and keeps them moving toward it, "
-        "one focused step a day, on WhatsApp and web, in English or हिंदी. A **guru, not a genie**: it "
-        "doesn't just answer questions, it makes sure students actually learn and finish. For teachers, "
-        "coaching institutes and self-learners. TrigunAI also offers project-based courses in AI, machine "
-        "learning, robotics, VR/MR and more — each taught one-on-one by Acharya.",
+        f"> {BRAND} builds **Acharya** — an AI exam-prep and assessment engine. It generates **authentic, "
+        f"exam-pattern practice papers and mock tests** from a bank of **{QBANK_VERIFIED} verified questions** "
+        f"({EXAM_RANGE}) and pinpoints exactly which topics are weak. Two sections: **students** practise on "
+        f"their own, and **teachers / coaching institutes** create real test papers and track their class. In "
+        f"English or हिंदी, on web and WhatsApp.",
         "",
-        "## What makes Acharya different (a guru, not a genie)",
-        "- Every answer is free now; the discipline to actually learn isn't. Acharya provides that discipline.",
-        "- **Goal OS**: every student sets one clear goal; Acharya holds it and gives one focused step a day toward it.",
-        "- **Mastery gate**: a concept isn't 'learned' until the student explains it in their own words and applies it to a new example.",
-        "- **Silent-student catch**: if a student goes quiet for days, Acharya re-engages them (anchored to their goal) and flags it to their teacher.",
-        "- Result: capable-but-scattered students stop drifting and actually finish. For an institute, fewer silent drop-offs.",
-        "",
-        "## For students: exam-prep assessment (JEE, NEET, boards)",
-        f"- Acharya gives students short **adaptive practice tests** for JEE, NEET and Class 10 & 12 boards, in "
-        "English or हिंदी, that find each student's **exact weak topics** from their answers — not just a score — "
-        "and tell them what to revise next.",
+        "## For students — exam prep & practice papers",
+        f"- Short **adaptive practice tests** and full **mock papers** for {EXAM_RANGE}, in English or हिंदी.",
+        "- Every paper is exam-authentic and unlimited: drawn from a verified bank plus a generator that writes "
+        "fresh, copyright-clean questions in the real exam pattern — so you never run out of good questions.",
+        "- Acharya reads every answer and gives you your **exact weak topics** to revise next — not just a score.",
         f"- Free to start (no card); ₹{STUDENT_PRICE}/month after a {STUDENT_TRIAL_DAYS}-day free trial; cancel anytime.",
         f"- Start free: {SITE}/exam-prep",
         "",
-        "## Access & pricing",
-        f"- Subscription (courses + Acharya tutor): ₹{PRICE}/month with a 7-day free trial. Start with a card or the no-card option; cancel anytime.",
-        f"- Student exam-prep assessment: ₹{STUDENT_PRICE}/month after a {STUDENT_TRIAL_DAYS}-day free trial ({SITE}/exam-prep).",
-        f"- Enrol / sign in: {SITE}/login",
-        f"- Pricing: {SITE}/pricing",
+        "## For teachers & coaching institutes — create test papers, track your class",
+        f"- Create an authentic, exam-pattern **test paper** for JEE, NEET or the CBSE boards in minutes, drawn "
+        f"from {QBANK_VERIFIED} verified questions.",
+        "- **Share a link — students take the test with no signup or app** (web or WhatsApp, English or हिंदी).",
+        "- Get a **live weak-topic dashboard**: each student's weak areas and the whole class at a glance, plus a "
+        "suggested next test for students who are slipping. You teach; Acharya tests and tracks.",
+        f"- Start free: {SITE}/teacher — or message **TEACHER** on WhatsApp ({WHATSAPP}).",
+        f"- Full-class plan ₹{TEACHER_PRICE}/month; aspiring tutors with no students yet can start on revenue-share.",
         "",
-        "## Courses",
+        "## Exams covered",
+        f"- Live today: {EXAM_RANGE} — practice tests, mock papers and teacher test-papers.",
+        "- Coming soon: CUET, SSC, GATE, CAT, CLAT.",
+        "",
+        "## Also: an AI tutor that brings discipline (secondary)",
+        "- Beyond testing, Acharya can tutor one-on-one on WhatsApp/web: it holds each student's goal, gives one "
+        "focused step a day, won't mark a concept learned until they can explain and apply it, and re-engages "
+        "students who go quiet. A guru, not a genie.",
+        "",
+        "## Also: project-based courses (secondary)",
     ]
     for c in courses:
         out.append(f"- [{c['title']}]({SITE}/login?course={c['id']}): {COURSE_DESC.get(c['id'], '')}")
     out += [
-        "",
-        "## For teachers & tutors",
-        f"- Teachers and tutors can run their own class on {BRAND}: your students learn one-on-one with the "
-        "Acharya AI tutor on WhatsApp in English or हिंदी, and you get a dashboard to manage them. You teach — we run the tech.",
-        f"- Start: message **TEACHER** on WhatsApp ({WHATSAPP}) or use the teacher form at {SITE}/login#teacherbox.",
-        f"- Pricing: ₹{TEACHER_PRICE}/month for teachers who bring their own students; aspiring tutors with no "
-        "students yet can start on a revenue-share plan (you pay as you earn).",
+        f"- Course subscription: ₹{PRICE}/month with a 7-day free trial ({SITE}/pricing).",
         "",
         "## About",
-        f"- Operated by {LEGAL_NAME}. Main site: https://trigunai.com · Acharya + courses: {SITE}",
+        f"- Operated by {LEGAL_NAME}. Main site: https://trigunai.com · Product home: {SITE}",
+        f"- Students: {SITE}/exam-prep · Teachers: {SITE}/teacher · Sign in: {SITE}/login",
         "",
         "## FAQ",
     ]

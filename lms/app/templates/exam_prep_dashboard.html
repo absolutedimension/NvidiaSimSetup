@@ -129,6 +129,23 @@
     </div>
   {% endif %}
 
+  {% if assignments %}
+  <div class="card" style="border:1.5px solid var(--gold);background:linear-gradient(180deg,#FFF7EE,#fff)">
+    <div class="h3"><span>📋 Assigned by {{ institute or 'your teacher' }}</span>
+      <span style="font-size:11.5px;color:var(--gold2);font-weight:700">{{ assignments|length }} to do</span></div>
+    <div style="display:flex;flex-direction:column;gap:9px;margin-top:12px">
+      {% for a in assignments %}
+      <a href="{{ a.url }}" style="display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:inherit;background:#fff">
+        <span style="font-size:20px">{{ a.icon }}</span>
+        <span style="flex:1;min-width:0"><b style="font-size:14.5px">{{ a.title }}</b>
+          <span style="display:block;font-size:11.5px;color:var(--faint)">{{ 'Adaptive practice' if a.kind=='smart' else ('Mock test' if a.kind=='mock' else 'Class test') }}{% if a.subject %} · {{ a.subject }}{% endif %}</span></span>
+        <span style="background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border-radius:9px;padding:8px 13px;font-size:13px;font-weight:800;white-space:nowrap">Start →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
   <div class="grid">
     {# ================= LEFT ================= #}
     <div class="stack">
@@ -167,7 +184,7 @@
             <span class="i">🗺️</span><div><div class="t">Practice a topic</div><div class="k">pick any chapter</div></div>
           </a>
           <a class="mode" href="/exam-prep/papers">
-            <span class="i">⏱️</span><div><div class="t">Full mock test</div><div class="k">real JEE Advanced pattern</div></div>
+            <span class="i">⏱️</span><div><div class="t">Full mock test</div><div class="k">real {{ st.goal }} pattern</div></div>
           </a>
           <a class="mode" href="/exam-prep/smart">
             <span class="i">🔁</span><div><div class="t">Revision</div><div class="k">{% if st.due %}{{ st.due|length }} topic{{ '' if st.due|length == 1 else 's' }} due{% else %}spaced recall{% endif %}</div></div>
@@ -180,7 +197,9 @@
 
       {# ---- my topics ---- #}
       <div class="card">
-        <div class="h3"><span>My topics</span><span style="font-size:12px;color:var(--faint)">{{ topics|length }} / {{ max_topics }}</span></div>
+        <div class="h3"><span>{{ 'Your subjects' if linked else 'My topics' }}</span>
+          {% if linked %}<span style="font-size:11px;color:var(--gold2);font-weight:700">📘 set by {{ institute }}</span>
+          {% else %}<span style="font-size:12px;color:var(--faint)">{{ topics|length }} / {{ max_topics }}</span>{% endif %}</div>
         {% for t in topics %}
           <div class="tp">
             <div class="i">{{ '🧪' if t.kind == 'custom' else '🎯' }}</div>
@@ -188,8 +207,10 @@
             <a class="go" href="/exam-prep/subject/{{ t.id }}">Practise →</a>
           </div>
         {% endfor %}
-        {% if not topics %}<div class="empty">No topics yet — add your first below.</div>{% endif %}
-        {% if not at_max %}
+        {% if not topics %}<div class="empty">{{ 'Your teacher will assign your subjects here.' if linked else 'No topics yet — add your first below.' }}</div>{% endif %}
+        {% if linked %}
+          <div class="hint">These subjects were set by <b>{{ institute }}</b>. Practise, take mock tests and Smart Practice on them — plus any tests your teacher assigns.</div>
+        {% elif not at_max %}
           <form class="add" method="post" action="/exam-prep/topics/add">
             <input type="text" name="topic" placeholder="e.g. IIT JEE Physics, IIT JEE Chemistry, IIT JEE Maths" autocomplete="off" required>
             <button type="submit">Add</button>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>{{ s.name or s.email }} — student · Acharya for Teachers</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+ :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;--card:#fff;--cream:#FAF5EC;--green:#2FA968;--weak:#C23B22;--shaky:#E0972F;
+   --serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
+ *{box-sizing:border-box;margin:0;padding:0}
+ body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 60%,#F7E0C8);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100dvh}
+ .wrap{max-width:640px;margin:0 auto;padding:18px 18px 60px}
+ header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+ header .back{color:var(--gold2);font-weight:700;font-size:13px;text-decoration:none}
+ .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px;box-shadow:0 3px 14px rgba(120,60,20,.06)}
+ .sec{font-weight:800;font-size:13px;color:var(--gold2);text-transform:uppercase;letter-spacing:.4px;margin:2px 0 12px}
+ .hd{display:flex;align-items:center;gap:14px}
+ .av{width:52px;height:52px;border-radius:50%;background:#FFF3E6;color:var(--gold2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;flex-shrink:0}
+ .hd .nm{font-family:var(--serif);font-weight:800;font-size:21px;line-height:1.1}
+ .hd small{color:var(--muted);font-size:12.5px}
+ .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+ .stat{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+ .stat b{display:block;font-size:26px;font-family:var(--serif);font-weight:800}
+ .stat span{font-size:11.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+ .chips{display:flex;flex-wrap:wrap;gap:7px}
+ .chips span{border-radius:9px;padding:6px 11px;font-size:12.5px;font-weight:700}
+ .chip-sub{background:var(--cream);border:1px solid var(--line);color:var(--gold2)}
+ .chip-weak{background:#FBE4DE;color:var(--weak)}
+ .row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+ .row:last-child{border-bottom:none}
+ .row .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .row .when{font-size:11.5px;color:var(--faint)}
+ .row .pct{font-weight:800;min-width:44px;text-align:right}
+ .p-weak{color:var(--weak)}.p-shaky{color:var(--shaky)}.p-solid{color:var(--green)}
+ .empty{color:var(--faint);font-size:13.5px;text-align:center;padding:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><a class="back" href="/teacher/invites">← My students</a></header>
+
+  <div class="card">
+    <div class="hd">
+      <div class="av">{{ (s.name or s.email)[:1]|upper }}</div>
+      <div>
+        <div class="nm">{{ s.name or s.email.split('@')[0] }}</div>
+        <small>{{ s.email }} · {{ batch }}</small>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>{{ prog.mastery if prog.practised else '—' }}{{ '%' if prog.practised else '' }}</b><span>Mastery</span></div>
+      <div class="stat"><b>{{ prog.tests }}</b><span>Tests taken</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="sec">Subjects (set by you)</div>
+    {% if subjects %}<div class="chips">{% for sub in subjects %}<span class="chip-sub">{{ sub }}</span>{% endfor %}</div>
+    {% else %}<div class="empty">No subjects seeded for this batch.</div>{% endif %}
+  </div>
+
+  {% if prog.weak %}
+  <div class="card">
+    <div class="sec">Weakest topics — teach these next</div>
+    <div class="chips">{% for w in prog.weak %}<span class="chip-weak">{{ w }}</span>{% endfor %}</div>
+  </div>
+  {% endif %}
+
+  <div class="card">
+    <div class="sec">Recent tests</div>
+    {% if recent %}
+      {% for a in recent %}
+      <div class="row">
+        <div class="t">{{ a.title }}<div class="when">{{ a.when }}</div></div>
+        <div class="pct {{ 'p-weak' if a.pct<40 else ('p-shaky' if a.pct<70 else 'p-solid') }}">{{ a.pct }}%</div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="empty">No tests yet. Assign one from “My students” — it'll appear on their dashboard and their score will show here.</div>
+    {% endif %}
+  </div>
+</div>
+</body>
+</html>

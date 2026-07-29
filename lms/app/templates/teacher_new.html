@@ -24,6 +24,8 @@
  .sub:hover{border-color:var(--gold)}
  .sub.on{border-color:var(--gold2);background:#FFF3E6;color:var(--gold2)}
  .sub .e{font-size:19px}
+ .subgroup{grid-column:1/-1;font-size:11.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--gold2);margin:6px 2px 0}
+ .subgroup:first-child{margin-top:0}
  .chwrap{margin-top:4px}
  .chip{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:9px 12px;font-size:13.5px;cursor:pointer;user-select:none;margin:0 7px 8px 0}
  .chip.on{border-color:var(--gold2);background:#FFF3E6;color:var(--gold2);font-weight:700}
@@ -57,8 +59,10 @@
 
   <div class="sec">1 · Subject</div>
   <div class="subs" id="subs">
+    {% set ns = namespace(cur='') %}
     {% for s in subjects %}
-    <div class="sub" data-sub="{{ s.id }}"><span class="e">{{ '⚛️' if 'physics' in s.id else ('🧪' if 'chem' in s.id else ('🧬' if 'bio' in s.id else '📐')) }}</span>{{ s.label }}</div>
+    {% if s.exam != ns.cur %}{% set ns.cur = s.exam %}<div class="subgroup">{{ s.exam }}</div>{% endif %}
+    <div class="sub" data-sub="{{ s.id }}"><span class="e">{{ '⚛️' if 'physics' in s.id else ('🧪' if 'chem' in s.id else ('🧬' if 'bio' in s.id else ('📊' if ('account' in s.id or 'econom' in s.id) else ('🏦' if 'banking' in s.id else ('🏛️' if 'upsc' in s.id else ('🔬' if 'science' in s.id else '📐')))))) }}</span>{{ s.label }}</div>
     {% endfor %}
   </div>
 

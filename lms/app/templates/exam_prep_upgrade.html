@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex" />
-<title>Continue with Acharya — ₹{{ sub.price }}/month</title>
+<title>Continue with Acharya — Exam Pass ₹{{ PRICING.student_pass }}</title>
 <link rel="icon" href="/static/brand/favicon-32.png" />
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,51 +14,104 @@
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:linear-gradient(180deg,#FDF6EC,#FBEAD6 60%,#F7E0C8);min-height:100dvh;color:var(--ink);
     font-family:"Figtree",-apple-system,"Segoe UI",sans-serif;display:flex;align-items:center;justify-content:center;padding:22px}
-  .card{max-width:460px;width:100%;background:linear-gradient(160deg,#FFF6EA,#FFFDF9);border:1px solid var(--gold-deep);
-    border-radius:22px;padding:34px 30px;text-align:center;box-shadow:0 24px 70px rgba(120,60,20,.16)}
+  .wrap{max-width:520px;width:100%;text-align:center}
   .badge{display:inline-block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);
     border:1px solid var(--line);background:rgba(168,72,26,.06);border-radius:99px;padding:5px 14px;margin-bottom:16px}
-  h1{font-family:"Bricolage Grotesque",serif;font-weight:800;font-size:28px;line-height:1.08;margin-bottom:8px}
+  h1{font-family:"Bricolage Grotesque",serif;font-weight:800;font-size:27px;line-height:1.1;margin-bottom:8px}
   h1 .g{color:var(--gold)}
-  .lead{color:var(--muted);font-size:15px;margin-bottom:18px}
-  .amt{font-family:"Bricolage Grotesque",serif;font-size:52px;color:var(--gold);font-weight:800;line-height:1}
-  .amt small{font-size:16px;color:var(--muted);font-weight:500}
-  ul{list-style:none;text-align:left;max-width:330px;margin:18px auto 22px;display:flex;flex-direction:column;gap:9px}
-  li{color:var(--ink);font-size:14.5px;padding-left:25px;position:relative;line-height:1.4}
+  .lead{color:var(--muted);font-size:15px;margin-bottom:20px}
+  .tiers{display:flex;flex-direction:column;gap:14px;text-align:left}
+  .tier{background:linear-gradient(160deg,#FFF6EA,#FFFDF9);border:1px solid var(--line);border-radius:18px;padding:20px 22px;position:relative}
+  .tier.feat{border:2px solid var(--gold-deep);box-shadow:0 18px 50px rgba(120,60,20,.16)}
+  .ribbon{position:absolute;top:-11px;right:18px;background:var(--gold-deep);color:#fff;font-size:11px;font-weight:800;
+    letter-spacing:.5px;text-transform:uppercase;border-radius:99px;padding:4px 12px}
+  .tname{font-weight:800;font-size:15px;color:var(--ink)}
+  .amt{font-family:"Bricolage Grotesque",serif;font-size:40px;color:var(--gold);font-weight:800;line-height:1;margin:6px 0 2px}
+  .amt small{font-size:14px;color:var(--muted);font-weight:500}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:12px}
+  ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin:10px 0 16px}
+  li{color:var(--ink);font-size:14px;padding-left:23px;position:relative;line-height:1.4}
   li::before{content:"✓";position:absolute;left:0;color:var(--gold-deep);font-weight:800}
-  .btn{width:100%;color:#fff;background:var(--gold-deep);border:none;border-radius:13px;font-family:inherit;font-weight:800;
-    font-size:16px;padding:15px;cursor:pointer;box-shadow:0 10px 26px rgba(168,72,26,.24);transition:transform .15s}
+  .btn{display:block;width:100%;text-align:center;color:#fff;background:var(--gold-deep);border:none;border-radius:12px;
+    font-family:inherit;font-weight:800;font-size:15.5px;padding:14px;cursor:pointer;text-decoration:none;
+    box-shadow:0 10px 26px rgba(168,72,26,.22);transition:transform .15s}
   .btn:hover{transform:translateY(-1px)} .btn:disabled{opacity:.55;cursor:default;transform:none}
-  .fine{color:var(--muted);font-size:12.5px;margin-top:12px}
+  .btn.ghost{background:transparent;color:var(--gold-deep);border:1.5px solid var(--gold-deep);box-shadow:none}
+  .fine{color:var(--muted);font-size:12.5px;margin-top:16px}
   .fine a{color:var(--gold-deep);font-weight:600}
-  .msg{font-size:13.5px;margin-top:10px;min-height:16px}.msg.err{color:#c23b22}
-  .soon{background:#FDF3E3;border:1px solid rgba(199,122,27,.3);border-radius:12px;padding:12px;color:#9a5a12;font-size:13.5px;margin-top:6px}
+  .msg{font-size:13px;margin-top:8px;min-height:15px}.msg.err{color:#c23b22}
 </style>
 </head>
 <body>
-<div class="card">
+<div class="wrap">
   <div class="badge">Acharya Exam-Prep</div>
   {% if sub.expired %}
   <h1>Your free trial is over.<br/>Keep <span class="g">finding your weak spots</span>.</h1>
   {% else %}
   <h1>Continue with <span class="g">Acharya</span></h1>
   {% endif %}
-  <p class="lead">Unlimited adaptive tests + weak-topic diagnosis for your exam.</p>
-  <div class="amt">₹{{ sub.price }}<small> / month</small></div>
-  <ul>
-    <li>Unlimited practice tests — any exam, any topic</li>
-    <li>Your exact weak topics, from every answer</li>
-    <li>English or हिंदी · web + WhatsApp</li>
-    <li>Cancel anytime</li>
-  </ul>
-  {% if sub.configured %}
-  <button class="btn" id="sub">Subscribe · ₹{{ sub.price }}/mo →</button>
-  <div class="msg" id="msg" role="status"></div>
-  <div class="fine">Secure payment via Razorpay · <a href="/exam-prep">Back to exams</a></div>
+  {% if sub.is_teacher %}
+  <p class="lead">Create unlimited tests, share one link, see exactly where your batch is weak.</p>
+
+  <div class="tiers">
+    <!-- TEACHER / INSTITUTE -->
+    <div class="tier feat">
+      <div class="ribbon">Teacher plan</div>
+      <div class="tname">Teacher / Institute</div>
+      <div class="amt">₹{{ sub.price }}<small> / month</small></div>
+      <div class="sub">Everything you need to run assessment for your students.</div>
+      <ul>
+        <li>Unlimited exam-authentic test papers — JEE, NEET, CBSE, UPSC, Banking</li>
+        <li>Create a test, share one link — students take it with no signup</li>
+        <li>Live weak-topic dashboard for your whole batch</li>
+        <li>1 lakh+ verified questions · English or हिंदी · cancel anytime</li>
+      </ul>
+      {% if sub.configured %}
+      <button class="btn" id="sub">Subscribe · ₹{{ sub.price }}/mo →</button>
+      <div class="msg" id="msg" role="status"></div>
+      {% else %}
+      <a class="btn" href="https://wa.me/{{ CONTACT_WA }}?text=I%20want%20the%20Acharya%20Teacher%20plan%20(%E2%82%B9{{ sub.price }}%2Fmo)" target="_blank" rel="noopener">Start teacher plan →</a>
+      {% endif %}
+    </div>
+  </div>
   {% else %}
-  <div class="soon">Subscriptions open soon — you still have full access for now.</div>
-  <div class="fine" style="margin-top:14px"><a href="/exam-prep">← Back to your exams</a></div>
+  <p class="lead">Unlimited real-pattern tests + weak-topic diagnosis — practise till your exam.</p>
+
+  <div class="tiers">
+    <!-- LEAD: Exam Pass -->
+    <div class="tier feat">
+      <div class="ribbon">Best value</div>
+      <div class="tname">Exam Pass — till your exam</div>
+      <div class="amt">₹{{ PRICING.student_pass }}<small> one-time</small></div>
+      <div class="sub">Everything, until your exam date. Best for serious prep.</div>
+      <ul>
+        <li>Unlimited practice tests — any topic, real exam pattern</li>
+        <li>Full mock papers with negative marking</li>
+        <li>Your exact weak topics, from every answer (SWOT report)</li>
+        <li>Real exam-pattern diagrams · English or हिंदी · web + WhatsApp</li>
+      </ul>
+      <a class="btn" href="https://wa.me/{{ CONTACT_WA }}?text=I%20want%20the%20Acharya%20Exam%20Pass%20(%E2%82%B9{{ PRICING.student_pass }})" target="_blank" rel="noopener">Get Exam Pass →</a>
+    </div>
+
+    <!-- Monthly -->
+    <div class="tier">
+      <div class="tname">Monthly</div>
+      <div class="amt">₹{{ sub.price }}<small> / month</small></div>
+      <div class="sub">Same access, month-to-month. Cancel anytime.</div>
+      {% if sub.configured %}
+      <button class="btn ghost" id="sub">Subscribe · ₹{{ sub.price }}/mo →</button>
+      <div class="msg" id="msg" role="status"></div>
+      {% else %}
+      <a class="btn ghost" href="https://wa.me/{{ CONTACT_WA }}?text=I%20want%20Acharya%20monthly%20(%E2%82%B9{{ sub.price }}%2Fmo)" target="_blank" rel="noopener">Start monthly →</a>
+      {% endif %}
+    </div>
+  </div>
   {% endif %}
+
+  <div class="fine">
+    {% if not sub.configured %}You still have full access right now. Message us to lock your plan · {% endif %}
+    Questions? <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a> · <a href="/exam-prep">← Back to exams</a>
+  </div>
 </div>
 
 {% if sub.configured %}
@@ -81,7 +134,7 @@
             modal:{ondismiss:function(){ btn.disabled=false; msg.textContent=''; }}
           });
           rzp.open();
-        } else if(j.redirect){ location.href=j.redirect; }   // hosted short_url fallback
+        } else if(j.redirect){ location.href=j.redirect; }
         else { btn.disabled=false; msg.className='msg err'; msg.textContent=j.error||'Could not start — try again.'; }
       })
       .catch(function(){ btn.disabled=false; msg.className='msg err'; msg.textContent='Network error — try again.'; });
