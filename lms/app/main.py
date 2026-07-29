@@ -22,7 +22,7 @@ from .config import settings
 from .db import get_db
 from .emailer import send_magic_link
 from .models import (
-    AssessmentItem, ClassSitting, ClassTest, CompSession, ConceptStat, CourseRequest, GenJob, LearnerFact, Lesson, LessonProgress, LearningEvent, MockPaper, Module, PaperAttempt, SeenQuestion, Student, StudentTopic, TaskCompletion, TopicAttempt, WorkbookTask, now,
+    AssessmentItem, Assignment, ClassSitting, ClassTest, CompSession, ConceptStat, CourseRequest, GenJob, LearnerFact, Lesson, LessonProgress, LearningEvent, MockPaper, Module, PaperAttempt, SeenQuestion, Student, StudentTopic, TaskCompletion, TeacherInvite, TopicAttempt, WorkbookTask, now,
 )
 from .security import consume_magic_token, get_or_create_student, issue_magic_token
 
@@ -1013,6 +1013,8 @@ def exam_prep_dashboard(request: Request, new: str = "", added: str = "", db: Se
     greeting = "Good morning" if hour < 12 else ("Good afternoon" if hour < 17 else "Good evening")
     # Ads "free signup" conversion — fires ONCE for a genuinely-new account landing here.
     ads_id = settings.ADS_CONVERSION_ID if (new == "1" and settings.STUDENT_SIGNUP_CONV_LABEL and settings.ADS_CONVERSION_ID) else ""
+    linked = _linked_teacher(db, student)      # B2B2C: student belongs to an institute?
+    institute = ((linked.institute if linked else "") or (linked.name if linked else "")) if linked else ""
     return templates.TemplateResponse(request, "exam_prep_dashboard.html", {
         "student": student,
         "topics": topics,
@@ -1025,6 +1027,8 @@ def exam_prep_dashboard(request: Request, new: str = "", added: str = "", db: Se
         "added": added,
         "ads_id": ads_id,
         "ads_label": settings.STUDENT_SIGNUP_CONV_LABEL,
+        "linked": bool(linked), "institute": institute,   # linked → subjects are teacher-controlled
+        "assignments": _student_assignments(db, student),  # 📋 assigned by your teacher
     })
 
 
@@ -1034,6 +1038,8 @@ def exam_prep_topic_add(request: Request, topic: str = Form(""), db: Session = D
     student = current_student(request, db)
     if not student:
         return RedirectResponse("/exam-prep/quick", status_code=302)
+    if student.teacher_id:                     # linked student — the institute controls the syllabus
+        return RedirectResponse("/exam-prep/dashboard?locked=1", status_code=302)
     topic = (topic or "").strip()[:80]
     if len(topic) < 2:
         return RedirectResponse("/exam-prep/dashboard", status_code=302)
@@ -1298,23 +1304,39 @@ async def api_tutor_step(request: Request, db: Session = Depends(get_db)):
     return JSONResponse({"ok": True, "reply": reply})
 
 
+def _paper_goal_id(subject: str) -> str:
+    """Map a MockPaper.subject to its goal/exam id (an examgen.GOALS key). New papers are tagged
+    with the goal id directly (e.g. 'neet'); legacy papers carry a fine-grained subject
+    ('jee-physics') that maps back via goal_of_subject."""
+    subject = (subject or "").strip()
+    if subject in examgen.GOALS:
+        return subject
+    return examgen.goal_of_subject(subject) or ""
+
+
 @app.get("/exam-prep/papers", response_class=HTMLResponse)
 def exam_prep_papers(request: Request, db: Session = Depends(get_db)):
-    """The test series: the shared, pre-generated full JEE-Advanced-style papers."""
+    """The test series: shared, pre-generated full papers, FILTERED to the student's goal/exam so a
+    NEET student never sees JEE papers (and vice-versa). Empty goal → honest 'coming soon' state."""
     student = current_student(request, db)
     if not student:
         return RedirectResponse("/exam-prep/quick", status_code=302)
-    papers = (db.query(MockPaper).filter_by(status="ready")
-              .order_by(MockPaper.code).all())
+    goal_id = _student_goal(db, student) or examgen.DEFAULT_GOAL
+    goal = examgen.GOALS.get(goal_id, examgen.GOALS[examgen.DEFAULT_GOAL])
+    ready = (db.query(MockPaper).filter_by(status="ready").order_by(MockPaper.code).all())
+    papers = [p for p in ready if _paper_goal_id(p.subject) == goal_id]
     done = {}
-    for a in (db.query(PaperAttempt).filter_by(student_id=student.id)
-              .filter(PaperAttempt.submitted_at.isnot(None)).all()):
-        prev = done.get(a.paper_id)
-        if not prev or a.score > prev.score:
-            done[a.paper_id] = a
+    if papers:
+        pids = {p.id for p in papers}
+        for a in (db.query(PaperAttempt).filter_by(student_id=student.id)
+                  .filter(PaperAttempt.submitted_at.isnot(None)).all()):
+            if a.paper_id in pids:
+                prev = done.get(a.paper_id)
+                if not prev or a.score > prev.score:
+                    done[a.paper_id] = a
     return templates.TemplateResponse(request, "exam_prep_papers.html", {
-        "student": student, "papers": papers, "done": done,
-        "blueprint": mockpaper.BLUEPRINT, "total_q": mockpaper.TOTAL_Q,
+        "student": student, "papers": papers, "done": done, "goal": goal, "goal_id": goal_id,
+        "kind": mockpaper.paper_kind(goal_id),
     })
 
 
@@ -1478,7 +1500,8 @@ def teacher_home(request: Request, new: str = "", db: Session = Depends(get_db))
     student = current_student(request, db)
     if not student or not student.is_teacher:
         return templates.TemplateResponse(request, "teacher_signup.html", {
-            "student": student, "google_client_id": settings.GOOGLE_CLIENT_ID})
+            "student": student, "google_client_id": settings.GOOGLE_CLIENT_ID,
+            "jsonld": seo.teacher_jsonld()})
     tests = (db.query(ClassTest).filter_by(teacher_id=student.id)
              .order_by(ClassTest.created_at.desc()).all())
     rows = []
@@ -1567,14 +1590,200 @@ def teacher_chapters(request: Request, subject: str = "jee-physics", db: Session
                          "ladder": examgen.difficulty_ladder(subject), "chapters": chapters})
 
 
+# Exams offered to TEACHERS = the SAME coverage students get. Was hardcoded to JEE/NEET/Banking only,
+# so teachers couldn't make Class 10/12/Commerce/UPSC tests (institute feedback 2026-07-29). Order
+# mirrors the student exam picker.
+_TEACHER_GOALS = ["jee-advanced", "neet", "cbse-10", "cbse-12", "cbse-12-commerce", "banking", "upsc"]
+
+
+def _teacher_subjects():
+    """(subject_id, goal_dict) for every live exam's subjects, deduped, in exam order."""
+    out, seen = [], set()
+    for gid in _TEACHER_GOALS:
+        g = examgen.GOALS.get(gid)
+        if not g:
+            continue
+        for sid in g.get("subjects", []):
+            if sid in examgen.RAG_SUBJECTS and sid not in seen:
+                seen.add(sid)
+                out.append((sid, g))
+    return out
+
+
+# ── B2B2C: teacher-linked students (institute classroom) ─────────────────────────────
+def _new_invite_code(db) -> str:
+    alpha = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
+    for _ in range(30):
+        code = "".join(secrets.choice(alpha) for _ in range(7))
+        if not db.query(TeacherInvite).filter_by(code=code).first():
+            return code
+    return secrets.token_urlsafe(7)[:9].upper()
+
+
+def _linked_teacher(db, student):
+    """The teacher/institute Student row this student belongs to, or None."""
+    if not student or not getattr(student, "teacher_id", None):
+        return None
+    return db.query(Student).filter_by(id=student.teacher_id).first()
+
+
+def _link_subjects(db, student, subject_ids):
+    """Seed a linked student's subjects to the teacher's batch list (teacher-controlled — the 5-cap
+    and self-service add do NOT apply to linked students; the institute owns the syllabus)."""
+    have = {t.topic_key for t in _student_topics(db, student)}
+    for sid in subject_ids:
+        if sid in examgen.RAG_SUBJECTS and sid not in have:
+            db.add(StudentTopic(student_id=student.id, topic_key=sid,
+                                title=examgen.RAG_SUBJECTS[sid]["label"][:120], kind="exam"))
+
+
+@app.get("/teacher/invites", response_class=HTMLResponse)
+def teacher_invites(request: Request, db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return RedirectResponse("/teacher", status_code=302)
+    invites = (db.query(TeacherInvite).filter_by(teacher_id=teacher.id)
+               .order_by(TeacherInvite.created_at.desc()).all())
+    counts = {}
+    for inv in invites:
+        counts[inv.id] = inv  # placeholder; roster count is teacher-wide below
+    subs = [{"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"], "exam": g["label"]}
+            for sid, g in _teacher_subjects()]
+    roster = db.query(Student).filter_by(teacher_id=teacher.id).count()
+    inv_rows = [{"code": i.code, "label": i.label, "active": i.active,
+                 "sublabels": [examgen.RAG_SUBJECTS[s]["label"] for s in (i.subjects or []) if s in examgen.RAG_SUBJECTS],
+                 "url": f"{settings.BASE_URL}/join/{i.code}"} for i in invites]
+    assigns = (db.query(Assignment).filter_by(teacher_id=teacher.id, active=True)
+               .order_by(Assignment.created_at.desc()).all())
+    tests = (db.query(ClassTest).filter_by(teacher_id=teacher.id).order_by(ClassTest.created_at.desc()).limit(20).all())
+    return templates.TemplateResponse(request, "teacher_invites.html", {
+        "student": teacher, "invites": inv_rows, "subjects": subs, "roster": roster,
+        "base_url": settings.BASE_URL,
+        "assignments": [{"id": a.id, "title": a.title, "kind": a.kind} for a in assigns],
+        "tests": [{"code": t.code, "title": t.title or t.subject_label} for t in tests]})
+
+
+@app.post("/api/teacher/invite")
+async def teacher_invite_create(request: Request, db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"error": "login"}, status_code=401)
+    body = await request.json()
+    label = (body.get("label") or "").strip()[:80] or "My batch"
+    subjects = [s for s in (body.get("subjects") or []) if s in examgen.RAG_SUBJECTS][:8]
+    if not subjects:
+        return JSONResponse({"error": "Pick at least one subject for this batch."}, status_code=400)
+    code = _new_invite_code(db)
+    db.add(TeacherInvite(code=code, teacher_id=teacher.id, label=label, subjects=subjects))
+    db.commit()
+    return JSONResponse({"ok": True, "code": code, "url": f"{settings.BASE_URL}/join/{code}"})
+
+
+@app.get("/join/{code}", response_class=HTMLResponse)
+def join_landing(request: Request, code: str, db: Session = Depends(get_db)):
+    inv = db.query(TeacherInvite).filter_by(code=code, active=True).first()
+    if not inv:
+        return RedirectResponse("/exam-prep", status_code=302)
+    teacher = db.query(Student).filter_by(id=inv.teacher_id).first()
+    institute = ((teacher.institute if teacher else "") or (teacher.name if teacher else "") or "your teacher")
+    sublabels = [examgen.RAG_SUBJECTS[s]["label"] for s in (inv.subjects or []) if s in examgen.RAG_SUBJECTS]
+    return templates.TemplateResponse(request, "join.html", {
+        "code": code, "institute": institute, "label": inv.label, "sublabels": sublabels,
+        "google_client_id": settings.GOOGLE_CLIENT_ID})
+
+
+@app.post("/join/{code}")
+def join_submit(request: Request, code: str, email: str = Form(...), name: str = Form(""),
+                db: Session = Depends(get_db)):
+    inv = db.query(TeacherInvite).filter_by(code=code, active=True).first()
+    if not inv:
+        return RedirectResponse("/exam-prep", status_code=302)
+    email = email.lower().strip()
+    if "@" not in email or "." not in email.split("@")[-1]:
+        return RedirectResponse(f"/join/{code}?err=1", status_code=302)
+    existed = db.query(Student).filter_by(email=email).first() is not None
+    student = get_or_create_student(db, email)
+    if name and not student.name:
+        student.name = name[:120]
+    student.teacher_id = inv.teacher_id                    # link to the institute
+    _link_subjects(db, student, inv.subjects)              # seed the batch's subjects
+    db.commit()
+    if not existed:
+        notify.notify_admin(f"🎓 New STUDENT joined a teacher batch — {student.email} · {inv.label}")
+    request.session["sid"] = student.id
+    return RedirectResponse("/exam-prep/dashboard", status_code=302)
+
+
+def _student_assignments(db, student):
+    """Active assignments from this student's teacher → items with a start URL (the '📋 Assigned'
+    section on the student dashboard)."""
+    if not student or not getattr(student, "teacher_id", None):
+        return []
+    rows = (db.query(Assignment).filter_by(teacher_id=student.teacher_id, active=True)
+            .order_by(Assignment.created_at.desc()).limit(12).all())
+    out = []
+    for a in rows:
+        if a.kind == "smart":
+            url, icon = f"/exam-prep/smart?subject={a.ref}", "🎯"
+        elif a.kind == "mock":
+            url, icon = "/exam-prep/papers", "⏱️"
+        elif a.kind == "classtest":
+            url, icon = f"/t/{a.ref}", "📝"
+        else:
+            continue
+        out.append({"title": a.title or a.subject_label or "Practice", "kind": a.kind,
+                    "url": url, "icon": icon, "subject": a.subject_label})
+    return out
+
+
+@app.post("/api/teacher/assign")
+async def teacher_assign(request: Request, db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"error": "login"}, status_code=401)
+    body = await request.json()
+    kind = (body.get("kind") or "").strip()
+    ref = (body.get("ref") or "").strip()[:80]
+    if kind not in ("smart", "mock", "classtest"):
+        return JSONResponse({"error": "bad kind"}, status_code=400)
+    sub_label = ""
+    title = (body.get("title") or "").strip()[:140]
+    if kind == "smart":
+        if ref not in examgen.RAG_SUBJECTS:
+            return JSONResponse({"error": "pick a subject"}, status_code=400)
+        sub_label = examgen.RAG_SUBJECTS[ref]["label"]
+        title = title or f"Smart Practice · {sub_label}"
+    elif kind == "mock":
+        sub_label = examgen.RAG_SUBJECTS.get(ref, {}).get("label", "") if ref else ""
+        title = title or ("Mock test" + (f" · {sub_label}" if sub_label else ""))
+    elif kind == "classtest":
+        if not db.query(ClassTest).filter_by(code=ref, teacher_id=teacher.id).first():
+            return JSONResponse({"error": "no such test"}, status_code=400)
+        title = title or f"Test {ref}"
+    db.add(Assignment(teacher_id=teacher.id, kind=kind, ref=ref, title=title, subject_label=sub_label))
+    db.commit()
+    return JSONResponse({"ok": True})
+
+
+@app.post("/api/teacher/assign/{aid}/remove")
+def teacher_assign_remove(request: Request, aid: int, db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"error": "login"}, status_code=401)
+    a = db.query(Assignment).filter_by(id=aid, teacher_id=teacher.id).first()
+    if a:
+        a.active = False
+        db.commit()
+    return JSONResponse({"ok": True})
+
+
 @app.get("/teacher/new", response_class=HTMLResponse)
 def teacher_new(request: Request, db: Session = Depends(get_db)):
     teacher = current_teacher(request, db)
     if not teacher:
         return RedirectResponse("/teacher", status_code=302)
-    subs = [{"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"]}
-            for sid in ["jee-physics", "jee-chemistry", "jee-maths",
-                        "neet-biology", "neet-physics", "neet-chemistry", "banking-quant"]]
+    subs = [{"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"], "exam": g["label"]}
+            for sid, g in _teacher_subjects()]
     return templates.TemplateResponse(request, "teacher_new.html", {"student": teacher, "subjects": subs})
 
 
@@ -2197,6 +2406,13 @@ def api_trial_skip(request: Request, db: Session = Depends(get_db)):
 
 
 # ---------- student assessment plan (₹199/mo) billing — a SEPARATE, parallel track ----------
+def _assess_plan(student: Student):
+    """Pick the Razorpay plan + price by role. Teachers/institutes → ₹999 plan; students → ₹249."""
+    if getattr(student, "is_teacher", False) and settings.RZP_ASSESS_TEACHER_PLAN_ID:
+        return settings.RZP_ASSESS_TEACHER_PLAN_ID, settings.ASSESS_TEACHER_PRICE_INR
+    return settings.RZP_ASSESS_PLAN_ID, settings.ASSESS_PRICE_INR
+
+
 def _assess_view(student: Student) -> dict:
     st = student.assess_status or "none"
     nocard = (st == "trialing" and not student.rzp_assess_subscription_id)
@@ -2205,8 +2421,12 @@ def _assess_view(student: Student) -> dict:
     if student.assess_trial_end:
         secs = (student.assess_trial_end - datetime.utcnow()).total_seconds()
         days_left = max(0, int((secs + 86399) // 86400))
-    return {"status": st, "price": settings.ASSESS_PRICE_INR, "trial_days": settings.ASSESS_TRIAL_DAYS,
-            "enabled": settings.ASSESS_ENABLED, "configured": billing.configured_assess(),
+    plan_id, price = _assess_plan(student)
+    is_teacher = bool(getattr(student, "is_teacher", False))
+    return {"status": st, "price": price, "trial_days": settings.ASSESS_TRIAL_DAYS,
+            "enabled": settings.ASSESS_ENABLED,
+            "configured": billing._keys_ok() and bool(plan_id),
+            "is_teacher": is_teacher, "role": "teacher" if is_teacher else "student",
             "active_trial": nocard and active_trial, "expired": nocard and not active_trial,
             "days_left": days_left, "key_id": settings.RZP_KEY_ID}
 
@@ -2227,16 +2447,18 @@ async def api_assess_subscribe(request: Request, db: Session = Depends(get_db)):
         return JSONResponse({"error": "login required", "redirect": "/login"}, status_code=401)
     if student.assess_status == "active" or (student.assess_status == "trialing" and student.rzp_assess_subscription_id):
         return JSONResponse({"error": "already subscribed", "redirect": "/exam-prep"}, status_code=400)
-    if not billing.configured_assess():
+    plan_id, _price = _assess_plan(student)
+    if not (billing._keys_ok() and plan_id):
         return JSONResponse({"error": "Assessment billing is not configured yet."}, status_code=503)
     body = await request.json() if request.headers.get("content-type", "").startswith("application/json") else {}
     contact = (body.get("contact") or "").strip()
     already_trialed = student.assess_trial_end is not None    # used their free trial → charge now (trial_days=0)
+    plan_label = "assessment-teacher" if getattr(student, "is_teacher", False) and settings.RZP_ASSESS_TEACHER_PLAN_ID else "assessment"
     try:
         sub = await run_in_threadpool(
             billing.create_subscription, student.name, student.email, "exam-prep", contact,
             student.rzp_assess_customer_id, 0 if already_trialed else settings.ASSESS_TRIAL_DAYS,
-            settings.RZP_ASSESS_PLAN_ID, None, {"email": student.email, "plan": "assessment"},
+            plan_id, None, {"email": student.email, "plan": plan_label},
         )
     except Exception as exc:
         return JSONResponse({"error": f"Could not start subscription: {exc}"}, status_code=502)
@@ -2267,7 +2489,9 @@ def _apply_assess_webhook(db: Session, student: Student, entity: dict):
         student.assess_status = new_status
         if new_status != old:
             if new_status == "active":
-                notify.notify_admin(f"💰 New ASSESSMENT subscriber — {student.email} · ₹{settings.ASSESS_PRICE_INR}/mo")
+                _p = settings.ASSESS_TEACHER_PRICE_INR if getattr(student, "is_teacher", False) else settings.ASSESS_PRICE_INR
+                _who = "TEACHER" if getattr(student, "is_teacher", False) else "student"
+                notify.notify_admin(f"💰 New ASSESSMENT subscriber ({_who}) — {student.email} · ₹{_p}/mo")
             elif new_status == "cancelled":
                 notify.notify_admin(f"⚠️ Assessment subscription cancelled — {student.email}")
     ce = billing.ts_to_dt(entity.get("current_end"))
@@ -2716,6 +2940,28 @@ def admin_students(request: Request, db: Session = Depends(get_db)):
     return JSONResponse(rows)
 
 
+@app.get("/admin/api/pulse")
+def admin_pulse(key: str = "", db: Session = Depends(get_db)):
+    """Read-only campaign/funnel command-center payload for the `trigunai-campaign-tracker`
+    skill. Gated by a shared key (no session) so it can be curled from a daily script.
+    Tracks EVERY signup/login regardless of source. See app/analytics.py:pulse()."""
+    if not settings.PULSE_KEY or key != settings.PULSE_KEY:
+        raise HTTPException(403, "bad or missing key")
+    return JSONResponse(analytics.pulse(db))
+
+
+@app.get("/admin/api/pulse/student")
+def admin_pulse_student(id: int, key: str = "", db: Session = Depends(get_db)):
+    """Read-only per-student/teacher activity drill-down for the campaign-tracker dashboard.
+    Same key gate as /admin/api/pulse. See app/analytics.py:student_detail()."""
+    if not settings.PULSE_KEY or key != settings.PULSE_KEY:
+        raise HTTPException(403, "bad or missing key")
+    d = analytics.student_detail(db, id)
+    if not d:
+        raise HTTPException(404, "not found")
+    return JSONResponse(d)
+
+
 @app.get("/admin/api/login-link/{student_id}")
 def admin_login_link(student_id: int, request: Request, db: Session = Depends(get_db)):
     """Generate a magic link for a student (so you can hand it over directly)."""
@@ -2792,6 +3038,8 @@ def m_home(request: Request, db: Session = Depends(get_db)):
     if not student:
         return JSONResponse({"ok": False}, status_code=401)
     st = _prep_stats(db, student)
+    linked = _linked_teacher(db, student)
+    institute = ((linked.institute if linked else "") or (linked.name if linked else "")) if linked else ""
     return JSONResponse({
         "ok": True,
         "mastery": st["mastery"], "goal": st["goal"], "goal_id": st["goal_id"],
@@ -2804,6 +3052,8 @@ def m_home(request: Request, db: Session = Depends(get_db)):
         "due": [_concept_json(s) for s in st["due"][:5]],
         "days_left": _days_left(student), "has_access": has_assessment_access(db, student),
         "smart": _smart_target(db, student, st["weakest"]),
+        "linked": bool(linked), "institute": institute,
+        "assignments": _assignments_json(db, student),
     })
 
 
@@ -2871,6 +3121,81 @@ def m_tutor_anchor(request: Request, subject: str = "", concept: str = "",
         "concept": concept, "mastery_pct": mastery_pct,
         "anchor": _tutor_anchor(subject, concept, diff),
     })
+
+
+def _assignments_json(db, student) -> list:
+    """Native-friendly assignments for a linked student (kind + ref so the app can act)."""
+    if not student or not getattr(student, "teacher_id", None):
+        return []
+    rows = (db.query(Assignment).filter_by(teacher_id=student.teacher_id, active=True)
+            .order_by(Assignment.created_at.desc()).limit(12).all())
+    return [{"id": a.id, "kind": a.kind, "ref": a.ref,
+             "title": a.title or a.subject_label or "Practice", "subject": a.subject_label}
+            for a in rows if a.kind in ("smart", "mock", "classtest")]
+
+
+@app.get("/api/m/teacher/home")
+def m_teacher_home(request: Request, db: Session = Depends(get_db)):
+    """Everything the native teacher home needs: institute, roster (linked students + real mastery),
+    batch invites, active assignments, class tests, and the subjects a teacher can pick."""
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"ok": False}, status_code=401)
+    invites = (db.query(TeacherInvite).filter_by(teacher_id=teacher.id)
+               .order_by(TeacherInvite.created_at.desc()).all())
+    inv_rows = [{"code": i.code, "label": i.label, "active": i.active,
+                 "sublabels": [examgen.RAG_SUBJECTS[s]["label"] for s in (i.subjects or []) if s in examgen.RAG_SUBJECTS],
+                 "url": f"{settings.BASE_URL}/join/{i.code}"} for i in invites]
+    linked = db.query(Student).filter_by(teacher_id=teacher.id).all()
+    roster = []
+    for s in linked:
+        stats = [x for x in db.query(ConceptStat).filter_by(student_id=s.id).all() if x.seen]
+        seen = sum(x.seen for x in stats); corr = sum(x.correct for x in stats)
+        roster.append({"name": s.name or s.email, "email": s.email,
+                       "mastery": round(100 * corr / seen) if seen else 0,
+                       "tests": db.query(TopicAttempt).filter_by(student_id=s.id).count()})
+    roster.sort(key=lambda r: r["mastery"])
+    assigns = (db.query(Assignment).filter_by(teacher_id=teacher.id, active=True)
+               .order_by(Assignment.created_at.desc()).all())
+    tests = (db.query(ClassTest).filter_by(teacher_id=teacher.id)
+             .order_by(ClassTest.created_at.desc()).all())
+    test_rows = []
+    for t in tests:
+        test_rows.append({"code": t.code, "title": t.title or t.subject_label,
+                          "subject": t.subject_label, "n": t.n,
+                          "sittings": db.query(ClassSitting).filter_by(class_test_id=t.id).count()})
+    subs = [{"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"], "exam": g["label"]}
+            for sid, g in _teacher_subjects()]
+    return JSONResponse({
+        "ok": True, "institute": teacher.institute or teacher.name or "",
+        "roster_count": len(linked), "roster": roster, "invites": inv_rows,
+        "assignments": [{"id": a.id, "kind": a.kind, "ref": a.ref,
+                         "title": a.title, "subject": a.subject_label} for a in assigns],
+        "tests": test_rows, "subjects": subs,
+    })
+
+
+@app.post("/api/m/join")
+async def m_join(request: Request, db: Session = Depends(get_db)):
+    """Link the CURRENT logged-in student to a teacher's batch via its invite code."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    code = (body.get("code") or "").strip().upper()
+    inv = db.query(TeacherInvite).filter_by(code=code, active=True).first()
+    if not inv:
+        return JSONResponse({"ok": False, "error": "That class code isn't valid."}, status_code=404)
+    student.teacher_id = inv.teacher_id
+    _link_subjects(db, student, inv.subjects)
+    db.commit()
+    teacher = db.query(Student).filter_by(id=inv.teacher_id).first()
+    return JSONResponse({"ok": True,
+                         "institute": (teacher.institute or teacher.name or "your teacher") if teacher else "your teacher",
+                         "label": inv.label})
 
 
 @app.get("/api/m/teacher/tests")
