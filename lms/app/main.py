@@ -995,9 +995,12 @@ def exam_prep_smart(request: Request, db: Session = Depends(get_db)):
     if not sel:
         return RedirectResponse("/exam-prep/dashboard", status_code=302)
     diff = examgen.difficulty_for(subject, st["mastery"] / 100)   # on the exam's own band (NEET 2-3, JEE 3-4)
+    # A brand-new student's FIRST set is short (5 Q) — a fast, winnable quick-win beats a long
+    # slog for activation. Once they have data, Smart Practice is the full 10.
+    n = 5 if not st.get("has_data") else 10
     return RedirectResponse(
         f"/exam-prep/test?src=examgen&subject={quote(subject)}&sel={quote('|'.join(sel))}"
-        f"&diff={quote(diff)}&n=10&title={quote('Smart Practice')}", status_code=302)
+        f"&diff={quote(diff)}&n={n}&title={quote('Smart Practice')}", status_code=302)
 
 
 @app.get("/exam-prep/dashboard", response_class=HTMLResponse)
@@ -3322,6 +3325,84 @@ def m_report(request: Request, db: Session = Depends(get_db)):
     })
 
 
+@app.get("/api/m/papers")
+def m_papers(request: Request, db: Session = Depends(get_db)):
+    """The mock test series for the student's goal, with their best score on each (native)."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False}, status_code=401)
+    goal_id = _student_goal(db, student) or examgen.DEFAULT_GOAL
+    ready = db.query(MockPaper).filter_by(status="ready").order_by(MockPaper.code).all()
+    papers = [p for p in ready if _paper_goal_id(p.subject) == goal_id]
+    best = {}
+    if papers:
+        pids = {p.id for p in papers}
+        for a in (db.query(PaperAttempt).filter_by(student_id=student.id)
+                  .filter(PaperAttempt.submitted_at.isnot(None)).all()):
+            if a.paper_id in pids and (a.paper_id not in best or a.score > best[a.paper_id].score):
+                best[a.paper_id] = a
+    out = []
+    for p in papers:
+        b = best.get(p.id)
+        out.append({"id": p.id, "code": p.code, "title": p.title or p.code,
+                    "minutes": p.minutes, "max_marks": p.max_marks,
+                    "n": len(p.questions or []),
+                    "done": b is not None,
+                    "score": b.score if b else None})
+    return JSONResponse({"ok": True, "goal": goal_id,
+                         "kind": mockpaper.paper_kind(goal_id), "papers": out})
+
+
+def _safe_paper_q(q: dict) -> dict:
+    return {"n": q.get("n"), "section": q.get("section"), "qtype": q.get("qtype"),
+            "marks": q.get("marks"), "neg": q.get("neg"), "stem": q.get("stem", ""),
+            "options": q.get("options") or [], "figure": q.get("figure"), "chapter": q.get("chapter")}
+
+
+@app.get("/api/m/paper/{paper_id}")
+def m_paper_start(paper_id: int, request: Request, db: Session = Depends(get_db)):
+    """Start a paper in the app — creates an attempt, returns questions STRIPPED of answers."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False}, status_code=401)
+    paper = db.query(MockPaper).filter_by(id=paper_id, status="ready").first()
+    if not paper:
+        return JSONResponse({"ok": False, "error": "no such paper"}, status_code=404)
+    att = PaperAttempt(student_id=student.id, paper_id=paper.id, max_score=paper.max_marks, answers={})
+    db.add(att)
+    db.commit()
+    return JSONResponse({"ok": True, "attempt_id": att.id, "title": paper.title or paper.code,
+                         "minutes": paper.minutes, "max_marks": paper.max_marks,
+                         "questions": [_safe_paper_q(q) for q in (paper.questions or [])]})
+
+
+@app.get("/api/m/paper/result/{attempt_id}")
+def m_paper_result(attempt_id: int, request: Request, db: Session = Depends(get_db)):
+    """The scored result of a submitted paper attempt (native), with per-question verdicts."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False}, status_code=401)
+    att = db.query(PaperAttempt).filter_by(id=attempt_id, student_id=student.id).first()
+    if not att or not att.submitted_at:
+        return JSONResponse({"ok": False, "error": "not found"}, status_code=404)
+    paper = db.get(MockPaper, att.paper_id)
+    res = mockpaper.score_attempt(paper.questions or [], att.answers or {})
+    per = {p["n"]: p for p in res["per_q"]}
+    rows = []
+    for q in (paper.questions or []):
+        v = per.get(q.get("n"), {})
+        rows.append({"n": q.get("n"), "section": q.get("section"), "qtype": q.get("qtype"),
+                     "stem": q.get("stem", ""), "options": q.get("options") or [],
+                     "marks": q.get("marks"), "given": v.get("given"),
+                     "correct": v.get("correct"), "state": v.get("state"),
+                     "solution": q.get("solution", "")})
+    return JSONResponse({"ok": True, "title": paper.title or paper.code,
+                         "score": att.score, "max": att.max_score,
+                         "correct": att.correct, "wrong": att.wrong, "skipped": att.skipped,
+                         "pct": round(100 * att.score / att.max_score) if att.max_score else 0,
+                         "rows": rows})
+
+
 @app.get("/api/m/tutor/anchor")
 def m_tutor_anchor(request: Request, subject: str = "", concept: str = "",
                    db: Session = Depends(get_db)):
@@ -3454,8 +3535,18 @@ def m_teacher_student(request: Request, sid: int, db: Session = Depends(get_db))
     sits = (db.query(ClassSitting).filter(ClassSitting.student_id == s.id,
             ClassSitting.class_test_id.in_(my_tids)).order_by(ClassSitting.submitted_at.desc()).all()
             if my_tids else [])
+    paper_atts = (db.query(PaperAttempt).filter_by(student_id=s.id)
+                  .filter(PaperAttempt.submitted_at.isnot(None))
+                  .order_by(PaperAttempt.submitted_at.desc()).limit(20).all())
+    papers = []
+    for pa in paper_atts:
+        mp = db.get(MockPaper, pa.paper_id)
+        papers.append({"title": (mp.title or mp.code) if mp else "Mock test",
+                       "score": pa.score, "max": pa.max_score,
+                       "pct": round(100 * pa.score / pa.max_score) if pa.max_score else 0})
     return JSONResponse({
         "ok": True, "name": s.name or s.email, "email": s.email,
+        "papers": papers,
         "attempts": [{"id": a.id, "title": a.title, "subject": a.subject,
                       "score": a.score, "total": a.total,
                       "concepts": a.concepts or []} for a in attempts],
