@@ -523,15 +523,32 @@ def exam_prep(request: Request, exam: str = "", db: Session = Depends(get_db)):
                                        "jsonld": seo.exam_prep_jsonld(EXAMS)})
 
 
+# --- Anti-bot signup guard (honeypot + disposable-domain blocklist) ---------
+# `website` is a HIDDEN honeypot field: invisible + un-tabbable for humans, but
+# auto-filled by form-spamming bots. A filled honeypot OR a known throwaway domain
+# => it's a bot, so we create NOTHING and return a normal-looking response. Zero
+# friction for real users (no captcha, no email verification). Extend the set as
+# new junk domains show up in the pulse.
+_BOT_EMAIL_DOMAINS = {"immenseignite.info"}
+
+def _looks_like_bot(email: str, honeypot: str) -> bool:
+    if (honeypot or "").strip():                 # honeypot filled → definitely a bot
+        return True
+    dom = email.split("@")[-1].strip().lower() if "@" in (email or "") else ""
+    return dom in _BOT_EMAIL_DOMAINS
+
+
 @app.post("/exam-prep/start")
 def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form(""),
                     phone: str = Form(""), q: str = Form(""), earn: str = Form(""),
-                    db: Session = Depends(get_db)):
+                    website: str = Form(""), db: Session = Depends(get_db)):
     """Instant free signup: email → account + session → straight into the assessment.
     No magic-link round-trip for the free tier (the magic link stays the re-login path).
     `q` = a free-text exam/topic → a dynamically-generated test; otherwise a curated exam.
     `earn` = a signed token from the competition → banks the server-scored earned free-access days."""
     email = email.lower().strip()
+    if _looks_like_bot(email, website):          # honeypot filled or throwaway domain → no account, no session
+        return RedirectResponse("/exam-prep", status_code=302)
     qtext = (q or "").strip()[:80]
     ex = exam.strip() if exam.strip() in EXAM_SUBJECT else EXAMS[0]["id"]
     if "@" not in email or "." not in email.split("@")[-1]:
@@ -1526,9 +1543,11 @@ def _promote_teacher(db, student, name: str, institute: str):
 
 @app.post("/teacher/signup")
 def teacher_signup(request: Request, email: str = Form(...), name: str = Form(""),
-                   institute: str = Form(""), db: Session = Depends(get_db)):
+                   institute: str = Form(""), website: str = Form(""), db: Session = Depends(get_db)):
     """Instant teacher signup (no magic-link wait) — email → account + session → teacher console."""
     email = email.lower().strip()
+    if _looks_like_bot(email, website):          # honeypot filled or throwaway domain → no account, no session
+        return RedirectResponse("/teacher", status_code=302)
     if "@" not in email or "." not in email.split("@")[-1]:
         return templates.TemplateResponse(request, "teacher_signup.html",
                                           {"student": None, "google_client_id": settings.GOOGLE_CLIENT_ID,
