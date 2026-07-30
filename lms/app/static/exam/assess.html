@@ -326,7 +326,7 @@ function mcq(q,last){return new Promise(res=>{const v=L(q);
   const order=shuffle(v.opts.map((o,i)=>i));   // #5 randomize display order; original index decides correctness
   order.forEach((origI,pos)=>{const o=v.opts[origI];const b=el(`<button class="opt"><span class="badge">${B[pos]}</span><span>${o}</span></button>`);
     b.dataset.c=(origI===q.correct)?'1':'';
-    b.onclick=()=>{[...card.querySelectorAll('.opt')].forEach(x=>{x.onclick=null;x.classList.add('dim');});
+    b.onclick=()=>{_pick=o;[...card.querySelectorAll('.opt')].forEach(x=>{x.onclick=null;x.classList.add('dim');});
       const c=card.querySelector('.opt[data-c="1"]');c.classList.remove('dim');c.classList.add('correct');
       const ok=origI===q.correct;
       if(!ok){b.classList.remove('dim');b.classList.add('wrong');b.appendChild(el('<span class="mark">✕</span>'));}
@@ -339,7 +339,7 @@ function truefalse(q,last){return new Promise(res=>{const v=L(q);
   const card=el(`<div class="qcard"><span class="qtag">${v.tag}</span><div class="qtext">${v.q}</div><div class="tf"></div></div>`);
   const w=card.querySelector('.tf');
   [[T[LANG].tf[0],true],[T[LANG].tf[1],false]].forEach(([t,val])=>{const b=el(`<button>${t}</button>`);
-    b.onclick=()=>{w.querySelectorAll('button').forEach(x=>x.onclick=null);const ok=val===q.answer;
+    b.onclick=()=>{_pick=t;w.querySelectorAll('button').forEach(x=>x.onclick=null);const ok=val===q.answer;
       w.querySelectorAll('button')[q.answer?0:1].classList.add('correct');if(!ok)b.classList.add('wrong');
       fbAdd(card,(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrong}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
     w.appendChild(b);});
@@ -364,7 +364,7 @@ function match(q,last){return new Promise(res=>{const v=L(q);
 function numeric(q,last){return new Promise(res=>{const v=L(q);
   const card=el(`<div class="qcard"><span class="qtag">${v.tag}</span>${figHTML(q)}<div class="qtext">${v.q}</div><div class="inrow"><input type="number" inputmode="decimal" placeholder="${q.unit?q.unit:'?'}"/><button class="btn">${T[LANG].check}</button></div></div>`);
   const inp=card.querySelector('input'),btn=card.querySelector('button');
-  btn.onclick=()=>{if(inp.value==='')return;btn.onclick=null;inp.disabled=true;const ok=Math.abs(parseFloat(inp.value)-q.answer)<1e-6;
+  btn.onclick=()=>{if(inp.value==='')return;_pick=inp.value+(q.unit?' '+q.unit:'');btn.onclick=null;inp.disabled=true;const ok=Math.abs(parseFloat(inp.value)-q.answer)<1e-6;
     inp.style.borderColor=ok?'var(--good)':'var(--bad)';inp.style.background=ok?'var(--goodbg)':'var(--badbg)';
     fbAdd(card,(`<div class="fb ${ok?'ok':'no'}">${ok?T[LANG].corr:T[LANG].wrongAns(q.answer,q.unit)}${v.explain}</div>`));advance(res,ok,last?T[LANG].results:null);};
   add(card);});}
@@ -374,7 +374,7 @@ function numeric(q,last){return new Promise(res=>{const v=L(q);
 function long(q,last){return new Promise(res=>{const v=L(q);
   const card=el(`<div class="qcard"><span class="qtag">${v.tag}</span><div class="qtext">${v.q}</div><textarea class="long" placeholder="${T[LANG].typePh}"></textarea><button class="btn full">${T[LANG].submit}</button></div>`);
   const btn=card.querySelector('button'),ta=card.querySelector('textarea');
-  btn.onclick=async()=>{const t=ta.value.trim();if(t.length<1){ta.focus();return;}btn.onclick=null;ta.disabled=true;btn.textContent=T[LANG].checking;
+  btn.onclick=async()=>{const t=ta.value.trim();if(t.length<1){ta.focus();return;}_pick=t;btn.onclick=null;ta.disabled=true;btn.textContent=T[LANG].checking;
     await wait(1100);btn.style.display='none';
     const dunno=/^(i\s*)?(nhi|nahi|nahin|na|no|nope|dunno|idk|don'?t\s*know|no\s*idea|pata\s*(nahi|nhi)|nahi\s*pata|nhi\s*pata|kuch\s*(nahi|nhi)|blank|skip|\?+|\.+|-+)\s*$/i.test(t.toLowerCase());
     const notAttempt=dunno||t.replace(/\s+/g,'').length<8;
@@ -391,6 +391,8 @@ const SLOW={mcq:13000,truefalse:9000,numeric:20000,match:22000};
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 // #4 confidence-calibration (opt-in via ?confidence=1): captures "sure vs not sure" per graded answer.
 const CONF=params.get('confidence')==='1'; const confLog=[]; let curGraded=true;
+// what the student actually PICKED on the current question — for the teacher's per-answer review.
+let _pick=null;
 
 function intro(){return new Promise(res=>{clear();fill.style.width='0%';plabel.textContent=T[LANG].ready;pscore.textContent=T[LANG].score+' 0';
   add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>${S.intro[LANG]}</div></div>`));
@@ -405,7 +407,9 @@ async function run(){
     clear();setHeader(i);
     curGraded=q.type!=='long';   // #4 long answers aren't graded → no calibration prompt
     const t0=performance.now();
+    _pick=null;
     const ok=await render(q,last && !q.adaptive);
+    const pick=_pick;   // the student's answer to the MAIN question (before any adaptive follow-up)
     const dt=performance.now()-t0;
     if(q.type==='long'){ /* free text: honestly not auto-graded, so excluded from the diagnosis */ }
     else if(ok){ score++;
@@ -421,7 +425,7 @@ async function run(){
     } else {
       results.push({topic,status:'weak',depth:null});
     }
-    transcript.push({q:L(q).q, a:answerText(q,L(q)), explain:L(q).explain||'', ok:q.type==='long'?null:ok, type:q.type});
+    transcript.push({q:L(q).q, a:answerText(q,L(q)), chosen:(pick==null?'':String(pick)), explain:L(q).explain||'', ok:q.type==='long'?null:ok, type:q.type});
   }
   clear();fill.style.width='100%';plabel.textContent=T[LANG].complete;pscore.textContent=T[LANG].score+' '+score+'/'+GRADED;
   scorecard(results,transcript);
@@ -483,14 +487,16 @@ function scorecard(results,transcript){
     // teacher's dashboard sees this student's real score + weak topics. No account needed.
     try{fetch(window.__CLASSTEST.sittingUrl,{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
       body:JSON.stringify({code:window.__CLASSTEST.code,score:score,graded:GRADED,
-        results:results.map(r=>({topic:r.topic.en,status:r.status,depth:r.depth||null}))})}).catch(()=>{});}catch(e){}
+        results:results.map(r=>({topic:r.topic.en,status:r.status,depth:r.depth||null})),
+        // per-question record so the teacher can see exactly what this student answered
+        detail:(transcript||[]).map(t=>({q:t.q,a:t.a,chosen:t.chosen||'',explain:t.explain||'',ok:t.ok,type:t.type}))})}).catch(()=>{});}catch(e){}
     add(el(`<div class="footnote" style="text-align:center">✅ ${LANG==='hi'?'जमा हो गया — आपके टीचर को आपका परिणाम दिख जाएगा।':'Submitted — your teacher can now see your result.'}</div>`));
   } else if(window.__STUDENT){
     try{fetch('/api/assess/complete',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
       body:JSON.stringify({subject:(window.__SUBJECT||''),title:(window.__TITLE||window.__GEN_TITLE||''),score:score,graded:GRADED,
         results:results.map(r=>({topic:r.topic.en,status:r.status,depth:r.depth||null})),
-        // full paper so the student can REOPEN this test later from their report
-        detail:(transcript||[]).map(t=>({q:t.q,a:t.a,explain:t.explain||'',ok:t.ok,type:t.type}))})}).catch(()=>{});}catch(e){}
+        // full paper so the student can REOPEN this test later from their report (+ teacher review)
+        detail:(transcript||[]).map(t=>({q:t.q,a:t.a,chosen:t.chosen||'',explain:t.explain||'',ok:t.ok,type:t.type}))})}).catch(()=>{});}catch(e){}
     add(el(`<a class="btn ghost full" href="/exam-prep/dashboard">${T[LANG].another}</a>`));
     add(el(`<div class="footnote">${T[LANG].studFoot}</div>`));
   } else {

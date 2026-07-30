@@ -345,6 +345,9 @@ class ClassSitting(Base):
     total: Mapped[int] = mapped_column(Integer, default=0)                   # graded-question count
     concepts: Mapped[list] = mapped_column(JSON, default=list)               # [{topic, status, depth}]
     weak_topics: Mapped[list] = mapped_column(JSON, default=list)            # derived weak concept names
+    # the full paper as answered — [{q, a (correct), chosen (student's answer), explain, ok, type}] —
+    # so the teacher can see exactly what this student answered, question by question.
+    detail: Mapped[list] = mapped_column(JSON, default=list)
     submitted_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
 
 

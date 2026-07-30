@@ -36,6 +36,28 @@
  .row .pct{font-weight:800;min-width:44px;text-align:right}
  .p-weak{color:var(--weak)}.p-shaky{color:var(--shaky)}.p-solid{color:var(--green)}
  .empty{color:var(--faint);font-size:13.5px;text-align:center;padding:14px}
+ /* assigned completion */
+ .asg{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+ .asg:last-child{border-bottom:none}
+ .asg .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .tag{font-size:11px;font-weight:800;padding:3px 9px;border-radius:20px;white-space:nowrap}
+ .tag.done{background:#EAF6EF;color:var(--green)} .tag.pend{background:#FBEEDD;color:var(--shaky)}
+ /* expandable per-question review */
+ details.test{border-bottom:1px solid var(--line)}
+ details.test:last-child{border-bottom:none}
+ details.test>summary{list-style:none;display:flex;align-items:center;gap:10px;padding:11px 0;cursor:pointer;font-size:14px}
+ details.test>summary::-webkit-details-marker{display:none}
+ details.test>summary .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ details.test>summary .caret{color:var(--faint);font-size:12px;transition:transform .15s}
+ details.test[open]>summary .caret{transform:rotate(90deg)}
+ .qrev{padding:4px 0 12px;border-top:1px dashed var(--line);margin-top:2px}
+ .qi{padding:9px 0;border-bottom:1px dashed var(--line);font-size:13px}
+ .qi:last-child{border-bottom:none}
+ .qi .qq{font-weight:700;margin-bottom:5px}
+ .qi .ans{display:flex;gap:6px;flex-wrap:wrap;font-size:12.5px}
+ .qi .ans b{font-weight:700}
+ .a-ok{color:var(--green)}.a-no{color:var(--weak)}.a-na{color:var(--muted)}
+ .mk{font-weight:800;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -56,6 +78,19 @@
     </div>
   </div>
 
+  {% if assigned %}
+  <div class="card">
+    <div class="sec">Assigned by you — did they do it?</div>
+    {% for a in assigned %}
+    <div class="asg">
+      <span class="t">{{ '🎯' if a.kind=='smart' else ('⏱️' if a.kind=='mock' else '📝') }} {{ a.title }}</span>
+      {% if a.done %}<span class="pct {{ 'p-weak' if a.pct<40 else ('p-shaky' if a.pct<70 else 'p-solid') }}">{{ a.pct }}%</span><span class="tag done">✓ done {{ a.when }}</span>
+      {% else %}<span class="tag pend">not yet</span>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   <div class="card">
     <div class="sec">Subjects (set by you)</div>
     {% if subjects %}<div class="chips">{% for sub in subjects %}<span class="chip-sub">{{ sub }}</span>{% endfor %}</div>
@@ -70,13 +105,37 @@
   {% endif %}
 
   <div class="card">
-    <div class="sec">Recent tests</div>
+    <div class="sec">Recent tests · tap to see their answers</div>
     {% if recent %}
       {% for a in recent %}
-      <div class="row">
-        <div class="t">{{ a.title }}<div class="when">{{ a.when }}</div></div>
-        <div class="pct {{ 'p-weak' if a.pct<40 else ('p-shaky' if a.pct<70 else 'p-solid') }}">{{ a.pct }}%</div>
-      </div>
+      <details class="test">
+        <summary>
+          <span class="t">{{ a.title }} <small class="when">· {{ a.kind }} · {{ a.when }}</small></span>
+          <span class="pct {{ 'p-weak' if a.pct<40 else ('p-shaky' if a.pct<70 else 'p-solid') }}">{{ a.score }}/{{ a.total }}</span>
+          <span class="caret">▶</span>
+        </summary>
+        <div class="qrev">
+          {% if a.detail %}
+            {% for d in a.detail %}
+            <div class="qi">
+              <div class="qq">{{ loop.index }}. {{ d.q|safe }}
+                {% if d.ok is none %}<span class="mk a-na">✎</span>{% elif d.ok %}<span class="mk a-ok">✓</span>{% else %}<span class="mk a-no">✕</span>{% endif %}
+              </div>
+              <div class="ans">
+                {% if d.type == 'long' %}
+                  <span class="a-na">Their answer: <b>{{ d.chosen or '—' }}</b></span>
+                {% else %}
+                  <span class="{{ 'a-ok' if d.ok else 'a-no' }}">Answered: <b>{{ d.chosen or '(blank)' }}</b></span>
+                  {% if not d.ok and d.a %}<span class="a-ok">· Correct: <b>{{ d.a }}</b></span>{% endif %}
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          {% else %}
+            <div class="empty" style="padding:8px">Per-question answers weren't recorded for this test.</div>
+          {% endif %}
+        </div>
+      </details>
       {% endfor %}
     {% else %}
       <div class="empty">No tests yet. Assign one from “My students” — it'll appear on their dashboard and their score will show here.</div>

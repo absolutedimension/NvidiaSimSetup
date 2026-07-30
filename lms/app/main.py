@@ -1832,9 +1832,10 @@ async def teacher_assign(request: Request, db: Session = Depends(get_db)):
         sub_label = examgen.RAG_SUBJECTS.get(ref, {}).get("label", "") if ref else ""
         title = title or ("Mock test" + (f" · {sub_label}" if sub_label else ""))
     elif kind == "classtest":
-        if not db.query(ClassTest).filter_by(code=ref, teacher_id=teacher.id).first():
+        ct = db.query(ClassTest).filter_by(code=ref, teacher_id=teacher.id).first()
+        if not ct:
             return JSONResponse({"error": "no such test"}, status_code=400)
-        title = title or f"Test {ref}"
+        title = title or ct.title or ct.subject_label or f"Test {ref}"
     db.add(Assignment(teacher_id=teacher.id, invite_id=invite_id, kind=kind, ref=ref,
                       title=title, subject_label=sub_label))
     db.commit()

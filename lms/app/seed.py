@@ -348,6 +348,8 @@ def _migrate():
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS batch_id INTEGER NULL",
         "ALTER TABLE assignments ADD COLUMN IF NOT EXISTS invite_id INTEGER NULL",
         "ALTER TABLE class_sittings ADD COLUMN IF NOT EXISTS student_id INTEGER NULL",
+        # per-question answer record so the teacher can review what each student answered
+        "ALTER TABLE class_sittings ADD COLUMN IF NOT EXISTS detail JSON DEFAULT '[]'::json",
         # GRANDFATHER (one-time): every student that exists when the column is first added is
         # NULL → mark grandfathered (full access forever, never paywalled). Re-running matches
         # nothing because new signups are 'none' (not NULL), so it's idempotent.
