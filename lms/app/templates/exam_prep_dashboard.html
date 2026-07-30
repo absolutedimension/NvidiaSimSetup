@@ -170,6 +170,19 @@
           {% else %}Your first set covers your chosen topic. As you answer, Acharya learns where you're weak and targets it.{% endif %}
         </div>
 
+        {% if not st.has_data %}
+        {# ---- FIRST RUN (zero attempts): ONE quick-win. No 55-Q mock-test trap — a cold
+           visitor who opens a full timed mock, scores 3/55 with no feedback, and leaves is the
+           #1 activation leak. Give them a short, winnable, feedback-rich first set instead. ---- #}
+        <a class="cta" href="/exam-prep/smart" style="background:linear-gradient(135deg,#C2591F,#A8481A)">
+          <div><div class="t">▶ Start your first practice</div></div>
+          <div class="k">5 quick questions · instant feedback after each · see where you stand</div>
+        </a>
+        <a class="cta" href="/exam-prep/chat" style="margin-top:10px;background:var(--cream);color:var(--gold2);box-shadow:none;border:1.5px solid var(--gold)">
+          <div><div class="t" style="color:var(--gold2)">💬 Or tell Acharya a topic</div></div>
+          <div class="k" style="color:var(--muted)">just say what you want to practise — I'll build the set</div>
+        </a>
+        {% else %}
         <a class="cta" href="/exam-prep/chat" style="background:linear-gradient(135deg,#C2591F,#A8481A)">
           <div><div class="t">💬 Chat with Acharya</div></div>
           <div class="k">just say what you want to<br>practise — I'll build it</div>
@@ -193,6 +206,7 @@
             <span class="i">🎯</span><div><div class="t">Fix weak areas</div><div class="k">built from your mistakes</div></div>
           </a>
         </div>
+        {% endif %}
       </div>
 
       {# ---- my topics ---- #}
