@@ -157,7 +157,11 @@ async def track_visits(request: Request, call_next):
                     except Exception:
                         sid = None
                     ip = request.client.host if request.client else ""
-                    v = analytics.make_visit(path, request.headers.get("referer", ""), ip, ua, sid)
+                    # keep the query string so UTM tags (?utm_source=…) are captured for
+                    # source attribution (e.g. the Patna-library WhatsApp campaign). should_track
+                    # already ran on the bare path above.
+                    track_path = f"{path}?{request.url.query}" if request.url.query else path
+                    v = analytics.make_visit(track_path, request.headers.get("referer", ""), ip, ua, sid)
                     db.add(v)
                     if sid:
                         s = db.get(_S, sid)
