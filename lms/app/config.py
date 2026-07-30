@@ -72,9 +72,9 @@ class Settings:
     # ---- Teacher / institute (B2B) pricing — land-and-expand (see PRICING_MODEL.md, 2026-07-24) ----
     # Billing not yet wired; these drive the DISPLAYED tiers on /teacher so the offer is testable on a
     # real buyer. First-paid closes over WhatsApp/transfer (CONTACT_WA) until Razorpay B2B is live.
-    TEACHER_SOLO_INR = int(os.getenv("TEACHER_SOLO_INR", "999"))          # 1 teacher, <=60 students (the 0->1 wedge)
-    TEACHER_COACHING_INR = int(os.getenv("TEACHER_COACHING_INR", "2999")) # <=300 students, white-label + analytics
-    TEACHER_INSTITUTE_INR = int(os.getenv("TEACHER_INSTITUTE_INR", "7999"))  # unlimited + branding + priority
+    TEACHER_SOLO_INR = int(os.getenv("TEACHER_SOLO_INR", "999"))          # 1 teacher, <=20 students (the 0->1 wedge)
+    TEACHER_COACHING_INR = int(os.getenv("TEACHER_COACHING_INR", "2999")) # <=50 students, white-label + analytics
+    TEACHER_INSTITUTE_INR = int(os.getenv("TEACHER_INSTITUTE_INR", "7999"))  # <=200 students + branding + priority (200+ = Custom, contact us)
 
     # Real contact handles for manual activation while billing is inert (both verified live in templates)
     CONTACT_WA = os.getenv("CONTACT_WA", "919135255107").strip()         # Acharya WhatsApp (wa.me/<this>)
