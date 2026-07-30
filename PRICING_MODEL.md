@@ -86,16 +86,20 @@ a ₹499 attempt was tried). Fix = **land-and-expand**, entry price low enough t
 
 | Tier | Price | Cap / who | Includes |
 |---|---|---|---|
-| **Solo Teacher** ⭐ (land here) | **₹999/mo** | 1 teacher · ≤20 students | Unlimited real-pattern papers · share link (no student signup) · printable + answer key · weak-topic dashboard |
-| Coaching | **₹2,999/mo** | ≤50 students | + white-label (institute brand) · class analytics · priority generation |
-| Institute | **₹7,999/mo** | ≤200 students | + multi-teacher · full branding · usage analytics · priority support |
-| **Custom** | Contact business | 200+ students / multi-branch | negotiated — the biggest fish never self-serve a price |
+| **Solo Teacher** ⭐ (land here) | **₹999/mo** | 1 teacher · ≤20 students | Unlimited real-pattern papers · share link · printable + answer key · weak-topic dashboard · each student their own practice |
+| Coaching | **₹2,999/mo** | ≤50 students | + class analytics · priority generation |
+| Institute | **₹7,999/mo** | ≤200 students | + multi-teacher · priority support |
+| **Custom** ⭐ | Contact business | 200+ students / multi-branch | **+ your logo & full white-label branding** · negotiated (the biggest fish never self-serve a price — Contact-us lets us price-discriminate + control hosting cost + trade discount for commitment) |
 
-> **Caps tightened 2026-07-30 (Deepak):** was Solo ≤60 / Coaching ≤300 / Institute unlimited. Now
-> ≤20 / ≤50 / ≤200 + Custom-above-200. Deliberate premium-per-student call (Solo ~₹50, Coaching ~₹60,
-> Institute ~₹40/student) — sell on brand + hours-saved + dashboard, NOT the per-student math. Live on
-> `/teacher` + `config.py` comments + Rohan's `teacher_gtm/ROHAN_QUOTE_CARD.md`. Still 0 paid — anchor
-> high in the field, fall back to ₹999 only to break 0→1.
+> **Caps + branding restructured 2026-07-30 (Deepak):** was Solo ≤60 / Coaching ≤300 / Institute
+> unlimited-with-branding. Now ≤20 / ≤50 / ≤200 + Custom-above-200. **Logo & full branding (white-label)
+> is a CUSTOM-tier-ONLY perk** — deliberately pulled out of ₹2,999/₹7,999 so branding is the premium
+> upsell that justifies a Contact-us conversation. Deliberate premium-per-student call (Solo ~₹50,
+> Coaching ~₹60, Institute ~₹40/student) — sell on unlimited authentic papers + hours-saved + weak-topic
+> dashboard, NOT the per-student math (per-student is inverted: don't quote it). A ₹15k fixed "unlimited"
+> tier was considered then rejected — Contact-us captures more value from big accounts. Still 0 paid —
+> the model is MORE than good enough to test; the first institute's yes sets the real price. Live on
+> `/teacher` + `config.py` + Rohan's `teacher_gtm/ROHAN_QUOTE_CARD.md` + the image card.
 
 - **14 days free**, then the tier. (Supersedes the flat ₹4,999/≤50 in `teacher_gtm/01_OFFER_ONE_PAGER.md`
   — that model was fine, but land lower to break 0→1, then move institutes up.)

@@ -9,7 +9,11 @@ _Locked 2026-07-30. Carry this into the visit. Pricing is monthly, 14-day free t
 | **Solo** | **₹999** | up to 20 | one teacher / small tuition |
 | **Coaching** ⭐ | **₹2,999** | up to 50 | a real coaching institute |
 | **Institute** | **₹7,999** | up to 200 | multi-batch / multi-teacher |
-| **Custom** | **call the office** | 200+ | big / multi-branch — never self-quote |
+| **Custom** | **call the office** | 200+ | big / multi-branch · **their logo & full branding** — never self-quote |
+
+**Branding note:** your-logo + full white-label is a **Custom-tier perk only** (200+). If a smaller
+institute asks "can papers carry our logo?" → that's the hook to move them to a **Custom / Contact-us**
+conversation, not a discount. Below Custom, papers are Acharya-generated (no institute logo).
 
 ## Which tier to quote — ASK THE STUDENT COUNT FIRST
 
@@ -26,12 +30,14 @@ _Locked 2026-07-30. Carry this into the visit. Pricing is monthly, 14-day free t
 
 ## What to sell (value, not seats)
 
-> **"Generate real-pattern JEE/NEET/board test papers for your batches in seconds — under YOUR institute's name — and see exactly which student is weak in which topic. Unlimited papers."**
+> **"Generate real-pattern JEE/NEET/board test papers for your batches in seconds — unlimited — give every student their own practice, and see exactly which student is weak in which topic."**
 
 The three things an owner actually wants:
-- **Their brand on the papers** (white-label) — looks like the institute made them
-- **Hours of paper-making saved** every week
+- **Unlimited authentic papers in seconds** — hours of paper-making saved every week
+- **Every student their own practice** — mock tests + weak-topic tracking, in the institute's batch
 - **A weak-topic dashboard** they can show parents
+
+(Full institute branding / their logo on papers = the **Custom** tier hook, 200+ → Contact us.)
 
 **Frame:** the teacher is the hero, Acharya is their staff — never "an AI that replaces the teacher."
 
