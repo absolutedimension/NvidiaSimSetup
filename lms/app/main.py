@@ -1697,13 +1697,19 @@ def teacher_invites(request: Request, db: Session = Depends(get_db)):
     assigns = (db.query(Assignment).filter_by(teacher_id=teacher.id, active=True)
                .order_by(Assignment.created_at.desc()).all())
     _bmap = {i.id: i.label for i in invites}
+    _linked = db.query(Student).filter_by(teacher_id=teacher.id).all()
+    assign_rows = []
+    for a in assigns:
+        done, scope = _assignment_done_count(db, teacher, a, _linked)
+        assign_rows.append({"id": a.id, "title": a.title, "kind": a.kind,
+                            "batch": _bmap.get(a.invite_id, "All batches"),
+                            "done": done, "scope": scope})
     tests = (db.query(ClassTest).filter_by(teacher_id=teacher.id).order_by(ClassTest.created_at.desc()).limit(20).all())
     return templates.TemplateResponse(request, "teacher_invites.html", {
         "student": teacher, "invites": inv_rows, "subjects": subs,
         "roster": roster, "roster_count": len(roster),
         "base_url": settings.BASE_URL,
-        "assignments": [{"id": a.id, "title": a.title, "kind": a.kind,
-                         "batch": _bmap.get(a.invite_id, "All batches")} for a in assigns],
+        "assignments": assign_rows,
         "tests": [{"code": t.code, "title": t.title or t.subject_label} for t in tests]})
 
 
@@ -1847,10 +1853,97 @@ def teacher_assign_remove(request: Request, aid: int, db: Session = Depends(get_
     return JSONResponse({"ok": True})
 
 
+def _review_detail(raw) -> list:
+    """Normalize a stored per-question detail list into template-safe review rows."""
+    out = []
+    for d in (raw or [])[:60]:
+        if not isinstance(d, dict):
+            continue
+        out.append({"q": d.get("q") or "", "chosen": d.get("chosen") or "",
+                    "a": d.get("a") or "", "ok": d.get("ok"), "type": d.get("type") or "mcq"})
+    return out
+
+
+def _mock_review(mp, answers) -> list:
+    """Best-effort per-question review for a mock-paper attempt from the paper + the student's answers."""
+    out = []
+    for q in (mp.questions or [])[:60]:
+        n = str(q.get("n"))
+        chosen = answers.get(n) if isinstance(answers, dict) else None
+        if isinstance(chosen, list):
+            chosen = ", ".join(str(c) for c in chosen)
+        correct = q.get("correct")
+        ok = None
+        if chosen not in (None, ""):
+            ok = (str(chosen).strip().lower() == str(correct).strip().lower())
+        out.append({"q": q.get("stem") or "", "chosen": "" if chosen is None else str(chosen),
+                    "a": "" if correct is None else str(correct), "ok": ok, "type": q.get("qtype") or "mcq"})
+    return out
+
+
+def _assignment_done_count(db, teacher, a, linked) -> tuple:
+    """(how many, of how many in scope) students have completed this assignment — for the at-a-glance
+    '2/5 done' on the roster page."""
+    scope = [s for s in linked if a.invite_id is None or getattr(s, "batch_id", None) == a.invite_id]
+    ids = [s.id for s in scope]
+    if not ids:
+        return (0, 0)
+    done = 0
+    if a.kind == "classtest":
+        ct = db.query(ClassTest).filter_by(code=a.ref, teacher_id=teacher.id).first()
+        if ct:
+            done = (db.query(ClassSitting.student_id)
+                    .filter(ClassSitting.class_test_id == ct.id, ClassSitting.student_id.in_(ids))
+                    .distinct().count())
+    elif a.kind == "smart":
+        done = sum(1 for sid in ids if db.query(TopicAttempt.id).filter(
+            TopicAttempt.student_id == sid, TopicAttempt.subject == a.ref,
+            TopicAttempt.taken_at >= a.created_at).first())
+    elif a.kind == "mock":
+        done = sum(1 for sid in ids if db.query(PaperAttempt.id).filter(
+            PaperAttempt.student_id == sid, PaperAttempt.submitted_at != None,  # noqa: E711
+            PaperAttempt.submitted_at >= a.created_at).first())
+    return (done, len(ids))
+
+
+def _assignment_status(db, teacher, s) -> list:
+    """For each active assignment this student can see, whether THEY have done it (+ score)."""
+    bid = getattr(s, "batch_id", None)
+    rows = (db.query(Assignment).filter_by(teacher_id=teacher.id, active=True)
+            .order_by(Assignment.created_at.desc()).all())
+    rows = [a for a in rows if a.invite_id is None or a.invite_id == bid][:12]
+    out = []
+    for a in rows:
+        done, pct, when = False, 0, ""
+        if a.kind == "classtest":
+            ct = db.query(ClassTest).filter_by(code=a.ref, teacher_id=teacher.id).first()
+            st = (db.query(ClassSitting).filter_by(student_id=s.id, class_test_id=ct.id)
+                  .order_by(ClassSitting.submitted_at.desc()).first()) if ct else None
+            if st:
+                done, pct = True, (round(100 * st.score / st.total) if st.total else 0)
+                when = st.submitted_at.strftime("%d %b")
+        elif a.kind == "smart":
+            ta = (db.query(TopicAttempt).filter(TopicAttempt.student_id == s.id,
+                  TopicAttempt.subject == a.ref, TopicAttempt.taken_at >= a.created_at)
+                  .order_by(TopicAttempt.taken_at.desc()).first())
+            if ta:
+                done, pct = True, (round(100 * ta.score / ta.total) if ta.total else 0)
+                when = ta.taken_at.strftime("%d %b")
+        elif a.kind == "mock":
+            pa = (db.query(PaperAttempt).filter(PaperAttempt.student_id == s.id,
+                  PaperAttempt.submitted_at != None, PaperAttempt.submitted_at >= a.created_at)  # noqa: E711
+                  .order_by(PaperAttempt.submitted_at.desc()).first())
+            if pa:
+                done, pct = True, (round(100 * pa.score / pa.max_score) if pa.max_score else 0)
+                when = pa.submitted_at.strftime("%d %b")
+        out.append({"title": a.title, "kind": a.kind, "done": done, "pct": pct, "when": when})
+    return out
+
+
 @app.get("/teacher/student/{sid}", response_class=HTMLResponse)
 def teacher_student(request: Request, sid: int, db: Session = Depends(get_db)):
     """A teacher's drill-down on ONE of their linked students — real mastery, weak topics, recent
-    tests, and which assigned tests they've done."""
+    tests (expandable to the actual answers), and which assigned tests they've done."""
     teacher = current_teacher(request, db)
     if not teacher:
         return RedirectResponse("/teacher", status_code=302)
@@ -1860,22 +1953,34 @@ def teacher_student(request: Request, sid: int, db: Session = Depends(get_db)):
     prog = _student_progress(db, s)
     batch = db.query(TeacherInvite).filter_by(id=getattr(s, "batch_id", None)).first()
     subjects = [t.title for t in _student_topics(db, s)]
-    # recent tests (adaptive + account-linked class tests), newest first
-    attempts = (db.query(TopicAttempt).filter_by(student_id=s.id)
-                .order_by(TopicAttempt.taken_at.desc()).limit(10).all())
-    recent = [{"title": a.title or a.subject, "score": a.score, "total": a.total,
-               "pct": round(100 * a.score / a.total) if a.total else 0,
-               "when": a.taken_at.strftime("%d %b")} for a in attempts]
-    sits = (db.query(ClassSitting).filter_by(student_id=s.id)
-            .order_by(ClassSitting.submitted_at.desc()).limit(10).all())
-    for st in sits:
+    recent = []
+    for a in (db.query(TopicAttempt).filter_by(student_id=s.id)
+              .order_by(TopicAttempt.taken_at.desc()).limit(10).all()):
+        recent.append({"title": a.title or a.subject, "score": a.score, "total": a.total,
+                       "pct": round(100 * a.score / a.total) if a.total else 0,
+                       "when": a.taken_at.strftime("%d %b"), "kind": "Practice",
+                       "detail": _review_detail(a.detail), "_at": a.taken_at})
+    for st in (db.query(ClassSitting).filter_by(student_id=s.id)
+               .order_by(ClassSitting.submitted_at.desc()).limit(10).all()):
         ct = db.query(ClassTest).filter_by(id=st.class_test_id).first()
         recent.append({"title": (ct.title or ct.subject_label) if ct else "Class test",
                        "score": st.score, "total": st.total,
                        "pct": round(100 * st.score / st.total) if st.total else 0,
-                       "when": st.submitted_at.strftime("%d %b")})
+                       "when": st.submitted_at.strftime("%d %b"), "kind": "Class test",
+                       "detail": _review_detail(st.detail), "_at": st.submitted_at})
+    for pa in (db.query(PaperAttempt).filter(PaperAttempt.student_id == s.id,
+               PaperAttempt.submitted_at != None)  # noqa: E711
+               .order_by(PaperAttempt.submitted_at.desc()).limit(10).all()):
+        mp = db.query(MockPaper).filter_by(id=pa.paper_id).first()
+        recent.append({"title": (mp.title if mp else "Mock paper"),
+                       "score": round(pa.score), "total": pa.max_score,
+                       "pct": round(100 * pa.score / pa.max_score) if pa.max_score else 0,
+                       "when": pa.submitted_at.strftime("%d %b"), "kind": "Mock",
+                       "detail": _mock_review(mp, pa.answers) if mp else [], "_at": pa.submitted_at})
+    recent.sort(key=lambda r: r["_at"], reverse=True)
+    recent = recent[:12]
     return templates.TemplateResponse(request, "teacher_student.html", {
-        "student": teacher, "s": s, "prog": prog,
+        "student": teacher, "s": s, "prog": prog, "assigned": _assignment_status(db, teacher, s),
         "batch": batch.label if batch else "—", "subjects": subjects, "recent": recent})
 
 
@@ -2076,9 +2181,12 @@ async def teacher_sitting(request: Request, db: Session = Depends(get_db)):
     concepts = [{"topic": r.get("topic"), "status": r.get("status"), "depth": r.get("depth")}
                 for r in results if r.get("topic")]
     weak = _weak_from_concepts(concepts)
+    detail = body.get("detail") or []
+    if not isinstance(detail, list):
+        detail = []
     db.add(ClassSitting(class_test_id=ct.id, student_id=sid, student_name=name[:80],
                         score=int(body.get("score") or 0), total=int(body.get("graded") or 0),
-                        concepts=concepts, weak_topics=weak))
+                        concepts=concepts, weak_topics=weak, detail=detail[:60]))
     db.commit()
     return JSONResponse({"ok": True})
 
@@ -3266,7 +3374,7 @@ def m_teacher_home(request: Request, db: Session = Depends(get_db)):
     for s in linked:
         stats = [x for x in db.query(ConceptStat).filter_by(student_id=s.id).all() if x.seen]
         seen = sum(x.seen for x in stats); corr = sum(x.correct for x in stats)
-        roster.append({"name": s.name or s.email, "email": s.email,
+        roster.append({"sid": s.id, "name": s.name or s.email, "email": s.email,
                        "mastery": round(100 * corr / seen) if seen else 0,
                        "tests": db.query(TopicAttempt).filter_by(student_id=s.id).count()})
     roster.sort(key=lambda r: r["mastery"])
@@ -3311,6 +3419,66 @@ async def m_join(request: Request, db: Session = Depends(get_db)):
     return JSONResponse({"ok": True,
                          "institute": (teacher.institute or teacher.name or "your teacher") if teacher else "your teacher",
                          "label": inv.label})
+
+
+@app.get("/api/m/classtest/{code}")
+def m_classtest(code: str, request: Request, db: Session = Depends(get_db)):
+    """The stored pack for a class test, so a logged-in student can take it IN THE APP. The result
+    is submitted to /api/teacher/sitting (which ties it to the student's account if they're linked)."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    ct = db.query(ClassTest).filter_by(code=code).first()
+    if not ct:
+        return JSONResponse({"ok": False, "error": "unknown test"}, status_code=404)
+    # mark this taker's name in-session so /api/teacher/sitting attributes it correctly
+    request.session[f"ct_{code}"] = student.name or student.email.split("@")[0]
+    return JSONResponse({"ok": True, "code": ct.code, "title": ct.title,
+                         "subject": ct.subject_label, "pack": ct.pack})
+
+
+@app.get("/api/m/teacher/student")
+def m_teacher_student(request: Request, sid: int, db: Session = Depends(get_db)):
+    """One linked student's real results — their practice attempts (with per-question answers) AND
+    their class-test sittings. This is how a teacher sees 'did my student take it, and how'."""
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"ok": False}, status_code=401)
+    s = db.query(Student).filter_by(id=sid, teacher_id=teacher.id).first()
+    if not s:
+        return JSONResponse({"ok": False, "error": "not your student"}, status_code=404)
+    attempts = (db.query(TopicAttempt).filter_by(student_id=s.id)
+                .order_by(TopicAttempt.taken_at.desc()).limit(30).all())
+    my_tids = [t.id for t in db.query(ClassTest).filter_by(teacher_id=teacher.id).all()]
+    sits = (db.query(ClassSitting).filter(ClassSitting.student_id == s.id,
+            ClassSitting.class_test_id.in_(my_tids)).order_by(ClassSitting.submitted_at.desc()).all()
+            if my_tids else [])
+    return JSONResponse({
+        "ok": True, "name": s.name or s.email, "email": s.email,
+        "attempts": [{"id": a.id, "title": a.title, "subject": a.subject,
+                      "score": a.score, "total": a.total,
+                      "concepts": a.concepts or []} for a in attempts],
+        "sittings": [{"title": next((t.title for t in db.query(ClassTest).filter_by(teacher_id=teacher.id).all() if t.id == x.class_test_id), "Class test"),
+                      "score": x.score, "total": x.total,
+                      "pct": round(100 * x.score / x.total) if x.total else 0,
+                      "weak": x.weak_topics or []} for x in sits],
+    })
+
+
+@app.get("/api/m/teacher/attempt/{aid}")
+def m_teacher_attempt(request: Request, aid: int, db: Session = Depends(get_db)):
+    """Full per-question detail (the student's ANSWERS) of one of the teacher's students' attempts."""
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"ok": False}, status_code=401)
+    a = db.query(TopicAttempt).filter_by(id=aid).first()
+    if not a:
+        return JSONResponse({"ok": False, "error": "not found"}, status_code=404)
+    owner = db.query(Student).filter_by(id=a.student_id).first()
+    if not owner or owner.teacher_id != teacher.id:
+        return JSONResponse({"ok": False, "error": "not your student"}, status_code=403)
+    return JSONResponse({"ok": True, "title": a.title, "score": a.score, "total": a.total,
+                         "detail": a.detail or []})
 
 
 @app.get("/api/m/teacher/tests")
