@@ -3541,7 +3541,7 @@ def m_teacher_student(request: Request, sid: int, db: Session = Depends(get_db))
     papers = []
     for pa in paper_atts:
         mp = db.get(MockPaper, pa.paper_id)
-        papers.append({"title": (mp.title or mp.code) if mp else "Mock test",
+        papers.append({"id": pa.id, "title": (mp.title or mp.code) if mp else "Mock test",
                        "score": pa.score, "max": pa.max_score,
                        "pct": round(100 * pa.score / pa.max_score) if pa.max_score else 0})
     return JSONResponse({
@@ -3571,6 +3571,35 @@ def m_teacher_attempt(request: Request, aid: int, db: Session = Depends(get_db))
         return JSONResponse({"ok": False, "error": "not your student"}, status_code=403)
     return JSONResponse({"ok": True, "title": a.title, "score": a.score, "total": a.total,
                          "detail": a.detail or []})
+
+
+@app.get("/api/m/teacher/paper-attempt/{aid}")
+def m_teacher_paper_attempt(request: Request, aid: int, db: Session = Depends(get_db)):
+    """Full scored breakdown of one of the teacher's students' mock-paper attempts."""
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return JSONResponse({"ok": False}, status_code=401)
+    pa = db.query(PaperAttempt).filter_by(id=aid).first()
+    if not pa or not pa.submitted_at:
+        return JSONResponse({"ok": False, "error": "not found"}, status_code=404)
+    owner = db.query(Student).filter_by(id=pa.student_id).first()
+    if not owner or owner.teacher_id != teacher.id:
+        return JSONResponse({"ok": False, "error": "not your student"}, status_code=403)
+    paper = db.get(MockPaper, pa.paper_id)
+    res = mockpaper.score_attempt(paper.questions or [], pa.answers or {})
+    per = {p["n"]: p for p in res["per_q"]}
+    rows = []
+    for q in (paper.questions or []):
+        v = per.get(q.get("n"), {})
+        rows.append({"n": q.get("n"), "section": q.get("section"), "qtype": q.get("qtype"),
+                     "stem": q.get("stem", ""), "options": q.get("options") or [],
+                     "marks": q.get("marks"), "given": v.get("given"),
+                     "correct": v.get("correct"), "state": v.get("state")})
+    return JSONResponse({"ok": True, "title": (paper.title or paper.code) if paper else "Mock test",
+                         "score": pa.score, "max": pa.max_score,
+                         "correct": pa.correct, "wrong": pa.wrong, "skipped": pa.skipped,
+                         "pct": round(100 * pa.score / pa.max_score) if pa.max_score else 0,
+                         "rows": rows})
 
 
 @app.get("/api/m/teacher/tests")
