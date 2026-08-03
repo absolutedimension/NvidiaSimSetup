@@ -1,0 +1,13 @@
+2026-07-31T09:39:27  [batch] generated 60 content sets
+2026-07-31T09:39:33  [batch] EC2 SSH ready.
+2026-07-31T09:39:40  [batch] rendering 60 on EC2, 6-way parallel…
+2026-07-31T09:40:31  [batch]   rendered 0/60
+2026-07-31T09:41:23  [batch]   rendered 0/60
+2026-07-31T09:42:54  [batch] generated 60 content sets
+2026-07-31T09:42:59  [batch] EC2 SSH ready.
+2026-07-31T11:30:51  [batch] rendering 60 on EC2, 6-way parallel…
+2026-07-31T11:31:42  [batch]   rendered 60/60
+2026-07-31T11:31:42  [batch] render complete (60/60)
+2026-07-31T11:39:43  [batch] pulled 60/60 videos
+2026-07-31T11:39:43  [batch] stopping EC2 (batch done)…
+2026-07-31T11:39:46  [batch] uploading 60 videos unlisted to kids channel…

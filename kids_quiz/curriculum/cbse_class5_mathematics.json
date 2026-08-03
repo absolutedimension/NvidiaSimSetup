@@ -1,0 +1,166 @@
+{
+  "board": "CBSE",
+  "class": 5,
+  "subject": "Mathematics",
+  "source": {
+    "name": "NCERT Maths Mela Class 5 (Textbook of Mathematics)",
+    "url": "https://ncert.nic.in/textbook/pdf/eemm1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Verified from official ncert.nic.in prelims PDF (eemm1). Chapter names verbatim (Ch14 'Maps and Locations' corrected vs third-party mislistings). Theme-based; subtopics inferred from theme + NCERT Grade-5 scope.",
+  "chapters": [
+    {
+      "id": "we_the_travellers_i",
+      "name": "We the Travellers — I",
+      "subtopics": [
+        "large numbers",
+        "place value",
+        "operations on numbers",
+        "number patterns"
+      ]
+    },
+    {
+      "id": "fractions",
+      "name": "Fractions",
+      "subtopics": [
+        "fractions",
+        "equivalent fractions",
+        "comparing fractions",
+        "addition and subtraction of fractions"
+      ]
+    },
+    {
+      "id": "angles_as_turns",
+      "name": "Angles as Turns",
+      "subtopics": [
+        "angles",
+        "turns and rotations",
+        "right angle",
+        "comparing angles"
+      ]
+    },
+    {
+      "id": "we_the_travellers_ii",
+      "name": "We the Travellers — II",
+      "subtopics": [
+        "multiplication",
+        "division",
+        "large-number word problems",
+        "estimation"
+      ]
+    },
+    {
+      "id": "far_and_near",
+      "name": "Far and Near",
+      "subtopics": [
+        "distance and length",
+        "kilometres and metres",
+        "estimation",
+        "comparing distances"
+      ]
+    },
+    {
+      "id": "the_dairy_farm",
+      "name": "The Dairy Farm",
+      "subtopics": [
+        "multiplication and division",
+        "factors and multiples",
+        "word problems",
+        "number relationships"
+      ]
+    },
+    {
+      "id": "shapes_and_patterns",
+      "name": "Shapes and Patterns",
+      "subtopics": [
+        "2D and 3D shapes",
+        "nets",
+        "patterns",
+        "tiling"
+      ]
+    },
+    {
+      "id": "weight_and_capacity",
+      "name": "Weight and Capacity",
+      "subtopics": [
+        "weight (kg and g)",
+        "capacity (l and ml)",
+        "unit conversions",
+        "word problems"
+      ]
+    },
+    {
+      "id": "coconut_farm",
+      "name": "Coconut Farm",
+      "subtopics": [
+        "multiplication and division",
+        "area and arrays",
+        "perimeter",
+        "word problems"
+      ]
+    },
+    {
+      "id": "symmetrical_designs",
+      "name": "Symmetrical Designs",
+      "subtopics": [
+        "symmetry",
+        "lines of symmetry",
+        "reflection",
+        "symmetric patterns"
+      ]
+    },
+    {
+      "id": "grandmother_s_quilt",
+      "name": "Grandmother's Quilt",
+      "subtopics": [
+        "area",
+        "perimeter",
+        "tiling",
+        "fractions of shapes"
+      ]
+    },
+    {
+      "id": "racing_seconds",
+      "name": "Racing Seconds",
+      "subtopics": [
+        "time",
+        "seconds, minutes and hours",
+        "duration",
+        "24-hour context"
+      ]
+    },
+    {
+      "id": "animal_jumps",
+      "name": "Animal Jumps",
+      "subtopics": [
+        "number line",
+        "skip counting",
+        "multiples",
+        "patterns"
+      ]
+    },
+    {
+      "id": "maps_and_locations",
+      "name": "Maps and Locations",
+      "subtopics": [
+        "maps and directions",
+        "grids",
+        "location and coordinates",
+        "scale and distance"
+      ]
+    },
+    {
+      "id": "data_through_pictures",
+      "name": "Data Through Pictures",
+      "subtopics": [
+        "data handling",
+        "pictographs",
+        "bar graphs",
+        "reading tables"
+      ]
+    }
+  ]
+}

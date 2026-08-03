@@ -1,0 +1,226 @@
+{
+  "board": "CBSE",
+  "class": 1,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Finding the Furry Cat! (Pre-number Concepts)",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 5 and 13.",
+      "payload": {
+        "a": 5,
+        "b": 13
+      },
+      "answer": "<",
+      "explain": "5 is less than 13."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "What is Long? What is Round? (Shapes)",
+      "band": "1-2",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 2
+      },
+      "answer": 2,
+      "explain": "There are 2 apples!"
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Mango Treat (Numbers 1 to 9)",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 1.",
+      "payload": {
+        "seq": [
+          3,
+          null,
+          5,
+          6
+        ],
+        "step": 1
+      },
+      "answer": [
+        4
+      ],
+      "explain": "Counting by 1s → 4."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Making 10 (Numbers 10 to 20)",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 2.",
+      "payload": {
+        "seq": [
+          2,
+          null,
+          6,
+          8
+        ],
+        "step": 2
+      },
+      "answer": [
+        4
+      ],
+      "explain": "Counting by 2s → 4."
+    },
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "How Many? (Addition and Subtraction of Single Digit Numbers)",
+      "band": "1-2",
+      "instruction": "What comes just before 4?",
+      "voice": "What is just before 4?",
+      "payload": {
+        "mode": "before",
+        "n": 4,
+        "display": "4 , ▢"
+      },
+      "answer": 3,
+      "explain": "Just before 4 is 3."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Vegetable Farm (Addition and Subtraction up to 20)",
+      "band": "1-2",
+      "instruction": "Add it!  2 + 9 = ?",
+      "voice": "What is 2 plus 9?",
+      "payload": {
+        "op": "+",
+        "a": 2,
+        "b": 9
+      },
+      "answer": 11,
+      "explain": "2 plus 9 makes 11."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Lina's Family (Measurement)",
+      "band": "1-2",
+      "instruction": "Add it!  1 + 10 = ?",
+      "voice": "What is 1 plus 10?",
+      "payload": {
+        "op": "+",
+        "a": 1,
+        "b": 10
+      },
+      "answer": 11,
+      "explain": "1 plus 10 makes 11."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Fun with Numbers (Numbers 21 to 99)",
+      "band": "1-2",
+      "instruction": "Count the stars and write how many!",
+      "voice": "Count the stars.",
+      "payload": {
+        "asset": "star",
+        "emoji": "⭐",
+        "n": 10
+      },
+      "answer": 10,
+      "explain": "There are 10 stars!"
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Utsav (Patterns)",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 10.",
+      "payload": {
+        "seq": [
+          10,
+          null,
+          30,
+          40
+        ],
+        "step": 10
+      },
+      "answer": [
+        20
+      ],
+      "explain": "Counting by 10s → 20."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "How do I Spend my Day? (Time)",
+      "band": "1-2",
+      "instruction": "Add it!  9 + 3 = ?",
+      "voice": "What is 9 plus 3?",
+      "payload": {
+        "op": "+",
+        "a": 9,
+        "b": 3
+      },
+      "answer": 12,
+      "explain": "9 plus 3 makes 12."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "How Many Times? (Multiplication)",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 10.",
+      "payload": {
+        "seq": [
+          20,
+          null,
+          40,
+          50
+        ],
+        "step": 10
+      },
+      "answer": [
+        30
+      ],
+      "explain": "Counting by 10s → 30."
+    },
+    {
+      "type": "count_money",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "How Much Can We Spend? (Money)",
+      "band": "1-2",
+      "instruction": "How much money? 🪙",
+      "voice": "Add the coins.",
+      "payload": {
+        "coins": [
+          10,
+          5,
+          2
+        ],
+        "display": "₹10 + ₹5 + ₹2"
+      },
+      "answer": 17,
+      "explain": "The coins make ₹17."
+    }
+  ]
+}

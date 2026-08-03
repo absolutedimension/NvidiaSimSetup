@@ -1,0 +1,216 @@
+{
+  "board": "ICSE",
+  "class": 2,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Numbers",
+      "band": "1-2",
+      "instruction": "What comes just after 60?",
+      "voice": "What is just after 60?",
+      "payload": {
+        "mode": "after",
+        "n": 60,
+        "display": "▢ , 60"
+      },
+      "answer": 61,
+      "explain": "Just after 60 is 61."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Number Operations",
+      "band": "1-2",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 18
+      },
+      "answer": 18,
+      "explain": "There are 18 apples!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Geometry",
+      "band": "1-2",
+      "instruction": "Add it!  33 + 47 = ?",
+      "voice": "What is 33 plus 47?",
+      "payload": {
+        "op": "+",
+        "a": 33,
+        "b": 47
+      },
+      "answer": 80,
+      "explain": "33 plus 47 makes 80."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Measurement",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 65 and 28.",
+      "payload": {
+        "a": 65,
+        "b": 28
+      },
+      "answer": ">",
+      "explain": "65 is greater than 28."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Data Handling",
+      "band": "1-2",
+      "instruction": "Add it!  15 + 37 = ?",
+      "voice": "What is 15 plus 37?",
+      "payload": {
+        "op": "+",
+        "a": 15,
+        "b": 37
+      },
+      "answer": 52,
+      "explain": "15 plus 37 makes 52."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Patterns",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 1.",
+      "payload": {
+        "seq": [
+          2,
+          null,
+          4,
+          5
+        ],
+        "step": 1
+      },
+      "answer": [
+        3
+      ],
+      "explain": "Counting by 1s → 3."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Numbers",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 1.",
+      "payload": {
+        "seq": [
+          5,
+          null,
+          7,
+          8
+        ],
+        "step": 1
+      },
+      "answer": [
+        6
+      ],
+      "explain": "Counting by 1s → 6."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Number Operations",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 81 and 75.",
+      "payload": {
+        "a": 81,
+        "b": 75
+      },
+      "answer": ">",
+      "explain": "81 is greater than 75."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Geometry",
+      "band": "1-2",
+      "instruction": "Add it!  46 + 47 = ?",
+      "voice": "What is 46 plus 47?",
+      "payload": {
+        "op": "+",
+        "a": 46,
+        "b": 47
+      },
+      "answer": 93,
+      "explain": "46 plus 47 makes 93."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Measurement",
+      "band": "1-2",
+      "instruction": "Add it!  13 + 24 = ?",
+      "voice": "What is 13 plus 24?",
+      "payload": {
+        "op": "+",
+        "a": 13,
+        "b": 24
+      },
+      "answer": 37,
+      "explain": "13 plus 24 makes 37."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Data Handling",
+      "band": "1-2",
+      "instruction": "Add it!  45 + 18 = ?",
+      "voice": "What is 45 plus 18?",
+      "payload": {
+        "op": "+",
+        "a": 45,
+        "b": 18
+      },
+      "answer": 63,
+      "explain": "45 plus 18 makes 63."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Patterns",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 10.",
+      "payload": {
+        "seq": [
+          20,
+          null,
+          40,
+          50
+        ],
+        "step": 10
+      },
+      "answer": [
+        30
+      ],
+      "explain": "Counting by 10s → 30."
+    }
+  ]
+}

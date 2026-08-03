@@ -1,0 +1,43 @@
+{
+  "board": "ICSE",
+  "class": 2,
+  "subject": "General Knowledge",
+  "source": {
+    "name": "Commonly-taught ICSE-school GK outline (NO formal CISCE board GK syllabus at primary)",
+    "url": "https://www.icseboard.org/icse/class-1/syllabus/",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "No official CISCE primary GK syllabus; commonly-taught outline only.",
+  "chapters": [
+    {
+      "id": "myself_and_my_surroundings",
+      "name": "Myself and My Surroundings",
+      "subtopics": [
+        "Parts of the body and sense organs",
+        "My family, home and school",
+        "Good manners and safety rules"
+      ]
+    },
+    {
+      "id": "nature_and_living_things",
+      "name": "Nature and Living Things",
+      "subtopics": [
+        "Wild and domestic animals",
+        "Plants, fruits and vegetables",
+        "Means of transport"
+      ]
+    },
+    {
+      "id": "our_country_india",
+      "name": "Our Country India",
+      "subtopics": [
+        "National symbols and festivals",
+        "Famous places",
+        "Days, months and seasons"
+      ]
+    }
+  ]
+}

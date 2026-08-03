@@ -1,0 +1,52 @@
+{
+  "board": "ICSE",
+  "class": 3,
+  "subject": "English",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (English), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Letter writing introduced Cl III (content emphasis). Cl III has its own Literature reading list.",
+  "chapters": [
+    {
+      "id": "listening_and_speaking",
+      "name": "Listening and Speaking",
+      "subtopics": [
+        "Tell a story or recount an experience with facts",
+        "Speak clearly before an audience (volume, pitch)",
+        "Narrate stories/recite poems with expression",
+        "Grammatically correct language and vocabulary",
+        "Drama/role play",
+        "Dictation of short stories"
+      ]
+    },
+    {
+      "id": "reading_and_writing",
+      "name": "Reading and Writing",
+      "subtopics": [
+        "Interpret a picture; ask critical-thinking questions",
+        "Read prose/poetry with fluency and expression",
+        "Write a paragraph of ~100 words, one central idea",
+        "Linking words (because, and, also)",
+        "Draw from personal experience",
+        "Simple letter (content-only, introduced Cl III)"
+      ]
+    },
+    {
+      "id": "grammar_and_vocabulary_in_context",
+      "name": "Grammar and Vocabulary in Context",
+      "subtopics": [
+        "Subject and predicate",
+        "Collective and material nouns",
+        "Regular/irregular/plural nouns; simple tenses",
+        "Definite/indefinite articles",
+        "Glossaries and beginning dictionaries",
+        "Apostrophe (singular possession); prefixes/suffixes"
+      ]
+    }
+  ]
+}

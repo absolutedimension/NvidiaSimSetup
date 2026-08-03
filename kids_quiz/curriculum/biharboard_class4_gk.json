@@ -1,0 +1,43 @@
+{
+  "board": "Bihar Board",
+  "class": 4,
+  "subject": "General Knowledge",
+  "source": {
+    "name": "Commonly-taught primary GK outline (NO official SCERT-Bihar board GK syllabus at primary)",
+    "url": "",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "No official SCERT-Bihar primary GK syllabus; commonly-taught outline only.",
+  "chapters": [
+    {
+      "id": "world_around_us",
+      "name": "World Around Us",
+      "subtopics": [
+        "countries, capitals and flags",
+        "Indian states and capitals",
+        "landmarks and monuments"
+      ]
+    },
+    {
+      "id": "science_and_nature",
+      "name": "Science and Nature",
+      "subtopics": [
+        "the human body",
+        "animals and their habitats",
+        "science facts and discoveries"
+      ]
+    },
+    {
+      "id": "india_bihar_and_current_affairs",
+      "name": "India, Bihar and Current Affairs",
+      "subtopics": [
+        "Indian history and freedom fighters",
+        "Bihar's history and heritage",
+        "national awards and symbols"
+      ]
+    }
+  ]
+}

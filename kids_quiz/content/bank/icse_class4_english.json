@@ -1,0 +1,641 @@
+{
+  "board": "ICSE",
+  "class": 4,
+  "subject": "English",
+  "count": 20,
+  "items": [
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "cat",
+          "dog",
+          "car",
+          "bird"
+        ]
+      },
+      "answer": "car",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A poem can tell a story.",
+      "payload": {
+        "statement": "A poem can tell a story."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Listening and Speaking",
+      "band": 2,
+      "voice": "A poem can tell a story.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "I like to ___ with my friends.",
+        "bank": [
+          "talk",
+          "run",
+          "eat"
+        ]
+      },
+      "answer": "talk",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them into types of speaking.",
+      "payload": {
+        "items": [
+          "Tell a story",
+          "Sing a song",
+          "Draw a picture",
+          "Give a speech"
+        ],
+        "bins": [
+          "Speaking",
+          "Not Speaking"
+        ]
+      },
+      "answer": {
+        "Tell a story": "Speaking",
+        "Sing a song": "Speaking",
+        "Draw a picture": "Not Speaking",
+        "Give a speech": "Speaking"
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Sort them into types of speaking.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "riddle",
+          "poem",
+          "book",
+          "song"
+        ]
+      },
+      "answer": "book",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Tongue twisters are easy to say.",
+      "payload": {
+        "statement": "Tongue twisters are easy to say."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Listening and Speaking",
+      "band": 2,
+      "voice": "Tongue twisters are easy to say.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "I shared my idea about ___ in class.",
+        "bank": [
+          "games",
+          "food",
+          "weather"
+        ]
+      },
+      "answer": "games",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them into types of activities.",
+      "payload": {
+        "items": [
+          "Discuss with friends",
+          "Listen to a song",
+          "Write a letter",
+          "Read a poem"
+        ],
+        "bins": [
+          "Speaking",
+          "Listening"
+        ]
+      },
+      "answer": {
+        "Discuss with friends": "Speaking",
+        "Listen to a song": "Listening",
+        "Write a letter": "Speaking",
+        "Read a poem": "Listening"
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Sort them into types of activities.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "discussion",
+          "argument",
+          "debate",
+          "silence"
+        ]
+      },
+      "answer": "silence",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A riddle is a type of poem.",
+      "payload": {
+        "statement": "A riddle is a type of poem."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Listening and Speaking",
+      "band": 2,
+      "voice": "A riddle is a type of poem.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the idiom to its meaning.",
+      "payload": {
+        "pairs": [
+          [
+            "Bite the bullet",
+            "To face a difficult situation"
+          ],
+          [
+            "Break the ice",
+            "To start a conversation"
+          ],
+          [
+            "Hit the nail on the head",
+            "To be exactly right"
+          ],
+          [
+            "Piece of cake",
+            "Something very easy"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Match the idiom to its meaning.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "He runs",
+          "They run",
+          "She run",
+          "We run"
+        ]
+      },
+      "answer": "She run",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "An adage is a wise saying.",
+      "payload": {
+        "statement": "An adage is a wise saying."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 2,
+      "voice": "An adage is a wise saying.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The title of the book is 'The ___ Prince.'",
+        "bank": [
+          "Little",
+          "Big",
+          "Tall"
+        ]
+      },
+      "answer": "Little",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them by punctuation type.",
+      "payload": {
+        "items": [
+          "Hello!",
+          "How are you?",
+          "That is great",
+          "Wow!"
+        ],
+        "bins": [
+          "Exclamation",
+          "Question"
+        ]
+      },
+      "answer": {
+        "Hello!": "Exclamation",
+        "How are you?": "Question",
+        "That is great": "Exclamation",
+        "Wow!": "Exclamation"
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Sort them by punctuation type.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the sentence to the correct subject-verb agreement.",
+      "payload": {
+        "pairs": [
+          [
+            "The cat (run) fast.",
+            "The cat runs fast."
+          ],
+          [
+            "The dogs (bark) loudly.",
+            "The dogs bark loudly."
+          ],
+          [
+            "She (play) soccer.",
+            "She plays soccer."
+          ],
+          [
+            "We (go) to school.",
+            "We go to school."
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Match the sentence to the correct subject-verb agreement.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "An apostrophe shows possession.",
+      "payload": {
+        "statement": "An apostrophe shows possession."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 2,
+      "voice": "An apostrophe shows possession.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ of the dog is on the bed.",
+        "bank": [
+          "toys",
+          "toy's",
+          "toys'"
+        ]
+      },
+      "answer": "toy's",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "apples",
+          "cats",
+          "dog's",
+          "oranges"
+        ]
+      },
+      "answer": "dog's",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them into singular and plural.",
+      "payload": {
+        "items": [
+          "cat",
+          "cats",
+          "dog",
+          "dogs"
+        ],
+        "bins": [
+          "Singular",
+          "Plural"
+        ]
+      },
+      "answer": {
+        "cat": "Singular",
+        "cats": "Plural",
+        "dog": "Singular",
+        "dogs": "Plural"
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Sort them into singular and plural.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

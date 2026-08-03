@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Multiplication Mountain",
+ "adventure": "Multiplication Mountain",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Multiplication Mountain. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "8 × 9 = ?",
+   "options": [
+    "72",
+    "74",
+    "63",
+    "80"
+   ],
+   "answer": 0,
+   "explain": "8 times 9 makes 72.",
+   "voice_q": "What is 8 times 9?",
+   "voice_a": "It's 72! 8 groups of 9 make 72."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "9 × 5 = ?",
+   "options": [
+    "47",
+    "45",
+    "54",
+    "40"
+   ],
+   "answer": 1,
+   "explain": "9 times 5 makes 45.",
+   "voice_q": "What is 9 times 5?",
+   "voice_a": "It's 45! 9 groups of 5 make 45."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "6 × 3 = ?",
+   "options": [
+    "18",
+    "20",
+    "15",
+    "24"
+   ],
+   "answer": 0,
+   "explain": "6 times 3 makes 18.",
+   "voice_q": "What is 6 times 3?",
+   "voice_a": "It's 18! 6 groups of 3 make 18."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "5 × 4 = ?",
+   "options": [
+    "22",
+    "16",
+    "20",
+    "25"
+   ],
+   "answer": 2,
+   "explain": "5 times 4 makes 20.",
+   "voice_q": "What is 5 times 4?",
+   "voice_a": "It's 20! 5 groups of 4 make 20."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "3 × 9 = ?",
+   "options": [
+    "18",
+    "29",
+    "30",
+    "27"
+   ],
+   "answer": 3,
+   "explain": "3 times 9 makes 27.",
+   "voice_q": "What is 3 times 9?",
+   "voice_a": "It's 27! 3 groups of 9 make 27."
+  }
+ ]
+}

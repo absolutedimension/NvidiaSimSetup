@@ -1,0 +1,153 @@
+{
+  "board": "Bihar Board",
+  "class": 4,
+  "subject": "Mathematics",
+  "source": {
+    "name": "SCERT Bihar (BSEB) Class 4 गणित (via selfstudys mirror; bepclots TLS-blocked)",
+    "url": "https://www.selfstudys.com/books/bihar/state-books/class-4th/ganit/17851",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "medium",
+  "verified": false,
+  "status": "draft",
+  "notes": "Bihar's own SCERT/BSEB Class 4 'गणित' (NOT NCERT). 17 chapters; names from selfstudys mirror; medium confidence.",
+  "chapters": [
+    {
+      "id": "fair_of_numbers",
+      "name": "संख्याओं का मेला (Fair of Numbers)",
+      "subtopics": [
+        "four/five-digit numbers",
+        "place value",
+        "comparing"
+      ]
+    },
+    {
+      "id": "addition",
+      "name": "जोड़ (Addition)",
+      "subtopics": [
+        "carrying",
+        "word problems"
+      ]
+    },
+    {
+      "id": "subtraction",
+      "name": "घटाव (Subtraction)",
+      "subtopics": [
+        "borrowing",
+        "word problems"
+      ]
+    },
+    {
+      "id": "multiplication",
+      "name": "गुणा (Multiplication)",
+      "subtopics": [
+        "two-digit multiplication",
+        "tables"
+      ]
+    },
+    {
+      "id": "division",
+      "name": "भाग (Division)",
+      "subtopics": [
+        "long division",
+        "remainder"
+      ]
+    },
+    {
+      "id": "money",
+      "name": "मुद्रा (Money)",
+      "subtopics": [
+        "bills and change",
+        "money word problems"
+      ]
+    },
+    {
+      "id": "fractions",
+      "name": "भिन्नात्मक संख्याएँ (Fractions)",
+      "subtopics": [
+        "equivalent fractions",
+        "comparing fractions"
+      ]
+    },
+    {
+      "id": "symmetry",
+      "name": "सममिति (Symmetry)",
+      "subtopics": [
+        "lines of symmetry",
+        "mirror images"
+      ]
+    },
+    {
+      "id": "length",
+      "name": "लम्बाई की माप (Length)",
+      "subtopics": [
+        "m/cm/km conversion",
+        "estimating"
+      ]
+    },
+    {
+      "id": "weight",
+      "name": "भार (Weight)",
+      "subtopics": [
+        "kg and g conversion",
+        "word problems"
+      ]
+    },
+    {
+      "id": "capacity",
+      "name": "धारिता (Capacity)",
+      "subtopics": [
+        "litre and millilitre",
+        "conversion"
+      ]
+    },
+    {
+      "id": "time",
+      "name": "समय (Time)",
+      "subtopics": [
+        "clock and calendar",
+        "time intervals"
+      ]
+    },
+    {
+      "id": "tiling",
+      "name": "टाइलीकरण (Tiling)",
+      "subtopics": [
+        "tessellation",
+        "tiling patterns"
+      ]
+    },
+    {
+      "id": "perimeter_and_area",
+      "name": "परिमाप एवं क्षेत्रफल (Perimeter and Area)",
+      "subtopics": [
+        "perimeter",
+        "area by counting squares"
+      ]
+    },
+    {
+      "id": "data_handling",
+      "name": "आँकड़ों का खेल (Data Handling)",
+      "subtopics": [
+        "pictographs and tables",
+        "tally marks"
+      ]
+    },
+    {
+      "id": "shapes",
+      "name": "आकृतियाँ (Shapes)",
+      "subtopics": [
+        "2D/3D shapes",
+        "faces, edges, corners"
+      ]
+    },
+    {
+      "id": "pattern",
+      "name": "पैटर्न (Pattern)",
+      "subtopics": [
+        "number/geometric patterns",
+        "extending"
+      ]
+    }
+  ]
+}

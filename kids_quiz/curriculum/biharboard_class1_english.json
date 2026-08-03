@@ -1,0 +1,205 @@
+{
+  "board": "Bihar Board",
+  "class": 1,
+  "subject": "English",
+  "source": {
+    "name": "Bihar SCERT/BSTBPC Class 1 English — Blossom (via biharboardbooks mirror; official portal lists no ToC)",
+    "url": "https://biharboardbooks.com/class-i-english-blossom/",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "Book = Blossom (BSTBPC). Thematically-reformatted list from mirror; overlaps with Class 2 list — titles/order NOT confirmed vs official PDF. Low confidence.",
+  "chapters": [
+    {
+      "id": "our_body",
+      "name": "Our Body",
+      "subtopics": [
+        "body parts vocabulary"
+      ]
+    },
+    {
+      "id": "family",
+      "name": "Family",
+      "subtopics": [
+        "family members"
+      ]
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "subtopics": [
+        "everyday vocabulary"
+      ]
+    },
+    {
+      "id": "in_a_village",
+      "name": "In a Village",
+      "subtopics": [
+        "picture description"
+      ]
+    },
+    {
+      "id": "cat_and_bird",
+      "name": "Cat and Bird",
+      "subtopics": [
+        "simple story"
+      ]
+    },
+    {
+      "id": "domestic_animal",
+      "name": "Domestic Animal",
+      "subtopics": [
+        "animal names"
+      ]
+    },
+    {
+      "id": "rainbow",
+      "name": "Rainbow",
+      "subtopics": [
+        "rhyme/colours"
+      ]
+    },
+    {
+      "id": "thirsty_crow",
+      "name": "Thirsty Crow",
+      "subtopics": [
+        "moral story"
+      ]
+    },
+    {
+      "id": "my_school",
+      "name": "My School",
+      "subtopics": [
+        "classroom vocabulary"
+      ]
+    },
+    {
+      "id": "play_ground",
+      "name": "Play Ground",
+      "subtopics": [
+        "action words"
+      ]
+    },
+    {
+      "id": "garden",
+      "name": "Garden",
+      "subtopics": [
+        "nature vocabulary"
+      ]
+    },
+    {
+      "id": "lion_and_mouse",
+      "name": "Lion and Mouse",
+      "subtopics": [
+        "fable"
+      ]
+    },
+    {
+      "id": "zoo",
+      "name": "Zoo",
+      "subtopics": [
+        "wild animals"
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "Transport",
+      "subtopics": [
+        "means of transport"
+      ]
+    },
+    {
+      "id": "three_little_kittens",
+      "name": "Three Little Kittens",
+      "subtopics": [
+        "nursery story"
+      ]
+    },
+    {
+      "id": "swing_swing_swing",
+      "name": "Swing Swing Swing",
+      "subtopics": [
+        "rhyme"
+      ]
+    },
+    {
+      "id": "on_the_road",
+      "name": "On the Road",
+      "subtopics": [
+        "road safety scene"
+      ]
+    },
+    {
+      "id": "in_a_fair",
+      "name": "In a Fair",
+      "subtopics": [
+        "fair vocabulary"
+      ]
+    },
+    {
+      "id": "a_fat_and_a_cat",
+      "name": "A Fat and a Cat",
+      "subtopics": [
+        "phonics/rhyme"
+      ]
+    },
+    {
+      "id": "lovely_rose",
+      "name": "Lovely Rose",
+      "subtopics": [
+        "rhyme"
+      ]
+    },
+    {
+      "id": "picture_gallery",
+      "name": "Picture Gallery",
+      "subtopics": [
+        "vocabulary building"
+      ]
+    },
+    {
+      "id": "tap_tap_tapak",
+      "name": "Tap Tap Tapak",
+      "subtopics": [
+        "story/rhyme"
+      ]
+    },
+    {
+      "id": "around_a_hut",
+      "name": "Around a Hut",
+      "subtopics": [
+        "rural scene"
+      ]
+    },
+    {
+      "id": "me_too",
+      "name": "Me Too",
+      "subtopics": [
+        "short story"
+      ]
+    },
+    {
+      "id": "our_festivals",
+      "name": "Our Festivals",
+      "subtopics": [
+        "culture vocabulary"
+      ]
+    },
+    {
+      "id": "school_to_home",
+      "name": "School to Home",
+      "subtopics": [
+        "daily routine"
+      ]
+    },
+    {
+      "id": "a_b_c_green_green_tree",
+      "name": "A B C Green Green Tree",
+      "subtopics": [
+        "alphabet rhyme"
+      ]
+    }
+  ]
+}

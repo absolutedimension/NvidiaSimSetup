@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Bigger or Smaller Bay",
+ "adventure": "Bigger or Smaller Bay",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Bigger or Smaller Bay. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "Which number is the BIGGEST?",
+   "options": [
+    "954",
+    "434",
+    "572",
+    "960"
+   ],
+   "answer": 3,
+   "explain": "960 is the biggest.",
+   "voice_q": "Look at 954, 960, 434 and 572. Which is the biggest?",
+   "voice_a": "It's 960! 960 is the biggest here."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "Which number is the SMALLEST?",
+   "options": [
+    "583",
+    "679",
+    "474",
+    "647"
+   ],
+   "answer": 2,
+   "explain": "474 is the smallest.",
+   "voice_q": "Look at 583, 647, 679 and 474. Which is the smallest?",
+   "voice_a": "It's 474! 474 is the smallest here."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "Which number is the SMALLEST?",
+   "options": [
+    "455",
+    "30",
+    "588",
+    "559"
+   ],
+   "answer": 1,
+   "explain": "30 is the smallest.",
+   "voice_q": "Look at 588, 559, 455 and 30. Which is the smallest?",
+   "voice_a": "It's 30! 30 is the smallest here."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "Which number is the SMALLEST?",
+   "options": [
+    "962",
+    "469",
+    "849",
+    "997"
+   ],
+   "answer": 1,
+   "explain": "469 is the smallest.",
+   "voice_q": "Look at 469, 849, 962 and 997. Which is the smallest?",
+   "voice_a": "It's 469! 469 is the smallest here."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "Which number is the BIGGEST?",
+   "options": [
+    "412",
+    "748",
+    "205",
+    "225"
+   ],
+   "answer": 1,
+   "explain": "748 is the biggest.",
+   "voice_q": "Look at 748, 205, 412 and 225. Which is the biggest?",
+   "voice_a": "It's 748! 748 is the biggest here."
+  }
+ ]
+}

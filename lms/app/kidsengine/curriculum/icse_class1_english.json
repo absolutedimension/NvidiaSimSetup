@@ -1,0 +1,52 @@
+{
+  "board": "ICSE",
+  "class": 1,
+  "subject": "English",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (English), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Skill-based, 3 strands per class + shared English Literature reading list (Cl I & II). Subtopics verbatim from Learning Outcomes/Suggested Content.",
+  "chapters": [
+    {
+      "id": "listening_and_speaking",
+      "name": "Listening and Speaking",
+      "subtopics": [
+        "Recite simple poems with actions",
+        "Comprehend a text read aloud and answer questions",
+        "Describe people, places and things",
+        "Express ideas in complete sentences",
+        "Give and follow two-step directions",
+        "Contextual dictation of familiar words"
+      ]
+    },
+    {
+      "id": "reading_and_writing",
+      "name": "Reading and Writing",
+      "subtopics": [
+        "Read with the help of pictures",
+        "Group and individual reading with understanding",
+        "Capital letter to begin, full stop to end",
+        "Write 8-10 lines on a given topic",
+        "Draw and write on a familiar topic",
+        "Dictation of three/four-letter words and small sentences"
+      ]
+    },
+    {
+      "id": "grammar_and_vocabulary_in_context",
+      "name": "Grammar and Vocabulary in Context",
+      "subtopics": [
+        "Naming, action, describing and position words with opposites",
+        "Number (one/many) and gender (she/he)",
+        "Articles a, an, the",
+        "Verbs for past, present, future",
+        "Punctuation: capitals, commas, full stops, ? and !",
+        "Spell three/four-letter words phonetically"
+      ]
+    }
+  ]
+}

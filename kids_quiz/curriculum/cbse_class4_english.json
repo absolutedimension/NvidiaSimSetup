@@ -1,0 +1,52 @@
+{
+  "board": "CBSE",
+  "class": 4,
+  "subject": "English",
+  "source": {
+    "name": "NCERT Santoor — Textbook of English for Grade 4 (Contents)",
+    "url": "https://ncert.nic.in/textbook/pdf/desa1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "NEW NCF-SE book 'Santoor' (March 2025), replaces old 'Marigold'. Verbatim from official ncert.nic.in PDF (desa1). 4 units, 12 lessons.",
+  "chapters": [
+    {
+      "id": "unit_1_my_land",
+      "name": "Unit 1: My Land",
+      "subtopics": [
+        "Together We Can",
+        "The Tinkling Bells",
+        "Be Smart, Be Safe"
+      ]
+    },
+    {
+      "id": "unit_2_my_beautiful_world",
+      "name": "Unit 2: My Beautiful World",
+      "subtopics": [
+        "One Thing at a Time",
+        "The Old Stag",
+        "Braille"
+      ]
+    },
+    {
+      "id": "unit_3_fun_with_games",
+      "name": "Unit 3: Fun with Games",
+      "subtopics": [
+        "Fit Body, Fit Mind, Fit Nation",
+        "The Lagori Champions",
+        "Hekko"
+      ]
+    },
+    {
+      "id": "unit_4_up_high",
+      "name": "Unit 4: Up High",
+      "subtopics": [
+        "The Swing",
+        "A Journey to the Magical Mountains",
+        "Maheshwar"
+      ]
+    }
+  ]
+}

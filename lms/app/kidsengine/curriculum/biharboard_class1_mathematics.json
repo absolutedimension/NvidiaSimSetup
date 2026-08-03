@@ -1,0 +1,168 @@
+{
+  "board": "Bihar Board",
+  "class": 1,
+  "subject": "Mathematics",
+  "source": {
+    "name": "SCERT Bihar (BSEB) Class 1 गणित (via biharboardbook/selfstudys mirrors; bepclots.bihar.gov.in TLS-blocked)",
+    "url": "https://biharboardbook.com/books/1st",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "medium",
+  "verified": false,
+  "status": "draft",
+  "notes": "Bihar SCERT/BSEB Class 1 'गणित' is a worksheet/activity book — 19 activity sheets, not titled chapters. English titles as mirrored (bepclots PDFs self-signed cert). Medium confidence.",
+  "chapters": [
+    {
+      "id": "match_similar_pictures",
+      "name": "Match Similar Pictures",
+      "subtopics": [
+        "matching identical objects",
+        "pre-number readiness"
+      ]
+    },
+    {
+      "id": "pair_a_picture_with_a_picture",
+      "name": "Pair a Picture with a Picture",
+      "subtopics": [
+        "one-to-one correspondence",
+        "matching sets"
+      ]
+    },
+    {
+      "id": "count_and_write",
+      "name": "Count and Write",
+      "subtopics": [
+        "counting objects",
+        "numbers 1 to 9"
+      ]
+    },
+    {
+      "id": "compare_with_or",
+      "name": "Compare with > or <",
+      "subtopics": [
+        "greater than / less than",
+        "comparing quantities"
+      ]
+    },
+    {
+      "id": "write_by_counting",
+      "name": "Write by Counting",
+      "subtopics": [
+        "counting sets",
+        "numbers up to 20"
+      ]
+    },
+    {
+      "id": "compare_and_find_the_difference",
+      "name": "Compare and Find the Difference",
+      "subtopics": [
+        "comparison symbols",
+        "simple subtraction sense"
+      ]
+    },
+    {
+      "id": "ascending_or_descending_order_pictures",
+      "name": "Ascending or Descending Order (pictures)",
+      "subtopics": [
+        "ascending order",
+        "descending order"
+      ]
+    },
+    {
+      "id": "count_the_flowers_and_write",
+      "name": "Count the Flowers and Write",
+      "subtopics": [
+        "counting in context",
+        "numbers to 50"
+      ]
+    },
+    {
+      "id": "write_the_correct_match",
+      "name": "Write the Correct Match",
+      "subtopics": [
+        "numeral–set link",
+        "recognition"
+      ]
+    },
+    {
+      "id": "count_together_and_write",
+      "name": "Count Together and Write",
+      "subtopics": [
+        "combining groups",
+        "addition readiness"
+      ]
+    },
+    {
+      "id": "write_the_subtraction",
+      "name": "Write the Subtraction",
+      "subtopics": [
+        "take-away concept",
+        "difference"
+      ]
+    },
+    {
+      "id": "make_the_right_number_of_pictures",
+      "name": "Make the Right Number of Pictures",
+      "subtopics": [
+        "representing quantity",
+        "creating sets"
+      ]
+    },
+    {
+      "id": "pair_with_fingers",
+      "name": "Pair with Fingers",
+      "subtopics": [
+        "finger counting",
+        "number correspondence"
+      ]
+    },
+    {
+      "id": "or_and_find_the_difference",
+      "name": "< , > or = and Find the Difference",
+      "subtopics": [
+        "less/greater/equal",
+        "difference"
+      ]
+    },
+    {
+      "id": "write_numbers_in_ascending_order",
+      "name": "Write Numbers in Ascending Order",
+      "subtopics": [
+        "ascending sequence",
+        "smallest to largest"
+      ]
+    },
+    {
+      "id": "tick_the_right_place_by_number",
+      "name": "Tick the Right Place by Number",
+      "subtopics": [
+        "before/after",
+        "position"
+      ]
+    },
+    {
+      "id": "countdown_from_a_given_number",
+      "name": "Countdown from a Given Number",
+      "subtopics": [
+        "backward counting",
+        "descending numbers"
+      ]
+    },
+    {
+      "id": "match_the_correct",
+      "name": "Match the Correct",
+      "subtopics": [
+        "numbers and sets",
+        "review"
+      ]
+    },
+    {
+      "id": "write_numbers_in_decreasing_order",
+      "name": "Write Numbers in Decreasing Order",
+      "subtopics": [
+        "descending sequence",
+        "largest to smallest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "board": "ICSE",
+  "class": 3,
+  "subject": "General Knowledge",
+  "source": {
+    "name": "Commonly-taught ICSE-school GK outline (NO formal CISCE board GK syllabus at primary)",
+    "url": "https://byjus.com/icse/icse-syllabus/",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "No official CISCE primary GK syllabus; commonly-taught outline only.",
+  "chapters": [
+    {
+      "id": "our_universe",
+      "name": "Our Universe",
+      "subtopics": [
+        "The solar system and planets",
+        "The Sun, Moon and stars",
+        "Day and night"
+      ]
+    },
+    {
+      "id": "our_world",
+      "name": "Our World",
+      "subtopics": [
+        "Continents and oceans",
+        "National symbols of India",
+        "Famous monuments"
+      ]
+    },
+    {
+      "id": "people_and_achievements",
+      "name": "People and Achievements",
+      "subtopics": [
+        "Famous personalities and leaders",
+        "Inventions and discoveries",
+        "Sports and games"
+      ]
+    }
+  ]
+}

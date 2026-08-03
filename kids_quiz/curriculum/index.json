@@ -1,0 +1,669 @@
+{
+  "generated_on": "2026-08-02",
+  "schema": "kids_quiz/curriculum/<board>_class<N>_<subject>.json",
+  "matrix_definition": {
+    "boards": [
+      "ICSE",
+      "CBSE",
+      "Bihar Board"
+    ],
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "subjects": [
+      "Mathematics",
+      "EVS",
+      "English",
+      "General Knowledge",
+      "Hindi"
+    ],
+    "total_cells": 75
+  },
+  "coverage": {
+    "cells_done": 75,
+    "cells_total": 75,
+    "percent": 100
+  },
+  "cells": {
+    "Bihar Board": {
+      "1": {
+        "English": {
+          "file": "biharboard_class1_english.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 27,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC Class 1 English — Blossom (via biharboardbooks mirror; official portal lists no ToC)"
+        },
+        "EVS": {
+          "file": "biharboard_class1_evs.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 0,
+          "live_questions": 0,
+          "source": "SCERT Bihar / BSTBPC textbooks portal"
+        },
+        "General Knowledge": {
+          "file": "biharboard_class1_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught primary GK outline (NO official SCERT-Bihar board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "biharboard_class1_hindi.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 16,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC Class 1 Hindi — अंकुर (via biharboardbooks mirror; e-LOTS TLS-blocked)"
+        },
+        "Mathematics": {
+          "file": "biharboard_class1_mathematics.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 19,
+          "live_questions": 0,
+          "source": "SCERT Bihar (BSEB) Class 1 गणित (via biharboardbook/selfstudys mirrors; bepclots.bihar.gov.in TLS-blocked)"
+        }
+      },
+      "2": {
+        "English": {
+          "file": "biharboard_class2_english.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 25,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC Class 2 English — Blossom (via biharboardbooks mirror)"
+        },
+        "EVS": {
+          "file": "biharboard_class2_evs.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 0,
+          "live_questions": 0,
+          "source": "SCERT Bihar / BSTBPC textbooks portal"
+        },
+        "General Knowledge": {
+          "file": "biharboard_class2_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught primary GK outline (NO official SCERT-Bihar board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "biharboard_class2_hindi.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 19,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC Class 2 Hindi — अंकुर / नव अंकुर भाग 2 (via biharboardbooks mirror)"
+        },
+        "Mathematics": {
+          "file": "biharboard_class2_mathematics.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 8,
+          "live_questions": 0,
+          "source": "SCERT Bihar (BSEB) Class 2 गणित (via biharboardbook/selfstudys; indicative)"
+        }
+      },
+      "3": {
+        "English": {
+          "file": "biharboard_class3_english.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 17,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC Class 3 English — Blossom (cross-confirmed via solution sites)"
+        },
+        "EVS": {
+          "file": "biharboard_class3_evs.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 20,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 3 (via biharboardbooks + testbook, cross-verified; not the SCERT PDF directly)"
+        },
+        "General Knowledge": {
+          "file": "biharboard_class3_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught primary GK outline (NO official SCERT-Bihar board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "biharboard_class3_hindi.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 20,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC Class 3 Hindi — कोंपल (via biharboardbooks mirror)"
+        },
+        "Mathematics": {
+          "file": "biharboard_class3_mathematics.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 12,
+          "live_questions": 0,
+          "source": "SCERT Bihar (BSEB) Class 3 गणित (via selfstudys mirror; bepclots TLS-blocked)"
+        }
+      },
+      "4": {
+        "English": {
+          "file": "biharboard_class4_english.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 16,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC Class 4 English — Blossom (via selfstudys; cross-confirmed)"
+        },
+        "EVS": {
+          "file": "biharboard_class4_evs.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 25,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 4 (via selfstudys + testbook, cross-verified; not the SCERT PDF directly)"
+        },
+        "General Knowledge": {
+          "file": "biharboard_class4_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught primary GK outline (NO official SCERT-Bihar board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "biharboard_class4_hindi.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 21,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC Class 4 Hindi — कोंपल (via biharboardbooks mirror)"
+        },
+        "Mathematics": {
+          "file": "biharboard_class4_mathematics.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 17,
+          "live_questions": 0,
+          "source": "SCERT Bihar (BSEB) Class 4 गणित (via selfstudys mirror; bepclots TLS-blocked)"
+        }
+      },
+      "5": {
+        "English": {
+          "file": "biharboard_class5_english.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 17,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC Class 5 English — Blossom (via solution sites; cross-confirmed)"
+        },
+        "EVS": {
+          "file": "biharboard_class5_evs.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 21,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 5 (via biharboardbooks + testbook, cross-verified; not the SCERT PDF directly)"
+        },
+        "General Knowledge": {
+          "file": "biharboard_class5_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught primary GK outline (NO official SCERT-Bihar board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "biharboard_class5_hindi.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 22,
+          "live_questions": 0,
+          "source": "Bihar SCERT/BSTBPC Class 5 Hindi — कोंपल (via biharboardbooks mirror)"
+        },
+        "Mathematics": {
+          "file": "biharboard_class5_mathematics.json",
+          "status": "draft",
+          "confidence": "medium",
+          "chapters": 13,
+          "live_questions": 0,
+          "source": "SCERT Bihar (BSEB) Class 5 गणित (via selfstudys mirror; bepclots TLS-blocked)"
+        }
+      }
+    },
+    "CBSE": {
+      "1": {
+        "English": {
+          "file": "cbse_class1_english.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 4,
+          "live_questions": 0,
+          "source": "NCERT Mridang — Textbook of English for Grade 1 (Contents)"
+        },
+        "EVS": {
+          "file": "cbse_class1_evs.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 0,
+          "live_questions": 0,
+          "source": "NCERT — Looking Around EVS teacher note (primary EVS scheme, Classes I–V)"
+        },
+        "General Knowledge": {
+          "file": "cbse_class1_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught primary GK outline (NO official CBSE/NCERT board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "cbse_class1_hindi.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 5,
+          "live_questions": 0,
+          "source": "NCERT Sarangi — Hindi Class 1 (Contents)"
+        },
+        "Mathematics": {
+          "file": "cbse_class1_mathematics.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 13,
+          "live_questions": 0,
+          "source": "NCERT Joyful Mathematics Class 1 (Textbook for Class 1)"
+        }
+      },
+      "2": {
+        "English": {
+          "file": "cbse_class2_english.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 5,
+          "live_questions": 0,
+          "source": "NCERT Mridang — Textbook of English for Grade 2 (Contents)"
+        },
+        "EVS": {
+          "file": "cbse_class2_evs.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 0,
+          "live_questions": 0,
+          "source": "NCERT — Looking Around EVS teacher note (primary EVS scheme, Classes I–V)"
+        },
+        "General Knowledge": {
+          "file": "cbse_class2_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught primary GK outline (NO official CBSE/NCERT board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "cbse_class2_hindi.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 5,
+          "live_questions": 0,
+          "source": "NCERT Sarangi — Hindi Class 2 (Contents)"
+        },
+        "Mathematics": {
+          "file": "cbse_class2_mathematics.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 11,
+          "live_questions": 0,
+          "source": "NCERT Joyful Mathematics Class 2 (Textbook for Class 2)"
+        }
+      },
+      "3": {
+        "English": {
+          "file": "cbse_class3_english.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 4,
+          "live_questions": 0,
+          "source": "NCERT Santoor — Textbook of English for Grade 3 (Contents)"
+        },
+        "EVS": {
+          "file": "cbse_class3_evs.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 24,
+          "live_questions": 0,
+          "source": "NCERT 'Looking Around' EVS Class III (24 ch; 2024-25 syllabus; NCF-2023 successor is 'Our Wondrous World')"
+        },
+        "General Knowledge": {
+          "file": "cbse_class3_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught primary GK outline (NO official CBSE/NCERT board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "cbse_class3_hindi.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 5,
+          "live_questions": 0,
+          "source": "NCERT Veena — Hindi Class 3 (Contents)"
+        },
+        "Mathematics": {
+          "file": "cbse_class3_mathematics.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 14,
+          "live_questions": 0,
+          "source": "NCERT Maths Mela Class 3 (Textbook of Mathematics)"
+        }
+      },
+      "4": {
+        "English": {
+          "file": "cbse_class4_english.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 4,
+          "live_questions": 0,
+          "source": "NCERT Santoor — Textbook of English for Grade 4 (Contents)"
+        },
+        "EVS": {
+          "file": "cbse_class4_evs.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 27,
+          "live_questions": 0,
+          "source": "NCERT 'Looking Around' EVS Class IV (Book II, code 0427, ISBN 81-7450-664-0)"
+        },
+        "General Knowledge": {
+          "file": "cbse_class4_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught primary GK outline (NO official CBSE/NCERT board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "cbse_class4_hindi.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 13,
+          "live_questions": 0,
+          "source": "NCERT Veena — Hindi Class 4 (Contents)"
+        },
+        "Mathematics": {
+          "file": "cbse_class4_mathematics.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 14,
+          "live_questions": 0,
+          "source": "NCERT Maths Mela Class 4 (Textbook of Mathematics for Grade 4)"
+        }
+      },
+      "5": {
+        "English": {
+          "file": "cbse_class5_english.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 5,
+          "live_questions": 0,
+          "source": "NCERT Santoor — Textbook of English for Grade 5 (Contents)"
+        },
+        "EVS": {
+          "file": "cbse_class5_evs.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 22,
+          "live_questions": 0,
+          "source": "NCERT 'Looking Around' EVS Class V (code 0529, ISBN 978-81-7450-826-3)"
+        },
+        "General Knowledge": {
+          "file": "cbse_class5_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught primary GK outline (NO official CBSE/NCERT board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "cbse_class5_hindi.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 12,
+          "live_questions": 0,
+          "source": "NCERT Veena — Hindi Class 5 (Contents)"
+        },
+        "Mathematics": {
+          "file": "cbse_class5_mathematics.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 15,
+          "live_questions": 0,
+          "source": "NCERT Maths Mela Class 5 (Textbook of Mathematics)"
+        }
+      }
+    },
+    "ICSE": {
+      "1": {
+        "English": {
+          "file": "icse_class1_english.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (English), Primary"
+        },
+        "EVS": {
+          "file": "icse_class1_evs.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 14,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Environmental Studies), Primary"
+        },
+        "General Knowledge": {
+          "file": "icse_class1_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught ICSE-school GK outline (NO formal CISCE board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "icse_class1_hindi.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 2,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Second Language/Hindi), Primary"
+        },
+        "Mathematics": {
+          "file": "icse_class1_mathematics.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 6,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Mathematics), Primary"
+        }
+      },
+      "2": {
+        "English": {
+          "file": "icse_class2_english.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (English), Primary"
+        },
+        "EVS": {
+          "file": "icse_class2_evs.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 15,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Environmental Studies), Primary"
+        },
+        "General Knowledge": {
+          "file": "icse_class2_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught ICSE-school GK outline (NO formal CISCE board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "icse_class2_hindi.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 2,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Second Language/Hindi), Primary"
+        },
+        "Mathematics": {
+          "file": "icse_class2_mathematics.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 6,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Mathematics), Primary"
+        }
+      },
+      "3": {
+        "English": {
+          "file": "icse_class3_english.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (English), Primary"
+        },
+        "EVS": {
+          "file": "icse_class3_evs.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 11,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Science — natural-environment component of EVS), Primary"
+        },
+        "General Knowledge": {
+          "file": "icse_class3_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught ICSE-school GK outline (NO formal CISCE board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "icse_class3_hindi.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 2,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Second Language/Hindi), Primary"
+        },
+        "Mathematics": {
+          "file": "icse_class3_mathematics.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 16,
+          "live_questions": 1080,
+          "source": "New Guided Mathematics Class 3 (Children's Academy) — pupil's real textbook; cross-ref CISCE Classes I–V curriculum"
+        }
+      },
+      "4": {
+        "English": {
+          "file": "icse_class4_english.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (English), Primary"
+        },
+        "EVS": {
+          "file": "icse_class4_evs.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 12,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Science — natural-environment component of EVS), Primary"
+        },
+        "General Knowledge": {
+          "file": "icse_class4_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught ICSE-school GK outline (NO formal CISCE board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "icse_class4_hindi.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 2,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Second Language/Hindi), Primary"
+        },
+        "Mathematics": {
+          "file": "icse_class4_mathematics.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 7,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Mathematics), Primary"
+        }
+      },
+      "5": {
+        "English": {
+          "file": "icse_class5_english.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (English), Primary"
+        },
+        "EVS": {
+          "file": "icse_class5_evs.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 12,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Science — natural-environment component of EVS), Primary"
+        },
+        "General Knowledge": {
+          "file": "icse_class5_gk.json",
+          "status": "draft",
+          "confidence": "low",
+          "chapters": 3,
+          "live_questions": 0,
+          "source": "Commonly-taught ICSE-school GK outline (NO formal CISCE board GK syllabus at primary)"
+        },
+        "Hindi": {
+          "file": "icse_class5_hindi.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 2,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Second Language/Hindi), Primary"
+        },
+        "Mathematics": {
+          "file": "icse_class5_mathematics.json",
+          "status": "complete",
+          "confidence": "high",
+          "chapters": 10,
+          "live_questions": 0,
+          "source": "CISCE Curriculum for Classes I-V (Mathematics), Primary"
+        }
+      }
+    }
+  }
+}

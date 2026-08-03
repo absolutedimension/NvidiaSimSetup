@@ -1,0 +1,127 @@
+/* worksheet.css — kid WORKSHEET component (non-MCQ archetypes).
+ * Companion to kids_voice.css (MCQ path). Self-contained: all classes are .ws-* so it
+ * never collides with the pool test (.qcard/.opt) or the other kids UI (index/avatar).
+ * Bright, big tap targets; works on phone + tablet; mirrors the kids_voice look. */
+
+:root{
+  /* matches conceptviz.css (the hint panel): blue cells, light-blue gradient, 3D bottom shadow */
+  --ws-pink:#ff5aa5; --ws-blue:#3aa0ff; --ws-yellow:#ffb300; --ws-green:#22b07d;
+  --ws-purple:#9b6bff; --ws-ink:#26406b; --ws-soft:#eaf2ff; --ws-line:#3aa0ff; --ws-3d:#b9d4f0;
+}
+
+.ws-card{
+  font-family:"Baloo 2",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  color:var(--ws-ink);background:linear-gradient(#fff,#f4f9ff);border:3px solid var(--ws-line);border-radius:22px;
+  padding:18px 18px 20px;max-width:640px;margin:0 auto;
+  box-shadow:0 6px 0 var(--ws-3d),0 16px 34px rgba(58,160,255,.16);
+  animation:ws-in .38s cubic-bezier(.2,1.3,.4,1);
+}
+@keyframes ws-in{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.ws-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px}
+.ws-instr{font-size:1.28rem;font-weight:800;line-height:1.35;flex:1;text-wrap:balance}
+.ws-hear{border:none;background:var(--ws-blue);color:#fff;border-radius:999px;
+  width:44px;height:44px;font-size:1.1rem;cursor:pointer;flex:0 0 auto}
+.ws-hear:active{transform:scale(.94)}
+.ws-body{min-height:60px}
+
+/* ---- generic option / chip / tile — the blue "hint panel" cell look ---- */
+.ws-opt,.ws-chip,.ws-tile,.ws-bin,.ws-col-item{
+  border:3px solid var(--ws-line);border-radius:14px;background:linear-gradient(#fff,var(--ws-soft));
+  color:var(--ws-ink);box-shadow:0 4px 0 var(--ws-3d);
+  font-size:1.2rem;font-weight:800;cursor:pointer;transition:transform .1s,box-shadow .1s,background .15s,border-color .15s;
+  -webkit-tap-highlight-color:transparent;user-select:none;animation:ws-in .3s ease both;
+}
+.ws-opt:active,.ws-chip:active,.ws-tile:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ws-3d)}
+.ws-opt{padding:16px 14px;display:flex;align-items:center;gap:10px;min-height:56px}
+.ws-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+.ws-opt.pick{border-color:var(--ws-blue);background:#eaf5ff}
+.ws-opt.right,.ws-tile.right,.ws-col-item.right{border-color:var(--ws-green);background:#e6f8f1;animation:ws-pop .3s}
+.ws-opt.wrong{border-color:var(--ws-pink);background:#ffedf4;animation:ws-shake .3s}
+.ws-big{font-size:1.7rem;justify-content:center;text-align:center}
+
+/* ---- number / symbol pad ---- */
+.ws-entry{font-size:2rem;font-weight:800;text-align:center;letter-spacing:.04em;color:var(--ws-ink);
+  background:linear-gradient(#fff,var(--ws-soft));border:3px solid var(--ws-line);border-radius:14px;
+  padding:12px;margin-bottom:12px;min-height:56px;font-variant-numeric:tabular-nums;box-shadow:0 4px 0 var(--ws-3d)}
+.ws-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:320px;margin:0 auto}
+.ws-key{border:3px solid var(--ws-line);background:linear-gradient(#fff,var(--ws-soft));border-radius:14px;padding:16px;
+  color:var(--ws-ink);font-size:1.5rem;font-weight:800;cursor:pointer;box-shadow:0 4px 0 var(--ws-3d);transition:transform .1s,box-shadow .1s}
+.ws-key:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ws-3d)}
+.ws-key.wide{grid-column:span 1}
+.ws-sympad{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.ws-sym{min-width:74px;font-size:1.9rem;padding:14px 18px;text-align:center}
+
+/* ---- match (two columns, tap-to-connect) ---- */
+.ws-match{display:grid;grid-template-columns:1fr 1fr;gap:14px 26px;position:relative}
+.ws-col{display:flex;flex-direction:column;gap:12px}
+.ws-col-item{padding:14px;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;position:relative}
+.ws-col-item.sel{border-color:var(--ws-purple);background:#f2ecff;box-shadow:0 0 0 3px #e6dcff}
+.ws-dot{width:16px;height:16px;border-radius:50%;flex:0 0 auto}
+.ws-hint{font-size:.95rem;color:#8a7f9a;text-align:center;margin-top:6px}
+
+/* ---- sort into bins ---- */
+.ws-tray{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:14px;min-height:40px}
+.ws-chip{padding:12px 16px}
+.ws-chip.sel{border-color:var(--ws-purple);background:#f2ecff}
+.ws-bins{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.ws-bin{padding:12px;min-height:96px;display:flex;flex-direction:column;gap:8px}
+.ws-bin-label{font-size:1rem;font-weight:800;color:var(--ws-purple);text-align:center;border-bottom:2px dashed var(--ws-line);padding-bottom:6px}
+.ws-bin-drop{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;flex:1;align-items:center}
+
+/* ---- order (tap to number) ---- */
+.ws-order{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.ws-tile{padding:16px 18px;position:relative;min-width:84px;text-align:center}
+.ws-tile .ws-seqno{position:absolute;top:-10px;left:-10px;width:30px;height:30px;border-radius:50%;
+  background:var(--ws-green);color:#fff;font-size:1rem;font-weight:800;display:none;align-items:center;justify-content:center}
+.ws-tile.numbered .ws-seqno{display:flex}
+
+/* ---- fill blanks / word bank ---- */
+.ws-sentence{font-size:1.5rem;font-weight:700;line-height:1.9;text-align:center;margin-bottom:14px}
+.ws-blank{display:inline-block;min-width:70px;border-bottom:3px solid var(--ws-blue);
+  padding:0 8px;color:var(--ws-blue);font-weight:800}
+.ws-blank.filled{border-bottom-color:var(--ws-green);color:var(--ws-green)}
+.ws-bank{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+
+/* ---- write (keyboard + voice) ---- */
+.ws-write-wrap{display:flex;flex-direction:column;gap:10px}
+.ws-write{width:100%;min-height:70px;border:2px solid var(--ws-line);border-radius:14px;
+  padding:12px 14px;font-size:1.3rem;font-family:inherit;resize:vertical;box-sizing:border-box}
+.ws-write:focus{outline:none;border-color:var(--ws-blue)}
+.ws-write-tools{display:flex;gap:10px;flex-wrap:wrap}
+.ws-mic{background:var(--ws-pink);color:#fff;border:none;border-radius:999px;padding:12px 18px;
+  font-size:1.05rem;font-weight:800;cursor:pointer}
+.ws-mic.live{animation:ws-pulse 1s infinite}
+
+/* ---- trace ---- */
+.ws-trace-wrap{position:relative;display:flex;justify-content:center}
+.ws-trace-ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:11rem;font-weight:800;color:#f0e3cf;pointer-events:none;user-select:none;line-height:1}
+.ws-canvas{border:2px dashed var(--ws-line);border-radius:16px;background:#fffdf8;touch-action:none;width:100%;max-width:420px;height:220px}
+
+/* ---- color-by-number ---- */
+.ws-color-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:8px;margin-bottom:12px}
+.ws-region{border:2px solid var(--ws-line);border-radius:12px;padding:14px 6px;text-align:center;font-weight:800;cursor:pointer;font-size:1.1rem}
+.ws-palette{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.ws-swatch{width:44px;height:44px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--ws-line);cursor:pointer}
+.ws-swatch.sel{box-shadow:0 0 0 3px var(--ws-ink)}
+
+/* ---- footer: check + feedback ---- */
+.ws-foot{display:flex;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap}
+.ws-check{background:var(--ws-green);color:#fff;border:none;border-radius:999px;padding:14px 26px;
+  font-size:1.15rem;font-weight:800;cursor:pointer}
+.ws-check:active{transform:scale(.97)}
+.ws-check[disabled]{background:#c7cdd4;cursor:default}
+.ws-fb{font-size:1.15rem;font-weight:800;min-height:1.4em}
+.ws-fb.ok{color:var(--ws-green)}
+.ws-fb.no{color:var(--ws-pink)}
+
+@keyframes ws-pop{0%{transform:scale(.9)}60%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes ws-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes ws-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,90,165,.5)}50%{box-shadow:0 0 0 10px rgba(255,90,165,0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+
+@media (max-width:520px){
+  .ws-instr{font-size:1.14rem}
+  .ws-sentence{font-size:1.25rem}
+  .ws-trace-ghost{font-size:8rem}
+}

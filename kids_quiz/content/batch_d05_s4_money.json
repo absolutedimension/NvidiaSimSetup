@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Money Market",
+ "adventure": "Money Market",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Money Market. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🪙",
+   "q": "₹34 + ₹28 = ?",
+   "options": [
+    "₹62",
+    "₹61",
+    "₹67",
+    "₹72"
+   ],
+   "answer": 0,
+   "explain": "₹34 and ₹28 make ₹62.",
+   "voice_q": "You have 34 rupees and get 28 more. How much now?",
+   "voice_a": "It's 62 rupees! ₹34 and ₹28 make ₹62."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🪙",
+   "q": "₹56 + ₹5 = ?",
+   "options": [
+    "₹60",
+    "₹71",
+    "₹61",
+    "₹66"
+   ],
+   "answer": 2,
+   "explain": "₹56 and ₹5 make ₹61.",
+   "voice_q": "You have 56 rupees and get 5 more. How much now?",
+   "voice_a": "It's 61 rupees! ₹56 and ₹5 make ₹61."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🪙",
+   "q": "₹53 + ₹17 = ?",
+   "options": [
+    "₹80",
+    "₹75",
+    "₹69",
+    "₹70"
+   ],
+   "answer": 3,
+   "explain": "₹53 and ₹17 make ₹70.",
+   "voice_q": "You have 53 rupees and get 17 more. How much now?",
+   "voice_a": "It's 70 rupees! ₹53 and ₹17 make ₹70."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🪙",
+   "q": "₹8 + ₹14 = ?",
+   "options": [
+    "₹32",
+    "₹22",
+    "₹27",
+    "₹21"
+   ],
+   "answer": 1,
+   "explain": "₹8 and ₹14 make ₹22.",
+   "voice_q": "You have 8 rupees and get 14 more. How much now?",
+   "voice_a": "It's 22 rupees! ₹8 and ₹14 make ₹22."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🪙",
+   "q": "₹16 + ₹28 = ?",
+   "options": [
+    "₹43",
+    "₹49",
+    "₹54",
+    "₹44"
+   ],
+   "answer": 3,
+   "explain": "₹16 and ₹28 make ₹44.",
+   "voice_q": "You have 16 rupees and get 28 more. How much now?",
+   "voice_a": "It's 44 rupees! ₹16 and ₹28 make ₹44."
+  }
+ ]
+}

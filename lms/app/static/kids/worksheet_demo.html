@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kids Worksheet Component — demo</title>
+<link rel="stylesheet" href="/static/kids/worksheet.css">
+<style>
+  body{margin:0;background:linear-gradient(160deg,#fff6e8,#ffeef6);min-height:100vh;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;color:#2a2140}
+  .wrap{max-width:720px;margin:0 auto;padding:20px 16px 60px}
+  h1{font-size:1.5rem;margin:.2em 0}
+  .sub{color:#8a7f9a;margin:0 0 16px;font-size:.95rem}
+  .nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0}
+  .nav button{border:none;background:#3aa0ff;color:#fff;border-radius:999px;padding:10px 16px;font-weight:800;cursor:pointer}
+  .nav button.sec{background:#9b6bff}
+  .nav .tag{background:#ffb300;color:#3a2a00;border-radius:999px;padding:6px 12px;font-weight:800;font-size:.85rem}
+  .nav .prog{margin-left:auto;font-weight:800;color:#8a7f9a}
+  .result{margin-top:14px;font-weight:800;min-height:1.4em}
+  #mount{margin-top:6px}
+  select{border:2px solid #ffe0b2;border-radius:12px;padding:8px 10px;font-size:1rem;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🧩 Kids Worksheet Component</h1>
+  <p class="sub">Every non-MCQ archetype from <code>WORKSHEET_GRAMMAR.md</code>, rendered by
+  <code>worksheet.js</code>. Tap / type / drag / speak your answer. (Voice-read needs the live
+  <code>/kids/tts</code> endpoint; the 🎤 speak-answer needs Chrome.)</p>
+
+  <div class="nav">
+    <button onclick="prev()">◀ Back</button>
+    <button onclick="next()">Next ▶</button>
+    <span class="tag" id="typeTag"></span>
+    <select id="jump" onchange="go(this.selectedIndex)"></select>
+    <span class="prog" id="prog"></span>
+  </div>
+
+  <div id="mount"></div>
+  <div class="result" id="result"></div>
+</div>
+
+<script src="/static/kids/assets.js"></script>
+<script src="/static/kids/worksheet.js"></script>
+<script>
+  // window.__KIDS left false so nothing autoplays offline; the 🔊 button still tries /kids/tts.
+  var ITEMS = [
+    { type:'trace_number', instruction:'Trace the number 5, then write it yourself!',
+      payload:{ glyph:5, repeats:4 }, explain:'Great writing!' },
+    { type:'trace_letter', instruction:'Trace the letter A for Apple!',
+      payload:{ letter:'A', cue:'Apple', cue_emoji:'🍎' }, explain:'A for Apple!' },
+    { type:'count_write', instruction:'Count the apples and write the number!',
+      payload:{ emoji:'🍎', n:7 }, answer:7, explain:'Yes — seven apples!' },
+    { type:'fill_sequence', instruction:'Fill in the missing number!',
+      payload:{ seq:[10,20,null,40], step:10 }, answer:[30], explain:'30 comes after 20!' },
+    { type:'arith', instruction:'Add it up!',
+      payload:{ op:'+', a:234, b:158 }, answer:392, explain:'234 and 158 make 392!' },
+    { type:'compare_symbol', instruction:'Which is bigger? Put the right sign!',
+      payload:{ a:34, b:43 }, answer:'<', explain:'34 is less than 43!' },
+    { type:'true_false', instruction:'The sun rises in the west. True or false?',
+      answer:false, explain:'False — the sun rises in the EAST!' },
+    { type:'odd_one_out', instruction:'Which one does not belong?',
+      payload:{ options:['🍎','🍌','🐶','🍇'] }, answer:'🐶', explain:'The dog is not a fruit!' },
+    { type:'pattern_next', instruction:'What comes next?',
+      payload:{ options:['🔺','🔵','🟢'] }, answer:'🔺', explain:'Triangle, circle, triangle… next is triangle!' },
+    { type:'match_following', instruction:'Match each animal to its home!',
+      payload:{ pairs:[['🐄 Cow','Shed'],['🐦 Bird','Nest'],['🐝 Bee','Hive']] }, explain:'All matched!' },
+    { type:'match_case', instruction:'Match the big letter to the small one!',
+      payload:{ left:['A','B','C'], right:['a','b','c'] }, explain:'Well done!' },
+    { type:'sort_groups', instruction:'Sort them: living or non-living?',
+      payload:{ items:['Dog','Chair','Tree','Ball'], bins:['Living','Non-living'] },
+      answer:{ 'Dog':'Living','Tree':'Living','Chair':'Non-living','Ball':'Non-living' }, explain:'Sorted!' },
+    { type:'order_steps', instruction:'Put the butterfly life-cycle in order!',
+      payload:{ steps:['Egg','Caterpillar','Cocoon','Butterfly'] }, explain:'Perfect order!' },
+    { type:'order_words', instruction:'Put the words in order to make a sentence!',
+      payload:{ words:['The','cat','is','sleeping'] }, explain:'The cat is sleeping!' },
+    { type:'fill_letter', instruction:'Fill the missing letter!',
+      payload:{ word:'cat', blanks:[1], emoji:'🐱' }, answer:['a'], explain:'C-A-T spells cat!' },
+    { type:'cloze', instruction:'Choose the right word!',
+      payload:{ sentence:'The cat is ___ the mat.', bank:['on','under','in'] }, answer:'on', explain:'The cat is ON the mat!' },
+    { type:'opposite', instruction:'Write the opposite of BIG. (type or 🎤 speak)',
+      answer:['small','little'], explain:'The opposite of big is small!' },
+    { type:'describe', instruction:'Tell me: what did you eat for breakfast? (speak or type)',
+      answer:null, explain:'Yummy! Answer saved.' },
+    { type:'color_by_number', instruction:'Solve each box, then colour by the key!',
+      payload:{ regions:[{fact:'2+1',key:3},{fact:'1+1',key:2},{fact:'2+2',key:4}],
+                legend:{ '2':'#3aa0ff','3':'#ff5aa5','4':'#22b07d' } }, explain:'Beautiful colouring!' }
+  ];
+
+  var i = 0;
+  var mount = document.getElementById('mount');
+  var jump = document.getElementById('jump');
+  ITEMS.forEach(function(it,k){ var o=document.createElement('option'); o.textContent=(k+1)+'. '+it.type; jump.appendChild(o); });
+
+  function show(){
+    document.getElementById('typeTag').textContent = ITEMS[i].type;
+    document.getElementById('prog').textContent = (i+1)+' / '+ITEMS.length;
+    jump.selectedIndex = i;
+    document.getElementById('result').textContent = '';
+    KidsWorksheet.render(mount, ITEMS[i], {
+      voice:false,
+      onDone:function(r){
+        var el=document.getElementById('result');
+        el.style.color = r.correct ? '#22b07d' : '#ff5aa5';
+        el.textContent = r.correct ? '✓ correct → onDone fired (auto-advancing…)' : '✗ onDone fired: try again';
+        if(r.correct) setTimeout(next, 1200);
+      }
+    });
+  }
+  function next(){ i=(i+1)%ITEMS.length; show(); }
+  function prev(){ i=(i-1+ITEMS.length)%ITEMS.length; show(); }
+  function go(k){ i=k; show(); }
+  show();
+</script>
+</body>
+</html>

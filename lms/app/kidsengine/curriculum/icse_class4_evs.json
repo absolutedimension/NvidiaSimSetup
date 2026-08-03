@@ -1,0 +1,132 @@
+{
+  "board": "ICSE",
+  "class": 4,
+  "subject": "EVS",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Science — natural-environment component of EVS), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Class IV SCIENCE (natural-environment/EVS) themes. Class IV Social Studies also has 'The Environment – An Introduction' and 'Pollution' (separate subject). Upgraded draft→verified.",
+  "chapters": [
+    {
+      "id": "human_body_food_we_eat",
+      "name": "Human Body: Food we Eat",
+      "subtopics": [
+        "Food for energy, growth, protection",
+        "Components: carbs, proteins, fats, vitamins, minerals, water, roughage",
+        "Balanced diet",
+        "Avoiding food wastage"
+      ]
+    },
+    {
+      "id": "human_body_the_teeth",
+      "name": "Human Body: The Teeth",
+      "subtopics": [
+        "Kinds of teeth and location",
+        "Structure and functions",
+        "Care of teeth and gums",
+        "Causes of cavities"
+      ]
+    },
+    {
+      "id": "human_body_digestive_excretory_systems",
+      "name": "Human Body: Digestive & Excretory Systems",
+      "subtopics": [
+        "Digestive organs and functions",
+        "Chewing and bowel movements",
+        "Excretory organs and functions",
+        "Healthy habits"
+      ]
+    },
+    {
+      "id": "adaptation_in_animals",
+      "name": "Adaptation in Animals",
+      "subtopics": [
+        "Need for adaptation",
+        "Adaptations on land and water",
+        "Herbivores, carnivores, omnivores",
+        "Care for animals"
+      ]
+    },
+    {
+      "id": "adaptation_in_plants",
+      "name": "Adaptation in Plants",
+      "subtopics": [
+        "Adaptation on land",
+        "Adaptation in water",
+        "Adaptation in desert",
+        "Adaptation in hilly areas"
+      ]
+    },
+    {
+      "id": "plants_in_the_surroundings_and_environme",
+      "name": "Plants in the Surroundings and Environment",
+      "subtopics": [
+        "Parts of plants and uses",
+        "Roots and shoots",
+        "Photosynthesis and transpiration",
+        "Products from plants"
+      ]
+    },
+    {
+      "id": "air",
+      "name": "Air",
+      "subtopics": [
+        "Properties of air",
+        "Composition of air",
+        "Breathing and burning",
+        "Air pollution and prevention"
+      ]
+    },
+    {
+      "id": "materials_and_solutions",
+      "name": "Materials and Solutions",
+      "subtopics": [
+        "Solvent, solute, solution",
+        "Soluble and insoluble substances",
+        "Separation: sedimentation, decantation, filtration, evaporation"
+      ]
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "subtopics": [
+        "Natural and artificial sources",
+        "Luminous and non-luminous objects",
+        "Transparent, translucent, opaque",
+        "Formation of shadows"
+      ]
+    },
+    {
+      "id": "measurement",
+      "name": "Measurement",
+      "subtopics": [
+        "Need for measurement",
+        "Instruments (ruler, tape, weighing machine, thermometer, clock)",
+        "Reading instruments"
+      ]
+    },
+    {
+      "id": "push_and_pull",
+      "name": "Push and Pull",
+      "subtopics": [
+        "Push, pull and the difference",
+        "Force changes shape and direction",
+        "Types: muscular, gravitational, magnetic, frictional"
+      ]
+    },
+    {
+      "id": "friction_as_a_force",
+      "name": "Friction as a Force",
+      "subtopics": [
+        "Concept of friction",
+        "Reducing friction (oil, powder)",
+        "Uses and harmful effects"
+      ]
+    }
+  ]
+}

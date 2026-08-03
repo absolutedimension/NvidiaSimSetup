@@ -1,0 +1,213 @@
+{
+  "board": "Bihar Board",
+  "class": 5,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "संख्याओं का मेला (Fair of Numbers)",
+      "band": "3-5",
+      "instruction": "What comes just after 61750?",
+      "voice": "What is just after 61750?",
+      "payload": {
+        "mode": "after",
+        "n": 61750,
+        "display": "▢ , 61750"
+      },
+      "answer": 61751,
+      "explain": "Just after 61750 is 61751."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "जोड़-घटाव (Addition and Subtraction)",
+      "band": "3-5",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 2.",
+      "payload": {
+        "seq": [
+          2,
+          null,
+          6,
+          8
+        ],
+        "step": 2
+      },
+      "answer": [
+        4
+      ],
+      "explain": "Counting by 2s → 4."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "गुना-भाग (Multiplication and Division)",
+      "band": "3-5",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 2.",
+      "payload": {
+        "seq": [
+          10,
+          null,
+          14,
+          16
+        ],
+        "step": 2
+      },
+      "answer": [
+        12
+      ],
+      "explain": "Counting by 2s → 12."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "गुणज तथा गुणनखंड (Multiples and Factors)",
+      "band": "3-5",
+      "instruction": "Multiply!  4 × 8 = ?",
+      "voice": "What is 4 times 8?",
+      "payload": {
+        "op": "×",
+        "a": 4,
+        "b": 8
+      },
+      "answer": 32,
+      "explain": "4 times 8 makes 32."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "भिन्न एवं दशमलव (Fractions and Decimals)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 83248 and 262353.",
+      "payload": {
+        "a": 83248,
+        "b": 262353
+      },
+      "answer": "<",
+      "explain": "83248 is less than 262353."
+    },
+    {
+      "type": "count_money",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "मुद्रा एवं बैंकिंग (Currency and Banking)",
+      "band": "3-5",
+      "instruction": "How much money? 🪙",
+      "voice": "Add the coins.",
+      "payload": {
+        "coins": [
+          5,
+          2,
+          2,
+          1
+        ],
+        "display": "₹5 + ₹2 + ₹2 + ₹1"
+      },
+      "answer": 10,
+      "explain": "The coins make ₹10."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "कोण (Angle)",
+      "band": "3-5",
+      "instruction": "Add it!  47057 + 18113 = ?",
+      "voice": "What is 47057 plus 18113?",
+      "payload": {
+        "op": "+",
+        "a": 47057,
+        "b": 18113
+      },
+      "answer": 65170,
+      "explain": "47057 plus 18113 makes 65170."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "सममिति (Symmetry)",
+      "band": "3-5",
+      "instruction": "Add it!  48207 + 14054 = ?",
+      "voice": "What is 48207 plus 14054?",
+      "payload": {
+        "op": "+",
+        "a": 48207,
+        "b": 14054
+      },
+      "answer": 62261,
+      "explain": "48207 plus 14054 makes 62261."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "आकृतियाँ (Shapes)",
+      "band": "3-5",
+      "instruction": "Count the cookies and write how many!",
+      "voice": "Count the cookies.",
+      "payload": {
+        "asset": "cookie",
+        "emoji": "🍪",
+        "n": 17
+      },
+      "answer": 17,
+      "explain": "There are 17 cookies!"
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "मापन की इकाइयाँ (Units of Measurement)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 241821 and 58845.",
+      "payload": {
+        "a": 241821,
+        "b": 58845
+      },
+      "answer": ">",
+      "explain": "241821 is greater than 58845."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "परिमाप एवं क्षेत्रफल (Perimeter and Area)",
+      "band": "3-5",
+      "instruction": "Count the grapess and write how many!",
+      "voice": "Count the grapess.",
+      "payload": {
+        "asset": "grapes",
+        "emoji": "🍇",
+        "n": 9
+      },
+      "answer": 9,
+      "explain": "There are 9 grapess!"
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "आँकड़ों का खेल (Data Handling)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 449499 and 161262.",
+      "payload": {
+        "a": 449499,
+        "b": 161262
+      },
+      "answer": ">",
+      "explain": "449499 is greater than 161262."
+    }
+  ]
+}

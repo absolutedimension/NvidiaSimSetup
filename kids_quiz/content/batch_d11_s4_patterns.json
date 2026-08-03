@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Pattern Path",
+ "adventure": "Pattern Path",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Pattern Path. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🔷",
+   "q": "What comes next?  15, 20, 25, ?",
+   "options": [
+    "31",
+    "30",
+    "29",
+    "35"
+   ],
+   "answer": 1,
+   "explain": "The pattern adds 5 each time.",
+   "voice_q": "Find the pattern: 15, 20, 25. What's next?",
+   "voice_a": "It's 30! The pattern grows by 5."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔷",
+   "q": "What comes next?  5, 10, 15, ?",
+   "options": [
+    "19",
+    "21",
+    "25",
+    "20"
+   ],
+   "answer": 3,
+   "explain": "The pattern adds 5 each time.",
+   "voice_q": "Find the pattern: 5, 10, 15. What's next?",
+   "voice_a": "It's 20! The pattern grows by 5."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔷",
+   "q": "What comes next?  8, 10, 12, ?",
+   "options": [
+    "15",
+    "14",
+    "13",
+    "16"
+   ],
+   "answer": 1,
+   "explain": "The pattern adds 2 each time.",
+   "voice_q": "Find the pattern: 8, 10, 12. What's next?",
+   "voice_a": "It's 14! The pattern grows by 2."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔷",
+   "q": "What comes next?  25, 30, 35, ?",
+   "options": [
+    "41",
+    "45",
+    "39",
+    "40"
+   ],
+   "answer": 3,
+   "explain": "The pattern adds 5 each time.",
+   "voice_q": "Find the pattern: 25, 30, 35. What's next?",
+   "voice_a": "It's 40! The pattern grows by 5."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔷",
+   "q": "What comes next?  20, 25, 30, ?",
+   "options": [
+    "36",
+    "34",
+    "35",
+    "40"
+   ],
+   "answer": 2,
+   "explain": "The pattern adds 5 each time.",
+   "voice_q": "Find the pattern: 20, 25, 30. What's next?",
+   "voice_a": "It's 35! The pattern grows by 5."
+  }
+ ]
+}

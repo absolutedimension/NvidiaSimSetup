@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Multiplication Mountain",
+ "adventure": "Multiplication Mountain",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Multiplication Mountain. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "2 × 5 = ?",
+   "options": [
+    "12",
+    "10",
+    "12",
+    "5"
+   ],
+   "answer": 1,
+   "explain": "2 times 5 makes 10.",
+   "voice_q": "What is 2 times 5?",
+   "voice_a": "It's 10! 2 groups of 5 make 10."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "3 × 8 = ?",
+   "options": [
+    "16",
+    "27",
+    "26",
+    "24"
+   ],
+   "answer": 3,
+   "explain": "3 times 8 makes 24.",
+   "voice_q": "What is 3 times 8?",
+   "voice_a": "It's 24! 3 groups of 8 make 24."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "4 × 8 = ?",
+   "options": [
+    "32",
+    "36",
+    "24",
+    "34"
+   ],
+   "answer": 0,
+   "explain": "4 times 8 makes 32.",
+   "voice_q": "What is 4 times 8?",
+   "voice_a": "It's 32! 4 groups of 8 make 32."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "7 × 8 = ?",
+   "options": [
+    "58",
+    "56",
+    "63",
+    "48"
+   ],
+   "answer": 1,
+   "explain": "7 times 8 makes 56.",
+   "voice_q": "What is 7 times 8?",
+   "voice_a": "It's 56! 7 groups of 8 make 56."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "5 × 2 = ?",
+   "options": [
+    "10",
+    "12",
+    "15",
+    "8"
+   ],
+   "answer": 0,
+   "explain": "5 times 2 makes 10.",
+   "voice_q": "What is 5 times 2?",
+   "voice_a": "It's 10! 5 groups of 2 make 10."
+  }
+ ]
+}

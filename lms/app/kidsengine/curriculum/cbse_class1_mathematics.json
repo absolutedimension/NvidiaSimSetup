@@ -1,0 +1,149 @@
+{
+  "board": "CBSE",
+  "class": 1,
+  "subject": "Mathematics",
+  "source": {
+    "name": "NCERT Joyful Mathematics Class 1 (Textbook for Class 1)",
+    "url": "https://ncert.nic.in/textbook/pdf/aejm1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Verified from official ncert.nic.in prelims PDF (aejm1). Chapter names + parenthetical concept tags verbatim from NCERT contents. Subtopics derived from official concept tag + standard NCERT scope.",
+  "chapters": [
+    {
+      "id": "finding_the_furry_cat_pre_number_concept",
+      "name": "Finding the Furry Cat! (Pre-number Concepts)",
+      "subtopics": [
+        "inside/outside",
+        "near/far",
+        "top/bottom",
+        "big/small",
+        "sorting and classifying",
+        "one-to-one matching"
+      ]
+    },
+    {
+      "id": "what_is_long_what_is_round_shapes",
+      "name": "What is Long? What is Round? (Shapes)",
+      "subtopics": [
+        "flat vs round objects",
+        "rolling vs sliding",
+        "3D objects around us",
+        "sorting by shape"
+      ]
+    },
+    {
+      "id": "mango_treat_numbers_1_to_9",
+      "name": "Mango Treat (Numbers 1 to 9)",
+      "subtopics": [
+        "counting 1 to 9",
+        "number names",
+        "writing numerals",
+        "one-to-one correspondence",
+        "comparing quantities"
+      ]
+    },
+    {
+      "id": "making_10_numbers_10_to_20",
+      "name": "Making 10 (Numbers 10 to 20)",
+      "subtopics": [
+        "numbers 10 to 20",
+        "making a ten",
+        "tens and ones",
+        "counting in groups"
+      ]
+    },
+    {
+      "id": "how_many_addition_and_subtraction_of_sin",
+      "name": "How Many? (Addition and Subtraction of Single Digit Numbers)",
+      "subtopics": [
+        "addition of single digits",
+        "subtraction",
+        "'+' and '-' symbols",
+        "counting on / counting back",
+        "simple number stories"
+      ]
+    },
+    {
+      "id": "vegetable_farm_addition_and_subtraction_",
+      "name": "Vegetable Farm (Addition and Subtraction up to 20)",
+      "subtopics": [
+        "adding up to 20",
+        "subtracting up to 20",
+        "number bonds",
+        "word problems"
+      ]
+    },
+    {
+      "id": "lina_s_family_measurement",
+      "name": "Lina's Family (Measurement)",
+      "subtopics": [
+        "long/short",
+        "tall/short",
+        "heavy/light",
+        "comparing lengths",
+        "non-standard units"
+      ]
+    },
+    {
+      "id": "fun_with_numbers_numbers_21_to_99",
+      "name": "Fun with Numbers (Numbers 21 to 99)",
+      "subtopics": [
+        "counting to 99",
+        "tens and ones",
+        "number names",
+        "comparing and ordering"
+      ]
+    },
+    {
+      "id": "utsav_patterns",
+      "name": "Utsav (Patterns)",
+      "subtopics": [
+        "repeating patterns",
+        "shape patterns",
+        "number patterns",
+        "extending patterns"
+      ]
+    },
+    {
+      "id": "how_do_i_spend_my_day_time",
+      "name": "How do I Spend my Day? (Time)",
+      "subtopics": [
+        "daily routine",
+        "day and night",
+        "morning/afternoon/evening",
+        "sequence of events"
+      ]
+    },
+    {
+      "id": "how_many_times_multiplication",
+      "name": "How Many Times? (Multiplication)",
+      "subtopics": [
+        "equal groups",
+        "repeated addition",
+        "skip counting"
+      ]
+    },
+    {
+      "id": "how_much_can_we_spend_money",
+      "name": "How Much Can We Spend? (Money)",
+      "subtopics": [
+        "coins and notes",
+        "recognising currency",
+        "buying and selling"
+      ]
+    },
+    {
+      "id": "so_many_toys_data_handling",
+      "name": "So Many Toys (Data Handling)",
+      "subtopics": [
+        "sorting objects",
+        "grouping",
+        "simple pictographs",
+        "comparing groups"
+      ]
+    }
+  ]
+}

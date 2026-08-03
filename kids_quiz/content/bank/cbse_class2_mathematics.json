@@ -1,0 +1,198 @@
+{
+  "board": "CBSE",
+  "class": 2,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "A Day at the Beach (Counting in Groups)",
+      "band": "1-2",
+      "instruction": "What comes just after 60?",
+      "voice": "What is just after 60?",
+      "payload": {
+        "mode": "after",
+        "n": 60,
+        "display": "▢ , 60"
+      },
+      "answer": 61,
+      "explain": "Just after 60 is 61."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Shapes Around Us (3D Shapes)",
+      "band": "1-2",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 3
+      },
+      "answer": 3,
+      "explain": "There are 3 apples!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Fun with Numbers (Numbers 1 to 100)",
+      "band": "1-2",
+      "instruction": "Count the fishs and write how many!",
+      "voice": "Count the fishs.",
+      "payload": {
+        "asset": "fish",
+        "emoji": "🐟",
+        "n": 19
+      },
+      "answer": 19,
+      "explain": "There are 19 fishs!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Shadow Story (Togalu) (2D Shapes)",
+      "band": "1-2",
+      "instruction": "Add it!  42 + 23 = ?",
+      "voice": "What is 42 plus 23?",
+      "payload": {
+        "op": "+",
+        "a": 42,
+        "b": 23
+      },
+      "answer": 65,
+      "explain": "42 plus 23 makes 65."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Playing with Lines (Orientations of a line)",
+      "band": "1-2",
+      "instruction": "Add it!  15 + 37 = ?",
+      "voice": "What is 15 plus 37?",
+      "payload": {
+        "op": "+",
+        "a": 15,
+        "b": 37
+      },
+      "answer": 52,
+      "explain": "15 plus 37 makes 52."
+    },
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Decoration for Festival (Addition and Subtraction)",
+      "band": "1-2",
+      "instruction": "What comes just after 40?",
+      "voice": "What is just after 40?",
+      "payload": {
+        "mode": "after",
+        "n": 40,
+        "display": "▢ , 40"
+      },
+      "answer": 41,
+      "explain": "Just after 40 is 41."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Rani's Gift (Measurement)",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 71 and 55.",
+      "payload": {
+        "a": 71,
+        "b": 55
+      },
+      "answer": ">",
+      "explain": "71 is greater than 55."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Grouping and Sharing (Multiplication and Division)",
+      "band": "1-2",
+      "instruction": "Multiply!  3 × 5 = ?",
+      "voice": "What is 3 times 5?",
+      "payload": {
+        "op": "×",
+        "a": 3,
+        "b": 5
+      },
+      "answer": 15,
+      "explain": "3 times 5 makes 15."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Which Season is it? (Measurement of Time)",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 74 and 75.",
+      "payload": {
+        "a": 74,
+        "b": 75
+      },
+      "answer": "<",
+      "explain": "74 is less than 75."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Fun at the Fair (Money)",
+      "band": "1-2",
+      "instruction": "Add it!  13 + 24 = ?",
+      "voice": "What is 13 plus 24?",
+      "payload": {
+        "op": "+",
+        "a": 13,
+        "b": 24
+      },
+      "answer": 37,
+      "explain": "13 plus 24 makes 37."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Data Handling",
+      "band": "1-2",
+      "instruction": "Add it!  45 + 18 = ?",
+      "voice": "What is 45 plus 18?",
+      "payload": {
+        "op": "+",
+        "a": 45,
+        "b": 18
+      },
+      "answer": 63,
+      "explain": "45 plus 18 makes 63."
+    },
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "A Day at the Beach (Counting in Groups)",
+      "band": "1-2",
+      "instruction": "What comes just before 28?",
+      "voice": "What is just before 28?",
+      "payload": {
+        "mode": "before",
+        "n": 28,
+        "display": "28 , ▢"
+      },
+      "answer": 27,
+      "explain": "Just before 28 is 27."
+    }
+  ]
+}

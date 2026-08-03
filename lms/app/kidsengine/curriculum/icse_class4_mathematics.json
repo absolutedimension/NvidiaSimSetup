@@ -1,0 +1,94 @@
+{
+  "board": "ICSE",
+  "class": 4,
+  "subject": "Mathematics",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Mathematics), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "",
+  "chapters": [
+    {
+      "id": "numbers",
+      "name": "Numbers",
+      "subtopics": [
+        "6-digit numbers (Indian system)",
+        "Place value and face value",
+        "Order; greatest/smallest from digits",
+        "Roman numerals I, V, X",
+        "Fractions as part of a whole",
+        "Like, unlike, unit, equivalent fractions",
+        "Add/subtract like fractions"
+      ]
+    },
+    {
+      "id": "number_operations",
+      "name": "Number Operations",
+      "subtopics": [
+        "Add/subtract up to 4 digits",
+        "Tables up to 10",
+        "Multiply 2- and 3-digit numbers",
+        "Divide by a single digit",
+        "Four operations in real life",
+        "Word problems",
+        "Estimation of sum/difference/product"
+      ]
+    },
+    {
+      "id": "playing_with_numbers",
+      "name": "Playing with Numbers",
+      "subtopics": [
+        "Factors and multiples",
+        "Prime and composite numbers",
+        "Divisibility by 2,3,4,5,9,10",
+        "Prime factorization (factor tree)",
+        "HCF",
+        "LCM"
+      ]
+    },
+    {
+      "id": "geometry",
+      "name": "Geometry",
+      "subtopics": [
+        "Tangram shapes",
+        "Tessellation",
+        "Circle: centre, radius, diameter",
+        "Reflection symmetry",
+        "Area and perimeter of simple shapes",
+        "Plan, elevation, side view",
+        "Point, line, ray, parallel/perpendicular lines"
+      ]
+    },
+    {
+      "id": "measurement",
+      "name": "Measurement",
+      "subtopics": [
+        "Unit conversions m/cm, g/kg, l/ml",
+        "Problems on length, weight, volume",
+        "Estimation and verification",
+        "Days/hours/minutes conversion",
+        "Elapsed-time word problems"
+      ]
+    },
+    {
+      "id": "data_handling",
+      "name": "Data Handling",
+      "subtopics": [
+        "Pictorial representation of raw data",
+        "Interpreting bar graphs"
+      ]
+    },
+    {
+      "id": "patterns",
+      "name": "Patterns",
+      "subtopics": [
+        "Growing and reducing patterns",
+        "Rule to extend shape/number patterns"
+      ]
+    }
+  ]
+}

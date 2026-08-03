@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Multiplication Mountain",
+ "adventure": "Multiplication Mountain",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Multiplication Mountain. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "5 × 2 = ?",
+   "options": [
+    "12",
+    "15",
+    "8",
+    "10"
+   ],
+   "answer": 3,
+   "explain": "5 times 2 makes 10.",
+   "voice_q": "What is 5 times 2?",
+   "voice_a": "It's 10! 5 groups of 2 make 10."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "3 × 9 = ?",
+   "options": [
+    "27",
+    "18",
+    "30",
+    "29"
+   ],
+   "answer": 0,
+   "explain": "3 times 9 makes 27.",
+   "voice_q": "What is 3 times 9?",
+   "voice_a": "It's 27! 3 groups of 9 make 27."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "8 × 9 = ?",
+   "options": [
+    "74",
+    "80",
+    "72",
+    "63"
+   ],
+   "answer": 2,
+   "explain": "8 times 9 makes 72.",
+   "voice_q": "What is 8 times 9?",
+   "voice_a": "It's 72! 8 groups of 9 make 72."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "2 × 2 = ?",
+   "options": [
+    "6",
+    "2",
+    "4",
+    "6"
+   ],
+   "answer": 2,
+   "explain": "2 times 2 makes 4.",
+   "voice_q": "What is 2 times 2?",
+   "voice_a": "It's 4! 2 groups of 2 make 4."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "7 × 9 = ?",
+   "options": [
+    "63",
+    "65",
+    "54",
+    "70"
+   ],
+   "answer": 0,
+   "explain": "7 times 9 makes 63.",
+   "voice_q": "What is 7 times 9?",
+   "voice_a": "It's 63! 7 groups of 9 make 63."
+  }
+ ]
+}

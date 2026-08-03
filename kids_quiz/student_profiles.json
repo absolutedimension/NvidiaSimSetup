@@ -1,0 +1,11 @@
+{
+  "_doc": "Student-type PROFILES = a mixing board over the styles in assessment_styles.json. A student type isn't different dials — it's a different WEIGHTING of the same styles. Weights are sampled to pick a style per item; styles not live or out of grade-band are dropped + weights renormalised.",
+  "profiles": {
+    "kids_1_2":  {"pictorial_count": 0.45, "story_reallife": 0.20, "abstract_fact": 0.25, "sequence_pattern": 0.10},
+    "kids_3_5":  {"abstract_fact": 0.28, "story_reallife": 0.30, "pictorial_count": 0.12, "sequence_pattern": 0.13, "money_context": 0.10, "error_spot": 0.07},
+    "board":     {"abstract_fact": 0.30, "story_reallife": 0.25, "error_spot": 0.20, "sequence_pattern": 0.15, "money_context": 0.10},
+    "jee_neet":  {"abstract_fact": 0.30, "reverse_relation": 0.30, "error_spot": 0.20, "assertion_reason": 0.20},
+    "upsc":      {"assertion_reason": 0.40, "relational_match": 0.30, "error_spot": 0.30}
+  },
+  "class_to_profile": {"1": "kids_1_2", "2": "kids_1_2", "3": "kids_3_5", "4": "kids_3_5", "5": "kids_3_5"}
+}

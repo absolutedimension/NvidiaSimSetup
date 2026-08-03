@@ -1,0 +1,165 @@
+{
+  "board": "ICSE",
+  "class": 2,
+  "subject": "EVS",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Environmental Studies), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "EVS standalone in Classes I-II. Theme names verbatim; subtopics = official Key Concepts. Class II builds on Class I. Upgraded draft→verified.",
+  "chapters": [
+    {
+      "id": "about_me",
+      "name": "About Me",
+      "subtopics": [
+        "Describe self, likes/dislikes, hobbies",
+        "Body parts and self-portrait",
+        "Functions of external parts and sense organs",
+        "Care of body parts"
+      ]
+    },
+    {
+      "id": "others_in_my_world",
+      "name": "Others in my World",
+      "subtopics": [
+        "Extended family tree",
+        "Sharing, fun and festivals",
+        "Care for differently-abled and elderly",
+        "Care of pets; games"
+      ]
+    },
+    {
+      "id": "my_needs_food",
+      "name": "My Needs: Food",
+      "subtopics": [
+        "Importance of food",
+        "Cereals, dals, fruits, vegetables, milk",
+        "Healthy vs junk food",
+        "Diversity of food habits"
+      ]
+    },
+    {
+      "id": "my_needs_water",
+      "name": "My Needs: Water",
+      "subtopics": [
+        "Natural and man-made sources",
+        "Need for water for all living things",
+        "Clean drinking water (awareness)",
+        "Judicious use and reuse"
+      ]
+    },
+    {
+      "id": "my_need_shelter",
+      "name": "My Need - Shelter",
+      "subtopics": [
+        "Diversity of houses",
+        "Materials used in houses",
+        "Cleanliness, light and ventilation",
+        "Care of household things"
+      ]
+    },
+    {
+      "id": "my_need_clothing",
+      "name": "My Need - Clothing",
+      "subtopics": [
+        "Cloth materials (cotton, silk, wool)",
+        "Natural and man-made fibres",
+        "Clothes for climatic conditions",
+        "Care of clothes"
+      ]
+    },
+    {
+      "id": "my_need_air",
+      "name": "My Need - Air",
+      "subtopics": [
+        "Simple properties of air",
+        "Causes of air pollution",
+        "Reducing air pollution",
+        "Air-borne diseases and prevention"
+      ]
+    },
+    {
+      "id": "keeping_oneself_clean_safe_and_healthy",
+      "name": "Keeping Oneself Clean, Safe and Healthy",
+      "subtopics": [
+        "Cleanliness in public places; garbage disposal",
+        "Rest, exercise, yoga, games",
+        "Safety at home and surroundings",
+        "Good/bad touch"
+      ]
+    },
+    {
+      "id": "places_in_the_neighbourhood",
+      "name": "Places in the Neighbourhood",
+      "subtopics": [
+        "Need for public places",
+        "People who help us",
+        "Police station and fire brigade",
+        "Recreational places"
+      ]
+    },
+    {
+      "id": "plants",
+      "name": "Plants",
+      "subtopics": [
+        "Plants on land, water, climbers",
+        "Parts of plants",
+        "Plant products at home",
+        "Care for plants; plantation"
+      ]
+    },
+    {
+      "id": "animals",
+      "name": "Animals",
+      "subtopics": [
+        "Body parts of pets",
+        "Life cycle of butterfly",
+        "Care and compassion for animals",
+        "Animal habitats"
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "Transport",
+      "subtopics": [
+        "Vehicles by fuel type (petrol, diesel, CNG, electric)",
+        "City transport (metro, local train, auto)",
+        "Traffic jams and pollution",
+        "Saving fuel"
+      ]
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "subtopics": [
+        "Need for communication",
+        "Ways in cities/public places",
+        "ICT (email, SMS, internet)",
+        "Checking misuse of devices"
+      ]
+    },
+    {
+      "id": "the_world_around_me_sun_moon_sky_and_sta",
+      "name": "The World Around Me: Sun, Moon, Sky and Stars",
+      "subtopics": [
+        "Sky through day and seasons",
+        "Symbolic and route maps",
+        "Solar system and heavenly bodies",
+        "Day and night formation"
+      ]
+    },
+    {
+      "id": "time_space_direction",
+      "name": "Time, Space, Direction",
+      "subtopics": [
+        "Time: day, week, month, year",
+        "Direction: left/right, four directions, near/far",
+        "Location of places and objects"
+      ]
+    }
+  ]
+}

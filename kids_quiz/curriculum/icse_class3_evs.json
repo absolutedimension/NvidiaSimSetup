@@ -1,0 +1,122 @@
+{
+  "board": "ICSE",
+  "class": 3,
+  "subject": "EVS",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Science — natural-environment component of EVS), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "For Classes III-V, CISCE splits EVS into Science + Social Studies. These are the Class III SCIENCE (natural-environment/EVS) themes. Class III Social Studies also carries environment content (separate subject). Upgraded draft→verified.",
+  "chapters": [
+    {
+      "id": "living_and_non_living_things",
+      "name": "Living and Non-Living Things",
+      "subtopics": [
+        "Examples in the surroundings",
+        "Features of living and non-living",
+        "Difference between them"
+      ]
+    },
+    {
+      "id": "human_body",
+      "name": "Human Body",
+      "subtopics": [
+        "Internal organs: location and functions",
+        "Respiratory system and breathing",
+        "Labelling respiratory organs",
+        "Air pollution effects"
+      ]
+    },
+    {
+      "id": "animals_birds",
+      "name": "Animals: Birds",
+      "subtopics": [
+        "Common birds; beaks, feet, feathers",
+        "How birds fly; food habits",
+        "Nests of interesting birds",
+        "Care for birds"
+      ]
+    },
+    {
+      "id": "animals_common_insects",
+      "name": "Animals: Common Insects",
+      "subtopics": [
+        "Ants, bees, flies, mosquitoes, butterfly",
+        "Body parts of an insect",
+        "Life cycle of a butterfly",
+        "Harmful insects and remedies"
+      ]
+    },
+    {
+      "id": "plants_in_the_surroundings",
+      "name": "Plants in the Surroundings",
+      "subtopics": [
+        "Parts of plants and functions",
+        "Structure of a seed; kinds of seeds",
+        "Germination (water, air, warmth)",
+        "Care of plants"
+      ]
+    },
+    {
+      "id": "food_we_get_from_plants",
+      "name": "Food we get from Plants",
+      "subtopics": [
+        "Herbs, shrubs, trees, climbers",
+        "Parts of plants used as food",
+        "Plant products (oil, spices, pulses)"
+      ]
+    },
+    {
+      "id": "forms_of_matter_solids_liquids_and_gases",
+      "name": "Forms of Matter: Solids, Liquids and Gases",
+      "subtopics": [
+        "The three forms of matter",
+        "Properties of solids, liquids, gases",
+        "Uses of matter"
+      ]
+    },
+    {
+      "id": "some_properties_of_water",
+      "name": "Some Properties of Water",
+      "subtopics": [
+        "Physical properties of water",
+        "Solutions; soluble/insoluble substances",
+        "Objects that float and sink"
+      ]
+    },
+    {
+      "id": "water_as_a_resource",
+      "name": "Water as a Resource",
+      "subtopics": [
+        "Change of state (evaporation, condensation)",
+        "Water impurities and causes",
+        "Purification (boiling, chlorine)",
+        "Rainwater harvesting"
+      ]
+    },
+    {
+      "id": "sun_as_a_natural_resource",
+      "name": "Sun as a Natural Resource",
+      "subtopics": [
+        "Sun as an energy source",
+        "Photosynthesis; solar cooker/drying",
+        "Solar cells for electricity",
+        "Renewable vs non-renewable energy"
+      ]
+    },
+    {
+      "id": "cleanliness_health_and_hygiene",
+      "name": "Cleanliness, Health and Hygiene",
+      "subtopics": [
+        "Personal cleanliness",
+        "Food, rest, exercise, recreation",
+        "Improving surroundings",
+        "Swachchh Bharat activities"
+      ]
+    }
+  ]
+}

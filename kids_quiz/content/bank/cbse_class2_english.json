@@ -1,0 +1,984 @@
+{
+  "board": "CBSE",
+  "class": 2,
+  "subject": "English",
+  "count": 30,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the items to their pictures.",
+      "payload": {
+        "pairs": [
+          [
+            "Bicycle",
+            "Its picture"
+          ],
+          [
+            "Friend",
+            "Its picture"
+          ],
+          [
+            "Park",
+            "Its picture"
+          ],
+          [
+            "Sun",
+            "Its picture"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 1: Fun with Friends",
+      "band": 1,
+      "voice": "Match the items to their pictures.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Bicycle",
+          "Car",
+          "Scooter",
+          "Banana"
+        ]
+      },
+      "answer": "Banana",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 1: Fun with Friends",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A bicycle has two wheels.",
+      "payload": {
+        "statement": "A bicycle has two wheels."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 1: Fun with Friends",
+      "band": 2,
+      "voice": "A bicycle has two wheels.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "I ride my ___ to school.",
+        "bank": [
+          "bicycle",
+          "car",
+          "train"
+        ]
+      },
+      "answer": "bicycle",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 1: Fun with Friends",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them into living and non-living.",
+      "payload": {
+        "items": [
+          "Tree",
+          "Bicycle",
+          "Dog",
+          "Ball"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Tree": "Living",
+        "Bicycle": "Non-living",
+        "Dog": "Living",
+        "Ball": "Non-living"
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 1: Fun with Friends",
+      "band": 1,
+      "voice": "Sort them into living and non-living.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A bicycle can fly.",
+      "payload": {
+        "statement": "A bicycle can fly."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 1: Fun with Friends",
+      "band": 2,
+      "voice": "A bicycle can fly.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "My friend rides a ___ with me.",
+        "bank": [
+          "bicycle",
+          "kite",
+          "balloon"
+        ]
+      },
+      "answer": "bicycle",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 1: Fun with Friends",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the word to its meaning.",
+      "payload": {
+        "pairs": [
+          [
+            "Bicycle",
+            "A two-wheeled vehicle"
+          ],
+          [
+            "Friend",
+            "A person you play with"
+          ],
+          [
+            "Park",
+            "A place to play"
+          ],
+          [
+            "Sun",
+            "A big star in the sky"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 1: Fun with Friends",
+      "band": 1,
+      "voice": "Match the word to its meaning.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Ride",
+          "Jump",
+          "Fly",
+          "Bicycle"
+        ]
+      },
+      "answer": "Bicycle",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 1: Fun with Friends",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Friends like to play together.",
+      "payload": {
+        "statement": "Friends like to play together."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 1: Fun with Friends",
+      "band": 2,
+      "voice": "Friends like to play together.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the word to its picture.",
+      "payload": {
+        "pairs": [
+          [
+            "Sun",
+            "Picture of the Sun"
+          ],
+          [
+            "Tree",
+            "Picture of a Tree"
+          ],
+          [
+            "Bird",
+            "Picture of a Bird"
+          ],
+          [
+            "House",
+            "Picture of a House"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 2: Welcome to My World",
+      "band": 1,
+      "voice": "Match the word to its picture.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Dog",
+          "Cat",
+          "Car",
+          "Bird"
+        ]
+      },
+      "answer": "Car",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 2: Welcome to My World",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The moon is a star.",
+      "payload": {
+        "statement": "The moon is a star."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 2: Welcome to My World",
+      "band": 2,
+      "voice": "The moon is a star.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "I can see the ___ in the sky at night.",
+        "bank": [
+          "sun",
+          "moon",
+          "cloud"
+        ]
+      },
+      "answer": "moon",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 2: Welcome to My World",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Rose",
+          "Rock",
+          "Daisy",
+          "Table"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Rose": "Living",
+        "Rock": "Non-living",
+        "Daisy": "Living",
+        "Table": "Non-living"
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 2: Welcome to My World",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal to its sound.",
+      "payload": {
+        "pairs": [
+          [
+            "Dog",
+            "Bark"
+          ],
+          [
+            "Cat",
+            "Meow"
+          ],
+          [
+            "Cow",
+            "Moo"
+          ],
+          [
+            "Sheep",
+            "Baa"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 2: Welcome to My World",
+      "band": 1,
+      "voice": "Match the animal to its sound.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Apple",
+          "Banana",
+          "Carrot",
+          "Grape"
+        ]
+      },
+      "answer": "Carrot",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 2: Welcome to My World",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Trees can see.",
+      "payload": {
+        "statement": "Trees can see."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 2: Welcome to My World",
+      "band": 2,
+      "voice": "Trees can see.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ shines in the day.",
+        "bank": [
+          "moon",
+          "star",
+          "sun"
+        ]
+      },
+      "answer": "sun",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 2: Welcome to My World",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Fish",
+          "Elephant",
+          "Car",
+          "Bird"
+        ],
+        "bins": [
+          "Animals",
+          "Non-animals"
+        ]
+      },
+      "answer": {
+        "Fish": "Animals",
+        "Elephant": "Animals",
+        "Car": "Non-animals",
+        "Bird": "Animals"
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 2: Welcome to My World",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the place to what you can do there.",
+      "payload": {
+        "pairs": [
+          [
+            "Park",
+            "Play"
+          ],
+          [
+            "School",
+            "Learn"
+          ],
+          [
+            "Store",
+            "Shop"
+          ],
+          [
+            "Home",
+            "Rest"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 3: Going Places",
+      "band": 1,
+      "voice": "Match the place to what you can do there.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "School",
+          "Park",
+          "Car",
+          "Home"
+        ]
+      },
+      "answer": "Car",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 3: Going Places",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A town has many houses.",
+      "payload": {
+        "statement": "A town has many houses."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 3: Going Places",
+      "band": 2,
+      "voice": "A town has many houses.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "I go to ___ to learn.",
+        "bank": [
+          "school",
+          "park",
+          "store"
+        ]
+      },
+      "answer": "school",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 3: Going Places",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Bus",
+          "Train",
+          "Tree",
+          "Bike"
+        ],
+        "bins": [
+          "Transport",
+          "Nature"
+        ]
+      },
+      "answer": {
+        "Bus": "Transport",
+        "Train": "Transport",
+        "Tree": "Nature",
+        "Bike": "Transport"
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 3: Going Places",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the word to its picture.",
+      "payload": {
+        "pairs": [
+          [
+            "Town",
+            "Picture of a town"
+          ],
+          [
+            "Home",
+            "Picture of a house"
+          ],
+          [
+            "School",
+            "Picture of a school"
+          ],
+          [
+            "Park",
+            "Picture of a park"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 3: Going Places",
+      "band": 1,
+      "voice": "Match the word to its picture.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Home",
+          "School",
+          "Library",
+          "Apple"
+        ]
+      },
+      "answer": "Apple",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 3: Going Places",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "You can find a playground in a park.",
+      "payload": {
+        "statement": "You can find a playground in a park."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 3: Going Places",
+      "band": 2,
+      "voice": "You can find a playground in a park.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is where I live.",
+        "bank": [
+          "school",
+          "town",
+          "park"
+        ]
+      },
+      "answer": "town",
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 3: Going Places",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Bus",
+          "Cat",
+          "Train",
+          "Dog"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Bus": "Non-living",
+        "Cat": "Living",
+        "Train": "Non-living",
+        "Dog": "Living"
+      },
+      "subject": "english",
+      "class": 2,
+      "chapter": "Unit 3: Going Places",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

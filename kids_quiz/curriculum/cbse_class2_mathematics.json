@@ -1,0 +1,126 @@
+{
+  "board": "CBSE",
+  "class": 2,
+  "subject": "Mathematics",
+  "source": {
+    "name": "NCERT Joyful Mathematics Class 2 (Textbook for Class 2)",
+    "url": "https://ncert.nic.in/textbook/pdf/bejm1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Verified from official ncert.nic.in prelims PDF (bejm1). Chapter names + concept tags verbatim from NCERT contents.",
+  "chapters": [
+    {
+      "id": "a_day_at_the_beach_counting_in_groups",
+      "name": "A Day at the Beach (Counting in Groups)",
+      "subtopics": [
+        "counting in groups",
+        "skip counting",
+        "grouping objects",
+        "estimating quantity"
+      ]
+    },
+    {
+      "id": "shapes_around_us_3d_shapes",
+      "name": "Shapes Around Us (3D Shapes)",
+      "subtopics": [
+        "cube, cuboid, sphere, cone, cylinder",
+        "faces, edges and corners",
+        "rolling and stacking",
+        "sorting 3D objects"
+      ]
+    },
+    {
+      "id": "fun_with_numbers_numbers_1_to_100",
+      "name": "Fun with Numbers (Numbers 1 to 100)",
+      "subtopics": [
+        "numbers up to 100",
+        "tens and ones",
+        "comparing and ordering",
+        "number names"
+      ]
+    },
+    {
+      "id": "shadow_story_togalu_2d_shapes",
+      "name": "Shadow Story (Togalu) (2D Shapes)",
+      "subtopics": [
+        "flat shapes",
+        "circle, triangle, square, rectangle",
+        "sides and corners",
+        "identifying shapes in pictures"
+      ]
+    },
+    {
+      "id": "playing_with_lines_orientations_of_a_lin",
+      "name": "Playing with Lines (Orientations of a line)",
+      "subtopics": [
+        "straight and curved lines",
+        "horizontal lines",
+        "vertical lines",
+        "slanting lines"
+      ]
+    },
+    {
+      "id": "decoration_for_festival_addition_and_sub",
+      "name": "Decoration for Festival (Addition and Subtraction)",
+      "subtopics": [
+        "2-digit addition",
+        "2-digit subtraction",
+        "regrouping",
+        "word problems"
+      ]
+    },
+    {
+      "id": "rani_s_gift_measurement",
+      "name": "Rani's Gift (Measurement)",
+      "subtopics": [
+        "measuring length",
+        "non-standard and standard units",
+        "comparing measures",
+        "estimation"
+      ]
+    },
+    {
+      "id": "grouping_and_sharing_multiplication_and_",
+      "name": "Grouping and Sharing (Multiplication and Division)",
+      "subtopics": [
+        "equal groups",
+        "repeated addition",
+        "sharing equally",
+        "introduction to division"
+      ]
+    },
+    {
+      "id": "which_season_is_it_measurement_of_time",
+      "name": "Which Season is it? (Measurement of Time)",
+      "subtopics": [
+        "days, weeks, months",
+        "seasons",
+        "using a calendar",
+        "sequencing time"
+      ]
+    },
+    {
+      "id": "fun_at_the_fair_money",
+      "name": "Fun at the Fair (Money)",
+      "subtopics": [
+        "coins and notes",
+        "making amounts",
+        "addition of money",
+        "buying and selling"
+      ]
+    },
+    {
+      "id": "data_handling",
+      "name": "Data Handling",
+      "subtopics": [
+        "collecting data",
+        "sorting",
+        "pictographs",
+        "reading tables"
+      ]
+    }
+  ]
+}

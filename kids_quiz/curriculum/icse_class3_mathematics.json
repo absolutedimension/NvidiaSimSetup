@@ -1,0 +1,151 @@
+{
+  "board": "ICSE",
+  "class": 3,
+  "subject": "Mathematics",
+  "source": {
+    "name": "New Guided Mathematics Class 3 (Children's Academy) — pupil's real textbook; cross-ref CISCE Classes I–V curriculum",
+    "url": "https://cisce.org/",
+    "verified_on": "2026-08-02",
+    "also_verified": [
+      "his school book (scanned)"
+    ]
+  },
+  "confidence": "high",
+  "status": "complete",
+  "live_questions": 1080,
+  "chapters": [
+    {
+      "id": "numbers_place_value",
+      "name": "Numbers & Place Value",
+      "subtopics": [
+        "Place Value & Face Value",
+        "Expanded Form",
+        "Number Names",
+        "Successor & Predecessor",
+        "Forming Numbers"
+      ]
+    },
+    {
+      "id": "comparing_numbers",
+      "name": "Comparing Numbers",
+      "subtopics": [
+        "Greater / Smaller / Equal",
+        "Ascending & Descending Order"
+      ]
+    },
+    {
+      "id": "skip_counting",
+      "name": "Skip Counting",
+      "subtopics": [
+        "Count in 10s / 100s / 1000s"
+      ]
+    },
+    {
+      "id": "number_patterns",
+      "name": "Number Patterns",
+      "subtopics": [
+        "Growing Patterns"
+      ]
+    },
+    {
+      "id": "addition",
+      "name": "Addition",
+      "subtopics": [
+        "3-digit Addition",
+        "Adding Three Numbers",
+        "Estimating Sums",
+        "Adding Money",
+        "Word Problems"
+      ]
+    },
+    {
+      "id": "subtraction",
+      "name": "Subtraction",
+      "subtopics": [
+        "3-digit Subtraction",
+        "Estimating Differences",
+        "Add & Subtract Together",
+        "Subtracting Money",
+        "Word Problems"
+      ]
+    },
+    {
+      "id": "multiplication",
+      "name": "Multiplication",
+      "subtopics": [
+        "Multiplication Tables",
+        "Multiplying Numbers"
+      ]
+    },
+    {
+      "id": "multiplication_word_problems",
+      "name": "Multiplication Word Problems",
+      "subtopics": [
+        "Word Problems"
+      ]
+    },
+    {
+      "id": "division",
+      "name": "Division",
+      "subtopics": [
+        "Division Facts",
+        "Sharing Equally"
+      ]
+    },
+    {
+      "id": "fractions",
+      "name": "Fractions",
+      "subtopics": [
+        "Halves, Thirds, Quarters",
+        "Fraction of a Collection"
+      ]
+    },
+    {
+      "id": "money",
+      "name": "Money",
+      "subtopics": [
+        "Rupees & Paise",
+        "Money Word Problems"
+      ]
+    },
+    {
+      "id": "measurement_length",
+      "name": "Measurement - Length",
+      "subtopics": [
+        "Metres & Centimetres",
+        "Length Word Problems"
+      ]
+    },
+    {
+      "id": "measurement_weight",
+      "name": "Measurement - Weight",
+      "subtopics": [
+        "Kilograms & Grams",
+        "Weight Word Problems"
+      ]
+    },
+    {
+      "id": "time",
+      "name": "Time",
+      "subtopics": [
+        "Reading the Clock",
+        "Calendar, Days & Months"
+      ]
+    },
+    {
+      "id": "shapes_geometry",
+      "name": "Shapes & Geometry",
+      "subtopics": [
+        "Flat Shapes",
+        "Solid Shapes"
+      ]
+    },
+    {
+      "id": "data_handling",
+      "name": "Data Handling",
+      "subtopics": [
+        "Pictographs & Tally Marks"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Measure Land",
+ "adventure": "Measure Land",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Measure Land. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "📏",
+   "q": "6 metres = ? cm",
+   "options": [
+    "610",
+    "590",
+    "700",
+    "600"
+   ],
+   "answer": 3,
+   "explain": "1 metre = 100 cm, so 6 m = 600 cm.",
+   "voice_q": "How many centimetres are in 6 metres?",
+   "voice_a": "It's 600! 6 metres is 600 centimetres."
+  },
+  {
+   "type": "mcq",
+   "emoji": "📏",
+   "q": "500 cm = ? metres",
+   "options": [
+    "6",
+    "50",
+    "4",
+    "5"
+   ],
+   "answer": 3,
+   "explain": "100 cm = 1 metre, so 500 cm = 5 m.",
+   "voice_q": "How many metres are in 500 centimetres?",
+   "voice_a": "It's 5! 500 centimetres is 5 metres."
+  },
+  {
+   "type": "mcq",
+   "emoji": "📏",
+   "q": "1 metre = ? cm",
+   "options": [
+    "110",
+    "90",
+    "100",
+    "200"
+   ],
+   "answer": 2,
+   "explain": "1 metre = 100 cm, so 1 m = 100 cm.",
+   "voice_q": "How many centimetres are in 1 metre?",
+   "voice_a": "It's 100! 1 metres is 100 centimetres."
+  },
+  {
+   "type": "mcq",
+   "emoji": "📏",
+   "q": "300 cm = ? metres",
+   "options": [
+    "2",
+    "4",
+    "3",
+    "30"
+   ],
+   "answer": 2,
+   "explain": "100 cm = 1 metre, so 300 cm = 3 m.",
+   "voice_q": "How many metres are in 300 centimetres?",
+   "voice_a": "It's 3! 300 centimetres is 3 metres."
+  },
+  {
+   "type": "mcq",
+   "emoji": "📏",
+   "q": "100 cm = ? metre",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "10"
+   ],
+   "answer": 2,
+   "explain": "100 cm = 1 metre, so 100 cm = 1 m.",
+   "voice_q": "How many metres are in 100 centimetres?",
+   "voice_a": "It's 1! 100 centimetres is 1 metres."
+  }
+ ]
+}

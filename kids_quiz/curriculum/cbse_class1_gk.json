@@ -1,0 +1,44 @@
+{
+  "board": "CBSE",
+  "class": 1,
+  "subject": "General Knowledge",
+  "source": {
+    "name": "Commonly-taught primary GK outline (NO official CBSE/NCERT board GK syllabus at primary)",
+    "url": "",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "CBSE/NCERT prescribes NO formal board GK syllabus at the primary stage; GK is a school/publisher choice, not board-examined. Commonly-taught outline only — author-generated, cross-check per school.",
+  "chapters": [
+    {
+      "id": "all_about_me",
+      "name": "All About Me",
+      "subtopics": [
+        "my body and sense organs",
+        "my name, age and family",
+        "good habits and manners"
+      ]
+    },
+    {
+      "id": "the_world_around_me",
+      "name": "The World Around Me",
+      "subtopics": [
+        "animals and their sounds",
+        "fruits and vegetables",
+        "colours and shapes",
+        "community helpers"
+      ]
+    },
+    {
+      "id": "my_country_india",
+      "name": "My Country India",
+      "subtopics": [
+        "national flag and symbols",
+        "festivals we celebrate",
+        "days of the week"
+      ]
+    }
+  ]
+}

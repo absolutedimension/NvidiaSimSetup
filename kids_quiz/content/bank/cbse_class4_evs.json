@@ -1,0 +1,973 @@
+{
+  "board": "CBSE",
+  "class": 4,
+  "subject": "EVS",
+  "count": 30,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the type of transport to its use.",
+      "payload": {
+        "pairs": [
+          [
+            "Bus",
+            "Going to school"
+          ],
+          [
+            "Boat",
+            "Crossing water"
+          ],
+          [
+            "Bike",
+            "Riding on road"
+          ],
+          [
+            "Train",
+            "Long distance travel"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Going to School",
+      "band": 1,
+      "voice": "Match the type of transport to its use.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Car",
+          "Bicycle",
+          "Boat",
+          "Tree"
+        ]
+      },
+      "answer": "Tree",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Going to School",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Bridges help us cross rivers.",
+      "payload": {
+        "statement": "Bridges help us cross rivers."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Going to School",
+      "band": 2,
+      "voice": "Bridges help us cross rivers.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We can travel by ___ or by bike to school.",
+        "bank": [
+          "car",
+          "plane",
+          "train"
+        ]
+      },
+      "answer": "car",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Going to School",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them by terrain.",
+      "payload": {
+        "items": [
+          "Mountain",
+          "River",
+          "Road",
+          "Desert"
+        ],
+        "bins": [
+          "Water",
+          "Land"
+        ]
+      },
+      "answer": {
+        "Mountain": "Land",
+        "River": "Water",
+        "Road": "Land",
+        "Desert": "Land"
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Going to School",
+      "band": 1,
+      "voice": "Sort them by terrain.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the vehicle to where it travels.",
+      "payload": {
+        "pairs": [
+          [
+            "Boat",
+            "On water"
+          ],
+          [
+            "Car",
+            "On road"
+          ],
+          [
+            "Train",
+            "On tracks"
+          ],
+          [
+            "Bus",
+            "On road"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Going to School",
+      "band": 1,
+      "voice": "Match the vehicle to where it travels.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Bridge",
+          "River",
+          "Sky",
+          "Boat"
+        ]
+      },
+      "answer": "Sky",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Going to School",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "You can ride a bicycle on a bridge.",
+      "payload": {
+        "statement": "You can ride a bicycle on a bridge."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Going to School",
+      "band": 2,
+      "voice": "You can ride a bicycle on a bridge.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A ___ is used to cross water.",
+        "bank": [
+          "bridge",
+          "road",
+          "hill"
+        ]
+      },
+      "answer": "bridge",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Going to School",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them by way of travel.",
+      "payload": {
+        "items": [
+          "Walking",
+          "Swimming",
+          "Driving",
+          "Flying"
+        ],
+        "bins": [
+          "Land",
+          "Water",
+          "Air"
+        ]
+      },
+      "answer": {
+        "Walking": "Land",
+        "Swimming": "Water",
+        "Driving": "Land",
+        "Flying": "Air"
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Going to School",
+      "band": 1,
+      "voice": "Sort them by way of travel.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal to its ear type.",
+      "payload": {
+        "pairs": [
+          [
+            "Cat",
+            "Pointy ears"
+          ],
+          [
+            "Elephant",
+            "Big ears"
+          ],
+          [
+            "Frog",
+            "No outer ears"
+          ],
+          [
+            "Mouse",
+            "Round ears"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Ear to Ear",
+      "band": 1,
+      "voice": "Match the animal to its ear type.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Lion",
+          "Tiger",
+          "Penguin",
+          "Elephant"
+        ]
+      },
+      "answer": "Penguin",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Ear to Ear",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "All animals have ears.",
+      "payload": {
+        "statement": "All animals have ears."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Ear to Ear",
+      "band": 2,
+      "voice": "All animals have ears.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A rabbit has ___ ears.",
+        "bank": [
+          "short",
+          "long",
+          "flat"
+        ]
+      },
+      "answer": "long",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Ear to Ear",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them by ear type.",
+      "payload": {
+        "items": [
+          "Dog",
+          "Bat",
+          "Fish",
+          "Rabbit"
+        ],
+        "bins": [
+          "Pointy ears",
+          "Floppy ears",
+          "No ears"
+        ]
+      },
+      "answer": {
+        "Dog": "Pointy ears",
+        "Bat": "Pointy ears",
+        "Fish": "No ears",
+        "Rabbit": "Floppy ears"
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Ear to Ear",
+      "band": 1,
+      "voice": "Sort them by ear type.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal to its sound.",
+      "payload": {
+        "pairs": [
+          [
+            "Dog",
+            "Bark"
+          ],
+          [
+            "Cat",
+            "Meow"
+          ],
+          [
+            "Cow",
+            "Moo"
+          ],
+          [
+            "Duck",
+            "Quack"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Ear to Ear",
+      "band": 1,
+      "voice": "Match the animal to its sound.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Elephants can hear sounds from far away.",
+      "payload": {
+        "statement": "Elephants can hear sounds from far away."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Ear to Ear",
+      "band": 2,
+      "voice": "Elephants can hear sounds from far away.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A ___ can hear very high sounds.",
+        "bank": [
+          "Dog",
+          "Bat",
+          "Cat"
+        ]
+      },
+      "answer": "Bat",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Ear to Ear",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Eagle",
+          "Sparrow",
+          "Shark",
+          "Pigeon"
+        ]
+      },
+      "answer": "Shark",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Ear to Ear",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them by whether they have ears or not.",
+      "payload": {
+        "items": [
+          "Chicken",
+          "Snake",
+          "Horse",
+          "Frog"
+        ],
+        "bins": [
+          "Has ears",
+          "No ears"
+        ]
+      },
+      "answer": {
+        "Chicken": "Has ears",
+        "Snake": "No ears",
+        "Horse": "Has ears",
+        "Frog": "No ears"
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Ear to Ear",
+      "band": 1,
+      "voice": "Sort them by whether they have ears or not.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "payload": {
+        "statement": "Elephants live in groups called herds."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "A Day with Nandu",
+      "band": 2,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "payload": {
+        "sentence": "A baby elephant is called a ___.",
+        "bank": [
+          "calf",
+          "cub",
+          "kit"
+        ]
+      },
+      "answer": "calf",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "A Day with Nandu",
+      "band": 1,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal with its baby.",
+      "payload": {
+        "pairs": [
+          [
+            "Elephant",
+            "Calf"
+          ],
+          [
+            "Dog",
+            "Puppy"
+          ],
+          [
+            "Cat",
+            "Kitten"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "A Day with Nandu",
+      "band": 1,
+      "voice": "Match the animal with its baby.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Elephant",
+          "Lion",
+          "Giraffe",
+          "Tree"
+        ]
+      },
+      "answer": "Tree",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "A Day with Nandu",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Elephant",
+          "Antelope",
+          "Tree",
+          "Buffalo"
+        ],
+        "bins": [
+          "Animals",
+          "Plants"
+        ]
+      },
+      "answer": {
+        "Elephant": "Animals",
+        "Antelope": "Animals",
+        "Tree": "Plants",
+        "Buffalo": "Animals"
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "A Day with Nandu",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "payload": {
+        "statement": "Elephants are solitary animals."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "A Day with Nandu",
+      "band": 2,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "payload": {
+        "sentence": "Elephants use their ___ to grab food.",
+        "bank": [
+          "trunk",
+          "tail",
+          "fin"
+        ]
+      },
+      "answer": "trunk",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "A Day with Nandu",
+      "band": 1,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the word to its meaning.",
+      "payload": {
+        "pairs": [
+          [
+            "Herd",
+            "A group of elephants"
+          ],
+          [
+            "Calf",
+            "Baby elephant"
+          ],
+          [
+            "Trunk",
+            "Long nose of an elephant"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "A Day with Nandu",
+      "band": 1,
+      "voice": "Match the word to its meaning.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Herd",
+          "Pack",
+          "School",
+          "Tree"
+        ]
+      },
+      "answer": "Tree",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "A Day with Nandu",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "payload": {
+        "statement": "Baby elephants can walk right after they are born."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "A Day with Nandu",
+      "band": 2,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

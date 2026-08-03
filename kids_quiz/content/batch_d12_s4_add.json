@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Addition Adventure",
+ "adventure": "Addition Adventure",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Addition Adventure. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "205 + 340 = ?",
+   "options": [
+    "645",
+    "545",
+    "544",
+    "555"
+   ],
+   "answer": 1,
+   "explain": "205 plus 340 makes 545.",
+   "voice_q": "Add it up! 205 plus 340.",
+   "voice_a": "It's 545! 205 and 340 make 545."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "210 + 287 = ?",
+   "options": [
+    "496",
+    "597",
+    "497",
+    "507"
+   ],
+   "answer": 2,
+   "explain": "210 plus 287 makes 497.",
+   "voice_q": "Add it up! 210 plus 287.",
+   "voice_a": "It's 497! 210 and 287 make 497."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "163 + 132 = ?",
+   "options": [
+    "294",
+    "305",
+    "395",
+    "295"
+   ],
+   "answer": 3,
+   "explain": "163 plus 132 makes 295.",
+   "voice_q": "Add it up! 163 plus 132.",
+   "voice_a": "It's 295! 163 and 132 make 295."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "234 + 67 = ?",
+   "options": [
+    "300",
+    "401",
+    "311",
+    "301"
+   ],
+   "answer": 3,
+   "explain": "234 plus 67 makes 301.",
+   "voice_q": "Add it up! 234 plus 67.",
+   "voice_a": "It's 301! 234 and 67 make 301."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "367 + 211 = ?",
+   "options": [
+    "577",
+    "578",
+    "678",
+    "588"
+   ],
+   "answer": 1,
+   "explain": "367 plus 211 makes 578.",
+   "voice_q": "Add it up! 367 plus 211.",
+   "voice_a": "It's 578! 367 and 211 make 578."
+  }
+ ]
+}

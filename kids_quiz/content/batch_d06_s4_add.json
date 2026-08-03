@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Addition Adventure",
+ "adventure": "Addition Adventure",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Addition Adventure. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "43 + 114 = ?",
+   "options": [
+    "157",
+    "156",
+    "257",
+    "167"
+   ],
+   "answer": 0,
+   "explain": "43 plus 114 makes 157.",
+   "voice_q": "Add it up! 43 plus 114.",
+   "voice_a": "It's 157! 43 and 114 make 157."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "477 + 208 = ?",
+   "options": [
+    "684",
+    "685",
+    "785",
+    "695"
+   ],
+   "answer": 1,
+   "explain": "477 plus 208 makes 685.",
+   "voice_q": "Add it up! 477 plus 208.",
+   "voice_a": "It's 685! 477 and 208 make 685."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "405 + 198 = ?",
+   "options": [
+    "602",
+    "703",
+    "603",
+    "613"
+   ],
+   "answer": 2,
+   "explain": "405 plus 198 makes 603.",
+   "voice_q": "Add it up! 405 plus 198.",
+   "voice_a": "It's 603! 405 and 198 make 603."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "426 + 362 = ?",
+   "options": [
+    "798",
+    "788",
+    "787",
+    "888"
+   ],
+   "answer": 1,
+   "explain": "426 plus 362 makes 788.",
+   "voice_q": "Add it up! 426 plus 362.",
+   "voice_a": "It's 788! 426 and 362 make 788."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "455 + 304 = ?",
+   "options": [
+    "759",
+    "769",
+    "859",
+    "758"
+   ],
+   "answer": 0,
+   "explain": "455 plus 304 makes 759.",
+   "voice_q": "Add it up! 455 plus 304.",
+   "voice_a": "It's 759! 455 and 304 make 759."
+  }
+ ]
+}

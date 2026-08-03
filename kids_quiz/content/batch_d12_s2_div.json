@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Division Valley",
+ "adventure": "Division Valley",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Division Valley. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "54 ÷ 6 = ?",
+   "options": [
+    "10",
+    "9",
+    "11",
+    "8"
+   ],
+   "answer": 1,
+   "explain": "54 shared into 6 groups is 9 each.",
+   "voice_q": "Share 54 into 6 equal groups. How many in each?",
+   "voice_a": "It's 9! 54 shared by 6 gives 9."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "40 ÷ 8 = ?",
+   "options": [
+    "6",
+    "7",
+    "4",
+    "5"
+   ],
+   "answer": 3,
+   "explain": "40 shared into 8 groups is 5 each.",
+   "voice_q": "Share 40 into 8 equal groups. How many in each?",
+   "voice_a": "It's 5! 40 shared by 8 gives 5."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "16 ÷ 2 = ?",
+   "options": [
+    "9",
+    "7",
+    "8",
+    "10"
+   ],
+   "answer": 2,
+   "explain": "16 shared into 2 groups is 8 each.",
+   "voice_q": "Share 16 into 2 equal groups. How many in each?",
+   "voice_a": "It's 8! 16 shared by 2 gives 8."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "36 ÷ 6 = ?",
+   "options": [
+    "7",
+    "6",
+    "5",
+    "8"
+   ],
+   "answer": 1,
+   "explain": "36 shared into 6 groups is 6 each.",
+   "voice_q": "Share 36 into 6 equal groups. How many in each?",
+   "voice_a": "It's 6! 36 shared by 6 gives 6."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "14 ÷ 7 = ?",
+   "options": [
+    "3",
+    "1",
+    "2",
+    "4"
+   ],
+   "answer": 2,
+   "explain": "14 shared into 7 groups is 2 each.",
+   "voice_q": "Share 14 into 7 equal groups. How many in each?",
+   "voice_a": "It's 2! 14 shared by 7 gives 2."
+  }
+ ]
+}

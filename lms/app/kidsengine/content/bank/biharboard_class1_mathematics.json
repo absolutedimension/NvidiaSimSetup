@@ -1,0 +1,207 @@
+{
+  "board": "Bihar Board",
+  "class": 1,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Match Similar Pictures",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 5 and 13.",
+      "payload": {
+        "a": 5,
+        "b": 13
+      },
+      "answer": "<",
+      "explain": "5 is less than 13."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Pair a Picture with a Picture",
+      "band": "1-2",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 2
+      },
+      "answer": 2,
+      "explain": "There are 2 apples!"
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Count and Write",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 1.",
+      "payload": {
+        "seq": [
+          3,
+          null,
+          5,
+          6
+        ],
+        "step": 1
+      },
+      "answer": [
+        4
+      ],
+      "explain": "Counting by 1s → 4."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Compare with > or <",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 2.",
+      "payload": {
+        "seq": [
+          2,
+          null,
+          6,
+          8
+        ],
+        "step": 2
+      },
+      "answer": [
+        4
+      ],
+      "explain": "Counting by 2s → 4."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Write by Counting",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 14 and 3.",
+      "payload": {
+        "a": 14,
+        "b": 3
+      },
+      "answer": ">",
+      "explain": "14 is greater than 3."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Compare and Find the Difference",
+      "band": "1-2",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 9
+      },
+      "answer": 9,
+      "explain": "There are 9 apples!"
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Ascending or Descending Order (pictures)",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 2 and 19.",
+      "payload": {
+        "a": 2,
+        "b": 19
+      },
+      "answer": "<",
+      "explain": "2 is less than 19."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Count the Flowers and Write",
+      "band": "1-2",
+      "instruction": "Count the stars and write how many!",
+      "voice": "Count the stars.",
+      "payload": {
+        "asset": "star",
+        "emoji": "⭐",
+        "n": 10
+      },
+      "answer": 10,
+      "explain": "There are 10 stars!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Write the Correct Match",
+      "band": "1-2",
+      "instruction": "Add it!  10 + 10 = ?",
+      "voice": "What is 10 plus 10?",
+      "payload": {
+        "op": "+",
+        "a": 10,
+        "b": 10
+      },
+      "answer": 20,
+      "explain": "10 plus 10 makes 20."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Count Together and Write",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 2 and 8.",
+      "payload": {
+        "a": 2,
+        "b": 8
+      },
+      "answer": "<",
+      "explain": "2 is less than 8."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Write the Subtraction",
+      "band": "1-2",
+      "instruction": "Subtract!  10 − 3 = ?",
+      "voice": "What is 10 minus 3?",
+      "payload": {
+        "op": "-",
+        "a": 10,
+        "b": 3
+      },
+      "answer": 7,
+      "explain": "10 minus 3 leaves 7."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Make the Right Number of Pictures",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 14 and 5.",
+      "payload": {
+        "a": 14,
+        "b": 5
+      },
+      "answer": ">",
+      "explain": "14 is greater than 5."
+    }
+  ]
+}

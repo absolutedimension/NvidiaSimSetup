@@ -1,0 +1,156 @@
+{
+  "board": "CBSE",
+  "class": 4,
+  "subject": "Mathematics",
+  "source": {
+    "name": "NCERT Maths Mela Class 4 (Textbook of Mathematics for Grade 4)",
+    "url": "https://ncert.nic.in/textbook/pdf/demm1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Verified from official ncert.nic.in prelims PDF (demm1); 'MATHS MELA Grade 4', First Edition March 2025 (NEP 2020 / NCF-SE 2023). Chapter names verbatim. Theme-based; subtopics inferred from theme + NCERT scope.",
+  "chapters": [
+    {
+      "id": "shapes_around_us",
+      "name": "Shapes Around Us",
+      "subtopics": [
+        "2D and 3D shapes",
+        "faces, edges and corners",
+        "nets of solids",
+        "tiling and patterns"
+      ]
+    },
+    {
+      "id": "hide_and_seek",
+      "name": "Hide and Seek",
+      "subtopics": [
+        "number line",
+        "position and direction",
+        "spatial reasoning",
+        "patterns"
+      ]
+    },
+    {
+      "id": "pattern_around_us",
+      "name": "Pattern Around Us",
+      "subtopics": [
+        "number patterns",
+        "shape patterns",
+        "growing patterns",
+        "symmetry in patterns"
+      ]
+    },
+    {
+      "id": "thousands_around_us",
+      "name": "Thousands Around Us",
+      "subtopics": [
+        "4-digit numbers",
+        "place value",
+        "expanded form",
+        "comparing and ordering"
+      ]
+    },
+    {
+      "id": "sharing_and_measuring",
+      "name": "Sharing and Measuring",
+      "subtopics": [
+        "division / equal sharing",
+        "fractions (halves, quarters)",
+        "measurement in context",
+        "word problems"
+      ]
+    },
+    {
+      "id": "measuring_length",
+      "name": "Measuring Length",
+      "subtopics": [
+        "length in metres and centimetres",
+        "conversions",
+        "estimation",
+        "comparing lengths"
+      ]
+    },
+    {
+      "id": "the_cleanest_village",
+      "name": "The Cleanest Village",
+      "subtopics": [
+        "addition and subtraction",
+        "data in context",
+        "word problems",
+        "estimation"
+      ]
+    },
+    {
+      "id": "weigh_it_pour_it",
+      "name": "Weigh it, Pour it",
+      "subtopics": [
+        "weight (kg and g)",
+        "capacity (l and ml)",
+        "comparing measures",
+        "word problems"
+      ]
+    },
+    {
+      "id": "equal_groups",
+      "name": "Equal Groups",
+      "subtopics": [
+        "multiplication",
+        "multiplication tables",
+        "arrays",
+        "repeated addition"
+      ]
+    },
+    {
+      "id": "elephants_tigers_and_leopards",
+      "name": "Elephants, Tigers, and Leopards",
+      "subtopics": [
+        "large numbers",
+        "operations on numbers",
+        "word problems",
+        "estimation"
+      ]
+    },
+    {
+      "id": "fun_with_symmetry",
+      "name": "Fun with Symmetry",
+      "subtopics": [
+        "line symmetry",
+        "lines of symmetry",
+        "reflection",
+        "symmetric designs"
+      ]
+    },
+    {
+      "id": "ticking_clocks_and_turning_calendar",
+      "name": "Ticking Clocks and Turning Calendar",
+      "subtopics": [
+        "reading the clock",
+        "hours and minutes",
+        "calendar",
+        "duration of time"
+      ]
+    },
+    {
+      "id": "the_transport_museum",
+      "name": "The Transport Museum",
+      "subtopics": [
+        "money",
+        "data handling",
+        "multiplication/division applications",
+        "word problems"
+      ]
+    },
+    {
+      "id": "data_handling",
+      "name": "Data Handling",
+      "subtopics": [
+        "collecting data",
+        "pictographs",
+        "bar graphs",
+        "reading tables"
+      ]
+    }
+  ]
+}

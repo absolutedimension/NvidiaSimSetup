@@ -1,0 +1,414 @@
+{
+  "version": 1,
+  "note": "Kids asset pool. status: ready = usable web asset exists; needed = queued for offline generation (emoji fallback until then). Source of truth for KidsAssets (runtime) + asset_pool.py (offline).",
+  "base_url": "/static/kids/",
+  "assets": {
+    "ellie": {
+      "type": "character",
+      "label": "Ellie the elephant",
+      "status": "ready",
+      "emoji": "🐘",
+      "source": "factory",
+      "web": {
+        "static": "characters/elephant.gif",
+        "anim": "characters/elephant.gif"
+      },
+      "motions": [
+        "idle"
+      ],
+      "tags": [
+        "mascot",
+        "animal",
+        "cast"
+      ]
+    },
+    "rio": {
+      "type": "character",
+      "label": "Rio the tiger",
+      "status": "ready",
+      "emoji": "🐯",
+      "source": "factory",
+      "web": {
+        "static": "characters/tiger.gif",
+        "anim": "characters/tiger.gif"
+      },
+      "motions": [
+        "idle"
+      ],
+      "tags": [
+        "mascot",
+        "animal",
+        "cast"
+      ]
+    },
+    "milo": {
+      "type": "character",
+      "label": "Milo the monkey",
+      "status": "ready",
+      "emoji": "🐒",
+      "source": "factory",
+      "web": {
+        "static": "characters/monkey.gif",
+        "anim": "characters/monkey.gif"
+      },
+      "motions": [
+        "idle"
+      ],
+      "tags": [
+        "mascot",
+        "animal",
+        "cast"
+      ]
+    },
+    "bruno": {
+      "type": "character",
+      "label": "Bruno the bear",
+      "status": "ready",
+      "emoji": "🐻",
+      "source": "factory",
+      "web": {
+        "static": "characters/bear.gif",
+        "anim": "characters/bear.gif"
+      },
+      "motions": [
+        "idle"
+      ],
+      "tags": [
+        "mascot",
+        "animal",
+        "cast"
+      ]
+    },
+    "apple": {
+      "type": "prop",
+      "label": "apple",
+      "status": "ready",
+      "emoji": "🍎",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/apple.png",
+        "anim": "assets/apple.png"
+      },
+      "tags": [
+        "fruit",
+        "counting"
+      ]
+    },
+    "banana": {
+      "type": "prop",
+      "label": "banana",
+      "status": "ready",
+      "emoji": "🍌",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/banana.png",
+        "anim": "assets/banana.png"
+      },
+      "tags": [
+        "fruit",
+        "counting"
+      ]
+    },
+    "mango": {
+      "type": "prop",
+      "label": "mango",
+      "status": "ready",
+      "emoji": "🥭",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/mango.png",
+        "anim": "assets/mango.png"
+      },
+      "tags": [
+        "fruit",
+        "counting"
+      ]
+    },
+    "grapes": {
+      "type": "prop",
+      "label": "grapes",
+      "status": "ready",
+      "emoji": "🍇",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/grapes.png",
+        "anim": "assets/grapes.png"
+      },
+      "tags": [
+        "fruit",
+        "counting"
+      ]
+    },
+    "star": {
+      "type": "prop",
+      "label": "star",
+      "status": "ready",
+      "emoji": "⭐",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/star.png",
+        "anim": "assets/star.png"
+      },
+      "tags": [
+        "counting",
+        "reward"
+      ]
+    },
+    "fish": {
+      "type": "prop",
+      "label": "fish",
+      "status": "ready",
+      "emoji": "🐟",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/fish.png",
+        "anim": "assets/fish.png"
+      },
+      "tags": [
+        "animal",
+        "counting"
+      ]
+    },
+    "coin": {
+      "type": "prop",
+      "label": "rupee coin",
+      "status": "ready",
+      "emoji": "🪙",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/coin.png",
+        "anim": "assets/coin.png"
+      },
+      "tags": [
+        "money"
+      ]
+    },
+    "balloon": {
+      "type": "prop",
+      "label": "balloon",
+      "status": "ready",
+      "emoji": "🎈",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/balloon.png",
+        "anim": "assets/balloon.png"
+      },
+      "tags": [
+        "counting"
+      ]
+    },
+    "cookie": {
+      "type": "prop",
+      "label": "cookie",
+      "status": "ready",
+      "emoji": "🍪",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/cookie.png",
+        "anim": "assets/cookie.png"
+      },
+      "tags": [
+        "counting",
+        "division"
+      ]
+    },
+    "dog": {
+      "type": "prop",
+      "label": "dog",
+      "status": "ready",
+      "emoji": "🐶",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/dog.png",
+        "anim": "assets/dog.png"
+      },
+      "tags": [
+        "animal",
+        "evs"
+      ]
+    },
+    "cow": {
+      "type": "prop",
+      "label": "cow",
+      "status": "ready",
+      "emoji": "🐄",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/cow.png",
+        "anim": "assets/cow.png"
+      },
+      "tags": [
+        "animal",
+        "evs"
+      ]
+    },
+    "bird": {
+      "type": "prop",
+      "label": "bird",
+      "status": "ready",
+      "emoji": "🐦",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/bird.png",
+        "anim": "assets/bird.png"
+      },
+      "tags": [
+        "animal",
+        "evs"
+      ]
+    },
+    "bee": {
+      "type": "prop",
+      "label": "bee",
+      "status": "ready",
+      "emoji": "🐝",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/bee.png",
+        "anim": "assets/bee.png"
+      },
+      "tags": [
+        "animal",
+        "evs"
+      ]
+    },
+    "cat": {
+      "type": "prop",
+      "label": "cat",
+      "status": "ready",
+      "emoji": "🐱",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/cat.png",
+        "anim": "assets/cat.png"
+      },
+      "tags": [
+        "animal",
+        "english"
+      ]
+    },
+    "tree": {
+      "type": "prop",
+      "label": "tree",
+      "status": "ready",
+      "emoji": "🌳",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/tree.png",
+        "anim": "assets/tree.png"
+      },
+      "tags": [
+        "evs",
+        "living"
+      ]
+    },
+    "sun": {
+      "type": "prop",
+      "label": "sun",
+      "status": "ready",
+      "emoji": "🌞",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/sun.png",
+        "anim": "assets/sun.png"
+      },
+      "tags": [
+        "evs"
+      ]
+    },
+    "clock": {
+      "type": "prop",
+      "label": "clock",
+      "status": "ready",
+      "emoji": "🕐",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/clock.png",
+        "anim": "assets/clock.png"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    "ruler": {
+      "type": "prop",
+      "label": "ruler",
+      "status": "ready",
+      "emoji": "📏",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/ruler.png",
+        "anim": "assets/ruler.png"
+      },
+      "tags": [
+        "measurement"
+      ]
+    },
+    "bg_classroom": {
+      "type": "background",
+      "label": "classroom",
+      "status": "needed",
+      "emoji": "🏫",
+      "source": "gpt-image",
+      "web": null,
+      "tags": [
+        "scene"
+      ]
+    },
+    "bg_jungle": {
+      "type": "background",
+      "label": "jungle",
+      "status": "needed",
+      "emoji": "🌴",
+      "source": "gpt-image",
+      "web": null,
+      "tags": [
+        "scene"
+      ]
+    },
+    "bg_market": {
+      "type": "background",
+      "label": "market",
+      "status": "needed",
+      "emoji": "🏪",
+      "source": "gpt-image",
+      "web": null,
+      "tags": [
+        "scene",
+        "money"
+      ]
+    },
+    "nova_owl": {
+      "type": "character",
+      "label": "wise friendly owl teacher mascot with tiny round glasses",
+      "status": "ready",
+      "emoji": "🧸",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/nova_owl.png",
+        "anim": "assets/nova_owl.png"
+      },
+      "prompt": null,
+      "tags": [
+        "mascot",
+        "maths"
+      ]
+    },
+    "lion_char": {
+      "type": "character",
+      "label": "friendly lion mascot",
+      "status": "ready",
+      "emoji": "🧸",
+      "source": "gpt-image",
+      "web": {
+        "static": "assets/lion_char.png",
+        "anim": "assets/lion_char.png"
+      },
+      "prompt": null,
+      "tags": [
+        "mascot",
+        "maths"
+      ]
+    }
+  }
+}

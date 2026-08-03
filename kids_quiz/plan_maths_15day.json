@@ -1,0 +1,445 @@
+{
+ "series": "Treasure Trackers",
+ "subject": "Grade 3 Maths (ICSE)",
+ "channel": "TrigunAI-KidsEducation",
+ "channel_id": "UC9QWXw-M6W4eqo1dmbHYbLQ",
+ "videos_per_day": 4,
+ "anchor_note": "day 1 = ANCHOR date in run_day_kids.py",
+ "days": [
+  {
+   "day": 1,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "place_value",
+     "adventure": "Number Kingdom",
+     "seed": 101
+    },
+    {
+     "slot": 2,
+     "topic": "compare",
+     "adventure": "Bigger or Smaller Bay",
+     "seed": 102
+    },
+    {
+     "slot": 3,
+     "topic": "skip_count",
+     "adventure": "Skip-Count Trail",
+     "seed": 103
+    },
+    {
+     "slot": 4,
+     "topic": "add",
+     "adventure": "Addition Adventure",
+     "seed": 104
+    }
+   ]
+  },
+  {
+   "day": 2,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "add",
+     "adventure": "Addition Adventure",
+     "seed": 201
+    },
+    {
+     "slot": 2,
+     "topic": "sub",
+     "adventure": "Subtraction Cave",
+     "seed": 202
+    },
+    {
+     "slot": 3,
+     "topic": "mul_fact",
+     "adventure": "Multiplication Mountain",
+     "seed": 203
+    },
+    {
+     "slot": 4,
+     "topic": "mul_word",
+     "adventure": "Times-Table Town",
+     "seed": 204
+    }
+   ]
+  },
+  {
+   "day": 3,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "mul_fact",
+     "adventure": "Multiplication Mountain",
+     "seed": 301
+    },
+    {
+     "slot": 2,
+     "topic": "mul_word",
+     "adventure": "Times-Table Town",
+     "seed": 302
+    },
+    {
+     "slot": 3,
+     "topic": "div",
+     "adventure": "Division Valley",
+     "seed": 303
+    },
+    {
+     "slot": 4,
+     "topic": "patterns",
+     "adventure": "Pattern Path",
+     "seed": 304
+    }
+   ]
+  },
+  {
+   "day": 4,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "add",
+     "adventure": "Addition Adventure",
+     "seed": 401
+    },
+    {
+     "slot": 2,
+     "topic": "sub",
+     "adventure": "Subtraction Cave",
+     "seed": 402
+    },
+    {
+     "slot": 3,
+     "topic": "mul_fact",
+     "adventure": "Multiplication Mountain",
+     "seed": 403
+    },
+    {
+     "slot": 4,
+     "topic": "div",
+     "adventure": "Division Valley",
+     "seed": 404
+    }
+   ]
+  },
+  {
+   "day": 5,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "roman",
+     "adventure": "Roman Ruins",
+     "seed": 501
+    },
+    {
+     "slot": 2,
+     "topic": "ordinal",
+     "adventure": "Race Day Ranks",
+     "seed": 502
+    },
+    {
+     "slot": 3,
+     "topic": "fraction",
+     "adventure": "Fraction Falls",
+     "seed": 503
+    },
+    {
+     "slot": 4,
+     "topic": "money",
+     "adventure": "Money Market",
+     "seed": 504
+    }
+   ]
+  },
+  {
+   "day": 6,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "mul_fact",
+     "adventure": "Multiplication Mountain",
+     "seed": 601
+    },
+    {
+     "slot": 2,
+     "topic": "mul_word",
+     "adventure": "Times-Table Town",
+     "seed": 602
+    },
+    {
+     "slot": 3,
+     "topic": "div",
+     "adventure": "Division Valley",
+     "seed": 603
+    },
+    {
+     "slot": 4,
+     "topic": "add",
+     "adventure": "Addition Adventure",
+     "seed": 604
+    }
+   ]
+  },
+  {
+   "day": 7,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "sub",
+     "adventure": "Subtraction Cave",
+     "seed": 701
+    },
+    {
+     "slot": 2,
+     "topic": "mul_fact",
+     "adventure": "Multiplication Mountain",
+     "seed": 702
+    },
+    {
+     "slot": 3,
+     "topic": "fraction",
+     "adventure": "Fraction Falls",
+     "seed": 703
+    },
+    {
+     "slot": 4,
+     "topic": "money",
+     "adventure": "Money Market",
+     "seed": 704
+    }
+   ]
+  },
+  {
+   "day": 8,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "place_value",
+     "adventure": "Number Kingdom",
+     "seed": 801
+    },
+    {
+     "slot": 2,
+     "topic": "compare",
+     "adventure": "Bigger or Smaller Bay",
+     "seed": 802
+    },
+    {
+     "slot": 3,
+     "topic": "mul_word",
+     "adventure": "Times-Table Town",
+     "seed": 803
+    },
+    {
+     "slot": 4,
+     "topic": "div",
+     "adventure": "Division Valley",
+     "seed": 804
+    }
+   ]
+  },
+  {
+   "day": 9,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "time",
+     "adventure": "Clock Tower",
+     "seed": 901
+    },
+    {
+     "slot": 2,
+     "topic": "shapes",
+     "adventure": "Shape Island",
+     "seed": 902
+    },
+    {
+     "slot": 3,
+     "topic": "length",
+     "adventure": "Measure Land",
+     "seed": 903
+    },
+    {
+     "slot": 4,
+     "topic": "weight",
+     "adventure": "Weighing Woods",
+     "seed": 904
+    }
+   ]
+  },
+  {
+   "day": 10,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "mul_fact",
+     "adventure": "Multiplication Mountain",
+     "seed": 1001
+    },
+    {
+     "slot": 2,
+     "topic": "div",
+     "adventure": "Division Valley",
+     "seed": 1002
+    },
+    {
+     "slot": 3,
+     "topic": "add",
+     "adventure": "Addition Adventure",
+     "seed": 1003
+    },
+    {
+     "slot": 4,
+     "topic": "sub",
+     "adventure": "Subtraction Cave",
+     "seed": 1004
+    }
+   ]
+  },
+  {
+   "day": 11,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "fraction",
+     "adventure": "Fraction Falls",
+     "seed": 1101
+    },
+    {
+     "slot": 2,
+     "topic": "money",
+     "adventure": "Money Market",
+     "seed": 1102
+    },
+    {
+     "slot": 3,
+     "topic": "data",
+     "adventure": "Graph Garden",
+     "seed": 1103
+    },
+    {
+     "slot": 4,
+     "topic": "patterns",
+     "adventure": "Pattern Path",
+     "seed": 1104
+    }
+   ]
+  },
+  {
+   "day": 12,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "mul_word",
+     "adventure": "Times-Table Town",
+     "seed": 1201
+    },
+    {
+     "slot": 2,
+     "topic": "div",
+     "adventure": "Division Valley",
+     "seed": 1202
+    },
+    {
+     "slot": 3,
+     "topic": "mul_fact",
+     "adventure": "Multiplication Mountain",
+     "seed": 1203
+    },
+    {
+     "slot": 4,
+     "topic": "add",
+     "adventure": "Addition Adventure",
+     "seed": 1204
+    }
+   ]
+  },
+  {
+   "day": 13,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "shapes",
+     "adventure": "Shape Island",
+     "seed": 1301
+    },
+    {
+     "slot": 2,
+     "topic": "time",
+     "adventure": "Clock Tower",
+     "seed": 1302
+    },
+    {
+     "slot": 3,
+     "topic": "length",
+     "adventure": "Measure Land",
+     "seed": 1303
+    },
+    {
+     "slot": 4,
+     "topic": "data",
+     "adventure": "Graph Garden",
+     "seed": 1304
+    }
+   ]
+  },
+  {
+   "day": 14,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "sub",
+     "adventure": "Subtraction Cave",
+     "seed": 1401
+    },
+    {
+     "slot": 2,
+     "topic": "mul_fact",
+     "adventure": "Multiplication Mountain",
+     "seed": 1402
+    },
+    {
+     "slot": 3,
+     "topic": "div",
+     "adventure": "Division Valley",
+     "seed": 1403
+    },
+    {
+     "slot": 4,
+     "topic": "fraction",
+     "adventure": "Fraction Falls",
+     "seed": 1404
+    }
+   ]
+  },
+  {
+   "day": 15,
+   "slots": [
+    {
+     "slot": 1,
+     "topic": "place_value",
+     "adventure": "Number Kingdom",
+     "seed": 1501
+    },
+    {
+     "slot": 2,
+     "topic": "mul_word",
+     "adventure": "Times-Table Town",
+     "seed": 1502
+    },
+    {
+     "slot": 3,
+     "topic": "money",
+     "adventure": "Money Market",
+     "seed": 1503
+    },
+    {
+     "slot": 4,
+     "topic": "compare",
+     "adventure": "Bigger or Smaller Bay",
+     "seed": 1504
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Times-Table Town",
+ "adventure": "Times-Table Town",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Times-Table Town. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "3 boxes, each has 6 stars. How many stars?  3 × 6 = ?",
+   "options": [
+    "24",
+    "18",
+    "9",
+    "15"
+   ],
+   "answer": 1,
+   "explain": "3 groups of 6 make 18.",
+   "voice_q": "3 boxes, and each has 6 stars. What is 3 times 6?",
+   "voice_a": "It's 18! 3 groups of 6 stars make 18."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🥭",
+   "q": "4 trees, each has 5 mangoes. How many mangoes?  4 × 5 = ?",
+   "options": [
+    "25",
+    "9",
+    "20",
+    "16"
+   ],
+   "answer": 2,
+   "explain": "4 groups of 5 make 20.",
+   "voice_q": "4 trees, and each has 5 mangoes. What is 4 times 5?",
+   "voice_a": "It's 20! 4 groups of 5 mangoes make 20."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "6 boxes, each has 2 stars. How many stars?  6 × 2 = ?",
+   "options": [
+    "6",
+    "8",
+    "14",
+    "12"
+   ],
+   "answer": 3,
+   "explain": "6 groups of 2 make 12.",
+   "voice_q": "6 boxes, and each has 2 stars. What is 6 times 2?",
+   "voice_a": "It's 12! 6 groups of 2 stars make 12."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "4 boxes, each has 2 stars. How many stars?  4 × 2 = ?",
+   "options": [
+    "10",
+    "8",
+    "6",
+    "4"
+   ],
+   "answer": 1,
+   "explain": "4 groups of 2 make 8.",
+   "voice_q": "4 boxes, and each has 2 stars. What is 4 times 2?",
+   "voice_a": "It's 8! 4 groups of 2 stars make 8."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "4 boxes, each has 3 stars. How many stars?  4 × 3 = ?",
+   "options": [
+    "12",
+    "7",
+    "15",
+    "8"
+   ],
+   "answer": 0,
+   "explain": "4 groups of 3 make 12.",
+   "voice_q": "4 boxes, and each has 3 stars. What is 4 times 3?",
+   "voice_a": "It's 12! 4 groups of 3 stars make 12."
+  }
+ ]
+}

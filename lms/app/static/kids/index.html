@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Acharya Kids — Fun Learning for Class 3</title><style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;font-family:"Baloo 2","Arial Rounded MT Bold",system-ui,sans-serif}
+body{background:#eaf7ff;color:#26406b}
+a{text-decoration:none}
+.hero{position:relative;min-height:100dvh;background:linear-gradient(#7ec8ff,#bfe6ff 55%,#cdeeff 66%,#8ed46e 66%,#7cc95e);overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;padding:7vh 20px 0}
+.sun{position:absolute;top:5%;left:7%;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#fff3b0,#ffd54a);box-shadow:0 0 60px #ffd54a88;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cloud{position:absolute;background:#fff;border-radius:50px}.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%}
+.c1{width:150px;height:44px;top:14%;left:-160px;animation:drift 26s linear infinite}.c1:before{width:66px;height:66px;top:-32px;left:22px}.c1:after{width:50px;height:50px;top:-22px;left:78px}
+@keyframes drift{to{left:110%}}
+.brand{font-size:clamp(40px,9vw,76px);font-weight:800;color:#fff;text-shadow:0 4px 0 #ff9e2e,0 8px 18px #0003;animation:pop .8s cubic-bezier(.2,1.4,.4,1);z-index:5}
+.tag{margin-top:12px;font-size:clamp(17px,4.4vw,24px);font-weight:700;color:#fff;background:#ff5a52;padding:8px 20px;border-radius:30px;box-shadow:0 6px 0 #d63f38;z-index:5;animation:pop .8s .1s backwards cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{transform:scale(.4);opacity:0}}
+.cta{margin-top:22px;z-index:6;background:linear-gradient(#ffd24a,#ffb028);color:#7a3d00;font-size:clamp(20px,5.4vw,26px);font-weight:800;border:none;border-radius:40px;padding:15px 38px;box-shadow:0 8px 0 #d98a12,0 14px 24px #0003;cursor:pointer;animation:pulse 1.4s ease-in-out infinite;display:inline-block}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.demo{margin-top:12px;z-index:6;color:#fff;font-weight:800;background:#ffffff33;border:2px solid #fff;border-radius:30px;padding:10px 22px;display:inline-block}
+.cast{position:absolute;bottom:0;width:100%;display:flex;justify-content:center;gap:min(12vw,90px);z-index:4}
+.cast img{height:min(36vh,300px);filter:drop-shadow(0 16px 12px #0003)}
+.hero-mascot{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:min(52vh,460px);z-index:4;filter:drop-shadow(0 14px 12px #0002);pointer-events:none}
+.buddies{background:linear-gradient(#fff6df,#ffe9c2)}
+.cast-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.buddy{background:#fff;border-radius:22px;padding:10px 8px 8px;box-shadow:0 8px 20px #0001;width:clamp(120px,28vw,168px)}
+.buddy img{width:100%;height:clamp(120px,28vw,168px);object-fit:contain}
+.bn{font-weight:800;color:#26406b;margin-top:2px;font-size:16px}
+.jj{animation:bob 1.6s ease-in-out infinite}.mk{animation:bob 1.9s ease-in-out infinite .3s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-22px) rotate(2deg)}}
+section{max-width:960px;margin:0 auto;padding:44px 18px}
+h2{text-align:center;font-size:clamp(26px,6vw,38px);color:#26406b;margin-bottom:6px}
+.sub{text-align:center;color:#5a7196;font-weight:700;margin-bottom:22px;font-size:16px}
+.vids{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x mandatory}
+.vc{flex:0 0 78%;max-width:320px;scroll-snap-align:center;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 22px #0001}
+.vc iframe{width:100%;aspect-ratio:9/16;display:block;border:0}
+.vt{padding:10px 12px;font-weight:800;color:#26406b}
+.subj{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px}
+.card{background:#fff;border-radius:18px;padding:20px 12px;text-align:center;font-weight:800;color:#26406b;box-shadow:0 6px 16px #0001;font-size:17px}
+.card .e{font-size:34px;display:block;margin-bottom:6px}
+.foot{background:linear-gradient(#8ed46e,#7cc95e);text-align:center;padding:40px 18px 30px}
+.foot .cta{animation:none}
+.fnote{color:#ffffffcc;font-size:12px;font-weight:700;margin-top:16px}
+@media(min-width:700px){.vc{flex-basis:280px}}
+</style></head><body>
+<div class="hero">
+  <div class="sun"></div><div class="cloud c1"></div>
+  <div class="brand">Acharya Kids</div>
+  <div class="tag">Fun learning adventures for Class 3! &#127880;</div>
+  <a class="cta" href="/exam-prep">&#9654; Start Learning</a>
+  <a class="demo" href="/static/kids/voice_quiz.html">&#127908; Try the voice quiz</a>
+  <a class="demo" href="/teacher">&#129489;&#8205;&#127979; For Teachers &amp; Schools</a>
+  <img class="hero-mascot" src="/static/kids/characters/elephant.gif" alt="Ellie the elephant, Acharya Kids mascot" loading="eager">
+</div>
+<section>
+  <h2>&#127909; Watch &amp; Learn</h2>
+  <div class="sub">Fun maths adventures with JJ &amp; Mikey</div>
+  <div class="vids"><div class="vc"><iframe src="https://www.youtube.com/embed/e0kOa57XiXo" title="Number Kingdom" frameborder="0" allowfullscreen loading="lazy"></iframe><div class="vt">Number Kingdom</div></div><div class="vc"><iframe src="https://www.youtube.com/embed/zWGLp6jZ-AI" title="Addition Adventure" frameborder="0" allowfullscreen loading="lazy"></iframe><div class="vt">Addition Adventure</div></div><div class="vc"><iframe src="https://www.youtube.com/embed/1KWliunS35M" title="Subtraction Cave" frameborder="0" allowfullscreen loading="lazy"></iframe><div class="vt">Subtraction Cave</div></div><div class="vc"><iframe src="https://www.youtube.com/embed/mMPY0DN97Pc" title="Skip-Count Trail" frameborder="0" allowfullscreen loading="lazy"></iframe><div class="vt">Skip-Count Trail</div></div></div>
+</section>
+<section>
+  <h2>What you'll practise</h2>
+  <div class="sub">The full Class-3 (ICSE) journey</div>
+  <div class="subj">
+    <div class="card"><span class="e">&#128290;</span>Maths</div>
+    <div class="card"><span class="e">&#128300;</span>Science / EVS</div>
+    <div class="card"><span class="e">&#127758;</span>Social Studies</div>
+    <div class="card"><span class="e">&#128214;</span>English</div>
+    <div class="card"><span class="e">&#129504;</span>GK</div>
+  </div>
+</section>
+<section class="buddies">
+  <h2>&#128062; Meet your learning buddies!</h2>
+  <div class="sub">They cheer you on while you learn &amp; play</div>
+  <div class="cast-row">
+    <div class="buddy"><img src="/static/kids/characters/tiger.gif" alt="Rio the tiger" loading="lazy"><div class="bn">Rio</div></div>
+    <div class="buddy"><img src="/static/kids/characters/monkey.gif" alt="Milo the monkey" loading="lazy"><div class="bn">Milo</div></div>
+    <div class="buddy"><img src="/static/kids/characters/bear.gif" alt="Bruno the bear" loading="lazy"><div class="bn">Bruno</div></div>
+  </div>
+</section>
+<div class="foot">
+  <h2 style="color:#fff;text-shadow:0 3px 0 #5aa53e">Ready to play &amp; learn?</h2>
+  <div class="sub" style="color:#fff">Smart practice, voice quizzes, progress reports &mdash; made fun.</div>
+  <a class="cta" href="/exam-prep">&#9654; Start Learning</a>
+  <a class="demo" href="/teacher" style="margin-top:6px">&#129489;&#8205;&#127979; For Teachers &amp; Schools</a>
+  <div class="fnote">by TrigunAI &bull; kids-education.trigunai.com</div>
+</div>
+</body></html>

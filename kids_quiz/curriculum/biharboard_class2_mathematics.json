@@ -1,0 +1,80 @@
+{
+  "board": "Bihar Board",
+  "class": 2,
+  "subject": "Mathematics",
+  "source": {
+    "name": "SCERT Bihar (BSEB) Class 2 गणित (via biharboardbook/selfstudys; indicative)",
+    "url": "https://biharboardbook.com/books/2nd",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "Bihar SCERT/BSEB Class 2 'गणित' organised as Part I–VIII (no descriptive titles in source); topics inferred from stated coverage — indicative, low confidence.",
+  "chapters": [
+    {
+      "id": "part_i_numbers_up_to_100",
+      "name": "Part I — Numbers up to 100",
+      "subtopics": [
+        "number recognition",
+        "place value readiness"
+      ]
+    },
+    {
+      "id": "part_ii_addition_2_digit",
+      "name": "Part II — Addition (2-digit)",
+      "subtopics": [
+        "combining groups",
+        "counting on"
+      ]
+    },
+    {
+      "id": "part_iii_subtraction_2_digit",
+      "name": "Part III — Subtraction (2-digit)",
+      "subtopics": [
+        "take-away",
+        "difference"
+      ]
+    },
+    {
+      "id": "part_iv_skip_counting_grouping",
+      "name": "Part IV — Skip Counting / Grouping",
+      "subtopics": [
+        "repeated addition",
+        "multiplication readiness"
+      ]
+    },
+    {
+      "id": "part_v_measurement_length",
+      "name": "Part V — Measurement (Length)",
+      "subtopics": [
+        "comparing sizes",
+        "non-standard units"
+      ]
+    },
+    {
+      "id": "part_vi_shapes",
+      "name": "Part VI — Shapes",
+      "subtopics": [
+        "2D figures",
+        "basic geometry"
+      ]
+    },
+    {
+      "id": "part_vii_time",
+      "name": "Part VII — Time",
+      "subtopics": [
+        "days and clock",
+        "calendar sense"
+      ]
+    },
+    {
+      "id": "part_viii_money",
+      "name": "Part VIII — Money",
+      "subtopics": [
+        "coins and notes",
+        "simple transactions"
+      ]
+    }
+  ]
+}

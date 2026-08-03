@@ -1,0 +1,43 @@
+{
+  "board": "Bihar Board",
+  "class": 5,
+  "subject": "General Knowledge",
+  "source": {
+    "name": "Commonly-taught primary GK outline (NO official SCERT-Bihar board GK syllabus at primary)",
+    "url": "",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "No official SCERT-Bihar primary GK syllabus; commonly-taught outline only.",
+  "chapters": [
+    {
+      "id": "the_wider_world",
+      "name": "The Wider World",
+      "subtopics": [
+        "world capitals, currencies and flags",
+        "continents, oceans and rivers",
+        "world wonders and landmarks"
+      ]
+    },
+    {
+      "id": "india_bihar_history_and_geography",
+      "name": "India & Bihar: History and Geography",
+      "subtopics": [
+        "Indian freedom struggle",
+        "Bihar's geography, rivers and districts",
+        "national awards and honours"
+      ]
+    },
+    {
+      "id": "science_sports_and_current_affairs",
+      "name": "Science, Sports and Current Affairs",
+      "subtopics": [
+        "science and technology facts",
+        "sports, games and champions",
+        "environment and current events"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,864 @@
+{
+  "board": "CBSE",
+  "class": 5,
+  "subject": "English",
+  "count": 28,
+  "items": [
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Papa wears ___ to see better.",
+        "bank": [
+          "glasses",
+          "hats",
+          "scarves"
+        ]
+      },
+      "answer": "glasses",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 1: Let's Have Fun",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Papa's spectacles are big.",
+      "payload": {
+        "statement": "Papa's spectacles are small."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 1: Let's Have Fun",
+      "band": 2,
+      "voice": "Papa's spectacles are big.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "scooter",
+          "car",
+          "bicycle",
+          "apple"
+        ]
+      },
+      "answer": "apple",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 1: Let's Have Fun",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The boy is happy to ride his ___ .",
+        "bank": [
+          "scooter",
+          "ball",
+          "kite"
+        ]
+      },
+      "answer": "scooter",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 1: Let's Have Fun",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The boy lost his scooter.",
+      "payload": {
+        "statement": "The boy found his scooter."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 1: Let's Have Fun",
+      "band": 2,
+      "voice": "The boy lost his scooter.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Papa's spectacles",
+          "scooter",
+          "tree"
+        ],
+        "bins": [
+          "People",
+          "Things"
+        ]
+      },
+      "answer": {
+        "Papa's spectacles": "Things",
+        "scooter": "Things",
+        "tree": "Things"
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 1: Let's Have Fun",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "glasses",
+          "spectacles",
+          "shoes",
+          "lenses"
+        ]
+      },
+      "answer": "shoes",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 1: Let's Have Fun",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The boy rides his scooter in the ___.",
+        "bank": [
+          "park",
+          "house",
+          "water"
+        ]
+      },
+      "answer": "park",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 1: Let's Have Fun",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A rainbow has ___ colors.",
+        "bank": [
+          "two",
+          "seven",
+          "three"
+        ]
+      },
+      "answer": "seven",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 2: My Colourful World",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A rainbow is made of colors.",
+      "payload": {
+        "statement": "A rainbow is made of colors."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 2: My Colourful World",
+      "band": 2,
+      "voice": "A rainbow is made of colors.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Red",
+          "Blue",
+          "Circle",
+          "Yellow"
+        ]
+      },
+      "answer": "Circle",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 2: My Colourful World",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The wise parrot can ___ words.",
+        "bank": [
+          "sing",
+          "dance",
+          "talk"
+        ]
+      },
+      "answer": "talk",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 2: My Colourful World",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The wise parrot is not smart.",
+      "payload": {
+        "statement": "The wise parrot is not smart."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 2: My Colourful World",
+      "band": 2,
+      "voice": "The wise parrot is not smart.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Parrot",
+          "Chair",
+          "Cat",
+          "Table"
+        ],
+        "bins": [
+          "Animals",
+          "Furniture"
+        ]
+      },
+      "answer": {
+        "Parrot": "Animals",
+        "Chair": "Furniture",
+        "Cat": "Animals",
+        "Table": "Furniture"
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 2: My Colourful World",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Rainbows appear after ___ .",
+        "bank": [
+          "rain",
+          "sun",
+          "snow"
+        ]
+      },
+      "answer": "rain",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 2: My Colourful World",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal to its sound.",
+      "payload": {
+        "pairs": [
+          [
+            "Dog",
+            "Bark"
+          ],
+          [
+            "Cat",
+            "Meow"
+          ],
+          [
+            "Parrot",
+            "Squawk"
+          ],
+          [
+            "Cow",
+            "Moo"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 2: My Colourful World",
+      "band": 1,
+      "voice": "Match the animal to its sound.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Red",
+          "Green",
+          "Blue",
+          "Dog"
+        ]
+      },
+      "answer": "Dog",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 2: My Colourful World",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the colors to their meanings.",
+      "payload": {
+        "pairs": [
+          [
+            "Red",
+            "Love"
+          ],
+          [
+            "Blue",
+            "Calm"
+          ],
+          [
+            "Yellow",
+            "Happiness"
+          ],
+          [
+            "Green",
+            "Nature"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 2: My Colourful World",
+      "band": 1,
+      "voice": "Match the colors to their meanings.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Goldfish",
+          "Frog",
+          "Dog",
+          "Turtle"
+        ]
+      },
+      "answer": "Dog",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 3: Water",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A frog lives in water and on land.",
+      "payload": {
+        "statement": "A frog lives in water and on land."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 3: Water",
+      "band": 2,
+      "voice": "A frog lives in water and on land.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A fish swims in a ___.",
+        "bank": [
+          "tank",
+          "tree",
+          "house"
+        ]
+      },
+      "answer": "tank",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 3: Water",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Frog",
+          "Water",
+          "Rock"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Frog": "Living",
+        "Water": "Non-living",
+        "Rock": "Non-living"
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 3: Water",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A tank is a home for fish.",
+      "payload": {
+        "statement": "A tank is a home for fish."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 3: Water",
+      "band": 2,
+      "voice": "A tank is a home for fish.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Frogs can jump high and ___ well.",
+        "bank": [
+          "swim",
+          "walk",
+          "fly"
+        ]
+      },
+      "answer": "swim",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 3: Water",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Aquarium",
+          "Pond",
+          "River",
+          "Tree"
+        ]
+      },
+      "answer": "Tree",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 3: Water",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Fish can breathe air like humans.",
+      "payload": {
+        "statement": "Fish can breathe air like humans."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 3: Water",
+      "band": 2,
+      "voice": "Fish can breathe air like humans.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal to its home.",
+      "payload": {
+        "pairs": [
+          [
+            "Frog",
+            "Pond"
+          ],
+          [
+            "Fish",
+            "Tank"
+          ],
+          [
+            "Bird",
+            "Nest"
+          ],
+          [
+            "Turtle",
+            "Shell"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 3: Water",
+      "band": 1,
+      "voice": "Match the animal to its home.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A frog can live in water and on land.",
+      "payload": {
+        "statement": "A frog can live in water and on land."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Unit 3: Water",
+      "band": 2,
+      "voice": "A frog can live in water and on land.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

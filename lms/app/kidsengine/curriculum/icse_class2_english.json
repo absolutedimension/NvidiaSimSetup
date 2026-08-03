@@ -1,0 +1,52 @@
+{
+  "board": "ICSE",
+  "class": 2,
+  "subject": "English",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (English), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Skill-based; Cl II shares the Cl I & II Literature reading list.",
+  "chapters": [
+    {
+      "id": "listening_and_speaking",
+      "name": "Listening and Speaking",
+      "subtopics": [
+        "Role play, skit and conversation",
+        "Narrate/retell a story with descriptive details",
+        "Identify key ideas from a text read aloud",
+        "Ask and answer questions to clarify",
+        "Recite poems with expression",
+        "Dictation in context"
+      ]
+    },
+    {
+      "id": "reading_and_writing",
+      "name": "Reading and Writing",
+      "subtopics": [
+        "Interpret a picture using simple questions",
+        "Rearrange pictures in sequence",
+        "Recall and retell stories, folktales, myths",
+        "Read aloud/silently with comprehension",
+        "Write answers to comprehension questions",
+        "Write 8-10 lines; take dictation"
+      ]
+    },
+    {
+      "id": "grammar_and_vocabulary_in_context",
+      "name": "Grammar and Vocabulary in Context",
+      "subtopics": [
+        "Nouns, verbs, adjectives, conjunctions, prepositions in context",
+        "Common/proper, countable/uncountable nouns",
+        "Punctuation: capitals, commas, question marks",
+        "Reflexive pronouns",
+        "Meaning from context",
+        "Homophones, antonyms, synonyms"
+      ]
+    }
+  ]
+}

@@ -18,6 +18,7 @@ from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import analytics, assess_gen, billing, catalog, course_details, examgen, gamify, legal, mockpaper, notify, personalize, seo, teasers, tutor
+from . import kids_worksheet as kidsws   # worksheet + adaptive assessment engine (kids + seniors)
 from .config import settings
 from .db import get_db
 from .emailer import send_magic_link
@@ -82,8 +83,20 @@ EXAMS = [
     {"id": "commerce", "subject": "cbse12-accountancy", "title": "Class 12 Commerce", "tag": "Accounts · Economics", "emoji": "📊"},
     {"id": "banking",  "subject": "banking-quant", "title": "Banking", "tag": "IBPS · SBI · RRB",     "emoji": "🏦"},
     {"id": "upsc",     "subject": "upsc-gs",      "title": "UPSC",     "tag": "Civil Services · IAS", "emoji": "🏛️"},
+    {"id": "class3",   "subject": "class3-maths", "title": "Class 3",  "tag": "ICSE · Maths",        "emoji": "🔢"},
 ]
 EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
+
+# Kids product picker (kids-education.trigunai.com). Grade-3 Maths is LIVE; the rest show the
+# roadmap as "coming soon" so parents see what's next.
+KIDS_EXAMS = [
+    {"id": "class3",     "title": "Grade 3 · Maths",   "tag": "ICSE / CBSE",      "emoji": "🔢", "available": True},
+    {"id": "class3-evs", "title": "Grade 3 · EVS",     "tag": "Science & World",  "emoji": "🔬", "available": False},
+    {"id": "class3-eng", "title": "Grade 3 · English", "tag": "Grammar & Reading","emoji": "📖", "available": False},
+    {"id": "class3-gk",  "title": "Grade 3 · GK",      "tag": "General Knowledge","emoji": "🧠", "available": False},
+    {"id": "class4",     "title": "Grade 4",           "tag": "Coming soon",      "emoji": "🎈", "available": False},
+    {"id": "class5",     "title": "Grade 5",           "tag": "Coming soon",      "emoji": "🚀", "available": False},
+]
 
 # The student-landing exam picker. JEE + NEET are LIVE (real RAG banks behind them); the rest are
 # shown as "coming soon" so students see the roadmap but can only START what actually works today.
@@ -106,6 +119,7 @@ STUDENT_EXAMS = [
 # Canonical domain. acharya.trigunai.com serves the whole app; lms.trigunai.com 301-redirects here.
 CANONICAL_HOST = "acharya.trigunai.com"
 ACHARYA_HOSTS = {CANONICAL_HOST}
+KIDS_HOSTS = {"kids-education.trigunai.com"}   # kids product — same app, kids landing + (later) theme
 LEGACY_HOSTS = {"lms.trigunai.com"}
 # Paths NOT redirected from the legacy host — server-to-server callers that can't follow a 301 cleanly
 # (Razorpay POSTs the webhook; the learn.trigunai.com admin GETs the bridge over the old host).
@@ -295,6 +309,12 @@ def chat_url_for(email: str, course: str = "agentic") -> str:
 @app.get("/", response_class=HTMLResponse)
 def root(request: Request, db: Session = Depends(get_db)):
     host = (request.headers.get("host") or "").split(":")[0].lower()
+    # Kids product (kids-education.trigunai.com): logged-in kids go to the exam-prep dashboard,
+    # visitors get the playful kids landing. Same pipeline underneath.
+    if host in KIDS_HOSTS:
+        if current_student(request, db):
+            return RedirectResponse("/exam-prep/dashboard")
+        return HTMLResponse((BASE / "static" / "kids" / "index.html").read_text(encoding="utf-8"))
     # Logged-in students always go to their dashboard; visitors get the gold Acharya landing.
     if current_student(request, db):
         return RedirectResponse("/dashboard")
@@ -317,8 +337,10 @@ def login_page(request: Request, course: str = "", db: Session = Depends(get_db)
 
 
 @app.post("/login")
-def login_submit(request: Request, email: str = Form(...), course: str = Form(""), phone: str = Form(""), db: Session = Depends(get_db)):
+def login_submit(request: Request, email: str = Form(...), course: str = Form(""), phone: str = Form(""), website: str = Form(""), db: Session = Depends(get_db)):
     email = email.lower().strip()
+    if _looks_like_bot(email, website):          # honeypot filled or throwaway domain → send nothing, look normal
+        return templates.TemplateResponse(request, "check_email.html", {"email": email})
     raw = issue_magic_token(db, email)
     link = f"{settings.BASE_URL}/auth/verify?token={raw}"
     if course.strip() in COURSE_TITLES:
@@ -332,11 +354,32 @@ def login_submit(request: Request, email: str = Form(...), course: str = Form(""
 
 @app.get("/auth/verify")
 def verify(request: Request, token: str, course: str = "", phone: str = "", db: Session = Depends(get_db)):
+    # DO NOT consume the token or create the account on this GET. Corporate email-security
+    # scanners (Mimecast / Proofpoint / Microsoft Safe Links) auto-fetch every link in an
+    # incoming email — if the GET created the account, those scanners silently sign up real
+    # addresses as "bots" (0 page views, empty name, junk phone). Account creation happens ONLY
+    # on the POST below, which a link-scanner does not perform. This also stops scanners from
+    # prematurely BURNING a one-time token before the human clicks. One extra click for users.
+    return templates.TemplateResponse(
+        request, "verify_confirm.html",
+        {"token": token, "course": course, "phone": phone})
+
+
+@app.post("/auth/verify")
+def verify_complete(request: Request, token: str = Form(...), course: str = Form(""),
+                    phone: str = Form(""), website: str = Form(""), db: Session = Depends(get_db)):
+    if (website or "").strip():                 # honeypot on the confirm form → bot, do nothing
+        return RedirectResponse("/login", status_code=302)
     email = consume_magic_token(db, token)
     if not email:
+        outlines: dict[str, list[str]] = {}
+        for mod in db.query(Module).order_by(Module.course, Module.week).all():
+            outlines.setdefault(mod.course, []).append(mod.title)
         return templates.TemplateResponse(
             request, "login.html",
-            {"courses": COURSES, "preselect": "", "error": "That link expired or was already used. Request a new one."}
+            {"courses": COURSES, "preselect": "", "outlines": outlines,
+             "details": course_details.COURSE_DETAILS, "jsonld": seo.login_jsonld(COURSES),
+             "error": "That link expired or was already used. Request a new one."}
         )
     is_new = db.query(Student).filter_by(email=email).first() is None
     student = get_or_create_student(db, email)
@@ -452,11 +495,18 @@ def exam_prep_onboarding(request: Request, new: str = "", db: Session = Depends(
     topics = _student_topics(db, student)
     have = {examgen.match_subject(t.title, t.topic_key) for t in topics}
     goal = _student_goal(db, student, topics)
+    # Kids host: show ONLY the kids goals (Grade 3 …) — never the senior JEE/NEET/UPSC courses.
+    kids = (request.headers.get("host") or "").split(":")[0].lower() in KIDS_HOSTS
+    goals = ({gid: g for gid, g in examgen.GOALS.items() if gid in _KIDS_TEACHER_GOALS}
+             if kids else examgen.GOALS)
+    default_goal = ("class3" if kids else examgen.DEFAULT_GOAL)
+    if kids and goal not in goals:
+        goal = "class3"
     return templates.TemplateResponse(request, "exam_prep_onboarding.html", {
         "student": student,
-        "goals": examgen.GOALS,
+        "goals": goals,
         "subjects": examgen.RAG_SUBJECTS,
-        "goal": goal or examgen.DEFAULT_GOAL,
+        "goal": goal or default_goal,
         "chosen": {s for s in have if s},        # subjects they already have as topics
         "new": "1" if new == "1" else "",
         "max_topics": MAX_TOPICS,
@@ -512,16 +562,22 @@ def _days_left(student) -> int:
 @app.get("/exam-prep", response_class=HTMLResponse)
 def exam_prep(request: Request, exam: str = "", db: Session = Depends(get_db)):
     student = current_student(request, db)
-    resume_exam = EXAMS[0]["id"]
+    host = (request.headers.get("host") or "").split(":")[0].lower()
+    kids = host in KIDS_HOSTS
+    # kids site = ONLY the kids exams; acharya = the professional exams. (Separate audiences.)
+    exam_list = KIDS_EXAMS if kids else STUDENT_EXAMS
+    resume_exam = ("class3" if kids else EXAMS[0]["id"])
     if student:
         f = db.query(LearnerFact).filter_by(student_id=student.id, key="exam").first()
         if f and f.value in EXAM_SUBJECT:
             resume_exam = f.value
     # pre-select a tile if a live exam id came in (e.g. from an ad URL /exam-prep?exam=neet)
-    live = {e["id"] for e in STUDENT_EXAMS if e["available"]}
-    picked = exam.strip() if exam.strip() in live else ""
+    live = {e["id"] for e in exam_list if e["available"]}
+    picked = exam.strip() if exam.strip() in live else ("class3" if kids else "")
     return templates.TemplateResponse(request, "exam_prep.html",
-                                      {"exams": STUDENT_EXAMS, "student": student, "resume_exam": resume_exam,
+                                      {"exams": exam_list, "kids_exams": None,
+                                       "student": student, "resume_exam": resume_exam,
+                                       "kids": kids,
                                        "picked": picked, "wa_link": "https://wa.me/919135255107?text=quiz",
                                        "google_client_id": settings.GOOGLE_CLIENT_ID,
                                        "jsonld": seo.exam_prep_jsonld(EXAMS)})
@@ -590,6 +646,21 @@ def exam_prep_test(request: Request, exam: str = "", q: str = "", new: str = "",
         return RedirectResponse("/exam-prep", status_code=302)
     if not has_assessment_access(db, student):
         return RedirectResponse("/exam-prep/upgrade", status_code=302)
+    # Kids product: the bright voice-quiz UI (JJ/Mikey, gems, speak-or-tap) — same look as the
+    # landing sample — driven by the SHARED pool. Flow is kid-scoped; data/pool are common.
+    host = (request.headers.get("host") or "").split(":")[0].lower()
+    if host in KIDS_HOSTS:
+        # CUSTOM / CHAT / topic-selected tests → the adaptive WORKSHEET flow (any subject/chapter).
+        # (Plain exam launch with no topic keeps the quick voice-quiz.)
+        topic = (q or sel or "").strip()
+        if topic or src == "examgen":
+            ch = topic.split("::")[0].split("|")[0].strip()[:60]
+            subj = subject.strip() or "Mathematics"
+            return RedirectResponse(f"/exam-prep/worksheet?subject={quote(subj)}&chapter={quote(ch)}", status_code=302)
+        first_ch = (sel.split("::")[0].strip() if sel else "")
+        return templates.TemplateResponse(request, "kids_quiz_live.html", {
+            "student": student, "chapter": first_ch, "n": max(1, min(int(n or 5), 10)),
+            "diff": (diff if diff in ("1", "1-2", "2") else "1-2")})
     exam = exam.strip()
     qtext = (q or "").strip()[:80]
     ex = next((e for e in EXAMS if e["id"] == exam), None)
@@ -619,8 +690,156 @@ def exam_prep_test(request: Request, exam: str = "", q: str = "", new: str = "",
                    f'<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'
                    f"gtag('js',new Date());gtag('config','{cid}');"
                    f"gtag('event','conversion',{{'send_to':'{cid}/{lbl}'}});</script>")
+    # Kids product: same pool-driven test (shared data), but with the child-voice layer +
+    # kid theming injected. The DATA path is identical to acharya; only the FLOW is kid-scoped.
+    host = (request.headers.get("host") or "").split(":")[0].lower()
+    if host in KIDS_HOSTS:
+        inject += ('<script>window.__KIDS=true;</script>'
+                   '<link rel="stylesheet" href="/static/kids/kids_voice.css">'
+                   '<script src="/static/kids/kids_voice.js" defer></script>')
     html = (BASE / "static" / "exam" / "assess.html").read_text(encoding="utf-8")
     return HTMLResponse(html.replace("</head>", inject + "</head>", 1))
+
+
+_TTS_CACHE: dict = {}   # (voice|rate|text) sha1 -> mp3 bytes; the pool repeats, so hit-rate is high
+
+
+@app.get("/kids/tts")
+async def kids_tts(text: str = "", voice: str = "en-US-AnaNeural", rate: str = "-6%"):
+    """Server-side child-voice TTS for the kids voice test (edge-tts, en-US-AnaNeural).
+
+    Speaks the question the shared pool already served — no change to the data path. Cached
+    in-process by (voice,rate,text) hash; a fixed pool means most calls are cache hits."""
+    text = (text or "").strip()[:600]
+    if not text:
+        return Response(status_code=400)
+    key = hashlib.sha1(f"{voice}|{rate}|{text}".encode()).hexdigest()
+    data = _TTS_CACHE.get(key)
+    if data is None:
+        try:
+            import edge_tts
+        except Exception:
+            return Response(status_code=503)   # lib missing → client falls back silently
+        try:
+            comm = edge_tts.Communicate(text, voice, rate=rate)
+            buf = bytearray()
+            async for chunk in comm.stream():
+                if chunk.get("type") == "audio":
+                    buf += chunk["data"]
+            data = bytes(buf)
+        except Exception as exc:
+            print(f"[kids_tts] fail: {exc}")
+            return Response(status_code=502)
+        if len(_TTS_CACHE) > 800:
+            _TTS_CACHE.clear()
+        _TTS_CACHE[key] = data
+    return Response(content=data, media_type="audio/mpeg",
+                    headers={"Cache-Control": "public, max-age=604800"})
+
+
+@app.get("/api/kids/quiz")
+def kids_quiz(request: Request, chapter: str = "", n: int = 5, diff: str = "1-2",
+              db: Session = Depends(get_db)):
+    """Questions for the kids voice-quiz UI, drawn from the SHARED pool (Grade-3 Maths).
+    Maps pool rows → {q, options, answer, correct, topic}. Full-subject = a mix of chapters."""
+    import random as _rnd
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False}, status_code=401)
+    sid = "class3-maths"
+    n = max(1, min(int(n or 5), 10))
+    diff = diff if diff in ("1", "1-2", "2") else "1-2"
+    rows = []
+    if chapter and chapter not in ("Full subject", "__FULL__", "full"):
+        rows, _ = examgen.fetch_pool(sid, chapter, None, diff, "MCQ_single", n * 2)
+        rows = rows or []
+    else:                                   # mix across the book chapters
+        chs = [c["chapter"] for c in examgen.chapters_for_ui(sid)]
+        _rnd.shuffle(chs)
+        for ch in chs:
+            qs, _ = examgen.fetch_pool(sid, ch, None, diff, "MCQ_single", 2)
+            if qs:
+                rows.extend(qs)
+            if len(rows) >= n * 2:
+                break
+    _rnd.shuffle(rows)
+    out = []
+    seen = set()
+    for qrow in rows:
+        stem = (qrow.get("stem") or "").strip()
+        if not stem or stem in seen:
+            continue
+        opts = qrow.get("options") or []
+        texts = [(o.get("text") if isinstance(o, dict) else o) for o in opts]
+        if len(texts) < 2:
+            continue
+        corr = qrow.get("correct_answer", "A")
+        ai = next((i for i, o in enumerate(opts)
+                   if isinstance(o, dict) and str(o.get("label")) == str(corr)), 0)
+        seen.add(stem)
+        out.append({"q": stem, "options": [str(t) for t in texts], "answer": ai,
+                    "correct": str(texts[ai] if ai < len(texts) else texts[0]),
+                    "topic": qrow.get("concept") or qrow.get("chapter") or "Maths"})
+        if len(out) >= n:
+            break
+    return JSONResponse({"questions": out, "title": (chapter or "Class 3 Maths")})
+
+
+# ================= KIDS WORKSHEET + ADAPTIVE ASSESSMENT (2026-08-02) =================
+@app.get("/exam-prep/worksheet", response_class=HTMLResponse)
+def kids_worksheet_page(request: Request, board: str = "CBSE", cls: int = 3, subject: str = "Mathematics",
+                        chapter: str = "", n: int = 8, db: Session = Depends(get_db)):
+    """The production worksheet experience (kids UI, asset-decorated, adaptive). Kids host only."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep", status_code=302)
+    host = (request.headers.get("host") or "").split(":")[0].lower()
+    if host not in KIDS_HOSTS:
+        return RedirectResponse("/exam-prep", status_code=302)
+    return templates.TemplateResponse(request, "kids_worksheet.html", {
+        "student": student, "board": board, "cls": cls, "subject": subject, "chapter": chapter,
+        "n": max(3, min(int(n), 15))})
+
+
+@app.get("/api/kids/curriculum")
+def kids_curriculum(request: Request, board: str = "CBSE", cls: int = 3, db: Session = Depends(get_db)):
+    """Subjects + chapters available for a board+class (drives the picker)."""
+    try:
+        return JSONResponse({"ok": True, "board": board, "class": cls, "subjects": kidsws.picker(board, int(cls))})
+    except Exception as exc:
+        return JSONResponse({"ok": False, "error": str(exc)[:120]}, status_code=500)
+
+
+@app.get("/api/kids/worksheet")
+def kids_worksheet_api(request: Request, board: str = "CBSE", cls: int = 3, subject: str = "Mathematics",
+                       chapter: str = "", n: int = 8, db: Session = Depends(get_db)):
+    """An adaptive worksheet: items near the student's target difficulty, enriched with hints + distractors."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    try:
+        data = kidsws.serve(db, student, board, int(cls), subject, chapter.strip() or None, n=max(3, min(int(n), 15)))
+        return JSONResponse({"ok": True, **data})
+    except Exception as exc:
+        return JSONResponse({"ok": False, "error": str(exc)[:160]}, status_code=500)
+
+
+@app.post("/api/kids/worksheet/complete")
+async def kids_worksheet_complete(request: Request, db: Session = Depends(get_db)):
+    """Record a finished worksheet → update BKT mastery + Elo + misconceptions (+ ConceptStat)."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    skill = str(body.get("skill", ""))[:160]
+    results = body.get("results", []) or []
+    subject = str(body.get("subject", ""))[:40]
+    if not skill:
+        return JSONResponse({"ok": False, "error": "skill"}, status_code=400)
+    return JSONResponse(kidsws.complete(db, student, skill, results, subject=subject))
 
 
 @app.post("/api/assess/complete")
@@ -991,6 +1210,17 @@ def exam_prep_smart(request: Request, db: Session = Depends(get_db)):
     student = current_student(request, db)
     if not student:
         return RedirectResponse("/exam-prep/quick", status_code=302)
+    # Kids: Smart Practice = a fresh adaptive WORKSHEET built on the child's WEAKEST topic (10 Q).
+    # Pick the lowest-mastery concept they've actually attempted; the worksheet engine then targets
+    # difficulty via BKT/Elo. Brand-new kids (no data) get the picker.
+    if (request.headers.get("host") or "").split(":")[0].lower() in KIDS_HOSTS:
+        kstats = [s for s in db.query(ConceptStat).filter_by(student_id=student.id).all() if s.seen]
+        if kstats:
+            w = min(kstats, key=lambda s: s.correct / s.seen)
+            return RedirectResponse(
+                f"/exam-prep/worksheet?subject={quote(w.subject)}&chapter={quote(w.concept)}&n=10",
+                status_code=302)
+        return RedirectResponse("/exam-prep/worksheet?n=10", status_code=302)
     st = _prep_stats(db, student)
     picks = (st["weakest"] or []) + [d for d in st["due"] if d not in (st["weakest"] or [])]
     # Default to the goal's own first subject — a NEET student must never fall back to JEE Physics.
@@ -1053,6 +1283,7 @@ def exam_prep_dashboard(request: Request, new: str = "", added: str = "", db: Se
         "ads_label": settings.STUDENT_SIGNUP_CONV_LABEL,
         "linked": bool(linked), "institute": institute,   # linked → subjects are teacher-controlled
         "assignments": _student_assignments(db, student),  # 📋 assigned by your teacher
+        "kids": (request.headers.get("host") or "").split(":")[0].lower() in KIDS_HOSTS,  # kids skin + worksheet tile
     })
 
 
@@ -1178,19 +1409,26 @@ def exam_prep_report(request: Request, db: Session = Depends(get_db)):
     level = examgen.difficulty_ladder(goal_subj)[tier] if goal_subj else {"easy": "3", "mix": "3-4", "hard": "4"}[tier]
     # what to practise next (weakest first), each linking to a ready-made test at that tier — on
     # ITS OWN subject's band, so a NEET Biology suggestion asks for NEET difficulty, not JEE.
+    kids = (request.headers.get("host") or "").split(":")[0].lower() in KIDS_HOSTS
     picks = (weak + shaky)[:4]
     suggestions = []
     for s in picks:
-        ch = _chapter_for_concept(s.subject, s.concept)
-        href = ""
-        if ch:
-            sel = f"{ch}::{s.concept}"
-            s_diff = examgen.difficulty_ladder(s.subject)[tier]
-            href = (f"/exam-prep/test?src=examgen&subject={quote(s.subject)}&sel={quote(sel)}"
-                    f"&diff={quote(s_diff)}&n=5&title={quote(s.concept)}")
+        if kids:
+            # Kids: practise = a FRESH adaptive worksheet on this weak topic (subject + concept as the
+            # chapter filter; the engine falls back to mixed if the concept isn't a chapter name).
+            href = (f"/exam-prep/worksheet?subject={quote(s.subject)}&chapter={quote(s.concept)}&n=8")
+        else:
+            ch = _chapter_for_concept(s.subject, s.concept)
+            href = ""
+            if ch:
+                sel = f"{ch}::{s.concept}"
+                s_diff = examgen.difficulty_ladder(s.subject)[tier]
+                href = (f"/exam-prep/test?src=examgen&subject={quote(s.subject)}&sel={quote(sel)}"
+                        f"&diff={quote(s_diff)}&n=5&title={quote(s.concept)}")
         tutor_href = (f"/exam-prep/tutor?subject={quote(s.subject)}&concept={quote(s.concept)}")
         suggestions.append({"concept": s.concept, "pct": round(100 * mastery(s)),
-                            "seen": s.seen, "href": href, "tutor_href": tutor_href})
+                            "seen": s.seen, "href": href, "tutor_href": tutor_href,
+                            "prac_label": ("📝 Practice worksheet" if kids else "Practise →")})
     trend = [round(100 * a.score / a.total) for a in reversed(graded[:6]) if a.total]
     return templates.TemplateResponse(request, "exam_prep_report.html", {
         "student": student, "attempts": attempts, "tests": len(attempts), "avg": avg,
@@ -1620,12 +1858,18 @@ def teacher_chapters(request: Request, subject: str = "jee-physics", db: Session
 # so teachers couldn't make Class 10/12/Commerce/UPSC tests (institute feedback 2026-07-29). Order
 # mirrors the student exam picker.
 _TEACHER_GOALS = ["jee-advanced", "neet", "cbse-10", "cbse-12", "cbse-12-commerce", "banking", "upsc"]
+_KIDS_TEACHER_GOALS = ["class3"]   # kids-education.trigunai.com teachers create Grade-3 tests
 
 
-def _teacher_subjects():
-    """(subject_id, goal_dict) for every live exam's subjects, deduped, in exam order."""
+def _is_kids(request) -> bool:
+    return (request.headers.get("host") or "").split(":")[0].lower() in KIDS_HOSTS
+
+
+def _teacher_subjects(kids: bool = False):
+    """(subject_id, goal_dict) for every live exam's subjects, deduped, in exam order.
+    kids=True (kids host) → only the Grade-3 subjects, so a kids teacher never sees JEE/NEET."""
     out, seen = [], set()
-    for gid in _TEACHER_GOALS:
+    for gid in (_KIDS_TEACHER_GOALS if kids else _TEACHER_GOALS):
         g = examgen.GOALS.get(gid)
         if not g:
             continue
@@ -1714,7 +1958,7 @@ def teacher_invites(request: Request, db: Session = Depends(get_db)):
     invites = (db.query(TeacherInvite).filter_by(teacher_id=teacher.id)
                .order_by(TeacherInvite.created_at.desc()).all())
     subs = [{"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"], "exam": g["label"]}
-            for sid, g in _teacher_subjects()]
+            for sid, g in _teacher_subjects(_is_kids(request))]
     roster = _roster(db, teacher)                        # per-student list with real progress
     inv_rows = [{"id": i.id, "code": i.code, "label": i.label, "active": i.active,
                  "count": sum(1 for r in roster if r.get("batch") == i.label),
@@ -2017,7 +2261,7 @@ def teacher_new(request: Request, db: Session = Depends(get_db)):
     if not teacher:
         return RedirectResponse("/teacher", status_code=302)
     subs = [{"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"], "exam": g["label"]}
-            for sid, g in _teacher_subjects()]
+            for sid, g in _teacher_subjects(_is_kids(request))]
     return templates.TemplateResponse(request, "teacher_new.html", {"student": teacher, "subjects": subs})
 
 
@@ -2318,13 +2562,53 @@ def _diff_chips(subject: str):
             {"label": "Hard", "value": "diff:" + lad["hard"]}]
 
 
+# ---- KIDS chat: curriculum-driven subject + topic chips (all subjects → worksheet flow) ----
+KIDS_CHAT_BOARD, KIDS_CHAT_CLASS = "CBSE", 3
+KIDS_SUBJECT_LABELS = {"Mathematics": "🔢 Maths", "EVS": "🌍 EVS", "English": "📖 English",
+                       "GK": "🧠 GK", "Hindi": "🇮🇳 Hindi"}
+
+
+def _kids_subject_label(subject: str) -> str:
+    return KIDS_SUBJECT_LABELS.get(subject, subject)
+
+
+def _kids_curriculum() -> dict:
+    """{subject: [chapters]} for the kids board/class, straight from the worksheet curriculum."""
+    try:
+        return kidsws.picker(KIDS_CHAT_BOARD, KIDS_CHAT_CLASS) or {}
+    except Exception:
+        return {"Mathematics": []}
+
+
+def _kids_subject_chips():
+    curr = _kids_curriculum()
+    order = ["Mathematics", "EVS", "English", "GK", "Hindi"]
+    subs = [s for s in order if s in curr] + [s for s in curr if s not in order]
+    return [{"label": _kids_subject_label(s), "value": "ksubj:" + s} for s in (subs or ["Mathematics"])]
+
+
+def _kids_chapter_chips(subject: str):
+    chs = _kids_curriculum().get(subject, [])
+    chips = [{"label": "✨ Mixed practice", "value": "kgo"}]
+    for ch in chs[:12]:
+        chips.append({"label": ch if len(ch) <= 24 else ch[:24] + "…", "value": "kchap:" + ch})
+    return chips
+
+
 def _reply(msg, chips=None, input=False, job=None, nav=None, actions=None, state=None):
     return {"ok": True, "reply": msg, "chips": chips or [], "input": input,
             "job": job, "nav": nav, "actions": actions or [], "state": state or {}}
 
 
-def _chat_step(role: str, state: dict, inp: str, db: Session, student):
-    """One conversational turn. Returns the reply dict; state is echoed for the client to hold."""
+KID_SUBJECT = "class3-maths"   # the kids product's single live subject (Grade-3 Maths)
+
+
+def _chat_step(role: str, state: dict, inp: str, db: Session, student, kids: bool = False):
+    """One conversational turn. Returns the reply dict; state is echoed for the client to hold.
+
+    `kids` (kids-education.trigunai.com host) makes the flow KID-ONLY: it never offers other
+    exams/subjects — the subject is locked to Grade-3 Maths and the chat jumps straight to the
+    book chapters. The DATA + POOL are shared/common; only the conversational FLOW is scoped."""
     st = dict(state or {})
     node = st.get("node", "intro")
     inp = (inp or "").strip()
@@ -2360,6 +2644,15 @@ def _chat_step(role: str, state: dict, inp: str, db: Session, student):
         node = "generate"
     elif inp == "restart":
         st = {}; node = "intro"
+    # ---- KIDS worksheet-flow chips (curriculum-driven; ALL subjects, not just Maths) ----
+    elif inp.startswith("ksubj:"):
+        st["ksubject"] = inp.split(":", 1)[1]; st["kchapter"] = ""; node = "kids_chapters"
+    elif inp.startswith("kchap:"):
+        st["kchapter"] = inp.split(":", 1)[1]; node = "kids_count"
+    elif inp == "kgo":
+        st["kchapter"] = ""; node = "kids_count"
+    elif inp.startswith("kn:"):
+        st["kn"] = int(inp.split(":", 1)[1]); node = "kids_go"
 
     # ---- free text: try to route to an intent / subject at the top of the flow ----
     elif inp and node in ("intro", "make_test"):
@@ -2373,8 +2666,40 @@ def _chat_step(role: str, state: dict, inp: str, db: Session, student):
         else:
             node = "make_test"
 
+    # ---- KIDS worksheet flow: whenever the (kid) flow would ask "which subject?" or pick an
+    # examgen subject, route into the curriculum-driven picker instead — ALL kids subjects
+    # (Maths, EVS, English, GK, Hindi), each → topic → an adaptive worksheet. The MCQ/examgen
+    # flow is bypassed for kids; data/curriculum are shared, the FLOW is kid-scoped. ----
+    if kids and node in ("make_test", "chapters"):
+        node = "kids_subject"
+
+    if kids and node == "kids_subject":
+        return _reply("Which subject shall we practise? 🎒 Tap one!",
+                      chips=_kids_subject_chips(), input=True, state={**st, "node": "kids_subject"})
+    if kids and node == "kids_chapters":
+        subj = st.get("ksubject", "Mathematics")
+        picked = f" · picked: {st['kchapter']}" if st.get("kchapter") else ""
+        return _reply(f"<b>{_kids_subject_label(subj)}</b> — pick a topic, or ✨ Mixed practice!{picked}",
+                      chips=_kids_chapter_chips(subj), input=True, state={**st, "node": "kids_chapters"})
+    if kids and node == "kids_count":
+        where = st.get("kchapter") or "Mixed practice"
+        chips = [{"label": f"{k} questions", "value": f"kn:{k}"} for k in (5, 8, 10, 15)]
+        return _reply(f"How many questions for <b>{where}</b>? 🔢", chips=chips,
+                      state={**st, "node": "kids_count"})
+    if kids and node == "kids_go":
+        subj = st.get("ksubject", "Mathematics"); ch = st.get("kchapter", ""); nq = int(st.get("kn") or 8)
+        nav = f"/exam-prep/worksheet?subject={quote(subj)}&chapter={quote(ch)}&n={nq}"
+        return _reply(f"Opening your {nq}-question worksheet — let's go! ✏️", nav=nav, state={"node": "intro"})
+
     # ══════════ nodes ══════════
     if node == "intro":
+        if kids:
+            msg = ("Hi superstar! 🦊 I'm Acharya. Want a fun practice worksheet, or to see how you're doing? "
+                   "Tap a button below! 🎈")
+            chips = [{"label": "✍️ Make me a worksheet", "value": "intent:make_test"},
+                     {"label": "⚡ Practise my tricky bits", "value": "intent:smart"},
+                     {"label": "📊 How am I doing?", "value": "intent:my_progress"}]
+            return _reply(msg, chips=chips, input=True, state={**st, "node": "intro"})
         if teacher:
             msg = (f"Namaste 🙏 I'm Acharya. Tell me what you need — I'll build it. "
                    f"You can type it, or tap below.")
@@ -2510,7 +2835,10 @@ async def chat_api(request: Request, role: str, db: Session = Depends(get_db)):
     # a chip can also carry a direct nav (value "nav:/path")
     if isinstance(inp, str) and inp.startswith("nav:"):
         return JSONResponse(_reply("Opening that for you…", nav=inp.split(":", 1)[1], state={"node": "intro"}))
-    return JSONResponse(_chat_step("teacher" if role == "teacher" else "student", state, inp, db, student))
+    host = (request.headers.get("host") or "").split(":")[0].lower()
+    kids = host in KIDS_HOSTS
+    return JSONResponse(_chat_step("teacher" if role == "teacher" else "student",
+                                   state, inp, db, student, kids=kids))
 
 
 @app.get("/teacher/chat", response_class=HTMLResponse)

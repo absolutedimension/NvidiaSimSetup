@@ -1,0 +1,987 @@
+{
+  "board": "CBSE",
+  "class": 1,
+  "subject": "English",
+  "count": 30,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the family members to their names.",
+      "payload": {
+        "pairs": [
+          [
+            "Mom",
+            "Mother"
+          ],
+          [
+            "Dad",
+            "Father"
+          ],
+          [
+            "Sis",
+            "Sister"
+          ],
+          [
+            "Bro",
+            "Brother"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 1: My Family and Me",
+      "band": 1,
+      "voice": "Match the family members to their names.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Hello",
+          "Goodbye",
+          "Happy",
+          "Welcome"
+        ]
+      },
+      "answer": "Happy",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 1: My Family and Me",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A family can have pets.",
+      "payload": {
+        "statement": "A family can have pets."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 1: My Family and Me",
+      "band": 2,
+      "voice": "A family can have pets.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We use our ___ to wave.",
+        "bank": [
+          "hands",
+          "feet",
+          "eyes"
+        ]
+      },
+      "answer": "hands",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 1: My Family and Me",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Dad",
+          "Cat",
+          "Mom",
+          "Fish"
+        ],
+        "bins": [
+          "Family",
+          "Pets"
+        ]
+      },
+      "answer": {
+        "Dad": "Family",
+        "Cat": "Pets",
+        "Mom": "Family",
+        "Fish": "Pets"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 1: My Family and Me",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the greeting to its response.",
+      "payload": {
+        "pairs": [
+          [
+            "Hello",
+            "Hi"
+          ],
+          [
+            "Goodbye",
+            "See you"
+          ],
+          [
+            "Thank you",
+            "You're welcome"
+          ],
+          [
+            "Sorry",
+            "It's okay"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 1: My Family and Me",
+      "band": 1,
+      "voice": "Match the greeting to its response.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Hello",
+          "Please",
+          "Thank you",
+          "Goodbye"
+        ]
+      },
+      "answer": "Please",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 1: My Family and Me",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A wave is a way to say hello.",
+      "payload": {
+        "statement": "A wave is a way to say hello."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 1: My Family and Me",
+      "band": 2,
+      "voice": "A wave is a way to say hello.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We greet our friends with a ___ or a wave.",
+        "bank": [
+          "smile",
+          "frown",
+          "scream"
+        ]
+      },
+      "answer": "smile",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 1: My Family and Me",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Brother",
+          "Sister",
+          "Chair",
+          "Mom"
+        ],
+        "bins": [
+          "Family",
+          "Non-family"
+        ]
+      },
+      "answer": {
+        "Brother": "Family",
+        "Sister": "Family",
+        "Chair": "Non-family",
+        "Mom": "Family"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 1: My Family and Me",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal to its sound.",
+      "payload": {
+        "pairs": [
+          [
+            "Dog",
+            "Bark"
+          ],
+          [
+            "Cat",
+            "Meow"
+          ],
+          [
+            "Cow",
+            "Moo"
+          ],
+          [
+            "Duck",
+            "Quack"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 2: Life Around Us",
+      "band": 1,
+      "voice": "Match the animal to its sound.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Apple",
+          "Banana",
+          "Carrot",
+          "Grapes"
+        ]
+      },
+      "answer": "Carrot",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 2: Life Around Us",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A farm has animals and crops.",
+      "payload": {
+        "statement": "A farm has animals and crops."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 2: Life Around Us",
+      "band": 2,
+      "voice": "A farm has animals and crops.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ sells caps.",
+        "bank": [
+          "man",
+          "dog",
+          "cat"
+        ]
+      },
+      "answer": "man",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 2: Life Around Us",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Horse",
+          "Tree",
+          "Pig",
+          "Flower"
+        ],
+        "bins": [
+          "Animals",
+          "Plants"
+        ]
+      },
+      "answer": {
+        "Horse": "Animals",
+        "Tree": "Plants",
+        "Pig": "Animals",
+        "Flower": "Plants"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 2: Life Around Us",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Monkey",
+          "Elephant",
+          "Car",
+          "Lion"
+        ]
+      },
+      "answer": "Car",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 2: Life Around Us",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Monkeys can wear caps.",
+      "payload": {
+        "statement": "Monkeys can wear caps."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 2: Life Around Us",
+      "band": 2,
+      "voice": "Monkeys can wear caps.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ lives on a farm.",
+        "bank": [
+          "sheep",
+          "car",
+          "house"
+        ]
+      },
+      "answer": "sheep",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 2: Life Around Us",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Corn",
+          "Dog",
+          "Wheat",
+          "Cat"
+        ],
+        "bins": [
+          "Food",
+          "Animals"
+        ]
+      },
+      "answer": {
+        "Corn": "Food",
+        "Dog": "Animals",
+        "Wheat": "Food",
+        "Cat": "Animals"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 2: Life Around Us",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A ___ sells caps.",
+        "bank": [
+          "man",
+          "cat",
+          "dog"
+        ]
+      },
+      "answer": "man",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 2: Life Around Us",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the food to its color.",
+      "payload": {
+        "pairs": [
+          [
+            "Apple",
+            "Red"
+          ],
+          [
+            "Banana",
+            "Yellow"
+          ],
+          [
+            "Broccoli",
+            "Green"
+          ],
+          [
+            "Blueberry",
+            "Blue"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 3: Food",
+      "band": 1,
+      "voice": "Match the food to its color.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Carrot",
+          "Broccoli",
+          "Potato",
+          "Dog"
+        ]
+      },
+      "answer": "Dog",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 3: Food",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Fruits are sweet.",
+      "payload": {
+        "statement": "Fruits are sweet."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 3: Food",
+      "band": 2,
+      "voice": "Fruits are sweet.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We eat ___ for breakfast.",
+        "bank": [
+          "pancakes",
+          "shoes",
+          "books"
+        ]
+      },
+      "answer": "pancakes",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 3: Food",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Rice",
+          "Pizza",
+          "Water",
+          "Sandwich"
+        ],
+        "bins": [
+          "Food",
+          "Drink"
+        ]
+      },
+      "answer": {
+        "Rice": "Food",
+        "Pizza": "Food",
+        "Water": "Drink",
+        "Sandwich": "Food"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 3: Food",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the food to the meal.",
+      "payload": {
+        "pairs": [
+          [
+            "Pasta",
+            "Dinner"
+          ],
+          [
+            "Cereal",
+            "Breakfast"
+          ],
+          [
+            "Salad",
+            "Lunch"
+          ],
+          [
+            "Ice Cream",
+            "Dessert"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 3: Food",
+      "band": 1,
+      "voice": "Match the food to the meal.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Milk",
+          "Juice",
+          "Bread",
+          "Water"
+        ]
+      },
+      "answer": "Bread",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 3: Food",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Vegetables are good for us.",
+      "payload": {
+        "statement": "Vegetables are good for us."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 3: Food",
+      "band": 2,
+      "voice": "Vegetables are good for us.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A ___ is a fruit that is yellow.",
+        "bank": [
+          "banana",
+          "carrot",
+          "potato"
+        ]
+      },
+      "answer": "banana",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 3: Food",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Apple",
+          "Tomato",
+          "Peach",
+          "Rock"
+        ],
+        "bins": [
+          "Fruit",
+          "Not Fruit"
+        ]
+      },
+      "answer": {
+        "Apple": "Fruit",
+        "Tomato": "Fruit",
+        "Peach": "Fruit",
+        "Rock": "Not Fruit"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Unit 3: Food",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

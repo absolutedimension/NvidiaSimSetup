@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Addition Adventure",
+ "adventure": "Addition Adventure",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Addition Adventure. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "265 + 297 = ?",
+   "options": [
+    "662",
+    "572",
+    "562",
+    "561"
+   ],
+   "answer": 2,
+   "explain": "265 plus 297 makes 562.",
+   "voice_q": "Add it up! 265 plus 297.",
+   "voice_a": "It's 562! 265 and 297 make 562."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "195 + 124 = ?",
+   "options": [
+    "329",
+    "319",
+    "318",
+    "419"
+   ],
+   "answer": 1,
+   "explain": "195 plus 124 makes 319.",
+   "voice_q": "Add it up! 195 plus 124.",
+   "voice_a": "It's 319! 195 and 124 make 319."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "380 + 248 = ?",
+   "options": [
+    "627",
+    "728",
+    "628",
+    "638"
+   ],
+   "answer": 2,
+   "explain": "380 plus 248 makes 628.",
+   "voice_q": "Add it up! 380 plus 248.",
+   "voice_a": "It's 628! 380 and 248 make 628."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "239 + 287 = ?",
+   "options": [
+    "525",
+    "526",
+    "626",
+    "536"
+   ],
+   "answer": 1,
+   "explain": "239 plus 287 makes 526.",
+   "voice_q": "Add it up! 239 plus 287.",
+   "voice_a": "It's 526! 239 and 287 make 526."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "243 + 217 = ?",
+   "options": [
+    "470",
+    "560",
+    "459",
+    "460"
+   ],
+   "answer": 3,
+   "explain": "243 plus 217 makes 460.",
+   "voice_q": "Add it up! 243 plus 217.",
+   "voice_a": "It's 460! 243 and 217 make 460."
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Multiplication",
+ "adventure": "Multiplication Mountain",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🍎",
+   "q": "3 groups of 4 apples. How many apples in all?  3 × 4 = ?",
+   "options": ["7", "12", "10", "9"],
+   "answer": 1,
+   "explain": "3 fours make 12. 4, 8, 12!",
+   "voice_q": "Three baskets, four apples each. What is three times four?",
+   "voice_a": "It's twelve! Four, eight, twelve. First gem!"
+  },
+  {
+   "type": "mcq",
+   "emoji": "🐟",
+   "q": "5 × 2 = ?",
+   "options": ["10", "7", "25", "12"],
+   "answer": 0,
+   "explain": "5 twos make 10. Count in twos: 2,4,6,8,10!",
+   "voice_q": "Five times two. What do you get?",
+   "voice_a": "Ten! Two, four, six, eight, ten. That's gem two!"
+  },
+  {
+   "type": "mcq",
+   "emoji": "🥭",
+   "q": "4 baskets, each has 6 mangoes. How many mangoes?  4 × 6 = ?",
+   "options": ["10", "24", "20", "18"],
+   "answer": 1,
+   "explain": "4 sixes make 24. 6, 12, 18, 24!",
+   "voice_q": "Four baskets, six mangoes each. Four times six?",
+   "voice_a": "Twenty-four! Six, twelve, eighteen, twenty-four. Gem three!"
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "7 × 3 = ?",
+   "options": ["21", "10", "24", "18"],
+   "answer": 0,
+   "explain": "7 threes make 21. 7, 14, 21!",
+   "voice_q": "Seven times three. Think!",
+   "voice_a": "Twenty-one! Seven, fourteen, twenty-one. Gem four!"
+  },
+  {
+   "type": "mcq",
+   "emoji": "🕷️",
+   "q": "A spider has 8 legs. How many legs do 2 spiders have?  8 × 2 = ?",
+   "options": ["16", "10", "18", "82"],
+   "answer": 0,
+   "explain": "8 twos make 16. Two eights: 8 and 8 make 16!",
+   "voice_q": "A spider has eight legs. Two spiders? Eight times two.",
+   "voice_a": "Sixteen! Eight and eight. All five gems — treasure time!"
+  }
+ ]
+}

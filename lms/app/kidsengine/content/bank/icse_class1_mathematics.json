@@ -1,0 +1,214 @@
+{
+  "board": "ICSE",
+  "class": 1,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Numbers",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 5 and 13.",
+      "payload": {
+        "a": 5,
+        "b": 13
+      },
+      "answer": "<",
+      "explain": "5 is less than 13."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Number Operations",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 1.",
+      "payload": {
+        "seq": [
+          1,
+          null,
+          3,
+          4
+        ],
+        "step": 1
+      },
+      "answer": [
+        2
+      ],
+      "explain": "Counting by 1s → 2."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Geometry",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 19 and 2.",
+      "payload": {
+        "a": 19,
+        "b": 2
+      },
+      "answer": ">",
+      "explain": "19 is greater than 2."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Measurement",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 2 and 3.",
+      "payload": {
+        "a": 2,
+        "b": 3
+      },
+      "answer": "<",
+      "explain": "2 is less than 3."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Data Handling",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 14 and 3.",
+      "payload": {
+        "a": 14,
+        "b": 3
+      },
+      "answer": ">",
+      "explain": "14 is greater than 3."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Patterns",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 1.",
+      "payload": {
+        "seq": [
+          5,
+          6,
+          null,
+          8
+        ],
+        "step": 1
+      },
+      "answer": [
+        7
+      ],
+      "explain": "Counting by 1s → 7."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Numbers",
+      "band": "1-2",
+      "instruction": "Count the grapess and write how many!",
+      "voice": "Count the grapess.",
+      "payload": {
+        "asset": "grapes",
+        "emoji": "🍇",
+        "n": 10
+      },
+      "answer": 10,
+      "explain": "There are 10 grapess!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Number Operations",
+      "band": "1-2",
+      "instruction": "Count the stars and write how many!",
+      "voice": "Count the stars.",
+      "payload": {
+        "asset": "star",
+        "emoji": "⭐",
+        "n": 10
+      },
+      "answer": 10,
+      "explain": "There are 10 stars!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Geometry",
+      "band": "1-2",
+      "instruction": "Add it!  10 + 10 = ?",
+      "voice": "What is 10 plus 10?",
+      "payload": {
+        "op": "+",
+        "a": 10,
+        "b": 10
+      },
+      "answer": 20,
+      "explain": "10 plus 10 makes 20."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Measurement",
+      "band": "1-2",
+      "instruction": "Add it!  1 + 4 = ?",
+      "voice": "What is 1 plus 4?",
+      "payload": {
+        "op": "+",
+        "a": 1,
+        "b": 4
+      },
+      "answer": 5,
+      "explain": "1 plus 4 makes 5."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Data Handling",
+      "band": "1-2",
+      "instruction": "Add it!  9 + 3 = ?",
+      "voice": "What is 9 plus 3?",
+      "payload": {
+        "op": "+",
+        "a": 9,
+        "b": 3
+      },
+      "answer": 12,
+      "explain": "9 plus 3 makes 12."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 1,
+      "chapter": "Patterns",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 10.",
+      "payload": {
+        "seq": [
+          20,
+          null,
+          40,
+          50
+        ],
+        "step": 10
+      },
+      "answer": [
+        30
+      ],
+      "explain": "Counting by 10s → 30."
+    }
+  ]
+}

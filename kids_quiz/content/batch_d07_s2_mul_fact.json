@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Multiplication Mountain",
+ "adventure": "Multiplication Mountain",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Multiplication Mountain. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "3 × 4 = ?",
+   "options": [
+    "12",
+    "14",
+    "8",
+    "15"
+   ],
+   "answer": 0,
+   "explain": "3 times 4 makes 12.",
+   "voice_q": "What is 3 times 4?",
+   "voice_a": "It's 12! 3 groups of 4 make 12."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "2 × 6 = ?",
+   "options": [
+    "14",
+    "14",
+    "12",
+    "6"
+   ],
+   "answer": 2,
+   "explain": "2 times 6 makes 12.",
+   "voice_q": "What is 2 times 6?",
+   "voice_a": "It's 12! 2 groups of 6 make 12."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "5 × 6 = ?",
+   "options": [
+    "24",
+    "35",
+    "32",
+    "30"
+   ],
+   "answer": 3,
+   "explain": "5 times 6 makes 30.",
+   "voice_q": "What is 5 times 6?",
+   "voice_a": "It's 30! 5 groups of 6 make 30."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "9 × 8 = ?",
+   "options": [
+    "72",
+    "64",
+    "81",
+    "74"
+   ],
+   "answer": 0,
+   "explain": "9 times 8 makes 72.",
+   "voice_q": "What is 9 times 8?",
+   "voice_a": "It's 72! 9 groups of 8 make 72."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "3 × 6 = ?",
+   "options": [
+    "20",
+    "21",
+    "12",
+    "18"
+   ],
+   "answer": 3,
+   "explain": "3 times 6 makes 18.",
+   "voice_q": "What is 3 times 6?",
+   "voice_a": "It's 18! 3 groups of 6 make 18."
+  }
+ ]
+}

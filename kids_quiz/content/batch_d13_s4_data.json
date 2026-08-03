@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Graph Garden",
+ "adventure": "Graph Garden",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Graph Garden. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "📊",
+   "q": "In a chart: 8 apples, 6 bananas, 2 mangoes. How many fruits in all?",
+   "options": [
+    "14",
+    "17",
+    "16",
+    "19"
+   ],
+   "answer": 2,
+   "explain": "8+6+2 = 16.",
+   "voice_q": "Add the chart: 8, 6 and 2. How many in all?",
+   "voice_a": "It's 16! Together they make 16."
+  },
+  {
+   "type": "mcq",
+   "emoji": "📊",
+   "q": "In a chart: 9 apples, 6 bananas, 6 mangoes. How many fruits in all?",
+   "options": [
+    "24",
+    "22",
+    "21",
+    "19"
+   ],
+   "answer": 2,
+   "explain": "9+6+6 = 21.",
+   "voice_q": "Add the chart: 9, 6 and 6. How many in all?",
+   "voice_a": "It's 21! Together they make 21."
+  },
+  {
+   "type": "mcq",
+   "emoji": "📊",
+   "q": "In a chart: 2 apples, 6 bananas, 9 mangoes. How many fruits in all?",
+   "options": [
+    "18",
+    "20",
+    "17",
+    "15"
+   ],
+   "answer": 2,
+   "explain": "2+6+9 = 17.",
+   "voice_q": "Add the chart: 2, 6 and 9. How many in all?",
+   "voice_a": "It's 17! Together they make 17."
+  },
+  {
+   "type": "mcq",
+   "emoji": "📊",
+   "q": "In a chart: 7 apples, 6 bananas, 4 mangoes. How many fruits in all?",
+   "options": [
+    "17",
+    "20",
+    "15",
+    "18"
+   ],
+   "answer": 0,
+   "explain": "7+6+4 = 17.",
+   "voice_q": "Add the chart: 7, 6 and 4. How many in all?",
+   "voice_a": "It's 17! Together they make 17."
+  },
+  {
+   "type": "mcq",
+   "emoji": "📊",
+   "q": "In a chart: 5 apples, 2 bananas, 5 mangoes. How many fruits in all?",
+   "options": [
+    "15",
+    "13",
+    "12",
+    "10"
+   ],
+   "answer": 2,
+   "explain": "5+2+5 = 12.",
+   "voice_q": "Add the chart: 5, 2 and 5. How many in all?",
+   "voice_a": "It's 12! Together they make 12."
+  }
+ ]
+}

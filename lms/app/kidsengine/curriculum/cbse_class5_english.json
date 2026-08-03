@@ -1,0 +1,56 @@
+{
+  "board": "CBSE",
+  "class": 5,
+  "subject": "English",
+  "source": {
+    "name": "NCERT Santoor — Textbook of English for Grade 5 (Contents)",
+    "url": "https://ncert.nic.in/textbook/pdf/eesa1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "NEW NCF-SE book 'Santoor' (June 2025), replaces old 'Marigold'. Verbatim from official ncert.nic.in PDF (eesa1). 5 units, 10 lessons.",
+  "chapters": [
+    {
+      "id": "unit_1_let_s_have_fun",
+      "name": "Unit 1: Let's Have Fun",
+      "subtopics": [
+        "Papa's Spectacles",
+        "Gone with the Scooter"
+      ]
+    },
+    {
+      "id": "unit_2_my_colourful_world",
+      "name": "Unit 2: My Colourful World",
+      "subtopics": [
+        "The Rainbow",
+        "The Wise Parrot"
+      ]
+    },
+    {
+      "id": "unit_3_water",
+      "name": "Unit 3: Water",
+      "subtopics": [
+        "The Frog",
+        "What a Tank!"
+      ]
+    },
+    {
+      "id": "unit_4_ups_and_downs",
+      "name": "Unit 4: Ups and Downs",
+      "subtopics": [
+        "Gilli Danda",
+        "The Decision of the Panchayat"
+      ]
+    },
+    {
+      "id": "unit_5_work_is_worship",
+      "name": "Unit 5: Work is Worship",
+      "subtopics": [
+        "Vocation",
+        "Glass Bangles"
+      ]
+    }
+  ]
+}

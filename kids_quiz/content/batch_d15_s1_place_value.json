@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Number Kingdom",
+ "adventure": "Number Kingdom",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Number Kingdom. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🔢",
+   "q": "In 3769, what is the thousands digit?",
+   "options": [
+    "4",
+    "6",
+    "3",
+    "5"
+   ],
+   "answer": 2,
+   "explain": "Look at the thousands place in 3769.",
+   "voice_q": "In the number 3769, which digit is in the thousands place?",
+   "voice_a": "It's 3! The thousands digit of 3769 is 3."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔢",
+   "q": "In 2814, what is the hundreds digit?",
+   "options": [
+    "9",
+    "8",
+    "1",
+    "0"
+   ],
+   "answer": 1,
+   "explain": "Look at the hundreds place in 2814.",
+   "voice_q": "In the number 2814, which digit is in the hundreds place?",
+   "voice_a": "It's 8! The hundreds digit of 2814 is 8."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔢",
+   "q": "In 4751, what is the ones digit?",
+   "options": [
+    "4",
+    "1",
+    "3",
+    "2"
+   ],
+   "answer": 1,
+   "explain": "Look at the ones place in 4751.",
+   "voice_q": "In the number 4751, which digit is in the ones place?",
+   "voice_a": "It's 1! The ones digit of 4751 is 1."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔢",
+   "q": "In 4381, what is the hundreds digit?",
+   "options": [
+    "3",
+    "6",
+    "5",
+    "4"
+   ],
+   "answer": 0,
+   "explain": "Look at the hundreds place in 4381.",
+   "voice_q": "In the number 4381, which digit is in the hundreds place?",
+   "voice_a": "It's 3! The hundreds digit of 4381 is 3."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔢",
+   "q": "In 4049, what is the ones digit?",
+   "options": [
+    "1",
+    "0",
+    "2",
+    "9"
+   ],
+   "answer": 3,
+   "explain": "Look at the ones place in 4049.",
+   "voice_q": "In the number 4049, which digit is in the ones place?",
+   "voice_a": "It's 9! The ones digit of 4049 is 9."
+  }
+ ]
+}

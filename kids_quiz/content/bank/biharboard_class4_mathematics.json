@@ -1,0 +1,206 @@
+{
+  "board": "Bihar Board",
+  "class": 4,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "संख्याओं का मेला (Fair of Numbers)",
+      "band": "3-5",
+      "instruction": "What comes just after 7468?",
+      "voice": "What is just after 7468?",
+      "payload": {
+        "mode": "after",
+        "n": 7468,
+        "display": "▢ , 7468"
+      },
+      "answer": 7469,
+      "explain": "Just after 7468 is 7469."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "जोड़ (Addition)",
+      "band": "3-5",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 2.",
+      "payload": {
+        "seq": [
+          2,
+          null,
+          6,
+          8
+        ],
+        "step": 2
+      },
+      "answer": [
+        4
+      ],
+      "explain": "Counting by 2s → 4."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "घटाव (Subtraction)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 77387 and 8602.",
+      "payload": {
+        "a": 77387,
+        "b": 8602
+      },
+      "answer": ">",
+      "explain": "77387 is greater than 8602."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "गुणा (Multiplication)",
+      "band": "3-5",
+      "instruction": "Multiply!  3 × 3 = ?",
+      "voice": "What is 3 times 3?",
+      "payload": {
+        "op": "×",
+        "a": 3,
+        "b": 3
+      },
+      "answer": 9,
+      "explain": "3 times 3 makes 9."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "भाग (Division)",
+      "band": "3-5",
+      "instruction": "Subtract!  2712 − 287 = ?",
+      "voice": "What is 2712 minus 287?",
+      "payload": {
+        "op": "-",
+        "a": 2712,
+        "b": 287
+      },
+      "answer": 2425,
+      "explain": "2712 minus 287 leaves 2425."
+    },
+    {
+      "type": "count_money",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "मुद्रा (Money)",
+      "band": "3-5",
+      "instruction": "How much money? 🪙",
+      "voice": "Add the coins.",
+      "payload": {
+        "coins": [
+          1,
+          2,
+          5
+        ],
+        "display": "₹1 + ₹2 + ₹5"
+      },
+      "answer": 8,
+      "explain": "The coins make ₹8."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "भिन्नात्मक संख्याएँ (Fractions)",
+      "band": "3-5",
+      "instruction": "Count the balloons and write how many!",
+      "voice": "Count the balloons.",
+      "payload": {
+        "asset": "balloon",
+        "emoji": "🎈",
+        "n": 6
+      },
+      "answer": 6,
+      "explain": "There are 6 balloons!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "सममिति (Symmetry)",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 12
+      },
+      "answer": 12,
+      "explain": "There are 12 apples!"
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "लम्बाई की माप (Length)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 76642 and 77748.",
+      "payload": {
+        "a": 76642,
+        "b": 77748
+      },
+      "answer": "<",
+      "explain": "76642 is less than 77748."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "भार (Weight)",
+      "band": "3-5",
+      "instruction": "Add it!  1203 + 4998 = ?",
+      "voice": "What is 1203 plus 4998?",
+      "payload": {
+        "op": "+",
+        "a": 1203,
+        "b": 4998
+      },
+      "answer": 6201,
+      "explain": "1203 plus 4998 makes 6201."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "धारिता (Capacity)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 7105 and 73963.",
+      "payload": {
+        "a": 7105,
+        "b": 73963
+      },
+      "answer": "<",
+      "explain": "7105 is less than 73963."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "समय (Time)",
+      "band": "3-5",
+      "instruction": "Add it!  2186 + 2716 = ?",
+      "voice": "What is 2186 plus 2716?",
+      "payload": {
+        "op": "+",
+        "a": 2186,
+        "b": 2716
+      },
+      "answer": 4902,
+      "explain": "2186 plus 2716 makes 4902."
+    }
+  ]
+}

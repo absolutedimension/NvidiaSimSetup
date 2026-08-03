@@ -1,0 +1,156 @@
+{
+  "board": "ICSE",
+  "class": 1,
+  "subject": "EVS",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Environmental Studies), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "EVS is a STANDALONE core subject in Classes I-II per CISCE Primary Curriculum. Theme names verbatim; subtopics = official Key Concepts. Upgraded from draft to verified (official archive PDF).",
+  "chapters": [
+    {
+      "id": "about_me",
+      "name": "About Me",
+      "subtopics": [
+        "Personal details (name, parents, address, birthday)",
+        "External body parts",
+        "Sense organs and their functions",
+        "Likes, dislikes and hobbies"
+      ]
+    },
+    {
+      "id": "others_in_my_world",
+      "name": "Others in my World",
+      "subtopics": [
+        "Family members, roles and family tree",
+        "Neighbours, friends and pets",
+        "Celebrations and festivals",
+        "Games for recreation"
+      ]
+    },
+    {
+      "id": "my_needs_food_we_eat",
+      "name": "My Needs - Food We Eat",
+      "subtopics": [
+        "Food eaten daily; raw and cooked",
+        "Festival food",
+        "Food from plants and animals",
+        "Healthy eating habits"
+      ]
+    },
+    {
+      "id": "my_needs_water",
+      "name": "My Needs - Water",
+      "subtopics": [
+        "Uses and sources of water",
+        "Storage of water",
+        "Simple properties of water",
+        "Judicious use and reuse"
+      ]
+    },
+    {
+      "id": "my_needs_shelter",
+      "name": "My Needs - Shelter",
+      "subtopics": [
+        "My house and types of houses",
+        "Rooms and work done there",
+        "Need for and cleanliness of a house",
+        "Use of dustbins"
+      ]
+    },
+    {
+      "id": "my_needs_clothing",
+      "name": "My Needs - Clothing",
+      "subtopics": [
+        "Need for clothes",
+        "Clothes for seasons and occasions",
+        "School uniform",
+        "Care and cleanliness of clothes"
+      ]
+    },
+    {
+      "id": "my_needs_air",
+      "name": "My Needs - Air",
+      "subtopics": [
+        "Observable features of air",
+        "Uses of air",
+        "Need for clean air",
+        "Planting trees for fresh air"
+      ]
+    },
+    {
+      "id": "keeping_oneself_clean_safe_and_healthy",
+      "name": "Keeping Oneself Clean, Safe and Healthy",
+      "subtopics": [
+        "Personal hygiene",
+        "Cleanliness of surroundings; dustbins",
+        "Rest, exercise, yoga, games",
+        "Safety and good/bad touch"
+      ]
+    },
+    {
+      "id": "places_in_the_neighbourhood",
+      "name": "Places in the Neighbourhood",
+      "subtopics": [
+        "Market, hospital, park, bank, post office, station",
+        "People in various professions",
+        "Upkeep of public places",
+        "Behaviour in public places"
+      ]
+    },
+    {
+      "id": "plants",
+      "name": "Plants",
+      "subtopics": [
+        "Plants and trees around us",
+        "Plants on land, water, climbers",
+        "Fruits and vegetables",
+        "Edible parts of plants"
+      ]
+    },
+    {
+      "id": "animals",
+      "name": "Animals",
+      "subtopics": [
+        "Pet, wild and domestic animals",
+        "Care for pets",
+        "Common birds and habitats",
+        "Sounds of animals and birds"
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "Transport",
+      "subtopics": [
+        "Modes of transport (land, air, water)",
+        "Parts of vehicles; related occupations",
+        "Traffic police and signals",
+        "Emergency vehicles"
+      ]
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "subtopics": [
+        "Means of communication (radio, TV, newspaper)",
+        "Different ways to communicate",
+        "Use and misuse",
+        "ICT awareness (email, SMS, internet)"
+      ]
+    },
+    {
+      "id": "the_world_around_me_sun_moon_sky_and_sta",
+      "name": "The World around Me (Sun, Moon, Sky and Stars)",
+      "subtopics": [
+        "Sky in morning, afternoon, evening, night",
+        "Cloudy and sunny days",
+        "Sun across seasons",
+        "Weather in summer, winter, monsoon"
+      ]
+    }
+  ]
+}

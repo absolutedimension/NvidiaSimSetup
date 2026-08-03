@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Clock Tower",
+ "adventure": "Clock Tower",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Clock Tower. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🕐",
+   "q": "The clock shows half past 7. What time is it?",
+   "options": [
+    "7:15",
+    "8:00",
+    "7:45",
+    "7:30"
+   ],
+   "answer": 3,
+   "explain": "half past 7 is 7:30.",
+   "voice_q": "If the clock shows half past 7, what time is it?",
+   "voice_a": "It's 7:30! half past 7 is 7:30."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🕐",
+   "q": "The clock shows o'clock 2. What time is it?",
+   "options": [
+    "3:00",
+    "2:15",
+    "2:00",
+    "2:45"
+   ],
+   "answer": 2,
+   "explain": "o'clock 2 is 2:00.",
+   "voice_q": "If the clock shows o'clock 2, what time is it?",
+   "voice_a": "It's 2:00! o'clock 2 is 2:00."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🕐",
+   "q": "The clock shows half past 5. What time is it?",
+   "options": [
+    "5:45",
+    "6:00",
+    "5:30",
+    "5:15"
+   ],
+   "answer": 2,
+   "explain": "half past 5 is 5:30.",
+   "voice_q": "If the clock shows half past 5, what time is it?",
+   "voice_a": "It's 5:30! half past 5 is 5:30."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🕐",
+   "q": "The clock shows half past 11. What time is it?",
+   "options": [
+    "11:30",
+    "11:15",
+    "11:45",
+    "12:00"
+   ],
+   "answer": 0,
+   "explain": "half past 11 is 11:30.",
+   "voice_q": "If the clock shows half past 11, what time is it?",
+   "voice_a": "It's 11:30! half past 11 is 11:30."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🕐",
+   "q": "The clock shows o'clock 8. What time is it?",
+   "options": [
+    "8:00",
+    "8:15",
+    "9:00",
+    "8:45"
+   ],
+   "answer": 0,
+   "explain": "o'clock 8 is 8:00.",
+   "voice_q": "If the clock shows o'clock 8, what time is it?",
+   "voice_a": "It's 8:00! o'clock 8 is 8:00."
+  }
+ ]
+}

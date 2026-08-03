@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Fraction Falls",
+ "adventure": "Fraction Falls",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Fraction Falls. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🍕",
+   "q": "1 whole is cut into 2 equal parts. One part is…",
+   "options": [
+    "half",
+    "one-fifth",
+    "one-third",
+    "one-quarter"
+   ],
+   "answer": 0,
+   "explain": "2 equal parts, so one part is half.",
+   "voice_q": "A pizza is cut into 2 equal parts. What is one part called?",
+   "voice_a": "It's half! One of 2 equal parts is half."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍕",
+   "q": "One-quarter of 12 = ?",
+   "options": [
+    "4",
+    "3",
+    "2",
+    "9"
+   ],
+   "answer": 1,
+   "explain": "12 shared into 4 equal parts is 3.",
+   "voice_q": "What is one-quarter of 12?",
+   "voice_a": "It's 3! One-quarter of 12 is 3."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍕",
+   "q": "One-third of 6 = ?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "1"
+   ],
+   "answer": 2,
+   "explain": "6 shared into 3 equal parts is 2.",
+   "voice_q": "What is one-third of 6?",
+   "voice_a": "It's 2! One-third of 6 is 2."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍕",
+   "q": "1 whole is cut into 3 equal parts. One part is…",
+   "options": [
+    "one-third",
+    "one-quarter",
+    "one-fifth",
+    "half"
+   ],
+   "answer": 0,
+   "explain": "3 equal parts, so one part is one-third.",
+   "voice_q": "A pizza is cut into 3 equal parts. What is one part called?",
+   "voice_a": "It's one-third! One of 3 equal parts is one-third."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍕",
+   "q": "1 whole is cut into 4 equal parts. One part is…",
+   "options": [
+    "one-third",
+    "one-quarter",
+    "one-fifth",
+    "half"
+   ],
+   "answer": 1,
+   "explain": "4 equal parts, so one part is one-quarter.",
+   "voice_q": "A pizza is cut into 4 equal parts. What is one part called?",
+   "voice_a": "It's one-quarter! One of 4 equal parts is one-quarter."
+  }
+ ]
+}

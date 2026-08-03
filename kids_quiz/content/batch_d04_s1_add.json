@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Addition Adventure",
+ "adventure": "Addition Adventure",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Addition Adventure. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "265 + 62 = ?",
+   "options": [
+    "427",
+    "326",
+    "337",
+    "327"
+   ],
+   "answer": 3,
+   "explain": "265 plus 62 makes 327.",
+   "voice_q": "Add it up! 265 plus 62.",
+   "voice_a": "It's 327! 265 and 62 make 327."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "229 + 432 = ?",
+   "options": [
+    "671",
+    "660",
+    "761",
+    "661"
+   ],
+   "answer": 3,
+   "explain": "229 plus 432 makes 661.",
+   "voice_q": "Add it up! 229 plus 432.",
+   "voice_a": "It's 661! 229 and 432 make 661."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "432 + 154 = ?",
+   "options": [
+    "686",
+    "596",
+    "586",
+    "585"
+   ],
+   "answer": 2,
+   "explain": "432 plus 154 makes 586.",
+   "voice_q": "Add it up! 432 plus 154.",
+   "voice_a": "It's 586! 432 and 154 make 586."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "417 + 303 = ?",
+   "options": [
+    "720",
+    "820",
+    "719",
+    "730"
+   ],
+   "answer": 0,
+   "explain": "417 plus 303 makes 720.",
+   "voice_q": "Add it up! 417 plus 303.",
+   "voice_a": "It's 720! 417 and 303 make 720."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➕",
+   "q": "417 + 211 = ?",
+   "options": [
+    "728",
+    "628",
+    "627",
+    "638"
+   ],
+   "answer": 1,
+   "explain": "417 plus 211 makes 628.",
+   "voice_q": "Add it up! 417 plus 211.",
+   "voice_a": "It's 628! 417 and 211 make 628."
+  }
+ ]
+}

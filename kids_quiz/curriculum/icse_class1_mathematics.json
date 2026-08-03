@@ -1,0 +1,75 @@
+{
+  "board": "ICSE",
+  "class": 1,
+  "subject": "Mathematics",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Mathematics), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "CISCE primary Maths is strand-organized; strand names as chapters, key concepts as subtopics. Fetched via Web Archive snapshot of the official cisce.org PrimaryCurriculum.pdf (live link 404s).",
+  "chapters": [
+    {
+      "id": "numbers",
+      "name": "Numbers",
+      "subtopics": [
+        "Numbers and numerals 1 to 20",
+        "Introduction to zero via a subtraction pattern",
+        "Counting 1 to 99 by groups of tens and ones",
+        "Numerals/number names up to 99 and comparison",
+        "Forming two-digit numbers from given digits",
+        "Before, after and in-between numbers",
+        "Increasing/decreasing sequences up to 99"
+      ]
+    },
+    {
+      "id": "number_operations",
+      "name": "Number Operations",
+      "subtopics": [
+        "Addition and subtraction up to 20",
+        "Addition and subtraction within 99 without regrouping",
+        "Problems from pictures and verbal descriptions"
+      ]
+    },
+    {
+      "id": "geometry",
+      "name": "Geometry",
+      "subtopics": [
+        "Sorting/classifying shapes by properties",
+        "3D shapes: cuboid, cylinder, cone, sphere",
+        "2D shapes as outlines of 3D surfaces",
+        "2D shapes: rectangle, square, triangle, circle, line"
+      ]
+    },
+    {
+      "id": "measurement",
+      "name": "Measurement",
+      "subtopics": [
+        "Length: comparison and non-standard units",
+        "Weight: heavy vs light",
+        "Capacity: ordering containers",
+        "Time: earlier/later, duration, daily events"
+      ]
+    },
+    {
+      "id": "data_handling",
+      "name": "Data Handling",
+      "subtopics": [
+        "Collecting and representing simple information",
+        "Reading visuals from actual measurement"
+      ]
+    },
+    {
+      "id": "patterns",
+      "name": "Patterns",
+      "subtopics": [
+        "Simple patterns in shapes and numbers",
+        "Observing and extending patterns",
+        "Patterns from daily life"
+      ]
+    }
+  ]
+}

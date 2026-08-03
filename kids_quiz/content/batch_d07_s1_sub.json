@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Subtraction Cave",
+ "adventure": "Subtraction Cave",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Subtraction Cave. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "805 − 296 = ?",
+   "options": [
+    "509",
+    "508",
+    "510",
+    "519"
+   ],
+   "answer": 0,
+   "explain": "805 take away 296 leaves 509.",
+   "voice_q": "Take it away! 805 minus 296.",
+   "voice_a": "It's 509! 805 take away 296 leaves 509."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "551 − 115 = ?",
+   "options": [
+    "446",
+    "436",
+    "437",
+    "435"
+   ],
+   "answer": 1,
+   "explain": "551 take away 115 leaves 436.",
+   "voice_q": "Take it away! 551 minus 115.",
+   "voice_a": "It's 436! 551 take away 115 leaves 436."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "153 − 71 = ?",
+   "options": [
+    "92",
+    "83",
+    "81",
+    "82"
+   ],
+   "answer": 3,
+   "explain": "153 take away 71 leaves 82.",
+   "voice_q": "Take it away! 153 minus 71.",
+   "voice_a": "It's 82! 153 take away 71 leaves 82."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "586 − 238 = ?",
+   "options": [
+    "348",
+    "349",
+    "358",
+    "347"
+   ],
+   "answer": 0,
+   "explain": "586 take away 238 leaves 348.",
+   "voice_q": "Take it away! 586 minus 238.",
+   "voice_a": "It's 348! 586 take away 238 leaves 348."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "521 − 285 = ?",
+   "options": [
+    "235",
+    "246",
+    "236",
+    "237"
+   ],
+   "answer": 2,
+   "explain": "521 take away 285 leaves 236.",
+   "voice_q": "Take it away! 521 minus 285.",
+   "voice_a": "It's 236! 521 take away 285 leaves 236."
+  }
+ ]
+}

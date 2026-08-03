@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Subtraction Cave",
+ "adventure": "Subtraction Cave",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Subtraction Cave. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "471 − 64 = ?",
+   "options": [
+    "417",
+    "407",
+    "406",
+    "408"
+   ],
+   "answer": 1,
+   "explain": "471 take away 64 leaves 407.",
+   "voice_q": "Take it away! 471 minus 64.",
+   "voice_a": "It's 407! 471 take away 64 leaves 407."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "776 − 637 = ?",
+   "options": [
+    "140",
+    "149",
+    "138",
+    "139"
+   ],
+   "answer": 3,
+   "explain": "776 take away 637 leaves 139.",
+   "voice_q": "Take it away! 776 minus 637.",
+   "voice_a": "It's 139! 776 take away 637 leaves 139."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "592 − 531 = ?",
+   "options": [
+    "60",
+    "71",
+    "62",
+    "61"
+   ],
+   "answer": 3,
+   "explain": "592 take away 531 leaves 61.",
+   "voice_q": "Take it away! 592 minus 531.",
+   "voice_a": "It's 61! 592 take away 531 leaves 61."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "692 − 202 = ?",
+   "options": [
+    "490",
+    "491",
+    "500",
+    "489"
+   ],
+   "answer": 0,
+   "explain": "692 take away 202 leaves 490.",
+   "voice_q": "Take it away! 692 minus 202.",
+   "voice_a": "It's 490! 692 take away 202 leaves 490."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "831 − 803 = ?",
+   "options": [
+    "38",
+    "27",
+    "28",
+    "29"
+   ],
+   "answer": 2,
+   "explain": "831 take away 803 leaves 28.",
+   "voice_q": "Take it away! 831 minus 803.",
+   "voice_a": "It's 28! 831 take away 803 leaves 28."
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+  "board": "Bihar Board",
+  "class": 3,
+  "subject": "Mathematics",
+  "source": {
+    "name": "SCERT Bihar (BSEB) Class 3 गणित (via selfstudys mirror; bepclots TLS-blocked)",
+    "url": "https://www.selfstudys.com/books/bihar/state-books/class-3/ganit/17855",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "medium",
+  "verified": false,
+  "status": "draft",
+  "notes": "Bihar's own SCERT/BSEB Class 3 'गणित' (NOT NCERT 'गणित का जादू'). Names from selfstudys mirror; medium confidence.",
+  "chapters": [
+    {
+      "id": "geometry",
+      "name": "ज्यामिति (Geometry)",
+      "subtopics": [
+        "points and lines",
+        "open/closed figures",
+        "corners and sides"
+      ]
+    },
+    {
+      "id": "numbers",
+      "name": "संख्याएँ (Numbers)",
+      "subtopics": [
+        "three-digit numbers",
+        "place value",
+        "comparing and ordering"
+      ]
+    },
+    {
+      "id": "multiplication",
+      "name": "गुणा (Multiplication)",
+      "subtopics": [
+        "tables",
+        "repeated addition",
+        "word problems"
+      ]
+    },
+    {
+      "id": "division",
+      "name": "भाग (Division)",
+      "subtopics": [
+        "equal sharing",
+        "relation to multiplication"
+      ]
+    },
+    {
+      "id": "fractions",
+      "name": "भिन्न-संख्याएँ (Fractions)",
+      "subtopics": [
+        "half and quarter",
+        "parts of a whole"
+      ]
+    },
+    {
+      "id": "money",
+      "name": "मुद्रा (Money)",
+      "subtopics": [
+        "coins and notes",
+        "simple money problems"
+      ]
+    },
+    {
+      "id": "length",
+      "name": "लम्बाई (Length)",
+      "subtopics": [
+        "metre and centimetre",
+        "measuring objects"
+      ]
+    },
+    {
+      "id": "weight",
+      "name": "भार (Weight)",
+      "subtopics": [
+        "kilogram and gram",
+        "using a balance"
+      ]
+    },
+    {
+      "id": "capacity",
+      "name": "धारिता (Capacity)",
+      "subtopics": [
+        "litre measure",
+        "measuring liquids"
+      ]
+    },
+    {
+      "id": "time",
+      "name": "समय (Time)",
+      "subtopics": [
+        "reading the clock",
+        "days, weeks, months"
+      ]
+    },
+    {
+      "id": "pattern",
+      "name": "पैटर्न (Pattern)",
+      "subtopics": [
+        "number/shape patterns",
+        "extending sequences"
+      ]
+    },
+    {
+      "id": "data",
+      "name": "आँकड़ों का चित्रात्मक निरूपण (Data)",
+      "subtopics": [
+        "pictographs",
+        "tally and count"
+      ]
+    }
+  ]
+}

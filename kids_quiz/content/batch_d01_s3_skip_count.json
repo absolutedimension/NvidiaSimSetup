@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Skip-Count Trail",
+ "adventure": "Skip-Count Trail",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Skip-Count Trail. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🐾",
+   "q": "Count in 5s:  30, 35, 40, ?",
+   "options": [
+    "46",
+    "50",
+    "40",
+    "45"
+   ],
+   "answer": 3,
+   "explain": "Keep adding 5. Next is 45.",
+   "voice_q": "Counting in 5s: 30, 35, 40. What comes next?",
+   "voice_a": "It's 45! We keep adding 5."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🐾",
+   "q": "Count in 3s:  18, 21, 24, ?",
+   "options": [
+    "24",
+    "30",
+    "27",
+    "28"
+   ],
+   "answer": 2,
+   "explain": "Keep adding 3. Next is 27.",
+   "voice_q": "Counting in 3s: 18, 21, 24. What comes next?",
+   "voice_a": "It's 27! We keep adding 3."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🐾",
+   "q": "Count in 2s:  10, 12, 14, ?",
+   "options": [
+    "14",
+    "16",
+    "17",
+    "18"
+   ],
+   "answer": 1,
+   "explain": "Keep adding 2. Next is 16.",
+   "voice_q": "Counting in 2s: 10, 12, 14. What comes next?",
+   "voice_a": "It's 16! We keep adding 2."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🐾",
+   "q": "Count in 2s:  12, 14, 16, ?",
+   "options": [
+    "16",
+    "20",
+    "18",
+    "19"
+   ],
+   "answer": 2,
+   "explain": "Keep adding 2. Next is 18.",
+   "voice_q": "Counting in 2s: 12, 14, 16. What comes next?",
+   "voice_a": "It's 18! We keep adding 2."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🐾",
+   "q": "Count in 5s:  20, 25, 30, ?",
+   "options": [
+    "40",
+    "30",
+    "35",
+    "36"
+   ],
+   "answer": 2,
+   "explain": "Keep adding 5. Next is 35.",
+   "voice_q": "Counting in 5s: 20, 25, 30. What comes next?",
+   "voice_a": "It's 35! We keep adding 5."
+  }
+ ]
+}

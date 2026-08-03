@@ -1,0 +1,17 @@
+/* conceptviz.css — concept-animation styles (portable copy of the .viz-* rules from
+ * kids_quiz_live.html). Keep in sync with that template. */
+.vizwrap{max-width:440px;margin:12px auto;background:#ffffffcc;border-radius:22px;padding:12px 12px 14px;box-shadow:0 8px 20px #0001;text-align:center;min-height:120px}
+.viz-cap{font-weight:800;color:#3a71c9;font-size:14px;margin-bottom:10px;font-family:"Baloo 2",system-ui,sans-serif}
+.viz-row{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;min-height:58px}
+.vcell{min-width:46px;height:56px;padding:0 8px;border-radius:12px;background:linear-gradient(#fff,#eaf2ff);border:3px solid #3aa0ff;display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:800;color:#26406b;box-shadow:0 4px 0 #b9d4f0;transition:transform .4s,border-color .4s,box-shadow .4s,opacity .4s,background .4s;font-family:"Baloo 2",system-ui,sans-serif}
+.vcell.op{border:none;box-shadow:none;background:none;color:#3a71c9;font-size:26px;min-width:0;padding:0 2px}
+.vcell.dim{opacity:.35}
+.vcell.hit{border-color:#ffab1a;background:linear-gradient(#fff,#fff2d6);box-shadow:0 4px 0 #e0921a;transform:scale(1.12)}
+.vcell.ans{border-color:#4ac87a;background:#e4f7ea;box-shadow:0 4px 0 #2fa968;color:#22b07d}
+.viz-stage{position:relative;height:58px;margin:0 auto}
+.vtile{position:absolute;top:0;width:50px;height:56px;border-radius:12px;background:linear-gradient(#fff,#eaf2ff);border:3px solid #3aa0ff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:#26406b;box-shadow:0 5px 0 #b9d4f0;transition:transform .7s cubic-bezier(.3,1.2,.4,1),border-color .3s,box-shadow .3s;font-family:"Baloo 2",system-ui,sans-serif}
+.vtile.lead{border-color:#ffab1a;box-shadow:0 5px 0 #e0921a;background:linear-gradient(#fff,#fff2d6)}
+.viz-result{margin-top:11px;font-size:23px;font-weight:800;color:#22b07d;opacity:0;transform:scale(.6);transition:.4s .1s;font-family:"Baloo 2",system-ui,sans-serif}
+.viz-result.show{opacity:1;transform:scale(1)}
+.viz-result .n{background:#e4f7ea;border-radius:12px;padding:3px 12px;border:3px solid #4ac87a}
+.vizwrap.hidden{display:none!important}

@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Subtraction Cave",
+ "adventure": "Subtraction Cave",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Subtraction Cave. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "789 − 462 = ?",
+   "options": [
+    "337",
+    "326",
+    "327",
+    "328"
+   ],
+   "answer": 2,
+   "explain": "789 take away 462 leaves 327.",
+   "voice_q": "Take it away! 789 minus 462.",
+   "voice_a": "It's 327! 789 take away 462 leaves 327."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "84 − 30 = ?",
+   "options": [
+    "55",
+    "53",
+    "64",
+    "54"
+   ],
+   "answer": 3,
+   "explain": "84 take away 30 leaves 54.",
+   "voice_q": "Take it away! 84 minus 30.",
+   "voice_a": "It's 54! 84 take away 30 leaves 54."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "549 − 444 = ?",
+   "options": [
+    "115",
+    "104",
+    "105",
+    "106"
+   ],
+   "answer": 2,
+   "explain": "549 take away 444 leaves 105.",
+   "voice_q": "Take it away! 549 minus 444.",
+   "voice_a": "It's 105! 549 take away 444 leaves 105."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "861 − 593 = ?",
+   "options": [
+    "267",
+    "269",
+    "278",
+    "268"
+   ],
+   "answer": 3,
+   "explain": "861 take away 593 leaves 268.",
+   "voice_q": "Take it away! 861 minus 593.",
+   "voice_a": "It's 268! 861 take away 593 leaves 268."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "214 − 81 = ?",
+   "options": [
+    "133",
+    "134",
+    "132",
+    "143"
+   ],
+   "answer": 0,
+   "explain": "214 take away 81 leaves 133.",
+   "voice_q": "Take it away! 214 minus 81.",
+   "voice_a": "It's 133! 214 take away 81 leaves 133."
+  }
+ ]
+}

@@ -1,0 +1,135 @@
+{
+  "board": "Bihar Board",
+  "class": 3,
+  "subject": "English",
+  "source": {
+    "name": "Bihar SCERT/BSTBPC Class 3 English — Blossom (cross-confirmed via solution sites)",
+    "url": "https://www.dailyassam.com/2024/12/bseb-class-3-english-books-solution.html",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "medium",
+  "verified": false,
+  "status": "draft",
+  "notes": "Book = Blossom. 17 lessons; titles consistent across solution sites. Medium confidence (not from official PDF).",
+  "chapters": [
+    {
+      "id": "this_is_the_way",
+      "name": "This is the Way",
+      "subtopics": [
+        "poem"
+      ]
+    },
+    {
+      "id": "murli_s_mango_tree",
+      "name": "Murli's Mango Tree",
+      "subtopics": [
+        "story"
+      ]
+    },
+    {
+      "id": "one_little_kitten",
+      "name": "One Little Kitten",
+      "subtopics": [
+        "poem"
+      ]
+    },
+    {
+      "id": "who_s_afraid_of_the_cat",
+      "name": "Who's Afraid of the Cat?",
+      "subtopics": [
+        "story"
+      ]
+    },
+    {
+      "id": "the_old_rabbit",
+      "name": "The Old Rabbit",
+      "subtopics": [
+        "story"
+      ]
+    },
+    {
+      "id": "upside_down",
+      "name": "Upside Down",
+      "subtopics": [
+        "poem"
+      ]
+    },
+    {
+      "id": "the_tiger_and_the_mosquito",
+      "name": "The Tiger and the Mosquito",
+      "subtopics": [
+        "fable"
+      ]
+    },
+    {
+      "id": "kith_kith",
+      "name": "Kith-Kith",
+      "subtopics": [
+        "game/rhyme"
+      ]
+    },
+    {
+      "id": "cats",
+      "name": "Cats",
+      "subtopics": [
+        "poem"
+      ]
+    },
+    {
+      "id": "i_can_dance",
+      "name": "I Can Dance",
+      "subtopics": [
+        "poem"
+      ]
+    },
+    {
+      "id": "unity_is_strength",
+      "name": "Unity is Strength",
+      "subtopics": [
+        "story"
+      ]
+    },
+    {
+      "id": "a_picnic",
+      "name": "A Picnic",
+      "subtopics": [
+        "story"
+      ]
+    },
+    {
+      "id": "mice",
+      "name": "Mice",
+      "subtopics": [
+        "poem"
+      ]
+    },
+    {
+      "id": "now_the_road_will_be_fine",
+      "name": "Now the Road Will Be Fine",
+      "subtopics": [
+        "story"
+      ]
+    },
+    {
+      "id": "the_phone_call",
+      "name": "The Phone Call",
+      "subtopics": [
+        "dialogue"
+      ]
+    },
+    {
+      "id": "munia_goes_to_school",
+      "name": "Munia Goes to School",
+      "subtopics": [
+        "story"
+      ]
+    },
+    {
+      "id": "gonu_and_bhonu",
+      "name": "Gonu and Bhonu",
+      "subtopics": [
+        "story"
+      ]
+    }
+  ]
+}

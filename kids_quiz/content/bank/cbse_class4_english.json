@@ -1,0 +1,960 @@
+{
+  "board": "CBSE",
+  "class": 4,
+  "subject": "English",
+  "count": 30,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the items to their uses.",
+      "payload": {
+        "pairs": [
+          [
+            "Bells",
+            "Make sound"
+          ],
+          [
+            "Roads",
+            "Help us travel"
+          ],
+          [
+            "Trees",
+            "Give shade"
+          ],
+          [
+            "Water",
+            "Keeps us alive"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 1: My Land",
+      "band": 1,
+      "voice": "Match the items to their uses.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Sun",
+          "Moon",
+          "Star",
+          "Car"
+        ]
+      },
+      "answer": "Car",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 1: My Land",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The Tinkling Bells are used in temples.",
+      "payload": {
+        "statement": "The Tinkling Bells are used in temples."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 1: My Land",
+      "band": 2,
+      "voice": "The Tinkling Bells are used in temples.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We should ____ our hands before eating.",
+        "bank": [
+          "wash",
+          "dance",
+          "jump"
+        ]
+      },
+      "answer": "wash",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 1: My Land",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Cat",
+          "Tree",
+          "Fish",
+          "Rock"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Cat": "Living",
+        "Tree": "Living",
+        "Fish": "Living",
+        "Rock": "Non-living"
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 1: My Land",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the action to the safety rule.",
+      "payload": {
+        "pairs": [
+          [
+            "Look both ways",
+            "Before crossing the road"
+          ],
+          [
+            "Wear a helmet",
+            "When riding a bike"
+          ],
+          [
+            "Hold hands",
+            "When walking in a crowd"
+          ],
+          [
+            "Stay close",
+            "To your parents"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 1: My Land",
+      "band": 1,
+      "voice": "Match the action to the safety rule.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "School",
+          "Park",
+          "Library",
+          "Car"
+        ]
+      },
+      "answer": "Car",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 1: My Land",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "We should always help our friends.",
+      "payload": {
+        "statement": "We should always help our friends."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 1: My Land",
+      "band": 2,
+      "voice": "We should always help our friends.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Trees give us ____ to breathe.",
+        "bank": [
+          "water",
+          "air",
+          "food"
+        ]
+      },
+      "answer": "air",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 1: My Land",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Bike",
+          "Bus",
+          "Train",
+          "Apple"
+        ],
+        "bins": [
+          "Transport",
+          "Food"
+        ]
+      },
+      "answer": {
+        "Bike": "Transport",
+        "Bus": "Transport",
+        "Train": "Transport",
+        "Apple": "Food"
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 1: My Land",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal to its sound.",
+      "payload": {
+        "pairs": [
+          [
+            "Dog",
+            "Bark"
+          ],
+          [
+            "Cat",
+            "Meow"
+          ],
+          [
+            "Cow",
+            "Moo"
+          ],
+          [
+            "Duck",
+            "Quack"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 2: My Beautiful World",
+      "band": 1,
+      "voice": "Match the animal to its sound.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Rose",
+          "Daisy",
+          "Tulip",
+          "Car"
+        ]
+      },
+      "answer": "Car",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 2: My Beautiful World",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The Old Stag is a story about a brave lion.",
+      "payload": {
+        "statement": "The Old Stag is a story about a brave lion."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 2: My Beautiful World",
+      "band": 2,
+      "voice": "The Old Stag is a story about a brave lion.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Braille helps blind people read with their ___.",
+        "bank": [
+          "fingers",
+          "eyes",
+          "ears"
+        ]
+      },
+      "answer": "fingers",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 2: My Beautiful World",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Pine Tree",
+          "Rock",
+          "Flower",
+          "Bird"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Pine Tree": "Living",
+        "Rock": "Non-living",
+        "Flower": "Living",
+        "Bird": "Living"
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 2: My Beautiful World",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the word to its meaning.",
+      "payload": {
+        "pairs": [
+          [
+            "Braille",
+            "A way to read for blind people"
+          ],
+          [
+            "Stag",
+            "A male deer"
+          ],
+          [
+            "Forest",
+            "A place with many trees"
+          ],
+          [
+            "River",
+            "A flowing body of water"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 2: My Beautiful World",
+      "band": 1,
+      "voice": "Match the word to its meaning.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Sun",
+          "Moon",
+          "Star",
+          "Tree"
+        ]
+      },
+      "answer": "Tree",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 2: My Beautiful World",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The story 'One Thing at a Time' teaches us to do many things at once.",
+      "payload": {
+        "statement": "The story 'One Thing at a Time' teaches us to do many things at once."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 2: My Beautiful World",
+      "band": 2,
+      "voice": "The story 'One Thing at a Time' teaches us to do many things at once.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ stag was wise and old.",
+        "bank": [
+          "young",
+          "old",
+          "small"
+        ]
+      },
+      "answer": "old",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 2: My Beautiful World",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Apple",
+          "Chair",
+          "Banana",
+          "Table"
+        ],
+        "bins": [
+          "Food",
+          "Furniture"
+        ]
+      },
+      "answer": {
+        "Apple": "Food",
+        "Chair": "Furniture",
+        "Banana": "Food",
+        "Table": "Furniture"
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 2: My Beautiful World",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Playing games helps keep our ___ fit.",
+        "bank": [
+          "body",
+          "car",
+          "house"
+        ]
+      },
+      "answer": "body",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 3: Fun with Games",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Games can help us think better.",
+      "payload": {
+        "statement": "Games can help us think better."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 3: Fun with Games",
+      "band": 2,
+      "voice": "Games can help us think better.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Soccer",
+          "Lagori",
+          "Hekko",
+          "Pencil"
+        ]
+      },
+      "answer": "Pencil",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 3: Fun with Games",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A fit mind helps us learn and ___ better.",
+        "bank": [
+          "play",
+          "eat",
+          "sleep"
+        ]
+      },
+      "answer": "play",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 3: Fun with Games",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Hekko",
+          "Football",
+          "Reading"
+        ],
+        "bins": [
+          "Games",
+          "Not Games"
+        ]
+      },
+      "answer": {
+        "Hekko": "Games",
+        "Football": "Games",
+        "Reading": "Not Games"
+      },
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 3: Fun with Games",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Lagori is played with a ball.",
+      "payload": {
+        "statement": "Lagori is played with a ball."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 3: Fun with Games",
+      "band": 2,
+      "voice": "Lagori is played with a ball.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A fit nation means everyone is ___ and happy.",
+        "bank": [
+          "sick",
+          "fit",
+          "tired"
+        ]
+      },
+      "answer": "fit",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 3: Fun with Games",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Yoga",
+          "Hekko",
+          "Jumping",
+          "Reading"
+        ]
+      },
+      "answer": "Reading",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 3: Fun with Games",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Running",
+          "Swimming",
+          "Eating",
+          "Cycling"
+        ]
+      },
+      "answer": "Eating",
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 3: Fun with Games",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Playing games helps keep our body fit.",
+      "payload": {
+        "statement": "Playing games helps keep our body fit."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 4,
+      "chapter": "Unit 3: Fun with Games",
+      "band": 2,
+      "voice": "Playing games helps keep our body fit.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

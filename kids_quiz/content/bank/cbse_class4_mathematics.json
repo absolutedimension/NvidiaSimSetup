@@ -1,0 +1,204 @@
+{
+  "board": "CBSE",
+  "class": 4,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Shapes Around Us",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 20772 and 52750.",
+      "payload": {
+        "a": 20772,
+        "b": 52750
+      },
+      "answer": "<",
+      "explain": "20772 is less than 52750."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Hide and Seek",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 7
+      },
+      "answer": 7,
+      "explain": "There are 7 apples!"
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Pattern Around Us",
+      "band": "3-5",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 10.",
+      "payload": {
+        "seq": [
+          50,
+          null,
+          70,
+          80
+        ],
+        "step": 10
+      },
+      "answer": [
+        60
+      ],
+      "explain": "Counting by 10s → 60."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Thousands Around Us",
+      "band": "3-5",
+      "instruction": "Count the stars and write how many!",
+      "voice": "Count the stars.",
+      "payload": {
+        "asset": "star",
+        "emoji": "⭐",
+        "n": 6
+      },
+      "answer": 6,
+      "explain": "There are 6 stars!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Sharing and Measuring",
+      "band": "3-5",
+      "instruction": "Add it!  2776 + 2712 = ?",
+      "voice": "What is 2776 plus 2712?",
+      "payload": {
+        "op": "+",
+        "a": 2776,
+        "b": 2712
+      },
+      "answer": 5488,
+      "explain": "2776 plus 2712 makes 5488."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Measuring Length",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 32544 and 12889.",
+      "payload": {
+        "a": 32544,
+        "b": 12889
+      },
+      "answer": ">",
+      "explain": "32544 is greater than 12889."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "The Cleanest Village",
+      "band": "3-5",
+      "instruction": "Count the balloons and write how many!",
+      "voice": "Count the balloons.",
+      "payload": {
+        "asset": "balloon",
+        "emoji": "🎈",
+        "n": 6
+      },
+      "answer": 6,
+      "explain": "There are 6 balloons!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Weigh it, Pour it",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 12
+      },
+      "answer": 12,
+      "explain": "There are 12 apples!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Equal Groups",
+      "band": "3-5",
+      "instruction": "Count the bananas and write how many!",
+      "voice": "Count the bananas.",
+      "payload": {
+        "asset": "banana",
+        "emoji": "🍌",
+        "n": 6
+      },
+      "answer": 6,
+      "explain": "There are 6 bananas!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Elephants, Tigers, and Leopards",
+      "band": "3-5",
+      "instruction": "Count the cookies and write how many!",
+      "voice": "Count the cookies.",
+      "payload": {
+        "asset": "cookie",
+        "emoji": "🍪",
+        "n": 17
+      },
+      "answer": 17,
+      "explain": "There are 17 cookies!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Fun with Symmetry",
+      "band": "3-5",
+      "instruction": "Add it!  4998 + 1905 = ?",
+      "voice": "What is 4998 plus 1905?",
+      "payload": {
+        "op": "+",
+        "a": 4998,
+        "b": 1905
+      },
+      "answer": 6903,
+      "explain": "4998 plus 1905 makes 6903."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Ticking Clocks and Turning Calendar",
+      "band": "3-5",
+      "instruction": "Add it!  3280 + 4516 = ?",
+      "voice": "What is 3280 plus 4516?",
+      "payload": {
+        "op": "+",
+        "a": 3280,
+        "b": 4516
+      },
+      "answer": 7796,
+      "explain": "3280 plus 4516 makes 7796."
+    }
+  ]
+}

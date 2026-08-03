@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Roman Ruins",
+ "adventure": "Roman Ruins",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Roman Ruins. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🏛️",
+   "q": "What is 10 in Roman numerals?",
+   "options": [
+    "XII",
+    "XIII",
+    "X",
+    "VIII"
+   ],
+   "answer": 2,
+   "explain": "10 is written X.",
+   "voice_q": "How do we write 10 in Roman numerals?",
+   "voice_a": "It's X! 10 in Roman numerals is X."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🏛️",
+   "q": "What is 11 in Roman numerals?",
+   "options": [
+    "XI",
+    "XIII",
+    "XVIII",
+    "VI"
+   ],
+   "answer": 0,
+   "explain": "11 is written XI.",
+   "voice_q": "How do we write 11 in Roman numerals?",
+   "voice_a": "It's XI! 11 in Roman numerals is XI."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🏛️",
+   "q": "What is 11 in Roman numerals?",
+   "options": [
+    "XVI",
+    "XI",
+    "XIX",
+    "XIII"
+   ],
+   "answer": 1,
+   "explain": "11 is written XI.",
+   "voice_q": "How do we write 11 in Roman numerals?",
+   "voice_a": "It's XI! 11 in Roman numerals is XI."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🏛️",
+   "q": "What is 1 in Roman numerals?",
+   "options": [
+    "II",
+    "I",
+    "XIII",
+    "XVI"
+   ],
+   "answer": 1,
+   "explain": "1 is written I.",
+   "voice_q": "How do we write 1 in Roman numerals?",
+   "voice_a": "It's I! 1 in Roman numerals is I."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🏛️",
+   "q": "What is 12 in Roman numerals?",
+   "options": [
+    "XII",
+    "V",
+    "VII",
+    "XVI"
+   ],
+   "answer": 0,
+   "explain": "12 is written XII.",
+   "voice_q": "How do we write 12 in Roman numerals?",
+   "voice_a": "It's XII! 12 in Roman numerals is XII."
+  }
+ ]
+}

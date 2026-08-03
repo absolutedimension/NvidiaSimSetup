@@ -1,0 +1,641 @@
+{
+  "board": "ICSE",
+  "class": 4,
+  "subject": "EVS",
+  "count": 20,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the type of tooth to its function.",
+      "payload": {
+        "pairs": [
+          [
+            "Incisors",
+            "Cutting food"
+          ],
+          [
+            "Canines",
+            "Tearing food"
+          ],
+          [
+            "Molars",
+            "Grinding food"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: The Teeth",
+      "band": 1,
+      "voice": "Match the type of tooth to its function.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We have ___ types of teeth: incisors, canines, and molars.",
+        "bank": [
+          "two",
+          "three",
+          "four"
+        ]
+      },
+      "answer": "three",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: The Teeth",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Molars are used for grinding food.",
+      "payload": {
+        "statement": "Molars are used for grinding food."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: The Teeth",
+      "band": 2,
+      "voice": "Molars are used for grinding food.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort the teeth by their location.",
+      "payload": {
+        "items": [
+          "Canines",
+          "Molars",
+          "Incisors"
+        ],
+        "bins": [
+          "Front",
+          "Back"
+        ]
+      },
+      "answer": {
+        "Canines": "Front",
+        "Molars": "Back",
+        "Incisors": "Front"
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: The Teeth",
+      "band": 1,
+      "voice": "Sort the teeth by their location.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Cavity",
+          "Toothbrush",
+          "Sugar",
+          "Plaque"
+        ]
+      },
+      "answer": "Toothbrush",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: The Teeth",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Brushing teeth helps keep them clean.",
+      "payload": {
+        "statement": "Brushing teeth helps keep them clean."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: The Teeth",
+      "band": 2,
+      "voice": "Brushing teeth helps keep them clean.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Too much ___ can cause cavities.",
+        "bank": [
+          "sugar",
+          "water",
+          "salt"
+        ]
+      },
+      "answer": "sugar",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: The Teeth",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the part of the tooth to its name.",
+      "payload": {
+        "pairs": [
+          [
+            "Crown",
+            "Top part of the tooth"
+          ],
+          [
+            "Root",
+            "Part below the gum"
+          ],
+          [
+            "Enamel",
+            "Hard outer layer"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: The Teeth",
+      "band": 1,
+      "voice": "Match the part of the tooth to its name.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Eating healthy foods can help keep teeth strong.",
+      "payload": {
+        "statement": "Eating healthy foods can help keep teeth strong."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: The Teeth",
+      "band": 2,
+      "voice": "Eating healthy foods can help keep teeth strong.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort these items related to teeth care.",
+      "payload": {
+        "items": [
+          "Floss",
+          "Candy",
+          "Toothpaste",
+          "Cookies"
+        ],
+        "bins": [
+          "Good for teeth",
+          "Bad for teeth"
+        ]
+      },
+      "answer": {
+        "Floss": "Good for teeth",
+        "Candy": "Bad for teeth",
+        "Toothpaste": "Good for teeth",
+        "Cookies": "Bad for teeth"
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: The Teeth",
+      "band": 1,
+      "voice": "Sort these items related to teeth care.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the digestive organs to their functions.",
+      "payload": {
+        "pairs": [
+          [
+            "Mouth",
+            "Chews food"
+          ],
+          [
+            "Stomach",
+            "Digests food"
+          ],
+          [
+            "Small intestine",
+            "Absorbs nutrients"
+          ],
+          [
+            "Large intestine",
+            "Removes waste"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: Digestive & Excretory Systems",
+      "band": 1,
+      "voice": "Match the digestive organs to their functions.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Mouth",
+          "Heart",
+          "Stomach",
+          "Esophagus"
+        ]
+      },
+      "answer": "Heart",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: Digestive & Excretory Systems",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The stomach helps to digest food.",
+      "payload": {
+        "statement": "The stomach helps to digest food."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: Digestive & Excretory Systems",
+      "band": 2,
+      "voice": "The stomach helps to digest food.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Food is chewed in the ___.",
+        "bank": [
+          "mouth",
+          "stomach",
+          "intestine"
+        ]
+      },
+      "answer": "mouth",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: Digestive & Excretory Systems",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort the organs into digestive and excretory.",
+      "payload": {
+        "items": [
+          "Kidneys",
+          "Mouth",
+          "Liver",
+          "Bladder",
+          "Stomach"
+        ],
+        "bins": [
+          "Digestive",
+          "Excretory"
+        ]
+      },
+      "answer": {
+        "Kidneys": "Excretory",
+        "Mouth": "Digestive",
+        "Liver": "Digestive",
+        "Bladder": "Excretory",
+        "Stomach": "Digestive"
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: Digestive & Excretory Systems",
+      "band": 1,
+      "voice": "Sort the organs into digestive and excretory.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The large intestine absorbs water from food.",
+      "payload": {
+        "statement": "The large intestine absorbs water from food."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: Digestive & Excretory Systems",
+      "band": 2,
+      "voice": "The large intestine absorbs water from food.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ helps to get rid of waste from the body.",
+        "bank": [
+          "heart",
+          "lungs",
+          "kidneys"
+        ]
+      },
+      "answer": "kidneys",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: Digestive & Excretory Systems",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Saliva",
+          "Urine",
+          "Food",
+          "Feces"
+        ]
+      },
+      "answer": "Food",
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: Digestive & Excretory Systems",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the healthy habits to their benefits.",
+      "payload": {
+        "pairs": [
+          [
+            "Eating fruits",
+            "Keeps you healthy"
+          ],
+          [
+            "Drinking water",
+            "Hydrates the body"
+          ],
+          [
+            "Exercising",
+            "Strengthens muscles"
+          ],
+          [
+            "Brushing teeth",
+            "Keeps teeth clean"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: Digestive & Excretory Systems",
+      "band": 1,
+      "voice": "Match the healthy habits to their benefits.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Bowel movements help to remove waste from the body.",
+      "payload": {
+        "statement": "Bowel movements help to remove waste from the body."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 4,
+      "chapter": "Human Body: Digestive & Excretory Systems",
+      "band": 2,
+      "voice": "Bowel movements help to remove waste from the body.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "subject": "Mathematics",
+  "grade": 3,
+  "count": 12,
+  "items": [
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "chapter": "grade3",
+      "band": "1-2",
+      "instruction": "Count the bananas and write the number!",
+      "voice": "Count the bananas and write how many.",
+      "payload": {
+        "asset": "banana",
+        "emoji": "🍌",
+        "n": 4
+      },
+      "answer": 4,
+      "explain": "Yes — there are 4 bananas!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "chapter": "operations",
+      "band": "3-5",
+      "instruction": "Solve it!  113 + 480 = ?",
+      "voice": "What is 113 plus 480?",
+      "payload": {
+        "op": "+",
+        "a": 113,
+        "b": 480
+      },
+      "answer": 593,
+      "explain": "113 plus 480 makes 593."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "chapter": "operations",
+      "band": "3-5",
+      "instruction": "Solve it!  481 - 175 = ?",
+      "voice": "What is 481 minus 175?",
+      "payload": {
+        "op": "-",
+        "a": 481,
+        "b": 175
+      },
+      "answer": 306,
+      "explain": "481 minus 175 makes 306."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "chapter": "operations",
+      "band": "3-5",
+      "instruction": "Solve it!  5 × 4 = ?",
+      "voice": "What is 5 times 4?",
+      "payload": {
+        "op": "×",
+        "a": 5,
+        "b": 4
+      },
+      "answer": 20,
+      "explain": "5 times 4 makes 20."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "chapter": "patterns",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 2. What number is missing?",
+      "payload": {
+        "seq": [
+          4,
+          6,
+          null,
+          10
+        ],
+        "step": 2
+      },
+      "answer": [
+        8
+      ],
+      "explain": "Counting by 2s, the missing number is 8."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "chapter": "numbers",
+      "band": "3-5",
+      "instruction": "Which is bigger? Put the right sign! 🐊",
+      "voice": "Compare 530 and 498.",
+      "payload": {
+        "a": 530,
+        "b": 498
+      },
+      "answer": ">",
+      "explain": "530 is greater than 498."
+    },
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "chapter": "numbers",
+      "band": "1-2",
+      "instruction": "What comes just after 323? ➡️",
+      "voice": "What number comes just after 323?",
+      "payload": {
+        "mode": "after",
+        "n": 323,
+        "display": "___ , 323"
+      },
+      "answer": 324,
+      "explain": "Just after 323 is 324."
+    },
+    {
+      "type": "pattern_next",
+      "subject": "mathematics",
+      "chapter": "patterns",
+      "band": "1-2",
+      "instruction": "What comes next? 🔁",
+      "voice": "What comes next in the pattern?",
+      "payload": {
+        "seq": [
+          "⬛",
+          "⬜",
+          "⬛",
+          "⬜"
+        ],
+        "options": [
+          "⬛",
+          "⬜"
+        ]
+      },
+      "answer": "⬛",
+      "explain": "Follow the repeating pattern!"
+    },
+    {
+      "type": "count_money",
+      "subject": "mathematics",
+      "chapter": "money",
+      "band": "3-5",
+      "instruction": "How much money is it? 🪙",
+      "voice": "Add up the coins.",
+      "payload": {
+        "coins": [
+          10,
+          5,
+          2
+        ],
+        "display": "₹10 + ₹5 + ₹2"
+      },
+      "answer": 17,
+      "explain": "All the coins make ₹17."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "chapter": "grade3",
+      "band": "1-2",
+      "instruction": "Count the cookies and write the number!",
+      "voice": "Count the cookies and write how many.",
+      "payload": {
+        "asset": "cookie",
+        "emoji": "🍪",
+        "n": 6
+      },
+      "answer": 6,
+      "explain": "Yes — there are 6 cookies!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "chapter": "operations",
+      "band": "3-5",
+      "instruction": "Solve it!  467 + 433 = ?",
+      "voice": "What is 467 plus 433?",
+      "payload": {
+        "op": "+",
+        "a": 467,
+        "b": 433
+      },
+      "answer": 900,
+      "explain": "467 plus 433 makes 900."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "chapter": "operations",
+      "band": "3-5",
+      "instruction": "Solve it!  758 - 479 = ?",
+      "voice": "What is 758 minus 479?",
+      "payload": {
+        "op": "-",
+        "a": 758,
+        "b": 479
+      },
+      "answer": 279,
+      "explain": "758 minus 479 makes 279."
+    }
+  ]
+}

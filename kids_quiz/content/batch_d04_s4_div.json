@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Division Valley",
+ "adventure": "Division Valley",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Division Valley. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "24 ÷ 3 = ?",
+   "options": [
+    "10",
+    "9",
+    "8",
+    "7"
+   ],
+   "answer": 2,
+   "explain": "24 shared into 3 groups is 8 each.",
+   "voice_q": "Share 24 into 3 equal groups. How many in each?",
+   "voice_a": "It's 8! 24 shared by 3 gives 8."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "6 ÷ 2 = ?",
+   "options": [
+    "4",
+    "5",
+    "2",
+    "3"
+   ],
+   "answer": 3,
+   "explain": "6 shared into 2 groups is 3 each.",
+   "voice_q": "Share 6 into 2 equal groups. How many in each?",
+   "voice_a": "It's 3! 6 shared by 2 gives 3."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "21 ÷ 3 = ?",
+   "options": [
+    "7",
+    "9",
+    "6",
+    "8"
+   ],
+   "answer": 0,
+   "explain": "21 shared into 3 groups is 7 each.",
+   "voice_q": "Share 21 into 3 equal groups. How many in each?",
+   "voice_a": "It's 7! 21 shared by 3 gives 7."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "32 ÷ 4 = ?",
+   "options": [
+    "10",
+    "9",
+    "8",
+    "7"
+   ],
+   "answer": 2,
+   "explain": "32 shared into 4 groups is 8 each.",
+   "voice_q": "Share 32 into 4 equal groups. How many in each?",
+   "voice_a": "It's 8! 32 shared by 4 gives 8."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "6 ÷ 3 = ?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "1"
+   ],
+   "answer": 0,
+   "explain": "6 shared into 3 groups is 2 each.",
+   "voice_q": "Share 6 into 3 equal groups. How many in each?",
+   "voice_a": "It's 2! 6 shared by 3 gives 2."
+  }
+ ]
+}

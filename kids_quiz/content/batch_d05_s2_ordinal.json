@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Race Day Ranks",
+ "adventure": "Race Day Ranks",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Race Day Ranks. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🏅",
+   "q": "Which position is the ninth?",
+   "options": [
+    "9",
+    "10",
+    "8",
+    "11"
+   ],
+   "answer": 0,
+   "explain": "ninth means position 9.",
+   "voice_q": "What number position is 'ninth'?",
+   "voice_a": "It's 9! ninth is position number 9."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🏅",
+   "q": "Which position is the sixth?",
+   "options": [
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "answer": 1,
+   "explain": "sixth means position 6.",
+   "voice_q": "What number position is 'sixth'?",
+   "voice_a": "It's 6! sixth is position number 6."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🏅",
+   "q": "Which position is the third?",
+   "options": [
+    "2",
+    "3",
+    "5",
+    "4"
+   ],
+   "answer": 1,
+   "explain": "third means position 3.",
+   "voice_q": "What number position is 'third'?",
+   "voice_a": "It's 3! third is position number 3."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🏅",
+   "q": "Which position is the seventh?",
+   "options": [
+    "6",
+    "7",
+    "9",
+    "8"
+   ],
+   "answer": 1,
+   "explain": "seventh means position 7.",
+   "voice_q": "What number position is 'seventh'?",
+   "voice_a": "It's 7! seventh is position number 7."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🏅",
+   "q": "Which position is the first?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "3"
+   ],
+   "answer": 2,
+   "explain": "first means position 1.",
+   "voice_q": "What number position is 'first'?",
+   "voice_a": "It's 1! first is position number 1."
+  }
+ ]
+}

@@ -1,0 +1,974 @@
+{
+  "board": "CBSE",
+  "class": 2,
+  "subject": "EVS",
+  "count": 30,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the animal with its home.",
+      "payload": {
+        "pairs": [
+          [
+            "Cat",
+            "House"
+          ],
+          [
+            "Fish",
+            "Water"
+          ],
+          [
+            "Bird",
+            "Nest"
+          ],
+          [
+            "Lion",
+            "Den"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Match the animal with its home.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Rose",
+          "Tulip",
+          "Carrot",
+          "Daisy"
+        ]
+      },
+      "answer": "Carrot",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A dog can fly.",
+      "payload": {
+        "statement": "A dog can fly."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 2,
+      "voice": "A dog can fly.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is the king of the jungle.",
+        "bank": [
+          "lion",
+          "cat",
+          "dog"
+        ]
+      },
+      "answer": "lion",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Apple",
+          "Tree"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Apple": "Living",
+        "Tree": "Living"
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the food with its type.",
+      "payload": {
+        "pairs": [
+          [
+            "Rice",
+            "Grain"
+          ],
+          [
+            "Carrot",
+            "Vegetable"
+          ],
+          [
+            "Apple",
+            "Fruit"
+          ],
+          [
+            "Milk",
+            "Dairy"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Match the food with its type.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Fish",
+          "Elephant",
+          "Shark",
+          "Whale"
+        ]
+      },
+      "answer": "Elephant",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Water is a solid.",
+      "payload": {
+        "statement": "Water is a solid."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 2,
+      "voice": "Water is a solid.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We breathe in ___ from the air.",
+        "bank": [
+          "oxygen",
+          "water",
+          "sugar"
+        ]
+      },
+      "answer": "oxygen",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Rock",
+          "Cat"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Rock": "Non-living",
+        "Cat": "Living"
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the plant with its part.",
+      "payload": {
+        "pairs": [
+          [
+            "Leaf",
+            "Plant"
+          ],
+          [
+            "Root",
+            "Tree"
+          ],
+          [
+            "Flower",
+            "Rose"
+          ],
+          [
+            "Fruit",
+            "Apple"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Match the plant with its part.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Dog",
+          "Cat",
+          "Car",
+          "Bird"
+        ]
+      },
+      "answer": "Car",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A tree can walk.",
+      "payload": {
+        "statement": "A tree can walk."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 2,
+      "voice": "A tree can walk.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is our closest star.",
+        "bank": [
+          "moon",
+          "sun",
+          "planet"
+        ]
+      },
+      "answer": "sun",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Butterfly",
+          "Rock"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Butterfly": "Living",
+        "Rock": "Non-living"
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal with its sound.",
+      "payload": {
+        "pairs": [
+          [
+            "Dog",
+            "Bark"
+          ],
+          [
+            "Cat",
+            "Meow"
+          ],
+          [
+            "Cow",
+            "Moo"
+          ],
+          [
+            "Sheep",
+            "Baa"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Match the animal with its sound.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Car",
+          "Bus",
+          "Train",
+          "Fish"
+        ]
+      },
+      "answer": "Fish",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A butterfly is an insect.",
+      "payload": {
+        "statement": "A butterfly is an insect."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 2,
+      "voice": "A butterfly is an insect.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ has feathers.",
+        "bank": [
+          "dog",
+          "bird",
+          "fish"
+        ]
+      },
+      "answer": "bird",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Cloud",
+          "Dog"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Cloud": "Non-living",
+        "Dog": "Living"
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the season with its weather.",
+      "payload": {
+        "pairs": [
+          [
+            "Summer",
+            "Hot"
+          ],
+          [
+            "Winter",
+            "Cold"
+          ],
+          [
+            "Rainy",
+            "Wet"
+          ],
+          [
+            "Spring",
+            "Pleasant"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Match the season with its weather.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Orange",
+          "Banana",
+          "Car",
+          "Apple"
+        ]
+      },
+      "answer": "Car",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "All plants need sunlight.",
+      "payload": {
+        "statement": "All plants need sunlight."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 2,
+      "voice": "All plants need sunlight.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A ___ lives in water.",
+        "bank": [
+          "fish",
+          "bird",
+          "cat"
+        ]
+      },
+      "answer": "fish",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Flower",
+          "Chair"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Flower": "Living",
+        "Chair": "Non-living"
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the food with its color.",
+      "payload": {
+        "pairs": [
+          [
+            "Banana",
+            "Yellow"
+          ],
+          [
+            "Spinach",
+            "Green"
+          ],
+          [
+            "Carrot",
+            "Orange"
+          ],
+          [
+            "Blueberry",
+            "Blue"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Match the food with its color.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Sun",
+          "Moon",
+          "Star",
+          "Tree"
+        ]
+      },
+      "answer": "Tree",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "All animals can swim.",
+      "payload": {
+        "statement": "All animals can swim."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 2,
+      "voice": "All animals can swim.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is very big and lives in the ocean.",
+        "bank": [
+          "whale",
+          "cat",
+          "dog"
+        ]
+      },
+      "answer": "whale",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Mountain",
+          "Fish"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Mountain": "Non-living",
+        "Fish": "Living"
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "EVS",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "board": "ICSE",
+  "class": 3,
+  "subject": "Hindi",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Second Language/Hindi), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Second Language (Hindi); per-class outcomes (कक्षा III). Broad objectives joint for Classes 3-5.",
+  "chapters": [
+    {
+      "id": "1_listening_and_speaking",
+      "name": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "subtopics": [
+        "अपरिचित संदर्भों पर सुनी बात समझकर प्रतिक्रिया देना",
+        "सूचनाओं व संदेशों को सुनकर स्पष्ट रूप से संप्रेषित करना",
+        "अपरिचित शब्दों का अर्थ संदर्भ में अनुमान से समझना",
+        "अमूर्त विषयों (प्रेम, सौहार्द, एकता) पर कविताएँ सुनना-सुनाना",
+        "नाटक में चरित्र अनुसार संवाद बोलना",
+        "पाठ्य सामग्री का मुख्य भाव समझना व तर्क प्रस्तुत करना"
+      ]
+    },
+    {
+      "id": "2_reading_and_writing",
+      "name": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "subtopics": [
+        "विज्ञापन/होर्डिंग/दीवार-लेखन/सूचनाएँ पढ़ना",
+        "विराम चिह्नों व उचित आरोह-अवरोह के साथ पढ़ना",
+        "रुचि अनुसार कहानी/कविता/नाटक पढ़ना",
+        "पठन सामग्री का मुख्य विचार व घटनाक्रम समझना",
+        "चित्रकथा व कार्टून पढ़ना; संवाद/टिप्पणी लिखना",
+        "छोटे अनुच्छेद व अनौपचारिक पत्र लिखना; रचनात्मक अभिव्यक्ति"
+      ]
+    }
+  ]
+}

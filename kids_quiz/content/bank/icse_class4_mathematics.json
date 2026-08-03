@@ -1,0 +1,205 @@
+{
+  "board": "ICSE",
+  "class": 4,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Numbers",
+      "band": "3-5",
+      "instruction": "What comes just after 7468?",
+      "voice": "What is just after 7468?",
+      "payload": {
+        "mode": "after",
+        "n": 7468,
+        "display": "▢ , 7468"
+      },
+      "answer": 7469,
+      "explain": "Just after 7468 is 7469."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Number Operations",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 8
+      },
+      "answer": 8,
+      "explain": "There are 8 apples!"
+    },
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Playing with Numbers",
+      "band": "3-5",
+      "instruction": "What comes just after 9313?",
+      "voice": "What is just after 9313?",
+      "payload": {
+        "mode": "after",
+        "n": 9313,
+        "display": "▢ , 9313"
+      },
+      "answer": 9314,
+      "explain": "Just after 9313 is 9314."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Geometry",
+      "band": "3-5",
+      "instruction": "Add it!  1153 + 1352 = ?",
+      "voice": "What is 1153 plus 1352?",
+      "payload": {
+        "op": "+",
+        "a": 1153,
+        "b": 1352
+      },
+      "answer": 2505,
+      "explain": "1153 plus 1352 makes 2505."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Measurement",
+      "band": "3-5",
+      "instruction": "Add it!  2712 + 1286 = ?",
+      "voice": "What is 2712 plus 1286?",
+      "payload": {
+        "op": "+",
+        "a": 2712,
+        "b": 1286
+      },
+      "answer": 3998,
+      "explain": "2712 plus 1286 makes 3998."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Data Handling",
+      "band": "3-5",
+      "instruction": "Add it!  1371 + 3257 = ?",
+      "voice": "What is 1371 plus 3257?",
+      "payload": {
+        "op": "+",
+        "a": 1371,
+        "b": 3257
+      },
+      "answer": 4628,
+      "explain": "1371 plus 3257 makes 4628."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Patterns",
+      "band": "3-5",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 2.",
+      "payload": {
+        "seq": [
+          10,
+          null,
+          14,
+          16
+        ],
+        "step": 2
+      },
+      "answer": [
+        12
+      ],
+      "explain": "Counting by 2s → 12."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Numbers",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 83657 and 83238.",
+      "payload": {
+        "a": 83657,
+        "b": 83238
+      },
+      "answer": ">",
+      "explain": "83657 is greater than 83238."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Number Operations",
+      "band": "3-5",
+      "instruction": "Count the cookies and write how many!",
+      "voice": "Count the cookies.",
+      "payload": {
+        "asset": "cookie",
+        "emoji": "🍪",
+        "n": 17
+      },
+      "answer": 17,
+      "explain": "There are 17 cookies!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Playing with Numbers",
+      "band": "3-5",
+      "instruction": "Count the stars and write how many!",
+      "voice": "Count the stars.",
+      "payload": {
+        "asset": "star",
+        "emoji": "⭐",
+        "n": 6
+      },
+      "answer": 6,
+      "explain": "There are 6 stars!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Geometry",
+      "band": "3-5",
+      "instruction": "Count the grapess and write how many!",
+      "voice": "Count the grapess.",
+      "payload": {
+        "asset": "grapes",
+        "emoji": "🍇",
+        "n": 9
+      },
+      "answer": 9,
+      "explain": "There are 9 grapess!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 4,
+      "chapter": "Measurement",
+      "band": "3-5",
+      "instruction": "Add it!  2716 + 1590 = ?",
+      "voice": "What is 2716 plus 1590?",
+      "payload": {
+        "op": "+",
+        "a": 2716,
+        "b": 1590
+      },
+      "answer": 4306,
+      "explain": "2716 plus 1590 makes 4306."
+    }
+  ]
+}

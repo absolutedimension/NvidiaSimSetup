@@ -1,0 +1,52 @@
+{
+  "board": "ICSE",
+  "class": 4,
+  "subject": "English",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (English), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Process approach to writing (brainstorm→edit→rewrite). Cl IV has its own Literature list.",
+  "chapters": [
+    {
+      "id": "listening_and_speaking",
+      "name": "Listening and Speaking",
+      "subtopics": [
+        "Engage in discussions with teacher and peers",
+        "Report on a topic in an organized manner",
+        "Recount an experience logically",
+        "Enjoy poems, songs, riddles, tongue twisters",
+        "Share ideas and express opinions",
+        "Dictation of a seen passage"
+      ]
+    },
+    {
+      "id": "reading_and_writing",
+      "name": "Reading and Writing",
+      "subtopics": [
+        "Read for comprehension; locate details and main idea",
+        "Infer meaning of unfamiliar words from context",
+        "Use dictionary/thesaurus",
+        "Write at least two paragraphs (~150 words)",
+        "Sequencing words (firstly, then, later, finally)",
+        "Write an informal letter"
+      ]
+    },
+    {
+      "id": "grammar_and_vocabulary_in_context",
+      "name": "Grammar and Vocabulary in Context",
+      "subtopics": [
+        "Idioms, adages and proverbs",
+        "Subject-verb agreement",
+        "Capitals in titles",
+        "Punctuation in dialogue",
+        "Apostrophe: possession vs plurals",
+        "Spell class-appropriate words using references"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "board": "Bihar Board",
+  "class": 2,
+  "subject": "English",
+  "source": {
+    "name": "Bihar SCERT/BSTBPC Class 2 English — Blossom (via biharboardbooks mirror)",
+    "url": "https://biharboardbooks.com/class-ii-english-blossom/",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "Book = Blossom. Reformatted list from mirror; conflicts with other editions — titles/order NOT confirmed. Low confidence.",
+  "chapters": [
+    {
+      "id": "a_b_c_green_green_tree",
+      "name": "A B C Green Green Tree",
+      "subtopics": [
+        "alphabet rhyme"
+      ]
+    },
+    {
+      "id": "hop_hop_hop",
+      "name": "Hop Hop Hop",
+      "subtopics": [
+        "action rhyme"
+      ]
+    },
+    {
+      "id": "pretty_parrot",
+      "name": "Pretty Parrot",
+      "subtopics": [
+        "rhyme"
+      ]
+    },
+    {
+      "id": "my_family",
+      "name": "My Family",
+      "subtopics": [
+        "family vocabulary"
+      ]
+    },
+    {
+      "id": "healthy_food",
+      "name": "Healthy Food",
+      "subtopics": [
+        "food vocabulary"
+      ]
+    },
+    {
+      "id": "our_classroom",
+      "name": "Our Classroom",
+      "subtopics": [
+        "classroom objects"
+      ]
+    },
+    {
+      "id": "our_school_playground",
+      "name": "Our School Playground",
+      "subtopics": [
+        "playground vocabulary"
+      ]
+    },
+    {
+      "id": "our_lovely_animals",
+      "name": "Our Lovely Animals",
+      "subtopics": [
+        "story"
+      ]
+    },
+    {
+      "id": "grocery_shop",
+      "name": "Grocery Shop",
+      "subtopics": [
+        "shopping vocabulary"
+      ]
+    },
+    {
+      "id": "kaw_kaw_crow",
+      "name": "Kaw! Kaw! Crow",
+      "subtopics": [
+        "rhyme"
+      ]
+    },
+    {
+      "id": "little_friends",
+      "name": "Little Friends",
+      "subtopics": [
+        "rhyme"
+      ]
+    },
+    {
+      "id": "at_the_village_market",
+      "name": "At the Village Market",
+      "subtopics": [
+        "market vocabulary"
+      ]
+    },
+    {
+      "id": "where_is_mummy",
+      "name": "Where is Mummy",
+      "subtopics": [
+        "story"
+      ]
+    },
+    {
+      "id": "our_food",
+      "name": "Our Food",
+      "subtopics": [
+        "food items"
+      ]
+    },
+    {
+      "id": "good_morning",
+      "name": "Good Morning",
+      "subtopics": [
+        "greetings"
+      ]
+    },
+    {
+      "id": "my_self",
+      "name": "My Self",
+      "subtopics": [
+        "self introduction"
+      ]
+    },
+    {
+      "id": "a_fair",
+      "name": "A Fair",
+      "subtopics": [
+        "fair vocabulary"
+      ]
+    },
+    {
+      "id": "lovely_teacher_day",
+      "name": "Lovely Teacher Day",
+      "subtopics": [
+        "rhyme"
+      ]
+    },
+    {
+      "id": "golu_goes_to_the_zoo",
+      "name": "Golu Goes To The Zoo",
+      "subtopics": [
+        "picture story"
+      ]
+    },
+    {
+      "id": "people_who_help_us",
+      "name": "People Who Help Us",
+      "subtopics": [
+        "community helpers"
+      ]
+    },
+    {
+      "id": "little_flowers",
+      "name": "Little Flowers",
+      "subtopics": [
+        "rhyme"
+      ]
+    },
+    {
+      "id": "animals_which_help_us",
+      "name": "Animals Which Help Us",
+      "subtopics": [
+        "domestic animals"
+      ]
+    },
+    {
+      "id": "the_milkman_s_cow",
+      "name": "The Milkman's Cow",
+      "subtopics": [
+        "story"
+      ]
+    },
+    {
+      "id": "be_a_head",
+      "name": "Be A Head",
+      "subtopics": [
+        "rhyme/values"
+      ]
+    },
+    {
+      "id": "birds_and_their_nests",
+      "name": "Birds And Their Nests",
+      "subtopics": [
+        "story"
+      ]
+    }
+  ]
+}

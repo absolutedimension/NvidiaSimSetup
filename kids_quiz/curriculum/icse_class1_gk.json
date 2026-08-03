@@ -1,0 +1,44 @@
+{
+  "board": "ICSE",
+  "class": 1,
+  "subject": "General Knowledge",
+  "source": {
+    "name": "Commonly-taught ICSE-school GK outline (NO formal CISCE board GK syllabus at primary)",
+    "url": "https://www.icseboard.org/icse/class-1/syllabus/",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "CISCE does NOT prescribe a board-level GK syllabus for primary; GK is school/publisher choice, not board-examined. Commonly-taught outline only.",
+  "chapters": [
+    {
+      "id": "all_about_myself",
+      "name": "All About Myself",
+      "subtopics": [
+        "My name, age and body parts",
+        "My family and home",
+        "Good habits and manners"
+      ]
+    },
+    {
+      "id": "the_world_around_me",
+      "name": "The World Around Me",
+      "subtopics": [
+        "Community helpers",
+        "Animals and birds",
+        "Fruits and vegetables",
+        "Colours and shapes"
+      ]
+    },
+    {
+      "id": "my_country",
+      "name": "My Country",
+      "subtopics": [
+        "National symbols of India",
+        "Festivals we celebrate",
+        "Days of the week"
+      ]
+    }
+  ]
+}

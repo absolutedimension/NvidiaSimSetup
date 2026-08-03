@@ -1,0 +1,197 @@
+{
+  "board": "CBSE",
+  "class": 3,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "What's in a Name?",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 2481 and 6478.",
+      "payload": {
+        "a": 2481,
+        "b": 6478
+      },
+      "answer": "<",
+      "explain": "2481 is less than 6478."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Toy Joy",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 4
+      },
+      "answer": 4,
+      "explain": "There are 4 apples!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Double Century",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 8
+      },
+      "answer": 8,
+      "explain": "There are 8 apples!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Vacation with My Nani Maa",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 11
+      },
+      "answer": 11,
+      "explain": "There are 11 apples!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Fun with Shapes",
+      "band": "3-5",
+      "instruction": "Add it!  119 + 144 = ?",
+      "voice": "What is 119 plus 144?",
+      "payload": {
+        "op": "+",
+        "a": 119,
+        "b": 144
+      },
+      "answer": 263,
+      "explain": "119 plus 144 makes 263."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "House of Hundreds – I",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 6861 and 1154.",
+      "payload": {
+        "a": 6861,
+        "b": 1154
+      },
+      "answer": ">",
+      "explain": "6861 is greater than 1154."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Raksha Bandhan",
+      "band": "3-5",
+      "instruction": "Add it!  146 + 382 = ?",
+      "voice": "What is 146 plus 382?",
+      "payload": {
+        "op": "+",
+        "a": 146,
+        "b": 382
+      },
+      "answer": 528,
+      "explain": "146 plus 382 makes 528."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Fair Share",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 978 and 9274.",
+      "payload": {
+        "a": 978,
+        "b": 9274
+      },
+      "answer": "<",
+      "explain": "978 is less than 9274."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "House of Hundreds – II",
+      "band": "3-5",
+      "instruction": "Add it!  214 + 422 = ?",
+      "voice": "What is 214 plus 422?",
+      "payload": {
+        "op": "+",
+        "a": 214,
+        "b": 422
+      },
+      "answer": 636,
+      "explain": "214 plus 422 makes 636."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Fun at Class Party!",
+      "band": "3-5",
+      "instruction": "Count the cookies and write how many!",
+      "voice": "Count the cookies.",
+      "payload": {
+        "asset": "cookie",
+        "emoji": "🍪",
+        "n": 3
+      },
+      "answer": 3,
+      "explain": "There are 3 cookies!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Filling and Lifting",
+      "band": "3-5",
+      "instruction": "Count the cookies and write how many!",
+      "voice": "Count the cookies.",
+      "payload": {
+        "asset": "cookie",
+        "emoji": "🍪",
+        "n": 9
+      },
+      "answer": 9,
+      "explain": "There are 9 cookies!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Give and Take",
+      "band": "3-5",
+      "instruction": "Add it!  213 + 123 = ?",
+      "voice": "What is 213 plus 123?",
+      "payload": {
+        "op": "+",
+        "a": 213,
+        "b": 123
+      },
+      "answer": 336,
+      "explain": "213 plus 123 makes 336."
+    }
+  ]
+}

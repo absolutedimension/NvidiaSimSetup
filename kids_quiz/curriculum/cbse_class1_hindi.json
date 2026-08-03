@@ -1,0 +1,65 @@
+{
+  "board": "CBSE",
+  "class": 1,
+  "subject": "Hindi",
+  "source": {
+    "name": "NCERT Sarangi — Hindi Class 1 (Contents)",
+    "url": "https://ncert.nic.in/textbook/pdf/ahsr1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Current NCF-SE book 'Sarangi' (first ed. 2023). 19 पाठ across 5 इकाई, verbatim from official ncert.nic.in PDF (ahsr1). Grouped here by unit; starred read-only pieces excluded.",
+  "chapters": [
+    {
+      "id": "1",
+      "name": "इकाई 1: परिवार",
+      "subtopics": [
+        "मीना का परिवार",
+        "दादा-दादी",
+        "रीना का दिन",
+        "रानी भी"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "इकाई 2: जीव-जगत",
+      "subtopics": [
+        "मिठाई",
+        "तीन साथी",
+        "वाह, मेरे घोड़े!",
+        "खतरे में साँप"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "इकाई 3: हमारा खान-पान",
+      "subtopics": [
+        "आलू की सड़क",
+        "झूलम-झूली",
+        "भुट्टे",
+        "फूली रोटी"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "इकाई 4: त्योहार और मेले",
+      "subtopics": [
+        "मेला",
+        "बरखा और मेघा",
+        "होली",
+        "जन्मदिवस पर पेड़ लगाओ"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "इकाई 5: हरी-भरी दुनिया",
+      "subtopics": [
+        "हवा",
+        "कितनी प्यारी है ये दुनिया",
+        "चाँद का बच्चा"
+      ]
+    }
+  ]
+}

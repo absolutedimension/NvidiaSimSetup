@@ -1,0 +1,952 @@
+{
+  "board": "CBSE",
+  "class": 2,
+  "subject": "Hindi",
+  "count": 30,
+  "items": [
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "नीमा की ___ दादी हैं।",
+        "bank": [
+          "प्यारी",
+          "बड़ी",
+          "छोटी"
+        ]
+      },
+      "answer": "प्यारी",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 1: परिवार",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "नीमा की दादी घर में रहती हैं।",
+      "payload": {
+        "statement": "नीमा की दादी घर में रहती हैं।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 1: परिवार",
+      "band": 2,
+      "voice": "नीमा की दादी घर में रहती हैं।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the family members.",
+      "payload": {
+        "pairs": [
+          [
+            "माँ",
+            "नीमा"
+          ],
+          [
+            "दादी",
+            "माला"
+          ],
+          [
+            "भाई",
+            "थाथू"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 1: परिवार",
+      "band": 1,
+      "voice": "Match the family members.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "पायल",
+          "चाँदी",
+          "गहना",
+          "बिल्ली"
+        ]
+      },
+      "answer": "बिल्ली",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 1: परिवार",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "माला की चाँदी की ___ है।",
+        "bank": [
+          "पायल",
+          "कलाई",
+          "गहना"
+        ]
+      },
+      "answer": "पायल",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 1: परिवार",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "थाथू नीमा का भाई है।",
+      "payload": {
+        "statement": "थाथू नीमा का भाई है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 1: परिवार",
+      "band": 2,
+      "voice": "थाथू नीमा का भाई है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "चींटा",
+          "बिल्ली",
+          "कुत्ता",
+          "तितली"
+        ],
+        "bins": [
+          "जानवर",
+          "कीट"
+        ]
+      },
+      "answer": {
+        "चींटा": "कीट",
+        "बिल्ली": "जानवर",
+        "कुत्ता": "जानवर",
+        "तितली": "कीट"
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 1: परिवार",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "घर में ___ होते हैं।",
+        "bank": [
+          "बर्तन",
+          "पेड़",
+          "पानी"
+        ]
+      },
+      "answer": "बर्तन",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 1: परिवार",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "टिल्लू जी नीमा के पड़ोसी हैं।",
+      "payload": {
+        "statement": "टिल्लू जी नीमा के पड़ोसी हैं।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 1: परिवार",
+      "band": 2,
+      "voice": "टिल्लू जी नीमा के पड़ोसी हैं।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the items with their uses.",
+      "payload": {
+        "pairs": [
+          [
+            "पायल",
+            "पैर में पहनना"
+          ],
+          [
+            "बर्तन",
+            "खाना बनाना"
+          ],
+          [
+            "किताब",
+            "पढ़ना"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 1: परिवार",
+      "band": 1,
+      "voice": "Match the items with their uses.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the colors with their names.",
+      "payload": {
+        "pairs": [
+          [
+            "बैंगनी",
+            "Purple"
+          ],
+          [
+            "लाल",
+            "Red"
+          ],
+          [
+            "हरा",
+            "Green"
+          ],
+          [
+            "नीला",
+            "Blue"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 2: रंग ही रंग",
+      "band": 1,
+      "voice": "Match the colors with their names.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "जोजो",
+          "तोसिया",
+          "गाड़ी",
+          "दोस्त"
+        ]
+      },
+      "answer": "गाड़ी",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 2: रंग ही रंग",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "तोसिया का सपना बैंगनी रंग का है।",
+      "payload": {
+        "statement": "तोसिया का सपना बैंगनी रंग का है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 2: रंग ही रंग",
+      "band": 2,
+      "voice": "तोसिया का सपना बैंगनी रंग का है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "तीन दोस्त हैं: ___, जोजो, और तोसिया।",
+        "bank": [
+          "रवि",
+          "सिया",
+          "मोहन"
+        ]
+      },
+      "answer": "रवि",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 2: रंग ही रंग",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort the friends.",
+      "payload": {
+        "items": [
+          "जोजो",
+          "तोसिया",
+          "सूरज"
+        ],
+        "bins": [
+          "दोस्त",
+          "अन्य"
+        ]
+      },
+      "answer": {
+        "जोजो": "दोस्त",
+        "तोसिया": "दोस्त",
+        "सूरज": "अन्य"
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 2: रंग ही रंग",
+      "band": 1,
+      "voice": "Sort the friends.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the friends with their favorite colors.",
+      "payload": {
+        "pairs": [
+          [
+            "जोजो",
+            "बैंगनी"
+          ],
+          [
+            "तोसिया",
+            "पीला"
+          ],
+          [
+            "राजू",
+            "नीला"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 2: रंग ही रंग",
+      "band": 1,
+      "voice": "Match the friends with their favorite colors.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "बैंगनी",
+          "हरा",
+          "गाड़ी",
+          "लाल"
+        ]
+      },
+      "answer": "गाड़ी",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 2: रंग ही रंग",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "दुनिया रंग-बिरंगी है।",
+      "payload": {
+        "statement": "दुनिया रंग-बिरंगी है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 2: रंग ही रंग",
+      "band": 2,
+      "voice": "दुनिया रंग-बिरंगी है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "जोजो का रंग है ___।",
+        "bank": [
+          "बैंगनी",
+          "सफेद",
+          "काला"
+        ]
+      },
+      "answer": "बैंगनी",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 2: रंग ही रंग",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort the colors.",
+      "payload": {
+        "items": [
+          "बैंगनी",
+          "नीला",
+          "गाड़ी"
+        ],
+        "bins": [
+          "रंग",
+          "अन्य"
+        ]
+      },
+      "answer": {
+        "बैंगनी": "रंग",
+        "नीला": "रंग",
+        "गाड़ी": "अन्य"
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 2: रंग ही रंग",
+      "band": 1,
+      "voice": "Sort the colors.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the words with their meanings.",
+      "payload": {
+        "pairs": [
+          [
+            "किसान",
+            "Farmer"
+          ],
+          [
+            "मूली",
+            "Radish"
+          ],
+          [
+            "तालाब",
+            "Pond"
+          ],
+          [
+            "बरसात",
+            "Rain"
+          ],
+          [
+            "मेंढक",
+            "Frog"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 3: हरी-भरी धरती",
+      "band": 1,
+      "voice": "Match the words with their meanings.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "तालाब",
+          "मेंढक",
+          "गाड़ी",
+          "बरसात"
+        ]
+      },
+      "answer": "गाड़ी",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 3: हरी-भरी धरती",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A farmer grows vegetables.",
+      "payload": {
+        "statement": "A farmer grows vegetables."
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 3: हरी-भरी धरती",
+      "band": 2,
+      "voice": "A farmer grows vegetables.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is full of water.",
+        "bank": [
+          "तालाब",
+          "गाड़ी",
+          "खेत"
+        ]
+      },
+      "answer": "तालाब",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 3: हरी-भरी धरती",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "बीज",
+          "मूली",
+          "मेंढक"
+        ],
+        "bins": [
+          "पौधे",
+          "जानवर"
+        ]
+      },
+      "answer": {
+        "बीज": "पौधे",
+        "मूली": "पौधे",
+        "मेंढक": "जानवर"
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 3: हरी-भरी धरती",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Frogs live in water.",
+      "payload": {
+        "statement": "Frogs live in water."
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 3: हरी-भरी धरती",
+      "band": 2,
+      "voice": "Frogs live in water.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The farmer grows ___ in the field.",
+        "bank": [
+          "गाड़ी",
+          "मूली",
+          "खेल"
+        ]
+      },
+      "answer": "मूली",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 3: हरी-भरी धरती",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the season with the activity.",
+      "payload": {
+        "pairs": [
+          [
+            "बरसात",
+            "पानी गिरता है"
+          ],
+          [
+            "गर्मी",
+            "सूरज चमकता है"
+          ],
+          [
+            "सर्दी",
+            "धूप कम होती है"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 3: हरी-भरी धरती",
+      "band": 1,
+      "voice": "Match the season with the activity.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "बीज",
+          "फसल",
+          "खेत",
+          "गाड़ी"
+        ]
+      },
+      "answer": "गाड़ी",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 3: हरी-भरी धरती",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Seeds grow into plants.",
+      "payload": {
+        "statement": "Seeds grow into plants."
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "इकाई 3: हरी-भरी धरती",
+      "band": 2,
+      "voice": "Seeds grow into plants.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

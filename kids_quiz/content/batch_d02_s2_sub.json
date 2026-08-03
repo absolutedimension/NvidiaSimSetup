@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Subtraction Cave",
+ "adventure": "Subtraction Cave",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Subtraction Cave. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "822 − 404 = ?",
+   "options": [
+    "419",
+    "417",
+    "418",
+    "428"
+   ],
+   "answer": 2,
+   "explain": "822 take away 404 leaves 418.",
+   "voice_q": "Take it away! 822 minus 404.",
+   "voice_a": "It's 418! 822 take away 404 leaves 418."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "700 − 490 = ?",
+   "options": [
+    "210",
+    "211",
+    "220",
+    "209"
+   ],
+   "answer": 0,
+   "explain": "700 take away 490 leaves 210.",
+   "voice_q": "Take it away! 700 minus 490.",
+   "voice_a": "It's 210! 700 take away 490 leaves 210."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "459 − 111 = ?",
+   "options": [
+    "358",
+    "349",
+    "347",
+    "348"
+   ],
+   "answer": 3,
+   "explain": "459 take away 111 leaves 348.",
+   "voice_q": "Take it away! 459 minus 111.",
+   "voice_a": "It's 348! 459 take away 111 leaves 348."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "240 − 183 = ?",
+   "options": [
+    "57",
+    "58",
+    "56",
+    "67"
+   ],
+   "answer": 0,
+   "explain": "240 take away 183 leaves 57.",
+   "voice_q": "Take it away! 240 minus 183.",
+   "voice_a": "It's 57! 240 take away 183 leaves 57."
+  },
+  {
+   "type": "mcq",
+   "emoji": "➖",
+   "q": "447 − 38 = ?",
+   "options": [
+    "408",
+    "419",
+    "409",
+    "410"
+   ],
+   "answer": 2,
+   "explain": "447 take away 38 leaves 409.",
+   "voice_q": "Take it away! 447 minus 38.",
+   "voice_a": "It's 409! 447 take away 38 leaves 409."
+  }
+ ]
+}

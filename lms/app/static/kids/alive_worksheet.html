@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alive Worksheet — kids composition prototype</title>
+<link rel="stylesheet" href="/static/kids/worksheet.css">
+<link rel="stylesheet" href="/static/kids/conceptviz.css">
+<style>
+  body{margin:0;min-height:100vh;background:radial-gradient(120% 100% at 50% 0%,#fff3f9,#eef4ff 60%,#f6f0ff);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;color:#2a2140;overflow-x:hidden}
+  .stage{max-width:760px;margin:0 auto;padding:12px 14px 40px;position:relative}
+  .topbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 2px}
+  .topbar .lvl{background:#ffb300;color:#3a2a00;font-weight:800;border-radius:999px;padding:5px 12px;font-size:.85rem}
+  .topbar .who{color:#8a7f9a;font-size:.85rem}
+  .topbar .nav{margin-left:auto;display:flex;gap:8px}
+  .topbar button{border:none;background:#3aa0ff;color:#fff;border-radius:999px;padding:8px 14px;font-weight:800;cursor:pointer}
+  /* avatar corner (the other session's iframe) */
+  .avatar{position:fixed;right:10px;bottom:10px;width:150px;height:190px;z-index:40;
+    filter:drop-shadow(0 8px 18px rgba(60,40,10,.2))}
+  .avatar iframe{width:100%;height:100%;border:0;background:transparent}
+  .avatar .badge{position:absolute;top:-6px;left:50%;transform:translateX(-50%);white-space:nowrap;
+    background:#22b07d;color:#fff;font-size:.62rem;font-weight:800;padding:3px 8px;border-radius:999px}
+  .avatar .badge.fallback{background:#e0a020}
+  /* concept-animation slot (kids-quiz-viz mounts here) */
+  #viz{min-height:8px}
+  .viz-note{border:2px dashed #d8c7ff;border-radius:14px;background:#faf6ff;color:#7a5fd0;
+    text-align:center;padding:10px;font-size:.82rem;font-weight:700;margin:0 auto 12px;max-width:640px}
+  #mount{margin-top:4px}
+  .foot{max-width:640px;margin:14px auto 0;color:#8a7f9a;font-size:.8rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="topbar">
+    <span class="lvl">ICSE · Grade 3 · Maths</span>
+    <span class="who">Alive-worksheet prototype — input + concept animation + avatar voice</span>
+    <div class="nav"><button onclick="prevItem()">◀</button><button onclick="nextItem()">Next ▶</button></div>
+  </div>
+
+  <div id="viz" class="vizwrap hidden"></div>
+  <div id="mount"></div>
+
+  <div class="foot" id="foot">Voice: <b id="voiceMode">audio fallback</b> · the avatar upgrades this to lip-sync once its session ships <code>kidsAvatar:ready</code>.</div>
+</div>
+
+<!-- avatar corner: the OTHER session owns avatar_widget.html; we only embed + message it -->
+<div class="avatar">
+  <div class="badge fallback" id="avBadge">🔊 voice (fallback)</div>
+  <iframe id="avatarFrame" src="/static/kids/avatar_widget.html" title="Acharya Kids avatar" allow="autoplay"></iframe>
+</div>
+
+<script src="/static/kids/assets.js"></script>
+<script src="/static/kids/conceptviz.js"></script>
+<script src="/static/kids/worksheet_viz.js"></script>
+<script src="/static/kids/worksheet.js"></script>
+<script>
+/* ============ KidsAvatar — the seam (contract: KIDS_ALIVE_CONTRACT.md) ============ */
+(function(){
+  var frame = document.getElementById('avatarFrame');
+  var badge = document.getElementById('avBadge');
+  var voiceMode = document.getElementById('voiceMode');
+  var ready = false;            // becomes true when the avatar iframe posts kidsAvatar:ready
+  var pending = {};             // id -> onEnd
+  var fallbackAudio = null;
+  function uuid(){ return 'x'+Math.floor(performance.now()*1000).toString(36)+Math.floor(Math.random()*1e6).toString(36); }
+
+  window.addEventListener('message', function(e){
+    var d = e.data || {};
+    if (d.type === 'kidsAvatar:ready'){
+      ready = true;
+      badge.textContent = '🎙️ lip-sync live'; badge.classList.remove('fallback');
+      voiceMode.textContent = 'avatar lip-sync';
+    } else if (d.type === 'kidsAvatar:done'){
+      var cb = pending[d.id]; if (cb){ delete pending[d.id]; cb(); }
+    }
+  });
+
+  function fallbackSpeak(text, onEnd){
+    try{ if (fallbackAudio) fallbackAudio.pause(); }catch(_){}
+    var say = (text||'').replace(/₹/g,' rupees ').replace(/×/g,' times ').replace(/÷/g,' divided by ')
+      .replace(/[−]/g,' minus ').replace(/=/g,' equals ').replace(/\+/g,' plus ')
+      .replace(/>/g,' greater than ').replace(/</g,' less than ').replace(/_{2,}/g,' blank ').replace(/\?/g,' ').trim();
+    if (!say){ onEnd && onEnd(); return; }
+    fallbackAudio = new Audio('/kids/tts?text='+encodeURIComponent(say.slice(0,580)));
+    if (onEnd) fallbackAudio.addEventListener('ended', onEnd, {once:true});
+    fallbackAudio.play().catch(function(){ onEnd && onEnd(); });
+  }
+
+  window.KidsAvatar = {
+    get ready(){ return ready; },
+    speak: function(text, opts){
+      opts = opts || {};
+      if (ready){
+        var id = uuid();
+        if (opts.onEnd) pending[id] = opts.onEnd;
+        frame.contentWindow.postMessage({ type:'kidsAvatar:speak', id:id, text:text, mood:opts.mood||'talk' }, '*');
+      } else {
+        // avatar not wired yet → guaranteed voice via /kids/tts
+        fallbackSpeak(text, opts.onEnd);
+      }
+    },
+    mood: function(m){ if (ready) frame.contentWindow.postMessage({ type:'kidsAvatar:mood', mood:m }, '*'); }
+  };
+})();
+
+/* ============ the worksheet items (Grade-3 sample; will come from the qbank pool) ============ */
+var ITEMS = [
+  { type:'trace_number', instruction:'Trace the number 5, then write it yourself!',
+    voice:'This is five. Trace it, then you try!', payload:{ glyph:5 }, explain:'Great writing! That is a five.' },
+  { type:'arith', instruction:'Add it up!  234 + 158 = ?',
+    voice:'Add two hundred thirty four and one hundred fifty eight.', payload:{ op:'+', a:234, b:158 }, answer:392,
+    explain:'Yes! Two hundred thirty four and one hundred fifty eight make three hundred ninety two.' },
+  { type:'match_following', instruction:'Match each animal to its home!',
+    voice:'Match each animal to its home.',
+    payload:{ pairs:[['🐄 Cow','Shed'],['🐦 Bird','Nest'],['🐝 Bee','Hive']] }, explain:'All matched! Wonderful.' },
+  { type:'fill_sequence', instruction:'Fill in the missing number!',
+    voice:'What number is missing? Ten, twenty, blank, forty.', payload:{ seq:[10,20,null,40], step:10 }, answer:[30],
+    explain:'Thirty! Ten, twenty, thirty, forty.' }
+];
+
+var i = 0;
+function showItem(){
+  var item = ITEMS[i];
+  // "see it" layer — mount the concept animation (hides gracefully for non-numeric types)
+  if (window.KidsWorksheetViz) KidsWorksheetViz.show(document.getElementById('viz'), item);
+  KidsWorksheet.render(document.getElementById('mount'), item, {
+    voice: false,   // the avatar (or fallback) does the voicing, not the worksheet's own TTS
+    onDone: function(r){
+      if (r.correct){
+        KidsAvatar.speak(item.explain || 'Well done!', { mood:'celebrate' });
+        setTimeout(nextItem, 1800);
+      } else {
+        KidsAvatar.speak('Good try! Look again and try once more.', { mood:'encourage' });
+      }
+    }
+  });
+  // avatar reads the instruction when the item appears
+  KidsAvatar.speak(item.voice || item.instruction, { mood:'talk' });
+}
+function nextItem(){ i=(i+1)%ITEMS.length; showItem(); }
+function prevItem(){ i=(i-1+ITEMS.length)%ITEMS.length; showItem(); }
+showItem();
+</script>
+</body>
+</html>

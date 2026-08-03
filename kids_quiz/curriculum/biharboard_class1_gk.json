@@ -1,0 +1,44 @@
+{
+  "board": "Bihar Board",
+  "class": 1,
+  "subject": "General Knowledge",
+  "source": {
+    "name": "Commonly-taught primary GK outline (NO official SCERT-Bihar board GK syllabus at primary)",
+    "url": "",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "No official SCERT-Bihar primary GK syllabus; GK is school/publisher choice, not board-examined. Author-generated outline; cross-check per school.",
+  "chapters": [
+    {
+      "id": "all_about_me",
+      "name": "All About Me",
+      "subtopics": [
+        "my body and sense organs",
+        "my name, age and family",
+        "good habits and manners"
+      ]
+    },
+    {
+      "id": "the_world_around_me",
+      "name": "The World Around Me",
+      "subtopics": [
+        "animals and their sounds",
+        "fruits and vegetables",
+        "colours and shapes",
+        "community helpers"
+      ]
+    },
+    {
+      "id": "my_country_my_bihar",
+      "name": "My Country & My Bihar",
+      "subtopics": [
+        "national flag and symbols",
+        "festivals we celebrate",
+        "days of the week"
+      ]
+    }
+  ]
+}

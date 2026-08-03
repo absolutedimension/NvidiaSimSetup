@@ -1,0 +1,951 @@
+{
+  "board": "CBSE",
+  "class": 5,
+  "subject": "EVS",
+  "count": 30,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the animal to its sense.",
+      "payload": {
+        "pairs": [
+          [
+            "Dog",
+            "Smell"
+          ],
+          [
+            "Cat",
+            "Sight"
+          ],
+          [
+            "Owl",
+            "Hearing"
+          ],
+          [
+            "Fish",
+            "Water"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Super Senses",
+      "band": 1,
+      "voice": "Match the animal to its sense.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Animals can see better in the dark than humans.",
+      "payload": {
+        "statement": "Animals can see better in the dark than humans."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Super Senses",
+      "band": 2,
+      "voice": "Animals can see better in the dark than humans.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ helps animals find food.",
+        "bank": [
+          "sight",
+          "smell",
+          "taste"
+        ]
+      },
+      "answer": "smell",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Super Senses",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Eagle",
+          "Shark",
+          "Lion",
+          "Tree"
+        ]
+      },
+      "answer": "Tree",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Super Senses",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Eagle",
+          "Dog",
+          "Fish",
+          "Rock"
+        ],
+        "bins": [
+          "Animals",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Eagle": "Animals",
+        "Dog": "Animals",
+        "Fish": "Animals",
+        "Rock": "Non-living"
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Super Senses",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "All animals have the same senses.",
+      "payload": {
+        "statement": "All animals have the same senses."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Super Senses",
+      "band": 2,
+      "voice": "All animals have the same senses.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "An owl has a strong sense of ___.",
+        "bank": [
+          "sight",
+          "hearing",
+          "touch"
+        ]
+      },
+      "answer": "hearing",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Super Senses",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal to its sound.",
+      "payload": {
+        "pairs": [
+          [
+            "Dog",
+            "Bark"
+          ],
+          [
+            "Cat",
+            "Meow"
+          ],
+          [
+            "Cow",
+            "Moo"
+          ],
+          [
+            "Duck",
+            "Quack"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Super Senses",
+      "band": 1,
+      "voice": "Match the animal to its sound.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Taste",
+          "Touch",
+          "Jump",
+          "Smell"
+        ]
+      },
+      "answer": "Jump",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Super Senses",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Animals respond to their surroundings.",
+      "payload": {
+        "statement": "Animals respond to their surroundings."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Super Senses",
+      "band": 2,
+      "voice": "Animals respond to their surroundings.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A snake charmer plays the ___ to attract snakes.",
+        "bank": [
+          "drum",
+          "flute",
+          "guitar"
+        ]
+      },
+      "answer": "flute",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "A Snake Charmer's Story",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Snakes are mammals.",
+      "payload": {
+        "statement": "Snakes are mammals."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "A Snake Charmer's Story",
+      "band": 2,
+      "voice": "Snakes are mammals.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animal with its sound.",
+      "payload": {
+        "pairs": [
+          [
+            "Snake",
+            "Hiss"
+          ],
+          [
+            "Dog",
+            "Bark"
+          ],
+          [
+            "Cat",
+            "Meow"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "A Snake Charmer's Story",
+      "band": 1,
+      "voice": "Match the animal with its sound.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Cobra",
+          "Python",
+          "Lizard",
+          "Viper"
+        ]
+      },
+      "answer": "Lizard",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "A Snake Charmer's Story",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A snake charmer earns money from ___ with snakes.",
+        "bank": [
+          "playing",
+          "fighting",
+          "singing"
+        ]
+      },
+      "answer": "playing",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "A Snake Charmer's Story",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Python",
+          "Cobra",
+          "Elephant",
+          "Viper"
+        ],
+        "bins": [
+          "Snakes",
+          "Other Animals"
+        ]
+      },
+      "answer": {
+        "Python": "Snakes",
+        "Cobra": "Snakes",
+        "Elephant": "Other Animals",
+        "Viper": "Snakes"
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "A Snake Charmer's Story",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The wildlife protection law helps to save snakes.",
+      "payload": {
+        "statement": "The wildlife protection law helps to save snakes."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "A Snake Charmer's Story",
+      "band": 2,
+      "voice": "The wildlife protection law helps to save snakes.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A snake charmer uses a ___ to keep snakes in control.",
+        "bank": [
+          "stick",
+          "basket",
+          "net"
+        ]
+      },
+      "answer": "basket",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "A Snake Charmer's Story",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the snake with its feature.",
+      "payload": {
+        "pairs": [
+          [
+            "Cobra",
+            "Hood"
+          ],
+          [
+            "Python",
+            "Large"
+          ],
+          [
+            "Viper",
+            "Venomous"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "A Snake Charmer's Story",
+      "band": 1,
+      "voice": "Match the snake with its feature.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Protecting snakes",
+          "Catching snakes",
+          "Feeding snakes",
+          "Saving trees"
+        ]
+      },
+      "answer": "Saving trees",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "A Snake Charmer's Story",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the part of the tongue to its taste.",
+      "payload": {
+        "pairs": [
+          [
+            "Tip",
+            "Sweet"
+          ],
+          [
+            "Sides",
+            "Sour"
+          ],
+          [
+            "Back",
+            "Bitter"
+          ],
+          [
+            "Middle",
+            "Salty"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "From Tasting to Digesting",
+      "band": 1,
+      "voice": "Match the part of the tongue to its taste.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Digestion starts in the mouth.",
+      "payload": {
+        "statement": "Digestion starts in the mouth."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "From Tasting to Digesting",
+      "band": 2,
+      "voice": "Digestion starts in the mouth.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ helps to break down food in the stomach.",
+        "bank": [
+          "teeth",
+          "water",
+          "air"
+        ]
+      },
+      "answer": "teeth",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "From Tasting to Digesting",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Mouth",
+          "Stomach",
+          "Heart",
+          "Teeth"
+        ]
+      },
+      "answer": "Heart",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "From Tasting to Digesting",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Saliva",
+          "Stomach",
+          "Teeth"
+        ],
+        "bins": [
+          "Digestive Parts",
+          "Non-Digestive Parts"
+        ]
+      },
+      "answer": {
+        "Saliva": "Digestive Parts",
+        "Stomach": "Digestive Parts",
+        "Teeth": "Digestive Parts"
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "From Tasting to Digesting",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The stomach is where food is mixed with acids.",
+      "payload": {
+        "statement": "The stomach is where food is mixed with acids."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "From Tasting to Digesting",
+      "band": 2,
+      "voice": "The stomach is where food is mixed with acids.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the taste to the correct word.",
+      "payload": {
+        "pairs": [
+          [
+            "Sweet",
+            "Sugar"
+          ],
+          [
+            "Sour",
+            "Lemon"
+          ],
+          [
+            "Bitter",
+            "Coffee"
+          ],
+          [
+            "Salty",
+            "Salt"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "From Tasting to Digesting",
+      "band": 1,
+      "voice": "Match the taste to the correct word.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Food is chewed by the ___ and mixed with saliva.",
+        "bank": [
+          "hands",
+          "teeth",
+          "fork"
+        ]
+      },
+      "answer": "teeth",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "From Tasting to Digesting",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Carrot",
+          "Apple",
+          "Milk",
+          "Bread"
+        ]
+      },
+      "answer": "Milk",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "From Tasting to Digesting",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The tongue has no role in tasting food.",
+      "payload": {
+        "statement": "The tongue has no role in tasting food."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "From Tasting to Digesting",
+      "band": 2,
+      "voice": "The tongue has no role in tasting food.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

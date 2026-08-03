@@ -1,0 +1,43 @@
+{
+  "board": "CBSE",
+  "class": 2,
+  "subject": "General Knowledge",
+  "source": {
+    "name": "Commonly-taught primary GK outline (NO official CBSE/NCERT board GK syllabus at primary)",
+    "url": "",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "No official CBSE primary GK syllabus; commonly-taught outline only.",
+  "chapters": [
+    {
+      "id": "myself_and_my_surroundings",
+      "name": "Myself and My Surroundings",
+      "subtopics": [
+        "parts of the body",
+        "my family, home and school",
+        "safety and good manners"
+      ]
+    },
+    {
+      "id": "nature_and_living_things",
+      "name": "Nature and Living Things",
+      "subtopics": [
+        "wild and domestic animals",
+        "plants and birds",
+        "means of transport"
+      ]
+    },
+    {
+      "id": "our_country_india",
+      "name": "Our Country India",
+      "subtopics": [
+        "national symbols and festivals",
+        "famous places",
+        "days, months and seasons"
+      ]
+    }
+  ]
+}

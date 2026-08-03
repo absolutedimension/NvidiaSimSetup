@@ -1,0 +1,75 @@
+{
+  "board": "ICSE",
+  "class": 2,
+  "subject": "Mathematics",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Mathematics), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "",
+  "chapters": [
+    {
+      "id": "numbers",
+      "name": "Numbers",
+      "subtopics": [
+        "Numbers up to 99 and names",
+        "Read/write 3-digit numbers up to 999",
+        "Place and face value in a 3-digit number",
+        "Ascending and descending order"
+      ]
+    },
+    {
+      "id": "number_operations",
+      "name": "Number Operations",
+      "subtopics": [
+        "Add/subtract 2-digit numbers with and without regrouping",
+        "Place value in the standard algorithm",
+        "Adding/subtracting zero",
+        "Commutative property of addition",
+        "Tables of 2,3,4,5 via repeated addition/skip counting",
+        "Equal grouping/sharing → repeated subtraction",
+        "Mental addition and subtraction"
+      ]
+    },
+    {
+      "id": "geometry",
+      "name": "Geometry",
+      "subtopics": [
+        "2D shapes by paper folding and cutting",
+        "Attributes: sides and corners",
+        "Straight lines: horizontal, vertical, slant",
+        "Introduction to curved lines"
+      ]
+    },
+    {
+      "id": "measurement",
+      "name": "Measurement",
+      "subtopics": [
+        "Length using uniform non-standard units",
+        "Comparing weights with a simple balance",
+        "Ordering containers by capacity and verifying"
+      ]
+    },
+    {
+      "id": "data_handling",
+      "name": "Data Handling",
+      "subtopics": [
+        "Simple day-to-day graphs (time-table, height chart)",
+        "Presenting information with a pictograph"
+      ]
+    },
+    {
+      "id": "patterns",
+      "name": "Patterns",
+      "subtopics": [
+        "Identifying the unit of repeat",
+        "Extending a pattern",
+        "Creating patterns from daily life"
+      ]
+    }
+  ]
+}

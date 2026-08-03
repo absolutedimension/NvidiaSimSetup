@@ -1,0 +1,52 @@
+{
+  "board": "ICSE",
+  "class": 5,
+  "subject": "English",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (English), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Highest primary level; registers of vocabulary. Cl V has its own Literature list.",
+  "chapters": [
+    {
+      "id": "listening_and_speaking",
+      "name": "Listening and Speaking",
+      "subtopics": [
+        "Share and explain ideas and viewpoints",
+        "Interpret, analyse and evaluate to draw conclusions",
+        "Interpret verbal and nonverbal messages",
+        "Appropriate tone, stress and intonation",
+        "Debate, discussion and drama",
+        "Dictation of an unseen passage"
+      ]
+    },
+    {
+      "id": "reading_and_writing",
+      "name": "Reading and Writing",
+      "subtopics": [
+        "Read seen/unseen texts to comprehend, infer, interpret",
+        "Infer figurative language (similes)",
+        "Use technology to gather information",
+        "Write at least two paragraphs (~150 words)",
+        "Process approach: plan, write, revise, edit",
+        "Write notice, message and short compositions"
+      ]
+    },
+    {
+      "id": "grammar_and_vocabulary_in_context",
+      "name": "Grammar and Vocabulary in Context",
+      "subtopics": [
+        "Adverbs and their kinds",
+        "Conjunctions, prepositions, interjections",
+        "Idioms and proverbs",
+        "Plural possessives, comparisons, contractions",
+        "Irregular verbs (simple/continuous)",
+        "Direct and reported speech; subject-verb agreement"
+      ]
+    }
+  ]
+}

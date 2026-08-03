@@ -1,0 +1,40 @@
+{
+  "board": "ICSE",
+  "class": 5,
+  "subject": "Hindi",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Second Language/Hindi), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Second Language (Hindi); per-class outcomes (कक्षा V).",
+  "chapters": [
+    {
+      "id": "1_listening_and_speaking",
+      "name": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "subtopics": [
+        "प्रतियोगिताओं/समारोहों में कविता-पाठ, वाद-विवाद, भाषण सुनना",
+        "पठन सामग्री सुनकर निष्कर्ष निकालना व अपना मत बनाना",
+        "मुख्य बातों में कार्य-कारण संबंध स्थापित करना",
+        "बोलने के शिष्टाचार का पालन करना",
+        "स्थिति व संदर्भ अनुकूल औपचारिक/अनौपचारिक भाषा का प्रयोग",
+        "अनुभवों व विचारों को प्रवाह के साथ अभिव्यक्त करना"
+      ]
+    },
+    {
+      "id": "2_reading_and_writing",
+      "name": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "subtopics": [
+        "विविध लेखन (कहानी, कविता, दोहे, निर्देश, नक्शे) प्रवाह से पढ़ना",
+        "मौन पठन करना; उच्चरित व लिखित भाषा का अंतर समझना",
+        "समाचार पत्र के विवरण व विज्ञापन पढ़कर चर्चा करना",
+        "पाठ्य सामग्री की मुख्य बातों व सार को अपने शब्दों में लिखना",
+        "चित्र/रेखाचित्र के आधार पर रचनात्मक लेखन",
+        "निबंध, पत्र, संवाद, कहानी, कविता आदि लिखना"
+      ]
+    }
+  ]
+}

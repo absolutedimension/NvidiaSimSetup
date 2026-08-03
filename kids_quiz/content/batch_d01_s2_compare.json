@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Bigger or Smaller Bay",
+ "adventure": "Bigger or Smaller Bay",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Bigger or Smaller Bay. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "Which number is the BIGGEST?",
+   "options": [
+    "376",
+    "640",
+    "702",
+    "161"
+   ],
+   "answer": 2,
+   "explain": "702 is the biggest.",
+   "voice_q": "Look at 161, 702, 640 and 376. Which is the biggest?",
+   "voice_a": "It's 702! 702 is the biggest here."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "Which number is the BIGGEST?",
+   "options": [
+    "739",
+    "577",
+    "686",
+    "632"
+   ],
+   "answer": 0,
+   "explain": "739 is the biggest.",
+   "voice_q": "Look at 577, 739, 686 and 632. Which is the biggest?",
+   "voice_a": "It's 739! 739 is the biggest here."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "Which number is the BIGGEST?",
+   "options": [
+    "449",
+    "403",
+    "309",
+    "642"
+   ],
+   "answer": 3,
+   "explain": "642 is the biggest.",
+   "voice_q": "Look at 403, 309, 642 and 449. Which is the biggest?",
+   "voice_a": "It's 642! 642 is the biggest here."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "Which number is the BIGGEST?",
+   "options": [
+    "751",
+    "552",
+    "566",
+    "644"
+   ],
+   "answer": 0,
+   "explain": "751 is the biggest.",
+   "voice_q": "Look at 751, 552, 566 and 644. Which is the biggest?",
+   "voice_a": "It's 751! 751 is the biggest here."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "Which number is the BIGGEST?",
+   "options": [
+    "462",
+    "762",
+    "396",
+    "819"
+   ],
+   "answer": 3,
+   "explain": "819 is the biggest.",
+   "voice_q": "Look at 762, 819, 396 and 462. Which is the biggest?",
+   "voice_a": "It's 819! 819 is the biggest here."
+  }
+ ]
+}

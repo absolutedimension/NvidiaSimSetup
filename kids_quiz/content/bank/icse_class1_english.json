@@ -1,0 +1,811 @@
+{
+  "board": "ICSE",
+  "class": 1,
+  "subject": "English",
+  "count": 25,
+  "items": [
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "cat",
+          "dog",
+          "car",
+          "bird"
+        ]
+      },
+      "answer": "car",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A tree has leaves.",
+      "payload": {
+        "statement": "True or False?"
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Listening and Speaking",
+      "band": 2,
+      "voice": "A tree has leaves.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is big and gray.",
+        "bank": [
+          "elephant",
+          "cat",
+          "mouse"
+        ]
+      },
+      "answer": "elephant",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Park",
+          "Table"
+        ],
+        "bins": [
+          "Place",
+          "Thing"
+        ]
+      },
+      "answer": {
+        "Park": "Place",
+        "Table": "Thing"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "I see a ___ in the sky.",
+        "bank": [
+          "cloud",
+          "shoe",
+          "book"
+        ]
+      },
+      "answer": "cloud",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Teacher",
+          "School"
+        ],
+        "bins": [
+          "Person",
+          "Place"
+        ]
+      },
+      "answer": {
+        "Teacher": "Person",
+        "School": "Place"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the picture to the word.",
+      "payload": {
+        "pairs": [
+          [
+            "Cat",
+            "Its picture"
+          ],
+          [
+            "Sun",
+            "Its picture"
+          ],
+          [
+            "Tree",
+            "Its picture"
+          ],
+          [
+            "Dog",
+            "Its picture"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Match the picture to the word.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Cat",
+          "Dog",
+          "Car",
+          "Fish"
+        ]
+      },
+      "answer": "Car",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A cat can fly.",
+      "payload": {
+        "statement": "A cat can fly."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Reading and Writing",
+      "band": 2,
+      "voice": "A cat can fly.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is blue.",
+        "bank": [
+          "sky",
+          "floor",
+          "grass"
+        ]
+      },
+      "answer": "sky",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them into living and non-living.",
+      "payload": {
+        "items": [
+          "Flower",
+          "Rock",
+          "Bird",
+          "Chair"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "Flower": "Living",
+        "Rock": "Non-living",
+        "Bird": "Living",
+        "Chair": "Non-living"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Sort them into living and non-living.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "I see a ___ in the sky.",
+        "bank": [
+          "star",
+          "book",
+          "table"
+        ]
+      },
+      "answer": "star",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A dog is a pet.",
+      "payload": {
+        "statement": "A dog is a pet."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Reading and Writing",
+      "band": 2,
+      "voice": "A dog is a pet.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort these into animals and things.",
+      "payload": {
+        "items": [
+          "Cat",
+          "Ball",
+          "Dog",
+          "Book"
+        ],
+        "bins": [
+          "Animals",
+          "Things"
+        ]
+      },
+      "answer": {
+        "Cat": "Animals",
+        "Ball": "Things",
+        "Dog": "Animals",
+        "Book": "Things"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Sort these into animals and things.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank with a word from the bank.",
+      "payload": {
+        "sentence": "The ___ is hot.",
+        "bank": [
+          "ice",
+          "sun",
+          "water"
+        ]
+      },
+      "answer": "sun",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Fill in the blank with a word from the bank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the picture to the word.",
+      "payload": {
+        "pairs": [
+          [
+            "Cat",
+            "Its picture"
+          ],
+          [
+            "Dog",
+            "Its picture"
+          ],
+          [
+            "Sun",
+            "Its picture"
+          ],
+          [
+            "Tree",
+            "Its picture"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Match the picture to the word.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the words to their opposites.",
+      "payload": {
+        "pairs": [
+          [
+            "hot",
+            "cold"
+          ],
+          [
+            "big",
+            "small"
+          ],
+          [
+            "happy",
+            "sad"
+          ],
+          [
+            "fast",
+            "slow"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Match the words to their opposites.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "cat",
+          "dog",
+          "run",
+          "fish"
+        ]
+      },
+      "answer": "run",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A cat is a boy.",
+      "payload": {
+        "statement": "A cat is a boy."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 2,
+      "voice": "A cat is a boy.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "I see a ___ in the sky.",
+        "bank": [
+          "bird",
+          "run",
+          "jump"
+        ]
+      },
+      "answer": "bird",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them by gender.",
+      "payload": {
+        "items": [
+          "girl",
+          "boy",
+          "woman",
+          "man"
+        ],
+        "bins": [
+          "She",
+          "He"
+        ]
+      },
+      "answer": {
+        "girl": "She",
+        "boy": "He",
+        "woman": "She",
+        "man": "He"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Sort them by gender.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "I will ___ to the park tomorrow.",
+        "bank": [
+          "go",
+          "went",
+          "going"
+        ]
+      },
+      "answer": "go",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The sun is a star.",
+      "payload": {
+        "statement": "The sun is a star."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 1,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 2,
+      "voice": "The sun is a star.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort the verbs by time.",
+      "payload": {
+        "items": [
+          "jumps",
+          "jumped",
+          "will jump"
+        ],
+        "bins": [
+          "Past",
+          "Present",
+          "Future"
+        ]
+      },
+      "answer": {
+        "jumps": "Present",
+        "jumped": "Past",
+        "will jump": "Future"
+      },
+      "subject": "english",
+      "class": 1,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Sort the verbs by time.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "dog",
+          "cat",
+          "run",
+          "fish"
+        ]
+      },
+      "answer": "run",
+      "subject": "english",
+      "class": 1,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

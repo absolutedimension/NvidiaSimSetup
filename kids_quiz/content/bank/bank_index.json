@@ -1,0 +1,331 @@
+{
+  "biharboard_class1_mathematics": {
+    "board": "Bihar Board",
+    "class": 1,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "biharboard_class2_mathematics": {
+    "board": "Bihar Board",
+    "class": 2,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "biharboard_class3_mathematics": {
+    "board": "Bihar Board",
+    "class": 3,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "biharboard_class4_mathematics": {
+    "board": "Bihar Board",
+    "class": 4,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "biharboard_class5_mathematics": {
+    "board": "Bihar Board",
+    "class": 5,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "cbse_class1_english": {
+    "board": "CBSE",
+    "class": 1,
+    "subject": "English",
+    "count": 30,
+    "engine": "llm"
+  },
+  "cbse_class1_evs": {
+    "board": "CBSE",
+    "class": 1,
+    "subject": "EVS",
+    "count": 30,
+    "engine": "llm"
+  },
+  "cbse_class1_hindi": {
+    "board": "CBSE",
+    "class": 1,
+    "subject": "Hindi",
+    "count": 30,
+    "engine": "llm"
+  },
+  "cbse_class1_mathematics": {
+    "board": "CBSE",
+    "class": 1,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "cbse_class2_english": {
+    "board": "CBSE",
+    "class": 2,
+    "subject": "English",
+    "count": 30,
+    "engine": "llm"
+  },
+  "cbse_class2_evs": {
+    "board": "CBSE",
+    "class": 2,
+    "subject": "EVS",
+    "count": 30,
+    "engine": "llm"
+  },
+  "cbse_class2_hindi": {
+    "board": "CBSE",
+    "class": 2,
+    "subject": "Hindi",
+    "count": 30,
+    "engine": "llm"
+  },
+  "cbse_class2_mathematics": {
+    "board": "CBSE",
+    "class": 2,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "cbse_class3_english": {
+    "board": "CBSE",
+    "class": 3,
+    "subject": "English",
+    "count": 1000,
+    "engine": "LLM"
+  },
+  "cbse_class3_evs": {
+    "board": "CBSE",
+    "class": 3,
+    "subject": "EVS",
+    "count": 1000,
+    "engine": "LLM"
+  },
+  "cbse_class3_hindi": {
+    "board": "CBSE",
+    "class": 3,
+    "subject": "Hindi",
+    "count": 1000,
+    "engine": "LLM"
+  },
+  "cbse_class3_mathematics": {
+    "board": "CBSE",
+    "class": 3,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "cbse_class4_english": {
+    "board": "CBSE",
+    "class": 4,
+    "subject": "English",
+    "count": 30,
+    "engine": "llm"
+  },
+  "cbse_class4_evs": {
+    "board": "CBSE",
+    "class": 4,
+    "subject": "EVS",
+    "count": 30,
+    "engine": "llm"
+  },
+  "cbse_class4_hindi": {
+    "board": "CBSE",
+    "class": 4,
+    "subject": "Hindi",
+    "count": 30,
+    "engine": "llm"
+  },
+  "cbse_class4_mathematics": {
+    "board": "CBSE",
+    "class": 4,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "cbse_class5_english": {
+    "board": "CBSE",
+    "class": 5,
+    "subject": "English",
+    "count": 28,
+    "engine": "llm"
+  },
+  "cbse_class5_evs": {
+    "board": "CBSE",
+    "class": 5,
+    "subject": "EVS",
+    "count": 30,
+    "engine": "llm"
+  },
+  "cbse_class5_hindi": {
+    "board": "CBSE",
+    "class": 5,
+    "subject": "Hindi",
+    "count": 28,
+    "engine": "llm"
+  },
+  "cbse_class5_mathematics": {
+    "board": "CBSE",
+    "class": 5,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "icse_class1_english": {
+    "board": "ICSE",
+    "class": 1,
+    "subject": "English",
+    "count": 25,
+    "engine": "llm"
+  },
+  "icse_class1_evs": {
+    "board": "ICSE",
+    "class": 1,
+    "subject": "EVS",
+    "count": 30,
+    "engine": "llm"
+  },
+  "icse_class1_hindi": {
+    "board": "ICSE",
+    "class": 1,
+    "subject": "Hindi",
+    "count": 30,
+    "engine": "llm"
+  },
+  "icse_class1_mathematics": {
+    "board": "ICSE",
+    "class": 1,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "icse_class2_english": {
+    "board": "ICSE",
+    "class": 2,
+    "subject": "English",
+    "count": 30,
+    "engine": "llm"
+  },
+  "icse_class2_evs": {
+    "board": "ICSE",
+    "class": 2,
+    "subject": "EVS",
+    "count": 30,
+    "engine": "llm"
+  },
+  "icse_class2_hindi": {
+    "board": "ICSE",
+    "class": 2,
+    "subject": "Hindi",
+    "count": 30,
+    "engine": "llm"
+  },
+  "icse_class2_mathematics": {
+    "board": "ICSE",
+    "class": 2,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "icse_class3_english": {
+    "board": "ICSE",
+    "class": 3,
+    "subject": "English",
+    "count": 1000,
+    "engine": "LLM"
+  },
+  "icse_class3_evs": {
+    "board": "ICSE",
+    "class": 3,
+    "subject": "EVS",
+    "count": 1000,
+    "engine": "LLM"
+  },
+  "icse_class3_hindi": {
+    "board": "ICSE",
+    "class": 3,
+    "subject": "Hindi",
+    "count": 1000,
+    "engine": "LLM"
+  },
+  "icse_class3_mathematics": {
+    "board": "ICSE",
+    "class": 3,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "icse_class4_english": {
+    "board": "ICSE",
+    "class": 4,
+    "subject": "English",
+    "count": 20,
+    "engine": "llm"
+  },
+  "icse_class4_evs": {
+    "board": "ICSE",
+    "class": 4,
+    "subject": "EVS",
+    "count": 20,
+    "engine": "llm"
+  },
+  "icse_class4_hindi": {
+    "board": "ICSE",
+    "class": 4,
+    "subject": "Hindi",
+    "count": 28,
+    "engine": "llm"
+  },
+  "icse_class4_mathematics": {
+    "board": "ICSE",
+    "class": 4,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "icse_class5_english": {
+    "board": "ICSE",
+    "class": 5,
+    "subject": "English",
+    "count": 30,
+    "engine": "llm"
+  },
+  "icse_class5_evs": {
+    "board": "ICSE",
+    "class": 5,
+    "subject": "EVS",
+    "count": 30,
+    "engine": "llm"
+  },
+  "icse_class5_hindi": {
+    "board": "ICSE",
+    "class": 5,
+    "subject": "Hindi",
+    "count": 30,
+    "engine": "llm"
+  },
+  "icse_class5_mathematics": {
+    "board": "ICSE",
+    "class": 5,
+    "subject": "Mathematics",
+    "count": 12,
+    "engine": "computed"
+  },
+  "cbse_class3_gk": {
+    "board": "CBSE",
+    "class": 3,
+    "subject": "GK",
+    "count": 1000,
+    "engine": "LLM"
+  },
+  "icse_class3_gk": {
+    "board": "ICSE",
+    "class": 3,
+    "subject": "GK",
+    "count": 1000,
+    "engine": "LLM"
+  }
+}

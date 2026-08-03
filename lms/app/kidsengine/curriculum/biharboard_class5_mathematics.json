@@ -1,0 +1,122 @@
+{
+  "board": "Bihar Board",
+  "class": 5,
+  "subject": "Mathematics",
+  "source": {
+    "name": "SCERT Bihar (BSEB) Class 5 गणित (via selfstudys mirror; bepclots TLS-blocked)",
+    "url": "https://www.selfstudys.com/books/bihar/state-books/class-5th/ganit/17847",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "medium",
+  "verified": false,
+  "status": "draft",
+  "notes": "Bihar's own SCERT/BSEB Class 5 'गणित' (NOT NCERT 'गणित का जादू'). 13 chapters; names from selfstudys mirror; medium confidence.",
+  "chapters": [
+    {
+      "id": "fair_of_numbers",
+      "name": "संख्याओं का मेला (Fair of Numbers)",
+      "subtopics": [
+        "large numbers",
+        "Indian number system",
+        "comparing"
+      ]
+    },
+    {
+      "id": "addition_and_subtraction",
+      "name": "जोड़-घटाव (Addition and Subtraction)",
+      "subtopics": [
+        "large numbers",
+        "estimation"
+      ]
+    },
+    {
+      "id": "multiplication_and_division",
+      "name": "गुना-भाग (Multiplication and Division)",
+      "subtopics": [
+        "multiplying large numbers",
+        "long division"
+      ]
+    },
+    {
+      "id": "multiples_and_factors",
+      "name": "गुणज तथा गुणनखंड (Multiples and Factors)",
+      "subtopics": [
+        "factors, multiples",
+        "prime/composite",
+        "HCF and LCM"
+      ]
+    },
+    {
+      "id": "fractions_and_decimals",
+      "name": "भिन्न एवं दशमलव (Fractions and Decimals)",
+      "subtopics": [
+        "equivalent fractions",
+        "decimal notation"
+      ]
+    },
+    {
+      "id": "currency_and_banking",
+      "name": "मुद्रा एवं बैंकिंग (Currency and Banking)",
+      "subtopics": [
+        "money calculations",
+        "simple banking"
+      ]
+    },
+    {
+      "id": "angle",
+      "name": "कोण (Angle)",
+      "subtopics": [
+        "types of angles",
+        "measuring angles"
+      ]
+    },
+    {
+      "id": "symmetry",
+      "name": "सममिति (Symmetry)",
+      "subtopics": [
+        "lines of symmetry",
+        "reflection"
+      ]
+    },
+    {
+      "id": "shapes",
+      "name": "आकृतियाँ (Shapes)",
+      "subtopics": [
+        "2D/3D shapes",
+        "nets"
+      ]
+    },
+    {
+      "id": "units_of_measurement",
+      "name": "मापन की इकाइयाँ (Units of Measurement)",
+      "subtopics": [
+        "length/weight/capacity units",
+        "conversion"
+      ]
+    },
+    {
+      "id": "perimeter_and_area",
+      "name": "परिमाप एवं क्षेत्रफल (Perimeter and Area)",
+      "subtopics": [
+        "perimeter",
+        "area of rectangle/square"
+      ]
+    },
+    {
+      "id": "data_handling",
+      "name": "आँकड़ों का खेल (Data Handling)",
+      "subtopics": [
+        "bar graphs and pictographs",
+        "averages sense"
+      ]
+    },
+    {
+      "id": "pattern",
+      "name": "पैटर्न (Pattern)",
+      "subtopics": [
+        "number/geometric patterns",
+        "rules of patterns"
+      ]
+    }
+  ]
+}

@@ -425,3 +425,21 @@ class StudentTopic(Base):
     title: Mapped[str] = mapped_column(String(120), default="")      # display, e.g. 'NEET' or 'JEE Rotational Motion'
     kind: Mapped[str] = mapped_column(String(10), default="exam")    # exam | custom
     created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class KidsSkillState(Base):
+    """Per-(student, skill) adaptive state for the worksheet/assessment engine — BKT mastery +
+    Elo ability + the 85% controller's target difficulty. skill = 'board/class/subject/chapter'."""
+    __tablename__ = "kids_skill_state"
+    __table_args__ = (UniqueConstraint("student_id", "skill", name="uq_kids_skill"),)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    skill: Mapped[str] = mapped_column(String(160), index=True)
+    p_mastery: Mapped[float] = mapped_column(Float, default=0.30)
+    theta: Mapped[float] = mapped_column(Float, default=0.0)
+    ema: Mapped[float] = mapped_column(Float, default=0.85)
+    target_b: Mapped[float] = mapped_column(Float, default=-1.73)
+    n: Mapped[int] = mapped_column(Integer, default=0)
+    n_correct: Mapped[int] = mapped_column(Integer, default=0)
+    misconceptions: Mapped[dict] = mapped_column(JSON, default=dict)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=now)

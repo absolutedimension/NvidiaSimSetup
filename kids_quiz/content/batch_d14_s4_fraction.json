@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Fraction Falls",
+ "adventure": "Fraction Falls",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Fraction Falls. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🍕",
+   "q": "Half of 4 = ?",
+   "options": [
+    "3",
+    "1",
+    "5",
+    "2"
+   ],
+   "answer": 3,
+   "explain": "4 shared into 2 equal parts is 2.",
+   "voice_q": "What is half of 4?",
+   "voice_a": "It's 2! Half of 4 is 2."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍕",
+   "q": "1 whole is cut into 4 equal parts. One part is…",
+   "options": [
+    "one-quarter",
+    "one-third",
+    "one-fifth",
+    "half"
+   ],
+   "answer": 0,
+   "explain": "4 equal parts, so one part is one-quarter.",
+   "voice_q": "A pizza is cut into 4 equal parts. What is one part called?",
+   "voice_a": "It's one-quarter! One of 4 equal parts is one-quarter."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍕",
+   "q": "1 whole is cut into 2 equal parts. One part is…",
+   "options": [
+    "one-fifth",
+    "half",
+    "one-third",
+    "one-quarter"
+   ],
+   "answer": 1,
+   "explain": "2 equal parts, so one part is half.",
+   "voice_q": "A pizza is cut into 2 equal parts. What is one part called?",
+   "voice_a": "It's half! One of 2 equal parts is half."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍕",
+   "q": "Half of 10 = ?",
+   "options": [
+    "6",
+    "5",
+    "4",
+    "8"
+   ],
+   "answer": 1,
+   "explain": "10 shared into 2 equal parts is 5.",
+   "voice_q": "What is half of 10?",
+   "voice_a": "It's 5! Half of 10 is 5."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍕",
+   "q": "One-third of 6 = ?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "1"
+   ],
+   "answer": 2,
+   "explain": "6 shared into 3 equal parts is 2.",
+   "voice_q": "What is one-third of 6?",
+   "voice_a": "It's 2! One-third of 6 is 2."
+  }
+ ]
+}

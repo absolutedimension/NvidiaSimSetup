@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Times-Table Town",
+ "adventure": "Times-Table Town",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Times-Table Town. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "6 boxes, each has 6 stars. How many stars?  6 × 6 = ?",
+   "options": [
+    "30",
+    "12",
+    "42",
+    "36"
+   ],
+   "answer": 3,
+   "explain": "6 groups of 6 make 36.",
+   "voice_q": "6 boxes, and each has 6 stars. What is 6 times 6?",
+   "voice_a": "It's 36! 6 groups of 6 stars make 36."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍎",
+   "q": "5 baskets, each has 3 apples. How many apples?  5 × 3 = ?",
+   "options": [
+    "10",
+    "18",
+    "15",
+    "8"
+   ],
+   "answer": 2,
+   "explain": "5 groups of 3 make 15.",
+   "voice_q": "5 baskets, and each has 3 apples. What is 5 times 3?",
+   "voice_a": "It's 15! 5 groups of 3 apples make 15."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🐟",
+   "q": "5 ponds, each has 5 fish. How many fish?  5 × 5 = ?",
+   "options": [
+    "25",
+    "10",
+    "30",
+    "20"
+   ],
+   "answer": 0,
+   "explain": "5 groups of 5 make 25.",
+   "voice_q": "5 ponds, and each has 5 fish. What is 5 times 5?",
+   "voice_a": "It's 25! 5 groups of 5 fish make 25."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🥭",
+   "q": "6 trees, each has 5 mangoes. How many mangoes?  6 × 5 = ?",
+   "options": [
+    "30",
+    "24",
+    "11",
+    "35"
+   ],
+   "answer": 0,
+   "explain": "6 groups of 5 make 30.",
+   "voice_q": "6 trees, and each has 5 mangoes. What is 6 times 5?",
+   "voice_a": "It's 30! 6 groups of 5 mangoes make 30."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍎",
+   "q": "2 baskets, each has 6 apples. How many apples?  2 × 6 = ?",
+   "options": [
+    "10",
+    "18",
+    "8",
+    "12"
+   ],
+   "answer": 3,
+   "explain": "2 groups of 6 make 12.",
+   "voice_q": "2 baskets, and each has 6 apples. What is 2 times 6?",
+   "voice_a": "It's 12! 2 groups of 6 apples make 12."
+  }
+ ]
+}

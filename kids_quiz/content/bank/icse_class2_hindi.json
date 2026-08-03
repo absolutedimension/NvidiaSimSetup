@@ -1,0 +1,959 @@
+{
+  "board": "ICSE",
+  "class": 2,
+  "subject": "Hindi",
+  "count": 30,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the words with their meanings.",
+      "payload": {
+        "pairs": [
+          [
+            "सूरज",
+            "दिन का तारा"
+          ],
+          [
+            "चाँद",
+            "रात का तारा"
+          ],
+          [
+            "पेड़",
+            "जीवित वस्तु"
+          ],
+          [
+            "कुर्सी",
+            "अजीव वस्तु"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Match the words with their meanings.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "गेंद",
+          "किताब",
+          "पेड़",
+          "कुर्सी"
+        ]
+      },
+      "answer": "गेंद",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The sun gives us light.",
+      "payload": {
+        "statement": "सूरज हमें रोशनी देता है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 2,
+      "voice": "The sun gives us light.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is shining in the sky.",
+        "bank": [
+          "सूरज",
+          "चाँद",
+          "तारा"
+        ]
+      },
+      "answer": "सूरज",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "तोता",
+          "किताब",
+          "बिल्ली"
+        ],
+        "bins": [
+          "जीवित",
+          "अजीवित"
+        ]
+      },
+      "answer": {
+        "तोता": "जीवित",
+        "किताब": "अजीवित",
+        "बिल्ली": "जीवित"
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "I live in ___.",
+        "bank": [
+          "गाँव",
+          "किताब",
+          "खेल"
+        ]
+      },
+      "answer": "गाँव",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A tree is a living thing.",
+      "payload": {
+        "statement": "पेड़ एक जीवित चीज है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 2,
+      "voice": "A tree is a living thing.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the questions with the answers.",
+      "payload": {
+        "pairs": [
+          [
+            "तुम्हारा नाम क्या है?",
+            "मेरा नाम राम है।"
+          ],
+          [
+            "तुम कहाँ रहते हो?",
+            "मैं दिल्ली में रहता हूँ।"
+          ],
+          [
+            "तुम्हारी उम्र कितनी है?",
+            "मेरी उम्र 7 साल है।"
+          ],
+          [
+            "तुम्हें क्या पसंद है?",
+            "मुझे खेलना पसंद है।"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Match the questions with the answers.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "कविता",
+          "कहानी",
+          "तस्वीर",
+          "गाना"
+        ]
+      },
+      "answer": "तस्वीर",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A poem is a type of story.",
+      "payload": {
+        "statement": "कविता एक प्रकार की कहानी है।"
+      },
+      "answer": false,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 2,
+      "voice": "A poem is a type of story.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "My favorite game is ___.",
+        "bank": [
+          "क्रिकेट",
+          "पुस्तक",
+          "सड़क"
+        ]
+      },
+      "answer": "क्रिकेट",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "बिल्ली",
+          "गाड़ी",
+          "गाय"
+        ],
+        "bins": [
+          "जीवित",
+          "अजीवित"
+        ]
+      },
+      "answer": {
+        "बिल्ली": "जीवित",
+        "गाड़ी": "अजीवित",
+        "गाय": "जीवित"
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the animals with their sounds.",
+      "payload": {
+        "pairs": [
+          [
+            "कुत्ता",
+            "भौंकना"
+          ],
+          [
+            "गाय",
+            "गायना"
+          ],
+          [
+            "बिल्ली",
+            "मीओं"
+          ],
+          [
+            "गधा",
+            "हिनहिनाना"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Match the animals with their sounds.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A riddle is fun to solve.",
+      "payload": {
+        "statement": "पहेली हल करना मजेदार होता है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 2,
+      "voice": "A riddle is fun to solve.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is a riddle.",
+        "bank": [
+          "पहेली",
+          "कहानी",
+          "गाना"
+        ]
+      },
+      "answer": "पहेली",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the picture with its name.",
+      "payload": {
+        "pairs": [
+          [
+            "सूरज",
+            "Sun"
+          ],
+          [
+            "चाँद",
+            "Moon"
+          ],
+          [
+            "तारा",
+            "Star"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Match the picture with its name.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A कहानी is a story.",
+      "payload": {
+        "statement": "A कहानी is a story."
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 2,
+      "voice": "A कहानी is a story.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is a pet animal.",
+        "bank": [
+          "cat",
+          "tree",
+          "car"
+        ]
+      },
+      "answer": "cat",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "किताब",
+          "पेन",
+          "गाड़ी",
+          "कागज"
+        ]
+      },
+      "answer": "गाड़ी",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them into living and non-living.",
+      "payload": {
+        "items": [
+          "गाय",
+          "पानी",
+          "पेड़",
+          "पंखा"
+        ],
+        "bins": [
+          "Living",
+          "Non-living"
+        ]
+      },
+      "answer": {
+        "गाय": "Living",
+        "पानी": "Non-living",
+        "पेड़": "Living",
+        "पंखा": "Non-living"
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Sort them into living and non-living.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the word with its meaning.",
+      "payload": {
+        "pairs": [
+          [
+            "नाटक",
+            "Play"
+          ],
+          [
+            "कहानी",
+            "Story"
+          ],
+          [
+            "विज्ञापन",
+            "Advertisement"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Match the word with its meaning.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "An अनुच्छेद is a paragraph.",
+      "payload": {
+        "statement": "An अनुच्छेद is a paragraph."
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 2,
+      "voice": "An अनुच्छेद is a paragraph.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We read a ___ every day.",
+        "bank": [
+          "कहानी",
+          "बिल्ली",
+          "खेल"
+        ]
+      },
+      "answer": "कहानी",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "कुत्ता",
+          "बिल्ली",
+          "गाड़ी",
+          "चूहा"
+        ]
+      },
+      "answer": "गाड़ी",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them into verbs and nouns.",
+      "payload": {
+        "items": [
+          "खेलना",
+          "किताब",
+          "सुनना",
+          "गाना"
+        ],
+        "bins": [
+          "Verbs",
+          "Nouns"
+        ]
+      },
+      "answer": {
+        "खेलना": "Verbs",
+        "किताब": "Nouns",
+        "सुनना": "Verbs",
+        "गाना": "Verbs"
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Sort them into verbs and nouns.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "We write तुकबंदियाँ in poems.",
+      "payload": {
+        "statement": "We write तुकबंदियाँ in poems."
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 2,
+      "voice": "We write तुकबंदियाँ in poems.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is bright in the night.",
+        "bank": [
+          "चाँद",
+          "पेड़",
+          "घर"
+        ]
+      },
+      "answer": "चाँद",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "नाटक",
+          "कहानी",
+          "चित्र",
+          "खेल"
+        ]
+      },
+      "answer": "खेल",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the action with its name.",
+      "payload": {
+        "pairs": [
+          [
+            "अभिनय",
+            "Acting"
+          ],
+          [
+            "पढ़ना",
+            "Reading"
+          ],
+          [
+            "लिखना",
+            "Writing"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Match the action with its name.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "किताब",
+          "पेंसिल",
+          "पेड़",
+          "कागज"
+        ]
+      },
+      "answer": "पेड़",
+      "subject": "hindi",
+      "class": 2,
+      "chapter": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

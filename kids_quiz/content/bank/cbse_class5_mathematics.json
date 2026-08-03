@@ -1,0 +1,202 @@
+{
+  "board": "CBSE",
+  "class": 5,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "We the Travellers — I",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 168176 and 424002.",
+      "payload": {
+        "a": 168176,
+        "b": 424002
+      },
+      "answer": "<",
+      "explain": "168176 is less than 424002."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "Fractions",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 7
+      },
+      "answer": 7,
+      "explain": "There are 7 apples!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "Angles as Turns",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 16
+      },
+      "answer": 16,
+      "explain": "There are 16 apples!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "We the Travellers — II",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 21
+      },
+      "answer": 21,
+      "explain": "There are 21 apples!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "Far and Near",
+      "band": "3-5",
+      "instruction": "Add it!  12457 + 15632 = ?",
+      "voice": "What is 12457 plus 15632?",
+      "payload": {
+        "op": "+",
+        "a": 12457,
+        "b": 15632
+      },
+      "answer": 28089,
+      "explain": "12457 plus 15632 makes 28089."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "The Dairy Farm",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 448485 and 83248.",
+      "payload": {
+        "a": 448485,
+        "b": 83248
+      },
+      "answer": ">",
+      "explain": "448485 is greater than 83248."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "Shapes and Patterns",
+      "band": "3-5",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 2.",
+      "payload": {
+        "seq": [
+          10,
+          12,
+          null,
+          16
+        ],
+        "step": 2
+      },
+      "answer": [
+        14
+      ],
+      "explain": "Counting by 2s → 14."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "Weight and Capacity",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 877017 and 602921.",
+      "payload": {
+        "a": 877017,
+        "b": 602921
+      },
+      "answer": ">",
+      "explain": "877017 is greater than 602921."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "Coconut Farm",
+      "band": "3-5",
+      "instruction": "Add it!  24630 + 48207 = ?",
+      "voice": "What is 24630 plus 48207?",
+      "payload": {
+        "op": "+",
+        "a": 24630,
+        "b": 48207
+      },
+      "answer": 72837,
+      "explain": "24630 plus 48207 makes 72837."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "Symmetrical Designs",
+      "band": "3-5",
+      "instruction": "Add it!  47821 + 48374 = ?",
+      "voice": "What is 47821 plus 48374?",
+      "payload": {
+        "op": "+",
+        "a": 47821,
+        "b": 48374
+      },
+      "answer": 96195,
+      "explain": "47821 plus 48374 makes 96195."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "Grandmother's Quilt",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 61998 and 241821.",
+      "payload": {
+        "a": 61998,
+        "b": 241821
+      },
+      "answer": "<",
+      "explain": "61998 is less than 241821."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 5,
+      "chapter": "Racing Seconds",
+      "band": "3-5",
+      "instruction": "Add it!  46481 + 18727 = ?",
+      "voice": "What is 46481 plus 18727?",
+      "payload": {
+        "op": "+",
+        "a": 46481,
+        "b": 18727
+      },
+      "answer": 65208,
+      "explain": "46481 plus 18727 makes 65208."
+    }
+  ]
+}

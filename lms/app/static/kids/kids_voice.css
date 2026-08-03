@@ -1,0 +1,50 @@
+/* kids_voice.css — kid touches for the pool test (loaded only on the kids host).
+ * Bright, big tap targets + a floating voice control bar with JJ & Mikey. */
+
+:root { --kv-pink:#ff5aa5; --kv-blue:#3aa0ff; --kv-yellow:#ffb300; --kv-green:#22b07d; }
+
+/* bigger, friendlier answer buttons */
+#log .opt {
+  border-radius: 16px !important;
+  border: 2px solid #ffe0b2 !important;
+  padding: 14px 14px !important;
+  font-size: 1.15rem !important;
+  transition: transform .08s ease;
+}
+#log .opt:active { transform: scale(.98); }
+#log .opt .badge {
+  background: linear-gradient(135deg,var(--kv-blue),var(--kv-pink)) !important;
+  color:#fff !important; font-weight:800 !important;
+}
+#log .qtext { font-size: 1.28rem !important; line-height: 1.45 !important; }
+#log .qtag { background: var(--kv-yellow) !important; color:#3a2a00 !important; font-weight:800 !important; }
+
+/* leave room so the bar never hides the last option */
+#log { padding-bottom: 110px !important; }
+
+/* floating control bar */
+.kv-bar {
+  position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%);
+  z-index: 9999; display: flex; align-items: center; gap: 10px;
+  background: #fff; border: 3px solid var(--kv-yellow);
+  border-radius: 999px; padding: 8px 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  max-width: 96vw; flex-wrap: nowrap;
+}
+.kv-bar .kv-m { height: 44px; width: auto; }
+.kv-btn {
+  border: none; cursor: pointer; border-radius: 999px;
+  padding: 10px 14px; font-size: .98rem; font-weight: 800; color: #fff;
+  white-space: nowrap;
+}
+.kv-toggle { background: var(--kv-green); }
+.kv-toggle.off { background: #9aa3ad; }
+.kv-replay { background: var(--kv-blue); }
+.kv-mic { background: var(--kv-pink); }
+.kv-btn:active { transform: scale(.96); }
+
+@media (max-width: 520px) {
+  .kv-bar { gap: 6px; padding: 6px 8px; }
+  .kv-bar .kv-m { height: 34px; }
+  .kv-btn { padding: 9px 11px; font-size: .86rem; }
+}

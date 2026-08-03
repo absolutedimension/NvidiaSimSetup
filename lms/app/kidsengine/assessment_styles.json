@@ -1,0 +1,20 @@
+{
+  "_doc": "Assessment STYLE taxonomy — a style is a lens on a concept, = 4 dials. Concept and style are SEPARATE layers: one concept x these dials = the whole item bank. Student types (student_profiles.json) just re-weight these styles. Frameworks encoded: Bloom (cognitive), Webb DOK, CPA/Bruner (representation), misconception distractors.",
+  "dials": {
+    "cognitive": ["remember", "understand", "apply", "analyze", "evaluate", "create"],
+    "dok": [1, 2, 3, 4],
+    "representation": ["abstract", "pictorial", "words", "story", "object", "table"],
+    "context": ["abstract", "real_object", "real_life", "game", "exam"]
+  },
+  "styles": [
+    {"id": "abstract_fact",    "cognitive": "remember",  "dok": 1, "representation": "abstract",  "context": "abstract",  "grade_band": [1, 12], "concepts": ["add", "sub", "mul", "div", "compare", "number"], "archetypes": ["arith", "compare_symbol", "neighbour_number"], "status": "live",    "note": "recall the fact / symbol form (4 x 3 = ?)"},
+    {"id": "pictorial_count",  "cognitive": "understand","dok": 1, "representation": "pictorial", "context": "real_object","grade_band": [1, 4],  "concepts": ["add", "count", "number"],                     "archetypes": ["count_write"],                              "status": "live",    "note": "CPA-concrete: count objects (how many apples?)"},
+    {"id": "story_reallife",   "cognitive": "apply",     "dok": 2, "representation": "story",     "context": "real_life", "grade_band": [2, 12], "concepts": ["add", "sub", "mul", "div"],                    "archetypes": ["arith"],                                    "status": "live",    "note": "real-life dressing; story in the prompt, computation shown"},
+    {"id": "sequence_pattern", "cognitive": "understand","dok": 2, "representation": "abstract",  "context": "game",      "grade_band": [1, 6],  "concepts": ["number", "pattern", "mul"],                    "archetypes": ["fill_sequence"],                            "status": "live",    "note": "skip-count / pattern completion"},
+    {"id": "money_context",    "cognitive": "apply",     "dok": 2, "representation": "object",    "context": "real_life", "grade_band": [2, 8],  "concepts": ["money", "add"],                               "archetypes": ["count_money"],                              "status": "live"},
+    {"id": "relational_match", "cognitive": "understand","dok": 2, "representation": "words",     "context": "abstract",  "grade_band": [1, 12], "concepts": ["evs", "gk", "english", "number"],             "archetypes": ["match_following"],                          "status": "live"},
+    {"id": "error_spot",       "cognitive": "analyze",   "dok": 3, "representation": "words",     "context": "exam",      "grade_band": [3, 12], "concepts": ["add", "sub", "mul"],                          "archetypes": ["true_false"],                               "status": "live",    "note": "misconception diagnosis: 'X wrote 4x3=7. Correct?'"},
+    {"id": "reverse_relation", "cognitive": "analyze",   "dok": 2, "representation": "abstract",  "context": "abstract",  "grade_band": [3, 12], "concepts": ["add", "sub", "mul"],                          "archetypes": ["missing_box"],                              "status": "planned", "note": "tests the relationship (12 = 4 x ?) — needs missing-box render"},
+    {"id": "assertion_reason", "cognitive": "evaluate",  "dok": 3, "representation": "words",     "context": "exam",      "grade_band": [8, 16], "concepts": ["*"],                                          "archetypes": ["assertion_reason"],                         "status": "planned", "note": "board/JEE/UPSC DNA — needs A/R render"}
+  ]
+}

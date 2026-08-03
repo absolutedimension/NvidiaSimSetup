@@ -1,0 +1,59 @@
+{
+  "board": "CBSE",
+  "class": 2,
+  "subject": "English",
+  "source": {
+    "name": "NCERT Mridang — Textbook of English for Grade 2 (Contents)",
+    "url": "https://ncert.nic.in/textbook/pdf/bemr1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Current 'Mridang'. Verbatim from official ncert.nic.in PDF (bemr1). 5 units.",
+  "chapters": [
+    {
+      "id": "unit_1_fun_with_friends",
+      "name": "Unit 1: Fun with Friends",
+      "subtopics": [
+        "My Bicycle",
+        "Picture Reading"
+      ]
+    },
+    {
+      "id": "unit_2_welcome_to_my_world",
+      "name": "Unit 2: Welcome to My World",
+      "subtopics": [
+        "It is Fun",
+        "Seeing without Seeing"
+      ]
+    },
+    {
+      "id": "unit_3_going_places",
+      "name": "Unit 3: Going Places",
+      "subtopics": [
+        "Come Back Soon",
+        "Between Home and School",
+        "This is My Town"
+      ]
+    },
+    {
+      "id": "unit_4_life_around_us",
+      "name": "Unit 4: Life Around Us",
+      "subtopics": [
+        "A Show of Clouds",
+        "My Name",
+        "The Crow",
+        "The Smart Monkey"
+      ]
+    },
+    {
+      "id": "unit_5_harmony",
+      "name": "Unit 5: Harmony",
+      "subtopics": [
+        "Little Drops of Water",
+        "We are all Indians"
+      ]
+    }
+  ]
+}

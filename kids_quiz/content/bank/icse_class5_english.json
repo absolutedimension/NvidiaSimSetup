@@ -1,0 +1,966 @@
+{
+  "board": "ICSE",
+  "class": 5,
+  "subject": "English",
+  "count": 30,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the words with their meanings.",
+      "payload": {
+        "pairs": [
+          [
+            "Debate",
+            "A discussion where people give their opinions"
+          ],
+          [
+            "Dictation",
+            "Writing down what someone says"
+          ],
+          [
+            "Intonation",
+            "The rise and fall of voice in speaking"
+          ],
+          [
+            "Nonverbal",
+            "Communication without words"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Match the words with their meanings.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Talking",
+          "Listening",
+          "Reading",
+          "Drawing"
+        ]
+      },
+      "answer": "Drawing",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A debate is only about agreeing with each other.",
+      "payload": {
+        "statement": "A debate is only about agreeing with each other."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Listening and Speaking",
+      "band": 2,
+      "voice": "A debate is only about agreeing with each other.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "In a good discussion, we should ___ to each other.",
+        "bank": [
+          "listen",
+          "yell",
+          "ignore"
+        ]
+      },
+      "answer": "listen",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them into verbal and nonverbal.",
+      "payload": {
+        "items": [
+          "Nod",
+          "Speak",
+          "Smile",
+          "Write"
+        ],
+        "bins": [
+          "Verbal",
+          "Nonverbal"
+        ]
+      },
+      "answer": {
+        "Nod": "Nonverbal",
+        "Speak": "Verbal",
+        "Smile": "Nonverbal",
+        "Write": "Verbal"
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Sort them into verbal and nonverbal.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the tone with its description.",
+      "payload": {
+        "pairs": [
+          [
+            "Happy tone",
+            "Cheerful voice"
+          ],
+          [
+            "Sad tone",
+            "Low voice"
+          ],
+          [
+            "Angry tone",
+            "Loud voice"
+          ],
+          [
+            "Excited tone",
+            "Fast voice"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Match the tone with its description.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "We should always interrupt when someone is speaking.",
+      "payload": {
+        "statement": "We should always interrupt when someone is speaking."
+      },
+      "answer": false,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Listening and Speaking",
+      "band": 2,
+      "voice": "We should always interrupt when someone is speaking.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "___ is important for understanding feelings.",
+        "bank": [
+          "Body language",
+          "Math",
+          "History"
+        ]
+      },
+      "answer": "Body language",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Opinion",
+          "Fact",
+          "Viewpoint",
+          "Story"
+        ]
+      },
+      "answer": "Fact",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them into speaking and listening activities.",
+      "payload": {
+        "items": [
+          "Listening to a story",
+          "Giving a speech",
+          "Taking notes",
+          "Asking questions"
+        ],
+        "bins": [
+          "Speaking",
+          "Listening"
+        ]
+      },
+      "answer": {
+        "Listening to a story": "Listening",
+        "Giving a speech": "Speaking",
+        "Taking notes": "Listening",
+        "Asking questions": "Speaking"
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Listening and Speaking",
+      "band": 1,
+      "voice": "Sort them into speaking and listening activities.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the words to their meanings.",
+      "payload": {
+        "pairs": [
+          [
+            "Comprehend",
+            "To understand"
+          ],
+          [
+            "Infer",
+            "To guess based on clues"
+          ],
+          [
+            "Interpret",
+            "To explain"
+          ],
+          [
+            "Revise",
+            "To change for better"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Match the words to their meanings.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Simile",
+          "Metaphor",
+          "Personification",
+          "Car"
+        ]
+      },
+      "answer": "Car",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A simile uses 'like' or 'as' to compare two things.",
+      "payload": {
+        "statement": "A simile uses 'like' or 'as' to compare two things."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Reading and Writing",
+      "band": 2,
+      "voice": "A simile uses 'like' or 'as' to compare two things.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A ___ is a short written message.",
+        "bank": [
+          "letter",
+          "notice",
+          "book"
+        ]
+      },
+      "answer": "notice",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort the following into 'Writing' and 'Not Writing'.",
+      "payload": {
+        "items": [
+          "Story",
+          "Game",
+          "Essay",
+          "Drawing"
+        ],
+        "bins": [
+          "Writing",
+          "Not Writing"
+        ]
+      },
+      "answer": {
+        "Story": "Writing",
+        "Game": "Not Writing",
+        "Essay": "Writing",
+        "Drawing": "Not Writing"
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Sort the following into 'Writing' and 'Not Writing'.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "To gather information, we can use ___.",
+        "bank": [
+          "books",
+          "toys",
+          "food"
+        ]
+      },
+      "answer": "books",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Editing means fixing mistakes in your writing.",
+      "payload": {
+        "statement": "Editing means fixing mistakes in your writing."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Reading and Writing",
+      "band": 2,
+      "voice": "Editing means fixing mistakes in your writing.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the type of writing to its purpose.",
+      "payload": {
+        "pairs": [
+          [
+            "Message",
+            "To communicate quickly"
+          ],
+          [
+            "Notice",
+            "To inform many people"
+          ],
+          [
+            "Composition",
+            "To express ideas"
+          ],
+          [
+            "Essay",
+            "To explain in detail"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Match the type of writing to its purpose.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A ___ compares two things without using 'like' or 'as'.",
+        "bank": [
+          "simile",
+          "metaphor",
+          "analogy"
+        ]
+      },
+      "answer": "metaphor",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Plan",
+          "Write",
+          "Revise",
+          "Jump"
+        ]
+      },
+      "answer": "Jump",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Reading and Writing",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "She runs very ___.",
+        "bank": [
+          "quick",
+          "quickly",
+          "quickest"
+        ]
+      },
+      "answer": "quickly",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the adverb to its kind.",
+      "payload": {
+        "pairs": [
+          [
+            "quickly",
+            "manner"
+          ],
+          [
+            "very",
+            "degree"
+          ],
+          [
+            "yesterday",
+            "time"
+          ],
+          [
+            "outside",
+            "place"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Match the adverb to its kind.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A conjunction joins words or groups of words.",
+      "payload": {
+        "statement": "A conjunction joins words or groups of words."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 2,
+      "voice": "A conjunction joins words or groups of words.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "and",
+          "but",
+          "jump",
+          "or"
+        ]
+      },
+      "answer": "jump",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "She is ___ than her brother.",
+        "bank": [
+          "taller",
+          "tallest",
+          "tall"
+        ]
+      },
+      "answer": "taller",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "An interjection shows strong feeling.",
+      "payload": {
+        "statement": "An interjection shows strong feeling."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 2,
+      "voice": "An interjection shows strong feeling.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "They ___ playing soccer yesterday.",
+        "bank": [
+          "was",
+          "were",
+          "are"
+        ]
+      },
+      "answer": "were",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the idiom to its meaning.",
+      "payload": {
+        "pairs": [
+          [
+            "break a leg",
+            "good luck"
+          ],
+          [
+            "piece of cake",
+            "easy"
+          ],
+          [
+            "spill the beans",
+            "tell a secret"
+          ],
+          [
+            "hit the books",
+            "study hard"
+          ]
+        ]
+      },
+      "subject": "english",
+      "class": 5,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Match the idiom to its meaning.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "In reported speech, we change the tense of the verb.",
+      "payload": {
+        "statement": "In reported speech, we change the tense of the verb."
+      },
+      "answer": true,
+      "subject": "english",
+      "class": 5,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 2,
+      "voice": "In reported speech, we change the tense of the verb.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "She runs very ___.",
+        "bank": [
+          "quickly",
+          "quick",
+          "quickest"
+        ]
+      },
+      "answer": "quickly",
+      "subject": "english",
+      "class": 5,
+      "chapter": "Grammar and Vocabulary in Context",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

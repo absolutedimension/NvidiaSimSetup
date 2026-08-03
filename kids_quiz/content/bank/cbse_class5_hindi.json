@@ -1,0 +1,905 @@
+{
+  "board": "CBSE",
+  "class": 5,
+  "subject": "Hindi",
+  "count": 28,
+  "items": [
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "किरन एक ___ है।",
+        "bank": [
+          "लड़की",
+          "किताब",
+          "पेड़"
+        ]
+      },
+      "answer": "लड़की",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "किरन",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "किरन स्कूल जाती है।",
+      "payload": {
+        "statement": "किरन स्कूल जाती है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "किरन",
+      "band": 2,
+      "voice": "किरन स्कूल जाती है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "किरन",
+          "सूरज",
+          "चाँद",
+          "पेड़"
+        ]
+      },
+      "answer": "पेड़",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "किरन",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "किरन की ___ है।",
+        "bank": [
+          "माँ",
+          "किताब",
+          "खिलौना"
+        ]
+      },
+      "answer": "माँ",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "किरन",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "किरन",
+          "गाड़ी",
+          "पिता"
+        ],
+        "bins": [
+          "मनुष्य",
+          "गाड़ी"
+        ]
+      },
+      "answer": {
+        "किरन": "मनुष्य",
+        "गाड़ी": "गाड़ी",
+        "पिता": "मनुष्य"
+      },
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "किरन",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "किरन का एक भाई है।",
+      "payload": {
+        "statement": "किरन का एक भाई है।"
+      },
+      "answer": false,
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "किरन",
+      "band": 2,
+      "voice": "किरन का एक भाई है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "किरन का ___ अच्छा है।",
+        "bank": [
+          "बगीचा",
+          "कुत्ता",
+          "सूरज"
+        ]
+      },
+      "answer": "बगीचा",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "किरन",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "खेलना",
+          "पढ़ाई",
+          "खाना",
+          "सोना"
+        ]
+      },
+      "answer": "सोना",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "किरन",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the characters to their roles.",
+      "payload": {
+        "pairs": [
+          [
+            "न्यायाधीश",
+            "न्याय का निर्णय"
+          ],
+          [
+            "वकील",
+            "कानून की मदद"
+          ],
+          [
+            "गवाह",
+            "सच बताना"
+          ],
+          [
+            "अपराधी",
+            "गलती करना"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "न्याय की कुर्सी",
+      "band": 1,
+      "voice": "Match the characters to their roles.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "न्यायाधीश",
+          "वकील",
+          "पुस्तक",
+          "गवाह"
+        ]
+      },
+      "answer": "पुस्तक",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "न्याय की कुर्सी",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "न्याय की कुर्सी पर न्यायाधीश बैठता है।",
+      "payload": {
+        "statement": "न्याय की कुर्सी पर न्यायाधीश बैठता है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "न्याय की कुर्सी",
+      "band": 2,
+      "voice": "न्याय की कुर्सी पर न्यायाधीश बैठता है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "न्याय की कुर्सी में ___ का फैसला होता है।",
+        "bank": [
+          "सत्य",
+          "झूठ",
+          "खेल"
+        ]
+      },
+      "answer": "सत्य",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "न्याय की कुर्सी",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "न्यायाधीश",
+          "गवाह",
+          "पुलिस",
+          "वकील"
+        ],
+        "bins": [
+          "कानूनी पेशे",
+          "सामान्य व्यक्ति"
+        ]
+      },
+      "answer": {
+        "न्यायाधीश": "कानूनी पेशे",
+        "गवाह": "सामान्य व्यक्ति",
+        "पुलिस": "कानूनी पेशे",
+        "वकील": "कानूनी पेशे"
+      },
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "न्याय की कुर्सी",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the terms to their meanings.",
+      "payload": {
+        "pairs": [
+          [
+            "न्याय",
+            "सही निर्णय"
+          ],
+          [
+            "अपराध",
+            "गलती करना"
+          ],
+          [
+            "सजा",
+            "दंड"
+          ],
+          [
+            "सत्य",
+            "सच्चाई"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "न्याय की कुर्सी",
+      "band": 1,
+      "voice": "Match the terms to their meanings.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "सभी गवाह सच बोलते हैं।",
+      "payload": {
+        "statement": "सभी गवाह सच बोलते हैं।"
+      },
+      "answer": false,
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "न्याय की कुर्सी",
+      "band": 2,
+      "voice": "सभी गवाह सच बोलते हैं।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "वकील ___ का पक्ष रखता है।",
+        "bank": [
+          "अपराधी",
+          "गवाह",
+          "न्याय"
+        ]
+      },
+      "answer": "अपराधी",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "न्याय की कुर्सी",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "सत्य",
+          "झूठ",
+          "कहानी",
+          "गवाही"
+        ]
+      },
+      "answer": "कहानी",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "न्याय की कुर्सी",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "सत्य",
+          "न्याय",
+          "झूठ",
+          "अपराध"
+        ],
+        "bins": [
+          "सच्चाई",
+          "गलती"
+        ]
+      },
+      "answer": {
+        "सत्य": "सच्चाई",
+        "न्याय": "सच्चाई",
+        "झूठ": "गलती",
+        "अपराध": "गलती"
+      },
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "न्याय की कुर्सी",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the words with their meanings.",
+      "payload": {
+        "pairs": [
+          [
+            "चाँद",
+            "Moon"
+          ],
+          [
+            "कुरता",
+            "Shirt"
+          ],
+          [
+            "तारे",
+            "Stars"
+          ],
+          [
+            "आसमान",
+            "Sky"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "चाँद का कुरता",
+      "band": 1,
+      "voice": "Match the words with their meanings.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "चाँद",
+          "सूरज",
+          "तारे",
+          "पेड़"
+        ]
+      },
+      "answer": "पेड़",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "चाँद का कुरता",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The moon is made of cheese.",
+      "payload": {
+        "statement": "The moon is made of cheese."
+      },
+      "answer": false,
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "चाँद का कुरता",
+      "band": 2,
+      "voice": "The moon is made of cheese.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ shines at night.",
+        "bank": [
+          "sun",
+          "moon",
+          "cloud"
+        ]
+      },
+      "answer": "moon",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "चाँद का कुरता",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "चाँद",
+          "तारा",
+          "पेड़",
+          "सूरज"
+        ],
+        "bins": [
+          "ग्रह",
+          "तारे"
+        ]
+      },
+      "answer": {
+        "चाँद": "ग्रह",
+        "तारा": "तारे",
+        "पेड़": "ग्रह",
+        "सूरज": "ग्रह"
+      },
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "चाँद का कुरता",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The poem talks about a shirt made of moon.",
+      "payload": {
+        "statement": "The poem talks about a shirt made of moon."
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "चाँद का कुरता",
+      "band": 2,
+      "voice": "The poem talks about a shirt made of moon.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ shines brightly in the night sky.",
+        "bank": [
+          "sun",
+          "moon",
+          "star"
+        ]
+      },
+      "answer": "moon",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "चाँद का कुरता",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the lines with their meanings.",
+      "payload": {
+        "pairs": [
+          [
+            "चाँद का कुरता",
+            "The shirt of the moon"
+          ],
+          [
+            "रात का आकाश",
+            "Night sky"
+          ],
+          [
+            "तारों की चमक",
+            "Shine of stars"
+          ],
+          [
+            "सपनों का संसार",
+            "World of dreams"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "चाँद का कुरता",
+      "band": 1,
+      "voice": "Match the lines with their meanings.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "चाँद",
+          "सूरज",
+          "गाड़ी",
+          "तारा"
+        ]
+      },
+      "answer": "गाड़ी",
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "चाँद का कुरता",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "चाँद",
+          "सूरज",
+          "तारे",
+          "कुरता"
+        ],
+        "bins": [
+          "खगोलिक वस्तुएं",
+          "वस्त्र"
+        ]
+      },
+      "answer": {
+        "चाँद": "खगोलिक वस्तुएं",
+        "सूरज": "खगोलिक वस्तुएं",
+        "तारे": "खगोलिक वस्तुएं",
+        "कुरता": "वस्त्र"
+      },
+      "subject": "hindi",
+      "class": 5,
+      "chapter": "चाँद का कुरता",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

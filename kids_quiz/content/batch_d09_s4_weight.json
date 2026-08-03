@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Weighing Woods",
+ "adventure": "Weighing Woods",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Weighing Woods. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "5000 grams = ? kg",
+   "options": [
+    "5",
+    "6",
+    "50",
+    "4"
+   ],
+   "answer": 0,
+   "explain": "1000 g = 1 kg, so 5000 g = 5 kg.",
+   "voice_q": "How many kilograms are in 5000 grams?",
+   "voice_a": "It's 5! 5000 grams is 5 kilograms."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "1 kilogram = ? grams",
+   "options": [
+    "1000",
+    "1100",
+    "100",
+    "900"
+   ],
+   "answer": 0,
+   "explain": "1 kg = 1000 g, so 1 kg = 1000 g.",
+   "voice_q": "How many grams are in 1 kilogram?",
+   "voice_a": "It's 1000! 1 kilograms is 1000 grams."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "9 kilograms = ? grams",
+   "options": [
+    "900",
+    "9000",
+    "9100",
+    "8900"
+   ],
+   "answer": 1,
+   "explain": "1 kg = 1000 g, so 9 kg = 9000 g.",
+   "voice_q": "How many grams are in 9 kilograms?",
+   "voice_a": "It's 9000! 9 kilograms is 9000 grams."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "2 kilograms = ? grams",
+   "options": [
+    "2000",
+    "200",
+    "2100",
+    "1900"
+   ],
+   "answer": 0,
+   "explain": "1 kg = 1000 g, so 2 kg = 2000 g.",
+   "voice_q": "How many grams are in 2 kilograms?",
+   "voice_a": "It's 2000! 2 kilograms is 2000 grams."
+  },
+  {
+   "type": "mcq",
+   "emoji": "⚖️",
+   "q": "8 kilograms = ? grams",
+   "options": [
+    "8000",
+    "800",
+    "7900",
+    "8100"
+   ],
+   "answer": 0,
+   "explain": "1 kg = 1000 g, so 8 kg = 8000 g.",
+   "voice_q": "How many grams are in 8 kilograms?",
+   "voice_a": "It's 8000! 8 kilograms is 8000 grams."
+  }
+ ]
+}

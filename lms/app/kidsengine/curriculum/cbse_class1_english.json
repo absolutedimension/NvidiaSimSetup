@@ -1,0 +1,49 @@
+{
+  "board": "CBSE",
+  "class": 1,
+  "subject": "English",
+  "source": {
+    "name": "NCERT Mridang — Textbook of English for Grade 1 (Contents)",
+    "url": "https://ncert.nic.in/textbook/pdf/aemr1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Current NCF-SE/NEP book 'Mridang'. Verbatim from official ncert.nic.in PDF (aemr1). 4 units, 9 lessons.",
+  "chapters": [
+    {
+      "id": "unit_1_my_family_and_me",
+      "name": "Unit 1: My Family and Me",
+      "subtopics": [
+        "Two Little Hands",
+        "Greetings"
+      ]
+    },
+    {
+      "id": "unit_2_life_around_us",
+      "name": "Unit 2: Life Around Us",
+      "subtopics": [
+        "Picture Time",
+        "The Cap-seller and the Monkeys",
+        "A Farm"
+      ]
+    },
+    {
+      "id": "unit_3_food",
+      "name": "Unit 3: Food",
+      "subtopics": [
+        "Fun with Pictures",
+        "The Food we Eat"
+      ]
+    },
+    {
+      "id": "unit_4_seasons",
+      "name": "Unit 4: Seasons",
+      "subtopics": [
+        "The Four Seasons",
+        "Anandi's Rainbow"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acharya Kids — Practice Worksheet</title>
+<link rel="stylesheet" href="/static/kids/worksheet.css">
+<link rel="stylesheet" href="/static/kids/conceptviz.css">
+<style>
+  :root{ --k-pink:#ff5aa5; --k-blue:#3aa0ff; --k-yellow:#ffb300; --k-green:#22b07d; --k-purple:#9b6bff; --ink:#2a2140; }
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;font-family:"Baloo 2",-apple-system,system-ui,sans-serif;color:var(--ink);
+    background:radial-gradient(135% 100% at 50% -8%,#ffffff 0%,#fafcff 46%,#f4f8ff 78%,#eff5fe 100%);overflow-x:hidden}
+  /* CANVAS: the whole page is a soft, LIGHT studio desk with a very faint graph-paper texture */
+  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;
+    background-image:linear-gradient(rgba(120,150,220,.055) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(120,150,220,.055) 1px,transparent 1px);
+    background-size:30px 30px;
+    -webkit-mask-image:radial-gradient(120% 85% at 50% 22%,#000 45%,transparent 100%);
+            mask-image:radial-gradient(120% 85% at 50% 22%,#000 45%,transparent 100%)}
+  /* floating decorations */
+  .deco{position:fixed;pointer-events:none;opacity:.5;z-index:0;height:56px;animation:float 6s ease-in-out infinite}
+  @keyframes float{50%{transform:translateY(-14px)}}
+  .wrap{max-width:680px;margin:0 auto;padding:12px 14px 60px;position:relative;z-index:1}
+
+  .topbar{display:flex;align-items:center;gap:10px;padding:8px 4px;flex-wrap:wrap}
+  .crumbs{font-weight:800;font-size:1rem}
+  .crumbs .sub{color:var(--k-purple)}
+  .home{margin-left:auto;text-decoration:none;background:#fff;border:2px solid #ffe0b2;border-radius:999px;padding:7px 14px;font-weight:800;color:var(--ink);font-size:.85rem}
+  .voice-btn{background:var(--k-green);color:#fff;border:none;border-radius:999px;padding:7px 12px;font-weight:800;cursor:pointer;font-size:.85rem}
+  .voice-btn.off{background:#9aa3ad}
+
+  /* gem progress */
+  .gems{display:flex;gap:5px;justify-content:center;margin:8px 0 4px;flex-wrap:wrap;min-height:30px}
+  .gem{width:26px;height:26px;opacity:.28;transition:opacity .3s,transform .3s;filter:grayscale(.6)}
+  .gem.on{opacity:1;filter:none;transform:scale(1.12)}
+
+  /* guide avatar + bubble */
+  .guide{position:fixed;right:8px;bottom:8px;z-index:20;width:130px;text-align:center;pointer-events:none}
+  .guide img{width:96px;height:auto;filter:drop-shadow(0 8px 16px rgba(60,40,10,.22));animation:bob 3s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(-8px)}}
+  .bubble{background:#fff;border:3px solid var(--k-yellow);border-radius:16px;padding:7px 11px;font-weight:800;
+    font-size:.82rem;color:#26406b;max-width:130px;margin:0 auto 4px;box-shadow:0 6px 16px #0001;opacity:0;transform:scale(.7);transition:.25s}
+  .bubble.show{opacity:1;transform:scale(1)}
+
+  /* nav + progress */
+  .run-nav{display:flex;align-items:center;gap:8px;max-width:640px;margin:2px auto 4px}
+  .nav-btn{border:2px solid #ffe0b2;background:#fff;border-radius:999px;padding:9px 18px;font-weight:800;cursor:pointer;font-size:.9rem;color:var(--ink);box-shadow:0 3px 0 #f0d9b6}
+  .nav-btn:active{transform:translateY(2px);box-shadow:0 1px 0 #f0d9b6}
+  .nav-btn:disabled{opacity:.4;cursor:default;box-shadow:none;transform:none}
+  .nav-btn.nav-next{background:var(--k-green);color:#fff;border-color:var(--k-green);box-shadow:0 3px 0 #1a8a62}
+  .nav-btn.nav-next:active{box-shadow:0 1px 0 #1a8a62}
+  .run-nav2{display:flex;gap:8px;justify-content:center;margin:0 auto 6px;max-width:640px}
+  .nav-btn.sm{padding:5px 12px;font-size:.78rem;box-shadow:none;border-color:#eadfce;background:#fffdf9;color:#8a7f6a}
+  .qprog{margin:0 auto;font-weight:800;color:var(--k-purple);font-size:.95rem}
+  /* teaching hint (concept, NO answer) — the question's framing */
+  .concept-hint{max-width:640px;margin:6px auto 8px;background:linear-gradient(#eef4ff,#e7efff);
+    border:2px solid #cddffb;border-radius:16px;padding:12px 18px;text-align:center;
+    font-weight:800;color:#3a71c9;font-size:1.05rem;box-shadow:0 6px 16px rgba(58,113,201,.08)}
+  /* feedback state: green when right, warm coral when wrong (voice reads the answer) */
+  .concept-hint.good{background:linear-gradient(#e7fbf1,#dbf5e9);border-color:#a7e6cd;color:#1c8f63}
+  .concept-hint.wrong{background:linear-gradient(#fff2ec,#ffe7dc);border-color:#ffc6ab;color:#c9552a;animation:hintpop .3s}
+  @keyframes hintpop{0%{transform:scale(.94)}60%{transform:scale(1.02)}100%{transform:scale(1)}}
+  #stage{margin-top:4px;position:relative;z-index:2}
+  /* NO CARD anywhere: the whole worksheet sits directly on the canvas. The prompt & answer are just
+     BIG TEXT on the background (no bordered boxes); only the tap-tiles / number-keys stay as buttons. */
+  #stage .ws-card{background:transparent;border:none;border-radius:0;box-shadow:none;padding:0}
+  #stage .ws-instr{font-size:1.5rem;color:var(--ink)}
+  #stage .ws-head{margin-bottom:16px}
+  /* the question prompt + the typed answer: plain text on the canvas, NOT cards */
+  #stage .ws-entry{background:transparent;border:none;box-shadow:none;padding:6px 4px}
+  /* only the actual INPUT controls keep a light button look (they must be tappable) */
+  #stage .ws-opt,#stage .ws-key,#stage .ws-chip,#stage .ws-tile{
+    box-shadow:0 3px 0 var(--k-3d,#b9d4f0),0 8px 16px rgba(40,64,107,.10)}
+  /* animal characters decorating BEHIND the worksheet — big + few */
+  .bg-buddy{position:fixed;z-index:0;opacity:.3;pointer-events:none;height:230px;filter:saturate(1.1);animation:float 7s ease-in-out infinite}
+  @media (max-width:640px){ .bg-buddy{height:150px;opacity:.22} }
+
+  /* start + results overlays */
+  .card{background:#fff;border:3px solid #ffe0b2;border-radius:22px;padding:22px;max-width:560px;margin:14px auto;box-shadow:0 12px 30px rgba(120,80,20,.12);text-align:center}
+  .card h1{font-size:1.5rem;margin:.2em 0}
+  .pick-lbl{font-weight:800;color:#7a5fd0;margin:12px 0 2px;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:6px 0 4px}
+  .chip{border:2px solid #ffe0b2;background:#fff8ee;border-radius:14px;padding:9px 14px;font-weight:800;cursor:pointer;font-size:.95rem}
+  .chip.sel{border-color:var(--k-blue);background:#eaf5ff}
+  .go{background:var(--k-green);color:#fff;border:none;border-radius:999px;padding:14px 30px;font-size:1.15rem;font-weight:800;cursor:pointer;margin-top:6px}
+  .go:active{transform:scale(.97)}
+  .hidden{display:none!important}
+  .big-emoji{font-size:3rem}
+  .mastery-bar{height:16px;border-radius:999px;background:#eee;overflow:hidden;margin:12px auto;max-width:320px}
+  .mastery-fill{height:100%;background:linear-gradient(90deg,var(--k-green),var(--k-blue));width:0;transition:width 1s}
+  .result-row{display:flex;justify-content:space-around;margin:14px 0;font-weight:800}
+  .result-row .n{font-size:1.8rem;color:var(--k-purple);display:block}
+  .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+  .actions a,.actions button{text-decoration:none;border:none;border-radius:999px;padding:12px 20px;font-weight:800;cursor:pointer;font-size:1rem}
+  .a-print{background:var(--k-yellow);color:#3a2a00} .a-again{background:var(--k-blue);color:#fff} .a-home{background:#eef0f4;color:var(--ink)}
+
+  /* celebration: a character dances forward from the bottom on a correct answer */
+  .celebrate{position:fixed;left:50%;bottom:0;z-index:45;pointer-events:none;opacity:0;
+    transform:translateX(-50%) translateY(120%)}
+  .celebrate img{height:210px;border-radius:28px;box-shadow:0 14px 30px rgba(60,40,10,.28);border:4px solid #fff}
+  .celebrate .emoji{font-size:150px;line-height:1;filter:drop-shadow(0 14px 26px rgba(60,40,10,.30))}
+  .celebrate.show{animation:celebDance 1.9s cubic-bezier(.22,1,.36,1) forwards}
+  @keyframes celebDance{
+    0%{opacity:0;transform:translateX(-50%) translateY(120%) scale(.7) rotate(0)}
+    14%{opacity:1;transform:translateX(-50%) translateY(-4%) scale(1.05) rotate(-8deg)}
+    30%{transform:translateX(-50%) translateY(-11%) scale(1.05) rotate(8deg)}
+    46%{transform:translateX(-50%) translateY(-4%) scale(1.05) rotate(-8deg)}
+    62%{transform:translateX(-50%) translateY(-11%) scale(1.05) rotate(8deg)}
+    76%{opacity:1;transform:translateX(-50%) translateY(-4%) scale(1.05) rotate(0)}
+    100%{opacity:0;transform:translateX(-50%) translateY(70%) scale(.9)}}
+  .confetti{position:fixed;bottom:22%;z-index:44;font-size:1.9rem;pointer-events:none;
+    will-change:transform,opacity;animation:conf 1.25s ease-out forwards}
+  @keyframes conf{0%{opacity:1;transform:translate(0,0) scale(.6) rotate(0)}
+    100%{opacity:0;transform:translate(var(--dx),-240px) scale(1.25) rotate(240deg)}}
+  @media (prefers-reduced-motion:reduce){.celebrate.show{animation-duration:.6s}.confetti{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="crumbs">{{ board }} · Class {{ cls }} · <span class="sub" id="subLabel">{{ subject }}</span></div>
+    <button class="voice-btn" id="voiceBtn">🔊 Voice</button>
+    <a class="home" href="/exam-prep/dashboard">🏠 Home</a>
+  </div>
+
+  <!-- START / picker -->
+  <div class="card" id="startCard">
+    <div class="big-emoji">📝</div>
+    <h1 id="startTitle">Let's make a worksheet!</h1>
+    <p id="startSub" style="color:#8a7f9a">Pick a subject and topic 🚀</p>
+    <p class="pick-lbl">Subject</p>
+    <div class="chips" id="subjectChips"></div>
+    <p class="pick-lbl">Topic</p>
+    <div class="chips" id="chapterChips"></div>
+    <button class="go" id="startBtn">Start worksheet ▶</button>
+  </div>
+
+  <!-- RUN -->
+  <div id="runArea" class="hidden">
+    <div class="run-nav">
+      <button class="nav-btn" id="backBtn" onclick="goPrev()">◀ Back</button>
+      <div class="qprog" id="qprog">Question 1</div>
+      <button class="nav-btn nav-next" id="nextBtn" onclick="goNext()">Next ▶</button>
+    </div>
+    <div class="run-nav2">
+      <button class="nav-btn sm" onclick="changeTopic()">↩ Change topic</button>
+      <button class="nav-btn sm" onclick="openFullSheet()">📄 Full sheet</button>
+    </div>
+    <div class="gems" id="gems"></div>
+    <div class="concept-hint" id="conceptHint"></div>
+    <div id="stage"></div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="card hidden" id="resultCard">
+    <div class="big-emoji" id="resultEmoji">🏆</div>
+    <h1 id="resultTitle">Great work!</h1>
+    <div class="mastery-bar"><div class="mastery-fill" id="masteryFill"></div></div>
+    <div id="masteryLabel" style="font-weight:800;color:var(--k-green)"></div>
+    <div class="result-row"><div><span class="n" id="scoreN">0</span>correct</div><div><span class="n" id="totalN">0</span>questions</div></div>
+    <div id="misBox" style="color:#c74e6b;font-weight:700;font-size:.9rem"></div>
+    <div class="actions">
+      <a class="a-print" id="printLink" href="#" target="_blank">🖨️ Print sheet</a>
+      <button class="a-again" onclick="location.reload()">🔁 Again</button>
+      <a class="a-home" href="/exam-prep/dashboard">🏠 Home</a>
+    </div>
+  </div>
+</div>
+
+<!-- guide -->
+<div class="guide" id="guide">
+  <div class="bubble" id="bubble">Hi! Let's learn! 🦉</div>
+  <img id="guideImg" src="/static/kids/assets/nova_owl.png" alt="Nova">
+</div>
+
+<!-- celebration dancer (comes forward + dances on a correct answer) -->
+<div class="celebrate" id="celebrate" aria-hidden="true"><img id="celebImg" alt=""></div>
+
+<script src="/static/kids/assets.js"></script>
+<script src="/static/kids/conceptviz.js"></script>
+<script src="/static/kids/worksheet_viz.js"></script>
+<script src="/static/kids/worksheet.js"></script>
+<script>
+  const CFG = { board: {{ board|tojson }}, cls: {{ cls|tojson }}, subject: {{ subject|tojson }}, chapter: {{ chapter|tojson }}, n: {{ n|tojson }} };
+  let items=[], idx=0, results=[], skill='', voiceOn=true, navToken=0;
+  const $=id=>document.getElementById(id);
+
+  // voice toggle
+  $('voiceBtn').onclick=()=>{ voiceOn=!voiceOn; $('voiceBtn').classList.toggle('off',!voiceOn); $('voiceBtn').textContent=voiceOn?'🔊 Voice':'🔇 Voice'; };
+
+  function guide(msg, mood){
+    const b=$('bubble'); b.textContent=msg; b.classList.add('show');
+    if(mood==='celebrate') $('guideImg').style.transform='scale(1.1)'; else $('guideImg').style.transform='';
+    clearTimeout(guide._t); guide._t=setTimeout(()=>b.classList.remove('show'), 2600);
+  }
+
+  // build the SUBJECT + TOPIC picker (any subject → any chapter/subtopic)
+  var CURR={};
+  const SLBL={'Mathematics':'🔢 Maths','EVS':'🌍 EVS','English':'📖 English','GK':'🧠 GK','Hindi':'🇮🇳 Hindi'};
+  async function loadPicker(){
+    try{
+      const d=await fetch(`/api/kids/curriculum?board=${encodeURIComponent(CFG.board)}&cls=${CFG.cls}`).then(r=>r.json());
+      CURR=d.subjects||{}; const subs=Object.keys(CURR);
+      if(subs.length && !CURR[CFG.subject]) CFG.subject=subs[0];
+      const sbox=$('subjectChips'); sbox.innerHTML='';
+      subs.forEach(s=>{ const c=document.createElement('button'); c.className='chip'+(s===CFG.subject?' sel':''); c.textContent=SLBL[s]||s; c._s=s;
+        c.onclick=()=>{ sbox.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); CFG.subject=s; CFG.chapter=''; $('subLabel').textContent=s; renderChapters(); };
+        sbox.appendChild(c); });
+      renderChapters();
+    }catch(e){}
+  }
+  function renderChapters(){
+    const chs=CURR[CFG.subject]||[]; const box=$('chapterChips'); box.innerHTML='';
+    const all=document.createElement('button'); all.className='chip'+(CFG.chapter?'':' sel'); all.textContent='✨ Mixed practice'; all._ch=''; box.appendChild(all);
+    chs.slice(0,12).forEach(ch=>{ const c=document.createElement('button'); c.className='chip'+(ch===CFG.chapter?' sel':''); c.textContent=ch.length>24?ch.slice(0,24)+'…':ch; c._ch=ch; box.appendChild(c); });
+    box.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{ box.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); CFG.chapter=c._ch; });
+  }
+
+  async function start(){
+    $('startCard').classList.add('hidden'); $('runArea').classList.remove('hidden');
+    guide("Let's go! You've got this 💪");
+    try{
+      const u=`/api/kids/worksheet?board=${encodeURIComponent(CFG.board)}&cls=${CFG.cls}&subject=${encodeURIComponent(CFG.subject)}&chapter=${encodeURIComponent(CFG.chapter||'')}&n=${CFG.n||8}`;
+      const d=await fetch(u).then(r=>r.json());
+      if(!d.ok||!d.items||!d.items.length){
+        // no sheet — knowledge packs (EVS/English/GK/Hindi) are still being prepared; Maths is ready
+        $('runArea').classList.add('hidden'); $('startCard').classList.remove('hidden');
+        const soon = (d.reason==='pack_pending');
+        $('startTitle').textContent = soon ? '📦 Practice pack coming soon!' : 'Hmm, let’s try another topic';
+        $('startSub').textContent = soon
+          ? `${CFG.subject} worksheets are being prepared. 🔢 Maths is ready to go — pick it above!`
+          : 'Pick a subject and topic 🚀';
+        guide(soon?'Try Maths for now! 🔢':'Pick another topic 🙂');
+        return;
+      }
+      items=d.items; skill=d.skill; idx=0; results=new Array(items.length).fill(null);
+      paintGems(); showItem();
+    }catch(e){ $('runArea').classList.add('hidden'); $('startCard').classList.remove('hidden'); guide("Something went wrong — try again 🙂"); }
+  }
+
+  function paintGems(){
+    const g=$('gems'); g.innerHTML='';
+    for(let k=0;k<items.length;k++){ const on=results[k]&&results[k].correct;
+      const im=window.KidsAssets?KidsAssets.node('star',26):(()=>{const s=document.createElement('span');s.textContent='⭐';return s;})();
+      im.className='gem'+(on?' on':''); g.appendChild(im); }
+  }
+
+  // a TEACHING hint — explains the concept, never reveals THIS question's answer
+  function conceptHint(it){
+    const p=it.payload||{}, t=it.type;
+    // Hindi worksheet → Hindi hint (so the whole page stays in the subject's language)
+    const hindi=/[ऀ-ॿ]/.test(JSON.stringify(p))||/[ऀ-ॿ]/.test(it.instruction||'')||/[ऀ-ॿ]/.test(String(it.answer||''));
+    if(hindi){
+      const H={odd_one_out:'🤔 सोचो — कौन सा अलग है?',true_false:'🤔 ध्यान से सोचो — सही या ग़लत?',cloze:'📝 कौन सा शब्द सही बैठता है?',match_following:'✏️ हर एक को उसकी जोड़ी से मिलाओ',sort_groups:'🧺 सही समूह में रखो',mcq:'👆 सही उत्तर चुनो',compare_symbol:'🐊 कौन बड़ा है?',arith:'✏️ ध्यान से हल करो'};
+      return H[t]||'💪 आराम से पढ़ो — तुम कर सकते हो!';
+    }
+    if(t==='arith'){ return {'+':'➕ Put them together and count!','-':"➖ Take away, then count what's left",'×':'✖️ Equal groups, all added up','÷':'➗ Share them equally into groups'}[p.op]||'Work it out step by step'; }
+    if(t==='compare_symbol') return '🐊 Which is bigger? The open mouth eats the bigger number';
+    if(t==='neighbour_number') return (p.mode==='before')?'⬅️ Just BEFORE means take away 1':'➡️ Just AFTER means add 1';
+    if(t==='fill_sequence') return '🔢 Find the jump between numbers, then keep counting!';
+    if(t==='count_write') return '👆 Touch each one as you count';
+    if(t==='count_money') return '🪙 Add up all the coins';
+    if(t==='pattern_next') return '🔁 What repeats? Spot the pattern!';
+    if(t==='match_following') return '✏️ Draw a line from each one to its match';
+    if(t==='true_false') return '🤔 Think carefully — is it right or wrong?';
+    if(t==='cloze') return '📝 Which word fits the sentence best?';
+    return "💪 Read it slowly — you've got this!";
+  }
+
+  // readable concept name for the Report / Focus-areas (instead of the terse slug)
+  function conceptName(it){
+    const c=(it.style||{}).concept||'', m={add:'Addition',sub:'Subtraction',mul:'Multiplication',div:'Division',number:'Numbers',compare:'Comparing Numbers',money:'Money',pattern:'Patterns',count:'Counting'};
+    return m[c] || (it.chapter && it.chapter!=='all' ? it.chapter : (c ? c[0].toUpperCase()+c.slice(1) : 'Maths'));
+  }
+  function updateNav(){
+    $('backBtn').disabled = idx<=0;
+    $('nextBtn').textContent = (idx>=items.length-1) ? 'Finish ✓' : 'Next ▶';
+  }
+  // manual navigation (buttons). Auto-advance only happens AFTER the voice finishes (below).
+  function goPrev(){ if(idx>0){ idx--; showItem(); } }
+  function goNext(){ if(idx<items.length-1){ idx++; showItem(); } else finish(); }
+
+  function showItem(){
+    navToken++; const myToken=navToken;
+    if(window.KidsWorksheet&&KidsWorksheet.stop) KidsWorksheet.stop();   // silence any leftover audio
+    const it=items[idx];
+    const hint=$('conceptHint'); hint.classList.remove('good','wrong');
+    hint.textContent = conceptHint(it);                      // teaching, not the answer
+    $('qprog').textContent = `Question ${idx+1} of ${items.length}`;
+    updateNav();
+    KidsWorksheet.render($('stage'), it, { voice:voiceOn, onDone:(r)=>{
+      if(myToken!==navToken) return;                         // child navigated away before answering
+      results[idx]={ correct:!!r.correct, difficulty:it.difficulty||0, concept:conceptName(it), guess:0.05 };
+      paintGems();
+      const h=$('conceptHint');
+      if(r.correct){
+        guide(pick(['Yay! 🎉','Brilliant! 🌟','Correct! 🎈']),'celebrate');
+        h.classList.remove('wrong'); h.classList.add('good'); h.textContent='✅ '+(r.feedbackText||'Well done!');
+        playCheer(); celebrate();
+      } else {
+        guide('Listen — here’s the answer 👂');
+        h.classList.remove('good'); h.classList.add('wrong'); h.textContent='💡 '+(r.feedbackText||'Let’s see the answer');
+      }
+      // speak the feedback IN FULL, then move on — unless the child navigated with the buttons meanwhile
+      r.speak(function(){ if(myToken===navToken) goNext(); });
+    }});
+  }
+  function changeTopic(){ navToken++; if(window.KidsWorksheet&&KidsWorksheet.stop) KidsWorksheet.stop();
+    $('runArea').classList.add('hidden'); $('resultCard').classList.add('hidden'); $('startCard').classList.remove('hidden'); }
+  // hand the ACTUAL generated worksheet to the print page (not a static sample)
+  function stashPrintSheet(){
+    try{
+      const subLbl=(SLBL[CFG.subject]||CFG.subject).replace(/^[^ ]+ /,'');
+      const topic=CFG.chapter ? (' · '+CFG.chapter) : ' · Mixed practice';
+      localStorage.setItem('kidsPrintSheet', JSON.stringify({
+        items: items||[],
+        title: `${CFG.board} · Class ${CFG.cls} · ${subLbl}`,
+        subtitle: `Acharya Kids${topic} · pencil & paper worksheet`
+      }));
+    }catch(e){}
+  }
+  function openFullSheet(){ if(!items.length){ guide('Start the sheet first! 📝'); return; } stashPrintSheet(); window.open('/static/kids/print.html','_blank'); }
+  function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
+  // a happy "success" chime — a rising arpeggio synthesised via Web Audio (no asset needed).
+  // Plays alongside the voice praise ("Correct!"); muted with the Voice toggle.
+  let _actx=null;
+  function playCheer(){
+    if(!voiceOn) return;
+    try{
+      _actx = _actx || new (window.AudioContext||window.webkitAudioContext)();
+      if(_actx.state==='suspended'){ try{ _actx.resume(); }catch(e){} }
+      const notes=[523.25,659.25,783.99,1046.50];   // C5 · E5 · G5 · C6
+      const t0=_actx.currentTime;
+      notes.forEach((f,i)=>{
+        const o=_actx.createOscillator(), g=_actx.createGain(), t=t0+i*0.09;
+        o.type='triangle'; o.frequency.value=f;
+        g.gain.setValueAtTime(0.0001,t);
+        g.gain.exponentialRampToValueAtTime(0.28,t+0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001,t+0.24);
+        o.connect(g).connect(_actx.destination); o.start(t); o.stop(t+0.26);
+      });
+    }catch(e){}
+  }
+  // celebration: the character dances forward + a quick confetti burst (correct answers)
+  function celebrate(){
+    const c=$('celebrate'); c.classList.remove('show'); void c.offsetWidth; c.classList.add('show');
+    const em=['⭐','🎉','✨','🌟','🎈','💫'];
+    for(let i=0;i<12;i++){
+      const s=document.createElement('div'); s.className='confetti'; s.textContent=em[i%em.length];
+      s.style.left=(28+Math.random()*44)+'%';
+      s.style.setProperty('--dx',(Math.random()*260-130)+'px');
+      s.style.animationDelay=(Math.random()*0.18)+'s';
+      document.body.appendChild(s); setTimeout(()=>s.remove(),1500);
+    }
+  }
+
+  async function finish(){
+    if(window.KidsWorksheet&&KidsWorksheet.stop) KidsWorksheet.stop();
+    navToken++;                                              // cancel any pending auto-advance
+    $('runArea').classList.add('hidden');
+    const done=results.filter(Boolean);
+    const score=done.filter(r=>r.correct).length, total=items.length;
+    let res={};
+    try{ res=await fetch('/api/kids/worksheet/complete',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({skill, subject:CFG.subject, results:done})}).then(r=>r.json()); }catch(e){}
+    $('resultCard').classList.remove('hidden');
+    $('scoreN').textContent=score; $('totalN').textContent=total;
+    const pct=Math.round((res.mastery||score/Math.max(1,total))*100);
+    $('masteryFill').style.width=pct+'%';
+    $('masteryLabel').textContent = res.mastered ? '🌟 Topic mastered!' : `Mastery: ${pct}%`;
+    $('resultEmoji').textContent = score/Math.max(1,total)>=0.8?'🏆':'🌈';
+    $('resultTitle').textContent = score/Math.max(1,total)>=0.8?'Superstar!':'Nice practising!';
+    if(res.misconceptions&&res.misconceptions.length) $('misBox').textContent='To practise: '+res.misconceptions.map(m=>m.replace(/_/g,' ')).join(', ');
+    stashPrintSheet();                               // save the real sheet, then link to the printable
+    $('printLink').href=`/static/kids/print.html`;
+    $('printLink').onclick=()=>stashPrintSheet();    // re-stash on click (in case of re-runs)
+    guide(score/Math.max(1,total)>=0.8?'Amazing! 🏆':'Well done! 🌈','celebrate');
+  }
+
+  // boot
+  (async()=>{
+    if(window.KidsAssets){ try{ await KidsAssets.load(); }catch(e){} $('guideImg').src = (KidsAssets.get('nova_owl')&&KidsAssets.isReady('nova_owl'))?'/static/kids/assets/nova_owl.png':'/static/kids/assets/nova_owl.png'; }
+    // celebration dancer (lion character; big-emoji fallback if the art is missing)
+    const ci=$('celebImg'); ci.src='/static/kids/assets/lion_char.png';
+    ci.onerror=function(){ $('celebrate').innerHTML='<div class="emoji">🦁</div>'; };
+    $('subLabel').textContent=CFG.subject;
+    await loadPicker();
+    $('startBtn').onclick=start;
+    // just two floating props (subtle)
+    [['star','left:5%;top:8%'],['balloon','right:6%;top:10%']].forEach(([a,pos],i)=>{ if(!window.KidsAssets)return; const n=KidsAssets.node(a,44); n.className='deco'; n.style.cssText+=';'+pos; n.style.animationDelay=i*1.1+'s'; document.body.appendChild(n); });
+    // just TWO big animal buddies behind the worksheet (one each side; avoid bottom-right = the guide)
+    [['ellie','left:0;top:34%'],['rio','right:0;top:26%']].forEach(([id,pos],i)=>{
+      if(!window.KidsAssets)return; const n=KidsAssets.node(id,230); if(n.tagName!=='IMG')return; n.className='bg-buddy'; n.style.cssText+=';'+pos; n.style.animationDelay=i*1.6+'s'; document.body.appendChild(n);
+    });
+  })();
+</script>
+</body>
+</html>

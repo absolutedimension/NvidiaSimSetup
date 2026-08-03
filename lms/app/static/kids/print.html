@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kids Worksheet — printable</title>
+<link rel="stylesheet" href="/static/kids/worksheet_print.css">
+<style>body{margin:0;background:#eee;padding:16px 0}@media print{body{background:#fff;padding:0}}</style>
+</head>
+<body>
+<div id="mount"></div>
+
+<script src="/static/kids/assets.js"></script>
+<script src="/static/kids/worksheet_print.js"></script>
+<script>
+  // The REAL worksheet the child just generated is handed over via localStorage (kidsPrintSheet).
+  // Fall back to a sample only when this page is opened directly (no sheet stashed).
+  var SAMPLE = [
+    { type:'count_write', instruction:'Count and write how many.', payload:{ asset:'apple', emoji:'🍎', n:6 }, answer:6 },
+    { type:'arith', instruction:'Solve it.', payload:{ op:'+', a:234, b:158 }, answer:392 },
+    { type:'arith', instruction:'Solve it.', payload:{ op:'×', a:7, b:6 }, answer:42 },
+    { type:'fill_sequence', instruction:'Fill in the missing number.', payload:{ seq:[10,20,null,40], step:10 }, answer:[30] },
+    { type:'compare_symbol', instruction:'Put the right sign.', payload:{ a:342, b:324 }, answer:'>' },
+    { type:'neighbour_number', instruction:'What comes just after?', payload:{ mode:'after', n:479, display:'▢ , 479' }, answer:480 },
+    { type:'count_money', instruction:'How much money?', payload:{ coins:[10,5,2,1], display:'₹10 + ₹5 + ₹2 + ₹1' }, answer:18 },
+    { type:'pattern_next', instruction:'What comes next?', payload:{ seq:['🔺','🔵','🔺','🔵'], options:['🔺','🔵','🟢'] }, answer:'🔺' },
+    { type:'match_following', instruction:'Match each animal to its home.', payload:{ pairs:[['🐄 Cow','Shed'],['🐦 Bird','Nest'],['🐝 Bee','Hive']] } }
+  ];
+
+  function loadSheet() {
+    try {
+      var raw = localStorage.getItem('kidsPrintSheet');
+      if (raw) { var s = JSON.parse(raw); if (s && s.items && s.items.length) return s; }
+    } catch (e) {}
+    return { items: SAMPLE, title: 'Grade 3 · Maths Practice', subtitle: 'Acharya Kids · pencil & paper worksheet' };
+  }
+
+  (async () => {
+    if (window.KidsAssets) { try { await KidsAssets.load(); } catch (e) {} }  // load-order rule: pool first, then render
+    var sheet = loadSheet();
+    KidsWorksheetPrint.render(document.getElementById('mount'), sheet.items, {
+      title: sheet.title, subtitle: sheet.subtitle
+    });
+  })();
+</script>
+</body>
+</html>

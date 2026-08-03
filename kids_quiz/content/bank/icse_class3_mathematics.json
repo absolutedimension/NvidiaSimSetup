@@ -1,0 +1,205 @@
+{
+  "board": "ICSE",
+  "class": 3,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Numbers & Place Value",
+      "band": "3-5",
+      "instruction": "What comes just after 504?",
+      "voice": "What is just after 504?",
+      "payload": {
+        "mode": "after",
+        "n": 504,
+        "display": "▢ , 504"
+      },
+      "answer": 505,
+      "explain": "Just after 504 is 505."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Comparing Numbers",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 11
+      },
+      "answer": 11,
+      "explain": "There are 11 apples!"
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Skip Counting",
+      "band": "3-5",
+      "instruction": "Count the fishs and write how many!",
+      "voice": "Count the fishs.",
+      "payload": {
+        "asset": "fish",
+        "emoji": "🐟",
+        "n": 12
+      },
+      "answer": 12,
+      "explain": "There are 12 fishs!"
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Number Patterns",
+      "band": "3-5",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 5.",
+      "payload": {
+        "seq": [
+          5,
+          null,
+          15,
+          20
+        ],
+        "step": 5
+      },
+      "answer": [
+        10
+      ],
+      "explain": "Counting by 5s → 10."
+    },
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Addition",
+      "band": "3-5",
+      "instruction": "What comes just before 171?",
+      "voice": "What is just before 171?",
+      "payload": {
+        "mode": "before",
+        "n": 171,
+        "display": "171 , ▢"
+      },
+      "answer": 170,
+      "explain": "Just before 171 is 170."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Subtraction",
+      "band": "3-5",
+      "instruction": "Subtract!  142 − 109 = ?",
+      "voice": "What is 142 minus 109?",
+      "payload": {
+        "op": "-",
+        "a": 142,
+        "b": 109
+      },
+      "answer": 33,
+      "explain": "142 minus 109 leaves 33."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Multiplication",
+      "band": "3-5",
+      "instruction": "Multiply!  11 × 3 = ?",
+      "voice": "What is 11 times 3?",
+      "payload": {
+        "op": "×",
+        "a": 11,
+        "b": 3
+      },
+      "answer": 33,
+      "explain": "11 times 3 makes 33."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Multiplication Word Problems",
+      "band": "3-5",
+      "instruction": "Multiply!  12 × 2 = ?",
+      "voice": "What is 12 times 2?",
+      "payload": {
+        "op": "×",
+        "a": 12,
+        "b": 2
+      },
+      "answer": 24,
+      "explain": "12 times 2 makes 24."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Division",
+      "band": "3-5",
+      "instruction": "Subtract!  100 − 29 = ?",
+      "voice": "What is 100 minus 29?",
+      "payload": {
+        "op": "-",
+        "a": 100,
+        "b": 29
+      },
+      "answer": 71,
+      "explain": "100 minus 29 leaves 71."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Fractions",
+      "band": "3-5",
+      "instruction": "Add it!  385 + 168 = ?",
+      "voice": "What is 385 plus 168?",
+      "payload": {
+        "op": "+",
+        "a": 385,
+        "b": 168
+      },
+      "answer": 553,
+      "explain": "385 plus 168 makes 553."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Money",
+      "band": "3-5",
+      "instruction": "Add it!  314 + 173 = ?",
+      "voice": "What is 314 plus 173?",
+      "payload": {
+        "op": "+",
+        "a": 314,
+        "b": 173
+      },
+      "answer": 487,
+      "explain": "314 plus 173 makes 487."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "Measurement - Length",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 9363 and 5064.",
+      "payload": {
+        "a": 9363,
+        "b": 5064
+      },
+      "answer": ">",
+      "explain": "9363 is greater than 5064."
+    }
+  ]
+}

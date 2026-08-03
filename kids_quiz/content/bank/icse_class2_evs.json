@@ -1,0 +1,959 @@
+{
+  "board": "ICSE",
+  "class": 2,
+  "subject": "EVS",
+  "count": 30,
+  "items": [
+    {
+      "type": "cloze",
+      "payload": {
+        "sentence": "I have ___ fingers on one hand.",
+        "bank": [
+          "five",
+          "six",
+          "seven"
+        ]
+      },
+      "answer": "five",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "About Me",
+      "band": 1,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "payload": {
+        "statement": "My eyes help me to hear."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "About Me",
+      "band": 2,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "payload": {
+        "pairs": [
+          [
+            "Head",
+            "Brain"
+          ],
+          [
+            "Hand",
+            "Fingers"
+          ],
+          [
+            "Foot",
+            "Toes"
+          ]
+        ]
+      },
+      "instruction": "Match the body part to its function.",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "About Me",
+      "band": 1,
+      "voice": "Match the body part to its function.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "payload": {
+        "options": [
+          "Reading",
+          "Swimming",
+          "Eating",
+          "Tree"
+        ]
+      },
+      "answer": "Tree",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "About Me",
+      "band": 1,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "payload": {
+        "items": [
+          "Pizza",
+          "Soccer",
+          "Reading",
+          "Ice Cream"
+        ],
+        "bins": [
+          "Hobbies",
+          "Food"
+        ]
+      },
+      "answer": {
+        "Pizza": "Food",
+        "Soccer": "Hobbies",
+        "Reading": "Hobbies",
+        "Ice Cream": "Food"
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "About Me",
+      "band": 1,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "payload": {
+        "sentence": "I like to ___ in the park.",
+        "bank": [
+          "run",
+          "moon",
+          "star"
+        ]
+      },
+      "answer": "run",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "About Me",
+      "band": 1,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "payload": {
+        "statement": "My nose helps me to smell."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "About Me",
+      "band": 2,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "payload": {
+        "pairs": [
+          [
+            "Eyes",
+            "See"
+          ],
+          [
+            "Ears",
+            "Hear"
+          ],
+          [
+            "Mouth",
+            "Taste"
+          ]
+        ]
+      },
+      "instruction": "Match the sense organ to what it does.",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "About Me",
+      "band": 1,
+      "voice": "Match the sense organ to what it does.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "payload": {
+        "sentence": "I do not like ___ vegetables.",
+        "bank": [
+          "green",
+          "sweets",
+          "ice cream"
+        ]
+      },
+      "answer": "green",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "About Me",
+      "band": 1,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "payload": {
+        "items": [
+          "Brushing teeth",
+          "Eating candy",
+          "Playing outside",
+          "Going to bed"
+        ],
+        "bins": [
+          "Good for health",
+          "Not good for health"
+        ]
+      },
+      "answer": {
+        "Brushing teeth": "Good for health",
+        "Eating candy": "Not good for health",
+        "Playing outside": "Good for health",
+        "Going to bed": "Good for health"
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "About Me",
+      "band": 1,
+      "voice": "",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We celebrate ___ with family and friends.",
+        "bank": [
+          "birthdays",
+          "books",
+          "school"
+        ]
+      },
+      "answer": "birthdays",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "Others in my World",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Elderly people need care and love.",
+      "payload": {
+        "statement": "Elderly people need care and love."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "Others in my World",
+      "band": 2,
+      "voice": "Elderly people need care and love.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the family member to their role.",
+      "payload": {
+        "pairs": [
+          [
+            "Mother",
+            "Cares for children"
+          ],
+          [
+            "Father",
+            "Works for family"
+          ],
+          [
+            "Grandmother",
+            "Tells stories"
+          ],
+          [
+            "Uncle",
+            "Plays games"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "Others in my World",
+      "band": 1,
+      "voice": "Match the family member to their role.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Dog",
+          "Cat",
+          "Fish",
+          "Tree"
+        ]
+      },
+      "answer": "Tree",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "Others in my World",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Diwali",
+          "Christmas",
+          "Dog",
+          "Holi"
+        ],
+        "bins": [
+          "Festivals",
+          "Animals"
+        ]
+      },
+      "answer": {
+        "Diwali": "Festivals",
+        "Christmas": "Festivals",
+        "Dog": "Animals",
+        "Holi": "Festivals"
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "Others in my World",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We should care for ___ people.",
+        "bank": [
+          "young",
+          "old",
+          "children"
+        ]
+      },
+      "answer": "old",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "Others in my World",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Pets do not need food and water.",
+      "payload": {
+        "statement": "Pets do not need food and water."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "Others in my World",
+      "band": 2,
+      "voice": "Pets do not need food and water.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the pet to its action.",
+      "payload": {
+        "pairs": [
+          [
+            "Dog",
+            "Barks"
+          ],
+          [
+            "Cat",
+            "Meows"
+          ],
+          [
+            "Fish",
+            "Swims"
+          ],
+          [
+            "Bird",
+            "Sings"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "Others in my World",
+      "band": 1,
+      "voice": "Match the pet to its action.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Ludo",
+          "Cricket",
+          "Pencil",
+          "Hide and Seek"
+        ]
+      },
+      "answer": "Pencil",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "Others in my World",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Sharing makes us ___ together.",
+        "bank": [
+          "happy",
+          "sad",
+          "angry"
+        ]
+      },
+      "answer": "happy",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "Others in my World",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Food is important for our health.",
+      "payload": {
+        "statement": "Food is important for our health."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "My Needs: Food",
+      "band": 2,
+      "voice": "Food is important for our health.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "We get ___ from cows.",
+        "bank": [
+          "milk",
+          "juice",
+          "water"
+        ]
+      },
+      "answer": "milk",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "My Needs: Food",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the food to its type.",
+      "payload": {
+        "pairs": [
+          [
+            "Rice",
+            "Cereal"
+          ],
+          [
+            "Lentils",
+            "Dals"
+          ],
+          [
+            "Apple",
+            "Fruit"
+          ],
+          [
+            "Carrot",
+            "Vegetable"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "My Needs: Food",
+      "band": 1,
+      "voice": "Match the food to its type.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Pizza",
+          "Salad",
+          "Chips",
+          "Rice"
+        ]
+      },
+      "answer": "Pizza",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "My Needs: Food",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Banana",
+          "Candy",
+          "Broccoli",
+          "Ice cream"
+        ],
+        "bins": [
+          "Healthy",
+          "Junk"
+        ]
+      },
+      "answer": {
+        "Banana": "Healthy",
+        "Candy": "Junk",
+        "Broccoli": "Healthy",
+        "Ice cream": "Junk"
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "My Needs: Food",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Fruits are good for us.",
+      "payload": {
+        "statement": "Fruits are good for us."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "My Needs: Food",
+      "band": 2,
+      "voice": "Fruits are good for us.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "___ are rich in vitamins.",
+        "bank": [
+          "Fruits",
+          "Chips",
+          "Soda"
+        ]
+      },
+      "answer": "Fruits",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "My Needs: Food",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the food item to its group.",
+      "payload": {
+        "pairs": [
+          [
+            "Wheat",
+            "Cereal"
+          ],
+          [
+            "Rajma",
+            "Dals"
+          ],
+          [
+            "Milkshake",
+            "Dairy"
+          ],
+          [
+            "Spinach",
+            "Vegetable"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 2,
+      "chapter": "My Needs: Food",
+      "band": 1,
+      "voice": "Match the food item to its group.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Chicken",
+          "Rice",
+          "Candy",
+          "Beans"
+        ]
+      },
+      "answer": "Candy",
+      "subject": "evs",
+      "class": 2,
+      "chapter": "My Needs: Food",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Junk food is better than healthy food.",
+      "payload": {
+        "statement": "Junk food is better than healthy food."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 2,
+      "chapter": "My Needs: Food",
+      "band": 2,
+      "voice": "Junk food is better than healthy food.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

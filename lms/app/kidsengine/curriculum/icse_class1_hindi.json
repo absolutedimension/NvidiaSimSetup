@@ -1,0 +1,40 @@
+{
+  "board": "ICSE",
+  "class": 1,
+  "subject": "Hindi",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Second Language/Hindi), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "CISCE 'हिंदी भाषा अधिगम (द्वितीय भाषा)' — Hindi as Second Language, whole-language skill approach; theme-based, 2 strands per class. Per-class outcomes (कक्षा I).",
+  "chapters": [
+    {
+      "id": "1_listening_and_speaking",
+      "name": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "subtopics": [
+        "परिचित परिवेश में सुनी गई बातों को समझना",
+        "सरल निर्देशों व आदेशों को सुनकर अनुसरण करना",
+        "खेल-गीत तथा तुकबंदी वाली कविताएँ सुनना व दोहराना",
+        "कहानियाँ सुनकर समझना और उन पर प्रश्न करना",
+        "अपने अनुभव व परिचित परिवेश के बारे में बताना",
+        "हिंदी की ध्वनियों में अंतर करना व सही उच्चारण"
+      ]
+    },
+    {
+      "id": "2_reading_and_writing",
+      "name": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "subtopics": [
+        "परिचित चित्रों का वर्णन करना व शीर्षक देना",
+        "बारहखड़ी के वर्णों की पहचान व तीन अक्षर वाले शब्द बनाना",
+        "दृश्य शब्दावली पढ़ना व सरल वाक्य बनाना",
+        "अपना व परिचितों का नाम पढ़ना-लिखना",
+        "वाक्य में पूर्ण विराम का प्रयोग समझना",
+        "सरल शब्दों का श्रुतलेख; शिरोरेखा व अक्षरों की सुडौलता"
+      ]
+    }
+  ]
+}

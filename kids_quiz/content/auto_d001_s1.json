@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Number Kingdom",
+ "adventure": "Number Kingdom",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Number Kingdom. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🔢",
+   "q": "In 9632, what is the tens digit?",
+   "options": [
+    "6",
+    "5",
+    "4",
+    "3"
+   ],
+   "answer": 3,
+   "explain": "Look at the tens place in 9632.",
+   "voice_q": "In the number 9632, which digit is in the tens place?",
+   "voice_a": "It's 3! The tens digit of 9632 is 3."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔢",
+   "q": "In 8945, what is the ones digit?",
+   "options": [
+    "5",
+    "6",
+    "8",
+    "7"
+   ],
+   "answer": 0,
+   "explain": "Look at the ones place in 8945.",
+   "voice_q": "In the number 8945, which digit is in the ones place?",
+   "voice_a": "It's 5! The ones digit of 8945 is 5."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔢",
+   "q": "In 7764, what is the hundreds digit?",
+   "options": [
+    "0",
+    "8",
+    "9",
+    "7"
+   ],
+   "answer": 3,
+   "explain": "Look at the hundreds place in 7764.",
+   "voice_q": "In the number 7764, which digit is in the hundreds place?",
+   "voice_a": "It's 7! The hundreds digit of 7764 is 7."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔢",
+   "q": "In 8360, what is the tens digit?",
+   "options": [
+    "6",
+    "8",
+    "7",
+    "9"
+   ],
+   "answer": 0,
+   "explain": "Look at the tens place in 8360.",
+   "voice_q": "In the number 8360, which digit is in the tens place?",
+   "voice_a": "It's 6! The tens digit of 8360 is 6."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔢",
+   "q": "In 9974, what is the tens digit?",
+   "options": [
+    "7",
+    "0",
+    "9",
+    "8"
+   ],
+   "answer": 0,
+   "explain": "Look at the tens place in 9974.",
+   "voice_q": "In the number 9974, which digit is in the tens place?",
+   "voice_a": "It's 7! The tens digit of 9974 is 7."
+  }
+ ]
+}

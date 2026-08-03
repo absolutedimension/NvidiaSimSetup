@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Division Valley",
+ "adventure": "Division Valley",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Division Valley. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "10 ÷ 2 = ?",
+   "options": [
+    "7",
+    "4",
+    "6",
+    "5"
+   ],
+   "answer": 3,
+   "explain": "10 shared into 2 groups is 5 each.",
+   "voice_q": "Share 10 into 2 equal groups. How many in each?",
+   "voice_a": "It's 5! 10 shared by 2 gives 5."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "15 ÷ 5 = ?",
+   "options": [
+    "5",
+    "4",
+    "2",
+    "3"
+   ],
+   "answer": 3,
+   "explain": "15 shared into 5 groups is 3 each.",
+   "voice_q": "Share 15 into 5 equal groups. How many in each?",
+   "voice_a": "It's 3! 15 shared by 5 gives 3."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "48 ÷ 6 = ?",
+   "options": [
+    "10",
+    "9",
+    "8",
+    "7"
+   ],
+   "answer": 2,
+   "explain": "48 shared into 6 groups is 8 each.",
+   "voice_q": "Share 48 into 6 equal groups. How many in each?",
+   "voice_a": "It's 8! 48 shared by 6 gives 8."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "32 ÷ 4 = ?",
+   "options": [
+    "8",
+    "9",
+    "7",
+    "10"
+   ],
+   "answer": 0,
+   "explain": "32 shared into 4 groups is 8 each.",
+   "voice_q": "Share 32 into 4 equal groups. How many in each?",
+   "voice_a": "It's 8! 32 shared by 4 gives 8."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍪",
+   "q": "27 ÷ 9 = ?",
+   "options": [
+    "2",
+    "4",
+    "3",
+    "5"
+   ],
+   "answer": 2,
+   "explain": "27 shared into 9 groups is 3 each.",
+   "voice_q": "Share 27 into 9 equal groups. How many in each?",
+   "voice_a": "It's 3! 27 shared by 9 gives 3."
+  }
+ ]
+}

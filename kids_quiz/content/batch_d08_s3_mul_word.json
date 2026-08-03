@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Times-Table Town",
+ "adventure": "Times-Table Town",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Times-Table Town. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "⭐",
+   "q": "2 boxes, each has 3 stars. How many stars?  2 × 3 = ?",
+   "options": [
+    "5",
+    "6",
+    "4",
+    "9"
+   ],
+   "answer": 1,
+   "explain": "2 groups of 3 make 6.",
+   "voice_q": "2 boxes, and each has 3 stars. What is 2 times 3?",
+   "voice_a": "It's 6! 2 groups of 3 stars make 6."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍎",
+   "q": "6 baskets, each has 5 apples. How many apples?  6 × 5 = ?",
+   "options": [
+    "24",
+    "35",
+    "11",
+    "30"
+   ],
+   "answer": 3,
+   "explain": "6 groups of 5 make 30.",
+   "voice_q": "6 baskets, and each has 5 apples. What is 6 times 5?",
+   "voice_a": "It's 30! 6 groups of 5 apples make 30."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🐟",
+   "q": "3 ponds, each has 3 fish. How many fish?  3 × 3 = ?",
+   "options": [
+    "9",
+    "6",
+    "12",
+    "6"
+   ],
+   "answer": 0,
+   "explain": "3 groups of 3 make 9.",
+   "voice_q": "3 ponds, and each has 3 fish. What is 3 times 3?",
+   "voice_a": "It's 9! 3 groups of 3 fish make 9."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🐟",
+   "q": "3 ponds, each has 6 fish. How many fish?  3 × 6 = ?",
+   "options": [
+    "24",
+    "15",
+    "9",
+    "18"
+   ],
+   "answer": 3,
+   "explain": "3 groups of 6 make 18.",
+   "voice_q": "3 ponds, and each has 6 fish. What is 3 times 6?",
+   "voice_a": "It's 18! 3 groups of 6 fish make 18."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🍎",
+   "q": "6 baskets, each has 2 apples. How many apples?  6 × 2 = ?",
+   "options": [
+    "8",
+    "14",
+    "12",
+    "6"
+   ],
+   "answer": 2,
+   "explain": "6 groups of 2 make 12.",
+   "voice_q": "6 baskets, and each has 2 apples. What is 6 times 2?",
+   "voice_a": "It's 12! 6 groups of 2 apples make 12."
+  }
+ ]
+}

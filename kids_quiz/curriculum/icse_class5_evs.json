@@ -1,0 +1,136 @@
+{
+  "board": "ICSE",
+  "class": 5,
+  "subject": "EVS",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Science — natural-environment component of EVS), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Class V SCIENCE (natural-environment/EVS) themes. Class V Social Studies also has 'The Environment – Major Concerns' (separate subject). Upgraded draft→verified.",
+  "chapters": [
+    {
+      "id": "human_body_the_circulatory_system",
+      "name": "Human Body: The Circulatory System",
+      "subtopics": [
+        "Heart, arteries, veins",
+        "Functions of these organs",
+        "Functions of blood",
+        "Process of circulation"
+      ]
+    },
+    {
+      "id": "human_body_the_skeletal_system",
+      "name": "Human Body: The Skeletal System",
+      "subtopics": [
+        "Bones, muscles and joints",
+        "Functions of major bones",
+        "Care of bones and joints",
+        "Posture and exercise"
+      ]
+    },
+    {
+      "id": "food_and_health",
+      "name": "Food and Health",
+      "subtopics": [
+        "Balanced diet",
+        "Junk food and adverse effects",
+        "Sprouting and fermentation",
+        "Deficiency diseases"
+      ]
+    },
+    {
+      "id": "pollination",
+      "name": "Pollination",
+      "subtopics": [
+        "Androecium and gynoecium",
+        "Bisexual and monosexual flowers",
+        "Process of pollination",
+        "Self and cross pollination"
+      ]
+    },
+    {
+      "id": "plant_reproduction",
+      "name": "Plant Reproduction",
+      "subtopics": [
+        "Fertilization and seed formation",
+        "Dispersal of seeds",
+        "Vegetative reproduction",
+        "From stem, root, leaf (potato, carrot, Bryophyllum)"
+      ]
+    },
+    {
+      "id": "solids_liquids_and_gases",
+      "name": "Solids, Liquids and Gases",
+      "subtopics": [
+        "Properties of solids, liquids, gases",
+        "Separation of liquids from solids",
+        "Composition of gases in air",
+        "Land and sea breezes; ventilation"
+      ]
+    },
+    {
+      "id": "interdependence_in_living_beings",
+      "name": "Interdependence in Living Beings",
+      "subtopics": [
+        "Producers and consumers",
+        "Simple food chains",
+        "Scavengers and decomposers",
+        "Imbalance in nature"
+      ]
+    },
+    {
+      "id": "sound_and_noise",
+      "name": "Sound and Noise",
+      "subtopics": [
+        "Sounds by objects and living beings",
+        "Pleasant and unpleasant sounds",
+        "Warning sounds",
+        "Reducing noise pollution"
+      ]
+    },
+    {
+      "id": "work_and_energy",
+      "name": "Work and Energy",
+      "subtopics": [
+        "Meaning of work",
+        "Energy needed for work",
+        "Renewable and non-renewable sources",
+        "Forms: light, heat, electricity, sound"
+      ]
+    },
+    {
+      "id": "light_and_shadows",
+      "name": "Light and Shadows",
+      "subtopics": [
+        "Transparent, translucent, opaque",
+        "Formation of shadows",
+        "Day and night",
+        "Solar and lunar eclipses (idea)"
+      ]
+    },
+    {
+      "id": "simple_machines",
+      "name": "Simple Machines",
+      "subtopics": [
+        "Need for machines",
+        "Lever, screw, pulley",
+        "Types of levers",
+        "Body joints as levers"
+      ]
+    },
+    {
+      "id": "cleanliness_and_hygiene",
+      "name": "Cleanliness and Hygiene",
+      "subtopics": [
+        "Cleanliness of body, clothes, food, water",
+        "Diseases from poor hygiene",
+        "Degradable and non-degradable garbage",
+        "Reducing non-degradable waste"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "series": "Treasure Trackers",
+ "mascot": "🦊",
+ "mascot_img": "jj.png",
+ "mascot_name": "JJ",
+ "mascot2": "🐵",
+ "mascot2_img": "mikey.png",
+ "mascot2_name": "Mikey",
+ "subject": "Maths",
+ "chapter": "Shape Island",
+ "adventure": "Shape Island",
+ "topic_line": "Help JJ & Mikey find the treasure!",
+ "timer_seconds": 6,
+ "cta": "Collect all 5 gems!",
+ "intro_voice": "Hi friends! I'm JJ, and this is Mikey! Welcome to Shape Island. Answer five questions, collect five gems, and we find the treasure! Ready? Let's go!",
+ "outro_voice": "Woohoo! All five gems! You found the treasure! You're a maths superstar. See you next time!",
+ "questions": [
+  {
+   "type": "mcq",
+   "emoji": "🔺",
+   "q": "How many sides does a pentagon have?",
+   "options": [
+    "5",
+    "4",
+    "6",
+    "7"
+   ],
+   "answer": 0,
+   "explain": "A pentagon has 5 sides.",
+   "voice_q": "How many sides does a pentagon have?",
+   "voice_a": "It's 5! A pentagon has 5 sides."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔺",
+   "q": "How many sides does a rectangle have?",
+   "options": [
+    "5",
+    "3",
+    "4",
+    "6"
+   ],
+   "answer": 2,
+   "explain": "A rectangle has 4 sides.",
+   "voice_q": "How many sides does a rectangle have?",
+   "voice_a": "It's 4! A rectangle has 4 sides."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔺",
+   "q": "How many sides does a octagon have?",
+   "options": [
+    "7",
+    "10",
+    "9",
+    "8"
+   ],
+   "answer": 3,
+   "explain": "A octagon has 8 sides.",
+   "voice_q": "How many sides does a octagon have?",
+   "voice_a": "It's 8! A octagon has 8 sides."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔺",
+   "q": "How many sides does a triangle have?",
+   "options": [
+    "3",
+    "2",
+    "4",
+    "5"
+   ],
+   "answer": 0,
+   "explain": "A triangle has 3 sides.",
+   "voice_q": "How many sides does a triangle have?",
+   "voice_a": "It's 3! A triangle has 3 sides."
+  },
+  {
+   "type": "mcq",
+   "emoji": "🔺",
+   "q": "How many sides does a hexagon have?",
+   "options": [
+    "8",
+    "6",
+    "7",
+    "5"
+   ],
+   "answer": 1,
+   "explain": "A hexagon has 6 sides.",
+   "voice_q": "How many sides does a hexagon have?",
+   "voice_a": "It's 6! A hexagon has 6 sides."
+  }
+ ]
+}

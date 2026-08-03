@@ -1,0 +1,129 @@
+{
+  "board": "ICSE",
+  "class": 5,
+  "subject": "Mathematics",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Mathematics), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "",
+  "chapters": [
+    {
+      "id": "numbers",
+      "name": "Numbers",
+      "subtopics": [
+        "Indian & International systems: 9-digit numbers",
+        "Place value, face value, expanded form",
+        "Comparison and order",
+        "Greatest/smallest from digits",
+        "Rounding to nearest 10/100/1000",
+        "Tables 2 to 20",
+        "Four operations incl. 2-digit division",
+        "Roman numerals for large numbers"
+      ]
+    },
+    {
+      "id": "number_operations",
+      "name": "Number Operations",
+      "subtopics": [
+        "Standard algorithms for large numbers",
+        "Division by up to 2 digits",
+        "Framing/solving real-life problems",
+        "Estimation of results"
+      ]
+    },
+    {
+      "id": "fractions_and_decimals",
+      "name": "Fractions and Decimals",
+      "subtopics": [
+        "Compare 3+ fractions",
+        "Add/subtract unlike fractions and mixed numbers",
+        "Multiply/divide fractions",
+        "Fractions ↔ decimals",
+        "Decimal place value: tenths/hundredths/thousandths",
+        "Compare and order decimals",
+        "Add/subtract decimals",
+        "Multiply decimals by 10/100/1000 and numbers"
+      ]
+    },
+    {
+      "id": "playing_with_numbers_factors_and_multipl",
+      "name": "Playing with Numbers (Factors and Multiples)",
+      "subtopics": [
+        "Factors, common factors, HCF",
+        "Multiples, common multiples, LCM",
+        "Prime, composite, twin primes, co-primes",
+        "Prime factors (factor tree)",
+        "HCF–LCM relationship",
+        "Divisibility by 2,3,4,5,9,10,11"
+      ]
+    },
+    {
+      "id": "introduction_to_negative_numbers",
+      "name": "Introduction to Negative Numbers",
+      "subtopics": [
+        "Negative numbers on the number line",
+        "Integers: counting numbers, zero, negatives",
+        "Comparing integers",
+        "Ascending/descending order of integers",
+        "Add/subtract integers"
+      ]
+    },
+    {
+      "id": "geometry",
+      "name": "Geometry",
+      "subtopics": [
+        "Angle and its measures",
+        "Right, acute, obtuse angles",
+        "Drawing/tracing angles",
+        "Symmetry in 3D shapes",
+        "Reflection and rotational symmetry in 2D",
+        "Nets of cubes, cuboids, cylinders, cones"
+      ]
+    },
+    {
+      "id": "measurement",
+      "name": "Measurement",
+      "subtopics": [
+        "Area and perimeter of simple shapes",
+        "Problems on length, weight, time, money, volume",
+        "Larger/smaller units and conversion",
+        "Estimating volume of a solid"
+      ]
+    },
+    {
+      "id": "introduction_to_percentage",
+      "name": "Introduction to Percentage",
+      "subtopics": [
+        "Introduction of percentages",
+        "Fractions ↔ decimals ↔ percentage",
+        "Pictorial representation",
+        "Fractions to/from percentages",
+        "Decimals to/from percentages",
+        "Word problems on percentage"
+      ]
+    },
+    {
+      "id": "data_handling",
+      "name": "Data Handling",
+      "subtopics": [
+        "Pictorial representation of raw data",
+        "Interpreting bar graph, line graph and pie chart"
+      ]
+    },
+    {
+      "id": "patterns",
+      "name": "Patterns",
+      "subtopics": [
+        "Patterns with a unit of repeat",
+        "Progressive patterns",
+        "Patterns with more than one characteristic",
+        "Triangular and square numbers"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "board": "ICSE",
+  "class": 5,
+  "subject": "General Knowledge",
+  "source": {
+    "name": "Commonly-taught ICSE-school GK outline (NO formal CISCE board GK syllabus at primary)",
+    "url": "https://byjus.com/icse/icse-syllabus/",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "No official CISCE primary GK syllabus; commonly-taught outline only.",
+  "chapters": [
+    {
+      "id": "the_wider_world",
+      "name": "The Wider World",
+      "subtopics": [
+        "World capitals, currencies and flags",
+        "Continents, oceans and famous rivers",
+        "World wonders and landmarks"
+      ]
+    },
+    {
+      "id": "india_history_and_geography",
+      "name": "India: History and Geography",
+      "subtopics": [
+        "Indian history and freedom struggle",
+        "States, capitals and languages",
+        "National awards and honours"
+      ]
+    },
+    {
+      "id": "science_sports_and_current_affairs",
+      "name": "Science, Sports and Current Affairs",
+      "subtopics": [
+        "Science and technology facts",
+        "Sports, games and champions",
+        "Environment and current events"
+      ]
+    }
+  ]
+}

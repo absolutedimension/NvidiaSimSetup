@@ -1,0 +1,72 @@
+{
+  "board": "CBSE",
+  "class": 2,
+  "subject": "Hindi",
+  "source": {
+    "name": "NCERT Sarangi — Hindi Class 2 (Contents)",
+    "url": "https://ncert.nic.in/textbook/pdf/bhsr1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Current 'Sarangi'. 26 पाठ across 5 इकाई, verbatim from official PDF (bhsr1).",
+  "chapters": [
+    {
+      "id": "1",
+      "name": "इकाई 1: परिवार",
+      "subtopics": [
+        "नीमा की दादी",
+        "घर",
+        "माला की चाँदी की पायल",
+        "माँ",
+        "थाथू और मैं",
+        "चींटा",
+        "टिल्लू जी"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "इकाई 2: रंग ही रंग",
+      "subtopics": [
+        "तीन दोस्त",
+        "दुनिया रंग-बिरंगी",
+        "कौन",
+        "बैंगनी जोजो",
+        "तोसिया का सपना"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "इकाई 3: हरी-भरी धरती",
+      "subtopics": [
+        "तालाब",
+        "बीज",
+        "किसान",
+        "मूली",
+        "बरसात और मेंढक"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "इकाई 4: मित्रता",
+      "subtopics": [
+        "शेर और चूहे की दोस्ती",
+        "आउट",
+        "छुपन-छुपाई",
+        "हाथी साइकिल चला रहा था"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "इकाई 5: आकाश",
+      "subtopics": [
+        "चार दिशाएँ",
+        "चंदा मामा",
+        "गिरे ताल में चंदा मामा",
+        "सबसे बड़ा छाता",
+        "बादल"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "board": "CBSE",
+  "class": 3,
+  "subject": "Mathematics",
+  "source": {
+    "name": "NCERT Maths Mela Class 3 (Textbook of Mathematics)",
+    "url": "https://ncert.nic.in/textbook/pdf/cemm1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Verified from official ncert.nic.in prelims PDF (cemm1). Chapter names verbatim. Theme-based chapters; subtopics inferred from theme + NCF Grade-3 scope.",
+  "chapters": [
+    {
+      "id": "what_s_in_a_name",
+      "name": "What's in a Name?",
+      "subtopics": [
+        "tally marks",
+        "counting and recording data",
+        "pictographs",
+        "reading and comparing data"
+      ]
+    },
+    {
+      "id": "toy_joy",
+      "name": "Toy Joy",
+      "subtopics": [
+        "counting large collections",
+        "grouping in tens",
+        "place value introduction",
+        "number names"
+      ]
+    },
+    {
+      "id": "double_century",
+      "name": "Double Century",
+      "subtopics": [
+        "numbers up to 200 and beyond",
+        "place value",
+        "comparing numbers",
+        "number sequence"
+      ]
+    },
+    {
+      "id": "vacation_with_my_nani_maa",
+      "name": "Vacation with My Nani Maa",
+      "subtopics": [
+        "addition and subtraction",
+        "mental math strategies",
+        "word problems",
+        "estimation"
+      ]
+    },
+    {
+      "id": "fun_with_shapes",
+      "name": "Fun with Shapes",
+      "subtopics": [
+        "2D and 3D shapes",
+        "tangrams",
+        "tiling and patterns",
+        "faces, edges and corners"
+      ]
+    },
+    {
+      "id": "house_of_hundreds_i",
+      "name": "House of Hundreds – I",
+      "subtopics": [
+        "3-digit numbers",
+        "hundreds, tens and ones",
+        "expanded form",
+        "comparing and ordering"
+      ]
+    },
+    {
+      "id": "raksha_bandhan",
+      "name": "Raksha Bandhan",
+      "subtopics": [
+        "addition with regrouping",
+        "subtraction with regrouping",
+        "money in context",
+        "word problems"
+      ]
+    },
+    {
+      "id": "fair_share",
+      "name": "Fair Share",
+      "subtopics": [
+        "equal sharing / division",
+        "halves and quarters",
+        "introduction to fractions",
+        "grouping"
+      ]
+    },
+    {
+      "id": "house_of_hundreds_ii",
+      "name": "House of Hundreds – II",
+      "subtopics": [
+        "addition of 3-digit numbers",
+        "subtraction of 3-digit numbers",
+        "regrouping",
+        "estimation"
+      ]
+    },
+    {
+      "id": "fun_at_class_party",
+      "name": "Fun at Class Party!",
+      "subtopics": [
+        "multiplication",
+        "repeated addition",
+        "multiplication tables",
+        "arrays"
+      ]
+    },
+    {
+      "id": "filling_and_lifting",
+      "name": "Filling and Lifting",
+      "subtopics": [
+        "capacity",
+        "weight",
+        "comparing measures",
+        "non-standard and standard units"
+      ]
+    },
+    {
+      "id": "give_and_take",
+      "name": "Give and Take",
+      "subtopics": [
+        "money notes and coins",
+        "adding and subtracting money",
+        "making change",
+        "buying and selling"
+      ]
+    },
+    {
+      "id": "time_goes_on",
+      "name": "Time Goes On",
+      "subtopics": [
+        "reading the clock",
+        "hours and minutes",
+        "calendar",
+        "days, weeks and months"
+      ]
+    },
+    {
+      "id": "the_surajkund_fair",
+      "name": "The Surajkund Fair",
+      "subtopics": [
+        "revision and problem solving",
+        "patterns",
+        "data handling",
+        "applying operations"
+      ]
+    }
+  ]
+}

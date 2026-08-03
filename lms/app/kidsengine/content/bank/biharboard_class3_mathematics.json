@@ -1,0 +1,204 @@
+{
+  "board": "Bihar Board",
+  "class": 3,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "ज्यामिति (Geometry)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 2481 and 6478.",
+      "payload": {
+        "a": 2481,
+        "b": 6478
+      },
+      "answer": "<",
+      "explain": "2481 is less than 6478."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "संख्याएँ (Numbers)",
+      "band": "3-5",
+      "instruction": "Count the apples and write how many!",
+      "voice": "Count the apples.",
+      "payload": {
+        "asset": "apple",
+        "emoji": "🍎",
+        "n": 11
+      },
+      "answer": 11,
+      "explain": "There are 11 apples!"
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "गुणा (Multiplication)",
+      "band": "3-5",
+      "instruction": "Multiply!  7 × 2 = ?",
+      "voice": "What is 7 times 2?",
+      "payload": {
+        "op": "×",
+        "a": 7,
+        "b": 2
+      },
+      "answer": 14,
+      "explain": "7 times 2 makes 14."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "भाग (Division)",
+      "band": "3-5",
+      "instruction": "Multiply!  2 × 3 = ?",
+      "voice": "What is 2 times 3?",
+      "payload": {
+        "op": "×",
+        "a": 2,
+        "b": 3
+      },
+      "answer": 6,
+      "explain": "2 times 3 makes 6."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "भिन्न-संख्याएँ (Fractions)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 6861 and 1154.",
+      "payload": {
+        "a": 6861,
+        "b": 1154
+      },
+      "answer": ">",
+      "explain": "6861 is greater than 1154."
+    },
+    {
+      "type": "count_money",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "मुद्रा (Money)",
+      "band": "3-5",
+      "instruction": "How much money? 🪙",
+      "voice": "Add the coins.",
+      "payload": {
+        "coins": [
+          1,
+          2,
+          5
+        ],
+        "display": "₹1 + ₹2 + ₹5"
+      },
+      "answer": 8,
+      "explain": "The coins make ₹8."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "लम्बाई (Length)",
+      "band": "3-5",
+      "instruction": "Add it!  130 + 389 = ?",
+      "voice": "What is 130 plus 389?",
+      "payload": {
+        "op": "+",
+        "a": 130,
+        "b": 389
+      },
+      "answer": 519,
+      "explain": "130 plus 389 makes 519."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "भार (Weight)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 3667 and 9561.",
+      "payload": {
+        "a": 3667,
+        "b": 9561
+      },
+      "answer": "<",
+      "explain": "3667 is less than 9561."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "धारिता (Capacity)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 9465 and 9603.",
+      "payload": {
+        "a": 9465,
+        "b": 9603
+      },
+      "answer": "<",
+      "explain": "9465 is less than 9603."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "समय (Time)",
+      "band": "3-5",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 822 and 3632.",
+      "payload": {
+        "a": 822,
+        "b": 3632
+      },
+      "answer": "<",
+      "explain": "822 is less than 3632."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "पैटर्न (Pattern)",
+      "band": "3-5",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 5.",
+      "payload": {
+        "seq": [
+          15,
+          20,
+          null,
+          30
+        ],
+        "step": 5
+      },
+      "answer": [
+        25
+      ],
+      "explain": "Counting by 5s → 25."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 3,
+      "chapter": "आँकड़ों का चित्रात्मक निरूपण (Data)",
+      "band": "3-5",
+      "instruction": "Add it!  376 + 160 = ?",
+      "voice": "What is 376 plus 160?",
+      "payload": {
+        "op": "+",
+        "a": 376,
+        "b": 160
+      },
+      "answer": 536,
+      "explain": "376 plus 160 makes 536."
+    }
+  ]
+}

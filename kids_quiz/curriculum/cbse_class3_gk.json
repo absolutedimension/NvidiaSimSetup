@@ -1,0 +1,43 @@
+{
+  "board": "CBSE",
+  "class": 3,
+  "subject": "General Knowledge",
+  "source": {
+    "name": "Commonly-taught primary GK outline (NO official CBSE/NCERT board GK syllabus at primary)",
+    "url": "",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "low",
+  "verified": false,
+  "status": "draft",
+  "notes": "No official CBSE primary GK syllabus; commonly-taught outline only.",
+  "chapters": [
+    {
+      "id": "our_universe",
+      "name": "Our Universe",
+      "subtopics": [
+        "the solar system and planets",
+        "the Sun, Moon and stars",
+        "day and night"
+      ]
+    },
+    {
+      "id": "our_world",
+      "name": "Our World",
+      "subtopics": [
+        "continents and oceans",
+        "national symbols of India",
+        "famous monuments"
+      ]
+    },
+    {
+      "id": "people_and_achievements",
+      "name": "People and Achievements",
+      "subtopics": [
+        "famous personalities",
+        "inventions and discoveries",
+        "sports and games"
+      ]
+    }
+  ]
+}

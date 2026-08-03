@@ -1,0 +1,944 @@
+{
+  "board": "ICSE",
+  "class": 5,
+  "subject": "EVS",
+  "count": 30,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the organ to its function.",
+      "payload": {
+        "pairs": [
+          [
+            "Heart",
+            "Pumps blood"
+          ],
+          [
+            "Arteries",
+            "Carry blood away"
+          ],
+          [
+            "Veins",
+            "Carry blood back"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Circulatory System",
+      "band": 1,
+      "voice": "Match the organ to its function.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "The heart is a muscle.",
+      "payload": {
+        "statement": "The heart is a muscle."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Circulatory System",
+      "band": 2,
+      "voice": "The heart is a muscle.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Arteries carry blood ___ from the heart.",
+        "bank": [
+          "to",
+          "away"
+        ]
+      },
+      "answer": "away",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Circulatory System",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Heart",
+          "Veins",
+          "Lungs",
+          "Arteries"
+        ]
+      },
+      "answer": "Lungs",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Circulatory System",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Red blood cells",
+          "White blood cells",
+          "Heart",
+          "Platelets"
+        ],
+        "bins": [
+          "Blood Cells",
+          "Organs"
+        ]
+      },
+      "answer": {
+        "Red blood cells": "Blood Cells",
+        "White blood cells": "Blood Cells",
+        "Heart": "Organs",
+        "Platelets": "Blood Cells"
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Circulatory System",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Veins carry blood away from the heart.",
+      "payload": {
+        "statement": "Veins carry blood away from the heart."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Circulatory System",
+      "band": 2,
+      "voice": "Veins carry blood away from the heart.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is the main organ of the circulatory system.",
+        "bank": [
+          "heart",
+          "brain",
+          "stomach"
+        ]
+      },
+      "answer": "heart",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Circulatory System",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the blood type to its function.",
+      "payload": {
+        "pairs": [
+          [
+            "Red blood cells",
+            "Carry oxygen"
+          ],
+          [
+            "White blood cells",
+            "Fight germs"
+          ],
+          [
+            "Platelets",
+            "Help in clotting"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Circulatory System",
+      "band": 1,
+      "voice": "Match the blood type to its function.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Blood is red because of red blood cells.",
+      "payload": {
+        "statement": "Blood is red because of red blood cells."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Circulatory System",
+      "band": 2,
+      "voice": "Blood is red because of red blood cells.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The process of blood moving through the body is called ___ circulation.",
+        "bank": [
+          "air",
+          "water",
+          "circulation"
+        ]
+      },
+      "answer": "circulation",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Circulatory System",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "The ___ is the framework of our body made of bones.",
+        "bank": [
+          "muscles",
+          "skeleton",
+          "skin"
+        ]
+      },
+      "answer": "skeleton",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Skeletal System",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Our bones are soft and bend easily.",
+      "payload": {
+        "statement": "Our bones are soft and bend easily."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Skeletal System",
+      "band": 2,
+      "voice": "Our bones are soft and bend easily.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the bone to its function.",
+      "payload": {
+        "pairs": [
+          [
+            "Skull",
+            "Protects the brain"
+          ],
+          [
+            "Ribs",
+            "Protects the heart"
+          ],
+          [
+            "Spine",
+            "Supports the body"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Skeletal System",
+      "band": 1,
+      "voice": "Match the bone to its function.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Humerus",
+          "Femur",
+          "Heart",
+          "Skull"
+        ]
+      },
+      "answer": "Heart",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Skeletal System",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "Bicep",
+          "Femur",
+          "Patella",
+          "Liver"
+        ],
+        "bins": [
+          "Bones",
+          "Muscles"
+        ]
+      },
+      "answer": {
+        "Bicep": "Muscles",
+        "Femur": "Bones",
+        "Patella": "Bones",
+        "Liver": "Muscles"
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Skeletal System",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Joints help our bones to ___.",
+        "bank": [
+          "break",
+          "move",
+          "grow"
+        ]
+      },
+      "answer": "move",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Skeletal System",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Exercise helps keep our bones strong.",
+      "payload": {
+        "statement": "Exercise helps keep our bones strong."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Skeletal System",
+      "band": 2,
+      "voice": "Exercise helps keep our bones strong.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the part of the body to its care.",
+      "payload": {
+        "pairs": [
+          [
+            "Bones",
+            "Eat healthy food"
+          ],
+          [
+            "Joints",
+            "Exercise regularly"
+          ],
+          [
+            "Muscles",
+            "Stretch before activity"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Skeletal System",
+      "band": 1,
+      "voice": "Match the part of the body to its care.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Squat",
+          "Jumping Jack",
+          "Couch",
+          "Push-up"
+        ]
+      },
+      "answer": "Couch",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Skeletal System",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "Good ___ helps us stand tall and strong.",
+        "bank": [
+          "posture",
+          "food",
+          "sleep"
+        ]
+      },
+      "answer": "posture",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Human Body: The Skeletal System",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the food to its group.",
+      "payload": {
+        "pairs": [
+          [
+            "Apple",
+            "Fruit"
+          ],
+          [
+            "Carrot",
+            "Vegetable"
+          ],
+          [
+            "Milk",
+            "Dairy"
+          ],
+          [
+            "Bread",
+            "Grain"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Food and Health",
+      "band": 1,
+      "voice": "Match the food to its group.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Pizza",
+          "Burger",
+          "Salad",
+          "Chips"
+        ]
+      },
+      "answer": "Salad",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Food and Health",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Junk food is healthy for us.",
+      "payload": {
+        "statement": "Junk food is healthy for us."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Food and Health",
+      "band": 2,
+      "voice": "Junk food is healthy for us.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "A balanced diet has all the ___ we need.",
+        "bank": [
+          "food",
+          "toys",
+          "games"
+        ]
+      },
+      "answer": "food",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Food and Health",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort these foods.",
+      "payload": {
+        "items": [
+          "Candy",
+          "Spinach",
+          "Fries",
+          "Rice"
+        ],
+        "bins": [
+          "Healthy",
+          "Unhealthy"
+        ]
+      },
+      "answer": {
+        "Candy": "Unhealthy",
+        "Spinach": "Healthy",
+        "Fries": "Unhealthy",
+        "Rice": "Healthy"
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Food and Health",
+      "band": 1,
+      "voice": "Sort these foods.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Sprouting helps seeds grow.",
+      "payload": {
+        "statement": "Sprouting helps seeds grow."
+      },
+      "answer": true,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Food and Health",
+      "band": 2,
+      "voice": "Sprouting helps seeds grow.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "___ is a deficiency disease caused by lack of vitamin C.",
+        "bank": [
+          "Scurvy",
+          "Flu",
+          "Cold"
+        ]
+      },
+      "answer": "Scurvy",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Food and Health",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the food to its effect.",
+      "payload": {
+        "pairs": [
+          [
+            "Fruits",
+            "Good for skin"
+          ],
+          [
+            "Sugary drinks",
+            "Bad for teeth"
+          ],
+          [
+            "Vegetables",
+            "Good for eyes"
+          ],
+          [
+            "Fast food",
+            "Can make you sick"
+          ]
+        ]
+      },
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Food and Health",
+      "band": 1,
+      "voice": "Match the food to its effect.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "Vitamin A",
+          "Vitamin C",
+          "Sugar",
+          "Vitamin D"
+        ]
+      },
+      "answer": "Sugar",
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Food and Health",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Eating too much junk food is good for health.",
+      "payload": {
+        "statement": "Eating too much junk food is good for health."
+      },
+      "answer": false,
+      "subject": "evs",
+      "class": 5,
+      "chapter": "Food and Health",
+      "band": 2,
+      "voice": "Eating too much junk food is good for health.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

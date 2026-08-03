@@ -1,0 +1,40 @@
+{
+  "board": "ICSE",
+  "class": 2,
+  "subject": "Hindi",
+  "source": {
+    "name": "CISCE Curriculum for Classes I-V (Second Language/Hindi), Primary",
+    "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Second Language (Hindi), theme-based; per-class outcomes (कक्षा II).",
+  "chapters": [
+    {
+      "id": "1_listening_and_speaking",
+      "name": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+      "subtopics": [
+        "परिचित-अपरिचित संदर्भों पर वार्तालाप सुनना व भाग लेना",
+        "अपना परिचय देना व प्रश्नों के उत्तर आत्मविश्वास से देना",
+        "निर्देश सुनकर पालन करना व दूसरों को निर्देश देना",
+        "कहानी का मुख्य भाव समझना; कौन/कब/कहाँ/कैसे के उत्तर",
+        "कविताएँ याद कर हाव-भाव के साथ सुनाना",
+        "पहेलियाँ बूझना व तुक वाले शब्द बनाना"
+      ]
+    },
+    {
+      "id": "2_reading_and_writing",
+      "name": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+      "subtopics": [
+        "चित्र/विज्ञापन की लिखी भाषा पहचानना व अनुमान से पढ़ना",
+        "चार्ट पर लिखी तुकबंदियों का अनुलेख लिखना",
+        "शब्द/वाक्य/अनुच्छेद/कहानी/नाटक में अंतर करना",
+        "छोटे-छोटे नाटक पढ़ना व अभिनय करना",
+        "छोटी घटनाओं का वर्णन लिखना व पढ़ना",
+        "संयुक्त व्यंजन, 'र' के रूप व मिलती-जुलती ध्वनियों (ड़/ढ़) की पहचान"
+      ]
+    }
+  ]
+}

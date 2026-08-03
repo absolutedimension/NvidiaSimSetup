@@ -1,0 +1,951 @@
+{
+  "board": "CBSE",
+  "class": 4,
+  "subject": "Hindi",
+  "count": 30,
+  "items": [
+    {
+      "type": "match_following",
+      "instruction": "Match the bird with its sound.",
+      "payload": {
+        "pairs": [
+          [
+            "चिड़िया",
+            "चहचहाना"
+          ],
+          [
+            "कौआ",
+            "कांव-कांव"
+          ],
+          [
+            "तोता",
+            "बोलना"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "चिड़िया का गीत",
+      "band": 1,
+      "voice": "Match the bird with its sound.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "चिड़िया",
+          "गाय",
+          "कौआ",
+          "तितली"
+        ]
+      },
+      "answer": "गाय",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "चिड़िया का गीत",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "A bird can fly.",
+      "payload": {
+        "statement": "सभी चिड़ियाँ उड़ सकती हैं।"
+      },
+      "answer": false,
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "चिड़िया का गीत",
+      "band": 2,
+      "voice": "A bird can fly.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "चिड़िया का ___ गाना सुनो।",
+        "bank": [
+          "गाना",
+          "खाना",
+          "घर"
+        ]
+      },
+      "answer": "गाना",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "चिड़िया का गीत",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "चिड़िया",
+          "पेड़",
+          "फूल",
+          "गाड़ी"
+        ],
+        "bins": [
+          "जीव",
+          "अजीव"
+        ]
+      },
+      "answer": {
+        "चिड़िया": "जीव",
+        "पेड़": "जीव",
+        "फूल": "जीव",
+        "गाड़ी": "अजीव"
+      },
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "चिड़िया का गीत",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the bird with its color.",
+      "payload": {
+        "pairs": [
+          [
+            "तोता",
+            "हरा"
+          ],
+          [
+            "कौआ",
+            "काला"
+          ],
+          [
+            "चिड़िया",
+            "नीला"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "चिड़िया का गीत",
+      "band": 1,
+      "voice": "Match the bird with its color.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "Birds build nests.",
+      "payload": {
+        "statement": "चिड़ियाँ घोंसले बनाती हैं।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "चिड़िया का गीत",
+      "band": 2,
+      "voice": "Birds build nests.",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "चिड़िया के ___ होते हैं।",
+        "bank": [
+          "पंख",
+          "पैर",
+          "आंख"
+        ]
+      },
+      "answer": "पंख",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "चिड़िया का गीत",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "उड़ना",
+          "चलना",
+          "तैरना",
+          "खाना"
+        ]
+      },
+      "answer": "खाना",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "चिड़िया का गीत",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "चिड़िया",
+          "हाथी",
+          "गिलास",
+          "कौआ"
+        ],
+        "bins": [
+          "जीव",
+          "अजीव"
+        ]
+      },
+      "answer": {
+        "चिड़िया": "जीव",
+        "हाथी": "जीव",
+        "गिलास": "अजीव",
+        "कौआ": "जीव"
+      },
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "चिड़िया का गीत",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "बगीचे का घोंघा ___ होता है।",
+        "bank": [
+          "सुंदर",
+          "काला",
+          "बड़ा"
+        ]
+      },
+      "answer": "सुंदर",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "बगीचे का घोंघा",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "घोंघा तेज चलता है।",
+      "payload": {
+        "statement": "घोंघा तेज चलता है।"
+      },
+      "answer": false,
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "बगीचे का घोंघा",
+      "band": 2,
+      "voice": "घोंघा तेज चलता है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the words with their meanings.",
+      "payload": {
+        "pairs": [
+          [
+            "घोंघा",
+            "Snail"
+          ],
+          [
+            "बगीचा",
+            "Garden"
+          ],
+          [
+            "पानी",
+            "Water"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "बगीचे का घोंघा",
+      "band": 1,
+      "voice": "Match the words with their meanings.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "घोंघा",
+          "तितली",
+          "कुत्ता",
+          "गाय"
+        ]
+      },
+      "answer": "कुत्ता",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "बगीचे का घोंघा",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "घोंघा",
+          "पेड़",
+          "फूल",
+          "पत्थर"
+        ],
+        "bins": [
+          "जीव",
+          "अजीव"
+        ]
+      },
+      "answer": {
+        "घोंघा": "जीव",
+        "पेड़": "जीव",
+        "फूल": "जीव",
+        "पत्थर": "अजीव"
+      },
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "बगीचे का घोंघा",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "घोंघा ___ में रहता है।",
+        "bank": [
+          "पेड़",
+          "गाड़ी",
+          "बगीचा"
+        ]
+      },
+      "answer": "बगीचा",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "बगीचे का घोंघा",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "घोंघा अपना घर अपने साथ रखता है।",
+      "payload": {
+        "statement": "घोंघा अपना घर अपने साथ रखता है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "बगीचे का घोंघा",
+      "band": 2,
+      "voice": "घोंघा अपना घर अपने साथ रखता है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the items with their colors.",
+      "payload": {
+        "pairs": [
+          [
+            "घोंघा",
+            "हरा"
+          ],
+          [
+            "फूल",
+            "रंग-बिरंगा"
+          ],
+          [
+            "पेड़",
+            "भूरा"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "बगीचे का घोंघा",
+      "band": 1,
+      "voice": "Match the items with their colors.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "घोंघा",
+          "तितली",
+          "मछली",
+          "चिड़िया"
+        ]
+      },
+      "answer": "मछली",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "बगीचे का घोंघा",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "घोंघा ___ खाता है।",
+        "bank": [
+          "घास",
+          "पानी",
+          "आम"
+        ]
+      },
+      "answer": "घास",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "बगीचे का घोंघा",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "नीम का ___ बहुत उपयोगी होता है।",
+        "bank": [
+          "पत्ता",
+          "फूल",
+          "फल"
+        ]
+      },
+      "answer": "पत्ता",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "नीम",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "नीम की छाल कड़वी होती है।",
+      "payload": {
+        "statement": "नीम की छाल कड़वी होती है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "नीम",
+      "band": 2,
+      "voice": "नीम की छाल कड़वी होती है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the following uses of Neem.",
+      "payload": {
+        "pairs": [
+          [
+            "नीम का तेल",
+            "बीमारियों से बचाता है"
+          ],
+          [
+            "नीम का पत्ता",
+            "मच्छरों को भगाता है"
+          ],
+          [
+            "नीम की छाल",
+            "काढ़ा बनता है"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "नीम",
+      "band": 1,
+      "voice": "Match the following uses of Neem.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "नीम",
+          "बबूल",
+          "तुलसी",
+          "गुलाब"
+        ]
+      },
+      "answer": "बबूल",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "नीम",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "sort_groups",
+      "instruction": "Sort them.",
+      "payload": {
+        "items": [
+          "नीम का पत्ता",
+          "नीम का फल",
+          "सूरज",
+          "नीम की छाल"
+        ],
+        "bins": [
+          "जीवित",
+          "अजीवित"
+        ]
+      },
+      "answer": {
+        "नीम का पत्ता": "जीवित",
+        "नीम का फल": "जीवित",
+        "सूरज": "अजीवित",
+        "नीम की छाल": "अजीवित"
+      },
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "नीम",
+      "band": 1,
+      "voice": "Sort them.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "instruction": "Fill in the blank.",
+      "payload": {
+        "sentence": "नीम का ___ दवा के लिए उपयोग होता है।",
+        "bank": [
+          "पत्ता",
+          "फूल",
+          "गुलाब"
+        ]
+      },
+      "answer": "पत्ता",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "नीम",
+      "band": 1,
+      "voice": "Fill in the blank.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "नीम का पेड़ हमेशा हरा होता है।",
+      "payload": {
+        "statement": "नीम का पेड़ हमेशा हरा होता है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "नीम",
+      "band": 2,
+      "voice": "नीम का पेड़ हमेशा हरा होता है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "match_following",
+      "instruction": "Match the following parts of Neem.",
+      "payload": {
+        "pairs": [
+          [
+            "नीम का फूल",
+            "खुशबूदार"
+          ],
+          [
+            "नीम का फल",
+            "कड़वा"
+          ],
+          [
+            "नीम की छाल",
+            "औषधीय"
+          ]
+        ]
+      },
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "नीम",
+      "band": 1,
+      "voice": "Match the following parts of Neem.",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "odd_one_out",
+      "instruction": "Which does not belong?",
+      "payload": {
+        "options": [
+          "नीम",
+          "अदरक",
+          "तुलसी",
+          "धनिया"
+        ]
+      },
+      "answer": "अदरक",
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "नीम",
+      "band": 1,
+      "voice": "Which does not belong?",
+      "explain": "Well done!",
+      "difficulty": 0.0,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "instruction": "नीम का पेड़ बहुत बड़ा होता है।",
+      "payload": {
+        "statement": "नीम का पेड़ बहुत बड़ा होता है।"
+      },
+      "answer": true,
+      "subject": "hindi",
+      "class": 4,
+      "chapter": "नीम",
+      "band": 2,
+      "voice": "नीम का पेड़ बहुत बड़ा होता है।",
+      "explain": "Well done!",
+      "difficulty": 0.3,
+      "radicals": {
+        "representation": "abstract",
+        "dok": 1
+      },
+      "hints": [
+        {
+          "level": "strategy",
+          "text": "Read it slowly and think about what it's really asking."
+        }
+      ]
+    }
+  ]
+}

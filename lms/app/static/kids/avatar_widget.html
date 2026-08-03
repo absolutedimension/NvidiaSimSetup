@@ -1,0 +1,87 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:"Baloo 2",system-ui,sans-serif;-webkit-user-select:none;user-select:none}
+  #c{width:100vw;height:100vh;display:block}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+</head><body>
+<canvas id="c"></canvas>
+<script type="module">
+/* ================================================================
+   Acharya Kids AVATAR — corner buddy for the "alive worksheet".
+   Implements the KIDS_ALIVE_CONTRACT postMessage seam:
+     page → iframe : {type:'kidsAvatar:speak', id, text, mood} | {type:'kidsAvatar:mood', mood}
+     iframe → page : {type:'kidsAvatar:ready'} (once) | {type:'kidsAvatar:done', id}
+   Voice = /kids/tts (dynamic text). Mouth: drives 'mouthOpen' morph IF the model has one
+   (auto-enables real lip-sync for a mouth-rigged .glb); kid.glb (soccer, no mouth) → talking-bounce.
+   ================================================================ */
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const canvas=document.getElementById('c');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(innerWidth,innerHeight);
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+const scene=new THREE.Scene();
+const cam=new THREE.PerspectiveCamera(30,innerWidth/innerHeight,0.1,100);
+cam.position.set(0,0,6.2); cam.lookAt(0,0,0);
+scene.add(new THREE.HemisphereLight(0xffffff,0x9fc0e0,2.6));
+const key=new THREE.DirectionalLight(0xffffff,2.2); key.position.set(1.5,3,2.5); scene.add(key);
+const fill=new THREE.DirectionalLight(0xfff2e0,0.9); fill.position.set(-2,1.5,1.5); scene.add(fill);
+
+const rig=new THREE.Group(); scene.add(rig);
+let ready=false, morphMeshes=[];
+new GLTFLoader().load('./kid.glb',(g)=>{
+  const m=g.scene;
+  m.updateWorldMatrix(true,true);
+  let box=new THREE.Box3().setFromObject(m), size=new THREE.Vector3(); box.getSize(size);
+  const s=3.0/Math.max(size.x,size.y,size.z); m.scale.setScalar(s);
+  m.updateWorldMatrix(true,true);
+  box.setFromObject(m); const c=new THREE.Vector3(); box.getCenter(c);
+  m.position.sub(c);
+  m.traverse(o=>{ if(o.isMesh){o.frustumCulled=false; if(o.morphTargetDictionary)morphMeshes.push(o);} });
+  rig.add(m); ready=true;
+  post({type:'kidsAvatar:ready'});           // tell the page the avatar owns audio now
+},undefined,()=>{ post({type:'kidsAvatar:ready'}); });   // still claim the seam even if model fails
+
+function setMorph(name,val){morphMeshes.forEach(m=>{const i=m.morphTargetDictionary?.[name]; if(i!==undefined)m.morphTargetInfluences[i]=val;});}
+function post(msg){ try{ parent.postMessage(msg,'*'); }catch(e){} }
+
+/* ---- speaking ---- */
+let audio=null, talking=false, mood='idle', celebrateUntil=0, clock=0;
+function stopAudio(){ try{ if(audio){audio.pause(); audio.src='';} }catch(e){} audio=null; }
+function speak(text, m, id){
+  stopAudio(); mood=m||'talk';
+  if(!text){ post({type:'kidsAvatar:done', id}); return; }
+  const url='/kids/tts?text='+encodeURIComponent(String(text).slice(0,560))+'&voice=en-US-AnaNeural';
+  audio=new Audio(url);
+  const finish=()=>{ talking=false; if(mood!=='celebrate')mood='idle'; post({type:'kidsAvatar:done', id}); };
+  audio.onended=finish; audio.onerror=finish;
+  audio.play().then(()=>{ talking=true; }).catch(()=>{ finish(); });
+}
+addEventListener('message',(e)=>{
+  const d=e.data||{};
+  if(d.type==='kidsAvatar:speak') speak(d.text, d.mood, d.id);
+  else if(d.type==='kidsAvatar:mood'){ mood=d.mood||'idle'; if(mood==='celebrate')celebrateUntil=clock+0.9; }
+});
+
+/* ---- render loop: idle bob + talking bounce + mood ---- */
+function loop(){
+  clock+=0.016; const t=clock;
+  if(ready){
+    let y=Math.sin(t*1.6)*0.05, rotZ=Math.sin(t*0.5)*0.05, extra=1;
+    if(mood==='think'){ y=Math.sin(t*1.0)*0.03; rotZ=0.12; }              // lean, calm
+    if(mood==='encourage') extra=1.4;
+    if(talking){
+      const flap=Math.abs(Math.sin(t*15));
+      setMorph('mouthOpen',(0.15+0.55*flap));                            // real lip-sync if morph exists
+      y += Math.abs(Math.sin(t*11))*0.07*extra;                         // talking bounce (kid.glb cue)
+    } else setMorph('mouthOpen',0);
+    if(t<celebrateUntil){ y += Math.abs(Math.sin((celebrateUntil-t)*10))*0.28; rotZ=Math.sin(t*20)*0.10; } // jump for joy
+    rig.position.y=y; rig.rotation.z=rotZ;
+  }
+  renderer.render(scene,cam); requestAnimationFrame(loop);
+}
+loop();
+addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+</script></body></html>

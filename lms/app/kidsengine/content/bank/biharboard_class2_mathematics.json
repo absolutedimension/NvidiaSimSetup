@@ -1,0 +1,206 @@
+{
+  "board": "Bihar Board",
+  "class": 2,
+  "subject": "Mathematics",
+  "count": 12,
+  "items": [
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part I — Numbers up to 100",
+      "band": "1-2",
+      "instruction": "What comes just after 60?",
+      "voice": "What is just after 60?",
+      "payload": {
+        "mode": "after",
+        "n": 60,
+        "display": "▢ , 60"
+      },
+      "answer": 61,
+      "explain": "Just after 60 is 61."
+    },
+    {
+      "type": "fill_sequence",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part II — Addition (2-digit)",
+      "band": "1-2",
+      "instruction": "Fill in the missing number! 🚂",
+      "voice": "Skip count by 1.",
+      "payload": {
+        "seq": [
+          1,
+          null,
+          3,
+          4
+        ],
+        "step": 1
+      },
+      "answer": [
+        2
+      ],
+      "explain": "Counting by 1s → 2."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part III — Subtraction (2-digit)",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 75 and 8.",
+      "payload": {
+        "a": 75,
+        "b": 8
+      },
+      "answer": ">",
+      "explain": "75 is greater than 8."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part IV — Skip Counting / Grouping",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 5 and 12.",
+      "payload": {
+        "a": 5,
+        "b": 12
+      },
+      "answer": "<",
+      "explain": "5 is less than 12."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part V — Measurement (Length)",
+      "band": "1-2",
+      "instruction": "Add it!  36 + 14 = ?",
+      "voice": "What is 36 plus 14?",
+      "payload": {
+        "op": "+",
+        "a": 36,
+        "b": 14
+      },
+      "answer": 50,
+      "explain": "36 plus 14 makes 50."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part VI — Shapes",
+      "band": "1-2",
+      "instruction": "Add it!  15 + 45 = ?",
+      "voice": "What is 15 plus 45?",
+      "payload": {
+        "op": "+",
+        "a": 15,
+        "b": 45
+      },
+      "answer": 60,
+      "explain": "15 plus 45 makes 60."
+    },
+    {
+      "type": "compare_symbol",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part VII — Time",
+      "band": "1-2",
+      "instruction": "Put the right sign! 🐊",
+      "voice": "Compare 8 and 73.",
+      "payload": {
+        "a": 8,
+        "b": 73
+      },
+      "answer": "<",
+      "explain": "8 is less than 73."
+    },
+    {
+      "type": "count_money",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part VIII — Money",
+      "band": "1-2",
+      "instruction": "How much money? 🪙",
+      "voice": "Add the coins.",
+      "payload": {
+        "coins": [
+          10,
+          5,
+          2
+        ],
+        "display": "₹10 + ₹5 + ₹2"
+      },
+      "answer": 17,
+      "explain": "The coins make ₹17."
+    },
+    {
+      "type": "count_write",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part I — Numbers up to 100",
+      "band": "1-2",
+      "instruction": "Count the cookies and write how many!",
+      "voice": "Count the cookies.",
+      "payload": {
+        "asset": "cookie",
+        "emoji": "🍪",
+        "n": 19
+      },
+      "answer": 19,
+      "explain": "There are 19 cookies!"
+    },
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part II — Addition (2-digit)",
+      "band": "1-2",
+      "instruction": "What comes just after 38?",
+      "voice": "What is just after 38?",
+      "payload": {
+        "mode": "after",
+        "n": 38,
+        "display": "▢ , 38"
+      },
+      "answer": 39,
+      "explain": "Just after 38 is 39."
+    },
+    {
+      "type": "arith",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part III — Subtraction (2-digit)",
+      "band": "1-2",
+      "instruction": "Subtract!  45 − 9 = ?",
+      "voice": "What is 45 minus 9?",
+      "payload": {
+        "op": "-",
+        "a": 45,
+        "b": 9
+      },
+      "answer": 36,
+      "explain": "45 minus 9 leaves 36."
+    },
+    {
+      "type": "neighbour_number",
+      "subject": "mathematics",
+      "class": 2,
+      "chapter": "Part IV — Skip Counting / Grouping",
+      "band": "1-2",
+      "instruction": "What comes just before 28?",
+      "voice": "What is just before 28?",
+      "payload": {
+        "mode": "before",
+        "n": 28,
+        "display": "28 , ▢"
+      },
+      "answer": 27,
+      "explain": "Just before 28 is 27."
+    }
+  ]
+}

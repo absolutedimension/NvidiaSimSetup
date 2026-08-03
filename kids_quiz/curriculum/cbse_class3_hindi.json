@@ -1,0 +1,64 @@
+{
+  "board": "CBSE",
+  "class": 3,
+  "subject": "Hindi",
+  "source": {
+    "name": "NCERT Veena — Hindi Class 3 (Contents)",
+    "url": "https://ncert.nic.in/textbook/pdf/chve1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Current NCF-SE book 'Veena'. 18 पाठ across 5 इकाई, verbatim from official PDF (chve1).",
+  "chapters": [
+    {
+      "id": "",
+      "name": "इकाई एक: हमारा पर्यावरण",
+      "subtopics": [
+        "सीखो",
+        "चींटी",
+        "कितने पैर?",
+        "बया हमारी चिड़िया रानी!",
+        "आम का पेड़"
+      ]
+    },
+    {
+      "id": "",
+      "name": "इकाई दो: हमारे मित्र",
+      "subtopics": [
+        "बीरबल की खिचड़ी",
+        "मित्र को पत्र",
+        "चतुर गीदड़",
+        "प्रकृति पर्व — फूलदेई"
+      ]
+    },
+    {
+      "id": "",
+      "name": "इकाई तीन: आओ खेलें",
+      "subtopics": [
+        "रस्साकशी",
+        "एक जादुई पिटारा"
+      ]
+    },
+    {
+      "id": "",
+      "name": "इकाई चार: अपना-अपना काम",
+      "subtopics": [
+        "अपना-अपना काम",
+        "पेड़ों की अम्मा 'तिम्मक्का'",
+        "किसान की होशियारी"
+      ]
+    },
+    {
+      "id": "",
+      "name": "इकाई पाँच: हमारा देश",
+      "subtopics": [
+        "भारत",
+        "चंद्रयान (संवाद)",
+        "बोलने वाली माँद",
+        "हम अनेक किंतु एक"
+      ]
+    }
+  ]
+}

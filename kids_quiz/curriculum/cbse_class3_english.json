@@ -1,0 +1,52 @@
+{
+  "board": "CBSE",
+  "class": 3,
+  "subject": "English",
+  "source": {
+    "name": "NCERT Santoor — Textbook of English for Grade 3 (Contents)",
+    "url": "https://ncert.nic.in/textbook/pdf/cesa1ps.pdf",
+    "verified_on": "2026-08-02"
+  },
+  "confidence": "high",
+  "verified": true,
+  "status": "complete",
+  "notes": "Current NCF-SE book 'Santoor' (2024). Verbatim from official ncert.nic.in PDF (cesa1). 4 units, 12 lessons.",
+  "chapters": [
+    {
+      "id": "unit_1_fun_with_friends",
+      "name": "Unit 1: Fun with Friends",
+      "subtopics": [
+        "Colours",
+        "Badal and Moti",
+        "Best Friends"
+      ]
+    },
+    {
+      "id": "unit_2_toys_and_games",
+      "name": "Unit 2: Toys and Games",
+      "subtopics": [
+        "Out in the Garden",
+        "Talking Toys",
+        "Paper Boats"
+      ]
+    },
+    {
+      "id": "unit_3_good_food",
+      "name": "Unit 3: Good Food",
+      "subtopics": [
+        "The Big Laddoo",
+        "Thank God",
+        "Madhu's Wish"
+      ]
+    },
+    {
+      "id": "unit_4_the_sky",
+      "name": "Unit 4: The Sky",
+      "subtopics": [
+        "Night",
+        "Chanda Mama Counts the Stars",
+        "Chandrayaan"
+      ]
+    }
+  ]
+}
