@@ -8,7 +8,7 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from urllib.parse import quote
 
-from fastapi import Depends, FastAPI, Form, HTTPException, Request
+from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse, PlainTextResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -23,7 +23,7 @@ from .config import settings
 from .db import get_db
 from .emailer import send_magic_link
 from .models import (
-    AssessmentItem, Assignment, ClassSitting, ClassTest, CompSession, ConceptStat, CourseRequest, GenJob, LearnerFact, Lesson, LessonProgress, LearningEvent, MockPaper, Module, PaperAttempt, SeenQuestion, Student, StudentTopic, TaskCompletion, TeacherInvite, TopicAttempt, WorkbookTask, now,
+    AssessmentItem, Assignment, AssignmentCompletion, ClassSitting, ClassTest, CompSession, ConceptStat, CourseRequest, GenJob, LearnerFact, Lesson, LessonProgress, LearningEvent, MockPaper, Module, PaperAttempt, SeenQuestion, Student, StudentTopic, TaskCompletion, TeacherInvite, TopicAttempt, WorkbookTask, now,
 )
 from .security import consume_magic_token, get_or_create_student, issue_magic_token
 
@@ -90,13 +90,17 @@ EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
 # Kids product picker (kids-education.trigunai.com). Grade-3 Maths is LIVE; the rest show the
 # roadmap as "coming soon" so parents see what's next.
 KIDS_EXAMS = [
-    {"id": "class3",     "title": "Grade 3 · Maths",   "tag": "ICSE / CBSE",      "emoji": "🔢", "available": True},
-    {"id": "class3-evs", "title": "Grade 3 · EVS",     "tag": "Science & World",  "emoji": "🔬", "available": False},
-    {"id": "class3-eng", "title": "Grade 3 · English", "tag": "Grammar & Reading","emoji": "📖", "available": False},
-    {"id": "class3-gk",  "title": "Grade 3 · GK",      "tag": "General Knowledge","emoji": "🧠", "available": False},
-    {"id": "class4",     "title": "Grade 4",           "tag": "Coming soon",      "emoji": "🎈", "available": False},
-    {"id": "class5",     "title": "Grade 5",           "tag": "Coming soon",      "emoji": "🚀", "available": False},
+    {"id": "class3",       "title": "Grade 3 · Maths",   "tag": "ICSE / CBSE",       "emoji": "🔢", "available": True},
+    {"id": "class3-evs",   "title": "Grade 3 · EVS",     "tag": "Science & World",   "emoji": "🌍", "available": True},
+    {"id": "class3-eng",   "title": "Grade 3 · English", "tag": "Grammar & Reading", "emoji": "📖", "available": True},
+    {"id": "class3-gk",    "title": "Grade 3 · GK",      "tag": "General Knowledge", "emoji": "🧠", "available": True},
+    {"id": "class3-hindi", "title": "Grade 3 · Hindi",   "tag": "पढ़ना-लिखना",         "emoji": "🇮🇳", "available": True},
+    {"id": "class4",       "title": "Grade 4",           "tag": "Coming soon",       "emoji": "🎈", "available": False},
+    {"id": "class5",       "title": "Grade 5",           "tag": "Coming soon",       "emoji": "🚀", "available": False},
 ]
+# kids exam id → the worksheet subject it launches (curriculum names the engine understands)
+KIDS_EXAM_SUBJECT = {"class3": "Mathematics", "class3-evs": "EVS", "class3-eng": "English",
+                     "class3-gk": "GK", "class3-hindi": "Hindi"}
 
 # The student-landing exam picker. JEE + NEET are LIVE (real RAG banks behind them); the rest are
 # shown as "coming soon" so students see the roadmap but can only START what actually works today.
@@ -134,12 +138,17 @@ templates.env.globals["course_title"] = lambda cid: COURSE_TITLES.get(cid, cid)
 # Pricing + contact handles exposed to every template (see PRICING_MODEL.md). Billing may be inert;
 # these drive the DISPLAYED offer so it's testable on a real buyer, with a WhatsApp/email close.
 templates.env.globals["PRICING"] = {
-    "student_pass": settings.ASSESS_PASS_PRICE_INR,   # ₹1,299 "till your exam" — the lead
-    "student_monthly": settings.ASSESS_PRICE_INR,     # ₹249/mo — flexibility
+    # UNIFIED FLAT PRICING (2026-08-03) — one price everywhere, by exam level.
+    "foundation": settings.PRICE_FOUNDATION_INR,      # ₹120/mo — Foundation / Board
+    "senior": settings.PRICE_SENIOR_INR,              # ₹250/mo — JEE / NEET / Senior
+    "custom_setup": settings.INSTITUTE_CUSTOM_INR,    # ₹55,000 one-time — institute custom white-label app
     "trial_days": settings.ASSESS_TRIAL_DAYS,
-    "teacher_solo": settings.TEACHER_SOLO_INR,        # ₹999
-    "teacher_coaching": settings.TEACHER_COACHING_INR,  # ₹2,999
-    "teacher_institute": settings.TEACHER_INSTITUTE_INR,  # ₹7,999+
+    # legacy keys kept so any un-migrated template reference still resolves (do not surface these)
+    "student_pass": settings.ASSESS_PASS_PRICE_INR,
+    "student_monthly": settings.ASSESS_PRICE_INR,
+    "teacher_solo": settings.TEACHER_SOLO_INR,
+    "teacher_coaching": settings.TEACHER_COACHING_INR,
+    "teacher_institute": settings.TEACHER_INSTITUTE_INR,
 }
 templates.env.globals["CONTACT_WA"] = settings.CONTACT_WA
 templates.env.globals["CONTACT_EMAIL"] = settings.CONTACT_EMAIL
@@ -314,7 +323,8 @@ def root(request: Request, db: Session = Depends(get_db)):
     if host in KIDS_HOSTS:
         if current_student(request, db):
             return RedirectResponse("/exam-prep/dashboard")
-        return HTMLResponse((BASE / "static" / "kids" / "index.html").read_text(encoding="utf-8"))
+        return HTMLResponse((BASE / "static" / "kids" / "index.html").read_text(encoding="utf-8"),
+                            headers={"Cache-Control": "no-cache, must-revalidate"})
     # Logged-in students always go to their dashboard; visitors get the gold Acharya landing.
     if current_student(request, db):
         return RedirectResponse("/dashboard")
@@ -560,10 +570,12 @@ def _days_left(student) -> int:
 
 
 @app.get("/exam-prep", response_class=HTMLResponse)
-def exam_prep(request: Request, exam: str = "", db: Session = Depends(get_db)):
+def exam_prep(request: Request, exam: str = "", g: int = 0, db: Session = Depends(get_db)):
     student = current_student(request, db)
     host = (request.headers.get("host") or "").split(":")[0].lower()
     kids = host in KIDS_HOSTS
+    if kids and g in (1, 2, 3, 4, 5):        # class picked on the landing → carried into signup
+        request.session["kid_grade"] = g
     # kids site = ONLY the kids exams; acharya = the professional exams. (Separate audiences.)
     exam_list = KIDS_EXAMS if kids else STUDENT_EXAMS
     resume_exam = ("class3" if kids else EXAMS[0]["id"])
@@ -610,7 +622,12 @@ def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form("
     if _looks_like_bot(email, website):          # honeypot filled or throwaway domain → no account, no session
         return RedirectResponse("/exam-prep", status_code=302)
     qtext = (q or "").strip()[:80]
-    ex = exam.strip() if exam.strip() in EXAM_SUBJECT else EXAMS[0]["id"]
+    host = (request.headers.get("host") or "").split(":")[0].lower()
+    kids = host in KIDS_HOSTS
+    # kids: any Grade-3 subject tile → seed Maths (the one examgen kids entry) but remember the picked
+    # subject so we can drop the child straight into ITS adaptive worksheet after signup.
+    kids_subject = KIDS_EXAM_SUBJECT.get(exam.strip(), "Mathematics") if kids else None
+    ex = "class3" if kids else (exam.strip() if exam.strip() in EXAM_SUBJECT else EXAMS[0]["id"])
     if "@" not in email or "." not in email.split("@")[-1]:
         return templates.TemplateResponse(request, "exam_prep.html",
                                           {"exams": EXAMS, "student": None, "resume_exam": ex,
@@ -630,6 +647,15 @@ def exam_prep_start(request: Request, email: str = Form(...), exam: str = Form("
         total = db.query(Student).count()
         notify.notify_admin(f"🎯 New student (exam-prep) — {student.email} · {label} · {total} learners total")
     request.session["sid"] = student.id
+    # Kids: straight into the chosen subject's adaptive worksheet (all subjects live). If they picked a
+    # CLASS on the landing, remember it so their worksheets serve that grade (and hide the grade picker).
+    if kids:
+        kg = request.session.pop("kid_grade", None)
+        if kg in (1, 2, 3, 4, 5):
+            student.grade = kg
+            student.board = student.board or "CBSE"
+            db.commit()
+        return RedirectResponse(f"/exam-prep/worksheet?subject={quote(kids_subject)}", status_code=302)
     # A brand-new student picks their goal first; returning students go straight home.
     # new=1 rides through onboarding so the Ads signup conversion still fires on the dashboard.
     if not existed:
@@ -788,17 +814,38 @@ def kids_quiz(request: Request, chapter: str = "", n: int = 5, diff: str = "1-2"
 # ================= KIDS WORKSHEET + ADAPTIVE ASSESSMENT (2026-08-02) =================
 @app.get("/exam-prep/worksheet", response_class=HTMLResponse)
 def kids_worksheet_page(request: Request, board: str = "CBSE", cls: int = 3, subject: str = "Mathematics",
-                        chapter: str = "", n: int = 8, db: Session = Depends(get_db)):
-    """The production worksheet experience (kids UI, asset-decorated, adaptive). Kids host only."""
+                        chapter: str = "", n: int = 8, assign: int = 0, print: int = 0, preview: int = 0,
+                        db: Session = Depends(get_db)):
+    """The production worksheet experience (kids UI, asset-decorated, adaptive). Kids host only.
+    A batch student is LOCKED to their grade/board. `assign` opens a teacher assignment (a fixed test
+    loads its frozen pack); `print=1` jumps straight to the printable sheet."""
     student = current_student(request, db)
     if not student:
         return RedirectResponse("/exam-prep", status_code=302)
     host = (request.headers.get("host") or "").split(":")[0].lower()
     if host not in KIDS_HOSTS:
         return RedirectResponse("/exam-prep", status_code=302)
+    # a batch student's grade + board are fixed (they can practise any subject, but only at their class)
+    locked = bool(getattr(student, "grade", None))
+    if locked:
+        board, cls = (student.board or "CBSE"), student.grade
+    assign_id, assign_pack = 0, None
+    if assign:
+        a = db.query(Assignment).filter_by(id=int(assign), active=True).first()
+        # a student sees their teacher's assignment; a TEACHER can PREVIEW their own (owner) assignment.
+        if a and (a.teacher_id == getattr(student, "teacher_id", None) or a.teacher_id == student.id):
+            assign_id = a.id
+            if a.kind == "kidstest" and isinstance(a.pack, dict):   # fixed test → the frozen sheet
+                assign_pack = a.pack.get("items") or None
+                subject = a.pack.get("subject") or subject
+                board = a.pack.get("board") or board
+                cls = a.pack.get("cls") or cls
+                chapter = a.pack.get("chapter") or chapter
     return templates.TemplateResponse(request, "kids_worksheet.html", {
         "student": student, "board": board, "cls": cls, "subject": subject, "chapter": chapter,
-        "n": max(3, min(int(n), 15))})
+        "n": max(3, min(int(n), 15)), "locked": locked,
+        "assign_id": assign_id, "assign_pack": assign_pack, "auto_print": bool(print),
+        "preview": bool(preview)})
 
 
 @app.get("/api/kids/curriculum")
@@ -834,12 +881,30 @@ async def kids_worksheet_complete(request: Request, db: Session = Depends(get_db
         body = await request.json()
     except Exception:
         body = {}
-    skill = str(body.get("skill", ""))[:160]
     results = body.get("results", []) or []
     subject = str(body.get("subject", ""))[:40]
-    if not skill:
-        return JSONResponse({"ok": False, "error": "skill"}, status_code=400)
-    return JSONResponse(kidsws.complete(db, student, skill, results, subject=subject))
+    # a fixed-test (injected pack) has no engine skill string — synthesise one so mastery still records.
+    skill = str(body.get("skill", ""))[:160] or f"{student.board or 'CBSE'}/{student.grade or 3}/{subject or 'Worksheet'}/all"
+    res = kidsws.complete(db, student, skill, results, subject=subject)
+    # record the teacher assignment completion (who did it + score + weak topics)
+    aid = body.get("assignment_id")
+    if aid and getattr(student, "teacher_id", None):
+        try:
+            a = db.query(Assignment).filter_by(id=int(aid), teacher_id=student.teacher_id).first()
+        except (TypeError, ValueError):
+            a = None
+        if a:
+            score = sum(1 for r in results if r.get("correct"))
+            weak = sorted({str(r.get("concept")) for r in results
+                           if not r.get("correct") and r.get("concept")})[:8]
+            row = (db.query(AssignmentCompletion)
+                   .filter_by(assignment_id=a.id, student_id=student.id).first())
+            if not row:
+                row = AssignmentCompletion(assignment_id=a.id, student_id=student.id)
+                db.add(row)
+            row.score, row.total, row.weak_topics = score, len(results), weak
+            db.commit()
+    return JSONResponse(res)
 
 
 @app.post("/api/assess/complete")
@@ -896,7 +961,10 @@ async def assess_complete(request: Request, db: Session = Depends(get_db)):
         # keep the full paper so the student can reopen this test later (cap the size)
         detail = body.get("detail") or []
         if isinstance(detail, list):
+            # keep `conf` (sure|think|guess) + `chosen` so the report can build the RED BOX
+            # (confidently-wrong) + calibration + misconception views. Both are small tokens.
             detail = [{"q": str(d.get("q", ""))[:4000], "a": str(d.get("a", ""))[:800],
+                       "chosen": str(d.get("chosen", ""))[:800], "conf": str(d.get("conf", ""))[:8],
                        "explain": str(d.get("explain", ""))[:6000], "ok": d.get("ok"),
                        "type": str(d.get("type", ""))[:20]}
                       for d in detail[:20] if isinstance(d, dict)]
@@ -1430,6 +1498,36 @@ def exam_prep_report(request: Request, db: Session = Depends(get_db)):
                             "seen": s.seen, "href": href, "tutor_href": tutor_href,
                             "prac_label": ("📝 Practice worksheet" if kids else "Practise →")})
     trend = [round(100 * a.score / a.total) for a in reversed(graded[:6]) if a.total]
+    # ---- RED BOX + calibration: the "SELF" confidence signals from each attempt's detail ----
+    # RED BOX = questions the student was SURE about and got WRONG (a confident misconception hides
+    # until it's tested → the highest-value thing to fix). Calibration = how often "Sure" was right.
+    redbox, sure_n, sure_ok, guess_n, guess_ok = [], 0, 0, 0, 0
+    for a in attempts:
+        for d in (a.detail or []):
+            if not isinstance(d, dict):
+                continue
+            conf, ok = (d.get("conf") or ""), d.get("ok")
+            if ok is None:
+                continue
+            if conf == "sure":
+                sure_n += 1; sure_ok += 1 if ok else 0
+                if ok is False and len(redbox) < 8:
+                    redbox.append({"q": str(d.get("q", ""))[:180],
+                                   "title": a.title or a.subject, "href": f"/exam-prep/attempt/{a.id}"})
+            elif conf == "guess":
+                guess_n += 1; guess_ok += 1 if ok else 0
+    calib = None
+    if sure_n >= 3:
+        acc = round(100 * sure_ok / sure_n)
+        if acc >= 85:
+            calib = {"tone": "good", "text": f"Well-calibrated — when you said “Sure”, you were right {acc}% of the time."}
+        elif acc >= 60:
+            calib = {"tone": "warn", "text": f"Slightly overconfident — you were “Sure” on {sure_n} answers but right only {acc}% of the time."}
+        else:
+            calib = {"tone": "bad", "text": f"Overconfident — being “Sure” meant right just {acc}% of the time. Start with the red box below."}
+    calib_note = None
+    if guess_n >= 3 and (guess_ok / guess_n) >= 0.6:
+        calib_note = f"You underrate yourself — {round(100 * guess_ok / guess_n)}% of your “Guessing” answers were actually right."
     return templates.TemplateResponse(request, "exam_prep_report.html", {
         "student": student, "attempts": attempts, "tests": len(attempts), "avg": avg,
         "strong": [{"c": s.concept, "p": round(100 * mastery(s))} for s in strong[:8]],
@@ -1437,6 +1535,7 @@ def exam_prep_report(request: Request, db: Session = Depends(get_db)):
         "weak": [{"c": s.concept, "p": round(100 * mastery(s))} for s in weak[:8]],
         "suggestions": suggestions, "level": level, "level_label": level_label, "level_why": level_why,
         "trend": trend, "overall": round(100 * overall),
+        "redbox": redbox, "calib": calib, "calib_note": calib_note,
     })
 
 
@@ -1758,12 +1857,17 @@ def _weak_from_concepts(concepts) -> list:
 
 @app.get("/teacher", response_class=HTMLResponse)
 def teacher_home(request: Request, new: str = "", db: Session = Depends(get_db)):
-    """The teacher console. Not a teacher yet → the signup/promote screen; else their class tests."""
+    """The teacher console. Not a teacher yet → the signup/promote screen; else their class tests.
+    On the KIDS host, a fully kids-themed signup + all-in-one home (batches + assign + roster)."""
     student = current_student(request, db)
+    kids = _is_kids(request)
     if not student or not student.is_teacher:
-        return templates.TemplateResponse(request, "teacher_signup.html", {
+        tmpl = "kids_teacher_signup.html" if kids else "teacher_signup.html"
+        return templates.TemplateResponse(request, tmpl, {
             "student": student, "google_client_id": settings.GOOGLE_CLIENT_ID,
             "jsonld": seo.teacher_jsonld()})
+    if kids:
+        return templates.TemplateResponse(request, "kids_teacher_home.html", _kids_teacher_ctx(request, db, student))
     tests = (db.query(ClassTest).filter_by(teacher_id=student.id)
              .order_by(ClassTest.created_at.desc()).all())
     rows = []
@@ -1773,6 +1877,65 @@ def teacher_home(request: Request, new: str = "", db: Session = Depends(get_db))
     ads_id = settings.ADS_CONVERSION_ID if (new == "1" and settings.TEACHER_SIGNUP_CONV_LABEL and settings.ADS_CONVERSION_ID) else ""
     return templates.TemplateResponse(request, "teacher_home.html", {
         "student": student, "tests": rows, "ads_id": ads_id, "ads_label": settings.TEACHER_SIGNUP_CONV_LABEL})
+
+
+DEFAULT_BRAND_COLOR = "#C2591F"   # Acharya saffron — the fallback when an institute hasn't set one
+
+def _teacher_brand(teacher) -> dict:
+    """The white-label brand kit for a teacher/institute. Falls back to Acharya defaults.
+    Used to theme the printed paper + the linked-student take page. 'Powered by Acharya' always stays."""
+    if not teacher:
+        return {"color": DEFAULT_BRAND_COLOR, "logo": "", "name": "Acharya", "watermark": False, "custom": False}
+    return {
+        "color": (getattr(teacher, "brand_color", "") or DEFAULT_BRAND_COLOR),
+        "logo": getattr(teacher, "brand_logo", "") or "",
+        "name": (getattr(teacher, "institute", "") or "Acharya"),
+        "watermark": bool(getattr(teacher, "brand_watermark", False)),
+        "custom": bool(getattr(teacher, "brand_color", "") or getattr(teacher, "brand_logo", "")),
+    }
+
+
+@app.get("/teacher/branding", response_class=HTMLResponse)
+def teacher_branding(request: Request, saved: str = "", db: Session = Depends(get_db)):
+    """Self-serve white-label: the teacher sets their logo, brand colour & paper watermark."""
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return RedirectResponse("/teacher", status_code=303)
+    return templates.TemplateResponse(request, "teacher_branding.html", {
+        "student": teacher, "brand": _teacher_brand(teacher),
+        "default_color": DEFAULT_BRAND_COLOR, "saved": saved == "1"})
+
+
+@app.post("/teacher/branding")
+async def teacher_branding_save(request: Request,
+                                brand_color: str = Form(""),
+                                institute: str = Form(""),
+                                watermark: str = Form(""),
+                                remove_logo: str = Form(""),
+                                logo: UploadFile | None = File(None),
+                                db: Session = Depends(get_db)):
+    teacher = current_teacher(request, db)
+    if not teacher:
+        return RedirectResponse("/teacher", status_code=303)
+    if institute.strip():
+        teacher.institute = institute.strip()[:120]
+    # colour — accept only a valid #RRGGBB (defend against junk); "" clears back to default
+    c = (brand_color or "").strip()
+    if c and re.fullmatch(r"#[0-9A-Fa-f]{6}", c):
+        teacher.brand_color = c.upper()
+    elif not c:
+        teacher.brand_color = ""
+    teacher.brand_watermark = (watermark in ("1", "on", "true", "yes"))
+    if remove_logo in ("1", "on", "true", "yes"):
+        teacher.brand_logo = ""
+    elif logo is not None and logo.filename:
+        raw = await logo.read()
+        if raw and len(raw) <= 500_000:   # ≤500 KB — keep the row small; institutes use a small mark
+            ct = (logo.content_type or "image/png")
+            if ct in ("image/png", "image/jpeg", "image/jpg", "image/webp", "image/svg+xml"):
+                teacher.brand_logo = f"data:{ct};base64,{base64.b64encode(raw).decode()}"
+    db.commit()
+    return RedirectResponse("/teacher/branding?saved=1", status_code=303)
 
 
 def _promote_teacher(db, student, name: str, institute: str):
@@ -1878,6 +2041,67 @@ def _teacher_subjects(kids: bool = False):
                 seen.add(sid)
                 out.append((sid, g))
     return out
+
+
+# ── KIDS teacher flow (batches by grade/board, worksheet assignments) ─────────────────
+KIDS_BOARDS = ["CBSE", "ICSE"]   # kids batches — Bihar knowledge banks for grades 1/2/4/5 not generated
+
+def _kids_grade_subjects(grade, board="CBSE") -> list:
+    """The kids subjects available at a grade+board (drives the assign picker). From the worksheet engine."""
+    try:
+        return list(kidsws.picker(board or "CBSE", int(grade or 3)).keys())
+    except Exception:
+        return ["Mathematics", "EVS", "English", "GK", "Hindi"]
+
+
+def _kids_teacher_ctx(request, db, teacher) -> dict:
+    """Everything the all-in-one kids teacher home needs: batches (+ join links + counts), worksheet
+    assignments (+ who completed + class weak topics), and the student roster."""
+    invites = (db.query(TeacherInvite).filter_by(teacher_id=teacher.id)
+               .order_by(TeacherInvite.created_at.desc()).all())
+    linked = db.query(Student).filter_by(teacher_id=teacher.id).all()
+    bmap = {i.id: i for i in invites}
+    by_batch = {}
+    for s in linked:
+        by_batch.setdefault(s.batch_id, []).append(s)
+    batches = [{"id": i.id, "code": i.code, "label": i.label, "grade": i.grade, "board": i.board,
+                "url": f"{settings.BASE_URL}/join/{i.code}", "count": len(by_batch.get(i.id, [])),
+                "subjects": _kids_grade_subjects(i.grade, i.board)} for i in invites]
+    assigns = (db.query(Assignment).filter_by(teacher_id=teacher.id, active=True)
+               .filter(Assignment.kind.in_(["kidsworksheet", "kidstest"]))
+               .order_by(Assignment.created_at.desc()).all())
+    cmap = {s.id: s for s in linked}
+    assign_rows = []
+    for a in assigns:
+        comps = db.query(AssignmentCompletion).filter_by(assignment_id=a.id).all()
+        done = [{"name": (cmap[c.student_id].name if c.student_id in cmap and cmap[c.student_id].name
+                          else (cmap[c.student_id].email.split("@")[0] if c.student_id in cmap else "Student")),
+                 "score": c.score, "total": c.total} for c in comps]
+        weak = {}
+        for c in comps:
+            for w in (c.weak_topics or []):
+                weak[w] = weak.get(w, 0) + 1
+        b = bmap.get(a.invite_id)
+        from urllib.parse import quote as _q
+        parts = (a.ref or "").split("|")
+        _subj = parts[0] if parts and parts[0] else (a.subject_label or "Mathematics")
+        _ch = parts[1] if len(parts) > 1 else ""
+        _n = parts[2] if len(parts) > 2 and parts[2].isdigit() else "8"
+        _bd = (b.board if b else "CBSE"); _cl = (b.grade if b else 3)
+        preview_url = (f"/exam-prep/worksheet?assign={a.id}&board={_q(_bd)}&cls={_cl}"
+                       f"&subject={_q(_subj)}&chapter={_q(_ch)}&n={_n}")
+        assign_rows.append({"id": a.id, "title": a.title, "kind": a.kind,
+                            "type_label": ("Fixed test — same for all" if a.kind == "kidstest" else "Practice — fresh each time"),
+                            "batch": (b.label if b else "All classes"), "preview_url": preview_url,
+                            "done": done, "done_n": len(done),
+                            "weak": sorted(weak, key=lambda k: -weak[k])[:6]})
+    roster = [{"id": s.id, "name": (s.name or s.email.split("@")[0]), "grade": s.grade, "board": s.board,
+               "batch": (bmap[s.batch_id].label if s.batch_id in bmap else "—")} for s in linked]
+    # subjects for each grade, so the assign form can populate without a round-trip
+    grade_subjects = {g: _kids_grade_subjects(g, "CBSE") for g in (1, 2, 3, 4, 5)}
+    return {"student": teacher, "google_client_id": settings.GOOGLE_CLIENT_ID,
+            "batches": batches, "assignments": assign_rows, "roster": roster,
+            "boards": KIDS_BOARDS, "grade_subjects": grade_subjects, "base_url": settings.BASE_URL}
 
 
 # ── B2B2C: teacher-linked students (institute classroom) ─────────────────────────────
@@ -1989,11 +2213,29 @@ async def teacher_invite_create(request: Request, db: Session = Depends(get_db))
     if not teacher:
         return JSONResponse({"error": "login"}, status_code=401)
     body = await request.json()
-    label = (body.get("label") or "").strip()[:80] or "My batch"
+    label = (body.get("label") or "").strip()[:80] or "My class"
+    code = _new_invite_code(db)
+    if _is_kids(request):
+        # a kids batch scopes by GRADE + BOARD (students can practise any subject at that grade).
+        try:
+            grade = int(body.get("grade") or 0)
+        except (TypeError, ValueError):
+            grade = 0
+        if grade not in (1, 2, 3, 4, 5):
+            return JSONResponse({"error": "Pick a class (1–5) for this batch."}, status_code=400)
+        board = (body.get("board") or "CBSE").strip()
+        if board not in KIDS_BOARDS:
+            board = "CBSE"
+        subjects = _kids_grade_subjects(grade, board)   # for display; students aren't subject-restricted
+        if not (label and label != "My class"):
+            label = f"Class {grade} · {board}"
+        db.add(TeacherInvite(code=code, teacher_id=teacher.id, label=label, subjects=subjects,
+                             grade=grade, board=board))
+        db.commit()
+        return JSONResponse({"ok": True, "code": code, "url": f"{settings.BASE_URL}/join/{code}"})
     subjects = [s for s in (body.get("subjects") or []) if s in examgen.RAG_SUBJECTS][:8]
     if not subjects:
         return JSONResponse({"error": "Pick at least one subject for this batch."}, status_code=400)
-    code = _new_invite_code(db)
     db.add(TeacherInvite(code=code, teacher_id=teacher.id, label=label, subjects=subjects))
     db.commit()
     return JSONResponse({"ok": True, "code": code, "url": f"{settings.BASE_URL}/join/{code}"})
@@ -2016,7 +2258,8 @@ def join_landing(request: Request, code: str, db: Session = Depends(get_db)):
     teacher_warning = bool(me and me.is_teacher)
     return templates.TemplateResponse(request, "join.html", {
         "code": code, "institute": institute, "label": inv.label, "sublabels": sublabels,
-        "teacher_warning": teacher_warning,
+        "teacher_warning": teacher_warning, "kids": _is_kids(request),
+        "grade": getattr(inv, "grade", None), "board": getattr(inv, "board", "") or "",
         "err": request.query_params.get("err", ""),
         "google_client_id": settings.GOOGLE_CLIENT_ID})
 
@@ -2040,7 +2283,10 @@ def join_submit(request: Request, code: str, email: str = Form(...), name: str =
         student.name = name[:120]
     student.teacher_id = inv.teacher_id                    # link to the institute
     student.batch_id = inv.id                              # …and to this specific batch
-    _link_subjects(db, student, inv.subjects)              # seed the batch's subjects
+    if getattr(inv, "grade", None):                        # kids batch → lock the student's class + board
+        student.grade = inv.grade
+        student.board = inv.board or "CBSE"
+    _link_subjects(db, student, inv.subjects)              # seed the batch's subjects (no-op for kids labels)
     db.commit()
     if not existed:
         notify.notify_admin(f"🎓 New STUDENT joined a teacher batch — {student.email} · {inv.label}")
@@ -2058,8 +2304,24 @@ def _student_assignments(db, student):
             .order_by(Assignment.created_at.desc()).all())
     # batch-scope: an assignment with no batch (invite_id=None) is for ALL batches; else only this one.
     rows = [a for a in rows if a.invite_id is None or a.invite_id == bid][:12]
+    from urllib.parse import quote as _q
     out = []
     for a in rows:
+        if a.kind in ("kidsworksheet", "kidstest"):
+            # kids: Solve (on-screen) + Print (offline). Practice regenerates fresh; a fixed test loads
+            # the frozen pack. Grade/board come from the student (locked at join).
+            parts = (a.ref or "").split("|")
+            subject = parts[0] if parts and parts[0] else (a.subject_label or "Mathematics")
+            chapter = parts[1] if len(parts) > 1 else ""
+            nq = parts[2] if len(parts) > 2 and parts[2].isdigit() else "8"
+            board = student.board or "CBSE"
+            cls = student.grade or 3
+            base = (f"/exam-prep/worksheet?assign={a.id}"
+                    f"&board={_q(board)}&cls={cls}&subject={_q(subject)}&chapter={_q(chapter)}&n={nq}")
+            out.append({"title": a.title or subject or "Worksheet", "kind": a.kind,
+                        "url": base, "print_url": base + "&print=1", "worksheet": True,
+                        "icon": ("📝" if a.kind == "kidstest" else "✏️"), "subject": subject})
+            continue
         if a.kind == "smart":
             url, icon = f"/exam-prep/smart?subject={a.ref}", "🎯"
         elif a.kind == "mock":
@@ -2080,19 +2342,53 @@ async def teacher_assign(request: Request, db: Session = Depends(get_db)):
         return JSONResponse({"error": "login"}, status_code=401)
     body = await request.json()
     kind = (body.get("kind") or "").strip()
-    ref = (body.get("ref") or "").strip()[:80]
-    if kind not in ("smart", "mock", "classtest"):
-        return JSONResponse({"error": "bad kind"}, status_code=400)
+    ref = (body.get("ref") or "").strip()[:120]
+    title = (body.get("title") or "").strip()[:140]
     # optional batch target: an invite_id owned by this teacher, else None = all batches
     invite_id = body.get("invite_id")
     try:
         invite_id = int(invite_id) if invite_id not in (None, "", "all") else None
     except (TypeError, ValueError):
         invite_id = None
-    if invite_id is not None and not db.query(TeacherInvite).filter_by(id=invite_id, teacher_id=teacher.id).first():
+    inv = db.query(TeacherInvite).filter_by(id=invite_id, teacher_id=teacher.id).first() if invite_id is not None else None
+    if invite_id is not None and not inv:
         invite_id = None
+
+    # ── KIDS worksheet assignment (practice = fresh per student · test = one frozen sheet for all) ──
+    if kind in ("kidsworksheet", "kidstest"):
+        if not inv or not getattr(inv, "grade", None):
+            return JSONResponse({"error": "Pick a class (batch) first."}, status_code=400)
+        parts = ref.split("|")
+        subject = (parts[0].strip() if parts else "") or "Mathematics"
+        chapter = (parts[1].strip() if len(parts) > 1 else "")
+        try:
+            nq = int(parts[2]) if len(parts) > 2 and parts[2].strip() else 8
+        except (TypeError, ValueError):
+            nq = 8
+        nq = max(3, min(nq, 15))
+        if subject not in _kids_grade_subjects(inv.grade, inv.board):
+            return JSONResponse({"error": "Pick a subject for this class."}, status_code=400)
+        ref = f"{subject}|{chapter}|{nq}"
+        title = title or (subject + (f" · {chapter}" if chapter else " · Mixed") +
+                          (" (test)" if kind == "kidstest" else " worksheet"))
+        pack = None
+        if kind == "kidstest":
+            try:
+                data = kidsws.serve(db, teacher, inv.board or "CBSE", inv.grade, subject, chapter or None, n=nq)
+            except Exception as exc:
+                return JSONResponse({"error": f"Could not make the test: {str(exc)[:80]}"}, status_code=500)
+            its = data.get("items", []) if isinstance(data, dict) else []
+            if not its:
+                return JSONResponse({"error": "No questions for that topic yet — try Maths or another topic."}, status_code=400)
+            pack = {"items": its, "subject": subject, "board": inv.board, "cls": inv.grade, "chapter": chapter}
+        db.add(Assignment(teacher_id=teacher.id, invite_id=invite_id, kind=kind, ref=ref,
+                          title=title[:140], subject_label=subject, pack=pack))
+        db.commit()
+        return JSONResponse({"ok": True})
+
+    if kind not in ("smart", "mock", "classtest"):
+        return JSONResponse({"error": "bad kind"}, status_code=400)
     sub_label = ""
-    title = (body.get("title") or "").strip()[:140]
     if kind == "smart":
         if ref not in examgen.RAG_SUBJECTS:
             return JSONResponse({"error": "pick a subject"}, status_code=400)
@@ -2347,7 +2643,8 @@ def teacher_test_print(request: Request, code: str, answers: str = "", db: Sessi
     if not ct:
         return RedirectResponse("/teacher", status_code=302)
     return templates.TemplateResponse(request, "teacher_print.html", {
-        "student": teacher, "ct": ct, "pack": ct.pack, "show_answers": (answers == "1")})
+        "student": teacher, "ct": ct, "pack": ct.pack, "show_answers": (answers == "1"),
+        "brand": _teacher_brand(teacher)})
 
 
 @app.get("/teacher/dashboard", response_class=HTMLResponse)
@@ -2401,7 +2698,8 @@ def class_take_gate(request: Request, code: str, db: Session = Depends(get_db)):
     # already gave a name this session → straight into the test
     if request.session.get(f"ct_{code}"):
         return RedirectResponse(f"/t/{code}/go", status_code=302)
-    return templates.TemplateResponse(request, "class_take.html", {"ct": ct})
+    teacher = db.query(Student).filter_by(id=ct.teacher_id).first()
+    return templates.TemplateResponse(request, "class_take.html", {"ct": ct, "brand": _teacher_brand(teacher)})
 
 
 @app.post("/t/{code}")

@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "JEE Main · Chemistry",
+ "subject": "Chemistry",
+ "chapter": "Chemical Bonding And Molecular Structure",
+ "topic_line": "Real JEE Main questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Chemistry. Chemical Bonding And Molecular Structure. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Chemical Bonding And Molecular Structure? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "Among the following the molecule with the highest dipole moment is",
+   "options": [
+    "CH 3 Cl",
+    "CH 2 Cl 2",
+    "CHCl 3",
+    "CCl 4"
+   ],
+   "answer": 0,
+   "explain": "For polar molecule dipole moment, Î¼ depends upon geometry.",
+   "voice_q": "Among the following the molecule with the highest dipole moment is Five seconds... think!",
+   "voice_a": "The answer is A — CH 3 Cl. For polar molecule dipole moment, Î¼ depends upon geometry."
+  },
+  {
+   "type": "mcq",
+   "q": "The intermolecular interaction that is dependent on the inverse cube of distance between the molecule is:",
+   "options": [
+    "ion-dipole interaction",
+    "London force",
+    "hydrogen bond",
+    "ion-ion interaction"
+   ],
+   "answer": 2,
+   "explain": "Hydrogen bond is a type of strong electrostatic dipole- dipole intersection and dependent on the inverse cube of distanc",
+   "voice_q": "The intermolecular interaction that is dependent on the inverse cube of distance between the molecule is: Five seconds... think!",
+   "voice_a": "The answer is C — hydrogen bond. Hydrogen bond is a type of strong electrostatic dipole- dipole intersection and dependent on the inverse cube of distanc"
+  },
+  {
+   "type": "mcq",
+   "q": "A central atom in a molecule has two lone pairs of electrons and forms three single bonds. The shape of this molecule is :",
+   "options": [
+    "trigonal pyramidal",
+    "T-shaped",
+    "see-saw",
+    "planar triangular"
+   ],
+   "answer": 1,
+   "explain": "sp^{3}d hybridised \nT-shaped",
+   "voice_q": "A central atom in a molecule has two lone pairs of electrons and forms three single bonds. The shape of this molecule is : Five seconds... think!",
+   "voice_a": "The answer is B — T-shaped. sp^{3}d hybridised \nT-shaped"
+  }
+ ]
+}

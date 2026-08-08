@@ -1,0 +1,52 @@
+{
+ "title": "VBT Limitations",
+ "q_prose": "The correct statements among I to III about valence bond theory in transition metal complexes are to be identified.",
+ "given_eq": "$\\mu=\\sqrt{n\\left(n+2\\right)}\\mathrm{BM}$",
+ "q_reminder": "Find which statements about VBT are correct.",
+ "q_narration": "We need to judge three statements about valence bond theory in coordination compounds. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Check color",
+   "eqs": [
+    "$\\mathrm{Color}\\Rightarrow\\Delta_d$",
+    "$\\mathrm{VBT}\\Rightarrow\\mathrm{no}\\Delta_d$"
+   ],
+   "narration": "Color of transition metal complexes is explained by splitting of dee orbitals and electronic transitions. Valence bond theory mainly discusses hybridization and bonding, so it does not explain color. Statement one is correct."
+  },
+  {
+   "label": "Step 2 — Check magnetism",
+   "eqs": [
+    "$\\mu=\\sqrt{n\\left(n+2\\right)}\\mathrm{BM}$",
+    "$\\mathrm{VBT}\\Rightarrow\\mathrm{qualitative}$"
+   ],
+   "narration": "Magnetic moment needs a quantitative value based on the number of unpaired electrons. Valence bond theory may say paramagnetic or diamagnetic, but it does not predict magnetic properties quantitatively. Statement two is incorrect."
+  },
+  {
+   "label": "Step 3 — Check ligand strength",
+   "eqs": [
+    "$\\mathrm{strong}\\Rightarrow\\Delta_d\\mathrm{large}$",
+    "$\\mathrm{weak}\\Rightarrow\\Delta_d\\mathrm{small}$"
+   ],
+   "narration": "Weak and strong field ligands are distinguished by the extent of dee orbital splitting. Since valence bond theory does not use this splitting idea, it cannot properly distinguish weak and strong field ligands. Statement three is correct."
+  },
+  {
+   "label": "Step 4 — Select option",
+   "eqs": [
+    "$\\mathrm{I}\\Rightarrow\\mathrm{correct}$",
+    "$\\mathrm{II}\\Rightarrow\\mathrm{wrong},\\mathrm{III}\\Rightarrow\\mathrm{correct}$"
+   ],
+   "narration": "So the correct statements are statement one and statement three only. This matches option dee."
+  }
+ ],
+ "answer_eq": "$\\mathrm{I}\\mathrm{and}\\mathrm{III}\\Rightarrow\\mathrm{D}$",
+ "answer_label": "Correct option: D",
+ "answer_narration": "The final answer is option dee, statement one and statement three only. Keep learning with Acharya for more clear step by step solutions.",
+ "exam_tag": "JEE Main · Chemistry · Coordination Compounds",
+ "options": [
+  "(II) and (III) only",
+  "(I) and (II) only",
+  "(I), (II) and (III)",
+  "(I) and (III) only"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

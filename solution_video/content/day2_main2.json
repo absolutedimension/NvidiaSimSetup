@@ -1,0 +1,52 @@
+{
+ "title": "Dimensional Formula Check",
+ "q_prose": "Two statements are given about dimensions of specific heat and gas constant. Decide which statement is correct.",
+ "given_eq": "$q=mc\\Delta T,\\ PV=nRT$",
+ "q_reminder": "Check the dimensions of specific heat and gas constant.",
+ "q_narration": "We are given two dimensional formula statements, one for specific heat and one for the gas constant. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Specific heat relation",
+   "eqs": [
+    "$q=mc\\Delta T$",
+    "$[q]=[\\mathrm{M}\\mathrm{L}^2\\mathrm{T}^{-2}]$"
+   ],
+   "narration": "Heat has the same dimensions as energy. So we start from heat equals mass into specific heat into temperature change."
+  },
+  {
+   "label": "Step 2 — Dimension of specific heat",
+   "eqs": [
+    "$[c]=\\frac{[\\mathrm{M}\\mathrm{L}^2\\mathrm{T}^{-2}]}{[\\mathrm{M}][\\mathrm{K}]}$",
+    "$[c]=[\\mathrm{L}^2\\mathrm{T}^{-2}\\mathrm{K}^{-1}]$"
+   ],
+   "narration": "Mass cancels out, leaving length squared, time power minus two, per kelvin. So statement one is correct."
+  },
+  {
+   "label": "Step 3 — Gas constant relation",
+   "eqs": [
+    "$PV=nRT$",
+    "$[R]=\\frac{[P][V]}{[n][T]}$"
+   ],
+   "narration": "For the gas constant, we use the ideal gas equation. Number of moles is treated as a separate amount count here, so we compare pressure times volume per temperature."
+  },
+  {
+   "label": "Step 4 — Dimension of gas constant",
+   "eqs": [
+    "$[P][V]=[\\mathrm{M}\\mathrm{L}^{-1}\\mathrm{T}^{-2}][\\mathrm{L}^3]=[\\mathrm{M}\\mathrm{L}^2\\mathrm{T}^{-2}]$",
+    "$[R]=[\\mathrm{M}\\mathrm{L}^2\\mathrm{T}^{-2}\\mathrm{K}^{-1}]$"
+   ],
+   "narration": "Pressure into volume gives energy dimension. Dividing by temperature gives time power minus two, not time power minus one. So statement two is incorrect."
+  }
+ ],
+ "answer_eq": "$\\mathrm{D}$",
+ "answer_label": "Correct option: D",
+ "answer_narration": "Therefore, statement one is correct but statement two is incorrect. Keep practicing with Acharya for more clear exam solutions.",
+ "exam_tag": "JEE Main · Physics · Heat And Thermodynamics",
+ "options": [
+  "Statement (I) is incorrect but statement (II) is correct",
+  "Both statement (I) and statement (II) are incorrect",
+  "Both statement (I) and statement (II) are correct",
+  "Statement (I) is correct but statement (II) is incorrect"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

@@ -339,6 +339,8 @@
     <div class="sub" id="lbp">Enter your enrolled email to begin.</div>
     <form method="post" action="/login">
       <input type="hidden" name="course" id="course" value="" />
+      <!-- honeypot: invisible + un-tabbable for humans, auto-filled by form-spam bots -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none" />
       <input type="email" name="email" placeholder="you@email.com" required />
       <input type="tel" name="phone" placeholder="WhatsApp no. + country code (optional)" />
       <button type="submit">Send my login link →</button>

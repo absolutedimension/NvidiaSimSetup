@@ -1,0 +1,42 @@
+{
+  "lang": "en",
+  "voice": "en-IN-NeerjaExpressiveNeural",
+  "exam": "NEET · Biology",
+  "subject": "Biology",
+  "chapter": "Human Health & Disease",
+  "topic_line": "Real NEET questions · can you beat the timer?",
+  "timer_seconds": 5,
+  "brand": "Acharya",
+  "cta": "Get your full adaptive NEET test on Acharya",
+  "intro_voice": "NEET Biology. Human Health and Disease. Three real exam questions. Beat the timer... let's go!",
+  "outro_voice": "Want a full test like this, on any chapter? Acharya builds it for you — unlimited, exam-pattern. Link in bio.",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Antibodies in our body are complex:",
+      "options": ["Glycoproteins", "Lipoproteins", "Steroids", "Prostaglandins"],
+      "answer": 0,
+      "explain": "Antibodies (immunoglobulins) are glycoproteins produced in response to antigens.",
+      "voice_q": "First one. Antibodies in our body are complex what? Five seconds... think!",
+      "voice_a": "It's A — glycoproteins. Antibodies are immunoglobulins, made of protein plus sugar chains."
+    },
+    {
+      "type": "mcq",
+      "q": "A patient has internal bleeding, muscle pain, fever, anaemia, and a blocked intestine. Most likely disease?",
+      "options": ["Filariasis", "Amoebiasis", "Ascariasis", "Malaria"],
+      "answer": 2,
+      "explain": "Ascariasis, caused by the roundworm Ascaris, blocks the intestine and causes these symptoms.",
+      "voice_q": "A patient has internal bleeding, muscle pain, fever, anaemia, and a blocked intestine. Which disease? Go!",
+      "voice_a": "The answer is C — Ascariasis. The roundworm Ascaris blocks the intestine and triggers all of these."
+    },
+    {
+      "type": "mcq",
+      "q": "An antibody's light and heavy chains are joined by disulphide bonds. These bonds form between:",
+      "options": ["Serine, threonine", "Methionine, cysteine", "Methionine, methionine", "Cysteine, cysteine"],
+      "answer": 3,
+      "explain": "Disulphide bonds form between two cysteine residues — the only amino acid with a free thiol group.",
+      "voice_q": "Last one. An antibody's chains are joined by disulphide bonds. Between which amino acids? Five seconds!",
+      "voice_a": "It's D — cysteine and cysteine. Only cysteine has the sulphur group that forms a disulphide bridge."
+    }
+  ]
+}

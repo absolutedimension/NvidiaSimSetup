@@ -1,0 +1,34 @@
+{
+  "slug": "catalyzers-kota",
+  "name": "Catalyzers Institute",
+  "course_id": "catalyzers-kota",
+  "subject": "NEET/JEE Physics & Chemistry (Class 11 foundation)",
+  "brand": {
+    "logo": "",
+    "colors": { "primary": "#E8C66B", "accent": "#D4A23A" },
+    "welcome_line": "Namaste! I'm Catalyzers Institute's tutor — here to help you crack NEET/JEE."
+  },
+  "whatsapp": {
+    "mode": "shared",
+    "number": "",
+    "_note": "shared Acharya number, branded persona for the trial; provision a dedicated number during the 14 days if teacher confirms"
+  },
+  "web": {
+    "listed_on_acharya": false,
+    "subdomain": "",
+    "custom_domain": ""
+  },
+  "students": [
+    { "name": "", "whatsapp": "", "email": "", "status": "awaiting-teacher-list" }
+  ],
+  "trial": {
+    "start": "2026-07-06",
+    "end": "2026-07-20",
+    "_note": "start assumed Monday 2026-07-06 on confirmation; end = start + 14 days; free trial, ₹4,999/mo after"
+  },
+  "status": "pre-staged",
+  "_status_values": "pre-staged -> provisioning -> live -> paid | churned",
+  "source": "Maya call 2026-07-04 (interested lead, +91 77379 76414, Kota, 60s call)",
+  "lead_phone": "917737976414",
+  "notes": "Pre-staged 2026-07-04 ahead of Monday confirm. HOLD: not deployed to VM, not listed on web, no students enrolled yet. Concept-bank = Class-11 Physics+Chem foundation (representative high-yield slice) authored by Claude; CONFIRM the exact syllabus/order + which classes with the teacher before/at go-live. Logo + brand colors not yet received."
+}

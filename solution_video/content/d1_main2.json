@@ -1,0 +1,58 @@
+{
+ "title": "Permutation Matrix Sum",
+ "q_prose": "Six three by three permutation matrices are used to form X by adding P k A P k transpose for a given matrix A. Decide which options are correct.",
+ "given_eq": "",
+ "q_reminder": "Find the entries of X and test the four statements.",
+ "q_narration": "We are adding all six simultaneous row and column permutations of the same three by three matrix. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Permutation effect",
+   "eqs": [
+    "$P_kAP_k^T\\mathrm{\\ permutes\\ rows\\ and\\ columns}$"
+   ],
+   "narration": "Multiplying by a permutation matrix on the left and its transpose on the right only renames the row and column positions together. So, across all six permutations, entries of the same type get evenly distributed."
+  },
+  {
+   "label": "Step 2 — Diagonal entries",
+   "eqs": [
+    "$X_{ii}=2\\left(A_{11}+A_{22}+A_{33}\\right)$",
+    "$X_{ii}=2\\left(2+0+1\\right)=6$"
+   ],
+   "narration": "For any fixed diagonal position, each original diagonal entry appears two times among the six permutations. The trace of A is three, so every diagonal entry of X is six."
+  },
+  {
+   "label": "Step 3 — Off diagonal entries",
+   "eqs": [
+    "$X_{12}=X_{13}=X_{21}=X_{23}=X_{31}=X_{32}$",
+    "$X_{12}=1+3+1+2+3+2=12$"
+   ],
+   "narration": "For any fixed off diagonal position, all six original off diagonal entries appear exactly once. Their sum is twelve, so every off diagonal entry of X is twelve."
+  },
+  {
+   "label": "Step 4 — Check options",
+   "eqs": [
+    "$6+12+12=30\\Rightarrow Xv=30v,\\ v=(1,1,1)^T$",
+    "$\\mathrm{tr}(X)=6+6+6=18$"
+   ],
+   "narration": "Each row sum is thirty, so the vector one one one is an eigenvector with eigenvalue thirty. Also, X is symmetric because opposite off diagonal entries are equal, and its trace is eighteen."
+  },
+  {
+   "label": "Step 5 — Invertibility test",
+   "eqs": [
+    "$(X-30I)v=Xv-30v=0$"
+   ],
+   "narration": "The vector one one one is nonzero and is killed by X minus thirty I. Therefore X minus thirty I is singular, not invertible. So option D is false."
+  }
+ ],
+ "answer_eq": "$\\mathrm{A,B,C}$",
+ "answer_label": "Correct option: ABC",
+ "answer_narration": "The correct statements are A, B, and C. For more clear step by step exam solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Advanced · Mathematics · Matrices And Determinants",
+ "options": [
+  "If $X\\left[\\begin{array}{l}1 \\\\ 1 \\\\ 1\\end{array}\\right]=\\alpha\\left[\\begin{array}{l}1 \\\\ 1 \\\\ 1\\end{array}\\right]$, then $\\alpha=30$",
+  "$X$ is a symmetric matrix",
+  "The sum of diagonal entries of $X$ is 18",
+  "$X-30 I$ is an invertible matrix"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

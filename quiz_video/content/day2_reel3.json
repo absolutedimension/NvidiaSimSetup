@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Physics",
+ "subject": "Physics",
+ "chapter": "Gravitation",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Physics. Gravitation. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Gravitation? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "A planet of mass  m is in an elliptical orbit about the sun m < < M sun  with an orbital period T . If  A be the area of orbit, then its angular momentum would be",
+   "options": [
+    "2 m A T",
+    "m A T",
+    "m A 2 T",
+    "2 m A T"
+   ],
+   "answer": 0,
+   "explain": "using Kepler's II^{nd  }law ; areal velocity = constant = L 2 m ⇒ d A d t = L 2 m ⇒ L = 2 m d A d t L = 2 m A T",
+   "voice_q": "A planet of mass  m is in an elliptical orbit about the sun m < < M sun  with an orbital period T . If  A be the area of orbit, then its angular momentum would be Five seconds... think!",
+   "voice_a": "The answer is A — 2 m A T. using Kepler's II^{nd  }law ; areal velocity = constant = L 2 m ⇒ d A d t = L 2 m ⇒ L = 2 m d A d t L = 2 m A T"
+  },
+  {
+   "type": "mcq",
+   "q": "A man goes to a height equal to the radius of the earth from its surface. The weight of the person at that height relative to his weight on the surface of earth is",
+   "options": [
+    "1 2",
+    "1 3",
+    "1 4",
+    "1 5"
+   ],
+   "answer": 2,
+   "explain": "At the surface of the earth, the weight of the person.",
+   "voice_q": "A man goes to a height equal to the radius of the earth from its surface. The weight of the person at that height relative to his weight on the surface of earth is Five seconds... think!",
+   "voice_a": "The answer is C — 1 4. At the surface of the earth, the weight of the person."
+  },
+  {
+   "type": "mcq",
+   "q": "A small block of super dense material has mass 2 Ã 10 24   kg . It is at a height h < < R . It falls towards the earth. Find its speed when it is at a height h 2",
+   "options": [
+    "2 g h 3",
+    "3 g h 4",
+    "3 g h 5",
+    "g h 2"
+   ],
+   "answer": 1,
+   "explain": "m = 2 Ã 10 24   kg ,  Let the mass of the earth be  M , then  m = M 3 From momentum conservation, M V 1 = M 3 V 2 â V",
+   "voice_q": "A small block of super dense material has mass 2 Ã 10 24   kg . It is at a height h < < R . It falls towards the earth. Find its speed when it is at a height h 2 Five seconds... think!",
+   "voice_a": "The answer is B — 3 g h 4. m = 2 Ã 10 24   kg ,  Let the mass of the earth be  M , then  m = M 3 From momentum conservation, M V 1 = M 3 V 2 â V"
+  }
+ ]
+}

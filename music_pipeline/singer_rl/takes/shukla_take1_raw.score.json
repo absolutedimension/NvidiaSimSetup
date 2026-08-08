@@ -1,0 +1,75 @@
+{
+  "take": "/home/ubuntu/music_out/shukla_take1_raw.mp3",
+  "style_score_0_10": 6.28,
+  "verdict": "close-needs-tuning",
+  "subscores": {
+    "ornament": {
+      "score": 0.959,
+      "weight": 0.3
+    },
+    "melody_dominant": {
+      "score": 0.0,
+      "weight": 0.2
+    },
+    "expression": {
+      "score": 0.879,
+      "weight": 0.2
+    },
+    "dynamics": {
+      "score": 0.55,
+      "weight": 0.15
+    },
+    "tempo": {
+      "score": 0.484,
+      "weight": 0.1
+    },
+    "warmth": {
+      "score": 0.675,
+      "weight": 0.05
+    }
+  },
+  "measured": {
+    "mix": {
+      "duration_sec": 119.9,
+      "tempo_bpm": 86.1,
+      "key": "E major",
+      "brightness_centroid_hz": 1872.5,
+      "rolloff85_hz": 3531.4,
+      "dynamic_range_db": 16.3,
+      "onset_rate_per_sec": 2.05,
+      "harmonic_percussive_ratio": 17.61,
+      "energy_arc_8": [
+        0.875,
+        0.953,
+        0.938,
+        0.904,
+        0.855,
+        0.896,
+        1.0,
+        0.533
+      ]
+    },
+    "vocal": {
+      "voiced_fraction": 0.874,
+      "pitch_range_semitones": 14.0,
+      "median_f0_hz": 211.1,
+      "ornament_rate_per_sec": 17.86,
+      "glide_semitone_per_frame": 0.1,
+      "vibrato_semitone_std": 0.77
+    }
+  },
+  "targets": {
+    "ornament": [
+      18.19,
+      20.49
+    ],
+    "harmonic_percussive": [
+      4.1,
+      6.88
+    ],
+    "tempo_band": [
+      99,
+      120
+    ]
+  }
+}

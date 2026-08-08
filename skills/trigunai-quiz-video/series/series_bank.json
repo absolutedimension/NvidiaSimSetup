@@ -1,0 +1,189 @@
+{
+  "_note": "One entry per topic id (see schedule.json). Each has full engine-schema content for 'en' and 'hi'. The daily runner writes these to temp files and renders. CTA link lives in the YouTube manifest, not here.",
+
+  "phys_ch1": {
+    "en": {
+      "lang": "en", "voice": "en-IN-NeerjaExpressiveNeural",
+      "subject": "Physics", "chapter": "Units & Measurements",
+      "topic_line": "Chapter 1 · where every aspirant begins", "timer_seconds": 5,
+      "cta": "Get your full adaptive test on Acharya",
+      "intro_voice": "Physics. Units and Measurements. Two quick challenges. Can you beat the timer? Let's go!",
+      "outro_voice": "Loved that? Your full adaptive test is waiting on Acharya. It finds exactly where you're weak.",
+      "questions": [
+        { "type": "mcq", "q": "The candela is the SI base unit of which quantity?",
+          "options": ["Electric current", "Luminous intensity", "Temperature", "Amount of substance"], "answer": 1,
+          "explain": "Candela (cd) is one of the seven SI base units — it measures luminous intensity.",
+          "voice_q": "Here's your first one. The candela is the S I base unit of which quantity? Five seconds... think fast!",
+          "voice_a": "Yes! It's B — luminous intensity. The candela is one of the seven S I base units. Nailed it!" },
+        { "type": "match", "prompt": "Match each physical quantity to its correct SI unit",
+          "left": ["Force", "Pressure", "Energy", "Power"], "right": ["Pascal", "Watt", "Newton", "Joule"],
+          "pairs": [[0,2],[1,0],[2,3],[3,1]],
+          "explain": "Force → Newton, Pressure → Pascal, Energy → Joule, Power → Watt.",
+          "voice_q": "Now match them up! Each physical quantity to its correct S I unit. Force, pressure, energy, power. Go!",
+          "voice_a": "Beautifully done! Force to Newton. Pressure to Pascal. Energy to Joule. And power to Watt. Perfect match!" }
+      ]
+    },
+    "hi": {
+      "lang": "hi", "voice": "hi-IN-SwaraNeural",
+      "subject": "भौतिक विज्ञान", "chapter": "मात्रक एवं मापन",
+      "topic_line": "अध्याय 1 · यहीं से हर विद्यार्थी शुरू करता है", "timer_seconds": 5,
+      "cta": "पूरा टेस्ट Acharya पर दें",
+      "intro_voice": "भौतिक विज्ञान। मात्रक एवं मापन। दो तेज़ सवाल। क्या आप टाइमर को हरा सकते हैं? चलिए शुरू करें!",
+      "outro_voice": "मज़ा आया? आपका पूरा एडाप्टिव टेस्ट Acharya पर तैयार है। यह बताता है कि आप कहाँ कमज़ोर हो।",
+      "questions": [
+        { "type": "mcq", "q": "कैंडेला किस राशि का SI मूल मात्रक है?",
+          "options": ["विद्युत धारा", "ज्योति तीव्रता", "ताप", "पदार्थ की मात्रा"], "answer": 1,
+          "explain": "कैंडेला (cd) सात SI मूल मात्रकों में से एक है — यह ज्योति तीव्रता मापता है।",
+          "voice_q": "पहला सवाल। कैंडेला किस राशि का एस.आई. मूल मात्रक है? पाँच सेकंड... जल्दी सोचो!",
+          "voice_a": "बिलकुल सही! उत्तर है B — ज्योति तीव्रता। कैंडेला सात एस.आई. मूल मात्रकों में से एक है। शानदार!" },
+        { "type": "match", "prompt": "हर भौतिक राशि को उसके सही SI मात्रक से मिलाओ",
+          "left": ["बल", "दाब", "ऊर्जा", "शक्ति"], "right": ["पास्कल", "वाट", "न्यूटन", "जूल"],
+          "pairs": [[0,2],[1,0],[2,3],[3,1]],
+          "explain": "बल → न्यूटन, दाब → पास्कल, ऊर्जा → जूल, शक्ति → वाट।",
+          "voice_q": "अब जोड़ी मिलाओ! हर भौतिक राशि को उसके सही एस.आई. मात्रक से। बल, दाब, ऊर्जा, शक्ति। शुरू करो!",
+          "voice_a": "बहुत बढ़िया! बल से न्यूटन। दाब से पास्कल। ऊर्जा से जूल। और शक्ति से वाट। एकदम सही जोड़ी!" }
+      ]
+    }
+  },
+
+  "bio_ch1": {
+    "en": {
+      "lang": "en", "voice": "en-IN-NeerjaExpressiveNeural",
+      "subject": "Biology", "chapter": "The Living World",
+      "topic_line": "Chapter 1 · where every NEET journey begins", "timer_seconds": 5,
+      "cta": "Get your full adaptive test on Acharya",
+      "intro_voice": "Biology! The Living World. Two quick questions. Can you beat the timer? Let's go!",
+      "outro_voice": "Loved that? Your full adaptive test is waiting on Acharya. It finds exactly where you're weak.",
+      "questions": [
+        { "type": "mcq", "q": "Which taxonomic category contains a group of related genera?",
+          "options": ["Species", "Family", "Order", "Kingdom"], "answer": 1,
+          "explain": "A family is a group of related genera; a genus is a group of related species.",
+          "voice_q": "First question. Which taxonomic category contains a group of related genera? Five seconds... go!",
+          "voice_a": "It's B — Family! A family groups together related genera. Well done!" },
+        { "type": "match", "prompt": "Match each branch of biology to what it studies",
+          "left": ["Taxonomy", "Ecology", "Genetics", "Physiology"],
+          "right": ["Heredity & variation", "Classification", "Body functions", "Organism–environment"],
+          "pairs": [[0,1],[1,3],[2,0],[3,2]],
+          "explain": "Taxonomy → Classification, Ecology → Organism–environment, Genetics → Heredity, Physiology → Body functions.",
+          "voice_q": "Now match each branch of biology to what it studies. Taxonomy, ecology, genetics, physiology. Go!",
+          "voice_a": "Perfect! Taxonomy is classification, ecology is organism and environment, genetics is heredity, and physiology is body functions." }
+      ]
+    },
+    "hi": {
+      "lang": "hi", "voice": "hi-IN-SwaraNeural",
+      "subject": "जीव विज्ञान", "chapter": "जीव जगत",
+      "topic_line": "अध्याय 1 · यहीं से हर NEET सफर शुरू होता है", "timer_seconds": 5,
+      "cta": "पूरा टेस्ट Acharya पर दें",
+      "intro_voice": "जीव विज्ञान! जीव जगत। दो तेज़ सवाल। क्या आप टाइमर को हरा सकते हैं? चलिए!",
+      "outro_voice": "मज़ा आया? आपका पूरा एडाप्टिव टेस्ट Acharya पर तैयार है। यह बताता है कि आप कहाँ कमज़ोर हो।",
+      "questions": [
+        { "type": "mcq", "q": "किस वर्गिकी श्रेणी में संबंधित वंशों (genera) का समूह होता है?",
+          "options": ["जाति", "कुल", "गण", "जगत"], "answer": 1,
+          "explain": "कुल (Family) संबंधित वंशों का समूह है; वंश (Genus) संबंधित जातियों का समूह है।",
+          "voice_q": "पहला सवाल। किस वर्गिकी श्रेणी में संबंधित वंशों का समूह होता है? पाँच सेकंड... जल्दी!",
+          "voice_a": "उत्तर है B — कुल! कुल संबंधित वंशों का समूह होता है। शाबाश!" },
+        { "type": "match", "prompt": "जीव विज्ञान की हर शाखा को उसके अध्ययन-विषय से मिलाओ",
+          "left": ["वर्गिकी", "पारिस्थितिकी", "आनुवंशिकी", "शरीरक्रिया"],
+          "right": ["आनुवंशिकता", "वर्गीकरण", "शारीरिक क्रियाएँ", "जीव–पर्यावरण"],
+          "pairs": [[0,1],[1,3],[2,0],[3,2]],
+          "explain": "वर्गिकी → वर्गीकरण, पारिस्थितिकी → जीव–पर्यावरण, आनुवंशिकी → आनुवंशिकता, शरीरक्रिया → शारीरिक क्रियाएँ।",
+          "voice_q": "अब जीव विज्ञान की हर शाखा को उसके अध्ययन-विषय से मिलाओ। वर्गिकी, पारिस्थितिकी, आनुवंशिकी, शरीरक्रिया। शुरू!",
+          "voice_a": "बहुत बढ़िया! वर्गिकी यानी वर्गीकरण, पारिस्थितिकी यानी जीव और पर्यावरण, आनुवंशिकी यानी आनुवंशिकता, और शरीरक्रिया यानी शारीरिक क्रियाएँ।" }
+      ]
+    }
+  },
+
+  "chem_ch1": {
+    "en": {
+      "lang": "en", "voice": "en-IN-NeerjaExpressiveNeural",
+      "subject": "Chemistry", "chapter": "Some Basic Concepts",
+      "topic_line": "Chapter 1 · the foundation of all chemistry", "timer_seconds": 5,
+      "cta": "Get your full adaptive test on Acharya",
+      "intro_voice": "Chemistry! Some Basic Concepts. Two quick questions. Can you beat the timer? Let's go!",
+      "outro_voice": "Loved that? Your full adaptive test is waiting on Acharya. It finds exactly where you're weak.",
+      "questions": [
+        { "type": "mcq", "q": "How many significant figures are in 0.00340?",
+          "options": ["2", "3", "4", "5"], "answer": 1,
+          "explain": "Leading zeros are not significant; 3, 4 and the trailing 0 are — so 3.",
+          "voice_q": "Question one. How many significant figures are there in zero point zero zero three four zero? Five seconds!",
+          "voice_a": "It's B — three! Leading zeros don't count, but the trailing zero does. Nice!" },
+        { "type": "match", "prompt": "Match each quantity to its SI base unit",
+          "left": ["Length", "Mass", "Amount of substance", "Temperature"],
+          "right": ["Kelvin", "Metre", "Mole", "Kilogram"],
+          "pairs": [[0,1],[1,3],[2,2],[3,0]],
+          "explain": "Length → Metre, Mass → Kilogram, Amount of substance → Mole, Temperature → Kelvin.",
+          "voice_q": "Match each quantity to its S I base unit. Length, mass, amount of substance, temperature. Go!",
+          "voice_a": "Spot on! Length is metre, mass is kilogram, amount of substance is mole, and temperature is kelvin." }
+      ]
+    },
+    "hi": {
+      "lang": "hi", "voice": "hi-IN-SwaraNeural",
+      "subject": "रसायन विज्ञान", "chapter": "रसायन की मूल अवधारणाएँ",
+      "topic_line": "अध्याय 1 · सारे रसायन की नींव", "timer_seconds": 5,
+      "cta": "पूरा टेस्ट Acharya पर दें",
+      "intro_voice": "रसायन विज्ञान! रसायन की मूल अवधारणाएँ। दो तेज़ सवाल। क्या आप टाइमर को हरा सकते हैं? चलिए!",
+      "outro_voice": "मज़ा आया? आपका पूरा एडाप्टिव टेस्ट Acharya पर तैयार है। यह बताता है कि आप कहाँ कमज़ोर हो।",
+      "questions": [
+        { "type": "mcq", "q": "0.00340 में कितने सार्थक अंक (significant figures) हैं?",
+          "options": ["2", "3", "4", "5"], "answer": 1,
+          "explain": "आरंभिक शून्य सार्थक नहीं होते; 3, 4 और अंत का 0 सार्थक हैं — इसलिए 3।",
+          "voice_q": "पहला सवाल। शून्य दशमलव शून्य शून्य तीन चार शून्य में कितने सार्थक अंक हैं? पाँच सेकंड!",
+          "voice_a": "उत्तर है B — तीन! आरंभिक शून्य नहीं गिने जाते, पर अंत का शून्य गिना जाता है। बढ़िया!" },
+        { "type": "match", "prompt": "हर राशि को उसके SI मूल मात्रक से मिलाओ",
+          "left": ["लंबाई", "द्रव्यमान", "पदार्थ की मात्रा", "ताप"],
+          "right": ["केल्विन", "मीटर", "मोल", "किलोग्राम"],
+          "pairs": [[0,1],[1,3],[2,2],[3,0]],
+          "explain": "लंबाई → मीटर, द्रव्यमान → किलोग्राम, पदार्थ की मात्रा → मोल, ताप → केल्विन।",
+          "voice_q": "हर राशि को उसके एस.आई. मूल मात्रक से मिलाओ। लंबाई, द्रव्यमान, पदार्थ की मात्रा, ताप। शुरू!",
+          "voice_a": "एकदम सही! लंबाई का मीटर, द्रव्यमान का किलोग्राम, पदार्थ की मात्रा का मोल, और ताप का केल्विन।" }
+      ]
+    }
+  },
+
+  "math_ch1": {
+    "en": {
+      "lang": "en", "voice": "en-IN-NeerjaExpressiveNeural",
+      "subject": "Mathematics", "chapter": "Sets",
+      "topic_line": "Chapter 1 · the language of all maths", "timer_seconds": 5,
+      "cta": "Get your full adaptive test on Acharya",
+      "intro_voice": "Maths! Sets. Two quick questions. Can you beat the timer? Let's go!",
+      "outro_voice": "Loved that? Your full adaptive test is waiting on Acharya. It finds exactly where you're weak.",
+      "questions": [
+        { "type": "mcq", "q": "If A = {1, 2, 3}, how many subsets does A have?",
+          "options": ["3", "6", "8", "9"], "answer": 2,
+          "explain": "A set with n elements has 2 to the power n subsets; 2 cubed = 8.",
+          "voice_q": "Question one. If set A has the elements one, two and three — how many subsets does it have? Five seconds!",
+          "voice_a": "It's C — eight! A set with n elements has two to the power n subsets. Two cubed is eight." },
+        { "type": "match", "prompt": "Match each type of set to its meaning",
+          "left": ["Empty set", "Singleton set", "Finite set", "Universal set"],
+          "right": ["Has exactly one element", "Contains all elements under study", "Has no elements", "Has a countable number of elements"],
+          "pairs": [[0,2],[1,0],[2,3],[3,1]],
+          "explain": "Empty → no elements, Singleton → one element, Finite → countable elements, Universal → all elements.",
+          "voice_q": "Match each type of set to its meaning. Empty, singleton, finite, universal. Go!",
+          "voice_a": "Perfect! An empty set has no elements, a singleton has exactly one, a finite set is countable, and the universal set holds them all." }
+      ]
+    },
+    "hi": {
+      "lang": "hi", "voice": "hi-IN-SwaraNeural",
+      "subject": "गणित", "chapter": "समुच्चय",
+      "topic_line": "अध्याय 1 · सारे गणित की भाषा", "timer_seconds": 5,
+      "cta": "पूरा टेस्ट Acharya पर दें",
+      "intro_voice": "गणित! समुच्चय। दो तेज़ सवाल। क्या आप टाइमर को हरा सकते हैं? चलिए!",
+      "outro_voice": "मज़ा आया? आपका पूरा एडाप्टिव टेस्ट Acharya पर तैयार है। यह बताता है कि आप कहाँ कमज़ोर हो।",
+      "questions": [
+        { "type": "mcq", "q": "यदि A = {1, 2, 3} है, तो A के कितने उपसमुच्चय हैं?",
+          "options": ["3", "6", "8", "9"], "answer": 2,
+          "explain": "n अवयवों वाले समुच्चय के 2 की घात n उपसमुच्चय होते हैं; 2 का घन = 8।",
+          "voice_q": "पहला सवाल। यदि समुच्चय A में एक, दो और तीन अवयव हैं — तो इसके कितने उपसमुच्चय हैं? पाँच सेकंड!",
+          "voice_a": "उत्तर है C — आठ! n अवयवों वाले समुच्चय के 2 की घात n उपसमुच्चय होते हैं। 2 का घन आठ है।" },
+        { "type": "match", "prompt": "हर प्रकार के समुच्चय को उसके अर्थ से मिलाओ",
+          "left": ["रिक्त समुच्चय", "एकल समुच्चय", "परिमित समुच्चय", "सार्वत्रिक समुच्चय"],
+          "right": ["ठीक एक अवयव", "अध्ययन के सभी अवयव", "कोई अवयव नहीं", "गिनने योग्य अवयव"],
+          "pairs": [[0,2],[1,0],[2,3],[3,1]],
+          "explain": "रिक्त → कोई अवयव नहीं, एकल → एक अवयव, परिमित → गिनने योग्य, सार्वत्रिक → सभी अवयव।",
+          "voice_q": "हर प्रकार के समुच्चय को उसके अर्थ से मिलाओ। रिक्त, एकल, परिमित, सार्वत्रिक। शुरू!",
+          "voice_a": "बिलकुल सही! रिक्त समुच्चय में कोई अवयव नहीं, एकल में ठीक एक, परिमित गिनने योग्य, और सार्वत्रिक में सभी अवयव।" }
+      ]
+    }
+  }
+}

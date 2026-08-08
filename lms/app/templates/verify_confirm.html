@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Confirm sign-in · TrigunAI LMS</title>
+<link rel="stylesheet" href="/static/app.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/static/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/static/brand/favicon-16.png" />
+<link rel="apple-touch-icon" href="/static/brand/apple-touch-icon.png" />
+<link rel="manifest" href="/static/brand/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+<div class="auth">
+  <div class="gem"></div>
+  <h1>One tap to sign in ✨</h1>
+  <p>Your login link is valid. Tap the button below to enter your cohort.</p>
+  <form method="post" action="/auth/verify" style="margin-top:22px;">
+    <input type="hidden" name="token" value="{{ token }}" />
+    <input type="hidden" name="course" value="{{ course }}" />
+    <input type="hidden" name="phone" value="{{ phone }}" />
+    <!-- honeypot: invisible + un-tabbable for humans, auto-filled by automated agents -->
+    <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none" />
+    <button type="submit">Enter my cohort →</button>
+  </form>
+  <p style="font-size:13px;margin-top:18px;">Didn't request this? You can safely ignore it — nothing happens until you tap the button.</p>
+</div>
+</body>
+</html>

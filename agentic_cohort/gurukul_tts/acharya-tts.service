@@ -1,0 +1,11 @@
+[Unit]
+Description=Acharya web-chat Azure neural TTS proxy
+After=network.target
+
+[Service]
+ExecStart=/bin/bash -lc 'set -a; source %h/voicebot_wa/wa_voice.env; exec /usr/bin/node %h/.openclaw/gurukul/tts_proxy.mjs'
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target

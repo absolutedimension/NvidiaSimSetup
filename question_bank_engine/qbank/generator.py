@@ -213,6 +213,13 @@ def generate_one(spec, exemplars, llm, idx, mock=False):
 
 def generate_test(store, spec: dict, llm=None, count: int = 5, k_exemplars: int = 3,
                   max_retries: int = 2, mock: bool = False) -> dict:
+    # COMPUTE-THE-ANSWER routing (Banking quant): the whole subject is generator-served with
+    # Python-computed answers and NO ingested exemplars — bypass the LLM/RAG path entirely.
+    if not mock:
+        from . import quantgen
+        if quantgen.can_generate(spec.get("exam"), spec.get("subject"), spec.get("chapter")):
+            return quantgen.generate_test(store, spec, count)
+
     # FIGURE-FIRST routing: a diagram request in a covered subject/chapter is DRAWN
     # deterministically (correct figure + RDKit-computed answer) instead of LLM-authored SVG.
     if spec.get("require_figure") and not mock:

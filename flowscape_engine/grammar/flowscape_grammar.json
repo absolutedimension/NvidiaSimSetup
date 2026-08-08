@@ -1,0 +1,27 @@
+{
+  "channel_style": "ambient dreamscape / celestial fantasy (HAND-SEEDED starter — replace with visual_grammar_extract.py output once corpus is available)",
+  "_provenance": "seeded from the public description of the reference channel's aesthetic, NOT from analyzed frames. Copyright-clean: no source pixels involved. Refine by running Part A on a real corpus.",
+  "scene_taxonomy": [
+    "celestial palace of light",
+    "floating island kingdom",
+    "ethereal cloud realm",
+    "star-built cathedral",
+    "misty mountain temple above the clouds",
+    "endless crystal staircase into the sky",
+    "luminous forest of glowing trees",
+    "moonlit lake with floating lanterns"
+  ],
+  "palette_hex": ["#0e1b3a", "#1e3a6e", "#c9a24b", "#e9dfc3", "#a8c7e6", "#6f4fa0"],
+  "mood": ["serene", "ethereal", "dreamy", "calm", "wondrous", "peaceful"],
+  "motion_signature": ["very slow drift", "gentle push-in", "slow orbit", "soft parallax float"],
+  "prompt_templates": [
+    "a {scene}, ethereal fantasy dreamscape, soft volumetric god-rays, drifting mist, calming and serene, cinematic wide shot, highly detailed, dreamy haze, painterly light",
+    "{scene} at twilight, glowing bioluminescent accents, floating particles, tranquil atmosphere, soft focus background, majestic scale, gentle bloom",
+    "a vast {scene}, layered clouds, warm golden light meeting cool blue shadow, meditative stillness, cinematic depth, soft ambient glow"
+  ],
+  "negative_prompts": [
+    "text, watermark, logo, signature, low quality, distorted, harsh contrast, busy, cluttered, people faces, jpeg artifacts, oversaturated"
+  ],
+  "n_grids_analyzed": 0,
+  "_note": "RECIPE ONLY. Feeds seed_generate.py. Overwrite when real corpus grammar is extracted."
+}

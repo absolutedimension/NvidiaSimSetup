@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Biology",
+ "subject": "Biology",
+ "chapter": "Principles of Inheritance and Variation",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Biology. Principles of Inheritance and Variation. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Principles of Inheritance and Variation? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "A male human is heterozygous for autosomal genes A and B. He is also hemizygous for haemophilic gene h. What proportion of his sperms will be abh?",
+   "options": [
+    "1 8",
+    "1 32",
+    "1 16",
+    "1 4"
+   ],
+   "answer": 0,
+   "explain": "Chance of getting a = 1 2 Chance of getting b = 1 2 Chance of getting h = 1 2 Chance of getting sperms with abh = 1 2 × ",
+   "voice_q": "A male human is heterozygous for autosomal genes A and B. He is also hemizygous for haemophilic gene h. What proportion of his sperms will be abh? Five seconds... think!",
+   "voice_a": "The answer is A — 1 8. Chance of getting a = 1 2 Chance of getting b = 1 2 Chance of getting h = 1 2 Chance of getting sperms with abh = 1 2 × "
+  },
+  {
+   "type": "mcq",
+   "q": "Which chromosome in the human genome has the highest number of genes?",
+   "options": [
+    "Chromosome X",
+    "Chromosome Y",
+    "Chromosome 1",
+    "Chromosome 10"
+   ],
+   "answer": 2,
+   "explain": "To determine which chromosome in the human genome has the highest number of genes, we can refer to the current understan",
+   "voice_q": "Which chromosome in the human genome has the highest number of genes? Five seconds... think!",
+   "voice_a": "The answer is C — Chromosome 1. To determine which chromosome in the human genome has the highest number of genes, we can refer to the current understan"
+  },
+  {
+   "type": "mcq",
+   "q": "Which one of the following factors will not affect the Hardy-Weinberg equilibrium? (1) Gene migration (2) Constant gene pool (3) Genetic recombination (4) Genetic drift",
+   "options": [
+    "Gene migration",
+    "Constant gene pool",
+    "Genetic recombination",
+    "Genetic drift"
+   ],
+   "answer": 1,
+   "explain": "To determine which factor does not affect the Hardy-Weinberg equilibrium, we first need to understand the conditions req",
+   "voice_q": "Which one of the following factors will not affect the Hardy-Weinberg equilibrium? (1) Gene migration (2) Constant gene pool (3) Genetic recombination (4) Genetic drift Five seconds... think!",
+   "voice_a": "The answer is B — Constant gene pool. To determine which factor does not affect the Hardy-Weinberg equilibrium, we first need to understand the conditions req"
+  }
+ ]
+}

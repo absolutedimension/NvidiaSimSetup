@@ -1,0 +1,38 @@
+[
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/out/day9_main1.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/content/day9_main1.json",
+  "format": "solution",
+  "exam": "JEE Advanced",
+  "subject": "Physics",
+  "chapter": "Electrostatics",
+  "lang": "en"
+ },
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/out/day9_main2.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/content/day9_main2.json",
+  "format": "solution",
+  "exam": "JEE Advanced",
+  "subject": "Mathematics",
+  "chapter": "Complex Numbers",
+  "lang": "en"
+ },
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/out/day9_reel3.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/content/day9_reel3.json",
+  "format": "quiz",
+  "exam": "JEE Main",
+  "subject": "Chemistry",
+  "chapter": "Electrochemistry",
+  "lang": "en"
+ },
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/out/day9_reel4.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/content/day9_reel4.json",
+  "format": "quiz",
+  "exam": "NEET",
+  "subject": "Biology",
+  "chapter": "Animal Kingdom",
+  "lang": "en"
+ }
+]

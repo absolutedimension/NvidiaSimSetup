@@ -1,0 +1,75 @@
+{
+  "take": "/home/ubuntu/music_out/take2_s11.mp3",
+  "style_score_0_10": 7.42,
+  "verdict": "close-needs-tuning",
+  "subscores": {
+    "ornament": {
+      "score": 1.0,
+      "weight": 0.3
+    },
+    "melody_dominant": {
+      "score": 0.0,
+      "weight": 0.2
+    },
+    "expression": {
+      "score": 0.802,
+      "weight": 0.2
+    },
+    "dynamics": {
+      "score": 0.938,
+      "weight": 0.15
+    },
+    "tempo": {
+      "score": 1.0,
+      "weight": 0.1
+    },
+    "warmth": {
+      "score": 0.824,
+      "weight": 0.05
+    }
+  },
+  "measured": {
+    "mix": {
+      "duration_sec": 119.9,
+      "tempo_bpm": 114.8,
+      "key": "C# minor",
+      "brightness_centroid_hz": 2096.8,
+      "rolloff85_hz": 5275.6,
+      "dynamic_range_db": 9.8,
+      "onset_rate_per_sec": 3.01,
+      "harmonic_percussive_ratio": 14.09,
+      "energy_arc_8": [
+        0.819,
+        0.936,
+        1.0,
+        0.886,
+        0.816,
+        0.664,
+        0.651,
+        0.669
+      ]
+    },
+    "vocal": {
+      "voiced_fraction": 0.73,
+      "pitch_range_semitones": 13.3,
+      "median_f0_hz": 246.8,
+      "ornament_rate_per_sec": 19.8,
+      "glide_semitone_per_frame": 0.1,
+      "vibrato_semitone_std": 0.887
+    }
+  },
+  "targets": {
+    "ornament": [
+      18.19,
+      20.49
+    ],
+    "harmonic_percussive": [
+      4.1,
+      6.88
+    ],
+    "tempo_band": [
+      99,
+      120
+    ]
+  }
+}

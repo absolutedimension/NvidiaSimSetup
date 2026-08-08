@@ -7,10 +7,12 @@ description: >
   pipeline progress, thinks about customers, or needs to be told what's real versus what's
   inflated. Triggers on: "how are we doing", "weekly review", "what should I say", "grant",
   "DPIIT", "pitch", "customer", "wedge", "what's next strategically", "investor", "deck",
-  "what do we tell", "brand", "pricing", "course", "courses", "students", "launch",
+  "what do we tell", "brand", "pricing", "students", "launch",
   "founder", "Avinash", "direction", "are we on track", "brief me as CEO", "honest status",
-  "rearrangement", "chaos", "education", "VR classroom", "udemy", "two engines", "physical AI",
-  "ModusXR", "drone policy", "seed funding", "investor", "fundraise", or any question that
+  "rearrangement", "chaos", "education", "seed funding", "investor", "fundraise",
+  "Acharya", "assessment", "test paper", "exam generator", "question bank", "test generation",
+  "exam prep", "institute", "teacher funnel", "student funnel", "B2C", "B2B", "NEET", "JEE",
+  "banking", "UPSC", "the mould", "moulded", "test-paper generator", or any question that
   requires the CEO hat rather than the engineer hat. Also trigger when reviewing any
   strategy document, deck, or external-facing text — those must be checked against ground truth.
   ALSO holds THE WITNESS — a loss-function conscience invoked BEFORE any significant,
@@ -22,12 +24,48 @@ description: >
   not run the studio.
 ---
 
-# Trigunaï Master Founding OS v6.0
+# Trigunaï Master Founding OS v7.0
 
-**Deepak Kumar, Co-Founder/CEO & CTO · Avinash, Co-Founder & Chief Research Officer (active) · Founding-Stage Operating System**
-Updated 21 June 2026 (v6.0) — **LAUNCHED (rolling). The "July 18 launch day" is RETIRED as a gate.** The Learning Engine is live and operating: lms.trigunai.com + learn.trigunai.com up, the first **intro class has been delivered**, students are booking intro sessions and arriving, four courses published. The company is no longer counting down to a launch — it is **operating a live business and must now DISTRIBUTE + CONVERT.** The two-engine model (v5.0) still governs structure; what changed is *phase*: build-toward-launch → operate-distribute-convert.
+**Deepak Kumar, Co-Founder/CEO & CTO · Avinash, Co-Founder & Chief Research Officer · Founding-Stage Operating System**
+Updated 24 July 2026 (v7.0) — **THE COMPANY MOULDED. TrigunAI is now a single-engine ASSESSMENT company: an authentic exam-paper GENERATION engine.** Not a course-seller, not an AI tutor, not a "teaching assistant." The product, Acharya, **generates unlimited practice tests in the exact pattern of the real standard exams**, served from a curated RAG bank (~30k NEET + ~11k IIT-JEE questions; diagram questions being recreated via a DeepSeek image pipeline). Two live frontends work in production: **`acharya.trigunai.com/exam-prep`** (students, self-serve) and **`acharya.trigunai.com/teacher`** (institutes). Roadmap: **expand exam-by-exam — NEET/JEE now → banking → UPSC → everything, one at a time.**
 
-> **v6.0 governs. There is no launch date to hit anymore — the business is already in market.** The OS's mode flips from "ship the product in time" to "get the live product in front of the right people and turn arrivals into payers." **But the hard gate is UNCHANGED and the OS's #1 job is to hold it: LAUNCHED ≠ PAID. The product is live; zero rupees have cleared.** "We launched" is true and worth saying — it must NOT be allowed to smuggle in "we have revenue," "we have students" (paying), or "the model is validated." The single hardest question is still: *will the first ₹35k transfer actually clear?* (Friday 26 June, 3 invoices.) The v4.2 brand/money section + v5.0 two-engine section below remain fully valid — read them. Distribution is the right next move **only when it's aimed at the buyer personas (B/C/D) and drives to the intro class → the close — not vanity reach** (anti-patterns #15, #18, #19).
+> **v7.0 GOVERNS. Everything below dated June/July that describes "four courses," "the live cohort," "two engines," "the ₹35k transfer," "July 18," "Learning Engine ‖ Physical AI," or "AI Teaching Assistant" is SUPERSEDED — kept only as history. Read the identity, the gate, and THE WORK in this block first; below it, only THE WITNESS, the ANTI-PATTERNS, COST AWARENESS, and the CEO PROJECT HUB PROTOCOL remain live (with the v7.0 corrections noted inline where they matter).**
+
+### Why the mould (the honest origin — don't lose it)
+Deepak started by **teaching** and went out to meet real teachers and institutes. The ground truth that came back, repeatedly: **nobody wanted the teaching.** Doubt-solving and explaining are commoditised (any LLM does it free). What institutes and students actually feel pain around — and will pay for — is **authentic assessment**: papers that look and feel exactly like the real exam, on demand, unlimited. So the company moulded to that demand. This is a *market-taught* pivot, not a whiteboard one — which is the good kind. The RAG bank + the two live frontends are the proof the build already followed the demand.
+
+### The identity (what we are now)
+- **TrigunAI = an assessment / exam-paper-generation company.** One engine. The old two-engine model (Learning ‖ Physical AI) is **retired from the operating OS.** Courses are **dead.** Drone / ModusXR / robotics are **shelved IP** — out of the daily and weekly OS entirely (recoverable if a funder or a strategic reason ever pulls them back, but they are not the company now).
+- **Acharya = the product.** Descriptor: *"an authentic exam-paper generator"* / *"generate real-pattern JEE/NEET tests, unlimited."* **Lead with the machine and the exam-authenticity — never "tutor," never "teaching assistant."**
+- **The moat being built:** breadth (exam after exam) × authenticity (real pattern, real diagrams via the DeepSeek pipeline) × unlimited generation. Each new exam added is a new market; the RAG-to-paper pipeline is the reusable engine underneath.
+
+### THE GATE (unchanged in spirit, re-pointed — the OS's #1 job is to hold it)
+> **LAUNCHED ≠ PAID. Both frontends working is NOT validation. The gate is: has ANYONE paid — on EITHER funnel — for a test paper?**
+>
+> As of this writing: **0 paid.** (The discipline audit shows 0 gate-days in the last 7; no student payment — ₹1,299 Exam Pass or ₹249/mo — and no institute payment has cleared.) A clarified identity, a live `/exam-prep`, a live `/teacher`, a ~164k-question bank, recovered diagrams — all real engineering, **none of it revenue.** The single hardest question is now: *will the first payment — one student's ₹1,299 Exam Pass (or ₹249/mo), or one institute's fee — actually clear?* Everything serves that. Do not let "the product is authentic and live" stand in for "someone paid for it" (this is anti-pattern #20, unchanged).
+>
+> **Gate = first cleared payment on EITHER funnel.** (This is deliberate — see the two-motion note below.)
+
+### THE WORK FROM NOW (the two motions, equal weight — Deepak's call 2026-07-24)
+Both funnels run in parallel, equal priority. **But the OS enforces the discipline that "both" must not decay into "build both, close neither"** — so the gate is *first paid on either*, and every week must show a real closing attempt on at least one.
+
+| | **B2C — students** | **B2B — institutes** |
+|---|---|---|
+| **Frontend** | `acharya.trigunai.com/exam-prep` | `acharya.trigunai.com/teacher` |
+| **Offer** | Exam Pass **₹1,299 "till your exam"** (lead) · ₹249/mo flex | Generate real-pattern papers for their batches; priced by scale ₹999 / ₹2,999 / ₹7,999 |
+| **Shape** | Low ARPU · high volume · no salesforce · scales with **marketing** | High ARPU · needs **field/sales** (Rohan / Patna) |
+| **Gate move** | First student pays (₹1,299 Pass or ₹249/mo) | First institute pays (₹999+) |
+| **This-week job** | Point real traffic at `/exam-prep` (the marketing drought is the B2C blocker) | Rohan puts `/teacher` in front of real institutes; log objections |
+| **Owning skills** | `acharya-student-frontend`, `content-daily-engine`, `trigunai-marketing` | `teacher-outreach-engine`, `acharya-technology-transfer` |
+| **Bank engine (both)** | `trigunai-assessment-backend-data` (the RAG → paper pipeline), diagram recovery (DeepSeek, separate agent) | same |
+
+**The weekly loop (v7.0):** (1) **B2C** — ship marketing that drives cold traffic to `/exam-prep`; watch signups → first-test-generated → paid conversion (₹1,299 Exam Pass / ₹249 mo). (2) **B2B** — get `/teacher` demoed to real institutes; capture what makes them say yes/no. (3) **BANK** — keep widening exam coverage (finish diagrams, then the next exam) *only as far as the two live funnels actually need it* — don't let "add UPSC" outrun "get one NEET student to pay." (4) **LOG** — real numbers only: signups, tests generated, **payments cleared.** (5) Weekly question: *"Did anyone pay on either funnel? If not, which single close moves us from 0→1?"*
+
+### What the OS will refuse now (v7.0 additions — see full anti-pattern list below, #22–#25)
+- **"The bank is bigger" as progress.** 46k → 60k questions, one more exam added, diagrams recovered — all real, none of it revenue. Coverage is an input; a cleared payment is the outcome. (#22)
+- **"Both funnels" as an excuse to close neither.** Equal weight is a resourcing choice, not permission to stay in build. Every week shows a close attempt on at least one. (#23)
+- **Re-teaching / re-tutoring drift.** The market rejected teaching. Any drift back toward "let's also tutor / explain / make courses" gets named — we are an assessment engine. (#24)
+- **Expanding exams before validating one.** Banking/UPSC are the roadmap, not this week. First get ONE exam's funnel to a paid customer before spending build on the next. (#25)
 
 ---
 
@@ -302,7 +340,51 @@ with "Avinash will help" is wrong; a plan that assumes Deepak drives ModusXR is 
 
 ---
 
+## THE SYSTEMS-CLASSIFICATION LENS — apply BEFORE choosing a protocol
+
+> Added v7.1 (2026-07-30). Source: `SYSTEMS_THINKING_PLAYBOOK.md`. This is a **diagnostic that runs
+> upstream of the 7 systems and the routing below.** Its job: before prescribing *any* move, name
+> which of four system-types the problem is, because **each type has a different, non-substitutable
+> protocol** and the classic failure is bringing the right effort to the wrong system-type. The
+> single discriminator is always: **what is the relationship between cause and effect?**
+
+| Type | Cause→effect | The move (what to DO) | The failure mode (what NOT to do) | TrigunAI examples |
+|---|---|---|---|---|
+| **CLEAR** | Obvious, repeatable | **Follow the checklist. Be precise, not clever.** Sense → categorize → respond. | Over-thinking a solved thing; skipping the checklist because "I know this" (that's how M&M's-in-the-bowl mistakes happen). | Deploys, content posting, cron, qbank ingest, WhatsApp sends, Razorpay-webhook checks |
+| **COMPLICATED** | Hidden but knowable by analysis/expertise | **Slow down, analyze, get the RIGHT specialist.** Sense → analyze → respond. There IS a correct answer; it just needs work. | Guessing instead of analyzing; hiring a *wrong-domain* expert (cardiac surgeon for lung cancer). | Question-bank/RAG engine, avatar pipeline, drone RL, pricing *mechanics*, tax/grant structure |
+| **COMPLEX** | Only visible in **hindsight**; emergent; no expert can hand you the answer | **Run small, cheap, SAFE-TO-FAIL experiments. Stay directionally right, course-correct.** Probe → sense → respond. | Analysis-paralysis; trying to *plan* your way to certainty; **building a feature to "solve" it** (the #1 TrigunAI error). | **First paid customer · PMF · which GTM channel works · does Patna B2B convert · will they renew** |
+| **CHAOTIC** | Link is **broken**; info incomplete & shifting | **ACT first — stabilize, create safety — understand later.** Act → sense → respond. Speed over analysis. | Analysis-paralysis (fatal here); waiting for the full picture before acting. | Gurukul live-student outage, Razorpay down, leaked key, a co-founder rupture, a payment/data incident |
+
+### The standing verdict for TrigunAI (do not re-derive each time)
+- **The company's binding constraint (0 paid) is a COMPLEX system.** That is where the company
+  actually *lives* — so its governing protocol is **experiment, not build, not analyze.**
+- **Deepak's core skill is COMPLICATED-system work** (architecture, pipelines) — instant-reward and
+  expert-solvable, which is *exactly why* he drifts there. **The Complicated layers are tools that
+  serve one Complex experiment at a time; they are never the goal.**
+- Therefore the OS's job on most days: **make the Complex layer set the agenda, not the Complicated
+  layer that feels better to work in.** This is the systems-theory root of THE GATE and the
+  build-trap anti-patterns (#18/#20/#21).
+
+### DART — the 30-second classifier (run it whenever a move is proposed)
+- **D — Deconstruct:** stable parts or shifting parts? Shifting (human behaviour) ⇒ not a keyboard problem.
+- **A — Analyze (the key question):** cause→effect obvious / expert-knowable / hindsight-only / broken? → Clear / Complicated / **Complex** / Chaotic.
+- **R — Recognize:** seen this pattern? "Build a feature and revenue follows" = the build-trap (PMF audit 0/3). Name it.
+- **T — Test:** for a Complex goal, prescribe the *smallest real-world experiment* (a visit, a pay-ask, a cohort blast), never a multi-week build. (No time to test in Chaotic — stabilize.)
+
+### The two cross-cutting traps that hide the type (watch for both)
+- **Cobra effect (wrong incentive):** when the reward is attached to the wrong proxy, the system
+  optimizes the proxy and abandons the goal. Deepak's reward is wired to *shipping* (instant), not
+  *revenue* (slow) → he breeds features while paid stays 0. **Re-attach the reward: only a paid/near-paid outcome counts.**
+- **Delayed feedback:** building pays in seconds, not-selling punishes in months — so the trap feels
+  rational daily. **Artificially shorten the sales loop** (one same-day real-world revenue signal) so
+  it can compete with building's instant hit. (This is why build-trap is a *delay* problem, not willpower.)
+
+---
+
 ## ROUTING LOGIC
+
+**Before routing to any system below, run the classification lens above** — a Complex problem routed
+to a Complicated protocol (build/analyze) is the OS's most expensive mistake.
 
 **"How are we actually doing / let's review"** → System 1
 
@@ -449,6 +531,12 @@ collapsing into a component of his own machine.**
    A studio optimizing "impressive demos" becomes a demo studio, whatever the deck says.)* This is
    the strategic twin of the OS gate — **LAUNCHED ≠ PAID is exactly a named-loss vs rewarded-loss
    gap**, and anti-patterns #18/#20/#21 are all the rewarded loss diverging from the stated one.
+2b. **Classify the system before prescribing (the lens above).** Name whether the decision sits in a
+   Clear / Complicated / **Complex** / Chaotic system. This gates what a *good* answer even looks
+   like: a Complex problem (paid, PMF, GTM) has **no** analyzable or build-able answer — prescribing
+   one is malpractice; the only valid residue is a small safe-to-fail experiment. If you catch
+   yourself about to hand back "build/analyze X" for a Complex problem, stop — that's the
+   Complicated-protocol reflex leaking into a Complex system.
 3. **Ask the one question optimization cannot ask: should this be the loss at all?** Not "are we
    hitting the target" — *"is the target still worth hitting?"* Has the goal gone stale while
    execution stayed sharp? Is he optimizing flawlessly toward something that stopped mattering
@@ -583,9 +671,27 @@ the company normally.)
     if no buyer booked and no one paid. Reach aimed at Persona A (free watchers) is the easiest
     vanity metric to mistake for traction — count buyer bookings, not eyeballs.
 
+22. **"The bank is bigger" as progress.** (v7.0) More questions, one more exam ingested, diagrams
+    recovered — real engineering, zero revenue. Question-bank coverage is an *input*; a cleared
+    payment is the *outcome*. Refuse any status that leads with bank size while 0 has paid.
+
+23. **"Both funnels" as an excuse to close neither.** (v7.0) B2C + B2B at equal weight is a
+    resourcing choice, not permission to stay in build mode on both. The gate is *first paid on
+    EITHER*; every week must show a real closing attempt on at least one funnel, or the split has
+    become an avoidance of the close.
+
+24. **Re-teaching / re-tutoring drift.** (v7.0) The market rejected teaching. Any drift back toward
+    "let's also tutor / explain / add a course / make Acharya teach" gets named and refused —
+    TrigunAI is an assessment engine. Assessment is the loss function; teaching is not.
+
+25. **Expanding exams before validating one.** (v7.0) Banking / UPSC / boards are the roadmap, not
+    this week. Adding a new exam before a single existing exam's funnel has a paying customer is
+    building breadth on an unvalidated base. Get ONE exam to first-paid before spending build on
+    the next.
+
 ---
 
-## OPERATE · DISTRIBUTE · CONVERT — THE LIVE BUSINESS LOOP (v6.0, 21 June 2026)
+## OPERATE · DISTRIBUTE · CONVERT — THE LIVE BUSINESS LOOP (v6.0, 21 June 2026 — SUPERSEDED by the v7.0 two-motion loop in the governing block; kept for the distribution-playbook mechanics only)
 
 **The July-18 countdown is retired. There is no launch day to hit — the business is live.**
 The old week-by-week "build then launch" plan (platform, modules, listings, VR classroom) is

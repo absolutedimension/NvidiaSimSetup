@@ -8,6 +8,8 @@
 <link rel="icon" href="/static/brand/favicon-32.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
  :root{--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;
    --card:#fff;--good:#1f8b52;--goodbg:#E9F6EE;--bad:#C23B22;--badbg:#FBEBE7;--amber:#E0972F;--amberbg:#FFF3E0;--cream:#FAF5EC;
@@ -51,6 +53,16 @@
  .spark{display:flex;align-items:flex-end;gap:5px;height:44px;margin-top:9px}
  .spark i{flex:1;background:linear-gradient(180deg,#E8934A,#C2591F);border-radius:4px 4px 0 0;min-height:3px}
  .note{font-size:11.5px;color:var(--faint);text-align:center;margin-top:6px}
+ /* RED BOX — the "sure & wrong" blind spots (the flagship confidence signal) */
+ .redbox{background:linear-gradient(135deg,#FBEBE7,#FBE0DA);border:1.5px solid #E8B4A6;border-radius:15px;padding:15px 16px}
+ .redbox .h{font-family:var(--serif);font-weight:800;font-size:15px;color:#9c3220;display:flex;align-items:center;gap:7px}
+ .redbox .sub{font-size:12px;color:#9c3220;opacity:.9;margin-top:4px;line-height:1.5}
+ .redbox a.rq{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.62);border:1px solid #E8B4A6;border-radius:11px;padding:10px 12px;margin-top:9px;text-decoration:none;color:var(--ink)}
+ .redbox a.rq .q{flex:1;min-width:0;font-size:12.5px;font-weight:600;line-height:1.4;overflow-wrap:anywhere}
+ .redbox a.rq .go{flex:0 0 auto;color:#9c3220;font-weight:800}
+ .calib{border-radius:12px;padding:11px 13px;font-size:12.5px;font-weight:700;line-height:1.5;margin-top:11px}
+ .calib.good{background:var(--goodbg);color:var(--good)} .calib.warn{background:var(--amberbg);color:#9a5a12} .calib.bad{background:var(--badbg);color:#9c3220}
+ .calib .cn{display:block;font-weight:600;color:var(--muted);margin-top:4px;font-size:11.5px}
 </style>
 </head>
 <body>
@@ -67,6 +79,22 @@
       <div class="stat"><div class="v">{{ avg }}%</div><div class="k">average score</div></div>
       <div class="stat"><div class="v">{{ overall }}%</div><div class="k">topic mastery</div></div>
     </div>
+
+    {# ---- RED BOX: the "sure & wrong" blind spots + calibration verdict ---- #}
+    {% if redbox or calib %}
+      <div class="redbox">
+        <div class="h">🧠 Your blind spots</div>
+        {% if redbox %}
+          <div class="sub">You were <b>sure</b> — and wrong. A confident mistake stays hidden until it's tested, so fix these first.</div>
+          {% for r in redbox %}
+            <a class="rq" href="{{ r.href }}"><span class="q">{{ r.q }}</span><span class="go">›</span></a>
+          {% endfor %}
+        {% else %}
+          <div class="sub">No “sure &amp; wrong” answers yet — your confidence is tracking your knowledge. Keep it honest.</div>
+        {% endif %}
+        {% if calib %}<div class="calib {{ calib.tone }}">{{ calib.text }}{% if calib_note %}<span class="cn">{{ calib_note }}</span>{% endif %}</div>{% endif %}
+      </div>
+    {% endif %}
 
     {% if trend and trend|length > 1 %}
       <div class="card"><div class="h2" style="margin:0">Your last {{ trend|length }} tests</div>

@@ -1,0 +1,360 @@
+{
+  "file": "dj_engine/goa-gil/05 - Goa Gil - Shri Maharaj [2011] (Full Album).mp3",
+  "duration_s": 4349.7386848072565,
+  "bin_s": 30.0,
+  "bands": [
+    "sub",
+    "kick+bass",
+    "bassline",
+    "drone",
+    "stab",
+    "hats"
+  ],
+  "sections": [
+    {
+      "start_s": 0.0,
+      "end_s": 60.0,
+      "dur_s": 60.0,
+      "energy": 0.4,
+      "elements": {
+        "sub": 0.1,
+        "kick+bass": 0.19,
+        "bassline": 0.49,
+        "drone": 0.52,
+        "stab": 0.25,
+        "hats": 0.19
+      },
+      "label": "breakdown (no kick)"
+    },
+    {
+      "start_s": 60.0,
+      "end_s": 540.0,
+      "dur_s": 480.0,
+      "energy": 0.79,
+      "elements": {
+        "sub": 0.46,
+        "kick+bass": 0.68,
+        "bassline": 0.59,
+        "drone": 0.53,
+        "stab": 0.61,
+        "hats": 0.43
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 540.0,
+      "end_s": 630.0,
+      "dur_s": 90.0,
+      "energy": 0.98,
+      "elements": {
+        "sub": 1.0,
+        "kick+bass": 0.76,
+        "bassline": 0.61,
+        "drone": 0.43,
+        "stab": 0.39,
+        "hats": 0.39
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 630.0,
+      "end_s": 750.0,
+      "dur_s": 120.0,
+      "energy": 0.86,
+      "elements": {
+        "sub": 0.77,
+        "kick+bass": 0.58,
+        "bassline": 0.6,
+        "drone": 0.61,
+        "stab": 0.67,
+        "hats": 0.51
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 750.0,
+      "end_s": 870.0,
+      "dur_s": 120.0,
+      "energy": 0.98,
+      "elements": {
+        "sub": 1.0,
+        "kick+bass": 0.76,
+        "bassline": 0.69,
+        "drone": 0.56,
+        "stab": 0.47,
+        "hats": 0.43
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 870.0,
+      "end_s": 990.0,
+      "dur_s": 120.0,
+      "energy": 0.88,
+      "elements": {
+        "sub": 0.62,
+        "kick+bass": 0.59,
+        "bassline": 0.73,
+        "drone": 0.79,
+        "stab": 0.71,
+        "hats": 0.55
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 990.0,
+      "end_s": 1140.0,
+      "dur_s": 150.0,
+      "energy": 0.84,
+      "elements": {
+        "sub": 0.28,
+        "kick+bass": 0.6,
+        "bassline": 1.0,
+        "drone": 0.99,
+        "stab": 0.78,
+        "hats": 0.54
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 1140.0,
+      "end_s": 1500.0,
+      "dur_s": 360.0,
+      "energy": 0.85,
+      "elements": {
+        "sub": 0.3,
+        "kick+bass": 0.68,
+        "bassline": 0.83,
+        "drone": 0.91,
+        "stab": 0.82,
+        "hats": 0.46
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 1500.0,
+      "end_s": 1860.0,
+      "dur_s": 360.0,
+      "energy": 0.89,
+      "elements": {
+        "sub": 0.33,
+        "kick+bass": 0.78,
+        "bassline": 0.8,
+        "drone": 0.9,
+        "stab": 0.82,
+        "hats": 0.41
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 1860.0,
+      "end_s": 1980.0,
+      "dur_s": 120.0,
+      "energy": 0.86,
+      "elements": {
+        "sub": 0.54,
+        "kick+bass": 0.78,
+        "bassline": 0.44,
+        "drone": 0.73,
+        "stab": 0.63,
+        "hats": 0.39
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 1980.0,
+      "end_s": 2040.0,
+      "dur_s": 60.0,
+      "energy": 0.78,
+      "elements": {
+        "sub": 0.41,
+        "kick+bass": 0.68,
+        "bassline": 0.36,
+        "drone": 0.57,
+        "stab": 0.83,
+        "hats": 0.52
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2040.0,
+      "end_s": 2700.0,
+      "dur_s": 660.0,
+      "energy": 0.89,
+      "elements": {
+        "sub": 0.58,
+        "kick+bass": 0.83,
+        "bassline": 0.53,
+        "drone": 0.66,
+        "stab": 0.68,
+        "hats": 0.56
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2700.0,
+      "end_s": 2760.0,
+      "dur_s": 60.0,
+      "energy": 0.89,
+      "elements": {
+        "sub": 0.68,
+        "kick+bass": 0.87,
+        "bassline": 0.52,
+        "drone": 0.32,
+        "stab": 0.57,
+        "hats": 0.83
+      },
+      "label": "PEAK: kick+bass+bassline+stab+hats"
+    },
+    {
+      "start_s": 2760.0,
+      "end_s": 2820.0,
+      "dur_s": 60.0,
+      "energy": 0.9,
+      "elements": {
+        "sub": 0.63,
+        "kick+bass": 0.82,
+        "bassline": 0.59,
+        "drone": 0.84,
+        "stab": 0.72,
+        "hats": 0.57
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2820.0,
+      "end_s": 2970.0,
+      "dur_s": 150.0,
+      "energy": 0.95,
+      "elements": {
+        "sub": 0.31,
+        "kick+bass": 0.98,
+        "bassline": 0.61,
+        "drone": 0.69,
+        "stab": 0.83,
+        "hats": 0.91
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2970.0,
+      "end_s": 3210.0,
+      "dur_s": 240.0,
+      "energy": 0.9,
+      "elements": {
+        "sub": 0.33,
+        "kick+bass": 0.86,
+        "bassline": 0.58,
+        "drone": 0.66,
+        "stab": 0.89,
+        "hats": 0.97
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3210.0,
+      "end_s": 3300.0,
+      "dur_s": 90.0,
+      "energy": 0.85,
+      "elements": {
+        "sub": 0.26,
+        "kick+bass": 0.74,
+        "bassline": 0.46,
+        "drone": 0.8,
+        "stab": 0.82,
+        "hats": 0.89
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3300.0,
+      "end_s": 3570.0,
+      "dur_s": 270.0,
+      "energy": 0.84,
+      "elements": {
+        "sub": 0.63,
+        "kick+bass": 0.69,
+        "bassline": 0.4,
+        "drone": 0.85,
+        "stab": 0.79,
+        "hats": 0.63
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3570.0,
+      "end_s": 3660.0,
+      "dur_s": 90.0,
+      "energy": 0.79,
+      "elements": {
+        "sub": 0.47,
+        "kick+bass": 0.67,
+        "bassline": 0.38,
+        "drone": 0.8,
+        "stab": 0.84,
+        "hats": 0.63
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3660.0,
+      "end_s": 3780.0,
+      "dur_s": 120.0,
+      "energy": 0.88,
+      "elements": {
+        "sub": 0.6,
+        "kick+bass": 0.71,
+        "bassline": 0.43,
+        "drone": 0.96,
+        "stab": 0.89,
+        "hats": 0.66
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3780.0,
+      "end_s": 3960.0,
+      "dur_s": 180.0,
+      "energy": 0.94,
+      "elements": {
+        "sub": 0.51,
+        "kick+bass": 0.96,
+        "bassline": 0.59,
+        "drone": 0.44,
+        "stab": 0.51,
+        "hats": 0.41
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3960.0,
+      "end_s": 4260.0,
+      "dur_s": 300.0,
+      "energy": 0.92,
+      "elements": {
+        "sub": 0.47,
+        "kick+bass": 0.92,
+        "bassline": 0.55,
+        "drone": 0.58,
+        "stab": 0.53,
+        "hats": 0.34
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab"
+    },
+    {
+      "start_s": 4260.0,
+      "end_s": 4350.0,
+      "dur_s": 90.0,
+      "energy": 0.42,
+      "elements": {
+        "sub": 0.04,
+        "kick+bass": 0.26,
+        "bassline": 0.37,
+        "drone": 0.56,
+        "stab": 0.19,
+        "hats": 0.1
+      },
+      "label": "breakdown (no kick)"
+    }
+  ]
+}

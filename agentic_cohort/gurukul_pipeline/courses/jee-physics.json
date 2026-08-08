@@ -1,0 +1,148 @@
+{
+  "course_id": "jee-physics",
+  "name": "JEE Physics",
+  "order": [
+    "kinematics_equations",
+    "projectile_motion",
+    "newtons_second_law",
+    "friction",
+    "work_energy_theorem",
+    "circular_motion",
+    "rotational_inertia",
+    "gravitation",
+    "simple_harmonic_motion",
+    "thermodynamics_first_law",
+    "kinetic_theory",
+    "coulombs_law",
+    "gauss_law",
+    "ohms_law",
+    "magnetic_lorentz_force",
+    "electromagnetic_induction",
+    "lenz_law",
+    "refraction_lens",
+    "wave_interference",
+    "photoelectric_effect"
+  ],
+  "concepts": {
+    "kinematics_equations": {
+      "module": 1,
+      "hook": "You throw a ball straight up. At the very top, its velocity is zero — but what about its acceleration? Most students say zero too. Predict, then we'll check.",
+      "recall": "Write the three equations of motion for constant acceleration.",
+      "answer": "v = u + at; s = ut + ½at²; v² = u² + 2as"
+    },
+    "projectile_motion": {
+      "module": 1,
+      "hook": "Fire a bullet horizontally and drop an identical one from the same height at the same instant. Which hits the ground first? Bet you'll be surprised — guess first.",
+      "recall": "Why do the horizontal and vertical motions of a projectile not affect each other?",
+      "answer": "they're independent — horizontal velocity is constant, vertical has g; only time is shared"
+    },
+    "newtons_second_law": {
+      "module": 2,
+      "hook": "Push a shopping cart, then push a loaded truck with the same force. The cart flies, the truck barely moves. F is the same — so what actually changed? Name it before I tell you.",
+      "recall": "State Newton's second law in its most useful form.",
+      "answer": "F_net = ma (or F = dp/dt) — net force equals rate of change of momentum"
+    },
+    "friction": {
+      "module": 2,
+      "hook": "A block sits still on a slope. No one's pushing it, yet gravity pulls it down the incline. What's holding it? And why does it suddenly slip past a certain angle? Predict the trick.",
+      "recall": "How does static friction differ from kinetic friction, and which is larger?",
+      "answer": "static self-adjusts up to μ_s N and is larger; kinetic is fixed at μ_k N once sliding starts"
+    },
+    "work_energy_theorem": {
+      "module": 2,
+      "hook": "You carry a heavy bag across a flat room and put it down. Physics says you did ZERO work on it. Feels wrong, right? Guess why before I explain.",
+      "recall": "State the work-energy theorem in one line.",
+      "answer": "net work done on a body = change in its kinetic energy (W_net = ΔKE)"
+    },
+    "circular_motion": {
+      "module": 2,
+      "hook": "A car turns a corner at steady speed — speedometer never changes. Yet it IS accelerating. How can something at constant speed accelerate? Take a guess.",
+      "recall": "What is centripetal acceleration, and which way does it point?",
+      "answer": "a = v²/r, directed toward the centre — it changes direction, not speed"
+    },
+    "rotational_inertia": {
+      "module": 3,
+      "hook": "A solid disc and a hollow ring of the SAME mass and radius roll down a ramp. One wins the race every time. Which — and why? Predict before we roll them.",
+      "recall": "What does moment of inertia tell you, and what does it depend on?",
+      "answer": "it's rotational mass — resistance to angular acceleration; depends on mass AND how far it's spread from the axis"
+    },
+    "gravitation": {
+      "module": 3,
+      "hook": "Astronauts float in the ISS — everyone says 'no gravity in space'. But gravity up there is nearly as strong as on the ground. So why do they float? Guess the real reason.",
+      "recall": "State Newton's law of universal gravitation.",
+      "answer": "F = G m₁m₂ / r² — attraction ∝ product of masses, ∝ 1/distance squared"
+    },
+    "simple_harmonic_motion": {
+      "module": 3,
+      "hook": "Pull a spring twice as far and let go. Does it take twice as long to come back? Almost everyone says yes. Predict, then we'll test it.",
+      "recall": "What is the defining condition for simple harmonic motion?",
+      "answer": "restoring force ∝ displacement and opposite to it (a = -ω²x); period is independent of amplitude"
+    },
+    "thermodynamics_first_law": {
+      "module": 4,
+      "hook": "You can heat a gas without a flame — just by squeezing it fast. Where does that heat come from if nothing burned? Take a guess.",
+      "recall": "State the first law of thermodynamics.",
+      "answer": "ΔU = Q − W — heat added minus work done by the gas changes its internal energy"
+    },
+    "kinetic_theory": {
+      "module": 4,
+      "hook": "Temperature isn't really 'hotness' — it's secretly measuring something the molecules are doing. What single thing does temperature actually measure? Guess before I reveal it.",
+      "recall": "In kinetic theory, what does absolute temperature measure?",
+      "answer": "average kinetic energy of the molecules (½mv²_avg ∝ T); KE_avg = (3/2)kT"
+    },
+    "coulombs_law": {
+      "module": 5,
+      "hook": "Two charges attract with force F. Now double the distance between them. Is the new force half? Most guess half — it's not even close. Predict.",
+      "recall": "State Coulomb's law and how force scales with distance.",
+      "answer": "F = k q₁q₂ / r² — doubling r cuts force to one QUARTER (inverse-square)"
+    },
+    "gauss_law": {
+      "module": 5,
+      "hook": "Stand inside a hollow charged metal sphere. There's charge all around you — yet the electric field where you stand is exactly ZERO. How can that be? Guess the reason.",
+      "recall": "What does Gauss's law relate, and why is it powerful?",
+      "answer": "net flux through a closed surface = q_enclosed/ε₀; only enclosed charge matters — exploits symmetry to find E fast"
+    },
+    "ohms_law": {
+      "module": 5,
+      "hook": "You double a wire's length AND double its thickness. Does its resistance stay the same? It feels like it should cancel out — predict before we check.",
+      "recall": "State Ohm's law and what resistance depends on.",
+      "answer": "V = IR; R = ρL/A — grows with length, falls with cross-section area"
+    },
+    "magnetic_lorentz_force": {
+      "module": 6,
+      "hook": "Shoot a charged particle straight along a magnetic field line. How much does the field push it? Everyone expects a big kick — the real answer surprises people. Guess.",
+      "recall": "Write the magnetic force on a moving charge and when it's zero.",
+      "answer": "F = qv × B — max when v ⊥ B, ZERO when v is parallel to B; force never does work (always ⊥ to v)"
+    },
+    "electromagnetic_induction": {
+      "module": 6,
+      "hook": "Hold a magnet perfectly still inside a coil — strong field, but the voltmeter reads zero. Move it and voltage appears. So what actually creates the voltage? Predict.",
+      "recall": "State Faraday's law of electromagnetic induction.",
+      "answer": "induced EMF = − rate of change of magnetic flux (ε = −dΦ/dt); it's the CHANGE that matters, not the field itself"
+    },
+    "lenz_law": {
+      "module": 6,
+      "hook": "Drop a strong magnet down a copper pipe. It falls in slow motion, like through honey — copper isn't even magnetic. What's braking it? Guess before I explain.",
+      "recall": "What does Lenz's law tell you about the direction of induced current?",
+      "answer": "induced current opposes the change that caused it — it's conservation of energy in disguise"
+    },
+    "refraction_lens": {
+      "module": 7,
+      "hook": "A straw in a glass of water looks bent at the surface — but the straw is perfectly straight. What's actually bending? Take a guess before we trace the rays.",
+      "recall": "Why does light bend when entering a denser medium, and which way?",
+      "answer": "its speed drops, so it bends TOWARD the normal (Snell's law: n₁sinθ₁ = n₂sinθ₂)"
+    },
+    "wave_interference": {
+      "module": 7,
+      "hook": "Shine light through two tiny slits and you'd expect two bright lines. Instead you get many bright and DARK bands — light plus light making darkness. How? Predict the mechanism.",
+      "recall": "What condition on path difference gives a bright fringe in Young's double-slit?",
+      "answer": "path difference = nλ (whole wavelengths) → constructive; (n+½)λ → dark (destructive)"
+    },
+    "photoelectric_effect": {
+      "module": 7,
+      "hook": "Shine a super-bright red lamp on a metal — no electrons come out, no matter how bright. A dim blue light ejects them instantly. Brightness loses to colour. Why? Guess.",
+      "recall": "What does the photoelectric effect prove about light, and what sets the electron's energy?",
+      "answer": "light is quantised in photons (E = hf); frequency (not intensity) must exceed the work function ϕ — KE_max = hf − ϕ"
+    }
+  }
+}

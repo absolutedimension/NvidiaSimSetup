@@ -1,0 +1,54 @@
+{
+ "title": "Flux Through Charged Disc",
+ "q_prose": "A charged circular disc has radius R and surface charge density sigma zero times one minus r by R. Find phi zero by phi, where phi zero is flux through a large enclosing sphere and phi is flux through a concentric sphere of radius R by four.",
+ "given_eq": "$\\sigma(r)=\\sigma_0\\left(1-\\frac{r}{R}\\right)$",
+ "q_reminder": "Find the ratio of the two electric fluxes.",
+ "q_narration": "A circular disc has non uniform surface charge density, decreasing linearly with distance from the centre. We need the ratio of flux through a large sphere to flux through a smaller concentric sphere of radius capital R by four. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Use Gauss Law",
+   "eqs": [
+    "$\\phi=\\frac{Q_{\\mathrm{enc}}}{\\varepsilon_0}$"
+   ],
+   "narration": "By Gauss law, flux through any closed surface depends only on the charge enclosed. So the ratio of fluxes will be the ratio of enclosed charges."
+  },
+  {
+   "label": "Step 2 — Charge Inside Radius a",
+   "eqs": [
+    "$Q(a)=2\\pi\\sigma_0\\left[\\frac{r^2}{2}-\\frac{r^3}{3R}\\right]_0^a$",
+    "$Q(a)=2\\pi\\sigma_0\\left(\\frac{a^2}{2}-\\frac{a^3}{3R}\\right)$"
+   ],
+   "narration": "Take a thin circular ring of radius r. Its area is proportional to two pi r d r, so after adding all rings up to radius a, we get this charge formula."
+  },
+  {
+   "label": "Step 3 — Total Charge",
+   "eqs": [
+    "$Q(R)=2\\pi\\sigma_0\\left(\\frac{R^2}{2}-\\frac{R^2}{3}\\right)$",
+    "$Q(R)=\\frac{\\pi\\sigma_0R^2}{3}$"
+   ],
+   "narration": "The large sphere encloses the full disc, so put a equal to capital R. This gives the total charge on the disc."
+  },
+  {
+   "label": "Step 4 — Small Sphere Charge",
+   "eqs": [
+    "$Q\\left(\\frac{R}{4}\\right)=2\\pi\\sigma_0\\left(\\frac{R^2}{32}-\\frac{R^2}{192}\\right)$",
+    "$Q\\left(\\frac{R}{4}\\right)=\\frac{5\\pi\\sigma_0R^2}{96}$"
+   ],
+   "narration": "The smaller sphere cuts the disc in a circular region of radius capital R by four. So it encloses only the charge lying within that central region."
+  },
+  {
+   "label": "Step 5 — Take Ratio",
+   "eqs": [
+    "$\\frac{\\phi_0}{\\phi}=\\frac{Q(R)}{Q\\left(\\frac{R}{4}\\right)}$",
+    "$\\frac{\\phi_0}{\\phi}=\\frac{\\frac{\\pi\\sigma_0R^2}{3}}{\\frac{5\\pi\\sigma_0R^2}{96}}=\\frac{32}{5}=6.4$"
+   ],
+   "narration": "The epsilon zero factor cancels out, along with pi, sigma zero, and capital R squared. The required ratio is thirty two by five, which is six point four."
+  }
+ ],
+ "answer_eq": "$\\frac{\\phi_0}{\\phi}=6.4$",
+ "answer_label": "Correct option: 6.4",
+ "answer_narration": "Therefore, the ratio of the two fluxes is six point four. For more clear step by step exam solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Advanced · Physics · Electrostatics",
+ "options": [],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

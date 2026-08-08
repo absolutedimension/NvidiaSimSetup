@@ -34,13 +34,13 @@
 ## 13:00–14:00 · Lunch + LOG (while fresh)
 - [ ] Add each real conversation as a row in `03_CONVERSATION_LOG.md` — **verbatim objection** is the point.
 
-## 14:00–16:00 · Cold call block 2 + Priyanshu(caller) debrief
-- [ ] Priyanshu (caller) works Q6–Q10 in parallel — verify their numbers on Justdial first (2 min each), then dial.
+## 14:00–16:00 · Cold call block 2
+- [ ] The field rep works Q6–Q10 in parallel — verify the numbers on Justdial first (2 min each), then dial.
 - [ ] You: follow up any "call me later" from the morning. Hard stop 16:00 (teachers start evening batches).
 
 ## 16:00–17:00 · Close the loop
 - [ ] `python3 progress.py log --date 2026-07-03 --queued 6 --conversations N --qualified N --pilots-booked N --paid 0 --revenue 0 --note "..."`
-- [ ] Debrief Priyanshu; log his conversations too.
+- [ ] Log the field rep's conversations too.
 
 ## 17:00–19:00 · Pilot block (ONLY if Pilot #1 booked)
 - [ ] Load `maintain-trigunai-system` first. Stand up the Biology/NEET concept bank (`add-trigunai-course`) — scp only, no bridge restart. Set the teacher's brand name in Acharya's intro.

@@ -1,0 +1,60 @@
+{
+ "title": "Photoelectric Stopping Potential",
+ "q_prose": "A metal has stopping potential 6.0 V for light of wavelength lambda. For wavelength four times larger and half intensity, the stopping potential is 0.6 V. Find the first wavelength and work function.",
+ "given_eq": "$\\frac{hc}{e}=1.24\\times10^{-6}\\mathrm{JmC}^{-1}$",
+ "q_reminder": "Find the first wavelength and the work function.",
+ "q_narration": "Light gives a stopping potential of six point zero volts. When the wavelength is made four times and the intensity is halved, the stopping potential becomes zero point six volts. We need the first wavelength and the work function; let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Write equations",
+   "eqs": [
+    "$\\frac{hc}{e\\lambda_1}=\\phi+6.0$",
+    "$\\frac{hc}{e\\left(4\\lambda_1\\right)}=\\phi+0.6$"
+   ],
+   "narration": "Use Einstein photoelectric equation in electron volt form. The stopping potential gives the maximum kinetic energy in electron volts. Intensity changes the number of electrons, not the stopping potential."
+  },
+  {
+   "label": "Step 2 — Define photon energy",
+   "eqs": [
+    "$X=\\frac{hc}{e\\lambda_1}$",
+    "$X=\\phi+6.0,\\frac{X}{4}=\\phi+0.6$"
+   ],
+   "narration": "Let the photon energy of the first source be X. Since the second wavelength is four times larger, its photon energy becomes one fourth of X."
+  },
+  {
+   "label": "Step 3 — Solve for X",
+   "eqs": [
+    "$X-\\frac{X}{4}=6.0-0.6$",
+    "$\\frac{3X}{4}=5.4\\Rightarrow X=7.2$"
+   ],
+   "narration": "Subtract the two equations to eliminate the work function. This gives X equal to seven point two electron volts."
+  },
+  {
+   "label": "Step 4 — Find wavelength",
+   "eqs": [
+    "$\\lambda_1=\\frac{1.24\\times10^{-6}}{7.2}$",
+    "$\\lambda_1\\approx1.72\\times10^{-7}\\mathrm{m}$"
+   ],
+   "narration": "Now use the given value of h c by e. Dividing by seven point two gives the first wavelength."
+  },
+  {
+   "label": "Step 5 — Work function",
+   "eqs": [
+    "$\\phi=X-6.0$",
+    "$\\phi=7.2-6.0=1.20\\mathrm{eV}$"
+   ],
+   "narration": "Finally, the work function is photon energy minus the stopping potential energy for the first source."
+  }
+ ],
+ "answer_eq": "$\\lambda_1=1.72\\times10^{-7}\\mathrm{m},\\phi=1.20\\mathrm{eV}$",
+ "answer_label": "Correct option:  A",
+ "answer_narration": "So the wavelength of the first source is one point seven two into ten power minus seven metre, and the work function is one point two zero electron volt. Correct option is A. For more clear exam solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Advanced · Physics · Modern Physics",
+ "options": [
+  "$1.72 \\times 10^{-7} \\mathrm{~m}, 1.20 \\mathrm{eV}$",
+  "$1.72 \\times 10^{-7} \\mathrm{~m}, 5.60 \\mathrm{eV}$",
+  "$3.78 \\times 10^{-7} \\mathrm{~m}, 5.60 \\mathrm{eV}$",
+  "$3.78 \\times 10^{-7} \\mathrm{~m}, 1.20 \\mathrm{eV}$"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

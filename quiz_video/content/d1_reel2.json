@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Chemistry",
+ "subject": "Chemistry",
+ "chapter": "p Block Elements (Group 15, 16, 17 & 18)",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Chemistry. p Block Elements (Group 15, 16, 17 & 18). 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on p Block Elements (Group 15, 16, 17 & 18)? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "A mixture of salt when heated with conc. H 2 S O 4 and M n O 2 , brown fumes are formed due to presence of which ion?",
+   "options": [
+    "B r -",
+    "N O 3 -",
+    "C l -",
+    "I -"
+   ],
+   "answer": 0,
+   "explain": "It is a lab method for the preparation of B r 2 e.g.",
+   "voice_q": "A mixture of salt when heated with conc. H 2 S O 4 and M n O 2 , brown fumes are formed due to presence of which ion? Five seconds... think!",
+   "voice_a": "The answer is A — B r -. It is a lab method for the preparation of B r 2 e.g."
+  },
+  {
+   "type": "mcq",
+   "q": "A + N a N O 2 â N 2 O + N a C l + 2 H 2 O , In this reaction A can be",
+   "options": [
+    "H 2 S O 4 dil.",
+    "H 3 P O 4",
+    "N H 2 O H . H C l",
+    "dil. HCl"
+   ],
+   "answer": 2,
+   "explain": "Here A is N H 2 O H .",
+   "voice_q": "A + N a N O 2 â N 2 O + N a C l + 2 H 2 O , In this reaction A can be Five seconds... think!",
+   "voice_a": "The answer is C — N H 2 O H . H C l. Here A is N H 2 O H ."
+  },
+  {
+   "type": "mcq",
+   "q": "A s F 5 reacts with X e F 4 to form an adduct. The shapes of cation and anion in the adduct are respectively.",
+   "options": [
+    "square planar, octahedral",
+    "T-shaped, octahedral",
+    "square pyramidal, octahedral",
+    "square planar, trigonal bipyramidal"
+   ],
+   "answer": 1,
+   "explain": "A s F 5 reacts with X e F 4 to form an adduct.",
+   "voice_q": "A s F 5 reacts with X e F 4 to form an adduct. The shapes of cation and anion in the adduct are respectively. Five seconds... think!",
+   "voice_a": "The answer is B — T-shaped, octahedral. A s F 5 reacts with X e F 4 to form an adduct."
+  }
+ ]
+}

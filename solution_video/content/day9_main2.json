@@ -1,0 +1,60 @@
+{
+ "title": "Complex Linear Solutions",
+ "q_prose": "Let s, t, and r be non-zero complex numbers. Let L be the solution set of s z plus t times conjugate of z plus r equals zero. Decide which statements A to D are true.",
+ "given_eq": "$s z+t z^*+r=0$",
+ "q_reminder": "Find all true statements.",
+ "q_narration": "We are given a complex linear equation involving z and its conjugate. We must decide which of the four statements about its solution set are true. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Split into real parts",
+   "eqs": [
+    "$s=a+i b, t=c+i d, r=e+i f$",
+    "$\\left(a+c\\right)x+\\left(d-b\\right)y+e=0, \\left(b+d\\right)x+\\left(a-c\\right)y+f=0$"
+   ],
+   "narration": "Write all three complex constants using real and imaginary parts. After substituting z equal to x plus eye y, comparing real and imaginary parts gives two real linear equations in x and y."
+  },
+  {
+   "label": "Step 2 — Compute determinant",
+   "eqs": [
+    "$D=\\left(a+c\\right)\\left(a-c\\right)-\\left(d-b\\right)\\left(b+d\\right)$",
+    "$D=a^2+b^2-c^2-d^2=|s|^2-|t|^2$"
+   ],
+   "narration": "The number of solutions is controlled by the determinant of this two by two real system. On simplifying, the determinant is modulus of s squared minus modulus of t squared."
+  },
+  {
+   "label": "Step 3 — Check A and B",
+   "eqs": [
+    "$L\\mathrm{ unique}\\Rightarrow D\\mathrm{ nonzero}\\Rightarrow |s|\\mathrm{ and }|t|\\mathrm{ unequal}$",
+    "$s=1, t=1, r=i\\Rightarrow z+z^*+i=0\\Rightarrow L=\\mathrm{empty}$"
+   ],
+   "narration": "If there is exactly one solution, the determinant must be nonzero, so the moduli of s and t cannot be equal. Thus A is true. But equal moduli only make the determinant zero; the system may still be inconsistent. For example, z plus its conjugate plus eye equals zero gives two x plus eye equals zero, which is impossible. So B is false."
+  },
+  {
+   "label": "Step 4 — Circle intersection",
+   "eqs": [
+    "$|z-1+i|=5$",
+    "$\\mathrm{line}\\cap\\mathrm{circle}\\Rightarrow 0, 1, \\mathrm{or}\\ 2\\ \\mathrm{points}$"
+   ],
+   "narration": "The solution set of two real linear equations can be empty, a single point, or a straight line. A point or an empty set meets the circle in at most one point, and a line meets a circle in at most two points. Therefore C is true."
+  },
+  {
+   "label": "Step 5 — More than one solution",
+   "eqs": [
+    "$|L|>1\\Rightarrow D=0\\ \\mathrm{and}\\ \\mathrm{consistent}$",
+    "$D=0\\ \\mathrm{with}\\ \\mathrm{consistency}\\Rightarrow L\\mathrm{ is\\ a\\ line}$"
+   ],
+   "narration": "If the solution set has more than one point, it cannot be the unique solution case. So the two real equations are dependent and consistent, giving an entire straight line. Hence there are infinitely many solutions, so D is true."
+  }
+ ],
+ "answer_eq": "$\\mathrm{A, C, D}$",
+ "answer_label": "Correct option: ACD",
+ "answer_narration": "The true statements are A, C, and D. For more clear exam-style solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Advanced · Mathematics · Complex Numbers",
+ "options": [
+  "If $L$ has exactly one element, then $|s| \\neq|t|$",
+  "If $|s|=|t|$, then $L$ has infinitely many elements",
+  "The number of elements in $L \\cap\\{z:|z-1+i|=5\\}$ is at most 2",
+  "If $L$ has more than one element, then $L$ has infinitely many elements"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

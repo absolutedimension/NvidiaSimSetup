@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Chemistry",
+ "subject": "Chemistry",
+ "chapter": "Biomolecules",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Chemistry. Biomolecules. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Biomolecules? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "A sequence of how many nucleotides in messenger RNA makes a codon for an amino acid?",
+   "options": [
+    "three",
+    "four",
+    "one",
+    "two"
+   ],
+   "answer": 0,
+   "explain": "A codon is a sequence of three DNA or RNA nucleotides that corresponds with a specific amino acid or stop signal during ",
+   "voice_q": "A sequence of how many nucleotides in messenger RNA makes a codon for an amino acid? Five seconds... think!",
+   "voice_a": "The answer is A — three. A codon is a sequence of three DNA or RNA nucleotides that corresponds with a specific amino acid or stop signal during "
+  },
+  {
+   "type": "mcq",
+   "q": "A molecule of lactose is formed by a glycosidic bond between",
+   "options": [
+    "Galactose and fructose",
+    "Glucose and galactose",
+    "Galactose and glucose",
+    "Fructose and galactose"
+   ],
+   "answer": 2,
+   "explain": "Lactose or milk sugar is a disaccharide formed by a glycosidic bond between the first carbon of beta-D-galactopyranose a",
+   "voice_q": "A molecule of lactose is formed by a glycosidic bond between Five seconds... think!",
+   "voice_a": "The answer is C — Galactose and glucose. Lactose or milk sugar is a disaccharide formed by a glycosidic bond between the first carbon of beta-D-galactopyranose a"
+  },
+  {
+   "type": "mcq",
+   "q": "A unit composed of a sugar and base linked by the  Î²- glycosidic bond is known as a",
+   "options": [
+    "Nucleotide",
+    "Nucleoside",
+    "Glycoside",
+    "Purine"
+   ],
+   "answer": 1,
+   "explain": "A nucleoside is made up of sugar and a nitrogenous base.",
+   "voice_q": "A unit composed of a sugar and base linked by the  Î²- glycosidic bond is known as a Five seconds... think!",
+   "voice_a": "The answer is B — Nucleoside. A nucleoside is made up of sugar and a nitrogenous base."
+  }
+ ]
+}

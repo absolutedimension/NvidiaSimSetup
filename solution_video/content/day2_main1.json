@@ -1,0 +1,50 @@
+{
+ "title": "Chlorine Oxyanions",
+ "q_prose": "With respect to hypochlorite, chlorate, and perchlorate ions, choose the correct statements.",
+ "given_eq": "",
+ "q_reminder": "Find which statements among A, B, C, and D are correct.",
+ "q_narration": "We have to compare hypochlorite, chlorate, and perchlorate ions for basicity, shape, disproportionation, and oxidizing action. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Compare base strength",
+   "eqs": [
+    "$\\mathrm{HClO_4 > HClO_3 > HOCl}$",
+    "$\\mathrm{ClO}^{-} > \\mathrm{ClO_3}^{-} > \\mathrm{ClO_4}^{-}$"
+   ],
+   "narration": "For chlorine oxyacids, acidity increases as the number of oxygen atoms increases. So the conjugate base strength is in the reverse order. Hence hypochlorite is the strongest conjugate base, so statement A is correct."
+  },
+  {
+   "label": "Step 2 — Check molecular shapes",
+   "eqs": [
+    "$\\mathrm{ClO_3}^{-}:\\mathrm{AX_3E}, \\mathrm{ClO_4}^{-}:\\mathrm{AX_4}$"
+   ],
+   "narration": "Chlorate has three bonds and one lone pair on chlorine, so its shape is trigonal pyramidal and is affected by the lone pair. Perchlorate has no lone pair on chlorine, and hypochlorite is diatomic. So only chlorate fits this condition, making statement B correct."
+  },
+  {
+   "label": "Step 3 — Disproportionation products",
+   "eqs": [
+    "$3\\mathrm{ClO}^{-} \\Rightarrow 2\\mathrm{Cl}^{-}+\\mathrm{ClO_3}^{-}$",
+    "$4\\mathrm{ClO_3}^{-} \\Rightarrow \\mathrm{Cl}^{-}+3\\mathrm{ClO_4}^{-}$"
+   ],
+   "narration": "Hypochlorite gives chloride and chlorate, while chlorate gives chloride and perchlorate. Since the two product sets are not identical, statement C is incorrect."
+  },
+  {
+   "label": "Step 4 — Oxidation of sulfite",
+   "eqs": [
+    "$\\mathrm{ClO}^{-}+\\mathrm{SO_3}^{2-} \\Rightarrow \\mathrm{Cl}^{-}+\\mathrm{SO_4}^{2-}$"
+   ],
+   "narration": "In this reaction, sulfite is converted to sulfate, so sulfur is oxidized. Hypochlorite is reduced to chloride, so hypochlorite acts as the oxidizing agent. Therefore statement D is correct."
+  }
+ ],
+ "answer_eq": "$\\mathrm{Correct\\ statements}=\\mathrm{A,B,D}$",
+ "answer_label": "Correct option:  ABD",
+ "answer_narration": "The correct statements are A, B, and D. For more such clear step by step solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Advanced · Chemistry · Compounds Containing Nitrogen",
+ "options": [
+  "The hypochlorite ion is the strongest conjugate base.",
+  "The molecular shape of only chlorate ion is influenced by the lone pair of electrons of $\\mathrm{Cl}$.",
+  "The hypochlorite and chlorate ions disproportionate to give rise to identical set of ions.",
+  "The hypochlorite ion oxidizes the sulfite ion."
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

@@ -33,6 +33,12 @@ description: >
 >    1 (Marketing) + 3 (Course) directly feed that gate — they are non-negotiable. Blocks 2, 4,
 >    5 are upside/IP/input. If a day collapses, **protect 1 + 3, drop the rest** without guilt.
 >
+> **The lens (why the laws exist — see `SYSTEMS_THINKING_PLAYBOOK.md`):** getting paid is a
+> **COMPLEX** system (cause→effect only clear in hindsight, no feature "solves" it), so it yields
+> only to *real-world experiments with humans*. Building is a **COMPLICATED** system — your
+> superpower, and instant-reward, which is exactly why you drift to it. The gate-first law is the
+> guardrail against spending a complex problem's time on a complicated problem's dopamine.
+>
 > Log: `daily_routine/ROUTINE_LOG.md` (this skill writes it). Plan: `daily_routine/PLAN.md`
 > (today's concrete tasks). Resolver: `scripts/today.py`. Owner: Deepak. Cadence: daily.
 
@@ -124,6 +130,32 @@ Today's tasks live in `daily_routine/PLAN.md`; what you shipped goes in `daily_r
 
 ---
 
+## B. THE SYSTEMS CHECK — classify before you build (DART, 30 seconds)
+
+> Run this once each morning, right after the audit, **before** you let the plan default to
+> building. Its only job: catch the days when you're about to spend complex-system time
+> (getting paid) on complicated-system work (shipping a feature), because that feels productive
+> and is the #1 way the gate stays at 0. Full rationale: `SYSTEMS_THINKING_PLAYBOOK.md`.
+
+Ask the four DART questions about **today's most important goal** (usually: move the gate):
+
+- **D — Deconstruct.** Is the goal made of *stable* parts (a bug, a deploy, a render) or *shifting*
+  ones (a human deciding to pay)? Shifting ⇒ it's not a keyboard problem.
+- **A — Analyze (the key one).** Is cause→effect **obvious** (Clear → checklist), **expert-solvable**
+  (Complicated → build/analyze), **hindsight-only** (Complex → run a cheap experiment, don't build),
+  or **broken** (Chaotic → stabilize first)? *Paid, PMF, "which channel works" = Complex, always.*
+- **R — Recognize.** Have I seen this pattern? If today's plan is "build another feature and revenue
+  will follow," that's the **build-trap** (PMF audit closed 0/3, the ₹499 silent pivot). Name it.
+- **T — Test.** For any Complex goal, the day's move is the **smallest real-world test** — one Patna
+  visit, one "will you pay ₹X" ask, one WhatsApp cohort blast — **not** a 2-week build.
+
+**The verdict, in one line:** *"Today's gate work is a COMPLEX problem → my Block 1/3 action is an
+experiment with a real human, not a feature."* If you can't say that, the plan is mis-typed — fix it
+before stamping the row. **One real-world revenue action ships every day**, to keep the slow sales
+feedback loop competitive with building's instant hit (§the delay problem).
+
+---
+
 ## 0. THE 5 BLOCKS (11 hours)
 
 | # | Block | Hrs | Owns the work (load this skill) | Engine | DONE = (the logged artifact) |
@@ -145,7 +177,8 @@ Today's tasks live in `daily_routine/PLAN.md`; what you shipped goes in `daily_r
 ## 1. THE MORNING RUN (start of day)
 
 0. **Do §A first — the audit + confront yesterday.** Never skip to planning today over an
-   unaccounted yesterday.
+   unaccounted yesterday. **Then run §B — the 30-second systems check (DART)** so today's gate
+   work is typed as an *experiment*, not a build, before you plan the blocks.
 1. **Resolve today.** Run the day resolver — it prints the 5 blocks, today's gate reminders, your
    current **streak**, and the last-7-day adherence per block:
    ```bash
@@ -232,6 +265,14 @@ The resolver reports two numbers — keep them honest, they're different things:
 > blocks produce intro-class registrations? Did the course blocks add to the *shippable* cohort?"
 > If gate-days < 4/7, next week rebalance toward Blocks 1 + 3 — even if it means a 7-block day
 > becomes a 3-block day. **Fewer blocks done well beats five blocks half-done.** (System 7.)
+
+> **The monthly platform check (get off the moving train — `SYSTEMS_THINKING_PLAYBOOK.md §4`):**
+> from inside the system you can't tell if you're moving. Use **data + time** to stand on the
+> platform. Once a month ask the single honest question: **"vs 30 days ago, did *paid* move?"**
+> (Read it from `/admin/api/pulse` via `trigunai-campaign-tracker` — paid, not signups, not reach.)
+> If paid didn't move despite versions shipped, the train hasn't moved: **change the experiment,
+> not the product.** A month of green streaks with paid still at 0 is the build-trap wearing a
+> disguise — the OS names it.
 
 ---
 

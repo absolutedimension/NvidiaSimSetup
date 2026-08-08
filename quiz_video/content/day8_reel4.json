@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "JEE Main · Physics",
+ "subject": "Physics",
+ "chapter": "Gravitation",
+ "topic_line": "Real JEE Main questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Physics. Gravitation. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Gravitation? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "If R is the radius of the Earth then the height above the Earth's surface at which the acceleration due to gravity decreases by 20 % is",
+   "options": [
+    "5 2 - 1 R",
+    "5 2 + 1 R",
+    "5 2 - 1 R",
+    "( 5 2 + 1 ) R"
+   ],
+   "answer": 0,
+   "explain": "If g and g h denote the acceleration due to gravity at the Earth's surface and at the height h above the Earth's surface",
+   "voice_q": "If R is the radius of the Earth then the height above the Earth's surface at which the acceleration due to gravity decreases by 20 % is Five seconds... think!",
+   "voice_a": "The answer is A — 5 2 - 1 R. If g and g h denote the acceleration due to gravity at the Earth's surface and at the height h above the Earth's surface"
+  },
+  {
+   "type": "mcq",
+   "q": "According to Kepler's law, the areal velocity of the radius vector drawn from the Sun to any planet always",
+   "options": [
+    "decreases.",
+    "first increases and then decreases.",
+    "remains constant.",
+    "increases."
+   ],
+   "answer": 2,
+   "explain": "Kepler's law of planetary motion All planets move around the sun in elliptical path, having the sun at one of its foci R",
+   "voice_q": "According to Kepler's law, the areal velocity of the radius vector drawn from the Sun to any planet always Five seconds... think!",
+   "voice_a": "The answer is C — remains constant.. Kepler's law of planetary motion All planets move around the sun in elliptical path, having the sun at one of its foci R"
+  },
+  {
+   "type": "mcq",
+   "q": "The time period of a satellite in a circular orbit of radius R is T. The period of another satellite in a circular orbit of radius 9R is :",
+   "options": [
+    "9 T",
+    "27 T",
+    "12 T",
+    "3 T"
+   ],
+   "answer": 1,
+   "explain": "Kepler's Third Law states that the square of the period of a satellite's orbit is proportional to the cube of the semi-m",
+   "voice_q": "The time period of a satellite in a circular orbit of radius R is T. The period of another satellite in a circular orbit of radius 9R is : Five seconds... think!",
+   "voice_a": "The answer is B — 27 T. Kepler's Third Law states that the square of the period of a satellite's orbit is proportional to the cube of the semi-m"
+  }
+ ]
+}

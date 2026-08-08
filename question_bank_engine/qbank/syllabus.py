@@ -176,9 +176,14 @@ from .jee_main_maths import JEE_MAIN_MATHS
 from .neet_biology import NEET_BIOLOGY
 from .neet_physics import NEET_PHYSICS
 from .neet_chemistry import NEET_CHEMISTRY
+from .banking_quant import BANKING_QUANT
+from .icse_class3_maths import ICSE_CLASS3_MATHS
 
 # Registry so other exams/subjects slot in with the same interface.
 TAXONOMIES = {
+    # ICSE Class 3 Maths (kids product) — real book chapters; without this it fell back to
+    # the JEE Physics taxonomy (get_taxonomy default) and the kids picker showed Physics.
+    ("ICSE Class 3", "Mathematics"): ICSE_CLASS3_MATHS,
     ("JEE Advanced", "Physics"): JEE_PHYSICS,
     ("JEE Main", "Physics"): JEE_MAIN_PHYSICS,
     ("JEE Main", "Chemistry"): JEE_MAIN_CHEMISTRY,
@@ -193,6 +198,10 @@ TAXONOMIES = {
     ("NEET", "Physics"): NEET_PHYSICS,
     ("NEET", "Chemistry"): NEET_CHEMISTRY,
     ("NEET", "Biology"): NEET_BIOLOGY,
+    # Banking (IBPS/SBI/RRB) shared Prelims pattern. GENERATION-first: no ingested
+    # exemplars — qbank.quantgen draws these chapters deterministically (compute-the-
+    # answer). One taxonomy serves all banking exams; tag by `exam` at generation.
+    ("Banking Prelims", "Quantitative Aptitude"): BANKING_QUANT,
 }
 
 

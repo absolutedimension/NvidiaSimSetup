@@ -1,0 +1,360 @@
+{
+  "file": "dj_engine/burmeister/09 - Visions - Dreamfloor.mp3",
+  "duration_s": 4182.633650793651,
+  "bin_s": 30.0,
+  "bands": [
+    "sub",
+    "kick+bass",
+    "bassline",
+    "drone",
+    "stab",
+    "hats"
+  ],
+  "sections": [
+    {
+      "start_s": 0.0,
+      "end_s": 60.0,
+      "dur_s": 60.0,
+      "energy": 0.37,
+      "elements": {
+        "sub": 0.2,
+        "kick+bass": 0.41,
+        "bassline": 0.65,
+        "drone": 0.26,
+        "stab": 0.23,
+        "hats": 0.09
+      },
+      "label": "groove: kick+bass+bassline"
+    },
+    {
+      "start_s": 60.0,
+      "end_s": 120.0,
+      "dur_s": 60.0,
+      "energy": 1.0,
+      "elements": {
+        "sub": 1.0,
+        "kick+bass": 0.75,
+        "bassline": 1.0,
+        "drone": 0.3,
+        "stab": 0.43,
+        "hats": 0.31
+      },
+      "label": "PEAK: kick+bass+bassline+stab"
+    },
+    {
+      "start_s": 120.0,
+      "end_s": 210.0,
+      "dur_s": 90.0,
+      "energy": 1.0,
+      "elements": {
+        "sub": 1.0,
+        "kick+bass": 0.71,
+        "bassline": 0.87,
+        "drone": 0.39,
+        "stab": 0.7,
+        "hats": 0.86
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 210.0,
+      "end_s": 360.0,
+      "dur_s": 150.0,
+      "energy": 0.89,
+      "elements": {
+        "sub": 0.85,
+        "kick+bass": 0.67,
+        "bassline": 0.89,
+        "drone": 0.33,
+        "stab": 0.78,
+        "hats": 0.97
+      },
+      "label": "PEAK: kick+bass+bassline+stab+hats"
+    },
+    {
+      "start_s": 360.0,
+      "end_s": 570.0,
+      "dur_s": 210.0,
+      "energy": 0.68,
+      "elements": {
+        "sub": 0.43,
+        "kick+bass": 0.9,
+        "bassline": 0.73,
+        "drone": 0.55,
+        "stab": 0.56,
+        "hats": 0.45
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 570.0,
+      "end_s": 630.0,
+      "dur_s": 60.0,
+      "energy": 0.47,
+      "elements": {
+        "sub": 0.2,
+        "kick+bass": 0.6,
+        "bassline": 0.63,
+        "drone": 0.89,
+        "stab": 0.91,
+        "hats": 0.46
+      },
+      "label": "groove: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 630.0,
+      "end_s": 690.0,
+      "dur_s": 60.0,
+      "energy": 0.65,
+      "elements": {
+        "sub": 0.36,
+        "kick+bass": 0.97,
+        "bassline": 0.8,
+        "drone": 0.75,
+        "stab": 0.76,
+        "hats": 0.4
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 690.0,
+      "end_s": 1080.0,
+      "dur_s": 390.0,
+      "energy": 0.6,
+      "elements": {
+        "sub": 0.36,
+        "kick+bass": 0.69,
+        "bassline": 0.77,
+        "drone": 0.93,
+        "stab": 0.53,
+        "hats": 0.19
+      },
+      "label": "build: kick+bass+bassline+drone+stab"
+    },
+    {
+      "start_s": 1080.0,
+      "end_s": 1470.0,
+      "dur_s": 390.0,
+      "energy": 0.65,
+      "elements": {
+        "sub": 0.48,
+        "kick+bass": 0.67,
+        "bassline": 0.84,
+        "drone": 0.76,
+        "stab": 0.67,
+        "hats": 0.33
+      },
+      "label": "build: kick+bass+bassline+drone+stab"
+    },
+    {
+      "start_s": 1470.0,
+      "end_s": 1650.0,
+      "dur_s": 180.0,
+      "energy": 0.54,
+      "elements": {
+        "sub": 0.35,
+        "kick+bass": 0.6,
+        "bassline": 0.86,
+        "drone": 0.66,
+        "stab": 0.67,
+        "hats": 0.62
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 1650.0,
+      "end_s": 2070.0,
+      "dur_s": 420.0,
+      "energy": 0.82,
+      "elements": {
+        "sub": 0.83,
+        "kick+bass": 0.73,
+        "bassline": 0.66,
+        "drone": 0.43,
+        "stab": 0.21,
+        "hats": 0.22
+      },
+      "label": "PEAK: kick+bass+bassline+drone"
+    },
+    {
+      "start_s": 2070.0,
+      "end_s": 2250.0,
+      "dur_s": 180.0,
+      "energy": 0.62,
+      "elements": {
+        "sub": 0.24,
+        "kick+bass": 0.89,
+        "bassline": 0.95,
+        "drone": 0.85,
+        "stab": 0.9,
+        "hats": 0.43
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2250.0,
+      "end_s": 2430.0,
+      "dur_s": 180.0,
+      "energy": 0.64,
+      "elements": {
+        "sub": 0.28,
+        "kick+bass": 0.9,
+        "bassline": 0.96,
+        "drone": 0.73,
+        "stab": 0.95,
+        "hats": 0.51
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2430.0,
+      "end_s": 2580.0,
+      "dur_s": 150.0,
+      "energy": 0.81,
+      "elements": {
+        "sub": 0.64,
+        "kick+bass": 0.97,
+        "bassline": 0.41,
+        "drone": 0.28,
+        "stab": 0.34,
+        "hats": 0.49
+      },
+      "label": "PEAK: kick+bass+bassline+hats"
+    },
+    {
+      "start_s": 2580.0,
+      "end_s": 2760.0,
+      "dur_s": 180.0,
+      "energy": 0.76,
+      "elements": {
+        "sub": 0.55,
+        "kick+bass": 0.92,
+        "bassline": 0.46,
+        "drone": 0.52,
+        "stab": 0.3,
+        "hats": 0.36
+      },
+      "label": "PEAK: kick+bass+bassline+drone+hats"
+    },
+    {
+      "start_s": 2760.0,
+      "end_s": 3330.0,
+      "dur_s": 570.0,
+      "energy": 0.71,
+      "elements": {
+        "sub": 0.5,
+        "kick+bass": 0.88,
+        "bassline": 0.58,
+        "drone": 0.65,
+        "stab": 0.57,
+        "hats": 0.32
+      },
+      "label": "build: kick+bass+bassline+drone+stab"
+    },
+    {
+      "start_s": 3330.0,
+      "end_s": 3450.0,
+      "dur_s": 120.0,
+      "energy": 0.51,
+      "elements": {
+        "sub": 0.39,
+        "kick+bass": 0.53,
+        "bassline": 0.2,
+        "drone": 0.45,
+        "stab": 0.38,
+        "hats": 0.77
+      },
+      "label": "build: kick+bass+drone+stab+hats"
+    },
+    {
+      "start_s": 3450.0,
+      "end_s": 3540.0,
+      "dur_s": 90.0,
+      "energy": 0.51,
+      "elements": {
+        "sub": 0.37,
+        "kick+bass": 0.54,
+        "bassline": 0.31,
+        "drone": 0.48,
+        "stab": 0.67,
+        "hats": 0.89
+      },
+      "label": "build: kick+bass+drone+stab+hats"
+    },
+    {
+      "start_s": 3540.0,
+      "end_s": 3630.0,
+      "dur_s": 90.0,
+      "energy": 0.45,
+      "elements": {
+        "sub": 0.32,
+        "kick+bass": 0.44,
+        "bassline": 0.28,
+        "drone": 0.41,
+        "stab": 0.59,
+        "hats": 0.91
+      },
+      "label": "groove: kick+bass+drone+stab+hats"
+    },
+    {
+      "start_s": 3630.0,
+      "end_s": 3870.0,
+      "dur_s": 240.0,
+      "energy": 0.62,
+      "elements": {
+        "sub": 0.54,
+        "kick+bass": 0.57,
+        "bassline": 0.33,
+        "drone": 0.46,
+        "stab": 0.59,
+        "hats": 0.52
+      },
+      "label": "build: kick+bass+drone+stab+hats"
+    },
+    {
+      "start_s": 3870.0,
+      "end_s": 3930.0,
+      "dur_s": 60.0,
+      "energy": 0.29,
+      "elements": {
+        "sub": 0.13,
+        "kick+bass": 0.22,
+        "bassline": 0.33,
+        "drone": 0.75,
+        "stab": 0.69,
+        "hats": 0.34
+      },
+      "label": "INTRO/BREAKDOWN (ambient)"
+    },
+    {
+      "start_s": 3930.0,
+      "end_s": 4110.0,
+      "dur_s": 180.0,
+      "energy": 0.63,
+      "elements": {
+        "sub": 0.56,
+        "kick+bass": 0.58,
+        "bassline": 0.32,
+        "drone": 0.48,
+        "stab": 0.6,
+        "hats": 0.52
+      },
+      "label": "build: kick+bass+drone+stab+hats"
+    },
+    {
+      "start_s": 4110.0,
+      "end_s": 4200.0,
+      "dur_s": 90.0,
+      "energy": 0.06,
+      "elements": {
+        "sub": 0.01,
+        "kick+bass": 0.07,
+        "bassline": 0.07,
+        "drone": 0.13,
+        "stab": 0.13,
+        "hats": 0.07
+      },
+      "label": "INTRO/BREAKDOWN (ambient)"
+    }
+  ]
+}

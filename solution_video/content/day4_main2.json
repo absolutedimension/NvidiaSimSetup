@@ -1,0 +1,57 @@
+{
+ "title": "Ionization and Bond Order",
+ "q_prose": "Which ionization process increases bond energy and changes magnetic behaviour from paramagnetic to diamagnetic?",
+ "given_eq": "$\\mathrm{BO}=\\frac{N_b-N_a}{2}$",
+ "q_reminder": "Find the process where bond order increases and unpaired electrons become paired.",
+ "q_narration": "We need to identify the ionization in which bond energy increases and magnetism changes from paramagnetic to diamagnetic. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Use bond order",
+   "eqs": [
+    "$\\mathrm{BO}=\\frac{N_b-N_a}{2}$",
+    "$\\mathrm{bond\\ energy}\\propto\\mathrm{BO}$"
+   ],
+   "narration": "Bond energy increases when bond order increases. Also, paramagnetic means at least one unpaired electron, while diamagnetic means all electrons are paired."
+  },
+  {
+   "label": "Step 2 — Check oxygen and carbon",
+   "eqs": [
+    "$\\mathrm{O}_2:\\ \\mathrm{BO}=2,\\ \\mathrm{para}\\Rightarrow\\mathrm{O}_2^{+}:\\ \\mathrm{BO}=2.5,\\ \\mathrm{para}$",
+    "$\\mathrm{C}_2:\\ \\mathrm{BO}=2,\\ \\mathrm{dia}\\Rightarrow\\mathrm{C}_2^{+}:\\ \\mathrm{BO}=1.5,\\ \\mathrm{para}$"
+   ],
+   "narration": "For oxygen, the bond order increases, but it remains paramagnetic, so it fails the magnetic condition. For carbon, the bond order decreases and the magnetic behaviour changes the wrong way."
+  },
+  {
+   "label": "Step 3 — Check nitric oxide",
+   "eqs": [
+    "$\\mathrm{NO}:\\ \\mathrm{BO}=2.5,\\ \\mathrm{para}\\Rightarrow\\mathrm{NO}^{+}:\\ \\mathrm{BO}=3,\\ \\mathrm{dia}$"
+   ],
+   "narration": "Nitric oxide has one unpaired electron in an antibonding orbital. Ionization removes this electron, so bond order rises from two point five to three, and all electrons become paired."
+  },
+  {
+   "label": "Step 4 — Check nitrogen",
+   "eqs": [
+    "$\\mathrm{N}_2:\\ \\mathrm{BO}=3,\\ \\mathrm{dia}\\Rightarrow\\mathrm{N}_2^{+}:\\ \\mathrm{BO}=2.5,\\ \\mathrm{para}$"
+   ],
+   "narration": "For nitrogen, removing one electron lowers the bond order from three to two point five, and the molecule changes from diamagnetic to paramagnetic. This is opposite to what we need."
+  },
+  {
+   "label": "Step 5 — Select option",
+   "eqs": [
+    "$\\mathrm{NO}\\Rightarrow\\mathrm{NO}^{+}$"
+   ],
+   "narration": "Only nitric oxide ionizing to nitrosonium ion gives both required changes: increased bond energy and paramagnetic to diamagnetic behaviour."
+  }
+ ],
+ "answer_eq": "$\\mathrm{NO}\\Rightarrow\\mathrm{NO}^{+}$",
+ "answer_label": "Correct option:  C",
+ "answer_narration": "The correct answer is option C, nitric oxide to nitrosonium ion. For more such clear step by step learning, join Acharya.",
+ "exam_tag": "NEET · Chemistry · Chemical Bonding and Molecular Structure",
+ "options": [
+  "$\\mathrm{O}^2 \\rightarrow \\mathrm{O}_2^{+}$",
+  "$\\mathrm{C}_2 \\rightarrow \\mathrm{C}_2^{+}$",
+  "$\\mathrm{NO} \\rightarrow \\mathrm{NO}^{+}$",
+  "$\\mathrm{N}_2 \\rightarrow \\mathrm{N}_2^{+}$"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

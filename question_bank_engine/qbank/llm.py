@@ -4,7 +4,9 @@ Degrades gracefully: if the proxy is unreachable (or QBANK_LLM=off) `.ok` stays
 False and every caller falls back to rule-based logic, so the whole pipeline still
 runs offline. Set QBANK_LLM=on to make LLM calls mandatory (raises if unreachable)."""
 import base64
+import concurrent.futures
 import json
+import os
 
 from . import config
 
@@ -26,13 +28,30 @@ class LLM:
             return
         try:
             from openai import OpenAI
-            # reasoning models (gpt-5.x) can take >60s on hard problems — give them room
-            self.client = OpenAI(base_url=config.LLM_BASE_URL, api_key=config.LLM_API_KEY, timeout=240)
+            # reasoning models (gpt-5.x) can take >60s on hard problems — give them room, but
+            # bound the SDK's own retry backoff (a hung proxy connection defeated timeout=240 once).
+            self.client = OpenAI(base_url=config.LLM_BASE_URL, api_key=config.LLM_API_KEY,
+                                 timeout=180, max_retries=1)
+            # HARD wall-clock deadline per call: the SDK/httpx read-timeout can be defeated by a
+            # proxy that holds the socket open (keepalives) while the upstream hangs — a real 34-min
+            # stall was observed. A thread future gives a guaranteed ceiling the batch can't exceed.
+            self._pool = concurrent.futures.ThreadPoolExecutor(max_workers=8)
+            self._hard_timeout = int(os.environ.get("QBANK_LLM_HARD_TIMEOUT", "300"))
             self.ok = True  # optimistic; a failed call flips callers to fallback
         except Exception as e:  # openai not installed / bad config
             self.last_error = str(e)
             if config.LLM_ENABLED == "on":
                 raise
+
+    def _create(self, **kwargs):
+        """Run the completion under a hard wall-clock deadline. Raises TimeoutError if the
+        call exceeds QBANK_LLM_HARD_TIMEOUT (default 300s) regardless of SDK/proxy behavior."""
+        fut = self._pool.submit(self.client.chat.completions.create, **kwargs)
+        try:
+            return fut.result(timeout=self._hard_timeout)
+        except concurrent.futures.TimeoutError:
+            # the underlying request thread is abandoned (can't be killed) but the caller moves on
+            raise TimeoutError(f"LLM call exceeded {self._hard_timeout}s hard deadline")
 
     def chat_json(self, system: str, user: str, model: str | None = None,
                   temperature: float = 0.1) -> dict | None:
@@ -48,10 +67,14 @@ class LLM:
             )
             if not _is_reasoning_model(model):
                 kwargs["temperature"] = temperature
-            r = self.client.chat.completions.create(**kwargs)
+            r = self._create(**kwargs)
             return json.loads(r.choices[0].message.content)
         except Exception as e:
             self.last_error = str(e)
+            # a hard-deadline timeout is TRANSIENT: skip this generation and keep the batch
+            # alive (do NOT flip .ok or raise) — one stuck call must not abort a 9-subject fill.
+            if isinstance(e, TimeoutError):
+                return None
             self.ok = False
             if config.LLM_ENABLED == "on":
                 raise
@@ -78,10 +101,12 @@ class LLM:
             )
             if not _is_reasoning_model(model):
                 kwargs["temperature"] = 0.1
-            r = self.client.chat.completions.create(**kwargs)
+            r = self._create(**kwargs)
             return json.loads(r.choices[0].message.content)
         except Exception as e:
             self.last_error = str(e)
+            if isinstance(e, TimeoutError):
+                return None
             self.ok = False
             if config.LLM_ENABLED == "on":
                 raise

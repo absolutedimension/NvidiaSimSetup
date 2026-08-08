@@ -1,0 +1,211 @@
+{
+  "name": "shukla_90s",
+  "source_title": "Tanishk Shukla Indian Idol S16 (4 tracks) \u2014 STYLE reference only",
+  "n_reference_tracks": 4,
+  "disclaimer": "STYLE FEATURES ONLY. Melody/lyrics/recording NOT stored or reused. Used solely as an RL reward yardstick; output uses original content + owned voice.",
+  "mix": {
+    "duration_sec": 251.775,
+    "duration_sec_range": [
+      101.3,
+      340.8
+    ],
+    "tempo_bpm": 109.125,
+    "tempo_bpm_range": [
+      99.4,
+      120.2
+    ],
+    "brightness_centroid_hz": 2637.85,
+    "brightness_centroid_hz_range": [
+      2360.2,
+      2762.5
+    ],
+    "rolloff85_hz": 5840.875,
+    "rolloff85_hz_range": [
+      5081.8,
+      6180.0
+    ],
+    "dynamic_range_db": 12.15,
+    "dynamic_range_db_range": [
+      11.2,
+      13.1
+    ],
+    "onset_rate_per_sec": 4.965,
+    "onset_rate_per_sec_range": [
+      3.53,
+      5.96
+    ],
+    "harmonic_percussive_ratio": 5.105,
+    "harmonic_percussive_ratio_range": [
+      4.1,
+      6.88
+    ],
+    "energy_arc_8": [
+      0.849,
+      0.964,
+      0.923,
+      0.931,
+      0.94,
+      0.983,
+      0.955,
+      0.79
+    ]
+  },
+  "vocal": {
+    "voiced_fraction": 0.857,
+    "voiced_fraction_range": [
+      0.752,
+      0.941
+    ],
+    "pitch_range_semitones": 17.45,
+    "pitch_range_semitones_range": [
+      9.7,
+      23.1
+    ],
+    "median_f0_hz": 235.725,
+    "median_f0_hz_range": [
+      216.1,
+      261.4
+    ],
+    "ornament_rate_per_sec": 19.15,
+    "ornament_rate_per_sec_range": [
+      18.19,
+      20.49
+    ],
+    "glide_semitone_per_frame": 0.1,
+    "glide_semitone_per_frame_range": [
+      0.1,
+      0.1
+    ],
+    "vibrato_semitone_std": 0.78,
+    "vibrato_semitone_std_range": [
+      0.666,
+      0.836
+    ]
+  },
+  "per_track": [
+    {
+      "mix": "ref/shukla_tupyaar.mp3",
+      "mix_features": {
+        "duration_sec": 273.0,
+        "tempo_bpm": 99.4,
+        "key": "F# minor",
+        "brightness_centroid_hz": 2719.6,
+        "rolloff85_hz": 5943.2,
+        "dynamic_range_db": 11.9,
+        "onset_rate_per_sec": 5.82,
+        "harmonic_percussive_ratio": 4.1,
+        "energy_arc_8": [
+          0.966,
+          0.959,
+          0.982,
+          0.981,
+          1.0,
+          0.931,
+          0.902,
+          0.81
+        ]
+      },
+      "vocal_features": {
+        "voiced_fraction": 0.916,
+        "pitch_range_semitones": 20.0,
+        "median_f0_hz": 216.1,
+        "ornament_rate_per_sec": 18.83,
+        "glide_semitone_per_frame": 0.1,
+        "vibrato_semitone_std": 0.816
+      }
+    },
+    {
+      "mix": "ref/shukla_2.mp3",
+      "mix_features": {
+        "duration_sec": 340.8,
+        "tempo_bpm": 120.2,
+        "key": "A# major",
+        "brightness_centroid_hz": 2762.5,
+        "rolloff85_hz": 6158.5,
+        "dynamic_range_db": 12.4,
+        "onset_rate_per_sec": 3.53,
+        "harmonic_percussive_ratio": 4.71,
+        "energy_arc_8": [
+          0.718,
+          0.96,
+          0.993,
+          0.989,
+          0.944,
+          1.0,
+          0.996,
+          0.854
+        ]
+      },
+      "vocal_features": {
+        "voiced_fraction": 0.752,
+        "pitch_range_semitones": 23.1,
+        "median_f0_hz": 261.4,
+        "ornament_rate_per_sec": 19.09,
+        "glide_semitone_per_frame": 0.1,
+        "vibrato_semitone_std": 0.804
+      }
+    },
+    {
+      "mix": "ref/shukla_3.mp3",
+      "mix_features": {
+        "duration_sec": 101.3,
+        "tempo_bpm": 99.4,
+        "key": "A major",
+        "brightness_centroid_hz": 2709.1,
+        "rolloff85_hz": 6180.0,
+        "dynamic_range_db": 11.2,
+        "onset_rate_per_sec": 5.96,
+        "harmonic_percussive_ratio": 6.88,
+        "energy_arc_8": [
+          0.909,
+          0.965,
+          0.924,
+          0.815,
+          0.923,
+          1.0,
+          0.946,
+          0.795
+        ]
+      },
+      "vocal_features": {
+        "voiced_fraction": 0.941,
+        "pitch_range_semitones": 9.7,
+        "median_f0_hz": 218.6,
+        "ornament_rate_per_sec": 20.49,
+        "glide_semitone_per_frame": 0.1,
+        "vibrato_semitone_std": 0.836
+      }
+    },
+    {
+      "mix": "ref/shukla_4.mp3",
+      "mix_features": {
+        "duration_sec": 292.0,
+        "tempo_bpm": 117.5,
+        "key": "C major",
+        "brightness_centroid_hz": 2360.2,
+        "rolloff85_hz": 5081.8,
+        "dynamic_range_db": 13.1,
+        "onset_rate_per_sec": 4.55,
+        "harmonic_percussive_ratio": 4.73,
+        "energy_arc_8": [
+          0.802,
+          0.974,
+          0.794,
+          0.94,
+          0.894,
+          1.0,
+          0.977,
+          0.702
+        ]
+      },
+      "vocal_features": {
+        "voiced_fraction": 0.818,
+        "pitch_range_semitones": 17.0,
+        "median_f0_hz": 246.8,
+        "ornament_rate_per_sec": 18.19,
+        "glide_semitone_per_frame": 0.1,
+        "vibrato_semitone_std": 0.666
+      }
+    }
+  ]
+}

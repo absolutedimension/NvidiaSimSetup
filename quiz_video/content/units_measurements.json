@@ -1,0 +1,37 @@
+{
+  "exam": "JEE / NEET · Class 11 Physics",
+  "subject": "Physics",
+  "chapter": "Units & Measurements",
+  "topic_line": "Chapter 1 · The first topic every aspirant starts with",
+  "timer_seconds": 10,
+  "brand": "Acharya",
+  "cta": "Get your full test on Acharya",
+  "intro_voice": "Physics. Units and Measurements. Three quick questions. Can you beat the timer?",
+  "outro_voice": "Want a full adaptive test that finds your weak spots? Practise on Acharya.",
+  "questions": [
+    {
+      "q": "The candela is the SI base unit of which quantity?",
+      "options": ["Electric current", "Luminous intensity", "Temperature", "Amount of substance"],
+      "answer": 1,
+      "explain": "Candela (cd) is one of the seven SI base units. It measures luminous intensity.",
+      "voice_q": "The candela is the S I base unit of which quantity?",
+      "voice_a": "The answer is B, luminous intensity. The candela is one of the seven S I base units."
+    },
+    {
+      "q": "Which of these is a dimensionless quantity?",
+      "options": ["Strain", "Force", "Density", "Momentum"],
+      "answer": 0,
+      "explain": "Strain = change in length ÷ original length. Length cancels length, so it has no dimensions.",
+      "voice_q": "Which of these is a dimensionless quantity?",
+      "voice_a": "The answer is A, strain. It is change in length divided by original length, so the dimensions cancel out."
+    },
+    {
+      "q": "The dimensional formula of pressure is:",
+      "options": ["[M L⁻¹ T⁻²]", "[M L T⁻²]", "[M L² T⁻²]", "[M L⁻¹ T⁻¹]"],
+      "answer": 0,
+      "explain": "Pressure = Force ÷ Area = [M L T⁻²] ÷ [L²] = [M L⁻¹ T⁻²].",
+      "voice_q": "The dimensional formula of pressure is?",
+      "voice_a": "The answer is A. Pressure is force over area, which gives M L to the power minus one, T to the power minus two."
+    }
+  ]
+}

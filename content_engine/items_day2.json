@@ -1,0 +1,38 @@
+[
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/out/day2_main1.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/content/day2_main1.json",
+  "format": "solution",
+  "exam": "JEE Advanced",
+  "subject": "Chemistry",
+  "chapter": "Compounds Containing Nitrogen",
+  "lang": "en"
+ },
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/out/day2_main2.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/content/day2_main2.json",
+  "format": "solution",
+  "exam": "JEE Main",
+  "subject": "Physics",
+  "chapter": "Heat And Thermodynamics",
+  "lang": "en"
+ },
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/out/day2_reel3.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/content/day2_reel3.json",
+  "format": "quiz",
+  "exam": "NEET",
+  "subject": "Physics",
+  "chapter": "Gravitation",
+  "lang": "en"
+ },
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/out/day2_reel4.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/content/day2_reel4.json",
+  "format": "quiz",
+  "exam": "JEE Main",
+  "subject": "Physics",
+  "chapter": "Atoms And Nuclei",
+  "lang": "en"
+ }
+]

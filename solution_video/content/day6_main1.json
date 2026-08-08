@@ -1,0 +1,59 @@
+{
+ "title": "Paramagnetism Count",
+ "q_prose": "Among Ni(CO)4, NiCl4 two minus, Co(NH3)4Cl2Cl, Na3CoF6, Na2O2, and CsO2, find the number of paramagnetic compounds.",
+ "given_eq": "$\\mathrm{paramagnetic}\\Rightarrow n_{\\mathrm{unpaired}}>0$",
+ "q_reminder": "Find how many given compounds have unpaired electrons.",
+ "q_narration": "We have to check six compounds and count only those with unpaired electrons. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Nickel complexes",
+   "eqs": [
+    "$[\\mathrm{Ni(CO)}_{4}],\\mathrm{Ni}^{0}=3d^{10},n=0$",
+    "$[\\mathrm{NiCl}_{4}]^{2-},\\mathrm{Ni}^{2+}=3d^{8},n=2$"
+   ],
+   "narration": "In nickel tetracarbonyl, nickel is zero valent and carbon monoxide gives a completely filled d ten configuration, so it is diamagnetic. In tetrachloronickelate two minus, nickel two plus is d eight and chloride gives a tetrahedral high spin complex, so two electrons remain unpaired."
+  },
+  {
+   "label": "Step 2 — Ammine cobalt complex",
+   "eqs": [
+    "$x+0\\times4-1\\times2=+1\\Rightarrow x=+3$",
+    "$\\mathrm{Co}^{3+}=3d^{6},n=0$"
+   ],
+   "narration": "For the cobalt ammine chloro complex, the complex ion has charge plus one, so cobalt is plus three. Cobalt three plus is d six, and with ammonia in a cobalt three complex it is low spin, so all electrons are paired."
+  },
+  {
+   "label": "Step 3 — Fluoride cobalt complex",
+   "eqs": [
+    "$x-1\\times6=-3\\Rightarrow x=+3$",
+    "$\\mathrm{Co}^{3+}=3d^{6},\\mathrm{F}^{-},n=4$"
+   ],
+   "narration": "In sodium hexafluorocobaltate, cobalt is again plus three, hence d six. Fluoride is a weak field ligand, so the octahedral complex is high spin and has four unpaired electrons."
+  },
+  {
+   "label": "Step 4 — Oxygen salts",
+   "eqs": [
+    "$\\mathrm{Na}_{2}\\mathrm{O}_{2}:\\mathrm{O}_{2}^{2-},n=0$",
+    "$\\mathrm{CsO}_{2}:\\mathrm{O}_{2}^{-},n=1$"
+   ],
+   "narration": "Sodium peroxide contains peroxide ion, in which all molecular orbital electrons are paired, so it is diamagnetic. Caesium superoxide contains superoxide ion, which has one unpaired electron, so it is paramagnetic."
+  },
+  {
+   "label": "Step 5 — Final count",
+   "eqs": [
+    "$[\\mathrm{NiCl}_{4}]^{2-},\\mathrm{Na}_{3}[\\mathrm{CoF}_{6}],\\mathrm{CsO}_{2}\\Rightarrow 3$"
+   ],
+   "narration": "Thus the paramagnetic compounds are tetrachloronickelate two minus, sodium hexafluorocobaltate, and caesium superoxide. The total count is three."
+  }
+ ],
+ "answer_eq": "$3$",
+ "answer_label": "Correct option: B",
+ "answer_narration": "The number of paramagnetic compounds is three, so the correct option is B. For more clear exam solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Advanced · Chemistry · Coordination Compounds",
+ "options": [
+  "2",
+  "3",
+  "4",
+  "5"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

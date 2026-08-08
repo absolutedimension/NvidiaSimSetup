@@ -6,7 +6,7 @@
 > or a cleared rupee moved the dashboard — not when hours passed.
 >
 > **State at start:** WABA verified + delivery working (pilots can go live in 48h). IG+FB
-> channels open (teacher-CTA only, evening slot). 10 Patna leads queued. Priyanshu = caller.
+> channels open (teacher-CTA only, evening slot). 10 Patna leads queued. A field rep supports calling.
 > 0/3 non-payer interviews done. Kritansh = only engaged student.
 >
 > **Verdict math:** 30 conversations · 15 qualified · 3 pilots booked · 2 live · **1 PAID** by 23 Jul.
@@ -18,16 +18,16 @@
 | Time (IST) | Block | Action |
 |---|---|---|
 | 08:30–09:00 | ☕ Open | `python3 progress.py show` → read pace. 30-sec WABA ping. Kritansh idle-check. |
-| 09:00–10:30 | 🔍 Source | Pull **6 fresh leads** (I dig Maps/Justdial with you, you verify numbers) → queue rows. Send Priyanshu his 5 + yesterday's feedback. |
-| 10:30–13:00 | 📞 **CALL BLOCK 1** (prime) | 6–8 dials → **target 2 conversations** (≥10 min). Priyanshu dials in parallel. |
+| 09:00–10:30 | 🔍 Source | Pull **6 fresh leads** (I dig Maps/Justdial with you, you verify numbers) → queue rows. Send the field rep their 5 + yesterday's feedback. |
+| 10:30–13:00 | 📞 **CALL BLOCK 1** (prime) | 6–8 dials → **target 2 conversations** (≥10 min). The field rep dials in parallel. |
 | 13:00–14:00 | 🍛 Lunch + log | Log morning calls while fresh — **verbatim objections**. |
 | 14:00–16:00 | 📞 **CALL BLOCK 2** | 4–6 dials + follow-ups + pilot-onboarding calls. Hard stop 16:00 (teachers start evening batches). |
-| 16:00–17:00 | 📝 Close loop | `progress.py log ...` + debrief Priyanshu (his calls count too). Name tomorrow's ONE thing. |
+| 16:00–17:00 | 📝 Close loop | `progress.py log ...` + debrief the field rep (their calls count too). Name tomorrow's ONE thing. |
 | 17:00–19:00 | 🔧 Pilot/product (cap 2h) | ONLY what a booked pilot needs. **No music/shader/FlowArt/new-course — parked till 23 Jul.** |
 | 19:00–19:15 | 📣 Social (15 min cap) | 1 post from existing stock → CTA "type TEACHER" (`wa.me/919135255107?text=TEACHER`). No new production. |
 | 20:00–20:30 | 📊 Interviews | Non-payer calls (evenings are free) until 3/3 done. |
 
-**Daily quota:** 2 conversations (you) + 1–2 (Priyanshu) · ~12 combined dials · everything logged same day.
+**Daily quota:** 2 conversations (you) + 1–2 (the field rep) · ~12 combined dials · everything logged same day.
 
 ---
 
@@ -35,7 +35,7 @@
 
 ### 📅 Thu 3 Jul — DAY 1  → see `DAY1_BRIEF.md` for the checkbox sheet
 - **09:00 — Warm inbound FIRST:** Priyanshu Jain (Biology 11/12, `7070658506`) → book Pilot #1. NEET requester (`9472272634`) → qualify teacher-or-student. Skip/verify the test-looking rows.
-- **10:30–16:00 —** Cold queue Q1–Q5, then Priyanshu on Q6–Q10.
+- **10:30–16:00 —** Cold queue Q1–Q5, then the field rep on Q6–Q10.
 - **20:00 — Aditya interview** (`8126060070`) → `interview --who aditya`.
 - **Done =** WABA ping ✅ + ≥3 conversations + 1 interview + Pilot #1 booked (goal).
 
@@ -62,7 +62,7 @@
 
 ### 📅 Mon 7 Jul — DAY 5 (Scorecard Monday)
 - 08:30–10:00 — Fill `05_WEEKLY_SCORECARD.md` week-1 column + answer the 5 Monday questions in writing. Killer one: *"if I missed conversations, what ate the hours?"* If the answer is "building" → name the audit pattern, cut it.
-- 10:00–10:30 — **One OFFER tweak** from the objection tally (offer only, never segment). Update `01_OFFER_ONE_PAGER.md` + brief Priyanshu.
+- 10:00–10:30 — **One OFFER tweak** from the objection tally (offer only, never segment). Update `01_OFFER_ONE_PAGER.md` + brief the field rep.
 - Standard engine. Target 2 conversations.
 
 ### 📅 Tue 8 Jul — DAY 6
@@ -128,4 +128,4 @@
 ~20–22 conversations · 3/3 interviews · 2 pilots (≥1 live with real students) · objection tally telling us exactly what the offer needs · Pilot #1 close scheduled for the final week.
 
 ## EACH MORNING
-Just say **"run teacher outreach"** — I pull the dashboard, source the day's 6 with you, prep Priyanshu's list.
+Just say **"run teacher outreach"** — I pull the dashboard, source the day's 6 with you, prep the field rep's list.

@@ -1,0 +1,196 @@
+{
+  "course_id": "catalyzers-kota",
+  "name": "NEET/JEE Physics & Chemistry — by Catalyzers Institute",
+  "brand": "Catalyzers Institute",
+  "intro": "Namaste! I'm Catalyzers Institute's tutor. I'll help you master NEET/JEE Physics & Chemistry step by step — clearing doubts, drilling the concepts, and checking you really understood before we move on. Let's begin.",
+  "order": [
+    "units_dimensions", "significant_figures", "error_analysis",
+    "distance_vs_displacement", "velocity_acceleration", "equations_of_motion", "projectile_motion",
+    "newtons_first_law", "newtons_second_law", "newtons_third_law", "friction",
+    "work_done", "work_energy_theorem", "conservation_of_energy", "power",
+    "mole_concept", "molar_mass", "empirical_molecular_formula", "limiting_reagent",
+    "bohr_model", "quantum_numbers", "electronic_configuration",
+    "periodic_law", "atomic_radius_trend", "ionization_energy", "electronegativity",
+    "ionic_vs_covalent", "vsepr_shape", "hybridization"
+  ],
+  "assessments": {
+    "2": { "title": "Kinematics check", "url": "https://acharya.trigunai.com/lesson/catalyzers-kota" },
+    "5": { "title": "Mole concept check", "url": "https://acharya.trigunai.com/lesson/catalyzers-kota" }
+  },
+  "concepts": {
+    "units_dimensions": {
+      "module": 1,
+      "hook": "You can multiply a speed by a time and get a distance — but you can never add a speed to a time. Why does physics forbid it?",
+      "recall": "What are the dimensions of force, and how do you know an equation is dimensionally wrong?",
+      "answer": "Force = [M L T^-2]. An equation is wrong if the two sides have different dimensions — only same-dimension quantities can be added or equated."
+    },
+    "significant_figures": {
+      "module": 1,
+      "hook": "A ruler says 2.5 cm and a vernier says 2.50 cm. Same number — but one is a stronger claim. What's the difference?",
+      "recall": "How many significant figures are in 0.00405, and why?",
+      "answer": "Three (4, 0, 5). Leading zeros are not significant; zeros between/after significant digits are."
+    },
+    "error_analysis": {
+      "module": 1,
+      "hook": "If a quantity is a product of two measured values, do their errors add, or do their percentage errors add?",
+      "recall": "For Z = A·B, how do the relative (percentage) errors combine?",
+      "answer": "For products/quotients the relative errors add: ΔZ/Z = ΔA/A + ΔB/B. For powers, multiply by the exponent."
+    },
+    "distance_vs_displacement": {
+      "module": 2,
+      "hook": "You run one full lap of a 400 m track and stop where you started. Distance = 400 m. Displacement = ?",
+      "recall": "State one situation where average speed is non-zero but average velocity is zero.",
+      "answer": "Zero displacement (back to start). Any closed loop: distance travelled > 0 so average speed > 0, but net displacement = 0 so average velocity = 0."
+    },
+    "velocity_acceleration": {
+      "module": 2,
+      "hook": "A car slows down while still moving forward. Its velocity is positive — but its acceleration points backward. How can both be true?",
+      "recall": "Can a body have zero velocity and non-zero acceleration at the same instant? Give an example.",
+      "answer": "Yes — at the top of a vertical throw velocity = 0 but acceleration = g downward. Acceleration is the rate of change of velocity, independent of velocity's current value."
+    },
+    "equations_of_motion": {
+      "module": 2,
+      "hook": "Three little equations describe every uniformly-accelerated motion in the universe. What's the one condition they all require?",
+      "recall": "Write the three equations of motion for constant acceleration.",
+      "answer": "v = u + at; s = ut + ½at²; v² = u² + 2as. Valid only when acceleration a is constant."
+    },
+    "projectile_motion": {
+      "module": 2,
+      "hook": "A bullet fired horizontally and a bullet dropped from the same height hit the ground at the same time. Why?",
+      "recall": "In projectile motion, what happens to the horizontal and vertical velocity components over time?",
+      "answer": "Horizontal velocity stays constant (no horizontal force); vertical velocity changes due to g. The two motions are independent, so vertical fall time is the same as a dropped object."
+    },
+    "newtons_first_law": {
+      "module": 3,
+      "hook": "A spaceship far from any star keeps moving forever with its engines off. What law makes 'off' enough?",
+      "recall": "State Newton's first law and define inertia.",
+      "answer": "A body stays at rest or in uniform motion unless acted on by a net external force. Inertia is a body's resistance to change in its state of motion, measured by its mass."
+    },
+    "newtons_second_law": {
+      "module": 3,
+      "hook": "Push a shopping cart and a loaded truck with the same force. Same force — wildly different results. What equation captures why?",
+      "recall": "State Newton's second law in terms of momentum, and its common form.",
+      "answer": "F = dp/dt (net force = rate of change of momentum). For constant mass this becomes F = ma."
+    },
+    "newtons_third_law": {
+      "module": 3,
+      "hook": "The Earth pulls you down with your weight. By Newton's third law, you pull the Earth up with the SAME force. So why doesn't the Earth move?",
+      "recall": "Action and reaction are equal and opposite — why do they never cancel each other out?",
+      "answer": "They act on different bodies, so they never cancel. The Earth does accelerate, but its huge mass makes that acceleration negligibly small (a = F/m)."
+    },
+    "friction": {
+      "module": 3,
+      "hook": "Static friction can be zero, or huge — it adjusts itself. What sets its maximum before something finally slips?",
+      "recall": "How does limiting static friction relate to the normal force, and how does kinetic friction compare?",
+      "answer": "f_s(max) = μ_s·N. Once moving, kinetic friction f_k = μ_k·N, and usually μ_k < μ_s (harder to start than to keep sliding)."
+    },
+    "work_done": {
+      "module": 4,
+      "hook": "You hold a heavy bag still for an hour and get exhausted — but physics says you did zero work. How?",
+      "recall": "Define work done by a force, and when it is zero despite a force acting.",
+      "answer": "W = F·d·cosθ. Work is zero when displacement is zero, or when the force is perpendicular to displacement (θ = 90°), e.g. carrying a bag horizontally or holding it still."
+    },
+    "work_energy_theorem": {
+      "module": 4,
+      "hook": "Forget the forces for a second — the total work done on a body equals just ONE thing about it. What?",
+      "recall": "State the work–energy theorem.",
+      "answer": "The net work done on a body equals its change in kinetic energy: W_net = ΔKE = ½mv² − ½mu²."
+    },
+    "conservation_of_energy": {
+      "module": 4,
+      "hook": "A pendulum swings up, stops, swings back — perfectly, forever, if there's no friction. What quantity is secretly staying constant?",
+      "recall": "For a freely falling body, how do KE and PE change while their sum stays fixed?",
+      "answer": "PE (mgh) converts to KE (½mv²) as it falls; total mechanical energy KE + PE stays constant when only conservative forces act."
+    },
+    "power": {
+      "module": 4,
+      "hook": "Two cranes lift the same load to the same height. Same work done — but one is 'more powerful.' What's the missing variable?",
+      "recall": "Define power and give its relation to force and velocity.",
+      "answer": "Power = work/time (rate of doing work). Instantaneously, P = F·v. SI unit: watt."
+    },
+    "mole_concept": {
+      "module": 5,
+      "hook": "Chemists count atoms — but atoms are far too small to count one by one. So they invented a 'dozen' for atoms. How big is it?",
+      "recall": "What is one mole, and what is Avogadro's number?",
+      "answer": "One mole is the amount containing as many entities as there are atoms in 12 g of carbon-12 — that is 6.022 × 10²³ (Avogadro's number)."
+    },
+    "molar_mass": {
+      "module": 5,
+      "hook": "Why does 18 g of water and 44 g of CO₂ both contain exactly the same number of molecules?",
+      "recall": "How do you find the number of moles from a given mass, and what is molar mass?",
+      "answer": "moles = given mass / molar mass. Molar mass is the mass of one mole in grams, numerically equal to the molecular/atomic mass in amu."
+    },
+    "empirical_molecular_formula": {
+      "module": 5,
+      "hook": "Glucose is C₆H₁₂O₆ and formaldehyde is CH₂O — different molecules, but the SAME simplest ratio. What's that ratio called?",
+      "recall": "What is the difference between empirical and molecular formula, and how are they related?",
+      "answer": "Empirical formula = simplest whole-number ratio of atoms; molecular formula = actual number of atoms. Molecular = n × empirical, where n = molar mass / empirical formula mass."
+    },
+    "limiting_reagent": {
+      "module": 5,
+      "hook": "You have 10 bread slices and 3 cheese slices to make sandwiches. How many sandwiches — and what runs out first?",
+      "recall": "What is the limiting reagent, and what determines the amount of product formed?",
+      "answer": "The limiting reagent is the reactant that is fully consumed first; it caps how much product forms. The other reactant(s) are in excess."
+    },
+    "bohr_model": {
+      "module": 6,
+      "hook": "Classical physics says an orbiting electron should spiral into the nucleus in a fraction of a second. Atoms don't collapse. What did Bohr forbid?",
+      "recall": "What is quantised in Bohr's model, and what happens when an electron jumps between levels?",
+      "answer": "Angular momentum is quantised (mvr = nh/2π), so only certain orbits are allowed. An electron absorbs energy to jump up and emits a photon (ΔE = hν) when it falls down."
+    },
+    "quantum_numbers": {
+      "module": 6,
+      "hook": "Four numbers pin down every electron in an atom like a postal address — and no two electrons can share all four. Why not?",
+      "recall": "Name the four quantum numbers and state the Pauli exclusion principle.",
+      "answer": "Principal (n), azimuthal (l), magnetic (m_l), spin (m_s). Pauli: no two electrons in an atom can have all four quantum numbers identical."
+    },
+    "electronic_configuration": {
+      "module": 6,
+      "hook": "Electrons could all pile into the lowest energy level — but they don't. Three rules decide where each one goes. Which rule fills lowest-energy orbitals first?",
+      "recall": "State the Aufbau principle and Hund's rule.",
+      "answer": "Aufbau: orbitals fill in order of increasing energy (lowest first). Hund's rule: within a subshell, each orbital gets one electron (parallel spins) before any is doubly filled."
+    },
+    "periodic_law": {
+      "module": 7,
+      "hook": "Mendeleev left GAPS in his table for elements nobody had discovered — and predicted their properties. What repeating pattern gave him the nerve?",
+      "recall": "State the modern periodic law.",
+      "answer": "Properties of elements are a periodic function of their atomic number (not atomic mass) — repeating regularly as Z increases."
+    },
+    "atomic_radius_trend": {
+      "module": 7,
+      "hook": "Across a period you ADD electrons, yet atoms get SMALLER, not bigger. What overpowers the extra electrons?",
+      "recall": "How does atomic radius change across a period and down a group, and why?",
+      "answer": "Decreases across a period (increasing nuclear charge pulls electrons in) and increases down a group (new shells added). Nuclear pull vs shell number is the tug-of-war."
+    },
+    "ionization_energy": {
+      "module": 7,
+      "hook": "Removing the first electron from sodium is easy; the second costs almost ten times more energy. What causes the sudden jump?",
+      "recall": "Define ionization energy and explain the large jump after a noble-gas configuration is reached.",
+      "answer": "Ionization energy is the energy to remove the outermost electron from a gaseous atom. A huge jump appears when you start removing electrons from a stable, filled inner (noble-gas) shell."
+    },
+    "electronegativity": {
+      "module": 7,
+      "hook": "In a tug-of-war over shared electrons, fluorine always wins. What property measures who pulls hardest?",
+      "recall": "What is electronegativity and how does it trend in the periodic table?",
+      "answer": "Electronegativity is an atom's tendency to attract a shared electron pair in a bond. It increases across a period and decreases down a group; fluorine is the most electronegative."
+    },
+    "ionic_vs_covalent": {
+      "module": 8,
+      "hook": "Sodium GIVES its electron away; two chlorine atoms SHARE. Same goal — a full shell — two different deals. What decides give vs share?",
+      "recall": "What is the key difference between ionic and covalent bonding, and what favours each?",
+      "answer": "Ionic = complete transfer of electrons (large electronegativity difference, metal + non-metal); covalent = sharing of electrons (small difference, non-metal + non-metal)."
+    },
+    "vsepr_shape": {
+      "module": 8,
+      "hook": "Why is water bent at 104.5° and not a straight line? Something invisible is pushing the bonds apart.",
+      "recall": "What is the central idea of VSEPR theory, and why is water bent?",
+      "answer": "Electron pairs around a central atom repel and arrange to be as far apart as possible. Water has two bond pairs + two lone pairs; lone-pair repulsion pushes the O–H bonds to a bent 104.5° shape."
+    },
+    "hybridization": {
+      "module": 8,
+      "hook": "Carbon's four bonds in methane are all identical — but its s and p orbitals aren't. How does carbon make four equal bonds from unequal orbitals?",
+      "recall": "What is hybridization, and what is the hybridization and geometry of carbon in methane?",
+      "answer": "Hybridization is the mixing of atomic orbitals to form new equivalent orbitals. Carbon in CH₄ is sp³ hybridised, giving four identical orbitals in a tetrahedral geometry (109.5°)."
+    }
+  }
+}

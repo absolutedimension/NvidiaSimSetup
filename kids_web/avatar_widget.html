@@ -1,0 +1,79 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:"Baloo 2",system-ui,sans-serif;-webkit-user-select:none;user-select:none}
+  #c{width:100vw;height:100vh;display:block;cursor:pointer}
+  #bubble{position:fixed;left:50%;top:6%;transform:translateX(-50%) scale(.4);opacity:0;
+    background:#fff;color:#26406b;font-weight:800;font-size:clamp(15px,4.6vw,20px);line-height:1.25;
+    padding:12px 18px;border-radius:22px;max-width:78vw;text-align:center;
+    box-shadow:0 8px 22px #0002;border:3px solid #ffd24a;transition:transform .3s cubic-bezier(.2,1.5,.4,1),opacity .3s}
+  #bubble:after{content:"";position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);
+    border:11px solid transparent;border-top-color:#ffd24a}
+  #bubble.show{transform:translateX(-50%) scale(1);opacity:1}
+  #hint{position:fixed;left:50%;bottom:8px;transform:translateX(-50%);background:rgba(0,0,0,.42);
+    color:#fff;padding:6px 14px;border-radius:20px;font-size:14px;font-weight:700;pointer-events:none;transition:opacity .4s}
+  #hint.hide{opacity:0}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+</head><body>
+<canvas id="c"></canvas>
+<div id="bubble"></div>
+<div id="hint">👋 Tap me to say hi!</div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const canvas=document.getElementById('c'), hint=document.getElementById('hint'), bubble=document.getElementById('bubble');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(innerWidth,innerHeight);
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+const scene=new THREE.Scene();
+const cam=new THREE.PerspectiveCamera(30,innerWidth/innerHeight,0.1,100);
+cam.position.set(0,0,6.2); cam.lookAt(0,0,0);
+scene.add(new THREE.HemisphereLight(0xffffff,0x9fc0e0,2.6));
+const key=new THREE.DirectionalLight(0xffffff,2.2); key.position.set(1.5,3,2.5); scene.add(key);
+const fill=new THREE.DirectionalLight(0xfff2e0,0.9); fill.position.set(-2,1.5,1.5); scene.add(fill);
+
+const rig=new THREE.Group(); scene.add(rig);   // idle-bob wrapper
+let ready=false;
+new GLTFLoader().load('./kid.glb',(g)=>{
+  const m=g.scene;
+  m.rotation.x=0;                                 // native orientation (debug view)
+  m.updateWorldMatrix(true,true);
+  let box=new THREE.Box3().setFromObject(m), size=new THREE.Vector3(); box.getSize(size);
+  const s=3.0/Math.max(size.x,size.y,size.z);     // fit whole pose
+  m.scale.setScalar(s);
+  m.updateWorldMatrix(true,true);
+  box.setFromObject(m); const c=new THREE.Vector3(); box.getCenter(c);
+  m.position.x-=c.x; m.position.y-=c.y; m.position.z-=c.z;   // center at origin
+  m.traverse(o=>{if(o.isMesh)o.frustumCulled=false;});
+  rig.add(m); ready=true;
+},undefined,()=>{});
+
+// baked greeting audio + word timing for the speech bubble
+const GREET="Hi friends! Welcome to Acharya Kids! Let's learn maths and have super fun together!";
+const audio=new Audio('./greeting.mp3'); audio.preload='auto';
+let bubbleTimer=null;
+function playGreeting(){
+  audio.currentTime=0;
+  audio.play().then(()=>{
+    hint.classList.add('hide');
+    bubble.textContent=GREET; bubble.classList.add('show');
+    clearTimeout(bubbleTimer);
+    bubbleTimer=setTimeout(()=>bubble.classList.remove('show'),(audio.duration||8)*1000+400);
+  }).catch(()=>{});
+}
+audio.addEventListener('loadedmetadata',()=>{},{once:true});
+canvas.addEventListener('click',playGreeting);
+
+let t=0;
+function loop(){
+  t+=0.016;
+  if(ready){
+    rig.position.y=Math.sin(t*1.6)*0.05;          // gentle bounce
+    rig.rotation.y=Math.sin(t*0.5)*0.12;          // sway
+  }
+  renderer.render(scene,cam); requestAnimationFrame(loop);
+}
+loop();
+addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+</script></body></html>

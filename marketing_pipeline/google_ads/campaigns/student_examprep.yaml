@@ -12,11 +12,11 @@
 # Until that env is set the tag stays silent (no double-firing, no fake counts).
 # ─────────────────────────────────────────────────────────────────────────────
 
-name: "Acharya · Student Exam-Prep · 2026-07"
+name: "Acharya · Student Exam-Prep · Patna · 2026-07"
 status: PAUSED            # ALWAYS starts paused — review in the UI, then enable. Never auto-spends.
 
 budget:
-  daily_inr: 300         # ₹300/day. Exam-prep demand is national, so give it a bit more than the Patna teacher test.
+  daily_inr: 200         # ₹200/day (Deepak, 2026-07-26). Patna-only, runs alongside the offline field campaign.
 
 bidding:
   # Start MANUAL_CPC to gather the first signups cheaply, THEN switch to "Maximize Conversions"
@@ -25,19 +25,23 @@ bidding:
   max_cpc_inr: 10        # student clicks are cheaper than owner clicks; keeps the budget spread wide
 
 schedule:
-  start_date: "2026-07-22"   # set to when you flip it on
-  end_date:   "2026-08-12"   # ~3 weeks; auto-stops here
+  start_date: "2026-07-26"   # set to when you flip it on
+  end_date:   "2026-08-16"   # ~3 weeks; auto-stops here
 
 geo:
-  locations: ["India"]       # exam-prep demand is national (unlike the Bihar-focused teacher campaign)
+  # PATNA CITY ONLY (Deepak, 2026-07-26) — mirrors the offline Patna push. In the Ads UI set
+  # Location options → "Presence: people IN this location" (NOT "presence or interest"), else it
+  # serves anyone in India searching *about* Patna and wastes the small budget.
+  locations: ["Patna, Bihar, India"]
 languages: ["English", "Hindi"]
 
-final_url: "https://acharya.trigunai.com/exam-prep/quick"   # AD LANDING: 3-question teaser → 1-tap/email register → full test.
-# Per-ad-group targeting: append the exam so the teaser matches the search, e.g.
-#   NEET ad group   → https://acharya.trigunai.com/exam-prep/quick?exam=neet
-#   JEE ad group    → …/exam-prep/quick?exam=jee
-#   Boards ad group → …/exam-prep/quick?exam=class10  (or class12)
-# No ?exam = a general aptitude teaser. (The plain /exam-prep landing stays for organic/SEO.)
+final_url: "https://acharya.trigunai.com/exam-prep"   # AD LANDING: the exam-picker signup → account → adaptive test.
+# NOTE (2026-07-26): /exam-prep/quick is RETIRED (the 'earn days' challenge is gone; it now just
+# 302-redirects to /exam-prep). Point ads straight at /exam-prep — no redirect hop.
+# Optional per-ad-group deep-link: append ?exam= to pre-select the exam, e.g.
+#   NEET ad group   → https://acharya.trigunai.com/exam-prep?exam=neet
+#   JEE ad group    → …/exam-prep?exam=jee
+#   Boards ad group → …/exam-prep?exam=class10  (or class12)
 
 ad_group:
   name: "exam-weak-areas"
@@ -87,7 +91,7 @@ ad:
     - "Free NEET & JEE Practice Test"
     - "AI Test That Finds Your Gaps"
     - "Not Just a Score — a Plan"
-    - "Adaptive Test · JEE NEET Boards"
+    - "Adaptive JEE NEET Board Test"
     - "Know What to Revise Next"
     - "Free Practice Test · Hindi Too"
     - "Test Your Weak Chapters"

@@ -256,7 +256,7 @@ const T={
    shakyNote:n=>`⏳ Hesitated on <b>${n}</b> — the answer was right, but slow. A quick timed revision makes it automatic.`,
    shareLabel:"↗ Share my report on WhatsApp",
    shareText:(p,w,u)=>`I scored ${p}% on Acharya's ${S.title} test${w?`. Spots to improve: ${w}`:''}. Try the free adaptive test 👉 ${u}`,
-   sureQ:"Were you sure?",sure:"😎 Sure",unsure:"🤔 Not sure",
+   sureQ:"How sure were you?",cSure:"😎 Sure",cMid:"🤔 Think so",cGuess:"🎲 Guessing",
    confWrong:n=>`🧠 <b>${n}</b> answer${n>1?'s':''} you were <b>sure</b> about turned out wrong — that's the most important thing to fix (a confident misconception hides until it's tested).`,
    reviewLbl:"📖 Review your answers",ansLbl:"Correct:",teacherView:"👨‍🏫 See the teacher's view →",
    another:"🏠 My dashboard — days &amp; topics →",studFoot:"📊 Your report is saved to your account — keep testing and watch your weak areas shrink.",
@@ -274,7 +274,7 @@ const T={
    shakyNote:n=>`⏳ <b>${n}</b> पर हिचकिचाहट — जवाब सही था पर धीमा। एक quick timed revision से यह automatic हो जाएगा।`,
    shareLabel:"↗ WhatsApp पर मेरी report भेजें",
    shareText:(p,w,u)=>`मैंने Acharya के ${S.title} टेस्ट में ${p}% score किया${w?`। सुधारने लायक: ${w}`:''}। free adaptive टेस्ट करके देखो 👉 ${u}`,
-   sureQ:"पक्का यकीन था?",sure:"😎 पक्का",unsure:"🤔 यकीन नहीं",
+   sureQ:"कितना यकीन था?",cSure:"😎 पक्का",cMid:"🤔 शायद",cGuess:"🎲 तुक्का",
    confWrong:n=>`🧠 <b>${n}</b> जवाब जिन पर आपको <b>पक्का यकीन</b> था, वो ग़लत निकले — यही सबसे ज़रूरी सुधार है (पक्के यकीन वाली ग़लती टेस्ट होने तक छिपी रहती है)।`,
    reviewLbl:"📖 अपने जवाब देखें",ansLbl:"सही जवाब:",teacherView:"👨‍🏫 teacher को कैसा दिखता है →",
    another:"🏠 मेरा dashboard — days &amp; topics →",studFoot:"📊 आपकी report आपके account में सेव है — टेस्ट देते रहें और अपनी कमज़ोरियाँ घटते देखें।",
@@ -310,11 +310,11 @@ const wait=m=>new Promise(r=>setTimeout(r,m));
 function setHeader(i){fill.style.width=(i/TOTAL*100)+'%';plabel.textContent=T[LANG].qof(i+1);pscore.textContent=T[LANG].score+' '+score;}
 function nextBtn(res,ok,label){const b=el(`<button class="btn full">${label||T[LANG].next}</button>`);b.onclick=()=>{b.disabled=true;res(ok);};add(b);log.scrollTop=log.scrollHeight;}
 function advance(res,ok,label){
-  if(!(CONF&&curGraded)){nextBtn(res,ok,label);return;}
-  // #4 ask calibration BEFORE moving on; "sure + wrong" = the confidently-wrong signal.
-  const box=el(`<div class="conf"><span class="cq">${T[LANG].sureQ}</span><button class="cbtn" data-s="1">${T[LANG].sure}</button><button class="cbtn" data-s="0">${T[LANG].unsure}</button></div>`);
+  if(!curGraded){nextBtn(res,ok,label);return;}   // long answers aren't graded → no calibration prompt
+  // #4 ask calibration BEFORE moving on; "sure + wrong" = the confidently-wrong signal (the RED BOX).
+  const box=el(`<div class="conf"><span class="cq">${T[LANG].sureQ}</span><button class="cbtn" data-s="sure">${T[LANG].cSure}</button><button class="cbtn" data-s="think">${T[LANG].cMid}</button><button class="cbtn" data-s="guess">${T[LANG].cGuess}</button></div>`);
   box.querySelectorAll('.cbtn').forEach(b=>b.onclick=()=>{
-    const sure=b.dataset.s==='1'; confLog.push({ok,sure});
+    _conf=b.dataset.s; confLog.push({ok,sure:_conf==='sure'});
     box.querySelectorAll('.cbtn').forEach(x=>{x.onclick=null;if(x!==b)x.classList.add('dim');});b.classList.add('sel');
     nextBtn(res,ok,label);});
   add(box);log.scrollTop=log.scrollHeight;}
@@ -389,10 +389,13 @@ const render=(q,last)=>RENDER[q.type](q,last);
 const SLOW={mcq:13000,truefalse:9000,numeric:20000,match:22000};
 // #5 Fisher-Yates shuffle — so options/pairs aren't in a canned, position-leaking order.
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
-// #4 confidence-calibration (opt-in via ?confidence=1): captures "sure vs not sure" per graded answer.
-const CONF=params.get('confidence')==='1'; const confLog=[]; let curGraded=true;
+// #4 confidence-calibration (default-on): 3-way (sure/think/guess) per graded answer → "sure + wrong"
+// = the RED BOX signal (a confident misconception hides until it's tested).
+const confLog=[]; let curGraded=true;
 // what the student actually PICKED on the current question — for the teacher's per-answer review.
 let _pick=null;
+// the confidence the student tapped for the current question (sure|think|guess) — merged into the transcript.
+let _conf=null;
 
 function intro(){return new Promise(res=>{clear();fill.style.width='0%';plabel.textContent=T[LANG].ready;pscore.textContent=T[LANG].score+' 0';
   add(el(`<div class="qcard"><div class="say"><div class="who">ACHARYA</div>${S.intro[LANG]}</div></div>`));
@@ -407,9 +410,9 @@ async function run(){
     clear();setHeader(i);
     curGraded=q.type!=='long';   // #4 long answers aren't graded → no calibration prompt
     const t0=performance.now();
-    _pick=null;
+    _pick=null; _conf=null;
     const ok=await render(q,last && !q.adaptive);
-    const pick=_pick;   // the student's answer to the MAIN question (before any adaptive follow-up)
+    const pick=_pick, conf=_conf;   // the student's answer + confidence on the MAIN question (before any adaptive follow-up)
     const dt=performance.now()-t0;
     if(q.type==='long'){ /* free text: honestly not auto-graded, so excluded from the diagnosis */ }
     else if(ok){ score++;
@@ -425,7 +428,7 @@ async function run(){
     } else {
       results.push({topic,status:'weak',depth:null});
     }
-    transcript.push({q:L(q).q, a:answerText(q,L(q)), chosen:(pick==null?'':String(pick)), explain:L(q).explain||'', ok:q.type==='long'?null:ok, type:q.type});
+    transcript.push({q:L(q).q, a:answerText(q,L(q)), chosen:(pick==null?'':String(pick)), conf:(conf||''), explain:L(q).explain||'', ok:q.type==='long'?null:ok, type:q.type});
   }
   clear();fill.style.width='100%';plabel.textContent=T[LANG].complete;pscore.textContent=T[LANG].score+' '+score+'/'+GRADED;
   scorecard(results,transcript);
@@ -468,8 +471,8 @@ function scorecard(results,transcript){
   if(pri) msg+='<br><br>'+T[LANG].suggWeak(pri);
   else if(!weakRes.length&&!shakyRes.length) msg+='<br><br>'+T[LANG].allSolid;
   say(msg);
-  // #4 confidently-wrong = the highest-value teaching signal (sure, but wrong)
-  if(CONF){const cw=confLog.filter(c=>!c.ok&&c.sure).length; if(cw) say(T[LANG].confWrong(cw));}
+  // #4 confidently-wrong = the highest-value teaching signal (sure, but wrong) — the RED BOX, in-test
+  {const cw=confLog.filter(c=>!c.ok&&c.sure).length; if(cw) say(T[LANG].confWrong(cw));}
   // #1 WhatsApp share — turns a score into a spreadable report + reproduces this exact test via the link
   const improve=[...weakRes,...shakyRes].map(r=>r.topic[LANG]).join(', ');
   const sp=new URLSearchParams();sp.set('subject',params.get('subject')||'neet-biology');sp.set('lang',LANG);
@@ -489,14 +492,14 @@ function scorecard(results,transcript){
       body:JSON.stringify({code:window.__CLASSTEST.code,score:score,graded:GRADED,
         results:results.map(r=>({topic:r.topic.en,status:r.status,depth:r.depth||null})),
         // per-question record so the teacher can see exactly what this student answered
-        detail:(transcript||[]).map(t=>({q:t.q,a:t.a,chosen:t.chosen||'',explain:t.explain||'',ok:t.ok,type:t.type}))})}).catch(()=>{});}catch(e){}
+        detail:(transcript||[]).map(t=>({q:t.q,a:t.a,chosen:t.chosen||'',conf:t.conf||'',explain:t.explain||'',ok:t.ok,type:t.type}))})}).catch(()=>{});}catch(e){}
     add(el(`<div class="footnote" style="text-align:center">✅ ${LANG==='hi'?'जमा हो गया — आपके टीचर को आपका परिणाम दिख जाएगा।':'Submitted — your teacher can now see your result.'}</div>`));
   } else if(window.__STUDENT){
     try{fetch('/api/assess/complete',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
       body:JSON.stringify({subject:(window.__SUBJECT||''),title:(window.__TITLE||window.__GEN_TITLE||''),score:score,graded:GRADED,
         results:results.map(r=>({topic:r.topic.en,status:r.status,depth:r.depth||null})),
         // full paper so the student can REOPEN this test later from their report (+ teacher review)
-        detail:(transcript||[]).map(t=>({q:t.q,a:t.a,chosen:t.chosen||'',explain:t.explain||'',ok:t.ok,type:t.type}))})}).catch(()=>{});}catch(e){}
+        detail:(transcript||[]).map(t=>({q:t.q,a:t.a,chosen:t.chosen||'',conf:t.conf||'',explain:t.explain||'',ok:t.ok,type:t.type}))})}).catch(()=>{});}catch(e){}
     add(el(`<a class="btn ghost full" href="/exam-prep/dashboard">${T[LANG].another}</a>`));
     add(el(`<div class="footnote">${T[LANG].studFoot}</div>`));
   } else {

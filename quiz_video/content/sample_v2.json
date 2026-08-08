@@ -1,0 +1,34 @@
+{
+  "lang": "en",
+  "voice": "en-IN-NeerjaExpressiveNeural",
+  "exam": "JEE / NEET · Class 11 Physics",
+  "subject": "Physics",
+  "chapter": "Units & Measurements",
+  "topic_line": "Chapter 1 · where every aspirant begins",
+  "timer_seconds": 5,
+  "brand": "Acharya",
+  "cta": "Get your full adaptive test on Acharya",
+  "intro_voice": "Physics. Units and Measurements. Two quick challenges. Can you beat the timer? Let's go!",
+  "outro_voice": "Loved that? Your full adaptive test is waiting on Acharya. It finds exactly where you're weak.",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "The candela is the SI base unit of which quantity?",
+      "options": ["Electric current", "Luminous intensity", "Temperature", "Amount of substance"],
+      "answer": 1,
+      "explain": "Candela (cd) is one of the seven SI base units — it measures luminous intensity.",
+      "voice_q": "Here's your first one. The candela is the S I base unit of which quantity? Five seconds... think fast!",
+      "voice_a": "Yes! It's B — luminous intensity. The candela is one of the seven S I base units. Nailed it!"
+    },
+    {
+      "type": "match",
+      "prompt": "Match each physical quantity to its correct SI unit",
+      "left": ["Force", "Pressure", "Energy", "Power"],
+      "right": ["Pascal", "Watt", "Newton", "Joule"],
+      "pairs": [[0, 2], [1, 0], [2, 3], [3, 1]],
+      "explain": "Force → Newton, Pressure → Pascal, Energy → Joule, Power → Watt.",
+      "voice_q": "Now match them up! Each physical quantity to its correct S I unit. Force, pressure, energy, power. Go!",
+      "voice_a": "Beautifully done! Force to Newton. Pressure to Pascal. Energy to Joule. And power to Watt. Perfect match!"
+    }
+  ]
+}

@@ -1,0 +1,527 @@
+[
+ {
+  "day": 1,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Physics",
+    "chapter": "Modern Physics"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Mathematics",
+    "chapter": "Matrices And Determinants"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Biology",
+    "chapter": "Principles of Inheritance and Variation",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Chemistry",
+    "chapter": "p Block Elements (Group 15, 16, 17 & 18)",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 2,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Chemistry",
+    "chapter": "Compounds Containing Nitrogen"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Physics",
+    "chapter": "Heat And Thermodynamics"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Physics",
+    "chapter": "Gravitation",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "JEE Main",
+    "subject": "Physics",
+    "chapter": "Atoms And Nuclei",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 3,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Chemistry",
+    "chapter": "Coordination Compounds"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Mathematics",
+    "chapter": "3d Geometry"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "JEE Main",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding And Molecular Structure",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Biology",
+    "chapter": "Molecular Basis of Inheritance",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 4,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "NEET",
+    "subject": "Physics",
+    "chapter": "Dual Nature of Matter"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "NEET",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Biology",
+    "chapter": "Human Health and Disease",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 5,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Physics",
+    "chapter": "Thermodynamics & Kinetic Theory"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Mathematics",
+    "chapter": "Definite Integration"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Physics",
+    "chapter": "Thermal Properties of Matter",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "JEE Main",
+    "subject": "Physics",
+    "chapter": "Properties Of Matter",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 6,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Chemistry",
+    "chapter": "Coordination Compounds"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Physics",
+    "chapter": "Current Electricity"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "JEE Main",
+    "subject": "Chemistry",
+    "chapter": "Some Basic Concepts Of Chemistry",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Biology",
+    "chapter": "Sexual Reproduction in Flowering Plants",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 7,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Chemistry",
+    "chapter": "D And F Block Elements"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Mathematics",
+    "chapter": "Matrices And Determinants"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Biology",
+    "chapter": "Biological Classification",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Chemistry",
+    "chapter": "d and f Block Elements",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 8,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "NEET",
+    "subject": "Physics",
+    "chapter": "Ray Optics"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "NEET",
+    "subject": "Chemistry",
+    "chapter": "General Organic Chemistry"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Physics",
+    "chapter": "Atomic Physics",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "JEE Main",
+    "subject": "Physics",
+    "chapter": "Gravitation",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 9,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Physics",
+    "chapter": "Electrostatics"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Mathematics",
+    "chapter": "Complex Numbers"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "JEE Main",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Biology",
+    "chapter": "Animal Kingdom",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 10,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Physics",
+    "chapter": "Dual Nature Of Radiation"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Biology",
+    "chapter": "Evolution",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Chemistry",
+    "chapter": "Coordination Compounds",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 11,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Mathematics",
+    "chapter": "Sequences And Series"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Physics",
+    "chapter": "Nuclear Physics",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "JEE Main",
+    "subject": "Physics",
+    "chapter": "Units And Measurements",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 12,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "NEET",
+    "subject": "Physics",
+    "chapter": "Laws of Motion"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "NEET",
+    "subject": "Chemistry",
+    "chapter": "Hydrocarbons"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "JEE Main",
+    "subject": "Chemistry",
+    "chapter": "Structure Of Atom",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Biology",
+    "chapter": "Biotechnology: Principles and Processes",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 13,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Physics",
+    "chapter": "Properties of Matter & Fluids"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Mathematics",
+    "chapter": "Differential Equations"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Biology",
+    "chapter": "Human Reproduction",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Chemistry",
+    "chapter": "s Block Elements",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 14,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Advanced",
+    "subject": "Chemistry",
+    "chapter": "Solutions"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Physics",
+    "chapter": "Electrostatics"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Physics",
+    "chapter": "Waves and Sound",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "JEE Main",
+    "subject": "Physics",
+    "chapter": "Magnetics",
+    "n_questions": 3
+   }
+  ]
+ },
+ {
+  "day": 15,
+  "videos": [
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Chemistry",
+    "chapter": "Chemical Kinetics And Nuclear Chemistry"
+   },
+   {
+    "slot": "main",
+    "format": "solution",
+    "exam": "JEE Main",
+    "subject": "Mathematics",
+    "chapter": "Definite Integration"
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "JEE Main",
+    "subject": "Chemistry",
+    "chapter": "Solutions",
+    "n_questions": 3
+   },
+   {
+    "slot": "reel",
+    "format": "quiz",
+    "exam": "NEET",
+    "subject": "Biology",
+    "chapter": "Body Fluids and Circulation",
+    "n_questions": 3
+   }
+  ]
+ }
+]

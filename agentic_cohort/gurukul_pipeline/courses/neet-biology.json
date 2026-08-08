@@ -1,0 +1,148 @@
+{
+  "course_id": "neet-biology",
+  "name": "NEET Biology",
+  "order": [
+    "cell_structure",
+    "prokaryote_eukaryote",
+    "biomolecules",
+    "enzymes",
+    "cell_division",
+    "mendel_laws",
+    "dna_structure",
+    "central_dogma",
+    "human_digestion",
+    "human_heart",
+    "breathing",
+    "nephron",
+    "neuron",
+    "endocrine_system",
+    "human_reproduction",
+    "photosynthesis",
+    "plant_transport",
+    "ecosystem",
+    "evolution",
+    "biotechnology"
+  ],
+  "concepts": {
+    "cell_structure": {
+      "module": 1,
+      "hook": "Two cells look identical under the microscope — one is a bacterium, one is your skin cell. Without staining, what is the ONE structure you'd hunt for to tell them apart?",
+      "recall": "Which single feature separates a eukaryotic cell from a prokaryotic one?",
+      "answer": "a true membrane-bound nucleus (and membrane-bound organelles)"
+    },
+    "prokaryote_eukaryote": {
+      "module": 1,
+      "hook": "A bacterium has no nucleus, yet it copies its DNA and divides faster than any of your cells. So where does its genetic material actually sit?",
+      "recall": "Where is the genetic material located in a prokaryote, and what is that region called?",
+      "answer": "in the cytoplasm, in an unbound region called the nucleoid"
+    },
+    "biomolecules": {
+      "module": 1,
+      "hook": "Proteins, DNA, starch, fat — four totally different molecules of life. Yet each is just one type of small brick repeated. What are these repeating bricks called?",
+      "recall": "Name the monomer (building block) of proteins, of nucleic acids, and of polysaccharides.",
+      "answer": "amino acids, nucleotides, and monosaccharides (sugars)"
+    },
+    "enzymes": {
+      "module": 1,
+      "hook": "A reaction that would take years in a test tube happens in milliseconds inside you — and the enzyme comes out unchanged. What is the enzyme actually lowering to pull off this trick?",
+      "recall": "What does an enzyme lower to speed up a reaction, and does it get consumed?",
+      "answer": "it lowers the activation energy and is NOT consumed (reusable catalyst)"
+    },
+    "cell_division": {
+      "module": 2,
+      "hook": "Your skin cells and your sperm/egg cells both divide — but one keeps 46 chromosomes and the other drops to 23. What is the key difference that halves the number in only one of them?",
+      "recall": "Mitosis vs meiosis: how many daughter cells and what chromosome number does each produce?",
+      "answer": "mitosis = 2 diploid identical cells; meiosis = 4 haploid genetically-varied cells"
+    },
+    "mendel_laws": {
+      "module": 2,
+      "hook": "Cross two tall pea plants and sometimes a short one appears in the grandchildren — out of nowhere. How did a trait vanish for a generation and then return?",
+      "recall": "State Mendel's Law of Segregation in one line.",
+      "answer": "the two alleles of a gene separate during gamete formation, one to each gamete"
+    },
+    "dna_structure": {
+      "module": 2,
+      "hook": "DNA is a twisted ladder where A always pairs with T, never with G. If this pairing rule broke even occasionally, copying DNA would fail. Why is the pairing so strict?",
+      "recall": "In DNA base pairing, A pairs with which base, and G pairs with which base?",
+      "answer": "A pairs with T (2 H-bonds); G pairs with C (3 H-bonds)"
+    },
+    "central_dogma": {
+      "module": 2,
+      "hook": "The instruction for a protein is locked inside DNA in the nucleus, but proteins are built outside it. How does the message get from the nucleus to the ribosome?",
+      "recall": "Name the two steps of the central dogma and where each happens in a eukaryote.",
+      "answer": "transcription (DNA→mRNA, in nucleus) then translation (mRNA→protein, at ribosome)"
+    },
+    "human_digestion": {
+      "module": 3,
+      "hook": "You chew a piece of bread and after a few seconds it starts tasting sweet — before it ever reaches your stomach. What has already begun acting on it in your mouth?",
+      "recall": "Which enzyme in saliva starts digestion, and what does it break down?",
+      "answer": "salivary amylase (ptyalin) begins breaking starch into maltose"
+    },
+    "human_heart": {
+      "module": 3,
+      "hook": "Your heart has four chambers, but blood must never mix pure oxygenated blood with the deoxygenated kind. What is the one-way rule that stops blood from flowing backward between chambers?",
+      "recall": "Which valves prevent backflow between the atria and ventricles, and name them.",
+      "answer": "the atrioventricular valves — tricuspid (right) and bicuspid/mitral (left)"
+    },
+    "breathing": {
+      "module": 3,
+      "hook": "There are no muscles inside your lungs, yet they inflate every few seconds. So what actually pulls air in when you inhale?",
+      "recall": "What happens to the diaphragm during inhalation, and how does that draw air in?",
+      "answer": "the diaphragm contracts and flattens, increasing thoracic volume and lowering pressure so air rushes in"
+    },
+    "nephron": {
+      "module": 3,
+      "hook": "Your kidney filters your entire blood volume many times a day, dumping out glucose and water in bulk — yet your urine has almost no glucose. Where did the useful stuff go?",
+      "recall": "What is the functional unit of the kidney, and what happens after filtration to save glucose?",
+      "answer": "the nephron; glucose is reclaimed by selective reabsorption in the proximal tubule"
+    },
+    "neuron": {
+      "module": 4,
+      "hook": "A signal races from your toe to your brain in a fraction of a second — but it's not electricity flowing through a wire. What actually moves across the nerve membrane to carry the message?",
+      "recall": "What ion movement generates the action potential in a neuron?",
+      "answer": "Na+ rushes IN (depolarisation), then K+ moves OUT (repolarisation)"
+    },
+    "endocrine_system": {
+      "module": 4,
+      "hook": "After a sugary meal your blood glucose spikes, then quietly settles back to normal — no nerves told it to. What chemical messenger brought it down, and from where?",
+      "recall": "Which hormone lowers blood glucose, and which gland/cells secrete it?",
+      "answer": "insulin, from the beta cells of the islets of Langerhans in the pancreas"
+    },
+    "human_reproduction": {
+      "module": 4,
+      "hook": "Roughly once a month one egg is released from an ovary, right on schedule. What sudden hormonal 'trigger' causes that release — and what's the event called?",
+      "recall": "Which hormone surge triggers ovulation, and what is ovulation?",
+      "answer": "a surge of LH (luteinising hormone) triggers ovulation — release of the ovum from the ovary"
+    },
+    "photosynthesis": {
+      "module": 5,
+      "hook": "A plant sitting in sunlight builds sugar out of thin air and water. The oxygen it releases — does that come from the CO2 or from the water? Most people get this wrong.",
+      "recall": "In photosynthesis, the O2 released comes from splitting which molecule?",
+      "answer": "water (H2O) — via photolysis in the light reaction, NOT from CO2"
+    },
+    "plant_transport": {
+      "module": 5,
+      "hook": "A tall tree lifts water from its roots to leaves 20 metres up — with no heart and no pump. What silent force at the top of the leaf does the pulling?",
+      "recall": "What is the main force that pulls water up the xylem in a tall plant?",
+      "answer": "transpiration pull — water evaporating from leaves creates tension, aided by cohesion of water"
+    },
+    "ecosystem": {
+      "module": 6,
+      "hook": "Energy pours into a food chain from the Sun, but a lion eats far less energy than the grass captured. Where did roughly 90% of the energy vanish at each step?",
+      "recall": "Roughly what percent of energy transfers to the next trophic level, and where does the rest go?",
+      "answer": "about 10% passes up; ~90% is lost mainly as heat (metabolism) — the 10% law"
+    },
+    "evolution": {
+      "module": 6,
+      "hook": "Give bacteria an antibiotic and most die — but a few survive and their offspring take over. No bacterium 'chose' to resist. So what actually did the selecting?",
+      "recall": "In Darwin's natural selection, what 'selects' which individuals survive and reproduce?",
+      "answer": "the environment — individuals with favourable heritable variations survive and pass them on"
+    },
+    "biotechnology": {
+      "module": 6,
+      "hook": "Scientists put a human insulin gene into a bacterium and it starts making human insulin. But how did they cut the gene out and paste it in — what 'molecular scissors' did the cutting?",
+      "recall": "Which enzymes cut DNA at specific sequences, and which enzyme joins the pieces?",
+      "answer": "restriction enzymes cut at specific sites; DNA ligase joins (pastes) the fragments"
+    }
+  }
+}

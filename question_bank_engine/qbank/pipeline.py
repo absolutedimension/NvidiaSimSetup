@@ -361,10 +361,13 @@ def batch_generate(exam="JEE Advanced", subject="Physics", per_cell=15,
     This is the batch engine behind the 'shared pool + live top-up for power users' model:
     everyone reads the pool; live /generate only fires when an active student drains a cell.
     """
-    from . import generator, syllabus
+    from . import generator, syllabus, quantgen
     store = store or Store()
+    # Banking quant is COMPUTE-the-answer (deterministic, no LLM). Other subjects are RAG/LLM
+    # and require a reachable proxy. Only demand the LLM when it will actually be used.
+    quant_mode = quantgen.can_generate(exam, subject)
     llm = llm if llm is not None else LLM()
-    if not llm.ok:
+    if not quant_mode and not llm.ok:
         return {"error": f"LLM required for generation: {llm.last_error}"}
 
     tax = syllabus.get_taxonomy(exam, subject)

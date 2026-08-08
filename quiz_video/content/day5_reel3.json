@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Physics",
+ "subject": "Physics",
+ "chapter": "Thermal Properties of Matter",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Physics. Thermal Properties of Matter. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Thermal Properties of Matter? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "A piece of glass is heated to a high temperature and then allowed to cool. If it cracks, a probable reason for this is",
+   "options": [
+    "low thermal conductivity of glass",
+    "high thermal conductivity of glass",
+    "high specific heat of glass",
+    "high melting point of glass"
+   ],
+   "answer": 0,
+   "explain": "When a piece of glass is heated, due to low thermal conductivity it does not conduct heat fast enough and as a result, u",
+   "voice_q": "A piece of glass is heated to a high temperature and then allowed to cool. If it cracks, a probable reason for this is Five seconds... think!",
+   "voice_a": "The answer is A — low thermal conductivity of glass. When a piece of glass is heated, due to low thermal conductivity it does not conduct heat fast enough and as a result, u"
+  },
+  {
+   "type": "mcq",
+   "q": "An amount of heat  500   J  of heat energy is removed from 4   moles of a monoatomic ideal gas at constant volume. The temperature drops by",
+   "options": [
+    "40 â",
+    "30 ℃",
+    "10 â",
+    "0 â"
+   ],
+   "answer": 2,
+   "explain": "For monoatomic gas, C v = 3 2 R = 3 2 Ã 8 .31   Jmol - 1 Â° C - 1 Q = 500   J ,   n = 4,  Î¸ = ?",
+   "voice_q": "An amount of heat  500   J  of heat energy is removed from 4   moles of a monoatomic ideal gas at constant volume. The temperature drops by Five seconds... think!",
+   "voice_a": "The answer is C — 10 â. For monoatomic gas, C v = 3 2 R = 3 2 Ã 8 .31   Jmol - 1 Â° C - 1 Q = 500   J ,   n = 4,  Î¸ = ?"
+  },
+  {
+   "type": "mcq",
+   "q": "A metal ball immersed in water weighs w 1 at 0 Â° C and w 2 at 50 Â° C . The coefficient of cubical expansion of metal is less than that of water. Then",
+   "options": [
+    "w 1 > w 2",
+    "w 1 < w 2",
+    "w 1 = w 2",
+    "data is insufficient"
+   ],
+   "answer": 1,
+   "explain": "As the coefficient of cubical expansion is more for alcohol then metal.",
+   "voice_q": "A metal ball immersed in water weighs w 1 at 0 Â° C and w 2 at 50 Â° C . The coefficient of cubical expansion of metal is less than that of water. Then Five seconds... think!",
+   "voice_a": "The answer is B — w 1 < w 2. As the coefficient of cubical expansion is more for alcohol then metal."
+  }
+ ]
+}

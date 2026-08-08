@@ -1,0 +1,47 @@
+{
+ "title": "Gas Mixture Heating",
+ "q_prose": "A mixture has 2 moles of monatomic ideal gas and 1 mole of diatomic ideal gas. It does 66 joule work when heated at constant pressure. Find the change in internal energy.",
+ "given_eq": "$W=nR\\Delta T$",
+ "q_reminder": "Find the change in internal energy of the mixture.",
+ "q_narration": "A closed container has two moles of monatomic ideal gas and one mole of diatomic ideal gas. When heated at constant pressure, the mixture does sixty six joule of work. We have to find the change in internal energy. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Heat capacities",
+   "eqs": [
+    "$C_{v,\\mathrm{mono}}=\\frac{3R}{2}, C_{p,\\mathrm{mono}}=\\frac{5R}{2}$",
+    "$C_{v,\\mathrm{dia}}=\\frac{5R}{2}, C_{p,\\mathrm{dia}}=\\frac{7R}{2}$"
+   ],
+   "narration": "For a monatomic gas, constant volume heat capacity is three R by two. For a diatomic gas, it is five R by two. These are the values needed for internal energy."
+  },
+  {
+   "label": "Step 2 — Use given work",
+   "eqs": [
+    "$W=\\left(2+1\\right)R\\Delta T=3R\\Delta T$",
+    "$3R\\Delta T=66\\Rightarrow R\\Delta T=22$"
+   ],
+   "narration": "At constant pressure, the work done by an ideal gas mixture is total moles times R times change in temperature. The total moles are three, so R delta T becomes twenty two."
+  },
+  {
+   "label": "Step 3 — Mixture capacity",
+   "eqs": [
+    "$C_{v,\\mathrm{mix}}=2\\cdot\\frac{3R}{2}+1\\cdot\\frac{5R}{2}$",
+    "$C_{v,\\mathrm{mix}}=\\frac{11R}{2}$"
+   ],
+   "narration": "Now add the constant volume heat capacity contributions of both gases. Two moles of monatomic gas contribute three R, and one mole of diatomic gas contributes five R by two."
+  },
+  {
+   "label": "Step 4 — Internal energy change",
+   "eqs": [
+    "$\\Delta U=C_{v,\\mathrm{mix}}\\Delta T=\\frac{11}{2}R\\Delta T$",
+    "$\\Delta U=\\frac{11}{2}\\times22=121\\mathrm{J}$"
+   ],
+   "narration": "For an ideal gas, internal energy change depends only on temperature change and constant volume heat capacity. Substituting R delta T equal to twenty two gives one hundred twenty one joule."
+  }
+ ],
+ "answer_eq": "$\\Delta U=121\\mathrm{J}$",
+ "answer_label": "Correct option: 121",
+ "answer_narration": "So, the change in internal energy of the gas mixture is one hundred twenty one joule. For more clear step by step exam solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Advanced · Physics · Thermodynamics & Kinetic Theory",
+ "options": [],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

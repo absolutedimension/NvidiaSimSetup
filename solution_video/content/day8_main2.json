@@ -1,0 +1,55 @@
+{
+ "title": "Acid Strength Order",
+ "q_prose": "Which order of acid strength is correct among carboxylic acid, water, alcohol, and ethyne?",
+ "given_eq": "",
+ "q_reminder": "Find the correct decreasing order of acid strength.",
+ "q_narration": "We have to compare the acidity of carboxylic acid, water, alcohol, and ethyne, and choose the correct order. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Use pKa idea",
+   "eqs": [
+    "$\\mathrm{p}K_a:\\mathrm{smaller}\\Rightarrow\\mathrm{stronger}$"
+   ],
+   "narration": "A smaller p k a means the acid gives hydrogen ion more easily, so it is a stronger acid."
+  },
+  {
+   "label": "Step 2 — Carboxylic acid first",
+   "eqs": [
+    "$\\mathrm{RCOOH}\\Rightarrow\\mathrm{RCOO}^-$"
+   ],
+   "narration": "Carboxylic acid forms a carboxylate ion. This conjugate base is resonance stabilized, so carboxylic acid is the strongest in the list."
+  },
+  {
+   "label": "Step 3 — Water versus alcohol",
+   "eqs": [
+    "$\\mathrm{HOH}>\\mathrm{ROH}$"
+   ],
+   "narration": "Water is slightly more acidic than alcohol. In alcohol, the alkyl group donates electron density and makes loss of hydrogen ion a little less favorable."
+  },
+  {
+   "label": "Step 4 — Alcohol versus ethyne",
+   "eqs": [
+    "$\\mathrm{p}K_a:\\mathrm{ROH}\\approx16,\\mathrm{HCCH}\\approx25$"
+   ],
+   "narration": "Ethyne has a much larger p k a than alcohol, so ethyne is a much weaker acid. Therefore alcohol comes before ethyne."
+  },
+  {
+   "label": "Step 5 — Combine the order",
+   "eqs": [
+    "$\\mathrm{RCOOH}>\\mathrm{HOH}>\\mathrm{ROH}>\\mathrm{HCCH}$"
+   ],
+   "narration": "Putting all comparisons together, the decreasing order is carboxylic acid, then water, then alcohol, then ethyne."
+  }
+ ],
+ "answer_eq": "$\\mathrm{RCOOH}>\\mathrm{HOH}>\\mathrm{ROH}>\\mathrm{HCCH}$",
+ "answer_label": "Correct option: B",
+ "answer_narration": "So the correct answer is option B. For more clear exam solutions, keep learning with Acharya.",
+ "exam_tag": "NEET · Chemistry · General Organic Chemistry",
+ "options": [
+  "$\\mathrm{RCOOH}>\\mathrm{ROH}>\\mathrm{HOH}>\\mathrm{HC} \\equiv \\mathrm{HC}$",
+  "$\\mathrm{RCOOH}>\\mathrm{HOH}>\\mathrm{ROH}>\\mathrm{HC} \\equiv \\mathrm{CH}$",
+  "$\\mathrm{RCOOH}>\\mathrm{HOH}>\\mathrm{HC} \\equiv \\mathrm{CH}>\\mathrm{ROH}$",
+  "$\\mathrm{RCOOH}>\\mathrm{HC} \\equiv \\mathrm{CH}>\\mathrm{HOH}>\\mathrm{ROH}$"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

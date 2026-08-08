@@ -1,0 +1,52 @@
+{
+ "title": "Lens In Water",
+ "q_prose": "A symmetric biconvex glass lens of refractive index 1.5 has focal length 10 cm in air. It is cut into two equal plano-convex halves and the halves are glued in contact. Find the focal length when immersed in water of refractive index 4/3.",
+ "given_eq": "$f=10\\mathrm{cm},\\mu_g=\\frac{3}{2},\\mu_w=\\frac{4}{3}$",
+ "q_reminder": "Find the focal length of the glued combination in water.",
+ "q_narration": "A symmetric biconvex glass lens has focal length ten centimetres in air. It is cut into two equal plano convex halves, then the halves are glued together and immersed in water. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Half lens power",
+   "eqs": [
+    "$\\frac{1}{f}=\\frac{1}{f_1}+\\frac{1}{f_1}$",
+    "$f_1=2f=20\\mathrm{cm}$"
+   ],
+   "narration": "When the symmetric biconvex lens is cut into two identical plano convex halves, the two halves have equal optical power. So each half has focal length twenty centimetres in air."
+  },
+  {
+   "label": "Step 2 — Recombine in air",
+   "eqs": [
+    "$\\frac{1}{F}=\\frac{1}{f_1}+\\frac{1}{f_1}=\\frac{1}{f}$",
+    "$F=f=10\\mathrm{cm}$"
+   ],
+   "narration": "When the two halves are used in contact, their powers add. Therefore the focal length of the combination in air is again ten centimetres."
+  },
+  {
+   "label": "Step 3 — Change medium",
+   "eqs": [
+    "$\\frac{1}{F}=\\left(\\mu_g-1\\right)\\left(\\frac{1}{R_1}-\\frac{1}{R_2}\\right)$",
+    "$\\frac{1}{F'}=\\left(\\frac{\\mu_g}{\\mu_w}-1\\right)\\left(\\frac{1}{R_1}-\\frac{1}{R_2}\\right)$"
+   ],
+   "narration": "For the same combination, the curvature part stays unchanged. Only the refractive index factor changes when the surrounding medium becomes water."
+  },
+  {
+   "label": "Step 4 — Take ratio",
+   "eqs": [
+    "$\\frac{F'}{F}=\\frac{\\mu_g-1}{\\frac{\\mu_g}{\\mu_w}-1}$",
+    "$\\frac{F'}{10}=\\frac{\\frac{3}{2}-1}{\\frac{9}{8}-1}=4$"
+   ],
+   "narration": "Substitute glass index three by two and water index four by three. The relative index of glass with respect to water is nine by eight, so the focal length becomes four times ten centimetres."
+  }
+ ],
+ "answer_eq": "$F'=40\\mathrm{cm}$",
+ "answer_label": "Correct option: D",
+ "answer_narration": "So the focal length of the combination in water is forty centimetres, which matches option D. For more clear step by step practice, keep learning with Acharya.",
+ "exam_tag": "NEET · Physics · Ray Optics",
+ "options": [
+  "5   cm",
+  "10   cm",
+  "20   cm",
+  "40   cm"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "JEE Main · Physics",
+ "subject": "Physics",
+ "chapter": "Atoms And Nuclei",
+ "topic_line": "Real JEE Main questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Physics. Atoms And Nuclei. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Atoms And Nuclei? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "According to Bohr atomic model, in which of the following transitions will the frequency be maximum?",
+   "options": [
+    "n = 2 to n = 1",
+    "n = 3 to n = 2",
+    "n = 4 to n = 3",
+    "n = 5 to n = 4"
+   ],
+   "answer": 0,
+   "explain": "Let, n_{f}, n_{i} be the final and initial orbit.",
+   "voice_q": "According to Bohr atomic model, in which of the following transitions will the frequency be maximum? Five seconds... think!",
+   "voice_a": "The answer is A — n = 2 to n = 1. Let, n_{f}, n_{i} be the final and initial orbit."
+  },
+  {
+   "type": "mcq",
+   "q": "A potential difference of 20   kV is applied across an X-ray tube. The minimum wavelength of X-rays generated is",
+   "options": [
+    "0.84 â Ã",
+    "0.31 â Ã",
+    "0.62 â Ã",
+    "0.96 â Ã"
+   ],
+   "answer": 2,
+   "explain": "E = h ⁡ c ⁡ λ ∴ λ min = h ⁡ c ⁡ e ⁡ V ⁡ = 6 .",
+   "voice_q": "A potential difference of 20   kV is applied across an X-ray tube. The minimum wavelength of X-rays generated is Five seconds... think!",
+   "voice_a": "The answer is C — 0.62 â Ã. E = h ⁡ c ⁡ λ ∴ λ min = h ⁡ c ⁡ e ⁡ V ⁡ = 6 ."
+  },
+  {
+   "type": "mcq",
+   "q": "Taking the wavelength of first Balmer line in\nhydrogen spectrum (n = 3 to n = 2) as 660 nm,\nthe wavelength of the 2nd Balmer line (n = 4 to\nn = 2) will be :",
+   "options": [
+    "642.7 nm",
+    "488.9 nm",
+    "889.2 nm",
+    "388.9 nm"
+   ],
+   "answer": 1,
+   "explain": "$${1 \\over {{\\lambda _1}}} = R\\left[ {{1 \\over {{2^2}}} - {1 \\over {{3^2}}}} \\right]$$ \n$${1 \\over {{\\lambda _2}}} = R\\l",
+   "voice_q": "Taking the wavelength of first Balmer line in\nhydrogen spectrum (n = 3 to n = 2) as 660 nm,\nthe wavelength of the 2nd Balmer line (n = 4 to\nn = 2) will be : Five seconds... think!",
+   "voice_a": "The answer is B — 488.9 nm. $${1 \\over {{\\lambda _1}}} = R\\left[ {{1 \\over {{2^2}}} - {1 \\over {{3^2}}}} \\right]$$ \n$${1 \\over {{\\lambda _2}}} = R\\l"
+  }
+ ]
+}

@@ -1,0 +1,375 @@
+{
+  "file": "dj_engine/goa-gil/13 - Goa Gil - Kosmokrator (Deck Wizards) [1996] (Full Album).mp3",
+  "duration_s": 4093.2020408163266,
+  "bin_s": 30.0,
+  "bands": [
+    "sub",
+    "kick+bass",
+    "bassline",
+    "drone",
+    "stab",
+    "hats"
+  ],
+  "sections": [
+    {
+      "start_s": 0.0,
+      "end_s": 60.0,
+      "dur_s": 60.0,
+      "energy": 0.16,
+      "elements": {
+        "sub": 0.08,
+        "kick+bass": 0.13,
+        "bassline": 0.24,
+        "drone": 0.24,
+        "stab": 0.24,
+        "hats": 0.14
+      },
+      "label": "INTRO/BREAKDOWN (ambient)"
+    },
+    {
+      "start_s": 60.0,
+      "end_s": 480.0,
+      "dur_s": 420.0,
+      "energy": 0.8,
+      "elements": {
+        "sub": 0.67,
+        "kick+bass": 0.87,
+        "bassline": 0.69,
+        "drone": 0.36,
+        "stab": 0.4,
+        "hats": 0.48
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 480.0,
+      "end_s": 600.0,
+      "dur_s": 120.0,
+      "energy": 0.99,
+      "elements": {
+        "sub": 0.99,
+        "kick+bass": 0.9,
+        "bassline": 0.54,
+        "drone": 0.38,
+        "stab": 0.38,
+        "hats": 0.52
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 600.0,
+      "end_s": 750.0,
+      "dur_s": 150.0,
+      "energy": 0.99,
+      "elements": {
+        "sub": 0.99,
+        "kick+bass": 0.94,
+        "bassline": 0.55,
+        "drone": 0.34,
+        "stab": 0.35,
+        "hats": 0.58
+      },
+      "label": "PEAK: kick+bass+bassline+stab+hats"
+    },
+    {
+      "start_s": 750.0,
+      "end_s": 960.0,
+      "dur_s": 210.0,
+      "energy": 0.83,
+      "elements": {
+        "sub": 0.53,
+        "kick+bass": 0.96,
+        "bassline": 0.88,
+        "drone": 0.37,
+        "stab": 0.61,
+        "hats": 0.57
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 960.0,
+      "end_s": 1020.0,
+      "dur_s": 60.0,
+      "energy": 0.73,
+      "elements": {
+        "sub": 0.51,
+        "kick+bass": 0.84,
+        "bassline": 0.74,
+        "drone": 0.24,
+        "stab": 0.43,
+        "hats": 0.36
+      },
+      "label": "build: kick+bass+bassline+stab+hats"
+    },
+    {
+      "start_s": 1020.0,
+      "end_s": 1080.0,
+      "dur_s": 60.0,
+      "energy": 1.0,
+      "elements": {
+        "sub": 0.77,
+        "kick+bass": 1.0,
+        "bassline": 1.0,
+        "drone": 0.54,
+        "stab": 0.79,
+        "hats": 0.7
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 1080.0,
+      "end_s": 1140.0,
+      "dur_s": 60.0,
+      "energy": 0.87,
+      "elements": {
+        "sub": 0.69,
+        "kick+bass": 0.86,
+        "bassline": 0.75,
+        "drone": 0.33,
+        "stab": 0.47,
+        "hats": 0.55
+      },
+      "label": "PEAK: kick+bass+bassline+stab+hats"
+    },
+    {
+      "start_s": 1140.0,
+      "end_s": 1800.0,
+      "dur_s": 660.0,
+      "energy": 0.55,
+      "elements": {
+        "sub": 0.37,
+        "kick+bass": 0.62,
+        "bassline": 0.64,
+        "drone": 0.43,
+        "stab": 0.44,
+        "hats": 0.36
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 1800.0,
+      "end_s": 2010.0,
+      "dur_s": 210.0,
+      "energy": 0.51,
+      "elements": {
+        "sub": 0.19,
+        "kick+bass": 0.61,
+        "bassline": 0.62,
+        "drone": 0.49,
+        "stab": 0.68,
+        "hats": 0.44
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2010.0,
+      "end_s": 2130.0,
+      "dur_s": 120.0,
+      "energy": 0.7,
+      "elements": {
+        "sub": 0.23,
+        "kick+bass": 0.89,
+        "bassline": 0.97,
+        "drone": 0.94,
+        "stab": 0.93,
+        "hats": 0.65
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2130.0,
+      "end_s": 2190.0,
+      "dur_s": 60.0,
+      "energy": 0.6,
+      "elements": {
+        "sub": 0.2,
+        "kick+bass": 0.8,
+        "bassline": 0.78,
+        "drone": 0.82,
+        "stab": 0.7,
+        "hats": 0.34
+      },
+      "label": "build: kick+bass+bassline+drone+stab"
+    },
+    {
+      "start_s": 2190.0,
+      "end_s": 2250.0,
+      "dur_s": 60.0,
+      "energy": 0.56,
+      "elements": {
+        "sub": 0.16,
+        "kick+bass": 0.6,
+        "bassline": 0.76,
+        "drone": 0.99,
+        "stab": 0.98,
+        "hats": 0.71
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2250.0,
+      "end_s": 2370.0,
+      "dur_s": 120.0,
+      "energy": 0.78,
+      "elements": {
+        "sub": 0.23,
+        "kick+bass": 0.92,
+        "bassline": 0.99,
+        "drone": 0.98,
+        "stab": 0.98,
+        "hats": 0.75
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2370.0,
+      "end_s": 2610.0,
+      "dur_s": 240.0,
+      "energy": 0.75,
+      "elements": {
+        "sub": 0.38,
+        "kick+bass": 0.96,
+        "bassline": 0.81,
+        "drone": 0.69,
+        "stab": 0.44,
+        "hats": 0.43
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 2610.0,
+      "end_s": 3000.0,
+      "dur_s": 390.0,
+      "energy": 0.64,
+      "elements": {
+        "sub": 0.31,
+        "kick+bass": 0.8,
+        "bassline": 0.67,
+        "drone": 0.62,
+        "stab": 0.48,
+        "hats": 0.45
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3000.0,
+      "end_s": 3150.0,
+      "dur_s": 150.0,
+      "energy": 0.56,
+      "elements": {
+        "sub": 0.26,
+        "kick+bass": 0.67,
+        "bassline": 0.57,
+        "drone": 0.86,
+        "stab": 0.57,
+        "hats": 0.46
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3150.0,
+      "end_s": 3420.0,
+      "dur_s": 270.0,
+      "energy": 0.68,
+      "elements": {
+        "sub": 0.31,
+        "kick+bass": 0.87,
+        "bassline": 0.73,
+        "drone": 0.67,
+        "stab": 0.68,
+        "hats": 0.74
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3420.0,
+      "end_s": 3510.0,
+      "dur_s": 90.0,
+      "energy": 0.42,
+      "elements": {
+        "sub": 0.16,
+        "kick+bass": 0.5,
+        "bassline": 0.45,
+        "drone": 0.53,
+        "stab": 0.51,
+        "hats": 0.32
+      },
+      "label": "groove: kick+bass+bassline+drone+stab"
+    },
+    {
+      "start_s": 3510.0,
+      "end_s": 3630.0,
+      "dur_s": 120.0,
+      "energy": 0.77,
+      "elements": {
+        "sub": 0.4,
+        "kick+bass": 0.98,
+        "bassline": 0.84,
+        "drone": 0.71,
+        "stab": 0.85,
+        "hats": 0.94
+      },
+      "label": "PEAK: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3630.0,
+      "end_s": 3780.0,
+      "dur_s": 150.0,
+      "energy": 0.63,
+      "elements": {
+        "sub": 0.59,
+        "kick+bass": 0.6,
+        "bassline": 0.51,
+        "drone": 0.45,
+        "stab": 0.36,
+        "hats": 0.49
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3780.0,
+      "end_s": 3990.0,
+      "dur_s": 210.0,
+      "energy": 0.51,
+      "elements": {
+        "sub": 0.46,
+        "kick+bass": 0.41,
+        "bassline": 0.44,
+        "drone": 0.51,
+        "stab": 0.44,
+        "hats": 0.54
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 3990.0,
+      "end_s": 4080.0,
+      "dur_s": 90.0,
+      "energy": 0.52,
+      "elements": {
+        "sub": 0.47,
+        "kick+bass": 0.43,
+        "bassline": 0.47,
+        "drone": 0.51,
+        "stab": 0.48,
+        "hats": 0.52
+      },
+      "label": "build: kick+bass+bassline+drone+stab+hats"
+    },
+    {
+      "start_s": 4080.0,
+      "end_s": 4110.0,
+      "dur_s": 30.0,
+      "energy": 0.31,
+      "elements": {
+        "sub": 0.24,
+        "kick+bass": 0.22,
+        "bassline": 0.31,
+        "drone": 0.3,
+        "stab": 0.11,
+        "hats": 0.03
+      },
+      "label": "breakdown (no kick)"
+    }
+  ]
+}

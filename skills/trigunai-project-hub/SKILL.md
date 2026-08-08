@@ -153,6 +153,31 @@ under `dk_trigun`, so the script checks the app port directly instead of pm2.
 
 ---
 
+## §D. Systems view — the feedback-loop overview (read for "what's happening")
+
+The routing table (§A) says *who owns what*. This section says *how the whole thing behaves as
+one system*. When the user asks for the overview / "what affects what" / "why isn't effort turning
+into revenue" / "my whole system" / "systems view", read the living map:
+
+**`SYSTEMS_MAP.md`** (repo root) — the whole business as feedback loops, not a project list.
+
+The 30-second model to hold:
+- **Only R1 makes money — and it's a loop, not a funnel:** `Content → Traffic → Signup →
+  Activated → Paying ₹ → revenue → funds Content`. It circulates only when closed at BOTH ends.
+- It is currently **cut in two places**: Content (marketing ships ~1 day in 7) and Paying (billing
+  inert). A flywheel cut in two places does not spin at all → this IS the "0 paid" state.
+- Building deeper doesn't help because a reinforcing **build trap** keeps R1 cut (0 paid → build →
+  fast win → attention gone → marketing starved → 0 paid). It's a *delay* problem, not willpower —
+  break it with the external daily gate. (Sterman / policy resistance.)
+- **Leverage order:** operator attention split → Content (R1 inlet) → Billing (R1 outlet) → act on
+  Pulse → product depth (~zero leverage until the first three close).
+
+**`SYSTEMS_MAP.md` §5 is the STATUS BOARD** — the live loop-health table. Read it to answer
+"what's happening"; update it whenever a loop opens or closes. Companions: `trigunai-ceo` (the gate
++ Witness), `trigunai-daily-discipline` (the daily constraint that breaks the build trap).
+
+---
+
 # Part 2 — Multi-agent Project Hub (sim / training workstreams)
 
 You are the **central nervous system** for TrigunAI's multi-agent project. You maintain

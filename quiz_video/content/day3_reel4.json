@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Biology",
+ "subject": "Biology",
+ "chapter": "Molecular Basis of Inheritance",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Biology. Molecular Basis of Inheritance. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Molecular Basis of Inheritance? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "Histones are enriched with - (1) Lysine & Arginine (2) Leucine & Lysine (3) Phenylalanine & Leucine (4) Phenylalanine & Arginine",
+   "options": [
+    "Lysine & Arginine",
+    "Leucine & Lysine",
+    "Phenylalanine & Leucine",
+    "Phenylalanine & Arginine"
+   ],
+   "answer": 0,
+   "explain": "Histones are proteins that play a crucial role in the packaging of DNA in eukaryotic cells.",
+   "voice_q": "Histones are enriched with - (1) Lysine & Arginine (2) Leucine & Lysine (3) Phenylalanine & Leucine (4) Phenylalanine & Arginine Five seconds... think!",
+   "voice_a": "The answer is A — Lysine & Arginine. Histones are proteins that play a crucial role in the packaging of DNA in eukaryotic cells."
+  },
+  {
+   "type": "mcq",
+   "q": "Which one is the correct product of DNA dependent RNA polymerase to the given template? 3' TACATGGCAAATATCCATTCA 5'",
+   "options": [
+    "5' AUGUACCGUUUAUGGAAGU 3'",
+    "5' AUGTACCGTTTATAGTAAGT 3'",
+    "5' AUGUAAGUUUAUGGUAGU 3'",
+    "5' AUGUAAAGUUUAUGGUAGU 3'"
+   ],
+   "answer": 2,
+   "explain": "To determine the correct product of DNA dependent RNA polymerase from the given DNA template strand, we need to follow t",
+   "voice_q": "Which one is the correct product of DNA dependent RNA polymerase to the given template? 3' TACATGGCAAATATCCATTCA 5' Five seconds... think!",
+   "voice_a": "The answer is C — 5' AUGUAAGUUUAUGGUAGU 3'. To determine the correct product of DNA dependent RNA polymerase from the given DNA template strand, we need to follow t"
+  },
+  {
+   "type": "mcq",
+   "q": "A nucleoside differs from a nucleotide. It lacks the:",
+   "options": [
+    "base",
+    "sugar",
+    "phosphate group",
+    "hydroxyl group"
+   ],
+   "answer": 1,
+   "explain": "A nucleoside only has nitogenous base and a phosphate group.",
+   "voice_q": "A nucleoside differs from a nucleotide. It lacks the: Five seconds... think!",
+   "voice_a": "The answer is B — sugar. A nucleoside only has nitogenous base and a phosphate group."
+  }
+ ]
+}

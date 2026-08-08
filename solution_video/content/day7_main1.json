@@ -1,0 +1,51 @@
+{
+ "title": "Oxidation State Comparison",
+ "q_prose": "The pair of compounds having metals in their highest oxidation state is to be selected from the given options.",
+ "given_eq": "$\u001b[0m\\mathrm{O}=-2, \u001b[0m\\mathrm{Cl}=-1, \u001b[0m\\mathrm{CN}=-1$",
+ "q_reminder": "Find the option with the highest metal oxidation numbers.",
+ "q_narration": "We have to compare the oxidation states of the metals in all four given pairs, and choose the pair with the highest values. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Use ligand charges",
+   "eqs": [
+    "$\u001b[0m\\mathrm{O}=-2, \u001b[0m\\mathrm{Cl}=-1, \u001b[0m\\mathrm{CN}=-1$"
+   ],
+   "narration": "Oxygen is taken as minus two, while chloride and cyanide are taken as minus one. Now we calculate the metal oxidation state in each compound."
+  },
+  {
+   "label": "Step 2 — Check option A",
+   "eqs": [
+    "$x+2\u001b[0m\\left(-2\u001b[0m\\right)=0 \u001b[0m\\Rightarrow x=+4$",
+    "$x+2\u001b[0m\\left(-2\u001b[0m\\right)+2\u001b[0m\\left(-1\u001b[0m\\right)=0 \u001b[0m\\Rightarrow x=+6$"
+   ],
+   "narration": "In manganese dioxide, manganese is plus four. In chromyl chloride, chromium is plus six. This gives a very high oxidation state pair."
+  },
+  {
+   "label": "Step 3 — Check options B and C",
+   "eqs": [
+    "$x+4\u001b[0m\\left(-1\u001b[0m\\right)=-2 \u001b[0m\\Rightarrow x=+2$",
+    "$x+6\u001b[0m\\left(-1\u001b[0m\\right)=-3 \u001b[0m\\Rightarrow x=+3$"
+   ],
+   "narration": "For the tetrachloro complexes in option B, both metals come out as plus two. In option C, iron is plus three, and copper in the cyanide complex is plus two."
+  },
+  {
+   "label": "Step 4 — Check option D and compare",
+   "eqs": [
+    "$x+4\u001b[0m\\left(-1\u001b[0m\\right)=-1 \u001b[0m\\Rightarrow x=+3$",
+    "$2x+3\u001b[0m\\left(-2\u001b[0m\\right)=0 \u001b[0m\\Rightarrow x=+3$"
+   ],
+   "narration": "In option D, both iron and cobalt are plus three. Comparing all options, option A has the highest calculated pair, plus four and plus six."
+  }
+ ],
+ "answer_eq": "$\u001b[0m\\mathrm{A}: MnO_2, CrO_2Cl_2$",
+ "answer_label": "Correct option: A",
+ "answer_narration": "So the required pair is manganese dioxide and chromyl chloride. The correct option is A. For more such clear step by step solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Main · Chemistry · D And F Block Elements",
+ "options": [
+  "MnO_{2} and CrO_{2}Cl_{2}",
+  "[NiCl_{4}]^{2$$-$$} and [CoCl_{4}]^{2$$-$$}",
+  "[Fe(CN)_{6}]^{3$$-$$} and [Cu(CN)_{4}]^{2$$-$$}",
+  "[FeCl_{4}]^{$$-$$} and Co_{2}O_{3}"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

@@ -1,0 +1,416 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Acharya Kids — Maths Quiz</title><style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;font-family:"Baloo 2","Arial Rounded MT Bold",system-ui,sans-serif}
+html,body{height:100%}
+.stage{position:relative;min-height:100dvh;background:linear-gradient(#7ec8ff,#bfe6ff 58%,#8ed46e 58%,#7cc95e);overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:12px}
+/* soft floating clouds */
+.cloud{position:absolute;background:#ffffffcc;border-radius:50px;filter:blur(1px);opacity:.85;animation:drift 22s linear infinite}
+.cloud:before,.cloud:after{content:"";position:absolute;background:#ffffffcc;border-radius:50%}
+.c1{width:90px;height:26px;top:8%;left:-30%}.c1:before{width:40px;height:40px;top:-18px;left:14px}.c1:after{width:30px;height:30px;top:-12px;left:48px}
+.c2{width:70px;height:20px;top:20%;left:-30%;animation-duration:30s}.c2:before{width:32px;height:32px;top:-14px;left:10px}.c2:after{width:24px;height:24px;top:-9px;left:38px}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(180vw)}}
+
+.topbar{width:100%;max-width:440px;display:flex;align-items:center;gap:8px;z-index:5}
+.iconbtn{flex:0 0 auto;width:44px;height:44px;border-radius:50%;border:none;background:#fff;box-shadow:0 4px 0 #0002;font-size:20px;cursor:pointer;color:#26406b;display:flex;align-items:center;justify-content:center}
+.iconbtn:active{transform:translateY(3px);box-shadow:0 1px 0 #0002}
+.title{flex:1;text-align:center;color:#fff;font-weight:800;font-size:20px;text-shadow:0 3px 0 #ff9e2e}
+.vtog{flex:0 0 auto;display:flex;align-items:center;gap:7px;background:#fff;border:none;border-radius:30px;padding:7px 12px;font-weight:800;font-size:14px;color:#26406b;box-shadow:0 4px 0 #0002;cursor:pointer}
+.vtog .sw{width:38px;height:22px;border-radius:20px;background:#4ac87a;position:relative;transition:.2s}
+.vtog .sw:after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.2s}
+.vtog.off .sw{background:#c9d2dd}.vtog.off .sw:after{left:19px}
+
+/* progress */
+.pwrap{width:100%;max-width:440px;margin-top:10px;z-index:5}
+.pmeta{display:flex;justify-content:space-between;color:#fff;font-weight:800;font-size:13px;text-shadow:0 1px 2px #0003;margin-bottom:5px}
+.pbar{height:14px;background:#ffffff66;border-radius:20px;overflow:hidden;box-shadow:inset 0 2px 4px #0002}
+.pfill{height:100%;width:0;background:linear-gradient(90deg,#ffd24a,#ff9e2e);border-radius:20px;transition:width .4s ease}
+.gems{display:flex;gap:7px;margin-top:9px;flex-wrap:wrap;justify-content:center;z-index:5}
+.gem{width:22px;height:22px;border-radius:50%;border:3px solid #ffffff99;background:#ffffff33;transition:transform .3s,background .3s}
+.gem.on{background:radial-gradient(circle at 40% 35%,#fff3b0,#ffb028);border-color:#fff;transform:scale(1.3)}
+.gem.miss{background:radial-gradient(circle at 40% 35%,#dfe7ef,#a9b6c6);border-color:#fff}
+
+.hero{margin-top:8px;display:flex;flex-direction:column;align-items:center;z-index:5}
+.mascots{display:flex;align-items:flex-end;gap:6px}
+.jj{height:150px;filter:drop-shadow(0 12px 10px #0003);animation:bob 1.8s ease-in-out infinite}
+.mikey{height:96px;filter:drop-shadow(0 10px 8px #0003);animation:bob 2.2s ease-in-out infinite .3s}
+.jj.cheer{animation:cheer .5s ease}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(2deg)}}
+@keyframes cheer{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-38px) scale(1.12)}}
+.bubble{background:#fff;border-radius:26px;padding:16px 22px;max-width:380px;text-align:center;font-size:24px;font-weight:800;color:#26406b;box-shadow:0 8px 0 #0001;position:relative;min-height:74px;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+.bubble:after{content:"";position:absolute;bottom:-14px;left:60px;border:14px solid transparent;border-top-color:#fff;border-bottom:0}
+.bubble.pop{animation:pop .3s ease}
+@keyframes pop{0%{transform:scale(.9);opacity:.4}100%{transform:scale(1);opacity:1}}
+.state{margin-top:2px;height:34px;display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:16px;text-shadow:0 2px 3px #0002}
+.dot{width:14px;height:14px;border-radius:50%;background:#ff5a52}
+.dot.listen{background:#4ac87a;animation:ring 1s infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 #4ac87a88}70%{box-shadow:0 0 0 14px #4ac87a00}}
+
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:400px;margin-top:10px;z-index:5}
+.opt{position:relative;display:flex;align-items:center;gap:10px;background:#fff;border:none;border-radius:20px;padding:16px 12px;font-size:26px;font-weight:800;color:#26406b;box-shadow:0 6px 0 #0002;cursor:pointer;transition:transform .12s,box-shadow .12s;min-height:66px}
+.opt .lb{flex:0 0 auto;width:34px;height:34px;border-radius:50%;color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 #0002}
+.opt:nth-child(1) .lb{background:#ff5aa5}.opt:nth-child(2) .lb{background:#3aa0ff}
+.opt:nth-child(3) .lb{background:#22b07d}.opt:nth-child(4) .lb{background:#ffab1a}
+.opt .tx{flex:1;text-align:center;word-break:break-word}
+.opt.small .tx{font-size:18px}
+.opt:active{transform:translateY(4px);box-shadow:0 2px 0 #0002}
+.opt.right{background:#e4f7ea;box-shadow:0 6px 0 #2fa96866;outline:4px solid #4ac87a;transform:scale(1.04)}
+.opt.wrong{opacity:.4}
+.opt.shake{animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+
+/* ---- per-question concept visual (fills the empty space; hidden if type unsupported) ---- */
+.vizwrap{width:100%;max-width:420px;margin:12px auto 0;background:#ffffffcc;border-radius:22px;padding:12px 12px 14px;box-shadow:0 8px 20px #0001;text-align:center;z-index:5}
+.viz-cap{font-weight:800;color:#3a71c9;font-size:14px;margin-bottom:9px}
+.viz-stage{position:relative;height:64px;margin:0 auto}
+.vtile{position:absolute;top:0;width:50px;height:58px;border-radius:13px;background:linear-gradient(#fff,#eaf2ff);border:3px solid #3aa0ff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;color:#26406b;box-shadow:0 5px 0 #b9d4f0;transition:transform .7s cubic-bezier(.3,1.2,.4,1),border-color .3s,box-shadow .3s}
+.vtile.lead{border-color:#ffab1a;box-shadow:0 5px 0 #e0921a;background:linear-gradient(#fff,#fff2d6)}
+.viz-result{margin-top:10px;font-size:24px;font-weight:800;color:#22b07d;opacity:0;transform:scale(.6);transition:.4s .1s}
+.viz-result.show{opacity:1;transform:scale(1)}
+.viz-result .n{background:#e4f7ea;border-radius:12px;padding:3px 12px;border:3px solid #4ac87a}
+.viz-row{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;min-height:58px}
+.vcell{min-width:44px;height:54px;padding:0 8px;border-radius:12px;background:linear-gradient(#fff,#eaf2ff);border:3px solid #3aa0ff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#26406b;box-shadow:0 4px 0 #b9d4f0;transition:transform .4s,border-color .4s,box-shadow .4s,opacity .4s,background .4s}
+.vcell.op{border:none;box-shadow:none;background:none;color:#3a71c9;font-size:25px;min-width:0;padding:0 2px}
+.vcell.dim{opacity:.35}
+.vcell.hit{border-color:#ffab1a;background:linear-gradient(#fff,#fff2d6);box-shadow:0 4px 0 #e0921a;transform:scale(1.12)}
+.vcell.ans{border-color:#4ac87a;background:#e4f7ea;box-shadow:0 4px 0 #2fa968;color:#22b07d}
+
+/* overlays (gate / pause / done) */
+.ovl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:20;gap:16px;padding:22px;text-align:center}
+.gate{background:linear-gradient(#7ec8ff,#8ed46e)}
+.pause{background:#12325aee;backdrop-filter:blur(3px)}
+.done{background:linear-gradient(#ffd98a,#ffb35c)}
+.ovl img.big{height:180px;filter:drop-shadow(0 16px 12px #0003);animation:bob 1.8s ease-in-out infinite}
+.ovl h1{color:#fff;font-size:30px;text-shadow:0 3px 0 #0003}
+.ghint{color:#fff;font-weight:800;font-size:17px;text-shadow:0 2px 3px #0002}
+.gbtn{background:linear-gradient(#ffd24a,#ffb028);color:#7a3d00;font-size:24px;font-weight:800;border:none;border-radius:40px;padding:16px 42px;box-shadow:0 8px 0 #d98a12,0 14px 24px #0003;cursor:pointer;animation:pulse 1.3s infinite}
+.gbtn.alt{background:linear-gradient(#eaf2ff,#cfe0f5);color:#26406b;box-shadow:0 8px 0 #9fb6d6;animation:none}
+.gbtn:active{transform:translateY(4px);box-shadow:0 3px 0 #d98a12}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.stars{font-size:40px;letter-spacing:6px}
+.score{color:#fff;font-weight:800;font-size:22px;text-shadow:0 2px 3px #0003}
+#confetti{position:absolute;inset:0;pointer-events:none;z-index:15}
+.hidden{display:none!important}
+@media(max-width:430px){.jj{height:128px}.mikey{height:80px}.bubble{font-size:21px}.opt{font-size:23px}}
+</style></head><body><div class="stage">
+<div class="cloud c1"></div><div class="cloud c2"></div>
+<canvas id="confetti"></canvas>
+
+<div class="topbar">
+  <button class="iconbtn" id="homeBtn" title="Home">&#8592;</button>
+  <div class="title">Acharya Kids</div>
+  <button class="iconbtn" id="pauseBtn" title="Pause">&#10073;&#10073;</button>
+  <button class="vtog" id="vtog"><span id="vlabel">&#128266;</span><span class="sw"></span></button>
+</div>
+
+<div class="pwrap">
+  <div class="pmeta"><span id="pq">Question 1</span><span id="psc">0 gems</span></div>
+  <div class="pbar"><div class="pfill" id="pfill"></div></div>
+</div>
+<div class="gems" id="gems"></div>
+
+<div class="hero">
+  <div class="bubble" id="bubble">Let's go!</div>
+  <div class="mascots"><img class="jj" id="jj" src="/static/kids/jj.png" alt="JJ"><img class="mikey" src="/static/kids/mikey.png" alt="Mikey"></div>
+</div>
+<div class="state" id="state"></div>
+<div class="opts" id="opts"></div>
+<div class="vizwrap hidden" id="viz"></div>
+
+<!-- start -->
+<div class="ovl gate" id="gate">
+  <img class="big" src="/static/kids/jj.png" alt="JJ">
+  <div class="ghint">&#127908; I'll read the question out loud.<br>Say your answer, or tap it!</div>
+  <button class="gbtn" id="gbtn">&#9654; Start</button>
+</div>
+<!-- pause -->
+<div class="ovl pause hidden" id="pauseScr">
+  <h1>&#9208;&#65039; Paused</h1>
+  <button class="gbtn" id="resumeBtn">&#9654; Keep playing</button>
+  <button class="gbtn alt" id="homeBtn2">&#127968; Go home</button>
+</div>
+<!-- done -->
+<div class="ovl done hidden" id="doneScr">
+  <img class="big" src="/static/kids/jj.png" alt="JJ">
+  <div class="stars" id="stars"></div>
+  <h1 id="doneTitle">You did it! &#127942;</h1>
+  <div class="score" id="doneScore"></div>
+  <button class="gbtn" id="againBtn">&#8635; Play again</button>
+  <button class="gbtn alt" id="homeBtn3">&#127968; Go home</button>
+</div>
+</div>
+
+<script>
+window.KQ = {chapter: {{ chapter|tojson }}, n: {{ n }}, diff: {{ diff|tojson }}};
+</script>
+<script>
+/* ===== Per-question concept visual — animates each question's concept in the empty space.
+   Covers all Grade-3 qbank families; add a detector fn to DETECTORS to support new types. ===== */
+(function(){
+  function el(t,c){var e=document.createElement(t);if(c)e.className=c;return e;}
+  function cell(txt,cls){var c=el('div','vcell'+(cls?' '+cls:''));c.textContent=txt;return c;}
+  function cap(box,t){var c=el('div','viz-cap');c.innerHTML=t;box.appendChild(c);return c;}
+  function result(box,html){var r=el('div','viz-result');r.innerHTML='&rarr; <span class="n">'+html+'</span>';box.appendChild(r);setTimeout(function(){r.classList.add('show');},1200);return r;}
+  function countUp(node,to,ms){var t0=null;function s(t){t0=t0||t;var p=Math.min(1,(t-t0)/ms);node.textContent=Math.round(to*p);if(p<1)requestAnimationFrame(s);}requestAnimationFrame(s);}
+  function nums(s){return (s.match(/\d+/g)||[]).map(Number);}
+
+  function placeValue(box,q,s){
+    var m=s.match(/In\s+(\d[\d,]*)\s*,?\s*what is the\s+(PLACE|FACE)\s+VALUE\s+of the\s+(ones|tens|hundreds|thousands|ten\s*thousands)\s+digit/i);
+    if(!m)return false;
+    var n=m[1].replace(/,/g,''),kind=m[2].toUpperCase(),place=m[3].toLowerCase().replace(/\s+/g,' ');
+    var order=['ones','tens','hundreds','thousands','ten thousands'],mult=[1,10,100,1000,10000];
+    var pi=order.indexOf(place);if(pi<0)return false;var digs=n.split(''),idx=digs.length-1-pi;if(idx<0)return false;
+    var digit=parseInt(digs[idx]),val=(kind==='FACE')?digit:digit*mult[pi];
+    cap(box,kind==='FACE'?'FACE value = just the digit itself':'PLACE value = digit &times; its place');
+    var row=el('div','viz-row');digs.forEach(function(d,i){row.appendChild(cell(d,i===idx?'hit':'dim'));});box.appendChild(row);
+    result(box,kind==='FACE'?String(val):(digit+' &times; '+mult[pi]+' = '+val));return true;
+  }
+  function succPred(box,q,s){
+    var m=s.match(/\b(SUCCESSOR|PREDECESSOR)\b\s+of\s+(\d+)/i);if(!m)return false;
+    var kind=m[1].toUpperCase(),n=parseInt(m[2]),ans=kind==='SUCCESSOR'?n+1:n-1;
+    cap(box,kind==='SUCCESSOR'?'Successor = the number just AFTER (add 1)':'Predecessor = the number just BEFORE (take 1)');
+    var row=el('div','viz-row');[n-1,n,n+1].forEach(function(v){row.appendChild(cell(v,v===n?'':(v===ans?'hit':'dim')));});box.appendChild(row);
+    result(box,String(ans));return true;
+  }
+  function compareSign(box,q,s){
+    if(!/sign/i.test(s))return false;var m=s.match(/(\d+)\s*(?:_{2,}|_+)\s*(\d+)/);if(!m)return false;
+    var a=parseInt(m[1]),b=parseInt(m[2]),sign=a>b?'>':a<b?'<':'=';
+    cap(box,'Which is bigger? The open side points to the BIGGER number');
+    var row=el('div','viz-row');row.appendChild(cell(a));var sc=cell('?','op');row.appendChild(sc);row.appendChild(cell(b));box.appendChild(row);
+    setTimeout(function(){sc.textContent=sign;sc.classList.add('ans');sc.classList.remove('op');},900);
+    result(box,a+' '+sign+' '+b);return true;
+  }
+  function orderFirst(box,q,s){
+    var m=s.match(/Arrange in\s+(ascending|descending)\s+order[:\s]+([\d,\s]+?)\.?\s*Which/i);if(!m)return false;
+    var asc=/ascending/i.test(m[1]),list=nums(m[2]);if(list.length<2)return false;
+    var sorted=list.slice().sort(function(x,y){return asc?x-y:y-x;});
+    cap(box,asc?'Ascending = smallest first':'Descending = biggest first');
+    var row=el('div','viz-row'),cells=list.map(function(v){var c=cell(v);row.appendChild(c);return c;});box.appendChild(row);
+    setTimeout(function(){cells.forEach(function(c){var v=parseInt(c.textContent);c.classList.add(v===sorted[0]?'hit':'dim');});},900);
+    result(box,'First: '+sorted[0]);return true;
+  }
+  function sequence(box,q,s){
+    var m=s.match(/:\s*([\d,\s]+?),\s*\?/);if(!m)return false;var seq=nums(m[1]);if(seq.length<2)return false;
+    var step=seq[1]-seq[0],nxt=seq[seq.length-1]+step;
+    cap(box,step>0?('The pattern adds '+step+' each time'):('The pattern changes by '+step));
+    var row=el('div','viz-row');seq.forEach(function(v){row.appendChild(cell(v));});var qc=cell('?','op');row.appendChild(qc);box.appendChild(row);
+    setTimeout(function(){qc.textContent=nxt;qc.classList.remove('op');qc.classList.add('ans');},900);
+    result(box,String(nxt));return true;
+  }
+  function formNumber(box,q,s){
+    if(!(/\b(smallest|largest|greatest|biggest)\b/i.test(s)&&/\bnumber\b/i.test(s)&&/\busing|from|with\b/i.test(s)))return false;
+    var mm=s.match(/\b(?:using|from|with)\b\s*(.*)$/i);var tail=(mm?mm[1]:s).split(/[\(\.]/)[0];
+    var digits=(tail.match(/\b\d\b/g)||[]).map(Number);if(digits.length<2||digits.length>6)return false;
+    var largest=/\b(largest|greatest|biggest)\b/i.test(s),sorted=digits.slice().sort(function(a,b){return largest?b-a:a-b;});
+    cap(box,largest?'Biggest number &rarr; put the BIGGEST digit first!':'Smallest number &rarr; put the SMALLEST digit first!');
+    var stage=el('div','viz-stage'),step=56;stage.style.width=(step*digits.length)+'px';
+    var tiles=digits.map(function(d,i){var t=el('div','vtile');t.textContent=d;t.style.transform='translateX('+(i*step)+'px)';stage.appendChild(t);return t;});box.appendChild(stage);
+    var used={};setTimeout(function(){tiles.forEach(function(t){var d=parseInt(t.textContent);var pos=sorted.indexOf(d,used[d]||0);used[d]=pos+1;t.style.transform='translateX('+(pos*step)+'px)';if(pos===0)t.classList.add('lead');});},650);
+    result(box,sorted.join(''));return true;
+  }
+  function arithmetic(box,q,s){
+    var t=s.replace(/₹/g,'').replace(/[−–]/g,'-').replace(/×/g,'x').replace(/÷/g,'/');
+    var m=t.match(/(-?\d+)\s*([+\-x\/])\s*(-?\d+)(?:\s*([+\-x\/])\s*(-?\d+))?\s*=/);if(!m)return false;
+    var money=/₹/.test(s);
+    function ap(acc,op,v){return op==='+'?acc+v:op==='-'?acc-v:op==='x'?acc*v:Math.round(acc/v);}
+    var res=parseInt(m[1]);res=ap(res,m[2],parseInt(m[3]));if(m[4])res=ap(res,m[4],parseInt(m[5]));
+    var pre=money?'₹':'',cm={'+':'Put them together and count!','-':'Take away, then count what is left','x':'Equal groups added up','/':'Share equally into groups'};
+    cap(box,cm[m[2]]||'Let’s work it out!');
+    var row=el('div','viz-row');function sym(o){return o==='x'?'×':o==='/'?'÷':o;}
+    row.appendChild(cell(pre+m[1]));row.appendChild(cell(sym(m[2]),'op'));row.appendChild(cell(pre+m[3]));
+    if(m[4]){row.appendChild(cell(sym(m[4]),'op'));row.appendChild(cell(pre+m[5]));}
+    row.appendChild(cell('=','op'));var ansc=cell(pre+'0','ans');row.appendChild(ansc);box.appendChild(row);
+    setTimeout(function(){if(money)ansc.textContent='₹'+res;else countUp(ansc,res,700);},700);return true;
+  }
+  function expandedForm(box,q,s){
+    var m=s.match(/write the number\s*:?\s*([\d\s+]+?)\s*=/i);if(!m)return false;
+    var parts=(m[1].match(/\d+/g)||[]).map(Number);if(parts.length<2)return false;var sum=parts.reduce(function(a,b){return a+b;},0);
+    cap(box,'Add each place value to build the number');
+    var row=el('div','viz-row');parts.forEach(function(p,i){row.appendChild(cell(p));if(i<parts.length-1)row.appendChild(cell('+','op'));});
+    row.appendChild(cell('=','op'));var a=cell('0','ans');row.appendChild(a);box.appendChild(row);setTimeout(function(){countUp(a,sum,700);},700);return true;
+  }
+  function estimateRound(box,q,s){
+    var sum=/estimate the sum/i.test(s),diff=/estimate the difference/i.test(s);if(!sum&&!diff)return false;
+    var m=s.match(/(\d+)\s*[+\-−]\s*(\d+)/);if(!m)return false;
+    var a=parseInt(m[1]),b=parseInt(m[2]),ra=Math.round(a/10)*10,rb=Math.round(b/10)*10,est=sum?ra+rb:ra-rb;
+    cap(box,'Round to the nearest 10:  '+a+'&rarr;'+ra+',  '+b+'&rarr;'+rb);
+    var row=el('div','viz-row');row.appendChild(cell(ra,'hit'));row.appendChild(cell(sum?'+':'−','op'));row.appendChild(cell(rb,'hit'));
+    row.appendChild(cell('=','op'));var ac=cell('0','ans');row.appendChild(ac);box.appendChild(row);setTimeout(function(){countUp(ac,est,700);},700);return true;
+  }
+  function missingBox(box,q,s){
+    var m=s.match(/(\d+|_{2,})\s*([+\-−])\s*(\d+|_{2,})\s*=\s*(\d+)/);if(!m)return false;
+    var op=m[2].replace('−','-'),L=m[1],R=m[3],tot=parseInt(m[4]),missL=/_/.test(L),missR=/_/.test(R);if(!missL&&!missR)return false;
+    var known=parseInt(missL?R:L),ans=op==='+'?tot-known:(missL?tot+known:known-tot);
+    cap(box,'Find the missing number that makes it true');
+    var row=el('div','viz-row');var lc=cell(missL?'?':L,missL?'ans':'');row.appendChild(lc);row.appendChild(cell(op,'op'));
+    var rc=cell(missR?'?':R,missR?'ans':'');row.appendChild(rc);row.appendChild(cell('=','op'));row.appendChild(cell(tot));box.appendChild(row);
+    setTimeout(function(){(missL?lc:rc).textContent=ans;},900);result(box,String(ans));return true;
+  }
+  function numberName(box,q,s){
+    var m=s.match(/which number is\s*['"]([^'"]+)['"]/i);if(!m)return false;
+    var ans=(q&&q.correct)?String(q.correct).replace(/[^\d]/g,''):'';
+    cap(box,'Read the number name, then write the digits');
+    var row=el('div','viz-row');var nc=el('div','vcell');nc.style.fontSize='15px';nc.style.minWidth='auto';nc.textContent=m[1];row.appendChild(nc);
+    row.appendChild(cell('=','op'));row.appendChild(cell(ans||'?','ans'));box.appendChild(row);result(box,ans||m[1]);return true;
+  }
+  function wordProblem(box,q,s){
+    if(!/how many/i.test(s))return false;var ns=nums(s);if(ns.length!==2)return false;
+    var sub=/(left|remain|fewer|spent|gave away|lost|how many more)/i.test(s),add=/(in all|altogether|in total|combined)/i.test(s);if(!add&&!sub)return false;
+    var x=sub?Math.max(ns[0],ns[1]):ns[0],y=sub?Math.min(ns[0],ns[1]):ns[1],res=sub?x-y:x+y;
+    cap(box,sub?'&ldquo;how many left&rdquo; &rarr; SUBTRACT':'&ldquo;in all&rdquo; &rarr; ADD them together');
+    var row=el('div','viz-row');row.appendChild(cell(x));row.appendChild(cell(sub?'−':'+','op'));row.appendChild(cell(y));row.appendChild(cell('=','op'));
+    var ac=cell('0','ans');row.appendChild(ac);box.appendChild(row);setTimeout(function(){countUp(ac,res,700);},700);return true;
+  }
+
+  var DETECTORS=[placeValue,succPred,compareSign,orderFirst,sequence,formNumber,expandedForm,estimateRound,missingBox,numberName,arithmetic,wordProblem];
+  window.ConceptViz={render:function(box,q){
+    var s=(q&&(q.q||q.stem))||'';
+    for(var i=0;i<DETECTORS.length;i++){box.classList.remove('hidden');box.innerHTML='';try{if(DETECTORS[i](box,q,s))return true;}catch(e){}}
+    box.classList.add('hidden');box.innerHTML='';return false;
+  }};
+})();
+</script>
+<script>
+(function(){
+  function id(x){return document.getElementById(x);}
+  var bubble=id('bubble'),state=id('state'),opts=id('opts'),gems=id('gems'),jj=id('jj');
+  var QS=[], voiceOn=true, curAudio=null, tapResolve=null, results=[], score=0, cur=0;
+  var paused=false, pauseResolvers=[];
+
+  function speakable(s){return (s||'')
+    .replace(/₹/g,' rupees ').replace(/×/g,' times ').replace(/÷/g,' divided by ')
+    .replace(/[−]/g,' minus ').replace(/ - /g,' minus ').replace(/=/g,' equals ')
+    .replace(/\+/g,' plus ').replace(/>/g,' is greater than ').replace(/</g,' is less than ')
+    .replace(/%/g,' percent ').replace(/_{2,}/g,' what ').replace(/\?/g,' ')
+    .replace(/\s+/g,' ').trim();}
+
+  function stopAudio(){try{if(curAudio)curAudio.pause();}catch(e){}curAudio=null;}
+  function say(text){return new Promise(function(res){
+    if(!voiceOn||!text||paused){res();return;}
+    try{var a=new Audio('/kids/tts?text='+encodeURIComponent(speakable(text).slice(0,560)));
+      curAudio=a;a.onended=res;a.onerror=res;a.play().catch(function(){res();});}
+    catch(e){res();}});}
+
+  /* pause plumbing: while paused, any awaited gate blocks until resume */
+  function gate(){return paused?new Promise(function(r){pauseResolvers.push(r);}):Promise.resolve();}
+  function doPause(){if(paused)return;paused=true;stopAudio();id('pauseScr').classList.remove('hidden');}
+  function doResume(){if(!paused)return;paused=false;id('pauseScr').classList.add('hidden');
+    var rs=pauseResolvers;pauseResolvers=[];rs.forEach(function(r){r();});
+    if(QS[cur])say(QS[cur].q);}
+  id('pauseBtn').onclick=doPause; id('resumeBtn').onclick=doResume;
+
+  function goHome(){location.href='/exam-prep/dashboard';}
+  id('homeBtn').onclick=goHome; id('homeBtn2').onclick=goHome; id('homeBtn3').onclick=goHome;
+
+  var vtog=id('vtog');
+  vtog.onclick=function(){voiceOn=!voiceOn;id('vlabel').innerHTML=voiceOn?'&#128266;':'&#128263;';vtog.classList.toggle('off',!voiceOn);if(!voiceOn)stopAudio();};
+  function setState(t,l){state.innerHTML=t?('<span class="dot'+(l?' listen':'')+'"></span>'+t):'';}
+  function cheer(){jj.classList.add('cheer');setTimeout(function(){jj.classList.remove('cheer');},500);}
+
+  /* progress */
+  function paint(){id('pq').textContent='Question '+Math.min(cur+1,QS.length)+' of '+QS.length;
+    id('psc').textContent=score+(score===1?' gem':' gems');
+    id('pfill').style.width=(QS.length?(cur/QS.length*100):0)+'%';}
+
+  /* confetti */
+  var cvs=id('confetti'),cx=cvs.getContext('2d');
+  function confetti(){cvs.width=innerWidth;cvs.height=innerHeight;
+    var cols=['#ff5aa5','#3aa0ff','#22b07d','#ffab1a','#ffd24a'],P=[];
+    for(var i=0;i<90;i++)P.push({x:innerWidth/2,y:innerHeight*.35,vx:(Math.random()-.5)*10,vy:Math.random()*-9-3,c:cols[i%cols.length],r:5+Math.random()*5,a:1});
+    var t0=performance.now();
+    (function fr(t){var dt=(t-t0)/16.7;cx.clearRect(0,0,cvs.width,cvs.height);var alive=false;
+      P.forEach(function(p){p.vy+=.28;p.x+=p.vx;p.y+=p.vy;p.a-=.012;if(p.a>0&&p.y<cvs.height+20){alive=true;cx.globalAlpha=Math.max(p.a,0);cx.fillStyle=p.c;cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fill();}});
+      if(alive)requestAnimationFrame(fr);else cx.clearRect(0,0,cvs.width,cvs.height);})(t0);}
+
+  /* spoken-number → value */
+  var ONES={zero:0,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,eighteen:18,nineteen:19};
+  var TENS={twenty:20,thirty:30,forty:40,fifty:50,sixty:60,seventy:70,eighty:80,ninety:90};
+  function parseNum(s){s=(s||'').toLowerCase().replace(/-/g,' ');var d=s.match(/\d+/);if(d)return parseInt(d[0]);var t=0,f=false;for(var w in TENS){if(s.indexOf(w)>=0){t+=TENS[w];f=true;}}for(var o in ONES){if(new RegExp('\\b'+o+'\\b').test(s)){t+=ONES[o];f=true;break;}}return f?t:null;}
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  var LET={a:0,ay:0,b:1,bee:1,be:1,c:2,cee:2,see:2,sea:2,d:3,dee:3};
+  var POS={first:0,second:1,third:2,fourth:3};
+  function listen(q){return new Promise(function(res){
+    if(!SR||!voiceOn){res(null);return;}
+    var r=new SR();r.lang='en-IN';r.interimResults=false;r.maxAlternatives=4;var done=false;
+    var to=setTimeout(function(){if(!done){done=true;try{r.stop();}catch(e){}res(null);}},7000);
+    r.onresult=function(e){if(done)return;done=true;clearTimeout(to);var idx=null;
+      for(var k=0;k<e.results[0].length&&idx===null;k++){var tr=(e.results[0][k].transcript||'').toLowerCase().trim();
+        var words=tr.split(/[^a-z0-9]+/);
+        for(var wi=0;wi<words.length;wi++){if(words[wi] in LET){idx=LET[words[wi]];break;}if(words[wi] in POS){idx=POS[words[wi]];break;}}
+        if(idx===null){var num=parseNum(tr);if(num!==null){for(var oi=0;oi<q.options.length;oi++){if(parseInt((q.options[oi]||'').replace(/[^0-9]/g,''))===num){idx=oi;break;}}}}}
+      res(idx);};
+    r.onerror=function(){if(!done){done=true;clearTimeout(to);res(null);}};
+    r.onend=function(){if(!done){done=true;clearTimeout(to);res(null);}};
+    try{r.start();}catch(e){res(null);}});}
+
+  function renderOpts(q){opts.innerHTML='';q.options.forEach(function(o,idx){
+    var b=document.createElement('button');b.className='opt'+((''+o).length>6?' small':'');
+    b.innerHTML='<span class="lb">'+'ABCD'[idx]+'</span><span class="tx"></span>';
+    b.querySelector('.tx').textContent=o;
+    b.onclick=function(){if(tapResolve){var r=tapResolve;tapResolve=null;r(idx);}};opts.appendChild(b);});}
+  function waitTap(){return new Promise(function(r){tapResolve=r;});}
+
+  function askQ(i){return new Promise(async function(done){
+    cur=i;var q=QS[i];paint();
+    bubble.textContent=q.q;bubble.classList.remove('pop');void bubble.offsetWidth;bubble.classList.add('pop');
+    renderOpts(q);var idx=null;
+    try{if(window.ConceptViz)ConceptViz.render(id('viz'),q);}catch(e){}
+    await gate();
+    if(voiceOn){setState('JJ is asking…');await say(q.q);}   /* ← question ONLY, never the options */
+    await gate();
+    if(voiceOn && SR){setState('Say it, or tap!',true);
+      var tapP=waitTap().then(function(t){return {t:t};});
+      var voiceP=listen(q).then(function(n){return {v:n};});
+      var first=await Promise.race([voiceP,tapP]);
+      if('t' in first){idx=first.t;}
+      else{idx=first.v;if(idx===null){setState('Tap your answer!');idx=await waitTap();}}
+    }else{setState('Tap your answer!');idx=await waitTap();}
+    await reveal(i,idx);done();});}
+
+  function reveal(i,idx){return new Promise(async function(done){
+    var q=QS[i];var right=(idx===q.answer);setState('');
+    [].forEach.call(opts.children,function(b,k){
+      if(k===q.answer)b.classList.add('right');
+      else{b.classList.add('wrong');if(k===idx)b.classList.add('shake');}});
+    var gm=id('g'+i);if(gm)gm.classList.add(right?'on':'miss');
+    if(right){score++;cheer();confetti();}
+    paint();
+    results.push({topic:q.topic,status:right?'solid':'weak'});
+    bubble.textContent=(right?'🎉 Yes! ':'💪 Good try! ')+"It's "+q.correct;
+    await say((right?'Yes! ':'Good try! ')+"It's "+q.correct);
+    if(!voiceOn)await new Promise(function(r){setTimeout(r,1100);});
+    await gate();done();});}
+
+  async function runQuiz(){
+    await say("Hi superstar! Let's collect all the gems!");
+    for(var i=0;i<QS.length;i++){await askQ(i);}
+    finish();}
+
+  function finish(){
+    cur=QS.length;paint();opts.innerHTML='';setState('');bubble.textContent='All done! 🏆';
+    var vz=id('viz');if(vz){vz.classList.add('hidden');vz.innerHTML='';}
+    var pct=QS.length?Math.round(score/QS.length*100):0;
+    var st=pct>=80?'⭐⭐⭐':pct>=50?'⭐⭐':'⭐';
+    id('stars').textContent=st;
+    id('doneTitle').innerHTML=pct>=80?'Superstar! 🏆':pct>=50?'Great job! 🌟':'Nice try! 💪';
+    id('doneScore').textContent='You got '+score+' out of '+QS.length+'!';
+    id('doneScr').classList.remove('hidden');confetti();
+    try{fetch('/api/assess/complete',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({subject:'class3-maths',title:(window.KQ.chapter||'Class 3 Maths'),
+        score:score,graded:QS.length,total:QS.length,results:results})});}catch(e){}}
+
+  id('againBtn').onclick=function(){location.reload();};
+
+  async function boot(){
+    try{var url='/api/kids/quiz?n='+encodeURIComponent(window.KQ.n)+'&diff='+encodeURIComponent(window.KQ.diff)+(window.KQ.chapter?('&chapter='+encodeURIComponent(window.KQ.chapter)):'');
+      var r=await fetch(url,{headers:{'Accept':'application/json'}});var d=await r.json();QS=(d.questions||[]);}
+    catch(e){QS=[];}
+    if(!QS.length){id('gate').querySelector('.ghint').innerHTML='Oops! No questions right now.<br>Please try again in a moment.';id('gbtn').classList.add('hidden');return;}
+    gems.innerHTML='';for(var k=0;k<QS.length;k++){var g=document.createElement('div');g.className='gem';g.id='g'+k;gems.appendChild(g);}
+    paint();}
+
+  id('gbtn').onclick=function(){if(!QS.length)return;id('gate').classList.add('hidden');runQuiz();};
+  boot();
+})();
+</script>
+</body></html>

@@ -1,0 +1,22 @@
+{
+  "episodes": [
+    {
+      "id": "robo_demo_a",
+      "video": "/Users/deepakkumarrai/Downloads/WhatsApp Video 2026-07-14 at 22.00.20.mp4",
+      "title": "TrigunAI Robotics — Isaac Sim / Isaac Lab Demo (A)",
+      "description": "NVIDIA Isaac Sim / Isaac Lab robotics manipulation demonstration by TrigunAI Innovations.\n\nRepos:\nhttps://github.com/avinash246813579/franka-peg-in-hole\nhttps://github.com/avinash246813579/allegro-dex-teleop\nhttps://github.com/avinash246813579/franka-cube-stacking",
+      "tags": ["robotics", "Isaac Sim", "Isaac Lab", "manipulation", "NVIDIA"],
+      "lang": "en",
+      "privacy": "unlisted"
+    },
+    {
+      "id": "robo_demo_b",
+      "video": "/Users/deepakkumarrai/Downloads/WhatsApp Video 2026-07-14 at 21.56.26.mp4",
+      "title": "TrigunAI Robotics — Isaac Sim / Isaac Lab Demo (B)",
+      "description": "NVIDIA Isaac Sim / Isaac Lab robotics demonstration by TrigunAI Innovations — dexterous-hand teleoperation / manipulation.\n\nRepos:\nhttps://github.com/avinash246813579/franka-peg-in-hole\nhttps://github.com/avinash246813579/allegro-dex-teleop\nhttps://github.com/avinash246813579/franka-cube-stacking",
+      "tags": ["robotics", "Isaac Sim", "Isaac Lab", "teleoperation", "NVIDIA"],
+      "lang": "en",
+      "privacy": "unlisted"
+    }
+  ]
+}

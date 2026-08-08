@@ -1,0 +1,38 @@
+[
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/out/day4_main1.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/content/day4_main1.json",
+  "format": "solution",
+  "exam": "NEET",
+  "subject": "Physics",
+  "chapter": "Dual Nature of Matter",
+  "lang": "en"
+ },
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/out/day4_main2.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/solution_video/content/day4_main2.json",
+  "format": "solution",
+  "exam": "NEET",
+  "subject": "Chemistry",
+  "chapter": "Chemical Bonding and Molecular Structure",
+  "lang": "en"
+ },
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/out/day4_reel3.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/content/day4_reel3.json",
+  "format": "quiz",
+  "exam": "NEET",
+  "subject": "Biology",
+  "chapter": "Human Health and Disease",
+  "lang": "en"
+ },
+ {
+  "mp4": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/out/day4_reel4.mp4",
+  "content_json": "/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/quiz_video/content/day4_reel4.json",
+  "format": "quiz",
+  "exam": "NEET",
+  "subject": "Chemistry",
+  "chapter": "Biomolecules",
+  "lang": "en"
+ }
+]

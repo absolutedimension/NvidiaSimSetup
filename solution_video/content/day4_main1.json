@@ -1,0 +1,50 @@
+{
+ "title": "De Broglie Ratio",
+ "q_prose": "A proton and an alpha particle are accelerated from rest to the same kinetic energy. Find the ratio of their de Broglie wavelengths.",
+ "given_eq": "$\\lambda=\\frac{\\mathrm{h}}{p}$",
+ "q_reminder": "Find lambda p to lambda alpha.",
+ "q_narration": "A proton and an alpha particle start from rest and are accelerated so that both have the same kinetic energy. We have to compare their de Broglie wavelengths. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Use de Broglie formula",
+   "eqs": [
+    "$\\lambda=\\frac{\\mathrm{h}}{p}$",
+    "$p=\\sqrt{2mK}$"
+   ],
+   "narration": "The de Broglie wavelength is Planck constant divided by momentum. For a particle starting from rest with kinetic energy, momentum is root of two m K."
+  },
+  {
+   "label": "Step 2 — Combine the relations",
+   "eqs": [
+    "$\\lambda=\\frac{\\mathrm{h}}{\\sqrt{2mK}}$"
+   ],
+   "narration": "So, for the same kinetic energy, the wavelength depends inversely on the square root of mass."
+  },
+  {
+   "label": "Step 3 — Write wavelength ratio",
+   "eqs": [
+    "$\\frac{\\lambda_p}{\\lambda_\\alpha}=\\sqrt{\\frac{m_\\alpha K_\\alpha}{m_p K_p}}$"
+   ],
+   "narration": "Now take the ratio of proton wavelength to alpha particle wavelength. The constants cancel out."
+  },
+  {
+   "label": "Step 4 — Substitute masses and energy",
+   "eqs": [
+    "$K_\\alpha=K_p, m_\\alpha=4m_p$",
+    "$\\frac{\\lambda_p}{\\lambda_\\alpha}=\\sqrt{\\frac{4m_p}{m_p}}=2$"
+   ],
+   "narration": "Both kinetic energies are equal, and an alpha particle has four times the mass of a proton. Hence the ratio becomes square root of four, which is two."
+  }
+ ],
+ "answer_eq": "$\\lambda_p:\\lambda_\\alpha=2:1$",
+ "answer_label": "Correct option: A",
+ "answer_narration": "So the proton wavelength is twice the alpha particle wavelength, giving two is to one. Correct option A. For more clear practice, keep learning with Acharya.",
+ "exam_tag": "NEET · Physics · Dual Nature of Matter",
+ "options": [
+  "$2: 1$",
+  "$1: 1$",
+  "$\\sqrt{2}: 1$",
+  "$4: 1$"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

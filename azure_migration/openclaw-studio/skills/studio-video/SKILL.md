@@ -32,7 +32,8 @@ A scene-segmented script at `course_scripts/video_scripts/<slug>.md` (frontmatte
 ## Options
 - **voice** (F5-TTS): `female_confident`(default) / `female_calm` / `female_friendly` / `female_excited` / `male_*`. Speed ~0.75.
 - **shader**: `vocal_melt`(premium, default for tech) · `sunlit_leaves`(calm/wellness) · `cosmic_drift` · `calm_glow` · `energy_pulse` · `neon_grid` · `warm_bokeh` · `learn_focus` · `knowledge_flow` · `circuit_mind` · `deep_ocean` · `sacred_geometry`.
-- **presenter**: `none` / `circular` (static photo bottom-right) / `hybrid` (Hallo lip-sync 0–30s + circular after — the stable lip-sync path). ⚠️ never full `hallo` (broken).
+- **presenter**: `avatar`(default) / `none` / `circular` (static photo bottom-right).
+  - **`avatar`** = the brand presenter "Acharya" as a LIVE talking clip in the circular bottom-corner for the full runtime, lip-synced to the video's own F5 voiceover — generated on the T4 avatar box via `avatar_bridge.sh` (see below + `AVATAR_INTEGRATION.md`). This **replaces the old `hybrid`(Hallo) path** (Hallo was blown-out/broken — retired).
 - **captions**: kinetic / fixed lower-third / none.
 - **music**: `ambient_low` / `none`.   **aspect**: `16:9` / `9:16` (reels).
 
@@ -44,6 +45,12 @@ source ~/.openclaw/farm.sh
 SSH(){ ssh -i "$FARM_KEY" -o StrictHostKeyChecking=no "$FARM_USER@$FARM_IP" "$1"; }
 ```
 1. **Audio first (mandatory gate).** Generate per-scene narration with F5 (`$FARM_VID_PY $FARM_HOME/generate_voice_f5.py --script <script.json> --output $FARM_HOME/<build>/`), pull `full_voiceover.wav`, get Deepak's approval BEFORE the visual render.
+1b. **Avatar presenter (`presenter=avatar`, default).** Hand the video's own voiceover to the T4 avatar box → a full-runtime talking "Acharya" clip for the corner:
+   ```bash
+   eval "$(bash ~/.openclaw/avatar_bridge.sh --vo $FARM_HOME/<build>/full_voiceover.wav --slug <slug> --role corner)"
+   # AVATAR_CLIP=<path-on-farm>/…mp4  (or NONE → fall back to presenter=circular static photo)
+   ```
+   The composite places `AVATAR_CLIP` as the circular bottom-corner presenter (same slot as `circular`, but live + talking). Fails soft to a static circular photo if the T4 is unreachable.
 2. **Render** (long → detached):
    - Mode A (timed slides + shader): `SSH "cd $FARM_HOME && $FARM_VID_PY compose_welcome.py"`
    - Mode B (motion graphics): `SSH "cd $FARM_HOME && $FARM_VID_PY patch_v4.py && setsid nohup $FARM_VID_PY render_v4.py > /tmp/render_v4.log 2>&1 </dev/null &"` then poll `/tmp/render_v4.log`.
@@ -57,6 +64,6 @@ SSH(){ ssh -i "$FARM_KEY" -o StrictHostKeyChecking=no "$FARM_USER@$FARM_IP" "$1"
 - **Render on EC2 only** (no GPU here). **Audio-first gate** saves hours.
 - Per-scene voice files are the frozen timing source — all visuals sync to them.
 - Transparent slides are mandatory over a shader; overlays must be RGBA (`alpha_composite`, not `ImageChops.add`).
-- Lip-sync: **hybrid only** (30s `avatar30.mp4` intro + circular after). Full Hallo is blown-out/broken.
+- Lip-sync: use **`presenter=avatar`** (SadTalker on the T4 via `avatar_bridge.sh`). The old Hallo `hybrid`/full paths are **retired** (blown-out/broken). Avatar fails soft to a static circular photo if the T4 is down.
 - Mode B is slow (~3 fps PIL); run detached, poll the log, avoid many concurrent SSH sessions.
 - EC2 `/tmp` is ephemeral; keep assets under `/home/ubuntu/`.

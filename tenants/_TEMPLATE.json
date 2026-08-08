@@ -1,0 +1,33 @@
+{
+  "slug": "catalyzers-kota",
+  "name": "Catalyzers Institute",
+  "course_id": "catalyzers-kota",
+  "subject": "NEET/JEE Physics & Chemistry",
+  "brand": {
+    "logo": "",
+    "colors": { "primary": "#E8C66B", "accent": "#D4A23A" },
+    "welcome_line": "Namaste! I'm Catalyzers Institute's tutor."
+  },
+  "whatsapp": {
+    "mode": "shared",
+    "number": "",
+    "_note": "mode = shared (uses the common Acharya number, branded persona) | dedicated (own number, provisioned during trial)"
+  },
+  "web": {
+    "listed_on_acharya": false,
+    "subdomain": "",
+    "custom_domain": ""
+  },
+  "students": [
+    { "name": "", "whatsapp": "", "email": "", "status": "invited" }
+  ],
+  "trial": {
+    "start": "",
+    "end": "",
+    "_note": "end = start + 14 days; free trial, ₹4,999/mo after"
+  },
+  "status": "provisioning",
+  "_status_values": "provisioning -> live -> paid | churned",
+  "source": "Maya call (interested lead)",
+  "notes": ""
+}

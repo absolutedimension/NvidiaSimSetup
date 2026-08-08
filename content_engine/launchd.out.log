@@ -1,0 +1,1231 @@
+2026-07-25T11:00:06  === DAY 2 — 4 videos ===
+2026-07-25T11:00:06  [day2_main1] generate solution JEE Advanced/Chemistry/Compounds Containing Nitrogen
+OK solution -> /tmp/day2_main1.json  (1 q, chapter=Compounds Containing Nitrogen)
+2026-07-25T11:00:19  [day2_main1] render solution
+  scene 0 ok (14.4s)
+  scene 1 ok (19.7s)
+  scene 2 ok (23.1s)
+  scene 3 ok (14.3s)
+  scene 4 ok (18.2s)
+  scene 5 ok (10.3s)
+✅ out/day2_main1.mp4
+2026-07-25T11:01:12  [day2_main1] OK
+2026-07-25T11:01:12  [day2_main2] generate solution JEE Main/Physics/Heat And Thermodynamics
+OK solution -> /tmp/day2_main2.json  (1 q, chapter=Heat And Thermodynamics)
+2026-07-25T11:01:25  [day2_main2] render solution
+  scene 0 ok (11.7s)
+  scene 1 ok (11.4s)
+  scene 2 ok (10.5s)
+  scene 3 ok (14.5s)
+  scene 4 ok (14.4s)
+  scene 5 ok (11.7s)
+✅ out/day2_main2.mp4
+2026-07-25T11:02:08  [day2_main2] OK
+2026-07-25T11:02:08  [day2_reel3] generate quiz NEET/Physics/Gravitation
+OK quiz -> /tmp/day2_reel3.json  (3 q, chapter=Gravitation)
+2026-07-25T11:02:09  [day2_reel3] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 121.4s · 3642 frames · 3 questions
+  frame 0/3642
+  frame 90/3642
+  frame 180/3642
+  frame 270/3642
+  frame 360/3642
+  frame 450/3642
+  frame 540/3642
+  frame 630/3642
+  frame 720/3642
+  frame 810/3642
+  frame 900/3642
+  frame 990/3642
+  frame 1080/3642
+  frame 1170/3642
+  frame 1260/3642
+  frame 1350/3642
+  frame 1440/3642
+  frame 1530/3642
+  frame 1620/3642
+  frame 1710/3642
+  frame 1800/3642
+  frame 1890/3642
+  frame 1980/3642
+  frame 2070/3642
+  frame 2160/3642
+  frame 2250/3642
+  frame 2340/3642
+  frame 2430/3642
+  frame 2520/3642
+  frame 2610/3642
+  frame 2700/3642
+  frame 2790/3642
+  frame 2880/3642
+  frame 2970/3642
+  frame 3060/3642
+  frame 3150/3642
+  frame 3240/3642
+  frame 3330/3642
+  frame 3420/3642
+  frame 3510/3642
+  frame 3600/3642
+
+✅  out/day2_reel3.mp4
+2026-07-25T11:14:53  [day2_reel3] OK
+2026-07-25T11:14:53  [day2_reel4] generate quiz JEE Main/Physics/Atoms And Nuclei
+OK quiz -> /tmp/day2_reel4.json  (3 q, chapter=Atoms And Nuclei)
+2026-07-25T11:14:54  [day2_reel4] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 129.6s · 3888 frames · 3 questions
+  frame 0/3888
+  frame 90/3888
+  frame 180/3888
+  frame 270/3888
+  frame 360/3888
+  frame 450/3888
+  frame 540/3888
+  frame 630/3888
+  frame 720/3888
+  frame 810/3888
+  frame 900/3888
+  frame 990/3888
+  frame 1080/3888
+  frame 1170/3888
+  frame 1260/3888
+  frame 1350/3888
+  frame 1440/3888
+  frame 1530/3888
+  frame 1620/3888
+  frame 1710/3888
+  frame 1800/3888
+  frame 1890/3888
+  frame 1980/3888
+  frame 2070/3888
+  frame 2160/3888
+  frame 2250/3888
+  frame 2340/3888
+  frame 2430/3888
+  frame 2520/3888
+  frame 2610/3888
+  frame 2700/3888
+  frame 2790/3888
+  frame 2880/3888
+  frame 2970/3888
+  frame 3060/3888
+  frame 3150/3888
+  frame 3240/3888
+  frame 3330/3888
+  frame 3420/3888
+  frame 3510/3888
+  frame 3600/3888
+  frame 3690/3888
+  frame 3780/3888
+  frame 3870/3888
+
+✅  out/day2_reel4.mp4
+2026-07-25T11:28:02  [day2_reel4] OK
+2026-07-25T11:28:02  uploading 4 videos (public)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+>> day2_main1: uploading 'Chlorine Oxyanions — JEE Advanced Chemistry Solved Step by S...'
+   ✅ uploaded: https://youtu.be/Q9a3yrgJYUc
+>> day2_main2: uploading 'Dimensional Formula Check — JEE Main Physics Solved Step by ...'
+   ✅ uploaded: https://youtu.be/AzjYuuLDM6c
+>> day2_reel3: uploading 'Gravitation — NEET Physics Quiz · Beat the Timer! #shorts...'
+   ...64%
+   ✅ uploaded: https://youtu.be/UiVNfbCMT0g
+>> day2_reel4: uploading 'Atoms And Nuclei — JEE Main Physics Quiz · Beat the Timer! #...'
+   ...60%
+   ✅ uploaded: https://youtu.be/T-sOycEN00k
+
+== done ==
+
+=== EN channel · 4 videos ===
+  • Chlorine Oxyanions — JEE Advanced Chemistry Solved Step by Step | Acharya
+  • Dimensional Formula Check — JEE Main Physics Solved Step by Step | Acharya
+  • Gravitation — NEET Physics Quiz · Beat the Timer! #shorts
+  • Atoms And Nuclei — JEE Main Physics Quiz · Beat the Timer! #shorts
+2026-07-25T11:28:20  === DAY 2 DONE ===
+2026-07-26T11:00:00  === DAY 3 — 4 videos ===
+2026-07-26T11:00:00  [day3_main1] generate solution JEE Main/Chemistry/Coordination Compounds
+OK solution -> /tmp/day3_main1.json  (1 q, chapter=Coordination Compounds)
+2026-07-26T11:00:22  [day3_main1] render solution
+  scene 0 ok (10.9s)
+  scene 1 ok (20.1s)
+  scene 2 ok (19.6s)
+  scene 3 ok (20.4s)
+  scene 4 ok (9.3s)
+  scene 5 ok (12.8s)
+✅ out/day3_main1.mp4
+2026-07-26T11:01:04  [day3_main1] OK
+2026-07-26T11:01:04  [day3_main2] generate solution JEE Main/Mathematics/3d Geometry
+OK solution -> /tmp/day3_main2.json  (1 q, chapter=3d Geometry)
+2026-07-26T11:01:18  [day3_main2] render solution
+  scene 0 ok (12.0s)
+  scene 1 ok (11.2s)
+  scene 2 ok (10.4s)
+  scene 3 ok (12.9s)
+  scene 4 ok (9.9s)
+  scene 5 ok (10.2s)
+✅ out/day3_main2.mp4
+2026-07-26T11:02:00  [day3_main2] OK
+2026-07-26T11:02:00  [day3_reel3] generate quiz JEE Main/Chemistry/Chemical Bonding And Molecular Structure
+OK quiz -> /tmp/day3_reel3.json  (3 q, chapter=Chemical Bonding And Molecular Structure)
+2026-07-26T11:02:01  [day3_reel3] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 95.8s · 2873 frames · 3 questions
+  frame 0/2873
+  frame 90/2873
+  frame 180/2873
+  frame 270/2873
+  frame 360/2873
+  frame 450/2873
+  frame 540/2873
+  frame 630/2873
+  frame 720/2873
+  frame 810/2873
+  frame 900/2873
+  frame 990/2873
+  frame 1080/2873
+  frame 1170/2873
+  frame 1260/2873
+  frame 1350/2873
+  frame 1440/2873
+  frame 1530/2873
+  frame 1620/2873
+  frame 1710/2873
+  frame 1800/2873
+  frame 1890/2873
+  frame 1980/2873
+  frame 2070/2873
+  frame 2160/2873
+  frame 2250/2873
+  frame 2340/2873
+  frame 2430/2873
+  frame 2520/2873
+  frame 2610/2873
+  frame 2700/2873
+  frame 2790/2873
+
+✅  out/day3_reel3.mp4
+2026-07-26T11:10:28  [day3_reel3] OK
+2026-07-26T11:10:28  [day3_reel4] generate quiz NEET/Biology/Molecular Basis of Inheritance
+OK quiz -> /tmp/day3_reel4.json  (3 q, chapter=Molecular Basis of Inheritance)
+2026-07-26T11:10:29  [day3_reel4] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 103.7s · 3110 frames · 3 questions
+  frame 0/3110
+  frame 90/3110
+  frame 180/3110
+  frame 270/3110
+  frame 360/3110
+  frame 450/3110
+  frame 540/3110
+  frame 630/3110
+  frame 720/3110
+  frame 810/3110
+  frame 900/3110
+  frame 990/3110
+  frame 1080/3110
+  frame 1170/3110
+  frame 1260/3110
+  frame 1350/3110
+  frame 1440/3110
+  frame 1530/3110
+  frame 1620/3110
+  frame 1710/3110
+  frame 1800/3110
+  frame 1890/3110
+  frame 1980/3110
+  frame 2070/3110
+  frame 2160/3110
+  frame 2250/3110
+  frame 2340/3110
+  frame 2430/3110
+  frame 2520/3110
+  frame 2610/3110
+  frame 2700/3110
+  frame 2790/3110
+  frame 2880/3110
+  frame 2970/3110
+  frame 3060/3110
+
+✅  out/day3_reel4.mp4
+2026-07-26T11:21:26  [day3_reel4] OK
+2026-07-26T11:21:26  uploading 4 videos (public)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+>> day3_main1: uploading 'VBT Limitations — JEE Main Chemistry Solved Step by Step | A...'
+   ✅ uploaded: https://youtu.be/zwiSFOUPKkc
+>> day3_main2: uploading 'Coplanar Lines — JEE Main Mathematics Solved Step by Step | ...'
+   ✅ uploaded: https://youtu.be/IUNp_XLr2Wg
+>> day3_reel3: uploading 'Chemical Bonding And Molecular Structure — JEE Main Chemistr...'
+   ...77%
+   ✅ uploaded: https://youtu.be/_NwB6AGFtaM
+>> day3_reel4: uploading 'Molecular Basis of Inheritance — NEET Biology Quiz · Beat th...'
+   ...72%
+   ✅ uploaded: https://youtu.be/UkgWg8MTMZE
+
+== done ==
+
+=== EN channel · 4 videos ===
+  • VBT Limitations — JEE Main Chemistry Solved Step by Step | Acharya
+  • Coplanar Lines — JEE Main Mathematics Solved Step by Step | Acharya
+  • Chemical Bonding And Molecular Structure — JEE Main Chemistry Quiz · Beat the Timer! #shorts
+  • Molecular Basis of Inheritance — NEET Biology Quiz · Beat the Timer! #shorts
+2026-07-26T11:21:45  === DAY 3 DONE ===
+2026-07-27T11:00:00  === DAY 4 — 4 videos ===
+2026-07-27T11:00:00  [day4_main1] generate solution NEET/Physics/Dual Nature of Matter
+OK solution -> /tmp/day4_main1.json  (1 q, chapter=Dual Nature of Matter)
+2026-07-27T11:00:17  [day4_main1] render solution
+  scene 0 ok (16.5s)
+  scene 1 ok (13.4s)
+  scene 2 ok (8.8s)
+  scene 3 ok (9.1s)
+  scene 4 ok (13.9s)
+  scene 5 ok (13.5s)
+✅ out/day4_main1.mp4
+2026-07-27T11:00:59  [day4_main1] OK
+2026-07-27T11:00:59  [day4_main2] generate solution NEET/Chemistry/Chemical Bonding and Molecular Structure
+OK solution -> /tmp/day4_main2.json  (1 q, chapter=Chemical Bonding and Molecular Structure)
+2026-07-27T11:01:21  [day4_main2] render solution
+  scene 0 ok (13.9s)
+  scene 1 ok (15.3s)
+  scene 2 ok (16.8s)
+  scene 3 ok (17.1s)
+  scene 4 ok (15.5s)
+  scene 5 ok (12.6s)
+  scene 6 ok (12.3s)
+✅ out/day4_main2.mp4
+2026-07-27T11:02:30  [day4_main2] OK
+2026-07-27T11:02:30  [day4_reel3] generate quiz NEET/Biology/Human Health and Disease
+OK quiz -> /tmp/day4_reel3.json  (3 q, chapter=Human Health and Disease)
+2026-07-27T11:02:32  [day4_reel3] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 98.4s · 2953 frames · 3 questions
+  frame 0/2953
+  frame 90/2953
+  frame 180/2953
+  frame 270/2953
+  frame 360/2953
+  frame 450/2953
+  frame 540/2953
+  frame 630/2953
+  frame 720/2953
+  frame 810/2953
+  frame 900/2953
+  frame 990/2953
+  frame 1080/2953
+  frame 1170/2953
+  frame 1260/2953
+  frame 1350/2953
+  frame 1440/2953
+  frame 1530/2953
+  frame 1620/2953
+  frame 1710/2953
+  frame 1800/2953
+  frame 1890/2953
+  frame 1980/2953
+  frame 2070/2953
+  frame 2160/2953
+  frame 2250/2953
+  frame 2340/2953
+  frame 2430/2953
+  frame 2520/2953
+  frame 2610/2953
+  frame 2700/2953
+  frame 2790/2953
+  frame 2880/2953
+
+✅  out/day4_reel3.mp4
+2026-07-27T11:14:07  [day4_reel3] OK
+2026-07-27T11:14:07  [day4_reel4] generate quiz NEET/Chemistry/Biomolecules
+OK quiz -> /tmp/day4_reel4.json  (3 q, chapter=Biomolecules)
+2026-07-27T11:14:08  [day4_reel4] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 94.6s · 2839 frames · 3 questions
+  frame 0/2839
+  frame 90/2839
+  frame 180/2839
+  frame 270/2839
+  frame 360/2839
+  frame 450/2839
+  frame 540/2839
+  frame 630/2839
+  frame 720/2839
+  frame 810/2839
+  frame 900/2839
+  frame 990/2839
+  frame 1080/2839
+  frame 1170/2839
+  frame 1260/2839
+  frame 1350/2839
+  frame 1440/2839
+  frame 1530/2839
+  frame 1620/2839
+  frame 1710/2839
+  frame 1800/2839
+  frame 1890/2839
+  frame 1980/2839
+  frame 2070/2839
+  frame 2160/2839
+  frame 2250/2839
+  frame 2340/2839
+  frame 2430/2839
+  frame 2520/2839
+  frame 2610/2839
+  frame 2700/2839
+  frame 2790/2839
+
+✅  out/day4_reel4.mp4
+2026-07-27T11:24:38  [day4_reel4] OK
+2026-07-27T11:24:38  uploading 4 videos (public)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+>> day4_main1: uploading 'De Broglie Ratio — NEET Physics Solved Step by Step | Achary...'
+   ✅ uploaded: https://youtu.be/NJ99KXsMMvs
+>> day4_main2: uploading 'Ionization and Bond Order — NEET Chemistry Solved Step by St...'
+   ✅ uploaded: https://youtu.be/qBSnel4qn8k
+>> day4_reel3: uploading 'Human Health and Disease — NEET Biology Quiz · Beat the Time...'
+   ...76%
+   ✅ uploaded: https://youtu.be/zTPQ05iwNTM
+>> day4_reel4: uploading 'Biomolecules — NEET Chemistry Quiz · Beat the Timer! #shorts...'
+   ...79%
+   ✅ uploaded: https://youtu.be/HQ_T2ZUWbOw
+
+== done ==
+
+=== EN channel · 4 videos ===
+  • De Broglie Ratio — NEET Physics Solved Step by Step | Acharya
+  • Ionization and Bond Order — NEET Chemistry Solved Step by Step | Acharya
+  • Human Health and Disease — NEET Biology Quiz · Beat the Timer! #shorts
+  • Biomolecules — NEET Chemistry Quiz · Beat the Timer! #shorts
+2026-07-27T11:24:55  === DAY 4 DONE ===
+2026-07-28T11:00:00  === DAY 5 — 4 videos ===
+2026-07-28T11:00:00  [day5_main1] generate solution JEE Advanced/Physics/Thermodynamics & Kinetic Theory
+OK solution -> /tmp/day5_main1.json  (1 q, chapter=Thermodynamics & Kinetic Theory)
+2026-07-28T11:00:23  [day5_main1] render solution
+  scene 0 ok (22.4s)
+  scene 1 ok (16.4s)
+  scene 2 ok (15.7s)
+  scene 3 ok (15.9s)
+  scene 4 ok (16.8s)
+  scene 5 ok (15.1s)
+✅ out/day5_main1.mp4
+2026-07-28T11:01:05  [day5_main1] OK
+2026-07-28T11:01:05  [day5_main2] generate solution JEE Advanced/Mathematics/Definite Integration
+OK solution -> /tmp/day5_main2.json  (1 q, chapter=Definite Integration)
+2026-07-28T11:01:44  [day5_main2] render solution
+  scene 0 ok (11.1s)
+  scene 1 ok (10.2s)
+  scene 2 ok (18.5s)
+  scene 3 ok (20.0s)
+  scene 4 ok (12.3s)
+  scene 5 ok (14.9s)
+  scene 6 ok (10.1s)
+✅ out/day5_main2.mp4
+2026-07-28T11:02:31  [day5_main2] OK
+2026-07-28T11:02:31  [day5_reel3] generate quiz NEET/Physics/Thermal Properties of Matter
+OK quiz -> /tmp/day5_reel3.json  (3 q, chapter=Thermal Properties of Matter)
+2026-07-28T11:02:31  [day5_reel3] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 118.4s · 3552 frames · 3 questions
+  frame 0/3552
+  frame 90/3552
+  frame 180/3552
+  frame 270/3552
+  frame 360/3552
+  frame 450/3552
+  frame 540/3552
+  frame 630/3552
+  frame 720/3552
+  frame 810/3552
+  frame 900/3552
+  frame 990/3552
+  frame 1080/3552
+  frame 1170/3552
+  frame 1260/3552
+  frame 1350/3552
+  frame 1440/3552
+  frame 1530/3552
+  frame 1620/3552
+  frame 1710/3552
+  frame 1800/3552
+  frame 1890/3552
+  frame 1980/3552
+  frame 2070/3552
+  frame 2160/3552
+  frame 2250/3552
+  frame 2340/3552
+  frame 2430/3552
+  frame 2520/3552
+  frame 2610/3552
+  frame 2700/3552
+  frame 2790/3552
+  frame 2880/3552
+  frame 2970/3552
+  frame 3060/3552
+  frame 3150/3552
+  frame 3240/3552
+  frame 3330/3552
+  frame 3420/3552
+  frame 3510/3552
+
+✅  out/day5_reel3.mp4
+2026-07-28T11:12:42  [day5_reel3] OK
+2026-07-28T11:12:42  [day5_reel4] generate quiz JEE Main/Physics/Properties Of Matter
+OK quiz -> /tmp/day5_reel4.json  (3 q, chapter=Properties Of Matter)
+2026-07-28T11:12:43  [day5_reel4] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 145.1s · 4354 frames · 3 questions
+  frame 0/4354
+  frame 90/4354
+  frame 180/4354
+  frame 270/4354
+  frame 360/4354
+  frame 450/4354
+  frame 540/4354
+  frame 630/4354
+  frame 720/4354
+  frame 810/4354
+  frame 900/4354
+  frame 990/4354
+  frame 1080/4354
+  frame 1170/4354
+  frame 1260/4354
+  frame 1350/4354
+  frame 1440/4354
+  frame 1530/4354
+  frame 1620/4354
+  frame 1710/4354
+  frame 1800/4354
+  frame 1890/4354
+  frame 1980/4354
+  frame 2070/4354
+  frame 2160/4354
+  frame 2250/4354
+  frame 2340/4354
+  frame 2430/4354
+  frame 2520/4354
+  frame 2610/4354
+  frame 2700/4354
+  frame 2790/4354
+  frame 2880/4354
+  frame 2970/4354
+  frame 3060/4354
+  frame 3150/4354
+  frame 3240/4354
+  frame 3330/4354
+  frame 3420/4354
+  frame 3510/4354
+  frame 3600/4354
+  frame 3690/4354
+  frame 3780/4354
+  frame 3870/4354
+  frame 3960/4354
+  frame 4050/4354
+  frame 4140/4354
+  frame 4230/4354
+  frame 4320/4354
+
+✅  out/day5_reel4.mp4
+2026-07-28T11:25:18  [day5_reel4] OK
+2026-07-28T11:25:18  uploading 4 videos (public)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+>> day5_main1: uploading 'Gas Mixture Heating — JEE Advanced Physics Solved Step by St...'
+   ✅ uploaded: https://youtu.be/9QLlKUT0yP8
+>> day5_main2: uploading 'Integral Mean Value Theorem — JEE Advanced Mathematics Solve...'
+   ✅ uploaded: https://youtu.be/Sn60dfMLnFw
+>> day5_reel3: uploading 'Thermal Properties of Matter — NEET Physics Quiz · Beat the ...'
+   ...65%
+   ✅ uploaded: https://youtu.be/gcLYTe4iT28
+>> day5_reel4: uploading 'Properties Of Matter — JEE Main Physics Quiz · Beat the Time...'
+   ...55%
+   ✅ uploaded: https://youtu.be/PH1rxSJJHVk
+
+== done ==
+
+=== EN channel · 4 videos ===
+  • Gas Mixture Heating — JEE Advanced Physics Solved Step by Step | Acharya
+  • Integral Mean Value Theorem — JEE Advanced Mathematics Solved Step by Step | Acharya
+  • Thermal Properties of Matter — NEET Physics Quiz · Beat the Timer! #shorts
+  • Properties Of Matter — JEE Main Physics Quiz · Beat the Timer! #shorts
+2026-07-28T11:25:35  === DAY 5 DONE ===
+2026-07-29T11:00:00  === DAY 6 — 4 videos ===
+2026-07-29T11:00:00  [day6_main1] generate solution JEE Advanced/Chemistry/Coordination Compounds
+OK solution -> /tmp/day6_main1.json  (1 q, chapter=Coordination Compounds)
+2026-07-29T11:00:24  [day6_main1] render solution
+  scene 0 ok (10.5s)
+  scene 1 ok (23.8s)
+  scene 2 ok (19.7s)
+  scene 3 ok (16.4s)
+  scene 4 ok (19.5s)
+  scene 5 ok (12.8s)
+  scene 6 ok (11.6s)
+✅ out/day6_main1.mp4
+2026-07-29T11:01:35  [day6_main1] OK
+2026-07-29T11:01:35  [day6_main2] generate solution JEE Main/Physics/Current Electricity
+OK solution -> /tmp/day6_main2.json  (1 q, chapter=Current Electricity)
+2026-07-29T11:01:55  [day6_main2] render solution
+  scene 0 ok (22.3s)
+  scene 1 ok (14.9s)
+  scene 2 ok (13.5s)
+  scene 3 ok (14.2s)
+  scene 4 ok (15.7s)
+  scene 5 ok (10.9s)
+✅ out/day6_main2.mp4
+2026-07-29T11:02:49  [day6_main2] OK
+2026-07-29T11:02:49  [day6_reel3] generate quiz JEE Main/Chemistry/Some Basic Concepts Of Chemistry
+OK quiz -> /tmp/day6_reel3.json  (3 q, chapter=Some Basic Concepts Of Chemistry)
+2026-07-29T11:02:50  [day6_reel3] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 111.9s · 3358 frames · 3 questions
+  frame 0/3358
+  frame 90/3358
+  frame 180/3358
+  frame 270/3358
+  frame 360/3358
+  frame 450/3358
+  frame 540/3358
+  frame 630/3358
+  frame 720/3358
+  frame 810/3358
+  frame 900/3358
+  frame 990/3358
+  frame 1080/3358
+  frame 1170/3358
+  frame 1260/3358
+  frame 1350/3358
+  frame 1440/3358
+  frame 1530/3358
+  frame 1620/3358
+  frame 1710/3358
+  frame 1800/3358
+  frame 1890/3358
+  frame 1980/3358
+  frame 2070/3358
+  frame 2160/3358
+  frame 2250/3358
+  frame 2340/3358
+  frame 2430/3358
+  frame 2520/3358
+  frame 2610/3358
+  frame 2700/3358
+  frame 2790/3358
+  frame 2880/3358
+  frame 2970/3358
+  frame 3060/3358
+  frame 3150/3358
+  frame 3240/3358
+  frame 3330/3358
+
+✅  out/day6_reel3.mp4
+2026-07-29T11:18:40  [day6_reel3] OK
+2026-07-29T11:18:40  [day6_reel4] generate quiz NEET/Biology/Sexual Reproduction in Flowering Plants
+OK quiz -> /tmp/day6_reel4.json  (3 q, chapter=Sexual Reproduction in Flowering Plants)
+2026-07-29T11:18:41  [day6_reel4] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 94.2s · 2826 frames · 3 questions
+  frame 0/2826
+  frame 90/2826
+  frame 180/2826
+  frame 270/2826
+  frame 360/2826
+  frame 450/2826
+  frame 540/2826
+  frame 630/2826
+  frame 720/2826
+  frame 810/2826
+  frame 900/2826
+  frame 990/2826
+  frame 1080/2826
+  frame 1170/2826
+  frame 1260/2826
+  frame 1350/2826
+  frame 1440/2826
+  frame 1530/2826
+  frame 1620/2826
+  frame 1710/2826
+  frame 1800/2826
+  frame 1890/2826
+  frame 1980/2826
+  frame 2070/2826
+  frame 2160/2826
+  frame 2250/2826
+  frame 2340/2826
+  frame 2430/2826
+  frame 2520/2826
+  frame 2610/2826
+  frame 2700/2826
+  frame 2790/2826
+
+✅  out/day6_reel4.mp4
+2026-07-29T11:28:16  [day6_reel4] OK
+2026-07-29T11:28:16  uploading 4 videos (public)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+>> day6_main1: uploading 'Paramagnetism Count — JEE Advanced Chemistry Solved Step by ...'
+   ✅ uploaded: https://youtu.be/9lYw0bDWAVQ
+>> day6_main2: uploading 'Galvanometer Shunt Conversion — JEE Main Physics Solved Step...'
+   ✅ uploaded: https://youtu.be/SMW-NCyy3ak
+>> day6_reel3: uploading 'Some Basic Concepts Of Chemistry — JEE Main Chemistry Quiz ·...'
+   ...69%
+   ✅ uploaded: https://youtu.be/FdJnj8kNDsA
+>> day6_reel4: uploading 'Sexual Reproduction in Flowering Plants — NEET Biology Quiz ...'
+   ...79%
+   ✅ uploaded: https://youtu.be/zYuLOyRk8n8
+
+== done ==
+
+=== EN channel · 4 videos ===
+  • Paramagnetism Count — JEE Advanced Chemistry Solved Step by Step | Acharya
+  • Galvanometer Shunt Conversion — JEE Main Physics Solved Step by Step | Acharya
+  • Some Basic Concepts Of Chemistry — JEE Main Chemistry Quiz · Beat the Timer! #shorts
+  • Sexual Reproduction in Flowering Plants — NEET Biology Quiz · Beat the Timer! #shorts
+2026-07-29T11:28:35  === DAY 6 DONE ===
+2026-07-30T11:00:00  === DAY 7 — 4 videos ===
+2026-07-30T11:00:00  [day7_main1] generate solution JEE Main/Chemistry/D And F Block Elements
+OK solution -> /tmp/day7_main1.json  (1 q, chapter=D And F Block Elements)
+2026-07-30T11:00:24  [day7_main1] render solution
+  scene 0 ok (13.1s)
+  scene 1 ok (14.2s)
+  scene 2 ok (13.5s)
+  scene 3 ok (15.0s)
+  scene 4 ok (13.9s)
+  scene 5 ok (14.4s)
+✅ out/day7_main1.mp4
+2026-07-30T11:01:10  [day7_main1] OK
+2026-07-30T11:01:10  [day7_main2] generate solution JEE Main/Mathematics/Matrices And Determinants
+OK solution -> /tmp/day7_main2.json  (1 q, chapter=Matrices And Determinants)
+2026-07-30T11:01:49  [day7_main2] render solution
+  scene 0 ok (15.2s)
+  scene 1 ok (20.9s)
+  scene 2 ok (11.8s)
+  scene 3 ok (13.6s)
+  scene 4 ok (12.0s)
+  scene 5 ok (12.9s)
+  scene 6 ok (11.7s)
+✅ out/day7_main2.mp4
+2026-07-30T11:02:44  [day7_main2] OK
+2026-07-30T11:02:44  [day7_reel3] generate quiz NEET/Biology/Biological Classification
+OK quiz -> /tmp/day7_reel3.json  (3 q, chapter=Biological Classification)
+2026-07-30T11:02:45  [day7_reel3] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 101.6s · 3047 frames · 3 questions
+  frame 0/3047
+  frame 90/3047
+  frame 180/3047
+  frame 270/3047
+  frame 360/3047
+  frame 450/3047
+  frame 540/3047
+  frame 630/3047
+  frame 720/3047
+  frame 810/3047
+  frame 900/3047
+  frame 990/3047
+  frame 1080/3047
+  frame 1170/3047
+  frame 1260/3047
+  frame 1350/3047
+  frame 1440/3047
+  frame 1530/3047
+  frame 1620/3047
+  frame 1710/3047
+  frame 1800/3047
+  frame 1890/3047
+  frame 1980/3047
+  frame 2070/3047
+  frame 2160/3047
+  frame 2250/3047
+  frame 2340/3047
+  frame 2430/3047
+  frame 2520/3047
+  frame 2610/3047
+  frame 2700/3047
+  frame 2790/3047
+  frame 2880/3047
+  frame 2970/3047
+
+✅  out/day7_reel3.mp4
+2026-07-30T11:12:02  [day7_reel3] OK
+2026-07-30T11:12:02  [day7_reel4] generate quiz NEET/Chemistry/d and f Block Elements
+OK quiz -> /tmp/day7_reel4.json  (3 q, chapter=d and f Block Elements)
+2026-07-30T11:12:03  [day7_reel4] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 118.6s · 3557 frames · 3 questions
+  frame 0/3557
+  frame 90/3557
+  frame 180/3557
+  frame 270/3557
+  frame 360/3557
+  frame 450/3557
+  frame 540/3557
+  frame 630/3557
+  frame 720/3557
+  frame 810/3557
+  frame 900/3557
+  frame 990/3557
+  frame 1080/3557
+  frame 1170/3557
+  frame 1260/3557
+  frame 1350/3557
+  frame 1440/3557
+  frame 1530/3557
+  frame 1620/3557
+  frame 1710/3557
+  frame 1800/3557
+  frame 1890/3557
+  frame 1980/3557
+  frame 2070/3557
+  frame 2160/3557
+  frame 2250/3557
+  frame 2340/3557
+  frame 2430/3557
+  frame 2520/3557
+  frame 2610/3557
+  frame 2700/3557
+  frame 2790/3557
+  frame 2880/3557
+  frame 2970/3557
+  frame 3060/3557
+  frame 3150/3557
+  frame 3240/3557
+  frame 3330/3557
+  frame 3420/3557
+  frame 3510/3557
+
+✅  out/day7_reel4.mp4
+2026-07-30T11:25:36  [day7_reel4] OK
+2026-07-30T11:25:36  uploading 4 videos (public)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+>> day7_main1: uploading 'Oxidation State Comparison — JEE Main Chemistry Solved Step ...'
+   ✅ uploaded: https://youtu.be/OFx2lgGpbE4
+>> day7_main2: uploading 'Determinant Parity — JEE Main Mathematics Solved Step by Ste...'
+   ✅ uploaded: https://youtu.be/rvKH0wkZxs4
+>> day7_reel3: uploading 'Biological Classification — NEET Biology Quiz · Beat the Tim...'
+   ...73%
+   ✅ uploaded: https://youtu.be/-gP7dbQ6XN0
+>> day7_reel4: uploading 'd and f Block Elements — NEET Chemistry Quiz · Beat the Time...'
+   ...65%
+   ✅ uploaded: https://youtu.be/kIlzeUgN9s4
+
+== done ==
+
+=== EN channel · 4 videos ===
+  • Oxidation State Comparison — JEE Main Chemistry Solved Step by Step | Acharya
+  • Determinant Parity — JEE Main Mathematics Solved Step by Step | Acharya
+  • Biological Classification — NEET Biology Quiz · Beat the Timer! #shorts
+  • d and f Block Elements — NEET Chemistry Quiz · Beat the Timer! #shorts
+2026-07-30T11:25:54  === DAY 7 DONE ===
+2026-07-31T11:00:00  === DAY 8 — 4 videos ===
+2026-07-31T11:00:00  [day8_main1] generate solution NEET/Physics/Ray Optics
+OK solution -> /tmp/day8_main1.json  (1 q, chapter=Ray Optics)
+2026-07-31T11:00:32  [day8_main1] render solution
+  scene 0 ok (18.9s)
+  scene 1 ok (15.5s)
+  scene 2 ok (12.3s)
+  scene 3 ok (12.3s)
+  scene 4 ok (16.8s)
+  scene 5 ok (13.2s)
+✅ out/day8_main1.mp4
+2026-07-31T11:01:22  [day8_main1] OK
+2026-07-31T11:01:22  [day8_main2] generate solution NEET/Chemistry/General Organic Chemistry
+OK solution -> /tmp/day8_main2.json  (1 q, chapter=General Organic Chemistry)
+2026-07-31T11:01:46  [day8_main2] render solution
+  scene 0 ok (12.8s)
+  scene 1 ok (8.9s)
+  scene 2 ok (12.9s)
+  scene 3 ok (14.5s)
+  scene 4 ok (12.2s)
+  scene 5 ok (10.5s)
+  scene 6 ok (8.6s)
+✅ out/day8_main2.mp4
+2026-07-31T11:02:29  [day8_main2] OK
+2026-07-31T11:02:29  [day8_reel3] generate quiz NEET/Physics/Atomic Physics
+OK quiz -> /tmp/day8_reel3.json  (3 q, chapter=Atomic Physics)
+2026-07-31T11:02:31  [day8_reel3] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 122.6s · 3678 frames · 3 questions
+  frame 0/3678
+  frame 90/3678
+  frame 180/3678
+  frame 270/3678
+  frame 360/3678
+  frame 450/3678
+  frame 540/3678
+  frame 630/3678
+  frame 720/3678
+  frame 810/3678
+  frame 900/3678
+  frame 990/3678
+  frame 1080/3678
+  frame 1170/3678
+  frame 1260/3678
+  frame 1350/3678
+  frame 1440/3678
+  frame 1530/3678
+  frame 1620/3678
+  frame 1710/3678
+  frame 1800/3678
+  frame 1890/3678
+  frame 1980/3678
+  frame 2070/3678
+  frame 2160/3678
+  frame 2250/3678
+  frame 2340/3678
+  frame 2430/3678
+  frame 2520/3678
+  frame 2610/3678
+  frame 2700/3678
+  frame 2790/3678
+  frame 2880/3678
+  frame 2970/3678
+  frame 3060/3678
+  frame 3150/3678
+  frame 3240/3678
+  frame 3330/3678
+  frame 3420/3678
+  frame 3510/3678
+  frame 3600/3678
+
+✅  out/day8_reel3.mp4
+2026-07-31T11:13:35  [day8_reel3] OK
+2026-07-31T11:13:35  [day8_reel4] generate quiz JEE Main/Physics/Gravitation
+OK quiz -> /tmp/day8_reel4.json  (3 q, chapter=Gravitation)
+2026-07-31T11:13:36  [day8_reel4] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 105.6s · 3168 frames · 3 questions
+  frame 0/3168
+  frame 90/3168
+  frame 180/3168
+  frame 270/3168
+  frame 360/3168
+  frame 450/3168
+  frame 540/3168
+  frame 630/3168
+  frame 720/3168
+  frame 810/3168
+  frame 900/3168
+  frame 990/3168
+  frame 1080/3168
+  frame 1170/3168
+  frame 1260/3168
+  frame 1350/3168
+  frame 1440/3168
+  frame 1530/3168
+  frame 1620/3168
+  frame 1710/3168
+  frame 1800/3168
+  frame 1890/3168
+  frame 1980/3168
+  frame 2070/3168
+  frame 2160/3168
+  frame 2250/3168
+  frame 2340/3168
+  frame 2430/3168
+  frame 2520/3168
+  frame 2610/3168
+  frame 2700/3168
+  frame 2790/3168
+  frame 2880/3168
+  frame 2970/3168
+  frame 3060/3168
+  frame 3150/3168
+
+✅  out/day8_reel4.mp4
+2026-07-31T11:21:42  [day8_reel4] OK
+2026-07-31T11:21:42  uploading 4 videos (public)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+>> day8_main1: uploading 'Lens In Water — NEET Physics Solved Step by Step | Acharya...'
+   ✅ uploaded: https://youtu.be/eZ0BdOI60qY
+>> day8_main2: uploading 'Acid Strength Order — NEET Chemistry Solved Step by Step | A...'
+   ✅ uploaded: https://youtu.be/MmIZMFmgXIE
+>> day8_reel3: uploading 'Atomic Physics — NEET Physics Quiz · Beat the Timer! #shorts...'
+   ...64%
+   ✅ uploaded: https://youtu.be/h9QFU08ZD4A
+>> day8_reel4: uploading 'Gravitation — JEE Main Physics Quiz · Beat the Timer! #short...'
+   ...72%
+   ✅ uploaded: https://youtu.be/r7giXaFZgZs
+
+== done ==
+
+=== EN channel · 4 videos ===
+  • Lens In Water — NEET Physics Solved Step by Step | Acharya
+  • Acid Strength Order — NEET Chemistry Solved Step by Step | Acharya
+  • Atomic Physics — NEET Physics Quiz · Beat the Timer! #shorts
+  • Gravitation — JEE Main Physics Quiz · Beat the Timer! #shorts
+2026-07-31T11:21:58  === DAY 8 DONE ===
+2026-08-01T11:00:00  === DAY 9 — 4 videos ===
+2026-08-01T11:00:00  [day9_main1] generate solution JEE Advanced/Physics/Electrostatics
+OK solution -> /tmp/day9_main1.json  (1 q, chapter=Electrostatics)
+2026-08-01T11:00:19  [day9_main1] render solution
+  scene 0 ok (22.4s)
+  scene 1 ok (13.5s)
+  scene 2 ok (14.3s)
+  scene 3 ok (10.4s)
+  scene 4 ok (13.1s)
+  scene 5 ok (15.1s)
+  scene 6 ok (12.5s)
+✅ out/day9_main1.mp4
+2026-08-01T11:01:16  [day9_main1] OK
+2026-08-01T11:01:16  [day9_main2] generate solution JEE Advanced/Mathematics/Complex Numbers
+OK solution -> /tmp/day9_main2.json  (1 q, chapter=Complex Numbers)
+2026-08-01T11:01:47  [day9_main2] render solution
+  scene 0 ok (16.1s)
+  scene 1 ok (17.4s)
+  scene 2 ok (14.5s)
+  scene 3 ok (32.0s)
+  scene 4 ok (20.8s)
+  scene 5 ok (20.5s)
+  scene 6 ok (9.7s)
+✅ out/day9_main2.mp4
+2026-08-01T11:02:55  [day9_main2] OK
+2026-08-01T11:02:55  [day9_reel3] generate quiz JEE Main/Chemistry/Electrochemistry
+OK quiz -> /tmp/day9_reel3.json  (3 q, chapter=Electrochemistry)
+2026-08-01T11:02:56  [day9_reel3] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 104.8s · 3143 frames · 3 questions
+  frame 0/3143
+  frame 90/3143
+  frame 180/3143
+  frame 270/3143
+  frame 360/3143
+  frame 450/3143
+  frame 540/3143
+  frame 630/3143
+  frame 720/3143
+  frame 810/3143
+  frame 900/3143
+  frame 990/3143
+  frame 1080/3143
+  frame 1170/3143
+  frame 1260/3143
+  frame 1350/3143
+  frame 1440/3143
+  frame 1530/3143
+  frame 1620/3143
+  frame 1710/3143
+  frame 1800/3143
+  frame 1890/3143
+  frame 1980/3143
+  frame 2070/3143
+  frame 2160/3143
+  frame 2250/3143
+  frame 2340/3143
+  frame 2430/3143
+  frame 2520/3143
+  frame 2610/3143
+  frame 2700/3143
+  frame 2790/3143
+  frame 2880/3143
+  frame 2970/3143
+  frame 3060/3143
+
+✅  out/day9_reel3.mp4
+2026-08-01T11:15:09  [day9_reel3] OK
+2026-08-01T11:15:09  [day9_reel4] generate quiz NEET/Biology/Animal Kingdom
+OK quiz -> /tmp/day9_reel4.json  (3 q, chapter=Animal Kingdom)
+2026-08-01T11:15:10  [day9_reel4] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 94.1s · 2822 frames · 3 questions
+  frame 0/2822
+  frame 90/2822
+  frame 180/2822
+  frame 270/2822
+  frame 360/2822
+  frame 450/2822
+  frame 540/2822
+  frame 630/2822
+  frame 720/2822
+  frame 810/2822
+  frame 900/2822
+  frame 990/2822
+  frame 1080/2822
+  frame 1170/2822
+  frame 1260/2822
+  frame 1350/2822
+  frame 1440/2822
+  frame 1530/2822
+  frame 1620/2822
+  frame 1710/2822
+  frame 1800/2822
+  frame 1890/2822
+  frame 1980/2822
+  frame 2070/2822
+  frame 2160/2822
+  frame 2250/2822
+  frame 2340/2822
+  frame 2430/2822
+  frame 2520/2822
+  frame 2610/2822
+  frame 2700/2822
+  frame 2790/2822
+
+✅  out/day9_reel4.mp4
+2026-08-01T11:23:40  [day9_reel4] OK
+2026-08-01T11:23:40  uploading 4 videos (public)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+>> day9_main1: uploading 'Flux Through Charged Disc — JEE Advanced Physics Solved Step...'
+   ✅ uploaded: https://youtu.be/yobzE_0A0aI
+>> day9_main2: uploading 'Complex Linear Solutions — JEE Advanced Mathematics Solved S...'
+   ✅ uploaded: https://youtu.be/EtooQZAPX8I
+>> day9_reel3: uploading 'Electrochemistry — JEE Main Chemistry Quiz · Beat the Timer!...'
+   ...73%
+   ✅ uploaded: https://youtu.be/7apLZtXdUzs
+>> day9_reel4: uploading 'Animal Kingdom — NEET Biology Quiz · Beat the Timer! #shorts...'
+   ...79%
+   ✅ uploaded: https://youtu.be/2-cwBYpvznY
+
+== done ==
+
+=== EN channel · 4 videos ===
+  • Flux Through Charged Disc — JEE Advanced Physics Solved Step by Step | Acharya
+  • Complex Linear Solutions — JEE Advanced Mathematics Solved Step by Step | Acharya
+  • Electrochemistry — JEE Main Chemistry Quiz · Beat the Timer! #shorts
+  • Animal Kingdom — NEET Biology Quiz · Beat the Timer! #shorts
+2026-08-01T11:23:56  === DAY 9 DONE ===
+2026-08-02T11:00:00  === DAY 10 — 4 videos ===
+2026-08-02T11:00:00  [day10_main1] generate solution JEE Advanced/Chemistry/Electrochemistry
+OK solution -> /tmp/day10_main1.json  (1 q, chapter=Electrochemistry)
+2026-08-02T11:00:23  [day10_main1] render solution
+  scene 0 ok (23.7s)
+  scene 1 ok (16.2s)
+  scene 2 ok (17.3s)
+  scene 3 ok (15.5s)
+  scene 4 ok (20.3s)
+  scene 5 ok (19.0s)
+  scene 6 ok (11.5s)
+✅ out/day10_main1.mp4
+2026-08-02T11:01:30  [day10_main1] OK
+2026-08-02T11:01:30  [day10_main2] generate solution JEE Main/Physics/Dual Nature Of Radiation
+OK solution -> /tmp/day10_main2.json  (1 q, chapter=Dual Nature Of Radiation)
+2026-08-02T11:01:44  [day10_main2] render solution
+  scene 0 ok (17.5s)
+  scene 1 ok (13.2s)
+  scene 2 ok (14.0s)
+  scene 3 ok (12.1s)
+  scene 4 ok (10.8s)
+  scene 5 ok (13.3s)
+  scene 6 ok (12.7s)
+✅ out/day10_main2.mp4
+2026-08-02T11:02:50  [day10_main2] OK
+2026-08-02T11:02:50  [day10_reel3] generate quiz NEET/Biology/Evolution
+OK quiz -> /tmp/day10_reel3.json  (3 q, chapter=Evolution)
+2026-08-02T11:02:51  [day10_reel3] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 106.4s · 3192 frames · 3 questions
+  frame 0/3192
+  frame 90/3192
+  frame 180/3192
+  frame 270/3192
+  frame 360/3192
+  frame 450/3192
+  frame 540/3192
+  frame 630/3192
+  frame 720/3192
+  frame 810/3192
+  frame 900/3192
+  frame 990/3192
+  frame 1080/3192
+  frame 1170/3192
+  frame 1260/3192
+  frame 1350/3192
+  frame 1440/3192
+  frame 1530/3192
+  frame 1620/3192
+  frame 1710/3192
+  frame 1800/3192
+  frame 1890/3192
+  frame 1980/3192
+  frame 2070/3192
+  frame 2160/3192
+  frame 2250/3192
+  frame 2340/3192
+  frame 2430/3192
+  frame 2520/3192
+  frame 2610/3192
+  frame 2700/3192
+  frame 2790/3192
+  frame 2880/3192
+  frame 2970/3192
+  frame 3060/3192
+  frame 3150/3192
+
+✅  out/day10_reel3.mp4
+2026-08-02T11:15:20  [day10_reel3] OK
+2026-08-02T11:15:20  [day10_reel4] generate quiz NEET/Chemistry/Coordination Compounds
+OK quiz -> /tmp/day10_reel4.json  (3 q, chapter=Coordination Compounds)
+2026-08-02T11:15:22  [day10_reel4] render quiz
+Precomputing living background loop…
+Synthesizing alive narration (edge-tts)…
+Total 100.9s · 3027 frames · 3 questions
+  frame 0/3027
+  frame 90/3027
+  frame 180/3027
+  frame 270/3027
+  frame 360/3027
+  frame 450/3027
+  frame 540/3027
+  frame 630/3027
+  frame 720/3027
+  frame 810/3027
+  frame 900/3027
+  frame 990/3027
+  frame 1080/3027
+  frame 1170/3027
+  frame 1260/3027
+  frame 1350/3027
+  frame 1440/3027
+  frame 1530/3027
+  frame 1620/3027
+  frame 1710/3027
+  frame 1800/3027
+  frame 1890/3027
+  frame 1980/3027
+  frame 2070/3027
+  frame 2160/3027
+  frame 2250/3027
+  frame 2340/3027
+  frame 2430/3027
+  frame 2520/3027
+  frame 2610/3027
+  frame 2700/3027
+  frame 2790/3027
+  frame 2880/3027
+  frame 2970/3027
+
+✅  out/day10_reel4.mp4
+2026-08-02T11:25:26  [day10_reel4] OK
+2026-08-02T11:25:26  uploading 4 videos (public)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+>> day10_main1: uploading 'Nernst Electrode Comparison — JEE Advanced Chemistry Solved ...'
+   ✅ uploaded: https://youtu.be/GpbdKwqjX_c
+>> day10_main2: uploading 'Threshold Wavelength — JEE Main Physics Solved Step by Step ...'
+   ✅ uploaded: https://youtu.be/iLQlGVUQ838
+>> day10_reel3: uploading 'Evolution — NEET Biology Quiz · Beat the Timer! #shorts...'
+   ...71%
+   ✅ uploaded: https://youtu.be/Rxly7qbUPkw
+>> day10_reel4: uploading 'Coordination Compounds — NEET Chemistry Quiz · Beat the Time...'
+   ...74%
+   ✅ uploaded: https://youtu.be/qKrSNUQnPfs
+
+== done ==
+
+=== EN channel · 4 videos ===
+  • Nernst Electrode Comparison — JEE Advanced Chemistry Solved Step by Step | Acharya
+  • Threshold Wavelength — JEE Main Physics Solved Step by Step | Acharya
+  • Evolution — NEET Biology Quiz · Beat the Timer! #shorts
+  • Coordination Compounds — NEET Chemistry Quiz · Beat the Timer! #shorts
+2026-08-02T11:25:44  === DAY 10 DONE ===

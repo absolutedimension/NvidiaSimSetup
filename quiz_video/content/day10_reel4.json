@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Chemistry",
+ "subject": "Chemistry",
+ "chapter": "Coordination Compounds",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Chemistry. Coordination Compounds. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Coordination Compounds? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "According to the crystal field model, which ligands should exert the greatest splitting effect?",
+   "options": [
+    "Anionic ligands",
+    "Neutral ligands",
+    "Cationic ligands",
+    "Covalent ligands"
+   ],
+   "answer": 0,
+   "explain": "The crystal field model suggests that anionic ligands should exert the greatest splitting effect.",
+   "voice_q": "According to the crystal field model, which ligands should exert the greatest splitting effect? Five seconds... think!",
+   "voice_a": "The answer is A — Anionic ligands. The crystal field model suggests that anionic ligands should exert the greatest splitting effect."
+  },
+  {
+   "type": "mcq",
+   "q": "A transition metal complex shows a magnetic moment of 5.9 B.M. at room temperature. The number of unpaired electron on the metal is",
+   "options": [
+    "3",
+    "4",
+    "5",
+    "2"
+   ],
+   "answer": 2,
+   "explain": "Magnetic moment = n ( n + 2 ) B .",
+   "voice_q": "A transition metal complex shows a magnetic moment of 5.9 B.M. at room temperature. The number of unpaired electron on the metal is Five seconds... think!",
+   "voice_a": "The answer is C — 5. Magnetic moment = n ( n + 2 ) B ."
+  },
+  {
+   "type": "mcq",
+   "q": "According to Werner, which geometrical shapes are more common in coordination compounds of transition metals?",
+   "options": [
+    "Octahedral and tetrahedral",
+    "Octahedral and square planar",
+    "Tetrahedral and square planar",
+    "Tetrahedral and hexagonal"
+   ],
+   "answer": 1,
+   "explain": "Werner postulated that octahedral and square planar geometrical shapes are more common in coordination compounds of tran",
+   "voice_q": "According to Werner, which geometrical shapes are more common in coordination compounds of transition metals? Five seconds... think!",
+   "voice_a": "The answer is B — Octahedral and square planar. Werner postulated that octahedral and square planar geometrical shapes are more common in coordination compounds of tran"
+  }
+ ]
+}

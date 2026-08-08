@@ -1,0 +1,223 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Baloo 2",system-ui,sans-serif}
+body{background:linear-gradient(#7ec8ff,#bfe6ff 58%,#8ed46e 58%,#7cc95e);min-height:100vh;padding:16px;color:#26406b}
+.q{max-width:440px;margin:0 auto 8px;background:#fff;border-radius:18px;padding:12px 16px;font-weight:800;text-align:center;box-shadow:0 6px 0 #0001;font-size:15px}
+#btns{max-width:460px;margin:8px auto;text-align:center}
+button{margin:4px;padding:7px 12px;border:none;border-radius:12px;background:#ffd24a;font-weight:800;cursor:pointer;font-size:13px}
+
+/* ===== concept viz styles (portable) ===== */
+.vizwrap{max-width:440px;margin:12px auto;background:#ffffffcc;border-radius:22px;padding:12px 12px 14px;box-shadow:0 8px 20px #0001;text-align:center;min-height:120px}
+.viz-cap{font-weight:800;color:#3a71c9;font-size:14px;margin-bottom:10px}
+.viz-row{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;min-height:58px}
+.vcell{min-width:46px;height:56px;padding:0 8px;border-radius:12px;background:linear-gradient(#fff,#eaf2ff);border:3px solid #3aa0ff;display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:800;color:#26406b;box-shadow:0 4px 0 #b9d4f0;transition:transform .4s,border-color .4s,box-shadow .4s,opacity .4s,background .4s}
+.vcell.op{border:none;box-shadow:none;background:none;color:#3a71c9;font-size:26px;min-width:0;padding:0 2px}
+.vcell.dim{opacity:.35}
+.vcell.hit{border-color:#ffab1a;background:linear-gradient(#fff,#fff2d6);box-shadow:0 4px 0 #e0921a;transform:scale(1.12)}
+.vcell.ans{border-color:#4ac87a;background:#e4f7ea;box-shadow:0 4px 0 #2fa968;color:#22b07d}
+/* sliding tiles for form-number */
+.viz-stage{position:relative;height:58px;margin:0 auto}
+.vtile{position:absolute;top:0;width:50px;height:56px;border-radius:12px;background:linear-gradient(#fff,#eaf2ff);border:3px solid #3aa0ff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:#26406b;box-shadow:0 5px 0 #b9d4f0;transition:transform .7s cubic-bezier(.3,1.2,.4,1),border-color .3s,box-shadow .3s}
+.vtile.lead{border-color:#ffab1a;box-shadow:0 5px 0 #e0921a;background:linear-gradient(#fff,#fff2d6)}
+.viz-result{margin-top:11px;font-size:23px;font-weight:800;color:#22b07d;opacity:0;transform:scale(.6);transition:.4s .1s}
+.viz-result.show{opacity:1;transform:scale(1)}
+.viz-result .n{background:#e4f7ea;border-radius:12px;padding:3px 12px;border:3px solid #4ac87a}
+.hidden{display:none!important}
+</style></head><body>
+<div class="q" id="qtext"></div>
+<div class="vizwrap" id="viz"></div>
+<div id="btns"></div>
+
+<script>
+/* ============ Concept-viz module (portable → kids_quiz_live.html) ============ */
+(function(){
+  function el(t,c){var e=document.createElement(t);if(c)e.className=c;return e;}
+  function cell(txt,cls){var c=el('div','vcell'+(cls?' '+cls:''));c.textContent=txt;return c;}
+  function cap(box,t){var c=el('div','viz-cap');c.innerHTML=t;box.appendChild(c);return c;}
+  function result(box,html){var r=el('div','viz-result');r.innerHTML='&rarr; <span class="n">'+html+'</span>';box.appendChild(r);setTimeout(function(){r.classList.add('show');},1200);return r;}
+  function countUp(node,to,ms){var t0=null;function s(t){t0=t0||t;var p=Math.min(1,(t-t0)/ms);node.textContent=Math.round(to*p);if(p<1)requestAnimationFrame(s);}requestAnimationFrame(s);}
+  function nums(s){return (s.match(/\d+/g)||[]).map(Number);}
+
+  /* --- 1. place / face value --- */
+  function placeValue(box,q,s){
+    var m=s.match(/In\s+(\d[\d,]*)\s*,?\s*what is the\s+(PLACE|FACE)\s+VALUE\s+of the\s+(ones|tens|hundreds|thousands|ten\s*thousands)\s+digit/i);
+    if(!m)return false;
+    var n=m[1].replace(/,/g,''), kind=m[2].toUpperCase(), place=m[3].toLowerCase().replace(/\s+/g,' ');
+    var order=['ones','tens','hundreds','thousands','ten thousands'], mult=[1,10,100,1000,10000];
+    var pi=order.indexOf(place); if(pi<0)return false;
+    var digs=n.split(''); var colFromRight=pi; var idx=digs.length-1-colFromRight; if(idx<0)return false;
+    var digit=parseInt(digs[idx]); var val=(kind==='FACE')?digit:digit*mult[pi];
+    cap(box, kind==='FACE'?('FACE value = just the digit itself'):('PLACE value = digit &times; its place'));
+    var row=el('div','viz-row');
+    digs.forEach(function(d,i){row.appendChild(cell(d,i===idx?'hit':'dim'));});
+    box.appendChild(row);
+    result(box, kind==='FACE'?String(val):(digit+' &times; '+mult[pi]+' = '+val));
+    return true;
+  }
+  /* --- 2. successor / predecessor --- */
+  function succPred(box,q,s){
+    var m=s.match(/\b(SUCCESSOR|PREDECESSOR)\b\s+of\s+(\d+)/i); if(!m)return false;
+    var kind=m[1].toUpperCase(), n=parseInt(m[2]); var ans=kind==='SUCCESSOR'?n+1:n-1;
+    cap(box, kind==='SUCCESSOR'?'Successor = the number just AFTER (add 1)':'Predecessor = the number just BEFORE (take 1)');
+    var row=el('div','viz-row');
+    [n-1,n,n+1].forEach(function(v){row.appendChild(cell(v, v===n?'':(v===ans?'hit':'dim')));});
+    box.appendChild(row); result(box,String(ans)); return true;
+  }
+  /* --- 3. compare sign --- */
+  function compareSign(box,q,s){
+    if(!/sign/i.test(s))return false;
+    var m=s.match(/(\d+)\s*(?:_{2,}|_+)\s*(\d+)/); if(!m)return false;
+    var a=parseInt(m[1]),b=parseInt(m[2]); var sign=a>b?'>':a<b?'<':'=';
+    cap(box,'Which is bigger? The open side points to the BIGGER number');
+    var row=el('div','viz-row'); row.appendChild(cell(a));
+    var sc=cell('?','op'); row.appendChild(sc); row.appendChild(cell(b)); box.appendChild(row);
+    setTimeout(function(){sc.textContent=sign;sc.classList.add('ans');sc.classList.remove('op');},900);
+    result(box, a+' '+sign+' '+b); return true;
+  }
+  /* --- 4. arrange in order --- */
+  function orderFirst(box,q,s){
+    var m=s.match(/Arrange in\s+(ascending|descending)\s+order[:\s]+([\d,\s]+?)\.?\s*Which/i); if(!m)return false;
+    var asc=/ascending/i.test(m[1]); var list=nums(m[2]); if(list.length<2)return false;
+    var sorted=list.slice().sort(function(x,y){return asc?x-y:y-x;});
+    cap(box, asc?'Ascending = smallest first':'Descending = biggest first');
+    var row=el('div','viz-row'); var cells=list.map(function(v){var c=cell(v);row.appendChild(c);return c;});
+    box.appendChild(row);
+    setTimeout(function(){cells.forEach(function(c){var v=parseInt(c.textContent);if(v===sorted[0])c.classList.add('hit');else c.classList.add('dim');});},900);
+    result(box,'First: '+sorted[0]); return true;
+  }
+  /* --- 5. skip count / pattern (…: a, b, c, ?) --- */
+  function sequence(box,q,s){
+    var m=s.match(/:\s*([\d,\s]+?),\s*\?/); if(!m)return false;
+    var seq=nums(m[1]); if(seq.length<2)return false;
+    var step=seq[1]-seq[0]; var nxt=seq[seq.length-1]+step;
+    cap(box, step>0?('The pattern adds '+step+' each time'):('The pattern changes by '+step));
+    var row=el('div','viz-row'); seq.forEach(function(v){row.appendChild(cell(v));});
+    var qc=cell('?','op'); row.appendChild(qc); box.appendChild(row);
+    setTimeout(function(){qc.textContent=nxt;qc.classList.remove('op');qc.classList.add('ans');},900);
+    result(box,String(nxt)); return true;
+  }
+  /* --- 6. form smallest/largest number using digits --- */
+  function formNumber(box,q,s){
+    if(!(/\b(smallest|largest|greatest|biggest)\b/i.test(s)&&/\bnumber\b/i.test(s)&&/\busing|from|with\b/i.test(s)))return false;
+    var mm=s.match(/\b(?:using|from|with)\b\s*(.*)$/i); var tail=(mm?mm[1]:s).split(/[\(\.]/)[0];
+    var digits=(tail.match(/\b\d\b/g)||[]).map(Number); if(digits.length<2||digits.length>6)return false;
+    var largest=/\b(largest|greatest|biggest)\b/i.test(s); var sorted=digits.slice().sort(function(a,b){return largest?b-a:a-b;});
+    cap(box, largest?'Biggest number &rarr; put the BIGGEST digit first!':'Smallest number &rarr; put the SMALLEST digit first!');
+    var stage=el('div','viz-stage'),step=56; stage.style.width=(step*digits.length)+'px';
+    var tiles=digits.map(function(d,i){var t=el('div','vtile');t.textContent=d;t.style.transform='translateX('+(i*step)+'px)';stage.appendChild(t);return t;});
+    box.appendChild(stage);
+    var used={};
+    setTimeout(function(){tiles.forEach(function(t){var d=parseInt(t.textContent);var pos=sorted.indexOf(d,used[d]||0);used[d]=pos+1;t.style.transform='translateX('+(pos*step)+'px)';if(pos===0)t.classList.add('lead');});},650);
+    result(box,sorted.join('')); return true;
+  }
+  /* --- 7. arithmetic  a +/-/x/÷ b [+/- c] = ? (also money ₹) --- */
+  function arithmetic(box,q,s){
+    var t=s.replace(/₹/g,'').replace(/[−–]/g,'-').replace(/×/g,'x').replace(/÷/g,'/');
+    var m=t.match(/(-?\d+)\s*([+\-x\/])\s*(-?\d+)(?:\s*([+\-x\/])\s*(-?\d+))?\s*=/);
+    if(!m)return false;
+    var money=/₹/.test(s);
+    function ap(acc,op,v){return op==='+'?acc+v:op==='-'?acc-v:op==='x'?acc*v:Math.round(acc/v);}
+    var res=parseInt(m[1]); res=ap(res,m[2],parseInt(m[3])); if(m[4])res=ap(res,m[4],parseInt(m[5]));
+    var pre=money?'₹':'';
+    var capTxt={'+':'Put them together and count!','-':'Take away, then count what is left','x':'Equal groups added up','/':'Share equally into groups'}[m[2]]||'Let’s work it out!';
+    cap(box,capTxt);
+    var row=el('div','viz-row');
+    row.appendChild(cell(pre+m[1])); row.appendChild(cell(m[2]==='x'?'×':m[2]==='/'?'÷':m[2],'op')); row.appendChild(cell(pre+m[3]));
+    if(m[4]){row.appendChild(cell(m[4]==='x'?'×':m[4]==='/'?'÷':m[4],'op'));row.appendChild(cell(pre+m[5]));}
+    row.appendChild(cell('=','op'));
+    var ansc=cell(pre+'0','ans'); row.appendChild(ansc); box.appendChild(row);
+    setTimeout(function(){if(money)ansc.textContent='₹'+res;else countUp(ansc,res,700);},700);
+    return true;
+  }
+  /* --- 8. word problem addition (X ... and Y ... how many ... in all) --- */
+  /* --- expanded form: "Write the number: 4000 + 700 + 20 + 6 = ?" --- */
+  function expandedForm(box,q,s){
+    var m=s.match(/write the number\s*:?\s*([\d\s+]+?)\s*=/i); if(!m)return false;
+    var parts=(m[1].match(/\d+/g)||[]).map(Number); if(parts.length<2)return false;
+    var sum=parts.reduce(function(a,b){return a+b;},0);
+    cap(box,'Add each place value to build the number');
+    var row=el('div','viz-row');
+    parts.forEach(function(p,i){row.appendChild(cell(p));if(i<parts.length-1)row.appendChild(cell('+','op'));});
+    row.appendChild(cell('=','op'));var a=cell('0','ans');row.appendChild(a);box.appendChild(row);
+    setTimeout(function(){countUp(a,sum,700);},700);return true;
+  }
+  /* --- estimate by rounding: "Estimate the sum/difference ... a +/- b" --- */
+  function estimateRound(box,q,s){
+    var sum=/estimate the sum/i.test(s),diff=/estimate the difference/i.test(s); if(!sum&&!diff)return false;
+    var m=s.match(/(\d+)\s*[+\-−]\s*(\d+)/); if(!m)return false;
+    var a=parseInt(m[1]),b=parseInt(m[2]),ra=Math.round(a/10)*10,rb=Math.round(b/10)*10,est=sum?ra+rb:ra-rb;
+    cap(box,'Round to the nearest 10:  '+a+'&rarr;'+ra+',  '+b+'&rarr;'+rb);
+    var row=el('div','viz-row');row.appendChild(cell(ra,'hit'));row.appendChild(cell(sum?'+':'−','op'));row.appendChild(cell(rb,'hit'));
+    row.appendChild(cell('=','op'));var ac=cell('0','ans');row.appendChild(ac);box.appendChild(row);
+    setTimeout(function(){countUp(ac,est,700);},700);return true;
+  }
+  /* --- missing number: "A + ___ = B" / "___ + A = B" / "A − ___ = B" --- */
+  function missingBox(box,q,s){
+    var m=s.match(/(\d+|_{2,})\s*([+\-−])\s*(\d+|_{2,})\s*=\s*(\d+)/); if(!m)return false;
+    var op=m[2].replace('−','-'),L=m[1],R=m[3],tot=parseInt(m[4]),missL=/_/.test(L),missR=/_/.test(R);
+    if(!missL&&!missR)return false; var known=parseInt(missL?R:L);
+    var ans=op==='+'?tot-known:(missL?tot+known:known-tot);
+    cap(box,'Find the missing number that makes it true');
+    var row=el('div','viz-row');
+    var lc=cell(missL?'?':L,missL?'ans':'');row.appendChild(lc);row.appendChild(cell(op,'op'));
+    var rc=cell(missR?'?':R,missR?'ans':'');row.appendChild(rc);row.appendChild(cell('=','op'));row.appendChild(cell(tot));box.appendChild(row);
+    setTimeout(function(){(missL?lc:rc).textContent=ans;},900);result(box,String(ans));return true;
+  }
+  /* --- number name: "Which number is 'three thousand five'?" (uses q.correct) --- */
+  function numberName(box,q,s){
+    var m=s.match(/which number is\s*['"]([^'"]+)['"]/i); if(!m)return false;
+    var ans=(q&&q.correct)?String(q.correct).replace(/[^\d]/g,''):'';
+    cap(box,'Read the number name, then write the digits');
+    var row=el('div','viz-row');var nc=el('div','vcell');nc.style.fontSize='15px';nc.style.minWidth='auto';nc.textContent=m[1];row.appendChild(nc);
+    row.appendChild(cell('=','op'));row.appendChild(cell(ans||'?','ans'));box.appendChild(row);
+    result(box,ans||m[1]);return true;
+  }
+  /* --- word problem: add OR subtract --- */
+  function wordProblem(box,q,s){
+    if(!/how many/i.test(s))return false; var ns=nums(s); if(ns.length!==2)return false;
+    var sub=/(left|remain|fewer|spent|gave away|lost|how many more)/i.test(s), add=/(in all|altogether|in total|combined)/i.test(s);
+    if(!add&&!sub)return false;
+    var x=sub?Math.max(ns[0],ns[1]):ns[0], y=sub?Math.min(ns[0],ns[1]):ns[1], res=sub?x-y:x+y;
+    cap(box, sub?'&ldquo;how many left&rdquo; &rarr; SUBTRACT':'&ldquo;in all&rdquo; &rarr; ADD them together');
+    var row=el('div','viz-row');row.appendChild(cell(x));row.appendChild(cell(sub?'−':'+','op'));row.appendChild(cell(y));
+    row.appendChild(cell('=','op'));var ac=cell('0','ans');row.appendChild(ac);box.appendChild(row);
+    setTimeout(function(){countUp(ac,res,700);},700);return true;
+  }
+
+  var DETECTORS=[placeValue,succPred,compareSign,orderFirst,sequence,formNumber,expandedForm,estimateRound,missingBox,numberName,arithmetic,wordProblem];
+  window.ConceptViz={render:function(box,q){
+    var s=(q&&(q.q||q.stem))||'';
+    for(var i=0;i<DETECTORS.length;i++){box.classList.remove('hidden');box.innerHTML='';try{if(DETECTORS[i](box,q,s))return true;}catch(e){}}
+    box.classList.add('hidden');box.innerHTML='';return false;
+  }};
+})();
+
+/* ---------- test harness ---------- */
+var SAMPLES=[
+ ["form smallest","Write the SMALLEST 3-digit number using 1, 9, 4 (no digit repeated)."],
+ ["place value","In 4726, what is the PLACE VALUE of the hundreds digit?"],
+ ["face value","In 4726, what is the FACE VALUE of the tens digit?"],
+ ["successor","What is the SUCCESSOR of 499?"],
+ ["predecessor","What is the PREDECESSOR of 700?"],
+ ["compare sign","Fill in the correct sign:  638  ___  683"],
+ ["order","Arrange in ascending order: 45, 12, 89, 30. Which number comes FIRST?"],
+ ["skip count","Count ahead in 5s:  15, 20, 25, ?"],
+ ["pattern","Observe the pattern and find the next number:  3, 6, 9, ?"],
+ ["add","345 + 278 = ?"],
+ ["sub","800 − 265 = ?"],
+ ["add three","120 + 45 + 33 = ?"],
+ ["money","₹56 + ₹38 = ?"],
+ ["word add","A garden has 24 roses and 15 daisies. How many flowers altogether?"],
+ ["expanded","Write the number:  4000 + 700 + 20 + 6  =  ?"],
+ ["estimate sum","Estimate the sum by rounding each number to the nearest 10:  47 + 38"],
+ ["missing","___ + 1 = 500"],
+ ["missing2","76 + ___ = 90"],
+ ["number name","Which number is 'three thousand five'?"],
+ ["sub word","Riya had 45 sweets and gave away 18. How many are left?"]
+];
+var CORRECT={"Which number is 'three thousand five'?":"3005"};
+var btns=document.getElementById('btns');
+SAMPLES.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[0];b.onclick=function(){show(i);};btns.appendChild(b);});
+function show(i){var t=SAMPLES[i][1];document.getElementById('qtext').textContent=t;ConceptViz.render(document.getElementById('viz'),{q:t,correct:CORRECT[t]});}
+show(0);
+</script></body></html>

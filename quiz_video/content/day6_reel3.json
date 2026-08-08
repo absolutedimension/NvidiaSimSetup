@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "JEE Main · Chemistry",
+ "subject": "Chemistry",
+ "chapter": "Some Basic Concepts Of Chemistry",
+ "topic_line": "Real JEE Main questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Chemistry. Some Basic Concepts Of Chemistry. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Some Basic Concepts Of Chemistry? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "Which of the following have same number of significant figures? \n A. 0.00253 \n B. 1.0003 \n C. 15.0 \n D. 163 \n Choose the correct answer from the options given below",
+   "options": [
+    "A, C and D only",
+    "B and C only",
+    "A, B and C only",
+    "C and D only"
+   ],
+   "answer": 0,
+   "explain": "Significant figures are the digits in a number that carry meaningful information about its precision.",
+   "voice_q": "Which of the following have same number of significant figures? \n A. 0.00253 \n B. 1.0003 \n C. 15.0 \n D. 163 \n Choose the correct answer from the options given below Five seconds... think!",
+   "voice_a": "The answer is A — A, C and D only. Significant figures are the digits in a number that carry meaningful information about its precision."
+  },
+  {
+   "type": "mcq",
+   "q": "With increase of temperature, which of these changes?",
+   "options": [
+    "molality",
+    "weight fraction of solute",
+    "molarity",
+    "mole fraction"
+   ],
+   "answer": 2,
+   "explain": "Molarity = <span style=\"display: inline-block;vertical-align: middle;\">\n <div style=\"text-align: center;border-bottom: 1",
+   "voice_q": "With increase of temperature, which of these changes? Five seconds... think!",
+   "voice_a": "The answer is C — molarity. Molarity = <span style=\"display: inline-block;vertical-align: middle;\">\n <div style=\"text-align: center;border-bottom: 1"
+  },
+  {
+   "type": "mcq",
+   "q": "The quantity which changes with temperature is :",
+   "options": [
+    "Molality",
+    "Molarity",
+    "Mole fraction",
+    "Mass percentage"
+   ],
+   "answer": 1,
+   "explain": "The quantity that changes with temperature from the given options is Molarity .",
+   "voice_q": "The quantity which changes with temperature is : Five seconds... think!",
+   "voice_a": "The answer is B — Molarity. The quantity that changes with temperature from the given options is Molarity ."
+  }
+ ]
+}

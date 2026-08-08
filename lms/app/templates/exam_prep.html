@@ -77,6 +77,16 @@
   /* coming-soon exams: visible (shows the roadmap) but not selectable */
   .exam.soon{cursor:not-allowed;opacity:.62;background:#F6EEE4;border-style:dashed}
   .exam.soon:hover{border-color:var(--line)}
+  /* KIDS picker — bigger, brighter, prominent (kids-education.trigunai.com) */
+  .kids-exams{grid-template-columns:repeat(2,1fr);gap:14px}
+  .kids-exams .exam{padding:24px 10px;border-radius:22px;border-width:3px;gap:6px}
+  .kids-exams .exam .ex-emoji{font-size:44px}
+  .kids-exams .exam b{font-size:20px}
+  .kids-exams .exam small{font-size:12px}
+  .kids-exams .exam:has(input:checked){border-color:#2FA968;background:#EAFAEF;box-shadow:0 0 0 4px rgba(47,169,104,.25)}
+  .kids-exams .exam .live{background:#2FA968;color:#fff;font-size:10px;padding:2px 7px;border-radius:8px}
+  .kids-exams .exam.soon{opacity:.7}
+  .pickhead{font-weight:800;font-size:12.5px;color:var(--muted);letter-spacing:.02em;margin:4px 0 8px}
   .exam .badge{position:absolute;top:6px;right:6px;font-size:8.5px;font-weight:800;letter-spacing:.04em;
      text-transform:uppercase;color:#A8481A;background:#FBE7D3;border-radius:6px;padding:2px 5px}
   .exam .live{position:absolute;top:6px;right:6px;font-size:8.5px;font-weight:800;letter-spacing:.04em;
@@ -164,29 +174,76 @@
   @media(max-width:720px){.steps,.trio{grid-template-columns:1fr}.exams{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
-<body>
+{% if kids %}<style>
+  body.kids{
+    --bg:#dff4ff; --bg2:#c6e8ff; --ink:#274b8a; --gold:#ff5a52; --gold-deep:#e0433b;
+    --sanskrit:#ff8a3d; --muted:#5f79a6; --faint:#9fb3d4; --line:rgba(80,140,210,.18);
+    --card:#ffffff; --card-edge:rgba(80,140,210,.16); --green:#2fb36a;
+    font-family:"Baloo 2","Arial Rounded MT Bold",system-ui,sans-serif;
+    background:linear-gradient(180deg,#bfe6ff,#dff4ff 42%,#eafaf0) fixed !important;
+  }
+  body.kids .nav{background:rgba(191,230,255,.9);border-bottom:2px solid rgba(80,140,210,.16)}
+  body.kids .brand small{color:#ff5a52}
+  body.kids .title{font-weight:800;color:#274b8a;text-shadow:0 3px 0 rgba(255,154,46,.3)}
+  body.kids .accent{color:#ff5a52}
+  body.kids .pill{background:#fff;color:#ff5a52;border:2px solid #ffd6d3;font-family:inherit}
+  body.kids .sub,body.kids .lead2{color:#5f79a6}
+  body.kids .lead{color:#274b8a;font-size:19px}
+  body.kids .card,body.kids .vcard,body.kids .path,body.kids .steps li,body.kids .start{border-radius:26px !important}
+  body.kids button,body.kids .btn,body.kids input[type=submit],body.kids a.go,body.kids .cta,body.kids [type=submit]{border-radius:30px !important;font-weight:800}
+  body.kids .hero-emoji{position:fixed;font-size:40px;z-index:0;opacity:.85;pointer-events:none;animation:kfloat 4s ease-in-out infinite}
+  @keyframes kfloat{50%{transform:translateY(-18px) rotate(6deg)}}
+</style>{% endif %}
+<body{% if kids %} class="kids"{% endif %}>
+{% if kids %}
+  <div class="hero-emoji" style="top:88px;left:18px">🎈</div>
+  <div class="hero-emoji" style="top:150px;right:24px;animation-delay:1.1s">🌟</div>
+  <div class="hero-emoji" style="top:300px;left:44px;animation-delay:2.2s">🎉</div>
+  <div class="hero-emoji" style="top:360px;right:60px;animation-delay:.6s">✏️</div>
+{% endif %}
 
 <nav class="nav">
   <div class="wrap">
-    <a class="brand" href="/exam-prep"><img src="/static/brand/trigunai-mark.png" alt="TrigunAI" />Acharya<small>for Students</small></a>
+    <a class="brand" href="/exam-prep"><img src="/static/brand/trigunai-mark.png" alt="TrigunAI" />Acharya<small>{% if kids %}for Kids{% else %}for Students{% endif %}</small></a>
+    <div class="nav-right"><a href="/teacher">{% if kids %}🧑‍🏫 For Teachers{% else %}For teachers{% endif %}</a><a href="/login">Sign in</a></div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="hero-in">
+    {% if kids %}
+    <div class="pill">🦊 Acharya Kids · learn &amp; play</div>
+    <h1 class="title">Let's <span class="accent">play &amp; learn</span>,<br/>superstar! 🎈</h1>
+    <p class="sub">Fun quizzes with <b>JJ &amp; Mikey</b>! Pick a subject and play — you can even answer
+       <b>out loud</b> with your voice. 🎤 Every question makes you smarter!</p>
+    {% else %}
     <div class="pill">आचार्य · your AI exam-prep coach</div>
     <h1 class="title">Find your <span class="accent">weak topics</span><br/>before the exam does.</h1>
     <p class="sub">Take a short <b>adaptive test</b> for your exam — in English or हिंदी. Acharya doesn't just
        score you: it finds your <b>exact weak topics</b> from your answers and tells you what to revise next.</p>
+    {% endif %}
 
     {% if student %}
     <div class="resume">Welcome back, <b>{{ student.email }}</b> — <a href="/exam-prep/test?exam={{ resume_exam }}">continue your test →</a></div>
     {% endif %}
 
     <form class="start" method="post" action="/exam-prep/start" id="startform">
-      <div class="lead">Start free in 10 seconds</div>
+      <div class="lead">{% if kids %}Start playing in 10 seconds! 🎮{% else %}Start free in 10 seconds{% endif %}</div>
       <div class="lead2">Pick your exam, drop your email — no password, no payment.</div>
-      <div class="exams">
+      {% if kids_exams %}
+      <div class="pickhead">🎈 For Kids · Grade 3</div>
+      <div class="exams kids-exams">
+        {% for e in kids_exams %}
+          {% if e.available %}
+          <label class="exam"><input type="radio" name="exam" value="{{ e.id }}" {% if e.id == picked %}checked{% endif %} /><span class="live">Live</span><span class="ex-emoji">{{ e.emoji }}</span><b>{{ e.title }}</b><small>{{ e.tag }}</small></label>
+          {% else %}
+          <span class="exam soon" title="Coming soon" aria-disabled="true"><span class="badge">Soon</span><span class="ex-emoji">{{ e.emoji }}</span><b>{{ e.title }}</b><small>{{ e.tag }}</small></span>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="pickhead">Or choose an exam</div>
+      {% endif %}
+      <div class="exams{% if kids %} kids-exams{% endif %}">
         {% set first_live = exams | selectattr('available') | list | first %}
         {% for e in exams %}
         {% if e.available %}
@@ -291,7 +348,7 @@
     <div>© TrigunAI Innovations · आचार्य</div>
     <div class="flinks">
       <a href="/exam-prep">Exam prep</a>
-      <a href="/">For teachers</a>
+      <a href="/teacher">For teachers</a>
       <a href="/login">Sign in</a>
       <a href="/privacy">Privacy</a>
     </div>

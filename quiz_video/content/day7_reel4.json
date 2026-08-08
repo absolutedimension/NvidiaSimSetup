@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Chemistry",
+ "subject": "Chemistry",
+ "chapter": "d and f Block Elements",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Chemistry. d and f Block Elements. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on d and f Block Elements? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "An explosion reaction takes place when concentrated H 2 S O 4 is added to K M n O 4 . Which of the following is formed",
+   "options": [
+    "M n 2 O 7",
+    "M n 2 O 3",
+    "M n S O 4",
+    "M n O 2"
+   ],
+   "answer": 0,
+   "explain": "H 2 S O 4 + 2 K M n O 4 â K 2 S O 4 + M n 2 O 7 e x p l o s i v e + H 2 O Reaction produces a highly stable magnese co",
+   "voice_q": "An explosion reaction takes place when concentrated H 2 S O 4 is added to K M n O 4 . Which of the following is formed Five seconds... think!",
+   "voice_a": "The answer is A — M n 2 O 7. H 2 S O 4 + 2 K M n O 4 â K 2 S O 4 + M n 2 O 7 e x p l o s i v e + H 2 O Reaction produces a highly stable magnese co"
+  },
+  {
+   "type": "mcq",
+   "q": "A metal is left exposed to the atmosphere for some time. It becomes coated with green basic carbonate. The metal must be",
+   "options": [
+    "Nickel",
+    "Chromium",
+    "Copper",
+    "Zinc"
+   ],
+   "answer": 2,
+   "explain": "Here the metal is copper and green mass is of C u ( O H ) 2 .",
+   "voice_q": "A metal is left exposed to the atmosphere for some time. It becomes coated with green basic carbonate. The metal must be Five seconds... think!",
+   "voice_a": "The answer is C — Copper. Here the metal is copper and green mass is of C u ( O H ) 2 ."
+  },
+  {
+   "type": "mcq",
+   "q": "4 A g N O 3 + 2 C l 2 ( d r y ) â 4 X + 2 Y + Z In the above sequence of reaction y and z are respectively",
+   "options": [
+    "N O 2 and N 2 O 4",
+    "N 2 O 5 , O 2",
+    "AgCl and O 2",
+    "AgCl, N 2"
+   ],
+   "answer": 1,
+   "explain": "4 A g N O 3 + 2 C l 2 â 4 A g C l ( X ) + 2 N 2 O 5 ( Y ) + O 2 ( Z ) Hence Y and Z are N 2 O 5 and O 2 respectively.",
+   "voice_q": "4 A g N O 3 + 2 C l 2 ( d r y ) â 4 X + 2 Y + Z In the above sequence of reaction y and z are respectively Five seconds... think!",
+   "voice_a": "The answer is B — N 2 O 5 , O 2. 4 A g N O 3 + 2 C l 2 â 4 A g C l ( X ) + 2 N 2 O 5 ( Y ) + O 2 ( Z ) Hence Y and Z are N 2 O 5 and O 2 respectively."
+  }
+ ]
+}

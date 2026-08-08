@@ -1,0 +1,59 @@
+{
+ "title": "Nernst Electrode Comparison",
+ "q_prose": "A solution has 0.001 M X two plus and 0.1 M Y two plus. Rods X and Y are connected. X dissolves. Find the correct X and Y pairs.",
+ "given_eq": "$E=E^0+\\frac{RT}{2F}\\mathrm{ln}\\left[M^{2+}\\right]$",
+ "q_reminder": "Find the pairs for which X is oxidized and dissolves.",
+ "q_narration": "We are given standard reduction potentials for lead, nickel, cadmium, and iron. The solution contains zero point zero zero one molar X two plus and zero point one molar Y two plus. Since X dissolves, X is getting oxidized. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Dissolution condition",
+   "eqs": [
+    "$\\Delta E=E_Y-E_X>0$"
+   ],
+   "narration": "If metal X dissolves, X is the anode and gets oxidized. Therefore the Y electrode must have the higher reduction potential. So we need E Y minus E X to be positive."
+  },
+  {
+   "label": "Step 2 — Apply Nernst equation",
+   "eqs": [
+    "$\\Delta E=\\left(E_Y^0-E_X^0\\right)+\\frac{RT}{2F}\\mathrm{ln}\\frac{\\left[Y^{2+}\\right]}{\\left[X^{2+}\\right]}$",
+    "$\\frac{\\left[Y^{2+}\\right]}{\\left[X^{2+}\\right]}=\\frac{0.1}{0.001}=100$"
+   ],
+   "narration": "For both electrodes, the number of electrons is two. Subtracting the two Nernst equations gives a standard potential difference plus a concentration correction. The concentration ratio is one hundred."
+  },
+  {
+   "label": "Step 3 — Concentration correction",
+   "eqs": [
+    "$\\frac{RT}{2F}\\mathrm{ln}100=\\frac{8.314\\times298}{2\\times96500}\\mathrm{ln}100\\approx0.059\\mathrm{V}$",
+    "$\\Delta E=\\left(E_Y^0-E_X^0\\right)+0.059$"
+   ],
+   "narration": "At two ninety eight kelvin, the concentration term comes out to about zero point zero five nine volt. So we just add this to Y standard potential minus X standard potential."
+  },
+  {
+   "label": "Step 4 — Check A and B",
+   "eqs": [
+    "$\\mathrm{A}:\\Delta E=\\left(-0.24+0.40\\right)+0.059=+0.219>0$",
+    "$\\mathrm{B}:\\Delta E=\\left(-0.44+0.40\\right)+0.059=+0.019>0$"
+   ],
+   "narration": "For option A, cadmium is X and nickel is Y, giving a positive value, so cadmium dissolves. For option B, cadmium is X and iron is Y, and the value is still slightly positive, so cadmium also dissolves."
+  },
+  {
+   "label": "Step 5 — Check C and D",
+   "eqs": [
+    "$\\mathrm{C}:\\Delta E=\\left(-0.13+0.24\\right)+0.059=+0.169>0$",
+    "$\\mathrm{D}:\\Delta E=\\left(-0.44+0.24\\right)+0.059=-0.141<0$"
+   ],
+   "narration": "For option C, nickel is X and lead is Y, so the value is positive and nickel dissolves. For option D, nickel is X and iron is Y, but the value is negative, so nickel will not dissolve."
+  }
+ ],
+ "answer_eq": "$\\mathrm{A,B,C}$",
+ "answer_label": "Correct option:  ABC",
+ "answer_narration": "Therefore, the correct combinations are A, B, and C. For more such clear step by step solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Advanced · Chemistry · Electrochemistry",
+ "options": [
+  "$\\mathrm{Cd}$ and $\\mathrm{Ni}$",
+  "$\\mathrm{Cd}$ and $\\mathrm{Fe}$",
+  "$\\mathrm{Ni}$ and $\\mathrm{Pb}$",
+  "$\\mathrm{Ni}$ and $\\mathrm{Fe}$"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

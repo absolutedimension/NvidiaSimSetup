@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Start your Acharya · TrigunAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#d4af37;--gold-dim:#a08a5a;--bg1:#0e0a04;--bg2:#1a1408;--ink:#f5efdf;--ink-dim:#a08a5a;--err:#ff8a80;--ok:#96ec95;}
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--ink);font-family:'Inter',system-ui,sans-serif;min-height:100vh;}
+    .wrap{max-width:600px;margin:0 auto;padding:26px 16px 70px;}
+    .brand{display:flex;align-items:center;gap:10px;margin-bottom:18px;font-size:13px;color:var(--ink-dim);}
+    .mark{width:28px;height:28px;border-radius:7px;background:var(--gold);color:var(--bg2);display:grid;place-items:center;font-weight:700;font-size:16px;font-family:'Cormorant Garamond',serif;}
+    h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;margin:0 0 6px;letter-spacing:-.3px;}
+    .sub{color:var(--ink-dim);margin-bottom:8px;font-size:15px;}
+    .days{display:inline-block;margin:6px 0 20px;padding:6px 14px;border-radius:99px;border:1px solid rgba(212,175,55,.35);color:var(--gold);font-size:13px;font-weight:600;}
+    .card{background:rgba(255,255,255,.03);border:1px solid rgba(212,175,55,.15);border-radius:12px;padding:18px;margin-bottom:14px;}
+    label{display:block;font-size:13px;color:var(--ink-dim);margin:10px 0 4px;}
+    label .req{color:var(--gold);}
+    input,textarea,select{width:100%;padding:11px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.25);background:rgba(0,0,0,.22);color:var(--ink);font-size:15px;font-family:inherit;}
+    input:focus,textarea:focus,select:focus{outline:2px solid var(--gold);border-color:transparent;}
+    textarea{resize:vertical;min-height:96px;}
+    textarea.mono{font-family:'ui-monospace',monospace;font-size:14px;}
+    .hint{font-size:12px;color:var(--ink-dim);margin-top:3px;}
+    .btn{background:var(--gold);color:var(--bg2);padding:15px 20px;border:none;border-radius:9px;font-weight:600;font-size:16px;width:100%;cursor:pointer;margin-top:10px;font-family:inherit;}
+    .btn:disabled{opacity:.4;cursor:not-allowed;}
+    .msg{margin-top:12px;font-size:14px;}
+    .msg.err{color:var(--err);} .msg.ok{color:var(--ok);}
+    .done{text-align:center;padding:30px 10px;}
+    .done h2{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:30px;margin:10px 0;}
+    .done p{color:var(--ink-dim);font-size:15px;line-height:1.6;}
+    .keep{text-align:left;max-width:420px;margin:16px auto 0;font-size:14px;color:var(--ink-dim);}
+    .keep li{margin:5px 0;}
+    a{color:var(--gold);}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><div class="mark">आ</div><span>Acharya · TrigunAI</span></div>
+
+    <div id="form-view">
+      <h1>Start your Acharya</h1>
+      <div class="sub">Your own AI tutor for your students — under your name, on web &amp; WhatsApp.</div>
+      <div class="days">⏱ Live in 2 working days</div>
+
+      <div class="card">
+        <label>Coaching / institute name <span class="req">*</span></label>
+        <input id="coaching" placeholder="e.g. Catalyzers Institute">
+        <label>Your name (the teacher) <span class="req">*</span></label>
+        <input id="teacher" placeholder="e.g. Sharma Sir">
+        <label>Your WhatsApp number <span class="req">*</span></label>
+        <input id="whatsapp" inputmode="numeric" placeholder="91XXXXXXXXXX (with country code)">
+        <div class="hint">We'll reach you here to confirm setup.</div>
+      </div>
+
+      <div class="card">
+        <label>Subject &amp; class / exam <span class="req">*</span></label>
+        <input id="subject" placeholder="e.g. Physics — Class 11-12, NEET">
+        <label>Full syllabus / topics to cover <span class="req">*</span></label>
+        <textarea id="syllabus" placeholder="Paste your chapter/topic list — or write: will send the PDF on WhatsApp"></textarea>
+        <label>Timeline to finish the syllabus <span class="req">*</span></label>
+        <input id="timeline" placeholder="e.g. by March 2027  /  4 months">
+        <label>Target exam &amp; date (optional)</label>
+        <input id="exam" placeholder="e.g. NEET — May 2027">
+      </div>
+
+      <div class="card">
+        <label>Your students</label>
+        <textarea id="students" class="mono" placeholder="One per line:&#10;Aarav Sharma, 9812345678, Hindi&#10;Priya Verma, 9787654321, English"></textarea>
+        <div class="hint">Name, WhatsApp number, language (Hindi/English). You can also send this list on WhatsApp later.</div>
+        <label>Preferred teaching language</label>
+        <select id="language"><option>Hindi</option><option>English</option><option>Both (Hindi + English)</option></select>
+        <label>Anything else? (optional)</label>
+        <textarea id="notes" placeholder="Your notes, past test papers, weekly timetable — mention what you can share for the best results."></textarea>
+      </div>
+
+      <button class="btn" id="submit">Submit &amp; get set up →</button>
+      <div class="msg" id="msg"></div>
+    </div>
+
+    <div id="done-view" class="done" style="display:none">
+      <div class="mark" style="margin:0 auto;width:48px;height:48px;font-size:26px;">आ</div>
+      <h2>Thank you! 🙏</h2>
+      <p>We've received your details. Our team will set up your branded Acharya and reach you on WhatsApp — <b>live in 2 working days</b>.</p>
+      <div class="keep">
+        <p>Keep these ready too, for the best results:</p>
+        <ul>
+          <li>Your notes &amp; study material</li>
+          <li>Past test papers</li>
+          <li>Your weekly class timetable</li>
+          <li>Your logo (for your branding)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const BOT_BASE = "__BOT_BASE__";
+    const $ = id => document.getElementById(id);
+    function digits(s){ return (s||"").replace(/\D/g,""); }
+    $("submit").onclick = async () => {
+      const msg = $("msg"); msg.className="msg"; msg.textContent="";
+      const coaching=$("coaching").value.trim(), teacher=$("teacher").value.trim();
+      const wa=digits($("whatsapp").value), subject=$("subject").value.trim();
+      const syllabus=$("syllabus").value.trim(), timeline=$("timeline").value.trim();
+      if(!coaching||!teacher||!wa||!subject||!syllabus||!timeline){
+        msg.className="msg err"; msg.textContent="Please fill all the required (*) fields."; return;
+      }
+      if(wa.length<10||wa.length>13){
+        msg.className="msg err"; msg.textContent="Please enter a valid WhatsApp number with country code (e.g. 91XXXXXXXXXX)."; return;
+      }
+      const body={coaching_name:coaching,teacher_name:teacher,whatsapp:wa,subject_class:subject,
+        syllabus:syllabus,timeline:timeline,target_exam:$("exam").value.trim(),
+        students:$("students").value.trim(),language:$("language").value,notes:$("notes").value.trim(),
+        source:"self_serve_web"};
+      $("submit").disabled=true; $("submit").textContent="Submitting…";
+      try{
+        const r=await fetch(BOT_BASE+"/self_onboard",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+        const j=await r.json();
+        if(j.ok){ $("form-view").style.display="none"; $("done-view").style.display="block"; window.scrollTo(0,0); }
+        else { msg.className="msg err"; msg.textContent=j.error||"Something went wrong. Please try again or reply on WhatsApp."; $("submit").disabled=false; $("submit").textContent="Submit & get set up →"; }
+      }catch(e){ msg.className="msg err"; msg.textContent="Network error. Please try again."; $("submit").disabled=false; $("submit").textContent="Submit & get set up →"; }
+    };
+  </script>
+</body>
+</html>

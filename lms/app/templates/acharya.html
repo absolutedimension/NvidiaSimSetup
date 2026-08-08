@@ -100,7 +100,7 @@
   .split-head{text-align:center;max-width:720px;margin:0 auto 26px}
   .split-head .k{font-family:var(--deva);color:var(--gold);font-size:15px;margin-bottom:8px}
   .split-head h2{font-family:var(--serif);font-weight:800;font-size:clamp(27px,4.4vw,42px);letter-spacing:-.8px;line-height:1.05}
-  .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:1000px;margin:0 auto;perspective:1200px}
+  .split-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1200px;margin:0 auto;perspective:1200px}
   .stage{display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;
      border-radius:26px;padding:22px 22px 26px;position:relative;
      background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,.34));
@@ -740,6 +740,24 @@ void main() {
       </ul>
       <div class="price"><span class="free">Free to start</span> · plans from <b>₹999/mo</b> · by class size</div>
       <a class="go" href="/teacher">Set up my class →</a>
+    </div>
+
+    <!-- KIDS (whole block → kids site) -->
+    <div class="stage kids" role="link" tabindex="0" data-href="https://kids-education.trigunai.com/exam-prep">
+      <div class="toon" style="display:flex;justify-content:center;align-items:flex-end;gap:8px;height:250px">
+        <img src="/static/kids/jj.png" alt="JJ" style="height:214px;width:auto;filter:drop-shadow(0 10px 10px rgba(0,0,0,.15))"/>
+        <img src="/static/kids/mikey.png" alt="Mikey" style="height:182px;width:auto;filter:drop-shadow(0 10px 10px rgba(0,0,0,.15))"/>
+      </div>
+      <div class="tag">For kids</div>
+      <h3>Fun learning for Class 3</h3>
+      <p class="lead">Playful quizzes with <b>JJ &amp; Mikey</b> — with a friendly <b>voice</b> that reads each question aloud.</p>
+      <ul class="feats">
+        <li><span><b>Grade 3 Maths</b> — bright, fun practice (more subjects &amp; grades coming)</span></li>
+        <li><span><span class="new">NEW</span>A <b>voice mode</b> — your child answers out loud, hands-free</span></li>
+        <li><span>Gentle &amp; encouraging — <b>never scary</b>, always celebrates trying</span></li>
+      </ul>
+      <div class="price"><span class="free">Free to play</span></div>
+      <a class="go" href="https://kids-education.trigunai.com/exam-prep">Start playing →</a>
     </div>
 
   </div>

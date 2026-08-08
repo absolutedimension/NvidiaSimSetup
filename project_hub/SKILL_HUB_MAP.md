@@ -5,7 +5,7 @@
 > Interactive version: Artifact "TrigunAI — Skill Hub System Map".
 > Source of truth: `skills/trigunai-project-hub/SKILL.md` §A–§C. Generated 2026-07-03.
 
-**At a glance:** 38 skills · 8 layers · 6 machines. Live revenue gate = **Teacher B2B2C PMF test, Day 1 / 21** (0 paid → 1 by Jul 23).
+**At a glance:** 39 skills · 8 layers · 6 machines. Live revenue gate = **Teacher B2B2C PMF test, Day 1 / 21** (0 paid → 1 by Jul 23).
 
 ---
 
@@ -45,6 +45,7 @@
 | **trigunai-content-strategy** | Episode catalog & series strategy ("AI is the Universal Mind"). |
 | **video-script-writer-trigunai** | Topic/module → scene-segmented, TTS-tuned script + visual direction (feeds production). |
 | **production-video-trigunai** | Script → finished narrated MP4 (shader bg, motion graphics, lip-sync presenter, music) on EC2 GPU. |
+| **talking-avatar-trigunai** | Photo (or AI-generated gpt-image face) + text/audio → lively cinematic lip-sync/talking-head MP4 (SadTalker + Azure voice) on the T4 box. Also lives as an OpenClaw Telegram bot skill. |
 | **faceless-explainer-trigunai** | Faceless explainer videos. |
 | **reel-shorts-video-trigunai** | Reel/Shorts preset over the video engine. |
 

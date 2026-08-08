@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "JEE Main · Chemistry",
+ "subject": "Chemistry",
+ "chapter": "Electrochemistry",
+ "topic_line": "Real JEE Main questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Chemistry. Electrochemistry. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Electrochemistry? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "When 9.65 ampere current was passed for 1.0 hour into nitrobenzene in acidic medium, the amount of p-aminophenol produced is :",
+   "options": [
+    "9.81 g",
+    "10.9 g",
+    "98.1 g",
+    "109.0 g"
+   ],
+   "answer": 0,
+   "explain": "Moler mass of p$$-$$aminophenol \n =   6 $$ \\times $$ 12 + 7 + 14 + 16\n = 109 gmol^{$$-$$1}\n Eq.",
+   "voice_q": "When 9.65 ampere current was passed for 1.0 hour into nitrobenzene in acidic medium, the amount of p-aminophenol produced is : Five seconds... think!",
+   "voice_a": "The answer is A — 9.81 g. Moler mass of p$$-$$aminophenol \n =   6 $$ \\times $$ 12 + 7 + 14 + 16\n = 109 gmol^{$$-$$1}\n Eq."
+  },
+  {
+   "type": "mcq",
+   "q": "Galvanization is applying a coating of :",
+   "options": [
+    "Cr",
+    "Cu",
+    "Zn",
+    "Pb"
+   ],
+   "answer": 2,
+   "explain": "Galvanization is the process by which zinc is coated over corrosive (easily rusted) metals to prevent them from corrosio",
+   "voice_q": "Galvanization is applying a coating of : Five seconds... think!",
+   "voice_a": "The answer is C — Zn. Galvanization is the process by which zinc is coated over corrosive (easily rusted) metals to prevent them from corrosio"
+  },
+  {
+   "type": "mcq",
+   "q": "Several blocks of magnesium are fixed to the bottom of a ship to :",
+   "options": [
+    "make the ship lighter",
+    "prevent action of water and salt",
+    "prevent puncturing by under-sea rocks",
+    "keep away the sharks"
+   ],
+   "answer": 1,
+   "explain": "Magnesium provides cathodic protection and prevent rusting or corrosion.",
+   "voice_q": "Several blocks of magnesium are fixed to the bottom of a ship to : Five seconds... think!",
+   "voice_a": "The answer is B — prevent action of water and salt. Magnesium provides cathodic protection and prevent rusting or corrosion."
+  }
+ ]
+}

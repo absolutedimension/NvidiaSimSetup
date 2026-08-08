@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Biology",
+ "subject": "Biology",
+ "chapter": "Human Health and Disease",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Biology. Human Health and Disease. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Human Health and Disease? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "Antibodies in our body are complex:",
+   "options": [
+    "glycoproteins",
+    "lipoproteins",
+    "steroids",
+    "prostaglandins"
+   ],
+   "answer": 0,
+   "explain": "Antibodies, also referred to as immunoglobulins, are glycoproteins naturally produced in response to invading foreign pa",
+   "voice_q": "Antibodies in our body are complex: Five seconds... think!",
+   "voice_a": "The answer is A — glycoproteins. Antibodies, also referred to as immunoglobulins, are glycoproteins naturally produced in response to invading foreign pa"
+  },
+  {
+   "type": "mcq",
+   "q": "A patient is diagnosed with internal bleeding, muscular pain, fever, anemia, blockage of intestinal passage. He is most likely suffering from",
+   "options": [
+    "Filariasis",
+    "Amoebiasis",
+    "Ascariasis",
+    "Malaria"
+   ],
+   "answer": 2,
+   "explain": "Ascariais is caused by Round worms.",
+   "voice_q": "A patient is diagnosed with internal bleeding, muscular pain, fever, anemia, blockage of intestinal passage. He is most likely suffering from Five seconds... think!",
+   "voice_a": "The answer is C — Ascariasis. Ascariais is caused by Round worms."
+  },
+  {
+   "type": "mcq",
+   "q": "Which of the following type of immunity is present at the time of birth and is a non-specific type of defence in the human body?",
+   "options": [
+    "Acquired Immunity",
+    "Innate Immunity",
+    "Cell-mediated Immunity",
+    "Humoral Immunity"
+   ],
+   "answer": 1,
+   "explain": "To determine the type of immunity that is present at birth and is non-specific, we can analyze the options provided:  \n\n",
+   "voice_q": "Which of the following type of immunity is present at the time of birth and is a non-specific type of defence in the human body? Five seconds... think!",
+   "voice_a": "The answer is B — Innate Immunity. To determine the type of immunity that is present at birth and is non-specific, we can analyze the options provided:  \n\n"
+  }
+ ]
+}

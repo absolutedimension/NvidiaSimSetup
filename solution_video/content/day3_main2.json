@@ -1,0 +1,50 @@
+{
+ "title": "Coplanar Lines",
+ "q_prose": "Find which option is coplanar with the line (x plus 3) over minus 3 equals (y minus 1) over 1 equals (z minus 5) over 5.",
+ "given_eq": "$\\frac{x+3}{-3}=\\frac{y-1}{1}=\\frac{z-5}{5}$",
+ "q_reminder": "We need the option whose line is coplanar with the given line.",
+ "q_narration": "We are given one line in symmetric form, and we must choose the option line that is coplanar with it. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Read given line",
+   "eqs": [
+    "$P_1=\\left(-3,1,5\\right),\\ d_1=\\left(-3,1,5\\right)$"
+   ],
+   "narration": "From the given line, a point on it is minus three, one, five, and its direction ratios are minus three, one, five."
+  },
+  {
+   "label": "Step 2 — Coplanarity condition",
+   "eqs": [
+    "$D=p\\left(b_1c_2-c_1b_2\\right)-q\\left(a_1c_2-c_1a_2\\right)+r\\left(a_1b_2-b_1a_2\\right)$",
+    "$D=0\\Rightarrow \\mathrm{coplanar}$"
+   ],
+   "narration": "For two lines to be coplanar, the scalar determinant formed by the joining vector and the two direction vectors must be zero."
+  },
+  {
+   "label": "Step 3 — Test option B",
+   "eqs": [
+    "$P_2=\\left(-1,2,5\\right),\\ d_2=\\left(-1,2,5\\right),\\ P_2-P_1=\\left(2,1,0\\right)$",
+    "$D=2\\left(1\\times5-5\\times2\\right)-1\\left(-3\\times5-5\\times\\left(-1\\right)\\right)+0=0$"
+   ],
+   "narration": "For option B, the joining vector is two, one, zero. Substituting in the coplanarity determinant gives zero, so option B is coplanar."
+  },
+  {
+   "label": "Step 4 — Reject others",
+   "eqs": [
+    "$D_A=-5,\\ D_C=-10,\\ D_D=10$"
+   ],
+   "narration": "Checking the remaining options gives non zero determinant values, so those lines are not coplanar with the given line."
+  }
+ ],
+ "answer_eq": "$\\frac{x+1}{-1}=\\frac{y-2}{2}=\\frac{z-5}{5}$",
+ "answer_label": "Correct option: B",
+ "answer_narration": "Therefore, the coplanar line is option B. For more clear step by step exam solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Main · Mathematics · 3d Geometry",
+ "options": [
+  "$$\\frac{x+1}{-1}=\\frac{y-2}{2}=\\frac{z-5}{4}$$",
+  "$$\\frac{x+1}{-1}=\\frac{y-2}{2}=\\frac{z-5}{5}$$",
+  "$$\\frac{x-1}{-1}=\\frac{y-2}{2}=\\frac{z-5}{5}$$",
+  "$$\\frac{x+1}{1}=\\frac{y-2}{2}=\\frac{z-5}{5}$$"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

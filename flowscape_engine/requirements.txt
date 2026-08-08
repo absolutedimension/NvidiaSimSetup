@@ -1,0 +1,23 @@
+# Flowscape Engine — EC2 A10G (Python 3.10+)
+# Analysis + orchestration (light; run anywhere):
+requests
+Pillow
+# yt-dlp + ffmpeg/ffprobe are system tools (yt-dlp via pip is fine):
+yt-dlp
+# Generation (GPU box only; first run pulls Flux ~24GB + LTX weights):
+torch
+diffusers>=0.32.0
+transformers
+accelerate
+sentencepiece
+protobuf
+peft
+safetensors
+# LoRA training extras (from diffusers examples/dreambooth/requirements_flux.txt):
+bitsandbytes
+# Optional upscale:
+# realesrgan
+torchvision
+opencv-python-headless
+imageio
+imageio-ffmpeg

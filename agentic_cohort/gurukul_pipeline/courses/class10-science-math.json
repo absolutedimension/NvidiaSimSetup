@@ -1,0 +1,162 @@
+{
+  "course_id": "class10-science-math",
+  "name": "Class 10 Science & Math (CBSE)",
+  "order": [
+    "chemical_reactions",
+    "acids_bases_salts",
+    "metals_nonmetals",
+    "carbon_compounds",
+    "life_processes",
+    "control_coordination",
+    "reproduction",
+    "heredity",
+    "light_reflection_refraction",
+    "human_eye",
+    "electricity",
+    "magnetic_effects",
+    "real_numbers",
+    "polynomials",
+    "linear_equations",
+    "quadratic_equations",
+    "arithmetic_progressions",
+    "triangles_similarity",
+    "coordinate_geometry",
+    "trigonometry_basics",
+    "surface_areas_volumes",
+    "probability"
+  ],
+  "concepts": {
+    "chemical_reactions": {
+      "module": 1,
+      "hook": "You leave a shiny iron nail out in the monsoon and days later it's covered in a reddish-brown crust — heavier than before, though you added nothing but air and water. Where did the extra stuff come from, and what should we call what happened here?",
+      "recall": "Name the type of reaction rusting is, and balance this: Fe + O2 → Fe2O3.",
+      "answer": "rusting is a combination (and oxidation) reaction; balanced: 4Fe + 3O2 → 2Fe2O3"
+    },
+    "acids_bases_salts": {
+      "module": 1,
+      "hook": "You squeeze lemon on a marble-topped table and hear a faint fizz — a gas quietly bubbles out. Why does a sour fruit attack solid stone, and what is that escaping gas?",
+      "recall": "What do acids give in water, and what gas forms when an acid meets a metal carbonate?",
+      "answer": "acids release H+ ions in water; acid + carbonate gives CO2 (which turns limewater milky)"
+    },
+    "metals_nonmetals": {
+      "module": 1,
+      "hook": "A gold ornament your grandmother wore 50 years ago still gleams, but an iron gate the same age is eaten through with rust. Both are metals — so why does one survive and the other rot?",
+      "recall": "What is the reactivity series, and why is gold found 'free' in nature but iron isn't?",
+      "answer": "reactivity series ranks metals by tendency to lose electrons; gold is least reactive so stays uncombined, iron is reactive so occurs as oxides/ores"
+    },
+    "carbon_compounds": {
+      "module": 1,
+      "hook": "One single element — carbon — builds diamond, the food you ate today, petrol, plastic, and your own DNA. Millions of compounds from one atom. What special trick does carbon have that no other element does so well?",
+      "recall": "Name carbon's two key properties that let it form millions of compounds.",
+      "answer": "catenation (self-linking into long chains/rings) and tetravalency (4 bonds), plus forming strong covalent bonds"
+    },
+    "life_processes": {
+      "module": 2,
+      "hook": "You can hold your breath for a minute, maybe two — but not ten. Yet a plant never gasps for air. Both are alive. What is the one thing every living cell is desperately doing every second that makes breathing non-negotiable for you?",
+      "recall": "Why do we breathe — what does respiration actually release, and write its word equation.",
+      "answer": "respiration releases energy (ATP); glucose + oxygen → carbon dioxide + water + energy"
+    },
+    "control_coordination": {
+      "module": 2,
+      "hook": "Touch a hot pan and your hand jerks back BEFORE you even feel the pain. Your brain wasn't consulted first. So who gave the order to pull away that fast?",
+      "recall": "What is a reflex arc, and why is it faster than a normal brain-decided action?",
+      "answer": "a reflex arc routes the signal through the spinal cord (not the brain) via receptor → sensory → spinal cord → motor → effector, so response is near-instant"
+    },
+    "reproduction": {
+      "module": 2,
+      "hook": "Cut a potato into pieces with 'eyes' and bury them — each grows a whole new plant, identical to the parent. But your siblings don't look identical to you. Why does one kind of reproduction copy exactly and the other doesn't?",
+      "recall": "Give one key difference between asexual and sexual reproduction in terms of variation.",
+      "answer": "asexual gives genetically identical offspring (no variation); sexual mixes two parents' genes, creating variation"
+    },
+    "heredity": {
+      "module": 2,
+      "hook": "Two parents who can both roll their tongue have a child who can't. The trait skipped a generation and reappeared — like it was hiding. How can a feature vanish in the parents yet show up in the child?",
+      "recall": "What are dominant and recessive traits, and in Mendel's monohybrid cross what ratio appears in the F2 generation?",
+      "answer": "dominant masks recessive; a recessive trait shows only when both alleles are recessive; F2 phenotype ratio is 3:1"
+    },
+    "light_reflection_refraction": {
+      "module": 3,
+      "hook": "Drop a straight pencil into a glass of water and it looks bent, even snapped, right at the surface — yet it's perfectly straight when you pull it out. The pencil never changed. So what bent?",
+      "recall": "What is refraction, and which way does light bend going from air into water (denser medium)?",
+      "answer": "refraction is the bending of light when it changes medium (due to speed change); going into a denser medium it bends towards the normal"
+    },
+    "human_eye": {
+      "module": 3,
+      "hook": "Walk from bright sunlight into a dark cinema hall and for a few seconds you see nothing — then slowly the seats appear. Your eye didn't grow new parts. What quietly adjusted to rescue your vision?",
+      "recall": "What is the power of accommodation, and which part of the eye changes to focus near vs far objects?",
+      "answer": "accommodation is the eye lens changing its focal length; ciliary muscles adjust the lens curvature (thicker for near, thinner for far)"
+    },
+    "electricity": {
+      "module": 3,
+      "hook": "The same battery lights a torch bulb brightly but barely warms a thick metal rod. Same push of electricity — different result. What property of the wire decides how much current actually flows?",
+      "recall": "State Ohm's law and give the formula linking voltage, current and resistance.",
+      "answer": "Ohm's law: V = IR (current is directly proportional to voltage at constant temperature)"
+    },
+    "magnetic_effects": {
+      "module": 3,
+      "hook": "Hold a compass near an ordinary current-carrying wire and its needle swings — as if an invisible magnet appeared out of nowhere the instant you switched on the current. Where did the magnetism come from?",
+      "recall": "What did Oersted discover, and how do you find the direction of the magnetic field around a straight wire?",
+      "answer": "Oersted found a current produces a magnetic field around it; direction is given by the right-hand thumb rule (thumb = current, curled fingers = field)"
+    },
+    "real_numbers": {
+      "module": 4,
+      "hook": "Every whole number can be broken into prime building blocks — 12 is 2×2×3 — and there is exactly ONE way to do it, never two. Why can't you find a second, different prime recipe for the same number?",
+      "recall": "State the Fundamental Theorem of Arithmetic, and how do you find HCF and LCM from prime factorisation?",
+      "answer": "every composite number has a unique prime factorisation; HCF = product of smallest common prime powers, LCM = product of highest prime powers"
+    },
+    "polynomials": {
+      "module": 4,
+      "hook": "You graph a quadratic and it crosses the x-axis at exactly two points — and those two points, added and multiplied, secretly hide the numbers in the equation itself. How can the graph 'know' the coefficients before you solve anything?",
+      "recall": "For a quadratic ax²+bx+c, give the sum and product of its zeroes in terms of a, b, c.",
+      "answer": "sum of zeroes = -b/a; product of zeroes = c/a"
+    },
+    "linear_equations": {
+      "module": 4,
+      "hook": "You draw two straight lines for two equations and they never meet, no matter how far you extend them. That means the puzzle has no answer at all. Just by looking at the equations, can you predict this BEFORE drawing?",
+      "recall": "For two linear equations, what condition on the ratios a1/a2, b1/b2, c1/c2 means NO solution (parallel lines)?",
+      "answer": "no solution (inconsistent, parallel) when a1/a2 = b1/b2 ≠ c1/c2"
+    },
+    "quadratic_equations": {
+      "module": 4,
+      "hook": "Two different quadratic equations — one has two neat answers, the other has none at all in real numbers, and you can tell which is which without solving either. What single number acts as this 'fortune teller'?",
+      "recall": "What is the discriminant, and what do D>0, D=0, D<0 each tell you about the roots?",
+      "answer": "discriminant D = b²-4ac; D>0 two distinct real roots, D=0 two equal real roots, D<0 no real roots"
+    },
+    "arithmetic_progressions": {
+      "module": 4,
+      "hook": "A young Gauss was told to add every number from 1 to 100 to keep him busy — he wrote the answer in seconds. He spotted a pattern in evenly-spaced numbers. What shortcut did he see that beats adding one by one?",
+      "recall": "Give the formula for the nth term and the sum of first n terms of an AP.",
+      "answer": "nth term a_n = a + (n-1)d; sum S_n = n/2 [2a + (n-1)d] or n/2 (first + last)"
+    },
+    "triangles_similarity": {
+      "module": 5,
+      "hook": "On a sunny day you can find the height of a tall tree without climbing it — just by measuring its shadow and your own. Two triangles you never drew are secretly identical in shape. What rule lets a shadow measure a giant?",
+      "recall": "State the Basic Proportionality Theorem (Thales) and one criterion for two triangles to be similar.",
+      "answer": "BPT: a line parallel to one side divides the other two sides in the same ratio; similarity criteria include AA, SSS, SAS"
+    },
+    "coordinate_geometry": {
+      "module": 5,
+      "hook": "Give me the two ends of a straight road as coordinates and I'll tell you its exact length — without walking it or using a ruler. Just numbers. What hidden right-angled triangle makes this possible?",
+      "recall": "Write the distance formula between points (x1,y1) and (x2,y2).",
+      "answer": "distance = √[(x2-x1)² + (y2-y1)²] (from the Pythagoras theorem)"
+    },
+    "trigonometry_basics": {
+      "module": 6,
+      "hook": "Stand a fixed distance from a tower, measure just the ANGLE up to its top, and you can calculate its exact height — no climbing, no tape. How does a single angle unlock a length you never measured?",
+      "recall": "Define sinθ, cosθ, tanθ for a right triangle, and give the value of the identity sin²θ + cos²θ.",
+      "answer": "sinθ = opposite/hypotenuse, cosθ = adjacent/hypotenuse, tanθ = opposite/adjacent; sin²θ + cos²θ = 1"
+    },
+    "surface_areas_volumes": {
+      "module": 6,
+      "hook": "An ice-cream cone and its scoop, a capsule pill, a glass shaped like a cylinder with a cone scooped out — real objects are rarely one clean shape. When you melt a sphere and recast it into a wire, one thing stays exactly the same. What is conserved?",
+      "recall": "When a solid is melted and recast into another shape, which quantity stays constant, and give the volume formula for a sphere.",
+      "answer": "volume is conserved (melting/recasting keeps volume equal); sphere volume = (4/3)πr³"
+    },
+    "probability": {
+      "module": 6,
+      "hook": "You toss a fair coin nine times and it lands heads every single time. On the tenth toss, most people feel tails is 'due'. Is the coin actually more likely to give tails now — or does it have no memory at all?",
+      "recall": "Give the formula for the probability of an event, and state the range of possible probability values.",
+      "answer": "P(event) = favourable outcomes / total outcomes; probability lies between 0 and 1 inclusive"
+    }
+  }
+}

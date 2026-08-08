@@ -1,0 +1,22 @@
+{
+  "episodes": [
+    {
+      "id": "acharya",
+      "video": "../course_assets/acharya_video/acharya_features_hi.mp4",
+      "title": "Acharya — an AI Teaching Assistant for coaching teachers & institutes | TrigunAI",
+      "desc_file": "desc_acharya.txt",
+      "tags": ["Acharya", "TrigunAI", "AI for education", "coaching institute", "AI tutor", "EdTech", "WhatsApp tutor", "agentic AI"],
+      "lang": "hi",
+      "privacy": "public"
+    },
+    {
+      "id": "acharyahi",
+      "video": "../course_assets/acharya_video/acharya_features_hi.mp4",
+      "title": "Acharya — आपकी coaching के लिए AI Teaching Assistant | TrigunAI",
+      "desc_file": "desc_acharya.txt",
+      "tags": ["Acharya", "TrigunAI", "AI for education", "coaching", "AI tutor", "EdTech", "आचार्य"],
+      "lang": "hi",
+      "privacy": "public"
+    }
+  ]
+}

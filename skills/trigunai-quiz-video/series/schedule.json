@@ -1,0 +1,21 @@
+{
+  "start_date": "2026-07-22",
+  "post_time_ist": "test: ~2 min from setup; production: 11:00",
+  "note": "4 Shorts/day = 2 topics rendered bilingual (2 EN + 2 HI). Physics Ch1 already live, so physics starts Ch2. Days 2-14 topics are placeholders until authored in series_bank.json (quiz_daily.py no-ops a day whose topics aren't authored yet).",
+  "days": [
+    { "day": 1,  "date": "2026-07-22", "topics": ["bio_ch1",  "chem_ch1"] },
+    { "day": 2,  "date": "2026-07-23", "topics": ["math_ch1", "phys_ch2"] },
+    { "day": 3,  "date": "2026-07-24", "topics": ["bio_ch2",  "chem_ch2"] },
+    { "day": 4,  "date": "2026-07-25", "topics": ["math_ch2", "phys_ch3"] },
+    { "day": 5,  "date": "2026-07-26", "topics": ["bio_ch3",  "chem_ch3"] },
+    { "day": 6,  "date": "2026-07-27", "topics": ["math_ch3", "phys_ch4"] },
+    { "day": 7,  "date": "2026-07-28", "topics": ["bio_ch4",  "chem_ch4"] },
+    { "day": 8,  "date": "2026-07-29", "topics": ["math_ch4", "phys_ch5"] },
+    { "day": 9,  "date": "2026-07-30", "topics": ["bio_ch5",  "chem_ch5"] },
+    { "day": 10, "date": "2026-07-31", "topics": ["math_ch5", "phys_ch6"] },
+    { "day": 11, "date": "2026-08-01", "topics": ["bio_ch6",  "chem_ch6"] },
+    { "day": 12, "date": "2026-08-02", "topics": ["math_ch6", "phys_ch7"] },
+    { "day": 13, "date": "2026-08-03", "topics": ["bio_ch7",  "chem_ch7"] },
+    { "day": 14, "date": "2026-08-04", "topics": ["math_ch7", "bio_ch1"] }
+  ]
+}

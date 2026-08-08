@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Acharya Student Exam-Prep — End-to-End Test Guide</title>
+<style>
+  @page { size: A4; margin: 14mm 14mm 16mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color: #2A2018; font-size: 11px; line-height: 1.5; }
+  h1 { font-size: 23px; color: #A8481A; letter-spacing: -.3px; }
+  h2 { font-size: 14.5px; color: #A8481A; margin: 16px 0 7px; padding-bottom: 4px; border-bottom: 2px solid #EFE0CE; }
+  h3 { font-size: 12px; margin: 2px 0; }
+  p { margin: 3px 0; }
+  .muted { color: #7A6A57; }
+  .gold { color: #C2591F; font-weight: 700; }
+  .cover { border: 2px solid #C2591F; border-radius: 12px; padding: 16px 18px; background: #FDF6EC; margin-bottom: 6px; }
+  .cover .sub { font-size: 12.5px; color: #7A6A57; margin-top: 4px; }
+  .meta { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 12px; font-size: 11px; }
+  .meta b { color: #A8481A; }
+  .box { border: 1px solid #EFE0CE; border-radius: 9px; padding: 9px 12px; background: #FAF5EC; margin: 8px 0; }
+  .step { border: 1px solid #EFE0CE; border-radius: 9px; padding: 9px 11px; margin: 7px 0; page-break-inside: avoid; }
+  .step .h { display: flex; align-items: baseline; gap: 8px; }
+  .step .n { flex: 0 0 auto; width: 20px; height: 20px; border-radius: 50%; background: #C2591F; color: #fff; font-weight: 800; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; }
+  .step .title { font-weight: 700; font-size: 11.5px; }
+  .do { margin: 4px 0 4px 28px; }
+  .expect { margin: 2px 0 2px 28px; color: #1f6b40; }
+  .expect b { color: #1f8b52; }
+  .check { margin: 6px 0 0 28px; display: flex; align-items: center; gap: 16px; font-size: 10.5px; }
+  .chk { display: inline-flex; align-items: center; gap: 5px; }
+  .sq { width: 12px; height: 12px; border: 1.5px solid #A08A72; border-radius: 3px; display: inline-block; }
+  .noteline { margin: 5px 0 0 28px; border-bottom: 1px dotted #A08A72; height: 13px; }
+  .part { background: #A8481A; color: #fff; font-weight: 800; font-size: 12px; padding: 6px 12px; border-radius: 7px; margin: 15px 0 6px; letter-spacing: .3px; }
+  .fb { border: 1px solid #EFE0CE; border-radius: 9px; padding: 10px 12px; margin: 7px 0; page-break-inside: avoid; }
+  .fb .q { font-weight: 700; font-size: 11.5px; margin-bottom: 3px; }
+  .lines { border-bottom: 1px dotted #A08A72; height: 15px; margin-top: 5px; }
+  .stars { font-size: 15px; letter-spacing: 3px; color: #C2591F; }
+  .warn { background: #FBEBE7; border: 1px solid #E8B8AC; border-radius: 8px; padding: 8px 11px; margin: 8px 0; font-size: 10.5px; }
+  .tip { background: #EAF7EF; border: 1px solid #B7E3C8; border-radius: 8px; padding: 8px 11px; margin: 8px 0; font-size: 10.5px; }
+  .hi { color: #6b4a2a; font-style: italic; }
+  .foot { margin-top: 14px; text-align: center; color: #A08A72; font-size: 9.5px; }
+  .pb { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Acharya — Student Exam-Prep Test Guide</h1>
+  <div class="sub">A step-by-step walkthrough to test the whole student experience end-to-end, and note what works and what needs fixing.</div>
+  <div class="meta">
+    <span><b>Tester:</b> Rohan</span>
+    <span><b>Test on:</b> acharya.trigunai.com</span>
+    <span><b>Time needed:</b> ~20–25 min</span>
+    <span><b>Date:</b> ____________</span>
+  </div>
+</div>
+
+<div class="box">
+  <b>What you're testing:</b> Acharya's self-serve exam-prep product for students — they take a challenge,
+  earn free days, sign in, and practise adaptive test papers (real IIT-JEE Physics style) that find their weak topics.
+  <p class="hi" style="margin-top:5px">हिंदी: आप एक छात्र की तरह पूरा सफ़र टेस्ट कर रहे हैं — challenge दो, free days जीतो, login करो, और अपने कमज़ोर टॉपिक पर टेस्ट दो। हर step पर लिखो क्या सही चला और क्या नहीं।</p>
+</div>
+
+<div class="box">
+  <b>Before you start:</b>
+  <p>• Use a <b>phone</b> (that's how students will use it) + a <b>Chrome/Safari</b> browser.</p>
+  <p>• Open in a <b>private / incognito window</b> so you test as a brand-new student.</p>
+  <p>• Have a <b>Gmail account</b> ready (to test Google sign-in). If Google fails, use the email option and note it.</p>
+  <p>• For each step: tick <b>✅ Works</b> or <b>✗ Problem</b>, and write a note if anything felt off.</p>
+</div>
+
+<div class="tip">💡 <b>How to give the most useful feedback:</b> pretend you are a 17-year-old student preparing for JEE/NEET.
+Would <i>you</i> trust this? Would you pay ₹199/month? Note anything confusing, slow, or that looks broken — even small things.</div>
+
+<!-- ============ PART A ============ -->
+<div class="part">PART A — First impression (the front page)</div>
+
+<div class="step">
+  <div class="h"><span class="n">1</span><span class="title">Open the front page</span></div>
+  <div class="do"><b>Do:</b> In a private window, go to <span class="gold">acharya.trigunai.com</span></div>
+  <div class="expect"><b>Expect:</b> A page asking <b>"Are you a student, or a teacher?"</b> with two cards — a Student card and a Teacher card.</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="noteline"></div>
+</div>
+
+<div class="step">
+  <div class="h"><span class="n">2</span><span class="title">Enter the student side</span></div>
+  <div class="do"><b>Do:</b> Under the Student card, tap <b>"Take the challenge →"</b></div>
+  <div class="expect"><b>Expect:</b> The "Acharya Challenge — Win up to 60 days free" page opens.</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="noteline"></div>
+</div>
+
+<!-- ============ PART B ============ -->
+<div class="part">PART B — The challenge (earn free days)</div>
+
+<div class="step">
+  <div class="h"><span class="n">3</span><span class="title">Pick a topic &amp; start</span></div>
+  <div class="do"><b>Do:</b> In "What do you want to be tested on?", type <b>JEE Physics</b> (or tap a suggestion), then tap <b>"Start the challenge →"</b></div>
+  <div class="expect"><b>Expect:</b> After a few seconds, an <b>11-question test</b> starts with a ~5-minute timer.</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="noteline"></div>
+</div>
+
+<div class="step">
+  <div class="h"><span class="n">4</span><span class="title">Answer the questions</span></div>
+  <div class="do"><b>Do:</b> Answer all 11 (get some right on purpose). Reach the end.</div>
+  <div class="expect"><b>Expect:</b> A result: <b>"🎉 You earned X days FREE"</b> + your score (e.g. 6/11).</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="do muted" style="margin-top:4px">Note the questions: were they clear? sensible? any that looked wrong? →</div>
+  <div class="noteline"></div>
+</div>
+
+<!-- ============ PART C ============ -->
+<div class="part">PART C — Sign in &amp; claim (the important one)</div>
+
+<div class="step">
+  <div class="h"><span class="n">5</span><span class="title">Sign in with Google</span></div>
+  <div class="do"><b>Do:</b> On the result screen, tap <b>"Continue with Google"</b> and pick your Gmail.</div>
+  <div class="expect"><b>Expect:</b> No error — you sign in and land on <b>your dashboard</b> ("My Acharya").</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="warn">⚠️ If you see <b>"Access blocked"</b> or any Google error — STOP, screenshot it, and use the <b>email</b> box instead (type your email → "Claim my free access"). Note the exact error below.</div>
+  <div class="noteline"></div>
+</div>
+
+<div class="step">
+  <div class="h"><span class="n">6</span><span class="title">Check the dashboard</span></div>
+  <div class="do"><b>Do:</b> Look at your dashboard.</div>
+  <div class="expect"><b>Expect:</b> "<b>X free days left</b>" (the days you earned), a "<b>My topics</b>" list with the topic you chose, an "<b>Add a topic</b>" box, and a "₹199/mo" plan card at the bottom.</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="noteline"></div>
+</div>
+
+<!-- ============ PART D ============ -->
+<div class="part pb">PART D — Add a subject &amp; open its detail</div>
+
+<div class="step">
+  <div class="h"><span class="n">7</span><span class="title">Add IIT JEE Physics</span></div>
+  <div class="do"><b>Do:</b> In "Add a topic", type <b>IIT JEE Physics</b> and tap <b>Add</b>.</div>
+  <div class="expect"><b>Expect:</b> It appears in "My topics" (you can have up to 5).</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="noteline"></div>
+</div>
+
+<div class="step">
+  <div class="h"><span class="n">8</span><span class="title">Open the subject</span></div>
+  <div class="do"><b>Do:</b> On the "IIT JEE Physics" topic, tap <b>"Take test →"</b></div>
+  <div class="expect"><b>Expect:</b> A page listing <b>chapters</b> (Kinematics, Modern Physics, Electrostatics, …), each with <b>subtopics</b> you can tick, plus "Full subject test", difficulty, and number of questions.</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="noteline"></div>
+</div>
+
+<!-- ============ PART E ============ -->
+<div class="part">PART E — Build &amp; take a real test (the heart of it)</div>
+
+<div class="step">
+  <div class="h"><span class="n">9</span><span class="title">Build a test</span></div>
+  <div class="do"><b>Do:</b> Tick one or two subtopics (e.g. Kinematics → <b>Projectile Motion</b>). Choose difficulty + <b>5 questions</b>. Tap <b>"Create test →"</b>.</div>
+  <div class="expect"><b>Expect:</b> A "writing your questions…" message, then after <b>~1–2 minutes</b> the questions appear (real GPT-5 writing, so it is slow on purpose).</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="tip">ℹ️ If a test ever fails to appear, just tap <b>Create test</b> again — it is a slow AI call and occasionally times out. Only note it if it fails <b>twice in a row</b>.</div>
+  <div class="do muted" style="margin-top:4px">How long did it take to appear? ______ (1–2 min is expected). Too slow? →</div>
+  <div class="noteline"></div>
+</div>
+
+<div class="step">
+  <div class="h"><span class="n">10</span><span class="title">⭐ Check the maths renders correctly</span></div>
+  <div class="do"><b>Do:</b> Read the questions carefully.</div>
+  <div class="expect"><b>Expect:</b> Equations, fractions and units look like <b>proper maths</b> (e.g. clean symbols) — <b>NOT</b> raw code like <span style="font-family:monospace">$\frac{a}{b}$</span> or <span style="font-family:monospace">\text{nm}</span>.</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Maths looks right</span> <span class="chk"><span class="sq"></span> ✗ Some looked like code</span></div>
+  <div class="warn">This is the most important thing to check. If ANY question shows raw code / broken symbols, screenshot it and note which chapter.</div>
+  <div class="noteline"></div>
+</div>
+
+<div class="step">
+  <div class="h"><span class="n">11</span><span class="title">Finish &amp; see the result</span></div>
+  <div class="do"><b>Do:</b> Answer all questions. Reach the end. Tap "See the answers".</div>
+  <div class="expect"><b>Expect:</b> A score, your <b>weak vs strong</b> topics, and worked <b>solutions</b> for each question.</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="tip">ℹ️ You may get <b>fewer questions than you asked for</b> (e.g. 3 of 5). That's normal — Acharya throws away any question too similar to a real past paper. Note it only if it happens every time.</div>
+  <div class="do muted" style="margin-top:4px">Were the questions good quality — like a real JEE paper? →</div>
+  <div class="noteline"></div>
+</div>
+
+<div class="step">
+  <div class="h"><span class="n">12</span><span class="title">⭐ Check the diagrams</span></div>
+  <div class="do"><b>Do:</b> Across the tests you take, watch for questions that include a <b>drawn diagram</b> (a circuit, a lens/ray sketch, a capacitor with plates). Try chapters like <b>Ray Optics</b>, <b>Current Electricity</b> or <b>Electrostatics</b> — they use figures most.</div>
+  <div class="expect"><b>Expect:</b> Where a question needs a figure, it appears as a <b>clean picture above the question text</b> — clear lines and labels, not blank or garbled.</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Diagrams look clear</span> <span class="chk"><span class="sq"></span> ✗ Blank / garbled</span> <span class="chk"><span class="sq"></span> — saw none</span></div>
+  <div class="warn">Screenshot any diagram that looks wrong and note the chapter. (Diagrams are a new feature — your eyes here are very useful.)</div>
+  <div class="noteline"></div>
+</div>
+
+<!-- ============ PART F ============ -->
+<div class="part">PART F — Progress &amp; "what to practise next"</div>
+
+<div class="step">
+  <div class="h"><span class="n">13</span><span class="title">Check your progress shows up</span></div>
+  <div class="do"><b>Do:</b> Tap "My dashboard", then open "IIT JEE Physics → Take test" again.</div>
+  <div class="expect"><b>Expect:</b> Now it shows "<b>1 test taken</b>", small <b>colour dots</b> on subtopics (red/orange/green = weak→strong), and a banner "<b>🎯 Acharya suggests: practise …</b>" (your weakest topic).</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="noteline"></div>
+</div>
+
+<div class="step">
+  <div class="h"><span class="n">14</span><span class="title">Use the suggestion</span></div>
+  <div class="do"><b>Do:</b> Tap <b>"Practise it →"</b> in the suggestion banner.</div>
+  <div class="expect"><b>Expect:</b> That subtopic gets auto-selected — you can create another test on your weak area in one tap.</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="noteline"></div>
+</div>
+
+<!-- ============ PART G ============ -->
+<div class="part">PART G — A subject we haven't built yet</div>
+
+<div class="step">
+  <div class="h"><span class="n">15</span><span class="title">Try NEET Biology (not ready yet)</span></div>
+  <div class="do"><b>Do:</b> Add a topic "<b>NEET Biology</b>" → tap "Take test".</div>
+  <div class="expect"><b>Expect:</b> A polite message: "<b>your paper is being set up — request submitted, coming soon</b>", plus a "take a quick AI test meanwhile" link. (Only IIT Physics is fully ready today.)</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="noteline"></div>
+</div>
+
+<!-- ============ PART H ============ -->
+<div class="part">PART H — Hindi</div>
+
+<div class="step">
+  <div class="h"><span class="n">16</span><span class="title">Switch to Hindi</span></div>
+  <div class="do"><b>Do:</b> During any test/challenge, tap the <b>EN / हिं</b> toggle at the top-right.</div>
+  <div class="expect"><b>Expect:</b> The interface switches to Hindi. (Note: the IIT Physics questions themselves stay in English.)</div>
+  <div class="check"><span class="chk"><span class="sq"></span> ✅ Works</span> <span class="chk"><span class="sq"></span> ✗ Problem</span></div>
+  <div class="noteline"></div>
+</div>
+
+<!-- ============ FEEDBACK ============ -->
+<div class="part pb">YOUR FEEDBACK (the most valuable part)</div>
+
+<div class="fb">
+  <div class="q">1. Overall, how did it feel? (circle)</div>
+  <div class="stars">★ ★ ★ ★ ★</div>
+  <div class="muted" style="font-size:10px">1 = confusing/broken · 5 = I'd happily use this</div>
+</div>
+
+<div class="fb">
+  <div class="q">2. Did the maths <b>and the diagrams</b> render correctly? Which chapters (if any) looked broken?</div>
+  <div class="lines"></div><div class="lines"></div>
+</div>
+
+<div class="fb">
+  <div class="q">3. How long did a test take to generate? Did the wait feel too long?</div>
+  <div class="lines"></div>
+</div>
+
+<div class="fb">
+  <div class="q">4. Anything that BROKE, errored, or confused you? (list each with the step number)</div>
+  <div class="lines"></div><div class="lines"></div><div class="lines"></div>
+</div>
+
+<div class="fb">
+  <div class="q">5. Were the questions good quality — like real JEE papers? Any that seemed wrong?</div>
+  <div class="lines"></div><div class="lines"></div>
+</div>
+
+<div class="fb">
+  <div class="q">6. As a student, would you pay ₹199/month for this? Why / why not?</div>
+  <div class="lines"></div><div class="lines"></div>
+</div>
+
+<div class="fb">
+  <div class="q">7. The single MOST confusing thing:</div>
+  <div class="lines"></div>
+</div>
+
+<div class="fb">
+  <div class="q">8. Top 3 things to fix or improve:</div>
+  <div class="lines"></div><div class="lines"></div><div class="lines"></div>
+</div>
+
+<div class="warn">⚠️ <b>Please don't generate hundreds of tests</b> — each one uses paid AI. A handful across different chapters is plenty to test it well.</div>
+
+<div class="foot">TrigunAI — Acharya · student exam-prep test guide · give this feedback to Deepak · acharya.trigunai.com</div>
+
+</body>
+</html>

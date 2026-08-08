@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Biology",
+ "subject": "Biology",
+ "chapter": "Animal Kingdom",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Biology. Animal Kingdom. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Animal Kingdom? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "Which of the following is a connecting link between annelids and arthropods?",
+   "options": [
+    "Peripatus",
+    "Limulus",
+    "Nereis",
+    "Palaemon"
+   ],
+   "answer": 0,
+   "explain": "To determine the connecting link between annelids and arthropods, we need to analyze the characteristics of the given op",
+   "voice_q": "Which of the following is a connecting link between annelids and arthropods? Five seconds... think!",
+   "voice_a": "The answer is A — Peripatus. To determine the connecting link between annelids and arthropods, we need to analyze the characteristics of the given op"
+  },
+  {
+   "type": "mcq",
+   "q": "Which group of animals is characterized by the presence of a water vascular system?",
+   "options": [
+    "Annelida",
+    "Arthropoda",
+    "Echinodermata",
+    "Mollusca"
+   ],
+   "answer": 2,
+   "explain": "The water vascular system is a unique feature of the phylum Echinodermata.",
+   "voice_q": "Which group of animals is characterized by the presence of a water vascular system? Five seconds... think!",
+   "voice_a": "The answer is C — Echinodermata. The water vascular system is a unique feature of the phylum Echinodermata."
+  },
+  {
+   "type": "mcq",
+   "q": "The structure in cockroach that stores sperm received from the male during copulation is called",
+   "options": [
+    "Seminal vesicle",
+    "Spermatheca",
+    "Ootheca",
+    "Testis sac"
+   ],
+   "answer": 1,
+   "explain": "The structure in cockroaches that stores sperm received from the male during copulation is known as the spermatheca.",
+   "voice_q": "The structure in cockroach that stores sperm received from the male during copulation is called Five seconds... think!",
+   "voice_a": "The answer is B — Spermatheca. The structure in cockroaches that stores sperm received from the male during copulation is known as the spermatheca."
+  }
+ ]
+}

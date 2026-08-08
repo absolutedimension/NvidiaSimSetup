@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Biology",
+ "subject": "Biology",
+ "chapter": "Evolution",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Biology. Evolution. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Evolution? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "The flippers of the Penguins and Dolphins are the example of the",
+   "options": [
+    "Convergent evolution",
+    "Divergent evolution",
+    "Adaptive radiation",
+    "Natural selection"
+   ],
+   "answer": 0,
+   "explain": "To determine the correct answer, we need to analyze the concept of convergent evolution.",
+   "voice_q": "The flippers of the Penguins and Dolphins are the example of the Five seconds... think!",
+   "voice_a": "The answer is A — Convergent evolution. To determine the correct answer, we need to analyze the concept of convergent evolution."
+  },
+  {
+   "type": "mcq",
+   "q": "According to Darwin's theory of evolution, what is the rate of appearance of new forms of life?",
+   "options": [
+    "Fast",
+    "Slow",
+    "Depends on the life span of the organism",
+    "None of the above"
+   ],
+   "answer": 2,
+   "explain": "According to Darwin's theory of evolution, the rate of appearance of new forms of life depends on the life span of the o",
+   "voice_q": "According to Darwin's theory of evolution, what is the rate of appearance of new forms of life? Five seconds... think!",
+   "voice_a": "The answer is C — Depends on the life span of the organism. According to Darwin's theory of evolution, the rate of appearance of new forms of life depends on the life span of the o"
+  },
+  {
+   "type": "mcq",
+   "q": "A population is in Hardy-Weinberg equilibrium for a gene with only two alleles. If the gene frequency of an allele'A' is 0.7, genotype frequency of 'Aa' is",
+   "options": [
+    "0.21",
+    "0.42",
+    "0.36",
+    "0.7"
+   ],
+   "answer": 1,
+   "explain": "For a gene that exists in two alleles, the Hardy-Weinberg equation states that p 2 + 2 p q + q 2 = 1 f A A = p 2  (genot",
+   "voice_q": "A population is in Hardy-Weinberg equilibrium for a gene with only two alleles. If the gene frequency of an allele'A' is 0.7, genotype frequency of 'Aa' is Five seconds... think!",
+   "voice_a": "The answer is B — 0.42. For a gene that exists in two alleles, the Hardy-Weinberg equation states that p 2 + 2 p q + q 2 = 1 f A A = p 2  (genot"
+  }
+ ]
+}

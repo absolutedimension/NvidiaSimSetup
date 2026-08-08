@@ -134,7 +134,8 @@ async def stream(plivo_ws: WebSocket):
         "voice": VOICE,
         "input_audio_format": "g711_ulaw",
         "output_audio_format": "g711_ulaw",
-        "input_audio_transcription": {"model": "gpt-4o-transcribe"},
+        "input_audio_transcription": {"model": "whisper-1", "language": "hi",
+                                      "prompt": "Hindi/Hinglish phone call about coaching, tuition, teachers, students, NEET, JEE, doubts, classes, fees."},
         "turn_detection": {"type": "server_vad", "threshold": 0.5,
                            "prefix_padding_ms": 300, "silence_duration_ms": 500},
     }}))

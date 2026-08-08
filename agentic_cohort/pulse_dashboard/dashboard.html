@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Acharya · Live Funnel</title>
+<style>
+  :root{
+    --bg:#0c0d10; --panel:#15171c; --panel2:#1b1e25; --line:#262a33;
+    --ink:#e9ecf1; --dim:#8b93a3; --gold:#d9a441; --grn:#3fb57a; --red:#e5604d; --ylw:#e0b23a; --blu:#5aa0e6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:1040px;margin:0 auto;padding:22px 18px 60px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  h1{font-size:19px;margin:0;font-weight:700;letter-spacing:.2px}
+  h1 small{color:var(--dim);font-weight:400;font-size:13px;margin-left:8px}
+  .meta{color:var(--dim);font-size:12.5px;text-align:right}
+  .meta b{color:var(--ink)}
+  .btn{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:13px}
+  .btn:hover{border-color:var(--gold)}
+  .gate{background:linear-gradient(180deg,#191b21,#141519);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:16px 18px;margin-bottom:16px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .gate .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+  .gate .big{font-size:30px;font-weight:800}
+  .gate.paid{border-left-color:var(--grn)} .gate.zero .big{color:var(--red)} .gate.paid .big{color:var(--grn)}
+  .gate .sub{color:var(--dim);font-size:13.5px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 14px}
+  .card .k{color:var(--dim);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+  .card .v{font-size:24px;font-weight:750;margin-top:3px}
+  .card .n{color:var(--dim);font-size:12px;margin-top:2px;min-height:15px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.cols{grid-template-columns:1fr}}
+  .sec{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+  .sec h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin:0 0 10px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  th{color:var(--dim);font-weight:500;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase}
+  td.r,th.r{text-align:right}
+  .pill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:11.5px;font-weight:600}
+  .p-paid{background:rgba(63,181,122,.15);color:var(--grn)} .p-trial{background:rgba(224,178,58,.15);color:var(--ylw)}
+  .p-free{background:rgba(139,147,163,.14);color:var(--dim)} .p-teach{background:rgba(90,160,230,.15);color:var(--blu)}
+  .srcrow{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .srcrow span:first-child{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .srcrow b{color:var(--gold)}
+  .verdict{background:#17140e;border:1px solid #3a2f16;border-radius:11px;padding:12px 15px;margin-top:4px;font-size:13.5px}
+  .verdict.warn{color:var(--ylw)} .verdict.bad{color:var(--red)} .verdict.good{color:var(--grn);background:#0f1712;border-color:#1e3a29}
+  .sep{color:var(--dim);font-size:12px;margin-top:8px}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--grn);margin-right:6px;vertical-align:middle}
+  .dot.stale{background:var(--red)}
+  #err{color:var(--red);font-size:13px;margin-bottom:10px;display:none}
+  tbody tr{cursor:pointer} tbody tr:hover td{background:var(--panel2)}
+  .hint{color:var(--dim);font-size:11.5px;margin-top:6px}
+  /* modal */
+  .ov{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:flex-start;justify-content:center;padding:40px 16px;overflow:auto;z-index:50}
+  .ov.on{display:flex}
+  .modal{background:var(--panel);border:1px solid var(--line);border-radius:14px;max-width:720px;width:100%;padding:20px 22px}
+  .modal h3{margin:0 0 2px;font-size:18px}
+  .modal .x{float:right;cursor:pointer;color:var(--dim);font-size:22px;line-height:1;border:none;background:none}
+  .kv{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--dim);font-size:13px;margin:8px 0 14px}
+  .kv b{color:var(--ink)}
+  .srcbadge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:12px;font-weight:700;background:rgba(217,164,65,.16);color:var(--gold)}
+  .msec{margin:14px 0}.msec h4{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin:0 0 7px}
+  .chip{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:12.5px;margin:0 6px 6px 0}
+  .jrow{display:flex;gap:10px;font-size:12.5px;padding:4px 0;border-bottom:1px solid var(--line)}
+  .jrow .t{color:var(--dim);min-width:78px}.jrow .p{color:var(--ink)}
+  .empty{color:var(--dim);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Acharya · Live Funnel <small>exam-prep assessment (₹249 student / ₹999+ teacher)</small></h1>
+    <div class="meta">
+      <div><span class="dot" id="dot"></span><b id="asof">—</b></div>
+      <div>refresh in <b id="cd">30</b>s · <button class="btn" id="refresh">Refresh now</button></div>
+    </div>
+  </header>
+
+  <div id="err"></div>
+
+  <div class="gate zero" id="gate">
+    <div><div class="lbl">The Gate</div><div class="big" id="gateBig">—</div></div>
+    <div class="sub" id="gateSub"></div>
+  </div>
+
+  <div class="grid" id="cards"></div>
+
+  <div class="cols">
+    <div class="sec">
+      <h2>Where from (7d traffic sources)</h2>
+      <div id="sources"></div>
+      <div class="sep" id="webline"></div>
+    </div>
+    <div class="sec">
+      <h2>Google Ads <span style="color:var(--dim);font-weight:400">(patna-students)</span></h2>
+      <div id="ads" class="sep">Enter Ads numbers on the Mac (ads.json) — hosted view shows funnel only.</div>
+      <div class="verdict" id="verdict" style="margin-top:14px"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Recent signups (exam-prep only)</h2>
+    <table>
+      <thead><tr><th>Who</th><th>Email</th><th>Role</th><th>Topic</th><th>Status</th><th class="r">Joined</th></tr></thead>
+      <tbody id="feed"></tbody>
+    </table>
+    <div class="hint">👆 Click any student or teacher to see their full activity.</div>
+    <div class="sep" id="cohort"></div>
+  </div>
+</div>
+
+<div class="ov" id="ov">
+  <div class="modal" id="modal"><button class="x" id="mx">×</button><div id="mbody"></div></div>
+</div>
+
+<script>
+const TOKEN = new URLSearchParams(location.search).get("t") || "";
+const EVERY = 30;
+let left = EVERY;
+
+function el(id){return document.getElementById(id)}
+function esc(s){return (s==null?"":String(s)).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+
+async function load(){
+  try{
+    const r = await fetch(`/admin-pulse/api?t=${encodeURIComponent(TOKEN)}`, {cache:"no-store"});
+    if(!r.ok) throw new Error("HTTP "+r.status+(r.status===403?" — bad/missing token":""));
+    render(await r.json());
+    el("err").style.display="none";
+    el("dot").classList.remove("stale");
+  }catch(e){
+    el("err").textContent = "⚠ "+e.message;
+    el("err").style.display="block";
+    el("dot").classList.add("stale");
+  }
+}
+
+function render(p){
+  const ep=p.exam_prep||{}, cc=p.course_cohort||{}, web=p.web||{};
+  el("asof").textContent = "as of "+(p.as_of||"—");
+
+  // GATE
+  const paid = ep.assess_active||0, trial = ep.assess_trialing||0;
+  const g = el("gate");
+  g.className = "gate " + (paid>0 ? "paid" : "zero");
+  el("gateBig").textContent = paid>0 ? (paid+" PAYING") : "0 — GATE NOT MOVED";
+  el("gateSub").textContent = `exam-prep paid · trials: ${trial} · started a topic: ${ep.with_topics||0}`;
+
+  // CARDS
+  const cards = [
+    ["New signups 24h", ep.new_24h||0, ""],
+    ["New signups 7d", ep.new_7d||0, ""],
+    ["Exam-prep users", ep.total||0, "total"],
+    ["Teachers", ep.teachers||0, (ep.institutes||[]).slice(0,2).join(", ")],
+    ["Logins 24h / 7d", `${ep.logins_24h||0} / ${ep.logins_7d||0}`, ""],
+    ["Unique visitors 7d", (web.uv_7d||0), `${web.uv_24h||0} today`],
+  ];
+  el("cards").innerHTML = cards.map(c=>
+    `<div class="card"><div class="k">${esc(c[0])}</div><div class="v">${esc(c[1])}</div><div class="n">${esc(c[2])}</div></div>`).join("");
+
+  // SOURCES
+  const refs = web.top_refs||[];
+  el("sources").innerHTML = refs.length
+    ? refs.slice(0,7).map(x=>`<div class="srcrow"><span>${esc(x[0])}</span><b>${esc(x[1])}</b></div>`).join("")
+    : `<div class="sep">No referrer data yet (ad/direct clicks land with no ref).</div>`;
+  el("webline").textContent = `Page views: ${web.pv_24h||0} today · ${web.pv_7d||0} in 7d`;
+
+  // FEED
+  const feed = (p.recent_signups||[]).slice(0,12);
+  el("feed").innerHTML = feed.map(s=>{
+    const pill = s.assess==="active" ? `<span class="pill p-paid">₹PAID</span>`
+      : s.assess==="trialing" ? `<span class="pill p-trial">trial</span>`
+      : `<span class="pill p-free">free</span>`;
+    const role = s.role==="teacher" ? `<span class="pill p-teach">teacher</span>` : "student";
+    const idAttr = s.id!=null ? ` data-id="${s.id}"` : "";
+    return `<tr${idAttr}><td>${esc(s.name)}</td><td>${esc(s.email)}</td><td>${role}</td>`
+      + `<td>${esc(s.topic||"—")}</td><td>${pill}</td><td class="r">${esc(s.joined)}</td></tr>`;
+  }).join("") || `<tr><td colspan="6" class="sep">Nobody yet.</td></tr>`;
+  document.querySelectorAll("#feed tr[data-id]").forEach(tr=>{
+    tr.onclick=()=>openStudent(tr.getAttribute("data-id"));
+  });
+  el("cohort").textContent = `Separate: ${cc.total||0} old course-cohort students (${cc.grandfathered||0} grandfathered) — NOT the ad funnel.`;
+
+  // VERDICT
+  let v="", cls="warn";
+  if(paid>0){ v=`✓ ${paid} paying. Find which source produced them and pour budget there.`; cls="good"; }
+  else if(trial>0){ v="⚠ Trials but no paid → the ₹249 ask isn't converting. The leak is trial→paid, not traffic."; cls="warn"; }
+  else if((ep.new_7d||0)===0){ v="• Cold start. This week's only question: does a click become an exam-prep signup?"; cls="warn"; }
+  else if((ep.with_topics||0)===0){ v="⚠ Signups but nobody took a test → activation is the leak. Push straight into a test."; cls="bad"; }
+  const ve=el("verdict"); ve.className="verdict "+cls; ve.textContent=v;
+}
+
+// ---------- per-student drill-down ----------
+async function openStudent(id){
+  const ov=el("ov"), body=el("mbody");
+  body.innerHTML="<p class='empty'>Loading…</p>"; ov.classList.add("on");
+  try{
+    const r=await fetch(`/admin-pulse/api/student?t=${encodeURIComponent(TOKEN)}&id=${id}`,{cache:"no-store"});
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    body.innerHTML=detailHTML(await r.json());
+  }catch(e){ body.innerHTML="<p class='empty'>Couldn't load: "+esc(e.message)+"</p>"; }
+}
+function secs(n){ return n==null?"":(n<60?n+"s":Math.round(n/60)+"m"); }
+function detailHTML(d){
+  const isT = d.role==="teacher";
+  let h = `<h3>${esc(d.name)} <span class="srcbadge">${esc(d.source)}</span></h3>`;
+  h += `<div class="kv"><span>${esc(d.email)}</span><span>${isT?"👩‍🏫 Teacher":"🎓 Student"}${d.institute?" · "+esc(d.institute):""}</span>`
+     + `<span>Status: <b>${esc(d.assess_status)}</b></span><span>Trial ends: <b>${esc(d.trial_end||"—")}</b></span>`
+     + `<span>Joined <b>${esc(d.joined)}</b></span><span>Last active <b>${esc(d.last_active)}</b></span></div>`;
+
+  if(!isT){
+    h += `<div class="msec"><h4>Preparing for</h4>${(d.topics||[]).map(t=>`<span class="chip">${esc(t.title)}</span>`).join("")||"<span class='empty'>No topics yet</span>"}</div>`;
+    h += `<div class="msec"><h4>Adaptive tests (${(d.adaptive_tests||[]).length})</h4>`;
+    h += (d.adaptive_tests||[]).map(a=>`<span class="chip">${esc(a.subject)} · ${a.score}/${a.total} · ${esc(a.at)}</span>`).join("") || "<span class='empty'>None completed</span>";
+    h += `</div>`;
+    h += `<div class="msec"><h4>Mock papers (${(d.papers||[]).length})</h4>`;
+    h += (d.papers||[]).map(p=>`<span class="chip">${esc(p.title)} · ${p.score}/${p.max} · ${p.correct}✓ ${p.wrong}✗ ${p.skipped}– ${p.seconds!=null?"· "+secs(p.seconds):""} · ${esc(p.at)}</span>`).join("") || "<span class='empty'>None</span>";
+    h += `</div>`;
+    if((d.weak_concepts||[]).length){
+      h += `<div class="msec"><h4>Weakest concepts</h4>`+d.weak_concepts.map(c=>`<span class="chip">${esc(c.concept)} · ${c.pct}% (${c.seen} seen)</span>`).join("")+`</div>`;
+    }
+  } else {
+    h += `<div class="msec"><h4>Tests created (${(d.created_tests||[]).length})</h4>`;
+    h += (d.created_tests||[]).map(t=>`<span class="chip">${esc(t.title||t.subject)} · ${t.n}Q · ${t.sittings} sat · ${esc(t.at)}</span>`).join("") || "<span class='empty'>None yet</span>";
+    h += `</div>`;
+  }
+
+  h += `<div class="msec"><h4>Page journey (${(d.journey||[]).length})</h4>`;
+  h += (d.journey||[]).map(j=>`<div class="jrow"><span class="t">${esc(j.at)}</span><span class="p">${esc(j.path)}</span></div>`).join("") || "<span class='empty'>No pages</span>";
+  h += `</div>`;
+  return h;
+}
+el("mx").onclick=()=>el("ov").classList.remove("on");
+el("ov").onclick=(e)=>{ if(e.target===el("ov")) el("ov").classList.remove("on"); };
+
+el("refresh").onclick=()=>{ left=EVERY; load(); };
+setInterval(()=>{ if(--left<=0){ left=EVERY; load(); } el("cd").textContent=left; }, 1000);
+load();
+</script>
+</body>
+</html>

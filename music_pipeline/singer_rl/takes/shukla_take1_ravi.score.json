@@ -1,0 +1,75 @@
+{
+  "take": "/home/ubuntu/music_out/shukla_take1_ravi.mp3",
+  "style_score_0_10": 5.45,
+  "verdict": "close-needs-tuning",
+  "subscores": {
+    "ornament": {
+      "score": 0.971,
+      "weight": 0.3
+    },
+    "melody_dominant": {
+      "score": 0.0,
+      "weight": 0.2
+    },
+    "expression": {
+      "score": 0.826,
+      "weight": 0.2
+    },
+    "dynamics": {
+      "score": 0.15,
+      "weight": 0.15
+    },
+    "tempo": {
+      "score": 0.376,
+      "weight": 0.1
+    },
+    "warmth": {
+      "score": 0.573,
+      "weight": 0.05
+    }
+  },
+  "measured": {
+    "mix": {
+      "duration_sec": 119.9,
+      "tempo_bpm": 83.4,
+      "key": "B minor",
+      "brightness_centroid_hz": 1720.0,
+      "rolloff85_hz": 3208.4,
+      "dynamic_range_db": 19.5,
+      "onset_rate_per_sec": 2.49,
+      "harmonic_percussive_ratio": 11.85,
+      "energy_arc_8": [
+        0.832,
+        0.757,
+        0.9,
+        0.813,
+        0.657,
+        0.877,
+        1.0,
+        0.557
+      ]
+    },
+    "vocal": {
+      "voiced_fraction": 0.802,
+      "pitch_range_semitones": 13.8,
+      "median_f0_hz": 130.0,
+      "ornament_rate_per_sec": 20.72,
+      "glide_semitone_per_frame": 0.1,
+      "vibrato_semitone_std": 0.874
+    }
+  },
+  "targets": {
+    "ornament": [
+      18.19,
+      20.49
+    ],
+    "harmonic_percussive": [
+      4.1,
+      6.88
+    ],
+    "tempo_band": [
+      99,
+      120
+    ]
+  }
+}

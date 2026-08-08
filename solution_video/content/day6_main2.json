@@ -1,0 +1,51 @@
+{
+ "title": "Galvanometer Shunt Conversion",
+ "q_prose": "A 100 ohm galvanometer in series with 400 ohm measures up to 10 V. What shunt resistance, written as x times ten power minus two ohm, converts it to an ammeter reading up to 10 A?",
+ "given_eq": "$R_g=100\\mathrm{ohm},\\ R_s=400\\mathrm{ohm},\\ V=10\\mathrm{V}$",
+ "q_reminder": "Find x for the required shunt resistance.",
+ "q_narration": "A galvanometer of resistance one hundred ohm is connected in series with four hundred ohm and measures up to ten volt. We need the shunt resistance to make an ammeter up to ten ampere, written as x times ten power minus two ohm. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Galvanometer current",
+   "eqs": [
+    "$R_{\\mathrm{total}}=100+400=500\\mathrm{ohm}$",
+    "$I_g=\\frac{10}{500}=0.02\\mathrm{A}$"
+   ],
+   "narration": "In the voltmeter arrangement, the galvanometer and the series resistance together have five hundred ohm resistance. So the full scale galvanometer current is zero point zero two ampere."
+  },
+  {
+   "label": "Step 2 — Galvanometer voltage",
+   "eqs": [
+    "$V_g=I_gR_g=0.02\\times100=2\\mathrm{V}$"
+   ],
+   "narration": "At full scale, only two volt appears across the galvanometer itself. This same voltage must appear across the shunt when it is connected in parallel."
+  },
+  {
+   "label": "Step 3 — Shunt current",
+   "eqs": [
+    "$I_{\\mathrm{sh}}=I-I_g=10-0.02=9.98\\mathrm{A}$",
+    "$I_gR_g=I_{\\mathrm{sh}}R_{\\mathrm{sh}}$"
+   ],
+   "narration": "For a ten ampere ammeter, the galvanometer still takes only zero point zero two ampere. The remaining nine point nine eight ampere must pass through the shunt."
+  },
+  {
+   "label": "Step 4 — Find shunt resistance",
+   "eqs": [
+    "$R_{\\mathrm{sh}}=\\frac{2}{9.98}\\approx0.2004\\mathrm{ohm}$",
+    "$0.2004\\mathrm{ohm}\\approx20.04\\times10^{-2}\\mathrm{ohm}$"
+   ],
+   "narration": "Dividing the galvanometer voltage by the shunt current gives about zero point two zero zero four ohm. In the required format, this is about twenty point zero four times ten power minus two ohm."
+  }
+ ],
+ "answer_eq": "$R_{\\mathrm{sh}}\\approx20\\times10^{-2}\\mathrm{ohm}\\Rightarrow x=20$",
+ "answer_label": "Correct option: B",
+ "answer_narration": "The required value of x is twenty. Correct option B. For more such clear solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Main · Physics · Current Electricity",
+ "options": [
+  "2",
+  "20",
+  "800",
+  "200"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

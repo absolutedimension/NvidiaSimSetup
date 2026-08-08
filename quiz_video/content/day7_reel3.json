@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Biology",
+ "subject": "Biology",
+ "chapter": "Biological Classification",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Biology. Biological Classification. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Biological Classification? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "Which of the following pairs is correctly matched with respect to their mode of nutrition?",
+   "options": [
+    "Paramecium – Holozoic",
+    "Agaricus – Autotrophic",
+    "Ulothrix – Saprophytic",
+    "Cuscuta – Insectivorous"
+   ],
+   "answer": 0,
+   "explain": "To determine the correct match of organisms with their mode of nutrition, we analyze each option:  \n\n1.",
+   "voice_q": "Which of the following pairs is correctly matched with respect to their mode of nutrition? Five seconds... think!",
+   "voice_a": "The answer is A — Paramecium – Holozoic. To determine the correct match of organisms with their mode of nutrition, we analyze each option:  \n\n1."
+  },
+  {
+   "type": "mcq",
+   "q": "After determination of their sexual forms, Deuteromycetes are NOT usually moved to?",
+   "options": [
+    "Ascomycetes",
+    "Basidiomycetes",
+    "Phycomycetes",
+    "None of the above"
+   ],
+   "answer": 2,
+   "explain": "Once perfect (sexual) stages of members of deuteromycetes were discovered they were often moved to ascomycetes and basid",
+   "voice_q": "After determination of their sexual forms, Deuteromycetes are NOT usually moved to? Five seconds... think!",
+   "voice_a": "The answer is C — Phycomycetes. Once perfect (sexual) stages of members of deuteromycetes were discovered they were often moved to ascomycetes and basid"
+  },
+  {
+   "type": "mcq",
+   "q": "The process by which root nodules are formed in leguminous plants involves which of the following bacteria?",
+   "options": [
+    "Azotobacter",
+    "Rhizobium",
+    "Clostridium",
+    "Nitrosomonas"
+   ],
+   "answer": 1,
+   "explain": "The formation of root nodules in leguminous plants is primarily associated with the symbiotic relationship between these",
+   "voice_q": "The process by which root nodules are formed in leguminous plants involves which of the following bacteria? Five seconds... think!",
+   "voice_a": "The answer is B — Rhizobium. The formation of root nodules in leguminous plants is primarily associated with the symbiotic relationship between these"
+  }
+ ]
+}

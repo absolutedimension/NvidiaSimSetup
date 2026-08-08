@@ -8,6 +8,10 @@ metadata: { "openclaw": { "emoji": "🗓️", "requires": { "bins": ["ssh","scp"
 
 Turns the 15-day plan into daily posts. Reads `~/.openclaw/content_plan.json`, produces the day's assets on the render farm, routes each to its platform, then shuts the farm down.
 
+## 🚦 MANDATORY: every video goes through the real pipeline
+- Reels/Shorts → **`studio-reel`** (which REQUIRES the avatar talking intro via `avatar_bridge.sh`). Long videos → **`studio-video`** with `presenter=avatar`.
+- **NEVER hand a reel request to an ad-hoc custom render script.** If you catch yourself about to write `render_*.py`, STOP — invoke `studio-reel`. The brand presenter "Acharya" (T4 lip-sync) must be in every content video unless the T4 is genuinely down (then it fails soft to shader-only and you LOG it). See `AVATAR_INTEGRATION.md`.
+
 ## Kill switch (check FIRST)
 ```bash
 [ -f ~/.openclaw/PAUSE_DAILY ] && { echo "DAILY PAUSED (remove ~/.openclaw/PAUSE_DAILY to resume)"; exit 0; }
@@ -37,7 +41,7 @@ fi
 ## 3. Produce + route each item in today's row
 Read the JSON fields and act:
 
-- **`hero_reel`** → `studio-script` (write a punchy 9:16 reel_script.json from `brief`+`cta`, honesty guardrail) → `studio-reel` (render 1080×1920) → then **auto-post**:
+- **`hero_reel`** → `studio-script` (write a punchy 9:16 reel_script.json from `brief`+`cta`, honesty guardrail) → `studio-reel` (render 1080×1920, **avatar talking intro default-on** — the brand presenter "Acharya" delivers the hook via `avatar_bridge.sh` to the T4; fails soft to shader-only if the T4 is down, see `AVATAR_INTEGRATION.md`) → then **auto-post**:
   - `studio-social` → Instagram + Facebook (caption = hook + CTA[`cta`] + 3–5 niche hashtags + `?utm_source=ig/fb`)
   - `studio-youtube` → YouTube Short (title from brief; **public** per "fully autonomous")
 - **`flowart_music`** (days 8, 15) → `studio-track`/`studio-music` (make the track) → `studio-flowart` (visualizer) → `studio-youtube` **FlowArt channel**.

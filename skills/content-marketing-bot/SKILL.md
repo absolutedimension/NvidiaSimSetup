@@ -87,6 +87,15 @@ bash ~/.openclaw/farm_start.sh   # start EC2 + wait SSH   |   farm_stop.sh = sto
 
 **Voice agent (Maya)** — now LIVE with real telephony on the **Gurukul VM**. Full operations (place a call, change the script, pull transcripts, all 3 channels) are in **§6** below.
 
+## 2b. Talking-avatar in every video (box A ↔ box B)
+The content engine's videos carry a **talking-avatar scene** — brand presenter "Acharya" (warm Indian
+woman educator, matches Maya's voice). Box A drives the **T4 avatar box** (`azureuser@20.17.162.96`,
+SadTalker `:8080`) via `~/.openclaw/avatar_bridge.sh`: it feeds the reel's own F5 voiceover to SadTalker
+so the lips match, then hands the clip to the EC2 farm to composite. **Reels → talking intro (hook);
+long videos → corner presenter.** Config `~/.openclaw/avatar.env`. Fails soft (T4 down → shader-only).
+Full design + SETUP (needs the T4 key + start/stop rights on Box A): `AVATAR_INTEGRATION.md`. Wired into
+`studio-reel` (step 2b), `studio-video` (`presenter=avatar`, retires broken Hallo), `studio-daily` (default-on).
+
 ## 3. Self-maintenance via Codex
 Box has `trigun-coding` (Codex gpt-5.3-codex). For any code/config change, describe it to trigun-coding, let Codex edit + validate, then `pm2 restart openclaw-gateway` if a skill changed. Always keep plans valid JSON, keep the kill-switch checks, and **mirror edits back to the repo** `azure_migration/openclaw-studio/`.
 

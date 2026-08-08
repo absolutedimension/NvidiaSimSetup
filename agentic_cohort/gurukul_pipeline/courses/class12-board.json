@@ -1,0 +1,162 @@
+{
+  "course_id": "class12-board",
+  "name": "Class 12 Board — Core Science",
+  "order": [
+    "electrostatics",
+    "capacitance",
+    "current_electricity",
+    "moving_charges_magnetism",
+    "electromagnetic_induction",
+    "alternating_current",
+    "ray_optics",
+    "wave_optics",
+    "dual_nature_photoelectric",
+    "atoms_and_nuclei",
+    "semiconductors",
+    "solutions",
+    "electrochemistry",
+    "chemical_kinetics",
+    "p_block",
+    "d_block",
+    "coordination_compounds",
+    "haloalkanes_haloarenes",
+    "alcohols_phenols_ethers",
+    "aldehydes_ketones_acids",
+    "amines",
+    "biomolecules"
+  ],
+  "concepts": {
+    "electrostatics": {
+      "module": 1,
+      "hook": "Rub a balloon on your hair and it sticks to the wall — no glue, no magnet. What invisible field is holding it there, and why does it get weaker the moment you pull it away?",
+      "recall": "State Gauss's law in one line — what does the electric flux through a closed surface depend on?",
+      "answer": "flux = q_enclosed / ε₀ — it depends only on the charge inside, not the shape of the surface"
+    },
+    "capacitance": {
+      "module": 1,
+      "hook": "A camera flash charges silently for two seconds, then dumps all that energy in a blink. Where was the energy hiding, and what decides how much a capacitor can hold?",
+      "recall": "For a parallel-plate capacitor, how does inserting a dielectric change its capacitance — and why?",
+      "answer": "C increases by factor K (C = Kε₀A/d) — the dielectric reduces the field, so more charge is stored per volt"
+    },
+    "current_electricity": {
+      "module": 2,
+      "hook": "Electrons in a wire drift slower than a snail — fractions of a millimetre per second — yet a bulb lights the instant you flip the switch. How?",
+      "recall": "State Kirchhoff's two rules and what conservation law each one comes from.",
+      "answer": "junction rule (ΣI = 0, conservation of charge); loop rule (ΣV = 0, conservation of energy)"
+    },
+    "moving_charges_magnetism": {
+      "module": 2,
+      "hook": "A stationary charge feels nothing near a magnet, but the moment it moves, an invisible sideways force shoves it. Why does motion switch the force on?",
+      "recall": "Write the magnetic force on a moving charge and say when it is zero.",
+      "answer": "F = qv×B — zero when v is parallel to B (or v = 0); force is always perpendicular to velocity, so it does no work"
+    },
+    "electromagnetic_induction": {
+      "module": 2,
+      "hook": "Move a magnet near a coil and a current appears from nowhere — no battery attached. Where is that energy coming from?",
+      "recall": "State Faraday's law and what Lenz's law adds to it.",
+      "answer": "EMF = −dΦ/dt — induced EMF equals the rate of change of flux; the minus sign (Lenz) means the induced current opposes the change"
+    },
+    "alternating_current": {
+      "module": 2,
+      "hook": "At resonance in an AC circuit the current shoots up even though you didn't increase the voltage. What secretly cancels out to let this happen?",
+      "recall": "At resonance in a series LCR circuit, what is the relation between XL and XC, and what is the impedance?",
+      "answer": "XL = XC, so impedance Z = R (minimum) and current is maximum; resonant frequency ω = 1/√(LC)"
+    },
+    "ray_optics": {
+      "module": 3,
+      "hook": "A straw looks bent where it enters water, and a swimming pool always looks shallower than it is. Both are the same trick of light — what is it?",
+      "recall": "Write the lens maker's / thin-lens formula and the sign of focal length for a converging lens.",
+      "answer": "1/v − 1/u = 1/f; f is positive for a converging (convex) lens under the Cartesian sign convention"
+    },
+    "wave_optics": {
+      "module": 3,
+      "hook": "Shine one colour of light through two thin slits and you get not two bright lines but many — dark bands where light + light gives darkness. How can adding light create black?",
+      "recall": "In Young's double-slit experiment, write the condition for a bright fringe and the fringe width.",
+      "answer": "bright when path difference = nλ; fringe width β = λD/d"
+    },
+    "dual_nature_photoelectric": {
+      "module": 4,
+      "hook": "Blast a metal with dim red light for an hour — nothing. Flash it with faint blue light — electrons fly off instantly. Why does colour beat brightness?",
+      "recall": "Write Einstein's photoelectric equation and explain the threshold frequency.",
+      "answer": "KE_max = hν − φ₀ — below the threshold frequency (ν₀ = φ₀/h) no electron is emitted, no matter how intense the light"
+    },
+    "atoms_and_nuclei": {
+      "module": 4,
+      "hook": "Break one uranium nucleus and the pieces weigh less than the original. That missing mass didn't vanish — where did it go, and how much energy did it become?",
+      "recall": "What is nuclear binding energy, and what does mass defect have to do with it?",
+      "answer": "binding energy = the mass defect Δm converted via E = Δmc² — the energy needed to split the nucleus into free nucleons"
+    },
+    "semiconductors": {
+      "module": 4,
+      "hook": "A p-n junction lets current flow one way but slams the door on the other — a one-way valve for electricity with no moving parts. What builds that invisible barrier?",
+      "recall": "What is forward vs reverse bias in a p-n junction diode, and which direction conducts?",
+      "answer": "forward bias (p to +, n to −) shrinks the depletion layer and conducts; reverse bias widens it and blocks current"
+    },
+    "solutions": {
+      "module": 5,
+      "hook": "Sprinkle salt on an icy road and the ice melts even below 0°C. The salt never touches the freezing point directly — so how does it push it down?",
+      "recall": "Name the four colligative properties and what they all depend on.",
+      "answer": "relative lowering of vapour pressure, boiling point elevation, freezing point depression, osmotic pressure — all depend on the NUMBER of solute particles, not their identity"
+    },
+    "electrochemistry": {
+      "module": 5,
+      "hook": "Two different metals dipped in solution and connected by a wire push electrons through it — a battery built from nothing but chemistry. What decides which metal gives up its electrons?",
+      "recall": "Write the Nernst equation and say what it tells you.",
+      "answer": "E = E° − (0.059/n)·log Q at 298 K — it gives the cell potential at non-standard concentrations"
+    },
+    "chemical_kinetics": {
+      "module": 5,
+      "hook": "Milk spoils in a day on the counter but lasts a week in the fridge — same reaction, wildly different speed. What did the cold actually change at the molecular level?",
+      "recall": "What is the order of a reaction, and how is it different from molecularity?",
+      "answer": "order = sum of powers of concentration in the experimental rate law (can be fractional/zero); molecularity = number of species in an elementary step (whole number)"
+    },
+    "p_block": {
+      "module": 6,
+      "hook": "Nitrogen sits happily in the air doing nothing, yet phosphorus right below it bursts into flame on contact with air. Same group — why such opposite personalities?",
+      "recall": "Why does the maximum oxidation state's stability change down a p-block group — name the effect.",
+      "answer": "the inert pair effect — the lower oxidation state becomes more stable down the group as the s-electrons resist bonding"
+    },
+    "d_block": {
+      "module": 6,
+      "hook": "Copper is red-brown, its solutions are blue, potassium dichromate is orange — transition metals are nature's paint box while sodium and calcium are all boring white. What gives them colour?",
+      "recall": "Why do most transition metal compounds show colour and variable oxidation states?",
+      "answer": "colour from d-d electronic transitions absorbing visible light; variable oxidation states because (n−1)d and ns electrons have similar energies and both take part in bonding"
+    },
+    "coordination_compounds": {
+      "module": 6,
+      "hook": "The same cobalt complex can come in two colours that are mirror images — identical formula, yet your body might accept one and reject the other. How can identical atoms behave so differently?",
+      "recall": "In crystal field theory, what causes the splitting of d-orbitals in an octahedral complex, and what is Δₒ?",
+      "answer": "ligand approach splits d-orbitals into lower t₂g and higher e_g sets; Δₒ is the energy gap between them, set by the ligand's field strength"
+    },
+    "haloalkanes_haloarenes": {
+      "module": 7,
+      "hook": "A chlorine stuck to a plain carbon chain swaps out easily, but the same chlorine on a benzene ring refuses to budge. Same atom — why is one lazy and one stubborn?",
+      "recall": "Contrast SN1 and SN2 — how does the rate depend on substrate structure in each?",
+      "answer": "SN1: rate depends only on substrate, favoured by 3° (stable carbocation); SN2: one-step, rate depends on substrate AND nucleophile, favoured by 1° (less steric hindrance)"
+    },
+    "alcohols_phenols_ethers": {
+      "module": 7,
+      "hook": "Ethanol and phenol both have an –OH group, yet phenol turns blue litmus red and ethanol doesn't. Why is one an acid and the other basically neutral?",
+      "recall": "Why is phenol more acidic than an alcohol?",
+      "answer": "the phenoxide ion is resonance-stabilised (negative charge delocalised into the ring), so phenol loses its H⁺ more readily than an alcohol"
+    },
+    "aldehydes_ketones_acids": {
+      "module": 7,
+      "hook": "Tollens' reagent coats the inside of a test tube with a mirror of silver — but only if an aldehyde is present, never a ketone. What can the aldehyde do that the ketone can't?",
+      "recall": "Give one chemical test that distinguishes an aldehyde from a ketone and the result.",
+      "answer": "Tollens' (silver mirror) or Fehling's (red Cu₂O ppt) — aldehydes are oxidised and give a positive test; ketones don't react"
+    },
+    "amines": {
+      "module": 8,
+      "hook": "Aniline is a much weaker base than ammonia, even though both dangle a lone pair of electrons ready to grab a proton. What is the benzene ring doing to that lone pair?",
+      "recall": "Why is aniline a weaker base than aliphatic amines like ethylamine?",
+      "answer": "aniline's N lone pair is delocalised into the benzene ring by resonance, so it's less available to accept a proton"
+    },
+    "biomolecules": {
+      "module": 8,
+      "hook": "Your DNA carries the entire blueprint of you in just four letters, and it copies itself perfectly because each letter can only pair with one partner. What forces that exact pairing?",
+      "recall": "Name the complementary base pairs in DNA and the bond that holds them.",
+      "answer": "A pairs with T (2 H-bonds) and G pairs with C (3 H-bonds) — hydrogen bonding gives base-pair specificity"
+    }
+  }
+}

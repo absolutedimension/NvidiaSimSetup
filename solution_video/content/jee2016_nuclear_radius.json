@@ -1,0 +1,44 @@
+{
+  "exam_tag": "JEE Advanced 2016 · Physics · Nuclear Physics",
+  "title": "Nuclear Radius from Coulomb Energy",
+  "q_prose": "The electrostatic energy of Z protons in a spherical nucleus of radius R is given below. Given the measured masses of the neutron, hydrogen, N-15 and O-15, and that their binding-energy difference is purely electrostatic, find the nuclear radius.",
+  "given_eq": "$E=\\dfrac{3}{5}\\,\\dfrac{Z(Z-1)\\,e^{2}}{4\\pi\\varepsilon_0 R}$",
+  "options": ["$2.85\\ \\mathrm{fm}$", "$3.03\\ \\mathrm{fm}$", "$3.42\\ \\mathrm{fm}$", "$3.80\\ \\mathrm{fm}$"],
+  "q_reminder": "Find R  ·  binding-energy difference of  N-15  and  O-15  is purely electrostatic",
+  "q_narration": "Here is a beautiful JEE Advanced 2016 problem from nuclear physics. The electrostatic energy of Z protons in a nucleus of radius R is three-fifths, Z times Z minus one, e squared, over four pi epsilon-nought R. We are given the masses of the neutron, hydrogen, nitrogen fifteen and oxygen fifteen, and told the difference in their binding energies is purely electrostatic. Find the radius. Let us solve it, step by step.",
+  "steps": [
+    {
+      "label": "Step 1 — Mirror nuclei",
+      "eqs": ["$^{15}_{7}\\mathrm{N}:\\ Z=7 \\qquad\\quad ^{15}_{8}\\mathrm{O}:\\ Z=8 \\qquad\\quad R_N=R_O=R$"],
+      "narration": "Step one. Nitrogen fifteen has seven protons; oxygen fifteen has eight. These are mirror nuclei, with protons and neutrons swapped, and we are told their radii are equal. So the only thing that differs between them is the electrostatic energy of the protons."
+    },
+    {
+      "label": "Step 2 — Coulomb energy difference",
+      "eqs": [
+        "$\\Delta E_c=\\dfrac{3}{5}\\dfrac{e^{2}}{4\\pi\\varepsilon_0 R}\\,\\left[\\,8\\!\\cdot\\!7-7\\!\\cdot\\!6\\,\\right]$",
+        "$\\Delta E_c=\\dfrac{3}{5}\\,(14)\\,\\dfrac{e^{2}}{4\\pi\\varepsilon_0 R}=8.4\\,\\dfrac{e^{2}}{4\\pi\\varepsilon_0 R}$"
+      ],
+      "narration": "Step two. Put each Z into the energy formula and subtract. Eight times seven is fifty-six; seven times six is forty-two; the difference is fourteen. And three-fifths of fourteen is eight point four. So the Coulomb energy difference is eight point four times e squared over four pi epsilon-nought R."
+    },
+    {
+      "label": "Step 3 — Energy difference from masses",
+      "eqs": [
+        "$\\dfrac{\\Delta E_c}{c^{2}}=(m_O-m_N)+(m_n-m_H)=0.003796\\ \\mathrm{u}$",
+        "$\\Delta E_c=0.003796\\times931.5=3.536\\ \\mathrm{MeV}$"
+      ],
+      "narration": "Step three. That same energy difference appears as a difference in mass. Oxygen minus nitrogen, plus neutron minus hydrogen, gives zero point zero zero three seven nine six atomic mass units. Multiply by nine hundred thirty-one point five, and the energy difference is three point five three six mega electron volts."
+    },
+    {
+      "label": "Step 4 — Solve for R",
+      "eqs": [
+        "$8.4\\,\\dfrac{1.44}{R}=3.536 \\qquad\\left(\\,e^{2}/4\\pi\\varepsilon_0=1.44\\ \\mathrm{MeV\\,fm}\\,\\right)$",
+        "$R=\\dfrac{8.4\\times1.44}{3.536}=3.42\\ \\mathrm{fm}$"
+      ],
+      "narration": "Step four. Now solve for R. Using e squared over four pi epsilon-nought equals one point four four mega electron volt femtometre, R equals eight point four times one point four four, divided by three point five three six. That gives three point four two femtometres."
+    }
+  ],
+  "answer_eq": "$R=3.42\\ \\mathrm{fm}$",
+  "answer_label": "Correct option:  C",
+  "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?",
+  "answer_narration": "So the radius of either nucleus is three point four two femtometres. The correct option is C. Want a full, step-by-step solution like this for any JEE or NEET question? Acharya generates unlimited practice with worked answers. The link is in the description."
+}

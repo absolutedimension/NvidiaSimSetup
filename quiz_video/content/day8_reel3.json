@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Physics",
+ "subject": "Physics",
+ "chapter": "Atomic Physics",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Physics. Atomic Physics. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Atomic Physics? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "A photon of energy 15   eV collides with H -atom. Due to this collision, H -atom gets ionized. The maximum kinetic energy of the emitted electron is",
+   "options": [
+    "1 . 4   eV",
+    "5   eV",
+    "15   eV",
+    "13 . 6   eV"
+   ],
+   "answer": 0,
+   "explain": "Energy of photon = ionization energy + K E m a x â´ K E m a x = 15   e V - 13.6   e V = 1.4   e V",
+   "voice_q": "A photon of energy 15   eV collides with H -atom. Due to this collision, H -atom gets ionized. The maximum kinetic energy of the emitted electron is Five seconds... think!",
+   "voice_a": "The answer is A — 1 . 4   eV. Energy of photon = ionization energy + K E m a x â´ K E m a x = 15   e V - 13.6   e V = 1.4   e V"
+  },
+  {
+   "type": "mcq",
+   "q": "1   amu  (atomic mass unit) mass is equal to energy of",
+   "options": [
+    "931   keV",
+    "93.1   eV",
+    "931 â MeV",
+    "9.31   MeV"
+   ],
+   "answer": 2,
+   "explain": "1   a m u = 1 .",
+   "voice_q": "1   amu  (atomic mass unit) mass is equal to energy of Five seconds... think!",
+   "voice_a": "The answer is C — 931 â MeV. 1   a m u = 1 ."
+  },
+  {
+   "type": "mcq",
+   "q": "1   mg radium has 2.68 Ã 10 8 atoms. Its half-life is 1620 years. How many radium atoms will disintegrate from 1   mg of pure radium in 3240 years?",
+   "options": [
+    "2.01 Ã 10 9",
+    "2.01 Ã 10 8",
+    "1.01 Ã 10 9",
+    "1.01 Ã 10 8"
+   ],
+   "answer": 1,
+   "explain": "Given that, the initial amount of radium N 0 = 1  mg and number of atoms in 1 mg radium = 2.68 Ã 10 8 atoms T 1 / 2 = 1",
+   "voice_q": "1   mg radium has 2.68 Ã 10 8 atoms. Its half-life is 1620 years. How many radium atoms will disintegrate from 1   mg of pure radium in 3240 years? Five seconds... think!",
+   "voice_a": "The answer is B — 2.01 Ã 10 8. Given that, the initial amount of radium N 0 = 1  mg and number of atoms in 1 mg radium = 2.68 Ã 10 8 atoms T 1 / 2 = 1"
+  }
+ ]
+}

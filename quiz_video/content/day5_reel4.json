@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "JEE Main · Physics",
+ "subject": "Physics",
+ "chapter": "Properties Of Matter",
+ "topic_line": "Real JEE Main questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Physics. Properties Of Matter. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Properties Of Matter? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "The elastic limit of brass is 379 MPa. What should be the minimum diameter of a brass rod if it is to support\na 400 N load without exceeding its elastic limit?",
+   "options": [
+    "1.16 mm",
+    "1.36 mm",
+    "1.00 mm",
+    "0.90 mm"
+   ],
+   "answer": 0,
+   "explain": "$${{400} \\over {{\\pi \\over 4}{d^2}}} = 379 \\times {10^6}$$ \n$${d^2} = {{4 \\times 400 \\times {{10}^{ - 6}}} \\over {\\pi \\t",
+   "voice_q": "The elastic limit of brass is 379 MPa. What should be the minimum diameter of a brass rod if it is to support\na 400 N load without exceeding its elastic limit? Five seconds... think!",
+   "voice_a": "The answer is A — 1.16 mm. $${{400} \\over {{\\pi \\over 4}{d^2}}} = 379 \\times {10^6}$$ \n$${d^2} = {{4 \\times 400 \\times {{10}^{ - 6}}} \\over {\\pi \\t"
+  },
+  {
+   "type": "mcq",
+   "q": "With rise in temperature, the Young's modulus of elasticity :",
+   "options": [
+    "changes erratically",
+    "increases",
+    "decreases",
+    "remains unchanged"
+   ],
+   "answer": 2,
+   "explain": "The Young's modulus of elasticity, denoted as $E$, is a measure of the stiffness of a material.",
+   "voice_q": "With rise in temperature, the Young's modulus of elasticity : Five seconds... think!",
+   "voice_a": "The answer is C — decreases. The Young's modulus of elasticity, denoted as $E$, is a measure of the stiffness of a material."
+  },
+  {
+   "type": "mcq",
+   "q": "Pressure inside two soap bubbles are 1.01 and 1.02 atmosphere, respectively. The ratio of their\nvolumes is :",
+   "options": [
+    "4 : 1",
+    "8 : 1",
+    "2 : 1",
+    "0.8 : 1"
+   ],
+   "answer": 1,
+   "explain": "$${P_{in}} = {P_0} + {{4T} \\over {{R_1}}}$$ \n$$ \\Rightarrow 1.01 = 1 + {{4T} \\over {{R_1}}}$$ \n$$ \\Rightarrow {{4T} \\ove",
+   "voice_q": "Pressure inside two soap bubbles are 1.01 and 1.02 atmosphere, respectively. The ratio of their\nvolumes is : Five seconds... think!",
+   "voice_a": "The answer is B — 8 : 1. $${P_{in}} = {P_0} + {{4T} \\over {{R_1}}}$$ \n$$ \\Rightarrow 1.01 = 1 + {{4T} \\over {{R_1}}}$$ \n$$ \\Rightarrow {{4T} \\ove"
+  }
+ ]
+}

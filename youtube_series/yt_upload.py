@@ -91,7 +91,8 @@ def upload_one(yt, ep, playlist_title, substack, privacy, state):
                     "defaultLanguage": ep.get("lang", "en"),
                     "defaultAudioLanguage": ep.get("lang", "en")},
         "status": {"privacyStatus": privacy or ep.get("privacy", "public"),
-                   "embeddable": True, "selfDeclaredMadeForKids": False},
+                   "embeddable": True,
+                   "selfDeclaredMadeForKids": ep.get("made_for_kids", False)},
     }
     print(f">> {eid}: uploading '{ep['title'][:60]}...'", flush=True)
     media = MediaFileUpload(video, chunksize=8*1024*1024, resumable=True, mimetype="video/mp4")

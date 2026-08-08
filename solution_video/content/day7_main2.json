@@ -1,0 +1,60 @@
+{
+ "title": "Determinant Parity",
+ "q_prose": "Let a, b, c be such that b times (a plus c) is non-zero. If the sum of the two given determinants is zero, determine n.",
+ "given_eq": "",
+ "q_reminder": "Find the possible values of n.",
+ "q_narration": "We are told that b times a plus c is non zero, and the sum of two determinants is zero. We need to decide the parity of n. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Relate determinants",
+   "eqs": [
+    "$D_1+D_2=0$",
+    "$D_2=\\left(-1\\right)^{n+2}D_1$"
+   ],
+   "narration": "Call the first determinant D one and the second determinant D two. Taking transpose of the second determinant does not change it. Then column interchanges and taking the common factor negative one raised to n plus two make it a multiple of D one."
+  },
+  {
+   "label": "Step 2 — Combine terms",
+   "eqs": [
+    "$D_1+\\left(-1\\right)^{n+2}D_1=0$",
+    "$\\left[1+\\left(-1\\right)^{n+2}\\right]D_1=0$"
+   ],
+   "narration": "Now substitute the relation for D two into the given sum. The whole condition becomes one bracket multiplied by D one equal to zero."
+  },
+  {
+   "label": "Step 3 — Evaluate first determinant",
+   "eqs": [
+    "$D_1=\\left(a+c\\right)\\left[\\left(2b+1\\right)\\cdot1-\\left(2b-1\\right)\\cdot\\left(-1\\right)\\right]$",
+    "$D_1=4b\\left(a+c\\right)$"
+   ],
+   "narration": "For D one, subtract column one from columns two and three, then add row three to row one. Expanding along the first row gives four b times a plus c."
+  },
+  {
+   "label": "Step 4 — Use non-zero condition",
+   "eqs": [
+    "$4b\\left(a+c\\right)\\left[1+\\left(-1\\right)^{n+2}\\right]=0$",
+    "$1+\\left(-1\\right)^{n+2}=0$"
+   ],
+   "narration": "Since b times a plus c is given non zero, four b times a plus c cannot be zero. So only the bracket must be zero."
+  },
+  {
+   "label": "Step 5 — Decide parity",
+   "eqs": [
+    "$\\left(-1\\right)^{n+2}=-1$",
+    "$n=2k+1$"
+   ],
+   "narration": "Negative one raised to a power is negative one only when the power is odd. Since n plus two has the same parity as n, n must be odd."
+  }
+ ],
+ "answer_eq": "$n=2k+1$",
+ "answer_label": "Correct option: B",
+ "answer_narration": "Therefore, n can be any odd integer, so the correct option is B. For more clear step by step practice, keep learning with Acharya.",
+ "exam_tag": "JEE Main · Mathematics · Matrices And Determinants",
+ "options": [
+  "any even integer",
+  "any odd integer",
+  "any integer",
+  "zero"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

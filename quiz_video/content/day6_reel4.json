@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Biology",
+ "subject": "Biology",
+ "chapter": "Sexual Reproduction in Flowering Plants",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Biology. Sexual Reproduction in Flowering Plants. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Sexual Reproduction in Flowering Plants? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "The connective in a stamen of a flower joins which two structures?",
+   "options": [
+    "Anther lobes",
+    "Filament and style",
+    "Petal and sepal",
+    "Ovary and stigma"
+   ],
+   "answer": 0,
+   "explain": "To determine the correct answer, we need to understand the structure of a stamen in a flower.",
+   "voice_q": "The connective in a stamen of a flower joins which two structures? Five seconds... think!",
+   "voice_a": "The answer is A — Anther lobes. To determine the correct answer, we need to understand the structure of a stamen in a flower."
+  },
+  {
+   "type": "mcq",
+   "q": "The exine layer of a pollen grain is primarily composed of which substance?",
+   "options": [
+    "Cellulose",
+    "Lignin",
+    "Sporopollenin",
+    "Cutin"
+   ],
+   "answer": 2,
+   "explain": "The exine layer of a pollen grain is primarily composed of a substance known as sporopollenin.",
+   "voice_q": "The exine layer of a pollen grain is primarily composed of which substance? Five seconds... think!",
+   "voice_a": "The answer is C — Sporopollenin. The exine layer of a pollen grain is primarily composed of a substance known as sporopollenin."
+  },
+  {
+   "type": "mcq",
+   "q": "Which of the following is an example of a parthenocarpic fruit?",
+   "options": [
+    "Apple",
+    "Banana",
+    "Mango",
+    "Pomegranate"
+   ],
+   "answer": 1,
+   "explain": "To determine which of the given fruits is an example of a parthenocarpic fruit, we first need to understand what parthen",
+   "voice_q": "Which of the following is an example of a parthenocarpic fruit? Five seconds... think!",
+   "voice_a": "The answer is B — Banana. To determine which of the given fruits is an example of a parthenocarpic fruit, we first need to understand what parthen"
+  }
+ ]
+}

@@ -76,6 +76,11 @@ RAG_SUBJECTS = {
         "match": ["cbse class 10 maths", "class 10 maths", "class10 maths", "cbse10-maths",
                   "class 10 mathematics", "class 10 math", "10th maths", "10 maths"],
     },
+    "class3-maths": {
+        "label": "Class 3 Maths", "exam": "ICSE Class 3", "subject": "Mathematics", "kw": "math",
+        "match": ["class 3 maths", "grade 3 maths", "icse class 3 maths", "class3 maths",
+                  "class 3 mathematics", "grade 3 math", "kids maths", "class 3 math"],
+    },
     "cbse12-physics": {
         "label": "Class 12 Physics", "exam": "CBSE Class 12", "subject": "Physics", "kw": "physics",
         "match": ["cbse class 12 physics", "class 12 physics", "class12 physics", "cbse12-physics",
@@ -153,6 +158,10 @@ GOALS = {
         "label": "CBSE Class 10", "tag": "Boards · Science + Maths", "emoji": "📘",
         "subjects": ["cbse10-science", "cbse10-maths"],
     },
+    "class3": {
+        "label": "Class 3 (ICSE)", "tag": "Kids · Grade 3", "emoji": "🔢",
+        "subjects": ["class3-maths"],
+    },
     "cbse-12": {
         "label": "CBSE Class 12", "tag": "Boards · PCB", "emoji": "📗",
         "subjects": ["cbse12-physics", "cbse12-chemistry", "cbse12-maths", "cbse12-biology"],
@@ -192,6 +201,8 @@ DIFFICULTY_LADDER = {
     # CBSE boards sit lowest — the NCERT-derived bank is difficulty 2 with some 3.
     "CBSE Class 10": {"easy": "2", "mix": "2-3", "hard": "3"},
     "CBSE Class 12": {"easy": "2", "mix": "2-3", "hard": "3"},
+    # ICSE Class 3 (kids) sits lowest — generated arithmetic pool at difficulty 1-2.
+    "ICSE Class 3": {"easy": "1", "mix": "1-2", "hard": "2"},
     # Banking Prelims (generated, not tagged by an LLM) — the pool is seeded at exactly these
     # bands (see project-banking-quant-generator §runbook); keep the ladder matching what's filled.
     "Banking Prelims": {"easy": "2", "mix": "2-3", "hard": "3"},
