@@ -72,6 +72,20 @@
  .misrow .mn{font-weight:800;font-size:13px;color:#8a4f10}
  .misrow .mn small{font-weight:700;color:#b07b2a}
  .misrow .mw{display:block;font-size:11.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+ /* Live it — the ONE next action banner */
+ .oneact{display:flex;align-items:center;gap:12px;text-decoration:none;background:linear-gradient(135deg,#2A2018,#3a2c20);border-radius:15px;padding:15px 16px}
+ .oneact .oa-l{flex:1;min-width:0}
+ .oneact .oa-k{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#E8B77A;font-weight:800}
+ .oneact .oa-q{color:#fff;font-weight:800;font-size:14.5px;margin-top:5px;line-height:1.4;overflow-wrap:anywhere}
+ .oneact .oa-s{color:rgba(255,255,255,.72);font-size:12px;margin-top:4px;line-height:1.45}
+ .oneact .oa-cta{flex:0 0 auto;background:var(--gold);color:#fff;font-weight:800;font-size:12.5px;border-radius:9px;padding:9px 12px;white-space:nowrap}
+ /* Phase 2b — senior misconception diagnosis (on demand) */
+ .diagbtn{width:100%;background:linear-gradient(135deg,#6D3BAF,#7E52C0);color:#fff;border:none;border-radius:12px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;cursor:pointer}
+ .diagbtn:disabled{opacity:.55}
+ .dmis{background:#F3ECFB;border:1px solid #E0D2F3;border-radius:12px;padding:12px 14px;margin-top:10px}
+ .dmis .dn{font-weight:800;font-size:13.5px;color:#5a3f86}
+ .dmis .dw{font-size:12.5px;color:#6b5a86;margin-top:3px;line-height:1.45}
+ .dmis .df{font-size:12.5px;color:#186b41;background:var(--goodbg);border-radius:8px;padding:6px 9px;margin-top:7px;line-height:1.45}
 </style>
 </head>
 <body>
@@ -82,6 +96,18 @@
     <a class="back" href="/exam-prep/dashboard">← Home</a>
   </header>
   <main>
+
+    {# ---- Live it: the ONE next action (do it in 48h) ---- #}
+    {% if one_action and one_action.href %}
+    <a class="oneact" href="{{ one_action.href }}">
+      <div class="oa-l">
+        <div class="oa-k">🎯 Your one move — do it in the next 48h</div>
+        <div class="oa-q">{{ one_action.label }}</div>
+        <div class="oa-s">{{ one_action.sub }}</div>
+      </div>
+      <div class="oa-cta">{{ one_action.cta }} ›</div>
+    </a>
+    {% endif %}
 
     <div class="stats">
       <div class="stat"><div class="v">{{ tests }}</div><div class="k">tests taken</div></div>
@@ -114,6 +140,17 @@
           <div class="misrow"><span class="mn">{{ m.name }}{% if m.n > 1 %} <small>×{{ m.n }}</small>{% endif %}</span>{% if m.why %}<span class="mw">{{ m.why }}</span>{% endif %}</div>
         {% endfor %}
       </div>
+    {% endif %}
+
+    {# ---- Phase 2b: on-demand LLM diagnosis of recurring misconceptions (seniors) ---- #}
+    {% if can_diagnose %}
+    <div class="card" id="diagCard">
+      <div class="h2" style="margin:0 0 2px">🔍 Diagnose my recurring mistakes</div>
+      <div class="note" style="text-align:left;margin:2px 0 10px">Acharya reads your wrong answers and names the <b>underlying misconceptions</b> — the patterns behind the slips, not just "you got it wrong".</div>
+      <button id="diagBtn" class="diagbtn" type="button">Diagnose my mistakes →</button>
+      <div id="diagThinking" class="note" style="display:none;text-align:center">🔍 Reading your wrong answers…</div>
+      <div id="diagOut"></div>
+    </div>
     {% endif %}
 
     {% if trend and trend|length > 1 %}
@@ -156,6 +193,8 @@
         <div class="grp">{% for t in shaky %}<span class="t k">{{ t.c }} <small>{{ t.p }}%</small></span>{% endfor %}</div>{% endif %}
       {% if strong %}<div style="margin-top:11px;font-size:12px;font-weight:800;color:var(--good)">Strong</div>
         <div class="grp">{% for t in strong %}<span class="t s">{{ t.c }} <small>{{ t.p }}%</small></span>{% endfor %}</div>{% endif %}
+      {% if mastered %}<div style="margin-top:11px;font-size:12px;font-weight:800;color:var(--good)">🔒 Mastered — you can't get these wrong anymore</div>
+        <div class="grp">{% for t in mastered %}<span class="t s">{{ t.c }} <small>{{ t.p }}%</small></span>{% endfor %}</div>{% endif %}
       {% if not weak and not shaky and not strong %}
         <div class="empty">Take a test and your strengths and weak spots will appear here.</div>
       {% endif %}
@@ -183,5 +222,22 @@
 
   </main>
 </div>
+<script>
+(function(){
+  var btn=document.getElementById('diagBtn'); if(!btn) return;
+  var out=document.getElementById('diagOut'), think=document.getElementById('diagThinking');
+  function typeset(n){var t=0;var go=function(){if(window.MathJax&&window.MathJax.typesetPromise)window.MathJax.typesetPromise([n]).catch(function(){});else if(t++<80)setTimeout(go,150);};go();}
+  btn.onclick=async function(){
+    btn.disabled=true; think.style.display='block'; out.innerHTML='';
+    var j={};
+    try{ j=await fetch('/api/misconception/diagnose',{method:'POST',credentials:'same-origin'}).then(function(r){return r.json();}); }catch(e){ j={ok:false}; }
+    think.style.display='none';
+    if(!j||!j.ok||!j.misconceptions||!j.misconceptions.length){ btn.disabled=false; out.innerHTML='<div class="note" style="text-align:left">Couldn’t find a clear pattern yet — take a few more tests and try again.</div>'; return; }
+    btn.style.display='none';
+    out.innerHTML=j.misconceptions.map(function(m){return '<div class="dmis"><div class="dn">'+m.name+'</div>'+(m.why?'<div class="dw">'+m.why+'</div>':'')+(m.fix?'<div class="df">✓ '+m.fix+'</div>':'')+'</div>';}).join('');
+    typeset(out);
+  };
+})();
+</script>
 </body>
 </html>

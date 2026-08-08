@@ -167,6 +167,56 @@ def teachback_grade(concept: str, subject_label: str, anchor: dict | None,
         return None
 
 
+DIAGNOSE = (
+    "You are Acharya, diagnosing a student's RECURRING misconceptions from exam questions they got "
+    "wrong. You are given several wrong answers — each has the QUESTION, the option THEY CHOSE, the "
+    "CORRECT answer, and the solution. Find the underlying wrong IDEAS behind their mistakes (the "
+    "pattern), NOT a per-question restatement. Group similar errors into one misconception.\n"
+    "Return STRICT JSON and nothing else: "
+    '{"misconceptions": [{"name": short label of the wrong idea, "why": one line on what they keep '
+    'getting wrong, "fix": one concrete line stating the correct idea}]}. '
+    "Give 1-4 misconceptions, most important first, each field under ~18 words, plain language. "
+    "Write any maths in LaTeX between $...$. If there is no clear pattern, return the single biggest issue."
+)
+
+
+def diagnose_misconceptions(subject_label: str, items: list) -> list | None:
+    """items = [{q, chosen, correct, solution}] of WRONG answers. Returns [{name, why, fix}] or None."""
+    if not available() or not items:
+        return None
+    lines = [f"SUBJECT / EXAM: {subject_label}", "THE STUDENT'S WRONG ANSWERS:"]
+    for i, it in enumerate(items[:12], 1):
+        lines.append(f"\n{i}. Q: {str(it.get('q', ''))[:600]}")
+        if it.get("chosen"):
+            lines.append(f"   They chose: {str(it.get('chosen', ''))[:200]}")
+        if it.get("correct"):
+            lines.append(f"   Correct answer: {str(it.get('correct', ''))[:200]}")
+        if it.get("solution"):
+            lines.append(f"   Solution: {str(it.get('solution', ''))[:600]}")
+    messages = [{"role": "system", "content": DIAGNOSE},
+                {"role": "user", "content": "\n".join(lines)}]
+    url = (f"{settings.AOAI_ENDPOINT}/openai/deployments/{settings.AOAI_DEPLOYMENT}"
+           f"/chat/completions?api-version={settings.AOAI_API_VERSION}")
+    payload = json.dumps({"messages": messages, "temperature": 0.2, "max_tokens": 500,
+                          "response_format": {"type": "json_object"}}).encode()
+    req = urllib.request.Request(
+        url, data=payload, method="POST",
+        headers={"Content-Type": "application/json", "api-key": settings.AOAI_KEY},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=45) as resp:
+            data = json.loads(resp.read().decode())
+        obj = _extract_json(data["choices"][0]["message"]["content"].strip())
+        ms = (obj or {}).get("misconceptions") or []
+        out = [{"name": str(m.get("name", ""))[:120], "why": str(m.get("why", ""))[:200],
+                "fix": str(m.get("fix", ""))[:200]}
+               for m in ms if isinstance(m, dict) and m.get("name")][:4]
+        return out or None
+    except (urllib.error.URLError, KeyError, IndexError, ValueError, TypeError, TimeoutError) as exc:
+        print(f"[tutor] diagnose failed: {exc}")
+        return None
+
+
 def chat(history: list, learner_context: str = "", problem: str = "") -> str | None:
     """history = [{role, content}]. Returns the guide's reply, or None on failure."""
     if not available():

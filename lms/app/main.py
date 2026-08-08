@@ -1272,9 +1272,10 @@ def _prep_stats(db, student) -> dict:
 
 
 @app.get("/exam-prep/smart")
-def exam_prep_smart(request: Request, db: Session = Depends(get_db)):
+def exam_prep_smart(request: Request, focus_subj: str = "", db: Session = Depends(get_db)):
     """Smart Practice: build today's set from the student's ACTUAL weak spots — weakest concepts
-    first, then anything gone cold. Falls back to their first topic for a brand-new student."""
+    first, then anything gone cold. Falls back to their first topic for a brand-new student.
+    `focus_subj` (from the Today intake card) biases the set toward that subject."""
     student = current_student(request, db)
     if not student:
         return RedirectResponse("/exam-prep/quick", status_code=302)
@@ -1291,14 +1292,24 @@ def exam_prep_smart(request: Request, db: Session = Depends(get_db)):
         return RedirectResponse("/exam-prep/worksheet?n=10", status_code=302)
     st = _prep_stats(db, student)
     picks = (st["weakest"] or []) + [d for d in st["due"] if d not in (st["weakest"] or [])]
+    # Just-in-time focus: if the student declared a subject on Today, float its weak concepts first.
+    fsubj = focus_subj.strip() if focus_subj.strip() in examgen.RAG_SUBJECTS else ""
+    if fsubj:
+        picks = [p for p in picks if p.subject == fsubj] + [p for p in picks if p.subject != fsubj]
     # Default to the goal's own first subject — a NEET student must never fall back to JEE Physics.
     goal = examgen.GOALS.get(st["goal_id"] or examgen.DEFAULT_GOAL, examgen.GOALS[examgen.DEFAULT_GOAL])
-    sel, subject = [], goal["subjects"][0]
+    sel, subject = [], (fsubj or goal["subjects"][0])
     for s in picks[:3]:
         ch = _chapter_for_concept(s.subject, s.concept)
         if ch:
             sel.append(f"{ch}::{s.concept}")
             subject = s.subject
+    if not sel and fsubj:                          # declared a focus subject not yet practised → seed it
+        chs = examgen.chapters_for_ui(fsubj)
+        if chs:
+            subject = fsubj
+            c0 = chs[0].get("concepts") or []
+            sel = [f"{chs[0]['chapter']}::{c0[0]}" if c0 else f"{chs[0]['chapter']}::"]
     if not sel:                                   # nothing practised yet → start with a topic
         topics = _student_topics(db, student)
         for t in topics:
@@ -1337,6 +1348,10 @@ def exam_prep_dashboard(request: Request, new: str = "", added: str = "", db: Se
     ads_id = settings.ADS_CONVERSION_ID if (new == "1" and settings.STUDENT_SIGNUP_CONV_LABEL and settings.ADS_CONVERSION_ID) else ""
     linked = _linked_teacher(db, student)      # B2B2C: student belongs to an institute?
     institute = ((linked.institute if linked else "") or (linked.name if linked else "")) if linked else ""
+    # Just-in-time intake: the focus the student declared for today (+ where 'Practise it' aims).
+    ff = db.query(LearnerFact).filter_by(student_id=student.id, key="focus").first()
+    focus = ff.value if ff else ""
+    focus_href = _focus_practice_href(list(examgen.RAG_SUBJECTS), focus) if focus else ""
     return templates.TemplateResponse(request, "exam_prep_dashboard.html", {
         "student": student,
         "topics": topics,
@@ -1351,6 +1366,7 @@ def exam_prep_dashboard(request: Request, new: str = "", added: str = "", db: Se
         "ads_label": settings.STUDENT_SIGNUP_CONV_LABEL,
         "linked": bool(linked), "institute": institute,   # linked → subjects are teacher-controlled
         "assignments": _student_assignments(db, student),  # 📋 assigned by your teacher
+        "focus": focus, "focus_href": focus_href,          # just-in-time intake (Today's declared focus)
         "kids": (request.headers.get("host") or "").split(":")[0].lower() in KIDS_HOSTS,  # kids skin + worksheet tile
     })
 
@@ -1375,6 +1391,42 @@ def exam_prep_topic_add(request: Request, topic: str = Form(""), db: Session = D
         reason = _add_topic(db, student, tk, title, kind)
     db.commit()
     return RedirectResponse(f"/exam-prep/dashboard?added={reason}", status_code=302)
+
+
+@app.post("/exam-prep/focus")
+def exam_prep_focus(request: Request, focus: str = Form(""), db: Session = Depends(get_db)):
+    """Just-in-time intake ('let AI ask you'): the student declares what they want to nail RIGHT NOW
+    — a signal past performance can't give (an upcoming test, a topic that feels shaky). Stored as a
+    LearnerFact and surfaced on Today; 'Practise it' aims at the best-matching subject."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep/quick", status_code=302)
+    focus = (focus or "").strip()[:120]
+    if focus.lower() in ("", "clear"):
+        f = db.query(LearnerFact).filter_by(student_id=student.id, key="focus").first()
+        if f:
+            db.delete(f); db.commit()
+        return RedirectResponse("/exam-prep/dashboard", status_code=302)
+    _set_fact(db, student, "focus", focus)
+    db.commit()
+    return RedirectResponse("/exam-prep/dashboard", status_code=302)
+
+
+def _focus_practice_href(subject_ids: list, focus: str) -> str:
+    """Aim 'Practise it' at the subject whose name best matches the student's declared focus, else
+    generic Smart Practice. Cheap keyword match — no LLM in the Today hot path."""
+    f = (focus or "").lower()
+    for sid in subject_ids:
+        label = examgen.RAG_SUBJECTS.get(sid, {}).get("label", sid).lower()
+        if any(w in f for w in label.replace("-", " ").split() if len(w) > 3):
+            return f"/exam-prep/smart?focus_subj={quote(sid)}"
+    try:
+        sid = examgen.match_subject(focus)
+        if sid:
+            return f"/exam-prep/smart?focus_subj={quote(sid)}"
+    except Exception:
+        pass
+    return "/exam-prep/smart"
 
 
 def _log_examgen_request(db, student, title: str) -> bool:
@@ -1534,6 +1586,22 @@ def exam_prep_report(request: Request, db: Session = Depends(get_db)):
     # Kids: the recurring diagnostic slips (forgot to carry, added instead of multiplied…) aggregated
     # across every worksheet — the misconception map. Seniors' pool has no tagged distractors yet.
     kid_mis = kidsws.student_misconceptions(db, student) if kids else []
+    # Forge it — "practise until you can't get it wrong": concepts truly locked in (high mastery + evidence).
+    mastered = [{"c": s.concept, "p": round(100 * mastery(s))}
+                for s in sorted(stats, key=mastery, reverse=True) if mastery(s) >= 0.85 and s.seen >= 5][:8]
+    # Live it — the ONE next action (do it in 48h). The RED BOX #1 if any, else the weakest topic.
+    one_action = None
+    if redbox:
+        one_action = {"label": redbox[0]["q"], "sub": "You were sure — and wrong. Clear this blind spot first.",
+                      "href": redbox[0]["href"], "cta": "Review it"}
+    elif suggestions:
+        s0 = suggestions[0]
+        one_action = {"label": s0["concept"], "sub": f"Your weakest topic ({s0['pct']}%). One focused session moves the needle most.",
+                      "href": s0.get("tutor_href") or s0.get("href") or "", "cta": "Start now"}
+    # Seniors: enough wrong answers on record to run the LLM misconception diagnosis on demand.
+    wrong_ct = sum(1 for a in attempts for d in (a.detail or [])
+                   if isinstance(d, dict) and d.get("ok") is False and d.get("q"))
+    can_diagnose = (not kids) and tutor.available() and wrong_ct >= 2
     return templates.TemplateResponse(request, "exam_prep_report.html", {
         "student": student, "attempts": attempts, "tests": len(attempts), "avg": avg,
         "strong": [{"c": s.concept, "p": round(100 * mastery(s))} for s in strong[:8]],
@@ -1542,6 +1610,7 @@ def exam_prep_report(request: Request, db: Session = Depends(get_db)):
         "suggestions": suggestions, "level": level, "level_label": level_label, "level_why": level_why,
         "trend": trend, "overall": round(100 * overall),
         "redbox": redbox, "calib": calib, "calib_note": calib_note, "kid_mis": kid_mis,
+        "mastered": mastered, "one_action": one_action, "can_diagnose": can_diagnose,
     })
 
 
@@ -1717,6 +1786,36 @@ async def api_teachback_grade(request: Request, db: Session = Depends(get_db)):
     if not result:
         return JSONResponse({"ok": False, "error": "grade_failed"}, status_code=502)
     return JSONResponse({"ok": True, **result})
+
+
+@app.post("/api/misconception/diagnose")
+async def api_misconception_diagnose(request: Request, db: Session = Depends(get_db)):
+    """On-demand: run an LLM pass over the student's recent WRONG answers (question + what they chose
+    + correct + solution, all persisted in TopicAttempt.detail) to name their recurring misconceptions.
+    Seniors' version of the kids misconception map. Read-only; called from a report button."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    if not tutor.available():
+        return JSONResponse({"ok": False, "error": "unavailable"}, status_code=503)
+    attempts = (db.query(TopicAttempt).filter_by(student_id=student.id)
+                .order_by(TopicAttempt.taken_at.desc()).limit(20).all())
+    items, subj_label = [], ""
+    for a in attempts:
+        if not subj_label:
+            subj_label = examgen.RAG_SUBJECTS.get(a.subject, {}).get("label", a.subject)
+        for d in (a.detail or []):
+            if isinstance(d, dict) and d.get("ok") is False and d.get("q"):
+                items.append({"q": d.get("q", ""), "chosen": d.get("chosen", ""),
+                              "correct": d.get("a", ""), "solution": d.get("explain", "")})
+        if len(items) >= 12:
+            break
+    if len(items) < 2:
+        return JSONResponse({"ok": False, "error": "not_enough"}, status_code=400)
+    ms = tutor.diagnose_misconceptions(subj_label or "your exam", items)
+    if not ms:
+        return JSONResponse({"ok": False, "error": "diagnose_failed"}, status_code=502)
+    return JSONResponse({"ok": True, "misconceptions": ms})
 
 
 def _paper_goal_id(subject: str) -> str:

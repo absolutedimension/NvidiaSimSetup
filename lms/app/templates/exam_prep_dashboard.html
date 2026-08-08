@@ -90,18 +90,97 @@
  .flash.ok{background:var(--goodbg);color:var(--good)}.flash.warn{background:#FBEBE7;color:var(--bad)}
  .stack>*+*{margin-top:16px}
 </style>
+{% if kids %}
+<style>
+  /* --- KIDS SKIN (host-gated; acharya look untouched) --- */
+  body{background:radial-gradient(120% 80% at 50% 0%,#fff3f9,#eaf4ff 55%,#f3ecff)!important;
+       font-family:"Baloo 2",-apple-system,system-ui,sans-serif!important}
+  :root{--gold:#6FC1EF;--gold2:#1E6FB5;--cream:#f2faff;--good:#22b07d;--goodbg:#e6f8f1}
+  .top .m{background:linear-gradient(135deg,#3AA6E8,#1E6FB5)!important;border-radius:16px!important}
+  .top .n{color:#1E6FB5!important}
+  .card{border-radius:22px!important;border:2.5px solid #cfe6f8!important;box-shadow:0 10px 26px rgba(120,80,20,.10)!important}
+  .cta{border-radius:18px!important}
+  h1,.brand .n{font-family:"Baloo 2",system-ui,sans-serif!important}
+  /* the worksheet hero */
+  .ws-hero{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;
+    background:linear-gradient(135deg,#3AA6E8,#1E6FB5);border-radius:22px;padding:18px 20px;margin-bottom:16px;
+    box-shadow:0 12px 28px rgba(30,111,181,.28)}
+  .ws-hero:active{transform:scale(.99)}
+  .ws-hero img{width:64px;height:64px;flex:0 0 auto;filter:drop-shadow(0 4px 8px #0003)}
+  .ws-hero .t{font-size:1.25rem;font-weight:800}
+  .ws-hero .s{font-size:.85rem;opacity:.92}
+  .ws-hero .go{margin-left:auto;background:#fff;color:#1E6FB5;border-radius:999px;padding:10px 16px;font-weight:800;white-space:nowrap}
+  .kids-guide{position:fixed;right:8px;bottom:8px;z-index:5;width:88px;pointer-events:none;
+    filter:drop-shadow(0 8px 16px rgba(60,40,10,.2));animation:kbob 3s ease-in-out infinite}
+  @keyframes kbob{50%{transform:translateY(-8px)}}
+  /* restyle the adult brown CTAs → kids colours, round everything, kids voice */
+  .cta[style*="C2591F"]{background:linear-gradient(135deg,#3AA6E8,#1E6FB5)!important;border:none!important;
+    box-shadow:0 10px 24px rgba(30,111,181,.28)!important;border-radius:18px!important}
+  .cta{border-radius:18px!important}
+  .modes a,.modes .card,.grid .card,.card{border-radius:22px!important}
+  .modes a,.modes .card{border:2px solid #cfe6f8!important}
+  h1{color:#3a2a55!important;letter-spacing:-.01em}
+  .kicker,.brand .s{color:#1E6FB5!important}
+  .ring>b{color:#1E6FB5!important}
+  .goal{border-radius:999px!important}
+  /* --- a cohesive, colourful KIDS palette (visual only) --- */
+  body{background:radial-gradient(130% 90% at 50% 0%,#fef1f8,#eef3ff 50%,#f2ecff)!important}
+  .card{background:linear-gradient(180deg,#ffffff,#f8f4ff)!important;border:2px solid #ece3ff!important;
+    box-shadow:0 8px 22px rgba(120,90,200,.10)!important}
+  /* the main mastery card gets a warm kid tint */
+  .grid .stack>.card:first-child{background:linear-gradient(160deg,#fff,#fff0f7)!important;border-color:#ffd9ec!important}
+  .ring>b{color:#1E6FB5!important}
+  .trial{border-radius:18px!important;border:2px solid #cfe6f8!important;background:linear-gradient(#fff,#eef8ff)!important}
+  .trial .b{color:#3AA6E8!important}
+  a.goal{background:linear-gradient(135deg,#fff,#eef8ff)!important;border:2px solid #ece3ff!important}
+  .nav a.on{color:#1E6FB5!important;border-bottom-color:#1E6FB5!important}
+  .top .brand .n{color:#1E6FB5!important}
+  .kicker{color:#3AA6E8!important}
+  h1 .d{color:#1E6FB5!important}
+  /* focus-area / mastery mini bars → kids gradient */
+  .bar>i,.barfill,.meter>i{background:linear-gradient(90deg,#3AA6E8,#1E6FB5)!important}
+  a.cta .k{opacity:.95}
+  /* --- TWO FOCUS ACTIONS: Create your own worksheet + Smart Practice --- */
+  .kids-actions{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:6px 0 14px}
+  .kact{display:flex;flex-direction:column;text-decoration:none;color:#fff;border-radius:24px;padding:22px 20px 18px;min-height:168px;box-shadow:0 14px 30px rgba(120,80,20,.18)}
+  .kact .ic{font-size:40px;line-height:1}
+  .kact .t{font-size:1.35rem;font-weight:800;margin-top:8px}
+  .kact .s{font-size:.9rem;opacity:.95;margin-top:4px;line-height:1.35}
+  .kact .go{margin-top:auto;align-self:flex-start;background:#fff;border-radius:999px;padding:10px 18px;font-weight:800;margin-top:14px}
+  .kact.create{background:linear-gradient(140deg,#3AA6E8,#A8481A)} .kact.create .go{color:#A8481A}
+  .kact.smart{background:linear-gradient(140deg,#3ec98d,#178a54)} .kact.smart .go{color:#178a54}
+  .kact:active{transform:scale(.99)}
+  .kids-chat{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;
+    background:linear-gradient(135deg,#1E6FB5,#1E6FB5);border-radius:20px;padding:16px 18px;margin:0 0 12px;
+    box-shadow:0 10px 24px rgba(120,80,200,.24)}
+  .kids-chat .cic{font-size:30px;flex:0 0 auto}
+  .kids-chat .cm{flex:1;min-width:0} .kids-chat .cm b{font-size:1.1rem} .kids-chat .cm small{display:block;font-size:.82rem;opacity:.94;margin-top:2px}
+  .kids-chat .cgo{margin-left:auto;background:#fff;color:#1E6FB5;border-radius:999px;padding:9px 16px;font-weight:800;white-space:nowrap}
+  .kids-chat:active{transform:scale(.99)}
+  .kids-tabs{display:flex;gap:12px;margin:0 0 18px}
+  .kids-tabs a{flex:1;text-align:center;text-decoration:none;background:#fff;border:2px solid #cfe6f8;border-radius:16px;padding:12px;font-weight:800;color:#1E6FB5;box-shadow:0 4px 12px rgba(120,80,20,.08)}
+  .kids-tabs a:active{transform:scale(.98)}
+  @media(max-width:560px){.kids-actions{grid-template-columns:1fr}}
+</style>
+{% endif %}
 </head>
 <body>
 
 <div class="top">
   <div class="brand">
-    <div class="m">अ</div>
-    <div><div class="n">Acharya</div><div class="s">your prep companion</div></div>
+    {% if kids %}<img class="m" src="/static/brand/trigunai-mark.png" alt="TrigunAI" style="object-fit:contain;background:#fff;padding:4px;border:1.5px solid #dcebf7">
+    <div><div class="n">Acharya Kids</div><div class="s">learning is fun</div></div>
+    {% else %}<div class="m">अ</div>
+    <div><div class="n">Acharya</div><div class="s">your prep companion</div></div>{% endif %}
   </div>
+  {% if not kids %}
   <a class="goal" href="/exam-prep/onboarding">🎯 Goal: {{ st.goal }}{% if st.tests %}<span class="sep">· {{ st.tests }} test{{ '' if st.tests == 1 else 's' }} taken</span>{% endif %}<span class="edit">change</span></a>
+  {% elif student.grade %}
+  <span class="goal" style="cursor:default">🎒 Class {{ student.grade }}{% if student.board %} · {{ student.board }}{% endif %}</span>
+  {% endif %}
   <div class="nav">
     <a class="on" href="/exam-prep/dashboard">Today</a>
-    <a href="/exam-prep/papers">Mock tests</a>
+    {% if not kids %}<a href="/exam-prep/papers">Mock tests</a>{% endif %}
     <a href="/exam-prep/report">Report</a>
     <a href="/logout">Log out</a>
   </div>
@@ -112,6 +191,58 @@
   {% if added == 'exists' %}<div class="flash warn">You already have that topic.</div>{% endif %}
   {% if added == 'full' %}<div class="flash warn">You've reached {{ max_topics }} topics — your ₹{{ price }} plan covers 5.</div>{% endif %}
 
+  {% if kids %}
+  <h1 style="margin:2px 0 16px">{{ greeting }}{% if student.name %}, {{ student.name.split()[0] }}{% endif %}! <span class="d">What shall we practise today? 🎈</span></h1>
+
+  {# ── Assigned by the teacher — the FIRST thing a batch student sees ── #}
+  {% if assignments %}
+  <div class="card" style="border:2px solid #1E6FB5;background:linear-gradient(180deg,#eef8ff,#fff);border-radius:20px">
+    <div class="h3"><span>📋 Given by {{ institute or 'your teacher' }}</span>
+      <span style="font-size:12px;color:#1E6FB5;font-weight:800">{{ assignments|length }} to do</span></div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+      {% for a in assignments %}
+      <div style="display:flex;align-items:center;gap:12px;border:1.5px solid #dcebf7;border-radius:14px;padding:13px 14px;background:#fff;flex-wrap:wrap">
+        <span style="font-size:22px">{{ a.icon }}</span>
+        <span style="flex:1;min-width:120px"><b style="font-size:15px">{{ a.title }}</b>
+          <span style="display:block;font-size:12px;color:#5b7a92">{{ 'Test — same for everyone' if a.kind=='kidstest' else 'Practice worksheet' }}{% if a.subject %} · {{ a.subject }}{% endif %}</span></span>
+        <a href="{{ a.url }}" style="background:linear-gradient(135deg,#22b07d,#178a54);color:#fff;border-radius:11px;padding:10px 16px;font-size:14px;font-weight:800;white-space:nowrap;text-decoration:none">▶ Solve</a>
+        <a href="{{ a.print_url or a.url }}" target="_blank" style="border:2px solid #1E6FB5;color:#1E6FB5;border-radius:11px;padding:9px 13px;font-size:14px;font-weight:800;white-space:nowrap;text-decoration:none">🖨️ Print</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% elif linked %}
+  <div class="card" style="border:2px dashed #cfe6f8;background:#f2faff;border-radius:20px;text-align:center;color:#1E6FB5;font-weight:700">
+    🎈 No worksheets from {{ institute or 'your teacher' }} yet — make your own below, any time!
+  </div>
+  {% endif %}
+
+  <div class="kids-actions">
+    <a class="kact create" href="/exam-prep/worksheet">
+      <div class="ic">✏️</div>
+      <div class="t">Make my own worksheet</div>
+      <div class="s">Pick a subject &amp; topic{% if student.grade %} for Class {{ student.grade }}{% endif %} — fresh questions every time. Solve or print.</div>
+      <span class="go">Create ▶</span>
+    </a>
+    <a class="kact smart" href="/exam-prep/smart">
+      <div class="ic">⚡</div>
+      <div class="t">Smart Practice</div>
+      <div class="s">A worksheet built just for you — questions from your weak spots.</div>
+      <span class="go">Practise ▶</span>
+    </a>
+  </div>
+  <a class="kids-chat" href="/exam-prep/chat">
+    <span class="cic">💬</span>
+    <span class="cm"><b>Chat with Acharya</b><small>Tell me what to practise and I'll build the worksheet.</small></span>
+    <span class="cgo">Chat ▶</span>
+  </a>
+  <div class="kids-tabs">
+    <a href="/exam-prep/report">📊 See my report</a>
+  </div>
+  <img class="kids-guide" src="/static/kids/assets/lion_char.png" alt="">
+  {% endif %}
+
+  {% if not kids %}
   <div class="kicker">
     {% if st.streak %}🔥 {{ st.streak }}-day streak{% else %}Let's begin{% endif %}
     {% if st.q_week %} · {{ st.q_week }} questions this week{% endif %}
@@ -129,22 +260,52 @@
     </div>
   {% endif %}
 
+  {# ---- just-in-time intake ("let AI ask you"): declare today's focus ---- #}
+  <div class="card" style="border:1.5px solid #E0D2F3;background:linear-gradient(180deg,#F7F2FD,#fff)">
+    {% if focus %}
+      <div class="h3"><span>🎯 Today's focus</span></div>
+      <div style="font-size:16px;font-weight:800;color:#5a3f86;margin:8px 0 12px">{{ focus }}</div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap">
+        <a href="{{ focus_href }}" style="background:linear-gradient(135deg,#7E52C0,#6D3BAF);color:#fff;border-radius:10px;padding:10px 16px;font-weight:800;font-size:13.5px;text-decoration:none">Practise it →</a>
+        <form method="post" action="/exam-prep/focus" style="display:inline"><input type="hidden" name="focus" value="clear"><button style="background:#fff;border:1.5px solid var(--line);color:var(--muted);border-radius:10px;padding:10px 14px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit">Change</button></form>
+      </div>
+    {% else %}
+      <div class="h3"><span>🎯 What do you want to nail today?</span></div>
+      <div style="font-size:12.5px;color:var(--muted);margin:6px 0 10px">Tell Acharya what feels shaky or what's coming up — it'll aim your practice there.</div>
+      <form method="post" action="/exam-prep/focus" style="display:flex;gap:9px;flex-wrap:wrap">
+        <input name="focus" maxlength="120" placeholder="e.g. Rotational motion, or 'test on Thermodynamics'" style="flex:1;min-width:180px;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;font-size:14px;font-family:inherit;color:var(--ink)">
+        <button style="background:linear-gradient(135deg,#7E52C0,#6D3BAF);color:#fff;border:none;border-radius:10px;padding:11px 18px;font-weight:800;font-size:14px;cursor:pointer;font-family:inherit">Set focus</button>
+      </form>
+    {% endif %}
+  </div>
+
   {% if assignments %}
   <div class="card" style="border:1.5px solid var(--gold);background:linear-gradient(180deg,#FFF7EE,#fff)">
     <div class="h3"><span>📋 Assigned by {{ institute or 'your teacher' }}</span>
       <span style="font-size:11.5px;color:var(--gold2);font-weight:700">{{ assignments|length }} to do</span></div>
     <div style="display:flex;flex-direction:column;gap:9px;margin-top:12px">
       {% for a in assignments %}
+      {% if a.worksheet %}
+      <div style="display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff">
+        <span style="font-size:20px">{{ a.icon }}</span>
+        <span style="flex:1;min-width:0"><b style="font-size:14.5px">{{ a.title }}</b>
+          <span style="display:block;font-size:11.5px;color:var(--faint)">{{ 'Test — same for everyone' if a.kind=='kidstest' else 'Practice worksheet' }}{% if a.subject %} · {{ a.subject }}{% endif %}</span></span>
+        <a href="{{ a.url }}" style="background:linear-gradient(135deg,#22b07d,#178a54);color:#fff;border-radius:9px;padding:8px 13px;font-size:13px;font-weight:800;white-space:nowrap;text-decoration:none">▶ Solve</a>
+        <a href="{{ a.print_url }}" target="_blank" style="border:1.5px solid var(--gold);color:var(--gold2);border-radius:9px;padding:7px 11px;font-size:13px;font-weight:800;white-space:nowrap;text-decoration:none">🖨️ Print</a>
+      </div>
+      {% else %}
       <a href="{{ a.url }}" style="display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:inherit;background:#fff">
         <span style="font-size:20px">{{ a.icon }}</span>
         <span style="flex:1;min-width:0"><b style="font-size:14.5px">{{ a.title }}</b>
           <span style="display:block;font-size:11.5px;color:var(--faint)">{{ 'Adaptive practice' if a.kind=='smart' else ('Mock test' if a.kind=='mock' else 'Class test') }}{% if a.subject %} · {{ a.subject }}{% endif %}</span></span>
         <span style="background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border-radius:9px;padding:8px 13px;font-size:13px;font-weight:800;white-space:nowrap">Start →</span>
       </a>
+      {% endif %}
       {% endfor %}
     </div>
   </div>
   {% endif %}
+  {% endif %}{# /not kids : hides the goal-heading, trial banner + senior assigned card for kids #}
 
   <div class="grid">
     {# ================= LEFT ================= #}
@@ -170,6 +331,8 @@
           {% else %}Your first set covers your chosen topic. As you answer, Acharya learns where you're weak and targets it.{% endif %}
         </div>
 
+        {# Kids get the two big focus actions (Create + Smart) at the top — skip the senior action stack. #}
+        {% if not kids %}
         {% if not st.has_data %}
         {# ---- FIRST RUN (zero attempts): ONE quick-win. No 55-Q mock-test trap — a cold
            visitor who opens a full timed mock, scores 3/55 with no feedback, and leaves is the
@@ -207,9 +370,11 @@
           </a>
         </div>
         {% endif %}
+        {% endif %}{# /not kids #}
       </div>
 
-      {# ---- my topics ---- #}
+      {# ---- my topics (SENIOR only — kids reach subjects via Practice Worksheets + the picker) ---- #}
+      {% if not kids %}
       <div class="card">
         <div class="h3"><span>{{ 'Your subjects' if linked else 'My topics' }}</span>
           {% if linked %}<span style="font-size:11px;color:var(--gold2);font-weight:700">📘 set by {{ institute }}</span>
@@ -234,6 +399,7 @@
           <div class="hint">You're using all {{ max_topics }} topics — the most your ₹{{ price }}/mo plan covers.</div>
         {% endif %}
       </div>
+      {% endif %}
     </div>
 
     {# ================= RIGHT ================= #}
