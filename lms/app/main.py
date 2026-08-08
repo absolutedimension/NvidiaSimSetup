@@ -1494,8 +1494,11 @@ def exam_prep_report(request: Request, db: Session = Depends(get_db)):
                 href = (f"/exam-prep/test?src=examgen&subject={quote(s.subject)}&sel={quote(sel)}"
                         f"&diff={quote(s_diff)}&n=5&title={quote(s.concept)}")
         tutor_href = (f"/exam-prep/tutor?subject={quote(s.subject)}&concept={quote(s.concept)}")
+        # teach-back (mirror test) — seniors only (kids subjects aren't RAG_SUBJECTS-keyed).
+        teachback_href = "" if kids else (f"/exam-prep/teachback?subject={quote(s.subject)}&concept={quote(s.concept)}")
         suggestions.append({"concept": s.concept, "pct": round(100 * mastery(s)),
                             "seen": s.seen, "href": href, "tutor_href": tutor_href,
+                            "teachback_href": teachback_href,
                             "prac_label": ("📝 Practice worksheet" if kids else "Practise →")})
     trend = [round(100 * a.score / a.total) for a in reversed(graded[:6]) if a.total]
     # ---- RED BOX + calibration: the "SELF" confidence signals from each attempt's detail ----
@@ -1666,6 +1669,54 @@ async def api_tutor_step(request: Request, db: Session = Depends(get_db)):
     if not reply:
         return JSONResponse({"ok": False, "error": "no reply"}, status_code=502)
     return JSONResponse({"ok": True, "reply": reply})
+
+
+@app.get("/exam-prep/teachback", response_class=HTMLResponse)
+def exam_prep_teachback(request: Request, subject: str = "", concept: str = "", db: Session = Depends(get_db)):
+    """The 'teach it back' / mirror test: the student EXPLAINS a concept in their own words and
+    Acharya grades the explanation against the reference — the deepest check of real understanding."""
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/exam-prep", status_code=302)
+    subject = (subject or "").strip()
+    concept = (concept or "").strip()[:120]
+    if subject not in examgen.RAG_SUBJECTS or not concept:
+        return RedirectResponse("/exam-prep/report", status_code=302)
+    cs = db.query(ConceptStat).filter_by(student_id=student.id, subject=subject, concept=concept).first()
+    mastery_pct = round(100 * cs.correct / cs.seen) if (cs and cs.seen) else None
+    diff = examgen.difficulty_for(subject, (mastery_pct or 0) / 100)
+    anchor = _tutor_anchor(subject, concept, diff)
+    subj_label = examgen.RAG_SUBJECTS.get(subject, {}).get("label", subject)
+    return templates.TemplateResponse(request, "teachback.html", {
+        "student": student, "subject": subject, "subject_label": subj_label,
+        "concept": concept, "anchor": anchor, "tutor_available": tutor.available(),
+    })
+
+
+@app.post("/api/teachback/grade")
+async def api_teachback_grade(request: Request, db: Session = Depends(get_db)):
+    """Grade a teach-back. Body: {subject, concept, explanation, anchor:{...}}.
+    Returns {score, correct[], gaps[], verdict}. Read-only — it doesn't change mastery."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"ok": False, "error": "login"}, status_code=401)
+    if not tutor.available():
+        return JSONResponse({"ok": False, "error": "unavailable"}, status_code=503)
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    concept = str(body.get("concept", ""))[:120]
+    subject = str(body.get("subject", ""))[:40]
+    explanation = str(body.get("explanation", "")).strip()[:3000]
+    if len(explanation) < 10:
+        return JSONResponse({"ok": False, "error": "too_short"}, status_code=400)
+    anchor = body.get("anchor") if isinstance(body.get("anchor"), dict) else None
+    subj_label = examgen.RAG_SUBJECTS.get(subject, {}).get("label", subject)
+    result = tutor.teachback_grade(concept, subj_label, anchor, explanation)
+    if not result:
+        return JSONResponse({"ok": False, "error": "grade_failed"}, status_code=502)
+    return JSONResponse({"ok": True, **result})
 
 
 def _paper_goal_id(subject: str) -> str:

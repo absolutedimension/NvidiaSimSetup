@@ -94,6 +94,79 @@ def exam_chat(history: list, concept: str, subject_label: str,
         return None
 
 
+TEACHBACK = (
+    "You are Acharya, examining whether a student TRULY understands a concept by having them explain "
+    "it in their OWN words — the 'teach it back' / mirror test (a student who can teach it, knows it). "
+    "You are given the concept, the subject/exam, an optional reference question + worked solution, and "
+    "the student's explanation (it may be typed or voice-transcribed, so ignore spelling/grammar).\n"
+    "Grade ONLY the correctness and completeness of their IDEAS. Reward correct understanding in their "
+    "own words — never require textbook phrasing. Be honest but warm and encouraging.\n"
+    "Return a STRICT JSON object and NOTHING else, with keys:\n"
+    '  "score": integer 0-100 — how well they showed real understanding,\n'
+    '  "correct": array of 0-4 short strings — the key things they GOT RIGHT,\n'
+    '  "gaps": array of 0-4 short strings — the specific things MISSING or WRONG (their blind spots),\n'
+    '  "verdict": one short, encouraging sentence on where they stand.\n'
+    "Each string under ~16 words, plain language. If the explanation is empty or off-topic, score low "
+    "and put the whole concept in gaps. Write any maths in LaTeX between $...$."
+)
+
+
+def _extract_json(text: str) -> dict | None:
+    """Parse a JSON object from an LLM reply, tolerating stray prose / code fences."""
+    try:
+        return json.loads(text)
+    except (ValueError, TypeError):
+        pass
+    start, end = text.find("{"), text.rfind("}")
+    if 0 <= start < end:
+        try:
+            return json.loads(text[start:end + 1])
+        except (ValueError, TypeError):
+            return None
+    return None
+
+
+def teachback_grade(concept: str, subject_label: str, anchor: dict | None,
+                    explanation: str) -> dict | None:
+    """Grade a student's spoken/typed explanation of a concept against the reference material.
+    Returns {score:int, correct:[...], gaps:[...], verdict:str} or None on failure."""
+    if not available():
+        return None
+    ctx = [f"CONCEPT TO EXPLAIN: {concept}", f"SUBJECT / EXAM: {subject_label}"]
+    if anchor and anchor.get("stem"):
+        ctx.append("A question that uses this concept (context for you, do NOT grade against it verbatim): "
+                   + str(anchor.get("stem", ""))[:1200])
+        if anchor.get("solution"):
+            ctx.append("Reference worked solution (ground truth to grade against): "
+                       + str(anchor["solution"])[:2000])
+    ctx.append("\nSTUDENT'S EXPLANATION (grade THIS):\n" + str(explanation)[:3000])
+    messages = [{"role": "system", "content": TEACHBACK},
+                {"role": "user", "content": "\n".join(ctx)}]
+    url = (f"{settings.AOAI_ENDPOINT}/openai/deployments/{settings.AOAI_DEPLOYMENT}"
+           f"/chat/completions?api-version={settings.AOAI_API_VERSION}")
+    payload = json.dumps({"messages": messages, "temperature": 0.2, "max_tokens": 420,
+                          "response_format": {"type": "json_object"}}).encode()
+    req = urllib.request.Request(
+        url, data=payload, method="POST",
+        headers={"Content-Type": "application/json", "api-key": settings.AOAI_KEY},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=40) as resp:
+            data = json.loads(resp.read().decode())
+        obj = _extract_json(data["choices"][0]["message"]["content"].strip())
+        if not isinstance(obj, dict):
+            return None
+        return {
+            "score": max(0, min(100, int(obj.get("score", 0) or 0))),
+            "correct": [str(x)[:140] for x in (obj.get("correct") or [])][:4],
+            "gaps": [str(x)[:140] for x in (obj.get("gaps") or [])][:4],
+            "verdict": str(obj.get("verdict", ""))[:240],
+        }
+    except (urllib.error.URLError, KeyError, IndexError, ValueError, TypeError, TimeoutError) as exc:
+        print(f"[tutor] teachback grade failed: {exc}")
+        return None
+
+
 def chat(history: list, learner_context: str = "", problem: str = "") -> str | None:
     """history = [{role, content}]. Returns the guide's reply, or None on failure."""
     if not available():

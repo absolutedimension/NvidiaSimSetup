@@ -42,6 +42,7 @@
  .sug a{text-decoration:none;border-radius:10px;padding:9px 13px;font-size:12.5px;font-weight:800;white-space:nowrap;text-align:center}
  .sug a.learn{background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff}
  .sug a.prac{background:#fff;color:var(--gold2);border:1.5px solid var(--line)}
+ .sug a.teach{background:#F3ECFB;color:#6D3BAF;border:1.5px solid #E0D2F3}
  .att{display:flex;align-items:center;gap:11px;border-bottom:1px solid var(--cream);padding:11px 2px;text-decoration:none;color:inherit}
  .att:last-child{border-bottom:none}
  .att .m{flex:1;min-width:0}.att .nm{font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -138,6 +139,7 @@
             <div class="m"><div class="nm">{{ s.concept }}</div><div class="k">{{ s.pct }}% mastery · {{ s.seen }} question{{ '' if s.seen == 1 else 's' }} seen</div></div>
             <div class="acts">
               {% if s.tutor_href %}<a class="learn" href="{{ s.tutor_href }}">📘 Understand</a>{% endif %}
+              {% if s.teachback_href %}<a class="teach" href="{{ s.teachback_href }}">🪞 Teach back</a>{% endif %}
               {% if s.href %}<a class="prac" href="{{ s.href }}">{{ s.prac_label or 'Practise →' }}</a>{% endif %}
             </div>
           </div>
