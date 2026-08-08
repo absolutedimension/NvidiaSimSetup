@@ -2630,10 +2630,39 @@ def teacher_test(request: Request, code: str, db: Session = Depends(get_db)):
         for w in (s.weak_topics or []):
             weak_count[w] = weak_count.get(w, 0) + 1
     class_weak = sorted(weak_count.items(), key=lambda kv: -kv[1])[:8]
+    # class RED BOX — where students were CONFIDENTLY wrong (sure + wrong). A class test is a FIXED
+    # pack, so grouping by question text aggregates the same question across every student's sitting.
+    # sure+wrong = a SHARED misconception (worth re-teaching), not a careless slip.
+    conf_q: dict = {}
+    csure_n = csure_ok = 0
+    for s in sits:
+        for d in (s.detail or []):
+            if not isinstance(d, dict):
+                continue
+            q = str(d.get("q", ""))[:220]
+            ok = d.get("ok")
+            if not q or ok is None:
+                continue
+            row = conf_q.setdefault(q, {"q": q, "sure_wrong": 0, "wrong": 0, "seen": 0})
+            row["seen"] += 1
+            row["wrong"] += 1 if ok is False else 0
+            if (d.get("conf") or "") == "sure":
+                csure_n += 1
+                csure_ok += 1 if ok else 0
+                if ok is False:
+                    row["sure_wrong"] += 1
+    reteach = sorted((r for r in conf_q.values() if r["sure_wrong"] > 0),
+                     key=lambda r: (-r["sure_wrong"], -r["wrong"]))[:6]
+    class_calib = None
+    if csure_n >= 3:
+        acc = round(100 * csure_ok / csure_n)
+        class_calib = {"acc": acc, "n": csure_n,
+                       "tone": "good" if acc >= 85 else ("warn" if acc >= 60 else "bad")}
     avg = round(sum(s.score for s in sits) / sum(s.total for s in sits) * 100) if sits and sum(s.total for s in sits) else 0
     share = f"{settings.BASE_URL}/t/{ct.code}"
     return templates.TemplateResponse(request, "teacher_test.html", {
         "student": teacher, "ct": ct, "sits": sits, "class_weak": class_weak,
+        "reteach": reteach, "class_calib": class_calib,
         "avg": avg, "share": share, "n_students": len(sits)})
 
 
