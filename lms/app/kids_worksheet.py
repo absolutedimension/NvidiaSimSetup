@@ -161,7 +161,25 @@ def complete(db, student, skill, results, subject=""):
         cs.seen = (cs.seen or 0) + 1
         cs.correct = (cs.correct or 0.0) + (1.0 if correct else 0.0)
     _save_state(db, sid, skill, s, row)
-    top_mis = sorted(s["misconceptions"].items(), key=lambda kv: -kv[1])[:3]
     return {"ok": True, "mastery": round(s["p_mastery"], 3), "mastered": AE.is_mastered(s),
             "attempts": s["n"], "accuracy": round(s["n_correct"] / max(1, s["n"]), 2),
-            "misconceptions": [m[0] for m in top_mis]}
+            "misconceptions": label_misconceptions(s["misconceptions"])}
+
+
+def label_misconceptions(mis_dict, k=3):
+    """Top-k stored misconceptions as readable [{id, name, why, n}] (most-frequent first)."""
+    top = sorted((mis_dict or {}).items(), key=lambda kv: -kv[1])[:k]
+    return [{**AC.mis_label(mid), "n": int(n or 0)} for mid, n in top]
+
+
+def student_misconceptions(db, student, k=4):
+    """Aggregate misconceptions across ALL of a student's skills → top-k readable [{id,name,why,n}].
+    Powers the 'common slips' card in the kids report (the same slip recurring across worksheets)."""
+    from collections import Counter
+    sid = getattr(student, "id", 0) or 0
+    cnt = Counter()
+    if sid:
+        for ks in db.query(KidsSkillState).filter_by(student_id=sid).all():
+            for mid, n in (ks.misconceptions or {}).items():
+                cnt[mid] += int(n or 0)
+    return [{**AC.mis_label(mid), "n": n} for mid, n in cnt.most_common(k)]

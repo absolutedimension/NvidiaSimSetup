@@ -1528,6 +1528,9 @@ def exam_prep_report(request: Request, db: Session = Depends(get_db)):
     calib_note = None
     if guess_n >= 3 and (guess_ok / guess_n) >= 0.6:
         calib_note = f"You underrate yourself — {round(100 * guess_ok / guess_n)}% of your “Guessing” answers were actually right."
+    # Kids: the recurring diagnostic slips (forgot to carry, added instead of multiplied…) aggregated
+    # across every worksheet — the misconception map. Seniors' pool has no tagged distractors yet.
+    kid_mis = kidsws.student_misconceptions(db, student) if kids else []
     return templates.TemplateResponse(request, "exam_prep_report.html", {
         "student": student, "attempts": attempts, "tests": len(attempts), "avg": avg,
         "strong": [{"c": s.concept, "p": round(100 * mastery(s))} for s in strong[:8]],
@@ -1535,7 +1538,7 @@ def exam_prep_report(request: Request, db: Session = Depends(get_db)):
         "weak": [{"c": s.concept, "p": round(100 * mastery(s))} for s in weak[:8]],
         "suggestions": suggestions, "level": level, "level_label": level_label, "level_why": level_why,
         "trend": trend, "overall": round(100 * overall),
-        "redbox": redbox, "calib": calib, "calib_note": calib_note,
+        "redbox": redbox, "calib": calib, "calib_note": calib_note, "kid_mis": kid_mis,
     })
 
 

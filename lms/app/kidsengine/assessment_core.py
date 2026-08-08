@@ -104,6 +104,20 @@ MISCONCEPTIONS = {
 }
 _OP2CONCEPT = {"+": "add", "-": "sub", "×": "mul", "÷": "div"}
 
+# id → readable {name, why}, so a stored misconception id can be surfaced to kids/parents
+# (worksheet completion + report) as a real diagnosis instead of a raw slug.
+MIS_LABELS = {m["id"]: {"name": m["name"], "why": m["why"]}
+              for ms in MISCONCEPTIONS.values() for m in ms}
+MIS_LABELS["near_miss"] = {"name": "computation slip", "why": "A small arithmetic slip."}
+
+
+def mis_label(mid):
+    """Readable {id, name, why} for a stored misconception id (de-slugs unknown ids as a fallback)."""
+    d = MIS_LABELS.get(mid)
+    if d:
+        return {"id": mid, "name": d["name"], "why": d["why"]}
+    return {"id": mid, "name": str(mid).replace("_", " "), "why": ""}
+
 def distractors(item, want=3):
     """For a numeric-answer item, compute misconception-tagged distractors. Returns [] if not applicable."""
     if item.get("type") != "arith":
