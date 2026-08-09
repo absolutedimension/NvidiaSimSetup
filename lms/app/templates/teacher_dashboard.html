@@ -8,6 +8,8 @@
 <link rel="icon" href="/static/brand/favicon-32.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
  :root{--bg:#FDF6EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;--line:#EFE0CE;--card:#fff;--green:#2FA968;
    --weak:#C23B22;--shaky:#E0972F;--solid:#2FA968;--serif:"Bricolage Grotesque",Georgia,serif;--sans:"Figtree",-apple-system,"Segoe UI",sans-serif}
@@ -38,6 +40,12 @@
  .flag.weak{background:#FBE3DD;color:#a83220}
  .empty{background:var(--card);border:1px dashed var(--line);border-radius:16px;padding:28px 20px;text-align:center;color:var(--muted);font-size:14px}
  .empty a{color:var(--gold2);font-weight:800;text-decoration:none}
+ .rt-note{color:var(--muted);font-size:12.5px;margin-bottom:10px;line-height:1.5}
+ .rt{background:linear-gradient(135deg,#FBEBE7,#FBE0DA);border:1px solid #E8B4A6;border-radius:12px;padding:12px 14px;margin-bottom:9px}
+ .rt-q{font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.45;overflow-wrap:anywhere}
+ .rt-n{font-size:12px;font-weight:800;color:#9c3220;margin-top:6px}
+ .calib{border-radius:11px;padding:11px 13px;font-size:12.5px;font-weight:700;line-height:1.5;margin-top:4px}
+ .calib.good{background:#E9F6EE;color:#1f8b52}.calib.warn{background:#FFF3E0;color:#9a5a12}.calib.bad{background:#FBEBE7;color:#9c3220}
 </style>
 </head>
 <body>
@@ -54,6 +62,15 @@
     {% if class_weak %}
     <div class="sec">🎯 Topics to teach next (whole class)</div>
     <div class="weakbar">{% for topic, cnt in class_weak %}<span class="wt">{{ topic }} <b>· {{ cnt }}</b></span>{% endfor %}</div>
+    {% endif %}
+
+    {% if reteach %}
+    <div class="sec">🧠 Confidently wrong — re-teach these (across all your tests)</div>
+    <div class="rt-note">Questions students were <b>sure</b> about yet got wrong — a <b>shared misconception</b>, the best use of class time.</div>
+    {% for r in reteach %}
+      <div class="rt"><div class="rt-q">{{ r.q }}</div><div class="rt-n">{{ r.sure_wrong }} student{{ '' if r.sure_wrong == 1 else 's' }} sure &amp; wrong{% if r.wrong > r.sure_wrong %} · {{ r.wrong }} wrong in total{% endif %}</div></div>
+    {% endfor %}
+    {% if class_calib %}<div class="calib {{ class_calib.tone }}">When your students said “Sure”, they were right {{ class_calib.acc }}% of the time{% if class_calib.tone != 'good' %} — a lot of confident misconceptions to clear{% endif %}.</div>{% endif %}
     {% endif %}
 
     <div class="sec">Every student — weakest first</div>
