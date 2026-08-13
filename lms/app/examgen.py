@@ -168,6 +168,14 @@ RAG_SUBJECTS = {
         "match": ["ssc science", "general science", "ssc general science", "gs science",
                   "ssc-science", "science gk", "physics chemistry biology"],
     },
+    # Current Affairs — MANUAL-ENTRY (time-sensitive, cannot be generated). Real dated questions
+    # loaded via current_affairs/import_current_affairs.py; served from /pool (generated=0).
+    "current-affairs": {
+        "label": "Current Affairs", "exam": "Current Affairs", "subject": "Current Affairs",
+        "kw": "ca",
+        "match": ["current affairs", "current affair", "current-affairs", "ca", "gk current",
+                  "current gk", "latest current affairs"],
+    },
     # ---- BPSC (Bihar PSC Prelims) — REAL past-paper PYQs (70th Prelims GS, official keys), NOT
     # generated. Served from /pool (chapter=NULL, all bands). Built via the exact-question pipeline.
     "bpsc-gs": {
@@ -219,7 +227,8 @@ GOALS = {
     },
     "ssc-cgl": {
         "label": "SSC CGL", "tag": "Govt job · SSC/Railway", "emoji": "📋",
-        "subjects": ["ssc-reasoning", "ssc-quant", "ssc-gk", "ssc-english", "ssc-science"],
+        "subjects": ["ssc-reasoning", "ssc-quant", "ssc-gk", "ssc-english", "ssc-science",
+                     "current-affairs"],
     },
     "bpsc": {
         "label": "BPSC (Bihar PSC)", "tag": "Bihar · Civil Services", "emoji": "🏛️",
@@ -260,6 +269,8 @@ DIFFICULTY_LADDER = {
     # BPSC — real Prelims GS PYQs served from /pool (chapter=NULL, difficulty bypassed via storage
     # skip_difficulty); the band values are nominal (serving ignores them for BPSC, like UPSC).
     "BPSC": {"easy": "2", "mix": "3", "hard": "3"},
+    # Current Affairs — manual-entry real dated Qs; difficulty bypassed via storage skip.
+    "Current Affairs": {"easy": "2", "mix": "2", "hard": "2"},
 }
 _DEFAULT_LADDER = {"easy": "3", "mix": "3-4", "hard": "4"}
 
