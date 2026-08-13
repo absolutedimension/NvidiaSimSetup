@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/static/brand/favicon-32.png"><link rel="apple-touch-icon" href="/static/brand/trigunai-favicon-180.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My classes — Acharya Kids</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --k-pink:#3AA6E8; --k-purple:#1E6FB5; --k-blue:#5CC0F0; --k-green:#22b07d; --k-yellow:#ffb300;
+         --ink:#10344F; --muted:#5b7a92; --line:#dcebf7; --card:#fff; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Baloo 2","Segoe UI",system-ui,sans-serif;color:var(--ink);
+       background:radial-gradient(1100px 500px at 15% -10%,#e3f3ff 0,transparent 55%),
+                  radial-gradient(1000px 500px at 95% 0,#d6ecff 0,transparent 50%),#f2faff;min-height:100vh}
+  .wrap{max-width:820px;margin:0 auto;padding:20px 16px 70px}
+  .top{display:flex;align-items:center;gap:11px;margin-bottom:18px}
+  .top .logo{width:42px;height:42px;border-radius:12px;background:#fff;padding:5px;object-fit:contain;border:1.5px solid var(--line);box-shadow:0 6px 16px rgba(58,166,232,.18)}
+  .top b{font-size:18px;font-weight:800}.top small{display:block;color:var(--muted);font-size:12px;font-weight:600;margin-top:-2px}
+  .top .sp{flex:1}
+  .top a.out{color:var(--muted);text-decoration:none;font-size:13px;font-weight:700;border:1.5px solid var(--line);border-radius:10px;padding:7px 12px}
+  h2{font-size:19px;margin:26px 0 12px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 14px 34px rgba(30,111,181,.12);margin-bottom:14px}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  label{font-weight:700;font-size:13px;margin:10px 2px 6px;display:block}
+  input,select{padding:11px 12px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:15px;background:#fff}
+  input:focus,select:focus{outline:none;border-color:var(--k-purple)}
+  .chip{border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:9px 14px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;color:var(--ink)}
+  .chip.sel{background:linear-gradient(135deg,var(--k-pink),var(--k-purple));color:#fff;border-color:transparent}
+  .btn{border:none;border-radius:14px;padding:12px 18px;font:inherit;font-weight:800;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--k-pink),var(--k-purple));cursor:pointer;box-shadow:0 10px 22px rgba(58,166,232,.28)}
+  .btn.sm{padding:9px 13px;font-size:13.5px}
+  .btn.g{background:linear-gradient(135deg,var(--k-green),#178a54);box-shadow:0 10px 22px rgba(34,176,125,.26)}
+  .btn.ghost{background:#fff;color:var(--k-purple);border:1.5px solid var(--line);box-shadow:none}
+  .batch{border:1.5px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
+  .batch .hd{display:flex;align-items:center;gap:10px}
+  .badge{background:#e6f4ff;color:var(--k-purple);border-radius:8px;padding:3px 9px;font-size:12px;font-weight:800}
+  .lnk{display:flex;gap:8px;margin-top:10px;align-items:center}
+  .lnk input{flex:1;font-size:12.5px;color:var(--muted);background:#f2faff}
+  .muted{color:var(--muted);font-size:13px}
+  .empty{color:var(--muted);font-size:14px;text-align:center;padding:14px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  td,th{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-size:12px;font-weight:700}
+  .aitem{border:1.5px solid var(--line);border-radius:14px;padding:13px;margin-bottom:9px}
+  .aitem .t{font-weight:800}
+  .pill{display:inline-block;background:#eafaf3;color:#178a54;border-radius:7px;padding:2px 8px;font-size:11.5px;font-weight:800}
+  .pill.test{background:#fff6e0;color:#b8791a}
+  .who{font-size:12.5px;color:var(--muted);margin-top:6px}
+  .weak{font-size:12px;color:#b8791a;margin-top:4px}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#10344F;color:#fff;padding:11px 18px;border-radius:12px;font-weight:700;font-size:14px;opacity:0;transition:.25s;z-index:9}
+  .toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <img class="logo" src="/static/brand/trigunai-mark.png" alt="TrigunAI">
+    <div><b>{{ student.institute or 'My classes' }}</b><small>Acharya Kids · for teachers</small></div>
+    <div class="sp"></div>
+    <a class="out" href="/logout?next=/teacher">Log out</a>
+  </div>
+
+  <!-- ── CREATE A CLASS ─────────────────────────────────────────── -->
+  <h2>➕ Create a class</h2>
+  <div class="card">
+    <label>Class name (optional)</label>
+    <input id="bLabel" type="text" placeholder="e.g. Morning Batch — Class 2" style="width:100%">
+    <label>Which class?</label>
+    <div class="row" id="bGrade"></div>
+    <label>Which board?</label>
+    <div class="row" id="bBoard"></div>
+    <div style="margin-top:16px"><button class="btn" id="bCreate">Create class + get link 🔗</button></div>
+    <p class="muted" id="bMsg" style="margin-top:10px"></p>
+  </div>
+
+  <!-- ── YOUR CLASSES ───────────────────────────────────────────── -->
+  <h2>🏫 Your classes</h2>
+  <div class="card">
+    {% if not batches %}<div class="empty">No classes yet — create one above to get a join link for your students. 🎈</div>{% endif %}
+    {% for b in batches %}
+    <div class="batch">
+      <div class="hd"><b>{{ b.label }}</b><span class="badge">Class {{ b.grade }} · {{ b.board }}</span>
+        <span class="sp" style="flex:1"></span><span class="muted">{{ b.count }} student{{ '' if b.count==1 else 's' }}</span></div>
+      <div class="lnk">
+        <input type="text" readonly value="{{ b.url }}" id="u{{ b.id }}">
+        <button class="btn sm ghost" onclick="copyLink('u{{ b.id }}')">Copy link</button>
+      </div>
+      <div style="margin-top:8px"><button class="btn sm g" onclick="assignTo({{ b.id }},{{ b.grade }})">✏️ Assign work to this class</button></div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- ── ASSIGN A WORKSHEET ─────────────────────────────────────── -->
+  <h2 id="assignHead">✏️ Assign a worksheet</h2>
+  <div class="card" id="assignCard">
+    {% if not batches %}<div class="empty">Create a class first, then assign work to it.</div>{% else %}
+    <label>To which class?</label>
+    <select id="aBatch" style="width:100%">
+      {% for b in batches %}<option value="{{ b.id }}" data-grade="{{ b.grade }}">{{ b.label }} · Class {{ b.grade }} {{ b.board }}</option>{% endfor %}
+    </select>
+    <label>Type</label>
+    <div class="row" id="aType">
+      <button class="chip sel" data-v="kidsworksheet">🖊️ Practice (fresh for each child)</button>
+      <button class="chip" data-v="kidstest">📝 Test (same sheet for all)</button>
+    </div>
+    <div class="row">
+      <div style="flex:1;min-width:150px"><label>Subject</label><select id="aSubject" style="width:100%"></select></div>
+      <div style="flex:1;min-width:150px"><label>Topic</label><select id="aChapter" style="width:100%"><option value="">✨ Mixed practice</option></select></div>
+    </div>
+    <label>How many questions?</label>
+    <div class="row" id="aCount"></div>
+    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn ghost" id="aPreview">👁️ Preview</button>
+      <button class="btn g" id="aCreate">Assign to class →</button>
+    </div>
+    <p class="muted" id="aMsg" style="margin-top:10px">Preview opens a sample worksheet in a new tab — see it before you assign.</p>
+    {% endif %}
+  </div>
+
+  <!-- ── ASSIGNED WORK ──────────────────────────────────────────── -->
+  <h2>📋 Assigned work</h2>
+  <div class="card">
+    {% if not assignments %}<div class="empty">Nothing assigned yet.</div>{% endif %}
+    {% for a in assignments %}
+    <div class="aitem">
+      <div><span class="t">{{ a.title }}</span>
+        <span class="pill {{ 'test' if a.kind=='kidstest' else '' }}">{{ 'Test' if a.kind=='kidstest' else 'Practice' }}</span>
+        <span class="muted"> · {{ a.batch }}</span></div>
+      <div class="who">✅ {{ a.done_n }} completed{% if a.done %} — {% for d in a.done %}{{ d.name }} ({{ d.score }}/{{ d.total }}){{ ', ' if not loop.last }}{% endfor %}{% endif %}</div>
+      {% if a.weak %}<div class="weak">Class needs help with: {{ a.weak|join(', ') }}</div>{% endif %}
+      <div style="margin-top:8px;display:flex;gap:8px"><a class="btn sm ghost" href="{{ a.preview_url }}" target="_blank">👁️ Preview</a><button class="btn sm ghost" onclick="unassign({{ a.id }},this)">Remove</button></div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- ── STUDENTS ───────────────────────────────────────────────── -->
+  <h2>🎓 Your students</h2>
+  <div class="card">
+    {% if not roster %}<div class="empty">No students yet — share a class link and they'll appear here.</div>{% else %}
+    <table><tr><th>Name</th><th>Class</th><th>Board</th><th>Batch</th></tr>
+    {% for s in roster %}<tr><td>{{ s.name }}</td><td>{{ ('Class '+s.grade|string) if s.grade else '—' }}</td><td>{{ s.board or '—' }}</td><td>{{ s.batch }}</td></tr>{% endfor %}
+    </table>{% endif %}
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script>
+  const GRADE_SUBJECTS = {{ grade_subjects|tojson }};
+  const BOARDS = {{ boards|tojson }};
+  const SLBL = {'Mathematics':'🔢 Maths','EVS':'🌍 EVS','English':'📖 English','GK':'🧠 GK','Hindi':'🇮🇳 Hindi'};
+  const $=id=>document.getElementById(id);
+  let bGrade=0, bBoard=(BOARDS[0]||'CBSE'), aType='kidsworksheet', aCount=8;
+  function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('on'); setTimeout(()=>t.classList.remove('on'),2200); }
+
+  // create-class chips
+  (function(){
+    const g=$('bGrade'); [1,2,3,4,5].forEach(n=>{ const c=document.createElement('button'); c.className='chip'; c.textContent='Class '+n;
+      c.onclick=()=>{ g.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); bGrade=n; }; g.appendChild(c); });
+    const b=$('bBoard'); BOARDS.forEach(bd=>{ const c=document.createElement('button'); c.className='chip'+(bd===bBoard?' sel':''); c.textContent=bd;
+      c.onclick=()=>{ b.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); bBoard=bd; }; b.appendChild(c); });
+  })();
+  $('bCreate').onclick=async function(){
+    if(!bGrade){ $('bMsg').textContent='Pick a class first 🙂'; return; }
+    this.disabled=true; $('bMsg').textContent='Creating…';
+    try{
+      const d=await fetch('/api/teacher/invite',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({label:$('bLabel').value, grade:bGrade, board:bBoard})}).then(r=>r.json());
+      if(d.ok){ toast('Class created! 🎉'); location.reload(); }
+      else { $('bMsg').textContent=d.error||'Could not create'; this.disabled=false; }
+    }catch(e){ $('bMsg').textContent='Something went wrong'; this.disabled=false; }
+  };
+
+  function copyLink(id){ const el=$(id); el.select(); try{ navigator.clipboard.writeText(el.value); }catch(e){ document.execCommand('copy'); } toast('Link copied! 🔗'); }
+
+  // assign form
+  {% if batches %}
+  (function(){
+    // count chips
+    const cc=$('aCount'); [5,8,10,12,15].forEach(k=>{ const c=document.createElement('button'); c.className='chip'+(k===aCount?' sel':''); c.textContent=k;
+      c.onclick=()=>{ cc.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); aCount=k; }; cc.appendChild(c); });
+    // type chips
+    $('aType').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{ $('aType').querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); aType=c.dataset.v; });
+    $('aBatch').onchange=fillSubjects; $('aSubject').onchange=fillChapters;
+    fillSubjects();
+  })();
+  function curGrade(){ const o=$('aBatch').selectedOptions[0]; return o? parseInt(o.dataset.grade||'3'):3; }
+  function fillSubjects(){
+    const subs=GRADE_SUBJECTS[curGrade()]||['Mathematics'];
+    const s=$('aSubject'); s.innerHTML=''; subs.forEach(x=>{ const o=document.createElement('option'); o.value=x; o.textContent=SLBL[x]||x; s.appendChild(o); });
+    fillChapters();
+  }
+  async function fillChapters(){
+    const g=curGrade(), subj=$('aSubject').value, ch=$('aChapter');
+    ch.innerHTML='<option value="">✨ Mixed practice</option>';
+    const o=$('aBatch').selectedOptions[0]; const board=(o&&o.textContent.match(/(CBSE|ICSE)/)||['CBSE'])[0];
+    try{
+      const d=await fetch(`/api/kids/curriculum?board=${encodeURIComponent(board)}&cls=${g}`).then(r=>r.json());
+      (d.subjects&&d.subjects[subj]||[]).forEach(c=>{ const op=document.createElement('option'); op.value=c; op.textContent=c.length>34?c.slice(0,34)+'…':c; ch.appendChild(op); });
+    }catch(e){}
+  }
+  function curBoard(){ const o=$('aBatch').selectedOptions[0]; return (o&&o.textContent.match(/(CBSE|ICSE)/)||['CBSE'])[0]; }
+  function assignTo(bid,grade){ $('aBatch').value=bid; fillSubjects(); $('assignHead').scrollIntoView({behavior:'smooth'}); }
+  $('aPreview').onclick=function(){
+    const u=`/exam-prep/worksheet?board=${encodeURIComponent(curBoard())}&cls=${curGrade()}`
+      +`&subject=${encodeURIComponent($('aSubject').value)}&chapter=${encodeURIComponent($('aChapter').value)}&n=${aCount}&preview=1`;
+    window.open(u,'_blank');
+  };
+  $('aCreate').onclick=async function(){
+    this.disabled=true; $('aMsg').textContent='Assigning…';
+    const ref=`${$('aSubject').value}|${$('aChapter').value}|${aCount}`;
+    try{
+      const d=await fetch('/api/teacher/assign',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({kind:aType, ref, invite_id:$('aBatch').value})}).then(r=>r.json());
+      if(d.ok){ toast('Assigned! ✅'); location.reload(); }
+      else { $('aMsg').textContent=d.error||'Could not assign'; this.disabled=false; }
+    }catch(e){ $('aMsg').textContent='Something went wrong'; this.disabled=false; }
+  };
+  {% else %}
+  function assignTo(){ toast('Create a class first 🙂'); }
+  {% endif %}
+
+  async function unassign(id,btn){ btn.disabled=true;
+    try{ await fetch('/api/teacher/assign/'+id+'/remove',{method:'POST'}); toast('Removed'); location.reload(); }catch(e){ btn.disabled=false; } }
+</script>
+</body>
+</html>

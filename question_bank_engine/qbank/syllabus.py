@@ -177,6 +177,9 @@ from .neet_biology import NEET_BIOLOGY
 from .neet_physics import NEET_PHYSICS
 from .neet_chemistry import NEET_CHEMISTRY
 from .banking_quant import BANKING_QUANT
+from .reasoning_common import REASONING_COMMON
+from .staticgk_common import STATIC_GK_COMMON
+from .english_common import ENGLISH_COMMON
 from .icse_class3_maths import ICSE_CLASS3_MATHS
 
 # Registry so other exams/subjects slot in with the same interface.
@@ -202,6 +205,32 @@ TAXONOMIES = {
     # exemplars — qbank.quantgen draws these chapters deterministically (compute-the-
     # answer). One taxonomy serves all banking exams; tag by `exam` at generation.
     ("Banking Prelims", "Quantitative Aptitude"): BANKING_QUANT,
+    # Govt-job (SSC / Railway / Banking / BPSC) REASONING — shared, GENERATION-first
+    # (qbank.reasoninggen, compute-the-answer). One taxonomy across the whole SRB family;
+    # tagged by `exam` at generation. Built 2026-08-12 for the One Step Education pilot.
+    ("SSC CGL", "Reasoning"): REASONING_COMMON,
+    ("SSC CHSL", "Reasoning"): REASONING_COMMON,
+    ("Railway (RRB)", "Reasoning"): REASONING_COMMON,
+    ("Banking Prelims", "Reasoning"): REASONING_COMMON,
+    ("BPSC", "Reasoning"): REASONING_COMMON,
+    # Govt-job QUANT/MATHS shares the Banking-quant syllabus (same templatable topics);
+    # quantgen.can_generate keys on subject, so exam="SSC CGL"+subject="Quantitative Aptitude"
+    # routes to the compute-the-answer engine. Register so /chapters resolves (else it falls
+    # back to the JEE-Physics default taxonomy).
+    ("SSC CGL", "Quantitative Aptitude"): BANKING_QUANT,
+    ("SSC CHSL", "Quantitative Aptitude"): BANKING_QUANT,
+    ("Railway (RRB)", "Quantitative Aptitude"): BANKING_QUANT,
+    # Govt-job STATIC GK — shared, GENERATION-first (qbank.staticgkgen, generate-from-data).
+    ("SSC CGL", "General Knowledge"): STATIC_GK_COMMON,
+    ("SSC CHSL", "General Knowledge"): STATIC_GK_COMMON,
+    ("Railway (RRB)", "General Knowledge"): STATIC_GK_COMMON,
+    ("Banking Prelims", "General Knowledge"): STATIC_GK_COMMON,
+    ("BPSC", "General Knowledge"): STATIC_GK_COMMON,
+    # Govt-job ENGLISH — shared, GENERATION-first (qbank.englishgen, generate-from-data).
+    ("SSC CGL", "English"): ENGLISH_COMMON,
+    ("SSC CHSL", "English"): ENGLISH_COMMON,
+    ("Railway (RRB)", "English"): ENGLISH_COMMON,
+    ("Banking Prelims", "English"): ENGLISH_COMMON,
 }
 
 

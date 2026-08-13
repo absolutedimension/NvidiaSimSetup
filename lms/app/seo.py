@@ -18,11 +18,20 @@ PRODUCT = "Acharya"
 LEGAL_NAME = "TRIGUNAI INNOVATIONS PRIVATE LIMITED"
 LOGO = f"{SITE}/static/brand/icon-512.png"
 QBANK_VERIFIED = "46,000+"      # verified questions behind the papers — the real differentiator
-PRICE = 499                     # legacy all-access course subscription (secondary)
-TEACHER_PRICE = 4999
-STUDENT_PRICE = 249             # the self-serve exam-prep plan
+PRICE = 499                     # legacy all-access course subscription (secondary, /pricing only)
+# UNIFIED FLAT PRICING (2026-08-04) — ONE price for students, teachers AND institutes, by exam LEVEL.
+# Free to start; pay only after the first month. Branding is a FREE self-serve feature (no ₹55k).
+PRICE_JUNIOR = 150              # ₹/month (student) or ₹/student/month (teacher & institute) — Junior / Foundation / Board
+PRICE_SENIOR = 250             # ₹/month or ₹/student/month — JEE / NEET / Senior
 STUDENT_TRIAL_DAYS = 14
 WHATSAPP = "+91 91352 55107"
+
+# Reusable truth phrases (keep every SEO surface consistent).
+PRICING_LINE = (f"One flat price for students, teachers and institutes: ₹{PRICE_JUNIOR}/month for Junior & "
+                f"Foundation, ₹{PRICE_SENIOR}/month for JEE / NEET / Senior. Free to start — pay only after "
+                f"your first month, cancel anytime.")
+BRANDING_LINE = ("Institutes get free self-serve white-label branding — put their own logo, brand colour and "
+                 "watermark on the app and every printed paper (only ‘Powered by Acharya’ stays).")
 
 # The exam range the papers cover (live today). Kept in sync with STUDENT_EXAMS(available) in main.py.
 EXAM_RANGE = "JEE, NEET, CBSE Class 10 & 12 (incl. Commerce), UPSC Civil Services and Banking (IBPS / SBI / RRB)"
@@ -72,16 +81,16 @@ FAQ = [
     ("I'm a teacher — what do I get?",
      f"Create a real, exam-pattern test paper for JEE, NEET or the boards in minutes, share a link, and "
      f"your students take it with no signup. You get a live dashboard showing each student's weak topics "
-     f"and the whole class at a glance. Start free at {SITE}/teacher (or message 'TEACHER' on WhatsApp "
-     f"{WHATSAPP})."),
+     f"and the whole class at a glance. {BRANDING_LINE} Start free at {SITE}/teacher (or message 'TEACHER' "
+     f"on WhatsApp {WHATSAPP})."),
     ("How does Acharya find my weak topics?",
      "You take a short adaptive test or a mock paper. Acharya reads every answer — right, wrong, slow, or "
      "confident-but-wrong — maps each to a topic, and marks it solid, shaky or weak. You get a clear report "
      "of exactly what to revise first, not just a mark out of 100."),
     ("How much does it cost?",
-     f"Students can start free — no card — and keep going free for a {STUDENT_TRIAL_DAYS}-day trial; after "
-     f"that it's ₹{STUDENT_PRICE}/month, cancel anytime. Teachers can create and share tests free to start. "
-     f"TrigunAI also offers project-based AI/ML/robotics/VR courses (₹{PRICE}/month, secondary to exam prep)."),
+     f"{PRICING_LINE} Teachers and coaching institutes pay the same flat per-student rate — any number of "
+     f"students, no setup fee — and institute branding is free and self-serve. TrigunAI also offers "
+     f"project-based AI/ML/robotics/VR courses (₹{PRICE}/month, secondary to exam prep)."),
     ("Do I need an app or a password?",
      "No. On the web just enter your email and start — no password. On your phone you can start right inside "
      "WhatsApp in English or हिंदी. Your progress saves to the same account."),
@@ -111,8 +120,7 @@ STUDENT_FAQ = [
      f"{EXAM_RANGE} are live today — practice tests and full mock papers, in English or हिंदी. CUET, SSC, "
      "GATE, CAT and CLAT are being added."),
     ("Is it really free? What does it cost?",
-     f"You can join and start testing for free — no card needed — for a {STUDENT_TRIAL_DAYS}-day trial; to "
-     f"continue after that it's ₹{STUDENT_PRICE}/month, cancel anytime."),
+     f"You can join and start testing for free — no card needed. {PRICING_LINE}"),
     ("Are the papers in Hindi?",
      "Yes. Every question is available in both English and हिंदी — tap to switch language anytime during the test."),
 ]
@@ -129,8 +137,9 @@ TEACHER_FAQ = [
      "No. They open the link, take the test in the browser (or on WhatsApp) in English or हिंदी, and their "
      "results flow straight to your dashboard."),
     ("What does it cost for teachers?",
-     f"You can create and share tests free to start. For teachers who run a full class the plan is "
-     f"₹{TEACHER_PRICE}/month; aspiring tutors with no students yet can start on a revenue-share plan."),
+     f"Free to start — pay only after your first month. Then a flat ₹{PRICE_JUNIOR} per student per month for "
+     f"Junior/Foundation batches, or ₹{PRICE_SENIOR} for JEE/NEET/Senior — any number of students, no setup "
+     f"fee. {BRANDING_LINE}"),
 ]
 
 
@@ -146,7 +155,7 @@ def _exam_items(exams):
                 "url": f"{SITE}/exam-prep",
                 "provider": {"@type": "Organization", "name": BRAND, "sameAs": "https://trigunai.com"},
                 "offers": {"@type": "Offer", "category": "Subscription",
-                           "price": str(STUDENT_PRICE), "priceCurrency": "INR",
+                           "price": str(PRICE_JUNIOR), "priceCurrency": "INR",
                            "availability": "https://schema.org/InStock", "url": f"{SITE}/exam-prep"},
                 "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online",
                                       "courseWorkload": "PT30M"},
@@ -163,11 +172,10 @@ def _student_service():
         "description": (f"Authentic, exam-pattern practice tests and mock papers for {EXAM_RANGE}, in English "
                         f"or हिंदी, generated from a bank of {QBANK_VERIFIED} verified questions. Acharya finds "
                         f"each student's exact weak topics from their answers — not just a score — and tells them "
-                        f"what to revise next. Free to start; ₹{STUDENT_PRICE}/month after a "
-                        f"{STUDENT_TRIAL_DAYS}-day free trial."),
+                        f"what to revise next. {PRICING_LINE}"),
         "provider": {"@type": "Organization", "name": BRAND, "url": "https://trigunai.com"},
         "areaServed": "IN",
-        "offers": {"@type": "Offer", "price": str(STUDENT_PRICE), "priceCurrency": "INR",
+        "offers": {"@type": "Offer", "price": str(PRICE_JUNIOR), "priceCurrency": "INR",
                    "availability": "https://schema.org/InStock", "url": f"{SITE}/exam-prep"},
     }
 
@@ -247,11 +255,13 @@ def _teacher_service():
         "description": (f"Teachers and institutes create authentic, exam-pattern test papers for JEE, NEET and "
                         f"the CBSE boards in minutes — drawn from {QBANK_VERIFIED} verified questions — share a "
                         f"link, and students take the test with no signup. A live dashboard shows each student's "
-                        f"weak topics and the whole class at a glance. You teach; Acharya tests and tracks. Start "
-                        f"free at {SITE}/teacher or message TEACHER on WhatsApp."),
+                        f"weak topics and the whole class at a glance. You teach; Acharya tests and tracks. "
+                        f"Free to start — pay only after your first month; then a flat ₹{PRICE_JUNIOR}/student "
+                        f"(Junior/Foundation) or ₹{PRICE_SENIOR}/student (JEE/NEET/Senior) per month, no setup "
+                        f"fee. {BRANDING_LINE} Start free at {SITE}/teacher or message TEACHER on WhatsApp."),
         "provider": {"@type": "Organization", "name": BRAND, "url": "https://trigunai.com"},
         "areaServed": "IN",
-        "offers": {"@type": "Offer", "price": str(TEACHER_PRICE), "priceCurrency": "INR",
+        "offers": {"@type": "Offer", "price": str(PRICE_JUNIOR), "priceCurrency": "INR",
                    "availability": "https://schema.org/InStock", "url": f"{SITE}/teacher"},
     }
 
@@ -367,7 +377,7 @@ def llms_txt(courses):
         "- Every paper is exam-authentic and unlimited: drawn from a verified bank plus a generator that writes "
         "fresh, copyright-clean questions in the real exam pattern — so you never run out of good questions.",
         "- Acharya reads every answer and gives you your **exact weak topics** to revise next — not just a score.",
-        f"- Free to start (no card); ₹{STUDENT_PRICE}/month after a {STUDENT_TRIAL_DAYS}-day free trial; cancel anytime.",
+        f"- {PRICING_LINE}",
         f"- Start free: {SITE}/exam-prep",
         "",
         "## For teachers & coaching institutes — create test papers, track your class",
@@ -377,7 +387,9 @@ def llms_txt(courses):
         "- Get a **live weak-topic dashboard**: each student's weak areas and the whole class at a glance, plus a "
         "suggested next test for students who are slipping. You teach; Acharya tests and tracks.",
         f"- Start free: {SITE}/teacher — or message **TEACHER** on WhatsApp ({WHATSAPP}).",
-        f"- Full-class plan ₹{TEACHER_PRICE}/month; aspiring tutors with no students yet can start on revenue-share.",
+        f"- Free to start — pay only after your first month; then a flat ₹{PRICE_JUNIOR}/student (Junior/Foundation) "
+        f"or ₹{PRICE_SENIOR}/student (JEE/NEET/Senior) per month, any number of students, no setup fee.",
+        f"- {BRANDING_LINE}",
         "",
         "## Exams covered",
         f"- Live today: {EXAM_RANGE} — practice tests, mock papers and teacher test-papers.",

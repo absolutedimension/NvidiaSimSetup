@@ -50,6 +50,16 @@ class Student(Base):
     # same auth + session as a student; is_teacher just gates the /teacher surface. ----
     is_teacher: Mapped[bool] = mapped_column(Boolean, default=False)
     institute: Mapped[str] = mapped_column(String(120), default="")
+    # ---- self-serve WHITE-LABEL branding (set by the teacher on /teacher/branding). Applied to their
+    # linked students' app + every printed paper. brand_logo is a data: URL (base64) so it persists in
+    # Postgres without a file store. "Powered by Acharya" always stays. ----
+    brand_color: Mapped[str] = mapped_column(String(9), default="")   # hex e.g. #1A73E8; "" → default saffron
+    brand_logo: Mapped[str] = mapped_column(Text, default="")         # data:image/...;base64,... (institute logo)
+    brand_watermark: Mapped[bool] = mapped_column(Boolean, default=False)  # faint logo/name behind printed papers
+    # ---- kids product: the student's class + board, set when they join a teacher's kids batch. Locks
+    # their self-generated worksheets to this grade/board (worksheet page hides the grade/board pickers). ----
+    grade: Mapped[int | None] = mapped_column(Integer, nullable=True)   # 1..5 (kids); None for seniors/direct
+    board: Mapped[str] = mapped_column(String(24), default="")          # CBSE | ICSE | Bihar Board
 
 
 class MagicToken(Base):
@@ -292,6 +302,9 @@ class TeacherInvite(Base):
     teacher_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
     label: Mapped[str] = mapped_column(String(80), default="")               # batch name
     subjects: Mapped[list] = mapped_column(JSON, default=list)               # subject ids this batch studies
+    # kids batches: the class + board this batch studies. Students who join inherit these (Student.grade/board).
+    grade: Mapped[int | None] = mapped_column(Integer, nullable=True)         # 1..5 for a kids batch, else None
+    board: Mapped[str] = mapped_column(String(24), default="")               # CBSE | ICSE (kids)
     active: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=now)
 
@@ -305,11 +318,27 @@ class Assignment(Base):
     teacher_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
     # the BATCH this assignment targets. Null = applies to ALL of the teacher's batches (back-compat).
     invite_id: Mapped[int | None] = mapped_column(ForeignKey("teacher_invites.id"), nullable=True, index=True)
-    kind: Mapped[str] = mapped_column(String(16))                 # smart | mock | classtest
-    ref: Mapped[str] = mapped_column(String(80), default="")      # subject_id | mock paper id | classtest code
+    kind: Mapped[str] = mapped_column(String(16))                 # smart | mock | classtest | kidsworksheet | kidstest
+    ref: Mapped[str] = mapped_column(String(120), default="")     # subject_id | paper id | classtest code | "subject|chapter|n" (kids)
     title: Mapped[str] = mapped_column(String(140), default="")
     subject_label: Mapped[str] = mapped_column(String(80), default="")
+    # kids FIXED test (kind=kidstest): the frozen worksheet items, so every student gets the SAME sheet.
+    # Null for practice worksheets (kind=kidsworksheet), which generate fresh per student.
+    pack: Mapped[dict | None] = mapped_column(JSON, nullable=True)
     active: Mapped[bool] = mapped_column(Boolean, default=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now)
+
+
+class AssignmentCompletion(Base):
+    """A linked student's completion of a teacher Assignment (kids). Powers the teacher's 'who did it'
+    list + class weak-topic aggregation. One row per (assignment, student) — upserted on each finish."""
+    __tablename__ = "assignment_completions"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    assignment_id: Mapped[int] = mapped_column(ForeignKey("assignments.id"), index=True)
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    score: Mapped[int] = mapped_column(Integer, default=0)
+    total: Mapped[int] = mapped_column(Integer, default=0)
+    weak_topics: Mapped[list] = mapped_column(JSON, default=list)   # concept/chapter labels the student missed
     created_at: Mapped[datetime] = mapped_column(DateTime, default=now)
 
 

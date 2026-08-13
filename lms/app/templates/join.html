@@ -28,19 +28,32 @@
  .fine{font-size:12px;color:var(--faint);text-align:center;margin-top:14px;line-height:1.5}
  .err{background:#FBE9E4;border:1px solid #F0C9BF;color:#9c3220;border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:12px}
 </style>
+{% if kids %}
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+ :root{--gold:#1E6FB5;--gold2:#1E6FB5;--green:#22b07d;--cream:#f6f0ff;--line:#dcebf7}
+ body{background:radial-gradient(1000px 500px at 15% -10%,#e3f3ff 0,transparent 55%),radial-gradient(900px 500px at 95% 0,#d6ecff 0,transparent 50%),#f2faff;font-family:"Baloo 2","Segoe UI",system-ui,sans-serif}
+ .brand,.brand small,h1,button{font-family:"Baloo 2","Segoe UI",system-ui,sans-serif}
+ .brand small{color:var(--gold)}
+ .card{border-radius:24px;box-shadow:0 16px 40px rgba(30,111,181,.16)}
+ .badge{background:#e6f4ff;border-color:#cfe6f8;color:var(--gold2)}
+ button{background:linear-gradient(135deg,#3AA6E8,#1E6FB5)}
+ .subjects span{background:var(--cream);border-color:#cfe6f8;color:var(--gold2)}
+</style>
+{% endif %}
 </head>
 <body>
 <div class="wrap">
-  <div class="brand">Acharya<small>your prep companion</small></div>
+  <div class="brand">{% if kids %}Acharya Kids{% else %}Acharya{% endif %}<small>{% if kids %}learning is fun{% else %}your prep companion{% endif %}</small></div>
   <div class="card">
-    <span class="badge">🎓 {{ institute }}</span>
-    <h1>Join your class{% if label %} · {{ label }}{% endif %}</h1>
-    <p class="sub">Your teacher has set up Acharya for your batch. Sign in to practise, take mock tests, and see the tests your teacher assigns.</p>
+    <span class="badge">{% if kids %}🎒{% else %}🎓{% endif %} {{ institute }}</span>
+    <h1>{% if kids %}Join your class! 🎉{% if grade %} · Class {{ grade }}{% endif %}{% else %}Join your class{% if label %} · {{ label }}{% endif %}{% endif %}</h1>
+    <p class="sub">{% if kids %}Your teacher made a worksheet space just for you! Sign in to practise worksheets{% if grade %} for Class {{ grade }}{% endif %} — solve on screen or print them. 🌟{% else %}Your teacher has set up Acharya for your batch. Sign in to practise, take mock tests, and see the tests your teacher assigns.{% endif %}</p>
     {% if sublabels %}
     <div class="subjects">{% for s in sublabels %}<span>{{ s }}</span>{% endfor %}</div>
     {% endif %}
     {% if teacher_warning %}
-    <div class="err" style="margin-top:14px;background:#FFF3E6;border-color:#F0D9BF;color:#8a5314">
+    <div class="err" style="margin-top:14px;background:#FFF3E6;border-color:#F0D9BF;color:#1E6FB5">
       You're signed in as the <b>teacher</b>. Joining here will switch this browser to a student account
       (you'll be logged out of the teacher console). To try the student experience, open this link in a
       <b>private / incognito window</b> instead.
@@ -51,9 +64,9 @@
     <form method="post" action="/join/{{ code }}">
       <input type="text" name="name" placeholder="Your name" autocomplete="name" />
       <input type="email" name="email" placeholder="Your email" autocomplete="email" required />
-      <button type="submit">Join {{ institute }} →</button>
+      <button type="submit">{% if kids %}Start learning 🚀{% else %}Join {{ institute }} →{% endif %}</button>
     </form>
-    <div class="fine">Free to start. Your teacher can see your test results and assign you practice.</div>
+    <div class="fine">{% if kids %}Free &amp; no password. Your teacher can see your worksheets and give you practice. 🎈{% else %}Free to start. Your teacher can see your test results and assign you practice.{% endif %}</div>
   </div>
 </div>
 </body>

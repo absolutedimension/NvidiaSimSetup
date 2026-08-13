@@ -48,7 +48,7 @@
 <div class="wrap">
   <div class="top">
     <div class="brand"><div class="m">अ</div><div><div class="n">Acharya</div><div class="s">{{ student.institute or 'for teachers' }}</div></div></div>
-    <div class="nav"><a class="on" href="/teacher">My class</a><a href="/teacher/invites">My students</a><a href="/teacher/dashboard">Dashboard</a><a href="/logout?next=/teacher">Log out</a></div>
+    <div class="nav"><a class="on" href="/teacher">My class</a><a href="/teacher/invites">My students</a><a href="/teacher/dashboard">Dashboard</a><a href="/teacher/branding">Branding</a><a href="/logout?next=/teacher">Log out</a></div>
   </div>
 
   <h1>Namaste{{ ', ' + student.name if student.name else '' }} 🙏</h1>
@@ -66,6 +66,7 @@
   </a>
   <a class="dash" href="/teacher/invites" style="margin-bottom:10px"><span class="i">🎓</span> Invite your students — they get the full app on your subjects →</a>
   <a class="dash" href="/teacher/dashboard"><span class="i">📊</span> See every student — who's weak, who's slipping →</a>
+  <a class="dash" href="/teacher/branding" style="margin-top:10px"><span class="i">🎨</span> Make it yours — your logo, brand colour &amp; watermark on papers →</a>
 
   <div class="lbl">Your tests</div>
   {% if tests %}

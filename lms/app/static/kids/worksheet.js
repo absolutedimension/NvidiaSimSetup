@@ -56,6 +56,19 @@
     if (global.KidsAssets && global.KidsAssets.get) return global.KidsAssets.node(token, size || 40);
     var s = document.createElement('span'); s.textContent = (token && token.emoji) || token; return s;
   }
+  /* an option/answer label → its PICTURE above the WORD when the pool has art for that entity
+     (English OR Hindi, via the manifest word-index), else just the word. Keeps the label so
+     reading/vocab questions still read. This is how pooled assets attach to knowledge questions. */
+  function entityLabel(text, size) {
+    var t = String(text == null ? '' : text);
+    if (global.KidsAssets && global.KidsAssets.idFor && global.KidsAssets.idFor(t)) {
+      var wrap = el('span', 'ws-ent');
+      wrap.appendChild(global.KidsAssets.node(t, size || 46));
+      wrap.appendChild(el('span', 'ws-ent-lbl', t));
+      return wrap;
+    }
+    return el('span', null, t);
+  }
 
   /* speak a math/word stem the way a child voice reads it (mirrors kids_voice.js) */
   function speakable(s) {
@@ -110,6 +123,8 @@
     var hindi = hasHindi(text);
     var voice = hindi ? HI_VOICE : EN_VOICE;
     var say = (hindi ? hindiSpeakable(text) : speakable(text)).slice(0, 580);
+    // strip emoji / pictographs / symbols so the voice never reads "party popper" etc. aloud
+    say = say.replace(/[\u{1F000}-\u{1FAFF}\u{1F300}-\u{1F9FF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{2190}-\u{21FF}\u{FE00}-\u{FE0F}\u{200D}]/gu, ' ').replace(/\s+/g, ' ').trim();
     if (!say) { fin(); return; }
     try { if (_audio) { _audio.onended = _audio.onerror = _audio.onloadedmetadata = null; _audio.pause(); } } catch (e) {}
     _audio = new Audio('/kids/tts?text=' + encodeURIComponent(say) + '&voice=' + encodeURIComponent(voice));
@@ -246,7 +261,7 @@
     if (item.type === 'true_false' && typeof ans === 'boolean') ans = ans ? 'True' : 'False';
     var wrap = el('div', 'ws-opts');
     opts.forEach(function (o) {
-      var b = el('button', 'ws-opt ws-big'); b.appendChild(mkVisual(o, 46));
+      var b = el('button', 'ws-opt ws-big'); b.appendChild(entityLabel(o, 46));
       b.onclick = function () {
         if (b.classList.contains('right') || b.classList.contains('wrong')) return;
         var ok = String(o) === String(ans);
@@ -322,7 +337,7 @@
     var colL = el('div', 'ws-col'), colR = el('div', 'ws-col');
     var sel = { side: null, idx: -1 }, pairs = {}, nColor = 0;
     function mkItem(txt, side, idx) {
-      var it = el('div', 'ws-col-item'); it.appendChild(el('span', null, String(txt)));
+      var it = el('div', 'ws-col-item'); it.appendChild(entityLabel(txt, 34));
       var dot = el('span', 'ws-dot'); dot.style.background = 'transparent'; it.appendChild(dot);
       it._dot = dot; it._txt = txt;
       it.onclick = function () {
@@ -358,7 +373,7 @@
     var tray = el('div', 'ws-tray');
     var sel = null, placed = {};
     items.forEach(function (v) {
-      var c = el('button', 'ws-chip'); c.textContent = v;
+      var c = el('button', 'ws-chip'); c.appendChild(entityLabel(v, 30)); c._val = v;
       c.onclick = function () {
         if (sel) sel.classList.remove('sel');
         if (sel === c) { sel = null; return; }
@@ -375,7 +390,7 @@
       bin.appendChild(drop);
       bin.onclick = function () {
         if (!sel) return;
-        placed[sel.textContent] = b;
+        placed[sel._val != null ? sel._val : sel.textContent] = b;
         drop.appendChild(sel); sel.classList.remove('sel'); sel = null;
       };
       binWrap.appendChild(bin);

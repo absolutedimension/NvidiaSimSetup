@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Make it yours — branding · Acharya</title>
+<link rel="icon" href="/static/brand/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#FAF5EC;--ink:#2A2018;--gold:#C2591F;--gold2:#A8481A;--muted:#7A6A57;--faint:#A08A72;
+        --line:#EFE0CE;--card:#fff;--green:#2FA968;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+       background-image:radial-gradient(800px 420px at 50% -140px,rgba(194,89,31,.08),transparent 70%);}
+  .wrap{max-width:960px;margin:0 auto;padding:24px 18px 60px;}
+  .top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .top .m{width:30px;height:30px;border-radius:8px;background:linear-gradient(150deg,var(--gold),#7a2f10);display:grid;place-items:center;color:#fff;font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;}
+  .top b{font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;}
+  .top .sp{flex:1}
+  .top a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+  .top a:hover{color:var(--gold)}
+  h1{font-family:'Bricolage Grotesque',serif;font-weight:800;font-size:32px;letter-spacing:-.01em;margin:14px 0 6px;}
+  h1 span{color:var(--gold)}
+  .lead{color:var(--muted);font-size:15.5px;max-width:640px;line-height:1.5;margin-bottom:22px;}
+  .saved{background:rgba(47,169,104,.12);border:1px solid rgba(47,169,104,.4);color:#217a4c;border-radius:12px;padding:11px 15px;font-size:14px;font-weight:600;margin-bottom:18px;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;}
+  @media(max-width:760px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 22px;box-shadow:0 12px 30px rgba(90,60,20,.06);}
+  label.f{display:block;font-size:13px;font-weight:700;color:var(--ink);margin:16px 0 7px;}
+  label.f:first-child{margin-top:0}
+  input[type=text]{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:12px 13px;font-size:15px;font-family:inherit;color:var(--ink);background:#FFFDF9;}
+  input[type=text]:focus{outline:none;border-color:var(--gold);}
+  .swatches{display:flex;flex-wrap:wrap;gap:9px;margin-top:4px;}
+  .sw{width:34px;height:34px;border-radius:9px;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1.5px var(--line);}
+  .sw.active{box-shadow:0 0 0 2.5px var(--ink);}
+  .colrow{display:flex;align-items:center;gap:12px;margin-top:6px;}
+  .colrow input[type=color]{width:52px;height:44px;border:none;border-radius:11px;background:none;cursor:pointer;padding:0;}
+  .colrow input[type=text]{width:130px;}
+  .logo-drop{border:1.5px dashed rgba(194,89,31,.4);border-radius:13px;padding:16px;text-align:center;background:#FFFBF4;cursor:pointer;}
+  .logo-drop:hover{border-color:var(--gold);background:#FFF6EA;}
+  .logo-drop .cur{max-height:66px;max-width:180px;margin:0 auto 8px;display:block;object-fit:contain;}
+  .logo-drop .hint{font-size:12.5px;color:var(--muted);}
+  .rm{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--gold);margin-top:9px;cursor:pointer;font-weight:600;}
+  .chk{display:flex;align-items:flex-start;gap:10px;margin-top:6px;font-size:14px;color:var(--ink);line-height:1.4;}
+  .chk input{margin-top:3px;width:18px;height:18px;accent-color:var(--gold);}
+  .save{width:100%;margin-top:22px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;border:none;border-radius:12px;padding:15px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 10px 24px rgba(168,72,26,.24);}
+  .plab{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+  /* preview: a mini printed paper */
+  .paper{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;position:relative;}
+  .paper .head{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:2px solid var(--pv,var(--gold));}
+  .paper .head img{max-height:40px;max-width:120px;object-fit:contain;}
+  .paper .head .nm{font-family:'Bricolage Grotesque',serif;font-weight:800;font-size:18px;color:var(--ink);}
+  .paper .head .nm small{display:block;font-size:11px;font-weight:600;color:var(--muted);font-family:'Figtree';}
+  .paper .body{padding:16px 18px;position:relative;z-index:1;}
+  .paper .q{font-size:13.5px;color:#333;margin-bottom:12px;line-height:1.5;}
+  .paper .q b{color:var(--pv,var(--gold));}
+  .paper .opt{font-size:12.5px;color:#555;padding:3px 0 3px 16px;}
+  .paper .wm{position:absolute;inset:0;display:none;align-items:center;justify-content:center;z-index:0;opacity:.06;pointer-events:none;}
+  .paper .wm.on{display:flex;}
+  .paper .wm img{max-width:70%;max-height:70%;}
+  .paper .wm .wt{font-family:'Bricolage Grotesque',serif;font-weight:800;font-size:54px;color:var(--pv,var(--gold));transform:rotate(-18deg);}
+  .paper .pf{border-top:1px dashed var(--line);padding:9px 18px;font-size:10.5px;color:var(--faint);text-align:center;}
+  .note{font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.5;}
+  .note b{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="m">अ</span><b>Acharya</b><span class="sp"></span>
+    <a href="/teacher">← Back to console</a> &nbsp;·&nbsp; <a href="/logout?next=/teacher">Log out</a>
+  </div>
+
+  <h1>Make it <span>yours</span>.</h1>
+  <p class="lead">Put your institute's logo, brand colour and watermark on the app and every printed paper.
+     Set it once here — it applies to your students and your papers instantly. <b>You only pay after your first month.</b></p>
+
+  {% if saved %}<div class="saved">✓ Saved. Your branding is live for your students and papers.</div>{% endif %}
+
+  <form method="post" action="/teacher/branding" enctype="multipart/form-data" class="grid">
+    <!-- LEFT: controls -->
+    <div class="card">
+      <label class="f">Institute name (shown on papers)</label>
+      <input type="text" name="institute" id="inst" value="{{ brand.name if brand.name != 'Acharya' else '' }}" placeholder="e.g. Brilliant Classes" maxlength="120" />
+
+      <label class="f">Brand colour</label>
+      <div class="swatches" id="sw">
+        <span class="sw" data-c="#C2591F" style="background:#C2591F"></span>
+        <span class="sw" data-c="#1A73E8" style="background:#1A73E8"></span>
+        <span class="sw" data-c="#0F9D58" style="background:#0F9D58"></span>
+        <span class="sw" data-c="#7B1FA2" style="background:#7B1FA2"></span>
+        <span class="sw" data-c="#C2185B" style="background:#C2185B"></span>
+        <span class="sw" data-c="#00838F" style="background:#00838F"></span>
+        <span class="sw" data-c="#1a1a1a" style="background:#1a1a1a"></span>
+      </div>
+      <div class="colrow">
+        <input type="color" id="picker" value="{{ brand.color }}" />
+        <input type="text" name="brand_color" id="hex" value="{{ brand.color }}" placeholder="#C2591F" maxlength="7" />
+      </div>
+
+      <label class="f">Your logo</label>
+      <label class="logo-drop" for="logofile">
+        <img class="cur" id="logoprev" src="{{ brand.logo }}" alt="" style="{{ '' if brand.logo else 'display:none' }}" />
+        <div class="hint" id="logohint">{{ 'Tap to change your logo' if brand.logo else 'Tap to upload your logo (PNG, JPG, SVG · under 500 KB)' }}</div>
+      </label>
+      <input type="file" id="logofile" name="logo" accept="image/png,image/jpeg,image/webp,image/svg+xml" style="display:none" />
+      {% if brand.logo %}<label class="rm"><input type="checkbox" name="remove_logo" value="1" style="width:16px;height:16px" /> Remove my logo</label>{% endif %}
+
+      <label class="f">Watermark</label>
+      <label class="chk"><input type="checkbox" name="watermark" id="wm" value="1" {{ 'checked' if brand.watermark else '' }} />
+        <span>Show my logo (or name) faintly behind every printed paper — a subtle anti-copy stamp.</span></label>
+
+      <button class="save" type="submit">Save my branding</button>
+      <div class="note"><b>Powered by Acharya</b> stays as a small line in the footer — everything else is yours.</div>
+    </div>
+
+    <!-- RIGHT: live preview -->
+    <div class="card">
+      <div class="plab">Live preview — your test paper</div>
+      <div class="paper" id="paper">
+        <div class="wm" id="pwm"><img id="pwmimg" src="{{ brand.logo }}" style="{{ '' if brand.logo else 'display:none' }}" /><span class="wt" id="pwmtxt" style="{{ 'display:none' if brand.logo else '' }}">{{ brand.name }}</span></div>
+        <div class="head">
+          <img id="phlogo" src="{{ brand.logo }}" style="{{ '' if brand.logo else 'display:none' }}" />
+          <div class="nm" id="phname">{{ brand.name }}<small>Unit Test · Physics</small></div>
+        </div>
+        <div class="body">
+          <div class="q"><b>Q1.</b> A body moves with uniform acceleration. Which graph represents its velocity vs time?</div>
+          <div class="opt">A) A straight line through the origin</div>
+          <div class="opt">B) A parabola</div>
+          <div class="q"><b>Q2.</b> The SI unit of electric charge is ______.</div>
+        </div>
+        <div class="pf">Powered by Acharya · TrigunAI</div>
+      </div>
+      <div class="note">This is exactly how your printed papers and share links will look to your students.</div>
+    </div>
+  </form>
+</div>
+
+<script>
+(function(){
+  var picker=document.getElementById('picker'), hex=document.getElementById('hex'),
+      paper=document.getElementById('paper'), inst=document.getElementById('inst'),
+      phname=document.getElementById('phname'), pwmtxt=document.getElementById('pwmtxt'),
+      wm=document.getElementById('wm'), pwm=document.getElementById('pwm');
+  function applyColor(c){ if(!/^#[0-9A-Fa-f]{6}$/.test(c)) return; paper.style.setProperty('--pv', c); picker.value=c; hex.value=c;
+    document.querySelectorAll('.sw').forEach(function(s){ s.classList.toggle('active', s.dataset.c.toLowerCase()===c.toLowerCase()); }); }
+  picker.addEventListener('input', function(){ applyColor(picker.value); });
+  hex.addEventListener('input', function(){ applyColor(hex.value); });
+  document.querySelectorAll('.sw').forEach(function(s){ s.addEventListener('click', function(){ applyColor(s.dataset.c); }); });
+  inst.addEventListener('input', function(){ var n=inst.value.trim()||'Acharya';
+    phname.childNodes[0].nodeValue=n; pwmtxt.textContent=n; });
+  wm.addEventListener('change', function(){ pwm.classList.toggle('on', wm.checked); });
+  if(wm.checked) pwm.classList.add('on');
+  // logo upload preview
+  var lf=document.getElementById('logofile'), lp=document.getElementById('logoprev'), lh=document.getElementById('logohint'),
+      phlogo=document.getElementById('phlogo'), pwmimg=document.getElementById('pwmimg'), pwmt=document.getElementById('pwmtxt');
+  lf.addEventListener('change', function(){ var f=lf.files[0]; if(!f) return; var r=new FileReader();
+    r.onload=function(){ var d=r.result;
+      lp.src=d; lp.style.display=''; lh.textContent='Tap to change your logo';
+      phlogo.src=d; phlogo.style.display=''; pwmimg.src=d; pwmimg.style.display=''; pwmt.style.display='none'; };
+    r.readAsDataURL(f); });
+  applyColor('{{ brand.color }}');
+})();
+</script>
+</body>
+</html>

@@ -8,18 +8,23 @@
       "label": "Ellie the elephant",
       "status": "ready",
       "emoji": "🐘",
-      "source": "factory",
-      "web": {
-        "static": "characters/elephant.gif",
-        "anim": "characters/elephant.gif"
-      },
+      "source": "gpt-image",
       "motions": [
         "idle"
       ],
       "tags": [
         "mascot",
-        "animal",
+        "character",
         "cast"
+      ],
+      "prompt": "a cute friendly baby elephant mascot, grey with big ears",
+      "web": {
+        "static": "assets/ellie.png",
+        "anim": "assets/ellie.png"
+      },
+      "words": [
+        "elephant",
+        "हाथी"
       ]
     },
     "rio": {
@@ -27,37 +32,47 @@
       "label": "Rio the tiger",
       "status": "ready",
       "emoji": "🐯",
-      "source": "factory",
-      "web": {
-        "static": "characters/tiger.gif",
-        "anim": "characters/tiger.gif"
-      },
+      "source": "gpt-image",
       "motions": [
         "idle"
       ],
       "tags": [
         "mascot",
-        "animal",
+        "character",
         "cast"
+      ],
+      "prompt": "a cute friendly baby tiger mascot, orange with black stripes",
+      "web": {
+        "static": "assets/rio.png",
+        "anim": "assets/rio.png"
+      },
+      "words": [
+        "tiger",
+        "बाघ"
       ]
     },
     "milo": {
       "type": "character",
       "label": "Milo the monkey",
       "status": "ready",
-      "emoji": "🐒",
-      "source": "factory",
-      "web": {
-        "static": "characters/monkey.gif",
-        "anim": "characters/monkey.gif"
-      },
+      "emoji": "🐵",
+      "source": "gpt-image",
       "motions": [
         "idle"
       ],
       "tags": [
         "mascot",
-        "animal",
+        "character",
         "cast"
+      ],
+      "prompt": "a cute friendly baby monkey mascot, brown",
+      "web": {
+        "static": "assets/milo.png",
+        "anim": "assets/milo.png"
+      },
+      "words": [
+        "monkey",
+        "बंदर"
       ]
     },
     "bruno": {
@@ -65,18 +80,24 @@
       "label": "Bruno the bear",
       "status": "ready",
       "emoji": "🐻",
-      "source": "factory",
-      "web": {
-        "static": "characters/bear.gif",
-        "anim": "characters/bear.gif"
-      },
+      "source": "gpt-image",
       "motions": [
         "idle"
       ],
       "tags": [
         "mascot",
-        "animal",
+        "character",
         "cast"
+      ],
+      "prompt": "a cute friendly baby bear mascot, brown",
+      "web": {
+        "static": "assets/bruno.png",
+        "anim": "assets/bruno.png"
+      },
+      "words": [
+        "bear",
+        "भालू",
+        "रीछ"
       ]
     },
     "apple": {
@@ -92,6 +113,10 @@
       "tags": [
         "fruit",
         "counting"
+      ],
+      "words": [
+        "apple",
+        "सेब"
       ]
     },
     "banana": {
@@ -107,6 +132,10 @@
       "tags": [
         "fruit",
         "counting"
+      ],
+      "words": [
+        "banana",
+        "केला"
       ]
     },
     "mango": {
@@ -122,6 +151,10 @@
       "tags": [
         "fruit",
         "counting"
+      ],
+      "words": [
+        "mango",
+        "आम"
       ]
     },
     "grapes": {
@@ -137,6 +170,10 @@
       "tags": [
         "fruit",
         "counting"
+      ],
+      "words": [
+        "grapes",
+        "अंगूर"
       ]
     },
     "star": {
@@ -152,6 +189,11 @@
       "tags": [
         "counting",
         "reward"
+      ],
+      "words": [
+        "star",
+        "तारा",
+        "सितारा"
       ]
     },
     "fish": {
@@ -167,6 +209,10 @@
       "tags": [
         "animal",
         "counting"
+      ],
+      "words": [
+        "fish",
+        "मछली"
       ]
     },
     "coin": {
@@ -181,6 +227,10 @@
       },
       "tags": [
         "money"
+      ],
+      "words": [
+        "coin",
+        "सिक्का"
       ]
     },
     "balloon": {
@@ -195,6 +245,10 @@
       },
       "tags": [
         "counting"
+      ],
+      "words": [
+        "balloon",
+        "गुब्बारा"
       ]
     },
     "cookie": {
@@ -210,6 +264,11 @@
       "tags": [
         "counting",
         "division"
+      ],
+      "words": [
+        "cookie",
+        "biscuit",
+        "बिस्कुट"
       ]
     },
     "dog": {
@@ -225,6 +284,10 @@
       "tags": [
         "animal",
         "evs"
+      ],
+      "words": [
+        "dog",
+        "कुत्ता"
       ]
     },
     "cow": {
@@ -240,6 +303,10 @@
       "tags": [
         "animal",
         "evs"
+      ],
+      "words": [
+        "cow",
+        "गाय"
       ]
     },
     "bird": {
@@ -255,6 +322,11 @@
       "tags": [
         "animal",
         "evs"
+      ],
+      "words": [
+        "bird",
+        "चिड़िया",
+        "पक्षी"
       ]
     },
     "bee": {
@@ -270,6 +342,10 @@
       "tags": [
         "animal",
         "evs"
+      ],
+      "words": [
+        "bee",
+        "मधुमक्खी"
       ]
     },
     "cat": {
@@ -285,6 +361,10 @@
       "tags": [
         "animal",
         "english"
+      ],
+      "words": [
+        "cat",
+        "बिल्ली"
       ]
     },
     "tree": {
@@ -300,6 +380,10 @@
       "tags": [
         "evs",
         "living"
+      ],
+      "words": [
+        "tree",
+        "पेड़"
       ]
     },
     "sun": {
@@ -314,6 +398,11 @@
       },
       "tags": [
         "evs"
+      ],
+      "words": [
+        "sun",
+        "सूरज",
+        "सूर्य"
       ]
     },
     "clock": {
@@ -328,6 +417,10 @@
       },
       "tags": [
         "time"
+      ],
+      "words": [
+        "clock",
+        "घड़ी"
       ]
     },
     "ruler": {
@@ -342,6 +435,11 @@
       },
       "tags": [
         "measurement"
+      ],
+      "words": [
+        "ruler",
+        "रूलर",
+        "पैमाना"
       ]
     },
     "bg_classroom": {
@@ -392,6 +490,10 @@
       "tags": [
         "mascot",
         "maths"
+      ],
+      "words": [
+        "owl",
+        "उल्लू"
       ]
     },
     "lion_char": {
@@ -408,6 +510,548 @@
       "tags": [
         "mascot",
         "maths"
+      ]
+    },
+    "lion": {
+      "type": "prop",
+      "label": "lion",
+      "status": "ready",
+      "emoji": "🦁",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/lion.png",
+        "anim": "assets/lion.png"
+      },
+      "words": [
+        "lion",
+        "शेर"
+      ]
+    },
+    "horse": {
+      "type": "prop",
+      "label": "horse",
+      "status": "ready",
+      "emoji": "🐴",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/horse.png",
+        "anim": "assets/horse.png"
+      },
+      "words": [
+        "horse",
+        "घोड़ा"
+      ]
+    },
+    "frog": {
+      "type": "prop",
+      "label": "frog",
+      "status": "ready",
+      "emoji": "🐸",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/frog.png",
+        "anim": "assets/frog.png"
+      },
+      "words": [
+        "frog",
+        "मेंढक"
+      ]
+    },
+    "duck": {
+      "type": "prop",
+      "label": "duck",
+      "status": "ready",
+      "emoji": "🦆",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/duck.png",
+        "anim": "assets/duck.png"
+      },
+      "words": [
+        "duck",
+        "बत्तख"
+      ]
+    },
+    "ant": {
+      "type": "prop",
+      "label": "ant",
+      "status": "ready",
+      "emoji": "🐜",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/ant.png",
+        "anim": "assets/ant.png"
+      },
+      "words": [
+        "ant",
+        "चींटी"
+      ]
+    },
+    "rabbit": {
+      "type": "prop",
+      "label": "rabbit",
+      "status": "ready",
+      "emoji": "🐰",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/rabbit.png",
+        "anim": "assets/rabbit.png"
+      },
+      "words": [
+        "rabbit",
+        "खरगोश"
+      ]
+    },
+    "hen": {
+      "type": "prop",
+      "label": "hen",
+      "status": "ready",
+      "emoji": "🐔",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/hen.png",
+        "anim": "assets/hen.png"
+      },
+      "words": [
+        "hen",
+        "chicken",
+        "मुर्गी"
+      ]
+    },
+    "butterfly": {
+      "type": "prop",
+      "label": "butterfly",
+      "status": "ready",
+      "emoji": "🦋",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/butterfly.png",
+        "anim": "assets/butterfly.png"
+      },
+      "words": [
+        "butterfly",
+        "तितली"
+      ]
+    },
+    "car": {
+      "type": "prop",
+      "label": "car",
+      "status": "ready",
+      "emoji": "🚗",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/car.png",
+        "anim": "assets/car.png"
+      },
+      "words": [
+        "car",
+        "कार",
+        "गाड़ी"
+      ]
+    },
+    "boat": {
+      "type": "prop",
+      "label": "boat",
+      "status": "ready",
+      "emoji": "⛵",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/boat.png",
+        "anim": "assets/boat.png"
+      },
+      "words": [
+        "boat",
+        "नाव",
+        "नौका"
+      ]
+    },
+    "bicycle": {
+      "type": "prop",
+      "label": "bicycle",
+      "status": "ready",
+      "emoji": "🚲",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/bicycle.png",
+        "anim": "assets/bicycle.png"
+      },
+      "words": [
+        "bicycle",
+        "cycle",
+        "साइकिल"
+      ]
+    },
+    "train": {
+      "type": "prop",
+      "label": "train",
+      "status": "ready",
+      "emoji": "🚂",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/train.png",
+        "anim": "assets/train.png"
+      },
+      "words": [
+        "train",
+        "रेल",
+        "ट्रेन"
+      ]
+    },
+    "bus": {
+      "type": "prop",
+      "label": "bus",
+      "status": "ready",
+      "emoji": "🚌",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/bus.png",
+        "anim": "assets/bus.png"
+      },
+      "words": [
+        "bus",
+        "बस"
+      ]
+    },
+    "moon": {
+      "type": "prop",
+      "label": "moon",
+      "status": "ready",
+      "emoji": "🌙",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/moon.png",
+        "anim": "assets/moon.png"
+      },
+      "words": [
+        "moon",
+        "चाँद",
+        "चंद्रमा"
+      ]
+    },
+    "leaf": {
+      "type": "prop",
+      "label": "leaf",
+      "status": "ready",
+      "emoji": "🍃",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/leaf.png",
+        "anim": "assets/leaf.png"
+      },
+      "words": [
+        "leaf",
+        "पत्ता",
+        "पत्ती"
+      ]
+    },
+    "flower": {
+      "type": "prop",
+      "label": "flower",
+      "status": "ready",
+      "emoji": "🌸",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/flower.png",
+        "anim": "assets/flower.png"
+      },
+      "words": [
+        "flower",
+        "फूल"
+      ]
+    },
+    "cloud": {
+      "type": "prop",
+      "label": "cloud",
+      "status": "ready",
+      "emoji": "☁️",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/cloud.png",
+        "anim": "assets/cloud.png"
+      },
+      "words": [
+        "cloud",
+        "बादल"
+      ]
+    },
+    "plant": {
+      "type": "prop",
+      "label": "plant in a pot",
+      "status": "ready",
+      "emoji": "🪴",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/plant.png",
+        "anim": "assets/plant.png"
+      },
+      "words": [
+        "plant",
+        "पौधा"
+      ]
+    },
+    "grass": {
+      "type": "prop",
+      "label": "patch of grass",
+      "status": "ready",
+      "emoji": "🌱",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/grass.png",
+        "anim": "assets/grass.png"
+      },
+      "words": [
+        "grass",
+        "घास"
+      ]
+    },
+    "ball": {
+      "type": "prop",
+      "label": "ball",
+      "status": "ready",
+      "emoji": "⚽",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/ball.png",
+        "anim": "assets/ball.png"
+      },
+      "words": [
+        "ball",
+        "गेंद"
+      ]
+    },
+    "kite": {
+      "type": "prop",
+      "label": "kite",
+      "status": "ready",
+      "emoji": "🪁",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/kite.png",
+        "anim": "assets/kite.png"
+      },
+      "words": [
+        "kite",
+        "पतंग"
+      ]
+    },
+    "book": {
+      "type": "prop",
+      "label": "book",
+      "status": "ready",
+      "emoji": "📚",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/book.png",
+        "anim": "assets/book.png"
+      },
+      "words": [
+        "book",
+        "किताब",
+        "पुस्तक"
+      ]
+    },
+    "pencil": {
+      "type": "prop",
+      "label": "pencil",
+      "status": "ready",
+      "emoji": "✏️",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/pencil.png",
+        "anim": "assets/pencil.png"
+      },
+      "words": [
+        "pencil",
+        "पेंसिल"
+      ]
+    },
+    "chair": {
+      "type": "prop",
+      "label": "chair",
+      "status": "ready",
+      "emoji": "🪑",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/chair.png",
+        "anim": "assets/chair.png"
+      },
+      "words": [
+        "chair",
+        "कुर्सी"
+      ]
+    },
+    "table": {
+      "type": "prop",
+      "label": "table",
+      "status": "ready",
+      "emoji": "🪑",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/table.png",
+        "anim": "assets/table.png"
+      },
+      "words": [
+        "table",
+        "मेज़",
+        "मेज"
+      ]
+    },
+    "carrot": {
+      "type": "prop",
+      "label": "carrot",
+      "status": "ready",
+      "emoji": "🥕",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/carrot.png",
+        "anim": "assets/carrot.png"
+      },
+      "words": [
+        "carrot",
+        "गाजर"
+      ]
+    },
+    "orange": {
+      "type": "prop",
+      "label": "orange fruit",
+      "status": "ready",
+      "emoji": "🍊",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/orange.png",
+        "anim": "assets/orange.png"
+      },
+      "words": [
+        "orange",
+        "संतरा",
+        "नारंगी"
+      ]
+    },
+    "tomato": {
+      "type": "prop",
+      "label": "tomato",
+      "status": "ready",
+      "emoji": "🍅",
+      "source": "gpt-image",
+      "prompt": null,
+      "tags": [
+        "prop"
+      ],
+      "web": {
+        "static": "assets/tomato.png",
+        "anim": "assets/tomato.png"
+      },
+      "words": [
+        "tomato",
+        "टमाटर"
       ]
     }
   }

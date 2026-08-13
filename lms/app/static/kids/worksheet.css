@@ -125,3 +125,8 @@
   .ws-sentence{font-size:1.25rem}
   .ws-trace-ghost{font-size:8rem}
 }
+
+/* entity art + label (pooled asset shown above the option/answer word) */
+.ws-ent{display:inline-flex;flex-direction:column;align-items:center;gap:3px;line-height:1.1;vertical-align:middle}
+.ws-ent .ka-asset{display:block}
+.ws-ent-lbl{font-size:.92em;font-weight:800}

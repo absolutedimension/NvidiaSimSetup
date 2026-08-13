@@ -66,8 +66,19 @@ class Settings:
     # the subscribe flow picks this plan when Student.is_teacher is set.
     RZP_ASSESS_TEACHER_PLAN_ID = os.getenv("RZP_ASSESS_TEACHER_PLAN_ID", "").strip()  # TEACHER monthly plan (₹999)
     ASSESS_TEACHER_PRICE_INR = int(os.getenv("ASSESS_TEACHER_PRICE_INR", "999"))       # teacher monthly (from)
-    ASSESS_PASS_PRICE_INR = int(os.getenv("ASSESS_PASS_PRICE_INR", "1299"))  # "till your exam" Pass — the LEAD offer
+    ASSESS_PASS_PRICE_INR = int(os.getenv("ASSESS_PASS_PRICE_INR", "1299"))  # legacy "till your exam" Pass (superseded by flat per-level below)
     ASSESS_TRIAL_DAYS = int(os.getenv("ASSESS_TRIAL_DAYS", "14"))
+
+    # ---- UNIFIED FLAT PRICING (2026-08-03, Deepak) — ONE price for students, teachers AND institutes ----
+    # Flat per-month (student) / per-student-per-month (teacher & institute), by exam LEVEL. No tiers,
+    # no per-student multiplication shown, no discount. Only add-on = the one-time custom white-label app
+    # for institutes (teachers & coaching are exempt). Supersedes the old student Pass/monthly + teacher
+    # Solo/Coaching/Institute tiers. Billing still closes over WhatsApp/transfer (CONTACT_WA).
+    PRICE_FOUNDATION_INR = int(os.getenv("PRICE_FOUNDATION_INR", "150"))   # Junior / Foundation / Board
+    PRICE_SENIOR_INR = int(os.getenv("PRICE_SENIOR_INR", "250"))           # JEE / NEET / Senior
+    # White-label branding is now a FREE self-serve feature (teacher /teacher/branding) — NOT a paid ₹55k
+    # custom build. Kept only for any legacy reference; not surfaced anywhere.
+    INSTITUTE_CUSTOM_INR = int(os.getenv("INSTITUTE_CUSTOM_INR", "0"))
 
     # ---- Teacher / institute (B2B) pricing — land-and-expand (see PRICING_MODEL.md, 2026-07-24) ----
     # Billing not yet wired; these drive the DISPLAYED tiers on /teacher so the offer is testable on a

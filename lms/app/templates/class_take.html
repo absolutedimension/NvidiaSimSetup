@@ -21,19 +21,25 @@
  label{display:block;text-align:left;font-size:12.5px;font-weight:700;color:var(--muted);margin:0 2px 6px}
  input{width:100%;background:#FBF3EA;border:1.5px solid var(--line);border-radius:13px;font-family:var(--sans);font-size:17px;padding:14px 16px;color:var(--ink);margin-bottom:16px;text-align:center}
  input:focus{outline:none;border-color:var(--gold2);box-shadow:0 0 0 3px rgba(194,89,31,.13)}
- .go{width:100%;background:linear-gradient(135deg,#C2591F,#A8481A);color:#fff;border:none;border-radius:14px;padding:16px;font-size:17px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 10px 26px rgba(168,72,26,.28)}
+ .go{width:100%;background:var(--gold);color:#fff;border:none;border-radius:14px;padding:16px;font-size:17px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 10px 26px rgba(120,60,20,.28)}
  .fine{font-size:11.5px;color:var(--faint);margin-top:12px}
+ .ilogo{max-height:56px;max-width:180px;object-fit:contain;margin:0 auto 10px;display:block}
+ .iname{font-family:var(--serif);font-weight:800;font-size:15px;color:var(--gold);letter-spacing:.02em;margin-bottom:10px}
+ .pwr{font-size:10.5px;color:var(--faint);margin-top:14px;letter-spacing:.03em}
 </style>
 </head>
-<body>
+<body style="--gold: {{ brand.color }}; --gold2: {{ brand.color }};">
 <form class="card" method="post" action="/t/{{ ct.code }}">
-  <div class="em">📝</div>
+  {% if brand.logo %}<img class="ilogo" src="{{ brand.logo }}" alt="{{ brand.name }}" />
+  {% else %}<div class="em">📝</div>{% endif %}
+  {% if brand.name and brand.name != 'Acharya' %}<div class="iname">{{ brand.name }}</div>{% endif %}
   <h1>{{ ct.title }}</h1>
   <div class="meta"><b>{{ ct.subject_label }}</b> · {{ ct.n }} questions · adaptive test</div>
   <label>Your name</label>
   <input type="text" name="name" placeholder="Type your full name" autocomplete="name" required autofocus maxlength="80" />
   <button class="go" type="submit">Start the test →</button>
   <div class="fine">English & हिन्दी · your teacher will see your result</div>
+  <div class="pwr">Powered by Acharya · TrigunAI</div>
 </form>
 </body>
 </html>

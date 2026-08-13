@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex" />
-<title>Continue with Acharya — Exam Pass ₹{{ PRICING.student_pass }}</title>
+<title>Continue with Acharya — from ₹{{ PRICING.foundation }}/month</title>
 <link rel="icon" href="/static/brand/favicon-32.png" />
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,56 +54,55 @@
   <p class="lead">Create unlimited tests, share one link, see exactly where your batch is weak.</p>
 
   <div class="tiers">
-    <!-- TEACHER / INSTITUTE -->
+    <!-- TEACHER — flat per student -->
     <div class="tier feat">
-      <div class="ribbon">Teacher plan</div>
-      <div class="tname">Teacher / Institute</div>
-      <div class="amt">₹{{ sub.price }}<small> / month</small></div>
-      <div class="sub">Everything you need to run assessment for your students.</div>
+      <div class="ribbon">Per student</div>
+      <div class="tname">Flat per student / month</div>
+      <div class="amt" style="font-size:27px">₹{{ PRICING.foundation }}<small> Foundation</small> · ₹{{ PRICING.senior }}<small> Senior</small></div>
+      <div class="sub">Any number of students · no setup fee.</div>
       <ul>
-        <li>Unlimited exam-authentic test papers — JEE, NEET, CBSE, UPSC, Banking</li>
+        <li>Unlimited exam-authentic papers — JEE, NEET, CBSE, UPSC, Banking</li>
         <li>Create a test, share one link — students take it with no signup</li>
-        <li>Live weak-topic dashboard for your whole batch</li>
-        <li>1 lakh+ verified questions · English or हिंदी · cancel anytime</li>
+        <li>Printable paper + answer key + worked solutions</li>
+        <li>Live weak-topic dashboard · class analytics · assign tests to your class</li>
+        <li>Every student their own practice · English or हिंदी · cancel anytime</li>
       </ul>
-      {% if sub.configured %}
-      <button class="btn" id="sub">Subscribe · ₹{{ sub.price }}/mo →</button>
-      <div class="msg" id="msg" role="status"></div>
-      {% else %}
-      <a class="btn" href="https://wa.me/{{ CONTACT_WA }}?text=I%20want%20the%20Acharya%20Teacher%20plan%20(%E2%82%B9{{ sub.price }}%2Fmo)" target="_blank" rel="noopener">Start teacher plan →</a>
-      {% endif %}
+      <a class="btn" href="https://wa.me/{{ CONTACT_WA }}?text=I%20want%20the%20Acharya%20Teacher%20plan" target="_blank" rel="noopener">Start teacher plan →</a>
+    </div>
+
+    <!-- MAKE IT YOURS — free self-serve branding -->
+    <div class="tier">
+      <div class="tname">Make it yours — <span style="color:var(--green)">free</span></div>
+      <div class="amt" style="font-size:26px;color:var(--ink)">Your logo · brand colour · watermark</div>
+      <div class="sub">Put your institute's logo, colours &amp; watermark on the app and every printed paper — set it yourself from your dashboard. Free to start; pay only after your first month.</div>
+      <a class="btn ghost" href="/teacher/branding">Set up your branding →</a>
     </div>
   </div>
   {% else %}
-  <p class="lead">Unlimited real-pattern tests + weak-topic diagnosis — practise till your exam.</p>
+  <p class="lead">Unlimited real-pattern tests + weak-topic diagnosis — one simple price.</p>
 
   <div class="tiers">
-    <!-- LEAD: Exam Pass -->
+    <!-- JEE / NEET / Senior (lead) -->
     <div class="tier feat">
       <div class="ribbon">Best value</div>
-      <div class="tname">Exam Pass — till your exam</div>
-      <div class="amt">₹{{ PRICING.student_pass }}<small> one-time</small></div>
-      <div class="sub">Everything, until your exam date. Best for serious prep.</div>
+      <div class="tname">JEE / NEET / Senior</div>
+      <div class="amt">₹{{ PRICING.senior }}<small> / month</small></div>
+      <div class="sub">Class 11–12 · JEE · NEET.</div>
       <ul>
-        <li>Unlimited practice tests — any topic, real exam pattern</li>
-        <li>Full mock papers with negative marking</li>
-        <li>Your exact weak topics, from every answer (SWOT report)</li>
-        <li>Real exam-pattern diagrams · English or हिंदी · web + WhatsApp</li>
+        <li>Unlimited real-pattern practice tests + full mock papers (timed)</li>
+        <li>Smart Practice that adapts to you + instant weak-topic (SWOT) report</li>
+        <li>AI "Understand" tutor · per-concept mastery tracking · chat-to-test</li>
+        <li>Real exam diagrams · no-repeat questions · English or हिंदी · web + WhatsApp</li>
       </ul>
-      <a class="btn" href="https://wa.me/{{ CONTACT_WA }}?text=I%20want%20the%20Acharya%20Exam%20Pass%20(%E2%82%B9{{ PRICING.student_pass }})" target="_blank" rel="noopener">Get Exam Pass →</a>
+      <a class="btn" href="https://wa.me/{{ CONTACT_WA }}?text=I%20want%20Acharya%20Senior%20(%E2%82%B9{{ PRICING.senior }}%2Fmo)" target="_blank" rel="noopener">Get Senior →</a>
     </div>
 
-    <!-- Monthly -->
+    <!-- Foundation / Board -->
     <div class="tier">
-      <div class="tname">Monthly</div>
-      <div class="amt">₹{{ sub.price }}<small> / month</small></div>
-      <div class="sub">Same access, month-to-month. Cancel anytime.</div>
-      {% if sub.configured %}
-      <button class="btn ghost" id="sub">Subscribe · ₹{{ sub.price }}/mo →</button>
-      <div class="msg" id="msg" role="status"></div>
-      {% else %}
-      <a class="btn ghost" href="https://wa.me/{{ CONTACT_WA }}?text=I%20want%20Acharya%20monthly%20(%E2%82%B9{{ sub.price }}%2Fmo)" target="_blank" rel="noopener">Start monthly →</a>
-      {% endif %}
+      <div class="tname">Foundation / Board</div>
+      <div class="amt">₹{{ PRICING.foundation }}<small> / month</small></div>
+      <div class="sub">Class 6–10 · foundation &amp; board prep — same features, board difficulty.</div>
+      <a class="btn ghost" href="https://wa.me/{{ CONTACT_WA }}?text=I%20want%20Acharya%20Foundation%20(%E2%82%B9{{ PRICING.foundation }}%2Fmo)" target="_blank" rel="noopener">Get Foundation →</a>
     </div>
   </div>
   {% endif %}

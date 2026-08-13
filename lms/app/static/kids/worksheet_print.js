@@ -23,6 +23,21 @@
     for (var i = 0; i < n; i++) w.appendChild(vis(token, size || 32));
     return w;
   }
+  /* pool art (img) for an EN/HI word, or null — same resolver the digital worksheet uses */
+  function artFor(text, size) {
+    if (global.KidsAssets && global.KidsAssets.node) {
+      var n = global.KidsAssets.node(text, size || 34);
+      if (n && n.tagName === 'IMG') { n.style.display = 'block'; n.style.margin = '0 auto 2px'; return n; }
+    }
+    return null;
+  }
+  /* an option cell that shows the PICTURE above the WORD when the pool has art for it (print-friendly) */
+  function entityOpt(text, cls) {
+    var d = el('div', cls || 'wp-opt'), img = artFor(text, 34);
+    if (img) d.appendChild(img);
+    d.appendChild(el('span', null, String(text)));
+    return d;
+  }
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor((i + 1) * ((i * 9301 + 49297) % 233280) / 233280); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
   /* per-archetype STATIC print body */
@@ -55,8 +70,8 @@
     match_following: function (body, p) {
       var pairs = p.pairs || [], left = pairs.map(function (x) { return x[0]; }), right = shuffle(pairs.map(function (x) { return x[1]; }));
       var m = el('div', 'wp-match'), cl = el('div', 'wp-mcol left'), cr = el('div', 'wp-mcol');
-      left.forEach(function (v) { var it = el('div', 'wp-mi'); it.appendChild(el('span', null, String(v))); it.appendChild(el('span', 'wp-dot')); cl.appendChild(it); });
-      right.forEach(function (v) { var it = el('div', 'wp-mi r'); it.appendChild(el('span', 'wp-dot')); it.appendChild(el('span', null, String(v))); cr.appendChild(it); });
+      left.forEach(function (v) { var it = el('div', 'wp-mi'); var im = artFor(v, 30); if (im) it.appendChild(im); it.appendChild(el('span', null, String(v))); it.appendChild(el('span', 'wp-dot')); cl.appendChild(it); });
+      right.forEach(function (v) { var it = el('div', 'wp-mi r'); it.appendChild(el('span', 'wp-dot')); var im = artFor(v, 30); if (im) it.appendChild(im); it.appendChild(el('span', null, String(v))); cr.appendChild(it); });
       m.appendChild(cl); m.appendChild(cr); body.appendChild(el('div', null, 'Draw a line to match:')); body.appendChild(m);
     },
     true_false: function (body, p) {
@@ -69,17 +84,22 @@
       var s = String(p.sentence || '').replace(/_{2,}|▢/g, box(true));
       body.appendChild(el('div', 'wp-expr', s));
       if (p.bank && p.bank.length) {
-        var o = el('div', 'wp-opts'); p.bank.forEach(function (w) { o.appendChild(el('div', 'wp-opt', String(w))); });
+        var o = el('div', 'wp-opts'); p.bank.forEach(function (w) { o.appendChild(entityOpt(w)); });
         body.appendChild(el('div', null, 'Word bank:')); body.appendChild(o);
       }
     },
     odd_one_out: function (body, p) {
-      var o = el('div', 'wp-opts'); (p.options || []).forEach(function (x) { o.appendChild(el('div', 'wp-opt', String(x))); });
+      var o = el('div', 'wp-opts'); (p.options || []).forEach(function (x) { o.appendChild(entityOpt(x)); });
       body.appendChild(el('div', null, 'Circle the one that does not belong:')); body.appendChild(o);
     },
     sort_groups: function (body, p) {
       if (p.bins && p.bins.length) body.appendChild(el('div', 'wp-expr', 'Groups:  ' + p.bins.map(function (b) { return '<b>' + b + '</b>'; }).join('&nbsp;&nbsp;/&nbsp;&nbsp;')));
-      (p.items || []).forEach(function (v) { body.appendChild(el('div', 'wp-expr', String(v) + '  →  ' + box())); });
+      (p.items || []).forEach(function (v) {
+        var row = el('div', 'wp-expr'); var im = artFor(v, 30);
+        if (im) { im.style.display = 'inline-block'; im.style.verticalAlign = 'middle'; im.style.margin = '0 6px 0 0'; row.appendChild(im); }
+        row.appendChild(el('span', null, String(v) + '  →  ' + box()));
+        body.appendChild(row);
+      });
     }
   };
 

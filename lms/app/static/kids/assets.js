@@ -19,11 +19,28 @@
   var manifest = null;
   var loading = null;
   var emojiIndex = {};   // emoji glyph -> asset id (so a raw 🍎 resolves to the apple art)
+  var wordIndex = {};    // normalised word (EN + HI) -> asset id (so "cow"/"गाय" resolve to cow art)
 
+  function normWord(s) {
+    return String(s == null ? '' : s).toLowerCase().trim()
+      .replace(/[।.,!?;:'"()\[\]]/g, '').replace(/\s+/g, ' ');
+  }
   function buildIndex() {
-    emojiIndex = {};
+    emojiIndex = {}; wordIndex = {};
     var a = (manifest && manifest.assets) || {};
-    Object.keys(a).forEach(function (k) { if (a[k].emoji) emojiIndex[a[k].emoji] = k; });
+    Object.keys(a).forEach(function (k) {
+      if (a[k].emoji) emojiIndex[a[k].emoji] = k;
+      // index every synonym the manifest lists for this asset (data-driven → scales as the pool grows)
+      (a[k].words || []).forEach(function (w) { var n = normWord(w); if (n) wordIndex[n] = k; });
+    });
+  }
+  // resolve any token (id / emoji / EN or HI word) to an asset id, or null
+  function idFor(token) {
+    if (!token) return null;
+    if (typeof token === 'object') return token.asset || null;
+    if (get(token)) return token;
+    if (emojiIndex[token]) return emojiIndex[token];
+    return wordIndex[normWord(token)] || null;
   }
 
   function load() {
@@ -52,7 +69,7 @@
     else if (typeof token === 'string') {
       if (get(token)) id = token;                 // it's a known asset id
       else if (emojiIndex[token]) { id = emojiIndex[token]; emoji = token; }   // a raw emoji → its asset
-      else { text = token; }                       // plain text / label
+      else { id = wordIndex[normWord(token)] || null; text = token; }          // EN/HI word → asset, keep text
     }
     var a = id ? get(id) : null;
     if (a && isReady(a)) {
@@ -79,6 +96,7 @@
     get: get,
     isReady: function (id) { return isReady(get(id)); },
     node: node,          // → DOM element (art or emoji)
+    idFor: idFor,        // → asset id for an id/emoji/EN-or-HI word, or null
     html: html,          // → HTML string
     // pool stats for a quick on-page badge / debugging
     stats: function () {

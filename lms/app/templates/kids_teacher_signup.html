@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/static/brand/favicon-32.png"><link rel="apple-touch-icon" href="/static/brand/trigunai-favicon-180.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acharya Kids — for Teachers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --k-pink:#3AA6E8; --k-purple:#1E6FB5; --k-blue:#5CC0F0; --k-green:#22b07d; --k-yellow:#ffb300;
+         --ink:#10344F; --muted:#5b7a92; --line:#dcebf7; --card:#fff; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Baloo 2","Segoe UI",system-ui,sans-serif;color:var(--ink);
+       background:radial-gradient(1200px 600px at 20% -10%,#e3f3ff 0%,transparent 60%),
+                  radial-gradient(1000px 600px at 90% 0%,#d6ecff 0%,transparent 55%),#f2faff;
+       min-height:100vh;}
+  .wrap{max-width:560px;margin:0 auto;padding:26px 18px 60px}
+  .brand{display:flex;align-items:center;gap:10px;justify-content:center;margin:8px 0 22px}
+  .brand .logo{width:46px;height:46px;border-radius:13px;background:#fff;padding:6px;object-fit:contain;
+       box-shadow:0 8px 20px rgba(58,166,232,.22);border:1.5px solid var(--line)}
+  .brand b{font-size:20px;font-weight:800}
+  .brand span{font-size:12.5px;color:var(--muted);display:block;font-weight:600;margin-top:-3px}
+  h1{font-size:30px;line-height:1.15;margin:6px 0 8px;text-align:center;font-weight:800}
+  h1 .hl{color:var(--k-purple)}
+  .lead{text-align:center;color:var(--muted);font-size:15px;margin:0 auto 22px;max-width:440px}
+  .card{background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:22px;
+        box-shadow:0 18px 40px rgba(30,111,181,.14)}
+  label{display:block;font-weight:700;font-size:13px;margin:12px 2px 6px}
+  input{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:14px;font:inherit;font-size:15px;background:#fff}
+  input:focus{outline:none;border-color:var(--k-purple);box-shadow:0 0 0 3px rgba(30,111,181,.15)}
+  .btn{margin-top:16px;width:100%;border:none;border-radius:16px;padding:15px;font:inherit;font-weight:800;font-size:16px;
+       color:#fff;background:linear-gradient(135deg,var(--k-pink),var(--k-purple));cursor:pointer;
+       box-shadow:0 12px 26px rgba(58,166,232,.32)}
+  .btn:active{transform:translateY(1px)}
+  .hint{text-align:center;color:var(--muted);font-size:12px;margin-top:12px}
+  .or{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;margin:16px 0 4px}
+  .or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+  .feats{list-style:none;padding:0;margin:22px 0 0}
+  .feats li{display:flex;gap:11px;align-items:flex-start;padding:11px 4px;font-size:14.5px}
+  .feats .e{font-size:20px;line-height:1}
+  .feats b{font-weight:800}
+  .err{background:#ffe9ef;border:1px solid #ffc4d6;color:#b8791a;border-radius:12px;padding:10px 12px;font-size:13.5px;margin-bottom:6px;font-weight:600}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  a.log{color:var(--k-purple);font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <img class="logo" src="/static/brand/trigunai-mark.png" alt="TrigunAI">
+    <div><b>Acharya Kids</b><span>for teachers &amp; parents</span></div>
+  </div>
+
+  <h1>Give your class <span class="hl">unlimited worksheets</span> 🎨</h1>
+  <p class="lead">Make a class, share one link, and every child practises Maths, EVS, English, GK &amp; Hindi —
+    on screen or printed. You see who's done what.</p>
+
+  <div class="card">
+    {% if error %}<div class="err">{{ error }}</div>{% endif %}
+    <form method="post" action="/teacher/signup" autocomplete="on">
+      <label>Your name</label>
+      <input type="text" name="name" placeholder="e.g. Rekha Ma'am" autocomplete="name">
+      <label>School / class name</label>
+      <input type="text" name="institute" placeholder="e.g. Little Stars Class 3" autocomplete="organization">
+      <label>Your email</label>
+      <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Set up my class →</button>
+      <p class="hint">🔒 No password, no payment — free to start.</p>
+    </form>
+
+    {% if google_client_id %}
+    <div class="or">or</div>
+    <div id="gbtn" style="display:flex;justify-content:center;margin-top:8px"></div>
+    {% endif %}
+  </div>
+
+  <ul class="feats">
+    <li><span class="e">♾️</span><span><b>Unlimited worksheets</b> — any class (1–5), any subject &amp; topic, fresh every time. Never repeat a sheet.</span></li>
+    <li><span class="e">🖨️</span><span><b>Solve or print</b> — children practise on screen (read aloud!) or you print pencil-&amp;-paper sheets.</span></li>
+    <li><span class="e">📊</span><span><b>See who's done it</b> — track which child finished each worksheet and where they need help.</span></li>
+    <li><span class="e">🔗</span><span><b>One join link</b> — share it once; every child joins your class and gets their own practice.</span></li>
+  </ul>
+</div>
+
+{% if google_client_id %}
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+  function onGoogle(resp){
+    fetch('/api/teacher/google',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({credential:resp.credential, institute:(document.querySelector('[name=institute]').value||'')})})
+      .then(r=>r.json()).then(d=>{ if(d.ok&&d.redirect) location.href=d.redirect; else alert(d.error||'Sign-in failed'); });
+  }
+  window.onload=function(){
+    if(!window.google) return;
+    try{ google.accounts.id.initialize({client_id:"{{ google_client_id }}",callback:onGoogle});
+      google.accounts.id.renderButton(document.getElementById('gbtn'),{theme:'outline',size:'large',shape:'pill',text:'continue_with'});
+    }catch(e){}
+  };
+</script>
+{% endif %}
+</body>
+</html>

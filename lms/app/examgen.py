@@ -136,6 +136,45 @@ RAG_SUBJECTS = {
         "match": ["upsc csat", "csat", "upsc aptitude", "civil services aptitude", "upsc-csat",
                   "csat prelims"],
     },
+    # ---- SSC CGL (govt-job) — GENERATION-first (compute-the-answer): Reasoning + Quant are
+    # served by qbank/reasoninggen.py + quantgen.py (no ingested exemplars). Same /pool + /generate
+    # contract. GS/GK/English roll out later (real PYQ extraction). See SRB_PYQ_SOURCING_GUIDE.md.
+    "ssc-reasoning": {
+        "label": "SSC Reasoning", "exam": "SSC CGL", "subject": "Reasoning", "kw": "reasoning",
+        "match": ["ssc reasoning", "ssc cgl reasoning", "reasoning ssc", "general intelligence",
+                  "ssc-reasoning", "reasoning", "logical reasoning"],
+    },
+    "ssc-quant": {
+        "label": "SSC Quant (Maths)", "exam": "SSC CGL", "subject": "Quantitative Aptitude",
+        "kw": "quant",
+        "match": ["ssc quant", "ssc cgl quant", "ssc maths", "ssc math", "ssc quantitative",
+                  "ssc-quant", "ssc numerical"],
+    },
+    "ssc-gk": {
+        "label": "SSC General Knowledge", "exam": "SSC CGL", "subject": "General Knowledge",
+        "kw": "gk",
+        "match": ["ssc gk", "ssc general knowledge", "static gk", "general knowledge", "ssc-gk",
+                  "static portion", "general awareness", "static portion gk"],
+    },
+    "ssc-english": {
+        "label": "SSC English", "exam": "SSC CGL", "subject": "English", "kw": "english",
+        "match": ["ssc english", "english", "english language", "ssc-english", "general english",
+                  "verbal ability", "english for ssc cgl"],
+    },
+    # SSC/Railway "General Science" BORROWS the real CBSE Class 10 Science bank (3.4k verified,
+    # basic NCERT level = exactly the SSC GS-science difficulty). Real PYQs, not generated.
+    "ssc-science": {
+        "label": "General Science", "exam": "CBSE Class 10", "subject": "Science", "kw": "science",
+        "match": ["ssc science", "general science", "ssc general science", "gs science",
+                  "ssc-science", "science gk", "physics chemistry biology"],
+    },
+    # ---- BPSC (Bihar PSC Prelims) — REAL past-paper PYQs (70th Prelims GS, official keys), NOT
+    # generated. Served from /pool (chapter=NULL, all bands). Built via the exact-question pipeline.
+    "bpsc-gs": {
+        "label": "BPSC GS (Prelims)", "exam": "BPSC", "subject": "General Studies", "kw": "gs",
+        "match": ["bpsc gs", "bpsc general studies", "bpsc prelims", "bpsc-gs", "bihar psc gs",
+                  "bpsc gs prelims", "bihar psc", "bpsc"],
+    },
 }
 
 # ---- goals: what a student is actually preparing for → the subjects that serve it ----
@@ -178,6 +217,14 @@ GOALS = {
         "label": "UPSC Civil Services", "tag": "Civil Services · IAS", "emoji": "🏛️",
         "subjects": ["upsc-gs", "upsc-csat"],
     },
+    "ssc-cgl": {
+        "label": "SSC CGL", "tag": "Govt job · SSC/Railway", "emoji": "📋",
+        "subjects": ["ssc-reasoning", "ssc-quant", "ssc-gk", "ssc-english", "ssc-science"],
+    },
+    "bpsc": {
+        "label": "BPSC (Bihar PSC)", "tag": "Bihar · Civil Services", "emoji": "🏛️",
+        "subjects": ["bpsc-gs"],
+    },
 }
 DEFAULT_GOAL = "jee-advanced"
 
@@ -208,6 +255,11 @@ DIFFICULTY_LADDER = {
     "Banking Prelims": {"easy": "2", "mix": "2-3", "hard": "3"},
     # UPSC PYQs are all stored at difficulty 3 (one mixed prelims paper) — every band maps to 3.
     "UPSC Civil Services (Preliminary)": {"easy": "3", "mix": "3", "hard": "3"},
+    # SSC CGL (generated Reasoning + Quant, same compute-the-answer pool as Banking) — match the bands.
+    "SSC CGL": {"easy": "2", "mix": "2-3", "hard": "3"},
+    # BPSC — real Prelims GS PYQs served from /pool (chapter=NULL, difficulty bypassed via storage
+    # skip_difficulty); the band values are nominal (serving ignores them for BPSC, like UPSC).
+    "BPSC": {"easy": "2", "mix": "3", "hard": "3"},
 }
 _DEFAULT_LADDER = {"easy": "3", "mix": "3-4", "hard": "4"}
 

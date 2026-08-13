@@ -341,6 +341,10 @@ def _migrate():
         # teacher/institute (B2B): a Student row can also be a teacher who creates class tests
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS is_teacher BOOLEAN DEFAULT FALSE",
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS institute VARCHAR(120) DEFAULT ''",
+        # self-serve white-label branding (teacher /teacher/branding): colour, logo (data-URL), watermark
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS brand_color VARCHAR(9) DEFAULT ''",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS brand_logo TEXT DEFAULT ''",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS brand_watermark BOOLEAN DEFAULT FALSE",
         # institute classroom (B2B2C) — batch-scoping + account-linked results:
         #  batch_id  = which TeacherInvite (batch) a linked student joined through
         #  invite_id = which batch an Assignment targets (NULL = all the teacher's batches)
@@ -350,6 +354,13 @@ def _migrate():
         "ALTER TABLE class_sittings ADD COLUMN IF NOT EXISTS student_id INTEGER NULL",
         # per-question answer record so the teacher can review what each student answered
         "ALTER TABLE class_sittings ADD COLUMN IF NOT EXISTS detail JSON DEFAULT '[]'::json",
+        # kids product: class + board on students (set at join, locks self-generated worksheets) and on
+        # the batch (TeacherInvite); a frozen worksheet pack for a FIXED kids test (kind=kidstest).
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS grade INTEGER NULL",
+        "ALTER TABLE students ADD COLUMN IF NOT EXISTS board VARCHAR(24) DEFAULT ''",
+        "ALTER TABLE teacher_invites ADD COLUMN IF NOT EXISTS grade INTEGER NULL",
+        "ALTER TABLE teacher_invites ADD COLUMN IF NOT EXISTS board VARCHAR(24) DEFAULT ''",
+        "ALTER TABLE assignments ADD COLUMN IF NOT EXISTS pack JSON NULL",
         # GRANDFATHER (one-time): every student that exists when the column is first added is
         # NULL → mark grandfathered (full access forever, never paywalled). Re-running matches
         # nothing because new signups are 'none' (not NULL), so it's idempotent.

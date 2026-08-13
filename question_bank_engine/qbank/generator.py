@@ -220,6 +220,22 @@ def generate_test(store, spec: dict, llm=None, count: int = 5, k_exemplars: int 
         if quantgen.can_generate(spec.get("exam"), spec.get("subject"), spec.get("chapter")):
             return quantgen.generate_test(store, spec, count)
 
+        # Govt-job (SSC/Railway/Banking/BPSC) Reasoning is likewise generator-served with
+        # Python-computed answers and NO ingested exemplars — route to the reasoning engine.
+        from . import reasoninggen
+        if reasoninggen.can_generate(spec.get("exam"), spec.get("subject"), spec.get("chapter")):
+            return reasoninggen.generate_test(store, spec, count)
+
+        # Static GK — generate-from-data (verified fact tables, correct-by-construction).
+        from . import staticgkgen
+        if staticgkgen.can_generate(spec.get("exam"), spec.get("subject"), spec.get("chapter")):
+            return staticgkgen.generate_test(store, spec, count)
+
+        # English — generate-from-data (verified synonym/antonym/idiom/spelling pairs + voice).
+        from . import englishgen
+        if englishgen.can_generate(spec.get("exam"), spec.get("subject"), spec.get("chapter")):
+            return englishgen.generate_test(store, spec, count)
+
     # FIGURE-FIRST routing: a diagram request in a covered subject/chapter is DRAWN
     # deterministically (correct figure + RDKit-computed answer) instead of LLM-authored SVG.
     if spec.get("require_figure") and not mock:
