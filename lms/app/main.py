@@ -117,7 +117,8 @@ STUDENT_EXAMS = [
     {"id": "commerce","title": "Class 12 Commerce", "tag": "Accounts · Economics", "emoji": "📊", "available": True},
     {"id": "cuet",    "title": "CUET",          "tag": "UG entrance",          "emoji": "🎓", "available": False},
     {"id": "upsc",    "title": "UPSC",          "tag": "Civil Services",       "emoji": "🏛️", "available": True},
-    {"id": "bpsc",    "title": "BPSC",          "tag": "Bihar PSC · real PYQs", "emoji": "🏛️", "available": True},
+    # BPSC (civil services) hidden from the picker per One Step (they teach TRE, not BPSC). Data +
+    # bpsc-gs serving remain in the bank for the parallel lane / other use; just not shown here.
     {"id": "bpsc-tre","title": "TRE (Bihar Teacher)", "tag": "Teacher Recruitment · real PYQs", "emoji": "🧑‍🏫", "available": True},
     {"id": "ssc",     "title": "SSC CGL",       "tag": "All sections live",     "emoji": "📋", "available": True},
     {"id": "railway", "title": "Railway (RRB)", "tag": "NTPC · Group D · ALP",  "emoji": "🚂", "available": True},
@@ -2213,7 +2214,7 @@ def teacher_chapters(request: Request, subject: str = "jee-physics", db: Session
 # so teachers couldn't make Class 10/12/Commerce/UPSC tests (institute feedback 2026-07-29). Order
 # mirrors the student exam picker.
 _TEACHER_GOALS = ["jee-advanced", "neet", "cbse-10", "cbse-12", "cbse-12-commerce", "banking",
-                  "upsc", "bpsc", "bpsc-tre", "ssc-cgl", "railway"]
+                  "upsc", "bpsc-tre", "ssc-cgl", "railway"]   # bpsc (civil services) hidden — TRE only
 _KIDS_TEACHER_GOALS = ["class3"]   # kids-education.trigunai.com teachers create Grade-3 tests
 
 
