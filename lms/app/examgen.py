@@ -187,7 +187,7 @@ RAG_SUBJECTS = {
     # cross-source keyed), 5-option (A-E). Served from /pool (exam="BPSC TRE" starts with "BPSC" so it
     # inherits the real-serve + skip_chapter/skip_difficulty gate). Built via extract_tre.py + keying.
     "bpsc-tre": {
-        "label": "BPSC TRE GS (Teacher)", "exam": "BPSC TRE", "subject": "General Studies", "kw": "gs",
+        "label": "TRE — General Studies", "exam": "BPSC TRE", "subject": "General Studies", "kw": "gs",
         "match": ["bpsc tre", "tre", "teacher recruitment", "bpsc teacher", "bpsc-tre",
                   "bihar teacher", "tre gs", "bpsc tre gs"],
     },
@@ -300,7 +300,7 @@ GOALS = {
         "subjects": ["bpsc-gs"],
     },
     "bpsc-tre": {
-        "label": "BPSC TRE (Teacher)", "tag": "Bihar · Teacher Recruitment", "emoji": "🧑‍🏫",
+        "label": "TRE (Bihar Teacher)", "tag": "Bihar · Teacher Recruitment", "emoji": "🧑‍🏫",
         "subjects": ["bpsc-tre", "gs-polity", "gs-history", "gs-geography", "gs-economics",
                      "gs-physics", "gs-chemistry", "gs-biology"],
     },
