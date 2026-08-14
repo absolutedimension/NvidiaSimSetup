@@ -270,3 +270,232 @@ def generate_test(store, spec: dict, count: int = 5) -> dict:
         "questions": [q.to_dict() for q in accepted],
         "answer_key": {q.id: q.correct_answer for q in accepted},
     }
+
+
+# =============================================================================
+# EXPANSION (2026-08-14) — more verified data + new builder types so the SSC
+# English pool clears 1000 with variety. Appended (dicts .update(), builders,
+# then _CHAP_BUILDERS registrations) so the base file is untouched.
+# =============================================================================
+
+SYNONYM.update({
+    "Adverse": "Unfavourable", "Brisk": "Quick", "Comprehend": "Understand", "Deceive": "Cheat",
+    "Endeavour": "Attempt", "Fatigue": "Tiredness", "Generous": "Giving", "Hazard": "Danger",
+    "Illustrate": "Explain", "Jovial": "Cheerful", "Keen": "Eager", "Lament": "Mourn",
+    "Magnify": "Enlarge", "Nimble": "Agile", "Perplex": "Confuse", "Quaint": "Odd",
+    "Reveal": "Disclose", "Sturdy": "Strong", "Urge": "Persuade", "Valiant": "Brave",
+    "Wary": "Cautious", "Absurd": "Ridiculous", "Bliss": "Joy", "Chronic": "Persistent",
+    "Elevate": "Raise", "Gloomy": "Dark", "Harass": "Trouble", "Intimate": "Close",
+    "Kindle": "Ignite", "Loathe": "Hate", "Mock": "Ridicule", "Notorious": "Infamous",
+    "Obscure": "Unclear", "Postpone": "Defer", "Rectify": "Correct", "Sluggish": "Slow",
+    "Tedious": "Boring", "Vanish": "Disappear", "Weary": "Tired", "Zeal": "Enthusiasm",
+})
+ANTONYM.update({
+    "Accept": "Reject", "Brave": "Cowardly", "Clumsy": "Graceful", "Deep": "Shallow",
+    "Encourage": "Discourage", "Fresh": "Stale", "Guilty": "Innocent", "Harsh": "Gentle",
+    "Include": "Exclude", "Joy": "Sorrow", "Knowledge": "Ignorance", "Loose": "Tight",
+    "Major": "Minor", "Narrow": "Wide", "Odd": "Even", "Private": "Public",
+    "Rural": "Urban", "Scatter": "Gather", "Tame": "Wild", "Unite": "Divide",
+    "Visible": "Invisible", "Wealth": "Poverty", "Attract": "Repel", "Blunt": "Sharp",
+    "Cruel": "Kind", "Deny": "Admit", "External": "Internal", "Forbid": "Allow",
+    "Generous": "Stingy", "Horizontal": "Vertical", "Import": "Export", "Junior": "Senior",
+    "Lazy": "Diligent", "Modest": "Boastful", "Natural": "Artificial", "Polite": "Rude",
+})
+ONE_WORD.update({
+    "One who cannot hear": "Deaf",
+    "A place where dead bodies are kept": "Mortuary",
+    "The study of ancient societies through remains": "Archaeology",
+    "One who is skilled in cooking": "Chef",
+    "A person who draws maps": "Cartographer",
+    "One who studies the weather": "Meteorologist",
+    "A person who repairs machines": "Mechanic",
+    "A period of ten years": "Decade",
+    "A period of hundred years": "Century",
+    "One who leaves his own country to settle in another": "Emigrant",
+    "A hater of women": "Misogynist",
+    "Words written on a tomb": "Epitaph",
+    "A book that gives information about words": "Dictionary",
+    "A place for the treatment of sick animals": "Veterinary",
+    "One who believes in fate": "Fatalist",
+    "A person who does not drink alcohol": "Teetotaller",
+    "The murder of a king": "Regicide",
+    "A remedy for all diseases": "Panacea",
+    "One who talks in his sleep": "Somniloquist",
+    "A person appointed to settle a dispute": "Arbitrator",
+    "One who can use both hands equally well": "Ambidextrous",
+    "A speech delivered to oneself": "Soliloquy",
+    "That which lasts for a short time": "Transient",
+    "One who is present everywhere": "Omnipresent",
+    "One who knows everything": "Omniscient",
+})
+IDIOM.update({
+    "To spill the beans": "To reveal a secret",
+    "To face the music": "To bear the consequences",
+    "To keep one's fingers crossed": "To hope for good luck",
+    "To go the extra mile": "To make extra effort",
+    "To let sleeping dogs lie": "To avoid restarting an old conflict",
+    "To throw in the towel": "To give up",
+    "To bury the hatchet": "To make peace",
+    "At the drop of a hat": "Without hesitation",
+    "To be on cloud nine": "To be extremely happy",
+    "To steal someone's thunder": "To take credit for another's work",
+    "To cut corners": "To do something cheaply or hastily",
+    "A bolt from the blue": "A sudden shock",
+    "To play second fiddle": "To take a subordinate role",
+    "To bite off more than one can chew": "To take on too much",
+    "To have cold feet": "To become nervous",
+    "To keep an ear to the ground": "To stay well informed",
+    "To read between the lines": "To find a hidden meaning",
+    "A storm in a teacup": "A big fuss over a small matter",
+    "To take with a pinch of salt": "To not fully believe",
+    "To be all ears": "To listen attentively",
+    "To rain cats and dogs": "To rain heavily",
+    "The tip of the iceberg": "A small visible part of a large problem",
+})
+SPELL.update({
+    "Committee": ["Comittee", "Commitee", "Committe"],
+    "Possession": ["Posession", "Possesion", "Posesion"],
+    "Government": ["Goverment", "Governmant", "Govenment"],
+    "Achievement": ["Acheivement", "Achievment", "Achievemant"],
+    "Beginning": ["Begining", "Beggining", "Beginnning"],
+    "Exaggerate": ["Exagerate", "Exeggerate", "Exaggarate"],
+    "Foreign": ["Forein", "Foriegn", "Forreign"],
+    "Guarantee": ["Garantee", "Guaruntee", "Gaurantee"],
+    "Hierarchy": ["Heirarchy", "Hierachy", "Hierarcy"],
+    "Liaison": ["Liason", "Liaision", "Leiason"],
+    "Mischievous": ["Mischievious", "Mischevous", "Mischeivous"],
+    "Questionnaire": ["Questionaire", "Questionnair", "Questionnare"],
+    "Vacuum": ["Vaccum", "Vacum", "Vaccuum"],
+    "Withhold": ["Withold", "Wihhold", "Withhhold"],
+    "Acknowledgement": ["Acknowlegement", "Aknowledgement", "Acknowledgment"],
+    "Conscientious": ["Consciencious", "Conscentious", "Conscietious"],
+})
+
+# --- new builder: fill-in-the-blank PREPOSITIONS (verified sentence -> correct prep) ---
+# (sentence with ___, correct preposition, [wrong prepositions])
+PREPOSITION = [
+    ("He is good ___ mathematics.", "at", ["in", "on", "with"]),
+    ("She has been ill ___ Monday.", "since", ["for", "from", "by"]),
+    ("The cat is hiding ___ the table.", "under", ["on", "above", "beside"]),
+    ("They arrived ___ the airport on time.", "at", ["in", "to", "on"]),
+    ("I will meet you ___ the evening.", "in", ["on", "at", "by"]),
+    ("He walked ___ the bridge.", "across", ["through", "over", "along"]),
+    ("The book is ___ the shelf.", "on", ["in", "at", "over"]),
+    ("She is angry ___ him.", "with", ["on", "at", "from"]),
+    ("We travelled ___ train.", "by", ["on", "with", "in"]),
+    ("He jumped ___ the wall.", "over", ["above", "across", "on"]),
+    ("The meeting is ___ 5 o'clock.", "at", ["on", "in", "by"]),
+    ("She was born ___ 1995.", "in", ["on", "at", "since"]),
+    ("The shop is ___ the corner.", "at", ["in", "on", "by"]),
+    ("He divided the cake ___ the children.", "among", ["between", "into", "with"]),
+    ("Distribute these sweets ___ the two boys.", "between", ["among", "in", "to"]),
+    ("The train ran ___ the tunnel.", "through", ["across", "over", "along"]),
+    ("Put the pen ___ the box.", "into", ["on", "at", "by"]),
+    ("He is senior ___ me.", "to", ["than", "from", "of"]),
+    ("She is fond ___ music.", "of", ["for", "with", "in"]),
+    ("The plane flew ___ the clouds.", "above", ["on", "at", "across"]),
+    ("I agree ___ your plan.", "to", ["with", "on", "for"]),
+    ("He congratulated me ___ my success.", "on", ["for", "at", "with"]),
+    ("The dog ran ___ the road.", "along", ["across", "through", "over"]),
+    ("She has a talent ___ painting.", "for", ["of", "in", "at"]),
+    ("We sat ___ the fire.", "beside", ["besides", "among", "between"]),
+    ("He died ___ cancer.", "of", ["from", "by", "with"]),
+    ("The letter was written ___ ink.", "in", ["with", "by", "on"]),
+    ("They live ___ the same street.", "on", ["in", "at", "by"]),
+    ("He is married ___ a doctor.", "to", ["with", "of", "by"]),
+    ("The bird flew ___ the window.", "out of", ["from", "off", "away"]),
+]
+
+def _b_preposition(rng, diff):
+    sent, correct, dist = rng.choice(PREPOSITION)
+    stem = "Fill in the blank with the correct preposition:\n" + sent
+    return {"stem": stem, "correct": correct, "distractors": list(dist)[:3],
+            "solution": sent.replace("___", correct), "concept": "Prepositions"}
+
+# --- new builder: HOMOPHONES (choose the correct word for the context) ---
+HOMOPHONE = [
+    ("They are going ___ the market.", "to", ["too", "two"]),
+    ("I have ___ many books.", "too", ["to", "two"]),
+    ("Please give me ___ pens.", "two", ["to", "too"]),
+    ("The dog wagged ___ tail.", "its", ["it's", "its'"]),
+    ("___ raining outside.", "It's", ["Its", "Its'"]),
+    ("___ going to the party.", "They're", ["Their", "There"]),
+    ("Put it over ___.", "there", ["their", "they're"]),
+    ("This is ___ house.", "their", ["there", "they're"]),
+    ("You should not lose ___ temper.", "your", ["you're", "yours"]),
+    ("___ very kind.", "You're", ["Your", "Yours"]),
+    ("He ate the ___ apple.", "whole", ["hole", "wholly"]),
+    ("There is a ___ in my sock.", "hole", ["whole", "hold"]),
+    ("I can ___ you clearly.", "hear", ["here", "heir"]),
+    ("Come over ___.", "here", ["hear", "heir"]),
+    ("The knight wore ___ armour.", "his", ["hiss", "hies"]),
+    ("She will ___ the letter.", "write", ["right", "rite"]),
+    ("Turn ___ at the signal.", "right", ["write", "rite"]),
+    ("The wind ___ the leaves away.", "blew", ["blue", "blow"]),
+    ("The sky is ___.", "blue", ["blew", "blow"]),
+    ("He gave a good ___.", "piece", ["peace", "peas"]),
+    ("They signed a ___ treaty.", "peace", ["piece", "peas"]),
+    ("The ___ was very heavy.", "weight", ["wait", "waite"]),
+    ("Please ___ for me.", "wait", ["weight", "waite"]),
+    ("The flower has a sweet ___.", "scent", ["cent", "sent"]),
+    ("She ___ a letter yesterday.", "sent", ["scent", "cent"]),
+    ("We saw a ___ at sea.", "sail", ["sale", "sell"]),
+    ("The shop has a ___ today.", "sale", ["sail", "sell"]),
+    ("He broke the ___.", "brake", ["break", "braek"]),
+    ("Take a short ___.", "break", ["brake", "braek"]),
+    ("The ___ of the story is clear.", "moral", ["morale", "mural"]),
+]
+
+def _b_homophone(rng, diff):
+    sent, correct, dist = rng.choice(HOMOPHONE)
+    stem = "Choose the correct word to complete the sentence:\n" + sent
+    return {"stem": stem, "correct": correct, "distractors": list(dist)[:3],
+            "solution": sent.replace("___", correct), "concept": "Homophones"}
+
+# --- expand the combinatorial active/passive builder (more subjects + verbs) ---
+_VOICE_SUBJECTS.extend(["The student", "The mother", "The soldier", "The engineer",
+                        "The carpenter", "The singer", "The worker", "The captain",
+                        "The pilot", "The nurse"])
+_VOICE_VERBS.update({
+    "draw": ("draws", "drawn", ["a picture", "the map", "a circle", "the sketch"]),
+    "throw": ("throws", "thrown", ["the ball", "a stone", "the dice"]),
+    "drive": ("drives", "driven", ["the car", "the bus", "the truck"]),
+    "carry": ("carries", "carried", ["the box", "the bag", "the load"]),
+    "repair": ("repairs", "repaired", ["the machine", "the clock", "the engine"]),
+    "teach": ("teaches", "taught", ["the lesson", "the poem", "the subject"]),
+    "plant": ("plants", "planted", ["a tree", "the seeds", "the flowers"]),
+    "wash": ("washes", "washed", ["the clothes", "the dishes", "the car"]),
+    "solve": ("solves", "solved", ["the problem", "the puzzle", "the sum"]),
+    "close": ("closes", "closed", ["the door", "the gate", "the window"]),
+    "sell": ("sells", "sold", ["the house", "the car", "the goods"]),
+})
+
+# --- new builder: DIRECT -> INDIRECT speech (mechanical, simple present -> past) ---
+_SAY_SUBJECTS = [("He", "he"), ("She", "she"), ("Ram", "he"), ("Sita", "she"),
+                 ("The teacher", "he"), ("My friend", "he")]
+_SAY_CLAUSES = [
+    ("I am busy", "was busy"), ("I like mangoes", "liked mangoes"),
+    ("I know the answer", "knew the answer"), ("I want water", "wanted water"),
+    ("I play cricket", "played cricket"), ("I read books", "read books"),
+    ("I have a pen", "had a pen"), ("I live in Delhi", "lived in Delhi"),
+]
+
+def _b_narration(rng, diff):
+    subj, pron = rng.choice(_SAY_SUBJECTS)
+    direct, past = rng.choice(_SAY_CLAUSES)
+    stem = f'Select the correct INDIRECT speech: {subj} said, "{direct}."'
+    correct = f"{subj} said that {pron} {past}."
+    d = [
+        f'{subj} said that {pron} {direct[2:]}.',          # tense not changed
+        f'{subj} says that {pron} {past}.',                # reporting verb wrong
+        f'{subj} said that I {past}.',                     # pronoun not changed
+    ]
+    return {"stem": stem, "correct": correct, "distractors": d,
+            "solution": f"Simple present in direct speech → simple past in indirect: {correct}",
+            "concept": "Narration (Direct/Indirect)"}
+
+_CHAP_BUILDERS.update({
+    "Prepositions": [_b_preposition],
+    "Homophones": [_b_homophone],
+    "Narration (Direct & Indirect Speech)": [_b_narration],
+})

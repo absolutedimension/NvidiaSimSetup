@@ -65,16 +65,20 @@ with a small serving tweak). Live-serving verified via `/examgen/pool`.
 |---|---:|---:|---|
 | **Maths** (Quant Aptitude) | 580 | **1,007** | ✅ 1000 hit (combinatorial → unlimited) |
 | **Reasoning** | 22 | **1,007** | ✅ 1000 hit (combinatorial → unlimited) |
-| **English** | 9 | **420** | ⚠️ generator CEILING (finite templates) |
-| **Static GK** | 5 | **323** | ⚠️ generator CEILING (finite ~15 fact tables) |
+| **English** | 9 | 420 → **1,003** | ✅ 1000 hit after generator expansion |
+| **Static GK** | 5 | 323 → **1,000** | ✅ 1000 hit after generator expansion |
 
-**English + Static-GK stalled at their generators' unique-combination ceiling** — as the plan predicted for
-finite-content subjects. To reach 1000 each, ONE of:
-- **Expand the generators** (add builder types to `englishgen`: cloze, error-spotting, para-jumble, reading-
-  comprehension, one-word-substitution; add fact tables to `staticgkgen`: more awards/rivers/dynasties/
-  schemes/books-authors/sports/organizations). Each new builder/table adds a block of unique questions —
-  cheapest path, no key risk. **← recommended next.**
-- **Source real SSC English + Static-GK PYQs** via the exact-question / cross-source keying pipeline.
+**English + Static-GK first stalled** at their generators' unique-combination ceiling (420 / 323) — as the
+plan predicted for finite-content subjects. **Resolved by EXPANDING the generators (2026-08-14):**
+- `englishgen`: +~150 verified vocab entries (synonyms/antonyms/one-word/idioms/spelling) + 3 new builder
+  types (Prepositions, Homophones, Direct/Indirect Narration) + a larger combinatorial active/passive bank
+  → **1,003**.
+- `staticgkgen`: **+~40 verified fact tables** (chemical symbols/formulae, ores, inventions, sobriquets,
+  monuments, dams, lakes, festivals, SI units, national symbols, "Father of…", stadiums, boundary lines,
+  constitution sources, peaks/passes, musicians, diseases, bank HQs, trophies, branches of study, temples,
+  tribes, paintings, slogans, planets, acids, vitamins, parliaments, sanctuaries, continents) + forward &
+  reverse builders → **1,000**. Accuracy spot-checked; all generated, no key risk.
+All four skill subjects now **serve live** from `/examgen/pool` under the SSC CGL tag.
 
 ## Recommended sequence
 1. **TIER 1 batch-fill** Maths + Reasoning + English to 1000 (1 day) — biggest visible jump for Rohan's pitch.
