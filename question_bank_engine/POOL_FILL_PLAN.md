@@ -56,9 +56,7 @@ P/C/B). LMS-only change; verified all three serve live from `/examgen/pool`. **P
   ~412, plus Science ~48 and some mis-filed TRE reasoning/quant), and the pure GS-Social content is only
   **~318 → now ~630 after targeted Social-Science keying (2026-08-14)** — Geography 177, Polity 162, History 158, Economics 132 (was 103/89/62/64). Still short of 1000/dim; ~744 more pooled from the pure-dimension 11-12 papers remain to key. **So 1000 per
   social dimension is NOT reachable by tagging — it needs ~8-10× more real sourcing.** The tags are the
-  foundation; they were NOT exposed as separate serving subjects yet (each is ~60-100 deep, and splitting the
-  live combined-GS serving is cross-lane with the BPSC ingest session + a worse UX than one combined GS pool
-  at this depth). **Path to 1000/dimension:** key many more real papers (remaining ~149 TRE editions + more
+  foundation; **EXPOSED as selectable subjects 2026-08-14 (lms:v144):** the BPSC TRE GS-Social Qs were re-subjected by concept → `GS Polity`(124)/`GS History`(131)/`GS Geography`(149)/`GS Economics`(108), 4 RAG_SUBJECTS added (gs-polity/history/geography/economics → BPSC TRE) + attached to the BPSC TRE goal so students focus-practise each; all serve live from /pool. Combined `General Studies` keeps the 484 static/science remainder. (BPSC/UPSC GS-Social left as combined — cross-lane.) **Path to 1000/dimension:** key many more real papers (remaining ~149 TRE editions + more
   BPSC/UPSC years) via the pipeline, tag on ingest, then expose the dimensions once each has real depth.
 - **BPSC TRE → thousands:** we keyed 3 of 152 downloaded papers. Running the pipeline over the rest yields
   several thousand more real Bihar-GK/GS/Science/Maths Qs (feeds Static-GK + GS-Social + TRE line).

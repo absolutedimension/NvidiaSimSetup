@@ -207,6 +207,25 @@ RAG_SUBJECTS = {
         "label": "General Science: Biology", "exam": "CBSE Class 12", "subject": "Biology", "kw": "biology",
         "match": ["gs biology", "general science biology", "gs-biology", "biology gk", "science biology"],
     },
+    # ---- GS-Social dimensions — real BPSC TRE PYQs re-subjected from "General Studies" by concept
+    # (cross-source keyed). Served from /pool (exam="BPSC TRE" real-serve + skip_difficulty gate).
+    # Selectable so a student can focus-practise one social dimension.
+    "gs-polity": {
+        "label": "GS: Polity", "exam": "BPSC TRE", "subject": "GS Polity", "kw": "polity",
+        "match": ["polity", "gs polity", "political science", "civics", "constitution", "gs-polity"],
+    },
+    "gs-history": {
+        "label": "GS: History", "exam": "BPSC TRE", "subject": "GS History", "kw": "history",
+        "match": ["history", "gs history", "indian history", "gs-history"],
+    },
+    "gs-geography": {
+        "label": "GS: Geography", "exam": "BPSC TRE", "subject": "GS Geography", "kw": "geography",
+        "match": ["geography", "gs geography", "indian geography", "gs-geography"],
+    },
+    "gs-economics": {
+        "label": "GS: Economics", "exam": "BPSC TRE", "subject": "GS Economics", "kw": "economics",
+        "match": ["economics", "gs economics", "economy", "indian economy", "gs-economics"],
+    },
     # ---- Railway (RRB — NTPC / Group D / ALP) — same generator-served pattern as SSC; General
     # Science borrows the real CBSE Class 10 Science bank. Backend taxonomies already registered.
     "railway-reasoning": {
@@ -282,7 +301,8 @@ GOALS = {
     },
     "bpsc-tre": {
         "label": "BPSC TRE (Teacher)", "tag": "Bihar · Teacher Recruitment", "emoji": "🧑‍🏫",
-        "subjects": ["bpsc-tre", "gs-physics", "gs-chemistry", "gs-biology"],
+        "subjects": ["bpsc-tre", "gs-polity", "gs-history", "gs-geography", "gs-economics",
+                     "gs-physics", "gs-chemistry", "gs-biology"],
     },
     "railway": {
         "label": "Railway (RRB)", "tag": "Govt job · Railway", "emoji": "🚂",
