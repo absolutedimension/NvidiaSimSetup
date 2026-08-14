@@ -183,6 +183,28 @@ RAG_SUBJECTS = {
         "match": ["bpsc gs", "bpsc general studies", "bpsc prelims", "bpsc-gs", "bihar psc gs",
                   "bpsc gs prelims", "bihar psc", "bpsc"],
     },
+    # ---- Railway (RRB — NTPC / Group D / ALP) — same generator-served pattern as SSC; General
+    # Science borrows the real CBSE Class 10 Science bank. Backend taxonomies already registered.
+    "railway-reasoning": {
+        "label": "Railway Reasoning", "exam": "Railway (RRB)", "subject": "Reasoning", "kw": "reasoning",
+        "match": ["railway reasoning", "rrb reasoning", "railway-reasoning"],
+    },
+    "railway-quant": {
+        "label": "Railway Maths", "exam": "Railway (RRB)", "subject": "Quantitative Aptitude", "kw": "quant",
+        "match": ["railway maths", "railway quant", "rrb maths", "rrb quant", "railway-quant"],
+    },
+    "railway-gk": {
+        "label": "Railway General Knowledge", "exam": "Railway (RRB)", "subject": "General Knowledge", "kw": "gk",
+        "match": ["railway gk", "rrb gk", "railway general knowledge", "railway-gk"],
+    },
+    "railway-english": {
+        "label": "Railway English", "exam": "Railway (RRB)", "subject": "English", "kw": "english",
+        "match": ["railway english", "rrb english", "railway-english"],
+    },
+    "railway-science": {
+        "label": "General Science", "exam": "CBSE Class 10", "subject": "Science", "kw": "science",
+        "match": ["railway science", "rrb science", "railway-science"],
+    },
 }
 
 # ---- goals: what a student is actually preparing for → the subjects that serve it ----
@@ -234,6 +256,11 @@ GOALS = {
         "label": "BPSC (Bihar PSC)", "tag": "Bihar · Civil Services", "emoji": "🏛️",
         "subjects": ["bpsc-gs"],
     },
+    "railway": {
+        "label": "Railway (RRB)", "tag": "Govt job · Railway", "emoji": "🚂",
+        "subjects": ["railway-reasoning", "railway-quant", "railway-gk", "railway-english",
+                     "railway-science", "current-affairs"],
+    },
 }
 DEFAULT_GOAL = "jee-advanced"
 
@@ -271,6 +298,8 @@ DIFFICULTY_LADDER = {
     "BPSC": {"easy": "2", "mix": "3", "hard": "3"},
     # Current Affairs — manual-entry real dated Qs; difficulty bypassed via storage skip.
     "Current Affairs": {"easy": "2", "mix": "2", "hard": "2"},
+    # Railway (RRB) — same generated pattern/bands as SSC CGL.
+    "Railway (RRB)": {"easy": "2", "mix": "2-3", "hard": "3"},
 }
 _DEFAULT_LADDER = {"easy": "3", "mix": "3-4", "hard": "4"}
 

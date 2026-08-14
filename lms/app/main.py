@@ -85,6 +85,7 @@ EXAMS = [
     {"id": "upsc",     "subject": "upsc-gs",      "title": "UPSC",     "tag": "Civil Services · IAS", "emoji": "🏛️"},
     {"id": "bpsc",     "subject": "bpsc-gs",      "title": "BPSC",     "tag": "Bihar Civil Services", "emoji": "🏛️"},
     {"id": "ssc",      "subject": "ssc-reasoning", "title": "SSC CGL", "tag": "Govt job · SSC/Railway", "emoji": "📋"},
+    {"id": "railway",  "subject": "railway-reasoning", "title": "Railway (RRB)", "tag": "NTPC · Group D · ALP", "emoji": "🚂"},
     {"id": "class3",   "subject": "class3-maths", "title": "Class 3",  "tag": "ICSE · Maths",        "emoji": "🔢"},
 ]
 EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
@@ -116,7 +117,8 @@ STUDENT_EXAMS = [
     {"id": "cuet",    "title": "CUET",          "tag": "UG entrance",          "emoji": "🎓", "available": False},
     {"id": "upsc",    "title": "UPSC",          "tag": "Civil Services",       "emoji": "🏛️", "available": True},
     {"id": "bpsc",    "title": "BPSC",          "tag": "Bihar PSC · real PYQs", "emoji": "🏛️", "available": True},
-    {"id": "ssc",     "title": "SSC CGL",       "tag": "Reasoning + Maths live", "emoji": "📋", "available": True},
+    {"id": "ssc",     "title": "SSC CGL",       "tag": "All sections live",     "emoji": "📋", "available": True},
+    {"id": "railway", "title": "Railway (RRB)", "tag": "NTPC · Group D · ALP",  "emoji": "🚂", "available": True},
     {"id": "banking", "title": "Banking",       "tag": "IBPS · SBI · RRB",     "emoji": "🏦", "available": True},
     {"id": "gate",    "title": "GATE",          "tag": "M.Tech · PSU",         "emoji": "⚙️", "available": False},
     {"id": "cat",     "title": "CAT",           "tag": "MBA entrance",         "emoji": "📊", "available": False},
