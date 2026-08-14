@@ -54,7 +54,7 @@ P/C/B). LMS-only change; verified all three serve live from `/examgen/pool`. **P
   the live bank (non-destructive — serving ignores concept; UPSC rows kept their existing finer concepts).
   **Honest reality the tagging exposed:** the whole GS bucket is a MIX (a lot of it is Static-GK/Current-Affairs
   ~412, plus Science ~48 and some mis-filed TRE reasoning/quant), and the pure GS-Social content is only
-  **~318 real questions total** — Geography ~103, Polity ~89, Economics ~64, History ~62. **So 1000 per
+  **~318 → now ~630 after targeted Social-Science keying (2026-08-14)** — Geography 177, Polity 162, History 158, Economics 132 (was 103/89/62/64). Still short of 1000/dim; ~744 more pooled from the pure-dimension 11-12 papers remain to key. **So 1000 per
   social dimension is NOT reachable by tagging — it needs ~8-10× more real sourcing.** The tags are the
   foundation; they were NOT exposed as separate serving subjects yet (each is ~60-100 deep, and splitting the
   live combined-GS serving is cross-lane with the BPSC ingest session + a worse UX than one combined GS pool
