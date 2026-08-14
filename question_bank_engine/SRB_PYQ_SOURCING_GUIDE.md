@@ -6,6 +6,25 @@
 > verbatim, answer-keyed questions in the bank (like the 517 real UPSC PYQs). Reusable for
 > every future govt-job client, not just One Step Education.
 
+## ▶ NEXT SESSION STARTS HERE — BPSC TRE (open, untapped, on the client's note)
+The client (One Step Education) note lists **"BPSC — TRE, Daroga"**. Status after 2026-08-14:
+- **BPSC Prelims GS** ✅ done (289 live) + editions 66–71 extracted (keys pending — see below).
+- **SSC / Railway / Banking** ✅ generators live + wired to web + APK.
+- **Daroga (BPSSC)** ⛔ NO open papers — the official site (`bpssc.bihar.gov.in` → portal `apply-bpssc.com`)
+  publishes only notices/results/admit-cards (verified 2026-08-14). Only route = a **student who
+  appeared** downloads their **response sheet** via login during the objection window. Deferred to Rohan's students.
+- **BPSC TRE (Teacher Recruitment)** = **the open source NOT yet tapped.** ⬇️ DO THIS NEXT:
+
+**TRE plan (fresh session):** `bpsc.bihar.gov.in/question-booklets/` → dropdown **"Teacher Recruitment
+Examinations"** (I saw this option live) → its editions → download the PDFs (OPEN, no login; use the
+in-app browser cascade like BPSC CCE, OR the AJAX method in `HANDOFF_SRB_OTHER_SESSION.md` JOB B:
+`POST admin-ajax.php action=get_children/get_question_booklets_pdfs&nonce=8484a26a88`, PDF in `file_url`).
+TRE is **subject-wise** (per teaching subject/class) so expect multiple papers per edition. Then: same
+pipeline — download on **Gurukul** (T4 can't reach bpsc), scp to the T4, `qwen_extract_bpsc.py`, get the
+official TRE answer key, `store_real_questions.py --exam "BPSC TRE"`, then wire into the LMS + APK
+(add a `bpsc-tre` RAG subject/goal like the others). Coordinate with the parallel session (it owns the
+BPSC ingest lane). **Everything else on the client note is already covered.**
+
 ## The rule that keeps it legal (READ FIRST)
 The pipeline needs, **per paper**: (1) the **question paper PDF** + (2) the **official answer
 key** (a candidate *response sheet* contains both together).
@@ -44,10 +63,14 @@ The RICHEST official source, and Bihar-specific — it covers the exact GS/GK ga
   line in the note.
 - Google helper: `BPSC 69th prelims question paper pdf site:bpsc.bihar.gov.in` · `BPSC answer key 2023 bpsc.bihar.gov.in`
 
-### 2. Bihar Daroga / Sub-Inspector → **bpssc.bihar.gov.in** (SI) + **csbc.bih.nic.in** (Constable)
-Official, Bihar-specific — the "Daroga" line in the note. Papers + keys available ~2015→2024.
-- **bpssc.bihar.gov.in** → "Question Paper / Answer Key" for the SI (Daroga) Prelims & Mains.
-- **csbc.bih.nic.in** → Bihar Police Constable papers + keys.
+### 2. Bihar Daroga / Sub-Inspector → **bpssc.bihar.gov.in** (⛔ NO open papers — verified 2026-08-14)
+The BPSSC site publishes ONLY notices/advertisements/results/admit-cards/rejection-lists — **no question
+papers or answer keys are open**. The candidate portal is **apply-bpssc.com** (admit cards + result/marks
+sheets + — during objection windows — response sheets). So Daroga papers need a **student who appeared**:
+they log into apply-bpssc.com (via bpssc.bihar.gov.in) with Registration No + Password/DOB and download
+their **response sheet** (question paper + official key) during the objection window. Student guide =
+`teacher_gtm/DAROGA_BPSSC_LOGIN_GUIDE.pdf`. Marks-only sheets are NOT usable. (csbc.bih.nic.in = Constable,
+unreachable + not Daroga — skip.)
 
 ### 3. SSC CGL / CHSL → **ssc.gov.in**  (official, but recent years are login-gated)
 After each exam SSC releases: **provisional answer key → final answer key + candidate response
