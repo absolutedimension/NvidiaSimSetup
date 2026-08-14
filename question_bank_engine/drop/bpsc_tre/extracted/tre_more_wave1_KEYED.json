@@ -1,0 +1,5602 @@
+[
+ {
+  "gid": 1,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The radius of a solid sphere of some metal is 3 cm. How long a wire of diameter 4 mm can be drawn from it?",
+  "options": {
+   "A": "8·8 m",
+   "B": "9 m",
+   "C": "9·1 m",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Sphere vol=(4/3)π(3)^3=36π; wire radius 0.2cm: 0.04·L=36 → L=900cm=9m."
+ },
+ {
+  "gid": 2,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "On selling 30 chairs, a furniture seller gets a loss equal to selling price of 6 chairs. His loss percent is",
+  "options": {
+   "A": "16 161",
+   "B": "3 162",
+   "C": "3",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "med",
+  "sources": [
+   "https://testbook.com/question-answer/on-selling-30-chairs-a-furniture-seller-gets-a-lo--64eee480b27c0ce4caf104e7"
+  ],
+  "note": "Loss=SP of 6 → CP=36s, loss%=6/36=16 2/3%. Testbook answer 16⅔; garbled option B ('3 162') carries digits of 16⅔."
+ },
+ {
+  "gid": 3,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The product of the digits of a two-digit number is 36. If 45 is subtracted from the number, then the digits interchange mutually. The number is",
+  "options": {
+   "A": "84",
+   "B": "73",
+   "C": "49",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [],
+  "note": "Digits product 36, N-45=reverse → N=94 (94-45=49). 94 not among 84/73/49 → None of the above."
+ },
+ {
+  "gid": 4,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "If a + b + c = 0, then what is the a 2 b 2 c 2 value of + + ? bc ca ab",
+  "options": {
+   "A": "1",
+   "B": "2",
+   "C": "3",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "a+b+c=0 → a²/bc+b²/ca+c²/ab=(a³+b³+c³)/abc=3abc/abc=3."
+ },
+ {
+  "gid": 5,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The solution of 4 x + 1 + 4 1 - x = 10 is 1",
+  "options": {
+   "A": "- 2 1",
+   "B": "2",
+   "C": "0",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "4^(x+1)+4^(1-x)=10 → 2y²-5y+2=0, 4^x=2 or 1/2 → x=±1/2; only -1/2 listed."
+ },
+ {
+  "gid": 6,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "On dividing x 3 - 3 x 2 + x + 2 by a polynomial g ( x ), the quotient and remainder are ( x 2 - x + 1 ) and ( - 2 x + 4 ) respectively. Then g ( x ) is",
+  "options": {
+   "A": "x - 2",
+   "B": "x 2 + x + 1",
+   "C": "x 2 - 1",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "g=(dividend-remainder)/quotient=(x³-3x²+3x-2)/(x²-x+1)=x-2."
+ },
+ {
+  "gid": 7,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In a club, all the members participate either in Tambola or in Rummy. 320 participate in Rummy, 350 participate in Tambola and 220 participate in both. How many members does the club have?",
+  "options": {
+   "A": "440",
+   "B": "445",
+   "C": "450",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "|R∪T|=320+350-220=450."
+ },
+ {
+  "gid": 8,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The sum of the reciprocals of A’s ages (in years) 2 years ago and 2 2 years from now is 3. The present age of A is",
+  "options": {
+   "A": "5 years",
+   "B": "7 years",
+   "C": "4 years",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-sum-of-the-reciprocals-of-as-ages-in-y--64eee6ac1185d423b5a14a1e"
+  ],
+  "note": "1/(A-2)+1/(A+2)=2/3 → A²-3A-4=0 → A=4 years (Testbook confirmed)."
+ },
+ {
+  "gid": 9,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "For what value of k, the system of equations x - ky = 2 and 3 x + 2 y = - 5 has a unique solution? 2",
+  "options": {
+   "A": "- 3",
+   "B": "1",
+   "C": "2",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/for-what-value-of-k-the-system-of-equationsx--64eee70cb8e46089c682884a"
+  ],
+  "note": "Unique solution for all k≠-2/3; both 1 and 2 qualify → More than one of the above (Testbook)."
+ },
+ {
+  "gid": 10,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The radius of a circle is 14 cm and the area of a sector is 102·7 cm2. The central angle of the sector is",
+  "options": {
+   "A": "30º",
+   "B": "60º",
+   "C": "45º",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "πr²=616; 102.67/616=1/6 → θ=60°."
+ },
+ {
+  "gid": 11,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What is the compound interest of R 15,625 for 9 months when the rate of interest is 16% per annum and the interest is payable quarterly?",
+  "options": {
+   "A": "R 1,961",
+   "B": "R 1,951",
+   "C": "R 2,051",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Quarterly 4%, 3 quarters: 15625·1.04³=17576; CI=1951."
+ },
+ {
+  "gid": 12,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "If the product of the roots of the equation 3 kx 2 - 25 kx + k + 8 = 0 is 3, then k is",
+  "options": {
+   "A": "1",
+   "B": "4",
+   "C": "3",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Product of roots=(k+8)/(3k)=3 → k+8=9k → k=1."
+ },
+ {
+  "gid": 13,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The altitude of a right-angled triangle is 6 cm less than its base. If the hypotenuse is 218 cm, the other two sides (in cm) are",
+  "options": {
+   "A": "5 and 11",
+   "B": "9 and 15",
+   "C": "10 and 16",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-altitude-of-a-right-angled-triangle-is-6-cm-le--64eee8e7f9e617dba5564ae9"
+  ],
+  "note": "hyp=√218: a²+(a+6)²=218 → a=7, base=13 → sides 7 & 13, not in options → None (Testbook)."
+ },
+ {
+  "gid": 14,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which instrument is used for measuring electric potential?",
+  "options": {
+   "A": "Potentiometer",
+   "B": "Galvanometer",
+   "C": "Voltmeter",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-instrument-is-used-for-measuring-electric-po--64eee914848eb3e5d41be3f8"
+  ],
+  "note": "Voltmeter measures electric potential/PD (Testbook answer)."
+ },
+ {
+  "gid": 15,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Magnetic field is a",
+  "options": {
+   "A": "scalar quantity",
+   "B": "vector quantity",
+   "C": "dimensionless quantity",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Magnetic field has magnitude and direction → vector quantity."
+ },
+ {
+  "gid": 16,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "A man pushes more weight on the Earth at",
+  "options": {
+   "A": "sitting position",
+   "B": "standing position",
+   "C": "lying position",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/a-man-pushes-more-weight-on-the-earth-at--64eee967a5d5b9af33ea2ed0"
+  ],
+  "note": "Smallest contact area (feet) → max pressure → standing position (Testbook)."
+ },
+ {
+  "gid": 17,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The coloured light that refracts most while passing through a prism is",
+  "options": {
+   "A": "yellow",
+   "B": "violet",
+   "C": "blue",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Violet has shortest wavelength → refracts/deviates most in a prism."
+ },
+ {
+  "gid": 18,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "A piece of ice is dropped in a vessel containing kerosene oil. When ice melts, the level of kerosene oil will",
+  "options": {
+   "A": "rise",
+   "B": "fall",
+   "C": "remain same",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/a-piece-of-ice-is-dropped-in-a-vessel-containing-k--64eee9de5bd6e0b215789b33"
+  ],
+  "note": "Ice denser than kerosene sinks; melt-water occupies less volume → level falls (Testbook/Sarthaks)."
+ },
+ {
+  "gid": 19,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The pH of which of the following is more than 7?",
+  "options": {
+   "A": "Gastric juice",
+   "B": "Blood plasma",
+   "C": "Vinegar",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Blood plasma pH ≈7.4 (>7); gastric juice & vinegar acidic."
+ },
+ {
+  "gid": 20,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The focal length of normal eye lens is about",
+  "options": {
+   "A": "1 mm",
+   "B": "25 cm",
+   "C": "2 cm",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-focal-length-of-normal-eye-lens-is-about--64eeea2ff9e617dba5566eb4"
+  ],
+  "note": "Normal eye lens focal length ≈2 cm (Testbook)."
+ },
+ {
+  "gid": 21,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which substance is formed by the action of chlorine gas on dry slaked lime?",
+  "options": {
+   "A": "Calcium chloride",
+   "B": "Bleaching powder",
+   "C": "Hydrochloric acid",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Cl2 + dry Ca(OH)2 → CaOCl2 (bleaching powder)."
+ },
+ {
+  "gid": 22,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The process where the characteristics are transmitted from parents to offsprings is called",
+  "options": {
+   "A": "variation",
+   "B": "heredity",
+   "C": "gene",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Transmission of characters parent→offspring = heredity."
+ },
+ {
+  "gid": 23,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The point to be kept in mind for verification of Ohm’s law is",
+  "options": {
+   "A": "ammeter and voltmeter should be connected in series",
+   "B": "ammeter should be connected in series and voltmeter in parallel",
+   "C": "ammeter should be connected in parallel and voltmeter in series",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Ohm's law: ammeter in series, voltmeter in parallel."
+ },
+ {
+  "gid": 24,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What happens when dilute hydrochloric acid is added to iron filings?",
+  "options": {
+   "A": "Hydrogen gas and iron chloride are produced",
+   "B": "Chlorine gas and iron hydroxide are produced",
+   "C": "No reaction takes place",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Fe + 2HCl → FeCl2 + H2↑ (hydrogen gas + iron chloride)."
+ },
+ {
+  "gid": 25,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the functions is performed by the ovaries?",
+  "options": {
+   "A": "Formation of ovum",
+   "B": "Secretion of progesterone",
+   "C": "Secretion of estrogen",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [],
+  "note": "Ovary forms ovum AND secretes progesterone AND estrogen → all three → More than one of the above."
+ },
+ {
+  "gid": 26,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which acid is present in tamarind?",
+  "options": {
+   "A": "Methanoic acid",
+   "B": "Tartaric acid",
+   "C": "Lactic acid",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://byjus.com/chemistry/tartaric-acid/"
+  ],
+  "note": "Tamarind contains tartaric acid."
+ },
+ {
+  "gid": 27,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What is the name of the architect in charge of the new building of the Parliament of India?",
+  "options": {
+   "A": "Arun Goel",
+   "B": "Padma Shri Bimal Patel",
+   "C": "Anoop Rai",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/New_Parliament_House_(India)"
+  ],
+  "note": "New Parliament building architect = Bimal Patel (HCP Design), a Padma Shri awardee."
+ },
+ {
+  "gid": 28,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What was effectively the percentage of the electorate of the adult population of India that could only participate in the election of the members of the Constituent Assembly?",
+  "options": {
+   "A": "10 to 15 percent",
+   "B": "20 to 25 percent",
+   "C": "30 to 35 percent",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/what-was-effectively-the-percentage-of-the-elector--64eeec45f3d631baed04ef56"
+  ],
+  "note": "Constituent Assembly elected under limited 1935-Act franchise = only ~10-15% of adult population."
+ },
+ {
+  "gid": 29,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which State, in April 2023, gave the OBC status to transgenders community?",
+  "options": {
+   "A": "Tamil Nadu",
+   "B": "Madhya Pradesh",
+   "C": "Rajasthan",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://www.drishtiias.com/state-pcs-current-affairs/transgender-community-included-in-backward-class-in-the-state",
+   "https://testbook.com/question-answer/which-state-in-april-2023-gave-the-obc-status-to--64eeec6ef243fb7382114263"
+  ],
+  "note": "April 2023 Madhya Pradesh included transgender (Kinnar) community in OBC/Backward Classes."
+ },
+ {
+  "gid": 30,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Ibn Battuta, the famous Muslim explorer who came to India during the regime of Muhammad Bin Tughlaq, belonged to which country?",
+  "options": {
+   "A": "Afghanistan",
+   "B": "Morocco",
+   "C": "Iraq",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ibn_Battuta"
+  ],
+  "note": "Ibn Battuta was a Moroccan (Tangier) explorer."
+ },
+ {
+  "gid": 31,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Recently, India’s first cable- stayed rail bridge is built in",
+  "options": {
+   "A": "Himachal Pradesh",
+   "B": "Uttar Pradesh",
+   "C": "Jammu and Kashmir",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Anji_Khad_Bridge"
+  ],
+  "note": "Anji Khad bridge, India's first cable-stayed rail bridge, in Jammu & Kashmir."
+ },
+ {
+  "gid": 32,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "India’s first semiconductor manufacturing plant will be set up in which State?",
+  "options": {
+   "A": "Gujarat",
+   "B": "Rajasthan",
+   "C": "Bihar",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Semiconductor_industry_in_India"
+  ],
+  "note": "India's first semiconductor plants (Micron Sanand, Tata Dholera) set up in Gujarat."
+ },
+ {
+  "gid": 33,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who was behind the first known attempt on Gandhi’s life in India during the Champaran Satyagraha in 1917?",
+  "options": {
+   "A": "Dr. Grant",
+   "B": "H. S. Pollock",
+   "C": "Erwin",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Batak_Mian",
+   "https://scroll.in/article/834667/"
+  ],
+  "note": "Indigo planter/manager Irwin (Erwin) instigated the 1917 Champaran poisoning attempt; cook Batak Mian refused."
+ },
+ {
+  "gid": 34,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following countries is the member of the recently formed ‘I2U2 Grouping’?",
+  "options": {
+   "A": "India",
+   "B": "Israel",
+   "C": "UAE",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/I2U2_Group"
+  ],
+  "note": "I2U2 = India, Israel, USA, UAE; options A(India),B(Israel),C(UAE) all members -> more than one."
+ },
+ {
+  "gid": 35,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "On March 17, 2023, the International Criminal Court (ICC) issued arrest warrant against",
+  "options": {
+   "A": "Russian President Vladimir Putin",
+   "B": "US President Joe Biden",
+   "C": "Chinese President Xi Jinping",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://www.icc-cpi.int/news/situation-ukraine-icc-judges-issue-arrest-warrants-against-vladimir-vladimirovich-putin-and"
+  ],
+  "note": "ICC issued 17 Mar 2023 arrest warrant against Vladimir Putin."
+ },
+ {
+  "gid": 36,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The third Forum for India- Pacific Islands Cooperation (FIPIC) Summit was held in",
+  "options": {
+   "A": "Papua New Guinea",
+   "B": "Namibia",
+   "C": "Brazil",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Forum_for_India%E2%80%93Pacific_Islands_Cooperation"
+  ],
+  "note": "3rd FIPIC Summit held in Papua New Guinea (May 2023)."
+ },
+ {
+  "gid": 37,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Rowan Wilson has been appointed as the first black Chief Judge of which city?",
+  "options": {
+   "A": "Washington",
+   "B": "Chicago",
+   "C": "New York",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rowan_Wilson"
+  ],
+  "note": "Rowan Wilson = first Black Chief Judge of New York (Court of Appeals)."
+ },
+ {
+  "gid": 38,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "A Parliamentary Committee of which of the following countries recently recommended that India should be made part of the ‘NATO Plus’ Grouping?",
+  "options": {
+   "A": "UK",
+   "B": "USA",
+   "C": "Germany",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/NATO_Plus"
+  ],
+  "note": "A US House committee recommended adding India to NATO Plus."
+ },
+ {
+  "gid": 39,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The International Booker Prize, 2023 has been awarded to",
+  "options": {
+   "A": "Georgi Gospodinov",
+   "B": "Margaret Atwood",
+   "C": "Aravind Adiga",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/International_Booker_Prize"
+  ],
+  "note": "2023 International Booker Prize: Georgi Gospodinov, 'Time Shelter'."
+ },
+ {
+  "gid": 40,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who is the new Chief Executive Officer (CEO) of Twitter?",
+  "options": {
+   "A": "Elon Musk",
+   "B": "Linda Yaccarino",
+   "C": "Parag Agrawal",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Linda_Yaccarino"
+  ],
+  "note": "Linda Yaccarino became Twitter/X CEO in 2023."
+ },
+ {
+  "gid": 41,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "According to 2011 Census of India, what was the total female literacy rate in Bihar?",
+  "options": {
+   "A": "52·89%",
+   "B": "63·68%",
+   "C": "53·57%",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "low",
+  "sources": [
+   "https://forestonline.bihar.gov.in/SKMCCC/Demographic.aspx"
+  ],
+  "note": "Bihar female literacy: widely-cited final census figure is 51.50% (not an option); Bihar govt demographics page gives 53.57%, matching C — most defensible option; 51.50 absent."
+ },
+ {
+  "gid": 42,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Subhadra Devi, who has been awarded Padma Shri in 2023, is a known",
+  "options": {
+   "A": "architect",
+   "B": "space scientist",
+   "C": "Papier-mâché massy artist",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Subhadra_Devi",
+   "https://testbook.com/question-answer/subhadra-devi-who-has-been-awarded-padma-shri-in--64eef1607e168fed2a8addb3"
+  ],
+  "note": "Subhadra Devi (Padma Shri 2023) = Bihar papier-mache artist."
+ },
+ {
+  "gid": 43,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following trees is worshipped by Mundas and Santhals of Chota Nagpur region?",
+  "options": {
+   "A": "Tamarind",
+   "B": "Mango",
+   "C": "Kadamba",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-trees-is-worshipped-by-mund--64eef17e0bc3c5eb787ea621"
+  ],
+  "note": "Mundas & Santhals of Chota Nagpur worship mahua and kadamba trees; among options = Kadamba."
+ },
+ {
+  "gid": 44,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following is grown during the Zaid season?",
+  "options": {
+   "A": "Muskmelon",
+   "B": "Cucumber",
+   "C": "Watermelon",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://byjus.com/biology/kharif-rabi-crops/"
+  ],
+  "note": "Muskmelon, cucumber, watermelon are all Zaid-season crops -> more than one."
+ },
+ {
+  "gid": 45,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following statements is true regarding earthquakes?",
+  "options": {
+   "A": "P-waves are transverse waves.",
+   "B": "The place on the surface above focus is called epicentre.",
+   "C": "Studying animal behaviour is one of the methods of prediction of earthquakes adopted by local people.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-statements-is-true-regardin--64eef1c5b27c0ce4caf31dd9"
+  ],
+  "note": "Epicentre (B) and animal-behaviour prediction (C) both true; P-waves are longitudinal not transverse -> more than one."
+ },
+ {
+  "gid": 46,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following statements about Lake Superior of North America continent is true?",
+  "options": {
+   "A": "It is world’s greatest salt- water lakes group.",
+   "B": "It forms a geographical boundary between Canada and USA.",
+   "C": "It makes approximately 1700 km boundary between the two countries.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-statements-about-lake-super--64eef1f2848eb3e5d41d4b26"
+  ],
+  "note": "Lake Superior is freshwater (A false); it forms Canada-USA boundary (B true); 1700 km claim not validated."
+ },
+ {
+  "gid": 47,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which planet is considered as the Earth’s twin planet due to similarity in shape and size?",
+  "options": {
+   "A": "Mars",
+   "B": "Jupiter",
+   "C": "Venus",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Venus"
+  ],
+  "note": "Venus is Earth's twin (similar size/shape)."
+ },
+ {
+  "gid": 48,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following countries forms a part of Amazon River basin?",
+  "options": {
+   "A": "Argentina",
+   "B": "Chile",
+   "C": "Venezuela",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Amazon_basin"
+  ],
+  "note": "Amazon basin includes parts of Venezuela; Argentina and Chile are outside it."
+ },
+ {
+  "gid": 49,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following options is the correct sequence of layers of atmosphere starting from the Earth’s surface?",
+  "options": {
+   "A": "Troposphere ® Strato- sphere ® Mesosphere ® Thermosphere ® Exosphere",
+   "B": "Troposphere ® Meso- sphere ® Stratosphere ® Thermosphere ® Exosphere",
+   "C": "Troposphere ® Meso- sphere ® Thermosphere ® Stratosphere ® Exosphere",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Atmosphere_of_Earth"
+  ],
+  "note": "Troposphere -> Stratosphere -> Mesosphere -> Thermosphere -> Exosphere."
+ },
+ {
+  "gid": 50,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The correct pair of local name of shifting agriculture and related country is",
+  "options": {
+   "A": "Chena—Bangladesh",
+   "B": "Milpa—Rhodesia (Zimbabwe)",
+   "C": "Ladang—Malaysia",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Shifting_cultivation"
+  ],
+  "note": "Ladang = Malaysia/Indonesia (correct). Chena is Sri Lanka not Bangladesh; Milpa is Mexico not Rhodesia."
+ },
+ {
+  "gid": 51,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What would be the time at 30º East of Greenwich, if it is 12 noon at Greenwich?",
+  "options": {
+   "A": "2 p.m.",
+   "B": "1 p.m.",
+   "C": "10 a.m.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://byjus.com/question-answer/"
+  ],
+  "note": "30°E = 2 hrs ahead of Greenwich (15°/hr), so 12 noon + 2 = 2 p.m."
+ },
+ {
+  "gid": 52,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What are the main mineral constituents of the oceanic crust?",
+  "options": {
+   "A": "Silica and alumina",
+   "B": "Silica and nickel",
+   "C": "Silica and magnesium",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://www.britannica.com/science/oceanic-crust"
+  ],
+  "note": "Oceanic crust = SIMA, mainly Silica and Magnesium."
+ },
+ {
+  "gid": 53,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following explains the term ‘mulching’?",
+  "options": {
+   "A": "Covering the bare ground between crops with a layer of organic matter like straw",
+   "B": "Covering the contours with stones, grass, etc.",
+   "C": "Cropping along terraces made on steep slopes",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://www.sarthaks.com/"
+  ],
+  "note": "Mulching = covering bare ground between crops with a layer of organic matter like straw."
+ },
+ {
+  "gid": 54,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The correct pair of Indian petroleum producing area and its location is",
+  "options": {
+   "A": "Surma Valley—Assam",
+   "B": "Lunej Area—Gujarat",
+   "C": "KG Basin—Bay of Bengal",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-correct-pair-of-indian-petroleum-producing-are--64eef38ff3d631baed0614a2"
+  ],
+  "note": "All three pairs correct: Surma Valley-Assam, Lunej-Gujarat, KG Basin-Bay of Bengal. Testbook key = 'More than one'."
+ },
+ {
+  "gid": 55,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who was the Labour Minister in Jawaharlal Nehru’s Provisional Government?",
+  "options": {
+   "A": "Aruna Asaf Ali",
+   "B": "C. Rajagopalachari",
+   "C": "Jagjivan Ram",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Jagjivan_Ram"
+  ],
+  "note": "Jagjivan Ram was Labour Minister in Nehru's Interim/Provisional Government (1946)."
+ },
+ {
+  "gid": 56,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In which month of 1918 was the ‘Champaran Agrarian Act’ passed against the European indigo planters?",
+  "options": {
+   "A": "February",
+   "B": "May",
+   "C": "November",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/in-which-month-of-1918-was-the-champaran-ag--64eef3d6848eb3e5d41d9a7e"
+  ],
+  "note": "Champaran Agrarian Act passed March 4, 1918 — March not in Feb/May/Nov options, so None of the above."
+ },
+ {
+  "gid": 57,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which one of the following statements is correct?",
+  "options": {
+   "A": "A Bunch of Old Letters was written by Dr. Rajendra Prasad.",
+   "B": "Brahma Dutt was the second Satyagrahi in the Individual Satyagraha.",
+   "C": "The Indian Struggle was written by Subhas Chandra Bose.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/The_Indian_Struggle"
+  ],
+  "note": "'The Indian Struggle' written by Subhas Chandra Bose (A: Bunch of Old Letters=Nehru; B: Brahma Dutt was 3rd, not 2nd satyagrahi)."
+ },
+ {
+  "gid": 58,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which tribe of Bihar attended Gaya Session of Congress?",
+  "options": {
+   "A": "Oraon",
+   "B": "Santhal",
+   "C": "Sannyasi",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-tribe-of-bihar-attended-gaya-session-of-cong--64eef419116382b3a0d55415"
+  ],
+  "note": "Oraon (Tana Bhagats) attended Gaya Session of Congress 1922."
+ },
+ {
+  "gid": 59,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following pairs is not correctly matched?",
+  "options": {
+   "A": "Advocate of India— Dadabhai Naoroji",
+   "B": "Young India— Mahatma Gandhi",
+   "C": "Indian Spectator— Surendranath Banerjee",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "med",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-pairs-is-not-correctly-matc--625a5f7f845fb109a98f0f50"
+  ],
+  "note": "Two pairs wrongly matched: Advocate of India (not Naoroji; his was Voice of India) and Indian Spectator (Behramji Malabari, not S. Banerjee). So 'More than one'."
+ },
+ {
+  "gid": 60,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Under whose Chairmanship was the National Planning Committee set up in 1938?",
+  "options": {
+   "A": "Dr. Rajendra Prasad",
+   "B": "Subhas Chandra Bose",
+   "C": "Jawaharlal Nehru",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/National_Planning_Committee"
+  ],
+  "note": "National Planning Committee (1938) chaired by Jawaharlal Nehru (set up by Bose as Congress President)."
+ },
+ {
+  "gid": 61,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who was the author of the book, Mahatma Gandhi and Bihar : Some Reminiscences?",
+  "options": {
+   "A": "Syed Ali Zaheer",
+   "B": "Dr. Rajendra Prasad",
+   "C": "Jivatram Bhagwandas Kripalani",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://indianculture.gov.in/ebooks/mahatma-gandhi-and-bihar-some-reminiscences-0"
+  ],
+  "note": "'Mahatma Gandhi and Bihar: Some Reminiscences' authored by Dr. Rajendra Prasad."
+ },
+ {
+  "gid": 62,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Under the influence of which revolution, the people of Bihar denied to pay ‘Chaukidari Tax’?",
+  "options": {
+   "A": "Non-Cooperation Movement",
+   "B": "Civil Disobedience Movement",
+   "C": "Quit India Movement",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/under-the-influence-of-which-revolution-the-peopl--64eef500b8e46089c684b6f3"
+  ],
+  "note": "Refusal to pay Chaukidari tax in Bihar was part of the Civil Disobedience Movement."
+ },
+ {
+  "gid": 63,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The female freedom fighter popularly known as the ‘Grand Old Lady’ of the Independence Movement was",
+  "options": {
+   "A": "Aruna Asaf Ali",
+   "B": "Gulab Kaur",
+   "C": "Bishni Devi Shah",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Aruna_Asaf_Ali"
+  ],
+  "note": "Aruna Asaf Ali known as 'Grand Old Lady' of the Independence Movement."
+ },
+ {
+  "gid": 64,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "At which place, B. G. Tilak organized ‘Home Rule League’ in 1916?",
+  "options": {
+   "A": "Poona",
+   "B": "Bombay",
+   "C": "Nagpur",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "med",
+  "sources": [
+   "https://testbook.com/question-answer/tilak-formed-his-home-rule-league-in-1916-at--5fb4f09a7d86f2546e39d789",
+   "https://x.com/MinOfCultureGoI/status/1519671007111356421"
+  ],
+  "note": "Tilak organized/launched Home Rule League at Belgaum (28 Apr 1916); HQ later at Poona. Belgaum not in Poona/Bombay/Nagpur options → None of the above."
+ },
+ {
+  "gid": 65,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who was related to the publishing of a weekly Hindi journal, Hunkar ?",
+  "options": {
+   "A": "Yamuna Karjee",
+   "B": "Rahul Sankrityayan",
+   "C": "Sahajanand Saraswati",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-was-related-to-the-publishing-of-a-weekly-hind--64eef5735bd6e0b2157a7140"
+  ],
+  "note": "Hunkar (1940) associated with Yamuna Karjee, Rahul Sankrityayan and Sahajanand Saraswati — all three, so 'More than one'."
+ },
+ {
+  "gid": 66,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which English General showed tribute to Rani of Jhansi saying that “Here lay the woman who was the only man among the rebels”?",
+  "options": {
+   "A": "Hugh Rose",
+   "B": "Campbell",
+   "C": "Hudson",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rani_of_Jhansi"
+  ],
+  "note": "General Hugh Rose paid the tribute calling Rani of Jhansi the only man among the rebels."
+ },
+ {
+  "gid": 67,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Match List–I with List–II and select the correct answer using the codes given below the Lists : List—I List—II (Names of (Related Political Slogans) Parties/Politicians) a. Garibi Hatao 1. Left Front b. Save Democracy 2. Indira Congress c. Land to the Tiller 3. Janata Party d. Protect the Self- 4. N. T. Rama respect of Telugus Rao Codes :",
+  "options": {
+   "A": "a b c d 2 1 3 4",
+   "B": "a b c d 2 3 1 4",
+   "C": "a b c d 1 4 3 2",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://www.sarthaks.com/"
+  ],
+  "note": "a-Garibi Hatao=Indira Congress(2), b-Save Democracy=Janata Party(3), c-Land to Tiller=Left Front(1), d-Telugu self-respect=NTR(4) => 2 3 1 4."
+ },
+ {
+  "gid": 68,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following was formed under the influence of Russian Revolution and USSR?",
+  "options": {
+   "A": "The Communist Party of Great Britain",
+   "B": "The Conference of the Peoples of the East (1920)",
+   "C": "The Comintern",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-was-formed-under-the-influe--64eef702a5d5b9af33ecb586"
+  ],
+  "note": "CPGB, Conference of Peoples of the East (1920) and Comintern all formed under influence of Russian Revolution/USSR → 'More than one'."
+ },
+ {
+  "gid": 69,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who said, “The basic cause of problems facing Bharat is the neglect of its national identity”?",
+  "options": {
+   "A": "Deen Dayal Upadhyay",
+   "B": "Keshav Baliram Hedgewar",
+   "C": "Madhav Sadashiv Golwalkar",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-said-the-basic-cause-of-problems-facin--64eef728a5d5b9af33ecba4f"
+  ],
+  "note": "Deen Dayal Upadhyay (Integral Humanism, 1965) — neglect of national identity."
+ },
+ {
+  "gid": 70,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following was the major demand of peasants participating in Non- Cooperation Movement?",
+  "options": {
+   "A": "Reduction of revenue",
+   "B": "Abolition of beggar",
+   "C": "Open the entry of peasants in the forest areas to graze their cattles, collect fuel wood and fruits",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-was-the-major-demand-of-pea--64eef758116382b3a0d5d012"
+  ],
+  "note": "Peasants in NCM demanded reduction of revenue, abolition of begar AND forest access → 'More than one'."
+ },
+ {
+  "gid": 71,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Montesquieu proposed a division of powers within the government between legislature, executive and judiciary in which of the following books by him?",
+  "options": {
+   "A": "The Spirit of the Laws",
+   "B": "My Thoughts",
+   "C": "Lettres Persanes",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/The_Spirit_of_Law"
+  ],
+  "note": "Montesquieu's separation of powers in 'The Spirit of the Laws'."
+ },
+ {
+  "gid": 72,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following was the main cause of deforestation during the British rule in India?",
+  "options": {
+   "A": "To meet the demand of sleepers on the railway tracks and supply of timbers for the Royal Navy",
+   "B": "To meet the demand of planned forests and plantation of tea and coffee",
+   "C": "To improve land to meet the demand of expanded cultivation",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-was-the-main-cause-of-defor--64eef7cf385113f32558da74"
+  ],
+  "note": "Deforestation had multiple causes (railway sleepers/Navy timber, plantations, cultivation) → 'More than one'."
+ },
+ {
+  "gid": 73,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which organization of India has the motto, “Dharmo Rakshati Rakshitah (law protects when it is protected)”?",
+  "options": {
+   "A": "The Research and Analysis Wing",
+   "B": "The Indian Army",
+   "C": "The Indian Supreme Court",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Research_and_Analysis_Wing"
+  ],
+  "note": "'Dharmo Rakshati Rakshitah' is the motto of R&AW (Research and Analysis Wing)."
+ },
+ {
+  "gid": 74,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following movements was led and successful under the leadership of Sardar Vallabhbhai Patel?",
+  "options": {
+   "A": "Satyagraha in support of Khadi peasants, Gujarat",
+   "B": "Satyagraha of workers of cotton mills, Ahmedabad, Gujarat",
+   "C": "Satyagraha of Bardoli, Gujarat",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bardoli_Satyagraha"
+  ],
+  "note": "Bardoli Satyagraha (1928) led successfully by Sardar Vallabhbhai Patel."
+ },
+ {
+  "gid": 75,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "With reference to India and Great Depression started in 1929, which of the following statements is correct?",
+  "options": {
+   "A": "The depression adversely affected Indian trade.",
+   "B": "The depression adversely affected Indian peasants, farmers, export and import.",
+   "C": "The impact of depression on India indicates that how integrated the global economy had become by early 20th century.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/with-reference-to-india-and-great-depression-start--64eef8597e168fed2a8bf887"
+  ],
+  "note": "All three statements correct (trade hit; peasants/export/import hit; global integration) → 'More than one'."
+ },
+ {
+  "gid": 76,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The validity of the order of the Government of India of 13th August, 1990, for the reservation to socially and educationally backward classes, was decided in which of the following years?",
+  "options": {
+   "A": "1991",
+   "B": "1992",
+   "C": "1993",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Indra_Sawhney_v._Union_of_India"
+  ],
+  "note": "Validity of the 13 Aug 1990 OM (Mandal reservation) upheld in Indra Sawhney case, 16 Nov 1992 = B."
+ },
+ {
+  "gid": 77,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "As per Angus Maddison’s book, The World Economy : Historical Statistics, what was the contribution of Bharat (India), in percentage, in world GDP (PPP) during ancient times?",
+  "options": {
+   "A": "32%",
+   "B": "20%",
+   "C": "12%",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Economy_of_India"
+  ],
+  "note": "Maddison estimated India ~32% of world GDP (PPP) in ancient times (~1 AD) = A."
+ },
+ {
+  "gid": 78,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Match List–I with List–II and select the correct answer using the codes given below the Lists : List—I List—II (Names of the Acts for (Related years the welfare of women of the Acts) in India) a. The Special Marriage 1. 1976 Act b. The Dowry Prohibition 2. 1954 Act c. The Equal Remunera- 3. 1986 tion Act d. The Indecent Repre- 4. 1961 sentation of Women (Prohibition) Act Codes :",
+  "options": {
+   "A": "a b c d 2 4 1 3",
+   "B": "a b c d 3 1 2 4",
+   "C": "a b c d 4 2 3 1",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Special_Marriage_Act,_1954"
+  ],
+  "note": "Special Marriage 1954(2), Dowry Prohibition 1961(4), Equal Remuneration 1976(1), Indecent Representation 1986(3) → a2 b4 c1 d3 = A."
+ },
+ {
+  "gid": 79,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following basic values was accepted by all leaders much before the Constituent Assembly met to deliberate on the Constitution of India?",
+  "options": {
+   "A": "The Universal Adult Franchise",
+   "B": "The Right of Freedom and Equality",
+   "C": "The Protection of Rights of Minorities",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://edurev.in/question/2584550/",
+   "https://www.sarthaks.com/3607057/"
+  ],
+  "note": "NCERT: all three (universal adult franchise, freedom & equality, protection of minorities) were accepted before CA met → more than one = D."
+ },
+ {
+  "gid": 80,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who wrote the book, The Beautiful Tree : Indigenous Indian Education in the Eighteenth Century ?",
+  "options": {
+   "A": "Dharampal",
+   "B": "Tilak",
+   "C": "Gandhi",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Dharampal"
+  ],
+  "note": "'The Beautiful Tree' written by Dharampal = A."
+ },
+ {
+  "gid": 81,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following is assured mainly by the ‘fraternity’ in the Preamble of the Constitution of India?",
+  "options": {
+   "A": "The dignity of the individual",
+   "B": "The unity and integrity of the nation",
+   "C": "The justice, liberty and equality of the citizens",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Preamble_to_the_Constitution_of_India"
+  ],
+  "note": "Preamble: fraternity assures dignity of the individual AND unity & integrity of nation → both A and B = D."
+ },
+ {
+  "gid": 82,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who among the following said, “Indian judiciary suffers from luxurious litigation”?",
+  "options": {
+   "A": "Dipak Misra",
+   "B": "Ranjan Gogoi",
+   "C": "N. V. Ramana",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-among-the-following-said-indian-judici--64eefa27f243fb7382136c31",
+   "https://theprint.in/judiciary/overstatement-to-say-indian-judiciary-cant-cope-with-caseload-cji-ramana/698048/"
+  ],
+  "note": "CJI N.V. Ramana coined 'luxurious litigation' = C."
+ },
+ {
+  "gid": 83,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which one of the following is not a gaseous biogeochemical cycle in ecosystem?",
+  "options": {
+   "A": "Phosphorus cycle",
+   "B": "Oxygen cycle",
+   "C": "Nitrogen cycle",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Phosphorus_cycle"
+  ],
+  "note": "Phosphorus cycle is sedimentary, not gaseous = A."
+ },
+ {
+  "gid": 84,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following organisms convert inorganic substances into organic compounds using sunlight in the presence of chlorophyll?",
+  "options": {
+   "A": "Autotrophs",
+   "B": "Certain bacteria",
+   "C": "Animals",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Autotroph"
+  ],
+  "note": "Autotrophs convert inorganic to organic via photosynthesis = A."
+ },
+ {
+  "gid": 85,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following has higher energy level and shorter wavelength?",
+  "options": {
+   "A": "Infrared radiation",
+   "B": "Ultraviolet radiation",
+   "C": "Visible radiation",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ultraviolet"
+  ],
+  "note": "UV has higher energy and shorter wavelength than visible/IR = B."
+ },
+ {
+  "gid": 86,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The process of progressive chemical accumulation of non- degradable chemicals at each trophic level is known as",
+  "options": {
+   "A": "biological magnification",
+   "B": "morphological magnification",
+   "C": "thermogenic magnification",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Biomagnification"
+  ],
+  "note": "Progressive accumulation of non-degradable chemicals up trophic levels = biological magnification = A."
+ },
+ {
+  "gid": 87,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The carrying capacity of a population is determined by its",
+  "options": {
+   "A": "population growth rate",
+   "B": "natality",
+   "C": "limiting resources",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Carrying_capacity"
+  ],
+  "note": "Carrying capacity is set by limiting resources = C."
+ },
+ {
+  "gid": 88,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Methaemoglobinaemia is caused by the drinking of water contaminated with",
+  "options": {
+   "A": "nitrate",
+   "B": "cadmium",
+   "C": "phosphate",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Methemoglobinemia"
+  ],
+  "note": "Blue-baby methaemoglobinaemia caused by nitrate-contaminated water = A."
+ },
+ {
+  "gid": 89,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The flow of energy in an ecosystem is",
+  "options": {
+   "A": "multidirectional",
+   "B": "unidirectional",
+   "C": "tridirectional",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Energy_flow_(ecology)"
+  ],
+  "note": "Energy flow in an ecosystem is unidirectional = B."
+ },
+ {
+  "gid": 90,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following are constituents of an ecosystem?",
+  "options": {
+   "A": "Animals",
+   "B": "Plants",
+   "C": "Microorganisms",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-are-constituents-of-an-ecos--64eefb54f9e617dba5588dae"
+  ],
+  "note": "Animals, plants and microorganisms are all constituents → more than one = D."
+ },
+ {
+  "gid": 91,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following gases is produced from landfills?",
+  "options": {
+   "A": "Sulphur dioxide",
+   "B": "Methane",
+   "C": "Liquefied petroleum gas",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Landfill_gas"
+  ],
+  "note": "Landfills produce methane = B."
+ },
+ {
+  "gid": 92,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following represent the food chain in a forest?",
+  "options": {
+   "A": "Plants, deer, lion",
+   "B": "Plants, frog, snake",
+   "C": "Plants, weeds, fish",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Food_chain"
+  ],
+  "note": "Forest food chain: plants→deer→lion = A (frog/snake and fish are not forest chains)."
+ },
+ {
+  "gid": 93,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In the environment, plastics will not be decomposed by the action of",
+  "options": {
+   "A": "bacteria",
+   "B": "saprophyte",
+   "C": "parasite",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/in-the-environment-plastics-will-not-be-decompose--64eefbc7f243fb738213a84c"
+  ],
+  "note": "Plastic not decomposed by bacteria, saprophyte or parasite → more than one = D (official key)."
+ },
+ {
+  "gid": 94,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Energy sources that do not increase carbon emissions include",
+  "options": {
+   "A": "solar cells",
+   "B": "windmills",
+   "C": "nuclear power plants",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://www.carbonbrief.org/solar-wind-nuclear-amazingly-low-carbon-footprints/"
+  ],
+  "note": "Solar, wind and nuclear all avoid carbon emissions → more than one = D."
+ },
+ {
+  "gid": 95,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Branching series in a food chain is called",
+  "options": {
+   "A": "food system",
+   "B": "food level",
+   "C": "food web",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Food_web"
+  ],
+  "note": "Interconnected/branching food chains = food web = C."
+ },
+ {
+  "gid": 96,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The green plants capture _____ of the sunlight energy and convert it into food energy.",
+  "options": {
+   "A": "5%",
+   "B": "2%",
+   "C": "1%",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "med",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Primary_production"
+  ],
+  "note": "Green plants capture ~1% of incident sunlight into food energy = C."
+ },
+ {
+  "gid": 97,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The Chipko Movement was strengthened under the leadership of",
+  "options": {
+   "A": "Amrita Devi Bishnoi",
+   "B": "Medha Patkar",
+   "C": "Sunderlal Bahuguna",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Chipko_movement"
+  ],
+  "note": "Chipko strengthened under Sunderlal Bahuguna = C."
+ },
+ {
+  "gid": 98,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "_____ are present in the first trophic level in the food chain.",
+  "options": {
+   "A": "Autotrophs",
+   "B": "Primary consumers",
+   "C": "Tertiary consumers",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Trophic_level"
+  ],
+  "note": "First trophic level = producers/autotrophs = A."
+ },
+ {
+  "gid": 99,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Arrange the following fractions in ascending order : 13 29 41 51 18, 36, 45, 60 13 29 51 41",
+  "options": {
+   "A": "< < < 18 36 60 45 13 51 29 41",
+   "B": "< < < 18 60 36 45 51 41 29 13",
+   "C": "< < < 60 45 36 18",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://www.calculator.net/fraction-calculator.html"
+  ],
+  "note": "13/18=.722<29/36=.806<51/60=.850<41/45=.911 → order 18,36,60,45 = A."
+ },
+ {
+  "gid": 101,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "A man fills a basket with eggs in such a way that the number of eggs added on each successive day is the same as the number already present in the basket. This way the basket gets completely filled in 24 days. After how many days, the basket was one-fourth full?",
+  "options": {
+   "A": "6",
+   "B": "12",
+   "C": "22",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "Eggs double each day (added = present). Full at day 24 → half at 23, quarter at 22. Quarter full after 22 days = C."
+ },
+ {
+  "gid": 103,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The next number in the finite sequence 486, 324, 216, 144, … is",
+  "options": {
+   "A": "96",
+   "B": "76",
+   "C": "36",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Geometric ratio 2/3: 486,324,216,144 → 144×2/3 = 96 = A."
+ },
+ {
+  "gid": 104,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which number should replace ‘?’ in the following series? 240, 120, ? , 180, 360, 900",
+  "options": {
+   "A": "120",
+   "B": "130",
+   "C": "150",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Multipliers ×0.5,×1.0,×1.5,×2.0,×2.5: 240→120→120→180→360→900. ?=120×1.0=120 = A."
+ },
+ {
+  "gid": 105,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The term in the blank _____ : FICTION :: GRIND : BMDIY is",
+  "options": {
+   "A": "LOIZOUT",
+   "B": "KNHYNTS",
+   "C": "IMGXMSR",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "GRIND→BMDIY is each letter −5. So blank = FICTION+5 = KNHYNTS (F+5=K,I+5=N,C+5=H,T+5=Y,I+5=N,O+5=T,N+5=S) = B."
+ },
+ {
+  "gid": 106,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "There are 5 routes to go from Prayagraj to Patna and 4 routes to go from Patna to Kolkata. How many ways are possible for going from Prayagraj to Kolkata via Patna?",
+  "options": {
+   "A": "45",
+   "B": "20",
+   "C": "54",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Multiplication principle: 5×4 = 20 ways = B."
+ },
+ {
+  "gid": 107,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Select the most suitable statement.",
+  "options": {
+   "A": "Every circle is an ellipse.",
+   "B": "No circle is hyperbola.",
+   "C": "Every square is a rectangle.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "med",
+  "sources": [],
+  "note": "All three are true: circle is a special ellipse; no circle is a hyperbola; every square is a rectangle. More than one correct = D."
+ },
+ {
+  "gid": 108,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The word CODE is coded as 15161991 and STEP is coded as 18769122. Then SPOTE is coded as",
+  "options": {
+   "A": "1822761691",
+   "B": "1822167691",
+   "C": "1816227691",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "From CODE=15,16,19,91 and STEP=18,76,91,22: C=15,O=16,D=19,E=91,S=18,T=76,P=22. SPOTE=18,22,16,76,91 = 1822167691 = B."
+ },
+ {
+  "gid": 109,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The area of a circle is 40 p 2 . The area of a square with sides equal to radius of the circle is",
+  "options": {
+   "A": "4p",
+   "B": "4 p 2",
+   "C": "40p",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "πr²=40π² → r²=40π. Square side=radius → area=r²=40π = C."
+ },
+ {
+  "gid": 110,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Select the odd word in the group : Book, Paper, Pencil, Pen, Eraser",
+  "options": {
+   "A": "Book",
+   "B": "Pencil",
+   "C": "Eraser",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "low",
+  "sources": [],
+  "note": "Book, Paper, Pen, Pencil all produce or hold written content; Eraser is the only one that removes it (unique singleton) = C. (Reasoning-ambiguous; Book is the alternative.)"
+ },
+ {
+  "gid": 111,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "If in English alphabet, A = 1, D = 2, P = 4, then which of the following denotes 3?",
+  "options": {
+   "A": "H",
+   "B": "I",
+   "C": "J",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Value=√(letter position): A(1)=1,D(4)=2,P(16)=4. Value 3 → position 9 = I = B."
+ },
+ {
+  "gid": 112,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Two numbers are in the ratio 21 : 10 . If their HCF is 11, then the sum of the numbers is",
+  "options": {
+   "A": "341",
+   "B": "141",
+   "C": "241",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Ratio 21:10 coprime, HCF=11 → numbers 231 & 110, sum 341 = A."
+ },
+ {
+  "gid": 113,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "A profit of 10% is made when a smartphone is sold at P rupees and there is 4% loss when the smartphone is sold at Q rupees. Then P : Q is",
+  "options": {
+   "A": "55 : 48",
+   "B": "45 : 34",
+   "C": "110 : 96",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [],
+  "note": "P=1.10C, Q=0.96C → P:Q=110:96=55:48. Options A(55:48) and C(110:96) are the same ratio; both correct = D."
+ },
+ {
+  "gid": 114,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_1st_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In how many different ways can the letters of the word EDUCATION be arranged so that the vowels come together?",
+  "options": {
+   "A": "7200",
+   "B": "14400",
+   "C": "12100",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "EDUCATION (9 distinct letters, 5 vowels). Vowels as one block: 5!×5! = 120×120 = 14400 = B."
+ },
+ {
+  "gid": 116,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Suresh and Shashi complete a work in 11 days and 17 days respectively. They received a remuneration of R5,600 after completing the work jointly. Their shares in the remuneration are respectively",
+  "options": {
+   "A": "R3,600 and R2,000",
+   "B": "R3,400 and R2,200",
+   "C": "R3,500 and R2,100",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Shares ∝ rate 1/11:1/17 = 17:11 of 28. 5600×17/28=3400, ×11/28=2200 → R3,400 & R2,200 = B."
+ },
+ {
+  "gid": 117,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "A’s weight is 25% of B’s weight and 40% of C’s weight. What percentage of C’s weight is B’s weight?",
+  "options": {
+   "A": "160",
+   "B": "180",
+   "C": "150",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "0.25B=0.40C → B=1.6C = 160% of C = A."
+ },
+ {
+  "gid": 118,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The diameter of a copper sphere is 6 cm. The sphere is melted and is drawn into a long wire of uniform circular cross- section. If the length of the wire is 36 cm, then its radius is",
+  "options": {
+   "A": "0·5 cm",
+   "B": "1·5 cm",
+   "C": "2 cm",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [],
+  "note": "Sphere r=3, V=36π. Wire πr²×36=36π → r=1 cm. Not among 0.5/1.5/2 → None of the above = E."
+ },
+ {
+  "gid": 119,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Two circles touch internally. The sum of their areas is 116p cm 2 and the distance between their centres is 6 cm. The radii of the circles are respectively",
+  "options": {
+   "A": "16 cm and 10 cm",
+   "B": "10 cm and 4 cm",
+   "C": "12 cm and 6 cm",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "R−r=6, π(R²+r²)=116π → R²+r²=116, Rr=40 → R=10, r=4 = B."
+ },
+ {
+  "gid": 120,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "A fast train takes 3 hours less than a slow train for a journey of 600 km. If the speed of the slow train is 10 km/hr less than that of the fast train, then the speeds of the two trains are respectively",
+  "options": {
+   "A": "50 km/hr and 40 km/hr",
+   "B": "30 km/hr and 20 km/hr",
+   "C": "40 km/hr and 30 km/hr",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "600/(v−10)−600/v=3 → v²−10v−2000=0 → v=50. Speeds 50 & 40 km/hr = A."
+ },
+ {
+  "gid": 121,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The value of x satisfying the equations 1 1 1 1 1 1 + = 8 , + = 12 , + = 10 x y y z z x is",
+  "options": {
+   "A": "3 1",
+   "B": "3 31",
+   "C": "3",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "low",
+  "sources": [],
+  "note": "1/x+1/y=8,1/y+1/z=12,1/z+1/x=10 → sum halves=15, 1/x=15−12=3 → x=1/3. Option A ('3 1') = 1/3. (Garbled options.)"
+ },
+ {
+  "gid": 122,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "There is 50% increase in an amount in 5 years at simple interest. What will be the compound interest of R12,000 after 3 years at the same rate?",
+  "options": {
+   "A": "R3,972",
+   "B": "R6,240",
+   "C": "R3,120",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "50% SI in 5 yr → 10%/yr. 12000×1.1³=15972, CI=3972 = A."
+ },
+ {
+  "gid": 123,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "37 1 % of the candidates in an 2 examination were girls. 75% of the boys and 62 1 % of the girls 2 passed, and 342 girls failed. The number of boys failed was",
+  "options": {
+   "A": "370",
+   "B": "380",
+   "C": "360",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Girls=37.5%, 37.5% of girls fail=342 → girls=912, total=2432, boys=1520, 25% fail=380 = B."
+ },
+ {
+  "gid": 125,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "A father is five times as old as his son, but after 15 years, he will remain only twice as old as his son. What is the age of the father?",
+  "options": {
+   "A": "20 years",
+   "B": "25 years",
+   "C": "30 years",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "5s+15=2(s+15) → s=5, father=25 years = B."
+ },
+ {
+  "gid": 126,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Neelu buys lemons at the rate of 2 lemons in one rupee and sells them at the rate of 5 lemons in three rupees. Her profit is",
+  "options": {
+   "A": "15%",
+   "B": "18%",
+   "C": "20%",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "Cost 0.5/lemon (2/Re), sell 0.6/lemon (5 for Rs3). Profit 0.1/0.5=20%."
+ },
+ {
+  "gid": 127,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In a school, every student offers either Hindi or English or both. 50·8% offer Hindi and 64·2% offer English. If the total number of students is 500, how many students offer both Hindi and English?",
+  "options": {
+   "A": "60",
+   "B": "65",
+   "C": "75",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "Both = 50.8+64.2-100 = 15%; 15% of 500 = 75."
+ },
+ {
+  "gid": 128,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What is the value of the following? x a ( b - c ) × x b ( c - a ) × x c ( a - b )",
+  "options": {
+   "A": "0",
+   "B": "1",
+   "C": "x",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Sum of exponents a(b-c)+b(c-a)+c(a-b)=0, so x^0=1."
+ },
+ {
+  "gid": 129,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Geostationary satellite rotates",
+  "options": {
+   "A": "at any height above the Poles",
+   "B": "at a fixed height",
+   "C": "at the height depending on mass",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Geostationary satellite orbits at a fixed height (~35,786 km)."
+ },
+ {
+  "gid": 130,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which colour has the maximum deviation in the dispersion of white light passing through the prism?",
+  "options": {
+   "A": "Green",
+   "B": "Red",
+   "C": "Violet",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "Violet deviates most in prism dispersion (shortest wavelength)."
+ },
+ {
+  "gid": 131,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "During thunderstorm, it is safer to",
+  "options": {
+   "A": "carry an open umbrella",
+   "B": "take shelter under short tree",
+   "C": "stand in open field",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/during-thunderstorm-it-is-safer-to--64f74598f84da74f7ab11746"
+  ],
+  "note": "All three options unsafe; official answer = None of the above."
+ },
+ {
+  "gid": 132,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "When a body falls freely towards the Earth, then its total energy",
+  "options": {
+   "A": "decreases",
+   "B": "increases",
+   "C": "remains constant",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "In free fall total mechanical energy is conserved (remains constant)."
+ },
+ {
+  "gid": 133,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In eye donation, which part of the donor’s eye is transplanted?",
+  "options": {
+   "A": "Lens",
+   "B": "Cornea",
+   "C": "Whole eye",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Cornea is transplanted in eye donation."
+ },
+ {
+  "gid": 134,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What is the chemical name of vitamin B12?",
+  "options": {
+   "A": "Thiamin",
+   "B": "Cobalamin",
+   "C": "Niacin",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Vitamin B12 = Cobalamin."
+ },
+ {
+  "gid": 135,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following is an acid-base indicator?",
+  "options": {
+   "A": "Vinegar",
+   "B": "Turmeric",
+   "C": "Baking soda",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Turmeric is a natural acid-base indicator."
+ },
+ {
+  "gid": 136,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "When the soil is too basic, plants do not grow in it. To improve the quality, what must be added to the soil?",
+  "options": {
+   "A": "Organic matter",
+   "B": "Quicklime",
+   "C": "Calamine solution",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "For too-basic soil, organic matter is added (NCERT); quicklime treats acidic soil."
+ },
+ {
+  "gid": 137,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What is the value of absolute zero on the Fahrenheit scale?",
+  "options": {
+   "A": "0 °F",
+   "B": "–22 °F",
+   "C": "–459·4 °F",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "Absolute zero = -459.67 F ≈ -459.4 F."
+ },
+ {
+  "gid": 138,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which type of waves are light waves?",
+  "options": {
+   "A": "Transverse waves",
+   "B": "Longitudinal waves",
+   "C": "Electromagnetic waves",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-type-of-waves-are-light-waves--64f746584e316cdace607e81"
+  ],
+  "note": "Light is both transverse and electromagnetic; official answer = more than one."
+ },
+ {
+  "gid": 139,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What is the pH value of a salt made up of a strong acid and a weak base?",
+  "options": {
+   "A": "More than 7",
+   "B": "Less than 7",
+   "C": "Between 10 to 14",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Salt of strong acid + weak base is acidic, pH less than 7."
+ },
+ {
+  "gid": 140,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "One gigabyte (GB) is equal to",
+  "options": {
+   "A": "1024 KB",
+   "B": "1024 MB",
+   "C": "1024 GB",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "1 GB = 1024 MB."
+ },
+ {
+  "gid": 141,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Sodium hydroxide and hydrochloric acid react to form sodium chloride and water. Which reaction is this?",
+  "options": {
+   "A": "Neutralization",
+   "B": "Dissolution",
+   "C": "Combination",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "NaOH + HCl -> NaCl + water is neutralization."
+ },
+ {
+  "gid": 142,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What does the cell usually use to produce energy?",
+  "options": {
+   "A": "Amino acid",
+   "B": "Glucose",
+   "C": "Fatty acid",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Cells use glucose to produce energy."
+ },
+ {
+  "gid": 143,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What is the function of the pituitary gland?",
+  "options": {
+   "A": "To develop sex organs in males",
+   "B": "To stimulate growth in all organs",
+   "C": "To regulate sugar and salt levels in the body",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Pituitary (master gland) secretes growth hormone stimulating growth in all organs."
+ },
+ {
+  "gid": 144,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "India has announced to establish a Net Zero Innovation Virtual Centre in collaboration with which country?",
+  "options": {
+   "A": "Russia",
+   "B": "Britain",
+   "C": "Brazil",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1920202"
+  ],
+  "note": "India-UK Net Zero Innovation Virtual Centre; partner country = Britain/UK."
+ },
+ {
+  "gid": 145,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What is the total number of seats for MPs in the newly inaugurated Parliament of India?",
+  "options": {
+   "A": "888",
+   "B": "1272",
+   "C": "1326",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/what-is-the-total-number-of-seats-for-mps-in-the-n--64f7472d1937c54714347611"
+  ],
+  "note": "New Parliament joint-session capacity = 1272 (LS 888 + RS 384)."
+ },
+ {
+  "gid": 146,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which online platform has been launched by the Indian Government for farmers’ insurance claims?",
+  "options": {
+   "A": "Kushal Platform",
+   "B": "Grain Platform",
+   "C": "DigiClaim Platform",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "DigiClaim platform launched for farmers' crop-insurance claims."
+ },
+ {
+  "gid": 147,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who has been appointed as the head of ‘Moon to Mars Program’ of NASA?",
+  "options": {
+   "A": "Amit Kshatriya",
+   "B": "Sumit Kshatriya",
+   "C": "K. Sivan",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Amit Kshatriya heads NASA's Moon to Mars Program Office."
+ },
+ {
+  "gid": 148,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "According to the Bihar Prohibition and Excise (Amendment) Act, 2022, the vehicles transporting liquor will be released by paying what percent of their insurance cover as penalty?",
+  "options": {
+   "A": "30",
+   "B": "50",
+   "C": "10",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/according-to-the-bihar-prohibition-and-excise-ame--64f7476c83a30f3a7c59b25c"
+  ],
+  "note": "Bihar Amendment Act 2022: vehicle released on paying 10% of insured value."
+ },
+ {
+  "gid": 149,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which country has manufac- tured the passenger plane C919 to compete Airbus and Boeing?",
+  "options": {
+   "A": "India",
+   "B": "China",
+   "C": "Britain",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "C919 passenger jet built by China (COMAC)."
+ },
+ {
+  "gid": 150,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Kriti Raj Singh is related with which sport?",
+  "options": {
+   "A": "Weightlifting",
+   "B": "Badminton",
+   "C": "Cricket",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/kriti-raj-singh-is-related-with-which-sport--64f7479c83a30f3a7c59b805"
+  ],
+  "note": "Kriti Raj Singh (Bihar) is a weightlifter/powerlifter."
+ },
+ {
+  "gid": 151,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "According to the Industrial Development Ranking, 2022, released by the Bihar Industries Department, which district has topped?",
+  "options": {
+   "A": "Siwan",
+   "B": "Gaya",
+   "C": "Darbhanga",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/according-to-the-industrial-development-ranking-2--64f747b3b37373c60b62ce40",
+   "https://www.drishtiias.com/state-pcs-current-affairs/bihar-industries-department-released-the-ranking-of-industrial-development-for-the-first-time"
+  ],
+  "note": "Siwan topped Bihar Industrial Development Ranking 2022 (73.5 pts)."
+ },
+ {
+  "gid": 152,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following can a court issue for enforcement of the Fundamental Rights?",
+  "options": {
+   "A": "Decree",
+   "B": "Writ",
+   "C": "Ordinance",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Fundamental_rights_in_India"
+  ],
+  "note": "Courts issue Writs (Art 32/226) to enforce Fundamental Rights."
+ },
+ {
+  "gid": 153,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following dams is located on the Mahanadi river?",
+  "options": {
+   "A": "Hirakud Dam",
+   "B": "Dudhawa Dam",
+   "C": "Ghumarapadar Dam",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Hirakud_Dam"
+  ],
+  "note": "Hirakud Dam is on the Mahanadi river."
+ },
+ {
+  "gid": 154,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Al-Aqsa Mosque, which was in news recently, is located in which city?",
+  "options": {
+   "A": "Rome",
+   "B": "Jerusalem",
+   "C": "Riyadh",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Al-Aqsa"
+  ],
+  "note": "Al-Aqsa Mosque is in Jerusalem."
+ },
+ {
+  "gid": 155,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following countries is the member of the NATO?",
+  "options": {
+   "A": "Belgium",
+   "B": "Canada",
+   "C": "Denmark",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://www.nato.int/cps/en/natohq/topics_52044.htm"
+  ],
+  "note": "Belgium, Canada and Denmark are all NATO founding members -> more than one."
+ },
+ {
+  "gid": 156,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The statement, “One Earth, One Family, One Future” is associated with",
+  "options": {
+   "A": "G–7",
+   "B": "G–20",
+   "C": "BRICS",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/2023_G20_New_Delhi_summit"
+  ],
+  "note": "'One Earth, One Family, One Future' = India's G20 presidency theme."
+ },
+ {
+  "gid": 157,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following statements is correct regarding QUAD?",
+  "options": {
+   "A": "QUAD is a strategic forum of four nations—India, US, Japan and Australia.",
+   "B": "Its genesis was in 2004.",
+   "C": "The intention was to enhance maritime coopera- tion among the four nations.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-statements-is-correct-regar--64f7483d4e316cdace60c45b"
+  ],
+  "note": "Testbook marks 'more than one' correct (four-nation forum + 2004 genesis/tsunami core group + maritime cooperation)."
+ },
+ {
+  "gid": 158,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Kautilya was a professor of Political Science and Economics at",
+  "options": {
+   "A": "Nalanda",
+   "B": "Pataliputra",
+   "C": "Takshashila",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Chanakya"
+  ],
+  "note": "Kautilya taught at Takshashila (Taxila)."
+ },
+ {
+  "gid": 159,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following statements is correct about the 1781 Revolt in Bihar?",
+  "options": {
+   "A": "It was an uprising by the Zamindars.",
+   "B": "It was a revolt by the farmers.",
+   "C": "The British were able to put down the revolt without too much trouble.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/1781_revolt_in_Bihar",
+   "https://testbook.com/question-answer/which-of-the-following-statements-is-correct-about--64f74884b37373c60b62f27e"
+  ],
+  "note": "1781 Bihar revolt was an uprising by the Zamindars."
+ },
+ {
+  "gid": 160,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following falls under ‘Frigid Zone’?",
+  "options": {
+   "A": "Area lying between 661 2° N latitude and North Pole",
+   "B": "Area lying between 231 2° and 661 2° latitudes in both Hemispheres",
+   "C": "Area lying between Antarctic Circle and South Pole",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-falls-under-frigid-z--64f748d57604f5219981fc80"
+  ],
+  "note": "66.5N-North Pole (A) and Antarctic Circle-South Pole (C) are both Frigid Zones -> more than one."
+ },
+ {
+  "gid": 161,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The part of the Himalayas lying between Satluj and Kali rivers is known as which of the following?",
+  "options": {
+   "A": "Kumaon Himalayas",
+   "B": "Assam Himalayas",
+   "C": "Nepal Himalayas",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kumaon_Himalayas"
+  ],
+  "note": "Himalayas between Satluj and Kali rivers = Kumaon Himalayas."
+ },
+ {
+  "gid": 162,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following statements is true?",
+  "options": {
+   "A": "As per the 2011 Census, Sikkim has a population of 6 lakhs.",
+   "B": "Uttar Pradesh is the largest State in India in terms of area.",
+   "C": "India accounts for 2·6 percent of the world’s area.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-statements-is-true--64f7491583a30f3a7c59f012"
+  ],
+  "note": "Sikkim 2011 population ~6.11 lakh; UP largest by pop not area, India ~2.4% area -> only A true."
+ },
+ {
+  "gid": 163,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What should be the desired percent of forest area in the total geographical area of the country as outlined in the National Forest Policy of 1952 in India?",
+  "options": {
+   "A": "25",
+   "B": "33",
+   "C": "39",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/National_Forest_Policy_of_India"
+  ],
+  "note": "National Forest Policy 1952 targeted 33% forest cover."
+ },
+ {
+  "gid": 164,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following is the local name of ‘Jhumming’?",
+  "options": {
+   "A": "Bewar",
+   "B": "Dahiya",
+   "C": "Podu",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-is-the-local-name-of-lsquo--64f7493e83eac32c07f3653c"
+  ],
+  "note": "Bewar, Dahiya and Podu are all local names of jhum/shifting cultivation -> more than one."
+ },
+ {
+  "gid": 165,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "What is the name given to a large apartment in Amazon basin having a steeply slanting roof ?",
+  "options": {
+   "A": "Manioc",
+   "B": "Maloca",
+   "C": "Cassava",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Maloca"
+  ],
+  "note": "Maloca = large communal Amazon dwelling with steep roof; manioc/cassava are food."
+ },
+ {
+  "gid": 166,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The historical Dakshinapath region is situated in between",
+  "options": {
+   "A": "Vindhyachal range and Krishna river",
+   "B": "Vindhyachal range and Cauvery river",
+   "C": "Satpura range and Nilgiri",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-historical-dakshinapath-region-is-situated-in--64f749744e316cdace60f226"
+  ],
+  "note": "Dakshinapath extended from Vindhya range to Krishna river."
+ },
+ {
+  "gid": 167,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The major water divides between Arabian Sea and Bay of Bengal drainage are",
+  "options": {
+   "A": "Delhi ridge, Malwa plateau and Bundelkhand",
+   "B": "Delhi ridge, Aravalli range, Sahyadri and Amarkantak hills",
+   "C": "Delhi ridge, Malwa plateau and Chota Nagpur plateau",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-major-water-divides-between-arabian-sea-and-ba--64f7498d13eb150f1bab7f92"
+  ],
+  "note": "Delhi ridge, Aravalli, Sahyadri and Amarkantak hills form the divide."
+ },
+ {
+  "gid": 168,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The place of origin of Western Disturbances active in North- Western India in winter season is",
+  "options": {
+   "A": "Asia Minor",
+   "B": "Western Asia",
+   "C": "Mediterranean coastal area of Western Asia",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-place-of-origin-of-western-disturbances-active--64f749a56ec35c82cc11e1f0"
+  ],
+  "note": "Western Disturbances originate in the Mediterranean coastal area of Western Asia."
+ },
+ {
+  "gid": 169,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "According to G. T. Trewartha, the area of Am type climate in India is",
+  "options": {
+   "A": "Meghalaya plateau",
+   "B": "Western Ghats",
+   "C": "Coromandel coastal region",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/according-to-g-t-trewartha-the-area-of-am-type--64f749bf7604f521998222b4"
+  ],
+  "note": "Trewartha Am (tropical monsoon) in India = Western Ghats."
+ },
+ {
+  "gid": 170,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The local names of rice crops produced in Northern India in winter are",
+  "options": {
+   "A": "Aman, Aghani and Aus",
+   "B": "Aman, Sali and Aghani",
+   "C": "Aman, Aus and Sali",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-local-names-of-rice-crops-produced-in-northern--64f749d683eac32c07f37d91"
+  ],
+  "note": "Winter rice: Aman (Bengal), Sali (Assam), Aghani (Bihar/UP)."
+ },
+ {
+  "gid": 171,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following is not a peculiarity of middle Gangetic plain agroclimatic region?",
+  "options": {
+   "A": "Located in Ganga and its tributaries’ drainage area",
+   "B": "Extended in more than two States",
+   "C": "Receives more than 100 cm rain annually",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "med",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-is-not-a-peculiarity-of-mid--64f749f84e316cdace61057c"
+  ],
+  "note": "Testbook: all three are peculiarities of the middle Gangetic plain -> None of the above."
+ },
+ {
+  "gid": 172,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who among the following was associated with the newspaper, New India ?",
+  "options": {
+   "A": "Mahatma Gandhi",
+   "B": "Annie Besant",
+   "C": "Surendranath Banerjee",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Annie_Besant"
+  ],
+  "note": "Annie Besant published the newspaper 'New India'."
+ },
+ {
+  "gid": 173,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who organized the ‘Swadesh Bandhav Samiti’ during the Indian Freedom Struggle?",
+  "options": {
+   "A": "Ashwini Kumar Dutta",
+   "B": "Batukeshwar Dutta",
+   "C": "Surya Sen",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ashwini_Kumar_Dutta"
+  ],
+  "note": "Ashwini Kumar Dutta founded Swadesh Bandhab Samiti (Barisal)."
+ },
+ {
+  "gid": 174,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who accompanied Mahatma Gandhi during the Champaran Indigo Movement?",
+  "options": {
+   "A": "Narhari Parikh",
+   "B": "Mahadev Desai",
+   "C": "Abdul Bari",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-accompanied-mahatma-gandhi-during-the-champara--64f74a361937c5471434ffa2"
+  ],
+  "note": "Both Narhari Parikh and Mahadev Desai accompanied Gandhi in Champaran -> more than one."
+ },
+ {
+  "gid": 175,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "On which date Linlithgow ordered to fire on the mob of Patna and its surrounding during the August Revolution, 1942?",
+  "options": {
+   "A": "5th August",
+   "B": "15th August",
+   "C": "25th August",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/on-which-date-linlithgow-ordered-to-fire-on-the-mo--64f74a500fe4cc1144c65479"
+  ],
+  "note": "Firing at Patna Secretariat was 11 Aug 1942; not 5/15/25 -> None of the above."
+ },
+ {
+  "gid": 176,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In which year was the ‘Bihar Prantiya Kisan Sabha’ established?",
+  "options": {
+   "A": "1920",
+   "B": "1924",
+   "C": "1929",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sahajanand_Saraswati"
+  ],
+  "note": "Bihar Provincial Kisan Sabha founded 1929 by Swami Sahajanand Saraswati."
+ },
+ {
+  "gid": 177,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following revolts took place due to the imposition of tax on keeping of long beard?",
+  "options": {
+   "A": "Faraizi",
+   "B": "Pagalpanti",
+   "C": "Wahabi",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "med",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-revolts-took-place-due-to-t--64f74a868c7e406620ae4efd"
+  ],
+  "note": "Official BPSC key = Faraizi (beard-tax revolt). Wahabi also cited but single official answer is Faraizi = A."
+ },
+ {
+  "gid": 178,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In which conspiracy case, three Englishmen were detained on conspiracy charges?",
+  "options": {
+   "A": "Nasik Conspiracy Case",
+   "B": "Kanpur Conspiracy Case",
+   "C": "Meerut Conspiracy Case",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Meerut_Conspiracy_Case"
+  ],
+  "note": "Meerut Conspiracy Case (1929) detained 3 Englishmen: Spratt, Bradley, Hutchinson."
+ },
+ {
+  "gid": 179,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The Poona Pact aimed at",
+  "options": {
+   "A": "formation of federation with Princely States",
+   "B": "women representation in the Indian National Congress",
+   "C": "political representation of depressed class",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Poona_Pact"
+  ],
+  "note": "Poona Pact concerned political representation of the depressed classes."
+ },
+ {
+  "gid": 180,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Where was the first All India Congress Socialist Conference held?",
+  "options": {
+   "A": "Patna",
+   "B": "Bhagalpur",
+   "C": "Muzaffarpur",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Congress_Socialist_Party"
+  ],
+  "note": "First All India Congress Socialist Conference held at Patna, May 1934."
+ },
+ {
+  "gid": 181,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who was the author of Biography of Kunwar Singh and Amar Singh ?",
+  "options": {
+   "A": "M. N. Roy",
+   "B": "Kalikinkar Datta",
+   "C": "Jawaharlal Nehru",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kalikinkar_Datta"
+  ],
+  "note": "Kalikinkar Datta authored biography of Kunwar Singh and Amar Singh."
+ },
+ {
+  "gid": 182,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Subhas Chandra Bose became the President of the Indian National Congress in Tripuri Session by defeating",
+  "options": {
+   "A": "Pattabhi Sitaramayya",
+   "B": "Rash Behari Bose",
+   "C": "Jawaharlal Nehru",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Subhas_Chandra_Bose"
+  ],
+  "note": "Bose defeated Pattabhi Sitaramayya at Tripuri session 1939."
+ },
+ {
+  "gid": 183,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following is true about Dr. B. R. Ambedkar?",
+  "options": {
+   "A": "He published Mooknayak.",
+   "B": "He founded ‘Bahishkrit Hitakarini Sabha’.",
+   "C": "He passed away in 1956.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/B._R._Ambedkar"
+  ],
+  "note": "All three true: published Mooknayak (1920), founded Bahishkrit Hitakarini Sabha (1924), died 1956 -> more than one correct."
+ },
+ {
+  "gid": 184,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Match List–I with List–II and select the correct answer using the codes given below the Lists : List—I List—II (Names of (Their related movements) important centres) a. Movement of Indigo 1. Ahmedabad Planters b. Peasant Satyagraha 2. Champaran c. Cotton Mill Workers 3. Khera Satyagraha d. Movement to cut 4. Chauri Chaura off the Non- Cooperation Codes :",
+  "options": {
+   "A": "a b c d 1 2 3 4",
+   "B": "a b c d 3 4 2 1",
+   "C": "a b c d 2 3 1 4",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Champaran_Satyagraha"
+  ],
+  "note": "Indigo=Champaran(2), Peasant/Kheda(3), Cotton mill=Ahmedabad(1), cut-off Non-Coop=Chauri Chaura(4) -> 2 3 1 4."
+ },
+ {
+  "gid": 185,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Freedom of Press in India is available to the people because",
+  "options": {
+   "A": "it is available to the people under the Law of the Parliament",
+   "B": "it is specially provided in the Constitution of India",
+   "C": "it is implied in the Right to Freedom of Expression",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Freedom_of_the_press_in_India"
+  ],
+  "note": "Press freedom implied in Art 19(1)(a) Right to Freedom of Expression."
+ },
+ {
+  "gid": 186,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Match List–I with List–II and select the correct answer using the codes given below the Lists : List—I List—II (Available resources (Names of the in some provinces) related provinces) a. Rich in mineral 1. Jharkhand resources but lacks industrialization b. Rich in water 2. Arunachal resources but lacks Pradesh infrastructure deve- lopment c. Rich in solar and 3. Rajasthan wind energy but lacks water resources d. Rich in mineral 4. Ladakh resources but lacks the means of trans- portation and com- munication Codes :",
+  "options": {
+   "A": "a b c d 3 4 1 2",
+   "B": "a b c d 1 2 3 4",
+   "C": "a b c d 2 1 4 3",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://ncert.nic.in/"
+  ],
+  "note": "Jharkhand mineral/no industrialization(1), Arunachal water/no infra(2), Rajasthan solar-wind/no water(3), Ladakh mineral/no transport(4) -> 1 2 3 4."
+ },
+ {
+  "gid": 187,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "A medicinal plant named ‘Himalayan yew’ is found in which of the following provinces of India?",
+  "options": {
+   "A": "Himachal Pradesh and Arunachal Pradesh",
+   "B": "Uttarakhand and Madhya Pradesh",
+   "C": "Jammu & Kashmir and Assam",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Taxus_wallichiana"
+  ],
+  "note": "Himalayan yew found in Himachal Pradesh and Arunachal Pradesh."
+ },
+ {
+  "gid": 188,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The ‘Overseas Indian Citizenship (OIC) Scheme’ was introduced by which of the following Acts in India?",
+  "options": {
+   "A": "The Citizenship (Amendment) Act, 2003",
+   "B": "The Citizenship Act, 1955",
+   "C": "The Citizenship (Amendment) Act, 2019",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Overseas_Citizenship_of_India"
+  ],
+  "note": "OIC scheme introduced by Citizenship (Amendment) Act, 2003."
+ },
+ {
+  "gid": 189,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following may be known as the main cause of disappearing the rigid caste system in India?",
+  "options": {
+   "A": "The Constitution and its basic structure",
+   "B": "The social reforms and economic development",
+   "C": "The growth of literacy and education",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-may-be-known-as-the-main-ca--64f74cad4e316cdace616b4d"
+  ],
+  "note": "Official key = More than one of the above (constitution, reforms/economic, literacy all cause decline)."
+ },
+ {
+  "gid": 190,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The Ministry of Panchayati Raj was created in the Central Government of India in which of the following years?",
+  "options": {
+   "A": "2002–2003",
+   "B": "2004",
+   "C": "2005–2006",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ministry_of_Panchayati_Raj"
+  ],
+  "note": "Ministry of Panchayati Raj created May 2004."
+ },
+ {
+  "gid": 191,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who among the following believed that “a communist society was the natural society of the future”?",
+  "options": {
+   "A": "Karl Marx",
+   "B": "Friedrich Engels",
+   "C": "Robert Owen",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://ncert.nic.in/"
+  ],
+  "note": "NCERT: Marx held a communist society was the natural society of the future."
+ },
+ {
+  "gid": 192,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who among the following is the author of the book, The Social Contract ?",
+  "options": {
+   "A": "Thomas Hobbes",
+   "B": "John Locke",
+   "C": "Jean-Jacques Rousseau",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/The_Social_Contract"
+  ],
+  "note": "The Social Contract written by Jean-Jacques Rousseau."
+ },
+ {
+  "gid": 193,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following movements was launched against multipurpose projects in India?",
+  "options": {
+   "A": "Narmada Bachao Andolan",
+   "B": "Tehri Dam Andolan",
+   "C": "Chipko Andolan",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-movements-was-launched-agai--64f74d06b37373c60b63a38a"
+  ],
+  "note": "Official key = More than one: Narmada Bachao and Tehri Dam Andolan both against multipurpose dam projects."
+ },
+ {
+  "gid": 194,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following is the Fundamental Duty under the Constitution of India?",
+  "options": {
+   "A": "To uphold the unity and integrity of India",
+   "B": "To protect the natural environment",
+   "C": "To provide educational opportunities to own child",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Fundamental_duties_of_India"
+  ],
+  "note": "All three are Fundamental Duties: 51A(c) unity/integrity, 51A(g) environment, 51A(k) educate child -> more than one."
+ },
+ {
+  "gid": 195,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who wrote Pakistan or the Partition of India ?",
+  "options": {
+   "A": "Muhammad Iqbal",
+   "B": "Muhammad Ali Jinnah",
+   "C": "Dr. Bhimrao Ramji Ambedkar",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Pakistan_or_the_Partition_of_India"
+  ],
+  "note": "Written by B. R. Ambedkar."
+ },
+ {
+  "gid": 196,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "When was Ireland forcibly incorporated into the United Kingdom?",
+  "options": {
+   "A": "1707",
+   "B": "1798",
+   "C": "1801",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Acts_of_Union_1800"
+  ],
+  "note": "Ireland incorporated into UK by Act of Union effective 1801."
+ },
+ {
+  "gid": 197,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Who started ‘Sarva Shiksha Abhiyan’?",
+  "options": {
+   "A": "Indira Gandhi",
+   "B": "Narasimha Rao",
+   "C": "Atal Bihari Vajpayee",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sarva_Shiksha_Abhiyan"
+  ],
+  "note": "SSA launched 2001 under PM Atal Bihari Vajpayee."
+ },
+ {
+  "gid": 198,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "When did Sri Lanka become independent?",
+  "options": {
+   "A": "1945",
+   "B": "1947",
+   "C": "1948",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sri_Lanka"
+  ],
+  "note": "Sri Lanka (Ceylon) became independent 4 Feb 1948."
+ },
+ {
+  "gid": 199,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "‘Annapurna Yojana’ ration card is for",
+  "options": {
+   "A": "older and poor people above 65 years",
+   "B": "above poverty line families",
+   "C": "below poverty line families",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Annapurna_Scheme"
+  ],
+  "note": "Annapurna Yojana targets destitute senior citizens 65+ not receiving old-age pension."
+ },
+ {
+  "gid": 200,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Y-shaped energy flow model in ecosystem was proposed by",
+  "options": {
+   "A": "Odum",
+   "B": "Lindeman",
+   "C": "Clements",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Energy_flow_(ecology)"
+  ],
+  "note": "Y-shaped energy flow model proposed by H.T. Odum (Odum)."
+ },
+ {
+  "gid": 201,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "SO2 pollution is indicated by",
+  "options": {
+   "A": "orchids",
+   "B": "mangroves",
+   "C": "lichens",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lichen"
+  ],
+  "note": "Lichens are classic bioindicators of SO2 air pollution."
+ },
+ {
+  "gid": 202,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The Salim Ali Bird Sanctuary is located in",
+  "options": {
+   "A": "Uttar Pradesh",
+   "B": "Madhya Pradesh",
+   "C": "West Bengal",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "med",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Salim_Ali_Bird_Sanctuary"
+  ],
+  "note": "Salim Ali Bird Sanctuary is in Goa (Chorao Is.); also a Salim Ali Lake sanctuary in Maharashtra. Not UP/MP/WB -> None."
+ },
+ {
+  "gid": 203,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The IUCN Headquarters is in",
+  "options": {
+   "A": "Switzerland",
+   "B": "France",
+   "C": "Australia",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/International_Union_for_Conservation_of_Nature"
+  ],
+  "note": "IUCN HQ is at Gland, Switzerland."
+ },
+ {
+  "gid": 204,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "How much energy is consumed from one trophic level to another trophic level?",
+  "options": {
+   "A": "5%",
+   "B": "10%",
+   "C": "15%",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ecological_efficiency"
+  ],
+  "note": "~10% of energy transfers between trophic levels (10% law)."
+ },
+ {
+  "gid": 205,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Pneumatophores are present in",
+  "options": {
+   "A": "hydrophytes",
+   "B": "xerophytes",
+   "C": "halophytes",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Pneumatophore_(botany)"
+  ],
+  "note": "Pneumatophores (breathing roots) occur in halophytes/mangroves."
+ },
+ {
+  "gid": 206,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following is a secondary pollutant?",
+  "options": {
+   "A": "PAN",
+   "B": "SO2",
+   "C": "Ozone",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Secondary_pollutant"
+  ],
+  "note": "Both PAN and tropospheric ozone are secondary pollutants; SO2 is primary -> more than one."
+ },
+ {
+  "gid": 207,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The 10% law of energy flow in ecosystem was proposed by",
+  "options": {
+   "A": "Lindeman",
+   "B": "Hückel",
+   "C": "Elton",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Raymond_Lindeman"
+  ],
+  "note": "Lindeman proposed the 10% law of energy flow."
+ },
+ {
+  "gid": 208,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In India, tropical rain forests are found in",
+  "options": {
+   "A": "Karnataka",
+   "B": "Himachal Pradesh",
+   "C": "Kerala",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "med",
+  "sources": [
+   "https://www.prepladder.com/upsc-study-material/geography/natural-vegetation-in-india-ncert-notes-upsc"
+  ],
+  "note": "Tropical rain forests occur along Western Ghats in both Kerala AND Karnataka; Himachal is temperate -> more than one correct."
+ },
+ {
+  "gid": 209,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The major source of methane in India is",
+  "options": {
+   "A": "wheat field",
+   "B": "sugarcane field",
+   "C": "rice field",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Methane_emissions"
+  ],
+  "note": "Paddy (rice) fields are the major methane source in India."
+ },
+ {
+  "gid": 210,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The layer of atmosphere having lowest temperature is",
+  "options": {
+   "A": "stratosphere",
+   "B": "troposphere",
+   "C": "mesosphere",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mesosphere"
+  ],
+  "note": "Coldest atmospheric temperatures (mesopause) are in the mesosphere."
+ },
+ {
+  "gid": 211,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The increase in concentration of toxic substances in successive trophic level is referred to as",
+  "options": {
+   "A": "eutrophication",
+   "B": "biomagnification",
+   "C": "bioaccumulation",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Biomagnification"
+  ],
+  "note": "Increasing toxicant concentration up trophic levels = biomagnification."
+ },
+ {
+  "gid": 212,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which of the following acts as a pioneer species in a xerarch succession?",
+  "options": {
+   "A": "Lichen",
+   "B": "Human",
+   "C": "Herb",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ecological_succession"
+  ],
+  "note": "Lichens are the pioneer species in xerarch (dry) succession."
+ },
+ {
+  "gid": 213,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "The Ramsar Convention is associated with the conservation of",
+  "options": {
+   "A": "drylands",
+   "B": "wetlands",
+   "C": "forests",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ramsar_Convention"
+  ],
+  "note": "Ramsar Convention conserves wetlands."
+ },
+ {
+  "gid": 214,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Itai-itai disease is caused by",
+  "options": {
+   "A": "mercury",
+   "B": "iron",
+   "C": "cadmium",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Itai-itai_disease"
+  ],
+  "note": "Itai-itai disease is caused by cadmium poisoning."
+ },
+ {
+  "gid": 215,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Which one of the following is not included under in situ conservation?",
+  "options": {
+   "A": "Botanical Garden",
+   "B": "National Park",
+   "C": "Wildlife Sanctuary",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/In-situ_conservation"
+  ],
+  "note": "Botanical garden is ex-situ; national park & sanctuary are in-situ."
+ },
+ {
+  "gid": 216,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "How many 4-digit numbers can be formed using the digits 0, 1, 2, 3, 4 without repetition?",
+  "options": {
+   "A": "120",
+   "B": "54",
+   "C": "45",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [],
+  "note": "4-digit no-repeat from {0,1,2,3,4}: 4x4x3x2=96. Not A/B/C -> None."
+ },
+ {
+  "gid": 217,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "If the word HEIGHT is coded as 96108921 and LOOSE is coded as 131616206, then the code for MOBILE, in the same language, is",
+  "options": {
+   "A": "1416310136",
+   "B": "1416411136",
+   "C": "1416312136",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Code = letter position +1. MOBILE -> 14,16,3,10,13,6 = 1416310136."
+ },
+ {
+  "gid": 218,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Arrange the following words in logical order : 1. Associate Professor 2. Professor 3. Assistant Professor Select the correct answer using the codes given below.",
+  "options": {
+   "A": "2, 3, 1",
+   "B": "2, 1, 3",
+   "C": "1, 2, 3",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "med",
+  "sources": [],
+  "note": "Hierarchy order Professor>Associate>Assistant = 2,1,3."
+ },
+ {
+  "gid": 220,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "If the area of a square is equal to the area of an equilateral triangle, the ratio of the side of the square and the side of the equilateral triangle is",
+  "options": {
+   "A": "1 : 1",
+   "B": "2 : 1",
+   "C": "3 : 2",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "med",
+  "sources": [],
+  "note": "s^2=(sqrt3/4)a^2 -> s/a=3^(1/4)/2 ~0.658, i.e. not 1:1,2:1,3:2 -> None."
+ },
+ {
+  "gid": 221,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Find the wrong number in the series given below : 3, 8, 13, 21, 31, 43",
+  "options": {
+   "A": "21",
+   "B": "31",
+   "C": "8",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "Series adds 4,6,8,10,12: 3,7,13,21,31,43; so 8 is wrong (should be 7)."
+ },
+ {
+  "gid": 222,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Find the wrong number from the table given below : 2 4 1 5 6 12 3 15 18 36 9 45 54 108 27 100",
+  "options": {
+   "A": "9",
+   "B": "36",
+   "C": "100",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "Each row = previous x3; row4 should end 135 not 100 -> 100 is wrong."
+ },
+ {
+  "gid": 223,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Let a = 10 cm, b = 3 cm and c = 6 cm. Which of the following is true?",
+  "options": {
+   "A": "a, b and c are the sides of a triangle.",
+   "B": "a, b and c form right-angled triangle.",
+   "C": "a, b and c form isosceles triangle.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [],
+  "note": "b+c=3+6=9<a=10, so no triangle exists; none of A/B/C true."
+ },
+ {
+  "gid": 224,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Madan’s brother’s uncle is Karan’s father’s brother. What can be the relationship between Madan and Karan?",
+  "options": {
+   "A": "Madan is Karan’s uncle",
+   "B": "Madan is Karan’s brother",
+   "C": "Madan is Karan’s son",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "med",
+  "sources": [],
+  "note": "Shared uncle (Karan's father's brother) -> Madan and Karan are brothers."
+ },
+ {
+  "gid": 225,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Find the missing letters in the series given below : Y, T, O, _____, _____",
+  "options": {
+   "A": "J, E",
+   "B": "J, D",
+   "C": "K, F",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Y,T,O step -5 each: next O-5=J, J-5=E -> J,E."
+ },
+ {
+  "gid": 227,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Asha walks 3 km southward and then turns right and walks 2 km. She again turns right and walks 3 km, and then turns towards her left and starts walking straight. In which direction is she walking now?",
+  "options": {
+   "A": "North",
+   "B": "West",
+   "C": "East",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "West. Facing S, right=W (2km), right=N (3km), left=W. She now walks West."
+ },
+ {
+  "gid": 228,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Find the wrong number in the series given below : 28, 84, 112, 196, 308, 504, 872",
+  "options": {
+   "A": "112",
+   "B": "308",
+   "C": "872",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "872. Fibonacci-type: each term = sum of prev two; 308+504=812 not 872, so 872 is wrong."
+ },
+ {
+  "gid": 229,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In a certain code, ‘256’ means ‘you are good’; ‘637’ means ‘we are bad’ and ‘358’ means ‘good and bad’. Which of the following digits represents ‘and’ in that code?",
+  "options": {
+   "A": "2",
+   "B": "5",
+   "C": "8",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "8='and'. 5=good (256∩358), 3=bad (637∩358); remaining digit 8 in 358 = 'and'."
+ },
+ {
+  "gid": 230,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "Six roads lead to a country. They may be indicated by the letters X, Y, Z and the digits 1, 2, 3. When there is a storm, Y is blocked. When there are floods, X, 1 and 2 will be affected. When road 1 is blocked, Z is also blocked. At a time, when there are floods and a storm also blows, which road can be used?",
+  "options": {
+   "A": "3",
+   "B": "Y",
+   "C": "Z",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Road 3. Storm blocks Y; floods block X,1,2 and 1 blocks Z; only 3 usable."
+ },
+ {
+  "gid": 231,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "General_Studies_Paper_2_2nd_Sitting__General_Studies_Paper_2.pdf",
+  "stem": "In a certain code, DELHI is written as CCIDD. How is BOMBAY written in that code?",
+  "options": {
+   "A": "AJMTVT",
+   "B": "MJXVSU",
+   "C": "AMJXVS",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "AMJXVS. Cipher shifts -1,-2,-3,-4,-5,-6; BOMBAY -> A,M,J,X,V,S."
+ },
+ {
+  "gid": 233,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "Match List–I with List–II : List—I List—II a. Char 1. Punjab plain b. Kankar 2. Delta c. Kayal 3. Bangar d. Mand 4. Coastal plain Select the correct answer using the codes given below.",
+  "options": {
+   "A": "a b c d 1 4 2 3",
+   "B": "a b c d 2 3 4 1",
+   "C": "a b c d 3 1 4 2",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://ncert.nic.in/textbook/pdf/iesc102.pdf"
+  ],
+  "note": "a-2 (Char=delta riverine islands), b-3 (Kankar=Bangar old alluvium), c-4 (Kayal=coastal backwaters), d-1 (Mand=Punjab plain). = code 2 3 4 1."
+ },
+ {
+  "gid": 234,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "H-7. What is called ‘Takshan’ in Rigveda ?",
+  "options": {
+   "A": "Carpenter",
+   "B": "Ironsmith",
+   "C": "Potter",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://www.gktoday.in/"
+  ],
+  "note": "Takshan = carpenter (woodworker) in the Rigveda."
+ },
+ {
+  "gid": 235,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "H-13. Who was the leader of the Revolt of 1857 from Bihar?",
+  "options": {
+   "A": "Maulvi Ahmadullah",
+   "B": "Tantia Topi",
+   "C": "Nana Sahib",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [],
+  "note": "Bihar's 1857 leader was Kunwar Singh of Jagdishpur, not listed; so None of the above."
+ },
+ {
+  "gid": 236,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "H-19. Who wrote Vande Mataram?",
+  "options": {
+   "A": "Bankim Chandra Chatterjee",
+   "B": "Sarojini Naidu",
+   "C": "Rabindranath Tagore",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Vande Mataram written by Bankim Chandra Chatterjee."
+ },
+ {
+  "gid": 237,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "H-25. ‘Young Italy Movement’ in 1831 which aimed to establish Republic was started by",
+  "options": {
+   "A": "Count Cavour",
+   "B": "Giuseppe Garibaldi",
+   "C": "Victor Emmanuel",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [],
+  "note": "Young Italy (1831) founded by Giuseppe Mazzini, not listed; so None of the above."
+ },
+ {
+  "gid": 238,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "H-33. By which Treaty was the Thirty Years’ War ended?",
+  "options": {
+   "A": "Treaty of Augsburg",
+   "B": "Treaty of Westphalia",
+   "C": "Treaty of Trianon",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Thirty Years' War ended by the Treaty (Peace) of Westphalia, 1648."
+ },
+ {
+  "gid": 239,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "PART—II/III ( GEOGRAPHY G-1. Vulnerable species in India is",
+  "options": {
+   "A": "Asiatic elephant",
+   "B": "Gangetic dolphin",
+   "C": "Blackbuck",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://www.sarthaks.com/3621876/",
+   "https://ncert.nic.in/textbook/pdf/iesc102.pdf"
+  ],
+  "note": "Both Asiatic elephant and Gangetic dolphin are NCERT-listed vulnerable species; blackbuck is endangered. More than one -> D."
+ },
+ {
+  "gid": 240,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "G-7. As per the Agriculture Report, 2017, India was the second largest producer of _____ in the world.",
+  "options": {
+   "A": "rice",
+   "B": "cotton",
+   "C": "sugarcane",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/as-per-the-agriculture-report-2017-india-was-the--64f962064fc4e391db23b845"
+  ],
+  "note": "India is 2nd-largest producer of rice, cotton AND sugarcane; official key = More than one of the above."
+ },
+ {
+  "gid": 242,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "G-21. Which thermal power plant is present in Bihar?",
+  "options": {
+   "A": "Neyveli",
+   "B": "Talcher",
+   "C": "Barauni",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "Barauni thermal power plant is in Bihar; Neyveli (TN), Talcher (Odisha)."
+ },
+ {
+  "gid": 243,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "G-27. From which year was the National Forest Policy introduced in India?",
+  "options": {
+   "A": "1952",
+   "B": "1963",
+   "C": "1978",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "India's first National Forest Policy was adopted in 1952 (revised 1988)."
+ },
+ {
+  "gid": 244,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "G-34. Which is the longest river in South America?",
+  "options": {
+   "A": "Nile",
+   "B": "Amazon",
+   "C": "Mississippi",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Amazon is the longest river in South America (Nile-Africa, Mississippi-N.America)."
+ },
+ {
+  "gid": 245,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "E-7. Which among the following options defines the term ‘globalization’ ?",
+  "options": {
+   "A": "Rapid economic integration among countries",
+   "B": "Integration of cultures",
+   "C": "Isolation among countries",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Globalization = rapid economic integration among countries."
+ },
+ {
+  "gid": 246,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "E-13. Which of the following about MGNREGA Act is incorrect ?",
+  "options": {
+   "A": "Right to work in about 625 districts of India",
+   "B": "100 days of guaranteed employment in a year",
+   "C": "It will not give an employment allowance if the government fails",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "The incorrect statement: MGNREGA DOES pay an unemployment allowance if the govt fails to provide work; C denies this, so it is the false one."
+ },
+ {
+  "gid": 247,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "E-19. GDP is the total value of _____ produced during a particular year.",
+  "options": {
+   "A": "all goods and services",
+   "B": "all final goods and services",
+   "C": "all intermediate goods and services",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "GDP = total value of all FINAL goods and services produced in a year."
+ },
+ {
+  "gid": 248,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "E-27. When was ‘NITI Aayog’ started?",
+  "options": {
+   "A": "1st January, 2014",
+   "B": "1st June, 2014",
+   "C": "1st January, 2015",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "NITI Aayog was established on 1 January 2015."
+ },
+ {
+  "gid": 249,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "E-35. In which economic programme does dairy industry stand?",
+  "options": {
+   "A": "Tertiary fields",
+   "B": "Primary fields",
+   "C": "Intermediate fields",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Dairy (animal husbandry) belongs to the primary sector/fields."
+ },
+ {
+  "gid": 250,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "The Fundamental Duties were included in the Constitution in 1976 by which of the following Amendment Acts?",
+  "options": {
+   "A": "25th",
+   "B": "38th",
+   "C": "42nd",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "Fundamental Duties added by the 42nd Amendment Act, 1976."
+ },
+ {
+  "gid": 253,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "National Voters’ Day is celebrated every year on",
+  "options": {
+   "A": "14th September",
+   "B": "25th January",
+   "C": "5th June",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/National_Voters%27_Day"
+  ],
+  "note": "National Voters' Day is celebrated on 25th January (since 2011)."
+ },
+ {
+  "gid": 254,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "Which is not correct about the Constituent Assembly?",
+  "options": {
+   "A": "It had more than 300 members.",
+   "B": "Its first meeting was held in July 1946.",
+   "C": "It adopted many details and procedures from the Act of 1935.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Constituent_Assembly_of_India"
+  ],
+  "note": "NOT correct = first meeting was 9 Dec 1946, not July 1946. It had 389 members and borrowed from GoI Act 1935."
+ },
+ {
+  "gid": 255,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "What does the Equal Remuneration Act, 1976 provide?",
+  "options": {
+   "A": "Equal representation in politics",
+   "B": "Equal wages for all genders",
+   "C": "Jobs recruitment for all",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Equal_Remuneration_Act,_1976"
+  ],
+  "note": "Provides equal wages/pay for men and women for same work — equal wages for all genders."
+ },
+ {
+  "gid": 256,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_09_10__General_Studies_And_Social_Science.pdf",
+  "stem": "When did the Black Power Movement emerge?",
+  "options": {
+   "A": "1975",
+   "B": "1966",
+   "C": "1989",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Black_Power_movement"
+  ],
+  "note": "Black Power Movement emerged in 1966 (term popularised by Stokely Carmichael, June 1966)."
+ },
+ {
+  "gid": 257,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "How many three-digit numbers are divisible by 5?",
+  "options": {
+   "A": "180",
+   "B": "200",
+   "C": "120",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Three-digit multiples of 5 from 100 to 995: (995-100)/5+1 = 180."
+ },
+ {
+  "gid": 258,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "The distance between Delhi and Agra is 200 km. Suppose you are travelling from Delhi to Agra by a car. If you can maintain an average speed of 90 km/hr for 120 km and 40 km/hr for the remaining distance, how much time will you take, on average, to reach Agra?",
+  "options": {
+   "A": "3 hr 20 min",
+   "B": "3 hr 30 min",
+   "C": "4 hr 45 min",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "120km/90 = 1h20m; remaining 80km/40 = 2h; total 3h20min."
+ },
+ {
+  "gid": 259,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "10% loss on selling price is what percent loss on cost price?",
+  "options": {
+   "A": "9 11% 1",
+   "B": "9 11% 2",
+   "C": "10%",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Loss=0.1SP, CP=1.1SP, loss%=0.1/1.1=1/11=9 1/11% on CP."
+ },
+ {
+  "gid": 260,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "A pizza boy delivered two-fifths of his pizzas on day 1, three-fourths of his pizzas on day 2 and 9 of 16 his pizzas on day 3. On which day did he deliver the most pizzas if he had the same number of pizzas in the beginning of each day?",
+  "options": {
+   "A": "Day 1",
+   "B": "Day 2",
+   "C": "Day 3",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Day1 2/5=0.40, Day2 3/4=0.75, Day3 9/16=0.5625; most on Day 2."
+ },
+ {
+  "gid": 261,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "The cost of carpeting a room 18 m long with a carpet 75 cm wide at R 4·50 per metre is R 810. The breadth of the room is",
+  "options": {
+   "A": "7 m",
+   "B": "7·5 m",
+   "C": "8 m",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Carpet length=810/4.5=180m; area=180*0.75=135 m2; breadth=135/18=7.5m."
+ },
+ {
+  "gid": 262,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Two persons A and B complete a task in 15 days, when they work together. Person A completes the task in 20 days if he works alone. How many days will B take to finish the task alone?",
+  "options": {
+   "A": "35 days",
+   "B": "25 days",
+   "C": "60 days",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "1/15 - 1/20 = 1/60, so B alone takes 60 days."
+ },
+ {
+  "gid": 264,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "An isotropic source of 2 candela produces light flux equal to",
+  "options": {
+   "A": "2p lumen",
+   "B": "4p lumen",
+   "C": "8p lumen",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [],
+  "note": "Flux = 4pi*I = 4pi*2 = 8pi lumen."
+ },
+ {
+  "gid": 265,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "The spray bottles used as window or household cleaner or perfume sprayer work on",
+  "options": {
+   "A": "capillary action",
+   "B": "Bernoulli’s principle",
+   "C": "Pascal’s law",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Atomizer/spray bottles work on Bernoulli's principle."
+ },
+ {
+  "gid": 266,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "The trade name of basic lead carbonate is",
+  "options": {
+   "A": "white lead",
+   "B": "red lead",
+   "C": "litharge",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Basic lead carbonate trade name is white lead. (Red lead=Pb3O4, litharge=PbO)."
+ },
+ {
+  "gid": 267,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Which of the following elements has the largest atomic radius?",
+  "options": {
+   "A": "Lithium",
+   "B": "Beryllium",
+   "C": "Boron",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [],
+  "note": "Across period 2 radius decreases; Lithium has largest atomic radius among Li, Be, B."
+ },
+ {
+  "gid": 268,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "The phenomenon of photo- periodism in plants was discovered by",
+  "options": {
+   "A": "Garner and Allard",
+   "B": "Steward and Salisbury",
+   "C": "Thimann and Skoog",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Photoperiodism"
+  ],
+  "note": "Photoperiodism discovered by Garner and Allard (1920)."
+ },
+ {
+  "gid": 269,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Silent Valley of Kerala is preserved because",
+  "options": {
+   "A": "it contains very rare species of plants and animals",
+   "B": "the soil is rich in minerals",
+   "C": "the areas of land were used extensively for agriculture purposes",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Silent_Valley_National_Park"
+  ],
+  "note": "Silent Valley preserved for its rare/endemic species of plants and animals."
+ },
+ {
+  "gid": 270,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "During normal respiration in a mammal, the diaphragm is",
+  "options": {
+   "A": "arched",
+   "B": "flattened",
+   "C": "lowered",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "D",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/during-normal-respiration-in-a-mammal-the-diaphra--65125643fb6e441830729adb"
+  ],
+  "note": "Official key = 'More than one of the above'; diaphragm is flattened + lowered on inspiration, arched on expiration."
+ },
+ {
+  "gid": 271,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "The most important cell type associated with the immunity of the body is",
+  "options": {
+   "A": "platelets",
+   "B": "lymphocytes",
+   "C": "RBCs",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [],
+  "note": "Lymphocytes are the key immune cells."
+ },
+ {
+  "gid": 272,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "The book entitled, Gyan Deepak was authored by a great saint",
+  "options": {
+   "A": "Salar Masood Ghazi",
+   "B": "Dariya Saheb",
+   "C": "Imam Shah Faqih",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Dariya_Saheb",
+   "https://testbook.com/question-answer/the-book-entitled-gyan-deepak-was-authored-by-a-g--65125669a5841b158a5cf9db"
+  ],
+  "note": "Gyan Deepak (Gyan Dipak) authored by saint Dariya Saheb of Bihar."
+ },
+ {
+  "gid": 273,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Which agency in India has launched UTSAH portal?",
+  "options": {
+   "A": "UGC",
+   "B": "AICTE",
+   "C": "MCI",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://news.careers360.com/ugc-launches-utsah-portal-track-support-implement-transformative-reform-in-higher-education"
+  ],
+  "note": "UTSAH portal launched by UGC (May 2023)."
+ },
+ {
+  "gid": 274,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "A. P. J. Abdul Kalam Satellite Launch Vehicle Mission was launched on",
+  "options": {
+   "A": "13th February, 2023",
+   "B": "20th February, 2023",
+   "C": "19th February, 2023",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://www.indiatodayne.in/national/story/apj-abdul-kalam-mission-2023-rocket-carrying-student-built-satellites-launched-from-tamil-nadu-515156-2023-02-19"
+  ],
+  "note": "APJ Abdul Kalam SLV Mission-2023 launched 19 February 2023 from Tamil Nadu."
+ },
+ {
+  "gid": 275,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "In which city was the first pure green hydrogen plant commissioned?",
+  "options": {
+   "A": "Hyderabad",
+   "B": "Mumbai",
+   "C": "Pune",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "E",
+  "confidence": "high",
+  "sources": [
+   "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1818482",
+   "https://testbook.com/question-answer/in-which-city-was-the-first-pure-green-hydrogen-pl--651256a43f9047e532305e4e"
+  ],
+  "note": "India's first pure green hydrogen plant commissioned in Jorhat (Assam) by Oil India — not Hyderabad/Mumbai/Pune, so None of the above."
+ },
+ {
+  "gid": 276,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Which year has been declared by the UNO as the ‘International Year of Millets’?",
+  "options": {
+   "A": "2023",
+   "B": "2022",
+   "C": "2024",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://www.fao.org/millets-2023/en"
+  ],
+  "note": "A=2023. UN declared 2023 the International Year of Millets."
+ },
+ {
+  "gid": 277,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Who among the following won the 2022 Nobel Peace Prize?",
+  "options": {
+   "A": "Ales Bialiatski",
+   "B": "Nadia Murad",
+   "C": "Maria Ressa",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://www.nobelprize.org/prizes/peace/2022/summary/"
+  ],
+  "note": "A=Ales Bialiatski (shared 2022 Nobel Peace Prize). Murad=2018, Ressa=2021."
+ },
+ {
+  "gid": 278,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Who is the Chairman of the State Commission for Backward Classes appointed by the Bihar Government on 2nd January, 2022?",
+  "options": {
+   "A": "Justice Sanjay Kumar",
+   "B": "Justice Balmiki Prasad Sinha",
+   "C": "Justice Iqbal A. Ansari",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-is-the-chairman-of-the-state-commission-for-ba--651256e2a5841b158a5d0632"
+  ],
+  "note": "A=Justice Sanjay Kumar, retired Patna HC judge, Chairman Bihar State Commission for Backward Classes."
+ },
+ {
+  "gid": 279,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Which was the first movie in Bhojpuri?",
+  "options": {
+   "A": "Ganga Maiya Tohe Piyari Chadhaibo",
+   "B": "Kanyadan",
+   "C": "Nadiya Ke Paar",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ganga_Maiyya_Tohe_Piyari_Chadhaibo"
+  ],
+  "note": "A=Ganga Maiya Tohe Piyari Chadhaibo (1963), first Bhojpuri film."
+ },
+ {
+  "gid": 280,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Arrange the following thermal power projects of India from east to west : 1. Kota 2. Namrup 3. Obra 4. Parichha Select the correct answer using the codes given below.",
+  "options": {
+   "A": "1, 2, 3, 4",
+   "B": "2, 4, 1, 3",
+   "C": "2, 3, 4, 1",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Namrup_Thermal_Power_Station"
+  ],
+  "note": "East->west: Namrup(Assam), Obra(UP), Parichha(UP), Kota(Raj) = 2,3,4,1 = option C."
+ },
+ {
+  "gid": 281,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Which type of climate is in India according to Trewartha?",
+  "options": {
+   "A": "Savanna type",
+   "B": "Subtropical monsoon climate",
+   "C": "Mediterranean type",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-type-of-climate-is-in-india-according-to-tre--6512572b6a5fb435f486618c"
+  ],
+  "note": "B=Subtropical monsoon climate (per Trewartha, testbook key)."
+ },
+ {
+  "gid": 282,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "What is the normal date of withdrawal of south-west monsoon at Hyderabad?",
+  "options": {
+   "A": "1st October",
+   "B": "15th October",
+   "C": "1st November",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/what-is-the-normal-date-of-withdrawal-of-south-wes--65125744cc4519f0e80f804a"
+  ],
+  "note": "B=15th October, normal withdrawal of SW monsoon at Hyderabad."
+ },
+ {
+  "gid": 283,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Which of the following States has maximum urbanization?",
+  "options": {
+   "A": "Goa",
+   "B": "Maharashtra",
+   "C": "Karnataka",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Goa"
+  ],
+  "note": "A=Goa, highest urbanization (~62%) among states."
+ },
+ {
+  "gid": 284,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "‘Malnad’ region is associated with which of the following plateaus of India?",
+  "options": {
+   "A": "Telangana Plateau",
+   "B": "Maharashtra Plateau",
+   "C": "Karnataka Plateau",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Malenadu"
+  ],
+  "note": "C=Karnataka Plateau; Malnad/Malenadu is the western hilly zone of Karnataka."
+ },
+ {
+  "gid": 285,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "South Peninsular Upland is a part of",
+  "options": {
+   "A": "Gondwana Land",
+   "B": "Laurentia Land",
+   "C": "Antarctica Continent",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Gondwana"
+  ],
+  "note": "A=Gondwana Land; South Peninsular Upland is part of ancient Gondwana."
+ },
+ {
+  "gid": 286,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "The percentage of population of Bihar with respect to India’s total population is",
+  "options": {
+   "A": "8·58%",
+   "B": "10·10%",
+   "C": "12·25%",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bihar"
+  ],
+  "note": "A=8.58%; Bihar ~10.4 cr of 121 cr ~ 8.6% of India."
+ },
+ {
+  "gid": 287,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Which of the following pairs is not correctly matched with respect to south of Ganga region in Bihar?",
+  "options": {
+   "A": "Patna–Munger",
+   "B": "Gaya–Arwal",
+   "C": "Patna–Vaishali",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-pairs-is-not-correctly-matc--651257b248926d20a6cbcef9"
+  ],
+  "note": "C=Patna-Vaishali is wrong; Vaishali lies north of Ganga, not south."
+ },
+ {
+  "gid": 288,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Who is called the ‘Prophet of New India’?",
+  "options": {
+   "A": "Raja Ram Mohan Roy",
+   "B": "Dayananda Saraswati",
+   "C": "Dadabhai Naoroji",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-is-called-the-prophet-of-new-indiarsquo--651257c980b3275daba96dce"
+  ],
+  "note": "A=Raja Ram Mohan Roy, called Prophet of New India."
+ },
+ {
+  "gid": 289,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Which revolt is mentioned in Anandamath of Bankim Chandra Chattopadhyay?",
+  "options": {
+   "A": "Sannyasi",
+   "B": "Santhal",
+   "C": "Indigo",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Anandamath"
+  ],
+  "note": "A=Sannyasi revolt, depicted in Bankim Chandra's Anandamath."
+ },
+ {
+  "gid": 290,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Who was the founder of ‘Abhinav Bharat’ in London?",
+  "options": {
+   "A": "Vinayak Damodar Savarkar",
+   "B": "P. M. Bapat",
+   "C": "Shyamji Krishna Varma",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-was-the-founder-of-abhinav-bharatrsquo--651257f169ea2600351d0c64"
+  ],
+  "note": "A=V.D. Savarkar founded Abhinav Bharat (London branch/Free India Society 1906)."
+ },
+ {
+  "gid": 291,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Where was the Ghadar Party established?",
+  "options": {
+   "A": "France",
+   "B": "Germany",
+   "C": "United States of America",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ghadar_Party"
+  ],
+  "note": "C=USA; Ghadar Party founded 1913 in San Francisco."
+ },
+ {
+  "gid": 292,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Who was appointed as the ‘Commander in Chief’ by Birsa Munda?",
+  "options": {
+   "A": "Demka Munda",
+   "B": "Gaya Munda",
+   "C": "Sundar Munda",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-was-appointed-as-the-commander-in-chief--6512581ea5841b158a5d286b"
+  ],
+  "note": "B=Gaya Munda, appointed Commander-in-Chief (senapati) by Birsa Munda."
+ },
+ {
+  "gid": 293,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Who formed the Bihar Socialist Party?",
+  "options": {
+   "A": "Phulan Chand Tiwari and Rajendra Prasad",
+   "B": "Phulan Prasad Varma and Jayaprakash Narayan",
+   "C": "Raj Kumar Shukla and Swami Agnivesh",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-formed-the-bihar-socialist-party--6512583248fff6a62830f985"
+  ],
+  "note": "B=Phulan Prasad Varma and Jayaprakash Narayan formed Bihar Socialist Party (1931)."
+ },
+ {
+  "gid": 294,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "In which year was the ‘Bihar Provincial Congress Committee’ formed with its headquarters at Patna?",
+  "options": {
+   "A": "1908",
+   "B": "1910",
+   "C": "1906",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://prepp.in/question/in-which-year-was-the-bihar-provincial-congress-co-6612e2b26c11d964bb70e0b3"
+  ],
+  "note": "A=1908, Bihar Provincial Congress Committee formed, HQ Patna."
+ },
+ {
+  "gid": 295,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Who established a branch of the Anushilan Samiti in Patna in 1913?",
+  "options": {
+   "A": "Ramananda Sinha",
+   "B": "Satish Jha",
+   "C": "Sachindra Nath Sanyal",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-established-a-branch-of-anushilan-samiti-in-pa--627f99297b534f78b1f520ea"
+  ],
+  "note": "C=Sachindra Nath Sanyal established Anushilan Samiti branch at Patna, 1913."
+ },
+ {
+  "gid": 296,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "‘Danda Shashtra’ tradition is associated with",
+  "options": {
+   "A": "Manu",
+   "B": "Kautilya",
+   "C": "Chandragupta Maurya",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "B",
+  "confidence": "high",
+  "sources": [
+   "https://politicsforindia.com/arthashastra-by-kautilya-psir/"
+  ],
+  "note": "B=Kautilya; Arthashastra belongs to the Dandaniti/Dandashastra tradition."
+ },
+ {
+  "gid": 297,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "What two main types of laws does Marsilius of Padua speak of ?",
+  "options": {
+   "A": "Divine law and natural law",
+   "B": "Natural law and documen- tary law",
+   "C": "Biblical law and human law",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "med",
+  "sources": [
+   "https://thegreatthinkers.org/marsilius/introduction/",
+   "https://www.encyclopedia.com/people/social-sciences-and-law/political-science-biographies/marsilius-padua"
+  ],
+  "note": "Marsilius distinguishes divine law and human law; among options only C carries 'human law' (Biblical=divine/scriptural). C."
+ },
+ {
+  "gid": 298,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Identify the personality being discussed here : “French political philosopher whose principal work, The Spirit of Laws, was a major contribution to political theory.”",
+  "options": {
+   "A": "Montesquieu",
+   "B": "Thomas Hobbes",
+   "C": "duc d’Orléans",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Montesquieu"
+  ],
+  "note": "A=Montesquieu, author of The Spirit of Laws."
+ },
+ {
+  "gid": 299,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Who are the intellectual founders of liberalism?",
+  "options": {
+   "A": "John Locke and Rousseau",
+   "B": "Adam Smith and Karl Marx",
+   "C": "John Locke and Adam Smith",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "C",
+  "confidence": "high",
+  "sources": [
+   "https://www.britannica.com/question/Who-were-the-intellectual-founders-of-liberalism"
+  ],
+  "note": "C=John Locke and Adam Smith, intellectual founders of liberalism (Britannica)."
+ },
+ {
+  "gid": 300,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "source": "For_Class_11_12__General_Studies_And_Political_Science.pdf",
+  "stem": "Who among the following is not a pluralist thinker?",
+  "options": {
+   "A": "Bodin",
+   "B": "Figgis",
+   "C": "Laski",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "answer": "A",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Jean_Bodin"
+  ],
+  "note": "A=Bodin is a theorist of absolute sovereignty, NOT a pluralist; Figgis & Laski are pluralists."
+ }
+]
