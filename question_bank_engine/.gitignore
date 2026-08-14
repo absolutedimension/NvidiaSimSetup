@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 data/
 drop/*.pdf
+drop/**/*.pdf
 figures/
 backups/
 tests_out/

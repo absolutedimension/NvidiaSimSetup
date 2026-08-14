@@ -6,24 +6,44 @@
 > verbatim, answer-keyed questions in the bank (like the 517 real UPSC PYQs). Reusable for
 > every future govt-job client, not just One Step Education.
 
-## ▶ NEXT SESSION STARTS HERE — BPSC TRE (open, untapped, on the client's note)
+## ▶ BPSC TRE — papers DONE + extracted; blocked on official keys (2026-08-14)
 The client (One Step Education) note lists **"BPSC — TRE, Daroga"**. Status after 2026-08-14:
 - **BPSC Prelims GS** ✅ done (289 live) + editions 66–71 extracted (keys pending — see below).
 - **SSC / Railway / Banking** ✅ generators live + wired to web + APK.
-- **Daroga (BPSSC)** ⛔ NO open papers — the official site (`bpssc.bihar.gov.in` → portal `apply-bpssc.com`)
-  publishes only notices/results/admit-cards (verified 2026-08-14). Only route = a **student who
-  appeared** downloads their **response sheet** via login during the objection window. Deferred to Rohan's students.
-- **BPSC TRE (Teacher Recruitment)** = **the open source NOT yet tapped.** ⬇️ DO THIS NEXT:
+- **Daroga (BPSSC)** ⛔ NO open papers (verified) — deferred to Rohan's students' response sheets.
+- **BPSC TRE (Teacher Recruitment)** — **papers + extraction DONE; blocked on official answer keys.**
+  **Full status + ready-to-flip wiring: `BPSC_TRE_STATUS.md`.**
 
-**TRE plan (fresh session):** `bpsc.bihar.gov.in/question-booklets/` → dropdown **"Teacher Recruitment
-Examinations"** (I saw this option live) → its editions → download the PDFs (OPEN, no login; use the
-in-app browser cascade like BPSC CCE, OR the AJAX method in `HANDOFF_SRB_OTHER_SESSION.md` JOB B:
-`POST admin-ajax.php action=get_children/get_question_booklets_pdfs&nonce=8484a26a88`, PDF in `file_url`).
-TRE is **subject-wise** (per teaching subject/class) so expect multiple papers per edition. Then: same
-pipeline — download on **Gurukul** (T4 can't reach bpsc), scp to the T4, `qwen_extract_bpsc.py`, get the
-official TRE answer key, `store_real_questions.py --exam "BPSC TRE"`, then wire into the LMS + APK
-(add a `bpsc-tre` RAG subject/goal like the others). Coordinate with the parallel session (it owns the
-BPSC ingest lane). **Everything else on the client note is already covered.**
+**TRE done this session:**
+- ✅ **152 TRE booklets** (TRE 1.0/2.0/3.0, subject-wise) downloaded from OPEN `bpsc.bihar.gov.in`
+  → `drop/bpsc_tre/` (+ `TRE_MANIFEST.csv`). **The LOCAL Mac reaches bpsc.bihar.gov.in directly**
+  (the T4 can't) — no Gurukul disk pressure. AJAX cascade uses a **rotating nonce** (fetch fresh from
+  `question_booklets_params` on the page each run; the old `8484a26a88` expires).
+- ✅ **Extraction needs NO GPU** — TRE booklets are **text-layer PDFs** (not scanned). New tool
+  **`extract_tre.py`** (column-aware, 5-option A–E, bilingual EN/HI). `build_tre_staged.py` →
+  **1,281 verbatim staged questions** in `drop/bpsc_tre/extracted/tre_staged_questions.json`.
+- ⛔ **BLOCKER = official answer keys.** TRE final keys are on **`bpsc.bih.nic.in` ONLY**, which is
+  **firewalled from every path** (local timeout, Gurukul geo-block, WebFetch ECONNREFUSED) — same wall
+  as the 69th Set-A key. So the staged Qs are `answer:null` / held — **NOT stored, NOT served** (cardinal
+  rule: official key = trust anchor). LMS/APK **not wired live** (an empty "available" tile would be a
+  broken UX). Go-live is a one-commit flip the moment ANY paper's official series key is obtained — exact
+  patch in `BPSC_TRE_STATUS.md`. **Coordinate with the parallel session (owns BPSC ingest) — whoever
+  cracks a `bpsc.bih.nic.in` route unlocks BOTH the 66/67/68/69 Prelims keys AND TRE.**
+
+## 🔌 Answer-key host connectivity (verified 2026-08-14 — the shared BPSC-key blocker)
+The BPSC answer keys are the blocker for BOTH lanes (Prelims 66/67/68/69 + TRE). Routes tested:
+- **`bpsc.bih.nic.in` = HOST-LEVEL DOWN**, not geo-blocked. It **times out from the LOCAL Mac too**
+  (Indian egress that reaches `bpsc.bihar.gov.in` fine at 103.208.172.9), from Gurukul, and via WebFetch.
+  → an "Indian-egress box" likely won't rescue it; the host is parked/unreachable. Keys that live ONLY
+  there (older editions + TRE) are network-unreachable for us.
+- **`bpsc.bihar.gov.in` = REACHABLE from the local Mac** (newer keys migrated here), but keys are NOT
+  cleanly API-exposed: the question-booklets AJAX tree is papers-only; the `bpsc-notification` feed
+  (`action=fetch_category_data&term_id=all&page=N`, nonce from `bscFrontend` var — **rotates**) returns
+  empty `fields`. The Important-Announcements/archived-news key links render client-side (need a browser).
+- **Reliable route = ForumIAS re-hosts of BPSC's own NB notice PDFs** (70th final = `forumias.com/blog/
+  wp-content/uploads/2025/01/NB-2025-01-17-0{2,3}.pdf`; 71st **provisional** = …/2025/09/…BPSC-20250919…).
+  So source keys per-edition from mirror re-hosts, or from **Rohan's students' response sheets**.
+- Have in repo: 71st Set-E **provisional** key (`drop/bpsc/70th_extracted/keys_src/key_71st_SetE_PROVISIONAL.json`).
 
 ## The rule that keeps it legal (READ FIRST)
 The pipeline needs, **per paper**: (1) the **question paper PDF** + (2) the **official answer

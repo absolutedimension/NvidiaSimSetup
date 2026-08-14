@@ -1,0 +1,2567 @@
+[
+ {
+  "seq": 1,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": ": Fill in the blanks with suitable articles like ‘a’, ‘an’ and ‘the’ : E-1. I have so many _____ good friends.",
+  "options": {
+   "A": "a",
+   "B": "an",
+   "C": "the",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "E",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [],
+  "note": "'so many good friends' takes no article (plural, quantified by 'so many'); none of a/an/the fit -> None of the above"
+ },
+ {
+  "seq": 2,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The difference of 1 and its 16 reciprocal is equal to 4",
+  "options": {
+   "A": "3 15",
+   "B": "16 105",
+   "C": "304",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": null,
+  "status": "held",
+  "note": "OCR garbled ('difference of 1 and its 16 reciprocal is equal to 4'); stem and options unreadable, cannot reconstruct reliably"
+ },
+ {
+  "seq": 3,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "If èç ø÷ = èç ø÷ , then the b a value of x is",
+  "options": {
+   "A": "1",
+   "B": "2 7",
+   "C": "2",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "reextract",
+  "answer": null,
+  "status": "needs_reextract"
+ },
+ {
+  "seq": 4,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "A fruit seller had some apples. He sells 40% apples and still has 420 apples. Originally, he had",
+  "options": {
+   "A": "700 apples",
+   "B": "588 apples",
+   "C": "672 apples",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Sells 40%, 420 left = 60%; original = 420/0.6 = 700 apples"
+ },
+ {
+  "seq": 5,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "A fraction which bears the same 1 3 5 ratio to that does to 9, is 27 11 equal to 1",
+  "options": {
+   "A": "11",
+   "B": "55 1",
+   "C": "55",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": null,
+  "status": "held",
+  "note": "OCR garbled fraction-ratio; computed value ~1/55 for one reading but options A '11'/B '55 1'/C '55' cannot be mapped unambiguously"
+ },
+ {
+  "seq": 6,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "If the annual rate of simple interest increases from 10% to 121 %, a man’s yearly income 2 increases by R1,250. His principal (in R) is",
+  "options": {
+   "A": "45,000",
+   "B": "50,000",
+   "C": "65,000",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Rate rises 10%->12.5% (=2.5%); P*0.025=1250 -> P=50,000"
+ },
+ {
+  "seq": 7,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The perimeter of a circle is equal to the perimeter of a square, then their areas are in the ratio",
+  "options": {
+   "A": "4 : 1",
+   "B": "11 : 7",
+   "C": "14 : 11",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Equal perimeters: area(circle):area(square)=4:pi=~14:11"
+ },
+ {
+  "seq": 8,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "What is the volume of a cube (in cubic cm) whose diagonal measures 4 3 cm?",
+  "options": {
+   "A": "8",
+   "B": "64",
+   "C": "16",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Space diagonal a*sqrt3=4sqrt3 -> a=4 -> volume=64 cubic cm"
+ },
+ {
+  "seq": 9,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "One of the factors of ( x 3 + 1 ) - ( x - 1 ) is",
+  "options": {
+   "A": "x 2 + 1",
+   "B": "x 2 - 1",
+   "C": "x -1",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": null,
+  "status": "held",
+  "note": "OCR garbled '(x^3+1)-(x-1)' = x^3-x+2 has none of x^2+1/x^2-1/x-1 as factor; expression clearly mis-transcribed, cannot resolve"
+ },
+ {
+  "seq": 10,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The root of the equation x 2 - 4 = 0 is",
+  "options": {
+   "A": "2",
+   "B": "-2",
+   "C": "4",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "D",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "x^2-4=0 -> x=+2 and -2; both A(2) and B(-2) correct -> More than one of the above"
+ },
+ {
+  "seq": 11,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "If 3 x + y = 5 and x - y = 3, then",
+  "options": {
+   "A": "x = 2, y = -1",
+   "B": "x = -2, y = -1",
+   "C": "x = -2, y = 1",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "reextract",
+  "answer": null,
+  "status": "needs_reextract"
+ },
+ {
+  "seq": 12,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which one of the following cannot be the square of a natural number?",
+  "options": {
+   "A": "32761",
+   "B": "81225",
+   "C": "42437",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "42437 ends in 7; perfect squares never end in 7 (32761=181^2, 81225=285^2 are squares)"
+ },
+ {
+  "seq": 13,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "If 1 × 5 x = 0 × 04 y, then the value of æ y - x ö èç ø÷ is y + x 730",
+  "options": {
+   "A": "77 73",
+   "B": "77 71",
+   "C": "77",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "reextract",
+  "answer": null,
+  "status": "needs_reextract"
+ },
+ {
+  "seq": 14,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "is equal to 0 × 07 ´ 3 × 4",
+  "options": {
+   "A": "0·06",
+   "B": "0·6",
+   "C": "6",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "reextract",
+  "answer": null,
+  "status": "needs_reextract"
+ },
+ {
+  "seq": 15,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "If x % of y is 100 and y% of z is 200, then find the relation between x and z. x",
+  "options": {
+   "A": "z = 2",
+   "B": "z = 2 x",
+   "C": "z = 4 x",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "reextract",
+  "answer": null,
+  "status": "needs_reextract"
+ },
+ {
+  "seq": 16,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The height of an equilateral triangle is 10 cm. Its area is",
+  "options": {
+   "A": "30 cm2",
+   "B": "100 cm2 3",
+   "C": "100 cm2 3",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": null,
+  "status": "held",
+  "note": "Area = h^2/sqrt3 = 100/sqrt3 cm^2; options B and C are identical OCR strings ('100 cm2 3'), cannot distinguish 100/sqrt3 vs 100*sqrt3"
+ },
+ {
+  "seq": 17,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which of the following is a monomial?",
+  "options": {
+   "A": "4 x 2",
+   "B": "a+ 6",
+   "C": "a + 6 + c",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "4x^2 is a single term = monomial; a+6 binomial, a+6+c trinomial"
+ },
+ {
+  "seq": 18,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which of the following is used in metal extraction?",
+  "options": {
+   "A": "Coke",
+   "B": "Petroleum",
+   "C": "Coal tar",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Coke is the reducing agent used in metal extraction (smelting)"
+ },
+ {
+  "seq": 19,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The colored light that refracts most while passing through a prism is",
+  "options": {
+   "A": "yellow",
+   "B": "violet",
+   "C": "blue",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Violet has shortest wavelength, bends/refracts most through a prism"
+ },
+ {
+  "seq": 20,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The resistance of a conductor is directly proportional to its",
+  "options": {
+   "A": "area of cross-section",
+   "B": "density",
+   "C": "length",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "R = rho*L/A; resistance is directly proportional to length"
+ },
+ {
+  "seq": 21,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "What is the main chemical component present on the rubbing surface of a matchbox?",
+  "options": {
+   "A": "Potassium chlorate",
+   "B": "Phosphorous",
+   "C": "Graphite",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Striking/rubbing side of matchbox contains red phosphorus (+ glass powder); KClO3 is on the head"
+ },
+ {
+  "seq": 22,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which of the following is suitable for alcoholic beverages?",
+  "options": {
+   "A": "Methanol",
+   "B": "Hexenol",
+   "C": "Ethanol",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Ethanol is the drinkable alcohol; methanol is toxic"
+ },
+ {
+  "seq": 23,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The efficiency of a fuel is expressed in terms of its",
+  "options": {
+   "A": "density",
+   "B": "calorific value",
+   "C": "volume",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Fuel efficiency is expressed by its calorific value"
+ },
+ {
+  "seq": 24,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Food cans are coated with tin and not with zinc because",
+  "options": {
+   "A": "zinc is costlier than tin",
+   "B": "zinc has a higher melting point than tin",
+   "C": "zinc is more reactive than tin",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Zinc is more reactive than tin, so tin (less reactive) is used to coat food cans"
+ },
+ {
+  "seq": 25,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which of the following is not a traditional irrigation method?",
+  "options": {
+   "A": "Moat system",
+   "B": "Chain pump system",
+   "C": "Drip system",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Drip system is a modern method; moat and chain pump are traditional"
+ },
+ {
+  "seq": 26,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The number of sex chromosomes in a human kidney cell is",
+  "options": {
+   "A": "one pair",
+   "B": "two pairs",
+   "C": "three pairs",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Kidney cell is a diploid somatic cell: 2 sex chromosomes = one pair"
+ },
+ {
+  "seq": 27,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The hearing range of human ear is",
+  "options": {
+   "A": "20 Hz to 20000 Hz",
+   "B": "less than 20 Hz",
+   "C": "more than 20000 Hz",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Human audible range is 20 Hz to 20000 Hz"
+ },
+ {
+  "seq": 28,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which of the following has the highest energy?",
+  "options": {
+   "A": "Blue light",
+   "B": "Red light",
+   "C": "Yellow light",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Blue light has highest frequency among blue/red/yellow -> highest energy (E=hf)"
+ },
+ {
+  "seq": 29,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which substance is used for making pencil lead?",
+  "options": {
+   "A": "Sulphur",
+   "B": "Silicon",
+   "C": "Graphite",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Graphite"
+  ],
+  "note": "Pencil lead is made of graphite."
+ },
+ {
+  "seq": 30,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "A ray of light is incident at an angle of 30° on a mirror, the angle between normal and reflected ray is",
+  "options": {
+   "A": "30°",
+   "B": "60°",
+   "C": "45°",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Specular_reflection"
+  ],
+  "note": "Angle of incidence (from normal) = 30°, so angle of reflection = angle between normal and reflected ray = 30°."
+ },
+ {
+  "seq": 31,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The contraction and expansion movement of the walls of the food pipe is called",
+  "options": {
+   "A": "translocation",
+   "B": "transpiration",
+   "C": "peristaltic movement",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Peristalsis"
+  ],
+  "note": "Wave-like contraction/expansion of the food-pipe wall = peristaltic movement."
+ },
+ {
+  "seq": 32,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which parts of the brain control blood pressure?",
+  "options": {
+   "A": "Spinal cord, skull, hypothalamus",
+   "B": "Cord, skull, cerebrum",
+   "C": "Pons, medulla, cerebellum",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Medulla_oblongata"
+  ],
+  "note": "The vasomotor/cardiovascular centre lies in the brainstem (medulla, pons); A and B wrongly list 'skull'. Only C (Pons, medulla, cerebellum) is a valid brain-region set."
+ },
+ {
+  "seq": 33,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which of the following produces least friction?",
+  "options": {
+   "A": "Sliding friction",
+   "B": "Rolling friction",
+   "C": "Static friction",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rolling_resistance"
+  ],
+  "note": "Rolling friction is the least of the three."
+ },
+ {
+  "seq": 34,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The Chairman of NABARD is",
+  "options": {
+   "A": "K. Sitaraman",
+   "B": "Bhavesh Gupta",
+   "C": "Shaji K. V.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.nabard.org/"
+  ],
+  "note": "Shaji K. V. is Chairman of NABARD (since 2022)."
+ },
+ {
+  "seq": 35,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The Chairperson of ONGC is",
+  "options": {
+   "A": "Dr. Alka Mittal",
+   "B": "Dr. Madhuri Mittal",
+   "C": "Dr. Madhuri Gil",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.business-standard.com/article/companies/ongc-s-director-hr-appointed-as-chairman-and-managing-director-122010301523_1.html"
+  ],
+  "note": "Dr. Alka Mittal was ONGC's first woman Chairperson & MD; B and C are fabricated names."
+ },
+ {
+  "seq": 36,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The Prime Minister of Italy is",
+  "options": {
+   "A": "Giorgia Masquani",
+   "B": "Georgia Meloni",
+   "C": "Genolia Melony",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Giorgia_Meloni"
+  ],
+  "note": "PM of Italy is Giorgia Meloni; option B 'Georgia Meloni' is the content match (only real name)."
+ },
+ {
+  "seq": 37,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "As per 5th Tiger Census in 2022, the number of tigers in India is",
+  "options": {
+   "A": "3167",
+   "B": "3267",
+   "C": "3067",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Tiger_Census_in_India"
+  ],
+  "note": "5th tiger census (2022) reported 3167 tigers (later upper estimate 3682)."
+ },
+ {
+  "seq": 38,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Biparjoy, a phenomena of 2022, was",
+  "options": {
+   "A": "mid-latitude cyclone",
+   "B": "sea storm",
+   "C": "tropical cyclone",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Cyclone_Biparjoy"
+  ],
+  "note": "Biparjoy was a tropical cyclone (Arabian Sea)."
+ },
+ {
+  "seq": 39,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The new name of Mid-Day Meal Scheme is",
+  "options": {
+   "A": "PM Poshan Scheme",
+   "B": "PM Mid-Day Poshan Scheme",
+   "C": "National Poshan Scheme",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Midday_Meal_Scheme"
+  ],
+  "note": "Mid-Day Meal renamed PM POSHAN (PM Poshan Scheme)."
+ },
+ {
+  "seq": 40,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The organizing place of Thawe Mahotsav, 2023 was",
+  "options": {
+   "A": "Bhagalpur (Bihar)",
+   "B": "Munger (Bihar)",
+   "C": "Patna (Bihar)",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "E",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-organizing-place-of-thawe-mahotsav-2023-was--65bd37673a9bd057c8e152dc",
+   "https://gopalganj.nic.in/event/thawe-mahotsav/"
+  ],
+  "note": "Thawe Mahotsav 2023 was held in Gopalganj, not Bhagalpur/Munger/Patna → None of the above (Testbook key confirms E)."
+ },
+ {
+  "seq": 41,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "State Icon of Bihar is",
+  "options": {
+   "A": "Pallavi Thakur",
+   "B": "Maithili Mishra",
+   "C": "Maithili Thakur",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Maithili_Thakur"
+  ],
+  "note": "Maithili Thakur was named State Icon of Bihar."
+ },
+ {
+  "seq": 42,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The total budget of Jal Jeevan Mission is",
+  "options": {
+   "A": "R 70,000 crore",
+   "B": "R 72,000 crore",
+   "C": "R 75,000 crore",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": null,
+  "status": "held",
+  "note": "Ambiguous: total JJM (rural) outlay is Rs 3.60 lakh crore (matches no option → None), but the 2023-24 Budget Estimate allocation was Rs 70,000 crore (matches A). 'Total budget' wording conflicts with the annual figure; not verifiable to a single option."
+ },
+ {
+  "seq": 43,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The name of the Cluster- oriented Rural Development Scheme is",
+  "options": {
+   "A": "Deendayal Upadhyaya Rurban Mission",
+   "B": "Dr. Shyama Prasad Mukherjee Rurban Mission",
+   "C": "Atal Bihari Vajpayee Rurban Mission",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Shyama_Prasad_Mukherji_Rurban_Mission"
+  ],
+  "note": "Cluster-based rural (Rurban) development scheme = Dr. Shyama Prasad Mukherjee Rurban Mission (SPMRM)."
+ },
+ {
+  "seq": 44,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The author of the book, The Chipko Movement : A People’s History is",
+  "options": {
+   "A": "Shekhar Pathak",
+   "B": "Shekhar Joshi",
+   "C": "Shekhar Pandey",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.penguin.co.in/book/the-chipko-movement/"
+  ],
+  "note": "'The Chipko Movement: A People's History' is by Shekhar Pathak."
+ },
+ {
+  "seq": 45,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The World Brail Lipi Day is celebrated on",
+  "options": {
+   "A": "9 January",
+   "B": "8 January",
+   "C": "4 January",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/World_Braille_Day"
+  ],
+  "note": "World Braille Day is 4 January."
+ },
+ {
+  "seq": 46,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The true fact about Bharat Gaurav Tourist Train is that",
+  "options": {
+   "A": "it was inaugurated on 16th April, 2023",
+   "B": "it was started from New Delhi Railway Station",
+   "C": "it was inaugurated on 25th December, 2022",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": null,
+  "status": "held",
+  "note": "Ambiguous 'which fact is true'. Bharat Gaurav trains started from Safdarjung/Hazrat Nizamuddin (not New Delhi station, so B likely false), but neither inauguration date (16 Apr 2023 vs 25 Dec 2022) could be verified as the intended true statement. Exact TRE answer key not located."
+ },
+ {
+  "seq": 47,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "First State of India that started keeping DNA database of unidentified dead bodies is",
+  "options": {
+   "A": "Himachal Pradesh",
+   "B": "Goa",
+   "C": "Madhya Pradesh",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://theprint.in/india/himachal-becomes-1st-state-to-create-dna-database-of-unidentified-bodies/1523949/"
+  ],
+  "note": "Himachal Pradesh is India's first state to build a DNA database of unidentified bodies."
+ },
+ {
+  "seq": 48,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The host nation of ASEAN Summit, 2023 is",
+  "options": {
+   "A": "Malaysia",
+   "B": "Thailand",
+   "C": "Indonesia",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/ASEAN_Summit"
+  ],
+  "note": "Indonesia chaired/hosted the 2023 ASEAN Summit."
+ },
+ {
+  "seq": 49,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The host nation of Petersburg Climate Dialogue, 10 May, 2023 is",
+  "options": {
+   "A": "Poland",
+   "B": "Germany",
+   "C": "Italy",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Petersberg_Climate_Dialogue"
+  ],
+  "note": "Petersberg Climate Dialogue (May 2023) hosted by Germany (Berlin)."
+ },
+ {
+  "seq": 50,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The Sun is a",
+  "options": {
+   "A": "yellow star",
+   "B": "red star",
+   "C": "white star",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "reextract",
+  "answer": null,
+  "status": "needs_reextract"
+ },
+ {
+  "seq": 51,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "How many latitudes are there on the globe drawn at 1 degree interval?",
+  "options": {
+   "A": "179",
+   "B": "180",
+   "C": "181",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Circle_of_latitude"
+  ],
+  "note": "At 1° intervals: 90 north + 90 south + equator = 181 latitudes."
+ },
+ {
+  "seq": 52,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The average height of Kosi plain from mean sea level is",
+  "options": {
+   "A": "300 m",
+   "B": "150 m",
+   "C": "30 m",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-average-height-of-the-kosi-plain-from-mean-sea--652b82dc39440d50765b79a2"
+  ],
+  "note": "Average height of Kosi plain above MSL = 30 m (Testbook/69th BPSC key confirms 30 m)."
+ },
+ {
+  "seq": 53,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "On the basis of fossils, which is the origin place of man?",
+  "options": {
+   "A": "Rift Valley of Africa",
+   "B": "Central Asia",
+   "C": "Jerusalem",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/East_African_Rift"
+  ],
+  "note": "Rift Valley of Africa — fossil evidence (e.g. Olduvai Gorge, Hadar) places human origin in the East African Rift."
+ },
+ {
+  "seq": 54,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Cultural contact between two communities is called",
+  "options": {
+   "A": "enculturation",
+   "B": "acculturation",
+   "C": "cultural realm",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Acculturation"
+  ],
+  "note": "Acculturation = cultural contact/exchange between two communities; enculturation is learning one's own culture."
+ },
+ {
+  "seq": 55,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Barauni Oil Refinery Plant is situated in which district of Bihar?",
+  "options": {
+   "A": "Saharsa",
+   "B": "Begusarai",
+   "C": "Madhubani",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Barauni_Refinery"
+  ],
+  "note": "Barauni Oil Refinery is in Begusarai district, Bihar."
+ },
+ {
+  "seq": 56,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Tehri Dam Project is associated with",
+  "options": {
+   "A": "determinism",
+   "B": "possibilism",
+   "C": "scientific determinism",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/tehri-dam-project-is-associated-with--65bd3a6f0b372d4d60e416b1"
+  ],
+  "note": "Possibilism — a large dam shows humans modifying/exploiting environment through technology (BPSC TRE key)."
+ },
+ {
+  "seq": 57,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which of the following is shifting cultivation in Orissa?",
+  "options": {
+   "A": "Podu",
+   "B": "Penda",
+   "C": "Bewar",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Shifting_cultivation"
+  ],
+  "note": "Podu is the shifting cultivation of Odisha/Andhra; Penda and Bewar belong to Madhya Pradesh."
+ },
+ {
+  "seq": 58,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Tent of nomads in Baluchistan is called",
+  "options": {
+   "A": "Kizashi",
+   "B": "Klong",
+   "C": "Kloof",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/tent-of-nomads-in-baluchistan-is-called--65bd3aab3a9bd057c8e1ac77"
+  ],
+  "note": "Kizashi — BPSC TRE 2.0 PRT (14 Dec 2023) key confirms."
+ },
+ {
+  "seq": 59,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "In which district of Bihar silk textile production is maximum?",
+  "options": {
+   "A": "Madhubani",
+   "B": "Bhagalpur",
+   "C": "Aurangabad",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bhagalpur"
+  ],
+  "note": "Bhagalpur (Bhagalpuri/Tussar silk) has maximum silk textile production in Bihar."
+ },
+ {
+  "seq": 60,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "With decreasing population, the man-land ratio",
+  "options": {
+   "A": "decreases",
+   "B": "increases",
+   "C": "remains constant",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Population_density"
+  ],
+  "note": "Man-land ratio = population per unit land; if population decreases, the ratio decreases."
+ },
+ {
+  "seq": 61,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "In which district of Bihar, Maize crop production is maximum?",
+  "options": {
+   "A": "Saran",
+   "B": "Siwan",
+   "C": "Muzaffarpur",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/in-which-district-of-bihar-maize-crop-production--65bd3b090b372d4d60e42916"
+  ],
+  "note": "Muzaffarpur — BPSC TRE key (option 3)."
+ },
+ {
+  "seq": 62,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Where was Kunwar Singh, a leader of the Revolt of 1857, related to?",
+  "options": {
+   "A": "Gwalior",
+   "B": "Meerut",
+   "C": "Jagdishpur",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kunwar_Singh"
+  ],
+  "note": "Kunwar Singh was the zamindar of Jagdishpur (Bhojpur), leader of 1857 revolt in Bihar."
+ },
+ {
+  "seq": 63,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Who established the Indian Association in 1876?",
+  "options": {
+   "A": "W. C. Bonnerjee",
+   "B": "Sisir Kumar Ghosh",
+   "C": "Surendranath Banerjee",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Indian_National_Association"
+  ],
+  "note": "Indian Association (1876) founded by Surendranath Banerjee (with Ananda Mohan Bose)."
+ },
+ {
+  "seq": 64,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Who first raised the National Flag outside India?",
+  "options": {
+   "A": "Lala Lajpat Rai",
+   "B": "Madam Bhikaji Cama",
+   "C": "Rash Behari Bose",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bhikaji_Cama"
+  ],
+  "note": "Bhikaji Cama first raised the Indian national flag abroad, at Stuttgart, 1907."
+ },
+ {
+  "seq": 65,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which paper was edited by Abul Kalam Azad?",
+  "options": {
+   "A": "Zamindar",
+   "B": "Comrade",
+   "C": "Al-Hilal",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Al-Hilal_(newspaper)"
+  ],
+  "note": "Abul Kalam Azad edited Al-Hilal (Urdu weekly)."
+ },
+ {
+  "seq": 66,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Who was the author of Mahatma Gandhi and Bihar—Some Reminiscences ?",
+  "options": {
+   "A": "Dr. Rajendra Prasad",
+   "B": "Jayaprakash Narayan",
+   "C": "Karpoori Thakur",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rajendra_Prasad"
+  ],
+  "note": "'Mahatma Gandhi and Bihar, Some Reminiscences' was written by Dr. Rajendra Prasad."
+ },
+ {
+  "seq": 67,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Who presided over the first Session of the All India Kisan Sabha?",
+  "options": {
+   "A": "Narendra Dev",
+   "B": "Sahajanand Saraswati",
+   "C": "Sampurnanand",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/All_India_Kisan_Sabha"
+  ],
+  "note": "First AIKS session (Lucknow, 1936) was presided over by Swami Sahajanand Saraswati."
+ },
+ {
+  "seq": 68,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "When was the Patna Women’s College founded?",
+  "options": {
+   "A": "1938",
+   "B": "1940",
+   "C": "1941",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/when-was-the-patna-womens-college-founded--65bd3c48c8b1fc76b6096216",
+   "https://en.wikipedia.org/wiki/Patna_Women's_College"
+  ],
+  "note": "Patna Women's College founded 1940."
+ },
+ {
+  "seq": 69,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which portfolio did Dr. Rajendra Prasad hold in the interim government?",
+  "options": {
+   "A": "Finance",
+   "B": "Defence",
+   "C": "Food and Agriculture",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rajendra_Prasad"
+  ],
+  "note": "In the 1946 interim government Rajendra Prasad held Food and Agriculture."
+ },
+ {
+  "seq": 70,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "In which year All India Women’s Conference was founded?",
+  "options": {
+   "A": "1923",
+   "B": "1925",
+   "C": "1927",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/All_India_Women's_Conference"
+  ],
+  "note": "All India Women's Conference founded 1927."
+ },
+ {
+  "seq": 71,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The day of Bengal Partition—16th October, 1905 was observed as the day of",
+  "options": {
+   "A": "Boycott",
+   "B": "Hartal (strike)",
+   "C": "Shok (mourn)",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Partition_of_Bengal_(1905)"
+  ],
+  "note": "16 Oct 1905 (partition day) was observed as a day of mourning (shok)."
+ },
+ {
+  "seq": 72,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "During which movement ‘Bihar Vidyapeeth’ was established?",
+  "options": {
+   "A": "Swadeshi Movement",
+   "B": "Non-Cooperation Movement",
+   "C": "Civil Disobedience Movement",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bihar_Vidyapith"
+  ],
+  "note": "Bihar Vidyapeeth established 1921 during the Non-Cooperation Movement."
+ },
+ {
+  "seq": 73,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Who invited Mahatma Gandhi to come to Champaran in 1917?",
+  "options": {
+   "A": "Raj Kumar Shukla",
+   "B": "J. B. Kripalani",
+   "C": "Dr. Rajendra Prasad",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Champaran_Satyagraha"
+  ],
+  "note": "Raj Kumar Shukla invited Gandhi to Champaran (1917)."
+ },
+ {
+  "seq": 74,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The book named The Wheels of History was written by whom?",
+  "options": {
+   "A": "Lokmanya Bal Gangadhar Tilak",
+   "B": "Ram Manohar Lohia",
+   "C": "Jayaprakash Narayan",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ram_Manohar_Lohia"
+  ],
+  "note": "'The Wheel of History' was written by Ram Manohar Lohia."
+ },
+ {
+  "seq": 75,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which of the following is correct about he attitude of Muslim League in relation to the independence of India?",
+  "options": {
+   "A": "It rejected the proposals of Cripps Mission in 1942 on the ground that their demand of Pakistan was not accepted.",
+   "B": "It rejected Wavell Plan in 1945 as it might weaken their claim for independent Pakistan.",
+   "C": "It rejected Cabinet Mission proposals and took resort to direct action in 1946.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "D",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Cripps_Mission",
+   "https://www.britannica.com/event/Direct-Action-Day-India-1946"
+  ],
+  "note": "Both A (rejected Cripps 1942 as Pakistan not conceded) and C (rejected Cabinet Mission, launched Direct Action 1946) are historically correct → More than one of the above."
+ },
+ {
+  "seq": 76,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which of the following is correct about the Fundamental Rights in India?",
+  "options": {
+   "A": "They are the unique declaration of balance between the Constitutional supremacy and the authority of Legislature.",
+   "B": "They create a balance between the rights of people and the security of nation.",
+   "C": "They not only decide the political and legal equality, but the social equality also.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "D",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [
+   "https://vajiramandravi.com/upsc-exam/fundamental-rights/"
+  ],
+  "note": "More than one true: B (FR balance individual rights vs national security via reasonable restrictions) and C (FR give social equality — Art 15/17) are both correct, so D."
+ },
+ {
+  "seq": 77,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "With respect to the conviction of offence in India, which of the following statements is correct?",
+  "options": {
+   "A": "The provision of double jeopardy is not found in the Constitution of India.",
+   "B": "The protection from penalty greater than the offence is found in the Constitution.",
+   "C": "The judicial and the departmental actions may be taken against a government servant for the same offence in the country.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "D",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [
+   "https://www.gktoday.in/article-20/",
+   "https://www.lawctopus.com/academike/double-jeopardy/"
+  ],
+  "note": "B correct (Art 20(1) bars penalty greater than at time of offence) and C correct (departmental + judicial action both allowed — Maqbool Hussain); A is false (double jeopardy IS in Art 20(2)). Two correct → D."
+ },
+ {
+  "seq": 78,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "With reference to the Federalism in India, which of the following statements is correct?",
+  "options": {
+   "A": "‘A Quasi Federal State’ is the result of Indian Federalism in the country.",
+   "B": "Indian Federalism sets up a single polity in the country.",
+   "C": "Indian Federalism is not horizontal with strong unitary base.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.tscld.com/federalism-fundamental-rights-india-analysis"
+  ],
+  "note": "Indian federalism is 'quasi-federal' (K.C. Wheare)."
+ },
+ {
+  "seq": 79,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "India has the integrated judiciary because",
+  "options": {
+   "A": "there found one fundamental law and justice in India with the Supreme Court at the apex and the High Courts below it",
+   "B": "the judges of the High Courts are appointed by the President",
+   "C": "the High Courts are constituted as the sub-part of the Central Government",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Judiciary_of_India"
+  ],
+  "note": "Integrated single judiciary: Supreme Court at apex, High Courts below, one body of law."
+ },
+ {
+  "seq": 80,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Pressure Groups in India suffer from which of the following?",
+  "options": {
+   "A": "By culturalism",
+   "B": "By lack of ideological commitments",
+   "C": "By lack of autonomous role in the politics of the country",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "D",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/pressure-groups-in-india-suffer-from-which-of-the--65bd3e9cc8b1fc76b6099976"
+  ],
+  "note": "Testbook keys this exact question as 'More than one of the above' (culturalism + lack of ideological commitment + lack of autonomous role)."
+ },
+ {
+  "seq": 81,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which type of rights is ‘The Freedom of Silence’ in India?",
+  "options": {
+   "A": "The Legal Rights",
+   "B": "The Social Rights",
+   "C": "The Fundamental Rights",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://vajiramandravi.com/upsc-exam/fundamental-rights/"
+  ],
+  "note": "Right to silence flows from Art 19(1)(a) freedom of speech — a Fundamental Right."
+ },
+ {
+  "seq": 82,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Match List–I with List–II and select the correct answer using the codes given below the Lists : List—I List—II (Provisions) (Related Articles of the Constitution of India) a. Just and humane 1. Article 43 conditions of work b. Living wages for 2. Article 42 workers c. Uniform Civil Code 3. Article 49 d. Protection of 4. Article 44 places and objects of national importance Codes :",
+  "options": {
+   "A": "a b c d 2 1 4 3",
+   "B": "a b c d 3 2 4 1",
+   "C": "a b c d 1 3 2 4",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.constitutionofindia.net/articles/"
+  ],
+  "note": "a=Art42(2), b=Art43(1), c=Art44(4), d=Art49(3) → a b c d = 2 1 4 3 = option A."
+ },
+ {
+  "seq": 83,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which of the following is the main aim of District Planning Committees in India?",
+  "options": {
+   "A": "The unification of plans of Panchayats and Nagar Palikas",
+   "B": "The preparation of model planning of the district",
+   "C": "The development of unified attitude among Panchayats",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/District_Planning_Committee"
+  ],
+  "note": "Art 243ZD: DPC consolidates plans of Panchayats and Municipalities (Nagar Palikas)."
+ },
+ {
+  "seq": 84,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The motto of Doordarshan is",
+  "options": {
+   "A": "Bahujan Hitay : Bahujan Sukhay",
+   "B": "Satyam Shivam Sundaram",
+   "C": "Satyameva Jayate",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/DD_National"
+  ],
+  "note": "Doordarshan motto = 'Satyam Shivam Sundaram' (Bahujan Hitay Bahujan Sukhay is All India Radio)."
+ },
+ {
+  "seq": 85,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Bhagwan Mahavir Wildlife Sanctuary is located in",
+  "options": {
+   "A": "Rajasthan",
+   "B": "Madhya Pradesh",
+   "C": "Goa",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bhagwan_Mahaveer_Sanctuary_and_Mollem_National_Park"
+  ],
+  "note": "Bhagwan Mahavir Wildlife Sanctuary is in Goa."
+ },
+ {
+  "seq": 86,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Deendayal Upadhyaya is famous for",
+  "options": {
+   "A": "Communism",
+   "B": "Capitalism",
+   "C": "Integral humanism",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Deendayal_Upadhyaya"
+  ],
+  "note": "Deendayal Upadhyaya propounded 'Integral Humanism'."
+ },
+ {
+  "seq": 87,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Who led the movement of Khudai Khidmatgar?",
+  "options": {
+   "A": "Khwaja Moinuddin Chishti",
+   "B": "Khan Abdul Ghaffar Khan",
+   "C": "Sir Syed Ahmad Khan",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Khudai_Khidmatgar"
+  ],
+  "note": "Khudai Khidmatgar led by Khan Abdul Ghaffar Khan (Frontier Gandhi)."
+ },
+ {
+  "seq": 88,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Janjatiya Gaurav Divas was started from",
+  "options": {
+   "A": "15 August, 2015",
+   "B": "26 January, 2019",
+   "C": "15 November, 2021",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Janjatiya_Gaurav_Divas"
+  ],
+  "note": "Janjatiya Gaurav Divas declared/started 15 November 2021 (Birsa Munda birth anniversary)."
+ },
+ {
+  "seq": 89,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which State is the largest producer of pearl millet (Bajra)?",
+  "options": {
+   "A": "Haryana",
+   "B": "Rajasthan",
+   "C": "Punjab",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Pearl_millet"
+  ],
+  "note": "Rajasthan is the largest producer of bajra (pearl millet) in India."
+ },
+ {
+  "seq": 90,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The type of rocks which contain fossils are called",
+  "options": {
+   "A": "sedimentary rocks",
+   "B": "metamorphic rocks",
+   "C": "igneous rocks",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sedimentary_rock"
+  ],
+  "note": "Fossils occur in sedimentary rocks."
+ },
+ {
+  "seq": 91,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Oxbow lakes are found in",
+  "options": {
+   "A": "glaciers",
+   "B": "river valleys",
+   "C": "deserts",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Oxbow_lake"
+  ],
+  "note": "Oxbow lakes form in river valleys (meander cutoff)."
+ },
+ {
+  "seq": 92,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The World Water Day is celebrated on",
+  "options": {
+   "A": "January 22",
+   "B": "February 22",
+   "C": "March 22",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/World_Water_Day"
+  ],
+  "note": "World Water Day = 22 March."
+ },
+ {
+  "seq": 93,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Home State of one-horned rhino is",
+  "options": {
+   "A": "Gujarat",
+   "B": "Kerala",
+   "C": "Assam",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Indian_rhinoceros"
+  ],
+  "note": "One-horned rhino home state = Assam (Kaziranga)."
+ },
+ {
+  "seq": 94,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The largest bauxite producer is",
+  "options": {
+   "A": "Africa",
+   "B": "Brazil",
+   "C": "Australia",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bauxite"
+  ],
+  "note": "Australia is the world's largest bauxite producer."
+ },
+ {
+  "seq": 95,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Golden fibre refers to",
+  "options": {
+   "A": "tea",
+   "B": "cotton",
+   "C": "jute",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Jute"
+  ],
+  "note": "Jute is known as the golden fibre."
+ },
+ {
+  "seq": 96,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which are three main factors that cause change in the population?",
+  "options": {
+   "A": "Birth, death and marriage",
+   "B": "Birth, death and migration",
+   "C": "Birth, death and life expectancy",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Population_dynamics"
+  ],
+  "note": "Population change factors: birth, death and migration."
+ },
+ {
+  "seq": 97,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The unfavourable alteration of environment due to human activities is termed as",
+  "options": {
+   "A": "ecological disturbance",
+   "B": "catastrophe",
+   "C": "ecological degradation",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Environmental_degradation"
+  ],
+  "note": "Unfavourable human-caused alteration of environment = ecological/environmental degradation."
+ },
+ {
+  "seq": 98,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Black lung disease is associated with",
+  "options": {
+   "A": "farmers",
+   "B": "coal miners",
+   "C": "textile industry workers",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Coalworker%27s_pneumoconiosis"
+  ],
+  "note": "Black lung disease (pneumoconiosis) affects coal miners."
+ },
+ {
+  "seq": 99,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "What is oil slick?",
+  "options": {
+   "A": "Boiled oil",
+   "B": "Cooled oil",
+   "C": "Thin film of oil in seawater",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Oil_spill"
+  ],
+  "note": "Oil slick = thin film of oil floating on seawater."
+ },
+ {
+  "seq": 100,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "What is the animal symbol of WWF (World Wildlife Fund)?",
+  "options": {
+   "A": "Red Panda",
+   "B": "Giant Panda",
+   "C": "Tiger",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.worldwildlife.org/"
+  ],
+  "note": "WWF logo/symbol is the Giant Panda."
+ },
+ {
+  "seq": 101,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "In comparison to pure water, boiling point of impure water",
+  "options": {
+   "A": "is same",
+   "B": "increases",
+   "C": "decreases",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Boiling-point_elevation"
+  ],
+  "note": "Dissolved impurities raise boiling point (boiling-point elevation)."
+ },
+ {
+  "seq": 102,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Ozone holes are more pronounced at the",
+  "options": {
+   "A": "equator",
+   "B": "tropic of Cancer",
+   "C": "tropic of Capricorn",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "E",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/ozone-holes-are-more-pronounced-at-the--6104e6c3f40e7e1b2c25dea4",
+   "https://edurev.in/question/3478500/"
+  ],
+  "note": "Correct answer is Poles (Antarctic) — not in A/B/C, so None of the above."
+ },
+ {
+  "seq": 103,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Soaps and detergents are the source of organic pollutants like",
+  "options": {
+   "A": "glycerol",
+   "B": "polyphosphates",
+   "C": "sulfonated hydrocarbons",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "D",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/soaps-and-detergents-are-the-source-of-organic-pol--65bd42f23df4f910f75b6edd"
+  ],
+  "note": "Glycerol, polyphosphates and sulfonated hydrocarbons are all sources; official answer = More than one of the above."
+ },
+ {
+  "seq": 104,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The most hazardous metal pollutant of automobile exhausts is",
+  "options": {
+   "A": "mercury",
+   "B": "cadmium",
+   "C": "lead",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lead_poisoning"
+  ],
+  "note": "Lead is the most hazardous metal pollutant of (leaded) automobile exhaust."
+ },
+ {
+  "seq": 105,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "The main reason why vegetables take longer to cook in boiling water at high altitudes, is",
+  "options": {
+   "A": "water boils at a high temperature at high altitude",
+   "B": "the temperature of the boiling water decreases with increasing altitude",
+   "C": "there is less oxygen in the air at high altitude",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Boiling_point"
+  ],
+  "note": "Lower pressure at altitude → water boils at lower temperature → slower cooking."
+ },
+ {
+  "seq": 106,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Arrange the words given below in a meaningful sequence : 1. Punishment 2. Police 3. Crime 4. Justice 5. Judgement Select the correct answer using the codes given below.",
+  "options": {
+   "A": "3 1 2 4 5",
+   "B": "1 2 3 5 4",
+   "C": "3 2 4 5 1",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/601b9ed205b3878aa00e9b4a"
+  ],
+  "note": "Logical flow Crime(3)->Police(2)->Justice(4)->Judgement(5)->Punishment(1); only option starting Crime and ending Punishment."
+ },
+ {
+  "seq": 107,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Which one among the following cannot be formed with the letters of the word ‘COMPATIBILITY’?",
+  "options": {
+   "A": "MYOPIC",
+   "B": "IMPLICIT",
+   "C": "TITLE",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/objective-questions/mcq-on-word-cannot-be-formed--5eea6a0e39140f30f369e452"
+  ],
+  "note": "COMPATIBILITY has no letter E; TITLE needs an E, so it cannot be formed. MYOPIC and IMPLICIT can."
+ },
+ {
+  "seq": 108,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Ramesh is taller than Mohit but not as tall as Rajiv. Kamlesh is taller than Shyam but not as tall as Mohit. Who among them is tallest?",
+  "options": {
+   "A": "Rajiv",
+   "B": "Mohit",
+   "C": "Kamlesh",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://byjus.com/"
+  ],
+  "note": "Rajiv>Ramesh>Mohit>Kamlesh>Shyam; tallest = Rajiv."
+ },
+ {
+  "seq": 109,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "In a certain code TEA = 33 and EAT = 67, then to which one of the following ATE is equal in the same code?",
+  "options": {
+   "A": "90",
+   "B": "82",
+   "C": "56",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/in-a-certain-code-tea-33-and-eat-67-then-to-w--65bd43e13d641f87b9a4d999"
+  ],
+  "note": "Weights 1,2,3 by position: TEA=20+10+3=33, EAT=5+2+60=67, ATE=1+40+15=56."
+ },
+ {
+  "seq": 110,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "As ‘Glass’ is related to ‘Sand’, in the same way to which one among the following ‘Paper’ is related?",
+  "options": {
+   "A": "Mirror",
+   "B": "Stone",
+   "C": "Window",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "E",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.sarthaks.com/3601910/"
+  ],
+  "note": "Glass:Sand = product:raw material; Paper:Tree. Tree not among Mirror/Stone/Window, so None of the above."
+ },
+ {
+  "seq": 111,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Examine the following three figures in which the numbers used follow a specific pattern : 65 56 83 38 71 17 9 7 ? What is the missing number (?) in the third figure?",
+  "options": {
+   "A": "8",
+   "B": "6",
+   "C": "3",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://studyx.ai/questions/4lfg2hj/"
+  ],
+  "note": "Bottom = remainder of larger/smaller: 65 mod 56=9, 83 mod 38=7, 71 mod 17=3."
+ },
+ {
+  "seq": 112,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "How many rectangles are there in the figure given below?",
+  "options": {
+   "A": "18",
+   "B": "16",
+   "C": "10",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": null,
+  "status": "held",
+  "note": "Rectangle-counting depends entirely on the figure, which is not provided; cannot verify among 18/16/10."
+ },
+ {
+  "seq": 113,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Between 6 and 7 O’clock, the two hands of a clock will be together at 325",
+  "options": {
+   "A": "6 past minutes 7 8",
+   "B": "6 past 32 minutes 11 9",
+   "C": "6 past 32 minutes 11",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "low",
+  "sources": [
+   "https://learn.careers360.com/jobs/question-at-what-time-between-6-and-7-o39clock-are-the-hands-of-a-clock-together-11034"
+  ],
+  "note": "Hands coincide at 32 8/11 min past 6. Options OCR-garbled; C is the only one consistent with /11 (B is the wrong 9/11)."
+ },
+ {
+  "seq": 114,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "If 9 * 7 = 32 , 13 * 7 = 120 and 17 * 9 = 208 , then what is the value of 19 * 11 ?",
+  "options": {
+   "A": "180",
+   "B": "220",
+   "C": "240",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://questions.collegedunia.com/exams/questions/9-7-32-13-7-120-17-9-208-19-11-680c99f9f56a5712681095e6"
+  ],
+  "note": "Rule a*b=a^2-b^2: 19*11=361-121=240."
+ },
+ {
+  "seq": 115,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Find the missing number from the following series : 5, 17, 37, 65, _____, 145",
+  "options": {
+   "A": "101",
+   "B": "95",
+   "C": "99",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.calculator.net/number-sequence-calculator.html"
+  ],
+  "note": "Differences 12,20,28,36,44 (+8): 65+36=101, then 101+44=145."
+ },
+ {
+  "seq": 116,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Choose the word which is least similar to the other words in the group.",
+  "options": {
+   "A": "Rose",
+   "B": "Marigold",
+   "C": "Lotus",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Nelumbo_nucifera"
+  ],
+  "note": "Lotus is aquatic; Rose and Marigold are terrestrial garden flowers — Lotus is least similar."
+ },
+ {
+  "seq": 117,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Choose the missing term out of the given alternatives : AZ, GT, MN, ? , YB",
+  "options": {
+   "A": "SH",
+   "B": "KF",
+   "C": "TS",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.indiabix.com/logical-reasoning/analogies/"
+  ],
+  "note": "First letter +6 (A,G,M,S,Y), second letter -6 (Z,T,N,H,B) => missing term SH."
+ },
+ {
+  "seq": 118,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "If in a certain language ‘REMOTE’ is coded as ‘ROTEME’, then which code would be coded as ‘SLOWLY’?",
+  "options": {
+   "A": "SLYLWO",
+   "B": "SWLLOY",
+   "C": "SYLLWO",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://exam2win.com/logical-reasoning/coding-decoding/part3/questions-answers-1.jsp"
+  ],
+  "note": "First & last fixed, middle four swap pairs: REMOTE(EMOT->OTEM)=ROTEME; SLOWLY(LOWL->WLLO)=SWLLOY."
+ },
+ {
+  "seq": 119,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "If you are a manager and one of your employees is not working properly, as a manager you would",
+  "options": {
+   "A": "talk to him and try to find out his problem",
+   "B": "fire him",
+   "C": "give him two weeks to improve",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Best managerial practice: talk to the employee and find out the underlying problem."
+ },
+ {
+  "seq": 120,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "In a class of 60 students, where girls are twice that of boys, A ranked seventeenth from the top. If there are 9 girls ahead of A, then how many boys are after A in ranks?",
+  "options": {
+   "A": "7",
+   "B": "12",
+   "C": "23",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Boys=20, girls=40. 16 ahead of A: 9 girls+7 boys. A is a boy => boys after = 20-7-1 = 12."
+ },
+ {
+  "seq": 121,
+  "exam": "BPSC TRE",
+  "edition": "TRE2.0",
+  "paper": "Class 1-5 Language and General Studies",
+  "stem": "Choose the odd one out.",
+  "options": {
+   "A": "NH6",
+   "B": "FL18",
+   "C": "XQ7",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "NH: 14-8=6; XQ: 24-17=7 (number=letter-position difference). FL: number 18 = 6+12 (sum), so FL18 is the odd one."
+ }
+]

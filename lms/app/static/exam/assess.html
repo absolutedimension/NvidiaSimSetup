@@ -322,7 +322,7 @@ const L=q=>q[LANG];  // language view of a question
 
 function mcq(q,last){return new Promise(res=>{const v=L(q);
   const card=el(`<div class="qcard"><span class="qtag ${q.easy?'easy':''}">${v.tag}</span>${figHTML(q)}<div class="qtext">${v.q}</div></div>`);
-  const B=['A','B','C','D'];
+  const B=['A','B','C','D','E'];   // A-E: BPSC 5-option papers (TRE / 66-68); harmless for <=4-option Qs
   const order=shuffle(v.opts.map((o,i)=>i));   // #5 randomize display order; original index decides correctness
   order.forEach((origI,pos)=>{const o=v.opts[origI];const b=el(`<button class="opt"><span class="badge">${B[pos]}</span><span>${o}</span></button>`);
     b.dataset.c=(origI===q.correct)?'1':'';

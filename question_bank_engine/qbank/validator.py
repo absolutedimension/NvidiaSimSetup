@@ -23,7 +23,7 @@ def rule_check(q) -> list[str]:
         labels = {o.get("label") for o in q.options}
         if any(not o.get("text") for o in q.options):
             issues.append("empty_option")
-        ans = set(re.findall(r"[A-D]", (q.correct_answer or "").upper()))
+        ans = set(re.findall(r"[A-E]", (q.correct_answer or "").upper()))  # A-E: BPSC 5-option papers
         if not ans:
             issues.append("no_answer_key")
         elif not ans.issubset(labels):

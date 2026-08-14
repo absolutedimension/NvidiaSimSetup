@@ -65,7 +65,7 @@ def main():
             n = int(q.get("number", numstr))
             stem = (q.get("stem") or "").strip()
             opts_d = q.get("options") or {}
-            labels = [l for l in "ABCD" if l in opts_d]
+            labels = [l for l in "ABCDE" if l in opts_d]   # A-E: BPSC 5-option papers (TRE / 66-68)
             opts = [{"label": l, "text": str(opts_d.get(l, "")).strip()} for l in labels]
             is_mcq = len(opts) >= 2 and all(o["text"] for o in opts)
             if len(stem) < 15:

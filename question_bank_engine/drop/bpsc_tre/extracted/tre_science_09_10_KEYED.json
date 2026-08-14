@@ -1,0 +1,2622 @@
+[
+ {
+  "seq": 1,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "10 years ago the ratio of ages of Ramesh and Rajeev was 1 : 3. 5 years hence this ratio will become 2 : 3. What is the ratio of their ages at present?",
+  "options": {
+   "A": "2 : 5",
+   "B": "3 : 5",
+   "C": "1 : 2",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "10yr ago 1:3 → x,3x. 5yr hence (x+15)/(3x+15)=2/3 → x=5. Present 15:25 = 3:5 = B."
+ },
+ {
+  "seq": 2,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "If I walk with a speed of 5 km per hour from my house to the station, my train would have left the station 7 minutes before my arrival. But, if I walk with a speed of 6 km per hour, I will reach the station 5 minutes before the departure of my train. Accordingly, what is the distance between my house and the station?",
+  "options": {
+   "A": "7 km",
+   "B": "6·5 km",
+   "C": "6 km",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "d/5 - d/6 = 12 min = 0.2h → d = 6 km = C"
+ },
+ {
+  "seq": 3,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The average monthly income of P and Q is R 5,050. The average monthly income of Q and R is R 6,250 and the average monthly income of P and R is R 5,200. The monthly income of P is",
+  "options": {
+   "A": "R 3,500",
+   "B": "R 4,050",
+   "C": "R 4,000",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "P+Q=10100, Q+R=12500, P+R=10400. Sum=33000 → P+Q+R=16500. P=16500-12500=4000 = C."
+ },
+ {
+  "seq": 4,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "If 30% of P is added to 40% of Q, it becomes 80% of Q. Accordingly, what is the percentage of Q with respect to P ?",
+  "options": {
+   "A": "40%",
+   "B": "50%",
+   "C": "75%",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "0.3P+0.4Q=0.8Q → 0.3P=0.4Q → Q/P=0.75=75% = C."
+ },
+ {
+  "seq": 5,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "A sum of money is to be distributed among A, B, C, D in the proportion of 5 : 2 : 4 : 3. If C gets R 1,000 more than D, what is B’s share?",
+  "options": {
+   "A": "R 500",
+   "B": "R 1,500",
+   "C": "R 2,000",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Ratio 5:2:4:3, C−D=(4−3)k=1000 → k=1000. B=2k=2000 = C."
+ },
+ {
+  "seq": 6,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "A shopkeeper gives a discount of 5% on the selling price of a watch. If he gives a discount of 6%, he will earn a profit which is R 15 less than the before. Accordingly, what is the marked selling price of that watch?",
+  "options": {
+   "A": "R 1,400",
+   "B": "R 1,500",
+   "C": "R 1,800",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Extra 1% discount (6%−5%) of marked price = 15 → M=1500 = B."
+ },
+ {
+  "seq": 7,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Three numbers are in the ratio 3 : 4 : 5. The total of the largest and the smallest numbers is equal to the other number plus 52. Accordingly, which is the smallest number?",
+  "options": {
+   "A": "27",
+   "B": "39",
+   "C": "52",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "3x,4x,5x. 5x+3x=4x+52 → 4x=52 → x=13. Smallest=3x=39 = B."
+ },
+ {
+  "seq": 8,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "If 2^(2n-1) = 1/8^(n-3), then the value of n is",
+  "options": {
+   "A": "3",
+   "B": "2",
+   "C": "– 2",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "recovered",
+  "stem_source": "reconstructed_from_exact_Q",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://theexampillar.com/bpsc-tre-exam-26-aug-2023-paper-3-general-studies-class-9-to-10-answer-key/"
+  ],
+  "note": "2^(2n-1) = 8^-(n-3) = 2^(-3n+9) → 2n-1 = -3n+9 → 5n=10 → n=2. Our option B='2'. Official BPSC TRE 1.0 (26 Aug 2023) answer key marks (B) 2."
+ },
+ {
+  "seq": 9,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following photo- electric devices is the most suitable for digital applications?",
+  "options": {
+   "A": "Photo-voltaic cell",
+   "B": "Photo-emissive cell",
+   "C": "Photo-diode",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-photoelectric-devices-is-mo--63e8b27efbedaf48ed15512e",
+   "https://edurev.in/question/4456829/"
+  ],
+  "note": "Photovoltaic cell is marked correct → our A (Photo-voltaic cell)"
+ },
+ {
+  "seq": 10,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The critical mass of a fissionable material is",
+  "options": {
+   "A": "one kilogram equivalent",
+   "B": "the minimum mass needed for chain reaction",
+   "C": "the rest mass equivalent to 1010 joules",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Critical mass = minimum mass needed to sustain a chain reaction = B"
+ },
+ {
+  "seq": 11,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following gases is used to force the ripening of fruits?",
+  "options": {
+   "A": "Ethane",
+   "B": "Ethylene",
+   "C": "Methylene",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Ethylene is the ripening hormone gas = B"
+ },
+ {
+  "seq": 12,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which one of the following has zero octane number?",
+  "options": {
+   "A": "Iso-octane",
+   "B": "Neo-octane",
+   "C": "n-octane",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "E",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-one-of-the-following-has-zero-octane-number--64f84c127372d0b66f00c85a"
+  ],
+  "note": "n-heptane has zero octane; none of iso/neo/n-octane is zero → None of the above = E (Testbook confirms)"
+ },
+ {
+  "seq": 13,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The edible part of Litchis is",
+  "options": {
+   "A": "aril",
+   "B": "thalamus",
+   "C": "seed coat",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Edible fleshy part of litchi is the aril = A"
+ },
+ {
+  "seq": 14,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The physical process involved in the release of molecular oxygen from leaves is",
+  "options": {
+   "A": "diffusion",
+   "B": "transpiration",
+   "C": "osmosis",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Molecular O2 leaves via stomata by diffusion = A"
+ },
+ {
+  "seq": 15,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The process of finding the relative location of genes on a chromosome is called",
+  "options": {
+   "A": "genome walking",
+   "B": "chromosome walking",
+   "C": "gene mapping",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Finding relative location of genes = gene mapping = C (chromosome walking is a cloning technique)"
+ },
+ {
+  "seq": 16,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Spore mother cell in bryophytes is",
+  "options": {
+   "A": "haploid",
+   "B": "diploid",
+   "C": "triploid",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Spore mother cells sit in diploid sporophyte, undergo meiosis → diploid = B"
+ },
+ {
+  "seq": 17,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In which year was NGT (National Green Tribunal) for protection of environment and forest established by the Government of India?",
+  "options": {
+   "A": "2010",
+   "B": "2011",
+   "C": "2012",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/National_Green_Tribunal"
+  ],
+  "note": "NGT established under the National Green Tribunal Act 2010 (18 Oct 2010) = A (2010)."
+ },
+ {
+  "seq": 18,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which city of India started first under-water metro?",
+  "options": {
+   "A": "Kochi",
+   "B": "Visakhapatnam",
+   "C": "Bengaluru",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "E",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.deccanherald.com/india/west-bengal/prime-minister-narendra-modi-inaugurates-indias-first-underwater-metro-line-in-kolkata-2924068"
+  ],
+  "note": "India's first under-water metro is Kolkata (Howrah-Esplanade); not in options → E"
+ },
+ {
+  "seq": 19,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Under India’s G20 Presidency, where was the Tourism Working Group Meeting held?",
+  "options": {
+   "A": "Patna (Bihar)",
+   "B": "Srinagar (Jammu and Kashmir)",
+   "C": "Ramnagar (Uttarakhand)",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://pib.gov.in/Pressreleaseshare.aspx?PRID=1926176"
+  ],
+  "note": "3rd G20 Tourism Working Group Meeting held in Srinagar J&K = B (Patna/Ramnagar didn't host TWG)"
+ },
+ {
+  "seq": 20,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Who among the following got the Silver Medal in the National Under-17 Girls Wrestling Championship?",
+  "options": {
+   "A": "Liza Tomar",
+   "B": "Nirjala",
+   "C": "Pushpa Yadav",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/who-among-the-following-got-the-silver-medal-in-th--64f84f0c51512e0ac02b9b17"
+  ],
+  "note": "Nirjala (Kumari, Begusarai) won silver, U-17 wrestling = B"
+ },
+ {
+  "seq": 21,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Who won the International Booker Prize, 2022 for the novel, Tomb of Sand ?",
+  "options": {
+   "A": "Geetanjali Shree and Daisy Rockwell",
+   "B": "David Diop and Anna Moschovakis",
+   "C": "Marilyn Booth and Jokha Alharthi",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Tomb of Sand — author Geetanjali Shree + translator Daisy Rockwell shared Booker 2022 = A"
+ },
+ {
+  "seq": 22,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Who was the Chief Guest on India’s 74th Republic Day?",
+  "options": {
+   "A": "Mohammed bin Salman",
+   "B": "Abdel Fattah El-Sisi",
+   "C": "Sheikh Mohammed bin Rashid Al Maktoum",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "74th Republic Day (2023) chief guest = Egyptian President Abdel Fattah El-Sisi = B"
+ },
+ {
+  "seq": 23,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In which district of Bihar, the first floating solar power plant has been built?",
+  "options": {
+   "A": "Darbhanga",
+   "B": "West Champaran",
+   "C": "Madhubani",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/in-which-district-of-bihar-the-first-floating-sol--64f8501e46d56af68443a195",
+   "https://www.downtoearth.org.in/energy/bihar-s-first-floating-power-plant-in-darbhanga-to-be-commissioned-soon-81677"
+  ],
+  "note": "Bihar's first floating solar plant is in Darbhanga (Kadirabad) = A"
+ },
+ {
+  "seq": 24,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following has got GI Tag in Bihar?",
+  "options": {
+   "A": "Maghai Paan",
+   "B": "Basmati Rice",
+   "C": "Chanderi Saree",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-has-got-gi-tag-in-bihar--64f8505e28f7b0a6193fdcc5",
+   "https://en.wikipedia.org/wiki/Magahi_Paan"
+  ],
+  "note": "Magahi/Maghai Paan has Bihar GI tag = A (Basmati/Chanderi are not Bihar)"
+ },
+ {
+  "seq": 25,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Match List-I (Char, Kankar, Kayal, Mand) with List-II (Punjab plain, Delta, Bangar, Coastal plain)",
+  "options": {
+   "A": "a b c d 1 4 2 3",
+   "B": "a b c d 2 3 4 1",
+   "C": "a b c d 3 1 4 2",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "recovered",
+  "stem_source": "reconstructed_from_exact_Q",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/match-list-i-with-list-ii--64f852b45b21148c2976b58b"
+  ],
+  "note": "Correct matching: Char-Delta(2), Kankar-Bangar(3), Kayal-Coastal plain(4), Mand-Punjab plain(1) → a-2,b-3,c-4,d-1. Our option B = 'a2 b3 c4 d1'."
+ },
+ {
+  "seq": 26,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following tributaries does not join Brahmaputra river from north?",
+  "options": {
+   "A": "Subansiri",
+   "B": "Belsiri",
+   "C": "Manas",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "E",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-tributaries-does-not-join-b--64f8531b6d83e0ef851e31ae"
+  ],
+  "note": "All of Subansiri, Belsiri, Manas are north-bank tributaries → none qualifies → None of the above = E (Testbook confirms)"
+ },
+ {
+  "seq": 27,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Likhapani glacier is located in which State of India?",
+  "options": {
+   "A": "Arunachal Pradesh",
+   "B": "Himachal Pradesh",
+   "C": "Sikkim",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/likhapani-glacier-is-located-in-which-state-of-ind--64f856e728f7b0a6194110fd",
+   "https://prepp.in/question/likhapani-glacier-is-located-in-which-state-of-ind-6612e2bf6c11d964bb70e338"
+  ],
+  "note": "Likhapani glacier is in Arunachal Pradesh = A"
+ },
+ {
+  "seq": 28,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Magadha and Anga plains are parts of",
+  "options": {
+   "A": "upper Ganga plain",
+   "B": "middle Ganga plain",
+   "C": "lower Ganga plain",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://bpscpathshala.com/climate-of-bihar/",
+   "https://en.wikipedia.org/wiki/Magadha"
+  ],
+  "note": "Magadha (south Bihar) & Anga (east Bihar) lie in the middle Ganga plain."
+ },
+ {
+  "seq": 29,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following pairs of waterfalls and rivers is not correctly matched?",
+  "options": {
+   "A": "Jog—Sharavati",
+   "B": "Kapildhara—Kaveri",
+   "C": "Dhuandhar—Godavari",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "D",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Dhuandhar_Falls",
+   "https://prepp.in/question/kapildhara-falls-is-situated-on-which-river-645d322ae8610180957fb77b"
+  ],
+  "note": "Kapildhara and Dhuandhar are BOTH on the Narmada, not Kaveri/Godavari; so both B and C are wrongly matched -> More than one of the above."
+ },
+ {
+  "seq": 30,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Arrange the following seaports of India from north to south : 1. Kakinada 2. Machilipatnam 3. Nagapattinam 4. Visakhapatnam Select the correct answer using the codes given below.",
+  "options": {
+   "A": "1, 2, 3, 4",
+   "B": "4, 1, 2, 3",
+   "C": "1, 3, 2, 4",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Visakhapatnam_Port"
+  ],
+  "note": "North→South east coast: Visakhapatnam(~17.7N), Kakinada(~16.9N), Machilipatnam(~16.2N), Nagapattinam(~10.7N) = 4,1,2,3 = B."
+ },
+ {
+  "seq": 31,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The Agreement of Kosi Irrigation and Hydroelectricity Plan in 1954 was signed between which two countries?",
+  "options": {
+   "A": "India and Bangladesh",
+   "B": "India and China",
+   "C": "India and Nepal",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kosi_Barrage",
+   "https://en.wikipedia.org/wiki/Kosi_River"
+  ],
+  "note": "1954 Kosi Agreement was signed between India and Nepal."
+ },
+ {
+  "seq": 32,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In which climatic division does Bihar fall as per R. L. Singh’s classification scheme?",
+  "options": {
+   "A": "Humid south-east",
+   "B": "Subhumid transitional",
+   "C": "Subhumid continental",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/in-which-climatic-division-does-bihar-fall-as-per--64f862e77372d0b66f051851",
+   "https://bpscpathshala.com/climate-of-bihar/"
+  ],
+  "note": "Per R.L. Singh, Bihar falls in the Subhumid transitional division."
+ },
+ {
+  "seq": 33,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In which Session of the Indian National Congress was the resolution of ‘Purna Swaraj’ adopted?",
+  "options": {
+   "A": "Kanpur Session, 1925",
+   "B": "Lahore Session, 1929",
+   "C": "Karachi Session, 1931",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Purna_Swaraj"
+  ],
+  "note": "Purna Swaraj resolution adopted at Lahore Session, 1929 (Nehru presiding)."
+ },
+ {
+  "seq": 34,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "What was an initial objective of ‘Kuka Movement’ in Punjab?",
+  "options": {
+   "A": "To purify the Sikh religion",
+   "B": "To gain political power in Punjab",
+   "C": "Organization of peasant movement",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.britannica.com/topic/Namdhari",
+   "https://vajiramandravi.com/upsc-exam/kuka-movement/"
+  ],
+  "note": "Kuka (Namdhari) movement's initial aim was to purify the Sikh religion of abuses/superstitions."
+ },
+ {
+  "seq": 35,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Who described the Revolt of 1857 as the ‘First Indian War of Independence’?",
+  "options": {
+   "A": "V. D. Savarkar",
+   "B": "Bal Gangadhar Tilak",
+   "C": "Bipin Chandra Pal",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/The_Indian_War_of_Independence_(book)"
+  ],
+  "note": "V.D. Savarkar termed the 1857 Revolt the First Indian War of Independence."
+ },
+ {
+  "seq": 36,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Where was the first instance of organized non-cooperation in the history of Indian peasantry held?",
+  "options": {
+   "A": "Bihar and Bengal",
+   "B": "Madras Presidency",
+   "C": "Punjab Province",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/where-was-the-first-instance-of-organized-non-coop--64f864171eb66fa2e048dbaf"
+  ],
+  "note": "Exact BPSC TRE question; marked answer = Bihar and Bengal."
+ },
+ {
+  "seq": 37,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which portfolio did Dr. Rajendra Prasad hold during the Interim Government of 1946?",
+  "options": {
+   "A": "Defence",
+   "B": "Home",
+   "C": "Food and Agriculture",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Interim_Government_of_India",
+   "https://en.wikipedia.org/wiki/Rajendra_Prasad"
+  ],
+  "note": "Rajendra Prasad held the Food and Agriculture portfolio in the 1946 Interim Government."
+ },
+ {
+  "seq": 38,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Who among the following particularly urged Gandhiji to visit Champaran to witness the miseries of the Ryots?",
+  "options": {
+   "A": "Brijkishore Prasad",
+   "B": "Rajkumar Shukla",
+   "C": "Sukhram Ganesh",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Champaran_Satyagraha",
+   "https://en.wikipedia.org/wiki/Raj_Kumar_Shukla"
+  ],
+  "note": "Rajkumar Shukla persuaded Gandhi to visit Champaran."
+ },
+ {
+  "seq": 39,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The ‘Day of Deliverance’ was observed by the Muslim League on which date?",
+  "options": {
+   "A": "22nd December, 1939",
+   "B": "17th October, 1939",
+   "C": "22nd December, 1940",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Day_of_Deliverance_(India)"
+  ],
+  "note": "Muslim League observed Day of Deliverance on 22 December 1939."
+ },
+ {
+  "seq": 40,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Who laid the foundation stone of National College and Bihar Vidyapeeth?",
+  "options": {
+   "A": "Dr. Rajendra Prasad",
+   "B": "Maulana Abdul Bari",
+   "C": "Mahatma Gandhi",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bihar_Vidyapeeth",
+   "https://testbook.com/question-answer/who-laid-the-foundation-stone-of-national-college--64f8655123597bd96b29057b"
+  ],
+  "note": "Mahatma Gandhi laid the foundation stone (6 Feb 1921)."
+ },
+ {
+  "seq": 41,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "A rocket, set for vertical firing, weighs 50 kg and contains 450 kg of fuel. It can have a maximum exhaust velocity of 5 km/sec. What should be its minimum rate of fuel consumption to just lift it off the launching pad?",
+  "options": {
+   "A": "0·98 kg/sec",
+   "B": "0·098 kg/sec",
+   "C": "9·8 kg/sec",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://ncert.nic.in/textbook/pdf/keph105.pdf"
+  ],
+  "note": "Thrust=weight: u(dm/dt)=mg -> dm/dt=(500x9.8)/5000=0.98 kg/s (standard NCERT problem)."
+ },
+ {
+  "seq": 42,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Consider circular orbits in a central force potential V ( r ) = - k / r n , where k > 0 and 0 < n < 2 . If the time period of a circular orbit of radius R is T1 and that of radius 2R is T2, then T 2 / T 1 is n",
+  "options": {
+   "A": "2 2 2 n",
+   "B": "2 3 n + 1",
+   "C": "2 2",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://prepp.in/question/consider-circular-orbits-in-a-central-force-potent-6612eec86c11d964bb73706a",
+   "https://testbook.com/question-answer/consider-circular-orbits-in-a-central-force-potent--64f867017372d0b66f05dda5"
+  ],
+  "note": "F = -dV/dr = nk/r^(n+1); mv^2/r = nk/r^(n+1) -> v^2 = nk/(m r^n); T=2pi r/v so T^2 ~ r^(n+2), T ~ r^((n+2)/2). T2/T1 = 2^((n+2)/2) = 2^((2+n)/2). Option A (the only power-of-2 form containing n) = 2^((2+n)/2)."
+ },
+ {
+  "seq": 43,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "What is the ratio of total kinetic energies in laboratory system ( TL ) and centre of mass system ( TC ) in the scattering with projectile of mass m1 and target of mass m2?",
+  "options": {
+   "A": "m 1 : m 2",
+   "B": "( m + m ) : m 1 2 2",
+   "C": "( m + m ) : m 1 2 1",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Center-of-momentum_frame"
+  ],
+  "note": "T_C = T_L m2/(m1+m2), so T_L:T_C = (m1+m2):m2."
+ },
+ {
+  "seq": 44,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In the analysis of flow velocity of a fluid for a fixed instant of time, a space curve is drawn so that it is tangent everywhere to the velocity vector. Then this curve is usually known as",
+  "options": {
+   "A": "instantaneous curve",
+   "B": "momentum curve",
+   "C": "streamline",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Streamlines,_streaklines,_and_pathlines"
+  ],
+  "note": "Curve tangent everywhere to the velocity vector at a fixed instant = streamline."
+ },
+ {
+  "seq": 45,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Two boxes A and B contain equal number of molecules of the same gas, with volumes V_A and V_B and mean free paths l_A and l_B. Then relation is:",
+  "options": {
+   "A": "l = l A B l l",
+   "B": "A = B V A V B l l",
+   "C": "A = B V 1 / 3 V 1 / 3 A B",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "recovered",
+  "stem_source": "reconstructed_from_exact_Q",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mean_free_path"
+  ],
+  "note": "Mean free path lambda = 1/(sqrt2 pi d^2 n), n=N/V. Equal N → lambda proportional to V, so l_A/l_B = V_A/V_B. Our option B = 'l_A/l_B = V_A/V_B'."
+ },
+ {
+  "seq": 46,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following is not the characteristic of Planck’s black- body radiation distribution?",
+  "options": {
+   "A": "As temperature increases, the peak of the curve shifts towards higher wavelength.",
+   "B": "Spectral emissive power varies continuously with the change in wavelength.",
+   "C": "At a given wavelength, as temperature increases, emissive power also increases.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Wien%27s_displacement_law"
+  ],
+  "note": "Wrong statement: peak shifts to LOWER (shorter) wavelength as T increases (Wien), not higher; so A is not a characteristic."
+ },
+ {
+  "seq": 47,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In an interference pattern from two identical slits the intensity at a maximum is I. If one slit is closed the intensity there is I0. Relation?",
+  "options": {
+   "A": "I = I 0",
+   "B": "I = 2 I 0",
+   "C": "I = 4 I 0",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "recovered",
+  "stem_source": "reconstructed_from_exact_Q",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/in-an-interference-pattern-produced-by-two-identic--64f86bdf5b9f82cfcc808d8c"
+  ],
+  "note": "Amplitude doubles at maxima → intensity 4x. I = 4 I0. Our option C = 'I = 4 I0'. Testbook confirms."
+ },
+ {
+  "seq": 48,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "A light of 600 nm wavelength is incident on a single slit. The first minimum of the diffraction pattern is obtained at a distance of 4 mm from the centre. The distance between the screen and the slit is 2 m. What is the width of the slit?",
+  "options": {
+   "A": "0·1 mm",
+   "B": "0·3 mm",
+   "C": "0·5 mm",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Diffraction"
+  ],
+  "note": "a = lambda L / y = 600e-9 x 2 / 4e-3 = 3e-4 m = 0.3 mm."
+ },
+ {
+  "seq": 49,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "At what angle of incidence of plane-polarized light with quarter-wave plate, elliptically polarized light becomes circularly polarized?",
+  "options": {
+   "A": "90º",
+   "B": "45º",
+   "C": "60º",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Waveplate"
+  ],
+  "note": "Plane-polarized light at 45 deg to the QWP optic axis gives circular polarization."
+ },
+ {
+  "seq": 50,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "If a wave has group velocity of 2×10^8 m/s, what is the phase velocity?",
+  "options": {
+   "A": "4 × 5 ´ 108 m/sec",
+   "B": "5 × 5 ´ 108 m/sec",
+   "C": "9 ´ 108 m/sec",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "recovered",
+  "stem_source": "reconstructed_from_exact_Q",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/if-a-wave-is-having-group-velocity-of-2-nb--64f89a30c7a3f841b5eeff74"
+  ],
+  "note": "v_p·v_g = c^2 = 9×10^16. v_p = 9×10^16/(2×10^8) = 4.5×10^8 m/s. Our option A = '4.5 × 10^8 m/sec' (the '4 x 5' garble = 4.5). Testbook answer 4.5×10^8."
+ },
+ {
+  "seq": 51,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "From the wave equation 2 p y = 0 × 5 sin ( 64 t - x ) 3 × 2 the frequency of the wave is",
+  "options": {
+   "A": "5 Hz",
+   "B": "15 Hz",
+   "C": "20 Hz",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [],
+  "note": "Reconstructing y = 0.5 sin[(2pi/3.2)(64t - x)]: coeff of t = 2pi*64/3.2 = 40pi = omega, so f = omega/2pi = 64/3.2 = 20 Hz. Clean value matches C. (v=64, lambda=3.2.)"
+ },
+ {
+  "seq": 52,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Identify which expression is NOT a Maxwell equation for time-varying fields.",
+  "options": {
+   "A": "Ñ × J + = 0 ¶ t r r",
+   "B": "Ñ × D = r ¶ r r r B",
+   "C": "Ñ ´ E = ¶ t",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "recovered",
+  "stem_source": "reconstructed_from_exact_Q",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/identify-which-of-the-following-expressions-is-not--64f89bb9ce1d6b23b9bddd35"
+  ],
+  "note": "Option A = ∇·J + ∂ρ/∂t = 0 is the continuity (charge-conservation) equation, not a Maxwell equation. B (∇·D=ρ, Gauss) and C (∇×E=∂B/∂t, Faraday) are Maxwell equations. Testbook marks the continuity equation = our option A."
+ },
+ {
+  "seq": 53,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The voltage induced across a stationary conductor in an external static magnetic field",
+  "options": {
+   "A": "depends on the angle of the conductor with the magnetic field",
+   "B": "increases with time",
+   "C": "is zero",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction"
+  ],
+  "note": "Stationary conductor in a static field: no motion, no flux change -> induced voltage is zero."
+ },
+ {
+  "seq": 54,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "A wire in the shape of an equilateral triangle with sides of length 1 m sits in a magnetic field of 2 T, pointing to the right. What is the magnitude of the magnetic flux through the triangle?",
+  "options": {
+   "A": "0 Wb",
+   "B": "1 Wb",
+   "C": "1·73 Wb",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Magnetic_flux"
+  ],
+  "note": "Field is in the plane of the triangle (points to the right), so it is parallel to the surface -> flux = 0 Wb."
+ },
+ {
+  "seq": 55,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following statements is/are true regarding Biot-Savart law? (i) Magnetic field is directly proportional to the length of element. (ii) Biot-Savart law deals with electric field. (iii) Magnetic field is directly proportional to the current through the conductor. Select the correct answer using the codes given below.",
+  "options": {
+   "A": "(i) only",
+   "B": "(i) and (ii)",
+   "C": "(i) and (iii)",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Biot%E2%80%93Savart_law"
+  ],
+  "note": "dB proportional to dl (i) and to current I (iii); it deals with magnetic not electric field, so (i) and (iii) only"
+ },
+ {
+  "seq": 56,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Find the value of the current i in the given circuit : 1A i = ? 3A 5A 2A 6A",
+  "options": {
+   "A": "2 A",
+   "B": "3 A",
+   "C": "1 A",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": null,
+  "status": "held",
+  "note": "KCL junction problem but the circuit diagram/branch directions are not recoverable from the stem (only bare currents 1A,3A,5A,2A,6A). Cannot determine topology, so cannot pick among 1/2/3 A. Held rather than guess."
+ },
+ {
+  "seq": 57,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following statements is not correct about quality factor of a parallel resonance circuit?",
+  "options": {
+   "A": "Q-factor of parallel resonance is the same as that of series resonance.",
+   "B": "Q-factor provides the current magnification.",
+   "C": "Q-factor provides the voltage magnification.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-statements-is-not-correct-a--637f9f99a5c3b3fab527264f"
+  ],
+  "note": "Parallel resonance gives current magnification; 'voltage magnification' (series property) is the NOT-correct statement"
+ },
+ {
+  "seq": 58,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In a photoelectric experiment, both sodium (work function = 2·3 eV) and tungsten (work function = 4·5 eV) metals are illuminated by an ultraviolet light of same wavelength. If the stopping potential for tungsten is measured to be 1·8 V, then the value of the stopping potential for sodium will be",
+  "options": {
+   "A": "4 V",
+   "B": "2·2 V",
+   "C": "1·8 V",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Same wavelength -> same photon energy E. Tungsten: E = phi_W + eVs = 4.5 + 1.8 = 6.3 eV. Sodium: eVs = E - phi_Na = 6.3 - 2.3 = 4.0 eV -> Vs = 4 V = A."
+ },
+ {
+  "seq": 59,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The fine structure of atomic spectral lines arises from",
+  "options": {
+   "A": "electron spin-orbit coupling",
+   "B": "nuclear spin",
+   "C": "interaction between electron and nucleus",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Fine_structure"
+  ],
+  "note": "Fine structure arises from electron spin-orbit coupling"
+ },
+ {
+  "seq": 60,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "An atom with proton number 84 and nucleon number 216 decays into a new element. In this process, it emits an alpha particle. What is the structure of the new nucleus after the emission?",
+  "options": {
+   "A": "Proton number 82, Nucleon number 212",
+   "B": "Proton number 82, Nucleon number 214",
+   "C": "Proton number 85, Nucleon number 215",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Alpha_decay"
+  ],
+  "note": "Alpha emission: Z 84->82, A 216->212"
+ },
+ {
+  "seq": 61,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following reactions is not allowed? (A) π+ + n → K+ + Σ0 ; (B) Λ+ + n → Σ0 + p ; (C) ρ0 → π+ + π−",
+  "options": {
+   "A": "p + + ® + + S 0 n K",
+   "B": "L + + + n ® S + p",
+   "C": "r 0 ® p + p -",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "recovered",
+  "stem_source": "reconstructed_from_exact_Q",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/which-of-the-following-reactions-is-not-allowed--64f8abf646d56af6845351f5"
+  ],
+  "note": "Testbook options: 1) π+ + n → K+ + Σ0 (allowed), 2) Λ+ + n → Σ0 + p (NOT allowed, violates charge conservation: +2 → +1), 3) ρ0 → π+ + π− (allowed). The forbidden reaction maps to our raw_B ('Λ+ + n → Σ0 + p'). Answer B."
+ },
+ {
+  "seq": 62,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Donor-type impurities are the materials of",
+  "options": {
+   "A": "V group of periodic table",
+   "B": "IV group of periodic table",
+   "C": "III group of periodic table",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
+  ],
+  "note": "Donor impurities are pentavalent, Group V"
+ },
+ {
+  "seq": 63,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In an n-type semiconductor, the Fermi level lies",
+  "options": {
+   "A": "above the top of the valence band",
+   "B": "below the bottom of the conduction band",
+   "C": "in the middle of the forbidden gap",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Extrinsic_semiconductor"
+  ],
+  "note": "In n-type, Fermi level lies just below the bottom of the conduction band"
+ },
+ {
+  "seq": 64,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The maximum efficiency of a half-wave rectifier is",
+  "options": {
+   "A": "33·3%",
+   "B": "40·6%",
+   "C": "66·6%",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rectifier"
+  ],
+  "note": "Max efficiency of half-wave rectifier is 40.6%"
+ },
+ {
+  "seq": 65,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Consider the following types of modulation : (i) Amplitude modulation (ii) Frequency modulation (iii) Phase modulation (iv) Pulse modulation Which of the above modulations are used for telecasting TV programs?",
+  "options": {
+   "A": "(ii) and (iii)",
+   "B": "(iii) and (iv)",
+   "C": "(i) and (ii)",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Analog_television"
+  ],
+  "note": "TV telecast uses AM for video and FM for sound: (i) and (ii)"
+ },
+ {
+  "seq": 66,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "For every 10 ºC increase in temperature, the reverse saturation current of a p-n junction will be increased by",
+  "options": {
+   "A": "10 times",
+   "B": "2 times",
+   "C": "4 times",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/P%E2%80%93n_junction"
+  ],
+  "note": "Reverse saturation current roughly doubles for every 10C rise"
+ },
+ {
+  "seq": 67,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The band gap energies for silicon and germanium photodiodes are 1·1 eV and 0·67 eV respectively. Their cut-off wavelengths respectively would be",
+  "options": {
+   "A": "1127·27 nm, 1850·75 nm",
+   "B": "456·12 nm, 1127·27 nm",
+   "C": "1315·45 nm, 1850·75 nm",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Photodiode"
+  ],
+  "note": "lambda=1240/Eg nm: Si 1.1eV->1127nm, Ge 0.67eV->1851nm"
+ },
+ {
+  "seq": 68,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which method can be employed to produce a high degree of homogeneity in the creation of ZnFe 2 O 4 spinel?",
+  "options": {
+   "A": "Distillation method",
+   "B": "Vaporization method",
+   "C": "Coprecipitation method",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Coprecipitation"
+  ],
+  "note": "Coprecipitation gives high homogeneity for spinel ferrites like ZnFe2O4"
+ },
+ {
+  "seq": 69,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "_____ is a crystalline solid’s basic repetitive structural unit.",
+  "options": {
+   "A": "Monomer",
+   "B": "Molecule",
+   "C": "Unit cell",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Unit_cell"
+  ],
+  "note": "Unit cell is the basic repeating structural unit of a crystalline solid"
+ },
+ {
+  "seq": 70,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "For all the reactions, what is the nature of the chemical dissociation?",
+  "options": {
+   "A": "Exothermic",
+   "B": "Reversible",
+   "C": "Endothermic",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Thermal_decomposition"
+  ],
+  "note": "Chemical/thermal dissociation is endothermic (bond breaking absorbs energy); universally true property"
+ },
+ {
+  "seq": 71,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The radius of an atomic nucleus is of the order of",
+  "options": {
+   "A": "10 - 10 cm",
+   "B": "10 - 13 cm",
+   "C": "10 - 15 cm",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Atomic_nucleus"
+  ],
+  "note": "Nuclear radius ~ few fm = 1e-13 cm"
+ },
+ {
+  "seq": 72,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Atomic orbital is",
+  "options": {
+   "A": "the circular path of electron",
+   "B": "an elliptical shaped orbit",
+   "C": "the region in which there is a maximum possibility of finding an electron",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Atomic_orbital"
+  ],
+  "note": "Orbital = region of maximum probability of finding an electron"
+ },
+ {
+  "seq": 73,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In the rate equation, when the concentration of reactants is unity, then the rate is equal to",
+  "options": {
+   "A": "specific rate constant",
+   "B": "average rate constant",
+   "C": "instantaneous rate constant",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Reaction_rate_constant"
+  ],
+  "note": "When concentrations are unity, rate equals the specific rate constant"
+ },
+ {
+  "seq": 74,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In the reaction 2 A + B ® A B , 2 if the concentration of A is doubled and that of B is halved, then the rate of the reaction will",
+  "options": {
+   "A": "increase 2 times",
+   "B": "increase 4 times",
+   "C": "decrease 2 times",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rate_equation"
+  ],
+  "note": "rate=k[A]^2[B]; A doubled (x4), B halved (x0.5) => net x2 increase"
+ },
+ {
+  "seq": 75,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "A substance A decomposes by a first-order reaction starting initially with [ A ] = 2 × 00 M and after 200 minutes, [ A ] becomes 0·15 M. For this reaction t1 / 2 is",
+  "options": {
+   "A": "53·72 minutes",
+   "B": "50·49 minutes",
+   "C": "48·45 minutes",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "First order: k = (1/t)ln([A]0/[A]) = (1/200)ln(2.00/0.15) = (1/200)ln(13.33) = 0.012952 min^-1. t1/2 = ln2/k = 0.6931/0.012952 ~ 53.5 min. Nearest option A = 53.72 min."
+ },
+ {
+  "seq": 76,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following assertions about the main cell is correct?",
+  "options": {
+   "A": "An example of a primary cell is a mercury cell.",
+   "B": "An example of a primary cell is a nickel-cadmium storage cell.",
+   "C": "The electrode reactions can be reversed.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Primary_cell"
+  ],
+  "note": "Mercury cell is a primary cell; Ni-Cd is secondary and reactions of primary cells are not reversible"
+ },
+ {
+  "seq": 77,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "A catalyst alters which of the following in a chemical reaction?",
+  "options": {
+   "A": "Entropy",
+   "B": "Activation energy",
+   "C": "Internal energy",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Catalysis"
+  ],
+  "note": "Catalyst lowers/alters the activation energy"
+ },
+ {
+  "seq": 78,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Photochemistry deals with the study of",
+  "options": {
+   "A": "photons",
+   "B": "photos",
+   "C": "reactions which proceed with absorptions of visible or UV light",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Photochemistry"
+  ],
+  "note": "Photochemistry = reactions proceeding with absorption of visible or UV light."
+ },
+ {
+  "seq": 79,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The number of photons that pass through a unit area in a unit time is called",
+  "options": {
+   "A": "amplitude of light",
+   "B": "frequency of light",
+   "C": "intensity of light",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Intensity_(physics)"
+  ],
+  "note": "Photons per unit area per unit time = intensity of light."
+ },
+ {
+  "seq": 80,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The transition without emission of radiation of a molecule from a stable excited state to an unstable excited state that leads to dissociation is",
+  "options": {
+   "A": "predissociation",
+   "B": "dissociation",
+   "C": "photodissociation",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Predissociation"
+  ],
+  "note": "Radiationless transition from stable to unstable excited state leading to dissociation = predissociation."
+ },
+ {
+  "seq": 81,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following products are obtained when Na 2 CO 3 is added to a solution of copper sulphate?",
+  "options": {
+   "A": "Basic copper carbonate, sodium sulphate and CO2",
+   "B": "Copper hydroxide, sodium sulphate and CO2",
+   "C": "Copper carbonate, sodium sulphate and CO2",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://byjus.com/chemistry/copper-sulphate/"
+  ],
+  "note": "CuSO4 + Na2CO3 -> basic copper carbonate + sodium sulphate + CO2."
+ },
+ {
+  "seq": 82,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The pair that has similar atomic radii is",
+  "options": {
+   "A": "Mn and Re",
+   "B": "Mo and W",
+   "C": "Sc and Ni",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-pair-that-has-similar-atomic-radii-is--5e20525cf60d5d56bdcd093b"
+  ],
+  "note": "Mo and W have nearly identical atomic radii due to lanthanide contraction (~139 pm)."
+ },
+ {
+  "seq": 83,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "According to the IUPAC nomen- clature, sodium nitroprusside dihydrate is named as",
+  "options": {
+   "A": "sodium pentacyanonitrosyl- ferrate(III)",
+   "B": "sodium nitroferrocyanide",
+   "C": "sodium pentacyanonitrosyl- ferrate(II)",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/according-to-the-iupac-nomen-clature-sodium-nitro--64f8b8a623597bd96b36ccf1"
+  ],
+  "note": "IUPAC name = sodium pentacyanonitrosylferrate(III); official key marks the (III) option."
+ },
+ {
+  "seq": 84,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "A substance X is used in whitewashing and is obtained by heating limestone in the absence of air. Identify X .",
+  "options": {
+   "A": "CaOCl2",
+   "B": "Ca ( OH )2",
+   "C": "CaO",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://edurev.in/question/4675579/",
+   "https://www.sarthaks.com/2718095/"
+  ],
+  "note": "X = CaO (quicklime), obtained by heating limestone; option answer C."
+ },
+ {
+  "seq": 85,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "A dilute ferrous sulphate solution is gradually added to the beaker containing acidified permanganate solution. The light purple colour of the solution fades and finally disappears. Which of the following is the correct explanation for the observation?",
+  "options": {
+   "A": "KMnO4 is an oxidizing agent and it oxidizes FeSO4.",
+   "B": "FeSO4 acts as an oxidizing agent and it oxidizes KMnO4.",
+   "C": "The colour disappears due to dilution, no reaction is involved.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://byjus.com/chemistry/potassium-permanganate/"
+  ],
+  "note": "KMnO4 is oxidizing agent; oxidizes FeSO4, purple color fades."
+ },
+ {
+  "seq": 86,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "How many structural isomers are possible if one hydrogen in diphenylmethane is replaced by chlorine?",
+  "options": {
+   "A": "8",
+   "B": "4",
+   "C": "7",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "Diphenylmethane Ph-CH2-Ph: two equivalent rings give ortho/meta/para chloro (3) + substitution at the CH2 methylene (Ph2CHCl, 1) = 4 structural isomers. B = 4."
+ },
+ {
+  "seq": 87,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which among the following statements is/are true? Exposure of silver chloride to sunlight for a long duration turns it grey due to the (i) formation of silver by decomposition of silver chloride (ii) sublimation of silver chloride (iii) decomposition of chlorine gas from silver chloride (iv) oxidation of silver chloride Select the correct answer using the codes given below.",
+  "options": {
+   "A": "(i) only",
+   "B": "(i) and (iii)",
+   "C": "(ii) and (iv)",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://learn.careers360.com/ncert/question-which-among-the-following-statement-s-is-are-true-exposure-of-silver-chloride-to-sunlight-for-a-long-duration-turns-grey/"
+  ],
+  "note": "Grey colour due to formation of silver by photolytic decomposition of AgCl; (i) only."
+ },
+ {
+  "seq": 88,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following is a branched polymer?",
+  "options": {
+   "A": "Low-density polymer",
+   "B": "Polyester",
+   "C": "High-density polymer",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Low-density_polyethylene"
+  ],
+  "note": "LDPE (low-density polymer) is branched; HDPE is linear."
+ },
+ {
+  "seq": 89,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following monomers form biodegradable polymers?",
+  "options": {
+   "A": "3-Hydroxybutanoic acid + 3-Hydroxypentanoic acid",
+   "B": "Glycine + Aminocaproic acid",
+   "C": "Ethylene glycol + Phthalic acid",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "D",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.shaalaa.com/question-bank-solutions/which-of-the-following-monomers-form-biodegradable-polymers_294916"
+  ],
+  "note": "Both (i) 3-OH-butanoic+3-OH-pentanoic (PHBV) and (ii) glycine+aminocaproic (nylon-2-nylon-6) are biodegradable -> more than one."
+ },
+ {
+  "seq": 90,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The correct order of increasing nucleophilicity is",
+  "options": {
+   "A": "Cl - < Br - < I -",
+   "B": "Br - < Cl - < I -",
+   "C": "I - < Br - < Cl -",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://byjus.com/chemistry/nucleophilicity/"
+  ],
+  "note": "In protic solvent nucleophilicity I->Br->Cl-, so increasing order Cl- < Br- < I-."
+ },
+ {
+  "seq": 91,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Select the correct statement from the following options.",
+  "options": {
+   "A": "Spectroscopic methods require less time and more amount of sample than classical methods.",
+   "B": "Spectroscopic methods require more time and more amount of sample than classical methods.",
+   "C": "Spectroscopic methods require less time and less amount of sample than classical methods.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Spectroscopy"
+  ],
+  "note": "Spectroscopic methods require less time and less sample than classical methods."
+ },
+ {
+  "seq": 92,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "A carbonyl group will cause a sharp dip at about _____ cm -1.",
+  "options": {
+   "A": "1700",
+   "B": "2800",
+   "C": "3400",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [],
+  "note": "C=O (carbonyl) stretch appears as a strong sharp absorption near 1700 cm^-1. A = 1700."
+ },
+ {
+  "seq": 93,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which is the best suited method for the separation of para- and ortho-nitrophenols from 1 : 1 mixture?",
+  "options": {
+   "A": "Crystallization",
+   "B": "Chromatography",
+   "C": "Steam distillation",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Steam_distillation"
+  ],
+  "note": "ortho-nitrophenol is steam volatile (intramolecular H-bond), para is not; steam distillation separates them."
+ },
+ {
+  "seq": 94,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Find the compound which undergoes nucleophilic substi- tution reaction exclusively by an SN1 mechanism.",
+  "options": {
+   "A": "Benzyl chloride",
+   "B": "Chlorobenzene",
+   "C": "Ethyl chloride",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [],
+  "note": "Benzyl chloride ionizes to a resonance-stabilized benzyl carbocation and reacts by SN1. Chlorobenzene (aryl halide) resists nucleophilic substitution; ethyl chloride goes SN2. A = Benzyl chloride."
+ },
+ {
+  "seq": 95,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The majority of phytophagous nematodes are",
+  "options": {
+   "A": "root parasites",
+   "B": "stem parasites",
+   "C": "tissue parasites",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Plant-parasitic_nematode"
+  ],
+  "note": "Majority of phytophagous (plant-parasitic) nematodes are root parasites."
+ },
+ {
+  "seq": 96,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "One of the purposes of secondary treatment of waste- water and sewage is",
+  "options": {
+   "A": "to increase the chlorine content",
+   "B": "to reduce the BOD",
+   "C": "to encourage the formation of PCBs",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sewage_treatment"
+  ],
+  "note": "Secondary treatment reduces BOD."
+ },
+ {
+  "seq": 97,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Most bacteria that cause plant diseases are members of the group of",
+  "options": {
+   "A": "rod-shaped and gram- positive bacteria",
+   "B": "rod-shaped and gram- negative bacteria",
+   "C": "filament-shaped and gram- positive bacteria",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Plant_pathology"
+  ],
+  "note": "Most plant-pathogenic bacteria are rod-shaped and gram-negative."
+ },
+ {
+  "seq": 98,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Nutritionally Albugo is",
+  "options": {
+   "A": "saprophyte",
+   "B": "facultative saprophyte",
+   "C": "obligate parasite",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Albugo"
+  ],
+  "note": "Albugo is an obligate parasite (biotroph)."
+ },
+ {
+  "seq": 99,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following is incorrect statement?",
+  "options": {
+   "A": "In Liliaceae, some plants have underground parts.",
+   "B": "Fibre-yielding plants are found in Malvaceae.",
+   "C": "Trees with large flowers and seeds are found in Compositae.",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Asteraceae"
+  ],
+  "note": "Compositae (Asteraceae) are mostly herbs with small florets, not trees with large flowers/seeds -> statement C is incorrect."
+ },
+ {
+  "seq": 100,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "One of the major Basmati rice-producing States in our country is",
+  "options": {
+   "A": "Kerala",
+   "B": "Andhra Pradesh",
+   "C": "Uttar Pradesh",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Basmati"
+  ],
+  "note": "Uttar Pradesh is a major Basmati rice-producing state."
+ },
+ {
+  "seq": 101,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "What is Somaclone?",
+  "options": {
+   "A": "Plant which is chemically identical to the source plant",
+   "B": "Plant which is morpho- logically similar to the original plant",
+   "C": "Plant which is auto- matically identical to the original plant",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "E",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/what-is-somaclone--64f96f86692805d82b953e33"
+  ],
+  "note": "Somaclones are GENETICALLY identical (tissue-culture clones); none of chemically/morphologically/'automatically' is correct. Exact BPSC TRE key = None of the above."
+ },
+ {
+  "seq": 102,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The functional unit of synthesis of protein is",
+  "options": {
+   "A": "peroxisome",
+   "B": "polysome",
+   "C": "lysosome",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/the-functional-unit-of-synthesis-of-protein-is--64f96fbe80450e4e07f7452b",
+   "https://edurev.in/question/2995770"
+  ],
+  "note": "Polysome (polyribosome) is the functional unit of protein synthesis."
+ },
+ {
+  "seq": 103,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Active transport takes place",
+  "options": {
+   "A": "against concentration gra- dient and requires ATP",
+   "B": "against concentration gra- dient and does not require ATP",
+   "C": "with concentration gradient and does not require ATP",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.ncbi.nlm.nih.gov/books/NBK9898/"
+  ],
+  "note": "Active transport moves against the concentration gradient and requires ATP."
+ },
+ {
+  "seq": 104,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Tropical evergreen forests are found in which of the following States of India?",
+  "options": {
+   "A": "Tamil Nadu",
+   "B": "Assam",
+   "C": "Madhya Pradesh",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "D",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [
+   "https://testbook.com/question-answer/tropical-evergreen-forests-are-found-in-which-of-t--64f970774fc4e391db265b04",
+   "https://en.wikipedia.org/wiki/Tropical_evergreen_forests_of_India"
+  ],
+  "note": "Both Tamil Nadu (S. Western Ghats) and Assam have tropical evergreen forests -> More than one. NOTE: official BPSC key marked option 2 (Assam) only; Testbook corrected it to 'More than one'."
+ },
+ {
+  "seq": 105,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Ozone hole refers to",
+  "options": {
+   "A": "decrease in ozone concen- tration in stratosphere",
+   "B": "decrease in the thickness of ozone layer in stratosphere",
+   "C": "increase in the thick layer of ozone in stratosphere",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/ozone-hole-refers-to--64f970e0692805d82b9580c9"
+  ],
+  "note": "Ozone hole = decrease in thickness of ozone layer in stratosphere. Exact BPSC TRE key = option 2."
+ },
+ {
+  "seq": 106,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Groundnut oil is obtained from",
+  "options": {
+   "A": "Brassica juncea",
+   "B": "Artabotrys odoratissimus",
+   "C": "Arachis hypogaea",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Peanut"
+  ],
+  "note": "Groundnut oil comes from Arachis hypogaea (peanut)."
+ },
+ {
+  "seq": 107,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The component of food that does not provide any nutrient to our body and yet is essential in our food is",
+  "options": {
+   "A": "fat",
+   "B": "carbohydrate",
+   "C": "roughage",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://ncert.nic.in/"
+  ],
+  "note": "Roughage (dietary fibre) provides no nutrient but is essential for digestion/bowel movement."
+ },
+ {
+  "seq": 108,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Plasma membrane is built up of",
+  "options": {
+   "A": "protein",
+   "B": "lipid",
+   "C": "carbohydrate",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "D",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.ncbi.nlm.nih.gov/books/NBK9898/",
+   "https://testbook.com/question-answer/plasmamembraneismade--5f1bc3af13e60d0d0c23b6f4"
+  ],
+  "note": "Plasma membrane = lipids + proteins + carbohydrates (fluid mosaic). More than one of the above."
+ },
+ {
+  "seq": 109,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Mendel’s principle of inheritance is based on",
+  "options": {
+   "A": "vegetative reproduction",
+   "B": "asexual reproduction",
+   "C": "sexual reproduction",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mendelian_inheritance"
+  ],
+  "note": "Mendel's laws of inheritance are based on sexual reproduction (gamete formation, cross-pollination)."
+ },
+ {
+  "seq": 110,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "When there is a decrease in the concentration of oxygen in the blood, the rate of breathing",
+  "options": {
+   "A": "decreases",
+   "B": "increases",
+   "C": "does not change",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.ncbi.nlm.nih.gov/books/NBK526051/"
+  ],
+  "note": "Low blood O2 (hypoxia) stimulates chemoreceptors -> breathing rate increases."
+ },
+ {
+  "seq": 111,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In human body, which one of the following hormones regulates blood calcium and phosphate?",
+  "options": {
+   "A": "Glucagon",
+   "B": "Growth hormone",
+   "C": "Parathyroid hormone",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Parathyroid_hormone"
+  ],
+  "note": "Parathyroid hormone (PTH) regulates blood calcium and phosphate."
+ },
+ {
+  "seq": 112,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Quick response towards stress is done by",
+  "options": {
+   "A": "androgen",
+   "B": "epinephrine",
+   "C": "corticosteroid",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Adrenaline"
+  ],
+  "note": "Epinephrine (adrenaline) mediates the fast fight-or-flight stress response."
+ },
+ {
+  "seq": 113,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Cimex hemipterus parasitizes on",
+  "options": {
+   "A": "sheep",
+   "B": "man",
+   "C": "elephant",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://testbook.com/question-answer/cimex-hemipterus-parasitizes-on--64f973fd692805d82b9611f1",
+   "https://animaldiversity.org/accounts/Cimex_hemipterus/"
+  ],
+  "note": "Cimex hemipterus is the tropical bed bug; parasitizes man."
+ },
+ {
+  "seq": 114,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following is a human ‘blood fluke’?",
+  "options": {
+   "A": "Enterobius vermicularis",
+   "B": "Schistosoma mansoni",
+   "C": "Wuchereria bancrofti",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Schistosoma_mansoni"
+  ],
+  "note": "Schistosoma mansoni is the human blood fluke."
+ },
+ {
+  "seq": 115,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "The embryonic respiratory organ in chick is",
+  "options": {
+   "A": "amnion",
+   "B": "chorion",
+   "C": "allantois",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Allantois"
+  ],
+  "note": "Allantois is the embryonic respiratory (and excretory) organ in the chick."
+ },
+ {
+  "seq": 116,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which of the following characterizes aging?",
+  "options": {
+   "A": "An increase in the consumption of oxygen",
+   "B": "Increased anabolism",
+   "C": "Increased metabolic activity",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "E",
+  "status": "keyed",
+  "confidence": "med",
+  "sources": [
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC7994661/"
+  ],
+  "note": "Aging = DECREASED O2 consumption, decreased anabolism, decreased metabolic activity. All three options say 'increase', so none is correct -> None of the above."
+ },
+ {
+  "seq": 117,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Eugenics is the study of",
+  "options": {
+   "A": "different races",
+   "B": "people of European origin",
+   "C": "altering human beings by changing the genetic components",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Eugenics"
+  ],
+  "note": "Eugenics = improving/altering humans by changing the genetic makeup."
+ },
+ {
+  "seq": 118,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "In some animal groups, the body is found divided into compartments with at least some organs serially repeated. This feature is named as",
+  "options": {
+   "A": "segmentation",
+   "B": "metamerism",
+   "C": "metagenesis",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "B",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://www.sarthaks.com/3626601/some-animal-groups-body-found-divided-into-compartments-with-least-some-organs-serially",
+   "https://en.wikipedia.org/wiki/Metamerism_(biology)"
+  ],
+  "note": "Serial repetition of organs/segments = metamerism."
+ },
+ {
+  "seq": 119,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "Which type of larva is found in majority of Crustacea?",
+  "options": {
+   "A": "Tornaria",
+   "B": "Bipinnaria",
+   "C": "Nauplius",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "C",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Nauplius_(larva)"
+  ],
+  "note": "Nauplius is the characteristic larva of most Crustacea."
+ },
+ {
+  "seq": 120,
+  "exam": "BPSC TRE",
+  "edition": "TRE1.0",
+  "paper": "Class 9-10 General Studies and Science",
+  "stem": "According to Oparin, which of the following was not present in the primitive atmosphere of the Earth?",
+  "options": {
+   "A": "Oxygen",
+   "B": "Hydrogen",
+   "C": "Water vapour",
+   "D": "More than one of the above",
+   "E": "None of the above"
+  },
+  "quality": "clean",
+  "answer": "A",
+  "status": "keyed",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Miller%E2%80%93Urey_experiment"
+  ],
+  "note": "Oparin: primitive reducing atmosphere had CH4, NH3, H2, water vapour but NO free oxygen."
+ }
+]
