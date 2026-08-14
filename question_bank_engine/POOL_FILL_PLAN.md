@@ -40,10 +40,13 @@ spec, count)` per chapter until each subject pool hits the target.
   (a) fill ONE shared govt tag (e.g. "SSC CGL") + a tiny serving tweak so govt exams reuse it — **recommended, 1× work**; or
   (b) fill each exam's (exam,subject) pool separately — clean isolation, 3× the rows.
 
-### TIER 2 — MAP / BORROW (already have the content; wire the serving)
-GS-Science is covered by the NEET banks. Serve Physics/Chem/Bio to govt-exam students by pointing the
-govt GS-Science subject at those banks (the Railway `railway-science` subject already borrows CBSE10 Science —
-same pattern). No generation needed; just a RAG_SUBJECTS/serving mapping. **Effort: hours.**
+### TIER 2 — MAP / BORROW ✅ DONE 2026-08-14 (lms:v143)
+GS-Science mapped to the **CBSE Class 12** real PYQ banks (they serve gen=0 via the CBSE real-serve gate;
+NEET only serves ~350 gen=1 each, so CBSE Class 12 was the right source). Added RAG_SUBJECTS `gs-physics`
+→ CBSE Class 12 Physics (**4,435 real**), `gs-chemistry` → Chemistry (**4,101**), `gs-biology` → Biology
+(**3,358**) — same borrow pattern as `railway-science`. Attached to the BPSC TRE goal (teacher exams test
+P/C/B). LMS-only change; verified all three serve live from `/examgen/pool`. **Physics/Chemistry/Biology now
+≥1000 servable each.** (Can be attached to more govt goals — SSC/BPSC — if wanted.)
 
 ### TIER 3 — SOURCE + TAG (real work, ~weeks)
 - **GS-Social (Polity/Geo/History/Economics):** we hold ~977 real GS Qs (UPSC + BPSC + BPSC TRE) but they're

@@ -84,6 +84,7 @@ EXAMS = [
     {"id": "banking",  "subject": "banking-quant", "title": "Banking", "tag": "IBPS · SBI · RRB",     "emoji": "🏦"},
     {"id": "upsc",     "subject": "upsc-gs",      "title": "UPSC",     "tag": "Civil Services · IAS", "emoji": "🏛️"},
     {"id": "bpsc",     "subject": "bpsc-gs",      "title": "BPSC",     "tag": "Bihar Civil Services", "emoji": "🏛️"},
+    {"id": "bpsc-tre", "subject": "bpsc-tre",     "title": "BPSC TRE", "tag": "Bihar Teacher · real PYQs", "emoji": "🧑‍🏫"},
     {"id": "ssc",      "subject": "ssc-reasoning", "title": "SSC CGL", "tag": "Govt job · SSC/Railway", "emoji": "📋"},
     {"id": "railway",  "subject": "railway-reasoning", "title": "Railway (RRB)", "tag": "NTPC · Group D · ALP", "emoji": "🚂"},
     {"id": "class3",   "subject": "class3-maths", "title": "Class 3",  "tag": "ICSE · Maths",        "emoji": "🔢"},
@@ -117,6 +118,7 @@ STUDENT_EXAMS = [
     {"id": "cuet",    "title": "CUET",          "tag": "UG entrance",          "emoji": "🎓", "available": False},
     {"id": "upsc",    "title": "UPSC",          "tag": "Civil Services",       "emoji": "🏛️", "available": True},
     {"id": "bpsc",    "title": "BPSC",          "tag": "Bihar PSC · real PYQs", "emoji": "🏛️", "available": True},
+    {"id": "bpsc-tre","title": "BPSC TRE",      "tag": "Bihar Teacher · real PYQs", "emoji": "🧑‍🏫", "available": True},
     {"id": "ssc",     "title": "SSC CGL",       "tag": "All sections live",     "emoji": "📋", "available": True},
     {"id": "railway", "title": "Railway (RRB)", "tag": "NTPC · Group D · ALP",  "emoji": "🚂", "available": True},
     {"id": "banking", "title": "Banking",       "tag": "IBPS · SBI · RRB",     "emoji": "🏦", "available": True},
@@ -2211,7 +2213,7 @@ def teacher_chapters(request: Request, subject: str = "jee-physics", db: Session
 # so teachers couldn't make Class 10/12/Commerce/UPSC tests (institute feedback 2026-07-29). Order
 # mirrors the student exam picker.
 _TEACHER_GOALS = ["jee-advanced", "neet", "cbse-10", "cbse-12", "cbse-12-commerce", "banking",
-                  "upsc", "bpsc", "ssc-cgl", "railway"]
+                  "upsc", "bpsc", "bpsc-tre", "ssc-cgl", "railway"]
 _KIDS_TEACHER_GOALS = ["class3"]   # kids-education.trigunai.com teachers create Grade-3 tests
 
 

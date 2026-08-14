@@ -183,6 +183,30 @@ RAG_SUBJECTS = {
         "match": ["bpsc gs", "bpsc general studies", "bpsc prelims", "bpsc-gs", "bihar psc gs",
                   "bpsc gs prelims", "bihar psc", "bpsc"],
     },
+    # ---- BPSC TRE (Teacher Recruitment) — REAL past-paper PYQs (TRE 1.0/2.0/3.0, official papers,
+    # cross-source keyed), 5-option (A-E). Served from /pool (exam="BPSC TRE" starts with "BPSC" so it
+    # inherits the real-serve + skip_chapter/skip_difficulty gate). Built via extract_tre.py + keying.
+    "bpsc-tre": {
+        "label": "BPSC TRE GS (Teacher)", "exam": "BPSC TRE", "subject": "General Studies", "kw": "gs",
+        "match": ["bpsc tre", "tre", "teacher recruitment", "bpsc teacher", "bpsc-tre",
+                  "bihar teacher", "tre gs", "bpsc tre gs"],
+    },
+    # ---- GS Science (Physics / Chemistry / Biology) for govt-job GS — BORROW the CBSE Class 12
+    # real PYQ banks (4435 / 4101 / 3358 real questions, all served from /pool via the CBSE real-serve
+    # gate). Gives the "General Studies — Physics/Chemistry/Biology" column of the One Step note
+    # separate, ≥1000-deep, servable banks (no generation). Same borrow pattern as railway-science.
+    "gs-physics": {
+        "label": "General Science: Physics", "exam": "CBSE Class 12", "subject": "Physics", "kw": "physics",
+        "match": ["gs physics", "general science physics", "gs-physics", "physics gk", "science physics"],
+    },
+    "gs-chemistry": {
+        "label": "General Science: Chemistry", "exam": "CBSE Class 12", "subject": "Chemistry", "kw": "chemistry",
+        "match": ["gs chemistry", "general science chemistry", "gs-chemistry", "chemistry gk", "science chemistry"],
+    },
+    "gs-biology": {
+        "label": "General Science: Biology", "exam": "CBSE Class 12", "subject": "Biology", "kw": "biology",
+        "match": ["gs biology", "general science biology", "gs-biology", "biology gk", "science biology"],
+    },
     # ---- Railway (RRB — NTPC / Group D / ALP) — same generator-served pattern as SSC; General
     # Science borrows the real CBSE Class 10 Science bank. Backend taxonomies already registered.
     "railway-reasoning": {
@@ -256,6 +280,10 @@ GOALS = {
         "label": "BPSC (Bihar PSC)", "tag": "Bihar · Civil Services", "emoji": "🏛️",
         "subjects": ["bpsc-gs"],
     },
+    "bpsc-tre": {
+        "label": "BPSC TRE (Teacher)", "tag": "Bihar · Teacher Recruitment", "emoji": "🧑‍🏫",
+        "subjects": ["bpsc-tre", "gs-physics", "gs-chemistry", "gs-biology"],
+    },
     "railway": {
         "label": "Railway (RRB)", "tag": "Govt job · Railway", "emoji": "🚂",
         "subjects": ["railway-reasoning", "railway-quant", "railway-gk", "railway-english",
@@ -293,6 +321,8 @@ DIFFICULTY_LADDER = {
     "UPSC Civil Services (Preliminary)": {"easy": "3", "mix": "3", "hard": "3"},
     # SSC CGL (generated Reasoning + Quant, same compute-the-answer pool as Banking) — match the bands.
     "SSC CGL": {"easy": "2", "mix": "2-3", "hard": "3"},
+    # BPSC TRE — real Teacher-Recruitment PYQs served from /pool (same real-serve gate as BPSC; bands nominal).
+    "BPSC TRE": {"easy": "3", "mix": "3", "hard": "3"},
     # BPSC — real Prelims GS PYQs served from /pool (chapter=NULL, difficulty bypassed via storage
     # skip_difficulty); the band values are nominal (serving ignores them for BPSC, like UPSC).
     "BPSC": {"easy": "2", "mix": "3", "hard": "3"},
