@@ -2210,7 +2210,8 @@ def teacher_chapters(request: Request, subject: str = "jee-physics", db: Session
 # Exams offered to TEACHERS = the SAME coverage students get. Was hardcoded to JEE/NEET/Banking only,
 # so teachers couldn't make Class 10/12/Commerce/UPSC tests (institute feedback 2026-07-29). Order
 # mirrors the student exam picker.
-_TEACHER_GOALS = ["jee-advanced", "neet", "cbse-10", "cbse-12", "cbse-12-commerce", "banking", "upsc"]
+_TEACHER_GOALS = ["jee-advanced", "neet", "cbse-10", "cbse-12", "cbse-12-commerce", "banking",
+                  "upsc", "bpsc", "ssc-cgl", "railway"]
 _KIDS_TEACHER_GOALS = ["class3"]   # kids-education.trigunai.com teachers create Grade-3 tests
 
 
