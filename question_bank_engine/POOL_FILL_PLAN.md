@@ -49,10 +49,17 @@ P/C/B). LMS-only change; verified all three serve live from `/examgen/pool`. **P
 ≥1000 servable each.** (Can be attached to more govt goals — SSC/BPSC — if wanted.)
 
 ### TIER 3 — SOURCE + TAG (real work, ~weeks)
-- **GS-Social (Polity/Geo/History/Economics):** we hold ~977 real GS Qs (UPSC + BPSC + BPSC TRE) but they're
-  a single "General Studies" bucket. Run a **tagging pass** (the same cross-source/agent method) to split them
-  into the 4 social dimensions, THEN source more real PYQs (more BPSC/TRE editions, UPSC years) to reach 1000
-  EACH. The BPSC TRE keying pipeline is the reusable engine here.
+- **GS-Social (Polity/Geo/History/Economics) — TAGGING DONE 2026-08-14; depth is the gap.** Classified the
+  977-row "General Studies" bucket (`classify_gs_social.py`) and stored the dimension as `concept` metadata on
+  the live bank (non-destructive — serving ignores concept; UPSC rows kept their existing finer concepts).
+  **Honest reality the tagging exposed:** the whole GS bucket is a MIX (a lot of it is Static-GK/Current-Affairs
+  ~412, plus Science ~48 and some mis-filed TRE reasoning/quant), and the pure GS-Social content is only
+  **~318 real questions total** — Geography ~103, Polity ~89, Economics ~64, History ~62. **So 1000 per
+  social dimension is NOT reachable by tagging — it needs ~8-10× more real sourcing.** The tags are the
+  foundation; they were NOT exposed as separate serving subjects yet (each is ~60-100 deep, and splitting the
+  live combined-GS serving is cross-lane with the BPSC ingest session + a worse UX than one combined GS pool
+  at this depth). **Path to 1000/dimension:** key many more real papers (remaining ~149 TRE editions + more
+  BPSC/UPSC years) via the pipeline, tag on ingest, then expose the dimensions once each has real depth.
 - **BPSC TRE → thousands:** we keyed 3 of 152 downloaded papers. Running the pipeline over the rest yields
   several thousand more real Bihar-GK/GS/Science/Maths Qs (feeds Static-GK + GS-Social + TRE line).
 - **Current Affairs:** cannot be generated (time-sensitive). Realistic target = a **rolling ~200-300 curated
