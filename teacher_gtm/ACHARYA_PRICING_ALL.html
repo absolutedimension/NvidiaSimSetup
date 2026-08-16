@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acharya — Pricing for Everyone</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#FDF6EC; --ink:#2B2113; --muted:#8a7d63; --line:rgba(120,90,40,.16);
+    --orange:#C2591F; --orange-d:#A8481A; --gold:#E8C66B; --green:#5fae7e;
+    --card:#FFFFFF; --shadow:0 14px 40px rgba(60,40,10,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--cream);color:var(--ink);font-family:'Figtree',system-ui,-apple-system,sans-serif;
+       background-image:radial-gradient(900px 460px at 50% -160px,rgba(194,89,31,.10),transparent 70%);
+       -webkit-font-smoothing:antialiased;padding:0 0 56px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:36px 22px 0;}
+  /* header */
+  .top{display:flex;align-items:center;gap:11px;margin-bottom:6px;}
+  .logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(150deg,var(--orange),#7a2f10);
+        display:grid;place-items:center;color:#fff;font-family:'Bricolage Grotesque';font-weight:800;font-size:19px;}
+  .top b{font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;letter-spacing:-.01em;}
+  .top .dot{color:var(--muted);font-size:14px;}
+  /* hero */
+  .hero{text-align:center;padding:22px 0 8px;}
+  .hero h1{font-family:'Bricolage Grotesque',Georgia,serif;font-weight:800;font-size:44px;line-height:1.08;
+           letter-spacing:-.02em;margin-bottom:12px;}
+  .hero h1 span{color:var(--orange);}
+  .hero p{font-size:17.5px;color:var(--muted);max-width:640px;margin:0 auto;line-height:1.5;}
+  .hero p b{color:var(--ink);}
+  .pricestrip{margin:20px auto 0;display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;
+        background:#fff;border:1px solid rgba(194,89,31,.3);border-radius:999px;padding:11px 22px;box-shadow:var(--shadow);font-size:16px;color:var(--ink);}
+  .pricestrip b{font-family:'Bricolage Grotesque';color:var(--orange);font-size:19px;}
+  .pricestrip .sep{color:var(--line);}
+  .pricestrip .one{width:100%;text-align:center;font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
+  @media(max-width:560px){.pricestrip .sep{display:none;}}
+  /* audience row */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;align-items:stretch;}
+  @media(max-width:880px){.grid{grid-template-columns:1fr;}}
+  .col{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 22px;
+       box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;}
+  .col.flag{border-color:rgba(194,89,31,.5);box-shadow:0 18px 46px rgba(194,89,31,.16);}
+  .badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;
+         background:linear-gradient(180deg,var(--orange),var(--orange-d));color:#fff;font-size:11.5px;
+         font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 13px;border-radius:999px;}
+  .who{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:4px;}
+  .col h2{font-family:'Bricolage Grotesque';font-weight:700;font-size:22px;letter-spacing:-.01em;margin-bottom:3px;}
+  .sub{color:var(--muted);font-size:13.5px;margin-bottom:16px;line-height:1.4;}
+  .tiers{display:flex;flex-direction:column;gap:11px;margin-bottom:6px;}
+  .tier{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#FBF3E8;}
+  .tier.lead{background:rgba(194,89,31,.06);border-color:rgba(194,89,31,.28);}
+  .tier .nm{font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:7px;}
+  .tier .nm .pill{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;
+        background:rgba(95,174,126,.16);color:#3f8a5c;padding:2px 7px;border-radius:999px;}
+  .tier .pr{font-family:'Bricolage Grotesque';font-weight:700;color:var(--orange);font-size:24px;line-height:1.15;margin-top:3px;}
+  .tier .pr small{font-family:'Figtree';font-size:12.5px;color:var(--muted);font-weight:500;}
+  .tier .d{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4;}
+  .feat{list-style:none;margin:14px 0 0;padding:0;}
+  .feat li{position:relative;padding:6px 0 6px 22px;font-size:13.3px;color:#463620;line-height:1.35;}
+  .feat li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800;}
+  .featline{margin:14px 0 0;font-size:12.6px;line-height:1.72;color:#463620;}
+  .featline .lab{display:block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--orange);margin-bottom:5px;}
+  .featline .lab:before{content:"✓ ";}
+  .featline b{color:var(--ink);font-weight:700;}
+  .colcta{margin-top:auto;padding-top:16px;}
+  .colcta a{display:block;text-align:center;text-decoration:none;border-radius:999px;padding:12px;font-weight:700;font-size:14.5px;}
+  .colcta a.solid{background:linear-gradient(180deg,#D4703A,var(--orange-d));color:#fff;}
+  .colcta a.ghost{border:1px solid rgba(194,89,31,.45);color:var(--orange);}
+  /* white-label detail strip */
+  .wl{margin-top:16px;background:linear-gradient(135deg,#1c1206,#3a2510);border-radius:18px;
+      padding:26px 26px;color:#F3E8D2;box-shadow:0 18px 46px rgba(40,25,5,.28);}
+  .wl h3{font-family:'Bricolage Grotesque';font-weight:700;font-size:22px;color:#fff;margin-bottom:4px;}
+  .wl .wsub{color:#c9b48c;font-size:14px;margin-bottom:18px;}
+  .wlgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:880px){.wlgrid{grid-template-columns:repeat(2,1fr);}}
+  .wlbox{background:rgba(255,255,255,.05);border:1px solid rgba(232,198,107,.18);border-radius:13px;padding:15px 16px;}
+  .wlbox .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:#c9b48c;font-weight:600;}
+  .wlbox .v{font-family:'Bricolage Grotesque';font-weight:700;font-size:23px;color:var(--gold);margin-top:5px;line-height:1.1;}
+  .wlbox .v small{font-family:'Figtree';font-size:12px;color:#c9b48c;font-weight:500;display:block;margin-top:3px;}
+  .wlnote{margin-top:16px;font-size:13px;color:#c9b48c;line-height:1.5;}
+  .wlnote b{color:var(--gold);}
+  /* footer */
+  .foot{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
+        border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px;}
+  .foot .cta2{background:linear-gradient(180deg,#D4703A,var(--orange-d));color:#fff;text-decoration:none;
+        padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;}
+  .partner{margin-top:14px;font-size:12.5px;color:var(--muted);text-align:center;}
+  .partner b{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="logo">अ</span>
+    <b>Acharya</b>
+    <span class="dot">· by TrigunAI</span>
+  </div>
+
+  <div class="hero">
+    <h1>One engine. <span>Every learner.</span></h1>
+    <p>Unlimited <b>real-pattern exam papers</b> that find each student's weak spots — for
+       students, teachers, and full institutes under their own brand.</p>
+    <div class="pricestrip">
+      <span><b>₹120</b> / month · Foundation &amp; Board</span>
+      <span class="sep">·</span>
+      <span><b>₹250</b> / month · JEE / NEET / Senior</span>
+      <span class="one">one simple price — for students, teachers &amp; institutes</span>
+    </div>
+  </div>
+
+  <!-- THREE AUDIENCES -->
+  <div class="grid">
+
+    <!-- STUDENTS -->
+    <div class="col">
+      <div class="who">For Students</div>
+      <h2>Practise till your exam</h2>
+      <div class="sub">JEE · NEET · Boards — your own AI test coach.</div>
+      <div class="tiers">
+        <div class="tier lead">
+          <div class="nm">Foundation / Board</div>
+          <div class="pr">₹120 <small>per month</small></div>
+        </div>
+        <div class="tier lead">
+          <div class="nm">JEE / NEET / Senior</div>
+          <div class="pr">₹250 <small>per month</small></div>
+        </div>
+        <div class="tier">
+          <div class="nm">Free</div>
+          <div class="pr">₹0</div>
+          <div class="d">A few tests a month to feel the quality first.</div>
+        </div>
+      </div>
+      <div class="featline"><span class="lab">Everything you get</span>
+        Unlimited real-pattern tests · Real exam-pattern diagrams · Full mock papers (timed exam mode) ·
+        Smart Practice that adapts to you · Instant weak-topic (SWOT) report · Per-concept mastery tracking ·
+        AI "Understand" tutor — step-by-step · Chat-to-test · Saved test history · No-repeat questions · All chapters ·
+        Hindi + English · WhatsApp + web · 14-day free trial
+      </div>
+      <div class="colcta"><a class="ghost" href="https://acharya.trigunai.com/exam-prep">Start free →</a></div>
+    </div>
+
+    <!-- TEACHERS -->
+    <div class="col flag">
+      <div class="badge">Most popular</div>
+      <div class="who">For Teachers &amp; Coaching</div>
+      <h2>Papers for your batches</h2>
+      <div class="sub">Under your name. Any number of students — no setup fee.</div>
+      <div class="tiers">
+        <div class="tier lead">
+          <div class="nm">Foundation / Board</div>
+          <div class="pr">₹120 <small>per student / month</small></div>
+        </div>
+        <div class="tier lead">
+          <div class="nm">JEE / NEET / Senior</div>
+          <div class="pr">₹250 <small>per student / month</small></div>
+        </div>
+      </div>
+      <div class="featline"><span class="lab">Everything you get</span>
+        Create real JEE / NEET / Board tests · Unlimited papers under your name · Share one link — students take with no signup ·
+        Printable paper + answer key + worked solutions · Live weak-topic dashboard · Class analytics + "topics to teach next" ·
+        Every student gets their own practice · Assign tests to your class · Batch invite links · Chat-to-create · Scoped to your syllabus ·
+        Hindi + English · 14 days free · <b>no setup fee</b>
+      </div>
+      <div class="colcta"><a class="solid" href="https://acharya.trigunai.com/teacher">Try free →</a></div>
+    </div>
+
+    <!-- INSTITUTES / WHITE-LABEL -->
+    <div class="col">
+      <div class="who">For Institutes — Custom</div>
+      <h2>Your own branded app</h2>
+      <div class="sub">The same per-student price + your own white-label app.</div>
+      <div class="tiers">
+        <div class="tier lead">
+          <div class="nm">Custom white-label app</div>
+          <div class="pr">₹55,000 <small>one-time</small></div>
+          <div class="d">Your logo &amp; identity across your own mobile + web app. Live in 2 working days. <b>Institutes only — teachers &amp; coaching don't pay this.</b></div>
+        </div>
+        <div class="tier">
+          <div class="nm">Then, same per student / month</div>
+          <div class="pr">₹120 <small>Foundation / Board</small></div>
+          <div class="pr" style="margin-top:6px;">₹250 <small>JEE / NEET / Senior</small></div>
+        </div>
+      </div>
+      <div class="featline"><span class="lab">Everything in Teachers, plus</span>
+        Your own branded mobile + web app · Your logo, colours &amp; identity · Dedicated instance, up to 2,000 students ·
+        Multi-teacher / multi-branch · Pilot on your own live test before you pay · You own your data — never resold ·
+        Live in 2 working days · Priority support
+      </div>
+      <div class="colcta"><a class="ghost" href="https://wa.me/919135255107?text=I%20want%20a%20white-label%20Acharya%20for%20my%20institute">Talk to us →</a></div>
+    </div>
+
+  </div>
+
+  <!-- WHITE-LABEL DETAIL STRIP -->
+  <div class="wl">
+    <h3>What a white-label institute gets</h3>
+    <div class="wsub">Your brand on the front. Our engine behind it. Launched in 2 working days.</div>
+    <div class="wlgrid">
+      <div class="wlbox"><div class="k">Custom app</div><div class="v">₹55,000<small>one-time · your brand</small></div></div>
+      <div class="wlbox"><div class="k">Foundation / Board</div><div class="v">₹120<small>per student / month</small></div></div>
+      <div class="wlbox"><div class="k">JEE / NEET / Senior</div><div class="v">₹250<small>per student / month</small></div></div>
+      <div class="wlbox"><div class="k">Capacity</div><div class="v">2,000<small>students, dedicated instance</small></div></div>
+    </div>
+    <div class="wlnote">✓ <b>Pilot before you pay</b> — run one live test on your own students first &nbsp;·&nbsp;
+      ✓ <b>Teachers &amp; coaching don't pay the setup fee</b> &nbsp;·&nbsp; ✓ No lock-in, cancel anytime &nbsp;·&nbsp; ✓ Your data is yours — never resold</div>
+  </div>
+
+  <div class="partner">
+    Run a network of institutes? Ask about the <b>Acharya Partner Program</b> — resell under your brand at your own price.
+  </div>
+
+  <div class="foot">
+    <div>© TRIGUNAI INNOVATIONS PRIVATE LIMITED &nbsp;·&nbsp; acharya.trigunai.com &nbsp;·&nbsp; All prices exclusive of GST.</div>
+    <a class="cta2" href="https://acharya.trigunai.com">acharya.trigunai.com →</a>
+  </div>
+</div>
+</body>
+</html>

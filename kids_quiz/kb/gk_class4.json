@@ -1,0 +1,507 @@
+{
+  "subject": "GK",
+  "class": 4,
+  "categories": [
+    {
+      "name": "fruits",
+      "label": "a fruit",
+      "chapter": "Science and Nature",
+      "members": [
+        "apple",
+        "banana",
+        "mango",
+        "orange",
+        "grapes",
+        "guava",
+        "pineapple",
+        "papaya"
+      ]
+    },
+    {
+      "name": "wild_animals",
+      "label": "a wild animal",
+      "chapter": "Science and Nature",
+      "members": [
+        "tiger",
+        "lion",
+        "elephant",
+        "zebra",
+        "giraffe",
+        "deer",
+        "bear",
+        "fox"
+      ]
+    },
+    {
+      "name": "birds",
+      "label": "a bird",
+      "chapter": "Science and Nature",
+      "members": [
+        "parrot",
+        "peacock",
+        "sparrow",
+        "crow",
+        "eagle",
+        "owl",
+        "pigeon",
+        "ostrich"
+      ]
+    },
+    {
+      "name": "colours",
+      "label": "a colour",
+      "chapter": "World Around Us",
+      "members": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "pink",
+        "brown",
+        "black",
+        "white"
+      ]
+    },
+    {
+      "name": "vehicles",
+      "label": "a vehicle",
+      "chapter": "World Around Us",
+      "members": [
+        "car",
+        "bus",
+        "truck",
+        "bicycle",
+        "train",
+        "aeroplane",
+        "motorcycle",
+        "scooter"
+      ]
+    },
+    {
+      "name": "planets",
+      "label": "a planet",
+      "chapter": "Science and Nature",
+      "members": [
+        "Mercury",
+        "Venus",
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptune"
+      ]
+    }
+  ],
+  "groupings": [
+    {
+      "name": "living_nonliving",
+      "chapter": "Science and Nature",
+      "sort_instruction": "Sort each thing into living or non-living.",
+      "tf_template": "{art} {item} is a {bin}.",
+      "bins": {
+        "living thing": [
+          "dog",
+          "tree",
+          "fish",
+          "cow",
+          "plant",
+          "butterfly"
+        ],
+        "non-living thing": [
+          "rock",
+          "chair",
+          "car",
+          "book",
+          "spoon",
+          "cup"
+        ]
+      }
+    },
+    {
+      "name": "wild_domestic",
+      "chapter": "Science and Nature",
+      "sort_instruction": "Sort each animal into wild or domestic.",
+      "tf_template": "{art} {item} is a {bin}.",
+      "bins": {
+        "wild animal": [
+          "tiger",
+          "lion",
+          "elephant",
+          "zebra",
+          "fox",
+          "deer"
+        ],
+        "domestic animal": [
+          "cow",
+          "dog",
+          "cat",
+          "goat",
+          "horse",
+          "buffalo"
+        ]
+      }
+    },
+    {
+      "name": "land_water_air_vehicles",
+      "chapter": "World Around Us",
+      "sort_instruction": "Sort each vehicle by where it travels: land, water or air.",
+      "tf_template": "{art} {item} travels by {bin}.",
+      "bins": {
+        "land": [
+          "car",
+          "bus",
+          "truck",
+          "train"
+        ],
+        "water": [
+          "boat",
+          "ship",
+          "submarine"
+        ],
+        "air": [
+          "aeroplane",
+          "helicopter",
+          "rocket"
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "name": "india_national_symbols",
+      "chapter": "India and Current Affairs",
+      "a_label": "national symbol",
+      "b_label": "symbol",
+      "tf_template": "India's {a} is the {b}.",
+      "cloze_template": "India's {a} is the ___.",
+      "match_instruction": "Match each national symbol of India to what it is.",
+      "invert": false,
+      "pairs": [
+        [
+          "national animal",
+          "Tiger"
+        ],
+        [
+          "national bird",
+          "Peacock"
+        ],
+        [
+          "national flower",
+          "Lotus"
+        ],
+        [
+          "national fruit",
+          "Mango"
+        ],
+        [
+          "national tree",
+          "Banyan"
+        ],
+        [
+          "national river",
+          "Ganga"
+        ],
+        [
+          "national aquatic animal",
+          "Ganges river dolphin"
+        ],
+        [
+          "national currency",
+          "Rupee"
+        ]
+      ]
+    },
+    {
+      "name": "country_capitals",
+      "chapter": "World Around Us",
+      "a_label": "country",
+      "b_label": "capital",
+      "tf_template": "The capital of {a} is {b}.",
+      "cloze_template": "The capital of {a} is ___.",
+      "match_instruction": "Match each country to its capital city.",
+      "invert": false,
+      "pairs": [
+        [
+          "India",
+          "New Delhi"
+        ],
+        [
+          "Japan",
+          "Tokyo"
+        ],
+        [
+          "France",
+          "Paris"
+        ],
+        [
+          "China",
+          "Beijing"
+        ],
+        [
+          "United Kingdom",
+          "London"
+        ],
+        [
+          "Australia",
+          "Canberra"
+        ],
+        [
+          "Russia",
+          "Moscow"
+        ],
+        [
+          "Nepal",
+          "Kathmandu"
+        ],
+        [
+          "Egypt",
+          "Cairo"
+        ],
+        [
+          "Italy",
+          "Rome"
+        ]
+      ]
+    },
+    {
+      "name": "famous_person_field",
+      "chapter": "India and Current Affairs",
+      "a_label": "famous person",
+      "b_label": "field",
+      "tf_template": "{a} is famous for {b}.",
+      "cloze_template": "{a} is famous for ___.",
+      "match_instruction": "Match each famous person to what they are famous for.",
+      "invert": false,
+      "pairs": [
+        [
+          "Sachin Tendulkar",
+          "cricket"
+        ],
+        [
+          "P. V. Sindhu",
+          "badminton"
+        ],
+        [
+          "Viswanathan Anand",
+          "chess"
+        ],
+        [
+          "Mary Kom",
+          "boxing"
+        ],
+        [
+          "Kalpana Chawla",
+          "space travel"
+        ],
+        [
+          "Rabindranath Tagore",
+          "poetry"
+        ],
+        [
+          "A. P. J. Abdul Kalam",
+          "science"
+        ],
+        [
+          "Mahatma Gandhi",
+          "India's freedom struggle"
+        ]
+      ]
+    },
+    {
+      "name": "animal_home",
+      "chapter": "Science and Nature",
+      "a_label": "animal",
+      "b_label": "home",
+      "tf_template": "A {a} lives in a {b}.",
+      "cloze_template": "A {a} lives in a ___.",
+      "match_instruction": "Match each animal to the home it lives in.",
+      "invert": false,
+      "pairs": [
+        [
+          "lion",
+          "den"
+        ],
+        [
+          "bird",
+          "nest"
+        ],
+        [
+          "bee",
+          "hive"
+        ],
+        [
+          "horse",
+          "stable"
+        ],
+        [
+          "dog",
+          "kennel"
+        ],
+        [
+          "cow",
+          "shed"
+        ],
+        [
+          "spider",
+          "web"
+        ],
+        [
+          "rabbit",
+          "burrow"
+        ],
+        [
+          "bear",
+          "cave"
+        ]
+      ]
+    },
+    {
+      "name": "animal_baby",
+      "chapter": "Science and Nature",
+      "a_label": "animal",
+      "b_label": "baby",
+      "tf_template": "The baby of a {a} is called a {b}.",
+      "cloze_template": "The baby of a {a} is called a ___.",
+      "match_instruction": "Match each animal to the name of its baby.",
+      "invert": false,
+      "pairs": [
+        [
+          "cow",
+          "calf"
+        ],
+        [
+          "dog",
+          "puppy"
+        ],
+        [
+          "cat",
+          "kitten"
+        ],
+        [
+          "horse",
+          "foal"
+        ],
+        [
+          "lion",
+          "cub"
+        ],
+        [
+          "hen",
+          "chick"
+        ],
+        [
+          "sheep",
+          "lamb"
+        ],
+        [
+          "frog",
+          "tadpole"
+        ],
+        [
+          "kangaroo",
+          "joey"
+        ]
+      ]
+    },
+    {
+      "name": "animal_sound",
+      "chapter": "Science and Nature",
+      "a_label": "animal",
+      "b_label": "sound",
+      "tf_template": "A {a} {b}.",
+      "cloze_template": "A {a} ___.",
+      "match_instruction": "Match each animal to the sound it makes.",
+      "invert": false,
+      "pairs": [
+        [
+          "lion",
+          "roars"
+        ],
+        [
+          "dog",
+          "barks"
+        ],
+        [
+          "cat",
+          "meows"
+        ],
+        [
+          "cow",
+          "moos"
+        ],
+        [
+          "horse",
+          "neighs"
+        ],
+        [
+          "snake",
+          "hisses"
+        ],
+        [
+          "duck",
+          "quacks"
+        ],
+        [
+          "frog",
+          "croaks"
+        ],
+        [
+          "bee",
+          "buzzes"
+        ]
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "statement": "The Sun is a star at the centre of our solar system.",
+      "chapter": "Science and Nature"
+    },
+    {
+      "statement": "The Earth is the third planet from the Sun.",
+      "chapter": "Science and Nature"
+    },
+    {
+      "statement": "The Earth takes about 365 days, or one year, to travel once around the Sun.",
+      "chapter": "Science and Nature"
+    },
+    {
+      "statement": "The Moon is the Earth's only natural satellite.",
+      "chapter": "Science and Nature"
+    },
+    {
+      "statement": "Jupiter is the largest planet in our solar system.",
+      "chapter": "Science and Nature"
+    },
+    {
+      "statement": "Mercury is the closest planet to the Sun.",
+      "chapter": "Science and Nature"
+    },
+    {
+      "statement": "Water covers about three-fourths of the Earth's surface.",
+      "chapter": "World Around Us"
+    },
+    {
+      "statement": "The Earth has seven continents and five oceans.",
+      "chapter": "World Around Us"
+    },
+    {
+      "statement": "Mount Everest is the highest mountain in the world.",
+      "chapter": "World Around Us"
+    },
+    {
+      "statement": "New Delhi is the capital of India.",
+      "chapter": "India and Current Affairs"
+    },
+    {
+      "statement": "The Ganga is the longest river in India.",
+      "chapter": "India and Current Affairs"
+    },
+    {
+      "statement": "Green plants make their own food using sunlight in a process called photosynthesis.",
+      "chapter": "Science and Nature"
+    }
+  ]
+}

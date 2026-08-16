@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "NEET · Biology",
+ "subject": "Biology",
+ "chapter": "Biotechnology: Principles and Processes",
+ "topic_line": "Real NEET questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Biology. Biotechnology: Principles and Processes. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Biotechnology: Principles and Processes? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "Which of the following are fused in somatic hybridization involving two varieties of plants? (1) Protoplasts (2) Pollens (3) Callus (4) Somatic embryos",
+   "options": [
+    "Protoplasts",
+    "Pollens",
+    "Callus",
+    "Somatic embryos"
+   ],
+   "answer": 0,
+   "explain": "In somatic hybridization, the process involves the fusion of protoplasts, which are the cells without cell walls obtaine",
+   "voice_q": "Which of the following are fused in somatic hybridization involving two varieties of plants? (1) Protoplasts (2) Pollens (3) Callus (4) Somatic embryos Five seconds... think!",
+   "voice_a": "The answer is A — Protoplasts. In somatic hybridization, the process involves the fusion of protoplasts, which are the cells without cell walls obtaine"
+  },
+  {
+   "type": "mcq",
+   "q": "Insertion of a foreign DNA at BamHI site in an E. coli cloning vector pBR322 results in the loss of antibiotic resistance towards :",
+   "options": [
+    "Ampicillin and tetracycline",
+    "Ampicillin",
+    "Tetracycline",
+    "Gentamycin"
+   ],
+   "answer": 2,
+   "explain": "To solve this problem, we need to understand the structure of the pBR322 plasmid and the role of the BamHI restriction s",
+   "voice_q": "Insertion of a foreign DNA at BamHI site in an E. coli cloning vector pBR322 results in the loss of antibiotic resistance towards : Five seconds... think!",
+   "voice_a": "The answer is C — Tetracycline. To solve this problem, we need to understand the structure of the pBR322 plasmid and the role of the BamHI restriction s"
+  },
+  {
+   "type": "mcq",
+   "q": "Polymerase chain reaction (PCR) amplifies DNA following the equation.",
+   "options": [
+    "N²",
+    "2ⁿ",
+    "2n + 1",
+    "2N²"
+   ],
+   "answer": 1,
+   "explain": "The Polymerase Chain Reaction (PCR) is a technique used to amplify DNA.",
+   "voice_q": "Polymerase chain reaction (PCR) amplifies DNA following the equation. Five seconds... think!",
+   "voice_a": "The answer is B — 2ⁿ. The Polymerase Chain Reaction (PCR) is a technique used to amplify DNA."
+  }
+ ]
+}

@@ -472,3 +472,45 @@ class KidsSkillState(Base):
     n_correct: Mapped[int] = mapped_column(Integer, default=0)
     misconceptions: Mapped[dict] = mapped_column(JSON, default=dict)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=now)
+
+
+# ---------------------------------------------------------------------------
+# ACHARYA UNIVERSITY — the self-taught "learn anything" surface (/university).
+# The Advisor AI GENERATES the curriculum; the course is built async, unit by unit
+# (outline first, then each unit's depth), so it "need not be instant". A UniCourse is
+# one learner's generated degree; UniUnit rows are its units. Separate from the exam
+# product (ConceptStat/TopicAttempt) and the old course LMS (Module/Lesson).
+# ---------------------------------------------------------------------------
+class UniCourse(Base):
+    """A learner's AI-generated course (their personal 'degree' in a topic)."""
+    __tablename__ = "uni_courses"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.id"), index=True)
+    goal: Mapped[str] = mapped_column(String(240))                 # what they typed
+    title: Mapped[str] = mapped_column(String(160), default="")
+    destination: Mapped[str] = mapped_column(Text, default="")     # what they can DO after
+    baseline: Mapped[str] = mapped_column(Text, default="")
+    why: Mapped[str] = mapped_column(Text, default="")
+    cut_list: Mapped[list] = mapped_column(JSON, default=list)     # things to ignore for now
+    interview: Mapped[list] = mapped_column(JSON, default=list)    # advisor intake transcript
+    # building_outline → building_units → ready ; error on failure
+    status: Mapped[str] = mapped_column(String(20), default="building_outline", index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)
+
+
+class UniUnit(Base):
+    """One unit of a UniCourse. concepts/milestone are filled by a per-unit async job."""
+    __tablename__ = "uni_units"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    course_id: Mapped[int] = mapped_column(ForeignKey("uni_courses.id"), index=True)
+    idx: Mapped[int] = mapped_column(Integer, default=0)           # 0-based order
+    title: Mapped[str] = mapped_column(String(200), default="")
+    summary: Mapped[str] = mapped_column(Text, default="")
+    objectives: Mapped[list] = mapped_column(JSON, default=list)
+    concepts: Mapped[list] = mapped_column(JSON, default=list)     # [{key,name,recall,answer,mastery}]
+    sources: Mapped[list] = mapped_column(JSON, default=list)      # Librarian (Phase 3)
+    milestone: Mapped[dict] = mapped_column(JSON, default=dict)    # {prompt, rubric[]}
+    session: Mapped[list] = mapped_column(JSON, default=list)      # tutor chat history
+    mastery: Mapped[float] = mapped_column(Float, default=0.0)
+    # locked (not yet reachable) | building (job running) | active | done
+    status: Mapped[str] = mapped_column(String(12), default="locked", index=True)

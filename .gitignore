@@ -91,3 +91,6 @@ youtube_series/token_*.json
 marketing/.env
 marketing/publish_state.json
 marketing/lists/*.csv
+
+# Employee training — private allow-list with real phone numbers (never commit)
+employee_training/employees.json

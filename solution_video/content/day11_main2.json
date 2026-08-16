@@ -1,0 +1,47 @@
+{
+ "title": "Common AP Terms",
+ "q_prose": "Two arithmetic progressions are 3, 7, 11, 15, up to 403 and 2, 5, 8, 11, up to 404. Find the sum of their common terms.",
+ "given_eq": "$S=\\frac{n}{2}(a+l)$",
+ "q_reminder": "Find the sum of all terms common to both progressions.",
+ "q_narration": "We have two arithmetic progressions, one starting at three with last term four hundred three, and the other starting at two with last term four hundred four. We need the sum of their common terms. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Write term forms",
+   "eqs": [
+    "$d_1=7-3=4, d_2=5-2=3$",
+    "$T_1=3+4k, T_2=2+3l$"
+   ],
+   "narration": "The first progression has common difference four, so its terms are three plus four k. The second has common difference three, so its terms are two plus three l."
+  },
+  {
+   "label": "Step 2 — First common term",
+   "eqs": [
+    "$3+4k=2+3l$",
+    "$k=2, l=3 \\Rightarrow T=11$"
+   ],
+   "narration": "Equating the two forms, we find one integer solution as k equals two and l equals three. This gives the first common term as eleven."
+  },
+  {
+   "label": "Step 3 — Common-term AP",
+   "eqs": [
+    "$d=4\\times3=12$",
+    "$C_m=11+12m$"
+   ],
+   "narration": "Since the two common differences, four and three, are coprime, common terms repeat every twelve. So the common terms form a new arithmetic progression starting at eleven with common difference twelve."
+  },
+  {
+   "label": "Step 4 — Count and sum",
+   "eqs": [
+    "$11+12\\times32=395, 11+12\\times33=407$",
+    "$S=\\frac{33}{2}(11+395)=33\\times203=6699$"
+   ],
+   "narration": "The term for m equals thirty two is three hundred ninety five, but the next term is four hundred seven, which is too large. So there are thirty three common terms, and their sum is six thousand six hundred ninety nine."
+  }
+ ],
+ "answer_eq": "$S=6699$",
+ "answer_label": "Correct option: 6699",
+ "answer_narration": "Therefore, the sum of the common terms is six thousand six hundred ninety nine. For more clear step by step exam solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Main · Mathematics · Sequences And Series",
+ "options": [],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

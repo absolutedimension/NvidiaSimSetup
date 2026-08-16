@@ -23,8 +23,9 @@ from .config import settings
 from .db import get_db
 from .emailer import send_magic_link
 from .models import (
-    AssessmentItem, Assignment, AssignmentCompletion, ClassSitting, ClassTest, CompSession, ConceptStat, CourseRequest, GenJob, LearnerFact, Lesson, LessonProgress, LearningEvent, MockPaper, Module, PaperAttempt, SeenQuestion, Student, StudentTopic, TaskCompletion, TeacherInvite, TopicAttempt, WorkbookTask, now,
+    AssessmentItem, Assignment, AssignmentCompletion, ClassSitting, ClassTest, CompSession, ConceptStat, CourseRequest, GenJob, LearnerFact, Lesson, LessonProgress, LearningEvent, MockPaper, Module, PaperAttempt, SeenQuestion, Student, StudentTopic, TaskCompletion, TeacherInvite, TopicAttempt, UniCourse, UniUnit, WorkbookTask, now,
 )
+from . import university
 from .security import consume_magic_token, get_or_create_student, issue_magic_token
 
 BASE = Path(__file__).parent
@@ -343,7 +344,15 @@ def root(request: Request, db: Session = Depends(get_db)):
     return RedirectResponse("/login")
 
 
-@app.get("/login", response_class=HTMLResponse)
+@app.get("/login")
+def login_flip(request: Request):
+    """FLIPPED (2026-08-15): /login is now the Acharya University front door. The classic
+    course-LMS magic-link login lives on at /login/classic (preserved for featured tracks +
+    existing course re-login). This makes the university the default entry, as intended."""
+    return RedirectResponse("/university", status_code=302)
+
+
+@app.get("/login/classic", response_class=HTMLResponse)
 def login_page(request: Request, course: str = "", db: Session = Depends(get_db)):
     outlines: dict[str, list[str]] = {}
     for m in db.query(Module).order_by(Module.course, Module.week).all():
@@ -3026,6 +3035,247 @@ def chat_job(token: str, db: Session = Depends(get_db)):
     if not job:
         return JSONResponse({"ok": False, "error": "unknown job"}, status_code=404)
     return JSONResponse({"ok": True, "status": job.status, "result": job.result or {}})
+
+
+# ==========================================================================
+# ACHARYA UNIVERSITY — /university (self-taught "learn anything" surface).
+# The Advisor AI generates the course; it is built ASYNC, unit by unit (outline
+# first, then each unit's depth), so the course "need not be instant". Additive:
+# does NOT touch /login, /exam-prep, or the teacher flow. See app/university.py.
+# ==========================================================================
+def _uni_units(db, course_id: int) -> list:
+    return db.query(UniUnit).filter_by(course_id=course_id).order_by(UniUnit.idx).all()
+
+
+def _uni_course_state(db, course: UniCourse) -> dict:
+    units = _uni_units(db, course.id)
+    ready = sum(1 for u in units if u.status in ("active", "done"))
+    return {
+        "course_id": course.id, "title": course.title or course.goal, "goal": course.goal,
+        "destination": course.destination, "why": course.why, "baseline": course.baseline,
+        "cut_list": course.cut_list or [], "status": course.status,
+        "units_total": len(units), "units_ready": ready,
+        "units": [{
+            "unit_id": u.id, "idx": u.idx, "title": u.title, "summary": u.summary,
+            "objectives": u.objectives or [], "status": u.status,
+            "mastery": round(u.mastery or 0.0, 2),
+            "concepts_n": len(u.concepts or []),
+        } for u in units],
+    }
+
+
+def _run_uni_outline_job(course_id: int):
+    """Background worker: generate the outline, create unit stubs, then detail each unit IN ORDER
+    (unit 0 flips to 'active' first so the learner can start while later units still build).
+    Own DB session — runs in a thread."""
+    db = _SessionLocal()
+    try:
+        course = db.get(UniCourse, course_id)
+        if not course:
+            return
+        outline = university.advisor_outline(course.goal, course.interview or [])
+        if not outline or not outline.get("units"):
+            course.status = "error"; db.commit(); return
+        course.title = str(outline.get("title", course.goal))[:160]
+        course.destination = str(outline.get("destination", ""))
+        course.baseline = str(outline.get("baseline", ""))
+        course.why = str(outline.get("why", ""))
+        course.cut_list = [str(x) for x in (outline.get("cut_list") or [])]
+        course.status = "building_units"
+        for i, u in enumerate(outline["units"]):
+            db.add(UniUnit(course_id=course.id, idx=i, title=str(u.get("title", f"Unit {i+1}"))[:200],
+                           summary=str(u.get("summary", "")),
+                           objectives=[str(o) for o in (u.get("objectives") or [])],
+                           status="building" if i == 0 else "locked"))
+        db.commit()
+        # Detail units one at a time; each flips to reachable as soon as it's ready.
+        for unit in _uni_units(db, course.id):
+            detail = university.advisor_unit_detail(course.title, {
+                "title": unit.title, "summary": unit.summary, "objectives": unit.objectives})
+            if detail:
+                unit.concepts = detail["concepts"]
+                unit.milestone = detail["milestone"]
+            unit.status = "active" if unit.idx == 0 else "locked"
+            db.commit()
+        course.status = "ready"
+        db.commit()
+    except Exception as exc:
+        try:
+            course = db.get(UniCourse, course_id)
+            if course and course.status != "ready":
+                course.status = "error"; db.commit()
+            print(f"[university] outline job failed: {exc}")
+        except Exception:
+            pass
+    finally:
+        db.close()
+
+
+@app.get("/university", response_class=HTMLResponse)
+def university_home(request: Request, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    courses = []
+    if student:
+        rows = db.query(UniCourse).filter_by(student_id=student.id).order_by(UniCourse.created_at.desc()).all()
+        for c in rows:
+            courses.append(_uni_course_state(db, c))
+    featured = [c for c in COURSES if c.get("ready")][:6]  # existing hand-authored courses
+    return templates.TemplateResponse(request, "university.html",
+                                      {"student": student, "courses": courses, "featured": featured,
+                                       "llm_ok": university.available()})
+
+
+@app.post("/university/start")
+def university_start(request: Request, email: str = Form(...), website: str = Form(""),
+                     db: Session = Depends(get_db)):
+    """Instant email signup for the university (mirrors /exam-prep/start)."""
+    email = email.lower().strip()
+    if _looks_like_bot(email, website):
+        return RedirectResponse("/university", status_code=302)
+    if "@" not in email or "." not in email.split("@")[-1]:
+        return RedirectResponse("/university?e=1", status_code=302)
+    existed = db.query(Student).filter_by(email=email).first() is not None
+    student = get_or_create_student(db, email)
+    _start_trial(db, student)          # non-destructive: never shortens an existing window
+    db.commit()
+    request.session["sid"] = student.id
+    if not existed:
+        notify.notify_admin(f"🎓 New University learner — {student.email}")
+        return RedirectResponse("/university/new", status_code=302)
+    # Returning user signing in via the flipped /login → route to where they actually live, so
+    # exam-prep students (the live paying funnel) aren't stranded in an empty university.
+    if db.query(UniCourse).filter_by(student_id=student.id).first():
+        return RedirectResponse("/university", status_code=302)
+    if db.query(StudentTopic).filter_by(student_id=student.id).first():
+        return RedirectResponse("/exam-prep/dashboard", status_code=302)
+    return RedirectResponse("/university", status_code=302)
+
+
+@app.get("/university/new", response_class=HTMLResponse)
+def university_new(request: Request, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    if not student:
+        return RedirectResponse("/university", status_code=302)
+    return templates.TemplateResponse(request, "university_new.html", {"student": student})
+
+
+@app.post("/api/university/interview")
+async def university_interview(request: Request, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"error": "auth"}, status_code=401)
+    body = await request.json()
+    goal = (body.get("goal") or "").strip()
+    history = body.get("history") or []
+    if not goal:
+        return JSONResponse({"error": "goal required"}, status_code=400)
+    return JSONResponse(university.advisor_interview(goal, history))
+
+
+@app.post("/api/university/create")
+async def university_create(request: Request, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"error": "auth"}, status_code=401)
+    body = await request.json()
+    goal = (body.get("goal") or "").strip()[:240]
+    interview = body.get("history") or []
+    if not goal:
+        return JSONResponse({"error": "goal required"}, status_code=400)
+    course = UniCourse(student_id=student.id, goal=goal, interview=interview, status="building_outline")
+    db.add(course); db.commit()
+    db.add(CourseRequest(topic=goal, email=student.email, source="web", status="building"))
+    db.commit()
+    _threading.Thread(target=_run_uni_outline_job, args=(course.id,), daemon=True).start()
+    return JSONResponse({"course_id": course.id})
+
+
+@app.get("/university/course/{course_id}", response_class=HTMLResponse)
+def university_course(request: Request, course_id: int, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    course = db.get(UniCourse, course_id)
+    if not course or (student and course.student_id != student.id):
+        return RedirectResponse("/university", status_code=302)
+    return templates.TemplateResponse(request, "university_course.html",
+                                      {"student": student, "state": _uni_course_state(db, course)})
+
+
+@app.get("/api/university/course/{course_id}")
+def university_course_state(request: Request, course_id: int, db: Session = Depends(get_db)):
+    course = db.get(UniCourse, course_id)
+    if not course:
+        return JSONResponse({"error": "not found"}, status_code=404)
+    return JSONResponse(_uni_course_state(db, course))
+
+
+@app.get("/university/unit/{course_id}/{unit_id}", response_class=HTMLResponse)
+def university_unit(request: Request, course_id: int, unit_id: int, db: Session = Depends(get_db)):
+    student = current_student(request, db)
+    course = db.get(UniCourse, course_id)
+    unit = db.get(UniUnit, unit_id)
+    if not course or not unit or unit.course_id != course.id:
+        return RedirectResponse("/university", status_code=302)
+    return templates.TemplateResponse(request, "university_unit.html", {
+        "student": student, "course": {"id": course.id, "title": course.title or course.goal},
+        "unit": {"unit_id": unit.id, "title": unit.title, "summary": unit.summary,
+                 "objectives": unit.objectives or [], "concepts": unit.concepts or [],
+                 "milestone": unit.milestone or {}, "status": unit.status,
+                 "mastery": round(unit.mastery or 0.0, 2)},
+        "history": unit.session or []})
+
+
+@app.post("/api/university/tutor")
+async def university_tutor(request: Request, db: Session = Depends(get_db)):
+    body = await request.json()
+    course = db.get(UniCourse, int(body.get("course_id", 0)))
+    unit = db.get(UniUnit, int(body.get("unit_id", 0)))
+    if not course or not unit or unit.course_id != course.id:
+        return JSONResponse({"error": "not found"}, status_code=404)
+    message = (body.get("message") or "").strip()
+    history = list(unit.session or [])
+    if message:
+        history.append({"role": "user", "content": message})
+    reply = university.tutor_step(course.title or course.goal,
+                                  {"title": unit.title, "summary": unit.summary,
+                                   "objectives": unit.objectives or [], "concepts": unit.concepts or []},
+                                  history)
+    if reply is None:
+        return JSONResponse({"error": "tutor unavailable"}, status_code=502)
+    history.append({"role": "assistant", "content": reply})
+    unit.session = history[-24:]
+    db.commit()
+    return JSONResponse({"reply": reply})
+
+
+@app.post("/api/university/recall")
+async def university_recall(request: Request, db: Session = Depends(get_db)):
+    body = await request.json()
+    course = db.get(UniCourse, int(body.get("course_id", 0)))
+    unit = db.get(UniUnit, int(body.get("unit_id", 0)))
+    if not course or not unit or unit.course_id != course.id:
+        return JSONResponse({"error": "not found"}, status_code=404)
+    key = body.get("concept_key")
+    attempt = (body.get("attempt") or "").strip()
+    concepts = list(unit.concepts or [])
+    concept = next((c for c in concepts if c.get("key") == key), None)
+    if not concept:
+        return JSONResponse({"error": "concept not found"}, status_code=404)
+    result = university.grade_recall(concept.get("recall", ""), concept.get("answer", ""), attempt)
+    # code owns the promotion — the model only informs it
+    concept["mastery"] = 1.0 if result["correct"] else max(0.5, concept.get("mastery", 0.0))
+    unit.concepts = concepts
+    solid = sum(1 for c in concepts if c.get("mastery", 0) >= 1.0)
+    unit.mastery = round(solid / max(1, len(concepts)), 2)
+    unlocked = None
+    if unit.mastery >= 1.0 and unit.status != "done":
+        unit.status = "done"
+        nxt = db.query(UniUnit).filter_by(course_id=course.id, idx=unit.idx + 1).first()
+        if nxt and nxt.status == "locked":
+            nxt.status = "active"; unlocked = nxt.id
+    db.commit()
+    return JSONResponse({"correct": result["correct"], "feedback": result["feedback"],
+                         "concept_mastery": concept["mastery"], "unit_mastery": unit.mastery,
+                         "unit_status": unit.status, "unlocked_unit_id": unlocked})
 
 
 # ---- chat step function: stateless, driven by the client-held `state` + the latest input ----

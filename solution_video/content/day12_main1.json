@@ -1,0 +1,52 @@
+{
+ "title": "Box Sliding In Truck",
+ "q_prose": "A 40 kg box is placed 5 m from the open rear end of a truck. The coefficient of friction is 0.15, and the truck starts from rest with acceleration 2 m per s squared. Find the distance covered by the truck when the box falls off.",
+ "given_eq": "$s=ut+\\frac{1}{2}at^2$",
+ "q_reminder": "Find the truck distance before the box reaches the rear end.",
+ "q_narration": "A forty kilogram box is five metres from the open rear end of a truck. The truck accelerates forward at two metre per second squared, and friction coefficient is zero point one five. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Forces in Truck Frame",
+   "eqs": [
+    "$F=ma=40\\times2=80\\mathrm{N}$",
+    "$f=\\mu mg=0.15\\times40\\times10=60\\mathrm{N}$"
+   ],
+   "narration": "In the truck frame, the box feels a backward pseudo force of eighty newton. Friction opposes this relative slipping, so it acts forward with magnitude sixty newton."
+  },
+  {
+   "label": "Step 2 — Relative Acceleration",
+   "eqs": [
+    "$a_r=\\frac{F-f}{m}=\\frac{80-60}{40}$",
+    "$a_r=0.5\\mathrm{m s^{-2}}$"
+   ],
+   "narration": "The net backward force relative to the truck is twenty newton. Dividing by the mass gives a relative acceleration of zero point five metre per second squared toward the rear."
+  },
+  {
+   "label": "Step 3 — Time to Fall Off",
+   "eqs": [
+    "$5=0+\\frac{1}{2}\\times0.5\\times t^2$",
+    "$t^2=20$"
+   ],
+   "narration": "The box has to move five metres relative to the truck to reach the rear end. Its initial relative velocity is zero, so the square of time is twenty."
+  },
+  {
+   "label": "Step 4 — Truck Distance",
+   "eqs": [
+    "$x=0+\\frac{1}{2}\\times2\\times t^2$",
+    "$x=1\\times20=20\\mathrm{m}$"
+   ],
+   "narration": "Now use the truck's own motion from rest. Since time squared is twenty, the truck covers twenty metres before the box falls off."
+  }
+ ],
+ "answer_eq": "$x=20\\mathrm{m}$",
+ "answer_label": "Correct option: A",
+ "answer_narration": "So the distance covered by the truck is twenty metres. Correct option is A. For more such clear step by step learning, join Acharya.",
+ "exam_tag": "NEET · Physics · Laws of Motion",
+ "options": [
+  "20   m",
+  "30   m",
+  "40   m",
+  "50   m"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acharya University</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  :root{ --bg:#0e0f13; --panel:#171922; --panel2:#1e2130; --line:#2a2e3f;
+         --gold:#d9a441; --gold2:#f0c674; --ink:#e8e6e0; --dim:#9a9aa5; --good:#4caf7d; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+  header{padding:14px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+  header h1{font-size:18px;margin:0;font-weight:600;letter-spacing:.3px}
+  header .badge{color:var(--gold2);font-family:Cormorant Garamond,Georgia,serif;font-size:22px}
+  header .sp{flex:1}
+  header a{color:var(--dim);text-decoration:none;font-size:13px;cursor:pointer}
+  .wrap{max-width:900px;margin:0 auto;padding:22px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+  h2{font-size:16px;margin:0 0 10px;color:var(--gold2)}
+  p.dim{color:var(--dim);font-size:14px;line-height:1.5}
+  input,textarea{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+    color:var(--ink);padding:12px 14px;font-size:15px;font-family:inherit}
+  textarea{resize:vertical;min-height:56px}
+  button{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1206;border:0;border-radius:10px;
+    padding:11px 18px;font-weight:600;font-size:14px;cursor:pointer}
+  button.ghost{background:transparent;color:var(--gold2);border:1px solid var(--gold)}
+  button:disabled{opacity:.5;cursor:default}
+  .row{display:flex;gap:10px;align-items:center}
+  .msg{padding:11px 14px;border-radius:12px;margin:8px 0;max-width:88%;line-height:1.55;font-size:14.5px}
+  .msg.a{background:var(--panel2);border:1px solid var(--line)}
+  .msg.u{background:#243019;border:1px solid #37481f;margin-left:auto}
+  .units{display:flex;flex-direction:column;gap:10px}
+  .unit{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;
+    display:flex;gap:12px;align-items:center;transition:border-color .15s}
+  .unit:hover{border-color:var(--gold)}
+  .unit.locked{opacity:.5;cursor:default}
+  .unit .n{width:30px;height:30px;border-radius:50%;background:var(--panel);border:1px solid var(--line);
+    display:grid;place-items:center;font-size:13px;color:var(--gold2);flex:none}
+  .unit.done .n{background:var(--good);color:#06110b;border-color:var(--good)}
+  .unit .t{font-weight:600;font-size:14.5px}
+  .unit .s{color:var(--dim);font-size:12.5px;margin-top:2px}
+  .bar{height:5px;background:var(--panel);border-radius:4px;overflow:hidden;margin-top:6px}
+  .bar>i{display:block;height:100%;background:var(--gold)}
+  .pill{display:inline-block;font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:20px;
+    padding:2px 9px;margin:3px 4px 0 0}
+  .concepts{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+  .concept{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px;margin-bottom:8px}
+  .concept .q{font-size:13.5px;margin-bottom:7px}
+  .concept.solid{border-color:var(--good)}
+  .fb{font-size:12.5px;margin-top:6px;color:var(--dim)}
+  .spin{color:var(--gold2);font-size:13px}
+  .back{color:var(--dim);cursor:pointer;font-size:13px;margin-bottom:12px;display:inline-block}
+  .chip{cursor:pointer}
+  .empty{text-align:center;color:var(--dim);padding:30px 0}
+</style>
+</head>
+<body>
+<header>
+  <span class="badge">आ</span><h1>Acharya University</h1>
+  <span class="sp"></span>
+  <a onclick="go('home')">My Learning</a>
+</header>
+<div class="wrap" id="app"></div>
+
+<script>
+const U = new URLSearchParams(location.search).get('u') || 'deepak';
+let state = { view:'home', goal:'', interview:[], curr:null, unit:null };
+const app = document.getElementById('app');
+const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function tex(el){ if(window.renderMathInElement) renderMathInElement(el,{delimiters:[{left:'$',right:'$',display:false}]}); }
+async function api(path, body){
+  const r = await fetch(path, body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{});
+  return r.json();
+}
+function go(view){ state.view=view; render(); }
+
+// ---------- HOME ----------
+async function render(){
+  if(state.view==='home') return renderHome();
+  if(state.view==='interview') return renderInterview();
+  if(state.view==='curriculum') return renderCurriculum();
+  if(state.view==='unit') return renderUnit();
+}
+
+async function renderHome(){
+  app.innerHTML = `
+   <div class="card">
+     <h2>Learn anything</h2>
+     <p class="dim">Type any subject or goal. The Advisor will interview you, then generate your own
+        personal curriculum — your degree in it. Then the Tutor teaches you, unit by unit.</p>
+     <div class="row" style="margin-top:12px">
+       <input id="goal" placeholder="e.g. business finance · design theory · Spanish · quantum basics · options trading">
+       <button onclick="startGoal()">Start</button>
+     </div>
+     <div style="margin-top:10px">
+       ${['Business finance','Design theory','How LLMs work','Personal finance','Negotiation']
+         .map(g=>`<span class="pill chip" onclick="quick('${g}')">${g}</span>`).join('')}
+     </div>
+   </div>
+   <div class="card"><h2>My courses</h2><div id="mine" class="empty spin">Loading…</div></div>`;
+  const data = await api('/api/learner?u='+U);
+  const mine = document.getElementById('mine');
+  if(!data.curricula || !data.curricula.length){ mine.className='empty'; mine.textContent='No courses yet — start one above.'; return; }
+  mine.className='units';
+  mine.innerHTML = data.curricula.map(c=>`
+    <div class="unit ${c.progress>=100?'done':''}" onclick="openCurr('${c.curriculum_id}')">
+      <div class="n">${c.progress}%</div>
+      <div style="flex:1"><div class="t">${esc(c.title)}</div>
+        <div class="s">${c.units} units · ${esc(c.goal)}</div>
+        <div class="bar"><i style="width:${c.progress}%"></i></div></div>
+    </div>`).join('');
+}
+function quick(g){ document.getElementById('goal').value=g; startGoal(); }
+function startGoal(){
+  const g=document.getElementById('goal').value.trim(); if(!g) return;
+  state.goal=g; state.interview=[]; state.view='interview'; render(); nextQuestion();
+}
+
+// ---------- ADVISOR INTERVIEW ----------
+function renderInterview(){
+  app.innerHTML = `<span class="back" onclick="go('home')">← back</span>
+    <div class="card"><h2>Advisor · designing your curriculum</h2>
+      <p class="dim">Goal: <b style="color:var(--ink)">${esc(state.goal)}</b></p>
+      <div id="chat" style="margin-top:8px"></div>
+      <div id="ans" class="row" style="margin-top:12px;display:none">
+        <input id="a" placeholder="Type your answer…" onkeydown="if(event.key==='Enter')sendAns()">
+        <button onclick="sendAns()">Send</button>
+      </div>
+      <div id="buildbox" style="margin-top:14px;display:none">
+        <button onclick="buildCurr()">✦ Build my curriculum</button>
+      </div>
+    </div>`;
+  drawChat();
+}
+function drawChat(){
+  const c=document.getElementById('chat');
+  c.innerHTML = state.interview.map(m=>`<div class="msg ${m.role==='user'?'u':'a'}">${esc(m.content)}</div>`).join('');
+  tex(c);
+}
+async function nextQuestion(){
+  const c=document.getElementById('chat'); c.innerHTML+=`<div class="msg a spin">…</div>`;
+  const r = await api('/api/advisor/interview',{goal:state.goal,history:state.interview});
+  state.interview.push({role:'assistant',content:r.question});
+  drawChat();
+  if(r.done){ document.getElementById('buildbox').style.display='block'; }
+  else { const a=document.getElementById('ans'); a.style.display='flex'; document.getElementById('a').focus(); }
+}
+async function sendAns(){
+  const el=document.getElementById('a'); const v=el.value.trim(); if(!v) return;
+  state.interview.push({role:'user',content:v}); el.value=''; document.getElementById('ans').style.display='none';
+  drawChat(); nextQuestion();
+}
+async function buildCurr(){
+  const bb=document.getElementById('buildbox'); bb.innerHTML='<span class="spin">Designing your curriculum… (~15s)</span>';
+  const r = await api('/api/advisor/build',{user_id:U,goal:state.goal,history:state.interview});
+  if(r.curriculum_id) openCurr(r.curriculum_id);
+  else bb.innerHTML='<span class="spin">Generation failed — check LLM keys and retry.</span>';
+}
+
+// ---------- CURRICULUM ----------
+async function openCurr(cid){
+  state.curr = await api('/api/curriculum/'+cid); state.view='curriculum'; render();
+}
+function renderCurriculum(){
+  const c=state.curr;
+  app.innerHTML = `<span class="back" onclick="go('home')">← my courses</span>
+   <div class="card">
+     <h2>${esc(c.title)}</h2>
+     <p class="dim"><b style="color:var(--ink)">Destination.</b> ${esc(c.destination)}</p>
+     <p class="dim"><b style="color:var(--ink)">Why.</b> ${esc(c.why)}</p>
+     ${c.cut_list&&c.cut_list.length?`<p class="dim"><b style="color:var(--ink)">Ignore for now:</b> ${c.cut_list.map(esc).join(' · ')}</p>`:''}
+   </div>
+   <div class="card"><h2>Your units</h2><div class="units">
+     ${c.units.map((u,i)=>`
+       <div class="unit ${u.status} ${u.status==='done'?'done':''}" onclick="${u.status==='locked'?'':`openUnit('${u.unit_id}')`}">
+         <div class="n">${u.status==='done'?'✓':i+1}</div>
+         <div style="flex:1"><div class="t">${esc(u.title)}</div>
+           <div class="s">${esc(u.summary)}</div>
+           <div class="bar"><i style="width:${Math.round((u.mastery||0)*100)}%"></i></div></div>
+       </div>`).join('')}
+   </div></div>`;
+}
+
+// ---------- UNIT (tutor + recall) ----------
+async function openUnit(uid){
+  state.unit = state.curr.units.find(u=>u.unit_id===uid);
+  state.view='unit'; render();
+  const sess = await api(`/api/session/${state.curr.curriculum_id}/${uid}`);
+  state.unitHistory = sess.history || [];
+  drawTutor();
+  if(!state.unitHistory.length) tutorStep('');  // tutor opens
+}
+function renderUnit(){
+  const u=state.unit;
+  app.innerHTML = `<span class="back" onclick="openCurr('${state.curr.curriculum_id}')">← ${esc(state.curr.title)}</span>
+   <div class="card">
+     <h2>${esc(u.title)}</h2>
+     <p class="dim">${esc(u.summary)}</p>
+     <div>${u.objectives.map(o=>`<span class="pill">${esc(o)}</span>`).join('')}</div>
+   </div>
+   <div class="card"><h2>Tutor</h2>
+     <div id="tchat"></div>
+     <div class="row" style="margin-top:10px">
+       <input id="t" placeholder="Answer, or ask…" onkeydown="if(event.key==='Enter')tSend()">
+       <button onclick="tSend()">Send</button>
+     </div>
+   </div>
+   <div class="card"><h2>Prove it — recall</h2>
+     <p class="dim">Answer from memory. A concept turns green only when you get it right.</p>
+     <div class="concepts">${u.concepts.map(c=>`
+       <div class="concept ${c.mastery>=1?'solid':''}" id="con_${c.key}">
+         <div class="q">${esc(c.recall)}</div>
+         ${c.mastery>=1?'<div class="fb" style="color:var(--good)">✓ solid</div>':`
+         <div class="row"><input id="in_${c.key}" placeholder="From memory…"
+           onkeydown="if(event.key==='Enter')recall('${c.key}')">
+           <button class="ghost" onclick="recall('${c.key}')">Check</button></div>
+         <div class="fb" id="fb_${c.key}"></div>`}
+       </div>`).join('')}</div>
+   </div>`;
+  drawTutor();
+}
+function drawTutor(){
+  const c=document.getElementById('tchat'); if(!c) return;
+  c.innerHTML = (state.unitHistory||[]).map(m=>`<div class="msg ${m.role==='user'?'u':'a'}">${esc(m.content)}</div>`).join('');
+  tex(c); c.scrollTop=c.scrollHeight;
+}
+async function tutorStep(msg){
+  const c=document.getElementById('tchat'); c.innerHTML+=`<div class="msg a spin">…</div>`;
+  const r = await api('/api/tutor/step',{curriculum_id:state.curr.curriculum_id,unit_id:state.unit.unit_id,message:msg});
+  if(msg) state.unitHistory.push({role:'user',content:msg});
+  if(r.reply) state.unitHistory.push({role:'assistant',content:r.reply});
+  drawTutor();
+}
+function tSend(){
+  const el=document.getElementById('t'); const v=el.value.trim(); if(!v) return; el.value='';
+  state.unitHistory.push({role:'user',content:v}); drawTutor();
+  tutorStepNoEcho(v);
+}
+async function tutorStepNoEcho(msg){
+  const c=document.getElementById('tchat'); c.innerHTML+=`<div class="msg a spin">…</div>`;
+  const r = await api('/api/tutor/step',{curriculum_id:state.curr.curriculum_id,unit_id:state.unit.unit_id,message:msg});
+  if(r.reply) state.unitHistory.push({role:'assistant',content:r.reply});
+  drawTutor();
+}
+async function recall(key){
+  const inp=document.getElementById('in_'+key); const v=inp.value.trim(); if(!v) return;
+  const fb=document.getElementById('fb_'+key); fb.textContent='Checking…';
+  const r = await api('/api/recall/grade',{curriculum_id:state.curr.curriculum_id,unit_id:state.unit.unit_id,concept_key:key,attempt:v});
+  fb.textContent=(r.correct?'✓ ':'✗ ')+r.feedback;
+  fb.style.color = r.correct?'var(--good)':'var(--dim)';
+  const con=state.unit.concepts.find(c=>c.key===key); con.mastery=r.concept_mastery; state.unit.mastery=r.unit_mastery; state.unit.status=r.unit_status;
+  if(r.correct) setTimeout(()=>renderUnit(),700);
+}
+render();
+</script>
+</body>
+</html>

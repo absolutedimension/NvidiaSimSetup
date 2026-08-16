@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acharya — Teachers & Coaching card</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{--cream:#FBF4E9;--card:#FFFFFF;--ink:#2B2113;--muted:#8a7d63;--line:rgba(120,90,40,.15);
+        --orange:#C2591F;--orange-d:#A8481A;--green:#3f8a5c;--gold:#B98B34;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  .card{width:1080px;min-height:1350px;background:
+        radial-gradient(900px 520px at 50% -140px,rgba(194,89,31,.10),transparent 70%),
+        linear-gradient(180deg,#FDF7EE,#F7ECDA);
+        color:var(--ink);font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+        padding:56px 58px 50px;position:relative;}
+  .brand{display:flex;align-items:center;gap:16px;}
+  .brand img{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 3px 6px rgba(60,40,10,.25));}
+  .brand b{font-family:'Bricolage Grotesque';font-weight:700;font-size:32px;letter-spacing:-.01em;color:var(--ink);}
+  .brand .by{font-size:15px;color:var(--muted);margin-top:3px;}
+  .kicker{margin-top:34px;display:inline-block;font-size:15px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+        color:var(--orange);background:rgba(194,89,31,.08);border:1px solid rgba(194,89,31,.24);border-radius:999px;padding:9px 18px;}
+  h1{font-family:'Bricolage Grotesque',Georgia,serif;font-weight:800;font-size:60px;line-height:1.06;letter-spacing:-.02em;margin:22px 0 14px;}
+  h1 span{color:var(--orange);}
+  .lead{font-size:23px;line-height:1.44;color:var(--muted);max-width:920px;}
+  .lead b{color:var(--ink);}
+  .prices{display:flex;gap:18px;margin:32px 0 0;}
+  .pbox{flex:1;background:var(--card);border:1.5px solid rgba(194,89,31,.24);border-radius:20px;padding:22px 24px;
+        box-shadow:0 14px 34px rgba(90,60,20,.08);}
+  .pbox .lvl{font-size:17px;font-weight:700;color:var(--gold);}
+  .pbox .amt{font-family:'Bricolage Grotesque';font-weight:800;font-size:54px;color:var(--orange);line-height:1.05;margin-top:6px;}
+  .pbox .amt small{font-family:'Figtree';font-size:17px;font-weight:500;color:var(--muted);display:block;margin-top:3px;}
+  .flat{margin-top:16px;text-align:center;font-size:21px;font-weight:700;color:#fff;
+        background:linear-gradient(180deg,#D4703A,var(--orange-d));border-radius:14px;padding:15px;}
+  .flab{margin:34px 0 14px;font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);}
+  .flab:before{content:"✓ ";}
+  .feats{list-style:none;display:grid;grid-template-columns:1fr;gap:13px;}
+  .feats li{position:relative;padding-left:38px;font-size:21.5px;line-height:1.34;color:#3d2f1a;}
+  .feats li:before{content:"";position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;
+        background:rgba(63,138,92,.16);}
+  .feats li:after{content:"✓";position:absolute;left:5px;top:5px;color:var(--green);font-weight:800;font-size:15px;}
+  .feats li b{font-weight:700;color:var(--ink);}
+  .cta{margin-top:34px;background:linear-gradient(135deg,rgba(194,89,31,.09),rgba(194,89,31,.03));
+        border:1.5px solid rgba(194,89,31,.26);border-radius:22px;padding:26px 30px;}
+  .cta .free{font-size:23px;font-weight:800;color:var(--green);}
+  .cta .free small{color:var(--muted);font-weight:500;font-size:18px;}
+  .cta .wa{display:flex;align-items:center;gap:16px;margin-top:16px;}
+  .cta .wbtn{background:#25D366;color:#0b3d1f;font-weight:800;font-size:24px;border-radius:14px;padding:15px 26px;display:inline-flex;gap:11px;}
+  .cta .site{font-size:19px;color:var(--muted);}
+  .foot{margin-top:32px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:16px;}
+  .foot b{color:var(--orange);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="brand">
+    <img src="file:///Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/brand_logo/pack/trigunai_mark_chrome.png" alt="TrigunAI" />
+    <div><b>Acharya</b><div class="by">by TrigunAI · exam-authentic test papers</div></div>
+  </div>
+
+  <span class="kicker">For teachers &amp; small coaching</span>
+  <h1>Test papers for your batches — <span>in seconds.</span></h1>
+  <p class="lead">Unlimited real-pattern <b>JEE · NEET · Board</b> papers, under your own name.
+     Every student gets their own practice — and you see exactly who's weak in which topic.</p>
+
+  <div class="prices">
+    <div class="pbox"><div class="lvl">Foundation / Board</div><div class="amt">₹120<small>per student / month</small></div></div>
+    <div class="pbox"><div class="lvl">JEE / NEET / Senior</div><div class="amt">₹250<small>per student / month</small></div></div>
+  </div>
+  <div class="flat">Flat rate · any number of students · <b>no setup fee</b></div>
+
+  <div class="flab">Everything you get</div>
+  <ul class="feats">
+    <li><b>Create real JEE / NEET / CBSE / UPSC / Banking tests</b> — pick chapter &amp; difficulty</li>
+    <li><b>Unlimited papers under your name</b> — answer key + worked solutions, never repeated</li>
+    <li><b>Share one link</b> — your students take the test with no signup</li>
+    <li><b>Live weak-topic dashboard</b> + class analytics &amp; "topics to teach next"</li>
+    <li><b>Every student their own practice</b> — personal tests + mastery tracking</li>
+    <li><b>Assign tests to your class</b> · batch invite links · scoped to your syllabus</li>
+    <li>Chat-to-create · English or हिंदी · <b>14-day free trial</b></li>
+  </ul>
+
+  <div class="cta">
+    <div class="free">✓ Free for 14 days <small>— test it on your real batch, no payment today.</small></div>
+    <div class="wa"><span class="wbtn">💬 WhatsApp 91352 55107</span><span class="site">acharya.trigunai.com</span></div>
+  </div>
+
+  <div class="foot">
+    <span>Powered by <b>Acharya</b> · TRIGUNAI INNOVATIONS PVT LTD</span>
+    <span>JEE · NEET · CBSE · UPSC · Banking</span>
+  </div>
+</div>
+</body>
+</html>

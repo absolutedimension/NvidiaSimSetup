@@ -11,6 +11,8 @@ Writes incrementally (every round) so a kill mid-run keeps progress.
 import json, os, re, argparse, threading
 from concurrent.futures import ThreadPoolExecutor
 import worksheet_engine as WE
+import quality_critic as QC
+_CRITIC = os.environ.get("WS_CRITIC") == "1"   # LLM fact-check on (needs the endpoint)
 
 _LATIN = re.compile(r'[A-Za-z]')
 
@@ -100,6 +102,12 @@ def fill(board, cls, subject, target, dry_limit):
             batch = WE.llm_knowledge(subject, cls, chname, subs, n=12, _attempts=1)
         except Exception:
             batch = []
+        # QUALITY CRITIC: drop structural junk (always) + LLM-fact-check (WS_CRITIC=1) so only
+        # clean, child-safe questions ever enter the pool.
+        batch = [it for it in batch if not QC.degenerate(it)]
+        if _CRITIC and batch:
+            oks = QC.llm_verdicts(batch, subject=subject, cls=cls)
+            batch = [it for it, ok in zip(batch, oks) if ok]
         added = 0
         hindi = subject.strip().lower() == "hindi"
         for it in batch:

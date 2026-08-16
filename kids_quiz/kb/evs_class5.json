@@ -1,0 +1,427 @@
+{
+  "subject": "EVS",
+  "class": 5,
+  "strings": {
+    "title": "Grade 5 EVS — Environmental Studies Knowledge Base"
+  },
+  "categories": [
+    {
+      "name": "water_sources",
+      "label": "a source of water",
+      "chapter": "Every Drop Counts",
+      "members": [
+        "River",
+        "Lake",
+        "Pond",
+        "Well",
+        "Stepwell",
+        "Rainwater",
+        "Canal"
+      ]
+    },
+    {
+      "name": "seasons",
+      "label": "a season",
+      "chapter": "Mangoes Round the Year",
+      "members": [
+        "Spring",
+        "Summer",
+        "Monsoon",
+        "Autumn",
+        "Pre-winter",
+        "Winter"
+      ]
+    },
+    {
+      "name": "digestive_organs",
+      "label": "a part of the digestive system",
+      "chapter": "From Tasting to Digesting",
+      "members": [
+        "Mouth",
+        "Food pipe",
+        "Stomach",
+        "Small intestine",
+        "Large intestine",
+        "Liver"
+      ]
+    },
+    {
+      "name": "insects",
+      "label": "an insect",
+      "chapter": "A Treat for Mosquitoes",
+      "members": [
+        "Mosquito",
+        "Housefly",
+        "Ant",
+        "Bee",
+        "Butterfly",
+        "Grasshopper",
+        "Dragonfly"
+      ]
+    },
+    {
+      "name": "plant_parts",
+      "label": "a part of a plant",
+      "chapter": "Seeds and Seeds",
+      "members": [
+        "Root",
+        "Stem",
+        "Leaf",
+        "Flower",
+        "Fruit",
+        "Seed"
+      ]
+    }
+  ],
+  "groupings": [
+    {
+      "name": "states_of_matter",
+      "chapter": "Experiments with Water",
+      "sort_instruction": "Sort each thing by its state of matter — solid, liquid or gas.",
+      "tf_template": "{art} {item} is a {bin}.",
+      "bins": {
+        "solid": [
+          "Ice",
+          "Stone",
+          "Wood",
+          "Chalk"
+        ],
+        "liquid": [
+          "Water",
+          "Milk",
+          "Oil",
+          "Honey"
+        ],
+        "gas": [
+          "Steam",
+          "Oxygen",
+          "Air"
+        ]
+      }
+    },
+    {
+      "name": "wild_and_domestic_animals",
+      "chapter": "A Snake Charmer's Story",
+      "sort_instruction": "Sort each animal into wild or domestic.",
+      "tf_template": "{art} {item} is a {bin} animal.",
+      "bins": {
+        "wild": [
+          "Tiger",
+          "Lion",
+          "Elephant",
+          "Deer",
+          "Monkey",
+          "Fox"
+        ],
+        "domestic": [
+          "Cow",
+          "Dog",
+          "Cat",
+          "Buffalo",
+          "Goat",
+          "Hen"
+        ]
+      }
+    },
+    {
+      "name": "food_from_plants_and_animals",
+      "chapter": "From Tasting to Digesting",
+      "sort_instruction": "Sort each food by where it comes from — a plant or an animal.",
+      "tf_template": "{art} {item} comes from {bin}.",
+      "bins": {
+        "a plant": [
+          "Mango",
+          "Apple",
+          "Carrot",
+          "Potato",
+          "Coconut",
+          "Grape"
+        ],
+        "an animal": [
+          "Egg",
+          "Fish",
+          "Honey",
+          "Milk",
+          "Cheese",
+          "Butter"
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "name": "plant_part_to_job",
+      "chapter": "Seeds and Seeds",
+      "a_label": "plant part",
+      "b_label": "job",
+      "tf_template": "The job of the {a} is to {b}.",
+      "cloze_template": "The job of the {a} is to ___.",
+      "match_instruction": "Match each plant part to the job it does.",
+      "invert": false,
+      "pairs": [
+        [
+          "Root",
+          "absorb water and minerals from the soil"
+        ],
+        [
+          "Stem",
+          "carry water from the roots to the leaves"
+        ],
+        [
+          "Leaf",
+          "make food using sunlight"
+        ],
+        [
+          "Flower",
+          "make seeds"
+        ],
+        [
+          "Fruit",
+          "protect the seed inside it"
+        ],
+        [
+          "Seed",
+          "grow into a new plant"
+        ],
+        [
+          "Bark",
+          "protect the tree trunk"
+        ],
+        [
+          "Thorn",
+          "protect the plant from animals"
+        ]
+      ]
+    },
+    {
+      "name": "animal_to_home",
+      "chapter": "A Snake Charmer's Story",
+      "a_label": "animal",
+      "b_label": "home",
+      "tf_template": "The home of a {a} is a {b}.",
+      "cloze_template": "The home of a {a} is a ___.",
+      "match_instruction": "Match each animal to the place it lives in.",
+      "invert": false,
+      "pairs": [
+        [
+          "Cow",
+          "shed"
+        ],
+        [
+          "Dog",
+          "kennel"
+        ],
+        [
+          "Hen",
+          "coop"
+        ],
+        [
+          "Horse",
+          "stable"
+        ],
+        [
+          "Bee",
+          "hive"
+        ],
+        [
+          "Bird",
+          "nest"
+        ],
+        [
+          "Lion",
+          "den"
+        ],
+        [
+          "Spider",
+          "web"
+        ]
+      ]
+    },
+    {
+      "name": "animal_to_food",
+      "chapter": "A Treat for Mosquitoes",
+      "a_label": "animal",
+      "b_label": "food",
+      "tf_template": "The favourite food of a {a} is {b}.",
+      "cloze_template": "The favourite food of a {a} is ___.",
+      "match_instruction": "Match each animal to the food it eats.",
+      "invert": false,
+      "pairs": [
+        [
+          "Lion",
+          "meat"
+        ],
+        [
+          "Panda",
+          "bamboo"
+        ],
+        [
+          "Koala",
+          "eucalyptus leaves"
+        ],
+        [
+          "Cow",
+          "grass"
+        ],
+        [
+          "Bee",
+          "nectar"
+        ],
+        [
+          "Mosquito",
+          "blood"
+        ],
+        [
+          "Squirrel",
+          "nuts"
+        ],
+        [
+          "Monkey",
+          "bananas"
+        ]
+      ]
+    },
+    {
+      "name": "worker_to_tool",
+      "chapter": "Walls Tell Stories",
+      "a_label": "worker",
+      "b_label": "tool",
+      "tf_template": "A {a} uses a {b} for work.",
+      "cloze_template": "A {a} uses a ___ for work.",
+      "match_instruction": "Match each worker to the tool they use.",
+      "invert": false,
+      "pairs": [
+        [
+          "Farmer",
+          "plough"
+        ],
+        [
+          "Carpenter",
+          "saw"
+        ],
+        [
+          "Tailor",
+          "needle"
+        ],
+        [
+          "Doctor",
+          "stethoscope"
+        ],
+        [
+          "Blacksmith",
+          "hammer"
+        ],
+        [
+          "Painter",
+          "brush"
+        ],
+        [
+          "Potter",
+          "wheel"
+        ],
+        [
+          "Snake charmer",
+          "been"
+        ]
+      ]
+    },
+    {
+      "name": "young_one_to_animal",
+      "chapter": "A Snake Charmer's Story",
+      "a_label": "young one",
+      "b_label": "animal",
+      "tf_template": "A {a} is the young one of a {b}.",
+      "cloze_template": "A {a} is the young one of a ___.",
+      "match_instruction": "Match each baby animal to its mother.",
+      "invert": false,
+      "pairs": [
+        [
+          "Calf",
+          "cow"
+        ],
+        [
+          "Puppy",
+          "dog"
+        ],
+        [
+          "Kitten",
+          "cat"
+        ],
+        [
+          "Cub",
+          "lion"
+        ],
+        [
+          "Chick",
+          "hen"
+        ],
+        [
+          "Foal",
+          "horse"
+        ],
+        [
+          "Kid",
+          "goat"
+        ],
+        [
+          "Lamb",
+          "sheep"
+        ],
+        [
+          "Fawn",
+          "deer"
+        ]
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "statement": "Many animals have sharper senses than humans; an ant follows the smell trail left by other ants to find its way.",
+      "chapter": "Super Senses"
+    },
+    {
+      "statement": "Snakes are reptiles, and most kinds of snakes are not poisonous; in India snakes are protected by law.",
+      "chapter": "A Snake Charmer's Story"
+    },
+    {
+      "statement": "The tongue helps us sense different tastes, such as sweet, sour, salty and bitter.",
+      "chapter": "From Tasting to Digesting"
+    },
+    {
+      "statement": "Digestion of food begins in the mouth, where saliva mixes with the food and starts breaking it down.",
+      "chapter": "From Tasting to Digesting"
+    },
+    {
+      "statement": "Foods like mango can be preserved as pickle or jam so that we can eat them even when they are out of season.",
+      "chapter": "Mangoes Round the Year"
+    },
+    {
+      "statement": "Seeds are carried, or dispersed, from place to place by wind, water and animals.",
+      "chapter": "Seeds and Seeds"
+    },
+    {
+      "statement": "A stepwell, also called a baoli, is an old structure built to store water and reached by a flight of steps.",
+      "chapter": "Every Drop Counts"
+    },
+    {
+      "statement": "When water is heated it evaporates into vapour, and when the vapour cools it condenses back into water.",
+      "chapter": "Experiments with Water"
+    },
+    {
+      "statement": "Mosquitoes lay their eggs in still water, so we should not let water collect and stagnate near our homes.",
+      "chapter": "A Treat for Mosquitoes"
+    },
+    {
+      "statement": "Petrol and diesel are made from petroleum, a natural resource that will finish one day, so we must use it carefully.",
+      "chapter": "What if it Finishes …?"
+    },
+    {
+      "statement": "In space there is almost no gravity, so astronauts and objects float and feel weightless.",
+      "chapter": "Sunita in Space"
+    },
+    {
+      "statement": "An earthquake is the sudden shaking of the ground caused by movements deep inside the Earth.",
+      "chapter": "When the Earth Shook!"
+    }
+  ]
+}

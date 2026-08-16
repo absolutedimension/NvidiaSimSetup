@@ -1,0 +1,602 @@
+{
+ "1": {
+  "answer": "D",
+  "conf": "flag"
+ },
+ "2": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "3": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "4": {
+  "answer": "C",
+  "conf": "flag"
+ },
+ "5": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "6": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "7": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "8": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "9": {
+  "answer": "A",
+  "conf": "flag"
+ },
+ "10": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "11": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "12": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "13": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "14": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "15": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "16": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "17": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "18": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "19": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "20": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "21": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "22": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "23": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "24": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "25": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "26": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "27": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "28": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "29": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "30": {
+  "answer": "C",
+  "conf": "flag"
+ },
+ "31": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "32": {
+  "answer": "D",
+  "conf": "flag"
+ },
+ "33": {
+  "answer": "D",
+  "conf": "flag"
+ },
+ "34": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "35": {
+  "answer": "C",
+  "conf": "flag"
+ },
+ "36": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "37": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "38": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "39": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "40": {
+  "answer": "A",
+  "conf": "flag"
+ },
+ "41": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "42": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "43": {
+  "answer": "C",
+  "conf": "flag"
+ },
+ "44": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "45": {
+  "answer": "B",
+  "conf": "flag"
+ },
+ "46": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "47": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "48": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "49": {
+  "answer": "A",
+  "conf": "flag"
+ },
+ "50": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "51": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "52": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "53": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "54": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "55": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "56": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "57": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "58": {
+  "answer": "B",
+  "conf": "flag"
+ },
+ "59": {
+  "answer": "C",
+  "conf": "flag"
+ },
+ "60": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "61": {
+  "answer": "B",
+  "conf": "flag"
+ },
+ "62": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "63": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "64": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "65": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "66": {
+  "answer": "B",
+  "conf": "flag"
+ },
+ "67": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "68": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "69": {
+  "answer": "B",
+  "conf": "flag"
+ },
+ "70": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "71": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "72": {
+  "answer": "D",
+  "conf": "flag"
+ },
+ "73": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "74": {
+  "answer": "D",
+  "conf": "flag"
+ },
+ "75": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "76": {
+  "answer": "C",
+  "conf": "flag"
+ },
+ "77": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "78": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "79": {
+  "answer": "A",
+  "conf": "flag"
+ },
+ "80": {
+  "answer": "A",
+  "conf": "flag"
+ },
+ "81": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "82": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "83": {
+  "answer": "X",
+  "conf": "figure/garbled"
+ },
+ "84": {
+  "answer": "B",
+  "conf": "flag"
+ },
+ "85": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "86": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "87": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "88": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "89": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "90": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "91": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "92": {
+  "answer": "X",
+  "conf": "needs_figure"
+ },
+ "93": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "94": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "95": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "96": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "97": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "98": {
+  "answer": "B",
+  "conf": "flag"
+ },
+ "99": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "100": {
+  "answer": "A",
+  "conf": "flag"
+ },
+ "101": {
+  "answer": "X",
+  "conf": "flag"
+ },
+ "102": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "103": {
+  "answer": "A",
+  "conf": "flag"
+ },
+ "104": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "105": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "106": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "107": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "108": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "109": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "110": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "111": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "112": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "113": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "114": {
+  "answer": "B",
+  "conf": "flag"
+ },
+ "115": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "116": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "117": {
+  "answer": "C",
+  "conf": "flag"
+ },
+ "118": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "119": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "120": {
+  "answer": "A",
+  "conf": "flag"
+ },
+ "121": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "122": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "123": {
+  "answer": "A",
+  "conf": "flag"
+ },
+ "124": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "125": {
+  "answer": "B",
+  "conf": "flag"
+ },
+ "126": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "127": {
+  "answer": "B",
+  "conf": "flag"
+ },
+ "128": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "129": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "130": {
+  "answer": "X",
+  "conf": "needs_figure"
+ },
+ "131": {
+  "answer": "A",
+  "conf": "flag"
+ },
+ "132": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "133": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "134": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "135": {
+  "answer": "B",
+  "conf": "high"
+ },
+ "136": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "137": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "138": {
+  "answer": "C",
+  "conf": "flag"
+ },
+ "139": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "140": {
+  "answer": "A",
+  "conf": "high"
+ },
+ "141": {
+  "answer": "C",
+  "conf": "flag"
+ },
+ "142": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "143": {
+  "answer": "D",
+  "conf": "flag"
+ },
+ "144": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "145": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "146": {
+  "answer": "D",
+  "conf": "high"
+ },
+ "147": {
+  "answer": "C",
+  "conf": "flag"
+ },
+ "148": {
+  "answer": "D",
+  "conf": "flag"
+ },
+ "149": {
+  "answer": "C",
+  "conf": "high"
+ },
+ "150": {
+  "answer": "A",
+  "conf": "high"
+ }
+}

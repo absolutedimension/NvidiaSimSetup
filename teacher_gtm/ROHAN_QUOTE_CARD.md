@@ -1,51 +1,57 @@
 # Acharya — Institute Quote Card (for Rohan)
 
-_Locked 2026-07-30. Carry this into the visit. Pricing is monthly, 14-day free trial first._
+_Updated 2026-08-03 — NEW FLAT PRICING. Carry this + the pricing banner (`ACHARYA_PRICING_ALL.png`)
+into every visit. 14-day free trial + a live pilot first, always._
 
-## The price ladder
+## The price — ONE simple flat rate (this is the whole thing)
 
-| Tier | Price/mo | Students | Best for |
-|---|---|---|---|
-| **Solo** | **₹999** | up to 20 | one teacher / small tuition |
-| **Coaching** ⭐ | **₹2,999** | up to 50 | a real coaching institute |
-| **Institute** | **₹7,999** | up to 200 | multi-batch / multi-teacher |
-| **Custom** | **call the office** | 200+ | big / multi-branch · **their logo & full branding** — never self-quote |
+| What they teach | Price | How to say it |
+|---|---|---|
+| **Foundation / Board** (Class 6–10) | **₹120 per student / month** | "One-twenty per student, per month." |
+| **JEE / NEET / Senior** (Class 11–12) | **₹250 per student / month** | "Two-fifty per student, per month." |
+| **Own branded app** (institutes) | **₹55,000 one-time** | "One-time, only if you want your own branded app." |
 
-**Branding note:** your-logo + full white-label is a **Custom-tier perk only** (200+). If a smaller
-institute asks "can papers carry our logo?" → that's the hook to move them to a **Custom / Contact-us**
-conversation, not a discount. Below Custom, papers are Acharya-generated (no institute logo).
+**That's it.** Same flat rate whatever the size — **10 students or 500, the per-student price doesn't change.**
+No tiers, no packages, no discount to remember.
 
-## Which tier to quote — ASK THE STUDENT COUNT FIRST
+## The 4 rules for quoting
 
-- **≤ 20 students** → quote **₹999**
-- **20–50 students** → quote **₹2,999**  ← most coaching institutes land here
-- **50–200 students** → quote **₹7,999**
-- **200+** → "Let me connect you with our office for a custom plan."
-
-## How to quote (anchor high, hold, fall back only if pushed)
-
-1. **Open at the tier that fits their size** — don't lead with the cheapest.
-2. If they say **"too much"** → you can step down one tier (e.g. ₹2,999 → ₹999) and **still close**. Coming down is easy; you can never go back up. So never open low.
-3. **Never divide the price by the students out loud.** They pay for the *institute*, not per head.
+1. **Quote the RATE, never multiply it out loud.** Say "₹120 per student per month" — do **NOT** say
+   "so for your 60 students that's ₹7,200." Let the rate stand on its own; the total is their maths, not your pitch.
+2. **Ask what they teach, not how many students** — that tells you ₹120 (Foundation/Board) or ₹250 (JEE/NEET).
+3. **The ₹55,000 is ONLY for a custom branded app.** A normal teacher or coaching **does not pay it** — they
+   run on the standard Acharya app at the flat per-student rate. Only bring up ₹55k if the owner says
+   *"I want it under my own name / my own app / my logo."*
+4. **No discounts.** This is already the best-value price. If pushed on price, sell the value again (below), don't cut.
 
 ## What to sell (value, not seats)
 
-> **"Generate real-pattern JEE/NEET/board test papers for your batches in seconds — unlimited — give every student their own practice, and see exactly which student is weak in which topic."**
+> **"Generate real-pattern JEE / NEET / Board test papers for your batches in seconds — unlimited — give
+> every student their own practice, and see exactly which student is weak in which topic. ₹120 per student
+> for Board, ₹250 for JEE/NEET — that's it."**
 
 The three things an owner actually wants:
 - **Unlimited authentic papers in seconds** — hours of paper-making saved every week
 - **Every student their own practice** — mock tests + weak-topic tracking, in the institute's batch
 - **A weak-topic dashboard** they can show parents
 
-(Full institute branding / their logo on papers = the **Custom** tier hook, 200+ → Contact us.)
-
 **Frame:** the teacher is the hero, Acharya is their staff — never "an AI that replaces the teacher."
+
+## The custom white-label app (₹55,000) — only if they ask for their own brand
+
+If the owner wants **their own branded app** (their logo, their name, their identity — like Study Hub wanted):
+- **₹55,000 one-time** for the branded mobile + web app · live in 2 working days.
+- Then the **same** ₹120 / ₹250 per student / month.
+- **Pilot first:** run one live test on their own students **before they pay a rupee.**
+- They own their data — never shared, never resold.
 
 ## The close
 
-- Offer **14 days free** — "test it on your real batch, no payment today."
-- Then: **"Shall I set up your institute at ₹[tier]/month?"** — and wait for the yes.
-- Whatever they say — yes / "too much" / "per-student instead" — **write it down**. That objection is the most valuable thing you bring back.
+- Offer the **14-day free trial + a live pilot** — "test it on your real batch, no payment today."
+- Then: **"Shall I set you up? ₹[120/250] per student a month — starts after the free trial."**
+- Custom brand asked? → "₹55,000 one-time for your own app, then the same per-student rate. Let's pilot it first."
+- Whatever they say — yes / "too much" / a question — **write it down.** That objection is the most valuable thing you bring back.
 
 ---
-_Gate: first institute to pay ANY amount. A ₹999 yes beats a ₹2,999 maybe. Break 0→1 first._
+_Gate: first institute to pay ANY amount. Break 0→1 first. The banner (`ACHARYA_PRICING_ALL.png`) is your
+visual — show it on your phone; this card is what you say._

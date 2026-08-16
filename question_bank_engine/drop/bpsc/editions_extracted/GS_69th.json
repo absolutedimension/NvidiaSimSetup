@@ -1,0 +1,2585 @@
+{
+  "1": {
+    "number": 1,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following technologies will be enabled by the 5G mobile communication networks? \n\n1. Internet of Things \n2. Edge Computing \n3. Network Slicing \n\nSelect the correct answer using the codes given below.\n(A) Only 1 and 2 \n(B) Only 2 and 3 \n(C) Only 1 and 3 \n(D) 1, 2 and 3",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "2": {
+    "number": 2,
+    "qtype": "MCQ_single",
+    "stem": "Match List-I with List-II : \n\nList-I \n(Space Mission) \na. Cassini-Huygens \nb. Juno \nc. Artemis \nd. VERITAS \n\nList-II \n(Exploration) \n1. Jupiter \n2. Saturn and its rings \n3. Venus \n4. Human Spaceflight—Moon to Mars \n\nSelect the correct answer using the codes given below.\n(A) a b c d \n2 1 4 3 \n(B) a b c d \n3 1 4 2 \n(C) a b c d \n2 3 4 1 \n(D) a b c d \n3 1 2 4",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "3": {
+    "number": 3,
+    "qtype": "MCQ_single",
+    "stem": "Match List-I with List-II : \n\nList-I \n(Cloth) \na. Linen \nb. Coir \nc. Mohair \nd. Down \n\nList-II \n(Origin) \n1. Coconut plant \n2. Flax plant \n3. Feathers of duck and geese \n4. Angora goat \n\nSelect the correct answer using the codes given below.\n(A) a b c d \n1 3 2 4 \n(B) a b c d \n4 3 1 2 \n(C) a b c d \n2 1 4 3 \n(D) a b c d \n4 1 3 2",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "4": {
+    "number": 4,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements : \n\n1. Taeniasis is an intestinal infection caused by three species of tapeworm—Taenia solium, Taenia saginata and Taenia asiatica. \n\n2. When cysts develop in the brain, the condition is referred to as neurocysticercosis (NCC). \n\nWhich of the above statements is/are correct? \n\n(A) Only 1 \n(B) Only 2 \n(C) Both 1 and 2 \n(D) None of the above",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "5": {
+    "number": 5,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following are computer languages?\n\n1. Cobra\n2. Python\n3. Squirrel\n4. Java\nSelect the correct answer using the codes given below.",
+    "raw_options": [
+      "(a) Only 1 and 2",
+      "(b) Only 3 and 4",
+      "(c) Only 1, 2 and 3",
+      "(d) All of the above"
+    ],
+    "options": {
+      "A": "Only 1 and 2",
+      "B": "Only 3 and 4",
+      "C": "Only 1, 2 and 3",
+      "D": "All of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "7": {
+    "number": 7,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following are not the tastes of the tongue?\n\n1. Sweet\n2. Bitter\n3. Salty\n4. Spicy\n5. Umami\n6. Sour\n7. Pungent\nSelect the correct answer using the codes given below.",
+    "raw_options": [
+      "(a) 2, 5 and 7",
+      "(b) 1, 3 and 4",
+      "(c) 4 and 7",
+      "(d) 3 and 6"
+    ],
+    "options": {
+      "A": "2, 5 and 7",
+      "B": "1, 3 and 4",
+      "C": "4 and 7",
+      "D": "3 and 6"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "8": {
+    "number": 8,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following pairs are correctly matched?\n\n1. Anorexia : Sleep disorder\n2. Insomnia : Eating disorder\n3. Dyspnoea : Shortness of breath\n4. Anosmia : Partial or full loss of smell\nSelect the correct answer using the codes given below.",
+    "raw_options": [
+      "(a) Only 1 and 2",
+      "(b) Only 2 and 3",
+      "(c) Only 3 and 4",
+      "(d) All of the above"
+    ],
+    "options": {
+      "A": "Only 1 and 2",
+      "B": "Only 2 and 3",
+      "C": "Only 3 and 4",
+      "D": "All of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "9": {
+    "number": 9,
+    "qtype": "MCQ_single",
+    "stem": "In the universe, what are pulsars?\n\n(A) A group of stars\n(B) Rotating neutron stars\n(C) Explosion of a star\n(D) Radio waves emitted by a star",
+    "raw_options": [
+      "(a) A group of stars",
+      "(b) Rotating neutron stars",
+      "(c) Explosion of a star",
+      "(d) Radio waves emitted by a star"
+    ],
+    "options": {
+      "A": "A group of stars",
+      "B": "Rotating neutron stars",
+      "C": "Explosion of a star",
+      "D": "Radio waves emitted by a star"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "10": {
+    "number": 10,
+    "qtype": "MCQ_single",
+    "stem": "In the context of lab-grown diamonds (LGDs), what is used as a diamond seed?\n\n(A) White sapphire\n(B) Moissanite\n(C) Graphite\n(D) Cubic zirconia (CZ)",
+    "raw_options": [
+      "(a) White sapphire",
+      "(b) Moissanite",
+      "(c) Graphite",
+      "(d) Cubic zirconia (CZ)"
+    ],
+    "options": {
+      "A": "White sapphire",
+      "B": "Moissanite",
+      "C": "Graphite",
+      "D": "Cubic zirconia (CZ)"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "11": {
+    "number": 11,
+    "qtype": "MCQ_single",
+    "stem": "What is 'fiber' used for making bullet-proof jackets?",
+    "raw_options": [
+      "(a) nylon",
+      "(b) teraline",
+      "(c) tride",
+      "(d) kevlar"
+    ],
+    "options": {
+      "A": "nylon",
+      "B": "teraline",
+      "C": "tride",
+      "D": "kevlar"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "12": {
+    "number": 12,
+    "qtype": "MCQ_single",
+    "stem": "What is/are the full form(s) of HMX?\n\n1. High Melting Explosive\n2. High-Density Monoatomic Xenon\n3. Hedge Monetizing Xeno-currency\n4. Her Majesty's Explosive\nSelect the correct answer using the codes given below.\n\n(A) 1 and 2\n(B) 2 and 3\n(C) Only 1\n(D) 1 and 4",
+    "raw_options": [
+      "(a) 1 and 2",
+      "(b) 2 and 3",
+      "(c) Only 1",
+      "(d) 1 and 4"
+    ],
+    "options": {
+      "A": "1 and 2",
+      "B": "2 and 3",
+      "C": "Only 1",
+      "D": "1 and 4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "13": {
+    "number": 13,
+    "qtype": "MCQ_single",
+    "stem": "What is the name of Tesla’s humanoid robot launched in October 2022?\n\n(A) Sophia\n(B) Atlas\n(C) Pepper\n(D) Optimus",
+    "raw_options": [
+      "(a) Sophia",
+      "(b) Atlas",
+      "(c) Pepper",
+      "(d) Optimus"
+    ],
+    "options": {
+      "A": "Sophia",
+      "B": "Atlas",
+      "C": "Pepper",
+      "D": "Optimus"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "14": {
+    "number": 14,
+    "qtype": "MCQ_single",
+    "stem": "What is the 'Manhattan Project'? \n\n(A) A research and development undertaking that produced the first nuclear weapons\n(B) One of the largest art auctions of the world\n(C) A real estate project in New York City\n(D) A famous theme park",
+    "raw_options": [
+      "(a) A research and development undertaking that produced the first nuclear weapons",
+      "(b) One of the largest art auctions of the world",
+      "(c) A real estate project in New York City",
+      "(d) A famous theme park"
+    ],
+    "options": {
+      "A": "A research and development undertaking that produced the first nuclear weapons",
+      "B": "One of the largest art auctions of the world",
+      "C": "A real estate project in New York City",
+      "D": "A famous theme park"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "15": {
+    "number": 15,
+    "qtype": "MCQ_single",
+    "stem": "The image formed by concave mirror is real, inverted and of the same size as that of the object. The position of the object should be\n\n(A) at the focus\n(B) at the centre of curvature\n(C) between the focus and centre of curvature\n(D) beyond the centre of curvature",
+    "raw_options": [
+      "(a) at the focus",
+      "(b) at the centre of curvature",
+      "(c) between the focus and centre of curvature",
+      "(d) beyond the centre of curvature"
+    ],
+    "options": {
+      "A": "at the focus",
+      "B": "at the centre of curvature",
+      "C": "between the focus and centre of curvature",
+      "D": "beyond the centre of curvature"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "16": {
+    "number": 16,
+    "qtype": "MCQ_single",
+    "stem": "A photoelectric cell is a device which\n\n(A) converts light energy into electric energy\n(B) converts electric energy into light energy\n(C) stores light energy\n(D) None of the above",
+    "raw_options": [
+      "(a) converts light energy into electric energy",
+      "(b) converts electric energy into light energy",
+      "(c) stores light energy",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "converts light energy into electric energy",
+      "B": "converts electric energy into light energy",
+      "C": "stores light energy",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "17": {
+    "number": 17,
+    "qtype": "MCQ_single",
+    "stem": "The amount of solute present per unit volume or per unit mass of the solution/solvent is known as ____ in Chemistry.\n\n(A) composition of solute\n(B) concentration of solvent\n(C) concentration of solute\n(D) concentration of solution",
+    "raw_options": [
+      "(a) composition of solute",
+      "(b) concentration of solvent",
+      "(c) concentration of solute",
+      "(d) concentration of solution"
+    ],
+    "options": {
+      "A": "composition of solute",
+      "B": "concentration of solvent",
+      "C": "concentration of solute",
+      "D": "concentration of solution"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "18": {
+    "number": 18,
+    "qtype": "MCQ_single",
+    "stem": "How do COVID vaccines stimulate an immune response?\n\n(A) By introducing live attenuated SARS-CoV-2 virus\n(B) By introducing a real SARS-CoV-2 virus\n(C) By introducing a harmless piece of SARS-CoV-2 virus\n(D) By introducing antibodies against SARS-CoV-2 virus",
+    "raw_options": [
+      "(a) By introducing live attenuated SARS-CoV-2 virus",
+      "(b) By introducing a real SARS-CoV-2 virus",
+      "(c) By introducing a harmless piece of SARS-CoV-2 virus",
+      "(d) By introducing antibodies against SARS-CoV-2 virus"
+    ],
+    "options": {
+      "A": "By introducing live attenuated SARS-CoV-2 virus",
+      "B": "By introducing a real SARS-CoV-2 virus",
+      "C": "By introducing a harmless piece of SARS-CoV-2 virus",
+      "D": "By introducing antibodies against SARS-CoV-2 virus"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "19": {
+    "number": 19,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following liquids is a bad conductor of electricity?\n\n(A) Salted water\n(B) Orange juice\n(C) Lemon juice\n(D) None of the above",
+    "raw_options": [
+      "(a) Salted water",
+      "(b) Orange juice",
+      "(c) Lemon juice",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Salted water",
+      "B": "Orange juice",
+      "C": "Lemon juice",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "20": {
+    "number": 20,
+    "qtype": "MCQ_single",
+    "stem": "The DNA double helix structure was discovered by\n\n(A) James Watson and Francis Crick\n(B) Rosalind Franklin and Maurice Wilkins\n(C) Linus Pauling\n(D) Gregor Mendel",
+    "raw_options": [
+      "(a) James Watson and Francis Crick",
+      "(b) Rosalind Franklin and Maurice Wilkins",
+      "(c) Linus Pauling",
+      "(d) Gregor Mendel"
+    ],
+    "options": {
+      "A": "James Watson and Francis Crick",
+      "B": "Rosalind Franklin and Maurice Wilkins",
+      "C": "Linus Pauling",
+      "D": "Gregor Mendel"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "21": {
+    "number": 21,
+    "qtype": "MCQ_single",
+    "stem": "Two objects of different masses falling freely near the surface of the Moon would\n\n(A) have different accelerations\n(B) undergo a change in their inertia\n(C) have same velocity at any instant\n(D) experience forces of same magnitude",
+    "raw_options": [
+      "(a) have different accelerations",
+      "(b) undergo a change in their inertia",
+      "(c) have same velocity at any instant",
+      "(d) experience forces of same magnitude"
+    ],
+    "options": {
+      "A": "have different accelerations",
+      "B": "undergo a change in their inertia",
+      "C": "have same velocity at any instant",
+      "D": "experience forces of same magnitude"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "22": {
+    "number": 22,
+    "qtype": "MCQ_single",
+    "stem": "How do vector vaccines work to provide immunity?\n\n(A) By introducing a weakened or inactivated virus into the body\n(B) By directly attacking and destroying pathogens in the body\n(C) By placing the virus in a modified version of a different virus\n(D) By entering directly into the cells and enabling them to create spike proteins",
+    "raw_options": [
+      "(a) By introducing a weakened or inactivated virus into the body",
+      "(b) By directly attacking and destroying pathogens in the body",
+      "(c) By placing the virus in a modified version of a different virus",
+      "(d) By entering directly into the cells and enabling them to create spike proteins"
+    ],
+    "options": {
+      "A": "By introducing a weakened or inactivated virus into the body",
+      "B": "By directly attacking and destroying pathogens in the body",
+      "C": "By placing the virus in a modified version of a different virus",
+      "D": "By entering directly into the cells and enabling them to create spike proteins"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "23": {
+    "number": 23,
+    "qtype": "MCQ_single",
+    "stem": "The process that continually adds new crust is\n\n(A) subduction\n(B) earthquake\n(C) seafloor spreading\n(D) convection",
+    "raw_options": [
+      "(a) subduction",
+      "(b) earthquake",
+      "(c) seafloor spreading",
+      "(d) convection"
+    ],
+    "options": {
+      "A": "subduction",
+      "B": "earthquake",
+      "C": "seafloor spreading",
+      "D": "convection"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "24": {
+    "number": 24,
+    "qtype": "MCQ_single",
+    "stem": "The theory that states “pieces of the Earth’s crust are in constant, slow motion driven by movement in the mantle” is called\n\n(A) the theory of continental drift\n(B) the theory of Pangaea\n(C) the theory of plate tectonics\n(D) the theory of plate boundaries",
+    "raw_options": [
+      "(a) the theory of continental drift",
+      "(b) the theory of Pangaea",
+      "(c) the theory of plate tectonics",
+      "(d) the theory of plate boundaries"
+    ],
+    "options": {
+      "A": "the theory of continental drift",
+      "B": "the theory of Pangaea",
+      "C": "the theory of plate tectonics",
+      "D": "the theory of plate boundaries"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "25": {
+    "number": 25,
+    "qtype": "MCQ_single",
+    "stem": "What is the expanded form of the term 'mRNA' that has been widely discussed since the beginning of the pandemic?\n\n(A) Messenger Ribonucleic Acid\n(B) Mutant Ribonucleic Acid\n(C) Modified Ribonucleic Acid\n(D) Mnemonic Ribonucleic Acid",
+    "raw_options": [
+      "(a) Messenger Ribonucleic Acid",
+      "(b) Mutant Ribonucleic Acid",
+      "(c) Modified Ribonucleic Acid",
+      "(d) Mnemonic Ribonucleic Acid"
+    ],
+    "options": {
+      "A": "Messenger Ribonucleic Acid",
+      "B": "Mutant Ribonucleic Acid",
+      "C": "Modified Ribonucleic Acid",
+      "D": "Mnemonic Ribonucleic Acid"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "26": {
+    "number": 26,
+    "qtype": "MCQ_single",
+    "stem": "An AC current can be produced by\n\n(A) choke coil\n(B) dynamo\n(C) transformer\n(D) None of the above",
+    "raw_options": [
+      "(a) choke coil",
+      "(b) dynamo",
+      "(c) transformer",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "choke coil",
+      "B": "dynamo",
+      "C": "transformer",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "27": {
+    "number": 27,
+    "qtype": "MCQ_single",
+    "stem": "Current density is\n\n(A) a scalar quantity\n(B) a vector quantity\n(C) dimensionless\n(D) None of the above",
+    "raw_options": [
+      "(a) a scalar quantity",
+      "(b) a vector quantity",
+      "(c) dimensionless",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "a scalar quantity",
+      "B": "a vector quantity",
+      "C": "dimensionless",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "28": {
+    "number": 28,
+    "qtype": "MCQ_single",
+    "stem": "What is the basis of most useful classification of medications in medical chemistry?\n\n(A) Pharmacological effect\n(B) Molecular targets\n(C) Chemical structure\n(D) None of the above",
+    "raw_options": [
+      "(a) Pharmacological effect",
+      "(b) Molecular targets",
+      "(c) Chemical structure",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Pharmacological effect",
+      "B": "Molecular targets",
+      "C": "Chemical structure",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "29": {
+    "number": 29,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following slows down the reaction rate?\n\n(A) Catalytic promoter\n(B) Homogeneous catalyst\n(C) Heterogeneous catalyst\n(D) None of the above",
+    "raw_options": [
+      "(a) Catalytic promoter",
+      "(b) Homogeneous catalyst",
+      "(c) Heterogeneous catalyst",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Catalytic promoter",
+      "B": "Homogeneous catalyst",
+      "C": "Heterogeneous catalyst",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "30": {
+    "number": 30,
+    "qtype": "MCQ_single",
+    "stem": "Input and output nerves meet at\n\n(A) liver\n(B) central nervous system\n(C) heart\n(D) None of the above",
+    "raw_options": [
+      "(a) liver",
+      "(b) central nervous system",
+      "(c) heart",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "liver",
+      "B": "central nervous system",
+      "C": "heart",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "31": {
+    "number": 31,
+    "qtype": "MCQ_single",
+    "stem": "In the context of ‘Shipwreck Tourism’, shipwrecks in Indian waters have been explored at Sunchi Reef, Amee Shoals and Grande Island. Where are these locations?\n\n(A) Off the coast of Goa\n(B) Off the coast of Lakshadweep\n(C) Off the coast of Tamil Nadu\n(D) Off the coast of Odisha",
+    "raw_options": [
+      "(a) Off the coast of Goa",
+      "(b) Off the coast of Lakshadweep",
+      "(c) Off the coast of Tamil Nadu",
+      "(d) Off the coast of Odisha"
+    ],
+    "options": {
+      "A": "Off the coast of Goa",
+      "B": "Off the coast of Lakshadweep",
+      "C": "Off the coast of Tamil Nadu",
+      "D": "Off the coast of Odisha"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "32": {
+    "number": 32,
+    "qtype": "MCQ_single",
+    "stem": "The G20 members represent\n\n1. around 85% of the global GDP\n2. about 50% of the global trade\n3. about two-thirds of the world population\n\nWhich of the above statistics is/are correct?\n\n(A) Only 1\n(B) Only 1 and 3\n(C) 1, 2 and 3\n(D) Only 1 and 2",
+    "raw_options": [
+      "(a) Only 1",
+      "(b) Only 1 and 3",
+      "(c) 1, 2 and 3",
+      "(d) Only 1 and 2"
+    ],
+    "options": {
+      "A": "Only 1",
+      "B": "Only 1 and 3",
+      "C": "1, 2 and 3",
+      "D": "Only 1 and 2"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "33": {
+    "number": 33,
+    "qtype": "MCQ_single",
+    "stem": "Who is the Head of Russia’s Wagner Mercenary Group?\n\n(A) Sergei Shoigu\n(B) Yevgeny Prigozhin\n(C) Aleksandr Lukashenko\n(D) Volodymyr Zelenskyy",
+    "raw_options": [
+      "(a) Sergei Shoigu",
+      "(b) Yevgeny Prigozhin",
+      "(c) Aleksandr Lukashenko",
+      "(d) Volodymyr Zelenskyy"
+    ],
+    "options": {
+      "A": "Sergei Shoigu",
+      "B": "Yevgeny Prigozhin",
+      "C": "Aleksandr Lukashenko",
+      "D": "Volodymyr Zelenskyy"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "34": {
+    "number": 34,
+    "qtype": "MCQ_single",
+    "stem": "The Global Gender Gap Report is released by\n\n(A) the World Bank\n(B) the UN Women\n(C) the World Economic Forum\n(D) the UNDP",
+    "raw_options": [
+      "(a) the World Bank",
+      "(b) the UN Women",
+      "(c) the World Economic Forum",
+      "(d) the UNDP"
+    ],
+    "options": {
+      "A": "the World Bank",
+      "B": "the UN Women",
+      "C": "the World Economic Forum",
+      "D": "the UNDP"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "35": {
+    "number": 35,
+    "qtype": "MCQ_single",
+    "stem": "Which one of the following statements regarding Queen Elizabeth II of the United Kingdom is correct?\n\n(A) She reigned for 70 years and died at the age of 96 years.\n(B) She reigned for 68 years and died at the age of 94 years.\n(C) She reigned for 72 years and died at the age of 92 years.\n(D) She reigned for 66 years and died at the age of 90 years.",
+    "raw_options": [
+      "(a) She reigned for 70 years and died at the age of 96 years.",
+      "(b) She reigned for 68 years and died at the age of 94 years.",
+      "(c) She reigned for 72 years and died at the age of 92 years.",
+      "(d) She reigned for 66 years and died at the age of 90 years."
+    ],
+    "options": {
+      "A": "She reigned for 70 years and died at the age of 96 years.",
+      "B": "She reigned for 68 years and died at the age of 94 years.",
+      "C": "She reigned for 72 years and died at the age of 92 years.",
+      "D": "She reigned for 66 years and died at the age of 90 years."
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "36": {
+    "number": 36,
+    "qtype": "MCQ_single",
+    "stem": "What was the theme of DefExpo–2022, held in Gujarat?\n\n(A) India : The Emerging Defence Manufacturing Hub\n(B) Path to Pride\n(C) Synergy for Defence\n(D) Aatmanirbharta",
+    "raw_options": [
+      "(a) India : The Emerging Defence Manufacturing Hub",
+      "(b) Path to Pride",
+      "(c) Synergy for Defence",
+      "(d) Aatmanirbharta"
+    ],
+    "options": {
+      "A": "India : The Emerging Defence Manufacturing Hub",
+      "B": "Path to Pride",
+      "C": "Synergy for Defence",
+      "D": "Aatmanirbharta"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "37": {
+    "number": 37,
+    "qtype": "MCQ_single",
+    "stem": "The three-day celebration of Thadingyut Festival is celebrated in which country?\n\n(A) Chile\n(B) Nepal\n(C) Germany\n(D) Myanmar",
+    "raw_options": [
+      "(a) Chile",
+      "(b) Nepal",
+      "(c) Germany",
+      "(d) Myanmar"
+    ],
+    "options": {
+      "A": "Chile",
+      "B": "Nepal",
+      "C": "Germany",
+      "D": "Myanmar"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "38": {
+    "number": 38,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements regarding the 'White House':\n\n1. The address of the White House is 1800 Pennsylvania Avenue.\n2. It is the official residence and workplace of the President of USA.\n3. On November 1, 1800, John Adams became the first President to take residence in the building.\n4. It is a symbol of American Democracy.\n\nWhich of the above statements are correct?\n\n(A) 1, 3 and 4\n(B) Only 2 and 3\n(C) Only 3 and 4\n(D) 2, 3 and 4",
+    "raw_options": [
+      "(a) 1, 3 and 4",
+      "(b) Only 2 and 3",
+      "(c) Only 3 and 4",
+      "(d) 2, 3 and 4"
+    ],
+    "options": {
+      "A": "1, 3 and 4",
+      "B": "Only 2 and 3",
+      "C": "Only 3 and 4",
+      "D": "2, 3 and 4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "39": {
+    "number": 39,
+    "qtype": "MCQ_single",
+    "stem": "'Net Metering' is sometimes seen in the news in the context of promoting\n\n(A) the installation of CNG kits in motorcars\n(B) the installation of water meters in urban households\n(C) a billing mechanism for solar energy by consumers for the electricity they add to the grid\n(D) the use of piped natural gas in the kitchens of households",
+    "raw_options": [
+      "(a) the installation of CNG kits in motorcars",
+      "(b) the installation of water meters in urban households",
+      "(c) a billing mechanism for solar energy by consumers for the electricity they add to the grid",
+      "(d) the use of piped natural gas in the kitchens of households"
+    ],
+    "options": {
+      "A": "the installation of CNG kits in motorcars",
+      "B": "the installation of water meters in urban households",
+      "C": "a billing mechanism for solar energy by consumers for the electricity they add to the grid",
+      "D": "the use of piped natural gas in the kitchens of households"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "40": {
+    "number": 40,
+    "qtype": "MCQ_single",
+    "stem": "Match List–I with List–II:\n\n| List–I | List–II |\n| --- | --- |\n| (Colour) | (Combination) |\n| a. Magenta | 1. Green and blue |\n| b. Teal | 2. Red and blue |\n| c. Mauve | 3. Blue, green and white |\n| d. Cyan | 4. Blue, red and white |\n\nSelect the correct answer using the codes given below.\n\n(A) a b c d\n2 3 4 1\n\n(B) a b c d\n2 4 3 1\n\n(C) a b c d\n4 2 1 3\n\n(D) a b c d\n3 4 2 1",
+    "raw_options": [
+      "(a) a b c d\n2 3 4 1",
+      "(b) a b c d\n2 4 3 1",
+      "(c) a b c d\n4 2 1 3",
+      "(d) a b c d\n3 4 2 1"
+    ],
+    "options": {
+      "A": "a b c d\n2 3 4 1",
+      "B": "a b c d\n2 4 3 1",
+      "C": "a b c d\n4 2 1 3",
+      "D": "a b c d\n3 4 2 1"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "41": {
+    "number": 41,
+    "qtype": "MCQ_single",
+    "stem": "What is the name of the deep-sea submersible that imploded during an underwater voyage to the Titanic wreckage?\n\n(A) Alvin\n(B) Falcon\n(C) Trident\n(D) Titan",
+    "raw_options": [
+      "(a) Alvin",
+      "(b) Falcon",
+      "(c) Trident",
+      "(d) Titan"
+    ],
+    "options": {
+      "A": "Alvin",
+      "B": "Falcon",
+      "C": "Trident",
+      "D": "Titan"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "42": {
+    "number": 42,
+    "qtype": "MCQ_single",
+    "stem": "Match List-I with List-II:\n\nList—I List—II\n(Footwear/Fashion Accessory) (Description)\na. Beret 1. A type of men’s footwear\nb. Stilettos 2. A type of sunglasses\nc. Aviators 3. A type of hat\nd. Chignon 4. A type of women’s footwear\ne. Brogue 5. A type of hairstyle\n\nSelect the correct answer using the codes given below.\n\n(A) a b c d e\n3 2 1 4 5\n(B) a b c d e\n3 4 2 5 1\n(C) a b c d e\n5 3 2 4 1\n(D) a b c d e\n1 2 3 4 5",
+    "raw_options": [
+      "(a) a b c d e\n3 2 1 4 5",
+      "(b) a b c d e\n3 4 2 5 1",
+      "(c) a b c d e\n5 3 2 4 1",
+      "(d) a b c d e\n1 2 3 4 5"
+    ],
+    "options": {
+      "A": "a b c d e\n3 2 1 4 5",
+      "B": "a b c d e\n3 4 2 5 1",
+      "C": "a b c d e\n5 3 2 4 1",
+      "D": "a b c d e\n1 2 3 4 5"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "43": {
+    "number": 43,
+    "qtype": "MCQ_single",
+    "stem": "Where did the former President of the USA give his interview recently?\n\n(A) Rome\n(B) Sarajevo\n(C) Athens\n(D) Amsterdam",
+    "raw_options": [
+      "(a) Rome",
+      "(b) Sarajevo",
+      "(c) Athens",
+      "(d) Amsterdam"
+    ],
+    "options": {
+      "A": "Rome",
+      "B": "Sarajevo",
+      "C": "Athens",
+      "D": "Amsterdam"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "44": {
+    "number": 44,
+    "qtype": "MCQ_single",
+    "stem": "In the context of sports, which of the following pairs are correctly matched?\n\n1. Flushing Meadows : French Open\n2. Venus Rosewater Dish : Wimbledon Trophy (Women)\n3. Roland Garros : US Open\n4. Australian Open (Women) : Daphne Akhurst Memorial Cup\n\nSelect the correct answer using the codes given below.\n\n(A) 1 and 2\n(B) 2 and 3\n(C) 3 and 4\n(D) 2 and 4",
+    "raw_options": [
+      "(a) 1 and 2",
+      "(b) 2 and 3",
+      "(c) 3 and 4",
+      "(d) 2 and 4"
+    ],
+    "options": {
+      "A": "1 and 2",
+      "B": "2 and 3",
+      "C": "3 and 4",
+      "D": "2 and 4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "45": {
+    "number": 45,
+    "qtype": "MCQ_single",
+    "stem": "The Ministry of Home Affairs has completed the Mother Tongue Survey of India (MTSI) in November 2022 with field videography of the country’s how many languages?\n\n(A) 40\n(B) 233\n(C) 576\n(D) 984",
+    "raw_options": [
+      "(a) 40",
+      "(b) 233",
+      "(c) 576",
+      "(d) 984"
+    ],
+    "options": {
+      "A": "40",
+      "B": "233",
+      "C": "576",
+      "D": "984"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "46": {
+    "number": 46,
+    "qtype": "MCQ_single",
+    "stem": "Which State Government launched the State-Level Committee for Vulture Conservation (SLCVC), proposed by the national action for the protection of vultures in India?\n\n(A) Tamil Nadu\n(B) Sikkim\n(C) Assam\n(D) Meghalaya",
+    "raw_options": [
+      "(a) Tamil Nadu",
+      "(b) Sikkim",
+      "(c) Assam",
+      "(d) Meghalaya"
+    ],
+    "options": {
+      "A": "Tamil Nadu",
+      "B": "Sikkim",
+      "C": "Assam",
+      "D": "Meghalaya"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "47": {
+    "number": 47,
+    "qtype": "MCQ_single",
+    "stem": "The National Education Policy, 2020 emphasizes the integration of vocational education into mainstream education from which grade onwards?\n\n(A) Grade 6\n(B) Grade 8\n(C) Grade 10\n(D) Grade 12",
+    "raw_options": [
+      "(a) Grade 6",
+      "(b) Grade 8",
+      "(c) Grade 10",
+      "(d) Grade 12"
+    ],
+    "options": {
+      "A": "Grade 6",
+      "B": "Grade 8",
+      "C": "Grade 10",
+      "D": "Grade 12"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "48": {
+    "number": 48,
+    "qtype": "MCQ_single",
+    "stem": "Which country has recently reaffirmed Arunachal Pradesh as an integral part of India?\n\n(A) USA\n(B) Australia\n(C) Germany\n(D) Russia",
+    "raw_options": [
+      "(a) USA",
+      "(b) Australia",
+      "(c) Germany",
+      "(d) Russia"
+    ],
+    "options": {
+      "A": "USA",
+      "B": "Australia",
+      "C": "Germany",
+      "D": "Russia"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "49": {
+    "number": 49,
+    "qtype": "MCQ_single",
+    "stem": "India’s Rudrankksh Balasaheb Patil won which medal in Men’s 10 m Air Rifle at the ISSF World Championship in Cairo?\n\n(A) Gold\n(B) Silver\n(C) Bronze\n(D) None of the above",
+    "raw_options": [
+      "(a) Gold",
+      "(b) Silver",
+      "(c) Bronze",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Gold",
+      "B": "Silver",
+      "C": "Bronze",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "50": {
+    "number": 50,
+    "qtype": "MCQ_single",
+    "stem": "Ten captive-bred Asian Giant Tortoises (Manouria emys), one of the largest tortoise species in mainland Asia, were recently released into which National Park of India?\n\n(A) Ntangki National Park\n(B) Periyar National Park\n(C) Pench National Park\n(D) Khangchendzonga National Park",
+    "raw_options": [
+      "(a) Ntangki National Park",
+      "(b) Periyar National Park",
+      "(c) Pench National Park",
+      "(d) Khangchendzonga National Park"
+    ],
+    "options": {
+      "A": "Ntangki National Park",
+      "B": "Periyar National Park",
+      "C": "Pench National Park",
+      "D": "Khangchendzonga National Park"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "51": {
+    "number": 51,
+    "qtype": "MCQ_single",
+    "stem": "India signed the Economic Cooperation and Trade Agreement (ECTA) with which country?\n\n(A) UAE\n(B) Australia\n(C) USA\n(D) UK",
+    "raw_options": [
+      "(a) UAE",
+      "(b) Australia",
+      "(c) USA",
+      "(d) UK"
+    ],
+    "options": {
+      "A": "UAE",
+      "B": "Australia",
+      "C": "USA",
+      "D": "UK"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "52": {
+    "number": 52,
+    "qtype": "MCQ_single",
+    "stem": "The Plain Language Act was passed by which of the following countries recently which requires Government officials to use simple and easily understandable English language in official documents and websites?\n\n(A) Australia\n(B) Ireland\n(C) New Zealand\n(D) Germany",
+    "raw_options": [
+      "(a) Australia",
+      "(b) Ireland",
+      "(c) New Zealand",
+      "(d) Germany"
+    ],
+    "options": {
+      "A": "Australia",
+      "B": "Ireland",
+      "C": "New Zealand",
+      "D": "Germany"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "53": {
+    "number": 53,
+    "qtype": "MCQ_single",
+    "stem": "Tillyardembi Fossils of the world’s first plant pollinators, called Tillyardembiids, were discovered recently in which country?\n\n(A) Greece\n(B) India\n(C) Russia\n(D) China",
+    "raw_options": [
+      "(a) Greece",
+      "(b) India",
+      "(c) Russia",
+      "(d) China"
+    ],
+    "options": {
+      "A": "Greece",
+      "B": "India",
+      "C": "Russia",
+      "D": "China"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "54": {
+    "number": 54,
+    "qtype": "MCQ_single",
+    "stem": "The ‘Lisbon Declaration’, which made headlines, is associated with the conservation of which entity?\n\n(A) Air\n(B) Mountains\n(C) Oceans\n(D) Freshwater glaciers",
+    "raw_options": [
+      "(a) Air",
+      "(b) Mountains",
+      "(c) Oceans",
+      "(d) Freshwater glaciers"
+    ],
+    "options": {
+      "A": "Air",
+      "B": "Mountains",
+      "C": "Oceans",
+      "D": "Freshwater glaciers"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "55": {
+    "number": 55,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following animals was not known to the people of the Indus Valley Civilization?\n\n(A) Bull\n(B) Horse\n(C) Elephant\n(D) None of the above",
+    "raw_options": [
+      "(a) Bull",
+      "(b) Horse",
+      "(c) Elephant",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Bull",
+      "B": "Horse",
+      "C": "Elephant",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "56": {
+    "number": 56,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following is not a UNESCO World Heritage Site?\n\n(A) Qutb Minar\n(B) Red Fort\n(C) India Gate\n(D) None of the above",
+    "raw_options": [
+      "(a) Qutb Minar",
+      "(b) Red Fort",
+      "(c) India Gate",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Qutb Minar",
+      "B": "Red Fort",
+      "C": "India Gate",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "57": {
+    "number": 57,
+    "qtype": "MCQ_single",
+    "stem": "The concept of the Directive Principles of State Policy in the Indian Constitution was borrowed from the Constitution of\n\n(A) England\n(B) Switzerland\n(C) Ireland\n(D) None of the above",
+    "raw_options": [
+      "(a) England",
+      "(b) Switzerland",
+      "(c) Ireland",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "England",
+      "B": "Switzerland",
+      "C": "Ireland",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "58": {
+    "number": 58,
+    "qtype": "MCQ_single",
+    "stem": "Sikkim became a full-fledged State of the Union of India in\n\n(A) 1974\n(B) 1975\n(C) 1976\n(D) None of the above",
+    "raw_options": [
+      "(a) 1974",
+      "(b) 1975",
+      "(c) 1976",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "1974",
+      "B": "1975",
+      "C": "1976",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "59": {
+    "number": 59,
+    "qtype": "MCQ_single",
+    "stem": "Which among the following currencies is the costliest?\n\n(A) Euro\n(B) Pound Sterling\n(C) US Dollar\n(D) None of the above",
+    "raw_options": [
+      "(a) Euro",
+      "(b) Pound Sterling",
+      "(c) US Dollar",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Euro",
+      "B": "Pound Sterling",
+      "C": "US Dollar",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "60": {
+    "number": 60,
+    "qtype": "MCQ_single",
+    "stem": "Bihar Government has planned to make Bihar State ‘pollution-free’ by reducing carbon emissions by which year?\n\n(A) 2022\n(B) 2024\n(C) 2030\n(D) 2047",
+    "raw_options": [
+      "(a) 2022",
+      "(b) 2024",
+      "(c) 2030",
+      "(d) 2047"
+    ],
+    "options": {
+      "A": "2022",
+      "B": "2024",
+      "C": "2030",
+      "D": "2047"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "61": {
+    "number": 61,
+    "qtype": "MCQ_single",
+    "stem": "In Indian art, the construction of 'Stupa', 'Chaitya' and 'Vihara' is related to which of the following?\n(A) Ajivika sect\n(B) Vaishnava sect\n(C) Buddhism\n(D) Shaiva sect",
+    "raw_options": [
+      "(a) Ajivika sect",
+      "(b) Vaishnava sect",
+      "(c) Buddhism",
+      "(d) Shaiva sect"
+    ],
+    "options": {
+      "A": "Ajivika sect",
+      "B": "Vaishnava sect",
+      "C": "Buddhism",
+      "D": "Shaiva sect"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "62": {
+    "number": 62,
+    "qtype": "MCQ_single",
+    "stem": "In the context of Indian handicrafts, what is 'Sujini' in Bihar?\n(A) A type of glassware\n(B) A metal craft\n(C) A type of embroidery\n(D) A type of clay pottery",
+    "raw_options": [
+      "(a) A type of glassware",
+      "(b) A metal craft",
+      "(c) A type of embroidery",
+      "(d) A type of clay pottery"
+    ],
+    "options": {
+      "A": "A type of glassware",
+      "B": "A metal craft",
+      "C": "A type of embroidery",
+      "D": "A type of clay pottery"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "63": {
+    "number": 63,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements regarding the Vikramshila University in Bihar:\n1. It was located in the present-day Banka district of Bihar.\n2. It was established by King Gopala I of the Pala dynasty.\n3. The 'Vajrayana' sect of Buddhism flourished here.\n4. Other subjects like Astronomy, Logic, Law, Grammar and Philosophy were also taught here.\nWhich of the above statements are incorrect?",
+    "raw_options": [
+      "(a) 2 and 3",
+      "(b) 1 and 4",
+      "(c) 1 and 2",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "2 and 3",
+      "B": "1 and 4",
+      "C": "1 and 2",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "64": {
+    "number": 64,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements:\\nThe arrival of Babur into India led to the\\n1. introduction of gunpowder in the subcontinent\\n2. introduction of arch and dome in the region's architecture\\n3. establishment of Timurid dynasty in the region\\n4. introduction of cannons in warfare\\nWhich of the above statements are correct?\\n(A) Only 1 and 2\\n(B) 1, 2 and 3\\n(C) 3 and 4\\n(D) None of the above",
+    "raw_options": [
+      "(a) Only 1 and 2",
+      "(b) 1, 2 and 3",
+      "(c) 3 and 4",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Only 1 and 2",
+      "B": "1, 2 and 3",
+      "C": "3 and 4",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "65": {
+    "number": 65,
+    "qtype": "MCQ_single",
+    "stem": "Which among the following ports was called Babul Makka (Gate of Makka) during the Mughal period?\\n(A) Calicut\\n(B) Surat\\n(C) Cambay\\n(D) Broach",
+    "raw_options": [
+      "(a) Calicut",
+      "(b) Surat",
+      "(c) Cambay",
+      "(d) Broach"
+    ],
+    "options": {
+      "A": "Calicut",
+      "B": "Surat",
+      "C": "Cambay",
+      "D": "Broach"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "66": {
+    "number": 66,
+    "qtype": "MCQ_single",
+    "stem": "'Ashta Pradhan' was a Council of Ministers\\n(A) in the Gupta administration\\n(B) in the Chola administration\\n(C) in the Maratha administration\\n(D) in the Vijayanagara administration",
+    "raw_options": [
+      "(a) in the Gupta administration",
+      "(b) in the Chola administration",
+      "(c) in the Maratha administration",
+      "(d) in the Vijayanagara administration"
+    ],
+    "options": {
+      "A": "in the Gupta administration",
+      "B": "in the Chola administration",
+      "C": "in the Maratha administration",
+      "D": "in the Vijayanagara administration"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "67": {
+    "number": 67,
+    "qtype": "MCQ_single",
+    "stem": "The painting of 'Bodhisattva Padmapani' is located at\n(A) Bagh\n(B) Ellora\n(C) Ajanta\n(D) Badami",
+    "raw_options": [
+      "(a) Bagh",
+      "(b) Ellora",
+      "(c) Ajanta",
+      "(d) Badami"
+    ],
+    "options": {
+      "A": "Bagh",
+      "B": "Ellora",
+      "C": "Ajanta",
+      "D": "Badami"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "68": {
+    "number": 68,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements:\n1. Fa-Hien was a Chinese pilgrim who visited India during the reign of Harsha.\n2. Hiuen Tsang was a Chinese Buddhist monk who visited India during the reign of Chandragupta II.\nWhich of the above statements is/are correct?\n(A) Only 1\n(B) Only 2\n(C) Both 1 and 2\n(D) None of the above",
+    "raw_options": [
+      "(a) Only 1",
+      "(b) Only 2",
+      "(c) Both 1 and 2",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Only 1",
+      "B": "Only 2",
+      "C": "Both 1 and 2",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "69": {
+    "number": 69,
+    "qtype": "MCQ_single",
+    "stem": "Match List-I with List-II:\nList—I List—II\na. Charaka 1. Mathematics\nb. Brahmagupta 2. Medicine\nc. Varahamihira 3. Playwright\nd. Vishakhadatta 4. Astrology\nSelect the correct answer using the codes given below.\n(A) a b c d\n2 1 4 3\n(B) a b c d\n1 2 3 4\n(C) a b c d\n3 2 4 1\n(D) a b c d\n1 4 3 2",
+    "raw_options": [
+      "(a) a b c d\n2 1 4 3",
+      "(b) a b c d\n1 2 3 4",
+      "(c) a b c d\n3 2 4 1",
+      "(d) a b c d\n1 4 3 2"
+    ],
+    "options": {
+      "A": "a b c d\n2 1 4 3",
+      "B": "a b c d\n1 2 3 4",
+      "C": "a b c d\n3 2 4 1",
+      "D": "a b c d\n1 4 3 2"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "70": {
+    "number": 70,
+    "qtype": "MCQ_single",
+    "stem": "Who among the following introduced the Persian festival Nowruz in India?\n(A) Firuz Shah Tughlaq\n(B) Alauddin Khilji\n(C) Balban\n(D) Iltutmish",
+    "raw_options": [
+      "(a) Firuz Shah Tughlaq",
+      "(b) Alauddin Khilji",
+      "(c) Balban",
+      "(d) Iltutmish"
+    ],
+    "options": {
+      "A": "Firuz Shah Tughlaq",
+      "B": "Alauddin Khilji",
+      "C": "Balban",
+      "D": "Iltutmish"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "71": {
+    "number": 71,
+    "qtype": "MCQ_single",
+    "stem": "Nathpanthis, Siddhas and Yogis made devotional religion popular in\n(A) Northern India\n(B) Southern India\n(C) Eastern India\n(D) Western India",
+    "raw_options": [
+      "(a) Northern India",
+      "(b) Southern India",
+      "(c) Eastern India",
+      "(d) Western India"
+    ],
+    "options": {
+      "A": "Northern India",
+      "B": "Southern India",
+      "C": "Eastern India",
+      "D": "Western India"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "72": {
+    "number": 72,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements regarding Wood's Dispatch of 1854:\n1. It recommended English as the medium of instruction for higher studies.\n2. It laid stress on female education and vocational training.\nWhich of the above statements is/are correct?\n(A) Only 1\n(B) Only 2\n(C) Both 1 and 2\n(D) Neither 1 nor 2",
+    "raw_options": [
+      "(a) Only 1",
+      "(b) Only 2",
+      "(c) Both 1 and 2",
+      "(d) Neither 1 nor 2"
+    ],
+    "options": {
+      "A": "Only 1",
+      "B": "Only 2",
+      "C": "Both 1 and 2",
+      "D": "Neither 1 nor 2"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "73": {
+    "number": 73,
+    "qtype": "MCQ_single",
+    "stem": "The Maithili language was started to develop during the reign of which of the following?\n(A) Chero dynasty\n(B) Oiniwar dynasty\n(C) Karnat dynasty\n(D) Pithipatis",
+    "raw_options": [
+      "(a) Chero dynasty",
+      "(b) Oiniwar dynasty",
+      "(c) Karnat dynasty",
+      "(d) Pithipatis"
+    ],
+    "options": {
+      "A": "Chero dynasty",
+      "B": "Oiniwar dynasty",
+      "C": "Karnat dynasty",
+      "D": "Pithipatis"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "74": {
+    "number": 74,
+    "qtype": "MCQ_single",
+    "stem": "Which city served as the capital of the ancient kingdom of Magadha during the early Vedic period? (A) Rajagriha (B) Campa (C) Vaishali (D) Pataliputra Select the correct answer using the codes given below. (A) Only 1 and 2 (B) Only 1, 3 and 4 (C) Only 2, 3 and 4 (D) 1, 2, 3 and 4",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "75": {
+    "number": 75,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following statements about the Vernacular Press Act is/are correct? 1. It was enacted by Lord Lytton. 2. It came to be known as a ‘Gagging Act’. 3. The Act was repealed by Lord Ripon. Select the correct answer using the codes given below. (A) Only 1 and 2 (B) Only 2 and 3 (C) Only 1 (D) 1, 2 and 3",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "76": {
+    "number": 76,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following statements about Lord Mayo’s Resolution of 1870 are correct? 1. It was the first step that bifurcated Central and Provincial finances. 2. Provincial Governments were empowered to administer certain services. 3. It attempted to rectify existing imparity. 4. It focussed on the actual needs of the Provinces.",
+    "raw_options": [
+      "(a) Only 1 and 2",
+      "(b) Only 2 and 3",
+      "(c) Only 1",
+      "(d) 1, 2 and 3"
+    ],
+    "options": {
+      "A": "Only 1 and 2",
+      "B": "Only 2 and 3",
+      "C": "Only 1",
+      "D": "1, 2 and 3"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "77": {
+    "number": 77,
+    "qtype": "MCQ_single",
+    "stem": "Nitisara, an early book of politics, was written by (A) Kautilya (B) Kamandaka (C) Charaka (D) None of them",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "78": {
+    "number": 78,
+    "qtype": "MCQ_single",
+    "stem": "Futuhat-i-Alamgiriwas written by (A) Ishwardas Nagar (B) Bhimsen (C) Haridas (D) None of them",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "79": {
+    "number": 79,
+    "qtype": "MCQ_single",
+    "stem": "According to Chinese source, Meghavarman, the ruler of Sri Lanka, sent a missionary to which of the following Gupta Kings for permission to build a Buddhist temple at Gaya? (A) Chandragupta I (B) Samudragupta (C) Chandragupta II (D) None of them",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "80": {
+    "number": 80,
+    "qtype": "MCQ_single",
+    "stem": "When was Bihar first separated from the Bengal Presidency under the British-ruled India? (A) 1912 (B) 1936 (C) 1947 (D) None of the above",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "81": {
+    "number": 81,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements:\\n1. Lake Victoria is the third largest freshwater lake in the world by surface area.\\n2. It is one of the great lakes of Africa.\\n3. It is bordered by four countries—Tanzania, Uganda, Rwanda and Kenya.\\n4. The only outflow from Lake Victoria is the Nile River, which exits the lake near Jinja, Uganda.\\nWhich of the above statements are incorrect?",
+    "raw_options": [
+      "(a) 1 and 2",
+      "(b) 2 and 4",
+      "(c) 3 and 4",
+      "(d) 1 and 3"
+    ],
+    "options": {
+      "A": "1 and 2",
+      "B": "2 and 4",
+      "C": "3 and 4",
+      "D": "1 and 3"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "82": {
+    "number": 82,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements regarding 'heat wave':\\n1. Heat wave is considered if the maximum temperature of a station reaches at least 30 °C or more for plains.\\n2. Heat wave is considered if the maximum temperature of a station reaches at least 40 °C or more for hilly regions.\\nWhich of the above statements is/are correct?",
+    "raw_options": [
+      "(a) Both 1 and 2",
+      "(b) Only 1",
+      "(c) Only 2",
+      "(d) Neither 1 nor 2"
+    ],
+    "options": {
+      "A": "Both 1 and 2",
+      "B": "Only 1",
+      "C": "Only 2",
+      "D": "Neither 1 nor 2"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "83": {
+    "number": 83,
+    "qtype": "MCQ_single",
+    "stem": "Match List–I with List–II:\\nList–I\\n(Explorer)\\n(a) Christopher Columbus\\n(b) Jacques Cartier\\n(c) Sir Francis Drake\\n(d) Ferdinand Magellan\\nList–II\\n(Birthplace)\\n(1) Portugal\\n(2) United Kingdom\\n(3) Italy\\n(4) France\\nSelect the correct answer using the codes given below:\\n(A) a b c d \\n3 4 2 1\\n(B) a b c d \\n1 2 4 3\\n(C) a b c d \\n3 4 1 2\\n(D) a b c d \\n1 4 2 3",
+    "raw_options": [
+      "(a) a b c d",
+      "(b) 3 4 2 1",
+      "(c) a b c d",
+      "(d) 1 2 4 3"
+    ],
+    "options": {
+      "A": "a b c d",
+      "B": "3 4 2 1",
+      "C": "a b c d",
+      "D": "1 2 4 3"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "84": {
+    "number": 84,
+    "qtype": "MCQ_single",
+    "stem": "The emirates of UAE are\\n(A) Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al-Quwain, Fujairah, Ras Al-Khaimah\\n(B) Dubai, Sharjah, Ajman, Jeddah, Kuwait, Bahrain, Umm Al-Quwain\\n(C) Umm Al-Quwain, Fujairah, Ras Al-Khaimah, Riyadh, Dammam, Taif, Dubai\\n(D) Sharjah, Abu Dhabi, Ajman, Fujairah, Dubai, Bahrain, Kuwait",
+    "raw_options": [
+      "(a) Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al-Quwain, Fujairah, Ras Al-Khaimah",
+      "(b) Dubai, Sharjah, Ajman, Jeddah, Kuwait, Bahrain, Umm Al-Quwain",
+      "(c) Umm Al-Quwain, Fujairah, Ras Al-Khaimah, Riyadh, Dammam, Taif, Dubai",
+      "(d) Sharjah, Abu Dhabi, Ajman, Fujairah, Dubai, Bahrain, Kuwait"
+    ],
+    "options": {
+      "A": "Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al-Quwain, Fujairah, Ras Al-Khaimah",
+      "B": "Dubai, Sharjah, Ajman, Jeddah, Kuwait, Bahrain, Umm Al-Quwain",
+      "C": "Umm Al-Quwain, Fujairah, Ras Al-Khaimah, Riyadh, Dammam, Taif, Dubai",
+      "D": "Sharjah, Abu Dhabi, Ajman, Fujairah, Dubai, Bahrain, Kuwait"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "85": {
+    "number": 85,
+    "qtype": "MCQ_single",
+    "stem": "The river Subarnarekha originates near which of the following villages?\\n(A) Ormanjhi\\n(B) Mandar\\n(C) Hehal\\n(D) Nagri",
+    "raw_options": [
+      "(a) Ormanjhi",
+      "(b) Mandar",
+      "(c) Hehal",
+      "(d) Nagri"
+    ],
+    "options": {
+      "A": "Ormanjhi",
+      "B": "Mandar",
+      "C": "Hehal",
+      "D": "Nagri"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "86": {
+    "number": 86,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following National Parks/Wildlife Sanctuaries are in Bihar? \n\n1. Valmiki National Park \n2. Dudhwa National Park \n3. Gajner Wildlife Sanctuary \n4. Bhimbandh Wildlife Sanctuary \nSelect the correct answer using the codes given below.\n(A) 1 and 4 \n(B) 2 and 3 \n(C) 1 and 3 \n(D) 2 and 4",
+    "raw_options": [
+      "(a) 1 and 4",
+      "(b) 2 and 3",
+      "(c) 1 and 3",
+      "(d) 2 and 4"
+    ],
+    "options": {
+      "A": "1 and 4",
+      "B": "2 and 3",
+      "C": "1 and 3",
+      "D": "2 and 4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "87": {
+    "number": 87,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements regarding the ‘Gangetic Dolphin’:\n\n1. The Gangetic River Dolphin has been categorized as ‘endangered’ under the IUCN’s Red List.\n\n2. It does not have a crystalline eye lens rendering it effectively blind.\n\n3. Navigation and hunting are carried out using echolocation.\n\n4. It has been recognized as India’s National Aquatic Animal.\n\nWhich of the above statements are correct?\n\n(A) Only 1, 2 and 4\n\n(B) Only 2, 3 and 4\n\n(C) Only 1, 3 and 4\n\n(D) All of the above",
+    "raw_options": [
+      "(a) Only 1, 2 and 4",
+      "(b) Only 2, 3 and 4",
+      "(c) Only 1, 3 and 4",
+      "(d) All of the above"
+    ],
+    "options": {
+      "A": "Only 1, 2 and 4",
+      "B": "Only 2, 3 and 4",
+      "C": "Only 1, 3 and 4",
+      "D": "All of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "88": {
+    "number": 88,
+    "qtype": "MCQ_single",
+    "stem": "The other name of river Gandak is\n(A) Burhi Gandak\n(B) Mahananda\n(C) Narayani\n(D) Punpun",
+    "raw_options": [
+      "(a) Burhi Gandak",
+      "(b) Mahananda",
+      "(c) Narayani",
+      "(d) Punpun"
+    ],
+    "options": {
+      "A": "Burhi Gandak",
+      "B": "Mahananda",
+      "C": "Narayani",
+      "D": "Punpun"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "89": {
+    "number": 89,
+    "qtype": "MCQ_single",
+    "stem": "Gold is found in which of the following districts of Bihar?\n(A) Munger\n(B) Saran\n(C) Siwan\n(D) Jamui",
+    "raw_options": [
+      "(a) Munger",
+      "(b) Saran",
+      "(c) Siwan",
+      "(d) Jamui"
+    ],
+    "options": {
+      "A": "Munger",
+      "B": "Saran",
+      "C": "Siwan",
+      "D": "Jamui"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "90": {
+    "number": 90,
+    "qtype": "MCQ_single",
+    "stem": "The Triveni Canal has been constructed on which of the following rivers?\n(A) Kosi\n(B) Sone\n(C) Gandak\n(D) Mayurakshi",
+    "raw_options": [
+      "(a) Kosi",
+      "(b) Sone",
+      "(c) Gandak",
+      "(d) Mayurakshi"
+    ],
+    "options": {
+      "A": "Kosi",
+      "B": "Sone",
+      "C": "Gandak",
+      "D": "Mayurakshi"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "91": {
+    "number": 91,
+    "qtype": "MCQ_single",
+    "stem": "Assertion (A): Rich placer deposits of gold are found on the Ghana coast and gold-bearing veins are found in Brazil.\n\nReason (R): At some points of time, these continents were joined together along the Atlantic coast.\n\nSelect the correct answer.\n\n(A) Both A and R are true and R is the correct explanation of A\n\n(B) Both A and R are true but R is not the correct explanation of A\n\n(C) A is false but R is true\n\n(D) A is true but R is false",
+    "raw_options": [
+      "(a) Both A and R are true and R is the correct explanation of A",
+      "(b) Both A and R are true but R is not the correct explanation of A",
+      "(c) A is false but R is true",
+      "(d) A is true but R is false"
+    ],
+    "options": {
+      "A": "Both A and R are true and R is the correct explanation of A",
+      "B": "Both A and R are true but R is not the correct explanation of A",
+      "C": "A is false but R is true",
+      "D": "A is true but R is false"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "92": {
+    "number": 92,
+    "qtype": "MCQ_single",
+    "stem": "Bihar’s geographical structure consists of rock systems. Match the rock systems with their descriptions :<table><tr><td>a. Dharwar rock system</td><td>1. Created by the rapid deposition of alluvium by Himalayan and Peninsular rivers</td></tr><tr><td>b. Vindhyan rock system</td><td>2. Can be found in the West Champaran district</td></tr><tr><td>c. Quaternary rock system</td><td>3. Part of the oldest Archaean rock system</td></tr><tr><td>d. Tertiary rock system</td><td>4. Sandstone, limestone, dolomite, quartzite and shale are the main constituents of this rock system</td></tr></table>Select the correct answer using the codes given below.",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "93": {
+    "number": 93,
+    "qtype": "MCQ_single",
+    "stem": "Which one of the following is the world’s richest region from a marine biodiversity perspective, comprising twenty-one islands with estuaries, beaches, forests of the nearshore environment, sea grasses, coral reefs, salt marshes and mangroves? (A) Gulf of Mannar Biosphere Reserve (B) Nanda Devi Biosphere Reserve (C) Sunderbans Biosphere Reserve (D) Nilgiri Biosphere Reserve",
+    "raw_options": [
+      "(a) Gulf of Mannar Biosphere Reserve",
+      "(b) Nanda Devi Biosphere Reserve",
+      "(c) Sunderbans Biosphere Reserve",
+      "(d) Nilgiri Biosphere Reserve"
+    ],
+    "options": {
+      "A": "Gulf of Mannar Biosphere Reserve",
+      "B": "Nanda Devi Biosphere Reserve",
+      "C": "Sunderbans Biosphere Reserve",
+      "D": "Nilgiri Biosphere Reserve"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "94": {
+    "number": 94,
+    "qtype": "MCQ_single",
+    "stem": "What is the local time of Thimphu (Bhutan) located at 90° East longitude when the time at Greenwich (0°) is 12:00 noon? (A) 6:00 p.m. (B) 4:00 p.m. (C) 7:00 p.m. (D) 6:00 a.m.",
+    "raw_options": [
+      "(a) 6:00 p.m.",
+      "(b) 4:00 p.m.",
+      "(c) 7:00 p.m.",
+      "(d) 6:00 a.m."
+    ],
+    "options": {
+      "A": "6:00 p.m.",
+      "B": "4:00 p.m.",
+      "C": "7:00 p.m.",
+      "D": "6:00 a.m."
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "95": {
+    "number": 95,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following statements is correct? (A) Natural gas is found in Dharwar rock formation. (B) Mica is found in Kodarma. (C) Cuddapah series is famous for diamonds. (D) Petroleum reserves are found in Aravalli hills.",
+    "raw_options": [
+      "(a) Natural gas is found in Dharwar rock formation.",
+      "(b) Mica is found in Kodarma.",
+      "(c) Cuddapah series is famous for diamonds.",
+      "(d) Petroleum reserves are found in Aravalli hills."
+    ],
+    "options": {
+      "A": "Natural gas is found in Dharwar rock formation.",
+      "B": "Mica is found in Kodarma.",
+      "C": "Cuddapah series is famous for diamonds.",
+      "D": "Petroleum reserves are found in Aravalli hills."
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "96": {
+    "number": 96,
+    "qtype": "MCQ_single",
+    "stem": "How many latitudes are there on the globe drawn at 1 degree interval?\n(A) 180\n(B) 178\n(C) 179\n(D) None of the above",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "97": {
+    "number": 97,
+    "qtype": "MCQ_single",
+    "stem": "The average height of the Kosi plain from mean sea level is\n(A) 300 m\n(B) 150 m\n(C) 30 m\n(D) None of the above",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "98": {
+    "number": 98,
+    "qtype": "MCQ_single",
+    "stem": "On which plateau, the Tropic of Cancer and the Indian Standard Time Line intersect each other?\n(A) Bundelkhand\n(B) Baghelkhand\n(C) Malwa\n(D) None of the above",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "99": {
+    "number": 99,
+    "qtype": "MCQ_single",
+    "stem": "Which district of Uttarakhand is <not> situated along the Tibbet boundary?\n(A) Uttarkashi\n(B) Chamoli\n(C) Almora\n(D) None of the above",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "100": {
+    "number": 100,
+    "qtype": "MCQ_single",
+    "stem": "Where does the El Niño current flow?\n(A) The Pacific Ocean\n(B) The Indian Ocean\n(C) The Bay of Bengal\n(D) More than one of the above",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "101": {
+    "number": 101,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements about the collegium system:\n1. The Supreme Court collegium is a five-member body, which is headed by the incumbent Chief Justice of India (CJI) and comprises four other seniormost Judges of the Court at that time.\n2. The Parliament by law has evolved the collegium system.\n3. The Judges of the Supreme Court and High Courts are appointed only through the collegium system.\n4. The collegium system was introduced in the year 1993 by Justice P. N. Bhagwati in the landmark First Judges Case.\nWhich of the above statements is/are correct?\n(A) Only 1\n(B) 1 and 2\n(C) 3 and 4\n(D) 1 and 3",
+    "raw_options": [
+      "(a) Only 1",
+      "(b) 1 and 2",
+      "(c) 3 and 4",
+      "(d) 1 and 3"
+    ],
+    "options": {
+      "A": "Only 1",
+      "B": "1 and 2",
+      "C": "3 and 4",
+      "D": "1 and 3"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "102": {
+    "number": 102,
+    "qtype": "MCQ_single",
+    "stem": "102. In the context of Article 42 of the Indian Constitution, discuss the following points:\n\n1. Three words were added to the Constitution – 'Socialism', 'Secularism' and 'Unity'.\n2. Eight fundamental rights were added to the Constitution.\n3. Articles 39A, 43A and 47 were added to the Constitution.",
+    "raw_options": [
+      "(a) Only 1",
+      "(b) 1 and 2",
+      "(c) 3 and 4",
+      "(d) 1 and 3"
+    ],
+    "options": {
+      "A": "Only 1",
+      "B": "1 and 2",
+      "C": "3 and 4",
+      "D": "1 and 3"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "103": {
+    "number": 103,
+    "qtype": "MCQ_single",
+    "stem": "The specifications required for a community to be declared as a Scheduled Tribe are\n1. indications of primitive traits\n2. distinctive culture\n3. shyness of contact with the community at large\n4. backwardness and geographical isolation\nWhich of the above are correct?\n(A) Only 1 and 2\n(B) Only 2, 3 and 4\n(C) Only 1, 3 and 4\n(D) All of the above",
+    "raw_options": [
+      "(a) Only 1 and 2",
+      "(b) Only 2, 3 and 4",
+      "(c) Only 1, 3 and 4",
+      "(d) All of the above"
+    ],
+    "options": {
+      "A": "Only 1 and 2",
+      "B": "Only 2, 3 and 4",
+      "C": "Only 1, 3 and 4",
+      "D": "All of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "104": {
+    "number": 104,
+    "qtype": "MCQ_single",
+    "stem": "From which country, the Indian Constitution has taken reference for the idea of the Fundamental Rights?\n(A) Ireland\n(B) United States of America\n(C) United Kingdom\n(D) Canada",
+    "raw_options": [
+      "(a) Ireland",
+      "(b) United States of America",
+      "(c) United Kingdom",
+      "(d) Canada"
+    ],
+    "options": {
+      "A": "Ireland",
+      "B": "United States of America",
+      "C": "United Kingdom",
+      "D": "Canada"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "105": {
+    "number": 105,
+    "qtype": "MCQ_single",
+    "stem": "Untouchability is abolished by which Article of the Indian Constitution?\n(A) Article 14\n(B) Article 15\n(C) Article 17\n(D) Article 22",
+    "raw_options": [
+      "(a) Article 14",
+      "(b) Article 15",
+      "(c) Article 17",
+      "(d) Article 22"
+    ],
+    "options": {
+      "A": "Article 14",
+      "B": "Article 15",
+      "C": "Article 17",
+      "D": "Article 22"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "106": {
+    "number": 106,
+    "qtype": "MCQ_single",
+    "stem": "The authority to determine the number of Judges in a High Court rests with which of the following entities?\n(A) The President\n(B) The Chief Minister of the State\n(C) The Prime Minister\n(D) The Parliament",
+    "raw_options": [
+      "(a) The President",
+      "(b) The Chief Minister of the State",
+      "(c) The Prime Minister",
+      "(d) The Parliament"
+    ],
+    "options": {
+      "A": "The President",
+      "B": "The Chief Minister of the State",
+      "C": "The Prime Minister",
+      "D": "The Parliament"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "107": {
+    "number": 107,
+    "qtype": "MCQ_single",
+    "stem": "The Fifth Schedule deals with the governance and protection of the interests of which specific group of people?\n(A) Scheduled Castes\n(B) Religious Minorities\n(C) Scheduled Tribes\n(D) Linguistic Minorities",
+    "raw_options": [
+      "(a) Scheduled Castes",
+      "(b) Religious Minorities",
+      "(c) Scheduled Tribes",
+      "(d) Linguistic Minorities"
+    ],
+    "options": {
+      "A": "Scheduled Castes",
+      "B": "Religious Minorities",
+      "C": "Scheduled Tribes",
+      "D": "Linguistic Minorities"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "108": {
+    "number": 108,
+    "qtype": "MCQ_single",
+    "stem": "In which case(s) did the Supreme Court of India give for the first time the doctrine of 'basic structure' of the Constitution?\n(A) Golaknath vs. State of Punjab\n(B) Kesavananda Bharati vs. State of Kerala\n(C) Minerva Mills vs. Union of India\n(D) Both (A) and (B)",
+    "raw_options": [
+      "(a) Golaknath vs. State of Punjab",
+      "(b) Kesavananda Bharati vs. State of Kerala",
+      "(c) Minerva Mills vs. Union of India",
+      "(d) Both (A) and (B)"
+    ],
+    "options": {
+      "A": "Golaknath vs. State of Punjab",
+      "B": "Kesavananda Bharati vs. State of Kerala",
+      "C": "Minerva Mills vs. Union of India",
+      "D": "Both (A) and (B)"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "109": {
+    "number": 109,
+    "qtype": "MCQ_single",
+    "stem": "Match the following political parties listed in List–I with their years of establishment in List–II:\nList–I\n(Political Parties)\n(List–II\n(Years of Establishment))\na. Communist Party of India (Marxist) \n1. 1964\nb. Communist Party of India \n2. 1998\nc. Bahujan Samaj Party \n3. 1925\nd. All India Trinamool Congress (AITC) \n4. 1984\nSelect the correct answer using the codes given below.\n(A) a b c d\n1 3 4 2\n(B) a b c d\n2 1 4 3\n(C) a b c d\n2 1 3 4\n(D) a b c d\n3 4 1 2",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "110": {
+    "number": 110,
+    "qtype": "MCQ_single",
+    "stem": "Under which Article(s), the Speaker can allow any member of the House to speak in his/her mother tongue?\n(A) Article 110 (1)\n(B) Article 122 (2)\n(C) Article 120 (1)\n(D) Both (A) and (B)",
+    "raw_options": [
+      "(a) Article 110 (1)",
+      "(b) Article 122 (2)",
+      "(c) Article 120 (1)",
+      "(d) Both (A) and (B)"
+    ],
+    "options": {
+      "A": "Article 110 (1)",
+      "B": "Article 122 (2)",
+      "C": "Article 120 (1)",
+      "D": "Both (A) and (B)"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "111": {
+    "number": 111,
+    "qtype": "MCQ_single",
+    "stem": "The Foreign Exchange Reserves (FER) of RBI include which of the following? \n\n1. Foreign Currency Assets (FCA)\n2. Gold\n3. Special Drawing Rights (SDR)\n4. Reserve Tranche Position\nSelect the correct answer using the codes given below.\n(A) Only 1 and 2\n(B) Only 2, 3 and 4\n(C) Only 1, 2 and 3\n(D) All of the above",
+    "raw_options": [
+      "(a) Only 1 and 2",
+      "(b) Only 2, 3 and 4",
+      "(c) Only 1, 2 and 3",
+      "(d) All of the above"
+    ],
+    "options": {
+      "A": "Only 1 and 2",
+      "B": "Only 2, 3 and 4",
+      "C": "Only 1, 2 and 3",
+      "D": "All of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "112": {
+    "number": 112,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements about ‘Rules of Origin’:\n\n1. Rules of Origin are the criteria needed to determine the national source of a product.\n2. Rules of Origin help the custom agencies to know what regulations and fees apply to a given product.\n3. These are used for the purpose of trade statistics.\n4. Their importance is derived from the fact that duties and restrictions in several cases depend upon the sources of imports.\nWhich of the above statements are correct?\n(A) Only 1 and 2\n(B) Only 3 and 4\n(C) Only 1, 3 and 4\n(D) All of the above",
+    "raw_options": [
+      "(a) Only 1 and 2",
+      "(b) Only 3 and 4",
+      "(c) Only 1, 3 and 4",
+      "(d) All of the above"
+    ],
+    "options": {
+      "A": "Only 1 and 2",
+      "B": "Only 3 and 4",
+      "C": "Only 1, 3 and 4",
+      "D": "All of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "113": {
+    "number": 113,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements about infant mortality rate:\\n1. It is the probability of dying between birth and exactly 1 year of age, expressed per 10000 live births.\\n2. The infant mortality rate in the year 1950 was 189·6.\\n3. In the year 2019, the infant mortality rate was 30.\\n4. As per the Sample Registration System (SRS) Bulletin of Registrar General of India (RGI), the State with the highest infant mortality rate in the year 2019 was Uttar Pradesh.\\nWhich of the above statements are correct?\\n(A) 1, 2 and 3\\n(B) 2, 3 and 4\\n(C) Only 2 and 3\\n(D) 1 and 4",
+    "raw_options": [
+      "(a) 1, 2 and 3",
+      "(b) 2, 3 and 4",
+      "(c) Only 2 and 3",
+      "(d) 1 and 4"
+    ],
+    "options": {
+      "A": "1, 2 and 3",
+      "B": "2, 3 and 4",
+      "C": "Only 2 and 3",
+      "D": "1 and 4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "114": {
+    "number": 114,
+    "qtype": "MCQ_single",
+    "stem": "Human capital formation as a concept is better explained in terms of a process, which enables\\n1. individuals of a country to accumulate more capital\\n2. increasing the knowledge\\n3. increasing the skill levels\\n4. increasing the knowledge, skill levels and capacities of the people of the country\\nSelect the correct answer using the codes given below.\\n(A) Only 1\\n(B) 1 and 2\\n(C) 3 and 4\\n(D) Only 4",
+    "raw_options": [
+      "(a) Only 1",
+      "(b) 1 and 2",
+      "(c) 3 and 4",
+      "(d) Only 4"
+    ],
+    "options": {
+      "A": "Only 1",
+      "B": "1 and 2",
+      "C": "3 and 4",
+      "D": "Only 4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "115": {
+    "number": 115,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements regarding insolvency and bankruptcy :<table><tbody><tr><td>1.</td><td>Bankruptcy refers to a financial state in which an individual or entity is unable to pay off their debts as they become due.</td></tr><tr><td>2.</td><td>Insolvency refers to a legal process, where the assets of the debtor are liquidated or reorganized for the benefit of creditors.</td></tr><tr><td>3.</td><td>Bankruptcy is a state whereas insolvency is the conclusion.</td></tr><tr><td>4.</td><td>The Insolvency and Bankruptcy Board of India (IBBI) is the regulatory body responsible for overseeing insolvency and bankruptcy proceedings.</td></tr></tbody></table>Which of the above statements is/are correct?",
+    "raw_options": [
+      "(a) 1, 2 and 3",
+      "(b) 2, 3 and 4",
+      "(c) Only 4",
+      "(d) Only 1 and 2"
+    ],
+    "options": {
+      "A": "1, 2 and 3",
+      "B": "2, 3 and 4",
+      "C": "Only 4",
+      "D": "Only 1 and 2"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "116": {
+    "number": 116,
+    "qtype": "MCQ_single",
+    "stem": "In which year was the Industrial Policy Resolution adopted?<table><tbody><tr><td>(A)</td><td>1956</td></tr><tr><td>(B)</td><td>1954</td></tr><tr><td>(C)</td><td>1952</td></tr><tr><td>(D)</td><td>1950</td></tr></tbody></table>",
+    "raw_options": [
+      "(a) 1 and 4",
+      "(b) 2 and 4",
+      "(c) 1 and 3",
+      "(d) 2 and 3"
+    ],
+    "options": {
+      "A": "1 and 4",
+      "B": "2 and 4",
+      "C": "1 and 3",
+      "D": "2 and 3"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "117": {
+    "number": 117,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements about the Production Linked Incentive (PLI) scheme:<table><tbody><tr><td>1.</td><td>The scheme offers a production-linked incentive to boost domestic manufacturing and attract large investments in mobile phone manufacturing and specified electronic components.</td></tr><tr><td>2.</td><td>The scheme has two categories of applicants, namely, global companies and domestic companies.</td></tr><tr><td>3.</td><td>The scheme shall extend an average incentive of around 8% on net incremental sales (over base year) of goods manufactured in India and covered under the target segment, to eligible companies, for a period of six years.</td></tr><tr><td>4.</td><td>The target segment under PLI shall include (i) laptops, (ii) tablets, (iii) all-in-one PCs, (iv) servers and (v) Ultra-Small Form Factor (USFF).</td></tr></tbody></table>Which of the above statements are incorrect?",
+    "raw_options": [
+      "(a) 1 and 4",
+      "(b) 2 and 4",
+      "(c) 1 and 3",
+      "(d) 2 and 3"
+    ],
+    "options": {
+      "A": "1 and 4",
+      "B": "2 and 4",
+      "C": "1 and 3",
+      "D": "2 and 3"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "118": {
+    "number": 118,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements regarding the SVAMITVA scheme:\n1. It is a Central Sector Scheme under the Ministry of Mines.\n2. This scheme seeks to create geopositioning infrastructure like CORS network to benchmark the location and provides five centimetre level accuracy.\n3. CORS means Cross-Origin Resource Sharing.\n4. The scheme is a reformative step towards establishment of clear ownership of property in rural inhabited (Abadi) areas, by mapping of land parcels using drone technology.\nWhich of the above statements are incorrect?\n(A) 2 and 4\n(B) 1 and 3\n(C) 2 and 3\n(D) 1 and 4",
+    "raw_options": [
+      "(a) 2 and 4",
+      "(b) 1 and 3",
+      "(c) 2 and 3",
+      "(d) 1 and 4"
+    ],
+    "options": {
+      "A": "2 and 4",
+      "B": "1 and 3",
+      "C": "2 and 3",
+      "D": "1 and 4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "119": {
+    "number": 119,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following is/are the consequence(s) of invoking Article 360, declaration of a financial emergency?\n1. The President may order the States to reduce the salaries and allowances of all or any class of employees serving in connection with the State affairs.\n2. Money Bills or other financial bills passed by the State Legislature are not required to be reserved for the consideration of the President.",
+    "raw_options": [
+      "(a) Only 1 and 2",
+      "(b) Only 2 and 3",
+      "(c) Only 1, 3 and 4",
+      "(d) 1, 2, 3 and 4"
+    ],
+    "options": {
+      "A": "Only 1 and 2",
+      "B": "Only 2 and 3",
+      "C": "Only 1, 3 and 4",
+      "D": "1, 2, 3 and 4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "120": {
+    "number": 120,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following factors could potentially contribute to stagflation in the Indian economy?\n1. High inflationary pressures due to increased Government spending\n2. Decline in industrial production and sluggish economic growth\n3. Decrease in aggregate demand and consumer spending\n4. Appreciation of the domestic currency leading to reduction of export competitiveness\nSelect the correct answer using the codes given below.\n(A) Only 1 and 2\n(B) Only 2 and 3\n(C) Only 1, 3 and 4\n(D) 1, 2, 3 and 4",
+    "raw_options": [
+      "(a) Only 1 and 2",
+      "(b) Only 2 and 3",
+      "(c) Only 1, 3 and 4",
+      "(d) 1, 2, 3 and 4"
+    ],
+    "options": {
+      "A": "Only 1 and 2",
+      "B": "Only 2 and 3",
+      "C": "Only 1, 3 and 4",
+      "D": "1, 2, 3 and 4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "121": {
+    "number": 121,
+    "qtype": "MCQ_single",
+    "stem": "As per the Economic Survey, 2023, which of the following statements describe(s) the trend of Foreign Direct Investment in India?\n\n1. It has decreased due to the less participation of the private sector.\n\n2. It has increased compared to the prepandemic levels.\n\n3. It has increased rapidly without decreasing in any Financial Year after the telecom sector was entirely reformed.\n\n4. It has decreased due to a weak global economic situation.\n\nSelect the correct answer using the codes given below.",
+    "raw_options": [
+      "(a) Only 1 and 3",
+      "(b) 2 and 4",
+      "(c) 1, 2 and 3",
+      "(d) Only 4"
+    ],
+    "options": {
+      "A": "Only 1 and 3",
+      "B": "2 and 4",
+      "C": "1, 2 and 3",
+      "D": "Only 4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "122": {
+    "number": 122,
+    "qtype": "MCQ_single",
+    "stem": "What is the current population of Gaya district of Bihar?\n\n(A) 598000\n\n(B) 320000\n\n(C) 780000\n\n(D) 234000",
+    "raw_options": [
+      "(a) 598000",
+      "(b) 320000",
+      "(c) 780000",
+      "(d) 234000"
+    ],
+    "options": {
+      "A": "598000",
+      "B": "320000",
+      "C": "780000",
+      "D": "234000"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "123": {
+    "number": 123,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following statements about non-plan expenditures of the Central Government is correct?\n\n(A) The expenditure is on interest payments.\n\n(B) The expenditure is on science and technology.\n\n(C) The expenditure is on agriculture.\n\n(D) None of the above",
+    "raw_options": [
+      "(a) The expenditure is on interest payments.",
+      "(b) The expenditure is on science and technology.",
+      "(c) The expenditure is on agriculture.",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "The expenditure is on interest payments.",
+      "B": "The expenditure is on science and technology.",
+      "C": "The expenditure is on agriculture.",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "124": {
+    "number": 124,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following is not true about globalization and its impact on India?\n\n(A) It has expanded trade in goods and services.\n\n(B) It has led to greater flow of Foreign Direct Investment.\n\n(C) Increase in exports is greater than increase in imports.\n\n(D) None of the above",
+    "raw_options": [
+      "(a) It has expanded trade in goods and services.",
+      "(b) It has led to greater flow of Foreign Direct Investment.",
+      "(c) Increase in exports is greater than increase in imports.",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "It has expanded trade in goods and services.",
+      "B": "It has led to greater flow of Foreign Direct Investment.",
+      "C": "Increase in exports is greater than increase in imports.",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "125": {
+    "number": 125,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following statements about the latest developments in the Union Government finances:\n\n1. The fiscal deficit of the Union Government had reached 9·2 percent of GDP during the pandemic FY21.\n\n2. The fiscal deficit has moderated to 7·7 percent of GDP in FY22.\n\n3. The revenue collection over the last two years has gone down.\n\nWhich of the above statements is/are correct?\n\n(A) Only 1\n\n(B) 1 and 2\n\n(C) 2 and 3\n\n(D) None of the above",
+    "raw_options": [
+      "(a) Only 1",
+      "(b) 1 and 2",
+      "(c) 2 and 3",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Only 1",
+      "B": "1 and 2",
+      "C": "2 and 3",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "126": {
+    "number": 126,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following were the reasons for the failure of the Revolt of 1857?\n\n1. The military superiority of the British\n2. The rebels did not have a unified programme and ideology\n3. There was a lack of support from all the sections of society\nSelect the correct answer using the codes given below.\n\n(A) Only 1 and 2\n(B) Only 2 and 3\n(C) All of the above\n(D) None of the above",
+    "raw_options": [
+      "(a) Only 1 and 2",
+      "(b) Only 2 and 3",
+      "(c) All of the above",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Only 1 and 2",
+      "B": "Only 2 and 3",
+      "C": "All of the above",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "127": {
+    "number": 127,
+    "qtype": "MCQ_single",
+    "stem": "The cook from Bihar who saved Mahatma Gandhi’s life from a murder attempt by food poisoning in 1917 was\n\n(A) Muzaffar Ahmad\n(B) Batak Mian\n(C) Mir Bakawal\n(D) None of them",
+    "raw_options": [
+      "(a) Muzaffar Ahmad",
+      "(b) Batak Mian",
+      "(c) Mir Bakawal",
+      "(d) None of them"
+    ],
+    "options": {
+      "A": "Muzaffar Ahmad",
+      "B": "Batak Mian",
+      "C": "Mir Bakawal",
+      "D": "None of them"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "128": {
+    "number": 128,
+    "qtype": "MCQ_single",
+    "stem": "The Bakasht Movement in Bihar during 1937–1938 was organized by whom?\n\n(A) Swami Dayanand Saraswati\n(B) Jayaprakash Narayan\n(C) Swami Sahajanand Saraswati\n(D) Peer Ali Khan",
+    "raw_options": [
+      "(a) Swami Dayanand Saraswati",
+      "(b) Jayaprakash Narayan",
+      "(c) Swami Sahajanand Saraswati",
+      "(d) Peer Ali Khan"
+    ],
+    "options": {
+      "A": "Swami Dayanand Saraswati",
+      "B": "Jayaprakash Narayan",
+      "C": "Swami Sahajanand Saraswati",
+      "D": "Peer Ali Khan"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "129": {
+    "number": 129,
+    "qtype": "MCQ_single",
+    "stem": "Consider the following events during India’s Freedom Struggle:\n\n1. Home Rule Movement\n2. Surat Split\n3. Kheda Satyagraha\n4. Minto-Morley Reforms\nWhich of the following is the correct chronological order of the events given above?\n\n(A) 1–3–2–4\n(B) 2–4–1–3\n(C) 1–4–2–3\n(D) 2–3–1–4",
+    "raw_options": [
+      "(a) 1–3–2–4",
+      "(b) 2–4–1–3",
+      "(c) 1–4–2–3",
+      "(d) 2–3–1–4"
+    ],
+    "options": {
+      "A": "1–3–2–4",
+      "B": "2–4–1–3",
+      "C": "1–4–2–3",
+      "D": "2–3–1–4"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "130": {
+    "number": 130,
+    "qtype": "MCQ_single",
+    "stem": "Lord Lytton is not associated with which of the following?\n\n(A) The Strachey Commission\n(B) The Arms Act\n(C) The Vernacular Press Act\n(D) The Ilbert Bill",
+    "raw_options": [
+      "(a) The Strachey Commission",
+      "(b) The Arms Act",
+      "(c) The Vernacular Press Act",
+      "(d) The Ilbert Bill"
+    ],
+    "options": {
+      "A": "The Strachey Commission",
+      "B": "The Arms Act",
+      "C": "The Vernacular Press Act",
+      "D": "The Ilbert Bill"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "131": {
+    "number": 131,
+    "qtype": "MCQ_single",
+    "stem": "Which treaty was signed after the Battle of Buxar?\n\n(A) The Treaty of Allahabad\n(B) The Treaty of Sugauli\n(C) The Treaty of Bassein\n(D) The Treaty of Salbai",
+    "raw_options": [
+      "(a) The Treaty of Allahabad",
+      "(b) The Treaty of Sugauli",
+      "(c) The Treaty of Bassein",
+      "(d) The Treaty of Salbai"
+    ],
+    "options": {
+      "A": "The Treaty of Allahabad",
+      "B": "The Treaty of Sugauli",
+      "C": "The Treaty of Bassein",
+      "D": "The Treaty of Salbai"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "132": {
+    "number": 132,
+    "qtype": "MCQ_single",
+    "stem": "The Dutch East India Company established its factory at Patna in which year?\n\n(A) 1635\n(B) 1632\n(C) 1643\n(D) 1648",
+    "raw_options": [
+      "(a) 1635",
+      "(b) 1632",
+      "(c) 1643",
+      "(d) 1648"
+    ],
+    "options": {
+      "A": "1635",
+      "B": "1632",
+      "C": "1643",
+      "D": "1648"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "133": {
+    "number": 133,
+    "qtype": "MCQ_single",
+    "stem": "In which of the following movements did Mahatma Gandhi make the first use of the hunger strike as a weapon?\n\n(A) Non-Cooperation Movement\n(B) Bardoli Satyagraha\n(C) Ahmedabad Strike\n(D) Rowlatt Satyagraha",
+    "raw_options": [
+      "(a) Non-Cooperation Movement",
+      "(b) Bardoli Satyagraha",
+      "(c) Ahmedabad Strike",
+      "(d) Rowlatt Satyagraha"
+    ],
+    "options": {
+      "A": "Non-Cooperation Movement",
+      "B": "Bardoli Satyagraha",
+      "C": "Ahmedabad Strike",
+      "D": "Rowlatt Satyagraha"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "134": {
+    "number": 134,
+    "qtype": "MCQ_single",
+    "stem": "The Quit India Movement in 1942 witnessed significant contributions from leaders of Bihar. Which prominent Bihar leader was known as the 'Bihar Kesari' and actively participated in the Quit India Movement?\n\n(A) Dr. Rajendra Prasad\n(B) Shri Krishna Singh\n(C) Anugrah Narayan Sinha\n(D) Ram Manohar Lohia",
+    "raw_options": [
+      "(a) Dr. Rajendra Prasad",
+      "(b) Shri Krishna Singh",
+      "(c) Anugrah Narayan Sinha",
+      "(d) Ram Manohar Lohia"
+    ],
+    "options": {
+      "A": "Dr. Rajendra Prasad",
+      "B": "Shri Krishna Singh",
+      "C": "Anugrah Narayan Sinha",
+      "D": "Ram Manohar Lohia"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "135": {
+    "number": 135,
+    "qtype": "MCQ_single",
+    "stem": "In response to the mass agitation of the Champaran Movement, the British Government took which step to address the issue?\n\n(A) Appointed Mahatma Gandhi as the Governor of Champaran\n(B) Enforced strict curfew and imposed Martial Law in the region\n(C) Instituted the Champaran Agrarian Committee\n(D) Declared Champaran as an independent State",
+    "raw_options": [
+      "(a) Appointed Mahatma Gandhi as the Governor of Champaran",
+      "(b) Enforced strict curfew and imposed Martial Law in the region",
+      "(c) Instituted the Champaran Agrarian Committee",
+      "(d) Declared Champaran as an independent State"
+    ],
+    "options": {
+      "A": "Appointed Mahatma Gandhi as the Governor of Champaran",
+      "B": "Enforced strict curfew and imposed Martial Law in the region",
+      "C": "Instituted the Champaran Agrarian Committee",
+      "D": "Declared Champaran as an independent State"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "136": {
+    "number": 136,
+    "qtype": "MCQ_single",
+    "stem": "Match List–I with List–II :<br/><table><tr><td>List–I</td><td>List–II</td></tr><tr><td>a. Servants of India Society</td><td>1. Debendranath Tagore</td></tr><tr><td>b. Tattwabodhini Sabha</td><td>2. Gopal Krishna Gokhale</td></tr><tr><td>c. Atmiya Sabha</td><td>3. Ram Mohan Roy</td></tr><tr><td>4. Keshab Chandra Sen</td></tr></table>Select the correct answer using the codes given below.<br/>",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "138": {
+    "number": 138,
+    "qtype": "MCQ_single",
+    "stem": "Who among the following was not the member of the Cabinet Mission?<br/>",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "139": {
+    "number": 139,
+    "qtype": "MCQ_single",
+    "stem": "\"The Indian National Congress was founded on the basis of safety valve theory, to protect the British Government from threats.\" Which leader said that?<br/>",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "140": {
+    "number": 140,
+    "qtype": "MCQ_single",
+    "stem": "In which of the following Indian National Congress Sessions, the resolutions related to the Fundamental Rights were passed for the first time?<br/>",
+    "raw_options": [],
+    "options": {},
+    "marks": 0,
+    "needs_figure": false
+  },
+  "141": {
+    "number": 141,
+    "qtype": "MCQ_single",
+    "stem": "In a certain code language, 'GAME' is written as '$÷*%' and 'BEAD' is written as '#%÷×'. How will the word 'MADE' be written in that code language?\n\n(A) $÷×%\n(B) *÷$%\n(C) *÷×%\n(D) #÷×%",
+    "raw_options": [
+      "(a) $÷×%",
+      "(b) *÷$%",
+      "(c) *÷×%",
+      "(d) #÷×%"
+    ],
+    "options": {
+      "A": "$÷×%",
+      "B": "*÷$%",
+      "C": "*÷×%",
+      "D": "#÷×%"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "142": {
+    "number": 142,
+    "qtype": "MCQ_single",
+    "stem": "Q moves towards the north. M moves towards the south. S and T move in opposite directions to Q. T, Q move towards east. In which direction do S and T move?",
+    "raw_options": [
+      "(a) M and S move in opposite directions.",
+      "(b) S moves west.",
+      "(c) T moves towards the north.",
+      "(d) M and S move in the same direction."
+    ],
+    "options": {
+      "A": "M and S move in opposite directions.",
+      "B": "S moves west.",
+      "C": "T moves towards the north.",
+      "D": "M and S move in the same direction."
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "143": {
+    "number": 143,
+    "qtype": "MCQ_single",
+    "stem": "A man 'Ramesh', who owns a plot of land of 100 square yards, increases his plot of land by acquiring 10% more from his neighbour 'Suresh', who also owns 100 square yards land. After 2 years, he sells back 10% of the total plot to the neighbour. Which of the following is correct?\n\n(A) Ramesh's land is more than Suresh\n(B) Suresh's land is more than Ramesh\n(C) Both are equal\n(D) None of the above",
+    "raw_options": [
+      "(a) Ramesh's land is more than Suresh",
+      "(b) Suresh's land is more than Ramesh",
+      "(c) Both are equal",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "Ramesh's land is more than Suresh",
+      "B": "Suresh's land is more than Ramesh",
+      "C": "Both are equal",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "144": {
+    "number": 144,
+    "qtype": "MCQ_single",
+    "stem": "Find the odd pair among the following options.\n\n(A) Millinery : Hats\n(B) Brewery : Alcohol\n(C) Stationery : Paper\n(D) Snobbery : Shoes",
+    "raw_options": [
+      "(a) Millinery : Hats",
+      "(b) Brewery : Alcohol",
+      "(c) Stationery : Paper",
+      "(d) Snobbery : Shoes"
+    ],
+    "options": {
+      "A": "Millinery : Hats",
+      "B": "Brewery : Alcohol",
+      "C": "Stationery : Paper",
+      "D": "Snobbery : Shoes"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "145": {
+    "number": 145,
+    "qtype": "MCQ_single",
+    "stem": "What should come in place of question mark (?) in the following number series? \n\n132 156 ? 210 240 272\n\n(A) 196\n(B) 182\n(C) 199\n(D) 204",
+    "raw_options": [
+      "(a) 196",
+      "(b) 182",
+      "(c) 199",
+      "(d) 204"
+    ],
+    "options": {
+      "A": "196",
+      "B": "182",
+      "C": "199",
+      "D": "204"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "146": {
+    "number": 146,
+    "qtype": "MCQ_single",
+    "stem": "Select the missing number from the given alternatives :<table><tr><td>44</td><td>49</td><td>37</td></tr><tr><td>52</td><td>?</td><td>41</td></tr><tr><td>58</td><td>35</td><td>53</td></tr></table>",
+    "raw_options": [
+      "(a) 56",
+      "(b) 77",
+      "(c) 66",
+      "(d) 63"
+    ],
+    "options": {
+      "A": "56",
+      "B": "77",
+      "C": "66",
+      "D": "63"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "148": {
+    "number": 148,
+    "qtype": "MCQ_single",
+    "stem": "In a code language, if GREAT is written as 718222620 and MONK is written as 13121411, then how will VIGOROUS be written in the same language? (A) 22187121812619 (B) 21177121811619 (C) 22187131813620 (D) 21187111711620",
+    "raw_options": [
+      "(a) 22187121812619",
+      "(b) 21177121811619",
+      "(c) 22187131813620",
+      "(d) 21187111711620"
+    ],
+    "options": {
+      "A": "22187121812619",
+      "B": "21177121811619",
+      "C": "22187131813620",
+      "D": "21187111711620"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "149": {
+    "number": 149,
+    "qtype": "MCQ_single",
+    "stem": "Find the odd one in the following groups : Q,W,Z,B B,H,K,M W,C,G,J M,S,V,X (A) Q,W,Z,B (B) M,S,V,X (C) W,C,G,J (D) B,H,K,M",
+    "raw_options": [
+      "(a) Q,W,Z,B",
+      "(b) M,S,V,X",
+      "(c) W,C,G,J",
+      "(d) B,H,K,M"
+    ],
+    "options": {
+      "A": "Q,W,Z,B",
+      "B": "M,S,V,X",
+      "C": "W,C,G,J",
+      "D": "B,H,K,M"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "150": {
+    "number": 150,
+    "qtype": "MCQ_single",
+    "stem": "Four branches of a company are located at M, N, O and P. M is in the North of N at a distance of 4 km; P is in the South of O at a distance of 2 km; N is in the Southeast of O by 1 km. What is the distance between M and P in km? (A) 5·34 (B) 6·74 (C) 28·5 (D) None of the above",
+    "raw_options": [
+      "(a) 5·34",
+      "(b) 6·74",
+      "(c) 28·5",
+      "(d) None of the above"
+    ],
+    "options": {
+      "A": "5·34",
+      "B": "6·74",
+      "C": "28·5",
+      "D": "None of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  }
+}

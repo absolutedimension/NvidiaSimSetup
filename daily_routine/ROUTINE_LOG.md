@@ -117,8 +117,8 @@ Tomorrow's lead domino: ARM THE FIELD REP + get conversations off zero.
 - [ ] 3 Provisioning(4h)  — target: pick the 1 warmest lead (Catalyzers Kota — setup half-built) and get their branded Acharya tenant demo-ready for their real subject  → artifact:
 - [ ] 4 FlowArt/VR (2h)   — optional  → artifact:
 - [ ] 5 TechScan   (1h)   — optional  → artifact:
-Reflection:
-Tomorrow's lead domino:
+Reflection: Study Hub call slipped to Mon 08-03 (lead-driven reschedule, not a founder skip). Weekend build (kids worksheet v26→v36) shipped but is NOT gate work — the gate move is the call + now the pricing rollout. New researched pricing model (70–80% gross margin) locked two days ago; today = put it live on the Acharya landing pages + a customer-facing pricing banner incl. the custom/white-label tiers. That IS today's Block 1.
+Tomorrow's lead domino: (rolled to 08-03) run/confirm Study Hub call + ship the new pricing model onto the landing pages.
 
 ## 2026-07-13 Mon  (gate: 0 paid) — reconstructed 07-16 from disk (row left EMPTY; work DID ship)
 - [x] 1 Sales      (2h)   — artifact: acharya-demo-coordinator skill + kit shipped (skills/acharya-demo-coordinator/, teacher_gtm/demo_coordinator_kit/ demo-coordinator kit zip); 2 demo videos PUBLIC (youtu.be/-OTtnDYWdSQ + youtu.be/9J4Ag4GkvZg); onboarding_bot.py + onboard_selfserve.html updated.
@@ -265,12 +265,110 @@ Tomorrow's lead domino (SAT→SUN): ARM ROHAN for the Sunday Study Hub meeting �
 Reflection: Gate-first Saturday — the only block that ran was the one that matters this week. Brief locked, offer numbers set, branding answer ratified, Chemistry pilot = YES. Blocks 2/4/5 correctly dropped (collapsed-day rule) with zero guilt because Block 1 = the Sunday gate move was fully armed. The routine working as designed: on a narrow day, protect revenue, drop the rest.
 Tomorrow's lead domino (SUN 08-02): RUN THE STUDY HUB MEETING — Deepak + Rohan on the call, quote ₹55k + founding ₹100/student, close on the Chemistry-test pilot as the bridge to paid. Nothing else opens until this call is done + logged.
 
-## 2026-08-02 Sun  (gate: 0 paid) — THE STUDY HUB MEETING DAY
-- [ ] 1 Sales/GATE (2h)   — target: RUN the Study Hub Kurji video call (Deepak+Rohan). Quote ₹55k one-time + founding ₹100/student. Close on the live Chemistry-test pilot this week. Leave with a go-live date + first-payment commitment.  → artifact:
+## 2026-08-02 Sun  (gate: 0 paid) — THE STUDY HUB MEETING DAY — CLOSED 08-03: call POSTPONED to Mon 08-03 (not a skip; rescheduled by lead)
+- [~] 1 Sales/GATE (2h)   — target: RUN the Study Hub Kurji video call.  → artifact: POSTPONED to today (08-03). Rohan continues field visits to other institutes today, will report back.
 - [ ] 2 Robotics   (2h)   — paused (gate day — do not open)  → artifact:
 - [ ] 3 Course/Pilot (2h) — target: IF pilot agreed → set up his Chemistry test on Acharya with him (white-label tenant prep). This IS the product-facing gate work today.  → artifact:
 - [ ] 4 FlowArt/VR (2h)   — paused (gate day)  → artifact:
 - [ ] 5 TechScan   (1h)   — optional  → artifact:
+Reflection: Study Hub call slipped to Mon 08-03 (lead-driven reschedule, not a founder skip). Weekend build (kids worksheet v26→v36) shipped but is NOT gate work — the gate move is the call + now the pricing rollout. New researched pricing model (70–80% gross margin) locked two days ago; today = put it live on the Acharya landing pages + a customer-facing pricing banner incl. the custom/white-label tiers. That IS today's Block 1.
+Tomorrow's lead domino: (rolled to 08-03) run/confirm Study Hub call + ship the new pricing model onto the landing pages.
+
+## 2026-08-03 Mon  (gate: 0 paid)
+- [x] 1 Marketing/Sales (2h) — target: put the new pricing in front of customers  → artifact: **DEPLOYED lms:v144 LIVE** + banner `teacher_gtm/ACHARYA_PRICING_ALL.{html,png}`. NEW UNIFIED FLAT PRICING now live across the Acharya assessment funnel: **₹120/mo Foundation·Board · ₹250/mo JEE-NEET-Senior** — same flat price for students, teachers AND institutes (no per-student multiplication, no discount); only add-on = **₹55,000 one-time custom white-label app** (institutes only; teachers/coaching exempt). Full dotted feature list under each price. Edited config.py (PRICE_FOUNDATION/SENIOR/INSTITUTE_CUSTOM) + main.py PRICING global + `/teacher` (teacher_signup.html) + `/exam-prep/upgrade` + landing `acharya.html` strips + JSON-LD. Verified container-direct + rendered DOM on live /teacher. `/pricing` (old COURSE product, separate Razorpay) deliberately NOT touched. ⚠️ changes UNCOMMITTED (repo has large pre-existing uncommitted state).
+- [ ] 2 Robotics   (2h)   — target: …            → artifact:
+- [ ] 3 Course     (4h)   — target: …            → artifact:
+- [ ] 4 FlowArt/VR (2h)   — target: …            → artifact:
+- [ ] 5 TechScan   (1h)   — target: …            → artifact:
 Reflection:
 Tomorrow's lead domino:
 
+## 2026-08-04 Mon  (gate: 0 paid)  — carry-over build session
+- [x] 1 Marketing/Sales — Rohan collateral: 3 forwardable WhatsApp cards (light theme + chrome Trigun logo) — `teacher_gtm/ACHARYA_CARD_TEACHER.png` (teachers/small coaching), `ACHARYA_CARD_INSTITUTE.png` (custom), `ACHARYA_INSTITUTE_START.png` ("free to start, pay after month 1", ₹150 junior/₹250 senior). Full point-wise features on each.
+- [x] 3 Product — SHIPPED **lms:v145 LIVE**: (a) pricing → new model junior ₹120→**₹150**, ₹250 senior, **free to start / pay after month 1**, dropped ₹55k custom tier; (b) NEW self-serve WHITE-LABEL feature `/teacher/branding` — teacher sets logo + brand colour + paper watermark from their dashboard; applied to printed papers (logo header + watermark + brand-colour accents + "Powered by Acharya" footer) + the class-test take page. Models: brand_color/brand_logo(base64)/brand_watermark on Student + seed migration. Verified: local render of branding page + branded paper (screenshots), live DOM on /teacher + /teacher/branding (303) + landing (₹150/₹250). Replaces the ₹55k custom build with a FREE self-serve feature.
+Reflection: This is why the ₹55k could be dropped — branding became a self-serve product feature, not a paid custom job. Every institute that "demanded their own logo/watermark" can now do it themselves. Still 0 paid — the gate is Rohan landing the first institute with the new free-to-start offer.
+Tomorrow's lead domino: Rohan field reports (institutes that started free); Phase 2 branding = per-institute subdomain. Also: fix stale seo.py teacher JSON-LD (still ₹4999).
+Follow-ups open: commit to main (lock v145/v146); /pricing (old course product) untouched. SEO/meta FIXED (v146): seo.py JSON-LD+llms.txt+FAQ + exam_prep + landing all now ₹150/₹250 · free-to-start · self-serve branding (₹4999/₹249 purged).
+
+## 2026-08-05 Wed  (gate: 0 paid) — BACKFILLED 08-07 (row was never stamped)
+- [~] 1 Marketing/Sales (2h) — worked, but not logged at the time; no artifact recovered on-repo. Account (Deepak, 08-07): "worked, forgot to log." Counted as showed-up, NOT a gate-day (no artifact to verify).
+- [ ] 2/3/4/5 — not logged.
+Reflection (backfill): The lesson repeats — off-repo/unlogged work is invisible and therefore doesn't count toward the streak. A block is only "done" when its artifact is in the log the same day. Whatever Wed's work was, it's lost to the record.
+
+## 2026-08-06 Thu  (gate: 0 paid) — BACKFILLED 08-07 (row never stamped; evidence recovered from files)
+- [x] 1 Marketing/Sales (2h) — target: arm Rohan for field visits  → artifact: **Rohan field kit shipped** — `teacher_gtm/WHY_ACHARYA.pdf` (why-us, forwardable), `teacher_gtm/ROHAN_COMPANY_FOUNDERS_KIT.pdf` (who-we-are, internal), `teacher_gtm/ROHAN_VISIT_QUESTIONS.pdf` (owner-absent script) — all dated Aug 6. Real B2B sales collateral for the Patna field channel.
+- [ ] 2/3/4/5 — not logged.
+Reflection (backfill): NOT a miss — real gate-channel work (B2B field kit) shipped, just never stamped. Same blind spot as the 07-31 Rohan report. Fix going forward: log the field/collateral work the day it ships.
+## 2026-08-07 Fri  (gate: 0 paid)  — ⚠️ STUDY HUB LOST (build-vs-buy); pivot to new institutes
+- [x] 1 Sales/GATE (2h)   — target: work the B2B field channel + read Rohan's full field data  → artifact: **Rohan field scoreboard analyzed — `~/Downloads/Rohan_Visit_Log_Outcomes.xlsx` (10 institutes visited 31 Jul–6 Aug).** Result: 1 Hot (Study Hub — DEAD, build-vs-buy) · 2 Follow-up Pending (M-20, Active Commerce — stale, no update since 31 Jul) · 1 Warm (AIMS — pain validated but balked at ₹55k, wants PPTs) · 3 Not Needed Now (Derote/Vidya/Bansal — already have own banks) · 3 Dead. **NET: 10 visits → 0 converting.** Three recurring objections: (1) "we already have our own question banks" (established institutes don't see testing as their gap); (2) "we want TEACHING material (PPTs/3D visuals) not more tests" — assessment-only wedge too narrow; (3) price/build-vs-buy on custom tier. Only VALIDATED pain = AIMS *teacher* preps papers manually, too slow — but that's the teacher, not the budget-holding owner. STRATEGIC SIGNAL: assessment-only → established-institute-owners → field-visit is NOT converting; needs experiment change (B2C self-serve students, and/or the manual-prep teacher as buyer). **Founder's call: KEEP GRINDING institutes — but grind SMART.** Shipped `teacher_gtm/FIELD_DATA_READOUT_10VISITS.md`: (1) the 3 killer objections + counters (own-bank / "we want teaching aids" / build-vs-buy), (2) a QUALIFY-BEFORE-YOU-WALK filter (HUNT smaller owner-run centres where teachers make papers by hand; SKIP established own-bank + teaching-first + owner-absent + stale listings), (3) the screening question ("do your teachers make their own papers or buy ready-made?"), (4) buyer re-frame → the manual-prep TEACHER is the validated-pain entry, not always the owner. Stop-condition set: if next 5 QUALIFIED visits with the new pitch still convert 0 → escalate to CEO hat (channel/wedge change, not try-harder).
+- [ ] 2 Robotics   (2h)   — paused (gate day)  → artifact:
+- [ ] 3 Course     (4h)   — target: (pending Rohan afternoon data) prep the counter to build-vs-buy for the next institute pitch  → artifact:
+- [ ] 4 FlowArt/VR (2h)   — paused (gate day)  → artifact:
+- [ ] 5 TechScan   (1h)   — optional  → artifact:
+Reflection: The warmest lead of the quarter (Study Hub) died on BUILD-vs-BUY — the owner saw Acharya work and concluded he'd build his own. This is now the #1 objection to design against for coaching-owner pitches: they can copy a UI, they CANNOT copy a 46k-question verified bank + the generation/verification engine + the compounding question-generation cost. Next pitch must make the build cost visceral (₹ + months + the exam-authenticity moat), OR lead with the student-facing self-serve funnel where build-vs-buy doesn't arise. Cheap lesson from a free pilot — correct outcome, just log it and move.
+Tomorrow's lead domino: act on Rohan's afternoon field data — rank the new institutes, pick the single warmest, and open it with the build-vs-buy counter baked in from the start.
+
+## 2026-08-08 Sat  (gate: 0 paid) — BACKFILLED 08-11 (row never stamped; evidence = git)
+- [ ] 1 Marketing  — NOT logged, no public asset found. Saturday is the weekly gate-mover (intro/sales) — it was spent building instead. **MISS on the gate.**
+- [x] 3 Product/BUILD (heavy) — SHIPPED 5 versions: lms **v147** (report RED BOX + 3-way confidence capture), **v148** (teacher class RED BOX re-teach panel), **v149** (teach-back "mirror test"), **v150** (Know-Your-Learner SELF layer: intake + senior misconceptions + live/forge), lms-kids **v56** (kids misconception map). Real, shipped, committed.
+- [ ] 2/4/5 — not logged.
+Reflection (backfill): High output, WRONG target. Six-version weekend = the build-trap the routine exists to catch. On 08-07 you set a stop-condition ("next move is a real-world experiment, not a feature") and then built five features. Building = instant reward; selling = slow feedback → you drifted to the keyboard. NOT counted as a gate-day.
+
+## 2026-08-09 Sun  (gate: 0 paid) — BACKFILLED 08-11 (row never stamped; evidence = git)
+- [x] 3 Product/BUILD — lms **v151** (teacher dashboard: roll confidently-wrong across ALL a teacher's tests). Committed f6a0f8c.
+- [ ] 1/2/4/5 — not logged. No gate work.
+Reflection (backfill): Same pattern as Sat. Product is now very deep on the diagnostic/"Know Your Learner" layer — and still 0 humans paying for it. The feature is not the bottleneck; a paying customer is.
+
+## 2026-08-10 Mon  (gate: 0 paid) — MISSING, backfilled 08-11
+- [ ] ALL — no row stamped, no repo evidence. Account (Deepak): __________ (fill in).
+Reflection (backfill): Full miss after a build-heavy weekend — the classic post-build crash. Streak already 0.
+
+## 2026-08-11 Tue  (gate: 0 paid)  — 🚀 15-DAY PRIVATE-TUTOR SPRINT begins
+- [x] 1 Sales/GATE (2h)   — target: launch the 15-day private-tutor sprint + arm Rohan  → artifact: **`teacher_gtm/SPRINT_15DAY_PRIVATE_TUTORS.md`** (Aug 11→25, goal = 2–3 tutors ACTIVATED; funnel 40 qualified→20 demos→8–10 start-free→2–3 activated; retargeted tutor pitch; stop-conditions). Pivot rationale: private tutor = pain-holder + budget-holder in one person, no bank, no build-vs-buy. Rohan on tablet demo setup today. NEXT deliverable: private-tutor WhatsApp pitch card.
+- [ ] 2 Robotics   (2h)   — paused (gate sprint)  → artifact:
+- [ ] 3 Course/GATE(4h)   — target: build the tutor pitch card + tracking sheet; qualify-filter for Rohan's next session  → artifact:
+- [ ] 4 FlowArt/VR (2h)   — paused (gate sprint)  → artifact:
+- [ ] 5 TechScan   (1h)   — optional  → artifact:
+Reflection:
+Tomorrow's lead domino: Phase 1 sourcing — Rohan builds the 40+ qualified private-tutor list; card in hand.
+
+## 2026-08-12 Wed  (gate: 0 paid) — 🏫 FIRST INSTITUTE SAID YES (One Step Education, Patna)
+- [~] 1 Marketing/GATE (2h) — target: get sample tests to One Step + qualify the pilot  → artifact: PENDING DEEPAK/ROHAN — hand `teacher_gtm/ONE_STEP_SAMPLE_PAPER.md` (26-Q SSC-CGL sample) to Rohan → One Step; confirm # students, priority exam, timeline, payment intent. (Real human follow-up; not stampable until it happens.)
+- [ ] 2 Robotics   (2h)   — paused (SRB build day)  → artifact:
+- [x] 3 Course/GATE (4h)   — target: begin the SRB (SSC/Railway/Banking/BPSC) bank for the pilot  → artifact: **SHIPPED + LIVE on Gurukul — compute-the-answer REASONING engine for the whole govt-job family.** `question_bank_engine/qbank/reasoninggen.py` (7 chapters: Coding-Decoding, Series, Analogy, Odd-One-Out, Ranking, Direction Sense, Blood Relations; 13 builders) + `reasoning_common.py` taxonomy + wired into `generator.py` route + registered in `syllabus.py` for SSC CGL/CHSL, Railway (RRB), Banking Prelims, BPSC. 26,000 build self-test = 100% (answer always in options, always 4 distinct, computed-correct). Deployed to live Gurukul (`/examgen`), verified `/chapters` + live `/generate` return computed-answer reasoning Qs. Also produced `teacher_gtm/ONE_STEP_SAMPLE_PAPER.md` (26-Q sample: 14 reasoning + 12 quant, answer key + solutions) + `teacher_gtm/ONE_STEP_EDUCATION_PATNA.md` (customer spec + full coverage audit). KEY FINDING: HuggingFace has NO usable SRB bank → build path = GENERATE (quant ✅ + reasoning ✅ NEW) + PDF-ingest (GS/GK/English) + borrow (GS science).
+- [ ] 4 FlowArt/VR (2h)   — paused  → artifact:
+- [ ] 5 TechScan   (1h)   — paused  → artifact:
+Reflection: The field channel converted its first institute — and pointed at a segment (SSC/Railway/Banking/BPSC) we hadn't built. Chose FULL COMMIT (CEO call): building the SRB bank arms Rohan for the ENTIRE Patna govt-job coaching market, not just One Step. Kept it out of the build-trap by shipping a REAL, verified, LIVE capability (reasoning engine) + a shareable artifact the SAME day, not a multi-week detour. Gate honesty: institute said "yes to use" ≠ paid; the pilot converts only when their students actually take tests + a UTR clears. Block 1 (the human handoff) is the real gate move and is still PENDING — the day is not a gate-day until Rohan gets the sample in front of One Step.
+Tomorrow's lead domino: (1) wire SSC CGL into the LMS (examgen.py RAG_SUBJECTS + main.py EXAMS → deploy lms:vN) so One Step students can actually TAKE the reasoning+quant tests, not just see a PDF (task #4); (2) Rohan delivers the sample paper + qualifies the pilot. STOP-CONDITION: if no institute is actively USING the bank within ~2 weeks, stop expanding it and fix the sales side.
+
+## 2026-08-13 Thu  (gate: 0 paid) — SRB build day 2 (continuation)
+- [x] 3h Course/GATE — **Railway (RRB) added + frontend matched to One Step (lms:v140)** — added Railway as a live student exam (RAG railway-reasoning/quant/gk/english + railway-science borrow + current-affairs; GOALS/EXAMS/STUDENT_EXAMS) so ALL of One Step's exams show live in the picker: BPSC (real PYQs) · SSC CGL (fixed tag "All sections live") · Railway (NTPC·Group D·ALP) · Banking. Verified picker + Railway generates. Committed+pushed dd2ef8d. One Step can now SEE their full menu at acharya.trigunai.com/exam-prep.
+- [x] 3g Course/GATE — **CURRENT AFFAIRS manual-entry pipeline BUILT + LIVE (lms:v139)** — the one subject that can't be generated (time-sensitive). `current_affairs/import_current_affairs.py` (CSV → real dated Qs, generated=0/verified=1, idempotent) + `TEMPLATE_current_affairs.csv` + `README.md` (monthly workflow). Serving enabled (storage.py Current-Affairs prefix joins BPSC/UPSC gates) + wired into SSC CGL goal. Seeded 4 examples, /pool verified. **CLIENT NOTE NOW 100% COVERED** (Maths/Reasoning/GK/English/GS-Science generated-or-borrowed live; GS-Social via BPSC PYQs+Static-GK; Current Affairs via monthly manual entry). Committed a308864 (+ e11e8e3 lms v127→v138). ⚠️ storage.py serving patch is Gurukul-only (carries parallel session's BPSC patch; repo copy not overwritten).
+- [x] 3f Course/GATE — **GS-SCIENCE wired (lms:v138)** — SSC "General Science" now serves the REAL CBSE Class 10 Science bank (3,421 verified NCERT Qs = correct SSC difficulty) via the companion-borrow (RAG_SUBJECTS ssc-science → exam="CBSE Class 10"/subject="Science", added to ssc-cgl goal). Real PYQs, no generation. Verified /pool serves (carbon catenation, Mg burning). SSC CGL now has 5 subjects: Reasoning+Quant+GK+English+General Science. Client note now covered except Current Affairs (needs dated feed) + GS-Social standalone (partially covered by Static-GK Constitution/geography + BPSC GS bank).
+- [x] 3e Course/GATE — **ENGLISH (SSC) generator BUILT + LIVE (lms:v137)** — new `qbank/englishgen.py` (generate-from-data): 5 chapters — Synonyms/Antonyms (48 verified pairs), One-Word Substitution (20), Idioms & Phrases (18), Spelling (correct-vs-misspelt, 14 words), Active/Passive Voice (mechanical, sensible verb→object pairing). 21,000-build self-test = 100%. Registered ("SSC/CHSL/Railway/Banking","English")=ENGLISH_COMMON + route in generator.py + Gurukul + LMS SSC CGL goal (ssc-english). Verified live (Amateur→Professional, voice transforms correct). **🎯 SSC CGL Tier-1 now COMPLETE — all 4 sections live (Reasoning + Quant + GK + English), unlimited.** Closes 2 of 4 client subject gaps (Static GK + English ✅; Current-Affairs + GS-Social remain).
+- [x] 3d Course/GATE — **STATIC GK generator BUILT + LIVE (lms:v136)** — new `qbank/staticgkgen.py` (generate-from-data, correct-by-construction): 7 chapters (State/World Capitals, Currencies, Rivers, National Parks, Dances, Books, Awards, Constitution Articles, Instruments, Vitamins, Sports, Orgs-HQ, Days, Superlatives, Firsts) from ~15 verified fact tables. 34,500-build self-test = 100% (answer always correct + 4 distinct). Registered ("SSC/CHSL/Railway/Banking/BPSC","General Knowledge")=STATIC_GK_COMMON in syllabus.py + route in generator.py + deployed Gurukul. Wired into LMS SSC CGL goal (ssc-gk subject). Verified live /chapters + /generate (WHO→Geneva, ISRO→Bengaluru, capitals all correct). Closes 1 of the 4 client subject gaps (Static GK ✅; English/Current-Affairs/GS-Social remain).
+- [x] 3c Course/GATE — **BPSC now STUDENT-LIVE too (lms:v135)** — wired the parallel session's 289 real 70th-Prelims GS PYQs (official keys) into the LMS: RAG_SUBJECTS bpsc-gs + GOALS bpsc + EXAMS/STUDENT_EXAMS. Picker now shows BPSC + SSC CGL + UPSC + Banking all available; BPSC /pool serves real keyed Qs. Reconciled cleanly with the parallel session (my SSC syllabus.py + their BPSC storage.py both live, no clobber).
+- [x] 3 Course/GATE — **SSC CGL now STUDENT-LIVE on acharya.trigunai.com/exam-prep** (lms:v134). Wired the compute-the-answer Reasoning + Quant generators into the student LMS: examgen.py (RAG_SUBJECTS ssc-reasoning+ssc-quant, GOALS ssc-cgl, DIFFICULTY_LADDER "SSC CGL" 2/2-3/3), main.py (EXAMS + STUDENT_EXAMS ssc→available). Backend: registered ("SSC CGL"/("Railway RRB")/("SSC CHSL"),"Quantitative Aptitude")=BANKING_QUANT in syllabus.py on Gurukul (reasoning was already live). Verified: /chapters (7 reasoning + 14 quant) + live /generate both subjects + picker renders "SSC CGL · available" container-direct + health 200 + v134 @100% traffic. ⚠️ authenticated signup→test click-through NOT browser-walked (in-app pane blocks the acharya domain) — spot-check manually. ⚠️ lms changes UNCOMMITTED (large pre-existing uncommitted state v127→v134).
+- [x] 3b BPSC extraction — 300 real 70th Prelims GS Qs extracted (Qwen2.5-VL 4-bit on Azure T4) + Opus cross-check solve of paper 1 (109 high/38 flag/4 fig). Decision: use OFFICIAL BPSC key (CA-heavy paper). Handed to parallel session (HANDOFF_SRB_OTHER_SESSION.md).
+- [x] 1 Sales/GATE — Rohan onboarding kit for One Step Education: intake form + question checklist + sample test PDFs (teacher_gtm/ONE_STEP_*.pdf). Rohan visiting today.
+Reflection: SRB wedge is now REAL end-to-end — a student can pick SSC CGL and take unlimited Reasoning + Maths tests today. BPSC real-questions pipeline proven (300 extracted). Split work to a parallel session to scale extraction. Gate still 0 paid — One Step must actually USE it (Rohan's visit).
+Tomorrow's lead domino: (1) parallel session lands the official BPSC key + stores 300 live + extracts more editions; (2) Rohan qualifies One Step (language/delivery/student count → the intake form); (3) commit the lms v127→v134 state to main.
+
+## 2026-08-13 Thu  (gate: 0 paid)
+- [ ] 1 Marketing  (2h)   — target: …            → artifact:
+- [ ] 2 Robotics   (2h)   — target: …            → artifact:
+- [ ] 3 Course     (4h)   — target: …            → artifact:
+- [ ] 4 FlowArt/VR (2h)   — target: …            → artifact:
+- [ ] 5 TechScan   (1h)   — target: …            → artifact:
+Reflection:
+Tomorrow's lead domino:
+
+
+## 2026-08-14 Fri  (gate: 0 paid) — TRE build day (One Step arming); logged 20:41 evening close
+- [~] 1 Marketing/GATE (2h) — target: real human gate move on One Step  → artifact: PENDING — `c927144` shipped Rohan field guides + sourcing-guide update (Daroga verified, TRE next), but NO evidence of sample TRE paper delivered to One Step / student count / registration / UTR. **Not a gate move until a human acts.** Account: __________
+- [ ] 2 Robotics   (2h)   — paused (gate/build sprint)  → artifact:
+- [x] 3 Course/GATE (heavy) — **BPSC TRE bank built + LIVE for One Step** — 16 commits e11e8e3→e336a80. TRE: 152 papers → extractor → 344 cross-source-keyed real Qs → A–E serving → deployed (0c7e681). GS-Social targeted keying 3 waves (+387/+286/+391 real Qs; Hist/Geo/Econ/Polity dimensions 180–253 each). 4 GS-Social dimensions exposed as selectable subjects (v144). Renamed BPSC→TRE for user-facing (institute wants TRE) v145. BPSC civil-services hidden v146. Tier-2 GS-Science → CBSE Class 12 real banks (v143). Pool fill: Maths+Reasoning→1007, English/Static-GK→1000. 688 ready-to-key TRE Qs preserved (e336a80). Branch srb-bpsc-tre.
+- [ ] 4 FlowArt/VR (2h)   — paused  → artifact:
+- [ ] 5 TechScan   (1h)   — paused  → artifact:
+Reflection: Strong Block-3 product day — TRE wedge is now real end-to-end for the One Step pilot. But 16-of-16 commits are BUILD; the gate move (sample in front of One Step + a using/paying human) is still PENDING. Same shape as the 08-08/09 weekend: deep product, 0 humans paying. Gate honesty: institute "yes to use" ≠ paid. NOT a gate-day until One Step's students actually take TRE tests + a UTR clears.
+Tomorrow's lead domino: STOP building the bank. The bank is deep enough. Tomorrow's ONE move = get the TRE sample paper physically in front of One Step (via Rohan) + confirm student count + timeline + payment intent. One real-human gate action, not a feature.

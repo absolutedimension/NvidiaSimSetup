@@ -1,0 +1,2822 @@
+{
+ "1": {
+  "number": 1,
+  "qtype": "MCQ_single",
+  "stem": "The oldest civilization in the world is\n(A) Egyptian\n(B) Mesopotamia (Iraq)\n(C) Chinese\n(D) Indus valley",
+  "raw_options": [
+   "(a) Egyptian",
+   "(b) Mesopotamia (Iraq)",
+   "(c) Chinese",
+   "(d) Indus valley"
+  ],
+  "options": {
+   "A": "Egyptian",
+   "B": "Mesopotamia (Iraq)",
+   "C": "Chinese",
+   "D": "Indus valley"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "2": {
+  "number": 2,
+  "qtype": "MCQ_single",
+  "stem": "For two liquids A and B to form an ideal solution\n(A) Enthalpy of mixing should be zero\n(B) Entropy of mixing must be zero\n(C) Free energy of mixing should be zero\n(D) None of the above",
+  "raw_options": [
+   "(a) Enthalpy of mixing should be zero",
+   "(b) Entropy of mixing must be zero",
+   "(c) Free energy of mixing should be zero",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Enthalpy of mixing should be zero",
+   "B": "Entropy of mixing must be zero",
+   "C": "Free energy of mixing should be zero",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "3": {
+  "number": 3,
+  "qtype": "MCQ_single",
+  "stem": "What should come in place of ? in the following series?\n117, 98, 80, 64, ?, 42\n(A) 51\n(B) 55\n(C) 46\n(D) 48",
+  "raw_options": [
+   "(a) 51",
+   "(b) 55",
+   "(c) 46",
+   "(d) 48"
+  ],
+  "options": {
+   "A": "51",
+   "B": "55",
+   "C": "46",
+   "D": "48"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "4": {
+  "number": 4,
+  "qtype": "MCQ_single",
+  "stem": "Under the Government of India Act 1935, who was the first elected Chairman of Bihar Legislative Council?\n(A) Rajendra Prasad\n(B) Rai Bahadur Satish Chandra\n(C) Rajiv Ranjan Sinha\n(D) More than one of the above",
+  "raw_options": [
+   "(a) Rajendra Prasad",
+   "(b) Rai Bahadur Satish Chandra",
+   "(c) Rajiv Ranjan Sinha",
+   "(d) More than one of the above"
+  ],
+  "options": {
+   "A": "Rajendra Prasad",
+   "B": "Rai Bahadur Satish Chandra",
+   "C": "Rajiv Ranjan Sinha",
+   "D": "More than one of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "5": {
+  "number": 5,
+  "qtype": "MCQ_single",
+  "stem": "Which pair of rivers cuts the Tropic of Cancer twice over Chhota Nagpur Plateau?\n(A) North Koel – Damodar\n(B) North Koel – Suwarnarekha\n(C) Suwarnarekha – Damodar\n(D) South Koel – Damodar",
+  "raw_options": [
+   "(a) North Koel – Damodar",
+   "(b) North Koel – Suwarnarekha",
+   "(c) Suwarnarekha – Damodar",
+   "(d) South Koel – Damodar"
+  ],
+  "options": {
+   "A": "North Koel – Damodar",
+   "B": "North Koel – Suwarnarekha",
+   "C": "Suwarnarekha – Damodar",
+   "D": "South Koel – Damodar"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "6": {
+  "number": 6,
+  "qtype": "MCQ_single",
+  "stem": "Which Sector in India has benefited the most from Globalization?\n(A) Manufacturing\n(B) Agriculture\n(C) All Sectors have benefited equally\n(D) Services",
+  "raw_options": [
+   "(a) Manufacturing",
+   "(b) Agriculture",
+   "(c) All Sectors have benefited equally",
+   "(d) Services"
+  ],
+  "options": {
+   "A": "Manufacturing",
+   "B": "Agriculture",
+   "C": "All Sectors have benefited equally",
+   "D": "Services"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "7": {
+  "number": 7,
+  "qtype": "MCQ_single",
+  "stem": "When antigens are introduced in the body through vaccination antibodies are produced to fight off infection\n(A) By only T cells\n(B) By both B and T cells\n(C) By only B cells\n(D) None of the above",
+  "raw_options": [
+   "(a) By only T cells",
+   "(b) By both B and T cells",
+   "(c) By only B cells",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "By only T cells",
+   "B": "By both B and T cells",
+   "C": "By only B cells",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "8": {
+  "number": 8,
+  "qtype": "MCQ_single",
+  "stem": "The power of the Supreme Court of India to decide disputes between the Centre and the State falls under its\n(A) Advisory jurisdiction\n(B) Constitutional jurisdiction\n(C) Original jurisdiction\n(D) Appellate jurisdiction",
+  "raw_options": [
+   "(a) Advisory jurisdiction",
+   "(b) Constitutional jurisdiction",
+   "(c) Original jurisdiction",
+   "(d) Appellate jurisdiction"
+  ],
+  "options": {
+   "A": "Advisory jurisdiction",
+   "B": "Constitutional jurisdiction",
+   "C": "Original jurisdiction",
+   "D": "Appellate jurisdiction"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "9": {
+  "number": 9,
+  "qtype": "MCQ_single",
+  "stem": "Which newspaper wrote the following about the possible future role of the Indian National Congress : ‘… is the nucleus of a future Parliament of our country … and will lead to the good of inconceivable magnitude for our countrymen’?\n(A) The Times of India\n(B) The Indian Mirror\n(C) The New York Times\n(D) More than one of the above",
+  "raw_options": [
+   "(a) The Times of India",
+   "(b) The Indian Mirror",
+   "(c) The New York Times",
+   "(d) More than one of the above"
+  ],
+  "options": {
+   "A": "The Times of India",
+   "B": "The Indian Mirror",
+   "C": "The New York Times",
+   "D": "More than one of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "10": {
+  "number": 10,
+  "qtype": "MCQ_single",
+  "stem": "How many triangles are there in the following figure?",
+  "raw_options": [
+   "(a) 10",
+   "(b) 8",
+   "(c) 14",
+   "(d) 12"
+  ],
+  "options": {
+   "A": "10",
+   "B": "8",
+   "C": "14",
+   "D": "12"
+  },
+  "marks": 0,
+  "needs_figure": true
+ },
+ "11": {
+  "number": 11,
+  "qtype": "MCQ_single",
+  "stem": "Which State has the longest boundary with Madhya Pradesh ?\n(A) Uttar Pradesh\n(B) Rajasthan\n(C) Andhra Pradesh\n(D) Maharashtra",
+  "raw_options": [
+   "(a) Uttar Pradesh",
+   "(b) Rajasthan",
+   "(c) Andhra Pradesh",
+   "(d) Maharashtra"
+  ],
+  "options": {
+   "A": "Uttar Pradesh",
+   "B": "Rajasthan",
+   "C": "Andhra Pradesh",
+   "D": "Maharashtra"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "12": {
+  "number": 12,
+  "qtype": "MCQ_single",
+  "stem": "Who led the Champaran Satyagraha in 1917 ?\n(A) Sardar Patel\n(B) Mahatma Gandhi\n(C) Subhas Chandra Bose\n(D) Jawaharlal Nehru",
+  "raw_options": [
+   "(a) Sardar Patel",
+   "(b) Mahatma Gandhi",
+   "(c) Subhas Chandra Bose",
+   "(d) Jawaharlal Nehru"
+  ],
+  "options": {
+   "A": "Sardar Patel",
+   "B": "Mahatma Gandhi",
+   "C": "Subhas Chandra Bose",
+   "D": "Jawaharlal Nehru"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "13": {
+  "number": 13,
+  "qtype": "MCQ_single",
+  "stem": "Tropic of Cancer is passes through which State ?\n(A) Uttar Pradesh\n(B) Meghalaya\n(C) Orissa\n(D) Bihar",
+  "raw_options": [
+   "(a) Uttar Pradesh",
+   "(b) Meghalaya",
+   "(c) Orissa",
+   "(d) Bihar"
+  ],
+  "options": {
+   "A": "Uttar Pradesh",
+   "B": "Meghalaya",
+   "C": "Orissa",
+   "D": "Bihar"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "14": {
+  "number": 14,
+  "qtype": "MCQ_single",
+  "stem": "Who among the following is the recipient of Bharat Ratna for 2024 ?\n(A) Chandra Shekhar\n(B) Pranab Mukharjee\n(C) M. S. Swaminathan\n(D) C. N. R. Rao",
+  "raw_options": [
+   "(a) Chandra Shekhar",
+   "(b) Pranab Mukharjee",
+   "(c) M. S. Swaminathan",
+   "(d) C. N. R. Rao"
+  ],
+  "options": {
+   "A": "Chandra Shekhar",
+   "B": "Pranab Mukharjee",
+   "C": "M. S. Swaminathan",
+   "D": "C. N. R. Rao"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "15": {
+  "number": 15,
+  "qtype": "MCQ_single",
+  "stem": "One of the properties associated with X-rays is that they can be deflected by\n(A) Magnetic fields only\n(B) Both electric and magnetic fields together\n(C) Electric fields only\n(D) None of the above",
+  "raw_options": [
+   "(a) Magnetic fields only",
+   "(b) Both electric and magnetic fields together",
+   "(c) Electric fields only",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Magnetic fields only",
+   "B": "Both electric and magnetic fields together",
+   "C": "Electric fields only",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "16": {
+  "number": 16,
+  "qtype": "MCQ_single",
+  "stem": "Renewable Energy means\n1. Electricity produced from solar\n2. Electricity produced from thermal plants\n3. Electricity produced from coal\n4. Electricity produced from wind\nChoose the correct answer from the options given below:\n(A) 1, 2 and 3 only\n(B) 1 and 3 only\n(C) 1, 3 and 4 only\n(D) 1 and 4 only",
+  "raw_options": [
+   "(a) 1, 2 and 3 only",
+   "(b) 1 and 3 only",
+   "(c) 1, 3 and 4 only",
+   "(d) 1 and 4 only"
+  ],
+  "options": {
+   "A": "1, 2 and 3 only",
+   "B": "1 and 3 only",
+   "C": "1, 3 and 4 only",
+   "D": "1 and 4 only"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "17": {
+  "number": 17,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following Acts converted Unicameral Legislature of Bihar into Bicameral : Bihar Legislative Assembly and Bihar Legislative Council ?\n(A) Government of India Act 1935\n(B) Government of India Act 1919\n(C) Government of India Act 1909\n(D) More than one of the above",
+  "raw_options": [
+   "(a) Government of India Act 1935",
+   "(b) Government of India Act 1919",
+   "(c) Government of India Act 1909",
+   "(d) More than one of the above"
+  ],
+  "options": {
+   "A": "Government of India Act 1935",
+   "B": "Government of India Act 1919",
+   "C": "Government of India Act 1909",
+   "D": "More than one of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "18": {
+  "number": 18,
+  "qtype": "MCQ_single",
+  "stem": "Which is the oldest mountain of South America continent ?\n(A) Andese Mountain\n(B) Brazil Mountain\n(C) Turmuc-Humuk\n(D) Pacaraima",
+  "raw_options": [
+   "(a) Andese Mountain",
+   "(b) Brazil Mountain",
+   "(c) Turmuc-Humuk",
+   "(d) Pacaraima"
+  ],
+  "options": {
+   "A": "Andese Mountain",
+   "B": "Brazil Mountain",
+   "C": "Turmuc-Humuk",
+   "D": "Pacaraima"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "19": {
+  "number": 19,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following are matters on which a constitutional amendment is possible only with the ratification of the legislature of not less than one-half of the states ?\n1. Election of the President.\n2. Representation of States in Parliament.\n3. Any of the lists in the 7th Schedule.\n4. Abolition of the Legislative Council of a State.\nChoose the correct answer.\n(A) 1, 3 and 4\n(B) 1, 2 and 3\n(C) 1, 2 and 4\n(D) 2, 3 and 4",
+  "raw_options": [
+   "(a) 1, 3 and 4",
+   "(b) 1, 2 and 3",
+   "(c) 1, 2 and 4",
+   "(d) 2, 3 and 4"
+  ],
+  "options": {
+   "A": "1, 3 and 4",
+   "B": "1, 2 and 3",
+   "C": "1, 2 and 4",
+   "D": "2, 3 and 4"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "20": {
+  "number": 20,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following State was not annexed under Lord Dalhousie’s Doctrine of Lapse ?\n(A) Sambhalpur\n(B) Satara\n(C) Jaipur\n(D) Nagpur",
+  "raw_options": [
+   "(a) Sambhalpur",
+   "(b) Satara",
+   "(c) Jaipur",
+   "(d) Nagpur"
+  ],
+  "options": {
+   "A": "Sambhalpur",
+   "B": "Satara",
+   "C": "Jaipur",
+   "D": "Nagpur"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "21": {
+  "number": 21,
+  "qtype": "MCQ_single",
+  "stem": "In which district of Bihar, wheat crop production is maximum?\n\n(A) Rohtas\n(B) Patna\n(C) Bhojpur\n(D) Jahanabad",
+  "raw_options": [
+   "(a) Rohtas",
+   "(b) Patna",
+   "(c) Bhojpur",
+   "(d) Jahanabad"
+  ],
+  "options": {
+   "A": "Rohtas",
+   "B": "Patna",
+   "C": "Bhojpur",
+   "D": "Jahanabad"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "22": {
+  "number": 22,
+  "qtype": "MCQ_single",
+  "stem": "Which field game is most popular in the world?\n\n(A) Soccer (Football)\n(B) Cricket\n(C) Volleyball\n(D) Hockey",
+  "raw_options": [
+   "(a) Soccer (Football)",
+   "(b) Cricket",
+   "(c) Volleyball",
+   "(d) Hockey"
+  ],
+  "options": {
+   "A": "Soccer (Football)",
+   "B": "Cricket",
+   "C": "Volleyball",
+   "D": "Hockey"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "23": {
+  "number": 23,
+  "qtype": "MCQ_single",
+  "stem": "In 1901 who has published the book ‘Poverty and Un-British Rule in India’?\n\n(A) R. C. Dutt\n(B) Phirozshah Mehta\n(C) S. N. Banerjee\n(D) Dadabhai Naoroji",
+  "raw_options": [
+   "(a) R. C. Dutt",
+   "(b) Phirozshah Mehta",
+   "(c) S. N. Banerjee",
+   "(d) Dadabhai Naoroji"
+  ],
+  "options": {
+   "A": "R. C. Dutt",
+   "B": "Phirozshah Mehta",
+   "C": "S. N. Banerjee",
+   "D": "Dadabhai Naoroji"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "24": {
+  "number": 24,
+  "qtype": "MCQ_single",
+  "stem": "Fort William College at Calcutta was established in\n\n(A) 1800 CE to train Indian civil servants\n(B) 1800 CE to train civil servants in Indian languages\n(C) 1802 CE to understand Indian culture and tradition\n(D) 1802 CE for historical research in Indian languages",
+  "raw_options": [
+   "(a) 1800 CE to train Indian civil servants",
+   "(b) 1800 CE to train civil servants in Indian languages",
+   "(c) 1802 CE to understand Indian culture and tradition",
+   "(d) 1802 CE for historical research in Indian languages"
+  ],
+  "options": {
+   "A": "1800 CE to train Indian civil servants",
+   "B": "1800 CE to train civil servants in Indian languages",
+   "C": "1802 CE to understand Indian culture and tradition",
+   "D": "1802 CE for historical research in Indian languages"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "25": {
+  "number": 25,
+  "qtype": "MCQ_single",
+  "stem": "The script written on Ashoka’s Pillars is\n\n(A) Pali\n(B) Sanskrit\n(C) Samaritan\n(D) Brahmi",
+  "raw_options": [
+   "(a) Pali",
+   "(b) Sanskrit",
+   "(c) Samaritan",
+   "(d) Brahmi"
+  ],
+  "options": {
+   "A": "Pali",
+   "B": "Sanskrit",
+   "C": "Samaritan",
+   "D": "Brahmi"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "26": {
+  "number": 26,
+  "qtype": "MCQ_single",
+  "stem": "Catalyst used in hydrogenation of vegetable oil into vanaspati ghee is\n\n(A) Ni\n(B) Pd\n(C) Fe\n(D) None of the above",
+  "raw_options": [
+   "(a) Ni",
+   "(b) Pd",
+   "(c) Fe",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Ni",
+   "B": "Pd",
+   "C": "Fe",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "27": {
+  "number": 27,
+  "qtype": "MCQ_single",
+  "stem": "Grey revolution is related to\n\n(A) Oilseeds\n(B) Potatoes\n(C) Fertilizers\n(D) Fisheries",
+  "raw_options": [
+   "(a) Oilseeds",
+   "(b) Potatoes",
+   "(c) Fertilizers",
+   "(d) Fisheries"
+  ],
+  "options": {
+   "A": "Oilseeds",
+   "B": "Potatoes",
+   "C": "Fertilizers",
+   "D": "Fisheries"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "28": {
+  "number": 28,
+  "qtype": "MCQ_single",
+  "stem": "Which Article of the Indian Constitution deals with the proclamation of Emergency ?\n\n(A) Article 356\n(B) Article 352\n(C) Article 365\n(D) Article 360",
+  "raw_options": [
+   "(a) Article 356",
+   "(b) Article 352",
+   "(c) Article 365",
+   "(d) Article 360"
+  ],
+  "options": {
+   "A": "Article 356",
+   "B": "Article 352",
+   "C": "Article 365",
+   "D": "Article 360"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "29": {
+  "number": 29,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following Sufi Silsilah was founded in Bihar ?\n\n(A) Qalandhar\n(B) Kubriya\n(C) Firdousia\n(D) Quaderia",
+  "raw_options": [
+   "(a) Qalandhar",
+   "(b) Kubriya",
+   "(c) Firdousia",
+   "(d) Quaderia"
+  ],
+  "options": {
+   "A": "Qalandhar",
+   "B": "Kubriya",
+   "C": "Firdousia",
+   "D": "Quaderia"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "30": {
+  "number": 30,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following country is not a member of G7 ?\n\n(A) France\n(B) Russia\n(C) USA\n(D) Italy",
+  "raw_options": [
+   "(a) France",
+   "(b) Russia",
+   "(c) USA",
+   "(d) Italy"
+  ],
+  "options": {
+   "A": "France",
+   "B": "Russia",
+   "C": "USA",
+   "D": "Italy"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "31": {
+  "number": 31,
+  "qtype": "MCQ_single",
+  "stem": "Actual site of dark reaction in photosynthesis inside cytoplasm is\n\n(A) Stroma\n(B) Granum\n(C) Grana Lamella\n(D) None of the above",
+  "raw_options": [
+   "(a) Stroma",
+   "(b) Granum",
+   "(c) Grana Lamella",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Stroma",
+   "B": "Granum",
+   "C": "Grana Lamella",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "32": {
+  "number": 32,
+  "qtype": "MCQ_single",
+  "stem": "Raj travelled from a point X straight to Y at a distance of 80 metres. He turned right and walked 50 metres, then again turned right and walked 70 metres. Finally, he turned right and walked 50 metres. How far is he from the starting point ?\n\n(A) 20 metres\n(B) 10 metres\n(C) 45 metres\n(D) 30 metres",
+  "raw_options": [
+   "(a) 20 metres",
+   "(b) 10 metres",
+   "(c) 45 metres",
+   "(d) 30 metres"
+  ],
+  "options": {
+   "A": "20 metres",
+   "B": "10 metres",
+   "C": "45 metres",
+   "D": "30 metres"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "33": {
+  "number": 33,
+  "qtype": "MCQ_single",
+  "stem": "The temple at Deogarh near Jhansi and the sculptures in the temple at Garhwa near Allahabad are important remains of\n\n(A) Maurya art\n(B) Rashtrakuta art\n(C) Gupta art\n(D) None of the above",
+  "raw_options": [
+   "(a) Maurya art",
+   "(b) Rashtrakuta art",
+   "(c) Gupta art",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Maurya art",
+   "B": "Rashtrakuta art",
+   "C": "Gupta art",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "34": {
+  "number": 34,
+  "qtype": "MCQ_single",
+  "stem": "Bihar produces 71 percent of India’s annual production of which of these ?\n\n(A) Lychee\n(B) Mango\n(C) Orange\n(D) Pineapple",
+  "raw_options": [
+   "(a) Lychee",
+   "(b) Mango",
+   "(c) Orange",
+   "(d) Pineapple"
+  ],
+  "options": {
+   "A": "Lychee",
+   "B": "Mango",
+   "C": "Orange",
+   "D": "Pineapple"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "35": {
+  "number": 35,
+  "qtype": "MCQ_single",
+  "stem": "In which city was the G20 Summit 2023 held in India ?\n(A) Mumbai\n(B) New Delhi\n(C) Hyderabad\n(D) Bangalore",
+  "raw_options": [
+   "(a) Mumbai",
+   "(b) New Delhi",
+   "(c) Hyderabad",
+   "(d) Bangalore"
+  ],
+  "options": {
+   "A": "Mumbai",
+   "B": "New Delhi",
+   "C": "Hyderabad",
+   "D": "Bangalore"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "36": {
+  "number": 36,
+  "qtype": "MCQ_single",
+  "stem": "There is no atmosphere on the surface of the moon because\n(A) It revolves around Earth\n(B) It gets light from Sun\n(C) Escape velocity of gas molecules is less than rms velocity\n(D) It is closer to Earth",
+  "raw_options": [
+   "(a) It revolves around Earth",
+   "(b) It gets light from Sun",
+   "(c) Escape velocity of gas molecules is less than rms velocity",
+   "(d) It is closer to Earth"
+  ],
+  "options": {
+   "A": "It revolves around Earth",
+   "B": "It gets light from Sun",
+   "C": "Escape velocity of gas molecules is less than rms velocity",
+   "D": "It is closer to Earth"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "37": {
+  "number": 37,
+  "qtype": "MCQ_single",
+  "stem": "Who was the founder of the Maurya Empire ?\n(A) Ashoka\n(B) Chandragupta Maurya\n(C) Brihadratha\n(D) Bindusara",
+  "raw_options": [
+   "(a) Ashoka",
+   "(b) Chandragupta Maurya",
+   "(c) Brihadratha",
+   "(d) Bindusara"
+  ],
+  "options": {
+   "A": "Ashoka",
+   "B": "Chandragupta Maurya",
+   "C": "Brihadratha",
+   "D": "Bindusara"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "38": {
+  "number": 38,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following is not the famous centre for Buddhist Learning in Ancient India ?\n(A) Vikramshila\n(B) Nalanda\n(C) Valabhi\n(D) Nagpur",
+  "raw_options": [
+   "(a) Vikramshila",
+   "(b) Nalanda",
+   "(c) Valabhi",
+   "(d) Nagpur"
+  ],
+  "options": {
+   "A": "Vikramshila",
+   "B": "Nalanda",
+   "C": "Valabhi",
+   "D": "Nagpur"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "39": {
+  "number": 39,
+  "qtype": "MCQ_single",
+  "stem": "Which country hosted the 2023 World Economic forum meeting ?\n(A) Germany\n(B) Switzerland\n(C) Canada\n(D) Japan",
+  "raw_options": [
+   "(a) Germany",
+   "(b) Switzerland",
+   "(c) Canada",
+   "(d) Japan"
+  ],
+  "options": {
+   "A": "Germany",
+   "B": "Switzerland",
+   "C": "Canada",
+   "D": "Japan"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "40": {
+  "number": 40,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following vitamins are water soluble ?\n(A) Vitamin K\n(B) Vitamin A\n(C) Vitamin D\n(D) None of these",
+  "raw_options": [
+   "(a) Vitamin K",
+   "(b) Vitamin A",
+   "(c) Vitamin D",
+   "(d) None of these"
+  ],
+  "options": {
+   "A": "Vitamin K",
+   "B": "Vitamin A",
+   "C": "Vitamin D",
+   "D": "None of these"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "41": {
+  "number": 41,
+  "qtype": "MCQ_single",
+  "stem": "Who became the President of Indian National Congress when Subhash Chandra Bose resigned in 1939 ?\n(A) Jawahar Lal Nehru\n(B) Rajendra Prasad\n(C) Abul Kalam Azad\n(D) More than one of the above",
+  "raw_options": [
+   "(a) Jawahar Lal Nehru",
+   "(b) Rajendra Prasad",
+   "(c) Abul Kalam Azad",
+   "(d) More than one of the above"
+  ],
+  "options": {
+   "A": "Jawahar Lal Nehru",
+   "B": "Rajendra Prasad",
+   "C": "Abul Kalam Azad",
+   "D": "More than one of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "42": {
+  "number": 42,
+  "qtype": "MCQ_single",
+  "stem": "At what time between 2 and 3 O'Clock will the hands of a clock be together?\n\n(A) 10\\(\\frac{10}{43}\\) minutes past 2\n(B) 10\\(\\frac{10}{11}\\) minutes past 2\n(C) 38\\(\\frac{10}{11}\\) minutes past 2\n(D) 38\\(\\frac{2}{11}\\) minutes past 2",
+  "raw_options": [
+   "(a) 10\\(\\frac{10}{43}\\) minutes past 2",
+   "(b) 10\\(\\frac{10}{11}\\) minutes past 2",
+   "(c) 38\\(\\frac{10}{11}\\) minutes past 2",
+   "(d) 38\\(\\frac{2}{11}\\) minutes past 2"
+  ],
+  "options": {
+   "A": "10\\(\\frac{10}{43}\\) minutes past 2",
+   "B": "10\\(\\frac{10}{11}\\) minutes past 2",
+   "C": "38\\(\\frac{10}{11}\\) minutes past 2",
+   "D": "38\\(\\frac{2}{11}\\) minutes past 2"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "43": {
+  "number": 43,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following Constitutional Amendment in India has decided the maximum strength of the Council of Minister with Chief Minister in a State?\n\n(A) 81^st Constitutional Amendment\n(B) 91^st Constitutional Amendment\n(C) 86^th Constitutional Amendment\n(D) None of the above Amendment",
+  "raw_options": [
+   "(a) 81<sup>st</sup> Constitutional Amendment",
+   "(b) 91<sup>st</sup> Constitutional Amendment",
+   "(c) 86<sup>th</sup> Constitutional Amendment",
+   "(d) None of the above Amendment"
+  ],
+  "options": {
+   "A": "81^st Constitutional Amendment",
+   "B": "91^st Constitutional Amendment",
+   "C": "86^th Constitutional Amendment",
+   "D": "None of the above Amendment"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "44": {
+  "number": 44,
+  "qtype": "MCQ_single",
+  "stem": "Besides spreading Malaria, Anopheles mosquito's are also vectors of\n\n(A) Encephalitis and Filariasis\n(B) Dengue and Filariasis\n(C) Dengue and Encephalitis\n(D) None of the above",
+  "raw_options": [
+   "(a) Encephalitis and Filariasis",
+   "(b) Dengue and Filariasis",
+   "(c) Dengue and Encephalitis",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Encephalitis and Filariasis",
+   "B": "Dengue and Filariasis",
+   "C": "Dengue and Encephalitis",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "45": {
+  "number": 45,
+  "qtype": "MCQ_single",
+  "stem": "Who was re-elected as the President of France in 2022?\n\n(A) Marine Le Pen\n(B) Emmanuel Macron\n(C) Éric Zemmour\n(D) Jean-Luc Mélenchon",
+  "raw_options": [
+   "(a) Marine Le Pen",
+   "(b) Emmanuel Macron",
+   "(c) Éric Zemmour",
+   "(d) Jean-Luc Mélenchon"
+  ],
+  "options": {
+   "A": "Marine Le Pen",
+   "B": "Emmanuel Macron",
+   "C": "Éric Zemmour",
+   "D": "Jean-Luc Mélenchon"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "46": {
+  "number": 46,
+  "qtype": "MCQ_single",
+  "stem": "Choose the correct pair from the following options.\n\n(A) Third-Year Plan – Focus on Globalisation\n(B) First Five-Year Plan – Focus on Agriculture\n(C) Fifth Five-Year Plan – Focus on Industry\n(D) Fourth Five-Year Plan – Focus on Service",
+  "raw_options": [
+   "(a) Third-Year Plan – Focus on Globalisation",
+   "(b) First Five-Year Plan – Focus on Agriculture",
+   "(c) Fifth Five-Year Plan – Focus on Industry",
+   "(d) Fourth Five-Year Plan – Focus on Service"
+  ],
+  "options": {
+   "A": "Third-Year Plan – Focus on Globalisation",
+   "B": "First Five-Year Plan – Focus on Agriculture",
+   "C": "Fifth Five-Year Plan – Focus on Industry",
+   "D": "Fourth Five-Year Plan – Focus on Service"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "47": {
+  "number": 47,
+  "qtype": "MCQ_single",
+  "stem": "Which is the mountain range along the Mediterranean Coast of Asia Minor?\n\n(A) Taurus\n(B) Pontic\n(C) Alburg\n(D) Kirther",
+  "raw_options": [
+   "(a) Taurus",
+   "(b) Pontic",
+   "(c) Alburg",
+   "(d) Kirther"
+  ],
+  "options": {
+   "A": "Taurus",
+   "B": "Pontic",
+   "C": "Alburg",
+   "D": "Kirther"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "48": {
+  "number": 48,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following country is going to host 20^th Asian games in 2026 ?\n\n(A) Japan\n(B) India\n(C) Indonesia\n(D) China",
+  "raw_options": [
+   "(a) Japan",
+   "(b) India",
+   "(c) Indonesia",
+   "(d) China"
+  ],
+  "options": {
+   "A": "Japan",
+   "B": "India",
+   "C": "Indonesia",
+   "D": "China"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "49": {
+  "number": 49,
+  "qtype": "MCQ_single",
+  "stem": "Which country hosted the 2022 Winter Olympics ?\n\n(A) Canada\n(B) Japan\n(C) South Korea\n(D) China",
+  "raw_options": [
+   "(a) Canada",
+   "(b) Japan",
+   "(c) South Korea",
+   "(d) China"
+  ],
+  "options": {
+   "A": "Canada",
+   "B": "Japan",
+   "C": "South Korea",
+   "D": "China"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "50": {
+  "number": 50,
+  "qtype": "MCQ_single",
+  "stem": "Turmeric powder is obtained from which part of turmeric plant ?\n\n(A) Seed\n(B) Dried foot\n(C) Dried root\n(D) None of the above",
+  "raw_options": [
+   "(a) Seed",
+   "(b) Dried foot",
+   "(c) Dried root",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Seed",
+   "B": "Dried foot",
+   "C": "Dried root",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "51": {
+  "number": 51,
+  "qtype": "MCQ_single",
+  "stem": "Which Viceroy decentralized the colonial economic structure in India ?\n\n(A) Ripon\n(B) Mayo\n(C) Curzon\n(D) More than one of the above",
+  "raw_options": [
+   "(a) Ripon",
+   "(b) Mayo",
+   "(c) Curzon",
+   "(d) More than one of the above"
+  ],
+  "options": {
+   "A": "Ripon",
+   "B": "Mayo",
+   "C": "Curzon",
+   "D": "More than one of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "52": {
+  "number": 52,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following is the playground of Europe ?\n\n(A) Italy\n(B) France\n(C) Switzerland\n(D) Germany",
+  "raw_options": [
+   "(a) Italy",
+   "(b) France",
+   "(c) Switzerland",
+   "(d) Germany"
+  ],
+  "options": {
+   "A": "Italy",
+   "B": "France",
+   "C": "Switzerland",
+   "D": "Germany"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "53": {
+  "number": 53,
+  "qtype": "MCQ_single",
+  "stem": "Where did the revolt of Birsa Munda take place ?\n\n(A) Ranchi\n(B) Champaran\n(C) Ballia\n(D) None of the above",
+  "raw_options": [
+   "(a) Ranchi",
+   "(b) Champaran",
+   "(c) Ballia",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Ranchi",
+   "B": "Champaran",
+   "C": "Ballia",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "54": {
+  "number": 54,
+  "qtype": "MCQ_single",
+  "stem": "Which company became the first Indian company to cross the 200 billion USD market capitalization in 2023 ?\n\n(A) TCS\n(B) Reliance Industries\n(C) HDFC Bank\n(D) Infosys",
+  "raw_options": [
+   "(a) TCS",
+   "(b) Reliance Industries",
+   "(c) HDFC Bank",
+   "(d) Infosys"
+  ],
+  "options": {
+   "A": "TCS",
+   "B": "Reliance Industries",
+   "C": "HDFC Bank",
+   "D": "Infosys"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "55": {
+  "number": 55,
+  "qtype": "MCQ_single",
+  "stem": "Reactance of a capacitor is\n(A) Inversely proportional to frequency\n(B) Directly proportional to frequency\n(C) Inversely proportional to sq. root of frequency\n(D) None of the above",
+  "raw_options": [
+   "(a) Inversely proportional to frequency",
+   "(b) Directly proportional to frequency",
+   "(c) Inversely proportional to sq. root of frequency",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Inversely proportional to frequency",
+   "B": "Directly proportional to frequency",
+   "C": "Inversely proportional to sq. root of frequency",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "56": {
+  "number": 56,
+  "qtype": "MCQ_single",
+  "stem": "Legally stipulated maximum size beyond which no individual farmer can hold any land is\n(A) Abolition of intermediaries\n(B) Tenancy reforms\n(C) Land ceiling\n(D) Land consolidation",
+  "raw_options": [
+   "(a) Abolition of intermediaries",
+   "(b) Tenancy reforms",
+   "(c) Land ceiling",
+   "(d) Land consolidation"
+  ],
+  "options": {
+   "A": "Abolition of intermediaries",
+   "B": "Tenancy reforms",
+   "C": "Land ceiling",
+   "D": "Land consolidation"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "57": {
+  "number": 57,
+  "qtype": "MCQ_single",
+  "stem": "The Vernacular Press Act allowed\n(A) Confiscation of the printing press if the newspapers published anything that was found objectionable\n(B) Confiscation of the assets of the newspaper if the newspapers published anything that was found objectionable\n(C) Confiscation of the printing press if the newspapers published anything that was not found to be objectionable\n(D) More than one of the above",
+  "raw_options": [
+   "(a) Confiscation of the printing press if the newspapers published anything that was found objectionable",
+   "(b) Confiscation of the assets of the newspaper if the newspapers published anything that was found objectionable",
+   "(c) Confiscation of the printing press if the newspapers published anything that was not found to be objectionable",
+   "(d) More than one of the above"
+  ],
+  "options": {
+   "A": "Confiscation of the printing press if the newspapers published anything that was found objectionable",
+   "B": "Confiscation of the assets of the newspaper if the newspapers published anything that was found objectionable",
+   "C": "Confiscation of the printing press if the newspapers published anything that was not found to be objectionable",
+   "D": "More than one of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "58": {
+  "number": 58,
+  "qtype": "MCQ_single",
+  "stem": "Average height of Kosi Plain from mean sea level is\n(A) 150 m\n(B) 300 m\n(C) 30 m\n(D) 100 m",
+  "raw_options": [
+   "(a) 150 m",
+   "(b) 300 m",
+   "(c) 30 m",
+   "(d) 100 m"
+  ],
+  "options": {
+   "A": "150 m",
+   "B": "300 m",
+   "C": "30 m",
+   "D": "100 m"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "59": {
+  "number": 59,
+  "qtype": "MCQ_single",
+  "stem": "Who is the Chairperson of GST Council ?\n(A) Chairman of Finance Commission\n(B) Union Finance Minister\n(C) Union Minister of Corporate Affairs\n(D) RBI Governor",
+  "raw_options": [
+   "(a) Chairman of Finance Commission",
+   "(b) Union Finance Minister",
+   "(c) Union Minister of Corporate Affairs",
+   "(d) RBI Governor"
+  ],
+  "options": {
+   "A": "Chairman of Finance Commission",
+   "B": "Union Finance Minister",
+   "C": "Union Minister of Corporate Affairs",
+   "D": "RBI Governor"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "60": {
+  "number": 60,
+  "qtype": "MCQ_single",
+  "stem": "When was the Bihar State formed ?\n(A) 1906\n(B) 1915\n(C) 1911\n(D) None of the above",
+  "raw_options": [
+   "(a) 1906",
+   "(b) 1915",
+   "(c) 1911",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "1906",
+   "B": "1915",
+   "C": "1911",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "61": {
+  "number": 61,
+  "qtype": "MCQ_single",
+  "stem": "Sour taste of vinegar is due to\n(A) Citric acid\n(B) Tartaric acid\n(C) Lactic acid\n(D) None of these",
+  "raw_options": [
+   "(a) Citric acid",
+   "(b) Tartaric acid",
+   "(c) Lactic acid",
+   "(d) None of these"
+  ],
+  "options": {
+   "A": "Citric acid",
+   "B": "Tartaric acid",
+   "C": "Lactic acid",
+   "D": "None of these"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "62": {
+  "number": 62,
+  "qtype": "MCQ_single",
+  "stem": "During the Delhi Sultanate,\nthe designation 'Muqaddam or Chaudhuri' was used for\n(A) Revenue officials\n(B) Village headmen\n(C) Village accountant\n(D) None of the above",
+  "raw_options": [
+   "(a) Revenue officials",
+   "(b) Village headmen",
+   "(c) Village accountant",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Revenue officials",
+   "B": "Village headmen",
+   "C": "Village accountant",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "63": {
+  "number": 63,
+  "qtype": "MCQ_single",
+  "stem": "Who won the Nobel Peace Prize in 2023?",
+  "raw_options": [
+   "(a) Ngoz Moamadhi",
+   "(b) Marie Reza",
+   "(c) Nadiya Murad",
+   "(d) Abbi Ahmad"
+  ],
+  "options": {
+   "A": "Ngoz Moamadhi",
+   "B": "Marie Reza",
+   "C": "Nadiya Murad",
+   "D": "Abbi Ahmad"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "64": {
+  "number": 64,
+  "qtype": "MCQ_single",
+  "stem": "'Tareekh-e-Firoz Shahi' was written by whom?",
+  "raw_options": [
+   "(a) Minhaaz Siraj",
+   "(b) Isami",
+   "(c) Yadava Sarhindi",
+   "(d) Shams Siraj Afzal"
+  ],
+  "options": {
+   "A": "Minhaaz Siraj",
+   "B": "Isami",
+   "C": "Yadava Sarhindi",
+   "D": "Shams Siraj Afzal"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "65": {
+  "number": 65,
+  "qtype": "MCQ_single",
+  "stem": "In the unlisted options, which pair belongs to India?",
+  "raw_options": [
+   "(a) Thar : Bharat",
+   "(b) Sahara : Africa",
+   "(c) Kalahari : America",
+   "(d) Gobi : Mongolia"
+  ],
+  "options": {
+   "A": "Thar : Bharat",
+   "B": "Sahara : Africa",
+   "C": "Kalahari : America",
+   "D": "Gobi : Mongolia"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "66": {
+  "number": 66,
+  "qtype": "MCQ_single",
+  "stem": "How is Hydrogen stored physically ?\n(A) By compressing hydrogen gas\n(B) In form of hydrides\n(C) In form of water\n(D) None of the above",
+  "raw_options": [
+   "(a) By compressing hydrogen gas",
+   "(b) In form of hydrides",
+   "(c) In form of water",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "By compressing hydrogen gas",
+   "B": "In form of hydrides",
+   "C": "In form of water",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "67": {
+  "number": 67,
+  "qtype": "MCQ_single",
+  "stem": "Which portfolio did Dr. Rajendra Prasad hold during the interim government of 1946 ?\n(A) Food and agriculture\n(B) Defense\n(C) Home\n(D) None of the above",
+  "raw_options": [
+   "(a) Food and agriculture",
+   "(b) Defense",
+   "(c) Home",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Food and agriculture",
+   "B": "Defense",
+   "C": "Home",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "68": {
+  "number": 68,
+  "qtype": "MCQ_single",
+  "stem": "Which is the oil refinery having maximum capacity in India ?\n(A) Trombay\n(B) Koyali\n(C) Mathura\n(D) Barauni",
+  "raw_options": [
+   "(a) Trombay",
+   "(b) Koyali",
+   "(c) Mathura",
+   "(d) Barauni"
+  ],
+  "options": {
+   "A": "Trombay",
+   "B": "Koyali",
+   "C": "Mathura",
+   "D": "Barauni"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "69": {
+  "number": 69,
+  "qtype": "MCQ_single",
+  "stem": "What is the system of governance in the Panchayat Raj set-up ?\n(A) Two tier system of local self government at the village and block levels\n(B) Single tier structure of local self government at the village level\n(C) Four tier system of local self government at the village, block, district and in the State levels\n(D) Three tier structure of local self government at the village, block and district levels",
+  "raw_options": [
+   "(a) Two tier system of local self government at the village and block levels",
+   "(b) Single tier structure of local self government at the village level",
+   "(c) Four tier system of local self government at the village, block, district and in the State levels",
+   "(d) Three tier structure of local self government at the village, block and district levels"
+  ],
+  "options": {
+   "A": "Two tier system of local self government at the village and block levels",
+   "B": "Single tier structure of local self government at the village level",
+   "C": "Four tier system of local self government at the village, block, district and in the State levels",
+   "D": "Three tier structure of local self government at the village, block and district levels"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "70": {
+  "number": 70,
+  "qtype": "MCQ_single",
+  "stem": "Blood group of an individual is determined by\n(A) Shape of RBC\n(B) Presence of Haemoglobin\n(C) Combination of WBC and RBC\n(D) None of the above",
+  "raw_options": [
+   "(a) Shape of RBC",
+   "(b) Presence of Haemoglobin",
+   "(c) Combination of WBC and RBC",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Shape of RBC",
+   "B": "Presence of Haemoglobin",
+   "C": "Combination of WBC and RBC",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "71": {
+  "number": 71,
+  "qtype": "MCQ_single",
+  "stem": "In 33^rd Olympic which game is not included ?\n(A) Fencing\n(B) Cricket\n(C) Modern Pentathlon\n(D) Triathlon",
+  "raw_options": [
+   "(a) Fencing",
+   "(b) Cricket",
+   "(c) Modern Pentathlon",
+   "(d) Triathlon"
+  ],
+  "options": {
+   "A": "Fencing",
+   "B": "Cricket",
+   "C": "Modern Pentathlon",
+   "D": "Triathlon"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "72": {
+  "number": 72,
+  "qtype": "MCQ_single",
+  "stem": "Which is the Scotland of North-East India ?\n(A) Nagaland\n(B) Meghalaya\n(C) Assam\n(D) Arunachal Pradesh",
+  "raw_options": [
+   "(a) Nagaland",
+   "(b) Meghalaya",
+   "(c) Assam",
+   "(d) Arunachal Pradesh"
+  ],
+  "options": {
+   "A": "Nagaland",
+   "B": "Meghalaya",
+   "C": "Assam",
+   "D": "Arunachal Pradesh"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "73": {
+  "number": 73,
+  "qtype": "MCQ_single",
+  "stem": "Which one of the following Schedules of the Constitution of India contains provisions regarding Anti-defection Act ?\n(A) Eighth Schedule\n(B) Tenth Schedule\n(C) Second Schedule\n(D) Fifth Schedule",
+  "raw_options": [
+   "(a) Eighth Schedule",
+   "(b) Tenth Schedule",
+   "(c) Second Schedule",
+   "(d) Fifth Schedule"
+  ],
+  "options": {
+   "A": "Eighth Schedule",
+   "B": "Tenth Schedule",
+   "C": "Second Schedule",
+   "D": "Fifth Schedule"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "74": {
+  "number": 74,
+  "qtype": "MCQ_single",
+  "stem": "Name of first 3d printed humanoid robot in India is\n(A) Mitra\n(B) Manav\n(C) Robcop\n(D) Indro",
+  "raw_options": [
+   "(a) Mitra",
+   "(b) Manav",
+   "(c) Robcop",
+   "(d) Indro"
+  ],
+  "options": {
+   "A": "Mitra",
+   "B": "Manav",
+   "C": "Robcop",
+   "D": "Indro"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "75": {
+  "number": 75,
+  "qtype": "MCQ_single",
+  "stem": "Under which Article of the Indian Constitution the Annual Financial Statement (Budget) is necessary to be laid before the Parliament ?\n(A) Article 112\n(B) Article 111\n(C) Article 114\n(D) Article 113",
+  "raw_options": [
+   "(a) Article 112",
+   "(b) Article 111",
+   "(c) Article 114",
+   "(d) Article 113"
+  ],
+  "options": {
+   "A": "Article 112",
+   "B": "Article 111",
+   "C": "Article 114",
+   "D": "Article 113"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "76": {
+  "number": 76,
+  "qtype": "MCQ_single",
+  "stem": "The 60.2 percent share in GSDP of Bihar in 2019 – 20 was of\n(A) Industrial Sector\n(B) Agriculture Sector\n(C) Manufacturing Sector\n(D) Service Sector",
+  "raw_options": [
+   "(a) Industrial Sector",
+   "(b) Agriculture Sector",
+   "(c) Manufacturing Sector",
+   "(d) Service Sector"
+  ],
+  "options": {
+   "A": "Industrial Sector",
+   "B": "Agriculture Sector",
+   "C": "Manufacturing Sector",
+   "D": "Service Sector"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "77": {
+  "number": 77,
+  "qtype": "MCQ_single",
+  "stem": "In which district of Bihar, Lichi production is maximum ?\n(A) Muzaffarpur\n(B) Chhapara\n(C) Sonpur\n(D) Siwan",
+  "raw_options": [
+   "(a) Muzaffarpur",
+   "(b) Chhapara",
+   "(c) Sonpur",
+   "(d) Siwan"
+  ],
+  "options": {
+   "A": "Muzaffarpur",
+   "B": "Chhapara",
+   "C": "Sonpur",
+   "D": "Siwan"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "78": {
+  "number": 78,
+  "qtype": "MCQ_single",
+  "stem": "Which river is known as the 'Sorrow of Bihar'?\n(A) Kosi\n(B) Ganga\n(C) Gandak\n(D) Son",
+  "raw_options": [
+   "(a) Kosi",
+   "(b) Ganga",
+   "(c) Gandak",
+   "(d) Son"
+  ],
+  "options": {
+   "A": "Kosi",
+   "B": "Ganga",
+   "C": "Gandak",
+   "D": "Son"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "79": {
+  "number": 79,
+  "qtype": "MCQ_single",
+  "stem": "Average height of snow-line in Uttar Pradesh is\n(A) 5500 m\n(B) 4500 m\n(C) 7500 m\n(D) 6500 m",
+  "raw_options": [
+   "(a) 5500 m",
+   "(b) 4500 m",
+   "(c) 7500 m",
+   "(d) 6500 m"
+  ],
+  "options": {
+   "A": "5500 m",
+   "B": "4500 m",
+   "C": "7500 m",
+   "D": "6500 m"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "80": {
+  "number": 80,
+  "qtype": "MCQ_single",
+  "stem": "The Ishihara test is related with\n(A) Colour blindness\n(B) Haemoglobin level\n(C) IQ\n(D) Bone density",
+  "raw_options": [
+   "(a) Colour blindness",
+   "(b) Haemoglobin level",
+   "(c) IQ",
+   "(d) Bone density"
+  ],
+  "options": {
+   "A": "Colour blindness",
+   "B": "Haemoglobin level",
+   "C": "IQ",
+   "D": "Bone density"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "81": {
+  "number": 81,
+  "qtype": "MCQ_single",
+  "stem": "Who among the following is not associated with Azad Hind Fauz (INA)?\n(A) Shah nawaz Khan\n(B) General Mohan Singh\n(C) Prem Singh Sehgal\n(D) S. A. Dange",
+  "raw_options": [
+   "(a) Shah nawaz Khan",
+   "(b) General Mohan Singh",
+   "(c) Prem Singh Sehgal",
+   "(d) S. A. Dange"
+  ],
+  "options": {
+   "A": "Shah nawaz Khan",
+   "B": "General Mohan Singh",
+   "C": "Prem Singh Sehgal",
+   "D": "S. A. Dange"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "82": {
+  "number": 82,
+  "qtype": "MCQ_single",
+  "stem": "What is Infant Mortality rate?\n(A) proportion of children that die before the age of 2 years as a proportion of 1000 live children born in that particular year\n(B) proportion of children that die before the age of 1 year as a proportion of 1000 live children born in that particular year\n(C) proportion of children that die before the age of 4 years as a proportion of 1000 live children born in that particular year\n(D) proportion of children that die before the age of 3 years as a proportion of 1000 live children born in that particular year",
+  "raw_options": [
+   "(a) proportion of children that die before the age of 2 years as a proportion of 1000 live children born in that particular year",
+   "(b) proportion of children that die before the age of 1 year as a proportion of 1000 live children born in that particular year",
+   "(c) proportion of children that die before the age of 4 years as a proportion of 1000 live children born in that particular year",
+   "(d) proportion of children that die before the age of 3 years as a proportion of 1000 live children born in that particular year"
+  ],
+  "options": {
+   "A": "proportion of children that die before the age of 2 years as a proportion of 1000 live children born in that particular year",
+   "B": "proportion of children that die before the age of 1 year as a proportion of 1000 live children born in that particular year",
+   "C": "proportion of children that die before the age of 4 years as a proportion of 1000 live children born in that particular year",
+   "D": "proportion of children that die before the age of 3 years as a proportion of 1000 live children born in that particular year"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "83": {
+  "number": 83,
+  "qtype": "MCQ_single",
+  "stem": "Which longitude separates Canada and Alaska?\n(A) 151° W\n(B) 141° W\n(C) 161° W\n(D) 131° W",
+  "raw_options": [
+   "(a) 151° W",
+   "(b) 141° W",
+   "(c) 161° W",
+   "(d) 131° W"
+  ],
+  "options": {
+   "A": "151° W",
+   "B": "141° W",
+   "C": "161° W",
+   "D": "131° W"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "84": {
+  "number": 84,
+  "qtype": "MCQ_single",
+  "stem": "Match the List – I of authors with List – II of the books on 1857 and choose answers from the code given below :\n\n | List – I  | List – II\n\n | a. V. D. Savarkar  | i. The First War of Independence\n\n | b. S. N. Sen  | ii. The Peasant and the Raj\n\n | c. Eric Stokes  | iii. Civil Rebellion and in the Indian Mutinies\n\n | d. S.B. Chaudhuri  | iv. Eighteen Fifty-Seven\n\nCode :\na b c d",
+  "raw_options": [
+   "(A) i iv ii iii",
+   "(B) iv ii i iii",
+   "(C) ii iii i iv",
+   "(D) None of the above"
+  ],
+  "options": {
+   "A": "i iv ii iii",
+   "B": "iv ii i iii",
+   "C": "ii iii i iv",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "85": {
+  "number": 85,
+  "qtype": "MCQ_single",
+  "stem": "Match the following social reformers listed in Schedule I with their respective contributions listed in Schedule II and choose the correct code:\n\nSchedule I\na. Brahmo Samaj\nb. Ramakrishna Mission\nc. Swadharas of India Society\nd. Widow Marriage Reform\n\nSchedule II\ni. Vidyasagar\nii. Vivekananda\niii. Raja Ram Mohan Roy\niv. Gopal Krishna Gokhale",
+  "raw_options": [],
+  "options": {},
+  "marks": 0,
+  "needs_figure": false
+ },
+ "86": {
+  "number": 86,
+  "qtype": "MCQ_single",
+  "stem": "Light weight bullet proof helmets and jackets use which of the following fibres for their production ?",
+  "raw_options": [
+   "(A) Kevlar",
+   "(B) Terylene",
+   "(C) Nylon",
+   "(D) None of the above"
+  ],
+  "options": {
+   "A": "Kevlar",
+   "B": "Terylene",
+   "C": "Nylon",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "87": {
+  "number": 87,
+  "qtype": "MCQ_single",
+  "stem": "The Speaker of the Lok Sabha enjoys",
+  "raw_options": [
+   "(A) Two votes – one in ordinary course and the other in case of a tie",
+   "(B) No right to vote",
+   "(C) The right to vote like other members of the House",
+   "(D) The right to vote only in case of a tie"
+  ],
+  "options": {
+   "A": "Two votes – one in ordinary course and the other in case of a tie",
+   "B": "No right to vote",
+   "C": "The right to vote like other members of the House",
+   "D": "The right to vote only in case of a tie"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "88": {
+  "number": 88,
+  "qtype": "MCQ_single",
+  "stem": "The term Zillillah was first used by",
+  "raw_options": [
+   "(A) Balban",
+   "(B) Iltutmish",
+   "(C) Akbar",
+   "(D) Alauddin Khilji"
+  ],
+  "options": {
+   "A": "Balban",
+   "B": "Iltutmish",
+   "C": "Akbar",
+   "D": "Alauddin Khilji"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "89": {
+  "number": 89,
+  "qtype": "MCQ_single",
+  "stem": "The ratio of total deposits that a Commercial Banks must keep with Reserve Bank of India is called",
+  "raw_options": [
+   "(A) Cash Reserve Ratio",
+   "(B) Deposit Ratio",
+   "(C) Statutory Liquidity Ratio",
+   "(D) Legal Reserve Ratio"
+  ],
+  "options": {
+   "A": "Cash Reserve Ratio",
+   "B": "Deposit Ratio",
+   "C": "Statutory Liquidity Ratio",
+   "D": "Legal Reserve Ratio"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "90": {
+  "number": 90,
+  "qtype": "MCQ_single",
+  "stem": "An electron of mass M kg and charge e coulomb travels from rest through a potential difference of V volts. The final energy in joules would be",
+  "raw_options": [
+   "(A) \\(\\frac{e}{V}\\)",
+   "(B) MeV",
+   "(C) \\(\\frac{eV}{M}\\)",
+   "(D) eV"
+  ],
+  "options": {
+   "A": "\\(\\frac{e}{V}\\)",
+   "B": "MeV",
+   "C": "\\(\\frac{eV}{M}\\)",
+   "D": "eV"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "91": {
+  "number": 91,
+  "qtype": "MCQ_single",
+  "stem": "Which Indian State has the highest literacy rate as per the 2023 census ?",
+  "raw_options": [
+   "(A) Mizoram",
+   "(B) Kerala",
+   "(C) Goa",
+   "(D) Himachal Pradesh"
+  ],
+  "options": {
+   "A": "Mizoram",
+   "B": "Kerala",
+   "C": "Goa",
+   "D": "Himachal Pradesh"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "92": {
+  "number": 92,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following is not associated with Chandragupta Maurya ?",
+  "raw_options": [
+   "(A) Junagadh inscription of Rudradaman",
+   "(B) Vishnugupta",
+   "(C) Sanchi",
+   "(D) Susima"
+  ],
+  "options": {
+   "A": "Junagadh inscription of Rudradaman",
+   "B": "Vishnugupta",
+   "C": "Sanchi",
+   "D": "Susima"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "93": {
+  "number": 93,
+  "qtype": "MCQ_single",
+  "stem": "Which Indian State topped the NITI Aayog’s SDG India Index 2023 ?",
+  "raw_options": [
+   "(A) Tamil Nadu",
+   "(B) Kerala",
+   "(C) Maharashtra",
+   "(D) Gujarat"
+  ],
+  "options": {
+   "A": "Tamil Nadu",
+   "B": "Kerala",
+   "C": "Maharashtra",
+   "D": "Gujarat"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "94": {
+  "number": 94,
+  "qtype": "MCQ_single",
+  "stem": "Buds are typically found",
+  "raw_options": [
+   "(A) At the base of leaves",
+   "(B) Both at the base of leaves and tip of branches",
+   "(C) At the tip of branches",
+   "(D) None of the above"
+  ],
+  "options": {
+   "A": "At the base of leaves",
+   "B": "Both at the base of leaves and tip of branches",
+   "C": "At the tip of branches",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "95": {
+  "number": 95,
+  "qtype": "MCQ_single",
+  "stem": "Which one of the following is electoral college for the President but not forum for his impeachment ?",
+  "raw_options": [
+   "(A) Rajya Sabha",
+   "(B) Lok Sabha",
+   "(C) State Legislative Assemblies",
+   "(D) State Legislative Councils"
+  ],
+  "options": {
+   "A": "Rajya Sabha",
+   "B": "Lok Sabha",
+   "C": "State Legislative Assemblies",
+   "D": "State Legislative Councils"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "96": {
+  "number": 96,
+  "qtype": "MCQ_single",
+  "stem": "Amarkantak source place of Son river is situated at",
+  "raw_options": [
+   "(A) Makalu range",
+   "(B) Maikal range",
+   "(C) Mahadeo hills",
+   "(D) Rajmahal hills"
+  ],
+  "options": {
+   "A": "Makalu range",
+   "B": "Maikal range",
+   "C": "Mahadeo hills",
+   "D": "Rajmahal hills"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "97": {
+  "number": 97,
+  "qtype": "MCQ_single",
+  "stem": "CIRCLE is related to RICELC in the same way SQUARE is related to\n(A) ERAUQS\n(B) AREUQS\n(C) UQSARE\n(D) UQSERA",
+  "raw_options": [
+   "(a) ERAUQS",
+   "(b) AREUQS",
+   "(c) UQSARE",
+   "(d) UQSERA"
+  ],
+  "options": {
+   "A": "ERAUQS",
+   "B": "AREUQS",
+   "C": "UQSARE",
+   "D": "UQSERA"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "98": {
+  "number": 98,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following is not an electrophile?\n(A) H^+\n(B) Na^+\n(C) BF_3^-\n(D) All of the above",
+  "raw_options": [
+   "(a) H<sup>+</sup>",
+   "(b) Na<sup>+</sup>",
+   "(c) BF<sub>3</sub><sup>-</sup>",
+   "(d) All of the above"
+  ],
+  "options": {
+   "A": "H^+",
+   "B": "Na^+",
+   "C": "BF_3^-",
+   "D": "All of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "99": {
+  "number": 99,
+  "qtype": "MCQ_single",
+  "stem": "The Parliament can make any law for the whole or any part of India for implementing International treaties\n(A) With the consent of States concerned\n(B) Without the consent of any State\n(C) With the consent of the majority of States\n(D) With the consent of all States",
+  "raw_options": [
+   "(a) With the consent of States concerned",
+   "(b) Without the consent of any State",
+   "(c) With the consent of the majority of States",
+   "(d) With the consent of all States"
+  ],
+  "options": {
+   "A": "With the consent of States concerned",
+   "B": "Without the consent of any State",
+   "C": "With the consent of the majority of States",
+   "D": "With the consent of all States"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "100": {
+  "number": 100,
+  "qtype": "MCQ_single",
+  "stem": "In which district of Bihar, Maize production is maximum?\n(A) Siwan\n(B) Saran\n(C) East Champaran\n(D) Muzaffarpur",
+  "raw_options": [
+   "(a) Siwan",
+   "(b) Saran",
+   "(c) East Champaran",
+   "(d) Muzaffarpur"
+  ],
+  "options": {
+   "A": "Siwan",
+   "B": "Saran",
+   "C": "East Champaran",
+   "D": "Muzaffarpur"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "101": {
+  "number": 101,
+  "qtype": "MCQ_single",
+  "stem": "Quinine is a common drug for malaria that is obtained from a plant. Which part of the plant yields this drug?\n(A) Stem bark\n(B) Leaves\n(C) Root\n(D) None of the above",
+  "raw_options": [
+   "(a) Stem bark",
+   "(b) Leaves",
+   "(c) Root",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Stem bark",
+   "B": "Leaves",
+   "C": "Root",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "102": {
+  "number": 102,
+  "qtype": "MCQ_single",
+  "stem": "Who was the first Muslim President of Indian National Congress?\n(A) Maulana Azad\n(B) Hasrat Mohani\n(C) Badruddin Taiyabji\n(D) More than one of the above",
+  "raw_options": [
+   "(a) Maulana Azad",
+   "(b) Hasrat Mohani",
+   "(c) Badruddin Taiyabji",
+   "(d) More than one of the above"
+  ],
+  "options": {
+   "A": "Maulana Azad",
+   "B": "Hasrat Mohani",
+   "C": "Badruddin Taiyabji",
+   "D": "More than one of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "103": {
+  "number": 103,
+  "qtype": "MCQ_single",
+  "stem": "Kashmir Valley is which type of Valley?\n(A) Erosional\n(B) Tectonic\n(C) Blind\n(D) Rift",
+  "raw_options": [
+   "(a) Erosional",
+   "(b) Tectonic",
+   "(c) Blind",
+   "(d) Rift"
+  ],
+  "options": {
+   "A": "Erosional",
+   "B": "Tectonic",
+   "C": "Blind",
+   "D": "Rift"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "104": {
+  "number": 104,
+  "qtype": "MCQ_single",
+  "stem": "When did Macaulay issue his famous minute on Indian Education ?\n\n(A) 02 February 1835\n(B) 01 February 1835\n(C) 12 February 1836\n(D) 12 February 1835",
+  "raw_options": [
+   "(a) 02 February 1835",
+   "(b) 01 February 1835",
+   "(c) 12 February 1836",
+   "(d) 12 February 1835"
+  ],
+  "options": {
+   "A": "02 February 1835",
+   "B": "01 February 1835",
+   "C": "12 February 1836",
+   "D": "12 February 1835"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "105": {
+  "number": 105,
+  "qtype": "MCQ_single",
+  "stem": "January 1, 2008 is Tuesday. What day of the week lies on January 1, 2009 ?\n\n(A) Wednesday\n(B) Monday\n(C) Sunday\n(D) Thursday",
+  "raw_options": [
+   "(a) Wednesday",
+   "(b) Monday",
+   "(c) Sunday",
+   "(d) Thursday"
+  ],
+  "options": {
+   "A": "Wednesday",
+   "B": "Monday",
+   "C": "Sunday",
+   "D": "Thursday"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "106": {
+  "number": 106,
+  "qtype": "MCQ_single",
+  "stem": "The conductivity of a strong electrolyte\n\n(A) Increases slightly on dilution\n(B) Decreases on dilution\n(C) Does not changes with dilution\n(D) None of the above",
+  "raw_options": [
+   "(a) Increases slightly on dilution",
+   "(b) Decreases on dilution",
+   "(c) Does not changes with dilution",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Increases slightly on dilution",
+   "B": "Decreases on dilution",
+   "C": "Does not changes with dilution",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "107": {
+  "number": 107,
+  "qtype": "MCQ_single",
+  "stem": "The Tribal Movement-Santhal hool (Rebellion) took place in\n\n(A) 1855-56\n(B) 1854\n(C) 1858-59\n(D) 1857-58",
+  "raw_options": [
+   "(a) 1855-56",
+   "(b) 1854",
+   "(c) 1858-59",
+   "(d) 1857-58"
+  ],
+  "options": {
+   "A": "1855-56",
+   "B": "1854",
+   "C": "1858-59",
+   "D": "1857-58"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "108": {
+  "number": 108,
+  "qtype": "MCQ_single",
+  "stem": "Who is the current Chairman of the Indian Space Research Organisation (ISRO) ?\n\n(A) S. Somnath\n(B) K. Sivan\n(C) U. R. Rao\n(D) G. Madhavan Nair",
+  "raw_options": [
+   "(a) S. Somnath",
+   "(b) K. Sivan",
+   "(c) U. R. Rao",
+   "(d) G. Madhavan Nair"
+  ],
+  "options": {
+   "A": "S. Somnath",
+   "B": "K. Sivan",
+   "C": "U. R. Rao",
+   "D": "G. Madhavan Nair"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "109": {
+  "number": 109,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following is not associated with Australia Continent ?\n\n(A) Salwin Mountain\n(B) Salvin Valley\n(C) Nallarbar Plain\n(D) Eyr Lake",
+  "raw_options": [
+   "(a) Salwin Mountain",
+   "(b) Salvin Valley",
+   "(c) Nallarbar Plain",
+   "(d) Eyr Lake"
+  ],
+  "options": {
+   "A": "Salwin Mountain",
+   "B": "Salvin Valley",
+   "C": "Nallarbar Plain",
+   "D": "Eyr Lake"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "110": {
+  "number": 110,
+  "qtype": "MCQ_single",
+  "stem": "Which country hosted the COP28 climate summit in 2023 ?\n\n(A) United Kingdom\n(B) United Arab Emirates\n(C) Brazil\n(D) Italy",
+  "raw_options": [
+   "(a) United Kingdom",
+   "(b) United Arab Emirates",
+   "(c) Brazil",
+   "(d) Italy"
+  ],
+  "options": {
+   "A": "United Kingdom",
+   "B": "United Arab Emirates",
+   "C": "Brazil",
+   "D": "Italy"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "111": {
+  "number": 111,
+  "qtype": "MCQ_single",
+  "stem": "The number of scientific payloads on Aditya L - 1 mission for systematic study of Sun is\n\n(A) 7\n(B) 5\n(C) 6\n(D) 9",
+  "raw_options": [
+   "(a) 7",
+   "(b) 5",
+   "(c) 6",
+   "(d) 9"
+  ],
+  "options": {
+   "A": "7",
+   "B": "5",
+   "C": "6",
+   "D": "9"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "112": {
+  "number": 112,
+  "qtype": "MCQ_single",
+  "stem": "In April, 2020 the Bihar Education Department started the following program through DD Bihar\n(A) the telecast of Karsak-Chopal program for farmers\n(B) the telecast of a cultural program to save old culture of Bihar\n(C) the telecast of e-content for class IX-X students\n(D) the telecast of e-content for class V-VI students",
+  "raw_options": [
+   "(a) the telecast of Karsak-Chopal program for farmers",
+   "(b) the telecast of a cultural program to save old culture of Bihar",
+   "(c) the telecast of e-content for class IX-X students",
+   "(d) the telecast of e-content for class V-VI students"
+  ],
+  "options": {
+   "A": "the telecast of Karsak-Chopal program for farmers",
+   "B": "the telecast of a cultural program to save old culture of Bihar",
+   "C": "the telecast of e-content for class IX-X students",
+   "D": "the telecast of e-content for class V-VI students"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "113": {
+  "number": 113,
+  "qtype": "MCQ_single",
+  "stem": "All India Trade Union Congress was formed in the year\n(A) 1918\n(B) 1920\n(C) 1919\n(D) More than one of the above",
+  "raw_options": [
+   "(a) 1918",
+   "(b) 1920",
+   "(c) 1919",
+   "(d) More than one of the above"
+  ],
+  "options": {
+   "A": "1918",
+   "B": "1920",
+   "C": "1919",
+   "D": "More than one of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "114": {
+  "number": 114,
+  "qtype": "MCQ_single",
+  "stem": "As the diameter of objective lens of a telescope increases, the resolution of telescope\n(A) Increases\n(B) Decreases\n(C) Depends on focal length of lens\n(D) Remains same",
+  "raw_options": [
+   "(a) Increases",
+   "(b) Decreases",
+   "(c) Depends on focal length of lens",
+   "(d) Remains same"
+  ],
+  "options": {
+   "A": "Increases",
+   "B": "Decreases",
+   "C": "Depends on focal length of lens",
+   "D": "Remains same"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "115": {
+  "number": 115,
+  "qtype": "MCQ_single",
+  "stem": "Who is the Prime Minister of Italy as of 2024 ?\n(A) Laura Boldrini\n(B) Giorgia Meloni\n(C) Rosy Bindi\n(D) Emma Bonino",
+  "raw_options": [
+   "(a) Laura Boldrini",
+   "(b) Giorgia Meloni",
+   "(c) Rosy Bindi",
+   "(d) Emma Bonino"
+  ],
+  "options": {
+   "A": "Laura Boldrini",
+   "B": "Giorgia Meloni",
+   "C": "Rosy Bindi",
+   "D": "Emma Bonino"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "116": {
+  "number": 116,
+  "qtype": "MCQ_single",
+  "stem": "In India which of the following city has been declared as the first \"City of Literature\" by UNESCO ?\n(A) Kolkata in W.B.\n(B) Nasik in Maharastra\n(C) Kozhikode in Kerala\n(D) Jabalpur in M.P.",
+  "raw_options": [
+   "(a) Kolkata in W.B.",
+   "(b) Nasik in Maharastra",
+   "(c) Kozhikode in Kerala",
+   "(d) Jabalpur in M.P."
+  ],
+  "options": {
+   "A": "Kolkata in W.B.",
+   "B": "Nasik in Maharastra",
+   "C": "Kozhikode in Kerala",
+   "D": "Jabalpur in M.P."
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "117": {
+  "number": 117,
+  "qtype": "MCQ_single",
+  "stem": "World famous painting is found in which district of Bihar ?\n(A) Darbhanga\n(B) Samastipur\n(C) Madhepura\n(D) Madhubani",
+  "raw_options": [
+   "(a) Darbhanga",
+   "(b) Samastipur",
+   "(c) Madhepura",
+   "(d) Madhubani"
+  ],
+  "options": {
+   "A": "Darbhanga",
+   "B": "Samastipur",
+   "C": "Madhepura",
+   "D": "Madhubani"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "118": {
+  "number": 118,
+  "qtype": "MCQ_single",
+  "stem": "A British Citizen staying in India can not claim right to\n(A) Freedom of trade and profession\n(B) Equality before law\n(C) Protection of life and personal liberty\n(D) Freedom of religion",
+  "raw_options": [
+   "(a) Freedom of trade and profession",
+   "(b) Equality before law",
+   "(c) Protection of life and personal liberty",
+   "(d) Freedom of religion"
+  ],
+  "options": {
+   "A": "Freedom of trade and profession",
+   "B": "Equality before law",
+   "C": "Protection of life and personal liberty",
+   "D": "Freedom of religion"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "119": {
+  "number": 119,
+  "qtype": "MCQ_single",
+  "stem": "Who introduced the permanent settlement in Bengal ?\n(A) Warren Hastings\n(B) Holt Mackengie\n(C) Lord Cornwallis\n(D) None of the above",
+  "raw_options": [
+   "(a) Warren Hastings",
+   "(b) Holt Mackengie",
+   "(c) Lord Cornwallis",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Warren Hastings",
+   "B": "Holt Mackengie",
+   "C": "Lord Cornwallis",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "120": {
+  "number": 120,
+  "qtype": "MCQ_single",
+  "stem": "Who threw harmless bombs in the Central Legislative Assembly ?\n(A) Bhagat Singh\n(B) Jatin Das\n(C) Batukeshwar Dutt\n(D) More than one of the above",
+  "raw_options": [
+   "(a) Bhagat Singh",
+   "(b) Jatin Das",
+   "(c) Batukeshwar Dutt",
+   "(d) More than one of the above"
+  ],
+  "options": {
+   "A": "Bhagat Singh",
+   "B": "Jatin Das",
+   "C": "Batukeshwar Dutt",
+   "D": "More than one of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "121": {
+  "number": 121,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following seed is used in production of engineered diamonds ?\n(A) Graphite\n(B) Cubic Zirconia\n(C) White sapphire\n(D) Moissanite",
+  "raw_options": [
+   "(a) Graphite",
+   "(b) Cubic Zirconia",
+   "(c) White sapphire",
+   "(d) Moissanite"
+  ],
+  "options": {
+   "A": "Graphite",
+   "B": "Cubic Zirconia",
+   "C": "White sapphire",
+   "D": "Moissanite"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "122": {
+  "number": 122,
+  "qtype": "MCQ_single",
+  "stem": "In which district of Bihar the fox nut is produced highest ?\n(A) Patna\n(B) Madhubani\n(C) Muzaffarpur\n(D) Vaishali",
+  "raw_options": [
+   "(a) Patna",
+   "(b) Madhubani",
+   "(c) Muzaffarpur",
+   "(d) Vaishali"
+  ],
+  "options": {
+   "A": "Patna",
+   "B": "Madhubani",
+   "C": "Muzaffarpur",
+   "D": "Vaishali"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "123": {
+  "number": 123,
+  "qtype": "MCQ_single",
+  "stem": "Who is the author of the famous book 'Gulamgiri' ?\n(A) B. R. Ambedkar\n(B) Jyotiba Phule\n(C) Ramaswami Naikar Periyar\n(D) More than one of the above",
+  "raw_options": [
+   "(a) B. R. Ambedkar",
+   "(b) Jyotiba Phule",
+   "(c) Ramaswami Naikar Periyar",
+   "(d) More than one of the above"
+  ],
+  "options": {
+   "A": "B. R. Ambedkar",
+   "B": "Jyotiba Phule",
+   "C": "Ramaswami Naikar Periyar",
+   "D": "More than one of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "124": {
+  "number": 124,
+  "qtype": "MCQ_single",
+  "stem": "Dalmetian Coast is\n(A) Foot-hills of Karst\n(B) River depositional\n(C) Foot-hills\n(D) Intermontane",
+  "raw_options": [
+   "(a) Foot-hills of Karst",
+   "(b) River depositional",
+   "(c) Foot-hills",
+   "(d) Intermontane"
+  ],
+  "options": {
+   "A": "Foot-hills of Karst",
+   "B": "River depositional",
+   "C": "Foot-hills",
+   "D": "Intermontane"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "125": {
+  "number": 125,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following is a function of Central Bank ?\n(A) Bank facilities to Government\n(B) Manage the Repo-rate\n(C) Lending to Commercial Bank\n(D) All of the above",
+  "raw_options": [
+   "(a) Bank facilities to Government",
+   "(b) Manage the Repo-rate",
+   "(c) Lending to Commercial Bank",
+   "(d) All of the above"
+  ],
+  "options": {
+   "A": "Bank facilities to Government",
+   "B": "Manage the Repo-rate",
+   "C": "Lending to Commercial Bank",
+   "D": "All of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "126": {
+  "number": 126,
+  "qtype": "MCQ_single",
+  "stem": "A nail is nailed into the trunk of a tree at a point 1 m from the soil level. After 2 years the nail will\n(A) Move up\n(B) Remain at same position\n(C) Move sideways\n(D) None of the above",
+  "raw_options": [
+   "(a) Move up",
+   "(b) Remain at same position",
+   "(c) Move sideways",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Move up",
+   "B": "Remain at same position",
+   "C": "Move sideways",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "127": {
+  "number": 127,
+  "qtype": "MCQ_single",
+  "stem": "Match List – I of leaders with List – II of their territory and select answer from the code given below:\n\nList – I List – II\na. Kunwar i. Faizabad Singh\nb. Hazrat ii. Bareilly Mahal\nc. Khan iii. Jagdishpur Bahadur\nd. Maulvi iv. Lucknow Ahmadullah\n\nCode:\na b c d\n(A) iii iv ii i\n(B) iv i ii iii\n(C) ii i iii iv\n(D) None of the above",
+  "raw_options": [
+   "(a) iii iv ii i",
+   "(b) iv i ii iii",
+   "(c) ii i iii iv",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "iii iv ii i",
+   "B": "iv i ii iii",
+   "C": "ii i iii iv",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "128": {
+  "number": 128,
+  "qtype": "MCQ_single",
+  "stem": "What is the name of the major city in Sindhu Ghati region which has a historical connection with the west of Asia?",
+  "raw_options": [],
+  "options": {},
+  "marks": 0,
+  "needs_figure": false
+ },
+ "129": {
+  "number": 129,
+  "qtype": "MCQ_single",
+  "stem": "Which of the following is responsible for the production of oxygen in plants?",
+  "raw_options": [
+   "(A) Photosynthesis",
+   "(B) Respiration",
+   "(C) Light energy conversion process",
+   "(D) None of these"
+  ],
+  "options": {
+   "A": "Photosynthesis",
+   "B": "Respiration",
+   "C": "Light energy conversion process",
+   "D": "None of these"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "130": {
+  "number": 130,
+  "qtype": "MCQ_single",
+  "stem": "Who was the President of the Indian National Congress at the Gaya Session of 1922 ?\n\n(A) Chittaranjan Das\n(B) Mahatma Gandhi\n(C) Hakim Ajmal Khan\n(D) None of the above",
+  "raw_options": [
+   "(a) Chittaranjan Das",
+   "(b) Mahatma Gandhi",
+   "(c) Hakim Ajmal Khan",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Chittaranjan Das",
+   "B": "Mahatma Gandhi",
+   "C": "Hakim Ajmal Khan",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "131": {
+  "number": 131,
+  "qtype": "MCQ_single",
+  "stem": "The expanded form of UPI is\n\n(A) Unified Payment Interface\n(B) United Payment Initiation\n(C) Uniform Payment Inception\n(D) Uninterrupted Payment Initiation",
+  "raw_options": [
+   "(a) Unified Payment Interface",
+   "(b) United Payment Initiation",
+   "(c) Uniform Payment Inception",
+   "(d) Uninterrupted Payment Initiation"
+  ],
+  "options": {
+   "A": "Unified Payment Interface",
+   "B": "United Payment Initiation",
+   "C": "Uniform Payment Inception",
+   "D": "Uninterrupted Payment Initiation"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "132": {
+  "number": 132,
+  "qtype": "MCQ_single",
+  "stem": "Liver stores\n\n(A) A, B and C vitamins\n(B) A, B, C and D vitamins\n(C) Only A and B vitamins\n(D) None of these",
+  "raw_options": [
+   "(a) A, B and C vitamins",
+   "(b) A, B, C and D vitamins",
+   "(c) Only A and B vitamins",
+   "(d) None of these"
+  ],
+  "options": {
+   "A": "A, B and C vitamins",
+   "B": "A, B, C and D vitamins",
+   "C": "Only A and B vitamins",
+   "D": "None of these"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "133": {
+  "number": 133,
+  "qtype": "MCQ_single",
+  "stem": "Which State of India is called as the State of Minerals ?\n\n(A) Bihar\n(B) Jharkhand\n(C) West Bengal\n(D) Orissa",
+  "raw_options": [
+   "(a) Bihar",
+   "(b) Jharkhand",
+   "(c) West Bengal",
+   "(d) Orissa"
+  ],
+  "options": {
+   "A": "Bihar",
+   "B": "Jharkhand",
+   "C": "West Bengal",
+   "D": "Orissa"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "134": {
+  "number": 134,
+  "qtype": "MCQ_single",
+  "stem": "Chitrakoot temple is located in which State of India ?\n(A) Madhya Pradesh\n(B) Uttar Pradesh\n(C) Orissa\n(D) Chhattisgarh",
+  "raw_options": [
+   "(a) Madhya Pradesh",
+   "(b) Uttar Pradesh",
+   "(c) Orissa",
+   "(d) Chhattisgarh"
+  ],
+  "options": {
+   "A": "Madhya Pradesh",
+   "B": "Uttar Pradesh",
+   "C": "Orissa",
+   "D": "Chhattisgarh"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "135": {
+  "number": 135,
+  "qtype": "MCQ_single",
+  "stem": "Minimum age for M.P. (Lower house), M.P. (Upper house) and President is\n(A) 25, 30 and 30\n(B) 25, 35 and 35\n(C) 25, 35 and 45\n(D) 25, 30 and 35",
+  "raw_options": [
+   "(a) 25, 30 and 30",
+   "(b) 25, 35 and 35",
+   "(c) 25, 35 and 45",
+   "(d) 25, 30 and 35"
+  ],
+  "options": {
+   "A": "25, 30 and 30",
+   "B": "25, 35 and 35",
+   "C": "25, 35 and 45",
+   "D": "25, 30 and 35"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "136": {
+  "number": 136,
+  "qtype": "MCQ_single",
+  "stem": "What is the unit of measure of magnetic field ?\n(A) Ohm\n(B) Tesla\n(C) Ampere\n(D) Cobalt",
+  "raw_options": [
+   "(a) Ohm",
+   "(b) Tesla",
+   "(c) Ampere",
+   "(d) Cobalt"
+  ],
+  "options": {
+   "A": "Ohm",
+   "B": "Tesla",
+   "C": "Ampere",
+   "D": "Cobalt"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "137": {
+  "number": 137,
+  "qtype": "MCQ_single",
+  "stem": "The person who has been President of India, Ambassador to USA, China, Turkey and Thailand alongwith vice chancellor to Jawahar Lal University. He is\n(A) K. R. Narayan\n(B) R. Venkatraman\n(C) Dr. Shankar Dayal Sharma\n(D) Dr. S. Radha Krishnan",
+  "raw_options": [
+   "(a) K. R. Narayan",
+   "(b) R. Venkatraman",
+   "(c) Dr. Shankar Dayal Sharma",
+   "(d) Dr. S. Radha Krishnan"
+  ],
+  "options": {
+   "A": "K. R. Narayan",
+   "B": "R. Venkatraman",
+   "C": "Dr. Shankar Dayal Sharma",
+   "D": "Dr. S. Radha Krishnan"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "138": {
+  "number": 138,
+  "qtype": "MCQ_single",
+  "stem": "Amid the distributaries of which river is situated Divi Island ?\n(A) Godavari\n(B) Krishna\n(C) Vimasadhara\n(D) Mahananda",
+  "raw_options": [
+   "(a) Godavari",
+   "(b) Krishna",
+   "(c) Vimasadhara",
+   "(d) Mahananda"
+  ],
+  "options": {
+   "A": "Godavari",
+   "B": "Krishna",
+   "C": "Vimasadhara",
+   "D": "Mahananda"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "139": {
+  "number": 139,
+  "qtype": "MCQ_single",
+  "stem": "If triangle represents Men, rectangle represents Businessman and circle represents Millionaire, then which number represents Men that are both Businessman and Millionaire ?",
+  "raw_options": [
+   "(a) 10",
+   "(b) 3",
+   "(c) 13",
+   "(d) 12"
+  ],
+  "options": {
+   "A": "10",
+   "B": "3",
+   "C": "13",
+   "D": "12"
+  },
+  "marks": 0,
+  "needs_figure": true
+ },
+ "140": {
+  "number": 140,
+  "qtype": "MCQ_single",
+  "stem": "Which among the following is a tool of Fiscal Policy?\n\n(A) Credit Ceiling\n(B) Bank Rate\n(C) Cash Reserve Ratio\n(D) Taxes",
+  "raw_options": [
+   "(a) Credit Ceiling",
+   "(b) Bank Rate",
+   "(c) Cash Reserve Ratio",
+   "(d) Taxes"
+  ],
+  "options": {
+   "A": "Credit Ceiling",
+   "B": "Bank Rate",
+   "C": "Cash Reserve Ratio",
+   "D": "Taxes"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "141": {
+  "number": 141,
+  "qtype": "MCQ_single",
+  "stem": "Steam methane reforming technique is used to obtain\n\n(A) Green Hydrogen\n(B) Brown Hydrogen\n(C) Grey Hydrogen\n(D) None of the above",
+  "raw_options": [
+   "(a) Green Hydrogen",
+   "(b) Brown Hydrogen",
+   "(c) Grey Hydrogen",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "Green Hydrogen",
+   "B": "Brown Hydrogen",
+   "C": "Grey Hydrogen",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "142": {
+  "number": 142,
+  "qtype": "MCQ_single",
+  "stem": "The primary function of the Finance Commission in India is to\n\n(A) Advise the President on financial matters\n(B) Prepare the annual budget\n(C) Allocate funds to various ministries of the Union and State Governments\n(D) Distribution of revenue between the Centre and the States",
+  "raw_options": [
+   "(a) Advise the President on financial matters",
+   "(b) Prepare the annual budget",
+   "(c) Allocate funds to various ministries of the Union and State Governments",
+   "(d) Distribution of revenue between the Centre and the States"
+  ],
+  "options": {
+   "A": "Advise the President on financial matters",
+   "B": "Prepare the annual budget",
+   "C": "Allocate funds to various ministries of the Union and State Governments",
+   "D": "Distribution of revenue between the Centre and the States"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "143": {
+  "number": 143,
+  "qtype": "MCQ_single",
+  "stem": "Who first described the Revolt of 1857 as the 'First Indian War of Independence'?\n\n(A) R. C. Majumdar\n(B) V. D. Savarkar\n(C) Bal Gangadhar Tilak\n(D) None of the above",
+  "raw_options": [
+   "(a) R. C. Majumdar",
+   "(b) V. D. Savarkar",
+   "(c) Bal Gangadhar Tilak",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "R. C. Majumdar",
+   "B": "V. D. Savarkar",
+   "C": "Bal Gangadhar Tilak",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "144": {
+  "number": 144,
+  "qtype": "MCQ_single",
+  "stem": "If C is brother of B, B is son of A, D is father of C and A is female, then A is\n\n(A) Wife of D\n(B) Mother of D\n(C) Husband of D\n(D) Sister of D",
+  "raw_options": [
+   "(a) Wife of D",
+   "(b) Mother of D",
+   "(c) Husband of D",
+   "(d) Sister of D"
+  ],
+  "options": {
+   "A": "Wife of D",
+   "B": "Mother of D",
+   "C": "Husband of D",
+   "D": "Sister of D"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "145": {
+  "number": 145,
+  "qtype": "MCQ_single",
+  "stem": "Standard electrode potential of three metals A, B and C are respectively 0.5 V, -3 V and -1.2 V. Reducing power of these metals would be\n\n(A) C > B > A\n(B) A > C > B\n(C) B > C > A\n(D) None of the above",
+  "raw_options": [
+   "(a) C > B > A",
+   "(b) A > C > B",
+   "(c) B > C > A",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "C > B > A",
+   "B": "A > C > B",
+   "C": "B > C > A",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "146": {
+  "number": 146,
+  "qtype": "MCQ_single",
+  "stem": "NNP at factor cost is equal to\n\n(A) Disposable Personal Income\n(B) National Income\n(C) GNP at Market Price\n(D) GNP at factor cost – Net indirect tax",
+  "raw_options": [
+   "(a) Disposable Personal Income",
+   "(b) National Income",
+   "(c) GNP at Market Price",
+   "(d) GNP at factor cost – Net indirect tax"
+  ],
+  "options": {
+   "A": "Disposable Personal Income",
+   "B": "National Income",
+   "C": "GNP at Market Price",
+   "D": "GNP at factor cost – Net indirect tax"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "147": {
+  "number": 147,
+  "qtype": "MCQ_single",
+  "stem": "Match List – I of Pre-Congress organisations with List – II of their leaders and choose answer from the codes given below:\n\n| List – I | List – II |\n| --- | --- |\n| a. Indian Association | i. Dadabhai Naoroji |\n| b. Madras Mahajan Sabha | ii. M. Viraraghavachariar |\n| c. Bombay Presidency Association | iii. Justice Ranade |\n| d. Poona Sarvjanik Sabha | iv. Surendranath Banerjee |\n\nCode :\na b c d",
+  "raw_options": [],
+  "options": {},
+  "marks": 0,
+  "needs_figure": false
+ },
+ "148": {
+  "number": 148,
+  "qtype": "MCQ_single",
+  "stem": "Compared to a burn due to air at 100°C, the burn due to steam at 100°C is\n\n(A) Less dangerous due to low latent heat of evaporation\n(B) More dangerous due to low latent heat of evaporation\n(C) More dangerous due to high latent heat of evaporation\n(D) Less dangerous due to high latent heat of evaporation",
+  "raw_options": [
+   "(a) Less dangerous due to low latent heat of evaporation",
+   "(b) More dangerous due to low latent heat of evaporation",
+   "(c) More dangerous due to high latent heat of evaporation",
+   "(d) Less dangerous due to high latent heat of evaporation"
+  ],
+  "options": {
+   "A": "Less dangerous due to low latent heat of evaporation",
+   "B": "More dangerous due to low latent heat of evaporation",
+   "C": "More dangerous due to high latent heat of evaporation",
+   "D": "Less dangerous due to high latent heat of evaporation"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "149": {
+  "number": 149,
+  "qtype": "MCQ_single",
+  "stem": "There are 15 chairs in a row. Position of P is at the middle, and Q is at 12th position counting from the right. How many chairs are there between P and Q ?\n\n(A) 3\n(B) 2\n(C) 5\n(D) 4",
+  "raw_options": [
+   "(a) 3",
+   "(b) 2",
+   "(c) 5",
+   "(d) 4"
+  ],
+  "options": {
+   "A": "3",
+   "B": "2",
+   "C": "5",
+   "D": "4"
+  },
+  "marks": 0,
+  "needs_figure": false
+ },
+ "150": {
+  "number": 150,
+  "qtype": "MCQ_single",
+  "stem": "When was the Patna College established?\n\n(A) 1861\n(B) 1865\n(C) 1863\n(D) None of the above",
+  "raw_options": [
+   "(a) 1861",
+   "(b) 1865",
+   "(c) 1863",
+   "(d) None of the above"
+  ],
+  "options": {
+   "A": "1861",
+   "B": "1865",
+   "C": "1863",
+   "D": "None of the above"
+  },
+  "marks": 0,
+  "needs_figure": false
+ }
+}

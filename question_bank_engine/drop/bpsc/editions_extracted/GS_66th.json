@@ -1,0 +1,3110 @@
+{
+  "1": {
+    "number": 1,
+    "qtype": "MCQ_single",
+    "stem": "The radiations used in the treatment of muscle ache are\n(A) infrared\n(B) microwave\n(C) UV\n(D) X-ray\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) infrared",
+      "(b) microwave",
+      "(c) UV",
+      "(d) X-ray",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "infrared",
+      "B": "microwave",
+      "C": "UV",
+      "D": "X-ray",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "2": {
+    "number": 2,
+    "qtype": "MCQ_single",
+    "stem": "The total resistance of a circuit having two parallel resistors is 1·403 kilo-ohm. If one of the resistors is 2·0 kilo-ohm, then the other resistor will be\n(A) 1·403 kilo-ohm\n(B) 2·0 kilo-ohm\n(C) 3·403 kilo-ohm\n(D) 4·70 kilo-ohm\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 1·403 kilo-ohm",
+      "(b) 2·0 kilo-ohm",
+      "(c) 3·403 kilo-ohm",
+      "(d) 4·70 kilo-ohm",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "1·403 kilo-ohm",
+      "B": "2·0 kilo-ohm",
+      "C": "3·403 kilo-ohm",
+      "D": "4·70 kilo-ohm",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "3": {
+    "number": 3,
+    "qtype": "MCQ_single",
+    "stem": "On heating, the resistance of a semiconductor\n(A) increases\n(B) decreases\n(C) remains same\n(D) first increases and then decreases\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) increases",
+      "(b) decreases",
+      "(c) remains same",
+      "(d) first increases and then decreases",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "increases",
+      "B": "decreases",
+      "C": "remains same",
+      "D": "first increases and then decreases",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "4": {
+    "number": 4,
+    "qtype": "MCQ_single",
+    "stem": "Faraday constant\n(A) depends on the amount of the electrolyte\n(B) depends on the current passed in the electrolyte\n(C) depends on the volume of the solvent in which the electrolyte is dissolved\n(D) is a universal constant\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) depends on the amount of the electrolyte",
+      "(b) depends on the current passed in the electrolyte",
+      "(c) depends on the volume of the solvent in which the electrolyte is dissolved",
+      "(d) is a universal constant",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "depends on the amount of the electrolyte",
+      "B": "depends on the current passed in the electrolyte",
+      "C": "depends on the volume of the solvent in which the electrolyte is dissolved",
+      "D": "is a universal constant",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "5": {
+    "number": 5,
+    "qtype": "MCQ_single",
+    "stem": "'Light-year' is a unit of\n(A) time\n(B) speed\n(C) distance\n(D) intensity of light\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) time",
+      "(b) speed",
+      "(c) distance",
+      "(d) intensity of light",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "time",
+      "B": "speed",
+      "C": "distance",
+      "D": "intensity of light",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "6": {
+    "number": 6,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following does not change when light travels from one medium to another?\n(A) Velocity\n(B) Wavelength\n(C) Frequency\n(D) Refractive index\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Velocity",
+      "(b) Wavelength",
+      "(c) Frequency",
+      "(d) Refractive index",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Velocity",
+      "B": "Wavelength",
+      "C": "Frequency",
+      "D": "Refractive index",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "7": {
+    "number": 7,
+    "qtype": "MCQ_single",
+    "stem": "The velocity of electromagnetic waves is\n(A) $3 \times 10^8 \\, \text{ms}^{-1}$\n(B) $3 \times 10^7 \\, \text{ms}^{-1}$\n(C) $3 \times 10^6 \\, \text{ms}^{-1}$\n(D) $3 \times 10^5 \\, \text{ms}^{-1}$\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) $3 \times 10^8 \\, \text{ms}^{-1}$",
+      "(b) $3 \times 10^7 \\, \text{ms}^{-1}$",
+      "(c) $3 \times 10^6 \\, \text{ms}^{-1}$",
+      "(d) $3 \times 10^5 \\, \text{ms}^{-1}$",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "$3 \times 10^8 \\, \text{ms}^{-1}$",
+      "B": "$3 \times 10^7 \\, \text{ms}^{-1}$",
+      "C": "$3 \times 10^6 \\, \text{ms}^{-1}$",
+      "D": "$3 \times 10^5 \\, \text{ms}^{-1}$",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "8": {
+    "number": 8,
+    "qtype": "MCQ_single",
+    "stem": "The first man who placed his foot on the moon is\n(A) Leonov\n(B) Neil Armstrong\n(C) Michael Collins\n(D) James Van Allen\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Leonov",
+      "(b) Neil Armstrong",
+      "(c) Michael Collins",
+      "(d) James Van Allen",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Leonov",
+      "B": "Neil Armstrong",
+      "C": "Michael Collins",
+      "D": "James Van Allen",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "9": {
+    "number": 9,
+    "qtype": "MCQ_single",
+    "stem": "The number of neutrons in the nucleus of plutonium nuclide (94Pu242) is\n(A) 94\n(B) 148\n(C) 242\n(D) 336\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 94",
+      "(b) 148",
+      "(c) 242",
+      "(d) 336",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "94",
+      "B": "148",
+      "C": "242",
+      "D": "336",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "10": {
+    "number": 10,
+    "qtype": "MCQ_single",
+    "stem": "The highest viscosity among the following is of\n(A) water\n(B) air\n(C) blood\n(D) honey\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) water",
+      "(b) air",
+      "(c) blood",
+      "(d) honey",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "water",
+      "B": "air",
+      "C": "blood",
+      "D": "honey",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "11": {
+    "number": 11,
+    "qtype": "MCQ_single",
+    "stem": "Milk is a poor source of\n(A) calcium\n(B) protein\n(C) vitamin C\n(D) carbohydrate\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) calcium",
+      "(b) protein",
+      "(c) vitamin C",
+      "(d) carbohydrate",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "calcium",
+      "B": "protein",
+      "C": "vitamin C",
+      "D": "carbohydrate",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "12": {
+    "number": 12,
+    "qtype": "MCQ_single",
+    "stem": "The breath test conducted by police to check drunken driver has which one of the following on the filter paper?\n(A) Potassium dichromate-sulfuric acid\n(B) Potassium permanganate-sulfuric acid\n(C) Silica gel coated with silver nitrate\n(D) Turmeric\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Potassium dichromate-sulfuric acid",
+      "(b) Potassium permanganate-sulfuric acid",
+      "(c) Silica gel coated with silver nitrate",
+      "(d) Turmeric",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Potassium dichromate-sulfuric acid",
+      "B": "Potassium permanganate-sulfuric acid",
+      "C": "Silica gel coated with silver nitrate",
+      "D": "Turmeric",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "13": {
+    "number": 13,
+    "qtype": "MCQ_single",
+    "stem": "Glucose is converted to ethyl alcohol by the enzyme\n(A) maltase\n(B) invertase\n(C) zymase\n(D) diastase\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) maltase",
+      "(b) invertase",
+      "(c) zymase",
+      "(d) diastase",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "maltase",
+      "B": "invertase",
+      "C": "zymase",
+      "D": "diastase",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "14": {
+    "number": 14,
+    "qtype": "MCQ_single",
+    "stem": "Limewater is turned milky by\n(A) CO\n(B) CO₂\n(C) O₂\n(D) O₃\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) CO",
+      "(b) CO₂",
+      "(c) O₂",
+      "(d) O₃",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "CO",
+      "B": "CO₂",
+      "C": "O₂",
+      "D": "O₃",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "15": {
+    "number": 15,
+    "qtype": "MCQ_single",
+    "stem": "The incomplete burning of petrol and diesel produces\n(A) nitric oxide\n(B) nitrogen dioxide\n(C) carbon dioxide\n(D) carbon monoxide\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) nitric oxide",
+      "(b) nitrogen dioxide",
+      "(c) carbon dioxide",
+      "(d) carbon monoxide",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "nitric oxide",
+      "B": "nitrogen dioxide",
+      "C": "carbon dioxide",
+      "D": "carbon monoxide",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "16": {
+    "number": 16,
+    "qtype": "MCQ_single",
+    "stem": "The pH of a solution changes from 3 to 6. The H⁺ ion concentration will\n(A) increase 3 times\n(B) decrease 3 times\n(C) decrease 10 times\n(D) decrease 1000 times\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) increase 3 times",
+      "(b) decrease 3 times",
+      "(c) decrease 10 times",
+      "(d) decrease 1000 times",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "increase 3 times",
+      "B": "decrease 3 times",
+      "C": "decrease 10 times",
+      "D": "decrease 1000 times",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "17": {
+    "number": 17,
+    "qtype": "MCQ_single",
+    "stem": "A mixture of sand and naphthalene can be separated by\n(A) sublimation\n(B) distillation\n(C) chromatography\n(D) fractional distillation\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) sublimation",
+      "(b) distillation",
+      "(c) chromatography",
+      "(d) fractional distillation",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "sublimation",
+      "B": "distillation",
+      "C": "chromatography",
+      "D": "fractional distillation",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "18": {
+    "number": 18,
+    "qtype": "MCQ_single",
+    "stem": "The numbers of sigma and pi bonds in benzene are\n(A) 3, 3\n(B) 3, 6\n(C) 12, 3\n(D) 12, 6\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 3, 3",
+      "(b) 3, 6",
+      "(c) 12, 3",
+      "(d) 12, 6",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "3, 3",
+      "B": "3, 6",
+      "C": "12, 3",
+      "D": "12, 6",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "19": {
+    "number": 19,
+    "qtype": "MCQ_single",
+    "stem": "The elements present in urea are\n(A) C, H, O\n(B) C, N, O\n(C) C, H, N\n(D) C, H, N, O\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) C, H, O",
+      "(b) C, N, O",
+      "(c) C, H, N",
+      "(d) C, H, N, O",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "C, H, O",
+      "B": "C, N, O",
+      "C": "C, H, N",
+      "D": "C, H, N, O",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "20": {
+    "number": 20,
+    "qtype": "MCQ_single",
+    "stem": "The poorest conductor of heat among the following is\n(A) copper\n(B) lead\n(C) mercury\n(D) zinc\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) copper",
+      "(b) lead",
+      "(c) mercury",
+      "(d) zinc",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "copper",
+      "B": "lead",
+      "C": "mercury",
+      "D": "zinc",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "21": {
+    "number": 21,
+    "qtype": "MCQ_single",
+    "stem": "The vitamin which is effective in blood clotting is\n(A) vitamin A\n(B) vitamin B\n(C) vitamin D\n(D) vitamin K\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) vitamin A",
+      "(b) vitamin B",
+      "(c) vitamin D",
+      "(d) vitamin K",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "vitamin A",
+      "B": "vitamin B",
+      "C": "vitamin D",
+      "D": "vitamin K",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "22": {
+    "number": 22,
+    "qtype": "MCQ_single",
+    "stem": "The female sex hormone is\n(A) estrogen\n(B) androgen\n(C) insulin\n(D) oxytocin\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) estrogen",
+      "(b) androgen",
+      "(c) insulin",
+      "(d) oxytocin",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "estrogen",
+      "B": "androgen",
+      "C": "insulin",
+      "D": "oxytocin",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "23": {
+    "number": 23,
+    "qtype": "MCQ_single",
+    "stem": "The Nobel Prize for developing treatment of Parkinson’s disease was given to\n(A) Arvid Carlsson\n(B) John F. Enders\n(C) Robert B. Laughlin\n(D) Walter Kohn\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Arvid Carlsson",
+      "(b) John F. Enders",
+      "(c) Robert B. Laughlin",
+      "(d) Walter Kohn",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Arvid Carlsson",
+      "B": "John F. Enders",
+      "C": "Robert B. Laughlin",
+      "D": "Walter Kohn",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "24": {
+    "number": 24,
+    "qtype": "MCQ_single",
+    "stem": "The malfunctioning of thyroid gland is due to the deficiency of\n(A) vitamin A\n(B) calcium\n(C) iodine\n(D) iron\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) vitamin A",
+      "(b) calcium",
+      "(c) iodine",
+      "(d) iron",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "vitamin A",
+      "B": "calcium",
+      "C": "iodine",
+      "D": "iron",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "25": {
+    "number": 25,
+    "qtype": "MCQ_single",
+    "stem": "The sensitive area of the human tongue to bitterness is\n(A) tip\n(B) middle part\n(C) posterior part\n(D) edge\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) tip",
+      "(b) middle part",
+      "(c) posterior part",
+      "(d) edge",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "tip",
+      "B": "middle part",
+      "C": "posterior part",
+      "D": "edge",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "26": {
+    "number": 26,
+    "qtype": "MCQ_single",
+    "stem": "Ginger is a stem and not root because\n(A) it stores food material\n(B) it has nodes and internodes\n(C) it grows horizontally in the soil\n(D) it lacks chlorophyll\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) it stores food material",
+      "(b) it has nodes and internodes",
+      "(c) it grows horizontally in the soil",
+      "(d) it lacks chlorophyll",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "it stores food material",
+      "B": "it has nodes and internodes",
+      "C": "it grows horizontally in the soil",
+      "D": "it lacks chlorophyll",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "27": {
+    "number": 27,
+    "qtype": "MCQ_single",
+    "stem": "The sweetest sugar among the following is\n(A) fructose\n(B) glucose\n(C) maltose\n(D) sucrose\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) fructose",
+      "(b) glucose",
+      "(c) maltose",
+      "(d) sucrose",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "fructose",
+      "B": "glucose",
+      "C": "maltose",
+      "D": "sucrose",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "28": {
+    "number": 28,
+    "qtype": "MCQ_single",
+    "stem": "Among the following, which is not a true fruit?\n(A) Apple\n(B) Grape\n(C) Date\n(D) Plum\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Apple",
+      "(b) Grape",
+      "(c) Date",
+      "(d) Plum",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Apple",
+      "B": "Grape",
+      "C": "Date",
+      "D": "Plum",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "29": {
+    "number": 29,
+    "qtype": "MCQ_single",
+    "stem": "Legumes are highly nutritious because they are rich in\n(A) fat\n(B) protein\n(C) oil\n(D) starch\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) fat",
+      "(b) protein",
+      "(c) oil",
+      "(d) starch",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "fat",
+      "B": "protein",
+      "C": "oil",
+      "D": "starch",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "30": {
+    "number": 30,
+    "qtype": "MCQ_single",
+    "stem": "Clove, a spice, is obtained from which part of the plant?\n(A) Fruit\n(B) Stem\n(C) Root\n(D) Flower bud\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Fruit",
+      "(b) Stem",
+      "(c) Root",
+      "(d) Flower bud",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Fruit",
+      "B": "Stem",
+      "C": "Root",
+      "D": "Flower bud",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "31": {
+    "number": 31,
+    "qtype": "MCQ_single",
+    "stem": "Who has been appointed by the Board of Control for Cricket in India as the Head of All India Women’s Selection Committee?\n(A) Mithu Mukherjee\n(B) Neetu David\n(C) Renu Margrate\n(D) V. Kalpana\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Mithu Mukherjee",
+      "(b) Neetu David",
+      "(c) Renu Margrate",
+      "(d) V. Kalpana",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Mithu Mukherjee",
+      "B": "Neetu David",
+      "C": "Renu Margrate",
+      "D": "V. Kalpana",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "32": {
+    "number": 32,
+    "qtype": "MCQ_single",
+    "stem": "Who has won the Women’s Singles US Open Tennis Tournament, 2020?\n(A) Naomi Osaka\n(B) Bianca Andreescu\n(C) Sofia Kenin\n(D) K. Pliskova\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Naomi Osaka",
+      "(b) Bianca Andreescu",
+      "(c) Sofia Kenin",
+      "(d) K. Pliskova",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Naomi Osaka",
+      "B": "Bianca Andreescu",
+      "C": "Sofia Kenin",
+      "D": "K. Pliskova",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "33": {
+    "number": 33,
+    "qtype": "MCQ_single",
+    "stem": "Which athlete scored first position in the London Marathon held on 4th October, 2020?\n(A) Eliud Kipchoge\n(B) Shura Kitata\n(C) Vincent Kipchumba\n(D) Sisay Lemma\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Eliud Kipchoge",
+      "(b) Shura Kitata",
+      "(c) Vincent Kipchumba",
+      "(d) Sisay Lemma",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Eliud Kipchoge",
+      "B": "Shura Kitata",
+      "C": "Vincent Kipchumba",
+      "D": "Sisay Lemma",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "34": {
+    "number": 34,
+    "qtype": "MCQ_single",
+    "stem": "Which Indian cricketer along with M. S. Dhoni announced retirement from the international cricket on 15th August, 2020?\n(A) Suresh Raina\n(B) Harbhajan Singh\n(C) Bhuvneshwar Kumar\n(D) Rohit Sharma\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Suresh Raina",
+      "(b) Harbhajan Singh",
+      "(c) Bhuvneshwar Kumar",
+      "(d) Rohit Sharma",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Suresh Raina",
+      "B": "Harbhajan Singh",
+      "C": "Bhuvneshwar Kumar",
+      "D": "Rohit Sharma",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "35": {
+    "number": 35,
+    "qtype": "MCQ_single",
+    "stem": "Who has been appointed as the Chairperson of the National School of Drama recently?\n(A) Mahesh Bhatt\n(B) Akshay Kumar\n(C) Anupam Kher\n(D) Paresh Rawal\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Mahesh Bhatt",
+      "(b) Akshay Kumar",
+      "(c) Anupam Kher",
+      "(d) Paresh Rawal",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Mahesh Bhatt",
+      "B": "Akshay Kumar",
+      "C": "Anupam Kher",
+      "D": "Paresh Rawal",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "36": {
+    "number": 36,
+    "qtype": "MCQ_single",
+    "stem": "Who is the Chairman of the Defence Research and Development Organization?\n(A) Surjeet Singh Deswal\n(B) Dr. G. Satheesh Reddy\n(C) Arvind Saxena\n(D) Charanjit Singh Attra\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Surjeet Singh Deswal",
+      "(b) Dr. G. Satheesh Reddy",
+      "(c) Arvind Saxena",
+      "(d) Charanjit Singh Attra",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Surjeet Singh Deswal",
+      "B": "Dr. G. Satheesh Reddy",
+      "C": "Arvind Saxena",
+      "D": "Charanjit Singh Attra",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "37": {
+    "number": 37,
+    "qtype": "MCQ_single",
+    "stem": "For which discipline, Dr. Bushra Ateeq and Dr. Ritesh Agarwal have been selected for Shanti Swarup Bhatnagar Prize, 2020?\n(A) Chemical Sciences\n(B) Physical Sciences\n(C) Medical Sciences\n(D) Mathematical Sciences\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Chemical Sciences",
+      "(b) Physical Sciences",
+      "(c) Medical Sciences",
+      "(d) Mathematical Sciences",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Chemical Sciences",
+      "B": "Physical Sciences",
+      "C": "Medical Sciences",
+      "D": "Mathematical Sciences",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "38": {
+    "number": 38,
+    "qtype": "MCQ_single",
+    "stem": "Who has been selected for the Nobel Peace Prize, 2020?\n(A) European Union\n(B) World Food Programme\n(C) Robert B. Wilson\n(D) Paul R. Milgrom\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) European Union",
+      "(b) World Food Programme",
+      "(c) Robert B. Wilson",
+      "(d) Paul R. Milgrom",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "European Union",
+      "B": "World Food Programme",
+      "C": "Robert B. Wilson",
+      "D": "Paul R. Milgrom",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "39": {
+    "number": 39,
+    "qtype": "MCQ_single",
+    "stem": "Which Indian film actor has been included in the Time Magazine’s list of hundred most influential people of 2020?\n(A) Ayushmann Khurrana\n(B) Shahrukh Khan\n(C) Ajay Devgan\n(D) Sunny Deol\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Ayushmann Khurrana",
+      "(b) Shahrukh Khan",
+      "(c) Ajay Devgan",
+      "(d) Sunny Deol",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Ayushmann Khurrana",
+      "B": "Shahrukh Khan",
+      "C": "Ajay Devgan",
+      "D": "Sunny Deol",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "40": {
+    "number": 40,
+    "qtype": "MCQ_single",
+    "stem": "How many Indian beaches have been recommended for the Blue Flag Certification recently?\n(A) Six\n(B) Seven\n(C) Eight\n(D) Nine\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Six",
+      "(b) Seven",
+      "(c) Eight",
+      "(d) Nine",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Six",
+      "B": "Seven",
+      "C": "Eight",
+      "D": "Nine",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "41": {
+    "number": 41,
+    "qtype": "MCQ_single",
+    "stem": "Ram Vilas Paswan started his political career from which political party?\n(A) Janata Party\n(B) Bharatiya Lok Dal\n(C) Samyukta Socialist Party\n(D) Praja Socialist Party\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Janata Party",
+      "(b) Bharatiya Lok Dal",
+      "(c) Samyukta Socialist Party",
+      "(d) Praja Socialist Party",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Janata Party",
+      "B": "Bharatiya Lok Dal",
+      "C": "Samyukta Socialist Party",
+      "D": "Praja Socialist Party",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "42": {
+    "number": 42,
+    "qtype": "MCQ_single",
+    "stem": "When did the Election Commission of India issue a Press Note for the General Election to the Legislative Assembly of Bihar, 2020?\n(A) 23rd September, 2020\n(B) 24th September, 2020\n(C) 25th September, 2020\n(D) 26th September, 2020\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 23rd September, 2020",
+      "(b) 24th September, 2020",
+      "(c) 25th September, 2020",
+      "(d) 26th September, 2020",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "23rd September, 2020",
+      "B": "24th September, 2020",
+      "C": "25th September, 2020",
+      "D": "26th September, 2020",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "43": {
+    "number": 43,
+    "qtype": "MCQ_single",
+    "stem": "In which State, ‘Ghar Tak Fiber’ Scheme has been launched on 21st September, 2020 through a video conference?\n(A) Uttar Pradesh\n(B) Madhya Pradesh\n(C) Bihar\n(D) Karnataka\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Uttar Pradesh",
+      "(b) Madhya Pradesh",
+      "(c) Bihar",
+      "(d) Karnataka",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Uttar Pradesh",
+      "B": "Madhya Pradesh",
+      "C": "Bihar",
+      "D": "Karnataka",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "44": {
+    "number": 44,
+    "qtype": "MCQ_single",
+    "stem": "Bihar politician Late Raghuvansh Prasad Singh was for the first time elected to which Lok Sabha?\n(A) Tenth Lok Sabha\n(B) Eleventh Lok Sabha\n(C) Twelfth Lok Sabha\n(D) Thirteenth Lok Sabha\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Tenth Lok Sabha",
+      "(b) Eleventh Lok Sabha",
+      "(c) Twelfth Lok Sabha",
+      "(d) Thirteenth Lok Sabha",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Tenth Lok Sabha",
+      "B": "Eleventh Lok Sabha",
+      "C": "Twelfth Lok Sabha",
+      "D": "Thirteenth Lok Sabha",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "45": {
+    "number": 45,
+    "qtype": "MCQ_single",
+    "stem": "Which among the following is not a member of the Quadrilateral Security Dialogue—an informal strategic forum?\n(A) India\n(B) Japan\n(C) China\n(D) Australia\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) India",
+      "(b) Japan",
+      "(c) China",
+      "(d) Australia",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "India",
+      "B": "Japan",
+      "C": "China",
+      "D": "Australia",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "46": {
+    "number": 46,
+    "qtype": "MCQ_single",
+    "stem": "Who represented India’s perspective in the Fifth BRICS Culture Ministers’ Meeting held through a video conference in September 2020?\n(A) Prahlad Singh Patel\n(B) Ramesh Pokhriyal Nishank\n(C) Nitin Gadkari\n(D) Ravi Shankar Prasad\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Prahlad Singh Patel",
+      "(b) Ramesh Pokhriyal Nishank",
+      "(c) Nitin Gadkari",
+      "(d) Ravi Shankar Prasad",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Prahlad Singh Patel",
+      "B": "Ramesh Pokhriyal Nishank",
+      "C": "Nitin Gadkari",
+      "D": "Ravi Shankar Prasad",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "47": {
+    "number": 47,
+    "qtype": "MCQ_single",
+    "stem": "Where was the 36th ASEAN Summit virtually held in June 2020?\n(A) Thailand\n(B) Singapore\n(C) Indonesia\n(D) Vietnam\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Thailand",
+      "(b) Singapore",
+      "(c) Indonesia",
+      "(d) Vietnam",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Thailand",
+      "B": "Singapore",
+      "C": "Indonesia",
+      "D": "Vietnam",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "48": {
+    "number": 48,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following has topped in the Human Capital Index, 2020?\n(A) Japan\n(B) South Korea\n(C) Singapore\n(D) Hong Kong\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Japan",
+      "(b) South Korea",
+      "(c) Singapore",
+      "(d) Hong Kong",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Japan",
+      "B": "South Korea",
+      "C": "Singapore",
+      "D": "Hong Kong",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "49": {
+    "number": 49,
+    "qtype": "MCQ_single",
+    "stem": "Recently in USA, ‘Operation MAGA’ is related to\n(A) campaign against COVID-19\n(B) Donald Trump’s re-election campaign\n(C) Joseph Biden’s election campaign\n(D) ‘make army great again’ campaign\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) campaign against COVID-19",
+      "(b) Donald Trump’s re-election campaign",
+      "(c) Joseph Biden’s election campaign",
+      "(d) 'make army great again' campaign",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "campaign against COVID-19",
+      "B": "Donald Trump’s re-election campaign",
+      "C": "Joseph Biden’s election campaign",
+      "D": "'make army great again' campaign",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "50": {
+    "number": 50,
+    "qtype": "MCQ_single",
+    "stem": "Which Arab state has started first nuclear power plant?\n(A) Iraq\n(B) Saudi Arabia\n(C) United Arab Emirates\n(D) Egypt\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Iraq",
+      "(b) Saudi Arabia",
+      "(c) United Arab Emirates",
+      "(d) Egypt",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Iraq",
+      "B": "Saudi Arabia",
+      "C": "United Arab Emirates",
+      "D": "Egypt",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "51": {
+    "number": 51,
+    "qtype": "MCQ_single",
+    "stem": "Which was the first Arab state to sign peace deal with Israel?\n(A) Egypt\n(B) Jordan\n(C) Bahrain\n(D) Sudan\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Egypt",
+      "(b) Jordan",
+      "(c) Bahrain",
+      "(d) Sudan",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Egypt",
+      "B": "Jordan",
+      "C": "Bahrain",
+      "D": "Sudan",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "52": {
+    "number": 52,
+    "qtype": "MCQ_single",
+    "stem": "Which country assumed the role of Chairman of the International Labour Organization’s Governing Body for the period of October 2020 till June 2021?\n(A) Japan\n(B) New Zealand\n(C) Australia\n(D) India\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Japan",
+      "(b) New Zealand",
+      "(c) Australia",
+      "(d) India",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Japan",
+      "B": "New Zealand",
+      "C": "Australia",
+      "D": "India",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "53": {
+    "number": 53,
+    "qtype": "MCQ_single",
+    "stem": "'Operation My Saheli' launched in September 2020 aims\n(A) to encourage self-defence education among girls\n(B) to boost the security of women passengers in trains\n(C) to explore new job opportunities for women\n(D) to boost awareness against girl child labour\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) to encourage self-defence education among girls",
+      "(b) to boost the security of women passengers in trains",
+      "(c) to explore new job opportunities for women",
+      "(d) to boost awareness against girl child labour",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "to encourage self-defence education among girls",
+      "B": "to boost the security of women passengers in trains",
+      "C": "to explore new job opportunities for women",
+      "D": "to boost awareness against girl child labour",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "54": {
+    "number": 54,
+    "qtype": "MCQ_single",
+    "stem": "On the occasion of the first anniversary of the Fit India Movement, who gave the Mantra, 'Fitness Ki Dose, Aadha Ghanta Roz (Fitness Dose, Half an Hour Daily)?'",
+    "raw_options": [
+      "(a) Prime Minister Narendra Modi",
+      "(b) Union Home Minister Amit Shah",
+      "(c) Union Health Minister Dr. Harsh Vardhan",
+      "(d) Yoga Guru Baba Ramdev",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Prime Minister Narendra Modi",
+      "B": "Union Home Minister Amit Shah",
+      "C": "Union Health Minister Dr. Harsh Vardhan",
+      "D": "Yoga Guru Baba Ramdev",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "55": {
+    "number": 55,
+    "qtype": "MCQ_single",
+    "stem": "On the one hundred birth anniversary of Rajmata Vijaya Raje Scindia, Prime Minister Narendra Modi released a",
+    "raw_options": [
+      "(a) fifty rupees coin",
+      "(b) fifty rupees note",
+      "(c) one hundred rupees coin",
+      "(d) one hundred rupees note",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "fifty rupees coin",
+      "B": "fifty rupees note",
+      "C": "one hundred rupees coin",
+      "D": "one hundred rupees note",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "56": {
+    "number": 56,
+    "qtype": "MCQ_single",
+    "stem": "Which State's short documentary film, Chi Lupo has won Dada Saheb Phalke Award, 2020?",
+    "raw_options": [
+      "(a) Manipur",
+      "(b) Nagaland",
+      "(c) Meghalaya",
+      "(d) Arunachal Pradesh",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Manipur",
+      "B": "Nagaland",
+      "C": "Meghalaya",
+      "D": "Arunachal Pradesh",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "57": {
+    "number": 57,
+    "qtype": "MCQ_single",
+    "stem": "Which private sector bank has launched 'e-Kisaan Dhan' app for farmers?",
+    "raw_options": [
+      "(a) Axis Bank",
+      "(b) HDFC Bank",
+      "(c) IDBI Bank",
+      "(d) Kotak Mahindra Bank",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Axis Bank",
+      "B": "HDFC Bank",
+      "C": "IDBI Bank",
+      "D": "Kotak Mahindra Bank",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "58": {
+    "number": 58,
+    "qtype": "MCQ_single",
+    "stem": "At the international airport of which city, India launched its first COVID-19 testing facility?",
+    "raw_options": [
+      "(a) Kolkata",
+      "(b) Delhi",
+      "(c) Mumbai",
+      "(d) Bengaluru",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Kolkata",
+      "B": "Delhi",
+      "C": "Mumbai",
+      "D": "Bengaluru",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "59": {
+    "number": 59,
+    "qtype": "MCQ_single",
+    "stem": "Rafale fighter aircraft has been formally inducted into the Indian Air Force at which Air Force Station?",
+    "raw_options": [
+      "(a) Hindon",
+      "(b) Sarsawa",
+      "(c) Ambala",
+      "(d) Amritsar",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Hindon",
+      "B": "Sarsawa",
+      "C": "Ambala",
+      "D": "Amritsar",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "60": {
+    "number": 60,
+    "qtype": "MCQ_single",
+    "stem": "The name of India's first indigenous anti-radiation missile is",
+    "raw_options": [
+      "(a) Tandav",
+      "(b) Trinetra",
+      "(c) Saksham",
+      "(d) Rudram",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Tandav",
+      "B": "Trinetra",
+      "C": "Saksham",
+      "D": "Rudram",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "61": {
+    "number": 61,
+    "qtype": "MCQ_single",
+    "stem": "In which of the following Harappan cities, furrows of ploughed fields have been found?\n\n(A) Kalibangan\n(B) Dholavira\n(C) Mohenjo-daro\n(D) Lothal\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Kalibangan",
+      "(b) Dholavira",
+      "(c) Mohenjo-daro",
+      "(d) Lothal",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Kalibangan",
+      "B": "Dholavira",
+      "C": "Mohenjo-daro",
+      "D": "Lothal",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "62": {
+    "number": 62,
+    "qtype": "MCQ_single",
+    "stem": "Triratna or Three Jewels, i.e., right knowledge, right faith and right action are related to which of the following?\n\n(A) Buddhism\n(B) Hinduism\n(C) Jainism\n(D) Christianity\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Buddhism",
+      "(b) Hinduism",
+      "(c) Jainism",
+      "(d) Christianity",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Buddhism",
+      "B": "Hinduism",
+      "C": "Jainism",
+      "D": "Christianity",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "63": {
+    "number": 63,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following rulers convened the Fourth Buddhist Council in Kashmir?\n\n(A) Ashoka\n(B) Ajatashatru\n(C) Kanishka\n(D) Kalashoka\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Ashoka",
+      "(b) Ajatashatru",
+      "(c) Kanishka",
+      "(d) Kalashoka",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Ashoka",
+      "B": "Ajatashatru",
+      "C": "Kanishka",
+      "D": "Kalashoka",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "64": {
+    "number": 64,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following philosophies of India propounded the atom theory?\n\n(A) Yoga\n(B) Nyaya\n(C) Sankhya\n(D) Vaisheshika\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Yoga",
+      "(b) Nyaya",
+      "(c) Sankhya",
+      "(d) Vaisheshika",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Yoga",
+      "B": "Nyaya",
+      "C": "Sankhya",
+      "D": "Vaisheshika",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "65": {
+    "number": 65,
+    "qtype": "MCQ_single",
+    "stem": "Which Delhi Sultan is known for adopting the 'blood and iron' policy?\n\n(A) Iltutmish\n(B) Balban\n(C) Ala-ud-din Khalji\n(D) Muhammad bin Tughluq\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Iltutmish",
+      "(b) Balban",
+      "(c) Ala-ud-din Khalji",
+      "(d) Muhammad bin Tughluq",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Iltutmish",
+      "B": "Balban",
+      "C": "Ala-ud-din Khalji",
+      "D": "Muhammad bin Tughluq",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "66": {
+    "number": 66,
+    "qtype": "MCQ_single",
+    "stem": "Which medieval Indian empire was famous for elaborated local self-government?\n\n(A) Chalukya\n(B) Chola\n(C) Solanki\n(D) Parmar\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Chalukya",
+      "(b) Chola",
+      "(c) Solanki",
+      "(d) Parmar",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Chalukya",
+      "B": "Chola",
+      "C": "Solanki",
+      "D": "Parmar",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "67": {
+    "number": 67,
+    "qtype": "MCQ_single",
+    "stem": "Pietra dura is related to which of the following?\n\n(A) Decorating the walls with floral designs made of semi-precious stones\n(B) Building sloping walls in Minars\n(C) Use of arch in construction\n(D) Use of marble in buildings\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Decorating the walls with floral designs made of semi-precious stones",
+      "(b) Building sloping walls in Minars",
+      "(c) Use of arch in construction",
+      "(d) Use of marble in buildings",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Decorating the walls with floral designs made of semi-precious stones",
+      "B": "Building sloping walls in Minars",
+      "C": "Use of arch in construction",
+      "D": "Use of marble in buildings",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "68": {
+    "number": 68,
+    "qtype": "MCQ_single",
+    "stem": "Which Mughal ruler established Karkhanas for painting?\n\n(A) Humayun\n(B) Akbar\n(C) Jahangir\n(D) Shah Jahan\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Humayun",
+      "(b) Akbar",
+      "(c) Jahangir",
+      "(d) Shah Jahan",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Humayun",
+      "B": "Akbar",
+      "C": "Jahangir",
+      "D": "Shah Jahan",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "69": {
+    "number": 69,
+    "qtype": "MCQ_single",
+    "stem": "The dual system of governance in Bengal was enforced by\n\n(A) Warren Hastings\n(B) William Bentinck\n(C) Robert Clive\n(D) Lord Curzon\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Warren Hastings",
+      "(b) William Bentinck",
+      "(c) Robert Clive",
+      "(d) Lord Curzon",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Warren Hastings",
+      "B": "William Bentinck",
+      "C": "Robert Clive",
+      "D": "Lord Curzon",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "70": {
+    "number": 70,
+    "qtype": "MCQ_single",
+    "stem": "Who among the following participated in the Parliament of Religions held at Chicago in 1893?\n\n(A) Dayananda Saraswati\n(B) Swami Vivekananda\n(C) Mahatma Gandhi\n(D) Raja Rammohan Roy\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Dayananda Saraswati",
+      "(b) Swami Vivekananda",
+      "(c) Mahatma Gandhi",
+      "(d) Raja Rammohan Roy",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Dayananda Saraswati",
+      "B": "Swami Vivekananda",
+      "C": "Mahatma Gandhi",
+      "D": "Raja Rammohan Roy",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "71": {
+    "number": 71,
+    "qtype": "MCQ_single",
+    "stem": "Who established Swaraj Party in 1923?\n\n(A) Mahatma Gandhi\n(B) Vallabhbhai Patel\n(C) C. R. Das and Motilal Nehru\n(D) B. R. Ambedkar\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Mahatma Gandhi",
+      "(b) Vallabhbhai Patel",
+      "(c) C. R. Das and Motilal Nehru",
+      "(d) B. R. Ambedkar",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Mahatma Gandhi",
+      "B": "Vallabhbhai Patel",
+      "C": "C. R. Das and Motilal Nehru",
+      "D": "B. R. Ambedkar",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "72": {
+    "number": 72,
+    "qtype": "MCQ_single",
+    "stem": "Who wrote the famous play, Neel Darpan in which oppression of indigo farmers is displayed?\n\n(A) Sharat Chandra Chatterjee\n(B) Rabindranath Tagore\n(C) Barindra Ghosh\n(D) Dinabandhu Mitra\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Sharat Chandra Chatterjee",
+      "(b) Rabindranath Tagore",
+      "(c) Barindra Ghosh",
+      "(d) Dinabandhu Mitra",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Sharat Chandra Chatterjee",
+      "B": "Rabindranath Tagore",
+      "C": "Barindra Ghosh",
+      "D": "Dinabandhu Mitra",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "73": {
+    "number": 73,
+    "qtype": "MCQ_single",
+    "stem": "The famous Battle of Wandiwash in 1760 was fought by the British against whom?\n(A) The French\n(B) Spain\n(C) Mysore\n(D) Carnatic\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) The French",
+      "(b) Spain",
+      "(c) Mysore",
+      "(d) Carnatic",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "The French",
+      "B": "Spain",
+      "C": "Mysore",
+      "D": "Carnatic",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "74": {
+    "number": 74,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following Acts introduced separate electorate system in India?\n(A) The Regulating Act, 1773\n(B) The Charter Act, 1833\n(C) The Pitt's India Act, 1784\n(D) The Indian Councils Act, 1909\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) The Regulating Act, 1773",
+      "(b) The Charter Act, 1833",
+      "(c) The Pitt's India Act, 1784",
+      "(d) The Indian Councils Act, 1909",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "The Regulating Act, 1773",
+      "B": "The Charter Act, 1833",
+      "C": "The Pitt's India Act, 1784",
+      "D": "The Indian Councils Act, 1909",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "75": {
+    "number": 75,
+    "qtype": "MCQ_single",
+    "stem": "Kol Mutiny of 1831 under Buddho Bhagat took place in which of the following regions?\n(A) Kutch\n(B) Singhbhum\n(C) Western Ghats\n(D) Satara\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Kutch",
+      "(b) Singhbhum",
+      "(c) Western Ghats",
+      "(d) Satara",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Kutch",
+      "B": "Singhbhum",
+      "C": "Western Ghats",
+      "D": "Satara",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "76": {
+    "number": 76,
+    "qtype": "MCQ_single",
+    "stem": "Who spearheaded the 1857 Revolt in Bihar?\n(A) Nana Saheb\n(B) Tatya Tope\n(C) Kunwar Singh\n(D) Maulavi Ahmadullah\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Nana Saheb",
+      "(b) Tatya Tope",
+      "(c) Kunwar Singh",
+      "(d) Maulavi Ahmadullah",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Nana Saheb",
+      "B": "Tatya Tope",
+      "C": "Kunwar Singh",
+      "D": "Maulavi Ahmadullah",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "77": {
+    "number": 77,
+    "qtype": "MCQ_single",
+    "stem": "Who drew Gandhiji’s attention to the plight of indigo peasants in Champaran?\n(A) Rajendra Prasad\n(B) Anugrah Narayan Sinha\n(C) Acharya Kripalani\n(D) Raj Kumar Shukla\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Rajendra Prasad",
+      "(b) Anugrah Narayan Sinha",
+      "(c) Acharya Kripalani",
+      "(d) Raj Kumar Shukla",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Rajendra Prasad",
+      "B": "Anugrah Narayan Sinha",
+      "C": "Acharya Kripalani",
+      "D": "Raj Kumar Shukla",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "78": {
+    "number": 78,
+    "qtype": "MCQ_single",
+    "stem": "Which was the first capital of ancient Mahajanapada Magadh?\n(A) Pataliputra\n(B) Vaishali\n(C) Champa\n(D) Anga\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Pataliputra",
+      "(b) Vaishali",
+      "(c) Champa",
+      "(d) Anga",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Pataliputra",
+      "B": "Vaishali",
+      "C": "Champa",
+      "D": "Anga",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "79": {
+    "number": 79,
+    "qtype": "MCQ_single",
+    "stem": "Swami Sahajananda was related to which of the following?\n(A) Tribal Movement in Bihar\n(B) Labour Movement in Bihar\n(C) Peasant Movement in Bihar\n(D) Caste Movement in Bihar\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Tribal Movement in Bihar",
+      "(b) Labour Movement in Bihar",
+      "(c) Peasant Movement in Bihar",
+      "(d) Caste Movement in Bihar",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Tribal Movement in Bihar",
+      "B": "Labour Movement in Bihar",
+      "C": "Peasant Movement in Bihar",
+      "D": "Caste Movement in Bihar",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "80": {
+    "number": 80,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following was Gandhiji’s first Satyagraha Movement in India in which he used Civil Disobedience?\n(A) Champaran\n(B) Kheda\n(C) Ahmedabad\n(D) Rowlatt Satyagraha\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Champaran",
+      "(b) Kheda",
+      "(c) Ahmedabad",
+      "(d) Rowlatt Satyagraha",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Champaran",
+      "B": "Kheda",
+      "C": "Ahmedabad",
+      "D": "Rowlatt Satyagraha",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "81": {
+    "number": 81,
+    "qtype": "MCQ_single",
+    "stem": "The largest island of Japan in terms of the geographical area is\n(A) Hokkaido\n(B) Honshu\n(C) Shikoku\n(D) Kyushu\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Hokkaido",
+      "(b) Honshu",
+      "(c) Shikoku",
+      "(d) Kyushu",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Hokkaido",
+      "B": "Honshu",
+      "C": "Shikoku",
+      "D": "Kyushu",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "82": {
+    "number": 82,
+    "qtype": "MCQ_single",
+    "stem": "Greenland is a part of which one of the following countries?\n(A) Denmark\n(B) Finland\n(C) Canada\n(D) United Kingdom\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Denmark",
+      "(b) Finland",
+      "(c) Canada",
+      "(d) United Kingdom",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Denmark",
+      "B": "Finland",
+      "C": "Canada",
+      "D": "United Kingdom",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "83": {
+    "number": 83,
+    "qtype": "MCQ_single",
+    "stem": "Which one of the following countries of the world has the largest Indian population as on December 2018?\n(A) United Arab Emirates\n(B) Malaysia\n(C) United Kingdom\n(D) United States of America\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) United Arab Emirates",
+      "(b) Malaysia",
+      "(c) United Kingdom",
+      "(d) United States of America",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "United Arab Emirates",
+      "B": "Malaysia",
+      "C": "United Kingdom",
+      "D": "United States of America",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "84": {
+    "number": 84,
+    "qtype": "MCQ_single",
+    "stem": "Among the following countries, which country has recorded the highest annual gold output (in tonnes) in 2019?\n(A) Russia\n(B) Australia\n(C) China\n(D) United States of America\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Russia",
+      "(b) Australia",
+      "(c) China",
+      "(d) United States of America",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Russia",
+      "B": "Australia",
+      "C": "China",
+      "D": "United States of America",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "85": {
+    "number": 85,
+    "qtype": "MCQ_single",
+    "stem": "Among the following continents, which one has the highest number of countries?\n(A) Europe\n(B) Asia\n(C) Africa\n(D) North America\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Europe",
+      "(b) Asia",
+      "(c) Africa",
+      "(d) North America",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Europe",
+      "B": "Asia",
+      "C": "Africa",
+      "D": "North America",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "86": {
+    "number": 86,
+    "qtype": "MCQ_single",
+    "stem": "The State of India with the highest percentage of tribal population to its total population as per the 2011 Census is\n(A) Arunachal Pradesh\n(B) Nagaland\n(C) Mizoram\n(D) Meghalaya\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Arunachal Pradesh",
+      "(b) Nagaland",
+      "(c) Mizoram",
+      "(d) Meghalaya",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Arunachal Pradesh",
+      "B": "Nagaland",
+      "C": "Mizoram",
+      "D": "Meghalaya",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "87": {
+    "number": 87,
+    "qtype": "MCQ_single",
+    "stem": "Which one of the following coffee-growing areas is not in Karnataka?\n(A) Chikmagalur\n(B) Coorg\n(C) Baba Budangin\n(D) Pulneys\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Chikmagalur",
+      "(b) Coorg",
+      "(c) Baba Budangin",
+      "(d) Pulneys",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Chikmagalur",
+      "B": "Coorg",
+      "C": "Baba Budangin",
+      "D": "Pulneys",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "88": {
+    "number": 88,
+    "qtype": "MCQ_single",
+    "stem": "Which one of the following districts of India is the largest in terms of geographical area?\n(A) Leh\n(B) Kutch\n(C) Jaisalmer\n(D) Barmer\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Leh",
+      "(b) Kutch",
+      "(c) Jaisalmer",
+      "(d) Barmer",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Leh",
+      "B": "Kutch",
+      "C": "Jaisalmer",
+      "D": "Barmer",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "89": {
+    "number": 89,
+    "qtype": "MCQ_single",
+    "stem": "The State of India with maximum number of wildlife sanctuaries is\n(A) Karnataka\n(B) Tamil Nadu\n(C) Maharashtra\n(D) Madhya Pradesh\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Karnataka",
+      "(b) Tamil Nadu",
+      "(c) Maharashtra",
+      "(d) Madhya Pradesh",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Karnataka",
+      "B": "Tamil Nadu",
+      "C": "Maharashtra",
+      "D": "Madhya Pradesh",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "92": {
+    "number": 92,
+    "qtype": "MCQ_single",
+    "stem": "India's 13th major port is going to be set up in which State?\n(A) Kerala\n(B) Gujarat\n(C) Maharashtra\n(D) Tamil Nadu\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Kerala",
+      "(b) Gujarat",
+      "(c) Maharashtra",
+      "(d) Tamil Nadu",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Kerala",
+      "B": "Gujarat",
+      "C": "Maharashtra",
+      "D": "Tamil Nadu",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "93": {
+    "number": 93,
+    "qtype": "MCQ_single",
+    "stem": "Which one of the following States is a leading producer of solar energy in India?\n(A) Telangana\n(B) Karnataka\n(C) Andhra Pradesh\n(D) Rajasthan\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Telangana",
+      "(b) Karnataka",
+      "(c) Andhra Pradesh",
+      "(d) Rajasthan",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Telangana",
+      "B": "Karnataka",
+      "C": "Andhra Pradesh",
+      "D": "Rajasthan",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "94": {
+    "number": 94,
+    "qtype": "MCQ_single",
+    "stem": "Among the following pairs of mineral and district, which one is correctly matched?\n(A) Limestone—Kaimur\n(B) Mica—Bhagalpur\n(C) Quartzite—Madhubani\n(D) Lead-zinc—Gaya\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Limestone—Kaimur",
+      "(b) Mica—Bhagalpur",
+      "(c) Quartzite—Madhubani",
+      "(d) Lead-zinc—Gaya",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Limestone—Kaimur",
+      "B": "Mica—Bhagalpur",
+      "C": "Quartzite—Madhubani",
+      "D": "Lead-zinc—Gaya",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "95": {
+    "number": 95,
+    "qtype": "MCQ_single",
+    "stem": "Which one of the following pairs of industry and place is not correctly matched?\n\n(A) Oil refinery—Barauni\n(B) Cement—Banjari\n(C) Fertilizer—Bhaurahi\n(D) Wagon and engineering—Bhagalpur\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Oil refinery—Barauni",
+      "(b) Cement—Banjari",
+      "(c) Fertilizer—Bhaurahi",
+      "(d) Wagon and engineering—Bhagalpur",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Oil refinery—Barauni",
+      "B": "Cement—Banjari",
+      "C": "Fertilizer—Bhaurahi",
+      "D": "Wagon and engineering—Bhagalpur",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "96": {
+    "number": 96,
+    "qtype": "MCQ_single",
+    "stem": "Piedmont Swamp Soil is found only in which one of the following districts of Bihar?\n\n(A) Madhubani\n(B) Bhagalpur\n(C) West Champaran\n(D) Sitamarhi\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Madhubani",
+      "(b) Bhagalpur",
+      "(c) West Champaran",
+      "(d) Sitamarhi",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Madhubani",
+      "B": "Bhagalpur",
+      "C": "West Champaran",
+      "D": "Sitamarhi",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "97": {
+    "number": 97,
+    "qtype": "MCQ_single",
+    "stem": "In which one of the following pairs of Administrative Divisions of Bihar, Ganga river does not flow?\n\n(A) Darbhanga—Munger\n(B) Purnea—Bhagalpur\n(C) Tirhut—Saran\n(D) Kosi—Magadh\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Darbhanga—Munger",
+      "(b) Purnea—Bhagalpur",
+      "(c) Tirhut—Saran",
+      "(d) Kosi—Magadh",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Darbhanga—Munger",
+      "B": "Purnea—Bhagalpur",
+      "C": "Tirhut—Saran",
+      "D": "Kosi—Magadh",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "98": {
+    "number": 98,
+    "qtype": "MCQ_single",
+    "stem": "Among the following pairs of tribe and district, which one is not correctly matched?\n\n(A) Santhal—Banka\n(B) Munda—Jamui\n(C) Oraon—Supaul\n(D) Kharwar—Bhagalpur\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Santhal—Banka",
+      "(b) Munda—Jamui",
+      "(c) Oraon—Supaul",
+      "(d) Kharwar—Bhagalpur",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Santhal—Banka",
+      "B": "Munda—Jamui",
+      "C": "Oraon—Supaul",
+      "D": "Kharwar—Bhagalpur",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "99": {
+    "number": 99,
+    "qtype": "MCQ_single",
+    "stem": "What is the percentage of all types of forest area to the total geographical area of Bihar State?\n\n(A) 7:27\n(B) 6:87\n(C) 3:21\n(D) 12:77\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 7:27",
+      "(b) 6:87",
+      "(c) 3:21",
+      "(d) 12:77",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "7:27",
+      "B": "6:87",
+      "C": "3:21",
+      "D": "12:77",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "100": {
+    "number": 100,
+    "qtype": "MCQ_single",
+    "stem": "Which one of the following districts is having the only National Park of Bihar?\n\n(A) Nalanda\n(B) Bhagalpur\n(C) West Champaran\n(D) East Champaran\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Nalanda",
+      "(b) Bhagalpur",
+      "(c) West Champaran",
+      "(d) East Champaran",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Nalanda",
+      "B": "Bhagalpur",
+      "C": "West Champaran",
+      "D": "East Champaran",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "101": {
+    "number": 101,
+    "qtype": "MCQ_single",
+    "stem": "Who won the bid to construct the new Parliament building recently?\n\n(A) L&T Limited\n(B) Reliance Projects Limited\n(C) Tata Projects Limited\n(D) The National Highways Authority of India\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) L&T Limited",
+      "(b) Reliance Projects Limited",
+      "(c) Tata Projects Limited",
+      "(d) The National Highways Authority of India",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "L&T Limited",
+      "B": "Reliance Projects Limited",
+      "C": "Tata Projects Limited",
+      "D": "The National Highways Authority of India",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "102": {
+    "number": 102,
+    "qtype": "MCQ_single",
+    "stem": "Which Article in the Indian Constitution is related with the establishment of the Election Commission of India?\n\n(A) Article 324\n(B) Article 148\n(C) Article 342\n(D) Article 325\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Article 324",
+      "(b) Article 148",
+      "(c) Article 342",
+      "(d) Article 325",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Article 324",
+      "B": "Article 148",
+      "C": "Article 342",
+      "D": "Article 325",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "103": {
+    "number": 103,
+    "qtype": "MCQ_single",
+    "stem": "Who is the Head of the National Commission for Women at present?\n\n(A) Mamta Sharma\n(B) Lalitha Kumaramangalam\n(C) Rekha Sharma\n(D) Smriti Irani\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Mamta Sharma",
+      "(b) Lalitha Kumaramangalam",
+      "(c) Rekha Sharma",
+      "(d) Smriti Irani",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Mamta Sharma",
+      "B": "Lalitha Kumaramangalam",
+      "C": "Rekha Sharma",
+      "D": "Smriti Irani",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "104": {
+    "number": 104,
+    "qtype": "MCQ_single",
+    "stem": "What is meant by 'Rule of Law'?\n\n(A) One act for all and one judiciary for all\n(B) One act for all and one State for all\n(C) One State for all and one judiciary for all\n(D) All acts for one and one judiciary for all\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) One act for all and one judiciary for all",
+      "(b) One act for all and one State for all",
+      "(c) One State for all and one judiciary for all",
+      "(d) All acts for one and one judiciary for all",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "One act for all and one judiciary for all",
+      "B": "One act for all and one State for all",
+      "C": "One State for all and one judiciary for all",
+      "D": "All acts for one and one judiciary for all",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "105": {
+    "number": 105,
+    "qtype": "MCQ_single",
+    "stem": "Which Article gives the list of 29 functions to be performed by the Panchayati Raj Institutions?\n\n(A) Article 243(H)\n(B) Article 243(E)\n(C) Article 243(F)\n(D) Article 243(G)\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Article 243(H)",
+      "(b) Article 243(E)",
+      "(c) Article 243(F)",
+      "(d) Article 243(G)",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Article 243(H)",
+      "B": "Article 243(E)",
+      "C": "Article 243(F)",
+      "D": "Article 243(G)",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "106": {
+    "number": 106,
+    "qtype": "MCQ_single",
+    "stem": "When was the Citizenship (Amendment) Act passed?\n\n(A) 11th December, 2018\n(B) 11th December, 2019\n(C) 11th October, 2019\n(D) 11th October, 2020\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 11th December, 2018",
+      "(b) 11th December, 2019",
+      "(c) 11th October, 2019",
+      "(d) 11th October, 2020",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "11th December, 2018",
+      "B": "11th December, 2019",
+      "C": "11th October, 2019",
+      "D": "11th October, 2020",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "107": {
+    "number": 107,
+    "qtype": "MCQ_single",
+    "stem": "The legislative origins of the 73rd Constitutional Amendment Act can be traced back to which Constitutional Amendment Bill?\n\n(A) 61st Constitutional Amendment Bill\n(B) 62nd Constitutional Amendment Bill\n(C) 63rd Constitutional Amendment Bill\n(D) 64th Constitutional Amendment Bill\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 61st Constitutional Amendment Bill",
+      "(b) 62nd Constitutional Amendment Bill",
+      "(c) 63rd Constitutional Amendment Bill",
+      "(d) 64th Constitutional Amendment Bill",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "61st Constitutional Amendment Bill",
+      "B": "62nd Constitutional Amendment Bill",
+      "C": "63rd Constitutional Amendment Bill",
+      "D": "64th Constitutional Amendment Bill",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "108": {
+    "number": 108,
+    "qtype": "MCQ_single",
+    "stem": "Which company established its factory in 1632 at Patna, Bihar?\n\n(A) British East India Company\n(B) Dutch East India Company\n(C) Portuguese East India Company\n(D) French East India Company\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) British East India Company",
+      "(b) Dutch East India Company",
+      "(c) Portuguese East India Company",
+      "(d) French East India Company",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "British East India Company",
+      "B": "Dutch East India Company",
+      "C": "Portuguese East India Company",
+      "D": "French East India Company",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "109": {
+    "number": 109,
+    "qtype": "MCQ_single",
+    "stem": "Which one of the following is not the characteristic of decentralization?\n\n(A) Autonomy\n(B) People's participation\n(C) To instil non-confidence among local communities\n(D) To empower local communities\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Autonomy",
+      "(b) People's participation",
+      "(c) To instil non-confidence among local communities",
+      "(d) To empower local communities",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Autonomy",
+      "B": "People's participation",
+      "C": "To instil non-confidence among local communities",
+      "D": "To empower local communities",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "110": {
+    "number": 110,
+    "qtype": "MCQ_single",
+    "stem": "Which Act is not the landmark in the development of the Constitution during the British Rule?\n\n(A) The Regulating Act, 1773\n(B) The Charter Act, 1833\n(C) The Government of India Act, 1919\n(D) The Protection of Civil Rights Act, 1955\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) The Regulating Act, 1773",
+      "(b) The Charter Act, 1833",
+      "(c) The Government of India Act, 1919",
+      "(d) The Protection of Civil Rights Act, 1955",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "The Regulating Act, 1773",
+      "B": "The Charter Act, 1833",
+      "C": "The Government of India Act, 1919",
+      "D": "The Protection of Civil Rights Act, 1955",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "111": {
+    "number": 111,
+    "qtype": "MCQ_single",
+    "stem": "Which one among the following is not an objective of food management in India?\n(A) Distribution of food grains\n(B) Procurement of food grains\n(C) Maintenance of food grains buffer stock\n(D) Export of food grains\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Distribution of food grains",
+      "(b) Procurement of food grains",
+      "(c) Maintenance of food grains buffer stock",
+      "(d) Export of food grains",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Distribution of food grains",
+      "B": "Procurement of food grains",
+      "C": "Maintenance of food grains buffer stock",
+      "D": "Export of food grains",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "112": {
+    "number": 112,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following is true about the government of India?",
+    "raw_options": [
+      "(a) The government has the authority to borrow from international financial institutions.",
+      "(b) The government has the authority to borrow from domestic banks.",
+      "(c) The government has the authority to borrow from domestic banks but not from international financial institutions.",
+      "(d) The government has the authority to borrow from domestic banks but not from international financial institutions.",
+      "(e) None of these"
+    ],
+    "options": {
+      "A": "The government has the authority to borrow from international financial institutions.",
+      "B": "The government has the authority to borrow from domestic banks.",
+      "C": "The government has the authority to borrow from domestic banks but not from international financial institutions.",
+      "D": "The government has the authority to borrow from domestic banks but not from international financial institutions.",
+      "E": "None of these"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "113": {
+    "number": 113,
+    "qtype": "MCQ_single",
+    "stem": "Which country is the largest trading partner of India in terms of trade volume?",
+    "raw_options": [
+      "(a) United States",
+      "(b) China",
+      "(c) Arab Emirates",
+      "(d) Saudi Arabia",
+      "(e) None of these"
+    ],
+    "options": {
+      "A": "United States",
+      "B": "China",
+      "C": "Arab Emirates",
+      "D": "Saudi Arabia",
+      "E": "None of these"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "114": {
+    "number": 114,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following is a part of the Bharatmala project?",
+    "raw_options": [
+      "(a) Highway sector",
+      "(b) Railways",
+      "(c) Road infrastructure",
+      "(d) Port sector",
+      "(e) None of these"
+    ],
+    "options": {
+      "A": "Highway sector",
+      "B": "Railways",
+      "C": "Road infrastructure",
+      "D": "Port sector",
+      "E": "None of these"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "115": {
+    "number": 115,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following agencies releases the index of industrial production to measure industrial performance in India?\n(A) The National Sample Survey Office (NSSO)\n(B) The Reserve Bank of India (RBI)\n(C) The Central Statistics Office (CSO)\n(D) The Indian Statistical Institute (ISI)\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) The National Sample Survey Office (NSSO)",
+      "(b) The Reserve Bank of India (RBI)",
+      "(c) The Central Statistics Office (CSO)",
+      "(d) The Indian Statistical Institute (ISI)",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "The National Sample Survey Office (NSSO)",
+      "B": "The Reserve Bank of India (RBI)",
+      "C": "The Central Statistics Office (CSO)",
+      "D": "The Indian Statistical Institute (ISI)",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "116": {
+    "number": 116,
+    "qtype": "MCQ_single",
+    "stem": "According to the Ease of Doing Business Report, 2020, India improved their rank from\n(A) 77 in previous year to 63rd position\n(B) 130 in previous year to 100th position\n(C) 100 in previous year to 77th position\n(D) 77 in previous year to 67th position\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 77 in previous year to 63rd position",
+      "(b) 130 in previous year to 100th position",
+      "(c) 100 in previous year to 77th position",
+      "(d) 77 in previous year to 67th position",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "77 in previous year to 63rd position",
+      "B": "130 in previous year to 100th position",
+      "C": "100 in previous year to 77th position",
+      "D": "77 in previous year to 67th position",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "117": {
+    "number": 117,
+    "qtype": "MCQ_single",
+    "stem": "To improve institutional agricultural credit flow, what credit target for 2020–21 has been fixed in the Union Budget of India?\n(A) ₹10 lakh crore\n(B) ₹13·5 lakh crore\n(C) ₹15 lakh crore\n(D) ₹16·5 lakh crore\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) ₹10 lakh crore",
+      "(b) ₹13·5 lakh crore",
+      "(c) ₹15 lakh crore",
+      "(d) ₹16·5 lakh crore",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "₹10 lakh crore",
+      "B": "₹13·5 lakh crore",
+      "C": "₹15 lakh crore",
+      "D": "₹16·5 lakh crore",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "118": {
+    "number": 118,
+    "qtype": "MCQ_single",
+    "stem": "The objective of PM-KUSUM Scheme is\n(A) to reduce farmers’ dependence on monsoon for irrigation\n(B) to reduce farmers’ dependence on moneylenders for credit\n(C) promotion of floriculture in India\n(D) to remove farmers’ dependence on diesel and kerosene and to link pump sets to solar energy\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) to reduce farmers’ dependence on monsoon for irrigation",
+      "(b) to reduce farmers’ dependence on moneylenders for credit",
+      "(c) promotion of floriculture in India",
+      "(d) to remove farmers’ dependence on diesel and kerosene and to link pump sets to solar energy",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "to reduce farmers’ dependence on monsoon for irrigation",
+      "B": "to reduce farmers’ dependence on moneylenders for credit",
+      "C": "promotion of floriculture in India",
+      "D": "to remove farmers’ dependence on diesel and kerosene and to link pump sets to solar energy",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "119": {
+    "number": 119,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following commercial banks of India comes in top 100 global banks?\n(A) ICICI Bank\n(B) SBI\n(C) HDFC Bank\n(D) Kotak Mahindra Bank\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) ICICI Bank",
+      "(b) SBI",
+      "(c) HDFC Bank",
+      "(d) Kotak Mahindra Bank",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "ICICI Bank",
+      "B": "SBI",
+      "C": "HDFC Bank",
+      "D": "Kotak Mahindra Bank",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "120": {
+    "number": 120,
+    "qtype": "MCQ_single",
+    "stem": "The Government of India announced a new scheme 'NIRVIK' in the Budget for 2020-21. Which of the following sectors of economy will take the benefit from this scheme?\n(A) Agriculture sector\n(B) Industrial sector\n(C) Health sector\n(D) Export sector\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Agriculture sector",
+      "(b) Industrial sector",
+      "(c) Health sector",
+      "(d) Export sector",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Agriculture sector",
+      "B": "Industrial sector",
+      "C": "Health sector",
+      "D": "Export sector",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "121": {
+    "number": 121,
+    "qtype": "MCQ_single",
+    "stem": "Bihar Government has introduced the Comprehensive Financial Management System (CFMS) on 1st April, 2019. This system\n(A) will make all financial activities in the State online and paperless\n(B) will solve the problem of NPA of banks\n(C) will ensure effective implementation of State projects\n(D) will manage State Government finances including local bodies\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) will make all financial activities in the State online and paperless",
+      "(b) will solve the problem of NPA of banks",
+      "(c) will ensure effective implementation of State projects",
+      "(d) will manage State Government finances including local bodies",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "will make all financial activities in the State online and paperless",
+      "B": "will solve the problem of NPA of banks",
+      "C": "will ensure effective implementation of State projects",
+      "D": "will manage State Government finances including local bodies",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "122": {
+    "number": 122,
+    "qtype": "MCQ_single",
+    "stem": "The Government of India conferred the Krishi Karman Award to Bihar State on 2nd January, 2020. This award was given for\n(A) production and productivity of maize and wheat\n(B) food grain production\n(C) production of rice\n(D) production of oilseeds\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) production and productivity of maize and wheat",
+      "(b) food grain production",
+      "(c) production of rice",
+      "(d) production of oilseeds",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "production and productivity of maize and wheat",
+      "B": "food grain production",
+      "C": "production of rice",
+      "D": "production of oilseeds",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "123": {
+    "number": 123,
+    "qtype": "MCQ_single",
+    "stem": "Bihar Government launched a new scheme 'Satat Jivikoparjan Yojana' in August 2018. The objective of this scheme is\n(A) to provide unemployment allowance to youth\n(B) to provide employment in rural areas through local bodies\n(C) to provide sustainable income generating assets to extremely poor households\n(D) to provide free training for skill upgradation of youth\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) to provide unemployment allowance to youth",
+      "(b) to provide employment in rural areas through local bodies",
+      "(c) to provide sustainable income generating assets to extremely poor households",
+      "(d) to provide free training for skill upgradation of youth",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "to provide unemployment allowance to youth",
+      "B": "to provide employment in rural areas through local bodies",
+      "C": "to provide sustainable income generating assets to extremely poor households",
+      "D": "to provide free training for skill upgradation of youth",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "124": {
+    "number": 124,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following is not included in Seven Resolves (Saat Nishchay) of Bihar Government?\n(A) Women employment\n(B) Clean drinking water\n(C) Supply of electricity to all households\n(D) Child welfare\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Women employment",
+      "(b) Clean drinking water",
+      "(c) Supply of electricity to all households",
+      "(d) Child welfare",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Women employment",
+      "B": "Clean drinking water",
+      "C": "Supply of electricity to all households",
+      "D": "Child welfare",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "125": {
+    "number": 125,
+    "qtype": "MCQ_single",
+    "stem": "The per capita Net State Domestic Product at constant prices for Bihar is less than the country. In the year 2018-19, it was\n(A) 75 percent of the national average\n(B) 60 percent of the national average\n(C) 50 percent of the national average\n(D) 33 percent of the national average\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 75 percent of the national average",
+      "(b) 60 percent of the national average",
+      "(c) 50 percent of the national average",
+      "(d) 33 percent of the national average",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "75 percent of the national average",
+      "B": "60 percent of the national average",
+      "C": "50 percent of the national average",
+      "D": "33 percent of the national average",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "126": {
+    "number": 126,
+    "qtype": "MCQ_single",
+    "stem": "In which of the following colleges, Gandhiji had studied?\n(A) Samaldas College, Bhavnagar\n(B) Dharmendrasinhji College, Rajkot\n(C) Gujarat College, Ahmedabad\n(D) Bahauddin College, Junagadh\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Samaldas College, Bhavnagar",
+      "(b) Dharmendrasinhji College, Rajkot",
+      "(c) Gujarat College, Ahmedabad",
+      "(d) Bahauddin College, Junagadh",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Samaldas College, Bhavnagar",
+      "B": "Dharmendrasinhji College, Rajkot",
+      "C": "Gujarat College, Ahmedabad",
+      "D": "Bahauddin College, Junagadh",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "127": {
+    "number": 127,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following persons had participated actively in the Revolt of 1857?\n(A) Nana Saheb (Kanpur)\n(B) Begum Hazrat Mahal (Lucknow)\n(C) Maulavi Ahmadullah (Faizabad)\n(D) Begum Zeenat Mahal (Delhi)\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Nana Saheb (Kanpur)",
+      "(b) Begum Hazrat Mahal (Lucknow)",
+      "(c) Maulavi Ahmadullah (Faizabad)",
+      "(d) Begum Zeenat Mahal (Delhi)",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Nana Saheb (Kanpur)",
+      "B": "Begum Hazrat Mahal (Lucknow)",
+      "C": "Maulavi Ahmadullah (Faizabad)",
+      "D": "Begum Zeenat Mahal (Delhi)",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "128": {
+    "number": 128,
+    "qtype": "MCQ_single",
+    "stem": "About which Act, Jawaharlal Nehru had said, \"We were provided with a car with all brakes and no engine\"?\n(A) Act of 1858\n(B) Act of 1909\n(C) Act of 1919\n(D) Act of 1935\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Act of 1858",
+      "(b) Act of 1909",
+      "(c) Act of 1919",
+      "(d) Act of 1935",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Act of 1858",
+      "B": "Act of 1909",
+      "C": "Act of 1919",
+      "D": "Act of 1935",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "129": {
+    "number": 129,
+    "qtype": "MCQ_single",
+    "stem": "For how many days did Dandi March last?\n(A) 10 days\n(B) 20 days\n(C) 24 days\n(D) 30 days\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 10 days",
+      "(b) 20 days",
+      "(c) 24 days",
+      "(d) 30 days",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "10 days",
+      "B": "20 days",
+      "C": "24 days",
+      "D": "30 days",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "130": {
+    "number": 130,
+    "qtype": "MCQ_single",
+    "stem": "Who is the author of the popular song, Sarfaroshi Ki Tamanna Ab Hamare Dil Mein Hai?\n(A) Surya Sen\n(B) Chandra Shekhar Azad\n(C) Sardar Bhagat Singh\n(D) Ram Prasad Bismil\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Surya Sen",
+      "(b) Chandra Shekhar Azad",
+      "(c) Sardar Bhagat Singh",
+      "(d) Ram Prasad Bismil",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Surya Sen",
+      "B": "Chandra Shekhar Azad",
+      "C": "Sardar Bhagat Singh",
+      "D": "Ram Prasad Bismil",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "131": {
+    "number": 131,
+    "qtype": "MCQ_single",
+    "stem": "Which movement was started as a reaction to the Partition of Bengal?\n(A) Non-Cooperation Movement\n(B) Civil Disobedience Movement\n(C) Swadeshi Movement\n(D) Purna Swaraj Movement\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Non-Cooperation Movement",
+      "(b) Civil Disobedience Movement",
+      "(c) Swadeshi Movement",
+      "(d) Purna Swaraj Movement",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Non-Cooperation Movement",
+      "B": "Civil Disobedience Movement",
+      "C": "Swadeshi Movement",
+      "D": "Purna Swaraj Movement",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "132": {
+    "number": 132,
+    "qtype": "MCQ_single",
+    "stem": "Who among the following advocates had appeared for the INA trials at Delhi in 1945–46?\n(A) Dr. Rajendra Prasad\n(B) Bhulabhai Desai\n(C) K. M. Munshi\n(D) Sardar Patel\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Dr. Rajendra Prasad",
+      "(b) Bhulabhai Desai",
+      "(c) K. M. Munshi",
+      "(d) Sardar Patel",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Dr. Rajendra Prasad",
+      "B": "Bhulabhai Desai",
+      "C": "K. M. Munshi",
+      "D": "Sardar Patel",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "133": {
+    "number": 133,
+    "qtype": "MCQ_single",
+    "stem": "Where did Madam Cama unfurl India's tricolour flag of freedom?\n(A) Paris\n(B) London\n(C) Stuttgart\n(D) Geneva\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Paris",
+      "(b) London",
+      "(c) Stuttgart",
+      "(d) Geneva",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Paris",
+      "B": "London",
+      "C": "Stuttgart",
+      "D": "Geneva",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "134": {
+    "number": 134,
+    "qtype": "MCQ_single",
+    "stem": "Which of the following pairs is correct?\n(A) Vinoba Bhave—Second Individual Satyagrahi\n(B) C. R. Das—Deshbandhu\n(C) William Wedderburn—Congress President in 1907\n(D) Shyamji Krishna Varma—Founder of India House in Paris\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Vinoba Bhave—Second Individual Satyagrahi",
+      "(b) C. R. Das—Deshbandhu",
+      "(c) William Wedderburn—Congress President in 1907",
+      "(d) Shyamji Krishna Varma—Founder of India House in Paris",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Vinoba Bhave—Second Individual Satyagrahi",
+      "B": "C. R. Das—Deshbandhu",
+      "C": "William Wedderburn—Congress President in 1907",
+      "D": "Shyamji Krishna Varma—Founder of India House in Paris",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "135": {
+    "number": 135,
+    "qtype": "MCQ_single",
+    "stem": "Which day was declared as ‘Purna Swaraj Day’ by the Indian National Congress?\n(A) 26-01-1930\n(B) 15-08-1947\n(C) 30-01-1948\n(D) 31-12-1950\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 26-01-1930",
+      "(b) 15-08-1947",
+      "(c) 30-01-1948",
+      "(d) 31-12-1950",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "26-01-1930",
+      "B": "15-08-1947",
+      "C": "30-01-1948",
+      "D": "31-12-1950",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "136": {
+    "number": 136,
+    "qtype": "MCQ_single",
+    "stem": "When was Bihar established?\n(A) 1911\n(B) 1912\n(C) 1913\n(D) 1914\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 1911",
+      "(b) 1912",
+      "(c) 1913",
+      "(d) 1914",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "1911",
+      "B": "1912",
+      "C": "1913",
+      "D": "1914",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "137": {
+    "number": 137,
+    "qtype": "MCQ_single",
+    "stem": "In Tinkathia System in Bihar, how much land was to be reserved for indigo cultivation?\n(A) 01/10\n(B) 01/03\n(C) 03/20\n(D) 03/25\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 01/10",
+      "(b) 01/03",
+      "(c) 03/20",
+      "(d) 03/25",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "01/10",
+      "B": "01/03",
+      "C": "03/20",
+      "D": "03/25",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "138": {
+    "number": 138,
+    "qtype": "MCQ_single",
+    "stem": "Who was the first Chief Minister of Bihar?\n(A) Shri Krishna Singh\n(B) Satya Pal Malik\n(C) Nitish Kumar\n(D) Rabri Devi\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Shri Krishna Singh",
+      "(b) Satya Pal Malik",
+      "(c) Nitish Kumar",
+      "(d) Rabri Devi",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Shri Krishna Singh",
+      "B": "Satya Pal Malik",
+      "C": "Nitish Kumar",
+      "D": "Rabri Devi",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "139": {
+    "number": 139,
+    "qtype": "MCQ_single",
+    "stem": "Where was the first Congress Session in Bihar held?\n(A) Patna\n(B) Gaya\n(C) Muzaffarpur\n(D) Darbhanga\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Patna",
+      "(b) Gaya",
+      "(c) Muzaffarpur",
+      "(d) Darbhanga",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Patna",
+      "B": "Gaya",
+      "C": "Muzaffarpur",
+      "D": "Darbhanga",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "140": {
+    "number": 140,
+    "qtype": "MCQ_single",
+    "stem": "Which title was given to Jayaprakash Narayan?\n(A) Praja Hitechhu\n(B) Lok Nayak\n(C) Lokmanya\n(D) Rashtra Nayak\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) Praja Hitechhu",
+      "(b) Lok Nayak",
+      "(c) Lokmanya",
+      "(d) Rashtra Nayak",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "Praja Hitechhu",
+      "B": "Lok Nayak",
+      "C": "Lokmanya",
+      "D": "Rashtra Nayak",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "141": {
+    "number": 141,
+    "qtype": "MCQ_single",
+    "stem": "The missing number in the sequence\n4, 18, 48, 100, ?, 294, 448\nis\n(A) 94\n(B) 164\n(C) 180\n(D) 192\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 94",
+      "(b) 164",
+      "(c) 180",
+      "(d) 192",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "94",
+      "B": "164",
+      "C": "180",
+      "D": "192",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "142": {
+    "number": 142,
+    "qtype": "MCQ_single",
+    "stem": "If \\(^{2n}C_{3}:^{n}C_{2}=44:3\\), then the value of \\(n\\) is\n(A) 1\n(B) 6\n(C) 11\n(D) 4\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 1",
+      "(b) 6",
+      "(c) 11",
+      "(d) 4",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "1",
+      "B": "6",
+      "C": "11",
+      "D": "4",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "143": {
+    "number": 143,
+    "qtype": "MCQ_single",
+    "stem": "If the average of \\(m\\) numbers is \\(n^2\\) and that of \\(n\\) numbers is \\(m^2\\), then the average of \\(m+n\\) numbers is\n(A) \\(\\frac{n}{m}\\)\n(B) \\(\\frac{m}{n}\\)\n(C) \\(mn\\)\n(D) \\(m-n\\)\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) \\(\\frac{n}{m}\\)",
+      "(b) \\(\\frac{m}{n}\\)",
+      "(c) \\(mn\\)",
+      "(d) \\(m-n\\)",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "\\(\\frac{n}{m}\\)",
+      "B": "\\(\\frac{m}{n}\\)",
+      "C": "\\(mn\\)",
+      "D": "\\(m-n\\)",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "144": {
+    "number": 144,
+    "qtype": "MCQ_single",
+    "stem": "In a group of athletic teams in a school, 21 are in the basketball team, 26 in the hockey team and 29 in the football team. If 14 play hockey and basketball, 12 play football and basketball, 15 play hockey and football, 8 play all the three games, then how many play football only?\n(A) 10\n(B) 29\n(C) 21\n(D) 18\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 10",
+      "(b) 29",
+      "(c) 21",
+      "(d) 18",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "10",
+      "B": "29",
+      "C": "21",
+      "D": "18",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "145": {
+    "number": 145,
+    "qtype": "MCQ_single",
+    "stem": "Mohan can do a bit of work in 25 days which can be completed by Sohan in 20 days. Both together labour for 5 days and afterward Mohan leaves off. How long will Sohan take to complete the remaining work?\n(A) 20 days\n(B) 11 days\n(C) 14 days\n(D) 21 days\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 20 days",
+      "(b) 11 days",
+      "(c) 14 days",
+      "(d) 21 days",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "20 days",
+      "B": "11 days",
+      "C": "14 days",
+      "D": "21 days",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "146": {
+    "number": 146,
+    "qtype": "MCQ_single",
+    "stem": "A clock is started at 12:00 noon. By 10 minutes past 5:00, the hour hand has turned through\n(A) 135°\n(B) 145°\n(C) 155°\n(D) 165°\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 135°",
+      "(b) 145°",
+      "(c) 155°",
+      "(d) 165°",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "135°",
+      "B": "145°",
+      "C": "155°",
+      "D": "165°",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "147": {
+    "number": 147,
+    "qtype": "MCQ_single",
+    "stem": "Which one of the following cannot be the square of a natural number?\n\n(A) 26569\n(B) 143642\n(C) 30976\n(D) 28561\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 26569",
+      "(b) 143642",
+      "(c) 30976",
+      "(d) 28561",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "26569",
+      "B": "143642",
+      "C": "30976",
+      "D": "28561",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "148": {
+    "number": 148,
+    "qtype": "MCQ_single",
+    "stem": "Given that\n\n217x + 131y = 913\n131x + 217y = 827\nthen x and y are respectively\n\n(A) 5 and 7\n(B) 3 and 2\n(C) -5 and -7\n(D) 2 and 5\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 5 and 7",
+      "(b) 3 and 2",
+      "(c) -5 and -7",
+      "(d) 2 and 5",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "5 and 7",
+      "B": "3 and 2",
+      "C": "-5 and -7",
+      "D": "2 and 5",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "149": {
+    "number": 149,
+    "qtype": "MCQ_single",
+    "stem": "\\(\\frac{(598+479)^{2}-(598-479)^{2}}{598 \times 479}=\\)?\n\n(A) 4\n(B) 10\n(C) 132\n(D) 8\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 4",
+      "(b) 10",
+      "(c) 132",
+      "(d) 8",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "4",
+      "B": "10",
+      "C": "132",
+      "D": "8",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  },
+  "150": {
+    "number": 150,
+    "qtype": "MCQ_single",
+    "stem": "The population of a town is 176400. If it increases annually at the rate of 5%, then what will be its population after two years?\n\n(A) 194481\n(B) 296841\n(C) 394481\n(D) 396841\n(E) None of the above/More than one of the above",
+    "raw_options": [
+      "(a) 194481",
+      "(b) 296841",
+      "(c) 394481",
+      "(d) 396841",
+      "(e) None of the above/More than one of the above"
+    ],
+    "options": {
+      "A": "194481",
+      "B": "296841",
+      "C": "394481",
+      "D": "396841",
+      "E": "None of the above/More than one of the above"
+    },
+    "marks": 0,
+    "needs_figure": false
+  }
+}

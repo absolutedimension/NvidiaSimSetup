@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acharya University — teach yourself anything</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/static/brand/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --gold:#C2591F; --gold2:#A8481A; --ink:#2A2018; --muted:#7A6A57;
+         --line:#EFE0CE; --cream:#FAF5EC; --card:#fff; --green:#2FA968; }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:Figtree,system-ui,sans-serif;background:
+    radial-gradient(1200px 600px at 80% -10%, #FBEFE0, transparent), var(--cream);color:var(--ink);min-height:100vh}
+  a{color:inherit;text-decoration:none}
+  .top{display:flex;align-items:center;gap:12px;padding:16px 26px;border-bottom:1px solid var(--line)}
+  .top .logo{font-family:Bricolage Grotesque,serif;font-weight:800;font-size:19px;color:var(--gold2)}
+  .top .sp{flex:1}
+  .top a.mini{color:var(--muted);font-size:14px}
+  .wrap{max-width:960px;margin:0 auto;padding:26px 20px 60px}
+  h1{font-family:Bricolage Grotesque,serif;font-weight:800;font-size:34px;line-height:1.12;margin:0 0 10px}
+  h2{font-family:Bricolage Grotesque,serif;font-weight:700;font-size:20px;margin:26px 0 12px}
+  p.lead{font-size:17px;color:var(--muted);line-height:1.55;max-width:620px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;
+    box-shadow:0 8px 26px rgba(120,70,20,.06)}
+  input{width:100%;background:#fff;border:1px solid var(--line);border-radius:12px;color:var(--ink);
+    padding:14px 16px;font-size:16px;font-family:inherit}
+  .btn{display:inline-block;background:linear-gradient(180deg,#D9682B,var(--gold));color:#fff;border:0;
+    border-radius:12px;padding:13px 22px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit}
+  .btn.big{width:100%;padding:15px;font-size:16px;margin-top:12px}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+  .course{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;cursor:pointer;
+    transition:border-color .15s,transform .1s}
+  .course:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .course .ttl{font-weight:700;font-size:16px;margin-bottom:4px}
+  .course .goal{color:var(--muted);font-size:13px}
+  .bar{height:7px;background:#F1E6D8;border-radius:5px;overflow:hidden;margin-top:12px}
+  .bar>i{display:block;height:100%;background:var(--gold)}
+  .tag{display:inline-block;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;margin-top:10px}
+  .tag.build{background:#FBEEDD;color:var(--gold2)} .tag.ready{background:#E6F6EE;color:var(--green)}
+  .dim{color:var(--muted);font-size:14px} .muted{color:var(--muted)}
+  .feat{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);
+    border-radius:12px;padding:12px 14px;font-size:14px}
+  .newbtn{background:#fff;border:1.5px dashed var(--gold);color:var(--gold2);border-radius:16px;padding:18px;
+    cursor:pointer;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;min-height:120px}
+  .pill{display:inline-block;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:20px;
+    padding:4px 11px;margin:4px 6px 0 0;cursor:pointer;background:#fff}
+</style>
+</head>
+<body>
+<div class="top">
+  <span class="logo">आ Acharya University</span><span class="sp"></span>
+  {% if student %}<a class="mini" href="/logout">Log out</a>{% else %}<a class="mini" href="/login/classic">Course sign-in</a>{% endif %}
+</div>
+<div class="wrap">
+{% if not student %}
+  <h1>Teach yourself <span style="color:var(--gold2)">anything.</span></h1>
+  <p class="lead">Name what you want to master. Acharya's Advisor designs your own personal course —
+     your degree in it — and then teaches you, one milestone at a time. No fixed syllabus, no classroom.</p>
+  <div class="card" style="margin-top:22px;max-width:520px">
+    <form method="post" action="/university/start">
+      <label class="dim" style="font-weight:600">Start free — enter your email</label>
+      <div style="height:8px"></div>
+      <input type="email" name="email" placeholder="you@email.com" required>
+      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+      <button class="btn big" type="submit">Enter the university →</button>
+    </form>
+    <p class="dim" style="margin:12px 0 0">Web-based · learn at your pace · your course is built for you.</p>
+  </div>
+  <h2>How it works</h2>
+  <div class="grid">
+    <div class="feat">🎯 <span><b>Advisor</b> interviews you, then generates your curriculum.</span></div>
+    <div class="feat">🏗️ <span>Your course is <b>built step by step</b> — start Unit 1 while later units are still being written.</span></div>
+    <div class="feat">🧑‍🏫 <span><b>Tutor</b> teaches each milestone 1-on-1 and checks you really got it.</span></div>
+  </div>
+{% else %}
+  <div class="row" style="justify-content:space-between">
+    <h1 style="margin:0">My University</h1>
+    <a class="btn" href="/university/new">＋ New course</a>
+  </div>
+  {% if not llm_ok %}<p class="dim" style="color:#C23B22">⚠ Course generation is offline (AOAI keys not set on this server).</p>{% endif %}
+  <div style="height:18px"></div>
+  {% if courses %}
+  <div class="grid">
+    {% for c in courses %}
+    <div class="course" onclick="location.href='/university/course/{{ c.course_id }}'">
+      <div class="ttl">{{ c.title }}</div>
+      <div class="goal">{{ c.goal }}</div>
+      {% if c.status == 'ready' %}
+        <div class="bar"><i style="width:{{ ((c.units|selectattr('status','equalto','done')|list|length) / (c.units_total or 1) * 100)|round }}%"></i></div>
+        <span class="tag ready">✓ Ready · {{ c.units_total }} units</span>
+      {% elif c.status == 'building_units' %}
+        <div class="bar"><i style="width:{{ (c.units_ready / (c.units_total or 1) * 100)|round }}%"></i></div>
+        <span class="tag build">🏗️ Building units · {{ c.units_ready }}/{{ c.units_total }} ready</span>
+      {% elif c.status == 'error' %}
+        <span class="tag build" style="background:#FBE4E0;color:#C23B22">⚠ Build failed — open to retry</span>
+      {% else %}
+        <span class="tag build">🧠 Designing your outline…</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+    <div class="newbtn" onclick="location.href='/university/new'">＋ Start a new course</div>
+  </div>
+  {% else %}
+  <div class="card">
+    <b>Nothing here yet.</b>
+    <p class="dim" style="margin:8px 0 14px">Name anything you want to learn — the Advisor will build you a course.</p>
+    <div>{% for g in ['Business finance','Design theory','How LLMs work','Negotiation','Personal finance'] %}<span class="pill" onclick="location.href='/university/new?goal={{ g|urlencode }}'">{{ g }}</span>{% endfor %}</div>
+    <a class="btn" style="margin-top:16px" href="/university/new">Start your first course →</a>
+  </div>
+  {% endif %}
+
+  {% if featured %}
+  <h2>Featured ready-made tracks</h2>
+  <div class="grid">
+    {% for f in featured %}
+    <div class="course" onclick="location.href='/login/classic?course={{ f.id }}'">
+      <div class="ttl">{{ f.title }}</div>
+      <span class="tag ready">✓ Ready-made</span>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endif %}
+</div>
+</body>
+</html>

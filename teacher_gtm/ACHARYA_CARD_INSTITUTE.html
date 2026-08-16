@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acharya — Custom Institute card</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{--cream:#FBF4E9;--card:#FFFFFF;--ink:#2B2113;--muted:#8a7d63;--line:rgba(120,90,40,.15);
+        --orange:#C2591F;--orange-d:#A8481A;--green:#3f8a5c;--gold:#B98B34;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  .card{width:1080px;min-height:1500px;background:
+        radial-gradient(900px 520px at 50% -140px,rgba(185,139,52,.14),transparent 70%),
+        linear-gradient(180deg,#FDF8F0,#F6EAD6);
+        color:var(--ink);font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+        padding:56px 58px 50px;position:relative;}
+  .brand{display:flex;align-items:center;gap:16px;}
+  .brand img{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 3px 6px rgba(60,40,10,.25));}
+  .brand b{font-family:'Bricolage Grotesque';font-weight:700;font-size:32px;letter-spacing:-.01em;color:var(--ink);}
+  .brand .by{font-size:15px;color:var(--muted);margin-top:3px;}
+  .kicker{margin-top:34px;display:inline-block;font-size:15px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+        color:#9a6f16;background:rgba(185,139,52,.12);border:1px solid rgba(185,139,52,.34);border-radius:999px;padding:9px 18px;}
+  h1{font-family:'Bricolage Grotesque',Georgia,serif;font-weight:800;font-size:60px;line-height:1.06;letter-spacing:-.02em;margin:22px 0 14px;}
+  h1 span{color:var(--orange);}
+  .lead{font-size:23px;line-height:1.44;color:var(--muted);max-width:920px;}
+  .lead b{color:var(--ink);}
+  /* hero price row: setup + per student */
+  .prow{display:flex;gap:18px;margin:32px 0 0;align-items:stretch;}
+  .setup{flex:1.15;background:linear-gradient(150deg,#2a1c0c,#43290f);border-radius:22px;padding:26px 28px;color:#F3E8D2;
+        box-shadow:0 16px 40px rgba(50,30,8,.22);}
+  .setup .k{font-size:15px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#d8bd85;}
+  .setup .amt{font-family:'Bricolage Grotesque';font-weight:800;font-size:60px;color:#fff;line-height:1.02;margin-top:6px;}
+  .setup .amt small{font-family:'Figtree';font-size:18px;font-weight:500;color:#c9b48c;}
+  .setup .d{font-size:16px;color:#c9b48c;margin-top:8px;line-height:1.4;}
+  .perst{flex:1;display:flex;flex-direction:column;gap:12px;}
+  .pbox{background:var(--card);border:1.5px solid rgba(194,89,31,.24);border-radius:18px;padding:16px 20px;box-shadow:0 12px 28px rgba(90,60,20,.07);}
+  .pbox .lvl{font-size:15px;font-weight:700;color:var(--gold);}
+  .pbox .amt{font-family:'Bricolage Grotesque';font-weight:800;font-size:36px;color:var(--orange);line-height:1;margin-top:2px;}
+  .pbox .amt small{font-family:'Figtree';font-size:14px;font-weight:500;color:var(--muted);}
+  .flab{margin:34px 0 14px;font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);}
+  .flab:before{content:"✓ ";}
+  .feats{list-style:none;display:grid;grid-template-columns:1fr;gap:13px;}
+  .feats li{position:relative;padding-left:38px;font-size:21.5px;line-height:1.34;color:#3d2f1a;}
+  .feats li:before{content:"";position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:rgba(63,138,92,.16);}
+  .feats li:after{content:"✓";position:absolute;left:5px;top:5px;color:var(--green);font-weight:800;font-size:15px;}
+  .feats li b{font-weight:700;color:var(--ink);}
+  .cta{margin-top:34px;background:linear-gradient(135deg,rgba(185,139,52,.12),rgba(185,139,52,.04));
+        border:1.5px solid rgba(185,139,52,.3);border-radius:22px;padding:26px 30px;}
+  .cta .free{font-size:23px;font-weight:800;color:var(--green);}
+  .cta .free small{color:var(--muted);font-weight:500;font-size:18px;}
+  .cta .wa{display:flex;align-items:center;gap:16px;margin-top:16px;}
+  .cta .wbtn{background:#25D366;color:#0b3d1f;font-weight:800;font-size:24px;border-radius:14px;padding:15px 26px;display:inline-flex;gap:11px;}
+  .cta .site{font-size:19px;color:var(--muted);}
+  .foot{margin-top:32px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:16px;}
+  .foot b{color:var(--orange);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="brand">
+    <img src="file:///Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/brand_logo/pack/trigunai_mark_chrome.png" alt="TrigunAI" />
+    <div><b>Acharya</b><div class="by">by TrigunAI · exam-authentic test papers</div></div>
+  </div>
+
+  <span class="kicker">For institutes — your own branded app</span>
+  <h1>Your institute's <span>own AI exam app.</span></h1>
+  <p class="lead">The full Acharya engine, <b>white-labelled under your brand</b> — your logo, your name, your app.
+     Live in 2 working days, after a pilot on your own students.</p>
+
+  <div class="prow">
+    <div class="setup">
+      <div class="k">Custom white-label app</div>
+      <div class="amt">₹55,000<small> one-time</small></div>
+      <div class="d">Your own branded mobile + web app · logo, colours &amp; identity. Institutes only.</div>
+    </div>
+    <div class="perst">
+      <div class="pbox"><div class="lvl">Foundation / Board</div><div class="amt">₹120<small> /student/mo</small></div></div>
+      <div class="pbox"><div class="lvl">JEE / NEET / Senior</div><div class="amt">₹250<small> /student/mo</small></div></div>
+    </div>
+  </div>
+
+  <div class="flab">Everything a teacher gets — plus</div>
+  <ul class="feats">
+    <li><b>Your own branded mobile + web app</b> — logo, colours &amp; identity throughout</li>
+    <li><b>Dedicated instance</b> — up to 2,000 students, multi-teacher / multi-branch</li>
+    <li><b>Pilot on your own live test before you pay</b> — see it work first</li>
+    <li><b>You own your data</b> — never shared, never resold, exportable</li>
+    <li><b>Live in 2 working days</b> · priority support</li>
+    <li>Unlimited real-pattern papers · live weak-topic dashboard · every student their own practice</li>
+    <li>Create real JEE / NEET / CBSE / UPSC / Banking tests · English or हिंदी</li>
+  </ul>
+
+  <div class="cta">
+    <div class="free">✓ Pilot before you pay <small>— run one live test on your own batch first, no payment today.</small></div>
+    <div class="wa"><span class="wbtn">💬 WhatsApp 91352 55107</span><span class="site">acharya.trigunai.com</span></div>
+  </div>
+
+  <div class="foot">
+    <span>Powered by <b>Acharya</b> · TRIGUNAI INNOVATIONS PVT LTD</span>
+    <span>JEE · NEET · CBSE · UPSC · Banking</span>
+  </div>
+</div>
+</body>
+</html>

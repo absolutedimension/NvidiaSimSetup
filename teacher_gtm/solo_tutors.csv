@@ -1,0 +1,11 @@
+name,area,subject,source,phone,batch_size_est,priority,maya_precall,optin_status,pay_status,notes
+# --- SOLO / HOME TUTORS + owner-run micro-tuitions (owner = teacher = decision maker). ---
+# --- RULE: phone comes ONLY from a genuinely PUBLIC self-published listing. Maya CALLS first; ---
+# ---       get the WhatsApp opt-in on the call. NEVER bulk-WhatsApp a raw scraped number. ---
+# --- Fill rows from the live queries in SOLO_TUTOR_SOURCING.md. Do NOT invent numbers. ---
+# columns: source = where you found it (gmaps/justdial/youtube/fb-group/telegram/referral)
+#          optin_status = none | asked | opted-in   ·  pay_status = "" | free-active | paid
+#          priority = 1-warm (referral/replied) | 2 (owner-run, good fit) | 3 (cold public listing)
+#
+# example (DELETE when you add a real one, keep the shape):
+# Sharma Home Tuition,Kankarbagh,Class 10-12 Science,gmaps,9199XXXXXXX,40,2,none,none,,"Owner teaches. 12 Maps reviews = small. Maya call first."

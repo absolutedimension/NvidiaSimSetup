@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "JEE Main · Chemistry",
+ "subject": "Chemistry",
+ "chapter": "Structure Of Atom",
+ "topic_line": "Real JEE Main questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Chemistry. Structure Of Atom. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Structure Of Atom? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "Hydrogen has three isotopes (A), (B) and (C).\nIf the number of neutron(s) in (A), (B) and (C)\nrespectively, are (x), (y) and (z), the sum of (x),\n(y) an (z) is :",
+   "options": [
+    "3",
+    "1",
+    "4",
+    "2"
+   ],
+   "answer": 0,
+   "explain": "Hydrogen has three isotopes\n (A) Protium ($${}_1^1H$$) has 0 neutron.",
+   "voice_q": "Hydrogen has three isotopes (A), (B) and (C).\nIf the number of neutron(s) in (A), (B) and (C)\nrespectively, are (x), (y) and (z), the sum of (x),\n(y) an (z) is : Five seconds... think!",
+   "voice_a": "The answer is A — 3. Hydrogen has three isotopes\n (A) Protium ($${}_1^1H$$) has 0 neutron."
+  },
+  {
+   "type": "mcq",
+   "q": "The ratio of the shortest wavelength of two spectral series of hydrogen spectrum is found to be about 9. The\nspectral series are :",
+   "options": [
+    "Paschen and Pfund",
+    "Balmer and Brackett",
+    "Lyman and Paschen",
+    "Brackett and Pfund"
+   ],
+   "answer": 2,
+   "explain": "Shortest wavelength can found when n_{2} = $$\\infty $$\n $${\\lambda _{shortest}} = R{Z^2}\\left\\{ {{1 \\over {n_1^2}} - {1 ",
+   "voice_q": "The ratio of the shortest wavelength of two spectral series of hydrogen spectrum is found to be about 9. The\nspectral series are : Five seconds... think!",
+   "voice_a": "The answer is C — Lyman and Paschen. Shortest wavelength can found when n_{2} = $$\\infty $$\n $${\\lambda _{shortest}} = R{Z^2}\\left\\{ {{1 \\over {n_1^2}} - {1 "
+  },
+  {
+   "type": "mcq",
+   "q": "Which of the following is the energy of a possible excited state of hydrogen?",
+   "options": [
+    "–6.8 eV",
+    "–3.4 eV",
+    "+6.8 eV",
+    "+13.6 eV"
+   ],
+   "answer": 1,
+   "explain": "Energy(E_{n}) = $$ - {{13.6{Z^2}} \\over {{n^2}}}eV$$\n where n = 1, 2, 3, 4, ......",
+   "voice_q": "Which of the following is the energy of a possible excited state of hydrogen? Five seconds... think!",
+   "voice_a": "The answer is B — –3.4 eV. Energy(E_{n}) = $$ - {{13.6{Z^2}} \\over {{n^2}}}eV$$\n where n = 1, 2, 3, 4, ......"
+  }
+ ]
+}

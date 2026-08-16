@@ -1,0 +1,27 @@
+{
+  "_comment": "TrigunAI company calendar. Saathi's crons read this: on weekly_off day-of-week OR any date listed here, send the holiday greeting instead of the work-planning message. FESTIVAL DATES ARE BEST-EFFORT — set confirm:false only after verifying against the official 2026 calendar.",
+  "org": "TrigunAI Innovations Pvt Ltd",
+  "year": 2026,
+  "weekly_off": ["Sunday"],
+  "saturday_working": true,
+  "holidays": [
+    { "date": "2026-01-26", "name": "Republic Day", "confirm": false },
+    { "date": "2026-03-03", "name": "Holi", "confirm": true },
+    { "date": "2026-03-21", "name": "Eid-ul-Fitr", "confirm": true },
+    { "date": "2026-03-26", "name": "Ram Navami", "confirm": true },
+    { "date": "2026-04-03", "name": "Good Friday", "confirm": true },
+    { "date": "2026-04-14", "name": "Ambedkar Jayanti", "confirm": true },
+    { "date": "2026-05-27", "name": "Eid-ul-Adha (Bakrid)", "confirm": true },
+    { "date": "2026-06-26", "name": "Muharram", "confirm": true },
+    { "date": "2026-08-15", "name": "Independence Day", "confirm": false },
+    { "date": "2026-08-28", "name": "Raksha Bandhan", "confirm": true },
+    { "date": "2026-09-04", "name": "Janmashtami", "confirm": true },
+    { "date": "2026-10-02", "name": "Gandhi Jayanti", "confirm": false },
+    { "date": "2026-10-20", "name": "Dussehra (Vijayadashami)", "confirm": true },
+    { "date": "2026-11-08", "name": "Diwali", "confirm": true },
+    { "date": "2026-11-15", "name": "Chhath Puja (day 1)", "confirm": true },
+    { "date": "2026-11-16", "name": "Chhath Puja (day 2)", "confirm": true },
+    { "date": "2026-11-24", "name": "Guru Nanak Jayanti", "confirm": true },
+    { "date": "2026-12-25", "name": "Christmas", "confirm": false }
+  ]
+}

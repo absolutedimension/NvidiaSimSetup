@@ -1,0 +1,49 @@
+{
+ "title": "Tertiary Carbons",
+ "q_prose": "A compound with molecular formula C6H14 has two tertiary carbons. Find its IUPAC name.",
+ "given_eq": "$\\mathrm{C_6H_14}$",
+ "q_reminder": "Find the isomer having exactly two tertiary carbons.",
+ "q_narration": "A compound with formula C six H fourteen has two tertiary carbons. We need to identify its correct IUPAC name. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Meaning",
+   "eqs": [
+    "$\\mathrm{tertiary\\ carbon}=\\mathrm{C\\ bonded\\ to\\ 3\\ carbons}$"
+   ],
+   "narration": "A tertiary carbon is a carbon atom attached directly to three other carbon atoms. So we must count such carbons in each possible structure."
+  },
+  {
+   "label": "Step 2 — Check option A",
+   "eqs": [
+    "$\\mathrm{CH_3-CH(CH_3)-CH(CH_3)-CH_3}$"
+   ],
+   "narration": "For two comma three dimethylbutane, the second carbon and the third carbon are each attached to three other carbons. So this structure has exactly two tertiary carbons."
+  },
+  {
+   "label": "Step 3 — Check other options",
+   "eqs": [
+    "$\\mathrm{CH_3-C(CH_3)_2-CH_2-CH_3}$",
+    "$\\mathrm{CH_3-CH(CH_3)-CH_2-CH_2-CH_3}$"
+   ],
+   "narration": "In two comma two dimethylbutane, the highly substituted carbon is quaternary, not tertiary. In two methylpentane, only one carbon is tertiary. Normal hexane is straight chain and has no tertiary carbon."
+  },
+  {
+   "label": "Step 4 — Select",
+   "eqs": [
+    "$\\mathrm{exactly\\ 2\\ tertiary\\ carbons\\Rightarrow 2,3-dimethylbutane}$"
+   ],
+   "narration": "Only option A satisfies the condition of exactly two tertiary carbons."
+  }
+ ],
+ "answer_eq": "$\\mathrm{2,3-dimethylbutane}$",
+ "answer_label": "Correct option: A",
+ "answer_narration": "Therefore, the correct IUPAC name is two comma three dimethylbutane. For more clear exam solutions, keep learning with Acharya.",
+ "exam_tag": "NEET · Chemistry · Hydrocarbons",
+ "options": [
+  "2,3-dimethylbutane",
+  "2,2-dimethylbutane",
+  "n-hexane",
+  "2-methylpentane"
+ ],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

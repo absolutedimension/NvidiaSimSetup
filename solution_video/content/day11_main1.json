@@ -1,0 +1,52 @@
+{
+ "title": "Intensive Properties Count",
+ "q_prose": "Find the total number of intensive properties among: volume, molar heat capacity, molarity, standard cell potential, Gibbs free energy change, molar mass, and mole.",
+ "given_eq": "",
+ "q_reminder": "We need to count only the properties independent of amount.",
+ "q_narration": "The question asks us to identify how many listed properties are intensive. Intensive properties do not depend on the amount of substance taken. Let us solve step by step.",
+ "steps": [
+  {
+   "label": "Step 1 — Use Definition",
+   "eqs": [
+    "$\\mathrm{Intensive}\\Rightarrow \\mathrm{independent\\ of\\ amount}$"
+   ],
+   "narration": "An intensive property remains the same when we change the size or amount of the sample."
+  },
+  {
+   "label": "Step 2 — Per Mole Properties",
+   "eqs": [
+    "$C_m=\\frac{C}{n}$",
+    "$M_m=\\frac{m}{n}$"
+   ],
+   "narration": "Molar heat capacity and molar mass are defined per mole, so they are independent of the actual amount taken. Both are intensive."
+  },
+  {
+   "label": "Step 3 — Ratio Properties",
+   "eqs": [
+    "$M=\\frac{n}{V}$",
+    "$\\mathrm{E}^{\\theta}_{cell}\\Rightarrow \\mathrm{intensive}$"
+   ],
+   "narration": "Molarity is a concentration, which is a ratio, so it is intensive. Standard cell potential also does not depend on the quantity of material, so it is intensive."
+  },
+  {
+   "label": "Step 4 — Reject Extensive",
+   "eqs": [
+    "$V,\\ \\Delta G,\\ n\\Rightarrow \\mathrm{extensive}$"
+   ],
+   "narration": "Volume, Gibbs free energy change, and mole depend on the amount of substance. Hence, these are extensive, not intensive."
+  },
+  {
+   "label": "Step 5 — Count",
+   "eqs": [
+    "$N=4$"
+   ],
+   "narration": "So the intensive properties are molar heat capacity, molarity, standard cell potential, and molar mass. That gives a total of four."
+  }
+ ],
+ "answer_eq": "$4$",
+ "answer_label": "Correct option:  4",
+ "answer_narration": "The total number of intensive properties is four. For more clear step by step exam solutions, keep learning with Acharya.",
+ "exam_tag": "JEE Main · Chemistry · Thermodynamics",
+ "options": [],
+ "cta_line": "Want the full step-by-step solution to ANY JEE or NEET question?"
+}

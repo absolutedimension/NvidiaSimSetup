@@ -1,0 +1,517 @@
+{
+  "subject": "GK",
+  "class": 2,
+  "categories": [
+    {
+      "name": "Fruits",
+      "label": "a fruit",
+      "chapter": "Nature and Living Things",
+      "members": [
+        "mango",
+        "apple",
+        "banana",
+        "orange",
+        "grapes",
+        "guava",
+        "papaya",
+        "watermelon"
+      ]
+    },
+    {
+      "name": "Wild animals",
+      "label": "a wild animal",
+      "chapter": "Nature and Living Things",
+      "members": [
+        "lion",
+        "tiger",
+        "elephant",
+        "deer",
+        "monkey",
+        "bear",
+        "zebra",
+        "giraffe"
+      ]
+    },
+    {
+      "name": "Birds",
+      "label": "a bird",
+      "chapter": "Nature and Living Things",
+      "members": [
+        "parrot",
+        "crow",
+        "peacock",
+        "sparrow",
+        "pigeon",
+        "eagle"
+      ]
+    },
+    {
+      "name": "Colours",
+      "label": "a colour",
+      "chapter": "Myself and My Surroundings",
+      "members": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "pink",
+        "black",
+        "white"
+      ]
+    },
+    {
+      "name": "Vehicles",
+      "label": "a vehicle",
+      "chapter": "Myself and My Surroundings",
+      "members": [
+        "car",
+        "bus",
+        "truck",
+        "bicycle",
+        "train",
+        "aeroplane",
+        "boat",
+        "scooter"
+      ]
+    },
+    {
+      "name": "Planets",
+      "label": "a planet",
+      "chapter": "Nature and Living Things",
+      "members": [
+        "Mercury",
+        "Venus",
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptune"
+      ]
+    }
+  ],
+  "groupings": [
+    {
+      "name": "Living and Non-living",
+      "chapter": "Nature and Living Things",
+      "sort_instruction": "Sort each thing into living or non-living.",
+      "tf_template": "{art} {item} is a {bin} thing.",
+      "bins": {
+        "living": [
+          "dog",
+          "cat",
+          "cow",
+          "tree",
+          "plant",
+          "fish"
+        ],
+        "non-living": [
+          "chair",
+          "table",
+          "car",
+          "book",
+          "ball",
+          "cup"
+        ]
+      }
+    },
+    {
+      "name": "Wild and Domestic animals",
+      "chapter": "Nature and Living Things",
+      "sort_instruction": "Sort each animal into wild or domestic.",
+      "tf_template": "{art} {item} is a {bin} animal.",
+      "bins": {
+        "wild": [
+          "lion",
+          "tiger",
+          "elephant",
+          "zebra",
+          "deer",
+          "monkey"
+        ],
+        "domestic": [
+          "cow",
+          "dog",
+          "cat",
+          "goat",
+          "horse",
+          "hen"
+        ]
+      }
+    },
+    {
+      "name": "Land, Water and Flying animals",
+      "chapter": "Nature and Living Things",
+      "sort_instruction": "Sort each animal by where it lives — on land, in water, or flying in the air.",
+      "tf_template": "{art} {item} is a {bin} animal.",
+      "bins": {
+        "land": [
+          "lion",
+          "cow",
+          "horse",
+          "dog",
+          "elephant",
+          "deer"
+        ],
+        "water": [
+          "fish",
+          "whale",
+          "crab",
+          "shark",
+          "dolphin",
+          "octopus"
+        ],
+        "flying": [
+          "parrot",
+          "crow",
+          "eagle",
+          "sparrow",
+          "pigeon",
+          "owl"
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "name": "India's national symbols",
+      "chapter": "Our Country India",
+      "a_label": "national symbol",
+      "b_label": "symbol",
+      "tf_template": "India's {a} is the {b}.",
+      "cloze_template": "India's {a} is the ___.",
+      "match_instruction": "Match each national symbol to what it is.",
+      "invert": false,
+      "pairs": [
+        [
+          "national animal",
+          "Tiger"
+        ],
+        [
+          "national bird",
+          "Peacock"
+        ],
+        [
+          "national flower",
+          "Lotus"
+        ],
+        [
+          "national fruit",
+          "Mango"
+        ],
+        [
+          "national tree",
+          "Banyan"
+        ],
+        [
+          "national river",
+          "Ganga"
+        ],
+        [
+          "national song",
+          "Vande Mataram"
+        ],
+        [
+          "national anthem",
+          "Jana Gana Mana"
+        ]
+      ]
+    },
+    {
+      "name": "Country and capital",
+      "chapter": "Our Country India",
+      "a_label": "country",
+      "b_label": "capital",
+      "tf_template": "The capital of {a} is {b}.",
+      "cloze_template": "The capital of {a} is ___.",
+      "match_instruction": "Match each country to its capital city.",
+      "invert": false,
+      "pairs": [
+        [
+          "India",
+          "New Delhi"
+        ],
+        [
+          "Japan",
+          "Tokyo"
+        ],
+        [
+          "France",
+          "Paris"
+        ],
+        [
+          "China",
+          "Beijing"
+        ],
+        [
+          "Russia",
+          "Moscow"
+        ],
+        [
+          "Nepal",
+          "Kathmandu"
+        ],
+        [
+          "Italy",
+          "Rome"
+        ],
+        [
+          "Australia",
+          "Canberra"
+        ]
+      ]
+    },
+    {
+      "name": "Animal and its home",
+      "chapter": "Nature and Living Things",
+      "a_label": "animal",
+      "b_label": "home",
+      "tf_template": "The home of a {a} is called a {b}.",
+      "cloze_template": "The home of a {a} is called a ___.",
+      "match_instruction": "Match each animal to its home.",
+      "invert": false,
+      "pairs": [
+        [
+          "lion",
+          "den"
+        ],
+        [
+          "dog",
+          "kennel"
+        ],
+        [
+          "cow",
+          "shed"
+        ],
+        [
+          "horse",
+          "stable"
+        ],
+        [
+          "bird",
+          "nest"
+        ],
+        [
+          "bee",
+          "hive"
+        ],
+        [
+          "hen",
+          "coop"
+        ],
+        [
+          "spider",
+          "web"
+        ],
+        [
+          "rabbit",
+          "burrow"
+        ],
+        [
+          "bear",
+          "cave"
+        ]
+      ]
+    },
+    {
+      "name": "Animal and its baby",
+      "chapter": "Nature and Living Things",
+      "a_label": "animal",
+      "b_label": "baby",
+      "tf_template": "A baby {a} is called a {b}.",
+      "cloze_template": "A baby {a} is called a ___.",
+      "match_instruction": "Match each animal to the name of its baby.",
+      "invert": false,
+      "pairs": [
+        [
+          "cow",
+          "calf"
+        ],
+        [
+          "dog",
+          "puppy"
+        ],
+        [
+          "cat",
+          "kitten"
+        ],
+        [
+          "hen",
+          "chick"
+        ],
+        [
+          "horse",
+          "foal"
+        ],
+        [
+          "lion",
+          "cub"
+        ],
+        [
+          "sheep",
+          "lamb"
+        ],
+        [
+          "frog",
+          "tadpole"
+        ],
+        [
+          "duck",
+          "duckling"
+        ],
+        [
+          "goat",
+          "kid"
+        ]
+      ]
+    },
+    {
+      "name": "Animal and its sound",
+      "chapter": "Nature and Living Things",
+      "a_label": "animal",
+      "b_label": "sound",
+      "tf_template": "A {a} {b}.",
+      "cloze_template": "A {a} ___.",
+      "match_instruction": "Match each animal to the sound it makes.",
+      "invert": false,
+      "pairs": [
+        [
+          "dog",
+          "barks"
+        ],
+        [
+          "cat",
+          "meows"
+        ],
+        [
+          "cow",
+          "moos"
+        ],
+        [
+          "lion",
+          "roars"
+        ],
+        [
+          "duck",
+          "quacks"
+        ],
+        [
+          "horse",
+          "neighs"
+        ],
+        [
+          "snake",
+          "hisses"
+        ],
+        [
+          "frog",
+          "croaks"
+        ],
+        [
+          "bee",
+          "buzzes"
+        ],
+        [
+          "sheep",
+          "bleats"
+        ]
+      ]
+    },
+    {
+      "name": "Famous person and their title",
+      "chapter": "Our Country India",
+      "a_label": "famous person",
+      "b_label": "title",
+      "tf_template": "{a} is known as the {b}.",
+      "cloze_template": "{a} is known as the ___.",
+      "match_instruction": "Match each famous person to what they are known as.",
+      "invert": false,
+      "pairs": [
+        [
+          "Mahatma Gandhi",
+          "Father of the Nation"
+        ],
+        [
+          "Jawaharlal Nehru",
+          "First Prime Minister of India"
+        ],
+        [
+          "A. P. J. Abdul Kalam",
+          "Missile Man of India"
+        ],
+        [
+          "Rabindranath Tagore",
+          "writer of our National Anthem"
+        ],
+        [
+          "Sardar Vallabhbhai Patel",
+          "Iron Man of India"
+        ],
+        [
+          "Sarojini Naidu",
+          "Nightingale of India"
+        ],
+        [
+          "Dr. B. R. Ambedkar",
+          "maker of our Constitution"
+        ],
+        [
+          "Rani Lakshmibai",
+          "brave queen of Jhansi"
+        ]
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "statement": "The sun rises in the east.",
+      "chapter": "Nature and Living Things"
+    },
+    {
+      "statement": "The sun gives us light and heat.",
+      "chapter": "Nature and Living Things"
+    },
+    {
+      "statement": "The Earth is round like a ball.",
+      "chapter": "Nature and Living Things"
+    },
+    {
+      "statement": "The Earth moves around the sun.",
+      "chapter": "Nature and Living Things"
+    },
+    {
+      "statement": "The moon shines at night.",
+      "chapter": "Nature and Living Things"
+    },
+    {
+      "statement": "There are seven days in a week.",
+      "chapter": "Myself and My Surroundings"
+    },
+    {
+      "statement": "There are twelve months in a year.",
+      "chapter": "Myself and My Surroundings"
+    },
+    {
+      "statement": "India is our country.",
+      "chapter": "Our Country India"
+    },
+    {
+      "statement": "New Delhi is the capital of India.",
+      "chapter": "Our Country India"
+    },
+    {
+      "statement": "The national flag of India has three colours.",
+      "chapter": "Our Country India"
+    },
+    {
+      "statement": "We get milk from a cow.",
+      "chapter": "Nature and Living Things"
+    },
+    {
+      "statement": "Fish live in water.",
+      "chapter": "Nature and Living Things"
+    }
+  ],
+  "strings": {}
+}

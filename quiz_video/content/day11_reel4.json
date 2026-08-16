@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "voice": "en-IN-NeerjaExpressiveNeural",
+ "exam": "JEE Main · Physics",
+ "subject": "Physics",
+ "chapter": "Units And Measurements",
+ "topic_line": "Real JEE Main questions · beat the timer",
+ "timer_seconds": 5,
+ "brand": "Acharya",
+ "cta": "Full adaptive test on Acharya",
+ "intro_voice": "Physics. Units And Measurements. 3 real exam questions. Beat the timer... let's go!",
+ "outro_voice": "Want a full test on Units And Measurements? Acharya builds it — unlimited, exam pattern. Link in bio.",
+ "questions": [
+  {
+   "type": "mcq",
+   "q": "Identify the pair whose dimensions are equal",
+   "options": [
+    "torque and work",
+    "stress and energy",
+    "force and stress",
+    "force and work"
+   ],
+   "answer": 0,
+   "explain": "To determine which pairs have equivalent dimensions, we examine the respective dimensional formulas.",
+   "voice_q": "Identify the pair whose dimensions are equal Five seconds... think!",
+   "voice_a": "The answer is A — torque and work. To determine which pairs have equivalent dimensions, we examine the respective dimensional formulas."
+  },
+  {
+   "type": "mcq",
+   "q": "Out of the following pair, which one does NOT have identical dimensions is",
+   "options": [
+    "angular momentum and Planck's constant",
+    "impulse and momentum",
+    "moment of inertia and moment of a force",
+    "work and torque"
+   ],
+   "answer": 2,
+   "explain": "Moment of inertia, I = Mr^{2} \n$$\\therefore$$ [I] = [ML^{2}] \nMoment of force, $$\\overrightarrow \\tau = \\overrightarrow ",
+   "voice_q": "Out of the following pair, which one does NOT have identical dimensions is Five seconds... think!",
+   "voice_a": "The answer is C — moment of inertia and moment of a force. Moment of inertia, I = Mr^{2} \n$$\\therefore$$ [I] = [ML^{2}] \nMoment of force, $$\\overrightarrow \\tau = \\overrightarrow "
+  },
+  {
+   "type": "mcq",
+   "q": "Using screw gauge of pitch 0.1 cm and\n50 divisions on its circular scale, the thickness\nof an object is measured. It should correctly be\nrecorded as",
+   "options": [
+    "2.123 cm",
+    "2.124 cm",
+    "2.125 cm",
+    "2.121 cm"
+   ],
+   "answer": 1,
+   "explain": "Using a screw gauge of pitch 0.1 cm and 50 divisions on its circular scale, the thickness of an object is measured as:\n ",
+   "voice_q": "Using screw gauge of pitch 0.1 cm and\n50 divisions on its circular scale, the thickness\nof an object is measured. It should correctly be\nrecorded as Five seconds... think!",
+   "voice_a": "The answer is B — 2.124 cm. Using a screw gauge of pitch 0.1 cm and 50 divisions on its circular scale, the thickness of an object is measured as:\n "
+  }
+ ]
+}

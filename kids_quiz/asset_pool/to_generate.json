@@ -1,141 +1,168 @@
 {
-  "count": 17,
   "items": [
     {
-      "id": "banana",
-      "type": "prop",
-      "source": "gpt-image",
-      "label": "banana",
-      "emoji": "🍌",
-      "prompt": null
+      "id": "ellie",
+      "type": "character",
+      "label": "Ellie the elephant",
+      "prompt": "a cute friendly baby elephant mascot, grey with big ears"
     },
     {
-      "id": "mango",
-      "type": "prop",
-      "source": "gpt-image",
-      "label": "mango",
-      "emoji": "🥭",
-      "prompt": null
+      "id": "rio",
+      "type": "character",
+      "label": "Rio the tiger",
+      "prompt": "a cute friendly baby tiger mascot, orange with black stripes"
     },
     {
-      "id": "grapes",
-      "type": "prop",
-      "source": "gpt-image",
-      "label": "grapes",
-      "emoji": "🍇",
-      "prompt": null
+      "id": "milo",
+      "type": "character",
+      "label": "Milo the monkey",
+      "prompt": "a cute friendly baby monkey mascot, brown"
     },
     {
-      "id": "star",
-      "type": "prop",
-      "source": "gpt-image",
-      "label": "star",
-      "emoji": "⭐",
-      "prompt": null
+      "id": "bruno",
+      "type": "character",
+      "label": "Bruno the bear",
+      "prompt": "a cute friendly baby bear mascot, brown"
     },
     {
-      "id": "fish",
+      "id": "lion",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "fish",
-      "emoji": "🐟",
-      "prompt": null
+      "label": "lion"
     },
     {
-      "id": "coin",
+      "id": "horse",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "rupee coin",
-      "emoji": "🪙",
-      "prompt": null
+      "label": "horse"
     },
     {
-      "id": "balloon",
+      "id": "frog",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "balloon",
-      "emoji": "🎈",
-      "prompt": null
+      "label": "frog"
     },
     {
-      "id": "cookie",
+      "id": "duck",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "cookie",
-      "emoji": "🍪",
-      "prompt": null
+      "label": "duck"
     },
     {
-      "id": "dog",
+      "id": "ant",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "dog",
-      "emoji": "🐶",
-      "prompt": null
+      "label": "ant"
     },
     {
-      "id": "cow",
+      "id": "rabbit",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "cow",
-      "emoji": "🐄",
-      "prompt": null
+      "label": "rabbit"
     },
     {
-      "id": "bird",
+      "id": "hen",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "bird",
-      "emoji": "🐦",
-      "prompt": null
+      "label": "hen"
     },
     {
-      "id": "bee",
+      "id": "butterfly",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "bee",
-      "emoji": "🐝",
-      "prompt": null
+      "label": "butterfly"
     },
     {
-      "id": "cat",
+      "id": "car",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "cat",
-      "emoji": "🐱",
-      "prompt": null
+      "label": "car"
     },
     {
-      "id": "tree",
+      "id": "boat",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "tree",
-      "emoji": "🌳",
-      "prompt": null
+      "label": "boat"
     },
     {
-      "id": "sun",
+      "id": "bicycle",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "sun",
-      "emoji": "🌞",
-      "prompt": null
+      "label": "bicycle"
     },
     {
-      "id": "clock",
+      "id": "train",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "clock",
-      "emoji": "🕐",
-      "prompt": null
+      "label": "train"
     },
     {
-      "id": "ruler",
+      "id": "bus",
       "type": "prop",
-      "source": "gpt-image",
-      "label": "ruler",
-      "emoji": "📏",
-      "prompt": null
+      "label": "bus"
+    },
+    {
+      "id": "moon",
+      "type": "prop",
+      "label": "moon"
+    },
+    {
+      "id": "leaf",
+      "type": "prop",
+      "label": "leaf"
+    },
+    {
+      "id": "flower",
+      "type": "prop",
+      "label": "flower"
+    },
+    {
+      "id": "cloud",
+      "type": "prop",
+      "label": "cloud"
+    },
+    {
+      "id": "plant",
+      "type": "prop",
+      "label": "plant in a pot"
+    },
+    {
+      "id": "grass",
+      "type": "prop",
+      "label": "patch of grass"
+    },
+    {
+      "id": "ball",
+      "type": "prop",
+      "label": "ball"
+    },
+    {
+      "id": "kite",
+      "type": "prop",
+      "label": "kite"
+    },
+    {
+      "id": "book",
+      "type": "prop",
+      "label": "book"
+    },
+    {
+      "id": "pencil",
+      "type": "prop",
+      "label": "pencil"
+    },
+    {
+      "id": "chair",
+      "type": "prop",
+      "label": "chair"
+    },
+    {
+      "id": "table",
+      "type": "prop",
+      "label": "table"
+    },
+    {
+      "id": "carrot",
+      "type": "prop",
+      "label": "carrot"
+    },
+    {
+      "id": "orange",
+      "type": "prop",
+      "label": "orange fruit"
+    },
+    {
+      "id": "tomato",
+      "type": "prop",
+      "label": "tomato"
     }
   ]
 }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ unit.title }} — Acharya University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{ --gold:#C2591F; --gold2:#A8481A; --ink:#2A2018; --muted:#7A6A57; --line:#EFE0CE; --cream:#FAF5EC; --card:#fff; --green:#2FA968; }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:Figtree,system-ui,sans-serif;background:radial-gradient(1200px 600px at 80% -10%, #FBEFE0, transparent), var(--cream);color:var(--ink);min-height:100vh}
+  a{color:inherit;text-decoration:none}
+  .top{display:flex;align-items:center;gap:12px;padding:16px 26px;border-bottom:1px solid var(--line)}
+  .top .logo{font-family:Bricolage Grotesque,serif;font-weight:800;font-size:19px;color:var(--gold2)}
+  .wrap{max-width:720px;margin:0 auto;padding:22px 20px 60px}
+  h1{font-family:Bricolage Grotesque,serif;font-weight:800;font-size:24px;margin:0 0 6px}
+  h2{font-family:Bricolage Grotesque,serif;font-weight:700;font-size:17px;margin:0 0 10px}
+  .back{color:var(--muted);font-size:14px;display:inline-block;margin-bottom:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:0 8px 26px rgba(120,70,20,.06);margin-bottom:16px}
+  .dim{color:var(--muted);font-size:14px;line-height:1.5}
+  .chip{display:inline-block;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:4px 11px;margin:4px 6px 0 0;background:#FBF4EA}
+  input{width:100%;background:#fff;border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:12px 15px;font-size:15px;font-family:inherit}
+  .btn{background:linear-gradient(180deg,#D9682B,var(--gold));color:#fff;border:0;border-radius:12px;padding:12px 18px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:#fff;color:var(--gold2);border:1px solid var(--gold)}
+  .row{display:flex;gap:9px;align-items:center}
+  .msg{padding:12px 15px;border-radius:14px;margin:8px 0;max-width:92%;line-height:1.55;font-size:15px}
+  .msg.a{background:#FBF1E4;border:1px solid var(--line)} .msg.u{background:#EAF6EF;border:1px solid #CDE9D9;margin-left:auto}
+  .spin{color:var(--gold2)}
+  .con{background:#FBF7F0;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:9px}
+  .con.solid{border-color:var(--green);background:#F1FaF5}
+  .con .q{font-size:14px;margin-bottom:8px}
+  .fb{font-size:13px;margin-top:7px;color:var(--muted)}
+  .ms{background:#FFFBF5;border:1px dashed var(--gold);border-radius:12px;padding:14px 16px}
+</style>
+</head>
+<body>
+<div class="top"><a class="logo" href="/university">आ Acharya University</a></div>
+<div class="wrap">
+  <a class="back" href="/university/course/{{ course.id }}">← {{ course.title }}</a>
+  <h1>{{ unit.title }}</h1>
+  <p class="dim">{{ unit.summary }}</p>
+  <div>{% for o in unit.objectives %}<span class="chip">{{ o }}</span>{% endfor %}</div>
+
+  <div class="card" style="margin-top:16px"><h2>🧑‍🏫 Tutor</h2>
+    <div id="chat"></div>
+    <div class="row" style="margin-top:10px">
+      <input id="msg" placeholder="Answer, or ask…" onkeydown="if(event.key==='Enter')send()">
+      <button class="btn" onclick="send()">Send</button>
+    </div>
+  </div>
+
+  {% if unit.concepts %}
+  <div class="card"><h2>✅ Prove it — recall from memory</h2>
+    <p class="dim">A concept turns green only when you get it right. Master them all to unlock the next unit.</p>
+    <div id="cons" style="margin-top:10px">
+      {% for c in unit.concepts %}
+      <div class="con {% if c.mastery and c.mastery >= 1 %}solid{% endif %}" id="con_{{ c.key }}">
+        <div class="q">{{ c.recall }}</div>
+        {% if c.mastery and c.mastery >= 1 %}<div class="fb" style="color:var(--green)">✓ solid</div>{% else %}
+        <div class="row"><input id="in_{{ c.key }}" placeholder="From memory…" onkeydown="if(event.key==='Enter')recall('{{ c.key }}')">
+          <button class="btn ghost" onclick="recall('{{ c.key }}')">Check</button></div>
+        <div class="fb" id="fb_{{ c.key }}"></div>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if unit.milestone and unit.milestone.prompt %}
+  <div class="card"><h2>🏁 Milestone</h2>
+    <div class="ms"><b>{{ unit.milestone.prompt }}</b>
+      {% if unit.milestone.rubric %}<div class="dim" style="margin-top:8px">A good answer shows: {% for r in unit.milestone.rubric %}<span class="chip">{{ r }}</span>{% endfor %}</div>{% endif %}
+      <p class="dim" style="margin:10px 0 0">Work on this with the Tutor above. (Auto-grading of your deliverable arrives with the Editor — Phase 4.)</p>
+    </div>
+  </div>
+  {% endif %}
+</div>
+<script>
+const CID={{ course.id }}, UID={{ unit.unit_id }};
+let history={{ history|tojson }};
+const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+async function api(p,b){const r=await fetch(p,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});return r.json();}
+function typeset(el){if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetPromise(el?[el]:undefined).catch(()=>{});}else{setTimeout(()=>typeset(el),300);}}
+function draw(){const c=document.getElementById('chat');c.innerHTML=history.map(m=>`<div class="msg ${m.role==='user'?'u':'a'}">${esc(m.content)}</div>`).join('');typeset(c);c.scrollTop=c.scrollHeight;}
+draw();
+if(!history.length) step('');
+function send(){const el=document.getElementById('msg');const v=el.value.trim();if(!v)return;el.value='';history.push({role:'user',content:v});draw();step(v);}
+async function step(msg){
+  const c=document.getElementById('chat');c.innerHTML+='<div class="msg a spin">…</div>';
+  const r=await api('/api/university/tutor',{course_id:CID,unit_id:UID,message:msg});
+  if(r.reply)history.push({role:'assistant',content:r.reply});
+  draw();
+}
+async function recall(key){
+  const inp=document.getElementById('in_'+key);const v=inp.value.trim();if(!v)return;
+  const fb=document.getElementById('fb_'+key);fb.textContent='Checking…';
+  const r=await api('/api/university/recall',{course_id:CID,unit_id:UID,concept_key:key,attempt:v});
+  fb.textContent=(r.correct?'✓ ':'✗ ')+(r.feedback||'');fb.style.color=r.correct?'var(--green)':'var(--muted)';
+  if(r.correct){const con=document.getElementById('con_'+key);con.classList.add('solid');
+    setTimeout(()=>{con.querySelector('.row').style.display='none';},400);
+    if(r.unit_status==='done'){setTimeout(()=>{alert('Unit complete! The next unit is unlocked.');location.href='/university/course/'+CID;},700);}
+  }
+}
+</script>
+</body>
+</html>
