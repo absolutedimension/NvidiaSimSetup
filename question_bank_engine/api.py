@@ -27,6 +27,10 @@ API_KEY = os.environ.get("QBANK_API_KEY")  # if set, callers must send Authoriza
 
 app = FastAPI(title="TrigunAI Question Generator", version="1.0")
 
+# Pseudo-chapter offered for pool-served whole-subject banks (questions stored chapter=NULL,
+# e.g. BPSC / BPSC TRE). Serving must treat it as "no chapter filter" — see pool() below.
+FULL_SYLLABUS = "Full Syllabus (mixed)"
+
 # Frontend runs in a browser on another origin -> allow CORS. Lock allow_origins
 # to your real frontend domain(s) in production.
 _ORIGINS = os.environ.get("QBANK_CORS", "*").split(",")
@@ -65,10 +69,28 @@ def health():
 
 @app.get("/chapters")
 def chapters(exam: str = "JEE Advanced", subject: str = "Physics"):
-    """Populate the frontend's topic picker. Shows which chapters have exemplars banked."""
-    tax = syllabus.get_taxonomy(exam, subject)
+    """Populate the frontend's topic picker. Shows which chapters have exemplars banked.
+
+    NEVER fall back to the JEE-Physics taxonomy here. `syllabus.get_taxonomy()` returns
+    JEE Physics for any (exam, subject) it doesn't know, which made the picker show
+    "Kinematics / Laws of Motion…" for CBSE 10/12, UPSC, BPSC, TRE and Current Affairs
+    (reported from the field 2026-08-15). Resolution order instead:
+      1. a hand-authored taxonomy for this exact (exam, subject);
+      2. else DERIVE the chapter list from what the bank actually holds for this subject
+         (correct by construction — these are the chapters the questions are tagged with);
+      3. else (pool-served whole-subject banks stored chapter=NULL, e.g. BPSC / TRE) a single
+         "Full Syllabus (mixed)" entry, so the subject stays practisable (an empty list makes
+         the frontend render 'coming soon') without advertising chapters we can't filter on.
+    """
     store = Store()
     banked = store.chapter_counts(exam, subject)
+    tax = syllabus.TAXONOMIES.get((exam, subject))
+    if tax is None:
+        if banked:
+            tax = {ch: {"concepts": {}}
+                   for ch in sorted(banked, key=lambda c: (-banked[c], c))}
+        else:
+            tax = {FULL_SYLLABUS: {"concepts": {}}}
     # A chapter is generatable if this exam has exemplars OR its companion exam does
     # (NEET Phy/Chem borrow from JEE Main — same syllabus). `exemplars_banked` stays
     # the number the generator can actually draw on, so existing "> 0" filters in the
@@ -98,6 +120,10 @@ def pool(exam: str = "JEE Advanced", subject: str = "Physics", chapter: str = ""
     except ValueError:
         raise HTTPException(status_code=400, detail="difficulty must be '3' or '3-4'")
     seen = [e for e in exclude.split(",") if e][:400]
+    # FULL_SYLLABUS is the picker's stand-in for "this bank isn't chapter-tagged" — filtering
+    # on it literally would match nothing, so drop it and serve the whole subject pool.
+    if chapter == FULL_SYLLABUS:
+        chapter = ""
     qs = Store().pool_questions(exam=exam, subject=subject, chapter=chapter or None,
                                 qtype=type, dmin=dmin, dmax=dmax,
                                 exclude_ids=seen or None, limit=min(count, MAX_COUNT))
