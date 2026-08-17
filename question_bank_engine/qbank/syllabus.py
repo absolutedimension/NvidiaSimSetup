@@ -243,7 +243,17 @@ EXEMPLAR_FALLBACK = {}
 
 
 def get_taxonomy(exam: str, subject: str):
-    return TAXONOMIES.get((exam, subject)) or TAXONOMIES.get(("JEE Advanced", "Physics"))
+    """The AUTHORED taxonomy for (exam, subject), or {} when we don't have one.
+
+    This used to fall back to the JEE-Physics taxonomy, which silently poisoned every caller
+    for a subject we hadn't authored: the chapter picker showed "Kinematics / Laws of Motion…"
+    for CBSE 10/12, UPSC, BPSC, TRE and Current Affairs (field report 2026-08-15), batch
+    generation would have produced PHYSICS questions filed under those subjects, and the tagger
+    could classify their questions into physics chapters. Returning {} makes the gap explicit so
+    each caller decides: derive chapters from the bank (see api.py::chapters), refuse to generate
+    (pipeline), or leave the question Unclassified (tagger).
+    """
+    return TAXONOMIES.get((exam, subject)) or {}
 
 
 def exemplar_fallback(exam: str, subject: str):

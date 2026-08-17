@@ -114,6 +114,13 @@ def llm_classify(q, taxonomy, llm) -> dict | None:
 
 def tag_question(q, llm=None, taxonomy=None) -> dict:
     taxonomy = taxonomy or syl.get_taxonomy(q.exam, q.subject)
+    # No taxonomy for this (exam, subject) → leave it Unclassified instead of asking the LLM to
+    # pick from an empty/foreign chapter list. (get_taxonomy used to hand back JEE Physics here,
+    # which risked filing e.g. a BPSC polity question under "Kinematics".)
+    if not taxonomy:
+        return {"chapter": "Unclassified", "concept": None,
+                "difficulty": estimate_difficulty(q), "bloom": guess_bloom(q),
+                "confidence": "low"}
     tags = llm_classify(q, taxonomy, llm) if llm is not None else None
     if tags is None:                            # fallback
         kw = keyword_classify(q, taxonomy)

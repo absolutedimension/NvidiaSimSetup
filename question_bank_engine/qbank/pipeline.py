@@ -372,6 +372,13 @@ def batch_generate(exam="JEE Advanced", subject="Physics", per_cell=15,
 
     tax = syllabus.get_taxonomy(exam, subject)
     chapter_list = chapters or list(tax.keys())
+    # No authored taxonomy and no explicit --chapters: REFUSE rather than fall through. This used
+    # to inherit the JEE-Physics chapter list and would happily batch-generate physics questions
+    # filed under e.g. ("BPSC", "General Studies"). Compute-the-answer generators are exempt —
+    # they carry their own chapter builders and don't need a syllabus taxonomy.
+    if not chapter_list and not quant_mode:
+        return {"error": f"no chapter taxonomy for ({exam!r}, {subject!r}); "
+                         f"pass chapters=[...] explicitly or add it to syllabus.TAXONOMIES"}
     have = store.pool_stats(exam, subject)          # (chapter, difficulty, qtype) -> count
     made = cells = skipped = failed = 0
 
