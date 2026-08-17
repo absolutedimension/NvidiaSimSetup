@@ -217,24 +217,59 @@ class Store:
         return out
 
     def pool_questions(self, exam=None, subject=None, chapter=None, qtype=None,
-                       dmin=None, dmax=None, exclude_ids=None, limit=10) -> list[dict]:
+                       dmin=None, dmax=None, exclude_ids=None, limit=10,
+                       real_only=False) -> list[dict]:
         """Serve PRE-GENERATED pool questions (generated=1, verified=1) INSTANTLY — no LLM.
         This is the frontend's hot path: draw from the shared pool, passing exclude_ids
         (already-seen) so a student never repeats. Randomised so the shared pool spreads
         evenly across students. Live /generate is only for power users who drain a cell."""
         # HARD SERVING GATE: never serve a question that needs a figure but has none.
         # Servable = needs no figure, OR it actually carries a figure (clean url or svg).
-        where = ["verified=1", "COALESCE(generated,0)=1", "duplicate_of IS NULL",
+        where = ["verified=1", "duplicate_of IS NULL",
                  "(COALESCE(needs_figure,0)=0 OR figure_url IS NOT NULL OR figure_svg IS NOT NULL)"]
+        # Generated rows are the default shared pool. Imported NCERT/CBSE banks are also
+        # prebuilt pool data once verified; without this, board subjects show empty /pool.
+        if exam and (str(exam).startswith("CBSE Class") or str(exam).startswith("UPSC") or (str(exam).startswith("BPSC") or str(exam).startswith("Current Affairs"))):
+            pass
+        else:
+            where.append("COALESCE(generated,0)=1")
+        if real_only:                       # official ingested PYQs only (not synthetic)
+            where.append("source LIKE '%official%'")
         args = []
+        # UPSC PYQs are a single mixed prelims paper with no per-topic chapter tagging
+        # (chapter IS NULL), so honour subject (GS vs CSAT) but ignore any chapter filter —
+        # else a topic-named request from the frontend matches zero rows and falls to slow gen.
+        # Skip the chapter filter ONLY when this (exam, subject, chapter) genuinely has no rows —
+        # otherwise a topic-named request matches zero rows and falls through to slow generation.
+        # This was a blunt exam-prefix check, so once BPSC/TRE/UPSC questions DID get chapters
+        # (tag_gs_questions.py) picking a topic was silently ignored and served the whole subject.
+        # Data-driven now: tagging automatically switches real chapter filtering on.
+        skip_chapter = False
+        if chapter and exam and (str(exam).startswith("UPSC") or str(exam).startswith("BPSC")
+                                 or str(exam).startswith("Current Affairs")):
+            _r = self.con.execute(
+                "SELECT COUNT(*) FROM questions WHERE exam=? AND subject=? AND chapter=? "
+                "AND verified=1 AND duplicate_of IS NULL", (exam, subject, chapter)).fetchone()
+            skip_chapter = not (_r and _r[0])
+        # Board/PYQ pools (CBSE, UPSC) are their REAL ingested questions, tagged at a
+        # single board-level difficulty (CBSE Class 10 = 2, Class 12 = 2-3, UPSC = 3) —
+        # NOT on the 1-5 practice scale JEE/NEET generation uses. The frontend/API default
+        # band is 3-4, which matches ZERO board rows and makes /pool return empty → the
+        # whole real bank silently unreachable. So ignore the difficulty band for these
+        # exams and serve the board questions regardless of the requested band.
+        skip_difficulty = bool(exam and (str(exam).startswith("CBSE Class")
+                                         or str(exam).startswith("UPSC")
+                                         or (str(exam).startswith("BPSC") or str(exam).startswith("Current Affairs"))))
         for col, val in (("exam", exam), ("subject", subject), ("chapter", chapter), ("qtype", qtype)):
+            if col == "chapter" and skip_chapter:
+                continue
             if val:
                 where.append(f"{col}=?")
                 args.append(val)
-        if dmin is not None:
+        if dmin is not None and not skip_difficulty:
             where.append("difficulty>=?")
             args.append(dmin)
-        if dmax is not None:
+        if dmax is not None and not skip_difficulty:
             where.append("difficulty<=?")
             args.append(dmax)
         if exclude_ids:
@@ -255,7 +290,11 @@ class Store:
         """Coverage of the pre-generated pool keyed by (chapter, difficulty, qtype).
         Powers batch-fill (skip cells already at target — makes the fill RESUMABLE) and
         an ops view of pool depth per topic."""
-        where = ["verified=1", "COALESCE(generated,0)=1", "duplicate_of IS NULL", "chapter IS NOT NULL"]
+        where = ["verified=1", "duplicate_of IS NULL", "chapter IS NOT NULL"]
+        if exam and (str(exam).startswith("CBSE Class") or str(exam).startswith("UPSC") or (str(exam).startswith("BPSC") or str(exam).startswith("Current Affairs"))):
+            pass
+        else:
+            where.append("COALESCE(generated,0)=1")
         args = []
         for col, val in (("exam", exam), ("subject", subject)):
             if val:

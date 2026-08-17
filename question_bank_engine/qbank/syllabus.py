@@ -183,7 +183,17 @@ from .english_common import ENGLISH_COMMON
 from .icse_class3_maths import ICSE_CLASS3_MATHS
 
 # Registry so other exams/subjects slot in with the same interface.
+from .gs_common import (GS_POLITY, GS_HISTORY, GS_GEOGRAPHY, GS_ECONOMICS, GS_GENERAL)
+
 TAXONOMIES = {
+    # ---- Real-PYQ govt GS banks (BPSC TRE / BPSC). Ingested past papers arrive chapter=NULL;
+    # tag_gs_questions.py classifies them into these chapters so the picker + /pool filter work.
+    ("BPSC TRE", "GS Polity"): GS_POLITY,
+    ("BPSC TRE", "GS History"): GS_HISTORY,
+    ("BPSC TRE", "GS Geography"): GS_GEOGRAPHY,
+    ("BPSC TRE", "GS Economics"): GS_ECONOMICS,
+    ("BPSC TRE", "General Studies"): GS_GENERAL,
+    ("BPSC", "General Studies"): GS_GENERAL,
     # ICSE Class 3 Maths (kids product) — real book chapters; without this it fell back to
     # the JEE Physics taxonomy (get_taxonomy default) and the kids picker showed Physics.
     ("ICSE Class 3", "Mathematics"): ICSE_CLASS3_MATHS,
