@@ -92,6 +92,11 @@ EXAMS = [
 ]
 EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
 
+# Goals hidden from every picker (student tiles, onboarding, teacher create-test) while their DATA
+# and serving stay intact for other lanes. BPSC = Bihar CIVIL SERVICES; One Step Education teaches
+# TRE (Teacher Recruitment) and explicitly does not want BPSC surfaced (field note 2026-08-15).
+HIDDEN_GOALS = {"bpsc"}
+
 # Kids product picker (kids-education.trigunai.com). Grade-3 Maths is LIVE; the rest show the
 # roadmap as "coming soon" so parents see what's next.
 KIDS_EXAMS = [
@@ -525,7 +530,7 @@ def exam_prep_onboarding(request: Request, new: str = "", db: Session = Depends(
     # Kids host: show ONLY the kids goals (Grade 3 …) — never the senior JEE/NEET/UPSC courses.
     kids = (request.headers.get("host") or "").split(":")[0].lower() in KIDS_HOSTS
     goals = ({gid: g for gid, g in examgen.GOALS.items() if gid in _KIDS_TEACHER_GOALS}
-             if kids else examgen.GOALS)
+             if kids else {gid: g for gid, g in examgen.GOALS.items() if gid not in HIDDEN_GOALS})
     default_goal = ("class3" if kids else examgen.DEFAULT_GOAL)
     if kids and goal not in goals:
         goal = "class3"
