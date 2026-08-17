@@ -255,6 +255,15 @@ GS_GENERAL = {
 # reachable from the picker instead of sitting chapter-less. Listed last in each taxonomy.
 GS_POLITY["General Polity (mixed)"] = {"keywords": [], "concepts": {}}
 GS_HISTORY["General History (mixed)"] = {"keywords": [], "concepts": {}}
+GS_GEOGRAPHY["Geographical Thought & Techniques"] = {
+    "keywords": ["geographical thought", "hartshorne", "humboldt", "ritter", "ptolemy",
+                 "herodotus", "quantitative revolution", "areal differentiation", "landschaft",
+                 "determinism", "possibilism", "cartograph", "map projection", "opisometer",
+                 "magnetic declination", "remote sensing", "gis", "gps", "survey", "scale of map",
+                 "human geography", "geographer"],
+    "concepts": {"History of Geographic Thought": ["hartshorne", "humboldt", "possibilism"],
+                 "Cartography & Techniques": ["cartograph", "map projection", "remote sensing", "gis"]},
+}
 GS_GEOGRAPHY["General Geography (mixed)"] = {"keywords": [], "concepts": {}}
 GS_ECONOMICS["General Economics (mixed)"] = {"keywords": [], "concepts": {}}
 GS_GENERAL["General Studies (mixed)"] = {"keywords": [], "concepts": {}}
