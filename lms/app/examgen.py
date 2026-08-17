@@ -385,6 +385,14 @@ def match_subject(title: str, topic_key: str = "") -> str | None:
     Two passes: an exact title phrase, then exam-family + subject keyword (so "NEET — Organic
     Chemistry" resolves to neet-chemistry rather than falling through to a JEE subject)."""
     hay = f"{title} {topic_key}".lower()
+    # EXACT id / label first. The keyword pass below returns the FIRST subject whose keyword
+    # appears anywhere in the title, in definition order — so "GS: Economics" resolved to
+    # cbse12-economics and "General Science: Physics" to cbse10-science (both defined earlier),
+    # showing Class-10/12 board chapters on a TRE subject page. An exact match can't collide.
+    t, k = (title or "").strip().lower(), (topic_key or "").strip().lower()
+    for sid, cfg in RAG_SUBJECTS.items():
+        if k == sid or t == sid or t == cfg["label"].strip().lower():
+            return sid
     for sid, cfg in RAG_SUBJECTS.items():           # explicit phrases first
         if any(kw in hay for kw in cfg["match"]):
             return sid
