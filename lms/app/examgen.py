@@ -9,6 +9,7 @@ and Banking Prelims (Quant — a GENERATED bank, not RAG over real past papers, 
 project-banking-quant-generator) are wired. Add a subject to RAG_SUBJECTS — and to a GOALS entry —
 to grow coverage; the bank must already exist on the VM."""
 import json
+import random
 import time
 import urllib.request
 import urllib.error
@@ -228,25 +229,71 @@ RAG_SUBJECTS = {
     },
     # ---- Railway (RRB — NTPC / Group D / ALP) — same generator-served pattern as SSC; General
     # Science borrows the real CBSE Class 10 Science bank. Backend taxonomies already registered.
+    # ⚠️ The four Railway SKILL subjects BORROW the SSC CGL pool (same borrow pattern as
+    # railway-science → CBSE Class 10 Science, and gs-physics/chemistry/biology → CBSE Class 12).
+    # Reasoning / Quant / English / Static-GK are the SAME content across SSC, Railway and Banking —
+    # POOL_FILL_PLAN.md §Tier-1 filled them ONCE under "SSC CGL" (~1,000 each) and left "share the
+    # pool vs fill each exam separately" as an open decision. Until this was wired, exam="Railway
+    # (RRB)" had a pool of 0/1/2/10 → every Railway test fell through to live LLM generation
+    # (~40-55s/question), which is what a field demo hits. The student still sees the "Railway …"
+    # label; only the bank we read from is shared. Fill each exam separately later ONLY if Railway
+    # needs genuinely different content from SSC.
     "railway-reasoning": {
-        "label": "Railway Reasoning", "exam": "Railway (RRB)", "subject": "Reasoning", "kw": "reasoning",
+        "label": "Railway Reasoning", "exam": "SSC CGL", "subject": "Reasoning", "kw": "reasoning",
         "match": ["railway reasoning", "rrb reasoning", "railway-reasoning"],
     },
     "railway-quant": {
-        "label": "Railway Maths", "exam": "Railway (RRB)", "subject": "Quantitative Aptitude", "kw": "quant",
+        "label": "Railway Maths", "exam": "SSC CGL", "subject": "Quantitative Aptitude", "kw": "quant",
         "match": ["railway maths", "railway quant", "rrb maths", "rrb quant", "railway-quant"],
     },
     "railway-gk": {
-        "label": "Railway General Knowledge", "exam": "Railway (RRB)", "subject": "General Knowledge", "kw": "gk",
+        "label": "Railway General Knowledge", "exam": "SSC CGL", "subject": "General Knowledge", "kw": "gk",
         "match": ["railway gk", "rrb gk", "railway general knowledge", "railway-gk"],
     },
     "railway-english": {
-        "label": "Railway English", "exam": "Railway (RRB)", "subject": "English", "kw": "english",
+        "label": "Railway English", "exam": "SSC CGL", "subject": "English", "kw": "english",
         "match": ["railway english", "rrb english", "railway-english"],
     },
     "railway-science": {
         "label": "General Science", "exam": "CBSE Class 10", "subject": "Science", "kw": "science",
         "match": ["railway science", "rrb science", "railway-science"],
+    },
+    # ---- Synergy CET / Merchant Navy GP Rating (sponsorship entrance, ~4.4k candidates,
+    # ~1.3% selected). TWO production paths, deliberately:
+    #   • Technical (Ship Knowledge, Marine Engineering) = RAG-GENERATED from real DG-syllabus
+    #     exemplars ingested via `run.py ingest-synergy`. The exemplars are generated=0 and
+    #     NEVER served — "Synergy CET" sits outside storage.pool_questions()'s real-serve
+    #     allowlist on purpose, so only generated=1 rows reach a student.
+    #     ⚠️ NEVER rename this exam to a CBSE*/UPSC*/BPSC*/Current Affairs* prefix.
+    #   • Aptitude (numerical / logical / GK) = BORROWS the compute-the-answer pools that
+    #     already serve SSC/Banking. Same engines, correct-by-construction, zero dependency
+    #     on the source PDF — and they are 100 of the paper's 200 marks.
+    "gpr-ship-knowledge": {
+        "label": "Ship Knowledge & Safety", "exam": "Synergy CET",
+        "subject": "Ship Knowledge & Safety", "kw": "ship",
+        "match": ["ship knowledge", "gp rating ship", "navigation cargo safety", "nautical",
+                  "gpr-ship-knowledge", "deck", "seamanship", "ship safety"],
+    },
+    "gpr-marine-engineering": {
+        "label": "Marine Engineering", "exam": "Synergy CET",
+        "subject": "Marine Engineering", "kw": "marine",
+        "match": ["marine engineering", "gp rating engine", "machinery workshop", "engine room",
+                  "gpr-marine-engineering", "workshop practice", "marine engine"],
+    },
+    "gpr-numerical": {
+        "label": "Numerical Reasoning", "exam": "SSC CGL", "subject": "Quantitative Aptitude",
+        "kw": "quant",
+        "match": ["gp rating numerical", "numerical reasoning", "gpr-numerical",
+                  "merchant navy maths", "gp rating maths"],
+    },
+    "gpr-logical": {
+        "label": "Logical Reasoning", "exam": "SSC CGL", "subject": "Reasoning", "kw": "reasoning",
+        "match": ["gp rating reasoning", "gpr-logical", "merchant navy reasoning",
+                  "gp rating logical"],
+    },
+    "gpr-gk": {
+        "label": "General Knowledge", "exam": "SSC CGL", "subject": "General Knowledge", "kw": "gk",
+        "match": ["gp rating gk", "gpr-gk", "merchant navy gk", "gp rating general knowledge"],
     },
 }
 
@@ -309,6 +356,13 @@ GOALS = {
         "subjects": ["railway-reasoning", "railway-quant", "railway-gk", "railway-english",
                      "railway-science", "current-affairs"],
     },
+    # Merchant Navy GP Rating (Synergy CET sponsorship entrance). Technical subjects first —
+    # they are the reason a candidate picks this goal over the generic SSC track.
+    "gp-rating": {
+        "label": "Merchant Navy (GP Rating)", "tag": "Synergy CET · Sponsorship", "emoji": "⚓",
+        "subjects": ["gpr-ship-knowledge", "gpr-marine-engineering", "gpr-numerical",
+                     "gpr-logical", "gpr-gk"],
+    },
 }
 DEFAULT_GOAL = "jee-advanced"
 
@@ -348,6 +402,9 @@ DIFFICULTY_LADDER = {
     "BPSC": {"easy": "2", "mix": "3", "hard": "3"},
     # Current Affairs — manual-entry real dated Qs; difficulty bypassed via storage skip.
     "Current Affairs": {"easy": "2", "mix": "2", "hard": "2"},
+    # Synergy CET (GP Rating) — technical subjects are RAG-generated at the same bands as the
+    # other generated pools. The aptitude subjects route to exam="SSC CGL" and use ITS ladder.
+    "Synergy CET": {"easy": "2", "mix": "2-3", "hard": "3"},
     # Railway (RRB) — same generated pattern/bands as SSC CGL.
     "Railway (RRB)": {"easy": "2", "mix": "2-3", "hard": "3"},
 }
@@ -487,13 +544,42 @@ def pool_available() -> bool:
     return qs is not None
 
 
-def _letter_to_index(letter: str, options: list) -> int:
-    """Map a correct-answer letter ('B') to the option's position; fall back to A=0."""
-    letter = (letter or "").strip().upper()[:1]
+def _letter_to_index(answer: str, options: list) -> int:
+    """Resolve a question's correct answer to its option position, or **-1 if it cannot be
+    resolved with certainty** — in which case the caller MUST drop the question.
+
+    ⚠️ This used to `return 0` on any parse failure ("fall back to A=0"). That silently shipped a
+    WRONG answer key: an unparseable answer became "A" in the printed key, in the on-screen
+    grading, and in the solution box, with no error logged anywhere. For a test-series product a
+    wrong answer is unrecoverable brand damage, so an unresolvable answer now REMOVES the
+    question instead of guessing. Never reintroduce a positional default here.
+    """
+    raw = "" if answer is None else str(answer).strip()
+    if not raw or not options:
+        return -1
+    n = len(options)
+    norm = raw.upper().strip("()[].:· ")
+
+    # 1. exact label match — handles "B", "b", "(B)", "B." against the option's own label
     for i, o in enumerate(options):
-        if str(o.get("label", "")).strip().upper() == letter:
+        lab = str((o or {}).get("label", "") or "").upper().strip("()[].:· ")
+        if lab and lab == norm:
             return i
-    return {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4}.get(letter, 0)
+
+    # 2. a bare letter, resolved positionally — ONLY if it lands inside the option list.
+    #    (The old dict allowed "E"->4 on a 4-option question: an out-of-range index that marked
+    #    every answer wrong on screen and printed the wrong letter.)
+    if len(norm) == 1 and "A" <= norm <= "Z":
+        idx = ord(norm) - 65
+        return idx if 0 <= idx < n else -1
+
+    # 3. exact option TEXT match — some sources store the answer itself, not a letter
+    for i, o in enumerate(options):
+        if str((o or {}).get("text", "") or "").strip() == raw:
+            return i
+
+    # 4. a digit, a multi-letter key ("AC"), prose, a mangled field — AMBIGUOUS. Refuse.
+    return -1
 
 
 def _generate_one(subject_id: str, chapter: str, concept: str | None,
@@ -523,6 +609,26 @@ def _generate_one(subject_id: str, chapter: str, concept: str | None,
         return []
 
 
+
+def _shuffled_options(texts: list[str], correct: int, seed_key: str) -> tuple[list[str], int]:
+    """Randomise option order and remap the answer index.
+
+    WHY: several ingested banks (CBSE Class 10 Science/Maths, Class 12 Physics) store the correct
+    option FIRST — ~96-99% of their answers are "A". Served raw, a student scores full marks by
+    ticking A down the page, and a printed answer key is a column of A's. Rather than re-key tens of
+    thousands of rows, the paper is randomised at build time, which fixes every bank at once.
+
+    The shuffle is SEEDED ON THE QUESTION ID, so it is deterministic: the printed paper, the online
+    test and the answer key all get the SAME order. A random shuffle here would silently desync the
+    printout from what students see.
+    """
+    if len(texts) < 2 or not (0 <= correct < len(texts)):
+        return texts, correct
+    order = list(range(len(texts)))
+    random.Random("trigunai:" + str(seed_key)).shuffle(order)
+    return [texts[i] for i in order], order.index(correct)
+
+
 def _to_pack_question(q: dict) -> dict | None:
     """examgen MCQ → assess.html pack question shape (English-only → hi mirrors en)."""
     if (q.get("qtype") or "").lower() != "mcq_single":
@@ -532,6 +638,14 @@ def _to_pack_question(q: dict) -> dict | None:
     if len(texts) < 2:
         return None
     correct = _letter_to_index(q.get("correct_answer", ""), opts)
+    if correct < 0:
+        # We could not establish the right answer. Serving it anyway would print a wrong answer
+        # key and mis-grade the student — so drop it. Better a 4-question paper than a 5-question
+        # paper with one wrong answer. Logged LOUDLY so a bad source shows up instead of hiding.
+        print(f"[examgen] DROPPED question {q.get('id')!r}: correct_answer "
+              f"{q.get('correct_answer')!r} does not resolve against {len(opts)} options")
+        return None
+    texts, correct = _shuffled_options(texts, correct, q.get("id") or q.get("stem", ""))
     tag = q.get("concept") or q.get("chapter") or "JEE Physics"
     lang = {"tag": tag, "q": str(q.get("stem", "")),
             "opts": texts, "explain": str(q.get("solution", ""))}
@@ -619,3 +733,51 @@ def _wrap_pack(results: list[dict], title: str) -> dict | None:
         "topicMap": [q["topic"] for q in results],
         "questions": results,
     }
+
+
+def build_mixed_pack(sections: list[dict], title: str, exclude: list[str] | None = None) -> dict | None:
+    """Assemble ONE multi-section paper (e.g. BSSC: 50 reasoning + 25 science + 25 maths + 50 GS).
+
+    sections = [{"subject": <rag id>, "n": int, "diff": "2-3"}, ...] — order is preserved, and each
+    question's topic is stamped with its section label so the student sees which part they're in.
+    POOL-ONLY by design: a 150-question paper through live /generate would take over an hour, and the
+    pool is deep enough for the govt-exam subjects this is built for. Returns the pack; the caller
+    should compare len(questions) against what was asked and tell the teacher if a section came short.
+    """
+    seen = set(str(x) for x in (exclude or []))
+    out: list[dict] = []
+    for sec in sections:
+        sid = (sec.get("subject") or "").strip()
+        cfg = RAG_SUBJECTS.get(sid)
+        if not cfg:
+            continue
+        want = max(1, min(int(sec.get("n") or 5), 100))
+        diff = (sec.get("diff") or difficulty_ladder(sid)["mix"]).strip()
+        label = sec.get("label") or cfg["label"]
+        got, tries = 0, 0
+        while got < want and tries < 6:
+            tries += 1
+            qs, _ = fetch_pool(sid, "", None, diff, "MCQ_single",
+                               min(50, (want - got) * 2), exclude=list(seen)[:300])
+            if not qs:
+                break
+            fresh = 0
+            for q in qs:
+                qid = str(q.get("id") or "")
+                if qid and qid in seen:
+                    continue
+                pq = _to_pack_question(q)          # drops anything whose answer can't be resolved
+                if not pq:
+                    continue
+                if qid:
+                    seen.add(qid)
+                pq["topic"] = {"en": label, "hi": label}
+                pq["section"] = label
+                out.append(pq)
+                got += 1
+                fresh += 1
+                if got >= want:
+                    break
+            if not fresh:
+                break
+    return _wrap_pack(out, title) if out else None

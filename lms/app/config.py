@@ -76,6 +76,7 @@ class Settings:
     # Solo/Coaching/Institute tiers. Billing still closes over WhatsApp/transfer (CONTACT_WA).
     PRICE_FOUNDATION_INR = int(os.getenv("PRICE_FOUNDATION_INR", "150"))   # Junior / Foundation / Board
     PRICE_SENIOR_INR = int(os.getenv("PRICE_SENIOR_INR", "250"))           # JEE / NEET / Senior
+    PRICE_KIDS_INR = int(os.getenv("PRICE_KIDS_INR", "499"))               # Acharya Kids (classes 1-5)
     # White-label branding is now a FREE self-serve feature (teacher /teacher/branding) — NOT a paid ₹55k
     # custom build. Kept only for any legacy reference; not surfaced anywhere.
     INSTITUTE_CUSTOM_INR = int(os.getenv("INSTITUTE_CUSTOM_INR", "0"))

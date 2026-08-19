@@ -29,11 +29,20 @@ def skill_key(board, cls, subject, chapter):
 _BANK = os.path.join(_ENG, "content", "bank")
 
 
+def _bank_path(board, cls, subject):
+    slug = f"{board}".lower().replace(" ", "") + f"_class{cls}_" + f"{subject}".lower().replace(" ", "")
+    return os.path.join(_BANK, slug + ".json")
+
+
+def _has_bank(board, cls, subject) -> bool:
+    """Is there a pooled bank behind this cell? (drives what the picker offers)"""
+    return os.path.exists(_bank_path(board, cls, subject))
+
+
 def _bank_items(board, cls, subject, chapter):
     """Pre-pooled worksheet items for a cell (offline fallback when live generation is empty —
     e.g. a knowledge subject whose LLM endpoint is unreachable). Enriched like live items."""
-    slug = f"{board}".lower().replace(" ", "") + f"_class{cls}_" + f"{subject}".lower().replace(" ", "")
-    path = os.path.join(_BANK, slug + ".json")
+    path = _bank_path(board, cls, subject)
     if not os.path.exists(path):
         return []
     try:
@@ -57,17 +66,65 @@ def _bank_items(board, cls, subject, chapter):
 
 # ---------- curriculum picker ----------
 def picker(board, cls):
-    """Return the subjects (with chapters) available for a board+class from the taxonomy."""
+    """Return the subjects (with chapters) available for a board+class from the taxonomy.
+
+    A subject is only OFFERED if we can actually serve it: Maths is computed (always available),
+    every knowledge subject needs its pooled bank. The taxonomy has cells we have no bank for yet
+    (Bihar Board knowledge outside Class 3) — showing those chips just walks a child into an empty
+    "pack being prepared" sheet, so they're filtered out here."""
     out = {}
     # names MUST match the curriculum file slugs (…_gk.json → "GK", not "General Knowledge")
     for subject in ["Mathematics", "EVS", "English", "GK", "Hindi"]:
         cell = WE.load_cell(board, cls, subject)
         if not cell:
             continue
+        if subject != "Mathematics" and not _has_bank(board, cls, subject):
+            continue
         chs = [c[0] for c in WE.chapters_of(cell) if c[0]]
         if chs:
             out[subject] = chs
     return out
+
+
+# ---------- what we ACTUALLY have (drives the landing page — no hand-typed marketing numbers) ----------
+BOARDS = ["CBSE", "ICSE", "Bihar Board"]
+SUBJECTS = ["Mathematics", "EVS", "English", "GK", "Hindi"]
+_COVERAGE = None
+
+
+def coverage():
+    """A factual map of the shipped content, read off the banks + curriculum ONCE at first use.
+
+    {"classes": {1: {"subjects": [...], "boards": {"CBSE": [...], ...}, "chapters": n}, ...},
+     "questions": <pooled knowledge questions>, "boards": [...]}
+    Maths is COMPUTED (its bank file is a 12-item stub), so it counts as a subject but contributes
+    no pooled total — the landing must never present those stubs as a question count."""
+    global _COVERAGE
+    if _COVERAGE is not None:
+        return _COVERAGE
+    import json
+    classes, pooled = {}, 0
+    for cls in range(1, 6):
+        boards, chapters = {}, 0
+        for board in BOARDS:
+            subs = picker(board, cls)
+            if not subs:
+                continue
+            boards[board] = sorted(subs.keys(), key=SUBJECTS.index)
+            chapters += sum(len(v) for v in subs.values())
+            for s in subs:
+                if s == "Mathematics":
+                    continue                      # computed, not pooled
+                try:
+                    d = json.load(open(_bank_path(board, cls, s), encoding="utf-8"))
+                    pooled += len(d if isinstance(d, list) else d.get("items", []))
+                except Exception:
+                    pass
+        union = sorted({s for v in boards.values() for s in v}, key=SUBJECTS.index)
+        classes[cls] = {"subjects": union, "boards": boards, "chapters": chapters}
+    _COVERAGE = {"classes": classes, "questions": pooled,
+                 "boards": [b for b in BOARDS if any(b in c["boards"] for c in classes.values())]}
+    return _COVERAGE
 
 
 # ---------- adaptive state ----------

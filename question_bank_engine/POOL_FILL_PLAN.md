@@ -40,6 +40,16 @@ spec, count)` per chapter until each subject pool hits the target.
   (a) fill ONE shared govt tag (e.g. "SSC CGL") + a tiny serving tweak so govt exams reuse it — **recommended, 1× work**; or
   (b) fill each exam's (exam,subject) pool separately — clean isolation, 3× the rows.
 
+  ✅ **DECIDED + WIRED 2026-08-18 (lms:v150) — option (a).** The Tier-1 fill landed under "SSC CGL"
+  but nothing ever pointed the Railway subjects at it, so `exam="Railway (RRB)"` sat at a pool of
+  **0 / 1 / 2 / 10** — every Railway test fell through to live LLM generation (~40-55s/question),
+  exactly the stall a field demo hits. Fixed in `lms/app/examgen.py` by repointing the four Railway
+  skill subjects' `exam` to `"SSC CGL"` (same borrow pattern as `railway-science` → CBSE Class 10
+  Science and `gs-*` → CBSE Class 12). Student-facing labels are unchanged; only the bank read from
+  is shared. **Result: railway-reasoning 1,007 · railway-quant 1,007 · railway-english 1,001 ·
+  railway-gk 1,000.** Split them out later ONLY if Railway needs genuinely different content.
+  Banking's skill subjects can be attached the same way if/when they're exposed.
+
 ### TIER 2 — MAP / BORROW ✅ DONE 2026-08-14 (lms:v143)
 GS-Science mapped to the **CBSE Class 12** real PYQ banks (they serve gen=0 via the CBSE real-serve gate;
 NEET only serves ~350 gen=1 each, so CBSE Class 12 was the right source). Added RAG_SUBJECTS `gs-physics`

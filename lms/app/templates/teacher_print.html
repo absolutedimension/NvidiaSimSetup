@@ -76,12 +76,15 @@
  {% if show_answers %}
  <div class="keyhead">Answer key</div>
  <div class="key">
-   {% for q in pack.questions %}<span>Q{{ loop.index }}: <b>{{ ['A','B','C','D','E','F'][q.correct] }}</b></span>{% endfor %}
+   {# NEVER print a guessed letter. An unresolved index shows "?" so a bad key is VISIBLE to the
+      teacher rather than silently reading as "A" — packs stored before the 2026-08-18 fix can
+      still carry a bad index. #}
+   {% for q in pack.questions %}<span>Q{{ loop.index }}: <b>{{ ['A','B','C','D','E','F'][q.correct] if q.correct is number and 0 <= q.correct < 6 else '?' }}</b></span>{% endfor %}
  </div>
  <div class="keyhead" style="page-break-before:auto;border-top:none;padding-top:0">Solutions</div>
  {% for q in pack.questions %}
  <div class="sol">
-   <div><span class="n">Q{{ loop.index }}.</span> <span class="ans">Answer: {{ ['A','B','C','D','E','F'][q.correct] }}</span></div>
+   <div><span class="n">Q{{ loop.index }}.</span> <span class="ans">Answer: {{ ['A','B','C','D','E','F'][q.correct] if q.correct is number and 0 <= q.correct < 6 else '?' }}</span></div>
    {% if q.en.explain %}<div class="ex">{{ q.en.explain | safe }}</div>{% endif %}
  </div>
  {% endfor %}
