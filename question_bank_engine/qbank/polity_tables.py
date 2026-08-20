@@ -54,6 +54,13 @@ ARTICLE_SUBJECT = {
 }
 
 # Amendment -> what it did. Distinct subjects, so a swap is always genuinely false.
+#
+# VERIFIED 2026-08-20 against the official Constitution text, each by the effect it left behind:
+# the Preamble's "SOVEREIGN SOCIALIST SECULAR" and "unity and integrity" (42nd); the omission
+# footnote on the right to property (44th); the Tenth Schedule on defection (52nd); Article 326
+# reading "not less than 2[eighteen years]", where footnote 2 is "(Sixty-first Amendment) Act,
+# 1988, s. 2, for 'twenty-one years'" (61st); Part IX THE PANCHAYATS (73rd); THE MUNICIPALITIES
+# (74th); Article 21A Right to education (86th); goods and services tax (101st).
 AMENDMENT_DID = {
     "42nd": "added the words Socialist, Secular and Integrity to the Preamble",
     "44th": "removed the right to property from the Fundamental Rights",
