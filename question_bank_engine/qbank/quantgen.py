@@ -445,37 +445,86 @@ def _b_percentage(rng, diff):
 # ---- Profit, Loss & Discount ------------------------------------------------
 
 def _b_profit_loss(rng, diff):
-    mode = rng.choice(["findSP", "findCP", "discount"])
-    if mode == "findSP":
-        cp = _mult(rng, 4, 20, 100)                 # multiple of 100 → SP is always whole
+    """Profit and loss. Difficulty = how many prices sit between the given and the asked.
+
+    diff 1  CP and % given          -> SP
+    diff 2  SP and % given          -> CP. Reversed, and the classic error (taking the percentage
+                                       of the SP instead of the CP) is a real option.
+    diff 3  MP, discount and profit -> the profit percent actually earned. Two prices to move
+                                       through, and the discount is on MP while the profit is on CP.
+    diff 4+ two successive discounts, then find the single equivalent discount, or the CP that
+            would yield a target profit after them.
+    """
+    if diff <= 1:
+        cp = _mult(rng, 4, 20, 100)
         pct = rng.choice([10, 12, 15, 20, 25])
         gain = rng.choice([1, -1])
         sp = cp * (100 + gain * pct) // 100
         word = "profit" if gain > 0 else "loss"
-        stem = f"An article is bought for {_rupees(cp)} and sold at a {word} of {pct}%. Find the selling price."
-        sol = f"SP = CP x (100 {'+' if gain>0 else '-'} {pct})/100 = {_rupees(cp)} x {100+gain*pct}/100 = {_rupees(sp)}."
-        d = [_rupees(cp * (100 - gain * pct) // 100), _rupees(cp), _rupees(cp + pct)]
-        return {"stem": stem, "correct": _rupees(sp), "distractors": d, "solution": sol,
+        stem = (f"An article is bought for {_rupees(cp)} and sold at a {word} of {pct}%. "
+                f"Find the selling price.")
+        sol = (f"SP = CP x (100 {'+' if gain > 0 else '-'} {pct})/100 = {cp} x "
+               f"{100 + gain * pct}/100 = {_rupees(sp)}.")
+        return {"stem": stem, "correct": _rupees(sp), "solution": sol,
+                "mistakes": mistakes(
+                    ("applied the percentage the other way — {} instead of {}".format(
+                        "loss" if gain > 0 else "profit", word),
+                     _rupees(cp * (100 - gain * pct) // 100)),
+                    ("treated the percent as rupees", _rupees(cp + gain * pct)),
+                    ("gave the profit amount rather than the selling price",
+                     _rupees(cp * pct // 100))),
                 "concept": "Profit / Loss %"}
-    if mode == "findCP":
-        cp = _mult(rng, 4, 20, 100)                 # multiple of 100 → SP & recovered CP whole
+    if diff == 2:
+        cp = _mult(rng, 4, 20, 100)
         pct = rng.choice([10, 20, 25])
         sp = cp * (100 + pct) // 100
-        stem = f"By selling an article for {_rupees(sp)}, a shopkeeper gains {pct}%. Find the cost price."
-        sol = f"CP = SP x 100/(100+{pct}) = {_rupees(sp)} x 100/{100+pct} = {_rupees(cp)}."
-        d = [_rupees(sp * 100 // (100 - pct)), _rupees(sp - pct), _rupees(sp * (100 - pct) // 100)]
-        return {"stem": stem, "correct": _rupees(cp), "distractors": d, "solution": sol,
+        stem = (f"By selling an article for {_rupees(sp)}, a shopkeeper gains {pct}%. "
+                f"Find the cost price.")
+        sol = f"CP = SP x 100/(100 + {pct}) = {sp} x 100/{100 + pct} = {_rupees(cp)}."
+        return {"stem": stem, "correct": _rupees(cp), "solution": sol,
+                "mistakes": mistakes(
+                    ("took {}% OF THE SELLING PRICE instead of working back to the cost"
+                     .format(pct), _rupees(sp * (100 - pct) // 100)),
+                    ("divided by (100 - {}) instead of (100 + {})".format(pct, pct),
+                     _rupees(sp * 100 // (100 - pct))),
+                    ("subtracted the percent as rupees", _rupees(sp - pct))),
                 "concept": "Profit / Loss %"}
-    mp = _mult(rng, 4, 20, 100)
-    disc = rng.choice([10, 15, 20, 25])
-    sp = mp * (100 - disc) // 100
-    stem = f"The marked price of an article is {_rupees(mp)}. A discount of {disc}% is offered. Find the selling price."
-    sol = f"SP = MP x (100-{disc})/100 = {_rupees(mp)} x {100-disc}/100 = {_rupees(sp)}."
-    d = [_rupees(mp * (100 + disc) // 100), _rupees(mp), _rupees(mp - disc)]
-    return {"stem": stem, "correct": _rupees(sp), "distractors": d, "solution": sol,
+    if diff == 3:
+        cp = _mult(rng, 4, 20, 100)
+        markup = rng.choice([40, 50, 60, 80])
+        disc = rng.choice([10, 20, 25])
+        mp = cp * (100 + markup) // 100
+        sp = mp * (100 - disc) // 100
+        gain_pct = Fraction((sp - cp) * 100, cp)
+        stem = (f"A shopkeeper marks an article {markup}% above its cost price of {_rupees(cp)} "
+                f"and then allows a discount of {disc}%. Find his profit percent.")
+        sol = (f"MP = {cp} x {100 + markup}/100 = {_rupees(mp)}; SP = {mp} x {100 - disc}/100 "
+               f"= {_rupees(sp)}. Profit% = ({sp} - {cp})/{cp} x 100 = {_num(gain_pct)}%.")
+        return {"stem": stem, "correct": _pct(gain_pct), "solution": sol,
+                "mistakes": mistakes(
+                    ("subtracted the discount from the mark-up", _pct(markup - disc)),
+                    ("took the discount on the COST price instead of the marked price",
+                     _pct(Fraction((cp * (100 + markup) // 100 - cp * disc // 100 - cp) * 100,
+                                   cp))),
+                    ("worked the profit percent on the SELLING price instead of the cost",
+                     _pct(Fraction((sp - cp) * 100, sp)))),
+                "concept": "Marked Price & Discount"}
+    # diff 4+ : two successive discounts -> the single equivalent discount
+    d1 = rng.choice([10, 20, 25])
+    d2 = rng.choice([x for x in (5, 10, 20) if x != d1])   # "10% and 10%" reads like a typo
+    eq = 100 - Fraction((100 - d1) * (100 - d2), 100)
+    stem = (f"An article is sold after two successive discounts of {d1}% and {d2}%. "
+            f"What single discount is equivalent to these two?")
+    sol = (f"Net factor = (100-{d1})/100 x (100-{d2})/100 = "
+           f"{_frac(Fraction((100 - d1) * (100 - d2), 10000))}. "
+           f"Equivalent discount = 100 - {_num(100 - eq)} = {_num(eq)}%.")
+    return {"stem": stem, "correct": _pct(eq), "solution": sol,
+            "mistakes": mistakes(
+                ("simply ADDED the two discounts", _pct(d1 + d2)),
+                ("took the second discount on the original price, not the reduced one",
+                 _pct(d1 + d2 - Fraction(d1 * d2, 200))),
+                ("averaged the two discounts", _pct(Fraction(d1 + d2, 2)))),
             "concept": "Marked Price & Discount"}
-
-# ---- Simple & Compound Interest --------------------------------------------
 
 def _b_si(rng, diff):
     """Simple interest, at a difficulty that changes the QUESTION rather than the numbers.
@@ -545,45 +594,157 @@ def _b_si(rng, diff):
             "concept": "Simple Interest"}
 
 def _b_ci(rng, diff):
-    mode = rng.choice(["amount", "diff"])
+    """Compound interest. Difficulty = how far the question sits from applying the formula once.
+
+    diff 1  CI for 2 years
+    diff 2  the CI-minus-SI difference for 2 years, which is where P(R/100)^2 gets tested
+    diff 3  half-yearly compounding — the rate halves and the periods double, and getting only
+            one of the two right is the standard error
+    diff 4+ reversed: the amount after 2 years is given, find the sum
+    """
     p = _mult(rng, 4, 20, 500)
     r = rng.choice([5, 10, 20])
-    if mode == "amount":
+    if diff <= 1:
         t = 2
         amt = Fraction(p) * (1 + Fraction(r, 100)) ** t
         ci = amt - p
-        stem = f"Find the compound interest on {_rupees(p)} at {r}% per annum for {t} years (compounded annually)."
-        sol = (f"Amount = P(1+R/100)^T = {p}(1+{r}/100)^2 = {_num(amt)}. "
-               f"CI = Amount - P = {_num(amt)} - {p} = {_num(ci)}.")
         si = p * r * t // 100
-        d = [_rupees(si), _rupees(float(ci) + p * r // 100), _rupees(float(amt))]
-        return {"stem": stem, "correct": _rupees(float(ci)), "distractors": d, "solution": sol,
+        stem = (f"Find the compound interest on {_rupees(p)} at {r}% per annum for {t} years "
+                f"(compounded annually).")
+        sol = (f"Amount = P(1 + R/100)^T = {p}(1 + {r}/100)^2 = {_num(amt)}. "
+               f"CI = Amount - P = {_num(amt)} - {p} = {_num(ci)}.")
+        return {"stem": stem, "correct": _rupees(float(ci)), "solution": sol,
+                "mistakes": mistakes(
+                    ("used SIMPLE interest", _rupees(si)),
+                    ("gave the AMOUNT instead of the interest", _rupees(float(amt))),
+                    ("compounded for one year only", _rupees(p * r // 100))),
                 "concept": "Compound Interest"}
-    # difference between CI and SI for 2 years = P (R/100)^2
-    diffv = Fraction(p) * Fraction(r, 100) ** 2
-    stem = (f"The difference between the compound interest and the simple interest on a sum of "
-            f"{_rupees(p)} at {r}% per annum for 2 years is:")
-    sol = f"Difference (2 yrs) = P(R/100)^2 = {p} x ({r}/100)^2 = {_num(diffv)}."
-    d = [_rupees(float(diffv) * 2), _rupees(p * r // 100), _rupees(float(diffv) + 10)]
-    return {"stem": stem, "correct": _rupees(float(diffv)), "distractors": d, "solution": sol,
+    if diff == 2:
+        diffv = Fraction(p) * Fraction(r, 100) ** 2
+        stem = (f"The difference between the compound interest and the simple interest on a sum "
+                f"of {_rupees(p)} at {r}% per annum for 2 years is:")
+        sol = f"Difference (2 years) = P(R/100)^2 = {p} x ({r}/100)^2 = {_num(diffv)}."
+        return {"stem": stem, "correct": _rupees(float(diffv)), "solution": sol,
+                "mistakes": mistakes(
+                    ("used P x R/100, i.e. one year's simple interest", _rupees(p * r // 100)),
+                    ("doubled the difference, as if it were for two years' worth",
+                     _rupees(float(diffv) * 2)),
+                    ("gave the full compound interest instead of the difference",
+                     _rupees(float(Fraction(p) * (1 + Fraction(r, 100)) ** 2 - p)))),
+                "concept": "Compound Interest"}
+    if diff == 3:
+        t = 1
+        half_r = Fraction(r, 2)
+        amt = Fraction(p) * (1 + half_r / 100) ** 2
+        ci = amt - p
+        stem = (f"Find the compound interest on {_rupees(p)} at {r}% per annum for {t} year, "
+                f"compounded half-yearly.")
+        sol = (f"Half-yearly: rate = {r}/2 = {_num(half_r)}% per half-year, periods = 2. "
+               f"Amount = {p}(1 + {_num(half_r)}/100)^2 = {_num(amt)}; CI = {_num(ci)}.")
+        annual = Fraction(p) * (1 + Fraction(r, 100)) - p
+        return {"stem": stem, "correct": _rupees(float(ci)), "solution": sol,
+                "mistakes": mistakes(
+                    ("halved the rate but forgot to double the periods",
+                     _rupees(float(Fraction(p) * (1 + half_r / 100) - p))),
+                    ("doubled the periods but kept the full rate",
+                     _rupees(float(Fraction(p) * (1 + Fraction(r, 100)) ** 2 - p))),
+                    ("compounded annually, ignoring 'half-yearly'", _rupees(float(annual)))),
+                "concept": "Compound Interest"}
+    # diff 4+ : reversed — amount after 2 years given, find the sum
+    amt = Fraction(p) * (1 + Fraction(r, 100)) ** 2
+    if amt.denominator != 1:                      # the amount is PRINTED, so keep it exact
+        p = _mult(rng, 4, 20, 10000)
+        amt = Fraction(p) * (1 + Fraction(r, 100)) ** 2
+    stem = (f"A sum of money amounts to {_rupees(float(amt))} in 2 years at {r}% per annum "
+            f"compound interest. Find the sum.")
+    sol = (f"P = Amount / (1 + R/100)^2 = {_num(amt)} / (1 + {r}/100)^2 = {_rupees(p)}.")
+    return {"stem": stem, "correct": _rupees(p), "solution": sol,
+            "mistakes": mistakes(
+                ("subtracted 2 x {}% of the amount, i.e. worked it as simple interest"
+                 .format(r), _rupees(float(amt * (1 - Fraction(2 * r, 100))))),
+                ("divided by (1 + R/100) once instead of twice",
+                 _rupees(float(amt / (1 + Fraction(r, 100))))),
+                ("gave the interest rather than the sum", _rupees(float(amt) - p))),
             "concept": "Compound Interest"}
 
-# ---- Ratio, Proportion & Partnership ---------------------------------------
-
 def _b_ratio(rng, diff):
+    """Ratio and proportion. Difficulty = whether the ratio can be used as given.
+
+    diff 1  three-way split of a known total
+    diff 2  the DIFFERENCE between two shares is given, not the total
+    diff 3  two ratios chained (A:B and B:C) that must be linked before anything can be split
+    diff 4+ a ratio that changes when a fixed amount is added to each part
+    """
     a, b, c = rng.sample([2, 3, 4, 5, 6, 7], 3)
     unit = _mult(rng, 3, 12, 100)
-    total = (a + b + c) * unit
-    who = rng.randint(0, 2)
-    parts = [a, b, c]
-    share = parts[who] * unit
-    stem = (f"An amount of {_rupees(total)} is divided among three people in the ratio "
-            f"{a} : {b} : {c}. Find the share of the {['first','second','third'][who]} person.")
-    sol = (f"Total ratio units = {a}+{b}+{c} = {a+b+c}. One unit = {total}/{a+b+c} = {unit}. "
-           f"Share = {parts[who]} x {unit} = {share}.")
-    d = [_rupees(parts[(who + 1) % 3] * unit), _rupees(parts[(who + 2) % 3] * unit),
-         _rupees(share + unit)]
-    return {"stem": stem, "correct": _rupees(share), "distractors": d, "solution": sol,
+    if diff <= 1:
+        total = (a + b + c) * unit
+        who = rng.randint(0, 2)
+        parts = [a, b, c]
+        share = parts[who] * unit
+        stem = (f"An amount of {_rupees(total)} is divided among three people in the ratio "
+                f"{a} : {b} : {c}. Find the share of the "
+                f"{['first', 'second', 'third'][who]} person.")
+        sol = (f"Total ratio units = {a}+{b}+{c} = {a + b + c}. One unit = {total}/{a + b + c} "
+               f"= {unit}. Share = {parts[who]} x {unit} = {_rupees(share)}.")
+        return {"stem": stem, "correct": _rupees(share), "solution": sol,
+                "mistakes": mistakes(
+                    ("gave another person's share", _rupees(parts[(who + 1) % 3] * unit)),
+                    ("divided the total equally instead of by the ratio",
+                     _rupees(total // 3)),
+                    ("divided by the person's ratio term instead of multiplying",
+                     _rupees(total // parts[who]))),
+                "concept": "Ratio & Proportion"}
+    if diff == 2:
+        hi, lo = max(a, b), min(a, b)
+        gap = (hi - lo) * unit
+        total = (hi + lo) * unit
+        stem = (f"Two people share an amount in the ratio {hi} : {lo}. If the first receives "
+                f"{_rupees(gap)} more than the second, find the total amount shared.")
+        sol = (f"The difference is {hi} - {lo} = {hi - lo} units = {_rupees(gap)}, so one unit "
+               f"= {_rupees(unit)}. Total = ({hi} + {lo}) x {unit} = {_rupees(total)}.")
+        return {"stem": stem, "correct": _rupees(total), "solution": sol,
+                "mistakes": mistakes(
+                    ("treated the difference as the TOTAL and split it", _rupees(gap)),
+                    ("divided the difference by the sum of the terms instead of the difference",
+                     _rupees((hi + lo) * gap // (hi + lo))),
+                    ("found only the larger share", _rupees(hi * unit))),
+                "concept": "Ratio & Proportion"}
+    if diff == 3:
+        # A:B = a:b and B:C = b2:c2 -> link on B, then split a known total
+        b2, c2 = rng.sample([2, 3, 4, 5, 6], 2)
+        A, B, C = a * b2, b * b2, b * c2
+        g = math.gcd(math.gcd(A, B), C)
+        A, B, C = A // g, B // g, C // g
+        total = (A + B + C) * unit
+        stem = (f"If A : B = {a} : {b} and B : C = {b2} : {c2}, and {_rupees(total)} is divided "
+                f"among A, B and C in that ratio, find C's share.")
+        sol = (f"A : B : C = {A} : {B} : {C}. One unit = {total}/{A + B + C} = {unit}. "
+               f"C's share = {C} x {unit} = {_rupees(C * unit)}.")
+        return {"stem": stem, "correct": _rupees(C * unit), "solution": sol,
+                "mistakes": mistakes(
+                    ("used c2 as C's term without linking the two ratios through B",
+                     _rupees(total * c2 // (a + b + c2))),
+                    ("gave A's share instead of C's", _rupees(A * unit)),
+                    ("split the amount equally", _rupees(total // 3))),
+                "concept": "Ratio & Proportion"}
+    # diff 4+ : the ratio changes when the same amount is added to both parts
+    x = rng.choice([2, 3, 4, 5])
+    y = rng.choice([w for w in (3, 4, 5, 7, 9) if w > x])
+    k = _mult(rng, 2, 9, 10)
+    add = _mult(rng, 1, 6, 10)
+    A0, B0 = x * k, y * k
+    g = math.gcd(A0 + add, B0 + add)
+    stem = (f"Two numbers are in the ratio {x} : {y}. If {add} is added to each, the ratio "
+            f"becomes {(A0 + add) // g} : {(B0 + add) // g}. Find the smaller number.")
+    sol = (f"Let the numbers be {x}n and {y}n. Then ({x}n + {add}) : ({y}n + {add}) = "
+           f"{(A0 + add) // g} : {(B0 + add) // g}, giving n = {k}. "
+           f"Smaller number = {x} x {k} = {A0}.")
+    return {"stem": stem, "correct": _num(A0), "solution": sol,
+            "mistakes": mistakes(
+                ("gave the LARGER number", _num(B0)),
+                ("gave the smaller number AFTER the addition", _num(A0 + add)),
+                ("used the new ratio as though it were the original", _num(x * (k + add)))),
             "concept": "Ratio & Proportion"}
 
 def _b_partnership(rng, diff):
@@ -950,25 +1111,83 @@ def _b_trains(rng, diff):
             "concept": "Trains"}
 
 def _b_boats(rng, diff):
-    b = rng.choice([8, 10, 12, 15, 18])
-    s = rng.choice([2, 3, 4, 5])
-    if s >= b:
-        s = 2
-    mode = rng.choice(["down", "up"])
-    eff = b + s if mode == "down" else b - s
-    t = rng.randint(2, 5)
-    dist = eff * t
-    dirn = "downstream" if mode == "down" else "upstream"
-    stem = (f"The speed of a boat in still water is {b} km/hr and the speed of the stream is "
-            f"{s} km/hr. How far can the boat travel {dirn} in {t} hours?")
-    sol = (f"{dirn.capitalize()} speed = {b} {'+' if mode=='down' else '-'} {s} = {eff} km/hr. "
-           f"Distance = {eff} x {t} = {dist} km.")
-    other = (b - s if mode == "down" else b + s) * t
-    d = [f"{other} km", f"{b*t} km", f"{dist + s} km"]
-    return {"stem": stem, "correct": f"{dist} km", "distractors": d, "solution": sol,
-            "concept": "Boats & Streams"}
+    """Boats and streams. Difficulty = how many of {boat, stream, up, down} are unknown.
 
-# ---- Mixtures & Alligations -------------------------------------------------
+    diff 1  boat and stream given          -> distance one way
+    diff 2  downstream and upstream SPEEDS -> the boat's speed and the stream's speed
+    diff 3  a distance covered each way with times given -> the stream's speed
+    diff 4+ the boat goes down and returns; total time given -> find the distance one way
+    """
+    b = rng.choice([8, 10, 12, 15, 18])
+    s = rng.choice([x for x in (2, 3, 4, 5) if x < b])
+    if diff <= 1:
+        mode = rng.choice(["down", "up"])
+        eff = b + s if mode == "down" else b - s
+        t = rng.randint(2, 5)
+        dist = eff * t
+        dirn = "downstream" if mode == "down" else "upstream"
+        stem = (f"The speed of a boat in still water is {b} km/hr and the speed of the stream is "
+                f"{s} km/hr. How far can the boat travel {dirn} in {t} hours?")
+        sol = (f"{dirn.capitalize()} speed = {b} {'+' if mode == 'down' else '-'} {s} = {eff} "
+               f"km/hr. Distance = {eff} x {t} = {dist} km.")
+        wrong_dir = (b - s if mode == "down" else b + s) * t
+        return {"stem": stem, "correct": f"{dist} km", "solution": sol,
+                "mistakes": mistakes(
+                    ("{} the stream speed instead of {}".format(
+                        "subtracted" if mode == "down" else "added",
+                        "adding it" if mode == "down" else "subtracting it"),
+                     f"{wrong_dir} km"),
+                    ("ignored the stream altogether", f"{b * t} km"),
+                    ("added the stream speed to the distance rather than to the speed",
+                     f"{b * t + s} km")),
+                "concept": "Boats & Streams"}
+    if diff == 2:
+        down, up = b + s, b - s
+        stem = (f"A boat covers {down} km/hr downstream and {up} km/hr upstream. Find the speed "
+                f"of the boat in still water.")
+        sol = (f"Boat speed = (downstream + upstream)/2 = ({down} + {up})/2 = {b} km/hr.")
+        return {"stem": stem, "correct": f"{b} km/hr", "solution": sol,
+                "mistakes": mistakes(
+                    ("used the DIFFERENCE over 2, which gives the stream's speed",
+                     f"{s} km/hr"),
+                    ("added the two speeds without halving", f"{down + up} km/hr"),
+                    ("took the downstream speed as the still-water speed", f"{down} km/hr")),
+                "concept": "Boats & Streams"}
+    if diff == 3:
+        t_down = rng.randint(2, 4)
+        dist = (b + s) * t_down
+        t_up = Fraction(dist, b - s)
+        if t_up.denominator != 1:                    # the time is PRINTED, keep it exact
+            return _b_boats(rng, 2)
+        stem = (f"A boat covers {dist} km downstream in {t_down} hours and the same distance "
+                f"upstream in {_num(t_up)} hours. Find the speed of the stream.")
+        sol = (f"Downstream speed = {dist}/{t_down} = {b + s} km/hr; upstream = "
+               f"{dist}/{_num(t_up)} = {b - s} km/hr. Stream = "
+               f"({b + s} - {b - s})/2 = {s} km/hr.")
+        return {"stem": stem, "correct": f"{s} km/hr", "solution": sol,
+                "mistakes": mistakes(
+                    ("used the SUM over 2, which gives the boat's speed", f"{b} km/hr"),
+                    ("subtracted the two speeds without halving", f"{2 * s} km/hr"),
+                    ("subtracted the two TIMES instead of the speeds",
+                     f"{_num(abs(t_up - t_down))} km/hr")),
+                "concept": "Boats & Streams"}
+    # diff 4+ : down and back, total time given -> distance one way
+    down, up = b + s, b - s
+    dist = down * up * rng.randint(1, 3)            # makes both legs exact
+    total = Fraction(dist, down) + Fraction(dist, up)
+    stem = (f"A boat whose speed in still water is {b} km/hr rows to a place and comes back. "
+            f"The stream flows at {s} km/hr and the whole trip takes {_num(total)} hours. "
+            f"How far is the place?")
+    sol = (f"Downstream {down} km/hr, upstream {up} km/hr. d/{down} + d/{up} = {_num(total)}, "
+           f"so d = {dist} km.")
+    return {"stem": stem, "correct": f"{dist} km", "solution": sol,
+            "mistakes": mistakes(
+                ("used the still-water speed for both legs", f"{_num(Fraction(total * b, 2))} km"),
+                ("treated the total time as the one-way time downstream",
+                 f"{_num(total * down)} km"),
+                ("gave the ROUND TRIP distance rather than the one-way distance",
+                 f"{2 * dist} km")),
+            "concept": "Boats & Streams"}
 
 def _b_alligation(rng, diff):
     c1 = rng.choice([20, 24, 30])                   # cheaper price/kg
