@@ -35,7 +35,43 @@ LET = ["A", "B", "C", "D", "E"]
 _DEV = re.compile(r"[\u0900-\u097f]")
 
 
-def load(inter_level=False):
+def gen_sig(q):
+    """Identity of a GENERATED question, independent of the name in the English stem.
+
+    reasoninggen varies the actor ("A boy starts..." / "Sita starts...") while keeping the same
+    numbers, and the Hindi template carries no name at all — so two such questions are the SAME
+    question with byte-identical Hindi. Keying on the English stem let one through into both sets.
+    Signature is therefore the concept, the numbers in the question, and the option set.
+    """
+    nums = tuple(re.findall(r"\d+", (q.get("stem") or "")))
+    opts = tuple(sorted((o.get("text") or "").strip() for o in q.get("options") or []))
+    return "|".join([str(q.get("concept") or q.get("qtype") or ""), ",".join(nums), "~".join(opts)])
+
+
+def qid(q):
+    """Identity of a real question: its number within its source booklet."""
+    return [q.get("number"), q.get("source_pdf")]
+
+
+def load_manifest(path):
+    try:
+        return json.load(io.open(path, encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def taken_by_other_sets(manifest, this_set):
+    """Everything the OTHER sets already used — so rebuilding set N never fights itself."""
+    real, gen = set(), set()
+    for k, v in manifest.items():
+        if str(k) == str(this_set):
+            continue
+        real |= {tuple(x) for x in v.get("real", [])}
+        gen |= set(v.get("gen", []))          # signatures, see gen_sig
+    return real, gen
+
+
+def load(inter_level=False, exclude=frozenset()):
     qs = []
     for f in glob.glob(str(REPO / "question_bank_engine/drop/bssc/*_KEYED.json")):
         for q in json.load(io.open(f, encoding="utf-8")):
@@ -43,6 +79,8 @@ def load(inter_level=False):
             # LETTER as the text, or two identical options. 21 of these 497 are in that state and
             # 13 of them reached the first build of this paper.
             if not (q.get("tag") and servable(q, need_hindi=True)):
+                continue
+            if tuple(qid(q)) in exclude:
                 continue
             # Advt 02/23(A) names an arithmetic-only maths syllabus. Our maths stock comes mostly
             # from Advt 0111, a CLERK exam whose paper ranged wider, so it carries polynomials,
@@ -106,23 +144,30 @@ def load_hindi_generated(n, cap_per_concept=6):
     for q in json.load(io.open(p, encoding="utf-8")):
         if not (q.get("stem") and q.get("correct_answer") and len(q.get("options") or []) == 4):
             continue
+        if gen_sig(q) in exclude:
+            continue
         q["_generated"] = True
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
         random.shuffle(b)
     order = sorted(buckets, key=lambda k: -len(buckets[k]))
-    out, rnd = [], 0
-    while len(out) < n and rnd < cap_per_concept:
+    # Deal round-robin so the section stays varied. The cap is a PREFERENCE, not a wall: once
+    # every concept has contributed cap_per_concept, keep dealing rather than return a short
+    # section — a 146-question paper is a worse outcome than a slightly uneven one.
+    out, rnd, deepest = [], 0, max((len(v) for v in buckets.values()), default=0)
+    while len(out) < n and rnd < deepest:
         for k in order:
             if len(out) >= n:
                 break
             if len(buckets[k]) > rnd:
                 out.append(buckets[k][rnd])
         rnd += 1
+        if rnd == cap_per_concept and len(out) < n:
+            print(f"  note: reasoning spread exceeded {cap_per_concept}/concept to fill the section")
     return out[:n]
 
 
-def load_generated(n, cap_per_concept=3):
+def load_generated(n, cap_per_concept=3, exclude=frozenset()):
     """Bilingual reasoning with COMPUTED answers, only used by --structure official3.
 
     Capped and dealt round-robin BY CONCEPT, not by stem text: three direction questions read
@@ -137,23 +182,38 @@ def load_generated(n, cap_per_concept=3):
     for q in json.load(io.open(p, encoding="utf-8")):
         if not (q.get("stem") and q.get("correct_answer") and len(q.get("options") or []) == 4):
             continue
+        if gen_sig(q) in exclude:
+            continue
         q["_generated"] = True
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
         random.shuffle(b)
+    for k in list(buckets):                    # drop same-question-different-name clones
+        seen, uniq = set(), []
+        for q in buckets[k]:
+            g = gen_sig(q)
+            if g in seen:
+                continue
+            seen.add(g); uniq.append(q)
+        buckets[k] = uniq
     order = sorted(buckets, key=lambda k: -len(buckets[k]))
     # Raise the per-concept cap only as far as the request forces. With 11 concepts a cap of 3
     # tops out at 33, so a 35-question Part III silently came back short — the paper printed 148.
     if order:
         cap_per_concept = max(cap_per_concept, -(-n // len(order)))
-    out, rnd = [], 0
-    while len(out) < n and rnd < cap_per_concept:
+    # Deal round-robin so the section stays varied. The cap is a PREFERENCE, not a wall: once
+    # every concept has contributed cap_per_concept, keep dealing rather than return a short
+    # section — a 146-question paper is a worse outcome than a slightly uneven one.
+    out, rnd, deepest = [], 0, max((len(v) for v in buckets.values()), default=0)
+    while len(out) < n and rnd < deepest:
         for k in order:
             if len(out) >= n:
                 break
             if len(buckets[k]) > rnd:
                 out.append(buckets[k][rnd])
         rnd += 1
+        if rnd == cap_per_concept and len(out) < n:
+            print(f"  note: reasoning spread exceeded {cap_per_concept}/concept to fill the section")
     return out[:n]
 
 
@@ -165,6 +225,12 @@ def main():
                     help="real4 = 100%% real, 4 parts shaped to what the papers actually contain "
                          "(GS/Sci+Maths/Hindi/Reasoning). official3 = the commission's 3x50 "
                          "layout, which needs ~35 GENERATED reasoning questions to fill Part III.")
+    ap.add_argument("--set", type=int, default=1,
+                    help="Which set of the series to build. Sets never share a question: every "
+                         "question a set uses is recorded in the manifest, and later sets exclude "
+                         "everything the other sets already took.")
+    ap.add_argument("--manifest", default=str(REPO / "teacher_gtm/InterLevel_sets_used.json"),
+                    help="Ledger of which questions each set has consumed.")
     ap.add_argument("--inter-level", action="store_true",
                     help="Build for BSSC 2nd Inter Level (Advt 02/23-A). Forces the commission's "
                          "OWN three-section prelim structure — GS / Science+Maths / Mental Ability, "
@@ -176,8 +242,13 @@ def main():
                          "- see the note in load_hindi_generated().")
     a = ap.parse_args()
 
-    random.seed(20260820)
-    qs = load(inter_level=a.inter_level)
+    random.seed(20260820 + a.set * 1009)
+    manifest = load_manifest(a.manifest)
+    used_real, used_gen = taken_by_other_sets(manifest, a.set)
+    if used_real or used_gen:
+        print(f"  excluding {len(used_real)} real + {len(used_gen)} generated questions "
+              f"already used by other sets")
+    qs = load(inter_level=a.inter_level, exclude=used_real)
     by = {}
     for q in qs:
         by.setdefault(q["tag"]["section"], []).append(q)
@@ -220,9 +291,9 @@ def main():
         pool = [q for s in secs for q in by.get(s, [])]
         got = pick(pool, want, used, tmpl)
         if a.structure == "official3" and len(got) < want:
-            got += load_generated(want - len(got))
+            got += load_generated(want - len(got), exclude=used_gen)
         if secs == ["Hindi"] and a.hindi_source == "generated":
-            got = load_hindi_generated(want)
+            got = load_hindi_generated(want)   # (real4 only; Inter Level has no Hindi section)
         paper.append((title, got)); n += len(got)
 
     logo_html, logo_b64, logo_ext = "", "", "png"
@@ -327,6 +398,7 @@ def main():
     <div class="co">ONE STEP EDUCATION</div><div class="sub2">PATNA</div>
     <div class="sub">बिहार कर्मचारी चयन आयोग &mdash; <b>द्वितीय इंटर स्तरीय संयुक्त प्रतियोगिता परीक्षा</b></div>
     <div class="sub">विज्ञापन संख्या <b>02/23 (A)</b> &middot; कुल रिक्तियाँ <b>25,311</b></div>
+    <div class="setno">अभ्यास प्रश्न-पत्र &mdash; <b>सेट {a.set}</b> / PRACTICE PAPER &mdash; <b>SET {a.set}</b></div>
   </div></div><div class="rule"></div>
 
   <div class="claim">यह अभ्यास प्रश्न-पत्र बिहार कर्मचारी चयन आयोग द्वारा विज्ञापन संख्या&ndash;02/23(A) में
@@ -385,7 +457,7 @@ def main():
     HEAD = f"""<div class="lh">{logo_html}<div>
 <div class="co">ONE STEP EDUCATION</div><div class="sub2">PATNA</div>
 <div class="sub">{TITLE_LINE}</div>
-<div class="sub"><b>भाग I, II एवं IV: आयोग के वास्तविक विगत प्रश्न</b> &middot; आदर्श उत्तर कुंजी सहित</div>
+<div class="sub"><b>{"सेट " + str(a.set) + " · " if a.inter_level else ""}</b>आदर्श उत्तर कुंजी सहित</div>
 </div></div><div class="rule"></div>"""
 
     # position:fixed repeats on every printed page in Chrome, which is what makes this a
@@ -441,6 +513,8 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
 .syl {{ font-size:8.5pt; border:1px solid #eee8d8; border-radius:4px; padding:8px 10px; margin-bottom:8px; }}
 .syl i {{ color:#8a6d1a; font-style:normal; font-weight:600; }}
 .syl .lvl {{ color:#8d8676; font-size:7.6pt; }}
+.setno {{ display:inline-block; margin-top:5px; font-size:8.4pt; color:#8a6d1a;
+          border:1px solid #c9a227; border-radius:3px; padding:2px 9px; background:#fdfaf0; }}
 .src {{ font-size:7.4pt; color:#9296a2; margin-top:10px; }}
 {WATERMARK_CSS}
 .foot {{ border-top:1px solid #ddd8c8; margin-top:12px; padding-top:4px; font-size:7.3pt; color:#9296a2; text-align:center; }}
@@ -475,6 +549,14 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
     if os.path.exists(chrome):
         subprocess.run([chrome, "--headless", "--disable-gpu", "--no-pdf-header-footer",
                         f"--print-to-pdf={pdf}", out_html.as_uri()], capture_output=True, timeout=300)
+    # Record what this set consumed, so the next set can avoid all of it.
+    manifest[str(a.set)] = {
+        "real": [qid(q) for _, items in paper for q in items if not q.get("_generated")],
+        "gen": [gen_sig(q) for _, items in paper for q in items if q.get("_generated")],
+        "out": os.path.basename(str(a.out)),
+    }
+    json.dump(manifest, io.open(a.manifest, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
     for t, items in paper:
         print(f"  {t[:52]:54s} {len(items):3d}")
     print(f"\n{n} bilingual questions | {n - n_gen} REAL official + {n_gen} generated "

@@ -137,7 +137,7 @@ _ABOVE_SYLLABUS = re.compile(r"""
   | \blocus\b | \bsimilar\ triangles\b | \bcongruen | \bcollinear\b | \bperpendicular\b
   | \bdistribution\b | \\Delta | \bDelta\ [A-Z]{3}\b | \bbisector\b | \bparallel\ to\b
   # Devanagari equivalents
-  | बहुपद | द्विघात | समान्तर\ श्रेणी | त्रिकोणमिति | वृत्त | त्रिज्या | परिधि | क्षेत्रफल
+  | बहुपद | द्विघात | समान्तर\ श्रेणी | त्रिकोणमिति | (?<!प्र)वृत्त | त्रिज्या | परिधि | क्षेत्रफल
   | आयतन | त्रिभुज | चतुर्भुज | बेलन | शंकु | गोला | प्रायिकता | माध्यिका | बहुलक | निर्देशांक
 """, re.I | re.X)
 
@@ -163,9 +163,12 @@ def inter_level_maths_ok(q):
 # Computer/IT knowledge is NOT in the Inter Level prelim syllabus. It appears in the advertisement
 # only as a TECHNICAL ELIGIBILITY requirement (Hindi word-processing / typing), tested separately —
 # not as a prelim subject. Our stock carries a few from clerk papers that did examine it.
+# NOTE the (?-i:...) groups: RAM and CPU must stay CASE-SENSITIVE. Case-insensitively, \bRAM\b
+# matches the name "Ram" and silently dropped every question mentioning Ram Mohan Roy — a real
+# loss, since the size of this pool is what caps how many unique sets we can build.
 _COMPUTER = re.compile(r"MS[- ]?Word|MS[- ]?Excel|PowerPoint|\bkeyboard\b|shortcut|\bsoftware\b"
-                       r"|\bhardware\b|\bcomputer\b|Ctrl\s*\+|\bRAM\b|\bCPU\b|operating\s+system"
-                       r"|कंप्यूटर|कम्प्यूटर", re.I)
+                       r"|\bhardware\b|\bcomputer\b|Ctrl\s*\+|(?-i:\bRAM\b|\bCPU\b)"
+                       r"|operating\s+system|कंप्यूटर|कम्प्यूटर", re.I)
 
 # "(32) ____ range of flora" — a numbered blank belonging to a comprehension PASSAGE that we do not
 # hold. Standing alone on a paper it is unanswerable, whatever the official key says.
