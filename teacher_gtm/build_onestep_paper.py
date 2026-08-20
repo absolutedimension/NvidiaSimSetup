@@ -754,11 +754,25 @@ def main():
     if _e + _m + _h != 100:
         raise SystemExit(f"--difficulty-mix must sum to 100, got {_e + _m + _h}")
 
+    _mix_call = {"n": 0}
+
     def mix_for(want):
-        """Turn the requested percentages into per-band counts for a section of `want` questions."""
+        """The requested PERCENTAGES as whole-question counts for a section of `want` questions.
+
+        15% of a 50-question section is 7.5 questions, which cannot be printed. Rounding the same
+        way in every section compounds that half three times over, and the paper came out 14/16/70
+        against a requested 15/15/70. So the spare question alternates between the easy and medium
+        bands from one section to the next, and the paper-wide totals land as close to the request
+        as whole questions allow.
+        """
         hard = round(want * _h / 100)
-        med = round(want * _m / 100)
-        return {3: hard, 2: med, 1: max(want - hard - med, 0)}
+        rest = want - hard
+        exact_e = want * _e / 100
+        lo = int(exact_e)
+        easy = (lo + 1) if (_mix_call["n"] % 2 == 0 and exact_e != lo) else lo
+        _mix_call["n"] += 1
+        easy = max(0, min(easy, rest))
+        return {3: hard, 2: rest - easy, 1: easy}
 
     random.seed(20260820 + a.set * 1009)
     manifest = load_manifest(a.manifest)
@@ -1254,6 +1268,10 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
     # worse than no quota: it reads as "we built to a spec" when the bank could not supply it, and
     # that is exactly the gap the owner spotted the first time.
     from collections import Counter
+    # mix_for alternates the spare question, so it is STATEFUL — calling it again for the report
+    # advanced the counter and printed each section's target out of phase with the one it was
+    # actually built to, inventing a "SHORT" on sections that were exactly right.
+    _mix_call["n"] = 0
     for t, items in paper:
         # Count EVERYTHING on the page, not just the official questions. While the mix could
         # only be met from the bank that distinction did not matter; now that generation can fill
