@@ -53,6 +53,90 @@
    "was": "NaVigat Bharat",
    "now": "NaViGate Bharat",
    "index": 2
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 2,
+   "field": "stem",
+   "source_page": "03_25_SET_A.pdf, question 2",
+   "found_by": "blind AI re-solve, Hindi route — named the right composer and then flagged the title",
+   "problem": "Samudragupta's panegyric is the Prayāga PRAŚASTI (the Allahabad Pillar Inscription). 'Prayāga Prakāśa' is not a work. The keyed answer (Harishena) is correct for the Praśasti, so the question is sound once its subject is named properly.",
+   "was": "Who composed the ‘Prayāga Prakāśa’ that praised the achievements of Samudragupta?",
+   "now": "Who composed the ‘Prayāga Praśasti’ that praised the achievements of Samudragupta?"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 2,
+   "field": "stem_hi",
+   "source_page": "03_25_SET_A.pdf, question 2",
+   "found_by": "same",
+   "problem": "Same wrong title in Hindi: 'प्रयाग प्रकाश' for प्रयाग प्रशस्ति.",
+   "was": "किसने 'प्रयाग प्रकाश' की रचना की जो समुद्रगुप्त की उपलब्धियों की प्रशंसा करता है ?",
+   "now": "किसने 'प्रयाग प्रशस्ति' की रचना की जो समुद्रगुप्त की उपलब्धियों की प्रशंसा करता है ?"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 2,
+   "field": "options_hi",
+   "index": 1,
+   "source_page": "03_25_SET_A.pdf, question 2",
+   "found_by": "same",
+   "problem": "The composer's name in Hindi is हरिषेण; 'हरिशेना' is a back-transliteration of the English spelling.",
+   "was": "हरिशेना",
+   "now": "हरिषेण"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 85,
+   "field": "options_hi",
+   "index": 0,
+   "source_page": "03_25_SET_A.pdf, question 85",
+   "found_by": "blind AI re-solve, Hindi route — it answered D, and its reasoning shows why: it could not find 'divergent evolution' among the Hindi options",
+   "problem": "Divergent evolution is अपसारी विकास. 'विभाजनात्मक विकास' means divisional/splitting evolution and is not the term — so the Hindi paper offers no correct answer while the English one reads perfectly. No cross-language check can see this: the option counts match, the numbers match, and the script is clean Devanagari.",
+   "was": "विभाजनात्मक विकास",
+   "now": "अपसारी विकास"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 85,
+   "field": "options_hi",
+   "index": 3,
+   "source_page": "03_25_SET_A.pdf, question 85",
+   "found_by": "same",
+   "problem": "Convergent evolution is अभिसारी विकास; 'संविलयन विकास' is not a term. As printed, the distractor was closer to correct than the answer.",
+   "was": "संविलयन विकास",
+   "now": "अभिसारी विकास"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 99,
+   "field": "options_hi",
+   "index": 0,
+   "source_page": "03_25_SET_A.pdf, question 99",
+   "found_by": "blind AI re-solve, Hindi route — answered 'X', saying प्रतिलेखन was not on offer",
+   "problem": "Transcription (DNA → RNA) is प्रतिलेखन. 'प्रतिलिपि' means a copy, which is if anything replication — the very next option. The Hindi answer was wrong while the English 'Transcription' was right.",
+   "was": "प्रतिलिपि",
+   "now": "प्रतिलेखन"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 134,
+   "field": "stem",
+   "source_page": "03_25_SET_A.pdf, question 134",
+   "found_by": "blind AI re-solve, Hindi route — 'राम के अकेले काम करने के दो अलग समय दिए हैं; प्रश्न असंगत है'",
+   "problem": "The second worker's name was lost: the Hindi names राम in BOTH sentences, so it states Ram paints the fence in 12 hours AND in 18 hours. Incoherent in Hindi, perfectly correct in English, and no cross-language check can see it — the numbers 12, 18 appear on both sides exactly as they should. (The Hindi sits in the record's  field, not  — the extraction's language labels are unreliable, see the script-routing note.)",
+   "was": "राम अकेले एक बाड़ को 12 घंटे में बना सकता है। राम अकेले बाड़ को 18 घंटे में बना सकता है। यदि वे दोनों एक साथ काम करते हैं, तो पूरी बाड़ को बनाने में उन्हें कितना समय लगेगा?",
+   "now": "राम अकेले एक बाड़ को 12 घंटे में बना सकता है। श्याम अकेले उसी बाड़ को 18 घंटे में बना सकती है। यदि वे दोनों एक साथ बिना रुके काम करें, तो पूरी बाड़ बनाने में उन्हें कितना समय लगेगा?"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 85,
+   "field": "stem_hi",
+   "source_page": "03_25_SET_A.pdf, question 85",
+   "found_by": "blind AI re-solve, Hindi route — across three runs it kept answering 'convergent', and its reasoning gave the game away: 'समानांग (analogous organs) अभिसारी विकास का संकेत देते हैं'",
+   "problem": "Homologous organs are समजात अंग in Hindi. 'समानांग' reads as 'similar organ', which a Hindi student takes for ANALOGOUS — the opposite concept, and the exact distinction the question is testing. The English 'homologous' is unambiguous, so the two halves of the question ask different things.",
+   "was": "समानांगों की उपस्थिति इंगित करती है :",
+   "now": "समजात अंगों (homologous organs) की उपस्थिति इंगित करती है :"
   }
  ]
 }

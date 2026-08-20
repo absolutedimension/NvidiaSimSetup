@@ -427,6 +427,14 @@ _KIN = {
 # pairs, with the English half of the same question perfectly correct — invisible to every check
 # that compares the two languages by their numbers. Found by solving the HINDI blind.
 _KIN_HI = {
+    # Grandparents and grandchildren split the same way, on whether the link is a son or a
+    # daughter: पोती is a son's daughter, नातिन a daughter's daughter. The first pass at this
+    # table covered only uncle/aunt/nephew/niece, so a blind Hindi solve came straight back with
+    # "मीना राम की नातिन है, पोती नहीं" on the very next paper.
+    ("father", "father"): "दादा", ("father", "mother"): "नाना",
+    ("mother", "father"): "दादी", ("mother", "mother"): "नानी",
+    ("son", "son"): "पोता", ("son", "daughter"): "नाती",
+    ("daughter", "son"): "पोती", ("daughter", "daughter"): "नातिन",
     ("brother", "father"): "चाचा", ("brother", "mother"): "मामा",
     ("sister", "father"): "बुआ", ("sister", "mother"): "मौसी",
     ("son", "brother"): "भतीजा", ("son", "sister"): "भांजा",

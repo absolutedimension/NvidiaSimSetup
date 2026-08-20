@@ -103,7 +103,13 @@ def options_of(segment):
     key_from_delivered.py carries its own copy of this: that module pulls in the whole builder
     stack, and this script has to run alone on the VM where the model proxy lives.
     """
+    # Cut the segment at its own closing tag first. Splitting the block on the OPENING <div
+    # class="ops"> makes each segment run to the NEXT options block, so the final option of the
+    # Hindi half swallowed the English stem that follows it — the Hindi route was being asked to
+    # choose between an option and an option-plus-a-question. The last options block in a question
+    # has no closing tag (Q_BLOCK consumed it), and split() handles that by returning it whole.
     out = []
+    segment = segment.split("</div>")[0]
     for chunk in segment.split('<span class="op">')[1:]:
         m = OPT_LABEL.match(chunk)
         if m:

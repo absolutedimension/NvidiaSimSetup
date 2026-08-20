@@ -377,6 +377,19 @@ def main():
             # before a gate existed would sail past it forever — which is exactly what happened
             # when a blind solve found "5 : 15 :: 7 : ?" answerable as both 21 (x3) and 28
             # (triangular), with both printed. A pin must preserve the paper, not its defects.
+            # Refresh each pinned question from the CURRENT pool, matched on its English stem.
+            # gen_full stores a copy, so a correction to the generated bank never reached a pinned
+            # paper: the Hindi kinship fix landed in REASONING_GEN.json and the paper went on
+            # printing पोती for a daughter's daughter. A pin should fix WHICH questions the paper
+            # asks, not freeze a stale copy of their text.
+            live = {re.sub(r"\s+", " ", (g.get("stem") or "")).strip(): g
+                    for g in load_generated(10 ** 6)}
+            refreshed = sum(1 for g in full
+                            if re.sub(r"\s+", " ", (g.get("stem") or "")).strip() in live)
+            full = [live.get(re.sub(r"\s+", " ", (g.get("stem") or "")).strip(), g) for g in full]
+            if refreshed:
+                print(f"  PIN: refreshed {refreshed}/{len(full)} generated questions from the "
+                      f"current pool (corrections propagate; the selection stays pinned)")
             pinned_gen = [dict(g, _generated=True) for g in full
                           if numbers_agree(g) and not analogy_ambiguous(g)
                           and not odd_one_out_ambiguous(g)]
@@ -490,6 +503,13 @@ def main():
             oh_l, oe_l = [], []
             for oa, ob in zip(q.get("options_hi") or q["options"], q["options"]):
                 h, e = split_lang(oa.get("text"), ob.get("text"))
+                # A language-NEUTRAL option ("5", "12.5%") belongs to both halves. split_lang hands
+                # it to English alone, which is right for a stem and wrong here: a question whose
+                # options are two numbers and two Hindi phrases rendered a two-option Hindi block,
+                # tripped the short-block fallback below, and printed the ENGLISH options to a
+                # Hindi reader even though the bank held the Hindi. 5 reads as 5 in both scripts.
+                if not h and e and not DEV.search(str(oa.get("text") or "")):
+                    h = e
                 oh_l.append((oa["label"], h)); oe_l.append((ob["label"], e))
             def render(pairs):
                 return "".join(f'<span class="op"><b>({lb})</b> {esc(t)}</span>'

@@ -61,8 +61,8 @@
  {
   "number": 2,
   "page": 1,
-  "stem": "Who composed the ‘Prayāga Prakāśa’ that praised the achievements of Samudragupta?",
-  "stem_hi": "किसने 'प्रयाग प्रकाश' की रचना की जो समुद्रगुप्त की उपलब्धियों की प्रशंसा करता है ?",
+  "stem": "Who composed the ‘Prayāga Praśasti’ that praised the achievements of Samudragupta?",
+  "stem_hi": "किसने 'प्रयाग प्रशस्ति' की रचना की जो समुद्रगुप्त की उपलब्धियों की प्रशंसा करता है ?",
   "options": [
    {
     "label": "A",
@@ -88,7 +88,7 @@
    },
    {
     "label": "B",
-    "text": "हरिशेना"
+    "text": "हरिषेण"
    },
    {
     "label": "C",
@@ -4959,7 +4959,7 @@
   "number": 85,
   "page": 21,
   "stem": "Presence of homologous organs indicates :",
-  "stem_hi": "समानांगों की उपस्थिति इंगित करती है :",
+  "stem_hi": "समजात अंगों (homologous organs) की उपस्थिति इंगित करती है :",
   "options": [
    {
     "label": "A",
@@ -4981,7 +4981,7 @@
   "options_hi": [
    {
     "label": "A",
-    "text": "विभाजनात्मक विकास"
+    "text": "अपसारी विकास"
    },
    {
     "label": "B",
@@ -4993,7 +4993,7 @@
    },
    {
     "label": "D",
-    "text": "संविलयन विकास"
+    "text": "अभिसारी विकास"
    }
   ],
   "type": "MCQ_single",
@@ -5807,7 +5807,7 @@
   "options_hi": [
    {
     "label": "A",
-    "text": "प्रतिलिपि"
+    "text": "प्रतिलेखन"
    },
    {
     "label": "B",
@@ -7849,7 +7849,7 @@
  {
   "number": 134,
   "page": 33,
-  "stem": "राम अकेले एक बाड़ को 12 घंटे में बना सकता है। राम अकेले बाड़ को 18 घंटे में बना सकता है। यदि वे दोनों एक साथ काम करते हैं, तो पूरी बाड़ को बनाने में उन्हें कितना समय लगेगा?",
+  "stem": "राम अकेले एक बाड़ को 12 घंटे में बना सकता है। श्याम अकेले उसी बाड़ को 18 घंटे में बना सकती है। यदि वे दोनों एक साथ बिना रुके काम करें, तो पूरी बाड़ बनाने में उन्हें कितना समय लगेगा?",
   "stem_hi": "Ram can paint a fence by himself in 12 hours. Shyam can paint the same fence by herself in 18 hours. If they start at the same time and work together without stopping, how long will it take them to paint the entire fence?",
   "options": [
    {
