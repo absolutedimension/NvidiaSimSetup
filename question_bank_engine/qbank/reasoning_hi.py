@@ -23,8 +23,16 @@ NAME = {
     "Ram": "राम", "Amit": "अमित", "Vikas": "विकास", "Rohan": "रोहन",
     "Arun": "अरुण", "Sunil": "सुनील",
     "Sita": "सीता", "Priya": "प्रिया", "Anjali": "अंजलि", "Meena": "मीना",
-    "Radha": "राधा", "Neha": "नेहा",
+    "Radha": "राधा", "Neha": "नेहा", "Rahul": "राहुल", "Sneha": "स्नेहा",
 }
+
+
+def missing_names(used):
+    """Names a builder can pick that have no Hindi. name() falls back to the ENGLISH spelling,
+    so a gap here prints Latin letters inside a Devanagari sentence — 'तथा Rahul बाईं ओर से' —
+    which is the same class of defect as the scanned 'बAREफुट' Rohan caught by eye. Silent, and
+    only visible if you read the Hindi. Builders should assert on this rather than trust it."""
+    return [n for n in used if n not in NAME]
 
 DIR = {"North": "उत्तर", "South": "दक्षिण", "East": "पूर्व", "West": "पश्चिम"}
 TURN = {"left": "बाएँ", "right": "दाएँ"}
@@ -53,8 +61,16 @@ def rel(x):
 
 
 def ordinal(n: int) -> str:
-    """Hindi ordinal as printed in exam papers: 1st -> पहले, otherwise 10वें."""
-    return {1: "पहले", 2: "दूसरे", 3: "तीसरे"}.get(n, f"{n}वें")
+    """Hindi ordinal as printed in exam papers: always the DIGIT, e.g. 3वें, 10वें.
+
+    The word forms (पहले, दूसरे, तीसरे) read more naturally, but they cost the paper real
+    questions: paper_common.numbers_agree() compares the digits in the two languages to catch a
+    Hindi template that dropped part of the question, and a word-form ordinal looks to it exactly
+    like a missing number. Every ranking question whose position happened to be 1, 2 or 3 was
+    being silently discarded. Bihar's own Hindi papers print "3वें स्थान पर", so the digit form
+    is both authentic and checkable.
+    """
+    return f"{n}वें"
 
 
 def rel_opts(english_options) -> dict:

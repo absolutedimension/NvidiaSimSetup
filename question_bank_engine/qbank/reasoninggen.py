@@ -96,7 +96,13 @@ def _pad(opts, correct, n):
 def _make_question(built: dict, rng, spec) -> Question:
     stem = built["stem"].strip()
     n_opts = len(built["options"]) if built.get("options") else 4
-    options, ans = _mcq(stem, built["correct"], built.get("distractors", []),
+    # Error-derived distractors win over hand-nudged ones. A "mistake" that lands ON the correct
+    # answer is dropped and flagged: those numbers reward a wrong method, so a candidate who
+    # forgets the -1 scores the mark and learns the wrong lesson.
+    mis = [m for m in (built.get("mistakes") or []) if m["text"] != str(built["correct"])]
+    collided = [m for m in (built.get("mistakes") or []) if m["text"] == str(built["correct"])]
+    options, ans = _mcq(stem, built["correct"],
+                        [m["text"] for m in mis] or built.get("distractors", []),
                         rng, n=n_opts, fixed=built.get("options"))
     diff = spec.get("dmax") or spec.get("dmin") or 2
     qid = "gen_reason_" + hashlib.md5(
@@ -116,6 +122,9 @@ def _make_question(built: dict, rng, spec) -> Question:
         chapter=spec.get("chapter"), concept=built.get("concept"), difficulty=diff,
         source="reasoninggen", generated=True, hash=content_hash(stem))
     q.verified = True
+    by_text = {m["text"]: m["why"] for m in mis}
+    q.distractor_why = {o["label"]: by_text[o["text"]] for o in options if o["text"] in by_text}
+    q.rewards_a_wrong_method = [m["why"] for m in collided]
     return q
 
 
@@ -143,32 +152,100 @@ _WORDS = ["TABLE", "CHAIR", "PLANT", "WATER", "LIGHT", "STONE", "BRAIN", "CLOUD"
 
 # ---- Coding-Decoding --------------------------------------------------------
 
+
+def mistakes(*pairs):
+    """Distractors COMPUTED BY MAKING A NAMED MISTAKE, not by nudging the answer.
+
+    Same argument as quantgen's: an attractive wrong answer is the one a candidate actually
+    arrives at — forgetting the -1 in a ranking count, turning the wrong way, shifting the
+    alphabet one place too far. Distractors built as answer±1 are attractive to nobody and let
+    the question fall to elimination. The label also survives into the paper, so "picked C" can
+    later mean "counted the person twice" instead of just "wrong".
+    """
+    out = []
+    for why, value in pairs:
+        if value is not None and str(value).strip():
+            out.append({"why": why, "text": str(value)})
+    return out
+
+
 def _b_coding_shift(rng, diff):
+    """Letter coding. Difficulty = how the shift varies across the word.
+
+    diff 1  one shift for every letter
+    diff 2  alternating shifts (+k on odd positions, -k on even)
+    diff 3  the word is REVERSED and then shifted
+    diff 4+ a positional shift: the first letter moves 1, the second 2, and so on
+    """
     w1, w2 = rng.sample(_WORDS, 2)
     k = rng.choice([1, 2, 3, 4, -1, -2, -3])
-    c1, c2 = _shift_word(w1, k), _shift_word(w2, k)
     sign = f"+{k}" if k > 0 else str(k)
+    if diff <= 1:
+        c1, c2 = _shift_word(w1, k), _shift_word(w2, k)
+        rule = f"Each letter is shifted by {sign} position(s) in the alphabet"
+        rule_hi = f"प्रत्येक अक्षर को वर्णमाला में {sign} स्थान खिसकाया गया है"
+        d = mistakes(("shifted one place too far", _shift_word(w2, k + 1)),
+                     ("shifted one place short", _shift_word(w2, k - 1)),
+                     ("shifted in the opposite direction", _shift_word(w2, -k)))
+    elif diff == 2:
+        alt = lambda w: "".join(chr((ord(c) - _A + (k if i % 2 == 0 else -k)) % 26 + _A)
+                                for i, c in enumerate(w))
+        c1, c2 = alt(w1), alt(w2)
+        rule = (f"Letters in odd positions move {sign} and letters in even positions move the "
+                f"opposite way")
+        rule_hi = (f"विषम स्थान के अक्षर {sign} खिसकते हैं तथा सम स्थान के अक्षर विपरीत दिशा में")
+        d = mistakes(("shifted every letter the same way", _shift_word(w2, k)),
+                     ("applied the two shifts the other way round",
+                      "".join(chr((ord(c) - _A + (-k if i % 2 == 0 else k)) % 26 + _A)
+                              for i, c in enumerate(w2))),
+                     ("shifted every letter the opposite way", _shift_word(w2, -k)))
+    elif diff == 3:
+        rev = lambda w: _shift_word(w[::-1], k)
+        c1, c2 = rev(w1), rev(w2)
+        rule = f"The word is reversed and then each letter is shifted by {sign}"
+        rule_hi = f"शब्द को उल्टा लिखकर प्रत्येक अक्षर को {sign} स्थान खिसकाया गया है"
+        d = mistakes(("shifted without reversing", _shift_word(w2, k)),
+                     ("reversed without shifting", w2[::-1]),
+                     ("shifted first and then reversed", _shift_word(w2, k)[::-1]))
+    else:
+        posn = lambda w: "".join(chr((ord(c) - _A + (i + 1)) % 26 + _A) for i, c in enumerate(w))
+        c1, c2 = posn(w1), posn(w2)
+        rule = ("The first letter moves 1 place, the second 2 places, the third 3, and so on")
+        rule_hi = ("पहला अक्षर 1 स्थान, दूसरा 2 स्थान, तीसरा 3 स्थान — इसी क्रम में आगे बढ़ता है")
+        d = mistakes(("used the same shift for every letter", _shift_word(w2, 1)),
+                     ("started the count from 0 instead of 1",
+                      "".join(chr((ord(c) - _A + i) % 26 + _A) for i, c in enumerate(w2))),
+                     ("moved each letter backwards by its position",
+                      "".join(chr((ord(c) - _A - (i + 1)) % 26 + _A) for i, c in enumerate(w2))))
     stem = (f"In a certain code language, '{w1}' is written as '{c1}'. "
             f"How is '{w2}' written in that same code?")
-    sol = (f"Each letter is shifted by {sign} position(s) in the alphabet "
-           f"({w1}→{c1}). Applying the same shift to {w2} gives {c2}.")
-    d = [_shift_word(w2, k + 1), _shift_word(w2, k - 1), _shift_word(w2, -k or 1)]
-    d = [x for x in dict.fromkeys(d) if x != c2][:3]
+    sol = f"{rule} ({w1}->{c1}). Applying the same rule to {w2} gives {c2}."
     stem_hi = (f"एक निश्चित कूट भाषा में '{w1}' को '{c1}' लिखा जाता है। "
                f"उसी कूट भाषा में '{w2}' को कैसे लिखा जाएगा?")
-    sol_hi = f"प्रत्येक अक्षर को वर्णमाला में {sign} स्थान खिसकाया गया है ({w1}→{c1}); अतः {w2} → {c2}।"
-    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": c2, "distractors": d, "solution": sol,
-            "concept": "Letter-Shift Coding"}
+    sol_hi = f"{rule_hi} ({w1}→{c1}); अतः {w2} → {c2}।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": c2,
+            "mistakes": d, "solution": sol, "concept": "Letter-Shift Coding"}
 
 def _b_coding_number(rng, diff):
     w = rng.choice(_WORDS)
     op = rng.choice(["pos", "pos+1", "pos*2"])
+    # The Hindi USED to say only "अपनी वर्णमाला-स्थिति के अनुसार" for all three rules, dropping the
+    # "one more than" / "twice" that IS the question. A Hindi-medium candidate was shown a
+    # different, easier question than the English one — and paper_common.numbers_agree() then
+    # silently discarded every such question from the paper, so the pool lost them too. Naming the
+    # rule in Hindi fixes both: 103 of 1,300 generated questions were failing that check.
     if op == "pos":
-        vals = [_pos(c) for c in w]; desc = "its position in the alphabet (A=1, B=2, …)"
+        vals = [_pos(c) for c in w]
+        desc = "its position in the alphabet (A=1, B=2, …)"
+        desc_hi = "उसकी वर्णमाला-स्थिति के अनुसार (A=1, B=2, …)"
     elif op == "pos+1":
-        vals = [_pos(c) + 1 for c in w]; desc = "one more than its position in the alphabet (A=2, B=3, …)"
+        vals = [_pos(c) + 1 for c in w]
+        desc = "one more than its position in the alphabet (A=2, B=3, …)"
+        desc_hi = "उसकी वर्णमाला-स्थिति से एक अधिक (A=2, B=3, …)"
     else:
-        vals = [_pos(c) * 2 for c in w]; desc = "twice its position in the alphabet (A=2, B=4, …)"
+        vals = [_pos(c) * 2 for c in w]
+        desc = "twice its position in the alphabet (A=2, B=4, …)"
+        desc_hi = "उसकी वर्णमाला-स्थिति से दोगुना (A=2, B=4, …)"
     code = " ".join(str(v) for v in vals)
     stem = (f"If each letter is coded by {desc}, how is '{w}' coded?")
     sol = f"{w}: " + ", ".join(f"{c}={v}" for c, v in zip(w, vals)) + f" → {code}."
@@ -179,30 +256,81 @@ def _b_coding_number(rng, diff):
              " ".join(str(_pos(c) + 1) for c in w),
              " ".join(str(_pos(c) - 1) for c in w)]
     d = [x for x in dict.fromkeys(cands) if x != code][:3]
-    stem_hi = f"यदि प्रत्येक अक्षर को उसकी वर्णमाला-स्थिति के अनुसार कूटबद्ध किया जाए, तो '{w}' का कूट क्या होगा?"
-    sol_hi = f"{w} के अक्षरों की स्थिति के अनुसार कूट = {code}।"
-    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": code, "distractors": d, "solution": sol,
-            "concept": "Number Coding"}
+    stem_hi = (f"यदि प्रत्येक अक्षर को {desc_hi} कूटबद्ध किया जाए, तो '{w}' का कूट क्या होगा?")
+    sol_hi = f"{w}: " + ", ".join(f"{c}={v}" for c, v in zip(w, vals)) + f" → {code}।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": code,
+            "mistakes": mistakes(
+                ("used the plain position, ignoring the rule",
+                 " ".join(str(_pos(c)) for c in w)),
+                ("doubled the position instead of applying the stated rule",
+                 " ".join(str(_pos(c) * 2) for c in w)),
+                ("added one to the position instead of applying the stated rule",
+                 " ".join(str(_pos(c) + 1) for c in w))),
+            "solution": sol, "concept": "Number Coding"}
 
 # ---- Alphabet / Letter Series ----------------------------------------------
 
 def _b_letter_series(rng, diff):
+    """Letter series. Difficulty = how the step behaves.
+
+    diff 1  a constant step
+    diff 2  the step ALTERNATES between two values
+    diff 3  the step GROWS by one each time
+    diff 4+ two series interleaved, so alternate terms belong to different progressions
+    """
     start = rng.randint(1, 12)
-    step = rng.choice([1, 2, 3, 4, 5])
-    terms = [start + i * step for i in range(5)]
+    if diff <= 1:
+        step = rng.choice([2, 3, 4, 5])
+        terms = [start + i * step for i in range(5)]
+        rule = f"The letters advance by {step} position(s) each time"
+        rule_hi = f"प्रत्येक बार अक्षर {step} स्थान आगे बढ़ता है"
+        wrong = [("used a step of {} instead".format(step + 1), start + 4 * (step + 1)),
+                 ("used a step of {} instead".format(step - 1), start + 4 * (step - 1)),
+                 ("stopped one term early", start + 3 * step)]
+    elif diff == 2:
+        s1, s2 = rng.choice([(2, 3), (3, 1), (4, 2), (1, 4)])
+        terms = [start]
+        for i in range(4):
+            terms.append(terms[-1] + (s1 if i % 2 == 0 else s2))
+        rule = f"The step alternates: +{s1}, +{s2}, +{s1}, +{s2}"
+        rule_hi = f"अंतराल क्रमशः बदलता है: +{s1}, +{s2}, +{s1}, +{s2}"
+        wrong = [("used the other step for the last gap", terms[3] + s2),
+                 ("used a constant step of {}".format(s1), start + 4 * s1),
+                 ("used a constant step of {}".format(s2), start + 4 * s2)]
+    elif diff == 3:
+        step = rng.choice([1, 2])
+        terms, st = [start], step
+        for _ in range(4):
+            terms.append(terms[-1] + st)
+            st += 1
+        rule = f"The gap grows by one each time: +{step}, +{step + 1}, +{step + 2}, +{step + 3}"
+        rule_hi = f"अंतराल हर बार एक बढ़ता है: +{step}, +{step + 1}, +{step + 2}, +{step + 3}"
+        wrong = [("kept the gap constant", start + 4 * step),
+                 ("grew the gap but from the wrong start", terms[3] + step + 2),
+                 ("repeated the previous gap", terms[3] + step + 1)]
+    else:
+        s1, s2 = rng.choice([(2, 3), (3, 4), (1, 5)])
+        # odd terms advance by s1, even terms by s2; the 5th term continues the ODD series
+        odd = [start, start + s1, start + 2 * s1]
+        even = [start + 7, start + 7 + s2]
+        terms = [odd[0], even[0], odd[1], even[1], odd[2]]
+        rule = (f"Two series are interleaved: the 1st, 3rd and 5th terms advance by {s1}, "
+                f"while the 2nd and 4th advance by {s2}")
+        rule_hi = (f"दो श्रृंखलाएँ मिली हुई हैं: पहला, तीसरा और पाँचवाँ पद {s1} बढ़ता है, "
+                   f"जबकि दूसरा और चौथा पद {s2} बढ़ता है")
+        wrong = [("treated it as one series", terms[3] + s1),
+                 ("continued the SECOND series instead of the first", even[1] + s2),
+                 ("advanced the first series by the second series' step", odd[1] + s2)]
     letters = [_letter(t) for t in terms[:4]]
     ans = _letter(terms[4])
     shown = ", ".join(letters) + ", ?"
     stem = f"Find the next term in the letter series:\n{shown}"
-    sol = (f"The letters advance by {step} position(s) each time "
-           f"({'→'.join(letters)}). Next = {ans}.")
-    cands = [_letter(terms[4] + 1), _letter(terms[4] - 1), _letter(terms[4] + 2),
-             _letter(terms[4] + step), _letter(terms[4] - 2)]
-    d = [x for x in dict.fromkeys(cands) if x != ans][:3]
+    sol = f"{rule} ({'->'.join(letters)}). Next = {ans}."
     stem_hi = f"अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\n{shown}"
-    sol_hi = f"प्रत्येक बार अक्षर {step} स्थान आगे बढ़ता है; अतः अगला पद = {ans}।"
-    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": ans, "distractors": d, "solution": sol,
-            "concept": "Letter Series"}
+    sol_hi = f"{rule_hi}; अतः अगला पद = {ans}।"
+    d = mistakes(*[(why, _letter(v)) for why, v in wrong])
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": ans,
+            "mistakes": d, "solution": sol, "concept": "Letter Series"}
 
 def _b_alnum_series(rng, diff):
     lstart = rng.randint(1, 15)
@@ -316,21 +444,93 @@ def _smallest_factor(n):
 # ---- Ranking & Ordering -----------------------------------------------------
 
 def _b_ranking(rng, diff):
-    left = rng.randint(3, 12)
-    right = rng.randint(3, 12)
-    total = left + right - 1
+    """Ranking. Difficulty = how many positions have to be held at once.
+
+    diff 1  two positions      -> the total (the -1 is the whole test)
+    diff 2  total and one end  -> the other end
+    diff 3  two people         -> how many sit between them
+    diff 4+ an interchange     -> a new position after two people swap
+    """
     name = rng.choice(["Rahul", "Priya", "Amit", "Sneha", "Vikas", "Anjali", "Rohan"])
-    stem = (f"In a row of students, {name} is {_ord(left)} from the left end and "
-            f"{_ord(right)} from the right end. How many students are there in the row?")
-    sol = (f"Total = (position from left) + (position from right) − 1 = "
-           f"{left} + {right} − 1 = {total}.")
-    cands = [str(total + 1), str(total - 1), str(total + 2), str(total - 2)]
-    d = [x for x in dict.fromkeys(cands) if x != str(total)][:3]
-    stem_hi = (f"विद्यार्थियों की एक पंक्ति में {HI.name(name)} बाईं ओर से {HI.ordinal(left)} स्थान पर "
-               f"तथा दाईं ओर से {HI.ordinal(right)} स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?")
-    sol_hi = f"कुल = बाएँ से स्थान + दाएँ से स्थान − 1 = {left} + {right} − 1 = {total}।"
-    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": str(total), "distractors": d, "solution": sol,
-            "concept": "Ranking"}
+    other = rng.choice([x for x in ("Rahul", "Priya", "Amit", "Sneha", "Vikas") if x != name])
+    if diff <= 1:
+        left, right = rng.randint(3, 12), rng.randint(3, 12)
+        total = left + right - 1
+        stem = (f"In a row of students, {name} is {_ord(left)} from the left end and "
+                f"{_ord(right)} from the right end. How many students are there in the row?")
+        sol = (f"Total = (position from left) + (position from right) - 1 = "
+               f"{left} + {right} - 1 = {total}.")
+        stem_hi = (f"विद्यार्थियों की एक पंक्ति में {HI.name(name)} बाईं ओर से {HI.ordinal(left)} स्थान "
+                   f"पर तथा दाईं ओर से {HI.ordinal(right)} स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?")
+        sol_hi = f"कुल = बाएँ से स्थान + दाएँ से स्थान - 1 = {left} + {right} - 1 = {total}।"
+        d = mistakes(("counted the person twice by forgetting the -1", str(total + 1)),
+                     ("subtracted 1 twice", str(total - 1)),
+                     ("added the two positions and then added 1", str(total + 2)))
+        return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": str(total),
+                "mistakes": d, "solution": sol, "concept": "Ranking"}
+    if diff == 2:
+        total = rng.randint(20, 45)
+        left = rng.randint(5, total - 5)
+        right = total - left + 1
+        stem = (f"In a row of {total} students, {name} is {_ord(left)} from the left end. "
+                f"What is {name}'s position from the right end?")
+        sol = (f"Position from right = total - position from left + 1 = "
+               f"{total} - {left} + 1 = {right}.")
+        stem_hi = (f"{total} विद्यार्थियों की एक पंक्ति में {HI.name(name)} बाईं ओर से "
+                   f"{HI.ordinal(left)} स्थान पर है। दाईं ओर से उसका स्थान क्या है?")
+        sol_hi = f"दाएँ से स्थान = कुल - बाएँ से स्थान + 1 = {total} - {left} + 1 = {right}।"
+        d = mistakes(("forgot the +1", str(right - 1)),
+                     ("added 1 twice", str(right + 1)),
+                     ("subtracted the position from the total and stopped there",
+                      str(total - left))) 
+        return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": str(right),
+                "mistakes": d, "solution": sol, "concept": "Ranking"}
+    if diff == 3:
+        total = rng.randint(25, 45)
+        a_left = rng.randint(4, 12)
+        b_right = rng.randint(4, 12)
+        b_left = total - b_right + 1
+        if b_left <= a_left + 1:
+            return _b_ranking(rng, 2)
+        between = b_left - a_left - 1
+        stem = (f"In a row of {total} students, {name} is {_ord(a_left)} from the left end and "
+                f"{other} is {_ord(b_right)} from the right end. How many students are sitting "
+                f"between {name} and {other}?")
+        sol = (f"{other}'s position from the left = {total} - {b_right} + 1 = {b_left}. "
+               f"Students between = {b_left} - {a_left} - 1 = {between}.")
+        stem_hi = (f"{total} विद्यार्थियों की एक पंक्ति में {HI.name(name)} बाईं ओर से "
+                   f"{HI.ordinal(a_left)} स्थान पर तथा {HI.name(other)} दाईं ओर से "
+                   f"{HI.ordinal(b_right)} स्थान पर है। {HI.name(name)} और {HI.name(other)} के "
+                   f"बीच कितने विद्यार्थी बैठे हैं?")
+        sol_hi = (f"{HI.name(other)} का बाएँ से स्थान = {total} - {b_right} + 1 = {b_left}। "
+                  f"बीच में = {b_left} - {a_left} - 1 = {between}।")
+        d = mistakes(("counted one of the two people as 'between'", str(between + 1)),
+                     ("counted both of them", str(between + 2)),
+                     ("subtracted the two given positions directly, without converting "
+                      "the right-end one", str(abs(b_right - a_left))))
+        return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": str(between),
+                "mistakes": d, "solution": sol, "concept": "Ranking"}
+    # diff 4+ : an interchange
+    total = rng.randint(28, 45)
+    a_left = rng.randint(5, 14)
+    b_left = rng.randint(a_left + 3, min(a_left + 14, total - 2))
+    new_right = total - b_left + 1
+    stem = (f"In a row of {total} students, {name} is {_ord(a_left)} from the left end. "
+            f"{other} is {_ord(b_left)} from the left end. If {name} and {other} interchange "
+            f"their places, what will be {name}'s new position from the RIGHT end?")
+    sol = (f"After the swap {name} stands where {other} stood, i.e. {_ord(b_left)} from the "
+           f"left. Position from right = {total} - {b_left} + 1 = {new_right}.")
+    stem_hi = (f"{total} विद्यार्थियों की एक पंक्ति में {HI.name(name)} बाईं ओर से "
+               f"{HI.ordinal(a_left)} स्थान पर तथा {HI.name(other)} बाईं ओर से "
+               f"{HI.ordinal(b_left)} स्थान पर है। यदि {HI.name(name)} और {HI.name(other)} अपने "
+               f"स्थान बदल लें, तो {HI.name(name)} का दाईं ओर से नया स्थान क्या होगा?")
+    sol_hi = (f"स्थान बदलने पर {HI.name(name)} बाएँ से {HI.ordinal(b_left)} स्थान पर आ जाता है। "
+              f"दाएँ से स्थान = {total} - {b_left} + 1 = {new_right}।")
+    d = mistakes(("gave the new position from the LEFT instead of the right", str(b_left)),
+                 ("used the original position from the left", str(total - a_left + 1)),
+                 ("forgot the +1 after subtracting", str(total - b_left)))
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": str(new_right),
+            "mistakes": d, "solution": sol, "concept": "Ranking"}
 
 def _b_ranking_pos(rng, diff):
     total = rng.randint(20, 45)
