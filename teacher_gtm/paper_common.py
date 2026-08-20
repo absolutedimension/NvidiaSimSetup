@@ -75,6 +75,21 @@ def options_ok(options):
     return len({t.lower() for t in texts}) == 4
 
 
+# Latin letters sandwiched INSIDE a Devanagari word — "बAREफुट" for "बेयरफुट". The extractor
+# half-transliterates a loanword and leaves the English fragment in place. Rohan caught one of
+# these by eye in Set 1; a bank-wide sweep found it was the only instance, but the failure mode is
+# invisible in the JSON and obvious on the page, so it is gated here permanently rather than left
+# to the next reviewer.
+_MIXED_SCRIPT = re.compile(r"[\u0900-\u097f][A-Za-z]{2,}[\u0900-\u097f]")
+
+
+def script_clean(q):
+    """True if no Devanagari field has Latin letters stranded inside a word."""
+    return not any(_MIXED_SCRIPT.search(q.get(f) or "") for f in ("stem", "stem_hi")) and \
+           not any(_MIXED_SCRIPT.search(o.get("text") or "")
+                   for key in ("options", "options_hi") for o in (q.get(key) or []))
+
+
 def servable(q, need_hindi=False):
     """A question we can actually put in front of a student.
 
@@ -86,6 +101,8 @@ def servable(q, need_hindi=False):
         return False
     if need_hindi:
         if not q.get("stem_hi"):
+            return False
+        if not script_clean(q):
             return False
         oh = q.get("options_hi") or []
         if oh and not options_ok(oh):

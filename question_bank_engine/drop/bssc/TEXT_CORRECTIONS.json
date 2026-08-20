@@ -1,0 +1,17 @@
+{
+  "_why": "Hand corrections to extracted question TEXT, each one read off the commission's own printed page at high resolution and recorded here rather than edited into the bank silently. Same principle as VERIFIED_KEYS.json: if a human overrode the machine, the override should be visible, attributable to a source page, and re-appliable after any re-extraction.",
+  "_how": "apply_text_corrections.py matches on (source_pdf, number) and replaces only the named field.",
+
+  "corrections": [
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 6,
+      "field": "stem_hi",
+      "source_page": "03_25_SET_A.pdf page 2, question 6 (rendered at 200 dpi and read by eye)",
+      "found_by": "Rohan, during manual review of Set 1 question 22",
+      "problem": "Latin letters embedded inside a Devanagari word — the extractor half-transliterated 'बेयरफुट' as 'बAREफुट' — plus 'टेक्नीशियन' rendered as 'तकनीशियन' and the tail of the sentence paraphrased.",
+      "was": "किस मंत्रालय ने बAREफुट तकनीशियन (BFT) परियोजना शुरू की और इसके लिए किस उद्देश्य से इसे शुरू किया गया ?",
+      "now": "किस मंत्रालय ने बेयरफुट टेक्नीशियन (BFT) परियोजना शुरू की और यह किस उद्देश्य से शुरू की गई थी ?"
+    }
+  ]
+}
