@@ -17,7 +17,17 @@ articles and amendments that recur in Bihar commission papers, held to the ones 
 unambiguous — Article 19 covers six freedoms, so it is stated as "freedoms" rather than picking
 one and inviting a dispute. Anything contested was left out rather than guessed.
 
-Verify before extending: read the bare Act text on legislative.gov.in, not a coaching summary.
+VERIFIED 2026-08-20 against the official Constitution PDF from the Government of India CDN
+(cdnbbsr.s3waas.gov.in, 848,000 characters of extracted text): all 19 article subjects confirmed,
+with the article number sitting immediately before its marginal heading in the official text.
+
+One wording note kept deliberately. Article 356's official heading is "Provisions in case of
+failure of constitutional machinery in States"; we say "President's Rule in a State", which is the
+name every candidate and every commission paper uses. Accurate in substance, colloquial in form —
+recorded here so nobody later mistakes it for a transcription error.
+
+Verify before extending: read the bare Act text, not a coaching summary. The PDF is at
+cdnbbsr.s3waas.gov.in (legislative.gov.in itself serves only a landing page).
 """
 
 # Article -> the single subject it deals with. One subject per article, no subject repeated.
