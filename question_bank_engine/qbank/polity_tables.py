@@ -65,9 +65,19 @@ AMENDMENT_DID = {
     "101st": "introduced the Goods and Services Tax",
 }
 
-# Amendment -> year of enactment.
+# Amendment -> the year in the ACT'S OWN NAME, which is what an exam asks for.
+#
+# The 61st was wrong here: written as 1989, which is when it came into FORCE. The Constitution's
+# own footnote settles it — "(Sixty-first Amendment) Act, 1988, s. 2, for 'twenty-one years'
+# (w.e.f. 28-3-1989)". The Act is 1988; 28 March 1989 is commencement. Both dates are real and
+# they are a year apart, which is exactly the trap this table would otherwise have set: a student
+# answering 1988 from the bare Act — which this open-book exam lets them carry — would have been
+# marked wrong by us.
+#
+# Verified 2026-08-20 against the official Constitution PDF: all eight years match the Act names in
+# its amendment footnotes.
 AMENDMENT_YEAR = {
-    "42nd": "1976", "44th": "1978", "52nd": "1985", "61st": "1989",
+    "42nd": "1976", "44th": "1978", "52nd": "1985", "61st": "1988",
     "73rd": "1992", "74th": "1992", "86th": "2002", "101st": "2016",
 }
 
