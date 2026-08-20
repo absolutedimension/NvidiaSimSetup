@@ -32,6 +32,9 @@ from paper_common import MATH_CSS, esc, servable, sig, inter_level_ok  # noqa: E
 LET = ["A", "B", "C", "D", "E"]
 
 
+_DEV = re.compile(r"[\u0900-\u097f]")
+
+
 def load(inter_level=False):
     qs = []
     for f in glob.glob(str(REPO / "question_bank_engine/drop/bssc/*_KEYED.json")):
@@ -45,8 +48,18 @@ def load(inter_level=False):
             # from Advt 0111, a CLERK exam whose paper ranged wider, so it carries polynomials,
             # APs, circle geometry, trigonometry and probability — above what an Inter Level
             # candidate is examined on. 34% of the maths pool is dropped here.
-            if inter_level and not inter_level_ok(q):
-                continue
+            if inter_level:
+                if not inter_level_ok(q):
+                    continue
+                # Require a TRUE bilingual pair — Devanagari in one stem field and Latin in the
+                # other. Where the extractor lost the English and left Hindi in BOTH fields, the
+                # Hindi is an unverified machine translation with nothing to check it against, and
+                # it shows: one such question printed a "climate change" stem over 1919 dates
+                # (the real question was Jallianwala Bagh). 170 GS and 119 Science+Maths true pairs
+                # remain, comfortably more than the 50 + 50 the paper needs.
+                a, b = (q.get("stem_hi") or ""), (q.get("stem") or "")
+                if bool(_DEV.search(a)) == bool(_DEV.search(b)):
+                    continue
             qs.append(q)
     return qs
 
@@ -212,11 +225,11 @@ def main():
             got = load_hindi_generated(want)
         paper.append((title, got)); n += len(got)
 
-    logo_html = ""
+    logo_html, logo_b64, logo_ext = "", "", "png"
     if a.logo and os.path.exists(a.logo):
-        b64 = base64.b64encode(open(a.logo, "rb").read()).decode()
-        ext = "png" if a.logo.lower().endswith("png") else "jpeg"
-        logo_html = f'<img class="logo" src="data:image/{ext};base64,{b64}">'
+        logo_b64 = base64.b64encode(open(a.logo, "rb").read()).decode()
+        logo_ext = "png" if a.logo.lower().endswith("png") else "jpeg"
+        logo_html = f'<img class="logo" src="data:image/{logo_ext};base64,{logo_b64}">'
 
     # The vision extraction was not consistent about WHICH field held which language: measured
     # across 497 pairs, only 59% were correct, 12% arrived swapped and 27% held Hindi in both.
@@ -306,11 +319,91 @@ def main():
                     "प्रत्येक सही उत्तर 4 अंक, प्रत्येक गलत उत्तर &ndash;1, कुल 600 अंक, समय 2 घंटा 15 मिनट, "
                     "तीन खण्ड। गणित के प्रश्न आयोग के <b>अंकगणित-आधारित</b> पाठ्यक्रम तक सीमित रखे गए हैं।"
                     if a.inter_level else "")
+    # Cover page: the officially released syllabus, so the institute can see exactly what the
+    # paper was built against. Every figure here comes from Advt 02/23(A) and its corrigenda —
+    # see teacher_gtm/BSSC_INTER_LEVEL_FACTSHEET.md for the document-by-document sourcing.
+    COVER = f"""<div class="cover">
+  <div class="lh">{logo_html}<div>
+    <div class="co">ONE STEP EDUCATION</div><div class="sub2">PATNA</div>
+    <div class="sub">बिहार कर्मचारी चयन आयोग &mdash; <b>द्वितीय इंटर स्तरीय संयुक्त प्रतियोगिता परीक्षा</b></div>
+    <div class="sub">विज्ञापन संख्या <b>02/23 (A)</b> &middot; कुल रिक्तियाँ <b>25,311</b></div>
+  </div></div><div class="rule"></div>
+
+  <div class="claim">यह अभ्यास प्रश्न-पत्र बिहार कर्मचारी चयन आयोग द्वारा विज्ञापन संख्या&ndash;02/23(A) में
+  <b>आधिकारिक रूप से प्रकाशित पाठ्यक्रम एवं परीक्षा-योजना</b> के आधार पर तैयार किया गया है।<br>
+  <span class="en2">This practice paper has been prepared strictly on the syllabus and examination
+  scheme officially published by the Bihar Staff Selection Commission in Advertisement No. 02/23 (A).</span></div>
+
+  <h2 class="sec">प्रारंभिक परीक्षा की योजना / EXAMINATION SCHEME</h2>
+  <table class="tb">
+    <tr><td>परीक्षा की प्रकृति</td><td>वस्तुनिष्ठ (बहुविकल्पीय)</td></tr>
+    <tr><td>कुल प्रश्न</td><td><b>150</b></td></tr>
+    <tr><td>अंक</td><td>प्रत्येक सही उत्तर <b>+4</b> &middot; कुल <b>600 अंक</b></td></tr>
+    <tr><td>ऋणात्मक अंकन</td><td>प्रत्येक गलत उत्तर पर <b>&ndash;1 अंक</b></td></tr>
+    <tr><td>अवधि</td><td><b>2 घंटा 15 मिनट</b></td></tr>
+    <tr><td>विकल्प</td><td>4</td></tr>
+    <tr><td>माध्यम</td><td>हिन्दी एवं अंग्रेज़ी &mdash; <b>भिन्नता होने पर अंग्रेज़ी प्रश्न मान्य</b></td></tr>
+    <tr><td>चयन</td><td>प्रारंभिक परीक्षा से कोटिवार रिक्तियों के <b>5 गुना</b> अभ्यर्थी मुख्य परीक्षा हेतु</td></tr>
+  </table>
+
+  <div class="callout"><b>⭐ यह परीक्षा &ldquo;पुस्तक सहित&rdquo; ली जाती है</b> (परीक्षा संचालन नियमावली&ndash;2010, कंडिका&ndash;12)।
+  अभ्यर्थी <b>तीन पुस्तकें</b> ले जा सकते हैं &mdash; सामान्य अध्ययन, गणित एवं सामान्य विज्ञान हेतु एक-एक।
+  केवल <b>NCERT / B.S.E.B. / I.C.S.E. एवं अन्य बोर्ड की पाठ्य-पुस्तकें</b> मान्य हैं। गाइड, फोटोकॉपी,
+  हस्तलिखित कागज़, नोट्स एवं इलेक्ट्रॉनिक उपकरण <b>पूर्णतः वर्जित</b> हैं। पुस्तक पर केवल अपना नाम एवं
+  रौल नंबर लिखें &mdash; इसके अतिरिक्त कुछ भी लिखा मिलने पर अभ्यर्थिता रद्द।</div>
+
+  <h2 class="sec">आधिकारिक पाठ्यक्रम / OFFICIAL SYLLABUS</h2>
+  <div class="syl"><b>खंड (क) &mdash; सामान्य अध्ययन</b><br>
+  अभ्यर्थी के आस-पास के वातावरण की सामान्य जानकारी तथा समाज में उसके अनुप्रयोग की जाँच। बिहार, भारत एवं
+  उसके पड़ोसी देशों पर विशेष बल।<br>
+  <i>(i) सम-सामयिक विषय:</i> वैज्ञानिक प्रगति · राष्ट्रीय/अंतर्राष्ट्रीय पुरस्कार · भारतीय भाषाएँ · पुस्तक · लिपि ·
+  राजधानी · मुद्रा · खेल-खिलाड़ी · महत्वपूर्ण घटनाएँ<br>
+  <i>(ii) भारत और उसके पड़ोसी देश:</i> पड़ोसी देशों का इतिहास · भारत का इतिहास · संस्कृति · भूगोल · आर्थिक परिदृश्य ·
+  स्वतंत्रता आन्दोलन · भारतीय कृषि एवं प्राकृतिक संसाधन · भारत का संविधान एवं राज्य व्यवस्था · राजनीतिक प्रणाली ·
+  पंचायती राज · सामुदायिक विकास · पंचवर्षीय योजना · <b>राष्ट्रीय आन्दोलन में बिहार का योगदान</b></div>
+
+  <div class="syl"><b>खंड (ख) &mdash; सामान्य विज्ञान एवं गणित</b> <span class="lvl">(मैट्रिक स्तर)</span><br>
+  <i>(i) सामान्य विज्ञान:</i> भौतिक शास्त्र · रसायन शास्त्र · जीव विज्ञान · भूगोल<br>
+  <i>(ii) गणित:</i> संख्या पद्धति · पूर्ण संख्याओं का अभिकलन · दशमलव और भिन्न · संख्याओं के बीच परस्पर संबंध ·
+  मूलभूत अंक गणितीय संक्रियाएँ · प्रतिशत · अनुपात तथा समानुपात · औसत · ब्याज · लाभ और हानि</div>
+
+  <div class="syl"><b>खंड (ग) &mdash; मानसिक क्षमता जाँच</b> <span class="lvl">(शाब्दिक एवं गैर-शाब्दिक)</span><br>
+  सादृश्य · समानता एवं भिन्नता · स्थान कल्पना · समस्या समाधान · विश्लेषण · दृश्य स्मृति · विभेद · अवलोकन ·
+  संबंध अवधारणा · अंक गणितीय तर्कशक्ति · अंक गणितीय संख्या श्रृंखला · कूट लेखन एवं कूट व्याख्या</div>
+
+  <h2 class="sec">न्यूनतम अर्हतांक / QUALIFYING MARKS</h2>
+  <table class="tb">
+    <tr><td>सामान्य वर्ग</td><td>40%</td><td>अनुसूचित जाति / जनजाति</td><td>32%</td></tr>
+    <tr><td>पिछड़ा वर्ग</td><td>36.5%</td><td>महिला (सभी वर्ग)</td><td>32%</td></tr>
+    <tr><td>अत्यंत पिछड़ा वर्ग</td><td>34%</td><td>दिव्यांग (सभी वर्ग)</td><td>32%</td></tr>
+  </table>
+
+  <div class="src">स्रोत: आयोग का विज्ञापन 02/23(A) दिनांक 27.09.2025 एवं शुद्धि पत्र दिनांक 13.02.2026
+  (bssc.bihar.gov.in)। संकलन: Acharya &mdash; TrigunAI Innovations Pvt Ltd</div>
+</div>"""
+
     HEAD = f"""<div class="lh">{logo_html}<div>
 <div class="co">ONE STEP EDUCATION</div><div class="sub2">PATNA</div>
 <div class="sub">{TITLE_LINE}</div>
 <div class="sub"><b>भाग I, II एवं IV: आयोग के वास्तविक विगत प्रश्न</b> &middot; आदर्श उत्तर कुंजी सहित</div>
 </div></div><div class="rule"></div>"""
+
+    # position:fixed repeats on every printed page in Chrome, which is what makes this a
+    # per-page watermark rather than a one-off image on page 1. Built by token replacement, not
+    # %-formatting: the CSS is full of "%" units.
+    WATERMARK_CSS = ""
+    if logo_b64:
+        WATERMARK_CSS = """
+body::before {
+  content:""; position:fixed; top:50%; left:50%;
+  transform:translate(-50%,-50%) rotate(-28deg);
+  width:74%; height:74%;
+  background:url(data:image/__EXT__;base64,__B64__) center center / contain no-repeat;
+  opacity:.055; z-index:0; pointer-events:none;
+}
+.cover, .q, h2.sec, .meta, .inst, .keys, .lh, .foot, .pnote, .claim,
+table.tb, .callout, .syl { position:relative; z-index:1; }
+""".replace("__EXT__", logo_ext).replace("__B64__", logo_b64)
 
     HTML = f"""<!doctype html><html><head><meta charset="utf-8"><style>
 @page {{ size:A4; margin:12mm 11mm 12mm 11mm; }}
@@ -336,8 +429,23 @@ h2.sec {{ font-size:10.5pt; color:#8a6d1a; border-left:3px solid #c9a227; paddin
 {MATH_CSS}
 .keyhead {{ page-break-before:always; }}
 .keys {{ display:flex; flex-wrap:wrap; gap:3px 14px; font-size:9pt; }} .k {{ min-width:54px; }}
+.cover {{ page-break-after:always; }}
+.claim {{ border:1px solid #c9a227; background:#fdfaf0; border-radius:5px; padding:9px 11px;
+         font-size:9pt; margin:10px 0 12px; }}
+.claim .en2 {{ color:#5a5f6e; font-size:8.2pt; }}
+table.tb {{ width:100%; border-collapse:collapse; font-size:8.6pt; margin-bottom:11px; }}
+table.tb td {{ border:1px solid #e0dccc; padding:5px 8px; }}
+table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }}
+.callout {{ border-left:3px solid #c9a227; background:#fbf7ea; padding:9px 11px; font-size:8.5pt;
+           border-radius:0 4px 4px 0; margin:4px 0 13px; }}
+.syl {{ font-size:8.5pt; border:1px solid #eee8d8; border-radius:4px; padding:8px 10px; margin-bottom:8px; }}
+.syl i {{ color:#8a6d1a; font-style:normal; font-weight:600; }}
+.syl .lvl {{ color:#8d8676; font-size:7.6pt; }}
+.src {{ font-size:7.4pt; color:#9296a2; margin-top:10px; }}
+{WATERMARK_CSS}
 .foot {{ border-top:1px solid #ddd8c8; margin-top:12px; padding-top:4px; font-size:7.3pt; color:#9296a2; text-align:center; }}
 </style></head><body>
+{COVER if a.inter_level else ""}
 {HEAD}
 <div class="meta"><span><b>कुल प्रश्न:</b> {n}</span><span><b>पूर्णांक:</b> {n * 4}</span>
 <span><b>समय:</b> 2 घंटे 15 मिनट</span><span><b>नाम:</b> ____________</span>
