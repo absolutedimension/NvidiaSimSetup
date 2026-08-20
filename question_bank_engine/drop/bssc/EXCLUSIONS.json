@@ -57,6 +57,38 @@
       "source_pdf": "Qn_SET_A.pdf",
       "number": 14,
       "reason": "Key contradicts the arithmetic. A beats B by 270 in 900 (B runs 630) and beats C by 340 (C runs 560); when B runs 900, C runs 800, so B beats C by 100 — option D. The key says B (70)."
+    },
+    {
+      "source_pdf": "5101136_08_A.pdf",
+      "number": 19,
+      "reason": "Marked price ₹810 with 8% VAT gives ₹874.80, which is not an option. 750 x 1.08 = 810, so the question actually asks for the price BEFORE VAT; the stem as extracted is inverted."
+    },
+    {
+      "source_pdf": "5101136_08_A.pdf",
+      "number": 42,
+      "reason": "Gibberish: 'विज्ञान फ़लाट का संक्षेप किस क्षेत्र से है?' / 'Which area is the summary of the science flat from?' with options Physics / Qualitative science / Chair / Fact."
+    },
+    {
+      "source_pdf": "5101136_08_A.pdf",
+      "number": 17,
+      "reason": "45 items at ₹49 makes 35 items ₹38.11, but the key says ₹63 — which is what you get from 35 items at ₹49 scaled to 45. The two quantities are swapped in the extracted stem."
+    },
+    {
+      "source_pdf": "5101136_08_A.pdf",
+      "number": 13,
+      "reason": "15% of ₹2,500 is ₹375, which is not among the options at all (250/350/650/750). The keyed 750 is 30% of 2,500, so the percentage in the stem is wrong."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 23,
+      "reason": "The fraction was lost in extraction: the stem prints 'x + 2 x + 3 > 1' where the original is (x+2)/(x+3) > 1. The keyed answer 0 is right for the original; the printed inequality is meaningless."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "source_pdf": "5101136_08_A.pdf",
+      "label": "BSSC 8th Level 2024",
+      "reason": "EXCLUDED WHOLESALE. Seven of its 32 eligible questions were verified defective by working them — a 22% rate, against 0.8% for the Field Assistant paper. Since these defects are only findable by solving each question, a 22% measured rate implies more that have not been found. The paper contributes only 32 questions (7 of them Science/Maths), so keeping it buys little and risks a wrong answer in front of students."
     }
   ]
 }

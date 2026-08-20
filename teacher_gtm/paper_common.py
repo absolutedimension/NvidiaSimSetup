@@ -269,9 +269,12 @@ def excluded(q):
         try:
             spec = json.load(io.open(_EXCL_PATH, encoding="utf-8"))
             _EXCL = {(e["source_pdf"], e["number"]) for e in spec.get("excluded", [])}
+            # whole papers whose measured defect rate makes every question in them suspect
+            _EXCL |= {(e["source_pdf"], None) for e in spec.get("excluded_sources", [])}
         except Exception:
             _EXCL = set()
-    return (q.get("source_pdf"), q.get("number")) in _EXCL
+    return ((q.get("source_pdf"), q.get("number")) in _EXCL
+            or (q.get("source_pdf"), None) in _EXCL)
 
 
 # Heavy LaTeX is where extraction quietly loses structure: nested surds and long fraction chains
