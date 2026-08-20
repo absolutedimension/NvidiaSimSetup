@@ -385,7 +385,54 @@ def analogy_candidates(stem):
             out.add(str(c * c))
         if a ** 3 == b:
             out.add(str(c ** 3))
+        # Triangular numbers. "5 : 15 :: 7 : ?" reads as x3 (21) and equally as the sum 1..n
+        # (T5=15, so T7=28) — and the paper offered BOTH. Found by a blind solve after the other
+        # gates passed it, which is the whole argument for re-solving rather than re-checking.
+        if b == a * (a + 1) // 2:
+            out.add(str(c * (c + 1) // 2))
+        if b == a * a + a:                      # n(n+1), the other common "sum" reading
+            out.add(str(c * c + c))
+        if b == a * a - a:
+            out.add(str(c * c - c))
     return out
+
+
+_ODD_TESTS = (
+    ("perfect square", lambda n: _isqrt(n) ** 2 == n),
+    ("prime", lambda n: n > 1 and all(n % d for d in range(2, _isqrt(n) + 1))),
+    ("even", lambda n: n % 2 == 0),
+    ("perfect cube", lambda n: round(n ** (1 / 3)) ** 3 == n),
+    ("multiple of 3", lambda n: n % 3 == 0),
+    ("multiple of 5", lambda n: n % 5 == 0),
+)
+
+
+def _isqrt(n):
+    import math
+    return int(math.isqrt(n)) if n >= 0 else 0
+
+
+def odd_one_out_ambiguous(q):
+    """True when two DIFFERENT numbers are each singled out by a simple rule, and both are offered.
+
+    "99, 16, 49, 121" was keyed 99 as the only non-square — sound. But 16 is the only even number
+    in the set, and 16 was also on the option list, so a student who reasons by parity is marked
+    wrong for a correct inference. Same defect as an ambiguous analogy, and it took a blind solve
+    to see it: the intended rule always looks like the only rule to whoever wrote the question.
+    """
+    nums = [int(x) for x in re.findall(r"\b(\d+)\b", q.get("stem") or "")]
+    nums = [n for n in nums if n > 4]
+    if len(nums) != 4 or not re.search(r"odd one out|alike", q.get("stem") or "", re.I):
+        return False
+    singled = set()
+    for _, test in _ODD_TESTS:
+        flags = [test(n) for n in nums]
+        if flags.count(True) == 3:
+            singled.add(nums[flags.index(False)])
+        elif flags.count(False) == 3:
+            singled.add(nums[flags.index(True)])
+    printed = {re.sub(r"\s+", "", str(o.get("text", ""))) for o in q.get("options") or []}
+    return len({n for n in singled if str(n) in printed}) > 1
 
 
 def analogy_ambiguous(q):

@@ -421,6 +421,17 @@ _KIN = {
     ("son", "brother"): "nephew", ("son", "sister"): "nephew",
     ("daughter", "brother"): "niece", ("daughter", "sister"): "niece",
 }
+# Hindi names the ROUTE, English does not. One English "niece" is भतीजी through a brother and
+# भांजी through a sister; "uncle" is चाचा on the father's side and मामा on the mother's. Mapping
+# the English word to one Hindi word therefore printed a wrong Hindi answer on 4 of these 20
+# pairs, with the English half of the same question perfectly correct — invisible to every check
+# that compares the two languages by their numbers. Found by solving the HINDI blind.
+_KIN_HI = {
+    ("brother", "father"): "चाचा", ("brother", "mother"): "मामा",
+    ("sister", "father"): "बुआ", ("sister", "mother"): "मौसी",
+    ("son", "brother"): "भतीजा", ("son", "sister"): "भांजा",
+    ("daughter", "brother"): "भतीजी", ("daughter", "sister"): "भांजी",
+}
 _REL_GENDER = {"father": "M", "mother": "F", "son": "M", "daughter": "F",
                "brother": "M", "sister": "F"}
 _ALL_RELS = ["grandfather", "grandmother", "father", "mother", "brother", "sister",
@@ -441,8 +452,13 @@ def _b_blood_relation(rng, diff):
     stem_hi = (f"{HI.name(A)}, {HI.possessive(HI.name(B), r1)} हैं तथा "
                f"{HI.name(B)}, {HI.possessive(HI.name(C), r2)} हैं। "
                f"{HI.name(A)} का {HI.name(C)} से क्या सम्बन्ध है?")
-    sol_hi = f"सम्बन्ध जोड़ने पर {HI.name(A)}, {HI.possessive(HI.name(C), ans)} हुए।"
+    ans_hi = _KIN_HI.get((r1, r2), HI.rel(ans))
+    sol_hi = (f"सम्बन्ध जोड़ने पर {HI.name(A)}, {HI.name(C)} की {ans_hi} हुईं।" if not _rel_is_male(ans)
+              else f"सम्बन्ध जोड़ने पर {HI.name(A)}, {HI.name(C)} के {ans_hi} हुए।")
+    # The correct option must carry the route-specific Hindi word; the distractors keep the
+    # generic one, which is fine because they are wrong either way.
     hi_opts = {x.capitalize(): HI.rel(x) for x in _ALL_RELS}
+    hi_opts[ans.capitalize()] = ans_hi
     return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "hi_opts": hi_opts, "correct": ans.capitalize(),
             "distractors": [x.capitalize() for x in d], "solution": sol,
             "concept": "Blood Relations"}

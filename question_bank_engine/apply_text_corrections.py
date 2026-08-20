@@ -37,7 +37,28 @@ def main():
                 if q.get("source_pdf") != c["source_pdf"] or q.get("number") != c["number"]:
                     continue
                 fld = c["field"]
-                if q.get(fld) == c["now"]:
+                if "index" in c:
+                    # An option, not a stem. Devanagari option text is where the worst defects hide:
+                    # 'दक्षिण अफ्रीका' scanned as 'दीक्षा अफ्रीका' is a real Hindi word, so no
+                    # corruption list catches it and the English option reads perfectly.
+                    opts = q.get(fld) or []
+                    i = c["index"]
+                    cur = str((opts[i] if i < len(opts) else {}).get("text", ""))
+                    if cur.strip() == c["now"].strip():
+                        already += 1
+                        print(f"  = already correct  {c['source_pdf']} Q{c['number']} .{fld}[{i}]")
+                    elif cur.strip() == c["was"].strip():
+                        opts[i]["text"] = c["now"]
+                        dirty = True
+                        applied += 1
+                        print(f"  ✓ corrected        {c['source_pdf']} Q{c['number']} .{fld}[{i}]")
+                        print(f"      was: {c['was'][:70]}\n      now: {c['now'][:70]}")
+                    else:
+                        missing += 1
+                        print(f"  ! text has CHANGED since this correction was written — skipping "
+                              f"{c['source_pdf']} Q{c['number']} .{fld}[{i}]")
+                        print(f"      expected: {c['was'][:70]}\n      found   : {cur[:70]}")
+                elif q.get(fld) == c["now"]:
                     already += 1
                     print(f"  = already correct  {c['source_pdf']} Q{c['number']} .{fld}")
                 elif q.get(fld, "").strip() == c["was"].strip():

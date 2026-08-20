@@ -29,7 +29,7 @@ import sys
 REPO = pathlib.Path("/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup")
 sys.path.insert(0, str(REPO / "teacher_gtm"))
 from paper_common import (MATH_CSS, esc, servable, sig, inter_level_ok,  # noqa: E402
-                          numbers_agree, analogy_ambiguous)
+                          numbers_agree, analogy_ambiguous, odd_one_out_ambiguous)
 LET = ["A", "B", "C", "D", "E"]
 
 
@@ -114,31 +114,48 @@ def _order_key(q, salt):
     return hashlib.sha1(f"{salt}|{q.get('source_pdf')}|{q.get('number')}".encode()).hexdigest()
 
 
+def _numkey(q):
+    """Identity of a question by its COMPUTATION rather than its wording.
+
+    "If 3889 + 12.952 - ? = 3854.002" and "Find the value of X in 3889 + 12.952 - X = 3854.002"
+    came from two different source papers, had different option sets, and both landed on one
+    paper. Text signatures cannot see that; the numbers plus the answer can.
+    """
+    nums = tuple(sorted(re.findall(r"\d+\.?\d*", q.get("stem") or "")))
+    ans = next((o["text"] for o in q.get("options") or []
+                if o["label"] == q.get("correct_answer")), "")
+    return ("num", nums, re.sub(r"\s+", "", str(ans))), len(nums)
+
+
+def register(q, used, tmpl):
+    """Record a question as taken. Anything that lands on the paper must go through here.
+
+    Pin mode originally did not: pinned questions bypassed pick(), so `used`/`tmpl` were empty
+    and a top-up draw re-selected the very pair the numeric check above exists to prevent. A
+    dedup table only works if everything on the page is in it.
+    """
+    used.add((q.get("number"), q.get("source_pdf")))
+    k = sig(q.get("stem") or "")
+    tmpl[k] = tmpl.get(k, 0) + 1
+    nkey, n = _numkey(q)
+    if n >= 2:
+        tmpl[nkey] = 1
+
+
 def pick(pool, n, used, tmpl, cap=2, salt=""):
     out = []
     pool = sorted(pool, key=lambda q: _order_key(q, salt))
     for q in pool:
         if len(out) >= n:
             break
-        qid = q.get("number"), q.get("source_pdf")
-        if qid in used:
+        if (q.get("number"), q.get("source_pdf")) in used:
             continue
-        k = sig(q["stem"])
-        if tmpl.get(k, 0) >= cap:
+        if tmpl.get(sig(q["stem"]), 0) >= cap:
             continue
-        # Same COMPUTATION, different wording. "If 3889 + 12.952 - ? = 3854.002" and "Find the
-        # value of X in 3889 + 12.952 - X = 3854.002" came from two different source papers, had
-        # different option sets, and both landed on one paper. Text signatures cannot see it; the
-        # numbers can.
-        nums = tuple(sorted(re.findall(r"\d+\.?\d*", q.get("stem") or "")))
-        ans = next((o["text"] for o in q.get("options") or []
-                    if o["label"] == q.get("correct_answer")), "")
-        nkey = ("num", nums, re.sub(r"\s+", "", str(ans)))
-        if len(nums) >= 2 and tmpl.get(nkey):
+        nkey, nn = _numkey(q)
+        if nn >= 2 and tmpl.get(nkey):
             continue
-        used.add(qid); tmpl[k] = tmpl.get(k, 0) + 1
-        if len(nums) >= 2:
-            tmpl[nkey] = 1
+        register(q, used, tmpl)
         out.append(q)
     return out
 
@@ -172,8 +189,8 @@ def load_hindi_generated(n, cap_per_concept=6):
             continue
         if not numbers_agree(q):
             continue      # Hindi template dropped the rule ("twice its position") — see numbers_agree
-        if analogy_ambiguous(q):
-            continue      # two defensible answers both on offer — see analogy_ambiguous
+        if analogy_ambiguous(q) or odd_one_out_ambiguous(q):
+            continue      # two defensible answers both on offer — see the two _ambiguous gates
         q["_generated"] = True
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
@@ -214,8 +231,8 @@ def load_generated(n, cap_per_concept=3, exclude=frozenset()):
             continue
         if not numbers_agree(q):
             continue      # Hindi template dropped the rule ("twice its position") — see numbers_agree
-        if analogy_ambiguous(q):
-            continue      # two defensible answers both on offer — see analogy_ambiguous
+        if analogy_ambiguous(q) or odd_one_out_ambiguous(q):
+            continue      # two defensible answers both on offer — see the two _ambiguous gates
         q["_generated"] = True
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
@@ -356,7 +373,16 @@ def main():
         # below is the fallback for manifests written before it existed.
         full = manifest[str(a.set)].get("gen_full")
         if full:
-            pinned_gen = [dict(g, _generated=True) for g in full]
+            # Re-gate on the way back in. gen_full bypasses load_generated, so a question pinned
+            # before a gate existed would sail past it forever — which is exactly what happened
+            # when a blind solve found "5 : 15 :: 7 : ?" answerable as both 21 (x3) and 28
+            # (triangular), with both printed. A pin must preserve the paper, not its defects.
+            pinned_gen = [dict(g, _generated=True) for g in full
+                          if numbers_agree(g) and not analogy_ambiguous(g)
+                          and not odd_one_out_ambiguous(g)]
+            if len(pinned_gen) < len(full):
+                print(f"  PIN: dropped {len(full) - len(pinned_gen)} pinned generated question(s) "
+                      f"that no longer pass the gates")
             print(f"  PIN: rebuilding the recorded set — {len(pinned_real)} real + "
                   f"{len(pinned_gen)} generated (exact, from gen_full)")
         else:
@@ -370,6 +396,13 @@ def main():
     gen_taken = set(used_gen)
     pin_pool = list(pinned_real) if (a.pin and str(a.set) in manifest) else None
     pin_gen = list(pinned_gen) if (a.pin and str(a.set) in manifest) else None
+    if pin_pool is not None:
+        # Seed the dedup tables with everything already pinned, so a top-up draw cannot re-select
+        # a question the paper is about to print anyway. Without this, replacing four excluded
+        # questions in Set 2 reintroduced a duplicate pair and a repeated odd-one-out.
+        for q in pin_pool:
+            register(q, used, tmpl)
+        gen_taken |= {gen_sig(q) for q in pin_gen}
     for idx, (title, secs, want) in enumerate(SPEC):
         if pin_pool is not None:
             got = [q for q in pin_pool if q["tag"]["section"] in secs][:want]
@@ -377,6 +410,21 @@ def main():
                 pin_pool.remove(q)
             if idx == len(SPEC) - 1:
                 got = got + pin_gen[:want - len(got)]
+            # Top up whatever the exclusions took out. Without this a pinned rebuild after an
+            # exclusion silently prints a short paper — the section just ends early, and nothing
+            # says so. Replacements are drawn the normal way and are NOT covered by the earlier
+            # verification, so they have to go back through the checks.
+            if len(got) < want:
+                short = want - len(got)
+                pool = [q for s in secs for q in by.get(s, []) if q not in got]
+                fresh = pick(pool, short, used, tmpl, salt=f"s{a.set}")
+                if idx == len(SPEC) - 1 and len(fresh) < short:
+                    more = load_generated(short - len(fresh), exclude=gen_taken)
+                    gen_taken |= {gen_sig(q) for q in more}
+                    fresh += more
+                print(f"  PIN: topped up {len(fresh)} replacement(s) in {title[:34]} "
+                      f"— RE-VERIFY these")
+                got += fresh
             paper.append((title, got)); n += len(got)
             continue
         pool = [q for s in secs for q in by.get(s, [])]

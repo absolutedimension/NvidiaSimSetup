@@ -1,17 +1,58 @@
 {
-  "_why": "Hand corrections to extracted question TEXT, each one read off the commission's own printed page at high resolution and recorded here rather than edited into the bank silently. Same principle as VERIFIED_KEYS.json: if a human overrode the machine, the override should be visible, attributable to a source page, and re-appliable after any re-extraction.",
-  "_how": "apply_text_corrections.py matches on (source_pdf, number) and replaces only the named field.",
-
-  "corrections": [
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 6,
-      "field": "stem_hi",
-      "source_page": "03_25_SET_A.pdf page 2, question 6 (rendered at 200 dpi and read by eye)",
-      "found_by": "Rohan, during manual review of Set 1 question 22",
-      "problem": "Latin letters embedded inside a Devanagari word — the extractor half-transliterated 'बेयरफुट' as 'बAREफुट' — plus 'टेक्नीशियन' rendered as 'तकनीशियन' and the tail of the sentence paraphrased.",
-      "was": "किस मंत्रालय ने बAREफुट तकनीशियन (BFT) परियोजना शुरू की और इसके लिए किस उद्देश्य से इसे शुरू किया गया ?",
-      "now": "किस मंत्रालय ने बेयरफुट टेक्नीशियन (BFT) परियोजना शुरू की और यह किस उद्देश्य से शुरू की गई थी ?"
-    }
-  ]
+ "_why": "Hand corrections to extracted question TEXT, each one read off the commission's own printed page at high resolution and recorded here rather than edited into the bank silently. Same principle as VERIFIED_KEYS.json: if a human overrode the machine, the override should be visible, attributable to a source page, and re-appliable after any re-extraction.",
+ "_how": "apply_text_corrections.py matches on (source_pdf, number) and replaces only the named field.",
+ "corrections": [
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 6,
+   "field": "stem_hi",
+   "source_page": "03_25_SET_A.pdf page 2, question 6 (rendered at 200 dpi and read by eye)",
+   "found_by": "Rohan, during manual review of Set 1 question 22",
+   "problem": "Latin letters embedded inside a Devanagari word — the extractor half-transliterated 'बेयरफुट' as 'बAREफुट' — plus 'टेक्नीशियन' rendered as 'तकनीशियन' and the tail of the sentence paraphrased.",
+   "was": "किस मंत्रालय ने बAREफुट तकनीशियन (BFT) परियोजना शुरू की और इसके लिए किस उद्देश्य से इसे शुरू किया गया ?",
+   "now": "किस मंत्रालय ने बेयरफुट टेक्नीशियन (BFT) परियोजना शुरू की और यह किस उद्देश्य से शुरू की गई थी ?"
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 33,
+   "field": "options",
+   "source_page": "3102059_10_I.pdf page 4, question 33",
+   "found_by": "blind AI re-solve, Hindi route — it answered 'X' saying the country name in option B was mis-spelled, while both English routes answered B without noticing anything",
+   "problem": "'दक्षिण अफ्रीका' (South Africa) came out of the scan as 'दीक्षा अफ्रीका' — a real word, so no corruption-token list catches it, and the English side reads 'India-South Africa' perfectly. Invisible to every check we had, including the full Hindi read.",
+   "was": "भारत-दीक्षा अफ्रीका",
+   "now": "भारत-दक्षिण अफ्रीका",
+   "index": 1
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 119,
+   "field": "stem",
+   "source_page": "03_25_SET_A.pdf page 29, question 119",
+   "found_by": "blind AI re-solve — answered the intended question correctly but flagged the wording",
+   "problem": "The interrogative was dropped: 'At the rate percent per annum' is not a question. The key (12½%) is the answer to 'at WHAT rate percent per annum will a sum double in 8 years', which is plainly what was asked.",
+   "was": "At the rate percent per annum simple interest, will a sum be double itself in 8 years?",
+   "now": "At what rate percent per annum simple interest will a sum double itself in 8 years?"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 119,
+   "field": "stem_hi",
+   "source_page": "03_25_SET_A.pdf page 29, question 119",
+   "found_by": "same — the Hindi lost the interrogative in the same way",
+   "problem": "'साधारण ब्याज की दर पर, क्या एक राशि 8 वर्षों में अपने आप को दोगुना कर देगी?' asks whether a sum doubles, not at what rate — a yes/no question with four percentages as options.",
+   "was": "साधारण ब्याज की दर पर, क्या एक राशि 8 वर्षों में अपने आप को दोगुना कर देगी?",
+   "now": "साधारण ब्याज की किस दर प्रतिशत वार्षिक पर कोई राशि 8 वर्षों में दोगुनी हो जाएगी ?"
+  },
+  {
+   "source_pdf": "0225_SET-A.pdf",
+   "number": 2,
+   "field": "options",
+   "source_page": "0225_SET-A.pdf page 1, question 2",
+   "found_by": "blind AI re-solve — all three routes rejected the keyed option because the portal name as printed is not a name any of them recognised",
+   "problem": "The Ministry of Information and Broadcasting's New Media Wing portal is 'NaViGate Bharat'. The scan produced 'NaVigat Bharat'. The Hindi option 'नविगेट भारत' is correct, so the two languages disagree and the English option names nothing that exists.",
+   "was": "NaVigat Bharat",
+   "now": "NaViGate Bharat",
+   "index": 2
+  }
+ ]
 }

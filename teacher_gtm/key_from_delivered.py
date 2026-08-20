@@ -43,7 +43,7 @@ BSSC = os.path.join(HERE, "..", "question_bank_engine", "drop", "bssc")
 
 Q_BLOCK = re.compile(r'<div class="q">(.*?)</div></div>', re.S)
 KEY_ITEM = re.compile(r'<span class="k">(\d+)\.\s*<b>([A-D])</b>(<i>\*</i>)?</span>')
-OPT = re.compile(r'<span class="op"><b>\(([A-D])\)</b>\s*(.*?)</span>', re.S)
+OPT_LABEL = re.compile(r'^\s*<b>\(([A-D])\)</b>(.*)$', re.S)
 EN_DIV = re.compile(r'<div class="en">(.*?)</div>', re.S)
 TAGS = re.compile(r"<[^>]+>")
 
@@ -51,6 +51,22 @@ TAGS = re.compile(r"<[^>]+>")
 def text(s):
     """Printed HTML back to plain text, so it can be compared with the source JSON."""
     return re.sub(r"\s+", " ", htmllib.unescape(TAGS.sub("", s))).strip()
+
+
+def options(block):
+    """Every option in a question block, split on the OPENING tag so nesting cannot truncate it.
+
+    A regex ending at `</span>` stopped at the inner span of a stacked fraction: option (A) 1/20
+    came back as "1", and K = ½mv² came back as "K = 1". That fed a wrong answer_text onto the
+    verification sheet — the one column a reader compares against the paper. ai_verify_paper.py
+    keeps its own copy of this; it has to run alone on the VM.
+    """
+    out = []
+    for chunk in block.split('<span class="op">')[1:]:
+        m = OPT_LABEL.match(chunk)
+        if m:
+            out.append((m.group(1), text(m.group(2))))
+    return out
 
 
 def norm(s):
@@ -116,8 +132,8 @@ def main():
     for i, block in enumerate(blocks, 1):
         letter, generated = keys[i]
         # the English half is printed last, so its option block is the final one
-        opts = OPT.findall(block)
-        answer_text = text(next((t for lab, t in reversed(opts) if lab == letter), ""))
+        opts = options(block)
+        answer_text = next((t for lab, t in reversed(opts) if lab == letter), "")
         en = text(EN_DIV.search(block).group(1)) if EN_DIV.search(block) else ""
         en = re.sub(r"^\d+\.\s*", "", en)
         src = (gen if generated else real).get(norm(en))

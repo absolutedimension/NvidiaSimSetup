@@ -1,358 +1,388 @@
 {
-  "_why": "Questions verified DEFECTIVE by working the problem, not by a structural rule. Each one was extracted cleanly enough to pass every automated gate — four options, a key letter that exists, numbers agreeing across languages — and is still wrong on the page. The only way to find these is to solve them, so the finding is recorded here rather than re-discovered by the next reviewer.",
-  "_how": "paper_common.excluded() reads this; the builders skip anything listed. Add to it as review turns up more — Rohan's findings belong here too.",
-  "_note": "Most cluster in complex-LaTeX maths (nested surds, telescoping series). That is a signal about the EXTRACTION, not the commission's papers: where a stem carried heavy LaTeX, the transcription lost structure while still looking plausible.",
-  "excluded": [
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 7,
-      "reason": "No option is correct. Stem is a = √(11+√3), b = √(12+√2), c = √(6+√4) → a≈3.568, b≈3.662, c≈2.828, so b > a > c. The four options are 'a>b>c', 'c>a>b', 'a>b<c', 'a<c>b' — none of which is that. Key says C ('a>b<c'), and both of its claims are false."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 11,
-      "reason": "Stem lost its structure in extraction. As printed it reads 1/√9 + 1/√11 + ... + 1/√2025, which sums to no option. The original is the telescoping series 1/(√9+√11) + 1/(√11+√13) + ... = (√2025-√9)/2 = 21 — which is exactly the keyed answer D. The KEY is right; the visible question is unanswerable."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 13,
-      "reason": "√1375 + √1125 − √1375 = √1125 = 15√5, which is IRRATIONAL (option B). Key says C (Rational). Either the key or the stem is wrong; either way it cannot be served."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 26,
-      "reason": "Stem defines b and c as the SAME expression ((√6+√5)/5), so the comparison it asks for is ill-posed. Extraction damage."
-    },
-    {
-      "source_pdf": "5101136_08_A.pdf",
-      "number": 24,
-      "reason": "Incoherent stem: 'If x = r, then find the value of r = x, and the discount = r, z, then find the value of ___'. Not a question."
-    },
-    {
-      "source_pdf": "0225_SET-A.pdf",
-      "number": 18,
-      "reason": "Match-the-columns with Column II truncated — only entries 1 and 2 survive extraction, so the student cannot see what 3 and 4 are and no option can be justified."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 8,
-      "reason": "Stem and answer do not correspond. 'If one task can be done in 24 days, how many days to complete 30 tasks?' with keyed answer 13/3 days. The Hindi is garbled differently again ('30 दिनों में कितने दिन लगेंगे'). Whatever the original asked, this is not recoverable from what was extracted."
-    },
-    {
-      "source_pdf": "5101136_08_A.pdf",
-      "number": 43,
-      "reason": "Garbled stem: 'इसमें कौन-सा भौतिक संज्ञान नहीं है ?' ('which physical cognition is not in this') with options जल / चाय / ध्वनि / प्रमाण. Almost certainly 'भौतिक परिवर्तन' (physical change) in the original; as extracted it is not a question."
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 117,
-      "reason": "The two languages carry DIFFERENT options: English −5/7, 29, 9, −11 versus Hindi −5/7, −42, −14, 28. The keyed letter D is the greatest in the Hindi list (28) but not in the English one (−11), so the same paper gives two different right answers depending on which half the student reads."
-    },
-    {
-      "source_pdf": "5101136_08_A.pdf",
-      "number": 15,
-      "reason": "Arithmetic does not reach any option: ₹1,728 less 25% = 1,296, plus 20% = 1,555.20, but the options are 1,500/1,620/1,664/1,665. 1,296 x 1.25 = 1,620 = the keyed answer, so the extraction almost certainly turned a 25% increase into 20%."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 14,
-      "reason": "Key contradicts the arithmetic. A beats B by 270 in 900 (B runs 630) and beats C by 340 (C runs 560); when B runs 900, C runs 800, so B beats C by 100 — option D. The key says B (70)."
-    },
-    {
-      "source_pdf": "5101136_08_A.pdf",
-      "number": 19,
-      "reason": "Marked price ₹810 with 8% VAT gives ₹874.80, which is not an option. 750 x 1.08 = 810, so the question actually asks for the price BEFORE VAT; the stem as extracted is inverted."
-    },
-    {
-      "source_pdf": "5101136_08_A.pdf",
-      "number": 42,
-      "reason": "Gibberish: 'विज्ञान फ़लाट का संक्षेप किस क्षेत्र से है?' / 'Which area is the summary of the science flat from?' with options Physics / Qualitative science / Chair / Fact."
-    },
-    {
-      "source_pdf": "5101136_08_A.pdf",
-      "number": 17,
-      "reason": "45 items at ₹49 makes 35 items ₹38.11, but the key says ₹63 — which is what you get from 35 items at ₹49 scaled to 45. The two quantities are swapped in the extracted stem."
-    },
-    {
-      "source_pdf": "5101136_08_A.pdf",
-      "number": 13,
-      "reason": "15% of ₹2,500 is ₹375, which is not among the options at all (250/350/650/750). The keyed 750 is 30% of 2,500, so the percentage in the stem is wrong."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 23,
-      "reason": "The fraction was lost in extraction: the stem prints 'x + 2 x + 3 > 1' where the original is (x+2)/(x+3) > 1. The keyed answer 0 is right for the original; the printed inequality is meaningless."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 96,
-      "reason": "Garbled stem — not a question."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 97,
-      "reason": "Orphaned passage fragment — 'in the context of boys/home/physical education' with no passage."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 98,
-      "reason": "Orphaned passage fragment."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 99,
-      "reason": "Orphaned passage fragment — 'in the context of boys/home/physical education' with no passage."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 35,
-      "reason": "Incomplete stem — 'the principle' has no referent. Nothing to answer."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 36,
-      "reason": "Garbled: options 1947/1950/1975/2000 with 1975 keyed. Not a coherent question."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 40,
-      "reason": "Garbled stem ('air dock'), and one option is itself OCR garbage."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 45,
-      "reason": "Stem is a mistranslation: it asks about climate change while the options are four 1919 dates (the real question was Jallianwala Bagh)."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 100,
-      "reason": "Key verified C = '14 मार्च', but Ambedkar was born 14 APRIL 1891 and '14 अप्रैल' is option B. The key matches the commission page, so the OPTION extraction is what is wrong. Either way the paper would mark a factually false date correct."
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 46,
-      "reason": "Refers to statements that are not printed."
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 53,
-      "reason": "Match-the-columns with NO columns printed — the lists did not survive extraction."
-    },
-    {
-      "source_pdf": "0225_SET-A.pdf",
-      "number": 21,
-      "reason": "Spreadsheet/IT question. Computer knowledge is NOT in the Inter Level prelim syllabus — it is a separate technical eligibility requirement."
-    },
-    {
-      "source_pdf": "0225_SET-A.pdf",
-      "number": 26,
-      "reason": "Orphaned comprehension question about an absent passage."
-    },
-    {
-      "source_pdf": "0225_SET-A.pdf",
-      "number": 28,
-      "reason": "Orphaned comprehension question: refers to a passage about a cleanup drive that is not on the paper."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 37,
-      "reason": "Stem and options do not correspond: '1857 ई. विद्रोह के कारणों में ?' (among the CAUSES of the 1857 revolt) with four PEOPLE as options. The original asked who led it in Bihar. One option is also garbled (सहजानंद गाधी)."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 48,
-      "reason": "'बहुउद्देशीय कंपनी' (multi-purpose company) where the original must be बहुराष्ट्रीय (multinational), and option A 'कोई मेटल्स' is OCR garbage rather than a company."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 100,
-      "reason": "'What is not the essence of physical education?' with options Toys / Music / Sports / Education. Part of the same corrupted cluster as Q96-Q99 in this paper; the option set is not credible."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 63,
-      "reason": "STALE CURRENT AFFAIRS. 'Who is the Vice-President of India?' keyed Jagdeep Dhankhar. Correct when the paper was set in 2025; he resigned in July 2025, so a 2026 student would be taught a wrong current fact. Present-tense office-holder questions must not be reused."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 51,
-      "reason": "STALE CURRENT AFFAIRS. 'Who is the minister of External Affairs of India?' — present-tense office-holder question; correct only for the year it was set."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 44,
-      "reason": "STALE CURRENT AFFAIRS. 'भारतीय रिजर्व बैंक के वर्तमान गवर्नर कौन हैं?' — explicitly asks for the CURRENT governor."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 60,
-      "reason": "Garbled stem: 'राज्यसभा के सदस्य कौन है ?' has no determinate answer as printed."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 92,
-      "reason": "Garbled Hindi stem ('कवि' के दांठ के कहानिकार कौन हैं?) — not a question."
-    },
-    {
-      "source_pdf": "0225_SET-A.pdf",
-      "number": 25,
-      "reason": "Networking-protocol matching question (HTTP/FTP/SMTP/DNS). Computer knowledge is not in the Inter Level prelim syllabus, and the Purposes list did not survive extraction either."
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 59,
-      "reason": "The commission's key is D with the description '11 जनवरी, 2010', but OUR extracted option D reads '11 January, 2011' and option C reads '11 January, 2010'. The key is right and the OPTIONS are mis-extracted, so the paper would mark the wrong year correct. (JNNSM was launched 11 January 2010.)"
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 14,
-      "reason": "'Match the Columns - G20 Countries and their Currencies' with neither column printed. Nothing to match."
-    },
-    {
-      "source_pdf": "0225_SET-A.pdf",
-      "number": 20,
-      "reason": "'Which of the following is/are true regarding interest?' with options 'I only', 'II and IV only' etc but the statements themselves are absent."
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 32,
-      "reason": "'Which of the following statements about the Indian Rupee symbol are correct?' — the numbered statements are not printed, only the option combinations."
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 139,
-      "reason": "The correct answer is not among the options. '5, 11, 23, 47, ?' follows x2+1, giving 95; the options are 190/193/191/188 and the key is 191 — which is 95x2+1, the term AFTER the one asked for. A term was lost from the printed series."
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 138,
-      "reason": "The Hindi drops a person from the puzzle: 'A, B, C और E एक बेंच पर बैठे हुए हैं' where the English correctly says A, B, C, D and E. A Hindi-medium student is given a five-seat puzzle with four people and cannot solve it."
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 141,
-      "reason": "Malformed analogy stem: 'Pediatrics : Children :: ? : Geriatrics : ?' — two blanks and the pair inverted. The intended answer (Aged) is right, but the question as printed cannot be read."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 2,
-      "reason": "Stem is just 'Find the value of x.' with no equation, and the options are x-y / 1 / x x 100 / x+y. The equation did not survive extraction; nothing is answerable."
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 5,
-      "reason": "The correct answer is not among the options. Multiplying C.P. by 11/10 gives a 10% profit, but the options are (11/10)squared, 11, 10, 9 — the keyed 11 is the numerator alone, so '11/10' was flattened to '11' in extraction."
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 43,
-      "reason": "HINDI DEFECT. लोकलुभाव for local governance"
-    },
-    {
-      "source_pdf": "0225_SET-A.pdf",
-      "number": 9,
-      "reason": "HINDI DEFECT. अंगूठियों (finger-rings) for chemical rings"
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 121,
-      "reason": "HINDI DEFECT. \"1 के प्राकृतिक संख्या\" drops \"other than 1\""
-    },
-    {
-      "source_pdf": "G.K_and_N.A_M.A.PDF",
-      "number": 73,
-      "reason": "HINDI DEFECT. \"कहिए के कारण\" garbled for कोहरे (fog)"
-    },
-    {
-      "source_pdf": "G.K_and_N.A_M.A.PDF",
-      "number": 26,
-      "reason": "HINDI DEFECT. Hindi asks मूल्य मूल (original price); English and the key are the SELLING price"
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 144,
-      "reason": "HINDI DEFECT. Hindi omits बाएँ से / दाएँ से, so the row puzzle is unsolvable in Hindi"
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 131,
-      "reason": "HINDI DEFECT. \"पत्र\" (correspondence) for अक्षर (letter of the alphabet)"
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 68,
-      "reason": "HINDI DEFECT. \"गैर-सम Cooperation आंदोलन\" — Latin word inside the Hindi and the rest garbled (असहयोग)"
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 73,
-      "reason": "HINDI DEFECT. Hindi asks किन राज्यों (WHICH states); English asks HOW MANY and the key is \"Three\""
-    },
-    {
-      "source_pdf": "Qn_SET_A.pdf",
-      "number": 1,
-      "reason": "HINDI DEFECT. Hindi says भागफल (quotient) 2200 where English says DIVIDEND, and the last clause is truncated"
-    },
-    {
-      "source_pdf": "maths.PDF",
-      "number": 42,
-      "reason": "HINDI DEFECT. \"प्रश्न n प्राकृतिक संख्याओं\" — प्रश्न for प्रथम (first)"
-    },
-    {
-      "source_pdf": "maths.PDF",
-      "number": 45,
-      "reason": "HINDI DEFECT. \"प्रश्न 20 विभिन्न\" — should be प्रथम 20 विषम (first 20 ODD); the Hindi asks a different question"
-    },
-    {
-      "source_pdf": "maths.PDF",
-      "number": 8,
-      "reason": "HINDI DEFECT. \"6^n - 5^n का अंत संदर्भ होगा\" — संदर्भ (context) is garbage for \"ends with\""
-    },
-    {
-      "source_pdf": "G.K_and_N.A_M.A.PDF",
-      "number": 149,
-      "reason": "HINDI DEFECT. \"5 व्यक्ति या 8 कार्य\" — 8 WORKS where English says 8 WOMEN; the Hindi is unsolvable"
-    },
-    {
-      "source_pdf": "03_25_SET_A.pdf",
-      "number": 68,
-      "reason": "HINDI DEFECT. Hindi asks सबसे बाहरी परत से (from the OUTERMOST) while English asks innermost-to-outermost — the direction is reversed, so the Hindi answer is the reverse of the key"
-    },
-    {
-      "source_pdf": "G.K_and_N.A_M.A.PDF",
-      "number": 133,
-      "reason": "HINDI DEFECT. \"अमरूद\" (guava) where English says grapes"
-    },
-    {
-      "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
-      "number": 93,
-      "reason": "HINDI DEFECT. \"प्रश्न 15 छात्रों के लिए\" — प्रश्न for प्रति (for every)"
-    },
-    {
-      "source_pdf": "maths.PDF",
-      "number": 19,
-      "reason": "HINDI DEFECT. \"यदि n एक विशेष धन पूर्णांक\" — विशेष (special) for विषम (ODD); the Hindi states a different condition"
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 41,
-      "reason": "HINDI DEFECT. Garbled: \"किसी वस्तु का प्रतिविभाग सामान्य मुख्य के नेत्र के किस भाग पर बनता है\" — प्रतिविभाग सामान्य मुख्य is not Hindi; should be प्रतिबिम्ब"
-    },
-    {
-      "source_pdf": "3102059_10_I.pdf",
-      "number": 5,
-      "reason": "HINDI DEFECT. Hindi asks \"7, 49, 343 और 154 का महत्त्व क्या है\" (what is the IMPORTANCE) where English asks what TYPE of numbers they are"
-    }
-  ],
-  "excluded_sources": [
-    {
-      "source_pdf": "5101136_08_A.pdf",
-      "label": "BSSC 8th Level 2024",
-      "reason": "EXCLUDED WHOLESALE. Seven of its 32 eligible questions were verified defective by working them — a 22% rate, against 0.8% for the Field Assistant paper. Since these defects are only findable by solving each question, a 22% measured rate implies more that have not been found. The paper contributes only 32 questions (7 of them Science/Maths), so keeping it buys little and risks a wrong answer in front of students."
-    }
-  ],
-  "_rules": [
-    "STALE CURRENT AFFAIRS: never reuse a present-tense office-holder question ('who is the VP/CJI/minister/governor'). A date-anchored version is fine ('who became the 52nd CJI on 14 May 2025') because it stays true. This class cannot be caught by any structural check and does not show up as a defect in the source paper — it simply expires.",
-    "HINDI DEFECTS ARE INVISIBLE TO EVERY ENGLISH-SIDE CHECK. A reversed direction (innermost vs outermost), a changed quantifier (how many vs which), a dropped word (first 20 ODD -> first 20 different), or a wrong noun (8 women -> 8 works) all leave the numbers, the option count and the key untouched. Only reading the Hindi against the English finds them. Budget that read."
-  ]
+ "_why": "Questions verified DEFECTIVE by working the problem, not by a structural rule. Each one was extracted cleanly enough to pass every automated gate — four options, a key letter that exists, numbers agreeing across languages — and is still wrong on the page. The only way to find these is to solve them, so the finding is recorded here rather than re-discovered by the next reviewer.",
+ "_how": "paper_common.excluded() reads this; the builders skip anything listed. Add to it as review turns up more — Rohan's findings belong here too.",
+ "_note": "Most cluster in complex-LaTeX maths (nested surds, telescoping series). That is a signal about the EXTRACTION, not the commission's papers: where a stem carried heavy LaTeX, the transcription lost structure while still looking plausible.",
+ "excluded": [
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 7,
+   "reason": "No option is correct. Stem is a = √(11+√3), b = √(12+√2), c = √(6+√4) → a≈3.568, b≈3.662, c≈2.828, so b > a > c. The four options are 'a>b>c', 'c>a>b', 'a>b<c', 'a<c>b' — none of which is that. Key says C ('a>b<c'), and both of its claims are false."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 11,
+   "reason": "Stem lost its structure in extraction. As printed it reads 1/√9 + 1/√11 + ... + 1/√2025, which sums to no option. The original is the telescoping series 1/(√9+√11) + 1/(√11+√13) + ... = (√2025-√9)/2 = 21 — which is exactly the keyed answer D. The KEY is right; the visible question is unanswerable."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 13,
+   "reason": "√1375 + √1125 − √1375 = √1125 = 15√5, which is IRRATIONAL (option B). Key says C (Rational). Either the key or the stem is wrong; either way it cannot be served."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 26,
+   "reason": "Stem defines b and c as the SAME expression ((√6+√5)/5), so the comparison it asks for is ill-posed. Extraction damage."
+  },
+  {
+   "source_pdf": "5101136_08_A.pdf",
+   "number": 24,
+   "reason": "Incoherent stem: 'If x = r, then find the value of r = x, and the discount = r, z, then find the value of ___'. Not a question."
+  },
+  {
+   "source_pdf": "0225_SET-A.pdf",
+   "number": 18,
+   "reason": "Match-the-columns with Column II truncated — only entries 1 and 2 survive extraction, so the student cannot see what 3 and 4 are and no option can be justified."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 8,
+   "reason": "Stem and answer do not correspond. 'If one task can be done in 24 days, how many days to complete 30 tasks?' with keyed answer 13/3 days. The Hindi is garbled differently again ('30 दिनों में कितने दिन लगेंगे'). Whatever the original asked, this is not recoverable from what was extracted."
+  },
+  {
+   "source_pdf": "5101136_08_A.pdf",
+   "number": 43,
+   "reason": "Garbled stem: 'इसमें कौन-सा भौतिक संज्ञान नहीं है ?' ('which physical cognition is not in this') with options जल / चाय / ध्वनि / प्रमाण. Almost certainly 'भौतिक परिवर्तन' (physical change) in the original; as extracted it is not a question."
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 117,
+   "reason": "The two languages carry DIFFERENT options: English −5/7, 29, 9, −11 versus Hindi −5/7, −42, −14, 28. The keyed letter D is the greatest in the Hindi list (28) but not in the English one (−11), so the same paper gives two different right answers depending on which half the student reads."
+  },
+  {
+   "source_pdf": "5101136_08_A.pdf",
+   "number": 15,
+   "reason": "Arithmetic does not reach any option: ₹1,728 less 25% = 1,296, plus 20% = 1,555.20, but the options are 1,500/1,620/1,664/1,665. 1,296 x 1.25 = 1,620 = the keyed answer, so the extraction almost certainly turned a 25% increase into 20%."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 14,
+   "reason": "Key contradicts the arithmetic. A beats B by 270 in 900 (B runs 630) and beats C by 340 (C runs 560); when B runs 900, C runs 800, so B beats C by 100 — option D. The key says B (70)."
+  },
+  {
+   "source_pdf": "5101136_08_A.pdf",
+   "number": 19,
+   "reason": "Marked price ₹810 with 8% VAT gives ₹874.80, which is not an option. 750 x 1.08 = 810, so the question actually asks for the price BEFORE VAT; the stem as extracted is inverted."
+  },
+  {
+   "source_pdf": "5101136_08_A.pdf",
+   "number": 42,
+   "reason": "Gibberish: 'विज्ञान फ़लाट का संक्षेप किस क्षेत्र से है?' / 'Which area is the summary of the science flat from?' with options Physics / Qualitative science / Chair / Fact."
+  },
+  {
+   "source_pdf": "5101136_08_A.pdf",
+   "number": 17,
+   "reason": "45 items at ₹49 makes 35 items ₹38.11, but the key says ₹63 — which is what you get from 35 items at ₹49 scaled to 45. The two quantities are swapped in the extracted stem."
+  },
+  {
+   "source_pdf": "5101136_08_A.pdf",
+   "number": 13,
+   "reason": "15% of ₹2,500 is ₹375, which is not among the options at all (250/350/650/750). The keyed 750 is 30% of 2,500, so the percentage in the stem is wrong."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 23,
+   "reason": "The fraction was lost in extraction: the stem prints 'x + 2 x + 3 > 1' where the original is (x+2)/(x+3) > 1. The keyed answer 0 is right for the original; the printed inequality is meaningless."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 96,
+   "reason": "Garbled stem — not a question."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 97,
+   "reason": "Orphaned passage fragment — 'in the context of boys/home/physical education' with no passage."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 98,
+   "reason": "Orphaned passage fragment."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 99,
+   "reason": "Orphaned passage fragment — 'in the context of boys/home/physical education' with no passage."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 35,
+   "reason": "Incomplete stem — 'the principle' has no referent. Nothing to answer."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 36,
+   "reason": "Garbled: options 1947/1950/1975/2000 with 1975 keyed. Not a coherent question."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 40,
+   "reason": "Garbled stem ('air dock'), and one option is itself OCR garbage."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 45,
+   "reason": "Stem is a mistranslation: it asks about climate change while the options are four 1919 dates (the real question was Jallianwala Bagh)."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 100,
+   "reason": "Key verified C = '14 मार्च', but Ambedkar was born 14 APRIL 1891 and '14 अप्रैल' is option B. The key matches the commission page, so the OPTION extraction is what is wrong. Either way the paper would mark a factually false date correct."
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 46,
+   "reason": "Refers to statements that are not printed."
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 53,
+   "reason": "Match-the-columns with NO columns printed — the lists did not survive extraction."
+  },
+  {
+   "source_pdf": "0225_SET-A.pdf",
+   "number": 21,
+   "reason": "Spreadsheet/IT question. Computer knowledge is NOT in the Inter Level prelim syllabus — it is a separate technical eligibility requirement."
+  },
+  {
+   "source_pdf": "0225_SET-A.pdf",
+   "number": 26,
+   "reason": "Orphaned comprehension question about an absent passage."
+  },
+  {
+   "source_pdf": "0225_SET-A.pdf",
+   "number": 28,
+   "reason": "Orphaned comprehension question: refers to a passage about a cleanup drive that is not on the paper."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 37,
+   "reason": "Stem and options do not correspond: '1857 ई. विद्रोह के कारणों में ?' (among the CAUSES of the 1857 revolt) with four PEOPLE as options. The original asked who led it in Bihar. One option is also garbled (सहजानंद गाधी)."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 48,
+   "reason": "'बहुउद्देशीय कंपनी' (multi-purpose company) where the original must be बहुराष्ट्रीय (multinational), and option A 'कोई मेटल्स' is OCR garbage rather than a company."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 100,
+   "reason": "'What is not the essence of physical education?' with options Toys / Music / Sports / Education. Part of the same corrupted cluster as Q96-Q99 in this paper; the option set is not credible."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 63,
+   "reason": "STALE CURRENT AFFAIRS. 'Who is the Vice-President of India?' keyed Jagdeep Dhankhar. Correct when the paper was set in 2025; he resigned in July 2025, so a 2026 student would be taught a wrong current fact. Present-tense office-holder questions must not be reused."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 51,
+   "reason": "STALE CURRENT AFFAIRS. 'Who is the minister of External Affairs of India?' — present-tense office-holder question; correct only for the year it was set."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 44,
+   "reason": "STALE CURRENT AFFAIRS. 'भारतीय रिजर्व बैंक के वर्तमान गवर्नर कौन हैं?' — explicitly asks for the CURRENT governor."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 60,
+   "reason": "Garbled stem: 'राज्यसभा के सदस्य कौन है ?' has no determinate answer as printed."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 92,
+   "reason": "Garbled Hindi stem ('कवि' के दांठ के कहानिकार कौन हैं?) — not a question."
+  },
+  {
+   "source_pdf": "0225_SET-A.pdf",
+   "number": 25,
+   "reason": "Networking-protocol matching question (HTTP/FTP/SMTP/DNS). Computer knowledge is not in the Inter Level prelim syllabus, and the Purposes list did not survive extraction either."
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 59,
+   "reason": "The commission's key is D with the description '11 जनवरी, 2010', but OUR extracted option D reads '11 January, 2011' and option C reads '11 January, 2010'. The key is right and the OPTIONS are mis-extracted, so the paper would mark the wrong year correct. (JNNSM was launched 11 January 2010.)"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 14,
+   "reason": "'Match the Columns - G20 Countries and their Currencies' with neither column printed. Nothing to match."
+  },
+  {
+   "source_pdf": "0225_SET-A.pdf",
+   "number": 20,
+   "reason": "'Which of the following is/are true regarding interest?' with options 'I only', 'II and IV only' etc but the statements themselves are absent."
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 32,
+   "reason": "'Which of the following statements about the Indian Rupee symbol are correct?' — the numbered statements are not printed, only the option combinations."
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 139,
+   "reason": "The correct answer is not among the options. '5, 11, 23, 47, ?' follows x2+1, giving 95; the options are 190/193/191/188 and the key is 191 — which is 95x2+1, the term AFTER the one asked for. A term was lost from the printed series."
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 138,
+   "reason": "The Hindi drops a person from the puzzle: 'A, B, C और E एक बेंच पर बैठे हुए हैं' where the English correctly says A, B, C, D and E. A Hindi-medium student is given a five-seat puzzle with four people and cannot solve it."
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 141,
+   "reason": "Malformed analogy stem: 'Pediatrics : Children :: ? : Geriatrics : ?' — two blanks and the pair inverted. The intended answer (Aged) is right, but the question as printed cannot be read."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 2,
+   "reason": "Stem is just 'Find the value of x.' with no equation, and the options are x-y / 1 / x x 100 / x+y. The equation did not survive extraction; nothing is answerable."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 5,
+   "reason": "The correct answer is not among the options. Multiplying C.P. by 11/10 gives a 10% profit, but the options are (11/10)squared, 11, 10, 9 — the keyed 11 is the numerator alone, so '11/10' was flattened to '11' in extraction."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 43,
+   "reason": "HINDI DEFECT. लोकलुभाव for local governance"
+  },
+  {
+   "source_pdf": "0225_SET-A.pdf",
+   "number": 9,
+   "reason": "HINDI DEFECT. अंगूठियों (finger-rings) for chemical rings"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 121,
+   "reason": "HINDI DEFECT. \"1 के प्राकृतिक संख्या\" drops \"other than 1\""
+  },
+  {
+   "source_pdf": "G.K_and_N.A_M.A.PDF",
+   "number": 73,
+   "reason": "HINDI DEFECT. \"कहिए के कारण\" garbled for कोहरे (fog)"
+  },
+  {
+   "source_pdf": "G.K_and_N.A_M.A.PDF",
+   "number": 26,
+   "reason": "HINDI DEFECT. Hindi asks मूल्य मूल (original price); English and the key are the SELLING price"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 144,
+   "reason": "HINDI DEFECT. Hindi omits बाएँ से / दाएँ से, so the row puzzle is unsolvable in Hindi"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 131,
+   "reason": "HINDI DEFECT. \"पत्र\" (correspondence) for अक्षर (letter of the alphabet)"
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 68,
+   "reason": "HINDI DEFECT. \"गैर-सम Cooperation आंदोलन\" — Latin word inside the Hindi and the rest garbled (असहयोग)"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 73,
+   "reason": "HINDI DEFECT. Hindi asks किन राज्यों (WHICH states); English asks HOW MANY and the key is \"Three\""
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 1,
+   "reason": "HINDI DEFECT. Hindi says भागफल (quotient) 2200 where English says DIVIDEND, and the last clause is truncated"
+  },
+  {
+   "source_pdf": "maths.PDF",
+   "number": 42,
+   "reason": "HINDI DEFECT. \"प्रश्न n प्राकृतिक संख्याओं\" — प्रश्न for प्रथम (first)"
+  },
+  {
+   "source_pdf": "maths.PDF",
+   "number": 45,
+   "reason": "HINDI DEFECT. \"प्रश्न 20 विभिन्न\" — should be प्रथम 20 विषम (first 20 ODD); the Hindi asks a different question"
+  },
+  {
+   "source_pdf": "maths.PDF",
+   "number": 8,
+   "reason": "HINDI DEFECT. \"6^n - 5^n का अंत संदर्भ होगा\" — संदर्भ (context) is garbage for \"ends with\""
+  },
+  {
+   "source_pdf": "G.K_and_N.A_M.A.PDF",
+   "number": 149,
+   "reason": "HINDI DEFECT. \"5 व्यक्ति या 8 कार्य\" — 8 WORKS where English says 8 WOMEN; the Hindi is unsolvable"
+  },
+  {
+   "source_pdf": "03_25_SET_A.pdf",
+   "number": 68,
+   "reason": "HINDI DEFECT. Hindi asks सबसे बाहरी परत से (from the OUTERMOST) while English asks innermost-to-outermost — the direction is reversed, so the Hindi answer is the reverse of the key"
+  },
+  {
+   "source_pdf": "G.K_and_N.A_M.A.PDF",
+   "number": 133,
+   "reason": "HINDI DEFECT. \"अमरूद\" (guava) where English says grapes"
+  },
+  {
+   "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
+   "number": 93,
+   "reason": "HINDI DEFECT. \"प्रश्न 15 छात्रों के लिए\" — प्रश्न for प्रति (for every)"
+  },
+  {
+   "source_pdf": "maths.PDF",
+   "number": 19,
+   "reason": "HINDI DEFECT. \"यदि n एक विशेष धन पूर्णांक\" — विशेष (special) for विषम (ODD); the Hindi states a different condition"
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 41,
+   "reason": "HINDI DEFECT. Garbled: \"किसी वस्तु का प्रतिविभाग सामान्य मुख्य के नेत्र के किस भाग पर बनता है\" — प्रतिविभाग सामान्य मुख्य is not Hindi; should be प्रतिबिम्ब"
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 5,
+   "reason": "HINDI DEFECT. Hindi asks \"7, 49, 343 और 154 का महत्त्व क्या है\" (what is the IMPORTANCE) where English asks what TYPE of numbers they are"
+  },
+  {
+   "source_pdf": "0225_SET-A.pdf",
+   "number": 19,
+   "reason": "The correct expression is N = 100M(1-x/100)(1-y/100)(1-z/100)/p, but every option prints '... ) p' with no division bar — the extraction lost the outer fraction, so option B, which the key names, is off by a factor of p². Found by three independent blind solves, all of which answered 'no option is correct'."
+  },
+  {
+   "source_pdf": "3102059_10_I.pdf",
+   "number": 1,
+   "reason": "Stem contradicts its own key. As printed ('a sum of ₹9,200, if 15% is taken as interest, what will be the total amount') the answer is ₹10,580, which is not an option. The key says ₹8,000, which is the answer to the REVERSE question (₹9,200 already includes 15%, find the principal). The Hindi is equally ambiguous, so neither language is answerable."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 20,
+   "reason": "Says 'positive REAL numbers' in both languages. Parity is only defined for integers, so as written a²-d² has no forced parity (a=1.25, d=0.25 gives 1.5) and the honest answer is 'None of these'. The key says 'Odd', which is right only for the integer version the commission presumably meant."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 8,
+   "reason": "THE PRINTED ANSWER IS WRONG. A 20% speed increase cuts the time to 5/6, so the saving is t/6 = 5 min and the usual time is 30 min — option C. The official key says B (25 min), which is the answer for a 25% increase. Both languages say 20%. Whether the commission mis-keyed it or the scan mis-read 25% as 20%, the paper as delivered marks a correct answer wrong. Caught by all three blind routes; every structural check passed it."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 36,
+   "reason": "'Which of the following is not a multinational company?' — keyed 'Reliance', which is an Indian multinational with operations in dozens of countries. The question was defensible when the paper was set and is not now. Teaching it would teach a false fact."
+  },
+  {
+   "source_pdf": "Qn_SET_A.pdf",
+   "number": 25,
+   "reason": "Under-determined as printed: one ratio (P:Q = 5:7 five years ago) cannot fix a sum of ages. Every multiple of the ratio gives a different answer, so 92 is not derivable. The commission's original must have carried a second condition that the extraction dropped."
+  }
+ ],
+ "excluded_sources": [
+  {
+   "source_pdf": "5101136_08_A.pdf",
+   "label": "BSSC 8th Level 2024",
+   "reason": "EXCLUDED WHOLESALE. Seven of its 32 eligible questions were verified defective by working them — a 22% rate, against 0.8% for the Field Assistant paper. Since these defects are only findable by solving each question, a 22% measured rate implies more that have not been found. The paper contributes only 32 questions (7 of them Science/Maths), so keeping it buys little and risks a wrong answer in front of students."
+  }
+ ],
+ "_rules": [
+  "STALE CURRENT AFFAIRS: never reuse a present-tense office-holder question ('who is the VP/CJI/minister/governor'). A date-anchored version is fine ('who became the 52nd CJI on 14 May 2025') because it stays true. This class cannot be caught by any structural check and does not show up as a defect in the source paper — it simply expires.",
+  "HINDI DEFECTS ARE INVISIBLE TO EVERY ENGLISH-SIDE CHECK. A reversed direction (innermost vs outermost), a changed quantifier (how many vs which), a dropped word (first 20 ODD -> first 20 different), or a wrong noun (8 women -> 8 works) all leave the numbers, the option count and the key untouched. Only reading the Hindi against the English finds them. Budget that read."
+ ]
 }
