@@ -148,6 +148,29 @@ ARTICLE_SUBJECT_HI = {
     "President's Rule in a State": "किसी राज्य में राष्ट्रपति शासन",
     "the power of Parliament to amend the Constitution":
         "संविधान में संशोधन करने की संसद की शक्ति",
+    # The twelve added from the parsed ToC. Constitution's own Hindi terms throughout — अस्पृश्यता
+    # का अंत, लोक नियोजन, दुर्व्यापार, राजभाषा — so a candidate reading the bare Act they are allowed
+    # to carry into the hall sees the same words on our paper.
+    "prohibition of discrimination on grounds of religion, race, caste, sex or place of birth":
+        "धर्म, मूलवंश, जाति, लिंग या जन्मस्थान के आधार पर विभेद के प्रतिषेध",
+    "equality of opportunity in matters of public employment":
+        "लोक नियोजन के विषय में अवसर की समता",
+    "the abolition of untouchability": "अस्पृश्यता के अंत",
+    "the abolition of titles": "उपाधियों के अंत",
+    "prohibition of traffic in human beings and forced labour":
+        "मानव के दुर्व्यापार और बलात् श्रम के प्रतिषेध",
+    "freedom of conscience and free profession, practice and propagation of religion":
+        "अंतःकरण की तथा धर्म को अबाध रूप से मानने, आचरण करने और प्रचार करने की स्वतंत्रता",
+    "separation of the judiciary from the executive":
+        "कार्यपालिका से न्यायपालिका के पृथक्करण",
+    "a joint sitting of both Houses in certain cases":
+        "कुछ दशाओं में दोनों सदनों की संयुक्त बैठक",
+    "the establishment and constitution of the Supreme Court":
+        "उच्चतम न्यायालय की स्थापना और गठन",
+    "Public Service Commissions for the Union and for the States":
+        "संघ और राज्यों के लिए लोक सेवा आयोग",
+    "the official language of the Union": "संघ की राजभाषा",
+    "provisions as to a financial emergency": "वित्तीय आपात के बारे में उपबंधों",
 }
 
 # OBLIQUE form (73वें, not 73वाँ). These are only ever used before "संविधान संशोधन ने", and the

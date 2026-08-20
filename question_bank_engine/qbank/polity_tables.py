@@ -51,6 +51,24 @@ ARTICLE_SUBJECT = {
     "352": "the proclamation of a National Emergency",
     "356": "President's Rule in a State",
     "368": "the power of Parliament to amend the Constitution",
+    # Added 2026-08-20 from the parsed official ToC (CONSTITUTION_ARTICLES.json), not from recall.
+    # Wording is the Constitution's own marginal heading, lightly trimmed where the extraction
+    # left artefacts — 124 came through as "ofthe Supreme Court" and 226 with a stray bracket, so
+    # anything needing repair was read against the text rather than patched blind. Articles whose
+    # heading is uninformative on its own ("243. Definitions") were left out: a question needs a
+    # subject a candidate can reason about.
+    "15": "prohibition of discrimination on grounds of religion, race, caste, sex or place of birth",
+    "16": "equality of opportunity in matters of public employment",
+    "17": "the abolition of untouchability",
+    "18": "the abolition of titles",
+    "23": "prohibition of traffic in human beings and forced labour",
+    "25": "freedom of conscience and free profession, practice and propagation of religion",
+    "50": "separation of the judiciary from the executive",
+    "108": "a joint sitting of both Houses in certain cases",
+    "124": "the establishment and constitution of the Supreme Court",
+    "315": "Public Service Commissions for the Union and for the States",
+    "343": "the official language of the Union",
+    "360": "provisions as to a financial emergency",
 }
 
 # Amendment -> what it did. Distinct subjects, so a swap is always genuinely false.
