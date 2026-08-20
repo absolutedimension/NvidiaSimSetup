@@ -184,23 +184,68 @@ def _mult(rng, lo, hi, base):
 # ---- Simplification & Approximation ----------------------------------------
 
 def _b_simplify(rng, diff):
+    """BODMAS. Difficulty = how many operations, and whether the order can be got wrong.
+
+    diff 1  two operations, no precedence trap
+    diff 2  three operations including a square and a percentage
+    diff 3  four operations with a division that must be done before the addition
+    diff 4+ a bracket to resolve first, so left-to-right gives a different answer
+    """
     r = rng.choice([7, 8, 9, 11, 12, 13, 14, 15])
     sq = r * r
-    p = rng.choice([10, 15, 20, 25, 40])
-    q = _mult(rng, 4, 12, 20)                       # multiple of 20 → clean %
-    part = p * q // 100
+    p_ = rng.choice([10, 15, 20, 25, 40])
+    q = _mult(rng, 4, 12, 20)
+    part = p_ * q // 100
     m, n = rng.randint(6, 15), rng.randint(3, 9)
     prod = m * n
-    ans = sq + part - prod
-    stem = (f"What is the value of  ({r})^2 + {p}% of {q} - {m} x {n} ?")
-    sol = (f"({r})^2 = {sq}; {p}% of {q} = {part}; {m} x {n} = {prod}. "
-           f"So {sq} + {part} - {prod} = {ans}.")
-    return {"stem": stem, "correct": _num(ans), "solution": sol,
-            "mistakes": mistakes(
-                ("worked strictly left to right, so the multiplication was applied to the "
-                 "running total instead of to m x n only", _num((sq + part - m) * n)),
-                ("read the percentage as a subtraction of the percent itself", _num(sq + p - prod)),
-                ("dropped the minus and added the product", _num(sq + part + prod))),
+    if diff <= 1:
+        ans = sq + part
+        stem = f"What is the value of  ({r})^2 + {p_}% of {q} ?"
+        sol = f"({r})^2 = {sq}; {p_}% of {q} = {part}. So {sq} + {part} = {ans}."
+        d = mistakes(("doubled r instead of squaring it", _num(2 * r + part)),
+                     ("read the percentage as a plain subtraction of the percent", _num(sq + p_)),
+                     ("subtracted the percentage instead of adding it", _num(sq - part)))
+        return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+                "concept": "Simplification (BODMAS)"}
+    if diff == 2:
+        ans = sq + part - prod
+        stem = f"What is the value of  ({r})^2 + {p_}% of {q} - {m} x {n} ?"
+        sol = (f"({r})^2 = {sq}; {p_}% of {q} = {part}; {m} x {n} = {prod}. "
+               f"So {sq} + {part} - {prod} = {ans}.")
+        d = mistakes(
+            ("worked strictly left to right, multiplying the running total by n",
+             _num((sq + part - m) * n)),
+            ("read the percentage as a subtraction of the percent itself", _num(sq + p_ - prod)),
+            ("dropped the minus sign and added the product", _num(sq + part + prod)))
+        return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+                "concept": "Simplification (BODMAS)"}
+    if diff == 3:
+        dvd = m * n * rng.randint(2, 4)
+        ans = sq + Fraction(dvd, n) - part
+        stem = f"What is the value of  ({r})^2 + {dvd} / {n} - {p_}% of {q} ?"
+        sol = (f"({r})^2 = {sq}; {dvd}/{n} = {_num(Fraction(dvd, n))}; {p_}% of {q} = {part}. "
+               f"So {sq} + {_num(Fraction(dvd, n))} - {part} = {_num(ans)}.")
+        d = mistakes(("added before dividing, i.e. ({} + {})/{}".format(sq, dvd, n),
+                      _num(Fraction(sq + dvd, n) - part)),
+                     ("added the percentage instead of subtracting it",
+                      _num(sq + Fraction(dvd, n) + part)),
+                     ("divided by the percentage figure instead of by n",
+                      _num(sq + Fraction(dvd, p_) - part)))
+        return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+                "concept": "Simplification (BODMAS)"}
+    # diff 4+ : a bracket, so left-to-right and correct order disagree
+    k = rng.randint(3, 9)
+    ans = sq - (prod - k) // 1 + part
+    stem = f"What is the value of  ({r})^2 - ({m} x {n} - {k}) + {p_}% of {q} ?"
+    sol = (f"Bracket first: {m} x {n} - {k} = {prod - k}. Then ({r})^2 = {sq} and "
+           f"{p_}% of {q} = {part}. So {sq} - {prod - k} + {part} = {_num(ans)}.")
+    d = mistakes(("ignored the bracket and subtracted only the product",
+                  _num(sq - prod + part)),
+                 ("subtracted the bracket's contents term by term, flipping the minus on k",
+                  _num(sq - prod - k + part)),
+                 ("resolved the bracket but then subtracted the percentage",
+                  _num(sq - (prod - k) - part)))
+    return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
             "concept": "Simplification (BODMAS)"}
 
 def _b_approx(rng, diff):
@@ -433,17 +478,70 @@ def _b_profit_loss(rng, diff):
 # ---- Simple & Compound Interest --------------------------------------------
 
 def _b_si(rng, diff):
+    """Simple interest, at a difficulty that changes the QUESTION rather than the numbers.
+
+    diff 1  one step, forward        : P, R, T given -> SI
+    diff 2  two steps                : P, R, T given -> AMOUNT (interest, then add the principal)
+    diff 3  reversed                 : SI, P, T given -> R. Same arithmetic read backwards, which
+                                       is where most candidates lose it.
+    diff 4+ two unknowns             : a sum split between two rates, total interest given, find
+                                       one part. Three steps and a linear equation.
+    """
     p = _mult(rng, 4, 20, 500)
     r = rng.choice([4, 5, 6, 8, 10, 12])
     t = rng.randint(2, 5)
     si = p * r * t // 100
-    stem = f"Find the simple interest on {_rupees(p)} at {r}% per annum for {t} years."
-    sol = f"SI = P x R x T / 100 = {p} x {r} x {t} / 100 = {_rupees(si)}."
-    return {"stem": stem, "correct": _rupees(si), "solution": sol,
+    if diff <= 1:
+        stem = f"Find the simple interest on {_rupees(p)} at {r}% per annum for {t} years."
+        sol = f"SI = P x R x T / 100 = {p} x {r} x {t} / 100 = {_rupees(si)}."
+        return {"stem": stem, "correct": _rupees(si), "solution": sol,
+                "mistakes": mistakes(
+                    ("gave the AMOUNT (P + SI) instead of the interest", _rupees(p + si)),
+                    ("used one year too many", _rupees(p * r * (t + 1) // 100)),
+                    ("divided by 10 instead of 100", _rupees(p * r * t // 10))),
+                "concept": "Simple Interest"}
+    if diff == 2:
+        amt = p + si
+        stem = (f"What amount is received on {_rupees(p)} at {r}% per annum simple interest "
+                f"after {t} years?")
+        sol = (f"SI = {p} x {r} x {t}/100 = {_rupees(si)}. Amount = P + SI = {p} + {si} "
+               f"= {_rupees(amt)}.")
+        return {"stem": stem, "correct": _rupees(amt), "solution": sol,
+                "mistakes": mistakes(
+                    ("stopped at the interest and never added the principal", _rupees(si)),
+                    ("added one year's interest instead of all {} years".format(t),
+                     _rupees(p + p * r // 100)),
+                    ("compounded instead of using simple interest",
+                     _rupees(int(p * (1 + r / 100) ** t)))),
+                "concept": "Simple Interest"}
+    if diff == 3:
+        stem = (f"A sum of {_rupees(p)} earns {_rupees(si)} as simple interest in {t} years. "
+                f"Find the rate of interest per annum.")
+        sol = (f"R = SI x 100 / (P x T) = {si} x 100 / ({p} x {t}) = {r}%.")
+        return {"stem": stem, "correct": _pct(r), "solution": sol,
+                "mistakes": mistakes(
+                    ("forgot the x 100, giving a rate as a fraction", _pct(round(si / (p * t), 2))),
+                    ("divided by the principal but not by the time", _pct(round(si * 100 / p, 2))),
+                    ("divided by the time but not by the principal",
+                     _pct(round(si * 100 / t / 100, 2) or 1))),
+                "concept": "Simple Interest"}
+    # diff 4+ : one sum, two rates, total interest known -> find one part
+    r2 = rng.choice([x for x in (4, 5, 6, 8, 10, 12) if x != r])
+    total = _mult(rng, 6, 20, 1000)
+    x = _mult(rng, 1, (total // 1000) - 1 or 1, 1000)      # the part lent at r%
+    y = total - x
+    interest = (x * r + y * r2) // 100                      # for one year
+    stem = (f"A sum of {_rupees(total)} is lent partly at {r}% and the rest at {r2}% per annum "
+            f"simple interest. If the total interest for one year is {_rupees(interest)}, find "
+            f"the part lent at {r}%.")
+    sol = (f"Let the part at {r}% be x. Then x x {r}/100 + ({total} - x) x {r2}/100 = {interest}. "
+           f"Solving, x = {_rupees(x)}.")
+    return {"stem": stem, "correct": _rupees(x), "solution": sol,
             "mistakes": mistakes(
-                ("gave the AMOUNT (P + SI) instead of the interest", _rupees(p + si)),
-                ("used one year too many", _rupees(p * r * (t + 1) // 100)),
-                ("forgot to divide by 100 once, scaling the interest", _rupees(p * r * t // 10))),
+                ("solved for the OTHER part, lent at {}%".format(r2), _rupees(y)),
+                ("split the sum in the ratio of the two rates instead of solving",
+                 _rupees(total * r // (r + r2))),
+                ("halved the sum", _rupees(total // 2))),
             "concept": "Simple Interest"}
 
 def _b_ci(rng, diff):
@@ -509,117 +607,313 @@ def _b_partnership(rng, diff):
 # ---- Averages & Ages --------------------------------------------------------
 
 def _b_average(rng, diff):
-    mode = rng.choice(["simple", "replace"])
-    n = rng.randint(4, 8)
-    avg = rng.randint(20, 60)
-    total = n * avg
-    if mode == "simple":
-        nums = []
-        rem = total
-        for i in range(n - 1):
-            v = rng.randint(max(1, avg - 10), avg + 10)
-            nums.append(v)
-            rem -= v
-        nums.append(rem)
-        rng.shuffle(nums)
-        stem = f"The average of {n} numbers is {avg}. If {n-1} of them are {', '.join(map(str,nums[:-1]))}, find the remaining number."
-        sol = f"Sum of all = {n} x {avg} = {total}. Remaining = {total} - {sum(nums[:-1])} = {nums[-1]}."
-        ans = nums[-1]
-        d = mistakes(("divided by one count too many", _num(Fraction(total, len(nums) + 1))),
-                 ("divided by one count too few", _num(Fraction(total, max(len(nums) - 1, 1)))),
-                 ("gave the TOTAL instead of the average", _num(total)))
+    """Averages. Difficulty = how far the question sits from "add them and divide".
+
+    diff 1  direct        : the average of n numbers
+    diff 2  replacement   : a new member replaces one, the average moves
+    diff 3  combined      : two groups of different sizes, one overall average
+    diff 4+ correction    : an average was computed with one value read wrongly; fix it
+    """
+    if diff <= 1:
+        n = rng.randint(5, 8)
+        nums = [rng.randint(20, 90) for _ in range(n)]
+        total = sum(nums)
+        ans = Fraction(total, n)
+        stem = f"Find the average of the numbers {', '.join(map(str, nums))}."
+        sol = f"Sum = {total}; average = {total}/{n} = {_num(ans)}."
+        d = mistakes(("divided by one count too many", _num(Fraction(total, n + 1))),
+                     ("divided by one count too few", _num(Fraction(total, n - 1))),
+                     ("gave the TOTAL instead of the average", _num(total)))
         return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
                 "concept": "Averages"}
-    old_avg = rng.randint(30, 50)
-    n2 = rng.randint(6, 10)
-    change = rng.choice([2, 3, 4])
-    old_m = rng.randint(20, 30)
-    new_m = old_m + n2 * change
-    stem = (f"The average age of {n2} students is {old_avg} years. When a new student replaces "
-            f"one aged {old_m} years, the average increases by {change} years. Find the age of "
-            f"the new student.")
-    sol = (f"Total increase = {n2} x {change} = {n2*change}. New student's age = {old_m} + "
-           f"{n2*change} = {new_m} years.")
-    d = mistakes(
-        ("forgot to multiply the rise by the number of students", _num(old_m + change)),
-        ("added the rise to the OLD AVERAGE instead of to the replaced student's age",
-         _num(old_avg + n2 * change)),
-        ("subtracted the total rise instead of adding it", _num(old_m - n2 * change))
-    )
-    return {"stem": stem, "correct": _num(new_m), "mistakes": d, "solution": sol,
+    if diff == 2:
+        old_avg = rng.randint(30, 50)
+        n2 = rng.randint(6, 10)
+        change = rng.choice([2, 3, 4])
+        old_m = rng.randint(20, 30)
+        new_m = old_m + n2 * change
+        stem = (f"The average age of {n2} students is {old_avg} years. When a new student "
+                f"replaces one aged {old_m} years, the average increases by {change} years. "
+                f"Find the age of the new student.")
+        sol = (f"Total increase = {n2} x {change} = {n2 * change}. New student's age = "
+               f"{old_m} + {n2 * change} = {new_m} years.")
+        d = mistakes(
+            ("forgot to multiply the rise by the number of students", _num(old_m + change)),
+            ("added the rise to the OLD AVERAGE instead of the replaced student's age",
+             _num(old_avg + n2 * change)),
+            ("subtracted the total rise instead of adding it", _num(old_m - n2 * change)))
+        return {"stem": stem, "correct": _num(new_m), "mistakes": d, "solution": sol,
+                "concept": "Averages"}
+    if diff == 3:
+        n1, n2 = rng.randint(12, 25), rng.randint(12, 25)
+        a1, a2 = rng.randint(30, 45), rng.randint(50, 70)
+        ans = Fraction(n1 * a1 + n2 * a2, n1 + n2)
+        stem = (f"The average weight of {n1} boys is {a1} kg and that of {n2} girls is {a2} kg. "
+                f"Find the average weight of the whole class.")
+        sol = (f"Total = {n1} x {a1} + {n2} x {a2} = {n1 * a1 + n2 * a2}; "
+               f"count = {n1 + n2}; average = {_num(ans)} kg.")
+        d = mistakes(("took the plain average of the two averages, ignoring the group sizes",
+                      _num(Fraction(a1 + a2, 2))),
+                     ("weighted each average by the OTHER group's size",
+                      _num(Fraction(n2 * a1 + n1 * a2, n1 + n2))),
+                     ("divided the combined total by 2 instead of by the head count",
+                      _num(Fraction(n1 * a1 + n2 * a2, 2))))
+        return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+                "concept": "Averages"}
+    # diff 4+ : a wrongly-read value has to be corrected
+    n = rng.randint(8, 15)
+    wrong_avg = rng.randint(30, 60)
+    misread, actual = rng.randint(20, 40), rng.randint(50, 90)
+    correct_avg = Fraction(n * wrong_avg - misread + actual, n)
+    stem = (f"The average of {n} numbers was found to be {wrong_avg}. Later it was discovered "
+            f"that one number was read as {misread} instead of {actual}. Find the correct "
+            f"average.")
+    sol = (f"Correct total = {n} x {wrong_avg} - {misread} + {actual} = "
+           f"{n * wrong_avg - misread + actual}. Correct average = {_num(correct_avg)}.")
+    d = mistakes(("corrected the total but divided by n - 1",
+                  _num(Fraction(n * wrong_avg - misread + actual, n - 1))),
+                 ("adjusted the average by the whole difference instead of dividing it by n",
+                  _num(wrong_avg + (actual - misread))),
+                 ("applied the difference the wrong way round",
+                  _num(Fraction(n * wrong_avg + misread - actual, n))))
+    return {"stem": stem, "correct": _num(correct_avg), "mistakes": d, "solution": sol,
             "concept": "Averages"}
 
 def _b_ages(rng, diff):
+    """Ages, where the difficulty is how many time-frames the candidate has to hold at once.
+
+    diff 1  one frame            : ratio now + one age -> the other age
+    diff 2  two frames           : ratio now -> an age after n years
+    diff 3  past and present     : ratio n years AGO + present age -> an age m years hence
+    diff 4+ two ratios, no ages  : ratio n years ago AND m years hence -> present age. Nothing is
+                                   given directly; it has to be set up and solved.
+    """
     a, b = rng.choice([(4, 3), (5, 3), (7, 5), (3, 2), (5, 4)])
-    k = rng.randint(3, 8)                            # one unit of ratio
+    k = rng.randint(3, 8)
     ageA, ageB = a * k, b * k
     yrs = rng.randint(3, 8)
-    stem = (f"The present ages of A and B are in the ratio {a} : {b}. If A's present age is "
-            f"{ageA} years, what will be B's age after {yrs} years?")
-    sol = (f"One ratio unit = {ageA}/{a} = {k}. B's present age = {b} x {k} = {ageB}. "
-           f"After {yrs} years = {ageB} + {yrs} = {ageB + yrs}.")
-    ans = ageB + yrs
-    d = mistakes(("applied the years to only one of the two people", _num(ageA + yrs)),
-                 ("answered with the other person's age", _num(ageB)),
-                 ("used the present ratio as though it were the future one", _num(ans + a)))
-    return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+    if diff <= 1:
+        stem = (f"The present ages of A and B are in the ratio {a} : {b}. If A is {ageA} years "
+                f"old, what is B's present age?")
+        sol = f"One ratio unit = {ageA}/{a} = {k}. B's age = {b} x {k} = {ageB} years."
+        return {"stem": stem, "correct": _num(ageB), "solution": sol,
+                "mistakes": mistakes(
+                    ("multiplied by A's ratio term instead of B's", _num(a * k + k)),
+                    ("subtracted the ratio difference from A's age", _num(ageA - (a - b))),
+                    ("swapped the ratio, giving A's age from B's", _num(a * a * k // b))),
+                "concept": "Problems on Ages"}
+    if diff == 2:
+        ans = ageB + yrs
+        stem = (f"The present ages of A and B are in the ratio {a} : {b}. If A's present age is "
+                f"{ageA} years, what will be B's age after {yrs} years?")
+        sol = (f"One ratio unit = {ageA}/{a} = {k}. B's present age = {b} x {k} = {ageB}. "
+               f"After {yrs} years = {ageB} + {yrs} = {ans}.")
+        return {"stem": stem, "correct": _num(ans), "solution": sol,
+                "mistakes": mistakes(
+                    ("added the years to A instead of B", _num(ageA + yrs)),
+                    ("gave B's PRESENT age, forgetting the {} years".format(yrs), _num(ageB)),
+                    ("added the ratio term instead of the years", _num(ageB + b))),
+                "concept": "Problems on Ages"}
+    if diff == 3:
+        # the ratio is stated for `yrs` years AGO, and the present age is given
+        pastA, pastB = a * k, b * k
+        nowA, nowB = pastA + yrs, pastB + yrs
+        m = rng.randint(2, 6)
+        ans = nowB + m
+        stem = (f"{yrs} years ago the ages of A and B were in the ratio {a} : {b}. If A is now "
+                f"{nowA} years old, what will B's age be {m} years from now?")
+        sol = (f"A's age {yrs} years ago = {nowA} - {yrs} = {pastA}, so one ratio unit = "
+               f"{pastA}/{a} = {k}. B then = {b} x {k} = {pastB}; B now = {pastB} + {yrs} = "
+               f"{nowB}; after {m} years = {ans}.")
+        return {"stem": stem, "correct": _num(ans), "solution": sol,
+                "mistakes": mistakes(
+                    ("applied the ratio to A's PRESENT age instead of his age {} years ago"
+                     .format(yrs), _num(b * (nowA // a) + m)),
+                    ("forgot to bring B forward from the past to the present", _num(pastB + m)),
+                    ("gave B's present age without the {} years".format(m), _num(nowB))),
+                "concept": "Problems on Ages"}
+    # diff 4+ : two ratios, neither age given
+    n1, n2 = rng.randint(3, 6), rng.randint(3, 6)
+    nowA, nowB = a * k + n1, b * k + n1                  # ratio a:b held n1 years ago
+    from math import gcd
+    fa, fb = nowA + n2, nowB + n2
+    g = gcd(fa, fb)
+    stem = (f"{n1} years ago the ages of A and B were in the ratio {a} : {b}. {n2} years from "
+            f"now the ratio of their ages will be {fa // g} : {fb // g}. Find A's present age.")
+    sol = (f"Let the ages {n1} years ago be {a}x and {b}x. Then ({a}x + {n1 + n2}) : "
+           f"({b}x + {n1 + n2}) = {fa // g} : {fb // g}, giving x = {k}. "
+           f"A's present age = {a} x {k} + {n1} = {nowA} years.")
+    return {"stem": stem, "correct": _num(nowA), "solution": sol,
+            "mistakes": mistakes(
+                ("solved for B's present age instead of A's", _num(nowB)),
+                ("gave A's age {} years ago rather than now".format(n1), _num(a * k)),
+                ("added both time gaps to A instead of one", _num(nowA + n2))),
             "concept": "Problems on Ages"}
+
 
 # ---- Time & Work + Pipes ----------------------------------------------------
 
 def _b_time_work(rng, diff):
-    mode = rng.choice(["together", "remaining"])
-    a, b = rng.sample([6, 8, 9, 10, 12, 15, 18, 20, 24], 2)
-    if mode == "together":
+    """Time & work. Difficulty = how many phases of the job the candidate must track.
+
+    diff 1  one phase        : A alone, B alone -> together
+    diff 2  two phases       : A works some days, leaves, B finishes
+    diff 3  three workers    : A, B, C together
+    diff 4+ reversed         : A and B together, and A alone, are given -> find B alone. The same
+                              relation read backwards, which is where the rate idea actually gets
+                              tested rather than recited.
+    """
+    a = rng.choice([6, 8, 9, 10, 12, 15, 18, 20, 24])
+    b = rng.choice([x for x in (6, 8, 9, 10, 12, 15, 18, 20, 24) if x != a])
+    if diff <= 1:
         tog = Fraction(a * b, a + b)
-        stem = (f"A can complete a work in {a} days and B can complete it in {b} days. "
-                f"Working together, in how many days will they finish the work?")
-        sol = (f"Together's 1-day work = 1/{a} + 1/{b} = {Fraction(1,a)+Fraction(1,b)}. "
+        stem = (f"A can complete a work in {a} days and B can complete it in {b} days. Working "
+                f"together, in how many days will they finish it?")
+        sol = (f"A's one-day work = 1/{a}, B's = 1/{b}. Together = 1/{a} + 1/{b}. "
                f"Time = {a}x{b}/({a}+{b}) = {_num(tog)} days.")
-        # At least one distractor must SURVIVE the sanity check a good student applies — here,
-        # that the joint time is less than either time alone. Measured before adding it: on 15 of
-        # 34 questions every distractor sat above min(a, b), so the question fell to that one
-        # insight with no arithmetic. An attractive wrong answer has to look possible.
+        # At least one distractor must SURVIVE the check a good student applies — that the joint
+        # time is below either time alone. Before this, on 15 of 34 questions every distractor sat
+        # above min(a, b) and the question fell to that one insight with no arithmetic.
         d = mistakes(("used a x b / (a - b) instead of a x b / (a + b)",
-                      _num(Fraction(a * b, abs(a - b)) if a != b else Fraction(a, 2)) + " days"),
+                      _num(Fraction(a * b, abs(a - b))) + " days"),
                      ("halved the smaller time", _num(Fraction(min(a, b), 2)) + " days"),
                      ("added the two TIMES instead of adding the rates", _num(a + b) + " days"),
                      ("took the plain average of the two times",
                       _num(Fraction(a + b, 2)) + " days"))
         return {"stem": stem, "correct": _num(tog) + " days", "mistakes": d,
                 "solution": sol, "concept": "Time & Work"}
-    # A works some days then leaves; B finishes
-    total_days = a
-    worked = rng.randint(2, a - 2)
-    done = Fraction(worked, a)
-    rem = 1 - done
-    b_time = rem * b
-    stem = (f"A can do a piece of work in {a} days and B in {b} days. A works alone for "
-            f"{worked} days and then leaves. In how many days will B finish the remaining work?")
-    sol = (f"A's work in {worked} days = {worked}/{a} = {done}. Remaining = {rem}. "
-           f"B's time = {rem} x {b} = {_num(b_time)} days.")
-    d = [_num(float(b_time) + 2), _num(b - worked), _num(float(rem * a))]
-    return {"stem": stem, "correct": _num(b_time) + " days",
-            "distractors": [x + " days" for x in d], "solution": sol, "concept": "Time & Work"}
+    if diff == 2:
+        worked = rng.randint(2, a - 2)
+        rem = 1 - Fraction(worked, a)
+        b_time = rem * b
+        stem = (f"A can do a piece of work in {a} days and B in {b} days. A works alone for "
+                f"{worked} days and then leaves. In how many days will B finish the remaining "
+                f"work?")
+        sol = (f"A does {worked}/{a} of the work, leaving {_frac(rem)}. "
+               f"B needs {_frac(rem)} x {b} = {_num(b_time)} days.")
+        d = mistakes(("gave the days for the whole job rather than the remainder",
+                      _num(b) + " days"),
+                     ("subtracted the days worked from B's time",
+                      _num(max(b - worked, 1)) + " days"),
+                     ("applied the remaining fraction to A's time instead of B's",
+                      _num(rem * a) + " days"))
+        return {"stem": stem, "correct": _num(b_time) + " days", "mistakes": d,
+                "solution": sol, "concept": "Time & Work"}
+    if diff == 3:
+        c = rng.choice([x for x in (6, 8, 9, 10, 12, 15, 18, 20, 24) if x not in (a, b)])
+        tog = Fraction(1, Fraction(1, a) + Fraction(1, b) + Fraction(1, c))
+        stem = (f"A, B and C can do a piece of work in {a}, {b} and {c} days respectively. "
+                f"Working together, in how many days will they complete it?")
+        sol = (f"Combined one-day work = 1/{a} + 1/{b} + 1/{c} = "
+               f"{_frac(Fraction(1, a) + Fraction(1, b) + Fraction(1, c))}. "
+               f"Time = {_num(tog)} days.")
+        d = mistakes(("added the three TIMES instead of the rates", _num(a + b + c) + " days"),
+                     ("took the average of the three times",
+                      _num(Fraction(a + b + c, 3)) + " days"),
+                     ("used only the two fastest workers",
+                      _num(Fraction(1, Fraction(1, min(a, b, c)) +
+                                    Fraction(1, sorted((a, b, c))[1]))) + " days"))
+        return {"stem": stem, "correct": _num(tog) + " days", "mistakes": d,
+                "solution": sol, "concept": "Time & Work"}
+    # diff 4+ : given together-time and A alone, find B alone.
+    # The joint time is PRINTED, so it has to be exact. Left as a raw fraction it printed rounded
+    # ("4.62 days") while the answer was derived from the unrounded value — a candidate solving
+    # honestly from the page got 20.09 where the key said 20. A given that cannot be used as
+    # printed is a broken question, however right the key is. So pick a pair whose joint time is
+    # exact to the two decimals we print.
+    pairs = [(x, y) for x in (6, 8, 9, 10, 12, 15, 18, 20, 24)
+             for y in (6, 8, 9, 10, 12, 15, 18, 20, 24)
+             if x != y and Fraction(x * y, x + y).denominator in (1, 2, 4, 5, 10, 20, 25, 50, 100)]
+    a, b = rng.choice(pairs)
+    tog = Fraction(a * b, a + b)
+    stem = (f"A and B together can complete a work in {_num(tog)} days. A alone can do it in "
+            f"{a} days. In how many days can B alone complete the work?")
+    sol = (f"B's one-day work = 1/{_num(tog)} - 1/{a} = {_frac(Fraction(1, b))}. "
+           f"So B alone takes {b} days.")
+    d = mistakes(("subtracted the TIMES instead of the rates",
+                  _num(abs(a - tog)) + " days"),
+                 ("added the times", _num(a + tog) + " days"),
+                 ("doubled the joint time", _num(tog * 2) + " days"))
+    return {"stem": stem, "correct": _num(b) + " days", "mistakes": d,
+            "solution": sol, "concept": "Time & Work"}
 
 def _b_pipes(rng, diff):
-    a, b = rng.sample([10, 12, 15, 20, 24, 30], 2)
-    if a > b:
-        a, b = b, a                                 # a fills faster
-    together = Fraction(a * b, b - a) if False else Fraction(a * b, a + b)
-    stem = (f"Pipe A can fill a tank in {a} hours and pipe B in {b} hours. If both pipes are "
-            f"opened together, in how many hours will the tank be filled?")
-    sol = (f"Combined rate = 1/{a} + 1/{b} = {Fraction(1,a)+Fraction(1,b)} tank/hr. "
-           f"Time = {a}x{b}/({a}+{b}) = {_num(together)} hours.")
-    d = mistakes(("used a x b / (a - b) instead of a x b / (a + b)",
-                  _num(Fraction(a * b, abs(a - b)) if a != b else Fraction(a, 2)) + " hours"),
-                 ("halved the faster pipe's time", _num(Fraction(min(a, b), 2)) + " hours"),
-                 ("added the two filling TIMES instead of the rates", _num(a + b) + " hours"),
-                 ("took the average of the two times", _num(Fraction(a + b, 2)) + " hours"))
-    return {"stem": stem, "correct": _num(together) + " hours",
-            "mistakes": d, "solution": sol, "concept": "Pipes & Cisterns"}
+    """Pipes & cisterns. Difficulty = whether anything works AGAINST the filling, and when.
 
-# ---- Speed, Time, Distance + Trains + Boats --------------------------------
+    diff 1  two inlets
+    diff 2  inlet plus an outlet (the sign is the whole test)
+    diff 3  two inlets and an outlet
+    diff 4+ reversed: the tank's fill time with a leak is given, find the leak's own time
+    """
+    a = rng.choice([6, 8, 10, 12, 15, 20])
+    b = rng.choice([x for x in (6, 8, 10, 12, 15, 20) if x != a])
+    if diff <= 1:
+        together = Fraction(a * b, a + b)
+        stem = (f"Two pipes can fill a tank in {a} hours and {b} hours respectively. If both are "
+                f"opened together, in how many hours will the tank be full?")
+        sol = (f"Together = 1/{a} + 1/{b} per hour, so time = {a}x{b}/({a}+{b}) = "
+               f"{_num(together)} hours.")
+        d = mistakes(("used a x b / (a - b) instead of a x b / (a + b)",
+                      _num(Fraction(a * b, abs(a - b))) + " hours"),
+                     ("halved the faster pipe's time",
+                      _num(Fraction(min(a, b), 2)) + " hours"),
+                     ("added the two filling TIMES instead of the rates",
+                      _num(a + b) + " hours"),
+                     ("took the average of the two times",
+                      _num(Fraction(a + b, 2)) + " hours"))
+        return {"stem": stem, "correct": _num(together) + " hours", "mistakes": d,
+                "solution": sol, "concept": "Pipes & Cisterns"}
+    if diff == 2:
+        inlet, outlet = min(a, b), max(a, b)          # outlet must be slower or it never fills
+        net = Fraction(1, inlet) - Fraction(1, outlet)
+        t = Fraction(1, net)
+        stem = (f"A pipe fills a tank in {inlet} hours while an outlet pipe empties it in "
+                f"{outlet} hours. If both are opened together, in how many hours will the tank "
+                f"be full?")
+        sol = (f"Net filling per hour = 1/{inlet} - 1/{outlet} = {_frac(net)}. "
+               f"Time = {_num(t)} hours.")
+        d = mistakes(("ADDED the outlet instead of subtracting it",
+                      _num(Fraction(inlet * outlet, inlet + outlet)) + " hours"),
+                     ("ignored the outlet altogether", _num(inlet) + " hours"),
+                     ("subtracted the times instead of the rates",
+                      _num(outlet - inlet) + " hours"))
+        return {"stem": stem, "correct": _num(t) + " hours", "mistakes": d,
+                "solution": sol, "concept": "Pipes & Cisterns"}
+    if diff == 3:
+        c = rng.choice([x for x in (24, 30, 36, 40) ])
+        net = Fraction(1, a) + Fraction(1, b) - Fraction(1, c)
+        t = Fraction(1, net)
+        stem = (f"Two pipes fill a tank in {a} hours and {b} hours, while a waste pipe empties "
+                f"it in {c} hours. If all three are opened together, in how many hours will the "
+                f"tank be full?")
+        sol = (f"Net per hour = 1/{a} + 1/{b} - 1/{c} = {_frac(net)}. Time = {_num(t)} hours.")
+        d = mistakes(("added all three rates, treating the waste pipe as a filler",
+                      _num(Fraction(1, Fraction(1, a) + Fraction(1, b) + Fraction(1, c)))
+                      + " hours"),
+                     ("ignored the waste pipe",
+                      _num(Fraction(a * b, a + b)) + " hours"),
+                     ("subtracted the waste pipe's TIME from the joint time",
+                      _num(abs(Fraction(a * b, a + b) - c)) + " hours"))
+        return {"stem": stem, "correct": _num(t) + " hours", "mistakes": d,
+                "solution": sol, "concept": "Pipes & Cisterns"}
+    # diff 4+ : leak found from the delay
+    # Same rule as time & work: the delayed filling time is a GIVEN, so it must print exactly.
+    combos = [(f, l) for f in (6, 8, 10, 12, 15, 20) for l in (24, 30, 36, 40, 60) if l > f
+              and Fraction(1, Fraction(1, f) - Fraction(1, l)).denominator in
+              (1, 2, 4, 5, 10, 20, 25, 50, 100)]
+    fill, leak = rng.choice(combos)
+    with_leak = Fraction(1, Fraction(1, fill) - Fraction(1, leak))
+    stem = (f"A pipe can fill a tank in {fill} hours, but because of a leak it takes "
+            f"{_num(with_leak)} hours to fill. In how many hours can the leak alone empty the "
+            f"full tank?")
+    sol = (f"Leak's rate = 1/{fill} - 1/{_num(with_leak)} = {_frac(Fraction(1, leak))} per hour, "
+           f"so the leak empties the tank in {leak} hours.")
+    d = mistakes(("subtracted the two TIMES instead of the rates",
+                  _num(with_leak - fill) + " hours"),
+                 ("added the two times", _num(with_leak + fill) + " hours"),
+                 ("gave the delayed filling time again", _num(with_leak) + " hours"))
+    return {"stem": stem, "correct": _num(leak) + " hours", "mistakes": d,
+            "solution": sol, "concept": "Pipes & Cisterns"}
 
 def _b_std(rng, diff):
     speed = rng.choice([40, 45, 50, 54, 60, 72])
