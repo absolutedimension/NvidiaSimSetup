@@ -103,15 +103,32 @@ def load(inter_level=False, exclude=frozenset()):
     return qs
 
 
+# Exams for posts BELOW Inter Level. Office Attendant (Advt 02/22) is a Class-10 post and
+# "10th Level" is exactly what it says, so their questions are pitched under a 10+2 candidate.
+# They are not banned — the bank is too small for that — but they sort last.
+_BELOW_LEVEL = {"Qn_SET_A.pdf", "3102059_10_I.pdf"}
+
+
 def _order_key(q, salt):
-    """Deterministic per-set ordering.
+    """Deterministic per-set ordering, hardest first.
 
     random.shuffle() re-orders the WHOLE list whenever the pool changes, so excluding a single bad
     question silently rebuilt the entire paper and threw away the question-by-question checking.
     Hashing each question independently means removing one leaves every other in place.
+
+    The hash used to be the WHOLE key, which meant difficulty played no part in what got picked —
+    and it showed. One Step's owner read the first two sets and said "ye basic ka bhi basic hai".
+    He was right: 28 of Set 1's 106 official questions were tagged difficulty 1 ("which instrument
+    measures the growth of a plant"), and a third came from exams for Class-10 posts. Nothing chose
+    that; the hash did. So sort by difficulty first, then by exam level, and let the hash break ties
+    — which keeps the draw deterministic and keeps the removal of one question from disturbing the
+    rest.
     """
     import hashlib
-    return hashlib.sha1(f"{salt}|{q.get('source_pdf')}|{q.get('number')}".encode()).hexdigest()
+    d = (q.get("tag") or {}).get("difficulty") or 0
+    below = 1 if q.get("source_pdf") in _BELOW_LEVEL else 0
+    h = hashlib.sha1(f"{salt}|{q.get('source_pdf')}|{q.get('number')}".encode()).hexdigest()
+    return (-d, below, h)
 
 
 def _numkey(q):
@@ -142,25 +159,108 @@ def register(q, used, tmpl):
         tmpl[nkey] = 1
 
 
-def pick(pool, n, used, tmpl, cap=2, salt=""):
+def pick(pool, n, used, tmpl, cap=2, salt="", stripe=None, mix=None):
+    """Draw n questions, hardest first.
+
+    `stripe=(i, m)` deals the sorted pool round-robin across m sets and takes lane i. Without it
+    the first set built takes every hard question and the second gets the residue: rebuilding for
+    difficulty gave Set 1 zero trivial questions and Set 2 thirty-eight of them. The bank simply
+    does not hold two sets' worth of hard questions (145 at-level difficulty-2/3 against the 206
+    two papers need), so the only honest options are to split them evenly or to ship one strong
+    paper. Splitting is what an institute buying a series needs.
+    """
     out = []
     pool = sorted(pool, key=lambda q: _order_key(q, salt))
-    for q in pool:
-        if len(out) >= n:
-            break
-        if (q.get("number"), q.get("source_pdf")) in used:
-            continue
-        if tmpl.get(sig(q["stem"]), 0) >= cap:
-            continue
-        nkey, nn = _numkey(q)
-        if nn >= 2 and tmpl.get(nkey):
-            continue
-        register(q, used, tmpl)
-        out.append(q)
+    if stripe:
+        i, m = stripe
+        pool = [q for k, q in enumerate(pool) if k % m == i] + \
+               [q for k, q in enumerate(pool) if k % m != i]   # own lane first, rest as fallback
+
+    def take(candidates, want):
+        for q in candidates:
+            if len(out) >= want:
+                break
+            if (q.get("number"), q.get("source_pdf")) in used:
+                continue
+            if tmpl.get(sig(q["stem"]), 0) >= cap:
+                continue
+            nkey, nn = _numkey(q)
+            if nn >= 2 and tmpl.get(nkey):
+                continue
+            register(q, used, tmpl)
+            out.append(q)
+
+    if mix:
+        # Fill each difficulty band to its quota, easiest band LAST so that when a band runs dry
+        # the shortfall is made up from harder stock rather than trivia. A real paper is not
+        # uniformly hard: an all-difficulty-3 paper has no entry point and every candidate stalls
+        # on question 1. The mix is what makes a paper feel like an exam rather than a gauntlet.
+        running = 0
+        for band in sorted(mix, reverse=True):
+            running += mix[band]
+            take([q for q in pool if ((q.get("tag") or {}).get("difficulty") or 0) == band],
+                 running)
+    take(pool, n)                       # top up from anywhere the mix could not reach
     return out
 
 
-def load_hindi_generated(n, cap_per_concept=6):
+def generate_maths(n, diff, exclude_sigs, bilingual):
+    """Fill a maths shortfall from quantgen, at a REQUESTED difficulty.
+
+    This is the only way the difficulty mix can actually be met. The bank holds 145 at-level
+    difficulty-2 questions and essentially no difficulty-3 arithmetic, so asking a real-question
+    draw for 15 hard questions per section will always come back short — quantgen can produce them
+    without limit, with the answer COMPUTED rather than recalled and every distractor derived from
+    a named mistake.
+
+    The gate: quantgen has no Hindi at all (zero stem_hi across 23 builders). Dropping English-only
+    questions into a bilingual paper would silently break the one promise the paper makes to a
+    Hindi-medium student, so a bilingual paper refuses them and says why rather than shipping a
+    half-translated section. Hindi templates over the same computation are the fix — the answer is
+    computed, so a number cannot drift between the two languages the way a translation can.
+    """
+    if bilingual:
+        print(f"  MATHS GENERATION SKIPPED: quantgen has no Hindi, and this paper is bilingual. "
+              f"{n} difficulty-{diff} question(s) that could have been generated were not.")
+        return []
+    sys.path.insert(0, str(REPO / "question_bank_engine"))
+    try:
+        from qbank import quantgen
+    except Exception as e:
+        print(f"  quantgen unavailable ({e}) — maths shortfall not filled")
+        return []
+    rng = random.Random(20260820 + diff)
+    out, seen, per_concept = [], set(exclude_sigs), {}
+    # Round-robin the builders rather than choosing at random. A random choice returned four
+    # questions from the SAME builder on the first run — four ages problems in one section, which
+    # reads as padding however hard each one is.
+    builders = [b for bs in quantgen._CHAP_BUILDERS.values() for b in bs]
+    rng.shuffle(builders)
+    for pass_no in range(60):
+        for build in builders:
+            if len(out) >= n:
+                break
+            q = quantgen._make_question(build(rng, diff), rng, {"chapter": "Arithmetic"})
+            row = {"stem": q.stem, "options": q.options, "correct_answer": q.correct_answer,
+                   "solution": q.solution, "concept": q.concept, "_generated": True,
+                   "tag": {"section": "Mathematics", "difficulty": diff},
+                   "source_pdf": "quantgen", "number": None}
+            # The syllabus gate belongs to the Inter Level paper, not to every paper.
+            if bilingual and not inter_level_ok(row):
+                continue
+            g = gen_sig(row)
+            if g in seen or per_concept.get(q.concept, 0) >= 2:
+                continue
+            seen.add(g)
+            per_concept[q.concept] = per_concept.get(q.concept, 0) + 1
+            out.append(row)
+        if len(out) >= n:
+            break
+    print(f"  generated {len(out)} maths question(s) at difficulty {diff}")
+    return out
+
+
+def load_hindi_generated(n, cap_per_concept=6, exclude=frozenset()):
     """The Hindi Language section, from `hindigen` rather than from the real papers.
 
     This is a deliberate downgrade of the "every question is real" claim, made after rendering the
@@ -295,11 +395,37 @@ def main():
                     help="Which Hindi Language section to print. DEFAULT IS 'generated' because "
                          "the REAL Hindi-language questions in these papers are badly OCR-corrupted "
                          "- see the note in load_hindi_generated().")
+    ap.add_argument("--generate-maths", action="store_true",
+                    help="Fill any HARD maths shortfall from quantgen instead of leaving the "
+                         "section short. Refused on a bilingual paper until quantgen has Hindi.")
+    ap.add_argument("--difficulty-mix", default="10:60:30",
+                    help="Share of EASY:MEDIUM:HARD questions to aim for, as percentages of each "
+                         "section — difficulty 1 : difficulty 2 : difficulty 3+. Default 10:60:30. "
+                         "Pure hardest-first ('0:0:100') makes a paper with no entry point; the "
+                         "bank also cannot supply it. Whatever a band cannot fill is taken from "
+                         "the next band DOWN in easiness, and the shortfall is reported.")
+    ap.add_argument("--sets", type=int, default=2,
+                    help="How many sets this series will have. The hard questions are dealt "
+                         "round-robin across that many lanes so every set gets an equal share, "
+                         "instead of the first one built taking them all.")
     ap.add_argument("--key-json", default=None,
                     help="Also write the answer key, numbered exactly as printed, with each "
                          "answer's provenance. build_verification_sheet.py consumes this so the "
                          "sheet and the paper cannot disagree about what question 47 is.")
     a = ap.parse_args()
+
+    try:
+        _e, _m, _h = (int(x) for x in a.difficulty_mix.split(":"))
+    except ValueError:
+        raise SystemExit("--difficulty-mix wants three numbers like 10:60:30")
+    if _e + _m + _h != 100:
+        raise SystemExit(f"--difficulty-mix must sum to 100, got {_e + _m + _h}")
+
+    def mix_for(want):
+        """Turn the requested percentages into per-band counts for a section of `want` questions."""
+        hard = round(want * _h / 100)
+        med = round(want * _m / 100)
+        return {3: hard, 2: med, 1: max(want - hard - med, 0)}
 
     random.seed(20260820 + a.set * 1009)
     manifest = load_manifest(a.manifest)
@@ -430,7 +556,8 @@ def main():
             if len(got) < want:
                 short = want - len(got)
                 pool = [q for s in secs for q in by.get(s, []) if q not in got]
-                fresh = pick(pool, short, used, tmpl, salt=f"s{a.set}")
+                fresh = pick(pool, short, used, tmpl, salt="shared",
+                             stripe=((a.set - 1) % a.sets, a.sets), mix=mix_for(short))
                 if idx == len(SPEC) - 1 and len(fresh) < short:
                     more = load_generated(short - len(fresh), exclude=gen_taken)
                     gen_taken |= {gen_sig(q) for q in more}
@@ -443,7 +570,18 @@ def main():
         pool = [q for s in secs for q in by.get(s, [])]
         last = idx == len(SPEC) - 1
         target = want + carry if last else want
-        got = pick(pool, target, used, tmpl, salt=f"s{a.set}")
+        got = pick(pool, target, used, tmpl, salt="shared",
+                   stripe=((a.set - 1) % a.sets, a.sets), mix=mix_for(target))
+        # A maths section that came back short of HARD questions can be topped up by generation —
+        # the bank has no difficulty-3 arithmetic to give, and that is the whole reason the mix
+        # could not be met.
+        if a.generate_maths and "Mathematics" in secs:
+            want = mix_for(target)
+            have3 = sum(1 for q in got if ((q.get("tag") or {}).get("difficulty") or 0) >= 3)
+            if want[3] > have3:
+                new_qs = generate_maths(want[3] - have3, 4, gen_taken, a.inter_level)
+                gen_taken |= {gen_sig(q) for q in new_qs}
+                got = got[:max(len(got) - len(new_qs), 0)] + new_qs
         if not last:
             carry += target - len(got)
         elif len(got) < target:
@@ -743,8 +881,25 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
     }
     json.dump(manifest, io.open(a.manifest, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
+    # Report the mix ACHIEVED against the mix asked for. A quota that quietly went unfilled is
+    # worse than no quota: it reads as "we built to a spec" when the bank could not supply it, and
+    # that is exactly the gap the owner spotted the first time.
+    from collections import Counter
     for t, items in paper:
-        print(f"  {t[:52]:54s} {len(items):3d}")
+        got = Counter(((q.get("tag") or {}).get("difficulty") or 0)
+                      for q in items if not q.get("_generated"))
+        n_real = sum(got.values())
+        if n_real:
+            want = mix_for(n_real)
+            shortfall = {b: want[b] - got.get(b, 0) for b in (3, 2) if want[b] > got.get(b, 0)}
+            note = (f"  asked {want[1]}/{want[2]}/{want[3]}, got "
+                    f"{got.get(1, 0)}/{got.get(2, 0)}/{got.get(3, 0)} (easy/med/hard)")
+            if shortfall:
+                note += ("  SHORT: " +
+                         ", ".join(f"{v} at difficulty {b}" for b, v in shortfall.items()))
+            print(f"  {t[:52]:54s} {len(items):3d}\n{note}")
+        else:
+            print(f"  {t[:52]:54s} {len(items):3d}")
     print(f"\n{n} bilingual questions | {n - n_gen} REAL official + {n_gen} generated "
           f"| logo: {'yes' if logo_html else 'TEXT ONLY'} | {pdf}")
 
