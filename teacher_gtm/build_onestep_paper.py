@@ -278,6 +278,10 @@ def main():
                     help="Which Hindi Language section to print. DEFAULT IS 'generated' because "
                          "the REAL Hindi-language questions in these papers are badly OCR-corrupted "
                          "- see the note in load_hindi_generated().")
+    ap.add_argument("--key-json", default=None,
+                    help="Also write the answer key, numbered exactly as printed, with each "
+                         "answer's provenance. build_verification_sheet.py consumes this so the "
+                         "sheet and the paper cannot disagree about what question 47 is.")
     a = ap.parse_args()
 
     random.seed(20260820 + a.set * 1009)
@@ -343,10 +347,24 @@ def main():
             print(f"  PIN: {len(missing)} pinned questions are no longer eligible "
                   f"(newly excluded?) — {missing[:5]}")
         pinned_real = [by_id[tuple(r)] for r in want_real if tuple(r) in by_id]
-        gen_by_sig = {gen_sig(g): g for g in load_generated(10 ** 6)}
-        pinned_gen = [gen_by_sig[sg] for sg in want_gen if sg in gen_by_sig]
-        print(f"  PIN: rebuilding the recorded set — {len(pinned_real)} real + "
-              f"{len(pinned_gen)} generated")
+        # Prefer the FULL generated questions if the manifest carries them. Restoring a generated
+        # question by signature is not exact: gen_sig deliberately ignores the actor name, so it
+        # identifies a question SHAPE. Measured across two draws of the same pool, 31 of 307
+        # signatures resolved to a DIFFERENT concrete question — which is how a pinned rebuild of
+        # Set 2 came back with the same 150 shapes but different names and letters, no longer the
+        # file the institute was holding. `freeze_generated.py` writes gen_full; the signature path
+        # below is the fallback for manifests written before it existed.
+        full = manifest[str(a.set)].get("gen_full")
+        if full:
+            pinned_gen = [dict(g, _generated=True) for g in full]
+            print(f"  PIN: rebuilding the recorded set — {len(pinned_real)} real + "
+                  f"{len(pinned_gen)} generated (exact, from gen_full)")
+        else:
+            gen_by_sig = {gen_sig(g): g for g in load_generated(10 ** 6)}
+            pinned_gen = [gen_by_sig[sg] for sg in want_gen if sg in gen_by_sig]
+            print(f"  PIN: rebuilding the recorded set — {len(pinned_real)} real + "
+                  f"{len(pinned_gen)} generated (BY SIGNATURE — not exact; run "
+                  f"freeze_generated.py to pin the actual questions)")
 
     paper, n, carry = [], 0, 0
     gen_taken = set(used_gen)
@@ -402,7 +420,7 @@ def main():
         return "", (a if len(a) >= len(b) else b)          # both English -> show once
 
     n_gen = sum(1 for _, items in paper for q in items if q.get("_generated"))
-    qh, keys, i = [], [], 0
+    qh, keys, keyrows, i = [], [], [], 0
     for title, items in paper:
         g = sum(1 for q in items if q.get("_generated"))
         note = ('<div class="pnote">इस भाग के सभी प्रश्न BSSC की आधिकारिक विगत परीक्षाओं से '
@@ -460,6 +478,20 @@ def main():
             qh.append(block + "</div>")
             keys.append(f'<span class="k">{i}. <b>{q["correct_answer"]}</b>'
                         f'{"<i>*</i>" if q.get("_generated") else ""}</span>')
+            # Same place, same `i`, so the verification sheet can never number a row differently
+            # from the printed paper. It must be here and not re-derived elsewhere: this loop can
+            # skip a question that has nothing renderable (see `i -= 1` above), and any second
+            # implementation of the ordering would drift silently past that point.
+            keyrows.append({
+                "n": i,
+                "answer": q["correct_answer"],
+                "answer_text": next((o["text"] for o in q.get("options") or []
+                                     if o["label"] == q["correct_answer"]), ""),
+                "generated": bool(q.get("_generated")),
+                "solution": q.get("solution"),
+                "source_pdf": q.get("source_pdf"),
+                "source_number": q.get("number"),
+            })
 
     TITLE_LINE = ("बिहार कर्मचारी चयन आयोग &mdash; द्वितीय इंटर स्तरीय संयुक्त प्रतियोगिता परीक्षा "
                   "(वि0सं0&ndash;02/23-A) &mdash; अभ्यास प्रश्न-पत्र" if a.inter_level
@@ -621,6 +653,9 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
 
     # follow --out; this was hardcoded, so building a second paper silently overwrote
     # the first one's HTML while its PDF sat elsewhere.
+    if a.key_json:   # before the render — the key does not depend on Chrome, and Chrome is slow
+        json.dump(keyrows, io.open(a.key_json, "w", encoding="utf-8"),
+                  ensure_ascii=False, indent=1)
     out_html = pathlib.Path(str(a.out).replace(".pdf", ".html")).resolve()
     out_html.write_text(HTML, encoding="utf-8")
     pdf = pathlib.Path(a.out).resolve()
@@ -632,6 +667,10 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
     manifest[str(a.set)] = {
         "real": [qid(q) for _, items in paper for q in items if not q.get("_generated")],
         "gen": [gen_sig(q) for _, items in paper for q in items if q.get("_generated")],
+        # The generated questions in full, because a signature only pins the SHAPE (see the
+        # pin branch above). This is what makes --pin actually reproduce the delivered file.
+        "gen_full": [{k: v for k, v in q.items() if not k.startswith("_")}
+                     for _, items in paper for q in items if q.get("_generated")],
         "out": os.path.basename(str(a.out)),
     }
     json.dump(manifest, io.open(a.manifest, "w", encoding="utf-8"), ensure_ascii=False, indent=1)

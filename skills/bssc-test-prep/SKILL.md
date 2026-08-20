@@ -229,6 +229,26 @@ setsid nohup ~/run_bssc_batch.sh > ~/bssc_in/batch.log 2>&1 < /dev/null &
     the 2018 re-publications `Advertisement/gk.PDF`, `civil.PDF`, `mechanical.PDF` — **uppercase
     `.PDF`; the lowercase spelling returns 404.**
 
+18. **🔴 `--pin` did NOT reproduce a delivered paper, and said nothing.** `gen_sig` deliberately
+    ignores the actor name so that "Neha is the daughter of Sunil" and "Priya is the mother of Amit"
+    count as one question — which makes it a signature of the question's SHAPE, not of the question.
+    `load_generated` shuffles then keeps the first clone per signature, so which concrete question a
+    signature resolves to depends on the seed: **measured 31 of 307 signatures resolved differently
+    across two draws.** A pinned rebuild of Set 2 therefore came back with the same 150 shapes,
+    different names and letters — still 150 correct questions, no longer the file the institute was
+    holding, and no warning. FIXED: the manifest now stores `gen_full` (the generated questions in
+    full) and `--pin` restores those; both delivered sets now rebuild **byte-identical**. If a pin
+    ever prints "BY SIGNATURE — not exact", the paper it produces is not the paper you verified.
+
+19. **A verification sheet must be read OUT of the delivered file, never rebuilt alongside it.**
+    `key_from_delivered.py` parses the paper's own printed key and question blocks, so row 47 of the
+    sheet is question 47 of the PDF in the reader's hand by construction. Two things this caught:
+    a re-derived ordering drifts silently past the renderer's skip-an-unrenderable-question branch,
+    and a loose option-subset fallback **mis-attributed ten questions to a Hindi paper they had
+    nothing to do with**. A wrong citation is the one defect that destroys the sheet's purpose, so
+    the matcher refuses to guess: it reports an untraced row instead. Cross-check it against
+    `build_onestep_paper.py --key-json` — the two paths agree on all 150 rows of Set 1.
+
 ---
 
 ## 6. Measured findings — two of these OVERTURNED my own earlier claims

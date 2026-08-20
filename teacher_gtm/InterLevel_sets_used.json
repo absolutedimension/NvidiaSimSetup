@@ -472,7 +472,2737 @@
    "Alphanumeric Series|5,7,9,11|S11~S13~S14~T13",
    "Letter Analogy||BC~JJ~JK~KL"
   ],
-  "out": "OneStep_BSSC_InterLevel_Set1.pdf"
+  "gen_full": [
+   {
+    "id": "gen_reason_9fd7a6cd12a92c",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n81,  49,  66,  64",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "49"
+     },
+     {
+      "label": "B",
+      "text": "66"
+     },
+     {
+      "label": "C",
+      "text": "81"
+     },
+     {
+      "label": "D",
+      "text": "64"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "81, 64, 49 are perfect squares (9²=81; 8²=64; 7²=49); 66 is not. So 66 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n81,  49,  66,  64",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "49"
+     },
+     {
+      "label": "B",
+      "text": "66"
+     },
+     {
+      "label": "C",
+      "text": "81"
+     },
+     {
+      "label": "D",
+      "text": "64"
+     }
+    ],
+    "solution_hi": "शेष तीनों पूर्ण वर्ग हैं; 66 पूर्ण वर्ग नहीं है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "b1a4560d21a6ce65"
+   },
+   {
+    "id": "gen_reason_a924c58bec8337",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of students, Rohan is 8th from the left end and 10th from the right end. How many students are there in the row?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "16"
+     },
+     {
+      "label": "B",
+      "text": "19"
+     },
+     {
+      "label": "C",
+      "text": "17"
+     },
+     {
+      "label": "D",
+      "text": "18"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Total = (position from left) + (position from right) − 1 = 8 + 10 − 1 = 17.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "विद्यार्थियों की एक पंक्ति में रोहन बाईं ओर से 8वें स्थान पर तथा दाईं ओर से 10वें स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "16"
+     },
+     {
+      "label": "B",
+      "text": "19"
+     },
+     {
+      "label": "C",
+      "text": "17"
+     },
+     {
+      "label": "D",
+      "text": "18"
+     }
+    ],
+    "solution_hi": "कुल = बाएँ से स्थान + दाएँ से स्थान − 1 = 8 + 10 − 1 = 17।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "6c96b2c976cc405c"
+   },
+   {
+    "id": "gen_reason_02b29d17d343ab",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "9 : 729 :: 12 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "1740"
+     },
+     {
+      "label": "B",
+      "text": "1727"
+     },
+     {
+      "label": "C",
+      "text": "1729"
+     },
+     {
+      "label": "D",
+      "text": "1728"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "The second term is cube of the number (9→729). So 12→1728.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "9 : 729 :: 12 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "1740"
+     },
+     {
+      "label": "B",
+      "text": "1727"
+     },
+     {
+      "label": "C",
+      "text": "1729"
+     },
+     {
+      "label": "D",
+      "text": "1728"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (9→729); उसी नियम से 12→1728।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "150cf7fa81ccbb57"
+   },
+   {
+    "id": "gen_reason_e87cedfe93a1f2",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Radha is the daughter of Rohan, and Rohan is the brother of Arun. How is Radha related to Arun?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Niece"
+     },
+     {
+      "label": "B",
+      "text": "Sister"
+     },
+     {
+      "label": "C",
+      "text": "Grandmother"
+     },
+     {
+      "label": "D",
+      "text": "Cousin"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Radha is Rohan's daughter; Rohan is Arun's brother. Tracing the relationship, Radha is the niece of Arun.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "राधा, रोहन की पुत्री हैं तथा रोहन, अरुण के भाई हैं। राधा का अरुण से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "भतीजी"
+     },
+     {
+      "label": "B",
+      "text": "बहन"
+     },
+     {
+      "label": "C",
+      "text": "दादी"
+     },
+     {
+      "label": "D",
+      "text": "चचेरा भाई/बहन"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर राधा, अरुण की भतीजी हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "b744e1044cff7698"
+   },
+   {
+    "id": "gen_reason_a93e96bd73b0a5",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'LIGHT' is written as 'NKIJV'. How is 'BRAIN' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "ZPYGL"
+     },
+     {
+      "label": "B",
+      "text": "DTCKP"
+     },
+     {
+      "label": "C",
+      "text": "EUDLQ"
+     },
+     {
+      "label": "D",
+      "text": "CSBJO"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "Each letter is shifted by +2 position(s) in the alphabet (LIGHT→NKIJV). Applying the same shift to BRAIN gives DTCKP.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'LIGHT' को 'NKIJV' लिखा जाता है। उसी कूट भाषा में 'BRAIN' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "ZPYGL"
+     },
+     {
+      "label": "B",
+      "text": "DTCKP"
+     },
+     {
+      "label": "C",
+      "text": "EUDLQ"
+     },
+     {
+      "label": "D",
+      "text": "CSBJO"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में +2 स्थान खिसकाया गया है (LIGHT→NKIJV); अतः BRAIN → DTCKP।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "a7407f81bf79c4f7"
+   },
+   {
+    "id": "gen_reason_75d92605c5060c",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nO2, R5, U8, X11, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "A14"
+     },
+     {
+      "label": "B",
+      "text": "B14"
+     },
+     {
+      "label": "C",
+      "text": "A15"
+     },
+     {
+      "label": "D",
+      "text": "A11"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Letters advance by 3 (O→R→U→X→A); numbers increase by 3 (2→5→8→11→14). Next = A14.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO2, R5, U8, X11, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "A14"
+     },
+     {
+      "label": "B",
+      "text": "B14"
+     },
+     {
+      "label": "C",
+      "text": "A15"
+     },
+     {
+      "label": "D",
+      "text": "A11"
+     }
+    ],
+    "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = A14।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "0101462b013605d8"
+   },
+   {
+    "id": "gen_reason_0e5bf1f25ddd29",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "HI : JK :: GH : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "IJ"
+     },
+     {
+      "label": "B",
+      "text": "JK"
+     },
+     {
+      "label": "C",
+      "text": "EF"
+     },
+     {
+      "label": "D",
+      "text": "II"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Each letter moves +2 in the alphabet (HI→JK). Applying +2 to GH gives IJ.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "HI : JK :: GH : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "IJ"
+     },
+     {
+      "label": "B",
+      "text": "JK"
+     },
+     {
+      "label": "C",
+      "text": "EF"
+     },
+     {
+      "label": "D",
+      "text": "II"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +2 स्थान बढ़ता है (HI→JK); अतः GH → IJ।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "17995ba9de6c2929"
+   },
+   {
+    "id": "gen_reason_ecb1430d337616",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Find the next term in the letter series:\nH, I, J, K, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "M"
+     },
+     {
+      "label": "B",
+      "text": "K"
+     },
+     {
+      "label": "C",
+      "text": "N"
+     },
+     {
+      "label": "D",
+      "text": "L"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "The letters advance by 1 position(s) each time (H→I→J→K). Next = L.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Letter Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nH, I, J, K, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "M"
+     },
+     {
+      "label": "B",
+      "text": "K"
+     },
+     {
+      "label": "C",
+      "text": "N"
+     },
+     {
+      "label": "D",
+      "text": "L"
+     }
+    ],
+    "solution_hi": "प्रत्येक बार अक्षर 1 स्थान आगे बढ़ता है; अतः अगला पद = L।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "f4e67c72fe575b38"
+   },
+   {
+    "id": "gen_reason_63fe5da35780f0",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Sita starts from a point and walks 9 km towards North, then turns right and walks 12 km towards East. How far is she now from the starting point?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "3 km"
+     },
+     {
+      "label": "B",
+      "text": "15 km"
+     },
+     {
+      "label": "C",
+      "text": "21 km"
+     },
+     {
+      "label": "D",
+      "text": "16 km"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "North 9 km and East 12 km are perpendicular. Straight-line distance = √(9² + 12²) = √(81 + 144) = √225 = 15 km.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Direction Sense",
+    "concept": "Direction — Distance",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक व्यक्ति एक बिंदु से चलना आरम्भ करता है और उत्तर दिशा में 9 किमी चलता है, फिर दाएँ मुड़कर पूर्व दिशा में 12 किमी चलता है। अब वह प्रारम्भिक बिंदु से कितनी दूर है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "3 km"
+     },
+     {
+      "label": "B",
+      "text": "15 km"
+     },
+     {
+      "label": "C",
+      "text": "21 km"
+     },
+     {
+      "label": "D",
+      "text": "16 km"
+     }
+    ],
+    "solution_hi": "उत्तर व पूर्व लम्बवत हैं; दूरी = √(9² + 12²) = √225 = 15 किमी।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "cb7c638a76a070bf"
+   },
+   {
+    "id": "gen_reason_1a9124b0b1e38d",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "A person is initially facing South. He takes a right, then takes a right, then takes a left, then takes a left turn. Which direction is he facing now? (Each turn is 90°.)",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "North"
+     },
+     {
+      "label": "B",
+      "text": "East"
+     },
+     {
+      "label": "C",
+      "text": "West"
+     },
+     {
+      "label": "D",
+      "text": "South"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Starting South, applying each 90° turn: right→West right→North left→West left→South. Final = South.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Direction Sense",
+    "concept": "Direction — Facing",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक व्यक्ति आरम्भ में दक्षिण दिशा की ओर मुख किए है। वह दाएँ, फिर दाएँ, फिर बाएँ, फिर बाएँ मुड़ता है। अब उसका मुख किस दिशा की ओर है? (प्रत्येक मोड़ 90° का है।)",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "उत्तर"
+     },
+     {
+      "label": "B",
+      "text": "पूर्व"
+     },
+     {
+      "label": "C",
+      "text": "पश्चिम"
+     },
+     {
+      "label": "D",
+      "text": "दक्षिण"
+     }
+    ],
+    "solution_hi": "दक्षिण से आरम्भ कर प्रत्येक 90° मोड़ लगाने पर अंतिम दिशा = दक्षिण।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "1b44a3c052636852"
+   },
+   {
+    "id": "gen_reason_246f01f2c481f5",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n121,  81,  36,  53",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "81"
+     },
+     {
+      "label": "B",
+      "text": "36"
+     },
+     {
+      "label": "C",
+      "text": "121"
+     },
+     {
+      "label": "D",
+      "text": "53"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "81, 36, 121 are perfect squares (9²=81; 6²=36; 11²=121); 53 is not. So 53 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n121,  81,  36,  53",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "81"
+     },
+     {
+      "label": "B",
+      "text": "36"
+     },
+     {
+      "label": "C",
+      "text": "121"
+     },
+     {
+      "label": "D",
+      "text": "53"
+     }
+    ],
+    "solution_hi": "शेष तीनों पूर्ण वर्ग हैं; 53 पूर्ण वर्ग नहीं है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "c2a701977aac3942"
+   },
+   {
+    "id": "gen_reason_93dca8b6bc6ae6",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of 43 students, Vikas is 34th from the left end. What is Vikas's position from the right end?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "9"
+     },
+     {
+      "label": "B",
+      "text": "12"
+     },
+     {
+      "label": "C",
+      "text": "10"
+     },
+     {
+      "label": "D",
+      "text": "11"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Position from right = total − position from left + 1 = 43 − 34 + 1 = 10.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "43 विद्यार्थियों की एक पंक्ति में विकास बाईं ओर से 34वें स्थान पर है। दाईं ओर से उसका स्थान क्या है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "9"
+     },
+     {
+      "label": "B",
+      "text": "12"
+     },
+     {
+      "label": "C",
+      "text": "10"
+     },
+     {
+      "label": "D",
+      "text": "11"
+     }
+    ],
+    "solution_hi": "दाएँ से स्थान = कुल − बाएँ से स्थान + 1 = 43 − 34 + 1 = 10।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "e2ce83d880539fb5"
+   },
+   {
+    "id": "gen_reason_918b067b8c160d",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "8 : 9 :: 4 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "5"
+     },
+     {
+      "label": "B",
+      "text": "9"
+     },
+     {
+      "label": "C",
+      "text": "4"
+     },
+     {
+      "label": "D",
+      "text": "6"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "The second term is the number plus 1 (8→9). So 4→5.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "8 : 9 :: 4 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "5"
+     },
+     {
+      "label": "B",
+      "text": "9"
+     },
+     {
+      "label": "C",
+      "text": "4"
+     },
+     {
+      "label": "D",
+      "text": "6"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (8→9); उसी नियम से 4→5।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "28f66b7ec9b573de"
+   },
+   {
+    "id": "gen_reason_d49de243aa2626",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Sita is the daughter of Vikas, and Vikas is the son of Neha. How is Sita related to Neha?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Granddaughter"
+     },
+     {
+      "label": "B",
+      "text": "Aunt"
+     },
+     {
+      "label": "C",
+      "text": "Niece"
+     },
+     {
+      "label": "D",
+      "text": "Mother"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Sita is Vikas's daughter; Vikas is Neha's son. Tracing the relationship, Sita is the granddaughter of Neha.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "सीता, विकास की पुत्री हैं तथा विकास, नेहा के पुत्र हैं। सीता का नेहा से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "पोती"
+     },
+     {
+      "label": "B",
+      "text": "बुआ"
+     },
+     {
+      "label": "C",
+      "text": "भतीजी"
+     },
+     {
+      "label": "D",
+      "text": "माता"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर सीता, नेहा की पोती हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "d929083c8847e2b4"
+   },
+   {
+    "id": "gen_reason_c17c8a880a1931",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'BRAIN' is written as 'ZPYGL'. How is 'GLASS' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "FKZRR"
+     },
+     {
+      "label": "B",
+      "text": "DIXPP"
+     },
+     {
+      "label": "C",
+      "text": "INCUU"
+     },
+     {
+      "label": "D",
+      "text": "EJYQQ"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Each letter is shifted by -2 position(s) in the alphabet (BRAIN→ZPYGL). Applying the same shift to GLASS gives EJYQQ.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'BRAIN' को 'ZPYGL' लिखा जाता है। उसी कूट भाषा में 'GLASS' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "FKZRR"
+     },
+     {
+      "label": "B",
+      "text": "DIXPP"
+     },
+     {
+      "label": "C",
+      "text": "INCUU"
+     },
+     {
+      "label": "D",
+      "text": "EJYQQ"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में -2 स्थान खिसकाया गया है (BRAIN→ZPYGL); अतः GLASS → EJYQQ।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "3c15293c73d889f5"
+   },
+   {
+    "id": "gen_reason_a4afb749a050df",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nK5, O8, S11, W14, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "B17"
+     },
+     {
+      "label": "B",
+      "text": "A18"
+     },
+     {
+      "label": "C",
+      "text": "A14"
+     },
+     {
+      "label": "D",
+      "text": "A17"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Letters advance by 4 (K→O→S→W→A); numbers increase by 3 (5→8→11→14→17). Next = A17.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK5, O8, S11, W14, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "B17"
+     },
+     {
+      "label": "B",
+      "text": "A18"
+     },
+     {
+      "label": "C",
+      "text": "A14"
+     },
+     {
+      "label": "D",
+      "text": "A17"
+     }
+    ],
+    "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = A17।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "8b3384cf967318ef"
+   },
+   {
+    "id": "gen_reason_0af3e25266a3d7",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "FG : IJ :: AB : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "XY"
+     },
+     {
+      "label": "B",
+      "text": "DD"
+     },
+     {
+      "label": "C",
+      "text": "DE"
+     },
+     {
+      "label": "D",
+      "text": "EF"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter moves +3 in the alphabet (FG→IJ). Applying +3 to AB gives DE.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "FG : IJ :: AB : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "XY"
+     },
+     {
+      "label": "B",
+      "text": "DD"
+     },
+     {
+      "label": "C",
+      "text": "DE"
+     },
+     {
+      "label": "D",
+      "text": "EF"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +3 स्थान बढ़ता है (FG→IJ); अतः AB → DE।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "ff0662333de6370a"
+   },
+   {
+    "id": "gen_reason_dd3315577b29f8",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Find the next term in the letter series:\nJ, M, P, S, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "W"
+     },
+     {
+      "label": "B",
+      "text": "U"
+     },
+     {
+      "label": "C",
+      "text": "X"
+     },
+     {
+      "label": "D",
+      "text": "V"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "The letters advance by 3 position(s) each time (J→M→P→S). Next = V.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Letter Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nJ, M, P, S, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "W"
+     },
+     {
+      "label": "B",
+      "text": "U"
+     },
+     {
+      "label": "C",
+      "text": "X"
+     },
+     {
+      "label": "D",
+      "text": "V"
+     }
+    ],
+    "solution_hi": "प्रत्येक बार अक्षर 3 स्थान आगे बढ़ता है; अतः अगला पद = V।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "f71fc3c528f2aa49"
+   },
+   {
+    "id": "gen_reason_6c33e0f19ecfbf",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Sita starts from a point and walks 6 km towards North, then turns right and walks 8 km towards East. How far is she now from the starting point?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "14 km"
+     },
+     {
+      "label": "B",
+      "text": "11 km"
+     },
+     {
+      "label": "C",
+      "text": "2 km"
+     },
+     {
+      "label": "D",
+      "text": "10 km"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "North 6 km and East 8 km are perpendicular. Straight-line distance = √(6² + 8²) = √(36 + 64) = √100 = 10 km.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Direction Sense",
+    "concept": "Direction — Distance",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक व्यक्ति एक बिंदु से चलना आरम्भ करता है और उत्तर दिशा में 6 किमी चलता है, फिर दाएँ मुड़कर पूर्व दिशा में 8 किमी चलता है। अब वह प्रारम्भिक बिंदु से कितनी दूर है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "14 km"
+     },
+     {
+      "label": "B",
+      "text": "11 km"
+     },
+     {
+      "label": "C",
+      "text": "2 km"
+     },
+     {
+      "label": "D",
+      "text": "10 km"
+     }
+    ],
+    "solution_hi": "उत्तर व पूर्व लम्बवत हैं; दूरी = √(6² + 8²) = √100 = 10 किमी।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "8e492d3fec88af8b"
+   },
+   {
+    "id": "gen_reason_71e97ca2d5008f",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n17,  19,  15,  23",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "15"
+     },
+     {
+      "label": "B",
+      "text": "23"
+     },
+     {
+      "label": "C",
+      "text": "19"
+     },
+     {
+      "label": "D",
+      "text": "17"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "23, 19, 17 are prime numbers; 15 is composite (15 = 5 × 3). So 15 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n17,  19,  15,  23",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "15"
+     },
+     {
+      "label": "B",
+      "text": "23"
+     },
+     {
+      "label": "C",
+      "text": "19"
+     },
+     {
+      "label": "D",
+      "text": "17"
+     }
+    ],
+    "solution_hi": "शेष तीनों अभाज्य संख्याएँ हैं; 15 भाज्य है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "ac5e5f6267d532d8"
+   },
+   {
+    "id": "gen_reason_bc4f52e8575660",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of students, Amit is 8th from the left end and 9th from the right end. How many students are there in the row?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "17"
+     },
+     {
+      "label": "B",
+      "text": "15"
+     },
+     {
+      "label": "C",
+      "text": "18"
+     },
+     {
+      "label": "D",
+      "text": "16"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Total = (position from left) + (position from right) − 1 = 8 + 9 − 1 = 16.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "विद्यार्थियों की एक पंक्ति में अमित बाईं ओर से 8वें स्थान पर तथा दाईं ओर से 9वें स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "17"
+     },
+     {
+      "label": "B",
+      "text": "15"
+     },
+     {
+      "label": "C",
+      "text": "18"
+     },
+     {
+      "label": "D",
+      "text": "16"
+     }
+    ],
+    "solution_hi": "कुल = बाएँ से स्थान + दाएँ से स्थान − 1 = 8 + 9 − 1 = 16।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "fb9ab22fe8fb9fef"
+   },
+   {
+    "id": "gen_reason_0708ce748e79f2",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "3 : 9 :: 6 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "42"
+     },
+     {
+      "label": "B",
+      "text": "35"
+     },
+     {
+      "label": "C",
+      "text": "37"
+     },
+     {
+      "label": "D",
+      "text": "36"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "The second term is square of the number (3→9). So 6→36.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "3 : 9 :: 6 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "42"
+     },
+     {
+      "label": "B",
+      "text": "35"
+     },
+     {
+      "label": "C",
+      "text": "37"
+     },
+     {
+      "label": "D",
+      "text": "36"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (3→9); उसी नियम से 6→36।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "ed92dc808d0e5210"
+   },
+   {
+    "id": "gen_reason_d930d2c29c5b3d",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Amit is the son of Neha, and Neha is the sister of Priya. How is Amit related to Priya?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Nephew"
+     },
+     {
+      "label": "B",
+      "text": "Grandfather"
+     },
+     {
+      "label": "C",
+      "text": "Grandson"
+     },
+     {
+      "label": "D",
+      "text": "Father"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Amit is Neha's son; Neha is Priya's sister. Tracing the relationship, Amit is the nephew of Priya.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अमित, नेहा के पुत्र हैं तथा नेहा, प्रिया की बहन हैं। अमित का प्रिया से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "भतीजा"
+     },
+     {
+      "label": "B",
+      "text": "दादा"
+     },
+     {
+      "label": "C",
+      "text": "पोता"
+     },
+     {
+      "label": "D",
+      "text": "पिता"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर अमित, प्रिया के भतीजा हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "e6be43a23dfe06f4"
+   },
+   {
+    "id": "gen_reason_5d32d063214233",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'BREAD' is written as 'AQDZC'. How is 'BRAIN' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "ZPYGL"
+     },
+     {
+      "label": "B",
+      "text": "CSBJO"
+     },
+     {
+      "label": "C",
+      "text": "AQZHM"
+     },
+     {
+      "label": "D",
+      "text": "BRAIN"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter is shifted by -1 position(s) in the alphabet (BREAD→AQDZC). Applying the same shift to BRAIN gives AQZHM.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'BREAD' को 'AQDZC' लिखा जाता है। उसी कूट भाषा में 'BRAIN' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "ZPYGL"
+     },
+     {
+      "label": "B",
+      "text": "CSBJO"
+     },
+     {
+      "label": "C",
+      "text": "AQZHM"
+     },
+     {
+      "label": "D",
+      "text": "BRAIN"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में -1 स्थान खिसकाया गया है (BREAD→AQDZC); अतः BRAIN → AQZHM।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "b3ad9a2c33e0e118"
+   },
+   {
+    "id": "gen_reason_0f4f67d8fafac5",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nC3, F7, I11, L15, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "P19"
+     },
+     {
+      "label": "B",
+      "text": "O20"
+     },
+     {
+      "label": "C",
+      "text": "O15"
+     },
+     {
+      "label": "D",
+      "text": "O19"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Letters advance by 3 (C→F→I→L→O); numbers increase by 4 (3→7→11→15→19). Next = O19.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nC3, F7, I11, L15, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "P19"
+     },
+     {
+      "label": "B",
+      "text": "O20"
+     },
+     {
+      "label": "C",
+      "text": "O15"
+     },
+     {
+      "label": "D",
+      "text": "O19"
+     }
+    ],
+    "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = O19।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "6df773cb68acd65d"
+   },
+   {
+    "id": "gen_reason_b19cb944d241cb",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "FG : JK :: JK : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "FG"
+     },
+     {
+      "label": "B",
+      "text": "NN"
+     },
+     {
+      "label": "C",
+      "text": "NO"
+     },
+     {
+      "label": "D",
+      "text": "OP"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter moves +4 in the alphabet (FG→JK). Applying +4 to JK gives NO.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "FG : JK :: JK : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "FG"
+     },
+     {
+      "label": "B",
+      "text": "NN"
+     },
+     {
+      "label": "C",
+      "text": "NO"
+     },
+     {
+      "label": "D",
+      "text": "OP"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +4 स्थान बढ़ता है (FG→JK); अतः JK → NO।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "6d45fb3aea57348d"
+   },
+   {
+    "id": "gen_reason_07f8cfab459773",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Find the next term in the letter series:\nL, M, N, O, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Q"
+     },
+     {
+      "label": "B",
+      "text": "O"
+     },
+     {
+      "label": "C",
+      "text": "R"
+     },
+     {
+      "label": "D",
+      "text": "P"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "The letters advance by 1 position(s) each time (L→M→N→O). Next = P.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Letter Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nL, M, N, O, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "Q"
+     },
+     {
+      "label": "B",
+      "text": "O"
+     },
+     {
+      "label": "C",
+      "text": "R"
+     },
+     {
+      "label": "D",
+      "text": "P"
+     }
+    ],
+    "solution_hi": "प्रत्येक बार अक्षर 1 स्थान आगे बढ़ता है; अतः अगला पद = P।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "a05095df0bbef310"
+   },
+   {
+    "id": "gen_reason_9f0207e087057a",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "A man starts from a point and walks 3 km towards North, then turns right and walks 4 km towards East. How far is he now from the starting point?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "1 km"
+     },
+     {
+      "label": "B",
+      "text": "5 km"
+     },
+     {
+      "label": "C",
+      "text": "7 km"
+     },
+     {
+      "label": "D",
+      "text": "6 km"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "North 3 km and East 4 km are perpendicular. Straight-line distance = √(3² + 4²) = √(9 + 16) = √25 = 5 km.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Direction Sense",
+    "concept": "Direction — Distance",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक व्यक्ति एक बिंदु से चलना आरम्भ करता है और उत्तर दिशा में 3 किमी चलता है, फिर दाएँ मुड़कर पूर्व दिशा में 4 किमी चलता है। अब वह प्रारम्भिक बिंदु से कितनी दूर है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "1 km"
+     },
+     {
+      "label": "B",
+      "text": "5 km"
+     },
+     {
+      "label": "C",
+      "text": "7 km"
+     },
+     {
+      "label": "D",
+      "text": "6 km"
+     }
+    ],
+    "solution_hi": "उत्तर व पूर्व लम्बवत हैं; दूरी = √(3² + 4²) = √25 = 5 किमी।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "4d884ec4cdcccb63"
+   },
+   {
+    "id": "gen_reason_fca018a4917d5b",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n41,  13,  19,  35",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "41"
+     },
+     {
+      "label": "B",
+      "text": "19"
+     },
+     {
+      "label": "C",
+      "text": "35"
+     },
+     {
+      "label": "D",
+      "text": "13"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "13, 41, 19 are prime numbers; 35 is composite (35 = 7 × 5). So 35 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n41,  13,  19,  35",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "41"
+     },
+     {
+      "label": "B",
+      "text": "19"
+     },
+     {
+      "label": "C",
+      "text": "35"
+     },
+     {
+      "label": "D",
+      "text": "13"
+     }
+    ],
+    "solution_hi": "शेष तीनों अभाज्य संख्याएँ हैं; 35 भाज्य है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "909d641951a42e6a"
+   },
+   {
+    "id": "gen_reason_5d6e9b868fae99",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of 36 students, Rahul is 12th from the left end. What is Rahul's position from the right end?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "25"
+     },
+     {
+      "label": "B",
+      "text": "26"
+     },
+     {
+      "label": "C",
+      "text": "24"
+     },
+     {
+      "label": "D",
+      "text": "27"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Position from right = total − position from left + 1 = 36 − 12 + 1 = 25.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "36 विद्यार्थियों की एक पंक्ति में Rahul बाईं ओर से 12वें स्थान पर है। दाईं ओर से उसका स्थान क्या है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "25"
+     },
+     {
+      "label": "B",
+      "text": "26"
+     },
+     {
+      "label": "C",
+      "text": "24"
+     },
+     {
+      "label": "D",
+      "text": "27"
+     }
+    ],
+    "solution_hi": "दाएँ से स्थान = कुल − बाएँ से स्थान + 1 = 36 − 12 + 1 = 25।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "8548aeac059f7be0"
+   },
+   {
+    "id": "gen_reason_6b3325c7fd5274",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "4 : 8 :: 7 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "13"
+     },
+     {
+      "label": "B",
+      "text": "15"
+     },
+     {
+      "label": "C",
+      "text": "14"
+     },
+     {
+      "label": "D",
+      "text": "21"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "The second term is twice the number (4→8). So 7→14.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "4 : 8 :: 7 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "13"
+     },
+     {
+      "label": "B",
+      "text": "15"
+     },
+     {
+      "label": "C",
+      "text": "14"
+     },
+     {
+      "label": "D",
+      "text": "21"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (4→8); उसी नियम से 7→14।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "1a6094c8f6290b0c"
+   },
+   {
+    "id": "gen_reason_3638857f7d5ac5",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Meena is the sister of Arun, and Arun is the father of Ram. How is Meena related to Ram?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Grandmother"
+     },
+     {
+      "label": "B",
+      "text": "Niece"
+     },
+     {
+      "label": "C",
+      "text": "Aunt"
+     },
+     {
+      "label": "D",
+      "text": "Mother"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Meena is Arun's sister; Arun is Ram's father. Tracing the relationship, Meena is the aunt of Ram.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "मीना, अरुण की बहन हैं तथा अरुण, राम के पिता हैं। मीना का राम से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "दादी"
+     },
+     {
+      "label": "B",
+      "text": "भतीजी"
+     },
+     {
+      "label": "C",
+      "text": "बुआ"
+     },
+     {
+      "label": "D",
+      "text": "माता"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर मीना, राम की बुआ हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "954823be94dee820"
+   },
+   {
+    "id": "gen_reason_8ccb0a11cc4b8c",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'OCEAN' is written as 'LZBXK'. How is 'GRAPE' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "EPYNC"
+     },
+     {
+      "label": "B",
+      "text": "CNWLA"
+     },
+     {
+      "label": "C",
+      "text": "JUDSH"
+     },
+     {
+      "label": "D",
+      "text": "DOXMB"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Each letter is shifted by -3 position(s) in the alphabet (OCEAN→LZBXK). Applying the same shift to GRAPE gives DOXMB.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'OCEAN' को 'LZBXK' लिखा जाता है। उसी कूट भाषा में 'GRAPE' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "EPYNC"
+     },
+     {
+      "label": "B",
+      "text": "CNWLA"
+     },
+     {
+      "label": "C",
+      "text": "JUDSH"
+     },
+     {
+      "label": "D",
+      "text": "DOXMB"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में -3 स्थान खिसकाया गया है (OCEAN→LZBXK); अतः GRAPE → DOXMB।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "de328b558a0ac358"
+   },
+   {
+    "id": "gen_reason_f6db059f611d28",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nF2, I5, L8, O11, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "R14"
+     },
+     {
+      "label": "B",
+      "text": "S14"
+     },
+     {
+      "label": "C",
+      "text": "R15"
+     },
+     {
+      "label": "D",
+      "text": "R11"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Letters advance by 3 (F→I→L→O→R); numbers increase by 3 (2→5→8→11→14). Next = R14.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nF2, I5, L8, O11, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "R14"
+     },
+     {
+      "label": "B",
+      "text": "S14"
+     },
+     {
+      "label": "C",
+      "text": "R15"
+     },
+     {
+      "label": "D",
+      "text": "R11"
+     }
+    ],
+    "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = R14।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "fb324b668e7a66cf"
+   },
+   {
+    "id": "gen_reason_d51854b34c8988",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "CD : DE :: BC : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "CD"
+     },
+     {
+      "label": "B",
+      "text": "DE"
+     },
+     {
+      "label": "C",
+      "text": "AB"
+     },
+     {
+      "label": "D",
+      "text": "CC"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Each letter moves +1 in the alphabet (CD→DE). Applying +1 to BC gives CD.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "CD : DE :: BC : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "CD"
+     },
+     {
+      "label": "B",
+      "text": "DE"
+     },
+     {
+      "label": "C",
+      "text": "AB"
+     },
+     {
+      "label": "D",
+      "text": "CC"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +1 स्थान बढ़ता है (CD→DE); अतः BC → CD।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "02e1c9b6461c17ee"
+   },
+   {
+    "id": "gen_reason_dfb674e9a3f60e",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Find the next term in the letter series:\nH, L, P, T, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Z"
+     },
+     {
+      "label": "B",
+      "text": "X"
+     },
+     {
+      "label": "C",
+      "text": "Y"
+     },
+     {
+      "label": "D",
+      "text": "W"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "The letters advance by 4 position(s) each time (H→L→P→T). Next = X.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Letter Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nH, L, P, T, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "Z"
+     },
+     {
+      "label": "B",
+      "text": "X"
+     },
+     {
+      "label": "C",
+      "text": "Y"
+     },
+     {
+      "label": "D",
+      "text": "W"
+     }
+    ],
+    "solution_hi": "प्रत्येक बार अक्षर 4 स्थान आगे बढ़ता है; अतः अगला पद = X।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "038225521629e3bd"
+   },
+   {
+    "id": "gen_reason_18b5871302307d",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Sita starts from a point and walks 8 km towards North, then turns right and walks 15 km towards East. How far is she now from the starting point?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "23 km"
+     },
+     {
+      "label": "B",
+      "text": "18 km"
+     },
+     {
+      "label": "C",
+      "text": "7 km"
+     },
+     {
+      "label": "D",
+      "text": "17 km"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "North 8 km and East 15 km are perpendicular. Straight-line distance = √(8² + 15²) = √(64 + 225) = √289 = 17 km.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Direction Sense",
+    "concept": "Direction — Distance",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक व्यक्ति एक बिंदु से चलना आरम्भ करता है और उत्तर दिशा में 8 किमी चलता है, फिर दाएँ मुड़कर पूर्व दिशा में 15 किमी चलता है। अब वह प्रारम्भिक बिंदु से कितनी दूर है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "23 km"
+     },
+     {
+      "label": "B",
+      "text": "18 km"
+     },
+     {
+      "label": "C",
+      "text": "7 km"
+     },
+     {
+      "label": "D",
+      "text": "17 km"
+     }
+    ],
+    "solution_hi": "उत्तर व पूर्व लम्बवत हैं; दूरी = √(8² + 15²) = √289 = 17 किमी।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "c0f44b6b11cdff48"
+   },
+   {
+    "id": "gen_reason_7da8e26fa75547",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n64,  144,  36,  38",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "144"
+     },
+     {
+      "label": "B",
+      "text": "36"
+     },
+     {
+      "label": "C",
+      "text": "38"
+     },
+     {
+      "label": "D",
+      "text": "64"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "64, 144, 36 are perfect squares (8²=64; 12²=144; 6²=36); 38 is not. So 38 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n64,  144,  36,  38",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "144"
+     },
+     {
+      "label": "B",
+      "text": "36"
+     },
+     {
+      "label": "C",
+      "text": "38"
+     },
+     {
+      "label": "D",
+      "text": "64"
+     }
+    ],
+    "solution_hi": "शेष तीनों पूर्ण वर्ग हैं; 38 पूर्ण वर्ग नहीं है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "d450f1e29d4dd8d4"
+   },
+   {
+    "id": "gen_reason_be3e264b761f00",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of students, Vikas is 8th from the left end and 8th from the right end. How many students are there in the row?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "17"
+     },
+     {
+      "label": "B",
+      "text": "15"
+     },
+     {
+      "label": "C",
+      "text": "16"
+     },
+     {
+      "label": "D",
+      "text": "14"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "Total = (position from left) + (position from right) − 1 = 8 + 8 − 1 = 15.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "विद्यार्थियों की एक पंक्ति में विकास बाईं ओर से 8वें स्थान पर तथा दाईं ओर से 8वें स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "17"
+     },
+     {
+      "label": "B",
+      "text": "15"
+     },
+     {
+      "label": "C",
+      "text": "16"
+     },
+     {
+      "label": "D",
+      "text": "14"
+     }
+    ],
+    "solution_hi": "कुल = बाएँ से स्थान + दाएँ से स्थान − 1 = 8 + 8 − 1 = 15।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "6b14ef757c93d09e"
+   },
+   {
+    "id": "gen_reason_5e76a103345056",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "12 : 144 :: 9 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "81"
+     },
+     {
+      "label": "B",
+      "text": "90"
+     },
+     {
+      "label": "C",
+      "text": "80"
+     },
+     {
+      "label": "D",
+      "text": "82"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "The second term is square of the number (12→144). So 9→81.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "12 : 144 :: 9 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "81"
+     },
+     {
+      "label": "B",
+      "text": "90"
+     },
+     {
+      "label": "C",
+      "text": "80"
+     },
+     {
+      "label": "D",
+      "text": "82"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (12→144); उसी नियम से 9→81।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "9b865841d021982b"
+   },
+   {
+    "id": "gen_reason_bb04283c296fb0",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Rohan is the father of Vikas, and Vikas is the father of Arun. How is Rohan related to Arun?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Grandson"
+     },
+     {
+      "label": "B",
+      "text": "Uncle"
+     },
+     {
+      "label": "C",
+      "text": "Grandfather"
+     },
+     {
+      "label": "D",
+      "text": "Brother"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Rohan is Vikas's father; Vikas is Arun's father. Tracing the relationship, Rohan is the grandfather of Arun.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "रोहन, विकास के पिता हैं तथा विकास, अरुण के पिता हैं। रोहन का अरुण से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "पोता"
+     },
+     {
+      "label": "B",
+      "text": "चाचा"
+     },
+     {
+      "label": "C",
+      "text": "दादा"
+     },
+     {
+      "label": "D",
+      "text": "भाई"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर रोहन, अरुण के दादा हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "cbc94da804c93040"
+   },
+   {
+    "id": "gen_reason_b9abffb5e2b2d2",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'HORSE' is written as 'ELOPB'. How is 'SUGAR' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "OQCWN"
+     },
+     {
+      "label": "B",
+      "text": "VXJDU"
+     },
+     {
+      "label": "C",
+      "text": "PRDXO"
+     },
+     {
+      "label": "D",
+      "text": "QSEYP"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter is shifted by -3 position(s) in the alphabet (HORSE→ELOPB). Applying the same shift to SUGAR gives PRDXO.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'HORSE' को 'ELOPB' लिखा जाता है। उसी कूट भाषा में 'SUGAR' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "OQCWN"
+     },
+     {
+      "label": "B",
+      "text": "VXJDU"
+     },
+     {
+      "label": "C",
+      "text": "PRDXO"
+     },
+     {
+      "label": "D",
+      "text": "QSEYP"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में -3 स्थान खिसकाया गया है (HORSE→ELOPB); अतः SUGAR → PRDXO।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "e82d021fe0636fb5"
+   },
+   {
+    "id": "gen_reason_4271554d1ae54b",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nG5, J7, M9, P11, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "S14"
+     },
+     {
+      "label": "B",
+      "text": "S11"
+     },
+     {
+      "label": "C",
+      "text": "S13"
+     },
+     {
+      "label": "D",
+      "text": "T13"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Letters advance by 3 (G→J→M→P→S); numbers increase by 2 (5→7→9→11→13). Next = S13.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nG5, J7, M9, P11, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "S14"
+     },
+     {
+      "label": "B",
+      "text": "S11"
+     },
+     {
+      "label": "C",
+      "text": "S13"
+     },
+     {
+      "label": "D",
+      "text": "T13"
+     }
+    ],
+    "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = S13।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "58954ec8b599b0f3"
+   },
+   {
+    "id": "gen_reason_994886eaf3ac69",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "JK : NO :: FG : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "BC"
+     },
+     {
+      "label": "B",
+      "text": "JJ"
+     },
+     {
+      "label": "C",
+      "text": "JK"
+     },
+     {
+      "label": "D",
+      "text": "KL"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter moves +4 in the alphabet (JK→NO). Applying +4 to FG gives JK.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "JK : NO :: FG : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "BC"
+     },
+     {
+      "label": "B",
+      "text": "JJ"
+     },
+     {
+      "label": "C",
+      "text": "JK"
+     },
+     {
+      "label": "D",
+      "text": "KL"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +4 स्थान बढ़ता है (JK→NO); अतः FG → JK।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "adc5f1e931a6b666"
+   }
+  ],
+  "out": "p1.pdf"
  },
  "2": {
   "real": [
@@ -929,6 +3659,3108 @@
    "Odd One Out (Numbers)|36,49,117,100|100~117~36~49",
    "Ranking|29,18|11~12~13~14"
   ],
-  "out": "OneStep_BSSC_InterLevel_Set2.pdf"
+  "gen_full": [
+   {
+    "id": "gen_reason_351cd571611fea",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n33,  29,  17,  41",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "29"
+     },
+     {
+      "label": "B",
+      "text": "41"
+     },
+     {
+      "label": "C",
+      "text": "17"
+     },
+     {
+      "label": "D",
+      "text": "33"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "29, 41, 17 are prime numbers; 33 is composite (33 = 11 × 3). So 33 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n33,  29,  17,  41",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "29"
+     },
+     {
+      "label": "B",
+      "text": "41"
+     },
+     {
+      "label": "C",
+      "text": "17"
+     },
+     {
+      "label": "D",
+      "text": "33"
+     }
+    ],
+    "solution_hi": "शेष तीनों अभाज्य संख्याएँ हैं; 33 भाज्य है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "b5606c938d6e41b4"
+   },
+   {
+    "id": "gen_reason_4b03c46164ef61",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of students, Anjali is 4th from the left end and 10th from the right end. How many students are there in the row?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "14"
+     },
+     {
+      "label": "B",
+      "text": "12"
+     },
+     {
+      "label": "C",
+      "text": "15"
+     },
+     {
+      "label": "D",
+      "text": "13"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Total = (position from left) + (position from right) − 1 = 4 + 10 − 1 = 13.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "विद्यार्थियों की एक पंक्ति में अंजलि बाईं ओर से 4वें स्थान पर तथा दाईं ओर से 10वें स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "14"
+     },
+     {
+      "label": "B",
+      "text": "12"
+     },
+     {
+      "label": "C",
+      "text": "15"
+     },
+     {
+      "label": "D",
+      "text": "13"
+     }
+    ],
+    "solution_hi": "कुल = बाएँ से स्थान + दाएँ से स्थान − 1 = 4 + 10 − 1 = 13।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "d4f2fd87d7f6d056"
+   },
+   {
+    "id": "gen_reason_7a66fe8d1369ba",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "8 : 24 :: 4 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "16"
+     },
+     {
+      "label": "B",
+      "text": "11"
+     },
+     {
+      "label": "C",
+      "text": "13"
+     },
+     {
+      "label": "D",
+      "text": "12"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "The second term is thrice the number (8→24). So 4→12.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "8 : 24 :: 4 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "16"
+     },
+     {
+      "label": "B",
+      "text": "11"
+     },
+     {
+      "label": "C",
+      "text": "13"
+     },
+     {
+      "label": "D",
+      "text": "12"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (8→24); उसी नियम से 4→12।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "8702d39d8e9fe214"
+   },
+   {
+    "id": "gen_reason_472dfe3cbf3828",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Anjali is the mother of Radha, and Radha is the mother of Ram. How is Anjali related to Ram?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Cousin"
+     },
+     {
+      "label": "B",
+      "text": "Sister"
+     },
+     {
+      "label": "C",
+      "text": "Grandmother"
+     },
+     {
+      "label": "D",
+      "text": "Granddaughter"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Anjali is Radha's mother; Radha is Ram's mother. Tracing the relationship, Anjali is the grandmother of Ram.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अंजलि, राधा की माता हैं तथा राधा, राम की माता हैं। अंजलि का राम से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "चचेरा भाई/बहन"
+     },
+     {
+      "label": "B",
+      "text": "बहन"
+     },
+     {
+      "label": "C",
+      "text": "दादी"
+     },
+     {
+      "label": "D",
+      "text": "पोती"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर अंजलि, राम की दादी हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "d5444fd2cbca6f7d"
+   },
+   {
+    "id": "gen_reason_1b610284f3b075",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'LIGHT' is written as 'NKIJV'. How is 'TIGER' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "UJHFS"
+     },
+     {
+      "label": "B",
+      "text": "RGECP"
+     },
+     {
+      "label": "C",
+      "text": "VKIGT"
+     },
+     {
+      "label": "D",
+      "text": "WLJHU"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter is shifted by +2 position(s) in the alphabet (LIGHT→NKIJV). Applying the same shift to TIGER gives VKIGT.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'LIGHT' को 'NKIJV' लिखा जाता है। उसी कूट भाषा में 'TIGER' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "UJHFS"
+     },
+     {
+      "label": "B",
+      "text": "RGECP"
+     },
+     {
+      "label": "C",
+      "text": "VKIGT"
+     },
+     {
+      "label": "D",
+      "text": "WLJHU"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में +2 स्थान खिसकाया गया है (LIGHT→NKIJV); अतः TIGER → VKIGT।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "3741ed7e45f4f4b5"
+   },
+   {
+    "id": "gen_reason_ada01f54e1a381",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nD5, F7, H9, J11, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "L13"
+     },
+     {
+      "label": "B",
+      "text": "M13"
+     },
+     {
+      "label": "C",
+      "text": "L14"
+     },
+     {
+      "label": "D",
+      "text": "L11"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Letters advance by 2 (D→F→H→J→L); numbers increase by 2 (5→7→9→11→13). Next = L13.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD5, F7, H9, J11, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "L13"
+     },
+     {
+      "label": "B",
+      "text": "M13"
+     },
+     {
+      "label": "C",
+      "text": "L14"
+     },
+     {
+      "label": "D",
+      "text": "L11"
+     }
+    ],
+    "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = L13।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "cb3779177be1f6ab"
+   },
+   {
+    "id": "gen_reason_fe27277a13240a",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "AB : BC :: GH : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "FG"
+     },
+     {
+      "label": "B",
+      "text": "HH"
+     },
+     {
+      "label": "C",
+      "text": "HI"
+     },
+     {
+      "label": "D",
+      "text": "IJ"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter moves +1 in the alphabet (AB→BC). Applying +1 to GH gives HI.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "AB : BC :: GH : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "FG"
+     },
+     {
+      "label": "B",
+      "text": "HH"
+     },
+     {
+      "label": "C",
+      "text": "HI"
+     },
+     {
+      "label": "D",
+      "text": "IJ"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +1 स्थान बढ़ता है (AB→BC); अतः GH → HI।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "64dc365e84638c7d"
+   },
+   {
+    "id": "gen_reason_aa51dfa4bec207",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Find the next term in the letter series:\nF, H, J, L, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "P"
+     },
+     {
+      "label": "B",
+      "text": "N"
+     },
+     {
+      "label": "C",
+      "text": "O"
+     },
+     {
+      "label": "D",
+      "text": "M"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "The letters advance by 2 position(s) each time (F→H→J→L). Next = N.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Letter Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nF, H, J, L, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "P"
+     },
+     {
+      "label": "B",
+      "text": "N"
+     },
+     {
+      "label": "C",
+      "text": "O"
+     },
+     {
+      "label": "D",
+      "text": "M"
+     }
+    ],
+    "solution_hi": "प्रत्येक बार अक्षर 2 स्थान आगे बढ़ता है; अतः अगला पद = N।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "c003d15c806fc079"
+   },
+   {
+    "id": "gen_reason_51d4d54b055822",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n37,  13,  29,  36",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "13"
+     },
+     {
+      "label": "B",
+      "text": "37"
+     },
+     {
+      "label": "C",
+      "text": "29"
+     },
+     {
+      "label": "D",
+      "text": "36"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "13, 37, 29 are prime numbers; 36 is composite (36 = 18 × 2). So 36 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n37,  13,  29,  36",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "13"
+     },
+     {
+      "label": "B",
+      "text": "37"
+     },
+     {
+      "label": "C",
+      "text": "29"
+     },
+     {
+      "label": "D",
+      "text": "36"
+     }
+    ],
+    "solution_hi": "शेष तीनों अभाज्य संख्याएँ हैं; 36 भाज्य है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "b771a511fa13155b"
+   },
+   {
+    "id": "gen_reason_c6cb6be284dc4f",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of 35 students, Sneha is 24th from the left end. What is Sneha's position from the right end?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "12"
+     },
+     {
+      "label": "B",
+      "text": "13"
+     },
+     {
+      "label": "C",
+      "text": "11"
+     },
+     {
+      "label": "D",
+      "text": "14"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Position from right = total − position from left + 1 = 35 − 24 + 1 = 12.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "35 विद्यार्थियों की एक पंक्ति में Sneha बाईं ओर से 24वें स्थान पर है। दाईं ओर से उसका स्थान क्या है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "12"
+     },
+     {
+      "label": "B",
+      "text": "13"
+     },
+     {
+      "label": "C",
+      "text": "11"
+     },
+     {
+      "label": "D",
+      "text": "14"
+     }
+    ],
+    "solution_hi": "दाएँ से स्थान = कुल − बाएँ से स्थान + 1 = 35 − 24 + 1 = 12।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "f2ea581881a7339c"
+   },
+   {
+    "id": "gen_reason_b9a2f0c4090506",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "2 : 4 :: 9 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "17"
+     },
+     {
+      "label": "B",
+      "text": "19"
+     },
+     {
+      "label": "C",
+      "text": "18"
+     },
+     {
+      "label": "D",
+      "text": "27"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "The second term is twice the number (2→4). So 9→18.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "2 : 4 :: 9 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "17"
+     },
+     {
+      "label": "B",
+      "text": "19"
+     },
+     {
+      "label": "C",
+      "text": "18"
+     },
+     {
+      "label": "D",
+      "text": "27"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (2→4); उसी नियम से 9→18।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "2439268c0ab78db3"
+   },
+   {
+    "id": "gen_reason_a36d273569fa46",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Meena is the daughter of Neha, and Neha is the daughter of Ram. How is Meena related to Ram?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Mother"
+     },
+     {
+      "label": "B",
+      "text": "Niece"
+     },
+     {
+      "label": "C",
+      "text": "Granddaughter"
+     },
+     {
+      "label": "D",
+      "text": "Sister"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Meena is Neha's daughter; Neha is Ram's daughter. Tracing the relationship, Meena is the granddaughter of Ram.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "मीना, नेहा की पुत्री हैं तथा नेहा, राम की पुत्री हैं। मीना का राम से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "माता"
+     },
+     {
+      "label": "B",
+      "text": "भतीजी"
+     },
+     {
+      "label": "C",
+      "text": "पोती"
+     },
+     {
+      "label": "D",
+      "text": "बहन"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर मीना, राम की पोती हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "56d6aa25f75ea4dd"
+   },
+   {
+    "id": "gen_reason_dc9db8d254484d",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'WATER' is written as 'UYRCP'. How is 'FRUIT' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "EQTHS"
+     },
+     {
+      "label": "B",
+      "text": "CORFQ"
+     },
+     {
+      "label": "C",
+      "text": "HTWKV"
+     },
+     {
+      "label": "D",
+      "text": "DPSGR"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Each letter is shifted by -2 position(s) in the alphabet (WATER→UYRCP). Applying the same shift to FRUIT gives DPSGR.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'WATER' को 'UYRCP' लिखा जाता है। उसी कूट भाषा में 'FRUIT' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "EQTHS"
+     },
+     {
+      "label": "B",
+      "text": "CORFQ"
+     },
+     {
+      "label": "C",
+      "text": "HTWKV"
+     },
+     {
+      "label": "D",
+      "text": "DPSGR"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में -2 स्थान खिसकाया गया है (WATER→UYRCP); अतः FRUIT → DPSGR।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "33ceb53aefcc897f"
+   },
+   {
+    "id": "gen_reason_abb9eae3d9e425",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nA3, E5, I7, M9, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "R11"
+     },
+     {
+      "label": "B",
+      "text": "Q12"
+     },
+     {
+      "label": "C",
+      "text": "Q9"
+     },
+     {
+      "label": "D",
+      "text": "Q11"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Letters advance by 4 (A→E→I→M→Q); numbers increase by 2 (3→5→7→9→11). Next = Q11.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nA3, E5, I7, M9, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "R11"
+     },
+     {
+      "label": "B",
+      "text": "Q12"
+     },
+     {
+      "label": "C",
+      "text": "Q9"
+     },
+     {
+      "label": "D",
+      "text": "Q11"
+     }
+    ],
+    "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = Q11।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "8441a646c7df07af"
+   },
+   {
+    "id": "gen_reason_d594a4d9252a48",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "CD : FG :: QR : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "NO"
+     },
+     {
+      "label": "B",
+      "text": "TT"
+     },
+     {
+      "label": "C",
+      "text": "TU"
+     },
+     {
+      "label": "D",
+      "text": "UV"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter moves +3 in the alphabet (CD→FG). Applying +3 to QR gives TU.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "CD : FG :: QR : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "NO"
+     },
+     {
+      "label": "B",
+      "text": "TT"
+     },
+     {
+      "label": "C",
+      "text": "TU"
+     },
+     {
+      "label": "D",
+      "text": "UV"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +3 स्थान बढ़ता है (CD→FG); अतः QR → TU।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "a347a31441541e3b"
+   },
+   {
+    "id": "gen_reason_d70b9c683193f9",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Find the next term in the letter series:\nB, C, D, E, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "G"
+     },
+     {
+      "label": "B",
+      "text": "E"
+     },
+     {
+      "label": "C",
+      "text": "H"
+     },
+     {
+      "label": "D",
+      "text": "F"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "The letters advance by 1 position(s) each time (B→C→D→E). Next = F.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Letter Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nB, C, D, E, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "G"
+     },
+     {
+      "label": "B",
+      "text": "E"
+     },
+     {
+      "label": "C",
+      "text": "H"
+     },
+     {
+      "label": "D",
+      "text": "F"
+     }
+    ],
+    "solution_hi": "प्रत्येक बार अक्षर 1 स्थान आगे बढ़ता है; अतः अगला पद = F।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "74cb26c4157afb51"
+   },
+   {
+    "id": "gen_reason_cb1125f6ca4254",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n81,  144,  16,  26",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "26"
+     },
+     {
+      "label": "B",
+      "text": "144"
+     },
+     {
+      "label": "C",
+      "text": "16"
+     },
+     {
+      "label": "D",
+      "text": "81"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "144, 16, 81 are perfect squares (12²=144; 4²=16; 9²=81); 26 is not. So 26 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n81,  144,  16,  26",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "26"
+     },
+     {
+      "label": "B",
+      "text": "144"
+     },
+     {
+      "label": "C",
+      "text": "16"
+     },
+     {
+      "label": "D",
+      "text": "81"
+     }
+    ],
+    "solution_hi": "शेष तीनों पूर्ण वर्ग हैं; 26 पूर्ण वर्ग नहीं है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "8efc2a9728629d74"
+   },
+   {
+    "id": "gen_reason_5267af42c031f4",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of 38 students, Anjali is 26th from the left end. What is Anjali's position from the right end?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "14"
+     },
+     {
+      "label": "B",
+      "text": "12"
+     },
+     {
+      "label": "C",
+      "text": "15"
+     },
+     {
+      "label": "D",
+      "text": "13"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Position from right = total − position from left + 1 = 38 − 26 + 1 = 13.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "38 विद्यार्थियों की एक पंक्ति में अंजलि बाईं ओर से 26वें स्थान पर है। दाईं ओर से उसका स्थान क्या है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "14"
+     },
+     {
+      "label": "B",
+      "text": "12"
+     },
+     {
+      "label": "C",
+      "text": "15"
+     },
+     {
+      "label": "D",
+      "text": "13"
+     }
+    ],
+    "solution_hi": "दाएँ से स्थान = कुल − बाएँ से स्थान + 1 = 38 − 26 + 1 = 13।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "7580de51a04b65f3"
+   },
+   {
+    "id": "gen_reason_2b73b414f61fa7",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "5 : 15 :: 7 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "28"
+     },
+     {
+      "label": "B",
+      "text": "20"
+     },
+     {
+      "label": "C",
+      "text": "22"
+     },
+     {
+      "label": "D",
+      "text": "21"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "The second term is thrice the number (5→15). So 7→21.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "5 : 15 :: 7 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "28"
+     },
+     {
+      "label": "B",
+      "text": "20"
+     },
+     {
+      "label": "C",
+      "text": "22"
+     },
+     {
+      "label": "D",
+      "text": "21"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (5→15); उसी नियम से 7→21।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "5b84db32cde782ed"
+   },
+   {
+    "id": "gen_reason_4105b09cb27c3b",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Arun is the father of Sita, and Sita is the sister of Sunil. How is Arun related to Sunil?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Brother"
+     },
+     {
+      "label": "B",
+      "text": "Nephew"
+     },
+     {
+      "label": "C",
+      "text": "Father"
+     },
+     {
+      "label": "D",
+      "text": "Grandfather"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Arun is Sita's father; Sita is Sunil's sister. Tracing the relationship, Arun is the father of Sunil.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अरुण, सीता के पिता हैं तथा सीता, सुनील की बहन हैं। अरुण का सुनील से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "भाई"
+     },
+     {
+      "label": "B",
+      "text": "भतीजा"
+     },
+     {
+      "label": "C",
+      "text": "पिता"
+     },
+     {
+      "label": "D",
+      "text": "दादा"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर अरुण, सुनील के पिता हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "823287becdd318dc"
+   },
+   {
+    "id": "gen_reason_3c4fc554a2cfda",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'TABLE' is written as 'UBCMF'. How is 'SNAKE' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "TOBLF"
+     },
+     {
+      "label": "B",
+      "text": "UPCMG"
+     },
+     {
+      "label": "C",
+      "text": "SNAKE"
+     },
+     {
+      "label": "D",
+      "text": "RMZJD"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Each letter is shifted by +1 position(s) in the alphabet (TABLE→UBCMF). Applying the same shift to SNAKE gives TOBLF.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'TABLE' को 'UBCMF' लिखा जाता है। उसी कूट भाषा में 'SNAKE' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "TOBLF"
+     },
+     {
+      "label": "B",
+      "text": "UPCMG"
+     },
+     {
+      "label": "C",
+      "text": "SNAKE"
+     },
+     {
+      "label": "D",
+      "text": "RMZJD"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में +1 स्थान खिसकाया गया है (TABLE→UBCMF); अतः SNAKE → TOBLF।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "63e308a8b45e0e8f"
+   },
+   {
+    "id": "gen_reason_306621d8aa2ea3",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nG2, I5, K8, M11, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "O15"
+     },
+     {
+      "label": "B",
+      "text": "O11"
+     },
+     {
+      "label": "C",
+      "text": "O14"
+     },
+     {
+      "label": "D",
+      "text": "P14"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Letters advance by 2 (G→I→K→M→O); numbers increase by 3 (2→5→8→11→14). Next = O14.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nG2, I5, K8, M11, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "O15"
+     },
+     {
+      "label": "B",
+      "text": "O11"
+     },
+     {
+      "label": "C",
+      "text": "O14"
+     },
+     {
+      "label": "D",
+      "text": "P14"
+     }
+    ],
+    "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = O14।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "81550bd841e78650"
+   },
+   {
+    "id": "gen_reason_2469b80929fa21",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "GH : IJ :: BC : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "ZA"
+     },
+     {
+      "label": "B",
+      "text": "DD"
+     },
+     {
+      "label": "C",
+      "text": "DE"
+     },
+     {
+      "label": "D",
+      "text": "EF"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter moves +2 in the alphabet (GH→IJ). Applying +2 to BC gives DE.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "GH : IJ :: BC : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "ZA"
+     },
+     {
+      "label": "B",
+      "text": "DD"
+     },
+     {
+      "label": "C",
+      "text": "DE"
+     },
+     {
+      "label": "D",
+      "text": "EF"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +2 स्थान बढ़ता है (GH→IJ); अतः BC → DE।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "d2034151c2d53537"
+   },
+   {
+    "id": "gen_reason_3b4949a3ac3db1",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Find the next term in the letter series:\nI, K, M, O, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "S"
+     },
+     {
+      "label": "B",
+      "text": "Q"
+     },
+     {
+      "label": "C",
+      "text": "R"
+     },
+     {
+      "label": "D",
+      "text": "P"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "The letters advance by 2 position(s) each time (I→K→M→O). Next = Q.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Letter Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nI, K, M, O, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "S"
+     },
+     {
+      "label": "B",
+      "text": "Q"
+     },
+     {
+      "label": "C",
+      "text": "R"
+     },
+     {
+      "label": "D",
+      "text": "P"
+     }
+    ],
+    "solution_hi": "प्रत्येक बार अक्षर 2 स्थान आगे बढ़ता है; अतः अगला पद = Q।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "e4a157bb1f801e68"
+   },
+   {
+    "id": "gen_reason_ff19edd660c0dc",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n37,  12,  31,  29",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "29"
+     },
+     {
+      "label": "B",
+      "text": "12"
+     },
+     {
+      "label": "C",
+      "text": "37"
+     },
+     {
+      "label": "D",
+      "text": "31"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "37, 31, 29 are prime numbers; 12 is composite (12 = 6 × 2). So 12 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n37,  12,  31,  29",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "29"
+     },
+     {
+      "label": "B",
+      "text": "12"
+     },
+     {
+      "label": "C",
+      "text": "37"
+     },
+     {
+      "label": "D",
+      "text": "31"
+     }
+    ],
+    "solution_hi": "शेष तीनों अभाज्य संख्याएँ हैं; 12 भाज्य है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "9423cd8e0541f6ee"
+   },
+   {
+    "id": "gen_reason_c830fc0b58f2aa",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of students, Rahul is 12th from the left end and 5th from the right end. How many students are there in the row?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "17"
+     },
+     {
+      "label": "B",
+      "text": "15"
+     },
+     {
+      "label": "C",
+      "text": "18"
+     },
+     {
+      "label": "D",
+      "text": "16"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Total = (position from left) + (position from right) − 1 = 12 + 5 − 1 = 16.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "विद्यार्थियों की एक पंक्ति में Rahul बाईं ओर से 12वें स्थान पर तथा दाईं ओर से 5वें स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "17"
+     },
+     {
+      "label": "B",
+      "text": "15"
+     },
+     {
+      "label": "C",
+      "text": "18"
+     },
+     {
+      "label": "D",
+      "text": "16"
+     }
+    ],
+    "solution_hi": "कुल = बाएँ से स्थान + दाएँ से स्थान − 1 = 12 + 5 − 1 = 16।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "583274f8de55a03c"
+   },
+   {
+    "id": "gen_reason_fb9411d9ff59ab",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "2 : 8 :: 3 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "27"
+     },
+     {
+      "label": "B",
+      "text": "30"
+     },
+     {
+      "label": "C",
+      "text": "26"
+     },
+     {
+      "label": "D",
+      "text": "28"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "The second term is cube of the number (2→8). So 3→27.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "2 : 8 :: 3 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "27"
+     },
+     {
+      "label": "B",
+      "text": "30"
+     },
+     {
+      "label": "C",
+      "text": "26"
+     },
+     {
+      "label": "D",
+      "text": "28"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (2→8); उसी नियम से 3→27।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "84582bd7633116e6"
+   },
+   {
+    "id": "gen_reason_3e0df93b1d1f09",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Rohan is the father of Neha, and Neha is the mother of Arun. How is Rohan related to Arun?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Brother"
+     },
+     {
+      "label": "B",
+      "text": "Grandfather"
+     },
+     {
+      "label": "C",
+      "text": "Nephew"
+     },
+     {
+      "label": "D",
+      "text": "Uncle"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "Rohan is Neha's father; Neha is Arun's mother. Tracing the relationship, Rohan is the grandfather of Arun.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "रोहन, नेहा के पिता हैं तथा नेहा, अरुण की माता हैं। रोहन का अरुण से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "भाई"
+     },
+     {
+      "label": "B",
+      "text": "दादा"
+     },
+     {
+      "label": "C",
+      "text": "भतीजा"
+     },
+     {
+      "label": "D",
+      "text": "चाचा"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर रोहन, अरुण के दादा हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "65e06173c82ba787"
+   },
+   {
+    "id": "gen_reason_b8f5b831beb6f2",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'FRUIT' is written as 'HTWKV'. How is 'CLOUD' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "DMPVE"
+     },
+     {
+      "label": "B",
+      "text": "AJMSB"
+     },
+     {
+      "label": "C",
+      "text": "ENQWF"
+     },
+     {
+      "label": "D",
+      "text": "FORXG"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter is shifted by +2 position(s) in the alphabet (FRUIT→HTWKV). Applying the same shift to CLOUD gives ENQWF.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'FRUIT' को 'HTWKV' लिखा जाता है। उसी कूट भाषा में 'CLOUD' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "DMPVE"
+     },
+     {
+      "label": "B",
+      "text": "AJMSB"
+     },
+     {
+      "label": "C",
+      "text": "ENQWF"
+     },
+     {
+      "label": "D",
+      "text": "FORXG"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में +2 स्थान खिसकाया गया है (FRUIT→HTWKV); अतः CLOUD → ENQWF।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "63d73e01b25f3009"
+   },
+   {
+    "id": "gen_reason_e54b0ed6df6c9b",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nJ2, N6, R10, V14, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Z14"
+     },
+     {
+      "label": "B",
+      "text": "Z18"
+     },
+     {
+      "label": "C",
+      "text": "A18"
+     },
+     {
+      "label": "D",
+      "text": "Z19"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "Letters advance by 4 (J→N→R→V→Z); numbers increase by 4 (2→6→10→14→18). Next = Z18.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nJ2, N6, R10, V14, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "Z14"
+     },
+     {
+      "label": "B",
+      "text": "Z18"
+     },
+     {
+      "label": "C",
+      "text": "A18"
+     },
+     {
+      "label": "D",
+      "text": "Z19"
+     }
+    ],
+    "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = Z18।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "799a2a45b3042516"
+   },
+   {
+    "id": "gen_reason_881d64480d2367",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "JK : KL :: DE : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "EF"
+     },
+     {
+      "label": "B",
+      "text": "FG"
+     },
+     {
+      "label": "C",
+      "text": "CD"
+     },
+     {
+      "label": "D",
+      "text": "EE"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Each letter moves +1 in the alphabet (JK→KL). Applying +1 to DE gives EF.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "JK : KL :: DE : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "EF"
+     },
+     {
+      "label": "B",
+      "text": "FG"
+     },
+     {
+      "label": "C",
+      "text": "CD"
+     },
+     {
+      "label": "D",
+      "text": "EE"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +1 स्थान बढ़ता है (JK→KL); अतः DE → EF।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "0df1eb57fecc39eb"
+   },
+   {
+    "id": "gen_reason_d3effcca47abc0",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Find the next term in the letter series:\nC, E, G, I, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "M"
+     },
+     {
+      "label": "B",
+      "text": "K"
+     },
+     {
+      "label": "C",
+      "text": "L"
+     },
+     {
+      "label": "D",
+      "text": "J"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "The letters advance by 2 position(s) each time (C→E→G→I). Next = K.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Letter Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nC, E, G, I, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "M"
+     },
+     {
+      "label": "B",
+      "text": "K"
+     },
+     {
+      "label": "C",
+      "text": "L"
+     },
+     {
+      "label": "D",
+      "text": "J"
+     }
+    ],
+    "solution_hi": "प्रत्येक बार अक्षर 2 स्थान आगे बढ़ता है; अतः अगला पद = K।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "515c5b73079e4341"
+   },
+   {
+    "id": "gen_reason_715c05e01b6353",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n99,  16,  49,  121",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "49"
+     },
+     {
+      "label": "B",
+      "text": "121"
+     },
+     {
+      "label": "C",
+      "text": "16"
+     },
+     {
+      "label": "D",
+      "text": "99"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "49, 121, 16 are perfect squares (7²=49; 11²=121; 4²=16); 99 is not. So 99 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n99,  16,  49,  121",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "49"
+     },
+     {
+      "label": "B",
+      "text": "121"
+     },
+     {
+      "label": "C",
+      "text": "16"
+     },
+     {
+      "label": "D",
+      "text": "99"
+     }
+    ],
+    "solution_hi": "शेष तीनों पूर्ण वर्ग हैं; 99 पूर्ण वर्ग नहीं है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "83cf36ec90540d2a"
+   },
+   {
+    "id": "gen_reason_f100f1e4f0ac2c",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of 30 students, Sneha is 14th from the left end. What is Sneha's position from the right end?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "16"
+     },
+     {
+      "label": "B",
+      "text": "19"
+     },
+     {
+      "label": "C",
+      "text": "17"
+     },
+     {
+      "label": "D",
+      "text": "18"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Position from right = total − position from left + 1 = 30 − 14 + 1 = 17.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "30 विद्यार्थियों की एक पंक्ति में Sneha बाईं ओर से 14वें स्थान पर है। दाईं ओर से उसका स्थान क्या है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "16"
+     },
+     {
+      "label": "B",
+      "text": "19"
+     },
+     {
+      "label": "C",
+      "text": "17"
+     },
+     {
+      "label": "D",
+      "text": "18"
+     }
+    ],
+    "solution_hi": "दाएँ से स्थान = कुल − बाएँ से स्थान + 1 = 30 − 14 + 1 = 17।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "8dc78a87aa4df8f6"
+   },
+   {
+    "id": "gen_reason_a7c02c6b2b0b1b",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "5 : 6 :: 8 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "8"
+     },
+     {
+      "label": "B",
+      "text": "10"
+     },
+     {
+      "label": "C",
+      "text": "9"
+     },
+     {
+      "label": "D",
+      "text": "17"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "The second term is the number plus 1 (5→6). So 8→9.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "5 : 6 :: 8 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "8"
+     },
+     {
+      "label": "B",
+      "text": "10"
+     },
+     {
+      "label": "C",
+      "text": "9"
+     },
+     {
+      "label": "D",
+      "text": "17"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (5→6); उसी नियम से 8→9।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "58e00e6cdb1b781b"
+   },
+   {
+    "id": "gen_reason_b88a6a8f14de14",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Neha is the daughter of Anjali, and Anjali is the sister of Meena. How is Neha related to Meena?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Mother"
+     },
+     {
+      "label": "B",
+      "text": "Cousin"
+     },
+     {
+      "label": "C",
+      "text": "Niece"
+     },
+     {
+      "label": "D",
+      "text": "Grandmother"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Neha is Anjali's daughter; Anjali is Meena's sister. Tracing the relationship, Neha is the niece of Meena.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "नेहा, अंजलि की पुत्री हैं तथा अंजलि, मीना की बहन हैं। नेहा का मीना से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "माता"
+     },
+     {
+      "label": "B",
+      "text": "चचेरा भाई/बहन"
+     },
+     {
+      "label": "C",
+      "text": "भतीजी"
+     },
+     {
+      "label": "D",
+      "text": "दादी"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर नेहा, मीना की भतीजी हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "f5a64b52e3e459b4"
+   },
+   {
+    "id": "gen_reason_ed902193a20e7e",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'BRAIN' is written as 'CSBJO'. How is 'TABLE' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "TABLE"
+     },
+     {
+      "label": "B",
+      "text": "SZAKD"
+     },
+     {
+      "label": "C",
+      "text": "UBCMF"
+     },
+     {
+      "label": "D",
+      "text": "VCDNG"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter is shifted by +1 position(s) in the alphabet (BRAIN→CSBJO). Applying the same shift to TABLE gives UBCMF.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'BRAIN' को 'CSBJO' लिखा जाता है। उसी कूट भाषा में 'TABLE' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "TABLE"
+     },
+     {
+      "label": "B",
+      "text": "SZAKD"
+     },
+     {
+      "label": "C",
+      "text": "UBCMF"
+     },
+     {
+      "label": "D",
+      "text": "VCDNG"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में +1 स्थान खिसकाया गया है (BRAIN→CSBJO); अतः TABLE → UBCMF।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "fd39b17b64b79a59"
+   },
+   {
+    "id": "gen_reason_3973de5efb1dcf",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nN3, R5, V7, Z9, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "E11"
+     },
+     {
+      "label": "B",
+      "text": "D12"
+     },
+     {
+      "label": "C",
+      "text": "D9"
+     },
+     {
+      "label": "D",
+      "text": "D11"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Letters advance by 4 (N→R→V→Z→D); numbers increase by 2 (3→5→7→9→11). Next = D11.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN3, R5, V7, Z9, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "E11"
+     },
+     {
+      "label": "B",
+      "text": "D12"
+     },
+     {
+      "label": "C",
+      "text": "D9"
+     },
+     {
+      "label": "D",
+      "text": "D11"
+     }
+    ],
+    "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = D11।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "e5d93460be17fcb2"
+   },
+   {
+    "id": "gen_reason_b4cff37209da82",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "IJ : JK :: LM : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "MN"
+     },
+     {
+      "label": "B",
+      "text": "NO"
+     },
+     {
+      "label": "C",
+      "text": "KL"
+     },
+     {
+      "label": "D",
+      "text": "MM"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Each letter moves +1 in the alphabet (IJ→JK). Applying +1 to LM gives MN.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "IJ : JK :: LM : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "MN"
+     },
+     {
+      "label": "B",
+      "text": "NO"
+     },
+     {
+      "label": "C",
+      "text": "KL"
+     },
+     {
+      "label": "D",
+      "text": "MM"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +1 स्थान बढ़ता है (IJ→JK); अतः LM → MN।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "59d6baf2aed91d6b"
+   },
+   {
+    "id": "gen_reason_de281933295807",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Find the next term in the letter series:\nF, G, H, I, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "K"
+     },
+     {
+      "label": "B",
+      "text": "I"
+     },
+     {
+      "label": "C",
+      "text": "L"
+     },
+     {
+      "label": "D",
+      "text": "J"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "The letters advance by 1 position(s) each time (F→G→H→I). Next = J.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Letter Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nF, G, H, I, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "K"
+     },
+     {
+      "label": "B",
+      "text": "I"
+     },
+     {
+      "label": "C",
+      "text": "L"
+     },
+     {
+      "label": "D",
+      "text": "J"
+     }
+    ],
+    "solution_hi": "प्रत्येक बार अक्षर 1 स्थान आगे बढ़ता है; अतः अगला पद = J।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "0c616e9bf611a910"
+   },
+   {
+    "id": "gen_reason_15a9ee9170d446",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n13,  17,  26,  29",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "17"
+     },
+     {
+      "label": "B",
+      "text": "13"
+     },
+     {
+      "label": "C",
+      "text": "26"
+     },
+     {
+      "label": "D",
+      "text": "29"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "29, 17, 13 are prime numbers; 26 is composite (26 = 13 × 2). So 26 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n13,  17,  26,  29",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "17"
+     },
+     {
+      "label": "B",
+      "text": "13"
+     },
+     {
+      "label": "C",
+      "text": "26"
+     },
+     {
+      "label": "D",
+      "text": "29"
+     }
+    ],
+    "solution_hi": "शेष तीनों अभाज्य संख्याएँ हैं; 26 भाज्य है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "0b0ed39cd2a3c9ad"
+   },
+   {
+    "id": "gen_reason_668de19f2a371d",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of students, Sneha is 7th from the left end and 6th from the right end. How many students are there in the row?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "13"
+     },
+     {
+      "label": "B",
+      "text": "11"
+     },
+     {
+      "label": "C",
+      "text": "14"
+     },
+     {
+      "label": "D",
+      "text": "12"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "Total = (position from left) + (position from right) − 1 = 7 + 6 − 1 = 12.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "विद्यार्थियों की एक पंक्ति में Sneha बाईं ओर से 7वें स्थान पर तथा दाईं ओर से 6वें स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "13"
+     },
+     {
+      "label": "B",
+      "text": "11"
+     },
+     {
+      "label": "C",
+      "text": "14"
+     },
+     {
+      "label": "D",
+      "text": "12"
+     }
+    ],
+    "solution_hi": "कुल = बाएँ से स्थान + दाएँ से स्थान − 1 = 7 + 6 − 1 = 12।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "fabef31a14c87535"
+   },
+   {
+    "id": "gen_reason_95dfcdcee77c21",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "12 : 36 :: 3 : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "8"
+     },
+     {
+      "label": "B",
+      "text": "10"
+     },
+     {
+      "label": "C",
+      "text": "9"
+     },
+     {
+      "label": "D",
+      "text": "12"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "The second term is thrice the number (12→36). So 3→9.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Number Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "12 : 36 :: 3 : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "8"
+     },
+     {
+      "label": "B",
+      "text": "10"
+     },
+     {
+      "label": "C",
+      "text": "9"
+     },
+     {
+      "label": "D",
+      "text": "12"
+     }
+    ],
+    "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (12→36); उसी नियम से 3→9।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "a57d812c9fb9afc9"
+   },
+   {
+    "id": "gen_reason_2393abe26be7e5",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Neha is the mother of Amit, and Amit is the father of Sunil. How is Neha related to Sunil?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "Mother"
+     },
+     {
+      "label": "B",
+      "text": "Grandmother"
+     },
+     {
+      "label": "C",
+      "text": "Granddaughter"
+     },
+     {
+      "label": "D",
+      "text": "Aunt"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "Neha is Amit's mother; Amit is Sunil's father. Tracing the relationship, Neha is the grandmother of Sunil.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Blood Relations",
+    "concept": "Blood Relations",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "नेहा, अमित की माता हैं तथा अमित, सुनील के पिता हैं। नेहा का सुनील से क्या सम्बन्ध है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "माता"
+     },
+     {
+      "label": "B",
+      "text": "दादी"
+     },
+     {
+      "label": "C",
+      "text": "पोती"
+     },
+     {
+      "label": "D",
+      "text": "बुआ"
+     }
+    ],
+    "solution_hi": "सम्बन्ध जोड़ने पर नेहा, सुनील की दादी हुए।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "f7535460bfe25b93"
+   },
+   {
+    "id": "gen_reason_33e2f9012eea99",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a certain code language, 'PLANT' is written as 'SODQW'. How is 'FIELD' written in that same code?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "HKGNF"
+     },
+     {
+      "label": "B",
+      "text": "CFBIA"
+     },
+     {
+      "label": "C",
+      "text": "ILHOG"
+     },
+     {
+      "label": "D",
+      "text": "JMIPH"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter is shifted by +3 position(s) in the alphabet (PLANT→SODQW). Applying the same shift to FIELD gives ILHOG.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Coding-Decoding",
+    "concept": "Letter-Shift Coding",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "एक निश्चित कूट भाषा में 'PLANT' को 'SODQW' लिखा जाता है। उसी कूट भाषा में 'FIELD' को कैसे लिखा जाएगा?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "HKGNF"
+     },
+     {
+      "label": "B",
+      "text": "CFBIA"
+     },
+     {
+      "label": "C",
+      "text": "ILHOG"
+     },
+     {
+      "label": "D",
+      "text": "JMIPH"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर को वर्णमाला में +3 स्थान खिसकाया गया है (PLANT→SODQW); अतः FIELD → ILHOG।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "0c801afed007b8a3"
+   },
+   {
+    "id": "gen_reason_b107afeb4cf3a2",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "What comes next in the series?\nA3, C7, E11, G15, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "I15"
+     },
+     {
+      "label": "B",
+      "text": "I19"
+     },
+     {
+      "label": "C",
+      "text": "J19"
+     },
+     {
+      "label": "D",
+      "text": "I20"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "Letters advance by 2 (A→C→E→G→I); numbers increase by 4 (3→7→11→15→19). Next = I19.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Alphanumeric Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nA3, C7, E11, G15, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "I15"
+     },
+     {
+      "label": "B",
+      "text": "I19"
+     },
+     {
+      "label": "C",
+      "text": "J19"
+     },
+     {
+      "label": "D",
+      "text": "I20"
+     }
+    ],
+    "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = I19।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "32f5d8afbd722051"
+   },
+   {
+    "id": "gen_reason_368c3a1638a778",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "CD : EF :: JK : ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "HI"
+     },
+     {
+      "label": "B",
+      "text": "LL"
+     },
+     {
+      "label": "C",
+      "text": "LM"
+     },
+     {
+      "label": "D",
+      "text": "MN"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Each letter moves +2 in the alphabet (CD→EF). Applying +2 to JK gives LM.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Analogy",
+    "concept": "Letter Analogy",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "CD : EF :: JK : ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "HI"
+     },
+     {
+      "label": "B",
+      "text": "LL"
+     },
+     {
+      "label": "C",
+      "text": "LM"
+     },
+     {
+      "label": "D",
+      "text": "MN"
+     }
+    ],
+    "solution_hi": "प्रत्येक अक्षर वर्णमाला में +2 स्थान बढ़ता है (CD→EF); अतः JK → LM।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "ae26f9b729180da0"
+   },
+   {
+    "id": "gen_reason_4b9a9dc42671f3",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Find the next term in the letter series:\nC, H, M, R, ?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "X"
+     },
+     {
+      "label": "B",
+      "text": "V"
+     },
+     {
+      "label": "C",
+      "text": "Y"
+     },
+     {
+      "label": "D",
+      "text": "W"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "The letters advance by 5 position(s) each time (C→H→M→R). Next = W.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Series",
+    "concept": "Letter Series",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nC, H, M, R, ?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "X"
+     },
+     {
+      "label": "B",
+      "text": "V"
+     },
+     {
+      "label": "C",
+      "text": "Y"
+     },
+     {
+      "label": "D",
+      "text": "W"
+     }
+    ],
+    "solution_hi": "प्रत्येक बार अक्षर 5 स्थान आगे बढ़ता है; अतः अगला पद = W।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "0f9ef93e3d72b7af"
+   },
+   {
+    "id": "gen_reason_f47d04cae56093",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "Three of the following four numbers are alike; find the ODD one out:\n36,  49,  117,  100",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "100"
+     },
+     {
+      "label": "B",
+      "text": "117"
+     },
+     {
+      "label": "C",
+      "text": "36"
+     },
+     {
+      "label": "D",
+      "text": "49"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "36, 49, 100 are perfect squares (6²=36; 7²=49; 10²=100); 117 is not. So 117 is the odd one out.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Classification (Odd One Out)",
+    "concept": "Odd One Out (Numbers)",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n36,  49,  117,  100",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "100"
+     },
+     {
+      "label": "B",
+      "text": "117"
+     },
+     {
+      "label": "C",
+      "text": "36"
+     },
+     {
+      "label": "D",
+      "text": "49"
+     }
+    ],
+    "solution_hi": "शेष तीनों पूर्ण वर्ग हैं; 117 पूर्ण वर्ग नहीं है, अतः यही असंगत है।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "900f241d16ba6719"
+   },
+   {
+    "id": "gen_reason_80b9ade0165482",
+    "exam": "BSSC",
+    "subject": "Reasoning",
+    "stem": "In a row of 29 students, Vikas is 18th from the left end. What is Vikas's position from the right end?",
+    "qtype": "MCQ_single",
+    "options": [
+     {
+      "label": "A",
+      "text": "12"
+     },
+     {
+      "label": "B",
+      "text": "13"
+     },
+     {
+      "label": "C",
+      "text": "11"
+     },
+     {
+      "label": "D",
+      "text": "14"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Position from right = total − position from left + 1 = 29 − 18 + 1 = 12.",
+    "figure_refs": [],
+    "needs_figure": false,
+    "figure_url": null,
+    "figure_svg": null,
+    "chapter": "Ranking & Ordering",
+    "concept": "Ranking",
+    "difficulty": 2,
+    "bloom_level": null,
+    "stem_hi": "29 विद्यार्थियों की एक पंक्ति में विकास बाईं ओर से 18वें स्थान पर है। दाईं ओर से उसका स्थान क्या है?",
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "12"
+     },
+     {
+      "label": "B",
+      "text": "13"
+     },
+     {
+      "label": "C",
+      "text": "11"
+     },
+     {
+      "label": "D",
+      "text": "14"
+     }
+    ],
+    "solution_hi": "दाएँ से स्थान = कुल − बाएँ से स्थान + 1 = 29 − 18 + 1 = 12।",
+    "source": "reasoninggen",
+    "year": null,
+    "verified": true,
+    "generated": true,
+    "validation_issues": [],
+    "duplicate_of": null,
+    "hash": "7c6cdc3a36c5dd12"
+   }
+  ],
+  "out": "p2.pdf"
  }
 }
