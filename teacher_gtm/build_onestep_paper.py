@@ -324,6 +324,117 @@ def generate_science(n, exclude_sigs):
     return out
 
 
+def generate_whole_section(secs, want, mix, gen_taken, bilingual, salt=0):
+    """Build an ENTIRE section from generators, at the requested easy/medium/hard split.
+
+    The top-up paths only ever filled a HARD shortfall, so the easy and medium bands still came
+    from the bank and 41 of 150 questions stayed official. This fills every band from a generator,
+    which is what "all generated" actually requires.
+
+    Every answer here is computed in Python or looked up in a verified fact table. The computed
+    ones cannot be wrong unless the arithmetic is; the table-derived ones are correct relative to
+    125 hand-written entries, which is a far smaller and more auditable surface than a scanned
+    answer key — but it is not the same kind of zero, and the section note on the page says the
+    questions are Acharya-built rather than past-paper.
+    """
+    sys.path.insert(0, str(REPO / "question_bank_engine"))
+    out = []
+    rng = random.Random(20260822 + salt)
+    if "General Studies" in secs:
+        from qbank import staticgkgen, staticgk_forms
+        tables = {t: getattr(staticgkgen, t)
+                  for t in ("STATE_CAPITAL", "DANCE_STATE", "RIVER_ORIGIN")}
+        # Match-the-pairs draws 4 keys from one table, so its distinct combinations run out fast —
+        # splitting the hard quota evenly starved it and the shortfall was silently padded with
+        # difficulty-1 recall, which is the opposite of what was asked. Three statements from three
+        # tables has far more room (1,184 distinct), so it carries the bulk.
+        band = [(staticgk_forms.b_match_pairs(tables), 3, max(mix[3] // 5, 1)),
+                (staticgk_forms.b_multi_statement(tables), 3, mix[3] - max(mix[3] // 5, 1)),
+                (staticgk_forms.b_two_statement(tables), 2, mix[2])]
+        for build, d, n in band:
+            got = 0
+            for _ in range(400):
+                if got >= n:
+                    break
+                b = build(rng, d)
+                if bilingual and not b.get("stem_hi"):
+                    continue
+                opts = [{"label": l, "text": t} for l, t in
+                        zip("ABCD", [b["correct"]] + list(b["distractors"])[:3])]
+                hm = b.get("hi_opts") or {}
+                row = {"stem": b["stem"], "stem_hi": b["stem_hi"], "options": opts,
+                       "options_hi": [{"label": o["label"], "text": hm.get(o["text"], o["text"])}
+                                      for o in opts],
+                       "correct_answer": "A", "solution": b["solution"],
+                       "solution_hi": b.get("solution_hi", ""), "concept": b["concept"],
+                       "_generated": True, "source_pdf": "staticgk_forms", "number": None,
+                       "tag": {"section": "General Studies", "difficulty": d}}
+                if gen_sig(row) in gen_taken:
+                    continue
+                gen_taken.add(gen_sig(row))
+                out.append(row); got += 1
+        out += generate_static_gk(want - len(out), gen_taken, bilingual)
+    elif "Mathematics" in secs:
+        from qbank import sciencegen
+        for d, n in ((3, mix[3]), (2, mix[2]), (1, mix[1])):
+            sci_n = max(n // 4, 1)
+            blds = [b for bs in sciencegen._CHAP_BUILDERS.values() for b in bs]
+            got = 0
+            for _ in range(200):
+                for bld in blds:
+                    if got >= sci_n:
+                        break
+                    sq = sciencegen._make_question(bld(rng, d), rng,
+                                                   {"chapter": "General Science", "dmax": d})
+                    row = {"stem": sq.stem, "stem_hi": sq.stem_hi, "options": sq.options,
+                           "options_hi": sq.options_hi, "correct_answer": sq.correct_answer,
+                           "solution": sq.solution, "solution_hi": sq.solution_hi,
+                           "concept": sq.concept, "_generated": True,
+                           "source_pdf": "sciencegen", "number": None,
+                           "tag": {"section": "General Science", "difficulty": d}}
+                    if gen_sig(row) in gen_taken:
+                        continue
+                    gen_taken.add(gen_sig(row))
+                    out.append(row); got += 1
+                if got >= sci_n:
+                    break
+            # Record what came back. generate_maths dedups against its OWN local set, so without
+            # this a later call in the same section redrew the identical question — the same
+            # ratio and compound-interest questions appeared twice on one paper.
+            fresh_m = generate_maths(n - got, max(d, 1), gen_taken, bilingual)
+            gen_taken.update(gen_sig(q) for q in fresh_m)
+            out += fresh_m
+    else:
+        for d, n in ((3, mix[3]), (2, mix[2]), (1, mix[1])):
+            picked = [q for q in load_generated(10 ** 6, exclude=gen_taken)
+                      if (q.get("difficulty") or 0) >= 3 if d == 3] if d == 3 else \
+                     [q for q in load_generated(10 ** 6, exclude=gen_taken)
+                      if (q.get("difficulty") or 0) == d]
+            for q in picked[:n]:
+                gen_taken.add(gen_sig(q))
+                out.append(q)
+    # A section short of `want` prints a 147-question paper. Top up from whatever band still has
+    # stock rather than shipping a paper that fails its own structure check.
+    if len(out) < want:
+        for d in (3, 2, 1):
+            if len(out) >= want:
+                break
+            # Top up from the SECTION'S OWN generators. The first version sent maths questions
+            # into General Studies, which both mis-sectioned them and duplicated Part II's draw —
+            # three identical computations appeared on one paper.
+            if "General Studies" in secs:
+                extra = generate_static_gk(want - len(out), gen_taken, bilingual)
+            elif "Mathematics" in secs:
+                extra = generate_maths(want - len(out), d, gen_taken, bilingual)
+            else:
+                extra = [q for q in load_generated(10 ** 6, exclude=gen_taken)][:want - len(out)]
+            for q in extra:
+                gen_taken.add(gen_sig(q))
+                q.setdefault("tag", {})["section"] = list(secs)[0]
+            out += extra
+    return out[:want]
+
+
 def generate_gs_forms(n, exclude_sigs, bilingual):
     """Fill a General Studies HARD shortfall with statement-based and match-the-pairs questions.
 
@@ -589,6 +700,10 @@ def main():
                     help="Which Hindi Language section to print. DEFAULT IS 'generated' because "
                          "the REAL Hindi-language questions in these papers are badly OCR-corrupted "
                          "- see the note in load_hindi_generated().")
+    ap.add_argument("--all-generated", action="store_true",
+                    help="Build every question from the generators — no official past-paper "
+                         "questions at all. Every answer is then computed in Python or looked up "
+                         "in a verified fact table.")
     ap.add_argument("--generate-gs", action="store_true",
                     help="Fill a HARD General Studies shortfall with statement-based and "
                          "match-the-pairs questions built from verified fact tables. This is the "
@@ -773,6 +888,10 @@ def main():
                 print(f"  PIN: topped up {len(fresh)} replacement(s) in {title[:34]} "
                       f"— RE-VERIFY these")
                 got += fresh
+            paper.append((title, got)); n += len(got)
+            continue
+        if a.all_generated:
+            got = generate_whole_section(secs, want, mix_for(want), gen_taken, a.inter_level, idx)
             paper.append((title, got)); n += len(got)
             continue
         pool = [q for s in secs for q in by.get(s, [])]
