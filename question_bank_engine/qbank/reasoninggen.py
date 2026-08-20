@@ -333,11 +333,35 @@ def _b_letter_series(rng, diff):
             "mistakes": d, "solution": sol, "concept": "Letter Series"}
 
 def _b_alnum_series(rng, diff):
+    """Letter+number series. Difficulty = how the two components behave.
+
+    diff 1  both steps constant
+    diff 2  the NUMBER step alternates while the letter step stays constant
+    diff 3  the number step grows by one each time
+    diff 4+ the letters run BACKWARDS while the numbers still climb — two components moving in
+            opposite directions is where a candidate who spotted only one of them comes unstuck
+    """
     lstart = rng.randint(1, 15)
     lstep = rng.choice([2, 3, 4])
     nstart = rng.choice([2, 3, 5])
     nstep = rng.choice([2, 3, 4])
-    pairs = [(_letter(lstart + i * lstep), nstart + i * nstep) for i in range(5)]
+    if diff == 2:
+        alt = rng.choice([x for x in (1, 2, 3, 5) if x != nstep])   # else d2 == d1
+        nums = [nstart]
+        for i in range(4):
+            nums.append(nums[-1] + (nstep if i % 2 == 0 else alt))
+        pairs = [(_letter(lstart + i * lstep), nums[i]) for i in range(5)]
+    elif diff == 3:
+        nums, st = [nstart], nstep
+        for _ in range(4):
+            nums.append(nums[-1] + st)
+            st += 1
+        pairs = [(_letter(lstart + i * lstep), nums[i]) for i in range(5)]
+    elif diff >= 4:
+        lstart = rng.randint(14, 24)
+        pairs = [(_letter(lstart - i * lstep), nstart + i * nstep) for i in range(5)]
+    else:
+        pairs = [(_letter(lstart + i * lstep), nstart + i * nstep) for i in range(5)]
     shown = ", ".join(f"{c}{n}" for c, n in pairs[:4]) + ", ?"
     ans = f"{pairs[4][0]}{pairs[4][1]}"
     stem = f"What comes next in the series?\n{shown}"
@@ -663,9 +687,12 @@ def _b_direction_distance(rng, diff):
 
 def _b_direction_final(rng, diff):
     # net facing after a sequence of turns; compute exactly on the compass
+    # diff 1-2 two or three 90° turns; diff 3+ four or five, so the count itself is the test and
+    # a candidate cannot get there by picturing one turn.
     dirs = ["North", "East", "South", "West"]
     start = rng.randint(0, 3)
-    turns = [rng.choice(["left", "right"]) for _ in range(rng.randint(2, 4))]
+    n_turns = 2 if diff <= 1 else 3 if diff == 2 else (4 if diff == 3 else 5)
+    turns = [rng.choice(["left", "right"]) for _ in range(n_turns)]
     cur = start
     for t in turns:
         cur = (cur + (1 if t == "right" else -1)) % 4

@@ -17199,6 +17199,7699 @@
   "source": "reasoninggen"
  },
  {
+  "stem": "What comes next in the series?\nN3, Q5, T8, W10, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN3, Q5, T8, W10, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Z13"
+   },
+   {
+    "label": "B",
+    "text": "A13"
+   },
+   {
+    "label": "C",
+    "text": "Z14"
+   },
+   {
+    "label": "D",
+    "text": "Z11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Z13"
+   },
+   {
+    "label": "B",
+    "text": "A13"
+   },
+   {
+    "label": "C",
+    "text": "Z14"
+   },
+   {
+    "label": "D",
+    "text": "Z11"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (N→Q→T→W→Z); numbers increase by 2 (3→5→8→10→13). Next = Z13.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = Z13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nC2, G5, K6, O9, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nC2, G5, K6, O9, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "S7"
+   },
+   {
+    "label": "B",
+    "text": "S10"
+   },
+   {
+    "label": "C",
+    "text": "T10"
+   },
+   {
+    "label": "D",
+    "text": "S11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "S7"
+   },
+   {
+    "label": "B",
+    "text": "S10"
+   },
+   {
+    "label": "C",
+    "text": "T10"
+   },
+   {
+    "label": "D",
+    "text": "S11"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 4 (C→G→K→O→S); numbers increase by 3 (2→5→6→9→10). Next = S10.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = S10।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nN2, P4, R7, T9, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN2, P4, R7, T9, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "V10"
+   },
+   {
+    "label": "B",
+    "text": "V12"
+   },
+   {
+    "label": "C",
+    "text": "W12"
+   },
+   {
+    "label": "D",
+    "text": "V13"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "V10"
+   },
+   {
+    "label": "B",
+    "text": "V12"
+   },
+   {
+    "label": "C",
+    "text": "W12"
+   },
+   {
+    "label": "D",
+    "text": "V13"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (N→P→R→T→V); numbers increase by 2 (2→4→7→9→12). Next = V12.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = V12।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD5, H7, L10, P12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD5, H7, L10, P12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "U15"
+   },
+   {
+    "label": "B",
+    "text": "T16"
+   },
+   {
+    "label": "C",
+    "text": "T13"
+   },
+   {
+    "label": "D",
+    "text": "T15"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "U15"
+   },
+   {
+    "label": "B",
+    "text": "T16"
+   },
+   {
+    "label": "C",
+    "text": "T13"
+   },
+   {
+    "label": "D",
+    "text": "T15"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 4 (D→H→L→P→T); numbers increase by 2 (5→7→10→12→15). Next = T15.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = T15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD2, G6, J11, M15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD2, G6, J11, M15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "P16"
+   },
+   {
+    "label": "B",
+    "text": "P20"
+   },
+   {
+    "label": "C",
+    "text": "Q20"
+   },
+   {
+    "label": "D",
+    "text": "P21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "P16"
+   },
+   {
+    "label": "B",
+    "text": "P20"
+   },
+   {
+    "label": "C",
+    "text": "Q20"
+   },
+   {
+    "label": "D",
+    "text": "P21"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (D→G→J→M→P); numbers increase by 4 (2→6→11→15→20). Next = P20.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = P20।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nJ5, M8, P13, S16, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nJ5, M8, P13, S16, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "V18"
+   },
+   {
+    "label": "B",
+    "text": "V21"
+   },
+   {
+    "label": "C",
+    "text": "W21"
+   },
+   {
+    "label": "D",
+    "text": "V22"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "V18"
+   },
+   {
+    "label": "B",
+    "text": "V21"
+   },
+   {
+    "label": "C",
+    "text": "W21"
+   },
+   {
+    "label": "D",
+    "text": "V22"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (J→M→P→S→V); numbers increase by 3 (5→8→13→16→21). Next = V21.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = V21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nM2, Q5, U7, Y10, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nM2, Q5, U7, Y10, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "C12"
+   },
+   {
+    "label": "B",
+    "text": "D12"
+   },
+   {
+    "label": "C",
+    "text": "C13"
+   },
+   {
+    "label": "D",
+    "text": "C9"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "C12"
+   },
+   {
+    "label": "B",
+    "text": "D12"
+   },
+   {
+    "label": "C",
+    "text": "C13"
+   },
+   {
+    "label": "D",
+    "text": "C9"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 4 (M→Q→U→Y→C); numbers increase by 3 (2→5→7→10→12). Next = C12.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = C12।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nF3, H7, J8, L12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nF3, H7, J8, L12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "N14"
+   },
+   {
+    "label": "B",
+    "text": "N9"
+   },
+   {
+    "label": "C",
+    "text": "N13"
+   },
+   {
+    "label": "D",
+    "text": "O13"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "N14"
+   },
+   {
+    "label": "B",
+    "text": "N9"
+   },
+   {
+    "label": "C",
+    "text": "N13"
+   },
+   {
+    "label": "D",
+    "text": "O13"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (F→H→J→L→N); numbers increase by 4 (3→7→8→12→13). Next = N13.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = N13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD3, G5, J6, M8, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD3, G5, J6, M8, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Q9"
+   },
+   {
+    "label": "B",
+    "text": "P10"
+   },
+   {
+    "label": "C",
+    "text": "P7"
+   },
+   {
+    "label": "D",
+    "text": "P9"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Q9"
+   },
+   {
+    "label": "B",
+    "text": "P10"
+   },
+   {
+    "label": "C",
+    "text": "P7"
+   },
+   {
+    "label": "D",
+    "text": "P9"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (D→G→J→M→P); numbers increase by 2 (3→5→6→8→9). Next = P9.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = P9।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nH3, L6, P7, T10, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nH3, L6, P7, T10, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "X12"
+   },
+   {
+    "label": "B",
+    "text": "X8"
+   },
+   {
+    "label": "C",
+    "text": "X11"
+   },
+   {
+    "label": "D",
+    "text": "Y11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "X12"
+   },
+   {
+    "label": "B",
+    "text": "X8"
+   },
+   {
+    "label": "C",
+    "text": "X11"
+   },
+   {
+    "label": "D",
+    "text": "Y11"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (H→L→P→T→X); numbers increase by 3 (3→6→7→10→11). Next = X11.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = X11।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nJ3, L6, N11, P14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nJ3, L6, N11, P14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "S19"
+   },
+   {
+    "label": "B",
+    "text": "R20"
+   },
+   {
+    "label": "C",
+    "text": "R16"
+   },
+   {
+    "label": "D",
+    "text": "R19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "S19"
+   },
+   {
+    "label": "B",
+    "text": "R20"
+   },
+   {
+    "label": "C",
+    "text": "R16"
+   },
+   {
+    "label": "D",
+    "text": "R19"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (J→L→N→P→R); numbers increase by 3 (3→6→11→14→19). Next = R19.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = R19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nH3, L6, P11, T14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nH3, L6, P11, T14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Y19"
+   },
+   {
+    "label": "B",
+    "text": "X20"
+   },
+   {
+    "label": "C",
+    "text": "X16"
+   },
+   {
+    "label": "D",
+    "text": "X19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Y19"
+   },
+   {
+    "label": "B",
+    "text": "X20"
+   },
+   {
+    "label": "C",
+    "text": "X16"
+   },
+   {
+    "label": "D",
+    "text": "X19"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 4 (H→L→P→T→X); numbers increase by 3 (3→6→11→14→19). Next = X19.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = X19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nH5, K9, N12, Q16, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nH5, K9, N12, Q16, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "T15"
+   },
+   {
+    "label": "B",
+    "text": "T19"
+   },
+   {
+    "label": "C",
+    "text": "U19"
+   },
+   {
+    "label": "D",
+    "text": "T20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "T15"
+   },
+   {
+    "label": "B",
+    "text": "T19"
+   },
+   {
+    "label": "C",
+    "text": "U19"
+   },
+   {
+    "label": "D",
+    "text": "T20"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (H→K→N→Q→T); numbers increase by 4 (5→9→12→16→19). Next = T19.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = T19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nE5, H9, K11, N15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nE5, H9, K11, N15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "R17"
+   },
+   {
+    "label": "B",
+    "text": "Q18"
+   },
+   {
+    "label": "C",
+    "text": "Q13"
+   },
+   {
+    "label": "D",
+    "text": "Q17"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "R17"
+   },
+   {
+    "label": "B",
+    "text": "Q18"
+   },
+   {
+    "label": "C",
+    "text": "Q13"
+   },
+   {
+    "label": "D",
+    "text": "Q17"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (E→H→K→N→Q); numbers increase by 4 (5→9→11→15→17). Next = Q17.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = Q17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nB5, F9, J11, N15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nB5, F9, J11, N15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "R13"
+   },
+   {
+    "label": "B",
+    "text": "R17"
+   },
+   {
+    "label": "C",
+    "text": "S17"
+   },
+   {
+    "label": "D",
+    "text": "R18"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "R13"
+   },
+   {
+    "label": "B",
+    "text": "R17"
+   },
+   {
+    "label": "C",
+    "text": "S17"
+   },
+   {
+    "label": "D",
+    "text": "R18"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 4 (B→F→J→N→R); numbers increase by 4 (5→9→11→15→17). Next = R17.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = R17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD5, F9, H10, J14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD5, F9, H10, J14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "M15"
+   },
+   {
+    "label": "B",
+    "text": "L16"
+   },
+   {
+    "label": "C",
+    "text": "L11"
+   },
+   {
+    "label": "D",
+    "text": "L15"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "M15"
+   },
+   {
+    "label": "B",
+    "text": "L16"
+   },
+   {
+    "label": "C",
+    "text": "L11"
+   },
+   {
+    "label": "D",
+    "text": "L15"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (D→F→H→J→L); numbers increase by 4 (5→9→10→14→15). Next = L15.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = L15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nF3, I6, L8, O11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nF3, I6, L8, O11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "R14"
+   },
+   {
+    "label": "B",
+    "text": "R10"
+   },
+   {
+    "label": "C",
+    "text": "R13"
+   },
+   {
+    "label": "D",
+    "text": "S13"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "R14"
+   },
+   {
+    "label": "B",
+    "text": "R10"
+   },
+   {
+    "label": "C",
+    "text": "R13"
+   },
+   {
+    "label": "D",
+    "text": "S13"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (F→I→L→O→R); numbers increase by 3 (3→6→8→11→13). Next = R13.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = R13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nI3, L6, O8, R11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nI3, L6, O8, R11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "U14"
+   },
+   {
+    "label": "B",
+    "text": "U10"
+   },
+   {
+    "label": "C",
+    "text": "U13"
+   },
+   {
+    "label": "D",
+    "text": "V13"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "U14"
+   },
+   {
+    "label": "B",
+    "text": "U10"
+   },
+   {
+    "label": "C",
+    "text": "U13"
+   },
+   {
+    "label": "D",
+    "text": "V13"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (I→L→O→R→U); numbers increase by 3 (3→6→8→11→13). Next = U13.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = U13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nC5, E8, G10, I13, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nC5, E8, G10, I13, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "K12"
+   },
+   {
+    "label": "B",
+    "text": "K15"
+   },
+   {
+    "label": "C",
+    "text": "L15"
+   },
+   {
+    "label": "D",
+    "text": "K16"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "K12"
+   },
+   {
+    "label": "B",
+    "text": "K15"
+   },
+   {
+    "label": "C",
+    "text": "L15"
+   },
+   {
+    "label": "D",
+    "text": "K16"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (C→E→G→I→K); numbers increase by 3 (5→8→10→13→15). Next = K15.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = K15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nK5, M7, O12, Q14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK5, M7, O12, Q14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "T19"
+   },
+   {
+    "label": "B",
+    "text": "S20"
+   },
+   {
+    "label": "C",
+    "text": "S17"
+   },
+   {
+    "label": "D",
+    "text": "S19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "T19"
+   },
+   {
+    "label": "B",
+    "text": "S20"
+   },
+   {
+    "label": "C",
+    "text": "S17"
+   },
+   {
+    "label": "D",
+    "text": "S19"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (K→M→O→Q→S); numbers increase by 2 (5→7→12→14→19). Next = S19.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = S19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO5, S7, W10, A12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO5, S7, W10, A12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "E13"
+   },
+   {
+    "label": "B",
+    "text": "E15"
+   },
+   {
+    "label": "C",
+    "text": "F15"
+   },
+   {
+    "label": "D",
+    "text": "E16"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "E13"
+   },
+   {
+    "label": "B",
+    "text": "E15"
+   },
+   {
+    "label": "C",
+    "text": "F15"
+   },
+   {
+    "label": "D",
+    "text": "E16"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 4 (O→S→W→A→E); numbers increase by 2 (5→7→10→12→15). Next = E15.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = E15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nC5, F8, I13, L16, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nC5, F8, I13, L16, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "O18"
+   },
+   {
+    "label": "B",
+    "text": "O21"
+   },
+   {
+    "label": "C",
+    "text": "P21"
+   },
+   {
+    "label": "D",
+    "text": "O22"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "O18"
+   },
+   {
+    "label": "B",
+    "text": "O21"
+   },
+   {
+    "label": "C",
+    "text": "P21"
+   },
+   {
+    "label": "D",
+    "text": "O22"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (C→F→I→L→O); numbers increase by 3 (5→8→13→16→21). Next = O21.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = O21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO2, Q4, S9, U11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO2, Q4, S9, U11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "W17"
+   },
+   {
+    "label": "B",
+    "text": "W14"
+   },
+   {
+    "label": "C",
+    "text": "W16"
+   },
+   {
+    "label": "D",
+    "text": "X16"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "W17"
+   },
+   {
+    "label": "B",
+    "text": "W14"
+   },
+   {
+    "label": "C",
+    "text": "W16"
+   },
+   {
+    "label": "D",
+    "text": "X16"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (O→Q→S→U→W); numbers increase by 2 (2→4→9→11→16). Next = W16.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = W16।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO2, R4, U9, X11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO2, R4, U9, X11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "A16"
+   },
+   {
+    "label": "B",
+    "text": "B16"
+   },
+   {
+    "label": "C",
+    "text": "A17"
+   },
+   {
+    "label": "D",
+    "text": "A14"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "A16"
+   },
+   {
+    "label": "B",
+    "text": "B16"
+   },
+   {
+    "label": "C",
+    "text": "A17"
+   },
+   {
+    "label": "D",
+    "text": "A14"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (O→R→U→X→A); numbers increase by 2 (2→4→9→11→16). Next = A16.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = A16।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nL5, O7, R8, U10, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nL5, O7, R8, U10, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "X11"
+   },
+   {
+    "label": "B",
+    "text": "Y11"
+   },
+   {
+    "label": "C",
+    "text": "X12"
+   },
+   {
+    "label": "D",
+    "text": "X9"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "X11"
+   },
+   {
+    "label": "B",
+    "text": "Y11"
+   },
+   {
+    "label": "C",
+    "text": "X12"
+   },
+   {
+    "label": "D",
+    "text": "X9"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (L→O→R→U→X); numbers increase by 2 (5→7→8→10→11). Next = X11.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = X11।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nG2, I5, K10, M13, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nG2, I5, K10, M13, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "P18"
+   },
+   {
+    "label": "B",
+    "text": "O19"
+   },
+   {
+    "label": "C",
+    "text": "O15"
+   },
+   {
+    "label": "D",
+    "text": "O18"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "P18"
+   },
+   {
+    "label": "B",
+    "text": "O19"
+   },
+   {
+    "label": "C",
+    "text": "O15"
+   },
+   {
+    "label": "D",
+    "text": "O18"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (G→I→K→M→O); numbers increase by 3 (2→5→10→13→18). Next = O18.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = O18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nK5, N8, Q10, T13, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK5, N8, Q10, T13, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "X15"
+   },
+   {
+    "label": "B",
+    "text": "W16"
+   },
+   {
+    "label": "C",
+    "text": "W12"
+   },
+   {
+    "label": "D",
+    "text": "W15"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "X15"
+   },
+   {
+    "label": "B",
+    "text": "W16"
+   },
+   {
+    "label": "C",
+    "text": "W12"
+   },
+   {
+    "label": "D",
+    "text": "W15"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (K→N→Q→T→W); numbers increase by 3 (5→8→10→13→15). Next = W15.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = W15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nB2, F6, J8, N12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nB2, F6, J8, N12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "R14"
+   },
+   {
+    "label": "B",
+    "text": "S14"
+   },
+   {
+    "label": "C",
+    "text": "R15"
+   },
+   {
+    "label": "D",
+    "text": "R10"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "R14"
+   },
+   {
+    "label": "B",
+    "text": "S14"
+   },
+   {
+    "label": "C",
+    "text": "R15"
+   },
+   {
+    "label": "D",
+    "text": "R10"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 4 (B→F→J→N→R); numbers increase by 4 (2→6→8→12→14). Next = R14.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = R14।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nI3, K7, M10, O14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nI3, K7, M10, O14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "R17"
+   },
+   {
+    "label": "B",
+    "text": "Q18"
+   },
+   {
+    "label": "C",
+    "text": "Q13"
+   },
+   {
+    "label": "D",
+    "text": "Q17"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "R17"
+   },
+   {
+    "label": "B",
+    "text": "Q18"
+   },
+   {
+    "label": "C",
+    "text": "Q13"
+   },
+   {
+    "label": "D",
+    "text": "Q17"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (I→K→M→O→Q); numbers increase by 4 (3→7→10→14→17). Next = Q17.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = Q17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nI5, L7, O12, R14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nI5, L7, O12, R14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "U17"
+   },
+   {
+    "label": "B",
+    "text": "U19"
+   },
+   {
+    "label": "C",
+    "text": "V19"
+   },
+   {
+    "label": "D",
+    "text": "U20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "U17"
+   },
+   {
+    "label": "B",
+    "text": "U19"
+   },
+   {
+    "label": "C",
+    "text": "V19"
+   },
+   {
+    "label": "D",
+    "text": "U20"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (I→L→O→R→U); numbers increase by 2 (5→7→12→14→19). Next = U19.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = U19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nA2, D5, G6, J9, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nA2, D5, G6, J9, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "N10"
+   },
+   {
+    "label": "B",
+    "text": "M11"
+   },
+   {
+    "label": "C",
+    "text": "M7"
+   },
+   {
+    "label": "D",
+    "text": "M10"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "N10"
+   },
+   {
+    "label": "B",
+    "text": "M11"
+   },
+   {
+    "label": "C",
+    "text": "M7"
+   },
+   {
+    "label": "D",
+    "text": "M10"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (A→D→G→J→M); numbers increase by 3 (2→5→6→9→10). Next = M10.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = M10।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nB2, D5, F10, H13, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nB2, D5, F10, H13, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "K18"
+   },
+   {
+    "label": "B",
+    "text": "J19"
+   },
+   {
+    "label": "C",
+    "text": "J15"
+   },
+   {
+    "label": "D",
+    "text": "J18"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "K18"
+   },
+   {
+    "label": "B",
+    "text": "J19"
+   },
+   {
+    "label": "C",
+    "text": "J15"
+   },
+   {
+    "label": "D",
+    "text": "J18"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (B→D→F→H→J); numbers increase by 3 (2→5→10→13→18). Next = J18.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = J18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nJ5, L7, N10, P12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nJ5, L7, N10, P12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "S15"
+   },
+   {
+    "label": "B",
+    "text": "R16"
+   },
+   {
+    "label": "C",
+    "text": "R13"
+   },
+   {
+    "label": "D",
+    "text": "R15"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "S15"
+   },
+   {
+    "label": "B",
+    "text": "R16"
+   },
+   {
+    "label": "C",
+    "text": "R13"
+   },
+   {
+    "label": "D",
+    "text": "R15"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (J→L→N→P→R); numbers increase by 2 (5→7→10→12→15). Next = R15.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = R15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nI5, L7, O8, R10, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nI5, L7, O8, R10, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "U11"
+   },
+   {
+    "label": "B",
+    "text": "V11"
+   },
+   {
+    "label": "C",
+    "text": "U12"
+   },
+   {
+    "label": "D",
+    "text": "U9"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "U11"
+   },
+   {
+    "label": "B",
+    "text": "V11"
+   },
+   {
+    "label": "C",
+    "text": "U12"
+   },
+   {
+    "label": "D",
+    "text": "U9"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (I→L→O→R→U); numbers increase by 2 (5→7→8→10→11). Next = U11.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = U11।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nI2, L6, O9, R13, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nI2, L6, O9, R13, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "U16"
+   },
+   {
+    "label": "B",
+    "text": "V16"
+   },
+   {
+    "label": "C",
+    "text": "U17"
+   },
+   {
+    "label": "D",
+    "text": "U12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "U16"
+   },
+   {
+    "label": "B",
+    "text": "V16"
+   },
+   {
+    "label": "C",
+    "text": "U17"
+   },
+   {
+    "label": "D",
+    "text": "U12"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (I→L→O→R→U); numbers increase by 4 (2→6→9→13→16). Next = U16.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = U16।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nF2, H5, J6, L9, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nF2, H5, J6, L9, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "N7"
+   },
+   {
+    "label": "B",
+    "text": "N10"
+   },
+   {
+    "label": "C",
+    "text": "O10"
+   },
+   {
+    "label": "D",
+    "text": "N11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "N7"
+   },
+   {
+    "label": "B",
+    "text": "N10"
+   },
+   {
+    "label": "C",
+    "text": "O10"
+   },
+   {
+    "label": "D",
+    "text": "N11"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (F→H→J→L→N); numbers increase by 3 (2→5→6→9→10). Next = N10.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = N10।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nK2, O6, S7, W11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK2, O6, S7, W11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "A13"
+   },
+   {
+    "label": "B",
+    "text": "A8"
+   },
+   {
+    "label": "C",
+    "text": "A12"
+   },
+   {
+    "label": "D",
+    "text": "B12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "A13"
+   },
+   {
+    "label": "B",
+    "text": "A8"
+   },
+   {
+    "label": "C",
+    "text": "A12"
+   },
+   {
+    "label": "D",
+    "text": "B12"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (K→O→S→W→A); numbers increase by 4 (2→6→7→11→12). Next = A12.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = A12।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nK3, N7, Q8, T12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK3, N7, Q8, T12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "W13"
+   },
+   {
+    "label": "B",
+    "text": "X13"
+   },
+   {
+    "label": "C",
+    "text": "W14"
+   },
+   {
+    "label": "D",
+    "text": "W9"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "W13"
+   },
+   {
+    "label": "B",
+    "text": "X13"
+   },
+   {
+    "label": "C",
+    "text": "W14"
+   },
+   {
+    "label": "D",
+    "text": "W9"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (K→N→Q→T→W); numbers increase by 4 (3→7→8→12→13). Next = W13.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = W13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nG2, J4, M7, P9, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nG2, J4, M7, P9, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "T12"
+   },
+   {
+    "label": "B",
+    "text": "S13"
+   },
+   {
+    "label": "C",
+    "text": "S10"
+   },
+   {
+    "label": "D",
+    "text": "S12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "T12"
+   },
+   {
+    "label": "B",
+    "text": "S13"
+   },
+   {
+    "label": "C",
+    "text": "S10"
+   },
+   {
+    "label": "D",
+    "text": "S12"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (G→J→M→P→S); numbers increase by 2 (2→4→7→9→12). Next = S12.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = S12।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nK2, M6, O9, Q13, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK2, M6, O9, Q13, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "S17"
+   },
+   {
+    "label": "B",
+    "text": "S12"
+   },
+   {
+    "label": "C",
+    "text": "S16"
+   },
+   {
+    "label": "D",
+    "text": "T16"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "S17"
+   },
+   {
+    "label": "B",
+    "text": "S12"
+   },
+   {
+    "label": "C",
+    "text": "S16"
+   },
+   {
+    "label": "D",
+    "text": "T16"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (K→M→O→Q→S); numbers increase by 4 (2→6→9→13→16). Next = S16.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = S16।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nA5, D7, G10, J12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nA5, D7, G10, J12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "M13"
+   },
+   {
+    "label": "B",
+    "text": "M15"
+   },
+   {
+    "label": "C",
+    "text": "N15"
+   },
+   {
+    "label": "D",
+    "text": "M16"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "M13"
+   },
+   {
+    "label": "B",
+    "text": "M15"
+   },
+   {
+    "label": "C",
+    "text": "N15"
+   },
+   {
+    "label": "D",
+    "text": "M16"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (A→D→G→J→M); numbers increase by 2 (5→7→10→12→15). Next = M15.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = M15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nG5, K9, O10, S14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nG5, K9, O10, S14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "X15"
+   },
+   {
+    "label": "B",
+    "text": "W16"
+   },
+   {
+    "label": "C",
+    "text": "W11"
+   },
+   {
+    "label": "D",
+    "text": "W15"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "X15"
+   },
+   {
+    "label": "B",
+    "text": "W16"
+   },
+   {
+    "label": "C",
+    "text": "W11"
+   },
+   {
+    "label": "D",
+    "text": "W15"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 4 (G→K→O→S→W); numbers increase by 4 (5→9→10→14→15). Next = W15.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = W15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nE3, H6, K7, N10, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nE3, H6, K7, N10, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Q11"
+   },
+   {
+    "label": "B",
+    "text": "R11"
+   },
+   {
+    "label": "C",
+    "text": "Q12"
+   },
+   {
+    "label": "D",
+    "text": "Q8"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Q11"
+   },
+   {
+    "label": "B",
+    "text": "R11"
+   },
+   {
+    "label": "C",
+    "text": "Q12"
+   },
+   {
+    "label": "D",
+    "text": "Q8"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (E→H→K→N→Q); numbers increase by 3 (3→6→7→10→11). Next = Q11.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = Q11।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO3, Q5, S10, U12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO3, Q5, S10, U12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "X17"
+   },
+   {
+    "label": "B",
+    "text": "W18"
+   },
+   {
+    "label": "C",
+    "text": "W15"
+   },
+   {
+    "label": "D",
+    "text": "W17"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "X17"
+   },
+   {
+    "label": "B",
+    "text": "W18"
+   },
+   {
+    "label": "C",
+    "text": "W15"
+   },
+   {
+    "label": "D",
+    "text": "W17"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (O→Q→S→U→W); numbers increase by 2 (3→5→10→12→17). Next = W17.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = W17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nF3, H7, J12, L16, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nF3, H7, J12, L16, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "O21"
+   },
+   {
+    "label": "B",
+    "text": "N22"
+   },
+   {
+    "label": "C",
+    "text": "N17"
+   },
+   {
+    "label": "D",
+    "text": "N21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "O21"
+   },
+   {
+    "label": "B",
+    "text": "N22"
+   },
+   {
+    "label": "C",
+    "text": "N17"
+   },
+   {
+    "label": "D",
+    "text": "N21"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (F→H→J→L→N); numbers increase by 4 (3→7→12→16→21). Next = N21.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = N21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nB3, E5, H8, K10, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nB3, E5, H8, K10, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "N13"
+   },
+   {
+    "label": "B",
+    "text": "O13"
+   },
+   {
+    "label": "C",
+    "text": "N14"
+   },
+   {
+    "label": "D",
+    "text": "N11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "N13"
+   },
+   {
+    "label": "B",
+    "text": "O13"
+   },
+   {
+    "label": "C",
+    "text": "N14"
+   },
+   {
+    "label": "D",
+    "text": "N11"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (B→E→H→K→N); numbers increase by 2 (3→5→8→10→13). Next = N13.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = N13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nH3, K7, N9, Q13, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nH3, K7, N9, Q13, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "T16"
+   },
+   {
+    "label": "B",
+    "text": "T11"
+   },
+   {
+    "label": "C",
+    "text": "T15"
+   },
+   {
+    "label": "D",
+    "text": "U15"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "T16"
+   },
+   {
+    "label": "B",
+    "text": "T11"
+   },
+   {
+    "label": "C",
+    "text": "T15"
+   },
+   {
+    "label": "D",
+    "text": "U15"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (H→K→N→Q→T); numbers increase by 4 (3→7→9→13→15). Next = T15.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = T15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD5, H7, L8, P10, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD5, H7, L8, P10, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "T12"
+   },
+   {
+    "label": "B",
+    "text": "T9"
+   },
+   {
+    "label": "C",
+    "text": "T11"
+   },
+   {
+    "label": "D",
+    "text": "U11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "T12"
+   },
+   {
+    "label": "B",
+    "text": "T9"
+   },
+   {
+    "label": "C",
+    "text": "T11"
+   },
+   {
+    "label": "D",
+    "text": "U11"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (D→H→L→P→T); numbers increase by 2 (5→7→8→10→11). Next = T11.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = T11।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nE5, G9, I14, K18, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nE5, G9, I14, K18, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "N23"
+   },
+   {
+    "label": "B",
+    "text": "M24"
+   },
+   {
+    "label": "C",
+    "text": "M19"
+   },
+   {
+    "label": "D",
+    "text": "M23"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "N23"
+   },
+   {
+    "label": "B",
+    "text": "M24"
+   },
+   {
+    "label": "C",
+    "text": "M19"
+   },
+   {
+    "label": "D",
+    "text": "M23"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (E→G→I→K→M); numbers increase by 4 (5→9→14→18→23). Next = M23.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = M23।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nJ3, L7, N12, P16, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nJ3, L7, N12, P16, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "S21"
+   },
+   {
+    "label": "B",
+    "text": "R22"
+   },
+   {
+    "label": "C",
+    "text": "R17"
+   },
+   {
+    "label": "D",
+    "text": "R21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "S21"
+   },
+   {
+    "label": "B",
+    "text": "R22"
+   },
+   {
+    "label": "C",
+    "text": "R17"
+   },
+   {
+    "label": "D",
+    "text": "R21"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (J→L→N→P→R); numbers increase by 4 (3→7→12→16→21). Next = R21.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = R21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO3, Q7, S10, U14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO3, Q7, S10, U14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "X17"
+   },
+   {
+    "label": "B",
+    "text": "W18"
+   },
+   {
+    "label": "C",
+    "text": "W13"
+   },
+   {
+    "label": "D",
+    "text": "W17"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "X17"
+   },
+   {
+    "label": "B",
+    "text": "W18"
+   },
+   {
+    "label": "C",
+    "text": "W13"
+   },
+   {
+    "label": "D",
+    "text": "W17"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (O→Q→S→U→W); numbers increase by 4 (3→7→10→14→17). Next = W17.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = W17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nB2, D6, F9, H13, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nB2, D6, F9, H13, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "J17"
+   },
+   {
+    "label": "B",
+    "text": "J12"
+   },
+   {
+    "label": "C",
+    "text": "J16"
+   },
+   {
+    "label": "D",
+    "text": "K16"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "J17"
+   },
+   {
+    "label": "B",
+    "text": "J12"
+   },
+   {
+    "label": "C",
+    "text": "J16"
+   },
+   {
+    "label": "D",
+    "text": "K16"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (B→D→F→H→J); numbers increase by 4 (2→6→9→13→16). Next = J16.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = J16।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nN2, R5, V10, Z13, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN2, R5, V10, Z13, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "E18"
+   },
+   {
+    "label": "B",
+    "text": "D19"
+   },
+   {
+    "label": "C",
+    "text": "D15"
+   },
+   {
+    "label": "D",
+    "text": "D18"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "E18"
+   },
+   {
+    "label": "B",
+    "text": "D19"
+   },
+   {
+    "label": "C",
+    "text": "D15"
+   },
+   {
+    "label": "D",
+    "text": "D18"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 4 (N→R→V→Z→D); numbers increase by 3 (2→5→10→13→18). Next = D18.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = D18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nA5, D9, G10, J14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nA5, D9, G10, J14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "M11"
+   },
+   {
+    "label": "B",
+    "text": "M15"
+   },
+   {
+    "label": "C",
+    "text": "N15"
+   },
+   {
+    "label": "D",
+    "text": "M16"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "M11"
+   },
+   {
+    "label": "B",
+    "text": "M15"
+   },
+   {
+    "label": "C",
+    "text": "N15"
+   },
+   {
+    "label": "D",
+    "text": "M16"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (A→D→G→J→M); numbers increase by 4 (5→9→10→14→15). Next = M15.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = M15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD5, F8, H9, J12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD5, F8, H9, J12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "L14"
+   },
+   {
+    "label": "B",
+    "text": "L10"
+   },
+   {
+    "label": "C",
+    "text": "L13"
+   },
+   {
+    "label": "D",
+    "text": "M13"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "L14"
+   },
+   {
+    "label": "B",
+    "text": "L10"
+   },
+   {
+    "label": "C",
+    "text": "L13"
+   },
+   {
+    "label": "D",
+    "text": "M13"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (D→F→H→J→L); numbers increase by 3 (5→8→9→12→13). Next = L13.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = L13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 2,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nN3, Q5, T8, W12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN3, Q5, T8, W12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Z18"
+   },
+   {
+    "label": "B",
+    "text": "Z15"
+   },
+   {
+    "label": "C",
+    "text": "Z17"
+   },
+   {
+    "label": "D",
+    "text": "A17"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Z18"
+   },
+   {
+    "label": "B",
+    "text": "Z15"
+   },
+   {
+    "label": "C",
+    "text": "Z17"
+   },
+   {
+    "label": "D",
+    "text": "A17"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (N→Q→T→W→Z); numbers increase by 2 (3→5→8→12→17). Next = Z17.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = Z17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nC2, G5, K9, O14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nC2, G5, K9, O14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "S21"
+   },
+   {
+    "label": "B",
+    "text": "S17"
+   },
+   {
+    "label": "C",
+    "text": "S20"
+   },
+   {
+    "label": "D",
+    "text": "T20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "S21"
+   },
+   {
+    "label": "B",
+    "text": "S17"
+   },
+   {
+    "label": "C",
+    "text": "S20"
+   },
+   {
+    "label": "D",
+    "text": "T20"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (C→G→K→O→S); numbers increase by 3 (2→5→9→14→20). Next = S20.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = S20।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nN2, P4, R7, T11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN2, P4, R7, T11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "V16"
+   },
+   {
+    "label": "B",
+    "text": "W16"
+   },
+   {
+    "label": "C",
+    "text": "V17"
+   },
+   {
+    "label": "D",
+    "text": "V14"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "V16"
+   },
+   {
+    "label": "B",
+    "text": "W16"
+   },
+   {
+    "label": "C",
+    "text": "V17"
+   },
+   {
+    "label": "D",
+    "text": "V14"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 2 (N→P→R→T→V); numbers increase by 2 (2→4→7→11→16). Next = V16.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = V16।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD5, H7, L10, P14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD5, H7, L10, P14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "T17"
+   },
+   {
+    "label": "B",
+    "text": "T19"
+   },
+   {
+    "label": "C",
+    "text": "U19"
+   },
+   {
+    "label": "D",
+    "text": "T20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "T17"
+   },
+   {
+    "label": "B",
+    "text": "T19"
+   },
+   {
+    "label": "C",
+    "text": "U19"
+   },
+   {
+    "label": "D",
+    "text": "T20"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 4 (D→H→L→P→T); numbers increase by 2 (5→7→10→14→19). Next = T19.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = T19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD2, G6, J11, M17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD2, G6, J11, M17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Q24"
+   },
+   {
+    "label": "B",
+    "text": "P25"
+   },
+   {
+    "label": "C",
+    "text": "P20"
+   },
+   {
+    "label": "D",
+    "text": "P24"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Q24"
+   },
+   {
+    "label": "B",
+    "text": "P25"
+   },
+   {
+    "label": "C",
+    "text": "P20"
+   },
+   {
+    "label": "D",
+    "text": "P24"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (D→G→J→M→P); numbers increase by 4 (2→6→11→17→24). Next = P24.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = P24।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nJ5, M8, P12, S17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nJ5, M8, P12, S17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "V20"
+   },
+   {
+    "label": "B",
+    "text": "V23"
+   },
+   {
+    "label": "C",
+    "text": "W23"
+   },
+   {
+    "label": "D",
+    "text": "V24"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "V20"
+   },
+   {
+    "label": "B",
+    "text": "V23"
+   },
+   {
+    "label": "C",
+    "text": "W23"
+   },
+   {
+    "label": "D",
+    "text": "V24"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (J→M→P→S→V); numbers increase by 3 (5→8→12→17→23). Next = V23.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = V23।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nM2, Q5, U9, Y14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nM2, Q5, U9, Y14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "C21"
+   },
+   {
+    "label": "B",
+    "text": "C17"
+   },
+   {
+    "label": "C",
+    "text": "C20"
+   },
+   {
+    "label": "D",
+    "text": "D20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "C21"
+   },
+   {
+    "label": "B",
+    "text": "C17"
+   },
+   {
+    "label": "C",
+    "text": "C20"
+   },
+   {
+    "label": "D",
+    "text": "D20"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (M→Q→U→Y→C); numbers increase by 3 (2→5→9→14→20). Next = C20.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = C20।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nF3, H7, J12, L18, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nF3, H7, J12, L18, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "N21"
+   },
+   {
+    "label": "B",
+    "text": "N25"
+   },
+   {
+    "label": "C",
+    "text": "O25"
+   },
+   {
+    "label": "D",
+    "text": "N26"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "N21"
+   },
+   {
+    "label": "B",
+    "text": "N25"
+   },
+   {
+    "label": "C",
+    "text": "O25"
+   },
+   {
+    "label": "D",
+    "text": "N26"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (F→H→J→L→N); numbers increase by 4 (3→7→12→18→25). Next = N25.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = N25।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD3, G5, J8, M12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD3, G5, J8, M12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "P18"
+   },
+   {
+    "label": "B",
+    "text": "P15"
+   },
+   {
+    "label": "C",
+    "text": "P17"
+   },
+   {
+    "label": "D",
+    "text": "Q17"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "P18"
+   },
+   {
+    "label": "B",
+    "text": "P15"
+   },
+   {
+    "label": "C",
+    "text": "P17"
+   },
+   {
+    "label": "D",
+    "text": "Q17"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (D→G→J→M→P); numbers increase by 2 (3→5→8→12→17). Next = P17.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = P17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nH3, L6, P10, T15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nH3, L6, P10, T15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Y21"
+   },
+   {
+    "label": "B",
+    "text": "X22"
+   },
+   {
+    "label": "C",
+    "text": "X18"
+   },
+   {
+    "label": "D",
+    "text": "X21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Y21"
+   },
+   {
+    "label": "B",
+    "text": "X22"
+   },
+   {
+    "label": "C",
+    "text": "X18"
+   },
+   {
+    "label": "D",
+    "text": "X21"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 4 (H→L→P→T→X); numbers increase by 3 (3→6→10→15→21). Next = X21.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = X21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nJ3, L6, N10, P15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nJ3, L6, N10, P15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "S21"
+   },
+   {
+    "label": "B",
+    "text": "R22"
+   },
+   {
+    "label": "C",
+    "text": "R18"
+   },
+   {
+    "label": "D",
+    "text": "R21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "S21"
+   },
+   {
+    "label": "B",
+    "text": "R22"
+   },
+   {
+    "label": "C",
+    "text": "R18"
+   },
+   {
+    "label": "D",
+    "text": "R21"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (J→L→N→P→R); numbers increase by 3 (3→6→10→15→21). Next = R21.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = R21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nH5, K9, N14, Q20, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nH5, K9, N14, Q20, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "T27"
+   },
+   {
+    "label": "B",
+    "text": "U27"
+   },
+   {
+    "label": "C",
+    "text": "T28"
+   },
+   {
+    "label": "D",
+    "text": "T23"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "T27"
+   },
+   {
+    "label": "B",
+    "text": "U27"
+   },
+   {
+    "label": "C",
+    "text": "T28"
+   },
+   {
+    "label": "D",
+    "text": "T23"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (H→K→N→Q→T); numbers increase by 4 (5→9→14→20→27). Next = T27.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = T27।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nE5, H9, K14, N20, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nE5, H9, K14, N20, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Q27"
+   },
+   {
+    "label": "B",
+    "text": "R27"
+   },
+   {
+    "label": "C",
+    "text": "Q28"
+   },
+   {
+    "label": "D",
+    "text": "Q23"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Q27"
+   },
+   {
+    "label": "B",
+    "text": "R27"
+   },
+   {
+    "label": "C",
+    "text": "Q28"
+   },
+   {
+    "label": "D",
+    "text": "Q23"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (E→H→K→N→Q); numbers increase by 4 (5→9→14→20→27). Next = Q27.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = Q27।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nB5, F9, J14, N20, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nB5, F9, J14, N20, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "R28"
+   },
+   {
+    "label": "B",
+    "text": "R23"
+   },
+   {
+    "label": "C",
+    "text": "R27"
+   },
+   {
+    "label": "D",
+    "text": "S27"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "R28"
+   },
+   {
+    "label": "B",
+    "text": "R23"
+   },
+   {
+    "label": "C",
+    "text": "R27"
+   },
+   {
+    "label": "D",
+    "text": "S27"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (B→F→J→N→R); numbers increase by 4 (5→9→14→20→27). Next = R27.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = R27।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD5, F9, H14, J20, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD5, F9, H14, J20, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "L28"
+   },
+   {
+    "label": "B",
+    "text": "L23"
+   },
+   {
+    "label": "C",
+    "text": "L27"
+   },
+   {
+    "label": "D",
+    "text": "M27"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "L28"
+   },
+   {
+    "label": "B",
+    "text": "L23"
+   },
+   {
+    "label": "C",
+    "text": "L27"
+   },
+   {
+    "label": "D",
+    "text": "M27"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (D→F→H→J→L); numbers increase by 4 (5→9→14→20→27). Next = L27.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = L27।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nI3, L6, O10, R15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nI3, L6, O10, R15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "U18"
+   },
+   {
+    "label": "B",
+    "text": "U21"
+   },
+   {
+    "label": "C",
+    "text": "V21"
+   },
+   {
+    "label": "D",
+    "text": "U22"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "U18"
+   },
+   {
+    "label": "B",
+    "text": "U21"
+   },
+   {
+    "label": "C",
+    "text": "V21"
+   },
+   {
+    "label": "D",
+    "text": "U22"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (I→L→O→R→U); numbers increase by 3 (3→6→10→15→21). Next = U21.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = U21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nC5, E8, G12, I17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nC5, E8, G12, I17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "L23"
+   },
+   {
+    "label": "B",
+    "text": "K24"
+   },
+   {
+    "label": "C",
+    "text": "K20"
+   },
+   {
+    "label": "D",
+    "text": "K23"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "L23"
+   },
+   {
+    "label": "B",
+    "text": "K24"
+   },
+   {
+    "label": "C",
+    "text": "K20"
+   },
+   {
+    "label": "D",
+    "text": "K23"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (C→E→G→I→K); numbers increase by 3 (5→8→12→17→23). Next = K23.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = K23।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nK5, M7, O10, Q14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK5, M7, O10, Q14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "S17"
+   },
+   {
+    "label": "B",
+    "text": "S19"
+   },
+   {
+    "label": "C",
+    "text": "T19"
+   },
+   {
+    "label": "D",
+    "text": "S20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "S17"
+   },
+   {
+    "label": "B",
+    "text": "S19"
+   },
+   {
+    "label": "C",
+    "text": "T19"
+   },
+   {
+    "label": "D",
+    "text": "S20"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (K→M→O→Q→S); numbers increase by 2 (5→7→10→14→19). Next = S19.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = S19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO5, S7, W10, A14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO5, S7, W10, A14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F19"
+   },
+   {
+    "label": "B",
+    "text": "E20"
+   },
+   {
+    "label": "C",
+    "text": "E17"
+   },
+   {
+    "label": "D",
+    "text": "E19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F19"
+   },
+   {
+    "label": "B",
+    "text": "E20"
+   },
+   {
+    "label": "C",
+    "text": "E17"
+   },
+   {
+    "label": "D",
+    "text": "E19"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 4 (O→S→W→A→E); numbers increase by 2 (5→7→10→14→19). Next = E19.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = E19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nC5, F8, I12, L17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nC5, F8, I12, L17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "O20"
+   },
+   {
+    "label": "B",
+    "text": "O23"
+   },
+   {
+    "label": "C",
+    "text": "P23"
+   },
+   {
+    "label": "D",
+    "text": "O24"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "O20"
+   },
+   {
+    "label": "B",
+    "text": "O23"
+   },
+   {
+    "label": "C",
+    "text": "P23"
+   },
+   {
+    "label": "D",
+    "text": "O24"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (C→F→I→L→O); numbers increase by 3 (5→8→12→17→23). Next = O23.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = O23।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO2, Q4, S7, U11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO2, Q4, S7, U11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "W16"
+   },
+   {
+    "label": "B",
+    "text": "X16"
+   },
+   {
+    "label": "C",
+    "text": "W17"
+   },
+   {
+    "label": "D",
+    "text": "W14"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "W16"
+   },
+   {
+    "label": "B",
+    "text": "X16"
+   },
+   {
+    "label": "C",
+    "text": "W17"
+   },
+   {
+    "label": "D",
+    "text": "W14"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 2 (O→Q→S→U→W); numbers increase by 2 (2→4→7→11→16). Next = W16.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = W16।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO2, R4, U7, X11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO2, R4, U7, X11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "A17"
+   },
+   {
+    "label": "B",
+    "text": "A14"
+   },
+   {
+    "label": "C",
+    "text": "A16"
+   },
+   {
+    "label": "D",
+    "text": "B16"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "A17"
+   },
+   {
+    "label": "B",
+    "text": "A14"
+   },
+   {
+    "label": "C",
+    "text": "A16"
+   },
+   {
+    "label": "D",
+    "text": "B16"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (O→R→U→X→A); numbers increase by 2 (2→4→7→11→16). Next = A16.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = A16।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nL5, O7, R10, U14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nL5, O7, R10, U14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Y19"
+   },
+   {
+    "label": "B",
+    "text": "X20"
+   },
+   {
+    "label": "C",
+    "text": "X17"
+   },
+   {
+    "label": "D",
+    "text": "X19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Y19"
+   },
+   {
+    "label": "B",
+    "text": "X20"
+   },
+   {
+    "label": "C",
+    "text": "X17"
+   },
+   {
+    "label": "D",
+    "text": "X19"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (L→O→R→U→X); numbers increase by 2 (5→7→10→14→19). Next = X19.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = X19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nG2, I5, K9, M14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nG2, I5, K9, M14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "O21"
+   },
+   {
+    "label": "B",
+    "text": "O17"
+   },
+   {
+    "label": "C",
+    "text": "O20"
+   },
+   {
+    "label": "D",
+    "text": "P20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "O21"
+   },
+   {
+    "label": "B",
+    "text": "O17"
+   },
+   {
+    "label": "C",
+    "text": "O20"
+   },
+   {
+    "label": "D",
+    "text": "P20"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (G→I→K→M→O); numbers increase by 3 (2→5→9→14→20). Next = O20.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = O20।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nK5, N8, Q12, T17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK5, N8, Q12, T17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "W20"
+   },
+   {
+    "label": "B",
+    "text": "W23"
+   },
+   {
+    "label": "C",
+    "text": "X23"
+   },
+   {
+    "label": "D",
+    "text": "W24"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "W20"
+   },
+   {
+    "label": "B",
+    "text": "W23"
+   },
+   {
+    "label": "C",
+    "text": "X23"
+   },
+   {
+    "label": "D",
+    "text": "W24"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (K→N→Q→T→W); numbers increase by 3 (5→8→12→17→23). Next = W23.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = W23।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nB2, F6, J11, N17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nB2, F6, J11, N17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "R20"
+   },
+   {
+    "label": "B",
+    "text": "R24"
+   },
+   {
+    "label": "C",
+    "text": "S24"
+   },
+   {
+    "label": "D",
+    "text": "R25"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "R20"
+   },
+   {
+    "label": "B",
+    "text": "R24"
+   },
+   {
+    "label": "C",
+    "text": "S24"
+   },
+   {
+    "label": "D",
+    "text": "R25"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 4 (B→F→J→N→R); numbers increase by 4 (2→6→11→17→24). Next = R24.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = R24।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nI3, K7, M12, O18, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nI3, K7, M12, O18, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Q21"
+   },
+   {
+    "label": "B",
+    "text": "Q25"
+   },
+   {
+    "label": "C",
+    "text": "R25"
+   },
+   {
+    "label": "D",
+    "text": "Q26"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Q21"
+   },
+   {
+    "label": "B",
+    "text": "Q25"
+   },
+   {
+    "label": "C",
+    "text": "R25"
+   },
+   {
+    "label": "D",
+    "text": "Q26"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (I→K→M→O→Q); numbers increase by 4 (3→7→12→18→25). Next = Q25.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = Q25।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nI5, L7, O10, R14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nI5, L7, O10, R14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "V19"
+   },
+   {
+    "label": "B",
+    "text": "U20"
+   },
+   {
+    "label": "C",
+    "text": "U17"
+   },
+   {
+    "label": "D",
+    "text": "U19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "V19"
+   },
+   {
+    "label": "B",
+    "text": "U20"
+   },
+   {
+    "label": "C",
+    "text": "U17"
+   },
+   {
+    "label": "D",
+    "text": "U19"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (I→L→O→R→U); numbers increase by 2 (5→7→10→14→19). Next = U19.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = U19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nA2, D5, G9, J14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nA2, D5, G9, J14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "M20"
+   },
+   {
+    "label": "B",
+    "text": "N20"
+   },
+   {
+    "label": "C",
+    "text": "M21"
+   },
+   {
+    "label": "D",
+    "text": "M17"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "M20"
+   },
+   {
+    "label": "B",
+    "text": "N20"
+   },
+   {
+    "label": "C",
+    "text": "M21"
+   },
+   {
+    "label": "D",
+    "text": "M17"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (A→D→G→J→M); numbers increase by 3 (2→5→9→14→20). Next = M20.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = M20।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nB2, D5, F9, H14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nB2, D5, F9, H14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "J21"
+   },
+   {
+    "label": "B",
+    "text": "J17"
+   },
+   {
+    "label": "C",
+    "text": "J20"
+   },
+   {
+    "label": "D",
+    "text": "K20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "J21"
+   },
+   {
+    "label": "B",
+    "text": "J17"
+   },
+   {
+    "label": "C",
+    "text": "J20"
+   },
+   {
+    "label": "D",
+    "text": "K20"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (B→D→F→H→J); numbers increase by 3 (2→5→9→14→20). Next = J20.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = J20।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nJ5, L7, N10, P14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nJ5, L7, N10, P14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "R17"
+   },
+   {
+    "label": "B",
+    "text": "R19"
+   },
+   {
+    "label": "C",
+    "text": "S19"
+   },
+   {
+    "label": "D",
+    "text": "R20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "R17"
+   },
+   {
+    "label": "B",
+    "text": "R19"
+   },
+   {
+    "label": "C",
+    "text": "S19"
+   },
+   {
+    "label": "D",
+    "text": "R20"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (J→L→N→P→R); numbers increase by 2 (5→7→10→14→19). Next = R19.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = R19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nI2, L6, O11, R17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nI2, L6, O11, R17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "V24"
+   },
+   {
+    "label": "B",
+    "text": "U25"
+   },
+   {
+    "label": "C",
+    "text": "U20"
+   },
+   {
+    "label": "D",
+    "text": "U24"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "V24"
+   },
+   {
+    "label": "B",
+    "text": "U25"
+   },
+   {
+    "label": "C",
+    "text": "U20"
+   },
+   {
+    "label": "D",
+    "text": "U24"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (I→L→O→R→U); numbers increase by 4 (2→6→11→17→24). Next = U24.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = U24।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nF2, H5, J9, L14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nF2, H5, J9, L14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "N21"
+   },
+   {
+    "label": "B",
+    "text": "N17"
+   },
+   {
+    "label": "C",
+    "text": "N20"
+   },
+   {
+    "label": "D",
+    "text": "O20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "N21"
+   },
+   {
+    "label": "B",
+    "text": "N17"
+   },
+   {
+    "label": "C",
+    "text": "N20"
+   },
+   {
+    "label": "D",
+    "text": "O20"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (F→H→J→L→N); numbers increase by 3 (2→5→9→14→20). Next = N20.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = N20।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nK2, O6, S11, W17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK2, O6, S11, W17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "A20"
+   },
+   {
+    "label": "B",
+    "text": "A24"
+   },
+   {
+    "label": "C",
+    "text": "B24"
+   },
+   {
+    "label": "D",
+    "text": "A25"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "A20"
+   },
+   {
+    "label": "B",
+    "text": "A24"
+   },
+   {
+    "label": "C",
+    "text": "B24"
+   },
+   {
+    "label": "D",
+    "text": "A25"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 4 (K→O→S→W→A); numbers increase by 4 (2→6→11→17→24). Next = A24.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = A24।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nK3, N7, Q12, T18, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK3, N7, Q12, T18, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "X25"
+   },
+   {
+    "label": "B",
+    "text": "W26"
+   },
+   {
+    "label": "C",
+    "text": "W21"
+   },
+   {
+    "label": "D",
+    "text": "W25"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "X25"
+   },
+   {
+    "label": "B",
+    "text": "W26"
+   },
+   {
+    "label": "C",
+    "text": "W21"
+   },
+   {
+    "label": "D",
+    "text": "W25"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (K→N→Q→T→W); numbers increase by 4 (3→7→12→18→25). Next = W25.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = W25।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nG2, J4, M7, P11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nG2, J4, M7, P11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "S17"
+   },
+   {
+    "label": "B",
+    "text": "S14"
+   },
+   {
+    "label": "C",
+    "text": "S16"
+   },
+   {
+    "label": "D",
+    "text": "T16"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "S17"
+   },
+   {
+    "label": "B",
+    "text": "S14"
+   },
+   {
+    "label": "C",
+    "text": "S16"
+   },
+   {
+    "label": "D",
+    "text": "T16"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (G→J→M→P→S); numbers increase by 2 (2→4→7→11→16). Next = S16.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = S16।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nK2, M6, O11, Q17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nK2, M6, O11, Q17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "S20"
+   },
+   {
+    "label": "B",
+    "text": "S24"
+   },
+   {
+    "label": "C",
+    "text": "T24"
+   },
+   {
+    "label": "D",
+    "text": "S25"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "S20"
+   },
+   {
+    "label": "B",
+    "text": "S24"
+   },
+   {
+    "label": "C",
+    "text": "T24"
+   },
+   {
+    "label": "D",
+    "text": "S25"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (K→M→O→Q→S); numbers increase by 4 (2→6→11→17→24). Next = S24.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = S24।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nA5, D7, G10, J14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nA5, D7, G10, J14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "N19"
+   },
+   {
+    "label": "B",
+    "text": "M20"
+   },
+   {
+    "label": "C",
+    "text": "M17"
+   },
+   {
+    "label": "D",
+    "text": "M19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "N19"
+   },
+   {
+    "label": "B",
+    "text": "M20"
+   },
+   {
+    "label": "C",
+    "text": "M17"
+   },
+   {
+    "label": "D",
+    "text": "M19"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (A→D→G→J→M); numbers increase by 2 (5→7→10→14→19). Next = M19.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = M19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nG5, K9, O14, S20, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nG5, K9, O14, S20, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "W28"
+   },
+   {
+    "label": "B",
+    "text": "W23"
+   },
+   {
+    "label": "C",
+    "text": "W27"
+   },
+   {
+    "label": "D",
+    "text": "X27"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "W28"
+   },
+   {
+    "label": "B",
+    "text": "W23"
+   },
+   {
+    "label": "C",
+    "text": "W27"
+   },
+   {
+    "label": "D",
+    "text": "X27"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (G→K→O→S→W); numbers increase by 4 (5→9→14→20→27). Next = W27.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = W27।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nE3, H6, K10, N15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nE3, H6, K10, N15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Q18"
+   },
+   {
+    "label": "B",
+    "text": "Q21"
+   },
+   {
+    "label": "C",
+    "text": "R21"
+   },
+   {
+    "label": "D",
+    "text": "Q22"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Q18"
+   },
+   {
+    "label": "B",
+    "text": "Q21"
+   },
+   {
+    "label": "C",
+    "text": "R21"
+   },
+   {
+    "label": "D",
+    "text": "Q22"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (E→H→K→N→Q); numbers increase by 3 (3→6→10→15→21). Next = Q21.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = Q21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO3, Q5, S8, U12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO3, Q5, S8, U12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "W17"
+   },
+   {
+    "label": "B",
+    "text": "X17"
+   },
+   {
+    "label": "C",
+    "text": "W18"
+   },
+   {
+    "label": "D",
+    "text": "W15"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "W17"
+   },
+   {
+    "label": "B",
+    "text": "X17"
+   },
+   {
+    "label": "C",
+    "text": "W18"
+   },
+   {
+    "label": "D",
+    "text": "W15"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 2 (O→Q→S→U→W); numbers increase by 2 (3→5→8→12→17). Next = W17.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = W17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nB3, E5, H8, K12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nB3, E5, H8, K12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "N18"
+   },
+   {
+    "label": "B",
+    "text": "N15"
+   },
+   {
+    "label": "C",
+    "text": "N17"
+   },
+   {
+    "label": "D",
+    "text": "O17"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "N18"
+   },
+   {
+    "label": "B",
+    "text": "N15"
+   },
+   {
+    "label": "C",
+    "text": "N17"
+   },
+   {
+    "label": "D",
+    "text": "O17"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (B→E→H→K→N); numbers increase by 2 (3→5→8→12→17). Next = N17.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = N17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nH3, K7, N12, Q18, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nH3, K7, N12, Q18, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "U25"
+   },
+   {
+    "label": "B",
+    "text": "T26"
+   },
+   {
+    "label": "C",
+    "text": "T21"
+   },
+   {
+    "label": "D",
+    "text": "T25"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "U25"
+   },
+   {
+    "label": "B",
+    "text": "T26"
+   },
+   {
+    "label": "C",
+    "text": "T21"
+   },
+   {
+    "label": "D",
+    "text": "T25"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (H→K→N→Q→T); numbers increase by 4 (3→7→12→18→25). Next = T25.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = T25।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nE5, G9, I14, K20, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nE5, G9, I14, K20, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "M28"
+   },
+   {
+    "label": "B",
+    "text": "M23"
+   },
+   {
+    "label": "C",
+    "text": "M27"
+   },
+   {
+    "label": "D",
+    "text": "N27"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "M28"
+   },
+   {
+    "label": "B",
+    "text": "M23"
+   },
+   {
+    "label": "C",
+    "text": "M27"
+   },
+   {
+    "label": "D",
+    "text": "N27"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (E→G→I→K→M); numbers increase by 4 (5→9→14→20→27). Next = M27.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = M27।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nJ3, L7, N12, P18, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nJ3, L7, N12, P18, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "R21"
+   },
+   {
+    "label": "B",
+    "text": "R25"
+   },
+   {
+    "label": "C",
+    "text": "S25"
+   },
+   {
+    "label": "D",
+    "text": "R26"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "R21"
+   },
+   {
+    "label": "B",
+    "text": "R25"
+   },
+   {
+    "label": "C",
+    "text": "S25"
+   },
+   {
+    "label": "D",
+    "text": "R26"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (J→L→N→P→R); numbers increase by 4 (3→7→12→18→25). Next = R25.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = R25।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nB2, D6, F11, H17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nB2, D6, F11, H17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "J20"
+   },
+   {
+    "label": "B",
+    "text": "J24"
+   },
+   {
+    "label": "C",
+    "text": "K24"
+   },
+   {
+    "label": "D",
+    "text": "J25"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "J20"
+   },
+   {
+    "label": "B",
+    "text": "J24"
+   },
+   {
+    "label": "C",
+    "text": "K24"
+   },
+   {
+    "label": "D",
+    "text": "J25"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (B→D→F→H→J); numbers increase by 4 (2→6→11→17→24). Next = J24.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = J24।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nN2, R5, V9, Z14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN2, R5, V9, Z14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "D21"
+   },
+   {
+    "label": "B",
+    "text": "D17"
+   },
+   {
+    "label": "C",
+    "text": "D20"
+   },
+   {
+    "label": "D",
+    "text": "E20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "D21"
+   },
+   {
+    "label": "B",
+    "text": "D17"
+   },
+   {
+    "label": "C",
+    "text": "D20"
+   },
+   {
+    "label": "D",
+    "text": "E20"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (N→R→V→Z→D); numbers increase by 3 (2→5→9→14→20). Next = D20.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = D20।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nD5, F8, H12, J17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nD5, F8, H12, J17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "M23"
+   },
+   {
+    "label": "B",
+    "text": "L24"
+   },
+   {
+    "label": "C",
+    "text": "L20"
+   },
+   {
+    "label": "D",
+    "text": "L23"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "M23"
+   },
+   {
+    "label": "B",
+    "text": "L24"
+   },
+   {
+    "label": "C",
+    "text": "L20"
+   },
+   {
+    "label": "D",
+    "text": "L23"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (D→F→H→J→L); numbers increase by 3 (5→8→12→17→23). Next = L23.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = L23।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 3,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nR3, O5, L7, I9, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nR3, O5, L7, I9, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F9"
+   },
+   {
+    "label": "B",
+    "text": "F11"
+   },
+   {
+    "label": "C",
+    "text": "E11"
+   },
+   {
+    "label": "D",
+    "text": "F12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F9"
+   },
+   {
+    "label": "B",
+    "text": "F11"
+   },
+   {
+    "label": "C",
+    "text": "E11"
+   },
+   {
+    "label": "D",
+    "text": "F12"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (R→O→L→I→F); numbers increase by 2 (3→5→7→9→11). Next = F11.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = F11।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO2, K5, G8, C11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO2, K5, G8, C11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Y15"
+   },
+   {
+    "label": "B",
+    "text": "Y11"
+   },
+   {
+    "label": "C",
+    "text": "Y14"
+   },
+   {
+    "label": "D",
+    "text": "F14"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Y15"
+   },
+   {
+    "label": "B",
+    "text": "Y11"
+   },
+   {
+    "label": "C",
+    "text": "Y14"
+   },
+   {
+    "label": "D",
+    "text": "F14"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (O→K→G→C→Y); numbers increase by 3 (2→5→8→11→14). Next = Y14.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = Y14।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nS2, Q4, O6, M8, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nS2, Q4, O6, M8, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "B10"
+   },
+   {
+    "label": "B",
+    "text": "K11"
+   },
+   {
+    "label": "C",
+    "text": "K8"
+   },
+   {
+    "label": "D",
+    "text": "K10"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "B10"
+   },
+   {
+    "label": "B",
+    "text": "K11"
+   },
+   {
+    "label": "C",
+    "text": "K8"
+   },
+   {
+    "label": "D",
+    "text": "K10"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (S→Q→O→M→K); numbers increase by 2 (2→4→6→8→10). Next = K10.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = K10।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nS5, O7, K9, G11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nS5, O7, K9, G11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "C13"
+   },
+   {
+    "label": "B",
+    "text": "J13"
+   },
+   {
+    "label": "C",
+    "text": "C14"
+   },
+   {
+    "label": "D",
+    "text": "C11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "C13"
+   },
+   {
+    "label": "B",
+    "text": "J13"
+   },
+   {
+    "label": "C",
+    "text": "C14"
+   },
+   {
+    "label": "D",
+    "text": "C11"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 4 (S→O→K→G→C); numbers increase by 2 (5→7→9→11→13). Next = C13.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = C13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nT2, Q6, N10, K14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nT2, Q6, N10, K14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "G18"
+   },
+   {
+    "label": "B",
+    "text": "H19"
+   },
+   {
+    "label": "C",
+    "text": "H14"
+   },
+   {
+    "label": "D",
+    "text": "H18"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "G18"
+   },
+   {
+    "label": "B",
+    "text": "H19"
+   },
+   {
+    "label": "C",
+    "text": "H14"
+   },
+   {
+    "label": "D",
+    "text": "H18"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (T→Q→N→K→H); numbers increase by 4 (2→6→10→14→18). Next = H18.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = H18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nX5, U8, R11, O14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nX5, U8, R11, O14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "L14"
+   },
+   {
+    "label": "B",
+    "text": "L17"
+   },
+   {
+    "label": "C",
+    "text": "K17"
+   },
+   {
+    "label": "D",
+    "text": "L18"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "L14"
+   },
+   {
+    "label": "B",
+    "text": "L17"
+   },
+   {
+    "label": "C",
+    "text": "K17"
+   },
+   {
+    "label": "D",
+    "text": "L18"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (X→U→R→O→L); numbers increase by 3 (5→8→11→14→17). Next = L17.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = L17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nR2, N5, J8, F11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nR2, N5, J8, F11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "B15"
+   },
+   {
+    "label": "B",
+    "text": "B11"
+   },
+   {
+    "label": "C",
+    "text": "B14"
+   },
+   {
+    "label": "D",
+    "text": "I14"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "B15"
+   },
+   {
+    "label": "B",
+    "text": "B11"
+   },
+   {
+    "label": "C",
+    "text": "B14"
+   },
+   {
+    "label": "D",
+    "text": "I14"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (R→N→J→F→B); numbers increase by 3 (2→5→8→11→14). Next = B14.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = B14।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nN3, L7, J11, H15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN3, L7, J11, H15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F15"
+   },
+   {
+    "label": "B",
+    "text": "F19"
+   },
+   {
+    "label": "C",
+    "text": "W19"
+   },
+   {
+    "label": "D",
+    "text": "F20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F15"
+   },
+   {
+    "label": "B",
+    "text": "F19"
+   },
+   {
+    "label": "C",
+    "text": "W19"
+   },
+   {
+    "label": "D",
+    "text": "F20"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (N→L→J→H→F); numbers increase by 4 (3→7→11→15→19). Next = F19.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = F19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nQ3, N5, K7, H9, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nQ3, N5, K7, H9, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "E9"
+   },
+   {
+    "label": "B",
+    "text": "E11"
+   },
+   {
+    "label": "C",
+    "text": "D11"
+   },
+   {
+    "label": "D",
+    "text": "E12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "E9"
+   },
+   {
+    "label": "B",
+    "text": "E11"
+   },
+   {
+    "label": "C",
+    "text": "D11"
+   },
+   {
+    "label": "D",
+    "text": "E12"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (Q→N→K→H→E); numbers increase by 2 (3→5→7→9→11). Next = E11.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = E11।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nP3, L6, H9, D12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nP3, L6, H9, D12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Z16"
+   },
+   {
+    "label": "B",
+    "text": "Z12"
+   },
+   {
+    "label": "C",
+    "text": "Z15"
+   },
+   {
+    "label": "D",
+    "text": "G15"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Z16"
+   },
+   {
+    "label": "B",
+    "text": "Z12"
+   },
+   {
+    "label": "C",
+    "text": "Z15"
+   },
+   {
+    "label": "D",
+    "text": "G15"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (P→L→H→D→Z); numbers increase by 3 (3→6→9→12→15). Next = Z15.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = Z15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nW3, U6, S9, Q12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nW3, U6, S9, Q12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "O16"
+   },
+   {
+    "label": "B",
+    "text": "O12"
+   },
+   {
+    "label": "C",
+    "text": "O15"
+   },
+   {
+    "label": "D",
+    "text": "F15"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "O16"
+   },
+   {
+    "label": "B",
+    "text": "O12"
+   },
+   {
+    "label": "C",
+    "text": "O15"
+   },
+   {
+    "label": "D",
+    "text": "F15"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (W→U→S→Q→O); numbers increase by 3 (3→6→9→12→15). Next = O15.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = O15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nV3, R6, N9, J12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nV3, R6, N9, J12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F16"
+   },
+   {
+    "label": "B",
+    "text": "F12"
+   },
+   {
+    "label": "C",
+    "text": "F15"
+   },
+   {
+    "label": "D",
+    "text": "M15"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F16"
+   },
+   {
+    "label": "B",
+    "text": "F12"
+   },
+   {
+    "label": "C",
+    "text": "F15"
+   },
+   {
+    "label": "D",
+    "text": "M15"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (V→R→N→J→F); numbers increase by 3 (3→6→9→12→15). Next = F15.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = F15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nX5, U9, R13, O17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nX5, U9, R13, O17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "K21"
+   },
+   {
+    "label": "B",
+    "text": "L22"
+   },
+   {
+    "label": "C",
+    "text": "L17"
+   },
+   {
+    "label": "D",
+    "text": "L21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "K21"
+   },
+   {
+    "label": "B",
+    "text": "L22"
+   },
+   {
+    "label": "C",
+    "text": "L17"
+   },
+   {
+    "label": "D",
+    "text": "L21"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (X→U→R→O→L); numbers increase by 4 (5→9→13→17→21). Next = L21.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = L21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nP5, M9, J13, G17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nP5, M9, J13, G17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "C21"
+   },
+   {
+    "label": "B",
+    "text": "D22"
+   },
+   {
+    "label": "C",
+    "text": "D17"
+   },
+   {
+    "label": "D",
+    "text": "D21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "C21"
+   },
+   {
+    "label": "B",
+    "text": "D22"
+   },
+   {
+    "label": "C",
+    "text": "D17"
+   },
+   {
+    "label": "D",
+    "text": "D21"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (P→M→J→G→D); numbers increase by 4 (5→9→13→17→21). Next = D21.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = D21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nV5, R9, N13, J17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nV5, R9, N13, J17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F17"
+   },
+   {
+    "label": "B",
+    "text": "F21"
+   },
+   {
+    "label": "C",
+    "text": "M21"
+   },
+   {
+    "label": "D",
+    "text": "F22"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F17"
+   },
+   {
+    "label": "B",
+    "text": "F21"
+   },
+   {
+    "label": "C",
+    "text": "M21"
+   },
+   {
+    "label": "D",
+    "text": "F22"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 4 (V→R→N→J→F); numbers increase by 4 (5→9→13→17→21). Next = F21.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = F21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nN5, L9, J13, H17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN5, L9, J13, H17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F17"
+   },
+   {
+    "label": "B",
+    "text": "F21"
+   },
+   {
+    "label": "C",
+    "text": "W21"
+   },
+   {
+    "label": "D",
+    "text": "F22"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F17"
+   },
+   {
+    "label": "B",
+    "text": "F21"
+   },
+   {
+    "label": "C",
+    "text": "W21"
+   },
+   {
+    "label": "D",
+    "text": "F22"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (N→L→J→H→F); numbers increase by 4 (5→9→13→17→21). Next = F21.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = F21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nT3, Q6, N9, K12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nT3, Q6, N9, K12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "H15"
+   },
+   {
+    "label": "B",
+    "text": "G15"
+   },
+   {
+    "label": "C",
+    "text": "H16"
+   },
+   {
+    "label": "D",
+    "text": "H12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "H15"
+   },
+   {
+    "label": "B",
+    "text": "G15"
+   },
+   {
+    "label": "C",
+    "text": "H16"
+   },
+   {
+    "label": "D",
+    "text": "H12"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (T→Q→N→K→H); numbers increase by 3 (3→6→9→12→15). Next = H15.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = H15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nR3, O6, L9, I12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nR3, O6, L9, I12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F15"
+   },
+   {
+    "label": "B",
+    "text": "E15"
+   },
+   {
+    "label": "C",
+    "text": "F16"
+   },
+   {
+    "label": "D",
+    "text": "F12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F15"
+   },
+   {
+    "label": "B",
+    "text": "E15"
+   },
+   {
+    "label": "C",
+    "text": "F16"
+   },
+   {
+    "label": "D",
+    "text": "F12"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (R→O→L→I→F); numbers increase by 3 (3→6→9→12→15). Next = F15.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = F15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nS5, Q8, O11, M14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nS5, Q8, O11, M14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "B17"
+   },
+   {
+    "label": "B",
+    "text": "K18"
+   },
+   {
+    "label": "C",
+    "text": "K14"
+   },
+   {
+    "label": "D",
+    "text": "K17"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "B17"
+   },
+   {
+    "label": "B",
+    "text": "K18"
+   },
+   {
+    "label": "C",
+    "text": "K14"
+   },
+   {
+    "label": "D",
+    "text": "K17"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (S→Q→O→M→K); numbers increase by 3 (5→8→11→14→17). Next = K17.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = K17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nV5, T7, R9, P11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nV5, T7, R9, P11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "N13"
+   },
+   {
+    "label": "B",
+    "text": "E13"
+   },
+   {
+    "label": "C",
+    "text": "N14"
+   },
+   {
+    "label": "D",
+    "text": "N11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "N13"
+   },
+   {
+    "label": "B",
+    "text": "E13"
+   },
+   {
+    "label": "C",
+    "text": "N14"
+   },
+   {
+    "label": "D",
+    "text": "N11"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 2 (V→T→R→P→N); numbers increase by 2 (5→7→9→11→13). Next = N13.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = N13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nR5, N7, J9, F11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nR5, N7, J9, F11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "B13"
+   },
+   {
+    "label": "B",
+    "text": "I13"
+   },
+   {
+    "label": "C",
+    "text": "B14"
+   },
+   {
+    "label": "D",
+    "text": "B11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "B13"
+   },
+   {
+    "label": "B",
+    "text": "I13"
+   },
+   {
+    "label": "C",
+    "text": "B14"
+   },
+   {
+    "label": "D",
+    "text": "B11"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 4 (R→N→J→F→B); numbers increase by 2 (5→7→9→11→13). Next = B13.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = B13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nW2, U4, S6, Q8, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nW2, U4, S6, Q8, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F10"
+   },
+   {
+    "label": "B",
+    "text": "O11"
+   },
+   {
+    "label": "C",
+    "text": "O8"
+   },
+   {
+    "label": "D",
+    "text": "O10"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F10"
+   },
+   {
+    "label": "B",
+    "text": "O11"
+   },
+   {
+    "label": "C",
+    "text": "O8"
+   },
+   {
+    "label": "D",
+    "text": "O10"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (W→U→S→Q→O); numbers increase by 2 (2→4→6→8→10). Next = O10.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = O10।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nW2, T4, Q6, N8, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nW2, T4, Q6, N8, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "K8"
+   },
+   {
+    "label": "B",
+    "text": "K10"
+   },
+   {
+    "label": "C",
+    "text": "J10"
+   },
+   {
+    "label": "D",
+    "text": "K11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "K8"
+   },
+   {
+    "label": "B",
+    "text": "K10"
+   },
+   {
+    "label": "C",
+    "text": "J10"
+   },
+   {
+    "label": "D",
+    "text": "K11"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (W→T→Q→N→K); numbers increase by 2 (2→4→6→8→10). Next = K10.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = K10।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nQ5, N7, K9, H11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nQ5, N7, K9, H11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "E14"
+   },
+   {
+    "label": "B",
+    "text": "E11"
+   },
+   {
+    "label": "C",
+    "text": "E13"
+   },
+   {
+    "label": "D",
+    "text": "D13"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "E14"
+   },
+   {
+    "label": "B",
+    "text": "E11"
+   },
+   {
+    "label": "C",
+    "text": "E13"
+   },
+   {
+    "label": "D",
+    "text": "D13"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (Q→N→K→H→E); numbers increase by 2 (5→7→9→11→13). Next = E13.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = E13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nX2, V5, T8, R11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nX2, V5, T8, R11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "P15"
+   },
+   {
+    "label": "B",
+    "text": "P11"
+   },
+   {
+    "label": "C",
+    "text": "P14"
+   },
+   {
+    "label": "D",
+    "text": "G14"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "P15"
+   },
+   {
+    "label": "B",
+    "text": "P11"
+   },
+   {
+    "label": "C",
+    "text": "P14"
+   },
+   {
+    "label": "D",
+    "text": "G14"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (X→V→T→R→P); numbers increase by 3 (2→5→8→11→14). Next = P14.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = P14।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nT5, R7, P9, N11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nT5, R7, P9, N11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "L13"
+   },
+   {
+    "label": "B",
+    "text": "C13"
+   },
+   {
+    "label": "C",
+    "text": "L14"
+   },
+   {
+    "label": "D",
+    "text": "L11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "L13"
+   },
+   {
+    "label": "B",
+    "text": "C13"
+   },
+   {
+    "label": "C",
+    "text": "L14"
+   },
+   {
+    "label": "D",
+    "text": "L11"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 2 (T→R→P→N→L); numbers increase by 2 (5→7→9→11→13). Next = L13.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = L13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nR5, O8, L11, I14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nR5, O8, L11, I14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F14"
+   },
+   {
+    "label": "B",
+    "text": "F17"
+   },
+   {
+    "label": "C",
+    "text": "E17"
+   },
+   {
+    "label": "D",
+    "text": "F18"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F14"
+   },
+   {
+    "label": "B",
+    "text": "F17"
+   },
+   {
+    "label": "C",
+    "text": "E17"
+   },
+   {
+    "label": "D",
+    "text": "F18"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (R→O→L→I→F); numbers increase by 3 (5→8→11→14→17). Next = F17.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = F17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nW2, S6, O10, K14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nW2, S6, O10, K14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "G14"
+   },
+   {
+    "label": "B",
+    "text": "G18"
+   },
+   {
+    "label": "C",
+    "text": "N18"
+   },
+   {
+    "label": "D",
+    "text": "G19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "G14"
+   },
+   {
+    "label": "B",
+    "text": "G18"
+   },
+   {
+    "label": "C",
+    "text": "N18"
+   },
+   {
+    "label": "D",
+    "text": "G19"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 4 (W→S→O→K→G); numbers increase by 4 (2→6→10→14→18). Next = G18.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = G18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nW3, U7, S11, Q15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nW3, U7, S11, Q15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "O15"
+   },
+   {
+    "label": "B",
+    "text": "O19"
+   },
+   {
+    "label": "C",
+    "text": "F19"
+   },
+   {
+    "label": "D",
+    "text": "O20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "O15"
+   },
+   {
+    "label": "B",
+    "text": "O19"
+   },
+   {
+    "label": "C",
+    "text": "F19"
+   },
+   {
+    "label": "D",
+    "text": "O20"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (W→U→S→Q→O); numbers increase by 4 (3→7→11→15→19). Next = O19.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = O19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nW5, T7, Q9, N11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nW5, T7, Q9, N11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "K14"
+   },
+   {
+    "label": "B",
+    "text": "K11"
+   },
+   {
+    "label": "C",
+    "text": "K13"
+   },
+   {
+    "label": "D",
+    "text": "J13"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "K14"
+   },
+   {
+    "label": "B",
+    "text": "K11"
+   },
+   {
+    "label": "C",
+    "text": "K13"
+   },
+   {
+    "label": "D",
+    "text": "J13"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (W→T→Q→N→K); numbers increase by 2 (5→7→9→11→13). Next = K13.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = K13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nP2, M5, J8, G11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nP2, M5, J8, G11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "D14"
+   },
+   {
+    "label": "B",
+    "text": "C14"
+   },
+   {
+    "label": "C",
+    "text": "D15"
+   },
+   {
+    "label": "D",
+    "text": "D11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "D14"
+   },
+   {
+    "label": "B",
+    "text": "C14"
+   },
+   {
+    "label": "C",
+    "text": "D15"
+   },
+   {
+    "label": "D",
+    "text": "D11"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (P→M→J→G→D); numbers increase by 3 (2→5→8→11→14). Next = D14.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = D14।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nQ2, O5, M8, K11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nQ2, O5, M8, K11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "I15"
+   },
+   {
+    "label": "B",
+    "text": "I11"
+   },
+   {
+    "label": "C",
+    "text": "I14"
+   },
+   {
+    "label": "D",
+    "text": "Z14"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "I15"
+   },
+   {
+    "label": "B",
+    "text": "I11"
+   },
+   {
+    "label": "C",
+    "text": "I14"
+   },
+   {
+    "label": "D",
+    "text": "Z14"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (Q→O→M→K→I); numbers increase by 3 (2→5→8→11→14). Next = I14.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = I14।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nR5, P7, N9, L11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nR5, P7, N9, L11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "J13"
+   },
+   {
+    "label": "B",
+    "text": "A13"
+   },
+   {
+    "label": "C",
+    "text": "J14"
+   },
+   {
+    "label": "D",
+    "text": "J11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "J13"
+   },
+   {
+    "label": "B",
+    "text": "A13"
+   },
+   {
+    "label": "C",
+    "text": "J14"
+   },
+   {
+    "label": "D",
+    "text": "J11"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 2 (R→P→N→L→J); numbers increase by 2 (5→7→9→11→13). Next = J13.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = J13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nS2, P6, M10, J14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nS2, P6, M10, J14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F18"
+   },
+   {
+    "label": "B",
+    "text": "G19"
+   },
+   {
+    "label": "C",
+    "text": "G14"
+   },
+   {
+    "label": "D",
+    "text": "G18"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F18"
+   },
+   {
+    "label": "B",
+    "text": "G19"
+   },
+   {
+    "label": "C",
+    "text": "G14"
+   },
+   {
+    "label": "D",
+    "text": "G18"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (S→P→M→J→G); numbers increase by 4 (2→6→10→14→18). Next = G18.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = G18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO2, M5, K8, I11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO2, M5, K8, I11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "G15"
+   },
+   {
+    "label": "B",
+    "text": "G11"
+   },
+   {
+    "label": "C",
+    "text": "G14"
+   },
+   {
+    "label": "D",
+    "text": "X14"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "G15"
+   },
+   {
+    "label": "B",
+    "text": "G11"
+   },
+   {
+    "label": "C",
+    "text": "G14"
+   },
+   {
+    "label": "D",
+    "text": "X14"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 2 (O→M→K→I→G); numbers increase by 3 (2→5→8→11→14). Next = G14.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = G14।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nX2, T6, P10, L14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nX2, T6, P10, L14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "H14"
+   },
+   {
+    "label": "B",
+    "text": "H18"
+   },
+   {
+    "label": "C",
+    "text": "O18"
+   },
+   {
+    "label": "D",
+    "text": "H19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "H14"
+   },
+   {
+    "label": "B",
+    "text": "H18"
+   },
+   {
+    "label": "C",
+    "text": "O18"
+   },
+   {
+    "label": "D",
+    "text": "H19"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 4 (X→T→P→L→H); numbers increase by 4 (2→6→10→14→18). Next = H18.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = H18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO3, L7, I11, F15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO3, L7, I11, F15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "B19"
+   },
+   {
+    "label": "B",
+    "text": "C20"
+   },
+   {
+    "label": "C",
+    "text": "C15"
+   },
+   {
+    "label": "D",
+    "text": "C19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "B19"
+   },
+   {
+    "label": "B",
+    "text": "C20"
+   },
+   {
+    "label": "C",
+    "text": "C15"
+   },
+   {
+    "label": "D",
+    "text": "C19"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (O→L→I→F→C); numbers increase by 4 (3→7→11→15→19). Next = C19.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = C19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nQ5, M7, I9, E11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nQ5, M7, I9, E11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "A13"
+   },
+   {
+    "label": "B",
+    "text": "H13"
+   },
+   {
+    "label": "C",
+    "text": "A14"
+   },
+   {
+    "label": "D",
+    "text": "A11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "A13"
+   },
+   {
+    "label": "B",
+    "text": "H13"
+   },
+   {
+    "label": "C",
+    "text": "A14"
+   },
+   {
+    "label": "D",
+    "text": "A11"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 4 (Q→M→I→E→A); numbers increase by 2 (5→7→9→11→13). Next = A13.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = A13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nT2, Q4, N6, K8, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nT2, Q4, N6, K8, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "H8"
+   },
+   {
+    "label": "B",
+    "text": "H10"
+   },
+   {
+    "label": "C",
+    "text": "G10"
+   },
+   {
+    "label": "D",
+    "text": "H11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "H8"
+   },
+   {
+    "label": "B",
+    "text": "H10"
+   },
+   {
+    "label": "C",
+    "text": "G10"
+   },
+   {
+    "label": "D",
+    "text": "H11"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (T→Q→N→K→H); numbers increase by 2 (2→4→6→8→10). Next = H10.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = H10।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nR2, P6, N10, L14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nR2, P6, N10, L14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "J14"
+   },
+   {
+    "label": "B",
+    "text": "J18"
+   },
+   {
+    "label": "C",
+    "text": "A18"
+   },
+   {
+    "label": "D",
+    "text": "J19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "J14"
+   },
+   {
+    "label": "B",
+    "text": "J18"
+   },
+   {
+    "label": "C",
+    "text": "A18"
+   },
+   {
+    "label": "D",
+    "text": "J19"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (R→P→N→L→J); numbers increase by 4 (2→6→10→14→18). Next = J18.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = J18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nU5, R7, O9, L11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nU5, R7, O9, L11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "I14"
+   },
+   {
+    "label": "B",
+    "text": "I11"
+   },
+   {
+    "label": "C",
+    "text": "I13"
+   },
+   {
+    "label": "D",
+    "text": "H13"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "I14"
+   },
+   {
+    "label": "B",
+    "text": "I11"
+   },
+   {
+    "label": "C",
+    "text": "I13"
+   },
+   {
+    "label": "D",
+    "text": "H13"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 3 (U→R→O→L→I); numbers increase by 2 (5→7→9→11→13). Next = I13.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = I13।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO5, K9, G13, C17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO5, K9, G13, C17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Y17"
+   },
+   {
+    "label": "B",
+    "text": "Y21"
+   },
+   {
+    "label": "C",
+    "text": "F21"
+   },
+   {
+    "label": "D",
+    "text": "Y22"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Y17"
+   },
+   {
+    "label": "B",
+    "text": "Y21"
+   },
+   {
+    "label": "C",
+    "text": "F21"
+   },
+   {
+    "label": "D",
+    "text": "Y22"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 4 (O→K→G→C→Y); numbers increase by 4 (5→9→13→17→21). Next = Y21.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = Y21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nO3, L6, I9, F12, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nO3, L6, I9, F12, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "C15"
+   },
+   {
+    "label": "B",
+    "text": "B15"
+   },
+   {
+    "label": "C",
+    "text": "C16"
+   },
+   {
+    "label": "D",
+    "text": "C12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "C15"
+   },
+   {
+    "label": "B",
+    "text": "B15"
+   },
+   {
+    "label": "C",
+    "text": "C16"
+   },
+   {
+    "label": "D",
+    "text": "C12"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Letters advance by 3 (O→L→I→F→C); numbers increase by 3 (3→6→9→12→15). Next = C15.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = C15।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nW3, U5, S7, Q9, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nW3, U5, S7, Q9, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F11"
+   },
+   {
+    "label": "B",
+    "text": "O12"
+   },
+   {
+    "label": "C",
+    "text": "O9"
+   },
+   {
+    "label": "D",
+    "text": "O11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "F11"
+   },
+   {
+    "label": "B",
+    "text": "O12"
+   },
+   {
+    "label": "C",
+    "text": "O9"
+   },
+   {
+    "label": "D",
+    "text": "O11"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (W→U→S→Q→O); numbers increase by 2 (3→5→7→9→11). Next = O11.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = O11।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nU3, S7, Q11, O15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nU3, S7, Q11, O15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "M15"
+   },
+   {
+    "label": "B",
+    "text": "M19"
+   },
+   {
+    "label": "C",
+    "text": "D19"
+   },
+   {
+    "label": "D",
+    "text": "M20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "M15"
+   },
+   {
+    "label": "B",
+    "text": "M19"
+   },
+   {
+    "label": "C",
+    "text": "D19"
+   },
+   {
+    "label": "D",
+    "text": "M20"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (U→S→Q→O→M); numbers increase by 4 (3→7→11→15→19). Next = M19.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = M19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nV2, S6, P10, M14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nV2, S6, P10, M14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "I18"
+   },
+   {
+    "label": "B",
+    "text": "J19"
+   },
+   {
+    "label": "C",
+    "text": "J14"
+   },
+   {
+    "label": "D",
+    "text": "J18"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "I18"
+   },
+   {
+    "label": "B",
+    "text": "J19"
+   },
+   {
+    "label": "C",
+    "text": "J14"
+   },
+   {
+    "label": "D",
+    "text": "J18"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (V→S→P→M→J); numbers increase by 4 (2→6→10→14→18). Next = J18.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = J18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nS3, P5, M7, J9, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nS3, P5, M7, J9, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "G9"
+   },
+   {
+    "label": "B",
+    "text": "G11"
+   },
+   {
+    "label": "C",
+    "text": "F11"
+   },
+   {
+    "label": "D",
+    "text": "G12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "G9"
+   },
+   {
+    "label": "B",
+    "text": "G11"
+   },
+   {
+    "label": "C",
+    "text": "F11"
+   },
+   {
+    "label": "D",
+    "text": "G12"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 3 (S→P→M→J→G); numbers increase by 2 (3→5→7→9→11). Next = G11.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 2 बढ़ती हैं; अतः अगला पद = G11।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nQ3, N7, K11, H15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nQ3, N7, K11, H15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "D19"
+   },
+   {
+    "label": "B",
+    "text": "E20"
+   },
+   {
+    "label": "C",
+    "text": "E15"
+   },
+   {
+    "label": "D",
+    "text": "E19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "D19"
+   },
+   {
+    "label": "B",
+    "text": "E20"
+   },
+   {
+    "label": "C",
+    "text": "E15"
+   },
+   {
+    "label": "D",
+    "text": "E19"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (Q→N→K→H→E); numbers increase by 4 (3→7→11→15→19). Next = E19.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = E19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nU5, S9, Q13, O17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nU5, S9, Q13, O17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "M17"
+   },
+   {
+    "label": "B",
+    "text": "M21"
+   },
+   {
+    "label": "C",
+    "text": "D21"
+   },
+   {
+    "label": "D",
+    "text": "M22"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "M17"
+   },
+   {
+    "label": "B",
+    "text": "M21"
+   },
+   {
+    "label": "C",
+    "text": "D21"
+   },
+   {
+    "label": "D",
+    "text": "M22"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (U→S→Q→O→M); numbers increase by 4 (5→9→13→17→21). Next = M21.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = M21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nR3, P7, N11, L15, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nR3, P7, N11, L15, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "J15"
+   },
+   {
+    "label": "B",
+    "text": "J19"
+   },
+   {
+    "label": "C",
+    "text": "A19"
+   },
+   {
+    "label": "D",
+    "text": "J20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "J15"
+   },
+   {
+    "label": "B",
+    "text": "J19"
+   },
+   {
+    "label": "C",
+    "text": "A19"
+   },
+   {
+    "label": "D",
+    "text": "J20"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (R→P→N→L→J); numbers increase by 4 (3→7→11→15→19). Next = J19.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = J19।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nX2, T5, P8, L11, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nX2, T5, P8, L11, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "H15"
+   },
+   {
+    "label": "B",
+    "text": "H11"
+   },
+   {
+    "label": "C",
+    "text": "H14"
+   },
+   {
+    "label": "D",
+    "text": "O14"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "H15"
+   },
+   {
+    "label": "B",
+    "text": "H11"
+   },
+   {
+    "label": "C",
+    "text": "H14"
+   },
+   {
+    "label": "D",
+    "text": "O14"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Letters advance by 4 (X→T→P→L→H); numbers increase by 3 (2→5→8→11→14). Next = H14.",
+  "solution_hi": "अक्षर 4 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = H14।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nN5, K9, H13, E17, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN5, K9, H13, E17, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "A21"
+   },
+   {
+    "label": "B",
+    "text": "B22"
+   },
+   {
+    "label": "C",
+    "text": "B17"
+   },
+   {
+    "label": "D",
+    "text": "B21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "A21"
+   },
+   {
+    "label": "B",
+    "text": "B22"
+   },
+   {
+    "label": "C",
+    "text": "B17"
+   },
+   {
+    "label": "D",
+    "text": "B21"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 3 (N→K→H→E→B); numbers increase by 4 (5→9→13→17→21). Next = B21.",
+  "solution_hi": "अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = B21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nX2, V6, T10, R14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nX2, V6, T10, R14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "P14"
+   },
+   {
+    "label": "B",
+    "text": "P18"
+   },
+   {
+    "label": "C",
+    "text": "G18"
+   },
+   {
+    "label": "D",
+    "text": "P19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "P14"
+   },
+   {
+    "label": "B",
+    "text": "P18"
+   },
+   {
+    "label": "C",
+    "text": "G18"
+   },
+   {
+    "label": "D",
+    "text": "P19"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Letters advance by 2 (X→V→T→R→P); numbers increase by 4 (2→6→10→14→18). Next = P18.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = P18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
+  "stem": "What comes next in the series?\nN5, L8, J11, H14, ?",
+  "stem_hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा?\nN5, L8, J11, H14, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "W17"
+   },
+   {
+    "label": "B",
+    "text": "F18"
+   },
+   {
+    "label": "C",
+    "text": "F14"
+   },
+   {
+    "label": "D",
+    "text": "F17"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "W17"
+   },
+   {
+    "label": "B",
+    "text": "F18"
+   },
+   {
+    "label": "C",
+    "text": "F14"
+   },
+   {
+    "label": "D",
+    "text": "F17"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Letters advance by 2 (N→L→J→H→F); numbers increase by 3 (5→8→11→14→17). Next = F17.",
+  "solution_hi": "अक्षर 2 स्थान तथा संख्याएँ 3 बढ़ती हैं; अतः अगला पद = F17।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen"
+ },
+ {
   "stem": "8 : 9 :: 2 : ?",
   "stem_hi": "8 : 9 :: 2 : ?",
   "options": [
@@ -45619,47 +53312,47 @@
   "source": "reasoninggen"
  },
  {
-  "stem": "A person is initially facing West. He takes a left, then takes a right, then takes a right turn. Which direction is he facing now? (Each turn is 90°.)",
-  "stem_hi": "एक व्यक्ति आरम्भ में पश्चिम दिशा की ओर मुख किए है। वह बाएँ, फिर दाएँ, फिर दाएँ मुड़ता है। अब उसका मुख किस दिशा की ओर है? (प्रत्येक मोड़ 90° का है।)",
+  "stem": "A person is initially facing West. He takes a right, then takes a left turn. Which direction is he facing now? (Each turn is 90°.)",
+  "stem_hi": "एक व्यक्ति आरम्भ में पश्चिम दिशा की ओर मुख किए है। वह दाएँ, फिर बाएँ मुड़ता है। अब उसका मुख किस दिशा की ओर है? (प्रत्येक मोड़ 90° का है।)",
   "options": [
    {
     "label": "A",
-    "text": "South"
-   },
-   {
-    "label": "B",
     "text": "West"
    },
    {
-    "label": "C",
+    "label": "B",
     "text": "North"
    },
    {
-    "label": "D",
+    "label": "C",
     "text": "East"
+   },
+   {
+    "label": "D",
+    "text": "South"
    }
   ],
   "options_hi": [
    {
     "label": "A",
-    "text": "दक्षिण"
-   },
-   {
-    "label": "B",
     "text": "पश्चिम"
    },
    {
-    "label": "C",
+    "label": "B",
     "text": "उत्तर"
    },
    {
-    "label": "D",
+    "label": "C",
     "text": "पूर्व"
+   },
+   {
+    "label": "D",
+    "text": "दक्षिण"
    }
   ],
-  "correct_answer": "C",
-  "solution": "Starting West, applying each 90° turn: left→South right→West right→North. Final = North.",
-  "solution_hi": "पश्चिम से आरम्भ कर प्रत्येक 90° मोड़ लगाने पर अंतिम दिशा = उत्तर।",
+  "correct_answer": "A",
+  "solution": "Starting West, applying each 90° turn: right→North left→West. Final = West.",
+  "solution_hi": "पश्चिम से आरम्भ कर प्रत्येक 90° मोड़ लगाने पर अंतिम दिशा = पश्चिम।",
   "concept": "Direction — Facing",
   "chapter": "Direction Sense",
   "difficulty": 1,
