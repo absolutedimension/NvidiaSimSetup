@@ -28,7 +28,8 @@ import sys
 
 REPO = pathlib.Path("/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup")
 sys.path.insert(0, str(REPO / "teacher_gtm"))
-from paper_common import MATH_CSS, esc, servable, sig, inter_level_ok  # noqa: E402
+from paper_common import (MATH_CSS, esc, servable, sig, inter_level_ok,  # noqa: E402
+                          numbers_agree)
 LET = ["A", "B", "C", "D", "E"]
 
 
@@ -146,6 +147,8 @@ def load_hindi_generated(n, cap_per_concept=6):
             continue
         if gen_sig(q) in exclude:
             continue
+        if not numbers_agree(q):
+            continue      # Hindi template dropped the rule ("twice its position") — see numbers_agree
         q["_generated"] = True
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
@@ -184,6 +187,8 @@ def load_generated(n, cap_per_concept=3, exclude=frozenset()):
             continue
         if gen_sig(q) in exclude:
             continue
+        if not numbers_agree(q):
+            continue      # Hindi template dropped the rule ("twice its position") — see numbers_agree
         q["_generated"] = True
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
@@ -286,13 +291,27 @@ def main():
             ("भाग–III / PART–III : मानसिक क्षमता जाँच (Mental Ability / Reasoning)", third, 50),
         ]
 
-    paper, n = [], 0
-    for title, secs, want in SPEC:
+    # Generated top-up belongs ONLY in the reasoning part. Topping up Science+Maths with it put a
+    # number analogy into Part II — wrong section — and, because each part called the generator
+    # independently, the same question could be dealt twice ("3 : 9 :: 11 : ?" appeared as both
+    # Q100 and Q127). Any shortfall in an earlier part is carried into the reasoning part instead,
+    # so every question stays in its right section and the paper still totals 150. The
+    # advertisement names the three sections without fixing a per-section count, so 47/53 is as
+    # faithful as 50/50.
+    paper, n, carry = [], 0, 0
+    gen_taken = set(used_gen)
+    for idx, (title, secs, want) in enumerate(SPEC):
         pool = [q for s in secs for q in by.get(s, [])]
-        got = pick(pool, want, used, tmpl)
-        if a.structure == "official3" and len(got) < want:
-            got += load_generated(want - len(got), exclude=used_gen)
-        if secs == ["Hindi"] and a.hindi_source == "generated":
+        last = idx == len(SPEC) - 1
+        target = want + carry if last else want
+        got = pick(pool, target, used, tmpl)
+        if not last:
+            carry += target - len(got)
+        elif len(got) < target:
+            fresh = load_generated(target - len(got), exclude=gen_taken)
+            gen_taken |= {gen_sig(q) for q in fresh}
+            got += fresh
+        if secs == ["Hindi"] and a.hindi_source == "generated":  # noqa: E501
             got = load_hindi_generated(want)   # (real4 only; Inter Level has no Hindi section)
         paper.append((title, got)); n += len(got)
 

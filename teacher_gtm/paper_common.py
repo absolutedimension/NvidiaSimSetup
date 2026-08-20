@@ -15,6 +15,9 @@ Both `build_onestep_paper.py` (bilingual, 2022-25 papers) and `build_bssc_150_ne
      `servable` drops them; the words are not in the JSON, so they cannot be repaired.
 """
 import html
+import io
+import json
+import os
 import re
 
 _GREEK = {"pi": "π", "theta": "θ", "alpha": "α", "beta": "β", "gamma": "γ", "delta": "δ",
@@ -200,6 +203,83 @@ _NEEDS_FIGURE = re.compile(r"following\s+(table|figure|diagram|graph|chart)|give
                            r"|निम्न\s*चित्र|निम्नलिखित\s*चित्र|दिए\s*गए\s*चित्र|आरेख", re.I)
 
 
+_NUM = re.compile(r"\d+")
+
+# An Assertion-Reason question whose Assertion and Reason are MISSING — the stem carries only the
+# rubric ("a statement of Assertion (A) is followed by a statement of Reason (R), choose the
+# correct option") and the four generic options, with nothing to actually judge. Unanswerable.
+_AR_RUBRIC = re.compile(r"assertion\s*\(a\)|अभिकथन|असर्शन|आश्वासन\s*\(a\)", re.I)
+_AR_CONTENT = re.compile(r"\((?:A|R)\)\s*[:：]|अभिकथन\s*\(A\)\s*[:：]|कारण\s*\(R\)\s*[:：]", re.I)
+
+
+def numbers_agree(q):
+    """The two languages of a bilingual question must contain the SAME numbers.
+
+    Measured on the built papers: 13 questions disagreed. Some are merely incomplete translations
+    ("x% of y% of 80 is same as 25% of 900" lost "25% of 900" in Hindi); others change the ANSWER —
+    one generated question read "coded by TWICE its position (A=2, B=4)" in English while the Hindi
+    said only "according to its alphabet position", so a Hindi-medium student computes a different
+    code. Worse, that made two different questions identical in Hindi.
+    """
+    hi, en = q.get("stem_hi") or "", q.get("stem") or ""
+    if not (hi and en):
+        return True
+    from collections import Counter
+    return Counter(_NUM.findall(hi)) == Counter(_NUM.findall(en))
+
+
+def option_numbers_agree(q):
+    """Option i must carry the same numbers in both languages.
+
+    Found by hand: one question printed English options −5/7, 29, 9, −11 beside Hindi options
+    −5/7, −42, −14, 28. The keyed letter is the greatest value in the Hindi list and NOT in the
+    English one — the same paper gives two different correct answers depending on which half the
+    student reads. Comparing option COUNTS, as the earlier check did, cannot see this.
+    """
+    oe, oh = q.get("options") or [], q.get("options_hi") or []
+    if not oh or len(oe) != len(oh):
+        return True
+    from collections import Counter
+    return all(Counter(_NUM.findall(str(a.get("text", "")))) ==
+               Counter(_NUM.findall(str(b.get("text", "")))) for a, b in zip(oe, oh))
+
+
+def assertion_has_content(q):
+    text = " ".join([q.get("stem") or "", q.get("stem_hi") or ""])
+    if not _AR_RUBRIC.search(text):
+        return True
+    return bool(_AR_CONTENT.search(text))
+
+
+_EXCL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          "..", "question_bank_engine", "drop", "bssc", "EXCLUSIONS.json")
+_EXCL = None
+
+
+def excluded(q):
+    """Questions verified defective by solving them — see drop/bssc/EXCLUSIONS.json.
+
+    These pass every structural gate and are still wrong on the page (a surd comparison with no
+    correct option, a telescoping series whose stem lost its denominators, a match-the-columns
+    with Column II truncated). Structure cannot catch them; only working the problem can, so the
+    result of having worked it is kept.
+    """
+    global _EXCL
+    if _EXCL is None:
+        try:
+            spec = json.load(io.open(_EXCL_PATH, encoding="utf-8"))
+            _EXCL = {(e["source_pdf"], e["number"]) for e in spec.get("excluded", [])}
+        except Exception:
+            _EXCL = set()
+    return (q.get("source_pdf"), q.get("number")) in _EXCL
+
+
+# Heavy LaTeX is where extraction quietly loses structure: nested surds and long fraction chains
+# came through looking plausible but semantically wrong. Four of the seven verified-defective
+# questions are of this shape, so treat it as a risk marker for an Inter Level paper.
+_HEAVY_LATEX = re.compile(r"\\sqrt\{[^{}]*\\sqrt|(?:\\frac.*){3,}|\\ldots|\.\.\.")
+
+
 def inter_level_ok(q):
     """Everything the BSSC 2nd Inter Level (02/23-A) prelim syllabus allows, and nothing else.
 
@@ -214,4 +294,16 @@ def inter_level_ok(q):
         return False
     if q.get("has_figure"):
         return False
+    if not (numbers_agree(q) and option_numbers_agree(q) and assertion_has_content(q)):
+        return False
+    if excluded(q):
+        return False
+    if (q.get("tag") or {}).get("section") == "Mathematics" and _HEAVY_LATEX.search(q.get("stem") or ""):
+        return False
+    # A geometry question can be TAGGED General Studies and so never meet the maths gate — one
+    # circle/chord assertion-reason question reached Part I that way. Apply the content gate to GS
+    # as well. NOT to General Science: physics legitimately talks about angles, circles and volume.
+    if (q.get("tag") or {}).get("section") == "General Studies":
+        if _ABOVE_SYLLABUS.search(" ".join([q.get("stem") or "", q.get("stem_hi") or ""])):
+            return False
     return inter_level_maths_ok(q)

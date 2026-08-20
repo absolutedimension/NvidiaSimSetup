@@ -1,0 +1,62 @@
+{
+  "_why": "Questions verified DEFECTIVE by working the problem, not by a structural rule. Each one was extracted cleanly enough to pass every automated gate — four options, a key letter that exists, numbers agreeing across languages — and is still wrong on the page. The only way to find these is to solve them, so the finding is recorded here rather than re-discovered by the next reviewer.",
+  "_how": "paper_common.excluded() reads this; the builders skip anything listed. Add to it as review turns up more — Rohan's findings belong here too.",
+  "_note": "Most cluster in complex-LaTeX maths (nested surds, telescoping series). That is a signal about the EXTRACTION, not the commission's papers: where a stem carried heavy LaTeX, the transcription lost structure while still looking plausible.",
+  "excluded": [
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 7,
+      "reason": "No option is correct. Stem is a = √(11+√3), b = √(12+√2), c = √(6+√4) → a≈3.568, b≈3.662, c≈2.828, so b > a > c. The four options are 'a>b>c', 'c>a>b', 'a>b<c', 'a<c>b' — none of which is that. Key says C ('a>b<c'), and both of its claims are false."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 11,
+      "reason": "Stem lost its structure in extraction. As printed it reads 1/√9 + 1/√11 + ... + 1/√2025, which sums to no option. The original is the telescoping series 1/(√9+√11) + 1/(√11+√13) + ... = (√2025-√9)/2 = 21 — which is exactly the keyed answer D. The KEY is right; the visible question is unanswerable."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 13,
+      "reason": "√1375 + √1125 − √1375 = √1125 = 15√5, which is IRRATIONAL (option B). Key says C (Rational). Either the key or the stem is wrong; either way it cannot be served."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 26,
+      "reason": "Stem defines b and c as the SAME expression ((√6+√5)/5), so the comparison it asks for is ill-posed. Extraction damage."
+    },
+    {
+      "source_pdf": "5101136_08_A.pdf",
+      "number": 24,
+      "reason": "Incoherent stem: 'If x = r, then find the value of r = x, and the discount = r, z, then find the value of ___'. Not a question."
+    },
+    {
+      "source_pdf": "0225_SET-A.pdf",
+      "number": 18,
+      "reason": "Match-the-columns with Column II truncated — only entries 1 and 2 survive extraction, so the student cannot see what 3 and 4 are and no option can be justified."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 8,
+      "reason": "Stem and answer do not correspond. 'If one task can be done in 24 days, how many days to complete 30 tasks?' with keyed answer 13/3 days. The Hindi is garbled differently again ('30 दिनों में कितने दिन लगेंगे'). Whatever the original asked, this is not recoverable from what was extracted."
+    },
+    {
+      "source_pdf": "5101136_08_A.pdf",
+      "number": 43,
+      "reason": "Garbled stem: 'इसमें कौन-सा भौतिक संज्ञान नहीं है ?' ('which physical cognition is not in this') with options जल / चाय / ध्वनि / प्रमाण. Almost certainly 'भौतिक परिवर्तन' (physical change) in the original; as extracted it is not a question."
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 117,
+      "reason": "The two languages carry DIFFERENT options: English −5/7, 29, 9, −11 versus Hindi −5/7, −42, −14, 28. The keyed letter D is the greatest in the Hindi list (28) but not in the English one (−11), so the same paper gives two different right answers depending on which half the student reads."
+    },
+    {
+      "source_pdf": "5101136_08_A.pdf",
+      "number": 15,
+      "reason": "Arithmetic does not reach any option: ₹1,728 less 25% = 1,296, plus 20% = 1,555.20, but the options are 1,500/1,620/1,664/1,665. 1,296 x 1.25 = 1,620 = the keyed answer, so the extraction almost certainly turned a 25% increase into 20%."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 14,
+      "reason": "Key contradicts the arithmetic. A beats B by 270 in 900 (B runs 630) and beats C by 340 (C runs 560); when B runs 900, C runs 800, so B beats C by 100 — option D. The key says B (70)."
+    }
+  ]
+}
