@@ -215,7 +215,21 @@ def inter_level_maths_ok(q):
 # loss, since the size of this pool is what caps how many unique sets we can build.
 _COMPUTER = re.compile(r"MS[- ]?Word|MS[- ]?Excel|PowerPoint|\bkeyboard\b|shortcut|\bsoftware\b"
                        r"|\bhardware\b|\bcomputer\b|Ctrl\s*\+|(?-i:\bRAM\b|\bCPU\b)"
-                       r"|operating\s+system|कंप्यूटर|कम्प्यूटर", re.I)
+                       r"|operating\s+system|कंप्यूटर|कम्प्यूटर"
+                       # the same syllabus point, wider: computing TOPICS, not just software names
+                       r"|natural\s+language\s+processing|tokeni[sz]ation|machine\s+learning"
+                       r"|\bHTTP\b|\bFTP\b|\bSMTP\b|\bDNS\b|\bURL\b|\bIP\s+address\b"
+                       r"|spreadsheet|\bformula\s+in\s+Excel\b", re.I)
+
+# English GRAMMAR/VOCABULARY items. Some papers we source from (the LDC/Welfare paper especially)
+# carry a full English section, and those questions get tagged General Studies. The Inter Level
+# prelim has NO English section — its three parts are GS, Science+Maths and Mental Ability — so an
+# antonym or a modal-verb question does not belong on this paper however good the question is.
+_ENGLISH_LANG = re.compile(r"\bantonym\b|\bsynonym\b|one\s+word\s+substitut|\bidiom\b"
+                           r"|choose\s+the\s+correct\s+(modal|preposition|article|tense|verb)"
+                           r"|fill\s+in\s+the\s+blank.*\b(verb|preposition|article|modal)\b"
+                           r"|correct\s+the\s+sentence|active\s+and\s+passive|direct\s+and\s+indirect",
+                           re.I)
 
 # "(32) ____ range of flora" — a numbered blank belonging to a comprehension PASSAGE that we do not
 # hold. Standing alone on a paper it is unanswerable, whatever the official key says.
@@ -334,6 +348,7 @@ def inter_level_ok(q):
     # circle/chord assertion-reason question reached Part I that way. Apply the content gate to GS
     # as well. NOT to General Science: physics legitimately talks about angles, circles and volume.
     if (q.get("tag") or {}).get("section") == "General Studies":
-        if _ABOVE_SYLLABUS.search(" ".join([q.get("stem") or "", q.get("stem_hi") or ""])):
+        gs_text = " ".join([q.get("stem") or "", q.get("stem_hi") or ""])
+        if _ABOVE_SYLLABUS.search(gs_text) or _ENGLISH_LANG.search(gs_text):
             return False
     return inter_level_maths_ok(q)

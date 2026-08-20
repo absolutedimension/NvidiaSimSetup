@@ -152,6 +152,71 @@
       "source_pdf": "0225_SET-A.pdf",
       "number": 28,
       "reason": "Orphaned comprehension question: refers to a passage about a cleanup drive that is not on the paper."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 37,
+      "reason": "Stem and options do not correspond: '1857 ई. विद्रोह के कारणों में ?' (among the CAUSES of the 1857 revolt) with four PEOPLE as options. The original asked who led it in Bihar. One option is also garbled (सहजानंद गाधी)."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 48,
+      "reason": "'बहुउद्देशीय कंपनी' (multi-purpose company) where the original must be बहुराष्ट्रीय (multinational), and option A 'कोई मेटल्स' is OCR garbage rather than a company."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 100,
+      "reason": "'What is not the essence of physical education?' with options Toys / Music / Sports / Education. Part of the same corrupted cluster as Q96-Q99 in this paper; the option set is not credible."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 63,
+      "reason": "STALE CURRENT AFFAIRS. 'Who is the Vice-President of India?' keyed Jagdeep Dhankhar. Correct when the paper was set in 2025; he resigned in July 2025, so a 2026 student would be taught a wrong current fact. Present-tense office-holder questions must not be reused."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 51,
+      "reason": "STALE CURRENT AFFAIRS. 'Who is the minister of External Affairs of India?' — present-tense office-holder question; correct only for the year it was set."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 44,
+      "reason": "STALE CURRENT AFFAIRS. 'भारतीय रिजर्व बैंक के वर्तमान गवर्नर कौन हैं?' — explicitly asks for the CURRENT governor."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 60,
+      "reason": "Garbled stem: 'राज्यसभा के सदस्य कौन है ?' has no determinate answer as printed."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 92,
+      "reason": "Garbled Hindi stem ('कवि' के दांठ के कहानिकार कौन हैं?) — not a question."
+    },
+    {
+      "source_pdf": "0225_SET-A.pdf",
+      "number": 25,
+      "reason": "Networking-protocol matching question (HTTP/FTP/SMTP/DNS). Computer knowledge is not in the Inter Level prelim syllabus, and the Purposes list did not survive extraction either."
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 59,
+      "reason": "The commission's key is D with the description '11 जनवरी, 2010', but OUR extracted option D reads '11 January, 2011' and option C reads '11 January, 2010'. The key is right and the OPTIONS are mis-extracted, so the paper would mark the wrong year correct. (JNNSM was launched 11 January 2010.)"
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 14,
+      "reason": "'Match the Columns - G20 Countries and their Currencies' with neither column printed. Nothing to match."
+    },
+    {
+      "source_pdf": "0225_SET-A.pdf",
+      "number": 20,
+      "reason": "'Which of the following is/are true regarding interest?' with options 'I only', 'II and IV only' etc but the statements themselves are absent."
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 32,
+      "reason": "'Which of the following statements about the Indian Rupee symbol are correct?' — the numbered statements are not printed, only the option combinations."
     }
   ],
   "excluded_sources": [
@@ -160,5 +225,8 @@
       "label": "BSSC 8th Level 2024",
       "reason": "EXCLUDED WHOLESALE. Seven of its 32 eligible questions were verified defective by working them — a 22% rate, against 0.8% for the Field Assistant paper. Since these defects are only findable by solving each question, a 22% measured rate implies more that have not been found. The paper contributes only 32 questions (7 of them Science/Maths), so keeping it buys little and risks a wrong answer in front of students."
     }
+  ],
+  "_rules": [
+    "STALE CURRENT AFFAIRS: never reuse a present-tense office-holder question ('who is the VP/CJI/minister/governor'). A date-anchored version is fine ('who became the 52nd CJI on 14 May 2025') because it stays true. This class cannot be caught by any structural check and does not show up as a defect in the source paper — it simply expires."
   ]
 }

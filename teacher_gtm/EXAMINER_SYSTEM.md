@@ -127,6 +127,10 @@ here:
 - **match-the-columns with the columns missing**
 - **Assertion–Reason with no assertion and no reason** — just the rubric and four generic options
 - options that are **duplicates**, or a bare option letter as the text
+- **a verified key pointing at a factually wrong option.** Ambedkar's birth date was keyed to
+  14 मार्च; the key matched the commission page exactly and "14 अप्रैल" was option B — so the
+  OPTION extraction was wrong, not the key. Nothing structural can see this; only someone who
+  knows the fact can.
 - stems whose **LaTeX collapsed**: `(x+2)/(x+3) > 1` printed as `x + 2 x + 3 > 1`
 
 ---
@@ -150,6 +154,21 @@ Both languages must pose the **same** question.
 **Where OCR quality differs by subject, treat the subjects differently.** Devanagari maths came
 back ~90% clean (numbers and standard terms); science ~50% corrupt (नाइट्रोजन चक्र → नैतिकता चक्र);
 GS proper nouns were fatal (बैकुंठनाथ शुक्ला → बंकिमनाथ झा). We promoted maths only.
+
+---
+
+### Three more gates the GS sweep added
+
+- **Out-of-syllabus TOPICS, not just out-of-syllabus words.** A spreadsheet SUMIF question and an
+  NLP/tokenization question both slipped a filter that only knew software names. Gate the topic:
+  computing, protocols, machine learning.
+- **Questions from a section this exam does not have.** Our source papers include full English
+  sections; those questions get tagged General Studies and land on a paper whose syllabus has no
+  English part. An antonym question is a fine question in the wrong exam.
+- **Stale current affairs.** "Who is the Vice-President of India" was correct when set in 2025 and
+  is wrong now. A date-anchored version ("who became the 52nd CJI on 14 May 2025") stays true.
+  **Never reuse a present-tense office-holder question.** This class does not appear as a defect in
+  the source paper at all — it simply expires, and no structural check will ever flag it.
 
 ---
 
