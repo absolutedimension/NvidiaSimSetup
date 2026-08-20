@@ -102,3 +102,4 @@ employee_training/employees.json
 # extracted questions, the hand-transcribed keys and the page maps — is the JSON, which IS tracked.
 question_bank_engine/drop/bssc/*.pdf
 question_bank_engine/drop/bssc/*.PDF
+question_bank_engine/drop/bssc_official/*.pdf

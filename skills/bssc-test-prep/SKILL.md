@@ -65,18 +65,42 @@ BSSC uses 4. **Never mix the two in one paper.**
 
 ---
 
-## 2. ⚠️ There is NO official Inter Level question paper
+## 2. ⚠️ There is NO Inter Level question paper — but the exam is LIVE and pending
 
-Checked all 125 Inter-Level references on the commission site: every one is a notice, corrigendum,
-admit card or result list.
+**Verified against the commission's notice board on 2026-08-20.** Full sourced write-up:
+**`teacher_gtm/BSSC_INTER_LEVEL_FACTSHEET.md`**; official PDFs in
+`question_bank_engine/drop/bssc_official/`.
 
 - **1st Inter Level** (Advt 06060114) — exam ~2016-17, paper never posted.
-- **2nd Inter Level** (Advt 02/23 → 02/23A) — **the exam was cancelled** and re-advertised. It has
-  not been held, so no paper exists.
+- **2nd Inter Level** (Advt 02/23 → **02/23(A)**) — **NOT cancelled.** It was re-advertised in
+  revised form on 27.09.2025. Applications ran 15.10.2025 → **16.02.2026**, and vacancies grew
+  23,175 → 24,492 → **25,311**. **The prelim has still not been held and no date has been announced**
+  — the last notice on this advertisement is 13.02.2026, six months before this check.
 
-**Do not promise an Inter Level paper.** The closest real substitute is **Advt 02/25 Welfare
-Organiser & Lower Division Clerk** — LDC is a 10+2 post, same level, same format, bilingual.
-Rohan must say that plainly; the advertisement number is printed on the paper.
+So there is still no past paper to sell, but the reason has changed: the exam is *upcoming*, not
+dead. That is why institutes are asking for Inter Level material right now.
+
+**Never say "Inter Level previous year questions".** The closest real substitutes are **Advt 02/25
+Welfare Organiser & LDC**, **Advt 0111 Clerk (Group D→C)**, **Office Attendant 02/22** and the
+**10th/8th Level 2024** papers — same or adjacent level, same format. The source advertisement
+number is printed on our paper, so the claim stays checkable.
+
+### The official prelim scheme (from `02_23A_Advt.pdf`) — our paper matches it
+150 questions · **+4 / −1** · **600 marks** · **2h 15m** · 4 options · bilingual, and **if the Hindi
+and English versions differ the ENGLISH question prevails**. Three sections: सामान्य अध्ययन ·
+सामान्य विज्ञान एवं गणित (**मैट्रिक level**) · मानसिक क्षमता जाँच. The advertisement does **not**
+fix a per-section count — 50/50/50 is our assumption, not an official rule.
+
+⭐ **The prelim is an OPEN-BOOK exam** (Rules 2010 clause 12): candidates carry **three textbooks**,
+one per section, NCERT/BSEB/ICSE board textbooks only — no guides, photocopies, notes or devices.
+Name and roll number must be written on each book and nothing else. This should shape how the
+material is taught, and most competitors do not lead with it.
+
+⚠️ **Two syllabus facts that contradict our current bank:** the official maths list is
+**arithmetic only** (number system, fractions, percentage, ratio, average, interest, profit & loss)
+— **no algebra, trigonometry or mensuration** — yet our maths stock from Advt 0111 contains AP,
+polynomials and circle geometry, which are ABOVE this syllabus. And **भूगोल sits under General
+Science**, not GS. Filter accordingly before building an Inter-Level paper.
 
 ---
 
