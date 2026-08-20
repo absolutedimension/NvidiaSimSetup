@@ -944,5 +944,56 @@ SOLVERS = ([("ranking-interchange", solve_ranking_interchange),
             ("blood-relation-chain", solve_blood_relation_chain)] + SOLVERS)
 
 
+# ── series and coding variants ──────────────────────────────────────────────────────────────────
+# The last twelve generated forms without an independent route. Written from the printed series or
+# code alone; both wrap the alphabet mod 26, which is where the first version of each of these got
+# it wrong — "L, Q, V, A, ?" is a constant +5 that crosses Z, and a solver that subtracts raw
+# ordinals sees the gaps as 5, 5, -21 and gives up.
+
+def solve_series_any(en):
+    if "letter series" not in en:
+        return None
+    ls = re.findall(r"\b([A-Z])\b", en.split("\n")[-1])
+    if len(ls) != 4:
+        return None
+    A = ord("A")
+    p = [ord(c) - A for c in ls]
+    g = [(p[i + 1] - p[i]) % 26 for i in range(3)]
+    if len(set(g)) == 1:                                   # constant step
+        return chr((p[3] + g[0]) % 26 + A)
+    if g[0] == g[2]:                                       # alternating: next gap is g[1]
+        return chr((p[3] + g[1]) % 26 + A)
+    if (g[1] - g[0]) == (g[2] - g[1]):                     # step grows by a constant
+        return chr((p[3] + g[2] + (g[1] - g[0])) % 26 + A)
+    return chr((p[2] + (p[2] - p[0]) % 26) % 26 + A)       # interleaved: continue the odd series
+
+
+def solve_coding_any(en):
+    m = re.search(r"'([A-Z]+)' is written as '([A-Z]+)'.*?'([A-Z]+)'", en, re.S)
+    if not m:
+        return None
+    A = ord("A")
+    w1, c1, w2 = m.groups()
+    if len(w1) != len(c1):
+        return None
+    sh = [(ord(b) - ord(a)) % 26 for a, b in zip(w1, c1)]
+    if len(set(sh)) == 1:                                              # one shift throughout
+        return "".join(chr((ord(c) - A + sh[0]) % 26 + A) for c in w2)
+    if sh == [(i + 1) % 26 for i in range(len(w1))]:                   # positional 1,2,3,...
+        return "".join(chr((ord(c) - A + i + 1) % 26 + A) for i, c in enumerate(w2))
+    rs = [(ord(b) - ord(a)) % 26 for a, b in zip(w1[::-1], c1)]        # reversed, then shifted
+    if len(set(rs)) == 1:
+        return "".join(chr((ord(c) - A + rs[0]) % 26 + A) for c in w2[::-1])
+    odd, even = sh[0::2], sh[1::2]                                     # alternating shifts
+    if len(set(odd)) == 1 and len(set(even)) == 1:
+        return "".join(chr((ord(c) - A + (odd[0] if i % 2 == 0 else even[0])) % 26 + A)
+                       for i, c in enumerate(w2))
+    return None
+
+
+SOLVERS = ([("series-any", solve_series_any),
+            ("coding-any", solve_coding_any)] + SOLVERS)
+
+
 if __name__ == "__main__":
     sys.exit(main())

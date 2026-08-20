@@ -475,6 +475,10 @@ def load_hindi_generated(n, cap_per_concept=6, exclude=frozenset()):
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
         random.shuffle(b)
+        # ...then hardest first WITHIN each concept. The round-robin deal keeps the section varied;
+        # this makes it also honour the difficulty request, which it ignored entirely before —
+        # Part III drew 29 easy questions from a pool holding 343 hard ones.
+        b.sort(key=lambda q: -(q.get("difficulty") or (q.get("tag") or {}).get("difficulty") or 0))
     order = sorted(buckets, key=lambda k: -len(buckets[k]))
     # Deal round-robin so the section stays varied. The cap is a PREFERENCE, not a wall: once
     # every concept has contributed cap_per_concept, keep dealing rather than return a short
@@ -523,6 +527,10 @@ def load_generated(n, cap_per_concept=3, exclude=frozenset()):
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
         random.shuffle(b)
+        # ...then hardest first WITHIN each concept. The round-robin deal keeps the section varied;
+        # this makes it also honour the difficulty request, which it ignored entirely before —
+        # Part III drew 29 easy questions from a pool holding 343 hard ones.
+        b.sort(key=lambda q: -(q.get("difficulty") or (q.get("tag") or {}).get("difficulty") or 0))
     for k in list(buckets):                    # drop same-question-different-name clones
         seen, uniq = set(), []
         for q in buckets[k]:
