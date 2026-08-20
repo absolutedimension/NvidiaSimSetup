@@ -28,11 +28,18 @@ unanswerable rather than hard. A sound A-R needs a source sentence that states t
 a PIB or NCERT paragraph — not a dictionary.
 """
 import random
+import re
 
 from . import staticgk_hi as HI
 
 # table -> (english statement template, hindi statement template)
 STATEMENTS = {
+    # Constitution first — these are what Advt 02/23(A) actually names (भारत का संविधान एवं राज्य
+    # व्यवस्था, पंचायती राज), and they are the reason a statement question can be hard rather than
+    # a capital dressed up in a harder form.
+    "ARTICLE_SUBJECT": ("Article {k} of the Constitution deals with {v}.",
+                        "संविधान का अनुच्छेद {k} {v} से संबंधित है।"),
+    "AMENDMENT_DID": ("The {k} Amendment {v}.", "{k} संविधान संशोधन ने {v}।"),
     "STATE_CAPITAL": ("{v} is the capital of {k}.", "{v} {k} की राजधानी है।"),
     "DANCE_STATE": ("{k} is a dance form of {v}.", "{k} {v} का नृत्य है।"),
     "RIVER_ORIGIN": ("The river {k} originates at {v}.", "{k} नदी का उद्गम {v} में है।"),
@@ -45,13 +52,27 @@ def _alias(a, b):
     return a == b or (ha is not None and ha == hb)
 
 
+def _hi_or_self(x):
+    """Hindi if we wrote one, otherwise the token itself — for numbers, which are the same
+    in both scripts and which the commission prints in Arabic digits either way."""
+    return HI.hi(x) or str(x)
+
+
 def _statement(table, k, v, tmpl):
-    return tmpl[0].format(k=k, v=v), tmpl[1].format(k=HI.hi(k), v=HI.hi(v))
+    return tmpl[0].format(k=k, v=v), tmpl[1].format(k=_hi_or_self(k), v=_hi_or_self(v))
 
 
 def _bilingual_keys(table):
-    """Keys whose key AND value are both hand-written in Hindi."""
-    return [k for k, v in table.items() if HI.hi(k) and HI.hi(v)]
+    """Keys whose key AND value are both usable in Hindi.
+
+    An article number ("21A") is language-neutral — it prints identically in both halves and needs
+    no entry in the map. Requiring one would have excluded the entire Constitution table while
+    reporting nothing, which is the quiet-failure shape this codebase keeps producing.
+    """
+    def ok(x):
+        x = str(x)
+        return HI.hi(x) is not None or bool(re.match(r"^\d+[A-Za-z]?$", x))
+    return [k for k, v in table.items() if ok(k) and ok(v)]
 
 
 def _false_value(table, k, rng, need_hindi=True):
@@ -142,7 +163,10 @@ def b_match_pairs(tables):
             shown.append((k, v))
             truth.append(v == table[k])
         rows = "\n".join(f"{chr(65 + i)}. {k} — {v}" for i, (k, v) in enumerate(shown))
-        rows_hi = "\n".join(f"{chr(65 + i)}. {HI.hi(k)} — {HI.hi(v)}"
+        # _hi_or_self, not HI.hi: an article number has no Hindi entry and returned None, so the
+        # Hindi half printed "A. None — ..." and the cross-language number check caught it. Fixed
+        # in _statement when polity was wired in; this second renderer was missed.
+        rows_hi = "\n".join(f"{chr(65 + i)}. {_hi_or_self(k)} — {_hi_or_self(v)}"
                             for i, (k, v) in enumerate(shown))
         good = [chr(65 + i) for i, t in enumerate(truth) if t]
         correct = ", ".join(good) if good else "None"

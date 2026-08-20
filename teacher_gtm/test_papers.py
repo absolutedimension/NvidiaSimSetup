@@ -773,7 +773,11 @@ def _gk_tables():
         sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent
                                / "question_bank_engine"))
         from qbank import staticgkgen as _G
-        _GK_TABLES = {"cap": _G.STATE_CAPITAL, "dance": _G.DANCE_STATE, "river": _G.RIVER_ORIGIN}
+        from qbank import polity_tables as _P
+        # The solver must know EVERY table the forms draw from, or it reports "None correct" on a
+        # correctly-matched pair — which reads as a wrong key rather than a blind checker.
+        _GK_TABLES = {"cap": _G.STATE_CAPITAL, "dance": _G.DANCE_STATE, "river": _G.RIVER_ORIGIN,
+                      "article": _P.ARTICLE_SUBJECT, "amendment": _P.AMENDMENT_DID}
     return _GK_TABLES
 
 
@@ -788,6 +792,12 @@ def _stmt_true(line):
     m = re.match(r"The river (.+?) originates at (.+?)\.$", line)
     if m:
         return t["river"].get(m.group(1)) == m.group(2)
+    m = re.match(r"Article (.+?) of the Constitution deals with (.+?)\.$", line)
+    if m:
+        return t["article"].get(m.group(1).strip()) == m.group(2).strip()
+    m = re.match(r"The (.+?) Amendment (.+?)\.$", line)
+    if m:
+        return t["amendment"].get(m.group(1).strip()) == m.group(2).strip()
     return None
 
 

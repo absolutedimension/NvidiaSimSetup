@@ -351,9 +351,13 @@ def generate_whole_section(secs, want, mix, gen_taken, bilingual, salt=0):
     out = []
     rng = random.Random(20260822 + salt)
     if "General Studies" in secs:
-        from qbank import staticgkgen, staticgk_forms
+        from qbank import staticgkgen, staticgk_forms, polity_tables
         tables = {t: getattr(staticgkgen, t)
                   for t in ("STATE_CAPITAL", "DANCE_STATE", "RIVER_ORIGIN")}
+        # The Constitution tables are what makes a statement question hard rather than a capital
+        # in a harder wrapper — and they are what the advertisement's syllabus actually names.
+        tables["ARTICLE_SUBJECT"] = polity_tables.ARTICLE_SUBJECT
+        tables["AMENDMENT_DID"] = polity_tables.AMENDMENT_DID
         # Match-the-pairs draws 4 keys from one table, so its distinct combinations run out fast —
         # splitting the hard quota evenly starved it and the shortfall was silently padded with
         # difficulty-1 recall, which is the opposite of what was asked. Three statements from three
@@ -1051,9 +1055,11 @@ def main():
                 # our difficulty tags against a real examiner's judgement.
                 dlab = {1: ("सरल", "Easy"), 2: ("मध्यम", "Medium")}.get(
                     (q.get("tag") or {}).get("difficulty") or 0, ("कठिन", "Hard"))
-                src = "Acharya" if q.get("_generated") else "आयोग / official"
-                block += (f'<span class="dbadge">{dlab[0]} &middot; {dlab[1]}'
-                          f'<i>{src}</i></span>')
+                # The badge carries the difficulty and nothing else. It named the source too,
+                # which put our brand on every question of a paper that goes out under the
+                # institute's own logo — and the source is not what the reviewer is being asked
+                # to judge.
+                block += f'<span class="dbadge">{dlab[0]} &middot; {dlab[1]}</span>' 
             if hi_stem:
                 block += (f'<div class="hi"><span class="n">{i}.</span> {esc(hi_stem)}</div>'
                           f'<div class="ops">{oh_html}</div>')
