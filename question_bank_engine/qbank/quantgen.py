@@ -56,6 +56,35 @@ def _frac(f: Fraction) -> str:
     return f"{f.numerator}/{f.denominator}"
 
 
+
+# ---- Hindi -------------------------------------------------------------------
+# NOT translation. The builder COMPUTES the answer, so the Hindi is a second template over the
+# same computation and a number physically cannot drift between the two languages the way it can
+# in a translated bank. This is the same argument that makes the English side trustworthy.
+
+def _ru_hi(x) -> str:
+    x = int(x) if float(x).is_integer() else round(float(x), 2)
+    return f"रु. {x:,}"
+
+
+_UNIT_HI = [("km/hr", "किमी/घंटा"), ("hours", "घंटे"), ("hour", "घंटा"), ("days", "दिन"),
+            ("day", "दिन"), ("years", "वर्ष"), ("year", "वर्ष"), ("km", "किमी"), ("kg", "किग्रा"),
+            ("Rs. ", "रु. ")]
+
+
+def hi_text(t):
+    """An option string in Hindi. Numerals stay Arabic — that is how the commission prints them
+    in its own Hindi papers, and changing them would make the two halves disagree on sight."""
+    t = str(t)
+    for en, hi in _UNIT_HI:
+        t = t.replace(en, hi)
+    return t
+
+
+def hi_options(options):
+    return [{"label": o["label"], "text": hi_text(o["text"])} for o in options]
+
+
 # ---- MCQ assembly -----------------------------------------------------------
 
 def _perturb(values, want, rng):
@@ -160,6 +189,8 @@ def _make_question(built: dict, rng, spec) -> Question:
         stem=stem, qtype="MCQ_single", options=options, correct_answer=ans,
         solution=built.get("solution", ""),
         chapter=spec.get("chapter"), concept=built.get("concept"), difficulty=diff,
+        stem_hi=built.get("stem_hi", ""), solution_hi=built.get("solution_hi", ""),
+        options_hi=hi_options(options) if built.get("stem_hi") else [],
         source="quantgen", generated=True, hash=content_hash(stem))
     q.verified = True
     # label -> the mistake that lands on that option, for per-option diagnosis later
@@ -461,11 +492,17 @@ def _b_profit_loss(rng, diff):
         gain = rng.choice([1, -1])
         sp = cp * (100 + gain * pct) // 100
         word = "profit" if gain > 0 else "loss"
+        word_hi = "लाभ" if gain > 0 else "हानि"
+        stem_hi = (f"एक वस्तु {_ru_hi(cp)} में खरीदकर {pct}% {word_hi} पर बेची जाती है। "
+                   f"विक्रय मूल्य ज्ञात कीजिए।")
+        sol_hi = (f"विक्रय मूल्य = क्रय मूल्य x (100 {'+' if gain > 0 else '-'} {pct})/100 = "
+                  f"{cp} x {100 + gain * pct}/100 = {_ru_hi(sp)}।")
         stem = (f"An article is bought for {_rupees(cp)} and sold at a {word} of {pct}%. "
                 f"Find the selling price.")
         sol = (f"SP = CP x (100 {'+' if gain > 0 else '-'} {pct})/100 = {cp} x "
                f"{100 + gain * pct}/100 = {_rupees(sp)}.")
         return {"stem": stem, "correct": _rupees(sp), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("applied the percentage the other way — {} instead of {}".format(
                         "loss" if gain > 0 else "profit", word),
@@ -478,10 +515,15 @@ def _b_profit_loss(rng, diff):
         cp = _mult(rng, 4, 20, 100)
         pct = rng.choice([10, 20, 25])
         sp = cp * (100 + pct) // 100
+        stem_hi = (f"एक वस्तु को {_ru_hi(sp)} में बेचने पर दुकानदार को {pct}% लाभ होता है। "
+                   f"क्रय मूल्य ज्ञात कीजिए।")
+        sol_hi = (f"क्रय मूल्य = विक्रय मूल्य x 100/(100 + {pct}) = {sp} x 100/{100 + pct} "
+                  f"= {_ru_hi(cp)}।")
         stem = (f"By selling an article for {_rupees(sp)}, a shopkeeper gains {pct}%. "
                 f"Find the cost price.")
         sol = f"CP = SP x 100/(100 + {pct}) = {sp} x 100/{100 + pct} = {_rupees(cp)}."
         return {"stem": stem, "correct": _rupees(cp), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("took {}% OF THE SELLING PRICE instead of working back to the cost"
                      .format(pct), _rupees(sp * (100 - pct) // 100)),
@@ -496,11 +538,18 @@ def _b_profit_loss(rng, diff):
         mp = cp * (100 + markup) // 100
         sp = mp * (100 - disc) // 100
         gain_pct = Fraction((sp - cp) * 100, cp)
+        stem_hi = (f"एक दुकानदार किसी वस्तु का अंकित मूल्य उसके क्रय मूल्य {_ru_hi(cp)} से "
+                   f"{markup}% अधिक रखता है और फिर {disc}% की छूट देता है। उसका लाभ प्रतिशत "
+                   f"ज्ञात कीजिए।")
+        sol_hi = (f"अंकित मूल्य = {cp} x {100 + markup}/100 = {_ru_hi(mp)}; विक्रय मूल्य = "
+                  f"{mp} x {100 - disc}/100 = {_ru_hi(sp)}। लाभ% = ({sp} - {cp})/{cp} x 100 = "
+                  f"{_num(gain_pct)}%।")
         stem = (f"A shopkeeper marks an article {markup}% above its cost price of {_rupees(cp)} "
                 f"and then allows a discount of {disc}%. Find his profit percent.")
         sol = (f"MP = {cp} x {100 + markup}/100 = {_rupees(mp)}; SP = {mp} x {100 - disc}/100 "
                f"= {_rupees(sp)}. Profit% = ({sp} - {cp})/{cp} x 100 = {_num(gain_pct)}%.")
         return {"stem": stem, "correct": _pct(gain_pct), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("subtracted the discount from the mark-up", _pct(markup - disc)),
                     ("took the discount on the COST price instead of the marked price",
@@ -513,12 +562,17 @@ def _b_profit_loss(rng, diff):
     d1 = rng.choice([10, 20, 25])
     d2 = rng.choice([x for x in (5, 10, 20) if x != d1])   # "10% and 10%" reads like a typo
     eq = 100 - Fraction((100 - d1) * (100 - d2), 100)
+    stem_hi = (f"एक वस्तु {d1}% तथा {d2}% की दो क्रमिक छूटों के बाद बेची जाती है। इन दोनों के "
+               f"तुल्य एकल छूट क्या होगी ?")
+    sol_hi = (f"शुद्ध गुणक = (100-{d1})/100 x (100-{d2})/100। "
+              f"तुल्य छूट = 100 - {_num(100 - eq)} = {_num(eq)}%।")
     stem = (f"An article is sold after two successive discounts of {d1}% and {d2}%. "
             f"What single discount is equivalent to these two?")
     sol = (f"Net factor = (100-{d1})/100 x (100-{d2})/100 = "
            f"{_frac(Fraction((100 - d1) * (100 - d2), 10000))}. "
            f"Equivalent discount = 100 - {_num(100 - eq)} = {_num(eq)}%.")
     return {"stem": stem, "correct": _pct(eq), "solution": sol,
+            "stem_hi": stem_hi, "solution_hi": sol_hi,
             "mistakes": mistakes(
                 ("simply ADDED the two discounts", _pct(d1 + d2)),
                 ("took the second discount on the original price, not the reduced one",
@@ -543,7 +597,10 @@ def _b_si(rng, diff):
     if diff <= 1:
         stem = f"Find the simple interest on {_rupees(p)} at {r}% per annum for {t} years."
         sol = f"SI = P x R x T / 100 = {p} x {r} x {t} / 100 = {_rupees(si)}."
+        stem_hi = (f"{_ru_hi(p)} पर {r}% वार्षिक की दर से {t} वर्षों का साधारण ब्याज ज्ञात कीजिए।")
+        sol_hi = (f"साधारण ब्याज = मूलधन x दर x समय / 100 = {p} x {r} x {t} / 100 = {_ru_hi(si)}।")
         return {"stem": stem, "correct": _rupees(si), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("gave the AMOUNT (P + SI) instead of the interest", _rupees(p + si)),
                     ("used one year too many", _rupees(p * r * (t + 1) // 100)),
@@ -551,11 +608,16 @@ def _b_si(rng, diff):
                 "concept": "Simple Interest"}
     if diff == 2:
         amt = p + si
+        stem_hi = (f"{_ru_hi(p)} पर {r}% वार्षिक साधारण ब्याज की दर से {t} वर्षों बाद कुल "
+                   f"मिश्रधन कितना प्राप्त होगा ?")
+        sol_hi = (f"ब्याज = {p} x {r} x {t}/100 = {_ru_hi(si)}। मिश्रधन = मूलधन + ब्याज = "
+                  f"{p} + {si} = {_ru_hi(p + si)}।")
         stem = (f"What amount is received on {_rupees(p)} at {r}% per annum simple interest "
                 f"after {t} years?")
         sol = (f"SI = {p} x {r} x {t}/100 = {_rupees(si)}. Amount = P + SI = {p} + {si} "
                f"= {_rupees(amt)}.")
         return {"stem": stem, "correct": _rupees(amt), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("stopped at the interest and never added the principal", _rupees(si)),
                     ("added one year's interest instead of all {} years".format(t),
@@ -564,10 +626,14 @@ def _b_si(rng, diff):
                      _rupees(int(p * (1 + r / 100) ** t)))),
                 "concept": "Simple Interest"}
     if diff == 3:
+        stem_hi = (f"{_ru_hi(p)} की राशि पर {t} वर्षों में {_ru_hi(si)} साधारण ब्याज मिलता है। "
+                   f"वार्षिक ब्याज दर ज्ञात कीजिए।")
+        sol_hi = (f"दर = ब्याज x 100 / (मूलधन x समय) = {si} x 100 / ({p} x {t}) = {r}%।")
         stem = (f"A sum of {_rupees(p)} earns {_rupees(si)} as simple interest in {t} years. "
                 f"Find the rate of interest per annum.")
         sol = (f"R = SI x 100 / (P x T) = {si} x 100 / ({p} x {t}) = {r}%.")
         return {"stem": stem, "correct": _pct(r), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("forgot the x 100, giving a rate as a fraction", _pct(round(si / (p * t), 2))),
                     ("divided by the principal but not by the time", _pct(round(si * 100 / p, 2))),
@@ -580,12 +646,18 @@ def _b_si(rng, diff):
     x = _mult(rng, 1, (total // 1000) - 1 or 1, 1000)      # the part lent at r%
     y = total - x
     interest = (x * r + y * r2) // 100                      # for one year
+    stem_hi = (f"{_ru_hi(total)} की राशि का कुछ भाग {r}% वार्षिक तथा शेष {r2}% वार्षिक साधारण "
+               f"ब्याज पर उधार दिया जाता है। यदि एक वर्ष का कुल ब्याज {_ru_hi(interest)} है, तो "
+               f"{r}% पर दिया गया भाग ज्ञात कीजिए।")
+    sol_hi = (f"माना {r}% पर दी गई राशि x है। तब x x {r}/100 + ({total} - x) x {r2}/100 = "
+              f"{interest}। हल करने पर x = {_ru_hi(x)}।")
     stem = (f"A sum of {_rupees(total)} is lent partly at {r}% and the rest at {r2}% per annum "
             f"simple interest. If the total interest for one year is {_rupees(interest)}, find "
             f"the part lent at {r}%.")
     sol = (f"Let the part at {r}% be x. Then x x {r}/100 + ({total} - x) x {r2}/100 = {interest}. "
            f"Solving, x = {_rupees(x)}.")
     return {"stem": stem, "correct": _rupees(x), "solution": sol,
+            "stem_hi": stem_hi, "solution_hi": sol_hi,
             "mistakes": mistakes(
                 ("solved for the OTHER part, lent at {}%".format(r2), _rupees(y)),
                 ("split the sum in the ratio of the two rates instead of solving",
@@ -609,11 +681,16 @@ def _b_ci(rng, diff):
         amt = Fraction(p) * (1 + Fraction(r, 100)) ** t
         ci = amt - p
         si = p * r * t // 100
+        stem_hi = (f"{_ru_hi(p)} पर {r}% वार्षिक की दर से {t} वर्षों का चक्रवृद्धि ब्याज "
+                   f"ज्ञात कीजिए (वार्षिक चक्रवृद्धि)।")
+        sol_hi = (f"मिश्रधन = मूलधन(1 + दर/100)^समय = {p}(1 + {r}/100)^2 = {_num(amt)}। "
+                  f"चक्रवृद्धि ब्याज = मिश्रधन - मूलधन = {_num(amt)} - {p} = {_num(ci)}।")
         stem = (f"Find the compound interest on {_rupees(p)} at {r}% per annum for {t} years "
                 f"(compounded annually).")
         sol = (f"Amount = P(1 + R/100)^T = {p}(1 + {r}/100)^2 = {_num(amt)}. "
                f"CI = Amount - P = {_num(amt)} - {p} = {_num(ci)}.")
         return {"stem": stem, "correct": _rupees(float(ci)), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("used SIMPLE interest", _rupees(si)),
                     ("gave the AMOUNT instead of the interest", _rupees(float(amt))),
@@ -621,10 +698,14 @@ def _b_ci(rng, diff):
                 "concept": "Compound Interest"}
     if diff == 2:
         diffv = Fraction(p) * Fraction(r, 100) ** 2
+        stem_hi = (f"{_ru_hi(p)} की राशि पर {r}% वार्षिक की दर से 2 वर्षों के चक्रवृद्धि ब्याज "
+                   f"तथा साधारण ब्याज का अंतर है :")
+        sol_hi = (f"2 वर्षों का अंतर = मूलधन x (दर/100)^2 = {p} x ({r}/100)^2 = {_num(diffv)}।")
         stem = (f"The difference between the compound interest and the simple interest on a sum "
                 f"of {_rupees(p)} at {r}% per annum for 2 years is:")
         sol = f"Difference (2 years) = P(R/100)^2 = {p} x ({r}/100)^2 = {_num(diffv)}."
         return {"stem": stem, "correct": _rupees(float(diffv)), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("used P x R/100, i.e. one year's simple interest", _rupees(p * r // 100)),
                     ("doubled the difference, as if it were for two years' worth",
@@ -637,12 +718,17 @@ def _b_ci(rng, diff):
         half_r = Fraction(r, 2)
         amt = Fraction(p) * (1 + half_r / 100) ** 2
         ci = amt - p
+        stem_hi = (f"{_ru_hi(p)} पर {r}% वार्षिक की दर से {t} वर्ष का चक्रवृद्धि ब्याज "
+                   f"ज्ञात कीजिए, जबकि ब्याज अर्धवार्षिक रूप से संयोजित होता है।")
+        sol_hi = (f"अर्धवार्षिक : दर = {r}/2 = {_num(half_r)}% प्रति छमाही, अवधियाँ = 2। "
+                  f"मिश्रधन = {p}(1 + {_num(half_r)}/100)^2 = {_num(amt)}; ब्याज = {_num(ci)}।")
         stem = (f"Find the compound interest on {_rupees(p)} at {r}% per annum for {t} year, "
                 f"compounded half-yearly.")
         sol = (f"Half-yearly: rate = {r}/2 = {_num(half_r)}% per half-year, periods = 2. "
                f"Amount = {p}(1 + {_num(half_r)}/100)^2 = {_num(amt)}; CI = {_num(ci)}.")
         annual = Fraction(p) * (1 + Fraction(r, 100)) - p
         return {"stem": stem, "correct": _rupees(float(ci)), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("halved the rate but forgot to double the periods",
                      _rupees(float(Fraction(p) * (1 + half_r / 100) - p))),
@@ -655,10 +741,14 @@ def _b_ci(rng, diff):
     if amt.denominator != 1:                      # the amount is PRINTED, so keep it exact
         p = _mult(rng, 4, 20, 10000)
         amt = Fraction(p) * (1 + Fraction(r, 100)) ** 2
+    stem_hi = (f"कोई राशि {r}% वार्षिक चक्रवृद्धि ब्याज की दर से 2 वर्षों में "
+               f"{_ru_hi(float(amt))} हो जाती है। वह राशि ज्ञात कीजिए।")
+    sol_hi = (f"मूलधन = मिश्रधन / (1 + दर/100)^2 = {_num(amt)} / (1 + {r}/100)^2 = {_ru_hi(p)}।")
     stem = (f"A sum of money amounts to {_rupees(float(amt))} in 2 years at {r}% per annum "
             f"compound interest. Find the sum.")
     sol = (f"P = Amount / (1 + R/100)^2 = {_num(amt)} / (1 + {r}/100)^2 = {_rupees(p)}.")
     return {"stem": stem, "correct": _rupees(p), "solution": sol,
+            "stem_hi": stem_hi, "solution_hi": sol_hi,
             "mistakes": mistakes(
                 ("subtracted 2 x {}% of the amount, i.e. worked it as simple interest"
                  .format(r), _rupees(float(amt * (1 - Fraction(2 * r, 100))))),
@@ -682,12 +772,19 @@ def _b_ratio(rng, diff):
         who = rng.randint(0, 2)
         parts = [a, b, c]
         share = parts[who] * unit
+        who_hi = ["पहले", "दूसरे", "तीसरे"][who]
+        stem_hi = (f"{_ru_hi(total)} की राशि तीन व्यक्तियों में {a} : {b} : {c} के अनुपात में "
+                   f"बाँटी जाती है। {who_hi} व्यक्ति का हिस्सा ज्ञात कीजिए।")
+        sol_hi = (f"कुल अनुपात इकाइयाँ = {a}+{b}+{c} = {a + b + c}। एक इकाई = "
+                  f"{total}/{a + b + c} = {unit}। हिस्सा = {parts[who]} x {unit} = "
+                  f"{_ru_hi(share)}।")
         stem = (f"An amount of {_rupees(total)} is divided among three people in the ratio "
                 f"{a} : {b} : {c}. Find the share of the "
                 f"{['first', 'second', 'third'][who]} person.")
         sol = (f"Total ratio units = {a}+{b}+{c} = {a + b + c}. One unit = {total}/{a + b + c} "
                f"= {unit}. Share = {parts[who]} x {unit} = {_rupees(share)}.")
         return {"stem": stem, "correct": _rupees(share), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("gave another person's share", _rupees(parts[(who + 1) % 3] * unit)),
                     ("divided the total equally instead of by the ratio",
@@ -699,11 +796,16 @@ def _b_ratio(rng, diff):
         hi, lo = max(a, b), min(a, b)
         gap = (hi - lo) * unit
         total = (hi + lo) * unit
+        stem_hi = (f"दो व्यक्ति किसी राशि को {hi} : {lo} के अनुपात में बाँटते हैं। यदि पहले "
+                   f"व्यक्ति को दूसरे से {_ru_hi(gap)} अधिक मिलते हैं, तो कुल राशि ज्ञात कीजिए।")
+        sol_hi = (f"अंतर = {hi} - {lo} = {hi - lo} इकाई = {_ru_hi(gap)}, अतः एक इकाई = "
+                  f"{_ru_hi(unit)}। कुल = ({hi} + {lo}) x {unit} = {_ru_hi(total)}।")
         stem = (f"Two people share an amount in the ratio {hi} : {lo}. If the first receives "
                 f"{_rupees(gap)} more than the second, find the total amount shared.")
         sol = (f"The difference is {hi} - {lo} = {hi - lo} units = {_rupees(gap)}, so one unit "
                f"= {_rupees(unit)}. Total = ({hi} + {lo}) x {unit} = {_rupees(total)}.")
         return {"stem": stem, "correct": _rupees(total), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("treated the difference as the TOTAL and split it", _rupees(gap)),
                     ("divided the difference by the sum of the terms instead of the difference",
@@ -717,11 +819,16 @@ def _b_ratio(rng, diff):
         g = math.gcd(math.gcd(A, B), C)
         A, B, C = A // g, B // g, C // g
         total = (A + B + C) * unit
+        stem_hi = (f"यदि A : B = {a} : {b} तथा B : C = {b2} : {c2} है, और {_ru_hi(total)} की "
+                   f"राशि A, B तथा C में उसी अनुपात में बाँटी जाती है, तो C का हिस्सा ज्ञात कीजिए।")
+        sol_hi = (f"A : B : C = {A} : {B} : {C}। एक इकाई = {total}/{A + B + C} = {unit}। "
+                  f"C का हिस्सा = {C} x {unit} = {_ru_hi(C * unit)}।")
         stem = (f"If A : B = {a} : {b} and B : C = {b2} : {c2}, and {_rupees(total)} is divided "
                 f"among A, B and C in that ratio, find C's share.")
         sol = (f"A : B : C = {A} : {B} : {C}. One unit = {total}/{A + B + C} = {unit}. "
                f"C's share = {C} x {unit} = {_rupees(C * unit)}.")
         return {"stem": stem, "correct": _rupees(C * unit), "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("used c2 as C's term without linking the two ratios through B",
                      _rupees(total * c2 // (a + b + c2))),
@@ -735,12 +842,19 @@ def _b_ratio(rng, diff):
     add = _mult(rng, 1, 6, 10)
     A0, B0 = x * k, y * k
     g = math.gcd(A0 + add, B0 + add)
+    stem_hi = (f"दो संख्याएँ {x} : {y} के अनुपात में हैं। यदि प्रत्येक में {add} जोड़ दिया जाए, "
+               f"तो अनुपात {(A0 + add) // g} : {(B0 + add) // g} हो जाता है। छोटी संख्या "
+               f"ज्ञात कीजिए।")
+    sol_hi = (f"माना संख्याएँ {x}n तथा {y}n हैं। तब ({x}n + {add}) : ({y}n + {add}) = "
+              f"{(A0 + add) // g} : {(B0 + add) // g}, जिससे n = {k}। "
+              f"छोटी संख्या = {x} x {k} = {A0}।")
     stem = (f"Two numbers are in the ratio {x} : {y}. If {add} is added to each, the ratio "
             f"becomes {(A0 + add) // g} : {(B0 + add) // g}. Find the smaller number.")
     sol = (f"Let the numbers be {x}n and {y}n. Then ({x}n + {add}) : ({y}n + {add}) = "
            f"{(A0 + add) // g} : {(B0 + add) // g}, giving n = {k}. "
            f"Smaller number = {x} x {k} = {A0}.")
     return {"stem": stem, "correct": _num(A0), "solution": sol,
+            "stem_hi": stem_hi, "solution_hi": sol_hi,
             "mistakes": mistakes(
                 ("gave the LARGER number", _num(B0)),
                 ("gave the smaller number AFTER the addition", _num(A0 + add)),
@@ -928,6 +1042,10 @@ def _b_time_work(rng, diff):
     b = rng.choice([x for x in (6, 8, 9, 10, 12, 15, 18, 20, 24) if x != a])
     if diff <= 1:
         tog = Fraction(a * b, a + b)
+        stem_hi = (f"A किसी कार्य को {a} दिन में तथा B उसी कार्य को {b} दिन में पूरा कर सकता है। "
+                   f"दोनों मिलकर उस कार्य को कितने दिन में पूरा करेंगे ?")
+        sol_hi = (f"A का एक दिन का कार्य = 1/{a}, B का = 1/{b}। मिलकर = 1/{a} + 1/{b}। "
+                  f"समय = {a}x{b}/({a}+{b}) = {_num(Fraction(a * b, a + b))} दिन।")
         stem = (f"A can complete a work in {a} days and B can complete it in {b} days. Working "
                 f"together, in how many days will they finish it?")
         sol = (f"A's one-day work = 1/{a}, B's = 1/{b}. Together = 1/{a} + 1/{b}. "
@@ -942,11 +1060,16 @@ def _b_time_work(rng, diff):
                      ("took the plain average of the two times",
                       _num(Fraction(a + b, 2)) + " days"))
         return {"stem": stem, "correct": _num(tog) + " days", "mistakes": d,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "solution": sol, "concept": "Time & Work"}
     if diff == 2:
         worked = rng.randint(2, a - 2)
         rem = 1 - Fraction(worked, a)
         b_time = rem * b
+        stem_hi = (f"A किसी कार्य को {a} दिन में तथा B उसे {b} दिन में कर सकता है। A अकेले "
+                   f"{worked} दिन कार्य करके छोड़ देता है। शेष कार्य को B कितने दिन में पूरा करेगा ?")
+        sol_hi = (f"A ने {worked}/{a} कार्य किया, शेष = {_frac(rem)}। "
+                  f"B को चाहिए {_frac(rem)} x {b} = {_num(b_time)} दिन।")
         stem = (f"A can do a piece of work in {a} days and B in {b} days. A works alone for "
                 f"{worked} days and then leaves. In how many days will B finish the remaining "
                 f"work?")
@@ -959,10 +1082,15 @@ def _b_time_work(rng, diff):
                      ("applied the remaining fraction to A's time instead of B's",
                       _num(rem * a) + " days"))
         return {"stem": stem, "correct": _num(b_time) + " days", "mistakes": d,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "solution": sol, "concept": "Time & Work"}
     if diff == 3:
         c = rng.choice([x for x in (6, 8, 9, 10, 12, 15, 18, 20, 24) if x not in (a, b)])
         tog = Fraction(1, Fraction(1, a) + Fraction(1, b) + Fraction(1, c))
+        stem_hi = (f"A, B तथा C किसी कार्य को क्रमशः {a}, {b} तथा {c} दिन में कर सकते हैं। "
+                   f"तीनों मिलकर उस कार्य को कितने दिन में पूरा करेंगे ?")
+        sol_hi = (f"तीनों का एक दिन का कार्य = 1/{a} + 1/{b} + 1/{c}। "
+                  f"समय = {_num(Fraction(1, Fraction(1, a) + Fraction(1, b) + Fraction(1, c)))} दिन।")
         stem = (f"A, B and C can do a piece of work in {a}, {b} and {c} days respectively. "
                 f"Working together, in how many days will they complete it?")
         sol = (f"Combined one-day work = 1/{a} + 1/{b} + 1/{c} = "
@@ -975,6 +1103,7 @@ def _b_time_work(rng, diff):
                       _num(Fraction(1, Fraction(1, min(a, b, c)) +
                                     Fraction(1, sorted((a, b, c))[1]))) + " days"))
         return {"stem": stem, "correct": _num(tog) + " days", "mistakes": d,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "solution": sol, "concept": "Time & Work"}
     # diff 4+ : given together-time and A alone, find B alone.
     # The joint time is PRINTED, so it has to be exact. Left as a raw fraction it printed rounded
@@ -987,6 +1116,10 @@ def _b_time_work(rng, diff):
              if x != y and Fraction(x * y, x + y).denominator in (1, 2, 4, 5, 10, 20, 25, 50, 100)]
     a, b = rng.choice(pairs)
     tog = Fraction(a * b, a + b)
+    stem_hi = (f"A और B मिलकर किसी कार्य को {_num(tog)} दिन में पूरा कर सकते हैं। A अकेले उसे "
+               f"{a} दिन में कर सकता है। B अकेले उस कार्य को कितने दिन में पूरा करेगा ?")
+    sol_hi = (f"B का एक दिन का कार्य = 1/{_num(tog)} - 1/{a} = {_frac(Fraction(1, b))}। "
+              f"अतः B अकेले {b} दिन लेगा।")
     stem = (f"A and B together can complete a work in {_num(tog)} days. A alone can do it in "
             f"{a} days. In how many days can B alone complete the work?")
     sol = (f"B's one-day work = 1/{_num(tog)} - 1/{a} = {_frac(Fraction(1, b))}. "
@@ -996,6 +1129,7 @@ def _b_time_work(rng, diff):
                  ("added the times", _num(a + tog) + " days"),
                  ("doubled the joint time", _num(tog * 2) + " days"))
     return {"stem": stem, "correct": _num(b) + " days", "mistakes": d,
+            "stem_hi": stem_hi, "solution_hi": sol_hi,
             "solution": sol, "concept": "Time & Work"}
 
 def _b_pipes(rng, diff):
@@ -1126,12 +1260,18 @@ def _b_boats(rng, diff):
         t = rng.randint(2, 5)
         dist = eff * t
         dirn = "downstream" if mode == "down" else "upstream"
+        dirn_hi = "धारा की दिशा में" if mode == "down" else "धारा के विपरीत"
+        stem_hi = (f"शांत जल में एक नाव की चाल {b} किमी/घंटा तथा धारा की चाल {s} किमी/घंटा है। "
+                   f"नाव {t} घंटों में {dirn_hi} कितनी दूर जा सकती है ?")
+        sol_hi = (f"{dirn_hi} चाल = {b} {'+' if mode == 'down' else '-'} {s} = {eff} किमी/घंटा। "
+                  f"दूरी = {eff} x {t} = {dist} किमी।")
         stem = (f"The speed of a boat in still water is {b} km/hr and the speed of the stream is "
                 f"{s} km/hr. How far can the boat travel {dirn} in {t} hours?")
         sol = (f"{dirn.capitalize()} speed = {b} {'+' if mode == 'down' else '-'} {s} = {eff} "
                f"km/hr. Distance = {eff} x {t} = {dist} km.")
         wrong_dir = (b - s if mode == "down" else b + s) * t
         return {"stem": stem, "correct": f"{dist} km", "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("{} the stream speed instead of {}".format(
                         "subtracted" if mode == "down" else "added",
@@ -1143,10 +1283,14 @@ def _b_boats(rng, diff):
                 "concept": "Boats & Streams"}
     if diff == 2:
         down, up = b + s, b - s
+        stem_hi = (f"एक नाव धारा की दिशा में {down} किमी/घंटा तथा धारा के विपरीत {up} किमी/घंटा "
+                   f"की चाल से चलती है। शांत जल में नाव की चाल ज्ञात कीजिए।")
+        sol_hi = (f"नाव की चाल = (अनुकूल + प्रतिकूल)/2 = ({down} + {up})/2 = {b} किमी/घंटा।")
         stem = (f"A boat covers {down} km/hr downstream and {up} km/hr upstream. Find the speed "
                 f"of the boat in still water.")
         sol = (f"Boat speed = (downstream + upstream)/2 = ({down} + {up})/2 = {b} km/hr.")
         return {"stem": stem, "correct": f"{b} km/hr", "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("used the DIFFERENCE over 2, which gives the stream's speed",
                      f"{s} km/hr"),
@@ -1159,12 +1303,19 @@ def _b_boats(rng, diff):
         t_up = Fraction(dist, b - s)
         if t_up.denominator != 1:                    # the time is PRINTED, keep it exact
             return _b_boats(rng, 2)
+        stem_hi = (f"एक नाव {dist} किमी की दूरी धारा की दिशा में {t_down} घंटे में तथा उतनी ही "
+                   f"दूरी धारा के विपरीत {_num(t_up)} घंटे में तय करती है। धारा की चाल "
+                   f"ज्ञात कीजिए।")
+        sol_hi = (f"अनुकूल चाल = {dist}/{t_down} = {b + s} किमी/घंटा; प्रतिकूल = "
+                  f"{dist}/{_num(t_up)} = {b - s} किमी/घंटा। धारा = "
+                  f"({b + s} - {b - s})/2 = {s} किमी/घंटा।")
         stem = (f"A boat covers {dist} km downstream in {t_down} hours and the same distance "
                 f"upstream in {_num(t_up)} hours. Find the speed of the stream.")
         sol = (f"Downstream speed = {dist}/{t_down} = {b + s} km/hr; upstream = "
                f"{dist}/{_num(t_up)} = {b - s} km/hr. Stream = "
                f"({b + s} - {b - s})/2 = {s} km/hr.")
         return {"stem": stem, "correct": f"{s} km/hr", "solution": sol,
+                "stem_hi": stem_hi, "solution_hi": sol_hi,
                 "mistakes": mistakes(
                     ("used the SUM over 2, which gives the boat's speed", f"{b} km/hr"),
                     ("subtracted the two speeds without halving", f"{2 * s} km/hr"),
@@ -1175,12 +1326,18 @@ def _b_boats(rng, diff):
     down, up = b + s, b - s
     dist = down * up * rng.randint(1, 3)            # makes both legs exact
     total = Fraction(dist, down) + Fraction(dist, up)
+    stem_hi = (f"शांत जल में जिस नाव की चाल {b} किमी/घंटा है, वह एक स्थान तक जाकर वापस आती है। "
+               f"धारा की चाल {s} किमी/घंटा है तथा पूरी यात्रा में {_num(total)} घंटे लगते हैं। "
+               f"वह स्थान कितनी दूर है ?")
+    sol_hi = (f"अनुकूल चाल {down} किमी/घंटा, प्रतिकूल {up} किमी/घंटा। "
+              f"d/{down} + d/{up} = {_num(total)}, अतः d = {dist} किमी।")
     stem = (f"A boat whose speed in still water is {b} km/hr rows to a place and comes back. "
             f"The stream flows at {s} km/hr and the whole trip takes {_num(total)} hours. "
             f"How far is the place?")
     sol = (f"Downstream {down} km/hr, upstream {up} km/hr. d/{down} + d/{up} = {_num(total)}, "
            f"so d = {dist} km.")
     return {"stem": stem, "correct": f"{dist} km", "solution": sol,
+            "stem_hi": stem_hi, "solution_hi": sol_hi,
             "mistakes": mistakes(
                 ("used the still-water speed for both legs", f"{_num(Fraction(total * b, 2))} km"),
                 ("treated the total time as the one-way time downstream",

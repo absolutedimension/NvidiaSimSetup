@@ -219,10 +219,6 @@ def generate_maths(n, diff, exclude_sigs, bilingual):
     half-translated section. Hindi templates over the same computation are the fix — the answer is
     computed, so a number cannot drift between the two languages the way a translation can.
     """
-    if bilingual:
-        print(f"  MATHS GENERATION SKIPPED: quantgen has no Hindi, and this paper is bilingual. "
-              f"{n} difficulty-{diff} question(s) that could have been generated were not.")
-        return []
     sys.path.insert(0, str(REPO / "question_bank_engine"))
     try:
         from qbank import quantgen
@@ -241,8 +237,15 @@ def generate_maths(n, diff, exclude_sigs, bilingual):
             if len(out) >= n:
                 break
             q = quantgen._make_question(build(rng, diff), rng, {"chapter": "Arithmetic"})
-            row = {"stem": q.stem, "options": q.options, "correct_answer": q.correct_answer,
-                   "solution": q.solution, "concept": q.concept, "_generated": True,
+            # A bilingual paper takes only the builders that have Hindi. Not all 23 do, and a
+            # half-Hindi section would break the one promise the paper makes to a Hindi-medium
+            # student — so the filter is per QUESTION, not a blanket refusal.
+            if bilingual and not q.stem_hi:
+                continue
+            row = {"stem": q.stem, "stem_hi": q.stem_hi, "options": q.options,
+                   "options_hi": q.options_hi, "correct_answer": q.correct_answer,
+                   "solution": q.solution, "solution_hi": q.solution_hi,
+                   "concept": q.concept, "_generated": True,
                    "tag": {"section": "Mathematics", "difficulty": diff},
                    "source_pdf": "quantgen", "number": None}
             # The syllabus gate belongs to the Inter Level paper, not to every paper.
@@ -395,6 +398,11 @@ def main():
                     help="Which Hindi Language section to print. DEFAULT IS 'generated' because "
                          "the REAL Hindi-language questions in these papers are badly OCR-corrupted "
                          "- see the note in load_hindi_generated().")
+    ap.add_argument("--show-difficulty", action="store_true",
+                    help="Print a difficulty badge (सरल / मध्यम / कठिन) beside every question. "
+                         "This is for a REVIEW copy sent to the institute, not for students: it "
+                         "turns 'the paper is too basic' into per-question feedback we can act "
+                         "on, and it primes a student who sees it before answering.")
     ap.add_argument("--generate-maths", action="store_true",
                     help="Fill any HARD maths shortfall from quantgen instead of leaving the "
                          "section short. Refused on a bilingual paper until quantgen has Hindi.")
@@ -674,6 +682,16 @@ def main():
                 i -= 1
                 continue
             block = f'<div class="q">'
+            if a.show_difficulty:
+                # The owner said "ye basic ka bhi basic hai" about a whole paper. A badge per
+                # question turns that into "question 14 is right, question 61 is too easy" —
+                # feedback we can actually build against, and the raw material for calibrating
+                # our difficulty tags against a real examiner's judgement.
+                dlab = {1: ("सरल", "Easy"), 2: ("मध्यम", "Medium")}.get(
+                    (q.get("tag") or {}).get("difficulty") or 0, ("कठिन", "Hard"))
+                src = "Acharya" if q.get("_generated") else "आयोग / official"
+                block += (f'<span class="dbadge">{dlab[0]} &middot; {dlab[1]}'
+                          f'<i>{src}</i></span>')
             if hi_stem:
                 block += (f'<div class="hi"><span class="n">{i}.</span> {esc(hi_stem)}</div>'
                           f'<div class="ops">{oh_html}</div>')
@@ -834,6 +852,9 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
           border:1px solid #c9a227; border-radius:3px; padding:2px 9px; background:#fdfaf0; }}
 .src {{ font-size:7.4pt; color:#9296a2; margin-top:10px; }}
 {WATERMARK_CSS}
+.dbadge {{ float:right; font-size:7pt; color:#8a6d1a; border:1px solid #e0dccc;
+          border-radius:3px; padding:1px 6px; background:#faf8f1; margin-left:6px; }}
+.dbadge i {{ font-style:normal; color:#9296a2; display:block; font-size:6.3pt; }}
 .foot {{ border-top:1px solid #ddd8c8; margin-top:12px; padding-top:4px; font-size:7.3pt; color:#9296a2; text-align:center; }}
 </style></head><body>
 {COVER if a.inter_level else ""}

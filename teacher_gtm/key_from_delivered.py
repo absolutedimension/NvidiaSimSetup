@@ -127,6 +127,14 @@ def main():
             index(q, real, real_opts)
     for q in json.load(io.open(os.path.join(BSSC, "REASONING_GEN.json"), encoding="utf-8")):
         index(q, gen, gen_opts)
+    # Maths generated at BUILD time by quantgen never touches REASONING_GEN.json, so without this
+    # its ten questions came back untraceable and the verification sheet lost their worked
+    # solutions — the one column that makes a generated question checkable at all. The manifest
+    # records them in full, so it is the second generated pool.
+    if a.freeze_manifest and os.path.exists(a.freeze_manifest):
+        man = json.load(io.open(a.freeze_manifest, encoding="utf-8"))
+        for q in (man.get(str(a.set), {}) or {}).get("gen_full", []):
+            index(q, gen, gen_opts)
 
     rows, unmatched, gen_full = [], 0, []
     for i, block in enumerate(blocks, 1):
