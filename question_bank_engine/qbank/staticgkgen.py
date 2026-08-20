@@ -16,6 +16,7 @@ maps to builders; a builder(rng, diff) returns {stem, correct, distractors, solu
 import hashlib
 import random
 
+from . import staticgk_hi as GKHI
 from .models import Question, content_hash
 
 SUBJECT = "General Knowledge"
@@ -56,6 +57,11 @@ def _make_question(built, rng, spec):
     q = Question(
         id=qid, exam=spec.get("exam") or EXAM, subject=spec.get("subject") or SUBJECT,
         stem=stem, qtype="MCQ_single", options=options, correct_answer=ans,
+        stem_hi=(built.get("stem_hi") or "").strip(),
+        solution_hi=(built.get("solution_hi") or "").strip(),
+        options_hi=([{"label": o["label"],
+                      "text": (built.get("hi_opts") or {}).get(o["text"], o["text"])}
+                     for o in options] if built.get("stem_hi") else []),
         solution=built.get("solution", ""), chapter=spec.get("chapter"),
         concept=built.get("concept"), difficulty=diff, source="staticgkgen",
         generated=True, hash=content_hash(stem))
@@ -207,15 +213,27 @@ FIRSTS = [
 # =============================================================================
 
 def _b_forward(table, q_tmpl, concept, unit=""):
-    """Factory: 'What is the <fact> of <key>?' correct=value, distractors=other values."""
+    """Factory: 'What is the <fact> of <key>?' correct=value, distractors=other values.
+
+    Hindi rides along only when staticgk_hi has hand-written every part — template, key, answer
+    and all three distractors. Partial coverage yields an English-only question rather than a
+    half-Hindi one, and a bilingual paper then simply does not draw it.
+    """
     def build(rng, diff):
         k = rng.choice(list(table))
         v = table[k]
         stem = q_tmpl.format(k=k)
         d = _distractors(list(table.values()), v, rng)
-        return {"stem": stem, "correct": f"{v}{unit}",
-                "distractors": [f"{x}{unit}" for x in d],
-                "solution": stem + f" {v}{unit}.", "concept": concept}
+        out = {"stem": stem, "correct": f"{v}{unit}",
+               "distractors": [f"{x}{unit}" for x in d],
+               "solution": stem + f" {v}{unit}.", "concept": concept}
+        bi = GKHI.bilingual(q_tmpl, k, v, d) if not unit else None
+        if bi:
+            out["stem_hi"] = bi["tmpl"].format(k=bi["key"])
+            out["solution_hi"] = bi["tmpl"].format(k=bi["key"]) + f" उत्तर: {bi['correct']}।"
+            out["hi_opts"] = dict(zip([f"{v}{unit}"] + [f"{x}{unit}" for x in d],
+                                      [bi["correct"]] + bi["distractors"]))
+        return out
     return build
 
 def _b_reverse(table, q_tmpl, concept):

@@ -263,6 +263,59 @@ def generate_maths(n, diff, exclude_sigs, bilingual):
     return out
 
 
+def generate_static_gk(n, exclude_sigs, bilingual):
+    """Fill a General Studies shortfall from staticgkgen — correct-by-construction, not recall.
+
+    OFF BY DEFAULT, and the reason matters. staticgkgen answers a fact by looking it up in a
+    verified table, so it can never serve a wrong key — but what it produces is "What is the
+    capital of Chhattisgarh?", which is difficulty-1 recall. That is the same register as the
+    "Who is the Speaker?" questions One Step's owner read and called "basic ka bhi basic". Adding
+    them would make the paper WORSE by the standard he actually gave us, so the paper only draws
+    them when explicitly asked.
+
+    What makes this data useful for a hard paper is not more recall questions over it — it is
+    re-forming these verified facts into multi-statement, assertion-reason and match-the-pairs
+    questions, where the false statements are DERIVED from the same tables rather than asserted.
+    That is the next build, and this engine is its data layer.
+    """
+    sys.path.insert(0, str(REPO / "question_bank_engine"))
+    try:
+        from qbank import staticgkgen
+    except Exception as e:
+        print(f"  staticgkgen unavailable ({e})")
+        return []
+    rng = random.Random(20260820)
+    out, seen = [], set(exclude_sigs)
+    builders = [b for bs in staticgkgen._CHAP_BUILDERS.values() for b in bs]
+    rng.shuffle(builders)
+    for _ in range(80):
+        for build in builders:
+            if len(out) >= n:
+                break
+            try:
+                b = build(rng, 2)
+            except Exception:
+                continue
+            if bilingual and not b.get("stem_hi"):
+                continue          # staticgk_hi gates all-or-nothing; never half-Hindi
+            q = staticgkgen._make_question(b, rng, {"chapter": "Static GK"})
+            row = {"stem": q.stem, "stem_hi": q.stem_hi, "options": q.options,
+                   "options_hi": q.options_hi, "correct_answer": q.correct_answer,
+                   "solution": q.solution, "solution_hi": q.solution_hi,
+                   "concept": q.concept, "_generated": True,
+                   "tag": {"section": "General Studies", "difficulty": 1},
+                   "source_pdf": "staticgkgen", "number": None}
+            g = gen_sig(row)
+            if g in seen:
+                continue
+            seen.add(g)
+            out.append(row)
+        if len(out) >= n:
+            break
+    print(f"  generated {len(out)} Static GK question(s) — NOTE: difficulty 1, factual recall")
+    return out
+
+
 def load_hindi_generated(n, cap_per_concept=6, exclude=frozenset()):
     """The Hindi Language section, from `hindigen` rather than from the real papers.
 
@@ -398,6 +451,10 @@ def main():
                     help="Which Hindi Language section to print. DEFAULT IS 'generated' because "
                          "the REAL Hindi-language questions in these papers are badly OCR-corrupted "
                          "- see the note in load_hindi_generated().")
+    ap.add_argument("--generate-gk", action="store_true",
+                    help="Top up a General Studies shortfall from staticgkgen. OFF by default: "
+                         "its questions are correct-by-construction but difficulty-1 recall, "
+                         "which is the register the institute already rejected.")
     ap.add_argument("--show-difficulty", action="store_true",
                     help="Print a difficulty badge (सरल / मध्यम / कठिन) beside every question. "
                          "This is for a REVIEW copy sent to the institute, not for students: it "
@@ -583,6 +640,10 @@ def main():
         # A maths section that came back short of HARD questions can be topped up by generation —
         # the bank has no difficulty-3 arithmetic to give, and that is the whole reason the mix
         # could not be met.
+        if a.generate_gk and "General Studies" in secs and len(got) < target:
+            fresh = generate_static_gk(target - len(got), gen_taken, a.inter_level)
+            gen_taken |= {gen_sig(q) for q in fresh}
+            got += fresh
         if a.generate_maths and "Mathematics" in secs:
             want = mix_for(target)
             have3 = sum(1 for q in got if ((q.get("tag") or {}).get("difficulty") or 0) >= 3)
