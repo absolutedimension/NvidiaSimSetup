@@ -82,6 +82,76 @@
       "source_pdf": "Qn_SET_A.pdf",
       "number": 23,
       "reason": "The fraction was lost in extraction: the stem prints 'x + 2 x + 3 > 1' where the original is (x+2)/(x+3) > 1. The keyed answer 0 is right for the original; the printed inequality is meaningless."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 96,
+      "reason": "Garbled stem — not a question."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 97,
+      "reason": "Orphaned passage fragment — 'in the context of boys/home/physical education' with no passage."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 98,
+      "reason": "Orphaned passage fragment."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 99,
+      "reason": "Orphaned passage fragment — 'in the context of boys/home/physical education' with no passage."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 35,
+      "reason": "Incomplete stem — 'the principle' has no referent. Nothing to answer."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 36,
+      "reason": "Garbled: options 1947/1950/1975/2000 with 1975 keyed. Not a coherent question."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 40,
+      "reason": "Garbled stem ('air dock'), and one option is itself OCR garbage."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 45,
+      "reason": "Stem is a mistranslation: it asks about climate change while the options are four 1919 dates (the real question was Jallianwala Bagh)."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 100,
+      "reason": "Key verified C = '14 मार्च', but Ambedkar was born 14 APRIL 1891 and '14 अप्रैल' is option B. The key matches the commission page, so the OPTION extraction is what is wrong. Either way the paper would mark a factually false date correct."
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 46,
+      "reason": "Refers to statements that are not printed."
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 53,
+      "reason": "Match-the-columns with NO columns printed — the lists did not survive extraction."
+    },
+    {
+      "source_pdf": "0225_SET-A.pdf",
+      "number": 21,
+      "reason": "Spreadsheet/IT question. Computer knowledge is NOT in the Inter Level prelim syllabus — it is a separate technical eligibility requirement."
+    },
+    {
+      "source_pdf": "0225_SET-A.pdf",
+      "number": 26,
+      "reason": "Orphaned comprehension question about an absent passage."
+    },
+    {
+      "source_pdf": "0225_SET-A.pdf",
+      "number": 28,
+      "reason": "Orphaned comprehension question: refers to a passage about a cleanup drive that is not on the paper."
     }
   ],
   "excluded_sources": [
