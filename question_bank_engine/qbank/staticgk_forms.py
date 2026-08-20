@@ -152,3 +152,50 @@ def b_match_pairs(tables):
         return {"stem": stem, "stem_hi": stem_hi, "correct": correct, "distractors": d,
                 "solution": sol, "solution_hi": sol_hi, "concept": "Match the Pairs"}
     return build
+
+_PAIR = {(True, True): "Both 1 and 2", (True, False): "1 only",
+         (False, True): "2 only", (False, False): "Neither 1 nor 2"}
+_PAIR_HI = {"Both 1 and 2": "1 और 2 दोनों", "1 only": "केवल 1", "2 only": "केवल 2",
+            "Neither 1 nor 2": "न तो 1 और न ही 2"}
+
+
+def b_two_statement(tables):
+    """TWO statements rather than three — the missing MEDIUM band in General Studies.
+
+    GS had only two registers: difficulty-1 recall and the difficulty-3 three-statement form, with
+    nothing between, so a 15/15/70 mix could not be filled in that section at all. Two statements
+    is a genuine middle: the candidate still has to judge each claim rather than recall one, but
+    holds half the load and picks from four options instead of eight.
+
+    Same guarantee as the three-statement form — a statement is a (key, value) pair from a verified
+    table, and a false one pairs a key with a different value from the SAME table.
+    """
+    def build(rng, diff):
+        names = [n for n in STATEMENTS if _bilingual_keys(tables[n])]
+        rng.shuffle(names)
+        picks, truth = [], []
+        for name in (names * 2)[:2]:
+            table, tmpl = tables[name], STATEMENTS[name]
+            k = rng.choice(_bilingual_keys(table))
+            make_true = rng.random() < 0.5
+            v = table[k] if make_true else _false_value(table, k, rng)
+            if v is None:
+                v, make_true = table[k], True
+            picks.append(_statement(table, k, v, tmpl))
+            truth.append(make_true)
+        correct = _PAIR[tuple(truth)]
+        body = "\n".join(f"{i + 1}. {en}" for i, (en, _) in enumerate(picks))
+        body_hi = "\n".join(f"{i + 1}. {h}" for i, (_, h) in enumerate(picks))
+        stem = ("Consider the following statements:\n" + body +
+                "\nWhich of the statements given above is/are correct?")
+        stem_hi = ("निम्नलिखित कथनों पर विचार कीजिए:\n" + body_hi +
+                   "\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?")
+        d = [x for x in _PAIR.values() if x != correct]
+        sol = ("; ".join(f"{i + 1} is {'correct' if t else 'incorrect'}"
+                         for i, t in enumerate(truth)) + f". So {correct}.")
+        sol_hi = ("; ".join(f"{i + 1} {'सही' if t else 'गलत'} है"
+                            for i, t in enumerate(truth)) + f"। अतः {_PAIR_HI[correct]}।")
+        return {"stem": stem, "stem_hi": stem_hi, "correct": correct, "distractors": d,
+                "hi_opts": {x: _PAIR_HI[x] for x in [correct] + d},
+                "solution": sol, "solution_hi": sol_hi, "concept": "Statement-based GS"}
+    return build

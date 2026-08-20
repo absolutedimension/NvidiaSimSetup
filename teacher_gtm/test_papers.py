@@ -872,5 +872,77 @@ def solve_science(en):
 SOLVERS += [("general-science", solve_science)]
 
 
+# ── reasoning forms added when reasoninggen learned difficulty ──────────────────────────────────
+# The pre-difficulty solvers answered the question they EXPECTED rather than the one printed: the
+# two-position ranking solver ran on the difficulty-4 INTERCHANGE form, and the blood-relation
+# solver computed the forward relation on the difficulty-4 REVERSED form. Six questions "failed"
+# that were correctly keyed. These handle the new forms, and they are registered BEFORE nothing —
+# the dispatch takes the first solver that returns a value, so each of these refuses anything that
+# is not its own form.
+
+def solve_ranking_interchange(en):
+    m = re.search(r"row of (\d+) students, (\w+) is (\d+)(?:st|nd|rd|th) from the left end\. "
+                  r"(\w+) is (\d+)(?:st|nd|rd|th) from the left end\. If .*?interchange", en,
+                  re.S)
+    if not m or "from the RIGHT end" not in en:
+        return None
+    total, second = int(m.group(1)), int(m.group(5))
+    return str(total - second + 1)          # the first person takes the second's seat
+
+
+def solve_ranking_between(en):
+    m = re.search(r"row of (\d+) students, \w+ is (\d+)(?:st|nd|rd|th) from the left end and "
+                  r"\w+ is (\d+)(?:st|nd|rd|th) from the right end\. How many students are "
+                  r"sitting between", en, re.S)
+    if not m:
+        return None
+    total, left, right = (int(m.group(i)) for i in (1, 2, 3))
+    return str((total - right + 1) - left - 1)
+
+
+_INVERSE = {"grandfather": "grandson", "grandmother": "granddaughter",
+            "grandson": "grandfather", "granddaughter": "grandmother",
+            "uncle": "nephew", "aunt": "niece", "nephew": "uncle", "niece": "aunt",
+            "father": "son", "mother": "daughter", "brother": "brother", "sister": "sister",
+            "son": "father", "daughter": "mother"}
+_KIN2 = {("father", "father"): "grandfather", ("father", "mother"): "grandfather",
+         ("mother", "father"): "grandmother", ("mother", "mother"): "grandmother",
+         ("son", "son"): "grandson", ("son", "daughter"): "grandson",
+         ("daughter", "son"): "granddaughter", ("daughter", "daughter"): "granddaughter",
+         ("brother", "father"): "uncle", ("brother", "mother"): "uncle",
+         ("sister", "father"): "aunt", ("sister", "mother"): "aunt",
+         ("father", "brother"): "father", ("father", "sister"): "father",
+         ("mother", "brother"): "mother", ("mother", "sister"): "mother",
+         ("son", "brother"): "nephew", ("son", "sister"): "nephew",
+         ("daughter", "brother"): "niece", ("daughter", "sister"): "niece"}
+
+
+def solve_blood_relation_chain(en):
+    """Compose the stated links, and invert when the question asks the other way round."""
+    links = re.findall(r"(\w+) is the (\w+) of (\w+)", en)
+    ask = re.search(r"How is (\w+) related to (\w+)\?", en)
+    if len(links) < 2 or not ask:
+        return None
+    who, to = ask.groups()
+    rel = {(a, b): r for a, r, b in links}
+    chain = [links[0][0]] + [l[2] for l in links]
+    cur = rel.get((chain[0], chain[1]))
+    for i in range(1, len(chain) - 1):
+        cur = _KIN2.get((cur, rel.get((chain[i], chain[i + 1]))))
+        if cur is None:
+            return None
+    if who == chain[0] and to == chain[-1]:
+        return cur.capitalize()
+    if who == chain[-1] and to == chain[0]:
+        inv = _INVERSE.get(cur)
+        return inv.capitalize() if inv else None
+    return None
+
+
+SOLVERS = ([("ranking-interchange", solve_ranking_interchange),
+            ("ranking-between", solve_ranking_between),
+            ("blood-relation-chain", solve_blood_relation_chain)] + SOLVERS)
+
+
 if __name__ == "__main__":
     sys.exit(main())
