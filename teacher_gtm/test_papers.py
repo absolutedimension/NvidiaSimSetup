@@ -18,6 +18,7 @@ Usage:  python3 test_papers.py Set1.html Set2.html
 """
 import html
 import io
+import pathlib
 import re
 import sys
 from collections import Counter
@@ -139,7 +140,13 @@ def uniqueness(sets):
     for tag, qs, key, _g in sets:
         seen, dup = {}, []
         for q in qs:
-            nums = tuple(sorted(NUM.findall(q["en"] or q["hi"] or "")))
+            body = q["en"] or q["hi"] or ""
+            # A statement-based or match-the-pairs question is ENUMERATED, not computed. Its
+            # "1. 2. 3." are list markers, so two entirely different statement questions sharing
+            # an answer looked like one computation. The numeric signature is for arithmetic.
+            if re.search(r"Consider the following statements|Match the following", body):
+                continue
+            nums = tuple(sorted(NUM.findall(body)))
             ans = dict(q["opts"][-1]).get(key.get(q["n"]), "") if q["opts"] else ""
             if len(nums) < 2:
                 continue
@@ -737,6 +744,72 @@ SOLVERS += [("simple-interest", solve_simple_interest),
             ("ratio", solve_ratio),
             ("boats-streams", solve_boats),
             ("bodmas", solve_bodmas)]
+
+
+# ── statement-based and match-the-pairs GS ──────────────────────────────────────────────────────
+# These re-derive the answer by looking every printed statement back up in the fact TABLES. That
+# is independent of the builder in the way that matters: the builder composes a subset, and this
+# checks the composition against the data. Importing the facts is not importing the logic.
+_GK_TABLES = None
+
+
+def _gk_tables():
+    global _GK_TABLES
+    if _GK_TABLES is None:
+        sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent
+                               / "question_bank_engine"))
+        from qbank import staticgkgen as _G
+        _GK_TABLES = {"cap": _G.STATE_CAPITAL, "dance": _G.DANCE_STATE, "river": _G.RIVER_ORIGIN}
+    return _GK_TABLES
+
+
+def _stmt_true(line):
+    t = _gk_tables()
+    m = re.match(r"(.+?) is the capital of (.+?)\.$", line)
+    if m:
+        return t["cap"].get(m.group(2)) == m.group(1)
+    m = re.match(r"(.+?) is a dance form of (.+?)\.$", line)
+    if m:
+        return t["dance"].get(m.group(1)) == m.group(2)
+    m = re.match(r"The river (.+?) originates at (.+?)\.$", line)
+    if m:
+        return t["river"].get(m.group(1)) == m.group(2)
+    return None
+
+
+_SUBSET_NAME = {(True, True, True): "1, 2 and 3", (True, True, False): "1 and 2 only",
+                (True, False, True): "1 and 3 only", (False, True, True): "2 and 3 only",
+                (True, False, False): "1 only", (False, True, False): "2 only",
+                (False, False, True): "3 only", (False, False, False): "None of these"}
+
+
+def solve_multi_statement(en):
+    if "Consider the following statements" not in en:
+        return None
+    lines = re.findall(r"(?:^|\s)([123])\.\s*(.+?)(?=\s+[123]\.|\s*Which of the statements)",
+                       en)
+    if len(lines) != 3:
+        return None
+    truth = tuple(_stmt_true(t.strip()) for _, t in lines)
+    return None if None in truth else _SUBSET_NAME[truth]
+
+
+def solve_match_pairs(en):
+    if "Match the following pairs" not in en:
+        return None
+    t = _gk_tables()
+    flat = {}
+    for d in t.values():
+        flat.update(d)
+    rows = re.findall(r"([A-D])\.\s*(.+?)\s+—\s+(.+?)(?=\s+[A-D]\.|\s*Which of the pairs)", en)
+    if len(rows) != 4:
+        return None
+    good = [lab for lab, k, v in rows if flat.get(k.strip()) == v.strip()]
+    return ", ".join(good) if good else "None"
+
+
+SOLVERS += [("gs-multi-statement", solve_multi_statement),
+            ("gs-match-pairs", solve_match_pairs)]
 
 
 if __name__ == "__main__":

@@ -138,7 +138,14 @@ def _numkey(q):
     came from two different source papers, had different option sets, and both landed on one
     paper. Text signatures cannot see that; the numbers plus the answer can.
     """
-    nums = tuple(sorted(re.findall(r"\d+\.?\d*", q.get("stem") or "")))
+    stem = q.get("stem") or ""
+    # A statement-based or match-the-pairs question is ENUMERATED, not computed: its "1. 2. 3."
+    # and "A. B. C. D." are list markers, so two entirely different statement questions with the
+    # same answer looked like the same computation and the uniqueness check failed on them. The
+    # numeric key exists for arithmetic; strip the enumeration before applying it.
+    if re.search(r"Consider the following statements|Match the following", stem):
+        stem = re.sub(r"(?m)^\s*(?:\d+|[A-D])\.\s*", "", stem)
+    nums = tuple(sorted(re.findall(r"\d+\.?\d*", stem)))
     ans = next((o["text"] for o in q.get("options") or []
                 if o["label"] == q.get("correct_answer")), "")
     return ("num", nums, re.sub(r"\s+", "", str(ans))), len(nums)
@@ -263,6 +270,63 @@ def generate_maths(n, diff, exclude_sigs, bilingual):
     return out
 
 
+def generate_gs_forms(n, exclude_sigs, bilingual):
+    """Fill a General Studies HARD shortfall with statement-based and match-the-pairs questions.
+
+    This is the only way the difficulty mix can be met in GS. After every gate the bank holds 132
+    General Studies questions and ZERO above difficulty 2, so asking a real-question draw for 15
+    hard ones per section will always come back short — which the build report has been saying out
+    loud since the mix was wired.
+
+    Unlike --generate-gk, these are NOT recall. The fact is the same; the FORM does the work, and
+    the profile shows it: 31.4 words per stem against 29.7 for the hardest real GS we hold. Every
+    statement is a (key, value) pair from a verified table, and every false one pairs a key with a
+    different value from the SAME table — false by our own data rather than by a model's opinion.
+    """
+    sys.path.insert(0, str(REPO / "question_bank_engine"))
+    try:
+        from qbank import staticgkgen, staticgk_forms
+    except Exception as e:
+        print(f"  GS form generation unavailable ({e})")
+        return []
+    tables = {t: getattr(staticgkgen, t)
+              for t in ("STATE_CAPITAL", "DANCE_STATE", "RIVER_ORIGIN")}
+    builders = [staticgk_forms.b_multi_statement(tables), staticgk_forms.b_match_pairs(tables)]
+    rng = random.Random(20260820)
+    out, seen = [], set(exclude_sigs)
+    for _ in range(200):
+        for build in builders:
+            if len(out) >= n:
+                break
+            try:
+                b = build(rng, 3)
+            except Exception:
+                continue
+            if bilingual and not b.get("stem_hi"):
+                continue
+            opts = [{"label": l, "text": t} for l, t in
+                    zip("ABCD", [b["correct"]] + list(b["distractors"])[:3])]
+            hi_map = b.get("hi_opts") or {}
+            row = {"stem": b["stem"], "stem_hi": b["stem_hi"], "options": opts,
+                   "options_hi": [{"label": o["label"], "text": hi_map.get(o["text"], o["text"])}
+                                  for o in opts],
+                   "correct_answer": "A", "solution": b["solution"],
+                   "solution_hi": b.get("solution_hi", ""), "concept": b["concept"],
+                   "_generated": True,
+                   "tag": {"section": "General Studies", "difficulty": 3},
+                   "source_pdf": "staticgk_forms", "number": None}
+            g = gen_sig(row)
+            if g in seen:
+                continue
+            seen.add(g)
+            out.append(row)
+        if len(out) >= n:
+            break
+    print(f"  generated {len(out)} GS question(s) at difficulty 3 "
+          f"(statement-based / match-the-pairs)")
+    return out
+
+
 def generate_static_gk(n, exclude_sigs, bilingual):
     """Fill a General Studies shortfall from staticgkgen — correct-by-construction, not recall.
 
@@ -348,6 +412,12 @@ def load_hindi_generated(n, cap_per_concept=6, exclude=frozenset()):
         if analogy_ambiguous(q) or odd_one_out_ambiguous(q):
             continue      # two defensible answers both on offer — see the two _ambiguous gates
         q["_generated"] = True
+        # The pool carries `difficulty` at the top level but no tag.difficulty, so the mix report
+        # counted every generated reasoning question as difficulty 0 and printed a shortfall on a
+        # section that was full. Mirror it into the tag the report actually reads.
+        q.setdefault("tag", {})
+        q["tag"].setdefault("section", "Reasoning")
+        q["tag"].setdefault("difficulty", q.get("difficulty") or 2)
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
         random.shuffle(b)
@@ -390,6 +460,12 @@ def load_generated(n, cap_per_concept=3, exclude=frozenset()):
         if analogy_ambiguous(q) or odd_one_out_ambiguous(q):
             continue      # two defensible answers both on offer — see the two _ambiguous gates
         q["_generated"] = True
+        # The pool carries `difficulty` at the top level but no tag.difficulty, so the mix report
+        # counted every generated reasoning question as difficulty 0 and printed a shortfall on a
+        # section that was full. Mirror it into the tag the report actually reads.
+        q.setdefault("tag", {})
+        q["tag"].setdefault("section", "Reasoning")
+        q["tag"].setdefault("difficulty", q.get("difficulty") or 2)
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
         random.shuffle(b)
@@ -451,6 +527,11 @@ def main():
                     help="Which Hindi Language section to print. DEFAULT IS 'generated' because "
                          "the REAL Hindi-language questions in these papers are badly OCR-corrupted "
                          "- see the note in load_hindi_generated().")
+    ap.add_argument("--generate-gs", action="store_true",
+                    help="Fill a HARD General Studies shortfall with statement-based and "
+                         "match-the-pairs questions built from verified fact tables. This is the "
+                         "only way the difficulty mix can be met in GS: the bank holds nothing "
+                         "above difficulty 2 in that section.")
     ap.add_argument("--generate-gk", action="store_true",
                     help="Top up a General Studies shortfall from staticgkgen. OFF by default: "
                          "its questions are correct-by-construction but difficulty-1 recall, "
@@ -640,6 +721,13 @@ def main():
         # A maths section that came back short of HARD questions can be topped up by generation —
         # the bank has no difficulty-3 arithmetic to give, and that is the whole reason the mix
         # could not be met.
+        if a.generate_gs and "General Studies" in secs:
+            want = mix_for(target)
+            have3 = sum(1 for q in got if ((q.get("tag") or {}).get("difficulty") or 0) >= 3)
+            if want[3] > have3:
+                fresh = generate_gs_forms(want[3] - have3, gen_taken, a.inter_level)
+                gen_taken |= {gen_sig(q) for q in fresh}
+                got = got[:max(len(got) - len(fresh), 0)] + fresh
         if a.generate_gk and "General Studies" in secs and len(got) < target:
             fresh = generate_static_gk(target - len(got), gen_taken, a.inter_level)
             gen_taken |= {gen_sig(q) for q in fresh}
@@ -968,14 +1056,19 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
     # that is exactly the gap the owner spotted the first time.
     from collections import Counter
     for t, items in paper:
-        got = Counter(((q.get("tag") or {}).get("difficulty") or 0)
-                      for q in items if not q.get("_generated"))
+        # Count EVERYTHING on the page, not just the official questions. While the mix could
+        # only be met from the bank that distinction did not matter; now that generation can fill
+        # a hard shortfall, counting only real questions reports "SHORT: 10 at difficulty 3" on a
+        # section that just had 15 hard ones added to it.
+        got = Counter(((q.get("tag") or {}).get("difficulty") or 0) for q in items)
+        n_gen_here = sum(1 for q in items if q.get("_generated"))
         n_real = sum(got.values())
         if n_real:
             want = mix_for(n_real)
             shortfall = {b: want[b] - got.get(b, 0) for b in (3, 2) if want[b] > got.get(b, 0)}
             note = (f"  asked {want[1]}/{want[2]}/{want[3]}, got "
-                    f"{got.get(1, 0)}/{got.get(2, 0)}/{got.get(3, 0)} (easy/med/hard)")
+                    f"{got.get(1, 0)}/{got.get(2, 0)}/{got.get(3, 0)} (easy/med/hard)"
+                    f"  [{n_real - n_gen_here} official + {n_gen_here} generated]")
             if shortfall:
                 note += ("  SHORT: " +
                          ", ".join(f"{v} at difficulty {b}" for b, v in shortfall.items()))

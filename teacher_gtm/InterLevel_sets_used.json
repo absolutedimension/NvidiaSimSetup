@@ -142,66 +142,6 @@
     "03_25_SET_A.pdf"
    ],
    [
-    81,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    62,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    27,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    74,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    55,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    86,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    1,
-    "0225_SET-A.pdf"
-   ],
-   [
-    128,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    71,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    58,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    25,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    37,
-    "0225_SET-A.pdf"
-   ],
-   [
-    7,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    64,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    13,
-    "03_25_SET_A.pdf"
-   ],
-   [
     11,
     "0225_SET-A.pdf"
    ],
@@ -387,6 +327,21 @@
    ]
   ],
   "gen": [
+   "Statement-based GS|1,2,3|1 and 3 only~2 and 3 only~2 only~3 only",
+   "Match the Pairs||A, B~A, B, D~A, C, D~B, C, D",
+   "Statement-based GS|1,2,3|1 and 2 only~1 and 3 only~1 only~2 only",
+   "Match the Pairs||A, B, D~A, C~A, C, D~B, C, D",
+   "Statement-based GS|1,2,3|1 and 3 only~1, 2 and 3~2 and 3 only~2 only",
+   "Match the Pairs||A, B, D~A, C, D~B, C, D~C, D",
+   "Statement-based GS|1,2,3|1 and 3 only~1 only~1, 2 and 3~2 and 3 only",
+   "Match the Pairs||A, B, D~A, C, D~B, C~B, C, D",
+   "Statement-based GS|1,2,3|1 and 3 only~1, 2 and 3~2 only~3 only",
+   "Statement-based GS|1,2,3|1 and 2 only~1 and 3 only~1, 2 and 3~2 only",
+   "Statement-based GS|1,2,3|1 and 2 only~1 and 3 only~2 only~3 only",
+   "Match the Pairs||A, B, D~A, C, D~A, D~B, C, D",
+   "Statement-based GS|1,2,3|1 and 3 only~1, 2 and 3~2 and 3 only~3 only",
+   "Statement-based GS|1,2,3|1 and 2 only~1 and 3 only~1, 2 and 3~2 and 3 only",
+   "Match the Pairs||A, B, D~A, C, D~B, C, D~B, D",
    "Marked Price & Discount|20,5|12.5%~24%~24.5%~25%",
    "Boats & Streams|8,5,16|208 km~39 km~64 km~78 km",
    "Ratio & Proportion|3,9,50,2,5|150~200~300~450",
@@ -443,6 +398,756 @@
    "Letter Analogy||BC~JJ~JK~KL"
   ],
   "gen_full": [
+   {
+    "stem": "Consider the following statements:\n1. The river Narmada originates at Trimbakeshwar (Nashik).\n2. Mumbai is the capital of Maharashtra.\n3. Lavani is a dance form of Maharashtra.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. नर्मदा नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\n2. मुंबई महाराष्ट्र की राजधानी है।\n3. लावणी महाराष्ट्र का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "2 and 3 only"
+     },
+     {
+      "label": "B",
+      "text": "3 only"
+     },
+     {
+      "label": "C",
+      "text": "1 and 3 only"
+     },
+     {
+      "label": "D",
+      "text": "2 only"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "केवल 2 और 3"
+     },
+     {
+      "label": "B",
+      "text": "केवल 3"
+     },
+     {
+      "label": "C",
+      "text": "केवल 1 और 3"
+     },
+     {
+      "label": "D",
+      "text": "केवल 2"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Statement-wise: 1 is incorrect; 2 is correct; 3 is correct. So 2 and 3 only.",
+    "solution_hi": "कथनानुसार: 1 गलत है; 2 सही है; 3 सही है। अतः केवल 2 और 3।",
+    "concept": "Statement-based GS",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Match the following pairs:\nA. Yakshagana — Karnataka\nB. Chhau — Jharkhand\nC. Ghoomar — Punjab\nD. Kathak — Manipur\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. यक्षगान — कर्नाटक\nB. छऊ — झारखंड\nC. घूमर — पंजाब\nD. कथक — मणिपुर\nकौन-से युग्म सही सुमेलित हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "A, B"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "A, B"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "A is correct; B is correct; C is wrong; D is wrong. Correctly matched: A, B.",
+    "solution_hi": "A सही; B सही; C गलत; D गलत। सही सुमेलित: A, B।",
+    "concept": "Match the Pairs",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Consider the following statements:\n1. Mumbai is the capital of Maharashtra.\n2. Garba is a dance form of Punjab.\n3. The river Narmada originates at Amarkantak.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. मुंबई महाराष्ट्र की राजधानी है।\n2. गरबा पंजाब का नृत्य है।\n3. नर्मदा नदी का उद्गम अमरकंटक में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "1 and 3 only"
+     },
+     {
+      "label": "B",
+      "text": "1 and 2 only"
+     },
+     {
+      "label": "C",
+      "text": "2 only"
+     },
+     {
+      "label": "D",
+      "text": "1 only"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "केवल 1 और 3"
+     },
+     {
+      "label": "B",
+      "text": "केवल 1 और 2"
+     },
+     {
+      "label": "C",
+      "text": "केवल 2"
+     },
+     {
+      "label": "D",
+      "text": "केवल 1"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Statement-wise: 1 is correct; 2 is incorrect; 3 is correct. So 1 and 3 only.",
+    "solution_hi": "कथनानुसार: 1 सही है; 2 गलत है; 3 सही है। अतः केवल 1 और 3।",
+    "concept": "Statement-based GS",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Match the following pairs:\nA. Bihu — Assam\nB. Mohiniyattam — Odisha\nC. Kathakali — Kerala\nD. Kuchipudi — Tamil Nadu\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. बिहू — असम\nB. मोहिनीअट्टम — ओडिशा\nC. कथकली — केरल\nD. कुचिपुड़ी — तमिलनाडु\nकौन-से युग्म सही सुमेलित हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "A, C"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "A, C"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "A is correct; B is wrong; C is correct; D is wrong. Correctly matched: A, C.",
+    "solution_hi": "A सही; B गलत; C सही; D गलत। सही सुमेलित: A, C।",
+    "concept": "Match the Pairs",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Consider the following statements:\n1. Bhubaneswar is the capital of Odisha.\n2. The river Narmada originates at Amarkantak.\n3. Bhangra is a dance form of Punjab.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. भुवनेश्वर ओडिशा की राजधानी है।\n2. नर्मदा नदी का उद्गम अमरकंटक में है।\n3. भांगड़ा पंजाब का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "1, 2 and 3"
+     },
+     {
+      "label": "B",
+      "text": "1 and 3 only"
+     },
+     {
+      "label": "C",
+      "text": "2 only"
+     },
+     {
+      "label": "D",
+      "text": "2 and 3 only"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "1, 2 और 3"
+     },
+     {
+      "label": "B",
+      "text": "केवल 1 और 3"
+     },
+     {
+      "label": "C",
+      "text": "केवल 2"
+     },
+     {
+      "label": "D",
+      "text": "केवल 2 और 3"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Statement-wise: 1 is correct; 2 is correct; 3 is correct. So 1, 2 and 3.",
+    "solution_hi": "कथनानुसार: 1 सही है; 2 सही है; 3 सही है। अतः 1, 2 और 3।",
+    "concept": "Statement-based GS",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Match the following pairs:\nA. Bharatanatyam — Maharashtra\nB. Chhau — Maharashtra\nC. Bihu — Assam\nD. Garba — Gujarat\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. भरतनाट्यम — महाराष्ट्र\nB. छऊ — महाराष्ट्र\nC. बिहू — असम\nD. गरबा — गुजरात\nकौन-से युग्म सही सुमेलित हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "C, D"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "C, D"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "A is wrong; B is wrong; C is correct; D is correct. Correctly matched: C, D.",
+    "solution_hi": "A गलत; B गलत; C सही; D सही। सही सुमेलित: C, D।",
+    "concept": "Match the Pairs",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Consider the following statements:\n1. Kolkata is the capital of West Bengal.\n2. Kuchipudi is a dance form of Punjab.\n3. The river Narmada originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. कोलकाता पश्चिम बंगाल की राजधानी है।\n2. कुचिपुड़ी पंजाब का नृत्य है।\n3. नर्मदा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "1 only"
+     },
+     {
+      "label": "B",
+      "text": "1, 2 and 3"
+     },
+     {
+      "label": "C",
+      "text": "2 and 3 only"
+     },
+     {
+      "label": "D",
+      "text": "1 and 3 only"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "केवल 1"
+     },
+     {
+      "label": "B",
+      "text": "1, 2 और 3"
+     },
+     {
+      "label": "C",
+      "text": "केवल 2 और 3"
+     },
+     {
+      "label": "D",
+      "text": "केवल 1 और 3"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Statement-wise: 1 is correct; 2 is incorrect; 3 is incorrect. So 1 only.",
+    "solution_hi": "कथनानुसार: 1 सही है; 2 गलत है; 3 गलत है। अतः केवल 1।",
+    "concept": "Statement-based GS",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Match the following pairs:\nA. Bihu — Tamil Nadu\nB. Yakshagana — Karnataka\nC. Mohiniyattam — Kerala\nD. Rouf — Rajasthan\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. बिहू — तमिलनाडु\nB. यक्षगान — कर्नाटक\nC. मोहिनीअट्टम — केरल\nD. रौफ — राजस्थान\nकौन-से युग्म सही सुमेलित हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "B, C"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "B, C"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "A is wrong; B is correct; C is correct; D is wrong. Correctly matched: B, C.",
+    "solution_hi": "A गलत; B सही; C सही; D गलत। सही सुमेलित: B, C।",
+    "concept": "Match the Pairs",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Consider the following statements:\n1. Ranchi is the capital of Tamil Nadu.\n2. Yakshagana is a dance form of Kerala.\n3. The river Krishna originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. रांची तमिलनाडु की राजधानी है।\n2. यक्षगान केरल का नृत्य है।\n3. कृष्णा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "3 only"
+     },
+     {
+      "label": "B",
+      "text": "1 and 3 only"
+     },
+     {
+      "label": "C",
+      "text": "2 only"
+     },
+     {
+      "label": "D",
+      "text": "1, 2 and 3"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "केवल 3"
+     },
+     {
+      "label": "B",
+      "text": "केवल 1 और 3"
+     },
+     {
+      "label": "C",
+      "text": "केवल 2"
+     },
+     {
+      "label": "D",
+      "text": "1, 2 और 3"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Statement-wise: 1 is incorrect; 2 is incorrect; 3 is correct. So 3 only.",
+    "solution_hi": "कथनानुसार: 1 गलत है; 2 गलत है; 3 सही है। अतः केवल 3।",
+    "concept": "Statement-based GS",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Consider the following statements:\n1. The river Yamuna originates at Amarkantak.\n2. Bhangra is a dance form of Punjab.\n3. Chandigarh is the capital of Telangana.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. यमुना नदी का उद्गम अमरकंटक में है।\n2. भांगड़ा पंजाब का नृत्य है।\n3. चंडीगढ़ तेलंगाना की राजधानी है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "2 only"
+     },
+     {
+      "label": "B",
+      "text": "1 and 2 only"
+     },
+     {
+      "label": "C",
+      "text": "1, 2 and 3"
+     },
+     {
+      "label": "D",
+      "text": "1 and 3 only"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "केवल 2"
+     },
+     {
+      "label": "B",
+      "text": "केवल 1 और 2"
+     },
+     {
+      "label": "C",
+      "text": "1, 2 और 3"
+     },
+     {
+      "label": "D",
+      "text": "केवल 1 और 3"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Statement-wise: 1 is incorrect; 2 is correct; 3 is incorrect. So 2 only.",
+    "solution_hi": "कथनानुसार: 1 गलत है; 2 सही है; 3 गलत है। अतः केवल 2।",
+    "concept": "Statement-based GS",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Consider the following statements:\n1. Mumbai is the capital of Arunachal Pradesh.\n2. Kathakali is a dance form of Kerala.\n3. The river Godavari originates at Amarkantak.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. मुंबई अरुणाचल प्रदेश की राजधानी है।\n2. कथकली केरल का नृत्य है।\n3. गोदावरी नदी का उद्गम अमरकंटक में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "2 only"
+     },
+     {
+      "label": "B",
+      "text": "1 and 3 only"
+     },
+     {
+      "label": "C",
+      "text": "1 and 2 only"
+     },
+     {
+      "label": "D",
+      "text": "3 only"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "केवल 2"
+     },
+     {
+      "label": "B",
+      "text": "केवल 1 और 3"
+     },
+     {
+      "label": "C",
+      "text": "केवल 1 और 2"
+     },
+     {
+      "label": "D",
+      "text": "केवल 3"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Statement-wise: 1 is incorrect; 2 is correct; 3 is incorrect. So 2 only.",
+    "solution_hi": "कथनानुसार: 1 गलत है; 2 सही है; 3 गलत है। अतः केवल 2।",
+    "concept": "Statement-based GS",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Match the following pairs:\nA. Sattriya — Assam\nB. Kuchipudi — Karnataka\nC. Odissi — Rajasthan\nD. Garba — Gujarat\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. सत्रिया — असम\nB. कुचिपुड़ी — कर्नाटक\nC. ओडिसी — राजस्थान\nD. गरबा — गुजरात\nकौन-से युग्म सही सुमेलित हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "A, D"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "A, D"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "A is correct; B is wrong; C is wrong; D is correct. Correctly matched: A, D.",
+    "solution_hi": "A सही; B गलत; C गलत; D सही। सही सुमेलित: A, D।",
+    "concept": "Match the Pairs",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Consider the following statements:\n1. Bhangra is a dance form of Punjab.\n2. Chennai is the capital of Tamil Nadu.\n3. The river Yamuna originates at Yamunotri.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. भांगड़ा पंजाब का नृत्य है।\n2. चेन्नई तमिलनाडु की राजधानी है।\n3. यमुना नदी का उद्गम यमुनोत्री में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "1, 2 and 3"
+     },
+     {
+      "label": "B",
+      "text": "1 and 3 only"
+     },
+     {
+      "label": "C",
+      "text": "3 only"
+     },
+     {
+      "label": "D",
+      "text": "2 and 3 only"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "1, 2 और 3"
+     },
+     {
+      "label": "B",
+      "text": "केवल 1 और 3"
+     },
+     {
+      "label": "C",
+      "text": "केवल 3"
+     },
+     {
+      "label": "D",
+      "text": "केवल 2 और 3"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Statement-wise: 1 is correct; 2 is correct; 3 is correct. So 1, 2 and 3.",
+    "solution_hi": "कथनानुसार: 1 सही है; 2 सही है; 3 सही है। अतः 1, 2 और 3।",
+    "concept": "Statement-based GS",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Consider the following statements:\n1. Bhopal is the capital of Madhya Pradesh.\n2. The river Krishna originates at Mahabaleshwar.\n3. Chhau is a dance form of Maharashtra.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. भोपाल मध्य प्रदेश की राजधानी है।\n2. कृष्णा नदी का उद्गम महाबलेश्वर में है।\n3. छऊ महाराष्ट्र का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "1 and 2 only"
+     },
+     {
+      "label": "B",
+      "text": "1 and 3 only"
+     },
+     {
+      "label": "C",
+      "text": "1, 2 and 3"
+     },
+     {
+      "label": "D",
+      "text": "2 and 3 only"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "केवल 1 और 2"
+     },
+     {
+      "label": "B",
+      "text": "केवल 1 और 3"
+     },
+     {
+      "label": "C",
+      "text": "1, 2 और 3"
+     },
+     {
+      "label": "D",
+      "text": "केवल 2 और 3"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Statement-wise: 1 is correct; 2 is correct; 3 is incorrect. So 1 and 2 only.",
+    "solution_hi": "कथनानुसार: 1 सही है; 2 सही है; 3 गलत है। अतः केवल 1 और 2।",
+    "concept": "Statement-based GS",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
+   {
+    "stem": "Match the following pairs:\nA. Manipuri — Uttar Pradesh\nB. Lavani — Maharashtra\nC. Ghoomar — Uttar Pradesh\nD. Kathak — Uttar Pradesh\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. मणिपुरी — उत्तर प्रदेश\nB. लावणी — महाराष्ट्र\nC. घूमर — उत्तर प्रदेश\nD. कथक — उत्तर प्रदेश\nकौन-से युग्म सही सुमेलित हैं ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "B, D"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "B, D"
+     },
+     {
+      "label": "B",
+      "text": "B, C, D"
+     },
+     {
+      "label": "C",
+      "text": "A, C, D"
+     },
+     {
+      "label": "D",
+      "text": "A, B, D"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "A is wrong; B is correct; C is wrong; D is correct. Correctly matched: B, D.",
+    "solution_hi": "A गलत; B सही; C गलत; D सही। सही सुमेलित: B, D।",
+    "concept": "Match the Pairs",
+    "tag": {
+     "section": "General Studies",
+     "difficulty": 3
+    },
+    "source_pdf": "staticgk_forms",
+    "number": null
+   },
    {
     "stem": "An article is sold after two successive discounts of 20% and 5%. What single discount is equivalent to these two?",
     "stem_hi": "एक वस्तु 20% तथा 5% की दो क्रमिक छूटों के बाद बेची जाती है। इन दोनों के तुल्य एकल छूट क्या होगी ?",
@@ -1003,7 +1708,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "6c96b2c976cc405c"
+    "hash": "6c96b2c976cc405c",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_b479e2c49e5ecf",
@@ -1065,7 +1774,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "f41378d320dab1eb"
+    "hash": "f41378d320dab1eb",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_4d966716a8c90d",
@@ -1127,7 +1840,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "38dd29c5d767b3d9"
+    "hash": "38dd29c5d767b3d9",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_e87cedfe93a1f2",
@@ -1189,7 +1906,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "b744e1044cff7698"
+    "hash": "b744e1044cff7698",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_ae50b89c15112e",
@@ -1251,7 +1972,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "5034e15b4721ef53"
+    "hash": "5034e15b4721ef53",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_0f4f67d8fafac5",
@@ -1313,7 +2038,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "6df773cb68acd65d"
+    "hash": "6df773cb68acd65d",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_0e5bf1f25ddd29",
@@ -1375,7 +2104,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "17995ba9de6c2929"
+    "hash": "17995ba9de6c2929",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_ecb1430d337616",
@@ -1437,7 +2170,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "f4e67c72fe575b38"
+    "hash": "f4e67c72fe575b38",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_63fe5da35780f0",
@@ -1499,7 +2236,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "cb7c638a76a070bf"
+    "hash": "cb7c638a76a070bf",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_1a9124b0b1e38d",
@@ -1561,7 +2302,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "1b44a3c052636852"
+    "hash": "1b44a3c052636852",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_93dca8b6bc6ae6",
@@ -1623,7 +2368,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "e2ce83d880539fb5"
+    "hash": "e2ce83d880539fb5",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_5154027a816f19",
@@ -1685,7 +2434,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "4b60c0c1ca55c440"
+    "hash": "4b60c0c1ca55c440",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_b9a2f0c4090506",
@@ -1747,7 +2500,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "2439268c0ab78db3"
+    "hash": "2439268c0ab78db3",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_d49de243aa2626",
@@ -1809,7 +2566,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "d929083c8847e2b4"
+    "hash": "d929083c8847e2b4",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_b8f5b831beb6f2",
@@ -1871,7 +2632,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "63d73e01b25f3009"
+    "hash": "63d73e01b25f3009",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_e54b0ed6df6c9b",
@@ -1933,7 +2698,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "799a2a45b3042516"
+    "hash": "799a2a45b3042516",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_0af3e25266a3d7",
@@ -1995,7 +2764,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "ff0662333de6370a"
+    "hash": "ff0662333de6370a",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_dd3315577b29f8",
@@ -2057,7 +2830,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "f71fc3c528f2aa49"
+    "hash": "f71fc3c528f2aa49",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_6c33e0f19ecfbf",
@@ -2119,7 +2896,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "8e492d3fec88af8b"
+    "hash": "8e492d3fec88af8b",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_bc4f52e8575660",
@@ -2181,7 +2962,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "fb9ab22fe8fb9fef"
+    "hash": "fb9ab22fe8fb9fef",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_48c9b28c83f45e",
@@ -2243,7 +3028,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "daf04781e39599d4"
+    "hash": "daf04781e39599d4",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_918b067b8c160d",
@@ -2305,7 +3094,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "28f66b7ec9b573de"
+    "hash": "28f66b7ec9b573de",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_d930d2c29c5b3d",
@@ -2367,7 +3160,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "e6be43a23dfe06f4"
+    "hash": "e6be43a23dfe06f4",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_6d7216a4c6b34a",
@@ -2429,7 +3226,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "40e6ba051eebad25"
+    "hash": "40e6ba051eebad25",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_3973de5efb1dcf",
@@ -2491,7 +3292,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "e5d93460be17fcb2"
+    "hash": "e5d93460be17fcb2",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_b19cb944d241cb",
@@ -2553,7 +3358,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "6d45fb3aea57348d"
+    "hash": "6d45fb3aea57348d",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_07f8cfab459773",
@@ -2615,7 +3424,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "a05095df0bbef310"
+    "hash": "a05095df0bbef310",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_9f0207e087057a",
@@ -2677,7 +3490,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "4d884ec4cdcccb63"
+    "hash": "4d884ec4cdcccb63",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_5d6e9b868fae99",
@@ -2739,7 +3556,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "8548aeac059f7be0"
+    "hash": "8548aeac059f7be0",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_dffa15cc382da7",
@@ -2801,7 +3622,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "747f58d0793dd0a0"
+    "hash": "747f58d0793dd0a0",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_59d693c37805a3",
@@ -2863,7 +3688,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "b0e17c0c222803fb"
+    "hash": "b0e17c0c222803fb",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_3638857f7d5ac5",
@@ -2925,7 +3754,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "954823be94dee820"
+    "hash": "954823be94dee820",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_d72b10107e592f",
@@ -2987,7 +3820,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "09f70c21b920db4a"
+    "hash": "09f70c21b920db4a",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_f6db059f611d28",
@@ -3049,7 +3886,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "fb324b668e7a66cf"
+    "hash": "fb324b668e7a66cf",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_d51854b34c8988",
@@ -3111,7 +3952,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "02e1c9b6461c17ee"
+    "hash": "02e1c9b6461c17ee",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_dfb674e9a3f60e",
@@ -3173,7 +4018,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "038225521629e3bd"
+    "hash": "038225521629e3bd",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_18b5871302307d",
@@ -3235,7 +4084,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "c0f44b6b11cdff48"
+    "hash": "c0f44b6b11cdff48",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_be3e264b761f00",
@@ -3297,7 +4150,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "6b14ef757c93d09e"
+    "hash": "6b14ef757c93d09e",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_0eb96d9e92e35d",
@@ -3359,7 +4216,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "d65f4ad48da6e17c"
+    "hash": "d65f4ad48da6e17c",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_02b29d17d343ab",
@@ -3421,7 +4282,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "150cf7fa81ccbb57"
+    "hash": "150cf7fa81ccbb57",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_bb04283c296fb0",
@@ -3483,7 +4348,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "cbc94da804c93040"
+    "hash": "cbc94da804c93040",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_0349f3d1c662dc",
@@ -3545,7 +4414,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "96d02588219c7ed8"
+    "hash": "96d02588219c7ed8",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_a1f78b26ae2dfe",
@@ -3607,7 +4480,11 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "afd13f6b0c3ebde3"
+    "hash": "afd13f6b0c3ebde3",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    },
    {
     "id": "gen_reason_994886eaf3ac69",
@@ -3669,9 +4546,13 @@
     "generated": true,
     "validation_issues": [],
     "duplicate_of": null,
-    "hash": "adc5f1e931a6b666"
+    "hash": "adc5f1e931a6b666",
+    "tag": {
+     "section": "Reasoning",
+     "difficulty": 2
+    }
    }
   ],
-  "out": "OneStep_BSSC_InterLevel_Set1_REVIEW.pdf"
+  "out": "OneStep_BSSC_InterLevel_Set1.pdf"
  }
 }
