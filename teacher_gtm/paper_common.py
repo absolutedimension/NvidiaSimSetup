@@ -363,3 +363,35 @@ def inter_level_ok(q):
         if _ABOVE_SYLLABUS.search(gs_text) or _ENGLISH_LANG.search(gs_text):
             return False
     return inter_level_maths_ok(q)
+
+
+def analogy_candidates(stem):
+    """Every defensible answer to 'a : b :: c : ?', as strings.
+
+    A number analogy is only sound if exactly ONE of its defensible answers appears among the
+    options. "5 : 25 :: 4 : ?" is both 4-squared (16) and 4x5 (20); when the paper offers both, a
+    student who reasons "x5" is marked wrong for a correct inference. The question is the defect,
+    not the student.
+    """
+    m = re.search(r"(\d+)\s*:\s*(\d+)\s*::\s*(\d+)\s*:\s*\?", stem or "")
+    if not m:
+        return set()
+    a, b, c = (int(x) for x in m.groups())
+    out = {str(c + (b - a))}
+    if a:
+        if b % a == 0:
+            out.add(str(c * (b // a)))
+        if a * a == b:
+            out.add(str(c * c))
+        if a ** 3 == b:
+            out.add(str(c ** 3))
+    return out
+
+
+def analogy_ambiguous(q):
+    """True if two defensible analogy answers are both on offer."""
+    cands = analogy_candidates(q.get("stem"))
+    if len(cands) < 2:
+        return False
+    printed = {re.sub(r"\s+", "", str(o.get("text", ""))) for o in q.get("options") or []}
+    return len(cands & printed) > 1

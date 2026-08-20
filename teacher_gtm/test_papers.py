@@ -265,7 +265,7 @@ SOLVERS = [("direction-facing", solve_direction_facing), ("direction-distance", 
 def resolve(tag, qs, key, gen):
     print(f"\n=== {tag}: independent re-solve of generated reasoning ===")
     checked = agree = 0
-    bad = []
+    bad, ambiguous = [], []
     for q in qs:
         if q["n"] not in gen or not q["opts"]:
             continue
@@ -285,21 +285,178 @@ def resolve(tag, qs, key, gen):
             checked += 1
             norm = lambda t: re.sub(r"\s+", "", str(t)).lower().rstrip(".")
             cands = set()
+            _ = norm
             for k in keyed:
                 cands.add(norm(k))
                 cands.add(norm(HI_DIR.get(k.strip(), k)))
-            if norm(want) in cands:
+            wants = want if isinstance(want, set) else {want}
+            if len(wants) > 1:
+                # Ambiguity only HURTS if two defensible answers are both on offer. If the options
+                # contain just one of them, the option set disambiguates and the question is sound.
+                printed_all = {norm(t) for g in q["opts"] for _, t in g}
+                on_offer = sorted(w for w in wants if norm(w) in printed_all)
+                if len(on_offer) > 1:
+                    ambiguous.append((q["n"], name, on_offer))
+            if any(norm(w) in cands for w in wants):
                 agree += 1
             else:
-                bad.append((q["n"], name, want, " / ".join(filter(None, keyed)), en[:70]))
+                bad.append((q["n"], name, sorted(wants), " / ".join(filter(None, keyed)), en[:70]))
             break
     ok = check(f"printed key matches an independent solve ({checked} solvable questions)", not bad,
                f"{len(bad)} disagree")
+    ok &= check("no generated question has two defensible answers among its options", not ambiguous,
+                f"{len(ambiguous)} ambiguous")
     for n, name, want, got, stem in bad[:10]:
         print(f"        Q{n} [{name}] computed {want!r} but key says {got!r} — {stem}")
     if checked:
         print(f"        coverage: re-solved {checked} of {len(gen)} generated questions")
+    if ambiguous:
+        print(f"        AMBIGUOUS: {len(ambiguous)} question(s) have TWO defensible answers both "
+              f"present in the options:")
+        for n, name, ws in ambiguous[:8]:
+            print(f"          Q{n} [{name}] both {' and '.join(ws)} are on offer")
     return ok
+
+
+
+
+# ── second wave of independent solvers ──────────────────────────────────────────────────────────
+# Same discipline as the first: derived from the printed question only, with no reference to
+# reasoninggen. If these agree with the printed key, that is two independent derivations agreeing.
+
+def _letters(s):
+    return [c for c in s if c.isalpha()]
+
+
+def solve_letter_series(en):
+    """'H, I, J, K, ?' and 'A3, C5, E7, ?' — constant letter step, constant number step."""
+    m = re.search(r"series[^:?]*[:?]\s*(.+?)\s*\?", en, re.I | re.S)
+    if not m:
+        return None
+    terms = [t.strip() for t in re.split(r"[,\s]+", m.group(1)) if t.strip()]
+    terms = [t for t in terms if re.fullmatch(r"[A-Za-z]+\d*", t)]
+    if len(terms) < 3:
+        return None
+    heads = [t.rstrip("0123456789") for t in terms]
+    tails = [t[len(h):] for t, h in zip(terms, heads)]
+    if not all(len(h) == len(heads[0]) for h in heads):
+        return None
+    # every letter position must advance by the same constant
+    steps = []
+    for i in range(len(heads[0])):
+        d = {(ord(heads[j + 1][i]) - ord(heads[j][i])) % 26 for j in range(len(heads) - 1)}
+        if len(d) != 1:
+            return None
+        steps.append(d.pop())
+    nxt = "".join(chr((ord(heads[-1][i]) - 65 + steps[i]) % 26 + 65) for i in range(len(heads[0])))
+    if all(t for t in tails):
+        nums = [int(t) for t in tails]
+        dn = {nums[i + 1] - nums[i] for i in range(len(nums) - 1)}
+        if len(dn) != 1:
+            return None
+        nxt += str(nums[-1] + dn.pop())
+    return nxt
+
+
+def _relation(a, b):
+    """The single arithmetic relation taking a to b, if there is an obvious one."""
+    rels = []
+    if a:
+        if b % a == 0:
+            rels.append(("mul", b // a))
+        if abs(a) > 0 and b * a > 0 and a ** 2 == b:
+            rels.append(("sq", 0))
+        if a ** 3 == b:
+            rels.append(("cube", 0))
+    rels.append(("add", b - a))
+    return rels
+
+
+def solve_number_analogy(en):
+    """'11 : 22 :: 9 : ?' — every relation the first pair supports, applied to the second.
+
+    Returns a SET, because some pairs are genuinely ambiguous: 2 : 8 is both x4 and 2 cubed, so
+    "3 : ?" is defensibly 12 or 27. A verifier must not pick one and call the other wrong. The
+    check passes if the printed key is among the candidates, and a question with more than one
+    candidate is reported separately — an exam question that admits two answers is a defect in
+    its own right, whichever one the key names.
+    """
+    m = re.search(r"(\d+)\s*:\s*(\d+)\s*::\s*(\d+)\s*:\s*\?", en)
+    if not m:
+        return None
+    a, b, c = (int(x) for x in m.groups())
+    out = set()
+    for kind, k in _relation(a, b):
+        if kind == "mul":
+            out.add(str(c * k))
+        elif kind == "sq":
+            out.add(str(c * c))
+        elif kind == "cube":
+            out.add(str(c ** 3))
+        elif kind == "add":
+            out.add(str(c + k))
+    return out or None
+
+
+def solve_letter_analogy(en):
+    """'FG : IJ :: AB : ?' — same per-position shift applied to the third term."""
+    m = re.search(r"([A-Z]+)\s*:\s*([A-Z]+)\s*::\s*([A-Z]+)\s*:\s*\?", en)
+    if not m:
+        return None
+    a, b, c = m.groups()
+    if not (len(a) == len(b) == len(c)):
+        return None
+    shifts = [(ord(y) - ord(x)) % 26 for x, y in zip(a, b)]
+    return "".join(chr((ord(ch) - 65 + s) % 26 + 65) for ch, s in zip(c, shifts))
+
+
+def solve_ranking_total(en):
+    """'8th from the left and 10th from the right — how many in the row?' -> 8 + 10 - 1."""
+    if not re.search(r"how many (students|persons|people|boys|girls)", en, re.I):
+        return None
+    m = re.search(r"(\d+)(?:st|nd|rd|th)\s+from the left.*?(\d+)(?:st|nd|rd|th)\s+from the right",
+                  en, re.I | re.S)
+    if not m:
+        return None
+    return str(int(m.group(1)) + int(m.group(2)) - 1)
+
+
+# X --r1--> Y --r2--> Z. Siblings share parents, which is what makes the two directions differ:
+# a PARENT of one sibling is a parent of the other, but a CHILD of one is a niece/nephew of the
+# other. Keyed by (r1 kind, r2 kind) -> relation of X to Z, then gendered by X.
+_PARENT, _CHILD, _SIB = "parent", "child", "sib"
+_KIND = {"father": (_PARENT, "m"), "mother": (_PARENT, "f"),
+         "son": (_CHILD, "m"), "daughter": (_CHILD, "f"),
+         "brother": (_SIB, "m"), "sister": (_SIB, "f")}
+_COMPOSE = {
+    (_PARENT, _SIB): {"m": "father", "f": "mother"},
+    (_CHILD, _SIB): {"m": "nephew", "f": "niece"},
+    (_SIB, _PARENT): {"m": "uncle", "f": "aunt"},
+    (_SIB, _CHILD): {"m": "son", "f": "daughter"},
+    (_PARENT, _PARENT): {"m": "grandfather", "f": "grandmother"},
+    (_CHILD, _CHILD): {"m": "grandson", "f": "granddaughter"},
+    (_CHILD, _PARENT): {"m": "brother", "f": "sister"},
+    (_SIB, _SIB): {"m": "brother", "f": "sister"},
+}
+
+
+def solve_blood_relation(en):
+    """'X is the daughter of Y, and Y is the sister of Z. How is X related to Z?'"""
+    m = re.search(r"\b(\w+)\s+is\s+the\s+(\w+)\s+of\s+(\w+)[,\s]+and\s+\3\s+is\s+the\s+(\w+)\s+of\s+(\w+)",
+                  en, re.I)
+    if not m:
+        return None
+    _x, r1, _y, r2, _z = m.groups()
+    k1, k2 = _KIND.get(r1.lower()), _KIND.get(r2.lower())
+    if not (k1 and k2):
+        return None
+    rule = _COMPOSE.get((k1[0], k2[0]))
+    return rule[k1[1]] if rule else None
+
+
+SOLVERS += [("letter-series", solve_letter_series), ("number-analogy", solve_number_analogy),
+            ("letter-analogy", solve_letter_analogy), ("ranking-total", solve_ranking_total),
+            ("blood-relation", solve_blood_relation)]
 
 
 if __name__ == "__main__":

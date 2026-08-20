@@ -29,7 +29,7 @@ import sys
 REPO = pathlib.Path("/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup")
 sys.path.insert(0, str(REPO / "teacher_gtm"))
 from paper_common import (MATH_CSS, esc, servable, sig, inter_level_ok,  # noqa: E402
-                          numbers_agree)
+                          numbers_agree, analogy_ambiguous)
 LET = ["A", "B", "C", "D", "E"]
 
 
@@ -172,6 +172,8 @@ def load_hindi_generated(n, cap_per_concept=6):
             continue
         if not numbers_agree(q):
             continue      # Hindi template dropped the rule ("twice its position") — see numbers_agree
+        if analogy_ambiguous(q):
+            continue      # two defensible answers both on offer — see analogy_ambiguous
         q["_generated"] = True
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
@@ -212,6 +214,8 @@ def load_generated(n, cap_per_concept=3, exclude=frozenset()):
             continue
         if not numbers_agree(q):
             continue      # Hindi template dropped the rule ("twice its position") — see numbers_agree
+        if analogy_ambiguous(q):
+            continue      # two defensible answers both on offer — see analogy_ambiguous
         q["_generated"] = True
         buckets.setdefault(q.get("concept") or "?", []).append(q)
     for b in buckets.values():
