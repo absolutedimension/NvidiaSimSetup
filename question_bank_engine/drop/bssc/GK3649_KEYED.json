@@ -967,8 +967,25 @@
   "year": 2016,
   "source_pdf": "GK(3649).PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "वह छोटी से छोटी कौन सी संख्या है जिससे 1330 में जड़े जाने पर परिणाम वाली संख्या 36 से पूर्ण: विभाजित हो जाती है ?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "12"
+   },
+   {
+    "label": "B",
+    "text": "2"
+   },
+   {
+    "label": "C",
+    "text": "3"
+   },
+   {
+    "label": "D",
+    "text": "9"
+   }
+  ],
   "stem_hi_unverified": "वह छोटी से छोटी कौन सी संख्या है जिससे 1330 में जड़े जाने पर परिणाम वाली संख्या 36 से पूर्ण: विभाजित हो जाती है ?",
   "options_hi_unverified": [
    {
@@ -988,7 +1005,7 @@
     "text": "9"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "B",
   "paper_label": "BSSC GK Kara Mishrak (Advt 3649)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -1292,8 +1309,25 @@
   "year": 2016,
   "source_pdf": "GK(3649).PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "4889 + 12.95 - X = 4854.05 में X का मान क्या है ?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "44.9"
+   },
+   {
+    "label": "B",
+    "text": "43.9"
+   },
+   {
+    "label": "C",
+    "text": "40.9"
+   },
+   {
+    "label": "D",
+    "text": "47.9"
+   }
+  ],
   "stem_hi_unverified": "4889 + 12.95 - X = 4854.05 में X का मान क्या है ?",
   "options_hi_unverified": [
    {
@@ -1313,7 +1347,7 @@
     "text": "47.9"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "D",
   "paper_label": "BSSC GK Kara Mishrak (Advt 3649)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -1552,8 +1586,25 @@
   "year": 2016,
   "source_pdf": "GK(3649).PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "यदि 7698 - X = 2323, तब X का मान क्या है ?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "2321"
+   },
+   {
+    "label": "B",
+    "text": "4155"
+   },
+   {
+    "label": "C",
+    "text": "3155"
+   },
+   {
+    "label": "D",
+    "text": "5375"
+   }
+  ],
   "stem_hi_unverified": "यदि 7698 - X = 2323, तब X का मान क्या है ?",
   "options_hi_unverified": [
    {
@@ -1573,7 +1624,7 @@
     "text": "5375"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "D",
   "paper_label": "BSSC GK Kara Mishrak (Advt 3649)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -2137,8 +2188,25 @@
   "year": 2016,
   "source_pdf": "GK(3649).PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "एक कक्षा में 20 लड़के और 15 लड़कियाँ हैं। लड़कों का लड़कियों से क्या अनुपात है ?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "4 : 5"
+   },
+   {
+    "label": "B",
+    "text": "4 : 3"
+   },
+   {
+    "label": "C",
+    "text": "3 : 4"
+   },
+   {
+    "label": "D",
+    "text": "5 : 4"
+   }
+  ],
   "stem_hi_unverified": "एक कक्षा में 20 लड़के और 15 लड़कियाँ हैं। लड़कों का लड़कियों से क्या अनुपात है ?",
   "options_hi_unverified": [
    {
@@ -2158,7 +2226,7 @@
     "text": "5 : 4"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "B",
   "paper_label": "BSSC GK Kara Mishrak (Advt 3649)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -2982,8 +3050,25 @@
   "year": 2016,
   "source_pdf": "GK(3649).PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "एक कार को ₹ 50,000 में खरीदा गया और बाद में ₹ 40,000 में बेचा दिया गया। इसमें बचने पर कितने प्रतिशत हानि हुई?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "10%"
+   },
+   {
+    "label": "B",
+    "text": "30%"
+   },
+   {
+    "label": "C",
+    "text": "20%"
+   },
+   {
+    "label": "D",
+    "text": "25%"
+   }
+  ],
   "stem_hi_unverified": "एक कार को ₹ 50,000 में खरीदा गया और बाद में ₹ 40,000 में बेचा दिया गया। इसमें बचने पर कितने प्रतिशत हानि हुई?",
   "options_hi_unverified": [
    {
@@ -3003,7 +3088,7 @@
     "text": "25%"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "C",
   "paper_label": "BSSC GK Kara Mishrak (Advt 3649)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -6148,8 +6233,25 @@
   "year": 2016,
   "source_pdf": "GK(3649).PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "एक व्यापारी एक कम्प्यूटर को ₹ 5,200 में बेच कर 30% का लाभ कमाता है। कम्प्यूटर का खरीद मूल्य क्या है?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "₹ 3,900"
+   },
+   {
+    "label": "B",
+    "text": "₹ 4,240"
+   },
+   {
+    "label": "C",
+    "text": "₹ 3,940"
+   },
+   {
+    "label": "D",
+    "text": "₹ 4,000"
+   }
+  ],
   "stem_hi_unverified": "एक व्यापारी एक कम्प्यूटर को ₹ 5,200 में बेच कर 30% का लाभ कमाता है। कम्प्यूटर का खरीद मूल्य क्या है?",
   "options_hi_unverified": [
    {
@@ -6169,7 +6271,7 @@
     "text": "₹ 4,000"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "D",
   "paper_label": "BSSC GK Kara Mishrak (Advt 3649)",
   "answer_source": "official key, transcribed by hand (typeset original)",

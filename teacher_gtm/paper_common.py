@@ -53,7 +53,10 @@ def mathify(t):
     t = re.sub(r"\\sqrt\s*\{([^{}]*)\}", r'<span class="rad">\1</span>', t)
     t = re.sub(r"\\sqrt\s*(\w)", r'<span class="rad">\1</span>', t)
     for k, v in list(_GREEK.items()) + list(_OPS.items()):
-        t = re.sub(r"\\" + k + r"\b", v, t)
+        # NOT \b: "\times175" has no word boundary between "times" and "1", so the operator fell
+        # through to the catch-all that strips unknown commands — and "164 \times 175" rendered as
+        # "164175". A negative lookahead for a letter keeps \timeszone-style names safe.
+        t = re.sub(r"\\" + k + r"(?![a-zA-Z])", v, t)
     t = re.sub(r"\^\s*\{([^{}]*)\}", r"<sup>\1</sup>", t)
     t = re.sub(r"\^\s*(-?\w)", r"<sup>\1</sup>", t)
     t = re.sub(r"_\s*\{([^{}]*)\}", r"<sub>\1</sub>", t)
@@ -86,11 +89,35 @@ def options_ok(options):
 _MIXED_SCRIPT = re.compile(r"[\u0900-\u097f][A-Za-z]{2,}[\u0900-\u097f]")
 
 
+# Characters from scripts that have no business in a Hindi/English exam paper. The OCR emitted
+# "किलो그램" — Hangul spliced into the middle of a Hindi word — which the Latin-inside-Devanagari
+# check could not see because 그램 is neither Latin nor Devanagari.
+_FOREIGN_SCRIPT = re.compile(r"[\u1100-\u11ff\u3000-\u303f\u3040-\u30ff\u3130-\u318f"
+                             r"\u4e00-\u9fff\uac00-\ud7af\u0600-\u06ff\u0e00-\u0e7f]")
+
+# निम्नलिखित ("the following") is the most common word in an exam paper and the one these scans
+# mangle most. A fuzzy match on it was tried and MEASURED NOT TO WORK: the corruptions score 0.30
+# to 0.95 similarity while legitimate words score 0.12 to 0.71, so the classes overlap —
+# निर्णयात्मक (corruption, 0.38) sits BELOW नियम (a real word, 0.43), and निम्नांकित / निम्नतम are
+# real words at 0.70. No threshold separates them. So this is an explicit list of corruptions
+# actually observed in these scans; it needs extending when review finds a new one, and that is
+# the honest cost of not having a general detector.
+_HINDI_CORRUPT = re.compile("|".join([
+    "निर्मलिखित", "निर्णयात्मक", "निर्माणबंद", "निर्माणबिंदु", "फिमानलिफ़िकत", "फिनमलिफ़ट",
+    "निम्नलिखत", "सूक्ष्मण", "अव्यविक", "उत्प्रदक", "आँटिफिकल", "नैतिकता चक्र", "वित्तीयकारक",
+]))
+
+
 def script_clean(q):
-    """True if no Devanagari field has Latin letters stranded inside a word."""
-    return not any(_MIXED_SCRIPT.search(q.get(f) or "") for f in ("stem", "stem_hi")) and \
-           not any(_MIXED_SCRIPT.search(o.get("text") or "")
-                   for key in ("options", "options_hi") for o in (q.get(key) or []))
+    """True if the Hindi is free of stranded Latin, foreign scripts, and mangled निम्नलिखित."""
+    fields = [q.get(f) or "" for f in ("stem", "stem_hi")]
+    fields += [o.get("text") or "" for key in ("options", "options_hi") for o in (q.get(key) or [])]
+    for t in fields:
+        if _MIXED_SCRIPT.search(t) or _FOREIGN_SCRIPT.search(t):
+            return False
+        if _HINDI_CORRUPT.search(t):
+            return False
+    return True
 
 
 def servable(q, need_hindi=False):

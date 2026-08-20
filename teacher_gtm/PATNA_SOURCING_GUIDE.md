@@ -61,4 +61,36 @@ your first look (Maps or a call).
 - UrbanPro/TeacherOn paid-lead gating; fake student leads (ToS violation, burns trust).
 - Bulk WhatsApp to scraped numbers (policy + our number at risk).
 
-*Built 2026-07-16 for the Patna field push. Update as you learn which clusters convert.*
+---
+
+## F. Play Store sweep — the highest-quality source (automated, 2026-08-17)
+
+**`playstore_lead_sweep.py`** — run it for any city. An institute with its own branded app has
+already bought a white-label platform (Classplus yr-1 ≈ ₹4–11 lakh), so the owner is
+pre-qualified on **budget** *and* **willingness to buy software** — and those platforms hand
+them a test-creation tool with **no questions in it**. That empty test module is our pitch.
+
+```bash
+python3 playstore_lead_sweep.py --city Patna --strict-city
+python3 playstore_lead_sweep.py --city Muzaffarpur --vendor "Education Mobile Media"
+```
+
+It searches Play, resolves each app's real title + white-label vendor, fingerprints the platform
+from the package id (`co.<word>.<rand>` = Classplus), pulls reviews through Play's own reviews
+RPC, mines them for **verbatim test/paper complaints**, ranks, and writes rows in this repo's
+`patna_institutes.csv` schema.
+
+**Two hard limits — respect both:**
+1. **It cannot give you a phone number.** The Play listing's developer contact is the *vendor's*
+   (`psupdates@classplus.co`), never the institute's. Get the number from the institute's own
+   site or public listing — which is also what keeps us inside the §D consent rule.
+2. **It is weak on city.** Play search leaks nationally. Read the `CITY?` column: `title` is
+   trustworthy, `reviews` is decent, **`reviews?` and `UNVERIFIED` are not leads yet**. Use
+   `--strict-city` when the city name is also a common word — a Gaya sweep ranked *Lakshya
+   Classes Udaipur* first, because "gaya" is Hindi for "went". **Confirm on Maps before travel.**
+
+Proven: `--strict-city --city Patna` reproduces the hand-built Day 3 leads, ranking Achievers IAS
+top off its own 1-star review *"Nothing inside coarse material"*. Gaya output sits in
+`gaya_playstore_leads.csv` (needs the Maps pass before anyone visits).
+
+*Built 2026-07-16 for the Patna field push. §F added 2026-08-17. Update as you learn which clusters convert.*

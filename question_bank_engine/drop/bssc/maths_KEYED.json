@@ -451,8 +451,25 @@
   "year": 2016,
   "source_pdf": "maths.PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "यदि n कोई प्राकृतिक संख्या हो तो 6^n - 5^n का अंत संदर्भ होगा:",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1 से"
+   },
+   {
+    "label": "B",
+    "text": "3 से"
+   },
+   {
+    "label": "C",
+    "text": "7 से"
+   },
+   {
+    "label": "D",
+    "text": "5 से"
+   }
+  ],
   "stem_hi_unverified": "यदि n कोई प्राकृतिक संख्या हो तो 6^n - 5^n का अंत संदर्भ होगा:",
   "options_hi_unverified": [
    {
@@ -472,7 +489,7 @@
     "text": "5 से"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "A",
   "paper_label": "BSSC Maths Booklet (Advt 3646)",
   "answer_source": "official key, transcribed by hand (handwritten original)",
@@ -516,8 +533,25 @@
   "year": 2016,
   "source_pdf": "maths.PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "6, 72, 120 का महत्तम समापवर्तक तथा लघुतम समापवर्त्य क्रमशः है :",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "(6, 120)"
+   },
+   {
+    "label": "B",
+    "text": "(12, 120)"
+   },
+   {
+    "label": "C",
+    "text": "(12, 360)"
+   },
+   {
+    "label": "D",
+    "text": "(6, 360)"
+   }
+  ],
   "stem_hi_unverified": "6, 72, 120 का महत्तम समापवर्तक तथा लघुतम समापवर्त्य क्रमशः है :",
   "options_hi_unverified": [
    {
@@ -537,7 +571,7 @@
     "text": "(6, 360)"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "D",
   "paper_label": "BSSC Maths Booklet (Advt 3646)",
   "answer_source": "official key, transcribed by hand (handwritten original)",
@@ -1166,8 +1200,25 @@
   "year": 2016,
   "source_pdf": "maths.PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "यदि n एक विशेष धन पूर्णांक हो तो n^{2}-1 किससे विभाजित होगा ?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "7"
+   },
+   {
+    "label": "B",
+    "text": "5"
+   },
+   {
+    "label": "C",
+    "text": "8"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
   "stem_hi_unverified": "यदि n एक विशेष धन पूर्णांक हो तो n^{2}-1 किससे विभाजित होगा ?",
   "options_hi_unverified": [
    {
@@ -1187,7 +1238,7 @@
     "text": "3"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "C",
   "paper_label": "BSSC Maths Booklet (Advt 3646)",
   "answer_source": "official key, transcribed by hand (handwritten original)",
@@ -1491,8 +1542,25 @@
   "year": 2016,
   "source_pdf": "maths.PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "प्रथम n प्राकृतिक संख्याओं का माध्य 15 है तो n =",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "15"
+   },
+   {
+    "label": "B",
+    "text": "29"
+   },
+   {
+    "label": "C",
+    "text": "14"
+   },
+   {
+    "label": "D",
+    "text": "30"
+   }
+  ],
   "stem_hi_unverified": "प्रथम n प्राकृतिक संख्याओं का माध्य 15 है तो n =",
   "options_hi_unverified": [
    {
@@ -1512,7 +1580,7 @@
     "text": "30"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "B",
   "paper_label": "BSSC Maths Booklet (Advt 3646)",
   "answer_source": "official key, transcribed by hand (handwritten original)",
@@ -2189,8 +2257,25 @@
   "year": 2016,
   "source_pdf": "maths.PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "कई पूर्णांक m के लिए किसी भी धन पूर्णांक का वर्ग का रूप __________ होगा।",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "2m अथवा 2m+1"
+   },
+   {
+    "label": "B",
+    "text": "3m अथवा 3m+1"
+   },
+   {
+    "label": "C",
+    "text": "m अथवा m+1"
+   },
+   {
+    "label": "D",
+    "text": "6m अथवा 6m+1"
+   }
+  ],
   "stem_hi_unverified": "कई पूर्णांक m के लिए किसी भी धन पूर्णांक का वर्ग का रूप __________ होगा।",
   "options_hi_unverified": [
    {
@@ -2210,7 +2295,7 @@
     "text": "6m अथवा 6m+1"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "B",
   "paper_label": "BSSC Maths Booklet (Advt 3646)",
   "answer_source": "official key, transcribed by hand (handwritten original)",
@@ -2610,8 +2695,25 @@
   "year": 2016,
   "source_pdf": "maths.PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "प्रश्न n प्राकृतिक संख्याओं का समान्तर माध्य है :",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "\\frac{n}{2}+1"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{n}{2}-1"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{n-1}{2}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{n+1}{2}"
+   }
+  ],
   "stem_hi_unverified": "प्रश्न n प्राकृतिक संख्याओं का समान्तर माध्य है :",
   "options_hi_unverified": [
    {
@@ -2631,7 +2733,7 @@
     "text": "\\frac{n+1}{2}"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "D",
   "paper_label": "BSSC Maths Booklet (Advt 3646)",
   "answer_source": "official key, transcribed by hand (handwritten original)",
@@ -2805,8 +2907,25 @@
   "year": 2016,
   "source_pdf": "maths.PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "प्रश्न 20 विभिन्न प्राकृतिक संख्याओं का योगफल है :",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "200"
+   },
+   {
+    "label": "B",
+    "text": "400"
+   },
+   {
+    "label": "C",
+    "text": "350"
+   },
+   {
+    "label": "D",
+    "text": "450"
+   }
+  ],
   "stem_hi_unverified": "प्रश्न 20 विभिन्न प्राकृतिक संख्याओं का योगफल है :",
   "options_hi_unverified": [
    {
@@ -2826,7 +2945,7 @@
     "text": "450"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "B",
   "paper_label": "BSSC Maths Booklet (Advt 3646)",
   "answer_source": "official key, transcribed by hand (handwritten original)",
@@ -3845,8 +3964,25 @@
   "year": 2016,
   "source_pdf": "maths.PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "दो संख्याओं का अंतर 26 है और एक संख्या दूसरी संख्या की तिगुनी है। वे संख्याएँ हैं:",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "(48, 22)"
+   },
+   {
+    "label": "B",
+    "text": "(10, 36)"
+   },
+   {
+    "label": "C",
+    "text": "(30, 4)"
+   },
+   {
+    "label": "D",
+    "text": "(39, 13)"
+   }
+  ],
   "stem_hi_unverified": "दो संख्याओं का अंतर 26 है और एक संख्या दूसरी संख्या की तिगुनी है। वे संख्याएँ हैं:",
   "options_hi_unverified": [
    {
@@ -3866,7 +4002,7 @@
     "text": "(39, 13)"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "D",
   "paper_label": "BSSC Maths Booklet (Advt 3646)",
   "answer_source": "official key, transcribed by hand (handwritten original)",
@@ -6021,8 +6157,25 @@
   "year": 2016,
   "source_pdf": "maths.PDF",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "135 तथा 225 का महत्तम समापवर्तक है :",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "135"
+   },
+   {
+    "label": "B",
+    "text": "45"
+   },
+   {
+    "label": "C",
+    "text": "5"
+   },
+   {
+    "label": "D",
+    "text": "90"
+   }
+  ],
   "stem_hi_unverified": "135 तथा 225 का महत्तम समापवर्तक है :",
   "options_hi_unverified": [
    {
@@ -6042,7 +6195,7 @@
     "text": "90"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "B",
   "paper_label": "BSSC Maths Booklet (Advt 3646)",
   "answer_source": "official key, transcribed by hand (handwritten original)",

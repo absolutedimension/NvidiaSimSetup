@@ -420,8 +420,25 @@
   "year": 2018,
   "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "यदि 7589 - X = 3434, तो X का मान बताइये :",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "5541"
+   },
+   {
+    "label": "B",
+    "text": "3155"
+   },
+   {
+    "label": "C",
+    "text": "4155"
+   },
+   {
+    "label": "D",
+    "text": "2321"
+   }
+  ],
   "stem_hi_unverified": "यदि 7589 - X = 3434, तो X का मान बताइये :",
   "options_hi_unverified": [
    {
@@ -441,7 +458,7 @@
     "text": "2321"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "C",
   "paper_label": "BSSC JE GK/GS (Advt 0411)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -1443,8 +1460,25 @@
   "year": 2018,
   "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "एक व्यक्ति को एक फोन ₹ 1140 में बेचने पर 5% की हानि होती है। उस व्यक्ति को 5% लाभ कमाने के लिए इस फोन को कितने में बेचना चाहिए?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "₹ 1280"
+   },
+   {
+    "label": "B",
+    "text": "₹ 1260"
+   },
+   {
+    "label": "C",
+    "text": "₹ 1230"
+   },
+   {
+    "label": "D",
+    "text": "₹ 1250"
+   }
+  ],
   "stem_hi_unverified": "एक व्यक्ति को एक फोन ₹ 1140 में बेचने पर 5% की हानि होती है। उस व्यक्ति को 5% लाभ कमाने के लिए इस फोन को कितने में बेचना चाहिए?",
   "options_hi_unverified": [
    {
@@ -1464,7 +1498,7 @@
     "text": "₹ 1250"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "B",
   "paper_label": "BSSC JE GK/GS (Advt 0411)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -3376,8 +3410,25 @@
   "year": 2018,
   "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "वह छोटी से छोटी संख्या कौन सी है जिससे 1056 में जोड़ने पर वह योग 23 से पूर्ण रूप से विभाजित हो जाता है?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "12"
+   },
+   {
+    "label": "B",
+    "text": "9"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
   "stem_hi_unverified": "वह छोटी से छोटी संख्या कौन सी है जिससे 1056 में जोड़ने पर वह योग 23 से पूर्ण रूप से विभाजित हो जाता है?",
   "options_hi_unverified": [
    {
@@ -3397,7 +3448,7 @@
     "text": "3"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "C",
   "paper_label": "BSSC JE GK/GS (Advt 0411)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -3766,8 +3817,25 @@
   "year": 2018,
   "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "5 : 20 के अनुपात को, प्रतिशत में दर्शाने पर कितना होगा ?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "0.25%"
+   },
+   {
+    "label": "B",
+    "text": "25%"
+   },
+   {
+    "label": "C",
+    "text": "50%"
+   },
+   {
+    "label": "D",
+    "text": "125%"
+   }
+  ],
   "stem_hi_unverified": "5 : 20 के अनुपात को, प्रतिशत में दर्शाने पर कितना होगा ?",
   "options_hi_unverified": [
    {
@@ -3787,7 +3855,7 @@
     "text": "125%"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "B",
   "paper_label": "BSSC JE GK/GS (Advt 0411)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -5114,8 +5182,25 @@
   "year": 2018,
   "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "एक प्रतिभागी परीक्षा में 50 प्रश्न हैं जिनमें प्रश्नों का सही उत्तर के लिए 4 अंक हैं और प्रश्नों का गलत उत्तर के लिए 2 अंक घटाए जाते हैं। यदि कुल 23 उत्तर सही हैं और बाकी गलत हैं तो कुल कितने अंक प्राप्त होंगे ?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "92"
+   },
+   {
+    "label": "B",
+    "text": "54"
+   },
+   {
+    "label": "C",
+    "text": "34"
+   },
+   {
+    "label": "D",
+    "text": "38"
+   }
+  ],
   "stem_hi_unverified": "एक प्रतिभागी परीक्षा में 50 प्रश्न हैं जिनमें प्रश्नों का सही उत्तर के लिए 4 अंक हैं और प्रश्नों का गलत उत्तर के लिए 2 अंक घटाए जाते हैं। यदि कुल 23 उत्तर सही हैं और बाकी गलत हैं तो कुल कितने अंक प्राप्त होंगे ?",
   "options_hi_unverified": [
    {
@@ -5135,7 +5220,7 @@
     "text": "38"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "D",
   "paper_label": "BSSC JE GK/GS (Advt 0411)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -5600,8 +5685,25 @@
   "year": 2018,
   "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "कमल ने ₹ 5000 का एक सोफे खरीदा और बाद में उसे ₹ 4000 में बेच दिया। उसे कितने प्रतिशत हानि हुई?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "25%"
+   },
+   {
+    "label": "B",
+    "text": "20%"
+   },
+   {
+    "label": "C",
+    "text": "5%"
+   },
+   {
+    "label": "D",
+    "text": "10%"
+   }
+  ],
   "stem_hi_unverified": "कमल ने ₹ 5000 का एक सोफे खरीदा और बाद में उसे ₹ 4000 में बेच दिया। उसे कितने प्रतिशत हानि हुई?",
   "options_hi_unverified": [
    {
@@ -5621,7 +5723,7 @@
     "text": "10%"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "B",
   "paper_label": "BSSC JE GK/GS (Advt 0411)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -5730,8 +5832,25 @@
   "year": 2018,
   "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "एक व्यक्ति एक बैंक से 5% के साधारण ब्याज पर 6 वर्ष के लिए ऋण लेता है। यदि कुल भुगतान किया ब्याज ₹ 1230 है तो मूल धन कितना था?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "₹ 4350"
+   },
+   {
+    "label": "B",
+    "text": "₹ 4250"
+   },
+   {
+    "label": "C",
+    "text": "₹ 4000"
+   },
+   {
+    "label": "D",
+    "text": "₹ 4100"
+   }
+  ],
   "stem_hi_unverified": "एक व्यक्ति एक बैंक से 5% के साधारण ब्याज पर 6 वर्ष के लिए ऋण लेता है। यदि कुल भुगतान किया ब्याज ₹ 1230 है तो मूल धन कितना था?",
   "options_hi_unverified": [
    {
@@ -5751,7 +5870,7 @@
     "text": "₹ 4100"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "D",
   "paper_label": "BSSC JE GK/GS (Advt 0411)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -5925,8 +6044,25 @@
   "year": 2018,
   "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "1200 लोगों का एक समूह जिसमें छात्र और अध्यापक हैं, एक जंगल में भ्रमण कर रहे हैं। प्रश्न 15 छात्रों के लिए एक अध्यापक है। उस समूह में कुल कितने अध्यापक हैं ?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "90"
+   },
+   {
+    "label": "B",
+    "text": "80"
+   },
+   {
+    "label": "C",
+    "text": "70"
+   },
+   {
+    "label": "D",
+    "text": "75"
+   }
+  ],
   "stem_hi_unverified": "1200 लोगों का एक समूह जिसमें छात्र और अध्यापक हैं, एक जंगल में भ्रमण कर रहे हैं। प्रश्न 15 छात्रों के लिए एक अध्यापक है। उस समूह में कुल कितने अध्यापक हैं ?",
   "options_hi_unverified": [
    {
@@ -5946,7 +6082,7 @@
     "text": "75"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "D",
   "paper_label": "BSSC JE GK/GS (Advt 0411)",
   "answer_source": "official key, transcribed by hand (typeset original)",
@@ -6120,8 +6256,25 @@
   "year": 2018,
   "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
   "layout": "facing_pages",
-  "stem_hi": "",
-  "options_hi": [],
+  "stem_hi": "3889 + 12.952 - X = 3854.002 में X का मान क्या होगा ?",
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "40.95"
+   },
+   {
+    "label": "B",
+    "text": "43.95"
+   },
+   {
+    "label": "C",
+    "text": "47.95"
+   },
+   {
+    "label": "D",
+    "text": "44.95"
+   }
+  ],
   "stem_hi_unverified": "3889 + 12.952 - X = 3854.002 में X का मान क्या होगा ?",
   "options_hi_unverified": [
    {
@@ -6141,7 +6294,7 @@
     "text": "44.95"
    }
   ],
-  "hindi_status": "unverified_ocr",
+  "hindi_status": "promoted_maths_number_verified",
   "correct_answer": "C",
   "paper_label": "BSSC JE GK/GS (Advt 0411)",
   "answer_source": "official key, transcribed by hand (typeset original)",

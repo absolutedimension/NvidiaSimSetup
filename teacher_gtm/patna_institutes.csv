@@ -4,3 +4,35 @@ Base Point,,NEET,,917979919133,,1-warm,accepted,,,"Patna cluster — batch with 
 Delta Success Point,,Exam prep,,917903454942,,1-warm,accepted,,,"Patna cluster — Maya-accepted."
 # --- add new Patna institutes below (one per row). Fill cluster from Google Maps. ---
 # example: Sharma Tuition,Kankarbagh,Class 10-12 Science,Mr Sharma,9199XXXXXXX,80,2,none,,,
+#
+# --- 2026-08-17 batch: 5 owner-run leads, every number/email taken from the institute's OWN
+# --- public website (they publish it to receive coaching calls = consented use). Maya calls FIRST.
+Vaishnavi Classes,Kankarbagh (Malahi Pakri),SSC+Banking+Railway+BPSC,Prafull Sir (Founder & Master Faculty),9142277496,,2,none,,,"BEST FIT — founder IS the teacher, personal email prafullsirenglish@gmail.com. Already sells 'Weekly mock tests with detailed performance analysis' → we replace the manual paper-writing. Matches the LIVE SRB govt-job bank. Src: vaishnaviclasses.com"
+Shri Mangalam Institute,Kankarbagh (Kanti Factory Chowk),PCM cls 7-12 + JEE/NEET,,9798273181,,2,none,,,"Competes on test VOLUME — site claims 'More Number of Mocktest / prelims than any other institute'. That claim is expensive to keep manually = our wedge. Alt 9430462353, shrimangalaminstitute@gmail.com. Src: smipatna.com"
+Iconic Classes,East Boring Canal Rd (Ashoka Tower),PCB+M / JEE+NEET,,7903993958,,2,none,,,"Single location = owner reachable. Has an 'Online Test Series' menu item → already a product line, likely thin content. Alt 8651259660, info@iconicclasses.in. Src: iconicclasses.in"
+Kartar Coaching Centre,Makhania Kuan (near PMCH),Bank+SSC+Railway+Defence,,7808981230,,2,none,,,"Small, no named test-series product — only 'regular mock tests & PYQ practice'. Cheapest yes. Alt 9931773317, kartarcoachingpatna@gmail.com. Src: kartarcoachingcentre.com"
+Sukrishna Commerce Academy,Boring Road (Surya Crystal) + 5 branches,Commerce cls 11-12 (Accounts/BSt/Eco),CA Binay Kumar + CA Vivek Kumar,8084696222,,3,none,,,"HIGHER VALUE but 6 branches = front desk, slower yes. Sells 'Mock tests aligned to CBSE & Bihar Board pattern'. CHECK qbank commerce coverage before pitching. info@sukrishna.in. Src: sukrishna.in"
+#
+# === 2026-08-17 BATCH 2 — source=playstore ===
+# METHOD: Play Store search "coaching classes Patna" -> branded white-label institute apps.
+#   Package IDs like co.<word>.<random> or co.classplus.* = Classplus-built. These owners have
+#   ALREADY paid for software (Classplus yr-1 = Rs 4-11 lakh) and got a test module with NO
+#   questions in it. Pre-qualified on budget + tech-willingness + the exact gap we fill.
+# LIMIT: the Play listing's developer contact is the VENDOR's (psupdates@classplus.co), never the
+#   institute's. Phones below come from the institute's own site / public directory listing.
+# Reviews were mined via the Play reviews RPC for test/paper complaints. Quotes are verbatim.
+Sagir Ahmad Career Classes,Machhua Toli (4 Arya Kumar Rd),SSC+Railway+Banking+NDA/Defence+Foundation 9-12,Sagir Ahmad,917323910129,,2,none,,,"TOP OF BATCH 2. Est. 1989. Site sells 'Weekly full-length mock tests with detailed analytics' = doing our product by hand. App co.lynde.cacpn (Classplus) 38 reviews / 7 low-rated. Exams match the LIVE SRB bank exactly. WhatsApp same number. Ask.SagirAhmadCareerClasses@gmail.com. Src: sagirahmadcareerclasses.com + Play"
+Gyan Bindu G.S Academy,Boring Road (Kasturba Path behind Jamuna Apartment),UPSC+BPSC+Bihar Daroga+SSC+Railway,Raushan Anand (Director),918540063639,,2,none,,,"Est. 2016. App com.gyan.bindu 60 reviews / 12 low. Review: 'Good but some time pdf not opens properly' = content-delivery friction. BPSC/Daroga matches the srb-bpsc-tre work. Alt 9341492082. Src: justdial + gyanbindu.co.in + Play"
+Achievers IAS Academy,Patliputra Colony (Rd No 4A near Tennis Court),UPSC+BPSC,,918434931877,,2,none,,,"STRONGEST PAIN SIGNAL in batch 2. App co.jorah.vnrml: 8 reviews and 5 are 1-2 star, incl. verbatim 'Worst .... Nothing inside coarse material.... fraud'. Course fees Rs 40k-2.4L = real budget. Lead with the content gap, NOT the app. achieversiaspatna@gmail.com. Src: collegedunia/justdial + Play"
+Gyan Gurukul Genius40,Boring Road Chauraha (Kumar Tower),IIT-JEE+NEET,,918102921570,,3,none,,,"App com.nytybk.tploax 60 reviews / 10 low. CAUTION: several unrelated 'Gyan Gurukul' entities in Patna (Panapur, Beur, Bazar Samiti) — CONFIRM this branch owns the app before visiting. Src: facebook/Genius40 + Play"
+Deepak Sir Patna,,Govt exams (CSAT/reasoning/psych),,,,2,none,,,"NEEDS CONTACT. App com.xokiwr.bceuqe (Appx vendor) 60 reviews / 5 low. CONFIRMED test-series seller with a delivery failure — verbatim 1-star: 'I bought the test series for psych exam tomorrow but havent received my ID and password yet.' Perfect wedge. Find number via the app's YouTube/Telegram. Src: Play"
+Kundan Patna,Digha (Danapur Rd),Competitive,,,,2,none,,,"NEEDS CONTACT. App co.george.dxzjm (Classplus): 44 reviews, 13 low = WORST satisfaction ratio in the batch. Justdial lists Kundan Classes, Danapur Rd, Digha 800012 but hides the number. Also runs YouTube 'Kundan Patna'. Src: Play + justdial"
+Ashish Sir Patna,,Bihar TRE (teacher recruitment),,,,2,none,,,"NEEDS CONTACT. App com.lzabsw.okuvlr 9 reviews. Review: 'aapka guess question ka level bahut hi helpful hai... selection tre 4.0 me ho gaya' = he sells TRE guess papers. We have TRE questions (branch srb-bpsc-tre). No public number found — try the app's Telegram. Src: Play"
+Sankalp Classes Patna,,Unconfirmed,,,,3,none,,,"AMBIGUOUS — do NOT call blind. App co.sansa.sjmsy (Classplus) but Patna has 3 unrelated Sankalps: Sankalp Chemistry (Boring Rd/Patliputra), Sankalp EduCenter (Hanuman Nagar), Sankalp Mathematics (Saketpuri). Identify which owns the app first. Src: Play + justdial"
+# SKIPPED from the Play sweep, with reason:
+#   Diploma Academy Patna (co.shield.fwvuh) — 55 reviews/8 low + 1-star 'no live class, wasted 1800',
+#     but polytechnic/diploma syllabus is NOT in our bank. Revisit only if we add diploma.
+#   Patna Law Classes (co.marshal.zodqk) — praised for mock tests, but CLAT/law not in our bank.
+#   PIC Patna, RK Classes, PATNA COACHING CLASSES, Study Point, PCP Academy, GD Classes Patna,
+#     Future Online Classes — too few reviews to qualify or no reachable contact yet.
+#   GD CLASSES (co.classplus.gdcls) — Kanpur, not Patna. App name lied; reviews said 'kakadeo kanpur'.
