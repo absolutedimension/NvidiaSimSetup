@@ -556,27 +556,109 @@ def _ord(n):
 # ---- Direction Sense --------------------------------------------------------
 
 def _b_direction_distance(rng, diff):
-    # walk that returns an axis-aligned or 3-4-5 right triangle so distance is clean
-    a = rng.choice([3, 6, 8, 9, 12])
-    b = rng.choice([4, 8, 15, 5, 12])
-    # ensure a Pythagorean-clean hypotenuse when both legs used
-    triples = {(3, 4): 5, (6, 8): 10, (8, 15): 17, (9, 12): 15, (5, 12): 13, (12, 5): 13}
-    key = (a, b) if (a, b) in triples else next(iter(triples))
-    a, b = key
-    hyp = triples[key]
+    """Direction sense by displacement. Difficulty = how many legs, and whether the DIRECTION
+    of the displacement is asked as well as its size.
+
+    diff 1  two perpendicular legs        -> straight-line distance
+    diff 2  three legs, two of them on the same axis -> distance (the cancellation is the test)
+    diff 3  four legs                     -> distance AND the direction from the start
+    diff 4+ four legs                     -> the direction only, which cannot be got by
+                                             Pythagoras and forces the candidate to track signs
+    """
+    TRIPLES = {(3, 4): 5, (6, 8): 10, (8, 15): 17, (9, 12): 15, (5, 12): 13}
+    (a, b), hyp = rng.choice(list(TRIPLES.items()))
     name = rng.choice(["A man", "Ravi", "A boy", "Sita"])
-    stem = (f"{name} starts from a point and walks {a} km towards North, then turns right "
-            f"and walks {b} km towards East. How far is {'he' if name!='Sita' else 'she'} "
-            f"now from the starting point?")
-    sol = (f"North {a} km and East {b} km are perpendicular. Straight-line distance = "
-           f"√({a}² + {b}²) = √({a*a} + {b*b}) = √{a*a+b*b} = {hyp} km.")
-    d = [f"{a + b} km", f"{hyp + 1} km", f"{abs(a - b)} km"]
-    d = [x for x in dict.fromkeys(d) if x != f"{hyp} km"][:3]
-    stem_hi = (f"एक व्यक्ति एक बिंदु से चलना आरम्भ करता है और उत्तर दिशा में {a} किमी चलता है, "
-               f"फिर दाएँ मुड़कर पूर्व दिशा में {b} किमी चलता है। अब वह प्रारम्भिक बिंदु से "
-               f"कितनी दूर है?")
-    sol_hi = f"उत्तर व पूर्व लम्बवत हैं; दूरी = √({a}² + {b}²) = √{a*a+b*b} = {hyp} किमी।"
-    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": f"{hyp} km", "distractors": d, "solution": sol,
+    he = "she" if name == "Sita" else "he"
+    he_hi = "वह"
+    if diff <= 1:
+        stem = (f"{name} starts from a point and walks {a} km towards North, then turns right "
+                f"and walks {b} km towards East. How far is {he} now from the starting point?")
+        sol = (f"North {a} km and East {b} km are perpendicular. Distance = "
+               f"sqrt({a}^2 + {b}^2) = sqrt({a * a + b * b}) = {hyp} km.")
+        stem_hi = (f"एक व्यक्ति एक बिंदु से चलना आरम्भ करता है और उत्तर दिशा में {a} किमी चलता है, "
+                   f"फिर दाएँ मुड़कर पूर्व दिशा में {b} किमी चलता है। अब {he_hi} प्रारम्भिक बिंदु से "
+                   f"कितनी दूर है?")
+        sol_hi = (f"उत्तर और पूर्व लम्बवत हैं; दूरी = √({a}² + {b}²) = √{a * a + b * b} = "
+                  f"{hyp} किमी।")
+        d = mistakes(("added the two distances instead of using Pythagoras", f"{a + b} km"),
+                     ("subtracted them", f"{abs(a - b)} km"),
+                     ("used only the longer leg", f"{max(a, b)} km"))
+        return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi,
+                "correct": f"{hyp} km", "mistakes": d, "solution": sol,
+                "concept": "Direction — Distance"}
+    if diff == 2:
+        # Build the NET legs from a triple rather than hoping a random walk lands on one. The
+        # first version retried at difficulty 1 when the root came out irrational, so d2 silently
+        # printed the d1 question for most seeds — a difficulty level that quietly wasn't one.
+        (net_n, b), root = rng.choice(list(TRIPLES.items()))
+        back = rng.randint(1, 4)
+        a = net_n + back
+        stem = (f"{name} walks {a} km towards North, then turns right and walks {b} km, and "
+                f"finally walks {back} km towards South. How far is {he} from the starting "
+                f"point?")
+        sol = (f"North {a} then South {back} leaves {net_n} km North; East {b} km is unchanged. "
+               f"Distance = sqrt({net_n}^2 + {b}^2) = {root} km.")
+        stem_hi = (f"एक व्यक्ति उत्तर दिशा में {a} किमी चलता है, फिर दाएँ मुड़कर {b} किमी चलता है, "
+                   f"और अंत में दक्षिण दिशा में {back} किमी चलता है। {he_hi} प्रारम्भिक बिंदु से "
+                   f"कितनी दूर है?")
+        sol_hi = (f"उत्तर {a} और दक्षिण {back} मिलकर {net_n} किमी उत्तर शेष; पूर्व {b} किमी। "
+                  f"दूरी = √({net_n}² + {b}²) = {root} किमी।")
+        d = mistakes(("ignored the southward leg", f"{hyp} km"),
+                     ("added all three distances", f"{a + b + back} km"),
+                     ("cancelled the wrong pair", f"{abs(b - back)} km"))
+        return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi,
+                "correct": f"{root} km", "mistakes": d, "solution": sol,
+                "concept": "Direction — Distance"}
+    # diff 3 and 4+ : four legs, net displacement East and North.
+    # d3 asks the DISTANCE, so the net legs are built from a Pythagorean pair and the answer is
+    # whole. d4 asks the DIRECTION, which Pythagoras cannot give — the candidate has to track
+    # signs on both axes. Deriving the legs from the net (rather than hoping a random set of legs
+    # happens to be clean) is what keeps the two levels distinct: the first version fell back to
+    # the direction question whenever the root was not exact, so d3 and d4 printed the SAME
+    # question for most seeds.
+    import math as _m
+    if diff == 3:
+        (net_n, net_e), root = rng.choice(list(TRIPLES.items()))
+    else:
+        net_n, net_e = rng.choice([4, 6, 8, 9]), rng.choice([3, 5, 7, 11])
+        root = int(_m.isqrt(net_n * net_n + net_e * net_e))
+    n2 = rng.choice([1, 2, 3])
+    e2 = rng.choice([1, 2, 3])
+    n1, e1 = net_n + n2, net_e + e2
+    quad = "North-East"
+    quad_hi = "उत्तर-पूर्व"
+    stem_tail = ("How far is {} from the starting point?".format(he) if diff == 3 else
+                 "In which direction is {} from the starting point?".format(he))
+    stem = (f"{name} walks {n1} km towards North, then {e1} km towards East, then {n2} km "
+            f"towards South, and finally {e2} km towards West. " + stem_tail)
+    sol = (f"Net movement = {n1} - {n2} = {net_n} km North and {e1} - {e2} = {net_e} km East, "
+           f"so the finishing point lies {quad} of the start"
+           + (f", at sqrt({net_n}^2 + {net_e}^2) = {root} km." if "How far" in stem_tail else "."))
+    stem_hi = (f"एक व्यक्ति उत्तर दिशा में {n1} किमी, फिर पूर्व दिशा में {e1} किमी, फिर दक्षिण "
+               f"दिशा में {n2} किमी और अंत में पश्चिम दिशा में {e2} किमी चलता है। "
+               + ("{} प्रारम्भिक बिंदु से कितनी दूर है?".format(he_hi) if "How far" in stem_tail
+                  else "प्रारम्भिक बिंदु से {} किस दिशा में है?".format(he_hi)))
+    sol_hi = (f"शुद्ध गति = {n1} - {n2} = {net_n} किमी उत्तर तथा {e1} - {e2} = {net_e} किमी पूर्व, "
+              f"अतः अंतिम बिंदु प्रारम्भ के {quad_hi} में है"
+              + (f", दूरी = √({net_n}² + {net_e}²) = {root} किमी।" if "How far" in stem_tail
+                 else "।"))
+    if "How far" in stem_tail:
+        d = mistakes(("added every leg walked", f"{n1 + e1 + n2 + e2} km"),
+                     ("forgot to cancel the southward and westward legs", f"{hyp} km"),
+                     ("added the two net legs instead of using Pythagoras",
+                      f"{net_e + net_n} km"))
+        correct = f"{root} km"
+    else:
+        d = mistakes(("read the first leg as the answer", "North"),
+                     ("cancelled the wrong pair, landing South-West", "South-West"),
+                     ("used only the East-West net movement", "East"))
+        correct = quad
+        stem_hi = stem_hi.replace("कितनी दूर है?", "किस दिशा में है?")
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": correct,
+            "mistakes": d, "solution": sol,
+            "hi_opts": {"North": "उत्तर", "South": "दक्षिण", "East": "पूर्व", "West": "पश्चिम",
+                        "North-East": "उत्तर-पूर्व", "South-West": "दक्षिण-पश्चिम",
+                        "North-West": "उत्तर-पश्चिम", "South-East": "दक्षिण-पूर्व"},
             "concept": "Direction — Distance"}
 
 def _b_direction_final(rng, diff):
@@ -645,31 +727,122 @@ _REL_GENDER = {"father": "M", "mother": "F", "son": "M", "daughter": "F",
 _ALL_RELS = ["grandfather", "grandmother", "father", "mother", "brother", "sister",
              "uncle", "aunt", "nephew", "niece", "grandson", "granddaughter", "cousin"]
 
+# Reading a relation the other way round. "A is the father of C" means "C is the son OR daughter
+# of A" — which is only decidable from C's gender, so those are handled by choosing C's gender in
+# the builder. Entries here are the ones that invert unambiguously.
+_INV = {"grandfather": "grandson", "grandmother": "granddaughter",
+        "grandson": "grandfather", "granddaughter": "grandmother",
+        "uncle": "nephew", "aunt": "niece", "nephew": "uncle", "niece": "aunt",
+        "father": "son", "mother": "daughter", "brother": "brother", "sister": "sister",
+        "son": "father", "daughter": "mother"}
+
+
 def _b_blood_relation(rng, diff):
+    """Blood relations. Difficulty = how many links, and whether the chain is stated plainly.
+
+    diff 1  two links, plainly stated      : A is the r1 of B, B is the r2 of C
+    diff 2  three links                    : one more hop to hold
+    diff 3  stated as a DIALOGUE           : "Pointing to a photograph, X said..." — the same
+                                             chain, but the candidate must first work out who is
+                                             speaking about whom, which is where most go wrong
+    diff 4+ the chain runs BACKWARDS       : the relation of C to A rather than A to C, so the
+                                             answer is the inverse of the one being traced
+    """
     (r1, r2), ans = rng.choice(list(_KIN.items()))
-    A = rng.choice(_MALE if _REL_GENDER[r1] == "M" else _FEMALE)          # A's gender ⇐ r1
-    B = rng.choice([x for x in (_MALE if _REL_GENDER[r2] == "M" else _FEMALE)
-                    if x != A])                                          # B's gender ⇐ r2
+    A = rng.choice(_MALE if _REL_GENDER[r1] == "M" else _FEMALE)
+    B = rng.choice([x for x in (_MALE if _REL_GENDER[r2] == "M" else _FEMALE) if x != A])
     C = rng.choice([x for x in (_MALE + _FEMALE) if x not in (A, B)])
-    stem = (f"{A} is the {r1} of {B}, and {B} is the {r2} of {C}. "
-            f"How is {A} related to {C}?")
-    sol = (f"{A} is {B}'s {r1}; {B} is {C}'s {r2}. Tracing the relationship, "
-           f"{A} is the {ans} of {C}.")
+    ans_hi = _KIN_HI.get((r1, r2), HI.rel(ans))
     same_gender = [r for r in _ALL_RELS if r != ans and _rel_is_male(r) == _rel_is_male(ans)]
     d = rng.sample(same_gender, min(3, len(same_gender)))
-    stem_hi = (f"{HI.name(A)}, {HI.possessive(HI.name(B), r1)} हैं तथा "
-               f"{HI.name(B)}, {HI.possessive(HI.name(C), r2)} हैं। "
-               f"{HI.name(A)} का {HI.name(C)} से क्या सम्बन्ध है?")
-    ans_hi = _KIN_HI.get((r1, r2), HI.rel(ans))
-    sol_hi = (f"सम्बन्ध जोड़ने पर {HI.name(A)}, {HI.name(C)} की {ans_hi} हुईं।" if not _rel_is_male(ans)
-              else f"सम्बन्ध जोड़ने पर {HI.name(A)}, {HI.name(C)} के {ans_hi} हुए।")
-    # The correct option must carry the route-specific Hindi word; the distractors keep the
-    # generic one, which is fine because they are wrong either way.
     hi_opts = {x.capitalize(): HI.rel(x) for x in _ALL_RELS}
     hi_opts[ans.capitalize()] = ans_hi
-    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "hi_opts": hi_opts, "correct": ans.capitalize(),
-            "distractors": [x.capitalize() for x in d], "solution": sol,
-            "concept": "Blood Relations"}
+    sol = (f"{A} is {B}'s {r1}; {B} is {C}'s {r2}. Tracing the relationship, "
+           f"{A} is the {ans} of {C}.")
+    sol_hi = (f"सम्बन्ध जोड़ने पर {HI.name(A)}, {HI.name(C)} की {ans_hi} हुईं।"
+              if not _rel_is_male(ans)
+              else f"सम्बन्ध जोड़ने पर {HI.name(A)}, {HI.name(C)} के {ans_hi} हुए।")
+    if diff <= 1:
+        stem = (f"{A} is the {r1} of {B}, and {B} is the {r2} of {C}. "
+                f"How is {A} related to {C}?")
+        stem_hi = (f"{HI.name(A)}, {HI.possessive(HI.name(B), r1)} हैं तथा "
+                   f"{HI.name(B)}, {HI.possessive(HI.name(C), r2)} हैं। "
+                   f"{HI.name(A)} का {HI.name(C)} से क्या सम्बन्ध है?")
+    elif diff == 3:
+        # the SAME chain, spoken. A points at C and describes B in the middle.
+        spk = "she" if A in _FEMALE else "he"
+        spk_hi = "उसने" 
+        stem = (f"Pointing to {C} in a photograph, {A} said, \"{B} is my {_INV.get(r1, r1)}, "
+                f"and {C} is {B}'s {r2}.\" How is {A} related to {C}?")
+        # "मेरा/मेरी" printed as a literal slash is an unfinished sentence on a real paper.
+        # The possessive agrees with the RELATION's gender, which we already know.
+        _spoken = _INV.get(r1, r1)
+        _my = "मेरे" if _rel_is_male(_spoken) else "मेरी"
+        stem_hi = (f"एक तस्वीर में {HI.name(C)} की ओर संकेत करते हुए {HI.name(A)} ने कहा, "
+                   f"\"{HI.name(B)} {_my} {HI.rel(_spoken)} हैं तथा {HI.name(C)}, "
+                   f"{HI.possessive(HI.name(B), r2)} हैं।\" {HI.name(A)} का {HI.name(C)} से "
+                   f"क्या सम्बन्ध है?")
+    elif diff == 2:
+        # three links: A -r1-> B -r2-> C -r3-> D, asked A to D via the known two-step answer
+        # A three-link chain only composes if the FIRST two links resolve to a basic relation —
+        # _KIN is keyed on basic relations, so a derived one like "grandmother" has nowhere to go.
+        # Guessing and retrying meant d2 printed the two-link question for 93 of 120 seeds: a
+        # difficulty level that silently wasn't one. So pick the first pair from the chains that
+        # DO land on a basic relation, then compose again.
+        basic = {"father", "mother", "son", "daughter", "brother", "sister"}
+        seeds2 = [(k, v) for k, v in _KIN.items() if v in basic]
+        (r1, r2), ans = rng.choice(seeds2)
+        A = rng.choice(_MALE if _REL_GENDER[r1] == "M" else _FEMALE)
+        B = rng.choice([x for x in (_MALE if _REL_GENDER[r2] == "M" else _FEMALE) if x != A])
+        C = rng.choice([x for x in (_MALE + _FEMALE) if x not in (A, B)])
+        ans_hi = _KIN_HI.get((r1, r2), HI.rel(ans))
+        D = rng.choice([x for x in (_MALE + _FEMALE) if x not in (A, B, C)])
+        options3 = [(r3, _KIN[(ans, r3)]) for r3 in ("son", "daughter", "father", "mother",
+                                                     "brother", "sister")
+                    if (ans, r3) in _KIN]
+        r3, final = rng.choice(options3)
+        stem = (f"{A} is the {r1} of {B}, {B} is the {r2} of {C}, and {C} is the {r3} of {D}. "
+                f"How is {A} related to {D}?")
+        stem_hi = (f"{HI.name(A)}, {HI.possessive(HI.name(B), r1)} हैं; {HI.name(B)}, "
+                   f"{HI.possessive(HI.name(C), r2)} हैं तथा {HI.name(C)}, "
+                   f"{HI.possessive(HI.name(D), r3)} हैं। {HI.name(A)} का {HI.name(D)} से "
+                   f"क्या सम्बन्ध है?")
+        fin_hi = _KIN_HI.get((ans, r3), HI.rel(final))
+        sol = (f"{A} is the {ans} of {C}; {C} is the {r3} of {D}. So {A} is the {final} of {D}.")
+        sol_hi = (f"{HI.name(A)}, {HI.name(C)} के {ans_hi} हैं; {HI.name(C)}, "
+                  f"{HI.possessive(HI.name(D), r3)} हैं। अतः {HI.name(A)}, {HI.name(D)} के "
+                  f"{fin_hi} हुए।")
+        same_gender = [r for r in _ALL_RELS if r != final
+                       and _rel_is_male(r) == _rel_is_male(final)]
+        d = rng.sample(same_gender, min(3, len(same_gender)))
+        hi_opts = {x.capitalize(): HI.rel(x) for x in _ALL_RELS}
+        hi_opts[final.capitalize()] = fin_hi
+        return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "hi_opts": hi_opts,
+                "correct": final.capitalize(), "distractors": [x.capitalize() for x in d],
+                "solution": sol, "concept": "Blood Relations"}
+    else:
+        # diff 4+ : ask the INVERSE — how is C related to A
+        inv = _INV.get(ans)
+        if inv is None:
+            return _b_blood_relation(rng, 1)
+        stem = (f"{A} is the {r1} of {B}, and {B} is the {r2} of {C}. "
+                f"How is {C} related to {A}?")
+        stem_hi = (f"{HI.name(A)}, {HI.possessive(HI.name(B), r1)} हैं तथा "
+                   f"{HI.name(B)}, {HI.possessive(HI.name(C), r2)} हैं। "
+                   f"{HI.name(C)} का {HI.name(A)} से क्या सम्बन्ध है?")
+        sol = (f"{A} is the {ans} of {C}, so read the other way, {C} is the {inv} of {A}.")
+        sol_hi = (f"{HI.name(A)}, {HI.name(C)} के {ans_hi} हैं; उल्टा पढ़ने पर {HI.name(C)}, "
+                  f"{HI.name(A)} के {HI.rel(inv)} हुए।")
+        same_gender = [r for r in _ALL_RELS if r != inv and _rel_is_male(r) == _rel_is_male(inv)]
+        d = rng.sample(same_gender, min(3, len(same_gender)))
+        hi_opts = {x.capitalize(): HI.rel(x) for x in _ALL_RELS}
+        return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "hi_opts": hi_opts,
+                "correct": inv.capitalize(), "distractors": [x.capitalize() for x in d],
+                "solution": sol, "concept": "Blood Relations"}
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "hi_opts": hi_opts,
+            "correct": ans.capitalize(), "distractors": [x.capitalize() for x in d],
+            "solution": sol, "concept": "Blood Relations"}
+
 
 def _rel_is_male(r):
     return r in ("grandfather", "father", "brother", "uncle", "nephew", "grandson")
