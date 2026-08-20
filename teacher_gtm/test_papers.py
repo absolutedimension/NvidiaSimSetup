@@ -995,5 +995,61 @@ SOLVERS = ([("series-any", solve_series_any),
             ("coding-any", solve_coding_any)] + SOLVERS)
 
 
+# ── the last two generated forms ────────────────────────────────────────────────────────────────
+
+_DIRV = {"North": (0, 1), "South": (0, -1), "East": (1, 0), "West": (-1, 0)}
+_RIGHT_OF = {"North": "East", "East": "South", "South": "West", "West": "North"}
+
+
+def solve_direction_walk(en):
+    """Walk the whole path on a grid — four legs, distance or direction.
+
+    Handles the leg written as "turns right and walks 12 km" with no direction stated: from North
+    a right turn is East, and a solver that only reads explicit compass words silently drops that
+    leg and reports a wrong distance with no sign anything went missing.
+    """
+    if " km towards " not in en:
+        return None
+    x = y = 0
+    facing = None
+    for m in re.finditer(r"(\d+) km(?:\s+towards\s+(North|South|East|West))?",
+                         en.split("?")[0]):
+        d = int(m.group(1))
+        dirn = m.group(2) or (_RIGHT_OF.get(facing) if facing else None)
+        if dirn is None:
+            return None
+        facing = dirn
+        dx, dy = _DIRV[dirn]
+        x += dx * d
+        y += dy * d
+    if "which direction" in en.lower():
+        ns = "North" if y > 0 else "South" if y < 0 else ""
+        ew = "East" if x > 0 else "West" if x < 0 else ""
+        return f"{ns}-{ew}" if ns and ew else (ns or ew or None)
+    dist = math.hypot(x, y)
+    return f"{int(dist)} km" if dist == int(dist) else None
+
+
+def solve_number_coding(en):
+    """A=1 style letter-to-number coding, including the 'one more' and 'twice' variants."""
+    m = re.search(r"each letter is coded by (.+?), how is '([A-Z]+)' coded", en)
+    if not m:
+        return None
+    rule, word = m.group(1), m.group(2)
+    if "one more than" in rule:
+        f = lambda n: n + 1
+    elif "twice" in rule:
+        f = lambda n: n * 2
+    elif "its position in the alphabet" in rule:
+        f = lambda n: n
+    else:
+        return None
+    return " ".join(str(f(ord(c) - 64)) for c in word)
+
+
+SOLVERS = ([("direction-walk", solve_direction_walk),
+            ("number-coding-rule", solve_number_coding)] + SOLVERS)
+
+
 if __name__ == "__main__":
     sys.exit(main())

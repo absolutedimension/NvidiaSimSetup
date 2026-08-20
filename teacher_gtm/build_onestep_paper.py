@@ -259,7 +259,7 @@ def generate_maths(n, diff, exclude_sigs, bilingual):
             if bilingual and not inter_level_ok(row):
                 continue
             g = gen_sig(row)
-            if g in seen or per_concept.get(q.concept, 0) >= 2:
+            if g in seen or per_concept.get(q.concept, 0) >= 4:   # 2 was throttling the hard shortfall
                 continue
             seen.add(g)
             per_concept[q.concept] = per_concept.get(q.concept, 0) + 1
@@ -496,7 +496,7 @@ def load_hindi_generated(n, cap_per_concept=6, exclude=frozenset()):
     return out[:n]
 
 
-def load_generated(n, cap_per_concept=3, exclude=frozenset()):
+def load_generated(n, cap_per_concept=6, exclude=frozenset()):
     """Bilingual reasoning with COMPUTED answers, only used by --structure official3.
 
     Capped and dealt round-robin BY CONCEPT, not by stem text: three direction questions read

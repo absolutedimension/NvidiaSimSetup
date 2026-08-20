@@ -142,38 +142,6 @@
     "JE-0411-GK-QB-AND-MA.pdf"
    ],
    [
-    92,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    105,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    13,
-    "0225_SET-A.pdf"
-   ],
-   [
-    111,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    112,
-    "03_25_SET_A.pdf"
-   ],
-   [
-    25,
-    "G.K_and_N.A_M.A.PDF"
-   ],
-   [
-    145,
-    "G.K_and_N.A_M.A.PDF"
-   ],
-   [
-    78,
-    "03_25_SET_A.pdf"
-   ],
-   [
     149,
     "03_25_SET_A.pdf"
    ],
@@ -256,6 +224,14 @@
    "Simple Interest|13,000,10,6,1,100,10|Rs. 5,000~Rs. 6,500~Rs. 8,000~Rs. 8,125",
    "Time & Work|6,15|10 days~12 days~21 days~9 days",
    "Compound Interest|4,320,2,20|Rs. 1,320~Rs. 2,592~Rs. 3,000~Rs. 3,600",
+   "Marked Price & Discount|25,10|17.5%~32.5%~33.75%~35%",
+   "Boats & Streams|10,2,60|288 km~300 km~576 km~720 km",
+   "Ratio & Proportion|2,9,10,5,19|180~40~50~60",
+   "Simple Interest|19,000,8,12,1,840,8|Rs. 11,000~Rs. 7,600~Rs. 8,000~Rs. 9,500",
+   "Time & Work|3,75,6|10 days~2.25 days~7.5 days~9.75 days",
+   "Compound Interest|3,025,2,10|Rs. 2,420~Rs. 2,500~Rs. 2,750~Rs. 525",
+   "Ratio & Proportion|2,4,20,8,15|140~160~180~280",
+   "Simple Interest|9,000,10,4,780,10|Rs. 2,000~Rs. 4,500~Rs. 6,428~Rs. 7,000",
    "Ranking|44,6,17|17~27~28~39",
    "Letter-Shift Coding||APXEI~BSCLR~CSBJO~CTDMS",
    "Direction — Distance|6,10,2,3|East~North~North-East~South-West",
@@ -303,8 +279,8 @@
   ],
   "gen_full": [
    {
-    "stem": "Consider the following statements:\n1. The river Narmada originates at Trimbakeshwar (Nashik).\n2. Mumbai is the capital of Maharashtra.\n3. Lavani is a dance form of Maharashtra.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. नर्मदा नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\n2. मुंबई महाराष्ट्र की राजधानी है।\n3. लावणी महाराष्ट्र का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. The river Narmada originates at Mahabaleshwar.\n2. Mumbai is the capital of Maharashtra.\n3. Lavani is a dance form of Maharashtra.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. नर्मदा नदी का उद्गम महाबलेश्वर में है।\n2. मुंबई महाराष्ट्र की राजधानी है।\n3. लावणी महाराष्ट्र का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -353,8 +329,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Yakshagana — Karnataka\nB. Chhau — Jharkhand\nC. Ghoomar — Punjab\nD. Kathak — Manipur\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. यक्षगान — कर्नाटक\nB. छऊ — झारखंड\nC. घूमर — पंजाब\nD. कथक — मणिपुर\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Yakshagana — Karnataka\nB. Chhau — Jharkhand\nC. Ghoomar — Maharashtra\nD. Kathak — Punjab\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. यक्षगान — कर्नाटक\nB. छऊ — झारखंड\nC. घूमर — महाराष्ट्र\nD. कथक — पंजाब\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -403,8 +379,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Mumbai is the capital of Maharashtra.\n2. Garba is a dance form of Punjab.\n3. The river Narmada originates at Amarkantak.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. मुंबई महाराष्ट्र की राजधानी है।\n2. गरबा पंजाब का नृत्य है।\n3. नर्मदा नदी का उद्गम अमरकंटक में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Mumbai is the capital of Maharashtra.\n2. Garba is a dance form of Jammu and Kashmir.\n3. The river Narmada originates at Amarkantak.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. मुंबई महाराष्ट्र की राजधानी है।\n2. गरबा जम्मू और कश्मीर का नृत्य है।\n3. नर्मदा नदी का उद्गम अमरकंटक में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -453,8 +429,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Bihu — Assam\nB. Mohiniyattam — Tamil Nadu\nC. Kathakali — Kerala\nD. Kuchipudi — Karnataka\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. बिहू — असम\nB. मोहिनीअट्टम — तमिलनाडु\nC. कथकली — केरल\nD. कुचिपुड़ी — कर्नाटक\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Bihu — Assam\nB. Mohiniyattam — Uttar Pradesh\nC. Kathakali — Kerala\nD. Kuchipudi — Rajasthan\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. बिहू — असम\nB. मोहिनीअट्टम — उत्तर प्रदेश\nC. कथकली — केरल\nD. कुचिपुड़ी — राजस्थान\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -553,8 +529,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Bharatanatyam — Mizoram\nB. Chhau — Mizoram\nC. Bihu — Assam\nD. Garba — Gujarat\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. भरतनाट्यम — मिज़ोरम\nB. छऊ — मिज़ोरम\nC. बिहू — असम\nD. गरबा — गुजरात\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Bharatanatyam — Odisha\nB. Chhau — Odisha\nC. Bihu — Assam\nD. Garba — Gujarat\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. भरतनाट्यम — ओडिशा\nB. छऊ — ओडिशा\nC. बिहू — असम\nD. गरबा — गुजरात\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -603,8 +579,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Kolkata is the capital of West Bengal.\n2. Kuchipudi is a dance form of Punjab.\n3. The river Narmada originates at Yamunotri.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. कोलकाता पश्चिम बंगाल की राजधानी है।\n2. कुचिपुड़ी पंजाब का नृत्य है।\n3. नर्मदा नदी का उद्गम यमुनोत्री में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Kolkata is the capital of West Bengal.\n2. Kuchipudi is a dance form of Jammu and Kashmir.\n3. The river Narmada originates at Yamunotri.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. कोलकाता पश्चिम बंगाल की राजधानी है।\n2. कुचिपुड़ी जम्मू और कश्मीर का नृत्य है।\n3. नर्मदा नदी का उद्गम यमुनोत्री में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -653,8 +629,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Bihu — Karnataka\nB. Yakshagana — Karnataka\nC. Mohiniyattam — Kerala\nD. Rouf — Rajasthan\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. बिहू — कर्नाटक\nB. यक्षगान — कर्नाटक\nC. मोहिनीअट्टम — केरल\nD. रौफ — राजस्थान\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Bihu — Rajasthan\nB. Yakshagana — Karnataka\nC. Mohiniyattam — Kerala\nD. Rouf — Maharashtra\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. बिहू — राजस्थान\nB. यक्षगान — कर्नाटक\nC. मोहिनीअट्टम — केरल\nD. रौफ — महाराष्ट्र\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -703,8 +679,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Dispur is the capital of Tamil Nadu.\n2. Yakshagana is a dance form of Assam.\n3. The river Krishna originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. दिसपुर तमिलनाडु की राजधानी है।\n2. यक्षगान असम का नृत्य है।\n3. कृष्णा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Imphal is the capital of Tamil Nadu.\n2. Yakshagana is a dance form of Andhra Pradesh.\n3. The river Krishna originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. इंफाल तमिलनाडु की राजधानी है।\n2. यक्षगान आंध्र प्रदेश का नृत्य है।\n3. कृष्णा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -753,8 +729,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. The river Yamuna originates at Amarkantak.\n2. Bhangra is a dance form of Punjab.\n3. Mumbai is the capital of Telangana.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. यमुना नदी का उद्गम अमरकंटक में है।\n2. भांगड़ा पंजाब का नृत्य है।\n3. मुंबई तेलंगाना की राजधानी है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. The river Yamuna originates at Amarkantak.\n2. Bhangra is a dance form of Punjab.\n3. Kolkata is the capital of Telangana.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. यमुना नदी का उद्गम अमरकंटक में है।\n2. भांगड़ा पंजाब का नृत्य है।\n3. कोलकाता तेलंगाना की राजधानी है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -803,8 +779,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Chennai is the capital of Arunachal Pradesh.\n2. Kathakali is a dance form of Kerala.\n3. The river Godavari originates at Yamunotri.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. चेन्नई अरुणाचल प्रदेश की राजधानी है।\n2. कथकली केरल का नृत्य है।\n3. गोदावरी नदी का उद्गम यमुनोत्री में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Bhopal is the capital of Arunachal Pradesh.\n2. Kathakali is a dance form of Kerala.\n3. The river Godavari originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. भोपाल अरुणाचल प्रदेश की राजधानी है।\n2. कथकली केरल का नृत्य है।\n3. गोदावरी नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -853,8 +829,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Sattriya — Assam\nB. Kuchipudi — Jammu and Kashmir\nC. Odissi — Rajasthan\nD. Garba — Gujarat\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. सत्रिया — असम\nB. कुचिपुड़ी — जम्मू और कश्मीर\nC. ओडिसी — राजस्थान\nD. गरबा — गुजरात\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Sattriya — Assam\nB. Kuchipudi — Tamil Nadu\nC. Odissi — Jammu and Kashmir\nD. Garba — Gujarat\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. सत्रिया — असम\nB. कुचिपुड़ी — तमिलनाडु\nC. ओडिसी — जम्मू और कश्मीर\nD. गरबा — गुजरात\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -953,8 +929,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Bhopal is the capital of Madhya Pradesh.\n2. The river Krishna originates at Mahabaleshwar.\n3. Chhau is a dance form of Mizoram.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. भोपाल मध्य प्रदेश की राजधानी है।\n2. कृष्णा नदी का उद्गम महाबलेश्वर में है।\n3. छऊ मिज़ोरम का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Bhopal is the capital of Madhya Pradesh.\n2. The river Krishna originates at Mahabaleshwar.\n3. Chhau is a dance form of Odisha.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. भोपाल मध्य प्रदेश की राजधानी है।\n2. कृष्णा नदी का उद्गम महाबलेश्वर में है।\n3. छऊ ओडिशा का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1003,8 +979,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Manipuri — Andhra Pradesh\nB. Lavani — Maharashtra\nC. Ghoomar — Manipur\nD. Kathak — Uttar Pradesh\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. मणिपुरी — आंध्र प्रदेश\nB. लावणी — महाराष्ट्र\nC. घूमर — मणिपुर\nD. कथक — उत्तर प्रदेश\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Manipuri — Punjab\nB. Lavani — Maharashtra\nC. Ghoomar — Jammu and Kashmir\nD. Kathak — Uttar Pradesh\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. मणिपुरी — पंजाब\nB. लावणी — महाराष्ट्र\nC. घूमर — जम्मू और कश्मीर\nD. कथक — उत्तर प्रदेश\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -1053,8 +1029,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Mohiniyattam is a dance form of Assam.\n2. Chennai is the capital of Tamil Nadu.\n3. The river Godavari originates at Trimbakeshwar (Nashik).\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. मोहिनीअट्टम असम का नृत्य है।\n2. चेन्नई तमिलनाडु की राजधानी है।\n3. गोदावरी नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Mohiniyattam is a dance form of Andhra Pradesh.\n2. Chennai is the capital of Tamil Nadu.\n3. The river Godavari originates at Trimbakeshwar (Nashik).\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. मोहिनीअट्टम आंध्र प्रदेश का नृत्य है।\n2. चेन्नई तमिलनाडु की राजधानी है।\n3. गोदावरी नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1103,8 +1079,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Amaravati is the capital of Andhra Pradesh.\n2. The river Krishna originates at Amarkantak.\n3. Bhangra is a dance form of Punjab.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. अमरावती आंध्र प्रदेश की राजधानी है।\n2. कृष्णा नदी का उद्गम अमरकंटक में है।\n3. भांगड़ा पंजाब का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Amaravati is the capital of Andhra Pradesh.\n2. The river Krishna originates at Trimbakeshwar (Nashik).\n3. Bhangra is a dance form of Punjab.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. अमरावती आंध्र प्रदेश की राजधानी है।\n2. कृष्णा नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\n3. भांगड़ा पंजाब का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1203,8 +1179,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Hyderabad is the capital of Assam.\n2. Yakshagana is a dance form of Karnataka.\n3. The river Yamuna originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. हैदराबाद असम की राजधानी है।\n2. यक्षगान कर्नाटक का नृत्य है।\n3. यमुना नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Dehradun is the capital of Assam.\n2. Yakshagana is a dance form of Karnataka.\n3. The river Yamuna originates at Trimbakeshwar (Nashik).\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. देहरादून असम की राजधानी है।\n2. यक्षगान कर्नाटक का नृत्य है।\n3. यमुना नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1253,8 +1229,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Amaravati is the capital of Manipur.\n2. The river Godavari originates at Trimbakeshwar (Nashik).\n3. Bharatanatyam is a dance form of Tamil Nadu.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. अमरावती मणिपुर की राजधानी है।\n2. गोदावरी नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\n3. भरतनाट्यम तमिलनाडु का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Raipur is the capital of Manipur.\n2. The river Godavari originates at Trimbakeshwar (Nashik).\n3. Bharatanatyam is a dance form of Tamil Nadu.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. रायपुर मणिपुर की राजधानी है।\n2. गोदावरी नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\n3. भरतनाट्यम तमिलनाडु का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1353,8 +1329,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Kuchipudi is a dance form of Andhra Pradesh.\n2. The river Yamuna originates at Amarkantak.\n3. Raipur is the capital of Himachal Pradesh.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. कुचिपुड़ी आंध्र प्रदेश का नृत्य है।\n2. यमुना नदी का उद्गम अमरकंटक में है।\n3. रायपुर हिमाचल प्रदेश की राजधानी है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Kuchipudi is a dance form of Andhra Pradesh.\n2. The river Yamuna originates at Amarkantak.\n3. Amaravati is the capital of Himachal Pradesh.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. कुचिपुड़ी आंध्र प्रदेश का नृत्य है।\n2. यमुना नदी का उद्गम अमरकंटक में है।\n3. अमरावती हिमाचल प्रदेश की राजधानी है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1453,8 +1429,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Kathak is a dance form of Gujarat.\n2. The river Godavari originates at Trimbakeshwar (Nashik).\n3. Hyderabad is the capital of Telangana.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. कथक गुजरात का नृत्य है।\n2. गोदावरी नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\n3. हैदराबाद तेलंगाना की राजधानी है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Kathak is a dance form of Karnataka.\n2. The river Godavari originates at Trimbakeshwar (Nashik).\n3. Hyderabad is the capital of Telangana.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. कथक कर्नाटक का नृत्य है।\n2. गोदावरी नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\n3. हैदराबाद तेलंगाना की राजधानी है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1503,8 +1479,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. The river Narmada originates at Amarkantak.\n2. Gandhinagar is the capital of Bihar.\n3. Kuchipudi is a dance form of Kerala.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. नर्मदा नदी का उद्गम अमरकंटक में है।\n2. गांधीनगर बिहार की राजधानी है।\n3. कुचिपुड़ी केरल का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. The river Narmada originates at Amarkantak.\n2. Chandigarh is the capital of Bihar.\n3. Kuchipudi is a dance form of Uttar Pradesh.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. नर्मदा नदी का उद्गम अमरकंटक में है।\n2. चंडीगढ़ बिहार की राजधानी है।\n3. कुचिपुड़ी उत्तर प्रदेश का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1553,8 +1529,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Lucknow is the capital of Manipur.\n2. Yakshagana is a dance form of Karnataka.\n3. The river Narmada originates at Trimbakeshwar (Nashik).\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. लखनऊ मणिपुर की राजधानी है।\n2. यक्षगान कर्नाटक का नृत्य है।\n3. नर्मदा नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Gangtok is the capital of Manipur.\n2. Yakshagana is a dance form of Karnataka.\n3. The river Narmada originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. गंगटोक मणिपुर की राजधानी है।\n2. यक्षगान कर्नाटक का नृत्य है।\n3. नर्मदा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1603,8 +1579,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Ghoomar is a dance form of Jammu and Kashmir.\n2. Bhubaneswar is the capital of Assam.\n3. The river Yamuna originates at Yamunotri.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. घूमर जम्मू और कश्मीर का नृत्य है।\n2. भुवनेश्वर असम की राजधानी है।\n3. यमुना नदी का उद्गम यमुनोत्री में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Ghoomar is a dance form of Assam.\n2. Panaji is the capital of Assam.\n3. The river Yamuna originates at Yamunotri.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. घूमर असम का नृत्य है।\n2. पणजी असम की राजधानी है।\n3. यमुना नदी का उद्गम यमुनोत्री में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1653,8 +1629,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. The river Narmada originates at Trimbakeshwar (Nashik).\n2. Amaravati is the capital of Karnataka.\n3. Lavani is a dance form of Maharashtra.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. नर्मदा नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\n2. अमरावती कर्नाटक की राजधानी है।\n3. लावणी महाराष्ट्र का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. The river Narmada originates at Mahabaleshwar.\n2. Raipur is the capital of Karnataka.\n3. Lavani is a dance form of Maharashtra.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. नर्मदा नदी का उद्गम महाबलेश्वर में है।\n2. रायपुर कर्नाटक की राजधानी है।\n3. लावणी महाराष्ट्र का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1703,8 +1679,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Ranchi is the capital of Jharkhand.\n2. Kuchipudi is a dance form of Tamil Nadu.\n3. The river Krishna originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. रांची झारखंड की राजधानी है।\n2. कुचिपुड़ी तमिलनाडु का नृत्य है।\n3. कृष्णा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Ranchi is the capital of Jharkhand.\n2. Kuchipudi is a dance form of Kerala.\n3. The river Krishna originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. रांची झारखंड की राजधानी है।\n2. कुचिपुड़ी केरल का नृत्य है।\n3. कृष्णा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1753,8 +1729,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Raipur is the capital of Goa.\n2. The river Yamuna originates at Mahabaleshwar.\n3. Sattriya is a dance form of Assam.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. रायपुर गोवा की राजधानी है।\n2. यमुना नदी का उद्गम महाबलेश्वर में है।\n3. सत्रिया असम का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Raipur is the capital of Goa.\n2. The river Yamuna originates at Trimbakeshwar (Nashik).\n3. Sattriya is a dance form of Assam.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. रायपुर गोवा की राजधानी है।\n2. यमुना नदी का उद्गम त्र्यंबकेश्वर (नासिक) में है।\n3. सत्रिया असम का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1803,8 +1779,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Amaravati is the capital of Uttar Pradesh.\n2. The river Krishna originates at Mahabaleshwar.\n3. Ghoomar is a dance form of Rajasthan.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. अमरावती उत्तर प्रदेश की राजधानी है।\n2. कृष्णा नदी का उद्गम महाबलेश्वर में है।\n3. घूमर राजस्थान का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Patna is the capital of Uttar Pradesh.\n2. The river Krishna originates at Mahabaleshwar.\n3. Ghoomar is a dance form of Rajasthan.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. पटना उत्तर प्रदेश की राजधानी है।\n2. कृष्णा नदी का उद्गम महाबलेश्वर में है।\n3. घूमर राजस्थान का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1853,8 +1829,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. The river Yamuna originates at Yamunotri.\n2. Amaravati is the capital of Andhra Pradesh.\n3. Bihu is a dance form of Gujarat.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. यमुना नदी का उद्गम यमुनोत्री में है।\n2. अमरावती आंध्र प्रदेश की राजधानी है।\n3. बिहू गुजरात का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. The river Yamuna originates at Yamunotri.\n2. Amaravati is the capital of Andhra Pradesh.\n3. Bihu is a dance form of Karnataka.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. यमुना नदी का उद्गम यमुनोत्री में है।\n2. अमरावती आंध्र प्रदेश की राजधानी है।\n3. बिहू कर्नाटक का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1953,8 +1929,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Bharatanatyam is a dance form of Tamil Nadu.\n2. Bhubaneswar is the capital of West Bengal.\n3. The river Krishna originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. भरतनाट्यम तमिलनाडु का नृत्य है।\n2. भुवनेश्वर पश्चिम बंगाल की राजधानी है।\n3. कृष्णा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Bharatanatyam is a dance form of Tamil Nadu.\n2. Dispur is the capital of West Bengal.\n3. The river Krishna originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. भरतनाट्यम तमिलनाडु का नृत्य है।\n2. दिसपुर पश्चिम बंगाल की राजधानी है।\n3. कृष्णा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -3145,6 +3121,406 @@
     "solution": "P = Amount / (1 + R/100)^2 = 4320 / (1 + 20/100)^2 = Rs. 3,000.",
     "solution_hi": "मूलधन = मिश्रधन / (1 + दर/100)^2 = 4320 / (1 + 20/100)^2 = रु. 3,000।",
     "concept": "Compound Interest",
+    "tag": {
+     "section": "Mathematics",
+     "difficulty": 4
+    },
+    "source_pdf": "quantgen",
+    "number": null
+   },
+   {
+    "stem": "An article is sold after two successive discounts of 25% and 10%. What single discount is equivalent to these two?",
+    "stem_hi": "एक वस्तु 25% तथा 10% की दो क्रमिक छूटों के बाद बेची जाती है। इन दोनों के तुल्य एकल छूट क्या होगी ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "32.5%"
+     },
+     {
+      "label": "B",
+      "text": "35%"
+     },
+     {
+      "label": "C",
+      "text": "33.75%"
+     },
+     {
+      "label": "D",
+      "text": "17.5%"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "32.5%"
+     },
+     {
+      "label": "B",
+      "text": "35%"
+     },
+     {
+      "label": "C",
+      "text": "33.75%"
+     },
+     {
+      "label": "D",
+      "text": "17.5%"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Net factor = (100-25)/100 x (100-10)/100 = 27/40. Equivalent discount = 100 - 67.5 = 32.5%.",
+    "solution_hi": "शुद्ध गुणक = (100-25)/100 x (100-10)/100। तुल्य छूट = 100 - 67.5 = 32.5%।",
+    "concept": "Marked Price & Discount",
+    "tag": {
+     "section": "Mathematics",
+     "difficulty": 4
+    },
+    "source_pdf": "quantgen",
+    "number": null
+   },
+   {
+    "stem": "A boat whose speed in still water is 10 km/hr rows to a place and comes back. The stream flows at 2 km/hr and the whole trip takes 60 hours. How far is the place?",
+    "stem_hi": "शांत जल में जिस नाव की चाल 10 किमी/घंटा है, वह एक स्थान तक जाकर वापस आती है। धारा की चाल 2 किमी/घंटा है तथा पूरी यात्रा में 60 घंटे लगते हैं। वह स्थान कितनी दूर है ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "720 km"
+     },
+     {
+      "label": "B",
+      "text": "576 km"
+     },
+     {
+      "label": "C",
+      "text": "288 km"
+     },
+     {
+      "label": "D",
+      "text": "300 km"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "720 किमी"
+     },
+     {
+      "label": "B",
+      "text": "576 किमी"
+     },
+     {
+      "label": "C",
+      "text": "288 किमी"
+     },
+     {
+      "label": "D",
+      "text": "300 किमी"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "Downstream 12 km/hr, upstream 8 km/hr. d/12 + d/8 = 60, so d = 288 km.",
+    "solution_hi": "अनुकूल चाल 12 किमी/घंटा, प्रतिकूल 8 किमी/घंटा। d/12 + d/8 = 60, अतः d = 288 किमी।",
+    "concept": "Boats & Streams",
+    "tag": {
+     "section": "Mathematics",
+     "difficulty": 4
+    },
+    "source_pdf": "quantgen",
+    "number": null
+   },
+   {
+    "stem": "Two numbers are in the ratio 2 : 9. If 10 is added to each, the ratio becomes 5 : 19. Find the smaller number.",
+    "stem_hi": "दो संख्याएँ 2 : 9 के अनुपात में हैं। यदि प्रत्येक में 10 जोड़ दिया जाए, तो अनुपात 5 : 19 हो जाता है। छोटी संख्या ज्ञात कीजिए।",
+    "options": [
+     {
+      "label": "A",
+      "text": "40"
+     },
+     {
+      "label": "B",
+      "text": "180"
+     },
+     {
+      "label": "C",
+      "text": "50"
+     },
+     {
+      "label": "D",
+      "text": "60"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "40"
+     },
+     {
+      "label": "B",
+      "text": "180"
+     },
+     {
+      "label": "C",
+      "text": "50"
+     },
+     {
+      "label": "D",
+      "text": "60"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Let the numbers be 2n and 9n. Then (2n + 10) : (9n + 10) = 5 : 19, giving n = 20. Smaller number = 2 x 20 = 40.",
+    "solution_hi": "माना संख्याएँ 2n तथा 9n हैं। तब (2n + 10) : (9n + 10) = 5 : 19, जिससे n = 20। छोटी संख्या = 2 x 20 = 40।",
+    "concept": "Ratio & Proportion",
+    "tag": {
+     "section": "Mathematics",
+     "difficulty": 4
+    },
+    "source_pdf": "quantgen",
+    "number": null
+   },
+   {
+    "stem": "A sum of Rs. 19,000 is lent partly at 8% and the rest at 12% per annum simple interest. If the total interest for one year is Rs. 1,840, find the part lent at 8%.",
+    "stem_hi": "रु. 19,000 की राशि का कुछ भाग 8% वार्षिक तथा शेष 12% वार्षिक साधारण ब्याज पर उधार दिया जाता है। यदि एक वर्ष का कुल ब्याज रु. 1,840 है, तो 8% पर दिया गया भाग ज्ञात कीजिए।",
+    "options": [
+     {
+      "label": "A",
+      "text": "Rs. 11,000"
+     },
+     {
+      "label": "B",
+      "text": "Rs. 8,000"
+     },
+     {
+      "label": "C",
+      "text": "Rs. 7,600"
+     },
+     {
+      "label": "D",
+      "text": "Rs. 9,500"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "रु. 11,000"
+     },
+     {
+      "label": "B",
+      "text": "रु. 8,000"
+     },
+     {
+      "label": "C",
+      "text": "रु. 7,600"
+     },
+     {
+      "label": "D",
+      "text": "रु. 9,500"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Let the part at 8% be x. Then x x 8/100 + (19000 - x) x 12/100 = 1840. Solving, x = Rs. 11,000.",
+    "solution_hi": "माना 8% पर दी गई राशि x है। तब x x 8/100 + (19000 - x) x 12/100 = 1840। हल करने पर x = रु. 11,000।",
+    "concept": "Simple Interest",
+    "tag": {
+     "section": "Mathematics",
+     "difficulty": 4
+    },
+    "source_pdf": "quantgen",
+    "number": null
+   },
+   {
+    "stem": "A and B together can complete a work in 3.75 days. A alone can do it in 6 days. In how many days can B alone complete the work?",
+    "stem_hi": "A और B मिलकर किसी कार्य को 3.75 दिन में पूरा कर सकते हैं। A अकेले उसे 6 दिन में कर सकता है। B अकेले उस कार्य को कितने दिन में पूरा करेगा ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "9.75 days"
+     },
+     {
+      "label": "B",
+      "text": "7.5 days"
+     },
+     {
+      "label": "C",
+      "text": "10 days"
+     },
+     {
+      "label": "D",
+      "text": "2.25 days"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "9.75 दिन"
+     },
+     {
+      "label": "B",
+      "text": "7.5 दिन"
+     },
+     {
+      "label": "C",
+      "text": "10 दिन"
+     },
+     {
+      "label": "D",
+      "text": "2.25 दिन"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "B's one-day work = 1/3.75 - 1/6 = 1/10. So B alone takes 10 days.",
+    "solution_hi": "B का एक दिन का कार्य = 1/3.75 - 1/6 = 1/10। अतः B अकेले 10 दिन लेगा।",
+    "concept": "Time & Work",
+    "tag": {
+     "section": "Mathematics",
+     "difficulty": 4
+    },
+    "source_pdf": "quantgen",
+    "number": null
+   },
+   {
+    "stem": "A sum of money amounts to Rs. 3,025 in 2 years at 10% per annum compound interest. Find the sum.",
+    "stem_hi": "कोई राशि 10% वार्षिक चक्रवृद्धि ब्याज की दर से 2 वर्षों में रु. 3,025 हो जाती है। वह राशि ज्ञात कीजिए।",
+    "options": [
+     {
+      "label": "A",
+      "text": "Rs. 2,750"
+     },
+     {
+      "label": "B",
+      "text": "Rs. 525"
+     },
+     {
+      "label": "C",
+      "text": "Rs. 2,500"
+     },
+     {
+      "label": "D",
+      "text": "Rs. 2,420"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "रु. 2,750"
+     },
+     {
+      "label": "B",
+      "text": "रु. 525"
+     },
+     {
+      "label": "C",
+      "text": "रु. 2,500"
+     },
+     {
+      "label": "D",
+      "text": "रु. 2,420"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "P = Amount / (1 + R/100)^2 = 3025 / (1 + 10/100)^2 = Rs. 2,500.",
+    "solution_hi": "मूलधन = मिश्रधन / (1 + दर/100)^2 = 3025 / (1 + 10/100)^2 = रु. 2,500।",
+    "concept": "Compound Interest",
+    "tag": {
+     "section": "Mathematics",
+     "difficulty": 4
+    },
+    "source_pdf": "quantgen",
+    "number": null
+   },
+   {
+    "stem": "Two numbers are in the ratio 2 : 4. If 20 is added to each, the ratio becomes 8 : 15. Find the smaller number.",
+    "stem_hi": "दो संख्याएँ 2 : 4 के अनुपात में हैं। यदि प्रत्येक में 20 जोड़ दिया जाए, तो अनुपात 8 : 15 हो जाता है। छोटी संख्या ज्ञात कीजिए।",
+    "options": [
+     {
+      "label": "A",
+      "text": "180"
+     },
+     {
+      "label": "B",
+      "text": "140"
+     },
+     {
+      "label": "C",
+      "text": "280"
+     },
+     {
+      "label": "D",
+      "text": "160"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "180"
+     },
+     {
+      "label": "B",
+      "text": "140"
+     },
+     {
+      "label": "C",
+      "text": "280"
+     },
+     {
+      "label": "D",
+      "text": "160"
+     }
+    ],
+    "correct_answer": "B",
+    "solution": "Let the numbers be 2n and 4n. Then (2n + 20) : (4n + 20) = 8 : 15, giving n = 70. Smaller number = 2 x 70 = 140.",
+    "solution_hi": "माना संख्याएँ 2n तथा 4n हैं। तब (2n + 20) : (4n + 20) = 8 : 15, जिससे n = 70। छोटी संख्या = 2 x 70 = 140।",
+    "concept": "Ratio & Proportion",
+    "tag": {
+     "section": "Mathematics",
+     "difficulty": 4
+    },
+    "source_pdf": "quantgen",
+    "number": null
+   },
+   {
+    "stem": "A sum of Rs. 9,000 is lent partly at 10% and the rest at 4% per annum simple interest. If the total interest for one year is Rs. 780, find the part lent at 10%.",
+    "stem_hi": "रु. 9,000 की राशि का कुछ भाग 10% वार्षिक तथा शेष 4% वार्षिक साधारण ब्याज पर उधार दिया जाता है। यदि एक वर्ष का कुल ब्याज रु. 780 है, तो 10% पर दिया गया भाग ज्ञात कीजिए।",
+    "options": [
+     {
+      "label": "A",
+      "text": "Rs. 7,000"
+     },
+     {
+      "label": "B",
+      "text": "Rs. 2,000"
+     },
+     {
+      "label": "C",
+      "text": "Rs. 6,428"
+     },
+     {
+      "label": "D",
+      "text": "Rs. 4,500"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "रु. 7,000"
+     },
+     {
+      "label": "B",
+      "text": "रु. 2,000"
+     },
+     {
+      "label": "C",
+      "text": "रु. 6,428"
+     },
+     {
+      "label": "D",
+      "text": "रु. 4,500"
+     }
+    ],
+    "correct_answer": "A",
+    "solution": "Let the part at 10% be x. Then x x 10/100 + (9000 - x) x 4/100 = 780. Solving, x = Rs. 7,000.",
+    "solution_hi": "माना 10% पर दी गई राशि x है। तब x x 10/100 + (9000 - x) x 4/100 = 780। हल करने पर x = रु. 7,000।",
+    "concept": "Simple Interest",
     "tag": {
      "section": "Mathematics",
      "difficulty": 4
