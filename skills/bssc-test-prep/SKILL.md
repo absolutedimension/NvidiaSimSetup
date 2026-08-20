@@ -596,9 +596,50 @@ Two habits came out of it, and they are the transferable part of this work:
 
 And the asymmetry that decides close calls: **a false alarm costs an hour; a false pass ships.**
 
+### 🔴 OWNER FEEDBACK #2 (2026-08-20, on the generated papers): Part III is basic AND one-topic
+
+His words: the reasoning section *"has very basic questions and it contains only one topic, it's
+not distributed across the syllabus."* Measured against the delivered sets — he is right, and
+"one topic" understates it:
+
+    SET 1 Part III: Blood Relations 16 of 50 (32%), then 10 other concepts at 1-4 each
+    SET 2 Part III: Blood Relations 11, Letter Series 10, then 8 others
+
+Two separate defects, and the second is the real one:
+
+1. **Clustering.** One concept taking a third of a section is indefensible and is a one-line fix —
+   a per-concept cap of ~4 in Part III.
+
+2. **All eleven concepts are ONE FAMILY.** Trace a relationship, or shift letters/numbers along a
+   sequence. To a reader that IS one topic, because it is one skill asked eleven ways. Against
+   खंड (ग), which names सादृश्य · समानता एवं भिन्नता · **स्थान कल्पना** · **समस्या समाधान** ·
+   **विश्लेषण** · **दृश्य स्मृति** · **अवलोकन** · संबंध अवधारणा · अंक गणितीय तर्कशक्ति · श्रृंखला ·
+   कूट लेखन — we generate the last four and have NOTHING for spatial visualisation, problem
+   solving, analysis, visual memory or observation. No syllogism, seating arrangement, coded
+   inequality, calendar, dice, figure series or statement-conclusion.
+
+**Note what our own metric said: 32 of those 50 questions are tagged difficulty 4.** The owner
+still called them basic, and he is right — he is judging the TOPIC, not the step count. A four-step
+blood-relation chain is still blood relations. This is the second time his read has beaten our
+measurement; the first was "ye basic ka bhi basic hai" on the official questions. **When the
+difficulty tag and the customer disagree, the customer is describing something the tag does not
+measure.**
+
+Do NOT respond by generating more of what we have — the missing families are the fix, and more
+volume makes the imbalance worse.
+
 ### ▶ NEXT SESSION, in order
 
-1. **Act on the owner's difficulty answer.** Everything else is secondary to it.
+1. **FIX PART III — this is now the top item, the owner has told us twice.**
+   a. Per-concept cap of ~4 in Part III (one line, immediate).
+   b. New reasoninggen builders, in this order: **syllogism · seating arrangement · coded
+      inequality · calendar · dice**. All are algorithmic, so they fit the compute-the-answer
+      pattern exactly, and they are what a candidate actually finds hard. Follow the proven recipe:
+      disjoint difficulty bands, mistake-derived distractors, Hindi from the start, and an
+      independent solver in `test_papers.py` BEFORE the pool is regenerated.
+   c. **Non-verbal / figure series is the real hole** — खंड (ग) explicitly names गैर-शाब्दिक and we
+      cannot draw. Needs SVG generation; bigger piece, do it last.
+2. **Act on the owner's difficulty answer** when it comes.
 2. **A native Hindi reader over the generated Hindi.** Deepak has checked the FONT renders; nobody
    has checked the LANGUAGE. This session alone produced `73वाँ` for `73वें`, `पोती` for `नातिन`,
    `भतीजी` for `भांजी` and a literal `मेरा/मेरी` on the page. 12 polity renderings from 2026-08-20
