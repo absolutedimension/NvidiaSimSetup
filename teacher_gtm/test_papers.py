@@ -1067,5 +1067,72 @@ SOLVERS = ([("direction-walk", solve_direction_walk),
             ("number-coding-rule", solve_number_coding)] + SOLVERS)
 
 
+# ── static GK recall, and the two-statement form ────────────────────────────────────────────────
+# The all-generated draw reached forms the paper had not used before and sixteen arrived with no
+# independent route. Both are table lookups.
+#
+# The first attempt looked up "What is the capital of X?" in STATE_CAPITAL alone — but staticgkgen
+# uses that SAME template for COUNTRY_CAPITAL, so every country question was answered from the
+# wrong table and 27 correct questions were reported as failures. A checker that returns confident
+# wrong answers is worse than one that returns none: it fails good questions and could pass bad
+# ones. A template is therefore resolved against EVERY table that renders with it.
+
+_PAIR_NAME = {(True, True): "Both 1 and 2", (True, False): "1 only",
+              (False, True): "2 only", (False, False): "Neither 1 nor 2"}
+_GK_ALL = None
+
+
+def _gk_merged():
+    global _GK_ALL
+    if _GK_ALL is None:
+        sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent
+                               / "question_bank_engine"))
+        from qbank import staticgkgen as _G
+
+        def merge(*names):
+            out = {}
+            for n in names:
+                out.update(getattr(_G, n, {}) or {})
+            return out
+
+        _GK_ALL = {"capital": merge("STATE_CAPITAL", "COUNTRY_CAPITAL"),
+                   "dance": merge("DANCE_STATE"),
+                   "river": merge("RIVER_ORIGIN"),
+                   "instate": merge("PARK_STATE", "LAKE_STATE2", "SANCTUARY_STATE",
+                                    "TEMPLE_STATE")}
+    return _GK_ALL
+
+
+def solve_static_gk(en):
+    t = _gk_merged()
+    for pat, key in ((r"What is the capital of (.+?)\?", "capital"),
+                     (r"The classical/folk dance '(.+?)' belongs to which state\?", "dance"),
+                     (r"Where does the river (.+?) originate\?", "river"),
+                     (r"In which state is (.+?) located\?", "instate")):
+        m = re.match(pat, en)
+        if m:
+            return t[key].get(m.group(1).strip())
+    return None
+
+
+def solve_two_statement(en):
+    if "Consider the following statements" not in en:
+        return None
+    # A three-statement question matches this regex too — it just never sees statement 3, and the
+    # length guard cannot tell, because the pattern can only ever find two. Without this it read
+    # 3-statement questions as 2-statement ones and reported 22 correct questions as failures.
+    if re.search(r"(?:^|\s)3\.\s", en):
+        return None                      # the three-statement solver owns that case
+    lines = re.findall(r"(?:^|\s)([12])\.\s*(.+?)(?=\s+[12]\.|\s*Which of the statements)", en)
+    if len(lines) != 2:
+        return None
+    truth = tuple(_stmt_true(t.strip()) for _, t in lines)
+    return None if None in truth else _PAIR_NAME[truth]
+
+
+SOLVERS = ([("static-gk", solve_static_gk),
+            ("gs-two-statement", solve_two_statement)] + SOLVERS)
+
+
 if __name__ == "__main__":
     sys.exit(main())
