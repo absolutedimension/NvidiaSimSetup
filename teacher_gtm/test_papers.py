@@ -812,5 +812,65 @@ SOLVERS += [("gs-multi-statement", solve_multi_statement),
             ("gs-match-pairs", solve_match_pairs)]
 
 
+# ── independent GENERAL SCIENCE solvers ─────────────────────────────────────────────────────────
+# Physics formulas applied to the printed stem. Like the quant solvers, these never import
+# sciencegen: the point is to reach the answer by a second route and see whether the printed key
+# agrees. Written after the paper's coverage regressed 69/69 -> 64/69 when science questions were
+# first wired in and nothing here could read them.
+
+def _sci(x, unit):
+    x = float(x)
+    return (str(int(x)) if x.is_integer() else str(round(x, 2))) + unit
+
+
+def solve_science(en):
+    m = re.search(r"covers (\d+) m in (\d+) seconds", en)
+    if m:
+        return _sci(_F(int(m.group(1)), int(m.group(2))), " m/s")
+    m = re.search(r"Convert a speed of (\d+) km/h", en)
+    if m:
+        return _sci(_F(int(m.group(1)) * 5, 18), " m/s")
+    m = re.search(r"first half of a journey at (\d+) km/h and the second half at (\d+) km/h", en)
+    if m:
+        a, b = int(m.group(1)), int(m.group(2))
+        return _sci(_F(2 * a * b, a + b), " km/h")
+    m = re.search(r"velocity of (\d+) m/s accelerates uniformly at (\d+) m/s. for (\d+) seconds",
+                  en)
+    if m:
+        u, a, t = (int(m.group(i)) for i in (1, 2, 3))
+        return _sci(u * t + _F(a * t * t, 2), " m")
+    m = re.search(r"current of (\d+) A flows through a resistance of (\d+) ohm", en)
+    if m:
+        return _sci(int(m.group(1)) * int(m.group(2)), " V")
+    m = re.search(r"difference of (\d+) V drives a current of (\d+) A", en)
+    if m:
+        return _sci(_F(int(m.group(1)), int(m.group(2))), " ohm")
+    m = re.search(r"draws (\d+) A at (\d+) V", en)
+    if m:
+        return _sci(int(m.group(1)) * int(m.group(2)), " W")
+    m = re.search(r"resistances of (\d+) ohm and (\d+) ohm .*?SERIES across a (\d+) V", en, re.S)
+    if m:
+        r1, r2, v = (int(m.group(i)) for i in (1, 2, 3))
+        return _sci(_F(v, r1 + r2), " A")
+    m = re.search(r"force of (\d+) N moves a body (\d+) m in (\d+) seconds", en)
+    if m:
+        f_, ss, t = (int(m.group(i)) for i in (1, 2, 3))
+        return _sci(_F(f_ * ss, t), " W")
+    m = re.search(r"force of (\d+) N moves a body through (\d+) m", en)
+    if m:
+        return _sci(int(m.group(1)) * int(m.group(2)), " J")
+    m = re.search(r"mass (\d+) kg moving with a velocity of (\d+) m/s", en)
+    if m:
+        mm, v = int(m.group(1)), int(m.group(2))
+        return _sci(_F(mm * v * v, 2), " J")
+    m = re.search(r"mass (\d+) kg is raised to a height of (\d+) m", en)
+    if m:
+        return _sci(int(m.group(1)) * 10 * int(m.group(2)), " J")
+    return None
+
+
+SOLVERS += [("general-science", solve_science)]
+
+
 if __name__ == "__main__":
     sys.exit(main())

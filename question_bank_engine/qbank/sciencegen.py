@@ -78,7 +78,7 @@ def _b_motion(rng, diff):
                   mistakes(("took the plain average of the two speeds", _n(F(v1 + v2, 2)) + " km/h"),
                            ("added the two speeds", _n(v1 + v2) + " km/h"),
                            ("used the faster speed alone", _n(v2) + " km/h")), "Motion")
-    a, u, t = rng.choice([2, 4, 6]), rng.choice([0, 5, 10]), rng.choice([3, 4, 5])
+    a, u, t = rng.choice([2, 4, 6]), rng.choice([5, 10, 15]), rng.choice([3, 4, 5])
     s = u * t + F(a * t * t, 2)
     return _q(f"A body starting with a velocity of {u} m/s accelerates uniformly at {a} m/s² "
               f"for {t} seconds. What distance does it cover?",
@@ -211,6 +211,25 @@ def _mcq(seed, correct, distractors, n=4):
     opts = list(dict.fromkeys([str(correct)] + [str(d) for d in distractors]))[:n]
     if str(correct) not in opts:
         opts[-1] = str(correct)
+    # Backstop. Two computed mistakes can coincide, and a three-option question fails the paper's
+    # structure check — which is exactly how this was found. Pad on the numeric part, keeping the
+    # unit, so the filler still looks like an answer to this question.
+    head = str(correct).split(" ", 1)
+    unit = " " + head[1] if len(head) > 1 else ""
+    try:
+        base = float(head[0])
+    except ValueError:
+        base = None
+    k = 1
+    while len(opts) < n and base is not None and k < 40:
+        for cand in (base + k, base - k, base * (1 + k)):
+            if cand <= 0:
+                continue
+            t = (str(int(cand)) if float(cand).is_integer() else str(round(cand, 2))) + unit
+            if t not in opts:
+                opts.append(t)
+                break
+        k += 1
     rot = sum(map(ord, seed)) % max(len(opts), 1)
     opts = opts[rot:] + opts[:rot]
     labels = ["A", "B", "C", "D"][:len(opts)]

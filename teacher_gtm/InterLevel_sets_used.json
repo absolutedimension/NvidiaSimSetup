@@ -342,6 +342,9 @@
    "Statement-based GS|1,2,3|1 and 3 only~1, 2 and 3~2 and 3 only~3 only",
    "Statement-based GS|1,2,3|1 and 2 only~1 and 3 only~1, 2 and 3~2 and 3 only",
    "Match the Pairs||A, B, D~A, C, D~B, C, D~B, D",
+   "Motion|10,2,4|16 m~48 m~56 m~72 m",
+   "Current Electricity|12,6,60|1080 A~15 A~3.33 A~5 A",
+   "Work, Energy & Power|5,20,10|100 J~1000 J~35 J~500 J",
    "Marked Price & Discount|20,5|12.5%~24%~24.5%~25%",
    "Boats & Streams|8,5,16|208 km~39 km~64 km~78 km",
    "Ratio & Proportion|3,9,50,2,5|150~200~300~450",
@@ -349,9 +352,6 @@
    "Time & Work|3,6,6|2.4 days~7.2 days~9 days~9.6 days",
    "Compound Interest|11,495,2,10|Rs. 1,995~Rs. 10,450~Rs. 9,196~Rs. 9,500",
    "Marked Price & Discount|10,20|15%~28%~29%~30%",
-   "Boats & Streams|8,2,16|120 km~160 km~60 km~64 km",
-   "Ratio & Proportion|2,5,40,4,7|100~120~40~80",
-   "Simple Interest|13,000,10,6,1,100,10|Rs. 5,000~Rs. 6,500~Rs. 8,000~Rs. 8,125",
    "Ranking|8,10|16~17~18~19",
    "Odd One Out (Numbers)|18,37,11,23|11~18~23~37",
    "Number Analogy|8,64,4|15~16~17~20",
@@ -449,8 +449,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Yakshagana — Karnataka\nB. Chhau — Jharkhand\nC. Ghoomar — Punjab\nD. Kathak — Manipur\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. यक्षगान — कर्नाटक\nB. छऊ — झारखंड\nC. घूमर — पंजाब\nD. कथक — मणिपुर\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Yakshagana — Karnataka\nB. Chhau — Jharkhand\nC. Ghoomar — Tamil Nadu\nD. Kathak — Punjab\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. यक्षगान — कर्नाटक\nB. छऊ — झारखंड\nC. घूमर — तमिलनाडु\nD. कथक — पंजाब\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -499,8 +499,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Mumbai is the capital of Maharashtra.\n2. Garba is a dance form of Punjab.\n3. The river Narmada originates at Amarkantak.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. मुंबई महाराष्ट्र की राजधानी है।\n2. गरबा पंजाब का नृत्य है।\n3. नर्मदा नदी का उद्गम अमरकंटक में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Mumbai is the capital of Maharashtra.\n2. Garba is a dance form of Tamil Nadu.\n3. The river Narmada originates at Amarkantak.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. मुंबई महाराष्ट्र की राजधानी है।\n2. गरबा तमिलनाडु का नृत्य है।\n3. नर्मदा नदी का उद्गम अमरकंटक में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -549,8 +549,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Bihu — Assam\nB. Mohiniyattam — Odisha\nC. Kathakali — Kerala\nD. Kuchipudi — Tamil Nadu\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. बिहू — असम\nB. मोहिनीअट्टम — ओडिशा\nC. कथकली — केरल\nD. कुचिपुड़ी — तमिलनाडु\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Bihu — Assam\nB. Mohiniyattam — Karnataka\nC. Kathakali — Kerala\nD. Kuchipudi — Uttar Pradesh\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. बिहू — असम\nB. मोहिनीअट्टम — कर्नाटक\nC. कथकली — केरल\nD. कुचिपुड़ी — उत्तर प्रदेश\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -649,8 +649,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Bharatanatyam — Maharashtra\nB. Chhau — Maharashtra\nC. Bihu — Assam\nD. Garba — Gujarat\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. भरतनाट्यम — महाराष्ट्र\nB. छऊ — महाराष्ट्र\nC. बिहू — असम\nD. गरबा — गुजरात\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Bharatanatyam — Odisha\nB. Chhau — Odisha\nC. Bihu — Assam\nD. Garba — Gujarat\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. भरतनाट्यम — ओडिशा\nB. छऊ — ओडिशा\nC. बिहू — असम\nD. गरबा — गुजरात\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -699,8 +699,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Kolkata is the capital of West Bengal.\n2. Kuchipudi is a dance form of Punjab.\n3. The river Narmada originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. कोलकाता पश्चिम बंगाल की राजधानी है।\n2. कुचिपुड़ी पंजाब का नृत्य है।\n3. नर्मदा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Kolkata is the capital of West Bengal.\n2. Kuchipudi is a dance form of Rajasthan.\n3. The river Narmada originates at Yamunotri.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. कोलकाता पश्चिम बंगाल की राजधानी है।\n2. कुचिपुड़ी राजस्थान का नृत्य है।\n3. नर्मदा नदी का उद्गम यमुनोत्री में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -749,8 +749,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Bihu — Tamil Nadu\nB. Yakshagana — Karnataka\nC. Mohiniyattam — Kerala\nD. Rouf — Rajasthan\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. बिहू — तमिलनाडु\nB. यक्षगान — कर्नाटक\nC. मोहिनीअट्टम — केरल\nD. रौफ — राजस्थान\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Bihu — Uttar Pradesh\nB. Yakshagana — Karnataka\nC. Mohiniyattam — Kerala\nD. Rouf — Rajasthan\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. बिहू — उत्तर प्रदेश\nB. यक्षगान — कर्नाटक\nC. मोहिनीअट्टम — केरल\nD. रौफ — राजस्थान\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -799,8 +799,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Ranchi is the capital of Tamil Nadu.\n2. Yakshagana is a dance form of Kerala.\n3. The river Krishna originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. रांची तमिलनाडु की राजधानी है।\n2. यक्षगान केरल का नृत्य है।\n3. कृष्णा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Raipur is the capital of Tamil Nadu.\n2. Yakshagana is a dance form of Maharashtra.\n3. The river Krishna originates at Mahabaleshwar.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. रायपुर तमिलनाडु की राजधानी है।\n2. यक्षगान महाराष्ट्र का नृत्य है।\n3. कृष्णा नदी का उद्गम महाबलेश्वर में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -849,8 +849,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. The river Yamuna originates at Amarkantak.\n2. Bhangra is a dance form of Punjab.\n3. Chandigarh is the capital of Telangana.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. यमुना नदी का उद्गम अमरकंटक में है।\n2. भांगड़ा पंजाब का नृत्य है।\n3. चंडीगढ़ तेलंगाना की राजधानी है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. The river Yamuna originates at Mahabaleshwar.\n2. Bhangra is a dance form of Punjab.\n3. Bengaluru is the capital of Telangana.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. यमुना नदी का उद्गम महाबलेश्वर में है।\n2. भांगड़ा पंजाब का नृत्य है।\n3. बेंगलुरु तेलंगाना की राजधानी है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -899,8 +899,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Mumbai is the capital of Arunachal Pradesh.\n2. Kathakali is a dance form of Kerala.\n3. The river Godavari originates at Amarkantak.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. मुंबई अरुणाचल प्रदेश की राजधानी है।\n2. कथकली केरल का नृत्य है।\n3. गोदावरी नदी का उद्गम अमरकंटक में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Shimla is the capital of Arunachal Pradesh.\n2. Kathakali is a dance form of Kerala.\n3. The river Godavari originates at Yamunotri.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. शिमला अरुणाचल प्रदेश की राजधानी है।\n2. कथकली केरल का नृत्य है।\n3. गोदावरी नदी का उद्गम यमुनोत्री में है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -949,8 +949,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Sattriya — Assam\nB. Kuchipudi — Karnataka\nC. Odissi — Rajasthan\nD. Garba — Gujarat\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. सत्रिया — असम\nB. कुचिपुड़ी — कर्नाटक\nC. ओडिसी — राजस्थान\nD. गरबा — गुजरात\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Sattriya — Assam\nB. Kuchipudi — Kerala\nC. Odissi — Tamil Nadu\nD. Garba — Gujarat\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. सत्रिया — असम\nB. कुचिपुड़ी — केरल\nC. ओडिसी — तमिलनाडु\nD. गरबा — गुजरात\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -1049,8 +1049,8 @@
     "number": null
    },
    {
-    "stem": "Consider the following statements:\n1. Bhopal is the capital of Madhya Pradesh.\n2. The river Krishna originates at Mahabaleshwar.\n3. Chhau is a dance form of Maharashtra.\nWhich of the statements given above is/are correct?",
-    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. भोपाल मध्य प्रदेश की राजधानी है।\n2. कृष्णा नदी का उद्गम महाबलेश्वर में है।\n3. छऊ महाराष्ट्र का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+    "stem": "Consider the following statements:\n1. Bhopal is the capital of Madhya Pradesh.\n2. The river Krishna originates at Mahabaleshwar.\n3. Chhau is a dance form of Odisha.\nWhich of the statements given above is/are correct?",
+    "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. भोपाल मध्य प्रदेश की राजधानी है।\n2. कृष्णा नदी का उद्गम महाबलेश्वर में है।\n3. छऊ ओडिशा का नृत्य है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
     "options": [
      {
       "label": "A",
@@ -1099,8 +1099,8 @@
     "number": null
    },
    {
-    "stem": "Match the following pairs:\nA. Manipuri — Uttar Pradesh\nB. Lavani — Maharashtra\nC. Ghoomar — Uttar Pradesh\nD. Kathak — Uttar Pradesh\nWhich of the pairs are correctly matched?",
-    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. मणिपुरी — उत्तर प्रदेश\nB. लावणी — महाराष्ट्र\nC. घूमर — उत्तर प्रदेश\nD. कथक — उत्तर प्रदेश\nकौन-से युग्म सही सुमेलित हैं ?",
+    "stem": "Match the following pairs:\nA. Manipuri — Punjab\nB. Lavani — Maharashtra\nC. Ghoomar — Punjab\nD. Kathak — Uttar Pradesh\nWhich of the pairs are correctly matched?",
+    "stem_hi": "निम्नलिखित युग्मों का मिलान कीजिए:\nA. मणिपुरी — पंजाब\nB. लावणी — महाराष्ट्र\nC. घूमर — पंजाब\nD. कथक — उत्तर प्रदेश\nकौन-से युग्म सही सुमेलित हैं ?",
     "options": [
      {
       "label": "A",
@@ -1147,6 +1147,156 @@
     },
     "source_pdf": "staticgk_forms",
     "number": null
+   },
+   {
+    "stem": "A body starting with a velocity of 10 m/s accelerates uniformly at 2 m/s² for 4 seconds. What distance does it cover?",
+    "stem_hi": "10 मी/से के प्रारंभिक वेग से चलती एक वस्तु 4 सेकंड तक 2 मी/से² के एकसमान त्वरण से चलती है। वह कितनी दूरी तय करती है ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "48 m"
+     },
+     {
+      "label": "B",
+      "text": "16 m"
+     },
+     {
+      "label": "C",
+      "text": "56 m"
+     },
+     {
+      "label": "D",
+      "text": "72 m"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "48 मीटर"
+     },
+     {
+      "label": "B",
+      "text": "16 मीटर"
+     },
+     {
+      "label": "C",
+      "text": "56 मीटर"
+     },
+     {
+      "label": "D",
+      "text": "72 मीटर"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "s = ut + ½at² = 10x4 + ½x2x4² = 56 m.",
+    "solution_hi": "s = ut + ½at² = 10x4 + ½x2x4² = 56 मीटर।",
+    "concept": "Motion",
+    "source_pdf": "sciencegen",
+    "number": null,
+    "tag": {
+     "section": "General Science",
+     "difficulty": 3
+    }
+   },
+   {
+    "stem": "Two resistances of 12 ohm and 6 ohm are connected in SERIES across a 60 V supply. What current flows through the circuit?",
+    "stem_hi": "12 ओम तथा 6 ओम के दो प्रतिरोध 60 वोल्ट की आपूर्ति के साथ श्रेणीक्रम में जोड़े गए हैं। परिपथ में कितनी धारा प्रवाहित होगी ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "15 A"
+     },
+     {
+      "label": "B",
+      "text": "5 A"
+     },
+     {
+      "label": "C",
+      "text": "1080 A"
+     },
+     {
+      "label": "D",
+      "text": "3.33 A"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "15 ऐम्पियर"
+     },
+     {
+      "label": "B",
+      "text": "5 ऐम्पियर"
+     },
+     {
+      "label": "C",
+      "text": "1080 ऐम्पियर"
+     },
+     {
+      "label": "D",
+      "text": "3.33 ऐम्पियर"
+     }
+    ],
+    "correct_answer": "D",
+    "solution": "In series R = 12 + 6 = 18 ohm; I = V/R = 60/18 = 3.33 A.",
+    "solution_hi": "श्रेणीक्रम में R = 12 + 6 = 18 ओम; I = V/R = 60/18 = 3.33 ऐम्पियर।",
+    "concept": "Current Electricity",
+    "source_pdf": "sciencegen",
+    "number": null,
+    "tag": {
+     "section": "General Science",
+     "difficulty": 3
+    }
+   },
+   {
+    "stem": "A body of mass 5 kg is raised to a height of 20 m. Taking g = 10 m/s², what is its potential energy at that height?",
+    "stem_hi": "5 किग्रा द्रव्यमान की एक वस्तु को 20 मीटर की ऊँचाई तक उठाया जाता है। g = 10 मी/से² लेते हुए उस ऊँचाई पर उसकी स्थितिज ऊर्जा कितनी है ?",
+    "options": [
+     {
+      "label": "A",
+      "text": "500 J"
+     },
+     {
+      "label": "B",
+      "text": "35 J"
+     },
+     {
+      "label": "C",
+      "text": "1000 J"
+     },
+     {
+      "label": "D",
+      "text": "100 J"
+     }
+    ],
+    "options_hi": [
+     {
+      "label": "A",
+      "text": "500 जूल"
+     },
+     {
+      "label": "B",
+      "text": "35 जूल"
+     },
+     {
+      "label": "C",
+      "text": "1000 जूल"
+     },
+     {
+      "label": "D",
+      "text": "100 जूल"
+     }
+    ],
+    "correct_answer": "C",
+    "solution": "PE = mgh = 5 x 10 x 20 = 1000 J.",
+    "solution_hi": "स्थितिज ऊर्जा = mgh = 5 x 10 x 20 = 1000 जूल।",
+    "concept": "Work, Energy & Power",
+    "source_pdf": "sciencegen",
+    "number": null,
+    "tag": {
+     "section": "General Science",
+     "difficulty": 3
+    }
    },
    {
     "stem": "An article is sold after two successive discounts of 20% and 5%. What single discount is equivalent to these two?",
@@ -1491,156 +1641,6 @@
     "solution": "Net factor = (100-10)/100 x (100-20)/100 = 18/25. Equivalent discount = 100 - 72 = 28%.",
     "solution_hi": "शुद्ध गुणक = (100-10)/100 x (100-20)/100। तुल्य छूट = 100 - 72 = 28%।",
     "concept": "Marked Price & Discount",
-    "tag": {
-     "section": "Mathematics",
-     "difficulty": 4
-    },
-    "source_pdf": "quantgen",
-    "number": null
-   },
-   {
-    "stem": "A boat whose speed in still water is 8 km/hr rows to a place and comes back. The stream flows at 2 km/hr and the whole trip takes 16 hours. How far is the place?",
-    "stem_hi": "शांत जल में जिस नाव की चाल 8 किमी/घंटा है, वह एक स्थान तक जाकर वापस आती है। धारा की चाल 2 किमी/घंटा है तथा पूरी यात्रा में 16 घंटे लगते हैं। वह स्थान कितनी दूर है ?",
-    "options": [
-     {
-      "label": "A",
-      "text": "160 km"
-     },
-     {
-      "label": "B",
-      "text": "120 km"
-     },
-     {
-      "label": "C",
-      "text": "60 km"
-     },
-     {
-      "label": "D",
-      "text": "64 km"
-     }
-    ],
-    "options_hi": [
-     {
-      "label": "A",
-      "text": "160 किमी"
-     },
-     {
-      "label": "B",
-      "text": "120 किमी"
-     },
-     {
-      "label": "C",
-      "text": "60 किमी"
-     },
-     {
-      "label": "D",
-      "text": "64 किमी"
-     }
-    ],
-    "correct_answer": "C",
-    "solution": "Downstream 10 km/hr, upstream 6 km/hr. d/10 + d/6 = 16, so d = 60 km.",
-    "solution_hi": "अनुकूल चाल 10 किमी/घंटा, प्रतिकूल 6 किमी/घंटा। d/10 + d/6 = 16, अतः d = 60 किमी।",
-    "concept": "Boats & Streams",
-    "tag": {
-     "section": "Mathematics",
-     "difficulty": 4
-    },
-    "source_pdf": "quantgen",
-    "number": null
-   },
-   {
-    "stem": "Two numbers are in the ratio 2 : 5. If 40 is added to each, the ratio becomes 4 : 7. Find the smaller number.",
-    "stem_hi": "दो संख्याएँ 2 : 5 के अनुपात में हैं। यदि प्रत्येक में 40 जोड़ दिया जाए, तो अनुपात 4 : 7 हो जाता है। छोटी संख्या ज्ञात कीजिए।",
-    "options": [
-     {
-      "label": "A",
-      "text": "120"
-     },
-     {
-      "label": "B",
-      "text": "40"
-     },
-     {
-      "label": "C",
-      "text": "100"
-     },
-     {
-      "label": "D",
-      "text": "80"
-     }
-    ],
-    "options_hi": [
-     {
-      "label": "A",
-      "text": "120"
-     },
-     {
-      "label": "B",
-      "text": "40"
-     },
-     {
-      "label": "C",
-      "text": "100"
-     },
-     {
-      "label": "D",
-      "text": "80"
-     }
-    ],
-    "correct_answer": "B",
-    "solution": "Let the numbers be 2n and 5n. Then (2n + 40) : (5n + 40) = 4 : 7, giving n = 20. Smaller number = 2 x 20 = 40.",
-    "solution_hi": "माना संख्याएँ 2n तथा 5n हैं। तब (2n + 40) : (5n + 40) = 4 : 7, जिससे n = 20। छोटी संख्या = 2 x 20 = 40।",
-    "concept": "Ratio & Proportion",
-    "tag": {
-     "section": "Mathematics",
-     "difficulty": 4
-    },
-    "source_pdf": "quantgen",
-    "number": null
-   },
-   {
-    "stem": "A sum of Rs. 13,000 is lent partly at 10% and the rest at 6% per annum simple interest. If the total interest for one year is Rs. 1,100, find the part lent at 10%.",
-    "stem_hi": "रु. 13,000 की राशि का कुछ भाग 10% वार्षिक तथा शेष 6% वार्षिक साधारण ब्याज पर उधार दिया जाता है। यदि एक वर्ष का कुल ब्याज रु. 1,100 है, तो 10% पर दिया गया भाग ज्ञात कीजिए।",
-    "options": [
-     {
-      "label": "A",
-      "text": "Rs. 8,000"
-     },
-     {
-      "label": "B",
-      "text": "Rs. 5,000"
-     },
-     {
-      "label": "C",
-      "text": "Rs. 8,125"
-     },
-     {
-      "label": "D",
-      "text": "Rs. 6,500"
-     }
-    ],
-    "options_hi": [
-     {
-      "label": "A",
-      "text": "रु. 8,000"
-     },
-     {
-      "label": "B",
-      "text": "रु. 5,000"
-     },
-     {
-      "label": "C",
-      "text": "रु. 8,125"
-     },
-     {
-      "label": "D",
-      "text": "रु. 6,500"
-     }
-    ],
-    "correct_answer": "A",
-    "solution": "Let the part at 10% be x. Then x x 10/100 + (13000 - x) x 6/100 = 1100. Solving, x = Rs. 8,000.",
-    "solution_hi": "माना 10% पर दी गई राशि x है। तब x x 10/100 + (13000 - x) x 6/100 = 1100। हल करने पर x = रु. 8,000।",
-    "concept": "Simple Interest",
     "tag": {
      "section": "Mathematics",
      "difficulty": 4

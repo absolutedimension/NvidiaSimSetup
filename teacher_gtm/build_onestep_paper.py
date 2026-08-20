@@ -270,6 +270,60 @@ def generate_maths(n, diff, exclude_sigs, bilingual):
     return out
 
 
+def _swap_in(got, fresh):
+    """Put `fresh` on the paper by dropping REAL questions, never previously-added generated ones.
+
+    Both top-ups used to trim the tail of the section — and after the first one ran, that tail WAS
+    the questions it had just added. The maths block silently deleted all five General Science
+    questions the science block had put there, while the build log cheerfully reported both.
+    """
+    keep, drop = [], len(fresh)
+    for q in reversed(got):
+        if drop and not q.get("_generated"):
+            drop -= 1
+            continue
+        keep.append(q)
+    return list(reversed(keep)) + fresh
+
+
+def generate_science(n, exclude_sigs):
+    """Computed physics numericals — the only non-recall science content we have.
+
+    General Science was the last section with no generator at all, so a fully-generated Part II
+    was impossible. sciencegen computes the answer from the quantities in the stem, so it is as
+    trustworthy as quantgen and unlimited in the same way.
+    """
+    sys.path.insert(0, str(REPO / "question_bank_engine"))
+    try:
+        from qbank import sciencegen
+    except Exception as e:
+        print(f"  sciencegen unavailable ({e})")
+        return []
+    rng = random.Random(20260821)
+    builders = [b for bs in sciencegen._CHAP_BUILDERS.values() for b in bs]
+    out, seen = [], set(exclude_sigs)
+    for _ in range(60):
+        for bld in builders:
+            if len(out) >= n:
+                break
+            sq = sciencegen._make_question(bld(rng, 4), rng,
+                                           {"chapter": "General Science", "dmax": 3})
+            row = {"stem": sq.stem, "stem_hi": sq.stem_hi, "options": sq.options,
+                   "options_hi": sq.options_hi, "correct_answer": sq.correct_answer,
+                   "solution": sq.solution, "solution_hi": sq.solution_hi,
+                   "concept": sq.concept, "_generated": True, "source_pdf": "sciencegen",
+                   "number": None,
+                   "tag": {"section": "General Science", "difficulty": 3}}
+            if gen_sig(row) in seen:
+                continue
+            seen.add(gen_sig(row))
+            out.append(row)
+        if len(out) >= n:
+            break
+    print(f"  generated {len(out)} General Science question(s) at difficulty 3")
+    return out
+
+
 def generate_gs_forms(n, exclude_sigs, bilingual):
     """Fill a General Studies HARD shortfall with statement-based and match-the-pairs questions.
 
@@ -727,7 +781,7 @@ def main():
             if want[3] > have3:
                 fresh = generate_gs_forms(want[3] - have3, gen_taken, a.inter_level)
                 gen_taken |= {gen_sig(q) for q in fresh}
-                got = got[:max(len(got) - len(fresh), 0)] + fresh
+                got = _swap_in(got, fresh)
         if a.generate_gk and "General Studies" in secs and len(got) < target:
             fresh = generate_static_gk(target - len(got), gen_taken, a.inter_level)
             gen_taken |= {gen_sig(q) for q in fresh}
@@ -735,10 +789,18 @@ def main():
         if a.generate_maths and "Mathematics" in secs:
             want = mix_for(target)
             have3 = sum(1 for q in got if ((q.get("tag") or {}).get("difficulty") or 0) >= 3)
+            # Part II is Science AND Maths, so split the hard shortfall between the two rather
+            # than letting whichever runs second overwrite the first.
+            if want[3] > have3:
+                short = want[3] - have3
+                sci = generate_science(short // 3 or 1, gen_taken)
+                gen_taken |= {gen_sig(q) for q in sci}
+                got = _swap_in(got, sci)
+                have3 += len(sci)
             if want[3] > have3:
                 new_qs = generate_maths(want[3] - have3, 4, gen_taken, a.inter_level)
                 gen_taken |= {gen_sig(q) for q in new_qs}
-                got = got[:max(len(got) - len(new_qs), 0)] + new_qs
+                got = _swap_in(got, new_qs)
         if not last:
             carry += target - len(got)
         elif len(got) < target:
@@ -1060,7 +1122,10 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
         # only be met from the bank that distinction did not matter; now that generation can fill
         # a hard shortfall, counting only real questions reports "SHORT: 10 at difficulty 3" on a
         # section that just had 15 hard ones added to it.
-        got = Counter(((q.get("tag") or {}).get("difficulty") or 0) for q in items)
+        # Bin 3-and-above together. The report used to key on the EXACT difficulty, so the seven
+        # difficulty-4 maths questions just added to Part II vanished from the "hard" column and
+        # the section still read SHORT. The mix asks for easy/medium/hard, not for a 3 exactly.
+        got = Counter(min(((q.get("tag") or {}).get("difficulty") or 0), 3) for q in items)
         n_gen_here = sum(1 for q in items if q.get("_generated"))
         n_real = sum(got.values())
         if n_real:
