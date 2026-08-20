@@ -459,5 +459,285 @@ SOLVERS += [("letter-series", solve_letter_series), ("number-analogy", solve_num
             ("blood-relation", solve_blood_relation)]
 
 
+# ── independent QUANT solvers ───────────────────────────────────────────────────────────────────
+# Written from the QUESTION TEXT only, exactly like the reasoning solvers above: they never import
+# quantgen. A generated maths question that reaches a paper was previously re-solved only while the
+# GENERATORS were being built — coverage on a built paper sat at 44 of 54, so the ten maths
+# questions rode on a check that lived outside the paper pipeline. These close that.
+#
+# Each returns the answer formatted the way the paper prints it, so it can be compared with the
+# keyed option directly.
+from fractions import Fraction as _F
+
+
+def _n(x):
+    """quantgen's number formatting: whole numbers bare, otherwise two decimals."""
+    x = float(x)
+    return str(int(x)) if x.is_integer() else str(round(x, 2))
+
+
+def _rs(x):
+    x = float(x)
+    return f"Rs. {int(x):,}" if x.is_integer() else f"Rs. {round(x, 2):,}"
+
+
+def _int(s):
+    return int(str(s).replace(",", ""))
+
+
+def _f(s):
+    return _F(str(s).replace(",", ""))
+
+
+def solve_simple_interest(en):
+    m = re.search(r"simple interest on Rs\. ([\d,]+) at (\d+)% per annum for (\d+) years", en)
+    if m:
+        p, r, t = _int(m.group(1)), int(m.group(2)), int(m.group(3))
+        return _rs(p * r * t / 100)
+    m = re.search(r"amount is received on Rs\. ([\d,]+) at (\d+)% per annum simple interest "
+                  r"after (\d+) years", en)
+    if m:
+        p, r, t = _int(m.group(1)), int(m.group(2)), int(m.group(3))
+        return _rs(p + p * r * t / 100)
+    m = re.search(r"sum of Rs\. ([\d,]+) earns Rs\. ([\d,]+) as simple interest in (\d+) years", en)
+    if m:
+        p, si, t = _int(m.group(1)), _int(m.group(2)), int(m.group(3))
+        return _n(_F(si * 100, p * t)) + "%"
+    m = re.search(r"sum of Rs\. ([\d,]+) is lent partly at (\d+)% and the rest at (\d+)% per annum "
+                  r"simple interest\. If the total interest for one year is Rs\. ([\d,]+)", en)
+    if m:
+        tot, r1, r2, I = (_int(m.group(i)) for i in (1, 2, 3, 4))
+        return _rs(_F(I * 100 - tot * r2, r1 - r2))
+    return None
+
+
+def solve_compound_interest(en):
+    m = re.search(r"compound interest on Rs\. ([\d,]+) at (\d+)% per annum for (\d+) years?"
+                  r" \(compounded annually\)", en)
+    if m:
+        p, r = _int(m.group(1)), int(m.group(2))
+        return _rs(float(_F(p) * (1 + _F(r, 100)) ** int(m.group(3)) - p))
+    m = re.search(r"compound interest and the simple interest on a sum of Rs\. ([\d,]+) at "
+                  r"(\d+)% per annum for 2 years", en)
+    if m:
+        p, r = _int(m.group(1)), int(m.group(2))
+        return _rs(float(_F(p) * _F(r, 100) ** 2))
+    m = re.search(r"compound interest on Rs\. ([\d,]+) at (\d+)% per annum for 1 year, "
+                  r"compounded half-yearly", en)
+    if m:
+        p, r = _int(m.group(1)), int(m.group(2))
+        return _rs(float(_F(p) * (1 + _F(r, 200)) ** 2 - p))
+    m = re.search(r"amounts to Rs\. ([\d,.]+) in 2 years at (\d+)% per annum compound interest", en)
+    if m:
+        amt, r = _f(m.group(1)), int(m.group(2))
+        return _rs(float(amt / (1 + _F(r, 100)) ** 2))
+    return None
+
+
+def solve_profit_loss(en):
+    m = re.search(r"bought for Rs\. ([\d,]+) and sold at a (profit|loss) of (\d+)%", en)
+    if m:
+        cp, g, p = _int(m.group(1)), (1 if m.group(2) == "profit" else -1), int(m.group(3))
+        return _rs(cp * (100 + g * p) / 100)
+    m = re.search(r"By selling an article for Rs\. ([\d,]+), a shopkeeper gains (\d+)%", en)
+    if m:
+        sp, p = _int(m.group(1)), int(m.group(2))
+        return _rs(_F(sp * 100, 100 + p))
+    m = re.search(r"marks an article (\d+)% above its cost price of Rs\. ([\d,]+) and then allows "
+                  r"a discount of (\d+)%", en)
+    if m:
+        mu, cp, d = int(m.group(1)), _int(m.group(2)), int(m.group(3))
+        mp = cp * (100 + mu) // 100
+        sp = mp * (100 - d) // 100
+        return _n(_F((sp - cp) * 100, cp)) + "%"
+    m = re.search(r"two successive discounts of (\d+)% and (\d+)%", en)
+    if m:
+        d1, d2 = int(m.group(1)), int(m.group(2))
+        return _n(100 - _F((100 - d1) * (100 - d2), 100)) + "%"
+    return None
+
+
+def solve_time_work(en):
+    m = re.search(r"A can complete a work in (\d+) days and B can complete it in (\d+) days\. "
+                  r"Working together", en)
+    if m:
+        a, b = int(m.group(1)), int(m.group(2))
+        return _n(_F(a * b, a + b)) + " days"
+    m = re.search(r"A can do a piece of work in (\d+) days and B in (\d+) days\. A works alone "
+                  r"for (\d+) days", en)
+    if m:
+        a, b, w = (int(m.group(i)) for i in (1, 2, 3))
+        return _n((1 - _F(w, a)) * b) + " days"
+    m = re.search(r"A, B and C can do a piece of work in (\d+), (\d+) and (\d+) days", en)
+    if m:
+        a, b, c = (int(m.group(i)) for i in (1, 2, 3))
+        return _n(_F(1, _F(1, a) + _F(1, b) + _F(1, c))) + " days"
+    m = re.search(r"A and B together can complete a work in ([\d.]+) days\. A alone can do it in "
+                  r"(\d+) days", en)
+    if m:
+        tog, a = _f(m.group(1)), int(m.group(2))
+        return _n(_F(1, _F(1, tog) - _F(1, a))) + " days"
+    return None
+
+
+def solve_pipes(en):
+    m = re.search(r"Two pipes can fill a tank in (\d+) hours and (\d+) hours", en)
+    if m:
+        a, b = int(m.group(1)), int(m.group(2))
+        return _n(_F(a * b, a + b)) + " hours"
+    m = re.search(r"A pipe fills a tank in (\d+) hours while an outlet pipe empties it in "
+                  r"(\d+) hours", en)
+    if m:
+        i, o = int(m.group(1)), int(m.group(2))
+        return _n(_F(1, _F(1, i) - _F(1, o))) + " hours"
+    m = re.search(r"Two pipes fill a tank in (\d+) hours and (\d+) hours, while a waste pipe "
+                  r"empties it in (\d+) hours", en)
+    if m:
+        a, b, c = (int(m.group(i)) for i in (1, 2, 3))
+        return _n(_F(1, _F(1, a) + _F(1, b) - _F(1, c))) + " hours"
+    m = re.search(r"fill a tank in (\d+) hours, but because of a leak it takes ([\d.]+) hours", en)
+    if m:
+        f, wl = int(m.group(1)), _f(m.group(2))
+        return _n(_F(1, _F(1, f) - _F(1, wl))) + " hours"
+    return None
+
+
+def solve_averages(en):
+    m = re.search(r"Find the average of the numbers ([\d, ]+)\.", en)
+    if m:
+        nums = [int(x) for x in re.findall(r"\d+", m.group(1))]
+        return _n(_F(sum(nums), len(nums)))
+    m = re.search(r"average age of (\d+) students is (\d+) years\. When a new student replaces "
+                  r"one aged (\d+) years, the average increases by (\d+)", en)
+    if m:
+        n2, _oa, om, ch = (int(m.group(i)) for i in (1, 2, 3, 4))
+        return _n(om + n2 * ch)
+    m = re.search(r"average weight of (\d+) boys is (\d+) kg and that of (\d+) girls is (\d+) kg",
+                  en)
+    if m:
+        n1, a1, n2, a2 = (int(m.group(i)) for i in (1, 2, 3, 4))
+        return _n(_F(n1 * a1 + n2 * a2, n1 + n2))
+    m = re.search(r"average of (\d+) numbers was found to be (\d+)\..*?read as (\d+) instead of "
+                  r"(\d+)", en, re.S)
+    if m:
+        n, wa, mis, act = (int(m.group(i)) for i in (1, 2, 3, 4))
+        return _n(_F(n * wa - mis + act, n))
+    return None
+
+
+def solve_ages(en):
+    m = re.search(r"ages of A and B are in the ratio (\d+) : (\d+)\. If A is (\d+) years old, "
+                  r"what is B's present age", en)
+    if m:
+        a, b, ageA = (int(m.group(i)) for i in (1, 2, 3))
+        return _n(_F(ageA * b, a)) if ageA % a == 0 else None
+    m = re.search(r"ages of A and B are in the ratio (\d+) : (\d+)\. If A's present age is (\d+) "
+                  r"years, what will be B's age after (\d+) years", en)
+    if m:
+        a, b, ageA, yrs = (int(m.group(i)) for i in (1, 2, 3, 4))
+        return _n(_F(ageA * b, a) + yrs) if ageA % a == 0 else None
+    m = re.search(r"(\d+) years ago the ages of A and B were in the ratio (\d+) : (\d+)\. If A is "
+                  r"now (\d+) years old, what will B's age be (\d+) years", en)
+    if m:
+        n, a, b, nowA, m2 = (int(m.group(i)) for i in (1, 2, 3, 4, 5))
+        past = nowA - n
+        return _n((past // a) * b + n + m2) if past % a == 0 else None
+    m = re.search(r"(\d+) years ago the ages of A and B were in the ratio (\d+) : (\d+)\. (\d+) "
+                  r"years from now the ratio of their ages will be (\d+) : (\d+)", en)
+    if m:
+        n1, a, b, n2, p, q = (int(m.group(i)) for i in (1, 2, 3, 4, 5, 6))
+        for A in range(n1 + 1, 500):
+            if (b * (A - n1)) % a:
+                continue
+            B = (b * (A - n1)) // a + n1
+            if q * (A + n2) == p * (B + n2):
+                return _n(A)
+    return None
+
+
+def solve_ratio(en):
+    m = re.search(r"amount of Rs\. ([\d,]+) is divided among three people in the ratio (\d+) : "
+                  r"(\d+) : (\d+)\. Find the share of the (first|second|third)", en)
+    if m:
+        tot = _int(m.group(1))
+        parts = [int(m.group(i)) for i in (2, 3, 4)]
+        who = ["first", "second", "third"].index(m.group(5))
+        return _rs(_F(tot * parts[who], sum(parts)))
+    m = re.search(r"share an amount in the ratio (\d+) : (\d+)\. If the first receives Rs\. "
+                  r"([\d,]+) more than the second", en)
+    if m:
+        hi_, lo, gap = int(m.group(1)), int(m.group(2)), _int(m.group(3))
+        return _rs(_F(gap * (hi_ + lo), hi_ - lo))
+    m = re.search(r"A : B = (\d+) : (\d+) and B : C = (\d+) : (\d+), and Rs\. ([\d,]+) is divided",
+                  en)
+    if m:
+        a, b, b2, c2, tot = (int(m.group(i)) for i in (1, 2, 3, 4)), None, None, None, None
+        a, b, b2, c2 = (int(m.group(i)) for i in (1, 2, 3, 4))
+        tot = _int(m.group(5))
+        A, B, C = a * b2, b * b2, b * c2
+        g = math.gcd(math.gcd(A, B), C)
+        A, B, C = A // g, B // g, C // g
+        return _rs(_F(tot * C, A + B + C))
+    m = re.search(r"Two numbers are in the ratio (\d+) : (\d+)\. If (\d+) is added to each, the "
+                  r"ratio becomes (\d+) : (\d+)", en)
+    if m:
+        x, y, add, p, q = (int(m.group(i)) for i in (1, 2, 3, 4, 5))
+        for k in range(1, 800):
+            if q * (x * k + add) == p * (y * k + add):
+                return _n(x * k)
+    return None
+
+
+def solve_boats(en):
+    m = re.search(r"boat in still water is (\d+) km/hr and the speed of the stream is (\d+) km/hr\."
+                  r" How far can the boat travel (downstream|upstream) in (\d+) hours", en)
+    if m:
+        b, s, dirn, t = int(m.group(1)), int(m.group(2)), m.group(3), int(m.group(4))
+        return f"{(b + s if dirn == 'downstream' else b - s) * t} km"
+    m = re.search(r"boat covers (\d+) km/hr downstream and (\d+) km/hr upstream", en)
+    if m:
+        d, u = int(m.group(1)), int(m.group(2))
+        return _n(_F(d + u, 2)) + " km/hr"
+    m = re.search(r"boat covers (\d+) km downstream in (\d+) hours and the same distance upstream "
+                  r"in ([\d.]+) hours", en)
+    if m:
+        dist, td, tu = int(m.group(1)), int(m.group(2)), _f(m.group(3))
+        return _n((_F(dist, td) - _F(dist, tu)) / 2) + " km/hr"
+    m = re.search(r"still water is (\d+) km/hr rows to a place and comes back\. The stream flows "
+                  r"at (\d+) km/hr and the whole trip takes ([\d.]+) hours", en)
+    if m:
+        b, s, tot = int(m.group(1)), int(m.group(2)), _f(m.group(3))
+        return _n(tot / (_F(1, b + s) + _F(1, b - s))) + " km"
+    return None
+
+
+def solve_bodmas(en):
+    m = re.search(r"value of\s+(.*?)\s*\?", en)
+    if not m or "%" not in m.group(1):
+        return None
+    e = m.group(1)
+    if not re.fullmatch(r"[\d\s()x^%+\-/of.]*", e.replace("of", "of")):
+        return None
+    e = re.sub(r"\((\d+)\)\^2", r"(\1**2)", e)
+    e = re.sub(r"(\d+)% of (\d+)", r"(_F(\1,100)*\2)", e)
+    e = e.replace("x", "*")
+    try:
+        return _n(eval(e, {"_F": _F, "__builtins__": {}}))
+    except Exception:
+        return None
+
+
+SOLVERS += [("simple-interest", solve_simple_interest),
+            ("compound-interest", solve_compound_interest),
+            ("profit-loss", solve_profit_loss),
+            ("time-and-work", solve_time_work),
+            ("pipes-cisterns", solve_pipes),
+            ("averages", solve_averages),
+            ("ages", solve_ages),
+            ("ratio", solve_ratio),
+            ("boats-streams", solve_boats),
+            ("bodmas", solve_bodmas)]
+
+
 if __name__ == "__main__":
     sys.exit(main())
