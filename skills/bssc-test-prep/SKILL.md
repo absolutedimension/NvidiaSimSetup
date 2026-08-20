@@ -496,3 +496,119 @@ setsid nohup ~/run_tag.sh > ~/bssc_in/tag.log 2>&1 < /dev/null &
 6. **Missing reasoning builders** the real papers use and we cannot generate: calendar, coded
    inequality, dice, seating arrangement, syllogism, figure series.
 7. **Get a real Inter Level paper** — only from One Step's own material or a student's copy (§2).
+
+---
+
+## 12. ▶ STATE AS OF 2026-08-20 — the paper is now 100% GENERATED. Read this before anything.
+
+**Two review copies are with One Step** (via Rohan, 2026-08-20). Deepak has checked the Hindi
+renders correctly on the page. **We are waiting on the owner's answer to ONE question: is 70% hard
+the right level?** Do not rebuild the sets or change difficulty until that comes back — the whole
+point of the badges is to get his calibration, and changing the paper first wastes the ask.
+
+### What the papers are now
+
+`OneStep_BSSC_InterLevel_Set1_REVIEW.pdf` / `Set2_REVIEW.pdf` — 150 questions each, **zero official
+past-paper questions**, 15/15/70 easy/medium/hard in every section, no question shared between
+sets, every one independently re-solved before the paper is allowed to build.
+
+```bash
+python3 build_onestep_paper.py --set 1 --sets 2 --inter-level --all-generated \
+    --difficulty-mix 15:15:70 --show-difficulty --logo onestep_logo.png --out <file>.pdf
+python3 test_papers.py <file>.html          # must print ALL CHECKS PASSED and N of N re-solved
+```
+
+`--show-difficulty` prints a सरल/मध्यम/कठिन badge per question — REVIEW copies only, never a
+student copy. A student who sees "Hard" before answering has been primed.
+
+### 🔴 WHAT ROHAN CAN AND CANNOT SAY
+
+The old line — *"asli, verified past-year questions with the commission's own answer key"* — is
+**no longer true of these papers**. Nothing on them is a past-paper question. The honest
+replacement, which is arguably stronger:
+
+> "Every answer is either computed in Python or traceable to the official Constitution text.
+> Nothing is copied from anyone, and nothing rests on a scan we might have misread."
+
+### Why we went fully generated
+
+The owner read the first two sets and said *"ye basic ka bhi basic hai"*. He was right, and the
+cause was measurable: 28 of Set 1's 106 official questions were tagged difficulty 1, and a third
+came from Office Attendant and 10th Level papers — exams for posts BELOW Inter Level. The draw
+never considered difficulty at all; it picked by hash order.
+
+The deeper constraint: **the real BSSC papers are basic.** Across 1,744 extracted questions only 50
+are difficulty 3 and none higher. "Authentic to the exam" and "what this owner wants" are different
+targets, and only generation can serve the second.
+
+### The four generators, and what varies with difficulty
+
+| engine | covers | difficulty | bilingual |
+|---|---|---|---|
+| `quantgen` | maths, 23 builders | **10 of 23** respond to `diff` (d1-d4) | 6 builders |
+| `reasoninggen` | reasoning, 13 builders | **all 13** | all |
+| `sciencegen` | physics numericals, 3 builders | all, d1-d4 | all |
+| `staticgkgen` + `staticgk_forms` | GS | recall = d1; statement/match forms = d2/d3 | via `staticgk_hi` gate |
+
+Pools: **500** distinct hard GS, **3,206** maths, **3,871** reasoning, **296** science.
+
+### The rule that keeps generated GS honest
+
+A false statement is made by pairing a key with a **different value from the same table**. That is
+only false if the table is a **function** (one value per key) AND its **values are mutually
+exclusive**. Both halves are load-bearing:
+
+- Chandigarh is the capital of Punjab AND Haryana → the reverse direction is unsafe, so the forms
+  only ever run key → value.
+- The 73rd and 74th Amendments were both enacted in **1992** → a year swap is accidentally TRUE.
+  `_false_value` refuses any value owned by more than one key. **I reasoned about this hazard twice
+  and both times checked only the key side; it took a real collision to show the check was half a
+  check.**
+
+### GS content: what worked and what did not
+
+- **`polity_tables.py` — 31 articles + 8 amendments, VERIFIED against the official Constitution PDF**
+  (`cdnbbsr.s3waas.gov.in`; legislative.gov.in serves only a landing page). One real error found
+  and fixed: the 61st Amendment is **1988** (the Act), not 1989 (commencement). On an OPEN-BOOK
+  exam that would have marked a correct candidate wrong while they held the proof.
+- **`CONSTITUTION_ARTICLES.json` — 462 headings** parsed from the official ToC by
+  `parse_constitution_toc.py`. 430 unused; extending is now mechanical.
+- **NCERT is a DEAD END for the statement forms.** 849 cited paragraphs → 1,537 support-verified
+  facts → **two** pattern matches → **zero** usable tables. Prose has no closed value domains.
+  `GS_SOURCED_FACTS.jsonl` and `GS_FACTS_VERIFIED.jsonl` are saved but feed nothing. **Do not
+  extract more NCERT chapters expecting a different answer.**
+
+### 🔴 THE LESSON OF THIS ENTIRE EFFORT: check the checker
+
+**Sixteen times** a checker was wrong rather than the thing it checked. Flattened fractions made the
+models answer "the L.C.M. of 14 and 25"; `\bNN\b` cannot match in "Equality14."; a solver read a
+3-statement question as 2-statement and failed 22 correct ones; a parser reported Article 15 as
+"The United Provinces Land Acquisition Act, 1948".
+
+Two habits came out of it, and they are the transferable part of this work:
+
+1. **Sabotage every new check before trusting it.** Flip a key, feed a false claim. A check that
+   cannot fail is not a check. `test_papers.py` catching a deliberately corrupted answer is the
+   only reason its green run means anything.
+2. **Gate on already-verified data before writing.** The ToC parser had to reproduce the 19
+   hand-verified rows before a single new one was accepted. It caught two broken parsers that
+   produced clean-looking output.
+
+And the asymmetry that decides close calls: **a false alarm costs an hour; a false pass ships.**
+
+### ▶ NEXT SESSION, in order
+
+1. **Act on the owner's difficulty answer.** Everything else is secondary to it.
+2. **A native Hindi reader over the generated Hindi.** Deepak has checked the FONT renders; nobody
+   has checked the LANGUAGE. This session alone produced `73वाँ` for `73वें`, `पोती` for `नातिन`,
+   `भतीजी` for `भांजी` and a literal `मेरा/मेरी` on the page. 12 polity renderings from 2026-08-20
+   are entirely unverified.
+3. **13 quantgen builders still ignore `diff`** — profit/loss, CI, ratio and boats are done; DI,
+   partnership, alligation, mensuration and the rest are not.
+4. **Select more of the 430 parsed articles**, with Hindi. A parsed row still needs judgement:
+   "243. Definitions" is a faithful heading and a useless question.
+5. **BSEB textbooks** — Bihar is 20% of the GS section and `biharboardonline.bihar.gov.in` does not
+   resolve. Those PDFs must come from Rohan into `drop/gs_sources/`.
+
+**Measured error rate on hand-written data here: about 1 in 27.** That is why every table gets
+checked against a source, and why "I wrote it carefully" is not a verification.
