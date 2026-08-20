@@ -54,10 +54,21 @@ def _bilingual_keys(table):
     return [k for k, v in table.items() if HI.hi(k) and HI.hi(v)]
 
 
-def _false_value(table, k, rng):
-    """A value from the same table that is genuinely NOT this key's — alias-guarded."""
+def _false_value(table, k, rng, need_hindi=True):
+    """A value from the same table that is genuinely NOT this key's — alias-guarded.
+
+    A value SHARED by two keys can never be used as a false one: the 73rd and 74th Amendments were
+    both enacted in 1992, so "the 74th Amendment was enacted in 1992" is true however the swap was
+    made. The key-side function property is not enough; the value side has to be checked too, and
+    that only showed up when a real table (amendment -> year) had a genuine collision in it.
+    """
     true_v = table[k]
-    pool = [v for v in set(table.values()) if not _alias(v, true_v) and HI.hi(v)]
+    owners = {}
+    for kk, vv in table.items():
+        owners.setdefault(vv, set()).add(kk)
+    pool = [v for v in set(table.values())
+            if not _alias(v, true_v) and len(owners[v]) == 1
+            and (HI.hi(v) if need_hindi else True)]
     return rng.choice(pool) if pool else None
 
 
