@@ -103,9 +103,20 @@ def load(inter_level=False, exclude=frozenset()):
     return qs
 
 
-def pick(pool, n, used, tmpl, cap=2):
+def _order_key(q, salt):
+    """Deterministic per-set ordering.
+
+    random.shuffle() re-orders the WHOLE list whenever the pool changes, so excluding a single bad
+    question silently rebuilt the entire paper and threw away the question-by-question checking.
+    Hashing each question independently means removing one leaves every other in place.
+    """
+    import hashlib
+    return hashlib.sha1(f"{salt}|{q.get('source_pdf')}|{q.get('number')}".encode()).hexdigest()
+
+
+def pick(pool, n, used, tmpl, cap=2, salt=""):
     out = []
-    random.shuffle(pool)
+    pool = sorted(pool, key=lambda q: _order_key(q, salt))
     for q in pool:
         if len(out) >= n:
             break
@@ -115,7 +126,19 @@ def pick(pool, n, used, tmpl, cap=2):
         k = sig(q["stem"])
         if tmpl.get(k, 0) >= cap:
             continue
+        # Same COMPUTATION, different wording. "If 3889 + 12.952 - ? = 3854.002" and "Find the
+        # value of X in 3889 + 12.952 - X = 3854.002" came from two different source papers, had
+        # different option sets, and both landed on one paper. Text signatures cannot see it; the
+        # numbers can.
+        nums = tuple(sorted(re.findall(r"\d+\.?\d*", q.get("stem") or "")))
+        ans = next((o["text"] for o in q.get("options") or []
+                    if o["label"] == q.get("correct_answer")), "")
+        nkey = ("num", nums, re.sub(r"\s+", "", str(ans)))
+        if len(nums) >= 2 and tmpl.get(nkey):
+            continue
         used.add(qid); tmpl[k] = tmpl.get(k, 0) + 1
+        if len(nums) >= 2:
+            tmpl[nkey] = 1
         out.append(q)
     return out
 
@@ -236,6 +259,12 @@ def main():
                          "everything the other sets already took.")
     ap.add_argument("--manifest", default=str(REPO / "teacher_gtm/InterLevel_sets_used.json"),
                     help="Ledger of which questions each set has consumed.")
+    ap.add_argument("--pin", action="store_true",
+                    help="Rebuild EXACTLY the questions the manifest already records for this set, "
+                         "instead of drawing fresh. Once a set has been fact-checked question by "
+                         "question, any redraw silently swaps in unverified ones — removing three "
+                         "questions reshuffled the whole paper and quietly changed Parts I and II. "
+                         "Pinning is what makes 'this set is verified' stay true.")
     ap.add_argument("--inter-level", action="store_true",
                     help="Build for BSSC 2nd Inter Level (Advt 02/23-A). Forces the commission's "
                          "OWN three-section prelim structure — GS / Science+Maths / Mental Ability, "
@@ -298,13 +327,40 @@ def main():
     # so every question stays in its right section and the paper still totals 150. The
     # advertisement names the three sections without fixing a per-section count, so 47/53 is as
     # faithful as 50/50.
+    if a.pin and str(a.set) in manifest:
+        want_real = [tuple(x) for x in manifest[str(a.set)]["real"]]
+        want_gen = list(manifest[str(a.set)]["gen"])   # ORDER matters: a pinned rebuild must
+        #                                                    reproduce the paper, not just its contents
+        by_id = {}
+        for q in qs:
+            by_id[tuple(qid(q))] = q
+        missing = [r for r in want_real if tuple(r) not in by_id]
+        if missing:
+            print(f"  PIN: {len(missing)} pinned questions are no longer eligible "
+                  f"(newly excluded?) — {missing[:5]}")
+        pinned_real = [by_id[tuple(r)] for r in want_real if tuple(r) in by_id]
+        gen_by_sig = {gen_sig(g): g for g in load_generated(10 ** 6)}
+        pinned_gen = [gen_by_sig[sg] for sg in want_gen if sg in gen_by_sig]
+        print(f"  PIN: rebuilding the recorded set — {len(pinned_real)} real + "
+              f"{len(pinned_gen)} generated")
+
     paper, n, carry = [], 0, 0
     gen_taken = set(used_gen)
+    pin_pool = list(pinned_real) if (a.pin and str(a.set) in manifest) else None
+    pin_gen = list(pinned_gen) if (a.pin and str(a.set) in manifest) else None
     for idx, (title, secs, want) in enumerate(SPEC):
+        if pin_pool is not None:
+            got = [q for q in pin_pool if q["tag"]["section"] in secs][:want]
+            for q in got:
+                pin_pool.remove(q)
+            if idx == len(SPEC) - 1:
+                got = got + pin_gen[:want - len(got)]
+            paper.append((title, got)); n += len(got)
+            continue
         pool = [q for s in secs for q in by.get(s, [])]
         last = idx == len(SPEC) - 1
         target = want + carry if last else want
-        got = pick(pool, target, used, tmpl)
+        got = pick(pool, target, used, tmpl, salt=f"s{a.set}")
         if not last:
             carry += target - len(got)
         elif len(got) < target:

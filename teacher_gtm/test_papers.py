@@ -135,6 +135,19 @@ def uniqueness(sets):
         ok &= check(f"{tag}: no repeat WITHIN the paper", not dupes, f"{len(dupes)} repeated")
         for d in dupes[:3]:
             print("        ", d[:70])
+    # same COMPUTATION under different wording — text signatures cannot see this
+    for tag, qs, key, _g in sets:
+        seen, dup = {}, []
+        for q in qs:
+            nums = tuple(sorted(NUM.findall(q["en"] or q["hi"] or "")))
+            ans = dict(q["opts"][-1]).get(key.get(q["n"]), "") if q["opts"] else ""
+            if len(nums) < 2:
+                continue
+            sg = (nums, re.sub(r"\s+", "", ans))
+            if sg in seen:
+                dup.append((seen[sg], q["n"]))
+            seen[sg] = q["n"]
+        ok &= check(f"{tag}: no two questions are the same COMPUTATION", not dup, str(dup[:5]))
     if len(sets) > 1:
         (t1, q1, *_), (t2, q2, *_) = sets[0], sets[1]
         shared = {sig(q) for q in q1} & {sig(q) for q in q2}

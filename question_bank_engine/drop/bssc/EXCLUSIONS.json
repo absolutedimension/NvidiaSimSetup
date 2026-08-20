@@ -232,6 +232,16 @@
       "source_pdf": "03_25_SET_A.pdf",
       "number": 141,
       "reason": "Malformed analogy stem: 'Pediatrics : Children :: ? : Geriatrics : ?' — two blanks and the pair inverted. The intended answer (Aged) is right, but the question as printed cannot be read."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 2,
+      "reason": "Stem is just 'Find the value of x.' with no equation, and the options are x-y / 1 / x x 100 / x+y. The equation did not survive extraction; nothing is answerable."
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 5,
+      "reason": "The correct answer is not among the options. Multiplying C.P. by 11/10 gives a 10% profit, but the options are (11/10)squared, 11, 10, 9 — the keyed 11 is the numerator alone, so '11/10' was flattened to '11' in extraction."
     }
   ],
   "excluded_sources": [
