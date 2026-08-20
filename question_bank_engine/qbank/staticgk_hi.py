@@ -115,3 +115,71 @@ def bilingual(tmpl, key, correct, distractors):
     if not t or not k or not c or any(d is None for d in ds):
         return None
     return {"tmpl": t, "key": k, "correct": c, "distractors": ds}
+
+# ── Constitution: articles and amendments ───────────────────────────────────────────────────────
+# Hand-written like everything above, and with more care than the rest, because a wrong rendering
+# here is not a clumsy sentence — it is a wrong constitutional fact that a Hindi-medium candidate
+# has no way to catch. Standard legal Hindi as the Constitution's own Hindi text uses it
+# (विधि के समक्ष समता, not the loose समानता), so a student reading a bare Act sees the same words.
+# Article and amendment NUMBERS stay in Arabic digits, which is how the commission prints them.
+
+ARTICLE_SUBJECT_HI = {
+    "equality before the law": "विधि के समक्ष समता",
+    "the six fundamental freedoms": "छह मौलिक स्वतंत्रताओं",
+    "protection of life and personal liberty": "प्राण एवं दैहिक स्वतंत्रता के संरक्षण",
+    "free and compulsory education for children aged 6 to 14":
+        "6 से 14 वर्ष के बच्चों की नि:शुल्क एवं अनिवार्य शिक्षा",
+    "prohibition of employment of children in factories":
+        "कारखानों में बालकों के नियोजन के प्रतिषेध",
+    "the right to constitutional remedies": "संवैधानिक उपचारों के अधिकार",
+    "organisation of village panchayats": "ग्राम पंचायतों के संगठन",
+    "a uniform civil code for citizens": "नागरिकों के लिए समान नागरिक संहिता",
+    "the fundamental duties of citizens": "नागरिकों के मूल कर्तव्यों",
+    "the pardoning power of the President": "राष्ट्रपति की क्षमादान शक्ति",
+    "the definition of a Money Bill": "धन विधेयक की परिभाषा",
+    "the annual financial statement, or Union Budget":
+        "वार्षिक वित्तीय विवरण (केंद्रीय बजट)",
+    "the Comptroller and Auditor General of India":
+        "भारत के नियंत्रक एवं महालेखापरीक्षक",
+    "the appointment of the Governor of a State": "राज्य के राज्यपाल की नियुक्ति",
+    "the Finance Commission": "वित्त आयोग",
+    "the Election Commission of India": "भारत निर्वाचन आयोग",
+    "the proclamation of a National Emergency": "राष्ट्रीय आपातकाल की उद्घोषणा",
+    "President's Rule in a State": "किसी राज्य में राष्ट्रपति शासन",
+    "the power of Parliament to amend the Constitution":
+        "संविधान में संशोधन करने की संसद की शक्ति",
+}
+
+# OBLIQUE form (73वें, not 73वाँ). These are only ever used before "संविधान संशोधन ने", and the
+# ergative ने takes the oblique — "73वाँ संविधान संशोधन ने" is the kind of error a Hindi reader
+# notices in the first line, and the English half gives no hint of it. Same class as the
+# मेरा/मेरी slash and the भतीजी/भांजी mix-up caught earlier.
+AMENDMENT_HI = {
+    "42nd": "42वें", "44th": "44वें", "52nd": "52वें", "61st": "61वें",
+    "73rd": "73वें", "74th": "74वें", "86th": "86वें", "101st": "101वें",
+}
+
+AMENDMENT_DID_HI = {
+    "added the words Socialist, Secular and Integrity to the Preamble":
+        "प्रस्तावना में समाजवादी, पंथनिरपेक्ष तथा अखंडता शब्द जोड़े",
+    "removed the right to property from the Fundamental Rights":
+        "संपत्ति के अधिकार को मौलिक अधिकारों से हटाया",
+    "added the Tenth Schedule on defection": "दलबदल से संबंधित दसवीं अनुसूची जोड़ी",
+    "lowered the voting age from 21 to 18": "मतदान की आयु 21 से घटाकर 18 वर्ष की",
+    "gave constitutional status to Panchayati Raj institutions":
+        "पंचायती राज संस्थाओं को संवैधानिक दर्जा दिया",
+    "gave constitutional status to urban local bodies":
+        "शहरी स्थानीय निकायों को संवैधानिक दर्जा दिया",
+    "made education a fundamental right for children aged 6 to 14":
+        "6 से 14 वर्ष के बच्चों के लिए शिक्षा को मौलिक अधिकार बनाया",
+    "introduced the Goods and Services Tax": "वस्तु एवं सेवा कर (GST) लागू किया",
+}
+
+for _m in (ARTICLE_SUBJECT_HI, AMENDMENT_HI, AMENDMENT_DID_HI):
+    ENTITY.update(_m)
+
+TEMPLATE.update({
+    "Article {k} of the Constitution deals with {v}.":
+        "संविधान का अनुच्छेद {k} {v} से संबंधित है।",
+    "The {k} Amendment {v}.": "{k} संविधान संशोधन ने {v}।",
+})
