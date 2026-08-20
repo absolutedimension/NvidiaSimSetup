@@ -38,8 +38,14 @@ General Studies exam could test. Each claim must be a single complete sentence t
 own, states one fact, and is FULLY supported by this passage.
 
 Do not infer, generalise, or add anything the passage does not state. Prefer claims with a
-definite subject and a definite value — a year, a number, an article, a name, a place.
+definite subject and a definite value — a year, an article, a name, a place, a definition.
 Skip the passage entirely if it is narrative, an exercise, a caption, or has no testable fact.
+
+DO NOT extract figures that come from a table, chart, graph or survey reported in the text —
+percentages, growth rates, sample results. Every claim that failed verification in testing was of
+that kind: a number read out of a table and then attached to a broader subject than the table
+covers, such as turning one row into "ALL dictatorial regimes had a growth rate of 4.42". A number
+is only safe here when the sentence itself states what it belongs to.
 
 PASSAGE:
 {para}
@@ -76,7 +82,12 @@ def main():
     ap.add_argument("--limit", type=int, default=40, help="paragraphs to process")
     ap.add_argument("--per-para", type=int, default=3)
     ap.add_argument("--extractor", default="gpt-5.6-terra")
-    ap.add_argument("--verifiers", default="gpt-5.5,gpt-4o")
+    ap.add_argument("--verifiers", default="gpt-5.5,gpt-4o,gpt-5.6-sol",
+                    help="Three, not two. With two, every single rejection in testing came from "
+                         "ONE of them — gpt-4o dissenting while gpt-5.5 passed everything — so "
+                         "unanimity was doing the work of agreement and the gate was effectively "
+                         "single-verifier. A third makes a lone conservative model visible in the "
+                         "vote rather than invisible behind the unanimity rule.")
     ap.add_argument("--workers", type=int, default=4)
     a = ap.parse_args()
     base = os.environ.get("QBANK_LLM_BASE_URL", "http://127.0.0.1:4000/v1")
@@ -124,6 +135,7 @@ def main():
         return p, kept, None
 
     stats = {"claims": 0, "kept": 0, "rejected": 0, "split": 0}
+    dissent = {}
     seen_n = 0
     # Append and FLUSH as each paragraph finishes. A long unattended job that only writes at the
     # end is one crash away from having produced nothing.
@@ -153,7 +165,10 @@ def main():
                         stats["split"] += 1
                         # a split is the interesting case: one verifier saw support and the other
                         # did not, which is where a miscalibrated gate shows itself
-                        print(f"  SPLIT {votes} {claim[:90]}", flush=True)
+                        nos = [m for m, v in zip(verifiers, votes) if not v]
+                        print(f"  SPLIT rejected-by={nos} {claim[:80]}", flush=True)
+                        for m in nos:
+                            dissent[m] = dissent.get(m, 0) + 1
             if seen_n % 25 == 0:
                 print(f"  {seen_n}/{len(paras)} paragraphs | {stats['kept']} kept "
                       f"| {stats['rejected']} rejected", flush=True)
@@ -162,6 +177,11 @@ def main():
     print(f"  {stats['kept']} survived BOTH verifiers ({100 * stats['kept'] / c:.0f}%)")
     print(f"  {stats['rejected']} rejected, of which {stats['split']} split the verifiers "
           f"— those are the ones worth reading")
+    if dissent:
+        print(f"  dissents by verifier: {dissent}")
+        if len(dissent) == 1:
+            print(f"  WARNING: every rejection came from ONE verifier. Unanimity is doing the "
+                  f"work of agreement, and the gate is effectively single-verifier.")
     print(f"  -> {OUT}")
 
 
