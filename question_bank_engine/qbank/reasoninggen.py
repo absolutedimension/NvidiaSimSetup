@@ -228,7 +228,9 @@ def _b_coding_shift(rng, diff):
 
 def _b_coding_number(rng, diff):
     w = rng.choice(_WORDS)
-    op = rng.choice(["pos", "pos+1", "pos*2"])
+    # Disjoint bands, so d3 cannot emit the d1 rule. d4 counts the alphabet BACKWARDS (A=26),
+    # which is the standard step up and cannot be reached by adjusting the forward count.
+    op = rng.choice({1: ["pos"], 2: ["pos+1"], 3: ["pos*2"]}.get(min(diff, 4), ["rev"]))
     # The Hindi USED to say only "अपनी वर्णमाला-स्थिति के अनुसार" for all three rules, dropping the
     # "one more than" / "twice" that IS the question. A Hindi-medium candidate was shown a
     # different, easier question than the English one — and paper_common.numbers_agree() then
@@ -242,10 +244,14 @@ def _b_coding_number(rng, diff):
         vals = [_pos(c) + 1 for c in w]
         desc = "one more than its position in the alphabet (A=2, B=3, …)"
         desc_hi = "उसकी वर्णमाला-स्थिति से एक अधिक (A=2, B=3, …)"
-    else:
+    elif op == "pos*2":
         vals = [_pos(c) * 2 for c in w]
         desc = "twice its position in the alphabet (A=2, B=4, …)"
         desc_hi = "उसकी वर्णमाला-स्थिति से दोगुना (A=2, B=4, …)"
+    else:
+        vals = [27 - _pos(c) for c in w]
+        desc = "its position counted BACKWARDS from Z (Z=1, Y=2, …, A=26)"
+        desc_hi = "Z से उल्टी गिनती में उसकी स्थिति (Z=1, Y=2, …, A=26)"
     code = " ".join(str(v) for v in vals)
     stem = (f"If each letter is coded by {desc}, how is '{w}' coded?")
     sol = f"{w}: " + ", ".join(f"{c}={v}" for c, v in zip(w, vals)) + f" → {code}."
@@ -379,14 +385,22 @@ def _b_alnum_series(rng, diff):
 # ---- Analogy ----------------------------------------------------------------
 
 def _b_number_analogy(rng, diff):
-    rule = rng.choice(["square", "cube", "double", "next", "triple"])
+    # Difficulty is the relation itself. Bands are disjoint, so a level cannot quietly emit an
+    # easier one — the failure that has bitten four builders in this work.
+    rule = rng.choice({1: ["double", "next"], 2: ["triple", "square"],
+                       3: ["cube", "sq_plus"], 4: ["sq_minus", "double_plus"]
+                       }.get(min(diff, 4), ["square"]))
     a = rng.randint(2, 12)
     c = rng.randint(2, 12)
     while c == a:
         c = rng.randint(2, 12)
     fn = {"square": lambda x: x * x, "cube": lambda x: x ** 3, "double": lambda x: 2 * x,
-          "next": lambda x: x + 1, "triple": lambda x: 3 * x}[rule]
-    desc = {"square": "square of the number", "cube": "cube of the number",
+          "next": lambda x: x + 1, "triple": lambda x: 3 * x,
+          "sq_plus": lambda x: x * x + x, "sq_minus": lambda x: x * x - x,
+          "double_plus": lambda x: 2 * x + 1}[rule]
+    desc = {"sq_plus": "n squared plus n", "sq_minus": "n squared minus n",
+            "double_plus": "twice the number plus one",
+            "square": "square of the number", "cube": "cube of the number",
             "double": "twice the number", "next": "the number plus 1",
             "triple": "thrice the number"}[rule]
     b, ans = fn(a), fn(c)
@@ -400,15 +414,17 @@ def _b_number_analogy(rng, diff):
             "concept": "Number Analogy"}
 
 def _b_letter_analogy(rng, diff):
-    k = rng.choice([1, 2, 3, 4])
-    a = rng.randint(1, 10)
-    c = rng.randint(1, 18)
+    # d1 a short forward shift | d2 a longer one | d3 BACKWARD | d4 three-letter groups
+    k = {1: rng.choice([1, 2]), 2: rng.choice([4, 5, 6]),
+         3: rng.choice([-2, -3, -4])}.get(min(diff, 4), rng.choice([3, 5]))
+    width = 3 if diff >= 4 else 2
+    a = rng.randint(5, 10)
+    c = rng.randint(5, 18)
     while c == a:
-        c = rng.randint(1, 18)
-    pa = _letter(a) + _letter(a + 1)
-    pb = _letter(a + k) + _letter(a + 1 + k)
-    pc = _letter(c) + _letter(c + 1)
-    ans = _letter(c + k) + _letter(c + 1 + k)
+        c = rng.randint(5, 18)
+    grp = lambda st, sh: "".join(_letter(st + i + sh) for i in range(width))
+    pa, pb = grp(a, 0), grp(a, k)
+    pc, ans = grp(c, 0), grp(c, k)
     stem = f"{pa} : {pb} :: {pc} : ?"
     sol = (f"Each letter moves +{k} in the alphabet ({pa}→{pb}). "
            f"Applying +{k} to {pc} gives {ans}.")
@@ -424,8 +440,14 @@ def _b_letter_analogy(rng, diff):
 # ---- Odd One Out ------------------------------------------------------------
 
 def _b_odd_square(rng, diff):
-    squares = rng.sample([n * n for n in range(3, 13)], 3)
-    odd = rng.choice([x for x in range(20, 140) if int(x ** 0.5) ** 2 != x])
+    lo, hi = (3, 8) if diff <= 2 else (8, 16)
+    squares = rng.sample([n * n for n in range(lo, hi)], 3)
+    # At the easy end any non-square will do. Higher up it must sit NEXT TO a square, so it cannot
+    # be spotted by size alone and the candidate has to actually test each number.
+    near = [x + o for x in squares for o in (-1, 1, 2)]
+    pool = ([x for x in range(lo * lo, hi * hi) if int(x ** 0.5) ** 2 != x] if diff <= 2
+            else [x for x in near if int(x ** 0.5) ** 2 != x and x not in squares])
+    odd = rng.choice(pool)
     opts = squares + [odd]
     rng.shuffle(opts)
     stem = "Three of the following four numbers are alike; find the ODD one out:\n" + \
@@ -441,10 +463,13 @@ def _b_odd_square(rng, diff):
             "concept": "Odd One Out (Numbers)"}
 
 def _b_odd_prime(rng, diff):
-    primes = rng.sample([7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43], 3)
+    primes = rng.sample([7, 11, 13, 17, 19, 23] if diff <= 2 else
+                        [53, 59, 61, 67, 71, 73, 79, 83, 89, 97], 3)
     def is_prime(n):
         return n > 1 and all(n % i for i in range(2, int(n ** 0.5) + 1))
-    comp = rng.choice([x for x in range(8, 50) if not is_prime(x)])
+    # 91 = 7 x 13 and 51 = 3 x 17 read as primes at a glance; that IS the question at the top end.
+    comp = rng.choice([x for x in range(8, 50) if not is_prime(x)] if diff <= 2
+                      else [51, 57, 87, 91, 93, 111, 119, 133])
     opts = primes + [comp]
     rng.shuffle(opts)
     stem = "Three of the following four numbers are alike; find the ODD one out:\n" + \
@@ -557,7 +582,7 @@ def _b_ranking(rng, diff):
             "mistakes": d, "solution": sol, "concept": "Ranking"}
 
 def _b_ranking_pos(rng, diff):
-    total = rng.randint(20, 45)
+    total = rng.randint(20, 45) if diff <= 2 else rng.randint(46, 90)
     left = rng.randint(5, total - 5)
     right = total - left + 1
     name = rng.choice(["Rahul", "Priya", "Amit", "Sneha", "Vikas", "Anjali"])

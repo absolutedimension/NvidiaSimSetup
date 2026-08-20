@@ -375,6 +375,13 @@ def _relation(a, b):
             rels.append(("sq", 0))
         if a ** 3 == b:
             rels.append(("cube", 0))
+        # relations _b_number_analogy gained when it learned difficulty
+        if a * a + a == b:
+            rels.append(("sq_plus", 0))
+        if a * a - a == b:
+            rels.append(("sq_minus", 0))
+        if 2 * a + 1 == b:
+            rels.append(("double_plus", 0))
     rels.append(("add", b - a))
     return rels
 
@@ -402,6 +409,13 @@ def solve_number_analogy(en):
             out.add(str(c ** 3))
         elif kind == "add":
             out.add(str(c + k))
+        if kind == "sq_plus":
+            out.add(str(c * c + c))
+        if kind == "sq_minus":
+            out.add(str(c * c - c))
+        if kind == "double_plus":
+            out.add(str(2 * c + 1))
+
     return out or None
 
 
@@ -1036,7 +1050,9 @@ def solve_number_coding(en):
     if not m:
         return None
     rule, word = m.group(1), m.group(2)
-    if "one more than" in rule:
+    if "BACKWARDS from Z" in rule or "counted BACKWARDS" in rule:
+        f = lambda n: 27 - n          # Z=1 ... A=26
+    elif "one more than" in rule:
         f = lambda n: n + 1
     elif "twice" in rule:
         f = lambda n: n * 2

@@ -394,6 +394,8 @@ def analogy_candidates(stem):
             out.add(str(c * c + c))
         if b == a * a - a:
             out.add(str(c * c - c))
+        if b == 2 * a + 1:                       # rules added to _b_number_analogy
+            out.add(str(2 * c + 1))
     return out
 
 
