@@ -92,6 +92,14 @@ _MIXED_SCRIPT = re.compile(r"[\u0900-\u097f][A-Za-z]{2,}[\u0900-\u097f]")
 # Characters from scripts that have no business in a Hindi/English exam paper. The OCR emitted
 # "किलो그램" — Hangul spliced into the middle of a Hindi word — which the Latin-inside-Devanagari
 # check could not see because 그램 is neither Latin nor Devanagari.
+# A whole Latin word standing between Hindi words — "गैर-सम Cooperation आंदोलन". The
+# Latin-inside-a-WORD check missed this because spaces separate the tokens. Acronyms and units are
+# legitimate (BFT, GDP, ICC, km, RNA), so require a lower-case-containing word of 4+ letters.
+_LATIN_WORD_IN_HINDI = re.compile(r"[\u0900-\u097f]\s+[A-Za-z]*[a-z]{3,}[A-Za-z]*\s+[\u0900-\u097f]")
+
+# recurring OCR substitutions that leave real Hindi words in place of the right ones
+_HINDI_WRONG_WORD = re.compile(r"प्रश्न\s+\d|प्रश्न\s+n\s|प्रश्न\s+पद|अंत\s+संदर्भ")
+
 _FOREIGN_SCRIPT = re.compile(r"[\u1100-\u11ff\u3000-\u303f\u3040-\u30ff\u3130-\u318f"
                              r"\u4e00-\u9fff\uac00-\ud7af\u0600-\u06ff\u0e00-\u0e7f]")
 
@@ -115,8 +123,11 @@ def script_clean(q):
     for t in fields:
         if _MIXED_SCRIPT.search(t) or _FOREIGN_SCRIPT.search(t):
             return False
-        if _HINDI_CORRUPT.search(t):
+        if _HINDI_CORRUPT.search(t) or _HINDI_WRONG_WORD.search(t):
             return False
+    hi = q.get("stem_hi") or ""
+    if _LATIN_WORD_IN_HINDI.search(hi):
+        return False
     return True
 
 

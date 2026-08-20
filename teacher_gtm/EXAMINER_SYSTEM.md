@@ -151,6 +151,30 @@ Both languages must pose the **same** question.
   change" stem over four 1919 dates.
 - Reject **mixed scripts**: `बAREफुट` (Latin inside Devanagari), `किलो그램` (Hangul spliced in).
 
+### The Hindi read is a SEPARATE pass, and it finds things nothing else can
+
+20 of the 68 excluded questions were found only by reading the Hindi against the English, line by
+line. Every one of them left the numbers, the option count and the key untouched, so every
+automated check passed them:
+
+| English says | Hindi said | Effect |
+|---|---|---|
+| from **innermost** to outermost | सबसे बाहरी परत से (from the outermost) | direction reversed — Hindi answer is the reverse of the key |
+| **how many** Indian states (key: Three) | किन राज्यों (**which** states) | asks for names, key is a number |
+| 5 men or 8 **women** | 5 व्यक्ति या 8 **कार्य** (8 works) | unsolvable |
+| first 20 **odd** natural numbers | प्रश्न 20 **विभिन्न** (20 different) | different question |
+| **dividend** is 2200 | **भागफल** (quotient) 2200 | different problem |
+| A is 10th **from the left**, B 9th **from the right** | left/right dropped entirely | unsolvable |
+| selling price | मूल्य मूल (original price) | key is the selling price |
+| an **odd** positive integer | एक **विशेष** (special) पूर्णांक | condition changed |
+| grapes | अमरूद (guava) | wrong noun |
+| Non-cooperation Movement | गैर-सम **Cooperation** आंदोलन | Latin word inside the Hindi |
+
+Read it as a CONVERGING loop, not one pass: 17 defects found, then 3 in the replacements, then 0.
+Budget two or three rounds. Some of it can be gated afterwards — a Latin word standing between
+Devanagari words, or प्रश्न where प्रथम/प्रति belongs — but the semantic ones (reversed direction,
+changed quantifier) can only be read.
+
 **Where OCR quality differs by subject, treat the subjects differently.** Devanagari maths came
 back ~90% clean (numbers and standard terms); science ~50% corrupt (नाइट्रोजन चक्र → नैतिकता चक्र);
 GS proper nouns were fatal (बैकुंठनाथ शुक्ला → बंकिमनाथ झा). We promoted maths only.

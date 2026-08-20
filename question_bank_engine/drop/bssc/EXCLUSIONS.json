@@ -242,6 +242,106 @@
       "source_pdf": "Qn_SET_A.pdf",
       "number": 5,
       "reason": "The correct answer is not among the options. Multiplying C.P. by 11/10 gives a 10% profit, but the options are (11/10)squared, 11, 10, 9 — the keyed 11 is the numerator alone, so '11/10' was flattened to '11' in extraction."
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 43,
+      "reason": "HINDI DEFECT. लोकलुभाव for local governance"
+    },
+    {
+      "source_pdf": "0225_SET-A.pdf",
+      "number": 9,
+      "reason": "HINDI DEFECT. अंगूठियों (finger-rings) for chemical rings"
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 121,
+      "reason": "HINDI DEFECT. \"1 के प्राकृतिक संख्या\" drops \"other than 1\""
+    },
+    {
+      "source_pdf": "G.K_and_N.A_M.A.PDF",
+      "number": 73,
+      "reason": "HINDI DEFECT. \"कहिए के कारण\" garbled for कोहरे (fog)"
+    },
+    {
+      "source_pdf": "G.K_and_N.A_M.A.PDF",
+      "number": 26,
+      "reason": "HINDI DEFECT. Hindi asks मूल्य मूल (original price); English and the key are the SELLING price"
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 144,
+      "reason": "HINDI DEFECT. Hindi omits बाएँ से / दाएँ से, so the row puzzle is unsolvable in Hindi"
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 131,
+      "reason": "HINDI DEFECT. \"पत्र\" (correspondence) for अक्षर (letter of the alphabet)"
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 68,
+      "reason": "HINDI DEFECT. \"गैर-सम Cooperation आंदोलन\" — Latin word inside the Hindi and the rest garbled (असहयोग)"
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 73,
+      "reason": "HINDI DEFECT. Hindi asks किन राज्यों (WHICH states); English asks HOW MANY and the key is \"Three\""
+    },
+    {
+      "source_pdf": "Qn_SET_A.pdf",
+      "number": 1,
+      "reason": "HINDI DEFECT. Hindi says भागफल (quotient) 2200 where English says DIVIDEND, and the last clause is truncated"
+    },
+    {
+      "source_pdf": "maths.PDF",
+      "number": 42,
+      "reason": "HINDI DEFECT. \"प्रश्न n प्राकृतिक संख्याओं\" — प्रश्न for प्रथम (first)"
+    },
+    {
+      "source_pdf": "maths.PDF",
+      "number": 45,
+      "reason": "HINDI DEFECT. \"प्रश्न 20 विभिन्न\" — should be प्रथम 20 विषम (first 20 ODD); the Hindi asks a different question"
+    },
+    {
+      "source_pdf": "maths.PDF",
+      "number": 8,
+      "reason": "HINDI DEFECT. \"6^n - 5^n का अंत संदर्भ होगा\" — संदर्भ (context) is garbage for \"ends with\""
+    },
+    {
+      "source_pdf": "G.K_and_N.A_M.A.PDF",
+      "number": 149,
+      "reason": "HINDI DEFECT. \"5 व्यक्ति या 8 कार्य\" — 8 WORKS where English says 8 WOMEN; the Hindi is unsolvable"
+    },
+    {
+      "source_pdf": "03_25_SET_A.pdf",
+      "number": 68,
+      "reason": "HINDI DEFECT. Hindi asks सबसे बाहरी परत से (from the OUTERMOST) while English asks innermost-to-outermost — the direction is reversed, so the Hindi answer is the reverse of the key"
+    },
+    {
+      "source_pdf": "G.K_and_N.A_M.A.PDF",
+      "number": 133,
+      "reason": "HINDI DEFECT. \"अमरूद\" (guava) where English says grapes"
+    },
+    {
+      "source_pdf": "JE-0411-GK-QB-AND-MA.pdf",
+      "number": 93,
+      "reason": "HINDI DEFECT. \"प्रश्न 15 छात्रों के लिए\" — प्रश्न for प्रति (for every)"
+    },
+    {
+      "source_pdf": "maths.PDF",
+      "number": 19,
+      "reason": "HINDI DEFECT. \"यदि n एक विशेष धन पूर्णांक\" — विशेष (special) for विषम (ODD); the Hindi states a different condition"
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 41,
+      "reason": "HINDI DEFECT. Garbled: \"किसी वस्तु का प्रतिविभाग सामान्य मुख्य के नेत्र के किस भाग पर बनता है\" — प्रतिविभाग सामान्य मुख्य is not Hindi; should be प्रतिबिम्ब"
+    },
+    {
+      "source_pdf": "3102059_10_I.pdf",
+      "number": 5,
+      "reason": "HINDI DEFECT. Hindi asks \"7, 49, 343 और 154 का महत्त्व क्या है\" (what is the IMPORTANCE) where English asks what TYPE of numbers they are"
     }
   ],
   "excluded_sources": [
@@ -252,6 +352,7 @@
     }
   ],
   "_rules": [
-    "STALE CURRENT AFFAIRS: never reuse a present-tense office-holder question ('who is the VP/CJI/minister/governor'). A date-anchored version is fine ('who became the 52nd CJI on 14 May 2025') because it stays true. This class cannot be caught by any structural check and does not show up as a defect in the source paper — it simply expires."
+    "STALE CURRENT AFFAIRS: never reuse a present-tense office-holder question ('who is the VP/CJI/minister/governor'). A date-anchored version is fine ('who became the 52nd CJI on 14 May 2025') because it stays true. This class cannot be caught by any structural check and does not show up as a defect in the source paper — it simply expires.",
+    "HINDI DEFECTS ARE INVISIBLE TO EVERY ENGLISH-SIDE CHECK. A reversed direction (innermost vs outermost), a changed quantifier (how many vs which), a dropped word (first 20 ODD -> first 20 different), or a wrong noun (8 women -> 8 works) all leave the numbers, the option count and the key untouched. Only reading the Hindi against the English finds them. Budget that read."
   ]
 }
