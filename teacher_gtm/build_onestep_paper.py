@@ -44,8 +44,18 @@ def gen_sig(q):
     question with byte-identical Hindi. Keying on the English stem let one through into both sets.
     Signature is therefore the concept, the numbers in the question, and the option set.
     """
-    nums = tuple(re.findall(r"\d+", (q.get("stem") or "")))
+    stem = q.get("stem") or ""
+    nums = tuple(re.findall(r"\d+", stem))
     opts = tuple(sorted((o.get("text") or "").strip() for o in q.get("options") or []))
+    # A statement-based question has NOTHING distinguishing in any of those three fields: the
+    # concept is fixed, the only "numbers" are the list markers 1, 2, 3, and the options are the
+    # same four strings every time. Forty different questions collapsed to ONE signature, so the
+    # dedup discarded thirty-nine of them and the General Studies medium band came back with 1
+    # question where 8 were asked. For these, the CLAIMS are the identity.
+    if re.search(r"Consider the following statements|Match the following", stem):
+        claims = re.sub(r"(?m)^\s*(?:\d+|[A-D])\.\s*", "", stem)
+        claims = re.sub(r"[^a-z0-9\u0900-\u097f]+", "", claims.lower())
+        return "|".join([str(q.get("concept") or ""), claims])
     return "|".join([str(q.get("concept") or q.get("qtype") or ""), ",".join(nums), "~".join(opts)])
 
 
