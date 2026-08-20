@@ -84,7 +84,23 @@ def main():
     verifiers = [v.strip() for v in a.verifiers.split(",") if v.strip()]
 
     paras = [json.loads(l) for l in io.open(SRC, encoding="utf-8")][:a.limit]
-    print(f"{len(paras)} paragraphs, extractor {a.extractor}, verifiers {verifiers}")
+    # RESUME. Each row records the paragraph it came from, so a run that died — or was stopped —
+    # can pick up where it left off instead of paying for five thousand model calls again. This is
+    # only possible because rows are written as they are verified; the first version held
+    # everything in memory and wrote once at the end, so a crash at paragraph 800 lost all 800.
+    done = set()
+    if os.path.exists(OUT):
+        for line in io.open(OUT, encoding="utf-8"):
+            try:
+                r = json.loads(line)
+                done.add((r.get("title"), r.get("para")))
+            except Exception:
+                pass
+    todo = [p for p in paras if (p.get("title"), p.get("para")) not in done]
+    print(f"{len(paras)} paragraphs, {len(paras) - len(todo)} already done, {len(todo)} to do",
+          flush=True)
+    print(f"extractor {a.extractor}, verifiers {verifiers}", flush=True)
+    paras = todo
 
     def handle(p):
         text = re.sub(r"\s+", " ", p["text"])[:1800]
@@ -107,33 +123,40 @@ def main():
             kept.append((c, all(votes), votes))
         return p, kept, None
 
-    rows, stats = [], {"claims": 0, "kept": 0, "rejected": 0, "split": 0}
-    with cf.ThreadPoolExecutor(max_workers=a.workers) as ex:
+    stats = {"claims": 0, "kept": 0, "rejected": 0, "split": 0}
+    seen_n = 0
+    # Append and FLUSH as each paragraph finishes. A long unattended job that only writes at the
+    # end is one crash away from having produced nothing.
+    with io.open(OUT, "a", encoding="utf-8") as fh, \
+            cf.ThreadPoolExecutor(max_workers=a.workers) as ex:
         for p, kept, err in ex.map(handle, paras):
+            seen_n += 1
             if err:
-                print("  " + err)
+                print("  " + err, flush=True)
                 continue
             for claim, ok, votes in kept:
                 stats["claims"] += 1
                 if ok:
                     stats["kept"] += 1
-                    rows.append({"claim": claim, "source": p.get("source"),
-                                 "title": p.get("title"), "url": p.get("url"),
-                                 "date": p.get("date"), "para": p.get("para"),
-                                 # Store the SAME text the verifier judged, not a shortened copy.
-                                 # A 600-char excerpt dropped the sentence that supported the
-                                 # claim, so re-checking a stored fact against its own stored
-                                 # passage rejected it — the citation has to be sufficient on its
-                                 # own or it is not a citation.
-                                 "passage": re.sub(r"\s+", " ", p["text"])[:1800]})
+                    fh.write(json.dumps(
+                        {"claim": claim, "source": p.get("source"), "title": p.get("title"),
+                         "url": p.get("url"), "date": p.get("date"), "para": p.get("para"),
+                         # the SAME text the verifier judged, not a shortened copy — a 600-char
+                         # excerpt dropped the supporting sentence, so a stored fact could not be
+                         # re-checked against its own citation
+                         "passage": re.sub(r"\s+", " ", p["text"])[:1800]},
+                        ensure_ascii=False) + "\n")
+                    fh.flush()
                 else:
                     stats["rejected"] += 1
                     if any(votes):
                         stats["split"] += 1
-
-    with io.open(OUT, "a", encoding="utf-8") as fh:
-        for r in rows:
-            fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+                        # a split is the interesting case: one verifier saw support and the other
+                        # did not, which is where a miscalibrated gate shows itself
+                        print(f"  SPLIT {votes} {claim[:90]}", flush=True)
+            if seen_n % 25 == 0:
+                print(f"  {seen_n}/{len(paras)} paragraphs | {stats['kept']} kept "
+                      f"| {stats['rejected']} rejected", flush=True)
     c = stats["claims"] or 1
     print(f"\n  {stats['claims']} claims extracted")
     print(f"  {stats['kept']} survived BOTH verifiers ({100 * stats['kept'] / c:.0f}%)")
