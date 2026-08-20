@@ -28,19 +28,26 @@ import sys
 
 REPO = pathlib.Path("/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup")
 sys.path.insert(0, str(REPO / "teacher_gtm"))
-from paper_common import MATH_CSS, esc, servable, sig  # noqa: E402
+from paper_common import MATH_CSS, esc, servable, sig, inter_level_ok  # noqa: E402
 LET = ["A", "B", "C", "D", "E"]
 
 
-def load():
+def load(inter_level=False):
     qs = []
     for f in glob.glob(str(REPO / "question_bank_engine/drop/bssc/*_KEYED.json")):
         for q in json.load(io.open(f, encoding="utf-8")):
             # servable() also drops the questions whose options are unusable — a bare option
             # LETTER as the text, or two identical options. 21 of these 497 are in that state and
             # 13 of them reached the first build of this paper.
-            if q.get("tag") and servable(q, need_hindi=True):
-                qs.append(q)
+            if not (q.get("tag") and servable(q, need_hindi=True)):
+                continue
+            # Advt 02/23(A) names an arithmetic-only maths syllabus. Our maths stock comes mostly
+            # from Advt 0111, a CLERK exam whose paper ranged wider, so it carries polynomials,
+            # APs, circle geometry, trigonometry and probability — above what an Inter Level
+            # candidate is examined on. 34% of the maths pool is dropped here.
+            if inter_level and not inter_level_ok(q):
+                continue
+            qs.append(q)
     return qs
 
 
@@ -122,6 +129,10 @@ def load_generated(n, cap_per_concept=3):
     for b in buckets.values():
         random.shuffle(b)
     order = sorted(buckets, key=lambda k: -len(buckets[k]))
+    # Raise the per-concept cap only as far as the request forces. With 11 concepts a cap of 3
+    # tops out at 33, so a 35-question Part III silently came back short — the paper printed 148.
+    if order:
+        cap_per_concept = max(cap_per_concept, -(-n // len(order)))
     out, rnd = [], 0
     while len(out) < n and rnd < cap_per_concept:
         for k in order:
@@ -141,6 +152,11 @@ def main():
                     help="real4 = 100%% real, 4 parts shaped to what the papers actually contain "
                          "(GS/Sci+Maths/Hindi/Reasoning). official3 = the commission's 3x50 "
                          "layout, which needs ~35 GENERATED reasoning questions to fill Part III.")
+    ap.add_argument("--inter-level", action="store_true",
+                    help="Build for BSSC 2nd Inter Level (Advt 02/23-A). Forces the commission's "
+                         "OWN three-section prelim structure — GS / Science+Maths / Mental Ability, "
+                         "with NO Hindi Language section, because the official syllabus does not "
+                         "have one — and drops maths that is above the Inter Level syllabus.")
     ap.add_argument("--hindi-source", choices=["generated", "real"], default="generated",
                     help="Which Hindi Language section to print. DEFAULT IS 'generated' because "
                          "the REAL Hindi-language questions in these papers are badly OCR-corrupted "
@@ -148,12 +164,14 @@ def main():
     a = ap.parse_args()
 
     random.seed(20260820)
-    qs = load()
+    qs = load(inter_level=a.inter_level)
     by = {}
     for q in qs:
         by.setdefault(q["tag"]["section"], []).append(q)
 
     used, tmpl = set(), {}
+    if a.inter_level:
+        a.structure = "official3"
     if a.structure == "real4":
         # The shape the PAPERS actually have. These five are 10th/8th-level and clerk-grade exams,
         # and the measured blueprints put Hindi at 19-31% of three of them and Reasoning at 0%.
@@ -171,12 +189,17 @@ def main():
         # questions exist, so Part III is topped up from `reasoninggen` — computed answers, and
         # bilingual, so the paper stays bilingual throughout. This trades the "every question is
         # real" claim for the official shape; that is why it is not the default.
+        # खंड (ग) मानसिक क्षमता जाँच lists ONLY reasoning shapes — सादृश्य, समानता एवं भिन्नता,
+        # स्थान कल्पना, समस्या समाधान, विश्लेषण, दृश्य स्मृति, विभेद, अवलोकन, संबंध अवधारणा,
+        # अंक गणितीय तर्कशक्ति, अंक गणितीय संख्या श्रृंखला, कूट लेखन एवं कूट व्याख्या. English
+        # grammar/vocabulary is NOT among them, so it is excluded for an Inter Level paper even
+        # though we hold 16 such real questions.
+        third = ["Reasoning"] if a.inter_level else ["Reasoning", "English"]
         SPEC = [
             ("भाग–I / PART–I : सामान्य अध्ययन (General Studies)", ["General Studies"], 50),
             ("भाग–II / PART–II : सामान्य विज्ञान एवं गणित (General Science & Mathematics)",
              ["Mathematics", "General Science"], 50),
-            ("भाग–III / PART–III : सामान्य बुद्धि परीक्षण (General Intelligence / Reasoning)",
-             ["Reasoning", "English"], 50),
+            ("भाग–III / PART–III : मानसिक क्षमता जाँच (Mental Ability / Reasoning)", third, 50),
         ]
 
     paper, n = [], 0
@@ -243,6 +266,15 @@ def main():
                 return "".join(f'<span class="op"><b>({lb})</b> {esc(t)}</span>'
                                for lb, t in pairs if str(t).strip())
             oh_html, oe_html = render(oh_l), render(oe_l)
+            # A language can lose SOME options, not just all of them: when split_lang routes option
+            # (A) and (C) one way and (B) and (D) the other, one block prints two options and the
+            # question is unanswerable. Only a FULL set is acceptable, so fall back whenever the
+            # rendered count is short.
+            want = len(q["options"])
+            if oh_html.count("<span class=\"op\">") < want:
+                oh_html = oe_html if oe_html.count("<span class=\"op\">") == want else ""
+            if oe_html.count("<span class=\"op\">") < want:
+                oe_html = oh_html if oh_html.count("<span class=\"op\">") == want else ""
             # When the options are language-NEUTRAL (numbers, formulae, single letters) split_lang
             # hands both copies to the English side, so a Hindi-only question rendered its options
             # block EMPTY and never rendered an English block — 26 of 470 questions showed a stem
@@ -251,6 +283,9 @@ def main():
                 oh_html = oe_html
             if not oe_html:
                 oe_html = oh_html
+            if not oh_html and not oe_html:      # nothing renderable at all — skip the question
+                i -= 1
+                continue
             block = f'<div class="q">'
             if hi_stem:
                 block += (f'<div class="hi"><span class="n">{i}.</span> {esc(hi_stem)}</div>'
@@ -263,9 +298,17 @@ def main():
             keys.append(f'<span class="k">{i}. <b>{q["correct_answer"]}</b>'
                         f'{"<i>*</i>" if q.get("_generated") else ""}</span>')
 
+    TITLE_LINE = ("बिहार कर्मचारी चयन आयोग &mdash; द्वितीय इंटर स्तरीय संयुक्त प्रतियोगिता परीक्षा "
+                  "(वि0सं0&ndash;02/23-A) &mdash; अभ्यास प्रश्न-पत्र" if a.inter_level
+                  else "बिहार कर्मचारी चयन आयोग (BSSC) &mdash; अभ्यास प्रश्न-पत्र")
+    PATTERN_NOTE = ("<br>5. यह प्रश्न-पत्र आयोग द्वारा वि0सं0&ndash;02/23(A) में प्रकाशित "
+                    "<b>प्रारंभिक परीक्षा की योजना</b> के अनुरूप है &mdash; 150 प्रश्न, "
+                    "प्रत्येक सही उत्तर 4 अंक, प्रत्येक गलत उत्तर &ndash;1, कुल 600 अंक, समय 2 घंटा 15 मिनट, "
+                    "तीन खण्ड। गणित के प्रश्न आयोग के <b>अंकगणित-आधारित</b> पाठ्यक्रम तक सीमित रखे गए हैं।"
+                    if a.inter_level else "")
     HEAD = f"""<div class="lh">{logo_html}<div>
 <div class="co">ONE STEP EDUCATION</div><div class="sub2">PATNA</div>
-<div class="sub">बिहार कर्मचारी चयन आयोग (BSSC) &mdash; अभ्यास प्रश्न-पत्र</div>
+<div class="sub">{TITLE_LINE}</div>
 <div class="sub"><b>भाग I, II एवं IV: आयोग के वास्तविक विगत प्रश्न</b> &middot; आदर्श उत्तर कुंजी सहित</div>
 </div></div><div class="rule"></div>"""
 
@@ -304,9 +347,8 @@ h2.sec {{ font-size:10.5pt; color:#8a6d1a; border-left:3px solid #c9a227; paddin
 1. सभी प्रश्न वस्तुनिष्ठ हैं। प्रत्येक प्रश्न <b>हिंदी एवं अंग्रेज़ी</b> दोनों में दिया गया है &mdash; किसी एक भाषा में पढ़कर उत्तर दें।<br>
 2. प्रत्येक <b>सही उत्तर के लिए 4 अंक</b>; प्रत्येक <b>गलत उत्तर के लिए 1 अंक</b> काटा जाएगा।<br>
 3. दिए गए विकल्पों में से <b>केवल एक</b> सही है। उत्तर OMR पत्रक पर काले/नीले बॉलपॉइंट पेन से भरें।<br>
-4. भाग I, II एवं IV के प्रश्न BSSC की <b>आधिकारिक विगत परीक्षाओं</b> से हैं; उत्तर आयोग की
-   <b>आदर्श उत्तर कुंजी</b> से। भाग III (हिंदी भाषा) के प्रश्न Acharya द्वारा निर्मित हैं &mdash;
-   उत्तर कुंजी में <b>*</b> से चिह्नित।
+4. जिन भागों में <b>*</b> चिह्नित प्रश्न हैं वे Acharya द्वारा निर्मित अभ्यास-प्रश्न हैं; शेष सभी
+   प्रश्न BSSC की <b>आधिकारिक विगत परीक्षाओं</b> से हैं और उत्तर आयोग की <b>आदर्श उत्तर कुंजी</b> से।{PATTERN_NOTE}
 </div>
 {''.join(qh)}
 <div class="keyhead">{HEAD}<h2 class="sec">उत्तर कुंजी / ANSWER KEY</h2>
@@ -316,9 +358,11 @@ h2.sec {{ font-size:10.5pt; color:#8a6d1a; border-left:3px solid #c9a227; paddin
 <div class="foot">One Step Education, Patna &middot; संकलन: Acharya (TrigunAI Innovations Pvt Ltd)</div>
 </body></html>"""
 
-    out_html = REPO / "teacher_gtm/OneStep_BSSC_150.html"
+    # follow --out; this was hardcoded, so building a second paper silently overwrote
+    # the first one's HTML while its PDF sat elsewhere.
+    out_html = pathlib.Path(str(a.out).replace(".pdf", ".html")).resolve()
     out_html.write_text(HTML, encoding="utf-8")
-    pdf = pathlib.Path(a.out)
+    pdf = pathlib.Path(a.out).resolve()
     chrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     if os.path.exists(chrome):
         subprocess.run([chrome, "--headless", "--disable-gpu", "--no-pdf-header-footer",
