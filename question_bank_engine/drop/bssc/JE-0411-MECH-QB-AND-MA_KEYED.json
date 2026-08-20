@@ -1,0 +1,6396 @@
+[
+ {
+  "number": 1,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "Pressure of one Pascal is equal to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1 N²/m²"
+   },
+   {
+    "label": "B",
+    "text": "1 N/m²"
+   },
+   {
+    "label": "C",
+    "text": "1 N/m"
+   },
+   {
+    "label": "D",
+    "text": "1 N²/m"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक पास्कल दबाव होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1 N²/m²"
+   },
+   {
+    "label": "B",
+    "text": "1 N/m²"
+   },
+   {
+    "label": "C",
+    "text": "1 N/m"
+   },
+   {
+    "label": "D",
+    "text": "1 N²/m"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 2,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "In gear terminology, if d is the pitch diameter in mm and N is the number of teeth, the value of module m is expressed as :",
+  "options": [
+   {
+    "label": "A",
+    "text": "πd"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{\\pi}{Nd}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{d}{N}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{\\pi d}{N}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "गियर तकनीक के संदर्भ में यदि फिसल व्यास d मि.मी. तथा दांतों (टीथ) की संख्या N हो, तो मोड़नुमा m व्यस्त किया जा सकता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "πd"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{\\pi}{Nd}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{d}{N}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{\\pi d}{N}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 3,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "Which of the following is not true in the context of comparison of coil ignition system with magneto ignition system ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "More circuit wiring and hence more prone to wire defaults"
+   },
+   {
+    "label": "B",
+    "text": "Is easy to maintain"
+   },
+   {
+    "label": "C",
+    "text": "Provides adequate voltage even at very low engine speeds"
+   },
+   {
+    "label": "D",
+    "text": "Is cheap and reliable"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "मैंनेतो इन्फ्लेशन और काइंडल इन्फ्लेशन की तुलना के संदर्भ में निम्न कौन सा कथन सत्य है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "अधिक सटीक तार इस्लियत तार खोट अधिक संभावित"
+   },
+   {
+    "label": "B",
+    "text": "रख रकाब आसान है"
+   },
+   {
+    "label": "C",
+    "text": "कम इन्कन गित पर भी यह पर्याप्त लोटेज देती है"
+   },
+   {
+    "label": "D",
+    "text": "सच्ची तथा भरोसेमंद है"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 4,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "For a projectile fired along a horizontal plane, maximum range is achieved if the angle of firing with the horizontal is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "60 degrees"
+   },
+   {
+    "label": "B",
+    "text": "75 degrees"
+   },
+   {
+    "label": "C",
+    "text": "30 degrees"
+   },
+   {
+    "label": "D",
+    "text": "45 degrees"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "समतल ध्रातल से किसी प्रक्षिप्य को कितने कोण पर दागा जाए कि वह अधिकतम दूरी तक जा सके?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "60°"
+   },
+   {
+    "label": "B",
+    "text": "75°"
+   },
+   {
+    "label": "C",
+    "text": "30°"
+   },
+   {
+    "label": "D",
+    "text": "45°"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 5,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "If N1 and N2 are the maximum and minimum equilibrium speeds of a flywheel, then the maximum fluctuation of its energy is proportional to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "(N1^2 + N2^2)"
+   },
+   {
+    "label": "B",
+    "text": "(N1 - N2)"
+   },
+   {
+    "label": "C",
+    "text": "(N1 + N2)"
+   },
+   {
+    "label": "D",
+    "text": "(N1^2 - N2^2)"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि एक गतिपालक चक्र (प्लाईलिंग) की अधिकतम तथा न्यूनतम संटुलन गति N1 तथा N2 हैं तो इसका ऊर्जा का समन्वयात्मक होगा?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "(N1^{2} + N2^{2})"
+   },
+   {
+    "label": "B",
+    "text": "(N1 - N2)"
+   },
+   {
+    "label": "C",
+    "text": "(N1 + N2)"
+   },
+   {
+    "label": "D",
+    "text": "(N1^{2} - N2^{2})"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 6,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "Manometric head H_m of a centrifugal pump is given by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "H_m = Static head + frictional head + exit velocity head"
+   },
+   {
+    "label": "B",
+    "text": "H_m = Static head + frictional head + exit pressure head"
+   },
+   {
+    "label": "C",
+    "text": "H_m = Static head"
+   },
+   {
+    "label": "D",
+    "text": "H_m = Static head + frictional head"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "केन्द्रसारक पम्प का मैट्रिक्स है H_m होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "H_m = स्थिर हेड + स्पर्शात्मक हेड + निकास गति हेड"
+   },
+   {
+    "label": "B",
+    "text": "H_m = स्थिर हेड + स्पर्शात्मक हेड + निकास दबाव हेड"
+   },
+   {
+    "label": "C",
+    "text": "H_m = स्थिर हेड"
+   },
+   {
+    "label": "D",
+    "text": "H_m = स्थिर हेड + स्पर्शात्मक हेड"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 7,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "In a speed governor, the properties of hunting and sensitiveness are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Directly proportional to each other"
+   },
+   {
+    "label": "B",
+    "text": "Inversely proportional to each other"
+   },
+   {
+    "label": "C",
+    "text": "The same with no difference"
+   },
+   {
+    "label": "D",
+    "text": "Not related to each other"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक गतिक निर्यन्तक में हटिंग तथा शृंगारिता के गुणों में क्या संबंध है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "एक दूसरे का सिद्धान्तिक"
+   },
+   {
+    "label": "B",
+    "text": "एक दूसरे का विलोमनुपातिक"
+   },
+   {
+    "label": "C",
+    "text": "दोनों समान, कोई अन्तर नहीं"
+   },
+   {
+    "label": "D",
+    "text": "दोनों असंबंधित"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 8,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "For conditions of high head but low discharge of water, the most suitable hydraulic turbine will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Francis turbine"
+   },
+   {
+    "label": "B",
+    "text": "Pelton turbine"
+   },
+   {
+    "label": "C",
+    "text": "Kaplan turbine"
+   },
+   {
+    "label": "D",
+    "text": "Any of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि जल की उपल्ब्धि अधिक ऊँचाई कितने कम मात्रा में निकासी हो, तो सवर्णित उपयुक्त जल टबाइन होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "प्रारंभिक टबाइन"
+   },
+   {
+    "label": "B",
+    "text": "पैल्टन टबाइन"
+   },
+   {
+    "label": "C",
+    "text": "कैप्लान टबाइन"
+   },
+   {
+    "label": "D",
+    "text": "इन उपरोक्त में कोई भी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 9,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "In which of the following types of fit, the difference between the sizes is always positive :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Transition fit"
+   },
+   {
+    "label": "B",
+    "text": "Interference fit"
+   },
+   {
+    "label": "C",
+    "text": "Clearance fit"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिनन प्रकार की कौन सी फिट में आकार का अंतर सदेव धनात्मक होता है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "पारमाण (जैसियन) फिट"
+   },
+   {
+    "label": "B",
+    "text": "व्यतिकरण (इंटरफेरेंस) फिट"
+   },
+   {
+    "label": "C",
+    "text": "निर्धन (क्लासर्स) फिट"
+   },
+   {
+    "label": "D",
+    "text": "उरोक्त में से कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 10,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "When a jet of water enters and leaves a curved vane with velocities U and U1 respectively and the vanes moves horizontally with a velocity v, the efficiency will be maximum when",
+  "options": [
+   {
+    "label": "A",
+    "text": "1 - \\left( \\frac{U}{U1} \\right)^{2}"
+   },
+   {
+    "label": "B",
+    "text": "1 - \\left( \\frac{U1}{U} \\right)^{2}"
+   },
+   {
+    "label": "C",
+    "text": "\\left( 1 - \\frac{U1}{U} \\right)"
+   },
+   {
+    "label": "D",
+    "text": "\\left( 1 - \\frac{U}{U1} \\right)"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि जल का जेट एक घुमावदार फलक में प्रवेश तथा निकास क्रमशः: U तथा U1 गतिमान से करें तथा फलक क्षेत्रज गतिव v हो, तो अधिकतम दक्षता होगी यदि :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1 - \\left( \\frac{U}{U1} \\right)^{2}"
+   },
+   {
+    "label": "B",
+    "text": "1 - \\left( \\frac{U1}{U} \\right)^{2}"
+   },
+   {
+    "label": "C",
+    "text": "\\left( 1 - \\frac{U1}{U} \\right)"
+   },
+   {
+    "label": "D",
+    "text": "1 - \\left( \\frac{U}{U1} \\right)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 11,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "For a short column of rectangular cross section b×d, and for ensuring only pure compressive stress is induced in it due to a vertical load, the load should be applied at any point inside rhombus, in its core, of diagonals equal to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "b/3 and d/3"
+   },
+   {
+    "label": "B",
+    "text": "b/6 and d/6"
+   },
+   {
+    "label": "C",
+    "text": "b/2 and d/2"
+   },
+   {
+    "label": "D",
+    "text": "b/4 and d/4"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक घोड़े आयताकार सतह, जिसका क्रॉस सेक्शन b × d है, तो यह सुइनिष्त करने के लिए कि एक स्थायी भार लगने पर केवल शुद्ध दाब .प्रतिबल ही उत्पन्न है, भार को सतह के केंद्र में बने समचतुर्भुज के किसी भी बिंदु पर लगया जा सकता है यदि समचतुर्भुज के विकल्प हैं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "b/3 तथा d/3"
+   },
+   {
+    "label": "B",
+    "text": "b/6 तथा d/3"
+   },
+   {
+    "label": "C",
+    "text": "b/2 तथा d/2"
+   },
+   {
+    "label": "D",
+    "text": "b/4 तथा d/4"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 12,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "A De-laval steam turbine is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "A single rotor turbine and has a speed of about 20,000 r.p.m."
+   },
+   {
+    "label": "B",
+    "text": "Is a pressure compounded turbine impulse turbine and has a speed of about 15,000 r.p.m."
+   },
+   {
+    "label": "C",
+    "text": "An impulse reaction turbine and has a speed of about 30,000 r.p.m."
+   },
+   {
+    "label": "D",
+    "text": "Is a velocity compounded impulse turbine and has a speed of about 10,000 r.p.m."
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "De-laval भाव टरबाइन क्या है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "एक सिंगल रोटर टरबाइन जिसकी गति चक्र प्रति मिनिट 20,000 है"
+   },
+   {
+    "label": "B",
+    "text": "एक डबल चक्रवर्ती इम्पल्स टरबाइन जिसकी गति चक्र प्रति मिनिट 15,000 है"
+   },
+   {
+    "label": "C",
+    "text": "एक इम्पल्स-रिएक्शन टरबाइन जिसकी गति चक्र प्रति मिनट 30,000 है"
+   },
+   {
+    "label": "D",
+    "text": "एक गती चक्रवर्ती इम्पल्स टरबाइन जिसकी गति चक्र प्रति मिनिट 10,000 है"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 13,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "Which is the correct statement regarding opening and closing of the inlet valve of an actual I.C. engine ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "It opens at TDC and at BDC"
+   },
+   {
+    "label": "B",
+    "text": "It opens after TDC and closes before BDC"
+   },
+   {
+    "label": "C",
+    "text": "It opens before TDC and closes before BDC"
+   },
+   {
+    "label": "D",
+    "text": "It opens before TDC and closes after BDC"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक अनंतदहन इंजन के इनलेट वाल्व खुलने तथा बंद होने के संदर्भ में निम्न कौन सा कथन सही है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "यह टी.डी.एस.टी. तथा बी.डी.एस.टी. पर खुलता है"
+   },
+   {
+    "label": "B",
+    "text": "यह टी.डी.एस.टी. के बाद खुलता तथा बी.डी.एस.टी. के पहले बंद होता है"
+   },
+   {
+    "label": "C",
+    "text": "यह टी.डी.एस.टी. से पहले खुलता तथा बी.डी.एस.टी. से पहले बंद होता है"
+   },
+   {
+    "label": "D",
+    "text": "यह टी.डी.एस.टी. से 'पहले' खुलता तथा बी.डी.एस.टी. के बाद बंद होता है"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 14,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "If H1 and H2 are the enthalpy of steam in kJ/kg at the entry and exit of a steam nozzle, and neglecting the approach velocity, the theoretical value of exit velocity is given by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "C = 91.5\\sqrt{(H1 - H2)}"
+   },
+   {
+    "label": "B",
+    "text": "C = 44.7\\sqrt{(H1 - H2)}"
+   },
+   {
+    "label": "C",
+    "text": "C = 68.6\\sqrt{(H1 - H2)}"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि एक भाप नोजल के प्रवेश तथा निकास पर ऐंठनली क्रमशः: H1 तथा H2 की.जुल/की.प्राम है.और यदि अनुप्रवेश वेग ज्ञात न हो, तो निकास वेग होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "C = 91.5\\sqrt{(H1 - H2)}"
+   },
+   {
+    "label": "B",
+    "text": "C = 44.7\\sqrt{(H1 - H2)}"
+   },
+   {
+    "label": "C",
+    "text": "C = 68.6\\sqrt{(H1 - H2)}"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में किसी में नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 15,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "The center of pressure acting on a vertical plane surface immersed in a liquid will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Below the center of gravity of the surface"
+   },
+   {
+    "label": "B",
+    "text": "At the lowest edge of the surface"
+   },
+   {
+    "label": "C",
+    "text": "At the center of gravity of the surface"
+   },
+   {
+    "label": "D",
+    "text": "Above the center of gravity of the surface"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "तरल पदार्थ में दूई एक क्रियाधार.तापटी सतह पर दबाव का केन्द्र होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "सतह के गुणांक के.जिन्हें"
+   },
+   {
+    "label": "B",
+    "text": "सतह के सबसे निकले किनारे पर"
+   },
+   {
+    "label": "C",
+    "text": "सतह के गुणांक के"
+   },
+   {
+    "label": "D",
+    "text": "सतह के गुणांक से ऊपर"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 16,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "In a double riveted butt joint, the total number of rows of rivets is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Eight"
+   },
+   {
+    "label": "B",
+    "text": "Six"
+   },
+   {
+    "label": "C",
+    "text": "Two"
+   },
+   {
+    "label": "D",
+    "text": "Four"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक डबल कूलर संयोगात्मक बट-जोड़ में कूलर (रिवेट) की कतारों की संख्या होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "आठ"
+   },
+   {
+    "label": "B",
+    "text": "छ"
+   },
+   {
+    "label": "C",
+    "text": "दो"
+   },
+   {
+    "label": "D",
+    "text": "चार"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 17,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "Which of the following is not a unit of thermal conductivity ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "cal/cm.s.°C"
+   },
+   {
+    "label": "B",
+    "text": "W/m.s.K"
+   },
+   {
+    "label": "C",
+    "text": "kcal/m.hr.°C"
+   },
+   {
+    "label": "D",
+    "text": "kJ/m.hr.K"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "नियम में से कौन सी धर्मल चालकों की इकाई नहीं है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "cal/cm.s.°C"
+   },
+   {
+    "label": "B",
+    "text": "W/m.s.K"
+   },
+   {
+    "label": "C",
+    "text": "kcal/m.hr.°C"
+   },
+   {
+    "label": "D",
+    "text": "kJ/m.hr.K"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 18,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "Which of these is not a cold working process ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Welding"
+   },
+   {
+    "label": "B",
+    "text": "Shearing"
+   },
+   {
+    "label": "C",
+    "text": "Shot peening"
+   },
+   {
+    "label": "D",
+    "text": "Rolling"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "नियम में से कौन-सी क्रिया शीतल कार्य विधि नहीं है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "विलिंग"
+   },
+   {
+    "label": "B",
+    "text": "कतरण"
+   },
+   {
+    "label": "C",
+    "text": "शांत पीने"
+   },
+   {
+    "label": "D",
+    "text": "रोलिंग"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 19,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "Which of the following is not a technique used for sales forecasting ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Forecasting by past moving average"
+   },
+   {
+    "label": "B",
+    "text": "Production planning"
+   },
+   {
+    "label": "C",
+    "text": "Market survey"
+   },
+   {
+    "label": "D",
+    "text": "Forecasting by past average"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "इनमें से कौन सी विधि वित्तीय के पूर्वानुमान के लिए प्रयुक्त नहीं होती ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "पहली चालायमान औसत पर आधारित पूर्वानुमान"
+   },
+   {
+    "label": "B",
+    "text": "उत्पाद योजना"
+   },
+   {
+    "label": "C",
+    "text": "मार्केट सर्वे"
+   },
+   {
+    "label": "D",
+    "text": "पहली चालायमान औसत पर आधारित पूर्वानुमान"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Economy",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 20,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "The Entropy of system is a measure of its :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Availability of energy"
+   },
+   {
+    "label": "B",
+    "text": "Energy conservation"
+   },
+   {
+    "label": "C",
+    "text": "Disorder"
+   },
+   {
+    "label": "D",
+    "text": "Order"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "ऋणात्मक किस्‍सी प्रक्रिया का क्या महत्त्व है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "अर्थ उपल्ब्धता"
+   },
+   {
+    "label": "B",
+    "text": "अर्थ संरक्षण"
+   },
+   {
+    "label": "C",
+    "text": "अव्यवस्था"
+   },
+   {
+    "label": "D",
+    "text": "व्यवस्था"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 21,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "Which of the following process is not carried out in a fitting shop ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Tapping"
+   },
+   {
+    "label": "B",
+    "text": "Filing"
+   },
+   {
+    "label": "C",
+    "text": "Sawing"
+   },
+   {
+    "label": "D",
+    "text": "Pattern moulding"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "इनमें से कौन सा कार्य फ़िटिंग कार्यशाला में नहीं होता/क्या जाता ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "ऐपिंग"
+   },
+   {
+    "label": "B",
+    "text": "फाईलिंग"
+   },
+   {
+    "label": "C",
+    "text": "साल्विंग"
+   },
+   {
+    "label": "D",
+    "text": "पेंटिंग मोड्लिंग"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 22,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "Francis and Kaplan turbines fall under the category of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Axial flow turbine"
+   },
+   {
+    "label": "B",
+    "text": "Impulse - reaction turbine"
+   },
+   {
+    "label": "C",
+    "text": "Impulse turbine"
+   },
+   {
+    "label": "D",
+    "text": "Reaction turbine"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "प्रक्रिया तथा क़लम टेबलिंग किस श्रेणी में आती हैं ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "अवश्यल बहाव टेबलिंग"
+   },
+   {
+    "label": "B",
+    "text": "इम्प्लस-रिवर्सन टेबलिंग"
+   },
+   {
+    "label": "C",
+    "text": "इम्प्लस टेबलिंग"
+   },
+   {
+    "label": "D",
+    "text": "रिवर्सन टेबलिंग"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 23,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "Run away speed of a hydraulic turbine is the speed :",
+  "options": [
+   {
+    "label": "A",
+    "text": "At which the turbine runs freely without load and wicket gates wide open"
+   },
+   {
+    "label": "B",
+    "text": "At which no damage is caused to the turbine"
+   },
+   {
+    "label": "C",
+    "text": "At maximum permissible overload"
+   },
+   {
+    "label": "D",
+    "text": "At full load"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक हाईड्रोलिक टेबलिंग की प्रक्रिया की गति वह गति है जो :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "जिस पर टेबलिंग बिना भार के स्वतन्त्र रूप से चलते तथा टिकट सेट पूरे खुले हैं।"
+   },
+   {
+    "label": "B",
+    "text": "जिस पर टेबलिंग को शक्ति न हो"
+   },
+   {
+    "label": "C",
+    "text": "अधिकतम स्पीडकृत अधिकभार पर हो"
+   },
+   {
+    "label": "D",
+    "text": "पूरा भार पर"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 24,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "For a two stage reciprocating compressor with perfect inter-cooling, the work input will minimum if the supply pressure p1, the intercooler pressure p2 and the delivery pressure conform to the relation :",
+  "options": [
+   {
+    "label": "A",
+    "text": "p2 = \\sqrt{\\frac{p1}{p3}}"
+   },
+   {
+    "label": "B",
+    "text": "p2 = \\frac{p1 + p3}{2}"
+   },
+   {
+    "label": "C",
+    "text": "p2 = \\sqrt{(p1p3)}"
+   },
+   {
+    "label": "D",
+    "text": "p2 = \\sqrt{(p1 + p3)}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "पूर्ण इंट्र-क्लिंग तथा दो रेजिस्ट्रेशन दबाव यंत्र में इनपुट काम न्यूनतम होगा। यदि सापेक्ष दबाव p1, इंट्रक्लिंग दबाव p2 तथा डिस्लिवरी दबाव p3 में संबंध हो :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "p2 = \\sqrt{\\frac{p1}{p3}}"
+   },
+   {
+    "label": "B",
+    "text": "p2 = \\frac{p1 + p3}{2}"
+   },
+   {
+    "label": "C",
+    "text": "p2 = \\sqrt{(p1p3)}"
+   },
+   {
+    "label": "D",
+    "text": "p2 = \\sqrt{(p1 + p3)}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 25,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "Which of the following is a wrong statement in the context design of a cotter joint ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Gib and cotter type of joint is designed for square rods"
+   },
+   {
+    "label": "B",
+    "text": "Cotter joint is designed to connect two rotating shafts"
+   },
+   {
+    "label": "C",
+    "text": "Socket and spigot type is designed for round rods"
+   },
+   {
+    "label": "D",
+    "text": "The cotter is tapered on one side only"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कॉन्टर जॉइड के डिज़ाइन के संदर्भ में निम्न में कौन सा कथन गलत है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "जब तथा कॉन्टर प्रकार का जॉइड वर्गाकार छोड़ों के लिए बनाया जाता है"
+   },
+   {
+    "label": "B",
+    "text": "कॉन्टर जॉइड द्वारा घूमती हुई शापों को जोड़ने हेतु बनाया जाता है"
+   },
+   {
+    "label": "C",
+    "text": "सॉकेट तथा स्पाईरंट जॉइड गोलाकार छोड़ों के लिए बनाया जाता है"
+   },
+   {
+    "label": "D",
+    "text": "कॉन्टर के कैवल एक और टेपर दिया जाता है"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 26,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "The Calorific Value of Diesel is more than that of Petrol approximately by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "15%"
+   },
+   {
+    "label": "B",
+    "text": "30%"
+   },
+   {
+    "label": "C",
+    "text": "50%"
+   },
+   {
+    "label": "D",
+    "text": "40%"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "डिज़ाइन की कैलीग्राफिक वैल्यू पैटर्न की कैलीग्राफिक वैल्यू से अधिक है, लगभाग :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "15 प्रतिशत"
+   },
+   {
+    "label": "B",
+    "text": "20 प्रतिशत"
+   },
+   {
+    "label": "C",
+    "text": "50 प्रतिशत"
+   },
+   {
+    "label": "D",
+    "text": "10 प्रतिशत"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 27,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "The Solar Constant is the amount of solar radiation received per unit of its area by the Earth when the earth is at :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Maximum distance from the Sun"
+   },
+   {
+    "label": "B",
+    "text": "Minimum distance from the Sun"
+   },
+   {
+    "label": "C",
+    "text": "Mean distance from the Sun"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "सौर नियतांक, सौर विकरण की वह मात्रा है जो पृथ्वी के प्रति इकाई क्षेत्रफल द्वारा प्राप्त की जाती है जब पृथ्वी की दूरी सूर्य से होती है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "अधिकतम"
+   },
+   {
+    "label": "B",
+    "text": "न्यूनतम"
+   },
+   {
+    "label": "C",
+    "text": "औसत"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त में से कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 28,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "Which of these is not a lower kinematic pair ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Cam and follower pair"
+   },
+   {
+    "label": "B",
+    "text": "Cylindrical pair"
+   },
+   {
+    "label": "C",
+    "text": "Helix or screw pair"
+   },
+   {
+    "label": "D",
+    "text": "Prismatic pair"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "निम्न में से कौन सा लौह और कार्बनमेट्रिक युग्म (पैटर्न) नहीं है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "कैम तधा अनुगामी युग्म"
+   },
+   {
+    "label": "B",
+    "text": "बेलनाकार युग्म"
+   },
+   {
+    "label": "C",
+    "text": "हैलिक्स या स्क्रू युग्म"
+   },
+   {
+    "label": "D",
+    "text": "फिज़ियमी युग्म"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 29,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "Which of the following is a wrong statement in the context of non-conventional energy resources ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Geopressed resources contain moderate temperature brines"
+   },
+   {
+    "label": "B",
+    "text": "Hydrothermal resources do not contain superheated steam/water"
+   },
+   {
+    "label": "C",
+    "text": "Hot dry rocks contain hot rocks ranging in temperatures from about 90° to about"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि पारम्परिक ऊर्जा स्रोतों के संदर्भ में, निम्न कौन सा कथन गलत है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "जैवप्रवृत्त स्रोतों में मध्य तापमान बिंदु होती है"
+   },
+   {
+    "label": "B",
+    "text": "हाईड्रोथर्मल स्रोतों में सुपरहीटेड भाप/पानी नहीं होता"
+   },
+   {
+    "label": "C",
+    "text": "गर्म चादरों का तापमान 90° से लगभग 650° तक होता है"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 30,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "In a circular shaft of diameter D, length L, and subjected to a torque T, the maximum shear stress produced will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{8T}{\\pi D^3}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{64T}{\\pi D^3}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{16T}{\\pi D^3}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{32T}{\\pi D^3}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि एक D व्यास तथा L लम्बाई वाली गोलाकार शैप्ट पर ह्यूर्न बल T लगाया जाए तो अधिकतम कतरणी प्रतिलब्ध उत्पन्न होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{8T}{\\pi D^{3}}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{64T}{\\pi D^{3}}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{16T}{\\pi D^{3}}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{32T}{\\pi D^{3}}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 31,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "Hot chamber die casting machine is used for :",
+  "options": [
+   {
+    "label": "A",
+    "text": "High melting point non-ferrous alloys"
+   },
+   {
+    "label": "B",
+    "text": "High melting point alloys"
+   },
+   {
+    "label": "C",
+    "text": "Low melting point alloys"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "तप चैकडर डाइ-कारिस्टिंग का प्रयोग निन में से किस धातु के लिए होता है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "उच्च गलनांक 3-फेज़ मिश्रधातु"
+   },
+   {
+    "label": "B",
+    "text": "उच्च गलनांक मिश्रधातु"
+   },
+   {
+    "label": "C",
+    "text": "कम गलनांक मिश्रधातु"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में से कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 32,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "The Binomial Theorem is expressed by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "(x + a)^{2} = \\sum_{k=1}^{n}\\binom{n}{k}x^{k}a^{n-k}"
+   },
+   {
+    "label": "B",
+    "text": "(x + a)^{-n} = \\sum_{k=0}^{n}\\binom{n}{k}x^{k}"
+   },
+   {
+    "label": "C",
+    "text": "(x + a)^{n} = \\sum_{k=0}^{n}\\binom{n}{k}x^{k}a^{n-k}"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बायनॉमियल प्रमेय की अभिव्यक्ति है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "(x + a)² = \\sum_{k=1}^{n} \\binom{n}{k} x^{a n-k}"
+   },
+   {
+    "label": "B",
+    "text": "(x + a)^{-n} = \\sum_{k=0}^{n} \\binom{n}{k} x^{k}"
+   },
+   {
+    "label": "C",
+    "text": "(x + a)^{n} = \\sum_{k=0}^{n} \\binom{n}{k} x^{a n-k}"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में से कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 33,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "Rope brake dynamometers are used to measure following of an engine :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Fluctuation of energy"
+   },
+   {
+    "label": "B",
+    "text": "Fuel consumption"
+   },
+   {
+    "label": "C",
+    "text": "Brake Horse Power"
+   },
+   {
+    "label": "D",
+    "text": "Fluctuation of speed"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "रक्षा एवं डायनामाइटर का प्रयोग इंजिन की निम्न सापने में प्रयोग होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "ऊर्जा का उतार चढ़ाव"
+   },
+   {
+    "label": "B",
+    "text": "ईधन की खपत"
+   },
+   {
+    "label": "C",
+    "text": "रक्षा शक्ति"
+   },
+   {
+    "label": "D",
+    "text": "गति का उतार चढ़ाव"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 34,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "In normal distribution, the observations which fall within 3 sigma limits are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "99.4%"
+   },
+   {
+    "label": "B",
+    "text": "99.3%"
+   },
+   {
+    "label": "C",
+    "text": "99.7%"
+   },
+   {
+    "label": "D",
+    "text": "99.1%"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "सामान्य वितरण तक के प्रक्षिप्त यदि तीन सीमा में हैं तो इसका प्रतिशत होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "99.4%"
+   },
+   {
+    "label": "B",
+    "text": "99.3%"
+   },
+   {
+    "label": "C",
+    "text": "99.7%"
+   },
+   {
+    "label": "D",
+    "text": "99.1%"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 35,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "The area of a semi-circle of radius r is given by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "πr³"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{πr^{2}}{(2)}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{πr^{2}}{(4)}"
+   },
+   {
+    "label": "D",
+    "text": "πr^{2}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक r त्रिज्या वाले अर्धवृत्त का क्षेत्रफल होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "πr³"
+   },
+   {
+    "label": "B",
+    "text": "πr² / (2)"
+   },
+   {
+    "label": "C",
+    "text": "πr² / (4)"
+   },
+   {
+    "label": "D",
+    "text": "πr²"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 36,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "The ratio of isometric length to the true length is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "0.90"
+   },
+   {
+    "label": "B",
+    "text": "0.816"
+   },
+   {
+    "label": "C",
+    "text": "0.800"
+   },
+   {
+    "label": "D",
+    "text": "0.85"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "आइसोमेट्रिक तथा वास्तविक लम्बाई का अनुमान है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "0.90"
+   },
+   {
+    "label": "B",
+    "text": "0.816"
+   },
+   {
+    "label": "C",
+    "text": "0.800"
+   },
+   {
+    "label": "D",
+    "text": "0.85"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "Mathematics",
+   "type": "ratio_average",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 37,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "Due to acceleration and retardation of the piston in a reciprocating pump, the total suction head will :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Decrease both at the beginning and end of the piston stroke"
+   },
+   {
+    "label": "B",
+    "text": "Increase both at the beginning and end of the piston stroke"
+   },
+   {
+    "label": "C",
+    "text": "Decrease at the beginning and increase at the end of the piston stroke"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "विस्थापनात्मक प्रभाव के फिसटन के एक्सीलरेशन तथा रिटार्डेशन के कारण, कुल चयन है :",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 38,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "In a condenser, the inlet and outlet temperatures of water supplied are T1 and T2 respectively. If Ts is saturation temperature corresponding to condenser pressure, its efficiency will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{T2 - T1}{2Ts}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{T2 - T1}{Ts}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{T2 - T1}{Ts - T2}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{T2 - T1}{Ts - T1}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक कंडेंसर में दिए जा रहे जल का प्रवेश तापमान T1 तथा निकासी तापमान T2 हो और कंडेंसर दबाव अनुसार, Ts सघनता तापमान हो तो इसकी दक्षता होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "T2 - T1 / 2Ts"
+   },
+   {
+    "label": "B",
+    "text": "T2 - T1 / Ts"
+   },
+   {
+    "label": "C",
+    "text": "T2 - T1 / Ts - T2"
+   },
+   {
+    "label": "D",
+    "text": "T2 - T1 / Ts - T1"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 39,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "For a particle moving along a circular path of radius r with an angular velocity \\omega and angular acceleration \\alpha, its total acceleration is given by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\sqrt{((\\omega^{2}r)^{2} + (\\alpha r)^{2})}"
+   },
+   {
+    "label": "B",
+    "text": "\\omega^{2}r + \\alpha r"
+   },
+   {
+    "label": "C",
+    "text": "\\omega^{2}r"
+   },
+   {
+    "label": "D",
+    "text": "\\alpha r"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि एक सामान्य कण एक r त्रिज्या वाले वृत्ताकार पथ पर, कोणीय गति ω तथा कोणीय त्वरण α से घूमे तो उसका कुल तरंग होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "√((ω²r)² + (ρα)²)"
+   },
+   {
+    "label": "B",
+    "text": "ω²r + rα"
+   },
+   {
+    "label": "C",
+    "text": "ω²r"
+   },
+   {
+    "label": "D",
+    "text": "rα"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "arithmetic",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 40,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "Heat conduction in gases is due to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Electromagnetic waves"
+   },
+   {
+    "label": "B",
+    "text": "Mixing motions of different layers of the gas"
+   },
+   {
+    "label": "C",
+    "text": "Motion of electrons"
+   },
+   {
+    "label": "D",
+    "text": "Elastic impact of molecules"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "गैसों में गर्मी चालन का कारण है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "विद्युत चुम्बकीय तरंगें"
+   },
+   {
+    "label": "B",
+    "text": "गैस की विभिन्न सतहों की मिश्रित गति"
+   },
+   {
+    "label": "C",
+    "text": "इलेक्ट्रॉन्स की गति"
+   },
+   {
+    "label": "D",
+    "text": "इलेक्ट्रॉन्स अणुओं का लौचदार प्रभाव"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 41,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "Which of the bearings is the most suited for a vertical shaft ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Foot step bearing"
+   },
+   {
+    "label": "B",
+    "text": "Bush bearing"
+   },
+   {
+    "label": "C",
+    "text": "Journal bearing"
+   },
+   {
+    "label": "D",
+    "text": "All of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक लम्बवत श्रेणी के लिए उपयुक्त बयारियाँ है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "फुट स्टेप बयारियाँ"
+   },
+   {
+    "label": "B",
+    "text": "बुश बयारियाँ"
+   },
+   {
+    "label": "C",
+    "text": "जर्नल बयारियाँ"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 42,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "If steam contains 10% water by mass, its dryness fraction is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "0.7"
+   },
+   {
+    "label": "B",
+    "text": "0.8"
+   },
+   {
+    "label": "C",
+    "text": "0.6"
+   },
+   {
+    "label": "D",
+    "text": "0.9"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि भाग में जल का % भार प्रतिशत 10 हो, इसका सूक्ष्मण अंश होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "0.7"
+   },
+   {
+    "label": "B",
+    "text": "0.8"
+   },
+   {
+    "label": "C",
+    "text": "0.6"
+   },
+   {
+    "label": "D",
+    "text": "0.9"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 43,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "If the width of a normal distribution curve is large, it indicates :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Low confidence one can have in the results of the experiment."
+   },
+   {
+    "label": "B",
+    "text": "High confidence one can have in the results of the experiment."
+   },
+   {
+    "label": "C",
+    "text": "Average confidence one can have in the results of the experiment"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक सामान्य विचार वक्र (कर्क) की अधिकतम चौड़ाई इंगित करती है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "प्रयोग के परिणामों में कम विश्वास"
+   },
+   {
+    "label": "B",
+    "text": "प्रयोग के परिणामों में अधिक विश्वास"
+   },
+   {
+    "label": "C",
+    "text": "प्रयोग के परिणामों में सामान्य विश्वास"
+   },
+   {
+    "label": "D",
+    "text": "उपर्युक्त में कोई भी नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 44,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "The Epicyclic gear trains are used to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Obtain high velocity ratios in restricted space"
+   },
+   {
+    "label": "B",
+    "text": "Obtain low velocity ratios in restricted space"
+   },
+   {
+    "label": "C",
+    "text": "Run shafts at an angle"
+   },
+   {
+    "label": "D",
+    "text": "Couple two shafts in series"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "अन्यायात्मक फिगर ट्रेन का प्रयोग होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "कम स्थान में अधिक वेगमुक्त है"
+   },
+   {
+    "label": "B",
+    "text": "कम स्थान में कम वेगमुक्त है"
+   },
+   {
+    "label": "C",
+    "text": "दड़ों को एक कोण पर चलाने है"
+   },
+   {
+    "label": "D",
+    "text": "दो दड़ों को संख्याला में जोड़ने है"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 45,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "The ratio between the rates of suction and discharge of liquid by a pump is known as :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Mechanical efficiency"
+   },
+   {
+    "label": "B",
+    "text": "Volumetric efficiency"
+   },
+   {
+    "label": "C",
+    "text": "Manometric efficiency"
+   },
+   {
+    "label": "D",
+    "text": "Overall efficiency"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक प्रकार द्वारा सूक्ष्म और निरवहन जल की मात्रा का अनुपात कहलाता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "माइक्रोनल दक्षता"
+   },
+   {
+    "label": "B",
+    "text": "वोल्यूमिनस दक्षता"
+   },
+   {
+    "label": "C",
+    "text": "मिनिमम दक्षता"
+   },
+   {
+    "label": "D",
+    "text": "समय दक्षता"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 46,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "Which of the following is not a property of moulding sand ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Refractoriness"
+   },
+   {
+    "label": "B",
+    "text": "Adhesiveness"
+   },
+   {
+    "label": "C",
+    "text": "Ductility"
+   },
+   {
+    "label": "D",
+    "text": "Permeability"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "निम्न में कौन सा हलवाई रेत का गुण \"नहीं\" है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "रिफ्रैक्टरीनेस"
+   },
+   {
+    "label": "B",
+    "text": "एडहेसिवनेस"
+   },
+   {
+    "label": "C",
+    "text": "डिक्लिट"
+   },
+   {
+    "label": "D",
+    "text": "परिमाणबिलिटी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 47,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "Which of these is not a source of non-conventional energy ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Wind energy"
+   },
+   {
+    "label": "B",
+    "text": "Geothermal energy"
+   },
+   {
+    "label": "C",
+    "text": "Coal energy"
+   },
+   {
+    "label": "D",
+    "text": "Biomass energy"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "नियम में कौन-सा और पारंपरिक ऊर्जा का स्रोत नहीं है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "पवन ऊर्जा"
+   },
+   {
+    "label": "B",
+    "text": "जैविक ऊर्जा"
+   },
+   {
+    "label": "C",
+    "text": "कोयला ऊर्जा"
+   },
+   {
+    "label": "D",
+    "text": "नाभिकीय ऊर्जा"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 48,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "For a screw jack having square threads of helix angle α, angle of friction φ, mean radius r the torque T required to raise a load W is given by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "T={W tan(φ−α)}.r_m"
+   },
+   {
+    "label": "B",
+    "text": "T={W tan(α−φ)}.r_m"
+   },
+   {
+    "label": "C",
+    "text": "T={W tan(α+φ)}.r_m"
+   },
+   {
+    "label": "D",
+    "text": "T={W tan(α)}.r_m"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक त्रिकोण में वर्गाकार त्रिज्याएँ हैं जिनका कोण α, घूर्णन कोण φ तथा मध्यमान r_m है, तो जैक से W भार उठाने हेतु सूत्र T का मान होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "T={W tan(φ - α)}.r_m"
+   },
+   {
+    "label": "B",
+    "text": "T={W tan(α - φ)}.r_m"
+   },
+   {
+    "label": "C",
+    "text": "T={W tan(α + φ)}.r_m"
+   },
+   {
+    "label": "D",
+    "text": "T={W tan(α)}.r_m"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 49,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "If the bending moment M for a simply supported beam is expressed as M = 4.5x + \\frac{7.5x}{2} then the expression for its shear force F will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "F = 12"
+   },
+   {
+    "label": "B",
+    "text": "F = 4.5 + 7.5"
+   },
+   {
+    "label": "C",
+    "text": "F = 4.5 + \\frac{7.5}{2}"
+   },
+   {
+    "label": "D",
+    "text": "F = 4.5 + 7.5x"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि एक सामान्य समीकरण बिम का बिंदु आघूर्ण M = 4.5x + \\frac{7.5x^{2}}{2} के द्वारा परिभाषित हो तो इसका कटर्नी बल F होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "F=12"
+   },
+   {
+    "label": "B",
+    "text": "F=4.5+7.5"
+   },
+   {
+    "label": "C",
+    "text": "F=4.5+\\frac{7.5}{2}"
+   },
+   {
+    "label": "D",
+    "text": "F=4.5+7.5x"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 50,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "In the context of materials, Slip and Twinning are prominent modes of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Elastic deformation"
+   },
+   {
+    "label": "B",
+    "text": "Plastic deformation"
+   },
+   {
+    "label": "C",
+    "text": "Fracture"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "पदार्थ के संदर्भ में, रिद्धिंग तथा रस्त्र, मुख्यतः किसके प्रकार हैं ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "लौहली विद्युती"
+   },
+   {
+    "label": "B",
+    "text": "प्लास्टिक विद्युती"
+   },
+   {
+    "label": "C",
+    "text": "टूट-फूट विद्युती"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त में से कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 51,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "Surface tension in water is due to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Cohesion"
+   },
+   {
+    "label": "B",
+    "text": "Adhesion"
+   },
+   {
+    "label": "C",
+    "text": "Viscosity"
+   },
+   {
+    "label": "D",
+    "text": "All of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "जल में सतह तनाव का कारण है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "कोहेशियन"
+   },
+   {
+    "label": "B",
+    "text": "कोहेसिविटी"
+   },
+   {
+    "label": "C",
+    "text": "विस्कोसिटी"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 52,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "An increase in the m.e.p. of a diesel engine with fixed compression ratio can be achiev with increase in :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Back pressure"
+   },
+   {
+    "label": "B",
+    "text": "Cut off ratio"
+   },
+   {
+    "label": "C",
+    "text": "Speed of the engine"
+   },
+   {
+    "label": "D",
+    "text": "Density of charge"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक स्थिर दवाब अनुपात वाले इंजन ऑसत प्रभावी दवाब बढ़ाने के लिए निम्न में बढ़ोत्तरी करनी चाहिए :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "बैक दवाब"
+   },
+   {
+    "label": "B",
+    "text": "कट-ऑफ अनुपात"
+   },
+   {
+    "label": "C",
+    "text": "इंजन की गति"
+   },
+   {
+    "label": "D",
+    "text": "चार्ज (ईधन) का घनत्व"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 53,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "In a draft tube, if V_1 is the velocity of discharge at the inlet and V_2 at the exit or tail race, loss of head due to friction is ignored, then its efficiency is given by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{V_1^2 - V_2^2}{V_1^2}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{V_1^2 - V_2^2}{V_2^2}"
+   },
+   {
+    "label": "C",
+    "text": "(V_1^2 - V_2^2)"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{V_2^2}{V_1}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक द्रुत वृत्त में यदि प्रवेश तथा निकासी पर बलाव का क्रमशः: वेग V1 तथा V2 हो और क्षण शिथिल मान्य हो तो इसकी दक्षता होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{V_{1}^{2}-V_{2}^{2}}{V_{1}^{2}}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{V_{1}^{2}-V_{2}^{2}}{V_{2}^{2}}"
+   },
+   {
+    "label": "C",
+    "text": "(V_{1}^{2}-V_{2}^{2})"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{V_{2}^{2}}{V_{1}^{2}}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 54,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "In the context of computers and IT, the acronym POST stands for :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Performance on self test"
+   },
+   {
+    "label": "B",
+    "text": "Perform on self test"
+   },
+   {
+    "label": "C",
+    "text": "Power on self test"
+   },
+   {
+    "label": "D",
+    "text": "Program on self test"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कंप्यूटर तथा सूचना प्रौद्योगिकी के संदर्भ में, निर्धारित शब्द POST का अर्थ है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "Performance on self test"
+   },
+   {
+    "label": "B",
+    "text": "Perform on self test"
+   },
+   {
+    "label": "C",
+    "text": "Power on self test"
+   },
+   {
+    "label": "D",
+    "text": "Program on self test"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 55,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "For a rectangular area of base b and height h, the area moments of inertia with respect to its centroidal x and y axes are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "l_x = \\frac{b^3h}{12}, l_y = \\frac{h^3b}{12}"
+   },
+   {
+    "label": "B",
+    "text": "l_x = \\frac{bh^3}{12}, l_y = \\frac{hb^3}{12}"
+   },
+   {
+    "label": "C",
+    "text": "l_x = l_y = \\frac{b^2h^2}{12}"
+   },
+   {
+    "label": "D",
+    "text": "None of these"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक b आधार तथा h ऊँचाई वाले आयताकार क्षेत्र का जड़त्व आघात (moment of inertia) इसके x तथा y अक्ष, जो इसके केन्द्र के आस-पास है, के प्रति होंगे :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "l_x = \\frac{b^3h}{12}, l_y = \\frac{h^3b}{12}"
+   },
+   {
+    "label": "B",
+    "text": "l_x = \\frac{bh^3}{12}, l_y = \\frac{hb^3}{12}"
+   },
+   {
+    "label": "C",
+    "text": "l_x = l_y = \\frac{b^2h^2}{12}"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 56,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "Which of the following are advantages of Work Study ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Reduced manufacturing costs"
+   },
+   {
+    "label": "B",
+    "text": "Higher productive efficiency"
+   },
+   {
+    "label": "C",
+    "text": "Improved production flow"
+   },
+   {
+    "label": "D",
+    "text": "All of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "वक़्त स्टडी का लाभ है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "कम उपयोगी लाभ"
+   },
+   {
+    "label": "B",
+    "text": "अधिक उपयोगी दक्षता"
+   },
+   {
+    "label": "C",
+    "text": "बेहतर उपयोगी प्रवाह"
+   },
+   {
+    "label": "D",
+    "text": "उपयुक्त सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 57,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "Generally, Diesel engines operate well with a Cetane Number (CN) between:",
+  "options": [
+   {
+    "label": "A",
+    "text": "0 to 70"
+   },
+   {
+    "label": "B",
+    "text": "20 to 30"
+   },
+   {
+    "label": "C",
+    "text": "0 to 100"
+   },
+   {
+    "label": "D",
+    "text": "10 to 55"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "डिज़ाइन इनजन सामर्थ्य सूचाक रूप से कार्य करता है यदि सीटन नंबर हो :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "60 से 70 तक"
+   },
+   {
+    "label": "B",
+    "text": "20 से 30 तक"
+   },
+   {
+    "label": "C",
+    "text": "0 से 100 तक"
+   },
+   {
+    "label": "D",
+    "text": "40 से 55 तक"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 58,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "For a shaft running at N r.p.m. and transmitting torque T kg.m the horse power transmitted is given by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{2\\pi NT}{3300}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{2\\pi NT}{75}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{2\\pi NT}{4500}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि N चक्कर प्रति मिनट पर घूमती हुई एक असलदंड T किग्रा.मी. आध्यात्मिक प्रक्षिप्त कर रही है तो अवश्-शक्ति होगी :",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 59,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "Which of the following is not a characteristic of a synchromesh gear box used in automobiles ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Simple in design"
+   },
+   {
+    "label": "B",
+    "text": "Less Vibration"
+   },
+   {
+    "label": "C",
+    "text": "Smooth gear changing"
+   },
+   {
+    "label": "D",
+    "text": "Noiseless gear changing"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "निम्न में से कौन सा विशेष लक्षण ऑटोमोबिलों में प्रयुक्त सिंक्रोमेश गियर बाक्स का नहीं है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "डिजाइन में सरल"
+   },
+   {
+    "label": "B",
+    "text": "कम कंप्रन"
+   },
+   {
+    "label": "C",
+    "text": "निर्बाध गियर बदलना"
+   },
+   {
+    "label": "D",
+    "text": "शोर रहित गियर बदलना"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 60,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "It is required to drill a hole through a 20 mm thick plate at 300 r.p.m. at a feed rate of 0.2 mm/rev. The time taken in seconds to complete this operation will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "60"
+   },
+   {
+    "label": "B",
+    "text": "40"
+   },
+   {
+    "label": "C",
+    "text": "10"
+   },
+   {
+    "label": "D",
+    "text": "20"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "20 फ़ी.मी. मोटी एक प्लेट में, 300 चक्कर प्रति मिनट से घूमते ढिल ढाला 0.2 फ़ी.मी. फ़ीट चक्कर से फीट देकर सुराख करने में समय लगेगा (सेकेण्ड में) :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "60"
+   },
+   {
+    "label": "B",
+    "text": "40"
+   },
+   {
+    "label": "C",
+    "text": "10"
+   },
+   {
+    "label": "D",
+    "text": "20"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 61,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "The material of a brake lining consists mainly of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Asbestos"
+   },
+   {
+    "label": "B",
+    "text": "Copper"
+   },
+   {
+    "label": "C",
+    "text": "Cast iron"
+   },
+   {
+    "label": "D",
+    "text": "Aluminum"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बैक लाईनिंग मुख्यतया बनी होती है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "एड्सट्रांस"
+   },
+   {
+    "label": "B",
+    "text": "तांबा"
+   },
+   {
+    "label": "C",
+    "text": "कार्बन लोहे"
+   },
+   {
+    "label": "D",
+    "text": "एल्यूमिनियम"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 62,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "For self locking screws, the maximum efficiency cannot be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "> 50%"
+   },
+   {
+    "label": "B",
+    "text": "> 60%"
+   },
+   {
+    "label": "C",
+    "text": "> 65%"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक स्व-ताला पेड़ (स्क्रू) की अधिकतम दक्षता नहीं हो सकती :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "50% से अधिक"
+   },
+   {
+    "label": "B",
+    "text": "60% से अधिक"
+   },
+   {
+    "label": "C",
+    "text": "65% से अधिक"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में से कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 63,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "Rotor of steam turbine weighing 5 tonnes and running at 9000 r.p.m. is out to the extent of 0.2 cm. The centrifugal force tending to lift the turbine from its foundation will be approximately :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1800 tonnes"
+   },
+   {
+    "label": "B",
+    "text": "1350 tonnes"
+   },
+   {
+    "label": "C",
+    "text": "450 tonnes"
+   },
+   {
+    "label": "D",
+    "text": "900 tonnes"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "5 टन भार, स्थिर टरबाइन का रोटर, 9000 चक्रकर प्रतिमिनट पर घूम रहा है तथा इसका क्षेत्रफल 0.2 से.मी. है। टरबाइन को इसकी निंदा से उखाड़ने वाला केन्द्रप्रसारक बल लगभग होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1800 टन"
+   },
+   {
+    "label": "B",
+    "text": "1350 टन"
+   },
+   {
+    "label": "C",
+    "text": "450 टन"
+   },
+   {
+    "label": "D",
+    "text": "900 टन"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 64,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "Cavitation in centrifugal pumps can be reduced by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increasing the velocity of flow"
+   },
+   {
+    "label": "B",
+    "text": "Throttling the discharge"
+   },
+   {
+    "label": "C",
+    "text": "Reducing the suction head"
+   },
+   {
+    "label": "D",
+    "text": "Reducing the discharge head"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "केंद्र प्रसारक पंक्तियों को कम किया जा सकता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "वेग की गति को बढ़ाकर"
+   },
+   {
+    "label": "B",
+    "text": "डिस्चार्ज में रुकावट डालकर"
+   },
+   {
+    "label": "C",
+    "text": "सूक्ष्म हेड को कम करके"
+   },
+   {
+    "label": "D",
+    "text": "डिस्चार्ज हेड को कम करके"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 65,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "For designing a spur gear, if the pitch circle diameter d is 150 mm and the module m is 3 mm, the number of teeth N will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "100"
+   },
+   {
+    "label": "B",
+    "text": "70"
+   },
+   {
+    "label": "C",
+    "text": "40"
+   },
+   {
+    "label": "D",
+    "text": "50"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक समतल फायर प्रक्षेप हेतु यदि फिच व्यास d, 150 मी.मी. तथा मोड़्यूल m, 3 मी.मी. हो, तो दांतों की संख्या N होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "100"
+   },
+   {
+    "label": "B",
+    "text": "70"
+   },
+   {
+    "label": "C",
+    "text": "40"
+   },
+   {
+    "label": "D",
+    "text": "50"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 66,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "Which of the following is not a solid state welding process ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Thermo compression welding"
+   },
+   {
+    "label": "B",
+    "text": "Forge welding"
+   },
+   {
+    "label": "C",
+    "text": "Friction welding"
+   },
+   {
+    "label": "D",
+    "text": "Gas welding"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिल्म में कौन सी थिस अवस्था वेल्डिंग प्रक्रिया नहीं है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "धर्म दाब (compression) वेल्डिंग"
+   },
+   {
+    "label": "B",
+    "text": "कोल्ड वेल्डिंग"
+   },
+   {
+    "label": "C",
+    "text": "धार्ण वेल्डिंग"
+   },
+   {
+    "label": "D",
+    "text": "गैस वेल्डिंग"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 67,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "For tempering of steels, mainly three types of baths used, are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Oil bath, salt bath and water bath"
+   },
+   {
+    "label": "B",
+    "text": "Lead bath, oil bath and salt bath"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "स्टील को नरम करने हेतु मुख्यतः तीन प्रक्रियाएँ हैं :",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 68,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "High compression ratio in engine cycles causes :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Knocking"
+   },
+   {
+    "label": "B",
+    "text": "Auto ignition"
+   },
+   {
+    "label": "C",
+    "text": "Damage to the engine"
+   },
+   {
+    "label": "D",
+    "text": "All of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "इंजन में उच्च दबाव अनुपात कारण बनता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "नाकिंग"
+   },
+   {
+    "label": "B",
+    "text": "स्वात: प्रज्वलन"
+   },
+   {
+    "label": "C",
+    "text": "इंजन की हानि"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 69,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "The equation \\frac{P}{\\rho g} + \\frac{v^2}{2g} + z = C is the Bernoulli's equation per unit :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Head"
+   },
+   {
+    "label": "B",
+    "text": "Volume"
+   },
+   {
+    "label": "C",
+    "text": "Mass"
+   },
+   {
+    "label": "D",
+    "text": "Weight"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "\\frac{P}{pg} + \\frac{v^{2}}{2g} + z = C बर्नौली का समीकरण है प्रक्षिप्त युक्ति :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "हैस"
+   },
+   {
+    "label": "B",
+    "text": "आयतन"
+   },
+   {
+    "label": "C",
+    "text": "द्रव्यमान"
+   },
+   {
+    "label": "D",
+    "text": "भार"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 70,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "If in an automobile, if it is desired to have the input and the output shafts collinear, than the most suitable gear train will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Epicyclic gear train"
+   },
+   {
+    "label": "B",
+    "text": "Any type of compound gear train"
+   },
+   {
+    "label": "C",
+    "text": "Reverted compound gear train"
+   },
+   {
+    "label": "D",
+    "text": "Simple gear train"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि एक ऑटोमोबाइल में इनपुट और आउटपुट शाफ्टों की अक्ष रेखा एकल ही अपेक्षित हो तो स्वाभाविक उत्पन्न गियर ट्रैन होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "एपिसाइक्लिक गियर ट्रैन"
+   },
+   {
+    "label": "B",
+    "text": "किसी भी प्रकार की कमांड गियर ट्रैन"
+   },
+   {
+    "label": "C",
+    "text": "रिवर्स्ड कमांड गियर ट्रैन"
+   },
+   {
+    "label": "D",
+    "text": "साधारण गियर ट्रैन"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 71,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "For quarter of area of an ellipse of major axis a and minor axis b, and if the x and y axes are along the major and minor axes respectively, the co-ordinates of its centroid are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\bar{x} = \\frac{a}{3\\pi} \\quad \\bar{y} = \\frac{b}{3\\pi}"
+   },
+   {
+    "label": "B",
+    "text": "\\bar{x} = \\frac{4a}{3\\pi} \\quad \\bar{y} = \\frac{4b}{3\\pi}"
+   },
+   {
+    "label": "C",
+    "text": "\\bar{x} = \\frac{2a}{3\\pi} \\quad \\bar{y} = \\frac{5b}{3\\pi}"
+   },
+   {
+    "label": "D",
+    "text": "\\bar{x} = \\frac{5a}{3\\pi} \\quad \\bar{y} = \\frac{2b}{3\\pi}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक अंडाकार वृत्त के नृत्य क्षेत्र के केंद्र निर्देशांक क्या होंगे यदि अंडाकार वृत्त का बड़ा अक्ष a तथा छोटा अक्ष b एवं x तथा y अक्ष a तथा b के साथ हैं ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\bar{x} = \\frac{a}{3\\pi} \\quad \\bar{y} = \\frac{b}{3\\pi}"
+   },
+   {
+    "label": "B",
+    "text": "\\bar{x} = \\frac{4a}{3\\pi} \\quad \\bar{y} = \\frac{4b}{3\\pi}"
+   },
+   {
+    "label": "C",
+    "text": "\\bar{x} = \\frac{2a}{3\\pi} \\quad \\bar{y} = \\frac{-5b}{3\\pi}"
+   },
+   {
+    "label": "D",
+    "text": "\\bar{x} = \\frac{5a}{3\\pi} \\quad \\bar{y} = \\frac{2b}{3\\pi}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 72,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "Mark the wrong statement in the context of robots/robotics :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Roll, Pitch and Yaw are three basic types of wrist motions"
+   },
+   {
+    "label": "B",
+    "text": "A robot requires six DOF to be completely versatile"
+   },
+   {
+    "label": "C",
+    "text": "The linkage/joints are driven by actuators"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "रोबोट/रोबोटिक्स के संदर्भ में से गलत कथन को बताएं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "रेल, पिन तथा यात्रा कलाइयों के तीन आधारभूत प्रकार हैं"
+   },
+   {
+    "label": "B",
+    "text": "पूर्ण बहुमुखी होने के लिए एक रोबोट की स्वतंत्र डिज़ाइन 6 होनी चाहिए"
+   },
+   {
+    "label": "C",
+    "text": "लिंक/जॉइंट एक्विपमेंट्स हैं परिभाषित होते हैं"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 73,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "For making cast iron pipes, the best suited process is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Continuous casting"
+   },
+   {
+    "label": "B",
+    "text": "Centrifugal casting"
+   },
+   {
+    "label": "C",
+    "text": "Investment casting"
+   },
+   {
+    "label": "D",
+    "text": "All of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कास्ट आयरन के पाइप बनाने हेतु आवश्यक उपयुक्त विधि है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "अमनवरत कास्टिंग"
+   },
+   {
+    "label": "B",
+    "text": "स्ट्रिपिंग कास्टिंग"
+   },
+   {
+    "label": "C",
+    "text": "इनवेस्टमेंट कास्टिंग"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 74,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "The escape velocity on the surface of the Earth is nearly :",
+  "options": [
+   {
+    "label": "A",
+    "text": "33.6 km/s"
+   },
+   {
+    "label": "B",
+    "text": "11.2 km/s"
+   },
+   {
+    "label": "C",
+    "text": "22.4 km/s"
+   },
+   {
+    "label": "D",
+    "text": "44.8 km/s"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "उच्ची की स्थिति पर एक्केप बेंग का.लभ्य परिमाण है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "33.6 km/s"
+   },
+   {
+    "label": "B",
+    "text": "11.2 km/s"
+   },
+   {
+    "label": "C",
+    "text": "22.4 km/s"
+   },
+   {
+    "label": "D",
+    "text": "44.8 km/s"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 75,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "Which of the following is not an attachment/accessory for a lathe ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Dead centers"
+   },
+   {
+    "label": "B",
+    "text": "Sledge hammer"
+   },
+   {
+    "label": "C",
+    "text": "Driving plate"
+   },
+   {
+    "label": "D",
+    "text": "Face plate"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "निम्न में से कौन सा उपकरण खतरनाक मशीन का उपसाधन नहीं है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "डेड सैंसर"
+   },
+   {
+    "label": "B",
+    "text": "स्टेज हाइड्रा"
+   },
+   {
+    "label": "C",
+    "text": "इलेक्ट्रिक प्लेट"
+   },
+   {
+    "label": "D",
+    "text": "फेस प्लेट"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 76,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "If in a state of plane stress, \\sigma_{n1} is the major principal stress and \\sigma_{n2} the minor principal stress, then the maximum/minimum principal shear stress will be equal to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{\\sigma_{n1} - \\sigma_{n2}}{2}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{\\sigma_{n1}}{2}"
+   },
+   {
+    "label": "C",
+    "text": "\\sigma_{n1} - \\sigma_{n2}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{\\sigma_{n1} + \\sigma_{n2}}{2}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि σn1 बड़ा मुख्य प्रतिबल तथा σn2 छोटा मुख्य प्रतिबल हो तो अधिकतम/न्यूनतम मुख्य कतरणी प्रतिबल क्या होगा ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{\\sigma_{n1} - \\sigma_{n2}}{2}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{\\sigma_{n1}}{2}"
+   },
+   {
+    "label": "C",
+    "text": "\\sigma_{n1} - \\sigma_{n2}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{\\sigma_{n1} + \\sigma_{n2}}{2}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 77,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "If a projectile is fired with an initial velocity V0 at an angle α with the horizontal, then the maximum height it can achieve is given by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{V_0^2 \\sin^2 \\alpha}{2g}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{V_0^2 \\sin^2 \\alpha}{g}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{V_0 \\sin^2 \\alpha}{2g}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{V_0^2 \\sin \\alpha}{g}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि एक projectile को आरम्भिक गति V0 से कोण α पर क्षैतिज पर डाला जाए तो इसकी अधिकतम ऊँचाई होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{V_0^2sin^2\\alpha}{2g}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{V_0^2sin^2\\alpha}{g}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{V_0sin\\alpha}{2g}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{V_0^2sin\\alpha}{g}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 78,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "According to Zeroth law of thermodynamics, which one of the following statements is correct ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "It is practically impossible to attain absolute zero degree temperature."
+   },
+   {
+    "label": "B",
+    "text": "Heat cannot be transferred from a system at low temperature to system at higher temperature."
+   },
+   {
+    "label": "C",
+    "text": "Work done can be completely converted to heat."
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "उपप्रश्नों के लिए निर्धारित नियममास्टर, निम्न में से कौन सा कथन सही है ?",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "key_letter_unmatched": "D",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 79,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "Which of the following machines does not require a flywheel ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Gas turbine"
+   },
+   {
+    "label": "B",
+    "text": "Steam engine"
+   },
+   {
+    "label": "C",
+    "text": "Power press"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिन में रे किस मशीं को गतिपालक यंत्र की आवश्यकता नहीं है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "गैस टर्बाइन"
+   },
+   {
+    "label": "B",
+    "text": "भाप इंजन"
+   },
+   {
+    "label": "C",
+    "text": "पावर प्रैस"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त में किसी में नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 80,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "If a refrigerator working on Carnot cycle is to have a C.O.P. of 5, then the ratio of maximum to minimum temperature in the cycle should be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "2.0"
+   },
+   {
+    "label": "B",
+    "text": "2.5"
+   },
+   {
+    "label": "C",
+    "text": "1.25"
+   },
+   {
+    "label": "D",
+    "text": "1.55"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कारनोट साइकिल पर आधारित एक फ्रिज का कार्य गुणांक (सी.ओ.पी.) यदि 5 हो तो यह प्रणाली के अधिकतम तथा न्यूनतम ताप परिवर्तन का अनुमान होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2.0"
+   },
+   {
+    "label": "B",
+    "text": "2.5"
+   },
+   {
+    "label": "C",
+    "text": "1.25"
+   },
+   {
+    "label": "D",
+    "text": "1.55"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "arithmetic",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 81,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "The withworth quick return mechanisms is based on :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Fourth inversion of slider crank chain"
+   },
+   {
+    "label": "B",
+    "text": "Second inversion of slider crank chain"
+   },
+   {
+    "label": "C",
+    "text": "First inversion of double slider crank chain"
+   },
+   {
+    "label": "D",
+    "text": "Third inversion of slider crank chain"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिक्वर्थ नितांत पृष्ठ (फिक्व रिटर्न) यांत्रिकन्यास आवश्यक है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "स्टाइलजर एवं चेन का प्रथम युग्म"
+   },
+   {
+    "label": "B",
+    "text": "स्टाइलजर एवं चेन का दूसरा युग्म"
+   },
+   {
+    "label": "C",
+    "text": "युग्म (डबल) स्टाइलजर एवं चेन का प्रथम युग्म (इनवर्जन)"
+   },
+   {
+    "label": "D",
+    "text": "स्टाइलजर एवं चेन का तीसरा युग्म"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 82,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "The pressure angle of a cam depends upon :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Return or descent"
+   },
+   {
+    "label": "B",
+    "text": "Off set between the follower axis and the cam centre"
+   },
+   {
+    "label": "C",
+    "text": "Rise or ascent"
+   },
+   {
+    "label": "D",
+    "text": "Dwell"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक कैन का प्रेशर कौन निश्चित करता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "वापसी या उतार"
+   },
+   {
+    "label": "B",
+    "text": "कैम केंद्र तथा अनुगामी अक्षों में स्थिति"
+   },
+   {
+    "label": "C",
+    "text": "उठाव या चढ़ाव"
+   },
+   {
+    "label": "D",
+    "text": "विस्थापन (इवेंट)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 83,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "Which of the following is not a graphical representation of frequency distribution ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Frequency polygon"
+   },
+   {
+    "label": "B",
+    "text": "p - chart"
+   },
+   {
+    "label": "C",
+    "text": "Histogram"
+   },
+   {
+    "label": "D",
+    "text": "Frequency bar chart"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "नियम में से कौन-सी विधि आवृत्ति वितरण का चित्रमय प्रतिनिधित्व नहीं है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "आवृत्ति बहुभुज"
+   },
+   {
+    "label": "B",
+    "text": "पी-चार्ट"
+   },
+   {
+    "label": "C",
+    "text": "हिस्टोग्राम"
+   },
+   {
+    "label": "D",
+    "text": "आवृत्ति बार चार्ट"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 84,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "The Octane rating or Octane number of a fuel is a measure of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "The rate at which the fuel burns"
+   },
+   {
+    "label": "B",
+    "text": "Calorific value of a fuel"
+   },
+   {
+    "label": "C",
+    "text": "The resistance of the fuel to detonation (engine knocking)"
+   },
+   {
+    "label": "D",
+    "text": "Thermal efficiency of an internal combustion engine"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी ईश्वर की आंकड़े रेटिंग अथवा आंकड़े संख्या नियम में से किस का माप है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "ईश्वर दहन का दर"
+   },
+   {
+    "label": "B",
+    "text": "ईश्वर का कैलोरीफिक मूल्यान्क"
+   },
+   {
+    "label": "C",
+    "text": "ईश्वर की नॉकिंग प्रतिनिधिक क्षमता"
+   },
+   {
+    "label": "D",
+    "text": "आंतरिक दहन इंजन की धर्मल दक्षता"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 85,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "If a storage battery is used to run an electric motor of rating 0.5 kW for 30 minutes, then the work done W and heat supplied Q by the battery are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "W=Q=900 kJ"
+   },
+   {
+    "label": "B",
+    "text": "W=900 kJ, Q=0"
+   },
+   {
+    "label": "C",
+    "text": "W=0, Q=0"
+   },
+   {
+    "label": "D",
+    "text": "W=500 kJ, Q=500 kJ"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि 0.5 kW क्षमता की एक विद्युत मोटर को एक भंडारण बैटरी द्वारा 30 मिनट तक चलाया जाए तो बैटरी द्वारा किया कार्य W तथा ताप की आपूर्ति Q होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "W=Q=900 kJ"
+   },
+   {
+    "label": "B",
+    "text": "W=900 kJ, Q=0"
+   },
+   {
+    "label": "C",
+    "text": "W=0, Q=0"
+   },
+   {
+    "label": "D",
+    "text": "W=500 kJ, Q=500 kJ"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 86,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "In an orifice, the following relation between C_c, C_v and C_d holds true :",
+  "options": [
+   {
+    "label": "A",
+    "text": "C_d = \\frac{C_c}{C_d}"
+   },
+   {
+    "label": "B",
+    "text": "C_c = \\frac{C_d}{C_v}"
+   },
+   {
+    "label": "C",
+    "text": "C_c = \\frac{C_v}{C_d}"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक आंतरिक्ष के संदर्भ में C_c, C_v तथा C_d में संबंध है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "C_d = \\frac{C_c}{C_d}"
+   },
+   {
+    "label": "B",
+    "text": "C_c = \\frac{C_d}{C_v}"
+   },
+   {
+    "label": "C",
+    "text": "C_c = \\frac{C_v}{C_d}"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 87,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "The angle between two straight lines, y=6x−11 and y=\\frac{1}{4}x−\\frac{3}{4}, is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "−1 25"
+   },
+   {
+    "label": "B",
+    "text": "tan^{-1} 23"
+   },
+   {
+    "label": "C",
+    "text": "tan^{-1} 15"
+   },
+   {
+    "label": "D",
+    "text": "tan^{-1} 20"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "द सिध्ध रेखाएँ y=6x−11 तथा y=\\frac{1}{4}x−\\frac{3}{4} के मध्य कोण होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "cos^{-1}\\frac{25}{20}"
+   },
+   {
+    "label": "B",
+    "text": "sin^{-1}\\frac{20}{15}"
+   },
+   {
+    "label": "C",
+    "text": "tan^{-1}\\frac{23}{10}"
+   },
+   {
+    "label": "D",
+    "text": "tan^{-1}\\frac{15}{23}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 88,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "If L, D and A are respectively the length, diameter and area of a pipe, d and a are respective the diameter and area of the nozzle attached to the end of the pipe, f is the Darcy-Weisbach friction factor, then maximum horse power will be delivered when :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{A}{a}=\\sqrt{\\frac{2fL}{D}}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{A}{a}=\\sqrt{\\frac{2f}{D}}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{a}{A}=\\sqrt{\\frac{2fL}{D}}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{A}{a}=\\sqrt{\\frac{fL}{D}}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि L, D तथा A एक पाइप की क्रमशः लम्बाई, व्यास तथा क्षेत्रफल हों तथा इस पाइप के छोर पर लगे एक नॉजल का व्यास d तथा क्षेत्रफल a हो, और f-Darcy-Weisbach का घर्षण फैक्टर हो तो अधिकतम अवश शक्ति प्राप्त होगी यदि :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{A}{a}=\\sqrt{\\frac{2fL}{D}}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{A}{a}=\\sqrt{\\frac{2f}{D}}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{a}{A}=\\sqrt{\\frac{2fL}{D}}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{A}{a}=\\sqrt{\\frac{fL}{D}}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 89,
+  "page": 34,
+  "page_hi": 35,
+  "stem": "For power transmission, the most suited type of screw threads are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "V threads"
+   },
+   {
+    "label": "B",
+    "text": "Square threads"
+   },
+   {
+    "label": "C",
+    "text": "Knuckle threads"
+   },
+   {
+    "label": "D",
+    "text": "All of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "शक्ति प्रेक्षण हेतु सर्वांगीक दृष्टि की प्रकार है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "वी-चूड़ी"
+   },
+   {
+    "label": "B",
+    "text": "वर्गाकार चूड़ी"
+   },
+   {
+    "label": "C",
+    "text": "नकली चूड़ी"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 90,
+  "page": 34,
+  "page_hi": 35,
+  "stem": "Which of the following is not a pattern allowance ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Finishing allowance"
+   },
+   {
+    "label": "B",
+    "text": "Shrinkage allowance"
+   },
+   {
+    "label": "C",
+    "text": "Draft allowance"
+   },
+   {
+    "label": "D",
+    "text": "Wood allowance"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिम में से कौन सा पैटर्न (अलाइंस) नहीं है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "फिनिशिंग अलाइंस"
+   },
+   {
+    "label": "B",
+    "text": "सिक्कड़ अलाइंस"
+   },
+   {
+    "label": "C",
+    "text": "जिप अलाइंस"
+   },
+   {
+    "label": "D",
+    "text": "बुड अलाइंस"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 91,
+  "page": 34,
+  "page_hi": 35,
+  "stem": "In the relation \\( \\frac{P}{A} = \\frac{n\\pi^2E}{(\\frac{1}{k})^2} \\) for the design of columns, the parameter called :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Section modulus"
+   },
+   {
+    "label": "B",
+    "text": "Rigidity factor"
+   },
+   {
+    "label": "C",
+    "text": "Stiffness ratio"
+   },
+   {
+    "label": "D",
+    "text": "Slenderness ratio"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "स्तम्भों के डिज़ाइन के लिए प्रयुक्त सूत्र \\( P = \\frac{n m^2 E}{A} \\) में, \\( \\left( \\frac{1}{k} \\right)^2 \\) को क्या कहते हैं ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "कार मापांक (सेवाशील मोड्यूलस)"
+   },
+   {
+    "label": "B",
+    "text": "कठोरता गुणांक"
+   },
+   {
+    "label": "C",
+    "text": "रिफ्रेंस अनुपात"
+   },
+   {
+    "label": "D",
+    "text": "स्टैंडर्ड अनुपात"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 92,
+  "page": 34,
+  "page_hi": 35,
+  "stem": "The machines used in pattern making are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Wood turning lathe"
+   },
+   {
+    "label": "B",
+    "text": "Band saw"
+   },
+   {
+    "label": "C",
+    "text": "Abrasive disc machine or disc sander"
+   },
+   {
+    "label": "D",
+    "text": "All of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "पैटर्न बनाने हेतु प्रयुक्त सामग्री है।",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "लकड़ी टिंग खैर"
+   },
+   {
+    "label": "B",
+    "text": "बेंड आरी"
+   },
+   {
+    "label": "C",
+    "text": "घर्षण डिस्टिक सामग्री/डिस्टिक सैंडर"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 93,
+  "page": 34,
+  "page_hi": 35,
+  "stem": "The power of a Portel governor is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Equal to Effort __________ Displacement"
+   },
+   {
+    "label": "B",
+    "text": "The product of effort and displacement of sleeve"
+   },
+   {
+    "label": "C",
+    "text": "Equal to Displacement __________ Effort"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "93. पोर्टल गणितज्ञक की शक्ति है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "प्रयास"
+   },
+   {
+    "label": "B",
+    "text": "स्लील प्रयास तथा विचारण का गुणांक"
+   },
+   {
+    "label": "C",
+    "text": "__________अनुपात के समान प्रयास"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त में कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 94,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "Which of the following operations cannot be carried out on a lathe ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Broaching"
+   },
+   {
+    "label": "B",
+    "text": "Facing"
+   },
+   {
+    "label": "C",
+    "text": "Taper turning"
+   },
+   {
+    "label": "D",
+    "text": "Drilling"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "नियम में से कौन सा कार्य खराब मशीन पर नहीं किया जा सकता ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "ब्लॉइंग"
+   },
+   {
+    "label": "B",
+    "text": "फेसिंग"
+   },
+   {
+    "label": "C",
+    "text": "टेप टर्निंग"
+   },
+   {
+    "label": "D",
+    "text": "फ्रिलिंग"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 95,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "Which one of these represents a closed thermodynamic system ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Exhaust stroke of an I.C. engine"
+   },
+   {
+    "label": "B",
+    "text": "The Universe"
+   },
+   {
+    "label": "C",
+    "text": "Bomb calorimeter"
+   },
+   {
+    "label": "D",
+    "text": "Steam generator"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "नियम में कौन-सा बंद धर्मांतरित प्रक्रिया का प्रतीक है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "आइ.एस. इंजिन का निकास स्टॉक"
+   },
+   {
+    "label": "B",
+    "text": "वायम (यूनिवर्सल)"
+   },
+   {
+    "label": "C",
+    "text": "बम कैलोरीमीटर"
+   },
+   {
+    "label": "D",
+    "text": "भाप जनरेटर"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 96,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "Which of the following is not a casting defect ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Corrosion"
+   },
+   {
+    "label": "B",
+    "text": "Gas holes"
+   },
+   {
+    "label": "C",
+    "text": "Blow holes"
+   },
+   {
+    "label": "D",
+    "text": "Hot tears"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "निम्न में से कौन सा कार्यों का दोष नहीं है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "क्षरण (कोरोजन)"
+   },
+   {
+    "label": "B",
+    "text": "गौस दोष"
+   },
+   {
+    "label": "C",
+    "text": "व्लो दोष"
+   },
+   {
+    "label": "D",
+    "text": "तप बिंदु (बुलबुला)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 97,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "For the longitudinal and transverse vibrations which of the following is correct ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Both, time period and frequency are different"
+   },
+   {
+    "label": "B",
+    "text": "Both, time period and frequency are same"
+   },
+   {
+    "label": "C",
+    "text": "Time period is same but natural frequency is different"
+   },
+   {
+    "label": "D",
+    "text": "Natural frequency is same but time period is different"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "लॉजिस्टिकल तथा ट्रांसवर्सल बाइस्ट्रेंस के संदर्भ में निम्न में से कौन सा कथन सही है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "समय काल तथा फ्रिक्वेंसी, दोनों ही सही"
+   },
+   {
+    "label": "B",
+    "text": "समय काल तथा फ्रिक्वेंसी, दोनों ही समान"
+   },
+   {
+    "label": "C",
+    "text": "समय काल समान किंतु स्वाभाविक फ्रिक्वेंसी भिन्न"
+   },
+   {
+    "label": "D",
+    "text": "स्वाभाविक फ्रिक्वेंसी समान किंतु समय काल भिन्न"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 98,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "Proof resilience is the maximum strain energy that a material can absorb when stressed to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Yield point"
+   },
+   {
+    "label": "B",
+    "text": "Limit of proportionality"
+   },
+   {
+    "label": "C",
+    "text": "Working stress"
+   },
+   {
+    "label": "D",
+    "text": "Ultimate stress"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "प्रकाश रेज़िलियंस वह अधिकतम रेज़ है जो किसी पदार्थ को निम्न में किसी में होने पर पदार्थ सोच लेता है :",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 99,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "In the Chezy's formula U = C\\sqrt{mi}, the value of Chezy's constant C, as the pipes grow old :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Decreases"
+   },
+   {
+    "label": "B",
+    "text": "Increases"
+   },
+   {
+    "label": "C",
+    "text": "Remains constant"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "विज्ञान के सूत्र U = C\\sqrt{mi} में कॉन्स्टेंट C का मान, पुनः होते पाइपों के साथ/अनुसूत्र :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "जाता है"
+   },
+   {
+    "label": "B",
+    "text": "बढ़ता है"
+   },
+   {
+    "label": "C",
+    "text": "समान/अपरिवर्तित रहता है"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त में कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 100,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "A force F acts on a ball of mass m, moving initially with a velocity v₁, for t seconds a velocity of the ball increases to v₂ in the same direction. The relation of impulse-momentum valid in this case is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Ft=mv₂"
+   },
+   {
+    "label": "B",
+    "text": "Ft=mv₁"
+   },
+   {
+    "label": "C",
+    "text": "Ft=mv₂−mv₁"
+   },
+   {
+    "label": "D",
+    "text": "Ft=mv₁−mv₂"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mechanical Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-MECH-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि F परिमाण का बल एक m द्रव्यमान तथा v1 प्रारंभिक गति वाले गोले पर t सेकंड तक लगाकर गोले की गति बढ़ाकर v2 करे, तो आवेग-सम्बन्धी समीकरण होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "Ft=mv2"
+   },
+   {
+    "label": "B",
+    "text": "Ft=mv1"
+   },
+   {
+    "label": "C",
+    "text": "Ft=mv2−mv1"
+   },
+   {
+    "label": "D",
+    "text": "Ft=mv1−mv2"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Mechanical (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ }
+]

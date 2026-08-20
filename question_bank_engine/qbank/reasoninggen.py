@@ -20,6 +20,7 @@ import hashlib
 import math
 import random
 
+from . import reasoning_hi as HI
 from .models import Question, content_hash
 
 SUBJECT = "Reasoning"
@@ -100,10 +101,18 @@ def _make_question(built: dict, rng, spec) -> Question:
     diff = spec.get("dmax") or spec.get("dmin") or 2
     qid = "gen_reason_" + hashlib.md5(
         (spec.get("chapter", "") + "|" + stem).encode()).hexdigest()[:14]
+    # Hindi mirrors. Options are mapped AFTER _mcq has shuffled, so the Hindi option order
+    # always matches the English one — a student comparing the two halves must see (B) = (B).
+    hi_map = built.get("hi_opts") or {}
+    options_hi = ([{"label": o["label"], "text": hi_map.get(o["text"], o["text"])} for o in options]
+                  if built.get("stem_hi") else [])
     q = Question(
         id=qid, exam=spec.get("exam") or EXAM, subject=spec.get("subject") or SUBJECT,
         stem=stem, qtype="MCQ_single", options=options, correct_answer=ans,
         solution=built.get("solution", ""),
+        stem_hi=(built.get("stem_hi") or "").strip(),
+        options_hi=options_hi,
+        solution_hi=(built.get("solution_hi") or "").strip(),
         chapter=spec.get("chapter"), concept=built.get("concept"), difficulty=diff,
         source="reasoninggen", generated=True, hash=content_hash(stem))
     q.verified = True
@@ -145,7 +154,10 @@ def _b_coding_shift(rng, diff):
            f"({w1}→{c1}). Applying the same shift to {w2} gives {c2}.")
     d = [_shift_word(w2, k + 1), _shift_word(w2, k - 1), _shift_word(w2, -k or 1)]
     d = [x for x in dict.fromkeys(d) if x != c2][:3]
-    return {"stem": stem, "correct": c2, "distractors": d, "solution": sol,
+    stem_hi = (f"एक निश्चित कूट भाषा में '{w1}' को '{c1}' लिखा जाता है। "
+               f"उसी कूट भाषा में '{w2}' को कैसे लिखा जाएगा?")
+    sol_hi = f"प्रत्येक अक्षर को वर्णमाला में {sign} स्थान खिसकाया गया है ({w1}→{c1}); अतः {w2} → {c2}।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": c2, "distractors": d, "solution": sol,
             "concept": "Letter-Shift Coding"}
 
 def _b_coding_number(rng, diff):
@@ -167,7 +179,9 @@ def _b_coding_number(rng, diff):
              " ".join(str(_pos(c) + 1) for c in w),
              " ".join(str(_pos(c) - 1) for c in w)]
     d = [x for x in dict.fromkeys(cands) if x != code][:3]
-    return {"stem": stem, "correct": code, "distractors": d, "solution": sol,
+    stem_hi = f"यदि प्रत्येक अक्षर को उसकी वर्णमाला-स्थिति के अनुसार कूटबद्ध किया जाए, तो '{w}' का कूट क्या होगा?"
+    sol_hi = f"{w} के अक्षरों की स्थिति के अनुसार कूट = {code}।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": code, "distractors": d, "solution": sol,
             "concept": "Number Coding"}
 
 # ---- Alphabet / Letter Series ----------------------------------------------
@@ -185,7 +199,9 @@ def _b_letter_series(rng, diff):
     cands = [_letter(terms[4] + 1), _letter(terms[4] - 1), _letter(terms[4] + 2),
              _letter(terms[4] + step), _letter(terms[4] - 2)]
     d = [x for x in dict.fromkeys(cands) if x != ans][:3]
-    return {"stem": stem, "correct": ans, "distractors": d, "solution": sol,
+    stem_hi = f"अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\n{shown}"
+    sol_hi = f"प्रत्येक बार अक्षर {step} स्थान आगे बढ़ता है; अतः अगला पद = {ans}।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": ans, "distractors": d, "solution": sol,
             "concept": "Letter Series"}
 
 def _b_alnum_series(rng, diff):
@@ -203,7 +219,9 @@ def _b_alnum_series(rng, diff):
          f"{pairs[4][0]}{pairs[4][1] + 1}",
          f"{pairs[4][0]}{pairs[4][1] - nstep}"]
     d = [x for x in dict.fromkeys(d) if x != ans][:3]
-    return {"stem": stem, "correct": ans, "distractors": d, "solution": sol,
+    stem_hi = f"निम्नलिखित श्रृंखला में आगे क्या आएगा?\n{shown}"
+    sol_hi = f"अक्षर {lstep} स्थान तथा संख्याएँ {nstep} बढ़ती हैं; अतः अगला पद = {ans}।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": ans, "distractors": d, "solution": sol,
             "concept": "Alphanumeric Series"}
 
 # ---- Analogy ----------------------------------------------------------------
@@ -224,7 +242,9 @@ def _b_number_analogy(rng, diff):
     sol = f"The second term is {desc} ({a}→{b}). So {c}→{ans}."
     cands = [str(ans + c), str(ans - 1), str(ans + 1), str(fn(c + 1)), str(ans + c + 1)]
     d = [x for x in dict.fromkeys(cands) if x != str(ans)][:3]
-    return {"stem": stem, "correct": str(ans), "distractors": d, "solution": sol,
+    stem_hi = f"{a} : {b} :: {c} : ?"
+    sol_hi = f"दूसरा पद पहले पद का सम्बन्ध दर्शाता है ({a}→{b}); उसी नियम से {c}→{ans}।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": str(ans), "distractors": d, "solution": sol,
             "concept": "Number Analogy"}
 
 def _b_letter_analogy(rng, diff):
@@ -244,7 +264,9 @@ def _b_letter_analogy(rng, diff):
          _letter(c - k) + _letter(c + 1 - k),
          _letter(c + k) + _letter(c + k)]
     d = [x for x in dict.fromkeys(d) if x != ans][:3]
-    return {"stem": stem, "correct": ans, "distractors": d, "solution": sol,
+    stem_hi = f"{pa} : {pb} :: {pc} : ?"
+    sol_hi = f"प्रत्येक अक्षर वर्णमाला में +{k} स्थान बढ़ता है ({pa}→{pb}); अतः {pc} → {ans}।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": ans, "distractors": d, "solution": sol,
             "concept": "Letter Analogy"}
 
 # ---- Odd One Out ------------------------------------------------------------
@@ -260,7 +282,10 @@ def _b_odd_square(rng, diff):
            f"({'; '.join(f'{int(s**0.5)}²={s}' for s in squares)}); {odd} is not. "
            f"So {odd} is the odd one out.")
     d = [str(x) for x in squares]
-    return {"stem": stem, "correct": str(odd), "distractors": d, "solution": sol,
+    stem_hi = ("निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n"
+               + ",  ".join(str(x) for x in opts))
+    sol_hi = f"शेष तीनों पूर्ण वर्ग हैं; {odd} पूर्ण वर्ग नहीं है, अतः यही असंगत है।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": str(odd), "distractors": d, "solution": sol,
             "concept": "Odd One Out (Numbers)"}
 
 def _b_odd_prime(rng, diff):
@@ -276,7 +301,10 @@ def _b_odd_prime(rng, diff):
            f"{comp} is composite ({comp} = {comp//_smallest_factor(comp)} × {_smallest_factor(comp)}). "
            f"So {comp} is the odd one out.")
     d = [str(x) for x in primes]
-    return {"stem": stem, "correct": str(comp), "distractors": d, "solution": sol,
+    stem_hi = ("निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n"
+               + ",  ".join(str(x) for x in opts))
+    sol_hi = f"शेष तीनों अभाज्य संख्याएँ हैं; {comp} भाज्य है, अतः यही असंगत है।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": str(comp), "distractors": d, "solution": sol,
             "concept": "Odd One Out (Numbers)"}
 
 def _smallest_factor(n):
@@ -298,7 +326,10 @@ def _b_ranking(rng, diff):
            f"{left} + {right} − 1 = {total}.")
     cands = [str(total + 1), str(total - 1), str(total + 2), str(total - 2)]
     d = [x for x in dict.fromkeys(cands) if x != str(total)][:3]
-    return {"stem": stem, "correct": str(total), "distractors": d, "solution": sol,
+    stem_hi = (f"विद्यार्थियों की एक पंक्ति में {HI.name(name)} बाईं ओर से {HI.ordinal(left)} स्थान पर "
+               f"तथा दाईं ओर से {HI.ordinal(right)} स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?")
+    sol_hi = f"कुल = बाएँ से स्थान + दाएँ से स्थान − 1 = {left} + {right} − 1 = {total}।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": str(total), "distractors": d, "solution": sol,
             "concept": "Ranking"}
 
 def _b_ranking_pos(rng, diff):
@@ -312,7 +343,10 @@ def _b_ranking_pos(rng, diff):
            f"{total} − {left} + 1 = {right}.")
     cands = [str(right + 1), str(right - 1), str(right + 2), str(right - 2)]
     d = [x for x in dict.fromkeys(cands) if x != str(right) and x != "0"][:3]
-    return {"stem": stem, "correct": str(right), "distractors": d, "solution": sol,
+    stem_hi = (f"{total} विद्यार्थियों की एक पंक्ति में {HI.name(name)} बाईं ओर से {HI.ordinal(left)} "
+               f"स्थान पर है। दाईं ओर से उसका स्थान क्या है?")
+    sol_hi = f"दाएँ से स्थान = कुल − बाएँ से स्थान + 1 = {total} − {left} + 1 = {right}।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": str(right), "distractors": d, "solution": sol,
             "concept": "Ranking"}
 
 def _ord(n):
@@ -338,7 +372,11 @@ def _b_direction_distance(rng, diff):
            f"√({a}² + {b}²) = √({a*a} + {b*b}) = √{a*a+b*b} = {hyp} km.")
     d = [f"{a + b} km", f"{hyp + 1} km", f"{abs(a - b)} km"]
     d = [x for x in dict.fromkeys(d) if x != f"{hyp} km"][:3]
-    return {"stem": stem, "correct": f"{hyp} km", "distractors": d, "solution": sol,
+    stem_hi = (f"एक व्यक्ति एक बिंदु से चलना आरम्भ करता है और उत्तर दिशा में {a} किमी चलता है, "
+               f"फिर दाएँ मुड़कर पूर्व दिशा में {b} किमी चलता है। अब वह प्रारम्भिक बिंदु से "
+               f"कितनी दूर है?")
+    sol_hi = f"उत्तर व पूर्व लम्बवत हैं; दूरी = √({a}² + {b}²) = √{a*a+b*b} = {hyp} किमी।"
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "correct": f"{hyp} km", "distractors": d, "solution": sol,
             "concept": "Direction — Distance"}
 
 def _b_direction_final(rng, diff):
@@ -357,7 +395,12 @@ def _b_direction_final(rng, diff):
                      for i, t in enumerate(turns))
     sol = f"Starting {dirs[start]}, applying each 90° turn: {steps}. Final = {ans}."
     d = [d2 for d2 in dirs if d2 != ans]
-    return {"stem": stem, "correct": ans, "distractors": d[:3], "solution": sol,
+    seq_hi = ", फिर ".join(HI.TURN[t] for t in turns)
+    stem_hi = (f"एक व्यक्ति आरम्भ में {HI.DIR[dirs[start]]} दिशा की ओर मुख किए है। वह {seq_hi} मुड़ता है। "
+               f"अब उसका मुख किस दिशा की ओर है? (प्रत्येक मोड़ 90° का है।)")
+    sol_hi = f"{HI.DIR[dirs[start]]} से आरम्भ कर प्रत्येक 90° मोड़ लगाने पर अंतिम दिशा = {HI.DIR[ans]}।"
+    hi_opts = HI.dir_opts(dirs)
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "hi_opts": hi_opts, "correct": ans, "distractors": d[:3], "solution": sol,
             "concept": "Direction — Facing"}
 
 # ---- Blood Relations --------------------------------------------------------
@@ -395,7 +438,12 @@ def _b_blood_relation(rng, diff):
            f"{A} is the {ans} of {C}.")
     same_gender = [r for r in _ALL_RELS if r != ans and _rel_is_male(r) == _rel_is_male(ans)]
     d = rng.sample(same_gender, min(3, len(same_gender)))
-    return {"stem": stem, "correct": ans.capitalize(),
+    stem_hi = (f"{HI.name(A)}, {HI.possessive(HI.name(B), r1)} हैं तथा "
+               f"{HI.name(B)}, {HI.possessive(HI.name(C), r2)} हैं। "
+               f"{HI.name(A)} का {HI.name(C)} से क्या सम्बन्ध है?")
+    sol_hi = f"सम्बन्ध जोड़ने पर {HI.name(A)}, {HI.possessive(HI.name(C), ans)} हुए।"
+    hi_opts = {x.capitalize(): HI.rel(x) for x in _ALL_RELS}
+    return {"stem": stem, "stem_hi": stem_hi, "solution_hi": sol_hi, "hi_opts": hi_opts, "correct": ans.capitalize(),
             "distractors": [x.capitalize() for x in d], "solution": sol,
             "concept": "Blood Relations"}
 

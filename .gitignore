@@ -94,3 +94,11 @@ marketing/lists/*.csv
 
 # Employee training — private allow-list with real phone numbers (never commit)
 employee_training/employees.json
+
+# ── Official BSSC/BPSC exam scans (≈143 MB) ────────────────────
+# Source booklets + model-answer pages downloaded from bssc.bihar.gov.in. They are public
+# government works and re-downloadable (see skills/bssc-test-prep/SKILL.md §10 for the URLs —
+# note the JE files are uppercase .PDF; lowercase 404s). What we actually need from them — the
+# extracted questions, the hand-transcribed keys and the page maps — is the JSON, which IS tracked.
+question_bank_engine/drop/bssc/*.pdf
+question_bank_engine/drop/bssc/*.PDF

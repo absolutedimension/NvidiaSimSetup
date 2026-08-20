@@ -1,0 +1,5531 @@
+[
+ {
+  "number": 1,
+  "page": 1,
+  "stem": "A sum of 9,200 ₹, if 15% is taken as interest, what will be the total amount?",
+  "stem_hi": "एक राशि 9,200 ₹, में यदि 15% ब्याज लिया जाए तो उसका कुल मूल्य कितना होगा?",
+  "options": [
+   {
+    "label": "A",
+    "text": "8,000 ₹"
+   },
+   {
+    "label": "B",
+    "text": "9,000 ₹"
+   },
+   {
+    "label": "C",
+    "text": "9,150 ₹"
+   },
+   {
+    "label": "D",
+    "text": "10,500 ₹"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "8,000 ₹"
+   },
+   {
+    "label": "B",
+    "text": "9,000 ₹"
+   },
+   {
+    "label": "C",
+    "text": "9,150 ₹"
+   },
+   {
+    "label": "D",
+    "text": "10,500 ₹"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Percentage/Profit-Loss",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 2,
+  "page": 1,
+  "stem": "Find the value of x.",
+  "stem_hi": "समान्य व्याज",
+  "options": [
+   {
+    "label": "A",
+    "text": "x - y"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "x × 100"
+   },
+   {
+    "label": "D",
+    "text": "x + y"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "x - y"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "x × 100"
+   },
+   {
+    "label": "D",
+    "text": "x + y"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 3,
+  "page": 1,
+  "stem": "2^2 + 3^2 + 6^2 = ?",
+  "stem_hi": "2^2 + 3^2 + 6^2 = ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "7^2"
+   },
+   {
+    "label": "B",
+    "text": "6^3"
+   },
+   {
+    "label": "C",
+    "text": "3^4"
+   },
+   {
+    "label": "D",
+    "text": "2^8"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "7^2"
+   },
+   {
+    "label": "B",
+    "text": "6^3"
+   },
+   {
+    "label": "C",
+    "text": "3^4"
+   },
+   {
+    "label": "D",
+    "text": "2^8"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 4,
+  "page": 1,
+  "stem": "In √2, √2, √-2, -2, what is the value?",
+  "stem_hi": "√2, √2, √-2, -2 में कौन-सी वास्तविक संख्या है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "-√2"
+   },
+   {
+    "label": "B",
+    "text": "-√2"
+   },
+   {
+    "label": "C",
+    "text": "√2"
+   },
+   {
+    "label": "D",
+    "text": "-2"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "-√2"
+   },
+   {
+    "label": "B",
+    "text": "-√2"
+   },
+   {
+    "label": "C",
+    "text": "√2"
+   },
+   {
+    "label": "D",
+    "text": "-2"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 5,
+  "page": 1,
+  "stem": "7, 49, 343 and 154 are what type of numbers?",
+  "stem_hi": "7, 49, 343 और 154 का महत्त्व क्या है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "343"
+   },
+   {
+    "label": "B",
+    "text": "154"
+   },
+   {
+    "label": "C",
+    "text": "28"
+   },
+   {
+    "label": "D",
+    "text": "7"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "343"
+   },
+   {
+    "label": "B",
+    "text": "154"
+   },
+   {
+    "label": "C",
+    "text": "28"
+   },
+   {
+    "label": "D",
+    "text": "7"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 6,
+  "page": 1,
+  "stem": "√5832 = ?",
+  "stem_hi": "√5832 = ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "32"
+   },
+   {
+    "label": "B",
+    "text": "18"
+   },
+   {
+    "label": "C",
+    "text": "36"
+   },
+   {
+    "label": "D",
+    "text": "27"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "32"
+   },
+   {
+    "label": "B",
+    "text": "18"
+   },
+   {
+    "label": "C",
+    "text": "36"
+   },
+   {
+    "label": "D",
+    "text": "27"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 7,
+  "page": 1,
+  "stem": "90 cm/s = ?",
+  "stem_hi": "90 सेंटीमीटर/सेकंड = ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "54 मीटर/मिनट"
+   },
+   {
+    "label": "B",
+    "text": "60 मीटर/घंटा"
+   },
+   {
+    "label": "C",
+    "text": "45 मीटर/सेकंड"
+   },
+   {
+    "label": "D",
+    "text": "90 मीटर"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "54 मीटर/मिनट"
+   },
+   {
+    "label": "B",
+    "text": "60 मीटर/घंटा"
+   },
+   {
+    "label": "C",
+    "text": "45 मीटर/सेकंड"
+   },
+   {
+    "label": "D",
+    "text": "90 मीटर"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 8,
+  "page": 1,
+  "stem": "If one task can be done in 24 days, how many days will it take to complete 30 tasks?",
+  "stem_hi": "यदि एक काम को 24 दिनों में किया जा सकता है, तो 30 दिनों में कितने दिन लगेंगे?",
+  "options": [
+   {
+    "label": "A",
+    "text": "13/3 दिन"
+   },
+   {
+    "label": "B",
+    "text": "3/40 दिन"
+   },
+   {
+    "label": "C",
+    "text": "8/3 दिन"
+   },
+   {
+    "label": "D",
+    "text": "3/8 दिन"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "13/3 दिन"
+   },
+   {
+    "label": "B",
+    "text": "3/40 दिन"
+   },
+   {
+    "label": "C",
+    "text": "8/3 दिन"
+   },
+   {
+    "label": "D",
+    "text": "3/8 दिन"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "time_work_speed",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 9,
+  "page": 1,
+  "stem": "√7744 का मूल्य क्या है?",
+  "stem_hi": "√7744 का मूल्य क्या है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "44"
+   },
+   {
+    "label": "B",
+    "text": "88"
+   },
+   {
+    "label": "C",
+    "text": "74"
+   },
+   {
+    "label": "D",
+    "text": "47"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "44"
+   },
+   {
+    "label": "B",
+    "text": "88"
+   },
+   {
+    "label": "C",
+    "text": "74"
+   },
+   {
+    "label": "D",
+    "text": "47"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 10,
+  "page": 1,
+  "stem": "If a = 2, b = -3, c = 4 then a^2bc + ab^2c का मान होगा?",
+  "stem_hi": "यदि a = 2, b = -3, c = 4 तो a^2bc + ab^2c का मान होगा?",
+  "options": [
+   {
+    "label": "A",
+    "text": "6"
+   },
+   {
+    "label": "B",
+    "text": "-48"
+   },
+   {
+    "label": "C",
+    "text": "-6"
+   },
+   {
+    "label": "D",
+    "text": "24"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "6"
+   },
+   {
+    "label": "B",
+    "text": "-48"
+   },
+   {
+    "label": "C",
+    "text": "-6"
+   },
+   {
+    "label": "D",
+    "text": "24"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Arithmetic",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 11,
+  "page": 2,
+  "stem": "12, 15 and 21 का लघुत्तम समापवर्तक है ?",
+  "stem_hi": "12, 15 और 21 का लघुत्तम समापवर्तक है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "12"
+   },
+   {
+    "label": "B",
+    "text": "15"
+   },
+   {
+    "label": "C",
+    "text": "21"
+   },
+   {
+    "label": "D",
+    "text": "420"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "12"
+   },
+   {
+    "label": "B",
+    "text": "15"
+   },
+   {
+    "label": "C",
+    "text": "21"
+   },
+   {
+    "label": "D",
+    "text": "420"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 12,
+  "page": 2,
+  "stem": "कौन-सी संख्या का पूर्ण गुणनफल नहीं है ?",
+  "stem_hi": "कौन-सी संख्या का पूर्ण गुणनफल नहीं है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "6400"
+   },
+   {
+    "label": "B",
+    "text": "3600"
+   },
+   {
+    "label": "C",
+    "text": "1600"
+   },
+   {
+    "label": "D",
+    "text": "81000"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "6400"
+   },
+   {
+    "label": "B",
+    "text": "3600"
+   },
+   {
+    "label": "C",
+    "text": "1600"
+   },
+   {
+    "label": "D",
+    "text": "81000"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "odd_one_out",
+   "topic": "Number System",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 13,
+  "page": 2,
+  "stem": "एक आदमी का आमदनी 15,000 रु. है और खर्च 12,500 रु. है तो उसका बचत और आमदनी का अनुपात है",
+  "stem_hi": "एक आदमी का आमदनी 15,000 रु. है और खर्च 12,500 रु. है तो उसका बचत और आमदनी का अनुपात है",
+  "options": [
+   {
+    "label": "A",
+    "text": "5 : 6"
+   },
+   {
+    "label": "B",
+    "text": "6 : 5"
+   },
+   {
+    "label": "C",
+    "text": "1 : 2"
+   },
+   {
+    "label": "D",
+    "text": "15 : 12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "5 : 6"
+   },
+   {
+    "label": "B",
+    "text": "6 : 5"
+   },
+   {
+    "label": "C",
+    "text": "1 : 2"
+   },
+   {
+    "label": "D",
+    "text": "15 : 12"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "ratio_average",
+   "topic": "Ratio/Average",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 14,
+  "page": 2,
+  "stem": "287 में कितनी संख्या जाए कि उस संख्या का गुणनफल निकल जाए ?",
+  "stem_hi": "287 में कितनी संख्या जाए कि उस संख्या का गुणनफल निकल जाए ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "-2"
+   },
+   {
+    "label": "B",
+    "text": "-7"
+   },
+   {
+    "label": "C",
+    "text": "5"
+   },
+   {
+    "label": "D",
+    "text": "-3"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "-2"
+   },
+   {
+    "label": "B",
+    "text": "-7"
+   },
+   {
+    "label": "C",
+    "text": "5"
+   },
+   {
+    "label": "D",
+    "text": "-3"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 15,
+  "page": 2,
+  "stem": "कौन-सी संख्या विषय संख्या का धन है ?",
+  "stem_hi": "कौन-सी संख्या विषय संख्या का धन है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "125"
+   },
+   {
+    "label": "B",
+    "text": "343"
+   },
+   {
+    "label": "C",
+    "text": "A और (B) दोनों"
+   },
+   {
+    "label": "D",
+    "text": "कुछ भी नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "125"
+   },
+   {
+    "label": "B",
+    "text": "343"
+   },
+   {
+    "label": "C",
+    "text": "A और (B) दोनों"
+   },
+   {
+    "label": "D",
+    "text": "कुछ भी नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 16,
+  "page": 2,
+  "stem": "-7 में कितनी संख्या जाए कि 9 हो जाए ?",
+  "stem_hi": "-7 में कितनी संख्या जाए कि 9 हो जाए ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1"
+   },
+   {
+    "label": "B",
+    "text": "72"
+   },
+   {
+    "label": "C",
+    "text": "95"
+   },
+   {
+    "label": "D",
+    "text": "7"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1"
+   },
+   {
+    "label": "B",
+    "text": "72"
+   },
+   {
+    "label": "C",
+    "text": "95"
+   },
+   {
+    "label": "D",
+    "text": "7"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 17,
+  "page": 2,
+  "stem": "12 मजदूर 1 दिन में कितना काम करते हैं उसी दिन के 20 मजदूर कितने दिन में काम करेंगे ?",
+  "stem_hi": "12 मजदूर 1 दिन में कितना काम करते हैं उसी दिन के 20 मजदूर कितने दिन में काम करेंगे ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "10 दिन"
+   },
+   {
+    "label": "B",
+    "text": "30 दिन"
+   },
+   {
+    "label": "C",
+    "text": "6 दिन"
+   },
+   {
+    "label": "D",
+    "text": "बचेंगे ही नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "10 दिन"
+   },
+   {
+    "label": "B",
+    "text": "30 दिन"
+   },
+   {
+    "label": "C",
+    "text": "6 दिन"
+   },
+   {
+    "label": "D",
+    "text": "बचेंगे ही नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "time_work_speed",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 18,
+  "page": 2,
+  "stem": "\\sqrt{\\frac{13}{36}} का मान है",
+  "stem_hi": "√(13/36) का मान है",
+  "options": [
+   {
+    "label": "A",
+    "text": "3/6"
+   },
+   {
+    "label": "B",
+    "text": "11/6"
+   },
+   {
+    "label": "C",
+    "text": "6/11"
+   },
+   {
+    "label": "D",
+    "text": "36/13"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "3/6"
+   },
+   {
+    "label": "B",
+    "text": "11/6"
+   },
+   {
+    "label": "C",
+    "text": "6/11"
+   },
+   {
+    "label": "D",
+    "text": "36/13"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 19,
+  "page": 2,
+  "stem": "इस संख्या का \\frac{6}{4} 375 है ?",
+  "stem_hi": "इस संख्या का 6/4 375 है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "2500"
+   },
+   {
+    "label": "B",
+    "text": "6000"
+   },
+   {
+    "label": "C",
+    "text": "3750"
+   },
+   {
+    "label": "D",
+    "text": "2575"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "2500"
+   },
+   {
+    "label": "B",
+    "text": "6000"
+   },
+   {
+    "label": "C",
+    "text": "3750"
+   },
+   {
+    "label": "D",
+    "text": "2575"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 20,
+  "page": 2,
+  "stem": "एक व्यक्ति का आयकर मूल 450 रु. है और दानकर 300 रु. में बचता है तो व्यक्ति पर आयकर प्रतिशत",
+  "stem_hi": "एक व्यक्ति का आयकर मूल 450 रु. है और दानकर 300 रु. में बचता है तो व्यक्ति पर आयकर प्रतिशत",
+  "options": [
+   {
+    "label": "A",
+    "text": "33 \\frac{1}{2} %"
+   },
+   {
+    "label": "B",
+    "text": "150 रु."
+   },
+   {
+    "label": "C",
+    "text": "25%"
+   },
+   {
+    "label": "D",
+    "text": "33 \\frac{1}{3} %"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "33 \\frac{1}{2} %"
+   },
+   {
+    "label": "B",
+    "text": "150 रु."
+   },
+   {
+    "label": "C",
+    "text": "25%"
+   },
+   {
+    "label": "D",
+    "text": "33 \\frac{1}{3} %"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Arithmetic",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 21,
+  "page": 3,
+  "stem": "5,000 ₹ का 8% वार्षिक ब्याज की दर से 2 वर्ष में चक्रवृद्धि ब्याज होगा",
+  "stem_hi": "5,000 ₹ का 8% वार्षिक ब्याज की दर से 2 वर्ष में चक्रवृद्धि ब्याज होगा",
+  "options": [
+   {
+    "label": "A",
+    "text": "800 ₹"
+   },
+   {
+    "label": "B",
+    "text": "825 ₹"
+   },
+   {
+    "label": "C",
+    "text": "832 ₹"
+   },
+   {
+    "label": "D",
+    "text": "850 ₹"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "800 ₹"
+   },
+   {
+    "label": "B",
+    "text": "825 ₹"
+   },
+   {
+    "label": "C",
+    "text": "832 ₹"
+   },
+   {
+    "label": "D",
+    "text": "850 ₹"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Percentage/Profit-Loss",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 22,
+  "page": 3,
+  "stem": "250 ग्राम 10 किलो ग्राम का कितना प्रतिशत है ?",
+  "stem_hi": "250 ग्राम 10 किलो ग्राम का कितना प्रतिशत है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "25%"
+   },
+   {
+    "label": "B",
+    "text": "10%"
+   },
+   {
+    "label": "C",
+    "text": "2.5%"
+   },
+   {
+    "label": "D",
+    "text": "5%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "25%"
+   },
+   {
+    "label": "B",
+    "text": "10%"
+   },
+   {
+    "label": "C",
+    "text": "2.5%"
+   },
+   {
+    "label": "D",
+    "text": "5%"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Percentage/Profit-Loss",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 24,
+  "page": 3,
+  "stem": "एक सामान की कीमत 690 ₹ है। इस पर 15% वैट लगाने के बाद कितनी कीमत हो जाएगी ?",
+  "stem_hi": "एक सामान की कीमत 690 ₹ है। इस पर 15% वैट लगाने के बाद कितनी कीमत हो जाएगी ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "793.50 ₹"
+   },
+   {
+    "label": "B",
+    "text": "700 ₹"
+   },
+   {
+    "label": "C",
+    "text": "705 ₹"
+   },
+   {
+    "label": "D",
+    "text": "800 ₹"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "793.50 ₹"
+   },
+   {
+    "label": "B",
+    "text": "700 ₹"
+   },
+   {
+    "label": "C",
+    "text": "705 ₹"
+   },
+   {
+    "label": "D",
+    "text": "800 ₹"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 25,
+  "page": 3,
+  "stem": "राम को अगले साल का 20% कम मिलता है। उसमें से 25% खर्च करने के बाद उसके पास 2,400 ₹ है। तो उसका वेतन कितना था ?",
+  "stem_hi": "राम को अगले साल का 20% कम मिलता है। उसमें से 25% खर्च करने के बाद उसके पास 2,400 ₹ है। तो उसका वेतन कितना था ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "6,000 ₹"
+   },
+   {
+    "label": "B",
+    "text": "4,000 ₹"
+   },
+   {
+    "label": "C",
+    "text": "1,080 ₹"
+   },
+   {
+    "label": "D",
+    "text": "5,000 ₹"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "6,000 ₹"
+   },
+   {
+    "label": "B",
+    "text": "4,000 ₹"
+   },
+   {
+    "label": "C",
+    "text": "1,080 ₹"
+   },
+   {
+    "label": "D",
+    "text": "5,000 ₹"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Arithmetic",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 28,
+  "page": 3,
+  "stem": "एक कार की कीमत 5 लाख रुपये है। उस पर 15% टैक्स लगाकर उसकी कीमत कितनी होगी ?",
+  "stem_hi": "एक कार की कीमत 5 लाख रुपये है। उस पर 15% टैक्स लगाकर उसकी कीमत कितनी होगी ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "7,500 ₹"
+   },
+   {
+    "label": "B",
+    "text": "5 लाख 75,000 ₹"
+   },
+   {
+    "label": "C",
+    "text": "75,000 ₹"
+   },
+   {
+    "label": "D",
+    "text": "4 लाख 25,000 ₹"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "7,500 ₹"
+   },
+   {
+    "label": "B",
+    "text": "5 लाख 75,000 ₹"
+   },
+   {
+    "label": "C",
+    "text": "75,000 ₹"
+   },
+   {
+    "label": "D",
+    "text": "4 लाख 25,000 ₹"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Arithmetic",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 29,
+  "page": 3,
+  "stem": "A और B के काम का अनुपात 100 : 150 है तो A और B के समय का अनुपात",
+  "stem_hi": "A और B के काम का अनुपात 100 : 150 है तो A और B के समय का अनुपात",
+  "options": [
+   {
+    "label": "A",
+    "text": "1 \\frac{1}{3} : \\frac{2}{3}"
+   },
+   {
+    "label": "B",
+    "text": "1 : 2"
+   },
+   {
+    "label": "C",
+    "text": "10 : 6"
+   },
+   {
+    "label": "D",
+    "text": "2 : 3"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1 \\frac{1}{3} : \\frac{2}{3}"
+   },
+   {
+    "label": "B",
+    "text": "1 : 2"
+   },
+   {
+    "label": "C",
+    "text": "10 : 6"
+   },
+   {
+    "label": "D",
+    "text": "2 : 3"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "ratio_average",
+   "topic": "Ratio/Average",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 30,
+  "page": 3,
+  "stem": "एक वस्तु का दाम 20% बढ़ाकर 20% घटाकर पहले जैसा जाता है, तो उसे लाभ होगा या हानि ?",
+  "stem_hi": "एक वस्तु का दाम 20% बढ़ाकर 20% घटाकर पहले जैसा जाता है, तो उसे लाभ होगा या हानि ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "4% लाभ"
+   },
+   {
+    "label": "B",
+    "text": "4% हानि"
+   },
+   {
+    "label": "C",
+    "text": "कोई परिवर्तन नहीं"
+   },
+   {
+    "label": "D",
+    "text": "A और B दोनों है"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "4% लाभ"
+   },
+   {
+    "label": "B",
+    "text": "4% हानि"
+   },
+   {
+    "label": "C",
+    "text": "कोई परिवर्तन नहीं"
+   },
+   {
+    "label": "D",
+    "text": "A और B दोनों है"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 31,
+  "page": 4,
+  "stem": "अंतर्राष्ट्रीय महिला दिवस मनाया जाता है ?",
+  "stem_hi": "International Women's Day is celebrated on?",
+  "options": [
+   {
+    "label": "A",
+    "text": "22 मार्च"
+   },
+   {
+    "label": "B",
+    "text": "8 मार्च"
+   },
+   {
+    "label": "C",
+    "text": "1 मई"
+   },
+   {
+    "label": "D",
+    "text": "27 मार्च"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "22 March"
+   },
+   {
+    "label": "B",
+    "text": "8 March"
+   },
+   {
+    "label": "C",
+    "text": "1 May"
+   },
+   {
+    "label": "D",
+    "text": "27 March"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - International",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 32,
+  "page": 4,
+  "stem": "किसने कहा-लोकतंत्र जनता का, जनता के लिए, जनता द्वारा शासन है ?",
+  "stem_hi": "Who said - Democracy is the government of the people, by the people, for the people?",
+  "options": [
+   {
+    "label": "A",
+    "text": "अब्राहम लिंकन"
+   },
+   {
+    "label": "B",
+    "text": "रूस"
+   },
+   {
+    "label": "C",
+    "text": "असत्य"
+   },
+   {
+    "label": "D",
+    "text": "सुखरत"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Abraham Lincoln"
+   },
+   {
+    "label": "B",
+    "text": "Russia"
+   },
+   {
+    "label": "C",
+    "text": "False"
+   },
+   {
+    "label": "D",
+    "text": "Sukhrat"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian Polity",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 33,
+  "page": 4,
+  "stem": "T-20 विश्व कप 2024 फाइनल किस दो देशों के बीच हुआ था ?",
+  "stem_hi": "Which two countries played in the final of the T-20 World Cup 2024?",
+  "options": [
+   {
+    "label": "A",
+    "text": "भारत-आयरलैंड"
+   },
+   {
+    "label": "B",
+    "text": "भारत-दीक्षा अफ्रीका"
+   },
+   {
+    "label": "C",
+    "text": "इंग्लैंड-न्यूजीलैंड"
+   },
+   {
+    "label": "D",
+    "text": "आयरलैंड-इंग्लैंड"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "India-Ireland"
+   },
+   {
+    "label": "B",
+    "text": "India-South Africa"
+   },
+   {
+    "label": "C",
+    "text": "England-New Zealand"
+   },
+   {
+    "label": "D",
+    "text": "Ireland-England"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - International",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 34,
+  "page": 4,
+  "stem": "बाल गंगाधर तिलक का उपनाम बताइए !",
+  "stem_hi": "What is the nickname of Bal Gangadhar Tilak?",
+  "options": [
+   {
+    "label": "A",
+    "text": "सदार"
+   },
+   {
+    "label": "B",
+    "text": "गाय बहादुर"
+   },
+   {
+    "label": "C",
+    "text": "लोकमान्य"
+   },
+   {
+    "label": "D",
+    "text": "देवदूत"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Sadar"
+   },
+   {
+    "label": "B",
+    "text": "Gai Bahadur"
+   },
+   {
+    "label": "C",
+    "text": "Lokmanya"
+   },
+   {
+    "label": "D",
+    "text": "Devdhoot"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian History",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 35,
+  "page": 4,
+  "stem": "सिद्धांत की खोज किसने की ?",
+  "stem_hi": "Who discovered the principle?",
+  "options": [
+   {
+    "label": "A",
+    "text": "न्यूटन"
+   },
+   {
+    "label": "B",
+    "text": "हॉइन्स"
+   },
+   {
+    "label": "C",
+    "text": "मैक्स प्लैंक"
+   },
+   {
+    "label": "D",
+    "text": "गुटेनबर्ग"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Newton"
+   },
+   {
+    "label": "B",
+    "text": "Heins"
+   },
+   {
+    "label": "C",
+    "text": "Max Planck"
+   },
+   {
+    "label": "D",
+    "text": "Gutenberg"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 36,
+  "page": 4,
+  "stem": "भारत में स्वतंत्रता संग्राम की घोषणा कब हुई थी ?",
+  "stem_hi": "When was the declaration of the freedom struggle in India made?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1947"
+   },
+   {
+    "label": "B",
+    "text": "1950"
+   },
+   {
+    "label": "C",
+    "text": "1975"
+   },
+   {
+    "label": "D",
+    "text": "2000"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1947"
+   },
+   {
+    "label": "B",
+    "text": "1950"
+   },
+   {
+    "label": "C",
+    "text": "1975"
+   },
+   {
+    "label": "D",
+    "text": "2000"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian History",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 37,
+  "page": 4,
+  "stem": "1857 ई. विद्रोह के कारणों में ?",
+  "stem_hi": "What were the reasons for the 1857 revolt?",
+  "options": [
+   {
+    "label": "A",
+    "text": "सहजानंद गाधी"
+   },
+   {
+    "label": "B",
+    "text": "बाबू कुंवर सिंह"
+   },
+   {
+    "label": "C",
+    "text": "जयप्रकाश नारायण"
+   },
+   {
+    "label": "D",
+    "text": "मोती लाल नेहरू"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Sahajanand Gandhi"
+   },
+   {
+    "label": "B",
+    "text": "Babu Kunwar Singh"
+   },
+   {
+    "label": "C",
+    "text": "Jayaprakash Narayan"
+   },
+   {
+    "label": "D",
+    "text": "Motilal Nehru"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar History",
+   "difficulty": 2,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 38,
+  "page": 4,
+  "stem": "हर-घर तिरंगा का प्राथमिक उद्देश्य क्या है ?",
+  "stem_hi": "What is the primary objective of Har-Ghar Tiranga?",
+  "options": [
+   {
+    "label": "A",
+    "text": "भारत में पर्यटक को बढ़ावा देना"
+   },
+   {
+    "label": "B",
+    "text": "नागरिकों में देश भक्ति की भावना को मजबूत करना"
+   },
+   {
+    "label": "C",
+    "text": "भारतीय संस्कृति का मानना"
+   },
+   {
+    "label": "D",
+    "text": "राष्ट्रीय सांस्कृतिक विरासत को स्थापित करना"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Promote tourism in India"
+   },
+   {
+    "label": "B",
+    "text": "Strengthen the feeling of patriotism among citizens"
+   },
+   {
+    "label": "C",
+    "text": "Believe in Indian culture"
+   },
+   {
+    "label": "D",
+    "text": "Establish national cultural heritage"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 39,
+  "page": 4,
+  "stem": "गंगा के प्रदूषण के कारण क्या हैं ?",
+  "stem_hi": "What are the causes of pollution in the Ganges?",
+  "options": [
+   {
+    "label": "A",
+    "text": "शहरों का कचरा"
+   },
+   {
+    "label": "B",
+    "text": "मूत्रों की रास"
+   },
+   {
+    "label": "C",
+    "text": "उद्योगों का रासायनिक उत्सर्जन"
+   },
+   {
+    "label": "D",
+    "text": "इनसे से सभी"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Waste from cities"
+   },
+   {
+    "label": "B",
+    "text": "Urine waste"
+   },
+   {
+    "label": "C",
+    "text": "Chemical effluents from industries"
+   },
+   {
+    "label": "D",
+    "text": "All of these"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Environment",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 40,
+  "page": 5,
+  "stem": "पता हवाï अड़डे का नाम क्या है ?",
+  "stem_hi": "What is the name of the air dock?",
+  "options": [
+   {
+    "label": "A",
+    "text": "जवाहरलाल नहरू अंतरराष्ट्रीय हवाई अड्डा"
+   },
+   {
+    "label": "B",
+    "text": "इंदिरा गांधी अंतरराष्ट्रीय हवाई अड्डा"
+   },
+   {
+    "label": "C",
+    "text": "केम्पेगौड़ा विमानक्षेत्र"
+   },
+   {
+    "label": "D",
+    "text": "नैतिकता सुघड़ता अंतरराष्ट्रीय हवाई अड्डा"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Jawaharlal Nehru International Airport"
+   },
+   {
+    "label": "B",
+    "text": "Indira Gandhi International Airport"
+   },
+   {
+    "label": "C",
+    "text": "Kempegowda International Airport"
+   },
+   {
+    "label": "D",
+    "text": "Naitikta Sughadta International Airport"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar GK",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 41,
+  "page": 5,
+  "stem": "किसी वस्तु का प्रतिविभाग सामान्य मुख्य के नेत्र के किस भाग पर बनता है ?",
+  "stem_hi": "In which part of the eye does the image of an object form?",
+  "options": [
+   {
+    "label": "A",
+    "text": "कार्निया"
+   },
+   {
+    "label": "B",
+    "text": "पुतली"
+   },
+   {
+    "label": "C",
+    "text": "रेटिना"
+   },
+   {
+    "label": "D",
+    "text": "आइसिस"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Cornea"
+   },
+   {
+    "label": "B",
+    "text": "Pupil"
+   },
+   {
+    "label": "C",
+    "text": "Retina"
+   },
+   {
+    "label": "D",
+    "text": "Iris"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Biology",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 42,
+  "page": 5,
+  "stem": "लोकसभा चुनाव 2024, कितने चरणों में आयोजित किया जाएगा ?",
+  "stem_hi": "In how many phases will the Lok Sabha elections 2024 be conducted?",
+  "options": [
+   {
+    "label": "A",
+    "text": "7 चरण"
+   },
+   {
+    "label": "B",
+    "text": "9 चरण"
+   },
+   {
+    "label": "C",
+    "text": "10 चरण"
+   },
+   {
+    "label": "D",
+    "text": "12 चरण"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "7 phases"
+   },
+   {
+    "label": "B",
+    "text": "9 phases"
+   },
+   {
+    "label": "C",
+    "text": "10 phases"
+   },
+   {
+    "label": "D",
+    "text": "12 phases"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 43,
+  "page": 5,
+  "stem": "भारतीय लोकलुभाव की विशेषताएँ क्या हैं ?",
+  "stem_hi": "What are the characteristics of Indian local governance?",
+  "options": [
+   {
+    "label": "A",
+    "text": "गरीबी"
+   },
+   {
+    "label": "B",
+    "text": "जातिवाद"
+   },
+   {
+    "label": "C",
+    "text": "अपराधीकरण"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से सभी"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Poverty"
+   },
+   {
+    "label": "B",
+    "text": "Casteism"
+   },
+   {
+    "label": "C",
+    "text": "Criminalization"
+   },
+   {
+    "label": "D",
+    "text": "All of these"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Polity/Schemes",
+   "difficulty": 2,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 44,
+  "page": 5,
+  "stem": "भारतीय रिजर्व बैंक के वर्तमान गवर्नर कौन हैं ?",
+  "stem_hi": "Who is the current governor of the Reserve Bank of India?",
+  "options": [
+   {
+    "label": "A",
+    "text": "अर्जित पटेल"
+   },
+   {
+    "label": "B",
+    "text": "श्रीकांत दास"
+   },
+   {
+    "label": "C",
+    "text": "रघुराम राजन"
+   },
+   {
+    "label": "D",
+    "text": "डॉ. सुब्बाराव"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Arjit Patel"
+   },
+   {
+    "label": "B",
+    "text": "Shri Kanta Das"
+   },
+   {
+    "label": "C",
+    "text": "Raghuram Rajan"
+   },
+   {
+    "label": "D",
+    "text": "Dr. Subbarao"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 45,
+  "page": 5,
+  "stem": "जलवायु परिवर्तन का हल निकालने के लिए क्या किया गया था ?",
+  "stem_hi": "What was done to address climate change?",
+  "options": [
+   {
+    "label": "A",
+    "text": "13 अप्रैल 1919"
+   },
+   {
+    "label": "B",
+    "text": "15 अप्रैल 1919"
+   },
+   {
+    "label": "C",
+    "text": "13 मई 1919"
+   },
+   {
+    "label": "D",
+    "text": "15 मई 1919"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "April 13, 1919"
+   },
+   {
+    "label": "B",
+    "text": "April 15, 1919"
+   },
+   {
+    "label": "C",
+    "text": "May 13, 1919"
+   },
+   {
+    "label": "D",
+    "text": "May 15, 1919"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 46,
+  "page": 5,
+  "stem": "चंपारण सत्याग्रह कब हुआ था ?",
+  "stem_hi": "When did the Champaran Satyagraha take place?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1915"
+   },
+   {
+    "label": "B",
+    "text": "1917"
+   },
+   {
+    "label": "C",
+    "text": "1919"
+   },
+   {
+    "label": "D",
+    "text": "1921"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1915"
+   },
+   {
+    "label": "B",
+    "text": "1917"
+   },
+   {
+    "label": "C",
+    "text": "1919"
+   },
+   {
+    "label": "D",
+    "text": "1921"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar History",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 47,
+  "page": 5,
+  "stem": "बिहार में जूता कारखाना कहाँ स्थापित है ?",
+  "stem_hi": "Where is the shoe factory established in Bihar?",
+  "options": [
+   {
+    "label": "A",
+    "text": "पटना"
+   },
+   {
+    "label": "B",
+    "text": "बिहार"
+   },
+   {
+    "label": "C",
+    "text": "सारण"
+   },
+   {
+    "label": "D",
+    "text": "गया"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Patna"
+   },
+   {
+    "label": "B",
+    "text": "Bihar"
+   },
+   {
+    "label": "C",
+    "text": "Saran"
+   },
+   {
+    "label": "D",
+    "text": "Gaya"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Polity/Schemes",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 48,
+  "page": 5,
+  "stem": "इनमें से कौन बहुउद्देशीय कंपनी है ?",
+  "stem_hi": "Which of these is a multi-purpose company?",
+  "options": [
+   {
+    "label": "A",
+    "text": "कोई मेटल्स"
+   },
+   {
+    "label": "B",
+    "text": "सैमसंग"
+   },
+   {
+    "label": "C",
+    "text": "कोका कोला"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से सभी"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Any Metals"
+   },
+   {
+    "label": "B",
+    "text": "Samsung"
+   },
+   {
+    "label": "C",
+    "text": "Coca-Cola"
+   },
+   {
+    "label": "D",
+    "text": "All of these"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 49,
+  "page": 5,
+  "stem": "वायुमंडलीय दबाव को नापने का यंत्र कहलाता है",
+  "stem_hi": "The instrument used to measure atmospheric pressure is called",
+  "options": [
+   {
+    "label": "A",
+    "text": "बारोमीटर"
+   },
+   {
+    "label": "B",
+    "text": "थर्मामीटर"
+   },
+   {
+    "label": "C",
+    "text": "क्रोनोमीटर"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से सभी"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Barometer"
+   },
+   {
+    "label": "B",
+    "text": "Thermometer"
+   },
+   {
+    "label": "C",
+    "text": "Chronometer"
+   },
+   {
+    "label": "D",
+    "text": "All of these"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 50,
+  "page": 6,
+  "stem": "नम्रता बचतों और ओटलों के नाम कौन थे ?",
+  "stem_hi": "नम्रता बचतों और ओटलों के नाम कौन थे ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "गौरा देवी"
+   },
+   {
+    "label": "B",
+    "text": "बाबा आमटे"
+   },
+   {
+    "label": "C",
+    "text": "सुदृश्तल बहुगुणा"
+   },
+   {
+    "label": "D",
+    "text": "मैरिजी दैसाई"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "गौरा देवी"
+   },
+   {
+    "label": "B",
+    "text": "बाबा आमटे"
+   },
+   {
+    "label": "C",
+    "text": "सुदृश्तल बहुगुणा"
+   },
+   {
+    "label": "D",
+    "text": "मैरिजी दैसाई"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar GK",
+   "difficulty": 2,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 51,
+  "page": 6,
+  "stem": "1 मई को कौन-सा दिवस मनाया जाता है ?",
+  "stem_hi": "1 मई को कौन-सा दिवस मनाया जाता है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "अंतर्राष्ट्रीय दिवस"
+   },
+   {
+    "label": "B",
+    "text": "बिहार दिवस"
+   },
+   {
+    "label": "C",
+    "text": "मजदूर दिवस"
+   },
+   {
+    "label": "D",
+    "text": "श्रम दिवस"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अंतर्राष्ट्रीय दिवस"
+   },
+   {
+    "label": "B",
+    "text": "बिहार दिवस"
+   },
+   {
+    "label": "C",
+    "text": "मजदूर दिवस"
+   },
+   {
+    "label": "D",
+    "text": "श्रम दिवस"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 52,
+  "page": 6,
+  "stem": "आओलंपिक 2024 में भारत को किस खेल विधा में भारत का कौन सा पदक नहीं मिला ?",
+  "stem_hi": "आओलंपिक 2024 में भारत को किस खेल विधा में भारत का कौन सा पदक नहीं मिला ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "शूटिंग"
+   },
+   {
+    "label": "B",
+    "text": "हॉकी"
+   },
+   {
+    "label": "C",
+    "text": "भाला-फेंक"
+   },
+   {
+    "label": "D",
+    "text": "कुश्ती"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "शूटिंग"
+   },
+   {
+    "label": "B",
+    "text": "हॉकी"
+   },
+   {
+    "label": "C",
+    "text": "भाला-फेंक"
+   },
+   {
+    "label": "D",
+    "text": "कुश्ती"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - International",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 53,
+  "page": 6,
+  "stem": "ATM क्या है ?",
+  "stem_hi": "ATM क्या है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Automated Teller Machine"
+   },
+   {
+    "label": "B",
+    "text": "Automatic Tool Machine"
+   },
+   {
+    "label": "C",
+    "text": "Anti Tax Money"
+   },
+   {
+    "label": "D",
+    "text": "Arms Teller Machine"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Automated Teller Machine"
+   },
+   {
+    "label": "B",
+    "text": "Automatic Tool Machine"
+   },
+   {
+    "label": "C",
+    "text": "Anti Tax Money"
+   },
+   {
+    "label": "D",
+    "text": "Arms Teller Machine"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 54,
+  "page": 6,
+  "stem": "मेट्रिक्स के चालकों के सामने क्या रहता है ?",
+  "stem_hi": "मेट्रिक्स के चालकों के सामने क्या रहता है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "समस्त चक्र"
+   },
+   {
+    "label": "B",
+    "text": "जटिल चक्र"
+   },
+   {
+    "label": "C",
+    "text": "अविकृत चक्र"
+   },
+   {
+    "label": "D",
+    "text": "जटिल लेंस"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "समस्त चक्र"
+   },
+   {
+    "label": "B",
+    "text": "जटिल चक्र"
+   },
+   {
+    "label": "C",
+    "text": "अविकृत चक्र"
+   },
+   {
+    "label": "D",
+    "text": "जटिल लेंस"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Science",
+   "type": "matrix_puzzle",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 55,
+  "page": 6,
+  "stem": "आमदनी कर क्या है ?",
+  "stem_hi": "आमदनी कर क्या है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "बाद फिनांस"
+   },
+   {
+    "label": "B",
+    "text": "दृश्य वित्त"
+   },
+   {
+    "label": "C",
+    "text": "बैंक का खाता"
+   },
+   {
+    "label": "D",
+    "text": "इसे में कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "बाद फिनांस"
+   },
+   {
+    "label": "B",
+    "text": "दृश्य वित्त"
+   },
+   {
+    "label": "C",
+    "text": "बैंक का खाता"
+   },
+   {
+    "label": "D",
+    "text": "इसे में कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Polity/Schemes",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 56,
+  "page": 6,
+  "stem": "इससे के वर्तमान मुद्दा अध्ययन क्या हैं ?",
+  "stem_hi": "इससे के वर्तमान मुद्दा अध्ययन क्या हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "डॉ. तिवारी"
+   },
+   {
+    "label": "B",
+    "text": "डॉ. एस. पी. सुमन"
+   },
+   {
+    "label": "C",
+    "text": "श्रेणी नायक"
+   },
+   {
+    "label": "D",
+    "text": "डॉ. महावीर नायर"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "डॉ. तिवारी"
+   },
+   {
+    "label": "B",
+    "text": "डॉ. एस. पी. सुमन"
+   },
+   {
+    "label": "C",
+    "text": "श्रेणी नायक"
+   },
+   {
+    "label": "D",
+    "text": "डॉ. महावीर नायर"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 57,
+  "page": 6,
+  "stem": "भारत के केंद्रीय बैंक कौन-सा है ?",
+  "stem_hi": "भारत के केंद्रीय बैंक कौन-सा है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "रिजर्व बैंक ऑफ इंडिया"
+   },
+   {
+    "label": "B",
+    "text": "स्टेट बैंक ऑफ इंडिया"
+   },
+   {
+    "label": "C",
+    "text": "आईडीबीआई बैंक"
+   },
+   {
+    "label": "D",
+    "text": "जैनब बैंक"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रिजर्व बैंक ऑफ इंडिया"
+   },
+   {
+    "label": "B",
+    "text": "स्टेट बैंक ऑफ इंडिया"
+   },
+   {
+    "label": "C",
+    "text": "आईडीबीआई बैंक"
+   },
+   {
+    "label": "D",
+    "text": "जैनब बैंक"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 58,
+  "page": 6,
+  "stem": "प्रकाश की किरण गमन करती है",
+  "stem_hi": "प्रकाश की किरण गमन करती है",
+  "options": [
+   {
+    "label": "A",
+    "text": "सिद्धांत में"
+   },
+   {
+    "label": "B",
+    "text": "दृश्य में"
+   },
+   {
+    "label": "C",
+    "text": "किसी भी दृश्य में"
+   },
+   {
+    "label": "D",
+    "text": "इसे में कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "सिद्धांत में"
+   },
+   {
+    "label": "B",
+    "text": "दृश्य में"
+   },
+   {
+    "label": "C",
+    "text": "किसी भी दृश्य में"
+   },
+   {
+    "label": "D",
+    "text": "इसे में कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 59,
+  "page": 6,
+  "stem": "कौन किस देश की मुद्रा है ?",
+  "stem_hi": "कौन किस देश की मुद्रा है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "रुपया"
+   },
+   {
+    "label": "B",
+    "text": "भारत"
+   },
+   {
+    "label": "C",
+    "text": "इक्विप"
+   },
+   {
+    "label": "D",
+    "text": "इंडर"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रुपया"
+   },
+   {
+    "label": "B",
+    "text": "भारत"
+   },
+   {
+    "label": "C",
+    "text": "इक्विप"
+   },
+   {
+    "label": "D",
+    "text": "इंडर"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "match_the_pairs",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 60,
+  "page": 7,
+  "stem": "राज्यसभा के सदस्य कौन है ?",
+  "stem_hi": "राज्यसभा के सदस्य कौन है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "अमित बिस्वास"
+   },
+   {
+    "label": "B",
+    "text": "मिन्हाज सिद्दीक"
+   },
+   {
+    "label": "C",
+    "text": "जयन्ति धनराजे"
+   },
+   {
+    "label": "D",
+    "text": "विजयलक्ष्मी"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अमित बिस्वास"
+   },
+   {
+    "label": "B",
+    "text": "मिन्हाज सिद्दीक"
+   },
+   {
+    "label": "C",
+    "text": "जयन्ति धनराजे"
+   },
+   {
+    "label": "D",
+    "text": "विजयलक्ष्मी"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 61,
+  "page": 7,
+  "stem": "'कब' या 'कब' नारा किसने दिया ?",
+  "stem_hi": "'कब' या 'कब' नारा किसने दिया ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "तिलक"
+   },
+   {
+    "label": "B",
+    "text": "राजेंद्र प्रसाद"
+   },
+   {
+    "label": "C",
+    "text": "महात्मा गांधी"
+   },
+   {
+    "label": "D",
+    "text": "गोडसे"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "तिलक"
+   },
+   {
+    "label": "B",
+    "text": "राजेंद्र प्रसाद"
+   },
+   {
+    "label": "C",
+    "text": "महात्मा गांधी"
+   },
+   {
+    "label": "D",
+    "text": "गोडसे"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar History",
+   "difficulty": 2,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 62,
+  "page": 7,
+  "stem": "फिल्म में खरीद फरोख्त कौन-सा है ?",
+  "stem_hi": "फिल्म में खरीद फरोख्त कौन-सा है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "है"
+   },
+   {
+    "label": "B",
+    "text": "तलाक"
+   },
+   {
+    "label": "C",
+    "text": "जो"
+   },
+   {
+    "label": "D",
+    "text": "धन"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "है"
+   },
+   {
+    "label": "B",
+    "text": "तलाक"
+   },
+   {
+    "label": "C",
+    "text": "जो"
+   },
+   {
+    "label": "D",
+    "text": "धन"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "odd_one_out",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 63,
+  "page": 7,
+  "stem": "व्यवसायिक योग विद्यालय कहाँ स्थापित है ?",
+  "stem_hi": "व्यवसायिक योग विद्यालय कहाँ स्थापित है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "पटना"
+   },
+   {
+    "label": "B",
+    "text": "मुंगेर"
+   },
+   {
+    "label": "C",
+    "text": "सुपौल"
+   },
+   {
+    "label": "D",
+    "text": "किशनगंज"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पटना"
+   },
+   {
+    "label": "B",
+    "text": "मुंगेर"
+   },
+   {
+    "label": "C",
+    "text": "सुपौल"
+   },
+   {
+    "label": "D",
+    "text": "किशनगंज"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Polity/Schemes",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 64,
+  "page": 7,
+  "stem": "चौली-चौरा कांड के बाद गांधीजी ने किस आंदोलन को प्रारंभ किया ?",
+  "stem_hi": "चौली-चौरा कांड के बाद गांधीजी ने किस आंदोलन को प्रारंभ किया ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "विद्यार्थी आंदोलन"
+   },
+   {
+    "label": "B",
+    "text": "असहयोग आंदोलन"
+   },
+   {
+    "label": "C",
+    "text": "सत्याग्रह आंदोलन"
+   },
+   {
+    "label": "D",
+    "text": "भारत छोड़ो आंदोलन"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "विद्यार्थी आंदोलन"
+   },
+   {
+    "label": "B",
+    "text": "असहयोग आंदोलन"
+   },
+   {
+    "label": "C",
+    "text": "सत्याग्रह आंदोलन"
+   },
+   {
+    "label": "D",
+    "text": "भारत छोड़ो आंदोलन"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar History",
+   "difficulty": 2,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 65,
+  "page": 7,
+  "stem": "भारत में संधीय व्यवसाय किस देश के मॉडल पर आधारित है ?",
+  "stem_hi": "भारत में संधीय व्यवसाय किस देश के मॉडल पर आधारित है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "कनाडा"
+   },
+   {
+    "label": "B",
+    "text": "ब्रिटेन"
+   },
+   {
+    "label": "C",
+    "text": "अमेरिका"
+   },
+   {
+    "label": "D",
+    "text": "जापान"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कनाडा"
+   },
+   {
+    "label": "B",
+    "text": "ब्रिटेन"
+   },
+   {
+    "label": "C",
+    "text": "अमेरिका"
+   },
+   {
+    "label": "D",
+    "text": "जापान"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian Polity",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 66,
+  "page": 7,
+  "stem": "फिल्म में प्रायोगिक संधारण बताइए ?",
+  "stem_hi": "फिल्म में प्रायोगिक संधारण बताइए ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "मिट्टी"
+   },
+   {
+    "label": "B",
+    "text": "मानव"
+   },
+   {
+    "label": "C",
+    "text": "इमारत"
+   },
+   {
+    "label": "D",
+    "text": "संपत्ति"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "मिट्टी"
+   },
+   {
+    "label": "B",
+    "text": "मानव"
+   },
+   {
+    "label": "C",
+    "text": "इमारत"
+   },
+   {
+    "label": "D",
+    "text": "संपत्ति"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 67,
+  "page": 7,
+  "stem": "फिल्मों का उद्देश्य क्या था ?",
+  "stem_hi": "फिल्मों का उद्देश्य क्या था ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "मानव अधिकार"
+   },
+   {
+    "label": "B",
+    "text": "राजनैतिक अधिकार"
+   },
+   {
+    "label": "C",
+    "text": "कृषि अधिकार"
+   },
+   {
+    "label": "D",
+    "text": "वन संरक्षण"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "मानव अधिकार"
+   },
+   {
+    "label": "B",
+    "text": "राजनैतिक अधिकार"
+   },
+   {
+    "label": "C",
+    "text": "कृषि अधिकार"
+   },
+   {
+    "label": "D",
+    "text": "वन संरक्षण"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 68,
+  "page": 7,
+  "stem": "मुख्यमंत्री ने बिहार के किस क्षेत्र पर जोर सफ़र का उद्देश्य किया ?",
+  "stem_hi": "मुख्यमंत्री ने बिहार के किस क्षेत्र पर जोर सफ़र का उद्देश्य किया ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "उद्यमी"
+   },
+   {
+    "label": "B",
+    "text": "सामाजिक"
+   },
+   {
+    "label": "C",
+    "text": "राजनैतिक"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "उद्यमी"
+   },
+   {
+    "label": "B",
+    "text": "सामाजिक"
+   },
+   {
+    "label": "C",
+    "text": "राजनैतिक"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Polity/Schemes",
+   "difficulty": 2,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 69,
+  "page": 7,
+  "stem": "स्वतंत्रता की परिभाषा को स्पष्ट करते हुए मानव विचार है",
+  "stem_hi": "स्वतंत्रता की परिभाषा को स्पष्ट करते हुए मानव विचार है",
+  "options": [
+   {
+    "label": "A",
+    "text": "ISI मार्क"
+   },
+   {
+    "label": "B",
+    "text": "हॉल मार्क"
+   },
+   {
+    "label": "C",
+    "text": "पैगाम"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "ISI मार्क"
+   },
+   {
+    "label": "B",
+    "text": "हॉल मार्क"
+   },
+   {
+    "label": "C",
+    "text": "पैगाम"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 70,
+  "page": 7,
+  "stem": "शिक्षा की प्रक्रिया कहाँ स्थापित है ?",
+  "stem_hi": "शिक्षा की प्रक्रिया कहाँ स्थापित है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "साताराम"
+   },
+   {
+    "label": "B",
+    "text": "गया"
+   },
+   {
+    "label": "C",
+    "text": "सहस्त्र"
+   },
+   {
+    "label": "D",
+    "text": "पटना"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "साताराम"
+   },
+   {
+    "label": "B",
+    "text": "गया"
+   },
+   {
+    "label": "C",
+    "text": "सहस्त्र"
+   },
+   {
+    "label": "D",
+    "text": "पटना"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Polity/Schemes",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 71,
+  "page": 8,
+  "stem": "'रस्सान' किस प्रकार के कब्‍ज़ा थे ?",
+  "stem_hi": "'रस्सान' किस प्रकार के कब्‍ज़ा थे ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "ज्याद क़ब्‍ज़ा"
+   },
+   {
+    "label": "B",
+    "text": "गुड़ क़ब्‍ज़ा"
+   },
+   {
+    "label": "C",
+    "text": "ओर रस्‍स के कब्‍ज़ा"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "ज्याद क़ब्‍ज़ा"
+   },
+   {
+    "label": "B",
+    "text": "गुड़ क़ब्‍ज़ा"
+   },
+   {
+    "label": "C",
+    "text": "ओर रस्‍स के कब्‍ज़ा"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 72,
+  "page": 8,
+  "stem": "फिनलिज़्म में से कौन-सा शब्द स्पष्‍ट नहीं है ?",
+  "stem_hi": "फिनलिज़्म में से कौन-सा शब्द स्पष्‍ट नहीं है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "आज़ा"
+   },
+   {
+    "label": "B",
+    "text": "नागरिकता"
+   },
+   {
+    "label": "C",
+    "text": "सरवर"
+   },
+   {
+    "label": "D",
+    "text": "सूचना"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "आज़ा"
+   },
+   {
+    "label": "B",
+    "text": "नागरिकता"
+   },
+   {
+    "label": "C",
+    "text": "सरवर"
+   },
+   {
+    "label": "D",
+    "text": "सूचना"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "odd_one_out",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 73,
+  "page": 8,
+  "stem": "मैं नीर भरी तुत की बदल्‍ती क्‍या की कार्यविधि कौन हैं ?",
+  "stem_hi": "मैं नीर भरी तुत की बदल्‍ती क्‍या की कार्यविधि कौन हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "हिरोइज़्म"
+   },
+   {
+    "label": "B",
+    "text": "महादेवी वर्मा"
+   },
+   {
+    "label": "C",
+    "text": "अनामिका"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "हिरोइज़्म"
+   },
+   {
+    "label": "B",
+    "text": "महादेवी वर्मा"
+   },
+   {
+    "label": "C",
+    "text": "अनामिका"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 74,
+  "page": 8,
+  "stem": "वर्णों के आधार पर 'साक्षी' के कितने भेद हैं ?",
+  "stem_hi": "वर्णों के आधार पर 'साक्षी' के कितने भेद हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "दो"
+   },
+   {
+    "label": "B",
+    "text": "तीन"
+   },
+   {
+    "label": "C",
+    "text": "चार"
+   },
+   {
+    "label": "D",
+    "text": "पाँच"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "दो"
+   },
+   {
+    "label": "B",
+    "text": "तीन"
+   },
+   {
+    "label": "C",
+    "text": "चार"
+   },
+   {
+    "label": "D",
+    "text": "पाँच"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Grammar",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 75,
+  "page": 8,
+  "stem": "‘अंसार एज़ाज़’ मुहावरा का क्‍या अर्थ होगा ?",
+  "stem_hi": "‘अंसार एज़ाज़’ मुहावरा का क्‍या अर्थ होगा ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "धोखा देना"
+   },
+   {
+    "label": "B",
+    "text": "चाल चलना"
+   },
+   {
+    "label": "C",
+    "text": "कठिन परिस्थिति"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "धोखा देना"
+   },
+   {
+    "label": "B",
+    "text": "चाल चलना"
+   },
+   {
+    "label": "C",
+    "text": "कठिन परिस्थिति"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Idioms/Proverbs",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 76,
+  "page": 8,
+  "stem": "‘उद्यम’ का संज्ञा विच्छेद क्‍या होगा ?",
+  "stem_hi": "‘उद्यम’ का संज्ञा विच्छेद क्‍या होगा ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "उद + यम"
+   },
+   {
+    "label": "B",
+    "text": "यु + यम"
+   },
+   {
+    "label": "C",
+    "text": "उद + यम"
+   },
+   {
+    "label": "D",
+    "text": "उद + यम"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "उद + यम"
+   },
+   {
+    "label": "B",
+    "text": "यु + यम"
+   },
+   {
+    "label": "C",
+    "text": "उद + यम"
+   },
+   {
+    "label": "D",
+    "text": "उद + यम"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Grammar",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 77,
+  "page": 8,
+  "stem": "हिंदी में कारक के कितने भेद हैं ?",
+  "stem_hi": "हिंदी में कारक के कितने भेद हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "पाँच"
+   },
+   {
+    "label": "B",
+    "text": "चार"
+   },
+   {
+    "label": "C",
+    "text": "सात"
+   },
+   {
+    "label": "D",
+    "text": "आठ"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पाँच"
+   },
+   {
+    "label": "B",
+    "text": "चार"
+   },
+   {
+    "label": "C",
+    "text": "सात"
+   },
+   {
+    "label": "D",
+    "text": "आठ"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Grammar",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 78,
+  "page": 8,
+  "stem": "रामधारी सिंह 'दिवाकर' का जन्म किस राज्य में हुआ था ?",
+  "stem_hi": "रामधारी सिंह 'दिवाकर' का जन्म किस राज्य में हुआ था ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "उड़ीसा"
+   },
+   {
+    "label": "B",
+    "text": "बिहार"
+   },
+   {
+    "label": "C",
+    "text": "उत्तरप्रदेश"
+   },
+   {
+    "label": "D",
+    "text": "मध्यप्रदेश"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "उड़ीसा"
+   },
+   {
+    "label": "B",
+    "text": "बिहार"
+   },
+   {
+    "label": "C",
+    "text": "उत्तरप्रदेश"
+   },
+   {
+    "label": "D",
+    "text": "मध्यप्रदेश"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 79,
+  "page": 8,
+  "stem": "'आम' किस प्रकार का शब्द है ?",
+  "stem_hi": "'आम' किस प्रकार का शब्द है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "समान"
+   },
+   {
+    "label": "B",
+    "text": "तद्भव"
+   },
+   {
+    "label": "C",
+    "text": "देशज"
+   },
+   {
+    "label": "D",
+    "text": "विदेशी"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "समान"
+   },
+   {
+    "label": "B",
+    "text": "तद्भव"
+   },
+   {
+    "label": "C",
+    "text": "देशज"
+   },
+   {
+    "label": "D",
+    "text": "विदेशी"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 80,
+  "page": 9,
+  "stem": "महात्मा गांधी के पिता का क्या नाम था ?",
+  "stem_hi": "महात्मा गांधी के पिता का क्या नाम था ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "कर्मचंद प्रीतम"
+   },
+   {
+    "label": "B",
+    "text": "कर्मचंद गांधी"
+   },
+   {
+    "label": "C",
+    "text": "मितिलाल नेहरू"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कर्मचंद प्रीतम"
+   },
+   {
+    "label": "B",
+    "text": "कर्मचंद गांधी"
+   },
+   {
+    "label": "C",
+    "text": "मितिलाल नेहरू"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian History",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 81,
+  "page": 9,
+  "stem": "‘छोटे बच्चे सोना’ मुहावरा का क्या अर्थ होगा ?",
+  "stem_hi": "‘छोटे बच्चे सोना’ मुहावरा का क्या अर्थ होगा ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "घोड़ा बेंच देना"
+   },
+   {
+    "label": "B",
+    "text": "सो जाना"
+   },
+   {
+    "label": "C",
+    "text": "सफेद होना"
+   },
+   {
+    "label": "D",
+    "text": "लालबन आ जाना"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "घोड़ा बेंच देना"
+   },
+   {
+    "label": "B",
+    "text": "सो जाना"
+   },
+   {
+    "label": "C",
+    "text": "सफेद होना"
+   },
+   {
+    "label": "D",
+    "text": "लालबन आ जाना"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "match_the_pairs",
+   "topic": "Hindi Idioms/Proverbs",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 82,
+  "page": 9,
+  "stem": "‘स्वागत’ का सही विलोम क्या होगा ?",
+  "stem_hi": "‘स्वागत’ का सही विलोम क्या होगा ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "सु + आगम"
+   },
+   {
+    "label": "B",
+    "text": "स्व + गत"
+   },
+   {
+    "label": "C",
+    "text": "स्व + आगम"
+   },
+   {
+    "label": "D",
+    "text": "स्व + आगम"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "सु + आगम"
+   },
+   {
+    "label": "B",
+    "text": "स्व + गत"
+   },
+   {
+    "label": "C",
+    "text": "स्व + आगम"
+   },
+   {
+    "label": "D",
+    "text": "स्व + आगम"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "odd_one_out",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 83,
+  "page": 9,
+  "stem": "‘खोला’ किस कहानी का भाव है ?",
+  "stem_hi": "‘खोला’ किस कहानी का भाव है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "कफन"
+   },
+   {
+    "label": "B",
+    "text": "विप्र के दांत"
+   },
+   {
+    "label": "C",
+    "text": "महल"
+   },
+   {
+    "label": "D",
+    "text": "सत्यम"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कफन"
+   },
+   {
+    "label": "B",
+    "text": "विप्र के दांत"
+   },
+   {
+    "label": "C",
+    "text": "महल"
+   },
+   {
+    "label": "D",
+    "text": "सत्यम"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 84,
+  "page": 9,
+  "stem": "‘गणेश’ का पर्यायवाची शब्द क्या होगा ?",
+  "stem_hi": "‘गणेश’ का पर्यायवाची शब्द क्या होगा ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "एकदंत"
+   },
+   {
+    "label": "B",
+    "text": "पंकज"
+   },
+   {
+    "label": "C",
+    "text": "धृतद"
+   },
+   {
+    "label": "D",
+    "text": "सिद्धार्थ"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "एकदंत"
+   },
+   {
+    "label": "B",
+    "text": "पंकज"
+   },
+   {
+    "label": "C",
+    "text": "धृतद"
+   },
+   {
+    "label": "D",
+    "text": "सिद्धार्थ"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "analogy",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 85,
+  "page": 9,
+  "stem": "‘भगवान’ किस कहानी का भाव है ?",
+  "stem_hi": "‘भगवान’ किस कहानी का भाव है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "कहानी का लब्बोलुआब"
+   },
+   {
+    "label": "B",
+    "text": "लालपन का बेम"
+   },
+   {
+    "label": "C",
+    "text": "सत्यता"
+   },
+   {
+    "label": "D",
+    "text": "पंच परमेश्वर"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कहानी का लब्बोलुआब"
+   },
+   {
+    "label": "B",
+    "text": "लालपन का बेम"
+   },
+   {
+    "label": "C",
+    "text": "सत्यता"
+   },
+   {
+    "label": "D",
+    "text": "पंच परमेश्वर"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 86,
+  "page": 9,
+  "stem": "‘विषयवस्तु’ किसे कहते हैं ?",
+  "stem_hi": "‘विषयवस्तु’ किसे कहते हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "जो विषयवस्तु बताये"
+   },
+   {
+    "label": "B",
+    "text": "जो चीज़ की विषयवस्तु बताये"
+   },
+   {
+    "label": "C",
+    "text": "जो किसी व्यक्ति की विषयवस्तु बताये"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "जो विषयवस्तु बताये"
+   },
+   {
+    "label": "B",
+    "text": "जो चीज़ की विषयवस्तु बताये"
+   },
+   {
+    "label": "C",
+    "text": "जो किसी व्यक्ति की विषयवस्तु बताये"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 87,
+  "page": 9,
+  "stem": "‘मैं में दो जोड़ना’ मुहावरा का क्या अर्थ होगा ?",
+  "stem_hi": "‘मैं में दो जोड़ना’ मुहावरा का क्या अर्थ होगा ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "मैं में दो जोड़ना"
+   },
+   {
+    "label": "B",
+    "text": "दो में दो जोड़ना"
+   },
+   {
+    "label": "C",
+    "text": "भाग जाना"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "मैं में दो जोड़ना"
+   },
+   {
+    "label": "B",
+    "text": "दो में दो जोड़ना"
+   },
+   {
+    "label": "C",
+    "text": "भाग जाना"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Idioms/Proverbs",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 88,
+  "page": 10,
+  "stem": "गायन में बधाई किसे कहा गया है ?",
+  "stem_hi": "गायन में बधाई किसे कहा गया है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "नाद"
+   },
+   {
+    "label": "B",
+    "text": "बच्चा"
+   },
+   {
+    "label": "C",
+    "text": "पिता को"
+   },
+   {
+    "label": "D",
+    "text": "लड़की को"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "नाद"
+   },
+   {
+    "label": "B",
+    "text": "बच्चा"
+   },
+   {
+    "label": "C",
+    "text": "पिता को"
+   },
+   {
+    "label": "D",
+    "text": "लड़की को"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 89,
+  "page": 10,
+  "stem": "हर तिसरे दिन क्या बढ़ जाते हैं ?",
+  "stem_hi": "हर तिसरे दिन क्या बढ़ जाते हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "दाल"
+   },
+   {
+    "label": "B",
+    "text": "मूँग"
+   },
+   {
+    "label": "C",
+    "text": "नाद"
+   },
+   {
+    "label": "D",
+    "text": "बच्चा"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "दाल"
+   },
+   {
+    "label": "B",
+    "text": "मूँग"
+   },
+   {
+    "label": "C",
+    "text": "नाद"
+   },
+   {
+    "label": "D",
+    "text": "बच्चा"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 90,
+  "page": 10,
+  "stem": "कभी-कभी बच्चे कैसा प्रश्न कर बैठते हैं ?",
+  "stem_hi": "कभी-कभी बच्चे कैसा प्रश्न कर बैठते हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "अच्छा"
+   },
+   {
+    "label": "B",
+    "text": "बुरा"
+   },
+   {
+    "label": "C",
+    "text": "दयानंद"
+   },
+   {
+    "label": "D",
+    "text": "चश्मा में डाल देनेवाला"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अच्छा"
+   },
+   {
+    "label": "B",
+    "text": "बुरा"
+   },
+   {
+    "label": "C",
+    "text": "दयानंद"
+   },
+   {
+    "label": "D",
+    "text": "चश्मा में डाल देनेवाला"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "odd_one_out",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 91,
+  "page": 10,
+  "stem": "गायन में ध्यान किसे कहा गया है ?",
+  "stem_hi": "गायन में ध्यान किसे कहा गया है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "नाद"
+   },
+   {
+    "label": "B",
+    "text": "असली पिता को"
+   },
+   {
+    "label": "C",
+    "text": "माता को"
+   },
+   {
+    "label": "D",
+    "text": "बच्चा को"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "नाद"
+   },
+   {
+    "label": "B",
+    "text": "असली पिता को"
+   },
+   {
+    "label": "C",
+    "text": "माता को"
+   },
+   {
+    "label": "D",
+    "text": "बच्चा को"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 92,
+  "page": 10,
+  "stem": "गायन में 'चुपचाप तंदूर टाकें' वाक्य किसके लिए प्रयुक्त है ?",
+  "stem_hi": "गायन में 'चुपचाप तंदूर टाकें' वाक्य किसके लिए प्रयुक्त है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "बच्चा के लिए"
+   },
+   {
+    "label": "B",
+    "text": "माता के लिए"
+   },
+   {
+    "label": "C",
+    "text": "नाद के लिए"
+   },
+   {
+    "label": "D",
+    "text": "दाल के लिए"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "बच्चा के लिए"
+   },
+   {
+    "label": "B",
+    "text": "माता के लिए"
+   },
+   {
+    "label": "C",
+    "text": "नाद के लिए"
+   },
+   {
+    "label": "D",
+    "text": "दाल के लिए"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 93,
+  "page": 11,
+  "stem": "जो किसी शब्द के पहले आकर उसका विषय और प्रकार बताता है उसे क्या कहते हैं ?",
+  "stem_hi": "What is called that which comes before a word and tells its subject and type?",
+  "options": [
+   {
+    "label": "A",
+    "text": "व्यय"
+   },
+   {
+    "label": "B",
+    "text": "उपसर्ग"
+   },
+   {
+    "label": "C",
+    "text": "क्रिया"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "व्यय"
+   },
+   {
+    "label": "B",
+    "text": "उपसर्ग"
+   },
+   {
+    "label": "C",
+    "text": "क्रिया"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Grammar",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 94,
+  "page": 11,
+  "stem": "कविवृत्ति आत्मिकता के तत्त्व कौन से हैं ?",
+  "stem_hi": "What are the elements of poetic selfhood?",
+  "options": [
+   {
+    "label": "A",
+    "text": "स्वामित्वं कीर्ति"
+   },
+   {
+    "label": "B",
+    "text": "रामचन्द्र गुण"
+   },
+   {
+    "label": "C",
+    "text": "भारत सृजन अप्याल"
+   },
+   {
+    "label": "D",
+    "text": "इजारी प्रतिदि विदेवी"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "स्वामित्वं कीर्ति"
+   },
+   {
+    "label": "B",
+    "text": "रामचन्द्र गुण"
+   },
+   {
+    "label": "C",
+    "text": "भारत सृजन अप्याल"
+   },
+   {
+    "label": "D",
+    "text": "इजारी प्रतिदि विदेवी"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 95,
+  "page": 11,
+  "stem": "‘चौकसी’ कौन-सा समास है ?",
+  "stem_hi": "What type of compound is 'chaukasi'?",
+  "options": [
+   {
+    "label": "A",
+    "text": "द्वंद्व"
+   },
+   {
+    "label": "B",
+    "text": "कर्मधारय"
+   },
+   {
+    "label": "C",
+    "text": "तत्पुरुष"
+   },
+   {
+    "label": "D",
+    "text": "संबंध"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "द्वंद्व"
+   },
+   {
+    "label": "B",
+    "text": "कर्मधारय"
+   },
+   {
+    "label": "C",
+    "text": "तत्पुरुष"
+   },
+   {
+    "label": "D",
+    "text": "संबंध"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "match_the_pairs",
+   "topic": "Hindi Grammar",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 96,
+  "page": 11,
+  "stem": "‘भारतीयता’ कविता के कौन कौन हैं ?",
+  "stem_hi": "Who are the elements of 'Bharatiyata' poetry?",
+  "options": [
+   {
+    "label": "A",
+    "text": "सुगम्यनंदन पंड"
+   },
+   {
+    "label": "B",
+    "text": "हैद्रोज़"
+   },
+   {
+    "label": "C",
+    "text": "दिवाकर"
+   },
+   {
+    "label": "D",
+    "text": "दुकर नारायण"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "सुगम्यनंदन पंड"
+   },
+   {
+    "label": "B",
+    "text": "हैद्रोज़"
+   },
+   {
+    "label": "C",
+    "text": "दिवाकर"
+   },
+   {
+    "label": "D",
+    "text": "दुकर नारायण"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Art & Culture",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 97,
+  "page": 11,
+  "stem": "‘अर्थ’ शब्द का विशेषण क्या होगा ?",
+  "stem_hi": "What will be the adjective of the word 'arth'?",
+  "options": [
+   {
+    "label": "A",
+    "text": "अर्थ"
+   },
+   {
+    "label": "B",
+    "text": "अर्थीगण"
+   },
+   {
+    "label": "C",
+    "text": "अर्थिक"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अर्थ"
+   },
+   {
+    "label": "B",
+    "text": "अर्थीगण"
+   },
+   {
+    "label": "C",
+    "text": "अर्थिक"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "match_the_pairs",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 98,
+  "page": 11,
+  "stem": "‘अर्थ’ का पूंछ नाम क्या था ?",
+  "stem_hi": "What was the tail name of 'arth'?",
+  "options": [
+   {
+    "label": "A",
+    "text": "सिद्धिवादक ‘अर्थ’"
+   },
+   {
+    "label": "B",
+    "text": "हीरानंद ‘अर्थ’"
+   },
+   {
+    "label": "C",
+    "text": "सिद्धिवादक हीरानंद वाद्यय ‘अर्थ’"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "सिद्धिवादक ‘अर्थ’"
+   },
+   {
+    "label": "B",
+    "text": "हीरानंद ‘अर्थ’"
+   },
+   {
+    "label": "C",
+    "text": "सिद्धिवादक हीरानंद वाद्यय ‘अर्थ’"
+   },
+   {
+    "label": "D",
+    "text": "इसमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 99,
+  "page": 11,
+  "stem": "‘पता’ शब्द का कौन-सा अर्थ है ?",
+  "stem_hi": "What is the meaning of the word 'pata'?",
+  "options": [
+   {
+    "label": "A",
+    "text": "व्यक्तिवादक शब्द"
+   },
+   {
+    "label": "B",
+    "text": "जातिवादक शब्द"
+   },
+   {
+    "label": "C",
+    "text": "समूहवादक शब्द"
+   },
+   {
+    "label": "D",
+    "text": "वृत्तिवादक शब्द"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "व्यक्तिवादक शब्द"
+   },
+   {
+    "label": "B",
+    "text": "जातिवादक शब्द"
+   },
+   {
+    "label": "C",
+    "text": "समूहवादक शब्द"
+   },
+   {
+    "label": "D",
+    "text": "वृत्तिवादक शब्द"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 100,
+  "page": 11,
+  "stem": "बाबा साहेब भीमराव अंबेडकर का जन्म किस तिथि को हुआ था ?",
+  "stem_hi": "On which date was Baba Saheb Bhimrao Ambedkar born?",
+  "options": [
+   {
+    "label": "A",
+    "text": "20 अप्रैल"
+   },
+   {
+    "label": "B",
+    "text": "14 अप्रैल"
+   },
+   {
+    "label": "C",
+    "text": "14 मार्च"
+   },
+   {
+    "label": "D",
+    "text": "20 मई"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "20 अप्रैल"
+   },
+   {
+    "label": "B",
+    "text": "14 अप्रैल"
+   },
+   {
+    "label": "C",
+    "text": "14 मार्च"
+   },
+   {
+    "label": "D",
+    "text": "20 मई"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "3102059_10_I.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC 10th Level 2024",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Polity/Schemes",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ }
+]

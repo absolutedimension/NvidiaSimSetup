@@ -1,0 +1,5702 @@
+[
+ {
+  "number": 1,
+  "page": 1,
+  "stem": "Find the divisor, given that the dividend is 2200, remainder is 13 and the divisor is one-third of the quotient.",
+  "stem_hi": "भाजक ज्ञात करें, दिया है भागफल 2200 है, शेषफल 13 है एवं भाजक का एक तिहाई है।",
+  "options": [
+   {
+    "label": "A",
+    "text": "24"
+   },
+   {
+    "label": "B",
+    "text": "27"
+   },
+   {
+    "label": "C",
+    "text": "25"
+   },
+   {
+    "label": "D",
+    "text": "None of these"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "24"
+   },
+   {
+    "label": "B",
+    "text": "27"
+   },
+   {
+    "label": "C",
+    "text": "25"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 2,
+  "page": 1,
+  "stem": "If P, Q, R be whole numbers and P : Q : R = 2 : 3 : 4 and P² + Q² + R² = 11600, then P + Q - R = ?",
+  "stem_hi": "यदि P, Q, R पूर्णांक हैं और P : Q : R = 2 : 3 : 4 एवं P² + Q² + R² = 11600, तो P + Q - R = ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "20"
+   },
+   {
+    "label": "B",
+    "text": "15"
+   },
+   {
+    "label": "C",
+    "text": "16"
+   },
+   {
+    "label": "D",
+    "text": "18"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "20"
+   },
+   {
+    "label": "B",
+    "text": "15"
+   },
+   {
+    "label": "C",
+    "text": "16"
+   },
+   {
+    "label": "D",
+    "text": "18"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 3,
+  "page": 1,
+  "stem": "If the time taken by a 170 m long train travelling at a certain speed to cross a 180 m long stationary train is 15 s, then the speed of the train is?",
+  "stem_hi": "यदि 170 मीटर लंबी ट्रेन को एक निश्चित गति से 180 मीटर लंबी स्थिर ट्रेन को पार करने में 15 सेकंड लगते हैं, तो ट्रेन की गति क्या है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "27 \\frac{1}{3} m/s"
+   },
+   {
+    "label": "B",
+    "text": "13 \\frac{1}{3} m/s"
+   },
+   {
+    "label": "C",
+    "text": "25 \\frac{1}{3} m/s"
+   },
+   {
+    "label": "D",
+    "text": "23 \\frac{1}{3} m/s"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "27 \\frac{1}{3} m/s"
+   },
+   {
+    "label": "B",
+    "text": "13 \\frac{1}{3} m/s"
+   },
+   {
+    "label": "C",
+    "text": "25 \\frac{1}{3} m/s"
+   },
+   {
+    "label": "D",
+    "text": "23 \\frac{1}{3} m/s"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "time_work_speed",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 4,
+  "page": 1,
+  "stem": "If x is any natural number, then x³ - \\frac{1}{x³} will always be greater than or equal to?",
+  "stem_hi": "यदि x कोई प्राकृतिक संख्या है, तो x³ - \\frac{1}{x³} हमेशा से बड़ा या बराबर होगा?",
+  "options": [
+   {
+    "label": "A",
+    "text": "3 \\left( x - 1 \\right)"
+   },
+   {
+    "label": "B",
+    "text": "3 \\left( x + 1 \\right)"
+   },
+   {
+    "label": "C",
+    "text": "x + \\frac{1}{x}"
+   },
+   {
+    "label": "D",
+    "text": "x³ + \\frac{1}{x³}"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "3 \\left( x - 1 \\right)"
+   },
+   {
+    "label": "B",
+    "text": "3 \\left( x + 1 \\right)"
+   },
+   {
+    "label": "C",
+    "text": "x + \\frac{1}{x}"
+   },
+   {
+    "label": "D",
+    "text": "x³ + \\frac{1}{x³}"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 5,
+  "page": 1,
+  "stem": "The ratio x by which the C.P. has to be multiplied to set the S.P., if the profit is 10%, then x = ?",
+  "stem_hi": "वह अनुपात x जिसके द्वारा C.P. को S.P. सेट करने के लिए गुणा किया जाना है, यदि लाभ 10% है, तो x = ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\left( \\frac{11}{10} \\right)²"
+   },
+   {
+    "label": "B",
+    "text": "11"
+   },
+   {
+    "label": "C",
+    "text": "10"
+   },
+   {
+    "label": "D",
+    "text": "9"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "\\left( \\frac{11}{10} \\right)²"
+   },
+   {
+    "label": "B",
+    "text": "11"
+   },
+   {
+    "label": "C",
+    "text": "10"
+   },
+   {
+    "label": "D",
+    "text": "9"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "ratio_average",
+   "topic": "Percentage/Profit-Loss",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 6,
+  "page": 2,
+  "stem": "The cost of two pencils and three erasers is ₹ 18 whereas the cost of one pencil and two erasers is ₹ 11. The cost of each pencil is",
+  "stem_hi": "दो पेंसिल और तीन रबड़ की कीमत ₹ 18 है, जबकि एक पेंसिल और दो रबड़ की कीमत ₹ 11 है। पेंसिल का मूल्य __________ है।",
+  "options": [
+   {
+    "label": "A",
+    "text": "₹ 8"
+   },
+   {
+    "label": "B",
+    "text": "₹ 4"
+   },
+   {
+    "label": "C",
+    "text": "₹ 3"
+   },
+   {
+    "label": "D",
+    "text": "₹ 6"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "₹ 8"
+   },
+   {
+    "label": "B",
+    "text": "₹ 4"
+   },
+   {
+    "label": "C",
+    "text": "₹ 3"
+   },
+   {
+    "label": "D",
+    "text": "₹ 6"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Arithmetic",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 7,
+  "page": 2,
+  "stem": "If a = \\sqrt{11 + \\sqrt{3}}, b = \\sqrt{12 + \\sqrt{2}} and c = \\sqrt{6 + \\sqrt{4}}, then",
+  "stem_hi": "यदि a = \\sqrt{11 + \\sqrt{3}}, b = \\sqrt{12 + \\sqrt{2}} और c = \\sqrt{6 + \\sqrt{4}} हो, तो",
+  "options": [
+   {
+    "label": "A",
+    "text": "a > b > c"
+   },
+   {
+    "label": "B",
+    "text": "c > a > b"
+   },
+   {
+    "label": "C",
+    "text": "a > b < c"
+   },
+   {
+    "label": "D",
+    "text": "a < c > b"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "a > b > c"
+   },
+   {
+    "label": "B",
+    "text": "c > a > b"
+   },
+   {
+    "label": "C",
+    "text": "a > b < c"
+   },
+   {
+    "label": "D",
+    "text": "a < c > b"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "inequality",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 8,
+  "page": 2,
+  "stem": "A person saves 5 min in covering a certain distance by increasing his speed by 20%. The time taken to cover the distance at his usual speed is",
+  "stem_hi": "एक व्यक्ति 20% बढ़ाकर एक निश्चित दूरी को तय करने में 5 मिनट बचाता है। उस दूरी को उसकी सामान्य गति से तय करने में समय __________ है।",
+  "options": [
+   {
+    "label": "A",
+    "text": "50 min"
+   },
+   {
+    "label": "B",
+    "text": "25 min"
+   },
+   {
+    "label": "C",
+    "text": "30 min"
+   },
+   {
+    "label": "D",
+    "text": "45 min"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "50 मिनट"
+   },
+   {
+    "label": "B",
+    "text": "25 मिनट"
+   },
+   {
+    "label": "C",
+    "text": "30 मिनट"
+   },
+   {
+    "label": "D",
+    "text": "45 मिनट"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "time_work_speed",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 9,
+  "page": 2,
+  "stem": "If n is a natural number, then 9^{2n} - 4^{2n} is always divisible by",
+  "stem_hi": "यदि n एक प्राकृतिक संख्या है, तो 9^{2n} - 4^{2n} हमेशा विभाज्य है",
+  "options": [
+   {
+    "label": "A",
+    "text": "5"
+   },
+   {
+    "label": "B",
+    "text": "13"
+   },
+   {
+    "label": "C",
+    "text": "Both (A) and (B)"
+   },
+   {
+    "label": "D",
+    "text": "Neither (A) nor (B)"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "5"
+   },
+   {
+    "label": "B",
+    "text": "13"
+   },
+   {
+    "label": "C",
+    "text": "(A) और (B) दोनों"
+   },
+   {
+    "label": "D",
+    "text": "(A) और (B) में से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 10,
+  "page": 2,
+  "stem": "X bought 5 pencils at ₹ 24 and sold 4 of them at ₹ 20. His profit or loss percentage is",
+  "stem_hi": "X ने 5 पेंसिल ₹ 24 में खरीदी और उनमें से 4 को ₹ 20 में बेचा। उसका लाभ या हानि प्रतिशत __________ है।",
+  "options": [
+   {
+    "label": "A",
+    "text": "Loss 8 \\frac{1}{3} %"
+   },
+   {
+    "label": "B",
+    "text": "Profit 4 \\frac{1}{6} %"
+   },
+   {
+    "label": "C",
+    "text": "Profit 8 \\frac{1}{3} %"
+   },
+   {
+    "label": "D",
+    "text": "Loss 4 \\frac{1}{6} %"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "हानि 8 \\frac{1}{3} %"
+   },
+   {
+    "label": "B",
+    "text": "लाभ 4 \\frac{1}{6} %"
+   },
+   {
+    "label": "C",
+    "text": "लाभ 8 \\frac{1}{3} %"
+   },
+   {
+    "label": "D",
+    "text": "हानि 4 \\frac{1}{6} %"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Arithmetic",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 11,
+  "page": 3,
+  "stem": "1 / \\sqrt{9} + \\frac{1}{\\sqrt{11}} + \\frac{1}{\\sqrt{13}} + ... + \\frac{1}{\\sqrt{2023}} + \\frac{1}{\\sqrt{2025}} =",
+  "stem_hi": "1 / \\sqrt{9} + \\frac{1}{\\sqrt{11}} + \\frac{1}{\\sqrt{13}} + ... + \\frac{1}{\\sqrt{2023}} + \\frac{1}{\\sqrt{2025}} =",
+  "options": [
+   {
+    "label": "A",
+    "text": "35"
+   },
+   {
+    "label": "B",
+    "text": "0"
+   },
+   {
+    "label": "C",
+    "text": "20"
+   },
+   {
+    "label": "D",
+    "text": "21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "35"
+   },
+   {
+    "label": "B",
+    "text": "0"
+   },
+   {
+    "label": "C",
+    "text": "20"
+   },
+   {
+    "label": "D",
+    "text": "21"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 12,
+  "page": 3,
+  "stem": "If x is 50% more than y, then y is less than x by __________ %.",
+  "stem_hi": "यदि x, y से 50% ज्यादा है, तो y, x से __________ % कम है।",
+  "options": [
+   {
+    "label": "A",
+    "text": "66 \\frac{2}{3}"
+   },
+   {
+    "label": "B",
+    "text": "33 \\frac{1}{3}"
+   },
+   {
+    "label": "C",
+    "text": "25"
+   },
+   {
+    "label": "D",
+    "text": "50"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "66 \\frac{2}{3}"
+   },
+   {
+    "label": "B",
+    "text": "33 \\frac{1}{3}"
+   },
+   {
+    "label": "C",
+    "text": "25"
+   },
+   {
+    "label": "D",
+    "text": "50"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 13,
+  "page": 3,
+  "stem": "\\left(\\sqrt{1375} + \\sqrt{1125} - \\sqrt{1375}\\right) is a __________ number.",
+  "stem_hi": "\\left(\\sqrt{1375} + \\sqrt{1125} - \\sqrt{1375}\\right) यह एक __________ संख्या है।",
+  "options": [
+   {
+    "label": "A",
+    "text": "Prime"
+   },
+   {
+    "label": "B",
+    "text": "Irrational"
+   },
+   {
+    "label": "C",
+    "text": "Rational"
+   },
+   {
+    "label": "D",
+    "text": "None of these"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "प्राइम"
+   },
+   {
+    "label": "B",
+    "text": "अव्यक्त"
+   },
+   {
+    "label": "C",
+    "text": "व्यक्त"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 14,
+  "page": 3,
+  "stem": "In a 900 m race, 'A' beats 'B' by 270 m and 'C' by 340 m. 'B' beats 'C' by __________ m in the race.",
+  "stem_hi": "एक 900 मीटर की दौड़ में, 'A' 'B' को 270 मीटर से और 'C' को 340 मीटर से हराता है। 'B' 'C' को दौड़ में __________ मीटर से हराता है।",
+  "options": [
+   {
+    "label": "A",
+    "text": "140"
+   },
+   {
+    "label": "B",
+    "text": "70"
+   },
+   {
+    "label": "C",
+    "text": "200"
+   },
+   {
+    "label": "D",
+    "text": "100"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "140"
+   },
+   {
+    "label": "B",
+    "text": "70"
+   },
+   {
+    "label": "C",
+    "text": "200"
+   },
+   {
+    "label": "D",
+    "text": "100"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "time_work_speed",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 15,
+  "page": 3,
+  "stem": "X marked an article at 60% above its C. P. He sold it at profit after 2 successive discounts of 10% each. The profit percentage is.",
+  "stem_hi": "X ने एक वस्तु को इसकी C. P. से 60% अधिक मूल्य पर चिह्नित किया। उसने इसे 10% की 2 लगातार छूट के बाद लाभ पर बेचा। लाभ प्रतिशत है।",
+  "options": [
+   {
+    "label": "A",
+    "text": "29.6%"
+   },
+   {
+    "label": "B",
+    "text": "40%"
+   },
+   {
+    "label": "C",
+    "text": "35.5%"
+   },
+   {
+    "label": "D",
+    "text": "20%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "29.6%"
+   },
+   {
+    "label": "B",
+    "text": "40%"
+   },
+   {
+    "label": "C",
+    "text": "35.5%"
+   },
+   {
+    "label": "D",
+    "text": "20%"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Arithmetic",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 16,
+  "page": 3,
+  "stem": "The L.C.M. of \\frac{1}{4} and \\frac{2}{5} is.",
+  "stem_hi": "\\frac{1}{4} और \\frac{2}{5} का L.C.M. है।",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{20}"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{10}"
+   },
+   {
+    "label": "D",
+    "text": "2"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{20}"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{10}"
+   },
+   {
+    "label": "D",
+    "text": "2"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 17,
+  "page": 4,
+  "stem": "In a class, the ratio of the number of boys to that of girls is 11 : 9, 30% of the boys and 20% of the girls have passed an examination. The percentage of passed students of the class is",
+  "stem_hi": "एक कक्षा में लड़कों और लड़कियों की संख्या का अनुपात 11 : 9 है | 30% लड़कों ने 20% लड़कियों ने परीक्षा पास की है | कक्षा के पास छात्रों का प्रतिशत है",
+  "options": [
+   {
+    "label": "A",
+    "text": "25.5"
+   },
+   {
+    "label": "B",
+    "text": "23.5"
+   },
+   {
+    "label": "C",
+    "text": "24.5"
+   },
+   {
+    "label": "D",
+    "text": "28.5"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "25.5"
+   },
+   {
+    "label": "B",
+    "text": "23.5"
+   },
+   {
+    "label": "C",
+    "text": "24.5"
+   },
+   {
+    "label": "D",
+    "text": "28.5"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Ratio/Average",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 18,
+  "page": 4,
+  "stem": "LCM of two co-primes x and y is",
+  "stem_hi": "दो सह-प्राइम x और y का LCM है",
+  "options": [
+   {
+    "label": "A",
+    "text": "x"
+   },
+   {
+    "label": "B",
+    "text": "x + y"
+   },
+   {
+    "label": "C",
+    "text": "x - y"
+   },
+   {
+    "label": "D",
+    "text": "xy"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "x"
+   },
+   {
+    "label": "B",
+    "text": "x + y"
+   },
+   {
+    "label": "C",
+    "text": "x - y"
+   },
+   {
+    "label": "D",
+    "text": "xy"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 19,
+  "page": 4,
+  "stem": "The speed of a boat in still water is 9 km/hr and the speed of the stream is 6 km/hr. If the boat covers a round trip journey in 6 hrs, then the time taken by the boat to complete the downstream journey is",
+  "stem_hi": "एक नाव की स्थिर जल में गति 9 किमी/घंटा है और धारा की गति 6 किमी/घंटा है। यदि नाव 6 घंटों में एक गोल यात्रा करती है, तो नाव को डाउनस्ट्रीम यात्रा पूरी करने में कितना समय लगेगा",
+  "options": [
+   {
+    "label": "A",
+    "text": "1 \\frac{1}{2} hrs."
+   },
+   {
+    "label": "B",
+    "text": "2 \\frac{1}{4} hrs."
+   },
+   {
+    "label": "C",
+    "text": "1 hr."
+   },
+   {
+    "label": "D",
+    "text": "3 \\frac{1}{4} hrs."
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1 \\frac{1}{2} घंटा।"
+   },
+   {
+    "label": "B",
+    "text": "2 \\frac{1}{4} घंटा।"
+   },
+   {
+    "label": "C",
+    "text": "1 घंटा।"
+   },
+   {
+    "label": "D",
+    "text": "3 \\frac{1}{4} घंटा।"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "time_work_speed",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 20,
+  "page": 4,
+  "stem": "If a, b, c and d are four positive real numbers such that sum of a, b and c is even and the sum of b, c and d is odd, then a^2 - d^2 is necessarily",
+  "stem_hi": "यदि a, b, c और d चार सकारात्मक वास्तविक संख्याएँ हैं, जिनका योग a, b और c का सम है और b, c और d का योग विषम है, तो a^2 - d^2 अनिवार्य रूप से",
+  "options": [
+   {
+    "label": "A",
+    "text": "Prime"
+   },
+   {
+    "label": "B",
+    "text": "Even"
+   },
+   {
+    "label": "C",
+    "text": "Odd"
+   },
+   {
+    "label": "D",
+    "text": "None of these"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "प्राइम"
+   },
+   {
+    "label": "B",
+    "text": "सम"
+   },
+   {
+    "label": "C",
+    "text": "विषम"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 21,
+  "page": 4,
+  "stem": "The ratio of the incomes of P and Q is 5 : 4. The ratio of their expenditures is 4 : 3. The savings of P is more than that of Q by 16 \\frac{2}{3} %. The percentage of his income spent by P is",
+  "stem_hi": "P और Q की आय का अनुपात 5 : 4 है | उनके व्यय का अनुपात 4 : 3 है | P की बचत Q की बचत से 16 \\frac{2}{3} % अधिक है | P द्वारा अपने आय का प्रतिशत खर्च किया गया है",
+  "options": [
+   {
+    "label": "A",
+    "text": "51 \\frac{2}{3} %"
+   },
+   {
+    "label": "B",
+    "text": "52 \\frac{2}{3} %"
+   },
+   {
+    "label": "C",
+    "text": "53 \\frac{1}{3} %"
+   },
+   {
+    "label": "D",
+    "text": "54 \\frac{1}{3} %"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "51 \\frac{2}{3} %"
+   },
+   {
+    "label": "B",
+    "text": "52 \\frac{2}{3} %"
+   },
+   {
+    "label": "C",
+    "text": "53 \\frac{1}{3} %"
+   },
+   {
+    "label": "D",
+    "text": "54 \\frac{1}{3} %"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Percentage/Profit-Loss",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 22,
+  "page": 5,
+  "stem": "A certain sum becomes 3 times itself in 6 years at a simple interest. The number of years in which it becomes 9 times itself is",
+  "stem_hi": "एक निश्चित राशि 6 वर्षों में साधारण ब्याज पर 3 गुना हो जाती है। वह कितने वर्षों में 9 गुना होगी?",
+  "options": [
+   {
+    "label": "A",
+    "text": "22"
+   },
+   {
+    "label": "B",
+    "text": "18"
+   },
+   {
+    "label": "C",
+    "text": "20"
+   },
+   {
+    "label": "D",
+    "text": "24"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "22"
+   },
+   {
+    "label": "B",
+    "text": "18"
+   },
+   {
+    "label": "C",
+    "text": "20"
+   },
+   {
+    "label": "D",
+    "text": "24"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 23,
+  "page": 5,
+  "stem": "The number of positive integral solutions of the inequation \\frac{x + 2}{x + 3} > 1 is",
+  "stem_hi": "असमानता \\frac{x + 2}{x + 3} > 1 के सकारात्मक पूर्णांक समाधान की संख्या है",
+  "options": [
+   {
+    "label": "A",
+    "text": "Infinite"
+   },
+   {
+    "label": "B",
+    "text": "4"
+   },
+   {
+    "label": "C",
+    "text": "3"
+   },
+   {
+    "label": "D",
+    "text": "0"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अनंत"
+   },
+   {
+    "label": "B",
+    "text": "4"
+   },
+   {
+    "label": "C",
+    "text": "3"
+   },
+   {
+    "label": "D",
+    "text": "0"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "inequality",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 24,
+  "page": 5,
+  "stem": "The GCD of two numbers a and b is 4 and their LCM is 400. The number of pairs of a and b are",
+  "stem_hi": "दो संख्याओं a और b का GCD 4 है और उनका LCM 400 है। a और b के जोड़े की संख्या है",
+  "options": [
+   {
+    "label": "A",
+    "text": "4"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "4"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 25,
+  "page": 5,
+  "stem": "If the ratio of the ages (in years) of P and Q, 5 years ago was 5 : 7, then the sum of their ages 5 years from now is",
+  "stem_hi": "यदि P और Q की आयु का अनुपात (5 वर्ष पहले) 5 : 7 था, तो अब से 5 वर्ष बाद उनकी आयु का योग होगा",
+  "options": [
+   {
+    "label": "A",
+    "text": "87"
+   },
+   {
+    "label": "B",
+    "text": "90"
+   },
+   {
+    "label": "C",
+    "text": "98"
+   },
+   {
+    "label": "D",
+    "text": "92"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "87"
+   },
+   {
+    "label": "B",
+    "text": "90"
+   },
+   {
+    "label": "C",
+    "text": "98"
+   },
+   {
+    "label": "D",
+    "text": "92"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "ratio_average",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 26,
+  "page": 5,
+  "stem": "If a = \\frac{\\sqrt{6}-\\sqrt{5}}{5}, b = \\frac{\\sqrt{6}+\\sqrt{5}}{5}, c = \\frac{\\sqrt{6}+\\sqrt{5}}{5}, d = \\frac{\\sqrt{6}+4}{5} and e = \\sqrt{6}+\\sqrt{5}, then which of the following is a rational number?",
+  "stem_hi": "यदि a = \\frac{\\sqrt{6}-\\sqrt{5}}{5}, b = \\frac{\\sqrt{6}+\\sqrt{5}}{5}, c = \\frac{\\sqrt{6}+\\sqrt{5}}{5}, d = \\frac{\\sqrt{6}+4}{5} और e = \\sqrt{6}+\\sqrt{5} है, तो निम्नलिखित में से कौन सा एक परिमेय संख्या है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "cd"
+   },
+   {
+    "label": "B",
+    "text": "abcde"
+   },
+   {
+    "label": "C",
+    "text": "abde"
+   },
+   {
+    "label": "D",
+    "text": "ab"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "cd"
+   },
+   {
+    "label": "B",
+    "text": "abcde"
+   },
+   {
+    "label": "C",
+    "text": "abde"
+   },
+   {
+    "label": "D",
+    "text": "ab"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 27,
+  "page": 6,
+  "stem": "A certain sum becomes 3 times itself in 4 years at compound interest. The number of years in which it becomes 27 times itself is",
+  "stem_hi": "एक निश्चित राशि 4 वर्ष में चक्रवृद्धि ब्याज पर 3 गुना हो जाती है। वह कितने वर्ष में 27 गुना होगी?",
+  "options": [
+   {
+    "label": "A",
+    "text": "21"
+   },
+   {
+    "label": "B",
+    "text": "15"
+   },
+   {
+    "label": "C",
+    "text": "12"
+   },
+   {
+    "label": "D",
+    "text": "36"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "21"
+   },
+   {
+    "label": "B",
+    "text": "15"
+   },
+   {
+    "label": "C",
+    "text": "12"
+   },
+   {
+    "label": "D",
+    "text": "36"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "time_work_speed",
+   "topic": "Arithmetic",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 28,
+  "page": 6,
+  "stem": "If p and q are perfect squares, then \\sqrt{\\frac{p}{q}} is always a rational number. Is the statement true?",
+  "stem_hi": "यदि p और q पूर्ण वर्ग हैं, तो \\sqrt{\\frac{p}{q}} हमेशा एक परिमेय संख्या होती है। क्या यह कथन सत्य है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Cannot be said"
+   },
+   {
+    "label": "B",
+    "text": "No"
+   },
+   {
+    "label": "C",
+    "text": "Yes"
+   },
+   {
+    "label": "D",
+    "text": "None of these"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कहा नहीं जा सकता"
+   },
+   {
+    "label": "B",
+    "text": "नहीं"
+   },
+   {
+    "label": "C",
+    "text": "हाँ"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "statement_based",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 29,
+  "page": 6,
+  "stem": "If \\frac{P_x}{b-c} = \\frac{Q_y}{c-a} = \\frac{R_z}{a-b}, then a_x P + b_y Q + c_z R =",
+  "stem_hi": "यदि \\frac{P_x}{b-c} = \\frac{Q_y}{c-a} = \\frac{R_z}{a-b}, तो a_x P + b_y Q + c_z R =",
+  "options": [
+   {
+    "label": "A",
+    "text": "0"
+   },
+   {
+    "label": "B",
+    "text": "P + Q + R"
+   },
+   {
+    "label": "C",
+    "text": "x + y + z"
+   },
+   {
+    "label": "D",
+    "text": "a + b + c"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "0"
+   },
+   {
+    "label": "B",
+    "text": "P + Q + R"
+   },
+   {
+    "label": "C",
+    "text": "x + y + z"
+   },
+   {
+    "label": "D",
+    "text": "a + b + c"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 30,
+  "page": 6,
+  "stem": "The cost of a car depreciates 10% every year over the previous year. If a person sells his car at a profit of 10% at ₹ 3,20,760, then the price of the car 3 years ago was",
+  "stem_hi": "एक कार की लागत पिछले वर्ष की तुलना में हर वर्ष 10% कम होती है। यदि कोई व्यक्ति अपनी कार को ₹ 3,20,760 पर 10% लाभ पर बेचता है, तो कार की कीमत 3 वर्ष पहले थी",
+  "options": [
+   {
+    "label": "A",
+    "text": "₹ 5,00,000"
+   },
+   {
+    "label": "B",
+    "text": "₹ 4,00,000"
+   },
+   {
+    "label": "C",
+    "text": "₹ 4,50,000"
+   },
+   {
+    "label": "D",
+    "text": "₹ 4,25,000"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "₹ 5,00,000"
+   },
+   {
+    "label": "B",
+    "text": "₹ 4,00,000"
+   },
+   {
+    "label": "C",
+    "text": "₹ 4,50,000"
+   },
+   {
+    "label": "D",
+    "text": "₹ 4,25,000"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Percentage/Profit-Loss",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 31,
+  "page": 7,
+  "stem": "Who is the writer of the book \"Arthashastra\" ?",
+  "stem_hi": "\"अर्थशास्त्र\" की रचना किसने की ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Kalidas"
+   },
+   {
+    "label": "B",
+    "text": "Kautilya"
+   },
+   {
+    "label": "C",
+    "text": "Huen-tsang"
+   },
+   {
+    "label": "D",
+    "text": "Chandbardai"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कालिदास"
+   },
+   {
+    "label": "B",
+    "text": "कौटिल्य"
+   },
+   {
+    "label": "C",
+    "text": "हुएन-त्सांग"
+   },
+   {
+    "label": "D",
+    "text": "चंद्रबर्दाई"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 32,
+  "page": 7,
+  "stem": "The meaning of Globalisation is",
+  "stem_hi": "वैश्वीकरण का अर्थ क्या है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "To control over industries"
+   },
+   {
+    "label": "B",
+    "text": "Collaboration between national and world economy"
+   },
+   {
+    "label": "C",
+    "text": "Control on foreign trade"
+   },
+   {
+    "label": "D",
+    "text": "None of these"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "उद्योगों पर नियंत्रण"
+   },
+   {
+    "label": "B",
+    "text": "राष्ट्रीय और विश्व अर्थव्यवस्था के बीच सहयोग"
+   },
+   {
+    "label": "C",
+    "text": "विदेशी व्यापार पर नियंत्रण"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Economy",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 33,
+  "page": 7,
+  "stem": "Who led the Bardoli Satyagrah Movement ?",
+  "stem_hi": "बर्दोली सत्याग्रह आंदोलन का नेतृत्व किसने किया ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Ram Mohan Roy"
+   },
+   {
+    "label": "B",
+    "text": "Jay Prakash Narayan"
+   },
+   {
+    "label": "C",
+    "text": "Md. Ali Jinnah"
+   },
+   {
+    "label": "D",
+    "text": "Ballabh Bhai Patel"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "राम मोहन राय"
+   },
+   {
+    "label": "B",
+    "text": "जय प्रकाश नारायण"
+   },
+   {
+    "label": "C",
+    "text": "मोहम्मद अली जिन्ना"
+   },
+   {
+    "label": "D",
+    "text": "बल्लभ भाई पटेल"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian History",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 34,
+  "page": 7,
+  "stem": "The Xylem in plant are responsible for",
+  "stem_hi": "पौधे में ज़ाइलम किसके लिए जिम्मेदार होते हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Transport of oxygen"
+   },
+   {
+    "label": "B",
+    "text": "Transport of water"
+   },
+   {
+    "label": "C",
+    "text": "Transport of amino acid"
+   },
+   {
+    "label": "D",
+    "text": "Transport of food"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "ऑक्सीजन का परिवहन"
+   },
+   {
+    "label": "B",
+    "text": "पानी का परिवहन"
+   },
+   {
+    "label": "C",
+    "text": "एमिनो एसिड का परिवहन"
+   },
+   {
+    "label": "D",
+    "text": "खाद्य का परिवहन"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Biology",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 35,
+  "page": 8,
+  "stem": "The National Song 'Vande-Mataram', written by",
+  "stem_hi": "‘वन्दे मातरम्’ गीत किसके द्वारा लिखा गया ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Sanyal Dev"
+   },
+   {
+    "label": "B",
+    "text": "Bankim Chandra Chatterjee"
+   },
+   {
+    "label": "C",
+    "text": "Ravindra Nath Tagore"
+   },
+   {
+    "label": "D",
+    "text": "Sachin Dev Barman"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "सांयल देव"
+   },
+   {
+    "label": "B",
+    "text": "बंकिम चंद्र चट्टोपाध्याय"
+   },
+   {
+    "label": "C",
+    "text": "रवींद्रनाथ ठाकुर"
+   },
+   {
+    "label": "D",
+    "text": "सचिन देव बर्मन"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian History",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 36,
+  "page": 8,
+  "stem": "Which of the following is not a multinational company?",
+  "stem_hi": "इनमें से कौन सी बहुराष्ट्रीय कंपनी नहीं है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Reliance"
+   },
+   {
+    "label": "B",
+    "text": "Coca cola"
+   },
+   {
+    "label": "C",
+    "text": "Samsung"
+   },
+   {
+    "label": "D",
+    "text": "Nokia"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रिलायंस"
+   },
+   {
+    "label": "B",
+    "text": "कोका कोला"
+   },
+   {
+    "label": "C",
+    "text": "सैमसंग"
+   },
+   {
+    "label": "D",
+    "text": "नोकिया"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "odd_one_out",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 37,
+  "page": 8,
+  "stem": "Wimbledon Trophy is played in which country?",
+  "stem_hi": "विम्बलडन ट्रॉफी किस देश में आयोजित की जाती है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "India"
+   },
+   {
+    "label": "B",
+    "text": "Australia"
+   },
+   {
+    "label": "C",
+    "text": "France"
+   },
+   {
+    "label": "D",
+    "text": "England"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "भारत"
+   },
+   {
+    "label": "B",
+    "text": "ऑस्ट्रेलिया"
+   },
+   {
+    "label": "C",
+    "text": "फ्रांस"
+   },
+   {
+    "label": "D",
+    "text": "इंग्लैंड"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 38,
+  "page": 8,
+  "stem": "Blood pressure is measured by",
+  "stem_hi": "रक्तदाब को मापने का नाम क्या है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Thermometer"
+   },
+   {
+    "label": "B",
+    "text": "Barometer"
+   },
+   {
+    "label": "C",
+    "text": "Crescograph"
+   },
+   {
+    "label": "D",
+    "text": "Sphigmometer"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "थर्मामीटर"
+   },
+   {
+    "label": "B",
+    "text": "बारोमीटर"
+   },
+   {
+    "label": "C",
+    "text": "क्रेस्कोग्राफ"
+   },
+   {
+    "label": "D",
+    "text": "स्पिग्मोमीटर"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Science",
+   "type": "blood_relation",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 39,
+  "page": 8,
+  "stem": "Which district is known as 'Rice Bowl' of Bihar?",
+  "stem_hi": "बिहार का कौन सा जिला 'धान का कटोरा' के नाम से जाना जाता है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Rohtas"
+   },
+   {
+    "label": "B",
+    "text": "Kishanganj"
+   },
+   {
+    "label": "C",
+    "text": "Nalanda"
+   },
+   {
+    "label": "D",
+    "text": "Patna"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रोहतास"
+   },
+   {
+    "label": "B",
+    "text": "किशनगंज"
+   },
+   {
+    "label": "C",
+    "text": "नालंदा"
+   },
+   {
+    "label": "D",
+    "text": "पटना"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Geography",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 40,
+  "page": 8,
+  "stem": "Which soil is also called Regur soil?",
+  "stem_hi": "कौन सी मिट्टी को रिगुर मिट्टी भी कहा जाता है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Mountain soil"
+   },
+   {
+    "label": "B",
+    "text": "Alluvial soil"
+   },
+   {
+    "label": "C",
+    "text": "Yellow soil"
+   },
+   {
+    "label": "D",
+    "text": "Black soil"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पहाड़ी मिट्टी"
+   },
+   {
+    "label": "B",
+    "text": "आलुवीय मिट्टी"
+   },
+   {
+    "label": "C",
+    "text": "पीली मिट्टी"
+   },
+   {
+    "label": "D",
+    "text": "काली मिट्टी"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Geography",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 41,
+  "page": 9,
+  "stem": "Who among the following has power to declare National Emergency ?",
+  "stem_hi": "भारत में आपातकाल की घोषणा का अधिकार किसे होता है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Speaker of Lok Sabha"
+   },
+   {
+    "label": "B",
+    "text": "President"
+   },
+   {
+    "label": "C",
+    "text": "Prime Minister"
+   },
+   {
+    "label": "D",
+    "text": "Chief Minister"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "लोकसभा का अध्यक्ष"
+   },
+   {
+    "label": "B",
+    "text": "राष्ट्रपति"
+   },
+   {
+    "label": "C",
+    "text": "प्रधान मंत्री"
+   },
+   {
+    "label": "D",
+    "text": "मुख्यमंत्री"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian Polity",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 42,
+  "page": 9,
+  "stem": "Currency of Japan is",
+  "stem_hi": "जापान की मुद्रा क्या है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Yen"
+   },
+   {
+    "label": "B",
+    "text": "Rupee"
+   },
+   {
+    "label": "C",
+    "text": "Pound"
+   },
+   {
+    "label": "D",
+    "text": "Dollar"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "येन"
+   },
+   {
+    "label": "B",
+    "text": "रुपया"
+   },
+   {
+    "label": "C",
+    "text": "पाउंड"
+   },
+   {
+    "label": "D",
+    "text": "डॉलर"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 43,
+  "page": 9,
+  "stem": "What is the full form of GDP ?",
+  "stem_hi": "GDP का पूर्ण रूप क्या है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Great Double Pact"
+   },
+   {
+    "label": "B",
+    "text": "Gross Domestic Product"
+   },
+   {
+    "label": "C",
+    "text": "Grand Development Product"
+   },
+   {
+    "label": "D",
+    "text": "None of these"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "ग्रेट डबल पैक्ट"
+   },
+   {
+    "label": "B",
+    "text": "ग्रॉस डोमेस्टिक प्रोडक्ट"
+   },
+   {
+    "label": "C",
+    "text": "ग्रैंड डेवलपमेंट प्रोडक्ट"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Economy",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 44,
+  "page": 9,
+  "stem": "Which out of the following is an example of non-metallic mineral ?",
+  "stem_hi": "निम्नलिखित में से कौन सा गैर-धात्विक खनिज का उदाहरण है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Mica"
+   },
+   {
+    "label": "B",
+    "text": "Gold"
+   },
+   {
+    "label": "C",
+    "text": "Iron"
+   },
+   {
+    "label": "D",
+    "text": "Copper"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "मिका"
+   },
+   {
+    "label": "B",
+    "text": "सोना"
+   },
+   {
+    "label": "C",
+    "text": "लोहे"
+   },
+   {
+    "label": "D",
+    "text": "तांबा"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 45,
+  "page": 9,
+  "stem": "Which type of mirror generally used for face looking ?",
+  "stem_hi": "किस प्रकार का दर्पण चेहरे देखने के लिए सामान्यतः उपयोग किया जाता है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Plane mirror"
+   },
+   {
+    "label": "B",
+    "text": "Concave mirror"
+   },
+   {
+    "label": "C",
+    "text": "Convex mirror"
+   },
+   {
+    "label": "D",
+    "text": "All the above"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "समतल दर्पण"
+   },
+   {
+    "label": "B",
+    "text": "उत्क्षिप्त दर्पण"
+   },
+   {
+    "label": "C",
+    "text": "उल्टे दर्पण"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त सभी"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 46,
+  "page": 10,
+  "stem": "When was Indian Constitution implemented ?",
+  "stem_hi": "भारतीय संविधान लागू कब हुआ ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "20 January 1950"
+   },
+   {
+    "label": "B",
+    "text": "24 January 1950"
+   },
+   {
+    "label": "C",
+    "text": "26 January 1950"
+   },
+   {
+    "label": "D",
+    "text": "15 August 1950"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "20 जनवरी 1950"
+   },
+   {
+    "label": "B",
+    "text": "24 जनवरी 1950"
+   },
+   {
+    "label": "C",
+    "text": "26 जनवरी 1950"
+   },
+   {
+    "label": "D",
+    "text": "15 अगस्त 1950"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian Polity",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 47,
+  "page": 10,
+  "stem": "The capital of Telangana is",
+  "stem_hi": "तेलंगाना की राजधानी है",
+  "options": [
+   {
+    "label": "A",
+    "text": "Kawaratti"
+   },
+   {
+    "label": "B",
+    "text": "Amravati"
+   },
+   {
+    "label": "C",
+    "text": "Hyderabad"
+   },
+   {
+    "label": "D",
+    "text": "Dispur"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कवारत्ती"
+   },
+   {
+    "label": "B",
+    "text": "अमरावती"
+   },
+   {
+    "label": "C",
+    "text": "हैदराबाद"
+   },
+   {
+    "label": "D",
+    "text": "डिसपुर"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 48,
+  "page": 10,
+  "stem": "Who was called as 'Deshbandhu' ?",
+  "stem_hi": "किसे 'देशबंधु' कहा गया ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Chittaranjan Das"
+   },
+   {
+    "label": "B",
+    "text": "Bal Gangadhar Tilak"
+   },
+   {
+    "label": "C",
+    "text": "Ravindra Nath Tagore"
+   },
+   {
+    "label": "D",
+    "text": "Rajendra Prasad"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "चित्तरंजन दास"
+   },
+   {
+    "label": "B",
+    "text": "बाल गंगाधर तिलक"
+   },
+   {
+    "label": "C",
+    "text": "रवींद्रनाथ ठाकुर"
+   },
+   {
+    "label": "D",
+    "text": "राजेंद्र प्रसाद"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Polity/Schemes",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 49,
+  "page": 10,
+  "stem": "Where is Corbett National Park situated ?",
+  "stem_hi": "कॉर्बेट राष्ट्रीय पार्क कहाँ स्थित है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Karnataka"
+   },
+   {
+    "label": "B",
+    "text": "Bihar"
+   },
+   {
+    "label": "C",
+    "text": "Uttarakhand"
+   },
+   {
+    "label": "D",
+    "text": "Maharashtra"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कर्नाटका"
+   },
+   {
+    "label": "B",
+    "text": "बिहार"
+   },
+   {
+    "label": "C",
+    "text": "उत्तराखंड"
+   },
+   {
+    "label": "D",
+    "text": "महाराष्ट्र"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 50,
+  "page": 10,
+  "stem": "Vegetation is a type of resource",
+  "stem_hi": "वनस्पति एक प्रकार का संसाधन है",
+  "options": [
+   {
+    "label": "A",
+    "text": "Biotic"
+   },
+   {
+    "label": "B",
+    "text": "Abiotic"
+   },
+   {
+    "label": "C",
+    "text": "Both (A) and (B)"
+   },
+   {
+    "label": "D",
+    "text": "None of these"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "जैविक"
+   },
+   {
+    "label": "B",
+    "text": "अजैविक"
+   },
+   {
+    "label": "C",
+    "text": "(A) और (B) दोनों"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 51,
+  "page": 11,
+  "stem": "Who is the minister of External Affairs of India ?",
+  "stem_hi": "भारत के विदेश मंत्री कौन हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amit Shah"
+   },
+   {
+    "label": "B",
+    "text": "Dr. S. Jayshankar"
+   },
+   {
+    "label": "C",
+    "text": "Piyush Goyal"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अमित शाह"
+   },
+   {
+    "label": "B",
+    "text": "डॉ. एस. जयशंकर"
+   },
+   {
+    "label": "C",
+    "text": "पीयूष गोयल"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 52,
+  "page": 11,
+  "stem": "Where is the capital of Meghalaya ?",
+  "stem_hi": "मेघालय की राजधानी कहाँ है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Shillong"
+   },
+   {
+    "label": "B",
+    "text": "Aizole"
+   },
+   {
+    "label": "C",
+    "text": "Gangtok"
+   },
+   {
+    "label": "D",
+    "text": "Imphal"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "शिलांग"
+   },
+   {
+    "label": "B",
+    "text": "ऐज़ोल"
+   },
+   {
+    "label": "C",
+    "text": "गंगटोक"
+   },
+   {
+    "label": "D",
+    "text": "इंफाल"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 53,
+  "page": 11,
+  "stem": "For the achievement in which field, Dada Saheb Phalke Award is given ?",
+  "stem_hi": "किस क्षेत्र में उपलब्धि के लिए, दादा साहब फाल्के पुरस्कार दिया जाता है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Medicals"
+   },
+   {
+    "label": "B",
+    "text": "Literature"
+   },
+   {
+    "label": "C",
+    "text": "Cinema"
+   },
+   {
+    "label": "D",
+    "text": "Sports"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "चिकित्सा"
+   },
+   {
+    "label": "B",
+    "text": "साहित्य"
+   },
+   {
+    "label": "C",
+    "text": "सिनेमा"
+   },
+   {
+    "label": "D",
+    "text": "खेल"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 54,
+  "page": 11,
+  "stem": "Which instrument is used to measure the growth of plant ?",
+  "stem_hi": "पौधे की वृद्धि किस यंत्र से मापी जाती है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Multimeter"
+   },
+   {
+    "label": "B",
+    "text": "Crescograph"
+   },
+   {
+    "label": "C",
+    "text": "Voltmeter"
+   },
+   {
+    "label": "D",
+    "text": "Micrometer"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "मल्टीमीटर"
+   },
+   {
+    "label": "B",
+    "text": "क्रेस्कोग्राफ"
+   },
+   {
+    "label": "C",
+    "text": "वोल्टमीटर"
+   },
+   {
+    "label": "D",
+    "text": "माइक्रोमीटर"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 55,
+  "page": 11,
+  "stem": "Narmada Bachao Andolan was held against which of the following ?",
+  "stem_hi": "नर्मदा बचाओ आंदोलन किसके खिलाफ हुआ ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Damodar Valley Dam"
+   },
+   {
+    "label": "B",
+    "text": "Hirakud Dam"
+   },
+   {
+    "label": "C",
+    "text": "Sardar Sarovar Dam"
+   },
+   {
+    "label": "D",
+    "text": "None of these"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "डामोदर वैली डैम"
+   },
+   {
+    "label": "B",
+    "text": "हीराकुद डैम"
+   },
+   {
+    "label": "C",
+    "text": "सरदार सरोवर डैम"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 56,
+  "page": 12,
+  "stem": "The highest Civilian Award of India is",
+  "stem_hi": "भारत का सर्वोच्च नागरिक पुरस्कार क्या है",
+  "options": [
+   {
+    "label": "A",
+    "text": "Gyanpeeth Award"
+   },
+   {
+    "label": "B",
+    "text": "Bharat Ratna Award"
+   },
+   {
+    "label": "C",
+    "text": "Veer Chakra"
+   },
+   {
+    "label": "D",
+    "text": "Padma Award"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "ज्ञानपीठ पुरस्कार"
+   },
+   {
+    "label": "B",
+    "text": "भारत रत्न पुरस्कार"
+   },
+   {
+    "label": "C",
+    "text": "वीर चक्र"
+   },
+   {
+    "label": "D",
+    "text": "पद्म पुरस्कार"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 57,
+  "page": 12,
+  "stem": "When is the International Labour's Day celebrated?",
+  "stem_hi": "अंतर्राष्ट्रीय श्रमिक दिवस कब मनाया जाता है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "22 March"
+   },
+   {
+    "label": "B",
+    "text": "14 January"
+   },
+   {
+    "label": "C",
+    "text": "7 April"
+   },
+   {
+    "label": "D",
+    "text": "1 May"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "22 मार्च"
+   },
+   {
+    "label": "B",
+    "text": "14 जनवरी"
+   },
+   {
+    "label": "C",
+    "text": "7 अप्रैल"
+   },
+   {
+    "label": "D",
+    "text": "1 मई"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - International",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 58,
+  "page": 12,
+  "stem": "ICC World Test Championship final – 2025 match will be hosted by",
+  "stem_hi": "ICC विश्व टेस्ट चैंपियनशिप फाइनल – 2025 मैच की मेज़बानी कौन करेगा?",
+  "options": [
+   {
+    "label": "A",
+    "text": "South Africa"
+   },
+   {
+    "label": "B",
+    "text": "India"
+   },
+   {
+    "label": "C",
+    "text": "Australia"
+   },
+   {
+    "label": "D",
+    "text": "England"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "दक्षिण अफ्रीका"
+   },
+   {
+    "label": "B",
+    "text": "भारत"
+   },
+   {
+    "label": "C",
+    "text": "ऑस्ट्रेलिया"
+   },
+   {
+    "label": "D",
+    "text": "इंग्लैंड"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - International",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 59,
+  "page": 12,
+  "stem": "Which of the following type of medicine is used for treating indigestion?",
+  "stem_hi": "निम्नलिखित में से कौन सी दवा अपच के इलाज के लिए उपयोग की जाती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Antiseptic"
+   },
+   {
+    "label": "B",
+    "text": "Antibiotic"
+   },
+   {
+    "label": "C",
+    "text": "Analgesic"
+   },
+   {
+    "label": "D",
+    "text": "Antacid"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "एंटीसेप्टिक"
+   },
+   {
+    "label": "B",
+    "text": "एंटीबायोटिक"
+   },
+   {
+    "label": "C",
+    "text": "एनाल्जेसिक"
+   },
+   {
+    "label": "D",
+    "text": "एंटासिड"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 60,
+  "page": 12,
+  "stem": "Which of the following is non-agro based industry?",
+  "stem_hi": "निम्नलिखित में से कौन सी गैर-कृषि आधारित उद्योग है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Sugar industry"
+   },
+   {
+    "label": "B",
+    "text": "Tobacco industry"
+   },
+   {
+    "label": "C",
+    "text": "Jute industry"
+   },
+   {
+    "label": "D",
+    "text": "Leather industry"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "चीनी उद्योग"
+   },
+   {
+    "label": "B",
+    "text": "तंबाकू उद्योग"
+   },
+   {
+    "label": "C",
+    "text": "जूट उद्योग"
+   },
+   {
+    "label": "D",
+    "text": "चर्म उद्योग"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "odd_one_out",
+   "topic": "Economy",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 61,
+  "page": 13,
+  "stem": "On which year, partition of Bengal held ?",
+  "stem_hi": "किस वर्ष, बंगाल का विभाजन हुआ ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1913"
+   },
+   {
+    "label": "B",
+    "text": "1885"
+   },
+   {
+    "label": "C",
+    "text": "1905"
+   },
+   {
+    "label": "D",
+    "text": "1906"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1913"
+   },
+   {
+    "label": "B",
+    "text": "1885"
+   },
+   {
+    "label": "C",
+    "text": "1905"
+   },
+   {
+    "label": "D",
+    "text": "1906"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian History",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 62,
+  "page": 13,
+  "stem": "In which country, Summer Olympic Game – 2028 will be held ?",
+  "stem_hi": "किस देश में, समर ओलंपिक गेम – 2028 आयोजित होगा ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Germany"
+   },
+   {
+    "label": "B",
+    "text": "United States of America"
+   },
+   {
+    "label": "C",
+    "text": "England"
+   },
+   {
+    "label": "D",
+    "text": "France"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "जर्मनी"
+   },
+   {
+    "label": "B",
+    "text": "संयुक्त राज्य अमेरिका"
+   },
+   {
+    "label": "C",
+    "text": "इंग्लैंड"
+   },
+   {
+    "label": "D",
+    "text": "फ्रांस"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - International",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 63,
+  "page": 13,
+  "stem": "Who is the Vice-President of India ?",
+  "stem_hi": "भारत के उप-राष्ट्रपति कौन हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Om Birla"
+   },
+   {
+    "label": "B",
+    "text": "Mallikarjun Kharge"
+   },
+   {
+    "label": "C",
+    "text": "Jagdip Dhankhar"
+   },
+   {
+    "label": "D",
+    "text": "J. P. Nadda"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "ओम बिड़ला"
+   },
+   {
+    "label": "B",
+    "text": "मल्लिकार्जुन खड़गे"
+   },
+   {
+    "label": "C",
+    "text": "जगदीप धनखड़"
+   },
+   {
+    "label": "D",
+    "text": "जे. पी. नड्डा"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 64,
+  "page": 13,
+  "stem": "Where is Kandariya Mahadev Temple situated ?",
+  "stem_hi": "कंदारिया महादेव मंदिर कहाँ स्थित है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Ajmer"
+   },
+   {
+    "label": "B",
+    "text": "Khajuraho"
+   },
+   {
+    "label": "C",
+    "text": "Chittorgarh"
+   },
+   {
+    "label": "D",
+    "text": "Aurangabad"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अजमेर"
+   },
+   {
+    "label": "B",
+    "text": "खजुराहो"
+   },
+   {
+    "label": "C",
+    "text": "चित्तौड़गढ़"
+   },
+   {
+    "label": "D",
+    "text": "औरंगाबाद"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian History",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 65,
+  "page": 13,
+  "stem": "Which mineral is called as mother of industries ?",
+  "stem_hi": "किस खनिज को उद्योगों की जननी कहा जाता है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Manganese"
+   },
+   {
+    "label": "B",
+    "text": "Gold"
+   },
+   {
+    "label": "C",
+    "text": "Iron"
+   },
+   {
+    "label": "D",
+    "text": "Copper"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "मैंगनीज"
+   },
+   {
+    "label": "B",
+    "text": "सोना"
+   },
+   {
+    "label": "C",
+    "text": "लोहे"
+   },
+   {
+    "label": "D",
+    "text": "तांबा"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 66,
+  "page": 14,
+  "stem": "The Reserve Bank of India was established in the year",
+  "stem_hi": "भारतीय रिजर्व बैंक की स्थापना किस वर्ष हुई ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1935"
+   },
+   {
+    "label": "B",
+    "text": "1920"
+   },
+   {
+    "label": "C",
+    "text": "1925"
+   },
+   {
+    "label": "D",
+    "text": "1930"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1935"
+   },
+   {
+    "label": "B",
+    "text": "1920"
+   },
+   {
+    "label": "C",
+    "text": "1925"
+   },
+   {
+    "label": "D",
+    "text": "1930"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 67,
+  "page": 14,
+  "stem": "Which of the following allotrope of carbon is good conductor of electricity?",
+  "stem_hi": "निम्नलिखित में से कौन सा कार्बन का आलोट्रोप अच्छा सुचालक है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Coal"
+   },
+   {
+    "label": "B",
+    "text": "Diamond"
+   },
+   {
+    "label": "C",
+    "text": "Graphite"
+   },
+   {
+    "label": "D",
+    "text": "All the above"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कोयला"
+   },
+   {
+    "label": "B",
+    "text": "हीरा"
+   },
+   {
+    "label": "C",
+    "text": "ग्रेफाइट"
+   },
+   {
+    "label": "D",
+    "text": "सभी उपरोक्त"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 68,
+  "page": 14,
+  "stem": "Why was Non-cooperation Movement called off?",
+  "stem_hi": "गैर-सम Cooperation आंदोलन को क्यों समाप्त किया गया ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Chitgaon case"
+   },
+   {
+    "label": "B",
+    "text": "Due to Kakori case"
+   },
+   {
+    "label": "C",
+    "text": "Chauri-Chaura incident"
+   },
+   {
+    "label": "D",
+    "text": "Jalianwala Bagh massacre"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "चितगाँव मामला"
+   },
+   {
+    "label": "B",
+    "text": "काकोरी मामले के कारण"
+   },
+   {
+    "label": "C",
+    "text": "चौरी-चौरा घटना"
+   },
+   {
+    "label": "D",
+    "text": "जालियाँवाला बाग़ नरसंहार"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian History",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 69,
+  "page": 14,
+  "stem": "The Ex-officio secretary of Panchayat Samiti is",
+  "stem_hi": "पंचायत समिति का पदेन सचिव होता है",
+  "options": [
+   {
+    "label": "A",
+    "text": "Nyay Sachiv"
+   },
+   {
+    "label": "B",
+    "text": "Block Development Officer"
+   },
+   {
+    "label": "C",
+    "text": "District Education Officer"
+   },
+   {
+    "label": "D",
+    "text": "None of these"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "न्याय सचिव"
+   },
+   {
+    "label": "B",
+    "text": "ब्लॉक विकास अधिकारी"
+   },
+   {
+    "label": "C",
+    "text": "जिला शिक्षा अधिकारी"
+   },
+   {
+    "label": "D",
+    "text": "इनमें से कोई नहीं"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Polity/Schemes",
+   "difficulty": 2,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 70,
+  "page": 14,
+  "stem": "The period for First Five Year Plan was",
+  "stem_hi": "पहली पंचवर्षीय योजना का काल था",
+  "options": [
+   {
+    "label": "A",
+    "text": "1952 – 1957"
+   },
+   {
+    "label": "B",
+    "text": "1947 – 1952"
+   },
+   {
+    "label": "C",
+    "text": "1950 – 1955"
+   },
+   {
+    "label": "D",
+    "text": "1951 – 1956"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1952 – 1957"
+   },
+   {
+    "label": "B",
+    "text": "1947 – 1952"
+   },
+   {
+    "label": "C",
+    "text": "1950 – 1955"
+   },
+   {
+    "label": "D",
+    "text": "1951 – 1956"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian Polity",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 71,
+  "page": 15,
+  "stem": "चौमुखता कौन-सा समास है ?",
+  "stem_hi": "चौमुखता कौन-सा समास है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "बहुव्रीहि समास"
+   },
+   {
+    "label": "B",
+    "text": "कर्मधारय समास"
+   },
+   {
+    "label": "C",
+    "text": "हैस समास"
+   },
+   {
+    "label": "D",
+    "text": "तद्भव समास"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "बहुव्रीहि समास"
+   },
+   {
+    "label": "B",
+    "text": "कर्मधारय समास"
+   },
+   {
+    "label": "C",
+    "text": "हैस समास"
+   },
+   {
+    "label": "D",
+    "text": "तद्भव समास"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "match_the_pairs",
+   "topic": "Hindi Grammar",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 72,
+  "page": 15,
+  "stem": "नियम में कौन-सा तद्भव शब्द है ?",
+  "stem_hi": "नियम में कौन-सा तद्भव शब्द है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "आम"
+   },
+   {
+    "label": "B",
+    "text": "आमलक"
+   },
+   {
+    "label": "C",
+    "text": "आँखला"
+   },
+   {
+    "label": "D",
+    "text": "आश्रय"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "आम"
+   },
+   {
+    "label": "B",
+    "text": "आमलक"
+   },
+   {
+    "label": "C",
+    "text": "आँखला"
+   },
+   {
+    "label": "D",
+    "text": "आश्रय"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 73,
+  "page": 15,
+  "stem": "नियम में कौन-सा संज्ञा शब्द है ?",
+  "stem_hi": "नियम में कौन-सा संज्ञा शब्द है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "मुग्ध"
+   },
+   {
+    "label": "B",
+    "text": "जाँचना"
+   },
+   {
+    "label": "C",
+    "text": "मूर्ख"
+   },
+   {
+    "label": "D",
+    "text": "घटा"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "मुग्ध"
+   },
+   {
+    "label": "B",
+    "text": "जाँचना"
+   },
+   {
+    "label": "C",
+    "text": "मूर्ख"
+   },
+   {
+    "label": "D",
+    "text": "घटा"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Grammar",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 74,
+  "page": 15,
+  "stem": "लोटा डोरी कौन-सा संबंध है ?",
+  "stem_hi": "लोटा डोरी कौन-सा संबंध है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "कर्मधारय समास"
+   },
+   {
+    "label": "B",
+    "text": "हैस समास"
+   },
+   {
+    "label": "C",
+    "text": "हैस समास"
+   },
+   {
+    "label": "D",
+    "text": "बहुव्रीहि समास"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कर्मधारय समास"
+   },
+   {
+    "label": "B",
+    "text": "हैस समास"
+   },
+   {
+    "label": "C",
+    "text": "हैस समास"
+   },
+   {
+    "label": "D",
+    "text": "बहुव्रीहि समास"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "match_the_pairs",
+   "topic": "Hindi Grammar",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 75,
+  "page": 15,
+  "stem": "देखवाँ का सही चिह्नित करें।",
+  "stem_hi": "देखवाँ का सही चिह्नित करें।",
+  "options": [
+   {
+    "label": "A",
+    "text": "देवी + यर्थ"
+   },
+   {
+    "label": "B",
+    "text": "देव + यर्थ"
+   },
+   {
+    "label": "C",
+    "text": "देव + यर्थ"
+   },
+   {
+    "label": "D",
+    "text": "देवी + यर्थ"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "देवी + यर्थ"
+   },
+   {
+    "label": "B",
+    "text": "देव + यर्थ"
+   },
+   {
+    "label": "C",
+    "text": "देव + यर्थ"
+   },
+   {
+    "label": "D",
+    "text": "देवी + यर्थ"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "match_the_pairs",
+   "topic": "Hindi Grammar",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 76,
+  "page": 15,
+  "stem": "असिद्ध शब्द को लिखित करें।",
+  "stem_hi": "असिद्ध शब्द को लिखित करें।",
+  "options": [
+   {
+    "label": "A",
+    "text": "विवर्तन"
+   },
+   {
+    "label": "B",
+    "text": "विषय"
+   },
+   {
+    "label": "C",
+    "text": "विवर्तन"
+   },
+   {
+    "label": "D",
+    "text": "विषय"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "विवर्तन"
+   },
+   {
+    "label": "B",
+    "text": "विषय"
+   },
+   {
+    "label": "C",
+    "text": "विवर्तन"
+   },
+   {
+    "label": "D",
+    "text": "विषय"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 77,
+  "page": 15,
+  "stem": "जुड़वाँ शब्द का कौन-सा प्रकार है ?",
+  "stem_hi": "जुड़वाँ शब्द का कौन-सा प्रकार है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "भाववाचक"
+   },
+   {
+    "label": "B",
+    "text": "व्यक्तिवाचक"
+   },
+   {
+    "label": "C",
+    "text": "सम्भवाचक"
+   },
+   {
+    "label": "D",
+    "text": "जातिवाचक"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "भाववाचक"
+   },
+   {
+    "label": "B",
+    "text": "व्यक्तिवाचक"
+   },
+   {
+    "label": "C",
+    "text": "सम्भवाचक"
+   },
+   {
+    "label": "D",
+    "text": "जातिवाचक"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 78,
+  "page": 15,
+  "stem": "जुड़ शब्द को लिखित करें।",
+  "stem_hi": "जुड़ शब्द को लिखित करें।",
+  "options": [
+   {
+    "label": "A",
+    "text": "जुड़"
+   },
+   {
+    "label": "B",
+    "text": "गुड़"
+   },
+   {
+    "label": "C",
+    "text": "बुड़"
+   },
+   {
+    "label": "D",
+    "text": "जुड़"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "जुड़"
+   },
+   {
+    "label": "B",
+    "text": "गुड़"
+   },
+   {
+    "label": "C",
+    "text": "बुड़"
+   },
+   {
+    "label": "D",
+    "text": "जुड़"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "match_the_pairs",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 79,
+  "page": 16,
+  "stem": "गोलाकार शब्द का पर्यायवाची शब्द नहीं है",
+  "stem_hi": "गोलाकार शब्द का पर्यायवाची शब्द नहीं है",
+  "options": [
+   {
+    "label": "A",
+    "text": "गणित"
+   },
+   {
+    "label": "B",
+    "text": "गज़"
+   },
+   {
+    "label": "C",
+    "text": "जालान"
+   },
+   {
+    "label": "D",
+    "text": "गज़बदन"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "गणित"
+   },
+   {
+    "label": "B",
+    "text": "गज़"
+   },
+   {
+    "label": "C",
+    "text": "जालान"
+   },
+   {
+    "label": "D",
+    "text": "गज़बदन"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "odd_one_out",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 80,
+  "page": 16,
+  "stem": "विशेषण शब्द को परिभाषित करें",
+  "stem_hi": "विशेषण शब्द को परिभाषित करें",
+  "options": [
+   {
+    "label": "A",
+    "text": "रेल"
+   },
+   {
+    "label": "B",
+    "text": "भेद"
+   },
+   {
+    "label": "C",
+    "text": "पटना"
+   },
+   {
+    "label": "D",
+    "text": "सड़क"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रेल"
+   },
+   {
+    "label": "B",
+    "text": "भेद"
+   },
+   {
+    "label": "C",
+    "text": "पटना"
+   },
+   {
+    "label": "D",
+    "text": "सड़क"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Grammar",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 81,
+  "page": 16,
+  "stem": "बुद्धि कौन-सा तत्व है?",
+  "stem_hi": "बुद्धि कौन-सा तत्व है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "अधः तत्व"
+   },
+   {
+    "label": "B",
+    "text": "अव्यक्त तत्व"
+   },
+   {
+    "label": "C",
+    "text": "कर्म तत्व"
+   },
+   {
+    "label": "D",
+    "text": "नव तत्व"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अधः तत्व"
+   },
+   {
+    "label": "B",
+    "text": "अव्यक्त तत्व"
+   },
+   {
+    "label": "C",
+    "text": "कर्म तत्व"
+   },
+   {
+    "label": "D",
+    "text": "नव तत्व"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 82,
+  "page": 16,
+  "stem": "जो आकार जानता है, को क्या कहते हैं?",
+  "stem_hi": "जो आकार जानता है, को क्या कहते हैं?",
+  "options": [
+   {
+    "label": "A",
+    "text": "पद्म"
+   },
+   {
+    "label": "B",
+    "text": "तिरषर"
+   },
+   {
+    "label": "C",
+    "text": "ज्ञानी"
+   },
+   {
+    "label": "D",
+    "text": "साधक"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पद्म"
+   },
+   {
+    "label": "B",
+    "text": "तिरषर"
+   },
+   {
+    "label": "C",
+    "text": "ज्ञानी"
+   },
+   {
+    "label": "D",
+    "text": "साधक"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 83,
+  "page": 16,
+  "stem": "‘मुख’ शब्द का विकल्प है",
+  "stem_hi": "‘मुख’ शब्द का विकल्प है",
+  "options": [
+   {
+    "label": "A",
+    "text": "गोप"
+   },
+   {
+    "label": "B",
+    "text": "प्रमुख"
+   },
+   {
+    "label": "C",
+    "text": "प्रदान"
+   },
+   {
+    "label": "D",
+    "text": "गण"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "गोप"
+   },
+   {
+    "label": "B",
+    "text": "प्रमुख"
+   },
+   {
+    "label": "C",
+    "text": "प्रदान"
+   },
+   {
+    "label": "D",
+    "text": "गण"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "match_the_pairs",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 84,
+  "page": 16,
+  "stem": "फिल्म में कौन-सा तत्व शब्द है?",
+  "stem_hi": "फिल्म में कौन-सा तत्व शब्द है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "अमोल"
+   },
+   {
+    "label": "B",
+    "text": "आसरा"
+   },
+   {
+    "label": "C",
+    "text": "अमूल्य"
+   },
+   {
+    "label": "D",
+    "text": "अम"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अमोल"
+   },
+   {
+    "label": "B",
+    "text": "आसरा"
+   },
+   {
+    "label": "C",
+    "text": "अमूल्य"
+   },
+   {
+    "label": "D",
+    "text": "अम"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "odd_one_out",
+   "topic": "Hindi Vocabulary",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 85,
+  "page": 16,
+  "stem": "किसी शब्द को चुनें",
+  "stem_hi": "किसी शब्द को चुनें",
+  "options": [
+   {
+    "label": "A",
+    "text": "शक्त"
+   },
+   {
+    "label": "B",
+    "text": "खोजना"
+   },
+   {
+    "label": "C",
+    "text": "विविध"
+   },
+   {
+    "label": "D",
+    "text": "वृत्त"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "शक्त"
+   },
+   {
+    "label": "B",
+    "text": "खोजना"
+   },
+   {
+    "label": "C",
+    "text": "विविध"
+   },
+   {
+    "label": "D",
+    "text": "वृत्त"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 86,
+  "page": 16,
+  "stem": "गुरु नानक का जन्म कब हुआ था?",
+  "stem_hi": "गुरु नानक का जन्म कब हुआ था?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1469 ई."
+   },
+   {
+    "label": "B",
+    "text": "1269 ई."
+   },
+   {
+    "label": "C",
+    "text": "1369 ई."
+   },
+   {
+    "label": "D",
+    "text": "1569 ई."
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1469 ई."
+   },
+   {
+    "label": "B",
+    "text": "1269 ई."
+   },
+   {
+    "label": "C",
+    "text": "1369 ई."
+   },
+   {
+    "label": "D",
+    "text": "1569 ई."
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Indian History",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 87,
+  "page": 16,
+  "stem": "विज्ञान की परिभाषा है",
+  "stem_hi": "विज्ञान की परिभाषा है",
+  "options": [
+   {
+    "label": "A",
+    "text": "स्वदेशी"
+   },
+   {
+    "label": "B",
+    "text": "सत्य"
+   },
+   {
+    "label": "C",
+    "text": "अवधारणा"
+   },
+   {
+    "label": "D",
+    "text": "विज्ञान"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "स्वदेशी"
+   },
+   {
+    "label": "B",
+    "text": "सत्य"
+   },
+   {
+    "label": "C",
+    "text": "अवधारणा"
+   },
+   {
+    "label": "D",
+    "text": "विज्ञान"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 88,
+  "page": 17,
+  "stem": "नौकर की कमी\" के उपयुक्तकार हैं",
+  "stem_hi": "नौकर की कमी\" के उपयुक्तकार हैं",
+  "options": [
+   {
+    "label": "A",
+    "text": "जैविक"
+   },
+   {
+    "label": "B",
+    "text": "फिजिकल कुमार श्युल"
+   },
+   {
+    "label": "C",
+    "text": "अस्मार्क"
+   },
+   {
+    "label": "D",
+    "text": "प्रेमचंद"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "जैविक"
+   },
+   {
+    "label": "B",
+    "text": "फिजिकल कुमार श्युल"
+   },
+   {
+    "label": "C",
+    "text": "अस्मार्क"
+   },
+   {
+    "label": "D",
+    "text": "प्रेमचंद"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "match_the_pairs",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 89,
+  "page": 17,
+  "stem": "संस्थान का जन्म किसकी तिथि है?",
+  "stem_hi": "संस्थान का जन्म किसकी तिथि है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "प्रेमचंद"
+   },
+   {
+    "label": "B",
+    "text": "गुड़नारायण"
+   },
+   {
+    "label": "C",
+    "text": "फिरक"
+   },
+   {
+    "label": "D",
+    "text": "पत"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "प्रेमचंद"
+   },
+   {
+    "label": "B",
+    "text": "गुड़नारायण"
+   },
+   {
+    "label": "C",
+    "text": "फिरक"
+   },
+   {
+    "label": "D",
+    "text": "पत"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 90,
+  "page": 17,
+  "stem": "मेसर मूल का जन्म किस वर्ष हुआ?",
+  "stem_hi": "मेसर मूल का जन्म किस वर्ष हुआ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1830 ई. में"
+   },
+   {
+    "label": "B",
+    "text": "1825 ई. में"
+   },
+   {
+    "label": "C",
+    "text": "1823 ई. में"
+   },
+   {
+    "label": "D",
+    "text": "1827 ई. में"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1830 ई. में"
+   },
+   {
+    "label": "B",
+    "text": "1825 ई. में"
+   },
+   {
+    "label": "C",
+    "text": "1823 ई. में"
+   },
+   {
+    "label": "D",
+    "text": "1827 ई. में"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar History",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 91,
+  "page": 17,
+  "stem": "घनानंद किस भाषा में कविता करते थे?",
+  "stem_hi": "घनानंद किस भाषा में कविता करते थे?",
+  "options": [
+   {
+    "label": "A",
+    "text": "गुड़"
+   },
+   {
+    "label": "B",
+    "text": "भोजपुरी"
+   },
+   {
+    "label": "C",
+    "text": "अवधी"
+   },
+   {
+    "label": "D",
+    "text": "ब्रज"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "गुड़"
+   },
+   {
+    "label": "B",
+    "text": "भोजपुरी"
+   },
+   {
+    "label": "C",
+    "text": "अवधी"
+   },
+   {
+    "label": "D",
+    "text": "ब्रज"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 92,
+  "page": 17,
+  "stem": "‘कवि’ के दांठ के कहानिकार कौन हैं?",
+  "stem_hi": "‘कवि’ के दांठ के कहानिकार कौन हैं?",
+  "options": [
+   {
+    "label": "A",
+    "text": "विनोद कुमार श्युल"
+   },
+   {
+    "label": "B",
+    "text": "नीलम चितलेन शर्मा"
+   },
+   {
+    "label": "C",
+    "text": "अस्मार्क"
+   },
+   {
+    "label": "D",
+    "text": "गुणाकर मूल"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "विनोद कुमार श्युल"
+   },
+   {
+    "label": "B",
+    "text": "नीलम चितलेन शर्मा"
+   },
+   {
+    "label": "C",
+    "text": "अस्मार्क"
+   },
+   {
+    "label": "D",
+    "text": "गुणाकर मूल"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 93,
+  "page": 17,
+  "stem": "‘सुगम’ से कौन प्रेम करते हैं?",
+  "stem_hi": "‘सुगम’ से कौन प्रेम करते हैं?",
+  "options": [
+   {
+    "label": "A",
+    "text": "आलम"
+   },
+   {
+    "label": "B",
+    "text": "सहजान"
+   },
+   {
+    "label": "C",
+    "text": "बिहारी"
+   },
+   {
+    "label": "D",
+    "text": "घनानंद"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "आलम"
+   },
+   {
+    "label": "B",
+    "text": "सहजान"
+   },
+   {
+    "label": "C",
+    "text": "बिहारी"
+   },
+   {
+    "label": "D",
+    "text": "घनानंद"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "Hindi",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 94,
+  "page": 17,
+  "stem": "‘विभिन्नता’ का संबंध किस वाद्य यंत्र से था?",
+  "stem_hi": "‘विभिन्नता’ का संबंध किस वाद्य यंत्र से था?",
+  "options": [
+   {
+    "label": "A",
+    "text": "बांसुरी"
+   },
+   {
+    "label": "B",
+    "text": "तबला"
+   },
+   {
+    "label": "C",
+    "text": "सरोद"
+   },
+   {
+    "label": "D",
+    "text": "सहाई"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "बांसुरी"
+   },
+   {
+    "label": "B",
+    "text": "तबला"
+   },
+   {
+    "label": "C",
+    "text": "सरोद"
+   },
+   {
+    "label": "D",
+    "text": "सहाई"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Art & Culture",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 95,
+  "page": 17,
+  "stem": "आधुनिक साहित्य का जन्म कब हुआ था?",
+  "stem_hi": "आधुनिक साहित्य का जन्म कब हुआ था?",
+  "options": [
+   {
+    "label": "A",
+    "text": "दिसम्बर"
+   },
+   {
+    "label": "B",
+    "text": "जून"
+   },
+   {
+    "label": "C",
+    "text": "फरवरी"
+   },
+   {
+    "label": "D",
+    "text": "अक्टूबर"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "दिसम्बर"
+   },
+   {
+    "label": "B",
+    "text": "जून"
+   },
+   {
+    "label": "C",
+    "text": "फरवरी"
+   },
+   {
+    "label": "D",
+    "text": "अक्टूबर"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 96,
+  "page": 18,
+  "stem": "What is not knowledge of boys in the initial stage?",
+  "stem_hi": "मोबाइल पढ़ाई के लड़कों को ज्ञान नहीं होता है",
+  "options": [
+   {
+    "label": "A",
+    "text": "Music"
+   },
+   {
+    "label": "B",
+    "text": "Self-awareness"
+   },
+   {
+    "label": "C",
+    "text": "Science"
+   },
+   {
+    "label": "D",
+    "text": "Play"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "संगीत का"
+   },
+   {
+    "label": "B",
+    "text": "स्वावलंबन का"
+   },
+   {
+    "label": "C",
+    "text": "विज्ञान का"
+   },
+   {
+    "label": "D",
+    "text": "खेल का"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 97,
+  "page": 18,
+  "stem": "What is being discussed in the context of physical education?",
+  "stem_hi": "क्या आत्मिकता की बात गहनता में की जा रही है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Physical"
+   },
+   {
+    "label": "B",
+    "text": "Mental"
+   },
+   {
+    "label": "C",
+    "text": "Spiritual"
+   },
+   {
+    "label": "D",
+    "text": "Emotional"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "शारीरिक"
+   },
+   {
+    "label": "B",
+    "text": "आध्यात्मिक"
+   },
+   {
+    "label": "C",
+    "text": "मानसिक"
+   },
+   {
+    "label": "D",
+    "text": "वैज्ञानिक"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 98,
+  "page": 18,
+  "stem": "What is the subject of discussion in the context of boys?",
+  "stem_hi": "उपर्युक्त लड़कों में क्या शिक्षा की बात कही गई है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Spiritual Education"
+   },
+   {
+    "label": "B",
+    "text": "Physical Education"
+   },
+   {
+    "label": "C",
+    "text": "Mental Education"
+   },
+   {
+    "label": "D",
+    "text": "Scientific Education"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "आध्यात्मिक शिक्षा"
+   },
+   {
+    "label": "B",
+    "text": "शारीरिक शिक्षा"
+   },
+   {
+    "label": "C",
+    "text": "प्रारंभिक शिक्षा"
+   },
+   {
+    "label": "D",
+    "text": "व्यावसायिक शिक्षा"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "C",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 99,
+  "page": 18,
+  "stem": "What is being discussed in the context of home?",
+  "stem_hi": "घर पर किसकी मदद की बात कही गई है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Food"
+   },
+   {
+    "label": "B",
+    "text": "Brother-Sister"
+   },
+   {
+    "label": "C",
+    "text": "Parent-Child"
+   },
+   {
+    "label": "D",
+    "text": "Mother-Father"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "चाय-चाय"
+   },
+   {
+    "label": "B",
+    "text": "भाई-बहन"
+   },
+   {
+    "label": "C",
+    "text": "पिता-पुत्र"
+   },
+   {
+    "label": "D",
+    "text": "माता-पिता"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 100,
+  "page": 18,
+  "stem": "What is not the essence of physical education?",
+  "stem_hi": "बच्चों के प्रारंभिक शिक्षा की मूल सिद्धांत क्या नहीं है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Toys"
+   },
+   {
+    "label": "B",
+    "text": "Music"
+   },
+   {
+    "label": "C",
+    "text": "Sports"
+   },
+   {
+    "label": "D",
+    "text": "Education"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "तत्सम्यता"
+   },
+   {
+    "label": "B",
+    "text": "संगीत"
+   },
+   {
+    "label": "C",
+    "text": "खेल"
+   },
+   {
+    "label": "D",
+    "text": "भोजनशाला"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "Qn_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Office Attendant 02/22",
+  "tag": {
+   "section": "General Studies",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ }
+]

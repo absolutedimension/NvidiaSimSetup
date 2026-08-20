@@ -236,6 +236,13 @@ def generate_test(store, spec: dict, llm=None, count: int = 5, k_exemplars: int 
         if englishgen.can_generate(spec.get("exam"), spec.get("subject"), spec.get("chapter")):
             return englishgen.generate_test(store, spec, count)
 
+        # हिंदी — generate-from-data (तत्सम-तद्भव / समास / संज्ञा / विलोम / पर्यायवाची / मुहावरे).
+        # Closes the largest measured BSSC gap: the mined blueprint put the Hindi section at
+        # 19-31% of three official papers, against which there was no bank at all.
+        from . import hindigen
+        if hindigen.can_generate(spec.get("exam"), spec.get("subject"), spec.get("chapter")):
+            return hindigen.generate_test(store, spec, count)
+
     # FIGURE-FIRST routing: a diagram request in a covered subject/chapter is DRAWN
     # deterministically (correct figure + RDKit-computed answer) instead of LLM-authored SVG.
     if spec.get("require_figure") and not mock:

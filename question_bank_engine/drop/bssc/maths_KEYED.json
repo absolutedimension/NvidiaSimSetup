@@ -1,0 +1,6366 @@
+[
+ {
+  "number": 1,
+  "page": 2,
+  "page_hi": 3,
+  "stem": "A month is selected at random in a year. The probability that it is March or December is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1/12"
+   },
+   {
+    "label": "B",
+    "text": "1/4"
+   },
+   {
+    "label": "C",
+    "text": "1/3"
+   },
+   {
+    "label": "D",
+    "text": "1/6"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक वर्ष में यांत्रिक रूप से किसी एक माह का चयन किया जाता है। 'चयनित माह को, मार्च अथवा दिसम्बर होने की प्रायिकता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{12}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{3}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{6}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 2,
+  "page": 2,
+  "page_hi": null,
+  "stem": "The value of cot12° cot38° cot52° cot60° cot78° is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "-1"
+   },
+   {
+    "label": "B",
+    "text": "1/√3"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "√3"
+   }
+  ],
+  "lang": "en",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "",
+  "options_hi_unverified": [],
+  "hindi_status": "absent",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 3,
+  "page": 2,
+  "page_hi": null,
+  "stem": "If sin(A - B) = \\frac{1}{2}, cos(A + B) = \\frac{1}{2}, 0^{\\circ} < A + B < 90^{\\circ}, A > B the value of B is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "45°"
+   },
+   {
+    "label": "B",
+    "text": "30°"
+   },
+   {
+    "label": "C",
+    "text": "15°"
+   },
+   {
+    "label": "D",
+    "text": "0°"
+   }
+  ],
+  "lang": "en",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "",
+  "options_hi_unverified": [],
+  "hindi_status": "absent",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 4,
+  "page": 2,
+  "page_hi": 3,
+  "stem": "Two poles of heights 6 m and 11 m stand vertically upright on a plane ground. If the distance between their foot is 12 m, the distance between their tops is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "11 m"
+   },
+   {
+    "label": "B",
+    "text": "13 m"
+   },
+   {
+    "label": "C",
+    "text": "12 m"
+   },
+   {
+    "label": "D",
+    "text": "14 m"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "समतल भूमि पर 6 मी. तथा 11 मी. ऊँचाइयों के दो खंभे सीधे खड़े हैं। यदि उनके बीच की दूरी होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "11 मी."
+   },
+   {
+    "label": "B",
+    "text": "13 मी."
+   },
+   {
+    "label": "C",
+    "text": "12 मी."
+   },
+   {
+    "label": "D",
+    "text": "14 मी."
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 5,
+  "page": 2,
+  "page_hi": 3,
+  "stem": "The value of tan90° :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{\\sqrt{3}}"
+   },
+   {
+    "label": "B",
+    "text": "\\sqrt{3}"
+   },
+   {
+    "label": "C",
+    "text": "0"
+   },
+   {
+    "label": "D",
+    "text": "Not defined"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "tan90° का मान है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{\\sqrt{3}}"
+   },
+   {
+    "label": "B",
+    "text": "\\sqrt{3}"
+   },
+   {
+    "label": "C",
+    "text": "0"
+   },
+   {
+    "label": "D",
+    "text": "परिभाषित नहीं है"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 6,
+  "page": 2,
+  "page_hi": 3,
+  "stem": "If L.C.M. of a and 18 is 36 and H.C.F. of a and 18 is 2, then a =",
+  "options": [
+   {
+    "label": "A",
+    "text": "3"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "4"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि a और 18 का लघुत्तम समापवर्त्य 36 और महत्तम समापवर्तक 2 हो तो a =",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "3"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "4"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 7,
+  "page": 2,
+  "page_hi": 3,
+  "stem": "The area of a triangle formed by the line \\frac{x}{a} + \\frac{y}{b} = 1 with the co-ordinate axes is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "2ab"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{ab}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{ab}{2}"
+   },
+   {
+    "label": "D",
+    "text": "ab"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "निर्देशांक अक्षों के साथ रेखा \\frac{x}{a} + \\frac{y}{b} = 1 द्वारा निर्मित त्रिभुज का क्षेत्रफल है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2ab"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{ab}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{ab}{2}"
+   },
+   {
+    "label": "D",
+    "text": "ab"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 8,
+  "page": 2,
+  "page_hi": 3,
+  "stem": "If n is any Natural number then 6^n - 5^n always ends with :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1"
+   },
+   {
+    "label": "B",
+    "text": "3"
+   },
+   {
+    "label": "C",
+    "text": "7"
+   },
+   {
+    "label": "D",
+    "text": "5"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि n कोई प्राकृतिक संख्या हो तो 6^n - 5^n का अंत संदर्भ होगा:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1 से"
+   },
+   {
+    "label": "B",
+    "text": "3 से"
+   },
+   {
+    "label": "C",
+    "text": "7 से"
+   },
+   {
+    "label": "D",
+    "text": "5 से"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "series",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 9,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "The H.C.F. and L.C.M. of the numbers 6, 72, 120 are respectively :",
+  "options": [
+   {
+    "label": "A",
+    "text": "(6, 120)"
+   },
+   {
+    "label": "B",
+    "text": "(12, 120)"
+   },
+   {
+    "label": "C",
+    "text": "(12, 360)"
+   },
+   {
+    "label": "D",
+    "text": "(6, 360)"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "6, 72, 120 का महत्तम समापवर्तक तथा लघुतम समापवर्त्य क्रमशः है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "(6, 120)"
+   },
+   {
+    "label": "B",
+    "text": "(12, 120)"
+   },
+   {
+    "label": "C",
+    "text": "(12, 360)"
+   },
+   {
+    "label": "D",
+    "text": "(6, 360)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 10,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "The distance between the points (a cosθ + b sinθ, 0) and (0, a sinθ - b cosθ) is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\sqrt{a^2 + b^2}"
+   },
+   {
+    "label": "B",
+    "text": "a^2 + b^2"
+   },
+   {
+    "label": "C",
+    "text": "a + b"
+   },
+   {
+    "label": "D",
+    "text": "a^2 - b^2"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिन्ड (a cosθ + b sinθ, 0) और (0, a sinθ - b cosθ) के बीच की दूरी है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\sqrt{a^2 + b^2}"
+   },
+   {
+    "label": "B",
+    "text": "a^2 + b^2"
+   },
+   {
+    "label": "C",
+    "text": "a + b"
+   },
+   {
+    "label": "D",
+    "text": "a^2 - b^2"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 11,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "The perimeter of a triangle whose vertices are (0, 4), (0, 0) and (3, 0) is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "10"
+   },
+   {
+    "label": "B",
+    "text": "12"
+   },
+   {
+    "label": "C",
+    "text": "4"
+   },
+   {
+    "label": "D",
+    "text": "5"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "(0, 4), (0, 0) तथा (3, 0) के शेष वाले त्रिभुज का क्षेत्रफल है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "10"
+   },
+   {
+    "label": "B",
+    "text": "12"
+   },
+   {
+    "label": "C",
+    "text": "4"
+   },
+   {
+    "label": "D",
+    "text": "5"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 12,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "The circumference of a circle is 100 cm. The side of the square inscribed in the circle is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{100\\sqrt{2}}{\\pi} cm"
+   },
+   {
+    "label": "B",
+    "text": "50\\sqrt{2} cm"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{100}{\\pi} cm"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{50\\sqrt{2}}{\\pi} cm"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "वृत्त की परिधि 100 स.मी. है। इस वृत्त के भीतर निर्मित वर्ग का मान होगा:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{100\\sqrt{2}}{\\pi} स.मी."
+   },
+   {
+    "label": "B",
+    "text": "50\\sqrt{2} स.मी."
+   },
+   {
+    "label": "C",
+    "text": "\\frac{100}{\\pi} स.मी."
+   },
+   {
+    "label": "D",
+    "text": "\\frac{50\\sqrt{2}}{\\pi} स.मी."
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 13,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "The area of a circular path of uniform width 'h' surrounding a circular region of radius r is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\pi(2r + h)h"
+   },
+   {
+    "label": "B",
+    "text": "\\pi(2h + r)h"
+   },
+   {
+    "label": "C",
+    "text": "\\pi(2h + r)r"
+   },
+   {
+    "label": "D",
+    "text": "\\pi(2r + h)r"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "r त्रिज्या की किसी वृत्ताकार क्षेत्र के चारों ओर एक समान चौड़ाई 'h' के वृत्ताकार रस्ते का क्षेत्रफल होगा:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\pi(2r + h)h"
+   },
+   {
+    "label": "B",
+    "text": "\\pi(2h + r)h"
+   },
+   {
+    "label": "C",
+    "text": "\\pi(2h + r)r"
+   },
+   {
+    "label": "D",
+    "text": "\\pi(2r + h)r"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 14,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "The length of the tangent from a point A to a circle of radius 3 cm is 4 cm. The distance of A from the centre of the circle is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "5 cm"
+   },
+   {
+    "label": "B",
+    "text": "9 cm"
+   },
+   {
+    "label": "C",
+    "text": "16 cm"
+   },
+   {
+    "label": "D",
+    "text": "7 cm"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "3 स.मी. त्रिज्या की एक वृत्त पर A बिंदु पर खींची गई स्पर्शिका की लंबाई 4 स.मी. है। तो वृत्त के केंद्र से A की दूरी है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "5 स.मी."
+   },
+   {
+    "label": "B",
+    "text": "9 स.मी."
+   },
+   {
+    "label": "C",
+    "text": "16 स.मी."
+   },
+   {
+    "label": "D",
+    "text": "7 स.मी."
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 15,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "If one root of the polynomial f(x) is the reciprocal of the other, then the value of k is, where the polynomial f(x) = 5x^2 + 13x + k :",
+  "options": [
+   {
+    "label": "A",
+    "text": "6"
+   },
+   {
+    "label": "B",
+    "text": "5"
+   },
+   {
+    "label": "C",
+    "text": "-5"
+   },
+   {
+    "label": "D",
+    "text": "0"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि बहुपद f(x) का एक मूल दूसरे का व्युत्क्रम हो तो, बहुपद f(x) = 5x² + 13x + k में k का मान है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "6"
+   },
+   {
+    "label": "B",
+    "text": "5"
+   },
+   {
+    "label": "C",
+    "text": "-5"
+   },
+   {
+    "label": "D",
+    "text": "0"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 16,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "Two circles touch each other externally at C and AB is a common tangent to the circles, then \\angle ACB is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "90°"
+   },
+   {
+    "label": "B",
+    "text": "30°"
+   },
+   {
+    "label": "C",
+    "text": "45°"
+   },
+   {
+    "label": "D",
+    "text": "60°"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "दो वृत्त बाह्य रूप से C बिंदु पर स्पर्श करते हैं. AB वृत्तों का एक अभ्यस्त रूप है, तो |ACB का मान है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "90°"
+   },
+   {
+    "label": "B",
+    "text": "30°"
+   },
+   {
+    "label": "C",
+    "text": "45°"
+   },
+   {
+    "label": "D",
+    "text": "60°"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 17,
+  "page": 4,
+  "page_hi": 5,
+  "stem": "The first and last term of an Arithmetic Progression are 1 and 11 respectively. If the sum of its terms is 36, then the number of terms will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "6"
+   },
+   {
+    "label": "B",
+    "text": "5"
+   },
+   {
+    "label": "C",
+    "text": "8"
+   },
+   {
+    "label": "D",
+    "text": "7"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी समान्तर श्रेणी के प्रथम एवं अंतिम पद क्रमश: 1 एवं 11 हो और इसके पदों का योग 36 हो, तो पदों की संख्या होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "6"
+   },
+   {
+    "label": "B",
+    "text": "5"
+   },
+   {
+    "label": "C",
+    "text": "8"
+   },
+   {
+    "label": "D",
+    "text": "7"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Arithmetic",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 18,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "The nth term of an Arithmetic Progression with first term 'a' and common difference",
+  "options": [
+   {
+    "label": "A",
+    "text": "a + (n - 1)d"
+   },
+   {
+    "label": "B",
+    "text": "a + (n + 1)d"
+   },
+   {
+    "label": "C",
+    "text": "a - (n - 1)d"
+   },
+   {
+    "label": "D",
+    "text": "a - (n + 1)d"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "प्रश्न पद ‘a’ एवं साधारण ‘d’ वाले समांतर श्रेणी का nवाँ पद होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "a+(n-1)d"
+   },
+   {
+    "label": "B",
+    "text": "a+(n+1)d"
+   },
+   {
+    "label": "C",
+    "text": "a-(n-1)d"
+   },
+   {
+    "label": "D",
+    "text": "a-(n+1)d"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "series",
+   "topic": "Arithmetic",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 19,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "If n is an odd positive integer then n^2 - 1 is divisible by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "7"
+   },
+   {
+    "label": "B",
+    "text": "5"
+   },
+   {
+    "label": "C",
+    "text": "8"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि n एक विशेष धन पूर्णांक हो तो n^{2}-1 किससे विभाजित होगा ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "7"
+   },
+   {
+    "label": "B",
+    "text": "5"
+   },
+   {
+    "label": "C",
+    "text": "8"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 20,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "An unbiased die is thrown, the probability of getting a number between 3 and 6 :",
+  "options": [
+   {
+    "label": "A",
+    "text": "= \\frac{2}{3}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{6}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{3}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{2}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक अनिश्चित पाँसा फेंकना जाता है, 3 तिथि 6 के मध्य किसी एक संख्या को पाने की प्रायिकता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{2}{3}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{6}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{3}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{2}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 21,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "The zeros of the polynomial 6x^2 - 7x - 3 are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "( \\frac{1}{3}, \\frac{3}{2} )"
+   },
+   {
+    "label": "B",
+    "text": "( -1, \\frac{3}{2} )"
+   },
+   {
+    "label": "C",
+    "text": "( -1, 2 )"
+   },
+   {
+    "label": "D",
+    "text": "( 1, 2 )"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बहुपद 6x^{2}-7x-3 के शून्यक हैं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\left( \\frac{1}{3}, \\frac{3}{2} \\right)"
+   },
+   {
+    "label": "B",
+    "text": "\\left( -\\frac{1}{3}, \\frac{3}{2} \\right)"
+   },
+   {
+    "label": "C",
+    "text": "\\left( -\\frac{1}{3}, \\frac{2}{3} \\right)"
+   },
+   {
+    "label": "D",
+    "text": "\\left( \\frac{1}{3}, -\\frac{2}{3} \\right)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Number System",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 22,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "TP and TQ are two tangents to a circle with centre O so that |POQ|=110° then |PTQ| is",
+  "options": [
+   {
+    "label": "A",
+    "text": "60°"
+   },
+   {
+    "label": "B",
+    "text": "80°"
+   },
+   {
+    "label": "C",
+    "text": "90°"
+   },
+   {
+    "label": "D",
+    "text": "70°"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कैसे O के एक वृत्त पर TP तथा TQ दो स्पर्श रेखाएँ इस प्रकार हैं कि |POQ=110^{\\circ} है तो |PTQ होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "60^{\\circ}"
+   },
+   {
+    "label": "B",
+    "text": "80^{\\circ}"
+   },
+   {
+    "label": "C",
+    "text": "90^{\\circ}"
+   },
+   {
+    "label": "D",
+    "text": "70^{\\circ}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 23,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "A bag contains 4 red and 5 black balls. A ball is drawn from the bag at random. probability that the ball drawn is black :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{5}{9}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{4}{9}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{5}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक शेल में, 4 लाल तथा 5 काली गेंदें हैं | एक गेंद को यादृच्छिक तौर पर निकाला जाता है | निकाली गई गेंद काली है; किस प्रायिकता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{5}{9}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{4}{9}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{5}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 24,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "The mean of first n natural numbers is 15, then n =",
+  "options": [
+   {
+    "label": "A",
+    "text": "15"
+   },
+   {
+    "label": "B",
+    "text": "29"
+   },
+   {
+    "label": "C",
+    "text": "14"
+   },
+   {
+    "label": "D",
+    "text": "30"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "प्रथम n प्राकृतिक संख्याओं का माध्य 15 है तो n =",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "15"
+   },
+   {
+    "label": "B",
+    "text": "29"
+   },
+   {
+    "label": "C",
+    "text": "14"
+   },
+   {
+    "label": "D",
+    "text": "30"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 25,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "If the radius of a circle is diminished by 10%, then its area is diminished by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "19%"
+   },
+   {
+    "label": "B",
+    "text": "20%"
+   },
+   {
+    "label": "C",
+    "text": "10%"
+   },
+   {
+    "label": "D",
+    "text": "36%"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि किसी वृत्त की त्रिज्या को 10% कम किया जाए तो इसका क्षेत्रफल कितना कम हो जाएगा?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "19%"
+   },
+   {
+    "label": "B",
+    "text": "20%"
+   },
+   {
+    "label": "C",
+    "text": "10%"
+   },
+   {
+    "label": "D",
+    "text": "36%"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "percentage_profit_loss",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 26,
+  "page": 6,
+  "page_hi": 7,
+  "stem": "If 7th and 13th terms of an Arithmetic Progression be 34 and 64 respectively, then its 18th is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "88"
+   },
+   {
+    "label": "B",
+    "text": "90"
+   },
+   {
+    "label": "C",
+    "text": "87"
+   },
+   {
+    "label": "D",
+    "text": "89"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी समान्तर श्रेणी के 7वें एवं 13वें पदों का मान क्रमशः: 34 एवं 64 है तो इसके 18वें पद का मान होगा:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "88"
+   },
+   {
+    "label": "B",
+    "text": "90"
+   },
+   {
+    "label": "C",
+    "text": "87"
+   },
+   {
+    "label": "D",
+    "text": "89"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 27,
+  "page": 8,
+  "page_hi": null,
+  "stem": "The value of \\frac{1 + \\tan^{2}A}{1 + \\cot^{2}A} is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1"
+   },
+   {
+    "label": "B",
+    "text": "\\sec^{2}A"
+   },
+   {
+    "label": "C",
+    "text": "\\cot^{2}A"
+   },
+   {
+    "label": "D",
+    "text": "\\tan^{2}A"
+   }
+  ],
+  "lang": "en",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "",
+  "options_hi_unverified": [],
+  "hindi_status": "absent",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 28,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "If the zeros of the polynomial x^{3} - 3x^{2} + x + 1 are (a - b), a, (a + b) then the values of a and b respectively are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "(1, \\sqrt{2})"
+   },
+   {
+    "label": "B",
+    "text": "(-1, \\pm \\sqrt{2})"
+   },
+   {
+    "label": "C",
+    "text": "(1, -\\sqrt{2})"
+   },
+   {
+    "label": "D",
+    "text": "(1, \\pm \\sqrt{2})"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि बहुपद x^3 - 3x^2 + x + 1 के रूपक (a-b), a, (a+b) हो तो a एवं b के मान क्रमश: होंगे :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "(1, \\sqrt{2})"
+   },
+   {
+    "label": "B",
+    "text": "(-1, \\pm\\sqrt{2})"
+   },
+   {
+    "label": "C",
+    "text": "(1, -\\sqrt{2})"
+   },
+   {
+    "label": "D",
+    "text": "(1, \\pm\\sqrt{2})"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 29,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "If the mode of the data 64, 60, 48, x, 43, 48, 43, 34 is 43 then x + 5 is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "43"
+   },
+   {
+    "label": "B",
+    "text": "48"
+   },
+   {
+    "label": "C",
+    "text": "46"
+   },
+   {
+    "label": "D",
+    "text": "45"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि 64, 60, 48, x, 43, 48, 43, 34 आंकड़ों का मोड 43 है तो x + 5 होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "43"
+   },
+   {
+    "label": "B",
+    "text": "48"
+   },
+   {
+    "label": "C",
+    "text": "46"
+   },
+   {
+    "label": "D",
+    "text": "45"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 30,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "The mode of a frequency distribution can be determined graphically from :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Frequency polygon"
+   },
+   {
+    "label": "B",
+    "text": "Frequency curve"
+   },
+   {
+    "label": "C",
+    "text": "Histogram"
+   },
+   {
+    "label": "D",
+    "text": "Ogive curve"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बारंबारता बंटन के मोड को ग्राफिक रूप से निर्धारित किया जा सकता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "बारंबारता बहुभुज से"
+   },
+   {
+    "label": "B",
+    "text": "बारंबारता वक्र से"
+   },
+   {
+    "label": "C",
+    "text": "आयतिचित्र से"
+   },
+   {
+    "label": "D",
+    "text": "तौरन वक्र से"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "series",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 31,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "The value of k for which the system of equations x + 2y = 3, 5x + ky = 7 has no soluti is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "10"
+   },
+   {
+    "label": "B",
+    "text": "6"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "k का वह मान, जिसके लिए समीकरण निकाय x + 2y = 3, 5x + ky = 7 के हल नहीं हैं, है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "10"
+   },
+   {
+    "label": "B",
+    "text": "6"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 32,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "Y = x^2 is the polynomial having __________ repeated zeros.",
+  "options": [
+   {
+    "label": "A",
+    "text": "2"
+   },
+   {
+    "label": "B",
+    "text": "3"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "0"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "Y = x² एक रस बहुपद है जिसमें पुनरावृत्त सूत्रों की संख्या क्या है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2"
+   },
+   {
+    "label": "B",
+    "text": "3"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "0"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 33,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "Two dice are thrown simultaneously. The probability of getting a doublet of even number is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{3}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{12}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{6}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "दो पाँसों को एक साथ फेंका जाता है। संख्याओं की एक हड़ताली की प्रायिकता क्या है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{3}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{12}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{6}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 34,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "A card is drawn at random from a pack of 52 cards. The probability of getting a King of suit is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{13}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{26}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{52}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "52 पत्तों की एक गड्डी से एक पत्ता यादृच्छिक रूप से निकाला जाता है। निकाला गया पत्ता, लाल रंग का एक राजा है, कि प्रायिकता है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{13}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{26}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{52}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 35,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "The square of any positive integer is of form __________ for some integer m.",
+  "options": [
+   {
+    "label": "A",
+    "text": "2m or 2m+1"
+   },
+   {
+    "label": "B",
+    "text": "3m or 3m+1"
+   },
+   {
+    "label": "C",
+    "text": "m or m+1"
+   },
+   {
+    "label": "D",
+    "text": "6m or 6m+1"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कई पूर्णांक m के लिए किसी भी धन पूर्णांक का वर्ग का रूप __________ होगा।",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2m अथवा 2m+1"
+   },
+   {
+    "label": "B",
+    "text": "3m अथवा 3m+1"
+   },
+   {
+    "label": "C",
+    "text": "m अथवा m+1"
+   },
+   {
+    "label": "D",
+    "text": "6m अथवा 6m+1"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "series",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 36,
+  "page": 10,
+  "page_hi": null,
+  "stem": "If 5(tan^2x - cos^2x) = 2 cos2x + 9, value of cos^2x is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{5}{3}"
+   },
+   {
+    "label": "B",
+    "text": "-\\frac{1}{3}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{3}"
+   },
+   {
+    "label": "D",
+    "text": "-\\frac{5}{3}"
+   }
+  ],
+  "lang": "en",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "",
+  "options_hi_unverified": [],
+  "hindi_status": "absent",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 37,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "If two zeros of x^3 + x^2 - 5x - 5 are \\sqrt{5} and -\\sqrt{5} then the third zero is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "-2"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "-1"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यादि x^{3}+x^{2}-5x-5 के दो शृंगक \\sqrt{5} और -\\sqrt{5} हो तो तीसरा शृंगक है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "-2"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "-1"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 38,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "A wire is looped in the form of a circle of radius 28 cm. It is rebuilt into a square form, th length of the side of the square is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "14 cm"
+   },
+   {
+    "label": "B",
+    "text": "34 cm"
+   },
+   {
+    "label": "C",
+    "text": "24 cm"
+   },
+   {
+    "label": "D",
+    "text": "44 cm"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "28 स.मी. त्रिज्या की एक वृत्त के तार को मोड़कर बनाया गया है। फिर इस वृत्त को एक वर्ग का रूप दिया गया। वर्ग की भुजाओं की लंबाई है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "14 स.मी."
+   },
+   {
+    "label": "B",
+    "text": "34 स.मी."
+   },
+   {
+    "label": "C",
+    "text": "24 स.मी."
+   },
+   {
+    "label": "D",
+    "text": "44 स.मी."
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 39,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "4 chairs and 3 tables cost ₹ 2100 and 5 chairs and 2 tables cost ₹ 1750. The cost of a ch and a table respectively are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "(100, 500)"
+   },
+   {
+    "label": "B",
+    "text": "(150, 400)"
+   },
+   {
+    "label": "C",
+    "text": "(150, 500)"
+   },
+   {
+    "label": "D",
+    "text": "(200, 500)"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "4 कुर्सियों और तीन मेजों की कीमत ₹ 2100 है और 5 कुर्सियाँ तथा दो मेजों की कीमत ₹ 1750 है। 1 मेज की कीमत ज्ञात है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "(100, 500)"
+   },
+   {
+    "label": "B",
+    "text": "(150, 400)"
+   },
+   {
+    "label": "C",
+    "text": "(150, 500)"
+   },
+   {
+    "label": "D",
+    "text": "(200, 500)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 40,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "The quotient and remainder of the polynomial p(x) = x^4 - 5x + 6 when divided by q(x) = 2 - respectively are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "(-x^2 - 2, -5x + 10)"
+   },
+   {
+    "label": "B",
+    "text": "(-x^2 - 2, 5x - 10)"
+   },
+   {
+    "label": "C",
+    "text": "(x^2 - 2, -5x + 10)"
+   },
+   {
+    "label": "D",
+    "text": "(-x^2 + 2, 5x - 10)"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बाह्य p(x) = x^{4}-5x+6 को q(x) = 2 - x^{2} से भाग देने पर भागफल एवं शेषफल ज्ञात करें :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "(-x^{2}-2,-5x+10)"
+   },
+   {
+    "label": "B",
+    "text": "(-x^{2}-2,5x-10)"
+   },
+   {
+    "label": "C",
+    "text": "(x^{2}-2,-5x+10)"
+   },
+   {
+    "label": "D",
+    "text": "(-x^{2}+2,5x-10)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 41,
+  "page": 10,
+  "page_hi": null,
+  "stem": "If x=a cosθ and y=b sinθ then b2x2+a2y2=",
+  "options": [
+   {
+    "label": "A",
+    "text": "a2+b2"
+   },
+   {
+    "label": "B",
+    "text": "a2b2"
+   },
+   {
+    "label": "C",
+    "text": "a4b4"
+   },
+   {
+    "label": "D",
+    "text": "ab"
+   }
+  ],
+  "lang": "en",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "",
+  "options_hi_unverified": [],
+  "hindi_status": "absent",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 42,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "The arithmetic mean of first n natural numbers is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{n}{2}+1"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{n}{2}-1"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{n-1}{2}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{n+1}{2}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "प्रश्न n प्राकृतिक संख्याओं का समान्तर माध्य है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{n}{2}+1"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{n}{2}-1"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{n-1}{2}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{n+1}{2}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Arithmetic",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 43,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "A fourth degree polynomial is called :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Linear Polynomial"
+   },
+   {
+    "label": "B",
+    "text": "Constant Polynomial"
+   },
+   {
+    "label": "C",
+    "text": "Quadratic Polynomial"
+   },
+   {
+    "label": "D",
+    "text": "Biquadratic Polynomial"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "तत्वधात के बहुपद को कहते हैं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "रेखिक बहुपद"
+   },
+   {
+    "label": "B",
+    "text": "अचर बहुपद"
+   },
+   {
+    "label": "C",
+    "text": "धात बहुपद"
+   },
+   {
+    "label": "D",
+    "text": "तत्वधात बहुपद"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 44,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "The probability that a leap year to have 53 sundays :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{4}{7}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{3}{7}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{2}{7}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{7}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी एक अध्यवर्ष में 53 रविवार होने की प्रायिकता क्या है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{4}{7}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{3}{7}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{2}{7}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{7}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 45,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "The sum of first 20 odd natural numbers is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "200"
+   },
+   {
+    "label": "B",
+    "text": "400"
+   },
+   {
+    "label": "C",
+    "text": "350"
+   },
+   {
+    "label": "D",
+    "text": "450"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "प्रश्न 20 विभिन्न प्राकृतिक संख्याओं का योगफल है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "200"
+   },
+   {
+    "label": "B",
+    "text": "400"
+   },
+   {
+    "label": "C",
+    "text": "350"
+   },
+   {
+    "label": "D",
+    "text": "450"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 46,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "If the area of a sector of a circle is \\frac{5}{18} of the area of the circle, then the sector angle",
+  "options": [
+   {
+    "label": "A",
+    "text": "60°"
+   },
+   {
+    "label": "B",
+    "text": "100°"
+   },
+   {
+    "label": "C",
+    "text": "90°"
+   },
+   {
+    "label": "D",
+    "text": "30°"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि किसी वृत्त के त्रिज्या खंड का क्षेत्रफल, वृत्त के क्षेत्रफल का \\frac{5}{18} है तो त्रिज्या खंड का कोण का मान होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "60°"
+   },
+   {
+    "label": "B",
+    "text": "100°"
+   },
+   {
+    "label": "C",
+    "text": "90°"
+   },
+   {
+    "label": "D",
+    "text": "30°"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 47,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "If the bisector of an angle of a triangle bisects the opposite side, the triangle is a :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Right Angled Triangle"
+   },
+   {
+    "label": "B",
+    "text": "Isosceles Triangle"
+   },
+   {
+    "label": "C",
+    "text": "Obtuse Angled Triangle"
+   },
+   {
+    "label": "D",
+    "text": "Acute Angled Triangle"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी त्रिभुज के एक कोण का विशेषण समाने की भुजा को दो बराबर भागों में बांटता है तो वह त्रिभुज है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "समकोण त्रिभुज"
+   },
+   {
+    "label": "B",
+    "text": "समभुज त्रिभुज"
+   },
+   {
+    "label": "C",
+    "text": "अधिक कोण त्रिभुज"
+   },
+   {
+    "label": "D",
+    "text": "न्यून कोण त्रिभुज"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 48,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "If the points (t, 2t), (-2, 6) and (3, 1) are collinear, then t =",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{3}{5}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{3}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{4}{3}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{5}{3}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि रेखा (t, 2t), (-2, 6) और (3, 1) से intersect हो, तो t =",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{3}{5}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{3}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{4}{3}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{5}{3}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 49,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "Number of tangents a circle can have through a point lying outside the circle is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1"
+   },
+   {
+    "label": "B",
+    "text": "3"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "0"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "वृत्त के बाहर स्थित किसी बिंदु से वृत्त पर खींची जा सकने वाली स्पर्श्यताओं की संख्या हो सकती है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1"
+   },
+   {
+    "label": "B",
+    "text": "3"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "0"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "series",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 50,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "The value of k for which the system of equations 2x+3y=5, 4x+ky=10 has infinite is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1"
+   },
+   {
+    "label": "B",
+    "text": "6"
+   },
+   {
+    "label": "C",
+    "text": "0"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "k का वह मान, जिसके लिए समीकरण निकाय 2x + 3y = 5, 4x + ky = 10 के अनंत हल हैं, है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1"
+   },
+   {
+    "label": "B",
+    "text": "6"
+   },
+   {
+    "label": "C",
+    "text": "0"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 51,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "A solid metallic spherical ball of diameter 6 cm is melted and recast into a cone with dia of base 12 cm. The height of the cone is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "4 cm"
+   },
+   {
+    "label": "B",
+    "text": "3 cm"
+   },
+   {
+    "label": "C",
+    "text": "2 cm"
+   },
+   {
+    "label": "D",
+    "text": "6 cm"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "6 स.मी. व्यास के एक ठोस धारित गोल को फिसलाकर, दुबारा 12 स.मी. आधार व्यास के एक शंकु का निर्माण किया गया। शंकु की ऊँचाई है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "4 स.मी."
+   },
+   {
+    "label": "B",
+    "text": "3 स.मी."
+   },
+   {
+    "label": "C",
+    "text": "2 स.मी."
+   },
+   {
+    "label": "D",
+    "text": "6 स.मी."
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 52,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "If the mean of the following distribution is 2.6, then the value of y is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "8"
+   },
+   {
+    "label": "B",
+    "text": "13"
+   },
+   {
+    "label": "C",
+    "text": "24"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि निम्न बंटन का माध्य 2.6 है, तो y का मान होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "8"
+   },
+   {
+    "label": "B",
+    "text": "13"
+   },
+   {
+    "label": "C",
+    "text": "24"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 53,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "A polynomial of degree __________ is called a Linear Polynomial.",
+  "options": [
+   {
+    "label": "A",
+    "text": "2"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "0"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "क्या ________ के बहुपद को रेखिक बहुपद कहते हैं!",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "0"
+   },
+   {
+    "label": "D",
+    "text": "3"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Algebra",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 54,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "The value of \\tan 65^{\\circ} \\text{ is :}",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{\\sqrt{3}}"
+   },
+   {
+    "label": "B",
+    "text": "\\sqrt{3}"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{2}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "tan 65° / cot 25° का मान है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{\\sqrt{3}}"
+   },
+   {
+    "label": "B",
+    "text": "\\sqrt{3}"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{2}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 55,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "In a family of 3 children the probability of having atleast one boy is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{3}{8}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{8}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{7}{8}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{5}{8}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "3 बच्चों की एक परिवार में कम से कम एक लड़का हो, कि प्रायिकता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{3}{8}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{8}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{7}{8}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{5}{8}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 56,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "Total surface area of a right circular cylinder of base radius r and height h is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "πr(h+r)²"
+   },
+   {
+    "label": "B",
+    "text": "2πrh"
+   },
+   {
+    "label": "C",
+    "text": "2πr(h+r)"
+   },
+   {
+    "label": "D",
+    "text": "2πr²"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "आधार त्रिज्या r तथा ऊँचाई h की एक लम्बवृत्तीय बेलन का कुल पृष्ठफल है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "πr(h + r)²"
+   },
+   {
+    "label": "B",
+    "text": "2πrh"
+   },
+   {
+    "label": "C",
+    "text": "2πr(h + r)"
+   },
+   {
+    "label": "D",
+    "text": "2πr²"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 57,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "Ogive curves are used to find :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Standard Deviation"
+   },
+   {
+    "label": "B",
+    "text": "Mode"
+   },
+   {
+    "label": "C",
+    "text": "Median"
+   },
+   {
+    "label": "D",
+    "text": "Mean"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "तिर्यक वक्र के उपयोग से क्या ज्ञात किया जाता है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "मानक विचलन"
+   },
+   {
+    "label": "B",
+    "text": "मोड"
+   },
+   {
+    "label": "C",
+    "text": "माध्यिका"
+   },
+   {
+    "label": "D",
+    "text": "माध्य"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 58,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "The expression \\frac{tanA}{1-cotA} + \\frac{cotA}{1-tanA} can be written as :",
+  "options": [
+   {
+    "label": "A",
+    "text": "secA + cosecA"
+   },
+   {
+    "label": "B",
+    "text": "tanA + cotA"
+   },
+   {
+    "label": "C",
+    "text": "sinA cosA + 1"
+   },
+   {
+    "label": "D",
+    "text": "secA cosecA + 1"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "व्यंजन : \\frac{tanA}{1-cotA} + \\frac{cotA}{1-tanA} को इस प्रकार लिखा जा सकता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "secA + cosecA"
+   },
+   {
+    "label": "B",
+    "text": "tanA + cotA"
+   },
+   {
+    "label": "C",
+    "text": "sinA.cosA + 1"
+   },
+   {
+    "label": "D",
+    "text": "secA cosecA + 1"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 59,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "The angle described by hour hand of a clock in one minute is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1°"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{2}°"
+   },
+   {
+    "label": "C",
+    "text": "1°"
+   },
+   {
+    "label": "D",
+    "text": "2°"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक फिनट में घड़ी की सुई द्वारा वर्णित कोण है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{1^{\\circ}}{2}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1^{\\circ}}{3}"
+   },
+   {
+    "label": "C",
+    "text": "1^{\\circ}"
+   },
+   {
+    "label": "D",
+    "text": "2^{\\circ}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "General Science",
+   "type": "clock",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 60,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "In a right angled \\triangle ABC, right angled at B, if \\tan A = 1 then the value of 2\\sin A \\cos A :",
+  "options": [
+   {
+    "label": "A",
+    "text": "0"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{\\sqrt{2}}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{\\sqrt{3}}{2}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक समकोण \\triangle ABC में कोण B, समकोण है, यदि \\tan A = 1 है, तो 2\\sin A \\cos A का मान है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "0"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{\\sqrt{2}}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{\\sqrt{3}}{2}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 61,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "The difference between two numbers is 26 and one number is three times the other. The numbers are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "(48, 22)"
+   },
+   {
+    "label": "B",
+    "text": "(10, 36)"
+   },
+   {
+    "label": "C",
+    "text": "(30, 4)"
+   },
+   {
+    "label": "D",
+    "text": "(39, 13)"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "दो संख्याओं का अंतर 26 है और एक संख्या दूसरी संख्या की तिगुनी है। वे संख्याएँ हैं:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "(48, 22)"
+   },
+   {
+    "label": "B",
+    "text": "(10, 36)"
+   },
+   {
+    "label": "C",
+    "text": "(30, 4)"
+   },
+   {
+    "label": "D",
+    "text": "(39, 13)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 62,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "The number of solid spheres, each of diameter 6 cm that could be moulded to form a solid metal cylinder of height 45 cm and diameter 4 cm is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "5"
+   },
+   {
+    "label": "B",
+    "text": "4"
+   },
+   {
+    "label": "C",
+    "text": "3"
+   },
+   {
+    "label": "D",
+    "text": "6"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "प्रत्येक 6 सें.मी. व्यास के ठोस गोलों की संख्या क्या होगी जिससें साँचे में डालकर 4 सें.मी. व्यास तथा 45 सें.मी. लंबाई की जा सके?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "5"
+   },
+   {
+    "label": "B",
+    "text": "4"
+   },
+   {
+    "label": "C",
+    "text": "3"
+   },
+   {
+    "label": "D",
+    "text": "6"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 63,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "The length of the hypotenuse of an Isosceles right angled triangle whose one side is 4\\sqrt{2} cm is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "12\\sqrt{2} cm"
+   },
+   {
+    "label": "B",
+    "text": "8\\sqrt{2} cm"
+   },
+   {
+    "label": "C",
+    "text": "12 cm"
+   },
+   {
+    "label": "D",
+    "text": "8 cm"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी समदिभाग समकोण त्रिभुज की एक भुजा 4\\sqrt{2} सें.मी. है तो इसके कर्ण की लंबाई होगी:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "12\\sqrt{2} सें.मी."
+   },
+   {
+    "label": "B",
+    "text": "8\\sqrt{2} सें.मी."
+   },
+   {
+    "label": "C",
+    "text": "12 सें.मी."
+   },
+   {
+    "label": "D",
+    "text": "8 सें.मी."
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 64,
+  "page": 16,
+  "page_hi": null,
+  "stem": "The value of \\frac{tan\\theta}{sec\\theta -1} + \\frac{tan\\theta}{sec\\theta +1} :",
+  "options": [
+   {
+    "label": "A",
+    "text": "2 tan\\theta sec\\theta"
+   },
+   {
+    "label": "B",
+    "text": "2 sec\\theta"
+   },
+   {
+    "label": "C",
+    "text": "2 cosec\\theta"
+   },
+   {
+    "label": "D",
+    "text": "2 tan\\theta"
+   }
+  ],
+  "lang": "en",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "",
+  "options_hi_unverified": [],
+  "hindi_status": "absent",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "General Science",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 65,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "An observer 2 m tall is 30 m away from a chimney. The angle of elevation of the top of the chimney from her eyes is 45°. The height of the chimney is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "30 m"
+   },
+   {
+    "label": "B",
+    "text": "32 m"
+   },
+   {
+    "label": "C",
+    "text": "28 m"
+   },
+   {
+    "label": "D",
+    "text": "15 m"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "2 मी. लंबा कोई प्रेक्षक किसी चिमनी से 30 मी. की दूरी पर है। उसके आँख से चिमनी की चोटी का ऊँचाई कोण 45° है। चिमनी की ऊँचाई है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "30 मी."
+   },
+   {
+    "label": "B",
+    "text": "32 मी."
+   },
+   {
+    "label": "C",
+    "text": "28 मी."
+   },
+   {
+    "label": "D",
+    "text": "15 मी."
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 66,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "PQ is a tangent drawn from a point P to a circle with centre O and QOR is a diameter of the circle such that \\angle POR =120^\\circ then \\angle OPQ is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "60°"
+   },
+   {
+    "label": "B",
+    "text": "90°"
+   },
+   {
+    "label": "C",
+    "text": "30°"
+   },
+   {
+    "label": "D",
+    "text": "45°"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "O केंद्र के एक वृत्त पर P बिंदु से PQ एक स्पर्श रेखा है। QOR वृत्त का व्यास है तथा |POR =120° तो |OPQ होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "60°"
+   },
+   {
+    "label": "B",
+    "text": "90°"
+   },
+   {
+    "label": "C",
+    "text": "30°"
+   },
+   {
+    "label": "D",
+    "text": "45°"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 67,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "In a triangle ABC, D and E are the points on AB and AC respectively such that BD=CE. If DE is parallel to BC, then :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\angle B=\\angle A-\\angle C"
+   },
+   {
+    "label": "B",
+    "text": "\\angle B=\\angle C"
+   },
+   {
+    "label": "C",
+    "text": "\\angle B=\\angle A"
+   },
+   {
+    "label": "D",
+    "text": "\\angle B=\\angle A+\\angle C"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "त्रिभुज ABC में D तथा E क्रमशः: ज्ञात AB तथा AC पर इस प्रकार दो बिंदु हैं कि BD=CE है। यदि DE, BC के समानांतर हो, तो :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "∠B=∠A−∠C"
+   },
+   {
+    "label": "B",
+    "text": "∠B=∠C"
+   },
+   {
+    "label": "C",
+    "text": "∠B=∠A"
+   },
+   {
+    "label": "D",
+    "text": "∠B=∠A+∠C"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 68,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "Which of the following is not a measure of central tendency ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Mode"
+   },
+   {
+    "label": "B",
+    "text": "Median"
+   },
+   {
+    "label": "C",
+    "text": "Mean"
+   },
+   {
+    "label": "D",
+    "text": "Range"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिर में से कौन-सा केंद्रिय प्रवृत्ति का माप नहीं है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "मोड़"
+   },
+   {
+    "label": "B",
+    "text": "माध्यका"
+   },
+   {
+    "label": "C",
+    "text": "माध्य"
+   },
+   {
+    "label": "D",
+    "text": "परिसर"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "odd_one_out",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 69,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "If am \\neq bl then the system of equations ax+by=c, lx+my=n :",
+  "options": [
+   {
+    "label": "A",
+    "text": "has no solution"
+   },
+   {
+    "label": "B",
+    "text": "may or may not have a solution"
+   },
+   {
+    "label": "C",
+    "text": "has infinitely many solutions"
+   },
+   {
+    "label": "D",
+    "text": "has a unique solution"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि am≠bl हो, समीकरण निकाय, ax+by=c, lx+my=n का:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "कोई हल नहीं है"
+   },
+   {
+    "label": "B",
+    "text": "हल हो भी सकता है और नहीं भी"
+   },
+   {
+    "label": "C",
+    "text": "अनंत कई हल हैं"
+   },
+   {
+    "label": "D",
+    "text": "अद्वितीय हल है"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 70,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "A tangent PQ at a point P of a circle of radius 5 cm meets a line through the centre O at a point Q such that OQ=12 cm. Length of PQ is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "12 cm"
+   },
+   {
+    "label": "B",
+    "text": "\\sqrt{119} cm"
+   },
+   {
+    "label": "C",
+    "text": "13 cm"
+   },
+   {
+    "label": "D",
+    "text": "8.5 cm"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "5 सैं.मी. त्रिज्या की एक वृत्त के बिंदु P पर स्पर्श्या PQ वृत्त के केन्द्र O से गुजरने वाली रेखा से Q बिंदु पर इस प्रकार मिलती है कि OQ=12 सैं.मी. है तो PQ की लंबाई है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "12 सैं.मी."
+   },
+   {
+    "label": "B",
+    "text": "\\sqrt{119} सैं.मी."
+   },
+   {
+    "label": "C",
+    "text": "13 सैं.मी."
+   },
+   {
+    "label": "D",
+    "text": "8.5 सैं.मी."
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 71,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "The other zero of the polynomial 2x^3-5x^2-14x+8 will be if two of its zeros are 4 and -2 :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{2}"
+   },
+   {
+    "label": "C",
+    "text": "-\\frac{1}{2}"
+   },
+   {
+    "label": "D",
+    "text": "-\\frac{1}{4}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बहुपद 2x^3–5x^2–14x+8 के दो शून्यक 4 तथा -2 हैं, तो इसका अन्य शून्यक होगा:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{2}"
+   },
+   {
+    "label": "C",
+    "text": "-\\frac{1}{2}"
+   },
+   {
+    "label": "D",
+    "text": "-\\frac{1}{4}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 72,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "If 35 is removed from the data 30, 34, 35, 36, 37, 38, 39, 40, then the median is increased by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "0.5"
+   },
+   {
+    "label": "B",
+    "text": "1.5"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "2"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि 30, 34, 35, 36, 37, 38, 39, 40 से 35 को हटा दिया जाय तो माध्यिका में कितनी वृद्धि होगी ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "0.5"
+   },
+   {
+    "label": "B",
+    "text": "1.5"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "2"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 73,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "The area of the circle that can be inscribed in a square of side 10 cm is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "25 \\pi cm^2"
+   },
+   {
+    "label": "B",
+    "text": "40 \\pi cm^2"
+   },
+   {
+    "label": "C",
+    "text": "30 \\pi cm^2"
+   },
+   {
+    "label": "D",
+    "text": "20 \\pi cm^2"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "10 सैं.मी. भूजा वाले वर्ग के अंदर खींची गई वृत्त का क्षेत्रफल होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "25 π सैं.मी.²"
+   },
+   {
+    "label": "B",
+    "text": "40 π सैं.मी.²"
+   },
+   {
+    "label": "C",
+    "text": "30 π सैं.मी.²"
+   },
+   {
+    "label": "D",
+    "text": "20 π सैं.मी.²"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 74,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "The ratio in which (4, 5) divides the join of (2, 3) and (7, 8) is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "2 : 3"
+   },
+   {
+    "label": "B",
+    "text": "1 : 2"
+   },
+   {
+    "label": "C",
+    "text": "-2 : 3"
+   },
+   {
+    "label": "D",
+    "text": "-3 : 2"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "(2, 3) और (7, 8) को मिलाने वाली रेखा को (4, 5) किस अनुपात में बांटता है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2 : 3"
+   },
+   {
+    "label": "B",
+    "text": "1 : 2"
+   },
+   {
+    "label": "C",
+    "text": "-2 : 3"
+   },
+   {
+    "label": "D",
+    "text": "-3 : 2"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "ratio_average",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 75,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "The next term of the Arithmetic Progression \\sqrt{7}, \\sqrt{28}, \\sqrt{63}..... is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\sqrt{84}"
+   },
+   {
+    "label": "B",
+    "text": "\\sqrt{112}"
+   },
+   {
+    "label": "C",
+    "text": "\\sqrt{70}"
+   },
+   {
+    "label": "D",
+    "text": "\\sqrt{98}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "समांतर श्रेणी : \\sqrt{7}, \\sqrt{28}, \\sqrt{63}..... का अगला पद है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\sqrt{84}"
+   },
+   {
+    "label": "B",
+    "text": "\\sqrt{112}"
+   },
+   {
+    "label": "C",
+    "text": "\\sqrt{70}"
+   },
+   {
+    "label": "D",
+    "text": "\\sqrt{98}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "series",
+   "topic": "Arithmetic",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 76,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "If the first term of an Arithmetic Progression is 'a' and the nth term is 'b', then the common difference is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{b-a}{n}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{b+a}{n-1}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{b-a}{n-1}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{b-a}{n+1}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि किसी समांतर श्रेणी के प्रथम पद 'a' और nवें पद 'b' हो तो सामान्यतर होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{b-a}{n}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{b+a}{n-1}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{b-a}{n+1}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{b-a}{n-1}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 77,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "If the sum of n terms of an Arithmetic Progression is 2n^2 + 5n, then its nth term is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "4n + 3"
+   },
+   {
+    "label": "B",
+    "text": "3n + 4"
+   },
+   {
+    "label": "C",
+    "text": "3n - 4"
+   },
+   {
+    "label": "D",
+    "text": "4n - 3"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी समांतर श्रेणी के n पदों का योगफल 2n²+5n है तो इसका nवां पद होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "4n + 3"
+   },
+   {
+    "label": "B",
+    "text": "3n + 4"
+   },
+   {
+    "label": "C",
+    "text": "3n - 4"
+   },
+   {
+    "label": "D",
+    "text": "4n - 3"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 78,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "If the product of zeros of the polynomial f(x) = ax^3 - 6x^2 + 11x - 6 is 4 then a =",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{3}{2}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{2}{3}"
+   },
+   {
+    "label": "C",
+    "text": "-\\frac{3}{2}"
+   },
+   {
+    "label": "D",
+    "text": "-\\frac{2}{3}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बहुपद f(x) = ax³ - 6x² + 11x - 6 के श्रेणियों का गुणनफल 4 है तो a =",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{3}{2}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{2}{3}"
+   },
+   {
+    "label": "C",
+    "text": "-\\frac{3}{2}"
+   },
+   {
+    "label": "D",
+    "text": "-\\frac{2}{3}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 79,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "The volume of the greatest sphere that can be cut off from a cylindrical log of wood of base radius 1 cm and height 5 cm is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "4"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{22}{7}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{10}{3}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{25}{3}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "आधार त्रिज्या 1 सें.मी. तथा ऊँचाई 5 सें.मी. की एक बेलनाकार लकड़ी के गटके से काटी जा सकने वाली स्वाभाविक बडी गोल का आयतन होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{4}{3} \\pi"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{20}{3} \\pi"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{10}{3} \\pi"
+   },
+   {
+    "label": "D",
+    "text": "5 \\pi"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 80,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "From a point on a bridge across a river, the angles of depression of the banks on opposite sides of the river are 30° and 45° respectively. If the bridge is at a height of 5 m from the bank, the width of the river is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "5(\\sqrt{3}-1)"
+   },
+   {
+    "label": "B",
+    "text": "5\\sqrt{3}"
+   },
+   {
+    "label": "C",
+    "text": "5(\\sqrt{3}+1)"
+   },
+   {
+    "label": "D",
+    "text": "10"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "नदी पर बने पुल के किसि एक बिंदु से नदी के सामने के तटों का अवनमन कोण क्रमश: 30° और 45° है। यदि तट से पुल की ऊँचाई 5 मी. है तो नदी की चौड़ाई है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "5(\\sqrt{3}-1)"
+   },
+   {
+    "label": "B",
+    "text": "5\\sqrt{3}"
+   },
+   {
+    "label": "C",
+    "text": "5(\\sqrt{3}+1)"
+   },
+   {
+    "label": "D",
+    "text": "10"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 81,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "For a frequency distribution, Mean, Mode and Median are connected by the emphirical formu Mode - Median =",
+  "options": [
+   {
+    "label": "A",
+    "text": "2(Median - Mean)"
+   },
+   {
+    "label": "B",
+    "text": "2(Median + Mean)"
+   },
+   {
+    "label": "C",
+    "text": "(Median + Mean)"
+   },
+   {
+    "label": "D",
+    "text": "(Median - Mean)"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बारंबारता बटन के लिए माध्य, मोड तथा माध्यका मूलनुपाती सूत्र से जुड़े होते हैं। ज्ञात कीजिए मोड - माध्यका = ______ है।",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2(माध्यका - माध्य)"
+   },
+   {
+    "label": "B",
+    "text": "2(माध्यका + माध्य)"
+   },
+   {
+    "label": "C",
+    "text": "(माध्यका + माध्य)"
+   },
+   {
+    "label": "D",
+    "text": "(माध्यका - माध्य)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 82,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "From the letters of the word 'CUTE' a letter is selected. The probability that the letter is vowel is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\frac{3}{4}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{2}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "'CUTE' शब्द से एक अक्षर का चयन किया जाता है। चयनित अक्षर को स्वर (vowel) होने की प्रायिकता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "\\frac{3}{4}"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{2}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 83,
+  "page": 22,
+  "page_hi": null,
+  "stem": "If \\alpha, \\beta are the zeros of the polynomial f(x)=x^2+x+1 then \\frac{1}{\\alpha} + \\frac{1}{\\beta} =",
+  "options": [
+   {
+    "label": "A",
+    "text": "-1"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "0"
+   }
+  ],
+  "lang": "en",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "",
+  "options_hi_unverified": [],
+  "hindi_status": "absent",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 84,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "If the circumference and area of a circle are numerically equal, then the diameter of the circle :",
+  "options": [
+   {
+    "label": "A",
+    "text": "2\\pi"
+   },
+   {
+    "label": "B",
+    "text": "2"
+   },
+   {
+    "label": "C",
+    "text": "4"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{\\pi}{2}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि किसी वृत्त की परिधि और क्षेत्रफल सांख्यात्मक रूप से बराबर है तो वृत्त का व्यास है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2\\pi"
+   },
+   {
+    "label": "B",
+    "text": "2"
+   },
+   {
+    "label": "C",
+    "text": "4"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{\\pi}{2}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 85,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "The quadratic polynomial with the given number as the sum and product of its zeros respectively (0,\\sqrt{5}) is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "x^2-\\sqrt{5}x+1"
+   },
+   {
+    "label": "B",
+    "text": "x^2+5x+1"
+   },
+   {
+    "label": "C",
+    "text": "x^2+\\sqrt{5}"
+   },
+   {
+    "label": "D",
+    "text": "x^2-\\sqrt{5}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि बहुपद f(x) जिनके श्रोतकों के योगफल एवं गुणफल क्रमशः (0,\\sqrt{5}) है, तो है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "x^{2}-\\sqrt{5}x+1"
+   },
+   {
+    "label": "B",
+    "text": "x^{2}+5x+1"
+   },
+   {
+    "label": "C",
+    "text": "x^{2}+\\sqrt{5}"
+   },
+   {
+    "label": "D",
+    "text": "x^{2}-\\sqrt{5}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 86,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "The area and circumference of a circle of radius r respectively are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "(2\\pi r, \\pi r^2)"
+   },
+   {
+    "label": "B",
+    "text": "(\\pi r^2, 2\\pi r)"
+   },
+   {
+    "label": "C",
+    "text": "(\\pi r^2, \\pi r)"
+   },
+   {
+    "label": "D",
+    "text": "[\\pi r, 2\\pi]"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "r फ़िज़्या की एक वृत्त का क्षेत्रफल और परिधि क्रमशः होंगे :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "(2\\pi , \\pi r^{2})"
+   },
+   {
+    "label": "B",
+    "text": "(\\pi r^{2} , 2\\pi )"
+   },
+   {
+    "label": "C",
+    "text": "(\\pi^{2} , \\pi )"
+   },
+   {
+    "label": "D",
+    "text": "(\\pi r , 2\\pi )"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 87,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "Two isosceles triangles have equal angles and their areas are in the ratio 16 : 25, then the ratio of their corresponding heights is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "4 : 5"
+   },
+   {
+    "label": "B",
+    "text": "256 : 625"
+   },
+   {
+    "label": "C",
+    "text": "8 : 5"
+   },
+   {
+    "label": "D",
+    "text": "16 : 25"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "दो समविभाजित त्रिभुजों के कोण बराबर हैं और उनके क्षेत्रफलों का अनुपात 16 : 25 है, तो उनके संगत भुजियों का अनुपात होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "4 : 5"
+   },
+   {
+    "label": "B",
+    "text": "256 : 625"
+   },
+   {
+    "label": "C",
+    "text": "8 : 5"
+   },
+   {
+    "label": "D",
+    "text": "16 : 25"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "ratio_average",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 88,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "If the centroid of the triangle formed by (7, x), (y, -6) and (9, 10) is at (6, 3) then (x, y) is",
+  "options": [
+   {
+    "label": "A",
+    "text": "(3, 2)"
+   },
+   {
+    "label": "B",
+    "text": "(5, 2)"
+   },
+   {
+    "label": "C",
+    "text": "(4, 5)"
+   },
+   {
+    "label": "D",
+    "text": "(5, 4)"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "(7,x),(y,-6) और (9,10) से निर्मित त्रिभुज का केन्द्र (6,3) पर हो तो (x,y) है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "(3,2)"
+   },
+   {
+    "label": "B",
+    "text": "(5,2)"
+   },
+   {
+    "label": "C",
+    "text": "(4,5)"
+   },
+   {
+    "label": "D",
+    "text": "(5,4)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 89,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "Two unbiased coins are tossed simultaneously. The probability of getting at most one head is",
+  "options": [
+   {
+    "label": "A",
+    "text": "1"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{3}{4}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{2}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "दो अनिश्चित सिक्कों को एक साथ उछाला जाता है। अधिक से अधिक एक फल पाने की प्रायिकता क्या है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{1}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{3}{4}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{1}{2}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 90,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "A solid is hemispherical at the bottom and conical above. If the surface areas of the two parts are equal, then the ratio of its radius and the height of its conical part is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1 : 3"
+   },
+   {
+    "label": "B",
+    "text": "\\sqrt{3} : 1"
+   },
+   {
+    "label": "C",
+    "text": "1 : 1"
+   },
+   {
+    "label": "D",
+    "text": "1 : \\sqrt{3}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कोई तोस है, जिसका ऊपरी हिस्से संख्वाकार तथा निचली हिस्से अर्धगोलाकार है। यदि दोनों हिस्सों के पृष्ठ क्षेत्रफल बराबर हैं, तो इसके त्रिज्या तथा संख्वाकार हिस्से का अनुपात होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1 : 3"
+   },
+   {
+    "label": "B",
+    "text": "\\sqrt{3} : 1"
+   },
+   {
+    "label": "C",
+    "text": "1 : 1"
+   },
+   {
+    "label": "D",
+    "text": "1 : \\sqrt{3}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "ratio_average",
+   "topic": "Other",
+   "difficulty": 3,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 91,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "If \\triangle ABC and \\triangle DEF are similar triangles such that \\angle A=47^{\\circ}, \\angle E=83^{\\circ} then \\angle C=",
+  "options": [
+   {
+    "label": "A",
+    "text": "70^{\\circ}"
+   },
+   {
+    "label": "B",
+    "text": "50^{\\circ}"
+   },
+   {
+    "label": "C",
+    "text": "80^{\\circ}"
+   },
+   {
+    "label": "D",
+    "text": "60^{\\circ}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि त्रिभुज ABC तथा त्रिभुज DEF इस प्रकार समरूप हैं कि ∠A = 47°, ∠E = 83° है तो ∠C =",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "70°"
+   },
+   {
+    "label": "B",
+    "text": "50°"
+   },
+   {
+    "label": "C",
+    "text": "80°"
+   },
+   {
+    "label": "D",
+    "text": "60°"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "series",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 92,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "The exponent of 2 in the prime factorization of 144 is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "4"
+   },
+   {
+    "label": "B",
+    "text": "3"
+   },
+   {
+    "label": "C",
+    "text": "5"
+   },
+   {
+    "label": "D",
+    "text": "6"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "144 के अभाज्य गुणनखंड में 2 का ज्ञातांक है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "4"
+   },
+   {
+    "label": "B",
+    "text": "3"
+   },
+   {
+    "label": "C",
+    "text": "5"
+   },
+   {
+    "label": "D",
+    "text": "6"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 93,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "If the sides of two similar triangles are in the ratio 4 : 9, then the Areas of these triangles in the ratio :",
+  "options": [
+   {
+    "label": "A",
+    "text": "2 : 3"
+   },
+   {
+    "label": "B",
+    "text": "81 : 16"
+   },
+   {
+    "label": "C",
+    "text": "4 : 9"
+   },
+   {
+    "label": "D",
+    "text": "16 : 81"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि दो समरूप त्रिभुजों की भुजाएँ 4 : 9 के अनुपात में हो, तो इन त्रिभुजों के क्षेत्रफलों का अनुपात होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2 : 3"
+   },
+   {
+    "label": "B",
+    "text": "81 : 16"
+   },
+   {
+    "label": "C",
+    "text": "4 : 9"
+   },
+   {
+    "label": "D",
+    "text": "16 : 81"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "ratio_average",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 94,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "In any \\Delta ABC, if AD is a perpendicular to BC meeting BC at D then AB^2 + CD^2 =",
+  "options": [
+   {
+    "label": "A",
+    "text": "AD^2 + AC^2"
+   },
+   {
+    "label": "B",
+    "text": "AD^2 + BD^2"
+   },
+   {
+    "label": "C",
+    "text": "BD^2 + AC^2"
+   },
+   {
+    "label": "D",
+    "text": "BC^2 + AD^2"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कोई त्रिभुज ABC में, यदि AD, BC पर लंब हो, जो BC से बिंदु D पर मिलती है, तो AB²+CD²=",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "AD²+AC²"
+   },
+   {
+    "label": "B",
+    "text": "AD²+BD²"
+   },
+   {
+    "label": "C",
+    "text": "BD²+AC²"
+   },
+   {
+    "label": "D",
+    "text": "BC²+AD²"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 95,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "The H.C.F. of 135 and 225 is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "135"
+   },
+   {
+    "label": "B",
+    "text": "45"
+   },
+   {
+    "label": "C",
+    "text": "5"
+   },
+   {
+    "label": "D",
+    "text": "90"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "135 तथा 225 का महत्तम समापवर्तक है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "135"
+   },
+   {
+    "label": "B",
+    "text": "45"
+   },
+   {
+    "label": "C",
+    "text": "5"
+   },
+   {
+    "label": "D",
+    "text": "90"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 96,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "The Arithmetic Mean and Mode of a data are 24 and 12 respectively, then the Median is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "20"
+   },
+   {
+    "label": "B",
+    "text": "22"
+   },
+   {
+    "label": "C",
+    "text": "18"
+   },
+   {
+    "label": "D",
+    "text": "25"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यदि किसी आँकड़े का समान्तर माध्य और मोड क्रम: 24 और 12 है, तो माध्यका है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "20"
+   },
+   {
+    "label": "B",
+    "text": "22"
+   },
+   {
+    "label": "C",
+    "text": "18"
+   },
+   {
+    "label": "D",
+    "text": "25"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 97,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "If the area of a sector of a circle bounded by an arc of length 5 \\pi cm is equal to 20 \\pi cm^{2}, the radius of the circle is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "16 cm"
+   },
+   {
+    "label": "B",
+    "text": "10 cm"
+   },
+   {
+    "label": "C",
+    "text": "12 cm"
+   },
+   {
+    "label": "D",
+    "text": "8 cm"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी वृत्त का त्रिज्या खंड, 5 सें.मी. की एक चाप से घिरा है जिसका क्षेत्रफल 20 πcm² है। वृत्त की त्रिज्या कितनी होगी?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "16 सें.मी."
+   },
+   {
+    "label": "B",
+    "text": "10 सें.मी."
+   },
+   {
+    "label": "C",
+    "text": "12 सें.मी."
+   },
+   {
+    "label": "D",
+    "text": "8 सें.मी."
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 98,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "The expression 3.27 is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "An Integer"
+   },
+   {
+    "label": "B",
+    "text": "An Irrational Number"
+   },
+   {
+    "label": "C",
+    "text": "A Rational Number"
+   },
+   {
+    "label": "D",
+    "text": "A Natural Number"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "व्यंजन 3.27 है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "एक पूर्णांक"
+   },
+   {
+    "label": "B",
+    "text": "एक अपूर्णांक"
+   },
+   {
+    "label": "C",
+    "text": "एक परिमेय संख्या"
+   },
+   {
+    "label": "D",
+    "text": "एक प्राकृतिक संख्या"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "factual_recall",
+   "topic": "Number System",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 99,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "If the point (x, 4) lies on a circle whose centre is at the origin and radius is 5, then x =",
+  "options": [
+   {
+    "label": "A",
+    "text": "±3"
+   },
+   {
+    "label": "B",
+    "text": "0"
+   },
+   {
+    "label": "C",
+    "text": "±4"
+   },
+   {
+    "label": "D",
+    "text": "±5"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "मूल में स्थित केंद्र वाले वृत्त पर कोई बिंदु (x, 4) हो और वृत्त की त्रिज्या 5 हो तो, x =",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "± 3"
+   },
+   {
+    "label": "B",
+    "text": "0"
+   },
+   {
+    "label": "C",
+    "text": "± 4"
+   },
+   {
+    "label": "D",
+    "text": "± 5"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 100,
+  "page": 26,
+  "page_hi": null,
+  "stem": "If cosA + cos²A = 1 then sin²A + sin⁴A =",
+  "options": [
+   {
+    "label": "A",
+    "text": "-1"
+   },
+   {
+    "label": "B",
+    "text": "1"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{2}"
+   },
+   {
+    "label": "D",
+    "text": "0"
+   }
+  ],
+  "lang": "en",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Mathematics",
+  "year": 2016,
+  "source_pdf": "maths.PDF",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "",
+  "options_hi_unverified": [],
+  "hindi_status": "absent",
+  "correct_answer": "B",
+  "paper_label": "BSSC Maths Booklet (Advt 3646)",
+  "answer_source": "official key, transcribed by hand (handwritten original)",
+  "exam_advertisement": "ADV. NO.-0111, Limited Competitive Examination of Clerk, Group D to Group C, Rajkiyakrit High School",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ }
+]

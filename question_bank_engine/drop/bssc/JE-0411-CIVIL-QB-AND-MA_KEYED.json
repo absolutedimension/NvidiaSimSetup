@@ -1,0 +1,6336 @@
+[
+ {
+  "number": 1,
+  "page": 4,
+  "page_hi": 6,
+  "stem": "Which of the following is an example of lever ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "fire tong"
+   },
+   {
+    "label": "B",
+    "text": "cross bow"
+   },
+   {
+    "label": "C",
+    "text": "scissors"
+   },
+   {
+    "label": "D",
+    "text": "all of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "निर्मलिखित में से उतोलक का उदहारण कौन-सा है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "आम्न फिमटा"
+   },
+   {
+    "label": "B",
+    "text": "आइडी कमान"
+   },
+   {
+    "label": "C",
+    "text": "कैची"
+   },
+   {
+    "label": "D",
+    "text": "उपरोकत सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 2,
+  "page": 4,
+  "page_hi": 6,
+  "stem": "Three time values are used in :",
+  "options": [
+   {
+    "label": "A",
+    "text": "PERT"
+   },
+   {
+    "label": "B",
+    "text": "Bar chart"
+   },
+   {
+    "label": "C",
+    "text": "CPM"
+   },
+   {
+    "label": "D",
+    "text": "Gantt Chart"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "इस समय मान का प्रयोग होता है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "पर्ट में"
+   },
+   {
+    "label": "B",
+    "text": "बार चार्ट में"
+   },
+   {
+    "label": "C",
+    "text": "सी.पी.एम. में"
+   },
+   {
+    "label": "D",
+    "text": "गणित चार्ट में"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 3,
+  "page": 4,
+  "page_hi": 6,
+  "stem": "The liquid and plastic limits of a soil is 30% and 20% respectively. The Plasticity index shall be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "40%"
+   },
+   {
+    "label": "B",
+    "text": "30%"
+   },
+   {
+    "label": "C",
+    "text": "10%"
+   },
+   {
+    "label": "D",
+    "text": "20%"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी मृत्यु की लिविडिड एवं प्लास्टिक लिमिट क्रमशः: 30% तथा 20% है। इससे प्लास्टिसिटी सूचकांक होगा:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "40%"
+   },
+   {
+    "label": "B",
+    "text": "30%"
+   },
+   {
+    "label": "C",
+    "text": "10%"
+   },
+   {
+    "label": "D",
+    "text": "20%"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 4,
+  "page": 4,
+  "page_hi": 6,
+  "stem": "The Delta in Irrigation engineering represents :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Depth of water"
+   },
+   {
+    "label": "B",
+    "text": "Area of irrigation water on land"
+   },
+   {
+    "label": "C",
+    "text": "Volume of water"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "सिंचाई अभियांत्रिकी में डेल्टा का अर्थ है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "जल की गहराई"
+   },
+   {
+    "label": "B",
+    "text": "सिंचाई जल का क्षेत्रफल भूमि पर"
+   },
+   {
+    "label": "C",
+    "text": "जल का आयतन"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त में कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 5,
+  "page": 4,
+  "page_hi": 6,
+  "stem": "Friction is a :",
+  "options": [
+   {
+    "label": "A",
+    "text": "acceleration of an object"
+   },
+   {
+    "label": "B",
+    "text": "force"
+   },
+   {
+    "label": "C",
+    "text": "property of an object"
+   },
+   {
+    "label": "D",
+    "text": "velocity of an object"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "घर्षण एक:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "वस्तु का रूप है"
+   },
+   {
+    "label": "B",
+    "text": "बल है"
+   },
+   {
+    "label": "C",
+    "text": "वस्तु का गुण है"
+   },
+   {
+    "label": "D",
+    "text": "वस्तु का वेग है"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 6,
+  "page": 4,
+  "page_hi": 6,
+  "stem": "Which of the following command is used for help in computer ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "F12"
+   },
+   {
+    "label": "B",
+    "text": "F3"
+   },
+   {
+    "label": "C",
+    "text": "F1"
+   },
+   {
+    "label": "D",
+    "text": "F2"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "निम्नलिखित में से किस कमांड के द्वारा कंप्यूटर में मदद हेतु प्रयोग करते हैं ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "F12"
+   },
+   {
+    "label": "B",
+    "text": "F3"
+   },
+   {
+    "label": "C",
+    "text": "F1"
+   },
+   {
+    "label": "D",
+    "text": "F2"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 7,
+  "page": 4,
+  "page_hi": 6,
+  "stem": "The stopping sight distance depends upon :",
+  "options": [
+   {
+    "label": "A",
+    "text": "speed of vehicle"
+   },
+   {
+    "label": "B",
+    "text": "total reaction time of driver"
+   },
+   {
+    "label": "C",
+    "text": "efficiency of brakes"
+   },
+   {
+    "label": "D",
+    "text": "all of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "रोके जाने वाली दृष्टि दूरी (stopping sight distance) निर्धारित करती है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "गाड़ी की गति पर"
+   },
+   {
+    "label": "B",
+    "text": "चालक के कुल क्रिया समय पर"
+   },
+   {
+    "label": "C",
+    "text": "ब्रेक की क्षमता पर"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त में सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 8,
+  "page": 5,
+  "page_hi": 7,
+  "stem": "On a single lane road with two way traffic, the minimum stopping sight distance is equal to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "three times the stopping distance"
+   },
+   {
+    "label": "B",
+    "text": "half the stopping distance"
+   },
+   {
+    "label": "C",
+    "text": "one third the stopping distance"
+   },
+   {
+    "label": "D",
+    "text": "two times the stopping distance"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एकल लेन (lane) सड़क पर दो तरफा यातायात होने पर न्यूनतम रोकने वाली दृष्टि (stopping sight distance) किसके बराबर होगा ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "रोकने वाली दूरी का तिगुण"
+   },
+   {
+    "label": "B",
+    "text": "रोकने वाली दूरी का आधा"
+   },
+   {
+    "label": "C",
+    "text": "रोकने वाली (stopping) दूरी का तिहाई"
+   },
+   {
+    "label": "D",
+    "text": "रोकने वाली दूरी का दुगना"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 9,
+  "page": 5,
+  "page_hi": 7,
+  "stem": "What should be recommended value of effective length of compression member which is effectively held in position and restrained against rotation in both ends ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "0.80 L"
+   },
+   {
+    "label": "B",
+    "text": "0.75 L"
+   },
+   {
+    "label": "C",
+    "text": "0.55 L"
+   },
+   {
+    "label": "D",
+    "text": "0.65 L"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी कम्प्रेशन मेकर, जो की दोनों सिरों पर स्थान तथा चक्कर (rotation) में विद्यमान है, की प्रभासी लम्बाई की सिफारिश मान क्या होना चाहिए ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "0.80 L"
+   },
+   {
+    "label": "B",
+    "text": "0.75 L"
+   },
+   {
+    "label": "C",
+    "text": "0.55 L"
+   },
+   {
+    "label": "D",
+    "text": "0.65 L"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 10,
+  "page": 5,
+  "page_hi": 7,
+  "stem": "The void ratio of a saturated soil with specific gravity 2.65 and water content 16% will be equal to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "0.265"
+   },
+   {
+    "label": "B",
+    "text": "0.324"
+   },
+   {
+    "label": "C",
+    "text": "0.424"
+   },
+   {
+    "label": "D",
+    "text": "0.166"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "पूर्णवृत्त जल से संबंधित मूर्ति का विश्लेषण ज्ञात 2.65 तथा जल मात्रा 16% है। इसका वायड अनुमान होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "0.265"
+   },
+   {
+    "label": "B",
+    "text": "0.324"
+   },
+   {
+    "label": "C",
+    "text": "0.424"
+   },
+   {
+    "label": "D",
+    "text": "0.166"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 11,
+  "page": 5,
+  "page_hi": 7,
+  "stem": "Compared to a level surface, on a descending gradient the stopping sight distance is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "dependent on the speed"
+   },
+   {
+    "label": "B",
+    "text": "dependent on the size of vehicle"
+   },
+   {
+    "label": "C",
+    "text": "less"
+   },
+   {
+    "label": "D",
+    "text": "more"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "रोके वाली दृष्टि दूरी (stopping sight distance) समस्या सतह की तुलना में अस्तरता डाल में क्या होगा ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "गति पर निर्भर होगा"
+   },
+   {
+    "label": "B",
+    "text": "गाड़ी की नाप पर निर्भर होगा"
+   },
+   {
+    "label": "C",
+    "text": "कम"
+   },
+   {
+    "label": "D",
+    "text": "ज्यादा"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 12,
+  "page": 5,
+  "page_hi": 7,
+  "stem": "12. The slope of a road is considered safe if it is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Steeper than 1 in 20"
+   },
+   {
+    "label": "B",
+    "text": "Steeper than 1 in 10"
+   },
+   {
+    "label": "C",
+    "text": "Given in the direction of natural slope of ground"
+   },
+   {
+    "label": "D",
+    "text": "Given in the direction opposite to natural slope of ground"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "गाड़ी नाला का डाल :",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 13,
+  "page": 5,
+  "page_hi": 7,
+  "stem": "13. Alluvial soils are formed in :",
+  "options": [
+   {
+    "label": "A",
+    "text": "lakes"
+   },
+   {
+    "label": "B",
+    "text": "hills"
+   },
+   {
+    "label": "C",
+    "text": "desert"
+   },
+   {
+    "label": "D",
+    "text": "river basin"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एल्यूमिनियम पदार्थ बनता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "झीलों में"
+   },
+   {
+    "label": "B",
+    "text": "पहाड़ियों में"
+   },
+   {
+    "label": "C",
+    "text": "रेगिस्तान में"
+   },
+   {
+    "label": "D",
+    "text": "नदियों की तलहटी में"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Geography",
+   "difficulty": 1,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 14,
+  "page": 8,
+  "page_hi": null,
+  "stem": "The centre of gravity of a right circular cone lies on its axis of symmetry at a height of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "h/4"
+   },
+   {
+    "label": "B",
+    "text": "h/3"
+   },
+   {
+    "label": "C",
+    "text": "h"
+   },
+   {
+    "label": "D",
+    "text": "h/2"
+   }
+  ],
+  "lang": "en",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "",
+  "options_hi_unverified": [],
+  "hindi_status": "absent",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 15,
+  "page": 8,
+  "page_hi": null,
+  "stem": "The main constituent of fly-ash, is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "silica"
+   },
+   {
+    "label": "B",
+    "text": "aluminium oxide"
+   },
+   {
+    "label": "C",
+    "text": "ferrous oxide"
+   },
+   {
+    "label": "D",
+    "text": "all of these"
+   }
+  ],
+  "lang": "en",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "",
+  "options_hi_unverified": [],
+  "hindi_status": "absent",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 16,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "Select the correct statement.",
+  "options": [
+   {
+    "label": "A",
+    "text": "Second 20 - year plan allowed deduction of length of railway track in the area while calculating the length of roads."
+   },
+   {
+    "label": "B",
+    "text": "Second 20 - year plan has provided 1600 km of express ways out of the proposed National highway."
+   },
+   {
+    "label": "C",
+    "text": "Lucknow road plan formulae take into account the towns with very large population."
+   },
+   {
+    "label": "D",
+    "text": "Nagpur road plan has a target road length of 32 km per 100 square km."
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिनलिफ़्क्त में से सही बयान चुनिए।",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "हितीय 20 वर्षीय योजना ने सड़क की लंबाई की गणना करते समय रेलवे ट्रैक की लंबाई घटाने का अनुमानित किया।"
+   },
+   {
+    "label": "B",
+    "text": "हितीय 20 वर्षीय योजना ने 1600 किमी की एक्सप्रेस वे, वास्तविक रफ्तार के द्वारा दिया।"
+   },
+   {
+    "label": "C",
+    "text": "लेखनस सड़क योजना सूत्र बड़ी आबादी के करने को मानता है।"
+   },
+   {
+    "label": "D",
+    "text": "नागपुर सड़क योजना ने 32 किमी सड़क की लंबाई प्रति 100 वर्ष किमी का लक्ष्य मानता है।"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Polity/Schemes",
+   "difficulty": 2,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 17,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "The velocity of flow does not depend on :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Roughness of sewer"
+   },
+   {
+    "label": "B",
+    "text": "Hydraulic mean depth of sewer"
+   },
+   {
+    "label": "C",
+    "text": "Grade of sewer"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बहेव का वेग किस पर निर्भर नहीं करता?",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "key_letter_unmatched": "D",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 18,
+  "page": 8,
+  "page_hi": 9,
+  "stem": "Pitched and sloping roofs are suitable for :",
+  "options": [
+   {
+    "label": "A",
+    "text": "plain regions"
+   },
+   {
+    "label": "B",
+    "text": "coastal regions"
+   },
+   {
+    "label": "C",
+    "text": "covering large areas"
+   },
+   {
+    "label": "D",
+    "text": "all of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिज़िक्स तथा स्टॉक्सिंग रूप उपयोगिता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "मैदानी क्षेत्र में"
+   },
+   {
+    "label": "B",
+    "text": "कोस्टल क्षेत्र में"
+   },
+   {
+    "label": "C",
+    "text": "बड़े क्षेत्रफल हेतु"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 19,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "When the path travelled along the road surface is more than circumferential movement of the wheels due to rotation, then it result in :",
+  "options": [
+   {
+    "label": "A",
+    "text": "revolving"
+   },
+   {
+    "label": "B",
+    "text": "rotating"
+   },
+   {
+    "label": "C",
+    "text": "slipping"
+   },
+   {
+    "label": "D",
+    "text": "skidding"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "गाड़ी के धारा सड़क की स्थिति पर तब की गई दूरी यदि उसके परिधीय दूरी से ज्यादा तब परिभाषात्मक क्या होगा ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "रिवॉल्विंग (revolving)"
+   },
+   {
+    "label": "B",
+    "text": "रोटेटिंग (rotating)"
+   },
+   {
+    "label": "C",
+    "text": "फिसलना (slipping)"
+   },
+   {
+    "label": "D",
+    "text": "स्किडिंग (skidding)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 20,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "The effective size of sand particles used in slow sand filters is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "0.95 to 1.25 mm"
+   },
+   {
+    "label": "B",
+    "text": "0.65 to 0.95 mm"
+   },
+   {
+    "label": "C",
+    "text": "0.25 to 0.35 mm"
+   },
+   {
+    "label": "D",
+    "text": "0.35 to 0.65 mm"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "स्लो सैंड फ़िल्टर (slow sand filters) में उपयोगी बालू का प्रभावी आकार (effective size) होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "0.95 से 1.25 मिमी"
+   },
+   {
+    "label": "B",
+    "text": "0.65 से 0.95 मिमी"
+   },
+   {
+    "label": "C",
+    "text": "0.25 से 0.35 मिमी"
+   },
+   {
+    "label": "D",
+    "text": "0.35 से 0.65 मिमी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 21,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "Which technology is generally used to set up a wireless LAN ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "NIC"
+   },
+   {
+    "label": "B",
+    "text": "Wi-Fi"
+   },
+   {
+    "label": "C",
+    "text": "WiMAX"
+   },
+   {
+    "label": "D",
+    "text": "GSM"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "तारविहीन लैन (LAN) को स्थापित करने के लिए सामान्यत: किस तकनीकी का प्रयोग करते हैं?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "एन.आई.सी."
+   },
+   {
+    "label": "B",
+    "text": "वाई-फाई"
+   },
+   {
+    "label": "C",
+    "text": "वाई-मैक्स"
+   },
+   {
+    "label": "D",
+    "text": "जि.एस.एम."
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Science & Technology",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 22,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "The shoulder provided along the road edge should be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "of very low load bearing capacity"
+   },
+   {
+    "label": "B",
+    "text": "of same colour as that of the pavement"
+   },
+   {
+    "label": "C",
+    "text": "rougher than the traffic lanes"
+   },
+   {
+    "label": "D",
+    "text": "smoother than the traffic lanes"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "सड़क के किनारे दी गई पटरी (shoulder) होनी चाहिए:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "बहुत कम भार लेने की क्षमता"
+   },
+   {
+    "label": "B",
+    "text": "सड़क के रंग की तरह"
+   },
+   {
+    "label": "C",
+    "text": "यातायात गलियों से ज्यादा अस्थिर (Rougher than the traffic lanes)"
+   },
+   {
+    "label": "D",
+    "text": "यातायात गलियों से ज्यादा चिकनी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 23,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "Ultimate strength to cement is provided by :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Tetra calcium alumino ferrite"
+   },
+   {
+    "label": "B",
+    "text": "Tri-calcium aluminate"
+   },
+   {
+    "label": "C",
+    "text": "Tetra calcium silicate"
+   },
+   {
+    "label": "D",
+    "text": "Di-calcium silicate"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "सीमेंट की वार्षिक शक्ति किससे मिलती है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "टेट्रा क्लीशियम एल्युमिनियम फेरेट"
+   },
+   {
+    "label": "B",
+    "text": "जिंक-क्लीशियम एल्युमिनियम"
+   },
+   {
+    "label": "C",
+    "text": "टेट्रा क्लीशियम सिलिकेट"
+   },
+   {
+    "label": "D",
+    "text": "जिंक-क्लीशियम सिलिकेट"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 24,
+  "page": 10,
+  "page_hi": 11,
+  "stem": "The desirable length of overtaking zone as per IRC recommendation is equal to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "five times the overtaking sight distance"
+   },
+   {
+    "label": "B",
+    "text": "four times the overtaking sight distance"
+   },
+   {
+    "label": "C",
+    "text": "two times the sight distance"
+   },
+   {
+    "label": "D",
+    "text": "two times the overtaking sight distance"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "आइ.आर.सी. के सिफारिश के अनुसार नाहित हावी (overtaking) क्षेत्र किसके बराबर होगा ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "हावी दृष्टि दूरी का पाँच गुना"
+   },
+   {
+    "label": "B",
+    "text": "हावी दृष्टि दूरी का चार गुना"
+   },
+   {
+    "label": "C",
+    "text": "दृष्टि दूरी का दुगना"
+   },
+   {
+    "label": "D",
+    "text": "हावी दृष्टि दूरी का दुगना"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 25,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "In case of a beam with circular section the maximum shear stress is K times the average sl stress, where K is equal to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "2.00"
+   },
+   {
+    "label": "B",
+    "text": "1.33"
+   },
+   {
+    "label": "C",
+    "text": "1.00"
+   },
+   {
+    "label": "D",
+    "text": "1.23"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "गोलीय सेक्शन के बिम में अधिकतम शिर्य स्टेस औसत शिर्य स्टेस का K गुणा है, जहाँ K का मान है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2.00"
+   },
+   {
+    "label": "B",
+    "text": "1.33"
+   },
+   {
+    "label": "C",
+    "text": "1.00"
+   },
+   {
+    "label": "D",
+    "text": "1.23"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 26,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "The under surface of an arch, is called :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Back"
+   },
+   {
+    "label": "B",
+    "text": "Haunch"
+   },
+   {
+    "label": "C",
+    "text": "Soffit"
+   },
+   {
+    "label": "D",
+    "text": "Intrados"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "आवरण के निचले सतह को कहते हैं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "पिछला (Back)"
+   },
+   {
+    "label": "B",
+    "text": "हॉंच (Haunch)"
+   },
+   {
+    "label": "C",
+    "text": "सॉफिट (Soffit)"
+   },
+   {
+    "label": "D",
+    "text": "इंट्राडोस (Intrados)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 27,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "Composting and lagooning are the methods of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Filtration"
+   },
+   {
+    "label": "B",
+    "text": "Sedimentation"
+   },
+   {
+    "label": "C",
+    "text": "Sludge digestion"
+   },
+   {
+    "label": "D",
+    "text": "Sludge disposal"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "खाद तथा लेगूनिंग (lagooning) किसका तरीका है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "छानने का कार्य (Filtration)"
+   },
+   {
+    "label": "B",
+    "text": "अवसादन (Sedimentation)"
+   },
+   {
+    "label": "C",
+    "text": "कोईच् पाचन (Sludge digestion)"
+   },
+   {
+    "label": "D",
+    "text": "कोईच् निपटान (Sludge disposal)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Environment",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 28,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "If the difference of the roots of the equation x^2+kx+7=0 is 6 then possible value of k is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "- 8"
+   },
+   {
+    "label": "B",
+    "text": "8"
+   },
+   {
+    "label": "C",
+    "text": "4"
+   },
+   {
+    "label": "D",
+    "text": "- 4"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "समिकरण x^2 + kx + 7 = 0 के मूलों का अंतर 6 है तो k की संभाविक मान होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "- 8"
+   },
+   {
+    "label": "B",
+    "text": "8"
+   },
+   {
+    "label": "C",
+    "text": "4"
+   },
+   {
+    "label": "D",
+    "text": "- 4"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "Mathematics",
+   "type": "algebra",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 29,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "Select the non-dimensional parameter from the following :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Specific gravity"
+   },
+   {
+    "label": "B",
+    "text": "Angular velocity"
+   },
+   {
+    "label": "C",
+    "text": "Specific weight"
+   },
+   {
+    "label": "D",
+    "text": "Manning's coefficient"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिनलिखित से गेर-फमीय प्रचल (parameter) का चुनाव करें :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "विषयगत ग्रंथ"
+   },
+   {
+    "label": "B",
+    "text": "कोणीय वेग"
+   },
+   {
+    "label": "C",
+    "text": "विषयगत भार"
+   },
+   {
+    "label": "D",
+    "text": "मायनिंग का गुणांक"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 30,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "The maximum compressive strain in concrete in axial compression is t as :",
+  "options": [
+   {
+    "label": "A",
+    "text": "0.008"
+   },
+   {
+    "label": "B",
+    "text": "0.001"
+   },
+   {
+    "label": "C",
+    "text": "0.002"
+   },
+   {
+    "label": "D",
+    "text": "0.010"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कांक्रीट में अधिकतम संपीड़न विकृति, अक्षीय संपीड़न (compression) में होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "0.008"
+   },
+   {
+    "label": "B",
+    "text": "0.001"
+   },
+   {
+    "label": "C",
+    "text": "0.002"
+   },
+   {
+    "label": "D",
+    "text": "0.010"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 31,
+  "page": 12,
+  "page_hi": 13,
+  "stem": "In the case of columns of minimum dimension of 200 mm or under, whose reinforcing do not exceed 12 mm, what should be most appropriate nominal cover that can be use",
+  "options": [
+   {
+    "label": "A",
+    "text": "50 mm"
+   },
+   {
+    "label": "B",
+    "text": "25 mm"
+   },
+   {
+    "label": "C",
+    "text": "15 mm"
+   },
+   {
+    "label": "D",
+    "text": "30 mm"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "200 फ़िमि या कम के नाम के कॉलम के विषय में, जिसमें रिन्फोर्सिंग सट्रिया 12 फ़िमि से ज्यादा नहीं हो, उससे अधिक उपयोगत नॉमिनल क्या.प्रयुक्त होगा ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "50 फ़िमि"
+   },
+   {
+    "label": "B",
+    "text": "25 फ़िमि"
+   },
+   {
+    "label": "C",
+    "text": "15 फ़िमि"
+   },
+   {
+    "label": "D",
+    "text": "30 फ़िमि"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 32,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "Ground water is usually free from :",
+  "options": [
+   {
+    "label": "A",
+    "text": "pathogenic bacteria"
+   },
+   {
+    "label": "B",
+    "text": "both suspended impurities and dissolved impurities"
+   },
+   {
+    "label": "C",
+    "text": "suspended impurities"
+   },
+   {
+    "label": "D",
+    "text": "dissolved impurities"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "भूजल में नहीं होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "भौतिकीय बैक्टीरिया"
+   },
+   {
+    "label": "B",
+    "text": "दोनों तैरती एवं घुली अशुद्धता"
+   },
+   {
+    "label": "C",
+    "text": "तैरती अशुद्धता"
+   },
+   {
+    "label": "D",
+    "text": "घुली हुई अशुद्धता"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Environment",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 33,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "The unconfined compressive strength of the clayey soil is 4 kg/cm², the cohesion of soil be approximately :",
+  "options": [
+   {
+    "label": "A",
+    "text": "16 kg/cm²"
+   },
+   {
+    "label": "B",
+    "text": "2 kg/cm²"
+   },
+   {
+    "label": "C",
+    "text": "4 kg/cm²"
+   },
+   {
+    "label": "D",
+    "text": "8 kg/cm²"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "- यदि मिट्टी की असिमित दबाव शक्ति (unconfined compressive strength) 4 किलोग्राम प्रति सेमी² हो तो मिट्टी का संक्षरण (cohesion) लगभग होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "2 किलोग्राम प्रति सेमी²"
+   },
+   {
+    "label": "B",
+    "text": "8 किलोग्राम प्रति सेमी²"
+   },
+   {
+    "label": "C",
+    "text": "4 किलोग्राम प्रति सेमी²"
+   },
+   {
+    "label": "D",
+    "text": "10 किलोग्राम प्रति सेमी²"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 34,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "The rise and fall method :",
+  "options": [
+   {
+    "label": "A",
+    "text": "provides a check on the reduction of intermediate point levels"
+   },
+   {
+    "label": "B",
+    "text": "quicker and less tedious for large number of intermediate sights"
+   },
+   {
+    "label": "C",
+    "text": "is not suitable for levelling with tilting levels"
+   },
+   {
+    "label": "D",
+    "text": "is less accurate than height of instrument method"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "चढ़ाव तथा उतार विधि :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "माध्यमिक बिंदु स्तर की कमी होने पर यह विधि चेक प्रदान करता है"
+   },
+   {
+    "label": "B",
+    "text": "अधिक संख्यां में माध्यमिक साइडों के होने पर यह विधि शक्ति तथा कम कठिन है"
+   },
+   {
+    "label": "C",
+    "text": "टिल्टिंग स्तर के द्वारा लेवलिंग हेतु उचित नहीं है"
+   },
+   {
+    "label": "D",
+    "text": "हाइट और स्ट्रक्चर विधि की तुलना में कम शुद्ध है"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 35,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "The number of neutron in an atom of hydrogen is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "3"
+   },
+   {
+    "label": "B",
+    "text": "0"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "2"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "हाइड्रोजन परमाणु में न्यूट्रॉन की संख्या :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "3"
+   },
+   {
+    "label": "B",
+    "text": "0"
+   },
+   {
+    "label": "C",
+    "text": "1"
+   },
+   {
+    "label": "D",
+    "text": "2"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 36,
+  "page": 14,
+  "page_hi": 15,
+  "stem": "In situ vane shear test is used to determine the shear strength of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "any type of soil"
+   },
+   {
+    "label": "B",
+    "text": "sandy soil with low water content"
+   },
+   {
+    "label": "C",
+    "text": "stiffed and fissured clay"
+   },
+   {
+    "label": "D",
+    "text": "very soft and sensitive clay"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "मैदान में कटरीनी ताकत (shear strength) वैन कटरीनी (Vane Shear) परीक्षण द्वारा किस पदार्थ की करते हैं?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "किसी भी प्रकार की मिट्टी"
+   },
+   {
+    "label": "B",
+    "text": "कम जल भरी बालू मिट्टी"
+   },
+   {
+    "label": "C",
+    "text": "स्टिफ्ड एवं फिसर्ड क्ले (stiffed and fissured clay)"
+   },
+   {
+    "label": "D",
+    "text": "बहुत कोमल तथा सुमधुर क्ले"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 37,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "Hooke's Law says :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Stress is inversely proportional to strain within elastic limit"
+   },
+   {
+    "label": "B",
+    "text": "Stress is directly proportional to strain within elastic limit"
+   },
+   {
+    "label": "C",
+    "text": "Stress is directly proportional to strain"
+   },
+   {
+    "label": "D",
+    "text": "Stress is inversely proportional to strain"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "हुक का नियम कहता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "इस्लास्टिक सीमा के अंतर्गत प्रतिबल, विशेषता का व्युत्क्रमानुपाती है।"
+   },
+   {
+    "label": "B",
+    "text": "इस्लास्टिक सीमा के अंतर्गत प्रतिबल, विशेषता का समानुपाती है।"
+   },
+   {
+    "label": "C",
+    "text": "प्रतिबल, विशेषता का समानुपाती है।"
+   },
+   {
+    "label": "D",
+    "text": "प्रतिबल, विशेषता का व्युत्क्रमानुपाती है।"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 38,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "Orthotolidine test is used for determination of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Dose of coagulant"
+   },
+   {
+    "label": "B",
+    "text": "Biochemical oxygen demand"
+   },
+   {
+    "label": "C",
+    "text": "Dissolved oxygen"
+   },
+   {
+    "label": "D",
+    "text": "Residual chlorine"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "आर्थेटोलॉजिकल परीक्षण का प्रयोग से क्या ज्ञात होता है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "कोयलयूलेंट की मात्रा"
+   },
+   {
+    "label": "B",
+    "text": "बायोडायनामिक्स आर्थेटोलॉजिकल की मांग"
+   },
+   {
+    "label": "C",
+    "text": "गुलनशील आर्थेटोलॉजिकल"
+   },
+   {
+    "label": "D",
+    "text": "क्या हुआ क्लोरीन"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 39,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "The storage created by the construction of earthen dam is called as :",
+  "options": [
+   {
+    "label": "A",
+    "text": "reservoir"
+   },
+   {
+    "label": "B",
+    "text": "canal"
+   },
+   {
+    "label": "C",
+    "text": "lake"
+   },
+   {
+    "label": "D",
+    "text": "channel"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "मिट्टी का बंध बनाने पर जो पानी का भंडारण पैदा होता है उसे कहते हैं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "जलाशय"
+   },
+   {
+    "label": "B",
+    "text": "नहर"
+   },
+   {
+    "label": "C",
+    "text": "टंकी"
+   },
+   {
+    "label": "D",
+    "text": "ताल"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 40,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "An imaginary line lying throughout the surface of ground and preserving a constant inclination to the horizontal is known as :",
+  "options": [
+   {
+    "label": "A",
+    "text": "contour gradient"
+   },
+   {
+    "label": "B",
+    "text": "contour interval"
+   },
+   {
+    "label": "C",
+    "text": "contour line"
+   },
+   {
+    "label": "D",
+    "text": "horizontal equivalent"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक आभासी रेखा जो भूमि की सतह पर पूर्णस्पष्ट स्थिति हो तथा क्षितिज से एक निश्चित झुकाव (inclination) हो तो उसे कहते हैं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "कनूर ग्रेडियंट"
+   },
+   {
+    "label": "B",
+    "text": "कनूर इंटर्वल"
+   },
+   {
+    "label": "C",
+    "text": "कनूर रेखा"
+   },
+   {
+    "label": "D",
+    "text": "क्षितिज इवैलेंट"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Geography",
+   "difficulty": 2,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 41,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "Critical path method can be used for the following :",
+  "options": [
+   {
+    "label": "A",
+    "text": "space technology"
+   },
+   {
+    "label": "B",
+    "text": "strategic work"
+   },
+   {
+    "label": "C",
+    "text": "building construction"
+   },
+   {
+    "label": "D",
+    "text": "research work"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिनलिफ्ट में किसमें फ्रिक्टिकल पाथ विषय उपयुक्त है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "अंतरिक्ष तकनीकी"
+   },
+   {
+    "label": "B",
+    "text": "युद्ध नीति विषयक"
+   },
+   {
+    "label": "C",
+    "text": "सर्वन निर्माण"
+   },
+   {
+    "label": "D",
+    "text": "सोध कार्य"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 42,
+  "page": 16,
+  "page_hi": 17,
+  "stem": "The time of consolidation of a soil sample :",
+  "options": [
+   {
+    "label": "A",
+    "text": "increase with decrease in compressibility"
+   },
+   {
+    "label": "B",
+    "text": "increase with an increase in permeability"
+   },
+   {
+    "label": "C",
+    "text": "increase with decrease in permeability"
+   },
+   {
+    "label": "D",
+    "text": "none of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "संपूर्ण (consolidation) का समय किस मूड में होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "संपीडिता घटने पर बढ़ता है।"
+   },
+   {
+    "label": "B",
+    "text": "पार्श्वता बढ़ने पर बढ़ता है।"
+   },
+   {
+    "label": "C",
+    "text": "पार्श्वता घटने पर बढ़ता है।"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में कोई नहीं।"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 43,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "The ratio of moment of inertia about neutral axis to the distance of the most distance point of the section from the neutral axis is called :",
+  "options": [
+   {
+    "label": "A",
+    "text": "polar modulus"
+   },
+   {
+    "label": "B",
+    "text": "polar moment of inertia"
+   },
+   {
+    "label": "C",
+    "text": "moment of inertia"
+   },
+   {
+    "label": "D",
+    "text": "section modulus"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "तर्ष्य अक्ष द्वारा मोमेंट आॅफ इनर्शिया (moment of inertia) तथा तर्ष्य अक्ष से सेक्शन (section) के किसी बिन्दु के अधिकतम दूरी को क्या कहते हैं ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "पोलर मॉड्यूलस (polar modulus)"
+   },
+   {
+    "label": "B",
+    "text": "पोलर मोमेंट आॅफ इनर्शिया"
+   },
+   {
+    "label": "C",
+    "text": "मोमेंट आॅफ इनर्शिया"
+   },
+   {
+    "label": "D",
+    "text": "सेक्शन मॉड्यूलस (section modulus)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 44,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "Facultative bacteria are able to work in :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Presence of water"
+   },
+   {
+    "label": "B",
+    "text": "Presence as well as in absence of oxygen"
+   },
+   {
+    "label": "C",
+    "text": "Presence of oxygen only"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "यथार्थक बस्तरिय का कार्यक्षमता :",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 45,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "For water bound macadam roads in localities of heavy rainfall, the recommended value of camber is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1 in 48"
+   },
+   {
+    "label": "B",
+    "text": "1 in 42"
+   },
+   {
+    "label": "C",
+    "text": "1 in 20"
+   },
+   {
+    "label": "D",
+    "text": "1 in 36"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "पानी के लिए बायथ रॉडी (water bound macadam) सड़क के लिए भार की जगह पर कितना मान है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1 में 48"
+   },
+   {
+    "label": "B",
+    "text": "1 में 42"
+   },
+   {
+    "label": "C",
+    "text": "1 में 20"
+   },
+   {
+    "label": "D",
+    "text": "1 में 36"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 46,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "The volume of solid cylinder of radius 5 cm and height 7 cm will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "650 cm³"
+   },
+   {
+    "label": "B",
+    "text": "550 cm³"
+   },
+   {
+    "label": "C",
+    "text": "350 cm³"
+   },
+   {
+    "label": "D",
+    "text": "450 cm³"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "इस बेलन का आयतन, जिसकी त्रिज्या 5 सेमी तथा ऊँचाई 7 सेमी है, होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "650 घन सेमी"
+   },
+   {
+    "label": "B",
+    "text": "550 घन सेमी"
+   },
+   {
+    "label": "C",
+    "text": "350 घन सेमी"
+   },
+   {
+    "label": "D",
+    "text": "450 घन सेमी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "Mathematics",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 47,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "The angle between isometric axes is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "80°"
+   },
+   {
+    "label": "B",
+    "text": "60°"
+   },
+   {
+    "label": "C",
+    "text": "90°"
+   },
+   {
+    "label": "D",
+    "text": "120°"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "आइसोमेट्रिक अक्षों के मध्य कोण होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "80°"
+   },
+   {
+    "label": "B",
+    "text": "60°"
+   },
+   {
+    "label": "C",
+    "text": "90°"
+   },
+   {
+    "label": "D",
+    "text": "120°"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 48,
+  "page": 18,
+  "page_hi": 19,
+  "stem": "Basic use of sand in mortar is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "decreasing the surface area of the binding material"
+   },
+   {
+    "label": "B",
+    "text": "reducing shrinkage"
+   },
+   {
+    "label": "C",
+    "text": "increasing the strength"
+   },
+   {
+    "label": "D",
+    "text": "all the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "मोटर में बालू का मुख्य उपयोग है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "बाइंडिंग सामग्रियों की सतह क्षेत्रफल घटाने हेतु"
+   },
+   {
+    "label": "B",
+    "text": "फिस्कुंडन कम करने हेतु"
+   },
+   {
+    "label": "C",
+    "text": "ताकत बढ़ाने हेतु"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 49,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "Accuracy in measurement for measuring brick masonry is observed upto :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Two decimal place of meter"
+   },
+   {
+    "label": "B",
+    "text": "One decimal place of meter"
+   },
+   {
+    "label": "C",
+    "text": "Three decimal place of meter"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "इट की विनाई की नाप में शुद्धता किस हद तक देखी जाती है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "मीटर के दशमलव के दो स्थान तक"
+   },
+   {
+    "label": "B",
+    "text": "मीटर के दशमलव के एक स्थान तक"
+   },
+   {
+    "label": "C",
+    "text": "मीटर के दशमलव के तीन स्थान तक"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त में कोई भी नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 50,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "The motion of air mass in a tornado is a :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Forced vortex at centre and free vortex outside"
+   },
+   {
+    "label": "B",
+    "text": "Free vortex at centre and forced vortex outside"
+   },
+   {
+    "label": "C",
+    "text": "Free vortex motion"
+   },
+   {
+    "label": "D",
+    "text": "Forced vortex motion"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "टornado (tornado) में हवा रुख की गति होती है :",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Environment",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 51,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "Integrate sinx :",
+  "options": [
+   {
+    "label": "A",
+    "text": "-cosx"
+   },
+   {
+    "label": "B",
+    "text": "cosx"
+   },
+   {
+    "label": "C",
+    "text": "sinx"
+   },
+   {
+    "label": "D",
+    "text": "-sinx"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "sinx का समाकलन होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "-cosx"
+   },
+   {
+    "label": "B",
+    "text": "cosx"
+   },
+   {
+    "label": "C",
+    "text": "sinx"
+   },
+   {
+    "label": "D",
+    "text": "-sinx"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "arithmetic",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 52,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "The angle between two plane mirrors of an optical square should be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "90°"
+   },
+   {
+    "label": "B",
+    "text": "60°"
+   },
+   {
+    "label": "C",
+    "text": "30°"
+   },
+   {
+    "label": "D",
+    "text": "45°"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "आयताकार वर्ग में दो समान द्रव्यों के मध्य कोण होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "90°"
+   },
+   {
+    "label": "B",
+    "text": "60°"
+   },
+   {
+    "label": "C",
+    "text": "30°"
+   },
+   {
+    "label": "D",
+    "text": "45°"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 53,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "A short column of rectangular section carries a point load (W) acting with an eccentricity (e). The shape of Kernel area would be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "rhombus"
+   },
+   {
+    "label": "B",
+    "text": "circle"
+   },
+   {
+    "label": "C",
+    "text": "square"
+   },
+   {
+    "label": "D",
+    "text": "elliptical"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक छोटा आयताकार सेक्शन के कॉलम (column) पर एक बिंदु भार W को e इस्थानिकता (eccentricity) पर लगया जाए तो उसके केंद्र क्षेत्र का आकार होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "फिबमकोण (rhombus)"
+   },
+   {
+    "label": "B",
+    "text": "दृटाकार"
+   },
+   {
+    "label": "C",
+    "text": "वर्ग"
+   },
+   {
+    "label": "D",
+    "text": "दूसरा दृष्टाकार"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 54,
+  "page": 20,
+  "page_hi": 21,
+  "stem": "Which is the correct statement about proton ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "it is an α-particle"
+   },
+   {
+    "label": "B",
+    "text": "it is an ionized hydrogen atom"
+   },
+   {
+    "label": "C",
+    "text": "it is a nucleus of deuterium"
+   },
+   {
+    "label": "D",
+    "text": "it is an ionized hydrogen molecule"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "प्रोटॉन के विषय में निम्नलिखित में क्या सत्य है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "यह एक अणु-कर है।"
+   },
+   {
+    "label": "B",
+    "text": "यह एक आयनित हाइड्रोजन परमाणु है।"
+   },
+   {
+    "label": "C",
+    "text": "यह ड्यूटेरियम का नाभिक है।"
+   },
+   {
+    "label": "D",
+    "text": "यह एक आयनित हाइड्रोजन अणु है।"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 55,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "Void ratio is defined as :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Ratio of volume of void to total mass of soil"
+   },
+   {
+    "label": "B",
+    "text": "Ratio of volume of void to total volume of soil"
+   },
+   {
+    "label": "C",
+    "text": "Ratio of volume of void to volume of soil solid"
+   },
+   {
+    "label": "D",
+    "text": "Ratio of mass of void to mass of soil solid"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "वायड अनुपात (Void ratio) को परिभाषित करते हैं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "वायड का आयतन तथा मृत के कुल द्रव्यमान का अनुपात"
+   },
+   {
+    "label": "B",
+    "text": "वायड का आयतन तथा मृत के कुल आयतन का अनुपात"
+   },
+   {
+    "label": "C",
+    "text": "वायड के आयतन तथा ठोस मृत के आयतन का अनुपात"
+   },
+   {
+    "label": "D",
+    "text": "वायड का द्रव्यमान तथा ठोस मृत के द्रव्यमान का अनुपात"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 56,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "Coefficient of friction is less when the pavement surface is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "smooth and wet"
+   },
+   {
+    "label": "B",
+    "text": "rough and dry"
+   },
+   {
+    "label": "C",
+    "text": "rough"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "सड़क की सतह पर घर्षण गुणांक कम होगा यदि :",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 57,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "Due to attack of dry rot, the timber get :",
+  "options": [
+   {
+    "label": "A",
+    "text": "cracks and shrinkage both"
+   },
+   {
+    "label": "B",
+    "text": "reduces to powder"
+   },
+   {
+    "label": "C",
+    "text": "cracks"
+   },
+   {
+    "label": "D",
+    "text": "shrinks"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "सूखी (Dry) सड़क (rot) से लकड़ी को होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "दरार तथा फिसुक्डन दोने"
+   },
+   {
+    "label": "B",
+    "text": "पाइप में बदलना"
+   },
+   {
+    "label": "C",
+    "text": "दरार"
+   },
+   {
+    "label": "D",
+    "text": "फिसुक्डन"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 58,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "Nagpur road formulae were prepared by assuming :",
+  "options": [
+   {
+    "label": "A",
+    "text": "radial or star and grid road pattern"
+   },
+   {
+    "label": "B",
+    "text": "radial or star and circular road pattern"
+   },
+   {
+    "label": "C",
+    "text": "circular or block road pattern"
+   },
+   {
+    "label": "D",
+    "text": "circular or star and block road pattern"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "नागपुर सड़क सूचियों की यह मानकर तैयार किया था कि उसका नमूना (Pattern) होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "रेडियल या तारा तथा गिड सड़क नमूना"
+   },
+   {
+    "label": "B",
+    "text": "रेडियल या तारा तथा वृत्तीय सड़क नमूना"
+   },
+   {
+    "label": "C",
+    "text": "गुड़िया या ब्लॉक सड़क नमूना"
+   },
+   {
+    "label": "D",
+    "text": "गुड़िया या सड़क नमूना"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 59,
+  "page": 22,
+  "page_hi": 23,
+  "stem": "The rocks which are formed due to cooling of magma at a considerable depth from earth's surface are called :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Metamorphic rocks"
+   },
+   {
+    "label": "B",
+    "text": "Stratified rocks"
+   },
+   {
+    "label": "C",
+    "text": "Intrusive Igneous rocks"
+   },
+   {
+    "label": "D",
+    "text": "Sedimentary rocks"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "पृथ्वी की सतह से काफी गहराई पर मैग्मा के ठंडा होने पर कौन सी चट्टान (Rock) बनती है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "मैग्मारिफ़िक शैल"
+   },
+   {
+    "label": "B",
+    "text": "सतही शैल"
+   },
+   {
+    "label": "C",
+    "text": "इग्नूसीय शैल"
+   },
+   {
+    "label": "D",
+    "text": "सेडिमेंटरी शैल"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 60,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "In case of circular section in RCC columns the minimum numbers of longitudinal bars are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "8"
+   },
+   {
+    "label": "B",
+    "text": "6"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "4"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "आर.सी.सी. कालम के गोलिय सैक्शन में न्यूनतम अंडरडैथ सरिया की संख्या होगी :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "8"
+   },
+   {
+    "label": "B",
+    "text": "6"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "4"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 61,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "The circumferential strain in case of thin cylinder shell, when subjected to internal pressure (p) :",
+  "options": [
+   {
+    "label": "A",
+    "text": "less than diametral strain"
+   },
+   {
+    "label": "B",
+    "text": "more than diametral strain"
+   },
+   {
+    "label": "C",
+    "text": "equal to diametral strain"
+   },
+   {
+    "label": "D",
+    "text": "none of above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "पतले बेलनाकार खोल (shell) का प्राथमिक विकृति का मान जबकि उस पर आंतरिक दबाव p हो :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "व्यस्तीय विकृति से कम होगा।"
+   },
+   {
+    "label": "B",
+    "text": "व्यस्तीय विकृति से ज्यादा होगा।"
+   },
+   {
+    "label": "C",
+    "text": "व्यस्तीय विकृति के बराबर होगा।"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में कोई नहीं।"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 62,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "The shear stress at any point of a shaft, subjected to twisting moment, is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "proportional to the cube of its distance from the central axis of the shaft"
+   },
+   {
+    "label": "B",
+    "text": "proportional to the square of its distance from the central axis of the shaft."
+   },
+   {
+    "label": "C",
+    "text": "proportional to its distance from the central axis of the shaft."
+   },
+   {
+    "label": "D",
+    "text": "inversely proportional to its distance from the central axis of the shaft."
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी शाफ्ट (shaft) के किसी बिंदु पर अपर्याप्त प्रतिभाल (shear stress), जिस पर घुमाव आघूर्ण (twisting moment) लगया जाये तो :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "शाफ्ट के केन्द्रिय अक्ष से बिंदु की दूरी के धन का अनुमानितक होगा।"
+   },
+   {
+    "label": "B",
+    "text": "शाफ्ट के केन्द्रिय अक्ष से बिंदु की दूरी के वर्ग का अनुमानितक होगा।"
+   },
+   {
+    "label": "C",
+    "text": "शाफ्ट के केन्द्रिय अक्ष से बिंदु की दूरी का अनुमानितक होगा।"
+   },
+   {
+    "label": "D",
+    "text": "शाफ्ट के केन्द्रिय अक्ष से बिंदु की दूरी का युक्तिमानुपाती होगा।"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 63,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "A fixed beam is a beam in which end supports are such that the end slope :",
+  "options": [
+   {
+    "label": "A",
+    "text": "are minimum"
+   },
+   {
+    "label": "B",
+    "text": "are maximum"
+   },
+   {
+    "label": "C",
+    "text": "are zero"
+   },
+   {
+    "label": "D",
+    "text": "none of above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक फिक्स्ड (fixed) बीम (beam) वह बीम है जिसके छोटे सपोर्ट्स (supports) इस प्रकार हैं कि उनका छोटा ढाल (end slope) :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "न्यूनतम है"
+   },
+   {
+    "label": "B",
+    "text": "अधिकतम है"
+   },
+   {
+    "label": "C",
+    "text": "शून्य है"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 64,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "A cylindrical vessel is said to be thin if the ratio of its internal diameter to the thickness of the wall is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "equal to 20"
+   },
+   {
+    "label": "B",
+    "text": "less than 20"
+   },
+   {
+    "label": "C",
+    "text": "more than 20"
+   },
+   {
+    "label": "D",
+    "text": "none of above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक बेलनाकार बर्तन को पटला कहा जाता है यदि इसके आंतरिक व्यास तथा इसके दीवार की मोटाई का अनुपात :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "20 के बराबर हो।"
+   },
+   {
+    "label": "B",
+    "text": "20 से कम हो।"
+   },
+   {
+    "label": "C",
+    "text": "20 से अधिक हो।"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में कोई नहीं है।"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 65,
+  "page": 24,
+  "page_hi": 25,
+  "stem": "Blue baby disease will occur due to following reason :",
+  "options": [
+   {
+    "label": "A",
+    "text": "when fluoride is less than 1.5 ppm."
+   },
+   {
+    "label": "B",
+    "text": "when fluoride is more than 1.5 ppm."
+   },
+   {
+    "label": "C",
+    "text": "when nitrate is more than 45 ppm."
+   },
+   {
+    "label": "D",
+    "text": "when nitrate is less than 45 ppm."
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बूंद बेबी रोग निम्नलिखित में से किस कारण से होता है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "जब फ्लोराइड 1.5 पी.पी.एम. से कम हो।"
+   },
+   {
+    "label": "B",
+    "text": "जब फ्लोराइड 1.5 पी.पी.एम. से ज्यादा हो।"
+   },
+   {
+    "label": "C",
+    "text": "जब नाइट्रेट 45 पी.पी.एम. से ज्यादा हो।"
+   },
+   {
+    "label": "D",
+    "text": "जब नाइट्रेट 45 पी.पी.एम. से कम हो।"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 66,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "When a bullet is fired from a gun, it recoils in the backward direction. It is due to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "conservation of momentum"
+   },
+   {
+    "label": "B",
+    "text": "inertia"
+   },
+   {
+    "label": "C",
+    "text": "impulse"
+   },
+   {
+    "label": "D",
+    "text": "conservation of energy"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "जब बंडूक से बुलेट दागा जाता है तो वह पीछे की दिशा में हटता है! यह किस कारण से है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "संवेग का संरक्षण"
+   },
+   {
+    "label": "B",
+    "text": "जड़ता"
+   },
+   {
+    "label": "C",
+    "text": "आवेश"
+   },
+   {
+    "label": "D",
+    "text": "ऊर्जा का संरक्षण"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 67,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "Which of the following methods of contouring is most suitable for a hilly terrain ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "cross-sections method"
+   },
+   {
+    "label": "B",
+    "text": "square method"
+   },
+   {
+    "label": "C",
+    "text": "tacheometric method"
+   },
+   {
+    "label": "D",
+    "text": "direct ranging method"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "पहाड़ी क्षेत्र में कटाव करने की अत्यधिक उपयोगी विधि है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "क्रस्ट-सेक्शन विधि"
+   },
+   {
+    "label": "B",
+    "text": "वर्ण विधि"
+   },
+   {
+    "label": "C",
+    "text": "टेक्नोमेट्रिक विधि"
+   },
+   {
+    "label": "D",
+    "text": "सीधा रेजिंग विधि"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Bihar Geography",
+   "difficulty": 2,
+   "bihar_specific": true
+  }
+ },
+ {
+  "number": 68,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "The most common cause of acidity in water :",
+  "options": [
+   {
+    "label": "A",
+    "text": "aluminum"
+   },
+   {
+    "label": "B",
+    "text": "hydrogen"
+   },
+   {
+    "label": "C",
+    "text": "carbon dioxide"
+   },
+   {
+    "label": "D",
+    "text": "platinum"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "पानी में अप्लिता का मुख्य कारण है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "रेगुलरमिनियम"
+   },
+   {
+    "label": "B",
+    "text": "हाइड्रोजन"
+   },
+   {
+    "label": "C",
+    "text": "कार्बन डाइऑक्साइड"
+   },
+   {
+    "label": "D",
+    "text": "प्लेटिनम"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 69,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "The gas from sludge digestion tank is mainly composed of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Hydrogen sulphide"
+   },
+   {
+    "label": "B",
+    "text": "Methane"
+   },
+   {
+    "label": "C",
+    "text": "Nitrogen"
+   },
+   {
+    "label": "D",
+    "text": "Carbon dioxide"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कौंड पान टंकी से प्राप्त गैस में क्या होता है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "हाइड्रोजन सल्फाइड"
+   },
+   {
+    "label": "B",
+    "text": "मीथेन"
+   },
+   {
+    "label": "C",
+    "text": "नाइट्रोजन"
+   },
+   {
+    "label": "D",
+    "text": "कार्बन डाइऑक्साइड"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Environment",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 70,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "The specific gravity of sewage is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Slightly greater than 1"
+   },
+   {
+    "label": "B",
+    "text": "Equal to 1"
+   },
+   {
+    "label": "C",
+    "text": "Greater than 2"
+   },
+   {
+    "label": "D",
+    "text": "Slightly less than 1"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "मल का विशेष गुण :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1 से थोड़ा ज्यादा"
+   },
+   {
+    "label": "B",
+    "text": "1 के बराबर"
+   },
+   {
+    "label": "C",
+    "text": "2 से ज्यादा"
+   },
+   {
+    "label": "D",
+    "text": "1 से थोड़ा कम"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 71,
+  "page": 26,
+  "page_hi": 27,
+  "stem": "The alum in jar test when added as coagulant in water :",
+  "options": [
+   {
+    "label": "A",
+    "text": "decreases pH value of water"
+   },
+   {
+    "label": "B",
+    "text": "increases pH value of water"
+   },
+   {
+    "label": "C",
+    "text": "does not require alkalinity in water for flocculation"
+   },
+   {
+    "label": "D",
+    "text": "does not affect pH value of water"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "जल परीक्षण में जल में, जब कोआगुलेंट (coagulant) की तरह एलीम को डालते हैं तब :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "जल की pH मान को घटाता है।"
+   },
+   {
+    "label": "B",
+    "text": "जल की pH मान को बढ़ाता है।"
+   },
+   {
+    "label": "C",
+    "text": "फ्लोक्कुलेशन (flocculation) के लिए जल में शार्तता की आवश्यकता नहीं होती।"
+   },
+   {
+    "label": "D",
+    "text": "जल की pH मान पर प्रभाव नहीं पड़ता।"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Chemistry",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 72,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "The greatest twisting moment which a given shaft section can resist is equal to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Polar modulus/fs"
+   },
+   {
+    "label": "B",
+    "text": "Product of polar modulus and fs"
+   },
+   {
+    "label": "C",
+    "text": "fs/polar modulus"
+   },
+   {
+    "label": "D",
+    "text": "None"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक दिया हुआ शाफ्ट सेक्शन (shaft section) जो कि अधिकतम घुमाव आयाम (twisting moment) से संबंधित है, वह किसके बराबर होगा ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "पोलर मोड्यूलस/fs"
+   },
+   {
+    "label": "B",
+    "text": "पोलर मोड्यूलस तथा fs का गुणा"
+   },
+   {
+    "label": "C",
+    "text": "fs तथा पोलर मोड्यूलस का अनुपात"
+   },
+   {
+    "label": "D",
+    "text": "कोई भी नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 73,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "The shape of the camber best suited for cement concrete pavements is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "hyperbolic"
+   },
+   {
+    "label": "B",
+    "text": "elliptical"
+   },
+   {
+    "label": "C",
+    "text": "straight line"
+   },
+   {
+    "label": "D",
+    "text": "semi-parabolic"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "समीण्ट कांक्रीट सड़क के लिए सबसे उपयोगी कैम्बर (camber) का आकार है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "हाइपरबोलिक (hyperbolic)"
+   },
+   {
+    "label": "B",
+    "text": "द्विघातकार"
+   },
+   {
+    "label": "C",
+    "text": "सिधी रेखा"
+   },
+   {
+    "label": "D",
+    "text": "अर्थ-परवलय"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 74,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "The vertical posts placed at the top and bottom ends of a flight supporting the hand rail are known as :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Railings"
+   },
+   {
+    "label": "B",
+    "text": "Balustrades"
+   },
+   {
+    "label": "C",
+    "text": "Balusters"
+   },
+   {
+    "label": "D",
+    "text": "Newel posts"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "सिद्धियों की फ्लाइट में ऊपरी तथा निचले के धोरों पर हैंड रेल को साधने हेतु जो 3D पोस्ट लगाते हैं, उसे कहते हैं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "रेलिंग"
+   },
+   {
+    "label": "B",
+    "text": "बलस्टेड्स"
+   },
+   {
+    "label": "C",
+    "text": "बलस्टर"
+   },
+   {
+    "label": "D",
+    "text": "न्यूट्रल पोस्ट"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 75,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "The foundation in which a cantilever beam is provided to join two footings, is known as :",
+  "options": [
+   {
+    "label": "A",
+    "text": "raft footing"
+   },
+   {
+    "label": "B",
+    "text": "combined footing"
+   },
+   {
+    "label": "C",
+    "text": "strip footing"
+   },
+   {
+    "label": "D",
+    "text": "strap footing"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "वह निचले जिज्ञासाओं को निचलीं को कैन्टिलिवर बीम से जोड़ा जाता है, उसे कहते हैं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "रूप निच"
+   },
+   {
+    "label": "B",
+    "text": "संयुक्त निच"
+   },
+   {
+    "label": "C",
+    "text": "रूप निच"
+   },
+   {
+    "label": "D",
+    "text": "स्टेप निच"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 76,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "Disinfection of water results in :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Removal of phosphorus"
+   },
+   {
+    "label": "B",
+    "text": "Killing of disease causing bacteria"
+   },
+   {
+    "label": "C",
+    "text": "Removal of turbidity"
+   },
+   {
+    "label": "D",
+    "text": "Removal of hardness"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "जल का फिगसन (Disinfection) के परिभाषात्मक :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "फार्मास्टर का हटना"
+   },
+   {
+    "label": "B",
+    "text": "बैक्टीरिया का बैक्टीरिया का मरण"
+   },
+   {
+    "label": "C",
+    "text": "धूलापन का हटना"
+   },
+   {
+    "label": "D",
+    "text": "कथोरता का हटना"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 77,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "Which of the following mineral is highly expansive ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Montmorillonite"
+   },
+   {
+    "label": "B",
+    "text": "Quartz"
+   },
+   {
+    "label": "C",
+    "text": "Gypsum"
+   },
+   {
+    "label": "D",
+    "text": "Clay"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "निर्मलिखित में कौन सा मिश्रल बहुत फूलनेवाला है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "मोन्स्टररिलोनाइट"
+   },
+   {
+    "label": "B",
+    "text": "क्वार्ट्ज"
+   },
+   {
+    "label": "C",
+    "text": "कायोस्टिलनाइट"
+   },
+   {
+    "label": "D",
+    "text": "इलाईट"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 78,
+  "page": 28,
+  "page_hi": 29,
+  "stem": "Two shafts, one solid and the other hollow, are made of the same materials and are having same length and weight. The hollow shaft as compared to solid shaft is:",
+  "options": [
+   {
+    "label": "A",
+    "text": "Less strong"
+   },
+   {
+    "label": "B",
+    "text": "More strong"
+   },
+   {
+    "label": "C",
+    "text": "Having same strength"
+   },
+   {
+    "label": "D",
+    "text": "None"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "दो शाफ्ट, एक थोक तथा दूसरा खोखला है, दोनों ही एक ही सामग्री, एक ही लंबाई तथा एक ही भार के हैं। थोक शाफ्ट की तुलना में खोखला शाफ्ट होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "कम ताकतवर"
+   },
+   {
+    "label": "B",
+    "text": "ज्यादा ताकतवर"
+   },
+   {
+    "label": "C",
+    "text": "बराबर की ताकत वाला"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 79,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "Hydrometer test is used for :",
+  "options": [
+   {
+    "label": "A",
+    "text": "fined grained soil"
+   },
+   {
+    "label": "B",
+    "text": "coarse grained soil"
+   },
+   {
+    "label": "C",
+    "text": "any type of soil"
+   },
+   {
+    "label": "D",
+    "text": "none of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "हाइड्रोमीटर परीक्षण का उपयोग क्या है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "महिन मूड क्या है"
+   },
+   {
+    "label": "B",
+    "text": "बड़े मूड क्या है"
+   },
+   {
+    "label": "C",
+    "text": "किसी भी प्रकार के मूड है"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त में कोई नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 80,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "Which of the following beam will be recognized as indeterminate ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "A beam with both ends hinged"
+   },
+   {
+    "label": "B",
+    "text": "Simply supported beam"
+   },
+   {
+    "label": "C",
+    "text": "A beam with roller supports"
+   },
+   {
+    "label": "D",
+    "text": "Cantilever"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फिनलिफ़िकट में से किस बिम को अनिश्चित (indeterminate) कहते हैं ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "बिम जिसको दोने हैं हिंग्ड (hinged) है"
+   },
+   {
+    "label": "B",
+    "text": "साधारण सपोर्ट की बिम"
+   },
+   {
+    "label": "C",
+    "text": "रोलर सपोर्ट की बिम"
+   },
+   {
+    "label": "D",
+    "text": "कैस्टीलिवर"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 81,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "A soil with particle size 80 micron will come under the classification of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "clay"
+   },
+   {
+    "label": "B",
+    "text": "silt"
+   },
+   {
+    "label": "C",
+    "text": "gravel"
+   },
+   {
+    "label": "D",
+    "text": "sand"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "एक मूर्ति जिसकें कण का नाप 80 माइक्रोन है इसके वर्गीकृत करेंगे :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "कले"
+   },
+   {
+    "label": "B",
+    "text": "फिल्टर"
+   },
+   {
+    "label": "C",
+    "text": "प्रवेल"
+   },
+   {
+    "label": "D",
+    "text": "बालू"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 82,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "The moments over the supports for any assumed arrangement of loading, including the dead load moments may each be increased or decreased by not more than :",
+  "options": [
+   {
+    "label": "A",
+    "text": "12 percent"
+   },
+   {
+    "label": "B",
+    "text": "8 percent"
+   },
+   {
+    "label": "C",
+    "text": "15 percent"
+   },
+   {
+    "label": "D",
+    "text": "18 percent"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी मानी हुई भार व्यवस्था, जिसमें डेड भार निहित है, के लिए स्पोर्ट के ऊपर आंशिक को निर्धारित के किस मान से ज्यादा बढ़ाया या घटाया नहीं जा सकता है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "12%"
+   },
+   {
+    "label": "B",
+    "text": "8%"
+   },
+   {
+    "label": "C",
+    "text": "15%"
+   },
+   {
+    "label": "D",
+    "text": "18%"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 83,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "The process of making the rough surface, before plastering is :",
+  "options": [
+   {
+    "label": "A",
+    "text": "patching"
+   },
+   {
+    "label": "B",
+    "text": "hacking"
+   },
+   {
+    "label": "C",
+    "text": "tacking"
+   },
+   {
+    "label": "D",
+    "text": "blistering"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "विलास्टर करने से पहले खुदरती सतह तैयार करने की विधि को कहते हैं :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "पैचिंग (patching)"
+   },
+   {
+    "label": "B",
+    "text": "हैकिंग (hacking)"
+   },
+   {
+    "label": "C",
+    "text": "टैकिंग (tacking)"
+   },
+   {
+    "label": "D",
+    "text": "फफोला"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 84,
+  "page": 30,
+  "page_hi": 31,
+  "stem": "The 'level line' is a :",
+  "options": [
+   {
+    "label": "A",
+    "text": "vertical line"
+   },
+   {
+    "label": "B",
+    "text": "line passing through the center of cross hairs and the centre of eye piece"
+   },
+   {
+    "label": "C",
+    "text": "horizontal line"
+   },
+   {
+    "label": "D",
+    "text": "line parallel to the mean spheroidal surface of earth"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "स्तर रेखा होता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "सत्य रेखा"
+   },
+   {
+    "label": "B",
+    "text": "किसी क्षेत्र तथा किसी बिंदु के केंद्रों से निकलने वाली रेखा"
+   },
+   {
+    "label": "C",
+    "text": "क्षैतिज रेखा"
+   },
+   {
+    "label": "D",
+    "text": "पृथ्वी की मध्य गोलिय सतह के समानांतर रेखा"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 85,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "According to Ohm's Law the voltage in a circuit is product of :",
+  "options": [
+   {
+    "label": "A",
+    "text": "current and resistance"
+   },
+   {
+    "label": "B",
+    "text": "resistance and inductance"
+   },
+   {
+    "label": "C",
+    "text": "capacitance and resistance"
+   },
+   {
+    "label": "D",
+    "text": "capacitance and inductance"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "ओहम के नियम द्वारा किसी परिभाषा में वोल्टेज किन चीज़ों का गुण है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "धारा (current) तथा रजिस्टर"
+   },
+   {
+    "label": "B",
+    "text": "रजिस्टर तथा इन्डक्टर"
+   },
+   {
+    "label": "C",
+    "text": "कैपेसिटेंस तथा रजिस्टर"
+   },
+   {
+    "label": "D",
+    "text": "कैपेसिटेंस तथा इन्डक्टर"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 86,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "The value of Froude number can be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Equal to 1"
+   },
+   {
+    "label": "B",
+    "text": "Less than 1"
+   },
+   {
+    "label": "C",
+    "text": "Greater than 1"
+   },
+   {
+    "label": "D",
+    "text": "All of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "प्रस्तुत संख्या का मान हो सकता है :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1 के बराबर"
+   },
+   {
+    "label": "B",
+    "text": "1 से कम"
+   },
+   {
+    "label": "C",
+    "text": "1 से ज्यादा"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में सभी"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 87,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "The Liquid Limit of a clayey soil is 50%, the compression index of the soil will be :",
+  "options": [
+   {
+    "label": "A",
+    "text": "0.25"
+   },
+   {
+    "label": "B",
+    "text": "0.28"
+   },
+   {
+    "label": "C",
+    "text": "0.11"
+   },
+   {
+    "label": "D",
+    "text": "0.15"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कले मिट्टी की द्रव सीमा 50% है तो उसका कम्प्रेशन सूचकांक होगा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "0.35"
+   },
+   {
+    "label": "B",
+    "text": "0.28"
+   },
+   {
+    "label": "C",
+    "text": "0.11"
+   },
+   {
+    "label": "D",
+    "text": "0.15"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 88,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "At the time of fracture the diameter of a cast iron round bar, on which tensile test is performed, will :",
+  "options": [
+   {
+    "label": "A",
+    "text": "decrease"
+   },
+   {
+    "label": "B",
+    "text": "increase"
+   },
+   {
+    "label": "C",
+    "text": "be approximately same"
+   },
+   {
+    "label": "D",
+    "text": "none of above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "कार्त आहारन की गोल छड़ जिस पर तना क्षमतापरीक्षण किया गया है, छड़ के टूटने के समय उसका व्यास :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "घटना"
+   },
+   {
+    "label": "B",
+    "text": "बढ़ना"
+   },
+   {
+    "label": "C",
+    "text": "लगभग उतना ही रहेगा"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में कोई भी नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 89,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "Torsional rigidity of a shaft is equal to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Ratio of modulus of rigidity and polar moment of inertia"
+   },
+   {
+    "label": "B",
+    "text": "Difference of modulus of rigidity and polar moment of inertia"
+   },
+   {
+    "label": "C",
+    "text": "Product of modulus of rigidity and polar moment of inertia"
+   },
+   {
+    "label": "D",
+    "text": "Sum of modulus of rigidity and polar moment of inertia"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बलनुर्ण द्रवता किसकी शाफ्ट (shaft) के किसके बराबर होती है ?",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "C",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 90,
+  "page": 32,
+  "page_hi": 33,
+  "stem": "Two soils having shrinkage limits 25% and 20% respectively. Which will shrink more ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "soil with shrinkage limit 25%"
+   },
+   {
+    "label": "B",
+    "text": "soil with shrinkage limit 20%"
+   },
+   {
+    "label": "C",
+    "text": "both will shrink equally"
+   },
+   {
+    "label": "D",
+    "text": "none of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "दौ मिट्टियों की सिकुड़न सीमा (shrinkage limit) ज्ञात: 25% तथा 20% है। कौन सी मिट्टी ज्यादातर सिकुड़ती है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "मिट्टी जिसको सिकुड़न सीमा 25% है"
+   },
+   {
+    "label": "B",
+    "text": "मिट्टी जिसको सिकुड़न सीमा 20% है"
+   },
+   {
+    "label": "C",
+    "text": "दोनों बराबर से सिकुड़ती हैं"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्‍त में कोई भी नहीं"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 91,
+  "page": 34,
+  "page_hi": 35,
+  "stem": "Which of the following is related to fundamental law ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Parallelogram law"
+   },
+   {
+    "label": "B",
+    "text": "Law of transmissibility"
+   },
+   {
+    "label": "C",
+    "text": "Kani's theorem"
+   },
+   {
+    "label": "D",
+    "text": "Lami's theorem"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "निर्दिष्ट में कौन से मौलिक विधि से संबंधित है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "समान्तर चतुर्भुज का नियम"
+   },
+   {
+    "label": "B",
+    "text": "पहुंचाने की योग्यता का नियम"
+   },
+   {
+    "label": "C",
+    "text": "कानी का प्रयोग"
+   },
+   {
+    "label": "D",
+    "text": "लौमी का प्रयोग"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 92,
+  "page": 34,
+  "page_hi": 35,
+  "stem": "Froude number is the ratio of inertia forces to :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Compressive force"
+   },
+   {
+    "label": "B",
+    "text": "Gravity force"
+   },
+   {
+    "label": "C",
+    "text": "Viscous force"
+   },
+   {
+    "label": "D",
+    "text": "Surface tension force"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "फ्रॉड संज्ञा, अनुपात है, जड़ित बल तथा :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "दाबीय बल"
+   },
+   {
+    "label": "B",
+    "text": "गुरुत्व बल"
+   },
+   {
+    "label": "C",
+    "text": "व्यतिक्रम बल"
+   },
+   {
+    "label": "D",
+    "text": "पृष्ठीय तना बल"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 93,
+  "page": 34,
+  "page_hi": 35,
+  "stem": "Two elements A and B have the same atomic mass but their atomic numbers are 19 and 20 respectively. A and B are :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Polymers"
+   },
+   {
+    "label": "B",
+    "text": "Isomers"
+   },
+   {
+    "label": "C",
+    "text": "Isotopes"
+   },
+   {
+    "label": "D",
+    "text": "Isobars"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "दो तत्व A तथा B का व्यास  भार एक है परंतु उनके व्यास क्रमांक क्रमशः: 19 तथा 20 हैं। A तथा B हैं:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "पॉलीमर"
+   },
+   {
+    "label": "B",
+    "text": "आइसोमर"
+   },
+   {
+    "label": "C",
+    "text": "समस्थानिक"
+   },
+   {
+    "label": "D",
+    "text": "सम्भारिक"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 94,
+  "page": 34,
+  "page_hi": 35,
+  "stem": "The principle of working of an optical square is based on :",
+  "options": [
+   {
+    "label": "A",
+    "text": "double reflection"
+   },
+   {
+    "label": "B",
+    "text": "double refraction"
+   },
+   {
+    "label": "C",
+    "text": "refraction only"
+   },
+   {
+    "label": "D",
+    "text": "reflection only"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "आण्विक वर्ग की कार्य करने का सिद्धांत किस पर आधारित है?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "इ-प्रतिक्रिय"
+   },
+   {
+    "label": "B",
+    "text": "इ-आवर्तन"
+   },
+   {
+    "label": "C",
+    "text": "केवल अव्यक्त"
+   },
+   {
+    "label": "D",
+    "text": "केवल प्रतिक्रिय"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "A",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 95,
+  "page": 34,
+  "page_hi": 35,
+  "stem": "Which network connects computers placed in different areas of a city ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "WAN"
+   },
+   {
+    "label": "B",
+    "text": "MAN"
+   },
+   {
+    "label": "C",
+    "text": "LAN"
+   },
+   {
+    "label": "D",
+    "text": "TAN"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "किसी शहर के विभिन्न क्षेत्रों में जुड़े कंप्यूटरों को जोड़ने हेतु किस नेटवर्क का प्रयोग करते हैं?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "वैन (WAN)"
+   },
+   {
+    "label": "B",
+    "text": "मैन (MAN)"
+   },
+   {
+    "label": "C",
+    "text": "लैन (LAN)"
+   },
+   {
+    "label": "D",
+    "text": "डैन (TAN)"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 96,
+  "page": 35,
+  "page_hi": 35,
+  "stem": "\\u093f\\u0924\\u0020\\u092c\\u093e\\u093f\\u092f\\u093e\\u0928\\u0020\\u092e\\u093e\\u0902\\u0020\\u0930\\u093e\\u0928\\u0940\\u0020\\u0915\\u0930\\u0940\\u0932\\u0020(Queen closer)\\u0020\\u0915\\u093e\\u0020\\u0938\\u094d\\u0925\\u093e\\u0928\\u0020\\u0939\\u094b\\u0924\\u093e\\u0020:\\n(A)\\u0020\\u0930\\u094d\\u0938\\u094d\\u092a\\u094d\\u092a\\u093e\\u0930\\u0020\\u0915\\u094b\\u0938\\u0020\\u092e\\u093e\\u0902\\u0020\\u092a\\u094d\\u0930\\u093e\\u092e\\u0020\\u0930\\u094d\\u0938\\u094d\\u092a\\u094d\\u092a\\u093e\\u0930\\u0020\\u0938\\u094d\\u0925\\u093e\\u0928\\u0020\\u0915\\u0947\\u0020\\u092a\\u094d\\u0930\\u093e\\u0935\\u093e\\u0932\\u0020\\u003a\\n(B)\\u0020\\u0939\\u0947\\u0921\\u0930\\0020\\u0915\\u094b\\u0938\\u0020\\u092e\\u093e\\u0902\\u0020\\u092a\\u094d\\u0930\\u093e\\u092e\\u0020\\u0930\\u094d\\u0938\\u094d\\u092a\\u094d\\u092a\\u093e\\u0930\\u0020\\u0938\\u094d\\u0925\\u093e\\u0928\\u0020\\u0915\\u0947\\u0020\\u092a\\u094d\\u0930\\u093e\\u0935\\u093e\\u0932\\u0020\\u003a\\n(C)\\u0020\\u0939\\u0947\\u0921\\u0930\\u0020\\u0915\\u094b\\u0938\\u0020\\u092e\\u093e\\u0902\\u0020\\u003a\\n(D)\\u0020\\u0930\\u094d\\u0938\\u094d\\u092a\\u094d\\u092a\\u093e\\u0930\\u0020\\u0915\\u094b\\u0938\\u0020\\u003a",
+  "options": [
+   {
+    "label": "A",
+    "text": "\\u0930\\u094d\\u0938\\u094d\\u092a\\u094d\\u092a\\u093e\\u0930\\u0020\\u0915\\u094b\\u0938\\u0020\\u092e\\u093e\\u0902\\u0020\\u092a\\u094d\\u0930\\u093e\\u092e\\u0020\\u0930\\u094d\\u0938\\u094d\\u092a\\u094d\\u092a\\u093e\\u0930\\u0020\\u0938\\u094d\\u0925\\u093e\\u0928\\u0020\\u0915\\u0947\\u0020\\u092a\\u094d\\u0930\\u093e\\u0935\\u093e\\u0932\\u0020\\u003a"
+   },
+   {
+    "label": "B",
+    "text": "\\u0939\\u0947\\u0921\\u0930\\0020\\u0915\\u094b\\u0938\\u0020\\u092e\\u093e\\u0902\\u0020\\u092a\\u094d\\u0930\\u093e\\u092e\\u0020\\u0930\\u094d\\u0938\\u094d\\u092a\\u094d\\u092a\\u093e\\u0930\\u0020\\u0938\\u094d\\u0925\\u093e\\u0928\\u0020\\u0915\\u0947\\u0020\\u092a\\u094d\\u0930\\u093e\\u0935\\u093a\\u0020\\u003a"
+   },
+   {
+    "label": "C",
+    "text": "\\u0939\\u0947\\u0921\\u0930\\u0020\\u0915\\u094b\\u0938\\u0020\\u092e\\u093e\\u0902\\u0020\\u003a"
+   },
+   {
+    "label": "D",
+    "text": "\\u0930\\u094d\\u0938\\u094d\\u092a\\u094d\\u092a\\u093e\\u0930\\u0020\\u0915\\u094b\\u0938\\u0020\\u003a"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "इस बिंदु में रागी कार्य (Choose)",
+  "options_hi_unverified": [],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "Hindi",
+   "type": "coding_decoding",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 97,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "Torque is a :",
+  "options": [
+   {
+    "label": "A",
+    "text": "A scalar quantity"
+   },
+   {
+    "label": "B",
+    "text": "Vector quantity"
+   },
+   {
+    "label": "C",
+    "text": "Tensor quantity"
+   },
+   {
+    "label": "D",
+    "text": "None of the above"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "बलायूपर्ण एक :",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "अदिश रशि है।"
+   },
+   {
+    "label": "B",
+    "text": "सदिश रशि है।"
+   },
+   {
+    "label": "C",
+    "text": "टेंसर रशि है।"
+   },
+   {
+    "label": "D",
+    "text": "उपरोक्त में कोई नहीं है।"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Physics",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 98,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "Activated carbon is used for :",
+  "options": [
+   {
+    "label": "A",
+    "text": "Removing corrosiveness"
+   },
+   {
+    "label": "B",
+    "text": "Removing odours"
+   },
+   {
+    "label": "C",
+    "text": "Disinfection"
+   },
+   {
+    "label": "D",
+    "text": "Removing hardness"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "सक्रिय कार्बन का उपयोग किस लिए होता है ?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "क्षयकारीता हटाने हेतु"
+   },
+   {
+    "label": "B",
+    "text": "बदबू हटाने हेतु"
+   },
+   {
+    "label": "C",
+    "text": "विषम (Disinfection) है।"
+   },
+   {
+    "label": "D",
+    "text": "कठोरता हटाने हेतु"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Static GK",
+   "difficulty": 1,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 99,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "The compaction factor test used for finding the following property of the concrete :",
+  "options": [
+   {
+    "label": "A",
+    "text": "compressibility"
+   },
+   {
+    "label": "B",
+    "text": "workability"
+   },
+   {
+    "label": "C",
+    "text": "strength"
+   },
+   {
+    "label": "D",
+    "text": "durability"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "काँक्रीट के किस गुण को प्राप्त करने हेतु कम्पैक्शन फैक्टर (compaction factor) परीक्षण करते हैं?",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "दबाव (compressibility)"
+   },
+   {
+    "label": "B",
+    "text": "कार्यशीलता"
+   },
+   {
+    "label": "C",
+    "text": "ताकत"
+   },
+   {
+    "label": "D",
+    "text": "सहनशीलता"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "B",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "factual_recall",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ },
+ {
+  "number": 100,
+  "page": 36,
+  "page_hi": 37,
+  "stem": "The ratio of 5 days BOD to ultimate BOD is about :",
+  "options": [
+   {
+    "label": "A",
+    "text": "1.0"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{3}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{3}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{2}{3}"
+   }
+  ],
+  "lang": "both",
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "Civil Engineering",
+  "year": 2018,
+  "source_pdf": "JE-0411-CIVIL-QB-AND-MA.pdf",
+  "layout": "facing_pages",
+  "stem_hi": "",
+  "options_hi": [],
+  "stem_hi_unverified": "5 दिन के बी.ओ.डी. (BOD) तथा परम बी.ओ.डी. का अनुपात होता है:",
+  "options_hi_unverified": [
+   {
+    "label": "A",
+    "text": "1.0"
+   },
+   {
+    "label": "B",
+    "text": "\\frac{3}{4}"
+   },
+   {
+    "label": "C",
+    "text": "\\frac{1}{3}"
+   },
+   {
+    "label": "D",
+    "text": "\\frac{2}{3}"
+   }
+  ],
+  "hindi_status": "unverified_ocr",
+  "correct_answer": "D",
+  "paper_label": "BSSC JE Civil (Advt 0411)",
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-0411, Junior Engineer (Civil/Mechanical)",
+  "tag": {
+   "section": "General Science",
+   "type": "ratio_average",
+   "topic": "Other",
+   "difficulty": 2,
+   "bihar_specific": false
+  }
+ }
+]

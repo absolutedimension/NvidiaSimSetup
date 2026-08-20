@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS questions (
   options TEXT, correct_answer TEXT, solution TEXT, figure_refs TEXT,
   needs_figure INTEGER DEFAULT 0, figure_url TEXT, figure_svg TEXT,
   chapter TEXT, concept TEXT, difficulty INTEGER, bloom_level TEXT,
+  stem_hi TEXT, options_hi TEXT, solution_hi TEXT,
   source TEXT, year INTEGER,
   verified INTEGER, generated INTEGER DEFAULT 0, validation_issues TEXT, duplicate_of TEXT, hash TEXT
 );
@@ -27,6 +28,7 @@ CREATE INDEX IF NOT EXISTS idx_topic ON questions(subject, chapter, difficulty);
 _COLS = ["id", "exam", "subject", "stem", "qtype", "options", "correct_answer",
          "solution", "figure_refs", "needs_figure", "figure_url", "figure_svg",
          "chapter", "concept", "difficulty", "bloom_level",
+         "stem_hi", "options_hi", "solution_hi",
          "source", "year", "verified", "generated", "validation_issues", "duplicate_of", "hash"]
 
 
@@ -49,7 +51,10 @@ class Store:
                     "ALTER TABLE questions ADD COLUMN generated INTEGER DEFAULT 0",
                     "ALTER TABLE questions ADD COLUMN needs_figure INTEGER DEFAULT 0",
                     "ALTER TABLE questions ADD COLUMN figure_url TEXT",
-                    "ALTER TABLE questions ADD COLUMN figure_svg TEXT"):
+                    "ALTER TABLE questions ADD COLUMN figure_svg TEXT",
+                    "ALTER TABLE questions ADD COLUMN stem_hi TEXT",
+                    "ALTER TABLE questions ADD COLUMN options_hi TEXT",
+                    "ALTER TABLE questions ADD COLUMN solution_hi TEXT"):
             try:
                 self.con.execute(ddl)
                 self.con.commit()
@@ -61,6 +66,7 @@ class Store:
                json.dumps(q.options, ensure_ascii=False), q.correct_answer, q.solution,
                json.dumps(q.figure_refs), int(q.needs_figure), q.figure_url, q.figure_svg,
                q.chapter, q.concept, q.difficulty, q.bloom_level,
+               q.stem_hi, json.dumps(q.options_hi, ensure_ascii=False), q.solution_hi,
                q.source, q.year, int(q.verified), int(q.generated),
                json.dumps(q.validation_issues, ensure_ascii=False), q.duplicate_of, q.hash)
         self.con.execute(
@@ -95,6 +101,9 @@ class Store:
         d["verified"] = bool(d.get("verified"))
         d["generated"] = bool(d.get("generated"))
         d["needs_figure"] = bool(d.get("needs_figure"))
+        d["options_hi"] = json.loads(d.get("options_hi") or "[]")
+        d["stem_hi"] = d.get("stem_hi") or ""
+        d["solution_hi"] = d.get("solution_hi") or ""
         return Question(**{k: d[k] for k in d if k in Question.__dataclass_fields__})
 
     def rows_id_stem(self):
@@ -123,6 +132,40 @@ class Store:
             sql += f" LIMIT {int(limit)}"
         cur = self.con.execute(sql, args)
         return [self._row_to_q(cur, r) for r in cur.fetchall()]
+
+    def iter_generated(self, exam=None, subject=None, chapter=None, limit=None,
+                       exclude_needs_figure=True, verified_only=True) -> list[Question]:
+        """GENERATED questions, for auditing the generator's own answer keys.
+
+        `iter_real` hardcodes generated=0, so nothing in the pipeline could ever re-check a
+        RAG-authored key — they were written verified=1 and served on trust. This is the
+        read path for that audit (see pipeline.audit_generated_keys)."""
+        sql = "SELECT * FROM questions WHERE generated=1 AND duplicate_of IS NULL"
+        args = []
+        if verified_only:
+            sql += " AND verified=1"
+        if exclude_needs_figure:
+            sql += " AND COALESCE(needs_figure,0)=0"
+        for col, val in (("exam", exam), ("subject", subject), ("chapter", chapter)):
+            if val:
+                sql += f" AND {col}=?"
+                args.append(val)
+        if limit:
+            sql += f" LIMIT {int(limit)}"
+        cur = self.con.execute(sql, args)
+        return [self._row_to_q(cur, r) for r in cur.fetchall()]
+
+    def set_verified(self, qid, verified: bool, extra_issue=None):
+        """Flip the verified flag (and optionally record why). verified=0 removes the
+        question from every serving path — pool_questions() requires verified=1."""
+        row = self.con.execute(
+            "SELECT validation_issues FROM questions WHERE id=?", (qid,)).fetchone()
+        issues = json.loads(row[0]) if row and row[0] else []
+        if extra_issue and extra_issue not in issues:
+            issues.append(extra_issue)
+        self.con.execute("UPDATE questions SET verified=?, validation_issues=? WHERE id=?",
+                         (int(verified), json.dumps(issues), qid))
+        self.con.commit()
 
     def set_solution(self, qid, solution, extra_issue=None):
         # central choke point for LLM-authored solutions -> normalise escaped newlines

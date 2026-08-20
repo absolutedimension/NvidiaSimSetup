@@ -15,7 +15,11 @@ def normalize_for_hash(text: str) -> str:
     """Aggressive normalize so trivially-different copies of the same question collide."""
     t = text.lower()
     t = re.sub(r"\\[a-zA-Z]+", " ", t)      # drop LaTeX command names
-    t = re.sub(r"[^a-z0-9]+", " ", t)        # keep only alnum
+    # Keep Devanagari as well as ASCII alnum. The old pattern stripped every non-ASCII
+    # character, so EVERY Hindi question normalised to "" and hashed identically — the whole
+    # Hindi bank would have collapsed into one "duplicate". English rows are unaffected
+    # (they contain no Devanagari), so existing hashes do not change.
+    t = re.sub(r"[^a-z0-9\u0900-\u097f]+", " ", t)
     return re.sub(r"\s+", " ", t).strip()
 
 
@@ -134,6 +138,13 @@ class Question:
     difficulty: Optional[int] = None
     bloom_level: Optional[str] = None
     # --- provenance ---
+    # --- bilingual (Hindi) mirrors. Optional: English-only rows leave these empty and the
+    # serving layer falls back to English, so nothing breaks for banks without Hindi.
+    # Bihar govt exams (BSSC/BPSC/TRE) print the paper in BOTH languages, so this is the
+    # shape the real paper has — not a translation bolted on.
+    stem_hi: str = ""
+    options_hi: list = field(default_factory=list)   # [{"label":"A","text":"..."}], same order as options
+    solution_hi: str = ""
     source: str = ""          # "JEE Adv 2016 Paper 1"
     year: Optional[int] = None
     # --- pipeline state ---

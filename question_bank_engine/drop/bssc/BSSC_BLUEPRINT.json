@@ -1,0 +1,853 @@
+{
+ "note": "One blueprint per exam. The pooled view is reference only — these papers are different exams with different structures and must not be averaged.",
+ "per_exam": [
+  {
+   "exam": "BSSC Asst Teacher GK (01010116)",
+   "questions": 147,
+   "section_mix": {
+    "General Studies": 0.354,
+    "Reasoning": 0.272,
+    "Mathematics": 0.231,
+    "General Science": 0.143
+   },
+   "topic_mix": {
+    "Series/Analogy": 0.177,
+    "Arithmetic": 0.116,
+    "Logical Reasoning": 0.109,
+    "Science & Technology": 0.095,
+    "Static GK": 0.082,
+    "Coding-Decoding": 0.061,
+    "Bihar Polity/Schemes": 0.048,
+    "Indian History": 0.041,
+    "Current Affairs - International": 0.034,
+    "Blood Relation/Direction": 0.034,
+    "Indian Polity": 0.034,
+    "Other": 0.034,
+    "Biology": 0.02,
+    "Percentage/Profit-Loss": 0.02,
+    "Current Affairs - National": 0.02,
+    "Environment": 0.014,
+    "Bihar History": 0.014,
+    "Physics": 0.014,
+    "Data Interpretation": 0.007,
+    "Bihar Geography": 0.007,
+    "Algebra": 0.007,
+    "Indian Geography": 0.007,
+    "Time-Work-Speed": 0.007
+   },
+   "type_mix": {
+    "factual_recall": 0.463,
+    "series": 0.122,
+    "arithmetic": 0.109,
+    "coding_decoding": 0.061,
+    "analogy": 0.061,
+    "odd_one_out": 0.041,
+    "percentage_profit_loss": 0.034,
+    "direction_sense": 0.02,
+    "blood_relation": 0.02,
+    "ranking": 0.02,
+    "figure_series": 0.007,
+    "clock": 0.007,
+    "calendar": 0.007,
+    "syllogism": 0.007,
+    "algebra": 0.007,
+    "statement_based": 0.007,
+    "time_work_speed": 0.007
+   },
+   "difficulty_mix": {
+    "2": 0.687,
+    "1": 0.293,
+    "3": 0.02
+   },
+   "avg_difficulty": 1.73,
+   "bihar_share": 0.068,
+   "unclassified_share": 0.034
+  },
+  {
+   "exam": "0225",
+   "questions": 50,
+   "section_mix": {
+    "General Studies": 0.36,
+    "English": 0.32,
+    "Mathematics": 0.16,
+    "General Science": 0.14,
+    "Hindi": 0.02
+   },
+   "topic_mix": {
+    "English Grammar": 0.18,
+    "English Vocabulary": 0.14,
+    "Arithmetic": 0.12,
+    "Science & Technology": 0.1,
+    "Current Affairs - National": 0.08,
+    "Other": 0.08,
+    "Logical Reasoning": 0.04,
+    "Indian Geography": 0.04,
+    "Bihar Polity/Schemes": 0.02,
+    "Indian Polity": 0.02,
+    "Biology": 0.02,
+    "Chemistry": 0.02,
+    "Physics": 0.02,
+    "Algebra": 0.02,
+    "Data Interpretation": 0.02,
+    "Static GK": 0.02,
+    "Environment": 0.02,
+    "Hindi Idioms/Proverbs": 0.02,
+    "Series/Analogy": 0.02
+   },
+   "type_mix": {
+    "factual_recall": 0.52,
+    "statement_based": 0.14,
+    "analogy": 0.08,
+    "arithmetic": 0.06,
+    "match_the_pairs": 0.04,
+    "current_affairs": 0.02,
+    "percentage_profit_loss": 0.02,
+    "odd_one_out": 0.02,
+    "assertion_reason": 0.02,
+    "algebra": 0.02,
+    "data_interpretation": 0.02,
+    "coding_decoding": 0.02,
+    "ranking": 0.02
+   },
+   "difficulty_mix": {
+    "2": 0.66,
+    "1": 0.28,
+    "3": 0.06
+   },
+   "avg_difficulty": 1.78,
+   "bihar_share": 0.0,
+   "unclassified_share": 0.08
+  },
+  {
+   "exam": "BSSC Field Assistant 03/25",
+   "questions": 150,
+   "section_mix": {
+    "General Studies": 0.513,
+    "Mathematics": 0.2,
+    "General Science": 0.173,
+    "Reasoning": 0.113
+   },
+   "topic_mix": {
+    "Arithmetic": 0.133,
+    "Logical Reasoning": 0.093,
+    "Current Affairs - National": 0.087,
+    "Indian Polity": 0.073,
+    "Current Affairs - International": 0.067,
+    "Bihar Polity/Schemes": 0.067,
+    "Static GK": 0.06,
+    "Science & Technology": 0.06,
+    "Physics": 0.053,
+    "Bihar History": 0.047,
+    "Biology": 0.033,
+    "Indian History": 0.027,
+    "Other": 0.027,
+    "Percentage/Profit-Loss": 0.027,
+    "Series/Analogy": 0.027,
+    "Economy": 0.02,
+    "Coding-Decoding": 0.02,
+    "Bihar Geography": 0.013,
+    "Environment": 0.013,
+    "Time-Work-Speed": 0.013,
+    "Blood Relation/Direction": 0.013,
+    "Bihar GK": 0.007,
+    "Chemistry": 0.007,
+    "Indian Geography": 0.007,
+    "Ratio/Average": 0.007
+   },
+   "type_mix": {
+    "factual_recall": 0.553,
+    "arithmetic": 0.113,
+    "current_affairs": 0.04,
+    "statement_based": 0.033,
+    "percentage_profit_loss": 0.033,
+    "figure_series": 0.027,
+    "match_the_pairs": 0.02,
+    "assertion_reason": 0.02,
+    "coding_decoding": 0.02,
+    "series": 0.02,
+    "seating_arrangement": 0.02,
+    "odd_one_out": 0.013,
+    "ranking": 0.013,
+    "analogy": 0.013,
+    "time_work_speed": 0.013,
+    "ratio_average": 0.007,
+    "inequality": 0.007,
+    "clock": 0.007,
+    "algebra": 0.007,
+    "blood_relation": 0.007,
+    "syllogism": 0.007,
+    "direction_sense": 0.007
+   },
+   "difficulty_mix": {
+    "2": 0.873,
+    "1": 0.12,
+    "3": 0.007
+   },
+   "avg_difficulty": 1.89,
+   "bihar_share": 0.153,
+   "unclassified_share": 0.027
+  },
+  {
+   "exam": "BSSC 10th Level 2024",
+   "questions": 97,
+   "section_mix": {
+    "General Studies": 0.371,
+    "Hindi": 0.309,
+    "Mathematics": 0.278,
+    "General Science": 0.041
+   },
+   "topic_mix": {
+    "Hindi Vocabulary": 0.175,
+    "Arithmetic": 0.134,
+    "Current Affairs - National": 0.072,
+    "Bihar Polity/Schemes": 0.072,
+    "Percentage/Profit-Loss": 0.052,
+    "Logical Reasoning": 0.052,
+    "Hindi Grammar": 0.052,
+    "Bihar History": 0.041,
+    "Static GK": 0.041,
+    "Current Affairs - International": 0.031,
+    "Indian History": 0.031,
+    "Other": 0.031,
+    "Hindi Comprehension": 0.031,
+    "Hindi Idioms/Proverbs": 0.031,
+    "Time-Work-Speed": 0.021,
+    "Ratio/Average": 0.021,
+    "Indian Polity": 0.021,
+    "Bihar GK": 0.021,
+    "Science & Technology": 0.021,
+    "Algebra": 0.01,
+    "Number System": 0.01,
+    "Environment": 0.01,
+    "Biology": 0.01,
+    "Art & Culture": 0.01
+   },
+   "type_mix": {
+    "factual_recall": 0.608,
+    "arithmetic": 0.103,
+    "odd_one_out": 0.093,
+    "percentage_profit_loss": 0.082,
+    "match_the_pairs": 0.041,
+    "time_work_speed": 0.021,
+    "ratio_average": 0.021,
+    "algebra": 0.01,
+    "matrix_puzzle": 0.01,
+    "analogy": 0.01
+   },
+   "difficulty_mix": {
+    "1": 0.557,
+    "2": 0.443
+   },
+   "avg_difficulty": 1.44,
+   "bihar_share": 0.124,
+   "unclassified_share": 0.031
+  },
+  {
+   "exam": "BSSC 8th Level 2024",
+   "questions": 100,
+   "section_mix": {
+    "General Studies": 0.39,
+    "Mathematics": 0.31,
+    "Hindi": 0.27,
+    "General Science": 0.03
+   },
+   "topic_mix": {
+    "Arithmetic": 0.16,
+    "Hindi Grammar": 0.11,
+    "Hindi Comprehension": 0.09,
+    "Bihar Polity/Schemes": 0.08,
+    "Percentage/Profit-Loss": 0.06,
+    "Static GK": 0.06,
+    "Logical Reasoning": 0.05,
+    "Hindi Vocabulary": 0.05,
+    "Indian Polity": 0.04,
+    "Bihar History": 0.04,
+    "Current Affairs - International": 0.04,
+    "Algebra": 0.03,
+    "Time-Work-Speed": 0.03,
+    "Bihar Geography": 0.03,
+    "Number System": 0.02,
+    "Current Affairs - National": 0.02,
+    "Other": 0.02,
+    "Hindi Idioms/Proverbs": 0.02,
+    "Art & Culture": 0.02,
+    "Ratio/Average": 0.01,
+    "Science & Technology": 0.01,
+    "Economy": 0.01
+   },
+   "type_mix": {
+    "factual_recall": 0.57,
+    "arithmetic": 0.13,
+    "percentage_profit_loss": 0.09,
+    "odd_one_out": 0.06,
+    "match_the_pairs": 0.05,
+    "time_work_speed": 0.04,
+    "algebra": 0.03,
+    "analogy": 0.02,
+    "ratio_average": 0.01
+   },
+   "difficulty_mix": {
+    "1": 0.53,
+    "2": 0.47
+   },
+   "avg_difficulty": 1.47,
+   "bihar_share": 0.17,
+   "unclassified_share": 0.02
+  },
+  {
+   "exam": "BSSC Chemistry",
+   "questions": 150,
+   "section_mix": {
+    "General Science": 0.987,
+    "General Studies": 0.013
+   },
+   "topic_mix": {
+    "Chemistry": 0.433,
+    "Science & Technology": 0.373,
+    "Arithmetic": 0.06,
+    "Physics": 0.047,
+    "Biology": 0.027,
+    "Environment": 0.02,
+    "Static GK": 0.013,
+    "Coding-Decoding": 0.013,
+    "Other": 0.007,
+    "Logical Reasoning": 0.007
+   },
+   "type_mix": {
+    "factual_recall": 0.887,
+    "arithmetic": 0.067,
+    "match_the_pairs": 0.02,
+    "coding_decoding": 0.013,
+    "odd_one_out": 0.007,
+    "ranking": 0.007
+   },
+   "difficulty_mix": {
+    "2": 0.8,
+    "3": 0.16,
+    "1": 0.04
+   },
+   "avg_difficulty": 2.12,
+   "bihar_share": 0.0,
+   "unclassified_share": 0.007
+  },
+  {
+   "exam": "BSSC GK Booklet (Advt 3646)",
+   "questions": 100,
+   "section_mix": {
+    "General Studies": 0.71,
+    "General Science": 0.29
+   },
+   "topic_mix": {
+    "Indian History": 0.18,
+    "Science & Technology": 0.15,
+    "Static GK": 0.13,
+    "Indian Polity": 0.09,
+    "Bihar Polity/Schemes": 0.06,
+    "Current Affairs - International": 0.06,
+    "Physics": 0.04,
+    "Current Affairs - National": 0.04,
+    "Biology": 0.04,
+    "Sports": 0.03,
+    "Other": 0.03,
+    "Bihar History": 0.03,
+    "Environment": 0.03,
+    "Bihar Geography": 0.02,
+    "Chemistry": 0.02,
+    "Indian Geography": 0.02,
+    "Logical Reasoning": 0.02,
+    "Economy": 0.01
+   },
+   "type_mix": {
+    "factual_recall": 0.95,
+    "odd_one_out": 0.03,
+    "statement_based": 0.01,
+    "match_the_pairs": 0.01
+   },
+   "difficulty_mix": {
+    "2": 0.68,
+    "1": 0.32
+   },
+   "avg_difficulty": 1.68,
+   "bihar_share": 0.08,
+   "unclassified_share": 0.03
+  },
+  {
+   "exam": "BSSC GK Kara Mishrak (Advt 3649)",
+   "questions": 100,
+   "section_mix": {
+    "General Studies": 0.58,
+    "General Science": 0.29,
+    "Mathematics": 0.1,
+    "Hindi": 0.02,
+    "Reasoning": 0.01
+   },
+   "topic_mix": {
+    "Science & Technology": 0.17,
+    "Static GK": 0.08,
+    "Current Affairs - National": 0.08,
+    "Indian History": 0.08,
+    "Indian Polity": 0.08,
+    "Arithmetic": 0.07,
+    "Current Affairs - International": 0.06,
+    "Environment": 0.06,
+    "Biology": 0.06,
+    "Bihar Polity/Schemes": 0.05,
+    "Bihar History": 0.03,
+    "Economy": 0.03,
+    "Sports": 0.02,
+    "Art & Culture": 0.02,
+    "Other": 0.02,
+    "Series/Analogy": 0.01,
+    "Chemistry": 0.01,
+    "Logical Reasoning": 0.01,
+    "Ratio/Average": 0.01,
+    "Bihar Geography": 0.01,
+    "Bihar GK": 0.01,
+    "Percentage/Profit-Loss": 0.01,
+    "Physics": 0.01,
+    "Hindi Idioms/Proverbs": 0.01
+   },
+   "type_mix": {
+    "factual_recall": 0.84,
+    "arithmetic": 0.05,
+    "odd_one_out": 0.03,
+    "percentage_profit_loss": 0.03,
+    "coding_decoding": 0.02,
+    "analogy": 0.01,
+    "ranking": 0.01,
+    "ratio_average": 0.01
+   },
+   "difficulty_mix": {
+    "2": 0.73,
+    "1": 0.27
+   },
+   "avg_difficulty": 1.73,
+   "bihar_share": 0.08,
+   "unclassified_share": 0.02
+  },
+  {
+   "exam": "BSSC GK & Numerical Ability",
+   "questions": 150,
+   "section_mix": {
+    "General Studies": 0.433,
+    "Mathematics": 0.3,
+    "General Science": 0.247,
+    "Hindi": 0.013,
+    "Reasoning": 0.007
+   },
+   "topic_mix": {
+    "Arithmetic": 0.213,
+    "Science & Technology": 0.093,
+    "Indian History": 0.087,
+    "Current Affairs - International": 0.087,
+    "Physics": 0.06,
+    "Biology": 0.06,
+    "Current Affairs - National": 0.053,
+    "Static GK": 0.053,
+    "Bihar Polity/Schemes": 0.04,
+    "Economy": 0.04,
+    "Percentage/Profit-Loss": 0.027,
+    "Indian Polity": 0.027,
+    "Ratio/Average": 0.027,
+    "Indian Geography": 0.027,
+    "Environment": 0.013,
+    "Chemistry": 0.013,
+    "Series/Analogy": 0.013,
+    "Art & Culture": 0.013,
+    "Time-Work-Speed": 0.013,
+    "Logical Reasoning": 0.013,
+    "Bihar Geography": 0.007,
+    "Hindi Comprehension": 0.007,
+    "Bihar History": 0.007,
+    "Number System": 0.007
+   },
+   "type_mix": {
+    "factual_recall": 0.613,
+    "arithmetic": 0.18,
+    "percentage_profit_loss": 0.04,
+    "odd_one_out": 0.033,
+    "statement_based": 0.027,
+    "time_work_speed": 0.02,
+    "ratio_average": 0.02,
+    "series": 0.013,
+    "current_affairs": 0.013,
+    "match_the_pairs": 0.013,
+    "algebra": 0.013,
+    "ranking": 0.007,
+    "inequality": 0.007
+   },
+   "difficulty_mix": {
+    "2": 0.84,
+    "1": 0.16
+   },
+   "avg_difficulty": 1.84,
+   "bihar_share": 0.047,
+   "unclassified_share": 0.0
+  },
+  {
+   "exam": "BSSC JE Civil (Advt 0411)",
+   "questions": 100,
+   "section_mix": {
+    "General Science": 0.77,
+    "General Studies": 0.2,
+    "Mathematics": 0.02,
+    "Hindi": 0.01
+   },
+   "topic_mix": {
+    "Science & Technology": 0.46,
+    "Static GK": 0.15,
+    "Physics": 0.14,
+    "Other": 0.09,
+    "Arithmetic": 0.04,
+    "Environment": 0.04,
+    "Bihar Geography": 0.03,
+    "Bihar Polity/Schemes": 0.01,
+    "Algebra": 0.01,
+    "Chemistry": 0.01,
+    "Coding-Decoding": 0.01,
+    "Ratio/Average": 0.01
+   },
+   "type_mix": {
+    "factual_recall": 0.93,
+    "arithmetic": 0.04,
+    "algebra": 0.01,
+    "coding_decoding": 0.01,
+    "ratio_average": 0.01
+   },
+   "difficulty_mix": {
+    "2": 0.85,
+    "1": 0.15
+   },
+   "avg_difficulty": 1.85,
+   "bihar_share": 0.04,
+   "unclassified_share": 0.09
+  },
+  {
+   "exam": "BSSC JE GK/GS (Advt 0411)",
+   "questions": 100,
+   "section_mix": {
+    "General Studies": 0.57,
+    "General Science": 0.29,
+    "Mathematics": 0.12,
+    "Reasoning": 0.01,
+    "Hindi": 0.01
+   },
+   "topic_mix": {
+    "Science & Technology": 0.12,
+    "Indian Polity": 0.1,
+    "Static GK": 0.09,
+    "Arithmetic": 0.09,
+    "Indian History": 0.08,
+    "Biology": 0.08,
+    "Bihar Polity/Schemes": 0.07,
+    "Current Affairs - National": 0.07,
+    "Environment": 0.04,
+    "Other": 0.03,
+    "Economy": 0.03,
+    "Physics": 0.03,
+    "Current Affairs - International": 0.02,
+    "Bihar History": 0.02,
+    "Art & Culture": 0.02,
+    "Bihar Geography": 0.02,
+    "Indian Geography": 0.02,
+    "Chemistry": 0.01,
+    "Percentage/Profit-Loss": 0.01,
+    "Sports": 0.01,
+    "Coding-Decoding": 0.01,
+    "Ratio/Average": 0.01,
+    "Series/Analogy": 0.01,
+    "Hindi Comprehension": 0.01
+   },
+   "type_mix": {
+    "factual_recall": 0.82,
+    "arithmetic": 0.08,
+    "percentage_profit_loss": 0.03,
+    "odd_one_out": 0.03,
+    "analogy": 0.01,
+    "match_the_pairs": 0.01,
+    "coding_decoding": 0.01,
+    "series": 0.01
+   },
+   "difficulty_mix": {
+    "2": 0.67,
+    "1": 0.33
+   },
+   "avg_difficulty": 1.67,
+   "bihar_share": 0.08,
+   "unclassified_share": 0.03
+  },
+  {
+   "exam": "BSSC JE Mechanical (Advt 0411)",
+   "questions": 100,
+   "section_mix": {
+    "General Science": 0.86,
+    "General Studies": 0.09,
+    "Mathematics": 0.05
+   },
+   "topic_mix": {
+    "Science & Technology": 0.51,
+    "Physics": 0.21,
+    "Arithmetic": 0.09,
+    "Static GK": 0.08,
+    "Logical Reasoning": 0.05,
+    "Other": 0.04,
+    "Economy": 0.01,
+    "Ratio/Average": 0.01
+   },
+   "type_mix": {
+    "factual_recall": 0.85,
+    "arithmetic": 0.09,
+    "odd_one_out": 0.05,
+    "ratio_average": 0.01
+   },
+   "difficulty_mix": {
+    "2": 0.89,
+    "3": 0.06,
+    "1": 0.05
+   },
+   "avg_difficulty": 2.01,
+   "bihar_share": 0.0,
+   "unclassified_share": 0.04
+  },
+  {
+   "exam": "BSSC Pharmacy",
+   "questions": 100,
+   "section_mix": {
+    "General Science": 0.89,
+    "General Studies": 0.1,
+    "Mathematics": 0.01
+   },
+   "topic_mix": {
+    "Science & Technology": 0.62,
+    "Biology": 0.17,
+    "Static GK": 0.07,
+    "Other": 0.05,
+    "Chemistry": 0.03,
+    "Logical Reasoning": 0.02,
+    "Arithmetic": 0.01,
+    "Blood Relation/Direction": 0.01,
+    "Current Affairs - National": 0.01,
+    "Current Affairs - International": 0.01
+   },
+   "type_mix": {
+    "factual_recall": 0.96,
+    "odd_one_out": 0.02,
+    "arithmetic": 0.01,
+    "blood_relation": 0.01
+   },
+   "difficulty_mix": {
+    "2": 0.69,
+    "1": 0.31
+   },
+   "avg_difficulty": 1.69,
+   "bihar_share": 0.0,
+   "unclassified_share": 0.05
+  },
+  {
+   "exam": "BSSC Office Attendant 02/22",
+   "questions": 100,
+   "section_mix": {
+    "General Studies": 0.44,
+    "Mathematics": 0.3,
+    "Hindi": 0.19,
+    "General Science": 0.07
+   },
+   "topic_mix": {
+    "Arithmetic": 0.13,
+    "Static GK": 0.13,
+    "Hindi Vocabulary": 0.08,
+    "Logical Reasoning": 0.07,
+    "Indian History": 0.06,
+    "Algebra": 0.05,
+    "Science & Technology": 0.05,
+    "Hindi Grammar": 0.05,
+    "Hindi Comprehension": 0.05,
+    "Time-Work-Speed": 0.04,
+    "Percentage/Profit-Loss": 0.04,
+    "Economy": 0.03,
+    "Indian Polity": 0.03,
+    "Current Affairs - National": 0.03,
+    "Current Affairs - International": 0.03,
+    "Ratio/Average": 0.02,
+    "Bihar Geography": 0.02,
+    "Bihar Polity/Schemes": 0.02,
+    "Other": 0.02,
+    "Biology": 0.01,
+    "Blood Relation/Direction": 0.01,
+    "Bihar History": 0.01,
+    "Art & Culture": 0.01,
+    "Bihar GK": 0.01
+   },
+   "type_mix": {
+    "factual_recall": 0.54,
+    "arithmetic": 0.09,
+    "odd_one_out": 0.09,
+    "percentage_profit_loss": 0.06,
+    "match_the_pairs": 0.06,
+    "algebra": 0.05,
+    "time_work_speed": 0.05,
+    "ratio_average": 0.02,
+    "inequality": 0.02,
+    "statement_based": 0.01,
+    "blood_relation": 0.01
+   },
+   "difficulty_mix": {
+    "1": 0.54,
+    "2": 0.39,
+    "3": 0.07
+   },
+   "avg_difficulty": 1.53,
+   "bihar_share": 0.05,
+   "unclassified_share": 0.02
+  },
+  {
+   "exam": "BSSC Hindi Booklet (Advt 3646)",
+   "questions": 100,
+   "section_mix": {
+    "General Studies": 0.96,
+    "Hindi": 0.04
+   },
+   "topic_mix": {
+    "Bihar Polity/Schemes": 0.78,
+    "Bihar Geography": 0.16,
+    "Hindi Vocabulary": 0.02,
+    "Hindi Grammar": 0.02,
+    "Bihar GK": 0.02
+   },
+   "type_mix": {
+    "factual_recall": 0.99,
+    "odd_one_out": 0.01
+   },
+   "difficulty_mix": {
+    "2": 0.98,
+    "1": 0.02
+   },
+   "avg_difficulty": 1.98,
+   "bihar_share": 0.96,
+   "unclassified_share": 0.0
+  },
+  {
+   "exam": "BSSC Maths Booklet (Advt 3646)",
+   "questions": 100,
+   "section_mix": {
+    "Mathematics": 0.95,
+    "General Science": 0.04,
+    "General Studies": 0.01
+   },
+   "topic_mix": {
+    "Arithmetic": 0.63,
+    "Algebra": 0.2,
+    "Series/Analogy": 0.05,
+    "Ratio/Average": 0.04,
+    "Science & Technology": 0.02,
+    "Number System": 0.02,
+    "Logical Reasoning": 0.02,
+    "Percentage/Profit-Loss": 0.01,
+    "Other": 0.01
+   },
+   "type_mix": {
+    "arithmetic": 0.36,
+    "factual_recall": 0.3,
+    "algebra": 0.2,
+    "series": 0.07,
+    "ratio_average": 0.04,
+    "percentage_profit_loss": 0.01,
+    "clock": 0.01,
+    "odd_one_out": 0.01
+   },
+   "difficulty_mix": {
+    "2": 0.79,
+    "1": 0.15,
+    "3": 0.06
+   },
+   "avg_difficulty": 1.91,
+   "bihar_share": 0.0,
+   "unclassified_share": 0.01
+  }
+ ],
+ "pooled_reference_only": {
+  "exam": "ALL PAPERS POOLED (do not use as a blueprint)",
+  "questions": 1744,
+  "section_mix": {
+   "General Studies": 0.376,
+   "General Science": 0.342,
+   "Mathematics": 0.189,
+   "Hindi": 0.05,
+   "Reasoning": 0.034,
+   "English": 0.009
+  },
+  "topic_mix": {
+   "Science & Technology": 0.178,
+   "Arithmetic": 0.126,
+   "Bihar Polity/Schemes": 0.079,
+   "Static GK": 0.066,
+   "Chemistry": 0.044,
+   "Physics": 0.04,
+   "Indian History": 0.038,
+   "Logical Reasoning": 0.037,
+   "Current Affairs - National": 0.034,
+   "Biology": 0.034,
+   "Indian Polity": 0.033,
+   "Current Affairs - International": 0.03,
+   "Other": 0.028,
+   "Series/Analogy": 0.023,
+   "Bihar Geography": 0.019,
+   "Algebra": 0.018,
+   "Hindi Vocabulary": 0.018,
+   "Percentage/Profit-Loss": 0.017,
+   "Environment": 0.016,
+   "Bihar History": 0.015,
+   "Hindi Grammar": 0.013,
+   "Economy": 0.012,
+   "Hindi Comprehension": 0.011,
+   "Ratio/Average": 0.01,
+   "Coding-Decoding": 0.009,
+   "Time-Work-Speed": 0.008,
+   "Indian Geography": 0.007,
+   "Art & Culture": 0.006,
+   "Blood Relation/Direction": 0.005,
+   "English Grammar": 0.005,
+   "English Vocabulary": 0.004,
+   "Hindi Idioms/Proverbs": 0.004,
+   "Bihar GK": 0.004,
+   "Number System": 0.003,
+   "Sports": 0.003,
+   "Data Interpretation": 0.001
+  },
+  "type_mix": {
+   "factual_recall": 0.709,
+   "arithmetic": 0.096,
+   "odd_one_out": 0.033,
+   "percentage_profit_loss": 0.027,
+   "algebra": 0.02,
+   "series": 0.018,
+   "match_the_pairs": 0.015,
+   "analogy": 0.011,
+   "coding_decoding": 0.011,
+   "statement_based": 0.011,
+   "time_work_speed": 0.01,
+   "ratio_average": 0.009,
+   "ranking": 0.005,
+   "current_affairs": 0.005,
+   "blood_relation": 0.003,
+   "figure_series": 0.003,
+   "direction_sense": 0.002,
+   "assertion_reason": 0.002,
+   "inequality": 0.002,
+   "clock": 0.002,
+   "seating_arrangement": 0.002,
+   "syllogism": 0.001,
+   "calendar": 0.001,
+   "data_interpretation": 0.001,
+   "matrix_puzzle": 0.001
+  },
+  "difficulty_mix": {
+   "2": 0.727,
+   "1": 0.244,
+   "3": 0.029
+  },
+  "avg_difficulty": 1.78,
+  "bihar_share": 0.114,
+  "unclassified_share": 0.028
+ }
+}

@@ -1,0 +1,3688 @@
+{
+ "GK1.PDF": {
+  "pages": 30,
+  "key_pages": [
+   29
+  ],
+  "question_pages": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28
+  ],
+  "q_range": [
+   3,
+   28
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "cover",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Test booklet cover page."
+   },
+   "2": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty or rough work page."
+   },
+   "3": {
+    "kind": "questions",
+    "first": 1,
+    "last": 8,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "4": {
+    "kind": "questions",
+    "first": 1,
+    "last": 8,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 9,
+    "last": 17,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 9,
+    "last": 17,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 18,
+    "last": 25,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 18,
+    "last": 25,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 26,
+    "last": 33,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 26,
+    "last": 33,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 34,
+    "last": 40,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 34,
+    "last": 40,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 41,
+    "last": 48,
+    "bilingual": true,
+    "note": "Contains multiple choice questions."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 41,
+    "last": 48,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 49,
+    "last": 56,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 49,
+    "last": 56,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "17": {
+    "kind": "questions",
+    "first": 57,
+    "last": 64,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "18": {
+    "kind": "questions",
+    "first": 57,
+    "last": 64,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "19": {
+    "kind": "questions",
+    "first": 65,
+    "last": 71,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "20": {
+    "kind": "questions",
+    "first": 65,
+    "last": 71,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "21": {
+    "kind": "questions",
+    "first": 72,
+    "last": 78,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "22": {
+    "kind": "questions",
+    "first": 72,
+    "last": 78,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "23": {
+    "kind": "questions",
+    "first": 79,
+    "last": 87,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "24": {
+    "kind": "questions",
+    "first": 79,
+    "last": 87,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "25": {
+    "kind": "questions",
+    "first": 88,
+    "last": 94,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "26": {
+    "kind": "questions",
+    "first": 88,
+    "last": 94,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "27": {
+    "kind": "questions",
+    "first": 95,
+    "last": 100,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "28": {
+    "kind": "questions",
+    "first": 95,
+    "last": 100,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "29": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 100,
+    "bilingual": false,
+    "note": "Model answers for exam questions."
+   },
+   "30": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   }
+  }
+ },
+ "GK(3649).PDF": {
+  "pages": 32,
+  "key_pages": [
+   1
+  ],
+  "question_pages": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31
+  ],
+  "q_range": [
+   6,
+   31
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 100,
+    "bilingual": false,
+    "note": "Model answers for exam questions."
+   },
+   "2": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty or rough work page."
+   },
+   "3": {
+    "kind": "cover",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Test booklet cover page."
+   },
+   "4": {
+    "kind": "instructions",
+    "first": 3,
+    "last": 15,
+    "bilingual": true,
+    "note": "Instructions for candidates on exam conduct."
+   },
+   "5": {
+    "kind": "instructions",
+    "first": 16,
+    "last": 20,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 1,
+    "last": 7,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 1,
+    "last": 7,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 8,
+    "last": 15,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 8,
+    "last": 15,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 16,
+    "last": 23,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 16,
+    "last": 23,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 24,
+    "last": 31,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 24,
+    "last": 31,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 32,
+    "last": 39,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 32,
+    "last": 39,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 40,
+    "last": 46,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "17": {
+    "kind": "questions",
+    "first": 40,
+    "last": 46,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "18": {
+    "kind": "questions",
+    "first": 47,
+    "last": 54,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "19": {
+    "kind": "questions",
+    "first": 47,
+    "last": 54,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "20": {
+    "kind": "questions",
+    "first": 55,
+    "last": 63,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "21": {
+    "kind": "questions",
+    "first": 55,
+    "last": 63,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "22": {
+    "kind": "questions",
+    "first": 64,
+    "last": 71,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "23": {
+    "kind": "questions",
+    "first": 64,
+    "last": 71,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "24": {
+    "kind": "questions",
+    "first": 72,
+    "last": 78,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "25": {
+    "kind": "questions",
+    "first": 72,
+    "last": 78,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "26": {
+    "kind": "questions",
+    "first": 79,
+    "last": 85,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "27": {
+    "kind": "questions",
+    "first": 79,
+    "last": 85,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "28": {
+    "kind": "questions",
+    "first": 86,
+    "last": 93,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "29": {
+    "kind": "questions",
+    "first": 76,
+    "last": 93,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "30": {
+    "kind": "questions",
+    "first": 94,
+    "last": 100,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "31": {
+    "kind": "questions",
+    "first": 94,
+    "last": 100,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "32": {
+    "kind": "instructions",
+    "first": 1,
+    "last": 4,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   }
+  }
+ },
+ "G.K_and_N.A_M.A.PDF": {
+  "pages": 49,
+  "key_pages": [
+   49
+  ],
+  "question_pages": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45
+  ],
+  "q_range": [
+   4,
+   45
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "cover",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Test booklet information and instructions."
+   },
+   "2": {
+    "kind": "instructions",
+    "first": 3,
+    "last": 15,
+    "bilingual": true,
+    "note": "Instructions for candidates and exam process."
+   },
+   "3": {
+    "kind": "instructions",
+    "first": 16,
+    "last": 19,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   },
+   "4": {
+    "kind": "questions",
+    "first": 1,
+    "last": 8,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 1,
+    "last": 8,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 9,
+    "last": 15,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 9,
+    "last": 15,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 16,
+    "last": 22,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 16,
+    "last": 22,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 23,
+    "last": 30,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 23,
+    "last": 30,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 31,
+    "last": 38,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 31,
+    "last": 38,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 39,
+    "last": 45,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 39,
+    "last": 45,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 46,
+    "last": 54,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "17": {
+    "kind": "questions",
+    "first": 46,
+    "last": 54,
+    "bilingual": false,
+    "note": "Contains multiple choice questions."
+   },
+   "18": {
+    "kind": "questions",
+    "first": 55,
+    "last": 63,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "19": {
+    "kind": "questions",
+    "first": 55,
+    "last": 63,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "20": {
+    "kind": "questions",
+    "first": 64,
+    "last": 71,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "21": {
+    "kind": "questions",
+    "first": 64,
+    "last": 71,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "22": {
+    "kind": "questions",
+    "first": 72,
+    "last": 78,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "23": {
+    "kind": "questions",
+    "first": 72,
+    "last": 78,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "24": {
+    "kind": "questions",
+    "first": 79,
+    "last": 85,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "25": {
+    "kind": "questions",
+    "first": 79,
+    "last": 85,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "26": {
+    "kind": "questions",
+    "first": 86,
+    "last": 92,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "27": {
+    "kind": "questions",
+    "first": 86,
+    "last": 92,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "28": {
+    "kind": "questions",
+    "first": 93,
+    "last": 97,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "29": {
+    "kind": "questions",
+    "first": 93,
+    "last": 97,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "30": {
+    "kind": "questions",
+    "first": 98,
+    "last": 103,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "31": {
+    "kind": "questions",
+    "first": 98,
+    "last": 103,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "32": {
+    "kind": "questions",
+    "first": 104,
+    "last": 110,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "33": {
+    "kind": "questions",
+    "first": 104,
+    "last": 110,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "34": {
+    "kind": "questions",
+    "first": 111,
+    "last": 117,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "35": {
+    "kind": "questions",
+    "first": 111,
+    "last": 117,
+    "bilingual": false,
+    "note": "Contains multiple choice questions."
+   },
+   "36": {
+    "kind": "questions",
+    "first": 118,
+    "last": 124,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "37": {
+    "kind": "questions",
+    "first": 118,
+    "last": 124,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "38": {
+    "kind": "questions",
+    "first": 125,
+    "last": 131,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "39": {
+    "kind": "questions",
+    "first": 125,
+    "last": 131,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "40": {
+    "kind": "questions",
+    "first": 132,
+    "last": 138,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "41": {
+    "kind": "questions",
+    "first": 132,
+    "last": 138,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "42": {
+    "kind": "questions",
+    "first": 139,
+    "last": 146,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "43": {
+    "kind": "questions",
+    "first": 139,
+    "last": 146,
+    "bilingual": true,
+    "note": "Contains multiple choice questions."
+   },
+   "44": {
+    "kind": "questions",
+    "first": 147,
+    "last": 150,
+    "bilingual": false,
+    "note": "Exam questions with options"
+   },
+   "45": {
+    "kind": "questions",
+    "first": 147,
+    "last": 150,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "46": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Rough work space page."
+   },
+   "47": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Rough work space page."
+   },
+   "48": {
+    "kind": "instructions",
+    "first": 1,
+    "last": 3,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   },
+   "49": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 150,
+    "bilingual": false,
+    "note": "Model answers for exam questions."
+   }
+  }
+ },
+ "01010116-QB-GK.pdf": {
+  "pages": 24,
+  "key_pages": [],
+  "question_pages": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21
+  ],
+  "q_range": [
+   4,
+   21
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "cover",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Test booklet and instructions"
+   },
+   "2": {
+    "kind": "instructions",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Instructions for candidates regarding exam conduct."
+   },
+   "3": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Space for rough work"
+   },
+   "4": {
+    "kind": "questions",
+    "first": 1,
+    "last": 15,
+    "bilingual": false,
+    "note": "General Studies exam questions."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 1,
+    "last": 15,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 16,
+    "last": 27,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 16,
+    "last": 27,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 28,
+    "last": 44,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 28,
+    "last": 44,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 45,
+    "last": 62,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 45,
+    "last": 62,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 63,
+    "last": 81,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 63,
+    "last": 81,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 82,
+    "last": 100,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 82,
+    "last": 100,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 101,
+    "last": 121,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "17": {
+    "kind": "questions",
+    "first": 101,
+    "last": 121,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "18": {
+    "kind": "questions",
+    "first": 122,
+    "last": 136,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "19": {
+    "kind": "questions",
+    "first": 122,
+    "last": 136,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "20": {
+    "kind": "questions",
+    "first": 137,
+    "last": 150,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "21": {
+    "kind": "questions",
+    "first": 137,
+    "last": 150,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "22": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Rough work space."
+   },
+   "23": {
+    "kind": "instructions",
+    "first": 1,
+    "last": 2,
+    "bilingual": true,
+    "note": "Instructions for filling answer sheet."
+   },
+   "24": {
+    "kind": "instructions",
+    "first": 1,
+    "last": 7,
+    "bilingual": true,
+    "note": "Instructions for OMR answer-sheet filling."
+   }
+  }
+ },
+ "hindi1.PDF": {
+  "pages": 13,
+  "key_pages": [
+   12
+  ],
+  "question_pages": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "q_range": [
+   2,
+   11
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "cover",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Test booklet information and instructions."
+   },
+   "2": {
+    "kind": "questions",
+    "first": 1,
+    "last": 9,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "3": {
+    "kind": "questions",
+    "first": 10,
+    "last": 19,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "4": {
+    "kind": "questions",
+    "first": 20,
+    "last": 31,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 32,
+    "last": 42,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 43,
+    "last": 53,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 54,
+    "last": 63,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 64,
+    "last": 73,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 74,
+    "last": 82,
+    "bilingual": false,
+    "note": "Contains multiple choice questions."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 83,
+    "last": 92,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 93,
+    "last": 100,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "12": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 100,
+    "bilingual": false,
+    "note": "Model answers for exam questions."
+   },
+   "13": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   }
+  }
+ },
+ "maths.PDF": {
+  "pages": 29,
+  "key_pages": [
+   29
+  ],
+  "question_pages": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27
+  ],
+  "q_range": [
+   2,
+   27
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "cover",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Test booklet cover page."
+   },
+   "2": {
+    "kind": "questions",
+    "first": 1,
+    "last": 8,
+    "bilingual": false,
+    "note": "Math questions with options."
+   },
+   "3": {
+    "kind": "questions",
+    "first": 1,
+    "last": 8,
+    "bilingual": false,
+    "note": "Math questions in Hindi."
+   },
+   "4": {
+    "kind": "questions",
+    "first": 9,
+    "last": 17,
+    "bilingual": false,
+    "note": "Math questions with options."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 9,
+    "last": 17,
+    "bilingual": false,
+    "note": "Math questions in Hindi."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 18,
+    "last": 26,
+    "bilingual": false,
+    "note": "Math questions with options."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 18,
+    "last": 26,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 27,
+    "last": 34,
+    "bilingual": false,
+    "note": "Math exam questions with options."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 27,
+    "last": 34,
+    "bilingual": true,
+    "note": "Math questions in Hindi and English."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 35,
+    "last": 42,
+    "bilingual": false,
+    "note": "Math questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 35,
+    "last": 42,
+    "bilingual": false,
+    "note": "Math questions in Hindi."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 43,
+    "last": 50,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 43,
+    "last": 50,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 51,
+    "last": 57,
+    "bilingual": false,
+    "note": "Math exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 52,
+    "last": 57,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 58,
+    "last": 65,
+    "bilingual": false,
+    "note": "Math questions with options."
+   },
+   "17": {
+    "kind": "questions",
+    "first": 58,
+    "last": 65,
+    "bilingual": true,
+    "note": "Math questions in Hindi and English."
+   },
+   "18": {
+    "kind": "questions",
+    "first": 66,
+    "last": 73,
+    "bilingual": false,
+    "note": "Contains multiple choice questions."
+   },
+   "19": {
+    "kind": "questions",
+    "first": 66,
+    "last": 73,
+    "bilingual": true,
+    "note": "Contains multiple choice questions."
+   },
+   "20": {
+    "kind": "questions",
+    "first": 74,
+    "last": 80,
+    "bilingual": false,
+    "note": "Math questions with options."
+   },
+   "21": {
+    "kind": "questions",
+    "first": 74,
+    "last": 80,
+    "bilingual": false,
+    "note": "Math questions in Hindi."
+   },
+   "22": {
+    "kind": "questions",
+    "first": 81,
+    "last": 87,
+    "bilingual": false,
+    "note": "Math questions with options."
+   },
+   "23": {
+    "kind": "questions",
+    "first": 81,
+    "last": 87,
+    "bilingual": false,
+    "note": "Math questions in Hindi."
+   },
+   "24": {
+    "kind": "questions",
+    "first": 88,
+    "last": 95,
+    "bilingual": false,
+    "note": "Math questions with options."
+   },
+   "25": {
+    "kind": "questions",
+    "first": 88,
+    "last": 95,
+    "bilingual": false,
+    "note": "Math questions in Hindi."
+   },
+   "26": {
+    "kind": "questions",
+    "first": 96,
+    "last": 100,
+    "bilingual": false,
+    "note": "Math questions with options."
+   },
+   "27": {
+    "kind": "questions",
+    "first": 96,
+    "last": 100,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "28": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "29": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 100,
+    "bilingual": false,
+    "note": "Model answers for exam questions."
+   }
+  }
+ },
+ "CHEMISTRY_M.A.PDF": {
+  "pages": 71,
+  "key_pages": [
+   71
+  ],
+  "question_pages": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   27,
+   28,
+   29,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66
+  ],
+  "q_range": [
+   4,
+   66
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "cover",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Test booklet information and instructions."
+   },
+   "2": {
+    "kind": "instructions",
+    "first": 3,
+    "last": 15,
+    "bilingual": true,
+    "note": "Instructions for candidates and exam process."
+   },
+   "3": {
+    "kind": "instructions",
+    "first": 16,
+    "last": 20,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   },
+   "4": {
+    "kind": "questions",
+    "first": 1,
+    "last": 4,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 1,
+    "last": 4,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 5,
+    "last": 11,
+    "bilingual": false,
+    "note": "Chemistry exam questions with options."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 5,
+    "last": 11,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 12,
+    "last": 18,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 12,
+    "last": 18,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 19,
+    "last": 26,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 19,
+    "last": 26,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "12": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "13": {
+    "kind": "questions",
+    "first": 27,
+    "last": 31,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 27,
+    "last": 31,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 32,
+    "last": 38,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 32,
+    "last": 38,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "17": {
+    "kind": "questions",
+    "first": 39,
+    "last": 41,
+    "bilingual": false,
+    "note": "Chemistry exam questions."
+   },
+   "18": {
+    "kind": "questions",
+    "first": 39,
+    "last": 41,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "19": {
+    "kind": "questions",
+    "first": 42,
+    "last": 44,
+    "bilingual": false,
+    "note": "Chemistry exam questions with options."
+   },
+   "20": {
+    "kind": "questions",
+    "first": 42,
+    "last": 44,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "21": {
+    "kind": "questions",
+    "first": 45,
+    "last": 47,
+    "bilingual": false,
+    "note": "Chemistry exam questions with options."
+   },
+   "22": {
+    "kind": "questions",
+    "first": 45,
+    "last": 47,
+    "bilingual": true,
+    "note": "Chemistry exam questions with options."
+   },
+   "23": {
+    "kind": "questions",
+    "first": 48,
+    "last": 52,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "24": {
+    "kind": "questions",
+    "first": 48,
+    "last": 52,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "25": {
+    "kind": "questions",
+    "first": 53,
+    "last": 55,
+    "bilingual": false,
+    "note": "Chemistry exam questions with options."
+   },
+   "26": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "27": {
+    "kind": "questions",
+    "first": 53,
+    "last": 55,
+    "bilingual": true,
+    "note": "Chemistry exam questions with options."
+   },
+   "28": {
+    "kind": "questions",
+    "first": 56,
+    "last": 62,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "29": {
+    "kind": "questions",
+    "first": 56,
+    "last": 62,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "30": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "31": {
+    "kind": "questions",
+    "first": 63,
+    "last": 68,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "32": {
+    "kind": "questions",
+    "first": 63,
+    "last": 68,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "33": {
+    "kind": "questions",
+    "first": 69,
+    "last": 74,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "34": {
+    "kind": "questions",
+    "first": 63,
+    "last": 68,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "35": {
+    "kind": "questions",
+    "first": 69,
+    "last": 74,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "36": {
+    "kind": "questions",
+    "first": 75,
+    "last": 77,
+    "bilingual": false,
+    "note": "Three exam questions with options."
+   },
+   "37": {
+    "kind": "questions",
+    "first": 75,
+    "last": 77,
+    "bilingual": false,
+    "note": "Three questions with options."
+   },
+   "38": {
+    "kind": "questions",
+    "first": 78,
+    "last": 84,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "39": {
+    "kind": "questions",
+    "first": 78,
+    "last": 84,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "40": {
+    "kind": "questions",
+    "first": 85,
+    "last": 89,
+    "bilingual": false,
+    "note": "Chemistry exam questions with options."
+   },
+   "41": {
+    "kind": "questions",
+    "first": 85,
+    "last": 89,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "42": {
+    "kind": "questions",
+    "first": 90,
+    "last": 94,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "43": {
+    "kind": "questions",
+    "first": 90,
+    "last": 94,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "44": {
+    "kind": "questions",
+    "first": 95,
+    "last": 99,
+    "bilingual": false,
+    "note": "Chemistry exam questions with options."
+   },
+   "45": {
+    "kind": "questions",
+    "first": 95,
+    "last": 99,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "46": {
+    "kind": "questions",
+    "first": 100,
+    "last": 107,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "47": {
+    "kind": "questions",
+    "first": 100,
+    "last": 107,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "48": {
+    "kind": "questions",
+    "first": 108,
+    "last": 111,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "49": {
+    "kind": "questions",
+    "first": 108,
+    "last": 111,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "50": {
+    "kind": "questions",
+    "first": 112,
+    "last": 114,
+    "bilingual": false,
+    "note": "Chemistry exam questions with options."
+   },
+   "51": {
+    "kind": "questions",
+    "first": 112,
+    "last": 114,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "52": {
+    "kind": "questions",
+    "first": 115,
+    "last": 120,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "53": {
+    "kind": "questions",
+    "first": 115,
+    "last": 120,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "54": {
+    "kind": "questions",
+    "first": 121,
+    "last": 124,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "55": {
+    "kind": "questions",
+    "first": 121,
+    "last": 124,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "56": {
+    "kind": "questions",
+    "first": 125,
+    "last": 129,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "57": {
+    "kind": "questions",
+    "first": 125,
+    "last": 129,
+    "bilingual": false,
+    "note": "Five questions in total."
+   },
+   "58": {
+    "kind": "questions",
+    "first": 130,
+    "last": 135,
+    "bilingual": false,
+    "note": "Chemistry exam questions."
+   },
+   "59": {
+    "kind": "questions",
+    "first": 130,
+    "last": 135,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "60": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "61": {
+    "kind": "questions",
+    "first": 136,
+    "last": 141,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "62": {
+    "kind": "questions",
+    "first": 136,
+    "last": 141,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "63": {
+    "kind": "questions",
+    "first": 142,
+    "last": 146,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "64": {
+    "kind": "questions",
+    "first": 142,
+    "last": 146,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "65": {
+    "kind": "questions",
+    "first": 147,
+    "last": 150,
+    "bilingual": false,
+    "note": "Chemistry exam questions"
+   },
+   "66": {
+    "kind": "questions",
+    "first": 147,
+    "last": 150,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "67": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Rough work space page."
+   },
+   "68": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page for rough work."
+   },
+   "69": {
+    "kind": "instructions",
+    "first": 3,
+    "last": 4,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   },
+   "70": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "71": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 150,
+    "bilingual": false,
+    "note": "Model answers for exam questions."
+   }
+  }
+ },
+ "PHARMACY.PDF": {
+  "pages": 24,
+  "key_pages": [
+   1
+  ],
+  "question_pages": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "q_range": [
+   6,
+   23
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 100,
+    "bilingual": false,
+    "note": "Model answers for exam questions."
+   },
+   "2": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "3": {
+    "kind": "instructions",
+    "first": 1,
+    "last": 5,
+    "bilingual": true,
+    "note": "Instructions for candidates provided."
+   },
+   "4": {
+    "kind": "instructions",
+    "first": 3,
+    "last": 15,
+    "bilingual": true,
+    "note": "Instructions for candidates and exam process."
+   },
+   "5": {
+    "kind": "instructions",
+    "first": 16,
+    "last": 18,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 1,
+    "last": 12,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 1,
+    "last": 27,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 13,
+    "last": 24,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 13,
+    "last": 24,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 25,
+    "last": 36,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 25,
+    "last": 36,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 37,
+    "last": 48,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 37,
+    "last": 48,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 49,
+    "last": 60,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 49,
+    "last": 60,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 61,
+    "last": 71,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "17": {
+    "kind": "questions",
+    "first": 61,
+    "last": 71,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "18": {
+    "kind": "questions",
+    "first": 72,
+    "last": 81,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "19": {
+    "kind": "questions",
+    "first": 72,
+    "last": 81,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "20": {
+    "kind": "questions",
+    "first": 82,
+    "last": 91,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "21": {
+    "kind": "questions",
+    "first": 82,
+    "last": 91,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "22": {
+    "kind": "questions",
+    "first": 92,
+    "last": 100,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "23": {
+    "kind": "questions",
+    "first": 92,
+    "last": 100,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "24": {
+    "kind": "instructions",
+    "first": 1,
+    "last": 3,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   }
+  }
+ },
+ "01010116-MA-Hindi.pdf": {
+  "pages": 1,
+  "key_pages": [
+   1
+  ],
+  "question_pages": [],
+  "q_range": null,
+  "page_kinds": {
+   "1": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 100,
+    "bilingual": false,
+    "note": "Answer key for exam questions."
+   }
+  }
+ },
+ "JE-0411-GK-QB-AND-MA.pdf": {
+  "pages": 38,
+  "key_pages": [
+   37
+  ],
+  "question_pages": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35
+  ],
+  "q_range": [
+   10,
+   35
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "instructions",
+    "first": 1,
+    "last": 5,
+    "bilingual": true,
+    "note": "Instructions for candidates."
+   },
+   "2": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "3": {
+    "kind": "instructions",
+    "first": 3,
+    "last": 8,
+    "bilingual": true,
+    "note": "Instructions for candidates and exam process."
+   },
+   "4": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "5": {
+    "kind": "instructions",
+    "first": 15,
+    "last": 17,
+    "bilingual": true,
+    "note": "Instructions for filling OMR answer sheet."
+   },
+   "6": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "7": {
+    "kind": "instructions",
+    "first": 1,
+    "last": 2,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   },
+   "8": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "9": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   },
+   "10": {
+    "kind": "questions",
+    "first": 1,
+    "last": 8,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 1,
+    "last": 8,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 9,
+    "last": 16,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 9,
+    "last": 16,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 17,
+    "last": 24,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 17,
+    "last": 24,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 25,
+    "last": 32,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "17": {
+    "kind": "questions",
+    "first": 25,
+    "last": 32,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "18": {
+    "kind": "questions",
+    "first": 33,
+    "last": 39,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "19": {
+    "kind": "questions",
+    "first": 33,
+    "last": 39,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "20": {
+    "kind": "questions",
+    "first": 40,
+    "last": 48,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "21": {
+    "kind": "questions",
+    "first": 40,
+    "last": 48,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "22": {
+    "kind": "questions",
+    "first": 49,
+    "last": 56,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "23": {
+    "kind": "questions",
+    "first": 49,
+    "last": 56,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "24": {
+    "kind": "questions",
+    "first": 57,
+    "last": 63,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "25": {
+    "kind": "questions",
+    "first": 57,
+    "last": 63,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "26": {
+    "kind": "questions",
+    "first": 64,
+    "last": 70,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "27": {
+    "kind": "questions",
+    "first": 64,
+    "last": 70,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "28": {
+    "kind": "questions",
+    "first": 71,
+    "last": 78,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "29": {
+    "kind": "questions",
+    "first": 71,
+    "last": 78,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "30": {
+    "kind": "questions",
+    "first": 79,
+    "last": 84,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "31": {
+    "kind": "questions",
+    "first": 79,
+    "last": 84,
+    "bilingual": false,
+    "note": "Contains multiple choice questions."
+   },
+   "32": {
+    "kind": "questions",
+    "first": 85,
+    "last": 93,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "33": {
+    "kind": "questions",
+    "first": 85,
+    "last": 93,
+    "bilingual": false,
+    "note": "Contains multiple choice questions."
+   },
+   "34": {
+    "kind": "questions",
+    "first": 94,
+    "last": 100,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "35": {
+    "kind": "questions",
+    "first": 94,
+    "last": 100,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "36": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty or rough work page."
+   },
+   "37": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 100,
+    "bilingual": false,
+    "note": "Model answers for exam questions."
+   },
+   "38": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   }
+  }
+ },
+ "JE-0411-CIVIL-QB-AND-MA.pdf": {
+  "pages": 42,
+  "key_pages": [
+   41
+  ],
+  "question_pages": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37
+  ],
+  "q_range": [
+   4,
+   37
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "cover",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Test booklet cover page."
+   },
+   "2": {
+    "kind": "instructions",
+    "first": 3,
+    "last": 14,
+    "bilingual": true,
+    "note": "Instructions for candidates and exam process."
+   },
+   "3": {
+    "kind": "instructions",
+    "first": 15,
+    "last": 19,
+    "bilingual": true,
+    "note": "Instructions for OMR Answer Sheet filling."
+   },
+   "4": {
+    "kind": "questions",
+    "first": 1,
+    "last": 7,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 8,
+    "last": 13,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 1,
+    "last": 7,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 8,
+    "last": 13,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 14,
+    "last": 18,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 14,
+    "last": 18,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 19,
+    "last": 24,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 19,
+    "last": 24,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 25,
+    "last": 31,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 25,
+    "last": 31,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 32,
+    "last": 36,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 32,
+    "last": 36,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 37,
+    "last": 42,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "17": {
+    "kind": "questions",
+    "first": 37,
+    "last": 42,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "18": {
+    "kind": "questions",
+    "first": 43,
+    "last": 48,
+    "bilingual": false,
+    "note": "Multiple choice questions"
+   },
+   "19": {
+    "kind": "questions",
+    "first": 43,
+    "last": 48,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "20": {
+    "kind": "questions",
+    "first": 49,
+    "last": 54,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "21": {
+    "kind": "questions",
+    "first": 49,
+    "last": 54,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "22": {
+    "kind": "questions",
+    "first": 55,
+    "last": 59,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "23": {
+    "kind": "questions",
+    "first": 55,
+    "last": 59,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "24": {
+    "kind": "questions",
+    "first": 60,
+    "last": 65,
+    "bilingual": false,
+    "note": "Engineering exam questions"
+   },
+   "25": {
+    "kind": "questions",
+    "first": 60,
+    "last": 65,
+    "bilingual": true,
+    "note": "Contains multiple choice questions."
+   },
+   "26": {
+    "kind": "questions",
+    "first": 66,
+    "last": 71,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "27": {
+    "kind": "questions",
+    "first": 66,
+    "last": 71,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "28": {
+    "kind": "questions",
+    "first": 72,
+    "last": 78,
+    "bilingual": false,
+    "note": "Engineering exam questions."
+   },
+   "29": {
+    "kind": "questions",
+    "first": 72,
+    "last": 78,
+    "bilingual": true,
+    "note": "Contains multiple choice questions."
+   },
+   "30": {
+    "kind": "questions",
+    "first": 79,
+    "last": 84,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "31": {
+    "kind": "questions",
+    "first": 79,
+    "last": 84,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "32": {
+    "kind": "questions",
+    "first": 85,
+    "last": 90,
+    "bilingual": false,
+    "note": "Engineering exam questions"
+   },
+   "33": {
+    "kind": "questions",
+    "first": 85,
+    "last": 90,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "34": {
+    "kind": "questions",
+    "first": 91,
+    "last": 96,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "35": {
+    "kind": "questions",
+    "first": 91,
+    "last": 96,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "36": {
+    "kind": "questions",
+    "first": 97,
+    "last": 100,
+    "bilingual": false,
+    "note": "Four multiple-choice questions."
+   },
+   "37": {
+    "kind": "questions",
+    "first": 97,
+    "last": 100,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "38": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Space for rough work."
+   },
+   "39": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Rough work space page."
+   },
+   "40": {
+    "kind": "instructions",
+    "first": 4,
+    "last": 4,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   },
+   "41": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 100,
+    "bilingual": false,
+    "note": "Model answers for exam questions."
+   },
+   "42": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty or rough work page."
+   }
+  }
+ },
+ "JE-0411-MECH-QB-AND-MA.pdf": {
+  "pages": 42,
+  "key_pages": [
+   41
+  ],
+  "question_pages": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37
+  ],
+  "q_range": [
+   4,
+   37
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "cover",
+    "first": 1,
+    "last": 5,
+    "bilingual": true,
+    "note": "Test booklet details and instructions."
+   },
+   "2": {
+    "kind": "instructions",
+    "first": 3,
+    "last": 14,
+    "bilingual": true,
+    "note": "Instructions for candidates and exam process."
+   },
+   "3": {
+    "kind": "instructions",
+    "first": 15,
+    "last": 18,
+    "bilingual": true,
+    "note": "Instructions for filling OMR Answer Sheet."
+   },
+   "4": {
+    "kind": "questions",
+    "first": 1,
+    "last": 6,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 1,
+    "last": 6,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 7,
+    "last": 12,
+    "bilingual": false,
+    "note": "Engineering exam questions."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 7,
+    "last": 12,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 13,
+    "last": 18,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 13,
+    "last": 18,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 19,
+    "last": 24,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 19,
+    "last": 24,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 25,
+    "last": 29,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 25,
+    "last": 29,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 30,
+    "last": 35,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 30,
+    "last": 35,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 36,
+    "last": 40,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "17": {
+    "kind": "questions",
+    "first": 36,
+    "last": 40,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "18": {
+    "kind": "questions",
+    "first": 41,
+    "last": 46,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "19": {
+    "kind": "questions",
+    "first": 41,
+    "last": 46,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "20": {
+    "kind": "questions",
+    "first": 47,
+    "last": 52,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "21": {
+    "kind": "questions",
+    "first": 47,
+    "last": 52,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "22": {
+    "kind": "questions",
+    "first": 53,
+    "last": 58,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "23": {
+    "kind": "questions",
+    "first": 53,
+    "last": 58,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "24": {
+    "kind": "questions",
+    "first": 59,
+    "last": 65,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "25": {
+    "kind": "questions",
+    "first": 59,
+    "last": 65,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "26": {
+    "kind": "questions",
+    "first": 66,
+    "last": 70,
+    "bilingual": false,
+    "note": "Engineering exam questions."
+   },
+   "27": {
+    "kind": "questions",
+    "first": 66,
+    "last": 70,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "28": {
+    "kind": "questions",
+    "first": 71,
+    "last": 76,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "29": {
+    "kind": "questions",
+    "first": 71,
+    "last": 76,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "30": {
+    "kind": "questions",
+    "first": 77,
+    "last": 82,
+    "bilingual": false,
+    "note": "Engineering exam questions."
+   },
+   "31": {
+    "kind": "questions",
+    "first": 77,
+    "last": 82,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "32": {
+    "kind": "questions",
+    "first": 83,
+    "last": 88,
+    "bilingual": false,
+    "note": "Exam questions with options."
+   },
+   "33": {
+    "kind": "questions",
+    "first": 83,
+    "last": 88,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "34": {
+    "kind": "questions",
+    "first": 89,
+    "last": 93,
+    "bilingual": false,
+    "note": "Engineering exam questions."
+   },
+   "35": {
+    "kind": "questions",
+    "first": 89,
+    "last": 93,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "36": {
+    "kind": "questions",
+    "first": 94,
+    "last": 100,
+    "bilingual": false,
+    "note": "Engineering exam questions."
+   },
+   "37": {
+    "kind": "questions",
+    "first": 94,
+    "last": 100,
+    "bilingual": false,
+    "note": "Exam questions in Hindi."
+   },
+   "38": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Rough work space page."
+   },
+   "39": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Space for rough work."
+   },
+   "40": {
+    "kind": "instructions",
+    "first": 1,
+    "last": 4,
+    "bilingual": true,
+    "note": "Instructions for filling OMR sheet."
+   },
+   "41": {
+    "kind": "answer_key",
+    "first": 1,
+    "last": 100,
+    "bilingual": false,
+    "note": "Model answers for exam questions."
+   },
+   "42": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page"
+   }
+  }
+ },
+ "JE-0411-QB-GK-GS.pdf": {
+  "pages": 16,
+  "key_pages": [],
+  "question_pages": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "q_range": [
+   2,
+   15
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "instructions",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Instructions for candidates"
+   },
+   "2": {
+    "kind": "questions",
+    "first": 1,
+    "last": 9,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "3": {
+    "kind": "questions",
+    "first": 10,
+    "last": 18,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "4": {
+    "kind": "questions",
+    "first": 19,
+    "last": 26,
+    "bilingual": true,
+    "note": "Contains multiple choice questions."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 27,
+    "last": 34,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 35,
+    "last": 42,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 43,
+    "last": 49,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 50,
+    "last": 56,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 57,
+    "last": 64,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 65,
+    "last": 72,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 73,
+    "last": 78,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 79,
+    "last": 86,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 87,
+    "last": 93,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 94,
+    "last": 99,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 100,
+    "last": 100,
+    "bilingual": true,
+    "note": "Single question with options."
+   },
+   "16": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty or rough work page."
+   }
+  }
+ },
+ "JE-0411-QB-Civil.pdf": {
+  "pages": 16,
+  "key_pages": [],
+  "question_pages": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "q_range": [
+   2,
+   12
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "cover",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Test booklet with instructions."
+   },
+   "2": {
+    "kind": "questions",
+    "first": 1,
+    "last": 9,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "3": {
+    "kind": "questions",
+    "first": 10,
+    "last": 18,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "4": {
+    "kind": "questions",
+    "first": 19,
+    "last": 27,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 28,
+    "last": 36,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 37,
+    "last": 45,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 46,
+    "last": 54,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 55,
+    "last": 64,
+    "bilingual": true,
+    "note": "Contains questions in Hindi and English."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 65,
+    "last": 75,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 76,
+    "last": 85,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 86,
+    "last": 93,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 94,
+    "last": 100,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "13": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Rough work space."
+   },
+   "14": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Rough work space."
+   },
+   "15": {
+    "kind": "instructions",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Instructions for candidates and OMR filling."
+   },
+   "16": {
+    "kind": "instructions",
+    "first": 1,
+    "last": 7,
+    "bilingual": true,
+    "note": "Instructions for filling OMR answer sheet."
+   }
+  }
+ },
+ "JE-0411-QB-Mechanical.pdf": {
+  "pages": 20,
+  "key_pages": [],
+  "question_pages": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16
+  ],
+  "q_range": [
+   2,
+   16
+  ],
+  "page_kinds": {
+   "1": {
+    "kind": "instructions",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Instructions for candidates."
+   },
+   "2": {
+    "kind": "questions",
+    "first": 1,
+    "last": 8,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "3": {
+    "kind": "questions",
+    "first": 9,
+    "last": 15,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "4": {
+    "kind": "questions",
+    "first": 16,
+    "last": 23,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "5": {
+    "kind": "questions",
+    "first": 24,
+    "last": 29,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "6": {
+    "kind": "questions",
+    "first": 30,
+    "last": 37,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "7": {
+    "kind": "questions",
+    "first": 38,
+    "last": 43,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "8": {
+    "kind": "questions",
+    "first": 44,
+    "last": 50,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "9": {
+    "kind": "questions",
+    "first": 51,
+    "last": 56,
+    "bilingual": true,
+    "note": "Engineering exam questions in Hindi and English."
+   },
+   "10": {
+    "kind": "questions",
+    "first": 57,
+    "last": 62,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "11": {
+    "kind": "questions",
+    "first": 63,
+    "last": 68,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "12": {
+    "kind": "questions",
+    "first": 69,
+    "last": 75,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "13": {
+    "kind": "questions",
+    "first": 76,
+    "last": 83,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "14": {
+    "kind": "questions",
+    "first": 84,
+    "last": 90,
+    "bilingual": true,
+    "note": "Exam questions with options."
+   },
+   "15": {
+    "kind": "questions",
+    "first": 91,
+    "last": 96,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "16": {
+    "kind": "questions",
+    "first": 97,
+    "last": 100,
+    "bilingual": true,
+    "note": "Exam questions in Hindi and English."
+   },
+   "17": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Rough work page"
+   },
+   "18": {
+    "kind": "blank",
+    "first": null,
+    "last": null,
+    "bilingual": false,
+    "note": "Empty page for rough work."
+   },
+   "19": {
+    "kind": "instructions",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Exam instructions and OMR filling process."
+   },
+   "20": {
+    "kind": "instructions",
+    "first": null,
+    "last": null,
+    "bilingual": true,
+    "note": "Instructions for filling OMR answer sheet."
+   }
+  }
+ }
+}
