@@ -17,13 +17,14 @@ from sqlalchemy.orm import Session
 from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
-from . import analytics, assess_gen, billing, catalog, course_details, examgen, gamify, legal, mockpaper, notify, personalize, seo, teasers, tutor
+from . import analytics, assess_gen, billing, catalog, course_details, examgen, gamify, legal, mockpaper, notify, paper_survey, personalize, seo, teasers, tutor
 from . import kids_worksheet as kidsws   # worksheet + adaptive assessment engine (kids + seniors)
 from .config import settings
 from .db import get_db
 from .emailer import send_magic_link
 from .models import (
     AssessmentItem, Assignment, AssignmentCompletion, ClassSitting, ClassTest, CompSession, ConceptStat, CourseRequest, GenJob, LearnerFact, Lesson, LessonProgress, LearningEvent, MockPaper, Module, PaperAttempt, SeenQuestion, Student, StudentTopic, TaskCompletion, TeacherInvite, TopicAttempt, UniCourse, UniUnit, WorkbookTask, now,
+    PaperSurvey,
 )
 from . import university
 from .security import consume_magic_token, get_or_create_student, issue_magic_token
@@ -2277,7 +2278,8 @@ def teacher_chapters(request: Request, subject: str = "jee-physics", db: Session
 # so teachers couldn't make Class 10/12/Commerce/UPSC tests (institute feedback 2026-07-29). Order
 # mirrors the student exam picker.
 _TEACHER_GOALS = ["jee-advanced", "neet", "cbse-10", "cbse-12", "cbse-12-commerce", "banking",
-                  "upsc", "bpsc-tre", "ssc-cgl", "railway"]   # bpsc (civil services) hidden — TRE only
+                  "upsc", "bpsc-tre", "ssc-cgl", "railway",
+                  "bssc"]   # bpsc (civil services) hidden — TRE only
 _KIDS_TEACHER_GOALS = ["class3"]   # kids-education.trigunai.com teachers create Grade-3 tests
 
 
@@ -4422,6 +4424,61 @@ def _student_rows(db: Session):
     return rows, cw
 
 
+# ── Paper-setting questionnaire ────────────────────────────────────────────────
+# Public, no login: the institute owner gets a link on WhatsApp and fills it on his phone. Auth
+# would cost us the response, and there is nothing here worth protecting — it collects opinions
+# about question papers, not personal data.
+
+@app.get("/paper-survey", response_class=HTMLResponse)
+def paper_survey_form(request: Request, who: str = "", inst: str = ""):
+    """The form. `?inst=One+Step&who=…` pre-fills the header so he does not have to type it."""
+    return templates.TemplateResponse(request, "paper_survey.html", {
+        "questions": paper_survey.QUESTIONS, "inst": inst[:160], "who": who[:120], "saved": False,
+    })
+
+
+@app.post("/paper-survey", response_class=HTMLResponse)
+async def paper_survey_submit(request: Request, db: Session = Depends(get_db)):
+    """Store the answers in THREE independent places, because losing one submission means asking a
+    busy man to fill the form twice — which he will not do.
+
+      1. the database          (queryable, shown on /admin)
+      2. the founder's WhatsApp (survives any DB problem, arrives in seconds)
+      3. the container log      (survives both, and is what you read when the other two disagree)
+
+    The DB write is wrapped: if it fails, the alert and the log still fire, so the answers exist
+    even when the row does not. A submission is never rejected for a storage problem — the page
+    always thanks him.
+    """
+    form = await request.form()
+    answers = paper_survey.parse(form)
+    institute = (form.get("institute") or "").strip()[:160]
+    person = (form.get("person") or "").strip()[:120]
+    phone = "".join(c for c in (form.get("phone") or "") if c.isdigit())[:15]
+    line = paper_survey.summarise(answers)
+    # 3) log first — it is the one store that cannot fail
+    print(f"[paper-survey] {institute or '?'} / {person or '?'} / {phone or '?'} :: {line}",
+          flush=True)
+    saved = False
+    try:
+        db.add(PaperSurvey(institute=institute, person=person, phone=phone,
+                           form="paper_method", answers=answers,
+                           raw={k: v for k, v in form.multi_items()}))
+        db.commit()
+        saved = True
+    except Exception as e:                       # noqa: BLE001 — never lose the response to a 500
+        db.rollback()
+        print(f"[paper-survey] DB WRITE FAILED ({e!r}) — answers are in the log and WhatsApp",
+              flush=True)
+    # 2) WhatsApp: one line, template-safe (Meta rejects newlines/tabs in template params)
+    notify.notify_admin(
+        f"📝 Paper survey — {institute or 'unknown institute'} ({person or 'no name'}) :: {line}"
+        + ("" if saved else " [DB WRITE FAILED — see logs]"))
+    return templates.TemplateResponse(request, "paper_survey.html", {
+        "questions": paper_survey.QUESTIONS, "inst": institute, "who": person, "saved": True,
+    })
+
+
 @app.get("/admin", response_class=HTMLResponse)
 def admin_page(request: Request, db: Session = Depends(get_db)):
     student = current_student(request, db)
@@ -4432,11 +4489,13 @@ def admin_page(request: Request, db: Session = Depends(get_db)):
     rows, cw = _student_rows(db)
     reqs = db.query(CourseRequest).order_by(CourseRequest.created_at.desc()).limit(60).all()
     req_pending = db.query(CourseRequest).filter_by(status="requested").count()
+    surveys = db.query(PaperSurvey).order_by(PaperSurvey.created_at.desc()).limit(30).all()
     return templates.TemplateResponse(request, "admin.html", {
         "student": student, "rows": rows, "current_week": cw,
         "stats": gamify.stats(db, student.id),
         "m": analytics.metrics(db), "course_titles": COURSE_TITLES,
         "course_requests": reqs, "req_pending": req_pending,
+        "paper_surveys": surveys, "survey_questions": paper_survey.QUESTIONS,
     })
 
 

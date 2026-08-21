@@ -319,6 +319,10 @@ class Assignment(Base):
     # the BATCH this assignment targets. Null = applies to ALL of the teacher's batches (back-compat).
     invite_id: Mapped[int | None] = mapped_column(ForeignKey("teacher_invites.id"), nullable=True, index=True)
     kind: Mapped[str] = mapped_column(String(16))                 # smart | mock | classtest | kidsworksheet | kidstest
+    # Short SHARE code → /a/<code>. This is the link a teacher actually sends to students (WhatsApp,
+    # class group). A student who isn't in the batch yet is joined on the way through, so one link
+    # both onboards and starts the work — and the completion still lands on THIS assignment.
+    code: Mapped[str] = mapped_column(String(12), default="", index=True)
     ref: Mapped[str] = mapped_column(String(120), default="")     # subject_id | paper id | classtest code | "subject|chapter|n" (kids)
     title: Mapped[str] = mapped_column(String(140), default="")
     subject_label: Mapped[str] = mapped_column(String(80), default="")
@@ -514,3 +518,23 @@ class UniUnit(Base):
     mastery: Mapped[float] = mapped_column(Float, default=0.0)
     # locked (not yet reachable) | building (job running) | active | done
     status: Mapped[str] = mapped_column(String(12), default="locked", index=True)
+
+
+class PaperSurvey(Base):
+    """One institute's answers to the paper-setting questionnaire — the settings a human paper-setter
+    would use, captured so the generator can be configured to them instead of to our guesses.
+
+    Answers are stored WHOLE as JSON rather than as columns: the question set will change as we
+    learn what to ask, and a schema migration per edit would guarantee the form stops being edited.
+    `answers` = {q_id: {"choice": "b", "text": "..."} }; `raw` keeps the untouched POST body so a
+    question we later rename can still be read back.
+    """
+    __tablename__ = "paper_surveys"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    institute: Mapped[str] = mapped_column(String(160), default="")
+    person: Mapped[str] = mapped_column(String(120), default="")
+    phone: Mapped[str] = mapped_column(String(20), default="", index=True)
+    form: Mapped[str] = mapped_column(String(40), default="paper_method", index=True)
+    answers: Mapped[dict] = mapped_column(JSON, default=dict)
+    raw: Mapped[dict] = mapped_column(JSON, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=now, index=True)

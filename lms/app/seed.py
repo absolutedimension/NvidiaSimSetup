@@ -318,6 +318,10 @@ def _migrate():
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS course VARCHAR(40) DEFAULT 'agentic'",
         "ALTER TABLE students ADD COLUMN IF NOT EXISTS phone VARCHAR(20) DEFAULT ''",
         "ALTER TABLE course_requests ADD COLUMN IF NOT EXISTS source VARCHAR(20) DEFAULT 'whatsapp'",
+        # paper_surveys is created by create_all on a fresh DB; these are here so an EXISTING
+        # Postgres picks up later additions without a migration tool.
+        "ALTER TABLE paper_surveys ADD COLUMN IF NOT EXISTS phone VARCHAR(20) DEFAULT ''",
+        "ALTER TABLE paper_surveys ADD COLUMN IF NOT EXISTS raw JSON",
         # subscription columns — sub_status added WITHOUT a server default so existing rows
         # are NULL exactly once (the grandfather step below keys on that). New ORM inserts
         # get 'none' from the model-side default.
@@ -361,6 +365,10 @@ def _migrate():
         "ALTER TABLE teacher_invites ADD COLUMN IF NOT EXISTS grade INTEGER NULL",
         "ALTER TABLE teacher_invites ADD COLUMN IF NOT EXISTS board VARCHAR(24) DEFAULT ''",
         "ALTER TABLE assignments ADD COLUMN IF NOT EXISTS pack JSON NULL",
+        # shareable per-assignment link (/a/<code>). Existing rows get one backfilled below so a
+        # teacher's older assignments become shareable too, not just newly-created ones.
+        "ALTER TABLE assignments ADD COLUMN IF NOT EXISTS code VARCHAR(12) DEFAULT ''",
+        "CREATE INDEX IF NOT EXISTS ix_assignments_code ON assignments (code)",
         # GRANDFATHER (one-time): every student that exists when the column is first added is
         # NULL → mark grandfathered (full access forever, never paywalled). Re-running matches
         # nothing because new signups are 'none' (not NULL), so it's idempotent.
@@ -373,9 +381,29 @@ def _migrate():
             print(f"[migrate] skip: {exc}")
 
 
+def _backfill_assignment_codes():
+    """Give every pre-existing assignment a share code, so /a/<code> works for work that was
+    assigned before the column existed. Idempotent — only touches blank/NULL codes."""
+    import secrets
+    from sqlalchemy import text          # module-local, same as _migrate() — not a file-level import
+    alpha = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
+    try:
+        with engine.begin() as conn:
+            rows = conn.execute(text(
+                "SELECT id FROM assignments WHERE code IS NULL OR code=''")).fetchall()
+            for (aid,) in rows:
+                conn.execute(text("UPDATE assignments SET code=:c WHERE id=:i"),
+                             {"c": "".join(secrets.choice(alpha) for _ in range(8)), "i": aid})
+            if rows:
+                print(f"[migrate] backfilled share codes for {len(rows)} assignment(s)")
+    except Exception as exc:
+        print(f"[migrate] assignment code backfill skipped: {exc}")
+
+
 def run():
     _migrate()
     Base.metadata.create_all(engine)
+    _backfill_assignment_codes()          # after create_all, so a fresh DB has the column
     db = SessionLocal()
     try:
         mod_by_key = {}

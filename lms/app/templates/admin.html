@@ -135,6 +135,38 @@
 <p style="color:var(--muted);font-size:14px;margin:0 0 8px;">No course requests yet — they'll appear here as learners ask (WhatsApp menu option 11, or the web form on /login).</p>
 {% endif %}
 
+<!-- Paper-setting survey responses. Added because the route was already passing `paper_surveys`
+     into this template and nothing rendered it — the data was being stored and was unreadable
+     without a psql session, which is not "captured" in any useful sense. -->
+<div class="ad-sec">📝 Paper survey ({{ paper_surveys|length }})</div>
+{% if paper_surveys %}
+{% for s in paper_surveys %}
+<div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px 15px;margin-bottom:10px;">
+  <div style="font-weight:600;">{{ s.institute or 'Unknown institute' }}
+    <span style="color:var(--muted);font-weight:400;font-size:13px;">
+      · {{ s.person or 'no name' }}{% if s.phone %} · {{ s.phone }}{% endif %}
+      · {{ s.created_at.strftime('%b %d, %H:%M') }}</span></div>
+  <table style="width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px;color:var(--ink);">
+    {% for qid, qtext, _opts in survey_questions %}
+      {% set a = s.answers.get(qid) %}
+      {% if a %}
+      <tr style="border-top:1px solid var(--line);">
+        <td style="padding:6px 10px 6px 0;color:var(--muted);width:52%;vertical-align:top;">{{ qtext }}</td>
+        <td style="padding:6px 0;font-weight:500;">
+          {% for lab in a.labels %}{% if not loop.first %} <span style="color:var(--muted);">+</span> {% endif %}{{ lab }}{% endfor %}
+          {% if 'other' in a.choices %}<span class="tag soon" style="margin-left:6px;">own answer</span>{% endif %}
+        </td>
+      </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+</div>
+{% endfor %}
+{% else %}
+<p style="color:var(--muted);font-size:14px;margin:0 0 8px;">No survey responses yet — send an institute
+  <code>/paper-survey?inst=Their+Name</code> and their answers appear here.</p>
+{% endif %}
+
 <div class="ad-sec">⚡ Recent activity</div>
 <div class="panel">
   {% for e in m.recent %}

@@ -1,0 +1,115 @@
+{# Paper-setting questionnaire — public, phone-first, tick-only with a real "Other" on every question.
+   Deliberately NOT extending base.html: this goes to an institute owner on WhatsApp who has no
+   account, and a nav bar full of course links invites him to wander off mid-form. One page, one job.
+   Brand tokens match static/app.css (:root) so it still reads as Acharya. #}
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>How you set a question paper — Acharya</title>
+<style>
+  :root { --gold:#c9a227; --ink:#1a1c24; --mut:#6b6f7c; --line:#e6e2d5; --bg:#fbf9f4; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-size:16px; line-height:1.45;
+         font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif; }
+  .wrap { max-width:720px; margin:0 auto; padding:16px 14px 44px; }
+  header { display:flex; align-items:center; gap:10px; border-bottom:2px solid var(--gold);
+           padding-bottom:10px; margin-bottom:12px; }
+  .co { font-weight:800; font-size:17px; letter-spacing:.3px; }
+  .co small { display:block; font-weight:500; color:var(--mut); font-size:12.5px; letter-spacing:0; }
+  .lead { background:#fdfaf0; border:1px solid var(--gold); border-radius:8px; padding:11px 13px;
+          font-size:14.5px; margin-bottom:16px; }
+  .who { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+  .who input { flex:1 1 200px; padding:10px 11px; border:1px solid var(--line); border-radius:7px;
+               font-size:15px; background:#fff; font-family:inherit; }
+  .q { background:#fff; border:1px solid var(--line); border-radius:9px; padding:12px 13px;
+       margin-bottom:11px; }
+  .qt { font-weight:700; margin-bottom:9px; font-size:15.5px; }
+  .qt b { color:var(--gold); margin-right:5px; }
+  label.op { display:flex; align-items:flex-start; gap:9px; padding:7px 6px; border-radius:6px;
+             cursor:pointer; font-size:15px; }
+  label.op:active { background:#faf7ec; }
+  label.op input { margin:3px 0 0; width:19px; height:19px; accent-color:var(--gold); flex:none; }
+  .other { margin-top:2px; }
+  /* The free-text box sits OUTSIDE the label and spans the row. Nested inside the flex label it
+     collapsed to a ~20px stub on a phone — technically present, practically untypeable, which is
+     the same as not offering "Other" at all. */
+  input.othertext { display:block; width:100%; margin:2px 0 2px; padding:11px 12px;
+                    border:1px dashed var(--gold); border-radius:7px; font-size:15px;
+                    font-family:inherit; background:#fffdf6; }
+  input.othertext:focus { outline:2px solid var(--gold); background:#fff; }
+  button { width:100%; margin-top:16px; padding:15px; font-size:17px; font-weight:700; color:#1a1c24;
+           background:var(--gold); border:0; border-radius:9px; cursor:pointer; }
+  .done { background:#eef7ee; border:1px solid #b7d8b7; border-radius:9px; padding:18px;
+          text-align:center; font-size:16px; }
+  .done b { display:block; font-size:19px; margin-bottom:5px; }
+  footer { color:var(--mut); font-size:12.5px; margin-top:18px; text-align:center; }
+</style>
+<div class="wrap">
+  <header>
+    <div class="co">ACHARYA · TrigunAI
+      <small>Question paper survey</small></div>
+  </header>
+
+  {% if saved %}
+    <div class="done"><b>Thank you, sir.</b>
+      Your answers have reached us. Every one of them becomes a setting in the paper generator —
+      the next paper will be built to your specification, not our guess.</div>
+    <footer>Acharya · TrigunAI Innovations Pvt Ltd</footer>
+  {% else %}
+    {# TONE: polite and plain. He is a working teacher who runs an institute, not someone to be
+       argued with. The earlier draft opened "This is not ChatGPT" — accurate but blunt, and it put
+       him on the back foot in his own inbox. Same facts, said the way you would say them across a
+       desk.
+       Every number here is checkable: 1,50,000+ is the live serving API's own `bank_verified`
+       count (151,518 at the time of writing), and the exam list is the catalogue the product
+       actually serves. No rounding up, no "AI-powered". #}
+    <div class="lead">
+      Sir, we would be grateful for two minutes of your help.<br><br>
+      We have built a question engine that prepares papers for <b>BSSC, SSC, Railway, Banking, TRE
+      and UPSC</b>, as well as school boards — over <b>1,50,000 verified questions</b> so far.
+      It does not write questions with ChatGPT. It <b>works out each answer itself</b>, and a
+      <b>second program checks every answer again</b> before a paper is printed.<br><br>
+      What it cannot know is <b>your standard</b> — what makes a question hard, how many should come
+      from one topic, how the wrong options should be written. You have been setting papers for
+      years. If you tell us, these answers become the system's settings, and the next paper will be
+      built to your standard instead of our guess.
+    </div>
+
+    <div class="lead" style="background:#fff;border-color:var(--line);font-size:14px">
+      14 questions, 2 minutes. <b>Tick as many as you like</b> in each — or type your own under
+      <b>Other</b>.
+    </div>
+
+    <form method="post" action="/paper-survey">
+      <div class="who">
+        <input name="institute" placeholder="Institute name" value="{{ inst }}">
+        <input name="person" placeholder="Your name" value="{{ who }}">
+        <input name="phone" placeholder="WhatsApp number (optional)" inputmode="numeric">
+      </div>
+
+      {% for qid, text, opts in questions %}
+      <div class="q">
+        <div class="qt"><b>{{ loop.index }}.</b>{{ text }}</div>
+        {% for o in opts %}
+        <label class="op">
+          <input type="checkbox" name="{{ qid }}" value="{{ 'abcd'[loop.index0] }}">
+          <span>{{ o }}</span>
+        </label>
+        {% endfor %}
+        <label class="op other">
+          <input type="checkbox" name="{{ qid }}" value="other">
+          <span>Other</span>
+        </label>
+        {# Typing here ticks "Other" for him, so an answer can never be typed and then lost because
+           the radio beside it was never tapped. #}
+        <input class="othertext" name="{{ qid }}_other" placeholder="Type your own answer here…"
+               oninput="this.closest('.q').querySelector('input[value=other]').checked = !!this.value">
+      </div>
+      {% endfor %}
+
+      <button type="submit">Send my answers</button>
+    </form>
+    <footer>Nothing here is shared with anyone. — Acharya, TrigunAI Innovations Pvt Ltd</footer>
+  {% endif %}
+</div>
