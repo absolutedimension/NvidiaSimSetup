@@ -180,6 +180,7 @@ from .banking_quant import BANKING_QUANT
 from .reasoning_common import REASONING_COMMON
 from .staticgk_common import STATIC_GK_COMMON
 from .english_common import ENGLISH_COMMON
+from .gp_rating import GP_RATING_GSK, GP_RATING_MEK
 from .icse_class3_maths import ICSE_CLASS3_MATHS
 
 # Registry so other exams/subjects slot in with the same interface.
@@ -241,6 +242,17 @@ TAXONOMIES = {
     ("SSC CHSL", "English"): ENGLISH_COMMON,
     ("Railway (RRB)", "English"): ENGLISH_COMMON,
     ("Banking Prelims", "English"): ENGLISH_COMMON,
+    # ---- Synergy CET (merchant-navy GP Rating sponsorship entrance) ----
+    # Two knowledge subjects carry REAL DG-syllabus chapters ingested from the MTI bank
+    # (exemplars only, generated=0 — see gp_rating.py). The four aptitude sections reuse the
+    # existing GENERATION-first taxonomies: the entrance paper's numerical/logical/GK
+    # sections are ordinary competitive-exam aptitude, so quantgen/reasoninggen/staticgkgen
+    # serve them compute-the-answer and NOTHING is owed to the source compilation.
+    ("Synergy CET", "Ship Knowledge & Safety"): GP_RATING_GSK,
+    ("Synergy CET", "Marine Engineering"): GP_RATING_MEK,
+    ("Synergy CET", "Numerical Reasoning"): BANKING_QUANT,
+    ("Synergy CET", "Logical Reasoning"): REASONING_COMMON,
+    ("Synergy CET", "General Knowledge"): STATIC_GK_COMMON,
 }
 
 
@@ -264,6 +276,31 @@ def get_taxonomy(exam: str, subject: str):
     (pipeline), or leave the question Unclassified (tagger).
     """
     return TAXONOMIES.get((exam, subject)) or {}
+
+
+def _register_optional_taxonomies():
+    """Fold in taxonomy modules that live only on some boxes.
+
+    `cbse_boards` and `upsc_syllabus` were authored directly on the qbank-worker VM and
+    never landed in this repo, so they exist there and not here. They register themselves
+    into TAXONOMIES via a `register(TAXONOMIES)` hook. Importing them unguarded would
+    break every machine that doesn't have them; skipping them silently on the worker would
+    have dropped CBSE + UPSC tagging the moment this file was synced over. Guarded import
+    keeps both boxes correct.
+
+    ⚠️ These two modules are UNVERSIONED. They should be committed to the repo so the
+    worker stops being the only copy."""
+    for name in ("cbse_boards", "upsc_syllabus"):
+        try:
+            mod = __import__(f"{__package__}.{name}", fromlist=[name])
+        except ImportError:
+            continue
+        reg = getattr(mod, "register", None)
+        if callable(reg):
+            reg(TAXONOMIES)
+
+
+_register_optional_taxonomies()
 
 
 def exemplar_fallback(exam: str, subject: str):

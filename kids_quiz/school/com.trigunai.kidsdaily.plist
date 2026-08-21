@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Nightly sheet for TOMORROW's school day, built at 19:30 so it's ready to print after dinner.
+
+  Load it only AFTER kids_quiz/school/shivaay.json holds the real weekly timetable — until then
+  every run just prints "no academic periods". Install:
+
+    cp kids_quiz/school/com.trigunai.kidsdaily.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/com.trigunai.kidsdaily.plist
+
+  The Mac must be awake at 19:30. Output lands in kids_quiz/school/out/.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.trigunai.kidsdaily</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/kids_quiz/school/daily_worksheet.py</string>
+    <string>--tomorrow</string>
+    <string>--n</string>
+    <string>5</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>19</integer>
+    <key>Minute</key><integer>30</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/kids_quiz/school/out/daily.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup/kids_quiz/school/out/daily.err.log</string>
+</dict>
+</plist>

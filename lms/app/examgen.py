@@ -10,6 +10,7 @@ project-banking-quant-generator) are wired. Add a subject to RAG_SUBJECTS — an
 to grow coverage; the bank must already exist on the VM."""
 import json
 import random
+import re
 import time
 import urllib.request
 import urllib.error
@@ -238,6 +239,15 @@ RAG_SUBJECTS = {
     # (~40-55s/question), which is what a field demo hits. The student still sees the "Railway …"
     # label; only the bank we read from is shared. Fill each exam separately later ONLY if Railway
     # needs genuinely different content from SSC.
+    # ---- BSSC (Bihar SSC) — Hindi language. The mined blueprint from 5 official BSSC papers
+    # (497 real questions, 2026-08-19) put the हिंदी section at 19-31% of three papers —
+    # Vocabulary 18%, Grammar 11%, Comprehension 9% — and we had NO bank for it. Served by the
+    # deterministic qbank/hindigen.py (table-driven, answer is a lookup, never a model's opinion).
+    "bssc-hindi": {
+        "label": "हिंदी (BSSC)", "exam": "BSSC", "subject": "Hindi", "kw": "hindi",
+        "match": ["hindi", "हिंदी", "bssc hindi", "general hindi", "सामान्य हिंदी",
+                  "bssc-hindi", "hindi grammar", "हिन्दी"],
+    },
     "railway-reasoning": {
         "label": "Railway Reasoning", "exam": "SSC CGL", "subject": "Reasoning", "kw": "reasoning",
         "match": ["railway reasoning", "rrb reasoning", "railway-reasoning"],
@@ -351,6 +361,15 @@ GOALS = {
         "subjects": ["bpsc-tre", "gs-polity", "gs-history", "gs-geography", "gs-economics",
                      "gs-physics", "gs-chemistry", "gs-biology"],
     },
+    # BSSC (Bihar Staff Selection Commission) — Inter Level / CGL. Prelims is 3 parts x 50:
+    # सामान्य अध्ययन · सामान्य विज्ञान एवं गणित · सामान्य बुद्धि परीक्षण, plus a large हिंदी
+    # component in several papers. Skill subjects borrow the filled SSC CGL pool (same content
+    # across SSC/Railway/Banking); हिंदी is BSSC-specific and generator-served.
+    "bssc": {
+        "label": "BSSC (Bihar SSC)", "tag": "Bihar · Govt job", "emoji": "🏛️",
+        "subjects": ["bssc-hindi", "ssc-reasoning", "ssc-quant", "ssc-gk", "ssc-science",
+                     "bpsc-gs"],
+    },
     "railway": {
         "label": "Railway (RRB)", "tag": "Govt job · Railway", "emoji": "🚂",
         "subjects": ["railway-reasoning", "railway-quant", "railway-gk", "railway-english",
@@ -395,6 +414,10 @@ DIFFICULTY_LADDER = {
     "UPSC Civil Services (Preliminary)": {"easy": "3", "mix": "3", "hard": "3"},
     # SSC CGL (generated Reasoning + Quant, same compute-the-answer pool as Banking) — match the bands.
     "SSC CGL": {"easy": "2", "mix": "2-3", "hard": "3"},
+    # BSSC — the mined blueprint from 5 official papers measured avg difficulty 1.44-1.89
+    # (97.5% at levels 1-2, ZERO at 4-5). These are entry-level clerical papers; the band
+    # reflects that rather than the SSC default.
+    "BSSC": {"easy": "1", "mix": "1-2", "hard": "2"},
     # BPSC TRE — real Teacher-Recruitment PYQs served from /pool (same real-serve gate as BPSC; bands nominal).
     "BPSC TRE": {"easy": "3", "mix": "3", "hard": "3"},
     # BPSC — real Prelims GS PYQs served from /pool (chapter=NULL, difficulty bypassed via storage
@@ -735,7 +758,24 @@ def _wrap_pack(results: list[dict], title: str) -> dict | None:
     }
 
 
-def build_mixed_pack(sections: list[dict], title: str, exclude: list[str] | None = None) -> dict | None:
+
+def _template_sig(stem: str) -> str:
+    """Fingerprint a question's TEMPLATE by blanking the parts that vary.
+
+    The compute-the-answer generators build from a fixed set of templates, so asking for 50
+    reasoning questions when only 13 builders exist forces repetition: a real 150-Q draw came back
+    with 11 blood-relation questions and 6 identically-worded "odd one out" ones. A student notices
+    that by question 20 and it makes the paper read as machine-made. Numbers, names and code words
+    are blanked so same-shape questions collide and can be capped.
+    """
+    s = re.sub(r"\d+", "#", stem or "")
+    s = re.sub(r"'[A-Z]{2,}'", "'W'", s)
+    s = re.sub(r"\b[A-Z][a-z]{2,}\b", "N", s)
+    return re.sub(r"\s+", " ", s).strip()[:70]
+
+
+def build_mixed_pack(sections: list[dict], title: str, exclude: list[str] | None = None,
+                     max_per_template: int = 2) -> dict | None:
     """Assemble ONE multi-section paper (e.g. BSSC: 50 reasoning + 25 science + 25 maths + 50 GS).
 
     sections = [{"subject": <rag id>, "n": int, "diff": "2-3"}, ...] — order is preserved, and each
@@ -746,6 +786,8 @@ def build_mixed_pack(sections: list[dict], title: str, exclude: list[str] | None
     """
     seen = set(str(x) for x in (exclude or []))
     out: list[dict] = []
+    tmpl: dict[str, int] = {}          # template fingerprint -> how many already taken
+    per_tmpl = max(1, int(max_per_template or 2))
     for sec in sections:
         sid = (sec.get("subject") or "").strip()
         cfg = RAG_SUBJECTS.get(sid)
@@ -755,10 +797,10 @@ def build_mixed_pack(sections: list[dict], title: str, exclude: list[str] | None
         diff = (sec.get("diff") or difficulty_ladder(sid)["mix"]).strip()
         label = sec.get("label") or cfg["label"]
         got, tries = 0, 0
-        while got < want and tries < 6:
+        while got < want and tries < 14:
             tries += 1
             qs, _ = fetch_pool(sid, "", None, diff, "MCQ_single",
-                               min(50, (want - got) * 2), exclude=list(seen)[:300])
+                               50, exclude=list(seen)[:300])
             if not qs:
                 break
             fresh = 0
@@ -769,6 +811,10 @@ def build_mixed_pack(sections: list[dict], title: str, exclude: list[str] | None
                 pq = _to_pack_question(q)          # drops anything whose answer can't be resolved
                 if not pq:
                     continue
+                sig = _template_sig(q.get("stem", ""))
+                if tmpl.get(sig, 0) >= per_tmpl:
+                    continue                       # too many of this shape already — keep looking
+                tmpl[sig] = tmpl.get(sig, 0) + 1
                 if qid:
                     seen.add(qid)
                 pq["topic"] = {"en": label, "hi": label}

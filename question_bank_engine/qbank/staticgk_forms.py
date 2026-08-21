@@ -56,6 +56,18 @@ STATEMENTS = {
     # anyway, and it sidesteps an agreement the template cannot know.
     "BIHAR_FREEDOM": ("In the national movement, {k} — {v}.",
                       "राष्ट्रीय आंदोलन में, {k} — {v}।"),
+    # बिहार — the advertisement names Bihar as its own emphasis and the delivered paper had THREE
+    # Bihar questions in 150. Gated behind bihar_tables.REVIEWED; see gs_tables().
+    "BIHAR_SITE_DISTRICT": ("{k} is located in the district of {v}.",
+                            "{k} {v} जिले में स्थित है।"),
+    "BIHAR_GI_PRODUCT": ("The GI-tagged product {k} belongs to {v} district.",
+                         "जीआई-टैग उत्पाद {k} {v} जिले का है।"),
+    # A DASH again: the value is a noun phrase about a person, and a copula would have to agree
+    # with a gender the template cannot know. Same reasoning as BIHAR_FREEDOM above.
+    "BIHAR_FREEDOM_ROLE": ("In Bihar's national movement, {k} — {v}.",
+                           "बिहार के राष्ट्रीय आंदोलन में, {k} — {v}।"),
+    "BIHAR_FOLK_REGION": ("{k} is a folk art form of the {v} region.",
+                          "{k} {v} क्षेत्र की लोक कला है।"),
     # रसायन शास्त्र + जीव विज्ञान for Part II. Chemistry is machine-verified against PubChem;
     # biology waits on a human. See science_tables and gs_tables()/science_fact_tables().
     "ELEMENT_SYMBOL": ("The chemical symbol of {k} is {v}.", "{k} का रासायनिक प्रतीक {v} है।"),
@@ -130,8 +142,9 @@ def b_multi_statement(tables):
     def build(rng, diff):
         names = [n for n in STATEMENTS if n in tables and _bilingual_keys(tables[n])]
         rng.shuffle(names)
-        picks, truth = [], []
+        picks, truth, used = [], [], []
         for name in (names * 3)[:3]:
+            used.append(name)
             table, tmpl = tables[name], STATEMENTS[name]
             k = rng.choice(_bilingual_keys(table))
             # harder papers state MORE true things, so the wrong options stay tempting
@@ -164,7 +177,7 @@ def b_multi_statement(tables):
                             for i, t in enumerate(truth)) + f"। अतः {_SUBSETS_HI[correct]}।")
         return {"stem": stem, "stem_hi": stem_hi, "correct": correct, "distractors": d,
                 "hi_opts": {x: _SUBSETS_HI[x] for x in [correct] + d},
-                "solution": sol, "solution_hi": sol_hi, "concept": "Statement-based GS"}
+                "solution": sol, "solution_hi": sol_hi, "concept": "Statement-based GS", "src": sorted(set(used))}
     return build
 
 
@@ -173,15 +186,32 @@ def b_match_pairs(tables):
     def build(rng, diff):
         names = [n for n in STATEMENTS if n in tables and len(_bilingual_keys(tables[n])) >= 4]
         name = rng.choice(names)
+        used = [name]
         table, (en_t, hi_t) = tables[name], STATEMENTS[name]
         keys = rng.sample(_bilingual_keys(table), 4)
         n_wrong = 1 if diff <= 2 else 2
         wrong_idx = set(rng.sample(range(4), n_wrong))
+        # Same rule as _pair_rows: no value may be printed twice in one list, or the repeated text
+        # marks the planted row for a reader who knows nothing about the subject. Rendered on a
+        # delivered paper as "44th — lowered the voting age from 21 to 18" directly above
+        # "61st — lowered the voting age from 21 to 18".
+        printed = {table[k] for i, k in enumerate(keys) if i not in wrong_idx}
         shown, truth = [], []
         for i, k in enumerate(keys):
-            v = table[k] if i not in wrong_idx else _false_value(table, k, rng)
-            if v is None:
-                v, i_ok = table[k], True
+            if i not in wrong_idx:
+                v = table[k]
+            else:
+                v = None
+                for _ in range(12):
+                    c = _false_value(table, k, rng)
+                    if c is None:
+                        break
+                    if c not in printed:
+                        v = c
+                        break
+                if v is None:
+                    v = table[k]          # no distinct false value available — leave the row true
+            printed.add(v)
             shown.append((k, v))
             truth.append(v == table[k])
         rows = "\n".join(f"{chr(65 + i)}. {k} — {v}" for i, (k, v) in enumerate(shown))
@@ -207,7 +237,7 @@ def b_match_pairs(tables):
         sol_hi = ("; ".join(f"{chr(65 + i)} {'सही' if t else 'गलत'}"
                             for i, t in enumerate(truth)) + f"। सही सुमेलित: {correct}।")
         return {"stem": stem, "stem_hi": stem_hi, "correct": correct, "distractors": d,
-                "solution": sol, "solution_hi": sol_hi, "concept": "Match the Pairs"}
+                "solution": sol, "solution_hi": sol_hi, "concept": "Match the Pairs", "src": sorted(set(used))}
     return build
 
 # ── style variation ─────────────────────────────────────────────────────────────────────────────
@@ -243,6 +273,13 @@ def _pair_rows(table, keys, truth, rng, near_miss):
     each pair and a candidate scanning for the odd word.
     """
     true_vals = [table[k] for k in keys]
+    # Every value some row will actually PRINT. A false value must not be one of these: printing
+    # the same text twice in one list points straight at the decoy without any knowledge of the
+    # subject. Found by rendering the page — "Garba — Tamil Nadu" sat directly under
+    # "Bharatanatyam — Tamil Nadu", and a candidate who knows neither dance can still see that one
+    # of those two is the planted one. near_miss made this CERTAIN for the NOT-correctly-matched
+    # form, because it draws the false value from the very values the true rows are showing.
+    shown = {true_vals[i] for i in range(len(keys)) if truth[i]}
     rows = []
     for i, k in enumerate(keys):
         if truth[i]:
@@ -253,12 +290,19 @@ def _pair_rows(table, keys, truth, rng, near_miss):
             cand = [true_vals[j] for j in range(len(keys)) if j != i
                     and not _alias(true_vals[j], table[k])]
             rng.shuffle(cand)
-            v = next((c for c in cand if _is_false(table, k, c)), None)
+            v = next((c for c in cand if c not in shown and _is_false(table, k, c)), None)
         if v is None:
-            v = _false_value(table, k, rng)
+            for _ in range(12):                     # any other value of the same table will do
+                c = _false_value(table, k, rng)
+                if c is None:
+                    break
+                if c not in shown:
+                    v = c
+                    break
         if v is None:
             return None
         rows.append((k, v))
+        shown.add(v)                                # nor may two false rows print the same value
     return rows
 
 
@@ -287,7 +331,9 @@ def b_correct_pair(tables):
         names = _pair_tables(tables)
         if not names:
             return None
-        table = tables[rng.choice(names)]
+        _name = rng.choice(names)
+        used = [_name]
+        table = tables[_name]
         keys = rng.sample(_bilingual_keys(table), 4)
         truth = [False] * 4
         truth[rng.randrange(4)] = True
@@ -305,7 +351,7 @@ def b_correct_pair(tables):
         return {"stem": stem, "stem_hi": stem_hi, "correct": en[i],
                 "distractors": [en[j] for j in range(4) if j != i],
                 "hi_opts": dict(zip(en, hi)), "solution": sol, "solution_hi": sol_hi,
-                "concept": "Correctly Matched Pair"}
+                "concept": "Correctly Matched Pair", "src": sorted(set(used))}
     return build
 
 
@@ -319,7 +365,9 @@ def b_wrong_pair(tables):
         names = _pair_tables(tables)
         if not names:
             return None
-        table = tables[rng.choice(names)]
+        _name = rng.choice(names)
+        used = [_name]
+        table = tables[_name]
         keys = rng.sample(_bilingual_keys(table), 4)
         truth = [True] * 4
         truth[rng.randrange(4)] = False
@@ -337,7 +385,7 @@ def b_wrong_pair(tables):
         return {"stem": stem, "stem_hi": stem_hi, "correct": en[i],
                 "distractors": [en[j] for j in range(4) if j != i],
                 "hi_opts": dict(zip(en, hi)), "solution": sol, "solution_hi": sol_hi,
-                "concept": "Incorrectly Matched Pair"}
+                "concept": "Incorrectly Matched Pair", "src": sorted(set(used))}
     return build
 
 
@@ -356,8 +404,9 @@ def b_count_statements(tables):
     def build(rng, diff):
         names = [n for n in STATEMENTS if n in tables and _bilingual_keys(tables[n])]
         rng.shuffle(names)
-        picks, truth = [], []
+        picks, truth, used = [], [], []
         for name in (names * 3)[:3]:
+            used.append(name)
             table, tmpl = tables[name], STATEMENTS[name]
             k = rng.choice(_bilingual_keys(table))
             make_true = rng.random() < (0.5 if diff <= 2 else 0.6)
@@ -380,7 +429,7 @@ def b_count_statements(tables):
                             for i, t in enumerate(truth)) + f"। अतः {_COUNTS_HI[correct]}।")
         return {"stem": stem, "stem_hi": stem_hi, "correct": correct, "distractors": d,
                 "hi_opts": dict(_COUNTS_HI), "solution": sol, "solution_hi": sol_hi,
-                "concept": "Count the Correct Statements"}
+                "concept": "Count the Correct Statements", "src": sorted(set(used))}
     return build
 
 
@@ -397,6 +446,7 @@ def b_which_statement(tables):
         # d1-2 keeps all four claims inside ONE topic, so only the fact is in question; d3+ mixes
         # topics, so the candidate cannot settle into a single domain while reading.
         pool = [rng.choice(names)] * 4 if diff <= 2 else [rng.choice(names) for _ in range(4)]
+        used = list(pool)
         which = rng.randrange(4)
         en, hi = [], []
         for i, name in enumerate(pool):
@@ -418,7 +468,7 @@ def b_which_statement(tables):
         return {"stem": stem, "stem_hi": stem_hi, "correct": en[which],
                 "distractors": [en[j] for j in range(4) if j != which],
                 "hi_opts": dict(zip(en, hi)), "solution": sol, "solution_hi": sol_hi,
-                "concept": "Single Correct Statement"}
+                "concept": "Single Correct Statement", "src": sorted(set(used))}
     return build
 
 
@@ -442,8 +492,9 @@ def b_two_statement(tables):
     def build(rng, diff):
         names = [n for n in STATEMENTS if n in tables and _bilingual_keys(tables[n])]
         rng.shuffle(names)
-        picks, truth = [], []
+        picks, truth, used = [], [], []
         for name in (names * 2)[:2]:
+            used.append(name)
             table, tmpl = tables[name], STATEMENTS[name]
             k = rng.choice(_bilingual_keys(table))
             make_true = rng.random() < 0.5
@@ -466,5 +517,5 @@ def b_two_statement(tables):
                             for i, t in enumerate(truth)) + f"। अतः {_PAIR_HI[correct]}।")
         return {"stem": stem, "stem_hi": stem_hi, "correct": correct, "distractors": d,
                 "hi_opts": {x: _PAIR_HI[x] for x in [correct] + d},
-                "solution": sol, "solution_hi": sol_hi, "concept": "Statement-based GS"}
+                "solution": sol, "solution_hi": sol_hi, "concept": "Statement-based GS", "src": sorted(set(used))}
     return build

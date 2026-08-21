@@ -1,0 +1,780 @@
+{
+ "date": "2026-08-21",
+ "day": "Friday",
+ "board": "ICSE",
+ "cls": 3,
+ "sections": [
+  {
+   "subject": "English",
+   "periods": 1,
+   "items": [
+    {
+     "type": "odd_one_out",
+     "instruction": "Which one does NOT belong?",
+     "payload": {
+      "options": [
+       "A",
+       "F",
+       "J",
+       "H"
+      ]
+     },
+     "answer": "A",
+     "subject": "english",
+     "class": 3,
+     "chapter": "Grammar",
+     "band": 1,
+     "voice": "Which one does NOT belong?",
+     "explain": "A is a vowel, the others are all consonants.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "true_false",
+     "instruction": "Is this true or false?",
+     "payload": {
+      "statement": "We write 'an egg'."
+     },
+     "answer": true,
+     "subject": "english",
+     "class": 3,
+     "chapter": "Articles",
+     "band": 2,
+     "voice": "Is this true or false?",
+     "explain": "Correct — that's true!",
+     "difficulty": 0.3,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "odd_one_out",
+     "instruction": "Which one does NOT belong?",
+     "payload": {
+      "options": [
+       "orange",
+       "yellow",
+       "M",
+       "pink"
+      ]
+     },
+     "answer": "M",
+     "subject": "english",
+     "class": 3,
+     "chapter": "Vocabulary",
+     "band": 1,
+     "voice": "Which one does NOT belong?",
+     "explain": "M is a consonant, the others are all words.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "cloze",
+     "instruction": "Fill in the blank.",
+     "payload": {
+      "sentence": "The plural of 'apple' is ___.",
+      "bank": [
+       "apples",
+       "boxes",
+       "feet"
+      ]
+     },
+     "answer": "apples",
+     "subject": "english",
+     "class": 3,
+     "chapter": "Plurals",
+     "band": 1,
+     "voice": "Fill in the blank.",
+     "explain": "The answer is apples.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "EVS",
+   "periods": 3,
+   "items": [
+    {
+     "type": "sort_groups",
+     "instruction": "Sort these plants into herbs, shrubs and trees.",
+     "payload": {
+      "items": [
+       "Peepal",
+       "Coriander",
+       "Coconut",
+       "Spinach",
+       "Neem",
+       "Mint"
+      ],
+      "bins": [
+       "tree",
+       "herb"
+      ]
+     },
+     "answer": {
+      "Peepal": "tree",
+      "Neem": "tree",
+      "Coconut": "tree",
+      "Mint": "herb",
+      "Spinach": "herb",
+      "Coriander": "herb"
+     },
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Plants",
+     "band": 1,
+     "voice": "Sort these plants into herbs, shrubs and trees.",
+     "explain": "Great sorting!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "true_false",
+     "instruction": "Is this true or false?",
+     "payload": {
+      "statement": "We should not waste water."
+     },
+     "answer": true,
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Water",
+     "band": 2,
+     "voice": "Is this true or false?",
+     "explain": "That's true! Well done.",
+     "difficulty": 0.3,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "odd_one_out",
+     "instruction": "Which one does NOT belong?",
+     "payload": {
+      "options": [
+       "South",
+       "North",
+       "West",
+       "Mother"
+      ]
+     },
+     "answer": "Mother",
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Directions",
+     "band": 1,
+     "voice": "Which one does NOT belong?",
+     "explain": "Mother is a member, the others are all directions.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "odd_one_out",
+     "instruction": "Which one does NOT belong?",
+     "payload": {
+      "options": [
+       "Seed",
+       "Stem",
+       "Fruit",
+       "Ant"
+      ]
+     },
+     "answer": "Ant",
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Plants",
+     "band": 1,
+     "voice": "Which one does NOT belong?",
+     "explain": "Ant is an insect, the others are all plants.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "match_following",
+     "instruction": "Match each animal with its baby.",
+     "payload": {
+      "pairs": [
+       [
+        "Frog",
+        "Tadpole"
+       ],
+       [
+        "Horse",
+        "Foal"
+       ],
+       [
+        "Lion",
+        "Cub"
+       ],
+       [
+        "Goat",
+        "Kid"
+       ]
+      ]
+     },
+     "answer": {
+      "Frog": "Tadpole",
+      "Horse": "Foal",
+      "Lion": "Cub",
+      "Goat": "Kid"
+     },
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Animals",
+     "band": 1,
+     "voice": "Match each animal with its baby.",
+     "explain": "Great matching!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "match_following",
+     "instruction": "Match each animal with the food it eats.",
+     "payload": {
+      "pairs": [
+       [
+        "Rabbit",
+        "carrots"
+       ],
+       [
+        "Horse",
+        "hay"
+       ],
+       [
+        "Cow",
+        "grass"
+       ],
+       [
+        "Bee",
+        "nectar"
+       ]
+      ]
+     },
+     "answer": {
+      "Rabbit": "carrots",
+      "Horse": "hay",
+      "Cow": "grass",
+      "Bee": "nectar"
+     },
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Animals",
+     "band": 1,
+     "voice": "Match each animal with the food it eats.",
+     "explain": "Great matching!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "Mathematics",
+   "periods": 2,
+   "items": [
+    {
+     "type": "compare_symbol",
+     "subject": "mathematics",
+     "class": 3,
+     "chapter": "Numbers & Place Value",
+     "band": 3,
+     "instruction": "Put the right sign! 🐊",
+     "voice": "Compare 4811 and 964.",
+     "payload": {
+      "a": 4811,
+      "b": 964
+     },
+     "answer": ">",
+     "explain": "4811 is greater than 964.",
+     "style": {
+      "id": "abstract_fact",
+      "cognitive": "remember",
+      "dok": 1,
+      "representation": "abstract",
+      "context": "abstract",
+      "concept": "compare"
+     },
+     "difficulty": 1.0,
+     "radicals": {
+      "digits": 4,
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Compare the biggest place value first. The open mouth points to the bigger number."
+      }
+     ]
+    },
+    {
+     "type": "arith",
+     "subject": "mathematics",
+     "class": 3,
+     "chapter": "Comparing Numbers",
+     "band": 4,
+     "instruction": "Aditya has 477 balloons. Then gets 239 more. How many balloons in all?",
+     "voice": "Aditya has 477 balloons. Then gets 239 more. How many balloons in all?",
+     "payload": {
+      "op": "+",
+      "a": 477,
+      "b": 239
+     },
+     "answer": 716,
+     "explain": "It makes 716.",
+     "style": {
+      "id": "story_reallife",
+      "cognitive": "apply",
+      "dok": 2,
+      "representation": "story",
+      "context": "real_life",
+      "concept": "add"
+     },
+     "difficulty": 2.1,
+     "radicals": {
+      "digits": 3,
+      "op": "+",
+      "carry": true,
+      "representation": "story",
+      "dok": 2
+     },
+     "distractors": [
+      {
+       "value": 606,
+       "misconception_id": "add_no_carry",
+       "misconception": "forgot to carry",
+       "why": "You added each column but forgot to carry the 1."
+      },
+      {
+       "value": 706,
+       "misconception_id": "add_place_slip",
+       "misconception": "place-value slip",
+       "why": "Check your tens column — the place value slipped by 10."
+      },
+      {
+       "value": 717,
+       "misconception_id": "near_miss",
+       "misconception": "computation slip",
+       "why": "A small arithmetic slip."
+      }
+     ],
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "What does the question ask you to put together? Add the numbers."
+      },
+      {
+       "level": "step",
+       "text": "Line the numbers up by place value, then work one column at a time (right to left)."
+      },
+      {
+       "level": "worked",
+       "text": "Work it column by column, carrying/borrowing where needed."
+      }
+     ]
+    },
+    {
+     "type": "compare_symbol",
+     "subject": "mathematics",
+     "class": 3,
+     "chapter": "Skip Counting",
+     "band": 3,
+     "instruction": "Put the right sign! 🐊",
+     "voice": "Compare 9772 and 7286.",
+     "payload": {
+      "a": 9772,
+      "b": 7286
+     },
+     "answer": ">",
+     "explain": "9772 is greater than 7286.",
+     "style": {
+      "id": "abstract_fact",
+      "cognitive": "remember",
+      "dok": 1,
+      "representation": "abstract",
+      "context": "abstract",
+      "concept": "number"
+     },
+     "difficulty": 1.0,
+     "radicals": {
+      "digits": 4,
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Compare the biggest place value first. The open mouth points to the bigger number."
+      }
+     ]
+    },
+    {
+     "type": "compare_symbol",
+     "subject": "mathematics",
+     "class": 3,
+     "chapter": "Number Patterns",
+     "band": 3,
+     "instruction": "Put the right sign! 🐊",
+     "voice": "Compare 6431 and 8188.",
+     "payload": {
+      "a": 6431,
+      "b": 8188
+     },
+     "answer": "<",
+     "explain": "6431 is less than 8188.",
+     "style": {
+      "id": "abstract_fact",
+      "cognitive": "remember",
+      "dok": 1,
+      "representation": "abstract",
+      "context": "abstract",
+      "concept": "number"
+     },
+     "difficulty": 1.0,
+     "radicals": {
+      "digits": 4,
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Compare the biggest place value first. The open mouth points to the bigger number."
+      }
+     ]
+    },
+    {
+     "type": "arith",
+     "subject": "mathematics",
+     "class": 3,
+     "chapter": "Addition",
+     "band": 3,
+     "instruction": "Sara has 354 stars. Then gets 335 more. How many stars in all?",
+     "voice": "Sara has 354 stars. Then gets 335 more. How many stars in all?",
+     "payload": {
+      "op": "+",
+      "a": 354,
+      "b": 335
+     },
+     "answer": 689,
+     "explain": "It makes 689.",
+     "style": {
+      "id": "story_reallife",
+      "cognitive": "apply",
+      "dok": 2,
+      "representation": "story",
+      "context": "real_life",
+      "concept": "add"
+     },
+     "difficulty": 1.7,
+     "radicals": {
+      "digits": 3,
+      "op": "+",
+      "representation": "story",
+      "dok": 2
+     },
+     "distractors": [
+      {
+       "value": 679,
+       "misconception_id": "add_place_slip",
+       "misconception": "place-value slip",
+       "why": "Check your tens column — the place value slipped by 10."
+      },
+      {
+       "value": 690,
+       "misconception_id": "near_miss",
+       "misconception": "computation slip",
+       "why": "A small arithmetic slip."
+      },
+      {
+       "value": 688,
+       "misconception_id": "near_miss",
+       "misconception": "computation slip",
+       "why": "A small arithmetic slip."
+      }
+     ],
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "What does the question ask you to put together? Add the numbers."
+      },
+      {
+       "level": "step",
+       "text": "Line the numbers up by place value, then work one column at a time (right to left)."
+      },
+      {
+       "level": "worked",
+       "text": "Work it column by column, carrying/borrowing where needed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "Hindi",
+   "periods": 2,
+   "items": [
+    {
+     "type": "match_following",
+     "instruction": "हर शब्द को उसके बहुवचन से मिलाइए।",
+     "payload": {
+      "pairs": [
+       [
+        "बहन",
+        "बहनें"
+       ],
+       [
+        "चिड़िया",
+        "चिड़ियाँ"
+       ],
+       [
+        "गाय",
+        "गायें"
+       ],
+       [
+        "माला",
+        "मालाएँ"
+       ]
+      ]
+     },
+     "answer": {
+      "बहन": "बहनें",
+      "चिड़िया": "चिड़ियाँ",
+      "गाय": "गायें",
+      "माला": "मालाएँ"
+     },
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "वचन",
+     "band": 1,
+     "voice": "हर शब्द को उसके बहुवचन से मिलाइए।",
+     "explain": "शाबाश!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "cloze",
+     "instruction": "ख़ाली जगह भरिए।",
+     "payload": {
+      "sentence": "'तितली' का बहुवचन ___ है।",
+      "bank": [
+       "चिड़ियाँ",
+       "तितलियाँ",
+       "बहनें"
+      ]
+     },
+     "answer": "तितलियाँ",
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "वचन",
+     "band": 1,
+     "voice": "ख़ाली जगह भरिए।",
+     "explain": "सही उत्तर 'तितलियाँ' है।",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "sort_groups",
+     "instruction": "इन जानवरों को पालतू और जंगली में बाँटिए।",
+     "payload": {
+      "items": [
+       "भैंस",
+       "भालू",
+       "गाय",
+       "शेर",
+       "हाथी",
+       "कुत्ता"
+      ],
+      "bins": [
+       "जंगली जानवर",
+       "पालतू जानवर"
+      ]
+     },
+     "answer": {
+      "शेर": "जंगली जानवर",
+      "भालू": "जंगली जानवर",
+      "हाथी": "जंगली जानवर",
+      "गाय": "पालतू जानवर",
+      "कुत्ता": "पालतू जानवर",
+      "भैंस": "पालतू जानवर"
+     },
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "शब्दावली",
+     "band": 1,
+     "voice": "इन जानवरों को पालतू और जंगली में बाँटिए।",
+     "explain": "शाबाश!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "true_false",
+     "instruction": "सही या ग़लत?",
+     "payload": {
+      "statement": "'मेज़' एक काम शब्द है।"
+     },
+     "answer": false,
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "संज्ञा और क्रिया",
+     "band": 2,
+     "voice": "सही या ग़लत?",
+     "explain": "ग़लत! सही वाक्य है — 'मेज़' एक नाम शब्द है।",
+     "difficulty": 0.3,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "cloze",
+     "instruction": "ख़ाली जगह भरिए।",
+     "payload": {
+      "sentence": "'गाय' का बहुवचन ___ है।",
+      "bank": [
+       "गायें",
+       "लड़के",
+       "तितलियाँ"
+      ]
+     },
+     "answer": "गायें",
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "वचन",
+     "band": 1,
+     "voice": "ख़ाली जगह भरिए।",
+     "explain": "सही उत्तर 'गायें' है।",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

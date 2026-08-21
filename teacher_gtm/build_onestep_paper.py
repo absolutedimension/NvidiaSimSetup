@@ -16,6 +16,7 @@ in type. Never invent a client's logo.
 import argparse
 import base64
 import glob
+import hashlib
 import html
 import io
 import json
@@ -49,6 +50,22 @@ _ACTORS = re.compile(
     r"|\b(?:he|she|his|her|him)\b", re.I)
 
 
+def _enumerated(stem):
+    """True when the stem itself carries a numbered/lettered LIST of claims.
+
+    Matching the WORDING was wrong in both directions and both were live. Listing the two openings
+    that existed at the time missed "Study the following statements". Widening it to "following
+    statements" then swept in "Which one of the following statements is correct?" — whose claims
+    sit in its OPTIONS, leaving a one-line stem, so every question of that form produced the SAME
+    signature and all but the first were discarded as duplicates. Measured: 400 builds, 1 distinct
+    signature, and the style fell from 6 questions a paper to 1.
+
+    The property that actually matters is whether the enumerated content is in the stem. Test for
+    that, not for the sentence that usually introduces it.
+    """
+    return len(re.findall(r"(?m)^\s*(?:\d+|[A-D])\.\s", stem or "")) >= 2
+
+
 def gen_sig(q):
     """Identity of a GENERATED question, independent of the name in the English stem.
 
@@ -77,12 +94,307 @@ def gen_sig(q):
     # same four strings every time. Forty different questions collapsed to ONE signature, so the
     # dedup discarded thirty-nine of them and the General Studies medium band came back with 1
     # question where 8 were asked. For these, the CLAIMS are the identity.
-    if re.search(r"Consider the following statements|Match the following", stem):
+    #
+    # Matched on the SHAPE of the wording, not on a list of stems. It first listed the two openings
+    # that existed when it was written, so "Study the following statements" — the count-the-correct
+    # -statements form, added later — fell through to the generic branch, where its only digits are
+    # the list markers 1, 2, 3 and its options are four fixed rubric strings. That is precisely the
+    # collapse this branch exists to prevent, and it went unnoticed because a paper only trips it
+    # when two such questions happen to carry no other numbers.
+    if _enumerated(stem):
         claims = re.sub(r"(?m)^\s*(?:\d+|[A-D])\.\s*", "", stem)
         claims = re.sub(r"[^a-z0-9\u0900-\u097f]+", "", claims.lower())
         return "|".join([str(q.get("concept") or ""), claims])
     return "|".join([str(q.get("concept") or q.get("qtype") or ""), ",".join(nums),
                      "~".join(opts), body])
+
+
+def template_sig(q):
+    """The SHAPE of a question — its stem with every number replaced by '#'.
+
+    This is deliberately the OPPOSITE of `gen_sig`. gen_sig keeps two questions apart when their
+    numbers differ, because they are two different questions to mark. template_sig collapses them
+    together, because they are the same question to READ — and reading is what the customer does.
+
+    A delivered paper printed SEVEN CONSECUTIVE questions of the form "(x)^2 + a/b - p% of c".
+    gen_sig saw seven distinct questions and was right; every structural check passed. What no
+    check measured was that a reader sees one question asked seven times. Part III has had a
+    per-concept cap since the owner complained about clustering there; Part II had nothing.
+    """
+    stem = re.sub(r"<[^>]+>", "", str(q.get("stem") or ""))
+    return re.sub(r"\s+", " ", re.sub(r"\d+(?:\.\d+)?", "#", stem)).strip()
+
+
+def _run_cost(bands):
+    """Sum of squared hard-run lengths — one wall of 9 costs far more than three runs of 3."""
+    return sum(len(m.group()) ** 2 for m in re.finditer(r"H+", bands))
+
+
+def break_hard_runs(blocks, limit=4):
+    """Cap how many hard questions can appear back to back ANYWHERE in the paper.
+
+    `blocks` are the units a question may move WITHIN — Part I, Part II's science slice, Part II's
+    maths slice, Part III — in printed order. The runs are measured across the whole concatenated
+    paper, because that is how a candidate reads it, but a swap never crosses a block. The first
+    version took whole SECTIONS as the unit and promptly undid a deliberate decision: Part II
+    stopped opening with its science block, because a maths question had been swapped in front of
+    it. Measuring globally and moving locally is the whole trick.
+
+    Each block is paced independently by `spread_questions`, so a block that ends hard followed by
+    one that begins hard produces a run neither block can see. Measured on the first build at 75%
+    hard: EIGHT consecutive hard questions across the Part I / Part II boundary — evenly spread
+    inside each section, and a wall to a candidate reading straight through, which is the only way
+    the paper is ever read.
+
+    A phase offset per block was tried first and made it NINE, because where a boundary lands
+    depends on both blocks' band counts and I was guessing. This measures instead: it only ever
+    accepts a swap that lowers the sum of squared run lengths, so it cannot oscillate and cannot
+    make the paper worse.
+    """
+    secs = blocks
+    off, n = [], 0
+    for items in secs:
+        off.append(n)
+        n += len(items)
+    # The band string is carried and mutated rather than rebuilt from the questions for every
+    # candidate swap — there are tens of thousands of candidates and rebuilding made the pass the
+    # slowest thing in the build.
+    b = ["H" if _band(q) == 3 else "-" for items in secs for q in items]
+
+    for _ in range(400):
+        s = "".join(b)
+        if max((len(m.group()) for m in re.finditer(r"H+", s)), default=0) <= limit:
+            break
+        best, best_cost = None, _run_cost(s)
+        for si, items in enumerate(secs):
+            hard = [i for i in range(len(items)) if b[off[si] + i] == "H"]
+            soft = [i for i in range(len(items)) if b[off[si] + i] != "H"]
+            for i in hard:
+                gi = off[si] + i
+                for j in soft:
+                    gj = off[si] + j
+                    b[gi], b[gj] = b[gj], b[gi]
+                    c = _run_cost("".join(b))
+                    b[gi], b[gj] = b[gj], b[gi]
+                    if c < best_cost:
+                        best, best_cost = (si, i, j), c
+        if not best:
+            break                       # nothing left that improves it
+        si, i, j = best
+        secs[si][i], secs[si][j] = secs[si][j], secs[si][i]
+        b[off[si] + i], b[off[si] + j] = b[off[si] + j], b[off[si] + i]
+    return blocks
+
+
+def ask_style(stem):
+    """Which of the commission's ASKING styles a question is in — the same buckets the real papers
+    were classified into, so target and outcome are measured on one ruler."""
+    t = re.sub(r"\s+", " ", str(stem or "").strip())
+    low = t.lower()
+    if re.search(r"statement", low) and re.search(r"(?:^|\s)(?:\d+|[ivx]+)[.)]\s", t):
+        return "statement-list"
+    if re.search(r"match|list[- ]?i\b|column", low):
+        return "match-list"
+    if re.search(r"_{2,}", t):
+        return "fill-in-blank"
+    if re.search(r"\bnot\b|\bexcept\b|incorrect|mismatch|\bwrong\b|\bodd\b", low):
+        return "negative-select"
+    if re.search(r"which of the following|which one of the following", low):
+        return "which-of-following"
+    if re.search(r"^(what|who|when|where|why|how|whom|whose|in which|by whom|name the)\b", low):
+        return "direct-wh"
+    if re.search(r"\bwhich\b", low):
+        return "embedded-which"
+    if not t.endswith("?"):
+        return "sentence-completion"
+    return "other"
+
+
+def question_topics(q):
+    """The SYLLABUS topics a question examines, as (english, hindi) pairs.
+
+    Not the same thing as its concept. The concept is what we built ("Simplification (BODMAS)",
+    "Correctly Matched Pair"); the topic is what the commission's own advertisement names
+    (पूर्ण संख्याओं का अभिकलन, राजधानी / मुद्रा). Only the second one can show whether a paper
+    covers the syllabus, because only the second one has the syllabus as its denominator.
+
+    A General Studies statement question genuinely spans up to THREE topics — it draws a separate
+    fact table per statement — so this returns a list, not one value, and the coverage table counts
+    every topic a question touches. Pretending such a question has a single topic would report a
+    distribution the paper does not have.
+    """
+    import syllabus_blueprint as SB
+    sec = (q.get("tag") or {}).get("section") or ""
+    keys = list(q.get("src") or []) or [q.get("concept") or "?"]
+    out = []
+    for k in keys:
+        for s in (sec, "General Studies", "Mathematics", "Reasoning", "General Science"):
+            t = next((t for t in SB.topics(s)
+                      if k in (t.get("concepts") or []) or k in (t.get("builders") or [])), None)
+            if t:
+                if (t["en"], t["hi"]) not in out:
+                    out.append((t["en"], t["hi"]))
+                break
+    return out
+
+
+def short_hi(hi):
+    """A syllabus topic short enough for a per-question badge.
+
+    The full names are the commission's own and belong in the coverage table, where there is room
+    for them — "भारत का संविधान एवं राज्य व्यवस्था" is right there and unreadable in a 150px badge.
+    Cut at the first separator rather than at a character count, so the label always ends on a word.
+    """
+    s = str(hi).split(" / ")[0].strip()
+    for sep in (" एवं ", " तथा "):
+        if len(s) > 24 and sep in s:
+            s = s.split(sep)[0].strip()
+    return s
+
+
+def coverage_table(items):
+    """A topic x difficulty grid for one section, as printable HTML.
+
+    150 badges tell you what each question IS; only a table tells you what the SECTION is. Both of
+    the owner's complaints — "only one topic", "style is similar" — are properties of the section,
+    invisible while reading any single question, and obvious in three lines of a table. So the
+    table carries the two counts that would have caught them: questions per syllabus topic, and
+    how many DISTINCT question types the section used.
+
+    Topic counts sum to MORE than the section size when a General Studies statement question draws
+    three tables. That is stated in the caption rather than hidden by picking one topic per
+    question, because the alternative is a tidy number that is not true.
+    """
+    from collections import Counter
+    per_topic, per_band, types = Counter(), {}, Counter()
+    for q in items:
+        b = _band(q)
+        types[str(q.get("concept") or "?")] += 1
+        for _en, hi in question_topics(q) or [("?", "अन्य")]:
+            per_topic[hi] += 1
+            per_band.setdefault(hi, Counter())[b] += 1
+    if not per_topic:
+        return ""
+    rows = ""
+    for hi, n in per_topic.most_common():
+        c = per_band[hi]
+        rows += (f'<tr><td>{esc(hi)}</td><td class="n">{c[1]}</td><td class="n">{c[2]}</td>'
+                 f'<td class="n">{c[3]}</td><td class="n"><b>{n}</b></td></tr>')
+    tot = Counter(_band(q) for q in items)
+    # The band columns count QUESTIONS here but topic TOUCHES above, so the row is labelled for
+    # what it is. A total that silently means something different from the column above it is the
+    # kind of tidy number this file has been burned by before.
+    rows += (f'<tr><th>कुल प्रश्न / Questions</th><th class="n">{tot[1]}</th><th class="n">{tot[2]}</th>'
+             f'<th class="n">{tot[3]}</th><th class="n">{len(items)}</th></tr>')
+    top = types.most_common(1)[0]
+    return (f'<table class="cov"><caption>विषय-वार एवं कठिनाई-वार वितरण / Topic &amp; difficulty '
+            f'spread — {len(types)} distinct question types, most-used {top[1]}&times; '
+            f'({esc(top[0])}). एक प्रश्न एक से अधिक विषय छू सकता है, अतः विषय-योग '
+            f'{sum(per_topic.values())} है।</caption>'
+            f'<tr><th>विषय / Topic</th><th class="n">सरल</th><th class="n">मध्यम</th>'
+            f'<th class="n">कठिन</th><th class="n">कुल</th></tr>{rows}</table>')
+
+
+def _band(q):
+    """1 easy / 2 medium / 3 hard — the three bands the difficulty badge prints."""
+    d = (q.get("tag") or {}).get("difficulty") or q.get("difficulty") or 2
+    try:
+        d = int(d)
+    except (TypeError, ValueError):
+        d = 2
+    return 3 if d >= 3 else (1 if d <= 1 else 2)
+
+
+def spread_questions(items, rng, phase=0.5):
+    """Order a section on three axes at once: DIFFICULTY, CONCEPT and SHAPE.
+
+    Difficulty is the primary one, and it is here because of the survey. Asked "where should the
+    hard questions sit", the answer was **"spread evenly through the paper"** — and the builder did
+    no difficulty ordering whatsoever, so where a hard question landed was a side effect of the
+    draw. At 75% hard that matters more, not less: the fifteen easy questions are the only places a
+    weaker student gets a foothold, and all fifteen arriving together is a different paper from
+    fifteen spaced through the section.
+
+    So at each slot, take the band that is furthest BEHIND an even spacing — the k-th question of a
+    band belongs at (k + ½)·N/n_band — then inside that band prefer a concept that is not the one
+    just printed, and among those a question whose shape is not the one just printed.
+
+    Concept and shape are the other two axes, and they are here because clustering has levels and
+    fixing one moves the problem up. Spreading by shape alone was tried first and the rebuilt page
+    came back with ten consecutive computation questions — ten genuinely different shapes, which a
+    reader still experiences as "ten sums in a row". That is the owner's "it contains only one
+    topic" complaint one level above where it was first found.
+
+    All three are the standard greedy spread: optimal whenever a conflict-free ordering exists, and
+    degrading to "as separated as possible" when one does not — which is what a section with a
+    dominant concept, or with 75% of its questions in one band, actually needs.
+
+    `phase` shifts where a band's first and last questions fall inside the block. Sections are
+    paced INDEPENDENTLY, so with the same phase every block ends hard and the next begins hard: the
+    first build put EIGHT consecutive hard questions across the Part I/Part II boundary, evenly
+    spread within each section and a wall to anyone reading straight through. Alternating the phase
+    between blocks makes them meet on an easier question.
+    """
+    from collections import Counter, defaultdict
+    buckets = defaultdict(list)
+    for q in items:
+        # The spread key is the style AND the fact table it drew from. Style alone was enough
+        # while each style had one look; once "Sentence Completion" became 38% of Part I it
+        # covered "छऊ नृत्य है —", "गरबा नृत्य है —" and "संविधान का अनुच्छेद 356 संबंधित है —"
+        # alike, and the page came back with three dance completions in four questions. What a
+        # reader experiences as "the same question again" is the table plus the phrasing.
+        key = str(q.get("concept") or "?") + "|" + ",".join(q.get("src") or [])
+        buckets[(_band(q), key)].append(q)
+
+    for key, qs in list(buckets.items()):                  # shapes round-robin inside each bucket
+        shapes = defaultdict(list)
+        for q in qs:
+            shapes[template_sig(q)].append(q)
+        for v in shapes.values():
+            rng.shuffle(v)
+        order, dealt = sorted(shapes, key=lambda s: (-len(shapes[s]), s)), []
+        while any(shapes[s] for s in order):
+            for s in order:
+                if shapes[s]:
+                    dealt.append(shapes[s].pop())
+        buckets[key] = dealt
+
+    n = len(items)
+    total = Counter(_band(q) for q in items)
+    taken, out, prev_c, prev_s = Counter(), [], None, None
+    for i in range(n):
+        avail = [b for b in total if taken[b] < total[b]]
+        # how far past its even-spacing slot this band's next question already is
+        # JITTER, and it is not decoration. Perfectly even spacing over regular band counts IS a
+        # cycle: Part I came out 20 easy / 20 medium / 10 hard and the printed difficulty string had
+        # an EXACT period of 5 — M-E-H-M-E repeating for all fifty questions — while the statement
+        # style landed on questions 3, 8, 13, 18, 23, 28, every fifth one without a single miss.
+        # The institute's owner spotted it by eye: "ye machine se bana lag raha hai", and a student
+        # who notices can predict whether question 33 is hard before reading it.
+        #
+        # Half a slot of seeded noise swaps neighbours that were already near-tied, so the spacing
+        # stays even ON AVERAGE and stops being predictable. Seeded, so a rebuild reproduces, and
+        # break_hard_runs still caps any run the jitter lengthens.
+        # Prefer a band that can still offer something OTHER than what was just printed. The
+        # jitter can otherwise land on a band whose only remaining bucket is the previous one,
+        # forcing an adjacent repeat that the concept filter below is then powerless to avoid —
+        # measured at 4 such pairs, against 0 before the jitter was added.
+        free = [b for b in avail
+                if any(c != prev_c for (bb, c) in buckets if bb == b and buckets[(bb, c)])]
+        b = max(free or avail,
+                key=lambda b: (i - (taken[b] + phase) * n / total[b] + rng.uniform(-.5, .5),
+                               -total[b], b))
+        cs = [c for (bb, c) in buckets if bb == b and buckets[(bb, c)]]
+        pick = [c for c in cs if c != prev_c] or cs
+        pick = [c for c in pick if template_sig(buckets[(b, c)][0]) != prev_s] or pick
+        # Ties on "most remaining" used to fall to alphabetical order, which is another fixed
+        # cycle. Break them randomly instead.
+        c = max(pick, key=lambda c: (len(buckets[(b, c)]), rng.random()))
+        q = buckets[(b, c)].pop(0)
+        out.append(q)
+        taken[b] += 1
+        prev_c, prev_s = c, template_sig(q)
+    return out
 
 
 def qid(q):
@@ -179,7 +491,7 @@ def _numkey(q):
     # and "A. B. C. D." are list markers, so two entirely different statement questions with the
     # same answer looked like the same computation and the uniqueness check failed on them. The
     # numeric key exists for arithmetic; strip the enumeration before applying it.
-    if re.search(r"Consider the following statements|Match the following", stem):
+    if _enumerated(stem):
         stem = re.sub(r"(?m)^\s*(?:\d+|[A-D])\.\s*", "", stem)
     nums = tuple(sorted(re.findall(r"\d+\.?\d*", stem)))
     ans = next((o["text"] for o in q.get("options") or []
@@ -408,6 +720,14 @@ def generate_whole_section(secs, want, mix, gen_taken, bilingual, salt=0):
                 gen_taken.add(gen_sig(q))
                 q.setdefault("tag", {})["section"] = list(secs)[0]
             out += extra
+        # A top-up appends whatever it can find, AFTER the section has already been spread — so
+        # two questions of one shape can land next to each other at the join. Re-spread Part II
+        # here rather than trusting that the top-up never fires. Split on source rather than on
+        # the tag, because the loop above overwrites the tag with `list(secs)[0]`.
+        if "Mathematics" in secs:
+            sci = [q for q in out if q.get("source_pdf") in ("sciencegen", "science_tables")]
+            mat = [q for q in out if q.get("source_pdf") not in ("sciencegen", "science_tables")]
+            out = spread_questions(sci, rng) + spread_questions(mat, rng)
     return out[:want]
 
 
@@ -460,26 +780,76 @@ def gs_tables():
     else:
         print("  note: history/freedom-movement tables are BUILT but NOT REVIEWED — "
               "39 facts held back from the paper (see drop/bssc/HISTORY_REVIEW.md)")
+    # बिहार. The advertisement names Bihar as its own emphasis and the delivered paper carried
+    # THREE Bihar questions in 150, all of them "Patna is the capital of which state?". Same human
+    # gate as history, and for a stronger reason: these are the rows a Patna institute owner checks
+    # first, so a hand-written slip here costs the account rather than a mark.
+    # Current affairs is 8.2% of the real GS papers and we had zero. It is NOT a fact table —
+    # each row is a standalone question — so it is not added to `t`; the GS draw calls
+    # current_affairs.build() directly. Reported on every build either way, because a
+    # current-affairs table that has gone stale looks identical to one that is simply absent.
+    from qbank import current_affairs
+    print("  note: " + current_affairs.status())
+    from qbank import bihar_tables
+    if bihar_tables.REVIEWED:
+        staticgk_hi.register(bihar_tables.HI)
+        for name in ("BIHAR_SITE_DISTRICT", "BIHAR_GI_PRODUCT",
+                     "BIHAR_FREEDOM_ROLE", "BIHAR_FOLK_REGION"):
+            t[name] = getattr(bihar_tables, name)
+    else:
+        n = sum(len(x) for x in bihar_tables._TABLES.values())
+        print(f"  note: BIHAR tables are BUILT but NOT REVIEWED — {n} facts held back "
+              f"(see drop/bssc/BIHAR_REVIEW.md, then set bihar_tables.REVIEWED)")
     return t
 
 
 # No GS style may take more than this share of the section. The delivered paper ran one opening
 # line ("Consider the following statements") 35 times out of 50 and the institute's owner said so:
 # "question is good but style is similar". Ten is a fifth of the section.
-GS_STYLE_CAP = 10
+# A ceiling, not a target. It was 10 of 50 when the section round-robinned across six forms we
+# happened to own; now the weighted slot list IS the quota and the commission's own largest style
+# is 36% of its paper, so a cap of 10 would fight the very distribution we are copying. Kept only
+# to stop a runaway if the weighting is ever mis-specified.
+GS_STYLE_CAP = 24
 
 
 def _gs_row(b, d):
-    opts = [{"label": l, "text": t} for l, t in
-            zip("ABCD", [b["correct"]] + list(b["distractors"])[:3])]
+    # 🔴 ROTATE THE ANSWER OUT OF SLOT A.
+    # Written without this, the correct option was simply placed first and the key hardcoded to
+    # "A". Measured on a DELIVERED paper: 46 of Part I's 50 answers were (A), so a candidate who
+    # marked A all the way down Part I scored 184 of 200 without reading a single question.
+    # Every check passed — the key letter was present among the options, and every independent
+    # solver agreed with it — because not one of them looked at the DISTRIBUTION of key letters.
+    # quantgen and reasoninggen rotate inside their own _mcq, which is why Parts II and III were
+    # evenly spread and this stayed invisible.
+    # Keyed on the stem so it is deterministic: a pinned rebuild reproduces the same paper.
+    texts = [b["correct"]] + list(b["distractors"])[:3]
+    # Hash the ANSWER as well as the stem. Keyed on the stem alone this was still lopsided —
+    # B took 23 of 50 — because the pair and statement forms print ONE fixed stem
+    # ("Which of the following pairs is correctly matched?") for every question they build, so
+    # every question of that style hashed to the same rotation. The answer text is what actually
+    # varies question to question.
+    seed = (b["stem"] or "") + "|" + str(b["correct"])
+    rot = int(hashlib.md5(seed.encode("utf-8")).hexdigest(), 16) % len(texts)
+    texts = texts[-rot:] + texts[:-rot] if rot else texts
+    opts = [{"label": l, "text": t} for l, t in zip("ABCD", texts)]
     hm = b.get("hi_opts") or {}
     return {"stem": b["stem"], "stem_hi": b["stem_hi"], "options": opts,
             "options_hi": [{"label": o["label"], "text": hm.get(o["text"], o["text"])}
                            for o in opts],
-            "correct_answer": "A", "solution": b["solution"],
+            "correct_answer": "ABCD"[rot], "solution": b["solution"],
             "solution_hi": b.get("solution_hi", ""), "concept": b["concept"],
+            "src": list(b.get("src") or []), "fact": b.get("fact"),
             "_generated": True, "source_pdf": "staticgk_forms", "number": None,
-            "tag": {"section": "General Studies", "difficulty": d}}
+            # A builder that KNOWS what its question demands overrides the band that asked for
+            # it. Stamping the loop variable is how a capital-city recall printed "कठिन / Hard".
+            "tag": {"section": "General Studies", "difficulty": b.get("difficulty") or d}}
+
+
+# How many questions of one SHAPE Part II may print. Part III's per-concept cap is 4 of 50; a
+# shape is narrower than a concept, so this is tighter. It is relaxed a step at a time, loudly,
+# if the generators cannot fill the section under it.
+MATHS_TEMPLATE_CAP = 2
 
 
 def generate_maths_section(want, mix, gen_taken, bilingual, rng):
@@ -499,6 +869,23 @@ def generate_maths_section(want, mix, gen_taken, bilingual, rng):
     from qbank import quantgen, sciencegen
     sci_want = max(1, round(want * 0.25))               # ~1 in 4 of Part II is General Science
     out = []
+    # One shared ceiling on how often any one SHAPE may appear in Part II, spent across the science
+    # slice and the maths slice alike. `cap` is a list so the top-up loop can relax it — a short
+    # section is a worse outcome than a slightly repetitive one, and relaxing loudly beats
+    # returning 46 questions quietly.
+    tmpl, cap = Counter(), [MATHS_TEMPLATE_CAP]
+
+    def take(row):
+        """Accept a drawn row, or reject it as a duplicate question or an over-used shape."""
+        if gen_sig(row) in gen_taken:
+            return False
+        t = template_sig(row)
+        if tmpl[t] >= cap[0]:
+            return False
+        gen_taken.add(gen_sig(row))
+        tmpl[t] += 1
+        return True
+
     # ---- General Science slice, drawn to the blueprint's subject quotas
     # Physics comes from sciencegen (computed numericals); chemistry from the verified fact tables
     # through the same statement/pair FORMS General Studies uses, so a chemistry question is as
@@ -524,9 +911,8 @@ def generate_maths_section(want, mix, gen_taken, bilingual, rng):
                            "concept": sq.concept, "_generated": True,
                            "source_pdf": "sciencegen", "number": None,
                            "tag": {"section": "General Science", "difficulty": d}}
-                    if gen_sig(row) in gen_taken:
+                    if not take(row):
                         continue
-                    gen_taken.add(gen_sig(row))
                     out.append(row); got_s += 1
         elif fact_tables:
             from qbank import staticgk_forms as SF
@@ -542,11 +928,11 @@ def generate_maths_section(want, mix, gen_taken, bilingual, rng):
                 # The FORM name is not the subject. Tag the subject explicitly, or the syllabus
                 # report cannot tell a chemistry question from a capitals one.
                 row["concept"] = subject
+                row["src"] = [subject]          # keep the tag on the SUBJECT, as the map keys it
                 row["tag"]["section"] = "General Science"
                 row["source_pdf"] = "science_tables"
-                if gen_sig(row) in gen_taken:
+                if not take(row):
                     continue
-                gen_taken.add(gen_sig(row))
                 out.append(row); got_s += 1
         if got_s < n_want:
             print(f"  note: General Science drew {got_s} of {n_want} for {subject}")
@@ -578,9 +964,8 @@ def generate_maths_section(want, mix, gen_taken, bilingual, rng):
                    "source_pdf": "quantgen", "number": None}
             if bilingual and (not q.stem_hi or not inter_level_ok(row)):
                 continue
-            if gen_sig(row) in gen_taken:
+            if not take(row):
                 continue
-            gen_taken.add(gen_sig(row))
             return row
         return None
 
@@ -618,6 +1003,14 @@ def generate_maths_section(want, mix, gen_taken, bilingual, rng):
             if row:
                 out.append(row); got[topic] += 1; progress = True
         if not progress:
+            # Nothing left within the current shape ceiling. Raise it by one and say so, rather
+            # than either printing a short section or repeating a shape silently — the two
+            # failure modes this file keeps rediscovering.
+            if cap[0] < 4:
+                cap[0] += 1
+                print(f"  note: no shapes left under a cap of {cap[0] - 1} per template — "
+                      f"relaxing Part II to {cap[0]}")
+                continue
             break
     if len(out) < want:
         print(f"  note: Part II is {want - len(out)} short of the blueprint — no bilingual "
@@ -626,7 +1019,23 @@ def generate_maths_section(want, mix, gen_taken, bilingual, rng):
     for line in SB.report("Mathematics", maths_only):
         print(line)
     print(f"      (+ {len(out) - len(maths_only)} General Science questions in Part II)")
-    return out[:want]
+
+    # Print the shape spread on EVERY build. Nothing ever said what had been drawn, which is the
+    # only reason seven identical templates in a row survived two deliveries.
+    spread = Counter(template_sig(q) for q in out)
+    worst = spread.most_common(3)
+    print(f"      shapes — {len(spread)} distinct templates in {len(out)} questions, "
+          f"most-repeated {worst[0][1] if worst else 0}x")
+    for s, c in worst:
+        if c > 1:
+            print(f"        {c}x  {s[:78]}")
+
+    # Science first, then maths — the section is named "सामान्य विज्ञान एवं गणित" and a candidate
+    # expects the two subjects in blocks. Spread WITHIN each block, so no two questions of the same
+    # shape are ever adjacent.
+    sci = spread_questions([q for q in out if q["tag"]["section"] != "Mathematics"], rng)
+    mat = spread_questions(maths_only, rng)
+    return (sci + mat)[:want]
 
 
 def _builders_for(section, topic_en):
@@ -653,33 +1062,158 @@ def generate_gs_section(want, mix, gen_taken, bilingual, rng):
     """
     from collections import Counter
     from qbank import staticgk_forms as SF
+    import syllabus_blueprint as SB
     tables = gs_tables()
-    hard = [SF.b_multi_statement(tables), SF.b_match_pairs(tables), SF.b_correct_pair(tables),
-            SF.b_wrong_pair(tables), SF.b_count_statements(tables), SF.b_which_statement(tables)]
-    med = [SF.b_two_statement(tables), SF.b_count_statements(tables), SF.b_correct_pair(tables),
-           SF.b_which_statement(tables)]
-    out, used = [], Counter()
-    for d, builders, n in ((3, hard, mix.get(3, 0)), (2, med, mix.get(2, 0))):
+    # Which fact tables serve each SYLLABUS topic. The forms choose a table for themselves when
+    # handed the whole dict, so the section spread across STYLES perfectly and across TOPICS not at
+    # all — measured on a tagged build, राजधानी took 27 of 50 while the blueprint asks for ~10.
+    # Handing a builder only the target topic's tables is what makes the topic quota real, and it
+    # is the same fix Part II's maths draw needed for the same reason.
+    topic_tables = {}
+    for t in SB.topics("General Studies"):
+        names = [c for c in (t.get("concepts") or []) if c in tables]
+        if names:
+            topic_tables[t["en"]] = names
+    quota = {k: v for k, v in SB.quotas("General Studies", want).items() if k in topic_tables}
+    # ── THE COMMISSION'S OWN ASKING MIX ────────────────────────────────────────────────────────
+    # Weights are the MEASURED shares of 552 official General Studies questions (see the
+    # qbank/gs_ask docstring), renormalised after dropping "word problem", which a fact table
+    # cannot produce and which Parts II and III already carry.
+    #
+    # What this replaces: six statement/match/pair forms in a flat round-robin, which put 44% of
+    # the section in match-list and 30% in statement-list — 74% in two styles that are 2.7% of the
+    # real exam, and NONE in the commission's largest style. Every "spread" report was green,
+    # because they measured the spread across the styles we happened to own.
+    from qbank import gs_ask as GA
+
+    def _ask(style):
+        def factory(tbls):
+            def build(rng, diff):
+                names = [n for n in tbls if style in (GA.ASK.get(n) or {})]
+                return GA.build(tbls, rng.choice(names), style, rng, diff) if names else None
+            return build
+        return factory
+
+    def _neg():
+        def factory(tbls):
+            def build(rng, diff):
+                return GA.build_neg_statement(tbls, rng, diff)
+            return build
+        return factory
+
+    def _odd():
+        def factory(tbls):
+            def build(rng, diff):
+                names = list(tbls)
+                return GA.build_odd(tbls, rng.choice(names), rng, diff) if names else None
+            return build
+        return factory
+
+    # Factory, the classifier bucket it is MEANT to land in, and the commission's measured share
+    # of that bucket (renormalised over the styles a fact table can produce). Selection below is
+    # driven by the DEFICIT against these shares, measured on the questions actually produced.
+    #
+    # Fixed weights were tried first and could not hold the distribution, because a weight is an
+    # intention and the output is what matters: b_wrong_pair had a perfectly good yield (220 of
+    # 300) and still produced 0-1 questions a paper, because 3 slots out of 100 over a 38-question
+    # draw is one question. Meanwhile _ask("wh") was WORDED as an embedded-which and quietly
+    # spent the direct-wh budget on the wrong bucket. Counting the outcome fixes both.
+    spec = [(_ask("comp"), "sentence-completion", 36.2),
+            (_ask("wh"), "direct-wh", 16.7),
+            (_ask("rev"), "embedded-which", 14.3),
+            (SF.b_which_statement, "which-of-following", 9.2),
+            # Split across two negative forms: the odd-one-out can only build where three keys
+            # share a value (Kerala's dances, and nothing else in our tables), so on its own it
+            # capped the bucket at one question however the weight was set.
+            (_neg(), "negative-select", 3.6),
+            (_odd(), "negative-select", 1.5),
+            # ⚠️ The bucket is the one the CLASSIFIER puts the output in, not the one the builder
+            # is named after. "Which of the following pairs is NOT correctly matched?" contains
+            # "matched", so it scores as match-list — and labelling it negative-select here left
+            # that bucket permanently unfilled, so its deficit never closed and the selector chose
+            # it ELEVEN times against a target of two. Exactly the intention-vs-outcome trap this
+            # selector exists to avoid, reproduced inside its own configuration.
+            (SF.b_wrong_pair, "match-list", 1.0),
+            (SF.b_correct_pair, "match-list", 0.9),
+            (SF.b_match_pairs, "match-list", 0.6),
+            (_ask("blank"), "fill-in-blank", 1.3)]
+    total_share = sum(sh for _f, _s, sh in spec)
+    out, used, by_topic, facts_used = [], Counter(), Counter(), set()
+
+    def next_topic():
+        """The syllabus topic furthest below its quota — ties broken deterministically."""
+        return max(quota, key=lambda t: (quota[t] - by_topic[t], t)) if quota else None
+
+    by_style = Counter()
+
+    def next_factory(n_target, blocked):
+        """The style furthest BELOW the commission's share of it, measured on what we have built.
+
+        `blocked` holds the factories that already failed this round. Without it the selector
+        re-picked the same failing style on every slot — its deficit cannot close if it never
+        produces anything — so a round burned all its slots on one dead builder and the section
+        fell ten questions short, to be topped up by an UNSTEERED recall generator that pushed
+        direct-wh from 17% to 30%. A style that cannot build has to yield its turn.
+        """
+        live = [fs for fs in spec if id(fs[0]) not in blocked] or spec
+        return max(live, key=lambda fs: (fs[2] / total_share * n_target - by_style[fs[1]],
+                                         -spec.index(fs)))
+
+    # One pass to fill the section. There is no longer a per-BAND loop: difficulty is now derived
+    # from the question (gs_ask.difficulty_of), not requested, so asking for "a hard one" and
+    # stamping the answer would be the very thing that printed कठिन on "The capital of Rajasthan
+    # is". Every draw asks for the hardest form of its style — the tightest distractors available —
+    # and the difficulty that comes out is reported rather than chosen.
+    for d, factories, n in ((3, spec, want),):
         got, rounds = 0, 0
         while got < n and rounds < 400:
             rounds += 1
             progress = False
-            for build in builders:                      # one from each style, then round again
+            blocked = set()
+            for _slot in range(len(spec)):
                 if got >= n:
                     break
-                for _ in range(25):                     # a style may need a few tries to land
-                    b = build(rng, d)
-                    if not b or (bilingual and not b.get("stem_hi")):
-                        continue
-                    if used[b["concept"]] >= GS_STYLE_CAP:
+                factory = next_factory(n, blocked)[0]
+                topic = next_topic()
+                sub = {k: tables[k] for k in topic_tables[topic]} if topic else tables
+                # Restricting to one topic's tables starves some styles: a "which pair is NOT
+                # correctly matched" needs four rows whose values are all distinct, and one small
+                # table cannot always supply them. Steering the topic that way took two styles from
+                # six questions each down to ONE — trading the owner's "style is similar"
+                # complaint for his "only one topic" complaint. So the restriction is a PREFERENCE:
+                # if a style cannot build within the target topic, it builds from everything and
+                # the topic it actually produced is what gets counted.
+                placed = False
+                for build in (factory(sub), factory(tables)):
+                    for _ in range(25):                 # a style may need a few tries to land
+                        b = build(rng, d)
+                        if not b or (bilingual and not b.get("stem_hi")):
+                            continue
+                        if used[b["concept"]] >= GS_STYLE_CAP:
+                            break
+                        row = _gs_row(b, d)
+                        if gen_sig(row) in gen_taken:
+                            continue
+                        if row.get("fact") and row["fact"] in facts_used:
+                            continue      # same table row, different phrasing — one question
+                        gen_taken.add(gen_sig(row))
+                        if row.get("fact"):
+                            facts_used.add(row["fact"])
+                        used[b["concept"]] += 1
+                        # Count the topic the question ACTUALLY covers, not the one that was asked
+                        # for — the fallback above can return a different one, and a quota fed by
+                        # intentions rather than outcomes reports a spread the paper does not have.
+                        for en, _hi in question_topics(row):
+                            if en in quota:
+                                by_topic[en] += 1
+                                break
+                        by_style[ask_style(row["stem"])] += 1
+                        out.append(row); got += 1; progress = placed = True
                         break
-                    row = _gs_row(b, d)
-                    if gen_sig(row) in gen_taken:
-                        continue
-                    gen_taken.add(gen_sig(row))
-                    used[b["concept"]] += 1
-                    out.append(row); got += 1; progress = True
-                    break
+                    if placed:
+                        break
+                if not placed:
+                    blocked.add(id(factory))
             if not progress:
                 break
         if got < n:
@@ -690,6 +1224,9 @@ def generate_gs_section(want, mix, gen_taken, bilingual, rng):
     print(f"  Part I style spread: {len(out)} questions over {len(spread)} styles, "
           f"most-used {max(spread.values(), default=0)} — "
           + ", ".join(f"{k} {v}" for k, v in spread.most_common()))
+    for line in SB.report("General Studies", out,
+                          concept_of=lambda q: (q.get("src") or [q.get("concept") or "?"])[0]):
+        print(line)
     return out[:want]
 
 
@@ -735,6 +1272,7 @@ def generate_gs_forms(n, exclude_sigs, bilingual):
                                   for o in opts],
                    "correct_answer": "A", "solution": b["solution"],
                    "solution_hi": b.get("solution_hi", ""), "concept": b["concept"],
+                   "src": list(b.get("src") or []),
                    "_generated": True,
                    "tag": {"section": "General Studies", "difficulty": 3},
                    "source_pdf": "staticgk_forms", "number": None}
@@ -1233,14 +1771,25 @@ def main():
             # paper: the Hindi kinship fix landed in REASONING_GEN.json and the paper went on
             # printing पोती for a daughter's daughter. A pin should fix WHICH questions the paper
             # asks, not freeze a stale copy of their text.
-            live = {re.sub(r"\s+", " ", (g.get("stem") or "")).strip(): g
-                    for g in load_generated(10 ** 6)}
-            refreshed = sum(1 for g in full
-                            if re.sub(r"\s+", " ", (g.get("stem") or "")).strip() in live)
-            full = [live.get(re.sub(r"\s+", " ", (g.get("stem") or "")).strip(), g) for g in full]
-            if refreshed:
+            # Refresh ONLY where the stem identifies exactly one pool row. `load_generated`
+            # shuffles, so a last-wins dict silently picked either of two rows sharing a stem, and
+            # a pinned rebuild came back with one distractor changed from OTTER to TREAT — same
+            # question, same key, not the file the institute is holding, and the line below still
+            # said "exact". Where the pool is ambiguous the frozen copy wins and the count says so.
+            by_stem = {}
+            for g in load_generated(10 ** 6):
+                by_stem.setdefault(re.sub(r"\s+", " ", (g.get("stem") or "")).strip(), []).append(g)
+
+            def _key(g):
+                return re.sub(r"\s+", " ", (g.get("stem") or "")).strip()
+            refreshed = sum(1 for g in full if len(by_stem.get(_key(g), ())) == 1)
+            ambiguous = sum(1 for g in full if len(by_stem.get(_key(g), ())) > 1)
+            full = [by_stem[_key(g)][0] if len(by_stem.get(_key(g), ())) == 1 else g for g in full]
+            if refreshed or ambiguous:
                 print(f"  PIN: refreshed {refreshed}/{len(full)} generated questions from the "
-                      f"current pool (corrections propagate; the selection stays pinned)")
+                      f"current pool (corrections propagate; the selection stays pinned)"
+                      + (f"; kept {ambiguous} frozen copy(ies) whose stem matches more than one "
+                         f"pool row" if ambiguous else ""))
             pinned_gen = [dict(g, _generated=True) for g in full
                           if numbers_agree(g) and not analogy_ambiguous(g)
                           and not odd_one_out_ambiguous(g)]
@@ -1272,8 +1821,21 @@ def main():
             got = [q for q in pin_pool if q["tag"]["section"] in secs][:want]
             for q in got:
                 pin_pool.remove(q)
-            if idx == len(SPEC) - 1:
-                got = got + pin_gen[:want - len(got)]
+            # Route the pinned GENERATED questions by their own section tag, exactly like the real
+            # ones. They used to be handed to the last section only, which was harmless when a
+            # paper was mostly real questions with a generated tail — and silently catastrophic
+            # once papers went 100% generated on 2026-08-20: Parts I and II matched nothing, so a
+            # pinned rebuild drew 100 FRESH questions while the log said "exact, from gen_full".
+            # A pin that replaces two thirds of the paper is worse than one that refuses, because
+            # the line above it says the opposite.
+            if len(got) < want:
+                take = [q for q in pin_gen
+                        if (q.get("tag") or {}).get("section") in secs][:want - len(got)]
+                for q in take:
+                    pin_gen.remove(q)
+                got += take
+            if idx == len(SPEC) - 1 and len(got) < want:
+                got = got + pin_gen[:want - len(got)]        # mop up anything unrouted
             # Top up whatever the exclusions took out. Without this a pinned rebuild after an
             # exclusion silently prints a short paper — the section just ends early, and nothing
             # says so. Replacements are drawn the normal way and are NOT covered by the earlier
@@ -1340,6 +1902,42 @@ def main():
             got = load_hindi_generated(want)   # (real4 only; Inter Level has no Hindi section)
         paper.append((title, got)); n += len(got)
 
+    # Survey q8 — "Where should the hard questions sit?" -> "Spread evenly through the paper".
+    # Applied to EVERY section here rather than inside one generator, because until now only Part
+    # II was ordered at all and the answer is about the whole paper. Deterministic in the set
+    # number, so a pinned rebuild still reproduces its file exactly (gotcha #18).
+    _ord = random.Random(20260822 + a.set)
+    _SCI = {"sciencegen", "science_tables"}
+
+    # A pinned rebuild must NOT be re-ordered. The manifest records the paper as PRINTED, so the
+    # order it restores is already final — running the spread over it again would deal an
+    # already-dealt section and hand back the same 150 questions in a different order, which is
+    # gotcha #18 all over again in a new place.
+    _pinned = bool(a.pin and str(a.set) in manifest)
+    blocks, owner = [], []
+    for si, (_t, items) in enumerate(paper if not _pinned else []):
+        # Part II keeps science and maths as blocks — the section is named "सामान्य विज्ञान एवं
+        # गणित" and a candidate expects the two subjects in order — so each is paced separately
+        # and no later pass may move a question from one into the other.
+        if any(q.get("source_pdf") in _SCI for q in items):
+            parts = [[q for q in items if q.get("source_pdf") in _SCI],
+                     [q for q in items if q.get("source_pdf") not in _SCI]]
+        else:
+            parts = [items]
+        for p in parts:
+            blocks.append(spread_questions(p, _ord))
+            owner.append(si)
+
+    if not _pinned:
+        break_hard_runs(blocks)
+        merged = {}
+        for si, blk in zip(owner, blocks):
+            merged.setdefault(si, []).extend(blk)
+        paper = [(t, merged[si]) for si, (t, _items) in enumerate(paper)]
+    for t, items in paper:
+        pos = [str(i + 1) for i, q in enumerate(items) if _band(q) <= 2]
+        print(f"  order — {t[:34]:34s} easy/medium at {', '.join(pos) or '(none)'}")
+
     logo_html, logo_b64, logo_ext = "", "", "png"
     if a.logo and os.path.exists(a.logo):
         logo_b64 = base64.b64encode(open(a.logo, "rb").read()).decode()
@@ -1375,6 +1973,11 @@ def main():
                f'<div class="pnote">इस भाग के {g} प्रश्न Acharya द्वारा निर्मित अभ्यास-प्रश्न हैं '
                f'(मानक व्याकरण पर आधारित) &middot; ये विगत परीक्षा के प्रश्न नहीं हैं।</div>')
         qh.append(f'<h2 class="sec">{html.escape(title)}</h2>{note}')
+        # Only on a review copy. A student who sees the spread before answering learns nothing
+        # useful from it, and it is the reviewer — not the candidate — who is being asked whether
+        # the distribution is right.
+        if a.show_difficulty:
+            qh.append(coverage_table(items))
         for q in items:
             i += 1
             # Some stems in the 8th-Level paper are not stems at all — the extractor put the OPTION
@@ -1433,7 +2036,18 @@ def main():
                 # which put our brand on every question of a paper that goes out under the
                 # institute's own logo — and the source is not what the reviewer is being asked
                 # to judge.
-                block += f'<span class="dbadge">{dlab[0]} &middot; {dlab[1]}</span>' 
+                # Three fields, and each one earns its place by catching a defect the other two
+                # cannot see. TOPIC is the commission's own vocabulary and is the only thing that
+                # shows syllabus coverage. TYPE is what the owner was describing when he said the
+                # reasoning was "only one topic" and the GS "style is similar" — a section can be
+                # perfectly spread across topics and still ask one question type forty times.
+                # DIFFICULTY is what he has been asked to calibrate.
+                tp = question_topics(q)
+                tlab = " · ".join(short_hi(h) for _e, h in tp[:2]) + (" आदि" if len(tp) > 2 else "")
+                block += (f'<span class="dbadge">{dlab[0]} &middot; {dlab[1]}'
+                          + (f'<i>{esc(tlab)}</i>' if tlab else "")
+                          + (f'<i class="ty">{esc(str(q.get("concept") or ""))}</i>')
+                          + '</span>')
             # The list forms build their items on separate LINES, and HTML collapses those to
             # spaces — so a four-row match-the-pairs printed as one unbroken paragraph
             # ("A. 368 — freedom of conscience ... B. 24 — the Finance Commission C. 17 — ...").
@@ -1602,7 +2216,14 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
 {WATERMARK_CSS}
 .dbadge {{ float:right; font-size:7pt; color:#8a6d1a; border:1px solid #e0dccc;
           border-radius:3px; padding:1px 6px; background:#faf8f1; margin-left:6px; }}
-.dbadge i {{ font-style:normal; color:#9296a2; display:block; font-size:6.3pt; }}
+.dbadge {{ text-align:right; max-width:150px; }}
+.dbadge i {{ font-style:normal; color:#7b8394; display:block; font-size:6.3pt; line-height:1.25; }}
+.dbadge i.ty {{ color:#a9adb8; font-size:6pt; }}
+.cov {{ width:100%; border-collapse:collapse; font-size:7.2pt; margin:6px 0 14px 0; }}
+.cov th, .cov td {{ border:1px solid #e0dccc; padding:2px 5px; text-align:left; }}
+.cov th {{ background:#faf8f1; color:#8a6d1a; font-weight:600; }}
+.cov td.n {{ text-align:center; width:34px; }}
+.cov caption {{ text-align:left; font-size:7.6pt; color:#8a6d1a; padding-bottom:3px; }}
 .foot {{ border-top:1px solid #ddd8c8; margin-top:12px; padding-top:4px; font-size:7.3pt; color:#9296a2; text-align:center; }}
 </style></head><body>
 {COVER if a.inter_level else ""}

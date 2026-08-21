@@ -62,6 +62,8 @@
     {% if err == 'teacher' %}<div class="err" style="margin-top:14px">That email is a teacher account — it can't join a class as a student. Use a different email.</div>
     {% elif err %}<div class="err" style="margin-top:14px">Please enter a valid email.</div>{% endif %}
     <form method="post" action="/join/{{ code }}">
+      {# came from a shared assignment link (/a/<code>) → return to that work after joining #}
+      <input type="hidden" name="next" value="{{ next|default('') }}" />
       <input type="text" name="name" placeholder="Your name" autocomplete="name" />
       <input type="email" name="email" placeholder="Your email" autocomplete="email" required />
       <button type="submit">{% if kids %}Start learning 🚀{% else %}Join {{ institute }} →{% endif %}</button>

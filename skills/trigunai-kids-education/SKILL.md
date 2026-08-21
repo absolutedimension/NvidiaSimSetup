@@ -285,7 +285,17 @@ edits. **Hand `main.py` back** when the build settles.
 5. Full **human E2E** (login-gated — Deepak tests) + polish from his feedback.
 
 ## The web app (kids-education.trigunai.com)
-Runs the **full lms code** (image `lms-kids`, same DB + examgen + secrets as acharya) but host-gated:
+> ⚠️ **SEPARATE DATABASE since 2026-08-19.** The kids app no longer shares Acharya's `lms` database.
+> It runs on **`kidsdb`** on the same Postgres server (`trigunai-lms-pg`, RG `trigunai-video-creator`),
+> wired via the container-app secret **`dburlkids`** → env `DATABASE_URL=secretref:dburlkids`. The `lms`
+> (Acharya) app still uses secret `dburl` → database `lms` and was NOT touched. Kids students, teachers,
+> assignments, mastery and goals are now completely isolated from senior ones — a kids signup can never
+> appear in Acharya's admin/pulse counts and the same email can hold separate accounts in each product.
+> `kidsdb` was created empty (2026-08-19, Deepak's call); the app self-bootstrapped all 32 tables + course
+> seed via `seed.run()` on first boot. **Pre-split kids accounts were NOT migrated** — they still sit in
+> the old `lms` DB and must sign up again on the kids site.
+
+Runs the **full lms code** (image `lms-kids`, same examgen + secrets as acharya, but its OWN DB — see above) but host-gated:
 - **Root** `/` (host `kids-education.trigunai.com`) → kids landing (`lms/app/static/kids/index.html`),
   else the normal app. Handler: `KIDS_HOSTS` check in `lms/app/main.py` `root()`.
 - **`/exam-prep`** → kids-only picker (`KIDS_EXAMS` in main.py, host-gated in the exam_prep route):

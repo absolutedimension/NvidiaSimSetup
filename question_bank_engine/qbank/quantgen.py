@@ -214,86 +214,160 @@ def _mult(rng, lo, hi, base):
 
 # ---- Simplification & Approximation ----------------------------------------
 
-def _b_simplify(rng, diff):
-    """BODMAS. Difficulty = how many operations, and whether the order can be got wrong.
+# ---- Simplification (BODMAS) ------------------------------------------------
+# A simplification question is a SIGNED SUM OF TERMS, each term one small operation that has to be
+# resolved before the additions can be done. It is built that way so that one difficulty band can
+# print many different SHAPES.
+#
+# The previous version hard-coded exactly ONE expression per band. A delivered paper therefore
+# printed SEVEN CONSECUTIVE questions of the identical form "(x)^2 + a/b - p% of c" — different
+# numbers, indistinguishable to a reader. Every structural check passed; the page was indefensible.
+# The per-template cap in build_onestep_paper is the guard, but a cap can only spread a section
+# across shapes that exist, so the shapes had to exist first.
+#
+# Every term renders using ONLY the characters test_papers.solve_bodmas will re-parse — digits,
+# space, ( ) x ^ % + - / . and the word "of" — so the independent solver can evaluate whatever
+# shape the draw happens to compose, rather than knowing the four expressions by heart.
 
-    diff 1  two operations, no precedence trap
-    diff 2  three operations including a square and a percentage
-    diff 3  four operations with a division that must be done before the addition
-    diff 4+ a bracket to resolve first, so left-to-right gives a different answer
-    """
+def _t_square(rng):
     r = rng.choice([7, 8, 9, 11, 12, 13, 14, 15])
-    sq = r * r
-    p_ = rng.choice([10, 15, 20, 25, 40])
+    return {"en": f"({r})^2", "hi": f"({r})^2", "val": Fraction(r * r),
+            "step_en": f"({r})^2 = {r * r}", "step_hi": f"({r})^2 = {r * r}",
+            "wrong": [("doubled the base instead of squaring it", Fraction(2 * r)),
+                      (f"left {r} as it stands instead of squaring it", Fraction(r))]}
+
+
+def _t_percent(rng):
+    p = rng.choice([10, 15, 20, 25, 40])
     q = _mult(rng, 4, 12, 20)
-    part = p_ * q // 100
+    val = Fraction(p * q, 100)
+    return {"en": f"{p}% of {q}", "hi": f"{q} का {p}%", "val": val,
+            "step_en": f"{p}% of {q} = {_num(val)}", "step_hi": f"{q} का {p}% = {_num(val)}",
+            "wrong": [(f"read '{p}% of {q}' as the bare number {p}", Fraction(p)),
+                      (f"used {q} itself instead of {p}% of it", Fraction(q))]}
+
+
+def _t_divide(rng):
+    n = rng.randint(3, 9)
+    dvd = n * rng.randint(8, 30)                    # exact, so the answer stays clean
+    return {"en": f"{dvd} / {n}", "hi": f"{dvd} / {n}", "val": Fraction(dvd, n),
+            "step_en": f"{dvd} / {n} = {dvd // n}", "step_hi": f"{dvd} / {n} = {dvd // n}",
+            # Both wrong values are whole numbers on purpose. "Divided the wrong way round" was
+            # tried and printed options like -14.96 on a page whose every other number is an
+            # integer — a named mistake nobody makes and an option anybody discards on sight.
+            "wrong": [(f"subtracted {n} instead of dividing by it", Fraction(dvd - n)),
+                      (f"multiplied by {n} instead of dividing by it", Fraction(dvd * n))]}
+
+
+def _t_multiply(rng):
     m, n = rng.randint(6, 15), rng.randint(3, 9)
-    prod = m * n
-    if diff <= 1:
-        ans = sq + part
-        stem = f"What is the value of  ({r})^2 + {p_}% of {q} ?"
-        sol = f"({r})^2 = {sq}; {p_}% of {q} = {part}. So {sq} + {part} = {ans}."
-        d = mistakes(("doubled r instead of squaring it", _num(2 * r + part)),
-                     ("read the percentage as a plain subtraction of the percent", _num(sq + p_)),
-                     ("subtracted the percentage instead of adding it", _num(sq - part)))
-        return {"stem": stem,
-                "stem_hi": f"({r})^2 + {q} का {p_}% का मान क्या है?",
-                "solution_hi": (f"({r})^2 = {sq}; {q} का {p_}% = {part}। "
-                                f"अतः {sq} + {part} = {ans}।"),
-                "correct": _num(ans), "mistakes": d, "solution": sol,
-                "concept": "Simplification (BODMAS)"}
-    if diff == 2:
-        ans = sq + part - prod
-        stem = f"What is the value of  ({r})^2 + {p_}% of {q} - {m} x {n} ?"
-        sol = (f"({r})^2 = {sq}; {p_}% of {q} = {part}; {m} x {n} = {prod}. "
-               f"So {sq} + {part} - {prod} = {ans}.")
-        d = mistakes(
-            ("worked strictly left to right, multiplying the running total by n",
-             _num((sq + part - m) * n)),
-            ("read the percentage as a subtraction of the percent itself", _num(sq + p_ - prod)),
-            ("dropped the minus sign and added the product", _num(sq + part + prod)))
-        return {"stem": stem,
-                "stem_hi": f"({r})^2 + {q} का {p_}% - {m} x {n} का मान क्या है?",
-                "solution_hi": (f"({r})^2 = {sq}; {q} का {p_}% = {part}; {m} x {n} = {prod}। "
-                                f"अतः {sq} + {part} - {prod} = {ans}।"),
-                "correct": _num(ans), "mistakes": d, "solution": sol,
-                "concept": "Simplification (BODMAS)"}
-    if diff == 3:
-        dvd = m * n * rng.randint(2, 4)
-        ans = sq + Fraction(dvd, n) - part
-        stem = f"What is the value of  ({r})^2 + {dvd} / {n} - {p_}% of {q} ?"
-        sol = (f"({r})^2 = {sq}; {dvd}/{n} = {_num(Fraction(dvd, n))}; {p_}% of {q} = {part}. "
-               f"So {sq} + {_num(Fraction(dvd, n))} - {part} = {_num(ans)}.")
-        d = mistakes(("added before dividing, i.e. ({} + {})/{}".format(sq, dvd, n),
-                      _num(Fraction(sq + dvd, n) - part)),
-                     ("added the percentage instead of subtracting it",
-                      _num(sq + Fraction(dvd, n) + part)),
-                     ("divided by the percentage figure instead of by n",
-                      _num(sq + Fraction(dvd, p_) - part)))
-        return {"stem": stem,
-                "stem_hi": f"({r})^2 + {dvd} / {n} - {q} का {p_}% का मान क्या है?",
-                "solution_hi": (f"({r})^2 = {sq}; {dvd}/{n} = {_num(Fraction(dvd, n))}; "
-                                f"{q} का {p_}% = {part}। अतः {sq} + "
-                                f"{_num(Fraction(dvd, n))} - {part} = {_num(ans)}।"),
-                "correct": _num(ans), "mistakes": d, "solution": sol,
-                "concept": "Simplification (BODMAS)"}
-    # diff 4+ : a bracket, so left-to-right and correct order disagree
+    return {"en": f"{m} x {n}", "hi": f"{m} x {n}", "val": Fraction(m * n),
+            "step_en": f"{m} x {n} = {m * n}", "step_hi": f"{m} x {n} = {m * n}",
+            "wrong": [(f"added {m} and {n} instead of multiplying them", Fraction(m + n)),
+                      (f"subtracted {n} from {m} instead of multiplying them", Fraction(m - n))]}
+
+
+def _t_bracket(rng):
+    m, n = rng.randint(6, 15), rng.randint(3, 9)
     k = rng.randint(3, 9)
-    ans = sq - (prod - k) // 1 + part
-    stem = f"What is the value of  ({r})^2 - ({m} x {n} - {k}) + {p_}% of {q} ?"
-    sol = (f"Bracket first: {m} x {n} - {k} = {prod - k}. Then ({r})^2 = {sq} and "
-           f"{p_}% of {q} = {part}. So {sq} - {prod - k} + {part} = {_num(ans)}.")
-    d = mistakes(("ignored the bracket and subtracted only the product",
-                  _num(sq - prod + part)),
-                 ("subtracted the bracket's contents term by term, flipping the minus on k",
-                  _num(sq - prod - k + part)),
-                 ("resolved the bracket but then subtracted the percentage",
-                  _num(sq - (prod - k) - part)))
-    return {"stem": stem,
-            "stem_hi": f"({r})^2 - ({m} x {n} - {k}) + {q} का {p_}% का मान क्या है?",
-            "solution_hi": (f"पहले कोष्ठक: {m} x {n} - {k} = {prod - k}। फिर ({r})^2 = {sq} तथा "
-                            f"{q} का {p_}% = {part}। अतः {sq} - {prod - k} + {part} = {_num(ans)}।"),
-            "correct": _num(ans), "mistakes": d, "solution": sol,
+    return {"en": f"({m} x {n} - {k})", "hi": f"({m} x {n} - {k})", "val": Fraction(m * n - k),
+            "step_en": f"bracket first: {m} x {n} - {k} = {m * n - k}",
+            "step_hi": f"पहले कोष्ठक: {m} x {n} - {k} = {m * n - k}",
+            "wrong": [("ignored the bracket and used only the product", Fraction(m * n)),
+                      (f"took the bracket term by term, flipping the sign on {k}",
+                       Fraction(m * n + k))]}
+
+
+# Which KINDS of term each band composes. The ladder is the number of terms and whether an
+# operation can be got out of order: 2 terms, then 3, then 3 with a division that must precede the
+# addition, then 4 including a bracket that must be resolved first.
+_BODMAS_BANDS = {
+    1: lambda rng: [_t_percent, rng.choice([_t_square, _t_multiply])],
+    2: lambda rng: [_t_percent, _t_square, _t_multiply],
+    3: lambda rng: [_t_percent, _t_divide, rng.choice([_t_square, _t_multiply])],
+    4: lambda rng: [_t_percent, _t_bracket, _t_square, rng.choice([_t_divide, _t_multiply])],
+}
+
+
+def _b_simplify(rng, diff):
+    """BODMAS, composed from terms so that each band has many shapes rather than one.
+
+    diff 1  two terms, no precedence trap
+    diff 2  three terms, a square and a percentage among them
+    diff 3  three terms including a division that must be done before the addition
+    diff 4+ four terms including a bracket to resolve first
+    """
+    band = _BODMAS_BANDS[min(max(int(diff), 1), 4)]
+    terms, signs, total = None, None, None
+    for _ in range(40):
+        terms = [f(rng) for f in band(rng)]
+        rng.shuffle(terms)
+        # Band 1 is additions only. With a subtraction, most of a two-term question's named
+        # mistakes land BELOW zero — "15 x 6 - 20% of 200" had just two positive ones for three
+        # slots, so the easy question printed -19 as an option. Making the easy band additive
+        # removes the whole class rather than filtering the symptom.
+        signs = [1] * len(terms) if int(diff) <= 1 else \
+            [1] + [rng.choice([1, -1]) for _ in terms[1:]]
+        total = sum(s * t["val"] for s, t in zip(signs, terms))
+        if total > 0:                    # a negative answer reads as a typo, not as a hard question
+            break
+    else:
+        signs = [1] * len(terms)
+        total = sum(t["val"] for t in terms)
+
+    def render(key):
+        out = terms[0][key]
+        for s, t in zip(signs[1:], terms[1:]):
+            out += (" + " if s > 0 else " - ") + t[key]
+        return out
+
+    subbed = _num(terms[0]["val"]) + "".join(
+        (" + " if s > 0 else " - ") + _num(t["val"]) for s, t in zip(signs[1:], terms[1:]))
+    sol = "; ".join(t["step_en"] for t in terms) + f". So {subbed} = {_num(total)}."
+    sol_hi = "; ".join(t["step_hi"] for t in terms) + f"। अतः {subbed} = {_num(total)}।"
+
+    # Each named mistake is the SAME expression with one term resolved wrongly — so the distractor
+    # is what a candidate who makes that specific slip actually writes down, not a nudge.
+    mis = []
+    for s, t in zip(signs, terms):
+        for why, wrong_val in t.get("wrong", []):
+            mis.append((why, _num(total - s * t["val"] + s * wrong_val)))
+    neg = [i for i, s in enumerate(signs) if s < 0]
+    if neg:
+        i = neg[-1]
+        mis.append((f"dropped the minus sign and added '{terms[i]['en']}' instead",
+                    _num(total + 2 * terms[i]["val"])))
+    # Six or seven named mistakes compete for three option slots, so which ones reach the page is a
+    # CHOICE — the same dial reasoninggen.order_mistakes turns, which the maths builders never had.
+    # Nothing here invents a distractor; the engine rests on every option being a mistake somebody
+    # actually makes. It only orders the ones already computed.
+    #
+    #   - positive before negative, always. A sum of positive terms whose options include two
+    #     negatives is answered by glancing at the signs.
+    #   - hard bands take the CLOSEST wrong values, easy bands the farthest. Measured on a rebuilt
+    #     page, "174/6 + (9)^2 + 20% of 180" was offering 285, 1161 and 83 against an answer of
+    #     146; 1161 is a real slip (multiplying instead of dividing) and still discarded on sight.
+    #     The same question's closest three are 130, 83 and 74.
+    pos = [m for m in mis if float(m[1]) > 0]
+    neg = [m for m in mis if float(m[1]) <= 0]
+    if int(diff) >= 3:
+        pos.sort(key=lambda m: abs(float(m[1]) - float(total)))
+    elif int(diff) <= 1:
+        pos.sort(key=lambda m: -abs(float(m[1]) - float(total)))
+    mis = pos + neg
+
+    return {"stem": f"What is the value of  {render('en')} ?",
+            # The Hindi names what is being asked BEFORE the expression. Written the other way
+            # round — "… - 140 का 15% का मान क्या है?" — a reader cannot tell whether the "मान"
+            # belongs to the whole expression or only to the 15% term. Shipped that way once.
+            #
+            # NOT "निम्नलिखित व्यंजक" — व्यंजक is on paper_common._ABOVE_SYLLABUS, because
+            # evaluating an algebraic expression is outside the Inter Level arithmetic syllabus.
+            # Writing it here made the gate reject EVERY computation question and the topic came
+            # back 0/7 on the next build. The gate was right; the wording was wrong.
+            "stem_hi": f"निम्नलिखित का मान ज्ञात कीजिए:  {render('hi')}",
+            "solution": sol, "solution_hi": sol_hi,
+            "correct": _num(total), "mistakes": mistakes(*mis),
             "concept": "Simplification (BODMAS)"}
 
 def _b_approx(rng, diff):
@@ -314,9 +388,12 @@ def _b_approx(rng, diff):
 
 # ---- Number Series ----------------------------------------------------------
 
-def _series_seq(rng, diff):
+_SERIES_KINDS = ["arith2", "geom", "sqk", "muladd", "diffinc"]
+
+
+def _series_seq(rng, diff, kinds=None):
     """Return (list_of_terms, description) for a valid banking-style series of 6 terms."""
-    kind = rng.choice(["arith2", "geom", "sqk", "muladd", "diffinc"])
+    kind = rng.choice(kinds or _SERIES_KINDS)
     if kind == "arith2":                            # +d, common difference
         a, d = rng.randint(3, 12), rng.choice([3, 4, 5, 6, 7])
         seq = [a + i * d for i in range(6)]
@@ -361,22 +438,45 @@ def _b_series_missing(rng, diff):
             "concept": "Missing-Term Series"}
 
 def _b_series_wrong(rng, diff):
-    seq, desc = _series_seq(rng, diff)
+    # "differences increase by k" is EXCLUDED here, and only here. Spoiling one term of such a
+    # series can be re-read as a different starting term and a different step, so two different
+    # terms are each defensibly "the wrong one" — measured at 67 of 798, while the other four
+    # families gave 0 of 3,200. Continuing the series (_b_series_missing) is unaffected, so the
+    # family stays available there.
+    seq, desc = _series_seq(rng, diff, kinds=["arith2", "geom", "sqk", "muladd"])
     bad_i = rng.randint(1, 4)                        # never corrupt first term
-    delta = rng.choice([-3, -2, 2, 3, 4])
-    shown_vals = list(seq)
-    shown_vals[bad_i] = seq[bad_i] + delta
+    for delta in rng.sample([-3, -2, 2, 3, 4], 5):
+        shown_vals = list(seq)
+        shown_vals[bad_i] = seq[bad_i] + delta
+        # The answer to this question is a VALUE, so the spoiled term must not equal another term
+        # of the series. "2, 2, 8, 16, 32, 64" keys to "2" and prints 2 twice; only the second one
+        # breaks the rule, so it is not mismarkable, but it reads as ambiguous. Found by rendering
+        # the page — no structural check can see it.
+        if shown_vals.count(shown_vals[bad_i]) == 1:
+            break
     correct = str(shown_vals[bad_i])                # the wrong term (the answer they must spot)
     shown = ", ".join(str(x) for x in shown_vals)
     stem = (f"Find the WRONG term in the following number series:\n{shown}")
     sol = (f"The correct pattern is: {desc}. The term should be {seq[bad_i]}, "
            f"but {shown_vals[bad_i]} is given — so {shown_vals[bad_i]} is the wrong term.")
-    # distractors = other SHOWN terms (clean integers); the true-pattern value is a good trap
-    d = [str(seq[bad_i])] + [str(shown_vals[j]) for j in (bad_i - 1, bad_i + 1, 0, 5)
-                             if 0 <= j < 6 and j != bad_i]
-    d = [x for x in dict.fromkeys(d) if x != correct][:3]
-    return {"stem": stem, "correct": correct, "distractors": d, "solution": sol,
-            "concept": "Wrong-Term Series"}
+    # Hindi added 2026-08-21. Without it this builder could never appear on a bilingual paper, so
+    # the Number Series topic had exactly ONE usable shape and its syllabus quota came back 4/5
+    # every build — the shortfall was being topped up from a generator the section had not asked
+    # for. Spotting the wrong term is also a different question from continuing the series, which
+    # is the point: the quota is filled with variety rather than with a fifth "?" question.
+    stem_hi = (f"निम्नलिखित संख्या श्रृंखला में गलत पद ज्ञात कीजिए:\n{shown}")
+    sol_hi = (f"श्रृंखला का सही नियम लागू करने पर यह पद {seq[bad_i]} होना चाहिए, जबकि "
+              f"{shown_vals[bad_i]} दिया गया है — अतः {shown_vals[bad_i]} गलत पद है।")
+    d = mistakes(
+        ("gave the term the pattern REQUIRES instead of the wrong term actually printed",
+         str(seq[bad_i])),
+        ("picked the term just after the one that breaks the pattern",
+         str(shown_vals[bad_i + 1]) if bad_i + 1 < len(shown_vals) else ""),
+        ("picked the term just before the one that breaks the pattern",
+         str(shown_vals[bad_i - 1]) if bad_i - 1 >= 0 else ""),
+        ("picked the last term of the series", str(shown_vals[-1])))
+    return {"stem": stem, "stem_hi": stem_hi, "correct": correct, "mistakes": d,
+            "solution": sol, "solution_hi": sol_hi, "concept": "Wrong-Term Series"}
 
 # ---- Quadratic Equations (x vs y) ------------------------------------------
 
@@ -462,46 +562,160 @@ def _b_di_caselet(rng, diff):
 
 # ---- Percentage -------------------------------------------------------------
 
+def _pc_of(rng):
+    """d1 — one step, the percentage is given and the base is given."""
+    p = rng.choice([12, 15, 18, 24, 35, 45])
+    n = _mult(rng, 4, 15, 100)
+    ans = Fraction(p * n, 100)
+    return {"stem": f"What is {p}% of {n}?", "stem_hi": f"{n} का {p}% कितना है?",
+            "solution": f"{p}% of {n} = {p}/100 x {n} = {_num(ans)}.",
+            "solution_hi": f"{n} का {p}% = {p}/100 x {n} = {_num(ans)}।",
+            "correct": _num(ans), "concept": "Percentage of a Number",
+            "mistakes": mistakes(
+                ("divided by 10 instead of by 100", _num(Fraction(p * n, 10))),
+                (f"subtracted {p} from {n} instead of taking a percentage", _num(n - p)),
+                (f"took {p}% of 100 instead of {p}% of {n}", _num(p)))}
+
+
+def _pc_is_what(rng):
+    """d2 — the percentage is what is asked for, so the division has a direction to get wrong."""
+    b = _mult(rng, 4, 12, 50)
+    a = b * rng.choice([20, 25, 40, 60, 75]) // 100
+    pct = Fraction(a * 100, b)
+    return {"stem": f"{a} is what percent of {b}?", "stem_hi": f"{a}, {b} का कितना प्रतिशत है?",
+            "solution": f"Required % = ({a}/{b}) x 100 = {_num(pct)}%.",
+            "solution_hi": f"अभीष्ट प्रतिशत = ({a}/{b}) x 100 = {_num(pct)}%।",
+            "correct": _pct(pct), "concept": "Percentage of a Number",
+            "mistakes": mistakes(
+                (f"worked out what percent {b} is of {a} — the division the other way round",
+                 _pct(Fraction(b * 100, a))),
+                ("called the plain difference a percentage", _pct(b - a)),
+                (f"gave {a}/{b} without multiplying by 100", _pct(Fraction(a, b))))}
+
+
+def _pc_reverse(rng):
+    """d2 — the base is the unknown. Dividing by the percentage instead of multiplying is the slip."""
+    p = rng.choice([15, 20, 25, 30, 40])
+    x = _mult(rng, 10, 60, 20)
+    v = Fraction(p * x, 100)
+    return {"stem": f"If {p}% of a number is {_num(v)}, what is the number?",
+            "stem_hi": f"यदि किसी संख्या का {p}% {_num(v)} है, तो वह संख्या क्या है?",
+            "solution": f"Number = {_num(v)} x 100/{p} = {x}.",
+            "solution_hi": f"संख्या = {_num(v)} x 100/{p} = {x}।",
+            "correct": _num(x), "concept": "Percentage of a Number",
+            "mistakes": mistakes(
+                (f"took {p}% of {_num(v)} instead of working backwards",
+                 _num(Fraction(p, 100) * v)),
+                (f"multiplied by {p} instead of dividing by it", _num(v * p)),
+                (f"subtracted {p}% from {_num(v)}", _num(v * Fraction(100 - p, 100))))}
+
+
+def _pc_change(rng):
+    """d3 — the percentage change between two values. Which value is the base is the whole question."""
+    # a = 100 is excluded on purpose: there the plain difference and the percentage are the same
+    # number, so the "used the difference itself" distractor lands on the answer.
+    a = _mult(rng, 6, 30, 20)
+    pct = rng.choice([20, 25, 40, 50, 60])
+    up = rng.choice([1, -1])
+    b = Fraction(a * (100 + up * pct), 100)
+    word, word_hi = ("increases", "बढ़कर") if up > 0 else ("decreases", "घटकर")
+    ask, ask_hi = ("increase", "वृद्धि") if up > 0 else ("decrease", "कमी")
+    return {"stem": f"A value {word} from {a} to {_num(b)}. What is the percentage {ask}?",
+            "stem_hi": f"कोई मान {a} से {word_hi} {_num(b)} हो जाता है। प्रतिशत {ask_hi} क्या है?",
+            "solution": (f"Change = {_num(abs(b - a))}. Percentage {ask} = "
+                         f"{_num(abs(b - a))}/{a} x 100 = {pct}%."),
+            "solution_hi": (f"परिवर्तन = {_num(abs(b - a))}। प्रतिशत {ask_hi} = "
+                            f"{_num(abs(b - a))}/{a} x 100 = {pct}%।"),
+            "correct": _pct(pct), "concept": "Percentage Change",
+            "mistakes": mistakes(
+                (f"took the change as a percentage of the NEW value {_num(b)} instead of "
+                 f"the original {a}", _pct(abs(b - a) * 100 / b)),
+                ("used the difference itself as the percentage", _pct(abs(b - a))),
+                (f"gave {_num(b)} as a percentage of {a} rather than the change",
+                 _pct(Fraction(100) * b / a)))}
+
+
+def _pc_of_of(rng):
+    """d3 — two percentages in succession. Adding them is the standard error."""
+    p, q_ = rng.choice([10, 20, 25, 40, 50]), rng.choice([10, 20, 25, 40, 50])
+    n = _mult(rng, 2, 10, 200)
+    ans = Fraction(p * q_ * n, 10000)
+    return {"stem": f"What is {p}% of {q_}% of {n}?",
+            "stem_hi": f"{n} के {q_}% का {p}% कितना है?",
+            "solution": (f"{q_}% of {n} = {_num(Fraction(q_ * n, 100))}; {p}% of that = "
+                         f"{_num(ans)}."),
+            "solution_hi": (f"{n} का {q_}% = {_num(Fraction(q_ * n, 100))}; उसका {p}% = "
+                            f"{_num(ans)}।"),
+            "correct": _num(ans), "concept": "Percentage of a Number",
+            "mistakes": mistakes(
+                (f"added the two percentages and took {p + q_}% of {n}",
+                 _num(Fraction((p + q_) * n, 100))),
+                (f"took {q_}% of {n} and stopped", _num(Fraction(q_ * n, 100))),
+                ("divided by 100 once instead of twice", _num(Fraction(p * q_ * n, 100))))}
+
+
+def _pc_to_original(rng):
+    """d4 — the successive change is given and the ORIGINAL is asked. Two steps, both reversed."""
+    for _ in range(40):
+        x = _mult(rng, 2, 15, 400)
+        up, dn = rng.choice([20, 25, 50]), rng.choice([10, 20, 25])
+        f = Fraction(x * (100 + up) * (100 - dn), 10000)
+        if f.denominator == 1:
+            break
+    return {"stem": (f"A value is first increased by {up}% and the result is then decreased by "
+                     f"{dn}%, leaving {_num(f)}. What was the original value?"),
+            "stem_hi": (f"किसी मान में पहले {up}% की वृद्धि की जाती है और फिर प्राप्त परिणाम में "
+                        f"{dn}% की कमी की जाती है, जिससे {_num(f)} बचता है। मूल मान क्या था?"),
+            "solution": (f"Original = {_num(f)} x 100/{100 - dn} x 100/{100 + up} = {x}."),
+            "solution_hi": (f"मूल मान = {_num(f)} x 100/{100 - dn} x 100/{100 + up} = {x}।"),
+            "correct": _num(x), "concept": "Percentage Change",
+            "mistakes": mistakes(
+                (f"treated the two changes as a net {up - dn}% and worked back from that",
+                 _num(f * 100 / Fraction(100 + up - dn))),
+                ("reversed only the increase", _num(f * 100 / Fraction(100 + up))),
+                ("reversed only the decrease", _num(f * 100 / Fraction(100 - dn))))}
+
+
+def _pc_more_less(rng):
+    """d4 — 'A is p% more than B' and 'B is q% less than A' are NOT the same number, and the
+    question is built so that answering p is the natural wrong move."""
+    # p = 100 is excluded: 100/(100+p) and p/(100+p) are both 50% there, so one named mistake
+    # would land on the answer.
+    p = rng.choice([20, 25, 50])
+    # Three percentages alone would be three questions. The context is an incidental feature — it
+    # does not change the work — but without it this template can only ever appear three times.
+    what, what_hi = rng.choice([("salary", "वेतन"), ("income", "आय"),
+                                ("weight", "भार"), ("marks", "अंक")])
+    ans = Fraction(p * 100, 100 + p)
+    return {"stem": (f"A's {what} is {p}% more than B's. B's {what} is what percent less "
+                     f"than A's?"),
+            "stem_hi": (f"A का {what_hi} B के {what_hi} से {p}% अधिक है। B का {what_hi}, A के "
+                        f"{what_hi} से कितने प्रतिशत कम है?"),
+            "solution": (f"Take B = 100, so A = {100 + p}. B is less than A by {p}, which is "
+                         f"{p}/{100 + p} x 100 = {_num(ans)}% of A."),
+            "solution_hi": (f"मान लीजिए B = 100, तब A = {100 + p}। B, A से {p} कम है, जो A का "
+                            f"{p}/{100 + p} x 100 = {_num(ans)}% है।"),
+            "correct": _pct(ans), "concept": "Percentage Change",
+            "mistakes": mistakes(
+                (f"answered {p}% — assumed 'more than' and 'less than' are symmetric", _pct(p)),
+                (f"gave 100/{100 + p} as a percentage instead of {p}/{100 + p}",
+                 _pct(Fraction(100 * 100, 100 + p))),
+                (f"subtracted {p} from 100", _pct(100 - p)))}
+
+
+# Which templates each band may use. The old builder picked one of three modes at random and
+# ignored `diff` entirely, so the difficulty badge on a percentage question was decoration — and
+# with only three shapes a quota of nine could not be spread across templates at all.
+_PCT_BANDS = {
+    1: [_pc_of],
+    2: [_pc_is_what, _pc_reverse],
+    3: [_pc_change, _pc_of_of],
+    4: [_pc_to_original, _pc_more_less],
+}
+
+
 def _b_percentage(rng, diff):
-    mode = rng.choice(["of", "isWhat", "netchange"])
-    if mode == "of":
-        p = rng.choice([12, 15, 18, 24, 35, 45])
-        n = _mult(rng, 4, 15, 100)
-        ans = p * n // 100
-        stem = f"What is {p}% of {n}?"
-        sol = f"{p}% of {n} = {p}/100 x {n} = {ans}."
-        d = [_num(ans + n // 10), _num(ans - n // 20), _num((p + 10) * n // 100)]  # noqa: E501
-        return {"stem": stem, "stem_hi": f"{n} का {p}% कितना है?",
-                "solution_hi": f"{n} का {p}% = {p}/100 x {n} = {ans}।",
-                "correct": _num(ans), "distractors": d, "solution": sol,
-                "concept": "Percentage of a Number"}
-    if mode == "isWhat":
-        b = _mult(rng, 4, 12, 50)
-        a = b * rng.choice([20, 25, 40, 60, 75]) // 100
-        pct = Fraction(a * 100, b)
-        stem = f"{a} is what percent of {b}?"
-        sol = f"Required % = ({a}/{b}) x 100 = {_num(pct)}%."
-        d = [_pct(float(pct) + 5), _pct(float(pct) - 5), _pct(float(pct) * 2)]
-        return {"stem": stem, "stem_hi": f"{a}, {b} का कितना प्रतिशत है?",
-                "solution_hi": f"अभीष्ट प्रतिशत = ({a}/{b}) x 100 = {_num(pct)}%।",
-                "correct": _pct(pct), "distractors": d, "solution": sol,
-                "concept": "Percentage of a Number"}
-    n = _mult(rng, 4, 12, 100)
-    up, dn = rng.choice([20, 25, 30]), rng.choice([10, 20, 25])
-    after_up = Fraction(n * (100 + up), 100)                    # exact
-    final = after_up * Fraction(100 - dn, 100)                  # exact (may be a decimal)
-    stem = (f"The value {n} is first increased by {up}% and then the result is decreased "
-            f"by {dn}%. What is the final value?")
-    sol = (f"After +{up}%: {n} x {100+up}/100 = {_num(after_up)}. "
-           f"After -{dn}%: x {100-dn}/100 = {_num(final)}.")
-    d = [_num(Fraction(n * (100 + up - dn), 100)), _num(n), _num(float(final) + n // 10)]
-    return {"stem": stem,
-            "stem_hi": (f"किसी मान {n} में पहले {up}% की वृद्धि की जाती है और फिर प्राप्त "
-                        f"परिणाम में {dn}% की कमी की जाती है। अंतिम मान क्या होगा?"),
-            "solution_hi": (f"{up}% वृद्धि के बाद: {n} x {100+up}/100 = {_num(after_up)}। "
-                            f"{dn}% कमी के बाद: x {100-dn}/100 = {_num(final)}।"),
-            "correct": _num(final), "distractors": d, "solution": sol,
-            "concept": "Percentage Change"}
+    return rng.choice(_PCT_BANDS[min(max(int(diff), 1), 4)])(rng)
 
 # ---- Profit, Loss & Discount ------------------------------------------------
 
@@ -946,11 +1160,17 @@ def _b_average(rng, diff):
                 f"Find the age of the new student.")
         sol = (f"Total increase = {n2} x {change} = {n2 * change}. New student's age = "
                f"{old_m} + {n2 * change} = {new_m} years.")
-        d = mistakes(
-            ("forgot to multiply the rise by the number of students", _num(old_m + change)),
-            ("added the rise to the OLD AVERAGE instead of the replaced student's age",
-             _num(old_avg + n2 * change)),
-            ("subtracted the total rise instead of adding it", _num(old_m - n2 * change)))
+        cand = [("forgot to multiply the rise by the number of students", old_m + change),
+                ("gave the NEW AVERAGE instead of the new student's age", old_avg + change),
+                ("added the rise to the OLD AVERAGE instead of the replaced student's age",
+                 old_avg + n2 * change),
+                ("subtracted the total rise instead of adding it", old_m - n2 * change)]
+        # An age of zero or less is not a wrong answer anybody writes down — it is an option a
+        # candidate crosses out without reading it. Found by RENDERING the page: with old_m = 24,
+        # 8 students and a rise of 3, "subtracted the total rise" lands exactly on 0, and the
+        # paper offered "0" as a student's age. The mistake is still named and still offered; it
+        # is simply only offered when it lands on an age that could exist.
+        d = mistakes(*[(why, _num(v)) for why, v in cand if v > 0])
         return {"stem": stem,
                 "stem_hi": (f"{n2} विद्यार्थियों की औसत आयु {old_avg} वर्ष है। जब {old_m} वर्ष "
                             f"आयु वाले एक विद्यार्थी के स्थान पर एक नया विद्यार्थी आता है, तो "

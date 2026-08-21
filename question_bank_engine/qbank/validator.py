@@ -13,9 +13,27 @@ _LLM_SYS = (
 )
 
 
+def _complete_mcq(q) -> bool:
+    """An MCQ carrying >=2 non-empty options and a key that points into them is a
+    COMPLETE question no matter how terse the stem is."""
+    if q.qtype not in ("MCQ_single", "MCQ_multi") or len(q.options) < 2:
+        return False
+    if any(not str(o.get("text") or "").strip() for o in q.options):
+        return False
+    labels = {o.get("label") for o in q.options}
+    ans = set(re.findall(r"[A-E]", (q.correct_answer or "").upper()))
+    return bool(ans) and ans.issubset(labels)
+
+
 def rule_check(q) -> list[str]:
     issues = []
-    if len(q.stem) < 15:
+    # `stem_too_short` exists to catch TRUNCATED extractions, not terse questions. A flat
+    # 15-char floor is right for JEE/NEET problem statements but wrong for recall banks:
+    # it threw away 16 perfectly good maritime questions ("IMO stands for", "Scupper is",
+    # "A \"BOLT\" has") that carried four real options and a valid key. So shortness is only
+    # a defect when the question is ALSO incomplete — or when it is so short (<8 chars) that
+    # it cannot be a question at all.
+    if len(q.stem) < 15 and (len(q.stem) < 8 or not _complete_mcq(q)):
         issues.append("stem_too_short")
     if q.qtype in ("MCQ_single", "MCQ_multi"):
         if len(q.options) < 2:

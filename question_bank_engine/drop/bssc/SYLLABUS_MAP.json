@@ -11,7 +11,8 @@
     "share": 0.08,
     "generator": "staticgkgen.STATE_CAPITAL + COUNTRY_CAPITAL",
     "concepts": [
-     "STATE_CAPITAL"
+     "STATE_CAPITAL",
+     "State Capitals"
     ]
    },
    {
@@ -20,7 +21,8 @@
     "share": 0.08,
     "generator": "staticgkgen.DANCE_STATE",
     "concepts": [
-     "DANCE_STATE"
+     "DANCE_STATE",
+     "Dances of India"
     ]
    },
    {

@@ -42,7 +42,14 @@ def parse(path):
         num = re.search(r'<span class="n">(\d+)\.', b)
         hi = re.search(r'<div class="hi">(.*?)</div>', b, re.S)
         en = re.search(r'<div class="en">(.*?)</div>', b, re.S)
-        opt_groups = re.findall(r'<div class="ops">(.*?)</div>\s*(?=<div|$)', b, re.S)
+        # No trailing lookahead. It used to require a question's options to be followed by another
+        # <div, which is true of every question EXCEPT the last one in a section — that one is
+        # followed by the section header, and the group was only ever captured because a <div
+        # happened to turn up further down. Adding a coverage <table> after the header removed that
+        # accident and the English options of question 50 vanished, so it was re-solved against its
+        # Hindi block and quietly went unread. An <ops> div contains only <span>s, so the plain
+        # non-greedy match is both correct and independent of whatever follows the question.
+        opt_groups = re.findall(r'<div class="ops">(.*?)</div>', b, re.S)
         opts = [[(m.group(1), strip(m.group(2)))
                  for m in re.finditer(r'<b>\((\w)\)</b>(.*?)</span>', g, re.S)] for g in opt_groups]
         qs.append({"n": int(num.group(1)) if num else None,
@@ -132,6 +139,32 @@ def bilingual(tag, qs):
     return ok
 
 
+def key_spread(tag, qs, key):
+    """No answer letter may dominate a section — a paper you can pass by marking one column.
+
+    This check exists because its absence shipped. General Studies placed the correct option first
+    and hardcoded the key to "A", so 46 of Part I's 50 answers were (A): marking A down the whole
+    section scored 184 of 200 without reading a question. Every other check passed. The key letter
+    WAS among the printed options and every independent solver DID agree with it — each question
+    was individually correct, and the section was worthless.
+
+    The threshold is deliberately loose (45% of a section, against 25% expected) so that ordinary
+    unevenness never trips it and only a systematic bias does.
+    """
+    print(f"\n=== {tag}: answer-key spread ===")
+    ok = True
+    for lo, hi, name in ((1, 50, "Part I"), (51, 100, "Part II"), (101, 150, "Part III")):
+        got = [key[n] for n in range(lo, hi + 1) if n in key]
+        if not got:
+            continue
+        c = Counter(got)
+        top, n = c.most_common(1)[0], len(got)
+        detail = " ".join(f"{l}={c[l]}" for l in "ABCDE" if c[l])
+        ok &= check(f"{name}: no answer letter takes more than 45% ({detail})",
+                    top[1] <= 0.45 * n, f"{top[0]} takes {top[1]} of {n}")
+    return ok
+
+
 def uniqueness(sets):
     print("\n=== uniqueness ===")
     ok = True
@@ -158,7 +191,12 @@ def uniqueness(sets):
             # A statement-based or match-the-pairs question is ENUMERATED, not computed. Its
             # "1. 2. 3." are list markers, so two entirely different statement questions sharing
             # an answer looked like one computation. The numeric signature is for arithmetic.
-            if re.search(r"Consider the following statements|Match the following", body):
+            # NOT a list of the two openings that existed when this was written: b_count_statements
+            # opens "Study the following statements" and fell straight through, so two entirely
+            # different count questions — Ghoomar/Amaravati/Narmada and Patna/Krishna/Yakshagana —
+            # were reported as the same computation because both carry the markers 1, 2, 3 and the
+            # same four rubric options. Match on the SHAPE of the wording, not on a list of stems.
+            if re.search(r"following statements|Match the following", body):
                 continue
             nums = tuple(sorted(NUM.findall(body)))
             ans = dict(q["opts"][-1]).get(key.get(q["n"]), "") if q["opts"] else ""
@@ -187,6 +225,7 @@ def main():
         sets.append((tag, qs, key, gen))
     for tag, qs, key, gen in sets:
         all_ok &= structural(tag, qs, key, gen)
+        all_ok &= key_spread(tag, qs, key)
         all_ok &= bilingual(tag, qs)
         all_ok &= resolve(tag, qs, key, gen)
     all_ok &= uniqueness(sets)
@@ -824,35 +863,68 @@ def _gk_tables():
                       # question, which reads as a wrong key rather than a blind checker.
                       "elem_sym": _S.ELEMENT_SYMBOL, "elem_no": _S.ELEMENT_ATOMIC_NUMBER,
                       "formula": _S.COMPOUND_FORMULA}
+        # Bihar joins the moment bihar_tables.REVIEWED is set. Loaded unconditionally HERE on
+        # purpose: a solver that cannot read a question reports a coverage gap, and a solver that
+        # is missing a table reports a confident wrong answer. The gate belongs on the BUILDER.
+        from qbank import bihar_tables as _B
+        _GK_TABLES.update({"bihar_site": _B.BIHAR_SITE_DISTRICT,
+                           "bihar_gi": _B.BIHAR_GI_PRODUCT,
+                           "bihar_freedom": _B.BIHAR_FREEDOM_ROLE,
+                           "bihar_folk": _B.BIHAR_FOLK_REGION})
     return _GK_TABLES
+
+
+def _known(table, key, value):
+    """True / False for a claim about a key the table KNOWS — None when it does not know the key.
+
+    `table.get(k) == v` collapses "the table says otherwise" into the same False as "the table has
+    never heard of this". Every statement on a paper is built FROM these tables, so today the key
+    is always present and the two cannot be told apart by testing a real paper — which is what
+    makes it worth writing down rather than leaving to be discovered. A checker that reports a
+    confident False about a subject it does not know is one table edit away from agreeing with a
+    wrong key, and a false pass ships while a false alarm costs an hour.
+    """
+    return None if key not in table else table[key] == value
 
 
 def _stmt_true(line):
     t = _gk_tables()
     m = re.match(r"(.+?) is the capital of (.+?)\.$", line)
     if m:
-        return t["cap"].get(m.group(2)) == m.group(1)
+        return _known(t["cap"], m.group(2), m.group(1))
     m = re.match(r"(.+?) is a dance form of (.+?)\.$", line)
     if m:
-        return t["dance"].get(m.group(1)) == m.group(2)
+        return _known(t["dance"], m.group(1), m.group(2))
     m = re.match(r"The river (.+?) originates at (.+?)\.$", line)
     if m:
-        return t["river"].get(m.group(1)) == m.group(2)
+        return _known(t["river"], m.group(1), m.group(2))
     m = re.match(r"Article (.+?) of the Constitution deals with (.+?)\.$", line)
     if m:
-        return t["article"].get(m.group(1).strip()) == m.group(2).strip()
+        return _known(t["article"], m.group(1).strip(), m.group(2).strip())
     m = re.match(r"The (.+?) Amendment (.+?)\.$", line)
     if m:
-        return t["amendment"].get(m.group(1).strip()) == m.group(2).strip()
+        return _known(t["amendment"], m.group(1).strip(), m.group(2).strip())
     m = re.match(r"The chemical symbol of (.+?) is (.+?)\.$", line)
     if m:
-        return t["elem_sym"].get(m.group(1).strip()) == m.group(2).strip()
+        return _known(t["elem_sym"], m.group(1).strip(), m.group(2).strip())
     m = re.match(r"The atomic number of (.+?) is (.+?)\.$", line)
     if m:
-        return t["elem_no"].get(m.group(1).strip()) == m.group(2).strip()
+        return _known(t["elem_no"], m.group(1).strip(), m.group(2).strip())
     m = re.match(r"The chemical formula of (.+?) is (.+?)\.$", line)
     if m:
-        return t["formula"].get(m.group(1).strip()) == m.group(2).strip()
+        return _known(t["formula"], m.group(1).strip(), m.group(2).strip())
+    m = re.match(r"(.+?) is located in the district of (.+?)\.$", line)
+    if m:
+        return _known(t["bihar_site"], m.group(1).strip(), m.group(2).strip())
+    m = re.match(r"The GI-tagged product (.+?) belongs to (.+?) district\.$", line)
+    if m:
+        return _known(t["bihar_gi"], m.group(1).strip(), m.group(2).strip())
+    m = re.match(r"In Bihar's national movement, (.+?) — (.+?)\.$", line)
+    if m:
+        return _known(t["bihar_freedom"], m.group(1).strip(), m.group(2).strip())
+    m = re.match(r"(.+?) is a folk art form of the (.+?) region\.$", line)
+    if m:
+        return _known(t["bihar_folk"], m.group(1).strip(), m.group(2).strip())
     return None
 
 
@@ -865,9 +937,8 @@ _SUBSET_NAME = {(True, True, True): "1, 2 and 3", (True, True, False): "1 and 2 
 def solve_multi_statement(en):
     if "Consider the following statements" not in en:
         return None
-    lines = re.findall(r"(?:^|\s)([123])\.\s*(.+?)(?=\s+[123]\.|\s*Which of the statements)",
-                       en)
-    if len(lines) != 3:
+    lines = numbered_statements(en, "Which of the statements")   # see numbered_statements: a claim
+    if not lines:                                                # ending in "1." split itself
         return None
     truth = tuple(_stmt_true(t.strip()) for _, t in lines)
     return None if None in truth else _SUBSET_NAME[truth]
@@ -1638,14 +1709,57 @@ def solve_which_statement(en):
     return hits or None
 
 
+def solve_incorrect_statement(en):
+    """'Which one of the following statements is NOT correct?' — the mirror of the above.
+
+    Each printed option is looked up in the verified tables and exactly ONE must come back false.
+    Refuses when two are false or when any option is about something the tables do not know, so an
+    unreadable option shows up as a coverage gap rather than as a confident wrong answer.
+    """
+    if "Which one of the following statements is NOT correct?" not in en:
+        return None
+    opts = _LAST_OPTIONS.get(en)
+    if not opts:
+        return None
+    verdicts = [(o, _stmt_true(o.strip().rstrip(".") + ".")) for o in opts]
+    if any(v is None for _, v in verdicts):
+        return None
+    false_ones = {o for o, v in verdicts if not v}
+    return false_ones if len(false_ones) == 1 else None
+
+
 _COUNT_NAME = {0: "None of them", 1: "Only one", 2: "Only two", 3: "All three"}
+
+
+def numbered_statements(en, tail_marker):
+    """The three numbered claims of a statement question, or None if they cannot be read cleanly.
+
+    A list marker is a digit-dot that follows the END of the previous statement — the colon after
+    "statements:" or the full stop closing the claim before it — and is followed by the capital
+    letter that starts the next one. Anchoring on that is the whole point.
+
+    Without it, a statement whose VALUE happens to be 1, 2 or 3 splits itself in half: "3. The
+    atomic number of Hydrogen is 1." was read as statement 3 ("...Hydrogen is") plus a fourth
+    statement, so the solver saw four claims and refused. It failed in the safe direction — the
+    paper's coverage fell to 149 of 150 and that is what surfaced it — but it had been silently
+    dropping every chemistry statement question whose answer was a single digit.
+    """
+    head = en.split(tail_marker)[0]
+    marks = list(re.finditer(r"(?:(?<=[.:])|^)\s*([123])\.\s+(?=[A-Z])", head))
+    if len(marks) != 3:
+        return None
+    out = []
+    for i, m in enumerate(marks):
+        end = marks[i + 1].start() if i + 1 < len(marks) else len(head)
+        out.append((m.group(1), head[m.end():end].strip()))
+    return out
 
 
 def solve_count_statements(en):
     if "How many of the above statements are correct?" not in en:
         return None
-    lines = re.findall(r"(?:^|\s)([123])\.\s*(.+?)(?=\s+[123]\.|\s*How many of the above)", en)
-    if len(lines) != 3:
+    lines = numbered_statements(en, "How many of the above")
+    if not lines:
         return None
     truth = [_stmt_true(t.strip()) for _, t in lines]
     if None in truth:
@@ -1921,14 +2035,199 @@ def solve_number_series(en):
     return out or None
 
 
+def _fit_quadratic(pts):
+    """a, b, c with t[j] = a + b*j + c*j^2 through three (position, value) points."""
+    (x0, y0), (x1, y1), (x2, y2) = pts
+    if x1 == x0 or x2 == x0 or x2 == x1:
+        return None
+    c = _F(_F(y2 - y0, x2 - x0) - _F(y1 - y0, x1 - x0), x2 - x1)
+    b = _F(y1 - y0, x1 - x0) - c * (x1 + x0)
+    a = _F(y0) - b * x0 - c * x0 * x0
+    return a, b, c
+
+
+def _series_values_at(t, i):
+    """Every value position `i` would have to hold for one simple rule to fit ALL the OTHER
+    positions of the printed series. Empty when no rule can explain the rest."""
+    idx = [j for j in range(len(t)) if j != i]
+    if len(idx) < 3:
+        return set()
+    out = set()
+    j0, j1, j2 = idx[0], idx[1], idx[2]
+    d = _F(t[j1] - t[j0], j1 - j0)                       # linear in position
+    a = _F(t[j0]) - d * j0
+    if all(a + d * j == t[j] for j in idx):
+        out.add(a + d * i)
+    for r in (2, 3, 4, 5):                               # geometric, integer ratio
+        A = _F(t[j0], r ** j0)
+        if all(A * r ** j == t[j] for j in idx):
+            out.add(A * r ** i)
+    q = _fit_quadratic([(j, t[j]) for j in (j0, j1, j2)])   # n^2 + k, and growing differences
+    if q and all(q[0] + q[1] * j + q[2] * j * j == t[j] for j in idx):
+        out.add(q[0] + q[1] * i + q[2] * i * i)
+    # t[j+1] = k*t[j] + c, fitted only on the consecutive pairs that avoid position i
+    pairs = [(j, j + 1) for j in range(len(t) - 1) if j != i and j + 1 != i]
+    if len(pairs) >= 2 and i > 0:
+        (p0, p1), (p2, p3) = pairs[0], pairs[1]
+        if t[p0] != t[p2]:
+            k = _F(t[p1] - t[p3], t[p0] - t[p2])
+            c = _F(t[p1]) - k * t[p0]
+            if all(_F(t[y]) == k * t[x] + c for x, y in pairs):
+                out.add(k * t[i - 1] + c)
+    return out
+
+
+def solve_wrong_term(en):
+    """Which printed term breaks the pattern — found by REPAIR SEARCH, not by corruption.
+
+    quantgen builds these by generating a clean series and spoiling one term, so it knows the
+    answer before it prints anything. This starts from the printed series knowing nothing, and asks
+    of every position in turn: if this one term were free to be anything, could a simple rule
+    explain all the others? Exactly one position should say yes.
+
+    When two positions say yes — or none does — the question has more than one defensible answer or
+    none, so this REFUSES rather than guessing. A refusal shows up as a coverage number below 150
+    and gets looked at; a guess would agree with the builder and prove nothing.
+    """
+    m = re.search(r"WRONG term in the following number series:?\s*([\d,\s-]+)", en)
+    if not m:
+        return None
+    t = [int(x) for x in re.findall(r"-?\d+", m.group(1))]
+    if len(t) < 5:
+        return None
+    bad = [i for i in range(len(t)) if any(v != t[i] for v in _series_values_at(t, i))]
+    return str(t[bad[0]]) if len(bad) == 1 else None
+
+
+_ASK_TABLE = {"BIHAR_SITE_DISTRICT": "bihar_site", "BIHAR_GI_PRODUCT": "bihar_gi",
+              "BIHAR_FREEDOM_ROLE": "bihar_freedom", "BIHAR_FOLK_REGION": "bihar_folk",
+              "STATE_CAPITAL": "cap", "DANCE_STATE": "dance", "RIVER_ORIGIN": "river",
+              "ARTICLE_SUBJECT": "article", "AMENDMENT_DID": "amendment",
+              "ELEMENT_SYMBOL": "elem_sym", "ELEMENT_ATOMIC_NUMBER": "elem_no",
+              "COMPOUND_FORMULA": "formula"}
+_ASK_RX = None
+
+
+def _ask_patterns():
+    """Regexes derived FROM the asking templates, so the two cannot drift apart.
+
+    The independence that matters is preserved: the template says how the question is worded, and
+    this reads a printed question back into a (table, key) pair — but the ANSWER still comes from
+    looking that key up in the verified table, never from the builder. Exactly the relationship
+    `_stmt_true` already has with staticgk_forms.STATEMENTS.
+    """
+    global _ASK_RX
+    if _ASK_RX is None:
+        sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent
+                               / "question_bank_engine"))
+        from qbank import gs_ask as _A
+        _ASK_RX = []
+        for name, styles in _A.ASK.items():
+            if name not in _ASK_TABLE:
+                continue
+            for style, (en_t, _hi_t) in styles.items():
+                rx = re.escape(en_t).replace(r"\{k\}", "(?P<k>.+?)").replace(r"\{v\}", "(?P<v>.+?)")
+                _ASK_RX.append((name, style, re.compile("^" + rx + "$")))
+        # longest template first: "Article {k} of the Constitution deals with {v}." must not be
+        # matched by a shorter pattern that happens to be a prefix of it
+        _ASK_RX.sort(key=lambda t: -len(t[2].pattern))
+    return _ASK_RX
+
+
+def solve_gs_ask(en):
+    """The commission's own asking styles — completion, direct question, blank, reverse lookup.
+
+    Every one is a table lookup: read the printed question back to its key, then answer from the
+    verified table. A reverse question is answered by scanning for the key that owns the printed
+    value, and REFUSES when more than one key owns it, because then the question has two correct
+    answers (Chandigarh is the capital of Punjab and of Haryana).
+    """
+    t = re.sub(r"\s+", " ", (en or "").strip())
+    for name, style, rx in _ask_patterns():
+        m = rx.match(t)
+        if not m:
+            continue
+        table = _gk_tables()[_ASK_TABLE[name]]
+        if style == "rev":
+            v = m.group("v").strip()
+            owners = [k for k, vv in table.items() if str(vv).strip() == v]
+            return owners[0] if len(owners) == 1 else None
+        k = m.group("k").strip()
+        return str(table[k]) if k in table else None
+    m = re.match(r"^Which one of the following is NOT a (.+?) (.+?)\?$", t)
+    if m:
+        # odd-one-out: the answer is the printed option that does NOT belong to the named group
+        kind, grp = m.group(1), m.group(2).strip()
+        table = {"dance form of": "dance", "capital of": "cap",
+                 "river originating at": "river"}.get(kind)
+        if not table:
+            return None
+        tb = _gk_tables()[table]
+        odd = [o for o in _LAST_OPTIONS.get(en, []) if str(tb.get(o.strip(), "")).strip() != grp]
+        return odd[0] if len(odd) == 1 else None
+    return None
+
+
+def solve_current_affairs(en):
+    """Look a printed current-affairs question up in the table and return the recorded answer.
+
+    ⚠️ **This is a WEAKER check than every other solver here, and the difference matters.**
+    Everywhere else the answer is RE-DERIVED — a sum is recomputed, a series rule is re-inferred,
+    a capital is looked up in a table that was itself verified against a source. A current-affairs
+    fact has no derivation: the fact IS the data. So this can prove the paper printed the letter
+    that matches the table, and it cannot prove the table is right.
+
+    That is still worth running — mis-keying is the mechanical failure mode and this catches it —
+    but "150 of 150 re-solved" means something weaker for these rows, and only a human reviewing
+    `drop/bssc/CURRENT_AFFAIRS_REVIEW.md` closes the gap. Do not let the green line imply more.
+    """
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent
+                           / "question_bank_engine"))
+    from qbank import current_affairs as _CA
+    t = re.sub(r"\s+", " ", (en or "").strip())
+    for r in _CA.EVENTS + _CA.BIHAR_EVENTS:
+        if re.sub(r"\s+", " ", r["en"].strip()) == t:
+            return r["ans"]
+    return None
+
+
 def solve_percentage(en):
-    """The three percentage templates, computed with exact fractions."""
+    """Every percentage template, re-derived from the PRINTED numbers with exact fractions.
+
+    Each branch runs the derivation in the opposite direction to the builder: the builder picks the
+    base and computes what to print, this reads what was printed and computes the base. So a
+    builder that picked its numbers wrongly cannot agree with this by construction.
+    """
     m = re.match(r"What is (\d+)% of (\d+)\?$", en)
     if m:
         return _n(_F(int(m.group(1)) * int(m.group(2)), 100))
+    m = re.match(r"What is (\d+)% of (\d+)% of (\d+)\?$", en)
+    if m:
+        p, q, n = (int(x) for x in m.groups())
+        inner = _F(q * n, 100)                       # resolve the inner percentage first, as a
+        return _n(_F(p, 100) * inner)                # candidate would, not p*q*n/10000 in one go
     m = re.match(r"(\d+) is what percent of (\d+)\?$", en)
     if m:
         return _n(_F(int(m.group(1)) * 100, int(m.group(2)))) + "%"
+    m = re.match(r"If (\d+)% of a number is ([\d.]+), what is the number\?$", en)
+    if m:
+        p, v = int(m.group(1)), _F(m.group(2))
+        return _n(v * 100 / _F(p))
+    m = re.match(r"A value (?:increases|decreases) from ([\d.]+) to ([\d.]+)\. "
+                 r"What is the percentage (?:increase|decrease)\?$", en)
+    if m:
+        a, b = _F(m.group(1)), _F(m.group(2))
+        return _n(abs(b - a) * 100 / a) + "%"
+    m = re.match(r"A value is first increased by (\d+)% and the result is then decreased by "
+                 r"(\d+)%, leaving ([\d.]+)\. What was the original value\?$", en)
+    if m:
+        up, dn, f = int(m.group(1)), int(m.group(2)), _F(m.group(3))
+        return _n(f * 100 / _F(100 - dn) * 100 / _F(100 + up))
+    m = re.match(r"A's \w+ is (\d+)% more than B's\. B's \w+ is what percent less than A's\?$", en)
+    if m:
+        p = int(m.group(1))
+        b, a = _F(100), _F(100 + p)                  # set B = 100 and work from the two salaries,
+        return _n((a - b) / a * 100) + "%"           # rather than reusing p/(100+p)
     m = re.match(r"The value (\d+) is first increased by (\d+)% and then the result is "
                  r"decreased by (\d+)%\. What is the final value\?$", en)
     if m:
@@ -1937,7 +2236,11 @@ def solve_percentage(en):
     return None
 
 
-SOLVERS = ([("number-series", solve_number_series),
+SOLVERS = ([("current-affairs", solve_current_affairs),
+            ("gs-incorrect-statement", solve_incorrect_statement),
+            ("gs-ask", solve_gs_ask),
+            ("number-series", solve_number_series),
+            ("wrong-term-series", solve_wrong_term),
             ("percentage", solve_percentage),
             ("error-spot", solve_error_spot),
             ("number-grid", solve_number_grid),

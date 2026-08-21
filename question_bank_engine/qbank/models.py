@@ -66,6 +66,24 @@ _FIG_RE = re.compile(
     r"as shown|shown in the|shown below|shown above|as depicted|"
     r"in the (figure|diagram|graph|circuit)|the (figure|diagram|graph|circuit)|"
     r"arrangement shown|"
+    # photo-identification questions (maritime/technical banks: "Identify the equipment in
+    # the picture below", "Select part no.2 from the following picture"). The image IS the
+    # question — no amount of text can substitute for it.
+    r"picture|photograph|"
+    # a deictic reference to a numbered/lettered callout on a drawing: "part no.2",
+    # "Part 3", "sign No 4", "Rope No.3". Deliberately requires the digit — a bare "part"
+    # is ordinary vocabulary ("bottom most part of a diesel engine") and must NOT match.
+    r"(part|sign|item|rope|tool|component)s?\s*(no\.?|numbered?)?\s*[0-9]+\b|"
+    # "Identify the following" / "Identify the following tool" with no further object:
+    # whatever is being identified lives only in the image.
+    r"identify the following\s*(tool|item|object|equipment|picture|image)?\s*$|"
+    # "…the following tool/image/equipment" in any phrasing ("What is the name of the
+    # following tool?") — the referent is the picture, not anything in the text.
+    r"following\s+(tool|picture|image|equipment|item|object|sign)s?\b|"
+    # "Identify the type of Hitch" / "Identify the type of ship" — a bare "identify the
+    # type/name of <one word>" has no textual referent; the specimen is drawn.
+    r"identify\s+the\s+(type|name|kind)\s+of\s+\w+\s*\??\s*$|"
+    r"image below|below image|"
     # "the/given following <thing that is only drawable>"
     r"(following|given|above) (structure|structures|compound|compounds|molecule|molecules|"
     r"carbocation|reaction|reactions|scheme|arrangement|complex|cell|projection|conformation)|"

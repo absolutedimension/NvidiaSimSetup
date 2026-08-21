@@ -44,6 +44,17 @@ def main():
     p.add_argument("--year", type=int, default=None)
     p.add_argument("--key", default=None, help="answer-key PDF path")
 
+    sy = sub.add_parser("ingest-synergy",
+                        help="ingest the Synergy CET / GP-Rating MTI chapter bank from a PDF "
+                             "(pre-tagged + pre-keyed text; EXEMPLARS ONLY, generated=0)")
+    sy.add_argument("--pdf", required=True, help="path to the GP Rating compilation PDF")
+    sy.add_argument("--exam", default="Synergy CET",
+                    help="MUST stay outside the CBSE/UPSC/BPSC/Current-Affairs prefixes — "
+                         "those are the real-PYQ allowlist that storage.pool() serves verbatim")
+    sy.add_argument("--difficulty", type=int, default=2)
+    sy.add_argument("--limit", type=int, default=None)
+    sy.add_argument("--llm-validate", action="store_true")
+
     gf = sub.add_parser("ingest-grafite", help="ingest the grafite JEE-Main bank (pre-tagged + pre-solved text)")
     gf.add_argument("--dataset", default="ruh-ai/grafite-jee-mains-qna-no-img")
     gf.add_argument("--subject", default="physics", help="dataset subject filter (physics/chemistry/maths)")
@@ -88,6 +99,22 @@ def main():
     rt.add_argument("--exam", default=None, help="scope to one exam (else the WHOLE bank)")
     rt.add_argument("--subject", default=None, help="scope to one subject")
     rt.add_argument("--limit", type=int, default=None)
+
+    ak = sub.add_parser("audit-keys",
+                        help="STRONG audit: re-solve GENERATED questions k times and UNVERIFY "
+                             "any whose key the model disagrees with (reverify only covers "
+                             "real/ingested questions — generated keys were never checked)")
+    ak.add_argument("--exam", default=None)
+    ak.add_argument("--subject", default=None)
+    ak.add_argument("--chapter", default=None)
+    ak.add_argument("--k", type=int, default=5, help="independent solves per question")
+    ak.add_argument("--threshold", type=int, default=None,
+                    help="votes (of --k) needed to PASS; default = strict majority")
+    ak.add_argument("--style", default="auto", choices=["auto", "derive", "recall"],
+                    help="solver prompt: derive=compute it, recall=domain knowledge, auto=per question")
+    ak.add_argument("--limit", type=int, default=None)
+    ak.add_argument("--dry-run", action="store_true",
+                    help="report only; do NOT unverify anything")
 
     rv = sub.add_parser("reverify", help="self-consistency re-check of needs_review solutions")
     rv.add_argument("--chapter", default=None)
@@ -154,6 +181,18 @@ def main():
             exam=args.exam, limit=args.limit, llm_validate=args.llm_validate)
         _print_report(r)
 
+    elif args.cmd == "ingest-synergy":
+        r = pipeline.ingest_synergy(
+            args.pdf, exam=args.exam, default_difficulty=args.difficulty,
+            limit=args.limit, llm_validate=args.llm_validate)
+        p = r.get("parse", {})
+        print(f"  parsed: {p.get('parsed')}  unparsed_blocks: {p.get('unparsed_blocks')}")
+        if p.get("skipped_unmapped_codes"):
+            print(f"  ⚠️  SKIPPED unmapped module codes: {p['skipped_unmapped_codes']}")
+        print(f"  needs_figure (not servable): {r.get('needs_figure')}")
+        print(f"  SERVABLE text-only:          {r.get('servable')}")
+        _print_report(r)
+
     elif args.cmd == "ingest-grafite":
         r = pipeline.ingest_grafite(
             dataset=args.dataset, subject=args.subject, subject_name=args.subject_name,
@@ -210,6 +249,23 @@ def main():
         print(json.dumps(pipeline.retag(
             chapter=args.chapter, limit=args.limit,
             exam=args.exam, subject=args.subject), indent=2))
+
+    elif args.cmd == "audit-keys":
+        r = pipeline.audit_generated_keys(
+            exam=args.exam, subject=args.subject, chapter=args.chapter, k=args.k,
+            threshold=args.threshold, style=args.style, limit=args.limit,
+            dry_run=args.dry_run)
+        if r.get("error"):
+            print(json.dumps(r, indent=2)); sys.exit(1)
+        print(f"  audited={r['audited']}  k={r['k']} threshold={r['threshold']} style={r['style']}"
+              f"{'  (DRY RUN)' if r['dry_run'] else ''}")
+        print(f"  PASSED={r['passed']}  FAILED={r['failed']}  INCONCLUSIVE={r['inconclusive']}"
+              f"  pass_rate={r['pass_rate']}")
+        if r["failures"]:
+            print("  --- questions removed from serving ---")
+            for f in r["failures"][:25]:
+                print(f"   [{(f['chapter'] or '')[:26]:26s}] key={f['key']} vs model={f['majority']}"
+                      f" ({f['votes']} votes) {f['stem'][:60]}")
 
     elif args.cmd == "reverify":
         print(json.dumps(pipeline.reverify_solutions(

@@ -12,7 +12,8 @@ import re
 import urllib.request
 
 from . import config
-from .models import Question, content_hash, references_figure, repair_latex
+from .models import (Question, content_hash, is_figure_dependent, references_figure,
+                     repair_latex)
 
 _TYPE_MAP = {
     "MCQ": "MCQ_single",
@@ -516,3 +517,120 @@ def from_image_row(row: dict, llm, exam: str = "JEE Advanced", subject: str = "P
     return Question(id=qid, exam=exam, subject=subject, stem=stem, qtype=qtype, options=opts,
                     correct_answer=answer, source=f"{exam} {year} (img)", year=year, hash=h,
                     needs_figure=has_fig, figure_url=figure_url, figure_refs=figure_refs)
+
+
+# --- Synergy CET / GP Rating path (MTI chapter bank, pre-tagged + pre-keyed) --------
+# Source: a GP-Rating exam-prep compilation whose back half (pp. ~410-575) is a dump
+# from a Maritime Training Institute's exam software. Every question arrives already
+# tagged to a DG-syllabus module ("Exam Title : Chapter GSK 6") and already keyed
+# ("Right Answers : A"), with no LaTeX and no vision needed — the same "pre-tagged +
+# pre-solved TEXT" shape as the grafite/datavorous paths, so it lives beside them
+# rather than going through from_pdf() (which requires the vision LLM).
+#
+# ⚠️ COPYRIGHT: this is a privately compiled book, NOT an official government paper.
+# These rows are ingested as generated=0 EXEMPLARS ONLY. They are never served:
+# storage.pool() serves `generated=1` for any exam outside the CBSE/UPSC/BPSC/Current
+# Affairs allowlist, and "Synergy CET" is deliberately outside it. See the plan doc
+# MERCHANT_NAVY_GP_RATING_PLAN.md §3. Do NOT rename the exam onto that allowlist.
+_SYN_TITLE = re.compile(r"Exam Title\s*:\s*Chapter\s+([A-Z]{2,4}\s*\d{1,2})", re.I)
+_SYN_Q = re.compile(r"^\s*(\d{1,3})[.)]\s*(.+)$")
+# Options are LETTERS and questions are DIGITS, so the two never collide — which means
+# we must NOT depend on indentation. pypdf and PyMuPDF disagree about leading
+# whitespace, and an indentation-based rule silently drops every option under one of them.
+_SYN_OPT = re.compile(r"^\s*([A-E])[.)]\s*(.+)$")
+_SYN_ANS = re.compile(r"^\s*Right Answers?\s*:\s*([A-E])", re.I)
+# Watermark / promo lines the compiler stamped on every page.
+_SYN_NOISE = re.compile(r"(instagram|For any doubt contact|Scanned by TapScanner)", re.I)
+
+
+def _pdf_page_texts(pdf_path):
+    """Page texts via PyMuPDF (the declared dep) falling back to pypdf.
+
+    Both are supported on purpose: production boxes carry pymupdf per requirements.txt,
+    but a plain dev machine often only has pypdf, and this ingest must not be the reason
+    someone installs a C-extension to re-run a 3-second regex parse."""
+    try:
+        import fitz
+        with fitz.open(pdf_path) as doc:
+            return [p.get_text() for p in doc]
+    except ImportError:
+        from pypdf import PdfReader
+        return [(p.extract_text() or "") for p in PdfReader(pdf_path).pages]
+
+
+def from_synergy_pdf(pdf_path, exam="Synergy CET", default_difficulty=2,
+                     code_map=None):
+    """Parse the MTI chapter bank out of the Synergy GP-Rating compilation.
+
+    Returns (questions, report). Only pages inside an `Exam Title : Chapter XXX N`
+    block are read — the aptitude/GK front half is deliberately skipped, because those
+    sections are served by the compute-the-answer generators (quantgen / reasoninggen /
+    staticgkgen), which owe nothing to this PDF.
+
+    `code_map` maps the source's module code -> (subject, readable chapter). Codes not
+    in the map are SKIPPED and counted, never banked under an opaque code."""
+    from .gp_rating import CODE_TO_CHAPTER
+    code_map = code_map if code_map is not None else CODE_TO_CHAPTER
+
+    questions, skipped_codes, unparsed = [], {}, 0
+    code = None
+    stem, opts = None, {}
+
+    def _flush(ans_letter):
+        """Emit the question under construction, if it is complete."""
+        nonlocal stem, opts, unparsed
+        if not stem or len(opts) < 2 or code is None:
+            unparsed += 1
+            stem, opts = None, {}
+            return
+        mapped = code_map.get(code)
+        if not mapped:
+            skipped_codes[code] = skipped_codes.get(code, 0) + 1
+            stem, opts = None, {}
+            return
+        subject, chapter = mapped
+        text = re.sub(r"\s+", " ", stem).strip()
+        options = [{"label": k, "text": v} for k, v in sorted(opts.items())]
+        h = content_hash(text)
+        questions.append(Question(
+            id=f"synergy_gpr_{code.replace(' ', '').lower()}_{h[:6]}",
+            exam=exam, subject=subject, stem=text, qtype="MCQ_single",
+            options=options, correct_answer=ans_letter,
+            chapter=chapter, difficulty=default_difficulty,
+            # The image IS the question for the picture-identification items; flagging
+            # them here keeps storage.pool()'s figure gate from ever serving a stem
+            # whose referent we don't have.
+            needs_figure=is_figure_dependent(text, options, "MCQ_single"),
+            source="Synergy CET GP Rating (MTI chapter bank)", hash=h,
+        ))
+        stem, opts = None, {}
+
+    for raw_page in _pdf_page_texts(pdf_path):
+        for line in raw_page.split("\n"):
+            if _SYN_NOISE.search(line):
+                continue
+            m_title = _SYN_TITLE.search(line)
+            if m_title:
+                code = re.sub(r"\s+", " ", m_title.group(1).strip().upper())
+                stem, opts = None, {}
+                continue
+            if code is None:
+                continue
+            m_ans = _SYN_ANS.match(line)
+            if m_ans:
+                _flush(m_ans.group(1).upper())
+                continue
+            m_opt = _SYN_OPT.match(line)
+            if m_opt and stem:
+                opts[m_opt.group(1)] = m_opt.group(2).strip()
+                continue
+            m_q = _SYN_Q.match(line)
+            if m_q:
+                stem, opts = m_q.group(2), {}
+                continue
+            # continuation of a stem that wrapped across lines (before any option)
+            if stem and not opts and line.strip():
+                stem += " " + line.strip()
+
+    return questions, {"parsed": len(questions), "unparsed_blocks": unparsed,
+                       "skipped_unmapped_codes": skipped_codes}

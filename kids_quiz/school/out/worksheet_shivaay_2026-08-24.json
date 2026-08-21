@@ -1,0 +1,558 @@
+{
+ "date": "2026-08-24",
+ "day": "Monday",
+ "board": "ICSE",
+ "cls": 3,
+ "sections": [
+  {
+   "subject": "Mathematics",
+   "periods": 1,
+   "items": [
+    {
+     "type": "arith",
+     "subject": "mathematics",
+     "class": 3,
+     "chapter": "Numbers & Place Value",
+     "band": 3,
+     "instruction": "Add it!  303 + 149 = ?",
+     "voice": "What is 303 plus 149?",
+     "payload": {
+      "op": "+",
+      "a": 303,
+      "b": 149
+     },
+     "answer": 452,
+     "explain": "303 plus 149 makes 452.",
+     "style": {
+      "id": "abstract_fact",
+      "cognitive": "remember",
+      "dok": 1,
+      "representation": "abstract",
+      "context": "abstract",
+      "concept": "add"
+     },
+     "difficulty": 1.4,
+     "radicals": {
+      "digits": 3,
+      "op": "+",
+      "carry": true,
+      "representation": "abstract",
+      "dok": 1
+     },
+     "distractors": [
+      {
+       "value": 442,
+       "misconception_id": "add_no_carry",
+       "misconception": "forgot to carry",
+       "why": "You added each column but forgot to carry the 1."
+      },
+      {
+       "value": 453,
+       "misconception_id": "near_miss",
+       "misconception": "computation slip",
+       "why": "A small arithmetic slip."
+      },
+      {
+       "value": 451,
+       "misconception_id": "near_miss",
+       "misconception": "computation slip",
+       "why": "A small arithmetic slip."
+      }
+     ],
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "What does the question ask you to put together? Add the numbers."
+      },
+      {
+       "level": "step",
+       "text": "Line the numbers up by place value, then work one column at a time (right to left)."
+      },
+      {
+       "level": "worked",
+       "text": "Work it column by column, carrying/borrowing where needed."
+      }
+     ]
+    },
+    {
+     "type": "arith",
+     "subject": "mathematics",
+     "class": 3,
+     "chapter": "Comparing Numbers",
+     "band": 4,
+     "instruction": "Diya has 114 mangoes. Then gets 394 more. How many mangoes in all?",
+     "voice": "Diya has 114 mangoes. Then gets 394 more. How many mangoes in all?",
+     "payload": {
+      "op": "+",
+      "a": 114,
+      "b": 394
+     },
+     "answer": 508,
+     "explain": "It makes 508.",
+     "style": {
+      "id": "story_reallife",
+      "cognitive": "apply",
+      "dok": 2,
+      "representation": "story",
+      "context": "real_life",
+      "concept": "add"
+     },
+     "difficulty": 2.1,
+     "radicals": {
+      "digits": 3,
+      "op": "+",
+      "carry": true,
+      "representation": "story",
+      "dok": 2
+     },
+     "distractors": [
+      {
+       "value": 408,
+       "misconception_id": "add_no_carry",
+       "misconception": "forgot to carry",
+       "why": "You added each column but forgot to carry the 1."
+      },
+      {
+       "value": 498,
+       "misconception_id": "add_place_slip",
+       "misconception": "place-value slip",
+       "why": "Check your tens column — the place value slipped by 10."
+      },
+      {
+       "value": 509,
+       "misconception_id": "near_miss",
+       "misconception": "computation slip",
+       "why": "A small arithmetic slip."
+      }
+     ],
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "What does the question ask you to put together? Add the numbers."
+      },
+      {
+       "level": "step",
+       "text": "Line the numbers up by place value, then work one column at a time (right to left)."
+      },
+      {
+       "level": "worked",
+       "text": "Work it column by column, carrying/borrowing where needed."
+      }
+     ]
+    },
+    {
+     "type": "compare_symbol",
+     "subject": "mathematics",
+     "class": 3,
+     "chapter": "Skip Counting",
+     "band": 3,
+     "instruction": "Put the right sign! 🐊",
+     "voice": "Compare 1015 and 9628.",
+     "payload": {
+      "a": 1015,
+      "b": 9628
+     },
+     "answer": "<",
+     "explain": "1015 is less than 9628.",
+     "style": {
+      "id": "abstract_fact",
+      "cognitive": "remember",
+      "dok": 1,
+      "representation": "abstract",
+      "context": "abstract",
+      "concept": "number"
+     },
+     "difficulty": 1.0,
+     "radicals": {
+      "digits": 4,
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Compare the biggest place value first. The open mouth points to the bigger number."
+      }
+     ]
+    },
+    {
+     "type": "neighbour_number",
+     "subject": "mathematics",
+     "class": 3,
+     "chapter": "Number Patterns",
+     "band": 2,
+     "instruction": "What comes just before 291?",
+     "voice": "What is just before 291?",
+     "payload": {
+      "mode": "before",
+      "n": 291,
+      "display": "291 , ▢"
+     },
+     "answer": 290,
+     "explain": "Just before 291 is 290.",
+     "style": {
+      "id": "abstract_fact",
+      "cognitive": "remember",
+      "dok": 1,
+      "representation": "abstract",
+      "context": "abstract",
+      "concept": "number"
+     },
+     "difficulty": 0.5,
+     "radicals": {
+      "digits": 3,
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Just after = add 1. Just before = take 1."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "EVS",
+   "periods": 2,
+   "items": [
+    {
+     "type": "true_false",
+     "instruction": "Is this true or false?",
+     "payload": {
+      "statement": "A bungalow is made of bricks."
+     },
+     "answer": true,
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Houses",
+     "band": 2,
+     "voice": "Is this true or false?",
+     "explain": "Correct — that's true!",
+     "difficulty": 0.3,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "odd_one_out",
+     "instruction": "Which one does NOT belong?",
+     "payload": {
+      "options": [
+       "Bee",
+       "Knee",
+       "Foot",
+       "Arm"
+      ]
+     },
+     "answer": "Bee",
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Human Body",
+     "band": 1,
+     "voice": "Which one does NOT belong?",
+     "explain": "Bee is a flies, the others are all parts.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "cloze",
+     "instruction": "Fill in the blank.",
+     "payload": {
+      "sentence": "A painter uses a ___.",
+      "bank": [
+       "stethoscope",
+       "brush",
+       "plough"
+      ]
+     },
+     "answer": "brush",
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Work We Do",
+     "band": 1,
+     "voice": "Fill in the blank.",
+     "explain": "The answer is brush.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "true_false",
+     "instruction": "Is this true or false?",
+     "payload": {
+      "statement": "A Hibiscus plant is a tree."
+     },
+     "answer": false,
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Plants",
+     "band": 2,
+     "voice": "Is this true or false?",
+     "explain": "That's false — Hibiscus is not a tree.",
+     "difficulty": 0.3,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "cloze",
+     "instruction": "Fill in the blank.",
+     "payload": {
+      "sentence": "A Monkey eats ___.",
+      "bank": [
+       "meat",
+       "bananas",
+       "grass"
+      ]
+     },
+     "answer": "bananas",
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Animals",
+     "band": 1,
+     "voice": "Fill in the blank.",
+     "explain": "The answer is bananas.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "Hindi",
+   "periods": 2,
+   "items": [
+    {
+     "type": "cloze",
+     "instruction": "ख़ाली जगह भरिए।",
+     "payload": {
+      "sentence": "'गरम' का विलोम ___ है।",
+      "bank": [
+       "छोटा",
+       "रोना",
+       "ठंडा"
+      ]
+     },
+     "answer": "ठंडा",
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "विलोम शब्द",
+     "band": 1,
+     "voice": "ख़ाली जगह भरिए।",
+     "explain": "सही उत्तर 'ठंडा' है।",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "match_following",
+     "instruction": "हर शब्द को उसके पर्यायवाची से मिलाइए।",
+     "payload": {
+      "pairs": [
+       [
+        "सूरज",
+        "सूर्य"
+       ],
+       [
+        "फूल",
+        "पुष्प"
+       ],
+       [
+        "आँख",
+        "नेत्र"
+       ],
+       [
+        "आग",
+        "अग्नि"
+       ]
+      ]
+     },
+     "answer": {
+      "सूरज": "सूर्य",
+      "फूल": "पुष्प",
+      "आँख": "नेत्र",
+      "आग": "अग्नि"
+     },
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "पर्यायवाची शब्द",
+     "band": 1,
+     "voice": "हर शब्द को उसके पर्यायवाची से मिलाइए।",
+     "explain": "शाबाश!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "cloze",
+     "instruction": "ख़ाली जगह भरिए।",
+     "payload": {
+      "sentence": "'नाना' का स्त्रीलिंग ___ है।",
+      "bank": [
+       "माता",
+       "नानी",
+       "बेटी"
+      ]
+     },
+     "answer": "नानी",
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "लिंग",
+     "band": 1,
+     "voice": "ख़ाली जगह भरिए।",
+     "explain": "सही उत्तर 'नानी' है।",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "odd_one_out",
+     "instruction": "इनमें से कौन-सा अलग है?",
+     "payload": {
+      "options": [
+       "छ",
+       "ग",
+       "अ",
+       "ट"
+      ]
+     },
+     "answer": "अ",
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "वर्णमाला",
+     "band": 1,
+     "voice": "इनमें से कौन-सा अलग है?",
+     "explain": "'अ' बाकी से अलग है।",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "match_following",
+     "instruction": "हर शब्द को उसके स्त्रीलिंग रूप से मिलाइए।",
+     "payload": {
+      "pairs": [
+       [
+        "राजा",
+        "रानी"
+       ],
+       [
+        "लड़का",
+        "लड़की"
+       ],
+       [
+        "घोड़ा",
+        "घोड़ी"
+       ],
+       [
+        "भाई",
+        "बहन"
+       ],
+       [
+        "नाना",
+        "नानी"
+       ]
+      ]
+     },
+     "answer": {
+      "राजा": "रानी",
+      "लड़का": "लड़की",
+      "घोड़ा": "घोड़ी",
+      "भाई": "बहन",
+      "नाना": "नानी"
+     },
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "लिंग",
+     "band": 1,
+     "voice": "हर शब्द को उसके स्त्रीलिंग रूप से मिलाइए।",
+     "explain": "शाबाश!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

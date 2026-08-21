@@ -1,0 +1,55 @@
+{
+  "_README": "Fill every FILL_ME before running make_export_invoice.py. Ask your CA for sac_code and confirm the LUT ARN is current for THIS financial year.",
+
+  "supplier": {
+    "legal_name": "Trigunai Innovations Private Limited",
+    "address_lines": [
+      "FILL_ME — registered address line 1",
+      "FILL_ME — line 2",
+      "FILL_ME — city, state, PIN"
+    ],
+    "state": "FILL_ME — e.g. Bihar",
+    "state_code": "FILL_ME — e.g. 10",
+    "gstin": "FILL_ME",
+    "pan": "FILL_ME",
+    "cin": "FILL_ME — optional",
+    "email": "deepak@trigunai.com",
+    "phone": "FILL_ME"
+  },
+
+  "lut": {
+    "arn": "FILL_ME — LUT ARN from Form GST RFD-11",
+    "financial_year": "2026-27"
+  },
+
+  "client": {
+    "legal_name": "FILL_ME — client's legal name",
+    "address_lines": [
+      "FILL_ME — line 1",
+      "FILL_ME — line 2"
+    ],
+    "country": "FILL_ME — e.g. United States"
+  },
+
+  "service": {
+    "description": "Software development and related technical services",
+    "sac_code": "998314",
+    "sac_note": "998314 = IT design & development services. CONFIRM with your CA."
+  },
+
+  "invoice": {
+    "series_prefix": "TAI/EXP/2026-27/",
+    "next_number": 1,
+    "currency": "USD",
+    "default_amount": "200.00"
+  },
+
+  "bank": {
+    "account_name": "FILL_ME",
+    "account_number": "FILL_ME",
+    "bank_name": "FILL_ME",
+    "swift": "FILL_ME",
+    "ifsc": "FILL_ME",
+    "ad_code": "FILL_ME — AD Code, ask your bank"
+  }
+}

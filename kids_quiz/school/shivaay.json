@@ -1,0 +1,78 @@
+{
+  "name": "Shivaay Deepak Kumar Rai",
+  "school": "Childrens Academy, Thane",
+  "portal": "https://cags.edusprint.in/cags/Portal/Default/IndexLite",
+  "section": "III - A",
+  "cls": 3,
+  "board": "ICSE",
+  "board_confirmed": false,
+  "_board_note": "INFERRED, not stated on the portal. Evidence: the timetable lists Science and Social Studies as SEPARATE class-3 subjects, plus Marathi as a language — that's the ICSE pattern (CBSE class 3 teaches one combined EVS). Our ICSE class-3 EVS bank covers both, so Science/Social Studies both map to EVS. If the school is actually the CBSE branch, change board to \"CBSE\" — that bank exists too and nothing else needs editing.",
+
+  "source": {
+    "captured_from": "CAGS portal → dashboard TimeTable Calendar, stepped day by day",
+    "captured_on": "2026-08-18",
+    "captured_by": "Claude-in-Chrome, reading Deepak's already-logged-in session (portal login has an image CAPTCHA — see timetable.py)",
+    "week_of": "2026-08-17 to 2026-08-24",
+    "complete": true,
+    "_note": "Saturday showed 'No events to display' and the school Event Calendar marks every Saturday WEEKEND, so Sat/Sun are genuinely empty. Re-capture if the school reshuffles the timetable."
+  },
+
+  "week": {
+    "mon": [
+      {"period": 1,  "subject": "ATHLETICS",          "teacher": "Jignesh Jayanti Patel"},
+      {"period": 2,  "subject": "ATHLETICS",          "teacher": "Rohit Raghunath Naik"},
+      {"period": 3,  "subject": "Mathlab",            "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 5,  "subject": "FINANCIAL LITERACY", "teacher": "Nikshita Shekar Shetty"},
+      {"period": 6,  "subject": "SCIENCE",            "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 7,  "subject": "SCIENCE",            "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 8,  "subject": "TRADITIONAL GAME",   "teacher": "Jignesh Jayanti Patel"},
+      {"period": 9,  "subject": "HINDI",              "teacher": "Poonam Santosh Gupta"},
+      {"period": 10, "subject": "HINDI",              "teacher": "Poonam Santosh Gupta"}
+    ],
+    "tue": [
+      {"period": 1,  "subject": "Assembly",         "teacher": "Pooja Indranil Banerji"},
+      {"period": 2,  "subject": "MARATHI",          "teacher": "Gayatri Ishwar Mali"},
+      {"period": 3,  "subject": "HINDI",            "teacher": "Poonam Santosh Gupta"},
+      {"period": 4,  "subject": "HINDI",            "teacher": "Poonam Santosh Gupta"},
+      {"period": 6,  "subject": "ENGLISH",          "teacher": "Pooja Indranil Banerji"},
+      {"period": 7,  "subject": "ENGLISH",          "teacher": "Pooja Indranil Banerji"},
+      {"period": 8,  "subject": "SOCIAL STUDIES",   "teacher": "Priscilla Chrysel Gonsalves"},
+      {"period": 9,  "subject": "Science Activity", "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 10, "subject": "VALUE EDUCATION",  "teacher": "Pooja Indranil Banerji"}
+    ],
+    "wed": [
+      {"period": 3,  "subject": "JPETT",          "teacher": "Nikshita Shekar Shetty"},
+      {"period": 4,  "subject": "ENGLISH",        "teacher": "Pooja Indranil Banerji"},
+      {"period": 5,  "subject": "ENGLISH",        "teacher": "Pooja Indranil Banerji"},
+      {"period": 6,  "subject": "SOCIAL STUDIES", "teacher": "Priscilla Chrysel Gonsalves"},
+      {"period": 7,  "subject": "SOCIAL STUDIES", "teacher": "Priscilla Chrysel Gonsalves"},
+      {"period": 8,  "subject": "MATHEMATICS",    "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 9,  "subject": "MATHEMATICS",    "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 10, "subject": "ENGLISH",        "teacher": "Pooja Indranil Banerji"}
+    ],
+    "thu": [
+      {"period": 1,  "subject": "ENGLISH",                "teacher": "Pooja Indranil Banerji"},
+      {"period": 2,  "subject": "ENGLISH",                "teacher": "Pooja Indranil Banerji"},
+      {"period": 3,  "subject": "ROBOTICS AND COMPUTERS", "teacher": "Geetha Ravikumar"},
+      {"period": 4,  "subject": "ROBOTICS AND COMPUTERS", "teacher": "Geetha Ravikumar"},
+      {"period": 5,  "subject": "SCIENCE",                "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 6,  "subject": "SCIENCE",                "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 7,  "subject": "CRAFT",                  "teacher": "Omkar Vasant Phapale"},
+      {"period": 8,  "subject": "DRAWING",                "teacher": "Omkar Vasant Phapale"},
+      {"period": 9,  "subject": "MATHEMATICS",            "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 10, "subject": "MATHEMATICS",            "teacher": "Pushpa Mary Sunny Xavier Fernandes"}
+    ],
+    "fri": [
+      {"period": 1,  "subject": "ENGLISH",          "teacher": "Pooja Indranil Banerji"},
+      {"period": 2,  "subject": "SOCIAL STUDIES",   "teacher": "Priscilla Chrysel Gonsalves"},
+      {"period": 3,  "subject": "SOCIAL STUDIES",   "teacher": "Priscilla Chrysel Gonsalves"},
+      {"period": 5,  "subject": "MATHEMATICS",      "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 6,  "subject": "MATHEMATICS",      "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 8,  "subject": "Science Activity", "teacher": "Pushpa Mary Sunny Xavier Fernandes"},
+      {"period": 9,  "subject": "HINDI",            "teacher": "Poonam Santosh Gupta"},
+      {"period": 10, "subject": "HINDI",            "teacher": "Poonam Santosh Gupta"}
+    ],
+    "sat": [],
+    "sun": []
+  }
+}

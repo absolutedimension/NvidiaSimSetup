@@ -60,7 +60,15 @@ def mathify(t):
     t = re.sub(r"\^\s*\{([^{}]*)\}", r"<sup>\1</sup>", t)
     t = re.sub(r"\^\s*(-?\w)", r"<sup>\1</sup>", t)
     t = re.sub(r"_\s*\{([^{}]*)\}", r"<sub>\1</sub>", t)
-    t = re.sub(r"_\s*(\w)", r"<sub>\1</sub>", t)
+    # NOT \w — \w includes the underscore itself, so a fill-in-the-blank "______" was eaten as a
+    # run of nested subscripts and printed as "_ _ _ ." A subscript is a letter or a digit; a run
+    # of underscores is a blank, and the commission prints exactly that. Same family as the `$`
+    # that mathify strips: any symbol a stem prints has to be checked through here first.
+    # No \s* either. "______ is the capital of X" put the trailing underscore next to the space
+    # before "is", so the blank printed as "_____ i s". A subscript is written tight against its
+    # base — H_2, x_1 — and never across a space, so requiring adjacency costs nothing and stops
+    # the blank being eaten. (Second fix to this line; the first only excluded the underscore.)
+    t = re.sub(r"_([A-Za-z0-9])", r"<sub>\1</sub>", t)
     t = t.replace("\\%", "%").replace("\\$", "$")
     t = re.sub(r"\\[a-zA-Z]+", "", t)                     # drop anything unrecognised
     return t.replace("{", "").replace("}", "")

@@ -1,0 +1,532 @@
+{
+ "date": "2026-08-18",
+ "day": "Tuesday",
+ "board": "ICSE",
+ "cls": 3,
+ "sections": [
+  {
+   "subject": "Hindi",
+   "periods": 2,
+   "items": [
+    {
+     "type": "sort_groups",
+     "instruction": "इन जानवरों को पालतू और जंगली में बाँटिए।",
+     "payload": {
+      "items": [
+       "कुत्ता",
+       "भालू",
+       "बाघ",
+       "बकरी",
+       "बंदर",
+       "बिल्ली"
+      ],
+      "bins": [
+       "जंगली जानवर",
+       "पालतू जानवर"
+      ]
+     },
+     "answer": {
+      "भालू": "जंगली जानवर",
+      "बाघ": "जंगली जानवर",
+      "बंदर": "जंगली जानवर",
+      "कुत्ता": "पालतू जानवर",
+      "बकरी": "पालतू जानवर",
+      "बिल्ली": "पालतू जानवर"
+     },
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "शब्दावली",
+     "band": 1,
+     "voice": "इन जानवरों को पालतू और जंगली में बाँटिए।",
+     "explain": "शाबाश!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "odd_one_out",
+     "instruction": "इनमें से कौन-सा अलग है?",
+     "payload": {
+      "options": [
+       "सेब",
+       "अंगूर",
+       "आम",
+       "ज"
+      ]
+     },
+     "answer": "ज",
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "शब्दावली",
+     "band": 1,
+     "voice": "इनमें से कौन-सा अलग है?",
+     "explain": "'ज' बाकी से अलग है।",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "cloze",
+     "instruction": "ख़ाली जगह भरिए।",
+     "payload": {
+      "sentence": "'बकरा' का स्त्रीलिंग ___ है।",
+      "bank": [
+       "बकरी",
+       "लड़की",
+       "बेटी"
+      ]
+     },
+     "answer": "बकरी",
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "लिंग",
+     "band": 1,
+     "voice": "ख़ाली जगह भरिए।",
+     "explain": "सही उत्तर 'बकरी' है।",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "true_false",
+     "instruction": "सही या ग़लत?",
+     "payload": {
+      "statement": "'दादा' का स्त्रीलिंग 'नानी' है।"
+     },
+     "answer": false,
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "लिंग",
+     "band": 2,
+     "voice": "सही या ग़लत?",
+     "explain": "ग़लत! सही उत्तर 'दादी' है।",
+     "difficulty": 0.3,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "odd_one_out",
+     "instruction": "इनमें से कौन-सा अलग है?",
+     "payload": {
+      "options": [
+       "अमरूद",
+       "सेब",
+       "आम",
+       "छ"
+      ]
+     },
+     "answer": "छ",
+     "subject": "hindi",
+     "class": 3,
+     "chapter": "शब्दावली",
+     "band": 1,
+     "voice": "इनमें से कौन-सा अलग है?",
+     "explain": "'छ' बाकी से अलग है।",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "English",
+   "periods": 2,
+   "items": [
+    {
+     "type": "odd_one_out",
+     "instruction": "Which one does NOT belong?",
+     "payload": {
+      "options": [
+       "pink",
+       "U",
+       "I",
+       "O"
+      ]
+     },
+     "answer": "pink",
+     "subject": "english",
+     "class": 3,
+     "chapter": "Grammar",
+     "band": 1,
+     "voice": "Which one does NOT belong?",
+     "explain": "pink is a word, the others are all vowels.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "match_following",
+     "instruction": "Match each word with its plural.",
+     "payload": {
+      "pairs": [
+       [
+        "child",
+        "children"
+       ],
+       [
+        "dog",
+        "dogs"
+       ],
+       [
+        "bus",
+        "buses"
+       ],
+       [
+        "foot",
+        "feet"
+       ]
+      ]
+     },
+     "answer": {
+      "child": "children",
+      "dog": "dogs",
+      "bus": "buses",
+      "foot": "feet"
+     },
+     "subject": "english",
+     "class": 3,
+     "chapter": "Plurals",
+     "band": 1,
+     "voice": "Match each word with its plural.",
+     "explain": "Great matching!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "cloze",
+     "instruction": "Fill in the blank.",
+     "payload": {
+      "sentence": "The opposite of 'good' is ___.",
+      "bank": [
+       "down",
+       "cold",
+       "bad"
+      ]
+     },
+     "answer": "bad",
+     "subject": "english",
+     "class": 3,
+     "chapter": "Opposites",
+     "band": 1,
+     "voice": "Fill in the blank.",
+     "explain": "The answer is bad.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "cloze",
+     "instruction": "Fill in the blank.",
+     "payload": {
+      "sentence": "The past tense of 'take' is ___.",
+      "bank": [
+       "took",
+       "ate",
+       "sang"
+      ]
+     },
+     "answer": "took",
+     "subject": "english",
+     "class": 3,
+     "chapter": "Tenses",
+     "band": 1,
+     "voice": "Fill in the blank.",
+     "explain": "The answer is took.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "odd_one_out",
+     "instruction": "Which one does NOT belong?",
+     "payload": {
+      "options": [
+       "G",
+       "O",
+       "E",
+       "I"
+      ]
+     },
+     "answer": "G",
+     "subject": "english",
+     "class": 3,
+     "chapter": "Grammar",
+     "band": 1,
+     "voice": "Which one does NOT belong?",
+     "explain": "G is a consonant, the others are all vowels.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "EVS",
+   "periods": 2,
+   "items": [
+    {
+     "type": "odd_one_out",
+     "instruction": "Which one does NOT belong?",
+     "payload": {
+      "options": [
+       "Father",
+       "West",
+       "Grandmother",
+       "Grandfather"
+      ]
+     },
+     "answer": "West",
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Family",
+     "band": 1,
+     "voice": "Which one does NOT belong?",
+     "explain": "West is a direction, the others are all members.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "odd_one_out",
+     "instruction": "Which one does NOT belong?",
+     "payload": {
+      "options": [
+       "Aeroplane",
+       "Bicycle",
+       "Car",
+       "Bee"
+      ]
+     },
+     "answer": "Bee",
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Transport",
+     "band": 1,
+     "voice": "Which one does NOT belong?",
+     "explain": "Bee is an insect, the others are all transports.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "match_following",
+     "instruction": "Match each animal with its home.",
+     "payload": {
+      "pairs": [
+       [
+        "Cow",
+        "Shed"
+       ],
+       [
+        "Bird",
+        "Nest"
+       ],
+       [
+        "Horse",
+        "Stable"
+       ],
+       [
+        "Rabbit",
+        "Burrow"
+       ]
+      ]
+     },
+     "answer": {
+      "Cow": "Shed",
+      "Bird": "Nest",
+      "Horse": "Stable",
+      "Rabbit": "Burrow"
+     },
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Animals",
+     "band": 1,
+     "voice": "Match each animal with its home.",
+     "explain": "Great matching!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "odd_one_out",
+     "instruction": "Which one does NOT belong?",
+     "payload": {
+      "options": [
+       "Honey",
+       "East",
+       "North",
+       "South"
+      ]
+     },
+     "answer": "Honey",
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Directions",
+     "band": 1,
+     "voice": "Which one does NOT belong?",
+     "explain": "Honey is an animals, the others are all directions.",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    },
+    {
+     "type": "sort_groups",
+     "instruction": "Sort these into solids, liquids and gases.",
+     "payload": {
+      "items": [
+       "Oxygen",
+       "Juice",
+       "Milk",
+       "Steam",
+       "Chair",
+       "Iron"
+      ],
+      "bins": [
+       "liquid",
+       "solid",
+       "gas"
+      ]
+     },
+     "answer": {
+      "Juice": "liquid",
+      "Milk": "liquid",
+      "Chair": "solid",
+      "Iron": "solid",
+      "Steam": "gas",
+      "Oxygen": "gas"
+     },
+     "subject": "evs",
+     "class": 3,
+     "chapter": "Forms of Matter",
+     "band": 1,
+     "voice": "Sort these into solids, liquids and gases.",
+     "explain": "Great sorting!",
+     "difficulty": 0.0,
+     "radicals": {
+      "representation": "abstract",
+      "dok": 1
+     },
+     "hints": [
+      {
+       "level": "strategy",
+       "text": "Read it slowly and think about what it's really asking."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

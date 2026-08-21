@@ -176,6 +176,47 @@ def ingest_pdf(pdf_path, key_path=None, exam="JEE Advanced", subject="Physics",
     return _report(questions, llm)
 
 
+def ingest_synergy(pdf_path, exam="Synergy CET", default_difficulty=2, limit=None,
+                   llm_validate=False, store: Store | None = None,
+                   llm: LLM | None = None) -> dict:
+    """Ingest the Synergy CET / GP-Rating MTI chapter bank from the compilation PDF.
+
+    Pre-tagged (DG module code) + pre-keyed (Right Answers) TEXT — so this is a sibling
+    of ingest_grafite/ingest_datavorous, NOT of ingest_pdf (which requires the vision
+    LLM and would burn tokens doing a worse job than the regex parse).
+
+    Only the chapter-bank pages are read. The compilation's aptitude and GK halves are
+    deliberately ignored: Sections C-F are served by the compute-the-answer generators
+    (quantgen / reasoninggen / staticgkgen), which are copyright-clean by construction
+    and owe nothing to this PDF.
+
+    ⚠️ These land as generated=0 and are EXEMPLARS ONLY — never served. storage.pool()
+    restricts any exam outside the CBSE/UPSC/BPSC/Current-Affairs allowlist to
+    generated=1, and "Synergy CET" is deliberately outside it. Renaming the exam onto
+    that allowlist would start serving a privately-compiled book verbatim.
+    Validation is RULE-BASED by default (llm_validate=False): the answer key comes from
+    the source, so there is nothing for an LLM to adjudicate at ingest time."""
+    store = store or Store()
+    llm = llm if llm is not None else LLM()
+
+    questions, parse_rep = extractor.from_synergy_pdf(
+        pdf_path, exam=exam, default_difficulty=default_difficulty)
+    if limit:
+        questions = questions[:limit]
+    cleaner.clean(questions)
+    cleaner.flag_duplicates(questions, existing_hashes=store.existing_hashes())
+    validator.validate(questions, llm=(llm if llm_validate else None))
+    for q in questions:
+        store.upsert(q)
+
+    rep = _report(questions, llm)
+    rep["parse"] = parse_rep
+    rep["needs_figure"] = sum(1 for q in questions if q.needs_figure)
+    rep["servable"] = sum(1 for q in questions
+                          if not q.needs_figure and q.verified and not q.duplicate_of)
+    return rep
+
+
 def ingest_image_dataset(dataset="Reja1/jee-neet-benchmark", exam_prefix="JEE",
                          subject="Physics", limit=None, exam="JEE Advanced",
                          store: Store | None = None, llm: LLM | None = None) -> dict:
@@ -281,6 +322,65 @@ def reverify_solutions(chapter=None, k=5, limit=None, exam=None, subject=None,
             "still_needs_review": still, "failed": failed}
 
 
+def audit_generated_keys(exam=None, subject=None, chapter=None, k=5, threshold=None,
+                         style="auto", limit=None, dry_run=False,
+                         store: Store | None = None, llm: LLM | None = None) -> dict:
+    """Independently re-solve GENERATED questions k times and UNVERIFY any whose stated key
+    the model does not agree with by majority.
+
+    Why this exists: `reverify_solutions` reads `iter_real`, which is `generated=0` — so no
+    RAG-authored key has ever been re-checked. The generator writes verified=1 and the pool
+    serves it on trust. For computational subjects that is survivable (a wrong key usually
+    also fails validation); for FACTUAL-RECALL subjects like maritime knowledge there is
+    nothing to derive, so a hallucinated key is invisible and reaches the student.
+
+    PASS  -> majority answer == stated key AND votes >= threshold (of the REQUESTED k)
+    FAIL  -> disagreement, or too few confident votes -> verified=0, issue 'key_audit_failed'
+             (verified=0 removes it from every serving path; the row is kept for inspection)
+
+    `threshold` defaults to a strict majority of the requested k (3 of 5). Votes are counted
+    against the requested k, not the landed ones, so a question the model mostly answered
+    "UNSURE" on cannot squeak through on a single vote."""
+    from . import solver
+    store = store or Store()
+    llm = llm if llm is not None else LLM()
+    if not llm.ok:
+        return {"error": f"LLM required: {llm.last_error}"}
+    threshold = threshold or (k // 2 + 1)
+
+    qs = store.iter_generated(exam=exam, subject=subject, chapter=chapter, limit=limit)
+    passed = failed = inconclusive = 0
+    failures = []
+    for i, q in enumerate(qs, 1):
+        res = solver.solve_consistent(q, llm, k=k, style=style)
+        official = solver.canon(q, q.correct_answer)
+        if not res:
+            inconclusive += 1
+            if not dry_run:
+                store.set_verified(q.id, False, extra_issue="key_audit_inconclusive")
+            failures.append({"id": q.id, "chapter": q.chapter, "stem": q.stem[:90],
+                             "verdict": "inconclusive", "key": official, "majority": None,
+                             "votes": 0})
+            continue
+        agree = (res["majority"] == official and res["votes"] >= threshold)
+        if agree:
+            passed += 1
+        else:
+            failed += 1
+            if not dry_run:
+                store.set_verified(q.id, False, extra_issue="key_audit_failed")
+            failures.append({"id": q.id, "chapter": q.chapter, "stem": q.stem[:90],
+                             "verdict": "disagree", "key": official,
+                             "majority": res["majority"], "votes": res["votes"],
+                             "unsure": res.get("unsure", 0)})
+    total = len(qs)
+    return {"exam": exam, "subject": subject, "audited": total, "k": k,
+            "threshold": threshold, "style": style, "dry_run": dry_run,
+            "passed": passed, "failed": failed, "inconclusive": inconclusive,
+            "pass_rate": round(passed / total, 3) if total else None,
+            "failures": failures[:60]}
+
+
 def retag(chapter=None, limit=None, exam=None, subject=None,
           store: Store | None = None, llm: LLM | None = None) -> dict:
     """Re-tag real questions with the LLM (accurate concept + calibrated difficulty),
@@ -361,13 +461,17 @@ def batch_generate(exam="JEE Advanced", subject="Physics", per_cell=15,
     This is the batch engine behind the 'shared pool + live top-up for power users' model:
     everyone reads the pool; live /generate only fires when an active student drains a cell.
     """
-    from . import generator, syllabus, quantgen
+    from . import generator, syllabus, quantgen, reasoninggen, staticgkgen, englishgen
     store = store or Store()
-    # Banking quant is COMPUTE-the-answer (deterministic, no LLM). Other subjects are RAG/LLM
-    # and require a reachable proxy. Only demand the LLM when it will actually be used.
-    quant_mode = quantgen.can_generate(exam, subject)
+    # COMPUTE-THE-ANSWER subjects are deterministic Python builders — no LLM is ever called.
+    # generator.generate_test routes to FOUR of them (quant, reasoning, static-GK, English),
+    # so the LLM precondition has to check all four. It used to check quantgen alone, which
+    # made SSC/Railway/Banking Reasoning, Static-GK and English fills fail with "LLM required"
+    # against a proxy they would never have used.
+    computed_mode = any(m.can_generate(exam, subject)
+                        for m in (quantgen, reasoninggen, staticgkgen, englishgen))
     llm = llm if llm is not None else LLM()
-    if not quant_mode and not llm.ok:
+    if not computed_mode and not llm.ok:
         return {"error": f"LLM required for generation: {llm.last_error}"}
 
     tax = syllabus.get_taxonomy(exam, subject)

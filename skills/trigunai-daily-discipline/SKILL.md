@@ -21,6 +21,14 @@ description: >
 
 # TrigunAI Daily Discipline — the day engine
 
+> 🛑 **RUN `sankalp-daily-gate` FIRST.** It owns the GOAL layer (is today serving the one
+> committed goal?); this skill owns the TASK layer (the 5 blocks). Do not open the blocks
+> until today's ONE selling action is named in `SANKALPA.md`. **Reason this gate exists:** the
+> log below correctly diagnosed the build-trap every day from 22 June and never moved it —
+> because 5 blocks always yield an `[x]`, so a pure build day reads as a win (see 2026-08-14:
+> Block 3 `[x]` with a large artifact, gate move PENDING, same entry). This skill describes;
+> the gate forbids. Both are needed, in that order.
+
 > **Job:** turn the *intention* of a disciplined day into a *logged, repeatable* one. Each
 > morning: lock the 5 blocks and what each must ship. Each evening: log what actually shipped.
 > Repeat. Gradual, compounding, evidence-backed — not vibes.

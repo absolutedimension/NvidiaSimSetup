@@ -9,19 +9,65 @@ import re
 
 from .models import repair_latex
 
+_ANSWER_FORMAT = (
+    "final_answer format: MCQ_single -> one letter (e.g. B); MCQ_multi -> letters (e.g. AC); "
+    "integer -> the integer; numeric -> the decimal."
+)
+
 _SYS = (
     "You are an expert JEE physics solver. Solve the question INDEPENDENTLY and rigorously "
     "from first principles. Return JSON "
     '{"solution":"step-by-step worked solution using LaTeX $...$","final_answer":"..."}. '
-    "final_answer format: MCQ_single -> one letter (e.g. B); MCQ_multi -> letters (e.g. AC); "
-    "integer -> the integer; numeric -> the decimal. Base final_answer ONLY on your own derivation."
+    + _ANSWER_FORMAT +
+    " Base final_answer ONLY on your own derivation."
 )
 
+# Factual-RECALL domains (maritime/GP-Rating, static GK, regulations, trade knowledge).
+# The derivation prompt above is actively harmful here: there is nothing to derive, and
+# demanding "first principles" + LaTeX pushes the model to invent a rationale for a
+# guess. This variant asks for domain recall and — critically — licenses "UNSURE", so a
+# question the model does not actually know fails the audit instead of being confabulated
+# into a confident wrong vote.
+_SYS_RECALL = (
+    "You are a subject-matter expert in merchant-navy / maritime operations, marine "
+    "engineering, workshop practice and shipboard safety, answering a multiple-choice "
+    "question from an entrance exam. Answer INDEPENDENTLY from your own domain knowledge. "
+    'Return JSON {"solution":"brief factual justification, plain text, no LaTeX",'
+    '"final_answer":"..."}. '
+    + _ANSWER_FORMAT +
+    ' If you genuinely do not know, set final_answer to "UNSURE" rather than guessing — '
+    "an honest UNSURE is more useful than a confident guess."
+)
 
-def solve(q, llm, temperature: float = 0.1):
+# A question is COMPUTATIONAL when the work is arithmetic/algebra rather than recall.
+# Used by style="auto" to pick the right solver prompt per question.
+_NUMERIC_OPT = re.compile(r"^\s*[-+]?[\d.,]+\s*(%|km|m|cm|mm|kg|g|s|min|hr|hours?|rs\.?|"
+                          r"litres?|liters?|years?|days?|:\s*\d+)?\s*$", re.I)
+
+
+def pick_style(q) -> str:
+    """'derive' when the answer must be computed, else 'recall'.
+
+    Heuristic, not a classifier: if most options are bare numbers/quantities the question
+    is almost certainly arithmetic; otherwise it is prose recall."""
+    texts = [str(o.get("text") or "") for o in (q.options or [])]
+    if not texts:
+        return "derive"          # integer/numeric types are computational by definition
+    numeric = sum(1 for t in texts if _NUMERIC_OPT.match(t.strip()))
+    return "derive" if numeric >= max(2, len(texts) - 1) else "recall"
+
+
+def _system_for(q, style: str) -> str:
+    if style == "auto":
+        style = pick_style(q)
+    return _SYS_RECALL if style == "recall" else _SYS
+
+
+def solve(q, llm, temperature: float = 0.1, style: str = "derive"):
+    """style: 'derive' (default, unchanged JEE behaviour) | 'recall' | 'auto' (per-question)."""
     opts = "\n".join(f"({o.get('label')}) {o.get('text')}" for o in q.options)
     user = f"TYPE: {q.qtype}\nQUESTION: {q.stem}\n" + (f"OPTIONS:\n{opts}" if opts else "")
-    res = llm.chat_json(_SYS, user, temperature=temperature)
+    res = llm.chat_json(_system_for(q, style), user, temperature=temperature)
     if not res:
         return None
     return {"solution": repair_latex(res.get("solution", "")),
@@ -38,14 +84,21 @@ def canon(q, ans: str) -> str:
     return str(round(n)) if q.qtype == "integer" else f"{n:.4g}"
 
 
-def solve_consistent(q, llm, k: int = 5):
+def solve_consistent(q, llm, k: int = 5, style: str = "derive"):
     """Self-consistency: solve k times (sampled), majority-vote the answer. Returns the
-    majority answer, its vote count, and a solution from a run that produced it."""
+    majority answer, its vote count, and a solution from a run that produced it.
+
+    An explicit "UNSURE" (recall style) is counted as a NON-vote: it lowers the effective
+    k, so a question the model mostly doesn't know cannot reach a majority and will fail
+    an audit. That is the intended behaviour — silence should not be evidence."""
     from collections import Counter
-    votes, sol_by_ans = [], {}
+    votes, sol_by_ans, unsure = [], {}, 0
     for _ in range(k):
-        res = solve(q, llm, temperature=0.7)
+        res = solve(q, llm, temperature=0.7, style=style)
         if not res or not res["final_answer"]:
+            continue
+        if res["final_answer"].strip().upper() == "UNSURE":
+            unsure += 1
             continue
         cv = canon(q, res["final_answer"])
         if not cv:
@@ -55,7 +108,11 @@ def solve_consistent(q, llm, k: int = 5):
     if not votes:
         return None
     maj, cnt = Counter(votes).most_common(1)[0]
-    return {"majority": maj, "votes": cnt, "k": len(votes), "solution": sol_by_ans.get(maj)}
+    # `k` stays the EFFECTIVE vote count (existing callers compare against it). `k_requested`
+    # and `unsure` are additive: an audit must judge against the requested k, otherwise a
+    # single vote among four UNSUREs looks like a 1-of-1 unanimous majority.
+    return {"majority": maj, "votes": cnt, "k": len(votes), "k_requested": k,
+            "unsure": unsure, "solution": sol_by_ans.get(maj)}
 
 
 _EXPLAIN_SYS = (

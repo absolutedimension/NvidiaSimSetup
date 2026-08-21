@@ -1,0 +1,9909 @@
+{
+ "file": "OneStep_BSSC_InterLevel_Set2.html",
+ "models": [
+  "gpt-5.6-terra",
+  "gpt-5.5"
+ ],
+ "rows": [
+  {
+   "n": 1,
+   "hi": "GDP का पूर्ण रूप क्या है ?",
+   "en": "What is the full form of GDP ?",
+   "hi_options": [
+    [
+     "A",
+     "ग्रेट डबल पैक्ट"
+    ],
+    [
+     "B",
+     "ग्रॉस डोमेस्टिक प्रोडक्ट"
+    ],
+    [
+     "C",
+     "ग्रैंड डेवलपमेंट प्रोडक्ट"
+    ],
+    [
+     "D",
+     "इनमें से कोई नहीं"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Great Double Pact"
+    ],
+    [
+     "B",
+     "Gross Domestic Product"
+    ],
+    [
+     "C",
+     "Grand Development Product"
+    ],
+    [
+     "D",
+     "None of these"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "GDP stands for Gross Domestic Product.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "GDP का पूर्ण रूप Gross Domestic Product है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "GDP stands for Gross Domestic Product.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 2,
+   "hi": "2024 में कौन-सा खिलाड़ी सबसे कम उम्र का विश्व शतरंज चैंपियन बन गया ?",
+   "en": "Which sportsperson became the youngest-ever World Chess Champion in December 2024 ?",
+   "hi_options": [
+    [
+     "A",
+     "विदित गुजराती"
+    ],
+    [
+     "B",
+     "अर्जुन एरिगैसी"
+    ],
+    [
+     "C",
+     "प्रग्गानंद"
+    ],
+    [
+     "D",
+     "गुकेश डी."
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Vidit Gujrathi"
+    ],
+    [
+     "B",
+     "Arjun Erigaisi"
+    ],
+    [
+     "C",
+     "Praggnanandhaa"
+    ],
+    [
+     "D",
+     "Gukesh D."
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Gukesh D. became the youngest-ever World Chess Champion in December 2024.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "डी. गुकेश ने 2024 में सबसे कम उम्र के विश्व शतरंज चैंपियन का खिताब जीता।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Gukesh D. won the 2024 World Chess Championship at age 18, becoming the youngest-ever champion.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 3,
+   "hi": "कौन सी मिट्टी को रिगुर मिट्टी भी कहा जाता है ?",
+   "en": "Which soil is also called Regur soil?",
+   "hi_options": [
+    [
+     "A",
+     "पहाड़ी मिट्टी"
+    ],
+    [
+     "B",
+     "आलुवीय मिट्टी"
+    ],
+    [
+     "C",
+     "पीली मिट्टी"
+    ],
+    [
+     "D",
+     "काली मिट्टी"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Mountain soil"
+    ],
+    [
+     "B",
+     "Alluvial soil"
+    ],
+    [
+     "C",
+     "Yellow soil"
+    ],
+    [
+     "D",
+     "Black soil"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Regur soil is the black cotton soil of the Deccan Plateau.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "रिगुर मिट्टी काली मिट्टी का ही अन्य नाम है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Regur soil is another name for black cotton soil.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 4,
+   "hi": "पंचायती राज मंत्रालय राज्य में किस प्रक्रिया की देखरेख करता है?",
+   "en": "What process does the Panchayati Raj Ministry oversee in States?",
+   "hi_options": [
+    [
+     "A",
+     "विकेंद्रीकरण"
+    ],
+    [
+     "B",
+     "क्षमता निर्माण"
+    ],
+    [
+     "C",
+     "शहरी योजना"
+    ],
+    [
+     "D",
+     "केंद्रीकरण"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Decentralisation"
+    ],
+    [
+     "B",
+     "Capacity building"
+    ],
+    [
+     "C",
+     "Urban planning"
+    ],
+    [
+     "D",
+     "Centralisation"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "The Panchayati Raj Ministry promotes democratic decentralisation through local self-government.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "पंचायती राज व्यवस्था राज्य में विकेंद्रीकरण की प्रक्रिया को बढ़ावा और देखरेख करती है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "The Ministry of Panchayati Raj oversees decentralisation through Panchayati Raj institutions in States.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 5,
+   "hi": "PM-KUSUM के घटक-B के अंतर्गत, यदि बैंक वित्त एक स्टैंड-अलोन सौर कृषि पंप के लिए उपलब्ध है, तो किसान को प्रारंभ में (स्वयं का योगदान) कितना भुगतान करना होगा?",
+   "en": "Under Component-B of PM-KUSUM, what is the share that a farmer is required to initially pay (own contribution), if bank finance is availed for a stand-alone solar agriculture pump ?",
+   "hi_options": [
+    [
+     "A",
+     "10% लागत का"
+    ],
+    [
+     "B",
+     "40% लागत का"
+    ],
+    [
+     "C",
+     "30% लागत का"
+    ],
+    [
+     "D",
+     "20% लागत का"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "10% of the cost"
+    ],
+    [
+     "B",
+     "40% of the cost"
+    ],
+    [
+     "C",
+     "30% of the cost"
+    ],
+    [
+     "D",
+     "20% of the cost"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "With bank finance, the farmer initially pays 10% and finances the remaining 30% share through a loan.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "बैंक ऋण उपलब्ध होने पर किसान का प्रारंभिक स्वयं अंशदान लागत का 10% होता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Under PM-KUSUM Component-B, with bank finance the farmer initially pays 10% of the pump cost as own contribution.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 6,
+   "hi": "लोकपाल और लोकायुक्त अधिनियम 2013 के तहत, निम्नलिखित में से कौन लोकपाल के चयन के लिए चयन समिति का हिस्सा नहीं है?",
+   "en": "Under the Lokpal and Lokayuktas Act 2013, which one of the following is not a part of the Selection Committee for the selection of the Lokpal?",
+   "hi_options": [
+    [
+     "A",
+     "भारत के उपराष्ट्रपति"
+    ],
+    [
+     "B",
+     "भारत के मुख्य न्यायाधीश"
+    ],
+    [
+     "C",
+     "लोकसभा में विपक्ष के नेता"
+    ],
+    [
+     "D",
+     "भारत के प्रधानमंत्री"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Vice President of India"
+    ],
+    [
+     "B",
+     "Chief Justice of India"
+    ],
+    [
+     "C",
+     "Leader of the Opposition in the Lok Sabha"
+    ],
+    [
+     "D",
+     "Prime Minister of India"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "The Vice President is not a member of the Lokpal Selection Committee.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "लोकपाल चयन समिति में भारत के उपराष्ट्रपति सदस्य नहीं होते हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "The Vice President is not on the Lokpal Selection Committee; the PM, LoP Lok Sabha and CJI/nominee are.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 7,
+   "hi": "1917 के चंपारण सत्याग्रह, जो महात्मा गांधी का भारत में पहला बड़ा सत्याग्रह था, के बाद किस प्रणाली को समाप्त कर दिया गया ?",
+   "en": "Which system of cultivation was abolished following the Champaran Satyagraha of 1917, Mahatma Gandhi’s first major Satyagraha in India ?",
+   "hi_options": [
+    [
+     "A",
+     "तिनकठिया प्रणाली"
+    ],
+    [
+     "B",
+     "महलवारी प्रणाली"
+    ],
+    [
+     "C",
+     "रायटवारी प्रणाली"
+    ],
+    [
+     "D",
+     "स्थायी निपटान"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Tinkathia System"
+    ],
+    [
+     "B",
+     "Mahalwari System"
+    ],
+    [
+     "C",
+     "Ryotwari System"
+    ],
+    [
+     "D",
+     "Permanent Settlement"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Champaran Satyagraha led to abolition of the indigo Tinkathia system.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "चंपारण सत्याग्रह के बाद नील की तिनकठिया प्रणाली समाप्त की गई।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Champaran Satyagraha led to the abolition of the Tinkathia indigo cultivation system.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 8,
+   "hi": "2024 के राष्ट्रीय खेल पुरस्कारों में राष्ट्रीय खेल प्रोत्साहन पुरस्कार किस संगठन को मिला?",
+   "en": "Which organization received the Rashtriya Khel Protsahan Puraskar in the 2024 National Sports Awards?",
+   "hi_options": [
+    [
+     "A",
+     "ओलंपिक गोल्ड क्वेस्ट"
+    ],
+    [
+     "B",
+     "जेएसडब्ल्यू स्पोर्ट्स"
+    ],
+    [
+     "C",
+     "शारीरिक शिक्षा फाउंडेशन ऑफ इंडिया"
+    ],
+    [
+     "D",
+     "खेल प्राधिकरण भारत"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Olympic Gold Quest"
+    ],
+    [
+     "B",
+     "JSW Sports"
+    ],
+    [
+     "C",
+     "Physical Education Foundation of India"
+    ],
+    [
+     "D",
+     "Sports Authority of India"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Physical Education Foundation of India received the 2024 Rashtriya Khel Protsahan Puraskar.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "2024 का राष्ट्रीय खेल प्रोत्साहन पुरस्कार शारीरिक शिक्षा फाउंडेशन ऑफ इंडिया को मिला।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Physical Education Foundation of India received the Rashtriya Khel Protsahan Puraskar in the 2024 National Sports Awards.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 9,
+   "hi": "भारतीय संघीय प्रणाली की कौन-सी विशेषता नहीं है?",
+   "en": "Which of the following is not a characteristic feature of the Indian federal system?",
+   "hi_options": [
+    [
+     "A",
+     "संघ और राज्यों के बीच विधायी शक्तियों का विभाजन"
+    ],
+    [
+     "B",
+     "स्वतंत्र न्यायपालिका"
+    ],
+    [
+     "C",
+     "द्वैध नागरिकता"
+    ],
+    [
+     "D",
+     "संविधान की सर्वोच्चता"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Division of legislative powers between Union and States"
+    ],
+    [
+     "B",
+     "Independent judiciary"
+    ],
+    [
+     "C",
+     "Dual citizenship"
+    ],
+    [
+     "D",
+     "Supremacy of the Constitution"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "India has single citizenship, not dual citizenship.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "भारत में एकल नागरिकता है, द्वैध नागरिकता नहीं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "India has single citizenship, not dual citizenship, unlike some federations.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 10,
+   "hi": "किस वर्ष, बंगाल का विभाजन हुआ ?",
+   "en": "On which year, partition of Bengal held ?",
+   "hi_options": [
+    [
+     "A",
+     "1913"
+    ],
+    [
+     "B",
+     "1885"
+    ],
+    [
+     "C",
+     "1905"
+    ],
+    [
+     "D",
+     "1906"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "1913"
+    ],
+    [
+     "B",
+     "1885"
+    ],
+    [
+     "C",
+     "1905"
+    ],
+    [
+     "D",
+     "1906"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "The first Partition of Bengal was implemented in 1905 by Lord Curzon.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "बंगाल का विभाजन लॉर्ड कर्जन द्वारा 1905 में किया गया था।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "The Partition of Bengal was carried out in 1905.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 11,
+   "hi": "कंदारिया महादेव मंदिर कहाँ स्थित है ?",
+   "en": "Where is Kandariya Mahadev Temple situated ?",
+   "hi_options": [
+    [
+     "A",
+     "अजमेर"
+    ],
+    [
+     "B",
+     "खजुराहो"
+    ],
+    [
+     "C",
+     "चित्तौड़गढ़"
+    ],
+    [
+     "D",
+     "औरंगाबाद"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Ajmer"
+    ],
+    [
+     "B",
+     "Khajuraho"
+    ],
+    [
+     "C",
+     "Chittorgarh"
+    ],
+    [
+     "D",
+     "Aurangabad"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Kandariya Mahadev Temple is located at Khajuraho, Madhya Pradesh.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "कंदारिया महादेव मंदिर मध्य प्रदेश के खजुराहो में स्थित है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Kandariya Mahadev Temple is situated in Khajuraho, Madhya Pradesh.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 12,
+   "hi": "पहला संविधान संशोधन अधिनियम किस वर्ष पारित किया गया था ?",
+   "en": "In which year was the First Constitutional Amendment Act passed ?",
+   "hi_options": [
+    [
+     "A",
+     "1950"
+    ],
+    [
+     "B",
+     "1956"
+    ],
+    [
+     "C",
+     "1951"
+    ],
+    [
+     "D",
+     "1952"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "1950"
+    ],
+    [
+     "B",
+     "1956"
+    ],
+    [
+     "C",
+     "1951"
+    ],
+    [
+     "D",
+     "1952"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "The First Constitutional Amendment Act was passed in 1951.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "भारत का प्रथम संविधान संशोधन अधिनियम 1951 में पारित हुआ था।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "The First Constitutional Amendment Act was passed in 1951.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 13,
+   "hi": "भारत के किस सांस्कृतिक उत्सव को 2021 में यूनेस्को की अमूर्त सांस्कृतिक विरासत की प्रतिनिधि सूची में जोड़ा गया ?",
+   "en": "Which cultural festival from India was added to UNESCO’s Representative List of the Intangible Cultural Heritage of Humanity in 2021 ?",
+   "hi_options": [
+    [
+     "A",
+     "गरबा"
+    ],
+    [
+     "B",
+     "छऊ"
+    ],
+    [
+     "C",
+     "दुर्गा पूजा"
+    ],
+    [
+     "D",
+     "रामलीला"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Garba"
+    ],
+    [
+     "B",
+     "Chhau"
+    ],
+    [
+     "C",
+     "Durga Puja"
+    ],
+    [
+     "D",
+     "Ramlila"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Durga Puja in Kolkata was inscribed on UNESCO’s Representative List in 2021.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "दुर्गा पूजा (कोलकाता) को 2021 में यूनेस्को की प्रतिनिधि सूची में शामिल किया गया।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Durga Puja in Kolkata was inscribed on UNESCO’s Representative List in 2021.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 14,
+   "hi": "कौन सा देश तीन अलग-अलग राजधानियाँ रखता है - जो कार्यकारी, विधायी और न्यायिक केंद्रों के रूप में कार्य करती हैं?",
+   "en": "Which country has three distinct capitals – serving as the Executive, Legislative and Judicial centres of government, respectively?",
+   "hi_options": [
+    [
+     "A",
+     "मलेशिया"
+    ],
+    [
+     "B",
+     "दक्षिण अफ्रीका"
+    ],
+    [
+     "C",
+     "नीदरलैंड्स"
+    ],
+    [
+     "D",
+     "बोलिविया"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Malaysia"
+    ],
+    [
+     "B",
+     "South Africa"
+    ],
+    [
+     "C",
+     "Netherlands"
+    ],
+    [
+     "D",
+     "Bolivia"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "South Africa has Pretoria (executive), Cape Town (legislative), and Bloemfontein (judicial).",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "दक्षिण अफ्रीका में प्रिटोरिया कार्यकारी, केप टाउन विधायी और ब्लोएमफोंटेन न्यायिक राजधानी है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "South Africa has Pretoria (executive), Cape Town (legislative), and Bloemfontein (judicial).",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 15,
+   "hi": "क्वो वारंटो का आदेश कब जारी किया जाता है :",
+   "en": "The writ of Quo Warranto is issued when :",
+   "hi_options": [
+    [
+     "A",
+     "एक सरकार अपने कर्तव्यों का पालन करने से इनकार करती है"
+    ],
+    [
+     "B",
+     "एक कानून संविधान का उल्लंघन करता है"
+    ],
+    [
+     "C",
+     "एक व्यक्ति बिना कानूनी प्राधिकरण के सार्वजनिक कार्यालय रखता है"
+    ],
+    [
+     "D",
+     "एक व्यक्ति बिना परीक्षण के हिरासत में है"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "A government refuses to perform its duties"
+    ],
+    [
+     "B",
+     "A law violates the Constitution"
+    ],
+    [
+     "C",
+     "A person holds a public office without legal authority"
+    ],
+    [
+     "D",
+     "A person is detained without trial"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Quo warranto challenges unlawful occupation of a public office.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "क्वो वारंटो रिट तब जारी होती है जब कोई व्यक्ति बिना कानूनी अधिकार के सार्वजनिक पद धारण करे।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Quo Warranto challenges a person holding a public office without legal authority.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 16,
+   "hi": "ग्राम सभा के लिए कौन-सी कथन गलत है?",
+   "en": "Which of the following statements is incorrect for Gram Sabha?",
+   "hi_options": [
+    [
+     "A",
+     "यह पंचायत राज प्रणाली में केवल स्थायी इकाई है।"
+    ],
+    [
+     "B",
+     "यह 5 वर्षों के लिए एक निश्चित अवधि के लिए गठित है।"
+    ],
+    [
+     "C",
+     "प्रतिनिधियों का चुनाव नहीं होता है।"
+    ],
+    [
+     "D",
+     "इसके अधिकार और कार्य राज्य विधानमंडल द्वारा कानून द्वारा निर्धारित होते हैं।"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "It is the only permanent unit in Panchayati Raj system."
+    ],
+    [
+     "B",
+     "It is constituted for a particular period of 5 years."
+    ],
+    [
+     "C",
+     "The representatives are not elected."
+    ],
+    [
+     "D",
+     "Its powers and functions are fixed by state legislature by law."
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Gram Sabha is a permanent body, not constituted for a five-year term.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "ग्राम सभा स्थायी निकाय है; इसका 5 वर्ष का निश्चित कार्यकाल नहीं होता।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Gram Sabha is a permanent body of village voters, not constituted for a fixed 5-year term.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 17,
+   "hi": "तेलंगाना की राजधानी है",
+   "en": "The capital of Telangana is",
+   "hi_options": [
+    [
+     "A",
+     "कवारत्ती"
+    ],
+    [
+     "B",
+     "अमरावती"
+    ],
+    [
+     "C",
+     "हैदराबाद"
+    ],
+    [
+     "D",
+     "डिसपुर"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Kawaratti"
+    ],
+    [
+     "B",
+     "Amravati"
+    ],
+    [
+     "C",
+     "Hyderabad"
+    ],
+    [
+     "D",
+     "Dispur"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Hyderabad is the capital of Telangana.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "तेलंगाना की राजधानी हैदराबाद है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Hyderabad is the capital of Telangana.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 18,
+   "hi": "निम्नलिखित में से कौन-सा विकल्प ग्रामीण विकास मंत्रालय के अंतर्गत परियोजना UNNATI का उद्देश्य सही बताता है?",
+   "en": "Which of the following correctly states the aim of Project UNNATI under the Ministry of Rural Development ?",
+   "hi_options": [
+    [
+     "A",
+     "MGNRGA के तहत सभी ग्रामीण घरों को 100% कौशल प्रदान करना"
+    ],
+    [
+     "B",
+     "सभी MGNRGA श्रमिकों के लिए शहरी नौकरी के स्थान प्रदान करना"
+    ],
+    [
+     "C",
+     "जीविका संवर्धन के लिए सक्रिय MGNRGA श्रमिकों के 20% घरों को प्रशिक्षित करना"
+    ],
+    [
+     "D",
+     "MGNRGA को आत्म-नियोजित योजनाओं से बदलना"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "To skill 100% of all rural households under MGNRGA"
+    ],
+    [
+     "B",
+     "To provide urban job placements for all MGNRGA workers"
+    ],
+    [
+     "C",
+     "To train 20% of active MGNRGA workers' households for livelihood promotion"
+    ],
+    [
+     "D",
+     "To replace MGNRGA with self-employment schemes only"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Project UNNATI aims to train 20% of active MGNREGA workers’ households for livelihood promotion.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "Project UNNATI aims to skill 20% of active MGNREGA worker households for improved livelihoods.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Project UNNATI aims to skill/train selected MGNREGA worker households for better livelihoods.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 19,
+   "hi": "1976 में, किसे भारत रत्न से सम्मानित किया गया ?",
+   "en": "In 1976, who was honoured with the Bharat Ratna posthumously for their exceptional service to the nation?",
+   "hi_options": [
+    [
+     "A",
+     "लाल बहादुर शास्त्री"
+    ],
+    [
+     "B",
+     "मोरारजी देसाई"
+    ],
+    [
+     "C",
+     "वी.वी. गिरी"
+    ],
+    [
+     "D",
+     "कुमारस्वामी कामराज"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Lal Bahadur Shastri"
+    ],
+    [
+     "B",
+     "Morarji Desai"
+    ],
+    [
+     "C",
+     "V.V. Giri"
+    ],
+    [
+     "D",
+     "Kumaraswamy Kamaraj"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Kumaraswamy Kamaraj was awarded the Bharat Ratna posthumously in 1976.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "कुमारस्वामी कामराज को 1976 में मरणोपरांत भारत रत्न दिया गया।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "K. Kamaraj was awarded the Bharat Ratna posthumously in 1976.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 20,
+   "hi": "भारत के राष्ट्रपति द्वारा 2016 में जारी पुस्तक 'नागरिक और समाज' किस संवैधानिक प्राधिकरण द्वारा लिखी गई थी ?",
+   "en": "The book titled 'Citizen and Society', released in 2016 by the President of India, was authored by which constitutional authority ?",
+   "hi_options": [
+    [
+     "A",
+     "मोहम्‍मद हामिद अंसारी, उपराष्ट्रपति"
+    ],
+    [
+     "B",
+     "प्रणब मुखर्जी, राष्ट्रपति"
+    ],
+    [
+     "C",
+     "एम. वेंकैया नायडू, उपराष्ट्रपति"
+    ],
+    [
+     "D",
+     "डॉ. मनमोहन सिंह, प्रधानमंत्री"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Mohammad Hamid Ansari, Vice President"
+    ],
+    [
+     "B",
+     "Pranab Mukherjee, President"
+    ],
+    [
+     "C",
+     "M. Venkaiah Naidu, Vice President"
+    ],
+    [
+     "D",
+     "Dr. Manmohan Singh, Prime Minister"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "‘Citizen and Society’ was authored by Vice President Mohammad Hamid Ansari.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "‘Citizen and Society’ के लेखक तत्कालीन उपराष्ट्रपति मोहम्मद हामिद अंसारी थे।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "‘Citizen and Society’ was authored by then Vice President Mohammad Hamid Ansari.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 21,
+   "hi": "किस देश में, समर ओलंपिक गेम – 2028 आयोजित होगा ?",
+   "en": "In which country, Summer Olympic Game – 2028 will be held ?",
+   "hi_options": [
+    [
+     "A",
+     "जर्मनी"
+    ],
+    [
+     "B",
+     "संयुक्त राज्य अमेरिका"
+    ],
+    [
+     "C",
+     "इंग्लैंड"
+    ],
+    [
+     "D",
+     "फ्रांस"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Germany"
+    ],
+    [
+     "B",
+     "United States of America"
+    ],
+    [
+     "C",
+     "England"
+    ],
+    [
+     "D",
+     "France"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "The 2028 Summer Olympics will be held in Los Angeles, United States of America.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "2028 समर ओलंपिक लॉस एंजिल्स, संयुक्त राज्य अमेरिका में होंगे।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "The 2028 Summer Olympic Games will be held in Los Angeles, United States of America.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 22,
+   "hi": "किसने 2025 में विंबलडन में पुरुष एकल खिताब जीता ?",
+   "en": "Who won the men’s singles title at Wimbledon 2025 ?",
+   "hi_options": [
+    [
+     "A",
+     "जैनिक सिन्नर"
+    ],
+    [
+     "B",
+     "नोवाक जोकोविच"
+    ],
+    [
+     "C",
+     "दानील मेदवेदेव"
+    ],
+    [
+     "D",
+     "कार्लोस अल्कराज"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Jannik Sinner"
+    ],
+    [
+     "B",
+     "Novak Djokovic"
+    ],
+    [
+     "C",
+     "Daniil Medvedev"
+    ],
+    [
+     "D",
+     "Carlos Alcaraz"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Jannik Sinner won the Wimbledon 2025 men’s singles title.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "जैनिक सिन्नर ने 2025 विंबलडन पुरुष एकल खिताब जीता।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Jannik Sinner won the Wimbledon 2025 men’s singles title.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 23,
+   "hi": "विम्बलडन ट्रॉफी किस देश में आयोजित की जाती है ?",
+   "en": "Wimbledon Trophy is played in which country?",
+   "hi_options": [
+    [
+     "A",
+     "भारत"
+    ],
+    [
+     "B",
+     "ऑस्ट्रेलिया"
+    ],
+    [
+     "C",
+     "फ्रांस"
+    ],
+    [
+     "D",
+     "इंग्लैंड"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "India"
+    ],
+    [
+     "B",
+     "Australia"
+    ],
+    [
+     "C",
+     "France"
+    ],
+    [
+     "D",
+     "England"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "The Wimbledon tennis tournament is held in England.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "विम्बलडन टेनिस चैंपियनशिप इंग्लैंड में आयोजित होती है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Wimbledon is a tennis tournament held in England.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 24,
+   "hi": "किसे 'देशबंधु' कहा गया ?",
+   "en": "Who was called as 'Deshbandhu' ?",
+   "hi_options": [
+    [
+     "A",
+     "चित्तरंजन दास"
+    ],
+    [
+     "B",
+     "बाल गंगाधर तिलक"
+    ],
+    [
+     "C",
+     "रवींद्रनाथ ठाकुर"
+    ],
+    [
+     "D",
+     "राजेंद्र प्रसाद"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Chittaranjan Das"
+    ],
+    [
+     "B",
+     "Bal Gangadhar Tilak"
+    ],
+    [
+     "C",
+     "Ravindra Nath Tagore"
+    ],
+    [
+     "D",
+     "Rajendra Prasad"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Chittaranjan Das was popularly known as 'Deshbandhu' (Friend of the Nation).",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "चित्तरंजन दास को ‘देशबंधु’ की उपाधि से जाना जाता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Chittaranjan Das was popularly known as 'Deshbandhu'.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 25,
+   "hi": "2014 में समाप्त होने तक किस संस्था ने पंचवर्षीय योजनाएँ तैयार कीं ?",
+   "en": "Which institution prepared the Five-Year Plans until its dissolution in 2014 ?",
+   "hi_options": [
+    [
+     "A",
+     "राष्ट्रीय विकास परिषद"
+    ],
+    [
+     "B",
+     "वित्त आयोग"
+    ],
+    [
+     "C",
+     "NITI आयोग"
+    ],
+    [
+     "D",
+     "योजना आयोग"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "National Development Council"
+    ],
+    [
+     "B",
+     "Finance Commission"
+    ],
+    [
+     "C",
+     "NITI Aayog"
+    ],
+    [
+     "D",
+     "Planning Commission"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "The Planning Commission prepared India’s Five-Year Plans until it was dissolved in 2014.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "2014 तक पंचवर्षीय योजनाएँ योजना आयोग द्वारा तैयार की जाती थीं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "The Planning Commission prepared India’s Five-Year Plans until it was dissolved in 2014.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 26,
+   "hi": "किस खनिज को उद्योगों की जननी कहा जाता है ?",
+   "en": "Which mineral is called as mother of industries ?",
+   "hi_options": [
+    [
+     "A",
+     "मैंगनीज"
+    ],
+    [
+     "B",
+     "सोना"
+    ],
+    [
+     "C",
+     "लोहे"
+    ],
+    [
+     "D",
+     "तांबा"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Manganese"
+    ],
+    [
+     "B",
+     "Gold"
+    ],
+    [
+     "C",
+     "Iron"
+    ],
+    [
+     "D",
+     "Copper"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Iron is called the mother of industries because it is fundamental to machinery and manufacturing.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "लोहा उद्योगों के लिए मूलभूत कच्चा माल है, इसलिए इसे उद्योगों की जननी कहा जाता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Iron is widely called the mother/backbone of industries due to its extensive industrial use.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 27,
+   "hi": "7 मई, 2025 को 244 जिलों में आयोजित इस राष्ट्रीय नागरिक सुरक्षा मॉक ड्रिल का आयोजन किस भारतीय संस्था ने किया था ?",
+   "en": "Operation Abhyas, the nationwide civil defence mock drill held on 7 May, 2025 across 244 districts, was organised by which Indian body ?",
+   "hi_options": [
+    [
+     "A",
+     "वित्त मंत्रालय"
+    ],
+    [
+     "B",
+     "भारतीय चिकित्सा अनुसंधान परिषद (ICMR)"
+    ],
+    [
+     "C",
+     "गृह मंत्रालय"
+    ],
+    [
+     "D",
+     "रक्षा अनुसंधान एवं विकास संगठन (DRDO)"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Ministry of Finance"
+    ],
+    [
+     "B",
+     "Indian Council of Medical Research (ICMR)"
+    ],
+    [
+     "C",
+     "Ministry of Home Affairs"
+    ],
+    [
+     "D",
+     "Defence Research and Development Organisation (DRDO)"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Operation Abhyas was coordinated nationwide by the Ministry of Home Affairs through Civil Defence authorities.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "7 मई 2025 की नागरिक सुरक्षा मॉक ड्रिल गृह मंत्रालय के निर्देश पर आयोजित हुई थी।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Operation Abhyas civil defence mock drill was organised/directed by the Ministry of Home Affairs.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 28,
+   "hi": "कौन-सा द्विभाषी साप्ताहिक पत्रिका कांग्रेस द्वारा पटना से प्रकाशित किया गया था, जो नागरिक अवज्ञा आंदोलन के दौरान देशभक्ति की भावना को बढ़ावा देने के लिए था और बाद में ब्रिटिश द्वारा दबा दिया गया ?",
+   "en": "Which bilingual weekly was published by the Congress from Patna to promote patriotic sentiment during the Civil Disobedience Movement and was later suppressed by the British ?",
+   "hi_options": [
+    [
+     "A",
+     "बिहार सत्याग्रह समाचार"
+    ],
+    [
+     "B",
+     "बिहार राष्ट्रीय हेराल्ड"
+    ],
+    [
+     "C",
+     "बिहार पीपुल्स वॉयस"
+    ],
+    [
+     "D",
+     "पटना फ्रीडम गजट"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Bihar Satyagraha Samachar"
+    ],
+    [
+     "B",
+     "Bihar National Herald"
+    ],
+    [
+     "C",
+     "Bihar People's Voice"
+    ],
+    [
+     "D",
+     "Patna Freedom Gazette"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Bihar Satyagraha Samachar was the Congress’s bilingual Patna weekly during Civil Disobedience, later suppressed by British authorities.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "‘बिहार सत्याग्रह समाचार’ कांग्रेस की पटना से निकलने वाली द्विभाषी साप्ताहिक पत्रिका थी, जिसे ब्रिटिश सरकार ने दबा दिया था।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Bihar Satyagraha Samachar was the Congress bilingual weekly from Patna during Civil Disobedience and was suppressed by the British.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 29,
+   "hi": "भारत के पहले राष्ट्रीय अंतरिक्ष दिवस 23 अगस्त, 2024 को किस ऐतिहासिक उपलब्धि के स्मरण में मनाया गया ?",
+   "en": "India's first-ever National Space Day was celebrated on 23 August, 2024 to commemorate which historic achievement ?",
+   "hi_options": [
+    [
+     "A",
+     "भारत के पहले उपग्रह, आर्यभट्ट का प्रक्षेपण"
+    ],
+    [
+     "B",
+     "गगनयान क्रू मॉड्यूल का सफल परीक्षण"
+    ],
+    [
+     "C",
+     "चंद्रयान-3 की चंद्रमा पर सफल लैंडिंग"
+    ],
+    [
+     "D",
+     "इसरो की एक अंतरिक्ष एजेंसी के रूप में स्थापना"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Launch of India’s first satellite, Aryabhata"
+    ],
+    [
+     "B",
+     "Successful test of the Gaganyaan crew module"
+    ],
+    [
+     "C",
+     "Successful landing of Chandrayaan-3 on the Moon"
+    ],
+    [
+     "D",
+     "Establishment of ISRO as a space agency"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "National Space Day commemorates Chandrayaan-3’s successful lunar landing on 23 August 2023.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "पहला राष्ट्रीय अंतरिक्ष दिवस चंद्रयान-3 की 23 अगस्त 2023 की सफल चंद्र लैंडिंग के स्मरण में मनाया गया।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "It commemorates Chandrayaan-3’s successful Moon landing on 23 August 2023.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 30,
+   "hi": "निम्नलिखित में से कौन सा विधान परिषद के सदस्यों के कार्यकाल के बारे में सही है?",
+   "en": "Which of the following statements is correct about the tenure of members in the Legislative Council?",
+   "hi_options": [
+    [
+     "A",
+     "इसके एक-तिहाई सदस्य हर दूसरे वर्ष सेवानिवृत्त होते हैं।"
+    ],
+    [
+     "B",
+     "सभी सदस्य दस वर्षों के बाद अपना कार्यकाल पूरा करते हैं।"
+    ],
+    [
+     "C",
+     "सभी सदस्य पांच वर्षों के कार्यकाल के लिए चुने जाते हैं।"
+    ],
+    [
+     "D",
+     "विधान परिषद हर पांच वर्षों में भंग हो जाती है।"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "One-third of its members retire every second year."
+    ],
+    [
+     "B",
+     "All members complete their term after ten years."
+    ],
+    [
+     "C",
+     "All members are elected to serve a term of five years."
+    ],
+    [
+     "D",
+     "The Legislative Council gets dissolved every five years."
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Legislative Council is a permanent House; one-third members retire every second year.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "विधान परिषद एक स्थायी सदन है; इसके एक-तिहाई सदस्य प्रत्येक दूसरे वर्ष सेवानिवृत्त होते हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Legislative Council is a permanent body; one-third members retire every two years.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 31,
+   "hi": "भारतीय संविधान का कौन सा भाग मौलिक अधिकारों से संबंधित है?",
+   "en": "Which part of the Indian Constitution deals with Fundamental Rights?",
+   "hi_options": [
+    [
+     "A",
+     "भाग IV"
+    ],
+    [
+     "B",
+     "भाग V"
+    ],
+    [
+     "C",
+     "भाग I"
+    ],
+    [
+     "D",
+     "भाग III"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Part IV"
+    ],
+    [
+     "B",
+     "Part V"
+    ],
+    [
+     "C",
+     "Part I"
+    ],
+    [
+     "D",
+     "Part III"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Fundamental Rights are contained in Part III of the Indian Constitution.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "मौलिक अधिकार भारतीय संविधान के भाग III में वर्णित हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Fundamental Rights are contained in Part III of the Indian Constitution.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 32,
+   "hi": "जापान की मुद्रा क्या है ?",
+   "en": "Currency of Japan is",
+   "hi_options": [
+    [
+     "A",
+     "येन"
+    ],
+    [
+     "B",
+     "रुपया"
+    ],
+    [
+     "C",
+     "पाउंड"
+    ],
+    [
+     "D",
+     "डॉलर"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Yen"
+    ],
+    [
+     "B",
+     "Rupee"
+    ],
+    [
+     "C",
+     "Pound"
+    ],
+    [
+     "D",
+     "Dollar"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Japan's official currency is the yen.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "जापान की मुद्रा येन है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Japan's currency is the Yen.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 33,
+   "hi": "समानांगों की उपस्थिति इंगित करती है :",
+   "en": "Presence of homologous organs indicates :",
+   "hi_options": [
+    [
+     "A",
+     "विभाजनात्मक विकास"
+    ],
+    [
+     "B",
+     "आनुवंशिक प्रवाह"
+    ],
+    [
+     "C",
+     "यादृच्छिक उत्परिवर्तन"
+    ],
+    [
+     "D",
+     "संविलयन विकास"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Divergent evolution"
+    ],
+    [
+     "B",
+     "Genetic drift"
+    ],
+    [
+     "C",
+     "Random mutation"
+    ],
+    [
+     "D",
+     "Convergent evolution"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Homologous organs share a common origin but may perform different functions, indicating divergent evolution.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "समानांग अंग विभाजनात्मक (divergent) विकास को दर्शाते हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Homologous organs share a common origin but may perform different functions, indicating divergent evolution.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 34,
+   "hi": "बारहवीं पंचवर्षीय योजना (2012 – 17) को निम्नलिखित में से कौन-सा उपशीर्षक दिया गया ?",
+   "en": "The Twelfth Five-Year Plan (2012 – 17) is subtitled as which of the following ?",
+   "hi_options": [
+    [
+     "A",
+     "समावेशी संतुलन और समान विकास"
+    ],
+    [
+     "B",
+     "तेज, अधिक समावेशी और सतत विकास"
+    ],
+    [
+     "C",
+     "सभी के लिए समान विकास"
+    ],
+    [
+     "D",
+     "तेज और व्यापक आर्थिक परिवर्तन"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Inclusive Balance and Equitable Growth"
+    ],
+    [
+     "B",
+     "Faster, More Inclusive and Sustainable Growth"
+    ],
+    [
+     "C",
+     "Sustainable Development with Equity for All"
+    ],
+    [
+     "D",
+     "Rapid and Broad-based Economic Transformation"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "The Twelfth Five-Year Plan (2012–17) was titled “Faster, More Inclusive and Sustainable Growth.”",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "बारहवीं योजना का उपशीर्षक “तेज, अधिक समावेशी और सतत विकास” था।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "The Twelfth Five-Year Plan was titled “Faster, More Inclusive and Sustainable Growth.”",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 35,
+   "hi": "किसने कहा-लोकतंत्र जनता का, जनता के लिए, जनता द्वारा शासन है ?",
+   "en": "Who said - Democracy is the government of the people, by the people, for the people?",
+   "hi_options": [
+    [
+     "A",
+     "अब्राहम लिंकन"
+    ],
+    [
+     "B",
+     "रूस"
+    ],
+    [
+     "C",
+     "असत्य"
+    ],
+    [
+     "D",
+     "सुखरत"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Abraham Lincoln"
+    ],
+    [
+     "B",
+     "Russia"
+    ],
+    [
+     "C",
+     "False"
+    ],
+    [
+     "D",
+     "Sukhrat"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "The phrase is famously from Abraham Lincoln's Gettysburg Address.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "‘जनता का, जनता के लिए, जनता द्वारा शासन’ अब्राहम लिंकन का कथन है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "The quote is attributed to Abraham Lincoln in the Gettysburg Address.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 36,
+   "hi": "इनमें से कौन सी बहुराष्ट्रीय कंपनी नहीं है ?",
+   "en": "Which of the following is not a multinational company?",
+   "hi_options": [
+    [
+     "A",
+     "रिलायंस"
+    ],
+    [
+     "B",
+     "कोका कोला"
+    ],
+    [
+     "C",
+     "सैमसंग"
+    ],
+    [
+     "D",
+     "नोकिया"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Reliance"
+    ],
+    [
+     "B",
+     "Coca cola"
+    ],
+    [
+     "C",
+     "Samsung"
+    ],
+    [
+     "D",
+     "Nokia"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "X",
+    "X",
+    "X"
+   ],
+   "agree_with_key": 0,
+   "detail": {
+    "en_a": {
+     "answer": "X",
+     "why": "All four are multinational companies, so no single option is correct.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "X",
+     "why": "सभी विकल्प बहुराष्ट्रीय कंपनियाँ हैं; रिलायंस के भी अनेक देशों में व्यावसायिक संचालन हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "X",
+     "why": "No option is correct; Reliance, Coca-Cola, Samsung and Nokia are all multinational companies.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 37,
+   "hi": "शांति स्वरूप भटनागर पुरस्कार किसके लिए दिया जाता है?",
+   "en": "What is the Shanti Swarup Bhatnagar Prize given in recognition of?",
+   "hi_options": [
+    [
+     "A",
+     "आध्यात्मिक नेतृत्व"
+    ],
+    [
+     "B",
+     "सैन्य साहस"
+    ],
+    [
+     "C",
+     "वैज्ञानिक अनुसंधान"
+    ],
+    [
+     "D",
+     "आधुनिक चित्रकला"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Spiritual leadership"
+    ],
+    [
+     "B",
+     "Military courage"
+    ],
+    [
+     "C",
+     "Scientific research"
+    ],
+    [
+     "D",
+     "Contemporary painting"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "It recognizes outstanding contributions to scientific research in India.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "शांति स्वरूप भटनागर पुरस्कार वैज्ञानिक एवं औद्योगिक अनुसंधान में उत्कृष्ट योगदान के लिए दिया जाता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "The Shanti Swarup Bhatnagar Prize recognizes outstanding scientific research in India.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 38,
+   "hi": "अंतर्राष्ट्रीय महिला दिवस मनाया जाता है ?",
+   "en": "International Women's Day is celebrated on?",
+   "hi_options": [
+    [
+     "A",
+     "22 मार्च"
+    ],
+    [
+     "B",
+     "8 मार्च"
+    ],
+    [
+     "C",
+     "1 मई"
+    ],
+    [
+     "D",
+     "27 मार्च"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "22 March"
+    ],
+    [
+     "B",
+     "8 March"
+    ],
+    [
+     "C",
+     "1 May"
+    ],
+    [
+     "D",
+     "27 March"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "International Women's Day is observed annually on 8 March.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "अंतर्राष्ट्रीय महिला दिवस 8 मार्च को मनाया जाता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "International Women's Day is observed on 8 March.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 39,
+   "hi": "वैश्वीकरण का अर्थ क्या है ?",
+   "en": "The meaning of Globalisation is",
+   "hi_options": [
+    [
+     "A",
+     "उद्योगों पर नियंत्रण"
+    ],
+    [
+     "B",
+     "राष्ट्रीय और विश्व अर्थव्यवस्था के बीच सहयोग"
+    ],
+    [
+     "C",
+     "विदेशी व्यापार पर नियंत्रण"
+    ],
+    [
+     "D",
+     "इनमें से कोई नहीं"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "To control over industries"
+    ],
+    [
+     "B",
+     "Collaboration between national and world economy"
+    ],
+    [
+     "C",
+     "Control on foreign trade"
+    ],
+    [
+     "D",
+     "None of these"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Globalisation integrates a national economy with the world economy.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "वैश्वीकरण राष्ट्रीय और विश्व अर्थव्यवस्थाओं के बीच बढ़ते एकीकरण/सहयोग को दर्शाता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Globalisation means integration/collaboration of national economies with the world economy.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 40,
+   "hi": "सरकारी वीडियो सामग्री के लिए नई मीडिया विंग द्वारा विकसित द्विभाषी पोर्टल कौन सा है?",
+   "en": "Which bilingual portal is developed by New Media Wing of the Ministry of Information and Broadcasting for streaming government video content?",
+   "hi_options": [
+    [
+     "A",
+     "ई-संवाद पोर्टल"
+    ],
+    [
+     "B",
+     "वार्तालाप सेतु"
+    ],
+    [
+     "C",
+     "नविगेट भारत"
+    ],
+    [
+     "D",
+     "डिजीमीडिया भारत"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "eSamvad Portal"
+    ],
+    [
+     "B",
+     "Vartalap Setu"
+    ],
+    [
+     "C",
+     "NaVigat Bharat"
+    ],
+    [
+     "D",
+     "DigiMedia Bharat"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "C"
+   ],
+   "agree_with_key": 1,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "eSamvad is the bilingual government video-streaming portal developed by the New Media Wing.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "नई मीडिया विंग द्वारा सरकारी वीडियो सामग्री हेतु विकसित द्विभाषी पोर्टल ई-संवाद है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "NaViGate Bharat is the MIB New Media Wing’s bilingual government video portal.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 41,
+   "hi": "निम्नलिखित में से कौन सा गैर-धात्विक खनिज का उदाहरण है ?",
+   "en": "Which out of the following is an example of non-metallic mineral ?",
+   "hi_options": [
+    [
+     "A",
+     "मिका"
+    ],
+    [
+     "B",
+     "सोना"
+    ],
+    [
+     "C",
+     "लोहे"
+    ],
+    [
+     "D",
+     "तांबा"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Mica"
+    ],
+    [
+     "B",
+     "Gold"
+    ],
+    [
+     "C",
+     "Iron"
+    ],
+    [
+     "D",
+     "Copper"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Mica is a non-metallic mineral; gold, iron and copper are metallic minerals.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "मिका एक गैर-धात्विक खनिज है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Mica is a non-metallic mineral, while gold, iron and copper are metallic minerals.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 42,
+   "hi": "_____ को भारत और नेपाल के बीच एक प्रमुख नदी परियोजना के लिए 1966 में संशोधित किया गया था।",
+   "en": "The _____ was amended in 1966 for a major river project between India and Nepal.",
+   "hi_options": [
+    [
+     "A",
+     "संयुक्त नदी समझौता"
+    ],
+    [
+     "B",
+     "कोसी समझौता"
+    ],
+    [
+     "C",
+     "महाकाली संधि"
+    ],
+    [
+     "D",
+     "जल साझा करने का समझौता"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Joint River Pact"
+    ],
+    [
+     "B",
+     "Kosi Agreement"
+    ],
+    [
+     "C",
+     "Mahakali Treaty"
+    ],
+    [
+     "D",
+     "Water Sharing Accord"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "The India–Nepal Kosi Agreement of 1954 was amended in 1966.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "कोसी समझौता 1954 में हुआ था और 1966 में संशोधित किया गया था।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "The Kosi Agreement for the India-Nepal Kosi river project was amended/revised in 1966.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 43,
+   "hi": "भारत के संविधान की सातवीं अनुसूची के अनुसार, निम्नलिखित में से कौन सी सूचियाँ राज्य और समवर्ती विधायी शक्तियों को परिभाषित करती हैं?",
+   "en": "As per the Seventh Schedule of the Constitution of India, which of the following lists define State and Concurrent legislative powers respectively?",
+   "hi_options": [
+    [
+     "A",
+     "सूचियाँ I और IV"
+    ],
+    [
+     "B",
+     "सूचियाँ I और II"
+    ],
+    [
+     "C",
+     "सूचियाँ II और III"
+    ],
+    [
+     "D",
+     "सूचियाँ III और IV"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Lists I and IV"
+    ],
+    [
+     "B",
+     "Lists I and II"
+    ],
+    [
+     "C",
+     "Lists II and III"
+    ],
+    [
+     "D",
+     "Lists III and IV"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "The Seventh Schedule places State powers in List II and Concurrent powers in List III.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "सातवीं अनुसूची में राज्य सूची सूची II और समवर्ती सूची सूची III है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "State List is List II and Concurrent List is List III in the Seventh Schedule.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 44,
+   "hi": "पहली पंचवर्षीय योजना का काल था",
+   "en": "The period for First Five Year Plan was",
+   "hi_options": [
+    [
+     "A",
+     "1952 – 1957"
+    ],
+    [
+     "B",
+     "1947 – 1952"
+    ],
+    [
+     "C",
+     "1950 – 1955"
+    ],
+    [
+     "D",
+     "1951 – 1956"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "1952 – 1957"
+    ],
+    [
+     "B",
+     "1947 – 1952"
+    ],
+    [
+     "C",
+     "1950 – 1955"
+    ],
+    [
+     "D",
+     "1951 – 1956"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "India's First Five Year Plan covered 1951 to 1956.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "भारत की पहली पंचवर्षीय योजना 1951 से 1956 तक थी।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "India’s First Five Year Plan ran from 1951 to 1956.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 45,
+   "hi": "हिमालयी नदी प्रणाली के संबंध में गलत जोड़ी पहचानिए :",
+   "en": "Identify the incorrect pair regarding the Himalayan river systems :",
+   "hi_options": [
+    [
+     "A",
+     "चेनाब - चंद्र और भागा द्वारा तंडी में निर्मित"
+    ],
+    [
+     "B",
+     "रावी - हिमाचल में उत्पन्न; देवप्रयाग के पास गंगा में मिलती है"
+    ],
+    [
+     "C",
+     "झेलम - वेरिनाग से उत्पन्न, वुलर झील के माध्यम से बहती है"
+    ],
+    [
+     "D",
+     "सतलुज - मानसरोवर के पास राक्षस ताल से उत्पन्न होती है"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Chenab - Formed by Chandra and Bhaga at Tandi"
+    ],
+    [
+     "B",
+     "Ravi - Originates in Himachal; joins Ganga near Devprayag"
+    ],
+    [
+     "C",
+     "Jhelum - Originates at Verinag, flows through Wular Lake"
+    ],
+    [
+     "D",
+     "Satluj - Originates from Raksas Tal near Mansarovar"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Ravi joins the Chenab in Pakistan, not the Ganga near Devprayag.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "रावी देवप्रयाग के पास गंगा में नहीं, पाकिस्तान में चेनाब में मिलती है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Ravi is an Indus tributary and joins Chenab, not the Ganga near Devprayag.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 46,
+   "hi": "चंपारण सत्याग्रह कब हुआ था ?",
+   "en": "When did the Champaran Satyagraha take place?",
+   "hi_options": [
+    [
+     "A",
+     "1915"
+    ],
+    [
+     "B",
+     "1917"
+    ],
+    [
+     "C",
+     "1919"
+    ],
+    [
+     "D",
+     "1921"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "1915"
+    ],
+    [
+     "B",
+     "1917"
+    ],
+    [
+     "C",
+     "1919"
+    ],
+    [
+     "D",
+     "1921"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "The Champaran Satyagraha took place in 1917.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "चंपारण सत्याग्रह 1917 में हुआ था।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Champaran Satyagraha took place in 1917.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 47,
+   "hi": "असर्शन (A) : एक संवैधानिक संशोधन विधेयक को संसद के दोनों सदनों द्वारा अलग-अलग पारित किया जाना चाहिए। कारण (R) : संविधान दोनों सदनों की संयुक्त बैठक के लिए एक गतिरोध को हल करने के लिए प्रावधान करता है।",
+   "en": "Assertion (A) : A Constitutional Amendment Bill must be passed by both Houses of Parliament separately. Reason (R) : The Constitution provides for a joint sitting of both Houses to resolve a deadlock over a Constitutional Amendment Bill.",
+   "hi_options": [
+    [
+     "A",
+     "असर्शन (A) सत्य है, लेकिन कारण (R) गलत है।"
+    ],
+    [
+     "B",
+     "असर्शन (A) गलत है, लेकिन कारण (R) सत्य है।"
+    ],
+    [
+     "C",
+     "दोनों असर्शन (A) और कारण (R) सत्य हैं, लेकिन कारण (R) असर्शन (A) का सही स्पष्टीकरण नहीं है।"
+    ],
+    [
+     "D",
+     "दोनों असर्शन (A) और कारण (R) सत्य हैं और कारण (R) असर्शन (A) का सही स्पष्टीकरण है।"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Assertion (A) is true, but Reason (R) is false."
+    ],
+    [
+     "B",
+     "Assertion (A) is false, but Reason (R) is true."
+    ],
+    [
+     "C",
+     "Both Assertion (A) and Reason (R) are true, but Reason (R) is not the correct explanation of Assertion (A)."
+    ],
+    [
+     "D",
+     "Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of the Assertion (A)."
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "C",
+    "A"
+   ],
+   "agree_with_key": 2,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Article 368 requires separate passage by each House; no joint sitting is permitted for amendment bills.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "संवैधानिक संशोधन विधेयक दोनों सदनों से अलग-अलग पारित होता है; संयुक्त बैठक का प्रावधान इसके लिए लागू नहीं है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Article 368 requires separate passage by both Houses; no joint sitting is provided for Constitutional Amendment Bills.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 48,
+   "hi": "बिहार की आधिकारिक भाषाएँ कौन-सी हैं ?",
+   "en": "Which are the official languages of Bihar ?",
+   "hi_options": [
+    [
+     "A",
+     "हिंदी, संस्कृत और उर्दू"
+    ],
+    [
+     "B",
+     "हिंदी, मैथिली और भोजपुरी"
+    ],
+    [
+     "C",
+     "हिंदी और उर्दू"
+    ],
+    [
+     "D",
+     "हिंदी और अंग्रेज़ी"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Hindi, Sanskrit and Urdu"
+    ],
+    [
+     "B",
+     "Hindi, Maithili and Bhojpuri"
+    ],
+    [
+     "C",
+     "Hindi and Urdu"
+    ],
+    [
+     "D",
+     "Hindi and English"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Hindi is Bihar's official language and Urdu is its second official language.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "बिहार में हिंदी राजभाषा और उर्दू द्वितीय राजभाषा है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Bihar's official languages are Hindi and Urdu.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 49,
+   "hi": "अंतर्राष्ट्रीय श्रमिक दिवस कब मनाया जाता है?",
+   "en": "When is the International Labour's Day celebrated?",
+   "hi_options": [
+    [
+     "A",
+     "22 मार्च"
+    ],
+    [
+     "B",
+     "14 जनवरी"
+    ],
+    [
+     "C",
+     "7 अप्रैल"
+    ],
+    [
+     "D",
+     "1 मई"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "22 March"
+    ],
+    [
+     "B",
+     "14 January"
+    ],
+    [
+     "C",
+     "7 April"
+    ],
+    [
+     "D",
+     "1 May"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "International Labour Day, or May Day, is celebrated on 1 May.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "अंतर्राष्ट्रीय श्रमिक दिवस 1 मई को मनाया जाता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "International Labour Day (May Day) is celebrated on 1 May.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 50,
+   "hi": "महावीर ने निम्नलिखित में से किस शहर में अपना दूसरा समवसरण आयोजित किया?",
+   "en": "In which of the following cities did Mahavira hold his second Samavasarana?",
+   "hi_options": [
+    [
+     "A",
+     "बोधगया"
+    ],
+    [
+     "B",
+     "पटना"
+    ],
+    [
+     "C",
+     "पावा"
+    ],
+    [
+     "D",
+     "नालंदा"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Bodh Gaya"
+    ],
+    [
+     "B",
+     "Patna"
+    ],
+    [
+     "C",
+     "Pava"
+    ],
+    [
+     "D",
+     "Nalanda"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "D",
+    "C"
+   ],
+   "agree_with_key": 2,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Jain tradition places Mahavira’s second Samavasarana at Pava.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "महावीर का दूसरा समवसरण नालंदा में आयोजित माना जाता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Mahavira’s second Samavasarana is traditionally placed at Pava.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 51,
+   "hi": "पृथ्वी के अंदर वह बिंदु जहाँ से भूकंप के दौरान ऊर्जा मुक्त होती है ?",
+   "en": "What is the point inside the Earth where energy is released during an earthquake called ?",
+   "hi_options": [
+    [
+     "A",
+     "एपिसेंटर"
+    ],
+    [
+     "B",
+     "हाइपोसेंटर"
+    ],
+    [
+     "C",
+     "सिस्मिक जोन"
+    ],
+    [
+     "D",
+     "फॉल्ट लाइन"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Epicenter"
+    ],
+    [
+     "B",
+     "Hypocenter"
+    ],
+    [
+     "C",
+     "Seismic zone"
+    ],
+    [
+     "D",
+     "Fault line"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "The underground point where earthquake energy is released is the hypocenter.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "भूकंप के भीतर ऊर्जा मुक्त होने का बिंदु हाइपोसेंटर (फोकस) कहलाता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "The hypocenter (focus) is the point inside Earth where an earthquake starts and energy is released.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 52,
+   "hi": "6, 72, 120 का महत्तम समापवर्तक तथा लघुतम समापवर्त्य क्रमशः है :",
+   "en": "The H.C.F. and L.C.M. of the numbers 6, 72, 120 are respectively :",
+   "hi_options": [
+    [
+     "A",
+     "(6, 120)"
+    ],
+    [
+     "B",
+     "(12, 120)"
+    ],
+    [
+     "C",
+     "(12, 360)"
+    ],
+    [
+     "D",
+     "(6, 360)"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "(6, 120)"
+    ],
+    [
+     "B",
+     "(12, 120)"
+    ],
+    [
+     "C",
+     "(12, 360)"
+    ],
+    [
+     "D",
+     "(6, 360)"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "H.C.F. = 6 and L.C.M. = 360.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "6, 72, 120 का HCF 6 तथा LCM 360 है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "HCF is 6 and LCM is 360.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 53,
+   "hi": "3889 + 12.952 - ? = 3854.002 में प्रश्नचिन्ह (?) का मान क्या होगा?",
+   "en": "If 3889 + 12.952 - ? = 3854.002, find the value of question mark (?).",
+   "hi_options": [
+    [
+     "A",
+     "47.752"
+    ],
+    [
+     "B",
+     "47.095"
+    ],
+    [
+     "C",
+     "47.932"
+    ],
+    [
+     "D",
+     "47.95"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "47.752"
+    ],
+    [
+     "B",
+     "47.095"
+    ],
+    [
+     "C",
+     "47.932"
+    ],
+    [
+     "D",
+     "47.95"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "3889 + 12.952 - 3854.002 = 47.950 = 47.95.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "3889 + 12.952 - 3854.002 = 47.95.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "? = 3889 + 12.952 - 3854.002 = 47.950 = 47.95",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 54,
+   "hi": "A, B से 25% अधिक है। B, A से कितने प्रतिशत छोटा है?",
+   "en": "A is 25% more than B. By what percent is B smaller than A?",
+   "hi_options": [
+    [
+     "A",
+     "13.33%"
+    ],
+    [
+     "B",
+     "22%"
+    ],
+    [
+     "C",
+     "30%"
+    ],
+    [
+     "D",
+     "20%"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "13.33%"
+    ],
+    [
+     "B",
+     "22%"
+    ],
+    [
+     "C",
+     "30%"
+    ],
+    [
+     "D",
+     "20%"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "If A=1.25B, then B is (0.25/1.25)×100=20% smaller than A.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "यदि B=100, तो A=125; B, A से 25/125=20% छोटा है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "A=1.25B, so B is (0.25B/1.25B)×100 = 20% smaller than A.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 55,
+   "hi": "कौन सा संयोजी ऊतक मांसपेशियों को हड्डियों से जोड़ता है ?",
+   "en": "Which connective tissue connects muscles to bones in animals ?",
+   "hi_options": [
+    [
+     "A",
+     "टेंडन"
+    ],
+    [
+     "B",
+     "एरोलर ऊतक"
+    ],
+    [
+     "C",
+     "कार्टिलेज"
+    ],
+    [
+     "D",
+     "लिगामेंट"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Tendon"
+    ],
+    [
+     "B",
+     "Areolar tissue"
+    ],
+    [
+     "C",
+     "Cartilage"
+    ],
+    [
+     "D",
+     "Ligament"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Tendons connect muscles to bones.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "टेंडन मांसपेशियों को हड्डियों से जोड़ता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Tendons are connective tissues that attach muscles to bones.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 56,
+   "hi": "यह कौन-सी घटना है जिसमें प्रकाश एक माध्यम से दूसरे माध्यम में, जैसे हवा से पानी में, मुड़ता है ?",
+   "en": "What is the phenomenon where light bends as it passes from one medium to another, like from air to water ?",
+   "hi_options": [
+    [
+     "A",
+     "अपवर्तन"
+    ],
+    [
+     "B",
+     "परावर्तन"
+    ],
+    [
+     "C",
+     "विसरण"
+    ],
+    [
+     "D",
+     "विकिरण"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Refraction"
+    ],
+    [
+     "B",
+     "Reflection"
+    ],
+    [
+     "C",
+     "Dispersion"
+    ],
+    [
+     "D",
+     "Diffraction"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Refraction is the bending of light when it passes between different media.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "प्रकाश का एक माध्यम से दूसरे माध्यम में मुड़ना अपवर्तन कहलाता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Refraction is the bending of light when it passes from one medium to another.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 57,
+   "hi": "दो संख्याओं a और b का GCD 4 है और उनका LCM 400 है। a और b के जोड़े की संख्या है",
+   "en": "The GCD of two numbers a and b is 4 and their LCM is 400. The number of pairs of a and b are",
+   "hi_options": [
+    [
+     "A",
+     "4"
+    ],
+    [
+     "B",
+     "1"
+    ],
+    [
+     "C",
+     "2"
+    ],
+    [
+     "D",
+     "3"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "4"
+    ],
+    [
+     "B",
+     "1"
+    ],
+    [
+     "C",
+     "2"
+    ],
+    [
+     "D",
+     "3"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "X"
+   ],
+   "agree_with_key": 2,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "The valid unordered pairs are (4,400) and (16,100).",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "a=4x,b=4y से xy=100 और (x,y)=1; unordered coprime factor pairs 2 हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "X",
+     "why": "Ambiguous: ordered pairs give 4, unordered pairs give 2.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 58,
+   "hi": "144 ÷ 0.144 = 14.4X है, तो X का मान क्या है?",
+   "en": "If 1440.144 = 14.4X, then what will be the value of X ?",
+   "hi_options": [
+    [
+     "A",
+     "14.4"
+    ],
+    [
+     "B",
+     "0.0144"
+    ],
+    [
+     "C",
+     "1.44"
+    ],
+    [
+     "D",
+     "144.1"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "14.4"
+    ],
+    [
+     "B",
+     "0.0144"
+    ],
+    [
+     "C",
+     "1.44"
+    ],
+    [
+     "D",
+     "144.1"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "X",
+    "X",
+    "X"
+   ],
+   "agree_with_key": 0,
+   "detail": {
+    "en_a": {
+     "answer": "X",
+     "why": "X = 1440.144 ÷ 14.4 = 100.01, which is not listed.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "X",
+     "why": "144 ÷ 0.144 = 1000, इसलिए X = 1000 ÷ 14.4 = 69.44..., कोई विकल्प नहीं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "X",
+     "why": "Solving 1440.144 = 14.4×X gives X = 100.01, which is not in the options.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 59,
+   "hi": "प्रथम n प्राकृतिक संख्याओं का माध्य 15 है तो n =",
+   "en": "The mean of first n natural numbers is 15, then n =",
+   "hi_options": [
+    [
+     "A",
+     "15"
+    ],
+    [
+     "B",
+     "29"
+    ],
+    [
+     "C",
+     "14"
+    ],
+    [
+     "D",
+     "30"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "15"
+    ],
+    [
+     "B",
+     "29"
+    ],
+    [
+     "C",
+     "14"
+    ],
+    [
+     "D",
+     "30"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Mean of 1 to n is (n+1)/2; setting it to 15 gives n=29.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "First n natural numbers have mean (n+1)/2; hence n=29.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Mean of first n natural numbers is (n+1)/2 = 15, so n = 29.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 60,
+   "hi": "4889 + 12.95 - X = 4854.05 में X का मान क्या है ?",
+   "en": "Find the value of X in 4889 + 12.95 - X = 4854.05.",
+   "hi_options": [
+    [
+     "A",
+     "44.9"
+    ],
+    [
+     "B",
+     "43.9"
+    ],
+    [
+     "C",
+     "40.9"
+    ],
+    [
+     "D",
+     "47.9"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "44.9"
+    ],
+    [
+     "B",
+     "43.9"
+    ],
+    [
+     "C",
+     "40.9"
+    ],
+    [
+     "D",
+     "47.9"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "X = 4889 + 12.95 - 4854.05 = 47.9.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "4901.95 - X = 4854.05, so X = 47.9.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "4889 + 12.95 = 4901.95, and 4901.95 - 4854.05 = 47.9.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 61,
+   "hi": "यदि n एक प्राकृतिक संख्या है, तो 92n - 42n हमेशा विभाज्य है",
+   "en": "If n is a natural number, then 92n - 42n is always divisible by",
+   "hi_options": [
+    [
+     "A",
+     "5"
+    ],
+    [
+     "B",
+     "13"
+    ],
+    [
+     "C",
+     "Both (A) and (B)"
+    ],
+    [
+     "D",
+     "Neither (A) nor (B)"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "5"
+    ],
+    [
+     "B",
+     "13"
+    ],
+    [
+     "C",
+     "Both (A) and (B)"
+    ],
+    [
+     "D",
+     "Neither (A) nor (B)"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "A"
+   ],
+   "agree_with_key": 2,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "9^(2n)-4^(2n)=81^n-16^n is divisible by 81-16=65.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "9^(2n)−4^(2n)=(81^n−16^n), and 81≡16 modulo both 5 and 13.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "As written, 92n - 42n = 50n, always divisible by 5 but not always by 13.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 62,
+   "hi": "एक कपड़े में रेशम और कपास का अनुपात 13 : 7 है। तब 100 किलो के कपड़े में कितना कपास होगा ?",
+   "en": "The proportion of silk and cotton in a cloth is 13 : 7. How much cotton will be there 100 kg cloth ?",
+   "hi_options": [
+    [
+     "A",
+     "42 किलो"
+    ],
+    [
+     "B",
+     "45 किलो"
+    ],
+    [
+     "C",
+     "21 किलो"
+    ],
+    [
+     "D",
+     "35 किलो"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "42 kg"
+    ],
+    [
+     "B",
+     "45 kg"
+    ],
+    [
+     "C",
+     "21 kg"
+    ],
+    [
+     "D",
+     "35 kg"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Cotton = 7/(13+7) × 100 = 35 kg.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "कपास का भाग 7/(13+7)×100 = 35 किलो है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Cotton share is 7/(13+7) of 100 kg = 35 kg.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 63,
+   "hi": "यदि एक पेन का मूल्य ₹ 10 है, तो इसके मूल्य में 30% बढ़ोतरी होने पर इसका मूल्य क्या होगा ?",
+   "en": "What will be the cost of a pen of ₹ 10, after increasing its cost by 30%?",
+   "hi_options": [
+    [
+     "A",
+     "7"
+    ],
+    [
+     "B",
+     "15"
+    ],
+    [
+     "C",
+     "5"
+    ],
+    [
+     "D",
+     "13"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "7"
+    ],
+    [
+     "B",
+     "15"
+    ],
+    [
+     "C",
+     "5"
+    ],
+    [
+     "D",
+     "13"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "30% of ₹10 is ₹3, so the new cost is ₹13.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "₹10 में 30% बढ़ोतरी = ₹3, इसलिए नया मूल्य ₹13 है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "₹10 increased by 30% is ₹10 + ₹3 = ₹13.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 64,
+   "hi": "6.8 × ? × 7.9 = 161.16 में प्रश्नचिन्ह (?) के स्थान पर कौन सी संख्या आएगी ?",
+   "en": "What should come in place of question mark (?) in 6.8 × ? × 7.9 = 161.16",
+   "hi_options": [
+    [
+     "A",
+     "7"
+    ],
+    [
+     "B",
+     "5"
+    ],
+    [
+     "C",
+     "3"
+    ],
+    [
+     "D",
+     "8"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "7"
+    ],
+    [
+     "B",
+     "5"
+    ],
+    [
+     "C",
+     "3"
+    ],
+    [
+     "D",
+     "8"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "6.8 × 3 × 7.9 = 161.16.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "6.8 × 3 × 7.9 = 161.16.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "6.8 × 7.9 = 53.72 and 161.16 ÷ 53.72 = 3",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 65,
+   "hi": "पौधे की वृद्धि किस यंत्र से मापी जाती है ?",
+   "en": "Which instrument is used to measure the growth of plant ?",
+   "hi_options": [
+    [
+     "A",
+     "मल्टीमीटर"
+    ],
+    [
+     "B",
+     "क्रेस्कोग्राफ"
+    ],
+    [
+     "C",
+     "वोल्टमीटर"
+    ],
+    [
+     "D",
+     "माइक्रोमीटर"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Multimeter"
+    ],
+    [
+     "B",
+     "Crescograph"
+    ],
+    [
+     "C",
+     "Voltmeter"
+    ],
+    [
+     "D",
+     "Micrometer"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "A crescograph measures plant growth.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "क्रेस्कोग्राफ पौधों की वृद्धि मापने का यंत्र है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "A crescograph is used to measure the growth of plants.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 66,
+   "hi": "एक साधारण पेंडुलम जो छोटी अम्प्लीट्यूड के साथ झूलता है, इसका काल (एक पूर्ण चक्कर के लिए समय) मुख्यतः इसके द्वारा निर्धारित होता है :",
+   "en": "For a simple pendulum swinging with a small amplitude, its period (the time for one complete oscillation) is primarily determined by its :",
+   "hi_options": [
+    [
+     "A",
+     "द्रव्यमान और लंबाई"
+    ],
+    [
+     "B",
+     "रिहाई का कोण"
+    ],
+    [
+     "C",
+     "लंबाई"
+    ],
+    [
+     "D",
+     "द्रव्यमान"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Both Mass and Length"
+    ],
+    [
+     "B",
+     "Angle of release"
+    ],
+    [
+     "C",
+     "Length"
+    ],
+    [
+     "D",
+     "Mass"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "For small oscillations, the period is T = 2π√(L/g), so it depends primarily on length.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "छोटी अम्प्लीट्यूड पर साधारण पेंडुलम का काल T=2π√(L/g) होता है, इसलिए यह मुख्यतः लंबाई पर निर्भर है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "For small oscillations, T = 2π√(L/g), so it depends primarily on length.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 67,
+   "hi": "5 : 20 के अनुपात को, प्रतिशत में दर्शाने पर कितना होगा ?",
+   "en": "The ratio 5 : 20 expressed as percent equals to :",
+   "hi_options": [
+    [
+     "A",
+     "0.25%"
+    ],
+    [
+     "B",
+     "25%"
+    ],
+    [
+     "C",
+     "50%"
+    ],
+    [
+     "D",
+     "125%"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "0.25%"
+    ],
+    [
+     "B",
+     "25%"
+    ],
+    [
+     "C",
+     "50%"
+    ],
+    [
+     "D",
+     "125%"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "5 ÷ 20 = 0.25 = 25%.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "5:20 = 5/20 = 1/4 = 25%.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "5:20 = 5/20 = 0.25 = 25%",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 68,
+   "hi": "निम्नलिखित में से कौन सा संख्या पूर्ण वर्ग नहीं है ?",
+   "en": "Which of the following numbers is not a perfect square ?",
+   "hi_options": [
+    [
+     "A",
+     "7056"
+    ],
+    [
+     "B",
+     "4624"
+    ],
+    [
+     "C",
+     "5475"
+    ],
+    [
+     "D",
+     "3969"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "7056"
+    ],
+    [
+     "B",
+     "4624"
+    ],
+    [
+     "C",
+     "5475"
+    ],
+    [
+     "D",
+     "3969"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "5475 is not a perfect square (74² = 5476).",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "5475 पूर्ण वर्ग नहीं है; 74² = 5476।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "7056=84², 4624=68², 3969=63²; 5475 is not a perfect square.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 69,
+   "hi": "हिमाक्षी ₹4 प्रति की कीमत पर टॉफी खरीदती है। फिर वह ₹5 प्रति की कीमत पर टॉफी की समान मात्रा खरीदती है। फिर, वह उन्हें एक टोकरी में मिलाकर ₹4 प्रति बेचती है। उसे कितना लाभ या हानि होगी? साथ ही, उसे कितने प्रतिशत लाभ या हानि होगी?",
+   "en": "Himakshi buys toffees at a price of ₹4 each. She again buys the same amount of toffees at ₹5 each. Then, she mixes them in a basket and sells them at ₹4 each. What will she get profit or loss? Also, how much percentage profit or loss will she get?",
+   "hi_options": [
+    [
+     "A",
+     "Loss : 100/9%"
+    ],
+    [
+     "B",
+     "Profit : 100/9%"
+    ],
+    [
+     "C",
+     "Loss : 9/100%"
+    ],
+    [
+     "D",
+     "Profit : 9/100%"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Loss : 100/9%"
+    ],
+    [
+     "B",
+     "Profit : 100/9%"
+    ],
+    [
+     "C",
+     "Loss : 9/100%"
+    ],
+    [
+     "D",
+     "Profit : 9/100%"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Buying equal quantities costs ₹9x and selling yields ₹8x, so loss is 100/9%.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "Equal quantities give average cost ₹4.50 each; selling at ₹4 causes a loss of 100/9%.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Equal numbers bought at ₹4 and ₹5 give average CP ₹4.5; selling at ₹4 causes loss = 0.5/4.5 = 100/9%.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 70,
+   "hi": "एक दुकानदार एक लेख पर 25% का लाभ कमाना चाहता है। वह लेख को एक मूल्य पर चिह्नित करता है कि भले ही वह चिह्नित मूल्य पर 20% की छूट देता है, वह अभी भी इच्छित लाभ कमाता है। हालाँकि, एक त्योहार के प्रस्ताव के कारण, वह छूट प्राप्त मूल्य पर गलती से अतिरिक्त 10% छूट देता है। परिणामस्वरूप, वह अपेक्षित लाभ से ₹6 कम कमाता है। लेख की लागत मूल्य क्या है?",
+   "en": "A shopkeeper wants to earn a profit of 25% on an article. He marks the article at a price such that even after giving a 20% discount on the marked price, he still makes the desired profit. However, due to a festival offer, he mistakenly gives an additional 10% discount on the discounted price. As a result, he earns ₹6 less than the expected profit. What is the cost price of the article?",
+   "hi_options": [
+    [
+     "A",
+     "₹ 36"
+    ],
+    [
+     "B",
+     "₹ 108"
+    ],
+    [
+     "C",
+     "₹ 96"
+    ],
+    [
+     "D",
+     "₹ 48"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "₹ 36"
+    ],
+    [
+     "B",
+     "₹ 108"
+    ],
+    [
+     "C",
+     "₹ 96"
+    ],
+    [
+     "D",
+     "₹ 48"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Extra 10% discount reduces profit by 12.5% of cost price, so 0.125 CP = 6 ⇒ CP = ₹48.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "अतिरिक्त 10% छूट से लाभ में 12.5% CP की कमी हुई; 0.125×CP=6, अतः CP=₹48।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Extra 10% discount reduces profit by 12.5% of CP; 0.125×CP=6, so CP=₹48.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 71,
+   "hi": "वह छोटी से छोटी कौन सी संख्या है जिससे 1330 में जड़े जाने पर परिणाम वाली संख्या 36 से पूर्ण: विभाजित हो जाती है ?",
+   "en": "What is the least number which should be added to 1330 to get the number exactly divisible by 36 ?",
+   "hi_options": [
+    [
+     "A",
+     "12"
+    ],
+    [
+     "B",
+     "2"
+    ],
+    [
+     "C",
+     "3"
+    ],
+    [
+     "D",
+     "9"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "12"
+    ],
+    [
+     "B",
+     "2"
+    ],
+    [
+     "C",
+     "3"
+    ],
+    [
+     "D",
+     "9"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "1330 leaves remainder 34 when divided by 36, so adding 2 makes it divisible.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "1330 को 36 से भाग देने पर शेष 34 है, अतः 2 जोड़ने पर 36 से विभाज्य होगा।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "1330 leaves remainder 34 when divided by 36, so adding 2 makes it divisible.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 72,
+   "hi": "एक रेडॉक्स प्रतिक्रिया में, वह पदार्थ जो इलेक्ट्रॉनों को प्राप्त करता है, उसे कहा जाता है :",
+   "en": "In a redox reaction, the substance that gains electrons is said to have been :",
+   "hi_options": [
+    [
+     "A",
+     "उत्साहित"
+    ],
+    [
+     "B",
+     "कम किया गया"
+    ],
+    [
+     "C",
+     "निष्क्रिय किया गया"
+    ],
+    [
+     "D",
+     "ऑक्सीकृत"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Catalyzed"
+    ],
+    [
+     "B",
+     "Reduced"
+    ],
+    [
+     "C",
+     "Neutralized"
+    ],
+    [
+     "D",
+     "Oxidized"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Gaining electrons is reduction.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "जो पदार्थ इलेक्ट्रॉन प्राप्त करता है, वह अपचयित (reduced) होता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "In redox, gain of electrons is reduction.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 73,
+   "hi": "इसरो द्वारा विकसित उस महिला मानवयुक्त रोबोट का नाम क्या है जिसे 2024 में गगनयान मानवयुक्त मिशन के पूर्व परीक्षण के लिए भेजा गया था?",
+   "en": "What is the name of the female humanoid robot developed by ISRO that was sent on an uncrewed test flight in 2024 as a precursor to the Gaganyaan manned space mission?",
+   "hi_options": [
+    [
+     "A",
+     "गगन-सखी"
+    ],
+    [
+     "B",
+     "नभा-नारी"
+    ],
+    [
+     "C",
+     "व्योममित्र"
+    ],
+    [
+     "D",
+     "मित्र"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Gagan-Sakhi"
+    ],
+    [
+     "B",
+     "Nabha-Nari"
+    ],
+    [
+     "C",
+     "Vyommitra"
+    ],
+    [
+     "D",
+     "Mitra"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "X",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 2,
+   "detail": {
+    "en_a": {
+     "answer": "X",
+     "why": "Vyommitra is ISRO's robot, but no uncrewed Gaganyaan test flight carrying it occurred in 2024.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "इसरो की महिला ह्यूमनॉइड रोबोट का नाम व्योममित्र है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "ISRO’s female humanoid robot for Gaganyaan is named Vyommitra.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 74,
+   "hi": "बॉयल के नियम के अनुसार, यदि आप गैस का तापमान स्थिर रखते हैं और इसके आयतन को कम करते हैं, तो दबाव का क्या होता है ?",
+   "en": "According to Boyle’s law, if you keep the temperature of a gas constant and decrease its volume, what happens to the pressure ?",
+   "hi_options": [
+    [
+     "A",
+     "यह बढ़ता है।"
+    ],
+    [
+     "B",
+     "यह घटता है।"
+    ],
+    [
+     "C",
+     "यह समान रहता है।"
+    ],
+    [
+     "D",
+     "यह पहले बढ़ता है और फिर घटता है।"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "It increases."
+    ],
+    [
+     "B",
+     "It decreases."
+    ],
+    [
+     "C",
+     "It stays the same."
+    ],
+    [
+     "D",
+     "It increases first and then decreases."
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "At constant temperature, pressure is inversely proportional to volume.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "स्थिर तापमान पर आयतन घटने से बॉयल के नियम अनुसार दबाव बढ़ता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "At constant temperature, pressure is inversely proportional to volume, so decreasing volume increases pressure.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 75,
+   "hi": "फोटोइलेक्ट्रिक प्रभाव प्रकाश की कण-नुमा प्रकृति को प्रदर्शित करता है। यह एक सामग्री से इलेक्ट्रॉनों के उत्सर्जन का वर्णन करता है जब इसे :",
+   "en": "The photoelectric effect demonstrates the particle-like nature of light. It describes the emission of electrons from a material when it is struck by :",
+   "hi_options": [
+    [
+     "A",
+     "दूसरे आवेशित कण"
+    ],
+    [
+     "B",
+     "उच्च-आवृत्ति विद्युतचुंबकीय विकिरण"
+    ],
+    [
+     "C",
+     "एक मजबूत चुंबकीय क्षेत्र"
+    ],
+    [
+     "D",
+     "एक ध्वनि तरंग"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Another charged particle"
+    ],
+    [
+     "B",
+     "High-frequency electromagnetic radiation"
+    ],
+    [
+     "C",
+     "A strong magnetic field"
+    ],
+    [
+     "D",
+     "A sound wave"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Photoelectric emission occurs when sufficiently high-frequency electromagnetic radiation strikes a material.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "Photoelectric emission occurs when high-frequency electromagnetic radiation ejects electrons.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Photoelectric emission occurs when light/EM radiation of sufficient frequency strikes a material.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 76,
+   "hi": "35 से पूर्ण विभाजित होने वाले चार अंकों की सबसे बड़ी संख्या कौन सी है ?",
+   "en": "The largest four digit number exactly divisible by 35 is :",
+   "hi_options": [
+    [
+     "A",
+     "9965"
+    ],
+    [
+     "B",
+     "9975"
+    ],
+    [
+     "C",
+     "9995"
+    ],
+    [
+     "D",
+     "9875"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "9965"
+    ],
+    [
+     "B",
+     "9975"
+    ],
+    [
+     "C",
+     "9995"
+    ],
+    [
+     "D",
+     "9875"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "9999 ÷ 35 gives largest multiple 35×285 = 9975.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "9999 से कम 35 का सबसे बड़ा गुणज 35×285 = 9975 है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "35×285=9975 and 35×286 exceeds four digits.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 77,
+   "hi": "दो पूर्ण संख्याओं के बीच का अंतर 66 है। दो संख्याओं का अनुपात 2 : 5 है। वे दो संख्याएँ क्या हैं?",
+   "en": "The difference between two whole numbers is 66. The ratio of the two numbers is 2 : 5. What are the two numbers?",
+   "hi_options": [
+    [
+     "A",
+     "44, 110"
+    ],
+    [
+     "B",
+     "66, 126"
+    ],
+    [
+     "C",
+     "74, 140"
+    ],
+    [
+     "D",
+     "54, 120"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "44, 110"
+    ],
+    [
+     "B",
+     "66, 126"
+    ],
+    [
+     "C",
+     "74, 140"
+    ],
+    [
+     "D",
+     "54, 120"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Let numbers be 2x and 5x; 3x=66 gives x=22, so 44 and 110.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "2x और 5x का अंतर 3x=66, अतः x=22; संख्याएँ 44 और 110 हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Let the numbers be 2x and 5x; 3x=66 so x=22, giving 44 and 110.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 78,
+   "hi": "एक सीधा धारा ले जाने वाले चालक के चारों ओर चुंबकीय क्षेत्र रेखाओं का आकार क्या है ?",
+   "en": "What is the shape of the magnetic field lines around a straight current-carrying conductor ?",
+   "hi_options": [
+    [
+     "A",
+     "गोल"
+    ],
+    [
+     "B",
+     "अनियमित लूप"
+    ],
+    [
+     "C",
+     "सीधा"
+    ],
+    [
+     "D",
+     "अंडाकार"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Circular"
+    ],
+    [
+     "B",
+     "Irregular loops"
+    ],
+    [
+     "C",
+     "Straight"
+    ],
+    [
+     "D",
+     "Elliptical"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Magnetic field lines around a straight current-carrying conductor are concentric circles.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "सीधे धारा-वाहक चालक के चारों ओर चुंबकीय क्षेत्र रेखाएँ संकेंद्रित वृत्ताकार होती हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Magnetic field lines around a straight current-carrying conductor are concentric circles.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 79,
+   "hi": "दिल्ली से देहरादून जाते हुए एक रेलगाड़ी की चाल 100 किमी/घंटा है, परंतु देहरादून से दिल्ली लौटते समय इसकी चाल 150 किमी/घंटा है। इस पूरी यात्रा में रेलगाड़ी की औसत चाल क्या है ?",
+   "en": "A train runs from Delhi to Dehradun at the speed of 100 km/hr while on returning from Dehradun to Delhi, its speed is 150 km/hr. What is the average speed during whole journey ?",
+   "hi_options": [
+    [
+     "A",
+     "130 किमी/घंटा"
+    ],
+    [
+     "B",
+     "135 किमी/घंटा"
+    ],
+    [
+     "C",
+     "125 किमी/घंटा"
+    ],
+    [
+     "D",
+     "120 किमी/घंटा"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "130 km/hr"
+    ],
+    [
+     "B",
+     "135 km/hr"
+    ],
+    [
+     "C",
+     "125 km/hr"
+    ],
+    [
+     "D",
+     "120 km/hr"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "For equal distances, average speed = 2×100×150/(100+150) = 120 km/hr.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "समान दूरी के लिए औसत चाल = 2×100×150/(100+150) = 120 किमी/घंटा।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "For equal distances, average speed = 2×100×150/(100+150) = 120 km/hr.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 80,
+   "hi": "मस्तिष्क का वह भाग जो मुद्रा और संतुलन बनाए रखने के लिए जिम्मेदार है :",
+   "en": "The part of the brain responsible for maintaining posture and balance is the :",
+   "hi_options": [
+    [
+     "A",
+     "छोटी मस्तिष्क"
+    ],
+    [
+     "B",
+     "मेडुला"
+    ],
+    [
+     "C",
+     "पोंस"
+    ],
+    [
+     "D",
+     "मस्तिष्क"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Cerebellum"
+    ],
+    [
+     "B",
+     "Medulla"
+    ],
+    [
+     "C",
+     "Pons"
+    ],
+    [
+     "D",
+     "Cerebrum"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "The cerebellum coordinates posture, balance, and movement.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "छोटी मस्तिष्क (सेरिबेलम) मुद्रा और संतुलन नियंत्रित करती है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "The cerebellum coordinates muscle activity and maintains posture and balance.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 81,
+   "hi": "यदि p और q पूर्ण वर्ग हैं, तो pq हमेशा एक परिमेय संख्या होती है। क्या यह कथन सत्य है?",
+   "en": "If p and q are perfect squares, then pq is always a rational number. Is the statement true?",
+   "hi_options": [
+    [
+     "A",
+     "कहा नहीं जा सकता"
+    ],
+    [
+     "B",
+     "नहीं"
+    ],
+    [
+     "C",
+     "हाँ"
+    ],
+    [
+     "D",
+     "इनमें से कोई नहीं"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Cannot be said"
+    ],
+    [
+     "B",
+     "No"
+    ],
+    [
+     "C",
+     "Yes"
+    ],
+    [
+     "D",
+     "None of these"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "The product of two perfect squares is a perfect square, hence rational.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "दो पूर्ण वर्गों का गुणनफल भी पूर्ण वर्ग, अतः परिमेय होता है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Perfect squares (of integers) have an integer product, hence rational.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 82,
+   "hi": "एक प्रतिभागी परीक्षा में 50 प्रश्न हैं जिनमें प्रश्नों का सही उत्तर के लिए 4 अंक हैं और प्रश्नों का गलत उत्तर के लिए 2 अंक घटाए जाते हैं। यदि कुल 23 उत्तर सही हैं और बाकी गलत हैं तो कुल कितने अंक प्राप्त होंगे ?",
+   "en": "In a competitive exam there are 50 questions and for each correct answer there are 4 marks and for each wrong answer 2 marks are deducted. What is the total of marks obtained, if only 23 answers are correct and rest are wrong ?",
+   "hi_options": [
+    [
+     "A",
+     "92"
+    ],
+    [
+     "B",
+     "54"
+    ],
+    [
+     "C",
+     "34"
+    ],
+    [
+     "D",
+     "38"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "92"
+    ],
+    [
+     "B",
+     "54"
+    ],
+    [
+     "C",
+     "34"
+    ],
+    [
+     "D",
+     "38"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "23×4 − 27×2 = 92 − 54 = 38.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "23×4 − 27×2 = 92 − 54 = 38.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "23×4 − 27×2 = 92 − 54 = 38",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 83,
+   "hi": "कार्बन-14 की आधी-जीवन लगभग 5,730 वर्ष है। इस गुण का उपयोग प्राचीन कार्बनिक सामग्रियों की आयु निर्धारित करने के लिए किया जाता है। इस तकनीक को क्या कहा जाता है ?",
+   "en": "The half-life of Carbon-14 is approximately 5,730 years. This property is used in a technique to determine the age of ancient organic materials. What is this technique called ?",
+   "hi_options": [
+    [
+     "A",
+     "रेडियोकार्बन डेटिंग"
+    ],
+    [
+     "B",
+     "थर्मोल्यूमिनेसेंस"
+    ],
+    [
+     "C",
+     "स्तरीकरण"
+    ],
+    [
+     "D",
+     "डेंड्रोक्रोनोलॉजी"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Radiocarbon dating"
+    ],
+    [
+     "B",
+     "Thermoluminescence"
+    ],
+    [
+     "C",
+     "Stratigraphy"
+    ],
+    [
+     "D",
+     "Dendrochronology"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Carbon-14 decay is used for radiocarbon dating of ancient organic materials.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "कार्बन-14 की अर्ध-आयु से जैविक पदार्थों की आयु मापने की तकनीक रेडियोकार्बन डेटिंग है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Carbon-14 decay is the basis of radiocarbon dating organic remains.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 84,
+   "hi": "एक कार को ₹ 50,000 में खरीदा गया और बाद में ₹ 40,000 में बेचा दिया गया। इसमें बचने पर कितने प्रतिशत हानि हुई?",
+   "en": "A Car is purchased at ₹ 50,000 and sold at ₹ 40,000, find the lost percent.",
+   "hi_options": [
+    [
+     "A",
+     "10%"
+    ],
+    [
+     "B",
+     "30%"
+    ],
+    [
+     "C",
+     "20%"
+    ],
+    [
+     "D",
+     "25%"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "10%"
+    ],
+    [
+     "B",
+     "30%"
+    ],
+    [
+     "C",
+     "20%"
+    ],
+    [
+     "D",
+     "25%"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Loss = 50,000 − 40,000 = 10,000; loss percent = 10,000/50,000 × 100 = 20%.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "हानि = 50,000−40,000 = 10,000, जो क्रय मूल्य का 20% है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Loss = 10000, so loss percent = 10000/50000 × 100 = 20%.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 85,
+   "hi": "एक सोफा-सेट ₹ 10,000 में खरीदा गया। इसका मूल्य 10% प्रति वर्ष की दर से घटित हो गया। दो वर्ष बाद इसका मूल्य ज्ञात करें।",
+   "en": "A sofa-set was bought for 10,000. Its value depreciated at the rate of 10% per annum. Find its value after two years.",
+   "hi_options": [
+    [
+     "A",
+     "₹ 8,100"
+    ],
+    [
+     "B",
+     "₹ 8,900"
+    ],
+    [
+     "C",
+     "₹ 9,100"
+    ],
+    [
+     "D",
+     "₹ 8,000"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "₹ 8,100"
+    ],
+    [
+     "B",
+     "₹ 8,900"
+    ],
+    [
+     "C",
+     "₹ 9,100"
+    ],
+    [
+     "D",
+     "₹ 8,000"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Value after 2 years = 10000 × (0.9)^2 = ₹8,100.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "घटित मूल्य = 10000×(0.9)^2 = ₹8,100।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Value after 2 years = 10000 × 0.9² = ₹8,100.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 86,
+   "hi": "साधारण ब्याज की दर पर, क्या एक राशि 8 वर्षों में अपने आप को दोगुना कर देगी?",
+   "en": "At the rate percent per annum simple interest, will a sum be double itself in 8 years?",
+   "hi_options": [
+    [
+     "A",
+     "121"
+    ],
+    [
+     "B",
+     "14%"
+    ],
+    [
+     "C",
+     "151"
+    ],
+    [
+     "D",
+     "16%"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "121"
+    ],
+    [
+     "B",
+     "14%"
+    ],
+    [
+     "C",
+     "151"
+    ],
+    [
+     "D",
+     "16%"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "X"
+   ],
+   "agree_with_key": 2,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "For doubling in 8 years at simple interest, rate = 100/8 = 12½% p.a.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "साधारण ब्याज में 8 वर्षों में दोगुना होने हेतु दर 12½% होगी।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "X",
+     "why": "Required rate is 12.5% p.a.; no listed option is correct as written.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 87,
+   "hi": "एक वस्तु के लिए गतिज ऊर्जा का सही सूत्र क्या है जिसका द्रव्यमान m और वेग v है ?",
+   "en": "What is the correct formula for the kinetic energy of an object with mass m and velocity v ?",
+   "hi_options": [
+    [
+     "A",
+     "K = mv"
+    ],
+    [
+     "B",
+     "K = v2"
+    ],
+    [
+     "C",
+     "K = mv2"
+    ],
+    [
+     "D",
+     "K = 1"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "K = mv"
+    ],
+    [
+     "B",
+     "K = v2"
+    ],
+    [
+     "C",
+     "K = mv2"
+    ],
+    [
+     "D",
+     "K = 1"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "X",
+    "X",
+    "X"
+   ],
+   "agree_with_key": 0,
+   "detail": {
+    "en_a": {
+     "answer": "X",
+     "why": "The correct formula is K = 1/2 mv², which is not listed.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "X",
+     "why": "सही सूत्र K = ½mv² है; कोई विकल्प पूर्णतः सही नहीं है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "X",
+     "why": "No option is correct; kinetic energy is K = 1/2 mv^2.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 88,
+   "hi": "1, 6, 13, 22, 33, ___, इस श्रृंखला में अगली संख्या क्या होगी ?",
+   "en": "Find the missing number in the series 1, 6, 13, 22, 33, __.",
+   "hi_options": [
+    [
+     "A",
+     "39"
+    ],
+    [
+     "B",
+     "44"
+    ],
+    [
+     "C",
+     "54"
+    ],
+    [
+     "D",
+     "46"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "39"
+    ],
+    [
+     "B",
+     "44"
+    ],
+    [
+     "C",
+     "54"
+    ],
+    [
+     "D",
+     "46"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Differences are +5, +7, +9, +11, so next is +13: 33+13=46.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "अंतर 5, 7, 9, 11 हैं; अगला अंतर 13, इसलिए 33+13=46।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Differences are consecutive odd numbers: +5,+7,+9,+11, so next is +13 = 46.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 89,
+   "hi": "अणुविज्ञान में, DNA टेम्पलेट से RNA अणु का संश्लेषण करने की प्रक्रिया को क्या कहा जाता है :",
+   "en": "In molecular biology, the process of synthesizing an RNA molecule from a DNA template is known as :",
+   "hi_options": [
+    [
+     "A",
+     "प्रतिलिपि"
+    ],
+    [
+     "B",
+     "प्रतिकृति"
+    ],
+    [
+     "C",
+     "परिवर्तन"
+    ],
+    [
+     "D",
+     "अनुवाद"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Transcription"
+    ],
+    [
+     "B",
+     "Replication"
+    ],
+    [
+     "C",
+     "Transformation"
+    ],
+    [
+     "D",
+     "Translation"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "RNA synthesis from a DNA template is called transcription.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "DNA टेम्पलेट से RNA संश्लेषण को transcription (प्रतिलिपि/प्रतिलेखन) कहते हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "RNA synthesis from a DNA template is called transcription.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 90,
+   "hi": "(?) + 2763 + 1254 - 1967 = 26988 में प्रश्नचिह्न (?) के स्थान पर निम्नलिखित में से कौन सी संख्या आएगी ?",
+   "en": "What should come in place of question mark (?) in (?) + 2763 + 1254 - 1967 = 26988",
+   "hi_options": [
+    [
+     "A",
+     "24938"
+    ],
+    [
+     "B",
+     "23928"
+    ],
+    [
+     "C",
+     "34474"
+    ],
+    [
+     "D",
+     "37447"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "24938"
+    ],
+    [
+     "B",
+     "23928"
+    ],
+    [
+     "C",
+     "34474"
+    ],
+    [
+     "D",
+     "37447"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "? = 26988 - 2763 - 1254 + 1967 = 24938.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "? = 26988 - 2763 - 1254 + 1967 = 24938.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "2763 + 1254 - 1967 = 2050, so ? = 26988 - 2050 = 24938.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 91,
+   "hi": "यदि x कोई प्राकृतिक संख्या है, तो x³ - 1x³ हमेशा से बड़ा या बराबर होगा?",
+   "en": "If x is any natural number, then x³ - 1x³ will always be greater than or equal to?",
+   "hi_options": [
+    [
+     "A",
+     "3 ( x - 1 )"
+    ],
+    [
+     "B",
+     "3 ( x + 1 )"
+    ],
+    [
+     "C",
+     "x + 1"
+    ],
+    [
+     "D",
+     "x³ + 1"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "3 ( x - 1 )"
+    ],
+    [
+     "B",
+     "3 ( x + 1 )"
+    ],
+    [
+     "C",
+     "x + 1"
+    ],
+    [
+     "D",
+     "x³ + 1"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "X",
+    "X",
+    "X"
+   ],
+   "agree_with_key": 0,
+   "detail": {
+    "en_a": {
+     "answer": "X",
+     "why": "As written, x³−1x³=0, so none of the options is always satisfied.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "X",
+     "why": "As written, x³−1x³=0, and no listed expression is always ≤0 for natural x.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "X",
+     "why": "No option is correct as written: x³−1x³ = 0 for all x.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 92,
+   "hi": "एक कक्षा में लड़कों और लड़कियों की संख्या का अनुपात 11 : 9 है | 30% लड़कों ने 20% लड़कियों ने परीक्षा पास की है | कक्षा के पास छात्रों का प्रतिशत है",
+   "en": "In a class, the ratio of the number of boys to that of girls is 11 : 9, 30% of the boys and 20% of the girls have passed an examination. The percentage of passed students of the class is",
+   "hi_options": [
+    [
+     "A",
+     "25.5"
+    ],
+    [
+     "B",
+     "23.5"
+    ],
+    [
+     "C",
+     "24.5"
+    ],
+    [
+     "D",
+     "28.5"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "25.5"
+    ],
+    [
+     "B",
+     "23.5"
+    ],
+    [
+     "C",
+     "24.5"
+    ],
+    [
+     "D",
+     "28.5"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Passed percentage = (11×30 + 9×20)/20 = 25.5%.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "पास प्रतिशत = (11×30% + 9×20%)/20 = 25.5%।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Weighted pass percentage = (30% of 11 + 20% of 9) / 20 = 25.5%.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 93,
+   "hi": "एक कार की लागत पिछले वर्ष की तुलना में हर वर्ष 10% कम होती है। यदि कोई व्यक्ति अपनी कार को ₹ 3,20,760 पर 10% लाभ पर बेचता है, तो कार की कीमत 3 वर्ष पहले थी",
+   "en": "The cost of a car depreciates 10% every year over the previous year. If a person sells his car at a profit of 10% at ₹ 3,20,760, then the price of the car 3 years ago was",
+   "hi_options": [
+    [
+     "A",
+     "₹ 5,00,000"
+    ],
+    [
+     "B",
+     "₹ 4,00,000"
+    ],
+    [
+     "C",
+     "₹ 4,50,000"
+    ],
+    [
+     "D",
+     "₹ 4,25,000"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "₹ 5,00,000"
+    ],
+    [
+     "B",
+     "₹ 4,00,000"
+    ],
+    [
+     "C",
+     "₹ 4,50,000"
+    ],
+    [
+     "D",
+     "₹ 4,25,000"
+    ]
+   ],
+   "key": "B",
+   "generated": false,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "₹3,20,760 = 110% of the depreciated value after 3 years, so original price = ₹4,00,000.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "वर्तमान लागत ₹3,20,760/1.10=₹2,91,600; 3 वर्ष पहले = ₹2,91,600/(0.9)^3=₹4,00,000।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Selling price ₹3,20,760 at 10% profit gives current value ₹2,91,600; 3 years ago = ₹2,91,600/0.9^3 = ₹4,00,000.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 94,
+   "hi": "कौन सा विकल्प उच्च ऊँचाई पर ओजोन के निर्माण की सही प्रक्रिया को समझाता है?",
+   "en": "Which option explains the correct mechanism of ozone formation at higher altitudes?",
+   "hi_options": [
+    [
+     "A",
+     "कार्बन डाइऑक्साइड UV किरणों को अवशोषित करती है और ओजोन अणुओं में परिवर्तित होती है।"
+    ],
+    [
+     "B",
+     "क्लोरोफ्लोरोकार्बन ऑक्सीजन के साथ प्रतिक्रिया करते हैं और ओजोन गैस उत्पन्न करते हैं।"
+    ],
+    [
+     "C",
+     "UV किरणें ऑक्सीजन अणुओं को तोड़ती हैं और मुक्त परमाणु O2 के साथ मिलकर ओजोन बनाते हैं।"
+    ],
+    [
+     "D",
+     "ऑक्सीजन परमाणु सूरज की रोशनी के संपर्क में आने पर नाइट्रोजन अणुओं के साथ मिल जाते हैं।"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Carbon dioxide absorbs UV rays and converts into ozone molecules."
+    ],
+    [
+     "B",
+     "Chlorofluorocarbons react with oxygen to generate ozone gas."
+    ],
+    [
+     "C",
+     "UV rays break oxygen molecules and free atoms combine with O2 to form ozone."
+    ],
+    [
+     "D",
+     "Oxygen atoms join nitrogen molecules when exposed to sunlight."
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "UV splits O2 into oxygen atoms, which combine with O2 to form O3.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "UV किरणें O2 को O परमाणुओं में तोड़ती हैं, जो O2 से मिलकर O3 बनाते हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "UV radiation splits O2 into oxygen atoms, which then combine with O2 to form O3.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 95,
+   "hi": "50 मजदूरों की एक टीम एक ठेकेदार के साथ मिलकर 5 महीनों में एक काम पूरा कर सकती है। 125 मजदूरों द्वारा वही काम कितने महीनों में पूरा किया जा सकता है ?",
+   "en": "A workforce of 50 men with a contractor can finish a piece of work in 5 months. In how many months can the same work be completed by 125 men ?",
+   "hi_options": [
+    [
+     "A",
+     "2"
+    ],
+    [
+     "B",
+     "4"
+    ],
+    [
+     "C",
+     "8"
+    ],
+    [
+     "D",
+     "6"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "2"
+    ],
+    [
+     "B",
+     "4"
+    ],
+    [
+     "C",
+     "8"
+    ],
+    [
+     "D",
+     "6"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "X",
+    "A"
+   ],
+   "agree_with_key": 2,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Work is constant: 50×5=125×t, so t=2 months.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "X",
+     "why": "ठेकेदार की कार्य-दर नहीं दी गई है, इसलिए समय निश्चित नहीं किया जा सकता।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Work = 50×5 = 250 man-months; 250/125 = 2 months.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 96,
+   "hi": "यदि एक संख्या को दोगुना किया जाए और फिर 5 जोड़ा जाए, तो परिणाम 21 होता है। मूल संख्या क्या है?",
+   "en": "If a number is doubled and then 5 is added, the result is 21. What is the original number?",
+   "hi_options": [
+    [
+     "A",
+     "16"
+    ],
+    [
+     "B",
+     "10"
+    ],
+    [
+     "C",
+     "8"
+    ],
+    [
+     "D",
+     "18"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "16"
+    ],
+    [
+     "B",
+     "10"
+    ],
+    [
+     "C",
+     "8"
+    ],
+    [
+     "D",
+     "18"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "2x + 5 = 21 gives x = 8.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "2x+5=21, so x=8.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Let the number be x: 2x + 5 = 21, so x = 8.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 97,
+   "hi": "लावा के ठंडा होने और ठोस होने से बनने वाली चट्टानों को क्या कहते हैं ?",
+   "en": "The rocks formed by the cooling and solidification of lava, either on the surface or within the crust, are called :",
+   "hi_options": [
+    [
+     "A",
+     "आग्नेय चट्टाएँ"
+    ],
+    [
+     "B",
+     "परिवर्तित चट्टाएँ"
+    ],
+    [
+     "C",
+     "अवसादी चट्टाएँ"
+    ],
+    [
+     "D",
+     "जीवाश्मयुक्त चट्टाएँ"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Igneous rocks"
+    ],
+    [
+     "B",
+     "Metamorphic rocks"
+    ],
+    [
+     "C",
+     "Sedimentary rocks"
+    ],
+    [
+     "D",
+     "Fossiliferous rocks"
+    ]
+   ],
+   "key": "A",
+   "generated": false,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Igneous rocks form when molten lava or magma cools and solidifies.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "लावा के ठंडा होकर ठोस बनने से आग्नेय चट्टाएँ बनती हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Igneous rocks form when molten rock cools and solidifies, either at the surface or within the crust.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 98,
+   "hi": "यदि P और Q की आयु का अनुपात (5 वर्ष पहले) 5 : 7 था, तो अब से 5 वर्ष बाद उनकी आयु का योग होगा",
+   "en": "If the ratio of the ages (in years) of P and Q, 5 years ago was 5 : 7, then the sum of their ages 5 years from now is",
+   "hi_options": [
+    [
+     "A",
+     "87"
+    ],
+    [
+     "B",
+     "90"
+    ],
+    [
+     "C",
+     "98"
+    ],
+    [
+     "D",
+     "92"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "87"
+    ],
+    [
+     "B",
+     "90"
+    ],
+    [
+     "C",
+     "98"
+    ],
+    [
+     "D",
+     "92"
+    ]
+   ],
+   "key": "D",
+   "generated": false,
+   "votes": [
+    "X",
+    "X",
+    "X"
+   ],
+   "agree_with_key": 0,
+   "detail": {
+    "en_a": {
+     "answer": "X",
+     "why": "The ratio alone does not determine the age scale, so the future sum is not unique.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "X",
+     "why": "अनुपात से केवल 12k+20 मिलता है; k अज्ञात होने से कई विकल्प संभव हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "X",
+     "why": "Cannot be determined; the ratio gives only one relation, and sums depend on an unspecified multiplier.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 99,
+   "hi": "रमेश किसि एक दूरी को 4 किमी/घंटा की चाल से चल कर 2 घंटे 45 मिनट में पूरा करता है। यदि वह उसी दूरी को 16.5 किमी/घंटा की चाल से दौड़े तो उसे कितना समय लगेगा ?",
+   "en": "Ramesh covers certain distance in 2 hr 45 min by walking at the rate of 4 km per hour. How much time he will take to cover the same distance, if he runs at a speed of 16.5 km per hour ?",
+   "hi_options": [
+    [
+     "A",
+     "44 मिनट"
+    ],
+    [
+     "B",
+     "48 मिनट"
+    ],
+    [
+     "C",
+     "40 मिनट"
+    ],
+    [
+     "D",
+     "38 मिनट"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "44 minutes"
+    ],
+    [
+     "B",
+     "48 minutes"
+    ],
+    [
+     "C",
+     "40 minutes"
+    ],
+    [
+     "D",
+     "38 minutes"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Distance = 4 × 2.75 = 11 km; at 16.5 km/h, time = 11/16.5 h = 40 minutes.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "दूरी 11 किमी है; 11/16.5 घंटा = 40 मिनट।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Distance = 4 × 2.75 = 11 km; time at 16.5 km/h = 11/16.5 h = 40 minutes.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 100,
+   "hi": "वह छोटी से छोटी कौन सी संख्या है जिसे 5377 के साथ योग करने पर, वह योग, 7 से पूर्ण विभाज्य है?",
+   "en": "What is the smallest number should be added to 5377 so that the sum is completely divis by 7 ?",
+   "hi_options": [
+    [
+     "A",
+     "9"
+    ],
+    [
+     "B",
+     "7"
+    ],
+    [
+     "C",
+     "6"
+    ],
+    [
+     "D",
+     "5"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "9"
+    ],
+    [
+     "B",
+     "7"
+    ],
+    [
+     "C",
+     "6"
+    ],
+    [
+     "D",
+     "5"
+    ]
+   ],
+   "key": "C",
+   "generated": false,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "5377 leaves remainder 1 when divided by 7, so adding 6 makes it divisible.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "5377 को 7 से भाग देने पर शेष 1 है, इसलिए 6 जोड़ने पर पूर्ण विभाज्य होगा।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "5377 leaves remainder 1 when divided by 7, so add 6.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 101,
+   "hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए: 33, 29, 17, 41",
+   "en": "Three of the following four numbers are alike; find the ODD one out: 33, 29, 17, 41",
+   "hi_options": [
+    [
+     "A",
+     "29"
+    ],
+    [
+     "B",
+     "41"
+    ],
+    [
+     "C",
+     "17"
+    ],
+    [
+     "D",
+     "33"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "29"
+    ],
+    [
+     "B",
+     "41"
+    ],
+    [
+     "C",
+     "17"
+    ],
+    [
+     "D",
+     "33"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "29, 17 and 41 are prime numbers, while 33 is composite.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "29, 17 and 41 are prime numbers; 33 is composite.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "29, 17 and 41 are prime numbers; 33 is composite.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 102,
+   "hi": "विद्यार्थियों की एक पंक्ति में अंजलि बाईं ओर से 4वें स्थान पर तथा दाईं ओर से 10वें स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?",
+   "en": "In a row of students, Anjali is 4th from the left end and 10th from the right end. How many students are there in the row?",
+   "hi_options": [
+    [
+     "A",
+     "14"
+    ],
+    [
+     "B",
+     "12"
+    ],
+    [
+     "C",
+     "15"
+    ],
+    [
+     "D",
+     "13"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "14"
+    ],
+    [
+     "B",
+     "12"
+    ],
+    [
+     "C",
+     "15"
+    ],
+    [
+     "D",
+     "13"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Total students = 4 + 10 - 1 = 13.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "कुल विद्यार्थी = 4 + 10 - 1 = 13।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Total students = 4 + 10 - 1 = 13.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 103,
+   "hi": "",
+   "en": "8 : 24 :: 4 : ?",
+   "hi_options": [
+    [
+     "A",
+     "16"
+    ],
+    [
+     "B",
+     "11"
+    ],
+    [
+     "C",
+     "13"
+    ],
+    [
+     "D",
+     "12"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "16"
+    ],
+    [
+     "B",
+     "11"
+    ],
+    [
+     "C",
+     "13"
+    ],
+    [
+     "D",
+     "12"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "24 is 3 times 8, so 4 × 3 = 12.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "24 is 8 multiplied by 3, so 4 multiplied by 3 is 12.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "24 is 8 × 3, so 4 × 3 = 12.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 104,
+   "hi": "अंजलि, राधा की माता हैं तथा राधा, राम की माता हैं। अंजलि का राम से क्या सम्बन्ध है?",
+   "en": "Anjali is the mother of Radha, and Radha is the mother of Ram. How is Anjali related to Ram?",
+   "hi_options": [
+    [
+     "A",
+     "चचेरा भाई/बहन"
+    ],
+    [
+     "B",
+     "बहन"
+    ],
+    [
+     "C",
+     "दादी"
+    ],
+    [
+     "D",
+     "पोती"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Cousin"
+    ],
+    [
+     "B",
+     "Sister"
+    ],
+    [
+     "C",
+     "Grandmother"
+    ],
+    [
+     "D",
+     "Granddaughter"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Anjali is Ram's maternal grandmother.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "अंजलि राधा की माता और राधा राम की माता हैं, इसलिए अंजलि राम की दादी हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Anjali is Ram's mother's mother, i.e., grandmother.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 105,
+   "hi": "एक निश्चित कूट भाषा में 'LIGHT' को 'NKIJV' लिखा जाता है। उसी कूट भाषा में 'TIGER' को कैसे लिखा जाएगा?",
+   "en": "In a certain code language, 'LIGHT' is written as 'NKIJV'. How is 'TIGER' written in that same code?",
+   "hi_options": [
+    [
+     "A",
+     "UJHFS"
+    ],
+    [
+     "B",
+     "RGECP"
+    ],
+    [
+     "C",
+     "VKIGT"
+    ],
+    [
+     "D",
+     "WLJHU"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "UJHFS"
+    ],
+    [
+     "B",
+     "RGECP"
+    ],
+    [
+     "C",
+     "VKIGT"
+    ],
+    [
+     "D",
+     "WLJHU"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 2 positions: TIGER → VKIGT.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 2 positions.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Each letter is shifted +2: TIGER -> VKIGT.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 106,
+   "hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा? D5, F7, H9, J11, ?",
+   "en": "What comes next in the series? D5, F7, H9, J11, ?",
+   "hi_options": [
+    [
+     "A",
+     "L13"
+    ],
+    [
+     "B",
+     "M13"
+    ],
+    [
+     "C",
+     "L14"
+    ],
+    [
+     "D",
+     "L11"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "L13"
+    ],
+    [
+     "B",
+     "M13"
+    ],
+    [
+     "C",
+     "L14"
+    ],
+    [
+     "D",
+     "L11"
+    ]
+   ],
+   "key": "A",
+   "generated": true,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Letters advance by 2 and numbers advance by 2: J11 → L13.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "Letters and numbers each increase by 2: D5, F7, H9, J11, L13.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Letters and numbers both increase by 2: J11 -> L13.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 107,
+   "hi": "",
+   "en": "AB : BC :: GH : ?",
+   "hi_options": [
+    [
+     "A",
+     "FG"
+    ],
+    [
+     "B",
+     "HH"
+    ],
+    [
+     "C",
+     "HI"
+    ],
+    [
+     "D",
+     "IJ"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "FG"
+    ],
+    [
+     "B",
+     "HH"
+    ],
+    [
+     "C",
+     "HI"
+    ],
+    [
+     "D",
+     "IJ"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Each letter advances by one: AB → BC, so GH → HI.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "Each letter advances by one: AB → BC, so GH → HI.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Each letter shifts one step forward: AB → BC, so GH → HI.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 108,
+   "hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए: F, H, J, L, ?",
+   "en": "Find the next term in the letter series: F, H, J, L, ?",
+   "hi_options": [
+    [
+     "A",
+     "P"
+    ],
+    [
+     "B",
+     "N"
+    ],
+    [
+     "C",
+     "O"
+    ],
+    [
+     "D",
+     "M"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "P"
+    ],
+    [
+     "B",
+     "N"
+    ],
+    [
+     "C",
+     "O"
+    ],
+    [
+     "D",
+     "M"
+    ]
+   ],
+   "key": "B",
+   "generated": true,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Letters advance by 2 positions: F, H, J, L, N.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "Letters advance by 2 positions: F, H, J, L, N.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Letters increase by +2 positions: F(6), H(8), J(10), L(12), so next is N(14).",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 109,
+   "hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए: 37, 13, 29, 36",
+   "en": "Three of the following four numbers are alike; find the ODD one out: 37, 13, 29, 36",
+   "hi_options": [
+    [
+     "A",
+     "13"
+    ],
+    [
+     "B",
+     "37"
+    ],
+    [
+     "C",
+     "29"
+    ],
+    [
+     "D",
+     "36"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "13"
+    ],
+    [
+     "B",
+     "37"
+    ],
+    [
+     "C",
+     "29"
+    ],
+    [
+     "D",
+     "36"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "37, 13, and 29 are prime numbers; 36 is composite.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "37, 13 और 29 अभाज्य संख्याएँ हैं, जबकि 36 संयुक्त है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "36 is the only composite/even number; the others are odd primes.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 110,
+   "hi": "35 विद्यार्थियों की एक पंक्ति में Sneha बाईं ओर से 24वें स्थान पर है। दाईं ओर से उसका स्थान क्या है?",
+   "en": "In a row of 35 students, Sneha is 24th from the left end. What is Sneha's position from the right end?",
+   "hi_options": [
+    [
+     "A",
+     "12"
+    ],
+    [
+     "B",
+     "13"
+    ],
+    [
+     "C",
+     "11"
+    ],
+    [
+     "D",
+     "14"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "12"
+    ],
+    [
+     "B",
+     "13"
+    ],
+    [
+     "C",
+     "11"
+    ],
+    [
+     "D",
+     "14"
+    ]
+   ],
+   "key": "A",
+   "generated": true,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Position from right = 35 - 24 + 1 = 12.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "दाईं ओर से स्थान = 35 - 24 + 1 = 12।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Position from right = 35 - 24 + 1 = 12.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 111,
+   "hi": "",
+   "en": "2 : 4 :: 9 : ?",
+   "hi_options": [
+    [
+     "A",
+     "17"
+    ],
+    [
+     "B",
+     "19"
+    ],
+    [
+     "C",
+     "18"
+    ],
+    [
+     "D",
+     "27"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "17"
+    ],
+    [
+     "B",
+     "19"
+    ],
+    [
+     "C",
+     "18"
+    ],
+    [
+     "D",
+     "27"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "The number is doubled: 2×2=4, so 9×2=18.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "2 is doubled to get 4, so 9 doubled is 18.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "4 is double of 2, so double of 9 is 18.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 112,
+   "hi": "मीना, नेहा की पुत्री हैं तथा नेहा, राम की पुत्री हैं। मीना का राम से क्या सम्बन्ध है?",
+   "en": "Meena is the daughter of Neha, and Neha is the daughter of Ram. How is Meena related to Ram?",
+   "hi_options": [
+    [
+     "A",
+     "माता"
+    ],
+    [
+     "B",
+     "भतीजी"
+    ],
+    [
+     "C",
+     "पोती"
+    ],
+    [
+     "D",
+     "बहन"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Mother"
+    ],
+    [
+     "B",
+     "Niece"
+    ],
+    [
+     "C",
+     "Granddaughter"
+    ],
+    [
+     "D",
+     "Sister"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Meena is Ram's granddaughter through his daughter Neha.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "मीना, राम की पुत्री नेहा की पुत्री है, इसलिए वह राम की पोती है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Meena is the daughter of Ram's daughter Neha, so she is Ram's granddaughter.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 113,
+   "hi": "एक निश्चित कूट भाषा में 'WATER' को 'UYRCP' लिखा जाता है। उसी कूट भाषा में 'FRUIT' को कैसे लिखा जाएगा?",
+   "en": "In a certain code language, 'WATER' is written as 'UYRCP'. How is 'FRUIT' written in that same code?",
+   "hi_options": [
+    [
+     "A",
+     "EQTHS"
+    ],
+    [
+     "B",
+     "CORFQ"
+    ],
+    [
+     "C",
+     "HTWKV"
+    ],
+    [
+     "D",
+     "DPSGR"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "EQTHS"
+    ],
+    [
+     "B",
+     "CORFQ"
+    ],
+    [
+     "C",
+     "HTWKV"
+    ],
+    [
+     "D",
+     "DPSGR"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Each letter is shifted two positions backward: FRUIT → DPSGR.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "Each letter is shifted two positions backward: FRUIT → DPSGR.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Each letter is shifted 2 positions backward: FRUIT → DPSGR.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 114,
+   "hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा? A3, E5, I7, M9, ?",
+   "en": "What comes next in the series? A3, E5, I7, M9, ?",
+   "hi_options": [
+    [
+     "A",
+     "R11"
+    ],
+    [
+     "B",
+     "Q12"
+    ],
+    [
+     "C",
+     "Q9"
+    ],
+    [
+     "D",
+     "Q11"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "R11"
+    ],
+    [
+     "B",
+     "Q12"
+    ],
+    [
+     "C",
+     "Q9"
+    ],
+    [
+     "D",
+     "Q11"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Letters advance by 4 and numbers by 2, giving Q11.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "Letters advance by 4 and numbers increase by 2: Q11.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Letters advance by +4 (A,E,I,M,Q) and numbers by +2 (3,5,7,9,11).",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 115,
+   "hi": "",
+   "en": "CD : FG :: QR : ?",
+   "hi_options": [
+    [
+     "A",
+     "NO"
+    ],
+    [
+     "B",
+     "TT"
+    ],
+    [
+     "C",
+     "TU"
+    ],
+    [
+     "D",
+     "UV"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "NO"
+    ],
+    [
+     "B",
+     "TT"
+    ],
+    [
+     "C",
+     "TU"
+    ],
+    [
+     "D",
+     "UV"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 3: CD→FG, so QR→TU.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 3: CD→FG, so QR→TU.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 3: C→F, D→G; so Q→T, R→U.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 116,
+   "hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए: B, C, D, E, ?",
+   "en": "Find the next term in the letter series: B, C, D, E, ?",
+   "hi_options": [
+    [
+     "A",
+     "G"
+    ],
+    [
+     "B",
+     "E"
+    ],
+    [
+     "C",
+     "H"
+    ],
+    [
+     "D",
+     "F"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "G"
+    ],
+    [
+     "B",
+     "E"
+    ],
+    [
+     "C",
+     "H"
+    ],
+    [
+     "D",
+     "F"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "The letters advance consecutively: B, C, D, E, F.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "The letters progress consecutively: B, C, D, E, F.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "The letters are consecutive in the alphabet, so after E comes F.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 117,
+   "hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए: 81, 144, 16, 26",
+   "en": "Three of the following four numbers are alike; find the ODD one out: 81, 144, 16, 26",
+   "hi_options": [
+    [
+     "A",
+     "26"
+    ],
+    [
+     "B",
+     "144"
+    ],
+    [
+     "C",
+     "16"
+    ],
+    [
+     "D",
+     "81"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "26"
+    ],
+    [
+     "B",
+     "144"
+    ],
+    [
+     "C",
+     "16"
+    ],
+    [
+     "D",
+     "81"
+    ]
+   ],
+   "key": "A",
+   "generated": true,
+   "votes": [
+    "A",
+    "A",
+    "X"
+   ],
+   "agree_with_key": 2,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "81, 144 and 16 are perfect squares, whereas 26 is not.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "81, 144 and 16 are perfect squares; 26 is not.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "X",
+     "why": "Defective: 26 is the only non-square, but 81 is the only odd number and 144 the only three-digit number.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 118,
+   "hi": "38 विद्यार्थियों की एक पंक्ति में अंजलि बाईं ओर से 26वें स्थान पर है। दाईं ओर से उसका स्थान क्या है?",
+   "en": "In a row of 38 students, Anjali is 26th from the left end. What is Anjali's position from the right end?",
+   "hi_options": [
+    [
+     "A",
+     "14"
+    ],
+    [
+     "B",
+     "12"
+    ],
+    [
+     "C",
+     "15"
+    ],
+    [
+     "D",
+     "13"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "14"
+    ],
+    [
+     "B",
+     "12"
+    ],
+    [
+     "C",
+     "15"
+    ],
+    [
+     "D",
+     "13"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Position from right = 38 - 26 + 1 = 13.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "दाईं ओर से स्थान = 38 − 26 + 1 = 13।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Position from right = 38 - 26 + 1 = 13.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 119,
+   "hi": "",
+   "en": "5 : 15 :: 7 : ?",
+   "hi_options": [
+    [
+     "A",
+     "28"
+    ],
+    [
+     "B",
+     "20"
+    ],
+    [
+     "C",
+     "22"
+    ],
+    [
+     "D",
+     "21"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "28"
+    ],
+    [
+     "B",
+     "20"
+    ],
+    [
+     "C",
+     "22"
+    ],
+    [
+     "D",
+     "21"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "X",
+    "D"
+   ],
+   "agree_with_key": 2,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "5×3=15, so 7×3=21.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "X",
+     "why": "Relation is unspecified; 5→15 can support rules yielding multiple options.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "15 is 5 × 3, so 7 × 3 = 21.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 120,
+   "hi": "अरुण, सीता के पिता हैं तथा सीता, सुनील की बहन हैं। अरुण का सुनील से क्या सम्बन्ध है?",
+   "en": "Arun is the father of Sita, and Sita is the sister of Sunil. How is Arun related to Sunil?",
+   "hi_options": [
+    [
+     "A",
+     "भाई"
+    ],
+    [
+     "B",
+     "भतीजा"
+    ],
+    [
+     "C",
+     "पिता"
+    ],
+    [
+     "D",
+     "दादा"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Brother"
+    ],
+    [
+     "B",
+     "Nephew"
+    ],
+    [
+     "C",
+     "Father"
+    ],
+    [
+     "D",
+     "Grandfather"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Arun is Sita's father, and Sunil is Sita's sibling, so Arun is Sunil's father.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "अरुण सीता के पिता हैं और सीता सुनील की बहन है, इसलिए अरुण सुनील के पिता हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Sita and Sunil are siblings, so Sita's father Arun is Sunil's father.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 121,
+   "hi": "एक निश्चित कूट भाषा में 'TABLE' को 'UBCMF' लिखा जाता है। उसी कूट भाषा में 'SNAKE' को कैसे लिखा जाएगा?",
+   "en": "In a certain code language, 'TABLE' is written as 'UBCMF'. How is 'SNAKE' written in that same code?",
+   "hi_options": [
+    [
+     "A",
+     "TOBLF"
+    ],
+    [
+     "B",
+     "UPCMG"
+    ],
+    [
+     "C",
+     "SNAKE"
+    ],
+    [
+     "D",
+     "RMZJD"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "TOBLF"
+    ],
+    [
+     "B",
+     "UPCMG"
+    ],
+    [
+     "C",
+     "SNAKE"
+    ],
+    [
+     "D",
+     "RMZJD"
+    ]
+   ],
+   "key": "A",
+   "generated": true,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Each letter is shifted forward by one alphabet position.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "Each letter is shifted forward by one alphabet position.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Each letter is shifted one step forward: SNAKE → TOBLF.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 122,
+   "hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा? G2, I5, K8, M11, ?",
+   "en": "What comes next in the series? G2, I5, K8, M11, ?",
+   "hi_options": [
+    [
+     "A",
+     "O15"
+    ],
+    [
+     "B",
+     "O11"
+    ],
+    [
+     "C",
+     "O14"
+    ],
+    [
+     "D",
+     "P14"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "O15"
+    ],
+    [
+     "B",
+     "O11"
+    ],
+    [
+     "C",
+     "O14"
+    ],
+    [
+     "D",
+     "P14"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Letters increase by 2 and numbers by 3, giving O14.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "Letters advance by 2 and numbers by 3: M11 → O14.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Letters increase by 2 (G,I,K,M,O) and numbers by 3 (2,5,8,11,14).",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 123,
+   "hi": "",
+   "en": "GH : IJ :: BC : ?",
+   "hi_options": [
+    [
+     "A",
+     "ZA"
+    ],
+    [
+     "B",
+     "DD"
+    ],
+    [
+     "C",
+     "DE"
+    ],
+    [
+     "D",
+     "EF"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "ZA"
+    ],
+    [
+     "B",
+     "DD"
+    ],
+    [
+     "C",
+     "DE"
+    ],
+    [
+     "D",
+     "EF"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 2: GH → IJ, so BC → DE.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "Each letter advances by two positions: GH → IJ, so BC → DE.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 2: G→I, H→J; so B→D, C→E.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 124,
+   "hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए: I, K, M, O, ?",
+   "en": "Find the next term in the letter series: I, K, M, O, ?",
+   "hi_options": [
+    [
+     "A",
+     "S"
+    ],
+    [
+     "B",
+     "Q"
+    ],
+    [
+     "C",
+     "R"
+    ],
+    [
+     "D",
+     "P"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "S"
+    ],
+    [
+     "B",
+     "Q"
+    ],
+    [
+     "C",
+     "R"
+    ],
+    [
+     "D",
+     "P"
+    ]
+   ],
+   "key": "B",
+   "generated": true,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Letters advance by 2 positions: I, K, M, O, Q.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "Letters advance by two positions: I, K, M, O, Q.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Letters advance by +2 each time: I, K, M, O, Q.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 125,
+   "hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए: 37, 12, 31, 29",
+   "en": "Three of the following four numbers are alike; find the ODD one out: 37, 12, 31, 29",
+   "hi_options": [
+    [
+     "A",
+     "29"
+    ],
+    [
+     "B",
+     "12"
+    ],
+    [
+     "C",
+     "37"
+    ],
+    [
+     "D",
+     "31"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "29"
+    ],
+    [
+     "B",
+     "12"
+    ],
+    [
+     "C",
+     "37"
+    ],
+    [
+     "D",
+     "31"
+    ]
+   ],
+   "key": "B",
+   "generated": true,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "37, 31 and 29 are prime numbers, while 12 is composite.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "37, 31 and 29 are prime numbers, while 12 is composite.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "12 is the only composite/even number; 29, 31, and 37 are odd primes.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 126,
+   "hi": "विद्यार्थियों की एक पंक्ति में Rahul बाईं ओर से 12वें स्थान पर तथा दाईं ओर से 5वें स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?",
+   "en": "In a row of students, Rahul is 12th from the left end and 5th from the right end. How many students are there in the row?",
+   "hi_options": [
+    [
+     "A",
+     "17"
+    ],
+    [
+     "B",
+     "15"
+    ],
+    [
+     "C",
+     "18"
+    ],
+    [
+     "D",
+     "16"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "17"
+    ],
+    [
+     "B",
+     "15"
+    ],
+    [
+     "C",
+     "18"
+    ],
+    [
+     "D",
+     "16"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Total students = 12 + 5 − 1 = 16.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "कुल विद्यार्थी = 12 + 5 - 1 = 16।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Total students = 12 + 5 - 1 = 16.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 127,
+   "hi": "",
+   "en": "2 : 8 :: 3 : ?",
+   "hi_options": [
+    [
+     "A",
+     "27"
+    ],
+    [
+     "B",
+     "30"
+    ],
+    [
+     "C",
+     "26"
+    ],
+    [
+     "D",
+     "28"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "27"
+    ],
+    [
+     "B",
+     "30"
+    ],
+    [
+     "C",
+     "26"
+    ],
+    [
+     "D",
+     "28"
+    ]
+   ],
+   "key": "A",
+   "generated": true,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "The relation is cubing: 2³ = 8, so 3³ = 27.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "2³ = 8, so 3³ = 27.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "2 maps to 2^3=8, so 3 maps to 3^3=27.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 128,
+   "hi": "रोहन, नेहा के पिता हैं तथा नेहा, अरुण की माता हैं। रोहन का अरुण से क्या सम्बन्ध है?",
+   "en": "Rohan is the father of Neha, and Neha is the mother of Arun. How is Rohan related to Arun?",
+   "hi_options": [
+    [
+     "A",
+     "भाई"
+    ],
+    [
+     "B",
+     "दादा"
+    ],
+    [
+     "C",
+     "भतीजा"
+    ],
+    [
+     "D",
+     "चाचा"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Brother"
+    ],
+    [
+     "B",
+     "Grandfather"
+    ],
+    [
+     "C",
+     "Nephew"
+    ],
+    [
+     "D",
+     "Uncle"
+    ]
+   ],
+   "key": "B",
+   "generated": true,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Rohan is Arun's maternal grandfather.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "रोहन नेहा के पिता और अरुण के नाना/दादा हैं; दिए विकल्पों में दादा है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Rohan is Neha's father and Neha is Arun's mother, so Rohan is Arun's grandfather.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 129,
+   "hi": "एक निश्चित कूट भाषा में 'FRUIT' को 'HTWKV' लिखा जाता है। उसी कूट भाषा में 'CLOUD' को कैसे लिखा जाएगा?",
+   "en": "In a certain code language, 'FRUIT' is written as 'HTWKV'. How is 'CLOUD' written in that same code?",
+   "hi_options": [
+    [
+     "A",
+     "DMPVE"
+    ],
+    [
+     "B",
+     "AJMSB"
+    ],
+    [
+     "C",
+     "ENQWF"
+    ],
+    [
+     "D",
+     "FORXG"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "DMPVE"
+    ],
+    [
+     "B",
+     "AJMSB"
+    ],
+    [
+     "C",
+     "ENQWF"
+    ],
+    [
+     "D",
+     "FORXG"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 2: CLOUD → ENQWF.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 2 positions.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 2: CLOUD -> ENQWF.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 130,
+   "hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा? J2, N6, R10, V14, ?",
+   "en": "What comes next in the series? J2, N6, R10, V14, ?",
+   "hi_options": [
+    [
+     "A",
+     "Z14"
+    ],
+    [
+     "B",
+     "Z18"
+    ],
+    [
+     "C",
+     "A18"
+    ],
+    [
+     "D",
+     "Z19"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Z14"
+    ],
+    [
+     "B",
+     "Z18"
+    ],
+    [
+     "C",
+     "A18"
+    ],
+    [
+     "D",
+     "Z19"
+    ]
+   ],
+   "key": "B",
+   "generated": true,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Letters and numbers each increase by 4: V14 → Z18.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "Letters and numbers both increase by 4: J,N,R,V,Z and 2,6,10,14,18.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Letters advance by 4 (J,N,R,V,Z) and numbers by 4 (2,6,10,14,18).",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 131,
+   "hi": "",
+   "en": "JK : KL :: DE : ?",
+   "hi_options": [
+    [
+     "A",
+     "EF"
+    ],
+    [
+     "B",
+     "FG"
+    ],
+    [
+     "C",
+     "CD"
+    ],
+    [
+     "D",
+     "EE"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "EF"
+    ],
+    [
+     "B",
+     "FG"
+    ],
+    [
+     "C",
+     "CD"
+    ],
+    [
+     "D",
+     "EE"
+    ]
+   ],
+   "key": "A",
+   "generated": true,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Each letter advances by one: JK→KL, so DE→EF.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "Each letter advances by one: JK → KL, so DE → EF.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Each letter is shifted one step forward: JK → KL, so DE → EF.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 132,
+   "hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए: C, E, G, I, ?",
+   "en": "Find the next term in the letter series: C, E, G, I, ?",
+   "hi_options": [
+    [
+     "A",
+     "M"
+    ],
+    [
+     "B",
+     "K"
+    ],
+    [
+     "C",
+     "L"
+    ],
+    [
+     "D",
+     "J"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "M"
+    ],
+    [
+     "B",
+     "K"
+    ],
+    [
+     "C",
+     "L"
+    ],
+    [
+     "D",
+     "J"
+    ]
+   ],
+   "key": "B",
+   "generated": true,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Each term advances by two letters: C, E, G, I, K.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "Letters advance by 2 positions: C, E, G, I, K.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Letters increase by 2 positions: C, E, G, I, K.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 133,
+   "hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए: 99, 16, 49, 121",
+   "en": "Three of the following four numbers are alike; find the ODD one out: 99, 16, 49, 121",
+   "hi_options": [
+    [
+     "A",
+     "49"
+    ],
+    [
+     "B",
+     "121"
+    ],
+    [
+     "C",
+     "16"
+    ],
+    [
+     "D",
+     "99"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "49"
+    ],
+    [
+     "B",
+     "121"
+    ],
+    [
+     "C",
+     "16"
+    ],
+    [
+     "D",
+     "99"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "X"
+   ],
+   "agree_with_key": 2,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "16, 49 and 121 are perfect squares; 99 is not.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "16, 49 और 121 पूर्ण वर्ग हैं; 99 नहीं है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "X",
+     "why": "More than one pattern: 99 is non-square, while 16 is the only even number.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 134,
+   "hi": "30 विद्यार्थियों की एक पंक्ति में Sneha बाईं ओर से 14वें स्थान पर है। दाईं ओर से उसका स्थान क्या है?",
+   "en": "In a row of 30 students, Sneha is 14th from the left end. What is Sneha's position from the right end?",
+   "hi_options": [
+    [
+     "A",
+     "16"
+    ],
+    [
+     "B",
+     "19"
+    ],
+    [
+     "C",
+     "17"
+    ],
+    [
+     "D",
+     "18"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "16"
+    ],
+    [
+     "B",
+     "19"
+    ],
+    [
+     "C",
+     "17"
+    ],
+    [
+     "D",
+     "18"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Position from right = 30 - 14 + 1 = 17.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "स्थान = 30 - 14 + 1 = 17वां।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Position from right = 30 - 14 + 1 = 17.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 135,
+   "hi": "",
+   "en": "5 : 6 :: 8 : ?",
+   "hi_options": [
+    [
+     "A",
+     "8"
+    ],
+    [
+     "B",
+     "10"
+    ],
+    [
+     "C",
+     "9"
+    ],
+    [
+     "D",
+     "17"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "8"
+    ],
+    [
+     "B",
+     "10"
+    ],
+    [
+     "C",
+     "9"
+    ],
+    [
+     "D",
+     "17"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "The relation is adding 1: 5 → 6, so 8 → 9.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "The pattern is adding 1: 5→6, so 8→9.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "5 is followed by 6, so 8 is followed by 9.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 136,
+   "hi": "नेहा, अंजलि की पुत्री हैं तथा अंजलि, मीना की बहन हैं। नेहा का मीना से क्या सम्बन्ध है?",
+   "en": "Neha is the daughter of Anjali, and Anjali is the sister of Meena. How is Neha related to Meena?",
+   "hi_options": [
+    [
+     "A",
+     "माता"
+    ],
+    [
+     "B",
+     "चचेरा भाई/बहन"
+    ],
+    [
+     "C",
+     "भतीजी"
+    ],
+    [
+     "D",
+     "दादी"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Mother"
+    ],
+    [
+     "B",
+     "Cousin"
+    ],
+    [
+     "C",
+     "Niece"
+    ],
+    [
+     "D",
+     "Grandmother"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Neha is the daughter of Meena's sister, so she is Meena's niece.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "नेहा अंजलि की बेटी है और मीना अंजलि की बहन, इसलिए नेहा मीना की भतीजी है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Neha is the daughter of Meena's sister, so she is Meena's niece.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 137,
+   "hi": "एक निश्चित कूट भाषा में 'BRAIN' को 'CSBJO' लिखा जाता है। उसी कूट भाषा में 'TABLE' को कैसे लिखा जाएगा?",
+   "en": "In a certain code language, 'BRAIN' is written as 'CSBJO'. How is 'TABLE' written in that same code?",
+   "hi_options": [
+    [
+     "A",
+     "TABLE"
+    ],
+    [
+     "B",
+     "SZAKD"
+    ],
+    [
+     "C",
+     "UBCMF"
+    ],
+    [
+     "D",
+     "VCDNG"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "TABLE"
+    ],
+    [
+     "B",
+     "SZAKD"
+    ],
+    [
+     "C",
+     "UBCMF"
+    ],
+    [
+     "D",
+     "VCDNG"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by one alphabet position.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by one alphabet position.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Each letter is shifted one place forward: TABLE → UBCMF.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 138,
+   "hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा? N3, R5, V7, Z9, ?",
+   "en": "What comes next in the series? N3, R5, V7, Z9, ?",
+   "hi_options": [
+    [
+     "A",
+     "E11"
+    ],
+    [
+     "B",
+     "D12"
+    ],
+    [
+     "C",
+     "D9"
+    ],
+    [
+     "D",
+     "D11"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "E11"
+    ],
+    [
+     "B",
+     "D12"
+    ],
+    [
+     "C",
+     "D9"
+    ],
+    [
+     "D",
+     "D11"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Letters advance by 4 (N,R,V,Z,D) and numbers by 2 (3,5,7,9,11).",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "Letters advance by 4 cyclically and numbers increase by 2: Z9 → D11.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Letters advance by +4 (N,R,V,Z,D) and numbers by +2 (3,5,7,9,11).",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 139,
+   "hi": "",
+   "en": "IJ : JK :: LM : ?",
+   "hi_options": [
+    [
+     "A",
+     "MN"
+    ],
+    [
+     "B",
+     "NO"
+    ],
+    [
+     "C",
+     "KL"
+    ],
+    [
+     "D",
+     "MM"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "MN"
+    ],
+    [
+     "B",
+     "NO"
+    ],
+    [
+     "C",
+     "KL"
+    ],
+    [
+     "D",
+     "MM"
+    ]
+   ],
+   "key": "A",
+   "generated": true,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Each letter advances by one: IJ→JK, so LM→MN.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "Each letter advances by one: IJ becomes JK, so LM becomes MN.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Each letter is shifted one step forward: IJ → JK, so LM → MN.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 140,
+   "hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए: F, G, H, I, ?",
+   "en": "Find the next term in the letter series: F, G, H, I, ?",
+   "hi_options": [
+    [
+     "A",
+     "K"
+    ],
+    [
+     "B",
+     "I"
+    ],
+    [
+     "C",
+     "L"
+    ],
+    [
+     "D",
+     "J"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "K"
+    ],
+    [
+     "B",
+     "I"
+    ],
+    [
+     "C",
+     "L"
+    ],
+    [
+     "D",
+     "J"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "The letters proceed consecutively: F, G, H, I, J.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "The letters advance consecutively: F, G, H, I, J.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "The letters are consecutive alphabetically: F, G, H, I, J.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 141,
+   "hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए: 13, 17, 26, 29",
+   "en": "Three of the following four numbers are alike; find the ODD one out: 13, 17, 26, 29",
+   "hi_options": [
+    [
+     "A",
+     "17"
+    ],
+    [
+     "B",
+     "13"
+    ],
+    [
+     "C",
+     "26"
+    ],
+    [
+     "D",
+     "29"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "17"
+    ],
+    [
+     "B",
+     "13"
+    ],
+    [
+     "C",
+     "26"
+    ],
+    [
+     "D",
+     "29"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "13, 17, and 29 are prime numbers; 26 is composite.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "13, 17 और 29 अभाज्य हैं, जबकि 26 संयुक्त संख्या है।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "26 is the only even composite number; the others are odd primes.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 142,
+   "hi": "विद्यार्थियों की एक पंक्ति में Sneha बाईं ओर से 7वें स्थान पर तथा दाईं ओर से 6वें स्थान पर है। पंक्ति में कुल कितने विद्यार्थी हैं?",
+   "en": "In a row of students, Sneha is 7th from the left end and 6th from the right end. How many students are there in the row?",
+   "hi_options": [
+    [
+     "A",
+     "13"
+    ],
+    [
+     "B",
+     "11"
+    ],
+    [
+     "C",
+     "14"
+    ],
+    [
+     "D",
+     "12"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "13"
+    ],
+    [
+     "B",
+     "11"
+    ],
+    [
+     "C",
+     "14"
+    ],
+    [
+     "D",
+     "12"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Total students = 7 + 6 - 1 = 12.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "कुल विद्यार्थी = 7 + 6 - 1 = 12।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Total students = 7 + 6 - 1 = 12.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 143,
+   "hi": "",
+   "en": "12 : 36 :: 3 : ?",
+   "hi_options": [
+    [
+     "A",
+     "8"
+    ],
+    [
+     "B",
+     "10"
+    ],
+    [
+     "C",
+     "9"
+    ],
+    [
+     "D",
+     "12"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "8"
+    ],
+    [
+     "B",
+     "10"
+    ],
+    [
+     "C",
+     "9"
+    ],
+    [
+     "D",
+     "12"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "36 is 12 multiplied by 3, so 3 multiplied by 3 is 9.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "36 is 12 multiplied by 3, so 3 multiplied by 3 is 9.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "36 is 12×3, so ? is 3×3 = 9.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 144,
+   "hi": "नेहा, अमित की माता हैं तथा अमित, सुनील के पिता हैं। नेहा का सुनील से क्या सम्बन्ध है?",
+   "en": "Neha is the mother of Amit, and Amit is the father of Sunil. How is Neha related to Sunil?",
+   "hi_options": [
+    [
+     "A",
+     "माता"
+    ],
+    [
+     "B",
+     "दादी"
+    ],
+    [
+     "C",
+     "पोती"
+    ],
+    [
+     "D",
+     "बुआ"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "Mother"
+    ],
+    [
+     "B",
+     "Grandmother"
+    ],
+    [
+     "C",
+     "Granddaughter"
+    ],
+    [
+     "D",
+     "Aunt"
+    ]
+   ],
+   "key": "B",
+   "generated": true,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Neha is Amit's mother and Sunil's paternal grandmother.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "नेहा अमित की माता और सुनील की दादी हैं।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Neha is Amit's mother and Amit is Sunil's father, so Neha is Sunil's grandmother.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 145,
+   "hi": "एक निश्चित कूट भाषा में 'PLANT' को 'SODQW' लिखा जाता है। उसी कूट भाषा में 'FIELD' को कैसे लिखा जाएगा?",
+   "en": "In a certain code language, 'PLANT' is written as 'SODQW'. How is 'FIELD' written in that same code?",
+   "hi_options": [
+    [
+     "A",
+     "HKGNF"
+    ],
+    [
+     "B",
+     "CFBIA"
+    ],
+    [
+     "C",
+     "ILHOG"
+    ],
+    [
+     "D",
+     "JMIPH"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "HKGNF"
+    ],
+    [
+     "B",
+     "CFBIA"
+    ],
+    [
+     "C",
+     "ILHOG"
+    ],
+    [
+     "D",
+     "JMIPH"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 3 positions.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 3 positions.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Each letter is shifted 3 positions forward: FIELD → ILHOG.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 146,
+   "hi": "निम्नलिखित श्रृंखला में आगे क्या आएगा? A3, C7, E11, G15, ?",
+   "en": "What comes next in the series? A3, C7, E11, G15, ?",
+   "hi_options": [
+    [
+     "A",
+     "I15"
+    ],
+    [
+     "B",
+     "I19"
+    ],
+    [
+     "C",
+     "J19"
+    ],
+    [
+     "D",
+     "I20"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "I15"
+    ],
+    [
+     "B",
+     "I19"
+    ],
+    [
+     "C",
+     "J19"
+    ],
+    [
+     "D",
+     "I20"
+    ]
+   ],
+   "key": "B",
+   "generated": true,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "Letters advance by 2 and numbers by 4: G15 → I19.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "Letters advance by 2 and numbers increase by 4, so I19.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "Letters advance by +2 and numbers by +4, so next is I19.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 147,
+   "hi": "",
+   "en": "CD : EF :: JK : ?",
+   "hi_options": [
+    [
+     "A",
+     "HI"
+    ],
+    [
+     "B",
+     "LL"
+    ],
+    [
+     "C",
+     "LM"
+    ],
+    [
+     "D",
+     "MN"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "HI"
+    ],
+    [
+     "B",
+     "LL"
+    ],
+    [
+     "C",
+     "LM"
+    ],
+    [
+     "D",
+     "MN"
+    ]
+   ],
+   "key": "C",
+   "generated": true,
+   "votes": [
+    "C",
+    "C",
+    "C"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "C",
+     "why": "Each letter shifts forward by 2: CD→EF, so JK→LM.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "C",
+     "why": "Each letter advances by two positions: C→E, D→F; J→L, K→M.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "C",
+     "why": "Each letter is shifted forward by 2: C→E, D→F; so J→L, K→M.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 148,
+   "hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए: C, H, M, R, ?",
+   "en": "Find the next term in the letter series: C, H, M, R, ?",
+   "hi_options": [
+    [
+     "A",
+     "X"
+    ],
+    [
+     "B",
+     "V"
+    ],
+    [
+     "C",
+     "Y"
+    ],
+    [
+     "D",
+     "W"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "X"
+    ],
+    [
+     "B",
+     "V"
+    ],
+    [
+     "C",
+     "Y"
+    ],
+    [
+     "D",
+     "W"
+    ]
+   ],
+   "key": "D",
+   "generated": true,
+   "votes": [
+    "D",
+    "D",
+    "D"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "D",
+     "why": "Each letter advances by 5 positions: C, H, M, R, W.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "D",
+     "why": "प्रत्येक अक्षर में 5 स्थान की वृद्धि है: C, H, M, R, W।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "D",
+     "why": "Letter positions increase by 5: 3, 8, 13, 18, so next is 23 = W.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 149,
+   "hi": "निम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए: 36, 49, 117, 100",
+   "en": "Three of the following four numbers are alike; find the ODD one out: 36, 49, 117, 100",
+   "hi_options": [
+    [
+     "A",
+     "100"
+    ],
+    [
+     "B",
+     "117"
+    ],
+    [
+     "C",
+     "36"
+    ],
+    [
+     "D",
+     "49"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "100"
+    ],
+    [
+     "B",
+     "117"
+    ],
+    [
+     "C",
+     "36"
+    ],
+    [
+     "D",
+     "49"
+    ]
+   ],
+   "key": "B",
+   "generated": true,
+   "votes": [
+    "B",
+    "B",
+    "B"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "B",
+     "why": "36, 49 and 100 are perfect squares; 117 is not.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "B",
+     "why": "36, 49 and 100 are perfect squares; 117 is not.",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "B",
+     "why": "36, 49 and 100 are perfect squares; 117 is not.",
+     "sure": true
+    }
+   }
+  },
+  {
+   "n": 150,
+   "hi": "29 विद्यार्थियों की एक पंक्ति में विकास बाईं ओर से 18वें स्थान पर है। दाईं ओर से उसका स्थान क्या है?",
+   "en": "In a row of 29 students, Vikas is 18th from the left end. What is Vikas's position from the right end?",
+   "hi_options": [
+    [
+     "A",
+     "12"
+    ],
+    [
+     "B",
+     "13"
+    ],
+    [
+     "C",
+     "11"
+    ],
+    [
+     "D",
+     "14"
+    ]
+   ],
+   "en_options": [
+    [
+     "A",
+     "12"
+    ],
+    [
+     "B",
+     "13"
+    ],
+    [
+     "C",
+     "11"
+    ],
+    [
+     "D",
+     "14"
+    ]
+   ],
+   "key": "A",
+   "generated": true,
+   "votes": [
+    "A",
+    "A",
+    "A"
+   ],
+   "agree_with_key": 3,
+   "detail": {
+    "en_a": {
+     "answer": "A",
+     "why": "Position from right = 29 - 18 + 1 = 12.",
+     "sure": true
+    },
+    "hi_a": {
+     "answer": "A",
+     "why": "दाईं ओर से स्थान = 29 - 18 + 1 = 12।",
+     "sure": true
+    },
+    "en_b": {
+     "answer": "A",
+     "why": "Position from right = 29 - 18 + 1 = 12.",
+     "sure": true
+    }
+   }
+  }
+ ]
+}

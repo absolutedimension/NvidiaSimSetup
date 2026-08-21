@@ -93,9 +93,21 @@ for _m in (STATES, CITIES, DANCES, RIVERS, PLACES):
     ENTITY.update(_m)
 
 
+def register(mapping):
+    """Let another verified table contribute its hand-written Hindi to the same gate.
+
+    history_tables keeps its Hindi next to its facts so that ONE review sheet covers both — a
+    reviewer ticking "Champaran Satyagraha -> 1917" is also ticking "चम्पारण सत्याग्रह". This is how
+    that Hindi reaches `_bilingual_keys`, which is the gate deciding whether a General Studies
+    question may print in both languages at all.
+    """
+    ENTITY.update(mapping)
+
+
 def hi(text):
     """Hindi for one entity, or None when we have not written it by hand."""
-    return ENTITY.get(str(text).strip())
+    t = str(text).strip()
+    return ENTITY.get(t) or EXTRA_HI.get(t)
 
 
 def hi_template(tmpl):
@@ -206,3 +218,19 @@ TEMPLATE.update({
         "संविधान का अनुच्छेद {k} {v} से संबंधित है।",
     "The {k} Amendment {v}.": "{k} संविधान संशोधन ने {v}।",
 })
+
+# Added 2026-08-21. HAND-WRITTEN, like everything else in this file — river ORIGIN places and the
+# dance names that had none. Their absence was silently costing coverage rather than correctness:
+# the bilingual gate needs the key AND the value, so seven of eleven rivers could never be asked in
+# Hindi and the geography topic kept redrawing the same four.
+EXTRA_HI = {
+    "Gangotri Glacier (Gaumukh)": "गंगोत्री हिमनद (गोमुख)",
+    "Talakaveri (Kodagu)": "तालकावेरी (कोडगु)",
+    "near Lake Mansarovar (Tibet)": "मानसरोवर झील के निकट (तिब्बत)",
+    "Angsi Glacier (Tibet)": "आंगसी हिमनद (तिब्बत)",
+    "Aravalli Hills": "अरावली पहाड़ियाँ",
+    "Sihawa (Chhattisgarh)": "सिहावा (छत्तीसगढ़)",
+    "Multai (Betul, MP)": "मुलताई (बैतूल, मध्य प्रदेश)",
+    "Cheraw": "चेरॉ", "Dollu Kunitha": "डोल्लू कुनिथा", "Karma": "करमा",
+    "Padayani": "पडयानी", "Nautanki": "नौटंकी",
+}

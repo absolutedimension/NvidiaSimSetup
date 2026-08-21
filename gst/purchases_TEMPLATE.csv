@@ -1,0 +1,6 @@
+invoice_date,vendor,invoice_no,description,currency,amount,fx_rate,supplier_gstin,gst_charged,notes
+2026-07-05,Amazon Web Services,INV-XXXXXXX,EC2 g5.2xlarge + EBS,USD,182.40,83.50,,,us-east-1 + Mumbai
+2026-07-01,Anthropic PBC,INV-XXXXXXX,Claude API + Claude Code,USD,120.00,83.50,,,
+2026-07-08,Microsoft Azure,G0XXXXXXXX,Azure OpenAI + Container Apps + Postgres,USD,240.00,83.50,,,
+2026-07-31,Razorpay Software Pvt Ltd,RZP-XXXXXX,Payment gateway fees,INR,118.00,1,29AAGCR4375J1ZU,18.00,GST already charged - normal ITC
+2026-07-31,Google India Pvt Ltd,XXXXXXXXX,Google Ads,INR,5900.00,1,29AACCG0527D1Z8,900.00,GST already charged - normal ITC
