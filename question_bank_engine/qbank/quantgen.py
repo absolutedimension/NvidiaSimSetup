@@ -236,7 +236,11 @@ def _b_simplify(rng, diff):
         d = mistakes(("doubled r instead of squaring it", _num(2 * r + part)),
                      ("read the percentage as a plain subtraction of the percent", _num(sq + p_)),
                      ("subtracted the percentage instead of adding it", _num(sq - part)))
-        return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+        return {"stem": stem,
+                "stem_hi": f"({r})^2 + {q} का {p_}% का मान क्या है?",
+                "solution_hi": (f"({r})^2 = {sq}; {q} का {p_}% = {part}। "
+                                f"अतः {sq} + {part} = {ans}।"),
+                "correct": _num(ans), "mistakes": d, "solution": sol,
                 "concept": "Simplification (BODMAS)"}
     if diff == 2:
         ans = sq + part - prod
@@ -248,7 +252,11 @@ def _b_simplify(rng, diff):
              _num((sq + part - m) * n)),
             ("read the percentage as a subtraction of the percent itself", _num(sq + p_ - prod)),
             ("dropped the minus sign and added the product", _num(sq + part + prod)))
-        return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+        return {"stem": stem,
+                "stem_hi": f"({r})^2 + {q} का {p_}% - {m} x {n} का मान क्या है?",
+                "solution_hi": (f"({r})^2 = {sq}; {q} का {p_}% = {part}; {m} x {n} = {prod}। "
+                                f"अतः {sq} + {part} - {prod} = {ans}।"),
+                "correct": _num(ans), "mistakes": d, "solution": sol,
                 "concept": "Simplification (BODMAS)"}
     if diff == 3:
         dvd = m * n * rng.randint(2, 4)
@@ -262,7 +270,12 @@ def _b_simplify(rng, diff):
                       _num(sq + Fraction(dvd, n) + part)),
                      ("divided by the percentage figure instead of by n",
                       _num(sq + Fraction(dvd, p_) - part)))
-        return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+        return {"stem": stem,
+                "stem_hi": f"({r})^2 + {dvd} / {n} - {q} का {p_}% का मान क्या है?",
+                "solution_hi": (f"({r})^2 = {sq}; {dvd}/{n} = {_num(Fraction(dvd, n))}; "
+                                f"{q} का {p_}% = {part}। अतः {sq} + "
+                                f"{_num(Fraction(dvd, n))} - {part} = {_num(ans)}।"),
+                "correct": _num(ans), "mistakes": d, "solution": sol,
                 "concept": "Simplification (BODMAS)"}
     # diff 4+ : a bracket, so left-to-right and correct order disagree
     k = rng.randint(3, 9)
@@ -276,7 +289,11 @@ def _b_simplify(rng, diff):
                   _num(sq - prod - k + part)),
                  ("resolved the bracket but then subtracted the percentage",
                   _num(sq - (prod - k) - part)))
-    return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+    return {"stem": stem,
+            "stem_hi": f"({r})^2 - ({m} x {n} - {k}) + {q} का {p_}% का मान क्या है?",
+            "solution_hi": (f"पहले कोष्ठक: {m} x {n} - {k} = {prod - k}। फिर ({r})^2 = {sq} तथा "
+                            f"{q} का {p_}% = {part}। अतः {sq} - {prod - k} + {part} = {_num(ans)}।"),
+            "correct": _num(ans), "mistakes": d, "solution": sol,
             "concept": "Simplification (BODMAS)"}
 
 def _b_approx(rng, diff):
@@ -336,7 +353,11 @@ def _b_series_missing(rng, diff):
             f"{shown}")
     sol = f"Pattern: {desc}. So the next term is {ans}."
     d = [_num(ans + (seq[-1] - seq[-2])), _num(ans - (seq[-1] - seq[-2])), _num(ans + 2)]
-    return {"stem": stem, "correct": _num(ans), "distractors": d, "solution": sol,
+    return {"stem": stem,
+            "stem_hi": ("निम्नलिखित श्रृंखला में प्रश्नवाचक चिह्न (?) के स्थान पर क्या आएगा?\n"
+                        f"{shown}"),
+            "solution_hi": f"श्रृंखला का नियम देखने पर अगला पद {ans} है।",
+            "correct": _num(ans), "distractors": d, "solution": sol,
             "concept": "Missing-Term Series"}
 
 def _b_series_wrong(rng, diff):
@@ -450,7 +471,9 @@ def _b_percentage(rng, diff):
         stem = f"What is {p}% of {n}?"
         sol = f"{p}% of {n} = {p}/100 x {n} = {ans}."
         d = [_num(ans + n // 10), _num(ans - n // 20), _num((p + 10) * n // 100)]  # noqa: E501
-        return {"stem": stem, "correct": _num(ans), "distractors": d, "solution": sol,
+        return {"stem": stem, "stem_hi": f"{n} का {p}% कितना है?",
+                "solution_hi": f"{n} का {p}% = {p}/100 x {n} = {ans}।",
+                "correct": _num(ans), "distractors": d, "solution": sol,
                 "concept": "Percentage of a Number"}
     if mode == "isWhat":
         b = _mult(rng, 4, 12, 50)
@@ -459,7 +482,9 @@ def _b_percentage(rng, diff):
         stem = f"{a} is what percent of {b}?"
         sol = f"Required % = ({a}/{b}) x 100 = {_num(pct)}%."
         d = [_pct(float(pct) + 5), _pct(float(pct) - 5), _pct(float(pct) * 2)]
-        return {"stem": stem, "correct": _pct(pct), "distractors": d, "solution": sol,
+        return {"stem": stem, "stem_hi": f"{a}, {b} का कितना प्रतिशत है?",
+                "solution_hi": f"अभीष्ट प्रतिशत = ({a}/{b}) x 100 = {_num(pct)}%।",
+                "correct": _pct(pct), "distractors": d, "solution": sol,
                 "concept": "Percentage of a Number"}
     n = _mult(rng, 4, 12, 100)
     up, dn = rng.choice([20, 25, 30]), rng.choice([10, 20, 25])
@@ -470,7 +495,12 @@ def _b_percentage(rng, diff):
     sol = (f"After +{up}%: {n} x {100+up}/100 = {_num(after_up)}. "
            f"After -{dn}%: x {100-dn}/100 = {_num(final)}.")
     d = [_num(Fraction(n * (100 + up - dn), 100)), _num(n), _num(float(final) + n // 10)]
-    return {"stem": stem, "correct": _num(final), "distractors": d, "solution": sol,
+    return {"stem": stem,
+            "stem_hi": (f"किसी मान {n} में पहले {up}% की वृद्धि की जाती है और फिर प्राप्त "
+                        f"परिणाम में {dn}% की कमी की जाती है। अंतिम मान क्या होगा?"),
+            "solution_hi": (f"{up}% वृद्धि के बाद: {n} x {100+up}/100 = {_num(after_up)}। "
+                            f"{dn}% कमी के बाद: x {100-dn}/100 = {_num(final)}।"),
+            "correct": _num(final), "distractors": d, "solution": sol,
             "concept": "Percentage Change"}
 
 # ---- Profit, Loss & Discount ------------------------------------------------
@@ -899,7 +929,11 @@ def _b_average(rng, diff):
         d = mistakes(("divided by one count too many", _num(Fraction(total, n + 1))),
                      ("divided by one count too few", _num(Fraction(total, n - 1))),
                      ("gave the TOTAL instead of the average", _num(total)))
-        return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+        return {"stem": stem,
+                "stem_hi": ("निम्नलिखित संख्याओं का औसत ज्ञात कीजिए: "
+                            + ", ".join(map(str, nums)) + "।"),
+                "solution_hi": f"योग = {total}; औसत = {total}/{n} = {_num(ans)}।",
+                "correct": _num(ans), "mistakes": d, "solution": sol,
                 "concept": "Averages"}
     if diff == 2:
         old_avg = rng.randint(30, 50)
@@ -917,7 +951,13 @@ def _b_average(rng, diff):
             ("added the rise to the OLD AVERAGE instead of the replaced student's age",
              _num(old_avg + n2 * change)),
             ("subtracted the total rise instead of adding it", _num(old_m - n2 * change)))
-        return {"stem": stem, "correct": _num(new_m), "mistakes": d, "solution": sol,
+        return {"stem": stem,
+                "stem_hi": (f"{n2} विद्यार्थियों की औसत आयु {old_avg} वर्ष है। जब {old_m} वर्ष "
+                            f"आयु वाले एक विद्यार्थी के स्थान पर एक नया विद्यार्थी आता है, तो "
+                            f"औसत {change} वर्ष बढ़ जाता है। नए विद्यार्थी की आयु ज्ञात कीजिए।"),
+                "solution_hi": (f"कुल वृद्धि = {n2} x {change} = {n2 * change}। नए विद्यार्थी की "
+                                f"आयु = {old_m} + {n2 * change} = {new_m} वर्ष।"),
+                "correct": _num(new_m), "mistakes": d, "solution": sol,
                 "concept": "Averages"}
     if diff == 3:
         n1, n2 = rng.randint(12, 25), rng.randint(12, 25)
@@ -933,7 +973,12 @@ def _b_average(rng, diff):
                       _num(Fraction(n2 * a1 + n1 * a2, n1 + n2))),
                      ("divided the combined total by 2 instead of by the head count",
                       _num(Fraction(n1 * a1 + n2 * a2, 2))))
-        return {"stem": stem, "correct": _num(ans), "mistakes": d, "solution": sol,
+        return {"stem": stem,
+                "stem_hi": (f"{n1} लड़कों का औसत भार {a1} किग्रा तथा {n2} लड़कियों का औसत भार "
+                            f"{a2} किग्रा है। पूरी कक्षा का औसत भार ज्ञात कीजिए।"),
+                "solution_hi": (f"कुल = {n1} x {a1} + {n2} x {a2} = {n1 * a1 + n2 * a2}; "
+                                f"संख्या = {n1 + n2}; औसत = {_num(ans)} किग्रा।"),
+                "correct": _num(ans), "mistakes": d, "solution": sol,
                 "concept": "Averages"}
     # diff 4+ : a wrongly-read value has to be corrected
     n = rng.randint(8, 15)
@@ -951,7 +996,12 @@ def _b_average(rng, diff):
                   _num(wrong_avg + (actual - misread))),
                  ("applied the difference the wrong way round",
                   _num(Fraction(n * wrong_avg + misread - actual, n))))
-    return {"stem": stem, "correct": _num(correct_avg), "mistakes": d, "solution": sol,
+    return {"stem": stem,
+            "stem_hi": (f"{n} संख्याओं का औसत {wrong_avg} पाया गया। बाद में ज्ञात हुआ कि एक "
+                        f"संख्या {actual} के स्थान पर {misread} पढ़ ली गई थी। सही औसत ज्ञात कीजिए।"),
+            "solution_hi": (f"सही योग = {n} x {wrong_avg} - {misread} + {actual} = "
+                            f"{n * wrong_avg - misread + actual}। सही औसत = {_num(correct_avg)}।"),
+            "correct": _num(correct_avg), "mistakes": d, "solution": sol,
             "concept": "Averages"}
 
 def _b_ages(rng, diff):

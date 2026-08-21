@@ -92,3 +92,19 @@ def possessive(person_hi: str, relation_en: str) -> str:
     """'विकास की माता' / 'विकास के पिता' — person + correctly-agreeing particle + relation."""
     r = rel(relation_en)
     return f"{person_hi} {'की' if r in _FEM_RELS else 'के'} {r}"
+
+
+# Hindi conjugates the PARTICIPLE for the subject's gender — राधा बैठी है, not राधा बैठा है. A
+# seating question names people in every clue, so a masculine default puts the error on the page
+# five or six times in one question. Exactly the same failure as possessive()'s का/की above, and
+# table-driven for the same reason: it is not guessable from the spelling.
+_FEMININE = {"Sita", "Priya", "Anjali", "Meena", "Radha", "Neha", "Sneha"}
+
+
+def is_female(name_en) -> bool:
+    return str(name_en).strip() in _FEMININE
+
+
+def sits(name_en) -> str:
+    """'बैठी है' / 'बैठा है' — agreeing with the PERSON named, not with the sentence."""
+    return "बैठी है" if is_female(name_en) else "बैठा है"

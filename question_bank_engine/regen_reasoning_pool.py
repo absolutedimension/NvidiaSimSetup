@@ -27,6 +27,10 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, "..", "teacher_gtm"))
 from qbank import reasoninggen as R          # noqa: E402
 from paper_common import numbers_agree, analogy_ambiguous, odd_one_out_ambiguous  # noqa: E402
+# The paper's OWN identity function, not a copy of it. This file used to inline its own version of
+# gen_sig; the two then drifted, and a pool deduplicated by one rule was drawn from by another.
+from build_onestep_paper import gen_sig      # noqa: E402
+from qbank.item_forms import FORMS           # noqa: E402
 
 
 def main():
@@ -35,48 +39,70 @@ def main():
     ap.add_argument("--per", type=int, default=60, help="seeds per builder per difficulty")
     a = ap.parse_args()
 
-    rows, seen, by_diff, gated = [], set(), Counter(), Counter()
+    rows, seen, by_diff, by_form, gated = [], set(), Counter(), Counter(), Counter()
     for chap, fns in R._CHAP_BUILDERS.items():
         for fn in fns:
             for diff in (1, 2, 3, 4):
                 for seed in range(a.per):
                     try:
-                        q = R._make_question(fn(random.Random(seed), diff),
-                                             random.Random(seed),
-                                             {"chapter": chap, "dmax": diff})
+                        built = fn(random.Random(seed), diff)
                     except Exception:
                         continue
-                    row = {"stem": q.stem, "stem_hi": q.stem_hi,
-                           "options": q.options, "options_hi": q.options_hi,
-                           "correct_answer": q.correct_answer,
-                           "solution": q.solution, "solution_hi": q.solution_hi,
-                           "concept": q.concept, "chapter": chap,
-                           "difficulty": diff, "generated": True,
-                           "exam": "BSSC", "source": "reasoninggen"}
-                    # the same gates the paper applies, so the pool never carries a question the
-                    # builder would refuse at draw time
-                    if not numbers_agree(row):
-                        gated["Hindi dropped part of the question"] += 1
+                    if not built:
                         continue
-                    if analogy_ambiguous(row) or odd_one_out_ambiguous(row):
-                        gated["two defensible answers both on offer"] += 1
-                        continue
-                    sig = R._make_question.__module__ and (
-                        str(row["concept"]) + "|" +
-                        ",".join(re.findall(r"\d+", row["stem"])) + "|" +
-                        "~".join(sorted(o["text"] for o in row["options"])))
-                    if sig in seen:
-                        continue
-                    seen.add(sig)
-                    rows.append(row)
-                    by_diff[diff] += 1
+                    # Emit the DIRECT form, then re-ask the same solved item through every form in
+                    # item_forms. A form never recomputes an answer — it re-uses the one the
+                    # builder produced along with its named mistakes — so variety grows without
+                    # growing the surface on which an arithmetic error could appear.
+                    variants = [(built, "direct")]
+                    for fname, form in FORMS.items():
+                        try:
+                            alt = form(built, random.Random(seed * 7919 + diff))
+                        except Exception:
+                            alt = None
+                        if alt:
+                            variants.append((alt, fname))
+                    for b_v, fname in variants:
+                        _emit(b_v, fname, chap, diff, seed, rows, seen, by_diff, by_form, gated)
 
     json.dump(rows, io.open(a.out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{len(rows)} distinct reasoning questions -> {os.path.basename(a.out)}")
     for d in sorted(by_diff):
         print(f"  difficulty {d}: {by_diff[d]:5d}")
+    for f, n in by_form.most_common():
+        print(f"  form {f:12s}: {n:5d}")
     for why, n in gated.most_common():
         print(f"  gated out: {n:4d}  {why}")
+
+
+def _emit(built, fname, chap, diff, seed, rows, seen, by_diff, by_form, gated):
+    """One built item -> one pool row, after the same gates the paper applies at draw time."""
+    try:
+        q = R._make_question(built, random.Random(seed), {"chapter": chap, "dmax": diff})
+    except Exception:
+        return
+    row = {"stem": q.stem, "stem_hi": q.stem_hi,
+           "options": q.options, "options_hi": q.options_hi,
+           "correct_answer": q.correct_answer,
+           "solution": q.solution, "solution_hi": q.solution_hi,
+           "concept": q.concept, "chapter": chap, "form": fname,
+           "difficulty": diff, "generated": True,
+           "exam": "BSSC", "source": "reasoninggen"}
+    # the same gates the paper applies, so the pool never carries a question the builder would
+    # refuse at draw time
+    if not numbers_agree(row):
+        gated["Hindi dropped part of the question"] += 1
+        return
+    if analogy_ambiguous(row) or odd_one_out_ambiguous(row):
+        gated["two defensible answers both on offer"] += 1
+        return
+    sig = gen_sig(row)
+    if sig in seen:
+        return
+    seen.add(sig)
+    rows.append(row)
+    by_diff[diff] += 1
+    by_form[fname] += 1
 
 
 if __name__ == "__main__":

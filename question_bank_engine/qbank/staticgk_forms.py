@@ -43,6 +43,28 @@ STATEMENTS = {
     "STATE_CAPITAL": ("{v} is the capital of {k}.", "{v} {k} की राजधानी है।"),
     "DANCE_STATE": ("{k} is a dance form of {v}.", "{k} {v} का नृत्य है।"),
     "RIVER_ORIGIN": ("The river {k} originates at {v}.", "{k} नदी का उद्गम {v} में है।"),
+    # भारत का इतिहास + स्वतंत्रता आन्दोलन — the two biggest holes in the Inter Level blueprint.
+    # Supplied by history_tables, and only when its REVIEWED flag is True; see gs_tables().
+    "MOVEMENT_YEAR": ("The {k} took place in {v}.", "{k} {v} में हुआ था।"),
+    "FOUNDED_YEAR": ("The {k} was founded in {v}.", "{k} की स्थापना {v} में हुई थी।"),
+    "MOVEMENT_LEADER": ("The {k} was led by {v}.", "{k} का नेतृत्व {v} ने किया था।"),
+    "MOVEMENT_AGAINST": ("The {k} was directed against {v}.",
+                         "{k} {v} के विरुद्ध था।"),
+    # A DASH, not a copula. "{k} {v} थे।" needs the verb to agree with the value's gender and
+    # number — "कुंवर सिंह थे" is right but "चम्पारण थे" is wrong for a district, and the table
+    # holds both people and places. The dash form is what a real paper prints for this shape
+    # anyway, and it sidesteps an agreement the template cannot know.
+    "BIHAR_FREEDOM": ("In the national movement, {k} — {v}.",
+                      "राष्ट्रीय आंदोलन में, {k} — {v}।"),
+    # रसायन शास्त्र + जीव विज्ञान for Part II. Chemistry is machine-verified against PubChem;
+    # biology waits on a human. See science_tables and gs_tables()/science_fact_tables().
+    "ELEMENT_SYMBOL": ("The chemical symbol of {k} is {v}.", "{k} का रासायनिक प्रतीक {v} है।"),
+    "ELEMENT_ATOMIC_NUMBER": ("The atomic number of {k} is {v}.", "{k} का परमाणु क्रमांक {v} है।"),
+    "COMPOUND_FORMULA": ("The chemical formula of {k} is {v}.", "{k} का रासायनिक सूत्र {v} है।"),
+    "VITAMIN_DEFICIENCY": ("A deficiency of {k} causes {v}.", "{k} की कमी से {v} होता है।"),
+    "VITAMIN_CHEMICAL_NAME": ("The chemical name of {k} is {v}.", "{k} का रासायनिक नाम {v} है।"),
+    "HORMONE_GLAND": ("{k} is secreted by {v}.", "{k} {v} से स्रावित होता है।"),
+    "DISEASE_PATHOGEN": ("{k} is caused by {v}.", "{k} {v} से होता है।"),
 }
 
 
@@ -106,7 +128,7 @@ _SUBSETS_HI = {"1, 2 and 3": "1, 2 और 3", "1 and 2 only": "केवल 1 �
 def b_multi_statement(tables):
     """Three statements from the tables, some true, asking which hold. Answer is COMPUTED."""
     def build(rng, diff):
-        names = [n for n in STATEMENTS if _bilingual_keys(tables[n])]
+        names = [n for n in STATEMENTS if n in tables and _bilingual_keys(tables[n])]
         rng.shuffle(names)
         picks, truth = [], []
         for name in (names * 3)[:3]:
@@ -149,7 +171,7 @@ def b_multi_statement(tables):
 def b_match_pairs(tables):
     """Match List-I with List-II. Four pairs, one of which is deliberately mismatched."""
     def build(rng, diff):
-        names = [n for n in STATEMENTS if len(_bilingual_keys(tables[n])) >= 4]
+        names = [n for n in STATEMENTS if n in tables and len(_bilingual_keys(tables[n])) >= 4]
         name = rng.choice(names)
         table, (en_t, hi_t) = tables[name], STATEMENTS[name]
         keys = rng.sample(_bilingual_keys(table), 4)
@@ -188,6 +210,218 @@ def b_match_pairs(tables):
                 "solution": sol, "solution_hi": sol_hi, "concept": "Match the Pairs"}
     return build
 
+# ── style variation ─────────────────────────────────────────────────────────────────────────────
+# One Step's owner read the built paper and said the General Studies questions were good but "only
+# two styles". Measured, he was under-counting the problem rather than over-counting it: 35 of the
+# 50 GS questions opened with the identical words "Consider the following statements" and 7 more
+# with "Match the following pairs", because b_multi_statement and b_two_statement share an opening
+# line — so what reads as one style is actually two builders, and the section's whole answer space
+# was "1 and 2 only / 1, 2 and 3 / ...", over and over.
+#
+# The four forms below each change BOTH halves of what a candidate sees: a different opening line
+# and a different kind of option. Two put the content in the OPTIONS rather than in the stem, one
+# replaces the subset answer space with a count, and one asks for the single true statement out of
+# four. Same guarantee as the forms above — every statement is a (key, value) pair from a verified
+# table, and every false one pairs a key with a different value from the SAME table, so its
+# falsity is a property of our data rather than of anyone's opinion.
+
+# Values long enough to make an unreadable option once a key is glued to the front of them.
+# AMENDMENT_DID's values are whole clauses ("added the Tenth Schedule on defection"), which read
+# fine as a sentence and badly as one of four "X — Y" pair options.
+def _pair_tables(tables):
+    return [n for n in STATEMENTS
+            if n in tables and len(_bilingual_keys(tables[n])) >= 4
+            and max((len(str(tables[n][k])) for k in _bilingual_keys(tables[n])), default=99) <= 34]
+
+
+def _pair_rows(table, keys, truth, rng, near_miss):
+    """(key, value) rows where row i is true iff truth[i]. Returns None if a false one is impossible.
+
+    `near_miss` makes the false values a PERMUTATION of the true values of the very keys on show,
+    so the four options are internally consistent and cannot be dismissed by recognising a value
+    that does not belong to the topic at all. That is the difference between a candidate checking
+    each pair and a candidate scanning for the odd word.
+    """
+    true_vals = [table[k] for k in keys]
+    rows = []
+    for i, k in enumerate(keys):
+        if truth[i]:
+            rows.append((k, table[k]))
+            continue
+        v = None
+        if near_miss:
+            cand = [true_vals[j] for j in range(len(keys)) if j != i
+                    and not _alias(true_vals[j], table[k])]
+            rng.shuffle(cand)
+            v = next((c for c in cand if _is_false(table, k, c)), None)
+        if v is None:
+            v = _false_value(table, k, rng)
+        if v is None:
+            return None
+        rows.append((k, v))
+    return rows
+
+
+def _is_false(table, k, v):
+    """v is genuinely NOT k's value — and is owned by exactly one key, so the swap cannot be
+    accidentally true the way '74th Amendment, 1992' was."""
+    owners = {}
+    for kk, vv in table.items():
+        owners.setdefault(vv, set()).add(kk)
+    return not _alias(v, table[k]) and len(owners.get(v, ())) == 1
+
+
+def _render_pairs(rows):
+    en = [f"{k} — {v}" for k, v in rows]
+    hi = [f"{_hi_or_self(k)} — {_hi_or_self(v)}" for k, v in rows]
+    return en, hi
+
+
+def b_correct_pair(tables):
+    """'Which of the following pairs is correctly matched?' — the content sits in the OPTIONS.
+
+    Nothing in the stem to read, four pairs to verify, and the answer is a pair rather than a
+    subset label. Visually the furthest thing from the numbered-statement form.
+    """
+    def build(rng, diff):
+        names = _pair_tables(tables)
+        if not names:
+            return None
+        table = tables[rng.choice(names)]
+        keys = rng.sample(_bilingual_keys(table), 4)
+        truth = [False] * 4
+        truth[rng.randrange(4)] = True
+        rows = _pair_rows(table, keys, truth, rng, near_miss=diff >= 3)
+        if not rows:
+            return None
+        en, hi = _render_pairs(rows)
+        i = truth.index(True)
+        stem = "Which of the following pairs is correctly matched?"
+        stem_hi = "निम्नलिखित युग्मों में से कौन-सा सही सुमेलित है?"
+        sol = ("; ".join(f"'{en[j]}' is {'correct' if truth[j] else 'wrong'}"
+                         for j in range(4)) + f". So {en[i]}.")
+        sol_hi = (f"केवल '{hi[i]}' सही सुमेलित है; शेष तीनों युग्मों में मान किसी अन्य "
+                  f"प्रविष्टि का है।")
+        return {"stem": stem, "stem_hi": stem_hi, "correct": en[i],
+                "distractors": [en[j] for j in range(4) if j != i],
+                "hi_opts": dict(zip(en, hi)), "solution": sol, "solution_hi": sol_hi,
+                "concept": "Correctly Matched Pair"}
+    return build
+
+
+def b_wrong_pair(tables):
+    """'Which of the following pairs is NOT correctly matched?' — the mirror reading skill.
+
+    Three true pairs and one false. Finding the single error in a page of correct material is a
+    different job from confirming a single correct claim, and both appear in the real papers.
+    """
+    def build(rng, diff):
+        names = _pair_tables(tables)
+        if not names:
+            return None
+        table = tables[rng.choice(names)]
+        keys = rng.sample(_bilingual_keys(table), 4)
+        truth = [True] * 4
+        truth[rng.randrange(4)] = False
+        rows = _pair_rows(table, keys, truth, rng, near_miss=diff >= 3)
+        if not rows:
+            return None
+        en, hi = _render_pairs(rows)
+        i = truth.index(False)
+        stem = "Which of the following pairs is NOT correctly matched?"
+        stem_hi = "निम्नलिखित युग्मों में से कौन-सा सही सुमेलित नहीं है?"
+        sol = (f"Three of the pairs are correct. '{en[i]}' is not — the correct value for "
+               f"{rows[i][0]} is {table[rows[i][0]]}.")
+        sol_hi = (f"तीन युग्म सही हैं। '{hi[i]}' सही नहीं है — "
+                  f"{_hi_or_self(rows[i][0])} का सही मान {_hi_or_self(table[rows[i][0]])} है।")
+        return {"stem": stem, "stem_hi": stem_hi, "correct": en[i],
+                "distractors": [en[j] for j in range(4) if j != i],
+                "hi_opts": dict(zip(en, hi)), "solution": sol, "solution_hi": sol_hi,
+                "concept": "Incorrectly Matched Pair"}
+    return build
+
+
+_COUNTS = ["None of them", "Only one", "Only two", "All three"]
+_COUNTS_HI = {"None of them": "इनमें से कोई नहीं", "Only one": "केवल एक",
+              "Only two": "केवल दो", "All three": "तीनों"}
+
+
+def b_count_statements(tables):
+    """'How many of the above statements are correct?' — the same facts, a COUNT answer space.
+
+    The subset labels ("1 and 3 only") let a candidate work backwards from the options; a count
+    does not, because every option is reachable by several different combinations. It is also the
+    form the commissions have been moving to.
+    """
+    def build(rng, diff):
+        names = [n for n in STATEMENTS if n in tables and _bilingual_keys(tables[n])]
+        rng.shuffle(names)
+        picks, truth = [], []
+        for name in (names * 3)[:3]:
+            table, tmpl = tables[name], STATEMENTS[name]
+            k = rng.choice(_bilingual_keys(table))
+            make_true = rng.random() < (0.5 if diff <= 2 else 0.6)
+            v = table[k] if make_true else _false_value(table, k, rng)
+            if v is None:
+                v, make_true = table[k], True
+            picks.append(_statement(table, k, v, tmpl))
+            truth.append(make_true)
+        correct = _COUNTS[sum(truth)]
+        body = "\n".join(f"{i + 1}. {en}" for i, (en, _) in enumerate(picks))
+        body_hi = "\n".join(f"{i + 1}. {h}" for i, (_, h) in enumerate(picks))
+        stem = ("Study the following statements:\n" + body +
+                "\nHow many of the above statements are correct?")
+        stem_hi = ("निम्नलिखित कथनों का अध्ययन कीजिए:\n" + body_hi +
+                   "\nउपर्युक्त कथनों में से कितने सही हैं ?")
+        d = [x for x in _COUNTS if x != correct]
+        sol = ("; ".join(f"{i + 1} is {'correct' if t else 'incorrect'}"
+                         for i, t in enumerate(truth)) + f". That is {correct.lower()}.")
+        sol_hi = ("; ".join(f"{i + 1} {'सही' if t else 'गलत'} है"
+                            for i, t in enumerate(truth)) + f"। अतः {_COUNTS_HI[correct]}।")
+        return {"stem": stem, "stem_hi": stem_hi, "correct": correct, "distractors": d,
+                "hi_opts": dict(_COUNTS_HI), "solution": sol, "solution_hi": sol_hi,
+                "concept": "Count the Correct Statements"}
+    return build
+
+
+def b_which_statement(tables):
+    """'Which one of the following statements is correct?' — four full sentences, one true.
+
+    Like the pair forms the content is in the options, but as prose rather than as a "X — Y" pair,
+    so the candidate reads four complete claims instead of matching two columns.
+    """
+    def build(rng, diff):
+        names = [n for n in STATEMENTS if n in tables and len(_bilingual_keys(tables[n])) >= 4]
+        if not names:
+            return None
+        # d1-2 keeps all four claims inside ONE topic, so only the fact is in question; d3+ mixes
+        # topics, so the candidate cannot settle into a single domain while reading.
+        pool = [rng.choice(names)] * 4 if diff <= 2 else [rng.choice(names) for _ in range(4)]
+        which = rng.randrange(4)
+        en, hi = [], []
+        for i, name in enumerate(pool):
+            table, tmpl = tables[name], STATEMENTS[name]
+            k = rng.choice(_bilingual_keys(table))
+            v = table[k] if i == which else _false_value(table, k, rng)
+            if v is None:
+                return None
+            e, h = _statement(table, k, v, tmpl)
+            en.append(e.rstrip("."))
+            hi.append(h.rstrip("।"))
+        if len({x.lower() for x in en}) != 4:
+            return None
+        stem = "Which one of the following statements is correct?"
+        stem_hi = "निम्नलिखित में से कौन-सा कथन सही है?"
+        sol = (f"Only '{en[which]}' matches the verified record; the other three pair a subject "
+               f"with a value belonging to a different entry.")
+        sol_hi = (f"केवल '{hi[which]}' सही है; शेष तीन कथनों में मान किसी अन्य प्रविष्टि का है।")
+        return {"stem": stem, "stem_hi": stem_hi, "correct": en[which],
+                "distractors": [en[j] for j in range(4) if j != which],
+                "hi_opts": dict(zip(en, hi)), "solution": sol, "solution_hi": sol_hi,
+                "concept": "Single Correct Statement"}
+    return build
+
+
 _PAIR = {(True, True): "Both 1 and 2", (True, False): "1 only",
          (False, True): "2 only", (False, False): "Neither 1 nor 2"}
 _PAIR_HI = {"Both 1 and 2": "1 और 2 दोनों", "1 only": "केवल 1", "2 only": "केवल 2",
@@ -206,7 +440,7 @@ def b_two_statement(tables):
     table, and a false one pairs a key with a different value from the SAME table.
     """
     def build(rng, diff):
-        names = [n for n in STATEMENTS if _bilingual_keys(tables[n])]
+        names = [n for n in STATEMENTS if n in tables and _bilingual_keys(tables[n])]
         rng.shuffle(names)
         picks, truth = [], []
         for name in (names * 2)[:2]:

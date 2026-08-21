@@ -36,6 +36,19 @@ LET = ["A", "B", "C", "D", "E"]
 _DEV = re.compile(r"[\u0900-\u097f]")
 
 
+# Every actor name reasoninggen can put in a stem (qbank/reasoninggen.py: _MALE, _FEMALE,
+# _SEAT_NAMES and the per-builder choices). Stripped before a question's identity is taken — see
+# gen_sig. Keep in step with that module: a name missing here is treated as question CONTENT, which
+# splits two copies of one question into two.
+_ACTORS = re.compile(
+    r"\b(?:Ram|Amit|Vikas|Rohan|Arun|Sunil|Rahul|Sita|Priya|Anjali|Meena|Radha|Neha|Sneha|Ravi)\b"
+    r"|\bA man\b|\bA boy\b"
+    # The PRONOUN moves with the actor — _b_direction_distance writes "she" for Sita and "he" for
+    # everyone else — so leaving it in makes the very pair of questions this function exists to
+    # collapse look different. It is part of the name, not part of the question.
+    r"|\b(?:he|she|his|her|him)\b", re.I)
+
+
 def gen_sig(q):
     """Identity of a GENERATED question, independent of the name in the English stem.
 
@@ -43,10 +56,22 @@ def gen_sig(q):
     numbers, and the Hindi template carries no name at all — so two such questions are the SAME
     question with byte-identical Hindi. Keying on the English stem let one through into both sets.
     Signature is therefore the concept, the numbers in the question, and the option set.
+
+    ...which is not enough on its own, and the gap was invisible until a question type without
+    numbers arrived. A syllogism carries NO digits and always offers the same four rubric options
+    ("Only conclusion I follows", ...), so concept+numbers+options is identical for every syllogism
+    ever generated: measured, 240 distinct syllogisms and 240 distinct coded inequalities each
+    collapsed to ONE signature, and the dedup would have kept one of each. The same defect was
+    already live and unnoticed — Direction–Facing has exactly 1 row in a 1,515-row pool for this
+    reason.
+    So the stem's WORDS are part of the identity too, with the actor names removed first. That
+    keeps the original property exactly (the name-only variants still collapse) while letting
+    everything that genuinely differs count as different.
     """
     stem = q.get("stem") or ""
     nums = tuple(re.findall(r"\d+", stem))
     opts = tuple(sorted((o.get("text") or "").strip() for o in q.get("options") or []))
+    body = re.sub(r"[^a-z]+", "", _ACTORS.sub("", stem).lower())
     # A statement-based question has NOTHING distinguishing in any of those three fields: the
     # concept is fixed, the only "numbers" are the list markers 1, 2, 3, and the options are the
     # same four strings every time. Forty different questions collapsed to ONE signature, so the
@@ -56,7 +81,8 @@ def gen_sig(q):
         claims = re.sub(r"(?m)^\s*(?:\d+|[A-D])\.\s*", "", stem)
         claims = re.sub(r"[^a-z0-9\u0900-\u097f]+", "", claims.lower())
         return "|".join([str(q.get("concept") or ""), claims])
-    return "|".join([str(q.get("concept") or q.get("qtype") or ""), ",".join(nums), "~".join(opts)])
+    return "|".join([str(q.get("concept") or q.get("qtype") or ""), ",".join(nums),
+                     "~".join(opts), body])
 
 
 def qid(q):
@@ -351,82 +377,14 @@ def generate_whole_section(secs, want, mix, gen_taken, bilingual, salt=0):
     out = []
     rng = random.Random(20260822 + salt)
     if "General Studies" in secs:
-        from qbank import staticgkgen, staticgk_forms, polity_tables
-        tables = {t: getattr(staticgkgen, t)
-                  for t in ("STATE_CAPITAL", "DANCE_STATE", "RIVER_ORIGIN")}
-        # The Constitution tables are what makes a statement question hard rather than a capital
-        # in a harder wrapper — and they are what the advertisement's syllabus actually names.
-        tables["ARTICLE_SUBJECT"] = polity_tables.ARTICLE_SUBJECT
-        tables["AMENDMENT_DID"] = polity_tables.AMENDMENT_DID
-        # Match-the-pairs draws 4 keys from one table, so its distinct combinations run out fast —
-        # splitting the hard quota evenly starved it and the shortfall was silently padded with
-        # difficulty-1 recall, which is the opposite of what was asked. Three statements from three
-        # tables has far more room (1,184 distinct), so it carries the bulk.
-        band = [(staticgk_forms.b_match_pairs(tables), 3, max(mix[3] // 5, 1)),
-                (staticgk_forms.b_multi_statement(tables), 3, mix[3] - max(mix[3] // 5, 1)),
-                (staticgk_forms.b_two_statement(tables), 2, mix[2])]
-        for build, d, n in band:
-            got = 0
-            for _ in range(400):
-                if got >= n:
-                    break
-                b = build(rng, d)
-                if bilingual and not b.get("stem_hi"):
-                    continue
-                opts = [{"label": l, "text": t} for l, t in
-                        zip("ABCD", [b["correct"]] + list(b["distractors"])[:3])]
-                hm = b.get("hi_opts") or {}
-                row = {"stem": b["stem"], "stem_hi": b["stem_hi"], "options": opts,
-                       "options_hi": [{"label": o["label"], "text": hm.get(o["text"], o["text"])}
-                                      for o in opts],
-                       "correct_answer": "A", "solution": b["solution"],
-                       "solution_hi": b.get("solution_hi", ""), "concept": b["concept"],
-                       "_generated": True, "source_pdf": "staticgk_forms", "number": None,
-                       "tag": {"section": "General Studies", "difficulty": d}}
-                if gen_sig(row) in gen_taken:
-                    continue
-                gen_taken.add(gen_sig(row))
-                out.append(row); got += 1
-        out += generate_static_gk(want - len(out), gen_taken, bilingual)
+        out += generate_gs_section(want, mix, gen_taken, bilingual, rng)
     elif "Mathematics" in secs:
-        from qbank import sciencegen
-        for d, n in ((3, mix[3]), (2, mix[2]), (1, mix[1])):
-            sci_n = max(n // 4, 1)
-            blds = [b for bs in sciencegen._CHAP_BUILDERS.values() for b in bs]
-            got = 0
-            for _ in range(200):
-                for bld in blds:
-                    if got >= sci_n:
-                        break
-                    sq = sciencegen._make_question(bld(rng, d), rng,
-                                                   {"chapter": "General Science", "dmax": d})
-                    row = {"stem": sq.stem, "stem_hi": sq.stem_hi, "options": sq.options,
-                           "options_hi": sq.options_hi, "correct_answer": sq.correct_answer,
-                           "solution": sq.solution, "solution_hi": sq.solution_hi,
-                           "concept": sq.concept, "_generated": True,
-                           "source_pdf": "sciencegen", "number": None,
-                           "tag": {"section": "General Science", "difficulty": d}}
-                    if gen_sig(row) in gen_taken:
-                        continue
-                    gen_taken.add(gen_sig(row))
-                    out.append(row); got += 1
-                if got >= sci_n:
-                    break
-            # Record what came back. generate_maths dedups against its OWN local set, so without
-            # this a later call in the same section redrew the identical question — the same
-            # ratio and compound-interest questions appeared twice on one paper.
-            fresh_m = generate_maths(n - got, max(d, 1), gen_taken, bilingual)
-            gen_taken.update(gen_sig(q) for q in fresh_m)
-            out += fresh_m
+        out += generate_maths_section(want, mix, gen_taken, bilingual, rng)
     else:
-        for d, n in ((3, mix[3]), (2, mix[2]), (1, mix[1])):
-            picked = [q for q in load_generated(10 ** 6, exclude=gen_taken)
-                      if (q.get("difficulty") or 0) >= 3 if d == 3] if d == 3 else \
-                     [q for q in load_generated(10 ** 6, exclude=gen_taken)
-                      if (q.get("difficulty") or 0) == d]
-            for q in picked[:n]:
-                gen_taken.add(gen_sig(q))
-                out.append(q)
+        # Part III. Do NOT deal the whole pool and then filter by difficulty here — that is the
+        # exact shape of the bug that put 16 Blood Relations questions in one section. The band
+        # filter belongs inside the deal; see load_generated.
+        out += generate_reasoning_section(want, mix, gen_taken)
     # A section short of `want` prints a 147-question paper. Top up from whatever band still has
     # stock rather than shipping a paper that fails its own structure check.
     if len(out) < want:
@@ -441,11 +399,297 @@ def generate_whole_section(secs, want, mix, gen_taken, bilingual, salt=0):
             elif "Mathematics" in secs:
                 extra = generate_maths(want - len(out), d, gen_taken, bilingual)
             else:
-                extra = [q for q in load_generated(10 ** 6, exclude=gen_taken)][:want - len(out)]
+                # Backstop only — generate_reasoning_section already relaxes its own cap rather
+                # than return short. Keep it capped anyway, so a shortfall here cannot undo the
+                # spread the section just spent eleven relaxation steps protecting.
+                extra = generate_reasoning_section(want - len(out), {3: want - len(out)},
+                                                   gen_taken, cap=REASONING_CONCEPT_CAP)
             for q in extra:
                 gen_taken.add(gen_sig(q))
                 q.setdefault("tag", {})["section"] = list(secs)[0]
             out += extra
+    return out[:want]
+
+
+def science_fact_tables():
+    """Chemistry and biology fact tables for Part II, each behind its OWN gate.
+
+    Two subjects, two levels of evidence, so two flags. Chemistry's element data is derived from
+    PubChem rather than typed and its compound formulae are checked against PubChem's own answer
+    (sabotage-tested on eleven corrupted rows, all caught) — a machine can earn that. Biology has
+    no comparable source, so it waits for a person, exactly like history. Lumping them under one
+    flag would either hold back verified facts or ship unverified ones.
+    """
+    sys.path.insert(0, str(REPO / "question_bank_engine"))
+    from qbank import science_tables, staticgk_hi
+    t = {}
+    if science_tables.CHEM_REVIEWED:
+        staticgk_hi.register(science_tables.HI)
+        t.update({n: getattr(science_tables, n) for n in
+                  ("ELEMENT_SYMBOL", "ELEMENT_ATOMIC_NUMBER", "COMPOUND_FORMULA")})
+    if science_tables.BIO_REVIEWED:
+        staticgk_hi.register(science_tables.HI)
+        t.update({n: getattr(science_tables, n) for n in
+                  ("VITAMIN_DEFICIENCY", "VITAMIN_CHEMICAL_NAME", "HORMONE_GLAND",
+                   "DISEASE_PATHOGEN")})
+    if not t:
+        print("  note: chemistry/biology tables are BUILT but NOT ENABLED "
+              "(CHEM_REVIEWED / BIO_REVIEWED are False) — see drop/bssc/SCIENCE_REVIEW.md")
+    return t
+
+
+def gs_tables():
+    """The verified fact tables every General Studies form draws on."""
+    sys.path.insert(0, str(REPO / "question_bank_engine"))
+    from qbank import staticgkgen, polity_tables
+    t = {n: getattr(staticgkgen, n) for n in ("STATE_CAPITAL", "DANCE_STATE", "RIVER_ORIGIN")}
+    # The Constitution tables are what makes a statement question hard rather than a capital in a
+    # harder wrapper — and they are what the advertisement's syllabus actually names.
+    t["ARTICLE_SUBJECT"] = polity_tables.ARTICLE_SUBJECT
+    t["AMENDMENT_DID"] = polity_tables.AMENDMENT_DID
+    # History and the freedom movement — 18% of Part I by the blueprint, and previously zero.
+    # GATED: these facts do not reach a paper until a person has read drop/bssc/HISTORY_REVIEW.md
+    # and set REVIEWED = True. Two automated verifiers were written for that table and both were
+    # measured unreliable, so the gate is a human one on purpose. See history_tables.
+    from qbank import history_tables, staticgk_hi
+    if history_tables.REVIEWED:
+        staticgk_hi.register(history_tables.HI)
+        for name in ("MOVEMENT_YEAR", "FOUNDED_YEAR", "MOVEMENT_LEADER",
+                     "MOVEMENT_AGAINST", "BIHAR_FREEDOM"):
+            t[name] = getattr(history_tables, name)
+    else:
+        print("  note: history/freedom-movement tables are BUILT but NOT REVIEWED — "
+              "39 facts held back from the paper (see drop/bssc/HISTORY_REVIEW.md)")
+    return t
+
+
+# No GS style may take more than this share of the section. The delivered paper ran one opening
+# line ("Consider the following statements") 35 times out of 50 and the institute's owner said so:
+# "question is good but style is similar". Ten is a fifth of the section.
+GS_STYLE_CAP = 10
+
+
+def _gs_row(b, d):
+    opts = [{"label": l, "text": t} for l, t in
+            zip("ABCD", [b["correct"]] + list(b["distractors"])[:3])]
+    hm = b.get("hi_opts") or {}
+    return {"stem": b["stem"], "stem_hi": b["stem_hi"], "options": opts,
+            "options_hi": [{"label": o["label"], "text": hm.get(o["text"], o["text"])}
+                           for o in opts],
+            "correct_answer": "A", "solution": b["solution"],
+            "solution_hi": b.get("solution_hi", ""), "concept": b["concept"],
+            "_generated": True, "source_pdf": "staticgk_forms", "number": None,
+            "tag": {"section": "General Studies", "difficulty": d}}
+
+
+def generate_maths_section(want, mix, gen_taken, bilingual, rng):
+    """Part II, drawn to the SYLLABUS quotas instead of round-robin across every quantgen builder.
+
+    What the old draw produced, measured on the delivered sets: ब्याज (interest) took 32% of the
+    maths questions and प्रतिशत (percentage) took ZERO — while 330 real BSSC maths questions put
+    percentage at 16% and interest near 1%. quantgen owned 23 builders and the paper used 7. None
+    of that was a content gap; the section simply asked whichever builder came first in a
+    round-robin and had no idea what the syllabus wanted.
+
+    Science shares Part II, so it takes its own slice first — otherwise a maths quota that fills
+    completely leaves no room for it, which is how the science block used to be silently deleted.
+    """
+    from collections import Counter
+    import syllabus_blueprint as SB
+    from qbank import quantgen, sciencegen
+    sci_want = max(1, round(want * 0.25))               # ~1 in 4 of Part II is General Science
+    out = []
+    # ---- General Science slice, drawn to the blueprint's subject quotas
+    # Physics comes from sciencegen (computed numericals); chemistry from the verified fact tables
+    # through the same statement/pair FORMS General Studies uses, so a chemistry question is as
+    # hard as a GS one rather than bare recall. Biology joins here the moment BIO_REVIEWED flips.
+    sci_quota = SB.quotas("General Science", sci_want)
+    fact_tables = science_fact_tables()
+    sci_builders = [b for bs in sciencegen._CHAP_BUILDERS.values() for b in bs]
+    for subject, n_want in sorted(sci_quota.items(), key=lambda kv: -kv[1]):
+        got_s = 0
+        if subject == "Physics":
+            # Fill the subject's whole quota, spending the hard band first. The earlier
+            # per-band target was computed against a share rather than a running total, so a band
+            # that came up short was never made good and physics landed at 6 of 7.
+            for d, upto in ((3, 0.7), (2, 0.9), (1, 1.0)):
+                for _ in range(200):
+                    if got_s >= round(n_want * upto):
+                        break
+                    sq = sciencegen._make_question(rng.choice(sci_builders)(rng, d), rng,
+                                                   {"chapter": "General Science", "dmax": d})
+                    row = {"stem": sq.stem, "stem_hi": sq.stem_hi, "options": sq.options,
+                           "options_hi": sq.options_hi, "correct_answer": sq.correct_answer,
+                           "solution": sq.solution, "solution_hi": sq.solution_hi,
+                           "concept": sq.concept, "_generated": True,
+                           "source_pdf": "sciencegen", "number": None,
+                           "tag": {"section": "General Science", "difficulty": d}}
+                    if gen_sig(row) in gen_taken:
+                        continue
+                    gen_taken.add(gen_sig(row))
+                    out.append(row); got_s += 1
+        elif fact_tables:
+            from qbank import staticgk_forms as SF
+            forms = [SF.b_multi_statement(fact_tables), SF.b_correct_pair(fact_tables),
+                     SF.b_count_statements(fact_tables), SF.b_which_statement(fact_tables)]
+            for _ in range(400):
+                if got_s >= n_want:
+                    break
+                b = forms[got_s % len(forms)](rng, 3)
+                if not b or (bilingual and not b.get("stem_hi")):
+                    continue
+                row = _gs_row(b, 3)
+                # The FORM name is not the subject. Tag the subject explicitly, or the syllabus
+                # report cannot tell a chemistry question from a capitals one.
+                row["concept"] = subject
+                row["tag"]["section"] = "General Science"
+                row["source_pdf"] = "science_tables"
+                if gen_sig(row) in gen_taken:
+                    continue
+                gen_taken.add(gen_sig(row))
+                out.append(row); got_s += 1
+        if got_s < n_want:
+            print(f"  note: General Science drew {got_s} of {n_want} for {subject}")
+
+    # ---- Mathematics, to the blueprint
+    maths_want = want - len(out)
+    quota = SB.quotas("Mathematics", maths_want)
+    banned = SB.excluded_builders()
+    by_name = {b.__name__: b for bs in quantgen._CHAP_BUILDERS.values() for b in bs}
+    got, made = Counter(), Counter()
+
+    def draw(topic, d):
+        """One bilingual, in-syllabus maths question for this topic at difficulty d, or None."""
+        names = [n for n in _builders_for("Mathematics", topic)
+                 if n in by_name and n not in banned]
+        if not names:
+            return None
+        for _ in range(60):
+            try:
+                q = quantgen._make_question(by_name[rng.choice(names)](rng, d), rng,
+                                            {"chapter": "Arithmetic"})
+            except Exception:
+                continue
+            row = {"stem": q.stem, "stem_hi": q.stem_hi, "options": q.options,
+                   "options_hi": q.options_hi, "correct_answer": q.correct_answer,
+                   "solution": q.solution, "solution_hi": q.solution_hi,
+                   "concept": q.concept, "_generated": True,
+                   "tag": {"section": "Mathematics", "difficulty": d},
+                   "source_pdf": "quantgen", "number": None}
+            if bilingual and (not q.stem_hi or not inter_level_ok(row)):
+                continue
+            if gen_sig(row) in gen_taken:
+                continue
+            gen_taken.add(gen_sig(row))
+            return row
+        return None
+
+    # Fill each topic to its quota, spending the difficulty bands in the requested proportions.
+    # A builder may only have Hindi at SOME difficulties — quantgen's simplify and average carry it
+    # at band 1 only — so a band that cannot be filled falls back to one that can, and the row is
+    # tagged with the difficulty it was ACTUALLY built at. Tagging it with the difficulty we asked
+    # for would put a made-up number in the mix report, which is the failure this file keeps
+    # finding in its own checks.
+    for topic in sorted(quota, key=lambda t: -quota[t]):
+        band = {3: int(round(quota[topic] * mix[3] / want)),
+                2: int(round(quota[topic] * mix[2] / want))}
+        band[1] = max(0, quota[topic] - band[3] - band[2])
+        for d in (3, 2, 1):
+            for _ in range(band[d]):
+                if got[topic] >= quota[topic]:
+                    break
+                row = draw(topic, d) or draw(topic, 2) or draw(topic, 1) or draw(topic, 4)
+                if row:
+                    out.append(row); got[topic] += 1; made[topic] += 1
+
+    # Anything the quotas could not reach is topped up ROUND-ROBIN across the topics that still
+    # have room. The first version sorted by "most room" and then looped without re-checking the
+    # quota, so it emptied the whole shortfall into one topic — percentage came out at 20 against
+    # a target of 10, which is the same over-concentration this blueprint exists to prevent.
+    guard = 0
+    while len(out) < want and guard < 400:
+        guard += 1
+        room = [t for t in quota if got[t] < quota[t]] or list(quota)
+        progress = False
+        for topic in room:
+            if len(out) >= want:
+                break
+            row = draw(topic, 3) or draw(topic, 2) or draw(topic, 1)
+            if row:
+                out.append(row); got[topic] += 1; progress = True
+        if not progress:
+            break
+    if len(out) < want:
+        print(f"  note: Part II is {want - len(out)} short of the blueprint — no bilingual "
+              f"generator could fill the remaining quota")
+    maths_only = [q for q in out if q["tag"]["section"] == "Mathematics"]
+    for line in SB.report("Mathematics", maths_only):
+        print(line)
+    print(f"      (+ {len(out) - len(maths_only)} General Science questions in Part II)")
+    return out[:want]
+
+
+def _builders_for(section, topic_en):
+    import syllabus_blueprint as SB
+    for t in SB.topics(section):
+        if t["en"] == topic_en:
+            return list(t.get("builders") or [])
+    return []
+
+
+def generate_gs_section(want, mix, gen_taken, bilingual, rng):
+    """Part I, dealt ROUND-ROBIN ACROSS STYLES rather than filled one style at a time.
+
+    The old version fed a quota to each builder in turn: match-pairs got a fifth of the hard band
+    and multi-statement got the other four fifths, so 28 of 35 hard questions were one form — and
+    because b_two_statement opens with the same sentence, 35 of the 50 printed questions began with
+    the identical words. The facts were all different and the paper still read as one question
+    asked fifty times.
+
+    Dealing across the styles is the same fix Part III needed, for the same reason: a section that
+    fills its quota one source at a time will always be dominated by whichever source is asked
+    first. The style spread is printed on every build, because this went unnoticed for two
+    deliveries purely because nothing ever said what had been drawn.
+    """
+    from collections import Counter
+    from qbank import staticgk_forms as SF
+    tables = gs_tables()
+    hard = [SF.b_multi_statement(tables), SF.b_match_pairs(tables), SF.b_correct_pair(tables),
+            SF.b_wrong_pair(tables), SF.b_count_statements(tables), SF.b_which_statement(tables)]
+    med = [SF.b_two_statement(tables), SF.b_count_statements(tables), SF.b_correct_pair(tables),
+           SF.b_which_statement(tables)]
+    out, used = [], Counter()
+    for d, builders, n in ((3, hard, mix.get(3, 0)), (2, med, mix.get(2, 0))):
+        got, rounds = 0, 0
+        while got < n and rounds < 400:
+            rounds += 1
+            progress = False
+            for build in builders:                      # one from each style, then round again
+                if got >= n:
+                    break
+                for _ in range(25):                     # a style may need a few tries to land
+                    b = build(rng, d)
+                    if not b or (bilingual and not b.get("stem_hi")):
+                        continue
+                    if used[b["concept"]] >= GS_STYLE_CAP:
+                        break
+                    row = _gs_row(b, d)
+                    if gen_sig(row) in gen_taken:
+                        continue
+                    gen_taken.add(gen_sig(row))
+                    used[b["concept"]] += 1
+                    out.append(row); got += 1; progress = True
+                    break
+            if not progress:
+                break
+        if got < n:
+            print(f"  note: General Studies drew {got} of {n} at difficulty {d} "
+                  f"under a {GS_STYLE_CAP}/style cap")
+    out += generate_static_gk(want - len(out), gen_taken, bilingual)
+    spread = Counter(q.get("concept") or "?" for q in out)
+    print(f"  Part I style spread: {len(out)} questions over {len(spread)} styles, "
+          f"most-used {max(spread.values(), default=0)} — "
+          + ", ".join(f"{k} {v}" for k, v in spread.most_common()))
     return out[:want]
 
 
@@ -621,13 +865,27 @@ def load_hindi_generated(n, cap_per_concept=6, exclude=frozenset()):
     return out[:n]
 
 
-def load_generated(n, cap_per_concept=6, exclude=frozenset()):
+def load_generated(n, cap_per_concept=6, exclude=frozenset(), difficulty=None,
+                   concept_used=None, hard_cap=None, only_concepts=None):
     """Bilingual reasoning with COMPUTED answers, only used by --structure official3.
 
     Capped and dealt round-robin BY CONCEPT, not by stem text: three direction questions read
     "facing North, right then left" / "facing East, right then left" / "facing North, left then
     right" — different words, so a stem-signature cap lets all three onto one page, which is
     exactly what happened the first time.
+
+    `difficulty` FILTERS BEFORE THE DEAL, and that argument is the whole fix for the clustering One
+    Step's owner complained about. The caller used to deal the entire pool round-robin and only
+    then keep the rows of the band it wanted — but each concept's bucket is sorted hardest-first,
+    so the early rounds are all hard rows and a band's questions only surface once a concept has
+    run out of harder stock. The shallowest concept therefore reaches its medium and easy rows
+    first and supplies almost the whole band on its own. Measured on the delivered papers: Set 1's
+    medium band came back 6 Blood Relations out of 7 and its easy band 7 out of 8, which is how one
+    concept took 16 of 50 questions while every round-robin in this file looked correct.
+
+    `concept_used` (a Counter shared across the three band calls) plus `hard_cap` enforce a real
+    ceiling per concept for the section as a whole. Passing the counter between calls is what makes
+    it a section-level cap rather than three independent per-band ones that can each spend 4.
     """
     p = REPO / "question_bank_engine/drop/bssc/REASONING_GEN.json"
     if not p.exists():
@@ -637,6 +895,15 @@ def load_generated(n, cap_per_concept=6, exclude=frozenset()):
         if not (q.get("stem") and q.get("correct_answer") and len(q.get("options") or []) == 4):
             continue
         if gen_sig(q) in exclude:
+            continue
+        if difficulty is not None:
+            d = q.get("difficulty") or (q.get("tag") or {}).get("difficulty") or 0
+            if (d < 3) if difficulty >= 3 else (d != difficulty):
+                continue
+        # Restrict to the concepts that belong to one SYLLABUS topic. Like the difficulty filter
+        # above, this has to happen BEFORE the round-robin deal — filtering a dealt list is what
+        # produced the clustering this file has already been fixed for once.
+        if only_concepts and (q.get("concept") or "?") not in only_concepts:
             continue
         if not numbers_agree(q):
             continue      # Hindi template dropped the rule ("twice its position") — see numbers_agree
@@ -667,22 +934,129 @@ def load_generated(n, cap_per_concept=6, exclude=frozenset()):
     order = sorted(buckets, key=lambda k: -len(buckets[k]))
     # Raise the per-concept cap only as far as the request forces. With 11 concepts a cap of 3
     # tops out at 33, so a 35-question Part III silently came back short — the paper printed 148.
-    if order:
+    if order and hard_cap is None:
         cap_per_concept = max(cap_per_concept, -(-n // len(order)))
-    # Deal round-robin so the section stays varied. The cap is a PREFERENCE, not a wall: once
+    # Deal round-robin so the section stays varied. The soft cap is a PREFERENCE, not a wall: once
     # every concept has contributed cap_per_concept, keep dealing rather than return a short
-    # section — a 146-question paper is a worse outcome than a slightly uneven one.
+    # section — a 146-question paper is a worse outcome than a slightly uneven one. `hard_cap` IS
+    # a wall, and the caller relaxes it a step at a time if the section cannot be filled.
     out, rnd, deepest = [], 0, max((len(v) for v in buckets.values()), default=0)
     while len(out) < n and rnd < deepest:
+        progress = False
         for k in order:
             if len(out) >= n:
                 break
+            if hard_cap is not None and concept_used is not None and concept_used[k] >= hard_cap:
+                continue
             if len(buckets[k]) > rnd:
                 out.append(buckets[k][rnd])
+                progress = True
+                if concept_used is not None:
+                    concept_used[k] += 1
         rnd += 1
-        if rnd == cap_per_concept and len(out) < n:
+        if not progress:
+            break                       # every remaining concept is at its cap — let the caller
+            #                             decide whether to relax it rather than spin to `deepest`
+        if hard_cap is None and rnd == cap_per_concept and len(out) < n:
             print(f"  note: reasoning spread exceeded {cap_per_concept}/concept to fill the section")
     return out[:n]
+
+
+# One concept took 16 of Part III's 50 questions in the paper One Step read, and the owner's words
+# were "it contains only one topic". Four is about a tenth of the section and matches what a real
+# BSSC Part III looks like across concepts.
+REASONING_CONCEPT_CAP = 4
+
+
+def generate_reasoning_section(want, mix, gen_taken, cap=REASONING_CONCEPT_CAP):
+    """Part III, drawn to the SYLLABUS topic quotas with the per-concept cap kept inside each.
+
+    The cap alone made the section even across our 19 CONCEPTS, which is not the same thing as
+    even across खंड (ग)'s 12 named TOPICS — four of our concepts sit inside अंक गणितीय तर्कशक्ति,
+    so at 4 apiece that one topic took 14 questions against a 6-question target while संबंध
+    अवधारणा took 1 against 4. Quotas come first now; the cap still stops any single concept
+    dominating the topic it belongs to.
+    """
+    from collections import Counter
+    import syllabus_blueprint as SB
+    want_by_topic = SB.quotas("Reasoning", want)
+    if not want_by_topic:
+        return _generate_reasoning_flat(want, mix, gen_taken, cap)
+    used, out = Counter(), []
+    # Deal band by band inside each topic, so the difficulty mix survives the topic quotas.
+    for d in (3, 2, 1):
+        band = mix.get(d, 0)
+        if band <= 0:
+            continue
+        share = {t: max(1, round(band * want_by_topic[t] / want)) for t in want_by_topic}
+        for topic in sorted(share, key=lambda t: -want_by_topic[t]):
+            got_t = sum(1 for q in out if SB.topic_of("Reasoning", q.get("concept")) == topic)
+            need = min(share[topic], want_by_topic[topic] - got_t, want - len(out))
+            if need <= 0:
+                continue
+            picked = load_generated(need, exclude=gen_taken, difficulty=d,
+                                    concept_used=used, hard_cap=cap,
+                                    only_concepts=_concepts_for("Reasoning", topic))
+            gen_taken.update(gen_sig(q) for q in picked)
+            out += picked
+    # Top up anything the quotas could not reach rather than print a short section, then say so.
+    if len(out) < want:
+        short = want - len(out)
+        for step in range(8):
+            extra = load_generated(want - len(out), exclude=gen_taken,
+                                   concept_used=used, hard_cap=cap + step)
+            gen_taken.update(gen_sig(q) for q in extra)
+            out += extra
+            if len(out) >= want:
+                break
+        print(f"  note: Part III topped up {short} question(s) outside the syllabus quotas")
+    for line in SB.report("Reasoning", out[:want]):
+        print(line)
+    return out[:want]
+
+
+def _concepts_for(section, topic_en):
+    import syllabus_blueprint as SB
+    for t in SB.topics(section):
+        if t["en"] == topic_en:
+            return set(t.get("concepts") or [])
+    return set()
+
+
+def _generate_reasoning_flat(want, mix, gen_taken, cap=REASONING_CONCEPT_CAP):
+    """Part III, drawn to the difficulty mix AND to a per-concept ceiling for the whole section.
+
+    The cap is shared across the three band draws through one Counter, so a concept cannot spend
+    its allowance three times over. It is relaxed one step at a time if the pool genuinely cannot
+    fill the section — an uneven paper beats a 147-question paper — and the relaxation is PRINTED,
+    because a cap that quietly gives up is the same as no cap at all.
+
+    The spread is printed on every build. The clustering that produced this function was invisible
+    for two deliveries precisely because nothing ever stated what the section had actually drawn.
+    """
+    from collections import Counter
+    used, out = Counter(), []
+    for step in range(12):
+        for d in (3, 2, 1):
+            if len(out) >= want:
+                break
+            short = min(mix.get(d, 0), want - len(out)) if step == 0 else want - len(out)
+            if short <= 0:
+                continue
+            got = load_generated(short, exclude=gen_taken, difficulty=d,
+                                 concept_used=used, hard_cap=cap + step)
+            gen_taken.update(gen_sig(q) for q in got)
+            out += got
+        if len(out) >= want:
+            break
+        if step == 0 or len(out) < want:
+            print(f"  note: Part III could not fill at {cap + step}/concept "
+                  f"({len(out)} of {want}) — relaxing the cap to {cap + step + 1}")
+    spread = Counter(q.get("concept") or "?" for q in out)
+    print(f"  Part III spread: {len(out)} questions over {len(spread)} concepts, "
+          f"most-used {max(spread.values(), default=0)} — "
+          + ", ".join(f"{k} {v}" for k, v in spread.most_common()))
+    return out[:want]
 
 
 def main():
@@ -1060,12 +1434,18 @@ def main():
                 # institute's own logo — and the source is not what the reviewer is being asked
                 # to judge.
                 block += f'<span class="dbadge">{dlab[0]} &middot; {dlab[1]}</span>' 
+            # The list forms build their items on separate LINES, and HTML collapses those to
+            # spaces — so a four-row match-the-pairs printed as one unbroken paragraph
+            # ("A. 368 — freedom of conscience ... B. 24 — the Finance Commission C. 17 — ...").
+            # The question was answerable and genuinely hard to read, which is a bad combination on
+            # a paper whose whole purpose is to have its difficulty judged.
+            lines = lambda t: t.replace("\n", "<br>")
             if hi_stem:
-                block += (f'<div class="hi"><span class="n">{i}.</span> {esc(hi_stem)}</div>'
+                block += (f'<div class="hi"><span class="n">{i}.</span> {lines(esc(hi_stem))}</div>'
                           f'<div class="ops">{oh_html}</div>')
             if en_stem:
                 lead = "" if hi_stem else f'<span class="n">{i}.</span> '
-                block += (f'<div class="en">{lead}{esc(en_stem)}</div>'
+                block += (f'<div class="en">{lead}{lines(esc(en_stem))}</div>'
                           f'<div class="ops">{oe_html}</div>')
             qh.append(block + "</div>")
             keys.append(f'<span class="k">{i}. <b>{q["correct_answer"]}</b>'

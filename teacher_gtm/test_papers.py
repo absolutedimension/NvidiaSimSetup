@@ -79,6 +79,20 @@ def structural(tag, qs, key, gen):
     ok &= check("no Latin stranded inside Devanagari", not mixed, str(mixed[:8]))
     empty = [q["n"] for q in qs if not q["opts"]]
     ok &= check("no question printed without options", not empty, str(empty[:8]))
+    # A question that DEFINES its own notation must still carry that notation after rendering.
+    # mathify strips `$` as a LaTeX delimiter, so a coded-inequality question using it printed
+    # "'A  B' means 'A is smaller than B'" — the symbol silently deleted from both the legend and
+    # the statements, leaving the question unanswerable. Nothing above could see that: the stem was
+    # present, the options were four, the key letter existed. Check the legend itself.
+    legend_bad = []
+    for q in qs:
+        if "the symbols are used as" not in q["text"]:
+            continue
+        syms = re.findall(r"'A (\S+) B' means", q["text"])
+        if len(syms) != 5 or len(set(syms)) != 5:
+            legend_bad.append(q["n"])
+    ok &= check("every symbol legend defines 5 distinct symbols", not legend_bad,
+                str(legend_bad[:8]))
     print(f"        generated (asterisked): {len(gen)} of 150")
     return ok
 
@@ -277,6 +291,10 @@ def resolve(tag, qs, key, gen):
         if q["n"] not in gen or not q["opts"]:
             continue
         en = q["en"] or ""
+        # The new General Studies pair forms put the CONTENT in the options and leave the stem a
+        # single question line, so a solver handed the stem alone can see nothing to check. Stash
+        # the English options against the stem before dispatching.
+        _LAST_OPTIONS[en] = [t for _, t in q["opts"][-1]]
         for name, fn in SOLVERS:
             try:
                 want = fn(en)
@@ -297,6 +315,25 @@ def resolve(tag, qs, key, gen):
                 cands.add(norm(k))
                 cands.add(norm(HI_DIR.get(k.strip(), k)))
             wants = want if isinstance(want, set) else {want}
+            # A solver may only be able to RULE AN OPTION OUT rather than name the answer — the
+            # error-spot form can prove the shown value is wrong without knowing which named
+            # mistake produced it. "__NOT__x" asserts the key must not be x, which still fails
+            # loudly on a paper that keys "there is no mistake" beside a wrong value.
+            neg = {w[len("__NOT__"):] for w in wants if str(w).startswith("__NOT__")}
+            if neg:
+                norm0 = lambda t: re.sub(r"\s+", "", str(t)).lower().rstrip(".")
+                letter0 = key.get(q["n"])
+                keyed0 = [dict(g).get(letter0, "") for g in q["opts"]]
+                # NOT `checked += 1` — this question was already counted a few lines above, and
+                # counting it twice printed "re-solved 156 of 150", a coverage figure that cannot
+                # be true and would have quietly hidden six genuinely unread questions the day
+                # some other solver went silent.
+                if any(norm0(k0) == norm0(n0) for k0 in keyed0 for n0 in neg):
+                    bad.append((q["n"], name, ["NOT " + n0 for n0 in neg],
+                                " / ".join(filter(None, keyed0)), en[:70]))
+                else:
+                    agree += 1
+                break
             if len(wants) > 1:
                 # Ambiguity only HURTS if two defensible answers are both on offer. If the options
                 # contain just one of them, the option set disambiguates and the question is sound.
@@ -739,7 +776,10 @@ def solve_bodmas(en):
     e = m.group(1)
     if not re.fullmatch(r"[\d\s()x^%+\-/of.]*", e.replace("of", "of")):
         return None
-    e = re.sub(r"\((\d+)\)\^2", r"(\1**2)", e)
+    # On the PAGE the exponent is a <sup> tag, and stripping the tags leaves "(12) 2" with no
+    # caret at all — so the caret form never matched anything the paper actually prints, and
+    # twelve simplification questions per paper went unread while the harness reported coverage.
+    e = re.sub(r"\((\d+)\)\s*\^?\s*2\b", r"(\1**2)", e)
     e = re.sub(r"(\d+)% of (\d+)", r"(_F(\1,100)*\2)", e)
     e = e.replace("x", "*")
     try:
@@ -774,10 +814,16 @@ def _gk_tables():
                                / "question_bank_engine"))
         from qbank import staticgkgen as _G
         from qbank import polity_tables as _P
+        from qbank import science_tables as _S
         # The solver must know EVERY table the forms draw from, or it reports "None correct" on a
         # correctly-matched pair — which reads as a wrong key rather than a blind checker.
         _GK_TABLES = {"cap": _G.STATE_CAPITAL, "dance": _G.DANCE_STATE, "river": _G.RIVER_ORIGIN,
-                      "article": _P.ARTICLE_SUBJECT, "amendment": _P.AMENDMENT_DID}
+                      "article": _P.ARTICLE_SUBJECT, "amendment": _P.AMENDMENT_DID,
+                      # Chemistry joins Part II once CHEM_REVIEWED is set. Without it here the
+                      # statement solvers return "None correct" on a correctly-keyed chemistry
+                      # question, which reads as a wrong key rather than a blind checker.
+                      "elem_sym": _S.ELEMENT_SYMBOL, "elem_no": _S.ELEMENT_ATOMIC_NUMBER,
+                      "formula": _S.COMPOUND_FORMULA}
     return _GK_TABLES
 
 
@@ -798,6 +844,15 @@ def _stmt_true(line):
     m = re.match(r"The (.+?) Amendment (.+?)\.$", line)
     if m:
         return t["amendment"].get(m.group(1).strip()) == m.group(2).strip()
+    m = re.match(r"The chemical symbol of (.+?) is (.+?)\.$", line)
+    if m:
+        return t["elem_sym"].get(m.group(1).strip()) == m.group(2).strip()
+    m = re.match(r"The atomic number of (.+?) is (.+?)\.$", line)
+    if m:
+        return t["elem_no"].get(m.group(1).strip()) == m.group(2).strip()
+    m = re.match(r"The chemical formula of (.+?) is (.+?)\.$", line)
+    if m:
+        return t["formula"].get(m.group(1).strip()) == m.group(2).strip()
     return None
 
 
@@ -1142,6 +1197,762 @@ def solve_two_statement(en):
 
 SOLVERS = ([("static-gk", solve_static_gk),
             ("gs-two-statement", solve_two_statement)] + SOLVERS)
+
+
+# ── खंड (ग): syllogism, seating, coded inequality, calendar, dice ───────────────────────────────
+# Five new question families, five new independent routes. Each of these deliberately uses a
+# DIFFERENT algorithm from the builder that produced the question, not merely a second copy of the
+# same one — a re-implementation of the same idea agrees with itself even when the idea is wrong:
+#
+#   syllogism     builder reasons about the maximal/minimal model; this ENUMERATES every model
+#   seating       builder derives clues from an arrangement; this searches every arrangement
+#   inequality    builder composes relations symbolically; this assigns NUMBERS and tests them
+#   calendar      builder counts odd days by hand; this uses `datetime`
+#   dice          builder deduces by elimination; this tries all 15 pairings of six faces
+#
+# Where a question could admit more than one answer, these return a SET, so resolve()'s ambiguity
+# check sees it. A seating puzzle with two valid arrangements and a dice puzzle with two valid
+# pairings are both defects that no structural check can see.
+
+_FOLLOW_OPTS = {(True, False): "Only conclusion I follows",
+                (False, True): "Only conclusion II follows",
+                (True, True): "Both I and II follow",
+                (False, False): "Neither I nor II follows"}
+
+_SYL_SENT = re.compile(r"\b(All|No|Some) ([A-Za-z]+) are (not )?([A-Za-z]+)\.")
+
+
+def _syl_parse(text):
+    """-> [(kind, term_index, term_index)] plus the term registry, in order of appearance."""
+    terms, out = [], []
+    for kind, x, neg, y in _SYL_SENT.findall(text):
+        for t in (x, y):
+            if t not in terms:
+                terms.append(t)
+        k = {"All": "all", "No": "no", "Some": "some_not" if neg else "some"}[kind]
+        out.append((k, terms.index(x), terms.index(y)))
+    return out, terms
+
+
+def _syl_holds(model, st):
+    kind, x, y = st
+    if kind == "all":
+        return not any((c >> x & 1) and not (c >> y & 1) for c in model)
+    if kind == "no":
+        return not any((c >> x & 1) and (c >> y & 1) for c in model)
+    if kind == "some":
+        return any((c >> x & 1) and (c >> y & 1) for c in model)
+    return any((c >> x & 1) and not (c >> y & 1) for c in model)
+
+
+def solve_syllogism(en):
+    """Enumerate EVERY arrangement of the terms; a conclusion follows iff it survives all of them.
+
+    2^(2^k - 1) models — 128 for three terms, 32768 for four. Brute force is affordable here
+    because a paper carries a handful of these, and it is the point: the builder reaches its answer
+    by an argument about which model is decisive, and an argument can be wrong in a way that
+    enumeration cannot.
+    """
+    m = re.search(r"Statements: (.+?) Conclusions: I\. (.+?) II\. (.+?) Which of the conclusions",
+                  en)
+    if not m:
+        return None
+    sts, terms = _syl_parse(m.group(1))
+    if not sts:
+        return None
+    concls = []
+    for part in (m.group(2), m.group(3)):
+        got = _SYL_SENT.findall(part)
+        if len(got) != 1:
+            return None
+        kind, x, neg, y = got[0]
+        if x not in terms or y not in terms:
+            return None
+        concls.append(({"All": "all", "No": "no",
+                        "Some": "some_not" if neg else "some"}[kind],
+                       terms.index(x), terms.index(y)))
+    k = len(terms)
+    if k > 4:
+        return None
+    cells = list(range(1, 1 << k))
+    truth, found = [True, True], False
+    for mask in range(1, 1 << len(cells)):
+        model = [cells[i] for i in range(len(cells)) if mask >> i & 1]
+        if any(not any(c >> t & 1 for c in model) for t in range(k)):
+            continue                                    # a term with no members
+        if not all(_syl_holds(model, s) for s in sts):
+            continue
+        found = True
+        for i, c in enumerate(concls):
+            if not _syl_holds(model, c):
+                truth[i] = False
+        if not any(truth):
+            break                                       # both already refuted
+    if not found:
+        return None                                     # premises cannot hold together
+    return _FOLLOW_OPTS[(truth[0], truth[1])]
+
+
+# Circular seating: "facing the centre" is the printed convention, so the left hand points
+# clockwise and the right hand anticlockwise. Both the builder and this solver apply that same
+# stated convention — what is being cross-checked is the ARRANGEMENT, which is where the work is.
+def _seat_parse(en):
+    m = re.match(r"(.+?) (?:are|is) sitting (in a row|around a circular table facing the centre)\.",
+                 en)
+    if not m:
+        return None
+    names = [x.strip() for x in re.split(r",| and ", m.group(1)) if x.strip()]
+    circular = m.group(2).startswith("around")
+    rest = en[m.end():]
+    clues = []
+    for p, side in re.findall(r"(\w+) sits at the extreme (left|right) end\.", rest):
+        clues.append(("end", p, side))
+    for p, k, side in re.findall(r"(\w+) sits (\d+)(?:st|nd|rd|th) from the (left|right) end\.",
+                                rest):
+        clues.append(("from_end", p, int(k), side))
+    for p, side, q in re.findall(r"(\w+) sits immediately to the (left|right) of (\w+)\.", rest):
+        clues.append(("next_to", p, q, side))
+    for m2 in re.finditer(r"There are exactly (\d+) persons between (\w+) and (\w+)\.", rest):
+        clues.append(("between", m2.group(2), m2.group(3), int(m2.group(1))))
+    for p, word, side, q in re.findall(r"(\w+) sits (second|third) to the (left|right) of (\w+)\.",
+                                       rest):
+        clues.append(("nth_of", p, {"second": 2, "third": 3}[word], side, q))
+    return names, circular, clues, rest
+
+
+def _seat_ok(clue, pos, n, circular):
+    kind = clue[0]
+    if kind == "end":
+        _, p, side = clue
+        return pos[p] == (0 if side == "left" else n - 1)
+    if kind == "from_end":
+        _, p, k, side = clue
+        return pos[p] == (k - 1 if side == "left" else n - k)
+    if kind == "next_to":
+        _, p, q, side = clue
+        # The two tables do NOT share a convention, and treating them as though they did is what
+        # this solver got wrong first time round: in a ROW, "immediately to the right" is the next
+        # seat rightwards (+1); around a circle with everyone FACING THE CENTRE, a person's right
+        # hand points anticlockwise, so the same words mean the PREVIOUS seat (-1). One sign, 115
+        # questions reported as wrongly keyed when the key was right.
+        step = (1 if side == "left" else -1) if circular else (-1 if side == "left" else 1)
+        return pos[p] == (pos[q] + step) % n if circular else pos[p] == pos[q] + step
+    if kind == "between":
+        _, p, q, m = clue
+        return abs(pos[p] - pos[q]) == m + 1
+    _, p, k, side, q = clue
+    return pos[p] == (pos[q] + (k if side == "left" else -k)) % n
+
+
+def solve_seating(en):
+    """Search every arrangement of the named people and answer from the ones that fit.
+
+    Returns a SET, so a clue set that leaves two arrangements standing is reported as ambiguous
+    rather than silently agreeing with whichever one the builder happened to start from.
+    """
+    import itertools
+    got = _seat_parse(en)
+    if not got:
+        return None
+    names, circular, clues, rest = got
+    n = len(names)
+    if not clues or n > 8:
+        return None
+    ask_end = re.search(r"Who is sitting at the extreme (left|right) end\?", rest)
+    ask_from = re.search(r"Who is sitting (third|second) from the (left|right) end\?", rest)
+    ask_rel = re.search(r"Who sits (second|third) to the (left|right) of (\w+)\?", rest)
+    if not (ask_end or ask_from or ask_rel):
+        return None
+    out = set()
+    for perm in itertools.permutations(names):
+        pos = {p: i for i, p in enumerate(perm)}
+        if not all(_seat_ok(c, pos, n, circular) for c in clues):
+            continue
+        if ask_end:
+            out.add(perm[0] if ask_end.group(1) == "left" else perm[-1])
+        elif ask_from:
+            k = {"second": 2, "third": 3}[ask_from.group(1)]
+            out.add(perm[k - 1] if ask_from.group(2) == "left" else perm[n - k])
+        else:
+            k = {"second": 2, "third": 3}[ask_rel.group(1)]
+            i = pos[ask_rel.group(3)]
+            out.add(perm[(i + (k if ask_rel.group(2) == "left" else -k)) % n])
+    return out or None
+
+
+def solve_coded_inequality(en):
+    """Assign actual NUMBERS to the letters and see which conclusion survives every assignment.
+
+    The builder reaches its answer by composing relation symbols ('>' after '>=' is '>'); this
+    never composes anything. It gives each letter a value from 1..n, keeps the assignments that
+    satisfy the statements, and asks whether a conclusion holds in all of them. Any weak ordering
+    of n letters is representable in that range, so the search is complete — and it shares no
+    reasoning with the code that wrote the question.
+    """
+    import itertools
+    if "Conclusions:" not in en or "means" not in en:
+        return None
+    legend = {}
+    for sym, phrase in re.findall(r"'A (\S+) B' means 'A (is [a-z ]+?) B'", en):
+        legend[sym] = {"is greater than": "gt", "is smaller than": "lt", "is equal to": "eq",
+                       "is either greater than or equal to": "ge",
+                       "is either smaller than or equal to": "le"}.get(phrase.strip())
+    if len(legend) < 3 or None in legend.values():
+        return None
+    m = re.search(r"Statements: (.+?)\. Conclusions: I\. (\S+ \S+ \S+) II\. (\S+ \S+ \S+) ", en)
+    if not m:
+        return None
+    def link(s):
+        p = s.strip().split()
+        return (p[0], legend.get(p[1]), p[2]) if len(p) == 3 else None
+    sts = [link(x) for x in m.group(1).split(",")]
+    cs = [link(m.group(2)), link(m.group(3))]
+    if any(x is None or x[1] is None for x in sts + cs):
+        return None
+    letters = []
+    for a, _, b in sts + cs:
+        for t in (a, b):
+            if t not in letters:
+                letters.append(t)
+    n = len(letters)
+    if n > 7:
+        return None
+    test = {"gt": lambda u, v: u > v, "lt": lambda u, v: u < v, "eq": lambda u, v: u == v,
+            "ge": lambda u, v: u >= v, "le": lambda u, v: u <= v}
+    truth, found = [True, True], False
+    for vals in itertools.product(range(1, n + 1), repeat=n):
+        v = dict(zip(letters, vals))
+        if not all(test[r](v[a], v[b]) for a, r, b in sts):
+            continue
+        found = True
+        for i, (a, r, b) in enumerate(cs):
+            if not test[r](v[a], v[b]):
+                truth[i] = False
+        if not any(truth):
+            break
+    if not found:
+        return None
+    return _FOLLOW_OPTS[(truth[0], truth[1])]
+
+
+_MONTH_N = {m: i + 1 for i, m in enumerate(
+    ["January", "February", "March", "April", "May", "June",
+     "July", "August", "September", "October", "November", "December"])}
+_WD = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+_WEEK = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+
+def _date(txt):
+    m = re.match(r"(\d{1,2}) ([A-Z][a-z]+) (\d{4})", txt.strip())
+    if not m or m.group(2) not in _MONTH_N:
+        return None
+    import datetime
+    try:
+        return datetime.date(int(m.group(3)), _MONTH_N[m.group(2)], int(m.group(1)))
+    except ValueError:
+        return None
+
+
+def solve_calendar(en):
+    """`datetime` against a builder that counts odd days by hand — two different routes to a day."""
+    import datetime
+    m = re.match(r"Today is (\w+day)\. What day of the week will it be after (\d+) days\?", en)
+    if m:
+        return _WEEK[(_WEEK.index(m.group(1)) + int(m.group(2))) % 7]
+    m = re.match(r"What was/will be the day of the week on (.+?)\?", en)
+    if m:
+        d = _date(m.group(1))
+        return _WD[d.weekday()] if d else None
+    m = re.match(r"(.+?) was a (\w+day)\. What day of the week will (.+?) be\?", en)
+    if m:
+        d0, d1 = _date(m.group(1)), _date(m.group(3))
+        if not (d0 and d1) or _WD[d0.weekday()] != m.group(2):
+            return None                       # the stated day is wrong — say nothing, fail loudly
+        return _WD[d1.weekday()]
+    m = re.match(r"Which of the following years will have exactly the same calendar as the year "
+                 r"(\d{4})\?", en)
+    if m:
+        y = int(m.group(1))
+        leap = lambda t: t % 4 == 0 and (t % 100 != 0 or t % 400 == 0)
+        for t in range(y + 1, y + 100):
+            if (datetime.date(t, 1, 1).weekday() == datetime.date(y, 1, 1).weekday()
+                    and leap(t) == leap(y)):
+                return str(t)
+    return None
+
+
+def solve_dice(en):
+    """Try all 15 ways to pair six faces and keep the pairings the statements allow.
+
+    The builder deduces the missing pair by elimination; this never eliminates anything. If more
+    than one pairing survives, the answer comes back as a set and the question is reported
+    ambiguous — which is the failure elimination cannot see, because elimination assumes the
+    pairing it started from.
+    """
+    if "faces numbered 1 to 6" not in en:
+        return None
+    opp_facts = [(int(a), int(b)) for a, b in
+                 re.findall(r"(\d) is opposite (\d)", en)]
+    # Match the NUMBER LIST itself rather than stopping at the first punctuation. A lazy
+    # "up to the next comma" read captured only the first face of "1, 2, 5 and 6", so every
+    # adjacency question failed its constraint, no pairing survived, and the solver went quiet on
+    # three of the four difficulty bands while reporting nothing wrong.
+    adj_of = [(int(m.group(1)), [int(x) for x in re.findall(r"\d+", m.group(2))])
+              for m in re.finditer(r"faces adjacent to (\d) are "
+                                   r"((?:\d+(?:,\s*|\s+and\s+)?)+)", en)]
+    ask_one = re.search(r"Which number is on the face opposite to (\d)\?", en)
+    ask_sum = re.search(r"SUM of the numbers on the faces opposite to (\d) and (\d)\?", en)
+    if not (ask_one or ask_sum) or not (opp_facts or adj_of):
+        return None
+
+    def pairings(rest):
+        if not rest:
+            yield []
+            return
+        a = rest[0]
+        for i in range(1, len(rest)):
+            for tail in pairings(rest[1:i] + rest[i + 1:]):
+                yield [(a, rest[i])] + tail
+
+    out = set()
+    for pr in pairings([1, 2, 3, 4, 5, 6]):
+        opp = {}
+        for a, b in pr:
+            opp[a], opp[b] = b, a
+        if any(opp[a] != b for a, b in opp_facts):
+            continue
+        if any(sorted(x for x in range(1, 7) if x != f and x != opp[f]) != sorted(lst)
+               for f, lst in adj_of):
+            continue
+        out.add(str(opp[int(ask_one.group(1))]) if ask_one else
+                str(opp[int(ask_sum.group(1))] + opp[int(ask_sum.group(2))]))
+    return out or None
+
+
+def solve_alnum_series(en):
+    """'H5, L7, P8, T10, ?' — a letter component and a number component moving independently.
+
+    solve_letter_series handles this form only when BOTH steps are constant, so the alternating and
+    growing number patterns (difficulties 2 and 3 of _b_alnum_series) went unread — four questions
+    a paper that the harness reported as coverage rather than as failures. The letter step is
+    always constant here, taken mod 26 so a series running BACKWARDS through A is still seen as
+    constant; the number step may be constant, alternating, or growing by a fixed amount.
+    """
+    m = re.search(r"series\?\s*(.+?)\s*\?", en, re.I | re.S)
+    if not m:
+        return None
+    terms = [t for t in re.split(r"[,\s]+", m.group(1)) if re.fullmatch(r"[A-Z]+\d+", t)]
+    if len(terms) < 4:
+        return None
+    heads = [t.rstrip("0123456789") for t in terms]
+    nums = [int(t[len(h):]) for t, h in zip(terms, heads)]
+    if len({len(h) for h in heads}) != 1:
+        return None
+    steps = []
+    for i in range(len(heads[0])):
+        g = {(ord(heads[j + 1][i]) - ord(heads[j][i])) % 26 for j in range(len(heads) - 1)}
+        if len(g) != 1:
+            return None
+        steps.append(g.pop())
+    nxt = "".join(chr((ord(heads[-1][i]) - 65 + steps[i]) % 26 + 65)
+                  for i in range(len(heads[0])))
+    g = [nums[i + 1] - nums[i] for i in range(len(nums) - 1)]
+    if len(set(g)) == 1:                                    # constant
+        step = g[0]
+    elif len(g) >= 3 and g[0] == g[2]:                      # alternating: the next gap is g[1]
+        step = g[1]
+    elif len(g) >= 3 and (g[1] - g[0]) == (g[2] - g[1]):    # gap grows by a constant
+        step = g[-1] + (g[1] - g[0])
+    else:
+        return None
+    return f"{nxt}{nums[-1] + step}"
+
+
+# ── the four new General Studies styles ─────────────────────────────────────────────────────────
+# Same route as the statement solvers above: every claim is looked back up in the fact TABLES, so
+# what is checked is the builder's COMPOSITION against the data. Importing the facts is not
+# importing the logic — the builder decides which pairs to show and which to falsify, and that is
+# exactly what these re-derive.
+
+_PAIR_LINE = re.compile(r"(.+?)\s+—\s+(.+)")
+
+
+def _pair_true(text):
+    """Is 'Kathak — Uttar Pradesh' a real pair? None when the key is not in exactly one table.
+
+    Refusing an ambiguous key rather than taking the first table that has it is the lesson from
+    solve_static_gk: looking a capital up in STATE_CAPITAL when the question came from
+    COUNTRY_CAPITAL answered 27 correct questions wrongly and reported them as key errors. A
+    checker that returns confident wrong answers is worse than one that returns none.
+    """
+    m = _PAIR_LINE.match(text.strip())
+    if not m:
+        return None
+    k, v = m.group(1).strip(), m.group(2).strip().rstrip(".")
+    k = re.sub(r"^Article\s+", "", k)
+    found = [t[k] for t in _gk_tables().values() if k in t]
+    if not found:
+        return None                       # key in no table — refuse rather than guess
+    # A key can legitimately live in SEVERAL tables: "Argon" maps to Ar in ELEMENT_SYMBOL and to
+    # 18 in ELEMENT_ATOMIC_NUMBER, and BOTH "Argon — Ar" and "Argon — 18" are correctly matched.
+    # Requiring exactly one table made the solver refuse every chemistry pair question. OR-ing
+    # across the tables is sound here in a way the old COUNTRY_CAPITAL bug was not: that one
+    # picked ONE possibly-wrong table and answered confidently, whereas this asks whether the
+    # printed pairing appears anywhere, which is exactly what the question means.
+    return any(f == v for f in found)
+
+
+def _solve_pair_pick(en, q_text, want_true):
+    """Shared by the correctly/NOT-correctly matched forms. Returns a SET, so a question with two
+    true pairs (or two false ones) is reported as ambiguous rather than quietly agreeing."""
+    if q_text not in en:
+        return None
+    opts = _LAST_OPTIONS.get(en)
+    if not opts:
+        return None
+    verdicts = [(o, _pair_true(o)) for o in opts]
+    if any(v is None for _, v in verdicts):
+        return None
+    hits = {o for o, v in verdicts if v is want_true}
+    return hits or None
+
+
+def solve_correct_pair(en):
+    return _solve_pair_pick(en, "Which of the following pairs is correctly matched?", True)
+
+
+def solve_wrong_pair(en):
+    return _solve_pair_pick(en, "Which of the following pairs is NOT correctly matched?", False)
+
+
+def solve_which_statement(en):
+    if "Which one of the following statements is correct?" not in en:
+        return None
+    opts = _LAST_OPTIONS.get(en)
+    if not opts:
+        return None
+    verdicts = [(o, _stmt_true(o.strip().rstrip(".") + ".")) for o in opts]
+    if any(v is None for _, v in verdicts):
+        return None
+    hits = {o for o, v in verdicts if v}
+    return hits or None
+
+
+_COUNT_NAME = {0: "None of them", 1: "Only one", 2: "Only two", 3: "All three"}
+
+
+def solve_count_statements(en):
+    if "How many of the above statements are correct?" not in en:
+        return None
+    lines = re.findall(r"(?:^|\s)([123])\.\s*(.+?)(?=\s+[123]\.|\s*How many of the above)", en)
+    if len(lines) != 3:
+        return None
+    truth = [_stmt_true(t.strip()) for _, t in lines]
+    if None in truth:
+        return None
+    return _COUNT_NAME[sum(truth)]
+
+
+# Three of these solvers need the printed OPTIONS, not just the stem, because that is where the
+# content lives in the new pair forms. resolve() hands solvers the stem alone, so the options are
+# stashed here as each question is read. Keyed on the stem, which is unique within a paper.
+_LAST_OPTIONS = {}
+
+
+# ── symbol substitution and word formation ──────────────────────────────────────────────────────
+
+_OPFN = {"+": lambda a, b: a + b, "-": lambda a, b: a - b,
+         "×": lambda a, b: a * b, "÷": lambda a, b: a / b}
+
+
+def _sub_eval(expr, mapping):
+    """Substitute, then let PYTHON apply the precedence.
+
+    The builder walks the operators by hand, doing × and ÷ in a first pass. This hands the whole
+    thing to Python's own parser instead, so the two only agree if that hand-written walk is
+    correct — which is the entire reason for not sharing an evaluator.
+    """
+    toks = expr.strip().split()
+    if len(toks) < 3 or len(toks) % 2 == 0:
+        return None
+    py = toks[0]
+    for i in range(1, len(toks), 2):
+        op = mapping.get(toks[i])
+        if op is None or not re.fullmatch(r"\d+", toks[i + 1]):
+            return None
+        py += {"+": "+", "-": "-", "×": "*", "÷": "/"}[op] + f"_F({toks[i + 1]})"
+    try:
+        return eval(f"_F({py})", {"_F": _F, "__builtins__": {}})
+    except Exception:
+        return None
+
+
+def solve_symbol_substitution(en):
+    """Returns the value, or — for the 'which equation is correct' form — the set of true ones."""
+    legend = dict(re.findall(r"'(\S)' stands for '(\S)'", en))
+    if len(legend) != 4:
+        return None
+    if "which of the following equations is correct" in en:
+        opts = _LAST_OPTIONS.get(en)
+        if not opts:
+            return None
+        good = set()
+        for o in opts:
+            if "=" not in o:
+                return None
+            lhs, rhs = o.rsplit("=", 1)
+            v = _sub_eval(lhs, legend)
+            if v is None or not re.fullmatch(r"-?\d+", rhs.strip()):
+                return None
+            if v == int(rhs.strip()):
+                good.add(o)
+        return good or None
+    m = re.search(r"what is the value of (.+?)\?", en)
+    if not m:
+        return None
+    v = _sub_eval(m.group(1), legend)
+    if v is None or v.denominator != 1:
+        return None
+    return str(v.numerator)
+
+
+def solve_word_formation(en):
+    """Re-derive which option is (not) formable straight from the PRINTED word and options.
+
+    This shares its rule with the builder — letter containment is what "can be formed" means, so
+    there is no second definition to reach for. What it independently checks is the COMPOSITION:
+    that the word printed on the page is the word the answer was computed against, and that the
+    option keyed is the one the printed letters actually single out. That is the step where a
+    generator goes wrong, and it returns a SET so an option list with two valid answers is
+    reported as ambiguous rather than quietly matched.
+    """
+    m = re.search(r"select the word which (cannot|can) be formed using the letters of the given "
+                  r"word\s*:\s*([A-Z]+)", en)
+    if not m:
+        return None
+    want_can, source = m.group(1) == "can", m.group(2)
+    opts = _LAST_OPTIONS.get(en)
+    if not opts or not all(re.fullmatch(r"[A-Z]+", o.strip()) for o in opts):
+        return None
+    src = Counter(source)
+    hits = {o for o in opts
+            if (all(src[c] >= n for c, n in Counter(o.strip()).items())) is want_can}
+    return hits or None
+
+
+# ── number grid / matrix ────────────────────────────────────────────────────────────────────────
+# This one INFERS the rule instead of being told it: it knows nothing about which rule the builder
+# used, searches a family, and returns every answer the surviving rules give. That makes it both
+# the independent check AND the ambiguity detector — if two simple rules explain the shown columns
+# and disagree about the missing one, the set comes back with two members and resolve() reports the
+# question as having two defensible answers.
+#
+# The family here is deliberately WIDER than the builder's. A grid the builder thought unambiguous
+# because it only compared its own ten rules can still be read another way by a candidate, and a
+# checker that only knows what the generator knows cannot catch that.
+
+_GRID_FAMILY = [
+    lambda a, b, c: a + b + c,           lambda a, b, c: a * b + c,
+    lambda a, b, c: a * b - c,           lambda a, b, c: b * c - a,
+    lambda a, b, c: b * c + a,           lambda a, b, c: a * c - b,
+    lambda a, b, c: a * c + b,           lambda a, b, c: a * a + b * b + c * c,
+    lambda a, b, c: (a + b) * c,         lambda a, b, c: (a + c) * b,
+    lambda a, b, c: (b + c) * a,         lambda a, b, c: a * b * c,
+    lambda a, b, c: a + b - c,           lambda a, b, c: a - b + c,
+    lambda a, b, c: (a + b + c) * 2,     lambda a, b, c: a * a + b * c,
+    lambda a, b, c: (a - b) * c,         lambda a, b, c: (a + b) * c - a,
+    lambda a, b, c: a * b + b * c,       lambda a, b, c: (a + b) * (b + c),
+]
+
+
+def _grid_parse(en):
+    rows = re.findall(r"Row \d+: ([\d,\s?]+?)(?=\s*Row \d+:|\s*In each column)", en)
+    if len(rows) < 3:
+        return None
+    grid = [[t.strip() for t in r.split(",")] for r in rows]
+    if len({len(r) for r in grid}) != 1:
+        return None
+    return grid
+
+
+def solve_number_grid(en):
+    """Returns the SET of answers every rule consistent with the shown columns produces."""
+    if "number arrangement" not in en:
+        return None
+    grid = _grid_parse(en)
+    if not grid:
+        return None
+    ncol = len(grid[0])
+    cols = [[grid[r][c] for r in range(len(grid))] for c in range(ncol)]
+    miss = [c for c in cols if "?" in c]
+    full = [c for c in cols if "?" not in c]
+    if len(miss) != 1 or len(full) < 2:
+        return None
+    try:
+        full = [[int(x) for x in c] for c in full]
+        target = [int(x) for x in miss[0] if x != "?"]
+    except ValueError:
+        return None
+    out = set()
+    if len(grid) == 4:                                   # three inputs feeding a result row
+        for fn in _GRID_FAMILY:
+            try:
+                if all(fn(*c[:3]) == c[3] for c in full):
+                    out.add(str(fn(*target[:3])))
+            except Exception:
+                continue
+    elif len(grid) == 3:                                 # each row built from the ones above
+        v1, v2 = target[0], target[1]
+        for name, f in (("prod", lambda c: c[0] * c[1]),
+                        ("arith", lambda c: 2 * c[1] - c[0]),
+                        ("geom", lambda c: (c[1] * c[1] // c[0])
+                         if c[0] and c[1] * c[1] % c[0] == 0 else None)):
+            if all(f(c) == c[2] for c in full):
+                v = f([v1, v2, None])
+                if v:
+                    out.add(str(v))
+    return out or None
+
+
+# ── the error-spotting FORM ─────────────────────────────────────────────────────────────────────
+# An error-spot item embeds the ORIGINAL question inside its stem, which is what makes it checkable
+# at all: the ordinary solvers can be pointed at that embedded question and asked for the real
+# answer, independently of anything the form did.
+#
+# What this verifies: that the number shown to the student is genuinely NOT the answer (or, on the
+# quarter of items that show the correct value, genuinely IS it) and that the key agrees with which
+# of those two situations holds. That is the half that could go wrong silently — a form that showed
+# the correct answer while keying a mistake would be unanswerable, and no structural check sees it.
+#
+# What it does NOT verify: which of the three named mistakes produces the shown number. Doing that
+# would mean reimplementing every buggy procedure, i.e. restating the builder. That half rests on
+# item_forms.can_error_spot refusing any item whose named mistakes do not land on DISTINCT numbers,
+# so the shown number can only have come from one of them. Weaker than the direct forms — stated
+# here rather than left for someone to assume otherwise.
+
+_NO_MISTAKE = "There is no mistake — the answer is correct"
+
+
+def solve_error_spot(en):
+    m = re.match(r"A student was asked the following question\. (.+?) "
+                 r"The student answered: (.+?)\. "
+                 r"Which of the following describes what the student did\?$", en)
+    if not m:
+        return None
+    inner, shown = m.group(1).strip(), m.group(2).strip()
+    norm = lambda t: re.sub(r"\s+", "", str(t)).lower().rstrip(".")
+    # Word formation is the one embedded question whose ordinary solver needs the ORIGINAL four
+    # options, and an error-spot item deliberately does not print them — its options are the four
+    # reasons. The claim is still checkable directly: does the shown word actually fit inside the
+    # source word's letters, and does that match the direction the question asked for?
+    wf = re.search(r"select the word which (cannot|can) be formed using the letters of the given "
+                   r"word\s*:\s*([A-Z]+)", inner)
+    if wf and re.fullmatch(r"[A-Z]+", shown):
+        src = Counter(wf.group(2))
+        fits = all(src[c] >= n for c, n in Counter(shown).items())
+        return _NO_MISTAKE if fits == (wf.group(1) == "can") else {"__NOT__" + _NO_MISTAKE}
+    # Same situation for the symbol-substitution "which equation is correct" form: the four
+    # candidate equations are not reprinted, so solve_symbol_substitution has nothing to read. But
+    # the value shown to the student IS an equation, so it can be checked on its own — substitute
+    # and evaluate its left side, compare with its right.
+    legend = dict(re.findall(r"'(\S)' stands for '(\S)'", inner))
+    if (len(legend) == 4 and "which of the following equations is correct" in inner
+            and "=" in shown):
+        lhs, rhs = shown.rsplit("=", 1)
+        v = _sub_eval(lhs, legend)
+        if v is None or not re.fullmatch(r"-?\d+", rhs.strip()):
+            return None
+        return _NO_MISTAKE if v == int(rhs.strip()) else {"__NOT__" + _NO_MISTAKE}
+    real = None
+    for name, fn in SOLVERS:
+        if name == "error-spot":
+            continue
+        try:
+            got = fn(inner)
+        except Exception:
+            got = None
+        if got:
+            real = got if isinstance(got, set) else {got}
+            break
+    if not real:
+        return None                       # cannot re-solve the embedded question — say nothing
+    shown_is_right = any(norm(r) == norm(shown) for r in real)
+    # We can only name the answer when the shown value IS correct; otherwise all we can say is
+    # that the key must NOT be the no-mistake option, which resolve() checks by comparison.
+    return _NO_MISTAKE if shown_is_right else {"__NOT__" + _NO_MISTAKE}
+
+
+def solve_number_series(en):
+    """Infer a numeric series' rule from the printed terms and continue it.
+
+    Returns a SET of every continuation a simple rule supports, so a series two different patterns
+    explain differently comes back ambiguous rather than quietly matched. Written from the numbers
+    alone — it never consults quantgen.
+    """
+    m = re.search(r"place of the question mark \(\?\) in the following series\?\s*(.+)", en)
+    if not m:
+        return None
+    t = [int(x) for x in re.findall(r"-?\d+", m.group(1).split("?")[0])]
+    if len(t) < 3:
+        return None
+    out = set()
+    d1 = [t[i + 1] - t[i] for i in range(len(t) - 1)]
+    if len(set(d1)) == 1:
+        out.add(str(t[-1] + d1[0]))                                    # arithmetic
+    if all(x for x in t[:-1]) and len({_F(t[i + 1], t[i]) for i in range(len(t) - 1)}) == 1:
+        out.add(str(int(t[-1] * _F(t[1], t[0]))))                       # geometric
+    d2 = [d1[i + 1] - d1[i] for i in range(len(d1) - 1)]
+    if len(d2) >= 2 and len(set(d2)) == 1:
+        out.add(str(t[-1] + d1[-1] + d2[0]))                           # 2nd difference constant
+    if len(d1) >= 2 and all(d1[i] for i in range(len(d1) - 1)) and \
+            len({_F(d1[i + 1], d1[i]) for i in range(len(d1) - 1)}) == 1:
+        out.add(str(int(t[-1] + d1[-1] * _F(d1[1], d1[0]))))            # the GAPS multiply
+    for k in (2, 3, 4, 5):                                             # t*k + c
+        cs = {t[i + 1] - k * t[i] for i in range(len(t) - 1)}
+        if len(cs) == 1:
+            out.add(str(k * t[-1] + cs.pop()))
+    for k in (2, 3, 4):                                                # t*k - i, gaps by index
+        if all(t[i + 1] == k * t[i] - (i + 1) for i in range(len(t) - 1)):
+            out.add(str(k * t[-1] - len(t)))
+    if all(d1[i] == (i + 1) ** 2 for i in range(len(d1))):             # gaps are squares
+        out.add(str(t[-1] + len(t) ** 2))
+    if all(d1[i] == (i + 1) ** 3 for i in range(len(d1))):
+        out.add(str(t[-1] + len(t) ** 3))
+    return out or None
+
+
+def solve_percentage(en):
+    """The three percentage templates, computed with exact fractions."""
+    m = re.match(r"What is (\d+)% of (\d+)\?$", en)
+    if m:
+        return _n(_F(int(m.group(1)) * int(m.group(2)), 100))
+    m = re.match(r"(\d+) is what percent of (\d+)\?$", en)
+    if m:
+        return _n(_F(int(m.group(1)) * 100, int(m.group(2)))) + "%"
+    m = re.match(r"The value (\d+) is first increased by (\d+)% and then the result is "
+                 r"decreased by (\d+)%\. What is the final value\?$", en)
+    if m:
+        v, up, dn = (int(x) for x in m.groups())
+        return _n(_F(v) * _F(100 + up, 100) * _F(100 - dn, 100))
+    return None
+
+
+SOLVERS = ([("number-series", solve_number_series),
+            ("percentage", solve_percentage),
+            ("error-spot", solve_error_spot),
+            ("number-grid", solve_number_grid),
+            ("symbol-substitution", solve_symbol_substitution),
+            ("word-formation", solve_word_formation),
+            ("gs-correct-pair", solve_correct_pair),
+            ("gs-wrong-pair", solve_wrong_pair),
+            ("gs-which-statement", solve_which_statement),
+            ("gs-count-statements", solve_count_statements),
+            ("alphanumeric-series", solve_alnum_series),
+            ("syllogism", solve_syllogism),
+            ("seating-arrangement", solve_seating),
+            ("coded-inequality", solve_coded_inequality),
+            ("calendar", solve_calendar),
+            ("dice", solve_dice)] + SOLVERS)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,417 @@
+{
+ "_source": "BSSC 2nd Inter Level, Advt 02/23(A), official syllabus. Verbatim topic list in teacher_gtm/BSSC_INTER_LEVEL_FACTSHEET.md section 4.",
+ "_why": "Balance has to be measured against the SYLLABUS, not against ourselves. A per-concept cap makes a paper internally even, but 'even across the generators we happen to own' is not the same as 'even across what the commission examines'. This file is the denominator.",
+ "_target_note": "share = the fraction of that section's questions the topic should get. Targets are OUR judgement from the measured blueprints of real papers (skill section 6), not an official rule — the advertisement names topics without weights.",
+ "खंड (क) सामान्य अध्ययन": {
+  "section": "General Studies",
+  "topics": [
+   {
+    "hi": "राजधानी / मुद्रा",
+    "en": "Capitals & currencies",
+    "share": 0.08,
+    "generator": "staticgkgen.STATE_CAPITAL + COUNTRY_CAPITAL",
+    "concepts": [
+     "STATE_CAPITAL"
+    ]
+   },
+   {
+    "hi": "संस्कृति",
+    "en": "Culture — dance, art, festivals",
+    "share": 0.08,
+    "generator": "staticgkgen.DANCE_STATE",
+    "concepts": [
+     "DANCE_STATE"
+    ]
+   },
+   {
+    "hi": "भूगोल",
+    "en": "Geography — rivers, parks, lakes",
+    "share": 0.1,
+    "generator": "staticgkgen.RIVER_ORIGIN + PARK_STATE",
+    "concepts": [
+     "RIVER_ORIGIN"
+    ]
+   },
+   {
+    "hi": "भारत का संविधान एवं राज्य व्यवस्था",
+    "en": "Constitution & polity",
+    "share": 0.14,
+    "generator": "polity_tables.ARTICLE_SUBJECT + AMENDMENT_DID",
+    "concepts": [
+     "ARTICLE_SUBJECT",
+     "AMENDMENT_DID"
+    ]
+   },
+   {
+    "hi": "पंचायती राज",
+    "en": "Panchayati Raj",
+    "share": 0.05,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "भारत का इतिहास",
+    "en": "History of India",
+    "share": 0.1,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "स्वतंत्रता आन्दोलन",
+    "en": "Freedom movement",
+    "share": 0.08,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "राष्ट्रीय आन्दोलन में बिहार का योगदान",
+    "en": "Bihar in the national movement",
+    "share": 0.08,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "आर्थिक परिदृश्य / पंचवर्षीय योजना",
+    "en": "Economy & Five-Year Plans",
+    "share": 0.06,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "भारतीय कृषि तथा प्राकृतिक संसाधन",
+    "en": "Agriculture & natural resources",
+    "share": 0.05,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "खेल-खिलाड़ी",
+    "en": "Sports",
+    "share": 0.05,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "पुरस्कार",
+    "en": "National & international awards",
+    "share": 0.04,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "भारतीय भाषाएँ · पुस्तक · लिपि",
+    "en": "Languages, books, scripts",
+    "share": 0.04,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "वैज्ञानिक प्रगति / महत्वपूर्ण घटनाएँ",
+    "en": "Science news & current events",
+    "share": 0.05,
+    "generator": null,
+    "concepts": []
+   }
+  ]
+ },
+ "खंड (ख) सामान्य विज्ञान": {
+  "section": "General Science",
+  "topics": [
+   {
+    "hi": "भौतिक शास्त्र",
+    "en": "Physics",
+    "share": 0.4,
+    "builders": [
+     "_b_motion",
+     "_b_ohm",
+     "_b_work"
+    ],
+    "generator": "sciencegen",
+    "concepts": [
+     "Motion",
+     "Current Electricity",
+     "Work, Energy & Power"
+    ]
+   },
+   {
+    "hi": "रसायन शास्त्र",
+    "en": "Chemistry",
+    "share": 0.25,
+    "builders": [
+     "staticgk_forms over science_tables chemistry"
+    ],
+    "generator": null,
+    "concepts": [
+     "Chemistry"
+    ]
+   },
+   {
+    "hi": "जीव विज्ञान",
+    "en": "Biology",
+    "share": 0.25,
+    "builders": [],
+    "generator": null,
+    "concepts": [],
+    "_note": "Held empty while BIO_REVIEWED is False. quotas() treats a topic with concepts as generatable, so listing them would promise the paper questions the gate refuses to supply. Add ['Biology'] when the flag flips."
+   },
+   {
+    "hi": "भूगोल",
+    "en": "Geography (under Science here)",
+    "share": 0.1,
+    "builders": [],
+    "generator": null,
+    "concepts": []
+   }
+  ]
+ },
+ "खंड (ख) गणित": {
+  "section": "Mathematics",
+  "topics": [
+   {
+    "hi": "प्रतिशत",
+    "en": "Percentage",
+    "share": 0.2,
+    "builders": [
+     "_b_percentage"
+    ],
+    "generator": "_b_percentage",
+    "concepts": [
+     "Percentage of a Number",
+     "Percentage Change"
+    ]
+   },
+   {
+    "hi": "पूर्ण संख्याओं का अभिकलन / मूलभूत अंक गणितीय संक्रियाएँ",
+    "en": "Computation & fundamental arithmetic operations",
+    "share": 0.22,
+    "builders": [
+     "_b_simplify",
+     "_b_approx"
+    ],
+    "generator": "_b_simplify",
+    "concepts": [
+     "Simplification (BODMAS)",
+     "Approximation"
+    ],
+    "_merged_note": "The advertisement lists these as two entries but our generator is the same one, and splitting them made the report show 11/6 on one and 0/5 on the other purely because topic_of returns the first match."
+   },
+   {
+    "hi": "अनुपात तथा समानुपात",
+    "en": "Ratio & proportion",
+    "share": 0.12,
+    "builders": [
+     "_b_ratio",
+     "_b_alligation",
+     "_b_partnership"
+    ],
+    "generator": "_b_ratio",
+    "concepts": [
+     "Ratio & Proportion",
+     "Alligation",
+     "Partnership"
+    ]
+   },
+   {
+    "hi": "संख्याओं के बीच परस्पर संबंध",
+    "en": "Relationships between numbers",
+    "share": 0.1,
+    "builders": [
+     "_b_series_missing",
+     "_b_series_wrong"
+    ],
+    "generator": "_b_series_missing",
+    "concepts": [
+     "Missing-Term Series",
+     "Wrong-Term Series"
+    ]
+   },
+   {
+    "hi": "संख्या पद्धति",
+    "en": "Number system",
+    "share": 0.1,
+    "builders": [],
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "दशमलव और भिन्न",
+    "en": "Decimals & fractions",
+    "share": 0.08,
+    "builders": [],
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "औसत",
+    "en": "Average",
+    "share": 0.08,
+    "builders": [
+     "_b_average"
+    ],
+    "generator": "_b_average",
+    "concepts": [
+     "Averages"
+    ]
+   },
+   {
+    "hi": "लाभ और हानि",
+    "en": "Profit & loss",
+    "share": 0.07,
+    "builders": [
+     "_b_profit_loss"
+    ],
+    "generator": "_b_profit_loss",
+    "concepts": [
+     "Profit / Loss %",
+     "Marked Price & Discount"
+    ]
+   },
+   {
+    "hi": "ब्याज",
+    "en": "Interest",
+    "share": 0.03,
+    "builders": [
+     "_b_si",
+     "_b_ci"
+    ],
+    "generator": "_b_si",
+    "concepts": [
+     "Simple Interest",
+     "Compound Interest"
+    ]
+   }
+  ]
+ },
+ "खंड (ग) मानसिक क्षमता जाँच": {
+  "section": "Reasoning",
+  "topics": [
+   {
+    "hi": "सादृश्य",
+    "en": "Analogy",
+    "share": 0.1,
+    "generator": "reasoninggen: Number Analogy, Letter Analogy",
+    "concepts": [
+     "Number Analogy",
+     "Letter Analogy"
+    ]
+   },
+   {
+    "hi": "समानता एवं भिन्नता / विभेद",
+    "en": "Similarities & differences",
+    "share": 0.08,
+    "generator": "reasoninggen: Odd One Out",
+    "concepts": [
+     "Odd One Out (Numbers)"
+    ]
+   },
+   {
+    "hi": "स्थान कल्पना",
+    "en": "Spatial visualisation",
+    "share": 0.08,
+    "generator": "reasoninggen: Dice",
+    "concepts": [
+     "Dice"
+    ]
+   },
+   {
+    "hi": "समस्या समाधान",
+    "en": "Problem solving",
+    "share": 0.1,
+    "generator": "reasoninggen: Seating Arrangement",
+    "concepts": [
+     "Seating Arrangement"
+    ]
+   },
+   {
+    "hi": "विश्लेषण",
+    "en": "Analysis",
+    "share": 0.12,
+    "generator": "reasoninggen: Syllogism, Coded Inequality",
+    "concepts": [
+     "Syllogism",
+     "Coded Inequality"
+    ]
+   },
+   {
+    "hi": "संबंध अवधारणा",
+    "en": "Relationship concepts",
+    "share": 0.08,
+    "generator": "reasoninggen: Blood Relations",
+    "concepts": [
+     "Blood Relations"
+    ]
+   },
+   {
+    "hi": "अंक गणितीय तर्कशक्ति",
+    "en": "Arithmetical reasoning",
+    "share": 0.12,
+    "generator": "reasoninggen: Number Grid, Symbol Substitution, Ranking, Calendar",
+    "concepts": [
+     "Number Grid",
+     "Symbol Substitution",
+     "Ranking",
+     "Calendar"
+    ]
+   },
+   {
+    "hi": "अंक गणितीय संख्या श्रृंखला",
+    "en": "Number & letter series",
+    "share": 0.12,
+    "generator": "reasoninggen: Letter Series, Alphanumeric Series",
+    "concepts": [
+     "Letter Series",
+     "Alphanumeric Series"
+    ]
+   },
+   {
+    "hi": "कूट लेखन एवं कूट व्याख्या",
+    "en": "Coding & decoding",
+    "share": 0.1,
+    "generator": "reasoninggen: Letter-Shift Coding, Number Coding, Word Formation",
+    "concepts": [
+     "Letter-Shift Coding",
+     "Number Coding",
+     "Word Formation"
+    ]
+   },
+   {
+    "hi": "दृश्य स्मृति",
+    "en": "Visual memory",
+    "share": 0.04,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "अवलोकन",
+    "en": "Observation",
+    "share": 0.03,
+    "generator": null,
+    "concepts": []
+   },
+   {
+    "hi": "गैर-शाब्दिक (आकृति श्रृंखला)",
+    "en": "Non-verbal / figure series",
+    "share": 0.03,
+    "generator": null,
+    "concepts": []
+   }
+  ]
+ },
+ "_shares_note": "Maths shares are MEASURED, not guessed: 330 real maths questions across the extracted BSSC papers were classified, giving percentage 16%, ratio 5%, number-system 5%, interest and profit/loss ~1% each, and a large block of plain computation ('If 7589 - X = 3434'). Our delivered sets had interest at 32% and percentage at 0%, which is backwards. Reasoning and GS shares remain our judgement — the advertisement names topics without weights.",
+ "_excluded": {
+  "note": "Named nowhere in the Advt 02/23(A) arithmetic syllabus AND rare-to-absent in the real papers (time & work 1.5%, speed/trains 2%, boats 0%). Excluded from an Inter Level paper by default. This is a ONE-LINE change if the institute wants them back — which is the point of keeping the blueprint in a file rather than in the draw code.",
+  "builders": [
+   "_b_time_work",
+   "_b_pipes",
+   "_b_std",
+   "_b_trains",
+   "_b_boats",
+   "_b_ages",
+   "_b_quadratic",
+   "_b_mensuration",
+   "_b_pnc",
+   "_b_di_table",
+   "_b_di_caselet"
+  ]
+ }
+}
