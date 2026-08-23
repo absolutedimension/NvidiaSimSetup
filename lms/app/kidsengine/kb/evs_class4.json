@@ -1,0 +1,471 @@
+{
+  "subject": "EVS",
+  "class": 4,
+  "strings": {
+    "title": "Grade 4 EVS — Our Surroundings",
+    "description": "Verified Grade-4 (age ~9) Environmental Studies knowledge base for CBSE/ICSE primary worksheets: plants, animals, the human body, water, weather, and matter — pitched harder than Grades 1-3."
+  },
+  "categories": [
+    {
+      "name": "water_sources",
+      "label": "a water source",
+      "chapter": "A River's Tale",
+      "members": [
+        "river",
+        "pond",
+        "lake",
+        "well",
+        "waterfall",
+        "stream",
+        "canal",
+        "ocean"
+      ]
+    },
+    {
+      "name": "seasons",
+      "label": "a season",
+      "chapter": "The Valley of Flowers",
+      "members": [
+        "spring",
+        "summer",
+        "monsoon",
+        "autumn",
+        "pre-winter",
+        "winter"
+      ]
+    },
+    {
+      "name": "body_parts",
+      "label": "a body part",
+      "chapter": "Ear to Ear",
+      "members": [
+        "arm",
+        "leg",
+        "hand",
+        "foot",
+        "elbow",
+        "knee",
+        "shoulder",
+        "wrist"
+      ]
+    },
+    {
+      "name": "plant_parts",
+      "label": "a part of a plant",
+      "chapter": "Basva's Farm",
+      "members": [
+        "root",
+        "stem",
+        "leaf",
+        "flower",
+        "fruit",
+        "seed",
+        "bud",
+        "branch"
+      ]
+    },
+    {
+      "name": "insects",
+      "label": "an insect",
+      "chapter": "Anita and the Honeybees",
+      "members": [
+        "ant",
+        "bee",
+        "butterfly",
+        "mosquito",
+        "housefly",
+        "grasshopper",
+        "beetle",
+        "dragonfly"
+      ]
+    },
+    {
+      "name": "birds",
+      "label": "a bird",
+      "chapter": "From the Window",
+      "members": [
+        "sparrow",
+        "crow",
+        "pigeon",
+        "parrot",
+        "peacock",
+        "eagle",
+        "owl",
+        "koel"
+      ]
+    }
+  ],
+  "groupings": [
+    {
+      "name": "living_nonliving",
+      "chapter": "A Day with Nandu",
+      "sort_instruction": "Sort each thing into living things (they grow, eat, breathe and move on their own) or non-living things.",
+      "tf_template": "{art} {item} is a {bin}.",
+      "bins": {
+        "living thing": [
+          "dog",
+          "tree",
+          "fish",
+          "ant",
+          "sparrow",
+          "cow",
+          "butterfly"
+        ],
+        "non-living thing": [
+          "rock",
+          "chair",
+          "table",
+          "spoon",
+          "ball",
+          "pen",
+          "bicycle"
+        ]
+      }
+    },
+    {
+      "name": "wild_domestic",
+      "chapter": "Reaching Grandmother's House",
+      "sort_instruction": "Sort each animal into wild animals (they live in forests and find their own food) or domestic animals (people keep and care for them).",
+      "tf_template": "{art} {item} is a {bin} animal.",
+      "bins": {
+        "wild": [
+          "lion",
+          "tiger",
+          "deer",
+          "monkey",
+          "bear",
+          "zebra",
+          "fox"
+        ],
+        "domestic": [
+          "cow",
+          "dog",
+          "cat",
+          "goat",
+          "buffalo",
+          "hen",
+          "horse"
+        ]
+      }
+    },
+    {
+      "name": "food_source",
+      "chapter": "Basva's Farm",
+      "sort_instruction": "Sort each food by whether we get it from plants or from animals.",
+      "tf_template": "We get {item} from {bin}.",
+      "bins": {
+        "plants": [
+          "rice",
+          "wheat",
+          "apple",
+          "mango",
+          "potato",
+          "spinach"
+        ],
+        "animals": [
+          "milk",
+          "egg",
+          "honey",
+          "butter",
+          "meat",
+          "cheese"
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "name": "plant_part_job",
+      "chapter": "Basva's Farm",
+      "a_label": "plant part",
+      "b_label": "job",
+      "tf_template": "The job of the {a} is to {b}.",
+      "cloze_template": "The job of the {a} is to ___.",
+      "match_instruction": "Match each plant part to the job it does.",
+      "pairs": [
+        [
+          "root",
+          "hold the plant in the soil"
+        ],
+        [
+          "stem",
+          "carry water to the leaves"
+        ],
+        [
+          "leaf",
+          "make food for the plant"
+        ],
+        [
+          "flower",
+          "grow into a fruit"
+        ],
+        [
+          "fruit",
+          "hold the seeds"
+        ],
+        [
+          "seed",
+          "grow into a new plant"
+        ],
+        [
+          "bud",
+          "open into a flower"
+        ],
+        [
+          "thorn",
+          "protect the plant from animals"
+        ]
+      ]
+    },
+    {
+      "name": "animal_home",
+      "chapter": "A Day with Nandu",
+      "a_label": "animal",
+      "b_label": "home",
+      "tf_template": "The home of a {a} is called a {b}.",
+      "cloze_template": "The home of a {a} is called a ___.",
+      "match_instruction": "Match each animal to the name of its home.",
+      "pairs": [
+        [
+          "lion",
+          "den"
+        ],
+        [
+          "bird",
+          "nest"
+        ],
+        [
+          "bee",
+          "hive"
+        ],
+        [
+          "horse",
+          "stable"
+        ],
+        [
+          "dog",
+          "kennel"
+        ],
+        [
+          "cow",
+          "shed"
+        ],
+        [
+          "hen",
+          "coop"
+        ],
+        [
+          "spider",
+          "web"
+        ],
+        [
+          "rabbit",
+          "burrow"
+        ]
+      ]
+    },
+    {
+      "name": "body_part_function",
+      "chapter": "Ear to Ear",
+      "a_label": "body part",
+      "b_label": "what we use it for",
+      "tf_template": "We use our {a} {b}.",
+      "cloze_template": "We use our {a} ___.",
+      "match_instruction": "Match each body part to what we use it for.",
+      "pairs": [
+        [
+          "eyes",
+          "to see"
+        ],
+        [
+          "ears",
+          "to hear"
+        ],
+        [
+          "nose",
+          "to smell"
+        ],
+        [
+          "tongue",
+          "to taste"
+        ],
+        [
+          "skin",
+          "to feel"
+        ],
+        [
+          "legs",
+          "to walk"
+        ],
+        [
+          "hands",
+          "to hold things"
+        ],
+        [
+          "teeth",
+          "to chew food"
+        ],
+        [
+          "lungs",
+          "to breathe"
+        ],
+        [
+          "heart",
+          "to pump blood"
+        ]
+      ]
+    },
+    {
+      "name": "worker_tool",
+      "chapter": "Changing Times",
+      "a_label": "worker",
+      "b_label": "tool",
+      "tf_template": "{art} {a} uses a {b}.",
+      "cloze_template": "{art} {a} uses a ___.",
+      "match_instruction": "Match each worker to the tool they use.",
+      "pairs": [
+        [
+          "farmer",
+          "plough"
+        ],
+        [
+          "carpenter",
+          "saw"
+        ],
+        [
+          "tailor",
+          "needle"
+        ],
+        [
+          "blacksmith",
+          "hammer"
+        ],
+        [
+          "doctor",
+          "stethoscope"
+        ],
+        [
+          "painter",
+          "brush"
+        ],
+        [
+          "fisherman",
+          "net"
+        ],
+        [
+          "potter",
+          "wheel"
+        ],
+        [
+          "mason",
+          "trowel"
+        ]
+      ]
+    },
+    {
+      "name": "animal_young",
+      "chapter": "A Day with Nandu",
+      "a_label": "animal",
+      "b_label": "young one",
+      "tf_template": "The baby of a {a} is called a {b}.",
+      "cloze_template": "The baby of a {a} is called a ___.",
+      "match_instruction": "Match each animal to the name of its young one.",
+      "pairs": [
+        [
+          "cow",
+          "calf"
+        ],
+        [
+          "dog",
+          "puppy"
+        ],
+        [
+          "cat",
+          "kitten"
+        ],
+        [
+          "hen",
+          "chick"
+        ],
+        [
+          "horse",
+          "foal"
+        ],
+        [
+          "sheep",
+          "lamb"
+        ],
+        [
+          "goat",
+          "kid"
+        ],
+        [
+          "lion",
+          "cub"
+        ],
+        [
+          "frog",
+          "tadpole"
+        ],
+        [
+          "butterfly",
+          "caterpillar"
+        ],
+        [
+          "deer",
+          "fawn"
+        ]
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "statement": "Green plants make their own food using sunlight, water, and air.",
+      "chapter": "Basva's Farm"
+    },
+    {
+      "statement": "The roots of a plant take in water and minerals from the soil.",
+      "chapter": "Basva's Farm"
+    },
+    {
+      "statement": "Plants give out oxygen, which humans and animals need to breathe.",
+      "chapter": "The Valley of Flowers"
+    },
+    {
+      "statement": "Water can be found in three forms: solid ice, liquid water, and water vapour gas.",
+      "chapter": "A River's Tale"
+    },
+    {
+      "statement": "When water is heated it slowly changes into vapour; this is called evaporation.",
+      "chapter": "A River's Tale"
+    },
+    {
+      "statement": "A river usually begins in the mountains and flows down into the sea.",
+      "chapter": "A River's Tale"
+    },
+    {
+      "statement": "The Sun is the main source of heat and light for the Earth.",
+      "chapter": "From the Window"
+    },
+    {
+      "statement": "Bees carry pollen from one flower to another, which helps plants make seeds.",
+      "chapter": "Anita and the Honeybees"
+    },
+    {
+      "statement": "A honeybee colony has one queen bee, many worker bees, and some drones.",
+      "chapter": "Anita and the Honeybees"
+    },
+    {
+      "statement": "Human beings have five sense organs: the eyes, ears, nose, tongue, and skin.",
+      "chapter": "Ear to Ear"
+    },
+    {
+      "statement": "Animals that eat only plants are called herbivores, and animals that eat only other animals are called carnivores.",
+      "chapter": "A Day with Nandu"
+    },
+    {
+      "statement": "Some birds fly to far-off warmer places every year to escape the cold; they are called migratory birds.",
+      "chapter": "From the Window"
+    }
+  ]
+}

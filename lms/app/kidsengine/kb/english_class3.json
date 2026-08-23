@@ -1,0 +1,103 @@
+{
+  "subject": "English",
+  "class": 3,
+  "note": "VERIFIED knowledge base for Grade-3 English (grammar + vocabulary — board-agnostic; one KB serves CBSE+ICSE, distinct draws via seed). Every entry hand-checked. kb_engine.py only COMBINES these, so every question is correct BY CONSTRUCTION. Relations: left value must be unique (a->b function); a 'false' statement swaps in another pair's value proven different from the truth.",
+  "verified_on": "2026-08-03",
+
+  "categories": [
+    {"name": "Vowels", "label": "a vowel", "chapter": "Grammar",
+     "members": ["A", "E", "I", "O", "U"]},
+    {"name": "Consonants", "label": "a consonant", "chapter": "Grammar",
+     "members": ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M"]},
+    {"name": "Colour words", "label": "a colour word", "chapter": "Vocabulary",
+     "members": ["red", "blue", "green", "yellow", "orange", "purple", "pink", "black"]},
+    {"name": "Number words", "label": "a number word", "chapter": "Vocabulary",
+     "members": ["one", "two", "three", "four", "five", "six", "seven", "eight"]}
+  ],
+
+  "groupings": [
+    {"name": "naming_action", "chapter": "Nouns and Verbs",
+     "sort_instruction": "Sort these words into naming words and action words.",
+     "tf_template": "'{item}' is {bin}.",
+     "bins": {"a naming word": ["dog", "ball", "table", "apple", "boy", "car", "chair", "tree", "flower", "book"],
+              "an action word": ["run", "jump", "eat", "sing", "sleep", "dance", "laugh", "cry", "walk", "swim"]}},
+
+    {"name": "a_an", "chapter": "Articles",
+     "sort_instruction": "Sort each word under 'a' or 'an'.",
+     "tf_template": "We write '{bin} {item}'.",
+     "bins": {"a": ["cat", "dog", "ball", "book", "car", "pen", "table", "boy", "girl", "house"],
+              "an": ["apple", "egg", "orange", "umbrella", "elephant", "ant", "ink", "owl", "insect", "eye"]}},
+
+    {"name": "rhyming", "chapter": "Rhyming Words",
+     "sort_instruction": "Sort these words into rhyming groups.",
+     "tf_template": "'{item}' rhymes with '{bin}'.",
+     "bins": {"cat": ["hat", "bat", "mat", "rat", "sat"],
+              "pig": ["big", "dig", "wig", "fig", "jig"],
+              "dog": ["log", "fog", "frog", "jog", "hog"],
+              "bell": ["well", "tell", "shell", "fell", "sell"]}}
+  ],
+
+  "relations": [
+    {"name": "opposites", "chapter": "Opposites",
+     "a_label": "word", "b_label": "opposite",
+     "tf_template": "The opposite of '{a}' is '{b}'.",
+     "cloze_template": "The opposite of '{a}' is ___.",
+     "match_instruction": "Match each word with its opposite.",
+     "pairs": [["big", "small"], ["hot", "cold"], ["up", "down"], ["in", "out"], ["open", "close"],
+               ["fast", "slow"], ["happy", "sad"], ["tall", "short"], ["old", "new"], ["good", "bad"],
+               ["wet", "dry"], ["full", "empty"], ["hard", "soft"], ["clean", "dirty"], ["day", "night"],
+               ["high", "low"], ["near", "far"], ["push", "pull"], ["heavy", "light"], ["love", "hate"]]},
+
+    {"name": "synonyms", "chapter": "Synonyms",
+     "a_label": "word", "b_label": "word that means the same",
+     "tf_template": "'{a}' and '{b}' mean the same.",
+     "cloze_template": "A word that means the same as '{a}' is ___.",
+     "match_instruction": "Match each word with a word that means the same.",
+     "pairs": [["big", "large"], ["happy", "glad"], ["sad", "unhappy"], ["fast", "quick"], ["small", "little"],
+               ["angry", "mad"], ["begin", "start"], ["jump", "leap"], ["close", "shut"], ["pretty", "beautiful"],
+               ["smart", "clever"], ["cold", "chilly"]]},
+
+    {"name": "plurals", "chapter": "Plurals",
+     "a_label": "word", "b_label": "plural",
+     "tf_template": "The plural of '{a}' is '{b}'.",
+     "cloze_template": "The plural of '{a}' is ___.",
+     "match_instruction": "Match each word with its plural.",
+     "pairs": [["cat", "cats"], ["dog", "dogs"], ["book", "books"], ["pen", "pens"], ["apple", "apples"],
+               ["box", "boxes"], ["bus", "buses"], ["baby", "babies"], ["lady", "ladies"], ["man", "men"],
+               ["woman", "women"], ["child", "children"], ["foot", "feet"], ["tooth", "teeth"],
+               ["mouse", "mice"], ["leaf", "leaves"]]},
+
+    {"name": "gender", "chapter": "Gender",
+     "a_label": "masculine word", "b_label": "feminine word",
+     "tf_template": "The feminine of '{a}' is '{b}'.",
+     "cloze_template": "The feminine of '{a}' is ___.",
+     "match_instruction": "Match each word with its feminine form.",
+     "pairs": [["king", "queen"], ["boy", "girl"], ["man", "woman"], ["father", "mother"],
+               ["brother", "sister"], ["uncle", "aunt"], ["son", "daughter"], ["prince", "princess"],
+               ["lion", "lioness"], ["cock", "hen"], ["husband", "wife"], ["nephew", "niece"]]},
+
+    {"name": "past_tense", "chapter": "Tenses",
+     "a_label": "word", "b_label": "past tense",
+     "tf_template": "The past tense of '{a}' is '{b}'.",
+     "cloze_template": "The past tense of '{a}' is ___.",
+     "match_instruction": "Match each word with its past tense.",
+     "pairs": [["go", "went"], ["eat", "ate"], ["run", "ran"], ["sit", "sat"], ["come", "came"],
+               ["see", "saw"], ["take", "took"], ["give", "gave"], ["make", "made"], ["sing", "sang"],
+               ["drink", "drank"], ["write", "wrote"]]}
+  ],
+
+  "facts": [
+    {"statement": "There are five vowels: a, e, i, o and u.", "chapter": "Grammar"},
+    {"statement": "A naming word is also called a noun.", "chapter": "Nouns and Verbs"},
+    {"statement": "An action word is also called a verb.", "chapter": "Nouns and Verbs"},
+    {"statement": "A describing word is also called an adjective.", "chapter": "Grammar"},
+    {"statement": "We use 'an' before a word that begins with a vowel sound.", "chapter": "Articles"},
+    {"statement": "We use 'a' before a word that begins with a consonant sound.", "chapter": "Articles"},
+    {"statement": "A sentence begins with a capital letter.", "chapter": "Grammar"},
+    {"statement": "A sentence ends with a full stop.", "chapter": "Grammar"},
+    {"statement": "A question ends with a question mark.", "chapter": "Grammar"},
+    {"statement": "The word 'I' is always written as a capital letter.", "chapter": "Grammar"},
+    {"statement": "The opposite of 'day' is 'night'.", "chapter": "Opposites"},
+    {"statement": "The plural of 'child' is 'children'.", "chapter": "Plurals"}
+  ]
+}

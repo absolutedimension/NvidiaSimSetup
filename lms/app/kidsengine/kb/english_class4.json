@@ -1,0 +1,559 @@
+{
+  "subject": "English",
+  "class": 4,
+  "categories": [
+    {
+      "name": "colour_words",
+      "label": "a colour word",
+      "chapter": "Unit 2: My Beautiful World",
+      "members": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "orange",
+        "purple",
+        "pink",
+        "brown"
+      ]
+    },
+    {
+      "name": "number_words",
+      "label": "a number word",
+      "chapter": "Unit 3: Fun with Games",
+      "members": [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight"
+      ]
+    },
+    {
+      "name": "consonant_letters",
+      "label": "a consonant",
+      "chapter": "Unit 1: My Land",
+      "members": [
+        "b",
+        "c",
+        "d",
+        "f",
+        "g",
+        "h",
+        "j",
+        "k",
+        "l",
+        "m"
+      ]
+    },
+    {
+      "name": "wild_animals",
+      "label": "a wild animal",
+      "chapter": "Unit 2: My Beautiful World",
+      "members": [
+        "lion",
+        "tiger",
+        "elephant",
+        "monkey",
+        "deer",
+        "camel",
+        "giraffe",
+        "zebra"
+      ]
+    },
+    {
+      "name": "birds",
+      "label": "a bird",
+      "chapter": "Unit 4: Up High",
+      "members": [
+        "eagle",
+        "sparrow",
+        "parrot",
+        "crow",
+        "pigeon",
+        "owl",
+        "peacock",
+        "hawk"
+      ]
+    },
+    {
+      "name": "games",
+      "label": "a game",
+      "chapter": "Unit 3: Fun with Games",
+      "members": [
+        "cricket",
+        "hockey",
+        "football",
+        "tennis",
+        "chess",
+        "badminton",
+        "carrom",
+        "kabaddi"
+      ]
+    }
+  ],
+  "groupings": [
+    {
+      "name": "naming_vs_doing",
+      "chapter": "Unit 1: My Land",
+      "sort_instruction": "Sort each word into a naming word (noun) or a doing word (verb).",
+      "tf_template": "{art} '{item}' is a {bin}.",
+      "bins": {
+        "naming word": [
+          "mountain",
+          "river",
+          "teacher",
+          "kite",
+          "window",
+          "elephant"
+        ],
+        "doing word": [
+          "eat",
+          "write",
+          "listen",
+          "speak",
+          "arrive",
+          "teach"
+        ]
+      }
+    },
+    {
+      "name": "a_vs_an",
+      "chapter": "Unit 2: My Beautiful World",
+      "sort_instruction": "Sort each word by whether it takes 'a' or 'an' before it.",
+      "tf_template": "We say '{bin} {item}'.",
+      "bins": {
+        "a": [
+          "ball",
+          "cat",
+          "dog",
+          "kite",
+          "tiger",
+          "mountain"
+        ],
+        "an": [
+          "apple",
+          "egg",
+          "orange",
+          "umbrella",
+          "elephant",
+          "insect"
+        ]
+      }
+    },
+    {
+      "name": "rhyming_families",
+      "chapter": "Unit 3: Fun with Games",
+      "sort_instruction": "Sort each word into its rhyming family.",
+      "tf_template": "The word '{item}' {bin}.",
+      "bins": {
+        "rhymes with cat": [
+          "hat",
+          "bat",
+          "mat",
+          "rat",
+          "sat",
+          "fat"
+        ],
+        "rhymes with ball": [
+          "tall",
+          "wall",
+          "fall",
+          "call",
+          "hall",
+          "small"
+        ],
+        "rhymes with night": [
+          "light",
+          "bright",
+          "sight",
+          "might",
+          "fight",
+          "right"
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "name": "opposites",
+      "chapter": "Unit 1: My Land",
+      "a_label": "Word",
+      "b_label": "Opposite",
+      "tf_template": "The opposite of '{a}' is '{b}'.",
+      "cloze_template": "The opposite of '{a}' is ___.",
+      "match_instruction": "Match each word with its opposite.",
+      "pairs": [
+        [
+          "big",
+          "small"
+        ],
+        [
+          "tall",
+          "short"
+        ],
+        [
+          "happy",
+          "sad"
+        ],
+        [
+          "fast",
+          "slow"
+        ],
+        [
+          "hot",
+          "cold"
+        ],
+        [
+          "day",
+          "night"
+        ],
+        [
+          "up",
+          "down"
+        ],
+        [
+          "open",
+          "close"
+        ],
+        [
+          "wet",
+          "dry"
+        ],
+        [
+          "full",
+          "empty"
+        ],
+        [
+          "hard",
+          "soft"
+        ],
+        [
+          "brave",
+          "afraid"
+        ],
+        [
+          "ancient",
+          "modern"
+        ],
+        [
+          "wild",
+          "tame"
+        ]
+      ]
+    },
+    {
+      "name": "synonyms",
+      "chapter": "Unit 2: My Beautiful World",
+      "a_label": "Word",
+      "b_label": "Synonym",
+      "tf_template": "A synonym of '{a}' is '{b}'.",
+      "cloze_template": "A synonym of '{a}' is ___.",
+      "match_instruction": "Match each word with a word that means the same.",
+      "pairs": [
+        [
+          "big",
+          "large"
+        ],
+        [
+          "happy",
+          "glad"
+        ],
+        [
+          "fast",
+          "quick"
+        ],
+        [
+          "smart",
+          "clever"
+        ],
+        [
+          "tiny",
+          "small"
+        ],
+        [
+          "begin",
+          "start"
+        ],
+        [
+          "scared",
+          "afraid"
+        ],
+        [
+          "pretty",
+          "beautiful"
+        ],
+        [
+          "angry",
+          "mad"
+        ],
+        [
+          "rich",
+          "wealthy"
+        ],
+        [
+          "tired",
+          "sleepy"
+        ],
+        [
+          "brave",
+          "bold"
+        ]
+      ]
+    },
+    {
+      "name": "plurals",
+      "chapter": "Unit 3: Fun with Games",
+      "a_label": "Singular",
+      "b_label": "Plural",
+      "tf_template": "The plural of '{a}' is '{b}'.",
+      "cloze_template": "The plural of '{a}' is ___.",
+      "match_instruction": "Match each singular word with its plural.",
+      "pairs": [
+        [
+          "cat",
+          "cats"
+        ],
+        [
+          "dog",
+          "dogs"
+        ],
+        [
+          "box",
+          "boxes"
+        ],
+        [
+          "baby",
+          "babies"
+        ],
+        [
+          "child",
+          "children"
+        ],
+        [
+          "man",
+          "men"
+        ],
+        [
+          "foot",
+          "feet"
+        ],
+        [
+          "tooth",
+          "teeth"
+        ],
+        [
+          "leaf",
+          "leaves"
+        ],
+        [
+          "mouse",
+          "mice"
+        ],
+        [
+          "city",
+          "cities"
+        ],
+        [
+          "bus",
+          "buses"
+        ],
+        [
+          "knife",
+          "knives"
+        ],
+        [
+          "woman",
+          "women"
+        ]
+      ]
+    },
+    {
+      "name": "gender",
+      "chapter": "Unit 2: My Beautiful World",
+      "a_label": "Masculine",
+      "b_label": "Feminine",
+      "tf_template": "The feminine of '{a}' is '{b}'.",
+      "cloze_template": "The feminine of '{a}' is ___.",
+      "match_instruction": "Match each masculine word with its feminine form.",
+      "pairs": [
+        [
+          "king",
+          "queen"
+        ],
+        [
+          "man",
+          "woman"
+        ],
+        [
+          "boy",
+          "girl"
+        ],
+        [
+          "father",
+          "mother"
+        ],
+        [
+          "uncle",
+          "aunt"
+        ],
+        [
+          "brother",
+          "sister"
+        ],
+        [
+          "son",
+          "daughter"
+        ],
+        [
+          "prince",
+          "princess"
+        ],
+        [
+          "lion",
+          "lioness"
+        ],
+        [
+          "actor",
+          "actress"
+        ],
+        [
+          "nephew",
+          "niece"
+        ],
+        [
+          "husband",
+          "wife"
+        ],
+        [
+          "grandfather",
+          "grandmother"
+        ]
+      ]
+    },
+    {
+      "name": "past_tense",
+      "chapter": "Unit 4: Up High",
+      "a_label": "Present",
+      "b_label": "Past",
+      "tf_template": "The past tense of '{a}' is '{b}'.",
+      "cloze_template": "The past tense of '{a}' is ___.",
+      "match_instruction": "Match each present-tense verb with its past tense.",
+      "pairs": [
+        [
+          "go",
+          "went"
+        ],
+        [
+          "eat",
+          "ate"
+        ],
+        [
+          "run",
+          "ran"
+        ],
+        [
+          "see",
+          "saw"
+        ],
+        [
+          "come",
+          "came"
+        ],
+        [
+          "give",
+          "gave"
+        ],
+        [
+          "take",
+          "took"
+        ],
+        [
+          "make",
+          "made"
+        ],
+        [
+          "sing",
+          "sang"
+        ],
+        [
+          "drink",
+          "drank"
+        ],
+        [
+          "write",
+          "wrote"
+        ],
+        [
+          "swim",
+          "swam"
+        ],
+        [
+          "ride",
+          "rode"
+        ],
+        [
+          "fly",
+          "flew"
+        ],
+        [
+          "catch",
+          "caught"
+        ]
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "statement": "There are five vowels in English: a, e, i, o and u.",
+      "chapter": "Unit 1: My Land"
+    },
+    {
+      "statement": "Every letter that is not a vowel is called a consonant.",
+      "chapter": "Unit 1: My Land"
+    },
+    {
+      "statement": "A naming word for a person, place, animal or thing is called a noun.",
+      "chapter": "Unit 1: My Land"
+    },
+    {
+      "statement": "A word that shows an action, like run or jump, is called a verb.",
+      "chapter": "Unit 3: Fun with Games"
+    },
+    {
+      "statement": "A word that describes a noun, like tall or bright, is called an adjective.",
+      "chapter": "Unit 4: Up High"
+    },
+    {
+      "statement": "We use 'an' before a word that begins with a vowel sound, as in 'an apple'.",
+      "chapter": "Unit 2: My Beautiful World"
+    },
+    {
+      "statement": "We use 'a' before a word that begins with a consonant sound, as in 'a ball'.",
+      "chapter": "Unit 2: My Beautiful World"
+    },
+    {
+      "statement": "Every sentence begins with a capital letter.",
+      "chapter": "Unit 1: My Land"
+    },
+    {
+      "statement": "A telling sentence ends with a full stop.",
+      "chapter": "Unit 3: Fun with Games"
+    },
+    {
+      "statement": "A sentence that asks something ends with a question mark.",
+      "chapter": "Unit 3: Fun with Games"
+    },
+    {
+      "statement": "The special name of a person or place is a proper noun and always begins with a capital letter.",
+      "chapter": "Unit 1: My Land"
+    },
+    {
+      "statement": "Words with the opposite meaning are called antonyms, and words with the same meaning are called synonyms.",
+      "chapter": "Unit 2: My Beautiful World"
+    }
+  ]
+}

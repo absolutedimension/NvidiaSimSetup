@@ -56,15 +56,32 @@ def _validate(kb):
                 seen[k] = b
         if len(bins) < 2:
             errs.append(f"grouping {g.get('name')}: needs >=2 bins")
+        tf = g.get("tf_template", "")
+        bad = set(re.findall(r"\{(\w+)\}", tf)) - {"item", "bin", "art"}
+        if bad:
+            errs.append(f"grouping {g.get('name')}: tf_template uses unknown placeholders {bad} (allowed: item, bin, art)")
     for rel in kb.get("relations", []):
         pairs = rel.get("pairs", [])
         if len(pairs) < 3:
             errs.append(f"relation {rel.get('name')}: needs >=3 pairs")
+        for pr in pairs:
+            if not (isinstance(pr, (list, tuple)) and len(pr) == 2):
+                errs.append(f"relation {rel.get('name')}: malformed pair {pr}")
         a_seen = {}
-        for a, b in pairs:
+        for pr in pairs:
+            if not (isinstance(pr, (list, tuple)) and len(pr) == 2):
+                continue
+            a, b = pr
             if str(a).lower() in a_seen:
                 errs.append(f"relation {rel.get('name')}: left value '{a}' repeats — a→b must be a function")
             a_seen[str(a).lower()] = b
+        allowed = {"a", "b", "art", "artb", "Artb"}
+        for key in ("tf_template", "cloze_template"):
+            bad = set(re.findall(r"\{(\w+)\}", rel.get(key, ""))) - allowed
+            if bad:
+                errs.append(f"relation {rel.get('name')}: {key} uses unknown placeholders {bad} (allowed: {sorted(allowed)})")
+        if "___" not in rel.get("cloze_template", ""):
+            errs.append(f"relation {rel.get('name')}: cloze_template must contain the blank '___'")
         # b's need not be globally unique; the engine checks string-inequality per distractor.
     if errs:
         raise ValueError("KB validation failed:\n  - " + "\n  - ".join(errs))
@@ -93,6 +110,16 @@ def _fmt(tmpl, a="", b=""):
     return tmpl.format(a=a, b=b, art=_Art(a), artb=_art(b), Artb=_Art(b))
 
 
+def _S(kb, key, default, **fmt):
+    """Fixed UI string with an optional per-KB override (kb['strings'][key]) — lets a Hindi KB
+    supply Devanagari instructions/explanations while English KBs use the defaults."""
+    s = kb.get("strings", {}).get(key, default)
+    try:
+        return s.format(**fmt) if fmt else s
+    except Exception:
+        return default
+
+
 # ---------------------------------------------------------------- generators (FORM)
 def g_odd_one_out(kb, r):
     cats = kb.get("categories", [])
@@ -109,9 +136,12 @@ def g_odd_one_out(kb, r):
     odd = r.choice(c2["members"])
     opts = three + [odd]
     r.shuffle(opts)
-    return _item("odd_one_out", "Which one does NOT belong?",
+    w1 = c1["label"].split()[-1]; w2 = c2["label"].split()[-1]
+    w1pl = w1 if w1.endswith("s") else w1 + "s"
+    rich = f"{odd} is {_art(w2)} {w2}, the others are all {w1pl}."
+    return _item("odd_one_out", _S(kb, "odd_instruction", "Which one does NOT belong?"),
                  {"options": opts}, odd, c1.get("chapter", "General Knowledge"), kb["subject"],
-                 kb["class"], 2, f"{odd} is {_art(c2['label'].split()[-1])} {c2['label'].split()[-1]}, the others are all {c1['label'].split()[-1]}s.")
+                 kb["class"], 2, _S(kb, "odd_explain", rich, odd=odd))
 
 
 def g_match(kb, r):
@@ -123,10 +153,10 @@ def g_match(kb, r):
     k = min(len(pairs), r.choice([4, 4, 5]))
     chosen = r.sample(pairs, k)
     payload_pairs = [[a, b] for a, b in chosen]
-    return _item("match_following", rel.get("match_instruction", "Match the pairs."),
+    return _item("match_following", rel.get("match_instruction", _S(kb, "match_default_instruction", "Match the pairs.")),
                  {"pairs": payload_pairs}, {a: b for a, b in chosen},
                  rel.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 3,
-                 "Great matching!")
+                 _S(kb, "match_explain", "Great matching!"))
 
 
 def g_true_false(kb, r):
@@ -135,8 +165,8 @@ def g_true_false(kb, r):
     src = r.choice(["rel", "rel", "grp", "grp", "fact"])
     if src == "fact" and kb.get("facts"):
         f = r.choice(kb["facts"])
-        return _item("true_false", "Is this true or false?", {"statement": f["statement"]}, True,
-                     f.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 1, "That's true! Well done.")
+        return _item("true_false", _S(kb, "tf_instruction", "Is this true or false?"), {"statement": f["statement"]}, True,
+                     f.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 1, _S(kb, "tf_true_fact", "That's true! Well done."))
     if src == "grp" and kb.get("groupings"):
         g = r.choice(kb["groupings"])
         tf = g.get("tf_template", "A {item} is a {bin}.")
@@ -147,15 +177,15 @@ def g_true_false(kb, r):
         make_true = r.random() < 0.5
         if make_true:
             stmt = tf.format(art=art, item=x, bin=bin_name.lower())
-            return _item("true_false", "Is this true or false?", {"statement": stmt}, True,
-                         g.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 2, "Correct — that's true!")
+            return _item("true_false", _S(kb, "tf_instruction", "Is this true or false?"), {"statement": stmt}, True,
+                         g.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 2, _S(kb, "tf_true", "Correct — that's true!"))
         wrong_bins = [b for b, _ in bins if b != bin_name]
         wb = r.choice(wrong_bins)
         stmt = tf.format(art=art, item=x, bin=wb.lower())
         corrected = tf.format(art=art, item=x, bin=bin_name.lower())   # the TRUE statement
-        return _item("true_false", "Is this true or false?", {"statement": stmt}, False,
+        return _item("true_false", _S(kb, "tf_instruction", "Is this true or false?"), {"statement": stmt}, False,
                      g.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 2,
-                     f"Not quite — it should be: {corrected}")
+                     _S(kb, "tf_false_grouping", "Not quite — it should be: {corrected}", corrected=corrected))
     # relations
     rels = kb.get("relations", [])
     if not rels:
@@ -168,16 +198,16 @@ def g_true_false(kb, r):
         return None
     make_true = r.random() < 0.5
     if make_true:
-        return _item("true_false", "Is this true or false?", {"statement": _fmt(tf, a, b)}, True,
-                     rel.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 2, "Correct — that's true!")
+        return _item("true_false", _S(kb, "tf_instruction", "Is this true or false?"), {"statement": _fmt(tf, a, b)}, True,
+                     rel.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 2, _S(kb, "tf_true", "Correct — that's true!"))
     # a PROVABLY false statement: another pair's b that is string-different from the true b
     alts = [bb for aa, bb in pairs if str(bb).strip().lower() != str(b).strip().lower()]
     if not alts:
         return None
     b2 = r.choice(alts)
-    return _item("true_false", "Is this true or false?", {"statement": _fmt(tf, a, b2)}, False,
+    return _item("true_false", _S(kb, "tf_instruction", "Is this true or false?"), {"statement": _fmt(tf, a, b2)}, False,
                  rel.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 2,
-                 f"That's false — the right answer is {b}.")
+                 _S(kb, "tf_false_relation", "That's false — the right answer is {b}.", b=b))
 
 
 def g_cloze(kb, r):
@@ -208,9 +238,9 @@ def g_cloze(kb, r):
         return None
     bank = [answer] + r.sample(distract, 2)
     r.shuffle(bank)
-    return _item("cloze", "Fill in the blank.", {"sentence": sentence, "bank": bank}, answer,
+    return _item("cloze", _S(kb, "cloze_instruction", "Fill in the blank."), {"sentence": sentence, "bank": bank}, answer,
                  rel.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 3,
-                 f"The answer is {answer}.")
+                 _S(kb, "cloze_explain", "The answer is {answer}.", answer=answer))
 
 
 def g_sort(kb, r):
@@ -232,9 +262,9 @@ def g_sort(kb, r):
     if len(items) < 3:
         return None
     r.shuffle(items)
-    return _item("sort_groups", g.get("sort_instruction", "Sort these into the right groups."),
+    return _item("sort_groups", g.get("sort_instruction", _S(kb, "sort_default_instruction", "Sort these into the right groups.")),
                  {"items": items, "bins": [b for b, _ in use]}, answer,
-                 g.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 3, "Great sorting!")
+                 g.get("chapter", "General Knowledge"), kb["subject"], kb["class"], 3, _S(kb, "sort_explain", "Great sorting!"))
 
 
 GENERATORS = [g_odd_one_out, g_match, g_true_false, g_cloze, g_sort]
