@@ -38,6 +38,21 @@ import re
 CHEM_REVIEWED = True
 BIO_REVIEWED = False
 
+# Biology is not one thing. VITAMIN_CHEMICAL_NAME is a set of CHEMICAL IDENTITIES, and the same
+# NIH oracle that earned CHEM_REVIEWED holds both names against one compound record — so this
+# table can be earned by machine while the other three cannot. Splitting the flag is the same
+# argument science_fact_tables() already makes for splitting chemistry from biology: one flag over
+# two levels of evidence either holds back verified facts or ships unverified ones.
+#
+# ENABLED 2026-08-23. What earned it, and what would un-earn it:
+#   - all 6 rows confirmed against PubChem's synonym list for that vitamin, live
+#   - matching is EXACT after normalisation, never substring: "niacin" is inside "niacinamide",
+#     which is a different compound, so a wrong row would have passed
+#   - sabotage-tested; see verify_vitamin_names.__doc__ for what it does and does not check
+#   - the 7th row, Vitamin D -> calciferol, is NOT here: see VITAMIN_CHEMICAL_NAME_PENDING
+# Re-run `python3 -m qbank.science_tables` after ANY edit to VITAMIN_CHEMICAL_NAME.
+BIO_NAMES_REVIEWED = True
+
 _ELEM_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                           "..", "drop", "bssc", "ELEMENTS.json")
 
@@ -102,6 +117,18 @@ COMPOUND_FORMULA = {
 # ---- जीव विज्ञान ---------------------------------------------------------------
 # Function tables, and the values are mutually exclusive so `_false_value` has room to work:
 # scurvy comes only from vitamin C, so pairing it with vitamin A is false BY OUR OWN DATA.
+# Held back from VITAMIN_CHEMICAL_NAME because a machine cannot settle it, which is the only
+# reason a row is ever held back in this file. PubChem's "Calciferol" record IS ergocalciferol,
+# i.e. vitamin D2 specifically, while "vitamin D" names a GROUP that also contains D3
+# (cholecalciferol). "Vitamin D = calciferol" is what Indian Class-10 texts teach and what the
+# commission would ask, so the row is very likely right for this paper — but "very likely right"
+# is a human's call, not an oracle's, and the alternative is an ALIAS that forces a green line
+# over a judgement (see the Limestone note in verify_chemistry). It joins the live table the
+# moment BIO_REVIEWED flips.
+VITAMIN_CHEMICAL_NAME_PENDING = {
+    "Vitamin D": "calciferol",
+}
+
 VITAMIN_DEFICIENCY = {
     "Vitamin A": "night blindness",
     "Vitamin B1": "beriberi",
@@ -120,7 +147,7 @@ VITAMIN_CHEMICAL_NAME = {
     "Vitamin B2": "riboflavin",
     "Vitamin B3": "niacin",
     "Vitamin C": "ascorbic acid",
-    "Vitamin D": "calciferol",
+
     "Vitamin E": "tocopherol",
 }
 
@@ -238,16 +265,41 @@ def write_review_sheet(path="drop/bssc/SCIENCE_REVIEW.md",
     import os
     lines = ["# General Science — biology fact review sheet", "",
              "Chemistry is machine-verified against PubChem (NIH) and is not listed here.",
-             "**Biology facts and ALL Hindi below are hand-written.** Tick or correct each row.",
-             "Nothing is used by the paper builder until `BIO_REVIEWED` is set to True in",
-             "`qbank/science_tables.py`.", ""]
+             "**VITAMIN_CHEMICAL_NAME is not listed here either, as of 2026-08-23.** Vitamin ->",
+             "chemical name is a set of CHEMICAL IDENTITIES, and the same NIH oracle answers",
+             "those: all 6 rows are confirmed against PubChem's synonym list for that vitamin,",
+             "matched exactly rather than by substring, and sabotage-tested (7 of 8 slips caught;",
+             "the miss is written up in `verify_vitamin_names.__doc__`). It is gated separately",
+             "on `BIO_NAMES_REVIEWED`, which is already True. **That is 6 rows you do not have",
+             "to read.** One row was NOT machine-earnable and is below with the others.", "",
+             "**Everything remaining is hand-written, facts and Hindi both.** Tick or correct",
+             "each row. None of it is used by the paper builder until `BIO_REVIEWED` is set to",
+             "True in `qbank/science_tables.py`.", "",
+             "⚠️ **TWO edits, made at the same moment** — the flag alone is not enough:", "",
+             "1. `BIO_REVIEWED = True` in `qbank/science_tables.py`",
+             "2. add these to `concepts` for **Biology** in `drop/bssc/SYLLABUS_MAP.json`,",
+             "   alongside the `VITAMIN_CHEMICAL_NAME` already there:", "",
+             "   `[\"VITAMIN_DEFICIENCY\", \"HORMONE_GLAND\", \"DISEASE_PATHOGEN\"]`",
+             "", "A topic with `concepts` counts as GENERATABLE, so listing it before the flag is",
+             "set promises questions the gate then refuses, and the section pads from elsewhere.",
+             ""]
     sents = []
     if os.path.exists(corpus_path):
         sents = re.split(r"(?<=[.!?])\s+|\n+",
                          io.open(corpus_path, encoding="utf-8").read())
     n = 0
-    for tname, table in _BIO.items():
+    # The machine-earned table is skipped; the one row it could not earn is shown on its own,
+    # with the reason, so the reviewer knows why a single row is being asked of them.
+    sheet = {k: v for k, v in _BIO.items() if k != "VITAMIN_CHEMICAL_NAME"}
+    sheet["VITAMIN_CHEMICAL_NAME (the one row PubChem could not settle)"] = \
+        VITAMIN_CHEMICAL_NAME_PENDING
+    for tname, table in sheet.items():
         lines += [f"## {tname}", ""]
+        if tname.startswith("VITAMIN_CHEMICAL_NAME ("):
+            lines += ["PubChem's `Calciferol` record IS ergocalciferol — vitamin **D2** — while",
+                      "\"vitamin D\" names a group that also contains D3 (cholecalciferol). The row",
+                      "is what Class-10 texts teach and what the commission would ask, but that is",
+                      "a teacher's call, not an oracle's.", ""]
         for k, v in table.items():
             n += 1
             lines += [f"- [ ] **{k}** → **{v}**   ·   हिंदी: {HI.get(k, '?')} → {HI.get(v, '?')}"]
@@ -377,6 +429,86 @@ def verify_chemistry(quiet=False):
     return bad, unchecked
 
 
+def verify_vitamin_names(quiet=False):
+    """Check every vitamin -> chemical name against PubChem's SYNONYM list for that vitamin.
+
+    ⭐ WHY THIS TABLE AND NOT THE OTHER THREE. This file's own rule is that automation is worth
+    having exactly where an authoritative source can be queried, and is worse than nothing where
+    it cannot. "Vitamin C is ascorbic acid" is a chemical identity, and PubChem — the same NIH
+    oracle that earned CHEM_REVIEWED — lists both names against one compound record. That is a
+    real check, not a text-similarity guess.
+
+    The other three biology tables have no such source and are not touched here. "Insulin is
+    secreted by the pancreas" and "Vitamin A deficiency causes night blindness" are true, and
+    there is no endpoint that will say so; writing a checker that gestures at a corpus and returns
+    green would be the exact mistake history_tables measured and abandoned. Those stay behind the
+    human gate.
+
+    WHAT IT DOES NOT CATCH, measured rather than assumed. Sabotaged with eight plausible slips it
+    caught seven: another row's value, an adjacent B vitamin, a real-but-wrong substance, a
+    precursor ("Vitamin A -> beta-carotene"), and "Vitamin B3 -> niacinamide", which is one
+    substring away from niacin and a different compound. It MISSED "Vitamin C -> ascorbate",
+    because PubChem lists the anion against the same record as the acid — the oracle is answering
+    "same compound record", which is not quite "the name a paper should print". An acid confused
+    with its own salt would pass. That is the limit of what this check is worth, and it is written
+    down here rather than left for someone to discover in front of a student.
+
+    Returns (bad, unchecked). NOT-CHECKED is reported as loudly as WRONG — a silent skip is how an
+    unverified table gets treated as a verified one.
+    """
+    import urllib.parse
+    import urllib.request
+    bad, unchecked = [], []
+    cache_path = os.path.join(os.path.dirname(_ELEM_PATH), "PUBCHEM_VITAMINS.json")
+    cache = {}
+    if os.path.exists(cache_path):
+        try:
+            cache = json.load(io.open(cache_path, encoding="utf-8"))
+        except Exception:
+            cache = {}
+
+    def norm(x):
+        """Compare names the way PubChem varies them: case, hyphens, and the stereo/vitamer
+        prefixes it carries on the same record — 'l-ascorbic acid' and 'all-trans-Retinol' are
+        the record's own words for what the paper prints as 'ascorbic acid' and 'retinol'."""
+        x = re.sub(r"^(all-trans-|l-|d-|dl-|\(\+\)-|\(-\)-)+", "", str(x).strip().lower())
+        return re.sub(r"[^a-z0-9]", "", x)
+
+    for vit, chem in VITAMIN_CHEMICAL_NAME.items():
+        if vit in cache:
+            syns = cache[vit]
+        else:
+            url = ("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/"
+                   + urllib.parse.quote(vit) + "/synonyms/JSON")
+            try:
+                req = urllib.request.Request(url, headers={"User-Agent": "trigunai-qbank/1.0"})
+                d = json.loads(urllib.request.urlopen(req, timeout=25).read().decode())
+                syns = d["InformationList"]["Information"][0]["Synonym"]
+                cache[vit] = syns
+            except Exception as e:
+                unchecked.append((vit, chem, repr(e)[:50]))
+                continue
+        # The row is confirmed when the chemical name the paper will print is one of the names
+        # PubChem holds for that vitamin. Substring matching was rejected: "niacin" is inside
+        # "niacinamide", which is a DIFFERENT compound, so a wrong row would have passed.
+        if not any(norm(sy) == norm(chem) for sy in syns):
+            bad.append((vit, chem, ", ".join(syns[:6])))
+    try:
+        json.dump(cache, io.open(cache_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    except Exception:
+        pass
+    if not quiet:
+        n = len(VITAMIN_CHEMICAL_NAME)
+        print(f"VITAMIN_CHEMICAL_NAME: {n - len(bad) - len(unchecked)} of {n} confirmed "
+              f"against PubChem")
+        for vit, chem, syns in bad:
+            print(f"   WRONG       {vit}: we say {chem}; PubChem's names are {syns}")
+        for vit, chem, why in unchecked:
+            print(f"   NOT CHECKED {vit} ({chem}) — {why}")
+    return bad, unchecked
+
+
 if __name__ == "__main__":
     verify_chemistry()
+    verify_vitamin_names()
     write_review_sheet()

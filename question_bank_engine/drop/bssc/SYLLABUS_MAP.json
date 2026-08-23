@@ -152,8 +152,10 @@
     "en": "Biology",
     "share": 0.25,
     "builders": [],
-    "generator": null,
-    "concepts": [],
+    "generator": "science_tables.VITAMIN_CHEMICAL_NAME (PubChem-verified)",
+    "concepts": [
+     "VITAMIN_CHEMICAL_NAME"
+    ],
     "_note": "Held empty while BIO_REVIEWED is False. quotas() treats a topic with concepts as generatable, so listing them would promise the paper questions the gate refuses to supply. Add ['Biology'] when the flag flips."
    },
    {

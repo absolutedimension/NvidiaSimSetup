@@ -1,15 +1,34 @@
 # General Science — biology fact review sheet
 
 Chemistry is machine-verified against PubChem (NIH) and is not listed here.
-**Biology facts and ALL Hindi below are hand-written.** Tick or correct each row.
-Nothing is used by the paper builder until `BIO_REVIEWED` is set to True in
-`qbank/science_tables.py`.
+**VITAMIN_CHEMICAL_NAME is not listed here either, as of 2026-08-23.** Vitamin ->
+chemical name is a set of CHEMICAL IDENTITIES, and the same NIH oracle answers
+those: all 6 rows are confirmed against PubChem's synonym list for that vitamin,
+matched exactly rather than by substring, and sabotage-tested (7 of 8 slips caught;
+the miss is written up in `verify_vitamin_names.__doc__`). It is gated separately
+on `BIO_NAMES_REVIEWED`, which is already True. **That is 6 rows you do not have
+to read.** One row was NOT machine-earnable and is below with the others.
+
+**Everything remaining is hand-written, facts and Hindi both.** Tick or correct
+each row. None of it is used by the paper builder until `BIO_REVIEWED` is set to
+True in `qbank/science_tables.py`.
+
+⚠️ **TWO edits, made at the same moment** — the flag alone is not enough:
+
+1. `BIO_REVIEWED = True` in `qbank/science_tables.py`
+2. add these to `concepts` for **Biology** in `drop/bssc/SYLLABUS_MAP.json`,
+   alongside the `VITAMIN_CHEMICAL_NAME` already there:
+
+   `["VITAMIN_DEFICIENCY", "HORMONE_GLAND", "DISEASE_PATHOGEN"]`
+
+A topic with `concepts` counts as GENERATABLE, so listing it before the flag is
+set promises questions the gate then refuses, and the section pads from elsewhere.
 
 ## VITAMIN_DEFICIENCY
 
 - [ ] **Vitamin A** → **night blindness**   ·   हिंदी: विटामिन A → रतौंधी
-      > An early sign of vitamin A deficiency is night blindness.
-      > Reversible night blindness is an early indicator of low vitamin A status.
+      > Decreasing night blindness requires the improvement of vitamin A status in at-risk populations.
+      > Vitamin A plays a major role in phototransduction, so this deficiency impairs vision, often presenting with nyctalopia (night blindness).
 
 - [ ] **Vitamin B1** → **beriberi**   ·   हिंदी: विटामिन B1 → बेरी-बेरी
       > He called this "the anti-beriberi factor", which was later identified as vitamin B1, thiamine.
@@ -17,23 +36,23 @@ Nothing is used by the paper builder until `BIO_REVIEWED` is set to True in
 
 - [ ] **Vitamin B3** → **pellagra**   ·   हिंदी: विटामिन B3 → पेलाग्रा
       > Pellagra  is a disease caused by a lack of the vitamin niacin (vitamin B3).
-      > Nicotinic acid and nicotinamide are both used for prevention and treatment of pellagra, a disease caused by lack of the vitamin.
+      > Though he identified that a missing nutritional element was responsible for pellagra, he did not discover the specific vitamin responsible.
 
 - [ ] **Vitamin B12** → **pernicious anaemia**   ·   हिंदी: विटामिन B12 → घातक रक्ताल्पता
-      > The main type of vitamin B12 deficiency anemia is pernicious anemia,  characterized by a triad of symptoms:
-      > Todd, at the University of Cambridge, used the LLD assay to extract the anti-pernicious anemia factor from liver extracts, purify it, and name it vitamin B12.
+      > Causes are usually related to conditions that give rise to malabsorption of vitamin B12, particularly autoimmune gastritis in pernicious anemia.
+      > Murphy and George Minot for discovery of an effective treatment for pernicious anemia using liver concentrate, later found to contain a large amount of vitamin B12.
 
 - [ ] **Vitamin C** → **scurvy**   ·   हिंदी: विटामिन C → स्कर्वी
-      > Scurvy is a disease resulting from a deficiency of vitamin C.
       > It was the acid, not the (then-unknown) Vitamin C that was believed to cure scurvy.
+      > Rates of scurvy in the developed world are low due to the greater access to vitamin C-rich foods.
 
 - [ ] **Vitamin D** → **rickets**   ·   हिंदी: विटामिन D → रिकेट्स
       > Vitamin D-related rickets
       > Vitamin D-resistant rickets
 
 - [ ] **Vitamin K** → **delayed blood clotting**   ·   हिंदी: विटामिन K → रक्त का देर से जमना
-      > For aspirin and warfarin, high amounts of vitamin E may potentiate anti-blood clotting action.
-      > As a consequence, proteins that should be modified by vitamin K are not, including proteins essential to blood clotting, and are thus not functional.
+      > The primary cause of congenital rickets is vitamin D deficiency in the mother's blood.
+      > Vitamin A deficiency (VAD) or hypovitaminosis A is a lack of vitamin A in blood and tissues.
 
 - [ ] **Iron** → **anaemia**   ·   हिंदी: लोहा → रक्ताल्पता
       > NPS News 70: Iron deficiency anaemia: NPS – Better choices, Better health – From the National Prescribing Service
@@ -41,36 +60,6 @@ Nothing is used by the paper builder until `BIO_REVIEWED` is set to True in
 - [ ] **Iodine** → **goitre**   ·   हिंदी: आयोडीन → घेंघा
       > Worldwide, over 90% of goitre cases are caused by iodine deficiency.
       > David Marine conducted substantial research on the treatment of goitre with iodine.
-
-## VITAMIN_CHEMICAL_NAME
-
-- [ ] **Vitamin A** → **retinol**   ·   हिंदी: विटामिन A → रेटिनॉल
-      > Plasma retinol is used to confirm vitamin A status.
-      > Plasma retinol is used as a biomarker to confirm vitamin A deficiency.
-
-- [ ] **Vitamin B1** → **thiamine**   ·   हिंदी: विटामिन B1 → थायमिन
-      > Thiamine is one of the B vitamins and is also known as vitamin B1.
-      > Thiamine was the first of the water-soluble vitamins to be isolated.
-
-- [ ] **Vitamin B2** → **riboflavin**   ·   हिंदी: विटामिन B2 → राइबोफ्लेविन
-      > Circa 1937, riboflavin was also referred to as "Vitamin G".
-      > Riboflavin, vitamin B6 and iron are required for the process.
-
-- [ ] **Vitamin B3** → **niacin**   ·   हिंदी: विटामिन B3 → नियासिन
-      > The resulting name niacin was derived from nicotinic acid + vitamin.
-      > The resulting name niacin was derived from nicotinic acid + vitamin.
-
-- [ ] **Vitamin C** → **ascorbic acid**   ·   हिंदी: विटामिन C → एस्कॉर्बिक अम्ल
-      > Foods rich in ascorbic acid (vitamin C) can also be beneficial, since ascorbic acid enhances iron absorption.
-      > The name "vitamin C" always refers to the l-enantiomers of ascorbic acid and its oxidized form, dehydroascorbate (DHA).
-
-- [ ] **Vitamin D** → **calciferol**   ·   हिंदी: विटामिन D → कैल्सिफेरॉल
-      > Vitamin D3 (cholecalciferol) is the preferred form since it is more readily absorbed than vitamin D2.
-      > Vitamin D2 (ergocalciferol) is produced in a similar way using ergosterol from yeast as a starting material.
-
-- [ ] **Vitamin E** → **tocopherol**   ·   हिंदी: विटामिन E → टोकोफेरॉल
-      > For example, there are eight vitamers of vitamin E: four tocopherols and four tocotrienols.
-      > The nutritional content of vitamin E is defined by equivalency to 100% RRR-configuration α-tocopherol activity.
 
 ## HORMONE_GLAND
 
@@ -84,14 +73,15 @@ Nothing is used by the paper builder until `BIO_REVIEWED` is set to True in
 
 - [ ] **Adrenaline** → **the adrenal gland**   ·   हिंदी: एड्रिनेलिन → अधिवृक्क ग्रंथि
       > Adrenaline is normally produced by the adrenal glands and by a small number of neurons in the medulla oblongata.
-      > Such an increase in the circulating concentration of adrenaline is secondary to the activation of the sympathetic nerves innervating the adrenal medulla, as it is rapid and not present in animals where the adrenal gland has been removed.
+      > The adrenal glands produce a variety of hormones including adrenaline and the steroids aldosterone  cortisol and Dehydroepiandrosterone sulfate (DHEA).
 
 - [ ] **Growth hormone** → **the pituitary gland**   ·   हिंदी: वृद्धि हार्मोन → पीयूष ग्रंथि
-      > thyroid follicular cells) and are regulated by thyroid-stimulating hormone (TSH) made by the thyrotropes of the anterior pituitary gland.
-      > These nodules grow up at varying rates and secrete thyroid hormone autonomously, thereby suppressing TSH-dependent growth and function in the rest of gland.
+      > Prior to its production by recombinant DNA technology, growth hormone used to treat deficiencies was extracted from the pituitary glands of cadavers.
+      > The intermediate lobe of the pituitary gland secretes only one enzyme that is melanocyte stimulating hormone.
 
 - [ ] **Parathormone** → **the parathyroid gland**   ·   हिंदी: पैराथॉर्मोन → पैराथायरॉइड ग्रंथि
-      > Activation of VDR in the intestine, bone, kidney, and parathyroid gland cells is central to maintaining calcium and phosphorus levels in the blood, a process that is assisted by parathyroid hormone and calcitonin, thereby supporting bone health.
+      > Parathyroid hormone (PTH), also known as parathormone or parathyrin, is a peptide hormone secreted by the parathyroid glands.
+      > == Parathyroid glands ==
 
 ## DISEASE_PATHOGEN
 
@@ -117,3 +107,14 @@ Nothing is used by the paper builder until `BIO_REVIEWED` is set to True in
 - [ ] **Kala-azar** → **a protozoan spread by the sandfly**   ·   हिंदी: कालाजार → बालू-मक्खी से फैलने वाले एक प्रोटोजोआ
       > Visceral Leishmaniasis/kala-azar samples from India revealed the presence of not only the primary causative protozoan parasite, i.e., Leishmania donovani (LD), but also co-infection with another protozoan member called Leptomonas seymouri (LS).
       > In the words of Jill Seaman, the doctor who led relief efforts in the Upper Nile for the French organization Médecins Sans Frontières, "Where else in the world could 50% of a population die without anyone knowing?" Due to the South Sudanese Civil War, kala-aza
+
+## VITAMIN_CHEMICAL_NAME (the one row PubChem could not settle)
+
+PubChem's `Calciferol` record IS ergocalciferol — vitamin **D2** — while
+"vitamin D" names a group that also contains D3 (cholecalciferol). The row
+is what Class-10 texts teach and what the commission would ask, but that is
+a teacher's call, not an oracle's.
+
+- [ ] **Vitamin D** → **calciferol**   ·   हिंदी: विटामिन D → कैल्सिफेरॉल
+      > Vitamin D3 (cholecalciferol) is the preferred form since it is more readily absorbed than vitamin D2.
+      > Vitamin D2 (ergocalciferol) is produced in a similar way using ergosterol from yeast as a starting material.

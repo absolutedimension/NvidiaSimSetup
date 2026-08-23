@@ -803,11 +803,24 @@ def science_fact_tables():
         staticgk_hi.register(science_tables.HI)
         t.update({n: getattr(science_tables, n) for n in
                   ("ELEMENT_SYMBOL", "ELEMENT_ATOMIC_NUMBER", "COMPOUND_FORMULA")})
+    # Biology splits again, for the same reason chemistry split from biology above: vitamin ->
+    # chemical name is a set of CHEMICAL IDENTITIES and PubChem answers those, so that table is
+    # machine-earned while deficiency, hormone and pathogen still wait for a person.
+    if science_tables.BIO_NAMES_REVIEWED:
+        staticgk_hi.register(science_tables.HI)
+        t["VITAMIN_CHEMICAL_NAME"] = dict(science_tables.VITAMIN_CHEMICAL_NAME)
     if science_tables.BIO_REVIEWED:
         staticgk_hi.register(science_tables.HI)
         t.update({n: getattr(science_tables, n) for n in
-                  ("VITAMIN_DEFICIENCY", "VITAMIN_CHEMICAL_NAME", "HORMONE_GLAND",
-                   "DISEASE_PATHOGEN")})
+                  ("VITAMIN_DEFICIENCY", "HORMONE_GLAND", "DISEASE_PATHOGEN")})
+        # The Vitamin D row is a human call, so it joins only on the human flag.
+        t.setdefault("VITAMIN_CHEMICAL_NAME", {}).update(
+            science_tables.VITAMIN_CHEMICAL_NAME_PENDING)
+    else:
+        print(f"  note: biology tables (deficiency / hormone / pathogen) are BUILT but NOT "
+              f"REVIEWED — "
+              f"{len(science_tables.VITAMIN_DEFICIENCY) + len(science_tables.HORMONE_GLAND) + len(science_tables.DISEASE_PATHOGEN) + len(science_tables.VITAMIN_CHEMICAL_NAME_PENDING)}"
+              f" facts held back (see drop/bssc/SCIENCE_REVIEW.md)")
     if not t:
         print("  note: chemistry/biology tables are BUILT but NOT ENABLED "
               "(CHEM_REVIEWED / BIO_REVIEWED are False) — see drop/bssc/SCIENCE_REVIEW.md")

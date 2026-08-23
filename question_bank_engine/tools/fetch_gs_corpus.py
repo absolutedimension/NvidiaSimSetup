@@ -32,7 +32,8 @@ UA = "TrigunAI-qbank-corpus/1.0 (https://trigunai.com; deepak@trigunai.com)"
 # never reads and every row silently reports "no supporting sentence".
 OUTDIR = {"economy": "/tmp/econcorpus",
           "agriculture": "/tmp/agricorpus",
-          "sports": "/tmp/sportscorpus"}
+          "sports": "/tmp/sportscorpus",
+          "biology": "/tmp/biocorpus"}
 
 PAGES = {
     "economy": ["Five-Year_Plans_of_India", "Reserve_Bank_of_India", "Planning_Commission_(India)",
@@ -61,6 +62,17 @@ PAGES = {
                "Eden_Gardens", "Wankhede_Stadium", "M._Chinnaswamy_Stadium",
                "Arun_Jaitley_Stadium", "Moin-ul-Haq_Stadium", "Green_Park_Stadium",
                "M._A._Chidambaram_Stadium", "Barabati_Stadium"],
+    # science_tables.write_review_sheet quotes /tmp/biocorpus, and the tool that built it had the
+    # same fate as fetch_history_corpus — written to /tmp, lost with it, so the sheet's evidence
+    # could not be regenerated after a reboot. Every fact in the three human-gated biology tables
+    # is covered by one of these pages.
+    "biology": ["Vitamin_A_deficiency", "Beriberi", "Pellagra", "Vitamin_B12_deficiency",
+                "Scurvy", "Rickets", "Vitamin_K_deficiency", "Iron-deficiency_anemia",
+                "Goitre", "Iodine_deficiency", "Vitamin", "Calciferol",
+                "Insulin", "Thyroid_hormones", "Adrenaline", "Growth_hormone",
+                "Parathyroid_hormone", "Endocrine_gland",
+                "Malaria", "Tuberculosis", "Dengue_fever", "Cholera", "Dermatophytosis",
+                "Visceral_leishmaniasis"],
 }
 
 
