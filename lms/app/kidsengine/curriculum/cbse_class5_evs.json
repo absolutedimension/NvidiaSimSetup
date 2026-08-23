@@ -1,214 +1,172 @@
 {
-  "board": "CBSE",
-  "class": 5,
-  "subject": "EVS",
-  "source": {
-    "name": "NCERT 'Looking Around' EVS Class V (code 0529, ISBN 978-81-7450-826-3)",
-    "url": "https://ncert.nic.in/textbook/pdf/eeap1ps.pdf",
-    "verified_on": "2026-08-02"
+ "board": "CBSE",
+ "class": 5,
+ "subject": "EVS",
+ "source": {
+  "name": "NCERT 'Our Wondrous World' — The World Around Us, Class 5 (NCF-2023, 10 chapters)",
+  "url": "https://ncert.nic.in/textbook/pdf/eeev1101.pdf … eeev1110.pdf",
+  "listing": "https://ncert.nic.in/textbook.php?eeev1=0-10",
+  "verified_on": "2026-08-23"
+ },
+ "confidence": "high",
+ "verified": true,
+ "status": "complete",
+ "notes": "REPLACES 'Looking Around' Class 5 (22 ch). Under NCF-2023 the book is 'Our Wondrous World', 10 chapters, code eeev1. Titles and concepts_en come from the official chapter PDFs, downloaded and text-extracted on 2026-08-23 (164,363 characters across all 10). Every chapter title was verified by finding it inside its own chapter's text. concepts_en = each chapter's distinctive terms by tf-idf against the other nine, character names and PDF artifacts filtered out. No textbook prose is stored or served.",
+ "chapters": [
+  {
+   "id": "water_the_essence_of_life",
+   "name": "Water — The Essence of Life",
+   "subtopics": [],
+   "concepts_en": [
+    "water",
+    "river",
+    "freshwater",
+    "flow",
+    "life",
+    "vapour",
+    "groundwater",
+    "floating"
+   ]
   },
-  "confidence": "high",
-  "verified": true,
-  "status": "complete",
-  "notes": "22 chapters; official NCERT contents (2024-25 reprint), verbatim. This book's teacher note confirms EVS is not a subject in Classes I & II.",
-  "chapters": [
-    {
-      "id": "super_senses",
-      "name": "Super Senses",
-      "subtopics": [
-        "animal senses",
-        "smell, sight and hearing",
-        "how animals respond to surroundings"
-      ]
-    },
-    {
-      "id": "a_snake_charmer_s_story",
-      "name": "A Snake Charmer's Story",
-      "subtopics": [
-        "snakes and snake charmers",
-        "livelihood from snakes",
-        "wildlife protection law"
-      ]
-    },
-    {
-      "id": "from_tasting_to_digesting",
-      "name": "From Tasting to Digesting",
-      "subtopics": [
-        "taste and the tongue",
-        "digestion begins in the mouth",
-        "the stomach and food"
-      ]
-    },
-    {
-      "id": "mangoes_round_the_year",
-      "name": "Mangoes Round the Year",
-      "subtopics": [
-        "food preservation",
-        "pickling and drying",
-        "keeping food from spoiling"
-      ]
-    },
-    {
-      "id": "seeds_and_seeds",
-      "name": "Seeds and Seeds",
-      "subtopics": [
-        "germination experiments",
-        "seed dispersal",
-        "how seeds travel"
-      ]
-    },
-    {
-      "id": "every_drop_counts",
-      "name": "Every Drop Counts",
-      "subtopics": [
-        "traditional water harvesting",
-        "water in Rajasthan",
-        "conserving water"
-      ]
-    },
-    {
-      "id": "experiments_with_water",
-      "name": "Experiments with Water",
-      "subtopics": [
-        "dissolving in water",
-        "floating and sinking",
-        "properties of water"
-      ]
-    },
-    {
-      "id": "a_treat_for_mosquitoes",
-      "name": "A Treat for Mosquitoes",
-      "subtopics": [
-        "mosquitoes and malaria",
-        "stagnant water",
-        "preventing disease"
-      ]
-    },
-    {
-      "id": "up_you_go",
-      "name": "Up You Go!",
-      "subtopics": [
-        "mountaineering",
-        "climbing and risks",
-        "why people take risks"
-      ]
-    },
-    {
-      "id": "walls_tell_stories",
-      "name": "Walls Tell Stories",
-      "subtopics": [
-        "forts and monuments",
-        "Golconda",
-        "history from buildings"
-      ]
-    },
-    {
-      "id": "sunita_in_space",
-      "name": "Sunita in Space",
-      "subtopics": [
-        "space travel",
-        "astronauts and gravity",
-        "life in space"
-      ]
-    },
-    {
-      "id": "what_if_it_finishes",
-      "name": "What if it Finishes …?",
-      "subtopics": [
-        "petrol and diesel",
-        "fuels running out",
-        "non-renewable resources"
-      ]
-    },
-    {
-      "id": "a_shelter_so_high",
-      "name": "A Shelter so High!",
-      "subtopics": [
-        "Himalayan shelters",
-        "life in Ladakh",
-        "adapting to cold"
-      ]
-    },
-    {
-      "id": "when_the_earth_shook",
-      "name": "When the Earth Shook!",
-      "subtopics": [
-        "earthquakes",
-        "natural disasters",
-        "relief and rescue"
-      ]
-    },
-    {
-      "id": "blow_hot_blow_cold",
-      "name": "Blow Hot, Blow Cold",
-      "subtopics": [
-        "breathing and air",
-        "condensation on a mirror",
-        "everyday science"
-      ]
-    },
-    {
-      "id": "who_will_do_this_work",
-      "name": "Who will do this Work?",
-      "subtopics": [
-        "dignity of labour",
-        "caste and occupation",
-        "no work is clean or dirty"
-      ]
-    },
-    {
-      "id": "across_the_wall",
-      "name": "Across the Wall",
-      "subtopics": [
-        "gender and equality",
-        "a girls' basketball team",
-        "sports and opportunity"
-      ]
-    },
-    {
-      "id": "no_place_for_us",
-      "name": "No Place for Us?",
-      "subtopics": [
-        "displacement",
-        "dams and submerged villages",
-        "migration"
-      ]
-    },
-    {
-      "id": "a_seed_tells_a_farmer_s_story",
-      "name": "A Seed tells a Farmer's Story",
-      "subtopics": [
-        "changes in farming",
-        "farmers' hardships",
-        "a bajra seed's story"
-      ]
-    },
-    {
-      "id": "whose_forests",
-      "name": "Whose Forests?",
-      "subtopics": [
-        "tribal life",
-        "forests and forest rights",
-        "jhoom farming"
-      ]
-    },
-    {
-      "id": "like_father_like_daughter",
-      "name": "Like Father, Like Daughter",
-      "subtopics": [
-        "heredity and traits",
-        "inherited features",
-        "Mendel's story"
-      ]
-    },
-    {
-      "id": "on_the_move_again",
-      "name": "On the Move Again",
-      "subtopics": [
-        "migration",
-        "nomadic and shifting life",
-        "moving for livelihood"
-      ]
-    }
-  ]
+  {
+   "id": "journey_of_a_river",
+   "name": "Journey of a River",
+   "subtopics": [],
+   "concepts_en": [
+    "water",
+    "river",
+    "flood",
+    "flow",
+    "dam",
+    "journey",
+    "flooding",
+    "help"
+   ]
+  },
+  {
+   "id": "the_mystery_of_food",
+   "name": "The Mystery of Food",
+   "subtopics": [],
+   "concepts_en": [
+    "food",
+    "microb",
+    "preservation",
+    "spoil",
+    "stomach",
+    "butter",
+    "detective",
+    "teeth"
+   ]
+  },
+  {
+   "id": "our_school_a_happy_place",
+   "name": "Our School — A Happy Place",
+   "subtopics": [],
+   "concepts_en": [
+    "happy",
+    "water",
+    "waste",
+    "traffic",
+    "fire",
+    "recycler",
+    "student",
+    "assembly"
+   ]
+  },
+  {
+   "id": "our_vibrant_country",
+   "name": "Our Vibrant Country",
+   "subtopics": [],
+   "concepts_en": [
+    "currency",
+    "country",
+    "symbol",
+    "languag",
+    "state",
+    "dance",
+    "national",
+    "headgear"
+   ]
+  },
+  {
+   "id": "some_unique_places",
+   "name": "Some Unique Places",
+   "subtopics": [],
+   "concepts_en": [
+    "island",
+    "ghat",
+    "forest",
+    "sundarban",
+    "plac",
+    "unique",
+    "mangrov",
+    "root"
+   ]
+  },
+  {
+   "id": "energy_how_things_work",
+   "name": "Energy — How Things Work",
+   "subtopics": [],
+   "concepts_en": [
+    "energy",
+    "fuel",
+    "electricity",
+    "work",
+    "wind",
+    "source",
+    "balloon",
+    "cloth"
+   ]
+  },
+  {
+   "id": "clothes_how_things_are_made",
+   "name": "Clothes — How Things are Made",
+   "subtopics": [],
+   "concepts_en": [
+    "cloth",
+    "thread",
+    "stitch",
+    "weave",
+    "silk",
+    "fibr",
+    "needle",
+    "cotton"
+   ]
+  },
+  {
+   "id": "rhythms_of_nature",
+   "name": "Rhythms of Nature",
+   "subtopics": [],
+   "concepts_en": [
+    "season",
+    "rhythm",
+    "chart",
+    "night",
+    "chang",
+    "nature",
+    "globe",
+    "winter"
+   ]
+  },
+  {
+   "id": "earth_our_shared_home",
+   "name": "Earth — Our Shared Home",
+   "subtopics": [],
+   "concepts_en": [
+    "journel",
+    "world",
+    "season",
+    "travelled",
+    "yoga",
+    "marigold",
+    "globe",
+    "story"
+   ]
+  }
+ ],
+ "previous_book": {
+  "name": "NCERT 'Looking Around' EVS Class V (code 0529, ISBN 978-81-7450-826-3)",
+  "chapters": 22,
+  "note": "eeap1xx.pdf still resolves at ncert.nic.in but is the pre-NCF-2023 book"
+ }
 }

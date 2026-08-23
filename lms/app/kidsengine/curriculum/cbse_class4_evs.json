@@ -1,258 +1,172 @@
 {
-  "board": "CBSE",
-  "class": 4,
-  "subject": "EVS",
-  "source": {
-    "name": "NCERT 'Looking Around' EVS Class IV (Book II, code 0427, ISBN 81-7450-664-0)",
-    "url": "https://ncert.nic.in/textbook/pdf/deap1ps.pdf",
-    "verified_on": "2026-08-02"
+ "board": "CBSE",
+ "class": 4,
+ "subject": "EVS",
+ "source": {
+  "name": "NCERT 'Our Wondrous World' — The World Around Us, Class 4 (NCF-2023, 10 chapters)",
+  "url": "https://ncert.nic.in/textbook/pdf/deev1101.pdf … deev1110.pdf",
+  "listing": "https://ncert.nic.in/textbook.php?deev1=0-10",
+  "verified_on": "2026-08-23"
+ },
+ "confidence": "high",
+ "verified": true,
+ "status": "complete",
+ "notes": "REPLACES 'Looking Around' Class 4 (27 ch). Under NCF-2023 the book is 'Our Wondrous World', 10 chapters, code deev1. Titles and concepts_en come from the official chapter PDFs, downloaded and text-extracted on 2026-08-23 (127,285 characters across all 10). Every chapter title was verified by finding it inside its own chapter's text. concepts_en = each chapter's distinctive terms by tf-idf against the other nine, character names and PDF artifacts filtered out. No textbook prose is stored or served.",
+ "chapters": [
+  {
+   "id": "living_together",
+   "name": "Living Together",
+   "subtopics": [],
+   "concepts_en": [
+    "together",
+    "community",
+    "park",
+    "communication",
+    "plac",
+    "group",
+    "work",
+    "everyone"
+   ]
   },
-  "confidence": "high",
-  "verified": true,
-  "status": "complete",
-  "notes": "27 chapters; official NCERT contents (2024-25 reprint), verbatim.",
-  "chapters": [
-    {
-      "id": "going_to_school",
-      "name": "Going to School",
-      "subtopics": [
-        "different ways to reach school",
-        "bridges and boats",
-        "travel across terrains"
-      ]
-    },
-    {
-      "id": "ear_to_ear",
-      "name": "Ear to Ear",
-      "subtopics": [
-        "ears and features of animals",
-        "comparing animals",
-        "observable body features"
-      ]
-    },
-    {
-      "id": "a_day_with_nandu",
-      "name": "A Day with Nandu",
-      "subtopics": [
-        "elephants and herd life",
-        "a baby elephant",
-        "group living in animals"
-      ]
-    },
-    {
-      "id": "the_story_of_amrita",
-      "name": "The Story of Amrita",
-      "subtopics": [
-        "Amrita Devi and the Bishnoi",
-        "saving trees",
-        "protecting forests"
-      ]
-    },
-    {
-      "id": "anita_and_the_honeybees",
-      "name": "Anita and the Honeybees",
-      "subtopics": [
-        "beekeeping",
-        "honeybees and honey",
-        "working with bees"
-      ]
-    },
-    {
-      "id": "omana_s_journey",
-      "name": "Omana's Journey",
-      "subtopics": [
-        "a train journey across India",
-        "travel and maps",
-        "observing places"
-      ]
-    },
-    {
-      "id": "from_the_window",
-      "name": "From the Window",
-      "subtopics": [
-        "observations during train travel",
-        "changing landscapes"
-      ]
-    },
-    {
-      "id": "reaching_grandmother_s_house",
-      "name": "Reaching Grandmother's House",
-      "subtopics": [
-        "journeys and directions",
-        "means of travel",
-        "finding the way"
-      ]
-    },
-    {
-      "id": "changing_families",
-      "name": "Changing Families",
-      "subtopics": [
-        "how families change",
-        "birth, marriage and moving",
-        "family trees"
-      ]
-    },
-    {
-      "id": "hu_tu_tu_hu_tu_tu",
-      "name": "Hu Tu Tu, Hu Tu Tu",
-      "subtopics": [
-        "kabaddi",
-        "games and rules",
-        "teamwork"
-      ]
-    },
-    {
-      "id": "the_valley_of_flowers",
-      "name": "The Valley of Flowers",
-      "subtopics": [
-        "Himalayan valley",
-        "mountain plants and flowers",
-        "a travelogue"
-      ]
-    },
-    {
-      "id": "changing_times",
-      "name": "Changing Times",
-      "subtopics": [
-        "past and present",
-        "tools and houses then and now",
-        "a sense of history"
-      ]
-    },
-    {
-      "id": "a_river_s_tale",
-      "name": "A River's Tale",
-      "subtopics": [
-        "journey of a river",
-        "water pollution",
-        "factories and waste"
-      ]
-    },
-    {
-      "id": "basva_s_farm",
-      "name": "Basva's Farm",
-      "subtopics": [
-        "farming and crops",
-        "farm animals",
-        "work on a farm"
-      ]
-    },
-    {
-      "id": "from_market_to_home",
-      "name": "From Market to Home",
-      "subtopics": [
-        "buying and selling",
-        "markets and shops",
-        "needs and goods"
-      ]
-    },
-    {
-      "id": "a_busy_month",
-      "name": "A Busy Month",
-      "subtopics": [
-        "seasonal work",
-        "harvest and festivals",
-        "preserving food"
-      ]
-    },
-    {
-      "id": "nandita_in_mumbai",
-      "name": "Nandita in Mumbai",
-      "subtopics": [
-        "city life and migration",
-        "living in a chawl",
-        "work in the city"
-      ]
-    },
-    {
-      "id": "too_much_water_too_little_water",
-      "name": "Too Much Water, Too Little Water",
-      "subtopics": [
-        "floods and drought",
-        "water management",
-        "coping with water problems"
-      ]
-    },
-    {
-      "id": "abdul_in_the_garden",
-      "name": "Abdul in the Garden",
-      "subtopics": [
-        "plants and seeds",
-        "germination",
-        "gardening"
-      ]
-    },
-    {
-      "id": "eating_together",
-      "name": "Eating Together",
-      "subtopics": [
-        "sharing meals",
-        "community eating",
-        "diversity in food habits"
-      ]
-    },
-    {
-      "id": "food_and_fun",
-      "name": "Food and Fun",
-      "subtopics": [
-        "festivals and food",
-        "celebrations",
-        "variety of dishes"
-      ]
-    },
-    {
-      "id": "the_world_in_my_home",
-      "name": "The World in my Home",
-      "subtopics": [
-        "family relationships",
-        "people living abroad",
-        "migration for work"
-      ]
-    },
-    {
-      "id": "pochampalli",
-      "name": "Pochampalli",
-      "subtopics": [
-        "weaving and handloom",
-        "sarees",
-        "a weavers' cooperative"
-      ]
-    },
-    {
-      "id": "home_and_abroad",
-      "name": "Home and Abroad",
-      "subtopics": [
-        "travelling abroad",
-        "comparing places",
-        "letters and distance"
-      ]
-    },
-    {
-      "id": "spicy_riddles",
-      "name": "Spicy Riddles",
-      "subtopics": [
-        "spices and taste",
-        "where spices come from",
-        "identifying spices"
-      ]
-    },
-    {
-      "id": "defence_officer_wahida",
-      "name": "Defence Officer: Wahida",
-      "subtopics": [
-        "women in the armed forces",
-        "the navy",
-        "careers in defence"
-      ]
-    },
-    {
-      "id": "chuskit_goes_to_school",
-      "name": "Chuskit Goes to School",
-      "subtopics": [
-        "disability and inclusion",
-        "using a wheelchair",
-        "access to school"
-      ]
-    }
-  ]
+  {
+   "id": "exploring_our_neighbourhood",
+   "name": "Exploring Our Neighbourhood",
+   "subtopics": [],
+   "concepts_en": [
+    "money",
+    "dada",
+    "letter",
+    "bank",
+    "bus",
+    "post",
+    "communication",
+    "hospital"
+   ]
+  },
+  {
+   "id": "nature_trail",
+   "name": "Nature Trail",
+   "subtopics": [],
+   "concepts_en": [
+    "animal",
+    "nature",
+    "bird",
+    "beak",
+    "plant",
+    "forest",
+    "web",
+    "abha"
+   ]
+  },
+  {
+   "id": "growing_up_with_nature",
+   "name": "Growing up with Nature",
+   "subtopics": [],
+   "concepts_en": [
+    "nature",
+    "village",
+    "flower",
+    "forest",
+    "growing",
+    "plant",
+    "aid",
+    "celebration"
+   ]
+  },
+  {
+   "id": "food_for_health",
+   "name": "Food for Health",
+   "subtopics": [],
+   "concepts_en": [
+    "food",
+    "healthy",
+    "health",
+    "item",
+    "body",
+    "stall",
+    "balanced",
+    "tast"
+   ]
+  },
+  {
+   "id": "happy_and_healthy_living",
+   "name": "Happy and Healthy Living",
+   "subtopics": [],
+   "concepts_en": [
+    "healthy",
+    "food",
+    "feel",
+    "happy",
+    "sleep",
+    "livinghappy",
+    "uncomfortable",
+    "exercise"
+   ]
+  },
+  {
+   "id": "how_things_work",
+   "name": "How Things Work",
+   "subtopics": [],
+   "concepts_en": [
+    "spinner",
+    "spin",
+    "boat",
+    "float",
+    "object",
+    "work",
+    "sink",
+    "floating"
+   ]
+  },
+  {
+   "id": "how_things_are_made",
+   "name": "How Things are Made",
+   "subtopics": [],
+   "concepts_en": [
+    "paper",
+    "recycled",
+    "made",
+    "reduce",
+    "newspaper",
+    "maa",
+    "recycle",
+    "fenugreek"
+   ]
+  },
+  {
+   "id": "different_lands_different_lives",
+   "name": "Different Lands, Different Lives",
+   "subtopics": [],
+   "concepts_en": [
+    "mountain",
+    "land",
+    "desert",
+    "coastal",
+    "liv",
+    "landform",
+    "region",
+    "beach"
+   ]
+  },
+  {
+   "id": "our_sky",
+   "name": "Our Sky",
+   "subtopics": [],
+   "concepts_en": [
+    "sky",
+    "shadow",
+    "night",
+    "morning",
+    "afternoon",
+    "change",
+    "appear",
+    "chang"
+   ]
+  }
+ ],
+ "previous_book": {
+  "name": "NCERT 'Looking Around' EVS Class IV (Book II, code 0427, ISBN 81-7450-664-0)",
+  "chapters": 27,
+  "note": "deap1xx.pdf still resolves at ncert.nic.in but is the pre-NCF-2023 book"
+ }
 }
