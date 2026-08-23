@@ -1241,6 +1241,43 @@ def generate_gs_section(want, mix, gen_taken, bilingual, rng):
             (SF.b_correct_pair, "match-list", 0.9),
             (SF.b_match_pairs, "match-list", 0.6),
             (_ask("blank"), "fill-in-blank", 1.3)]
+    # ── THE DIFFICULTY MIX HAS TO REACH THE STYLE MIX ──────────────────────────────────────────
+    # Measured on a built paper, style and difficulty are almost perfectly correlated, because
+    # `gs_ask.difficulty_of` scores what a form actually DEMANDS:
+    #
+    #   Sentence Completion  36.2%  ->  21 questions, 0 hard      forward lookup: caps at 2
+    #   Direct Question      16.7%  ->  10 questions, 0 hard      forward lookup: caps at 2
+    #   Fill in the Blank     1.3%  ->   1 question,  0 hard      forward lookup: caps at 2
+    #   Reverse / statement / pair   ->  18 questions, ALL hard
+    #
+    # So 54% of the style budget was spent on forms that structurally cannot produce a hard
+    # question, and `--difficulty-mix 15:15:70` came out 0/32/18. The build has been reporting
+    # that as "SHORT: 17 at difficulty 3" as though the bank were thin. It is not thin — the
+    # request never reached the thing that decides.
+    #
+    # The mix is the request, so it steers the styles: share moves from the difficulty-capped
+    # forms to the hard-capable ones until they hold the requested hard fraction. That makes the
+    # paper deliberately UNLIKE the commission's measured asking mix, which is the right trade for
+    # a practice paper — the institute asked for hard questions, not for a style replica — but it
+    # is a real deviation and it is printed, the same way GS_REV_SHARE prints its own.
+    _HARD_CAPABLE = {"embedded-which", "which-of-following", "negative-select", "match-list"}
+    # `mix` is the caller's mix_for(want) — {1: easy, 2: medium, 3: hard} as whole questions.
+    _mix_want = mix if want else None
+    if _mix_want:
+        _target = _mix_want[3] / max(1, want)                    # requested HARD fraction
+        _tot = sum(sh for _f, _s, sh in spec)
+        _hard = sum(sh for _f, s2, sh in spec if s2 in _HARD_CAPABLE)
+        _have = _hard / _tot
+        if _target > _have + 0.01:
+            # Scale the hard-capable group up to the target and the rest down to fill the
+            # remainder, both proportionally, so the mix WITHIN each group is untouched.
+            _up = (_target * _tot) / _hard
+            _down = ((1 - _target) * _tot) / (_tot - _hard)
+            spec = [(f, s2, sh * (_up if s2 in _HARD_CAPABLE else _down)) for f, s2, sh in spec]
+            print(f"  note: GS style mix re-weighted for a {_mix_want[1]}:{_mix_want[2]}:"
+                  f"{_mix_want[3]} (easy:medium:hard) paper — hard-capable forms {_have:.0%} -> {_target:.0%} of the "
+                  f"draw. DELIBERATELY unlike the real exam's style mix; a forward lookup cannot "
+                  f"be a hard question however it is worded.")
     total_share = sum(sh for _f, _s, sh in spec)
     out, used, by_topic, facts_used = [], Counter(), Counter(), set()
 
@@ -1248,7 +1285,7 @@ def generate_gs_section(want, mix, gen_taken, bilingual, rng):
         """The syllabus topic furthest below its quota — ties broken deterministically."""
         return max(quota, key=lambda t: (quota[t] - by_topic[t], t)) if quota else None
 
-    by_style = Counter()
+    by_style, by_band = Counter(), Counter()
 
     def next_factory(n_target, blocked):
         """The style furthest BELOW the commission's share of it, measured on what we have built.
@@ -1277,7 +1314,29 @@ def generate_gs_section(want, mix, gen_taken, bilingual, rng):
             for _slot in range(len(spec)):
                 if got >= n:
                     break
-                factory = next_factory(n, blocked)[0]
+                _fs = next_factory(n, blocked)
+                factory, _bucket = _fs[0], _fs[1]
+                # WHICH DIFFICULTY TO ASK THIS DRAW FOR.
+                # The band loop was removed once difficulty became derived rather than requested,
+                # and the easy band went to zero with it — every draw asked for the tightest
+                # distractors available, so nothing easy was ever built. A paper of 50 questions
+                # with no entry point is not what "15:15:70" asked for either.
+                # Asking is not stamping: `_options` uses this to choose how CONFUSABLE the
+                # distractors are, and `difficulty_of` still reports what actually came out. The
+                # statement and pair forms are left alone at 3 — they carry no honest difficulty
+                # of their own, so a low `d` would be stamped straight onto a three-statement
+                # question, which is the decorative-badge bug in reverse.
+                if _bucket in _HARD_CAPABLE:
+                    ask_d = 3
+                elif by_band[1] < (mix or {}).get(1, 0):
+                    ask_d = 1
+                else:
+                    # Not 2. `_options` treats `diff` as how hard to try for CONFUSABLE
+                    # distractors, and asking for 2 still returned loose ones often enough that
+                    # the easy band overshot 8 -> 15 while medium starved at 2. A forward lookup
+                    # cannot exceed difficulty 2 whatever it is handed, so asking for the tightest
+                    # options available is what reliably LANDS it at 2.
+                    ask_d = 3
                 topic = next_topic()
                 sub = {k: tables[k] for k in topic_tables[topic]} if topic else tables
                 # Restricting to one topic's tables starves some styles: a "which pair is NOT
@@ -1290,12 +1349,12 @@ def generate_gs_section(want, mix, gen_taken, bilingual, rng):
                 placed = False
                 for build in (factory(sub), factory(tables)):
                     for _ in range(25):                 # a style may need a few tries to land
-                        b = build(rng, d)
+                        b = build(rng, ask_d)
                         if not b or (bilingual and not b.get("stem_hi")):
                             continue
                         if used[b["concept"]] >= GS_STYLE_CAP:
                             break
-                        row = _gs_row(b, d)
+                        row = _gs_row(b, ask_d)
                         if gen_sig(row) in gen_taken:
                             continue
                         if row.get("fact") and row["fact"] in facts_used:
@@ -1312,6 +1371,7 @@ def generate_gs_section(want, mix, gen_taken, bilingual, rng):
                                 by_topic[en] += 1
                                 break
                         by_style[ask_style(row["stem"])] += 1
+                        by_band[(row["tag"] or {}).get("difficulty") or ask_d] += 1
                         out.append(row); got += 1; progress = placed = True
                         break
                     if placed:
