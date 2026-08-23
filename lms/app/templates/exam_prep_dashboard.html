@@ -124,7 +124,33 @@
   .ring>b{color:#1E6FB5!important}
   .goal{border-radius:999px!important}
   /* --- a cohesive, colourful KIDS palette (visual only) --- */
-  body{background:radial-gradient(130% 90% at 50% 0%,#fef1f8,#eef3ff 50%,#f2ecff)!important}
+  /* OCEAN, not the old pink/lavender wash — the dashboard has to feel like the same product as
+     the worksheet and the report. */
+  body{background:radial-gradient(135% 100% at 50% -8%,#ffffff 0%,#f6fbff 42%,#e9f4fe 100%)!important}
+  /* the sticky bar was still cream from the senior theme */
+  .top{background:rgba(255,255,255,.82)!important;-webkit-backdrop-filter:blur(14px) saturate(1.4);
+       backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid rgba(120,175,225,.22)!important}
+  .top .goal,.top .chip,.top .pill{background:linear-gradient(135deg,#EAF5FF,#D8ECFC)!important;
+       border:1.5px solid #CBE5FA!important;color:#1E6FB5!important}
+  .tabs a,.nav a{color:#5B7A92!important}
+  .tabs a.on,.nav a.on{background:#EAF5FF!important;color:#1E6FB5!important}
+  /* the remaining warm-tinted cards from the senior palette */
+  .card{background:linear-gradient(180deg,#ffffff,#f6fbff)!important;border:1.5px solid #DCEDFB!important;
+        box-shadow:0 10px 26px rgba(30,111,181,.08)!important}
+  .grid .stack>.card:first-child{background:linear-gradient(160deg,#fff,#f1f8ff)!important;
+        border-color:#CFE6F8!important}
+  a.goal{background:linear-gradient(135deg,#fff,#eef8ff)!important;border:1.5px solid #DCEDFB!important}
+  /* the last warm leftovers: the senior --muted/--faint browns and the pink card edge, which
+     read as dirt against an ocean page */
+  .nav{border-color:rgba(120,175,225,.22)!important}
+  .card{border-color:#DCEDFB!important}
+  .sub,.empty,.chosen,.k,.muted{color:#5B7A92!important}
+  .kids-tabs a{border:1.5px solid #DCEDFB!important;background:rgba(255,255,255,.85)!important;
+    color:#1E6FB5!important;border-radius:999px!important}
+  /* the mastery ring still drew in gold */
+  .ring{--ring:#3AA6E8}
+  .ring svg circle:last-child,.ring circle.fg{stroke:#3AA6E8!important}
+  .ring>b{color:#1E6FB5!important}
   .card{background:linear-gradient(180deg,#ffffff,#f8f4ff)!important;border:2px solid #ece3ff!important;
     box-shadow:0 8px 22px rgba(120,90,200,.10)!important}
   /* the main mastery card gets a warm kid tint */
@@ -147,16 +173,37 @@
   .kact .t{font-size:1.35rem;font-weight:800;margin-top:8px}
   .kact .s{font-size:.9rem;opacity:.95;margin-top:4px;line-height:1.35}
   .kact .go{margin-top:auto;align-self:flex-start;background:#fff;border-radius:999px;padding:10px 18px;font-weight:800;margin-top:14px}
-  .kact.create{background:linear-gradient(140deg,#3AA6E8,#A8481A)} .kact.create .go{color:#A8481A}
-  .kact.smart{background:linear-gradient(140deg,#3ec98d,#178a54)} .kact.smart .go{color:#178a54}
+  /* PREMIUM GLASS, ocean blue. The create card was a blue→BROWN gradient left over from the
+     senior palette, which is why the dashboard never matched the rest of the kids product. */
+  .kact{position:relative;overflow:visible;isolation:isolate;
+    background:linear-gradient(160deg,rgba(255,255,255,.92),rgba(233,246,255,.78))!important;
+    -webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);
+    border:1.5px solid rgba(255,255,255,.9)!important;color:#10344F!important;
+    box-shadow:0 18px 38px -14px rgba(30,111,181,.38), inset 0 1px 0 rgba(255,255,255,.95)!important;
+    padding-right:98px!important;transition:transform .18s cubic-bezier(.22,1,.36,1),box-shadow .18s}
+  /* a soft tinted wash so each card still reads as its own thing */
+  .kact::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;opacity:.5}
+  .kact.create::before{background:radial-gradient(120% 100% at 90% 110%,#bfe6ff,transparent 62%)}
+  .kact.smart::before{background:radial-gradient(120% 100% at 90% 110%,#c9f0e2,transparent 62%)}
+  .kact .t{color:#10344F} .kact .s{color:#4E6E86;opacity:1}
+  .kact .go{background:linear-gradient(135deg,#3AA6E8,#1E6FB5);color:#fff!important;
+    box-shadow:0 8px 18px -6px rgba(30,111,181,.55)}
+  /* the animal breaks OUT of the card — the 3D pop. It sits behind the text and is anchored to
+     the corner, so it merges into the card's own glow rather than floating over the page. */
+  .kact .buddy{position:absolute;right:-6px;bottom:-8px;height:132px;width:auto;z-index:-1;
+    filter:drop-shadow(0 14px 20px rgba(30,111,181,.30));
+    transform:rotate(-4deg) translateY(0);transition:transform .28s cubic-bezier(.22,1,.36,1)}
+  .kact:hover{transform:translateY(-4px);box-shadow:0 26px 48px -16px rgba(30,111,181,.45)!important}
+  .kact:hover .buddy{transform:rotate(-7deg) translateY(-8px) scale(1.05)}
+  .kact:active{transform:translateY(-1px) scale(.995)}
+  @media (max-width:520px){
+    .kact{padding-right:84px!important;min-height:150px}
+    .kact .buddy{height:104px;right:-4px}
+  }
+  @media (prefers-reduced-motion:reduce){ .kact,.kact .buddy{transition:none} }
   .kact:active{transform:scale(.99)}
-  .kids-chat{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;
     background:linear-gradient(135deg,#1E6FB5,#1E6FB5);border-radius:20px;padding:16px 18px;margin:0 0 12px;
     box-shadow:0 10px 24px rgba(120,80,200,.24)}
-  .kids-chat .cic{font-size:30px;flex:0 0 auto}
-  .kids-chat .cm{flex:1;min-width:0} .kids-chat .cm b{font-size:1.1rem} .kids-chat .cm small{display:block;font-size:.82rem;opacity:.94;margin-top:2px}
-  .kids-chat .cgo{margin-left:auto;background:#fff;color:#1E6FB5;border-radius:999px;padding:9px 16px;font-weight:800;white-space:nowrap}
-  .kids-chat:active{transform:scale(.99)}
   .kids-tabs{display:flex;gap:12px;margin:0 0 18px}
   .kids-tabs a{flex:1;text-align:center;text-decoration:none;background:#fff;border:2px solid #cfe6f8;border-radius:16px;padding:12px;font-weight:800;color:#1E6FB5;box-shadow:0 4px 12px rgba(120,80,20,.08)}
   .kids-tabs a:active{transform:scale(.98)}
@@ -223,23 +270,19 @@
       <div class="t">Make my own worksheet</div>
       <div class="s">Pick a subject &amp; topic{% if student.grade %} for Class {{ student.grade }}{% endif %} — fresh questions every time. Solve or print.</div>
       <span class="go">Create ▶</span>
+      <img class="buddy" src="/static/kids/assets/ellie.png?v={{ KIDS_STATIC_V }}" alt="" aria-hidden="true">
     </a>
     <a class="kact smart" href="/exam-prep/smart">
       <div class="ic">⚡</div>
       <div class="t">Smart Practice</div>
-      <div class="s">A worksheet built just for you — questions from your weak spots.</div>
+      <div class="s">We already know your weak spots — this starts straight away.</div>
       <span class="go">Practise ▶</span>
+      <img class="buddy" src="/static/kids/assets/rio.png?v={{ KIDS_STATIC_V }}" alt="" aria-hidden="true">
     </a>
   </div>
-  <a class="kids-chat" href="/exam-prep/chat">
-    <span class="cic">💬</span>
-    <span class="cm"><b>Chat with Acharya</b><small>Tell me what to practise and I'll build the worksheet.</small></span>
-    <span class="cgo">Chat ▶</span>
-  </a>
   <div class="kids-tabs">
     <a href="/exam-prep/report">📊 See my report</a>
   </div>
-  <img class="kids-guide" src="/static/kids/assets/lion_char.png" alt="">
   {% endif %}
 
   {% if not kids %}

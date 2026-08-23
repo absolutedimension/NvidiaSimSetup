@@ -191,8 +191,12 @@ def _kids_static_v() -> str:
     import os as _os
     d = _os.path.join(_os.path.dirname(__file__), "static", "kids")
     try:
-        newest = max(_os.path.getmtime(_os.path.join(d, f)) for f in _os.listdir(d)
-                     if f.endswith((".js", ".css")))
+        exts = (".js", ".css")
+        newest = max(_os.path.getmtime(_os.path.join(dp, f))
+                     for dp in (d, _os.path.join(d, "assets"))
+                     if _os.path.isdir(dp)
+                     for f in _os.listdir(dp)
+                     if f.endswith(exts) or f.endswith(".png"))
         return str(int(newest))
     except Exception:
         return "1"
@@ -882,7 +886,7 @@ def kids_quiz(request: Request, chapter: str = "", n: int = 5, diff: str = "1-2"
 # ================= KIDS WORKSHEET + ADAPTIVE ASSESSMENT (2026-08-02) =================
 @app.get("/exam-prep/worksheet", response_class=HTMLResponse)
 def kids_worksheet_page(request: Request, board: str = "", cls: int = 0, subject: str = "Mathematics",
-                        chapter: str = "", n: int = 8, assign: int = 0, print: int = 0, preview: int = 0,
+                        chapter: str = "", n: int = 8, assign: int = 0, print: int = 0, preview: int = 0, auto: int = 0,
                         db: Session = Depends(get_db)):   # cls=0 → fall back to the child's own class
     """The production worksheet experience (kids UI, asset-decorated, adaptive). Kids host only.
     A batch student is LOCKED to their grade/board. `assign` opens a teacher assignment (a fixed test
@@ -918,7 +922,7 @@ def kids_worksheet_page(request: Request, board: str = "", cls: int = 0, subject
                 chapter = a.pack.get("chapter") or chapter
     return templates.TemplateResponse(request, "kids_worksheet.html", {
         "student": student, "board": board, "cls": cls, "subject": subject, "chapter": chapter,
-        "n": max(3, min(int(n), 15)), "locked": locked,
+        "n": max(3, min(int(n), 15)), "locked": locked, "auto_start": bool(auto),
         "assign_id": assign_id, "assign_pack": assign_pack, "auto_print": bool(print),
         "preview": bool(preview)})
 
@@ -1381,13 +1385,26 @@ def exam_prep_smart(request: Request, focus_subj: str = "", db: Session = Depend
     # Pick the lowest-mastery concept they've actually attempted; the worksheet engine then targets
     # difficulty via BKT/Elo. Brand-new kids (no data) get the picker.
     if (request.headers.get("host") or "").split(":")[0].lower() in KIDS_HOSTS:
+        # Smart Practice must START a worksheet, never hand the child a picker — the whole promise
+        # is "we already know what you should practise". `auto=1` tells the page to begin at once.
         kstats = [s for s in db.query(ConceptStat).filter_by(student_id=student.id).all() if s.seen]
+        cls = getattr(student, "grade", None) or 3
+        board = getattr(student, "board", None) or "CBSE"
         if kstats:
             w = min(kstats, key=lambda s: s.correct / s.seen)
             return RedirectResponse(
-                f"/exam-prep/worksheet?subject={quote(w.subject)}&chapter={quote(w.concept)}&n=10",
-                status_code=302)
-        return RedirectResponse("/exam-prep/worksheet?n=10", status_code=302)
+                f"/exam-prep/worksheet?subject={quote(w.subject)}&chapter={quote(w.concept)}"
+                f"&n=10&auto=1", status_code=302)
+        # No history yet: pick a random subject we can actually serve for this child's class and
+        # start there, rather than stalling a first-time child on a form.
+        try:
+            subs = list(kidsws.picker(board, int(cls)).keys())
+        except Exception:
+            subs = []
+        import random as _r
+        subject = _r.choice(subs) if subs else "Mathematics"
+        return RedirectResponse(
+            f"/exam-prep/worksheet?subject={quote(subject)}&n=10&auto=1", status_code=302)
     st = _prep_stats(db, student)
     picks = (st["weakest"] or []) + [d for d in st["due"] if d not in (st["weakest"] or [])]
     # Just-in-time focus: if the student declared a subject on Today, float its weak concepts first.
@@ -1709,6 +1726,7 @@ def exam_prep_report(request: Request, db: Session = Depends(get_db)):
         "trend": trend, "overall": round(100 * overall),
         "redbox": redbox, "calib": calib, "calib_note": calib_note, "kid_mis": kid_mis,
         "mastered": mastered, "one_action": one_action, "can_diagnose": can_diagnose,
+        "kids": kids,        # the report was the last surface still on the senior gold theme
     })
 
 

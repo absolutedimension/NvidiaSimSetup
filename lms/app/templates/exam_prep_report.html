@@ -87,6 +87,27 @@
  .dmis .dw{font-size:12.5px;color:#6b5a86;margin-top:3px;line-height:1.45}
  .dmis .df{font-size:12.5px;color:#186b41;background:var(--goodbg);border-radius:8px;padding:6px 9px;margin-top:7px;line-height:1.45}
 </style>
+{% if kids %}<style>
+  /* KIDS OCEAN SKIN — the report was the last surface still wearing the senior gold/cream
+     theme, so a child moved from a blue app into an orange page. Same tokens as the rest of
+     the kids product: MAIN #3AA6E8, DEEP #1E6FB5. Senior keeps the gold above, untouched. */
+  :root{
+    --ink:#10344F; --gold:#1E6FB5; --gold2:#175A94; --muted:#5B7A92; --faint:#8AA6BC;
+    --line:#D8EAF8;
+  }
+  body{background:radial-gradient(130% 100% at 50% -10%,#ffffff 0%,#f7fbff 45%,#eef6fe 100%)!important;
+       color:var(--ink)!important}
+  header{background:linear-gradient(120deg,#3AA6E8,#1E6FB5)!important}
+  /* the dark "one move" and difficulty panels read as heavy brown boxes on a light blue page */
+  .one,.lvl{background:linear-gradient(135deg,#1E6FB5,#124C7E)!important;border-color:transparent!important}
+  .one .btn,.lvl .badge{background:#3AA6E8!important;color:#fff!important}
+  .card,.stat,.sec{background:rgba(255,255,255,.86)!important;border:1px solid #DCEDFB!important;
+    box-shadow:0 8px 22px rgba(30,111,181,.07)!important}
+  .stat .v{color:#1E6FB5!important}
+  .btn,.go,.a-understand,button.primary{background:linear-gradient(135deg,#3AA6E8,#1E6FB5)!important;
+    border-color:transparent!important;color:#fff!important}
+  a{color:#1E6FB5}
+</style>{% endif %}
 </head>
 <body>
 <div class="wrap">

@@ -390,6 +390,7 @@
 <script src="/static/kids/worksheet_viz.js?v={{ KIDS_STATIC_V }}"></script>
 <script src="/static/kids/worksheet.js?v={{ KIDS_STATIC_V }}"></script>
 <script>
+  const AUTO_START = {{ auto_start|tojson }};
   const CFG = { board: {{ board|tojson }}, cls: {{ cls|tojson }}, subject: {{ subject|tojson }}, chapter: {{ chapter|tojson }}, n: {{ n|tojson }} };
   const LOCKED = {{ (locked or False)|tojson }};              // batch student → grade/board fixed
   const ASSIGN_ID = {{ (assign_id or 0)|tojson }};            // teacher assignment (record completion)
@@ -675,7 +676,9 @@
       printableOnly(); return;
     }
     if(ASSIGN_PACK && ASSIGN_PACK.length){ items=ASSIGN_PACK; startFromItems(); }
-    else if(ASSIGN_ID || PREVIEW){ start(); }
+    // Smart Practice arrives with auto=1: the child was promised a ready worksheet, so begin
+    // instead of showing the picker they just bypassed.
+    else if(ASSIGN_ID || PREVIEW || AUTO_START){ start(); }
     // just two floating props (subtle)
     [['star','left:5%;top:8%'],['balloon','right:6%;top:10%']].forEach(([a,pos],i)=>{ if(!window.KidsAssets)return; const n=KidsAssets.node(a,44); n.className='deco'; n.style.cssText+=';'+pos; n.style.animationDelay=i*1.1+'s'; document.body.appendChild(n); });
     // just TWO big animal buddies behind the worksheet (one each side; avoid bottom-right = the guide)
