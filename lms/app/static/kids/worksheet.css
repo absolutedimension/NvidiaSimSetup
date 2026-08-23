@@ -164,3 +164,9 @@
 .ws-ent{display:inline-flex;flex-direction:column;align-items:center;gap:3px;line-height:1.1;vertical-align:middle}
 .ws-ent .ka-asset{display:block}
 .ws-ent-lbl{font-size:.92em;font-weight:800}
+
+/* the sentence a true/false question asks the child to judge — it IS the question, so it gets
+   the same weight as any other prompt rather than being squeezed under the instruction */
+.ws-statement{font-size:1.55rem;line-height:1.5;font-weight:800;text-align:center;
+  padding:14px 12px;margin-bottom:14px}
+@media (max-width:900px){ .ws-statement{font-size:1.3rem;padding:10px 8px;margin-bottom:10px} }

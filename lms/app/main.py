@@ -183,6 +183,22 @@ templates.env.globals["PRICING"] = {
     "teacher_coaching": settings.TEACHER_COACHING_INR,
     "teacher_institute": settings.TEACHER_INSTITUTE_INR,
 }
+# Cache-buster for the kids static bundle. The worksheet page loaded /static/kids/*.js with no
+# version, so a returning child kept running the JS from their FIRST visit — a fixed bug stayed
+# visibly broken for exactly the people who had already tried the app. Stamped from the newest
+# mtime in the directory, so it changes on every deploy and never in between.
+def _kids_static_v() -> str:
+    import os as _os
+    d = _os.path.join(_os.path.dirname(__file__), "static", "kids")
+    try:
+        newest = max(_os.path.getmtime(_os.path.join(d, f)) for f in _os.listdir(d)
+                     if f.endswith((".js", ".css")))
+        return str(int(newest))
+    except Exception:
+        return "1"
+
+
+templates.env.globals["KIDS_STATIC_V"] = _kids_static_v()
 templates.env.globals["CONTACT_WA"] = settings.CONTACT_WA
 templates.env.globals["CONTACT_EMAIL"] = settings.CONTACT_EMAIL
 

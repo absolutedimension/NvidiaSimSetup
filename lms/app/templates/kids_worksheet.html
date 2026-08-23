@@ -5,8 +5,8 @@
 <link rel="icon" href="/static/brand/favicon-32.png"><link rel="apple-touch-icon" href="/static/brand/trigunai-favicon-180.png">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Acharya Kids — Practice Worksheet</title>
-<link rel="stylesheet" href="/static/kids/worksheet.css">
-<link rel="stylesheet" href="/static/kids/conceptviz.css">
+<link rel="stylesheet" href="/static/kids/worksheet.css?v={{ KIDS_STATIC_V }}">
+<link rel="stylesheet" href="/static/kids/conceptviz.css?v={{ KIDS_STATIC_V }}">
 <style>
   :root{ --k-pink:#3AA6E8; --k-blue:#5CC0F0; --k-yellow:#ffb300; --k-green:#22b07d; --k-purple:#1E6FB5; --ink:#10344F; }
   *{box-sizing:border-box}
@@ -385,10 +385,10 @@
 <!-- celebration dancer (comes forward + dances on a correct answer) -->
 <div class="celebrate" id="celebrate" aria-hidden="true"><img id="celebImg" alt=""></div>
 
-<script src="/static/kids/assets.js"></script>
-<script src="/static/kids/conceptviz.js"></script>
-<script src="/static/kids/worksheet_viz.js"></script>
-<script src="/static/kids/worksheet.js"></script>
+<script src="/static/kids/assets.js?v={{ KIDS_STATIC_V }}"></script>
+<script src="/static/kids/conceptviz.js?v={{ KIDS_STATIC_V }}"></script>
+<script src="/static/kids/worksheet_viz.js?v={{ KIDS_STATIC_V }}"></script>
+<script src="/static/kids/worksheet.js?v={{ KIDS_STATIC_V }}"></script>
 <script>
   const CFG = { board: {{ board|tojson }}, cls: {{ cls|tojson }}, subject: {{ subject|tojson }}, chapter: {{ chapter|tojson }}, n: {{ n|tojson }} };
   const LOCKED = {{ (locked or False)|tojson }};              // batch student → grade/board fixed

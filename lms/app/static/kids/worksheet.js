@@ -257,11 +257,20 @@
       body.appendChild(el('div', 'ws-entry', p.a + '  ◻  ' + p.b));
       opts = ['<', '=', '>'];
     }
+    // A true/false question is the STATEMENT — without it the child sees only "Is this true or
+    // false?" and two buttons, which is unanswerable. The KB puts it in payload.statement.
+    if (item.type === 'true_false' && p.statement) {
+      body.appendChild(el('div', 'ws-entry ws-statement', String(p.statement)));
+    }
     var ans = item.answer;
     if (item.type === 'true_false' && typeof ans === 'boolean') ans = ans ? 'True' : 'False';
+    // The BUTTON LABEL is localised; the value compared against the answer stays canonical.
+    var TF_HI = { 'True': 'सही', 'False': 'ग़लत' };
+    var hiTF = item.type === 'true_false' && itemIsHindi(item);
     var wrap = el('div', 'ws-opts');
     opts.forEach(function (o) {
-      var b = el('button', 'ws-opt ws-big'); b.appendChild(entityLabel(o, 46));
+      var b = el('button', 'ws-opt ws-big');
+      b.appendChild(entityLabel(hiTF ? (TF_HI[o] || o) : o, 46));
       b.onclick = function () {
         if (b.classList.contains('right') || b.classList.contains('wrong')) return;
         var ok = String(o) === String(ans);
