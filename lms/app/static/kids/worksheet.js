@@ -139,11 +139,26 @@
   }
   /* what to READ for the question: prefer an explicit voice line; for Hindi content whose
      instruction is English, read the Hindi payload (sentence/statement) so the child hears Hindi */
+  /* What the voice actually reads. For a true/false or a cloze the SENTENCE is the question —
+     "सही या ग़लत?" on its own tells a child nothing. This used to return item.voice (which the
+     KB sets to the instruction) and short-circuit before ever reaching the statement, so the
+     one line that mattered was the one line never spoken. */
   function promptSpeak(item) {
-    if (item.voice && hasHindi(item.voice) === itemIsHindi(item)) return item.voice;  // voice line only if same language
-    var p = item.payload || {}, content = p.sentence || p.statement || '';
-    if (hasHindi(content)) return content;               // Hindi sentence/statement IS the question
-    return localizedInstruction(item) || content;        // else the (localized) instruction
+    var p = item.payload || {};
+    var content = p.statement || p.sentence || '';
+    var lead = (item.voice && hasHindi(item.voice) === itemIsHindi(item))
+      ? item.voice : (localizedInstruction(item) || '');
+    // only read content that's in the item's own language, so nothing comes out half-translated
+    if (content && hasHindi(content) === itemIsHindi(item)) {
+      // a cloze blank must be SAID, not spelled out as underscores
+      content = String(content).replace(/_{2,}|▢/g, itemIsHindi(item) ? ' रिक्त स्थान ' : ' blank ')
+                               .replace(/\s{2,}/g, ' ').trim();
+      if (!lead) return content;
+      if (lead.indexOf(content) !== -1) return lead;     // the lead already says it
+      // don't end up with "…true or false?. The cat…"
+      return lead + (/[.?!।]\s*$/.test(lead) ? ' ' : '. ') + content;
+    }
+    return lead || content;
   }
   var SR = global.SpeechRecognition || global.webkitSpeechRecognition;
 
