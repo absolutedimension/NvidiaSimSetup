@@ -33,6 +33,7 @@ import re
 # commit who did it. Two automated verifiers were written for this file and both were measured to
 # be unreliable — see write_review_sheet().
 REVIEWED = False
+REVIEWED_BY = ""          # name the person, and the date, when this is flipped
 
 # ---- स्वतंत्रता आन्दोलन: movement / event -> year -------------------------------
 # Kept to events whose year is not seriously contested. Deliberately NOT included: the founding

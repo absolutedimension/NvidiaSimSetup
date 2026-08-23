@@ -35,7 +35,12 @@ def strip(x):
 def parse(path):
     """-> (questions, answer_key). Each question: number, hi/en stem, hi/en options."""
     raw = io.open(path, encoding="utf-8").read()
-    body = raw.split('<div class="meta">', 1)[1]
+    # Split on the OPENING TAG NAME, not on the whole literal tag. The meta div now carries
+    # data-mix (the difficulty mix the paper was built against), and a literal '<div class="meta">'
+    # match silently stopped finding it the moment that attribute appeared — which would have
+    # raised IndexError here, but only because the split happens to be indexed. Any check that
+    # merely searched would have gone quiet instead.
+    body = raw.split('<div class="meta"', 1)[1]
     blocks = re.findall(r'<div class="q">(.*?)(?=<div class="q">|<div class="keyhead")', body, re.S)
     qs = []
     for b in blocks:
@@ -52,14 +57,21 @@ def parse(path):
         opt_groups = re.findall(r'<div class="ops">(.*?)</div>', b, re.S)
         opts = [[(m.group(1), strip(m.group(2)))
                  for m in re.finditer(r'<b>\((\w)\)</b>(.*?)</span>', g, re.S)] for g in opt_groups]
+        # The badge carries the two paper-level facts no other element does: the difficulty
+        # band this question was drawn at, and the syllabus topic it was drawn for. Both are
+        # needed by coverage/balance/difficulty_mix below.
+        bd = re.search(r'class="dbadge">([^<]*)<i>(.*?)</i>', b, re.S)
         qs.append({"n": int(num.group(1)) if num else None,
                    "hi": strip(hi.group(1)) if hi else "",
                    "en": strip(en.group(1)) if en else "",
+                   "band": strip(bd.group(1)).split("\u00b7")[-1].strip() if bd else "",
+                   "topic": strip(bd.group(2)) if bd else "",
                    "opts": opts, "raw": b, "text": strip(b)})
     key = {int(m.group(1)): m.group(2)
            for m in re.finditer(r'class="k">(\d+)\. <b>([A-E])</b>', raw)}
     gen = {int(m.group(1)) for m in re.finditer(r'class="k">(\d+)\. <b>[A-E]</b><i>\*</i>', raw)}
-    return qs, key, gen
+    mix = re.search(r'<div class="meta"[^>]*data-mix="(\d+):(\d+):(\d+)"', raw)
+    return qs, key, gen, (tuple(int(g) for g in mix.groups()) if mix else None)
 
 
 def check(name, ok, detail=""):
@@ -165,6 +177,182 @@ def key_spread(tag, qs, key):
     return ok
 
 
+# ── paper-level gates ───────────────────────────────────────────────────────────────────────────
+# Everything above this line checks ONE QUESTION at a time. That is exactly how the answer-key
+# bias shipped: 46 of 50 keys were (A), every question individually correct, the section
+# worthless (see key_spread). The same failure repeats one level up — 150 verified questions can
+# still be a paper that answers a third of the syllabus. These three read the SECTION.
+#
+# They compare the paper against drop/bssc/SYLLABUS_MAP.json, which already carries the
+# commission's own topic list and the measured share of each. Until now that file was a
+# reference the builder consulted; here it becomes a gate the paper must pass.
+
+BLUEPRINT = (pathlib.Path(__file__).resolve().parent.parent
+             / "question_bank_engine" / "drop" / "bssc" / "SYLLABUS_MAP.json")
+
+# Part II prints General Science and Mathematics as one 50-question section; the builder draws
+# ~1 in 4 of it as science (build_onestep_paper.py: `sci_want = max(1, round(want * 0.25))`).
+# A topic's target share of the PAPER section is therefore its share of its own syllabus
+# section, scaled by that split.
+SECTION_OF_PART = {
+    "Part I":   [("General Studies", 1.0)],
+    "Part II":  [("General Science", 0.25), ("Mathematics", 0.75)],
+    "Part III": [("Reasoning", 1.0)],
+}
+PARTS = ((1, 50, "Part I"), (51, 100, "Part II"), (101, 150, "Part III"))
+
+# A topic below this share is too small to demand a question in every single paper — a 3%
+# topic is one-and-a-half questions, and requiring it would fail honest papers. Reported as
+# advisory instead, so it can never go silently missing either.
+COVERAGE_MIN_SHARE = 0.05
+BALANCE_FACTOR = 1.5        # a topic may run to 1.5x its blueprint share before it is crowding
+MIX_TOLERANCE = 10          # percentage points, per band, per section
+
+
+def _short_hi(hi):
+    """The badge form of a syllabus topic name.
+
+    Reimplemented here rather than imported from build_onestep_paper, deliberately and for the
+    same reason the solvers below are: a check that shares its transformation with the thing it
+    is checking cannot detect a change in that transformation. Keep in step with `short_hi`
+    there — the collision guard in _blueprint() fires if the two ever drift apart.
+    """
+    t = str(hi).split(" / ")[0].strip()
+    for sep in (" \u090f\u0935\u0902 ", " \u0924\u0925\u093e "):
+        if len(t) > 24 and sep in t:
+            t = t.split(sep)[0].strip()
+    return t
+
+
+def _blueprint():
+    """-> {part: {badge_topic: (english_name, target_share_of_that_part)}}"""
+    import json
+    spec = json.loads(BLUEPRINT.read_text(encoding="utf-8"))
+    by_section = {}
+    for data in spec.values():
+        if isinstance(data, dict) and "topics" in data:
+            by_section[data["section"]] = data["topics"]
+    out = {}
+    for part, members in SECTION_OF_PART.items():
+        topics = {}
+        for section, weight in members:
+            for t in by_section.get(section, []):
+                short = _short_hi(t["hi"])
+                if short in topics:                 # two syllabus rows collapsing to one badge
+                    raise SystemExit(                # would silently merge their counts
+                        f"blueprint: '{short}' is ambiguous in {part} — _short_hi() has drifted "
+                        f"from build_onestep_paper.short_hi(); fix before trusting coverage")
+                topics[short] = (t["en"], t.get("share", 0.0) * weight)
+        out[part] = topics
+    return out
+
+
+def _by_part(qs):
+    """-> {part: [question, ...]}, questions carrying a difficulty badge only."""
+    out = {}
+    for lo, hi, part in PARTS:
+        out[part] = [q for q in qs if q["n"] and lo <= q["n"] <= hi and q["topic"]]
+    return out
+
+
+def coverage(tag, qs):
+    """Every syllabus topic worth >=5% of a section must appear at least once.
+
+    This is the check whose absence let a paper print the commission's full syllabus on its own
+    cover and then answer 5 of General Studies' 14 topics — no History, no Freedom Movement, and,
+    on a BIHAR paper, nothing on Bihar's part in the national movement.
+    """
+    print(f"\n=== {tag}: syllabus coverage ===")
+    bp, parts, ok = _blueprint(), _by_part(qs), True
+    for _lo, _hi, part in PARTS:
+        items = parts[part]
+        if not items:
+            ok &= check(f"{part}: questions carry topic badges", False, "no badges found")
+            continue
+        seen = Counter(q["topic"] for q in items)
+        # An unmapped badge must FAIL rather than be skipped: a topic the blueprint cannot see
+        # is a topic this gate is not checking, and silence there is the whole bug class. In
+        # practice it means one of two real defects — a question printed in a section whose
+        # syllabus does not contain its topic, or a topic the tagger could not classify at all
+        # ("सामान्य ज्ञान"). Both need the question numbers to be fixable, so print them.
+        unknown = {}
+        for q in items:
+            if q["topic"] not in bp[part]:
+                unknown.setdefault(q["topic"], []).append(q["n"])
+        ok &= check(f"{part}: every badge maps to a syllabus topic", not unknown,
+                    " · ".join(f"{t} (Q{', Q'.join(str(n) for n in ns[:6])}"
+                               f"{'…' if len(ns) > 6 else ''})"
+                               for t, ns in sorted(unknown.items())))
+        missing = sorted((en, sh) for t, (en, sh) in bp[part].items()
+                         if sh >= COVERAGE_MIN_SHARE and not seen.get(t))
+        present = sum(1 for t in bp[part] if seen.get(t))
+        ok &= check(f"{part}: no major syllabus topic is absent "
+                    f"({present}/{len(bp[part])} topics present)",
+                    not missing,
+                    ", ".join(f"{en} ({sh:.0%})" for en, sh in missing))
+        minor = sorted((en, sh) for t, (en, sh) in bp[part].items()
+                       if sh < COVERAGE_MIN_SHARE and not seen.get(t))
+        if minor:
+            print("        also absent, below the "
+                  f"{COVERAGE_MIN_SHARE:.0%} threshold (advisory): "
+                  + ", ".join(f"{en} ({sh:.0%})" for en, sh in minor))
+    return ok
+
+
+def balance(tag, qs):
+    """No topic may take more than 1.5x its blueprint share of its section.
+
+    Coverage catches a topic at zero; this catches the topic that ATE it. The two always travel
+    together — the paper that lost History to Constitution failed both, and only this one names
+    the cause.
+    """
+    print(f"\n=== {tag}: topic balance ===")
+    bp, parts, ok = _blueprint(), _by_part(qs), True
+    for _lo, _hi, part in PARTS:
+        items = parts[part]
+        if not items:
+            continue
+        n, seen = len(items), Counter(q["topic"] for q in items)
+        over = []
+        for t, c in seen.most_common():
+            en, share = bp[part].get(t, (t, 0.0))
+            target = share * n
+            if target >= 2 and c > BALANCE_FACTOR * target:   # <2 is rounding noise, not crowding
+                over.append(f"{en} {c} vs {target:.0f} target")
+        top = seen.most_common(1)[0]
+        ok &= check(f"{part}: no topic exceeds {BALANCE_FACTOR}x its blueprint share "
+                    f"(largest: {bp[part].get(top[0], (top[0], 0))[0]} {top[1]}/{n})",
+                    not over, " · ".join(over))
+    return ok
+
+
+def difficulty_mix(tag, qs, mix):
+    """Each section must hit the easy:medium:hard mix the paper was BUILT with.
+
+    The mix is read from the paper's own data-mix attribute, so this cannot be argued with after
+    the fact. Without it there was no way to tell a paper built at 10:60:30 from one that missed
+    15:15:70 — and a paper whose Reasoning section is 84% hard with no easy question at all has
+    no entry point for a student, however correct every question in it is.
+    """
+    print(f"\n=== {tag}: difficulty mix ===")
+    if not mix:
+        return check("paper records the difficulty mix it was built with", False,
+                     "no data-mix on the meta div — rebuild with the current builder")
+    want = dict(zip(("Easy", "Medium", "Hard"), mix))
+    parts, ok = _by_part(qs), True
+    for _lo, _hi, part in PARTS:
+        items = parts[part]
+        if not items:
+            continue
+        n, got = len(items), Counter(q["band"] for q in items)
+        detail = " ".join(f"{b}={got.get(b, 0)}" for b in want)
+        off = [f"{b} {100 * got.get(b, 0) / n:.0f}% vs {want[b]}%"
+               for b in want if abs(100 * got.get(b, 0) / n - want[b]) > MIX_TOLERANCE]
+        ok &= check(f"{part}: within {MIX_TOLERANCE}pp of {mix[0]}:{mix[1]}:{mix[2]} ({detail})",
+                    not off, " · ".join(off))
+    return ok
+
+
 def uniqueness(sets):
     print("\n=== uniqueness ===")
     ok = True
@@ -218,17 +406,27 @@ def uniqueness(sets):
 
 def main():
     paths = sys.argv[1:]
+    # Called with no paper, this used to run zero checks, leave all_ok True, print
+    # "ALL CHECKS PASSED" and exit 0 — a green light for having verified nothing. That is the
+    # same shape as every bug this file exists to catch, so it fails loudly instead.
+    if not paths:
+        print("usage: python3 test_papers.py <paper.html> [more.html ...]\n"
+              "refusing to report success without a paper to check")
+        return 2
     sets, all_ok = [], True
     for p in paths:
-        qs, key, gen = parse(p)
+        qs, key, gen, mix = parse(p)
         tag = re.sub(r".*InterLevel_|\.html", "", p) or p
-        sets.append((tag, qs, key, gen))
-    for tag, qs, key, gen in sets:
+        sets.append((tag, qs, key, gen, mix))
+    for tag, qs, key, gen, mix in sets:
         all_ok &= structural(tag, qs, key, gen)
         all_ok &= key_spread(tag, qs, key)
         all_ok &= bilingual(tag, qs)
+        all_ok &= coverage(tag, qs)
+        all_ok &= balance(tag, qs)
+        all_ok &= difficulty_mix(tag, qs, mix)
         all_ok &= resolve(tag, qs, key, gen)
-    all_ok &= uniqueness(sets)
+    all_ok &= uniqueness([(t, q, k, g) for t, q, k, g, _ in sets])
     print("\n" + ("ALL CHECKS PASSED" if all_ok
                   else "*** SOME CHECKS FAILED — see above ***"))
     return 0 if all_ok else 1
@@ -866,6 +1064,17 @@ def _gk_tables():
         # Bihar joins the moment bihar_tables.REVIEWED is set. Loaded unconditionally HERE on
         # purpose: a solver that cannot read a question reports a coverage gap, and a solver that
         # is missing a table reports a confident wrong answer. The gate belongs on the BUILDER.
+        # History joins for the same reason Bihar did: a solver that does not know a table cannot
+        # read its questions, and an unreadable question is silently dropped from any drill that
+        # requires verification — History of India vanished from a syllabus-weighted section that
+        # had 17 hard history questions available.
+        from qbank import history_tables as _H
+        _GK_TABLES.update({"mv_year": _H.MOVEMENT_YEAR, "founded": _H.FOUNDED_YEAR,
+                           "mv_leader": _H.MOVEMENT_LEADER, "mv_against": _H.MOVEMENT_AGAINST,
+                           "bihar_freedom_ev": _H.BIHAR_FREEDOM})
+        from qbank import polity_extra as _PE
+        _GK_TABLES["article"] = dict(_GK_TABLES["article"], **_PE.ARTICLE_SUBJECT_EXTRA)
+        _GK_TABLES["panchayat"] = _PE.PANCHAYAT_ARTICLE
         from qbank import bihar_tables as _B
         _GK_TABLES.update({"bihar_site": _B.BIHAR_SITE_DISTRICT,
                            "bihar_gi": _B.BIHAR_GI_PRODUCT,
@@ -900,7 +1109,16 @@ def _stmt_true(line):
         return _known(t["river"], m.group(1), m.group(2))
     m = re.match(r"Article (.+?) of the Constitution deals with (.+?)\.$", line)
     if m:
-        return _known(t["article"], m.group(1).strip(), m.group(2).strip())
+        # Two tables hold Constitution articles — the main one and the Part IX/IX-A Panchayat
+        # articles — and they are phrased identically because they ARE the same kind of statement.
+        # Checking only the first returned None for every 243-series claim, so a statement question
+        # built from them came back unreadable and coverage fell to 149.
+        k, v = m.group(1).strip(), m.group(2).strip()
+        for tbl in ("article", "panchayat"):
+            r = _known(t[tbl], k, v)
+            if r is not None:
+                return r
+        return None
     m = re.match(r"The (.+?) Amendment (.+?)\.$", line)
     if m:
         return _known(t["amendment"], m.group(1).strip(), m.group(2).strip())
@@ -2099,7 +2317,10 @@ def solve_wrong_term(en):
     return str(t[bad[0]]) if len(bad) == 1 else None
 
 
-_ASK_TABLE = {"BIHAR_SITE_DISTRICT": "bihar_site", "BIHAR_GI_PRODUCT": "bihar_gi",
+_ASK_TABLE = {"MOVEMENT_YEAR": "mv_year", "FOUNDED_YEAR": "founded",
+              "MOVEMENT_LEADER": "mv_leader", "MOVEMENT_AGAINST": "mv_against",
+              "BIHAR_FREEDOM": "bihar_freedom_ev",
+              "PANCHAYAT_ARTICLE": "panchayat", "BIHAR_SITE_DISTRICT": "bihar_site", "BIHAR_GI_PRODUCT": "bihar_gi",
               "BIHAR_FREEDOM_ROLE": "bihar_freedom", "BIHAR_FOLK_REGION": "bihar_folk",
               "STATE_CAPITAL": "cap", "DANCE_STATE": "dance", "RIVER_ORIGIN": "river",
               "ARTICLE_SUBJECT": "article", "AMENDMENT_DID": "amendment",
@@ -2151,9 +2372,17 @@ def solve_gs_ask(en):
         if style == "rev":
             v = m.group("v").strip()
             owners = [k for k, vv in table.items() if str(vv).strip() == v]
-            return owners[0] if len(owners) == 1 else None
+            if len(owners) == 1:
+                return owners[0]
+            continue          # this table does not own the value — another may
         k = m.group("k").strip()
-        return str(table[k]) if k in table else None
+        if k in table:
+            return str(table[k])
+        # KEEP LOOKING. Two tables may legitimately share a template — Panchayat articles are
+        # phrased exactly like every other Constitution article — and returning None on the first
+        # match would drop the question as unreadable rather than answering it from the table that
+        # actually holds the key. Coverage would fall and look like a generator fault.
+        continue
     m = re.match(r"^Which one of the following is NOT a (.+?) (.+?)\?$", t)
     if m:
         # odd-one-out: the answer is the printed option that does NOT belong to the named group

@@ -312,7 +312,9 @@
     "share": 0.08,
     "generator": "reasoninggen: Dice",
     "concepts": [
-     "Dice"
+     "Dice",
+     "Direction — Facing",
+     "Direction — Distance"
     ]
    },
    {
@@ -415,5 +417,32 @@
    "_b_di_table",
    "_b_di_caselet"
   ]
+ },
+ "_real_topic_map": {
+  "Indian Polity": "Constitution & polity",
+  "Bihar Polity/Schemes": "Constitution & polity",
+  "Indian History": "History of India",
+  "Bihar History": "History of India",
+  "Indian Geography": "Geography — rivers, parks, lakes",
+  "Bihar Geography": "Geography — rivers, parks, lakes",
+  "Current Affairs - National": "Science news & current events",
+  "Current Affairs - International": "Science news & current events",
+  "Science & Technology": "Science news & current events",
+  "Economy": "Economy & Five-Year Plans",
+  "Sports": "Sports",
+  "Art & Culture": "Culture — dance, art, festivals",
+  "Environment": "Agriculture & natural resources",
+  "Arithmetic": "Computation & fundamental arithmetic operations",
+  "Number System": "Number system",
+  "Percentage/Profit-Loss": "Percentage",
+  "Ratio/Average": "Ratio & proportion",
+  "Physics": "Physics",
+  "Chemistry": "Chemistry",
+  "Biology": "Biology",
+  "Logical Reasoning": "Arithmetical reasoning",
+  "Time-Work-Speed": "Computation & fundamental arithmetic operations",
+  "Data Interpretation": "Computation & fundamental arithmetic operations",
+  "Mensuration": "Computation & fundamental arithmetic operations",
+  "Algebra": "Computation & fundamental arithmetic operations"
  }
 }

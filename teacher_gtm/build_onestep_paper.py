@@ -225,12 +225,38 @@ def question_topics(q):
     """
     import syllabus_blueprint as SB
     sec = (q.get("tag") or {}).get("section") or ""
+    # A REAL question has no `src` and no generator `concept` — it carries the tagger's own topic
+    # label ("Current Affairs - National", "Bihar Polity/Schemes"). Those are what bring the
+    # topics no generator can make, so without this the whole real half of a paper reported as
+    # "अन्य": Part I showed ONE topic on a paper that actually covered twelve.
     keys = list(q.get("src") or []) or [q.get("concept") or "?"]
+    # `effective_topic` first: the tagger writes "Other" whenever its GK-oriented taxonomy has no
+    # bucket, which on the real MATHS questions is 255 of them. tag_bssc already knows how to
+    # derive a usable topic from the question TYPE in that case, and the blueprint mining uses it —
+    # the paper simply never did, so 30 of Part II reported as "अन्य".
+    tag = q.get("tag") or {}
+    rt = tag.get("topic")
+    if (not rt or rt == "Other") and tag.get("type"):
+        try:
+            from qbank_tag_bridge import effective_topic as _et
+            rt = _et(tag)
+        except Exception:
+            try:
+                sys.path.insert(0, str(REPO / "question_bank_engine"))
+                from tag_bssc import effective_topic as _et
+                rt = _et(tag)
+            except Exception:
+                pass
+    if rt and not q.get("src") and not q.get("concept"):
+        mapped = (SB.load().get("_real_topic_map") or {}).get(rt)
+        if mapped:
+            keys = [mapped]
     out = []
     for k in keys:
         for s in (sec, "General Studies", "Mathematics", "Reasoning", "General Science"):
             t = next((t for t in SB.topics(s)
-                      if k in (t.get("concepts") or []) or k in (t.get("builders") or [])), None)
+                      if k == t["en"] or k in (t.get("concepts") or [])
+                      or k in (t.get("builders") or [])), None)
             if t:
                 if (t["en"], t["hi"]) not in out:
                     out.append((t["en"], t["hi"]))
@@ -252,7 +278,7 @@ def short_hi(hi):
     return s
 
 
-def coverage_table(items):
+def coverage_table(items, with_difficulty=True):
     """A topic x difficulty grid for one section, as printable HTML.
 
     150 badges tell you what each question IS; only a table tells you what the SECTION is. Both of
@@ -275,6 +301,15 @@ def coverage_table(items):
             per_band.setdefault(hi, Counter())[b] += 1
     if not per_topic:
         return ""
+    if not with_difficulty:
+        body = "".join(f'<tr><td>{esc(hi)}</td><td class="n"><b>{n}</b></td></tr>'
+                       for hi, n in per_topic.most_common())
+        note = (f"एक प्रश्न एक से अधिक विषय छू सकता है, अतः विषय-योग {sum(per_topic.values())} है। "
+                if sum(per_topic.values()) != len(items) else "")
+        return (f'<table class="cov"><caption>विषय-वार वितरण / Topic distribution — '
+                f'{len(items)} प्रश्न, {len(per_topic)} विषय। {note}'
+                f'{len(types)} प्रश्न-प्रकार / question types.</caption>'
+                f'<tr><th>विषय / Topic</th><th class="n">प्रश्न</th></tr>{body}</table>')
     rows = ""
     for hi, n in per_topic.most_common():
         c = per_band[hi]
@@ -514,7 +549,7 @@ def register(q, used, tmpl):
         tmpl[nkey] = 1
 
 
-def pick(pool, n, used, tmpl, cap=2, salt="", stripe=None, mix=None):
+def pick(pool, n, used, tmpl, cap=2, salt="", stripe=None, mix=None, topic_quota=None):
     """Draw n questions, hardest first.
 
     `stripe=(i, m)` deals the sorted pool round-robin across m sets and takes lane i. Without it
@@ -525,13 +560,27 @@ def pick(pool, n, used, tmpl, cap=2, salt="", stripe=None, mix=None):
     paper. Splitting is what an institute buying a series needs.
     """
     out = []
+    # `topic_quota` caps how many questions each SYLLABUS topic may contribute. Without it this
+    # function sorted by difficulty and took whatever the bank happened to hold, so a paper drawn
+    # entirely from real questions reflected the BANK's topic mix rather than the commission's:
+    # measured, Constitution 15 and Current Affairs 15 against syllabus targets of 7 and 2.5,
+    # while Geography got 2 against 5. The generated draw has honoured the syllabus for a while;
+    # the real draw never did.
+    from collections import Counter as _Counter
+    got_topic = _Counter()
+
+    def _topic(q):
+        tp = question_topics(q)
+        return tp[0][0] if tp else None
+
+    out = []
     pool = sorted(pool, key=lambda q: _order_key(q, salt))
     if stripe:
         i, m = stripe
         pool = [q for k, q in enumerate(pool) if k % m == i] + \
                [q for k, q in enumerate(pool) if k % m != i]   # own lane first, rest as fallback
 
-    def take(candidates, want):
+    def take(candidates, want, respect_topics=True):
         for q in candidates:
             if len(out) >= want:
                 break
@@ -542,7 +591,12 @@ def pick(pool, n, used, tmpl, cap=2, salt="", stripe=None, mix=None):
             nkey, nn = _numkey(q)
             if nn >= 2 and tmpl.get(nkey):
                 continue
+            t = _topic(q) if topic_quota else None
+            if topic_quota and respect_topics and t and got_topic[t] >= topic_quota.get(t, 0):
+                continue
             register(q, used, tmpl)
+            if t:
+                got_topic[t] += 1
             out.append(q)
 
     if mix:
@@ -555,7 +609,9 @@ def pick(pool, n, used, tmpl, cap=2, salt="", stripe=None, mix=None):
             running += mix[band]
             take([q for q in pool if ((q.get("tag") or {}).get("difficulty") or 0) == band],
                  running)
-    take(pool, n)                       # top up from anywhere the mix could not reach
+    # Top up IGNORING the topic quota. A quota that leaves the section short is worse than one
+    # slightly exceeded — the paper must still print 50 questions.
+    take(pool, n, respect_topics=False)
     return out
 
 
@@ -767,6 +823,19 @@ def gs_tables():
     # harder wrapper — and they are what the advertisement's syllabus actually names.
     t["ARTICLE_SUBJECT"] = polity_tables.ARTICLE_SUBJECT
     t["AMENDMENT_DID"] = polity_tables.AMENDMENT_DID
+    # 58 more articles + the Part IX/IX-A Panchayat articles, both parsed from the same official
+    # PDF. Articles are the only GS sub-topic that reliably produces a HARD question, so this is
+    # the cheapest hardness we have. GATED: the Hindi is hand-written.
+    from qbank import polity_extra
+    if polity_extra.REVIEWED:
+        from qbank import staticgk_hi as _sh
+        _sh.register(polity_extra.HI)
+        t["ARTICLE_SUBJECT"] = dict(t["ARTICLE_SUBJECT"], **polity_extra.ARTICLE_SUBJECT_EXTRA)
+        t["PANCHAYAT_ARTICLE"] = polity_extra.PANCHAYAT_ARTICLE
+    else:
+        print(f"  note: {len(polity_extra.ARTICLE_SUBJECT_EXTRA)} extra Constitution articles + "
+              f"{len(polity_extra.PANCHAYAT_ARTICLE)} Panchayat articles BUILT but NOT REVIEWED "
+              f"(see drop/bssc/POLITY_EXTRA_REVIEW.md)")
     # History and the freedom movement — 18% of Part I by the blueprint, and previously zero.
     # GATED: these facts do not reach a paper until a person has read drop/bssc/HISTORY_REVIEW.md
     # and set REVIEWED = True. Two automated verifiers were written for that table and both were
@@ -811,6 +880,17 @@ def gs_tables():
 # is 36% of its paper, so a cap of 10 would fight the very distribution we are copying. Kept only
 # to stop a runaway if the weighting is ever mis-specified.
 GS_STYLE_CAP = 24
+
+# The commission's measured share of the reverse-lookup style ("Agartala is the capital of which
+# state?"). Raising it is the ONLY lever that makes General Studies harder without faking a
+# difficulty label, because `rev` is the only asking style that can reach difficulty 3 — it scores
+# +1 for running the table backwards and +1 again when the distractors are measurably confusable.
+#
+# It is a DELIBERATE TRADE and the build prints it. At 14.3 the paper matches the real exam's
+# style distribution; above that it is progressively less like a real BSSC paper and progressively
+# harder. There is no setting that is both.
+GS_REV_SHARE_DEFAULT = 14.3
+GS_REV_SHARE = GS_REV_SHARE_DEFAULT
 
 
 def _gs_row(b, d):
@@ -1118,9 +1198,17 @@ def generate_gs_section(want, mix, gen_taken, bilingual, rng):
     # 300) and still produced 0-1 questions a paper, because 3 slots out of 100 over a 38-question
     # draw is one question. Meanwhile _ask("wh") was WORDED as an embedded-which and quietly
     # spent the direct-wh budget on the wrong bucket. Counting the outcome fixes both.
-    spec = [(_ask("comp"), "sentence-completion", 36.2),
+    # comp yields exactly what rev takes, so the other styles keep their measured shares and the
+    # trade is visible in one place instead of being smeared across the table.
+    _rev = float(GS_REV_SHARE)
+    _comp = max(4.0, 36.2 - (_rev - GS_REV_SHARE_DEFAULT))
+    if abs(_rev - GS_REV_SHARE_DEFAULT) > 0.01:
+        print(f"  note: GS reverse-lookup share raised {GS_REV_SHARE_DEFAULT}% -> {_rev}% "
+              f"(sentence-completion {36.2}% -> {_comp:.1f}%) — HARDER than the real exam's "
+              f"style mix, on purpose")
+    spec = [(_ask("comp"), "sentence-completion", _comp),
             (_ask("wh"), "direct-wh", 16.7),
-            (_ask("rev"), "embedded-which", 14.3),
+            (_ask("rev"), "embedded-which", _rev),
             (SF.b_which_statement, "which-of-following", 9.2),
             # Split across two negative forms: the odd-one-out can only build where three keys
             # share a value (Kerala's dances, and nothing else in our tables), so on its own it
@@ -1639,6 +1727,15 @@ def main():
                     help="Top up a General Studies shortfall from staticgkgen. OFF by default: "
                          "its questions are correct-by-construction but difficulty-1 recall, "
                          "which is the register the institute already rejected.")
+    ap.add_argument("--gs-rev-share", type=float, default=None,
+                    help="percentage of General Studies asked as reverse-lookup. The commission's "
+                         "measured share is 14.3; raising it is the only honest way to make GS "
+                         "harder, and it makes the paper less like a real one.")
+    ap.add_argument("--show-topic", action="store_true",
+                    help="print the SYLLABUS TOPIC and question type on each question, and a "
+                         "topic-distribution table under each section header — without the "
+                         "difficulty badge. For a student copy: a candidate who reads 'कठिन' "
+                         "before answering has been primed, but knowing the topic helps review.")
     ap.add_argument("--show-difficulty", action="store_true",
                     help="Print a difficulty badge (सरल / मध्यम / कठिन) beside every question. "
                          "This is for a REVIEW copy sent to the institute, not for students: it "
@@ -1662,6 +1759,8 @@ def main():
                          "answer's provenance. build_verification_sheet.py consumes this so the "
                          "sheet and the paper cannot disagree about what question 47 is.")
     a = ap.parse_args()
+    if a.gs_rev_share is not None:
+        globals()["GS_REV_SHARE"] = a.gs_rev_share
 
     try:
         _e, _m, _h = (int(x) for x in a.difficulty_mix.split(":"))
@@ -1861,6 +1960,10 @@ def main():
         pool = [q for s in secs for q in by.get(s, [])]
         last = idx == len(SPEC) - 1
         target = want + carry if last else want
+        # NOTE: a syllabus topic quota was tried on this REAL draw and measured WORSE — Part I
+        # fell from 7 topics to 5 and 23 questions landed in "अन्य", because capping the topics
+        # the tagger CAN label just pushes the draw into the ones it cannot. The quota belongs on
+        # the generated draw, where every question's topic is known by construction.
         got = pick(pool, target, used, tmpl, salt="shared",
                    stripe=((a.set - 1) % a.sets, a.sets), mix=mix_for(target))
         # A maths section that came back short of HARD questions can be topped up by generation —
@@ -1976,8 +2079,8 @@ def main():
         # Only on a review copy. A student who sees the spread before answering learns nothing
         # useful from it, and it is the reviewer — not the candidate — who is being asked whether
         # the distribution is right.
-        if a.show_difficulty:
-            qh.append(coverage_table(items))
+        if a.show_difficulty or a.show_topic:
+            qh.append(coverage_table(items, with_difficulty=a.show_difficulty))
         for q in items:
             i += 1
             # Some stems in the 8th-Level paper are not stems at all — the extractor put the OPTION
@@ -2025,13 +2128,14 @@ def main():
                 i -= 1
                 continue
             block = f'<div class="q">'
-            if a.show_difficulty:
+            if a.show_difficulty or a.show_topic:
                 # The owner said "ye basic ka bhi basic hai" about a whole paper. A badge per
                 # question turns that into "question 14 is right, question 61 is too easy" —
                 # feedback we can actually build against, and the raw material for calibrating
                 # our difficulty tags against a real examiner's judgement.
                 dlab = {1: ("सरल", "Easy"), 2: ("मध्यम", "Medium")}.get(
                     (q.get("tag") or {}).get("difficulty") or 0, ("कठिन", "Hard"))
+                dpart = f'{dlab[0]} &middot; {dlab[1]}' if a.show_difficulty else ""
                 # The badge carries the difficulty and nothing else. It named the source too,
                 # which put our brand on every question of a paper that goes out under the
                 # institute's own logo — and the source is not what the reviewer is being asked
@@ -2044,7 +2148,11 @@ def main():
                 # DIFFICULTY is what he has been asked to calibrate.
                 tp = question_topics(q)
                 tlab = " · ".join(short_hi(h) for _e, h in tp[:2]) + (" आदि" if len(tp) > 2 else "")
-                block += (f'<span class="dbadge">{dlab[0]} &middot; {dlab[1]}'
+                # An unmapped topic printed an EMPTY badge box, which reads as a rendering fault.
+                # Static GK genuinely spans the syllabus and has no single home; say so instead.
+                if not tlab.strip():
+                    tlab = "सामान्य ज्ञान"
+                block += (f'<span class="dbadge">{dpart}'
                           + (f'<i>{esc(tlab)}</i>' if tlab else "")
                           + (f'<i class="ty">{esc(str(q.get("concept") or ""))}</i>')
                           + '</span>')
@@ -2193,7 +2301,7 @@ h2.sec {{ font-size:10.5pt; color:#8a6d1a; border-left:3px solid #c9a227; paddin
 .q .n {{ font-weight:800; margin-right:3px; }}
 .hi {{ font-weight:500; }}
 .en {{ color:#3a3f4e; margin-top:2px; }}
-.ops {{ margin:1px 0 2px 15px; }}
+.ops {{ margin:1px 0 2px 15px; clear:right; }}
 .op {{ display:inline-block; min-width:47%; padding-right:6px; vertical-align:top; }}
 {MATH_CSS}
 .keyhead {{ page-break-before:always; }}
@@ -2228,7 +2336,7 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
 </style></head><body>
 {COVER if a.inter_level else ""}
 {HEAD}
-<div class="meta"><span><b>कुल प्रश्न:</b> {n}</span><span><b>पूर्णांक:</b> {n * 4}</span>
+<div class="meta" data-mix="{a.difficulty_mix}"><span><b>कुल प्रश्न:</b> {n}</span><span><b>पूर्णांक:</b> {n * 4}</span>
 <span><b>समय:</b> 2 घंटे 15 मिनट</span><span><b>नाम:</b> ____________</span>
 <span><b>अनुक्रमांक:</b> ________</span></div>
 <div class="inst">
