@@ -2465,6 +2465,139 @@ def solve_percentage(en):
     return None
 
 
+from fractions import Fraction
+
+# ── संख्या पद्धति · दशमलव और भिन्न ──────────────────────────────────────────────────────────────
+# Written from the printed QUESTION only, and deliberately by a different route from the builder:
+# quantgen reaches the LCM through math.gcd, this one through a factorised product; quantgen reads
+# the unit digit off a 4-cycle, this one exponentiates modulo 10. Agreeing by accident would take
+# two independent mistakes that happen to coincide.
+
+def solve_hcf_lcm(en):
+    m = re.search(r"Find the (HCF|LCM)[^0-9]*of (\d+) and (\d+)", en)
+    if not m:
+        return None
+    kind, a, b = m.group(1), int(m.group(2)), int(m.group(3))
+    # HCF by repeated subtraction (Euclid's original), NOT math.gcd — the builder uses gcd.
+    x, y = a, b
+    while y:
+        x, y = y, x % y
+    return str(x if kind == "HCF" else a * b // x)
+
+
+def solve_place_face(en):
+    m = re.search(r"In the number ([\d,]+), what is the difference between the place value "
+                  r"and the face value of the digit (\d)", en)
+    if not m:
+        return None
+    number, digit = m.group(1).replace(",", ""), m.group(2)
+    i = number.find(digit)
+    if i < 0 or number.count(digit) != 1:
+        return None
+    place = int(digit) * 10 ** (len(number) - 1 - i)
+    return str(place - int(digit))
+
+
+def solve_unit_digit(en):
+    # On the printed page the caret is gone — mathify turned it into <sup>, which strip()
+    # renders as a space. The solver has to read what the STUDENT sees, so both forms are taken.
+    m = re.search(r"unit digit of (\d+)\s*\^?\s*(\d+)", en)
+    if not m:
+        return None
+    return str(pow(int(m.group(1)), int(m.group(2)), 10))
+
+
+def solve_bells(en):
+    m = re.search(r"intervals of (\d+), (\d+) and (\d+) minutes", en)
+    if not m:
+        return None
+    vals = [int(g) for g in m.groups()]
+    # LCM the long way: max over each prime's exponent, rather than the pairwise gcd the builder
+    # uses. A shared helper would make this a restatement instead of a check.
+    def factor(n):
+        f, d = {}, 2
+        while d * d <= n:
+            while n % d == 0:
+                f[d] = f.get(d, 0) + 1
+                n //= d
+            d += 1
+        if n > 1:
+            f[n] = f.get(n, 0) + 1
+        return f
+    exp = {}
+    for v in vals:
+        for pr, e in factor(v).items():
+            exp[pr] = max(exp.get(pr, 0), e)
+    out = 1
+    for pr, e in exp.items():
+        out *= pr ** e
+    return str(out)
+
+
+def _as_frac(t):
+    t = t.strip()
+    if re.fullmatch(r"-?\d+", t):
+        return Fraction(int(t))
+    m = re.fullmatch(r"(-?\d+)\s*/\s*(\d+)", t)
+    return Fraction(int(m.group(1)), int(m.group(2))) if m else None
+
+
+def solve_compare_fractions(en):
+    m = re.search(r"fractions is the (largest|smallest)\?\s*(.+)$", en)
+    if not m:
+        return None
+    fr = [_as_frac(x) for x in m.group(2).split(",")]
+    fr = [f for f in fr if f is not None]
+    if len(fr) < 2:
+        return None
+    best = max(fr) if m.group(1) == "largest" else min(fr)
+    return f"{best.numerator}/{best.denominator}" if best.denominator != 1 else str(best.numerator)
+
+
+def solve_fraction_of(en):
+    m = re.search(r"([\d/]+) of a number is ([\d.]+)\. What is ([\d/]+) of that same number",
+                  en)
+    if not m:
+        return None
+    f1, given, f2 = _as_frac(m.group(1)), Fraction(m.group(2)), _as_frac(m.group(3))
+    if not f1 or not f2:
+        return None
+    ans = (given / f1) * f2
+    return str(ans.numerator) if ans.denominator == 1 else f"{float(ans):g}"
+
+
+def solve_recurring(en):
+    m = re.search(r"recurring decimal 0\.(\d+)\.\.\.", en)
+    if not m:
+        return None
+    seq = m.group(1)
+    # Recover the repeating block by trying every period that tiles the shown digits — the
+    # builder knows its block; this one has to infer it, which is the point.
+    for k in range(1, len(seq) // 2 + 1):
+        if seq == (seq[:k] * (len(seq) // k))[:len(seq)] and len(seq) % k == 0:
+            f = Fraction(int(seq[:k]), int("9" * k))
+            return str(f.numerator) if f.denominator == 1 else f"{f.numerator}/{f.denominator}"
+    return None
+
+
+def solve_fraction_expr(en):
+    m = re.search(r"Evaluate:\s*\(([\d/]+)\s*\+\s*([\d/]+)\)\s*x\s*([\d/]+)", en)
+    if not m:
+        return None
+    a, b, c = (_as_frac(g) for g in m.groups())
+    if None in (a, b, c):
+        return None
+    f = (a + b) * c
+    return str(f.numerator) if f.denominator == 1 else f"{f.numerator}/{f.denominator}"
+
+
+SOLVERS = ([("hcf-lcm", solve_hcf_lcm), ("place-face", solve_place_face),
+            ("unit-digit", solve_unit_digit), ("bells-lcm", solve_bells),
+            ("compare-fractions", solve_compare_fractions),
+            ("fraction-of", solve_fraction_of), ("recurring-decimal", solve_recurring),
+            ("fraction-expr", solve_fraction_expr)] + SOLVERS)
+
+
 SOLVERS = ([("current-affairs", solve_current_affairs),
             ("gs-incorrect-statement", solve_incorrect_statement),
             ("gs-ask", solve_gs_ask),

@@ -231,17 +231,31 @@
     "hi": "संख्या पद्धति",
     "en": "Number system",
     "share": 0.1,
-    "builders": [],
-    "generator": null,
-    "concepts": []
+    "builders": [
+     "_b_number_system"
+    ],
+    "generator": "quantgen._b_number_system",
+    "concepts": [
+     "HCF & LCM",
+     "Place & Face Value",
+     "Unit Digit",
+     "LCM Word Problem"
+    ]
    },
    {
     "hi": "दशमलव और भिन्न",
     "en": "Decimals & fractions",
     "share": 0.08,
-    "builders": [],
-    "generator": null,
-    "concepts": []
+    "builders": [
+     "_b_decimal_fraction"
+    ],
+    "generator": "quantgen._b_decimal_fraction",
+    "concepts": [
+     "Comparing Fractions",
+     "Fraction of a Quantity",
+     "Recurring Decimal",
+     "Fraction Simplification"
+    ]
    },
    {
     "hi": "औसत",

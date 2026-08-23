@@ -58,7 +58,12 @@ def mathify(t):
         # "164175". A negative lookahead for a letter keeps \timeszone-style names safe.
         t = re.sub(r"\\" + k + r"(?![a-zA-Z])", v, t)
     t = re.sub(r"\^\s*\{([^{}]*)\}", r"<sup>\1</sup>", t)
-    t = re.sub(r"\^\s*(-?\w)", r"<sup>\1</sup>", t)
+    # \w matches ONE character, so "3^66" superscripted only the first 6 and printed 3<sup>6</sup>6
+    # — a different question from the one the builder computed an answer for, with nothing to see
+    # in the HTML but a stray digit. Same family as the `$` and the "______" above: any symbol a
+    # stem prints has to be checked through here. A run of DIGITS is taken whole; a letter
+    # exponent stays single so "x^2y" still leaves the y on the baseline.
+    t = re.sub(r"\^\s*(-?\d+|-?\w)", r"<sup>\1</sup>", t)
     t = re.sub(r"_\s*\{([^{}]*)\}", r"<sub>\1</sub>", t)
     # NOT \w — \w includes the underscore itself, so a fill-in-the-blank "______" was eaten as a
     # run of nested subscripts and printed as "_ _ _ ." A subscript is a letter or a digit; a run

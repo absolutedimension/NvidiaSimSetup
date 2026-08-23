@@ -53,6 +53,8 @@ def _pct(x) -> str:
 
 def _frac(f: Fraction) -> str:
     f = Fraction(f).limit_denominator(10000)
+    if f.denominator == 1:            # "1/1" is not how anyone writes one
+        return str(f.numerator)
     return f"{f.numerator}/{f.denominator}"
 
 
@@ -119,7 +121,7 @@ def _perturb(values, want, rng):
     return have
 
 
-def mistakes(*pairs):
+def mistakes(*pairs, correct=None):
     """Distractors COMPUTED BY MAKING A MISTAKE, each labelled with the mistake it represents.
 
     Why this exists. A question is hard mostly because its wrong answers are attractive, and the
@@ -136,13 +138,23 @@ def mistakes(*pairs):
     wrong" and starts meaning "applied simple interest to a compound-interest question" — which is
     the difference between a score and a diagnosis.
 
+    Pass `correct` and any mistake that happens to LAND on the right answer is dropped rather
+    than offered — HCF(a, b) equals min(a, b) whenever a divides b, and 8^57 ends in 8 just as 8
+    does. Without it those collapse into a duplicate option, which `_mcq` dedupes and then pads
+    with `_perturb`: a question that looked like it had four error-derived options quietly ends up
+    with three and a nudge. Every builder has this hazard; the ones written before this argument
+    existed have not been audited for it.
+
     Usage:  "mistakes": mistakes(("added the times instead of the rates", _num(a + b) + " days"),
                                  ("took the average of the two times",    _num(avg) + " days"))
     """
     out = []
     for why, value in pairs:
-        if value is not None and str(value).strip():
-            out.append({"why": why, "text": str(value)})
+        if value is None or not str(value).strip():
+            continue
+        if correct is not None and str(value) == str(correct):
+            continue          # see the `correct` note in the signature
+        out.append({"why": why, "text": str(value)})
     return out
 
 
@@ -1703,8 +1715,290 @@ def _b_pnc(rng, diff):
 # chapter -> builders
 # =============================================================================
 
+def _pick3(cands, correct):
+    """Three DISTINCT named mistakes, none of them the answer, in the order given.
+
+    Builders offer more candidates than they need because a computed mistake can collide — with
+    the answer, or with another mistake. Stress-testing `_b_number_system` over 1,600 draws found
+    400 questions where it did: HCF(a, b) is min(a, b) whenever a divides b, |a - b| is 0 when the
+    two numbers coincide, and a unit-digit question has only ten possible values to begin with, so
+    three independent errors land on the same digit constantly. None of it failed loudly — `_mcq`
+    deduped and `_perturb` filled the gap with a nudge of the answer.
+    """
+    out, seen = [], {str(correct)}
+    for why, val in cands:
+        if val is None:
+            continue
+        t = str(val)
+        if t in seen or not t.strip():
+            continue
+        seen.add(t)
+        out.append((why, t))
+        if len(out) == 3:
+            break
+    return mistakes(*out, correct=correct)
+
+
+def _b_number_system(rng, diff):
+    """संख्या पद्धति. 10% of the BSSC Inter Level maths syllabus and previously ungenerated.
+
+    diff 1  HCF / LCM of two numbers — computed with math.gcd, never by factor-hunting
+    diff 2  place value vs face value, which the commission asks by that name
+    diff 3  the unit digit of a large power, by its 4-cycle
+    diff 4+ the classic LCM word problem: bells tolling together
+
+    Every answer is computed, so the key cannot be wrong. What can still be wrong is the OPTION
+    SET — see `_pick3`, which every band here routes through.
+    """
+    if diff <= 1:
+        # Redraw while either number divides the other. That degeneracy is not just an option-set
+        # problem — when a divides b the HCF simply IS the smaller number and the LCM IS the
+        # larger, so a student answers by inspection and every named mistake collapses onto the
+        # answer. Found by stress-testing 6,000 draws: 11 of them were "the HCF of 46 and 92".
+        a = rng.randint(12, 60) * 2
+        b = rng.randint(12, 60) * 2
+        while b == a or a % b == 0 or b % a == 0:
+            b = rng.randint(12, 60) * 2
+        g, l = math.gcd(a, b), a * b // math.gcd(a, b)
+        if rng.random() < 0.5:
+            stem = f"Find the HCF (greatest common divisor) of {a} and {b}."
+            stem_hi = f"{a} तथा {b} का महत्तम समापवर्तक (HCF) ज्ञात कीजिए।"
+            ans, sol = g, f"HCF({a}, {b}) = {g}."
+            sol_hi = f"HCF({a}, {b}) = {g}।"
+            cands = [("gave the LCM instead of the HCF", _num(l)),
+                     ("took the difference of the two numbers", _num(abs(a - b))),
+                     ("gave the smaller number itself", _num(min(a, b))),
+                     ("divided the product by the smaller number", _num(a * b // min(a, b))),
+                     ("doubled the HCF", _num(2 * g)),
+                     ("halved the smaller number", _num(min(a, b) // 2))]
+        else:
+            stem = f"Find the LCM (least common multiple) of {a} and {b}."
+            stem_hi = f"{a} तथा {b} का लघुत्तम समापवर्त्य (LCM) ज्ञात कीजिए।"
+            ans, sol = l, f"LCM({a}, {b}) = ({a} x {b}) / HCF = {a * b} / {g} = {l}."
+            sol_hi = f"LCM({a}, {b}) = ({a} x {b}) / HCF = {a * b} / {g} = {l}।"
+            cands = [("gave the HCF instead of the LCM", _num(g)),
+                     ("multiplied the two numbers without dividing by the HCF", _num(a * b)),
+                     ("gave the larger number itself", _num(max(a, b))),
+                     ("added the two numbers", _num(a + b)),
+                     ("halved the LCM", _num(l // 2)),
+                     ("doubled the larger number", _num(2 * max(a, b)))]
+        return {"stem": stem, "stem_hi": stem_hi, "correct": _num(ans),
+                "mistakes": _pick3(cands, _num(ans)),
+                "solution": sol, "solution_hi": sol_hi, "concept": "HCF & LCM"}
+
+    if diff == 2:
+        # A repeated digit would leave "place value" ambiguous about WHICH occurrence is meant,
+        # so the chosen digit appears once and the others are drawn to avoid it.
+        digit = rng.randint(2, 9)
+        pos = rng.randint(1, 4)                     # never the units place: the difference is 0
+        others = [str(rng.choice([x for x in range(1, 10) if x != digit])) for _ in range(5)]
+        ds = others[:]
+        ds.insert(len(ds) - pos, str(digit))
+        number = int("".join(ds))
+        place = digit * (10 ** pos)
+        ans = place - digit
+        stem = (f"In the number {number:,}, what is the difference between the place value "
+                f"and the face value of the digit {digit}?")
+        stem_hi = (f"संख्या {number:,} में अंक {digit} के स्थानीय मान तथा जातीय मान का "
+                   f"अंतर क्या है?")
+        sol = (f"Place value = {digit} x {10 ** pos} = {place}; face value = {digit}. "
+               f"Difference = {place} - {digit} = {ans}.")
+        sol_hi = (f"स्थानीय मान = {digit} x {10 ** pos} = {place}; जातीय मान = {digit}। "
+                  f"अंतर = {place} - {digit} = {ans}।")
+        cands = [("gave the PLACE VALUE instead of the difference", _num(place)),
+                 ("gave the FACE VALUE instead of the difference", _num(digit)),
+                 ("added the two values instead of subtracting", _num(place + digit)),
+                 ("read the digit one place further left", _num(digit * 10 ** (pos + 1) - digit)),
+                 ("read the digit one place further right", _num(digit * 10 ** (pos - 1) - digit))]
+        return {"stem": stem, "stem_hi": stem_hi, "correct": _num(ans),
+                "mistakes": _pick3(cands, _num(ans)),
+                "solution": sol, "solution_hi": sol_hi, "concept": "Place & Face Value"}
+
+    if diff == 3:
+        # The answer is ONE DIGIT, so there are only nine possible wrong answers in the whole
+        # question and three independent "errors" collide constantly. Distractors are therefore
+        # drawn from the structure the question is about — the other positions of the base's own
+        # repeating cycle — and only then topped up from the digits its powers never produce.
+        base, power = rng.choice([2, 3, 4, 7, 8, 9]), rng.randint(20, 99)
+        ans = pow(base, power, 10)
+        cyc = [pow(base, e, 10) for e in range(1, 5)]
+        stem = f"What is the unit digit of {base}^{power}?"
+        stem_hi = f"{base}^{power} का इकाई अंक क्या है?"
+        sol = (f"The unit digits of {base}^1, {base}^2, ... repeat with period 4: "
+               f"{cyc}. {power} mod 4 = {power % 4}, so the unit digit is {ans}.")
+        sol_hi = (f"{base} की घातों के इकाई अंक 4 के चक्र में दोहराते हैं: {cyc}। "
+                  f"{power} mod 4 = {power % 4}, अतः इकाई अंक {ans} है।")
+        cands = [("read the wrong position of the repeating cycle", _num(c))
+                 for c in dict.fromkeys(cyc) if c != ans]
+        cands += [("chose a digit the powers of this base never end in", _num(d))
+                  for d in (1, 6, 4, 9, 5, 0, 2, 3, 7, 8) if d != ans and d not in cyc]
+        return {"stem": stem, "stem_hi": stem_hi, "correct": _num(ans),
+                "mistakes": _pick3(cands, _num(ans)),
+                "solution": sol, "solution_hi": sol_hi, "concept": "Unit Digit"}
+
+    ints = sorted(rng.sample([4, 6, 8, 9, 10, 12, 15, 16, 18], 3))
+    l = ints[0]
+    for x in ints[1:]:
+        l = l * x // math.gcd(l, x)
+    g3 = math.gcd(math.gcd(ints[0], ints[1]), ints[2])
+    l2 = ints[0] * ints[1] // math.gcd(ints[0], ints[1])
+    stem = (f"Three bells toll at intervals of {ints[0]}, {ints[1]} and {ints[2]} minutes "
+            f"respectively. If they toll together now, after how many minutes will they "
+            f"next toll together?")
+    stem_hi = (f"तीन घंटियाँ क्रमशः {ints[0]}, {ints[1]} तथा {ints[2]} मिनट के अंतराल पर "
+               f"बजती हैं। यदि वे अभी एक साथ बजती हैं, तो कितने मिनट बाद पुनः एक साथ बजेंगी?")
+    sol = f"They coincide after LCM({ints[0]}, {ints[1]}, {ints[2]}) = {l} minutes."
+    sol_hi = f"वे LCM({ints[0]}, {ints[1]}, {ints[2]}) = {l} मिनट बाद एक साथ बजेंगी।"
+    # "1 minute" is not an answer anyone writes down — it is one they cross out unread, the same
+    # defect _b_average documents at age 0. The HCF mistake is still named, and only offered when
+    # it lands on a time that could plausibly be meant.
+    cands = [("took the HCF instead of the LCM", _num(g3) if g3 > 1 else None),
+             ("added the three intervals", _num(sum(ints))),
+             ("multiplied the three intervals", _num(ints[0] * ints[1] * ints[2])),
+             ("took the LCM of only the first two intervals", _num(l2)),
+             ("doubled the largest interval", _num(2 * ints[2])),
+             ("halved the LCM", _num(l // 2)),
+             ("took the LCM of the two largest intervals",
+              _num(ints[1] * ints[2] // math.gcd(ints[1], ints[2])))]
+    return {"stem": stem, "stem_hi": stem_hi, "correct": _num(l),
+            "mistakes": _pick3(cands, _num(l)),
+            "solution": sol, "solution_hi": sol_hi, "concept": "LCM Word Problem"}
+
+
+def _b_decimal_fraction(rng, diff):
+    """दशमलव और भिन्न. 8% of the BSSC Inter Level maths syllabus and previously ungenerated.
+
+    diff 1  order four fractions and name the largest / smallest
+    diff 2  a fraction OF a quantity, in two steps
+    diff 3  a recurring decimal converted to a fraction in lowest terms
+    diff 4+ a compound fraction expression, evaluated exactly
+
+    Everything is held as a Fraction and only formatted at the end, so "0.333" never enters the
+    arithmetic. The answer is exact by construction; `_pick3` keeps the option set honest.
+    """
+    if diff <= 1:
+        # Denominators drawn distinct so no two fractions can be equal, and numerators kept
+        # proper — an improper fraction among proper ones is orderable at a glance and the
+        # question stops being about comparison.
+        dens = rng.sample([3, 4, 5, 6, 7, 8, 9, 11, 13], 4)
+        fr = []
+        for d0 in dens:
+            n0 = rng.randint(1, d0 - 1)
+            fr.append(Fraction(n0, d0))
+        if len(set(fr)) < 4:
+            return _b_decimal_fraction(rng, 2)          # degenerate draw: ask something else
+        want_max = rng.random() < 0.5
+        ans = max(fr) if want_max else min(fr)
+        shown = ", ".join(_frac(f) for f in fr)
+        word, word_hi = ("largest", "सबसे बड़ी") if want_max else ("smallest", "सबसे छोटी")
+        stem = f"Which of the following fractions is the {word}?  {shown}"
+        stem_hi = f"निम्नलिखित भिन्नों में {word_hi} भिन्न कौन-सी है?  {shown}"
+        sol = ("As decimals: " + ", ".join(f"{_frac(f)} = {round(float(f), 4)}" for f in fr)
+               + f". The {word} is {_frac(ans)}.")
+        sol_hi = ("दशमलव में: " + ", ".join(f"{_frac(f)} = {round(float(f), 4)}" for f in fr)
+                  + f"। {word_hi} भिन्न {_frac(ans)} है।")
+        other = min(fr) if want_max else max(fr)
+        by_num = max(fr, key=lambda f: f.numerator) if want_max else min(fr, key=lambda f: f.numerator)
+        by_den = max(fr, key=lambda f: f.denominator) if want_max else min(fr, key=lambda f: f.denominator)
+        cands = [(f"gave the {'smallest' if want_max else 'largest'} instead", _frac(other)),
+                 ("compared the numerators only", _frac(by_num)),
+                 ("compared the denominators only", _frac(by_den))]
+        cands += [("picked another fraction from the list", _frac(f)) for f in fr if f != ans]
+        return {"stem": stem, "stem_hi": stem_hi, "correct": _frac(ans),
+                "mistakes": _pick3(cands, _frac(ans)),
+                "solution": sol, "solution_hi": sol_hi, "concept": "Comparing Fractions"}
+
+    if diff == 2:
+        d1, d2 = rng.choice([(3, 5), (4, 7), (5, 8), (3, 8), (5, 9), (4, 9)])
+        n1, n2 = rng.randint(1, d1 - 1), rng.randint(1, d2 - 1)
+        total = rng.randint(6, 30) * d1 * d2                  # keeps every step a whole number
+        f1, f2 = Fraction(n1, d1), Fraction(n2, d2)
+        first = total * f1
+        # `total`, not `first`: the question asks for f2 of the NUMBER, not of the part already
+        # given. Writing `first * f2` here made the key the very mistake this builder's own
+        # distractor list names two screens down ("applied the second fraction to the given part,
+        # not to the number") — and the printed solution disagreed with the printed key without
+        # anything noticing. Caught by the independent solver in test_papers.py, on 2,201 of
+        # 16,000 draws, which is the entire reason that house rule exists.
+        ans = total * f2
+        stem = (f"{_frac(f1)} of a number is {_num(first)}. What is {_frac(f2)} of that "
+                f"same number?")
+        stem_hi = (f"किसी संख्या का {_frac(f1)} भाग {_num(first)} है। उसी संख्या का "
+                   f"{_frac(f2)} भाग कितना है?")
+        sol = (f"The number = {_num(first)} / ({_frac(f1)}) = {_num(total)}. "
+               f"{_frac(f2)} of {_num(total)} = {_num(ans)}.")
+        sol_hi = (f"संख्या = {_num(first)} / ({_frac(f1)}) = {_num(total)}। "
+                  f"{_num(total)} का {_frac(f2)} भाग = {_num(ans)}।")
+        # The answer is always a whole number here (total is drawn as a multiple of d1*d2), so a
+        # distractor that comes out fractional is eliminated on sight and the question loses an
+        # option without losing a line. Only whole-valued mistakes are offered.
+        def _whole(x):
+            return _num(x) if Fraction(x).denominator == 1 else None
+        cands = [("applied the second fraction to the given part, not to the number",
+                  _whole(first * f2)),
+                 ("gave the whole number instead of the fraction of it", _whole(total)),
+                 ("multiplied the two fractions and applied that to the given part",
+                  _whole(first * f1 * f2)),
+                 ("divided instead of multiplying at the last step", _whole(total / f2)),
+                 ("gave the given part back", _whole(first)),
+                 ("applied the FIRST fraction again instead of the second", _whole(total * f1)),
+                 ("added the two fractions and applied that", _whole(total * (f1 + f2)))]
+        return {"stem": stem, "stem_hi": stem_hi, "correct": _num(ans),
+                "mistakes": _pick3(cands, _num(ans)),
+                "solution": sol, "solution_hi": sol_hi, "concept": "Fraction of a Quantity"}
+
+    if diff == 3:
+        # PURELY recurring, one or two repeating digits: the value is (repeat)/(as many 9s), which
+        # is a rule a candidate either knows or does not. A mixed recurring decimal needs the
+        # (whole - non-recurring)/(9s then 0s) form and is above Inter Level.
+        digits = rng.choice([1, 2])
+        rep = rng.randint(1, 8) if digits == 1 else rng.randint(10, 98)
+        nines = int("9" * digits)
+        ans = Fraction(rep, nines)
+        shown = "0." + (str(rep).zfill(digits) * 3) + "..."
+        stem = f"Express the recurring decimal {shown} as a fraction in its lowest terms."
+        stem_hi = f"आवर्ती दशमलव {shown} को न्यूनतम रूप की भिन्न में व्यक्त कीजिए।"
+        reduced = "" if f"{rep}/{nines}" == _frac(ans) else f" = {_frac(ans)}"
+        sol = (f"A purely recurring decimal equals the repeating block over as many 9s: "
+               f"{rep}/{nines}{reduced}.")
+        sol_hi = (f"शुद्ध आवर्ती दशमलव = आवर्ती अंक / उतने ही 9 : "
+                  f"{rep}/{nines}{reduced}।")
+        cands = [("put the repeating block over 10s instead of 9s",
+                  _frac(Fraction(rep, 10 ** digits))),
+                 ("used one 9 too many", _frac(Fraction(rep, int("9" * (digits + 1))))),
+                 ("used one 9 too few",
+                  _frac(Fraction(rep, int("9" * (digits - 1)))) if digits > 1 else None),
+                 ("inverted the fraction", _frac(Fraction(nines, rep))),
+                 ("put the block over 99 regardless of its length", _frac(Fraction(rep, 99)))]
+        return {"stem": stem, "stem_hi": stem_hi, "correct": _frac(ans),
+                "mistakes": _pick3(cands, _frac(ans)),
+                "solution": sol, "solution_hi": sol_hi, "concept": "Recurring Decimal"}
+
+    b1, b2, b3 = rng.choice([2, 3, 4, 6]), rng.choice([3, 5, 7, 8]), rng.choice([2, 4, 5])
+    a1, a2, a3 = rng.randint(1, b1 - 1), rng.randint(1, b2 - 1), rng.randint(1, b3 - 1)
+    f1, f2, f3 = Fraction(a1, b1), Fraction(a2, b2), Fraction(a3, b3)
+    ans = (f1 + f2) * f3
+    stem = f"Evaluate:  ({_frac(f1)} + {_frac(f2)}) x {_frac(f3)}"
+    stem_hi = f"मान ज्ञात कीजिए:  ({_frac(f1)} + {_frac(f2)}) x {_frac(f3)}"
+    sol = (f"{_frac(f1)} + {_frac(f2)} = {_frac(f1 + f2)}; "
+           f"{_frac(f1 + f2)} x {_frac(f3)} = {_frac(ans)}.")
+    sol_hi = (f"{_frac(f1)} + {_frac(f2)} = {_frac(f1 + f2)}; "
+              f"{_frac(f1 + f2)} x {_frac(f3)} = {_frac(ans)}।")
+    cands = [("added all three instead of multiplying the last", _frac(f1 + f2 + f3)),
+             ("multiplied before adding, ignoring the bracket", _frac(f1 + f2 * f3)),
+             ("added the numerators and the denominators separately",
+              _frac(Fraction(a1 + a2, b1 + b2) * f3)),
+             ("divided by the third fraction instead of multiplying", _frac((f1 + f2) / f3)),
+             ("left out the third fraction", _frac(f1 + f2))]
+    return {"stem": stem, "stem_hi": stem_hi, "correct": _frac(ans),
+            "mistakes": _pick3(cands, _frac(ans)),
+            "solution": sol, "solution_hi": sol_hi, "concept": "Fraction Simplification"}
+
+
 _CHAP_BUILDERS = {
     "Simplification & Approximation": [_b_simplify, _b_approx],
+    "Number System": [_b_number_system],
+    "Decimals & Fractions": [_b_decimal_fraction],
     "Number Series": [_b_series_missing, _b_series_wrong],
     "Quadratic Equations": [_b_quadratic],
     "Data Interpretation": [_b_di_table, _b_di_caselet],
