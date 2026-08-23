@@ -3,215 +3,120 @@
  "class": 3,
  "subject": "EVS",
  "source": {
-  "name": "NCERT 'Looking Around' EVS Class III (24 ch; 2024-25 syllabus; NCF-2023 successor is 'Our Wondrous World')",
-  "url": "https://ncert.nic.in/textbook/pdf/ceap1ps.pdf",
-  "verified_on": "2026-08-02"
+  "name": "NCERT 'Our Wondrous World' — The World Around Us, Class 3 (NCF-2023, 12 chapters)",
+  "url": "https://ncert.nic.in/textbook/pdf/ceev101.pdf … ceev112.pdf",
+  "listing": "https://ncert.nic.in/textbook.php?ceev1=0-12",
+  "verified_on": "2026-08-23"
  },
  "generated_by": "kids_quiz/tools/build_chapter_map.py",
- "chapters": 24,
- "mapped": 22,
+ "chapters": 12,
+ "mapped": 12,
  "map": {
-  "poonam_s_day_out": {
-   "name": "Poonam's Day Out",
-   "themes": [
-    "Animals",
-    "Plants"
-   ],
-   "score": 0.424,
-   "confidence": "high"
-  },
-  "the_plant_fairy": {
-   "name": "The Plant Fairy",
-   "themes": [
-    "Plants",
-    "Animals"
-   ],
-   "score": 0.375,
-   "confidence": "high"
-  },
-  "water_o_water": {
-   "name": "Water O' Water!",
-   "themes": [
-    "Water"
-   ],
-   "score": 0.675,
-   "confidence": "high"
-  },
-  "our_first_school": {
-   "name": "Our First School",
+  "our_families_and_communities": {
+   "name": "Our Families and Communities",
    "themes": [
     "Family"
    ],
-   "score": 0.416,
+   "score": 0.526,
    "confidence": "high"
   },
-  "chhotu_s_house": {
-   "name": "Chhotu's House",
+  "going_to_the_mela": {
+   "name": "Going to the Mela",
    "themes": [
-    "Houses",
-    "Animals"
+    "Transport"
    ],
-   "score": 0.221,
+   "score": 0.357,
    "confidence": "low"
   },
-  "foods_we_eat": {
-   "name": "Foods We Eat",
+  "celebrating_together": {
+   "name": "Celebrating Together",
    "themes": [
-    "Food",
+    "Weather",
+    "Transport",
+    "Plants",
     "Animals"
    ],
-   "score": 0.56,
-   "confidence": "high"
-  },
-  "saying_without_speaking": {
-   "name": "Saying Without Speaking",
-   "themes": [
-    "Human Body"
-   ],
-   "score": 0.217,
+   "score": 0.203,
    "confidence": "low"
   },
-  "flying_high": {
-   "name": "Flying High",
+  "life_around_us": {
+   "name": "Life Around Us",
    "themes": [
-    "Flying High"
+    "Plants"
    ],
-   "score": 0.717,
+   "score": 0.832,
    "confidence": "high"
   },
-  "it_s_raining": {
-   "name": "It's Raining",
+  "plants_and_animals": {
+   "name": "Plants and Animals",
    "themes": [
-    "Weather"
+    "Plants",
+    "Animals"
    ],
-   "score": 0.694,
+   "score": 0.745,
    "confidence": "high"
   },
-  "what_is_cooking": {
-   "name": "What is Cooking",
+  "living_in_harmony": {
+   "name": "Living in Harmony",
    "themes": [
     "Plants",
     "Food",
     "Animals"
    ],
-   "score": 0.183,
+   "score": 0.77,
+   "confidence": "high"
+  },
+  "gifts_of_nature": {
+   "name": "Gifts of Nature",
+   "themes": [
+    "Water"
+   ],
+   "score": 0.474,
+   "confidence": "high"
+  },
+  "food_we_eat": {
+   "name": "Food We Eat",
+   "themes": [
+    "Water",
+    "Food"
+   ],
+   "score": 0.44,
+   "confidence": "high"
+  },
+  "staying_healthy_and_happy": {
+   "name": "Staying Healthy and Happy",
+   "themes": [
+    "Human Body"
+   ],
+   "score": 0.466,
+   "confidence": "high"
+  },
+  "things_around_us": {
+   "name": "Things Around Us",
+   "themes": [
+    "Forms of Matter",
+    "Houses"
+   ],
+   "score": 0.387,
    "confidence": "low"
   },
-  "from_here_to_there": {
-   "name": "From Here to There",
-   "themes": [
-    "Transport"
-   ],
-   "score": 0.744,
-   "confidence": "high"
-  },
-  "work_we_do": {
-   "name": "Work We Do",
-   "themes": [
-    "Work We Do"
-   ],
-   "score": 0.551,
-   "confidence": "high"
-  },
-  "sharing_our_feelings": {
-   "name": "Sharing Our Feelings",
-   "themes": [],
-   "score": 0.0,
-   "confidence": "none"
-  },
-  "the_story_of_food": {
-   "name": "The Story of Food",
-   "themes": [
-    "Animals",
-    "Plants"
-   ],
-   "score": 0.426,
-   "confidence": "high"
-  },
-  "making_pots": {
-   "name": "Making Pots",
-   "themes": [
-    "Work We Do"
-   ],
-   "score": 0.316,
-   "confidence": "high"
-  },
-  "games_we_play": {
-   "name": "Games We Play",
-   "themes": [],
-   "score": 0.0,
-   "confidence": "none"
-  },
-  "here_comes_a_letter": {
-   "name": "Here comes a Letter",
-   "themes": [
-    "Animals"
-   ],
-   "score": 0.357,
-   "confidence": "high"
-  },
-  "a_house_like_this": {
-   "name": "A House Like This",
+  "making_things": {
+   "name": "Making Things",
    "themes": [
     "Houses"
    ],
    "score": 0.48,
    "confidence": "high"
   },
-  "our_friends_animals": {
-   "name": "Our Friends – Animals",
-   "themes": [
-    "Food",
-    "Animals"
-   ],
-   "score": 0.567,
-   "confidence": "high"
-  },
-  "drop_by_drop": {
-   "name": "Drop by Drop",
+  "taking_charge_of_waste": {
+   "name": "Taking Charge of Waste",
    "themes": [
     "Water",
-    "Transport",
-    "Plants",
-    "Forms of Matter",
-    "Animals"
+    "Houses",
+    "Food"
    ],
-   "score": 0.217,
+   "score": 0.194,
    "confidence": "low"
-  },
-  "families_can_be_different": {
-   "name": "Families can be Different",
-   "themes": [
-    "Family"
-   ],
-   "score": 0.409,
-   "confidence": "high"
-  },
-  "left_right": {
-   "name": "Left-Right",
-   "themes": [
-    "Directions"
-   ],
-   "score": 0.257,
-   "confidence": "high"
-  },
-  "a_beautiful_cloth": {
-   "name": "A Beautiful Cloth",
-   "themes": [
-    "Houses"
-   ],
-   "score": 0.316,
-   "confidence": "high"
-  },
-  "web_of_life": {
-   "name": "Web of Life",
-   "themes": [
-    "Food",
-    "Animals",
-    "Human Body"
-   ],
-   "score": 0.353,
-   "confidence": "high"
   }
  }
 }

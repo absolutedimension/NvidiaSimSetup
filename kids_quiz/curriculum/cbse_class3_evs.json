@@ -1,244 +1,193 @@
 {
-  "board": "CBSE",
-  "class": 3,
-  "subject": "EVS",
-  "source": {
-    "name": "NCERT 'Looking Around' EVS Class III (24 ch; 2024-25 syllabus; NCF-2023 successor is 'Our Wondrous World')",
-    "url": "https://ncert.nic.in/textbook/pdf/ceap1ps.pdf",
-    "verified_on": "2026-08-02"
+ "board": "CBSE",
+ "class": 3,
+ "subject": "EVS",
+ "source": {
+  "name": "NCERT 'Our Wondrous World' — The World Around Us, Class 3 (NCF-2023, 12 chapters)",
+  "url": "https://ncert.nic.in/textbook/pdf/ceev101.pdf … ceev112.pdf",
+  "listing": "https://ncert.nic.in/textbook.php?ceev1=0-12",
+  "verified_on": "2026-08-23"
+ },
+ "confidence": "high",
+ "verified": true,
+ "status": "complete",
+ "notes": "REPLACES 'Looking Around' (24 ch). NCERT has WITHDRAWN that book — every ceap1xx.pdf now 404s — and Class 3 EVS is 'Our Wondrous World' under NCF-2023. Chapter titles and concepts_en are taken from the official chapter PDFs, downloaded and text-extracted on 2026-08-23 (122,692 characters across all 12). concepts_en are the DISTINCTIVE terms of each chapter by tf-idf against the other 11, with character names and PDF artifacts filtered out — i.e. derived from the book's own words, not guessed. No textbook prose is stored or served: only the concept vocabulary that drives chapter→theme mapping.",
+ "chapters": [
+  {
+   "id": "our_families_and_communities",
+   "name": "Our Families and Communities",
+   "subtopics": [],
+   "concepts_en": [
+    "family",
+    "member",
+    "friend",
+    "play",
+    "community",
+    "song",
+    "relationship"
+   ]
   },
-  "confidence": "high",
-  "verified": true,
-  "status": "complete",
-  "notes": "Looking Around Class III (24 ch), 2024-25 reference. Verbatim contents. NCF-2023 successor on live site = 'Our Wondrous World' — reconcile if adopting the new book.",
-  "chapters": [
-    {
-      "id": "poonam_s_day_out",
-      "name": "Poonam's Day Out",
-      "subtopics": [
-        "observing plants and leaves",
-        "small creatures and insects",
-        "nature around us",
-        "colours and shapes outdoors"
-      ]
-    },
-    {
-      "id": "the_plant_fairy",
-      "name": "The Plant Fairy",
-      "subtopics": [
-        "collecting leaves",
-        "leaf shapes, sizes and colours",
-        "leaf prints and rubbings",
-        "trees in our surroundings"
-      ]
-    },
-    {
-      "id": "water_o_water",
-      "name": "Water O' Water!",
-      "subtopics": [
-        "uses of water",
-        "sources of water",
-        "water in daily life",
-        "saving water"
-      ]
-    },
-    {
-      "id": "our_first_school",
-      "name": "Our First School",
-      "subtopics": [
-        "family as first school",
-        "roles of family members",
-        "relationships at home",
-        "learning from family"
-      ]
-    },
-    {
-      "id": "chhotu_s_house",
-      "name": "Chhotu's House",
-      "subtopics": [
-        "types of houses",
-        "rooms and spaces in a home",
-        "homes of different people",
-        "things in the house"
-      ]
-    },
-    {
-      "id": "foods_we_eat",
-      "name": "Foods We Eat",
-      "subtopics": [
-        "variety of foods",
-        "food from plants and animals",
-        "meals in different regions",
-        "raw and cooked food"
-      ]
-    },
-    {
-      "id": "saying_without_speaking",
-      "name": "Saying Without Speaking",
-      "subtopics": [
-        "communication without words",
-        "gestures and signs",
-        "facial expressions",
-        "body language"
-      ]
-    },
-    {
-      "id": "flying_high",
-      "name": "Flying High",
-      "subtopics": [
-        "birds and flight",
-        "things that fly",
-        "kites",
-        "observing the sky"
-      ]
-    },
-    {
-      "id": "it_s_raining",
-      "name": "It's Raining",
-      "subtopics": [
-        "rain and weather",
-        "clouds and seasons",
-        "water from rain"
-      ]
-    },
-    {
-      "id": "what_is_cooking",
-      "name": "What is Cooking",
-      "subtopics": [
-        "cooking methods",
-        "kitchen and utensils",
-        "fuels used for cooking",
-        "raw versus cooked food"
-      ]
-    },
-    {
-      "id": "from_here_to_there",
-      "name": "From Here to There",
-      "subtopics": [
-        "means of transport",
-        "journeys and travel",
-        "land, water and air travel"
-      ]
-    },
-    {
-      "id": "work_we_do",
-      "name": "Work We Do",
-      "subtopics": [
-        "different occupations",
-        "kinds of work",
-        "tools people use",
-        "work at home and outside"
-      ]
-    },
-    {
-      "id": "sharing_our_feelings",
-      "name": "Sharing Our Feelings",
-      "subtopics": [
-        "emotions and feelings",
-        "empathy and caring",
-        "helping others",
-        "differently abled people"
-      ]
-    },
-    {
-      "id": "the_story_of_food",
-      "name": "The Story of Food",
-      "subtopics": [
-        "food from farm to plate",
-        "growing crops",
-        "who grows our food"
-      ]
-    },
-    {
-      "id": "making_pots",
-      "name": "Making Pots",
-      "subtopics": [
-        "pottery and clay",
-        "the potter's work",
-        "shaping and craft"
-      ]
-    },
-    {
-      "id": "games_we_play",
-      "name": "Games We Play",
-      "subtopics": [
-        "indoor and outdoor games",
-        "rules of games",
-        "traditional games"
-      ]
-    },
-    {
-      "id": "here_comes_a_letter",
-      "name": "Here comes a Letter",
-      "subtopics": [
-        "letters and post",
-        "the postman",
-        "journey of a letter"
-      ]
-    },
-    {
-      "id": "a_house_like_this",
-      "name": "A House Like This",
-      "subtopics": [
-        "different houses in different places",
-        "building materials",
-        "climate and shelter"
-      ]
-    },
-    {
-      "id": "our_friends_animals",
-      "name": "Our Friends – Animals",
-      "subtopics": [
-        "animals around us",
-        "caring for animals",
-        "animal homes and food"
-      ]
-    },
-    {
-      "id": "drop_by_drop",
-      "name": "Drop by Drop",
-      "subtopics": [
-        "saving water",
-        "wastage of water",
-        "rainwater harvesting"
-      ]
-    },
-    {
-      "id": "families_can_be_different",
-      "name": "Families can be Different",
-      "subtopics": [
-        "kinds of families",
-        "diversity in families",
-        "living together"
-      ]
-    },
-    {
-      "id": "left_right",
-      "name": "Left-Right",
-      "subtopics": [
-        "directions",
-        "position and location",
-        "simple maps",
-        "finding the way"
-      ]
-    },
-    {
-      "id": "a_beautiful_cloth",
-      "name": "A Beautiful Cloth",
-      "subtopics": [
-        "cloth and fabrics",
-        "weaving and spinning",
-        "printing and dyeing"
-      ]
-    },
-    {
-      "id": "web_of_life",
-      "name": "Web of Life",
-      "subtopics": [
-        "interdependence of living things",
-        "plants, animals and humans",
-        "balance in nature"
-      ]
-    }
-  ]
+  {
+   "id": "going_to_the_mela",
+   "name": "Going to the Mela",
+   "subtopics": [],
+   "concepts_en": [
+    "mela",
+    "mohan",
+    "stall",
+    "police",
+    "bus"
+   ]
+  },
+  {
+   "id": "celebrating_together",
+   "name": "Celebrating Together",
+   "subtopics": [],
+   "concepts_en": [
+    "festival",
+    "spring",
+    "flower",
+    "road",
+    "signboard",
+    "bus",
+    "colourful"
+   ]
+  },
+  {
+   "id": "life_around_us",
+   "name": "Life Around Us",
+   "subtopics": [],
+   "concepts_en": [
+    "plant",
+    "shrub",
+    "climber",
+    "creeper",
+    "herb",
+    "stem"
+   ]
+  },
+  {
+   "id": "plants_and_animals",
+   "name": "Plants and Animals",
+   "subtopics": [],
+   "concepts_en": [
+    "plant",
+    "animal",
+    "soil",
+    "sound",
+    "bird",
+    "insect",
+    "live",
+    "caterpillar"
+   ]
+  },
+  {
+   "id": "living_in_harmony",
+   "name": "Living in Harmony",
+   "subtopics": [],
+   "concepts_en": [
+    "animal",
+    "plant",
+    "bird",
+    "depend",
+    "wagtail",
+    "food",
+    "insect"
+   ]
+  },
+  {
+   "id": "gifts_of_nature",
+   "name": "Gifts of Nature",
+   "subtopics": [],
+   "concepts_en": [
+    "water",
+    "rain",
+    "vessel",
+    "rainwater",
+    "tank",
+    "tap",
+    "stored",
+    "store"
+   ]
+  },
+  {
+   "id": "food_we_eat",
+   "name": "Food We Eat",
+   "subtopics": [],
+   "concepts_en": [
+    "eat",
+    "food",
+    "champion",
+    "juice",
+    "drink",
+    "item",
+    "ingredient",
+    "water"
+   ]
+  },
+  {
+   "id": "staying_healthy_and_happy",
+   "name": "Staying Healthy and Happy",
+   "subtopics": [],
+   "concepts_en": [
+    "hour",
+    "healthy",
+    "happy",
+    "teeth",
+    "body",
+    "safe",
+    "clean",
+    "brush"
+   ]
+  },
+  {
+   "id": "things_around_us",
+   "name": "Things Around Us",
+   "subtopics": [],
+   "concepts_en": [
+    "material",
+    "object",
+    "metal",
+    "made",
+    "glass",
+    "wood",
+    "spoon",
+    "solid"
+   ]
+  },
+  {
+   "id": "making_things",
+   "name": "Making Things",
+   "subtopics": [],
+   "concepts_en": [
+    "pot",
+    "brick",
+    "pattern",
+    "potter",
+    "clay",
+    "made",
+    "house",
+    "kiln"
+   ]
+  },
+  {
+   "id": "taking_charge_of_waste",
+   "name": "Taking Charge of Waste",
+   "subtopics": [],
+   "concepts_en": [
+    "waste",
+    "plastic",
+    "clean",
+    "dustbin",
+    "manage",
+    "managing",
+    "cloth"
+   ]
+  }
+ ],
+ "previous_book": {
+  "name": "NCERT 'Looking Around' EVS Class III (24 ch; 2024-25 syllabus; NCF-2023 successor is 'Our Wondrous World')",
+  "chapters": 24,
+  "withdrawn": "ceap1xx.pdf returns 404 at ncert.nic.in as of 2026-08-23"
+ }
 }
