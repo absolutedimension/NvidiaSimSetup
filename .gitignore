@@ -108,3 +108,8 @@ question_bank_engine/drop/bssc_official/*.pdf
 # not source. They were swept into git by an auto-checkpoint; regenerate with
 # kids_quiz/school/daily_worksheet.py instead of storing them.
 kids_quiz/school/out/
+
+# Accidental scp dump (a missing ":" after the host wrote a remote path into the repo).
+# It duplicated content_engine/, quiz_video/ and youtube_series/ — including a live YouTube
+# OAuth token, which is what GitHub push protection caught. Never let it back in.
+dk-gpu-ubuntu@*
