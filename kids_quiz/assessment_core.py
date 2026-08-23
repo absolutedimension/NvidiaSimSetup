@@ -34,6 +34,21 @@ def _needs_borrow(a, b):
         borrow = 0
     return False
 
+# Knowledge subjects come from the KB+template engine; maths comes from the computed engine.
+# They need different difficulty treatment, so name the split once.
+_KNOWLEDGE_SUBJECTS = {"evs", "english", "gk", "hindi"}
+
+
+def _grade_adj(item, rad):
+    """Class 3 is the anchor: the same question shape is easier at Class 1, harder at Class 5.
+    Only applied to knowledge items — maths difficulty already scales through its number sizes."""
+    cls = item.get("class") or item.get("cls")
+    if isinstance(cls, int) and 1 <= cls <= 5:
+        rad["grade"] = cls
+        return (cls - 3) * 0.35
+    return 0.0
+
+
 # ---------------- 1. DIFFICULTY MODEL (radicals → b) ----------------
 def difficulty(item):
     """Return (b, radicals). b is a difficulty logit-ish score; radicals is the {feature: value} that drove it."""
@@ -59,6 +74,48 @@ def difficulty(item):
         rad["coins"] = len(p.get("coins", [])); b += 0.2 + rad["coins"] * 0.15
     elif t in ("true_false",):
         b += 0.3  # error-spot / recognition
+        # A knowledge true/false still has to be READ and judged, and a Class-5 statement is a
+        # harder read than a Class-1 one. (Maths items are NOT grade-scaled here — their digit
+        # count already encodes grade, so scaling again would double-count.)
+        if str(item.get("subject", "")).lower() in _KNOWLEDGE_SUBJECTS:
+            words = len(str(p.get("statement", "")).split())
+            rad["words"] = words
+            b += min(0.30, max(0, words - 6) * 0.03)     # longer statement = more to hold
+            b += _grade_adj(item, rad)
+    # ---- KNOWLEDGE items (KB+template engine: EVS / English / GK / Hindi) ----------------
+    # Without these branches every knowledge question scored 0.0 (only true_false scored at all),
+    # so all 42 pooled banks held just TWO difficulty values and the adaptive controller had
+    # nothing to sort on. Difficulty here comes from three real signals:
+    #   1. TASK TYPE   — recognising < recalling < producing a multi-part answer
+    #   2. STRUCTURE   — more options / pairs / bins = more to hold in mind, less guessable
+    #   3. GRADE       — the same shape of question is harder when the facts are Class-5 facts
+    elif t in ("odd_one_out", "match_following", "cloze", "sort_groups", "match", "sort"):
+        opts = p.get("options") or []
+        pairs = p.get("pairs") or []
+        bank = p.get("bank") or []
+        gitems = p.get("items") or []
+        bins = p.get("bins") or []
+        if t == "odd_one_out":
+            # find-the-misfit: scan every option and hold one category in mind
+            b += 0.35
+            rad["options"] = len(opts)
+            b += max(0, len(opts) - 3) * 0.12          # 4 options is harder than 3
+        elif t == "cloze":
+            # recall, but a word bank turns it into a choice — chance = 1/len(bank)
+            b += 0.55
+            rad["bank"] = len(bank)
+            b += -0.10 if len(bank) >= 4 else (0.10 if len(bank) <= 2 else 0.0)
+            if not bank:
+                rad["free_recall"] = True; b += 0.45   # no bank = genuine production
+        elif t in ("match_following", "match"):
+            # k simultaneous relations — load grows with k, and the last pair is free
+            k = len(pairs); rad["pairs"] = k
+            b += 0.70 + max(0, k - 4) * 0.25
+        else:                                          # sort_groups
+            ni, nb = len(gitems), len(bins)
+            rad["sort_items"], rad["bins"] = ni, nb
+            b += 0.80 + max(0, ni - 4) * 0.15 + max(0, nb - 2) * 0.30
+        b += _grade_adj(item, rad)
     # representation (CPA) + cognitive depth (DOK) dials
     rad["representation"] = rep; b += {"pictorial": -0.3, "abstract": 0.0, "object": 0.0, "story": 0.4, "words": 0.3}.get(rep, 0)
     rad["dok"] = dok; b += (dok - 1) * 0.3
