@@ -234,3 +234,23 @@ EXTRA_HI = {
     "Cheraw": "चेरॉ", "Dollu Kunitha": "डोल्लू कुनिथा", "Karma": "करमा",
     "Padayani": "पडयानी", "Nautanki": "नौटंकी",
 }
+
+# Added 2026-08-22 with the 14 new rivers. Hand-written, like everything else in this file.
+EXTRA_HI.update({
+    "Chambal": "चंबल", "Betwa": "बेतवा", "Son": "सोन", "Damodar": "दामोदर",
+    "Ghaghara": "घाघरा", "Periyar": "पेरियार", "Tungabhadra": "तुंगभद्रा",
+    "Janapav Hills (Mhow)": "जानापाव पहाड़ी (महू)",
+    "Vindhya Range (Raisen)": "विंध्य श्रेणी (रायसेन)",
+    "Amarkantak Plateau": "अमरकंटक पठार",
+    "Chandwa (Latehar)": "चंदवा (लातेहार)",
+    "Nhubine Himal Glacier (Nepal)": "न्हुबिने हिमाल हिमनद (नेपाल)",
+    "Sun Kosi confluence (Nepal)": "सुन कोसी संगम (नेपाल)",
+    "Mapchachungo Glacier (Tibet)": "मापचाचुंगो हिमनद (तिब्बत)",
+    "Beas Kund (Rohtang)": "ब्यास कुंड (रोहतांग)",
+    "Bara Bhangal (Kangra)": "बड़ा भंगाल (कांगड़ा)",
+    "Rakshastal (Tibet)": "राक्षसताल (तिब्बत)",
+    "Verinag (Anantnag)": "वेरीनाग (अनंतनाग)",
+    "Bara Lacha Pass (Lahaul)": "बारालाचा दर्रा (लाहौल)",
+    "Sivagiri Hills (Western Ghats)": "शिवगिरि पहाड़ियाँ (पश्चिमी घाट)",
+    "Koodli (Karnataka)": "कूडली (कर्नाटक)",
+})

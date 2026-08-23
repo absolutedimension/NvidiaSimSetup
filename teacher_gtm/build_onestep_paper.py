@@ -771,9 +771,22 @@ def generate_whole_section(secs, want, mix, gen_taken, bilingual, salt=0):
         # whatever the spread had already placed there.
         _fig_want = max(1, round(want * 0.03))
         _figs = generate_figure_series(_fig_want, gen_taken, bilingual)
+        # दृश्य स्मृति 4% and अवलोकन 3% — the last two topics with no content. Same reasoning as
+        # the series: taken off the top so the text builders fill around them, rather than
+        # appended afterwards next to whatever the spread had already placed.
+        _figs += generate_visual_observation(max(1, round(want * 0.04)),
+                                             max(1, round(want * 0.03)),
+                                             gen_taken, bilingual)
         for _q in _figs:
             gen_taken.add(gen_sig(_q))
-        out += generate_reasoning_section(want - len(_figs), mix, gen_taken, also=_figs)
+        # The figures are all difficulty 3 and are taken OFF THE TOP, so the mix handed to the
+        # text builders has to lose them too. Passing the full mix into a smaller section asked
+        # for 8 + 7 + 35 = 50 questions in 44 slots, hard won the squeeze, and Part III's easy
+        # band went from 4 to 0 — a section with no entry point, which is the exact defect the
+        # difficulty gate was written to catch, reintroduced by a change three topics away.
+        _mix = dict(mix)
+        _mix[3] = max(0, _mix.get(3, 0) - len(_figs))
+        out += generate_reasoning_section(want - len(_figs), _mix, gen_taken, also=_figs)
         out += _figs
     # A section short of `want` prints a 147-question paper. Top up from whatever band still has
     # stock rather than shipping a paper that fails its own structure check.
@@ -1427,6 +1440,69 @@ def generate_gs_section(want, mix, gen_taken, bilingual, rng):
                           concept_of=lambda q: (q.get("src") or [q.get("concept") or "?"])[0]):
         print(line)
     return out[:want]
+
+
+def generate_visual_observation(n_vm, n_ob, exclude_sigs, bilingual):
+    """दृश्य स्मृति and अवलोकन — the last two topics in the Reasoning blueprint.
+
+    Both are non-verbal and both are drawn, so they share the figure plumbing with the series
+    builder; they deliberately do NOT share its glyph. Three non-verbal topics printing the same
+    arrow would earn the owner's "only one topic" complaint all over again, at the level of the
+    picture rather than the syllabus.
+    """
+    sys.path.insert(0, str(REPO / "question_bank_engine"))
+    try:
+        from qbank import nonverbalgen as NV
+    except Exception as e:
+        print(f"  visual-memory / observation generation unavailable ({e})")
+        return []
+    rng = random.Random(20260824)
+    out, seen = [], set(exclude_sigs)
+    want = [("Identical Figure", n_vm), ("Counting Figures", n_ob)]
+    for concept, need in want:
+        made = 0
+        for _ in range(400):
+            if made >= need:
+                break
+            d = rng.choice([2, 3, 4])
+            b = (NV._b_identical_figure(rng, d) if concept == "Identical Figure"
+                 else NV._b_count_figures(rng, d))
+            if not b:
+                continue
+            figs, opts = {}, []
+            if concept == "Identical Figure":
+                figs["t"] = (f'<span class="figtarget">{NV.render_tile(b["target"], 50)}</span>')
+                seq = "[[FIG:t]]"
+                specs = list(b["options"])
+            else:
+                figs["t"] = NV.render_grid(*b["grid"], size=92)
+                seq = "[[FIG:t]]"
+                specs = list(b["options"])
+            # Rotate the answer out of slot A — same reason _gs_row documents.
+            seed = b["stem"] + str(specs[0])
+            rot = int(hashlib.md5(seed.encode("utf-8")).hexdigest(), 16) % 4
+            specs = specs[-rot:] + specs[:-rot] if rot else specs
+            for lb, sp in zip("ABCD", specs):
+                if concept == "Identical Figure":
+                    figs[f"o{lb}"] = NV.render_tile(sp, 44)
+                    opts.append({"label": lb, "text": f"[[FIG:o{lb}]]"})
+                else:
+                    opts.append({"label": lb, "text": str(sp)})   # a COUNT is a number, not a picture
+            row = {"stem": b["stem"] + "\n" + seq, "stem_hi": b["stem_hi"],
+                   "options": opts, "options_hi": [dict(o) for o in opts],
+                   "figures": figs, "correct_answer": "ABCD"[rot],
+                   "solution": b["solution"], "solution_hi": b["solution_hi"],
+                   "concept": b["concept"], "src": [b["concept"]],
+                   "_generated": True, "source_pdf": "nonverbalgen", "number": None,
+                   "tag": {"section": "Reasoning", "difficulty": 3}}
+            g = gen_sig(row)
+            if g in seen:
+                continue
+            seen.add(g)
+            out.append(row)
+            made += 1
+        print(f"  generated {made} {concept} question(s) at difficulty 3")
+    return out
 
 
 def generate_figure_series(n, exclude_sigs, bilingual):
@@ -2346,6 +2422,12 @@ def main():
             # reading only Hindi has a self-contained question — but a picture is already
             # self-contained in both languages, and printing four figures twice cost half a page
             # and made the paper look like it had rendered wrong.
+            # ANY question carrying a figure prints its options once, after both stems.
+            # Refining this to "only when the OPTIONS are pictures" was tried and was worse: a
+            # counting question offers four numbers, so both language blocks printed options —
+            # and because the grid hangs off the English stem, the Hindi reader met "(A) 225
+            # (B) 25 ..." with no figure above it at all. The figure has to come first, so the
+            # options wait for it.
             _pic_opts = bool(_figs)
             if hi_stem:
                 block += f'<div class="hi"><span class="n">{i}.</span> {lines(esc(hi_stem))}</div>'
@@ -2531,6 +2613,12 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
 .figink {{ fill:none; stroke:#111; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }}
 .figink polygon, .figink circle {{ fill:#111; }}
 .figrow {{ display:inline-block; }}
+.figfill {{ fill:#111; stroke:none; }}
+.figgrid {{ stroke-width:3; }}
+/* The target figure of an identical-figure question sits apart from the answers, the way the
+   commission prints it — a rule down the middle, not a caption saying which is which. */
+.figtarget {{ display:inline-block; padding-right:14px; margin-right:14px;
+              border-right:1px solid #cdc7b6; }}
 .foot {{ border-top:1px solid #ddd8c8; margin-top:12px; padding-top:4px; font-size:7.3pt; color:#9296a2; text-align:center; }}
 </style></head><body>
 {COVER if a.inter_level else ""}

@@ -43,127 +43,139 @@ buckets**. One well-built bank serves many exams.
 
 ---
 
-## §1. Master exam list — every live exam, at a glance
+## §1. VACANCY LEDGER — official exam names and current counts
+
+**Read the Status column.** Bihar publishes numbers at four very different levels of
+firmness, and treating them as equivalent is how institutes get embarrassed:
+
+- **NOTIFIED** — an advertisement number exists and the count is official. Trustworthy.
+- **REVISED** — notified, then the count moved. Bihar does this constantly (Inter Level went 12,199 → 23,175 → 24,492 → 26,426). Quote the latest, name the date.
+- **CALENDAR** — appears only in a 2026 exam-calendar PDF. Tentative. No advertisement yet.
+- **SANCTIONED** — the cabinet approved posts; no advertisement, sometimes for years.
 
 ### 1A. BPSC — Bihar Public Service Commission
-*bpsc.bihar.gov.in · gazetted posts · 2026 calendar released 14 Aug 2026*
 
-| Exam | Advt. | Vacancies | Level |
+| Official exam / post name | Advt. | Vacancies | Status |
 |---|---|---|---|
-| **Integrated 72nd CCE** | 72 CCE | **1,186** (revised down from 1,230 — 44 Sugarcane Officer posts withdrawn) | Graduate |
-| Integrated 71st CCE | 71 CCE | 1,298 | Graduate |
-| Integrated 70th CCE | 70 CCE | 2,035 (final result Jun 2026) | Graduate |
-| **School Teacher Recruitment TRE-4.0** | — | **46,595** per the calendar; 32,388 per other reporting — ⚠️ conflicting, verify | Varies |
-| Special Teacher | 42/2025 | 7,279 | Varies |
-| Assistant Education Development Officer | 87/2025 | 935 | Graduate |
-| Combined Assistant Engineer (Civil/Mech/Elec) | 29–31/2025 | 1,040 | B.E./B.Tech |
-| Assistant Engineer, PHED | 32–33/2024 | 118 | B.E./B.Tech |
-| **33rd Bihar Judicial Services** | — | 173 | LL.B. |
-| **Assistant Prosecution Officer (APO)** | 13/2026 | 300 | LL.B. |
-| Auditor, Panchayati Raj | 09/2026 | 102 | Graduate |
-| Assistant Revenue & Accounts Officer | — | 285 (postponed by dept.) | Graduate |
-| Assistant Urban Welfare & Registration Officer | — | 285 (postponed by dept.) | Graduate |
-| Asst. Public Sanitary & Waste Mgmt Officer | 108/2025 | 60 | Graduate |
-| District Statistical Officer / Asst. Director | 38/2025 | 47 | PG Stats/Maths |
-| Assistant Town Planner | 89/2025 | 36 | Planning |
-| Lower Division Clerk | 43/2025 | 26 | 10+2 |
-| Project Manager, Industry Dept. | 109/2025 | 9 | — |
-| Research Officer, Revenue Dept. | 08/2026 | 3 | PG |
-| Teacher, Simultala Residential School | 29/2024 | 62 | Varies |
-| Assistant Professor (colleges) | rolling | varies | PG + NET/PhD |
-| Head Teacher / Headmaster | rolling | 37,943 in the last big cycle | D.El.Ed / B.Ed |
+| **School Teacher Recruitment Examination (TRE-4.0)** | **14/2026** (18 Aug 2026) | **32,388** | NOTIFIED — apply 1–30 Sep 2026 |
+| ├ Primary Teacher, Classes 1–5 | | 3,847 | |
+| ├ Middle School Teacher, Classes 6–8 | | 8,563 | |
+| ├ Secondary Teacher, Classes 9–10 | | 3,877 | |
+| └ Higher Secondary Teacher, Classes 11–12 | | **16,101** | |
+| Special Teacher (विशेष शिक्षक) | 42/2025 | 7,279 | NOTIFIED |
+| **Integrated 71st Combined Competitive Examination** | 71 CCE | 1,298 | Mains done Apr 2026, result pending |
+| **Integrated 72nd Combined (Prelim) Competitive Examination 2026** | notified 5 May 2026 | **1,186** (from 1,230 — 44 Cane Officer posts withdrawn) | REVISED — prelims postponed 26 Jul → ~25 Oct 2026 |
+| Combined Assistant Engineer (Civil/Mech/Elec) | 29–31/2025 | 1,040 | NOTIFIED |
+| Assistant Education Development Officer | 87/2025 | 935 | NOTIFIED |
+| Assistant Prosecution Officer (APO) | 13/2026 | 300 | NOTIFIED — prelims 15 Jul 2026 |
+| Assistant Revenue & Accounts Officer | — | 285 | Postponed by department |
+| Assistant Urban Welfare & Registration Officer | — | 285 | Postponed by department |
+| 33rd Bihar Judicial Services Competitive Examination | — | 173 | NOTIFIED — prelims 30 May 2026 |
+| Auditor, Panchayati Raj Department | 09/2026 | 102 | NOTIFIED |
+| Asst. Public Sanitary & Waste Management Officer | 108/2025 | 60 | NOTIFIED |
+| Teacher, Simultala Awasiya Vidyalaya, Jamui | 29/2024 | 62 | Mains Jun 2026 |
+| District Statistical Officer / Assistant Director | 38/2025 | 47 | Interview stage |
+| Assistant Town Planner | 89/2025 | 36 | NOTIFIED |
+| Lower Division Clerk | 43/2025 | 26 | Typing test done |
+| Stenographer | — | 15 | NOTIFIED |
+| Project Manager, Industry Department | 109/2025 | 9 | NOTIFIED |
+| Research Officer, Revenue Department | 08/2026 | 3 | NOTIFIED |
+| *Integrated 70th CCE (closed)* | 70 CCE | *2,035* | Final result 20 Jun 2026 |
+| **BPSC live total** | | **≈ 45,800** | |
+
+⚠️ **Two BPSC contradictions, unresolved.** (1) The 14 Aug calendar lists TRE-4.0 at
+**46,595**; the 18 Aug advertisement says **32,388**. The advertisement wins — but the
+gap is ~14,000 posts, so expect a supplementary notification. (2) The calendar puts the
+TRE exam at **22–27 Sep 2026** while the advertisement keeps applications open to
+**30 Sep**. Those cannot both hold; the exam date will move.
 
 ### 1B. BSSC — Bihar Staff Selection Commission
-*bssc.bihar.gov.in · Class-III & IV non-gazetted · 2026 calendar released 22 Feb 2026 · **~35,946 total vacancies***
 
-| Exam | Vacancies | Level | Prelims |
+| Official exam / post name | Advt. | Vacancies | Status |
 |---|---|---|---|
-| **2nd Inter Level Combined Competitive Exam** | **26,426** (raised from 24,492) | 10+2 | Jun–Jul 2026 |
-| **CGL-4 (Graduate Level)** | 1,183–1,883 ⚠️ conflicting | Graduate | Jul–Aug 2026 |
-| **Panchayat Sachiv** | 3,532 | 10+2 | 2026 |
-| Block Statistical Officer (BSO) | — | Graduate | Jul 2026 |
-| Office Attendant / कार्यालय परिचर | — | Class IV | 26 May 2026 |
-| Stenographer | — | 10+2 | Aug–Sep 2026 |
-| Assistant Teacher, Information Assistant, Accounts Clerk, and limited departmental exams | — | varies | — |
-
-**Inter Level recruits into:** Lower Division Clerk, Clerk-cum-Typist, Junior
-Regional Investigator, Animal Husbandry Helper, Bench Clerk.
-**CGL recruits into:** Assistant Section Officer, Planning Assistant, Junior
-Statistical Assistant, Data Entry Operator, Auditor.
+| **द्वितीय इंटर स्तरीय संयुक्त प्रतियोगिता परीक्षा** — 2nd Inter Level Combined Competitive Examination | 02/23 (A) | **26,426** | REVISED (12,199 → 23,175 → 24,492 → 26,426). Apply closed 16 Feb 2026 |
+| Office Attendant (कार्यालय परिचर) | — | **5,131** (increased) | REVISED — exam 26 May 2026 |
+| **चतुर्थ स्नातक स्तरीय संयुक्त प्रतियोगिता परीक्षा** — 4th Graduate Level (CGL-4) | **05/2025** | **1,883** | REVISED (up, incl. 60 Industrial Extension Officer) |
+| ├ Assistant Section Officer | | 1,064 (368 women) | |
+| ├ Auditor, Cooperative Societies | | 198 | |
+| ├ Auditor | | 125 | |
+| ├ Planning Assistant | | 88 | |
+| ├ Industrial Extension Officer | | 60 | |
+| ├ Junior Statistical Assistant | | 5 | |
+| └ Data Entry Operator | | 1 | |
+| Statistical Officer (SSO) + Block Statistical Officer (BSO) | 01/2025 | 682 | NOTIFIED — prelims Jul 2026 |
+| Stenographer | 07/25 | 531 | NOTIFIED — exam Aug–Sep 2026 |
+| *Panchayat Sachiv (3,532, incl. 1,022 women)* | | *subset of Inter Level* | **Do not add separately** |
+| **BSSC notified total** | | **≈ 34,650** | calendar claims 35,946 |
 
 ### 1C. BPSSC — Bihar Police Subordinate Services Commission
-*bpssc.bihar.gov.in · police officer cadre (SI and above)*
 
-| Advt. | Post |
-|---|---|
-| 05/2025 | **Police Sub-Inspector** (~1,799 posts; 31,876 cleared prelims) |
-| 09/2026 | Police Sub-Inspector (General Closed Cadre) — Special Branch |
-| 04/2026 | Assistant Sub-Inspector (Operation) — Bihar Police Radio |
-| 07/2026 | Assistant Sub-Inspector (Technical) — Bihar Police Radio |
-| 03/2026 | Enforcement Sub-Inspector — Transport Dept. |
-| 01/2024 | Steno Assistant Sub-Inspector |
-| historic | Sergeant · Assistant Superintendent Jail · Excise Sub-Inspector |
+| Official post name | Advt. | Vacancies | Status |
+|---|---|---|---|
+| **पुलिस अवर निरीक्षक — Police Sub-Inspector** | **05/2025** | **1,799** (614 women) | Exam 18 & 21 Jan 2026; Mains result out |
+| Assistant Sub-Inspector (Operation), Bihar Police Radio | 04/2026 | 462 | Prelims result 12 Aug 2026 |
+| Police Sub-Inspector (General Closed Cadre), Special Branch | 09/2026 | ~150 ⚠️ unverified | NOTIFIED |
+| Sub-Inspector (Prohibition), Excise & Registration Dept. | 03/2026 | 78 | NOTIFIED |
+| Enforcement Sub-Inspector, Transport Dept. | 2025 cycle | 33 | Final result out |
+| Assistant Sub-Inspector (Technical), Bihar Police Radio | 07/2026 | 22 | Admit cards out |
+| **BPSSC live total** | | **≈ 2,540** | |
 
 ### 1D. CSBC — Central Selection Board of Constable
-*csbc.bihar.gov.in · constabulary · **31,603 vacancies in the 2026 calendar***
 
-| Post | Vacancies | Written | Level |
+| Official post name | Advt. | Vacancies | Status |
 |---|---|---|---|
-| **Constable (Bihar Police + BSAP)** | **19,838** | done; final Jun 2026 | Matric |
-| Driver Constable | 4,361 | done; driving test Jul 2026 | Matric + licence |
-| Warder (jail) | 2,417 | Jun 2026 | Matric |
-| **Forest Guard** | 1,816 | Sep 2026 | 10+2, age ≤23 |
-| Prohibition Constable (madh-nishedh) | 1,685 | Jun 2026 | Matric |
-| Radio Operator Constable | 993 | Jun 2026 | 10+2 |
-| Forester | 188 | Sep 2026 | 10+2 |
-| Mobile Squad Constable | 108 | Jun 2026 | Matric |
-| Special Branch Constable | 83 | Jun 2026 | Matric |
-| Jail Driver | 81 | Sep 2026 | Matric |
-| **Home Guard** | **~13,500** | **NO written exam** — physical only | Matric |
-| Fireman | cycles with constable | — | Matric |
+| **सिपाही — Constable, Bihar Police & BSAP** | **01/2025** | **19,838** | PET done; final selection Jun 2026 |
+| Driver Constable | 02/2025 | 4,361 | Driving Efficiency Test Jul 2026 |
+| Warder (jail) | — | 2,417 | CALENDAR — written Jun 2026 |
+| Forest Guard (वन रक्षी) | — | 1,816 | CALENDAR — written Sep 2026 |
+| Prohibition Constable (मद्य निषेध सिपाही) | — | 1,685 | CALENDAR |
+| **सिपाही प्रचालक — Constable (Operator), Bihar Police Radio** | **02/2026** | **993** | NOTIFIED — result out |
+| Forester (वनपाल) | — | 188 | CALENDAR |
+| Mobile Squad Constable | — | 108 | CALENDAR |
+| Constable (General Duty Closed Cadre), Special Branch | 01/2026 | 83 | Results 18 Aug 2026 |
+| Jail Driver | — | 81 | CALENDAR |
+| **गृह रक्षक — Home Guard** (Bihar Griha Raksha Vahini) | — | **13,500** | **SANCTIONED ONLY — no advertisement as of mid-2026.** No written exam. Daily allowance raised ₹774 → ₹1,121 |
+| **CSBC total** | | **31,603** notified+calendar, **+13,500** sanctioned | |
 
 ### 1E. BTSC — Bihar Technical Service Commission
-*btsc.bihar.gov.in · **42,467 vacancies across 37 recruitments** in the 2026 calendar*
 
-| Post | Vacancies |
+**42,467 vacancies across 37 recruitments** in the 2026 calendar. Largest:
+
+| Post | Vacancies | Status |
+|---|---|---|
+| Staff Nurse | 11,389 | Advt. 23/2025 |
+| ANM (Auxiliary Nurse Midwife) | 8,938 | CALENDAR — Jul–Aug 2026 |
+| Junior Engineer (Civil + Mechanical + Electrical) | 2,809 | CALENDAR — 2026 |
+| Laboratory Technician | 2,359 | ⚠️ **Paused by court order** |
+| Dairy Officer | 68 | **The only BTSC application open right now** |
+| X-Ray Technician, Dresser, Pharmacist, Ayush Physician, Homeopathic Medical Officer | remainder | various |
+
+### 1F. Other bodies
+
+| Body | Official post name | Advt. | Vacancies | Status |
+|---|---|---|---|---|
+| **Patna High Court / Civil Court** | Clerk 3,325 · Stenographer 1,562 · Peon-Orderly 1,673 · Court Reader cum Deposition Writer 1,132 | **04/2022** | **7,692** | In process. Clerk/Steno/Reader exams done; **Peon exam of 15 Mar 2026 cancelled**, re-exam awaited |
+| **SHSB** (State Health Society) | Community Health Officer (CHO) | **02/2025** | **4,500** | ₹40,000/mo contract. B.Sc Nursing |
+| **BSPHCL** | Technician Gr-III 2,156 · Jr. Accounts Clerk 740 · Correspondence Clerk / Store Assistant 115 · JEE GTO · AEE GTO | — | **4,016** | NOTIFIED — apply 1–15 Oct 2026, CBT Nov–Dec 2026 |
+| **BCECEB / DLRS** | Special Survey Amin, Kanungo, Clerk, Asst. Settlement Officer | — | 10,101 (last cycle) | **Merit-based, no exam** |
+| **BSCB** | Assistant (Multipurpose) / Customer Service Executive | — | 257 | Final result 27 Feb 2026 — closed |
+| **BELTRON / BSEDC** | Data Entry Operator | — | rolling | CBT 15 Jun 2026, typing 1 Jul 2026 |
+| **Bihar Vidhan Sabha** | ASO, Reporter, PA, Stenographer, Jr. Clerk, Library/Urdu Assistant, Translator, Driver, Security Guard, Office Attendant | 01–05/2024 | small batches | rolling |
+
+### 1G. The totals
+
+| Bucket | Posts |
 |---|---|
-| **Staff Nurse** | 11,389 |
-| **ANM (Auxiliary Nurse Midwife)** | 8,938 |
-| **Junior Engineer (Civil / Mech / Elec)** | 2,809 |
-| Laboratory Technician | 2,359 (⚠️ paused by court order) |
-| X-Ray Technician, Dresser, Pharmacist, Ayush Physician, Homeopathic Medical Officer, Dental, Veterinary, Agriculture Coordinator | remainder |
+| **Formally NOTIFIED** (advertisement number exists, count is official) | **≈ 123,900** |
+| CALENDAR-only (2026 calendars, no advertisement yet) | ≈ 50,100 |
+| SANCTIONED-only (Home Guard) | 13,500 |
+| **Total Bihar government hiring in flight, 2026** | **≈ 187,500** |
 
-### 1F. BSEB — Bihar School Examination Board
-*biharboardonline.bihar.gov.in · eligibility + entrance, not employment itself*
-
-- **Bihar STET** — Secondary Teacher Eligibility Test. Paper I (classes 9–10), Paper II (11–12). **Gateway to TRE.**
-- **Bihar TET (BSTET)** — for classes 1–8.
-- **D.El.Ed Joint Entrance** — ~30,750 seats across 306 institutes.
-- **Simultala Awasiya Vidyalaya entrance** — Bihar's Navodaya-equivalent.
-- D.P.Ed / C.P.Ed departmental exams.
-
-### 1G. BCECEB — Bihar Combined Entrance Competitive Examination Board
-*bceceboard.bihar.gov.in · entrance + one large recruitment cadre*
-
-- **DCECE** — Polytechnic (PE), Para-Medical (PM), Para-Medical-Matric (PMM).
-- **ITICAT** — ITI admission.
-- **BCECE** — Agriculture / Ag-engineering degree admission; lateral entry.
-- **DLRS Special Survey cadre** — Special Survey **Amin, Kanungo, Clerk, Assistant Settlement Officer** (~10,101 posts in the last cycle). ⚠️ **Merit-based on Matric/Inter/Graduation marks — no written exam.** Institutes get asked about this constantly; there is nothing to coach.
-
-### 1H. PSUs, corporations and secretariats
-
-| Body | Posts |
-|---|---|
-| **BSPHCL** (power) | Junior Engineer (Elec/Civil), Assistant Engineer, Technician Gr-III, Clerk, Store Assistant (~2,610 in the last big cycle) |
-| **BELTRON / BSEDC** (IT) | Data Entry Operator (60-MCQ CBT + typing test), IT Assistant |
-| **BSCB** (cooperative banks) | Assistant (Multipurpose) / Customer Service Executive (~257), Assistant Manager, Cooperative Interns |
-| **SHSB** (health mission) | **Community Health Officer — 4,500**, contract ANM, paramedical |
-| **Bihar Vidhan Sabha / Parishad** | ASO, Reporter, Personal Assistant, Stenographer, Junior Clerk, Library Assistant, Urdu Assistant, Translator, Driver, Security Guard, Office Attendant |
-| **Patna High Court / District Courts** | Civil Court Clerk, Stenographer, Court Reader, Peon |
-| **Municipal / Nagar Nigam** | Executive Officer (via BPSC), plus local sanitary/clerical hiring |
+Single largest exams by volume:
+**TRE-4.0 32,388 · Inter Level 26,426 · Constable 19,838 · Staff Nurse 11,389 ·
+Home Guard 13,500 (unnotified) · ANM 8,938 · Civil Court 7,692 · Special Teacher 7,279.**
 
 ---
-
 ## §2. BPSC in depth
 
 ### 2.1 Combined Competitive Examination (CCE) — the flagship

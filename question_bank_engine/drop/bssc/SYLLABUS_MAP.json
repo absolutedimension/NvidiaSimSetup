@@ -398,15 +398,19 @@
     "hi": "दृश्य स्मृति",
     "en": "Visual memory",
     "share": 0.04,
-    "generator": null,
-    "concepts": []
+    "generator": "nonverbalgen._b_identical_figure",
+    "concepts": [
+     "Identical Figure"
+    ]
    },
    {
     "hi": "अवलोकन",
     "en": "Observation",
     "share": 0.03,
-    "generator": null,
-    "concepts": []
+    "generator": "nonverbalgen._b_count_figures",
+    "concepts": [
+     "Counting Figures"
+    ]
    },
    {
     "hi": "गैर-शाब्दिक (आकृति श्रृंखला)",

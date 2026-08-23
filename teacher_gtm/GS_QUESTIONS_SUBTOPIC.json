@@ -1,0 +1,227 @@
+[
+ {
+  "n": 1,
+  "topic": "ARTICLE_SUBJECT",
+  "difficulty": 3,
+  "stem": "Which Article of the Constitution deals with the official language of the Union?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद संघ की राजभाषा से संबंधित है?",
+  "options": [
+   "360",
+   "343",
+   "352",
+   "356"
+  ],
+  "answer": "B",
+  "correct": "343"
+ },
+ {
+  "n": 2,
+  "topic": "ARTICLE_SUBJECT",
+  "difficulty": 3,
+  "stem": "Which Article of the Constitution deals with the abolition of titles?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद उपाधियों के अंत से संबंधित है?",
+  "options": [
+   "18",
+   "16",
+   "19",
+   "17"
+  ],
+  "answer": "A",
+  "correct": "18"
+ },
+ {
+  "n": 3,
+  "topic": "ARTICLE_SUBJECT",
+  "difficulty": 3,
+  "stem": "Which Article of the Constitution deals with the power of Parliament to amend the Constitution?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद संविधान में संशोधन करने की संसद की शक्ति से संबंधित है?",
+  "options": [
+   "368",
+   "360",
+   "352",
+   "356"
+  ],
+  "answer": "A",
+  "correct": "368"
+ },
+ {
+  "n": 4,
+  "topic": "STATE_CAPITAL",
+  "difficulty": 3,
+  "stem": "Shimla is the capital of which state?",
+  "stem_hi": "शिमला किस राज्य की राजधानी है?",
+  "options": [
+   "Himachal Pradesh",
+   "Madhya Pradesh",
+   "Uttar Pradesh",
+   "Andhra Pradesh"
+  ],
+  "answer": "A",
+  "correct": "Himachal Pradesh"
+ },
+ {
+  "n": 5,
+  "topic": "STATE_CAPITAL",
+  "difficulty": 3,
+  "stem": "Amaravati is the capital of which state?",
+  "stem_hi": "अमरावती किस राज्य की राजधानी है?",
+  "options": [
+   "Andhra Pradesh",
+   "Uttar Pradesh",
+   "Himachal Pradesh",
+   "Arunachal Pradesh"
+  ],
+  "answer": "A",
+  "correct": "Andhra Pradesh"
+ },
+ {
+  "n": 6,
+  "topic": "STATE_CAPITAL",
+  "difficulty": 3,
+  "stem": "Bhopal is the capital of which state?",
+  "stem_hi": "भोपाल किस राज्य की राजधानी है?",
+  "options": [
+   "Madhya Pradesh",
+   "Himachal Pradesh",
+   "Uttar Pradesh",
+   "Arunachal Pradesh"
+  ],
+  "answer": "A",
+  "correct": "Madhya Pradesh"
+ },
+ {
+  "n": 7,
+  "topic": "AMENDMENT_DID",
+  "difficulty": 2,
+  "stem": "Which Constitutional Amendment made education a fundamental right for children aged 6 to 14?",
+  "stem_hi": "किस संविधान संशोधन ने 6 से 14 वर्ष के बच्चों के लिए शिक्षा को मौलिक अधिकार बनाया?",
+  "options": [
+   "101st",
+   "86th",
+   "73rd",
+   "74th"
+  ],
+  "answer": "B",
+  "correct": "86th"
+ },
+ {
+  "n": 8,
+  "topic": "AMENDMENT_DID",
+  "difficulty": 2,
+  "stem": "Which Constitutional Amendment removed the right to property from the Fundamental Rights?",
+  "stem_hi": "किस संविधान संशोधन ने संपत्ति के अधिकार को मौलिक अधिकारों से हटाया?",
+  "options": [
+   "52nd",
+   "42nd",
+   "61st",
+   "44th"
+  ],
+  "answer": "D",
+  "correct": "44th"
+ },
+ {
+  "n": 9,
+  "topic": "AMENDMENT_DID",
+  "difficulty": 2,
+  "stem": "Which Constitutional Amendment lowered the voting age from 21 to 18?",
+  "stem_hi": "किस संविधान संशोधन ने मतदान की आयु 21 से घटाकर 18 वर्ष की?",
+  "options": [
+   "74th",
+   "73rd",
+   "61st",
+   "52nd"
+  ],
+  "answer": "C",
+  "correct": "61st"
+ },
+ {
+  "n": 10,
+  "topic": "DANCE_STATE",
+  "difficulty": 2,
+  "stem": "Kathak is a dance form of ______.",
+  "stem_hi": "कथक ______ का नृत्य है।",
+  "options": [
+   "Kerala",
+   "Andhra Pradesh",
+   "Uttar Pradesh",
+   "Assam"
+  ],
+  "answer": "C",
+  "correct": "Uttar Pradesh"
+ },
+ {
+  "n": 11,
+  "topic": "DANCE_STATE",
+  "difficulty": 2,
+  "stem": "Where does the dance form Nautanki come from?",
+  "stem_hi": "नौटंकी नृत्य कहाँ का है?",
+  "options": [
+   "Maharashtra",
+   "Andhra Pradesh",
+   "Punjab",
+   "Uttar Pradesh"
+  ],
+  "answer": "D",
+  "correct": "Uttar Pradesh"
+ },
+ {
+  "n": 12,
+  "topic": "DANCE_STATE",
+  "difficulty": 2,
+  "stem": "Kuchipudi is a dance form of",
+  "stem_hi": "कुचिपुड़ी नृत्य है —",
+  "options": [
+   "Andhra Pradesh",
+   "Manipur",
+   "Uttar Pradesh",
+   "Karnataka"
+  ],
+  "answer": "A",
+  "correct": "Andhra Pradesh"
+ },
+ {
+  "n": 13,
+  "topic": "RIVER_ORIGIN",
+  "difficulty": 2,
+  "stem": "Which river originates at Amarkantak?",
+  "stem_hi": "अमरकंटक से कौन-सी नदी निकलती है?",
+  "options": [
+   "Yamuna",
+   "Mahanadi",
+   "Kaveri",
+   "Narmada"
+  ],
+  "answer": "D",
+  "correct": "Narmada"
+ },
+ {
+  "n": 14,
+  "topic": "RIVER_ORIGIN",
+  "difficulty": 2,
+  "stem": "Which river originates at Sihawa (Chhattisgarh)?",
+  "stem_hi": "सिहावा (छत्तीसगढ़) से कौन-सी नदी निकलती है?",
+  "options": [
+   "Yamuna",
+   "Krishna",
+   "Mahanadi",
+   "Narmada"
+  ],
+  "answer": "C",
+  "correct": "Mahanadi"
+ },
+ {
+  "n": 15,
+  "topic": "RIVER_ORIGIN",
+  "difficulty": 2,
+  "stem": "Which river originates at Gangotri Glacier (Gaumukh)?",
+  "stem_hi": "गंगोत्री हिमनद (गोमुख) से कौन-सी नदी निकलती है?",
+  "options": [
+   "Godavari",
+   "Tapti",
+   "Ganga",
+   "Indus"
+  ],
+  "answer": "C",
+  "correct": "Ganga"
+ }
+]

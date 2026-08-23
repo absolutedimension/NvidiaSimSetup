@@ -84,7 +84,10 @@ def parse(path):
         seq_figs = [(int(r), int(mi), int(do)) for r, mi, do in
                     re.findall(r'data-rot="(\d+)"\s+data-mirror="(\d)"\s+data-dots="(\d+)"',
                                _no_ops)]
-        qs.append({"figs": seq_figs,
+        tiles = re.findall(r'data-diag="(\d)" data-corner="(\d)" data-edge="(\d)"', b)
+        grid = re.search(r'data-rows="(\d+)" data-cols="(\d+)"', b)
+        qs.append({"figs": seq_figs, "tiles": tiles,
+                   "grid": (int(grid.group(1)), int(grid.group(2))) if grid else None,
                    "n": int(num.group(1)) if num else None,
                    "hi": strip(hi.group(1)) if hi else "",
                    "en": strip(en.group(1)) if en else "",
@@ -544,6 +547,46 @@ SOLVERS = [("direction-facing", solve_direction_facing), ("direction-distance", 
            ("number-coding", solve_number_coding), ("odd-one-out", solve_odd_one_out)]
 
 
+_LAST_TILES, _LAST_GRID = {}, {}
+
+
+def solve_identical_figure(en):
+    """दृश्य स्मृति — find the answer tile that matches the target in ALL THREE respects.
+
+    Independent of the builder in the way that matters here. nonverbalgen knows which option it
+    made identical; this reads the four PRINTED tiles and finds the match itself — which also
+    checks the property the question depends on and the builder only intends: that exactly ONE
+    option matches. Two matching tiles is an unanswerable question that every other check in this
+    file would pass, since the specs differ from the target and the key letter is present.
+    """
+    tiles = _LAST_TILES.get(en) or []
+    if len(tiles) != 5 or "exactly the same" not in en:
+        return None
+    target, opts = tiles[0], tiles[1:]
+    hits = [lb for lb, o in zip("ABCD", opts) if o == target]
+    return hits[0] if len(hits) == 1 else None
+
+
+def solve_count_figures(en):
+    """अवलोकन — re-count the squares or rectangles in the printed grid.
+
+    By BRUTE FORCE over every pair of grid lines, where nonverbalgen uses the closed form. The two
+    routes share nothing but the answer, which is the point: a slip in the formula would show up
+    here as a disagreement rather than as a confident wrong key.
+    """
+    g = _LAST_GRID.get(en)
+    if not g or "in the figure given below" not in en:
+        return None
+    rows, cols = g
+    boxes = [(r1, r2, c1, c2) for r1 in range(rows) for r2 in range(r1, rows)
+             for c1 in range(cols) for c2 in range(c1, cols)]
+    if "squares" in en:
+        return str(sum(1 for r1, r2, c1, c2 in boxes if (r2 - r1) == (c2 - c1)))
+    if "rectangles" in en:
+        return str(len(boxes))
+    return None
+
+
 _LAST_FIGS = {}
 
 
@@ -596,6 +639,8 @@ def resolve(tag, qs, key, gen):
         # the English options against the stem before dispatching.
         _LAST_OPTIONS[en] = [t for _, t in q["opts"][-1]]
         _LAST_FIGS[en] = q.get("figs") or []
+        _LAST_TILES[en] = q.get("tiles") or []
+        _LAST_GRID[en] = q.get("grid")
         for name, fn in SOLVERS:
             try:
                 want = fn(en)
@@ -2655,7 +2700,9 @@ def solve_fraction_expr(en):
     return str(f.numerator) if f.denominator == 1 else f"{f.numerator}/{f.denominator}"
 
 
-SOLVERS = ([("figure-series", solve_figure_series), ("hcf-lcm", solve_hcf_lcm), ("place-face", solve_place_face),
+SOLVERS = ([("figure-series", solve_figure_series),
+            ("identical-figure", solve_identical_figure),
+            ("count-figures", solve_count_figures), ("hcf-lcm", solve_hcf_lcm), ("place-face", solve_place_face),
             ("unit-digit", solve_unit_digit), ("bells-lcm", solve_bells),
             ("compare-fractions", solve_compare_fractions),
             ("fraction-of", solve_fraction_of), ("recurring-decimal", solve_recurring),

@@ -1,0 +1,2822 @@
+[
+ {
+  "stem": "Which Article of the Constitution deals with Consolidated Funds and public accounts of India and of the States?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद भारत और राज्यों की संचित निधियाँ तथा लोक लेखे से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "265"
+   },
+   {
+    "label": "B",
+    "text": "269A"
+   },
+   {
+    "label": "C",
+    "text": "266"
+   },
+   {
+    "label": "D",
+    "text": "267"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "265"
+   },
+   {
+    "label": "B",
+    "text": "269A"
+   },
+   {
+    "label": "C",
+    "text": "266"
+   },
+   {
+    "label": "D",
+    "text": "267"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Consolidated Funds and public accounts of India and of the States belongs to 266.",
+  "solution_hi": "भारत और राज्यों की संचित निधियाँ तथा लोक लेखे — 266।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|266",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which river originates at Amarkantak?",
+  "stem_hi": "अमरकंटक से कौन-सी नदी निकलती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Narmada"
+   },
+   {
+    "label": "B",
+    "text": "Tungabhadra"
+   },
+   {
+    "label": "C",
+    "text": "Sabarmati"
+   },
+   {
+    "label": "D",
+    "text": "Gandak"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "नर्मदा"
+   },
+   {
+    "label": "B",
+    "text": "तुंगभद्रा"
+   },
+   {
+    "label": "C",
+    "text": "साबरमती"
+   },
+   {
+    "label": "D",
+    "text": "गंडक"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Amarkantak belongs to Narmada.",
+  "solution_hi": "अमरकंटक — नर्मदा।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "RIVER_ORIGIN"
+  ],
+  "fact": "RIVER_ORIGIN|Narmada",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Directive for development of the Hindi language?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद हिंदी भाषा के विकास के लिए निदेश से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "351"
+   },
+   {
+    "label": "B",
+    "text": "352"
+   },
+   {
+    "label": "C",
+    "text": "348"
+   },
+   {
+    "label": "D",
+    "text": "355"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "351"
+   },
+   {
+    "label": "B",
+    "text": "352"
+   },
+   {
+    "label": "C",
+    "text": "348"
+   },
+   {
+    "label": "D",
+    "text": "355"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Directive for development of the Hindi language belongs to 351.",
+  "solution_hi": "हिंदी भाषा के विकास के लिए निदेश — 351।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|351",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Agartala is the capital of which state?",
+  "stem_hi": "अगरतला किस राज्य की राजधानी है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Manipur"
+   },
+   {
+    "label": "B",
+    "text": "Punjab"
+   },
+   {
+    "label": "C",
+    "text": "Gujarat"
+   },
+   {
+    "label": "D",
+    "text": "Tripura"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "मणिपुर"
+   },
+   {
+    "label": "B",
+    "text": "पंजाब"
+   },
+   {
+    "label": "C",
+    "text": "गुजरात"
+   },
+   {
+    "label": "D",
+    "text": "त्रिपुरा"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Agartala belongs to Tripura.",
+  "solution_hi": "अगरतला — त्रिपुरा।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "STATE_CAPITAL"
+  ],
+  "fact": "STATE_CAPITAL|Tripura",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Duration of State Legislatures?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद राज्य के विधान-मंडलों की अवधि से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "170"
+   },
+   {
+    "label": "B",
+    "text": "169"
+   },
+   {
+    "label": "C",
+    "text": "172"
+   },
+   {
+    "label": "D",
+    "text": "171"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "170"
+   },
+   {
+    "label": "B",
+    "text": "169"
+   },
+   {
+    "label": "C",
+    "text": "172"
+   },
+   {
+    "label": "D",
+    "text": "171"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Duration of State Legislatures belongs to 172.",
+  "solution_hi": "राज्य के विधान-मंडलों की अवधि — 172।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|172",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "number": 10,
+  "page": 3,
+  "stem": "In the 2025 Duleep Trophy, which Bihar-born player was appointed captain of the East Zone cricket squad ?",
+  "stem_hi": "2025 दुलीप ट्रॉफी में, बिहार में जन्मे किस खिलाड़ी को पूर्वी क्षेत्र क्रिकेट टीम का कप्तान नियुक्त किया गया ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Abhimanyu Easwaran"
+   },
+   {
+    "label": "B",
+    "text": "Ishan Kishan"
+   },
+   {
+    "label": "C",
+    "text": "Mohammed Siraj"
+   },
+   {
+    "label": "D",
+    "text": "Shahbaz Nadeem"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अभिमन्यु ईस्वरन"
+   },
+   {
+    "label": "B",
+    "text": "ईशान किशन"
+   },
+   {
+    "label": "C",
+    "text": "मोहम्‍मद सिराज"
+   },
+   {
+    "label": "D",
+    "text": "शहबाज़ नादिम"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "03_25_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Field Assistant 03/25",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 2,
+   "bihar_specific": true
+  },
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-03/25, POST-FIELD ASSISTANT",
+  "_generated": false,
+  "_pick": "real"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Elections to the House of the People and to the Legislative Assemblies of States to be on the basis of adult suffrage?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद लोक सभा और विधान सभाओं के निर्वाचनों का वयस्क मताधिकार पर आधारित होना से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "326"
+   },
+   {
+    "label": "B",
+    "text": "324"
+   },
+   {
+    "label": "C",
+    "text": "320"
+   },
+   {
+    "label": "D",
+    "text": "335"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "326"
+   },
+   {
+    "label": "B",
+    "text": "324"
+   },
+   {
+    "label": "C",
+    "text": "320"
+   },
+   {
+    "label": "D",
+    "text": "335"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Elections to the House of the People and to the Legislative Assemblies of States to be on the basis of adult suffrage belongs to 326.",
+  "solution_hi": "लोक सभा और विधान सभाओं के निर्वाचनों का वयस्क मताधिकार पर आधारित होना — 326।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|326",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which river originates at Bara Bhangal (Kangra)?",
+  "stem_hi": "बड़ा भंगाल (कांगड़ा) से कौन-सी नदी निकलती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Ravi"
+   },
+   {
+    "label": "B",
+    "text": "Kaveri"
+   },
+   {
+    "label": "C",
+    "text": "Godavari"
+   },
+   {
+    "label": "D",
+    "text": "Tapti"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रावी"
+   },
+   {
+    "label": "B",
+    "text": "कावेरी"
+   },
+   {
+    "label": "C",
+    "text": "गोदावरी"
+   },
+   {
+    "label": "D",
+    "text": "ताप्ती"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Bara Bhangal (Kangra) belongs to Ravi.",
+  "solution_hi": "बड़ा भंगाल (कांगड़ा) — रावी।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "RIVER_ORIGIN"
+  ],
+  "fact": "RIVER_ORIGIN|Ravi",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Freedom to manage religious affairs?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद धार्मिक कार्यों के प्रबंध की स्वतंत्रता से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "29"
+   },
+   {
+    "label": "B",
+    "text": "26"
+   },
+   {
+    "label": "C",
+    "text": "25"
+   },
+   {
+    "label": "D",
+    "text": "24"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "29"
+   },
+   {
+    "label": "B",
+    "text": "26"
+   },
+   {
+    "label": "C",
+    "text": "25"
+   },
+   {
+    "label": "D",
+    "text": "24"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Freedom to manage religious affairs belongs to 26.",
+  "solution_hi": "धार्मिक कार्यों के प्रबंध की स्वतंत्रता — 26।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|26",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Bengaluru is the capital of which state?",
+  "stem_hi": "बेंगलुरु किस राज्य की राजधानी है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Gujarat"
+   },
+   {
+    "label": "B",
+    "text": "Karnataka"
+   },
+   {
+    "label": "C",
+    "text": "Kerala"
+   },
+   {
+    "label": "D",
+    "text": "Haryana"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "गुजरात"
+   },
+   {
+    "label": "B",
+    "text": "कर्नाटक"
+   },
+   {
+    "label": "C",
+    "text": "केरल"
+   },
+   {
+    "label": "D",
+    "text": "हरियाणा"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Bengaluru belongs to Karnataka.",
+  "solution_hi": "बेंगलुरु — कर्नाटक।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "STATE_CAPITAL"
+  ],
+  "fact": "STATE_CAPITAL|Karnataka",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Which river originates at Bara Lacha Pass (Lahaul)?",
+  "stem_hi": "बारालाचा दर्रा (लाहौल) से कौन-सी नदी निकलती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Krishna"
+   },
+   {
+    "label": "B",
+    "text": "Mahanadi"
+   },
+   {
+    "label": "C",
+    "text": "Chenab"
+   },
+   {
+    "label": "D",
+    "text": "Chambal"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कृष्णा"
+   },
+   {
+    "label": "B",
+    "text": "महानदी"
+   },
+   {
+    "label": "C",
+    "text": "चिनाब"
+   },
+   {
+    "label": "D",
+    "text": "चंबल"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Bara Lacha Pass (Lahaul) belongs to Chenab.",
+  "solution_hi": "बारालाचा दर्रा (लाहौल) — चिनाब।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "RIVER_ORIGIN"
+  ],
+  "fact": "RIVER_ORIGIN|Chenab",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Which event took place in 1764?",
+  "stem_hi": "1764 में कौन-सी घटना हुई थी?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Partition of Bengal"
+   },
+   {
+    "label": "B",
+    "text": "Rowlatt Act"
+   },
+   {
+    "label": "C",
+    "text": "Revolt of 1857"
+   },
+   {
+    "label": "D",
+    "text": "Battle of Buxar"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "बंगाल विभाजन"
+   },
+   {
+    "label": "B",
+    "text": "रौलेट अधिनियम"
+   },
+   {
+    "label": "C",
+    "text": "1857 का विद्रोह"
+   },
+   {
+    "label": "D",
+    "text": "बक्सर का युद्ध"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "1764 belongs to Battle of Buxar.",
+  "solution_hi": "1764 — बक्सर का युद्ध।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "MOVEMENT_YEAR"
+  ],
+  "fact": "MOVEMENT_YEAR|Battle of Buxar",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Language to be used in the Supreme Court and in the High Courts and for Acts, Bills, etc?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद उच्चतम न्यायालय और उच्च न्यायालयों में प्रयोग की जाने वाली भाषा से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "351"
+   },
+   {
+    "label": "B",
+    "text": "352"
+   },
+   {
+    "label": "C",
+    "text": "348"
+   },
+   {
+    "label": "D",
+    "text": "345"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "351"
+   },
+   {
+    "label": "B",
+    "text": "352"
+   },
+   {
+    "label": "C",
+    "text": "348"
+   },
+   {
+    "label": "D",
+    "text": "345"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Language to be used in the Supreme Court and in the High Courts and for Acts, Bills, etc belongs to 348.",
+  "solution_hi": "उच्चतम न्यायालय और उच्च न्यायालयों में प्रयोग की जाने वाली भाषा — 348।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|348",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which river originates at Beas Kund (Rohtang)?",
+  "stem_hi": "ब्यास कुंड (रोहतांग) से कौन-सी नदी निकलती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Periyar"
+   },
+   {
+    "label": "B",
+    "text": "Beas"
+   },
+   {
+    "label": "C",
+    "text": "Betwa"
+   },
+   {
+    "label": "D",
+    "text": "Chenab"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पेरियार"
+   },
+   {
+    "label": "B",
+    "text": "ब्यास"
+   },
+   {
+    "label": "C",
+    "text": "बेतवा"
+   },
+   {
+    "label": "D",
+    "text": "चिनाब"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Beas Kund (Rohtang) belongs to Beas.",
+  "solution_hi": "ब्यास कुंड (रोहतांग) — ब्यास।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "RIVER_ORIGIN"
+  ],
+  "fact": "RIVER_ORIGIN|Beas",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Chennai is the capital of which state?",
+  "stem_hi": "चेन्नई किस राज्य की राजधानी है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Uttar Pradesh"
+   },
+   {
+    "label": "B",
+    "text": "Telangana"
+   },
+   {
+    "label": "C",
+    "text": "Himachal Pradesh"
+   },
+   {
+    "label": "D",
+    "text": "Tamil Nadu"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "उत्तर प्रदेश"
+   },
+   {
+    "label": "B",
+    "text": "तेलंगाना"
+   },
+   {
+    "label": "C",
+    "text": "हिमाचल प्रदेश"
+   },
+   {
+    "label": "D",
+    "text": "तमिलनाडु"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Chennai belongs to Tamil Nadu.",
+  "solution_hi": "चेन्नई — तमिलनाडु।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "STATE_CAPITAL"
+  ],
+  "fact": "STATE_CAPITAL|Tamil Nadu",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which event took place in 1930?",
+  "stem_hi": "1930 में कौन-सी घटना हुई थी?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Quit India Movement"
+   },
+   {
+    "label": "B",
+    "text": "Dandi March"
+   },
+   {
+    "label": "C",
+    "text": "Kheda Satyagraha"
+   },
+   {
+    "label": "D",
+    "text": "Vaikom Satyagraha"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "भारत छोड़ो आंदोलन"
+   },
+   {
+    "label": "B",
+    "text": "दांडी मार्च"
+   },
+   {
+    "label": "C",
+    "text": "खेड़ा सत्याग्रह"
+   },
+   {
+    "label": "D",
+    "text": "वैकोम सत्याग्रह"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "1930 belongs to Dandi March.",
+  "solution_hi": "1930 — दांडी मार्च।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "MOVEMENT_YEAR"
+  ],
+  "fact": "MOVEMENT_YEAR|Dandi March",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Laws inconsistent with or in derogation of the fundamental rights?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद मौलिक अधिकारों से असंगत या उनका अल्पीकरण करने वाली विधियाँ से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "15"
+   },
+   {
+    "label": "B",
+    "text": "16"
+   },
+   {
+    "label": "C",
+    "text": "13"
+   },
+   {
+    "label": "D",
+    "text": "14"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "15"
+   },
+   {
+    "label": "B",
+    "text": "16"
+   },
+   {
+    "label": "C",
+    "text": "13"
+   },
+   {
+    "label": "D",
+    "text": "14"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Laws inconsistent with or in derogation of the fundamental rights belongs to 13.",
+  "solution_hi": "मौलिक अधिकारों से असंगत या उनका अल्पीकरण करने वाली विधियाँ — 13।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|13",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which river originates at Gangotri Glacier (Gaumukh)?",
+  "stem_hi": "गंगोत्री हिमनद (गोमुख) से कौन-सी नदी निकलती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Yamuna"
+   },
+   {
+    "label": "B",
+    "text": "Ganga"
+   },
+   {
+    "label": "C",
+    "text": "Gandak"
+   },
+   {
+    "label": "D",
+    "text": "Ghaghara"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "यमुना"
+   },
+   {
+    "label": "B",
+    "text": "गंगा"
+   },
+   {
+    "label": "C",
+    "text": "गंडक"
+   },
+   {
+    "label": "D",
+    "text": "घाघरा"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Gangotri Glacier (Gaumukh) belongs to Ganga.",
+  "solution_hi": "गंगोत्री हिमनद (गोमुख) — गंगा।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "RIVER_ORIGIN"
+  ],
+  "fact": "RIVER_ORIGIN|Ganga",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with President's Rule in a State?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद किसी राज्य में राष्ट्रपति शासन से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "356"
+   },
+   {
+    "label": "B",
+    "text": "355"
+   },
+   {
+    "label": "C",
+    "text": "358"
+   },
+   {
+    "label": "D",
+    "text": "360"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "356"
+   },
+   {
+    "label": "B",
+    "text": "355"
+   },
+   {
+    "label": "C",
+    "text": "358"
+   },
+   {
+    "label": "D",
+    "text": "360"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "President's Rule in a State belongs to 356.",
+  "solution_hi": "किसी राज्य में राष्ट्रपति शासन — 356।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|356",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "number": 5,
+  "page": 2,
+  "stem": "The 7th Khelo India Youth Games (KIYG) were hosted for the first time in Bihar. In which cities were they mostly conducted ?",
+  "stem_hi": "7वें खेलो इंडिया युवा खेल (KIYG) की मेज़बानी पहली बार बिहार में की गई। इन शहरों में ये अधिकांशतः कहाँ आयोजित किए गए ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Patna, Rajgir, Gaya, Bhagalpur and Begusarai"
+   },
+   {
+    "label": "B",
+    "text": "Patna, Munger, Gaya, Bhagalpur and Madhubani"
+   },
+   {
+    "label": "C",
+    "text": "Patna, Muzaffarpur, Gaya, Bhagalpur and Begusarai"
+   },
+   {
+    "label": "D",
+    "text": "Patna, Purnea, Gaya, Bhagalpur and Darbhanga"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पटना, राजगीर, गया, भागलपुर और बेगूसराय"
+   },
+   {
+    "label": "B",
+    "text": "पटना, मुंगेर, गया, भागलपुर और मधुबनी"
+   },
+   {
+    "label": "C",
+    "text": "पटना, मुजफ्फरपुर, गया, भागलपुर और बेगूसराय"
+   },
+   {
+    "label": "D",
+    "text": "पटना, पूर्णिया, गया, भागलपुर और दरभंगा"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "03_25_SET_A.pdf",
+  "correct_answer": "A",
+  "paper_label": "BSSC Field Assistant 03/25",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - National",
+   "difficulty": 2,
+   "bihar_specific": true
+  },
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-03/25, POST-FIELD ASSISTANT",
+  "_generated": false,
+  "_pick": "real"
+ },
+ {
+  "stem": "Gandhinagar is the capital of which state?",
+  "stem_hi": "गांधीनगर किस राज्य की राजधानी है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Punjab"
+   },
+   {
+    "label": "B",
+    "text": "Gujarat"
+   },
+   {
+    "label": "C",
+    "text": "Karnataka"
+   },
+   {
+    "label": "D",
+    "text": "Jharkhand"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पंजाब"
+   },
+   {
+    "label": "B",
+    "text": "गुजरात"
+   },
+   {
+    "label": "C",
+    "text": "कर्नाटक"
+   },
+   {
+    "label": "D",
+    "text": "झारखंड"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Gandhinagar belongs to Gujarat.",
+  "solution_hi": "गांधीनगर — गुजरात।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "STATE_CAPITAL"
+  ],
+  "fact": "STATE_CAPITAL|Gujarat",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which event took place in 1918?",
+  "stem_hi": "1918 में कौन-सी घटना हुई थी?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Government of India Act"
+   },
+   {
+    "label": "B",
+    "text": "Jallianwala Bagh massacre"
+   },
+   {
+    "label": "C",
+    "text": "Kheda Satyagraha"
+   },
+   {
+    "label": "D",
+    "text": "Dandi March"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "भारत शासन अधिनियम"
+   },
+   {
+    "label": "B",
+    "text": "जलियाँवाला बाग हत्याकांड"
+   },
+   {
+    "label": "C",
+    "text": "खेड़ा सत्याग्रह"
+   },
+   {
+    "label": "D",
+    "text": "दांडी मार्च"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "1918 belongs to Kheda Satyagraha.",
+  "solution_hi": "1918 — खेड़ा सत्याग्रह।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "MOVEMENT_YEAR"
+  ],
+  "fact": "MOVEMENT_YEAR|Kheda Satyagraha",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Constitution and composition of Wards Committees?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद वार्ड समितियों का गठन और संरचना से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243Q"
+   },
+   {
+    "label": "B",
+    "text": "243S"
+   },
+   {
+    "label": "C",
+    "text": "243T"
+   },
+   {
+    "label": "D",
+    "text": "243R"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243Q"
+   },
+   {
+    "label": "B",
+    "text": "243S"
+   },
+   {
+    "label": "C",
+    "text": "243T"
+   },
+   {
+    "label": "D",
+    "text": "243R"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Constitution and composition of Wards Committees belongs to 243S.",
+  "solution_hi": "वार्ड समितियों का गठन और संरचना — 243S।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243S",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which river originates at Mapchachungo Glacier (Tibet)?",
+  "stem_hi": "मापचाचुंगो हिमनद (तिब्बत) से कौन-सी नदी निकलती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Ghaghara"
+   },
+   {
+    "label": "B",
+    "text": "Ganga"
+   },
+   {
+    "label": "C",
+    "text": "Tungabhadra"
+   },
+   {
+    "label": "D",
+    "text": "Godavari"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "घाघरा"
+   },
+   {
+    "label": "B",
+    "text": "गंगा"
+   },
+   {
+    "label": "C",
+    "text": "तुंगभद्रा"
+   },
+   {
+    "label": "D",
+    "text": "गोदावरी"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Mapchachungo Glacier (Tibet) belongs to Ghaghara.",
+  "solution_hi": "मापचाचुंगो हिमनद (तिब्बत) — घाघरा।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "RIVER_ORIGIN"
+  ],
+  "fact": "RIVER_ORIGIN|Ghaghara",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Promotion of co-operative societies?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद सहकारी समितियों का संवर्धन से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "43A"
+   },
+   {
+    "label": "B",
+    "text": "39A"
+   },
+   {
+    "label": "C",
+    "text": "44"
+   },
+   {
+    "label": "D",
+    "text": "43B"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "43A"
+   },
+   {
+    "label": "B",
+    "text": "39A"
+   },
+   {
+    "label": "C",
+    "text": "44"
+   },
+   {
+    "label": "D",
+    "text": "43B"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Promotion of co-operative societies belongs to 43B.",
+  "solution_hi": "सहकारी समितियों का संवर्धन — 43B।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|43B",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Itanagar is the capital of which state?",
+  "stem_hi": "ईटानगर किस राज्य की राजधानी है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Arunachal Pradesh"
+   },
+   {
+    "label": "B",
+    "text": "Maharashtra"
+   },
+   {
+    "label": "C",
+    "text": "Nagaland"
+   },
+   {
+    "label": "D",
+    "text": "Karnataka"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अरुणाचल प्रदेश"
+   },
+   {
+    "label": "B",
+    "text": "महाराष्ट्र"
+   },
+   {
+    "label": "C",
+    "text": "नागालैंड"
+   },
+   {
+    "label": "D",
+    "text": "कर्नाटक"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Itanagar belongs to Arunachal Pradesh.",
+  "solution_hi": "ईटानगर — अरुणाचल प्रदेश।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "STATE_CAPITAL"
+  ],
+  "fact": "STATE_CAPITAL|Arunachal Pradesh",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which event took place in 1916?",
+  "stem_hi": "1916 में कौन-सी घटना हुई थी?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Battle of Plassey"
+   },
+   {
+    "label": "B",
+    "text": "Lucknow Pact"
+   },
+   {
+    "label": "C",
+    "text": "Rowlatt Act"
+   },
+   {
+    "label": "D",
+    "text": "Indian Independence Act"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "प्लासी का युद्ध"
+   },
+   {
+    "label": "B",
+    "text": "लखनऊ समझौता"
+   },
+   {
+    "label": "C",
+    "text": "रौलेट अधिनियम"
+   },
+   {
+    "label": "D",
+    "text": "भारतीय स्वतंत्रता अधिनियम"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "1916 belongs to Lucknow Pact.",
+  "solution_hi": "1916 — लखनऊ समझौता।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "MOVEMENT_YEAR"
+  ],
+  "fact": "MOVEMENT_YEAR|Lucknow Pact",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Continuance of existing laws and Panchayats?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद विद्यमान विधियों और पंचायतों का बना रहना से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243K"
+   },
+   {
+    "label": "B",
+    "text": "243N"
+   },
+   {
+    "label": "C",
+    "text": "243M"
+   },
+   {
+    "label": "D",
+    "text": "243L"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243K"
+   },
+   {
+    "label": "B",
+    "text": "243N"
+   },
+   {
+    "label": "C",
+    "text": "243M"
+   },
+   {
+    "label": "D",
+    "text": "243L"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Continuance of existing laws and Panchayats belongs to 243N.",
+  "solution_hi": "विद्यमान विधियों और पंचायतों का बना रहना — 243N।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243N",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Which river originates at Nhubine Himal Glacier (Nepal)?",
+  "stem_hi": "न्हुबिने हिमाल हिमनद (नेपाल) से कौन-सी नदी निकलती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Ganga"
+   },
+   {
+    "label": "B",
+    "text": "Yamuna"
+   },
+   {
+    "label": "C",
+    "text": "Narmada"
+   },
+   {
+    "label": "D",
+    "text": "Gandak"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "गंगा"
+   },
+   {
+    "label": "B",
+    "text": "यमुना"
+   },
+   {
+    "label": "C",
+    "text": "नर्मदा"
+   },
+   {
+    "label": "D",
+    "text": "गंडक"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Nhubine Himal Glacier (Nepal) belongs to Gandak.",
+  "solution_hi": "न्हुबिने हिमाल हिमनद (नेपाल) — गंडक।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "RIVER_ORIGIN"
+  ],
+  "fact": "RIVER_ORIGIN|Gandak",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Special Officer for linguistic minorities?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद भाषाई अल्पसंख्यक-वर्गों के लिए विशेष अधिकारी से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "352"
+   },
+   {
+    "label": "B",
+    "text": "350B"
+   },
+   {
+    "label": "C",
+    "text": "350A"
+   },
+   {
+    "label": "D",
+    "text": "351"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "352"
+   },
+   {
+    "label": "B",
+    "text": "350B"
+   },
+   {
+    "label": "C",
+    "text": "350A"
+   },
+   {
+    "label": "D",
+    "text": "351"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Special Officer for linguistic minorities belongs to 350B.",
+  "solution_hi": "भाषाई अल्पसंख्यक-वर्गों के लिए विशेष अधिकारी — 350B।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|350B",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Disqualifications for membership of Panchayats?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद पंचायतों की सदस्यता के लिए निरर्हताएँ से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243F"
+   },
+   {
+    "label": "B",
+    "text": "243E"
+   },
+   {
+    "label": "C",
+    "text": "243G"
+   },
+   {
+    "label": "D",
+    "text": "243H"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243F"
+   },
+   {
+    "label": "B",
+    "text": "243E"
+   },
+   {
+    "label": "C",
+    "text": "243G"
+   },
+   {
+    "label": "D",
+    "text": "243H"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Disqualifications for membership of Panchayats belongs to 243F.",
+  "solution_hi": "पंचायतों की सदस्यता के लिए निरर्हताएँ — 243F।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243F",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "number": 9,
+  "page": 3,
+  "stem": "Which sportsperson became the youngest-ever World Chess Champion in December 2024 ?",
+  "stem_hi": "2024 में कौन-सा खिलाड़ी सबसे कम उम्र का विश्व शतरंज चैंपियन बन गया ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Vidit Gujrathi"
+   },
+   {
+    "label": "B",
+    "text": "Arjun Erigaisi"
+   },
+   {
+    "label": "C",
+    "text": "Praggnanandhaa"
+   },
+   {
+    "label": "D",
+    "text": "Gukesh D."
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "विदित गुजराती"
+   },
+   {
+    "label": "B",
+    "text": "अर्जुन एरिगैसी"
+   },
+   {
+    "label": "C",
+    "text": "प्रग्गानंद"
+   },
+   {
+    "label": "D",
+    "text": "गुकेश डी."
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "03_25_SET_A.pdf",
+  "correct_answer": "D",
+  "paper_label": "BSSC Field Assistant 03/25",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - International",
+   "difficulty": 2,
+   "bihar_specific": false
+  },
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-03/25, POST-FIELD ASSISTANT",
+  "_generated": false,
+  "_pick": "real"
+ },
+ {
+  "stem": "Patna is the capital of which state?",
+  "stem_hi": "पटना किस राज्य की राजधानी है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Jharkhand"
+   },
+   {
+    "label": "B",
+    "text": "Bihar"
+   },
+   {
+    "label": "C",
+    "text": "Odisha"
+   },
+   {
+    "label": "D",
+    "text": "Haryana"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "झारखंड"
+   },
+   {
+    "label": "B",
+    "text": "बिहार"
+   },
+   {
+    "label": "C",
+    "text": "ओडिशा"
+   },
+   {
+    "label": "D",
+    "text": "हरियाणा"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Patna belongs to Bihar.",
+  "solution_hi": "पटना — बिहार।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "STATE_CAPITAL"
+  ],
+  "fact": "STATE_CAPITAL|Bihar",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which event took place in 1920?",
+  "stem_hi": "1920 में कौन-सी घटना हुई थी?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Chauri Chaura incident"
+   },
+   {
+    "label": "B",
+    "text": "Non-Cooperation Movement"
+   },
+   {
+    "label": "C",
+    "text": "Partition of Bengal"
+   },
+   {
+    "label": "D",
+    "text": "Champaran Satyagraha"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "चौरी-चौरा कांड"
+   },
+   {
+    "label": "B",
+    "text": "असहयोग आंदोलन"
+   },
+   {
+    "label": "C",
+    "text": "बंगाल विभाजन"
+   },
+   {
+    "label": "D",
+    "text": "चम्पारण सत्याग्रह"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "1920 belongs to Non-Cooperation Movement.",
+  "solution_hi": "1920 — असहयोग आंदोलन।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "MOVEMENT_YEAR"
+  ],
+  "fact": "MOVEMENT_YEAR|Non-Cooperation Movement",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Temporary provisions with respect to the State of Jammu and Kashmir?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद जम्मू-कश्मीर राज्य के संबंध में अस्थायी उपबंध से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "371A"
+   },
+   {
+    "label": "B",
+    "text": "360"
+   },
+   {
+    "label": "C",
+    "text": "370"
+   },
+   {
+    "label": "D",
+    "text": "368"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "371A"
+   },
+   {
+    "label": "B",
+    "text": "360"
+   },
+   {
+    "label": "C",
+    "text": "370"
+   },
+   {
+    "label": "D",
+    "text": "368"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Temporary provisions with respect to the State of Jammu and Kashmir belongs to 370.",
+  "solution_hi": "जम्मू-कश्मीर राज्य के संबंध में अस्थायी उपबंध — 370।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|370",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Which event took place in 1857?",
+  "stem_hi": "1857 में कौन-सी घटना हुई थी?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Battle of Buxar"
+   },
+   {
+    "label": "B",
+    "text": "Revolt of 1857"
+   },
+   {
+    "label": "C",
+    "text": "Rowlatt Act"
+   },
+   {
+    "label": "D",
+    "text": "Partition of Bengal"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "बक्सर का युद्ध"
+   },
+   {
+    "label": "B",
+    "text": "1857 का विद्रोह"
+   },
+   {
+    "label": "C",
+    "text": "रौलेट अधिनियम"
+   },
+   {
+    "label": "D",
+    "text": "बंगाल विभाजन"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "1857 belongs to Revolt of 1857.",
+  "solution_hi": "1857 — 1857 का विद्रोह।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "MOVEMENT_YEAR"
+  ],
+  "fact": "MOVEMENT_YEAR|Revolt of 1857",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Which river originates at Sihawa (Chhattisgarh)?",
+  "stem_hi": "सिहावा (छत्तीसगढ़) से कौन-सी नदी निकलती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Tungabhadra"
+   },
+   {
+    "label": "B",
+    "text": "Mahanadi"
+   },
+   {
+    "label": "C",
+    "text": "Ganga"
+   },
+   {
+    "label": "D",
+    "text": "Brahmaputra"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "तुंगभद्रा"
+   },
+   {
+    "label": "B",
+    "text": "महानदी"
+   },
+   {
+    "label": "C",
+    "text": "गंगा"
+   },
+   {
+    "label": "D",
+    "text": "ब्रह्मपुत्र"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Sihawa (Chhattisgarh) belongs to Mahanadi.",
+  "solution_hi": "सिहावा (छत्तीसगढ़) — महानदी।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "RIVER_ORIGIN"
+  ],
+  "fact": "RIVER_ORIGIN|Mahanadi",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Ranchi is the capital of which state?",
+  "stem_hi": "रांची किस राज्य की राजधानी है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Gujarat"
+   },
+   {
+    "label": "B",
+    "text": "Jharkhand"
+   },
+   {
+    "label": "C",
+    "text": "Uttarakhand"
+   },
+   {
+    "label": "D",
+    "text": "Haryana"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "गुजरात"
+   },
+   {
+    "label": "B",
+    "text": "झारखंड"
+   },
+   {
+    "label": "C",
+    "text": "उत्तराखंड"
+   },
+   {
+    "label": "D",
+    "text": "हरियाणा"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Ranchi belongs to Jharkhand.",
+  "solution_hi": "रांची — झारखंड।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "STATE_CAPITAL"
+  ],
+  "fact": "STATE_CAPITAL|Jharkhand",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Gram Sabha?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद ग्राम सभा से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243A"
+   },
+   {
+    "label": "B",
+    "text": "243B"
+   },
+   {
+    "label": "C",
+    "text": "243C"
+   },
+   {
+    "label": "D",
+    "text": "243D"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243A"
+   },
+   {
+    "label": "B",
+    "text": "243B"
+   },
+   {
+    "label": "C",
+    "text": "243C"
+   },
+   {
+    "label": "D",
+    "text": "243D"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Gram Sabha belongs to 243A.",
+  "solution_hi": "ग्राम सभा — 243A।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243A",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Which event took place in 1917?",
+  "stem_hi": "1917 में कौन-सी घटना हुई थी?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Partition of Bengal"
+   },
+   {
+    "label": "B",
+    "text": "Jallianwala Bagh massacre"
+   },
+   {
+    "label": "C",
+    "text": "Champaran Satyagraha"
+   },
+   {
+    "label": "D",
+    "text": "Dandi March"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "बंगाल विभाजन"
+   },
+   {
+    "label": "B",
+    "text": "जलियाँवाला बाग हत्याकांड"
+   },
+   {
+    "label": "C",
+    "text": "चम्पारण सत्याग्रह"
+   },
+   {
+    "label": "D",
+    "text": "दांडी मार्च"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "1917 belongs to Champaran Satyagraha.",
+  "solution_hi": "1917 — चम्पारण सत्याग्रह।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "MOVEMENT_YEAR"
+  ],
+  "fact": "MOVEMENT_YEAR|Champaran Satyagraha",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Powers to impose taxes by, and Funds of, the Panchayats?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद पंचायतों द्वारा कर लगाने की शक्ति तथा पंचायतों की निधियाँ से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243J"
+   },
+   {
+    "label": "B",
+    "text": "243H"
+   },
+   {
+    "label": "C",
+    "text": "243G"
+   },
+   {
+    "label": "D",
+    "text": "243F"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243J"
+   },
+   {
+    "label": "B",
+    "text": "243H"
+   },
+   {
+    "label": "C",
+    "text": "243G"
+   },
+   {
+    "label": "D",
+    "text": "243F"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Powers to impose taxes by, and Funds of, the Panchayats belongs to 243H.",
+  "solution_hi": "पंचायतों द्वारा कर लगाने की शक्ति तथा पंचायतों की निधियाँ — 243H।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243H",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Shimla is the capital of which state?",
+  "stem_hi": "शिमला किस राज्य की राजधानी है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Nagaland"
+   },
+   {
+    "label": "B",
+    "text": "Meghalaya"
+   },
+   {
+    "label": "C",
+    "text": "Himachal Pradesh"
+   },
+   {
+    "label": "D",
+    "text": "Maharashtra"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "नागालैंड"
+   },
+   {
+    "label": "B",
+    "text": "मेघालय"
+   },
+   {
+    "label": "C",
+    "text": "हिमाचल प्रदेश"
+   },
+   {
+    "label": "D",
+    "text": "महाराष्ट्र"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Shimla belongs to Himachal Pradesh.",
+  "solution_hi": "शिमला — हिमाचल प्रदेश।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "STATE_CAPITAL"
+  ],
+  "fact": "STATE_CAPITAL|Himachal Pradesh",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Which river originates at Sivagiri Hills (Western Ghats)?",
+  "stem_hi": "शिवगिरि पहाड़ियाँ (पश्चिमी घाट) से कौन-सी नदी निकलती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Periyar"
+   },
+   {
+    "label": "B",
+    "text": "Kaveri"
+   },
+   {
+    "label": "C",
+    "text": "Krishna"
+   },
+   {
+    "label": "D",
+    "text": "Beas"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पेरियार"
+   },
+   {
+    "label": "B",
+    "text": "कावेरी"
+   },
+   {
+    "label": "C",
+    "text": "कृष्णा"
+   },
+   {
+    "label": "D",
+    "text": "ब्यास"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Sivagiri Hills (Western Ghats) belongs to Periyar.",
+  "solution_hi": "शिवगिरि पहाड़ियाँ (पश्चिमी घाट) — पेरियार।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "RIVER_ORIGIN"
+  ],
+  "fact": "RIVER_ORIGIN|Periyar",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "number": 1,
+  "page": 1,
+  "stem": "Which treaty forms the bedrock of the special and enduring relationship between India and Nepal?",
+  "stem_hi": "भारत और नेपाल के बीच विशेष और स्थायी संबंध की आधारशिला कौन सी संधि है ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Treaty of Sugauli (1816)"
+   },
+   {
+    "label": "B",
+    "text": "Treaty of Peace and Friendship (1950)"
+   },
+   {
+    "label": "C",
+    "text": "BBIN Cooperation Agreement (2014)"
+   },
+   {
+    "label": "D",
+    "text": "Indo-Nepal Joint Commission Treaty (2015)"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "सुगौली की संधि (1816)"
+   },
+   {
+    "label": "B",
+    "text": "शांति और मित्रता की संधि (1950)"
+   },
+   {
+    "label": "C",
+    "text": "BBIN सहयोग समझौता (2014)"
+   },
+   {
+    "label": "D",
+    "text": "भारत-नेपाल संयुक्त आयोग की संधि (2015)"
+   }
+  ],
+  "type": "MCQ_single",
+  "has_figure": false,
+  "exam": "BSSC",
+  "subject": "General Studies",
+  "year": 2025,
+  "source_pdf": "03_25_SET_A.pdf",
+  "correct_answer": "B",
+  "paper_label": "BSSC Field Assistant 03/25",
+  "tag": {
+   "section": "General Studies",
+   "type": "factual_recall",
+   "topic": "Current Affairs - International",
+   "difficulty": 2,
+   "bihar_specific": false
+  },
+  "answer_source": "official key, transcribed by hand (typeset original)",
+  "exam_advertisement": "ADV. NO.-03/25, POST-FIELD ASSISTANT",
+  "_generated": false,
+  "_pick": "real"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Term of office of Governor?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद राज्यपाल की पदावधि से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "155"
+   },
+   {
+    "label": "B",
+    "text": "154"
+   },
+   {
+    "label": "C",
+    "text": "161"
+   },
+   {
+    "label": "D",
+    "text": "156"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "155"
+   },
+   {
+    "label": "B",
+    "text": "154"
+   },
+   {
+    "label": "C",
+    "text": "161"
+   },
+   {
+    "label": "D",
+    "text": "156"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Term of office of Governor belongs to 156.",
+  "solution_hi": "राज्यपाल की पदावधि — 156।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|156",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard(spill)"
+ },
+ {
+  "stem": "Which event took place in 1947?",
+  "stem_hi": "1947 में कौन-सी घटना हुई थी?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Indian Independence Act"
+   },
+   {
+    "label": "B",
+    "text": "Quit India Movement"
+   },
+   {
+    "label": "C",
+    "text": "Gandhi–Irwin Pact"
+   },
+   {
+    "label": "D",
+    "text": "Government of India Act"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "भारतीय स्वतंत्रता अधिनियम"
+   },
+   {
+    "label": "B",
+    "text": "भारत छोड़ो आंदोलन"
+   },
+   {
+    "label": "C",
+    "text": "गांधी-इरविन समझौता"
+   },
+   {
+    "label": "D",
+    "text": "भारत शासन अधिनियम"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "1947 belongs to Indian Independence Act.",
+  "solution_hi": "1947 — भारतीय स्वतंत्रता अधिनियम।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "MOVEMENT_YEAR"
+  ],
+  "fact": "MOVEMENT_YEAR|Indian Independence Act",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with a joint sitting of both Houses in certain cases?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद कुछ दशाओं में दोनों सदनों की संयुक्त बैठक से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "93"
+   },
+   {
+    "label": "B",
+    "text": "108"
+   },
+   {
+    "label": "C",
+    "text": "110"
+   },
+   {
+    "label": "D",
+    "text": "112"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "93"
+   },
+   {
+    "label": "B",
+    "text": "108"
+   },
+   {
+    "label": "C",
+    "text": "110"
+   },
+   {
+    "label": "D",
+    "text": "112"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "a joint sitting of both Houses in certain cases belongs to 108.",
+  "solution_hi": "कुछ दशाओं में दोनों सदनों की संयुक्त बैठक — 108।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|108",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Reservation of seats in Municipalities?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद नगरपालिकाओं में स्थानों का आरक्षण से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243T"
+   },
+   {
+    "label": "B",
+    "text": "243S"
+   },
+   {
+    "label": "C",
+    "text": "243U"
+   },
+   {
+    "label": "D",
+    "text": "243R"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243T"
+   },
+   {
+    "label": "B",
+    "text": "243S"
+   },
+   {
+    "label": "C",
+    "text": "243U"
+   },
+   {
+    "label": "D",
+    "text": "243R"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Reservation of seats in Municipalities belongs to 243T.",
+  "solution_hi": "नगरपालिकाओं में स्थानों का आरक्षण — 243T।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243T",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Thiruvananthapuram is the capital of which state?",
+  "stem_hi": "तिरुवनंतपुरम किस राज्य की राजधानी है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Kerala"
+   },
+   {
+    "label": "B",
+    "text": "Meghalaya"
+   },
+   {
+    "label": "C",
+    "text": "Nagaland"
+   },
+   {
+    "label": "D",
+    "text": "Telangana"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "केरल"
+   },
+   {
+    "label": "B",
+    "text": "मेघालय"
+   },
+   {
+    "label": "C",
+    "text": "नागालैंड"
+   },
+   {
+    "label": "D",
+    "text": "तेलंगाना"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Thiruvananthapuram belongs to Kerala.",
+  "solution_hi": "तिरुवनंतपुरम — केरल।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "STATE_CAPITAL"
+  ],
+  "fact": "STATE_CAPITAL|Kerala",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ },
+ {
+  "stem": "Which river originates at Sun Kosi confluence (Nepal)?",
+  "stem_hi": "सुन कोसी संगम (नेपाल) से कौन-सी नदी निकलती है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Krishna"
+   },
+   {
+    "label": "B",
+    "text": "Godavari"
+   },
+   {
+    "label": "C",
+    "text": "Kosi"
+   },
+   {
+    "label": "D",
+    "text": "Kaveri"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कृष्णा"
+   },
+   {
+    "label": "B",
+    "text": "गोदावरी"
+   },
+   {
+    "label": "C",
+    "text": "कोसी"
+   },
+   {
+    "label": "D",
+    "text": "कावेरी"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Sun Kosi confluence (Nepal) belongs to Kosi.",
+  "solution_hi": "सुन कोसी संगम (नेपाल) — कोसी।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "RIVER_ORIGIN"
+  ],
+  "fact": "RIVER_ORIGIN|Kosi",
+  "_generated": true,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_pick": "generated-hard"
+ }
+]

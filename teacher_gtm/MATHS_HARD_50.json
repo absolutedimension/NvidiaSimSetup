@@ -1,0 +1,2702 @@
+[
+ {
+  "stem": "What is the value of  (7)^2 + 40% of 120 - 176 / 8 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  (7)^2 + 120 का 40% - 176 / 8",
+  "options": [
+   {
+    "label": "A",
+    "text": "75"
+   },
+   {
+    "label": "B",
+    "text": "67"
+   },
+   {
+    "label": "C",
+    "text": "40"
+   },
+   {
+    "label": "D",
+    "text": "33"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "75"
+   },
+   {
+    "label": "B",
+    "text": "67"
+   },
+   {
+    "label": "C",
+    "text": "40"
+   },
+   {
+    "label": "D",
+    "text": "33"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "(7)^2 = 49; 40% of 120 = 48; 176 / 8 = 22. So 49 + 48 - 22 = 75.",
+  "solution_hi": "(7)^2 = 49; 120 का 40% = 48; 176 / 8 = 22। अतः 49 + 48 - 22 = 75।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "A value is first increased by 20% and the result is then decreased by 10%, leaving 3888. What was the original value?",
+  "stem_hi": "किसी मान में पहले 20% की वृद्धि की जाती है और फिर प्राप्त परिणाम में 10% की कमी की जाती है, जिससे 3888 बचता है। मूल मान क्या था?",
+  "options": [
+   {
+    "label": "A",
+    "text": "3534.55"
+   },
+   {
+    "label": "B",
+    "text": "3240"
+   },
+   {
+    "label": "C",
+    "text": "4320"
+   },
+   {
+    "label": "D",
+    "text": "3600"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "3534.55"
+   },
+   {
+    "label": "B",
+    "text": "3240"
+   },
+   {
+    "label": "C",
+    "text": "4320"
+   },
+   {
+    "label": "D",
+    "text": "3600"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Original = 3888 x 100/90 x 100/120 = 3600.",
+  "solution_hi": "मूल मान = 3888 x 100/90 x 100/120 = 3600।",
+  "concept": "Percentage Change",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "What is the value of  11 x 3 - 25% of 80 + 84 / 7 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  11 x 3 - 80 का 25% + 84 / 7",
+  "options": [
+   {
+    "label": "A",
+    "text": "6"
+   },
+   {
+    "label": "B",
+    "text": "65"
+   },
+   {
+    "label": "C",
+    "text": "25"
+   },
+   {
+    "label": "D",
+    "text": "20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "6"
+   },
+   {
+    "label": "B",
+    "text": "65"
+   },
+   {
+    "label": "C",
+    "text": "25"
+   },
+   {
+    "label": "D",
+    "text": "20"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "11 x 3 = 33; 25% of 80 = 20; 84 / 7 = 12. So 33 - 20 + 12 = 25.",
+  "solution_hi": "11 x 3 = 33; 80 का 25% = 20; 84 / 7 = 12। अतः 33 - 20 + 12 = 25।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "A value decreases from 200 to 160. What is the percentage decrease?",
+  "stem_hi": "कोई मान 200 से घटकर 160 हो जाता है। प्रतिशत कमी क्या है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "25%"
+   },
+   {
+    "label": "B",
+    "text": "40%"
+   },
+   {
+    "label": "C",
+    "text": "80%"
+   },
+   {
+    "label": "D",
+    "text": "20%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "25%"
+   },
+   {
+    "label": "B",
+    "text": "40%"
+   },
+   {
+    "label": "C",
+    "text": "80%"
+   },
+   {
+    "label": "D",
+    "text": "20%"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Change = 40. Percentage decrease = 40/200 x 100 = 20%.",
+  "solution_hi": "परिवर्तन = 40। प्रतिशत कमी = 40/200 x 100 = 20%।",
+  "concept": "Percentage Change",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "What is the value of  10% of 160 + 11 x 8 + 120 / 6 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  160 का 10% + 11 x 8 + 120 / 6",
+  "options": [
+   {
+    "label": "A",
+    "text": "124"
+   },
+   {
+    "label": "B",
+    "text": "118"
+   },
+   {
+    "label": "C",
+    "text": "55"
+   },
+   {
+    "label": "D",
+    "text": "39"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "124"
+   },
+   {
+    "label": "B",
+    "text": "118"
+   },
+   {
+    "label": "C",
+    "text": "55"
+   },
+   {
+    "label": "D",
+    "text": "39"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "10% of 160 = 16; 11 x 8 = 88; 120 / 6 = 20. So 16 + 88 + 20 = 124.",
+  "solution_hi": "160 का 10% = 16; 11 x 8 = 88; 120 / 6 = 20। अतः 16 + 88 + 20 = 124।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "If A : B = 4 : 2 and B : C = 4 : 2, and Rs. 3,500 is divided among A, B and C in that ratio, find C's share.",
+  "stem_hi": "यदि A : B = 4 : 2 तथा B : C = 4 : 2 है, और रु. 3,500 की राशि A, B तथा C में उसी अनुपात में बाँटी जाती है, तो C का हिस्सा ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "Rs. 500"
+   },
+   {
+    "label": "B",
+    "text": "Rs. 875"
+   },
+   {
+    "label": "C",
+    "text": "Rs. 2,000"
+   },
+   {
+    "label": "D",
+    "text": "Rs. 1,166"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रु. 500"
+   },
+   {
+    "label": "B",
+    "text": "रु. 875"
+   },
+   {
+    "label": "C",
+    "text": "रु. 2,000"
+   },
+   {
+    "label": "D",
+    "text": "रु. 1,166"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "A : B : C = 4 : 2 : 1. One unit = 3500/7 = 500. C's share = 1 x 500 = Rs. 500.",
+  "solution_hi": "A : B : C = 4 : 2 : 1। एक इकाई = 3500/7 = 500। C का हिस्सा = 1 x 500 = रु. 500।",
+  "concept": "Ratio & Proportion",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_ratio"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "ratio"
+ },
+ {
+  "stem": "What is the value of  10% of 160 + 14 x 3 - 88 / 4 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  160 का 10% + 14 x 3 - 88 / 4",
+  "options": [
+   {
+    "label": "A",
+    "text": "5"
+   },
+   {
+    "label": "B",
+    "text": "36"
+   },
+   {
+    "label": "C",
+    "text": "30"
+   },
+   {
+    "label": "D",
+    "text": "11"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "5"
+   },
+   {
+    "label": "B",
+    "text": "36"
+   },
+   {
+    "label": "C",
+    "text": "30"
+   },
+   {
+    "label": "D",
+    "text": "11"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "10% of 160 = 16; 14 x 3 = 42; 88 / 4 = 22. So 16 + 42 - 22 = 36.",
+  "solution_hi": "160 का 10% = 16; 14 x 3 = 42; 88 / 4 = 22। अतः 16 + 42 - 22 = 36।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "A value increases from 200 to 280. What is the percentage increase?",
+  "stem_hi": "कोई मान 200 से बढ़कर 280 हो जाता है। प्रतिशत वृद्धि क्या है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "40%"
+   },
+   {
+    "label": "B",
+    "text": "28.57%"
+   },
+   {
+    "label": "C",
+    "text": "80%"
+   },
+   {
+    "label": "D",
+    "text": "140%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "40%"
+   },
+   {
+    "label": "B",
+    "text": "28.57%"
+   },
+   {
+    "label": "C",
+    "text": "80%"
+   },
+   {
+    "label": "D",
+    "text": "140%"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Change = 80. Percentage increase = 80/200 x 100 = 40%.",
+  "solution_hi": "परिवर्तन = 80। प्रतिशत वृद्धि = 80/200 x 100 = 40%।",
+  "concept": "Percentage Change",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "What is the value of  20% of 240 + (14 x 7 - 9) - 144 / 9 + (14)^2 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  240 का 20% + (14 x 7 - 9) - 144 / 9 + (14)^2",
+  "options": [
+   {
+    "label": "A",
+    "text": "326"
+   },
+   {
+    "label": "B",
+    "text": "335"
+   },
+   {
+    "label": "C",
+    "text": "289"
+   },
+   {
+    "label": "D",
+    "text": "317"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "326"
+   },
+   {
+    "label": "B",
+    "text": "335"
+   },
+   {
+    "label": "C",
+    "text": "289"
+   },
+   {
+    "label": "D",
+    "text": "317"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "20% of 240 = 48; bracket first: 14 x 7 - 9 = 89; 144 / 9 = 16; (14)^2 = 196. So 48 + 89 - 16 + 196 = 317.",
+  "solution_hi": "240 का 20% = 48; पहले कोष्ठक: 14 x 7 - 9 = 89; 144 / 9 = 16; (14)^2 = 196। अतः 48 + 89 - 16 + 196 = 317।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "A's marks is 20% more than B's. B's marks is what percent less than A's?",
+  "stem_hi": "A का अंक B के अंक से 20% अधिक है। B का अंक, A के अंक से कितने प्रतिशत कम है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "80%"
+   },
+   {
+    "label": "B",
+    "text": "16.67%"
+   },
+   {
+    "label": "C",
+    "text": "20%"
+   },
+   {
+    "label": "D",
+    "text": "83.33%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "80%"
+   },
+   {
+    "label": "B",
+    "text": "16.67%"
+   },
+   {
+    "label": "C",
+    "text": "20%"
+   },
+   {
+    "label": "D",
+    "text": "83.33%"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Take B = 100, so A = 120. B is less than A by 20, which is 20/120 x 100 = 16.67% of A.",
+  "solution_hi": "मान लीजिए B = 100, तब A = 120। B, A से 20 कम है, जो A का 20/120 x 100 = 16.67% है।",
+  "concept": "Percentage Change",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "What is the value of  20% of 120 + (13)^2 + 180 / 9 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  120 का 20% + (13)^2 + 180 / 9",
+  "options": [
+   {
+    "label": "A",
+    "text": "209"
+   },
+   {
+    "label": "B",
+    "text": "309"
+   },
+   {
+    "label": "C",
+    "text": "70"
+   },
+   {
+    "label": "D",
+    "text": "213"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "209"
+   },
+   {
+    "label": "B",
+    "text": "309"
+   },
+   {
+    "label": "C",
+    "text": "70"
+   },
+   {
+    "label": "D",
+    "text": "213"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "20% of 120 = 24; (13)^2 = 169; 180 / 9 = 20. So 24 + 169 + 20 = 213.",
+  "solution_hi": "120 का 20% = 24; (13)^2 = 169; 180 / 9 = 20। अतः 24 + 169 + 20 = 213।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "Two numbers are in the ratio 2 : 5. If 60 is added to each, the ratio becomes 1 : 2. Find the smaller number.",
+  "stem_hi": "दो संख्याएँ 2 : 5 के अनुपात में हैं। यदि प्रत्येक में 60 जोड़ दिया जाए, तो अनुपात 1 : 2 हो जाता है। छोटी संख्या ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "300"
+   },
+   {
+    "label": "B",
+    "text": "180"
+   },
+   {
+    "label": "C",
+    "text": "240"
+   },
+   {
+    "label": "D",
+    "text": "120"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "300"
+   },
+   {
+    "label": "B",
+    "text": "180"
+   },
+   {
+    "label": "C",
+    "text": "240"
+   },
+   {
+    "label": "D",
+    "text": "120"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Let the numbers be 2n and 5n. Then (2n + 60) : (5n + 60) = 1 : 2, giving n = 60. Smaller number = 2 x 60 = 120.",
+  "solution_hi": "माना संख्याएँ 2n तथा 5n हैं। तब (2n + 60) : (5n + 60) = 1 : 2, जिससे n = 60। छोटी संख्या = 2 x 60 = 120।",
+  "concept": "Ratio & Proportion",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_ratio"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "ratio"
+ },
+ {
+  "stem": "What is the value of  20% of 200 + (7)^2 + (6 x 8 - 7) - 13 x 8 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  200 का 20% + (7)^2 + (6 x 8 - 7) - 13 x 8",
+  "options": [
+   {
+    "label": "A",
+    "text": "40"
+   },
+   {
+    "label": "B",
+    "text": "6"
+   },
+   {
+    "label": "C",
+    "text": "26"
+   },
+   {
+    "label": "D",
+    "text": "33"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "40"
+   },
+   {
+    "label": "B",
+    "text": "6"
+   },
+   {
+    "label": "C",
+    "text": "26"
+   },
+   {
+    "label": "D",
+    "text": "33"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "20% of 200 = 40; (7)^2 = 49; bracket first: 6 x 8 - 7 = 41; 13 x 8 = 104. So 40 + 49 + 41 - 104 = 26.",
+  "solution_hi": "200 का 20% = 40; (7)^2 = 49; पहले कोष्ठक: 6 x 8 - 7 = 41; 13 x 8 = 104। अतः 40 + 49 + 41 - 104 = 26।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "A's salary is 25% more than B's. B's salary is what percent less than A's?",
+  "stem_hi": "A का वेतन B के वेतन से 25% अधिक है। B का वेतन, A के वेतन से कितने प्रतिशत कम है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "20%"
+   },
+   {
+    "label": "B",
+    "text": "25%"
+   },
+   {
+    "label": "C",
+    "text": "80%"
+   },
+   {
+    "label": "D",
+    "text": "75%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "20%"
+   },
+   {
+    "label": "B",
+    "text": "25%"
+   },
+   {
+    "label": "C",
+    "text": "80%"
+   },
+   {
+    "label": "D",
+    "text": "75%"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Take B = 100, so A = 125. B is less than A by 25, which is 25/125 x 100 = 20% of A.",
+  "solution_hi": "मान लीजिए B = 100, तब A = 125। B, A से 25 कम है, जो A का 25/125 x 100 = 20% है।",
+  "concept": "Percentage Change",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "What is the value of  (7 x 5 - 6) + 10 x 7 + (14)^2 - 40% of 160 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  (7 x 5 - 6) + 10 x 7 + (14)^2 - 160 का 40%",
+  "options": [
+   {
+    "label": "A",
+    "text": "231"
+   },
+   {
+    "label": "B",
+    "text": "237"
+   },
+   {
+    "label": "C",
+    "text": "243"
+   },
+   {
+    "label": "D",
+    "text": "255"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "231"
+   },
+   {
+    "label": "B",
+    "text": "237"
+   },
+   {
+    "label": "C",
+    "text": "243"
+   },
+   {
+    "label": "D",
+    "text": "255"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "bracket first: 7 x 5 - 6 = 29; 10 x 7 = 70; (14)^2 = 196; 40% of 160 = 64. So 29 + 70 + 196 - 64 = 231.",
+  "solution_hi": "पहले कोष्ठक: 7 x 5 - 6 = 29; 10 x 7 = 70; (14)^2 = 196; 160 का 40% = 64। अतः 29 + 70 + 196 - 64 = 231।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "The average of 13 numbers was found to be 44. Later it was discovered that one number was read as 24 instead of 76. Find the correct average.",
+  "stem_hi": "13 संख्याओं का औसत 44 पाया गया। बाद में ज्ञात हुआ कि एक संख्या 76 के स्थान पर 24 पढ़ ली गई थी। सही औसत ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "96"
+   },
+   {
+    "label": "B",
+    "text": "40"
+   },
+   {
+    "label": "C",
+    "text": "48"
+   },
+   {
+    "label": "D",
+    "text": "52"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "96"
+   },
+   {
+    "label": "B",
+    "text": "40"
+   },
+   {
+    "label": "C",
+    "text": "48"
+   },
+   {
+    "label": "D",
+    "text": "52"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Correct total = 13 x 44 - 24 + 76 = 624. Correct average = 48.",
+  "solution_hi": "सही योग = 13 x 44 - 24 + 76 = 624। सही औसत = 48।",
+  "concept": "Averages",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_average"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "averages"
+ },
+ {
+  "stem": "What is the value of  (6 x 4 - 8) + 10% of 180 + 10 x 9 + (14)^2 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  (6 x 4 - 8) + 180 का 10% + 10 x 9 + (14)^2",
+  "options": [
+   {
+    "label": "A",
+    "text": "336"
+   },
+   {
+    "label": "B",
+    "text": "320"
+   },
+   {
+    "label": "C",
+    "text": "328"
+   },
+   {
+    "label": "D",
+    "text": "312"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "336"
+   },
+   {
+    "label": "B",
+    "text": "320"
+   },
+   {
+    "label": "C",
+    "text": "328"
+   },
+   {
+    "label": "D",
+    "text": "312"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "bracket first: 6 x 4 - 8 = 16; 10% of 180 = 18; 10 x 9 = 90; (14)^2 = 196. So 16 + 18 + 90 + 196 = 320.",
+  "solution_hi": "पहले कोष्ठक: 6 x 4 - 8 = 16; 180 का 10% = 18; 10 x 9 = 90; (14)^2 = 196। अतः 16 + 18 + 90 + 196 = 320।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "If A : B = 2 : 6 and B : C = 3 : 4, and Rs. 8,800 is divided among A, B and C in that ratio, find C's share.",
+  "stem_hi": "यदि A : B = 2 : 6 तथा B : C = 3 : 4 है, और रु. 8,800 की राशि A, B तथा C में उसी अनुपात में बाँटी जाती है, तो C का हिस्सा ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "Rs. 4,840"
+   },
+   {
+    "label": "B",
+    "text": "Rs. 4,400"
+   },
+   {
+    "label": "C",
+    "text": "Rs. 2,933"
+   },
+   {
+    "label": "D",
+    "text": "Rs. 1,100"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रु. 4,840"
+   },
+   {
+    "label": "B",
+    "text": "रु. 4,400"
+   },
+   {
+    "label": "C",
+    "text": "रु. 2,933"
+   },
+   {
+    "label": "D",
+    "text": "रु. 1,100"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "A : B : C = 1 : 3 : 4. One unit = 8800/8 = 1100. C's share = 4 x 1100 = Rs. 4,400.",
+  "solution_hi": "A : B : C = 1 : 3 : 4। एक इकाई = 8800/8 = 1100। C का हिस्सा = 4 x 1100 = रु. 4,400।",
+  "concept": "Ratio & Proportion",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_ratio"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "ratio"
+ },
+ {
+  "stem": "What is the value of  (14 x 3 - 7) - (7)^2 - 15% of 180 + 12 x 6 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  (14 x 3 - 7) - (7)^2 - 180 का 15% + 12 x 6",
+  "options": [
+   {
+    "label": "A",
+    "text": "43"
+   },
+   {
+    "label": "B",
+    "text": "45"
+   },
+   {
+    "label": "C",
+    "text": "31"
+   },
+   {
+    "label": "D",
+    "text": "38"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "43"
+   },
+   {
+    "label": "B",
+    "text": "45"
+   },
+   {
+    "label": "C",
+    "text": "31"
+   },
+   {
+    "label": "D",
+    "text": "38"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "bracket first: 14 x 3 - 7 = 35; (7)^2 = 49; 15% of 180 = 27; 12 x 6 = 72. So 35 - 49 - 27 + 72 = 31.",
+  "solution_hi": "पहले कोष्ठक: 14 x 3 - 7 = 35; (7)^2 = 49; 180 का 15% = 27; 12 x 6 = 72। अतः 35 - 49 - 27 + 72 = 31।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "An article is sold after two successive discounts of 10% and 5%. What single discount is equivalent to these two?",
+  "stem_hi": "एक वस्तु 10% तथा 5% की दो क्रमिक छूटों के बाद बेची जाती है। इन दोनों के तुल्य एकल छूट क्या होगी ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "14.75%"
+   },
+   {
+    "label": "B",
+    "text": "7.5%"
+   },
+   {
+    "label": "C",
+    "text": "14.5%"
+   },
+   {
+    "label": "D",
+    "text": "15%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "14.75%"
+   },
+   {
+    "label": "B",
+    "text": "7.5%"
+   },
+   {
+    "label": "C",
+    "text": "14.5%"
+   },
+   {
+    "label": "D",
+    "text": "15%"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Net factor = (100-10)/100 x (100-5)/100 = 171/200. Equivalent discount = 100 - 85.5 = 14.5%.",
+  "solution_hi": "शुद्ध गुणक = (100-10)/100 x (100-5)/100। तुल्य छूट = 100 - 85.5 = 14.5%।",
+  "concept": "Marked Price & Discount",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_profit_loss"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "profit-loss"
+ },
+ {
+  "stem": "Two numbers are in the ratio 2 : 9. If 10 is added to each, the ratio becomes 19 : 82. Find the smaller number.",
+  "stem_hi": "दो संख्याएँ 2 : 9 के अनुपात में हैं। यदि प्रत्येक में 10 जोड़ दिया जाए, तो अनुपात 19 : 82 हो जाता है। छोटी संख्या ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "810"
+   },
+   {
+    "label": "B",
+    "text": "190"
+   },
+   {
+    "label": "C",
+    "text": "200"
+   },
+   {
+    "label": "D",
+    "text": "180"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "810"
+   },
+   {
+    "label": "B",
+    "text": "190"
+   },
+   {
+    "label": "C",
+    "text": "200"
+   },
+   {
+    "label": "D",
+    "text": "180"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Let the numbers be 2n and 9n. Then (2n + 10) : (9n + 10) = 19 : 82, giving n = 90. Smaller number = 2 x 90 = 180.",
+  "solution_hi": "माना संख्याएँ 2n तथा 9n हैं। तब (2n + 10) : (9n + 10) = 19 : 82, जिससे n = 90। छोटी संख्या = 2 x 90 = 180।",
+  "concept": "Ratio & Proportion",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_ratio"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "ratio"
+ },
+ {
+  "stem": "The average weight of 17 boys is 44 kg and that of 19 girls is 64 kg. Find the average weight of the whole class.",
+  "stem_hi": "17 लड़कों का औसत भार 44 किग्रा तथा 19 लड़कियों का औसत भार 64 किग्रा है। पूरी कक्षा का औसत भार ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "54.56"
+   },
+   {
+    "label": "B",
+    "text": "54"
+   },
+   {
+    "label": "C",
+    "text": "53.44"
+   },
+   {
+    "label": "D",
+    "text": "982"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "54.56"
+   },
+   {
+    "label": "B",
+    "text": "54"
+   },
+   {
+    "label": "C",
+    "text": "53.44"
+   },
+   {
+    "label": "D",
+    "text": "982"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Total = 17 x 44 + 19 x 64 = 1964; count = 36; average = 54.56 kg.",
+  "solution_hi": "कुल = 17 x 44 + 19 x 64 = 1964; संख्या = 36; औसत = 54.56 किग्रा।",
+  "concept": "Averages",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_average"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "averages"
+ },
+ {
+  "stem": "What is the value of  (7)^2 + 78 / 6 - 40% of 140 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  (7)^2 + 78 / 6 - 140 का 40%",
+  "options": [
+   {
+    "label": "A",
+    "text": "22"
+   },
+   {
+    "label": "B",
+    "text": "65"
+   },
+   {
+    "label": "C",
+    "text": "118"
+   },
+   {
+    "label": "D",
+    "text": "6"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "22"
+   },
+   {
+    "label": "B",
+    "text": "65"
+   },
+   {
+    "label": "C",
+    "text": "118"
+   },
+   {
+    "label": "D",
+    "text": "6"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "(7)^2 = 49; 78 / 6 = 13; 40% of 140 = 56. So 49 + 13 - 56 = 6.",
+  "solution_hi": "(7)^2 = 49; 78 / 6 = 13; 140 का 40% = 56। अतः 49 + 13 - 56 = 6।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "A's weight is 50% more than B's. B's weight is what percent less than A's?",
+  "stem_hi": "A का भार B के भार से 50% अधिक है। B का भार, A के भार से कितने प्रतिशत कम है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "66.67%"
+   },
+   {
+    "label": "B",
+    "text": "36.66%"
+   },
+   {
+    "label": "C",
+    "text": "33.33%"
+   },
+   {
+    "label": "D",
+    "text": "50%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "66.67%"
+   },
+   {
+    "label": "B",
+    "text": "36.66%"
+   },
+   {
+    "label": "C",
+    "text": "33.33%"
+   },
+   {
+    "label": "D",
+    "text": "50%"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Take B = 100, so A = 150. B is less than A by 50, which is 50/150 x 100 = 33.33% of A.",
+  "solution_hi": "मान लीजिए B = 100, तब A = 150। B, A से 50 कम है, जो A का 50/150 x 100 = 33.33% है।",
+  "concept": "Percentage Change",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "If A : B = 7 : 2 and B : C = 6 : 5, and Rs. 35,200 is divided among A, B and C in that ratio, find C's share.",
+  "stem_hi": "यदि A : B = 7 : 2 तथा B : C = 6 : 5 है, और रु. 35,200 की राशि A, B तथा C में उसी अनुपात में बाँटी जाती है, तो C का हिस्सा ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "Rs. 23,100"
+   },
+   {
+    "label": "B",
+    "text": "Rs. 11,733"
+   },
+   {
+    "label": "C",
+    "text": "Rs. 5,500"
+   },
+   {
+    "label": "D",
+    "text": "Rs. 12,571"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रु. 23,100"
+   },
+   {
+    "label": "B",
+    "text": "रु. 11,733"
+   },
+   {
+    "label": "C",
+    "text": "रु. 5,500"
+   },
+   {
+    "label": "D",
+    "text": "रु. 12,571"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "A : B : C = 21 : 6 : 5. One unit = 35200/32 = 1100. C's share = 5 x 1100 = Rs. 5,500.",
+  "solution_hi": "A : B : C = 21 : 6 : 5। एक इकाई = 35200/32 = 1100। C का हिस्सा = 5 x 1100 = रु. 5,500।",
+  "concept": "Ratio & Proportion",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_ratio"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "ratio"
+ },
+ {
+  "stem": "What is 40% of 25% of 400?",
+  "stem_hi": "400 के 25% का 40% कितना है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "100"
+   },
+   {
+    "label": "B",
+    "text": "4000"
+   },
+   {
+    "label": "C",
+    "text": "40"
+   },
+   {
+    "label": "D",
+    "text": "260"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "100"
+   },
+   {
+    "label": "B",
+    "text": "4000"
+   },
+   {
+    "label": "C",
+    "text": "40"
+   },
+   {
+    "label": "D",
+    "text": "260"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "25% of 400 = 100; 40% of that = 40.",
+  "solution_hi": "400 का 25% = 100; उसका 40% = 40।",
+  "concept": "Percentage of a Number",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "A value is first increased by 20% and the result is then decreased by 25%, leaving 2520. What was the original value?",
+  "stem_hi": "किसी मान में पहले 20% की वृद्धि की जाती है और फिर प्राप्त परिणाम में 25% की कमी की जाती है, जिससे 2520 बचता है। मूल मान क्या था?",
+  "options": [
+   {
+    "label": "A",
+    "text": "2652.63"
+   },
+   {
+    "label": "B",
+    "text": "2100"
+   },
+   {
+    "label": "C",
+    "text": "3360"
+   },
+   {
+    "label": "D",
+    "text": "2800"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "2652.63"
+   },
+   {
+    "label": "B",
+    "text": "2100"
+   },
+   {
+    "label": "C",
+    "text": "3360"
+   },
+   {
+    "label": "D",
+    "text": "2800"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Original = 2520 x 100/75 x 100/120 = 2800.",
+  "solution_hi": "मूल मान = 2520 x 100/75 x 100/120 = 2800।",
+  "concept": "Percentage Change",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "A shopkeeper marks an article 50% above its cost price of Rs. 400 and then allows a discount of 25%. Find his profit percent.",
+  "stem_hi": "एक दुकानदार किसी वस्तु का अंकित मूल्य उसके क्रय मूल्य रु. 400 से 50% अधिक रखता है और फिर 25% की छूट देता है। उसका लाभ प्रतिशत ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "12.5%"
+   },
+   {
+    "label": "B",
+    "text": "25%"
+   },
+   {
+    "label": "C",
+    "text": "11.11%"
+   },
+   {
+    "label": "D",
+    "text": "13.75%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "12.5%"
+   },
+   {
+    "label": "B",
+    "text": "25%"
+   },
+   {
+    "label": "C",
+    "text": "11.11%"
+   },
+   {
+    "label": "D",
+    "text": "13.75%"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "MP = 400 x 150/100 = Rs. 600; SP = 600 x 75/100 = Rs. 450. Profit% = (450 - 400)/400 x 100 = 12.5%.",
+  "solution_hi": "अंकित मूल्य = 400 x 150/100 = रु. 600; विक्रय मूल्य = 600 x 75/100 = रु. 450। लाभ% = (450 - 400)/400 x 100 = 12.5%।",
+  "concept": "Marked Price & Discount",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_profit_loss"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "profit-loss"
+ },
+ {
+  "stem": "What is the value of  (9)^2 + 15% of 220 + (10 x 9 - 7) + 24 / 3 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  (9)^2 + 220 का 15% + (10 x 9 - 7) + 24 / 3",
+  "options": [
+   {
+    "label": "A",
+    "text": "205"
+   },
+   {
+    "label": "B",
+    "text": "212"
+   },
+   {
+    "label": "C",
+    "text": "218"
+   },
+   {
+    "label": "D",
+    "text": "219"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "205"
+   },
+   {
+    "label": "B",
+    "text": "212"
+   },
+   {
+    "label": "C",
+    "text": "218"
+   },
+   {
+    "label": "D",
+    "text": "219"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "(9)^2 = 81; 15% of 220 = 33; bracket first: 10 x 9 - 7 = 83; 24 / 3 = 8. So 81 + 33 + 83 + 8 = 205.",
+  "solution_hi": "(9)^2 = 81; 220 का 15% = 33; पहले कोष्ठक: 10 x 9 - 7 = 83; 24 / 3 = 8। अतः 81 + 33 + 83 + 8 = 205।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "The average of 10 numbers was found to be 38. Later it was discovered that one number was read as 25 instead of 61. Find the correct average.",
+  "stem_hi": "10 संख्याओं का औसत 38 पाया गया। बाद में ज्ञात हुआ कि एक संख्या 61 के स्थान पर 25 पढ़ ली गई थी। सही औसत ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "46.22"
+   },
+   {
+    "label": "B",
+    "text": "74"
+   },
+   {
+    "label": "C",
+    "text": "34.4"
+   },
+   {
+    "label": "D",
+    "text": "41.6"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "46.22"
+   },
+   {
+    "label": "B",
+    "text": "74"
+   },
+   {
+    "label": "C",
+    "text": "34.4"
+   },
+   {
+    "label": "D",
+    "text": "41.6"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Correct total = 10 x 38 - 25 + 61 = 416. Correct average = 41.6.",
+  "solution_hi": "सही योग = 10 x 38 - 25 + 61 = 416। सही औसत = 41.6।",
+  "concept": "Averages",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_average"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "averages"
+ },
+ {
+  "stem": "An article is sold after two successive discounts of 25% and 10%. What single discount is equivalent to these two?",
+  "stem_hi": "एक वस्तु 25% तथा 10% की दो क्रमिक छूटों के बाद बेची जाती है। इन दोनों के तुल्य एकल छूट क्या होगी ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "32.5%"
+   },
+   {
+    "label": "B",
+    "text": "35%"
+   },
+   {
+    "label": "C",
+    "text": "33.75%"
+   },
+   {
+    "label": "D",
+    "text": "17.5%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "32.5%"
+   },
+   {
+    "label": "B",
+    "text": "35%"
+   },
+   {
+    "label": "C",
+    "text": "33.75%"
+   },
+   {
+    "label": "D",
+    "text": "17.5%"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Net factor = (100-25)/100 x (100-10)/100 = 27/40. Equivalent discount = 100 - 67.5 = 32.5%.",
+  "solution_hi": "शुद्ध गुणक = (100-25)/100 x (100-10)/100। तुल्य छूट = 100 - 67.5 = 32.5%।",
+  "concept": "Marked Price & Discount",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_profit_loss"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "profit-loss"
+ },
+ {
+  "stem": "A value decreases from 340 to 170. What is the percentage decrease?",
+  "stem_hi": "कोई मान 340 से घटकर 170 हो जाता है। प्रतिशत कमी क्या है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "55%"
+   },
+   {
+    "label": "B",
+    "text": "50%"
+   },
+   {
+    "label": "C",
+    "text": "100%"
+   },
+   {
+    "label": "D",
+    "text": "170%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "55%"
+   },
+   {
+    "label": "B",
+    "text": "50%"
+   },
+   {
+    "label": "C",
+    "text": "100%"
+   },
+   {
+    "label": "D",
+    "text": "170%"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Change = 170. Percentage decrease = 170/340 x 100 = 50%.",
+  "solution_hi": "परिवर्तन = 170। प्रतिशत कमी = 170/340 x 100 = 50%।",
+  "concept": "Percentage Change",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "The average weight of 14 boys is 40 kg and that of 14 girls is 67 kg. Find the average weight of the whole class.",
+  "stem_hi": "14 लड़कों का औसत भार 40 किग्रा तथा 14 लड़कियों का औसत भार 67 किग्रा है। पूरी कक्षा का औसत भार ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "48.15"
+   },
+   {
+    "label": "B",
+    "text": "53.5"
+   },
+   {
+    "label": "C",
+    "text": "749"
+   },
+   {
+    "label": "D",
+    "text": "58.85"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "48.15"
+   },
+   {
+    "label": "B",
+    "text": "53.5"
+   },
+   {
+    "label": "C",
+    "text": "749"
+   },
+   {
+    "label": "D",
+    "text": "58.85"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Total = 14 x 40 + 14 x 67 = 1498; count = 28; average = 53.5 kg.",
+  "solution_hi": "कुल = 14 x 40 + 14 x 67 = 1498; संख्या = 28; औसत = 53.5 किग्रा।",
+  "concept": "Averages",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_average"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "averages"
+ },
+ {
+  "stem": "What is the value of  (11)^2 + 20% of 80 - (13 x 8 - 8) - 66 / 6 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  (11)^2 + 80 का 20% - (13 x 8 - 8) - 66 / 6",
+  "options": [
+   {
+    "label": "A",
+    "text": "34"
+   },
+   {
+    "label": "B",
+    "text": "22"
+   },
+   {
+    "label": "C",
+    "text": "14"
+   },
+   {
+    "label": "D",
+    "text": "30"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "34"
+   },
+   {
+    "label": "B",
+    "text": "22"
+   },
+   {
+    "label": "C",
+    "text": "14"
+   },
+   {
+    "label": "D",
+    "text": "30"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "(11)^2 = 121; 20% of 80 = 16; bracket first: 13 x 8 - 8 = 96; 66 / 6 = 11. So 121 + 16 - 96 - 11 = 30.",
+  "solution_hi": "(11)^2 = 121; 80 का 20% = 16; पहले कोष्ठक: 13 x 8 - 8 = 96; 66 / 6 = 11। अतः 121 + 16 - 96 - 11 = 30।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "What is 25% of 40% of 600?",
+  "stem_hi": "600 के 40% का 25% कितना है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "60"
+   },
+   {
+    "label": "B",
+    "text": "390"
+   },
+   {
+    "label": "C",
+    "text": "240"
+   },
+   {
+    "label": "D",
+    "text": "6000"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "60"
+   },
+   {
+    "label": "B",
+    "text": "390"
+   },
+   {
+    "label": "C",
+    "text": "240"
+   },
+   {
+    "label": "D",
+    "text": "6000"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "40% of 600 = 240; 25% of that = 60.",
+  "solution_hi": "600 का 40% = 240; उसका 25% = 60।",
+  "concept": "Percentage of a Number",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "Two numbers are in the ratio 4 : 9. If 20 is added to each, the ratio becomes 1 : 2. Find the smaller number.",
+  "stem_hi": "दो संख्याएँ 4 : 9 के अनुपात में हैं। यदि प्रत्येक में 20 जोड़ दिया जाए, तो अनुपात 1 : 2 हो जाता है। छोटी संख्या ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "160"
+   },
+   {
+    "label": "B",
+    "text": "80"
+   },
+   {
+    "label": "C",
+    "text": "180"
+   },
+   {
+    "label": "D",
+    "text": "100"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "160"
+   },
+   {
+    "label": "B",
+    "text": "80"
+   },
+   {
+    "label": "C",
+    "text": "180"
+   },
+   {
+    "label": "D",
+    "text": "100"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Let the numbers be 4n and 9n. Then (4n + 20) : (9n + 20) = 1 : 2, giving n = 20. Smaller number = 4 x 20 = 80.",
+  "solution_hi": "माना संख्याएँ 4n तथा 9n हैं। तब (4n + 20) : (9n + 20) = 1 : 2, जिससे n = 20। छोटी संख्या = 4 x 20 = 80।",
+  "concept": "Ratio & Proportion",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_ratio"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "ratio"
+ },
+ {
+  "stem": "A value is first increased by 50% and the result is then decreased by 10%, leaving 2160. What was the original value?",
+  "stem_hi": "किसी मान में पहले 50% की वृद्धि की जाती है और फिर प्राप्त परिणाम में 10% की कमी की जाती है, जिससे 2160 बचता है। मूल मान क्या था?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1440"
+   },
+   {
+    "label": "B",
+    "text": "2400"
+   },
+   {
+    "label": "C",
+    "text": "1600"
+   },
+   {
+    "label": "D",
+    "text": "1542.86"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1440"
+   },
+   {
+    "label": "B",
+    "text": "2400"
+   },
+   {
+    "label": "C",
+    "text": "1600"
+   },
+   {
+    "label": "D",
+    "text": "1542.86"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Original = 2160 x 100/90 x 100/150 = 1600.",
+  "solution_hi": "मूल मान = 2160 x 100/90 x 100/150 = 1600।",
+  "concept": "Percentage Change",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "What is the value of  (12)^2 + (12 x 4 - 3) + 25% of 100 - 108 / 4 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  (12)^2 + (12 x 4 - 3) + 100 का 25% - 108 / 4",
+  "options": [
+   {
+    "label": "A",
+    "text": "241"
+   },
+   {
+    "label": "B",
+    "text": "187"
+   },
+   {
+    "label": "C",
+    "text": "190"
+   },
+   {
+    "label": "D",
+    "text": "193"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "241"
+   },
+   {
+    "label": "B",
+    "text": "187"
+   },
+   {
+    "label": "C",
+    "text": "190"
+   },
+   {
+    "label": "D",
+    "text": "193"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "(12)^2 = 144; bracket first: 12 x 4 - 3 = 45; 25% of 100 = 25; 108 / 4 = 27. So 144 + 45 + 25 - 27 = 187.",
+  "solution_hi": "(12)^2 = 144; पहले कोष्ठक: 12 x 4 - 3 = 45; 100 का 25% = 25; 108 / 4 = 27। अतः 144 + 45 + 25 - 27 = 187।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "What is 25% of 20% of 1800?",
+  "stem_hi": "1800 के 20% का 25% कितना है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "810"
+   },
+   {
+    "label": "B",
+    "text": "360"
+   },
+   {
+    "label": "C",
+    "text": "9000"
+   },
+   {
+    "label": "D",
+    "text": "90"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "810"
+   },
+   {
+    "label": "B",
+    "text": "360"
+   },
+   {
+    "label": "C",
+    "text": "9000"
+   },
+   {
+    "label": "D",
+    "text": "90"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "20% of 1800 = 360; 25% of that = 90.",
+  "solution_hi": "1800 का 20% = 360; उसका 25% = 90।",
+  "concept": "Percentage of a Number",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "The average of 15 numbers was found to be 31. Later it was discovered that one number was read as 23 instead of 63. Find the correct average.",
+  "stem_hi": "15 संख्याओं का औसत 31 पाया गया। बाद में ज्ञात हुआ कि एक संख्या 63 के स्थान पर 23 पढ़ ली गई थी। सही औसत ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "28.33"
+   },
+   {
+    "label": "B",
+    "text": "33.67"
+   },
+   {
+    "label": "C",
+    "text": "36.07"
+   },
+   {
+    "label": "D",
+    "text": "71"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "28.33"
+   },
+   {
+    "label": "B",
+    "text": "33.67"
+   },
+   {
+    "label": "C",
+    "text": "36.07"
+   },
+   {
+    "label": "D",
+    "text": "71"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Correct total = 15 x 31 - 23 + 63 = 505. Correct average = 33.67.",
+  "solution_hi": "सही योग = 15 x 31 - 23 + 63 = 505। सही औसत = 33.67।",
+  "concept": "Averages",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_average"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "averages"
+ },
+ {
+  "stem": "An article is sold after two successive discounts of 25% and 5%. What single discount is equivalent to these two?",
+  "stem_hi": "एक वस्तु 25% तथा 5% की दो क्रमिक छूटों के बाद बेची जाती है। इन दोनों के तुल्य एकल छूट क्या होगी ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "28.75%"
+   },
+   {
+    "label": "B",
+    "text": "30%"
+   },
+   {
+    "label": "C",
+    "text": "29.38%"
+   },
+   {
+    "label": "D",
+    "text": "15%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "28.75%"
+   },
+   {
+    "label": "B",
+    "text": "30%"
+   },
+   {
+    "label": "C",
+    "text": "29.38%"
+   },
+   {
+    "label": "D",
+    "text": "15%"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Net factor = (100-25)/100 x (100-5)/100 = 57/80. Equivalent discount = 100 - 71.25 = 28.75%.",
+  "solution_hi": "शुद्ध गुणक = (100-25)/100 x (100-5)/100। तुल्य छूट = 100 - 71.25 = 28.75%।",
+  "concept": "Marked Price & Discount",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_profit_loss"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "profit-loss"
+ },
+ {
+  "stem": "If A : B = 2 : 6 and B : C = 2 : 5, and Rs. 27,600 is divided among A, B and C in that ratio, find C's share.",
+  "stem_hi": "यदि A : B = 2 : 6 तथा B : C = 2 : 5 है, और रु. 27,600 की राशि A, B तथा C में उसी अनुपात में बाँटी जाती है, तो C का हिस्सा ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "Rs. 2,400"
+   },
+   {
+    "label": "B",
+    "text": "Rs. 9,200"
+   },
+   {
+    "label": "C",
+    "text": "Rs. 18,000"
+   },
+   {
+    "label": "D",
+    "text": "Rs. 10,615"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रु. 2,400"
+   },
+   {
+    "label": "B",
+    "text": "रु. 9,200"
+   },
+   {
+    "label": "C",
+    "text": "रु. 18,000"
+   },
+   {
+    "label": "D",
+    "text": "रु. 10,615"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "A : B : C = 2 : 6 : 15. One unit = 27600/23 = 1200. C's share = 15 x 1200 = Rs. 18,000.",
+  "solution_hi": "A : B : C = 2 : 6 : 15। एक इकाई = 27600/23 = 1200। C का हिस्सा = 15 x 1200 = रु. 18,000।",
+  "concept": "Ratio & Proportion",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_ratio"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "ratio"
+ },
+ {
+  "stem": "A sum of Rs. 10,000 earns Rs. 5,000 as simple interest in 5 years. Find the rate of interest per annum.",
+  "stem_hi": "रु. 10,000 की राशि पर 5 वर्षों में रु. 5,000 साधारण ब्याज मिलता है। वार्षिक ब्याज दर ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "1000%"
+   },
+   {
+    "label": "B",
+    "text": "10%"
+   },
+   {
+    "label": "C",
+    "text": "0.1%"
+   },
+   {
+    "label": "D",
+    "text": "50%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1000%"
+   },
+   {
+    "label": "B",
+    "text": "10%"
+   },
+   {
+    "label": "C",
+    "text": "0.1%"
+   },
+   {
+    "label": "D",
+    "text": "50%"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "R = SI x 100 / (P x T) = 5000 x 100 / (10000 x 5) = 10%.",
+  "solution_hi": "दर = ब्याज x 100 / (मूलधन x समय) = 5000 x 100 / (10000 x 5) = 10%।",
+  "concept": "Simple Interest",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_si"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "simple-interest"
+ },
+ {
+  "stem": "A sum of money amounts to Rs. 9,075 in 2 years at 10% per annum compound interest. Find the sum.",
+  "stem_hi": "कोई राशि 10% वार्षिक चक्रवृद्धि ब्याज की दर से 2 वर्षों में रु. 9,075 हो जाती है। वह राशि ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "Rs. 7,260"
+   },
+   {
+    "label": "B",
+    "text": "Rs. 8,250"
+   },
+   {
+    "label": "C",
+    "text": "Rs. 1,575"
+   },
+   {
+    "label": "D",
+    "text": "Rs. 7,500"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रु. 7,260"
+   },
+   {
+    "label": "B",
+    "text": "रु. 8,250"
+   },
+   {
+    "label": "C",
+    "text": "रु. 1,575"
+   },
+   {
+    "label": "D",
+    "text": "रु. 7,500"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "P = Amount / (1 + R/100)^2 = 9075 / (1 + 10/100)^2 = Rs. 7,500.",
+  "solution_hi": "मूलधन = मिश्रधन / (1 + दर/100)^2 = 9075 / (1 + 10/100)^2 = रु. 7,500।",
+  "concept": "Compound Interest",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_ci"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "compound-interest"
+ },
+ {
+  "stem": "Two numbers are in the ratio 2 : 4. If 40 is added to each, the ratio becomes 2 : 3. Find the smaller number.",
+  "stem_hi": "दो संख्याएँ 2 : 4 के अनुपात में हैं। यदि प्रत्येक में 40 जोड़ दिया जाए, तो अनुपात 2 : 3 हो जाता है। छोटी संख्या ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "40"
+   },
+   {
+    "label": "B",
+    "text": "80"
+   },
+   {
+    "label": "C",
+    "text": "120"
+   },
+   {
+    "label": "D",
+    "text": "44"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "40"
+   },
+   {
+    "label": "B",
+    "text": "80"
+   },
+   {
+    "label": "C",
+    "text": "120"
+   },
+   {
+    "label": "D",
+    "text": "44"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Let the numbers be 2n and 4n. Then (2n + 40) : (4n + 40) = 2 : 3, giving n = 20. Smaller number = 2 x 20 = 40.",
+  "solution_hi": "माना संख्याएँ 2n तथा 4n हैं। तब (2n + 40) : (4n + 40) = 2 : 3, जिससे n = 20। छोटी संख्या = 2 x 20 = 40।",
+  "concept": "Ratio & Proportion",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_ratio"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "ratio"
+ },
+ {
+  "stem": "A value is first increased by 20% and the result is then decreased by 25%, leaving 720. What was the original value?",
+  "stem_hi": "किसी मान में पहले 20% की वृद्धि की जाती है और फिर प्राप्त परिणाम में 25% की कमी की जाती है, जिससे 720 बचता है। मूल मान क्या था?",
+  "options": [
+   {
+    "label": "A",
+    "text": "757.89"
+   },
+   {
+    "label": "B",
+    "text": "600"
+   },
+   {
+    "label": "C",
+    "text": "960"
+   },
+   {
+    "label": "D",
+    "text": "800"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "757.89"
+   },
+   {
+    "label": "B",
+    "text": "600"
+   },
+   {
+    "label": "C",
+    "text": "960"
+   },
+   {
+    "label": "D",
+    "text": "800"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Original = 720 x 100/75 x 100/120 = 800.",
+  "solution_hi": "मूल मान = 720 x 100/75 x 100/120 = 800।",
+  "concept": "Percentage Change",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "What is 10% of 25% of 1600?",
+  "stem_hi": "1600 के 25% का 10% कितना है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "400"
+   },
+   {
+    "label": "B",
+    "text": "4000"
+   },
+   {
+    "label": "C",
+    "text": "40"
+   },
+   {
+    "label": "D",
+    "text": "560"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "400"
+   },
+   {
+    "label": "B",
+    "text": "4000"
+   },
+   {
+    "label": "C",
+    "text": "40"
+   },
+   {
+    "label": "D",
+    "text": "560"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "25% of 1600 = 400; 10% of that = 40.",
+  "solution_hi": "1600 का 25% = 400; उसका 10% = 40।",
+  "concept": "Percentage of a Number",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_percentage"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "percentage"
+ },
+ {
+  "stem": "What is the value of  (12)^2 + 40% of 120 - 32 / 4 ?",
+  "stem_hi": "निम्नलिखित का मान ज्ञात कीजिए:  (12)^2 + 120 का 40% - 32 / 4",
+  "options": [
+   {
+    "label": "A",
+    "text": "164"
+   },
+   {
+    "label": "B",
+    "text": "184"
+   },
+   {
+    "label": "C",
+    "text": "176"
+   },
+   {
+    "label": "D",
+    "text": "200"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "164"
+   },
+   {
+    "label": "B",
+    "text": "184"
+   },
+   {
+    "label": "C",
+    "text": "176"
+   },
+   {
+    "label": "D",
+    "text": "200"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "(12)^2 = 144; 40% of 120 = 48; 32 / 4 = 8. So 144 + 48 - 8 = 184.",
+  "solution_hi": "(12)^2 = 144; 120 का 40% = 48; 32 / 4 = 8। अतः 144 + 48 - 8 = 184।",
+  "concept": "Simplification (BODMAS)",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_simplify"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "bodmas"
+ },
+ {
+  "stem": "The average weight of 12 boys is 41 kg and that of 21 girls is 54 kg. Find the average weight of the whole class.",
+  "stem_hi": "12 लड़कों का औसत भार 41 किग्रा तथा 21 लड़कियों का औसत भार 54 किग्रा है। पूरी कक्षा का औसत भार ज्ञात कीजिए।",
+  "options": [
+   {
+    "label": "A",
+    "text": "49.27"
+   },
+   {
+    "label": "B",
+    "text": "47.5"
+   },
+   {
+    "label": "C",
+    "text": "45.73"
+   },
+   {
+    "label": "D",
+    "text": "813"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "49.27"
+   },
+   {
+    "label": "B",
+    "text": "47.5"
+   },
+   {
+    "label": "C",
+    "text": "45.73"
+   },
+   {
+    "label": "D",
+    "text": "813"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Total = 12 x 41 + 21 x 54 = 1626; count = 33; average = 49.27 kg.",
+  "solution_hi": "कुल = 12 x 41 + 21 x 54 = 1626; संख्या = 33; औसत = 49.27 किग्रा।",
+  "concept": "Averages",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_average"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 3
+  },
+  "_by": "averages"
+ },
+ {
+  "stem": "An article is sold after two successive discounts of 20% and 10%. What single discount is equivalent to these two?",
+  "stem_hi": "एक वस्तु 20% तथा 10% की दो क्रमिक छूटों के बाद बेची जाती है। इन दोनों के तुल्य एकल छूट क्या होगी ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "15%"
+   },
+   {
+    "label": "B",
+    "text": "28%"
+   },
+   {
+    "label": "C",
+    "text": "30%"
+   },
+   {
+    "label": "D",
+    "text": "29%"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "15%"
+   },
+   {
+    "label": "B",
+    "text": "28%"
+   },
+   {
+    "label": "C",
+    "text": "30%"
+   },
+   {
+    "label": "D",
+    "text": "29%"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Net factor = (100-20)/100 x (100-10)/100 = 18/25. Equivalent discount = 100 - 72 = 28%.",
+  "solution_hi": "शुद्ध गुणक = (100-20)/100 x (100-10)/100। तुल्य छूट = 100 - 72 = 28%।",
+  "concept": "Marked Price & Discount",
+  "source_pdf": "quantgen",
+  "number": null,
+  "src": [
+   "_b_profit_loss"
+  ],
+  "tag": {
+   "section": "Mathematics",
+   "difficulty": 4
+  },
+  "_by": "profit-loss"
+ }
+]

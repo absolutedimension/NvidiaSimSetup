@@ -1,0 +1,2834 @@
+[
+ {
+  "stem": "Which Article of the Constitution deals with Attorney-General for India?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद भारत का महान्यायवादी से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "80"
+   },
+   {
+    "label": "B",
+    "text": "72"
+   },
+   {
+    "label": "C",
+    "text": "76"
+   },
+   {
+    "label": "D",
+    "text": "79"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "80"
+   },
+   {
+    "label": "B",
+    "text": "72"
+   },
+   {
+    "label": "C",
+    "text": "76"
+   },
+   {
+    "label": "D",
+    "text": "79"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Attorney-General for India belongs to 76.",
+  "solution_hi": "भारत का महान्यायवादी — 76।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|76",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Consider the following statements:\n1. Article 22 of the Constitution deals with Composition of the Council of States.\n2. Article 243B of the Constitution deals with Constitution of Panchayats.\n3. The 74th Amendment gave constitutional status to Panchayati Raj institutions.\nWhich of the statements given above is/are correct?",
+  "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. संविधान का अनुच्छेद 22 राज्य सभा की संरचना से संबंधित है।\n2. संविधान का अनुच्छेद 243B पंचायतों का गठन से संबंधित है।\n3. 74वें संविधान संशोधन ने पंचायती राज संस्थाओं को संवैधानिक दर्जा दिया।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "3 only"
+   },
+   {
+    "label": "B",
+    "text": "2 only"
+   },
+   {
+    "label": "C",
+    "text": "1 and 2 only"
+   },
+   {
+    "label": "D",
+    "text": "1, 2 and 3"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "केवल 3"
+   },
+   {
+    "label": "B",
+    "text": "केवल 2"
+   },
+   {
+    "label": "C",
+    "text": "केवल 1 और 2"
+   },
+   {
+    "label": "D",
+    "text": "1, 2 और 3"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Statement-wise: 1 is incorrect; 2 is correct; 3 is incorrect. So 2 only.",
+  "solution_hi": "कथनानुसार: 1 गलत है; 2 सही है; 3 गलत है। अतः केवल 2।",
+  "concept": "Statement-based GS",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "multi",
+  "_by": "gs-multi-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Duration of State Legislatures?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद राज्य के विधान-मंडलों की अवधि से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "170"
+   },
+   {
+    "label": "B",
+    "text": "169"
+   },
+   {
+    "label": "C",
+    "text": "172"
+   },
+   {
+    "label": "D",
+    "text": "171"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "170"
+   },
+   {
+    "label": "B",
+    "text": "169"
+   },
+   {
+    "label": "C",
+    "text": "172"
+   },
+   {
+    "label": "D",
+    "text": "171"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Duration of State Legislatures belongs to 172.",
+  "solution_hi": "राज्य के विधान-मंडलों की अवधि — 172।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|172",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which one of the following statements is correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Article 243K of the Constitution deals with Constitution of Panchayats"
+   },
+   {
+    "label": "B",
+    "text": "The 44th Amendment introduced the Goods and Services Tax"
+   },
+   {
+    "label": "C",
+    "text": "Article 243G of the Constitution deals with Powers, authority and responsibilities of Panchayats"
+   },
+   {
+    "label": "D",
+    "text": "Article 172 of the Constitution deals with prohibition of discrimination on grounds of religion, race, caste, sex or place of birth"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "संविधान का अनुच्छेद 243K पंचायतों का गठन से संबंधित है"
+   },
+   {
+    "label": "B",
+    "text": "44वें संविधान संशोधन ने वस्तु एवं सेवा कर (GST) लागू किया"
+   },
+   {
+    "label": "C",
+    "text": "संविधान का अनुच्छेद 243G पंचायतों की शक्तियाँ, प्राधिकार और उत्तरदायित्व से संबंधित है"
+   },
+   {
+    "label": "D",
+    "text": "संविधान का अनुच्छेद 172 धर्म, मूलवंश, जाति, लिंग या जन्मस्थान के आधार पर विभेद के प्रतिषेध से संबंधित है"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Only 'Article 243G of the Constitution deals with Powers, authority and responsibilities of Panchayats' matches the verified record; the other three pair a subject with a value belonging to a different entry.",
+  "solution_hi": "केवल 'संविधान का अनुच्छेद 243G पंचायतों की शक्तियाँ, प्राधिकार और उत्तरदायित्व से संबंधित है' सही है; शेष तीन कथनों में मान किसी अन्य प्रविष्टि का है।",
+  "concept": "Single Correct Statement",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "which",
+  "_by": "gs-which-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Facilities for instruction in mother-tongue at primary stage?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद प्राथमिक स्तर पर मातृभाषा में शिक्षा की सुविधाएँ से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "350A"
+   },
+   {
+    "label": "B",
+    "text": "350B"
+   },
+   {
+    "label": "C",
+    "text": "351"
+   },
+   {
+    "label": "D",
+    "text": "352"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "350A"
+   },
+   {
+    "label": "B",
+    "text": "350B"
+   },
+   {
+    "label": "C",
+    "text": "351"
+   },
+   {
+    "label": "D",
+    "text": "352"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Facilities for instruction in mother-tongue at primary stage belongs to 350A.",
+  "solution_hi": "प्राथमिक स्तर पर मातृभाषा में शिक्षा की सुविधाएँ — 350A।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|350A",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Constitution of Panchayats?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद पंचायतों का गठन से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243B"
+   },
+   {
+    "label": "B",
+    "text": "243C"
+   },
+   {
+    "label": "C",
+    "text": "243D"
+   },
+   {
+    "label": "D",
+    "text": "243E"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243B"
+   },
+   {
+    "label": "B",
+    "text": "243C"
+   },
+   {
+    "label": "C",
+    "text": "243D"
+   },
+   {
+    "label": "D",
+    "text": "243E"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Constitution of Panchayats belongs to 243B.",
+  "solution_hi": "पंचायतों का गठन — 243B।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243B",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "panchayat",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Levy and collection of goods and services tax in course of inter-State trade or commerce?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद अंतर्राज्यिक व्यापार के दौरान माल और सेवा कर का उद्ग्रहण और संग्रहण से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "267"
+   },
+   {
+    "label": "B",
+    "text": "266"
+   },
+   {
+    "label": "C",
+    "text": "265"
+   },
+   {
+    "label": "D",
+    "text": "269A"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "267"
+   },
+   {
+    "label": "B",
+    "text": "266"
+   },
+   {
+    "label": "C",
+    "text": "265"
+   },
+   {
+    "label": "D",
+    "text": "269A"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Levy and collection of goods and services tax in course of inter-State trade or commerce belongs to 269A.",
+  "solution_hi": "अंतर्राज्यिक व्यापार के दौरान माल और सेवा कर का उद्ग्रहण और संग्रहण — 269A।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|269A",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Consider the following statements:\n1. Article 63 of the Constitution deals with The Vice-President of India.\n2. The 101st Amendment introduced the Goods and Services Tax.\n3. Article 243Q of the Constitution deals with Constitution of Municipalities.\nWhich of the statements given above is/are correct?",
+  "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. संविधान का अनुच्छेद 63 भारत का उपराष्ट्रपति से संबंधित है।\n2. 101वें संविधान संशोधन ने वस्तु एवं सेवा कर (GST) लागू किया।\n3. संविधान का अनुच्छेद 243Q नगरपालिकाओं का गठन से संबंधित है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "2 only"
+   },
+   {
+    "label": "B",
+    "text": "1 and 3 only"
+   },
+   {
+    "label": "C",
+    "text": "1 and 2 only"
+   },
+   {
+    "label": "D",
+    "text": "1, 2 and 3"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "केवल 2"
+   },
+   {
+    "label": "B",
+    "text": "केवल 1 और 3"
+   },
+   {
+    "label": "C",
+    "text": "केवल 1 और 2"
+   },
+   {
+    "label": "D",
+    "text": "1, 2 और 3"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Statement-wise: 1 is correct; 2 is correct; 3 is correct. So 1, 2 and 3.",
+  "solution_hi": "कथनानुसार: 1 सही है; 2 सही है; 3 सही है। अतः 1, 2 और 3।",
+  "concept": "Statement-based GS",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "multi",
+  "_by": "gs-multi-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with National Commission for Scheduled Tribes?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद राष्ट्रीय अनुसूचित जनजाति आयोग से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "338A"
+   },
+   {
+    "label": "B",
+    "text": "338B"
+   },
+   {
+    "label": "C",
+    "text": "338"
+   },
+   {
+    "label": "D",
+    "text": "335"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "338A"
+   },
+   {
+    "label": "B",
+    "text": "338B"
+   },
+   {
+    "label": "C",
+    "text": "338"
+   },
+   {
+    "label": "D",
+    "text": "335"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "National Commission for Scheduled Tribes belongs to 338A.",
+  "solution_hi": "राष्ट्रीय अनुसूचित जनजाति आयोग — 338A।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|338A",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Study the following statements:\n1. Article 76 of the Constitution deals with Claims of Scheduled Castes and Scheduled Tribes to services and posts.\n2. The 73rd Amendment lowered the voting age from 21 to 18.\n3. Article 243G of the Constitution deals with Duration of Panchayats, etc.\nHow many of the above statements are correct?",
+  "stem_hi": "निम्नलिखित कथनों का अध्ययन कीजिए:\n1. संविधान का अनुच्छेद 76 सेवाओं और पदों के लिए अनुसूचित जातियों और अनुसूचित जनजातियों के दावे से संबंधित है।\n2. 73वें संविधान संशोधन ने मतदान की आयु 21 से घटाकर 18 वर्ष की।\n3. संविधान का अनुच्छेद 243G पंचायतों की अवधि से संबंधित है।\nउपर्युक्त कथनों में से कितने सही हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "None of them"
+   },
+   {
+    "label": "B",
+    "text": "Only one"
+   },
+   {
+    "label": "C",
+    "text": "Only two"
+   },
+   {
+    "label": "D",
+    "text": "All three"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "इनमें से कोई नहीं"
+   },
+   {
+    "label": "B",
+    "text": "केवल एक"
+   },
+   {
+    "label": "C",
+    "text": "केवल दो"
+   },
+   {
+    "label": "D",
+    "text": "तीनों"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "1 is incorrect; 2 is incorrect; 3 is incorrect. That is none of them.",
+  "solution_hi": "1 गलत है; 2 गलत है; 3 गलत है। अतः इनमें से कोई नहीं।",
+  "concept": "Count the Correct Statements",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "count",
+  "_by": "gs-count-statements"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Official language or languages of a State?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद राज्य की राजभाषा या राजभाषाएँ से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "351"
+   },
+   {
+    "label": "B",
+    "text": "345"
+   },
+   {
+    "label": "C",
+    "text": "343"
+   },
+   {
+    "label": "D",
+    "text": "348"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "351"
+   },
+   {
+    "label": "B",
+    "text": "345"
+   },
+   {
+    "label": "C",
+    "text": "343"
+   },
+   {
+    "label": "D",
+    "text": "348"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Official language or languages of a State belongs to 345.",
+  "solution_hi": "राज्य की राजभाषा या राजभाषाएँ — 345।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|345",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Study the following statements:\n1. Article 368 of the Constitution deals with the power of Parliament to amend the Constitution.\n2. Article 243K of the Constitution deals with Elections to the Panchayats.\n3. The 61st Amendment gave constitutional status to Panchayati Raj institutions.\nHow many of the above statements are correct?",
+  "stem_hi": "निम्नलिखित कथनों का अध्ययन कीजिए:\n1. संविधान का अनुच्छेद 368 संविधान में संशोधन करने की संसद की शक्ति से संबंधित है।\n2. संविधान का अनुच्छेद 243K पंचायतों के लिए निर्वाचन से संबंधित है।\n3. 61वें संविधान संशोधन ने पंचायती राज संस्थाओं को संवैधानिक दर्जा दिया।\nउपर्युक्त कथनों में से कितने सही हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Only two"
+   },
+   {
+    "label": "B",
+    "text": "None of them"
+   },
+   {
+    "label": "C",
+    "text": "Only one"
+   },
+   {
+    "label": "D",
+    "text": "All three"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "केवल दो"
+   },
+   {
+    "label": "B",
+    "text": "इनमें से कोई नहीं"
+   },
+   {
+    "label": "C",
+    "text": "केवल एक"
+   },
+   {
+    "label": "D",
+    "text": "तीनों"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "1 is correct; 2 is correct; 3 is incorrect. That is only two.",
+  "solution_hi": "1 सही है; 2 सही है; 3 गलत है। अतः केवल दो।",
+  "concept": "Count the Correct Statements",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "count",
+  "_by": "gs-count-statements"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Power of the President to consult the Supreme Court?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद उच्चतम न्यायालय से परामर्श करने की राष्ट्रपति की शक्ति से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "148"
+   },
+   {
+    "label": "B",
+    "text": "154"
+   },
+   {
+    "label": "C",
+    "text": "155"
+   },
+   {
+    "label": "D",
+    "text": "143"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "148"
+   },
+   {
+    "label": "B",
+    "text": "154"
+   },
+   {
+    "label": "C",
+    "text": "155"
+   },
+   {
+    "label": "D",
+    "text": "143"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Power of the President to consult the Supreme Court belongs to 143.",
+  "solution_hi": "उच्चतम न्यायालय से परामर्श करने की राष्ट्रपति की शक्ति — 143।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|143",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which one of the following statements is correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Article 371A of the Constitution deals with Term of office of Governor"
+   },
+   {
+    "label": "B",
+    "text": "Article 243Q of the Constitution deals with Duration of Panchayats, etc"
+   },
+   {
+    "label": "C",
+    "text": "Article 356 of the Constitution deals with President's Rule in a State"
+   },
+   {
+    "label": "D",
+    "text": "The 101st Amendment removed the right to property from the Fundamental Rights"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "संविधान का अनुच्छेद 371A राज्यपाल की पदावधि से संबंधित है"
+   },
+   {
+    "label": "B",
+    "text": "संविधान का अनुच्छेद 243Q पंचायतों की अवधि से संबंधित है"
+   },
+   {
+    "label": "C",
+    "text": "संविधान का अनुच्छेद 356 किसी राज्य में राष्ट्रपति शासन से संबंधित है"
+   },
+   {
+    "label": "D",
+    "text": "101वें संविधान संशोधन ने संपत्ति के अधिकार को मौलिक अधिकारों से हटाया"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Only 'Article 356 of the Constitution deals with President's Rule in a State' matches the verified record; the other three pair a subject with a value belonging to a different entry.",
+  "solution_hi": "केवल 'संविधान का अनुच्छेद 356 किसी राज्य में राष्ट्रपति शासन से संबंधित है' सही है; शेष तीन कथनों में मान किसी अन्य प्रविष्टि का है।",
+  "concept": "Single Correct Statement",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "which",
+  "_by": "gs-which-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Protection against arrest and detention in certain cases?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद कुछ दशाओं में गिरफ्तारी और निरोध से संरक्षण से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "22"
+   },
+   {
+    "label": "B",
+    "text": "21"
+   },
+   {
+    "label": "C",
+    "text": "23"
+   },
+   {
+    "label": "D",
+    "text": "24"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "22"
+   },
+   {
+    "label": "B",
+    "text": "21"
+   },
+   {
+    "label": "C",
+    "text": "23"
+   },
+   {
+    "label": "D",
+    "text": "24"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Protection against arrest and detention in certain cases belongs to 22.",
+  "solution_hi": "कुछ दशाओं में गिरफ्तारी और निरोध से संरक्षण — 22।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|22",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Duration of Panchayats, etc?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद पंचायतों की अवधि से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243G"
+   },
+   {
+    "label": "B",
+    "text": "243C"
+   },
+   {
+    "label": "C",
+    "text": "243E"
+   },
+   {
+    "label": "D",
+    "text": "243D"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243G"
+   },
+   {
+    "label": "B",
+    "text": "243C"
+   },
+   {
+    "label": "C",
+    "text": "243E"
+   },
+   {
+    "label": "D",
+    "text": "243D"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Duration of Panchayats, etc belongs to 243E.",
+  "solution_hi": "पंचायतों की अवधि — 243E।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243E",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "panchayat",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Right to work, to education and to public assistance in certain cases?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद कुछ दशाओं में काम, शिक्षा और लोक सहायता पाने का अधिकार से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "44"
+   },
+   {
+    "label": "B",
+    "text": "41"
+   },
+   {
+    "label": "C",
+    "text": "40"
+   },
+   {
+    "label": "D",
+    "text": "38"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "44"
+   },
+   {
+    "label": "B",
+    "text": "41"
+   },
+   {
+    "label": "C",
+    "text": "40"
+   },
+   {
+    "label": "D",
+    "text": "38"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Right to work, to education and to public assistance in certain cases belongs to 41.",
+  "solution_hi": "कुछ दशाओं में काम, शिक्षा और लोक सहायता पाने का अधिकार — 41।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|41",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Consider the following statements:\n1. Article 243D of the Constitution deals with Constitution of Panchayats.\n2. Article 25 of the Constitution deals with freedom of conscience and free profession, practice and propagation of religion.\n3. The 73rd Amendment gave constitutional status to Panchayati Raj institutions.\nWhich of the statements given above is/are correct?",
+  "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. संविधान का अनुच्छेद 243D पंचायतों का गठन से संबंधित है।\n2. संविधान का अनुच्छेद 25 अंतःकरण की तथा धर्म को अबाध रूप से मानने, आचरण करने और प्रचार करने की स्वतंत्रता से संबंधित है।\n3. 73वें संविधान संशोधन ने पंचायती राज संस्थाओं को संवैधानिक दर्जा दिया।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "2 and 3 only"
+   },
+   {
+    "label": "B",
+    "text": "1 and 2 only"
+   },
+   {
+    "label": "C",
+    "text": "1 only"
+   },
+   {
+    "label": "D",
+    "text": "1 and 3 only"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "केवल 2 और 3"
+   },
+   {
+    "label": "B",
+    "text": "केवल 1 और 2"
+   },
+   {
+    "label": "C",
+    "text": "केवल 1"
+   },
+   {
+    "label": "D",
+    "text": "केवल 1 और 3"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Statement-wise: 1 is incorrect; 2 is correct; 3 is correct. So 2 and 3 only.",
+  "solution_hi": "कथनानुसार: 1 गलत है; 2 सही है; 3 सही है। अतः केवल 2 और 3।",
+  "concept": "Statement-based GS",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "multi",
+  "_by": "gs-multi-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Seat of Supreme Court?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद उच्चतम न्यायालय का स्थान से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "129"
+   },
+   {
+    "label": "B",
+    "text": "124"
+   },
+   {
+    "label": "C",
+    "text": "124A"
+   },
+   {
+    "label": "D",
+    "text": "130"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "129"
+   },
+   {
+    "label": "B",
+    "text": "124"
+   },
+   {
+    "label": "C",
+    "text": "124A"
+   },
+   {
+    "label": "D",
+    "text": "130"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Seat of Supreme Court belongs to 130.",
+  "solution_hi": "उच्चतम न्यायालय का स्थान — 130।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|130",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which one of the following statements is NOT correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Article 50 of the Constitution deals with separation of the judiciary from the executive."
+   },
+   {
+    "label": "B",
+    "text": "Article 335 of the Constitution deals with Claims of Scheduled Castes and Scheduled Tribes to services and posts."
+   },
+   {
+    "label": "C",
+    "text": "Article 143 of the Constitution deals with the right to constitutional remedies."
+   },
+   {
+    "label": "D",
+    "text": "Article 29 of the Constitution deals with Protection of interests of minorities."
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "संविधान का अनुच्छेद 50 कार्यपालिका से न्यायपालिका के पृथक्करण से संबंधित है।"
+   },
+   {
+    "label": "B",
+    "text": "संविधान का अनुच्छेद 335 सेवाओं और पदों के लिए अनुसूचित जातियों और अनुसूचित जनजातियों के दावे से संबंधित है।"
+   },
+   {
+    "label": "C",
+    "text": "संविधान का अनुच्छेद 143 संवैधानिक उपचारों के अधिकार से संबंधित है।"
+   },
+   {
+    "label": "D",
+    "text": "संविधान का अनुच्छेद 29 अल्पसंख्यक-वर्गों के हितों का संरक्षण से संबंधित है।"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "'Article 143 of the Constitution deals with the right to constitutional remedies.' is false; the correct value for 143 is Power of the President to consult the Supreme Court.",
+  "solution_hi": "'संविधान का अनुच्छेद 143 संवैधानिक उपचारों के अधिकार से संबंधित है।' गलत है; 143 का सही मान उच्चतम न्यायालय से परामर्श करने की राष्ट्रपति की शक्ति है।",
+  "concept": "Incorrect Statement",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|neg|143",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "incorrect",
+  "_by": "gs-incorrect-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Special Officer for linguistic minorities?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद भाषाई अल्पसंख्यक-वर्गों के लिए विशेष अधिकारी से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "352"
+   },
+   {
+    "label": "B",
+    "text": "350B"
+   },
+   {
+    "label": "C",
+    "text": "350A"
+   },
+   {
+    "label": "D",
+    "text": "351"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "352"
+   },
+   {
+    "label": "B",
+    "text": "350B"
+   },
+   {
+    "label": "C",
+    "text": "350A"
+   },
+   {
+    "label": "D",
+    "text": "351"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Special Officer for linguistic minorities belongs to 350B.",
+  "solution_hi": "भाषाई अल्पसंख्यक-वर्गों के लिए विशेष अधिकारी — 350B।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|350B",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Study the following statements:\n1. Article 243G of the Constitution deals with Powers, authority and responsibilities of Panchayats.\n2. The 44th Amendment removed the right to property from the Fundamental Rights.\n3. Article 24 of the Constitution deals with prohibition of employment of children in factories.\nHow many of the above statements are correct?",
+  "stem_hi": "निम्नलिखित कथनों का अध्ययन कीजिए:\n1. संविधान का अनुच्छेद 243G पंचायतों की शक्तियाँ, प्राधिकार और उत्तरदायित्व से संबंधित है।\n2. 44वें संविधान संशोधन ने संपत्ति के अधिकार को मौलिक अधिकारों से हटाया।\n3. संविधान का अनुच्छेद 24 कारखानों में बालकों के नियोजन के प्रतिषेध से संबंधित है।\nउपर्युक्त कथनों में से कितने सही हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "All three"
+   },
+   {
+    "label": "B",
+    "text": "None of them"
+   },
+   {
+    "label": "C",
+    "text": "Only one"
+   },
+   {
+    "label": "D",
+    "text": "Only two"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "तीनों"
+   },
+   {
+    "label": "B",
+    "text": "इनमें से कोई नहीं"
+   },
+   {
+    "label": "C",
+    "text": "केवल एक"
+   },
+   {
+    "label": "D",
+    "text": "केवल दो"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "1 is correct; 2 is correct; 3 is correct. That is all three.",
+  "solution_hi": "1 सही है; 2 सही है; 3 सही है। अतः तीनों।",
+  "concept": "Count the Correct Statements",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "count",
+  "_by": "gs-count-statements"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Special provision with respect to the State of Nagaland?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद नागालैंड राज्य के संबंध में विशेष उपबंध से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "371A"
+   },
+   {
+    "label": "B",
+    "text": "370"
+   },
+   {
+    "label": "C",
+    "text": "368"
+   },
+   {
+    "label": "D",
+    "text": "360"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "371A"
+   },
+   {
+    "label": "B",
+    "text": "370"
+   },
+   {
+    "label": "C",
+    "text": "368"
+   },
+   {
+    "label": "D",
+    "text": "360"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Special provision with respect to the State of Nagaland belongs to 371A.",
+  "solution_hi": "नागालैंड राज्य के संबंध में विशेष उपबंध — 371A।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|371A",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Consider the following statements:\n1. Article 243Q of the Constitution deals with Constitution of Municipalities.\n2. Article 25 of the Constitution deals with freedom of conscience and free profession, practice and propagation of religion.\n3. The 74th Amendment gave constitutional status to urban local bodies.\nWhich of the statements given above is/are correct?",
+  "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. संविधान का अनुच्छेद 243Q नगरपालिकाओं का गठन से संबंधित है।\n2. संविधान का अनुच्छेद 25 अंतःकरण की तथा धर्म को अबाध रूप से मानने, आचरण करने और प्रचार करने की स्वतंत्रता से संबंधित है।\n3. 74वें संविधान संशोधन ने शहरी स्थानीय निकायों को संवैधानिक दर्जा दिया।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1, 2 and 3"
+   },
+   {
+    "label": "B",
+    "text": "1 and 2 only"
+   },
+   {
+    "label": "C",
+    "text": "1 only"
+   },
+   {
+    "label": "D",
+    "text": "2 only"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1, 2 और 3"
+   },
+   {
+    "label": "B",
+    "text": "केवल 1 और 2"
+   },
+   {
+    "label": "C",
+    "text": "केवल 1"
+   },
+   {
+    "label": "D",
+    "text": "केवल 2"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Statement-wise: 1 is correct; 2 is correct; 3 is correct. So 1, 2 and 3.",
+  "solution_hi": "कथनानुसार: 1 सही है; 2 सही है; 3 सही है। अतः 1, 2 और 3।",
+  "concept": "Statement-based GS",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "multi",
+  "_by": "gs-multi-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with State to secure a social order for the promotion of welfare of the people?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद राज्य द्वारा लोक कल्याण की अभिवृद्धि के लिए सामाजिक व्यवस्था बनाना से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "38"
+   },
+   {
+    "label": "B",
+    "text": "40"
+   },
+   {
+    "label": "C",
+    "text": "41"
+   },
+   {
+    "label": "D",
+    "text": "44"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "38"
+   },
+   {
+    "label": "B",
+    "text": "40"
+   },
+   {
+    "label": "C",
+    "text": "41"
+   },
+   {
+    "label": "D",
+    "text": "44"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "State to secure a social order for the promotion of welfare of the people belongs to 38.",
+  "solution_hi": "राज्य द्वारा लोक कल्याण की अभिवृद्धि के लिए सामाजिक व्यवस्था बनाना — 38।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|38",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Elections to the Panchayats?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद पंचायतों के लिए निर्वाचन से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243K"
+   },
+   {
+    "label": "B",
+    "text": "243G"
+   },
+   {
+    "label": "C",
+    "text": "243Q"
+   },
+   {
+    "label": "D",
+    "text": "243E"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243K"
+   },
+   {
+    "label": "B",
+    "text": "243G"
+   },
+   {
+    "label": "C",
+    "text": "243Q"
+   },
+   {
+    "label": "D",
+    "text": "243E"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Elections to the Panchayats belongs to 243K.",
+  "solution_hi": "पंचायतों के लिए निर्वाचन — 243K।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243K",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "panchayat",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Temporary provisions with respect to the State of Jammu and Kashmir?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद जम्मू-कश्मीर राज्य के संबंध में अस्थायी उपबंध से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "371A"
+   },
+   {
+    "label": "B",
+    "text": "360"
+   },
+   {
+    "label": "C",
+    "text": "370"
+   },
+   {
+    "label": "D",
+    "text": "368"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "371A"
+   },
+   {
+    "label": "B",
+    "text": "360"
+   },
+   {
+    "label": "C",
+    "text": "370"
+   },
+   {
+    "label": "D",
+    "text": "368"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Temporary provisions with respect to the State of Jammu and Kashmir belongs to 370.",
+  "solution_hi": "जम्मू-कश्मीर राज्य के संबंध में अस्थायी उपबंध — 370।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|370",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which one of the following statements is correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Article 29 of the Constitution deals with free and compulsory education for children aged 6 to 14"
+   },
+   {
+    "label": "B",
+    "text": "The 73rd Amendment made education a fundamental right for children aged 6 to 14"
+   },
+   {
+    "label": "C",
+    "text": "Article 243K of the Constitution deals with Composition of Panchayats"
+   },
+   {
+    "label": "D",
+    "text": "The 42nd Amendment added the words Socialist, Secular and Integrity to the Preamble"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "संविधान का अनुच्छेद 29 6 से 14 वर्ष के बच्चों की नि:शुल्क एवं अनिवार्य शिक्षा से संबंधित है"
+   },
+   {
+    "label": "B",
+    "text": "73वें संविधान संशोधन ने 6 से 14 वर्ष के बच्चों के लिए शिक्षा को मौलिक अधिकार बनाया"
+   },
+   {
+    "label": "C",
+    "text": "संविधान का अनुच्छेद 243K पंचायतों की संरचना से संबंधित है"
+   },
+   {
+    "label": "D",
+    "text": "42वें संविधान संशोधन ने प्रस्तावना में समाजवादी, पंथनिरपेक्ष तथा अखंडता शब्द जोड़े"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Only 'The 42nd Amendment added the words Socialist, Secular and Integrity to the Preamble' matches the verified record; the other three pair a subject with a value belonging to a different entry.",
+  "solution_hi": "केवल '42वें संविधान संशोधन ने प्रस्तावना में समाजवादी, पंथनिरपेक्ष तथा अखंडता शब्द जोड़े' सही है; शेष तीन कथनों में मान किसी अन्य प्रविष्टि का है।",
+  "concept": "Single Correct Statement",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "which",
+  "_by": "gs-which-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Term of office of President?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद राष्ट्रपति की पदावधि से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "54"
+   },
+   {
+    "label": "B",
+    "text": "52"
+   },
+   {
+    "label": "C",
+    "text": "56"
+   },
+   {
+    "label": "D",
+    "text": "58"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "54"
+   },
+   {
+    "label": "B",
+    "text": "52"
+   },
+   {
+    "label": "C",
+    "text": "56"
+   },
+   {
+    "label": "D",
+    "text": "58"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Term of office of President belongs to 56.",
+  "solution_hi": "राष्ट्रपति की पदावधि — 56।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|56",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which one of the following statements is NOT correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Article 39A of the Constitution deals with National Judicial Appointments Commission."
+   },
+   {
+    "label": "B",
+    "text": "Article 267 of the Constitution deals with Contingency Fund."
+   },
+   {
+    "label": "C",
+    "text": "Article 317 of the Constitution deals with Removal and suspension of a member of a Public Service Commission."
+   },
+   {
+    "label": "D",
+    "text": "Article 43B of the Constitution deals with Promotion of co-operative societies."
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "संविधान का अनुच्छेद 39A राष्ट्रीय न्यायिक नियुक्ति आयोग से संबंधित है।"
+   },
+   {
+    "label": "B",
+    "text": "संविधान का अनुच्छेद 267 आकस्मिकता निधि से संबंधित है।"
+   },
+   {
+    "label": "C",
+    "text": "संविधान का अनुच्छेद 317 लोक सेवा आयोग के सदस्य का हटाया जाना और निलंबन से संबंधित है।"
+   },
+   {
+    "label": "D",
+    "text": "संविधान का अनुच्छेद 43B सहकारी समितियों का संवर्धन से संबंधित है।"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "'Article 39A of the Constitution deals with National Judicial Appointments Commission.' is false; the correct value for 39A is Equal justice and free legal aid.",
+  "solution_hi": "'संविधान का अनुच्छेद 39A राष्ट्रीय न्यायिक नियुक्ति आयोग से संबंधित है।' गलत है; 39A का सही मान समान न्याय और निःशुल्क विधिक सहायता है।",
+  "concept": "Incorrect Statement",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|neg|39A",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "incorrect",
+  "_by": "gs-incorrect-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with a joint sitting of both Houses in certain cases?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद कुछ दशाओं में दोनों सदनों की संयुक्त बैठक से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "93"
+   },
+   {
+    "label": "B",
+    "text": "108"
+   },
+   {
+    "label": "C",
+    "text": "110"
+   },
+   {
+    "label": "D",
+    "text": "112"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "93"
+   },
+   {
+    "label": "B",
+    "text": "108"
+   },
+   {
+    "label": "C",
+    "text": "110"
+   },
+   {
+    "label": "D",
+    "text": "112"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "a joint sitting of both Houses in certain cases belongs to 108.",
+  "solution_hi": "कुछ दशाओं में दोनों सदनों की संयुक्त बैठक — 108।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|108",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which one of the following statements is correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The 101st Amendment introduced the Goods and Services Tax"
+   },
+   {
+    "label": "B",
+    "text": "Article 243G of the Constitution deals with Constitution of Panchayats"
+   },
+   {
+    "label": "C",
+    "text": "Article 243C of the Constitution deals with Constitution of Municipalities"
+   },
+   {
+    "label": "D",
+    "text": "Article 81 of the Constitution deals with National Judicial Appointments Commission"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "101वें संविधान संशोधन ने वस्तु एवं सेवा कर (GST) लागू किया"
+   },
+   {
+    "label": "B",
+    "text": "संविधान का अनुच्छेद 243G पंचायतों का गठन से संबंधित है"
+   },
+   {
+    "label": "C",
+    "text": "संविधान का अनुच्छेद 243C नगरपालिकाओं का गठन से संबंधित है"
+   },
+   {
+    "label": "D",
+    "text": "संविधान का अनुच्छेद 81 राष्ट्रीय न्यायिक नियुक्ति आयोग से संबंधित है"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Only 'The 101st Amendment introduced the Goods and Services Tax' matches the verified record; the other three pair a subject with a value belonging to a different entry.",
+  "solution_hi": "केवल '101वें संविधान संशोधन ने वस्तु एवं सेवा कर (GST) लागू किया' सही है; शेष तीन कथनों में मान किसी अन्य प्रविष्टि का है।",
+  "concept": "Single Correct Statement",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "which",
+  "_by": "gs-which-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with free and compulsory education for children aged 6 to 14?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद 6 से 14 वर्ष के बच्चों की नि:शुल्क एवं अनिवार्य शिक्षा से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "20"
+   },
+   {
+    "label": "B",
+    "text": "22"
+   },
+   {
+    "label": "C",
+    "text": "21A"
+   },
+   {
+    "label": "D",
+    "text": "21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "20"
+   },
+   {
+    "label": "B",
+    "text": "22"
+   },
+   {
+    "label": "C",
+    "text": "21A"
+   },
+   {
+    "label": "D",
+    "text": "21"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "free and compulsory education for children aged 6 to 14 belongs to 21A.",
+  "solution_hi": "6 से 14 वर्ष के बच्चों की नि:शुल्क एवं अनिवार्य शिक्षा — 21A।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|21A",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which one of the following statements is NOT correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The 42nd Amendment added the words Socialist, Secular and Integrity to the Preamble."
+   },
+   {
+    "label": "B",
+    "text": "The 73rd Amendment gave constitutional status to Panchayati Raj institutions."
+   },
+   {
+    "label": "C",
+    "text": "The 52nd Amendment lowered the voting age from 21 to 18."
+   },
+   {
+    "label": "D",
+    "text": "The 61st Amendment lowered the voting age from 21 to 18."
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "42वें संविधान संशोधन ने प्रस्तावना में समाजवादी, पंथनिरपेक्ष तथा अखंडता शब्द जोड़े।"
+   },
+   {
+    "label": "B",
+    "text": "73वें संविधान संशोधन ने पंचायती राज संस्थाओं को संवैधानिक दर्जा दिया।"
+   },
+   {
+    "label": "C",
+    "text": "52वें संविधान संशोधन ने मतदान की आयु 21 से घटाकर 18 वर्ष की।"
+   },
+   {
+    "label": "D",
+    "text": "61वें संविधान संशोधन ने मतदान की आयु 21 से घटाकर 18 वर्ष की।"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "'The 52nd Amendment lowered the voting age from 21 to 18.' is false; the correct value for 52nd is added the Tenth Schedule on defection.",
+  "solution_hi": "'52वें संविधान संशोधन ने मतदान की आयु 21 से घटाकर 18 वर्ष की।' गलत है; 52वें का सही मान दलबदल से संबंधित दसवीं अनुसूची जोड़ी है।",
+  "concept": "Incorrect Statement",
+  "src": [
+   "AMENDMENT_DID"
+  ],
+  "fact": "AMENDMENT_DID|neg|52nd",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "incorrect",
+  "_by": "gs-incorrect-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with freedom of conscience and free profession, practice and propagation of religion?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद अंतःकरण की तथा धर्म को अबाध रूप से मानने, आचरण करने और प्रचार करने की स्वतंत्रता से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "25"
+   },
+   {
+    "label": "B",
+    "text": "26"
+   },
+   {
+    "label": "C",
+    "text": "24"
+   },
+   {
+    "label": "D",
+    "text": "23"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "25"
+   },
+   {
+    "label": "B",
+    "text": "26"
+   },
+   {
+    "label": "C",
+    "text": "24"
+   },
+   {
+    "label": "D",
+    "text": "23"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "freedom of conscience and free profession, practice and propagation of religion belongs to 25.",
+  "solution_hi": "अंतःकरण की तथा धर्म को अबाध रूप से मानने, आचरण करने और प्रचार करने की स्वतंत्रता — 25।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|25",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Powers, authority and responsibilities of Municipalities, etc?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद नगरपालिकाओं की शक्तियाँ, प्राधिकार और उत्तरदायित्व से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243W"
+   },
+   {
+    "label": "B",
+    "text": "243Q"
+   },
+   {
+    "label": "C",
+    "text": "243K"
+   },
+   {
+    "label": "D",
+    "text": "243G"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243W"
+   },
+   {
+    "label": "B",
+    "text": "243Q"
+   },
+   {
+    "label": "C",
+    "text": "243K"
+   },
+   {
+    "label": "D",
+    "text": "243G"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Powers, authority and responsibilities of Municipalities, etc belongs to 243W.",
+  "solution_hi": "नगरपालिकाओं की शक्तियाँ, प्राधिकार और उत्तरदायित्व — 243W।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243W",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "panchayat",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with protection of life and personal liberty?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद प्राण एवं दैहिक स्वतंत्रता के संरक्षण से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "21"
+   },
+   {
+    "label": "B",
+    "text": "20"
+   },
+   {
+    "label": "C",
+    "text": "22"
+   },
+   {
+    "label": "D",
+    "text": "19"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "21"
+   },
+   {
+    "label": "B",
+    "text": "20"
+   },
+   {
+    "label": "C",
+    "text": "22"
+   },
+   {
+    "label": "D",
+    "text": "19"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "protection of life and personal liberty belongs to 21.",
+  "solution_hi": "प्राण एवं दैहिक स्वतंत्रता के संरक्षण — 21।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|21",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Study the following statements:\n1. The 52nd Amendment added the Tenth Schedule on defection.\n2. Article 243D of the Constitution deals with Constitution of Municipalities.\n3. Article 63 of the Constitution deals with Qualifications for election as President.\nHow many of the above statements are correct?",
+  "stem_hi": "निम्नलिखित कथनों का अध्ययन कीजिए:\n1. 52वें संविधान संशोधन ने दलबदल से संबंधित दसवीं अनुसूची जोड़ी।\n2. संविधान का अनुच्छेद 243D नगरपालिकाओं का गठन से संबंधित है।\n3. संविधान का अनुच्छेद 63 राष्ट्रपति के रूप में निर्वाचन के लिए अर्हताएँ से संबंधित है।\nउपर्युक्त कथनों में से कितने सही हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Only one"
+   },
+   {
+    "label": "B",
+    "text": "None of them"
+   },
+   {
+    "label": "C",
+    "text": "Only two"
+   },
+   {
+    "label": "D",
+    "text": "All three"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "केवल एक"
+   },
+   {
+    "label": "B",
+    "text": "इनमें से कोई नहीं"
+   },
+   {
+    "label": "C",
+    "text": "केवल दो"
+   },
+   {
+    "label": "D",
+    "text": "तीनों"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "1 is correct; 2 is incorrect; 3 is incorrect. That is only one.",
+  "solution_hi": "1 सही है; 2 गलत है; 3 गलत है। अतः केवल एक।",
+  "concept": "Count the Correct Statements",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "count",
+  "_by": "gs-count-statements"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with the Election Commission of India?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद भारत निर्वाचन आयोग से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "317"
+   },
+   {
+    "label": "B",
+    "text": "324"
+   },
+   {
+    "label": "C",
+    "text": "326"
+   },
+   {
+    "label": "D",
+    "text": "320"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "317"
+   },
+   {
+    "label": "B",
+    "text": "324"
+   },
+   {
+    "label": "C",
+    "text": "326"
+   },
+   {
+    "label": "D",
+    "text": "320"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "the Election Commission of India belongs to 324.",
+  "solution_hi": "भारत निर्वाचन आयोग — 324।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|324",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Consider the following statements:\n1. The 74th Amendment gave constitutional status to urban local bodies.\n2. Article 243D of the Constitution deals with Reservation of seats.\n3. Article 76 of the Constitution deals with Protection against arrest and detention in certain cases.\nWhich of the statements given above is/are correct?",
+  "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. 74वें संविधान संशोधन ने शहरी स्थानीय निकायों को संवैधानिक दर्जा दिया।\n2. संविधान का अनुच्छेद 243D स्थानों का आरक्षण से संबंधित है।\n3. संविधान का अनुच्छेद 76 कुछ दशाओं में गिरफ्तारी और निरोध से संरक्षण से संबंधित है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1, 2 and 3"
+   },
+   {
+    "label": "B",
+    "text": "3 only"
+   },
+   {
+    "label": "C",
+    "text": "1 only"
+   },
+   {
+    "label": "D",
+    "text": "1 and 2 only"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "1, 2 और 3"
+   },
+   {
+    "label": "B",
+    "text": "केवल 3"
+   },
+   {
+    "label": "C",
+    "text": "केवल 1"
+   },
+   {
+    "label": "D",
+    "text": "केवल 1 और 2"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Statement-wise: 1 is correct; 2 is correct; 3 is incorrect. So 1 and 2 only.",
+  "solution_hi": "कथनानुसार: 1 सही है; 2 सही है; 3 गलत है। अतः केवल 1 और 2।",
+  "concept": "Statement-based GS",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "multi",
+  "_by": "gs-multi-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with the definition of a Money Bill?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद धन विधेयक की परिभाषा से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "112"
+   },
+   {
+    "label": "B",
+    "text": "124"
+   },
+   {
+    "label": "C",
+    "text": "110"
+   },
+   {
+    "label": "D",
+    "text": "108"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "112"
+   },
+   {
+    "label": "B",
+    "text": "124"
+   },
+   {
+    "label": "C",
+    "text": "110"
+   },
+   {
+    "label": "D",
+    "text": "108"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "the definition of a Money Bill belongs to 110.",
+  "solution_hi": "धन विधेयक की परिभाषा — 110।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|110",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Consider the following statements:\n1. The 44th Amendment made education a fundamental right for children aged 6 to 14.\n2. Article 356 of the Constitution deals with President's Rule in a State.\n3. Article 243B of the Constitution deals with Powers, authority and responsibilities of Panchayats.\nWhich of the statements given above is/are correct?",
+  "stem_hi": "निम्नलिखित कथनों पर विचार कीजिए:\n1. 44वें संविधान संशोधन ने 6 से 14 वर्ष के बच्चों के लिए शिक्षा को मौलिक अधिकार बनाया।\n2. संविधान का अनुच्छेद 356 किसी राज्य में राष्ट्रपति शासन से संबंधित है।\n3. संविधान का अनुच्छेद 243B पंचायतों की शक्तियाँ, प्राधिकार और उत्तरदायित्व से संबंधित है।\nउपर्युक्त कथनों में से कौन-सा/से सही है/हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "1 and 3 only"
+   },
+   {
+    "label": "B",
+    "text": "1, 2 and 3"
+   },
+   {
+    "label": "C",
+    "text": "2 and 3 only"
+   },
+   {
+    "label": "D",
+    "text": "2 only"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "केवल 1 और 3"
+   },
+   {
+    "label": "B",
+    "text": "1, 2 और 3"
+   },
+   {
+    "label": "C",
+    "text": "केवल 2 और 3"
+   },
+   {
+    "label": "D",
+    "text": "केवल 2"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Statement-wise: 1 is incorrect; 2 is correct; 3 is incorrect. So 2 only.",
+  "solution_hi": "कथनानुसार: 1 गलत है; 2 सही है; 3 गलत है। अतः केवल 2।",
+  "concept": "Statement-based GS",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "multi",
+  "_by": "gs-multi-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with the fundamental duties of citizens?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद नागरिकों के मूल कर्तव्यों से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "52"
+   },
+   {
+    "label": "B",
+    "text": "50"
+   },
+   {
+    "label": "C",
+    "text": "43A"
+   },
+   {
+    "label": "D",
+    "text": "51A"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "52"
+   },
+   {
+    "label": "B",
+    "text": "50"
+   },
+   {
+    "label": "C",
+    "text": "43A"
+   },
+   {
+    "label": "D",
+    "text": "51A"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "the fundamental duties of citizens belongs to 51A.",
+  "solution_hi": "नागरिकों के मूल कर्तव्यों — 51A।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|51A",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with Powers, authority and responsibilities of Panchayats?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद पंचायतों की शक्तियाँ, प्राधिकार और उत्तरदायित्व से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "243K"
+   },
+   {
+    "label": "B",
+    "text": "243G"
+   },
+   {
+    "label": "C",
+    "text": "243E"
+   },
+   {
+    "label": "D",
+    "text": "243D"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "243K"
+   },
+   {
+    "label": "B",
+    "text": "243G"
+   },
+   {
+    "label": "C",
+    "text": "243E"
+   },
+   {
+    "label": "D",
+    "text": "243D"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Powers, authority and responsibilities of Panchayats belongs to 243G.",
+  "solution_hi": "पंचायतों की शक्तियाँ, प्राधिकार और उत्तरदायित्व — 243G।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|243G",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "panchayat",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which one of the following statements is correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The 61st Amendment added the Tenth Schedule on defection"
+   },
+   {
+    "label": "B",
+    "text": "The 101st Amendment gave constitutional status to Panchayati Raj institutions"
+   },
+   {
+    "label": "C",
+    "text": "Article 345 of the Constitution deals with protection of life and personal liberty"
+   },
+   {
+    "label": "D",
+    "text": "Article 243Q of the Constitution deals with Constitution of Municipalities"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "61वें संविधान संशोधन ने दलबदल से संबंधित दसवीं अनुसूची जोड़ी"
+   },
+   {
+    "label": "B",
+    "text": "101वें संविधान संशोधन ने पंचायती राज संस्थाओं को संवैधानिक दर्जा दिया"
+   },
+   {
+    "label": "C",
+    "text": "संविधान का अनुच्छेद 345 प्राण एवं दैहिक स्वतंत्रता के संरक्षण से संबंधित है"
+   },
+   {
+    "label": "D",
+    "text": "संविधान का अनुच्छेद 243Q नगरपालिकाओं का गठन से संबंधित है"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Only 'Article 243Q of the Constitution deals with Constitution of Municipalities' matches the verified record; the other three pair a subject with a value belonging to a different entry.",
+  "solution_hi": "केवल 'संविधान का अनुच्छेद 243Q नगरपालिकाओं का गठन से संबंधित है' सही है; शेष तीन कथनों में मान किसी अन्य प्रविष्टि का है।",
+  "concept": "Single Correct Statement",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "which",
+  "_by": "gs-which-statement"
+ },
+ {
+  "stem": "Which one of the following statements is NOT correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Article 243C of the Constitution deals with Elections to the Panchayats."
+   },
+   {
+    "label": "B",
+    "text": "Article 243G of the Constitution deals with Powers, authority and responsibilities of Panchayats."
+   },
+   {
+    "label": "C",
+    "text": "Article 243E of the Constitution deals with Duration of Panchayats, etc."
+   },
+   {
+    "label": "D",
+    "text": "Article 243W of the Constitution deals with Powers, authority and responsibilities of Municipalities, etc."
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "संविधान का अनुच्छेद 243C पंचायतों के लिए निर्वाचन से संबंधित है।"
+   },
+   {
+    "label": "B",
+    "text": "संविधान का अनुच्छेद 243G पंचायतों की शक्तियाँ, प्राधिकार और उत्तरदायित्व से संबंधित है।"
+   },
+   {
+    "label": "C",
+    "text": "संविधान का अनुच्छेद 243E पंचायतों की अवधि से संबंधित है।"
+   },
+   {
+    "label": "D",
+    "text": "संविधान का अनुच्छेद 243W नगरपालिकाओं की शक्तियाँ, प्राधिकार और उत्तरदायित्व से संबंधित है।"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "'Article 243C of the Constitution deals with Elections to the Panchayats.' is false; the correct value for 243C is Composition of Panchayats.",
+  "solution_hi": "'संविधान का अनुच्छेद 243C पंचायतों के लिए निर्वाचन से संबंधित है।' गलत है; 243C का सही मान पंचायतों की संरचना है।",
+  "concept": "Incorrect Statement",
+  "src": [
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": "PANCHAYAT_ARTICLE|neg|243C",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "incorrect",
+  "_by": "gs-incorrect-statement"
+ },
+ {
+  "stem": "Study the following statements:\n1. The 73rd Amendment gave constitutional status to urban local bodies.\n2. Article 243B of the Constitution deals with Constitution of Panchayats.\n3. Article 172 of the Constitution deals with Duration of State Legislatures.\nHow many of the above statements are correct?",
+  "stem_hi": "निम्नलिखित कथनों का अध्ययन कीजिए:\n1. 73वें संविधान संशोधन ने शहरी स्थानीय निकायों को संवैधानिक दर्जा दिया।\n2. संविधान का अनुच्छेद 243B पंचायतों का गठन से संबंधित है।\n3. संविधान का अनुच्छेद 172 राज्य के विधान-मंडलों की अवधि से संबंधित है।\nउपर्युक्त कथनों में से कितने सही हैं ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "None of them"
+   },
+   {
+    "label": "B",
+    "text": "Only one"
+   },
+   {
+    "label": "C",
+    "text": "All three"
+   },
+   {
+    "label": "D",
+    "text": "Only two"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "इनमें से कोई नहीं"
+   },
+   {
+    "label": "B",
+    "text": "केवल एक"
+   },
+   {
+    "label": "C",
+    "text": "तीनों"
+   },
+   {
+    "label": "D",
+    "text": "केवल दो"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "1 is incorrect; 2 is correct; 3 is correct. That is only two.",
+  "solution_hi": "1 गलत है; 2 सही है; 3 सही है। अतः केवल दो।",
+  "concept": "Count the Correct Statements",
+  "src": [
+   "AMENDMENT_DID",
+   "ARTICLE_SUBJECT",
+   "PANCHAYAT_ARTICLE"
+  ],
+  "fact": null,
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "count",
+  "_by": "gs-count-statements"
+ },
+ {
+  "stem": "Which one of the following statements is NOT correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Article 52 of the Constitution deals with The President of India."
+   },
+   {
+    "label": "B",
+    "text": "Article 360 of the Constitution deals with provisions as to a financial emergency."
+   },
+   {
+    "label": "C",
+    "text": "Article 56 of the Constitution deals with Constitution of Parliament."
+   },
+   {
+    "label": "D",
+    "text": "Article 32 of the Constitution deals with the right to constitutional remedies."
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "संविधान का अनुच्छेद 52 भारत का राष्ट्रपति से संबंधित है।"
+   },
+   {
+    "label": "B",
+    "text": "संविधान का अनुच्छेद 360 वित्तीय आपात के बारे में उपबंधों से संबंधित है।"
+   },
+   {
+    "label": "C",
+    "text": "संविधान का अनुच्छेद 56 संसद का गठन से संबंधित है।"
+   },
+   {
+    "label": "D",
+    "text": "संविधान का अनुच्छेद 32 संवैधानिक उपचारों के अधिकार से संबंधित है।"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "'Article 56 of the Constitution deals with Constitution of Parliament.' is false; the correct value for 56 is Term of office of President.",
+  "solution_hi": "'संविधान का अनुच्छेद 56 संसद का गठन से संबंधित है।' गलत है; 56 का सही मान राष्ट्रपति की पदावधि है।",
+  "concept": "Incorrect Statement",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|neg|56",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "incorrect",
+  "_by": "gs-incorrect-statement"
+ },
+ {
+  "stem": "Which Article of the Constitution deals with the six fundamental freedoms?",
+  "stem_hi": "संविधान का कौन-सा अनुच्छेद छह मौलिक स्वतंत्रताओं से संबंधित है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "18"
+   },
+   {
+    "label": "B",
+    "text": "21"
+   },
+   {
+    "label": "C",
+    "text": "19"
+   },
+   {
+    "label": "D",
+    "text": "20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "18"
+   },
+   {
+    "label": "B",
+    "text": "21"
+   },
+   {
+    "label": "C",
+    "text": "19"
+   },
+   {
+    "label": "D",
+    "text": "20"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "the six fundamental freedoms belongs to 19.",
+  "solution_hi": "छह मौलिक स्वतंत्रताओं — 19।",
+  "concept": "Reverse Lookup",
+  "src": [
+   "ARTICLE_SUBJECT"
+  ],
+  "fact": "ARTICLE_SUBJECT|19",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "articles",
+  "_by": "gs-ask"
+ },
+ {
+  "stem": "Which one of the following statements is NOT correct?",
+  "stem_hi": "निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The 86th Amendment made education a fundamental right for children aged 6 to 14."
+   },
+   {
+    "label": "B",
+    "text": "The 61st Amendment lowered the voting age from 21 to 18."
+   },
+   {
+    "label": "C",
+    "text": "The 73rd Amendment gave constitutional status to Panchayati Raj institutions."
+   },
+   {
+    "label": "D",
+    "text": "The 101st Amendment added the Tenth Schedule on defection."
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "86वें संविधान संशोधन ने 6 से 14 वर्ष के बच्चों के लिए शिक्षा को मौलिक अधिकार बनाया।"
+   },
+   {
+    "label": "B",
+    "text": "61वें संविधान संशोधन ने मतदान की आयु 21 से घटाकर 18 वर्ष की।"
+   },
+   {
+    "label": "C",
+    "text": "73वें संविधान संशोधन ने पंचायती राज संस्थाओं को संवैधानिक दर्जा दिया।"
+   },
+   {
+    "label": "D",
+    "text": "101वें संविधान संशोधन ने दलबदल से संबंधित दसवीं अनुसूची जोड़ी।"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "'The 101st Amendment added the Tenth Schedule on defection.' is false; the correct value for 101st is introduced the Goods and Services Tax.",
+  "solution_hi": "'101वें संविधान संशोधन ने दलबदल से संबंधित दसवीं अनुसूची जोड़ी।' गलत है; 101वें का सही मान वस्तु एवं सेवा कर (GST) लागू किया है।",
+  "concept": "Incorrect Statement",
+  "src": [
+   "AMENDMENT_DID"
+  ],
+  "fact": "AMENDMENT_DID|neg|101st",
+  "source_pdf": "staticgk_forms",
+  "number": null,
+  "tag": {
+   "section": "General Studies",
+   "difficulty": 3
+  },
+  "_src": "incorrect",
+  "_by": "gs-incorrect-statement"
+ }
+]

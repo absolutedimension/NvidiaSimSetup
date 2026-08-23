@@ -113,6 +113,24 @@ DANCE_STATE = {
     "Yakshagana": "Karnataka", "Chhau": "Jharkhand",
 }
 RIVER_ORIGIN = {
+    # Added 2026-08-22 to widen the Geography pool. Set 1 of the hard series used 7 of the 11 hard
+    # river questions available, leaving 4 — not enough for a second paper. Chosen for rivers a
+    # BSSC candidate is actually taught, and for origins that are a single named place, because an
+    # origin like "the Western Ghats" is true of several rivers and cannot be a reverse answer.
+    "Chambal": "Janapav Hills (Mhow)",
+    "Betwa": "Vindhya Range (Raisen)",
+    "Son": "Amarkantak Plateau",
+    "Damodar": "Chandwa (Latehar)",
+    "Gandak": "Nhubine Himal Glacier (Nepal)",
+    "Kosi": "Sun Kosi confluence (Nepal)",
+    "Ghaghara": "Mapchachungo Glacier (Tibet)",
+    "Beas": "Beas Kund (Rohtang)",
+    "Ravi": "Bara Bhangal (Kangra)",
+    "Sutlej": "Rakshastal (Tibet)",
+    "Jhelum": "Verinag (Anantnag)",
+    "Chenab": "Bara Lacha Pass (Lahaul)",
+    "Periyar": "Sivagiri Hills (Western Ghats)",
+    "Tungabhadra": "Koodli (Karnataka)",
     "Ganga": "Gangotri Glacier (Gaumukh)", "Yamuna": "Yamunotri", "Godavari": "Trimbakeshwar (Nashik)",
     "Krishna": "Mahabaleshwar", "Narmada": "Amarkantak", "Kaveri": "Talakaveri (Kodagu)",
     "Indus": "near Lake Mansarovar (Tibet)", "Brahmaputra": "Angsi Glacier (Tibet)",

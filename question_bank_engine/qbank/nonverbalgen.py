@@ -145,6 +145,167 @@ def _b_figure_series(rng, diff):
     }
 
 
+# ── दृश्य स्मृति · अवलोकन ───────────────────────────────────────────────────────────────────────
+# Two more non-verbal topics, deliberately drawn from a DIFFERENT shape family than the arrow
+# above. The owner's standing complaint about this section was that it looked like one topic; if
+# three non-verbal topics all print the same glyph he is right again, however different the
+# question stems are.
+
+# A tile is (diagonal, filled corner, edge dot) — 2 x 4 x 4 = 32 distinct pictures. Two tiles are
+# the same picture exactly when their specs match, which is what makes an "identical figure"
+# question answerable: the distractors differ in exactly ONE field, so they are provably
+# different rather than hopefully different.
+# Corner legs of 22, not 28, and the diagonal inset to 18 — see _tile. Drawn at the original
+# sizes the diagonal STARTED inside the corner triangle, so the two marks merged into one blob
+# and "which corner is filled" stopped being readable. Found by printing the page, not by testing:
+# every spec was distinct and every check passed.
+_CORNERS = [("2,2 24,2 2,24"), ("98,2 76,2 98,24"), ("98,98 98,76 76,98"), ("2,98 24,98 2,76")]
+_EDGES = [(50, 10), (90, 50), (50, 90), (10, 50)]
+
+
+def _tile(spec, size=52):
+    diag, corner, edge = spec
+    d = ('<line x1="18" y1="18" x2="82" y2="82" />' if diag == 0
+         else '<line x1="82" y1="18" x2="18" y2="82" />')
+    cx, cy = _EDGES[edge]
+    return (f'<svg class="fig" viewBox="0 0 100 100" width="{size}" height="{size}" '
+            f'data-diag="{diag}" data-corner="{corner}" data-edge="{edge}" '
+            f'xmlns="http://www.w3.org/2000/svg">'
+            f'<rect x="2" y="2" width="96" height="96" class="figbox" />'
+            f'<g class="figink">{d}</g>'
+            f'<polygon points="{_CORNERS[corner]}" class="figfill" />'
+            f'<circle cx="{cx}" cy="{cy}" r="7" class="figfill" /></svg>')
+
+
+def _b_identical_figure(rng, diff):
+    """दृश्य स्मृति — "which answer figure is exactly the same as the given figure?"
+
+    The commission names visual memory as an ability, not a question shape; on a written paper
+    with no timed exposure it is asked as identical-figure matching. Correct by construction: one
+    option carries the target's own spec and each distractor differs in exactly one field, so
+    there is exactly one right answer and every wrong one is wrong for a nameable reason.
+
+    Difficulty is how much of the figure has to be held at once: at diff 2 the distractors each
+    change a different field, at diff 4 they all change the SAME field, so the candidate cannot
+    answer by spotting which attribute is "the odd one".
+    """
+    target = (rng.randint(0, 1), rng.randint(0, 3), rng.randint(0, 3))
+    fields = [0, 1, 2] if diff < 4 else [rng.choice([1, 2])] * 3
+    cands, seen = [], {target}
+    labels = {0: "the diagonal runs the other way", 1: "the filled corner has moved",
+              2: "the dot sits on a different edge"}
+    for f in fields:
+        # ENUMERATE the remaining values, do not sample them. Sampling randomly from four
+        # possibilities and giving up after twelve tries failed 2.8% of the time at difficulty 4,
+        # where all three distractors change the SAME field and the last one has a single value
+        # left: (3/4)^12 is about 3%, and the builder returned None on those draws. A quota that
+        # silently loses one question in thirty-five is exactly the kind of shortfall the section
+        # report has to chase down later.
+        choices = [v for v in ([0, 1] if f == 0 else [0, 1, 2, 3]) if v != target[f]]
+        rng.shuffle(choices)
+        for v in choices:
+            alt = list(target)
+            alt[f] = v
+            alt = tuple(alt)
+            if alt not in seen:
+                seen.add(alt)
+                cands.append((labels[f], alt))
+                break
+    if len(cands) < 3:
+        return None
+    return {"stem": "Which of the answer figures is exactly the same as the figure on the left?",
+            "stem_hi": "उत्तर-आकृतियों में से कौन-सी आकृति बायीं ओर दी गई आकृति के बिल्कुल समान है?",
+            "target": target, "options": [target] + [a for _w, a in cands[:3]],
+            "why": ["identical to the target"] + [w for w, _a in cands[:3]],
+            "solution": ("Only one answer figure matches the target in all three respects — the "
+                         "direction of the diagonal, which corner is filled, and which edge "
+                         "carries the dot."),
+            "solution_hi": ("केवल एक उत्तर-आकृति तीनों बातों में मेल खाती है — विकर्ण की दिशा, "
+                            "भरा हुआ कोना, तथा बिंदु किस भुजा पर है।"),
+            "concept": "Identical Figure"}
+
+
+def _grid(rows, cols, size=96):
+    """A rows x cols grid of unit cells, as SVG. Dimensions are written into the markup so the
+    printed figure can be re-counted independently."""
+    step = 96 / max(rows, cols)
+    w, h = cols * step, rows * step
+    lines = "".join(f'<line x1="{c*step+2:.1f}" y1="2" x2="{c*step+2:.1f}" y2="{h+2:.1f}" />'
+                    for c in range(cols + 1))
+    lines += "".join(f'<line x1="2" y1="{r*step+2:.1f}" x2="{w+2:.1f}" y2="{r*step+2:.1f}" />'
+                     for r in range(rows + 1))
+    return (f'<svg class="fig" viewBox="0 0 100 100" width="{size}" height="{size}" '
+            f'data-rows="{rows}" data-cols="{cols}" xmlns="http://www.w3.org/2000/svg">'
+            f'<g class="figink figgrid">{lines}</g></svg>')
+
+
+def count_squares(rows, cols):
+    """Squares of every size in a rows x cols grid."""
+    return sum((rows - k + 1) * (cols - k + 1) for k in range(1, min(rows, cols) + 1))
+
+
+def count_rectangles(rows, cols):
+    """Rectangles of every size: choose two of the (n+1) grid lines on each axis."""
+    return (rows * (rows + 1) // 2) * (cols * (cols + 1) // 2)
+
+
+def _b_count_figures(rng, diff):
+    """अवलोकन — "how many squares / rectangles are there in the figure?"
+
+    A counting question is the shape the commission actually prints under observation, and a grid
+    is the one figure whose count is EXACTLY computable rather than argued about: a triangle with
+    cevians has a count that different keys disagree on, which is precisely the kind of fact this
+    bank refuses to assert. The independent solver in test_papers re-counts by brute force over
+    every pair of grid lines rather than by the closed form used here.
+    """
+    if diff <= 2:
+        rows = cols = rng.choice([3, 4])
+        kind = "squares"
+    elif diff == 3:
+        rows, cols = rng.choice([(2, 3), (3, 2), (2, 4)])
+        kind = "rectangles"
+    else:
+        rows = cols = rng.choice([4, 5])
+        kind = rng.choice(["squares", "rectangles"])
+    ans = count_squares(rows, cols) if kind == "squares" else count_rectangles(rows, cols)
+    other = count_rectangles(rows, cols) if kind == "squares" else count_squares(rows, cols)
+    kind_hi = "वर्ग" if kind == "squares" else "आयत"
+    cands = [("counted only the smallest cells", rows * cols),
+             ("counted " + ("rectangles instead of squares" if kind == "squares"
+                            else "squares instead of rectangles"), other),
+             ("forgot the whole figure itself", ans - 1),
+             ("counted the cells and the whole figure only", rows * cols + 1),
+             ("doubled the number of cells", rows * cols * 2)]
+    picked, seen = [], {ans}
+    for why, v in cands:
+        if v in seen or v <= 0:
+            continue
+        seen.add(v)
+        picked.append((why, v))
+        if len(picked) == 3:
+            break
+    if len(picked) < 3:
+        return None
+    return {"stem": f"How many {kind} are there in the figure given below?",
+            "stem_hi": f"नीचे दी गई आकृति में कितने {kind_hi} हैं?",
+            "grid": (rows, cols), "kind": kind,
+            "options": [str(ans)] + [str(v) for _w, v in picked],
+            "why": [f"the correct count"] + [w for w, _v in picked],
+            "solution": (f"A {rows} x {cols} grid contains {ans} {kind} in all, counting every "
+                         f"size and not just the single cells."),
+            "solution_hi": (f"{rows} x {cols} की जालक में सभी आकारों को गिनने पर कुल {ans} "
+                            f"{kind_hi} होते हैं, केवल एक-एक खाने नहीं।"),
+            "concept": "Counting Figures"}
+
+
+def render_tile(spec, size=52):
+    return _tile(spec, size)
+
+
+def render_grid(rows, cols, size=96):
+    return _grid(rows, cols, size)
+
+
 def render(fig_spec, size=54):
     return _cell(*fig_spec, size=size)
 

@@ -1,0 +1,2702 @@
+[
+ {
+  "stem": "A student was asked the following question.\nMeena, Amit, Arun, Sneha, Anjali, Sunil and Rohan are sitting around a circular table facing the centre. Rohan sits immediately to the right of Meena. Sunil sits second to the left of Amit. Sneha sits immediately to the left of Amit. Meena sits second to the right of Arun.  Who sits third to the left of Amit?\nThe student answered: Rohan.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nमीना, अमित, अरुण, स्नेहा, अंजलि, सुनील तथा रोहन एक गोल मेज़ के चारों ओर बैठे हैं और सभी का मुख केंद्र की ओर है। रोहन, मीना के ठीक दाएँ बैठा है। सुनील, अमित के बाएँ से दूसरे स्थान पर बैठा है। स्नेहा, अमित के ठीक बाएँ बैठी है। मीना, अरुण के दाएँ से दूसरे स्थान पर बैठी है।  अमित के बाएँ से तीसरे स्थान पर कौन बैठा है?\nविद्यार्थी ने उत्तर दिया: Rohan।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "took left for right — facing the centre reverses them"
+   },
+   {
+    "label": "B",
+    "text": "counted Amit as the first place"
+   },
+   {
+    "label": "C",
+    "text": "counted only one place instead of three"
+   },
+   {
+    "label": "D",
+    "text": "There is no mistake — the answer is correct"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "बाएँ-दाएँ उलट दिए — केंद्र की ओर मुख होने पर ये बदल जाते हैं"
+   },
+   {
+    "label": "B",
+    "text": "अमित को ही पहला स्थान गिन लिया"
+   },
+   {
+    "label": "C",
+    "text": "तीन के बजाय केवल एक स्थान गिना"
+   },
+   {
+    "label": "D",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "The correct answer is Rohan. The student's answer matches it, so nothing went wrong. The clues admit exactly one arrangement — Meena → Anjali → Arun → Amit → Sneha → Sunil → Rohan (clockwise). Facing the centre, a person's right hand points anticlockwise. So the answer is Rohan.",
+  "solution_hi": "सही उत्तर Rohan है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। दिए गए संकेतों से केवल एक ही व्यवस्था बनती है — मीना → अंजलि → अरुण → अमित → स्नेहा → सुनील → रोहन  (घड़ी की दिशा में)। केंद्र की ओर मुख होने पर व्यक्ति का दाहिना हाथ घड़ी की विपरीत दिशा में होता है। अतः उत्तर रोहन है।",
+  "concept": "Seating Arrangement",
+  "chapter": "Seating Arrangement",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nFind the next term in the letter series:\nB, I, E, M, ?\nThe student answered: H.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nअक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nB, I, E, M, ?\nविद्यार्थी ने उत्तर दिया: H।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "B",
+    "text": "treated it as one series"
+   },
+   {
+    "label": "C",
+    "text": "continued the SECOND series instead of the first"
+   },
+   {
+    "label": "D",
+    "text": "advanced the first series by the second series' step"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "B",
+    "text": "दोनों को एक ही श्रृंखला मान लिया"
+   },
+   {
+    "label": "C",
+    "text": "पहली के बजाय दूसरी श्रृंखला को आगे बढ़ा दिया"
+   },
+   {
+    "label": "D",
+    "text": "पहली श्रृंखला को दूसरी वाले अंतराल से बढ़ा दिया"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "The correct answer is H. The student's answer matches it, so nothing went wrong. Two series are interleaved: the 1st, 3rd and 5th terms advance by 3, while the 2nd and 4th advance by 4 (B->I->E->M). Next = H.",
+  "solution_hi": "सही उत्तर H है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। दो श्रृंखलाएँ मिली हुई हैं: पहला, तीसरा और पाँचवाँ पद 3 बढ़ता है, जबकि दूसरा और चौथा पद 4 बढ़ता है; अतः अगला पद = H।",
+  "concept": "Letter Series",
+  "chapter": "Series",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Amit, Sunil, Rahul, Meena, Neha, Arun and Vikas are sitting around a circular table facing the centre. Arun sits immediately to the right of Sunil. Neha sits second to the left of Rahul. Vikas sits third to the right of Rahul. Arun sits third to the right of Meena.  Who sits third to the left of Meena?",
+  "stem_hi": "अमित, सुनील, राहुल, मीना, नेहा, अरुण तथा विकास एक गोल मेज़ के चारों ओर बैठे हैं और सभी का मुख केंद्र की ओर है। अरुण, सुनील के ठीक दाएँ बैठा है। नेहा, राहुल के बाएँ से दूसरे स्थान पर बैठी है। विकास, राहुल के दाएँ से तीसरे स्थान पर बैठा है। अरुण, मीना के दाएँ से तीसरे स्थान पर बैठा है।  मीना के बाएँ से तीसरे स्थान पर कौन बैठा है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Vikas"
+   },
+   {
+    "label": "B",
+    "text": "Arun"
+   },
+   {
+    "label": "C",
+    "text": "Amit"
+   },
+   {
+    "label": "D",
+    "text": "Neha"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "विकास"
+   },
+   {
+    "label": "B",
+    "text": "अरुण"
+   },
+   {
+    "label": "C",
+    "text": "अमित"
+   },
+   {
+    "label": "D",
+    "text": "नेहा"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "The clues admit exactly one arrangement — Amit → Vikas → Arun → Sunil → Rahul → Meena → Neha (clockwise). Facing the centre, a person's right hand points anticlockwise. So the answer is Vikas.",
+  "solution_hi": "दिए गए संकेतों से केवल एक ही व्यवस्था बनती है — अमित → विकास → अरुण → सुनील → राहुल → मीना → नेहा  (घड़ी की दिशा में)। केंद्र की ओर मुख होने पर व्यक्ति का दाहिना हाथ घड़ी की विपरीत दिशा में होता है। अतः उत्तर विकास है।",
+  "concept": "Seating Arrangement",
+  "chapter": "Seating Arrangement",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Statements: All teachers are animals. All animals are cats. Some cats are soldiers.  Conclusions: I. All teachers are soldiers. II. No teachers are soldiers.  Which of the conclusions follows from the statements?",
+  "stem_hi": "कथन: सभी शिक्षक, जानवर हैं। सभी जानवर, बिल्लियाँ हैं। कुछ बिल्लियाँ, सैनिक हैं।  निष्कर्ष: I. सभी शिक्षक, सैनिक हैं। II. कोई भी शिक्षक, सैनिक नहीं है।  कौन-सा निष्कर्ष कथनों का अनुसरण करता है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Both I and II follow"
+   },
+   {
+    "label": "B",
+    "text": "Neither I nor II follows"
+   },
+   {
+    "label": "C",
+    "text": "Only conclusion I follows"
+   },
+   {
+    "label": "D",
+    "text": "Only conclusion II follows"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "I और II दोनों अनुसरण करते हैं"
+   },
+   {
+    "label": "B",
+    "text": "न तो I और न ही II अनुसरण करता है"
+   },
+   {
+    "label": "C",
+    "text": "केवल निष्कर्ष I अनुसरण करता है"
+   },
+   {
+    "label": "D",
+    "text": "केवल निष्कर्ष II अनुसरण करता है"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Conclusion I does not follow and conclusion II does not follow: a conclusion counts only if it is true in EVERY arrangement the statements allow, not merely in one of them. Hence — Neither I nor II follows.",
+  "solution_hi": "निष्कर्ष I अनुसरण नहीं करता तथा निष्कर्ष II अनुसरण नहीं करता। निष्कर्ष तभी मान्य है जब वह कथनों से बनने वाली हर सम्भव स्थिति में सत्य हो, केवल किसी एक स्थिति में नहीं। अतः — न तो I और न ही II अनुसरण करता है।",
+  "concept": "Syllogism",
+  "chapter": "Syllogism",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Arun, Rohan, Vikas, Anjali, Radha, Priya and Neha are sitting around a circular table facing the centre. Rohan sits third to the right of Vikas. Anjali sits third to the left of Arun. Priya sits immediately to the right of Arun. Arun sits immediately to the right of Rohan. Radha sits third to the right of Rohan.  Who sits third to the left of Priya?",
+  "stem_hi": "अरुण, रोहन, विकास, अंजलि, राधा, प्रिया तथा नेहा एक गोल मेज़ के चारों ओर बैठे हैं और सभी का मुख केंद्र की ओर है। रोहन, विकास के दाएँ से तीसरे स्थान पर बैठा है। अंजलि, अरुण के बाएँ से तीसरे स्थान पर बैठी है। प्रिया, अरुण के ठीक दाएँ बैठी है। अरुण, रोहन के ठीक दाएँ बैठा है। राधा, रोहन के दाएँ से तीसरे स्थान पर बैठी है।  प्रिया के बाएँ से तीसरे स्थान पर कौन बैठा है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Neha"
+   },
+   {
+    "label": "B",
+    "text": "Anjali"
+   },
+   {
+    "label": "C",
+    "text": "Rohan"
+   },
+   {
+    "label": "D",
+    "text": "Arun"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "नेहा"
+   },
+   {
+    "label": "B",
+    "text": "अंजलि"
+   },
+   {
+    "label": "C",
+    "text": "रोहन"
+   },
+   {
+    "label": "D",
+    "text": "अरुण"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "The clues admit exactly one arrangement — Arun → Rohan → Neha → Anjali → Vikas → Radha → Priya (clockwise). Facing the centre, a person's right hand points anticlockwise. So the answer is Neha.",
+  "solution_hi": "दिए गए संकेतों से केवल एक ही व्यवस्था बनती है — अरुण → रोहन → नेहा → अंजलि → विकास → राधा → प्रिया  (घड़ी की दिशा में)। केंद्र की ओर मुख होने पर व्यक्ति का दाहिना हाथ घड़ी की विपरीत दिशा में होता है। अतः उत्तर नेहा है।",
+  "concept": "Seating Arrangement",
+  "chapter": "Seating Arrangement",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "2 : 5 :: 10 : ?",
+  "stem_hi": "2 : 5 :: 10 : ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "23"
+   },
+   {
+    "label": "B",
+    "text": "19"
+   },
+   {
+    "label": "C",
+    "text": "31"
+   },
+   {
+    "label": "D",
+    "text": "21"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "23"
+   },
+   {
+    "label": "B",
+    "text": "19"
+   },
+   {
+    "label": "C",
+    "text": "31"
+   },
+   {
+    "label": "D",
+    "text": "21"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "The second term is twice the number plus one (2→5). So 10→21.",
+  "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (2→5); उसी नियम से 10→21।",
+  "concept": "Number Analogy",
+  "chapter": "Analogy",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nSita is the daughter of Arun, and Arun is the son of Ram. How is Ram related to Sita?\nThe student answered: Grandmother.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nसीता, अरुण की पुत्री हैं तथा अरुण, राम के पुत्र हैं। राम का सीता से क्या सम्बन्ध है?\nविद्यार्थी ने उत्तर दिया: Grandmother।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "stopped at the 2nd link instead of tracing the whole chain"
+   },
+   {
+    "label": "B",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "C",
+    "text": "read the chain the other way round"
+   },
+   {
+    "label": "D",
+    "text": "stopped at the 1st link instead of tracing the whole chain"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पूरी शृंखला जोड़ने के बजाय 2वीं कड़ी पर ही रुक गया"
+   },
+   {
+    "label": "B",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "C",
+    "text": "सम्बन्ध-शृंखला को उल्टी दिशा में पढ़ लिया"
+   },
+   {
+    "label": "D",
+    "text": "पूरी शृंखला जोड़ने के बजाय 1वीं कड़ी पर ही रुक गया"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "The correct answer is Grandmother. The student's answer matches it, so nothing went wrong. Sita is the granddaughter of Ram, so read the other way, Ram is the grandmother of Sita.",
+  "solution_hi": "सही उत्तर Grandmother है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। सीता, राम के पोती हैं; उल्टा पढ़ने पर राम, सीता के दादी हुए।",
+  "concept": "Blood Relations",
+  "chapter": "Blood Relations",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Find the next term in the letter series:\nD, K, E, P, ?",
+  "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nD, K, E, P, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "J"
+   },
+   {
+    "label": "B",
+    "text": "F"
+   },
+   {
+    "label": "C",
+    "text": "Q"
+   },
+   {
+    "label": "D",
+    "text": "U"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "J"
+   },
+   {
+    "label": "B",
+    "text": "F"
+   },
+   {
+    "label": "C",
+    "text": "Q"
+   },
+   {
+    "label": "D",
+    "text": "U"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Two series are interleaved: the 1st, 3rd and 5th terms advance by 1, while the 2nd and 4th advance by 5 (D->K->E->P). Next = F.",
+  "solution_hi": "दो श्रृंखलाएँ मिली हुई हैं: पहला, तीसरा और पाँचवाँ पद 1 बढ़ता है, जबकि दूसरा और चौथा पद 5 बढ़ता है; अतः अगला पद = F।",
+  "concept": "Letter Series",
+  "chapter": "Series",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "3 : 6 :: 12 : ?",
+  "stem_hi": "3 : 6 :: 12 : ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "144"
+   },
+   {
+    "label": "B",
+    "text": "110"
+   },
+   {
+    "label": "C",
+    "text": "156"
+   },
+   {
+    "label": "D",
+    "text": "132"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "144"
+   },
+   {
+    "label": "B",
+    "text": "110"
+   },
+   {
+    "label": "C",
+    "text": "156"
+   },
+   {
+    "label": "D",
+    "text": "132"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "The second term is n squared minus n (3→6). So 12→132.",
+  "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (3→6); उसी नियम से 12→132।",
+  "concept": "Number Analogy",
+  "chapter": "Analogy",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "In the following, the symbols are used as: 'A # B' means 'A is greater than B'; 'A % B' means 'A is smaller than B'; 'A * B' means 'A is equal to B'; 'A & B' means 'A is either greater than or equal to B'; 'A @ B' means 'A is either smaller than or equal to B'.  Statements: R & P, P * U, U & S, S * W, W % V.  Conclusions: I. U # W  II. S @ R  Which of the conclusions is definitely true?",
+  "stem_hi": "नीचे दिए गए प्रश्न में संकेतों का प्रयोग इस प्रकार किया गया है: 'A # B' का अर्थ है 'A, B से बड़ा है'; 'A % B' का अर्थ है 'A, B से छोटा है'; 'A * B' का अर्थ है 'A, B के बराबर है'; 'A & B' का अर्थ है 'A, B से बड़ा है अथवा उसके बराबर है'; 'A @ B' का अर्थ है 'A, B से छोटा है अथवा उसके बराबर है'।  कथन: R & P, P * U, U & S, S * W, W % V।  निष्कर्ष: I. U # W  II. S @ R  कौन-सा निष्कर्ष निश्चित रूप से सत्य है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Neither I nor II follows"
+   },
+   {
+    "label": "B",
+    "text": "Only conclusion I follows"
+   },
+   {
+    "label": "C",
+    "text": "Only conclusion II follows"
+   },
+   {
+    "label": "D",
+    "text": "Both I and II follow"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "न तो I और न ही II अनुसरण करता है"
+   },
+   {
+    "label": "B",
+    "text": "केवल निष्कर्ष I अनुसरण करता है"
+   },
+   {
+    "label": "C",
+    "text": "केवल निष्कर्ष II अनुसरण करता है"
+   },
+   {
+    "label": "D",
+    "text": "I और II दोनों अनुसरण करते हैं"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Reading the chain R & P, P * U, U & S, S * W, W % V: I — the chain gives U >= W, so 'U # W' is not necessarily true. II — the chain gives S <= R, so 'S @ R' is true. Hence — Only conclusion II follows.",
+  "solution_hi": "शृंखला R & P, P * U, U & S, S * W, W % V से: निष्कर्ष I निश्चित रूप से सत्य नहीं है, निष्कर्ष II सत्य है। अतः — केवल निष्कर्ष II अनुसरण करता है।",
+  "concept": "Coded Inequality",
+  "chapter": "Coded Inequality",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Find the next term in the letter series:\nH, O, I, T, ?",
+  "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nH, O, I, T, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "J"
+   },
+   {
+    "label": "B",
+    "text": "U"
+   },
+   {
+    "label": "C",
+    "text": "Y"
+   },
+   {
+    "label": "D",
+    "text": "N"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "J"
+   },
+   {
+    "label": "B",
+    "text": "U"
+   },
+   {
+    "label": "C",
+    "text": "Y"
+   },
+   {
+    "label": "D",
+    "text": "N"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Two series are interleaved: the 1st, 3rd and 5th terms advance by 1, while the 2nd and 4th advance by 5 (H->O->I->T). Next = J.",
+  "solution_hi": "दो श्रृंखलाएँ मिली हुई हैं: पहला, तीसरा और पाँचवाँ पद 1 बढ़ता है, जबकि दूसरा और चौथा पद 5 बढ़ता है; अतः अगला पद = J।",
+  "concept": "Letter Series",
+  "chapter": "Series",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nIn a certain code language, 'PAPER' is written as 'QCSIW'. How is 'CHAIR' written in that same code?\nThe student answered: DJDMW.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nएक निश्चित कूट भाषा में 'PAPER' को 'QCSIW' लिखा जाता है। उसी कूट भाषा में 'CHAIR' को कैसे लिखा जाएगा?\nविद्यार्थी ने उत्तर दिया: DJDMW।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "started the count from 0 instead of 1"
+   },
+   {
+    "label": "B",
+    "text": "moved each letter backwards by its position"
+   },
+   {
+    "label": "C",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "D",
+    "text": "used the same shift for every letter"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "गिनती 1 के बजाय 0 से शुरू कर दी"
+   },
+   {
+    "label": "B",
+    "text": "प्रत्येक अक्षर को उसकी स्थिति जितना पीछे खिसका दिया"
+   },
+   {
+    "label": "C",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "D",
+    "text": "हर अक्षर के लिए एक ही अंतराल लगा दिया"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "The correct answer is DJDMW. The student's answer matches it, so nothing went wrong. The first letter moves 1 place, the second 2 places, the third 3, and so on (PAPER->QCSIW). Applying the same rule to CHAIR gives DJDMW.",
+  "solution_hi": "सही उत्तर DJDMW है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। पहला अक्षर 1 स्थान, दूसरा 2 स्थान, तीसरा 3 स्थान — इसी क्रम में आगे बढ़ता है (PAPER→QCSIW); अतः CHAIR → DJDMW।",
+  "concept": "Letter-Shift Coding",
+  "chapter": "Coding-Decoding",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Priya is the mother of Amit, and Amit is the father of Sunil. How is Sunil related to Priya?",
+  "stem_hi": "प्रिया, अमित की माता हैं तथा अमित, सुनील के पिता हैं। सुनील का प्रिया से क्या सम्बन्ध है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Granddaughter"
+   },
+   {
+    "label": "B",
+    "text": "Grandmother"
+   },
+   {
+    "label": "C",
+    "text": "Mother"
+   },
+   {
+    "label": "D",
+    "text": "Daughter"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पोती"
+   },
+   {
+    "label": "B",
+    "text": "दादी"
+   },
+   {
+    "label": "C",
+    "text": "माता"
+   },
+   {
+    "label": "D",
+    "text": "Daughter"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Priya is the grandmother of Sunil, so read the other way, Sunil is the granddaughter of Priya.",
+  "solution_hi": "प्रिया, सुनील के दादी हैं; उल्टा पढ़ने पर सुनील, प्रिया के पोती हुए।",
+  "concept": "Blood Relations",
+  "chapter": "Blood Relations",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nThree of the following four numbers are alike; find the ODD one out:\n100,  144,  121,  122\nThe student answered: 122.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nनिम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n100,  144,  121,  122\nविद्यार्थी ने उत्तर दिया: 122।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "picked 121, which IS a perfect square (11² = 121) and so belongs with the other two"
+   },
+   {
+    "label": "B",
+    "text": "picked 144, which IS a perfect square (12² = 144) and so belongs with the other two"
+   },
+   {
+    "label": "C",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "D",
+    "text": "picked 100, which IS a perfect square (10² = 100) and so belongs with the other two"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "121 चुन लिया, जो स्वयं पूर्ण वर्ग है (11² = 121) और शेष दोनों के साथ ही आता है"
+   },
+   {
+    "label": "B",
+    "text": "144 चुन लिया, जो स्वयं पूर्ण वर्ग है (12² = 144) और शेष दोनों के साथ ही आता है"
+   },
+   {
+    "label": "C",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "D",
+    "text": "100 चुन लिया, जो स्वयं पूर्ण वर्ग है (10² = 100) और शेष दोनों के साथ ही आता है"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "The correct answer is 122. The student's answer matches it, so nothing went wrong. 100, 121, 144 are perfect squares (10²=100; 11²=121; 12²=144); 122 is not. So 122 is the odd one out.",
+  "solution_hi": "सही उत्तर 122 है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। शेष तीनों पूर्ण वर्ग हैं; 122 पूर्ण वर्ग नहीं है, अतः यही असंगत है।",
+  "concept": "Odd One Out (Numbers)",
+  "chapter": "Classification (Odd One Out)",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Statements: No doctors are students. All students are books. All books are birds.  Conclusions: I. Some birds are doctors. II. All doctors are birds.  Which of the conclusions follows from the statements?",
+  "stem_hi": "कथन: कोई भी डॉक्टर, विद्यार्थी नहीं है। सभी विद्यार्थी, पुस्तकें हैं। सभी पुस्तकें, पक्षी हैं।  निष्कर्ष: I. कुछ पक्षी, डॉक्टर हैं। II. सभी डॉक्टर, पक्षी हैं।  कौन-सा निष्कर्ष कथनों का अनुसरण करता है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Both I and II follow"
+   },
+   {
+    "label": "B",
+    "text": "Neither I nor II follows"
+   },
+   {
+    "label": "C",
+    "text": "Only conclusion I follows"
+   },
+   {
+    "label": "D",
+    "text": "Only conclusion II follows"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "I और II दोनों अनुसरण करते हैं"
+   },
+   {
+    "label": "B",
+    "text": "न तो I और न ही II अनुसरण करता है"
+   },
+   {
+    "label": "C",
+    "text": "केवल निष्कर्ष I अनुसरण करता है"
+   },
+   {
+    "label": "D",
+    "text": "केवल निष्कर्ष II अनुसरण करता है"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Conclusion I does not follow and conclusion II does not follow: a conclusion counts only if it is true in EVERY arrangement the statements allow, not merely in one of them. Hence — Neither I nor II follows.",
+  "solution_hi": "निष्कर्ष I अनुसरण नहीं करता तथा निष्कर्ष II अनुसरण नहीं करता। निष्कर्ष तभी मान्य है जब वह कथनों से बनने वाली हर सम्भव स्थिति में सत्य हो, केवल किसी एक स्थिति में नहीं। अतः — न तो I और न ही II अनुसरण करता है।",
+  "concept": "Syllogism",
+  "chapter": "Syllogism",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Priya, Neha, Rohan, Meena, Radha, Amit and Vikas are sitting around a circular table facing the centre. Vikas sits second to the right of Priya. Rohan sits second to the right of Vikas. Rohan sits immediately to the right of Radha. Meena sits second to the right of Neha.  Who sits third to the left of Meena?",
+  "stem_hi": "प्रिया, नेहा, रोहन, मीना, राधा, अमित तथा विकास एक गोल मेज़ के चारों ओर बैठे हैं और सभी का मुख केंद्र की ओर है। विकास, प्रिया के दाएँ से दूसरे स्थान पर बैठा है। रोहन, विकास के दाएँ से दूसरे स्थान पर बैठा है। रोहन, राधा के ठीक दाएँ बैठा है। मीना, नेहा के दाएँ से दूसरे स्थान पर बैठी है।  मीना के बाएँ से तीसरे स्थान पर कौन बैठा है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Rohan"
+   },
+   {
+    "label": "B",
+    "text": "Neha"
+   },
+   {
+    "label": "C",
+    "text": "Priya"
+   },
+   {
+    "label": "D",
+    "text": "Amit"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "रोहन"
+   },
+   {
+    "label": "B",
+    "text": "नेहा"
+   },
+   {
+    "label": "C",
+    "text": "प्रिया"
+   },
+   {
+    "label": "D",
+    "text": "अमित"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "The clues admit exactly one arrangement — Priya → Neha → Amit → Rohan → Radha → Vikas → Meena (clockwise). Facing the centre, a person's right hand points anticlockwise. So the answer is Amit.",
+  "solution_hi": "दिए गए संकेतों से केवल एक ही व्यवस्था बनती है — प्रिया → नेहा → अमित → रोहन → राधा → विकास → मीना  (घड़ी की दिशा में)। केंद्र की ओर मुख होने पर व्यक्ति का दाहिना हाथ घड़ी की विपरीत दिशा में होता है। अतः उत्तर अमित है।",
+  "concept": "Seating Arrangement",
+  "chapter": "Seating Arrangement",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nIn a certain code language, 'PAPER' is written as 'QCSIW'. How is 'LIGHT' written in that same code?\nThe student answered: MKJLY.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nएक निश्चित कूट भाषा में 'PAPER' को 'QCSIW' लिखा जाता है। उसी कूट भाषा में 'LIGHT' को कैसे लिखा जाएगा?\nविद्यार्थी ने उत्तर दिया: MKJLY।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "moved each letter backwards by its position"
+   },
+   {
+    "label": "B",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "C",
+    "text": "used the same shift for every letter"
+   },
+   {
+    "label": "D",
+    "text": "started the count from 0 instead of 1"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "प्रत्येक अक्षर को उसकी स्थिति जितना पीछे खिसका दिया"
+   },
+   {
+    "label": "B",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "C",
+    "text": "हर अक्षर के लिए एक ही अंतराल लगा दिया"
+   },
+   {
+    "label": "D",
+    "text": "गिनती 1 के बजाय 0 से शुरू कर दी"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "The correct answer is MKJLY. The student's answer matches it, so nothing went wrong. The first letter moves 1 place, the second 2 places, the third 3, and so on (PAPER->QCSIW). Applying the same rule to LIGHT gives MKJLY.",
+  "solution_hi": "सही उत्तर MKJLY है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। पहला अक्षर 1 स्थान, दूसरा 2 स्थान, तीसरा 3 स्थान — इसी क्रम में आगे बढ़ता है (PAPER→QCSIW); अतः LIGHT → MKJLY।",
+  "concept": "Letter-Shift Coding",
+  "chapter": "Coding-Decoding",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nThree of the following four numbers are alike; find the ODD one out:\n196,  225,  227,  100\nThe student answered: 227.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nनिम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n196,  225,  227,  100\nविद्यार्थी ने उत्तर दिया: 227।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "B",
+    "text": "picked 196, which IS a perfect square (14² = 196) and so belongs with the other two"
+   },
+   {
+    "label": "C",
+    "text": "picked 100, which IS a perfect square (10² = 100) and so belongs with the other two"
+   },
+   {
+    "label": "D",
+    "text": "picked 225, which IS a perfect square (15² = 225) and so belongs with the other two"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "B",
+    "text": "196 चुन लिया, जो स्वयं पूर्ण वर्ग है (14² = 196) और शेष दोनों के साथ ही आता है"
+   },
+   {
+    "label": "C",
+    "text": "100 चुन लिया, जो स्वयं पूर्ण वर्ग है (10² = 100) और शेष दोनों के साथ ही आता है"
+   },
+   {
+    "label": "D",
+    "text": "225 चुन लिया, जो स्वयं पूर्ण वर्ग है (15² = 225) और शेष दोनों के साथ ही आता है"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "The correct answer is 227. The student's answer matches it, so nothing went wrong. 196, 100, 225 are perfect squares (14²=196; 10²=100; 15²=225); 227 is not. So 227 is the odd one out.",
+  "solution_hi": "सही उत्तर 227 है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। शेष तीनों पूर्ण वर्ग हैं; 227 पूर्ण वर्ग नहीं है, अतः यही असंगत है।",
+  "concept": "Odd One Out (Numbers)",
+  "chapter": "Classification (Odd One Out)",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "In the following, the symbols are used as: 'A % B' means 'A is greater than B'; 'A & B' means 'A is smaller than B'; 'A * B' means 'A is equal to B'; 'A # B' means 'A is either greater than or equal to B'; 'A @ B' means 'A is either smaller than or equal to B'.  Statements: R % T, T # P, P % W, W # U, U # Q.  Conclusions: I. Q % W  II. U * T  Which of the conclusions is definitely true?",
+  "stem_hi": "नीचे दिए गए प्रश्न में संकेतों का प्रयोग इस प्रकार किया गया है: 'A % B' का अर्थ है 'A, B से बड़ा है'; 'A & B' का अर्थ है 'A, B से छोटा है'; 'A * B' का अर्थ है 'A, B के बराबर है'; 'A # B' का अर्थ है 'A, B से बड़ा है अथवा उसके बराबर है'; 'A @ B' का अर्थ है 'A, B से छोटा है अथवा उसके बराबर है'।  कथन: R % T, T # P, P % W, W # U, U # Q।  निष्कर्ष: I. Q % W  II. U * T  कौन-सा निष्कर्ष निश्चित रूप से सत्य है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Only conclusion II follows"
+   },
+   {
+    "label": "B",
+    "text": "Both I and II follow"
+   },
+   {
+    "label": "C",
+    "text": "Neither I nor II follows"
+   },
+   {
+    "label": "D",
+    "text": "Only conclusion I follows"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "केवल निष्कर्ष II अनुसरण करता है"
+   },
+   {
+    "label": "B",
+    "text": "I और II दोनों अनुसरण करते हैं"
+   },
+   {
+    "label": "C",
+    "text": "न तो I और न ही II अनुसरण करता है"
+   },
+   {
+    "label": "D",
+    "text": "केवल निष्कर्ष I अनुसरण करता है"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Reading the chain R % T, T # P, P % W, W # U, U # Q: I — the chain gives Q <= W, so 'Q % W' is not necessarily true. II — the chain gives U < T, so 'U * T' is not necessarily true. Hence — Neither I nor II follows.",
+  "solution_hi": "शृंखला R % T, T # P, P % W, W # U, U # Q से: निष्कर्ष I निश्चित रूप से सत्य नहीं है, निष्कर्ष II निश्चित रूप से सत्य नहीं है। अतः — न तो I और न ही II अनुसरण करता है।",
+  "concept": "Coded Inequality",
+  "chapter": "Coded Inequality",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Find the next term in the letter series:\nL, S, N, V, ?",
+  "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nL, S, N, V, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Y"
+   },
+   {
+    "label": "B",
+    "text": "Q"
+   },
+   {
+    "label": "C",
+    "text": "P"
+   },
+   {
+    "label": "D",
+    "text": "X"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "Y"
+   },
+   {
+    "label": "B",
+    "text": "Q"
+   },
+   {
+    "label": "C",
+    "text": "P"
+   },
+   {
+    "label": "D",
+    "text": "X"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Two series are interleaved: the 1st, 3rd and 5th terms advance by 2, while the 2nd and 4th advance by 3 (L->S->N->V). Next = P.",
+  "solution_hi": "दो श्रृंखलाएँ मिली हुई हैं: पहला, तीसरा और पाँचवाँ पद 2 बढ़ता है, जबकि दूसरा और चौथा पद 3 बढ़ता है; अतः अगला पद = P।",
+  "concept": "Letter Series",
+  "chapter": "Series",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Statements: No pens are cities. Some cities are trees. All trees are birds.  Conclusions: I. Some birds are pens. II. All pens are birds.  Which of the conclusions follows from the statements?",
+  "stem_hi": "कथन: कोई भी कलमें, नगर नहीं है। कुछ नगर, पेड़ हैं। सभी पेड़, पक्षी हैं।  निष्कर्ष: I. कुछ पक्षी, कलमें हैं। II. सभी कलमें, पक्षी हैं।  कौन-सा निष्कर्ष कथनों का अनुसरण करता है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Both I and II follow"
+   },
+   {
+    "label": "B",
+    "text": "Neither I nor II follows"
+   },
+   {
+    "label": "C",
+    "text": "Only conclusion I follows"
+   },
+   {
+    "label": "D",
+    "text": "Only conclusion II follows"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "I और II दोनों अनुसरण करते हैं"
+   },
+   {
+    "label": "B",
+    "text": "न तो I और न ही II अनुसरण करता है"
+   },
+   {
+    "label": "C",
+    "text": "केवल निष्कर्ष I अनुसरण करता है"
+   },
+   {
+    "label": "D",
+    "text": "केवल निष्कर्ष II अनुसरण करता है"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "Conclusion I does not follow and conclusion II does not follow: a conclusion counts only if it is true in EVERY arrangement the statements allow, not merely in one of them. Hence — Neither I nor II follows.",
+  "solution_hi": "निष्कर्ष I अनुसरण नहीं करता तथा निष्कर्ष II अनुसरण नहीं करता। निष्कर्ष तभी मान्य है जब वह कथनों से बनने वाली हर सम्भव स्थिति में सत्य हो, केवल किसी एक स्थिति में नहीं। अतः — न तो I और न ही II अनुसरण करता है।",
+  "concept": "Syllogism",
+  "chapter": "Syllogism",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nIf each letter is coded by its position counted BACKWARDS from Z (Z=1, Y=2, …, A=26), how is 'BRAIN' coded?\nThe student answered: 25 9 26 18 13.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nयदि प्रत्येक अक्षर को Z से उल्टी गिनती में उसकी स्थिति (Z=1, Y=2, …, A=26) कूटबद्ध किया जाए, तो 'BRAIN' का कूट क्या होगा?\nविद्यार्थी ने उत्तर दिया: 25 9 26 18 13।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "B",
+    "text": "used the plain position, ignoring the rule"
+   },
+   {
+    "label": "C",
+    "text": "doubled the position instead of applying the stated rule"
+   },
+   {
+    "label": "D",
+    "text": "added one to the position instead of applying the stated rule"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "B",
+    "text": "नियम को छोड़कर केवल वर्णमाला-स्थिति का प्रयोग किया"
+   },
+   {
+    "label": "C",
+    "text": "दिए गए नियम के बजाय स्थिति को दुगुना कर दिया"
+   },
+   {
+    "label": "D",
+    "text": "दिए गए नियम के बजाय स्थिति में एक जोड़ दिया"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "The correct answer is 25 9 26 18 13. The student's answer matches it, so nothing went wrong. BRAIN: B=25, R=9, A=26, I=18, N=13 → 25 9 26 18 13.",
+  "solution_hi": "सही उत्तर 25 9 26 18 13 है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। BRAIN: B=25, R=9, A=26, I=18, N=13 → 25 9 26 18 13।",
+  "concept": "Number Coding",
+  "chapter": "Coding-Decoding",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nStudy the following number arrangement and find the number that should replace the question mark:\nRow 1: 8, 3, 13\nRow 2: 64, 9, 169\nRow 3: 512, 27, ?\nIn each column, every row is obtained from the rows above it by the same rule.\nThe student answered: 2197.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nनिम्नलिखित संख्या-क्रम का अध्ययन कीजिए तथा प्रश्नवाचक चिह्न के स्थान पर आने वाली संख्या ज्ञात कीजिए:\nपंक्ति 1: 8, 3, 13\nपंक्ति 2: 64, 9, 169\nपंक्ति 3: 512, 27, ?\nप्रत्येक स्तम्भ में हर पंक्ति अपने ऊपर वाली पंक्तियों से एक ही नियम द्वारा प्राप्त होती है।\nविद्यार्थी ने उत्तर दिया: 2197।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "doubled the number directly above it"
+   },
+   {
+    "label": "B",
+    "text": "continued the column by adding the same difference again"
+   },
+   {
+    "label": "C",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "D",
+    "text": "added the two numbers above it instead of combining them by the rule"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "ठीक ऊपर वाली संख्या को दुगुना कर दिया"
+   },
+   {
+    "label": "B",
+    "text": "स्तम्भ को वही अंतर पुनः जोड़कर आगे बढ़ा दिया"
+   },
+   {
+    "label": "C",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "D",
+    "text": "नियम से जोड़ने के बजाय ऊपर की दोनों संख्याओं को जोड़ दिया"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "The correct answer is 2197. The student's answer matches it, so nothing went wrong. In every column the second row is the square of the first and the third is its cube — equivalently, each bottom number is the product of the two above it. So the missing number is 2197.",
+  "solution_hi": "सही उत्तर 2197 है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। प्रत्येक स्तम्भ में दूसरी पंक्ति पहली का वर्ग है तथा तीसरी उसका घन — अर्थात् नीचे की संख्या अपने ऊपर की दोनों संख्याओं का गुणनफल है। अतः लुप्त संख्या 2197 है।",
+  "concept": "Number Grid",
+  "chapter": "Number Grid",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nWhat comes next in the series?\nN5, L9, J13, H17, ?\nThe student answered: F21.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nनिम्नलिखित श्रृंखला में आगे क्या आएगा?\nN5, L9, J13, H17, ?\nविद्यार्थी ने उत्तर दिया: F21।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "B",
+    "text": "advanced the letter one place too far"
+   },
+   {
+    "label": "C",
+    "text": "advanced the letter one place short"
+   },
+   {
+    "label": "D",
+    "text": "advanced the number by 1 instead of by the series step"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "B",
+    "text": "अक्षर को एक स्थान अधिक बढ़ा दिया"
+   },
+   {
+    "label": "C",
+    "text": "अक्षर को एक स्थान कम बढ़ाया"
+   },
+   {
+    "label": "D",
+    "text": "संख्या को श्रृंखला के अंतराल के बजाय केवल 1 बढ़ाया"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "The correct answer is F21. The student's answer matches it, so nothing went wrong. Letters advance by 2 (N→L→J→H→F); numbers increase by 4 (5→9→13→17→21). Next = F21.",
+  "solution_hi": "सही उत्तर F21 है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। अक्षर 2 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = F21।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Radha, Vikas, Anjali, Arun, Rahul, Rohan and Sneha are sitting around a circular table facing the centre. Vikas sits immediately to the right of Sneha. Arun sits third to the right of Vikas. Rohan sits third to the left of Anjali. Sneha sits immediately to the right of Radha.  Who sits third to the left of Arun?",
+  "stem_hi": "राधा, विकास, अंजलि, अरुण, राहुल, रोहन तथा स्नेहा एक गोल मेज़ के चारों ओर बैठे हैं और सभी का मुख केंद्र की ओर है। विकास, स्नेहा के ठीक दाएँ बैठा है। अरुण, विकास के दाएँ से तीसरे स्थान पर बैठा है। रोहन, अंजलि के बाएँ से तीसरे स्थान पर बैठा है। स्नेहा, राधा के ठीक दाएँ बैठी है।  अरुण के बाएँ से तीसरे स्थान पर कौन बैठा है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Sneha"
+   },
+   {
+    "label": "B",
+    "text": "Rohan"
+   },
+   {
+    "label": "C",
+    "text": "Rahul"
+   },
+   {
+    "label": "D",
+    "text": "Vikas"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "स्नेहा"
+   },
+   {
+    "label": "B",
+    "text": "रोहन"
+   },
+   {
+    "label": "C",
+    "text": "राहुल"
+   },
+   {
+    "label": "D",
+    "text": "विकास"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "The clues admit exactly one arrangement — Radha → Anjali → Arun → Rahul → Rohan → Vikas → Sneha (clockwise). Facing the centre, a person's right hand points anticlockwise. So the answer is Vikas.",
+  "solution_hi": "दिए गए संकेतों से केवल एक ही व्यवस्था बनती है — राधा → अंजलि → अरुण → राहुल → रोहन → विकास → स्नेहा  (घड़ी की दिशा में)। केंद्र की ओर मुख होने पर व्यक्ति का दाहिना हाथ घड़ी की विपरीत दिशा में होता है। अतः उत्तर विकास है।",
+  "concept": "Seating Arrangement",
+  "chapter": "Seating Arrangement",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nHIJ : MNO :: LMN : ?\nThe student answered: QRS.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nHIJ : MNO :: LMN : ?\nविद्यार्थी ने उत्तर दिया: QRS।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "shifted one place too far"
+   },
+   {
+    "label": "B",
+    "text": "shifted one place short"
+   },
+   {
+    "label": "C",
+    "text": "shifted in the opposite direction"
+   },
+   {
+    "label": "D",
+    "text": "There is no mistake — the answer is correct"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "एक स्थान अधिक खिसका दिया"
+   },
+   {
+    "label": "B",
+    "text": "एक स्थान कम खिसकाया"
+   },
+   {
+    "label": "C",
+    "text": "विपरीत दिशा में खिसका दिया"
+   },
+   {
+    "label": "D",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "The correct answer is QRS. The student's answer matches it, so nothing went wrong. Each letter moves +5 in the alphabet (HIJ→MNO). Applying +5 to LMN gives QRS.",
+  "solution_hi": "सही उत्तर QRS है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। प्रत्येक अक्षर वर्णमाला में +5 स्थान बढ़ता है (HIJ→MNO); अतः LMN → QRS।",
+  "concept": "Letter Analogy",
+  "chapter": "Analogy",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nIn a row of 45 students, Priya is 9th from the left end. Vikas is 19th from the left end. If Priya and Vikas interchange their places, what will be Priya's new position from the RIGHT end?\nThe student answered: 27.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\n45 विद्यार्थियों की एक पंक्ति में प्रिया बाईं ओर से 9वें स्थान पर तथा विकास बाईं ओर से 19वें स्थान पर है। यदि प्रिया और विकास अपने स्थान बदल लें, तो प्रिया का दाईं ओर से नया स्थान क्या होगा?\nविद्यार्थी ने उत्तर दिया: 27।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "B",
+    "text": "gave the new position from the LEFT instead of the right"
+   },
+   {
+    "label": "C",
+    "text": "used the original position from the left"
+   },
+   {
+    "label": "D",
+    "text": "forgot the +1 after subtracting"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "B",
+    "text": "दाएँ के बजाय बाएँ से नया स्थान बता दिया"
+   },
+   {
+    "label": "C",
+    "text": "बाएँ से मूल स्थान का ही प्रयोग कर लिया"
+   },
+   {
+    "label": "D",
+    "text": "घटाने के बाद +1 करना भूल गया"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "The correct answer is 27. The student's answer matches it, so nothing went wrong. After the swap Priya stands where Vikas stood, i.e. 19th from the left. Position from right = 45 - 19 + 1 = 27.",
+  "solution_hi": "सही उत्तर 27 है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। स्थान बदलने पर प्रिया बाएँ से 19वें स्थान पर आ जाता है। दाएँ से स्थान = 45 - 19 + 1 = 27।",
+  "concept": "Ranking",
+  "chapter": "Ranking & Ordering",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "9 : 72 :: 10 : ?",
+  "stem_hi": "9 : 72 :: 10 : ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "90"
+   },
+   {
+    "label": "B",
+    "text": "100"
+   },
+   {
+    "label": "C",
+    "text": "72"
+   },
+   {
+    "label": "D",
+    "text": "110"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "90"
+   },
+   {
+    "label": "B",
+    "text": "100"
+   },
+   {
+    "label": "C",
+    "text": "72"
+   },
+   {
+    "label": "D",
+    "text": "110"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "The second term is n squared minus n (9→72). So 10→90.",
+  "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (9→72); उसी नियम से 10→90।",
+  "concept": "Number Analogy",
+  "chapter": "Analogy",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "In a dice with the faces numbered 1 to 6, 1 is opposite 6, and the faces adjacent to 3 are 1, 2, 5, 6.  What is the SUM of the numbers on the faces opposite to 2 and 1?",
+  "stem_hi": "1 से 6 तक अंकित एक पासे में 1 के सामने 6 है तथा 3 से लगे फलक 1, 2, 5, 6 हैं।  2 तथा 1 के सामने वाले फलकों की संख्याओं का योग क्या है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "11"
+   },
+   {
+    "label": "B",
+    "text": "3"
+   },
+   {
+    "label": "C",
+    "text": "5"
+   },
+   {
+    "label": "D",
+    "text": "12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "11"
+   },
+   {
+    "label": "B",
+    "text": "3"
+   },
+   {
+    "label": "C",
+    "text": "5"
+   },
+   {
+    "label": "D",
+    "text": "12"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "3's list is missing 4, so 3 is opposite 4; with 1 opposite 6 that leaves 2 opposite 5. The face opposite 2 is 5 and the face opposite 1 is 6, so the sum is 5 + 6 = 11.",
+  "solution_hi": "3 की सूची में 4 नहीं है, अतः 3 के सामने 4 है; 1 के सामने 6 होने से शेष 2 के सामने 5 रह जाता है। 2 के सामने 5 तथा 1 के सामने 6 है, अतः योग = 5 + 6 = 11।",
+  "concept": "Dice",
+  "chapter": "Dice",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Ram is the father of Vikas, and Vikas is the brother of Sita. How is Sita related to Ram?",
+  "stem_hi": "राम, विकास के पिता हैं तथा विकास, सीता के भाई हैं। सीता का राम से क्या सम्बन्ध है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Cousin"
+   },
+   {
+    "label": "B",
+    "text": "Mother"
+   },
+   {
+    "label": "C",
+    "text": "Niece"
+   },
+   {
+    "label": "D",
+    "text": "Son"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "चचेरा भाई/बहन"
+   },
+   {
+    "label": "B",
+    "text": "माता"
+   },
+   {
+    "label": "C",
+    "text": "भतीजी"
+   },
+   {
+    "label": "D",
+    "text": "Son"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Ram is the father of Sita, so read the other way, Sita is the son of Ram.",
+  "solution_hi": "राम, सीता के पिता हैं; उल्टा पढ़ने पर सीता, राम के पुत्र हुए।",
+  "concept": "Blood Relations",
+  "chapter": "Blood Relations",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "If '+' stands for '÷', '-' stands for '+', '×' stands for '-', '÷' stands for '×', which of the following equations is correct?",
+  "stem_hi": "यदि '+' का अर्थ '÷' है, '-' का अर्थ '+' है, '×' का अर्थ '-' है, '÷' का अर्थ '×' है, तो निम्नलिखित में से कौन-सा समीकरण सही है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "17 ÷ 21 ÷ 25 ÷ 30 = 93"
+   },
+   {
+    "label": "B",
+    "text": "25 - 27 × 20 + 16 = 2"
+   },
+   {
+    "label": "C",
+    "text": "3 × 6 ÷ 17 × 8 = -107"
+   },
+   {
+    "label": "D",
+    "text": "7 × 26 + 20 × 3 = 242"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "17 ÷ 21 ÷ 25 ÷ 30 = 93"
+   },
+   {
+    "label": "B",
+    "text": "25 - 27 × 20 + 16 = 2"
+   },
+   {
+    "label": "C",
+    "text": "3 × 6 ÷ 17 × 8 = -107"
+   },
+   {
+    "label": "D",
+    "text": "7 × 26 + 20 × 3 = 242"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Only '3 × 6 ÷ 17 × 8 = -107' holds once each printed symbol is replaced by the operation it stands for and × and ÷ are done before + and −.",
+  "solution_hi": "प्रत्येक प्रतीक को उसके निर्दिष्ट संक्रिया से बदलने तथा × और ÷ को + व − से पहले हल करने पर केवल '3 × 6 ÷ 17 × 8 = -107' सत्य है।",
+  "concept": "Symbol Substitution",
+  "chapter": "Symbol Substitution",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A person is initially facing East. He takes a left, then takes a right, then takes a left, then takes a right, then takes a right turn. Which direction is he facing now? (Each turn is 90°.)",
+  "stem_hi": "एक व्यक्ति आरम्भ में पूर्व दिशा की ओर मुख किए है। वह बाएँ, फिर दाएँ, फिर बाएँ, फिर दाएँ, फिर दाएँ मुड़ता है। अब उसका मुख किस दिशा की ओर है? (प्रत्येक मोड़ 90° का है।)",
+  "options": [
+   {
+    "label": "A",
+    "text": "South"
+   },
+   {
+    "label": "B",
+    "text": "North"
+   },
+   {
+    "label": "C",
+    "text": "West"
+   },
+   {
+    "label": "D",
+    "text": "East"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "दक्षिण"
+   },
+   {
+    "label": "B",
+    "text": "उत्तर"
+   },
+   {
+    "label": "C",
+    "text": "पश्चिम"
+   },
+   {
+    "label": "D",
+    "text": "पूर्व"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Starting East, applying each 90° turn: left→North right→East left→North right→East right→South. Final = South.",
+  "solution_hi": "पूर्व से आरम्भ कर प्रत्येक 90° मोड़ लगाने पर अंतिम दिशा = दक्षिण।",
+  "concept": "Direction — Facing",
+  "chapter": "Direction Sense",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "8 : 56 :: 12 : ?",
+  "stem_hi": "8 : 56 :: 12 : ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "132"
+   },
+   {
+    "label": "B",
+    "text": "144"
+   },
+   {
+    "label": "C",
+    "text": "110"
+   },
+   {
+    "label": "D",
+    "text": "156"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "132"
+   },
+   {
+    "label": "B",
+    "text": "144"
+   },
+   {
+    "label": "C",
+    "text": "110"
+   },
+   {
+    "label": "D",
+    "text": "156"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "The second term is n squared minus n (8→56). So 12→132.",
+  "solution_hi": "दूसरा पद पहले पद का सम्बन्ध दर्शाता है (8→56); उसी नियम से 12→132।",
+  "concept": "Number Analogy",
+  "chapter": "Analogy",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "In a dice with the faces numbered 1 to 6, 6 is opposite 5, and the faces adjacent to 1 are 2, 3, 5, 6.  What is the SUM of the numbers on the faces opposite to 3 and 6?",
+  "stem_hi": "1 से 6 तक अंकित एक पासे में 6 के सामने 5 है तथा 1 से लगे फलक 2, 3, 5, 6 हैं।  3 तथा 6 के सामने वाले फलकों की संख्याओं का योग क्या है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "9"
+   },
+   {
+    "label": "B",
+    "text": "5"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "7"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "9"
+   },
+   {
+    "label": "B",
+    "text": "5"
+   },
+   {
+    "label": "C",
+    "text": "2"
+   },
+   {
+    "label": "D",
+    "text": "7"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "1's list is missing 4, so 1 is opposite 4; with 6 opposite 5 that leaves 3 opposite 2. The face opposite 3 is 2 and the face opposite 6 is 5, so the sum is 2 + 5 = 7.",
+  "solution_hi": "1 की सूची में 4 नहीं है, अतः 1 के सामने 4 है; 6 के सामने 5 होने से शेष 3 के सामने 2 रह जाता है। 3 के सामने 2 तथा 6 के सामने 5 है, अतः योग = 2 + 5 = 7।",
+  "concept": "Dice",
+  "chapter": "Dice",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A person is initially facing South. He takes a right, then takes a right, then takes a left, then takes a right, then takes a left turn. Which direction is he facing now? (Each turn is 90°.)",
+  "stem_hi": "एक व्यक्ति आरम्भ में दक्षिण दिशा की ओर मुख किए है। वह दाएँ, फिर दाएँ, फिर बाएँ, फिर दाएँ, फिर बाएँ मुड़ता है। अब उसका मुख किस दिशा की ओर है? (प्रत्येक मोड़ 90° का है।)",
+  "options": [
+   {
+    "label": "A",
+    "text": "West"
+   },
+   {
+    "label": "B",
+    "text": "East"
+   },
+   {
+    "label": "C",
+    "text": "North"
+   },
+   {
+    "label": "D",
+    "text": "South"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "पश्चिम"
+   },
+   {
+    "label": "B",
+    "text": "पूर्व"
+   },
+   {
+    "label": "C",
+    "text": "उत्तर"
+   },
+   {
+    "label": "D",
+    "text": "दक्षिण"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "Starting South, applying each 90° turn: right→West right→North left→West right→North left→West. Final = West.",
+  "solution_hi": "दक्षिण से आरम्भ कर प्रत्येक 90° मोड़ लगाने पर अंतिम दिशा = पश्चिम।",
+  "concept": "Direction — Facing",
+  "chapter": "Direction Sense",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "In a row of 33 students, Amit is 8th from the left end. Sneha is 21st from the left end. If Amit and Sneha interchange their places, what will be Amit's new position from the RIGHT end?",
+  "stem_hi": "33 विद्यार्थियों की एक पंक्ति में अमित बाईं ओर से 8वें स्थान पर तथा स्नेहा बाईं ओर से 21वें स्थान पर है। यदि अमित और स्नेहा अपने स्थान बदल लें, तो अमित का दाईं ओर से नया स्थान क्या होगा?",
+  "options": [
+   {
+    "label": "A",
+    "text": "13"
+   },
+   {
+    "label": "B",
+    "text": "12"
+   },
+   {
+    "label": "C",
+    "text": "14"
+   },
+   {
+    "label": "D",
+    "text": "8"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "13"
+   },
+   {
+    "label": "B",
+    "text": "12"
+   },
+   {
+    "label": "C",
+    "text": "14"
+   },
+   {
+    "label": "D",
+    "text": "8"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "After the swap Amit stands where Sneha stood, i.e. 21st from the left. Position from right = 33 - 21 + 1 = 13.",
+  "solution_hi": "स्थान बदलने पर अमित बाएँ से 21वें स्थान पर आ जाता है। दाएँ से स्थान = 33 - 21 + 1 = 13।",
+  "concept": "Ranking",
+  "chapter": "Ranking & Ordering",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "JKL : OPQ :: IJK : ?",
+  "stem_hi": "JKL : OPQ :: IJK : ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "MNO"
+   },
+   {
+    "label": "B",
+    "text": "NJK"
+   },
+   {
+    "label": "C",
+    "text": "NOP"
+   },
+   {
+    "label": "D",
+    "text": "OPQ"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "MNO"
+   },
+   {
+    "label": "B",
+    "text": "NJK"
+   },
+   {
+    "label": "C",
+    "text": "NOP"
+   },
+   {
+    "label": "D",
+    "text": "OPQ"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Each letter moves +5 in the alphabet (JKL→OPQ). Applying +5 to IJK gives NOP.",
+  "solution_hi": "प्रत्येक अक्षर वर्णमाला में +5 स्थान बढ़ता है (JKL→OPQ); अतः IJK → NOP।",
+  "concept": "Letter Analogy",
+  "chapter": "Analogy",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nWhat comes next in the series?\nS2, P6, M10, J14, ?\nThe student answered: G18.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nनिम्नलिखित श्रृंखला में आगे क्या आएगा?\nS2, P6, M10, J14, ?\nविद्यार्थी ने उत्तर दिया: G18।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "advanced the letter one place too far"
+   },
+   {
+    "label": "B",
+    "text": "advanced the letter one place short"
+   },
+   {
+    "label": "C",
+    "text": "advanced the number by 1 instead of by the series step"
+   },
+   {
+    "label": "D",
+    "text": "There is no mistake — the answer is correct"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अक्षर को एक स्थान अधिक बढ़ा दिया"
+   },
+   {
+    "label": "B",
+    "text": "अक्षर को एक स्थान कम बढ़ाया"
+   },
+   {
+    "label": "C",
+    "text": "संख्या को श्रृंखला के अंतराल के बजाय केवल 1 बढ़ाया"
+   },
+   {
+    "label": "D",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "The correct answer is G18. The student's answer matches it, so nothing went wrong. Letters advance by 3 (S→P→M→J→G); numbers increase by 4 (2→6→10→14→18). Next = G18.",
+  "solution_hi": "सही उत्तर G18 है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। अक्षर 3 स्थान तथा संख्याएँ 4 बढ़ती हैं; अतः अगला पद = G18।",
+  "concept": "Alphanumeric Series",
+  "chapter": "Series",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Which of the following years will have exactly the same calendar as the year 2056?",
+  "stem_hi": "निम्नलिखित में से किस वर्ष का कैलेंडर 2056 के कैलेंडर के बिल्कुल समान होगा?",
+  "options": [
+   {
+    "label": "A",
+    "text": "2062"
+   },
+   {
+    "label": "B",
+    "text": "2084"
+   },
+   {
+    "label": "C",
+    "text": "2068"
+   },
+   {
+    "label": "D",
+    "text": "2067"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "2062"
+   },
+   {
+    "label": "B",
+    "text": "2084"
+   },
+   {
+    "label": "C",
+    "text": "2068"
+   },
+   {
+    "label": "D",
+    "text": "2067"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "A year repeats its calendar only when 1 January falls on the same weekday AND the leap status matches. 2056 is a leap year beginning on a Saturday; the first later year meeting both conditions is 2084.",
+  "solution_hi": "किसी वर्ष का कैलेंडर तभी दोहराता है जब 1 जनवरी उसी वार को पड़े और लीप-स्थिति भी समान हो। 2056 लीप वर्ष है तथा उसका आरम्भ शनिवार से होता है; दोनों शर्तें पूरी करने वाला पहला वर्ष 2084 है।",
+  "concept": "Calendar",
+  "chapter": "Calendar",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nThree of the following four numbers are alike; find the ODD one out:\n97,  67,  133,  83\nThe student answered: 133.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nनिम्नलिखित चार संख्याओं में से तीन एक समान हैं; असंगत (ODD) संख्या चुनिए:\n97,  67,  133,  83\nविद्यार्थी ने उत्तर दिया: 133।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "picked 67, which IS prime and so belongs with the other two"
+   },
+   {
+    "label": "B",
+    "text": "picked 83, which IS prime and so belongs with the other two"
+   },
+   {
+    "label": "C",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "D",
+    "text": "picked 97, which IS prime and so belongs with the other two"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "67 चुन लिया, जो स्वयं अभाज्य है और शेष दोनों के साथ ही आता है"
+   },
+   {
+    "label": "B",
+    "text": "83 चुन लिया, जो स्वयं अभाज्य है और शेष दोनों के साथ ही आता है"
+   },
+   {
+    "label": "C",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "D",
+    "text": "97 चुन लिया, जो स्वयं अभाज्य है और शेष दोनों के साथ ही आता है"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "The correct answer is 133. The student's answer matches it, so nothing went wrong. 97, 67, 83 are prime numbers; 133 is composite (133 = 19 × 7). So 133 is the odd one out.",
+  "solution_hi": "सही उत्तर 133 है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। शेष तीनों अभाज्य संख्याएँ हैं; 133 भाज्य है, अतः यही असंगत है।",
+  "concept": "Odd One Out (Numbers)",
+  "chapter": "Classification (Odd One Out)",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Vikas is the father of Anjali, and Anjali is the sister of Radha. How is Radha related to Vikas?",
+  "stem_hi": "विकास, अंजलि के पिता हैं तथा अंजलि, राधा की बहन हैं। राधा का विकास से क्या सम्बन्ध है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Grandmother"
+   },
+   {
+    "label": "B",
+    "text": "Granddaughter"
+   },
+   {
+    "label": "C",
+    "text": "Son"
+   },
+   {
+    "label": "D",
+    "text": "Sister"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "दादी"
+   },
+   {
+    "label": "B",
+    "text": "पोती"
+   },
+   {
+    "label": "C",
+    "text": "Son"
+   },
+   {
+    "label": "D",
+    "text": "बहन"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Vikas is the father of Radha, so read the other way, Radha is the son of Vikas.",
+  "solution_hi": "विकास, राधा के पिता हैं; उल्टा पढ़ने पर राधा, विकास के पुत्र हुए।",
+  "concept": "Blood Relations",
+  "chapter": "Blood Relations",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "In the following, the symbols are used as: 'A @ B' means 'A is greater than B'; 'A * B' means 'A is smaller than B'; 'A % B' means 'A is equal to B'; 'A # B' means 'A is either greater than or equal to B'; 'A & B' means 'A is either smaller than or equal to B'.  Statements: W % U, U # R, R * V, V * Q, Q * P.  Conclusions: I. Q @ R  II. P @ R  Which of the conclusions is definitely true?",
+  "stem_hi": "नीचे दिए गए प्रश्न में संकेतों का प्रयोग इस प्रकार किया गया है: 'A @ B' का अर्थ है 'A, B से बड़ा है'; 'A * B' का अर्थ है 'A, B से छोटा है'; 'A % B' का अर्थ है 'A, B के बराबर है'; 'A # B' का अर्थ है 'A, B से बड़ा है अथवा उसके बराबर है'; 'A & B' का अर्थ है 'A, B से छोटा है अथवा उसके बराबर है'।  कथन: W % U, U # R, R * V, V * Q, Q * P।  निष्कर्ष: I. Q @ R  II. P @ R  कौन-सा निष्कर्ष निश्चित रूप से सत्य है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Neither I nor II follows"
+   },
+   {
+    "label": "B",
+    "text": "Only conclusion I follows"
+   },
+   {
+    "label": "C",
+    "text": "Only conclusion II follows"
+   },
+   {
+    "label": "D",
+    "text": "Both I and II follow"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "न तो I और न ही II अनुसरण करता है"
+   },
+   {
+    "label": "B",
+    "text": "केवल निष्कर्ष I अनुसरण करता है"
+   },
+   {
+    "label": "C",
+    "text": "केवल निष्कर्ष II अनुसरण करता है"
+   },
+   {
+    "label": "D",
+    "text": "I और II दोनों अनुसरण करते हैं"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Reading the chain W % U, U # R, R * V, V * Q, Q * P: I — the chain gives Q > R, so 'Q @ R' is true. II — the chain gives P > R, so 'P @ R' is true. Hence — Both I and II follow.",
+  "solution_hi": "शृंखला W % U, U # R, R * V, V * Q, Q * P से: निष्कर्ष I सत्य है, निष्कर्ष II सत्य है। अतः — I और II दोनों अनुसरण करते हैं।",
+  "concept": "Coded Inequality",
+  "chapter": "Coded Inequality",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Rahul, Meena, Priya, Rohan, Amit, Anjali and Neha are sitting around a circular table facing the centre. Rahul sits second to the right of Anjali. Amit sits second to the left of Priya. Priya sits third to the right of Meena. Priya sits third to the left of Rahul. Rohan sits second to the left of Meena.  Who sits third to the left of Rohan?",
+  "stem_hi": "राहुल, मीना, प्रिया, रोहन, अमित, अंजलि तथा नेहा एक गोल मेज़ के चारों ओर बैठे हैं और सभी का मुख केंद्र की ओर है। राहुल, अंजलि के दाएँ से दूसरे स्थान पर बैठा है। अमित, प्रिया के बाएँ से दूसरे स्थान पर बैठा है। प्रिया, मीना के दाएँ से तीसरे स्थान पर बैठी है। प्रिया, राहुल के बाएँ से तीसरे स्थान पर बैठी है। रोहन, मीना के बाएँ से दूसरे स्थान पर बैठा है।  रोहन के बाएँ से तीसरे स्थान पर कौन बैठा है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Anjali"
+   },
+   {
+    "label": "B",
+    "text": "Neha"
+   },
+   {
+    "label": "C",
+    "text": "Amit"
+   },
+   {
+    "label": "D",
+    "text": "Priya"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "अंजलि"
+   },
+   {
+    "label": "B",
+    "text": "नेहा"
+   },
+   {
+    "label": "C",
+    "text": "अमित"
+   },
+   {
+    "label": "D",
+    "text": "प्रिया"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "The clues admit exactly one arrangement — Rahul → Rohan → Anjali → Priya → Neha → Amit → Meena (clockwise). Facing the centre, a person's right hand points anticlockwise. So the answer is Neha.",
+  "solution_hi": "दिए गए संकेतों से केवल एक ही व्यवस्था बनती है — राहुल → रोहन → अंजलि → प्रिया → नेहा → अमित → मीना  (घड़ी की दिशा में)। केंद्र की ओर मुख होने पर व्यक्ति का दाहिना हाथ घड़ी की विपरीत दिशा में होता है। अतः उत्तर नेहा है।",
+  "concept": "Seating Arrangement",
+  "chapter": "Seating Arrangement",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "From the given alternative words, select the word which can be formed using the letters of the given word : STRANGULATION",
+  "stem_hi": "दिए गए वैकल्पिक शब्दों में से उस शब्द को चुनिए जो दिए गए शब्द के अक्षरों से बनाया जा सकता है : STRANGULATION",
+  "options": [
+   {
+    "label": "A",
+    "text": "ONION"
+   },
+   {
+    "label": "B",
+    "text": "STAR"
+   },
+   {
+    "label": "C",
+    "text": "GRASS"
+   },
+   {
+    "label": "D",
+    "text": "GLASS"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "ONION"
+   },
+   {
+    "label": "B",
+    "text": "STAR"
+   },
+   {
+    "label": "C",
+    "text": "GRASS"
+   },
+   {
+    "label": "D",
+    "text": "GLASS"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "GRASS cannot — it needs 2 'S's and STRANGULATION has 1; STAR can be formed; GLASS cannot — it needs 2 'S's and STRANGULATION has 1; ONION cannot — it needs 2 'O's and STRANGULATION has 1. So the answer is STAR.",
+  "solution_hi": "STRANGULATION के अक्षरों से केवल STAR बनाया जा सकता है; शेष तीनों शब्दों के लिए आवश्यक अक्षर STRANGULATION में नहीं हैं।",
+  "concept": "Word Formation",
+  "chapter": "Word Formation",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Find the next term in the letter series:\nL, S, O, W, ?",
+  "stem_hi": "अक्षर श्रृंखला में अगला पद ज्ञात कीजिए:\nL, S, O, W, ?",
+  "options": [
+   {
+    "label": "A",
+    "text": "A"
+   },
+   {
+    "label": "B",
+    "text": "S"
+   },
+   {
+    "label": "C",
+    "text": "R"
+   },
+   {
+    "label": "D",
+    "text": "Z"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "A"
+   },
+   {
+    "label": "B",
+    "text": "S"
+   },
+   {
+    "label": "C",
+    "text": "R"
+   },
+   {
+    "label": "D",
+    "text": "Z"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Two series are interleaved: the 1st, 3rd and 5th terms advance by 3, while the 2nd and 4th advance by 4 (L->S->O->W). Next = R.",
+  "solution_hi": "दो श्रृंखलाएँ मिली हुई हैं: पहला, तीसरा और पाँचवाँ पद 3 बढ़ता है, जबकि दूसरा और चौथा पद 4 बढ़ता है; अतः अगला पद = R।",
+  "concept": "Letter Series",
+  "chapter": "Series",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "In a certain code language, 'HORSE' is written as 'IQUWJ'. How is 'CHAIR' written in that same code?",
+  "stem_hi": "एक निश्चित कूट भाषा में 'HORSE' को 'IQUWJ' लिखा जाता है। उसी कूट भाषा में 'CHAIR' को कैसे लिखा जाएगा?",
+  "options": [
+   {
+    "label": "A",
+    "text": "BFXEM"
+   },
+   {
+    "label": "B",
+    "text": "DJDMW"
+   },
+   {
+    "label": "C",
+    "text": "DIBJS"
+   },
+   {
+    "label": "D",
+    "text": "CICLV"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "BFXEM"
+   },
+   {
+    "label": "B",
+    "text": "DJDMW"
+   },
+   {
+    "label": "C",
+    "text": "DIBJS"
+   },
+   {
+    "label": "D",
+    "text": "CICLV"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "The first letter moves 1 place, the second 2 places, the third 3, and so on (HORSE->IQUWJ). Applying the same rule to CHAIR gives DJDMW.",
+  "solution_hi": "पहला अक्षर 1 स्थान, दूसरा 2 स्थान, तीसरा 3 स्थान — इसी क्रम में आगे बढ़ता है (HORSE→IQUWJ); अतः CHAIR → DJDMW।",
+  "concept": "Letter-Shift Coding",
+  "chapter": "Coding-Decoding",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "If '+' stands for '÷', '-' stands for '×', '×' stands for '+', '÷' stands for '-', which of the following equations is correct?",
+  "stem_hi": "यदि '+' का अर्थ '÷' है, '-' का अर्थ '×' है, '×' का अर्थ '+' है, '÷' का अर्थ '-' है, तो निम्नलिखित में से कौन-सा समीकरण सही है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "26 - 27 × 27 - 27 = -730"
+   },
+   {
+    "label": "B",
+    "text": "28 + 3 ÷ 17 + 12 = 288"
+   },
+   {
+    "label": "C",
+    "text": "21 ÷ 29 - 8 - 28 = -1792"
+   },
+   {
+    "label": "D",
+    "text": "23 ÷ 28 ÷ 12 × 5 = -12"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "26 - 27 × 27 - 27 = -730"
+   },
+   {
+    "label": "B",
+    "text": "28 + 3 ÷ 17 + 12 = 288"
+   },
+   {
+    "label": "C",
+    "text": "21 ÷ 29 - 8 - 28 = -1792"
+   },
+   {
+    "label": "D",
+    "text": "23 ÷ 28 ÷ 12 × 5 = -12"
+   }
+  ],
+  "correct_answer": "D",
+  "solution": "Only '23 ÷ 28 ÷ 12 × 5 = -12' holds once each printed symbol is replaced by the operation it stands for and × and ÷ are done before + and −.",
+  "solution_hi": "प्रत्येक प्रतीक को उसके निर्दिष्ट संक्रिया से बदलने तथा × और ÷ को + व − से पहले हल करने पर केवल '23 ÷ 28 ÷ 12 × 5 = -12' सत्य है।",
+  "concept": "Symbol Substitution",
+  "chapter": "Symbol Substitution",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "A student was asked the following question.\nIf each letter is coded by its position counted BACKWARDS from Z (Z=1, Y=2, …, A=26), how is 'MONEY' coded?\nThe student answered: 14 12 13 22 2.\nWhich of the following describes what the student did?",
+  "stem_hi": "एक विद्यार्थी से निम्नलिखित प्रश्न पूछा गया।\nयदि प्रत्येक अक्षर को Z से उल्टी गिनती में उसकी स्थिति (Z=1, Y=2, …, A=26) कूटबद्ध किया जाए, तो 'MONEY' का कूट क्या होगा?\nविद्यार्थी ने उत्तर दिया: 14 12 13 22 2।\nनिम्नलिखित में से कौन-सा कथन बताता है कि विद्यार्थी ने क्या किया?",
+  "options": [
+   {
+    "label": "A",
+    "text": "added one to the position instead of applying the stated rule"
+   },
+   {
+    "label": "B",
+    "text": "There is no mistake — the answer is correct"
+   },
+   {
+    "label": "C",
+    "text": "used the plain position, ignoring the rule"
+   },
+   {
+    "label": "D",
+    "text": "doubled the position instead of applying the stated rule"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "दिए गए नियम के बजाय स्थिति में एक जोड़ दिया"
+   },
+   {
+    "label": "B",
+    "text": "कोई त्रुटि नहीं — उत्तर सही है"
+   },
+   {
+    "label": "C",
+    "text": "नियम को छोड़कर केवल वर्णमाला-स्थिति का प्रयोग किया"
+   },
+   {
+    "label": "D",
+    "text": "दिए गए नियम के बजाय स्थिति को दुगुना कर दिया"
+   }
+  ],
+  "correct_answer": "B",
+  "solution": "The correct answer is 14 12 13 22 2. The student's answer matches it, so nothing went wrong. MONEY: M=14, O=12, N=13, E=22, Y=2 → 14 12 13 22 2.",
+  "solution_hi": "सही उत्तर 14 12 13 22 2 है। विद्यार्थी का उत्तर इसी के बराबर है, अतः कोई त्रुटि नहीं हुई। MONEY: M=14, O=12, N=13, E=22, Y=2 → 14 12 13 22 2।",
+  "concept": "Number Coding",
+  "chapter": "Coding-Decoding",
+  "form": "error_spot",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Study the following number arrangement and find the number that should replace the question mark:\nRow 1: 13, 12, 4\nRow 2: 169, 144, 16\nRow 3: 2197, 1728, ?\nIn each column, every row is obtained from the rows above it by the same rule.",
+  "stem_hi": "निम्नलिखित संख्या-क्रम का अध्ययन कीजिए तथा प्रश्नवाचक चिह्न के स्थान पर आने वाली संख्या ज्ञात कीजिए:\nपंक्ति 1: 13, 12, 4\nपंक्ति 2: 169, 144, 16\nपंक्ति 3: 2197, 1728, ?\nप्रत्येक स्तम्भ में हर पंक्ति अपने ऊपर वाली पंक्तियों से एक ही नियम द्वारा प्राप्त होती है।",
+  "options": [
+   {
+    "label": "A",
+    "text": "64"
+   },
+   {
+    "label": "B",
+    "text": "32"
+   },
+   {
+    "label": "C",
+    "text": "28"
+   },
+   {
+    "label": "D",
+    "text": "20"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "64"
+   },
+   {
+    "label": "B",
+    "text": "32"
+   },
+   {
+    "label": "C",
+    "text": "28"
+   },
+   {
+    "label": "D",
+    "text": "20"
+   }
+  ],
+  "correct_answer": "A",
+  "solution": "In every column the second row is the square of the first and the third is its cube — equivalently, each bottom number is the product of the two above it. So the missing number is 64.",
+  "solution_hi": "प्रत्येक स्तम्भ में दूसरी पंक्ति पहली का वर्ग है तथा तीसरी उसका घन — अर्थात् नीचे की संख्या अपने ऊपर की दोनों संख्याओं का गुणनफल है। अतः लुप्त संख्या 64 है।",
+  "concept": "Number Grid",
+  "chapter": "Number Grid",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ },
+ {
+  "stem": "Statements: Some tables are trees. All trees are books. All books are animals.  Conclusions: I. Some animals are not tables. II. No tables are animals.  Which of the conclusions follows from the statements?",
+  "stem_hi": "कथन: कुछ मेज़ें, पेड़ हैं। सभी पेड़, पुस्तकें हैं। सभी पुस्तकें, जानवर हैं।  निष्कर्ष: I. कुछ जानवर, मेज़ें नहीं हैं। II. कोई भी मेज़ें, जानवर नहीं है।  कौन-सा निष्कर्ष कथनों का अनुसरण करता है?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Only conclusion II follows"
+   },
+   {
+    "label": "B",
+    "text": "Both I and II follow"
+   },
+   {
+    "label": "C",
+    "text": "Neither I nor II follows"
+   },
+   {
+    "label": "D",
+    "text": "Only conclusion I follows"
+   }
+  ],
+  "options_hi": [
+   {
+    "label": "A",
+    "text": "केवल निष्कर्ष II अनुसरण करता है"
+   },
+   {
+    "label": "B",
+    "text": "I और II दोनों अनुसरण करते हैं"
+   },
+   {
+    "label": "C",
+    "text": "न तो I और न ही II अनुसरण करता है"
+   },
+   {
+    "label": "D",
+    "text": "केवल निष्कर्ष I अनुसरण करता है"
+   }
+  ],
+  "correct_answer": "C",
+  "solution": "Conclusion I does not follow and conclusion II does not follow: a conclusion counts only if it is true in EVERY arrangement the statements allow, not merely in one of them. Hence — Neither I nor II follows.",
+  "solution_hi": "निष्कर्ष I अनुसरण नहीं करता तथा निष्कर्ष II अनुसरण नहीं करता। निष्कर्ष तभी मान्य है जब वह कथनों से बनने वाली हर सम्भव स्थिति में सत्य हो, केवल किसी एक स्थिति में नहीं। अतः — न तो I और न ही II अनुसरण करता है।",
+  "concept": "Syllogism",
+  "chapter": "Syllogism",
+  "form": "direct",
+  "difficulty": 4,
+  "generated": true,
+  "exam": "BSSC",
+  "source": "reasoninggen",
+  "tag": {
+   "section": "Reasoning",
+   "difficulty": 4
+  }
+ }
+]
