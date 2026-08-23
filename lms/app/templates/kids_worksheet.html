@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="icon" href="/static/brand/favicon-32.png"><link rel="apple-touch-icon" href="/static/brand/trigunai-favicon-180.png">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Acharya Kids — Practice Worksheet</title>
 <link rel="stylesheet" href="/static/kids/worksheet.css">
 <link rel="stylesheet" href="/static/kids/conceptviz.css">
@@ -36,13 +36,22 @@
   .gem{width:26px;height:26px;opacity:.28;transition:opacity .3s,transform .3s;filter:grayscale(.6)}
   .gem.on{opacity:1;filter:none;transform:scale(1.12)}
 
-  /* guide avatar + bubble */
-  .guide{position:fixed;right:8px;bottom:8px;z-index:20;width:130px;text-align:center;pointer-events:none}
+  /* Guide avatar + bubble.
+     The owl is DESKTOP-ONLY. Anchored bottom-right it sat on top of the answer controls —
+     the number keypad and the last row of option tiles — on every phone and most tablets.
+     Below 1100px (where the 680px content column stops leaving real margin) the owl is gone
+     and its bubble becomes a top toast instead, so encouragement never covers the answer. */
+  .guide{position:fixed;right:10px;bottom:10px;z-index:20;width:130px;text-align:center;pointer-events:none}
   .guide img{width:96px;height:auto;filter:drop-shadow(0 8px 16px rgba(60,40,10,.22));animation:bob 3s ease-in-out infinite}
   @keyframes bob{50%{transform:translateY(-8px)}}
   .bubble{background:#fff;border:3px solid var(--k-yellow);border-radius:16px;padding:7px 11px;font-weight:800;
     font-size:.82rem;color:#26406b;max-width:130px;margin:0 auto 4px;box-shadow:0 6px 16px #0001;opacity:0;transform:scale(.7);transition:.25s}
   .bubble.show{opacity:1;transform:scale(1)}
+
+  /* Says what the sheet ACTUALLY is when a chosen chapter can't be fully covered — the app used
+     to serve general questions under a chapter heading with no indication. */
+  .scope-note{max-width:640px;margin:4px auto 0;font-size:.78rem;font-weight:700;color:#7c6a52;
+    background:#fff8e8;border:1.5px solid #f0dcae;border-radius:12px;padding:6px 12px;text-align:center}
 
   /* nav + progress */
   .run-nav{display:flex;align-items:center;gap:8px;max-width:640px;margin:2px auto 4px}
@@ -118,12 +127,194 @@
   @keyframes conf{0%{opacity:1;transform:translate(0,0) scale(.6) rotate(0)}
     100%{opacity:0;transform:translate(var(--dx),-240px) scale(1.25) rotate(240deg)}}
   @media (prefers-reduced-motion:reduce){.celebrate.show{animation-duration:.6s}.confetti{display:none}}
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     RESPONSIVE — phone first, then tablet, then desktop.
+     The rule that drives all of it: NOTHING decorative may sit over a control a
+     child has to tap. On a 375px screen the answer area IS the screen.
+     ══════════════════════════════════════════════════════════════════════════ */
+
+  /* Touch hygiene: no grey tap flash, no iOS auto-zoom on focus, no accidental
+     text selection while tapping tiles quickly. */
+  *{-webkit-tap-highlight-color:transparent}
+  html{-webkit-text-size-adjust:100%}
+  .chip,.go,.nav-btn,.gem,.voice-btn,.home{-webkit-user-select:none;user-select:none;touch-action:manipulation}
+
+  /* The header follows the child down the page — "which subject am I doing?" and the
+     way out stay reachable without scrolling back up. */
+  .topbar{position:sticky;top:0;z-index:22;background:rgba(250,252,255,.92);
+    -webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);
+    border-bottom:1px solid rgba(120,160,210,.16);margin:0 -14px;padding:8px 14px;
+    padding-top:calc(8px + env(safe-area-inset-top))}
+
+  @media (max-width:900px){
+    /* 1 — the owl and the background animals go. Both are decoration that was landing
+       on top of the keypad / option tiles. The bubble survives as a top toast. */
+    .guide{position:fixed;left:50%;right:auto;top:calc(env(safe-area-inset-top) + 56px);bottom:auto;
+      transform:translateX(-50%);width:auto;max-width:88vw;z-index:30}
+    .guide img{display:none}
+    .bubble{max-width:88vw;font-size:.95rem;padding:10px 16px;margin:0;border-radius:999px;
+      box-shadow:0 8px 22px rgba(30,60,110,.18);transform:translateY(-8px)}
+    .bubble.show{transform:translateY(0)}
+    .bg-buddy{display:none}          /* they sat directly behind the question text */
+    .deco{display:none}
+
+    /* 2 — one tidy header row instead of two ragged ones */
+    .wrap{padding:0 14px calc(118px + env(safe-area-inset-bottom));}
+    .topbar{gap:8px;flex-wrap:nowrap}
+    .crumbs{font-size:.95rem;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .voice-btn,.home{flex:0 0 auto;padding:9px 12px;font-size:.85rem}
+    .home{margin-left:0}
+
+    /* 3 — Back / progress / Next become a fixed bottom bar in the thumb zone.
+       This is the control that matters most, so it is the one that never scrolls away. */
+    .run-nav{position:fixed;left:0;right:0;bottom:0;z-index:25;margin:0;max-width:none;
+      display:flex;align-items:center;gap:10px;padding:10px 14px;
+      padding-bottom:calc(10px + env(safe-area-inset-bottom));
+      background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+      border-top:1px solid rgba(120,160,210,.2);box-shadow:0 -6px 20px rgba(30,60,110,.07)}
+    .run-nav .qprog{flex:1;text-align:center;font-size:.9rem}
+    .run-nav .nav-btn{min-height:48px;padding:11px 18px;flex:0 0 auto}
+    .run-nav2{order:-1;margin:6px auto 2px;gap:8px}
+    .nav-btn.sm{min-height:38px}
+
+    /* 4 — tighter vertical rhythm so the QUESTION is above the fold, not the chrome */
+    .gems{margin:4px 0 2px;gap:4px;min-height:24px}
+    .gem{width:21px;height:21px}
+    .concept-hint{font-size:.98rem;padding:10px 14px;margin:6px auto;border-radius:14px}
+    #stage .ws-instr{font-size:1.22rem}
+
+    /* 5 — the celebrating lion is half-height on a phone, so it reads as a cheer
+       rather than a takeover of the answer area */
+    .celebrate img{height:132px;border-radius:20px}
+    .celebrate .emoji{font-size:96px}
+
+    /* 6 — start & results cards stop looking like desktop cards squeezed onto a phone */
+    .card{padding:18px 14px;border-radius:20px;margin:12px auto;border-width:2px}
+    .card h1{font-size:1.3rem}
+    .chips{gap:7px}
+    .chip{padding:10px 13px;font-size:.92rem;min-height:44px;display:flex;align-items:center}
+    .start-btns{flex-direction:column;gap:9px}
+    .start-btns .go{width:100%;min-height:52px;padding:13px 18px}
+    .actions{gap:8px}
+    .actions a,.actions button{flex:1 1 44%;min-height:48px;display:flex;align-items:center;justify-content:center}
+  }
+
+  /* Phones in landscape are only ~370px tall — a fixed bottom bar plus a sticky header
+     would eat the whole viewport, so both release back into the flow. */
+  @media (max-width:900px) and (orientation:landscape) and (max-height:460px){
+    .topbar{position:static}
+    .run-nav{position:static;background:none;box-shadow:none;border-top:0;padding:4px 0;backdrop-filter:none}
+    .wrap{padding-bottom:24px}
+    .guide{top:4px}
+  }
+
+  /* TABLET — real estate for a wider column and bigger type, but the owl still
+     overlaps the content edge at this width, so it stays hidden. */
+  @media (min-width:901px) and (max-width:1099px){
+    .wrap{max-width:760px;padding-bottom:40px}
+    .guide{position:fixed;left:50%;right:auto;top:70px;bottom:auto;transform:translateX(-50%);width:auto;z-index:30}
+    .guide img{display:none}
+    .bubble{max-width:70vw;font-size:1rem;padding:10px 18px;border-radius:999px;margin:0}
+    .bg-buddy{height:170px;opacity:.16}
+    .concept-hint{font-size:1.1rem}
+    #stage .ws-instr{font-size:1.55rem}
+    .chip{min-height:46px;display:flex;align-items:center}
+    .nav-btn{min-height:48px}
+  }
+
+  /* DESKTOP — the owl only appears once the margin beside the 680px column is genuinely
+     free, which is where it was designed to live. */
+  @media (min-width:1100px){
+    .wrap{padding-bottom:80px}
+    .bg-buddy{height:230px;opacity:.28}
+  }
+
+  /* Fill the phone screen: the question sits in the middle of the space between the
+     sticky header and the sticky action bar, instead of clinging to the top with a
+     dead zone underneath. */
+  @media (max-width:900px){
+    #stage{padding-top:2px}
+    /* whatever the widget's own submit control is, it must clear the fixed bar */
+    #stage .ws-check,#stage .ws-foot{margin-bottom:10px}
+    /* submit centred under the keypad, same as tablet — left-aligned looked accidental */
+    #stage .ws-foot{justify-content:center}
+    /* the board is the least useful crumb on a narrow screen — the SUBJECT is what the
+       child needs to see, and truncating it to "Ma…" helped nobody */
+    .crumb-board{display:none}
+    /* Change topic / Full sheet are escape hatches, not primary actions — they should not
+       be the biggest thing above the question */
+    .run-nav2{margin:4px auto 0;gap:6px}
+    .nav-btn.sm{padding:5px 11px;font-size:.72rem;min-height:32px;opacity:.85}
+  }
+  @media (min-width:481px) and (max-width:900px){ .crumb-board{display:inline} }
+
+  /* A typical phone viewport (~812px) can't fit header + hint + prompt + a 4-row keypad
+     + the action bar at full size — the Check button ended up under the bar, so the child
+     had to scroll to submit. Tighten the vertical budget so the whole question fits. */
+  @media (max-width:900px){
+    .ws-card{padding:10px 10px 12px}
+    #stage .ws-head{margin-bottom:10px}
+    #stage .ws-entry{margin-bottom:8px;min-height:48px;font-size:1.55rem;padding:8px}
+    #stage .ws-pad{gap:7px}
+    #stage .ws-key{min-height:50px;padding:11px 8px;font-size:1.35rem}
+    #stage .ws-check{padding:11px 22px;min-height:46px;font-size:1.05rem}
+    .concept-hint{margin:4px auto 6px;padding:8px 12px}
+    .run-nav2{margin:3px auto 0}
+    .gems{margin:3px 0 0;min-height:20px}
+  }
+
+  /* ── TABLET (600–1099px) ──────────────────────────────────────────────────
+     A tablet was inheriting the phone rules: phone-sized type on a 10" screen with
+     a large dead zone under the keypad. It gets its own scale — a centred column,
+     bigger touch targets, and a question block that sits in the upper-middle of the
+     screen rather than pinned to the top of a very tall viewport. */
+  @media (min-width:600px) and (max-width:1099px){
+    .wrap{max-width:720px;padding:0 22px calc(120px + env(safe-area-inset-bottom))}
+    .topbar{margin:0 -22px;padding:10px 22px;padding-top:calc(10px + env(safe-area-inset-top))}
+    .crumbs{font-size:1.12rem}
+    .crumb-board{display:inline}
+    .voice-btn,.home{padding:10px 16px;font-size:.95rem}
+    .gems{margin:8px 0 2px;gap:6px} .gem{width:26px;height:26px}
+    .concept-hint{font-size:1.15rem;padding:13px 20px;margin:8px auto 10px}
+    .nav-btn.sm{font-size:.85rem;padding:8px 14px;min-height:38px;opacity:1}
+
+    /* the question, at a size that suits arm's-length viewing */
+    #stage{padding-top:10px}
+    #stage .ws-card{padding:16px 14px 18px}
+    #stage .ws-instr{font-size:1.6rem}
+    #stage .ws-sentence{font-size:1.7rem}
+    #stage .ws-opts{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    #stage .ws-opt{min-height:76px;font-size:1.35rem;padding:18px 14px}
+    #stage .ws-opt.ws-big{font-size:1.7rem}
+    #stage .ws-pad{max-width:420px;gap:12px}
+    #stage .ws-key{min-height:68px;font-size:1.75rem;padding:16px 10px}
+    #stage .ws-entry{font-size:2rem;min-height:62px}
+    #stage .ws-chip,#stage .ws-tile{font-size:1.2rem;min-height:56px}
+    #stage .ws-col-item{min-height:64px;font-size:1.2rem}
+    #stage .ws-check{font-size:1.2rem;min-height:56px;padding:15px 32px}
+    /* the submit sat hard against the left edge while the keypad was centred */
+    #stage .ws-foot{justify-content:center;margin-top:20px}
+
+    /* the fixed bar keeps its controls on the content column, not flung to the bezels */
+    .run-nav{padding:12px 0;padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+    .run-nav .nav-btn{min-height:54px;font-size:1rem;padding:13px 26px}
+    .run-nav .qprog{font-size:1.05rem}
+    .run-nav > *:first-child{margin-left:max(22px,calc((100vw - 720px)/2))}
+    .run-nav > *:last-child{margin-right:max(22px,calc((100vw - 720px)/2))}
+
+    .card{max-width:620px;padding:26px 22px}
+    .card h1{font-size:1.7rem}
+    .chip{font-size:1.02rem;padding:12px 16px;min-height:48px}
+    .start-btns{flex-direction:row}
+    .start-btns .go{width:auto;min-height:56px;font-size:1.1rem}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="topbar">
-    <div class="crumbs">{{ board }} · Class <span id="clsLabel">{{ cls }}</span> · <span class="sub" id="subLabel">{{ subject }}</span></div>
+    <div class="crumbs"><span class="crumb-board">{{ board }} · </span>Class <span id="clsLabel">{{ cls }}</span> · <span class="sub" id="subLabel">{{ subject }}</span></div>
     <button class="voice-btn" id="voiceBtn">🔊 Voice</button>
     <a class="home" href="/exam-prep/dashboard">🏠 Home</a>
   </div>
@@ -163,6 +354,7 @@
       <button class="nav-btn sm" onclick="changeTopic()">↩ Change topic</button>
       <button class="nav-btn sm" onclick="openFullSheet()">📄 Full sheet</button>
     </div>
+    <div class="scope-note hidden" id="scopeNote"></div>
     <div class="gems" id="gems"></div>
     <div class="concept-hint" id="conceptHint"></div>
     <div id="stage"></div>
@@ -210,6 +402,18 @@
   // voice toggle
   $('voiceBtn').onclick=()=>{ voiceOn=!voiceOn; $('voiceBtn').classList.toggle('off',!voiceOn); $('voiceBtn').textContent=voiceOn?'🔊 Voice':'🔇 Voice'; };
 
+  // Be straight about chapter coverage. "chapter" = the whole sheet is from that chapter;
+  // "partial" = every on-topic question we have plus general practice; "mixed" = general practice.
+  function showScope(d){
+    const el=$('scopeNote'); if(!el) return;
+    const sc=d.chapter_scope, ch=(CFG.chapter||'').trim();
+    if(!ch || sc==='chapter' || sc==='all'){ el.classList.add('hidden'); return; }
+    el.textContent = (sc==='partial')
+      ? `📘 ${d.on_theme} question${d.on_theme===1?'':'s'} from "${ch}" — the rest is general ${CFG.subject} practice.`
+      : `📘 Mixed ${CFG.subject} practice — we don't have questions tagged to "${ch}" yet.`;
+    el.classList.remove('hidden');
+  }
+
   function guide(msg, mood){
     const b=$('bubble'); b.textContent=msg; b.classList.add('show');
     if(mood==='celebrate') $('guideImg').style.transform='scale(1.1)'; else $('guideImg').style.transform='';
@@ -218,6 +422,9 @@
 
   // build the GRADE + SUBJECT + TOPIC + COUNT picker (any grade/subject → any chapter/subtopic)
   var CURR={};
+  // short names for the sticky header — the full 'Mathematics' truncates on a phone
+  const CRUMB={'Mathematics':'Maths','EVS':'EVS','English':'English','GK':'GK','Hindi':'हिंदी'};
+  const crumbName=s=>CRUMB[s]||s;
   const SLBL={'Mathematics':'🔢 Maths','EVS':'🌍 EVS','English':'📖 English','GK':'🧠 GK','Hindi':'🇮🇳 Hindi'};
   function renderBoards(){
     const box=$('boardChips'); box.innerHTML='';
@@ -245,7 +452,7 @@
       if(subs.length && !CURR[CFG.subject]) CFG.subject=subs[0];
       const sbox=$('subjectChips'); sbox.innerHTML='';
       subs.forEach(s=>{ const c=document.createElement('button'); c.className='chip'+(s===CFG.subject?' sel':''); c.textContent=SLBL[s]||s; c._s=s;
-        c.onclick=()=>{ sbox.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); CFG.subject=s; CFG.chapter=''; $('subLabel').textContent=s; renderChapters(); };
+        c.onclick=()=>{ sbox.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); CFG.subject=s; CFG.chapter=''; $('subLabel').textContent=crumbName(s); renderChapters(); };
         sbox.appendChild(c); });
       renderChapters();
     }catch(e){}
@@ -282,6 +489,7 @@
         return;
       }
       items=d.items; skill=d.skill; idx=0; results=new Array(items.length).fill(null);
+      showScope(d);
       paintGems(); showItem();
     }catch(e){ $('runArea').classList.add('hidden'); $('startCard').classList.remove('hidden'); guide("Something went wrong — try again 🙂"); }
   }
@@ -455,7 +663,7 @@
     // celebration dancer (lion character; big-emoji fallback if the art is missing)
     const ci=$('celebImg'); ci.src='/static/kids/assets/lion_char.png';
     ci.onerror=function(){ $('celebrate').innerHTML='<div class="emoji">🦁</div>'; };
-    $('subLabel').textContent=CFG.subject;
+    $('subLabel').textContent=crumbName(CFG.subject);
     if(!LOCKED){ renderBoards(); renderGrades(); }   // batch student → grade/board fixed, no pickers
     renderCount();
     await loadPicker();
