@@ -253,8 +253,8 @@
     <div class="pill">🦊 Acharya Kids · classes 1–5</div>
     <h1 class="title"><span class="accent">Unlimited worksheets</span><br/>that find &amp; fix<br/>the weak spots. 🎈</h1>
     <p class="sub">Pick your child's class and start — <b>Maths, EVS, English, GK &amp; Hindi</b>,
-       chapter by chapter from the real syllabus. <b>{{ "{:,}".format(cov.questions) }} ready questions</b>
-       plus Maths that's generated fresh every time, so practice never runs out or repeats.
+       chapter by chapter from the real syllabus. <b>over {{ "{:,}".format(cov.min_per_subject) }} different questions per subject</b>,
+       generated fresh every single time — so practice never runs out and never repeats.
        Solve on screen (it <b>reads aloud</b>) or print a pencil-&amp;-paper sheet.</p>
     {% else %}
     <div class="pill">आचार्य · your AI exam-prep coach</div>
@@ -367,9 +367,10 @@
         </tbody>
       </table>
     </div>
-    <p class="covnote">Maths is <b>computed</b>, so it never runs out. Every other subject listed above ships
-       <b>1,000 ready questions</b> per class, per board — {{ "{:,}".format(cov.questions) }} in total. A dash
-       means we haven't built that bank yet, so we don't offer it in the app either.</p>
+    <p class="covnote">Maths is <b>computed</b> and every other subject is <b>generated</b> from a verified knowledge
+       base at the moment your child opens the sheet — {{ cov.cells }} subject-and-class combinations, each able to
+       produce over {{ "{:,}".format(cov.min_per_subject) }} distinct questions. A dash means we haven't built that
+       subject yet, so we don't offer it in the app either.</p>
   </div>
 </section>
 
@@ -380,7 +381,7 @@
     <p class="blurb">Worksheet books run out and repeat. Acharya generates fresh, curriculum-correct questions every single time.</p>
     <div class="trio">
       <div class="vcard"><div class="ico">♾️</div><h3>Never repeats</h3>
-        <p>Every subject we offer ships <b>1,000</b> ready questions for that class and board — plus Maths that's <em>computed</em>, so it can never run out.</p></div>
+        <p>Questions are <b>built fresh for every sheet</b>, not drawn from a fixed set — over {{ "{:,}".format(cov.min_per_subject) }} distinct ones per subject, and Maths is <em>computed</em>, so it truly cannot run out.</p></div>
       <div class="vcard"><div class="ico">🎯</div><h3>Targets the weak topic</h3>
         <p>Every answer updates your child's map. The next worksheet leans on whatever's shaky, until it's solid.</p></div>
       <div class="vcard"><div class="ico">✍️</div><h3>Screen or paper</h3>

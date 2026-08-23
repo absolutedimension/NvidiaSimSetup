@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex" />
-<title>Continue with Acharya — from ₹{{ PRICING.foundation }}/month</title>
+<title>{% if sub.kids %}Continue with Acharya Kids — ₹{{ PRICING.kids }}/month{% else %}Continue with Acharya — from ₹{{ PRICING.foundation }}/month{% endif %}</title>
 <link rel="icon" href="/static/brand/favicon-32.png" />
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,7 +50,26 @@
   {% else %}
   <h1>Continue with <span class="g">Acharya</span></h1>
   {% endif %}
-  {% if sub.is_teacher %}
+  {% if sub.kids %}
+  <p class="lead">Unlimited worksheets for your child — every subject, every chapter, one simple price.</p>
+
+  <div class="tiers">
+    <div class="tier feat" style="grid-column:1/-1;max-width:520px;margin:0 auto">
+      <div class="ribbon">Acharya Kids</div>
+      <div class="tname">One child · all 5 subjects</div>
+      <div class="amt">₹{{ PRICING.kids }}<small> / month</small></div>
+      <div class="sub">Classes 1–5 · CBSE, ICSE &amp; Bihar Board.</div>
+      <ul>
+        <li>Unlimited, never-repeating worksheets — Maths, EVS, English, GK &amp; Hindi</li>
+        <li>Finds your child's weak topics and practises exactly there</li>
+        <li>Solve on screen with read-aloud, or print a pencil-&amp;-paper sheet</li>
+        <li>Chapter-by-chapter from the real syllabus · a simple parent report</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <a class="btn" href="https://wa.me/{{ CONTACT_WA }}?text=I%20want%20Acharya%20Kids%20(%E2%82%B9{{ PRICING.kids }}%2Fmo)" target="_blank" rel="noopener">Get Acharya Kids →</a>
+    </div>
+  </div>
+  {% elif sub.is_teacher %}
   <p class="lead">Create unlimited tests, share one link, see exactly where your batch is weak.</p>
 
   <div class="tiers">

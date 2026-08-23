@@ -1432,7 +1432,7 @@ def exam_prep_dashboard(request: Request, new: str = "", added: str = "", db: Se
         "paid": (student.assess_status or "none") == "active",
         "max_topics": MAX_TOPICS,
         "at_max": len(topics) >= MAX_TOPICS,
-        "price": settings.ASSESS_PRICE_INR,
+        "price": _assess_plan(student)[1],   # kids → ₹499; never the raw senior setting
         "added": added,
         "ads_id": ads_id,
         "ads_label": settings.STUDENT_SIGNUP_CONV_LABEL,
@@ -3916,7 +3916,17 @@ def api_trial_skip(request: Request, db: Session = Depends(get_db)):
 
 # ---------- student assessment plan (₹199/mo) billing — a SEPARATE, parallel track ----------
 def _assess_plan(student: Student):
-    """Pick the Razorpay plan + price by role. Teachers/institutes → ₹999 plan; students → ₹249."""
+    """Pick the Razorpay plan + price. THE single source of truth for what we show AND charge.
+
+    Acharya Kids is its own product at its own price, so the kids deployment answers ₹499 for
+    everyone it serves — parent or teacher. Everything downstream (the upgrade page, the account
+    page, the dashboard banner, the subscribe endpoint) reads this one function, so the price a
+    customer is shown can never drift from the plan they'd be billed on.
+
+    RZP_KIDS_PLAN_ID is deliberately allowed to be empty: `configured` then goes false and the UI
+    closes over WhatsApp instead of checkout. Better no checkout than a checkout at the wrong price."""
+    if settings.KIDS_PRODUCT:
+        return settings.RZP_KIDS_PLAN_ID, settings.PRICE_KIDS_INR
     if getattr(student, "is_teacher", False) and settings.RZP_ASSESS_TEACHER_PLAN_ID:
         return settings.RZP_ASSESS_TEACHER_PLAN_ID, settings.ASSESS_TEACHER_PRICE_INR
     return settings.RZP_ASSESS_PLAN_ID, settings.ASSESS_PRICE_INR
@@ -3933,7 +3943,7 @@ def _assess_view(student: Student) -> dict:
     plan_id, price = _assess_plan(student)
     is_teacher = bool(getattr(student, "is_teacher", False))
     return {"status": st, "price": price, "trial_days": settings.ASSESS_TRIAL_DAYS,
-            "enabled": settings.ASSESS_ENABLED,
+            "enabled": settings.ASSESS_ENABLED, "kids": settings.KIDS_PRODUCT,
             "configured": billing._keys_ok() and bool(plan_id),
             "is_teacher": is_teacher, "role": "teacher" if is_teacher else "student",
             "active_trial": nocard and active_trial, "expired": nocard and not active_trial,

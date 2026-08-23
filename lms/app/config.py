@@ -77,6 +77,15 @@ class Settings:
     PRICE_FOUNDATION_INR = int(os.getenv("PRICE_FOUNDATION_INR", "150"))   # Junior / Foundation / Board
     PRICE_SENIOR_INR = int(os.getenv("PRICE_SENIOR_INR", "250"))           # JEE / NEET / Senior
     PRICE_KIDS_INR = int(os.getenv("PRICE_KIDS_INR", "499"))               # Acharya Kids (classes 1-5)
+    # KIDS DEPLOYMENT FLAG. The kids app is a separate container with its own DB, so every
+    # student it serves is a kids customer — a deployment flag is the honest signal, and unlike
+    # a Host header it can't be spoofed. Set KIDS_PRODUCT=1 on the `kids` container only.
+    KIDS_PRODUCT = os.getenv("KIDS_PRODUCT", "0").strip() in ("1", "true", "yes")
+    # ₹499/month Razorpay plan for Acharya Kids. LEAVE EMPTY until a plan with amount 49900
+    # exists in Razorpay: an empty plan id makes `configured` false, so the app shows the
+    # WhatsApp close instead of a checkout — which is what keeps the displayed price and the
+    # charged price the same. Never point this at a plan whose amount you have not verified.
+    RZP_KIDS_PLAN_ID = os.getenv("RZP_KIDS_PLAN_ID", "").strip()
     # White-label branding is now a FREE self-serve feature (teacher /teacher/branding) — NOT a paid ₹55k
     # custom build. Kept only for any legacy reference; not surfaced anywhere.
     INSTITUTE_CUSTOM_INR = int(os.getenv("INSTITUTE_CUSTOM_INR", "0"))
