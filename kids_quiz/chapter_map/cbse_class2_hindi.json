@@ -1,0 +1,47 @@
+{
+ "board": "CBSE",
+ "class": 2,
+ "subject": "Hindi",
+ "source": {
+  "name": "NCERT Sarangi — Hindi Class 2 (Contents)",
+  "url": "https://ncert.nic.in/textbook/pdf/bhsr1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 5,
+ "mapped": 1,
+ "map": {
+  "1": {
+   "name": "इकाई 1: परिवार",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "2": {
+   "name": "इकाई 2: रंग ही रंग",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "3": {
+   "name": "इकाई 3: हरी-भरी धरती",
+   "themes": [
+    "इकाई 3: हरी-भरी धरती"
+   ],
+   "score": 0.642,
+   "confidence": "high"
+  },
+  "4": {
+   "name": "इकाई 4: मित्रता",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "5": {
+   "name": "इकाई 5: आकाश",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

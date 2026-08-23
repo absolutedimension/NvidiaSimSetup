@@ -1,0 +1,38 @@
+{
+ "board": "ICSE",
+ "class": 2,
+ "subject": "English",
+ "source": {
+  "name": "CISCE Curriculum for Classes I-V (English), Primary",
+  "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 3,
+ "mapped": 2,
+ "map": {
+  "listening_and_speaking": {
+   "name": "Listening and Speaking",
+   "themes": [
+    "Unit 3: Going Places"
+   ],
+   "score": 0.126,
+   "confidence": "low"
+  },
+  "reading_and_writing": {
+   "name": "Reading and Writing",
+   "themes": [],
+   "score": 0.073,
+   "confidence": "none"
+  },
+  "grammar_and_vocabulary_in_context": {
+   "name": "Grammar and Vocabulary in Context",
+   "themes": [
+    "Unit 5: Harmony",
+    "Unit 3: Going Places"
+   ],
+   "score": 0.183,
+   "confidence": "low"
+  }
+ }
+}

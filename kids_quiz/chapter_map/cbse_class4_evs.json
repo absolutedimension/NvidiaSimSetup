@@ -1,0 +1,225 @@
+{
+ "board": "CBSE",
+ "class": 4,
+ "subject": "EVS",
+ "source": {
+  "name": "NCERT 'Looking Around' EVS Class IV (Book II, code 0427, ISBN 81-7450-664-0)",
+  "url": "https://ncert.nic.in/textbook/pdf/deap1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 27,
+ "mapped": 20,
+ "map": {
+  "going_to_school": {
+   "name": "Going to School",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "ear_to_ear": {
+   "name": "Ear to Ear",
+   "themes": [
+    "Ear to Ear"
+   ],
+   "score": 0.512,
+   "confidence": "high"
+  },
+  "a_day_with_nandu": {
+   "name": "A Day with Nandu",
+   "themes": [
+    "A Day with Nandu"
+   ],
+   "score": 0.48,
+   "confidence": "high"
+  },
+  "the_story_of_amrita": {
+   "name": "The Story of Amrita",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "anita_and_the_honeybees": {
+   "name": "Anita and the Honeybees",
+   "themes": [
+    "Anita and the Honeybees"
+   ],
+   "score": 0.616,
+   "confidence": "high"
+  },
+  "omana_s_journey": {
+   "name": "Omana's Journey",
+   "themes": [
+    "From the Window"
+   ],
+   "score": 0.223,
+   "confidence": "low"
+  },
+  "from_the_window": {
+   "name": "From the Window",
+   "themes": [
+    "From the Window",
+    "Changing Times"
+   ],
+   "score": 0.24,
+   "confidence": "low"
+  },
+  "reaching_grandmother_s_house": {
+   "name": "Reaching Grandmother's House",
+   "themes": [
+    "Reaching Grandmother's House"
+   ],
+   "score": 0.535,
+   "confidence": "high"
+  },
+  "changing_families": {
+   "name": "Changing Families",
+   "themes": [
+    "Changing Times"
+   ],
+   "score": 0.277,
+   "confidence": "high"
+  },
+  "hu_tu_tu_hu_tu_tu": {
+   "name": "Hu Tu Tu, Hu Tu Tu",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_valley_of_flowers": {
+   "name": "The Valley of Flowers",
+   "themes": [
+    "The Valley of Flowers"
+   ],
+   "score": 0.531,
+   "confidence": "high"
+  },
+  "changing_times": {
+   "name": "Changing Times",
+   "themes": [
+    "Changing Times"
+   ],
+   "score": 0.445,
+   "confidence": "high"
+  },
+  "a_river_s_tale": {
+   "name": "A River's Tale",
+   "themes": [
+    "A River's Tale"
+   ],
+   "score": 0.612,
+   "confidence": "high"
+  },
+  "basva_s_farm": {
+   "name": "Basva's Farm",
+   "themes": [
+    "Basva's Farm"
+   ],
+   "score": 0.666,
+   "confidence": "high"
+  },
+  "from_market_to_home": {
+   "name": "From Market to Home",
+   "themes": [
+    "The Valley of Flowers",
+    "A Day with Nandu"
+   ],
+   "score": 0.24,
+   "confidence": "low"
+  },
+  "a_busy_month": {
+   "name": "A Busy Month",
+   "themes": [
+    "Ear to Ear",
+    "Basva's Farm"
+   ],
+   "score": 0.196,
+   "confidence": "low"
+  },
+  "nandita_in_mumbai": {
+   "name": "Nandita in Mumbai",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "too_much_water_too_little_water": {
+   "name": "Too Much Water, Too Little Water",
+   "themes": [
+    "Basva's Farm",
+    "A River's Tale"
+   ],
+   "score": 0.196,
+   "confidence": "low"
+  },
+  "abdul_in_the_garden": {
+   "name": "Abdul in the Garden",
+   "themes": [
+    "Basva's Farm",
+    "Anita and the Honeybees"
+   ],
+   "score": 0.419,
+   "confidence": "high"
+  },
+  "eating_together": {
+   "name": "Eating Together",
+   "themes": [
+    "Ear to Ear",
+    "Basva's Farm"
+   ],
+   "score": 0.196,
+   "confidence": "low"
+  },
+  "food_and_fun": {
+   "name": "Food and Fun",
+   "themes": [
+    "Ear to Ear",
+    "Basva's Farm"
+   ],
+   "score": 0.254,
+   "confidence": "high"
+  },
+  "the_world_in_my_home": {
+   "name": "The World in my Home",
+   "themes": [
+    "A Day with Nandu"
+   ],
+   "score": 0.248,
+   "confidence": "low"
+  },
+  "pochampalli": {
+   "name": "Pochampalli",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "home_and_abroad": {
+   "name": "Home and Abroad",
+   "themes": [
+    "From the Window",
+    "A Day with Nandu"
+   ],
+   "score": 0.24,
+   "confidence": "low"
+  },
+  "spicy_riddles": {
+   "name": "Spicy Riddles",
+   "themes": [
+    "Ear to Ear"
+   ],
+   "score": 0.315,
+   "confidence": "high"
+  },
+  "defence_officer_wahida": {
+   "name": "Defence Officer: Wahida",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "chuskit_goes_to_school": {
+   "name": "Chuskit Goes to School",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

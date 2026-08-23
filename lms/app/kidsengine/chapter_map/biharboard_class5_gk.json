@@ -1,0 +1,40 @@
+{
+ "board": "Bihar Board",
+ "class": 5,
+ "subject": "GK",
+ "source": {
+  "name": "Commonly-taught primary GK outline (NO official SCERT-Bihar board GK syllabus at primary)",
+  "url": "",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 3,
+ "mapped": 3,
+ "map": {
+  "the_wider_world": {
+   "name": "The Wider World",
+   "themes": [
+    "The Wider World",
+    "India: History and Geography"
+   ],
+   "score": 0.528,
+   "confidence": "high"
+  },
+  "india_bihar_history_and_geography": {
+   "name": "India & Bihar: History and Geography",
+   "themes": [
+    "India: History and Geography"
+   ],
+   "score": 0.581,
+   "confidence": "high"
+  },
+  "science_sports_and_current_affairs": {
+   "name": "Science, Sports and Current Affairs",
+   "themes": [
+    "Science, Sports and Current Affairs"
+   ],
+   "score": 0.48,
+   "confidence": "high"
+  }
+ }
+}

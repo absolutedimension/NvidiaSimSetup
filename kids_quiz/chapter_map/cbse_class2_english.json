@@ -1,0 +1,59 @@
+{
+ "board": "CBSE",
+ "class": 2,
+ "subject": "English",
+ "source": {
+  "name": "NCERT Mridang — Textbook of English for Grade 2 (Contents)",
+  "url": "https://ncert.nic.in/textbook/pdf/bemr1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 5,
+ "mapped": 5,
+ "map": {
+  "unit_1_fun_with_friends": {
+   "name": "Unit 1: Fun with Friends",
+   "themes": [
+    "Unit 1: Fun with Friends",
+    "Unit 3: Going Places"
+   ],
+   "score": 0.53,
+   "confidence": "high"
+  },
+  "unit_2_welcome_to_my_world": {
+   "name": "Unit 2: Welcome to My World",
+   "themes": [
+    "Unit 2: Welcome to My World",
+    "Unit 1: Fun with Friends"
+   ],
+   "score": 0.53,
+   "confidence": "high"
+  },
+  "unit_3_going_places": {
+   "name": "Unit 3: Going Places",
+   "themes": [
+    "Unit 3: Going Places"
+   ],
+   "score": 0.503,
+   "confidence": "high"
+  },
+  "unit_4_life_around_us": {
+   "name": "Unit 4: Life Around Us",
+   "themes": [
+    "Unit 4: Life Around Us",
+    "Unit 2: Welcome to My World",
+    "Unit 1: Fun with Friends"
+   ],
+   "score": 0.274,
+   "confidence": "high"
+  },
+  "unit_5_harmony": {
+   "name": "Unit 5: Harmony",
+   "themes": [
+    "Unit 5: Harmony"
+   ],
+   "score": 0.588,
+   "confidence": "high"
+  }
+ }
+}

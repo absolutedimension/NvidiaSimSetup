@@ -1,0 +1,184 @@
+{
+ "board": "CBSE",
+ "class": 5,
+ "subject": "EVS",
+ "source": {
+  "name": "NCERT 'Looking Around' EVS Class V (code 0529, ISBN 978-81-7450-826-3)",
+  "url": "https://ncert.nic.in/textbook/pdf/eeap1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 22,
+ "mapped": 17,
+ "map": {
+  "super_senses": {
+   "name": "Super Senses",
+   "themes": [
+    "Super Senses"
+   ],
+   "score": 0.675,
+   "confidence": "high"
+  },
+  "a_snake_charmer_s_story": {
+   "name": "A Snake Charmer's Story",
+   "themes": [
+    "A Snake Charmer's Story"
+   ],
+   "score": 0.785,
+   "confidence": "high"
+  },
+  "from_tasting_to_digesting": {
+   "name": "From Tasting to Digesting",
+   "themes": [
+    "From Tasting to Digesting"
+   ],
+   "score": 0.951,
+   "confidence": "high"
+  },
+  "mangoes_round_the_year": {
+   "name": "Mangoes Round the Year",
+   "themes": [
+    "Mangoes Round the Year"
+   ],
+   "score": 0.629,
+   "confidence": "high"
+  },
+  "seeds_and_seeds": {
+   "name": "Seeds and Seeds",
+   "themes": [
+    "Seeds and Seeds",
+    "Experiments with Water"
+   ],
+   "score": 0.315,
+   "confidence": "high"
+  },
+  "every_drop_counts": {
+   "name": "Every Drop Counts",
+   "themes": [
+    "Every Drop Counts"
+   ],
+   "score": 0.694,
+   "confidence": "high"
+  },
+  "experiments_with_water": {
+   "name": "Experiments with Water",
+   "themes": [
+    "Experiments with Water"
+   ],
+   "score": 0.497,
+   "confidence": "high"
+  },
+  "a_treat_for_mosquitoes": {
+   "name": "A Treat for Mosquitoes",
+   "themes": [
+    "A Treat for Mosquitoes"
+   ],
+   "score": 0.62,
+   "confidence": "high"
+  },
+  "up_you_go": {
+   "name": "Up You Go!",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "walls_tell_stories": {
+   "name": "Walls Tell Stories",
+   "themes": [
+    "Walls Tell Stories"
+   ],
+   "score": 0.586,
+   "confidence": "high"
+  },
+  "sunita_in_space": {
+   "name": "Sunita in Space",
+   "themes": [
+    "Sunita in Space"
+   ],
+   "score": 0.911,
+   "confidence": "high"
+  },
+  "what_if_it_finishes": {
+   "name": "What if it Finishes …?",
+   "themes": [
+    "What if it Finishes …?"
+   ],
+   "score": 0.606,
+   "confidence": "high"
+  },
+  "a_shelter_so_high": {
+   "name": "A Shelter so High!",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "when_the_earth_shook": {
+   "name": "When the Earth Shook!",
+   "themes": [
+    "When the Earth Shook!"
+   ],
+   "score": 0.439,
+   "confidence": "high"
+  },
+  "blow_hot_blow_cold": {
+   "name": "Blow Hot, Blow Cold",
+   "themes": [
+    "Experiments with Water"
+   ],
+   "score": 0.243,
+   "confidence": "low"
+  },
+  "who_will_do_this_work": {
+   "name": "Who will do this Work?",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "across_the_wall": {
+   "name": "Across the Wall",
+   "themes": [
+    "Walls Tell Stories"
+   ],
+   "score": 0.243,
+   "confidence": "low"
+  },
+  "no_place_for_us": {
+   "name": "No Place for Us?",
+   "themes": [
+    "Seeds and Seeds"
+   ],
+   "score": 0.339,
+   "confidence": "high"
+  },
+  "a_seed_tells_a_farmer_s_story": {
+   "name": "A Seed tells a Farmer's Story",
+   "themes": [
+    "Walls Tell Stories"
+   ],
+   "score": 0.519,
+   "confidence": "high"
+  },
+  "whose_forests": {
+   "name": "Whose Forests?",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "like_father_like_daughter": {
+   "name": "Like Father, Like Daughter",
+   "themes": [
+    "Mangoes Round the Year",
+    "Walls Tell Stories",
+    "A Snake Charmer's Story"
+   ],
+   "score": 0.223,
+   "confidence": "low"
+  },
+  "on_the_move_again": {
+   "name": "On the Move Again",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

@@ -1,0 +1,136 @@
+{
+ "board": "ICSE",
+ "class": 2,
+ "subject": "EVS",
+ "source": {
+  "name": "CISCE Curriculum for Classes I-V (Environmental Studies), Primary",
+  "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 15,
+ "mapped": 12,
+ "map": {
+  "about_me": {
+   "name": "About Me",
+   "themes": [
+    "About Me"
+   ],
+   "score": 0.517,
+   "confidence": "high"
+  },
+  "others_in_my_world": {
+   "name": "Others in my World",
+   "themes": [
+    "Others in my World",
+    "The World Around Me: Sun, Moon, Sky and Stars"
+   ],
+   "score": 0.258,
+   "confidence": "high"
+  },
+  "my_needs_food": {
+   "name": "My Needs: Food",
+   "themes": [
+    "My Needs: Food",
+    "Plants",
+    "Keeping Oneself Clean, Safe and Healthy"
+   ],
+   "score": 0.407,
+   "confidence": "high"
+  },
+  "my_needs_water": {
+   "name": "My Needs: Water",
+   "themes": [
+    "My Needs: Water",
+    "Keeping Oneself Clean, Safe and Healthy"
+   ],
+   "score": 0.346,
+   "confidence": "high"
+  },
+  "my_need_shelter": {
+   "name": "My Need - Shelter",
+   "themes": [
+    "My Need - Shelter"
+   ],
+   "score": 0.421,
+   "confidence": "high"
+  },
+  "my_need_clothing": {
+   "name": "My Need - Clothing",
+   "themes": [
+    "My Need - Clothing"
+   ],
+   "score": 0.362,
+   "confidence": "high"
+  },
+  "my_need_air": {
+   "name": "My Need - Air",
+   "themes": [
+    "Plants",
+    "My Need - Air"
+   ],
+   "score": 0.276,
+   "confidence": "high"
+  },
+  "keeping_oneself_clean_safe_and_healthy": {
+   "name": "Keeping Oneself Clean, Safe and Healthy",
+   "themes": [
+    "Keeping Oneself Clean, Safe and Healthy"
+   ],
+   "score": 0.452,
+   "confidence": "high"
+  },
+  "places_in_the_neighbourhood": {
+   "name": "Places in the Neighbourhood",
+   "themes": [],
+   "score": 0.099,
+   "confidence": "none"
+  },
+  "plants": {
+   "name": "Plants",
+   "themes": [
+    "Animals",
+    "Plants"
+   ],
+   "score": 0.434,
+   "confidence": "high"
+  },
+  "animals": {
+   "name": "Animals",
+   "themes": [
+    "Animals",
+    "About Me"
+   ],
+   "score": 0.35,
+   "confidence": "high"
+  },
+  "transport": {
+   "name": "Transport",
+   "themes": [
+    "Transport"
+   ],
+   "score": 0.255,
+   "confidence": "high"
+  },
+  "communication": {
+   "name": "Communication",
+   "themes": [],
+   "score": 0.084,
+   "confidence": "none"
+  },
+  "the_world_around_me_sun_moon_sky_and_sta": {
+   "name": "The World Around Me: Sun, Moon, Sky and Stars",
+   "themes": [
+    "The World Around Me: Sun, Moon, Sky and Stars"
+   ],
+   "score": 0.491,
+   "confidence": "high"
+  },
+  "time_space_direction": {
+   "name": "Time, Space, Direction",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

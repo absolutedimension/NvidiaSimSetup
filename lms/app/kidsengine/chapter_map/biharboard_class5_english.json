@@ -1,0 +1,125 @@
+{
+ "board": "Bihar Board",
+ "class": 5,
+ "subject": "English",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC Class 5 English — Blossom (via solution sites; cross-confirmed)",
+  "url": "https://www.sagarresearchcenter.com/2024/01/bseb-bihar-board-class-5-english-book.html",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 17,
+ "mapped": 4,
+ "map": {
+  "nobody_s_friend": {
+   "name": "Nobody's Friend",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_smell_of_the_bread_and_the_sound_of_": {
+   "name": "The Smell of the Bread and the Sound of Money",
+   "themes": [
+    "Unit 1: Let's Have Fun"
+   ],
+   "score": 0.309,
+   "confidence": "high"
+  },
+  "the_house_sparrow": {
+   "name": "The House Sparrow",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "day_by_day_i_float_my_paper_boats": {
+   "name": "Day by Day I Float My Paper Boats",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "an_act_of_bravery": {
+   "name": "An Act of Bravery",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_old_man_and_his_grandson": {
+   "name": "The Old Man and His Grandson",
+   "themes": [
+    "Unit 3: Water"
+   ],
+   "score": 0.473,
+   "confidence": "high"
+  },
+  "lovely_moon": {
+   "name": "Lovely Moon",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_arab_and_his_camel": {
+   "name": "The Arab and His Camel",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "birbal_s_wit": {
+   "name": "Birbal's Wit",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_ant_and_the_grasshopper": {
+   "name": "The Ant and the Grasshopper",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "my_miracle_mother": {
+   "name": "My Miracle Mother",
+   "themes": [
+    "Unit 5: Work is Worship"
+   ],
+   "score": 0.473,
+   "confidence": "high"
+  },
+  "jesus_to_supper": {
+   "name": "Jesus to Supper",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "day_dream": {
+   "name": "Day Dream",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "three_little_pigs": {
+   "name": "Three Little Pigs",
+   "themes": [
+    "Unit 1: Let's Have Fun"
+   ],
+   "score": 0.309,
+   "confidence": "high"
+  },
+  "the_blind_beggar": {
+   "name": "The Blind Beggar",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_crow": {
+   "name": "The Crow",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_crocodile_s_advice": {
+   "name": "The Crocodile's Advice",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

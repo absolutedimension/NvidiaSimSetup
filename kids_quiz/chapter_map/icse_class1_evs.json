@@ -1,0 +1,137 @@
+{
+ "board": "ICSE",
+ "class": 1,
+ "subject": "EVS",
+ "source": {
+  "name": "CISCE Curriculum for Classes I-V (Environmental Studies), Primary",
+  "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 14,
+ "mapped": 12,
+ "map": {
+  "about_me": {
+   "name": "About Me",
+   "themes": [
+    "About Me"
+   ],
+   "score": 0.269,
+   "confidence": "high"
+  },
+  "others_in_my_world": {
+   "name": "Others in my World",
+   "themes": [
+    "Others in my World"
+   ],
+   "score": 0.397,
+   "confidence": "high"
+  },
+  "my_needs_food_we_eat": {
+   "name": "My Needs - Food We Eat",
+   "themes": [
+    "My Needs - Food We Eat",
+    "Keeping Oneself Clean, Safe and Healthy",
+    "Plants"
+   ],
+   "score": 0.277,
+   "confidence": "high"
+  },
+  "my_needs_water": {
+   "name": "My Needs - Water",
+   "themes": [
+    "My Needs - Water",
+    "Plants"
+   ],
+   "score": 0.521,
+   "confidence": "high"
+  },
+  "my_needs_shelter": {
+   "name": "My Needs - Shelter",
+   "themes": [
+    "Plants",
+    "My Needs - Water",
+    "My Needs - Food We Eat",
+    "My Needs - Air"
+   ],
+   "score": 0.135,
+   "confidence": "low"
+  },
+  "my_needs_clothing": {
+   "name": "My Needs - Clothing",
+   "themes": [
+    "Plants",
+    "My Needs - Water",
+    "My Needs - Food We Eat",
+    "My Needs - Air"
+   ],
+   "score": 0.135,
+   "confidence": "low"
+  },
+  "my_needs_air": {
+   "name": "My Needs - Air",
+   "themes": [
+    "Plants",
+    "My Needs - Water",
+    "My Needs - Air",
+    "Keeping Oneself Clean, Safe and Healthy"
+   ],
+   "score": 0.31,
+   "confidence": "high"
+  },
+  "keeping_oneself_clean_safe_and_healthy": {
+   "name": "Keeping Oneself Clean, Safe and Healthy",
+   "themes": [
+    "Keeping Oneself Clean, Safe and Healthy"
+   ],
+   "score": 0.487,
+   "confidence": "high"
+  },
+  "places_in_the_neighbourhood": {
+   "name": "Places in the Neighbourhood",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "plants": {
+   "name": "Plants",
+   "themes": [
+    "My Needs - Food We Eat",
+    "Plants"
+   ],
+   "score": 0.312,
+   "confidence": "high"
+  },
+  "animals": {
+   "name": "Animals",
+   "themes": [
+    "Animals"
+   ],
+   "score": 0.74,
+   "confidence": "high"
+  },
+  "transport": {
+   "name": "Transport",
+   "themes": [
+    "Transport",
+    "Plants"
+   ],
+   "score": 0.255,
+   "confidence": "high"
+  },
+  "communication": {
+   "name": "Communication",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_world_around_me_sun_moon_sky_and_sta": {
+   "name": "The World around Me (Sun, Moon, Sky and Stars)",
+   "themes": [
+    "The World around Me (Sun, Moon, Sky and Stars)"
+   ],
+   "score": 0.556,
+   "confidence": "high"
+  }
+ }
+}

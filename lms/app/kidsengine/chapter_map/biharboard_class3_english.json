@@ -1,0 +1,134 @@
+{
+ "board": "Bihar Board",
+ "class": 3,
+ "subject": "English",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC Class 3 English — Blossom (cross-confirmed via solution sites)",
+  "url": "https://www.dailyassam.com/2024/12/bseb-class-3-english-books-solution.html",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 17,
+ "mapped": 6,
+ "map": {
+  "this_is_the_way": {
+   "name": "This is the Way",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "murli_s_mango_tree": {
+   "name": "Murli's Mango Tree",
+   "themes": [
+    "Nouns and Verbs"
+   ],
+   "score": 0.444,
+   "confidence": "high"
+  },
+  "one_little_kitten": {
+   "name": "One Little Kitten",
+   "themes": [
+    "Vocabulary",
+    "Synonyms"
+   ],
+   "score": 0.353,
+   "confidence": "high"
+  },
+  "who_s_afraid_of_the_cat": {
+   "name": "Who's Afraid of the Cat?",
+   "themes": [
+    "Rhyming Words",
+    "Plurals",
+    "Articles"
+   ],
+   "score": 0.423,
+   "confidence": "high"
+  },
+  "the_old_rabbit": {
+   "name": "The Old Rabbit",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "upside_down": {
+   "name": "Upside Down",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_tiger_and_the_mosquito": {
+   "name": "The Tiger and the Mosquito",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "kith_kith": {
+   "name": "Kith-Kith",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "cats": {
+   "name": "Cats",
+   "themes": [
+    "Rhyming Words",
+    "Plurals",
+    "Articles"
+   ],
+   "score": 0.595,
+   "confidence": "high"
+  },
+  "i_can_dance": {
+   "name": "I Can Dance",
+   "themes": [
+    "Nouns and Verbs"
+   ],
+   "score": 0.706,
+   "confidence": "high"
+  },
+  "unity_is_strength": {
+   "name": "Unity is Strength",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "a_picnic": {
+   "name": "A Picnic",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "mice": {
+   "name": "Mice",
+   "themes": [
+    "Plurals"
+   ],
+   "score": 0.706,
+   "confidence": "high"
+  },
+  "now_the_road_will_be_fine": {
+   "name": "Now the Road Will Be Fine",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_phone_call": {
+   "name": "The Phone Call",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "munia_goes_to_school": {
+   "name": "Munia Goes to School",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "gonu_and_bhonu": {
+   "name": "Gonu and Bhonu",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

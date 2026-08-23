@@ -1,0 +1,207 @@
+{
+ "board": "Bihar Board",
+ "class": 4,
+ "subject": "EVS",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 4 (via selfstudys + testbook, cross-verified; not the SCERT PDF directly)",
+  "url": "https://www.selfstudys.com/books/bihar/state-books/class-4th/paryavaran-aur-hum/17853",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 25,
+ "mapped": 17,
+ "map": {
+  "र_ग_ब_र_ग_ख_लत_फ_ल": {
+   "name": "रंग-बिरंगे खिलते फूल",
+   "themes": [
+    "The Valley of Flowers"
+   ],
+   "score": 0.461,
+   "confidence": "high"
+  },
+  "क_ई_द_त_अ_ड_क_ई_द_त_बच_च": {
+   "name": "कोई देता अंडे कोई देता बच्चे",
+   "themes": [
+    "A Day with Nandu",
+    "The Valley of Flowers",
+    "Basva's Farm"
+   ],
+   "score": 0.45,
+   "confidence": "low"
+  },
+  "हड_बड_म_गड_बड": {
+   "name": "हड़बड़ में गड़बड़",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "त_य_ह_र_और_भ_जन": {
+   "name": "त्योहार और भोजन",
+   "themes": [
+    "Ear to Ear",
+    "Basva's Farm"
+   ],
+   "score": 0.46,
+   "confidence": "low"
+  },
+  "स_व_द_अलग_अलग": {
+   "name": "स्वाद अलग-अलग",
+   "themes": [
+    "Ear to Ear"
+   ],
+   "score": 0.612,
+   "confidence": "low"
+  },
+  "हर_य_ल_और_हम": {
+   "name": "हरियाली और हम",
+   "themes": [
+    "Basva's Farm"
+   ],
+   "score": 0.537,
+   "confidence": "low"
+  },
+  "जड_क_पकड": {
+   "name": "जड़ों की पकड़",
+   "themes": [
+    "Basva's Farm"
+   ],
+   "score": 0.658,
+   "confidence": "low"
+  },
+  "द_ख_तम_श": {
+   "name": "देख तमाशा",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "जब_म_म_ज_घर_आए": {
+   "name": "जब मामाजी घर आए",
+   "themes": [
+    "A Day with Nandu"
+   ],
+   "score": 0.315,
+   "confidence": "low"
+  },
+  "छठ_पर_व_और_बच_च": {
+   "name": "छठ पर्व और बच्चे",
+   "themes": [
+    "A River's Tale"
+   ],
+   "score": 0.303,
+   "confidence": "high"
+  },
+  "आओ_बन_य_नक_श": {
+   "name": "आओ बनायें नक्शा",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "अपन_प_य_र_घर": {
+   "name": "अपना प्यारा घर",
+   "themes": [
+    "Reaching Grandmother's House"
+   ],
+   "score": 0.303,
+   "confidence": "high"
+  },
+  "ख_त_स_घर_तक": {
+   "name": "खेत से घर तक",
+   "themes": [
+    "Basva's Farm"
+   ],
+   "score": 0.482,
+   "confidence": "high"
+  },
+  "ब_ल_म_ल_और_ख_ल": {
+   "name": "बाल मेला और खेल",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "आस_प_स_क_सफ_ई": {
+   "name": "आस-पास की सफाई",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "म_ठ_म_ठ_शहद": {
+   "name": "मीठा-मीठा शहद",
+   "themes": [
+    "Anita and the Honeybees",
+    "Basva's Farm"
+   ],
+   "score": 0.434,
+   "confidence": "low"
+  },
+  "तरह_तरह_क_पक_ष": {
+   "name": "तरह-तरह के पक्षी",
+   "themes": [
+    "A Day with Nandu"
+   ],
+   "score": 0.574,
+   "confidence": "low"
+  },
+  "ज_गल_म_प_कन_क": {
+   "name": "जंगल में पिकनिक",
+   "themes": [
+    "The Valley of Flowers",
+    "Basva's Farm",
+    "A Day with Nandu"
+   ],
+   "score": 0.461,
+   "confidence": "low"
+  },
+  "कक_लत_स_कन_य_क_म_र": {
+   "name": "ककोलत से कन्याकुमारी",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "हम_र_मददग_र_क_मग_र": {
+   "name": "हमारे मददगार-कामगार",
+   "themes": [
+    "Changing Times",
+    "Anita and the Honeybees"
+   ],
+   "score": 0.299,
+   "confidence": "low"
+  },
+  "तरह_तरह_क_घर": {
+   "name": "तरह-तरह के घर",
+   "themes": [
+    "Reaching Grandmother's House"
+   ],
+   "score": 0.268,
+   "confidence": "high"
+  },
+  "अजय_जब_ग_व_ल_ट": {
+   "name": "अजय जब गाँव लौटे",
+   "themes": [
+    "A Day with Nandu"
+   ],
+   "score": 0.315,
+   "confidence": "low"
+  },
+  "आस_प_स_क_ख_ज_खबर": {
+   "name": "आस-पास की खोज-खबर",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "च_ड_य_घर_क_स_र": {
+   "name": "चिड़ियाघर की सैर",
+   "themes": [
+    "A Day with Nandu",
+    "From the Window"
+   ],
+   "score": 0.607,
+   "confidence": "low"
+  },
+  "ब_ट_क_सफर": {
+   "name": "बंटी का सफर",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

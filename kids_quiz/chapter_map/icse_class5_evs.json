@@ -1,0 +1,116 @@
+{
+ "board": "ICSE",
+ "class": 5,
+ "subject": "EVS",
+ "source": {
+  "name": "CISCE Curriculum for Classes I-V (Science — natural-environment component of EVS), Primary",
+  "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 12,
+ "mapped": 10,
+ "map": {
+  "human_body_the_circulatory_system": {
+   "name": "Human Body: The Circulatory System",
+   "themes": [
+    "From Tasting to Digesting"
+   ],
+   "score": 0.281,
+   "confidence": "high"
+  },
+  "human_body_the_skeletal_system": {
+   "name": "Human Body: The Skeletal System",
+   "themes": [
+    "Super Senses",
+    "From Tasting to Digesting"
+   ],
+   "score": 0.17,
+   "confidence": "low"
+  },
+  "food_and_health": {
+   "name": "Food and Health",
+   "themes": [
+    "Seeds and Seeds",
+    "Mangoes Round the Year",
+    "From Tasting to Digesting",
+    "A Treat for Mosquitoes"
+   ],
+   "score": 0.122,
+   "confidence": "low"
+  },
+  "pollination": {
+   "name": "Pollination",
+   "themes": [
+    "Seeds and Seeds"
+   ],
+   "score": 0.243,
+   "confidence": "low"
+  },
+  "plant_reproduction": {
+   "name": "Plant Reproduction",
+   "themes": [
+    "Seeds and Seeds",
+    "From Tasting to Digesting"
+   ],
+   "score": 0.523,
+   "confidence": "high"
+  },
+  "solids_liquids_and_gases": {
+   "name": "Solids, Liquids and Gases",
+   "themes": [
+    "Experiments with Water"
+   ],
+   "score": 0.49,
+   "confidence": "high"
+  },
+  "interdependence_in_living_beings": {
+   "name": "Interdependence in Living Beings",
+   "themes": [
+    "Seeds and Seeds",
+    "Mangoes Round the Year",
+    "From Tasting to Digesting",
+    "A Treat for Mosquitoes"
+   ],
+   "score": 0.122,
+   "confidence": "low"
+  },
+  "sound_and_noise": {
+   "name": "Sound and Noise",
+   "themes": [
+    "Sunita in Space"
+   ],
+   "score": 0.243,
+   "confidence": "low"
+  },
+  "work_and_energy": {
+   "name": "Work and Energy",
+   "themes": [
+    "Every Drop Counts"
+   ],
+   "score": 0.189,
+   "confidence": "low"
+  },
+  "light_and_shadows": {
+   "name": "Light and Shadows",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "simple_machines": {
+   "name": "Simple Machines",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "cleanliness_and_hygiene": {
+   "name": "Cleanliness and Hygiene",
+   "themes": [
+    "Seeds and Seeds",
+    "A Treat for Mosquitoes"
+   ],
+   "score": 0.201,
+   "confidence": "low"
+  }
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "board": "CBSE",
+ "class": 3,
+ "subject": "Hindi",
+ "source": {
+  "name": "NCERT Veena — Hindi Class 3 (Contents)",
+  "url": "https://ncert.nic.in/textbook/pdf/chve1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 5,
+ "mapped": 0,
+ "map": {
+  "इक_ई_एक_हम_र_पर_य_वरण": {
+   "name": "इकाई एक: हमारा पर्यावरण",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "इक_ई_द_हम_र_म_त_र": {
+   "name": "इकाई दो: हमारे मित्र",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "इक_ई_त_न_आओ_ख_ल": {
+   "name": "इकाई तीन: आओ खेलें",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "इक_ई_च_र_अपन_अपन_क_म": {
+   "name": "इकाई चार: अपना-अपना काम",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "इक_ई_प_च_हम_र_द_श": {
+   "name": "इकाई पाँच: हमारा देश",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

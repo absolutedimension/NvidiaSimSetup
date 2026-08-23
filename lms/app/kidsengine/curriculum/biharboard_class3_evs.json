@@ -1,116 +1,242 @@
 {
-  "board": "Bihar Board",
-  "class": 3,
-  "subject": "EVS",
-  "source": {
-    "name": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 3 (via biharboardbooks + testbook, cross-verified; not the SCERT PDF directly)",
-    "url": "https://biharboardbooks.com/class-iii-evs/",
-    "verified_on": "2026-08-02"
+ "board": "Bihar Board",
+ "class": 3,
+ "subject": "EVS",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 3 (via biharboardbooks + testbook, cross-verified; not the SCERT PDF directly)",
+  "url": "https://biharboardbooks.com/class-iii-evs/",
+  "verified_on": "2026-08-02"
+ },
+ "confidence": "medium",
+ "verified": true,
+ "status": "draft",
+ "notes": "20 chapters; EVS begins as a separate subject. Names verbatim from aggregators (biharboardbooks + testbook agree); not fetched from the SCERT PDF, so medium confidence.",
+ "chapters": [
+  {
+   "id": "",
+   "name": "चाचा की शादी",
+   "subtopics": [],
+   "title_en": "Uncle's wedding",
+   "concepts_en": [
+    "family",
+    "relatives",
+    "wedding",
+    "celebration"
+   ]
   },
-  "confidence": "medium",
-  "verified": true,
-  "status": "draft",
-  "notes": "20 chapters; EVS begins as a separate subject. Names verbatim from aggregators (biharboardbooks + testbook agree); not fetched from the SCERT PDF, so medium confidence.",
-  "chapters": [
-    {
-      "id": "",
-      "name": "चाचा की शादी",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "हमारा परिवार",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "जीव-जन्तुओं की दुनिया",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "रंग-बिरंगे पंख",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "पेड़-पौधों से दोस्ती",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "पत्ता हूँ मैं हरा-हरा",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "तरह-तरह के भोजन",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "कुछ कच्चा कुछ पका हुआ",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "पकायेंगे-खायेंगे",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "घर को जानें",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "दीपावली की तैयारी",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "किस और क्या",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "स्कूल के आस-पास",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "पानी",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "दानापुर से गौरा तक",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "चिट्ठी का सफर",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "कपड़े तरह-तरह के",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "तेरी-मेरी उछलकूद",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "कोशिश करके देख लें",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "आओ खेलें मिट्टी से",
-      "subtopics": []
-    }
-  ]
+  {
+   "id": "",
+   "name": "हमारा परिवार",
+   "subtopics": [],
+   "title_en": "Our family",
+   "concepts_en": [
+    "family",
+    "parents",
+    "relatives",
+    "home"
+   ]
+  },
+  {
+   "id": "",
+   "name": "जीव-जन्तुओं की दुनिया",
+   "subtopics": [],
+   "title_en": "The world of animals",
+   "concepts_en": [
+    "animals",
+    "creatures",
+    "birds",
+    "insects"
+   ]
+  },
+  {
+   "id": "",
+   "name": "रंग-बिरंगे पंख",
+   "subtopics": [],
+   "title_en": "Colourful feathers",
+   "concepts_en": [
+    "birds",
+    "feathers",
+    "wings",
+    "animals"
+   ]
+  },
+  {
+   "id": "",
+   "name": "पेड़-पौधों से दोस्ती",
+   "subtopics": [],
+   "title_en": "Friendship with trees and plants",
+   "concepts_en": [
+    "plants",
+    "trees",
+    "leaves"
+   ]
+  },
+  {
+   "id": "",
+   "name": "पत्ता हूँ मैं हरा-हरा",
+   "subtopics": [],
+   "title_en": "I am a green leaf",
+   "concepts_en": [
+    "leaves",
+    "plants",
+    "trees",
+    "green"
+   ]
+  },
+  {
+   "id": "",
+   "name": "तरह-तरह के भोजन",
+   "subtopics": [],
+   "title_en": "Different kinds of food",
+   "concepts_en": [
+    "food",
+    "eating",
+    "meals"
+   ]
+  },
+  {
+   "id": "",
+   "name": "कुछ कच्चा कुछ पका हुआ",
+   "subtopics": [],
+   "title_en": "Some raw, some cooked",
+   "concepts_en": [
+    "food",
+    "raw",
+    "cooked",
+    "eating"
+   ]
+  },
+  {
+   "id": "",
+   "name": "पकायेंगे-खायेंगे",
+   "subtopics": [],
+   "title_en": "We will cook and eat",
+   "concepts_en": [
+    "food",
+    "cooking",
+    "kitchen",
+    "eating"
+   ]
+  },
+  {
+   "id": "",
+   "name": "घर को जानें",
+   "subtopics": [],
+   "title_en": "Getting to know the house",
+   "concepts_en": [
+    "house",
+    "home",
+    "rooms"
+   ]
+  },
+  {
+   "id": "",
+   "name": "दीपावली की तैयारी",
+   "subtopics": [],
+   "title_en": "Preparing for Diwali",
+   "concepts_en": [
+    "festival",
+    "diwali",
+    "house",
+    "cleaning"
+   ]
+  },
+  {
+   "id": "",
+   "name": "किस और क्या",
+   "subtopics": [],
+   "title_en": "Which and what",
+   "concepts_en": []
+  },
+  {
+   "id": "",
+   "name": "स्कूल के आस-पास",
+   "subtopics": [],
+   "title_en": "Around the school",
+   "concepts_en": [
+    "school",
+    "neighbourhood",
+    "surroundings"
+   ]
+  },
+  {
+   "id": "",
+   "name": "पानी",
+   "subtopics": [],
+   "title_en": "Water",
+   "concepts_en": [
+    "water",
+    "river",
+    "rain",
+    "drinking",
+    "sources"
+   ]
+  },
+  {
+   "id": "",
+   "name": "दानापुर से गौरा तक",
+   "subtopics": [],
+   "title_en": "From Danapur to Gaura",
+   "concepts_en": [
+    "journey",
+    "travel",
+    "transport"
+   ]
+  },
+  {
+   "id": "",
+   "name": "चिट्ठी का सफर",
+   "subtopics": [],
+   "title_en": "The journey of a letter",
+   "concepts_en": [
+    "letter",
+    "post",
+    "postman",
+    "communication"
+   ]
+  },
+  {
+   "id": "",
+   "name": "कपड़े तरह-तरह के",
+   "subtopics": [],
+   "title_en": "Different kinds of clothes",
+   "concepts_en": [
+    "clothes",
+    "clothing",
+    "wearing"
+   ]
+  },
+  {
+   "id": "",
+   "name": "तेरी-मेरी उछलकूद",
+   "subtopics": [],
+   "title_en": "Our jumping and skipping",
+   "concepts_en": [
+    "games",
+    "play",
+    "body",
+    "movement"
+   ]
+  },
+  {
+   "id": "",
+   "name": "कोशिश करके देख लें",
+   "subtopics": [],
+   "title_en": "Let us try it out",
+   "concepts_en": []
+  },
+  {
+   "id": "",
+   "name": "आओ खेलें मिट्टी से",
+   "subtopics": [],
+   "title_en": "Let us play with clay",
+   "concepts_en": [
+    "soil",
+    "clay",
+    "mud",
+    "pots"
+   ]
+  }
+ ],
+ "gloss_note": "title_en is a TRANSLATION of the official Hindi chapter title. concepts_en lists concept words only where the title transparently names them; narrative titles are left empty on purpose. Neither is transcribed from the book's contents pages — the official BSTBPC portal (bstbpc.gov.in) was returning HTTP 500 and the chapter PDFs were unreachable, so no subtopics were sourced. Add real `subtopics` when the official PDF becomes available."
 }

@@ -1,0 +1,91 @@
+{
+ "board": "CBSE",
+ "class": 5,
+ "subject": "Hindi",
+ "source": {
+  "name": "NCERT Veena — Hindi Class 5 (Contents)",
+  "url": "https://ncert.nic.in/textbook/pdf/ehve1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 12,
+ "mapped": 2,
+ "map": {
+  "क_रन": {
+   "name": "किरन",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "न_य_य_क_क_र_स": {
+   "name": "न्याय की कुर्सी",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "च_द_क_क_रत": {
+   "name": "चाँद का कुरता",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "स_ङक_न": {
+   "name": "साङकेन",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "स_दर_य": {
+   "name": "सुंदरिया",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "चत_र_च_त_रक_र": {
+   "name": "चतुर चित्रकार",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "म_र_बचपन": {
+   "name": "मेरा बचपन",
+   "themes": [
+    "मेरा बचपन"
+   ],
+   "score": 1.0,
+   "confidence": "high"
+  },
+  "क_ज_र_ग_र_ष_ट_र_य_उद_य_न_क_य_त_र": {
+   "name": "काजीरंगा राष्ट्रीय उद्यान की यात्रा",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "न_य_य": {
+   "name": "न्याय",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "त_न_मछल_य": {
+   "name": "तीन मछलियाँ",
+   "themes": [
+    "तीन मछलियाँ"
+   ],
+   "score": 1.0,
+   "confidence": "high"
+  },
+  "हम_र_य_कल_म_द_र": {
+   "name": "हमारे ये कलामंदिर",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "ग_ग_क_कह_न": {
+   "name": "गंगा की कहानी",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

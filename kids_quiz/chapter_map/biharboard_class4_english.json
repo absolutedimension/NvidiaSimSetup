@@ -1,0 +1,124 @@
+{
+ "board": "Bihar Board",
+ "class": 4,
+ "subject": "English",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC Class 4 English — Blossom (via selfstudys; cross-confirmed)",
+  "url": "https://www.selfstudys.com/books/bihar/state-books/class-4th/blossom/17889",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 16,
+ "mapped": 6,
+ "map": {
+  "i_love_grandma": {
+   "name": "I Love Grandma",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "our_home": {
+   "name": "Our Home",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "vikram_the_wise_king": {
+   "name": "Vikram the Wise King",
+   "themes": [
+    "Unit 2: My Beautiful World"
+   ],
+   "score": 0.349,
+   "confidence": "high"
+  },
+  "let_me_dial": {
+   "name": "Let Me Dial",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "heera_and_moti": {
+   "name": "Heera and Moti",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "the_boy_who_cried_wolf": {
+   "name": "The Boy Who Cried Wolf",
+   "themes": [
+    "Unit 2: My Beautiful World"
+   ],
+   "score": 0.349,
+   "confidence": "high"
+  },
+  "the_quarrel": {
+   "name": "The Quarrel",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "our_national_flag": {
+   "name": "Our National Flag",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "our_festivals": {
+   "name": "Our Festivals",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "work_will_bring_its_own_rewards": {
+   "name": "Work Will Bring Its Own Rewards",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "asserting_voice": {
+   "name": "Asserting Voice",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "from_an_illiterate_village_girl_to_a_tea": {
+   "name": "From an Illiterate Village Girl to a Teacher",
+   "themes": [
+    "Unit 2: My Beautiful World",
+    "Unit 1: My Land"
+   ],
+   "score": 0.223,
+   "confidence": "low"
+  },
+  "the_little_red_hen": {
+   "name": "The Little Red Hen",
+   "themes": [
+    "Unit 2: My Beautiful World"
+   ],
+   "score": 0.287,
+   "confidence": "high"
+  },
+  "he_leaves_the_nest": {
+   "name": "He Leaves the Nest",
+   "themes": [
+    "Unit 3: Fun with Games"
+   ],
+   "score": 0.349,
+   "confidence": "high"
+  },
+  "computer": {
+   "name": "Computer",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "dirt_and_flies": {
+   "name": "Dirt and Flies",
+   "themes": [
+    "Unit 4: Up High"
+   ],
+   "score": 0.446,
+   "confidence": "high"
+  }
+ }
+}

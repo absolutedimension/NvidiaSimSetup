@@ -1,15 +1,15 @@
 {
-  "board": "Bihar Board",
-  "class": 1,
-  "subject": "EVS",
-  "source": {
-    "name": "SCERT Bihar / BSTBPC textbooks portal",
-    "url": "https://scert.bihar.gov.in/textbooks",
-    "verified_on": "2026-08-02"
-  },
-  "confidence": "medium",
-  "verified": false,
-  "status": "draft",
-  "notes": "No standalone EVS textbook at Class 1. Like NCERT, Bihar SCERT starts EVS ('पर्यावरण और हम') only at Class 3; Cl 1-2 use language (किसलय) + maths (गिनतारा) with EVS integrated. Integrated status, medium confidence.",
-  "chapters": []
+ "board": "Bihar Board",
+ "class": 1,
+ "subject": "EVS",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC Class 1 book list — Hindi, English, Maths, Drawing; no EVS title published",
+  "url": "https://biharboardbooks.com/class-1-books/",
+  "verified_on": "2026-08-19"
+ },
+ "confidence": "high",
+ "verified": true,
+ "status": "not_offered",
+ "notes": "EVS is NOT a Class 1 subject in Bihar — the state's EVS book 'पर्यावरण और हम' begins at Class 3. This cell is empty because the subject does not exist at this class, not because we haven't built it.",
+ "chapters": []
 }

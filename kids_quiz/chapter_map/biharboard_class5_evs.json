@@ -1,0 +1,184 @@
+{
+ "board": "Bihar Board",
+ "class": 5,
+ "subject": "EVS",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 5 (via biharboardbooks + testbook, cross-verified; not the SCERT PDF directly)",
+  "url": "https://biharboardbooks.com/class-5-paryavaran-aur-hum/",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 21,
+ "mapped": 15,
+ "map": {
+  "पटन_स_नथ_ल_तक": {
+   "name": "पटना से नथुला तक",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "ख_ल": {
+   "name": "खेल",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "ब_ज_क_ब_खरन": {
+   "name": "बीजों का बिखरना",
+   "themes": [
+    "Seeds and Seeds"
+   ],
+   "score": 0.702,
+   "confidence": "high"
+  },
+  "म_र_बग_च": {
+   "name": "मेरा बगीचा",
+   "themes": [
+    "Seeds and Seeds"
+   ],
+   "score": 0.693,
+   "confidence": "low"
+  },
+  "ऐत_ह_स_क_स_म_रक": {
+   "name": "ऐतिहासिक स्मारक",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "स_च_ई_क_स_धन": {
+   "name": "सिंचाई के साधन",
+   "themes": [
+    "Experiments with Water"
+   ],
+   "score": 0.257,
+   "confidence": "high"
+  },
+  "ज_तन_ख_ओ_उतन_पक_ओ": {
+   "name": "जितना खाओ उतना पकाओ",
+   "themes": [
+    "Mangoes Round the Year"
+   ],
+   "score": 0.397,
+   "confidence": "low"
+  },
+  "र_स_क_ज_ग_मल_र_य_क_स_ग": {
+   "name": "रॉस की जंग मलेरिया के संग",
+   "themes": [
+    "A Treat for Mosquitoes"
+   ],
+   "score": 0.299,
+   "confidence": "high"
+  },
+  "म_न_नक_श_बन_य": {
+   "name": "मैंने नक्शा बनाया",
+   "themes": [
+    "What if it Finishes …?",
+    "Seeds and Seeds"
+   ],
+   "score": 0.36,
+   "confidence": "low"
+  },
+  "हम_र_फसल_हम_र_ख_न_प_न": {
+   "name": "हमारी फसलें हमारा खान-पान",
+   "themes": [
+    "Seeds and Seeds",
+    "Mangoes Round the Year",
+    "From Tasting to Digesting",
+    "A Treat for Mosquitoes"
+   ],
+   "score": 0.257,
+   "confidence": "low"
+  },
+  "जन_त_जगत_स_रक_ष_और_स_रक_षण": {
+   "name": "जन्तु जगत सुरक्षा और संरक्षण",
+   "themes": [
+    "Super Senses",
+    "Seeds and Seeds",
+    "From Tasting to Digesting",
+    "A Treat for Mosquitoes",
+    "A Snake Charmer's Story"
+   ],
+   "score": 0.197,
+   "confidence": "low"
+  },
+  "म_न_गए_ल_ह": {
+   "name": "मान गए लोहा",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "प_न_और_हम": {
+   "name": "पानी और हम",
+   "themes": [
+    "Experiments with Water"
+   ],
+   "score": 0.765,
+   "confidence": "high"
+  },
+  "स_रज_एक_क_म_अन_क": {
+   "name": "सूरज एक काम अनेक",
+   "themes": [
+    "Super Senses",
+    "Seeds and Seeds",
+    "What if it Finishes …?",
+    "A Snake Charmer's Story"
+   ],
+   "score": 0.232,
+   "confidence": "low"
+  },
+  "हम_र_ज_गल": {
+   "name": "हमारा जंगल",
+   "themes": [
+    "Seeds and Seeds",
+    "From Tasting to Digesting"
+   ],
+   "score": 0.613,
+   "confidence": "low"
+  },
+  "चल_सर_व_कर": {
+   "name": "चलो सर्वे करें",
+   "themes": [
+    "A Treat for Mosquitoes"
+   ],
+   "score": 0.719,
+   "confidence": "high"
+  },
+  "र_म_क_क_क_द_क_न": {
+   "name": "रामू काका की दुकान",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "आव_स": {
+   "name": "आवास",
+   "themes": [
+    "A Snake Charmer's Story"
+   ],
+   "score": 0.461,
+   "confidence": "low"
+  },
+  "तरह_तरह_क_व_यवस_य": {
+   "name": "तरह-तरह के व्यवसाय",
+   "themes": [
+    "Walls Tell Stories",
+    "From Tasting to Digesting"
+   ],
+   "score": 0.281,
+   "confidence": "low"
+  },
+  "र_यप_र_व_ल_च_च_क_श_द": {
+   "name": "रायपुर वाले चाचा की शादी",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "लक_जब_ब_म_र_पड": {
+   "name": "लकी जब बीमार पड़ा",
+   "themes": [
+    "Walls Tell Stories"
+   ],
+   "score": 0.299,
+   "confidence": "low"
+  }
+ }
+}

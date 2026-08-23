@@ -1,0 +1,132 @@
+{
+ "board": "Bihar Board",
+ "class": 2,
+ "subject": "Hindi",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC Class 2 Hindi — अंकुर / नव अंकुर भाग 2 (via biharboardbooks mirror)",
+  "url": "https://biharboardbooks.com/class-ii-hindi-ankur/",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 19,
+ "mapped": 1,
+ "map": {
+  "ह_सत_ख_लत": {
+   "name": "हँसते-खेलते",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "क_आ_और_ल_मड": {
+   "name": "कौआ और लोमड़ी",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "न_न_त_र_म_रन": {
+   "name": "नानी तेरी मोरनी",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "प_रभ_म_र_ज_वन_ह_स_दर": {
+   "name": "प्रभु मेरा जीवन हो सुंदर",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "प_य_स_क_व": {
+   "name": "प्यासा कौवा",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "द_बकर_य": {
+   "name": "दो बकरियाँ",
+   "themes": [
+    "इकाई 3: हरी-भरी धरती",
+    "इकाई 1: परिवार"
+   ],
+   "score": 1.0,
+   "confidence": "high"
+  },
+  "बह_त_ह_आ": {
+   "name": "बहुत हुआ",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "भ_ल_न_ख_ल_फ_टब_ल": {
+   "name": "भालू ने खेली फुटबॉल",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "क_स_न_आल_और_भ_ल": {
+   "name": "किसान, आलू और भालू",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "अगर_प_ड_भ_चलत_ह_त": {
+   "name": "अगर पेड़ भी चलते होते",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "ह_ज_ह_न_ज_न": {
+   "name": "हाँ जी हाँ, ना जी ना",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "क_तन_क_ए": {
+   "name": "कितने कौए",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "च_च_क_ट_प": {
+   "name": "चूँ-चूँ की टोपी",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "म_ल": {
+   "name": "मेला",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "न_श_क_च_ट_ठ": {
+   "name": "निशा की चिट्ठी",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "ह_ल": {
+   "name": "होली",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "ब_दर_और_ट_प": {
+   "name": "बंदर और टोपी",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "पह_ल_य": {
+   "name": "पहेलियाँ",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "इच_छ": {
+   "name": "इच्छा",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

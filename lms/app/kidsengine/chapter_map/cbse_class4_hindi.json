@@ -1,0 +1,101 @@
+{
+ "board": "CBSE",
+ "class": 4,
+ "subject": "Hindi",
+ "source": {
+  "name": "NCERT Veena — Hindi Class 4 (Contents)",
+  "url": "https://ncert.nic.in/textbook/pdf/dhve1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 13,
+ "mapped": 4,
+ "map": {
+  "च_ड_य_क_ग_त": {
+   "name": "चिड़िया का गीत",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "बग_च_क_घ_घ": {
+   "name": "बगीचे का घोंघा",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "न_म": {
+   "name": "नीम",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "हम_र_आह_र": {
+   "name": "हमारा आहार",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "आसम_न_ग_र": {
+   "name": "आसमान गिरा",
+   "themes": [
+    "आसमान गिरा"
+   ],
+   "score": 1.0,
+   "confidence": "high"
+  },
+  "जयप_र_स_पत_र": {
+   "name": "जयपुर से पत्र",
+   "themes": [
+    "जयपुर से पत्र"
+   ],
+   "score": 1.0,
+   "confidence": "high"
+  },
+  "नकल_ह_र": {
+   "name": "नकली हीरे",
+   "themes": [
+    "नकली हीरे"
+   ],
+   "score": 1.0,
+   "confidence": "high"
+  },
+  "ओणम_क_र_ग": {
+   "name": "ओणम के रंग",
+   "themes": [
+    "ओणम के रंग"
+   ],
+   "score": 1.0,
+   "confidence": "high"
+  },
+  "म_ठ_इय_क_सम_म_लन": {
+   "name": "मिठाइयों का सम्मेलन",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "क_मर": {
+   "name": "कैमरा",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "कव_त_क_कम_ल": {
+   "name": "कविता का कमाल",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "शतर_ज_म_म_त": {
+   "name": "शतरंज में मात",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "हम_र_आद_त_य": {
+   "name": "हमारा आदित्य",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

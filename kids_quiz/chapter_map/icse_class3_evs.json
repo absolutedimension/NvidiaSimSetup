@@ -1,0 +1,118 @@
+{
+ "board": "ICSE",
+ "class": 3,
+ "subject": "EVS",
+ "source": {
+  "name": "CISCE Curriculum for Classes I-V (Science — natural-environment component of EVS), Primary",
+  "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 11,
+ "mapped": 11,
+ "map": {
+  "living_and_non_living_things": {
+   "name": "Living and Non-Living Things",
+   "themes": [
+    "Living and Non-Living Things",
+    "Human Body"
+   ],
+   "score": 0.263,
+   "confidence": "high"
+  },
+  "human_body": {
+   "name": "Human Body",
+   "themes": [
+    "Human Body"
+   ],
+   "score": 0.519,
+   "confidence": "high"
+  },
+  "animals_birds": {
+   "name": "Animals: Birds",
+   "themes": [
+    "Animals"
+   ],
+   "score": 0.644,
+   "confidence": "high"
+  },
+  "animals_common_insects": {
+   "name": "Animals: Common Insects",
+   "themes": [
+    "Animals"
+   ],
+   "score": 0.562,
+   "confidence": "high"
+  },
+  "plants_in_the_surroundings": {
+   "name": "Plants in the Surroundings",
+   "themes": [
+    "Plants"
+   ],
+   "score": 0.569,
+   "confidence": "high"
+  },
+  "food_we_get_from_plants": {
+   "name": "Food we get from Plants",
+   "themes": [
+    "Plants"
+   ],
+   "score": 0.623,
+   "confidence": "high"
+  },
+  "forms_of_matter_solids_liquids_and_gases": {
+   "name": "Forms of Matter: Solids, Liquids and Gases",
+   "themes": [
+    "Forms of Matter"
+   ],
+   "score": 0.863,
+   "confidence": "high"
+  },
+  "some_properties_of_water": {
+   "name": "Some Properties of Water",
+   "themes": [
+    "Water",
+    "Transport",
+    "Plants",
+    "Forms of Matter",
+    "Animals"
+   ],
+   "score": 0.133,
+   "confidence": "low"
+  },
+  "water_as_a_resource": {
+   "name": "Water as a Resource",
+   "themes": [
+    "Water",
+    "Transport",
+    "Plants",
+    "Forms of Matter",
+    "Animals"
+   ],
+   "score": 0.104,
+   "confidence": "low"
+  },
+  "sun_as_a_natural_resource": {
+   "name": "Sun as a Natural Resource",
+   "themes": [
+    "Sun",
+    "Living and Non-Living Things",
+    "Water",
+    "Food"
+   ],
+   "score": 0.157,
+   "confidence": "low"
+  },
+  "cleanliness_health_and_hygiene": {
+   "name": "Cleanliness, Health and Hygiene",
+   "themes": [
+    "Human Body",
+    "Plants",
+    "Food",
+    "Animals"
+   ],
+   "score": 0.178,
+   "confidence": "low"
+  }
+ }
+}

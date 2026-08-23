@@ -1,0 +1,41 @@
+{
+ "board": "ICSE",
+ "class": 1,
+ "subject": "GK",
+ "source": {
+  "name": "Commonly-taught ICSE-school GK outline (NO formal CISCE board GK syllabus at primary)",
+  "url": "https://www.icseboard.org/icse/class-1/syllabus/",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 3,
+ "mapped": 3,
+ "map": {
+  "all_about_myself": {
+   "name": "All About Myself",
+   "themes": [
+    "All About Me"
+   ],
+   "score": 0.273,
+   "confidence": "high"
+  },
+  "the_world_around_me": {
+   "name": "The World Around Me",
+   "themes": [
+    "The World Around Me",
+    "My Country India"
+   ],
+   "score": 0.434,
+   "confidence": "high"
+  },
+  "my_country": {
+   "name": "My Country",
+   "themes": [
+    "My Country India",
+    "The World Around Me"
+   ],
+   "score": 0.576,
+   "confidence": "high"
+  }
+ }
+}

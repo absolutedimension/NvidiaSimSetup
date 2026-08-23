@@ -1,0 +1,43 @@
+{
+ "board": "CBSE",
+ "class": 3,
+ "subject": "English",
+ "source": {
+  "name": "NCERT Santoor — Textbook of English for Grade 3 (Contents)",
+  "url": "https://ncert.nic.in/textbook/pdf/cesa1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 4,
+ "mapped": 2,
+ "map": {
+  "unit_1_fun_with_friends": {
+   "name": "Unit 1: Fun with Friends",
+   "themes": [
+    "Vocabulary"
+   ],
+   "score": 0.286,
+   "confidence": "high"
+  },
+  "unit_2_toys_and_games": {
+   "name": "Unit 2: Toys and Games",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "unit_3_good_food": {
+   "name": "Unit 3: Good Food",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "unit_4_the_sky": {
+   "name": "Unit 4: The Sky",
+   "themes": [
+    "Opposites"
+   ],
+   "score": 0.255,
+   "confidence": "high"
+  }
+ }
+}

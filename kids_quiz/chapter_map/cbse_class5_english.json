@@ -1,0 +1,55 @@
+{
+ "board": "CBSE",
+ "class": 5,
+ "subject": "English",
+ "source": {
+  "name": "NCERT Santoor — Textbook of English for Grade 5 (Contents)",
+  "url": "https://ncert.nic.in/textbook/pdf/eesa1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 5,
+ "mapped": 5,
+ "map": {
+  "unit_1_let_s_have_fun": {
+   "name": "Unit 1: Let's Have Fun",
+   "themes": [
+    "Unit 1: Let's Have Fun"
+   ],
+   "score": 0.58,
+   "confidence": "high"
+  },
+  "unit_2_my_colourful_world": {
+   "name": "Unit 2: My Colourful World",
+   "themes": [
+    "Unit 2: My Colourful World"
+   ],
+   "score": 0.588,
+   "confidence": "high"
+  },
+  "unit_3_water": {
+   "name": "Unit 3: Water",
+   "themes": [
+    "Unit 3: Water"
+   ],
+   "score": 0.554,
+   "confidence": "high"
+  },
+  "unit_4_ups_and_downs": {
+   "name": "Unit 4: Ups and Downs",
+   "themes": [
+    "Unit 4: Ups and Downs"
+   ],
+   "score": 0.517,
+   "confidence": "high"
+  },
+  "unit_5_work_is_worship": {
+   "name": "Unit 5: Work is Worship",
+   "themes": [
+    "Unit 5: Work is Worship"
+   ],
+   "score": 0.588,
+   "confidence": "high"
+  }
+ }
+}

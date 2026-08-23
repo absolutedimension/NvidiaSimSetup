@@ -1,0 +1,114 @@
+{
+ "board": "ICSE",
+ "class": 4,
+ "subject": "EVS",
+ "source": {
+  "name": "CISCE Curriculum for Classes I-V (Science — natural-environment component of EVS), Primary",
+  "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 12,
+ "mapped": 11,
+ "map": {
+  "human_body_food_we_eat": {
+   "name": "Human Body: Food we Eat",
+   "themes": [
+    "Ear to Ear",
+    "Basva's Farm"
+   ],
+   "score": 0.228,
+   "confidence": "low"
+  },
+  "human_body_the_teeth": {
+   "name": "Human Body: The Teeth",
+   "themes": [
+    "Ear to Ear"
+   ],
+   "score": 0.552,
+   "confidence": "high"
+  },
+  "human_body_digestive_excretory_systems": {
+   "name": "Human Body: Digestive & Excretory Systems",
+   "themes": [
+    "Ear to Ear"
+   ],
+   "score": 0.518,
+   "confidence": "high"
+  },
+  "adaptation_in_animals": {
+   "name": "Adaptation in Animals",
+   "themes": [
+    "A Day with Nandu",
+    "The Valley of Flowers"
+   ],
+   "score": 0.428,
+   "confidence": "high"
+  },
+  "adaptation_in_plants": {
+   "name": "Adaptation in Plants",
+   "themes": [
+    "Basva's Farm",
+    "A River's Tale"
+   ],
+   "score": 0.366,
+   "confidence": "high"
+  },
+  "plants_in_the_surroundings_and_environme": {
+   "name": "Plants in the Surroundings and Environment",
+   "themes": [
+    "Basva's Farm"
+   ],
+   "score": 0.464,
+   "confidence": "high"
+  },
+  "air": {
+   "name": "Air",
+   "themes": [
+    "Basva's Farm"
+   ],
+   "score": 0.277,
+   "confidence": "high"
+  },
+  "materials_and_solutions": {
+   "name": "Materials and Solutions",
+   "themes": [
+    "A River's Tale"
+   ],
+   "score": 0.173,
+   "confidence": "low"
+  },
+  "light": {
+   "name": "Light",
+   "themes": [
+    "From the Window",
+    "A River's Tale",
+    "A Day with Nandu"
+   ],
+   "score": 0.145,
+   "confidence": "low"
+  },
+  "measurement": {
+   "name": "Measurement",
+   "themes": [
+    "The Valley of Flowers"
+   ],
+   "score": 0.204,
+   "confidence": "low"
+  },
+  "push_and_pull": {
+   "name": "Push and Pull",
+   "themes": [
+    "A River's Tale"
+   ],
+   "score": 0.173,
+   "confidence": "low"
+  },
+  "friction_as_a_force": {
+   "name": "Friction as a Force",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

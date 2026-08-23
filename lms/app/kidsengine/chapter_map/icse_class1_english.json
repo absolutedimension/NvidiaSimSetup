@@ -1,0 +1,37 @@
+{
+ "board": "ICSE",
+ "class": 1,
+ "subject": "English",
+ "source": {
+  "name": "CISCE Curriculum for Classes I-V (English), Primary",
+  "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 3,
+ "mapped": 2,
+ "map": {
+  "listening_and_speaking": {
+   "name": "Listening and Speaking",
+   "themes": [],
+   "score": 0.086,
+   "confidence": "none"
+  },
+  "reading_and_writing": {
+   "name": "Reading and Writing",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.427,
+   "confidence": "high"
+  },
+  "grammar_and_vocabulary_in_context": {
+   "name": "Grammar and Vocabulary in Context",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.475,
+   "confidence": "high"
+  }
+ }
+}

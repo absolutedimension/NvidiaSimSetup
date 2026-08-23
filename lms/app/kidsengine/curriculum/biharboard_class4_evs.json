@@ -1,141 +1,295 @@
 {
-  "board": "Bihar Board",
-  "class": 4,
-  "subject": "EVS",
-  "source": {
-    "name": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 4 (via selfstudys + testbook, cross-verified; not the SCERT PDF directly)",
-    "url": "https://www.selfstudys.com/books/bihar/state-books/class-4th/paryavaran-aur-hum/17853",
-    "verified_on": "2026-08-02"
+ "board": "Bihar Board",
+ "class": 4,
+ "subject": "EVS",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 4 (via selfstudys + testbook, cross-verified; not the SCERT PDF directly)",
+  "url": "https://www.selfstudys.com/books/bihar/state-books/class-4th/paryavaran-aur-hum/17853",
+  "verified_on": "2026-08-02"
+ },
+ "confidence": "medium",
+ "verified": true,
+ "status": "draft",
+ "notes": "25 chapters; names verbatim from aggregators (mid-list order differs slightly between selfstudys/testbook but the set of 25 agrees). Not from SCERT PDF; medium confidence.",
+ "chapters": [
+  {
+   "id": "",
+   "name": "रंग-बिरंगे खिलते फूल",
+   "subtopics": [],
+   "title_en": "Colourful blooming flowers",
+   "concepts_en": [
+    "flowers",
+    "plants",
+    "colours"
+   ]
   },
-  "confidence": "medium",
-  "verified": true,
-  "status": "draft",
-  "notes": "25 chapters; names verbatim from aggregators (mid-list order differs slightly between selfstudys/testbook but the set of 25 agrees). Not from SCERT PDF; medium confidence.",
-  "chapters": [
-    {
-      "id": "",
-      "name": "रंग-बिरंगे खिलते फूल",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "कोई देता अंडे कोई देता बच्चे",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "हड़बड़ में गड़बड़",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "त्योहार और भोजन",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "स्वाद अलग-अलग",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "हरियाली और हम",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "जड़ों की पकड़",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "देख तमाशा",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "जब मामाजी घर आए",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "छठ पर्व और बच्चे",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "आओ बनायें नक्शा",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "अपना प्यारा घर",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "खेत से घर तक",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "बाल मेला और खेल",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "आस-पास की सफाई",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "मीठा-मीठा शहद",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "तरह-तरह के पक्षी",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "जंगल में पिकनिक",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "ककोलत से कन्याकुमारी",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "हमारे मददगार-कामगार",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "तरह-तरह के घर",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "अजय जब गाँव लौटे",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "आस-पास की खोज-खबर",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "चिड़ियाघर की सैर",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "बंटी का सफर",
-      "subtopics": []
-    }
-  ]
+  {
+   "id": "",
+   "name": "कोई देता अंडे कोई देता बच्चे",
+   "subtopics": [],
+   "title_en": "Some lay eggs, some give birth",
+   "concepts_en": [
+    "animals",
+    "eggs",
+    "young",
+    "birds"
+   ]
+  },
+  {
+   "id": "",
+   "name": "हड़बड़ में गड़बड़",
+   "subtopics": [],
+   "title_en": "Trouble in a hurry",
+   "concepts_en": []
+  },
+  {
+   "id": "",
+   "name": "त्योहार और भोजन",
+   "subtopics": [],
+   "title_en": "Festivals and food",
+   "concepts_en": [
+    "festival",
+    "food",
+    "eating"
+   ]
+  },
+  {
+   "id": "",
+   "name": "स्वाद अलग-अलग",
+   "subtopics": [],
+   "title_en": "Different tastes",
+   "concepts_en": [
+    "taste",
+    "food",
+    "tongue",
+    "eating"
+   ]
+  },
+  {
+   "id": "",
+   "name": "हरियाली और हम",
+   "subtopics": [],
+   "title_en": "Greenery and us",
+   "concepts_en": [
+    "plants",
+    "trees",
+    "green",
+    "environment"
+   ]
+  },
+  {
+   "id": "",
+   "name": "जड़ों की पकड़",
+   "subtopics": [],
+   "title_en": "The grip of roots",
+   "concepts_en": [
+    "roots",
+    "plants",
+    "soil",
+    "trees"
+   ]
+  },
+  {
+   "id": "",
+   "name": "देख तमाशा",
+   "subtopics": [],
+   "title_en": "Watch the show",
+   "concepts_en": []
+  },
+  {
+   "id": "",
+   "name": "जब मामाजी घर आए",
+   "subtopics": [],
+   "title_en": "When uncle came home",
+   "concepts_en": [
+    "family",
+    "relatives",
+    "guests",
+    "home"
+   ]
+  },
+  {
+   "id": "",
+   "name": "छठ पर्व और बच्चे",
+   "subtopics": [],
+   "title_en": "The Chhath festival and children",
+   "concepts_en": [
+    "festival",
+    "chhath",
+    "river",
+    "sun"
+   ]
+  },
+  {
+   "id": "",
+   "name": "आओ बनायें नक्शा",
+   "subtopics": [],
+   "title_en": "Let us make a map",
+   "concepts_en": [
+    "map",
+    "directions",
+    "place"
+   ]
+  },
+  {
+   "id": "",
+   "name": "अपना प्यारा घर",
+   "subtopics": [],
+   "title_en": "Our lovely home",
+   "concepts_en": [
+    "house",
+    "home",
+    "rooms"
+   ]
+  },
+  {
+   "id": "",
+   "name": "खेत से घर तक",
+   "subtopics": [],
+   "title_en": "From the field to home",
+   "concepts_en": [
+    "farm",
+    "field",
+    "crops",
+    "food"
+   ]
+  },
+  {
+   "id": "",
+   "name": "बाल मेला और खेल",
+   "subtopics": [],
+   "title_en": "The children's fair and games",
+   "concepts_en": [
+    "games",
+    "play",
+    "fair"
+   ]
+  },
+  {
+   "id": "",
+   "name": "आस-पास की सफाई",
+   "subtopics": [],
+   "title_en": "Cleanliness around us",
+   "concepts_en": [
+    "cleanliness",
+    "waste",
+    "health",
+    "surroundings"
+   ]
+  },
+  {
+   "id": "",
+   "name": "मीठा-मीठा शहद",
+   "subtopics": [],
+   "title_en": "Sweet honey",
+   "concepts_en": [
+    "honey",
+    "bees",
+    "insects",
+    "food"
+   ]
+  },
+  {
+   "id": "",
+   "name": "तरह-तरह के पक्षी",
+   "subtopics": [],
+   "title_en": "Different kinds of birds",
+   "concepts_en": [
+    "birds",
+    "animals",
+    "feathers",
+    "nests"
+   ]
+  },
+  {
+   "id": "",
+   "name": "जंगल में पिकनिक",
+   "subtopics": [],
+   "title_en": "A picnic in the forest",
+   "concepts_en": [
+    "forest",
+    "trees",
+    "animals",
+    "plants"
+   ]
+  },
+  {
+   "id": "",
+   "name": "ककोलत से कन्याकुमारी",
+   "subtopics": [],
+   "title_en": "From Kakolat to Kanyakumari",
+   "concepts_en": [
+    "journey",
+    "travel",
+    "transport"
+   ]
+  },
+  {
+   "id": "",
+   "name": "हमारे मददगार-कामगार",
+   "subtopics": [],
+   "title_en": "Our helpers and workers",
+   "concepts_en": [
+    "work",
+    "workers",
+    "helpers",
+    "occupation"
+   ]
+  },
+  {
+   "id": "",
+   "name": "तरह-तरह के घर",
+   "subtopics": [],
+   "title_en": "Different kinds of houses",
+   "concepts_en": [
+    "house",
+    "home",
+    "shelter"
+   ]
+  },
+  {
+   "id": "",
+   "name": "अजय जब गाँव लौटे",
+   "subtopics": [],
+   "title_en": "When Ajay returned to the village",
+   "concepts_en": [
+    "village",
+    "travel",
+    "home"
+   ]
+  },
+  {
+   "id": "",
+   "name": "आस-पास की खोज-खबर",
+   "subtopics": [],
+   "title_en": "Exploring the neighbourhood",
+   "concepts_en": [
+    "surroundings",
+    "neighbourhood"
+   ]
+  },
+  {
+   "id": "",
+   "name": "चिड़ियाघर की सैर",
+   "subtopics": [],
+   "title_en": "A trip to the zoo",
+   "concepts_en": [
+    "zoo",
+    "animals",
+    "birds"
+   ]
+  },
+  {
+   "id": "",
+   "name": "बंटी का सफर",
+   "subtopics": [],
+   "title_en": "Bunty's journey",
+   "concepts_en": [
+    "journey",
+    "travel",
+    "transport"
+   ]
+  }
+ ],
+ "gloss_note": "title_en is a TRANSLATION of the official Hindi chapter title. concepts_en lists concept words only where the title transparently names them; narrative titles are left empty on purpose. Neither is transcribed from the book's contents pages — the official BSTBPC portal (bstbpc.gov.in) was returning HTTP 500 and the chapter PDFs were unreachable, so no subtopics were sourced. Add real `subtopics` when the official PDF becomes available."
 }

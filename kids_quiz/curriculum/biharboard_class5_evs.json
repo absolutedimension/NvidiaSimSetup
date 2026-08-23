@@ -1,121 +1,258 @@
 {
-  "board": "Bihar Board",
-  "class": 5,
-  "subject": "EVS",
-  "source": {
-    "name": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 5 (via biharboardbooks + testbook, cross-verified; not the SCERT PDF directly)",
-    "url": "https://biharboardbooks.com/class-5-paryavaran-aur-hum/",
-    "verified_on": "2026-08-02"
+ "board": "Bihar Board",
+ "class": 5,
+ "subject": "EVS",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 5 (via biharboardbooks + testbook, cross-verified; not the SCERT PDF directly)",
+  "url": "https://biharboardbooks.com/class-5-paryavaran-aur-hum/",
+  "verified_on": "2026-08-02"
+ },
+ "confidence": "medium",
+ "verified": true,
+ "status": "draft",
+ "notes": "21 chapters; names verbatim from aggregators (biharboardbooks + testbook agree). Not from SCERT PDF; medium confidence.",
+ "chapters": [
+  {
+   "id": "",
+   "name": "पटना से नथुला तक",
+   "subtopics": [],
+   "title_en": "From Patna to Nathula",
+   "concepts_en": [
+    "journey",
+    "travel",
+    "transport"
+   ]
   },
-  "confidence": "medium",
-  "verified": true,
-  "status": "draft",
-  "notes": "21 chapters; names verbatim from aggregators (biharboardbooks + testbook agree). Not from SCERT PDF; medium confidence.",
-  "chapters": [
-    {
-      "id": "",
-      "name": "पटना से नथुला तक",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "खेल",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "बीजों का बिखरना",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "मेरा बगीचा",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "ऐतिहासिक स्मारक",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "सिंचाई के साधन",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "जितना खाओ उतना पकाओ",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "रॉस की जंग मलेरिया के संग",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "मैंने नक्शा बनाया",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "हमारी फसलें हमारा खान-पान",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "जन्तु जगत सुरक्षा और संरक्षण",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "मान गए लोहा",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "पानी और हम",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "सूरज एक काम अनेक",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "हमारा जंगल",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "चलो सर्वे करें",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "रामू काका की दुकान",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "आवास",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "तरह-तरह के व्यवसाय",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "रायपुर वाले चाचा की शादी",
-      "subtopics": []
-    },
-    {
-      "id": "",
-      "name": "लकी जब बीमार पड़ा",
-      "subtopics": []
-    }
-  ]
+  {
+   "id": "",
+   "name": "खेल",
+   "subtopics": [],
+   "title_en": "Games",
+   "concepts_en": [
+    "games",
+    "play",
+    "sports",
+    "body"
+   ]
+  },
+  {
+   "id": "",
+   "name": "बीजों का बिखरना",
+   "subtopics": [],
+   "title_en": "The scattering of seeds",
+   "concepts_en": [
+    "seeds",
+    "plants",
+    "dispersal",
+    "wind"
+   ]
+  },
+  {
+   "id": "",
+   "name": "मेरा बगीचा",
+   "subtopics": [],
+   "title_en": "My garden",
+   "concepts_en": [
+    "garden",
+    "plants",
+    "flowers",
+    "trees"
+   ]
+  },
+  {
+   "id": "",
+   "name": "ऐतिहासिक स्मारक",
+   "subtopics": [],
+   "title_en": "Historical monuments",
+   "concepts_en": [
+    "monument",
+    "history",
+    "building"
+   ]
+  },
+  {
+   "id": "",
+   "name": "सिंचाई के साधन",
+   "subtopics": [],
+   "title_en": "Means of irrigation",
+   "concepts_en": [
+    "irrigation",
+    "water",
+    "farm",
+    "crops"
+   ]
+  },
+  {
+   "id": "",
+   "name": "जितना खाओ उतना पकाओ",
+   "subtopics": [],
+   "title_en": "Cook only as much as you eat",
+   "concepts_en": [
+    "food",
+    "cooking",
+    "waste",
+    "eating"
+   ]
+  },
+  {
+   "id": "",
+   "name": "रॉस की जंग मलेरिया के संग",
+   "subtopics": [],
+   "title_en": "Ross's fight against malaria",
+   "concepts_en": [
+    "malaria",
+    "mosquito",
+    "disease",
+    "health"
+   ]
+  },
+  {
+   "id": "",
+   "name": "मैंने नक्शा बनाया",
+   "subtopics": [],
+   "title_en": "I made a map",
+   "concepts_en": [
+    "map",
+    "directions",
+    "place"
+   ]
+  },
+  {
+   "id": "",
+   "name": "हमारी फसलें हमारा खान-पान",
+   "subtopics": [],
+   "title_en": "Our crops, our food",
+   "concepts_en": [
+    "crops",
+    "farm",
+    "food",
+    "eating"
+   ]
+  },
+  {
+   "id": "",
+   "name": "जन्तु जगत सुरक्षा और संरक्षण",
+   "subtopics": [],
+   "title_en": "The animal world: safety and conservation",
+   "concepts_en": [
+    "animals",
+    "conservation",
+    "wildlife"
+   ]
+  },
+  {
+   "id": "",
+   "name": "मान गए लोहा",
+   "subtopics": [],
+   "title_en": "Impressed by iron",
+   "concepts_en": [
+    "iron",
+    "metal",
+    "material"
+   ]
+  },
+  {
+   "id": "",
+   "name": "पानी और हम",
+   "subtopics": [],
+   "title_en": "Water and us",
+   "concepts_en": [
+    "water",
+    "river",
+    "rain",
+    "drinking",
+    "sources"
+   ]
+  },
+  {
+   "id": "",
+   "name": "सूरज एक काम अनेक",
+   "subtopics": [],
+   "title_en": "The sun: one, but many uses",
+   "concepts_en": [
+    "sun",
+    "sunlight",
+    "heat",
+    "energy"
+   ]
+  },
+  {
+   "id": "",
+   "name": "हमारा जंगल",
+   "subtopics": [],
+   "title_en": "Our forest",
+   "concepts_en": [
+    "forest",
+    "trees",
+    "animals",
+    "plants"
+   ]
+  },
+  {
+   "id": "",
+   "name": "चलो सर्वे करें",
+   "subtopics": [],
+   "title_en": "Let us do a survey",
+   "concepts_en": []
+  },
+  {
+   "id": "",
+   "name": "रामू काका की दुकान",
+   "subtopics": [],
+   "title_en": "Uncle Ramu's shop",
+   "concepts_en": [
+    "shop",
+    "buying",
+    "market",
+    "work"
+   ]
+  },
+  {
+   "id": "",
+   "name": "आवास",
+   "subtopics": [],
+   "title_en": "Housing",
+   "concepts_en": [
+    "house",
+    "home",
+    "shelter"
+   ]
+  },
+  {
+   "id": "",
+   "name": "तरह-तरह के व्यवसाय",
+   "subtopics": [],
+   "title_en": "Different occupations",
+   "concepts_en": [
+    "work",
+    "occupation",
+    "workers"
+   ]
+  },
+  {
+   "id": "",
+   "name": "रायपुर वाले चाचा की शादी",
+   "subtopics": [],
+   "title_en": "The Raipur uncle's wedding",
+   "concepts_en": [
+    "family",
+    "relatives",
+    "wedding",
+    "travel"
+   ]
+  },
+  {
+   "id": "",
+   "name": "लकी जब बीमार पड़ा",
+   "subtopics": [],
+   "title_en": "When Lucky fell ill",
+   "concepts_en": [
+    "illness",
+    "health",
+    "body",
+    "doctor"
+   ]
+  }
+ ],
+ "gloss_note": "title_en is a TRANSLATION of the official Hindi chapter title. concepts_en lists concept words only where the title transparently names them; narrative titles are left empty on purpose. Neither is transcribed from the book's contents pages — the official BSTBPC portal (bstbpc.gov.in) was returning HTTP 500 and the chapter PDFs were unreachable, so no subtopics were sourced. Add real `subtopics` when the official PDF becomes available."
 }

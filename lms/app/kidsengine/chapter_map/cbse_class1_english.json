@@ -1,0 +1,52 @@
+{
+ "board": "CBSE",
+ "class": 1,
+ "subject": "English",
+ "source": {
+  "name": "NCERT Mridang — Textbook of English for Grade 1 (Contents)",
+  "url": "https://ncert.nic.in/textbook/pdf/aemr1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 4,
+ "mapped": 4,
+ "map": {
+  "unit_1_my_family_and_me": {
+   "name": "Unit 1: My Family and Me",
+   "themes": [
+    "Unit 2: Life Around Us",
+    "Unit 1: My Family and Me"
+   ],
+   "score": 0.485,
+   "confidence": "high"
+  },
+  "unit_2_life_around_us": {
+   "name": "Unit 2: Life Around Us",
+   "themes": [
+    "Unit 4: Seasons",
+    "Unit 3: Food",
+    "Unit 2: Life Around Us",
+    "Unit 1: My Family and Me"
+   ],
+   "score": 0.104,
+   "confidence": "low"
+  },
+  "unit_3_food": {
+   "name": "Unit 3: Food",
+   "themes": [
+    "Unit 3: Food",
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.389,
+   "confidence": "high"
+  },
+  "unit_4_seasons": {
+   "name": "Unit 4: Seasons",
+   "themes": [
+    "Unit 4: Seasons"
+   ],
+   "score": 0.434,
+   "confidence": "high"
+  }
+ }
+}

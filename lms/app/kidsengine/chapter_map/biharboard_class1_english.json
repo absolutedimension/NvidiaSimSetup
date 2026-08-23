@@ -1,0 +1,201 @@
+{
+ "board": "Bihar Board",
+ "class": 1,
+ "subject": "English",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC Class 1 English — Blossom (via biharboardbooks mirror; official portal lists no ToC)",
+  "url": "https://biharboardbooks.com/class-i-english-blossom/",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 27,
+ "mapped": 12,
+ "map": {
+  "our_body": {
+   "name": "Our Body",
+   "themes": [
+    "Unit 1: My Family and Me"
+   ],
+   "score": 0.763,
+   "confidence": "high"
+  },
+  "family": {
+   "name": "Family",
+   "themes": [
+    "Unit 1: My Family and Me"
+   ],
+   "score": 1.0,
+   "confidence": "high"
+  },
+  "kitchen": {
+   "name": "Kitchen",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "in_a_village": {
+   "name": "In a Village",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "cat_and_bird": {
+   "name": "Cat and Bird",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.349,
+   "confidence": "high"
+  },
+  "domestic_animal": {
+   "name": "Domestic Animal",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.446,
+   "confidence": "high"
+  },
+  "rainbow": {
+   "name": "Rainbow",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.446,
+   "confidence": "high"
+  },
+  "thirsty_crow": {
+   "name": "Thirsty Crow",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "my_school": {
+   "name": "My School",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "play_ground": {
+   "name": "Play Ground",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.551,
+   "confidence": "high"
+  },
+  "garden": {
+   "name": "Garden",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "lion_and_mouse": {
+   "name": "Lion and Mouse",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.446,
+   "confidence": "high"
+  },
+  "zoo": {
+   "name": "Zoo",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.446,
+   "confidence": "high"
+  },
+  "transport": {
+   "name": "Transport",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "three_little_kittens": {
+   "name": "Three Little Kittens",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.287,
+   "confidence": "high"
+  },
+  "swing_swing_swing": {
+   "name": "Swing Swing Swing",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "on_the_road": {
+   "name": "On the Road",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "in_a_fair": {
+   "name": "In a Fair",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "a_fat_and_a_cat": {
+   "name": "A Fat and a Cat",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.349,
+   "confidence": "high"
+  },
+  "lovely_rose": {
+   "name": "Lovely Rose",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "picture_gallery": {
+   "name": "Picture Gallery",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "tap_tap_tapak": {
+   "name": "Tap Tap Tapak",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "around_a_hut": {
+   "name": "Around a Hut",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "me_too": {
+   "name": "Me Too",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.617,
+   "confidence": "high"
+  },
+  "our_festivals": {
+   "name": "Our Festivals",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "school_to_home": {
+   "name": "School to Home",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "a_b_c_green_green_tree": {
+   "name": "A B C Green Green Tree",
+   "themes": [
+    "Unit 2: Life Around Us"
+   ],
+   "score": 0.828,
+   "confidence": "high"
+  }
+ }
+}

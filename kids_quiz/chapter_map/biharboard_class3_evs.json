@@ -1,0 +1,168 @@
+{
+ "board": "Bihar Board",
+ "class": 3,
+ "subject": "EVS",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC — पर्यावरण और हम Class 3 (via biharboardbooks + testbook, cross-verified; not the SCERT PDF directly)",
+  "url": "https://biharboardbooks.com/class-iii-evs/",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 20,
+ "mapped": 16,
+ "map": {
+  "च_च_क_श_द": {
+   "name": "चाचा की शादी",
+   "themes": [
+    "Family"
+   ],
+   "score": 0.649,
+   "confidence": "high"
+  },
+  "हम_र_पर_व_र": {
+   "name": "हमारा परिवार",
+   "themes": [
+    "Family"
+   ],
+   "score": 0.367,
+   "confidence": "high"
+  },
+  "ज_व_जन_त_ओ_क_द_न_य": {
+   "name": "जीव-जन्तुओं की दुनिया",
+   "themes": [
+    "Animals"
+   ],
+   "score": 0.77,
+   "confidence": "high"
+  },
+  "र_ग_ब_र_ग_प_ख": {
+   "name": "रंग-बिरंगे पंख",
+   "themes": [
+    "Animals"
+   ],
+   "score": 0.905,
+   "confidence": "high"
+  },
+  "प_ड_प_ध_स_द_स_त": {
+   "name": "पेड़-पौधों से दोस्ती",
+   "themes": [
+    "Plants"
+   ],
+   "score": 0.649,
+   "confidence": "high"
+  },
+  "पत_त_ह_म_हर_हर": {
+   "name": "पत्ता हूँ मैं हरा-हरा",
+   "themes": [
+    "Plants"
+   ],
+   "score": 0.902,
+   "confidence": "high"
+  },
+  "तरह_तरह_क_भ_जन": {
+   "name": "तरह-तरह के भोजन",
+   "themes": [
+    "Food"
+   ],
+   "score": 0.496,
+   "confidence": "high"
+  },
+  "क_छ_कच_च_क_छ_पक_ह_आ": {
+   "name": "कुछ कच्चा कुछ पका हुआ",
+   "themes": [
+    "Food"
+   ],
+   "score": 0.663,
+   "confidence": "high"
+  },
+  "पक_य_ग_ख_य_ग": {
+   "name": "पकायेंगे-खायेंगे",
+   "themes": [
+    "Food"
+   ],
+   "score": 0.56,
+   "confidence": "high"
+  },
+  "घर_क_ज_न": {
+   "name": "घर को जानें",
+   "themes": [
+    "Houses"
+   ],
+   "score": 0.324,
+   "confidence": "high"
+  },
+  "द_प_वल_क_त_य_र": {
+   "name": "दीपावली की तैयारी",
+   "themes": [
+    "Houses"
+   ],
+   "score": 0.409,
+   "confidence": "high"
+  },
+  "क_स_और_क_य": {
+   "name": "किस और क्या",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "स_क_ल_क_आस_प_स": {
+   "name": "स्कूल के आस-पास",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "प_न": {
+   "name": "पानी",
+   "themes": [
+    "Water"
+   ],
+   "score": 0.901,
+   "confidence": "high"
+  },
+  "द_न_प_र_स_ग_र_तक": {
+   "name": "दानापुर से गौरा तक",
+   "themes": [
+    "Transport"
+   ],
+   "score": 0.649,
+   "confidence": "high"
+  },
+  "च_ट_ठ_क_सफर": {
+   "name": "चिट्ठी का सफर",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "कपड_तरह_तरह_क": {
+   "name": "कपड़े तरह-तरह के",
+   "themes": [
+    "Houses"
+   ],
+   "score": 0.316,
+   "confidence": "low"
+  },
+  "त_र_म_र_उछलक_द": {
+   "name": "तेरी-मेरी उछलकूद",
+   "themes": [
+    "Human Body"
+   ],
+   "score": 0.316,
+   "confidence": "high"
+  },
+  "क_श_श_करक_द_ख_ल": {
+   "name": "कोशिश करके देख लें",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "आओ_ख_ल_म_ट_ट_स": {
+   "name": "आओ खेलें मिट्टी से",
+   "themes": [
+    "Plants",
+    "Houses"
+   ],
+   "score": 0.29,
+   "confidence": "low"
+  }
+ }
+}

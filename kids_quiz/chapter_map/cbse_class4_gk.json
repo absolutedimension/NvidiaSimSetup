@@ -1,0 +1,40 @@
+{
+ "board": "CBSE",
+ "class": 4,
+ "subject": "GK",
+ "source": {
+  "name": "Commonly-taught primary GK outline (NO official CBSE/NCERT board GK syllabus at primary)",
+  "url": "",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 3,
+ "mapped": 3,
+ "map": {
+  "world_around_us": {
+   "name": "World Around Us",
+   "themes": [
+    "World Around Us"
+   ],
+   "score": 0.425,
+   "confidence": "high"
+  },
+  "science_and_nature": {
+   "name": "Science and Nature",
+   "themes": [
+    "Science and Nature",
+    "India and Current Affairs"
+   ],
+   "score": 0.392,
+   "confidence": "high"
+  },
+  "india_and_current_affairs": {
+   "name": "India and Current Affairs",
+   "themes": [
+    "India and Current Affairs"
+   ],
+   "score": 0.529,
+   "confidence": "high"
+  }
+ }
+}

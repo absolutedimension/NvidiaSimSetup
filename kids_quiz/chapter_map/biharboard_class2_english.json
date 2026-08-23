@@ -1,0 +1,191 @@
+{
+ "board": "Bihar Board",
+ "class": 2,
+ "subject": "English",
+ "source": {
+  "name": "Bihar SCERT/BSTBPC Class 2 English — Blossom (via biharboardbooks mirror)",
+  "url": "https://biharboardbooks.com/class-ii-english-blossom/",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 25,
+ "mapped": 10,
+ "map": {
+  "a_b_c_green_green_tree": {
+   "name": "A B C Green Green Tree",
+   "themes": [
+    "Unit 2: Welcome to My World",
+    "Unit 1: Fun with Friends"
+   ],
+   "score": 0.522,
+   "confidence": "high"
+  },
+  "hop_hop_hop": {
+   "name": "Hop Hop Hop",
+   "themes": [
+    "Unit 5: Harmony",
+    "Unit 1: Fun with Friends"
+   ],
+   "score": 0.391,
+   "confidence": "high"
+  },
+  "pretty_parrot": {
+   "name": "Pretty Parrot",
+   "themes": [
+    "Unit 5: Harmony"
+   ],
+   "score": 0.473,
+   "confidence": "high"
+  },
+  "my_family": {
+   "name": "My Family",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "healthy_food": {
+   "name": "Healthy Food",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "our_classroom": {
+   "name": "Our Classroom",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "our_school_playground": {
+   "name": "Our School Playground",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "our_lovely_animals": {
+   "name": "Our Lovely Animals",
+   "themes": [
+    "Unit 5: Harmony",
+    "Unit 4: Life Around Us",
+    "Unit 1: Fun with Friends"
+   ],
+   "score": 0.443,
+   "confidence": "high"
+  },
+  "grocery_shop": {
+   "name": "Grocery Shop",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "kaw_kaw_crow": {
+   "name": "Kaw! Kaw! Crow",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "little_friends": {
+   "name": "Little Friends",
+   "themes": [
+    "Unit 5: Harmony",
+    "Unit 1: Fun with Friends"
+   ],
+   "score": 0.391,
+   "confidence": "high"
+  },
+  "at_the_village_market": {
+   "name": "At the Village Market",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "where_is_mummy": {
+   "name": "Where is Mummy",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "our_food": {
+   "name": "Our Food",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "good_morning": {
+   "name": "Good Morning",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "my_self": {
+   "name": "My Self",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "a_fair": {
+   "name": "A Fair",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "lovely_teacher_day": {
+   "name": "Lovely Teacher Day",
+   "themes": [
+    "Unit 5: Harmony"
+   ],
+   "score": 0.473,
+   "confidence": "high"
+  },
+  "golu_goes_to_the_zoo": {
+   "name": "Golu Goes To The Zoo",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "people_who_help_us": {
+   "name": "People Who Help Us",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "little_flowers": {
+   "name": "Little Flowers",
+   "themes": [
+    "Unit 5: Harmony"
+   ],
+   "score": 0.473,
+   "confidence": "high"
+  },
+  "animals_which_help_us": {
+   "name": "Animals Which Help Us",
+   "themes": [
+    "Unit 4: Life Around Us",
+    "Unit 1: Fun with Friends"
+   ],
+   "score": 0.385,
+   "confidence": "high"
+  },
+  "the_milkman_s_cow": {
+   "name": "The Milkman's Cow",
+   "themes": [
+    "Unit 4: Life Around Us"
+   ],
+   "score": 0.473,
+   "confidence": "high"
+  },
+  "be_a_head": {
+   "name": "Be A Head",
+   "themes": [
+    "Unit 4: Life Around Us"
+   ],
+   "score": 0.473,
+   "confidence": "high"
+  },
+  "birds_and_their_nests": {
+   "name": "Birds And Their Nests",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  }
+ }
+}

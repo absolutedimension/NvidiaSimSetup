@@ -1,0 +1,51 @@
+{
+ "board": "CBSE",
+ "class": 4,
+ "subject": "English",
+ "source": {
+  "name": "NCERT Santoor — Textbook of English for Grade 4 (Contents)",
+  "url": "https://ncert.nic.in/textbook/pdf/desa1ps.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 4,
+ "mapped": 4,
+ "map": {
+  "unit_1_my_land": {
+   "name": "Unit 1: My Land",
+   "themes": [
+    "Unit 2: My Beautiful World",
+    "Unit 1: My Land"
+   ],
+   "score": 0.291,
+   "confidence": "high"
+  },
+  "unit_2_my_beautiful_world": {
+   "name": "Unit 2: My Beautiful World",
+   "themes": [
+    "Unit 2: My Beautiful World",
+    "Unit 3: Fun with Games"
+   ],
+   "score": 0.459,
+   "confidence": "high"
+  },
+  "unit_3_fun_with_games": {
+   "name": "Unit 3: Fun with Games",
+   "themes": [
+    "Unit 3: Fun with Games"
+   ],
+   "score": 0.359,
+   "confidence": "high"
+  },
+  "unit_4_up_high": {
+   "name": "Unit 4: Up High",
+   "themes": [
+    "Unit 4: Up High",
+    "Unit 2: My Beautiful World",
+    "Unit 1: My Land"
+   ],
+   "score": 0.311,
+   "confidence": "high"
+  }
+ }
+}

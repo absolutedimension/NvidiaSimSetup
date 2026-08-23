@@ -1,0 +1,29 @@
+{
+ "board": "ICSE",
+ "class": 4,
+ "subject": "Hindi",
+ "source": {
+  "name": "CISCE Curriculum for Classes I-V (Second Language/Hindi), Primary",
+  "url": "https://web.archive.org/web/20211228094721/https://cisce.org//UploadedFiles/PDF/PrimaryCurriculum.pdf",
+  "verified_on": "2026-08-02"
+ },
+ "generated_by": "kids_quiz/tools/build_chapter_map.py",
+ "chapters": 2,
+ "mapped": 1,
+ "map": {
+  "1_listening_and_speaking": {
+   "name": "थीम 1: सुनना और बोलना (Listening and Speaking)",
+   "themes": [],
+   "score": 0.0,
+   "confidence": "none"
+  },
+  "2_reading_and_writing": {
+   "name": "थीम 2: पढ़ना एवं लिखना (Reading and Writing)",
+   "themes": [
+    "आसमान गिरा"
+   ],
+   "score": 0.299,
+   "confidence": "high"
+  }
+ }
+}
