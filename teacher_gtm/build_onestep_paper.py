@@ -857,6 +857,22 @@ def gs_tables():
     # each row is a standalone question — so it is not added to `t`; the GS draw calls
     # current_affairs.build() directly. Reported on every build either way, because a
     # current-affairs table that has gone stale looks identical to one that is simply absent.
+    # आर्थिक परिदृश्य / खेल / भारतीय कृषि — 16% of Part I between them, and all three sat at
+    # zero because the topics had no content at all, not because a gate was holding them. Same
+    # human gate as history and Bihar: these are hand-written rows, and the measured error rate on
+    # hand data in this repo is ~1 in 27. Each module names its own review sheet.
+    for _mod, _label, _sheet in (
+            ("economy_tables", "economy / five-year-plan", "ECONOMY_REVIEW.md"),
+            ("agri_tables", "agriculture", "AGRICULTURE_REVIEW.md"),
+            ("sports_tables", "sports", "SPORTS_REVIEW.md")):
+        _m = __import__(f"qbank.{_mod}", fromlist=["x"])
+        if _m.REVIEWED:
+            staticgk_hi.register(_m.HI)
+            t.update(_m._ALL)
+        else:
+            print(f"  note: {_label} tables are BUILT but NOT REVIEWED — "
+                  f"{sum(len(x) for x in _m._ALL.values())} facts held back "
+                  f"(see drop/bssc/{_sheet})")
     from qbank import current_affairs
     print("  note: " + current_affairs.status())
     from qbank import bihar_tables

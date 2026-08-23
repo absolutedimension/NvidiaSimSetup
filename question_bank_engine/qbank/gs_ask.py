@@ -76,6 +76,16 @@ ASK = {
         "rev": ("Which Article of the Constitution deals with {v}?",
                 "संविधान का कौन-सा अनुच्छेद {v} से संबंधित है?"),
     },
+    "PANCHAYAT_ARTICLE": {
+        "wh": ("What does Article {k} of the Constitution deal with?",
+               "संविधान का अनुच्छेद {k} किससे संबंधित है?"),
+        "comp": ("Article {k} of the Constitution deals with",
+                 "संविधान का अनुच्छेद {k} संबंधित है —"),
+        "blank": ("Article {k} of the Constitution deals with ______.",
+                  "संविधान का अनुच्छेद {k} ______ से संबंधित है।"),
+        "rev": ("Which Article of the Constitution deals with {v}?",
+                "संविधान का कौन-सा अनुच्छेद {v} से संबंधित है?"),
+    },
     "AMENDMENT_DID": {
         "comp": ("The {k} Constitutional Amendment", "{k} संविधान संशोधन ने —"),
         "rev": ("Which Constitutional Amendment {v}?", "किस संविधान संशोधन ने {v}?"),
@@ -108,6 +118,82 @@ ASK = {
                "{k} बिहार के किस क्षेत्र की लोक कला है?"),
         "comp": ("{k} is a folk art form of the Bihar region of",
                  "{k} बिहार के जिस क्षेत्र की लोक कला है, वह है —"),
+    },
+    # History. Their values are YEARS, which is why they matter for difficulty: `_near` compares
+    # numbers, so "Which movement took place in 1930?" can be offered against 1929/1931/1932 and
+    # reach difficulty 3. Every other history-shaped table (leader, target) has text values with no
+    # closeness metric and tops out at 2 — the same wall capitals and dances hit.
+    "MOVEMENT_YEAR": {
+        "wh": ("In which year did the {k} take place?", "{k} किस वर्ष हुआ था?"),
+        "comp": ("The {k} took place in the year", "{k} जिस वर्ष हुआ, वह है —"),
+        # "EVENT", not "movement". MOVEMENT_YEAR holds the Battle of Plassey (1757) and the
+        # Battle of Buxar (1764) alongside the satyagrahas, so "which MOVEMENT took place in 1757"
+        # printed a factual error — a battle is not a movement. The templates were added without
+        # reading the table's contents, which is what the review gates exist to catch.
+        "rev": ("Which event took place in {v}?", "{v} में कौन-सी घटना हुई थी?"),
+    },
+    "FOUNDED_YEAR": {
+        "wh": ("In which year was the {k} founded?", "{k} की स्थापना किस वर्ष हुई थी?"),
+        "comp": ("The {k} was founded in the year", "{k} की स्थापना जिस वर्ष हुई, वह है —"),
+    },
+    "MOVEMENT_LEADER": {
+        "wh": ("Who led the {k}?", "{k} का नेतृत्व किसने किया था?"),
+        "comp": ("The {k} was led by", "{k} का नेतृत्व किया —"),
+        "rev": ("Which movement was led by {v}?", "{v} ने किस आंदोलन का नेतृत्व किया था?"),
+    },
+    "MOVEMENT_AGAINST": {
+        "wh": ("The {k} was directed against what?", "{k} किसके विरुद्ध था?"),
+        "comp": ("The {k} was directed against", "{k} जिसके विरुद्ध था, वह है —"),
+    },
+    "BIHAR_FREEDOM": {
+        "wh": ("In Bihar's freedom movement, what was {k}?",
+               "बिहार के स्वतंत्रता आंदोलन में, {k} क्या था?"),
+        "comp": ("In Bihar's freedom movement, {k} was",
+                 "बिहार के स्वतंत्रता आंदोलन में, {k} था —"),
+    },
+    # आर्थिक परिदृश्य / पंचवर्षीय योजना.
+    # "rev" is offered on both: plan periods and event years are distinct within their tables, so
+    # running them backwards has exactly one answer — `_rev_ok` checks that per row anyway.
+    "PLAN_PERIOD": {
+        "wh": ("The {k} covered which period?", "{k} की अवधि क्या थी?"),
+        "comp": ("The {k} ran from", "{k} चली —"),
+        "blank": ("The {k} ran from ______.", "{k} ______ तक चली।"),
+        "rev": ("Which Five-Year Plan ran from {v}?", "{v} तक कौन-सी पंचवर्षीय योजना चली?"),
+    },
+    "ECON_EVENT_YEAR": {
+        "wh": ("In which year did the {k} take place?", "{k} किस वर्ष से संबंधित है?"),
+        "comp": ("The {k} took place in", "{k} संबंधित है —"),
+        "blank": ("The {k} took place in ______.", "{k} ______ से संबंधित है।"),
+        "rev": ("Which of these took place in {v}?", "इनमें से क्या {v} में हुआ?"),
+    },
+    # भारतीय कृषि तथा प्राकृतिक संसाधन.
+    "REVOLUTION_PRODUCT": {
+        "wh": ("The {k} is associated with which product?", "{k} का संबंध किस उत्पाद से है?"),
+        "comp": ("The {k} is associated with", "{k} का संबंध है —"),
+        "blank": ("The {k} is associated with ______.", "{k} का संबंध ______ से है।"),
+        "rev": ("Which revolution is associated with {v}?", "{v} से कौन-सी क्रांति संबंधित है?"),
+    },
+    "AGRI_INSTITUTE_CITY": {
+        "wh": ("Where is the {k} located?", "{k} कहाँ स्थित है?"),
+        "comp": ("The {k} is located at", "{k} स्थित है —"),
+        "blank": ("The {k} is located at ______.", "{k} ______ में स्थित है।"),
+        "rev": ("Which agricultural research institute is located at {v}?",
+                "{v} में कौन-सा कृषि अनुसंधान संस्थान स्थित है?"),
+    },
+    # खेल-खिलाड़ी. NO "rev" on TROPHY_SPORT: several trophies share a sport, so "which trophy is
+    # associated with cricket?" has more than one right answer among our own rows. `_rev_ok`
+    # would catch it row by row, but the style is wrong for this table in principle, not by
+    # accident, so it is simply not offered.
+    "TROPHY_SPORT": {
+        "wh": ("The {k} is associated with which sport?", "{k} का संबंध किस खेल से है?"),
+        "comp": ("The {k} is associated with the sport of", "{k} का संबंध है —"),
+        "blank": ("The {k} is associated with the sport of ______.", "{k} का संबंध ______ से है।"),
+    },
+    "STADIUM_CITY": {
+        "wh": ("In which city is {k} located?", "{k} किस शहर में स्थित है?"),
+        "comp": ("{k} is located in", "{k} स्थित है —"),
+        "blank": ("{k} is located in ______.", "{k} ______ में स्थित है।"),
+        "rev": ("Which stadium is located in {v}?", "{v} में कौन-सा स्टेडियम स्थित है?"),
     },
     "ELEMENT_SYMBOL": {
         "wh": ("What is the chemical symbol of {k}?", "{k} का रासायनिक प्रतीक क्या है?"),
@@ -186,12 +272,32 @@ def _near(a, b):
     words. This is the ONLY difficulty dial these styles have, and it is a real one: 'Article 14'
     against 15, 16, 17 is a different question from 'Article 14' against 148, 324 and 50."""
     sa, sb = str(a), str(b)
-    ma, mb = re.match(r"^(\d+)", sa), re.match(r"^(\d+)", sb)
+    ma = re.match(r"^(\d+)([A-Z]*)$", sa)
+    mb = re.match(r"^(\d+)([A-Z]*)$", sb)
     if ma and mb:
-        return abs(int(ma.group(1)) - int(mb.group(1)))
+        # The SUFFIX has to count. Comparing the numeric prefix alone made every Panchayat article
+        # (243B, 243C, 243D ... 243W) sit at distance 0 from every other, so `_tight` saw no spread
+        # and refused to call ANY of them hard — a false negative on the most confusable option set
+        # in the whole bank. Scaled so the article number still dominates: 243B/243C = 1,
+        # 243B/243W = 21, 14/315 = 3010.
+        n = abs(int(ma.group(1)) - int(mb.group(1))) * 10
+        sfx = lambda g: ord(g[0]) if g else 0
+        return n + abs(sfx(ma.group(2)) - sfx(mb.group(2)))
     wa = {w for w in re.findall(r"[a-z]{4,}", sa.lower())}
     wb = {w for w in re.findall(r"[a-z]{4,}", sb.lower())}
-    return 100 - len(wa & wb)
+    if wa & wb:
+        return 100 - 10 * len(wa & wb)
+    # No shared words — which for PROPER NOUNS is almost always, and that is why capitals, rivers
+    # and dances could never reach difficulty 3: every distractor scored an identical 100, `_tight`
+    # saw no spread, and the question was called easy no matter which options it offered.
+    #
+    # For a proper noun, confusability IS lexical similarity. A candidate who half-remembers the
+    # answer confuses Amaravati with Amarkantak, Itanagar with Imphal, Kathak with Kathakali — and
+    # is untroubled by Panaji. Character similarity measures exactly that, and it is the same
+    # principle as the numeric branch above: how easily could this be mistaken for the answer.
+    import difflib
+    ratio = difflib.SequenceMatcher(None, sa.lower(), sb.lower()).ratio()
+    return 100 - int(60 * ratio)
 
 
 def _options(pool, answer, rng, n=3, diff=2):
@@ -227,7 +333,13 @@ def _tight(chosen, answer, pool):
     dists = sorted(_near(v, answer) for v in pool)
     if len(dists) < 4 or dists[-1] == dists[0]:
         return False                       # the metric cannot tell these options apart
-    q1 = dists[max(0, len(dists) // 4 - 1)]
+    # A real quantile. `len(dists)//4 - 1` collapses to index 0 on any pool below eight, so the
+    # test became "closer than the single closest candidate" — unsatisfiable. Large tables were
+    # unaffected (88 candidates -> index 21 either way) which is exactly why it survived: Articles
+    # scored 89 of 89 hard while the 8-row Panchayat table scored 0, with distractors 243E/243D/243C
+    # sitting 2, 3 and 4 away from 243G. The data was as confusable as it gets; the check could not
+    # see it.
+    q1 = dists[max(0, (len(dists) - 1) // 4)]
     mean = sum(_near(v, answer) for v in chosen) / max(1, len(chosen))
     return mean <= q1
 

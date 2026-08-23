@@ -40,6 +40,8 @@ STATEMENTS = {
     "ARTICLE_SUBJECT": ("Article {k} of the Constitution deals with {v}.",
                         "संविधान का अनुच्छेद {k} {v} से संबंधित है।"),
     "AMENDMENT_DID": ("The {k} Amendment {v}.", "{k} संविधान संशोधन ने {v}।"),
+    "PANCHAYAT_ARTICLE": ("Article {k} of the Constitution deals with {v}.",
+                          "संविधान का अनुच्छेद {k} {v} से संबंधित है।"),
     "STATE_CAPITAL": ("{v} is the capital of {k}.", "{v} {k} की राजधानी है।"),
     "DANCE_STATE": ("{k} is a dance form of {v}.", "{k} {v} का नृत्य है।"),
     "RIVER_ORIGIN": ("The river {k} originates at {v}.", "{k} नदी का उद्गम {v} में है।"),
@@ -68,6 +70,20 @@ STATEMENTS = {
                            "बिहार के राष्ट्रीय आंदोलन में, {k} — {v}।"),
     "BIHAR_FOLK_REGION": ("{k} is a folk art form of the {v} region.",
                           "{k} {v} क्षेत्र की लोक कला है।"),
+    # आर्थिक परिदृश्य / पंचवर्षीय योजना. The plan template says "ran from" rather than "was"
+    # because the value is a RANGE — "the First Five-Year Plan was 1951–56" reads as an equation
+    # between a plan and a span of time, which is not what either language does.
+    "PLAN_PERIOD": ("The {k} ran from {v}.", "{k} {v} तक चली।"),
+    # A nominalised subject ("the establishment of X") plus "took place in" — so one template
+    # serves both a body being founded and an event happening, which is why they share a table.
+    "ECON_EVENT_YEAR": ("The {k} took place in {v}.", "{k} \u2014 {v}\u0964"),
+    # भारतीय कृषि तथा प्राकृतिक संसाधन.
+    "REVOLUTION_PRODUCT": ("The {k} is associated with {v}.", "{k} का संबंध {v} से है।"),
+    "AGRI_INSTITUTE_CITY": ("The {k} is located at {v}.", "{k} {v} में स्थित है।"),
+    # खेल-खिलाड़ी.
+    "TROPHY_SPORT": ("The {k} is associated with the sport of {v}.",
+                     "{k} का संबंध {v} से है।"),
+    "STADIUM_CITY": ("{k} is located in {v}.", "{k} {v} में स्थित है।"),
     # रसायन शास्त्र + जीव विज्ञान for Part II. Chemistry is machine-verified against PubChem;
     # biology waits on a human. See science_tables and gs_tables()/science_fact_tables().
     "ELEMENT_SYMBOL": ("The chemical symbol of {k} is {v}.", "{k} का रासायनिक प्रतीक {v} है।"),
@@ -107,6 +123,36 @@ def _bilingual_keys(table):
         x = str(x)
         return HI.hi(x) is not None or bool(re.match(r"^\d+[A-Za-z]?$", x))
     return [k for k, v in table.items() if ok(k) and ok(v)]
+
+
+def shape_report(tables, hi_map, quiet=False):
+    """Do these fact tables satisfy what the question forms need of them?
+
+    A SHAPE check, never a fact check. A table can be entirely true and still be unusable: every
+    value shared by two keys means `_false_value` below can never build a false statement from it,
+    and the table silently contributes nothing to a paper. That failure is invisible — the build
+    just comes up short somewhere else and tops up. Running this when a table is WRITTEN turns it
+    into an error at the right moment.
+
+    Returns True when every table can fill a four-option MCQ and every key and value has Hindi.
+    """
+    ok = True
+    for name, tbl in tables.items():
+        owners = {}
+        for k, v in tbl.items():
+            owners.setdefault(v, []).append(k)
+        singles = [v for v, ks in owners.items() if len(ks) == 1]
+        shared = {v: ks for v, ks in owners.items() if len(ks) > 1}
+        if not quiet:
+            print(f"  {name}: {len(tbl)} rows, {len(singles)} usable as false values"
+                  + (f", SHARED {shared}" if shared else ""))
+        if len(singles) < 4:                   # four options need four distinct values
+            print(f"    x {name} cannot fill a 4-option MCQ")
+            ok = False
+    gaps = sorted({t for tbl in tables.values() for pair in tbl.items() for t in pair} - set(hi_map))
+    if not quiet:
+        print(f"  Hindi: {len(gaps)} missing" + (f" -> {gaps}" if gaps else ""))
+    return ok and not gaps
 
 
 def _false_value(table, k, rng, need_hindi=True):

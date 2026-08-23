@@ -213,12 +213,38 @@ def _sentences(text):
 _CORPUS_CACHE = {}
 
 
-def evidence(key, value, corpus_path="/tmp/histcorpus/CORPUS.txt", top=3):
+def _value_tokens(value):
+    """The tokens a sentence must contain to be talking about THIS value.
+
+    `_keywords` strips non-letters, so it returns [] for "1935" and — the case that actually bit —
+    [] for a RANGE like "1951-56". A value contributing no tokens is not merely weak: it drops out
+    of the word set entirely and the ranking runs on the KEY alone, so the top sentence offered for
+    "First Five-Year Plan -> 1951-56" was *"Joseph Stalin implemented the first Five-Year Plan in
+    the Soviet Union in 1928."* Three plausible sentences, none of them about the row, in a sheet
+    whose whole purpose is to let a reviewer tick quickly. Years are handled explicitly here.
+    """
+    years = re.findall(r"\d{4}", value)
+    if years:
+        # "1951-56" also matches a corpus that writes the end year in full.
+        tail = re.search(r"\d{4}\s*[-\u2013\u2014]\s*(\d{2})\b", value)
+        if tail:
+            years.append(years[0][:2] + tail.group(1))
+        return years
+    return _keywords(value)
+
+
+def evidence(key, value, corpus_path="/tmp/histcorpus/CORPUS.txt", top=3, require_value=False):
     """The sentences from the source corpus that bear on one (key, value) row.
 
     Not a verdict — EVIDENCE, ranked by how many of the row's own words a sentence contains. A
     human reads it and decides. See the note on REVIEWED below for why this is not a pass/fail
     check any more.
+
+    `require_value=True` drops any sentence that does not mention the VALUE. It is off by default
+    so history's own sheet is unchanged, and on for the tables whose values are year ranges. What
+    it buys is honesty in the other direction: a row with no real support now prints the "no
+    supporting sentence" warning instead of three sentences about the key that quietly look like
+    corroboration.
     """
     import os
     if not os.path.exists(corpus_path):
@@ -227,11 +253,13 @@ def evidence(key, value, corpus_path="/tmp/histcorpus/CORPUS.txt", top=3):
         t = io.open(corpus_path, encoding="utf-8").read()
         _CORPUS_CACHE[corpus_path] = (t, _sentences(t))
     _text, sents = _CORPUS_CACHE[corpus_path]
-    words = set(_keywords(key)) | set(
-        [value.lower()] if re.fullmatch(r"\d{4}", value) else _keywords(value))
+    vtok = _value_tokens(value)
+    words = set(_keywords(key)) | {t.lower() for t in vtok}
     scored = []
     for s2 in sents:
         low = s2.lower()
+        if require_value and not any(t.lower() in low for t in vtok):
+            continue
         hit = sum(1 for w in words if w in low)
         if hit >= 2:
             scored.append((hit, -len(s2), s2.strip()))
