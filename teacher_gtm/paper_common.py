@@ -79,6 +79,25 @@ def mathify(t):
     return t.replace("{", "").replace("}", "")
 
 
+# ── FIGURES ─────────────────────────────────────────────────────────────────────────────────────
+# A non-verbal question is a PICTURE, and every path in this file escapes its input — correctly,
+# because a stem is untrusted text. So a figure travels as a token, `[[FIG:<key>]]`, which survives
+# escaping unchanged, and the SVG is substituted back in afterwards by `place_figures`.
+#
+# The alternative was an "allow raw HTML" flag threaded through esc(), which would mean every stem
+# in the bank is one bad character away from injecting markup into a printed paper. A token that
+# only ever resolves against a per-question dictionary cannot do that: an unknown key renders as
+# nothing rather than as anything.
+FIG_TOKEN = re.compile(r"\[\[FIG:([A-Za-z0-9_-]+)\]\]")
+
+
+def place_figures(html_text, figures):
+    """Replace [[FIG:key]] with figures[key], AFTER escaping. Unknown keys resolve to empty."""
+    if not figures:
+        return FIG_TOKEN.sub("", html_text)
+    return FIG_TOKEN.sub(lambda m: figures.get(m.group(1), ""), html_text)
+
+
 def esc(t):
     """Escape first, then typeset — the maths becomes tags, everything else stays inert."""
     return mathify(html.escape(str(t or "")))

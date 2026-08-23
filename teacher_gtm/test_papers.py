@@ -32,6 +32,21 @@ def strip(x):
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", x))).strip()
 
 
+def _opt_text(raw):
+    """The comparable content of one option.
+
+    A NON-VERBAL option is a picture: it strips to the empty string, so "no empty option" and
+    "the key letter exists among the printed options" both failed on a question that was
+    perfectly well formed. A figure's identity is its rotation and whether it is mirrored, and the
+    renderer writes both into the markup, so that is what stands in for its text — non-empty, and
+    different for two options exactly when they look different on the page.
+    """
+    m = re.search(r'data-rot="(\d+)"\s+data-mirror="(\d)"\s+data-dots="(\d+)"', raw)
+    if m:
+        return f"FIG(rot={m.group(1)},mirror={m.group(2)},dots={m.group(3)})"
+    return strip(raw)
+
+
 def parse(path):
     """-> (questions, answer_key). Each question: number, hi/en stem, hi/en options."""
     raw = io.open(path, encoding="utf-8").read()
@@ -54,14 +69,23 @@ def parse(path):
         # accident and the English options of question 50 vanished, so it was re-solved against its
         # Hindi block and quietly went unread. An <ops> div contains only <span>s, so the plain
         # non-greedy match is both correct and independent of whatever follows the question.
-        opt_groups = re.findall(r'<div class="ops">(.*?)</div>', b, re.S)
-        opts = [[(m.group(1), strip(m.group(2)))
+        # `class="ops figs"` as well as `class="ops"` — a picture-option row carries a modifier.
+        opt_groups = re.findall(r'<div class="ops[^"]*">(.*?)</div>', b, re.S)
+        opts = [[(m.group(1), _opt_text(m.group(2)))
                  for m in re.finditer(r'<b>\((\w)\)</b>(.*?)</span>', g, re.S)] for g in opt_groups]
         # The badge carries the two paper-level facts no other element does: the difficulty
         # band this question was drawn at, and the syllabus topic it was drawn for. Both are
         # needed by coverage/balance/difficulty_mix below.
         bd = re.search(r'class="dbadge">([^<]*)<i>(.*?)</i>', b, re.S)
-        qs.append({"n": int(num.group(1)) if num else None,
+        # The sequence figures are the ones OUTSIDE the option row. Taken by removing the option
+        # divs first rather than by position, so a layout change cannot silently swap the series
+        # for the answers.
+        _no_ops = re.sub(r'<div class="ops[^"]*">.*?</div>', "", b, flags=re.S)
+        seq_figs = [(int(r), int(mi), int(do)) for r, mi, do in
+                    re.findall(r'data-rot="(\d+)"\s+data-mirror="(\d)"\s+data-dots="(\d+)"',
+                               _no_ops)]
+        qs.append({"figs": seq_figs,
+                   "n": int(num.group(1)) if num else None,
                    "hi": strip(hi.group(1)) if hi else "",
                    "en": strip(en.group(1)) if en else "",
                    "band": strip(bd.group(1)).split("\u00b7")[-1].strip() if bd else "",
@@ -520,6 +544,45 @@ SOLVERS = [("direction-facing", solve_direction_facing), ("direction-distance", 
            ("number-coding", solve_number_coding), ("odd-one-out", solve_odd_one_out)]
 
 
+_LAST_FIGS = {}
+
+
+def solve_figure_series(en):
+    """Re-derive a non-verbal figure series from the PRINTED figures.
+
+    Independent of nonverbalgen by construction: that module computes the fifth figure from the
+    spec it started with, while this one gets only what is on the page — four pictures — and has
+    to infer the rule before it can continue it. It reads each figure's rotation, mirror flag and
+    dot count out of the rendered SVG, checks the turn is CONSTANT across all three gaps (a series
+    whose steps disagree is not a series and gets no answer rather than a guessed one), then
+    continues all three rules together.
+    """
+    figs = _LAST_FIGS.get(en) or []
+    if len(figs) < 4 or "series of figures" not in en.lower():
+        return None
+    rots = [f[0] for f in figs]
+    steps = {(rots[i + 1] - rots[i]) % 360 for i in range(len(rots) - 1)}
+    if len(steps) != 1:
+        return None
+    step = steps.pop()
+    nxt_rot = (rots[-1] + step) % 360
+    # Mirror: either every figure is unmirrored, or it alternates. Anything else is not a rule
+    # this solver claims to understand, so it declines.
+    mirs = [f[1] for f in figs]
+    if all(m == 0 for m in mirs):
+        nxt_mir = 0
+    elif mirs == [i % 2 for i in range(len(mirs))]:
+        nxt_mir = len(mirs) % 2
+    else:
+        return None
+    dots = [f[2] for f in figs]
+    diffs = {dots[i + 1] - dots[i] for i in range(len(dots) - 1)}
+    if len(diffs) != 1:
+        return None
+    nxt_dots = dots[-1] + diffs.pop()
+    return f"FIG(rot={nxt_rot},mirror={nxt_mir},dots={nxt_dots})"
+
+
 def resolve(tag, qs, key, gen):
     print(f"\n=== {tag}: independent re-solve of generated reasoning ===")
     checked = agree = 0
@@ -532,6 +595,7 @@ def resolve(tag, qs, key, gen):
         # single question line, so a solver handed the stem alone can see nothing to check. Stash
         # the English options against the stem before dispatching.
         _LAST_OPTIONS[en] = [t for _, t in q["opts"][-1]]
+        _LAST_FIGS[en] = q.get("figs") or []
         for name, fn in SOLVERS:
             try:
                 want = fn(en)
@@ -2591,7 +2655,7 @@ def solve_fraction_expr(en):
     return str(f.numerator) if f.denominator == 1 else f"{f.numerator}/{f.denominator}"
 
 
-SOLVERS = ([("hcf-lcm", solve_hcf_lcm), ("place-face", solve_place_face),
+SOLVERS = ([("figure-series", solve_figure_series), ("hcf-lcm", solve_hcf_lcm), ("place-face", solve_place_face),
             ("unit-digit", solve_unit_digit), ("bells-lcm", solve_bells),
             ("compare-fractions", solve_compare_fractions),
             ("fraction-of", solve_fraction_of), ("recurring-decimal", solve_recurring),

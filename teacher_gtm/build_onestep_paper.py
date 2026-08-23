@@ -29,8 +29,9 @@ import sys
 
 REPO = pathlib.Path("/Users/deepakkumarrai/Documents/01_Active/NvidiaSimSetup")
 sys.path.insert(0, str(REPO / "teacher_gtm"))
-from paper_common import (MATH_CSS, esc, servable, sig, inter_level_ok,  # noqa: E402
-                          numbers_agree, analogy_ambiguous, odd_one_out_ambiguous)
+from paper_common import (MATH_CSS, esc, place_figures, servable, sig,  # noqa: E402
+                          inter_level_ok, numbers_agree, analogy_ambiguous,
+                          odd_one_out_ambiguous)
 LET = ["A", "B", "C", "D", "E"]
 
 
@@ -89,6 +90,17 @@ def gen_sig(q):
     nums = tuple(re.findall(r"\d+", stem))
     opts = tuple(sorted((o.get("text") or "").strip() for o in q.get("options") or []))
     body = re.sub(r"[^a-z]+", "", _ACTORS.sub("", stem).lower())
+    # THIRD TIME THIS SHAPE HAS APPEARED, and the docstring above predicted it: a figure series
+    # has no distinguishing text at all. Its stem is one fixed instruction, its only digits are
+    # the figure-token indices 0-3, and its four options are the literal strings "[[FIG:oA]]" …
+    # "[[FIG:oD]]" for every question the builder will ever make. Every figure question therefore
+    # had ONE signature, the dedup kept the first, and a quota of 2 came back with 1 — visible
+    # only because the section report said "1/2" out loud.
+    # For a picture question the PICTURES are the identity, so the rendered figures join the
+    # signature. They carry the rotation and mirror state in their own markup, so two questions
+    # differ here exactly when they look different on the page.
+    if q.get("figures"):
+        body += "|fig|" + "|".join(f"{k}={v}" for k, v in sorted(q["figures"].items()))
     # A statement-based question has NOTHING distinguishing in any of those three fields: the
     # concept is fixed, the only "numbers" are the list markers 1, 2, 3, and the options are the
     # same four strings every time. Forty different questions collapsed to ONE signature, so the
@@ -752,7 +764,17 @@ def generate_whole_section(secs, want, mix, gen_taken, bilingual, salt=0):
         # Part III. Do NOT deal the whole pool and then filter by difficulty here — that is the
         # exact shape of the bug that put 16 Blood Relations questions in one section. The band
         # filter belongs inside the deal; see load_generated.
-        out += generate_reasoning_section(want, mix, gen_taken)
+        # गैर-शाब्दिक is 3% of the Reasoning blueprint — one or two questions — and it is the
+        # only topic in the section that reasoninggen cannot reach at all, because it is drawn
+        # rather than written. Take its quota off the top and let the text builders fill the rest,
+        # rather than topping up afterwards: a figure question appended at the end lands next to
+        # whatever the spread had already placed there.
+        _fig_want = max(1, round(want * 0.03))
+        _figs = generate_figure_series(_fig_want, gen_taken, bilingual)
+        for _q in _figs:
+            gen_taken.add(gen_sig(_q))
+        out += generate_reasoning_section(want - len(_figs), mix, gen_taken, also=_figs)
+        out += _figs
     # A section short of `want` prints a 147-question paper. Top up from whatever band still has
     # stock rather than shipping a paper that fails its own structure check.
     if len(out) < want:
@@ -1407,6 +1429,66 @@ def generate_gs_section(want, mix, gen_taken, bilingual, rng):
     return out[:want]
 
 
+def generate_figure_series(n, exclude_sigs, bilingual):
+    """गैर-शाब्दिक (आकृति श्रृंखला) — the last question family the real papers use.
+
+    3% of the Reasoning blueprint, and the only one that was NOT GENERATABLE for a reason other
+    than missing facts: every other builder in this bank produces text, and a figure series has to
+    be drawn. `qbank.nonverbalgen` draws it from a spec and computes the next figure by arithmetic,
+    so the picture is right because we drew it and the key is right because Python computed it.
+
+    Bilingual for free: the figures are the same in both halves and only the instruction differs,
+    which is exactly how the commission prints this section.
+    """
+    sys.path.insert(0, str(REPO / "question_bank_engine"))
+    try:
+        from qbank import nonverbalgen as NV
+    except Exception as e:
+        print(f"  figure-series generation unavailable ({e})")
+        return []
+    rng = random.Random(20260823)
+    out, seen = [], set(exclude_sigs)
+    for _ in range(400):
+        if len(out) >= n:
+            break
+        d = rng.choice([2, 3, 4])          # difficulty 1 is a 90-degree turn: too easy to print
+        b = NV._b_figure_series(rng, d)
+        if not b:
+            continue
+        # Figures travel as TOKENS through the escaping path and are substituted at render time;
+        # see paper_common.place_figures for why a raw-HTML flag was rejected.
+        figs = {f"s{i}": NV.render(f, 46) for i, f in enumerate(b["figures"])}
+        seq = "".join(f"[[FIG:s{i}]]" for i in range(len(b["figures"])))
+        opts, texts = [], []
+        for lb, spec in zip("ABCD", b["options"]):
+            figs[f"o{lb}"] = NV.render(spec, 42)
+            opts.append({"label": lb, "text": f"[[FIG:o{lb}]]"})
+        # Rotate the answer out of slot A, for the reason _gs_row documents at length.
+        seed = b["solution"] + str(b["correct_spec"])
+        rot = int(hashlib.md5(seed.encode("utf-8")).hexdigest(), 16) % 4
+        specs = b["options"][-rot:] + b["options"][:-rot] if rot else b["options"]
+        figs.update({f"o{lb}": NV.render(sp, 42) for lb, sp in zip("ABCD", specs)})
+        # A picture is language-neutral. The INSTRUCTION prints in both halves, as the
+        # commission does it; the sequence prints once, attached to the English stem, which is
+        # the block that renders second and therefore sits directly above the options.
+        row = {"stem": b["stem"] + "\n" + seq, "stem_hi": b["stem_hi"],
+               "options": opts,
+               "options_hi": [dict(o) for o in opts],
+               "figures": figs,
+               "correct_answer": "ABCD"[rot],
+               "solution": b["solution"], "solution_hi": b["solution_hi"],
+               "concept": b["concept"], "src": [b["concept"]],   # matches SYLLABUS_MAP concepts
+               "_generated": True, "source_pdf": "nonverbalgen", "number": None,
+               "tag": {"section": "Reasoning", "difficulty": 3}}
+        g = gen_sig(row)
+        if g in seen:
+            continue
+        seen.add(g)
+        out.append(row)
+    print(f"  generated {len(out)} figure-series question(s) at difficulty 3")
+    return out
+
+
 def generate_gs_forms(n, exclude_sigs, bilingual):
     """Fill a General Studies HARD shortfall with statement-based and match-the-pairs questions.
 
@@ -1683,7 +1765,7 @@ def load_generated(n, cap_per_concept=6, exclude=frozenset(), difficulty=None,
 REASONING_CONCEPT_CAP = 4
 
 
-def generate_reasoning_section(want, mix, gen_taken, cap=REASONING_CONCEPT_CAP):
+def generate_reasoning_section(want, mix, gen_taken, cap=REASONING_CONCEPT_CAP, also=()):
     """Part III, drawn to the SYLLABUS topic quotas with the per-concept cap kept inside each.
 
     The cap alone made the section even across our 19 CONCEPTS, which is not the same thing as
@@ -1725,7 +1807,12 @@ def generate_reasoning_section(want, mix, gen_taken, cap=REASONING_CONCEPT_CAP):
             if len(out) >= want:
                 break
         print(f"  note: Part III topped up {short} question(s) outside the syllabus quotas")
-    for line in SB.report("Reasoning", out[:want]):
+    # `also` holds rows the CALLER built for this section — today the figure series, which is
+    # drawn rather than written and so cannot come from reasoninggen. The coverage report has to
+    # see the whole section or it reports a topic at 0 that is printed on the page: the first
+    # version appended the figures after this call and Part III read "49 questions ... 0/2
+    # Non-verbal", while question 137 was a figure series.
+    for line in SB.report("Reasoning", list(also) + out[:want]):
         print(line)
     return out[:want]
 
@@ -2192,9 +2279,12 @@ def main():
                 if not h and e and not DEV.search(str(oa.get("text") or "")):
                     h = e
                 oh_l.append((oa["label"], h)); oe_l.append((ob["label"], e))
+            _figs = q.get("figures") or {}
+
             def render(pairs):
-                return "".join(f'<span class="op"><b>({lb})</b> {esc(t)}</span>'
-                               for lb, t in pairs if str(t).strip())
+                return "".join(
+                    f'<span class="op"><b>({lb})</b> {place_figures(esc(t), _figs)}</span>'
+                    for lb, t in pairs if str(t).strip())
             oh_html, oe_html = render(oh_l), render(oe_l)
             # A language can lose SOME options, not just all of them: when split_lang routes option
             # (A) and (C) one way and (B) and (D) the other, one block prints two options and the
@@ -2250,14 +2340,24 @@ def main():
             # ("A. 368 — freedom of conscience ... B. 24 — the Finance Commission C. 17 — ...").
             # The question was answerable and genuinely hard to read, which is a bad combination on
             # a paper whose whole purpose is to have its difficulty judged.
-            lines = lambda t: t.replace("\n", "<br>")
+            lines = lambda t: place_figures(t.replace("\n", "<br>"), _figs)
+            # A question whose OPTIONS are pictures prints them once, after both instructions.
+            # Every other question repeats its options per language on purpose, so a candidate
+            # reading only Hindi has a self-contained question — but a picture is already
+            # self-contained in both languages, and printing four figures twice cost half a page
+            # and made the paper look like it had rendered wrong.
+            _pic_opts = bool(_figs)
             if hi_stem:
-                block += (f'<div class="hi"><span class="n">{i}.</span> {lines(esc(hi_stem))}</div>'
-                          f'<div class="ops">{oh_html}</div>')
+                block += f'<div class="hi"><span class="n">{i}.</span> {lines(esc(hi_stem))}</div>'
+                if not _pic_opts:
+                    block += f'<div class="ops">{oh_html}</div>'
             if en_stem:
                 lead = "" if hi_stem else f'<span class="n">{i}.</span> '
-                block += (f'<div class="en">{lead}{lines(esc(en_stem))}</div>'
-                          f'<div class="ops">{oe_html}</div>')
+                block += f'<div class="en">{lead}{lines(esc(en_stem))}</div>'
+                if not _pic_opts:
+                    block += f'<div class="ops">{oe_html}</div>'
+            if _pic_opts:
+                block += f'<div class="ops figs">{oe_html or oh_html}</div>' 
             qh.append(block + "</div>")
             keys.append(f'<span class="k">{i}. <b>{q["correct_answer"]}</b>'
                         f'{"<i>*</i>" if q.get("_generated") else ""}</span>')
@@ -2392,6 +2492,9 @@ h2.sec {{ font-size:10.5pt; color:#8a6d1a; border-left:3px solid #c9a227; paddin
 .en {{ color:#3a3f4e; margin-top:2px; }}
 .ops {{ margin:1px 0 2px 15px; clear:right; }}
 .op {{ display:inline-block; min-width:47%; padding-right:6px; vertical-align:top; }}
+/* Picture options are short and wide, not long and thin: the 47% column that keeps four TEXT
+   options readable puts four FIGURES two-to-a-row with a hand's width of nothing between them. */
+.ops.figs .op {{ min-width:0; padding-right:22px; }}
 {MATH_CSS}
 .keyhead {{ page-break-before:always; }}
 .keys {{ display:flex; flex-wrap:wrap; gap:3px 14px; font-size:9pt; }} .k {{ min-width:54px; }}
@@ -2421,6 +2524,13 @@ table.tb tr td:nth-child(odd) {{ background:#faf8f1; width:26%; color:#5a5f6e; }
 .cov th {{ background:#faf8f1; color:#8a6d1a; font-weight:600; }}
 .cov td.n {{ text-align:center; width:34px; }}
 .cov caption {{ text-align:left; font-size:7.6pt; color:#8a6d1a; padding-bottom:3px; }}
+.fig {{ vertical-align:middle; margin:0 3px; }}
+/* Hairlines, not shading: this paper is printed on an institute's photocopier, and a filled
+   figure costs toner on every one of 150 copies while reading no better. */
+.figbox {{ fill:none; stroke:#b9b3a4; stroke-width:2; }}
+.figink {{ fill:none; stroke:#111; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }}
+.figink polygon, .figink circle {{ fill:#111; }}
+.figrow {{ display:inline-block; }}
 .foot {{ border-top:1px solid #ddd8c8; margin-top:12px; padding-top:4px; font-size:7.3pt; color:#9296a2; text-align:center; }}
 </style></head><body>
 {COVER if a.inter_level else ""}

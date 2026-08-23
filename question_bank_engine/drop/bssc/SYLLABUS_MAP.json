@@ -412,8 +412,10 @@
     "hi": "गैर-शाब्दिक (आकृति श्रृंखला)",
     "en": "Non-verbal / figure series",
     "share": 0.03,
-    "generator": null,
-    "concepts": []
+    "generator": "nonverbalgen._b_figure_series",
+    "concepts": [
+     "Figure Series"
+    ]
    }
   ]
  },
