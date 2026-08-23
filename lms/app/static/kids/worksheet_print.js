@@ -65,35 +65,35 @@
     },
     pattern_next: function (body, p) {
       body.appendChild(el('div', 'wp-expr', (p.seq || []).join('&nbsp;&nbsp;') + '&nbsp;&nbsp;' + box(true)));
-      if (p.options) { var o = el('div', 'wp-opts'); (p.options).forEach(function (x) { o.appendChild(el('div', 'wp-opt', x)); }); body.appendChild(el('div', null, 'Circle the answer:')); body.appendChild(o); }
+      if (p.options) { var o = el('div', 'wp-opts'); (p.options).forEach(function (x) { o.appendChild(el('div', 'wp-opt', x)); }); body.appendChild(el('div', null, L('Circle the answer:', 'उत्तर पर गोला लगाइए:'))); body.appendChild(o); }
     },
     match_following: function (body, p) {
       var pairs = p.pairs || [], left = pairs.map(function (x) { return x[0]; }), right = shuffle(pairs.map(function (x) { return x[1]; }));
       var m = el('div', 'wp-match'), cl = el('div', 'wp-mcol left'), cr = el('div', 'wp-mcol');
       left.forEach(function (v) { var it = el('div', 'wp-mi'); var im = artFor(v, 30); if (im) it.appendChild(im); it.appendChild(el('span', null, String(v))); it.appendChild(el('span', 'wp-dot')); cl.appendChild(it); });
       right.forEach(function (v) { var it = el('div', 'wp-mi r'); it.appendChild(el('span', 'wp-dot')); var im = artFor(v, 30); if (im) it.appendChild(im); it.appendChild(el('span', null, String(v))); cr.appendChild(it); });
-      m.appendChild(cl); m.appendChild(cr); body.appendChild(el('div', null, 'Draw a line to match:')); body.appendChild(m);
+      m.appendChild(cl); m.appendChild(cr); body.appendChild(el('div', null, L('Draw a line to match:', 'जोड़ी मिलाने के लिए रेखा खींचिए:'))); body.appendChild(m);
     },
     true_false: function (body, p) {
       if (p.statement) body.appendChild(el('div', 'wp-expr', String(p.statement)));
       var o = el('div', 'wp-opts');
-      o.appendChild(el('div', 'wp-opt', '◯ True')); o.appendChild(el('div', 'wp-opt', '◯ False'));
-      body.appendChild(el('div', null, 'Circle one:')); body.appendChild(o);
+      o.appendChild(el('div', 'wp-opt', L('◯ True', '◯ सही'))); o.appendChild(el('div', 'wp-opt', L('◯ False', '◯ ग़लत')));
+      body.appendChild(el('div', null, L('Circle one:', 'सही या ग़लत पर गोला लगाइए:'))); body.appendChild(o);
     },
     cloze: function (body, p) {
       var s = String(p.sentence || '').replace(/_{2,}|▢/g, box(true));
       body.appendChild(el('div', 'wp-expr', s));
       if (p.bank && p.bank.length) {
         var o = el('div', 'wp-opts'); p.bank.forEach(function (w) { o.appendChild(entityOpt(w)); });
-        body.appendChild(el('div', null, 'Word bank:')); body.appendChild(o);
+        body.appendChild(el('div', null, L('Word bank:', 'शब्द-भंडार:'))); body.appendChild(o);
       }
     },
     odd_one_out: function (body, p) {
       var o = el('div', 'wp-opts'); (p.options || []).forEach(function (x) { o.appendChild(entityOpt(x)); });
-      body.appendChild(el('div', null, 'Circle the one that does not belong:')); body.appendChild(o);
+      body.appendChild(el('div', null, L('Circle the one that does not belong:', 'जो अलग है उस पर गोला लगाइए:'))); body.appendChild(o);
     },
     sort_groups: function (body, p) {
-      if (p.bins && p.bins.length) body.appendChild(el('div', 'wp-expr', 'Groups:  ' + p.bins.map(function (b) { return '<b>' + b + '</b>'; }).join('&nbsp;&nbsp;/&nbsp;&nbsp;')));
+      if (p.bins && p.bins.length) body.appendChild(el('div', 'wp-expr', L('Groups:  ', 'समूह:  ') + p.bins.map(function (b) { return '<b>' + b + '</b>'; }).join('&nbsp;&nbsp;/&nbsp;&nbsp;')));
       (p.items || []).forEach(function (v) {
         var row = el('div', 'wp-expr'); var im = artFor(v, 30);
         if (im) { im.style.display = 'inline-block'; im.style.verticalAlign = 'middle'; im.style.margin = '0 6px 0 0'; row.appendChild(im); }
@@ -112,6 +112,16 @@
     return s;
   }
 
+  // A Hindi worksheet was printing English scaffolding ("Circle one:", "Word bank:") around
+  // Devanagari questions. The render functions only receive a payload, so the language is
+  // detected from the item just before rendering and read back through L().
+  var LANG = 'en';
+  function L(en, hi) { return LANG === 'hi' ? hi : en; }
+  function detectLang(item) {
+    var s = JSON.stringify(item && item.payload || '') + String((item && item.instruction) || '');
+    return /[\u0900-\u097F]/.test(s) ? 'hi' : 'en';
+  }
+
   function questionBlock(item, i) {
     var q = el('div', 'wp-q');
     var head = el('div');
@@ -119,6 +129,7 @@
     head.appendChild(el('span', 'wp-instr', instrOf(item)));
     q.appendChild(head);
     var body = el('div');
+    LANG = detectLang(item);
     (PRINT[item.type] || function (b) { b.appendChild(el('div', 'wp-expr', box())); })(body, item.payload || {});
     q.appendChild(body);
     return q;
@@ -134,7 +145,10 @@
     var head = el('div', 'wp-head');
     head.appendChild(el('h1', 'wp-title', opts.title || 'Maths Worksheet'));
     if (opts.subtitle) head.appendChild(el('div', 'wp-sub', opts.subtitle));
-    head.appendChild(el('div', 'wp-meta', 'Name: <span class="fill"></span> Date: <span class="fill"></span>'));
+    // the sheet-level language comes from the items, since this line is drawn before any of them
+    LANG = (items || []).length ? detectLang(items[0]) : 'en';
+    head.appendChild(el('div', 'wp-meta', L('Name: <span class="fill"></span> Date: <span class="fill"></span>',
+                                            'नाम: <span class="fill"></span> दिनांक: <span class="fill"></span>')));
     sheet.appendChild(head);
 
     var grid = el('div', 'wp-grid');

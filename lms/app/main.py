@@ -1255,19 +1255,29 @@ async def api_auth_google(request: Request, db: Session = Depends(get_db)):
     nm = (tok.get("name") or tok.get("given_name") or "")[:120]
     if nm and not student.name:
         student.name = nm
-    label = ("q:" + qtext) if qtext else (exam if exam in EXAM_SUBJECT else EXAMS[0]["id"])
+    # The kids tiles ("kids3") are not senior exam ids, so the senior fallback used to record a
+    # Class-3 parent as EXAMS[0] — i.e. NEET — in their exam fact AND in the admin signup alert.
+    # Mirror the email path, which seeds the kids exam entry instead.
+    host = (request.headers.get("host") or "").split(":")[0].lower()
+    kids = host in KIDS_HOSTS
+    if kids:
+        label = "class3"
+        seed_exam = "class3"
+    else:
+        label = ("q:" + qtext) if qtext else (exam if exam in EXAM_SUBJECT else EXAMS[0]["id"])
+        seed_exam = exam if exam in EXAM_SUBJECT else ""
     _set_fact(db, student, "exam", label)
     _start_trial(db, student)          # everyone gets the same free trial
-    _seed_topic(db, student, exam if exam in EXAM_SUBJECT else "", qtext)   # subject → first "my topic"
+    _seed_topic(db, student, seed_exam, qtext)   # subject → first "my topic"
     db.commit()
     if not existed:
         total = db.query(Student).count()
-        notify.notify_admin(f"🎯 New student (Google · exam-prep) — {student.email} · {label} · {total} learners total")
+        notify.notify_admin(f"{'🎈 New KIDS parent (Google)' if kids else '🎯 New student (Google · exam-prep)'}"
+                            f" — {student.email} · {label} · {total} learners total")
     request.session["sid"] = student.id
     # Kids host: the tile is the child's CLASS — record it and open that class's worksheet. (The
     # senior goal-pick onboarding is wrong for a 7-year-old, and Google sign-in used to land there.)
-    host = (request.headers.get("host") or "").split(":")[0].lower()
-    if host in KIDS_HOSTS:
+    if kids:
         kg = KIDS_EXAM_GRADE.get(exam) or request.session.pop("kid_grade", None)
         if kg in (1, 2, 3, 4, 5):
             student.grade = kg
