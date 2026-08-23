@@ -17,6 +17,7 @@ if _ENG not in sys.path:
     sys.path.insert(0, _ENG)
 import worksheet_engine as WE      # noqa: E402
 import assessment_core as AC       # noqa: E402
+import kb_engine as KBE            # noqa: E402  (knowledge subjects: KB + templates, live)
 import adaptive_engine as AE       # noqa: E402
 
 from .models import KidsSkillState, ConceptStat  # noqa: E402
@@ -78,7 +79,10 @@ def picker(board, cls):
         cell = WE.load_cell(board, cls, subject)
         if not cell:
             continue
-        if subject != "Mathematics" and not _has_bank(board, cls, subject):
+        # servable = computed (Maths) · a verified KB · or a pre-pooled bank. KBs are per
+        # subject+class and board-independent, so this also covers boards we never pooled a
+        # bank file for (e.g. Bihar Board outside Class 3).
+        if subject != "Mathematics" and not (has_kb(subject, cls) or _has_bank(board, cls, subject)):
             continue
         chs = [c[0] for c in WE.chapters_of(cell) if c[0]]
         if chs:
@@ -92,18 +96,26 @@ SUBJECTS = ["Mathematics", "EVS", "English", "GK", "Hindi"]
 _COVERAGE = None
 
 
-def coverage():
-    """A factual map of the shipped content, read off the banks + curriculum ONCE at first use.
+# Measured floor, not a marketing number: kids_quiz/tools/measure_kb_ceiling.py asks every KB for
+# 100,000 DISTINCT questions and all 20 deliver without exhausting, so the real ceiling is higher.
+# Re-run that script if the KBs change, and only ever quote a number it has actually produced.
+MIN_QUESTIONS_PER_SUBJECT = 100_000
 
-    {"classes": {1: {"subjects": [...], "boards": {"CBSE": [...], ...}, "chapters": n}, ...},
-     "questions": <pooled knowledge questions>, "boards": [...]}
-    Maths is COMPUTED (its bank file is a 12-item stub), so it counts as a subject but contributes
-    no pooled total — the landing must never present those stubs as a question count."""
+
+def coverage():
+    """A factual map of what the app can actually serve, computed ONCE at first use.
+
+    {"classes": {1: {"subjects": [...], "boards": {...}, "chapters": n}, ...},
+     "cells": <servable knowledge subject×class×board cells>,
+     "min_per_subject": <measured distinct-question floor>, "boards": [...]}
+
+    Note what this deliberately does NOT report any more: a pooled question TOTAL. Knowledge is
+    generated live from the KBs now, so counting the frozen bank files would understate the
+    product by orders of magnitude — and Maths never had a pool to count in the first place."""
     global _COVERAGE
     if _COVERAGE is not None:
         return _COVERAGE
-    import json
-    classes, pooled = {}, 0
+    classes, cells = {}, 0
     for cls in range(1, 6):
         boards, chapters = {}, 0
         for board in BOARDS:
@@ -112,19 +124,147 @@ def coverage():
                 continue
             boards[board] = sorted(subs.keys(), key=SUBJECTS.index)
             chapters += sum(len(v) for v in subs.values())
-            for s in subs:
-                if s == "Mathematics":
-                    continue                      # computed, not pooled
-                try:
-                    d = json.load(open(_bank_path(board, cls, s), encoding="utf-8"))
-                    pooled += len(d if isinstance(d, list) else d.get("items", []))
-                except Exception:
-                    pass
+            cells += sum(1 for s in subs if s != "Mathematics")
         union = sorted({s for v in boards.values() for s in v}, key=SUBJECTS.index)
         classes[cls] = {"subjects": union, "boards": boards, "chapters": chapters}
-    _COVERAGE = {"classes": classes, "questions": pooled,
+    _COVERAGE = {"classes": classes, "cells": cells,
+                 "min_per_subject": MIN_QUESTIONS_PER_SUBJECT,
                  "boards": [b for b in BOARDS if any(b in c["boards"] for c in classes.values())]}
     return _COVERAGE
+
+
+
+
+# ---------- official chapter → KB themes ----------
+# The picker offers REAL syllabus chapters (the curriculum cells are transcribed from the official
+# books, each with its source URL). The KBs tag facts THEMATICALLY, because one KB serves every
+# board. This map, built by kids_quiz/tools/build_chapter_map.py, is the bridge. Where a chapter
+# has no credible themes the map says so with an empty list, and serve() reports scope="mixed"
+# instead of pretending the sheet is chapter-specific.
+_CHMAP_DIR = os.path.join(_ENG, "chapter_map")
+_CHMAP_CACHE = {}
+
+
+def _chapter_map(board, cls, subject):
+    key = (str(board), int(cls or 0), str(subject))
+    if key in _CHMAP_CACHE:
+        return _CHMAP_CACHE[key]
+    slug = f"{board}".lower().replace(" ", "") + f"_class{cls}_" + f"{subject}".lower().replace(" ", "")
+    path = os.path.join(_CHMAP_DIR, slug + ".json")
+    data = {}
+    if os.path.exists(path):
+        try:
+            import json
+            data = json.load(open(path, encoding="utf-8")).get("map", {})
+        except Exception as exc:
+            print(f"[kids] chapter map {slug} unreadable: {str(exc)[:80]}")
+    _CHMAP_CACHE[key] = data
+    return data
+
+
+def chapter_entry(board, cls, subject, chapter):
+    """This official chapter's mapping entry ({} when unmapped). Matched on the chapter NAME,
+    which is what the picker sends. Carries `themes` and a `confidence` earned by the strength
+    of the vocabulary evidence — weak evidence must not produce a confident claim."""
+    if not chapter:
+        return {}
+    want = str(chapter).strip().lower()
+    for entry in _chapter_map(board, cls, subject).values():
+        if str(entry.get("name", "")).strip().lower() == want:
+            return entry
+    return {}
+
+
+def themes_for_chapter(board, cls, subject, chapter):
+    return chapter_entry(board, cls, subject, chapter).get("themes") or []
+
+
+# ---------- knowledge generation (LIVE) ----------
+# Knowledge subjects used to be served from a frozen 1,000-item bank file, and serve() then drew
+# from the ~40 nearest-difficulty items — so a child repeated 57% of questions inside 10 sessions
+# while the product promised "never repeats". The KB engine can emit >100k distinct questions per
+# cell in ~0.2ms with no network, so we generate at request time instead. The banks stay as a
+# fallback for any cell that has no KB.
+_SUBJECT_KB = {"evs": "evs", "english": "english", "gk": "gk", "hindi": "hindi"}
+_KB_CACHE = {}
+
+
+def _kb_for(subject, cls):
+    """The verified knowledge base for a subject+class, or None. Cached — a KB is a static file
+    and re-reading/re-validating it on every request would be wasted work."""
+    key = (str(subject).strip().lower(), int(cls or 0))
+    if key in _KB_CACHE:
+        return _KB_CACHE[key]
+    stem = _SUBJECT_KB.get(key[0])
+    kb = None
+    if stem and 1 <= key[1] <= 5:
+        try:
+            kb = KBE.load_kb(f"{stem}_class{key[1]}")
+        except Exception as exc:
+            print(f"[kids] KB {stem}_class{key[1]} unavailable: {str(exc)[:100]}")
+    _KB_CACHE[key] = kb
+    return kb
+
+
+def has_kb(subject, cls) -> bool:
+    return _kb_for(subject, cls) is not None
+
+
+def _kb_subset(kb, themes):
+    """A KB containing ONLY the entries a chapter's themes cover.
+
+    Generating from the subset beats generating everything and filtering: every question is
+    on-theme by construction, and a small theme (say Water — one category and a few facts) still
+    fills a sheet instead of being drowned out by the weighted mix across all themes."""
+    want = {t.strip().lower() for t in themes}
+    sub = {k: v for k, v in kb.items() if k not in ("categories", "groupings", "relations", "facts")}
+    for sec in ("categories", "groupings", "relations", "facts"):
+        sub[sec] = [e for e in (kb.get(sec) or [])
+                    if str(e.get("chapter", "")).strip().lower() in want]
+    return sub
+
+
+def _kb_items(board, subject, cls, chapter, want, n_sheet=8):
+    """A FRESH candidate pool, drawn anew on every call (unseeded → different every request),
+    narrowed to the chapter as far as the KB honestly allows.
+
+    Returns (items, scope, on_theme). Scope is:
+      "chapter" — the whole sheet comes from this chapter's themes
+      "partial" — every on-theme question we have, topped up with general practice
+      "mixed"   — nothing mapped (or nothing usable), so it's general practice for the subject
+
+    A single theme is often thin — "Water" in Class-3 EVS is one category plus five facts, which
+    cannot fill eight questions. Rather than silently serving a general sheet (what used to
+    happen) or refusing, we give the child every on-theme question that exists and say what the
+    sheet actually is."""
+    kb = _kb_for(subject, cls)
+    if not kb:
+        return [], "mixed", 0
+    entry = chapter_entry(board, cls, subject, chapter)
+    themes = entry.get("themes") or []
+    # A weak lexical match ("Here comes a Letter" → Animals) still yields usable practice, but it
+    # has not earned the right to be called this chapter's sheet — cap it at "partial".
+    can_claim_chapter = entry.get("confidence") == "high"
+    themed = []
+    if themes:
+        sub = _kb_subset(kb, themes)
+        try:
+            themed = KBE.generate(sub, max(want // 2, n_sheet * 6), seed=random.randrange(1 << 30))
+        except Exception as exc:
+            print(f"[kids] themed generate failed ({subject} {cls} {chapter}): {str(exc)[:80]}")
+            themed = []
+    if len(themed) >= n_sheet * 2 and can_claim_chapter:
+        return themed, "chapter", len(themed)
+    try:
+        general = KBE.generate(kb, want, seed=random.randrange(1 << 30))
+    except Exception as exc:
+        print(f"[kids] KB generate failed for {subject} class {cls}: {str(exc)[:100]}")
+        return (themed, ("chapter" if can_claim_chapter else "partial"), len(themed)) if themed else ([], "mixed", 0)
+    if themed:
+        # on-theme first so difficulty targeting still prefers them, then general to fill
+        seen = {KBE._sig(it) for it in themed}
+        return themed + [g for g in general if KBE._sig(g) not in seen], "partial", len(themed)
+    return general, "mixed", 0
 
 
 # ---------- adaptive state ----------
@@ -159,12 +299,17 @@ def serve(db, student, board, cls, subject, chapter, n=8):
     #  • Knowledge (EVS/English/GK/Hindi) = prefer the reliable PRE-POOLED bank (no LLM dependency
     #    at request time); only hit the LLM generator if we have no pack for this cell.
     is_math = str(subject).lower().replace(" ", "") in ("mathematics", "maths", "math")
-    pool = []
+    pool, chapter_scope, on_theme = [], ("chapter" if chapter else "all"), 0
     try:
         if is_math:
             pool = WE.generate(board, cls, subject, chapter, n=max(n * 2, 12))
         else:
-            pool = _bank_items(board, cls, subject, chapter)
+            # LIVE from the verified KB — a fresh candidate set every request, so the same child
+            # practising the same topic keeps getting new questions. Ask for many more than the
+            # sheet needs so difficulty targeting still has choices after the band cut.
+            pool, chapter_scope, on_theme = _kb_items(board, subject, cls, chapter, max(n * 20, 160), n)
+            if not pool:                      # no KB for this cell → the pre-pooled bank
+                pool = _bank_items(board, cls, subject, chapter)
             if not pool:
                 pool = WE.generate(board, cls, subject, chapter, n=max(n * 2, 12))
     except Exception:
@@ -180,12 +325,27 @@ def serve(db, student, board, cls, subject, chapter, n=8):
     # Draw n items RANDOMLY from a band of candidates near the target difficulty — NOT the strict
     # n-closest (that returned the same sheet every time). With a big pool this gives real variety
     # (a fresh sheet each visit) while still targeting the right difficulty.
-    pool.sort(key=lambda it: abs(it.get("difficulty", 0.0) - target_b))
-    band = pool[:max(n * 5, 40)]                 # the ~40+ nearest-difficulty candidates
-    items = random.sample(band, n) if len(band) > n else band[:n]
+    def _near(cands, k):
+        """k items sampled from the candidates nearest the target difficulty."""
+        c = sorted(cands, key=lambda it: abs(it.get("difficulty", 0.0) - target_b))
+        band = c[:max(k * 5, 40)]
+        return random.sample(band, k) if len(band) > k else band[:k]
+
+    if chapter_scope == "partial" and on_theme:
+        # _kb_items puts the on-theme items at the head. They must SURVIVE selection — the UI
+        # tells the child how many questions came from their chapter, so difficulty targeting
+        # is not allowed to quietly drop them.
+        head, rest = pool[:on_theme], pool[on_theme:]
+        take = min(len(head), n)
+        items = _near(head, take) + _near(rest, n - take)
+        on_theme = take                          # report what's in the SHEET, not the pool
+    else:
+        items = _near(pool, n)
+        if chapter_scope == "chapter":
+            on_theme = len(items)
     random.shuffle(items)                         # and don't present them difficulty-ordered
     return {"skill": skill, "board": board, "class": cls, "subject": subject, "chapter": chapter or "all",
-            "items": items, "target_b": round(target_b, 2),
+            "items": items, "target_b": round(target_b, 2), "chapter_scope": chapter_scope, "on_theme": on_theme,
             "mastery": round(state["p_mastery"], 3), "attempts": state["n"]}
 
 
