@@ -103,3 +103,8 @@ employee_training/employees.json
 question_bank_engine/drop/bssc/*.pdf
 question_bank_engine/drop/bssc/*.PDF
 question_bank_engine/drop/bssc_official/*.pdf
+
+# Generated kids worksheets — a daily build artifact (PDF/HTML/JSON per child per day),
+# not source. They were swept into git by an auto-checkpoint; regenerate with
+# kids_quiz/school/daily_worksheet.py instead of storing them.
+kids_quiz/school/out/
