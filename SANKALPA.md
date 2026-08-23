@@ -116,6 +116,7 @@ DATE        ON/OFF/अतिचार   the day's selling action (≤10 words)
 2026-08-17  ON              brief Rohan → he demos live to One Step
 2026-08-18  ON              hand Priyanshu the Ara kit + run his demo session
 2026-08-19  (pending)       Rohan closes the One Step install (no money talk)
+2026-08-23  OFF             none — a full day of building, no human asked
 ```
 
 **2026-08-17 — declared at start of day:**
