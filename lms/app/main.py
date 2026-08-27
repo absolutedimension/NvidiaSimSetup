@@ -87,6 +87,8 @@ EXAMS = [
     {"id": "upsc",     "subject": "upsc-gs",      "title": "UPSC",     "tag": "Civil Services · IAS", "emoji": "🏛️"},
     {"id": "bpsc",     "subject": "bpsc-gs",      "title": "BPSC",     "tag": "Bihar Civil Services", "emoji": "🏛️"},
     {"id": "bpsc-tre", "subject": "bpsc-tre",     "title": "TRE (Bihar Teacher)", "tag": "Teacher Recruitment · real PYQs", "emoji": "🧑‍🏫"},
+    {"id": "bssc-inter", "subject": "bssc-gs",  "title": "BSSC Inter Level", "tag": "10+2 · 26,426 posts · real PYQs", "emoji": "🏛️"},
+    {"id": "bssc-cgl",   "subject": "bssc-gs",  "title": "BSSC CGL", "tag": "Graduate · 1,883 posts", "emoji": "🏛️"},
     {"id": "ssc",      "subject": "ssc-reasoning", "title": "SSC CGL", "tag": "Govt job · SSC/Railway", "emoji": "📋"},
     {"id": "railway",  "subject": "railway-reasoning", "title": "Railway (RRB)", "tag": "NTPC · Group D · ALP", "emoji": "🚂"},
     {"id": "gp-rating", "subject": "gpr-ship-knowledge", "title": "Merchant Navy (GP Rating)", "tag": "Synergy CET · Sponsorship", "emoji": "⚓"},
@@ -97,7 +99,7 @@ EXAM_SUBJECT = {e["id"]: e["subject"] for e in EXAMS}
 # Goals hidden from every picker (student tiles, onboarding, teacher create-test) while their DATA
 # and serving stay intact for other lanes. BPSC = Bihar CIVIL SERVICES; One Step Education teaches
 # TRE (Teacher Recruitment) and explicitly does not want BPSC surfaced (field note 2026-08-15).
-HIDDEN_GOALS = {"bpsc"}
+HIDDEN_GOALS = {"bpsc", "bssc"}   # "bssc" is an umbrella, not an exam — show bssc-inter / bssc-cgl
 
 # Kids product picker (kids-education.trigunai.com) = CLASS ONLY. Classes 1-5 are ALL live (every
 # knowledge subject runs on the KB engine and Maths is computed, for CBSE + ICSE), so a parent makes
@@ -143,6 +145,8 @@ STUDENT_EXAMS = [
     # BPSC (civil services) hidden from the picker per One Step (they teach TRE, not BPSC). Data +
     # bpsc-gs serving remain in the bank for the parallel lane / other use; just not shown here.
     {"id": "bpsc-tre","title": "TRE (Bihar Teacher)", "tag": "Teacher Recruitment · real PYQs", "emoji": "🧑‍🏫", "available": True},
+    {"id": "bssc-inter", "title": "BSSC Inter Level", "tag": "10+2 · 26,426 posts · real PYQs", "emoji": "🏛️", "available": True},
+    {"id": "bssc-cgl",   "title": "BSSC CGL", "tag": "Graduate · 1,883 posts", "emoji": "🏛️", "available": True},
     {"id": "ssc",     "title": "SSC CGL",       "tag": "All sections live",     "emoji": "📋", "available": True},
     {"id": "railway", "title": "Railway (RRB)", "tag": "NTPC · Group D · ALP",  "emoji": "🚂", "available": True},
     {"id": "banking", "title": "Banking",       "tag": "IBPS · SBI · RRB",     "emoji": "🏦", "available": True},
@@ -662,6 +666,10 @@ def exam_prep(request: Request, exam: str = "", g: int = 0, db: Session = Depend
                                                 "English": "English", "GK": "GK", "Hindi": "Hindi"},
                                        "picked": picked, "wa_link": "https://wa.me/919135255107?text=quiz",
                                        "google_client_id": settings.GOOGLE_CLIENT_ID,
+                                       # The full mock papers, on the landing itself. They were
+                                       # only reachable after signup + goal pick, so a visitor
+                                       # could not tell whether a paper for their exam existed.
+                                       "mock_papers": ([] if kids else _ready_mock_papers(db)),
                                        "jsonld": seo.exam_prep_jsonld(EXAMS)})
 
 
@@ -925,6 +933,40 @@ def kids_worksheet_page(request: Request, board: str = "", cls: int = 0, subject
         "n": max(3, min(int(n), 15)), "locked": locked, "auto_start": bool(auto),
         "assign_id": assign_id, "assign_pack": assign_pack, "auto_print": bool(print),
         "preview": bool(preview)})
+
+
+@app.post("/api/kids/profile")
+async def kids_set_profile(request: Request, db: Session = Depends(get_db)):
+    """Change the child's CLASS / BOARD and keep it.
+
+    Grade was written only at signup or batch-join, and the picker's chips changed it in the
+    browser alone — so the next visit reverted to whatever was chosen on day one. A parent who
+    picked the wrong class, or who has two children, was stuck with it forever."""
+    student = current_student(request, db)
+    if not student:
+        return JSONResponse({"error": "login"}, status_code=401)
+    if getattr(student, "teacher_id", None):
+        # a batch student's class is their teacher's to set, not theirs
+        return JSONResponse({"error": "your teacher sets your class"}, status_code=403)
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+    changed = {}
+    try:
+        g = int(body.get("cls") or 0)
+    except (TypeError, ValueError):
+        g = 0
+    if g in (1, 2, 3, 4, 5):
+        student.grade = g
+        changed["cls"] = g
+    b = str(body.get("board") or "").strip()
+    if b in kidsws.BOARDS:
+        student.board = b
+        changed["board"] = b
+    if changed:
+        db.commit()
+    return JSONResponse({"ok": True, **changed})
 
 
 @app.get("/api/kids/curriculum")
@@ -1980,9 +2022,13 @@ def exam_prep_paper_sit(request: Request, paper_id: int, db: Session = Depends(g
     paper = db.query(MockPaper).filter_by(id=paper_id, status="ready").first()
     if not paper:
         return RedirectResponse("/exam-prep/papers", status_code=302)
+    # stem_hi/options_hi ride along so a bilingual paper (BSSC and every Bihar govt exam prints
+    # Hindi + English side by side) can be sat in either language. They carry no answer, so
+    # stripping the key is unaffected. Papers without Hindi simply send empty strings.
     safe = [{"n": q.get("n"), "section": q.get("section"), "qtype": q.get("qtype"),
              "marks": q.get("marks"), "neg": q.get("neg"),
              "stem": q.get("stem"), "options": q.get("options") or [],
+             "stem_hi": q.get("stem_hi") or "", "options_hi": q.get("options_hi") or [],
              "figure": q.get("figure"), "chapter": q.get("chapter")}
             for q in (paper.questions or [])]
     att = PaperAttempt(student_id=student.id, paper_id=paper.id,
@@ -2323,7 +2369,7 @@ def teacher_chapters(request: Request, subject: str = "jee-physics", db: Session
 # mirrors the student exam picker.
 _TEACHER_GOALS = ["jee-advanced", "neet", "cbse-10", "cbse-12", "cbse-12-commerce", "banking",
                   "upsc", "bpsc-tre", "ssc-cgl", "railway",
-                  "bssc"]   # bpsc (civil services) hidden — TRE only
+                  "bssc-inter", "bssc-cgl"]   # bpsc (civil services) hidden — TRE only
 _KIDS_TEACHER_GOALS = ["class3"]   # kids-education.trigunai.com teachers create Grade-3 tests
 
 
@@ -2331,9 +2377,16 @@ def _is_kids(request) -> bool:
     return (request.headers.get("host") or "").split(":")[0].lower() in KIDS_HOSTS
 
 
-def _teacher_subjects(kids: bool = False):
+def _teacher_subjects(kids: bool = False, gated: bool = True):
     """(subject_id, goal_dict) for every live exam's subjects, deduped, in exam order.
-    kids=True (kids host) → only the Grade-3 subjects, so a kids teacher never sees JEE/NEET."""
+    kids=True (kids host) → only the Grade-3 subjects, so a kids teacher never sees JEE/NEET.
+
+    gated=True (the default) DROPS any subject whose pool is too thin to build a real paper from.
+    Every subject of every goal used to be offered regardless of what sat behind it, so a teacher
+    could pick one with 14 banked questions, ask for 50, and get a short repetitive paper — and
+    reasonably conclude the product does not work. A subject we cannot serve should not be on the
+    menu at all.
+    """
     out, seen = [], set()
     for gid in (_KIDS_TEACHER_GOALS if kids else _TEACHER_GOALS):
         g = examgen.GOALS.get(gid)
@@ -2342,6 +2395,8 @@ def _teacher_subjects(kids: bool = False):
         for sid in g.get("subjects", []):
             if sid in examgen.RAG_SUBJECTS and sid not in seen:
                 seen.add(sid)
+                if gated and examgen.pool_depth(sid)["total"] < examgen.MIN_POOL_FOR_PAPER:
+                    continue
                 out.append((sid, g))
     return out
 
@@ -2937,6 +2992,211 @@ def teacher_new(request: Request, db: Session = Depends(get_db)):
     return templates.TemplateResponse(request, "teacher_new.html", {"student": teacher, "subjects": subs})
 
 
+def _ready_mock_papers(db, goal_id: str = "") -> list[dict]:
+    """Every FULL shared mock paper, newest code first, optionally filtered to one goal.
+
+    "Full" means >= 100 questions: the series also holds 15-question practice sets, and listing
+    those beside a 150-question BSSC paper as if they were the same thing misleads a teacher
+    deciding what to set for a batch.
+    """
+    out = []
+    for p in db.query(MockPaper).filter_by(status="ready").order_by(MockPaper.code).all():
+        qs = p.questions or []
+        if len(qs) < 100:
+            continue
+        gid = _paper_goal_id(p.subject) or ""
+        if goal_id and gid != goal_id:
+            continue
+        out.append({
+            "id": p.id, "code": p.code, "title": p.title or p.code,
+            "n": len(qs), "marks": p.max_marks, "minutes": p.minutes,
+            "goal": examgen.GOALS.get(gid, {}).get("label", p.subject), "goal_id": gid,
+            "bilingual": sum(1 for q in qs if q.get("stem_hi")) > len(qs) * 0.5,
+            "sections": len({q.get("section") for q in qs if q.get("section")}),
+            "real": sum(1 for q in qs if not q.get("generated")),
+        })
+    return out
+
+
+# Front matter for a printed mock paper, per exam. The claim line names the ADVERTISEMENT the
+# blueprint came from — an institute owner checks that first, and a paper that cannot say which
+# syllabus it follows is worth nothing to them. Syllabus text is the commission's own wording.
+MOCK_FRONTMATTER = {
+    "bssc-inter": {
+        "claim": "यह अभ्यास प्रश्न-पत्र बिहार कर्मचारी चयन आयोग द्वारा विज्ञापन संख्या–02/23(A) में "
+                 "आधिकारिक रूप से प्रकाशित पाठ्यक्रम एवं परीक्षा-योजना के आधार पर तैयार किया गया है।",
+        "claim_en": "Prepared strictly to the syllabus and examination scheme officially published "
+                    "by the Bihar Staff Selection Commission in Advertisement No. 02/23(A).",
+        "scheme": "प्रारम्भिक परीक्षा — 150 वस्तुनिष्ठ प्रश्न · 600 अंक · 2 घंटे 15 मिनट · "
+                  "प्रत्येक सही उत्तर +4, प्रत्येक गलत उत्तर −1",
+        "syllabus": [
+            ("खंड (क) — सामान्य अध्ययन",
+             "सम-सामयिक विषय · भारत और उसके पड़ोसी देश — इतिहास, संस्कृति, भूगोल, आर्थिक परिदृश्य, "
+             "स्वतंत्रता आन्दोलन, भारतीय कृषि एवं प्राकृतिक संसाधन, संविधान एवं राज्य व्यवस्था, "
+             "पंचायती राज, सामुदायिक विकास, पंचवर्षीय योजना, राष्ट्रीय आन्दोलन में बिहार का योगदान।"),
+            ("खंड (ख) — सामान्य विज्ञान एवं गणित (मैट्रिक स्तर)",
+             "सामान्य विज्ञान — भौतिक शास्त्र, रसायन शास्त्र, जीव विज्ञान, भूगोल। "
+             "गणित — संख्या पद्धति, पूर्ण संख्याओं का अभिकलन, दशमलव और भिन्न, संख्याओं के बीच परस्पर "
+             "संबंध, मूलभूत अंक गणितीय संक्रियाएँ, प्रतिशत, अनुपात तथा समानुपात, औसत, ब्याज, लाभ और हानि।"),
+            ("खंड (ग) — मानसिक क्षमता जाँच",
+             "सादृश्य · समानता एवं भिन्नता · स्थान कल्पना · समस्या समाधान · विश्लेषण · दृश्य स्मृति · "
+             "विभेद · अवलोकन · संबंध अवधारणा · अंक गणितीय तर्कशक्ति · अंक गणितीय संख्या श्रृंखला · "
+             "कूट लेखन एवं कूट व्याख्या (शाब्दिक एवं गैर-शाब्दिक दोनों)।"),
+        ],
+    },
+    "bpsc-tre": {
+        "claim": "यह अभ्यास प्रश्न-पत्र बिहार लोक सेवा आयोग के विज्ञापन संख्या 14/2026 (TRE 4.0, "
+                 "दिनांक 18.08.2026) में प्रकाशित प्रारम्भिक परीक्षा की योजना एवं पाठ्यक्रम के "
+                 "आधार पर तैयार किया गया है।",
+        "claim_en": "Prepared to the preliminary examination scheme and syllabus published by the "
+                    "Bihar Public Service Commission in Advertisement No. 14/2026 (TRE 4.0), "
+                    "dated 18.08.2026.",
+        "scheme": "प्रारम्भिक परीक्षा — 150 वस्तुनिष्ठ प्रश्न · 150 अंक · 2 घंटे · "
+                  "प्रत्येक गलत उत्तर पर 1/3 अंक की कटौती · प्रत्येक प्रश्न में पाँच विकल्प (A–E)",
+        # The advertisement's own rule, and the reason it is worth rehearsing in a mock: a blank
+        # is NOT free. Marking (E) is how a candidate declines a question without being penalised
+        # differently from leaving it untouched.
+        "extra_rule": "प्रश्न का उत्तर न देने की स्थिति में विकल्प (E) अंकित करना अनिवार्य है। "
+                      "कोई भी विकल्प अंकित न करने पर भी 1/3 अंक की कटौती की जायेगी।",
+        "extra_rule_en": "If you do not wish to answer a question you MUST mark option (E). "
+                         "Leaving a question completely unmarked also costs 1/3 mark.",
+        "qualifying": "न्यूनतम अर्हतांक — सामान्य 40% · पिछड़ा वर्ग 36.5% · अत्यन्त पिछड़ा वर्ग 34% · "
+                      "अनुसूचित जाति/जनजाति, महिला एवं दिव्यांग 32%",
+        "syllabus": [
+            ("प्रारम्भिक परीक्षा का पाठ्यक्रम (विज्ञापन 14/2026 के अनुसार)",
+             "सामान्य विज्ञान · राष्ट्रीय तथा अन्तर्राष्ट्रीय महत्व की समसामयिक घटनाएं · "
+             "भारत का इतिहास तथा बिहार के इतिहास की प्रमुख विशेषताएं · सामान्य भूगोल, बिहार के "
+             "प्रमुख भौगोलिक प्रभाग तथा यहाँ की महत्वपूर्ण नदियां · भारत की राज्य व्यवस्था और "
+             "आर्थिक व्यवस्था · आजादी के पश्चात बिहार की अर्थ-व्यवस्था के प्रमुख परिवर्तन · "
+             "भारत का राष्ट्रीय आन्दोलन तथा इसमें बिहार का योगदान · सामान्य मानसिक योग्यता।"),
+            ("परीक्षा की प्रकृति",
+             "प्रारम्भिक परीक्षा महज जाँच (screening) परीक्षा होगी। इसमें सफल उम्मीदवारों से "
+             "मुख्य परीक्षा हेतु अलग से आवेदन आमंत्रित किये जायेंगे।"),
+            # Said plainly, because an institute WILL compare this paper against the advertisement
+            # and find that the advertisement divides the prelims into nothing at all. The headings
+            # are ours, for navigation; the paper underneath is the undivided 150 the commission
+            # describes. (भाग-I/II/III belongs to the MAIN exam — page 15 of the advertisement.)
+            ("इस अभ्यास प्रश्न-पत्र के बारे में / About this practice paper",
+             "आयोग की प्रारम्भिक परीक्षा भाग/खण्ड में विभाजित नहीं है — विज्ञापन के अनुसार कुल 150 "
+             "प्रश्न, 150 अंक। नीचे दिए गए शीर्षक विज्ञापन में वर्णित पाठ्यक्रम-क्षेत्र हैं, जो "
+             "अभ्यास एवं कमज़ोर-विषय रिपोर्ट की सुविधा हेतु दिए गए हैं; ये आयोग द्वारा किया गया "
+             "विभाजन नहीं हैं। (भाग-I / भाग-II / भाग-III मुख्य परीक्षा की संरचना है।)"),
+        ],
+    },
+}
+
+
+def _mockpaper_to_pack(paper) -> dict:
+    """MockPaper rows -> the assess.html engine pack, so a shared mock can be SAT without an
+    account. Order and option order are preserved exactly: the paper already carries a verified
+    key, and shuffling here would desynchronise the online attempt from the printed paper an
+    institute is holding."""
+    qs = []
+    for q in (paper.questions or []):
+        opts = [str(o.get("text", "")) for o in (q.get("options") or [])]
+        labels = [str(o.get("label", "")) for o in (q.get("options") or [])]
+        if len(opts) < 2 or (q.get("correct") or "") not in labels:
+            continue
+        idx = labels.index(q["correct"])
+        tag = q.get("chapter") or q.get("section") or ""
+        en = {"tag": tag, "q": q.get("stem", ""), "opts": opts,
+              "explain": q.get("solution", "") or ""}
+        opts_hi = [str(o.get("text", "")) for o in (q.get("options_hi") or [])]
+        hi = ({"tag": tag, "q": q.get("stem_hi"), "opts": opts_hi,
+               "explain": q.get("solution_hi", "") or ""}
+              if q.get("stem_hi") and len(opts_hi) == len(opts) else dict(en))
+        qs.append({"type": "mcq", "correct": idx, "topic": {"en": tag, "hi": tag},
+                   "qid": f'{paper.code}-{q.get("n")}', "figure": q.get("figure"),
+                   "en": en, "hi": hi})
+    title = paper.title or paper.code
+    return {"title": title, "topic": {"en": title, "hi": title},
+            "intro": {"en": f"<b>{title}</b> — {len(qs)} questions in the real exam pattern.",
+                      "hi": f"<b>{title}</b> — {len(qs)} प्रश्न, असली परीक्षा पैटर्न में।"},
+            "topicMap": [q["topic"] for q in qs], "questions": qs}
+
+
+def _demo_ok(token: str) -> bool:
+    return bool(settings.DEMO_TOKEN) and token == settings.DEMO_TOKEN
+
+
+@app.get("/demo/{token}", response_class=HTMLResponse)
+def demo_index(request: Request, token: str, db: Session = Depends(get_db)):
+    """The institute demo — every finished mock paper, viewable, sittable and printable with NO
+    account. This is what goes to an institute for verification before they adopt anything, so it
+    lists only papers built to a published government advertisement."""
+    if not _demo_ok(token):
+        return HTMLResponse("<h2 style='font-family:sans-serif;padding:40px'>This demo link is not valid.</h2>",
+                            status_code=404)
+    papers = []
+    for p in _ready_mock_papers(db):
+        fm = MOCK_FRONTMATTER.get(p["goal_id"], {})
+        papers.append({**p, "scheme": fm.get("scheme", ""), "claim": fm.get("claim_en", "")})
+    return templates.TemplateResponse(request, "demo_papers.html", {
+        "papers": papers, "token": token, "student": None})
+
+
+@app.get("/demo/{token}/try/{code}", response_class=HTMLResponse)
+def demo_try(request: Request, token: str, code: str, db: Session = Depends(get_db)):
+    """Sit a shared mock paper with no account — the same engine a student uses."""
+    if not _demo_ok(token):
+        return HTMLResponse("Not found", status_code=404)
+    paper = db.query(MockPaper).filter_by(code=code, status="ready").first()
+    if not paper:
+        return RedirectResponse(f"/demo/{token}", status_code=302)
+    import json as _json
+    inject = "<script>window.__PACK=" + _json.dumps(_mockpaper_to_pack(paper)) + ";</script>"
+    html = (BASE / "static" / "exam" / "assess.html").read_text(encoding="utf-8")
+    return HTMLResponse(html.replace("</head>", inject + "</head>", 1))
+
+
+@app.get("/demo/{token}/paper/{code}", response_class=HTMLResponse)
+def demo_paper_print(request: Request, token: str, code: str, answers: str = "",
+                     db: Session = Depends(get_db)):
+    """The printable paper, no account. Answer key available — an institute verifying a paper
+    needs to check the key, which is exactly the thing we withhold from students."""
+    if not _demo_ok(token):
+        return HTMLResponse("Not found", status_code=404)
+    paper = db.query(MockPaper).filter_by(code=code, status="ready").first()
+    if not paper:
+        return RedirectResponse(f"/demo/{token}", status_code=302)
+    qs = paper.questions or []
+    gid = _paper_goal_id(paper.subject) or ""
+    return templates.TemplateResponse(request, "mock_print.html", {
+        "student": None, "paper": paper, "show_answers": (answers == "1"),
+        "neg": next((q.get("neg") for q in qs if q.get("neg")), 0),
+        "brand": {}, "fm": MOCK_FRONTMATTER.get(gid, {}),
+        "marks": next((q.get("marks") for q in qs if q.get("marks")), 1),
+        "bilingual": sum(1 for q in qs if q.get("stem_hi")) > len(qs) * 0.5,
+        "demo_token": token,
+        "exam_label": examgen.GOALS.get(gid, {}).get("label", paper.subject)})
+
+
+@app.get("/mock/{code}/print", response_class=HTMLResponse)
+def mock_print(request: Request, code: str, answers: str = "", db: Session = Depends(get_db)):
+    """Printable / save-as-PDF view of a shared mock paper, for teachers and students alike.
+
+    Rendered on demand rather than stored as a binary: the paper already lives in the database,
+    so a PDF file on disk would be a second copy that silently goes stale the moment the paper
+    is rebuilt. `?answers=1` adds the key — deliberately OFF by default so a teacher can hand
+    the plain paper to a batch.
+    """
+    who = current_teacher(request, db) or current_student(request, db)
+    if not who:
+        return RedirectResponse("/login", status_code=302)
+    paper = db.query(MockPaper).filter_by(code=code, status="ready").first()
+    if not paper:
+        return RedirectResponse("/exam-prep/papers", status_code=302)
+    neg = next((q.get("neg") for q in (paper.questions or []) if q.get("neg")), 0)
+    brand = _teacher_brand(who) if current_teacher(request, db) else {}
+    gid = _paper_goal_id(paper.subject) or ""
+    return templates.TemplateResponse(request, "mock_print.html", {
+        "student": who, "paper": paper, "show_answers": (answers == "1"),
+        "neg": neg, "brand": brand or {}, "fm": MOCK_FRONTMATTER.get(gid, {}),
+        "marks": next((q.get("marks") for q in (paper.questions or []) if q.get("marks")), 1),
+        "bilingual": sum(1 for q in (paper.questions or []) if q.get("stem_hi")) > len(paper.questions or []) * 0.5,
+        "exam_label": examgen.GOALS.get(gid, {}).get("label", paper.subject)})
+
+
 @app.get("/teacher/mock", response_class=HTMLResponse)
 def teacher_mock(request: Request, db: Session = Depends(get_db)):
     """Multi-section mock builder — one paper mixing several subjects with a count each
@@ -2944,9 +3204,16 @@ def teacher_mock(request: Request, db: Session = Depends(get_db)):
     teacher = current_teacher(request, db)
     if not teacher:
         return RedirectResponse("/teacher", status_code=302)
-    subs = [{"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"], "exam": g["label"]}
-            for sid, g in _teacher_subjects(_is_kids(request))]
-    return templates.TemplateResponse(request, "teacher_mock.html", {"student": teacher, "subjects": subs})
+    subs = []
+    for sid, g in _teacher_subjects(_is_kids(request)):
+        d = examgen.pool_depth(sid)
+        subs.append({"id": sid, "label": examgen.RAG_SUBJECTS[sid]["label"], "exam": g["label"],
+                     "total": d["total"], "real": d["real"],
+                     # A past-papers paper is only offerable where real past-paper questions
+                     # actually exist; SSC/Railway/Banking pools are entirely generated.
+                     "has_pyq": d["real"] >= examgen.MIN_POOL_FOR_PAPER})
+    return templates.TemplateResponse(request, "teacher_mock.html", {
+        "student": teacher, "subjects": subs, "ready_papers": _ready_mock_papers(db)})
 
 
 @app.post("/api/teacher/mock")
@@ -2976,14 +3243,18 @@ async def teacher_mock_create(request: Request, db: Session = Depends(get_db)):
         return JSONResponse({"ok": False, "error": "Add at least one section."})
     if asked > 200:
         return JSONResponse({"ok": False, "error": "Keep the paper under 200 questions."})
-    pack = await run_in_threadpool(examgen.build_mixed_pack, sections, title or "Mock test")
+    # source: "pyq" = official past-paper questions only · "generated" / "" = the full pool
+    source = (body.get("source") or "mixed").strip()
+    pack = await run_in_threadpool(examgen.build_mixed_pack, sections, title or "Mock test",
+                                   None, 2, source == "pyq")
     if not pack or not pack.get("questions"):
         return JSONResponse({"ok": False, "error": "Couldn't build the paper — try fewer questions per section."})
     got = len(pack["questions"])
     code = _new_class_code(db)
     ct = ClassTest(teacher_id=teacher.id, code=code, title=title or "Mock test",
                    subject_id=sections[0]["subject"], subject_label="Mixed / multi-subject",
-                   chapters=[f'{s["label"]} x{s["n"]}' for s in sections],
+                   chapters=[f'{s["label"]} x{s["n"]}' for s in sections]
+                            + [f'source:{source}'],
                    difficulty="mixed", n=got, pack=pack)
     db.add(ct)
     db.commit()
@@ -3876,6 +4147,41 @@ def _sub_view(student: Student) -> dict:
     }
 
 
+@app.get("/bihar-exams", response_class=HTMLResponse)
+def bihar_exams(request: Request, db: Session = Depends(get_db)):
+    """Public reference: every Bihar government recruiting body, its live vacancies, and the real
+    competition ratio per exam. Doubles as the organic entry point for Bihar govt-job searches and
+    as the one page a field rep can open in front of an institute owner."""
+    # Show the mock papers that are actually sittable, straight on the public page. Until now a
+    # visitor had to sign up, then pick a goal in onboarding, before discovering whether a paper
+    # for their exam even existed — so the papers we DO have were invisible to everyone who
+    # hadn't already committed.
+    ready = (db.query(MockPaper).filter_by(status="ready").order_by(MockPaper.code).all())
+    live = []
+    for p in ready:
+        qs = p.questions or []
+        if len(qs) < 100:                      # the short practice sets are not "full mocks"
+            continue
+        goal = examgen.GOALS.get(_paper_goal_id(p.subject) or "", {})
+        live.append({
+            "title": p.title or p.code, "code": p.code, "n": len(qs),
+            "marks": p.max_marks, "minutes": p.minutes,
+            "goal": goal.get("label", p.subject),
+            "bilingual": sum(1 for q in qs if q.get("stem_hi")) > len(qs) * 0.5,
+            "sections": len({q.get("section") for q in qs if q.get("section")}),
+        })
+    return templates.TemplateResponse(request, "bihar_exams.html", {
+        "student": current_student(request, db),
+        "updated": "26 August 2026",
+        "live_papers": live,
+        # Read from config rather than pasted in, so rotating DEMO_TOKEN moves this link too
+        # instead of leaving a dead one on a public page.
+        "demo_token": settings.DEMO_TOKEN,
+        "faq": seo.BIHAR_FAQ,
+        "jsonld": seo.bihar_jsonld(live),
+    })
+
+
 @app.get("/pricing", response_class=HTMLResponse)
 def pricing(request: Request, db: Session = Depends(get_db)):
     student = current_student(request, db)
@@ -4749,8 +5055,12 @@ def m_papers(request: Request, db: Session = Depends(get_db)):
 
 
 def _safe_paper_q(q: dict) -> dict:
+    # Same contract as the web sit route: everything the student needs to ANSWER, never the key.
+    # stem_hi/options_hi are part of that — a BSSC paper is printed in Hindi and English, and the
+    # native app cannot offer the language switch if the API never sends the Hindi half.
     return {"n": q.get("n"), "section": q.get("section"), "qtype": q.get("qtype"),
             "marks": q.get("marks"), "neg": q.get("neg"), "stem": q.get("stem", ""),
+            "stem_hi": q.get("stem_hi") or "", "options_hi": q.get("options_hi") or [],
             "options": q.get("options") or [], "figure": q.get("figure"), "chapter": q.get("chapter")}
 
 

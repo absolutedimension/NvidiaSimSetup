@@ -427,17 +427,23 @@
   const CRUMB={'Mathematics':'Maths','EVS':'EVS','English':'English','GK':'GK','Hindi':'हिंदी'};
   const crumbName=s=>CRUMB[s]||s;
   const SLBL={'Mathematics':'🔢 Maths','EVS':'🌍 EVS','English':'📖 English','GK':'🧠 GK','Hindi':'🇮🇳 Hindi'};
+  /* Persist the child's class/board. Without this the chips only changed CFG in the browser and
+     the next visit reverted to whatever was picked at signup. */
+  function saveProfile(patch){
+    try{ fetch('/api/kids/profile',{method:'POST',headers:{'Content-Type':'application/json'},
+      credentials:'same-origin',body:JSON.stringify(patch)}); }catch(e){}
+  }
   function renderBoards(){
     const box=$('boardChips'); box.innerHTML='';
     [['CBSE','CBSE'],['ICSE','ICSE'],['Bihar Board','Bihar']].forEach(([val,lbl])=>{
       const c=document.createElement('button'); c.className='chip'+(val===CFG.board?' sel':''); c.textContent=lbl;
-      c.onclick=()=>{ box.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); CFG.board=val; CFG.chapter=''; loadPicker(); };
+      c.onclick=()=>{ box.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); CFG.board=val; CFG.chapter=''; saveProfile({board:val}); loadPicker(); };
       box.appendChild(c); });
   }
   function renderGrades(){
     const box=$('gradeChips'); box.innerHTML='';
     [1,2,3,4,5].forEach(g=>{ const c=document.createElement('button'); c.className='chip'+(g==CFG.cls?' sel':''); c.textContent='Class '+g;
-      c.onclick=()=>{ box.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); CFG.cls=g; CFG.chapter=''; var cl=$('clsLabel'); if(cl) cl.textContent=g; loadPicker(); };
+      c.onclick=()=>{ box.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); c.classList.add('sel'); CFG.cls=g; CFG.chapter=''; var cl=$('clsLabel'); if(cl) cl.textContent=g; saveProfile({cls:g}); loadPicker(); };
       box.appendChild(c); });
   }
   function renderCount(){

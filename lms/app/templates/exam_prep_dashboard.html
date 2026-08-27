@@ -223,7 +223,7 @@
   {% if not kids %}
   <a class="goal" href="/exam-prep/onboarding">🎯 Goal: {{ st.goal }}{% if st.tests %}<span class="sep">· {{ st.tests }} test{{ '' if st.tests == 1 else 's' }} taken</span>{% endif %}<span class="edit">change</span></a>
   {% elif student.grade %}
-  <span class="goal" style="cursor:default">🎒 Class {{ student.grade }}{% if student.board %} · {{ student.board }}{% endif %}</span>
+  <a class="goal" href="/exam-prep/worksheet" title="Change class or board">🎒 Class {{ student.grade }}{% if student.board %} · {{ student.board }}{% endif %} <span style="opacity:.6">▾</span></a>
   {% endif %}
   <div class="nav">
     <a class="on" href="/exam-prep/dashboard">Today</a>
