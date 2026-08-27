@@ -1,498 +1,580 @@
 {
-  "subject": "English",
-  "class": 5,
-  "strings": {
-    "grade_band": "Grade 5 (age ~10) — hardest primary level: advanced vocabulary, irregular plurals/verbs, board-agnostic CBSE/ICSE English grammar & vocabulary."
+ "subject": "English",
+ "class": 5,
+ "strings": {
+  "grade_band": "Grade 5 (age ~10) — hardest primary level: advanced vocabulary, irregular plurals/verbs, board-agnostic CBSE/ICSE English grammar & vocabulary."
+ },
+ "categories": [
+  {
+   "name": "vowels",
+   "label": "a vowel",
+   "chapter": "Unit 1: Let's Have Fun",
+   "members": [
+    "a",
+    "e",
+    "i",
+    "o",
+    "u"
+   ]
   },
-  "categories": [
-    {
-      "name": "vowels",
-      "label": "a vowel",
-      "chapter": "Unit 1: Let's Have Fun",
-      "members": [
-        "a",
-        "e",
-        "i",
-        "o",
-        "u"
-      ]
-    },
-    {
-      "name": "consonants",
-      "label": "a consonant",
-      "chapter": "Unit 1: Let's Have Fun",
-      "members": [
-        "b",
-        "c",
-        "d",
-        "f",
-        "g",
-        "h",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "p"
-      ]
-    },
-    {
-      "name": "colour_words",
-      "label": "a colour word",
-      "chapter": "Unit 2: My Colourful World",
-      "members": [
-        "red",
-        "blue",
-        "green",
-        "yellow",
-        "orange",
-        "purple",
-        "pink",
-        "brown"
-      ]
-    },
-    {
-      "name": "number_words",
-      "label": "a number word",
-      "chapter": "Unit 1: Let's Have Fun",
-      "members": [
-        "one",
-        "two",
-        "three",
-        "four",
-        "five",
-        "six",
-        "seven",
-        "eight",
-        "nine",
-        "ten"
-      ]
-    },
-    {
-      "name": "days_of_the_week",
-      "label": "a day of the week",
-      "chapter": "Unit 5: Work is Worship",
-      "members": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ]
-    }
-  ],
-  "groupings": [
-    {
-      "name": "naming_or_doing_word",
-      "chapter": "Unit 5: Work is Worship",
-      "sort_instruction": "Sort each word into naming words (nouns) or doing words (verbs).",
-      "tf_template": "The word '{item}' is a {bin}.",
-      "bins": {
-        "naming word": [
-          "river",
-          "mountain",
-          "garden",
-          "teacher",
-          "bottle",
-          "basket"
-        ],
-        "doing word": [
-          "jump",
-          "swim",
-          "climb",
-          "sing",
-          "read",
-          "write"
-        ]
-      }
-    },
-    {
-      "name": "a_or_an",
-      "chapter": "Unit 1: Let's Have Fun",
-      "sort_instruction": "Sort each word by whether it takes the article 'a' or 'an' before it.",
-      "tf_template": "The word '{item}' takes the article '{bin}'.",
-      "bins": {
-        "a": [
-          "ball",
-          "cat",
-          "dog",
-          "table",
-          "mango",
-          "garden"
-        ],
-        "an": [
-          "apple",
-          "egg",
-          "umbrella",
-          "orange",
-          "insect",
-          "hour"
-        ]
-      }
-    },
-    {
-      "name": "rhyming_families",
-      "chapter": "Unit 1: Let's Have Fun",
-      "sort_instruction": "Sort each word into its rhyming family.",
-      "tf_template": "The word '{item}' belongs to the '{bin}' rhyming family.",
-      "bins": {
-        "-at": [
-          "cat",
-          "hat",
-          "bat",
-          "mat"
-        ],
-        "-ight": [
-          "light",
-          "night",
-          "right",
-          "sight"
-        ],
-        "-ake": [
-          "cake",
-          "lake",
-          "snake",
-          "rake"
-        ]
-      }
-    }
-  ],
-  "relations": [
-    {
-      "name": "opposites",
-      "chapter": "Unit 4: Ups and Downs",
-      "a_label": "word",
-      "b_label": "opposite",
-      "tf_template": "The opposite of '{a}' is '{b}'.",
-      "cloze_template": "The opposite of '{a}' is ___.",
-      "match_instruction": "Match each word to its opposite.",
-      "invert": false,
-      "pairs": [
-        [
-          "ancient",
-          "modern"
-        ],
-        [
-          "generous",
-          "selfish"
-        ],
-        [
-          "victory",
-          "defeat"
-        ],
-        [
-          "artificial",
-          "natural"
-        ],
-        [
-          "expand",
-          "shrink"
-        ],
-        [
-          "permanent",
-          "temporary"
-        ],
-        [
-          "courage",
-          "cowardice"
-        ],
-        [
-          "wealth",
-          "poverty"
-        ],
-        [
-          "praise",
-          "blame"
-        ],
-        [
-          "accept",
-          "reject"
-        ]
-      ]
-    },
-    {
-      "name": "synonyms",
-      "chapter": "Unit 1: Let's Have Fun",
-      "a_label": "word",
-      "b_label": "synonym",
-      "tf_template": "The word '{a}' means the same as '{b}'.",
-      "cloze_template": "The word '{a}' means the same as ___.",
-      "match_instruction": "Match each word to its synonym (a word with the same meaning).",
-      "invert": false,
-      "pairs": [
-        [
-          "brave",
-          "courageous"
-        ],
-        [
-          "happy",
-          "cheerful"
-        ],
-        [
-          "big",
-          "enormous"
-        ],
-        [
-          "rich",
-          "wealthy"
-        ],
-        [
-          "fast",
-          "rapid"
-        ],
-        [
-          "clever",
-          "intelligent"
-        ],
-        [
-          "tired",
-          "exhausted"
-        ],
-        [
-          "beautiful",
-          "gorgeous"
-        ],
-        [
-          "angry",
-          "furious"
-        ],
-        [
-          "start",
-          "begin"
-        ]
-      ]
-    },
-    {
-      "name": "singular_to_plural",
-      "chapter": "Unit 3: Water",
-      "a_label": "singular",
-      "b_label": "plural",
-      "tf_template": "The plural of '{a}' is '{b}'.",
-      "cloze_template": "The plural of '{a}' is ___.",
-      "match_instruction": "Match each singular word to its plural form.",
-      "invert": false,
-      "pairs": [
-        [
-          "child",
-          "children"
-        ],
-        [
-          "mouse",
-          "mice"
-        ],
-        [
-          "tooth",
-          "teeth"
-        ],
-        [
-          "foot",
-          "feet"
-        ],
-        [
-          "man",
-          "men"
-        ],
-        [
-          "woman",
-          "women"
-        ],
-        [
-          "leaf",
-          "leaves"
-        ],
-        [
-          "knife",
-          "knives"
-        ],
-        [
-          "city",
-          "cities"
-        ],
-        [
-          "baby",
-          "babies"
-        ],
-        [
-          "box",
-          "boxes"
-        ],
-        [
-          "goose",
-          "geese"
-        ]
-      ]
-    },
-    {
-      "name": "masculine_to_feminine",
-      "chapter": "Unit 5: Work is Worship",
-      "a_label": "masculine",
-      "b_label": "feminine",
-      "tf_template": "The feminine of '{a}' is '{b}'.",
-      "cloze_template": "The feminine of '{a}' is ___.",
-      "match_instruction": "Match each masculine (male) word to its feminine (female) word.",
-      "invert": false,
-      "pairs": [
-        [
-          "king",
-          "queen"
-        ],
-        [
-          "prince",
-          "princess"
-        ],
-        [
-          "uncle",
-          "aunt"
-        ],
-        [
-          "nephew",
-          "niece"
-        ],
-        [
-          "son",
-          "daughter"
-        ],
-        [
-          "father",
-          "mother"
-        ],
-        [
-          "brother",
-          "sister"
-        ],
-        [
-          "husband",
-          "wife"
-        ],
-        [
-          "lion",
-          "lioness"
-        ],
-        [
-          "tiger",
-          "tigress"
-        ],
-        [
-          "gentleman",
-          "lady"
-        ],
-        [
-          "bull",
-          "cow"
-        ]
-      ]
-    },
-    {
-      "name": "present_to_past_tense",
-      "chapter": "Unit 3: Water",
-      "a_label": "present tense",
-      "b_label": "past tense",
-      "tf_template": "The past tense of '{a}' is '{b}'.",
-      "cloze_template": "The past tense of '{a}' is ___.",
-      "match_instruction": "Match each present-tense verb to its past-tense form.",
-      "invert": false,
-      "pairs": [
-        [
-          "go",
-          "went"
-        ],
-        [
-          "eat",
-          "ate"
-        ],
-        [
-          "run",
-          "ran"
-        ],
-        [
-          "swim",
-          "swam"
-        ],
-        [
-          "write",
-          "wrote"
-        ],
-        [
-          "bring",
-          "brought"
-        ],
-        [
-          "catch",
-          "caught"
-        ],
-        [
-          "teach",
-          "taught"
-        ],
-        [
-          "buy",
-          "bought"
-        ],
-        [
-          "think",
-          "thought"
-        ],
-        [
-          "sing",
-          "sang"
-        ],
-        [
-          "drink",
-          "drank"
-        ]
-      ]
-    }
-  ],
-  "facts": [
-    {
-      "statement": "English has five vowels: a, e, i, o and u.",
-      "chapter": "Unit 1: Let's Have Fun"
-    },
-    {
-      "statement": "The alphabet has 26 letters, so the other 21 letters are called consonants.",
-      "chapter": "Unit 1: Let's Have Fun"
-    },
-    {
-      "statement": "A naming word for a person, place, animal or thing is called a noun.",
-      "chapter": "Unit 5: Work is Worship"
-    },
-    {
-      "statement": "A word that shows an action, such as run or jump, is called a verb.",
-      "chapter": "Unit 5: Work is Worship"
-    },
-    {
-      "statement": "We use 'an' before words that begin with a vowel sound and 'a' before words that begin with a consonant sound.",
-      "chapter": "Unit 1: Let's Have Fun"
-    },
-    {
-      "statement": "A word that describes a noun, such as tall, blue or gentle, is called an adjective.",
-      "chapter": "Unit 2: My Colourful World"
-    },
-    {
-      "statement": "The special names of people, places and days begin with a capital letter and are called proper nouns.",
-      "chapter": "Unit 5: Work is Worship"
-    },
-    {
-      "statement": "A sentence begins with a capital letter and usually ends with a full stop.",
-      "chapter": "Unit 1: Let's Have Fun"
-    },
-    {
-      "statement": "A sentence that asks something ends with a question mark (?).",
-      "chapter": "Unit 4: Ups and Downs"
-    },
-    {
-      "statement": "Words that have opposite meanings, such as up and down, are called antonyms.",
-      "chapter": "Unit 4: Ups and Downs"
-    },
-    {
-      "statement": "Words that have the same or nearly the same meaning are called synonyms.",
-      "chapter": "Unit 1: Let's Have Fun"
-    },
-    {
-      "statement": "A word that takes the place of a noun, such as he, she, it or they, is called a pronoun.",
-      "chapter": "Unit 3: Water"
-    }
-  ]
+  {
+   "name": "consonants",
+   "label": "a consonant",
+   "chapter": "Unit 1: Let's Have Fun",
+   "members": [
+    "b",
+    "c",
+    "d",
+    "f",
+    "g",
+    "h",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "p"
+   ]
+  },
+  {
+   "name": "colour_words",
+   "label": "a colour word",
+   "chapter": "Unit 2: My Colourful World",
+   "members": [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "orange",
+    "purple",
+    "pink",
+    "brown"
+   ]
+  },
+  {
+   "name": "number_words",
+   "label": "a number word",
+   "chapter": "Unit 1: Let's Have Fun",
+   "members": [
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten"
+   ]
+  },
+  {
+   "name": "days_of_the_week",
+   "label": "a day of the week",
+   "chapter": "Unit 5: Work is Worship",
+   "members": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+   ]
+  },
+  {
+   "name": "adverbs",
+   "label": "an adverb",
+   "chapter": "Grammar",
+   "members": [
+    "quickly",
+    "softly",
+    "bravely",
+    "neatly",
+    "rarely",
+    "loudly"
+   ]
+  },
+  {
+   "name": "prepositions",
+   "label": "a preposition",
+   "chapter": "Grammar",
+   "members": [
+    "under",
+    "between",
+    "across",
+    "beside",
+    "through",
+    "above"
+   ]
+  }
+ ],
+ "groupings": [
+  {
+   "name": "naming_or_doing_word",
+   "chapter": "Unit 5: Work is Worship",
+   "sort_instruction": "Sort each word into naming words (nouns) or doing words (verbs).",
+   "tf_template": "The word '{item}' is a {bin}.",
+   "bins": {
+    "naming word": [
+     "river",
+     "mountain",
+     "garden",
+     "teacher",
+     "bottle",
+     "basket"
+    ],
+    "doing word": [
+     "jump",
+     "swim",
+     "climb",
+     "sing",
+     "read",
+     "write"
+    ]
+   }
+  },
+  {
+   "name": "a_or_an",
+   "chapter": "Unit 1: Let's Have Fun",
+   "sort_instruction": "Sort each word by whether it takes the article 'a' or 'an' before it.",
+   "tf_template": "The word '{item}' takes the article '{bin}'.",
+   "bins": {
+    "a": [
+     "ball",
+     "cat",
+     "dog",
+     "table",
+     "mango",
+     "garden"
+    ],
+    "an": [
+     "apple",
+     "egg",
+     "umbrella",
+     "orange",
+     "insect",
+     "hour"
+    ]
+   }
+  },
+  {
+   "name": "rhyming_families",
+   "chapter": "Unit 1: Let's Have Fun",
+   "sort_instruction": "Sort each word into its rhyming family.",
+   "tf_template": "The word '{item}' belongs to the '{bin}' rhyming family.",
+   "bins": {
+    "-at": [
+     "cat",
+     "hat",
+     "bat",
+     "mat"
+    ],
+    "-ight": [
+     "light",
+     "night",
+     "right",
+     "sight"
+    ],
+    "-ake": [
+     "cake",
+     "lake",
+     "snake",
+     "rake"
+    ]
+   }
+  }
+ ],
+ "relations": [
+  {
+   "name": "opposites",
+   "chapter": "Unit 4: Ups and Downs",
+   "a_label": "word",
+   "b_label": "opposite",
+   "tf_template": "The opposite of '{a}' is '{b}'.",
+   "cloze_template": "The opposite of '{a}' is ___.",
+   "match_instruction": "Match each word to its opposite.",
+   "invert": false,
+   "pairs": [
+    [
+     "ancient",
+     "modern"
+    ],
+    [
+     "generous",
+     "selfish"
+    ],
+    [
+     "victory",
+     "defeat"
+    ],
+    [
+     "artificial",
+     "natural"
+    ],
+    [
+     "expand",
+     "shrink"
+    ],
+    [
+     "permanent",
+     "temporary"
+    ],
+    [
+     "courage",
+     "cowardice"
+    ],
+    [
+     "wealth",
+     "poverty"
+    ],
+    [
+     "praise",
+     "blame"
+    ],
+    [
+     "accept",
+     "reject"
+    ],
+    [
+     "ascend",
+     "descend"
+    ],
+    [
+     "include",
+     "exclude"
+    ]
+   ]
+  },
+  {
+   "name": "synonyms",
+   "chapter": "Unit 1: Let's Have Fun",
+   "a_label": "word",
+   "b_label": "synonym",
+   "tf_template": "The word '{a}' means the same as '{b}'.",
+   "cloze_template": "The word '{a}' means the same as ___.",
+   "match_instruction": "Match each word to its synonym (a word with the same meaning).",
+   "invert": false,
+   "pairs": [
+    [
+     "brave",
+     "courageous"
+    ],
+    [
+     "happy",
+     "cheerful"
+    ],
+    [
+     "big",
+     "enormous"
+    ],
+    [
+     "rich",
+     "wealthy"
+    ],
+    [
+     "fast",
+     "rapid"
+    ],
+    [
+     "clever",
+     "intelligent"
+    ],
+    [
+     "tired",
+     "exhausted"
+    ],
+    [
+     "beautiful",
+     "gorgeous"
+    ],
+    [
+     "angry",
+     "furious"
+    ],
+    [
+     "start",
+     "begin"
+    ],
+    [
+     "enormous",
+     "huge"
+    ],
+    [
+     "ancient",
+     "old"
+    ],
+    [
+     "difficult",
+     "hard"
+    ],
+    [
+     "famous",
+     "well-known"
+    ],
+    [
+     "assist",
+     "help"
+    ]
+   ]
+  },
+  {
+   "name": "singular_to_plural",
+   "chapter": "Unit 3: Water",
+   "a_label": "singular",
+   "b_label": "plural",
+   "tf_template": "The plural of '{a}' is '{b}'.",
+   "cloze_template": "The plural of '{a}' is ___.",
+   "match_instruction": "Match each singular word to its plural form.",
+   "invert": false,
+   "pairs": [
+    [
+     "child",
+     "children"
+    ],
+    [
+     "mouse",
+     "mice"
+    ],
+    [
+     "tooth",
+     "teeth"
+    ],
+    [
+     "foot",
+     "feet"
+    ],
+    [
+     "man",
+     "men"
+    ],
+    [
+     "woman",
+     "women"
+    ],
+    [
+     "leaf",
+     "leaves"
+    ],
+    [
+     "knife",
+     "knives"
+    ],
+    [
+     "city",
+     "cities"
+    ],
+    [
+     "baby",
+     "babies"
+    ],
+    [
+     "box",
+     "boxes"
+    ],
+    [
+     "goose",
+     "geese"
+    ]
+   ]
+  },
+  {
+   "name": "masculine_to_feminine",
+   "chapter": "Unit 5: Work is Worship",
+   "a_label": "masculine",
+   "b_label": "feminine",
+   "tf_template": "The feminine of '{a}' is '{b}'.",
+   "cloze_template": "The feminine of '{a}' is ___.",
+   "match_instruction": "Match each masculine (male) word to its feminine (female) word.",
+   "invert": false,
+   "pairs": [
+    [
+     "king",
+     "queen"
+    ],
+    [
+     "prince",
+     "princess"
+    ],
+    [
+     "uncle",
+     "aunt"
+    ],
+    [
+     "nephew",
+     "niece"
+    ],
+    [
+     "son",
+     "daughter"
+    ],
+    [
+     "father",
+     "mother"
+    ],
+    [
+     "brother",
+     "sister"
+    ],
+    [
+     "husband",
+     "wife"
+    ],
+    [
+     "lion",
+     "lioness"
+    ],
+    [
+     "tiger",
+     "tigress"
+    ],
+    [
+     "gentleman",
+     "lady"
+    ],
+    [
+     "bull",
+     "cow"
+    ]
+   ]
+  },
+  {
+   "name": "present_to_past_tense",
+   "chapter": "Unit 3: Water",
+   "a_label": "present tense",
+   "b_label": "past tense",
+   "tf_template": "The past tense of '{a}' is '{b}'.",
+   "cloze_template": "The past tense of '{a}' is ___.",
+   "match_instruction": "Match each present-tense verb to its past-tense form.",
+   "invert": false,
+   "pairs": [
+    [
+     "go",
+     "went"
+    ],
+    [
+     "eat",
+     "ate"
+    ],
+    [
+     "run",
+     "ran"
+    ],
+    [
+     "swim",
+     "swam"
+    ],
+    [
+     "write",
+     "wrote"
+    ],
+    [
+     "bring",
+     "brought"
+    ],
+    [
+     "catch",
+     "caught"
+    ],
+    [
+     "teach",
+     "taught"
+    ],
+    [
+     "buy",
+     "bought"
+    ],
+    [
+     "think",
+     "thought"
+    ],
+    [
+     "sing",
+     "sang"
+    ],
+    [
+     "drink",
+     "drank"
+    ],
+    [
+     "begin",
+     "began"
+    ],
+    [
+     "choose",
+     "chose"
+    ],
+    [
+     "fly",
+     "flew"
+    ]
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "statement": "English has five vowels: a, e, i, o and u.",
+   "chapter": "Unit 1: Let's Have Fun"
+  },
+  {
+   "statement": "The alphabet has 26 letters, so the other 21 letters are called consonants.",
+   "chapter": "Unit 1: Let's Have Fun"
+  },
+  {
+   "statement": "A naming word for a person, place, animal or thing is called a noun.",
+   "chapter": "Unit 5: Work is Worship"
+  },
+  {
+   "statement": "A word that shows an action, such as run or jump, is called a verb.",
+   "chapter": "Unit 5: Work is Worship"
+  },
+  {
+   "statement": "We use 'an' before words that begin with a vowel sound and 'a' before words that begin with a consonant sound.",
+   "chapter": "Unit 1: Let's Have Fun"
+  },
+  {
+   "statement": "A word that describes a noun, such as tall, blue or gentle, is called an adjective.",
+   "chapter": "Unit 2: My Colourful World"
+  },
+  {
+   "statement": "The special names of people, places and days begin with a capital letter and are called proper nouns.",
+   "chapter": "Unit 5: Work is Worship"
+  },
+  {
+   "statement": "A sentence begins with a capital letter and usually ends with a full stop.",
+   "chapter": "Unit 1: Let's Have Fun"
+  },
+  {
+   "statement": "A sentence that asks something ends with a question mark (?).",
+   "chapter": "Unit 4: Ups and Downs"
+  },
+  {
+   "statement": "Words that have opposite meanings, such as up and down, are called antonyms.",
+   "chapter": "Unit 4: Ups and Downs"
+  },
+  {
+   "statement": "Words that have the same or nearly the same meaning are called synonyms.",
+   "chapter": "Unit 1: Let's Have Fun"
+  },
+  {
+   "statement": "A word that takes the place of a noun, such as he, she, it or they, is called a pronoun.",
+   "chapter": "Unit 3: Water"
+  },
+  {
+   "statement": "A word that describes a verb is called an adverb.",
+   "chapter": "Grammar"
+  },
+  {
+   "statement": "Most adverbs of manner end in 'ly'.",
+   "chapter": "Grammar"
+  },
+  {
+   "statement": "A preposition shows where or when something is.",
+   "chapter": "Grammar"
+  },
+  {
+   "statement": "The plural of 'child' is 'children'.",
+   "chapter": "Grammar"
+  }
+ ]
 }

@@ -1,430 +1,515 @@
 {
-  "subject": "EVS",
-  "class": 1,
-  "strings": {
-    "kb_title": "Grade 1 EVS Knowledge Base",
-    "grade_note": "Age ~6, CBSE/ICSE primary. Very simple, concrete facts a 6-year-old knows."
+ "subject": "EVS",
+ "class": 1,
+ "strings": {
+  "kb_title": "Grade 1 EVS Knowledge Base",
+  "grade_note": "Age ~6, CBSE/ICSE primary. Very simple, concrete facts a 6-year-old knows."
+ },
+ "categories": [
+  {
+   "name": "body_parts",
+   "label": "a body part",
+   "chapter": "About Me",
+   "members": [
+    "eye",
+    "ear",
+    "nose",
+    "hand",
+    "leg",
+    "mouth",
+    "hair"
+   ]
   },
-  "categories": [
-    {
-      "name": "body_parts",
-      "label": "a body part",
-      "chapter": "About Me",
-      "members": [
-        "eye",
-        "ear",
-        "nose",
-        "hand",
-        "leg",
-        "mouth",
-        "hair"
-      ]
-    },
-    {
-      "name": "fruits",
-      "label": "a fruit",
-      "chapter": "My Needs - Food We Eat",
-      "members": [
-        "mango",
-        "banana",
-        "apple",
-        "orange",
-        "guava",
-        "pear"
-      ]
-    },
-    {
-      "name": "vegetables",
-      "label": "a vegetable",
-      "chapter": "My Needs - Food We Eat",
-      "members": [
-        "potato",
-        "onion",
-        "carrot",
-        "brinjal",
-        "cabbage",
-        "radish"
-      ]
-    },
-    {
-      "name": "wild_animals",
-      "label": "a wild animal",
-      "chapter": "Animals",
-      "members": [
-        "lion",
-        "tiger",
-        "elephant",
-        "monkey",
-        "bear",
-        "zebra"
-      ]
-    },
-    {
-      "name": "vehicles",
-      "label": "a vehicle",
-      "chapter": "Transport",
-      "members": [
-        "car",
-        "bus",
-        "truck",
-        "train",
-        "bicycle",
-        "aeroplane"
-      ]
-    },
-    {
-      "name": "water_sources",
-      "label": "a source of water",
-      "chapter": "My Needs - Water",
-      "members": [
-        "river",
-        "pond",
-        "lake",
-        "well",
-        "rain",
-        "sea"
-      ]
-    }
-  ],
-  "groupings": [
-    {
-      "name": "living_nonliving",
-      "chapter": "Others in my World",
-      "sort_instruction": "Sort each thing into living or non-living.",
-      "tf_template": "{art} {item} is a {bin}.",
-      "bins": {
-        "living thing": [
-          "dog",
-          "cat",
-          "cow",
-          "bird",
-          "fish",
-          "tree"
-        ],
-        "non-living thing": [
-          "chair",
-          "table",
-          "ball",
-          "book",
-          "stone",
-          "car"
-        ]
-      }
-    },
-    {
-      "name": "wild_domestic",
-      "chapter": "Animals",
-      "sort_instruction": "Sort each animal into wild or domestic.",
-      "tf_template": "{art} {item} is a {bin}.",
-      "bins": {
-        "wild animal": [
-          "lion",
-          "tiger",
-          "elephant",
-          "monkey",
-          "bear",
-          "deer"
-        ],
-        "domestic animal": [
-          "cow",
-          "dog",
-          "cat",
-          "goat",
-          "hen",
-          "horse"
-        ]
-      }
-    },
-    {
-      "name": "fruit_vegetable",
-      "chapter": "My Needs - Food We Eat",
-      "sort_instruction": "Sort each food into fruit or vegetable.",
-      "tf_template": "{art} {item} is a {bin}.",
-      "bins": {
-        "fruit": [
-          "mango",
-          "apple",
-          "banana",
-          "orange",
-          "guava",
-          "pear"
-        ],
-        "vegetable": [
-          "potato",
-          "onion",
-          "carrot",
-          "brinjal",
-          "cabbage",
-          "radish"
-        ]
-      }
-    }
-  ],
-  "relations": [
-    {
-      "name": "animal_home",
-      "chapter": "Animals",
-      "a_label": "animal",
-      "b_label": "home",
-      "tf_template": "The home of a {a} is a {b}.",
-      "cloze_template": "The home of a {a} is a ___.",
-      "match_instruction": "Match each animal to its home.",
-      "pairs": [
-        [
-          "dog",
-          "kennel"
-        ],
-        [
-          "lion",
-          "den"
-        ],
-        [
-          "bird",
-          "nest"
-        ],
-        [
-          "bee",
-          "hive"
-        ],
-        [
-          "horse",
-          "stable"
-        ],
-        [
-          "hen",
-          "coop"
-        ],
-        [
-          "rabbit",
-          "burrow"
-        ],
-        [
-          "cow",
-          "shed"
-        ]
-      ]
-    },
-    {
-      "name": "animal_sound",
-      "chapter": "Animals",
-      "a_label": "animal",
-      "b_label": "sound",
-      "tf_template": "A {a} {b}.",
-      "cloze_template": "A {a} ___.",
-      "match_instruction": "Match each animal to the sound it makes.",
-      "pairs": [
-        [
-          "dog",
-          "barks"
-        ],
-        [
-          "cat",
-          "mews"
-        ],
-        [
-          "cow",
-          "moos"
-        ],
-        [
-          "lion",
-          "roars"
-        ],
-        [
-          "duck",
-          "quacks"
-        ],
-        [
-          "horse",
-          "neighs"
-        ],
-        [
-          "hen",
-          "clucks"
-        ],
-        [
-          "snake",
-          "hisses"
-        ]
-      ]
-    },
-    {
-      "name": "body_part_job",
-      "chapter": "About Me",
-      "a_label": "body part",
-      "b_label": "job",
-      "tf_template": "We {b} with our {a}.",
-      "cloze_template": "We ___ with our {a}.",
-      "match_instruction": "Match each body part to what it does.",
-      "pairs": [
-        [
-          "eyes",
-          "see"
-        ],
-        [
-          "ears",
-          "hear"
-        ],
-        [
-          "nose",
-          "smell"
-        ],
-        [
-          "tongue",
-          "taste"
-        ],
-        [
-          "legs",
-          "walk"
-        ],
-        [
-          "hands",
-          "hold"
-        ],
-        [
-          "teeth",
-          "chew"
-        ],
-        [
-          "skin",
-          "feel"
-        ]
-      ]
-    },
-    {
-      "name": "worker_tool",
-      "chapter": "Others in my World",
-      "a_label": "worker",
-      "b_label": "tool",
-      "tf_template": "A {a} uses a {b}.",
-      "cloze_template": "A {a} uses a ___.",
-      "match_instruction": "Match each worker to the tool they use.",
-      "pairs": [
-        [
-          "doctor",
-          "stethoscope"
-        ],
-        [
-          "carpenter",
-          "hammer"
-        ],
-        [
-          "farmer",
-          "plough"
-        ],
-        [
-          "tailor",
-          "needle"
-        ],
-        [
-          "barber",
-          "comb"
-        ],
-        [
-          "painter",
-          "brush"
-        ],
-        [
-          "gardener",
-          "spade"
-        ],
-        [
-          "sweeper",
-          "broom"
-        ]
-      ]
-    },
-    {
-      "name": "animal_baby",
-      "chapter": "Animals",
-      "a_label": "animal",
-      "b_label": "baby",
-      "tf_template": "The baby of a {a} is a {b}.",
-      "cloze_template": "The baby of a {a} is a ___.",
-      "match_instruction": "Match each animal to its baby.",
-      "pairs": [
-        [
-          "cow",
-          "calf"
-        ],
-        [
-          "dog",
-          "puppy"
-        ],
-        [
-          "cat",
-          "kitten"
-        ],
-        [
-          "hen",
-          "chick"
-        ],
-        [
-          "horse",
-          "foal"
-        ],
-        [
-          "lion",
-          "cub"
-        ],
-        [
-          "goat",
-          "kid"
-        ],
-        [
-          "sheep",
-          "lamb"
-        ]
-      ]
-    }
-  ],
-  "facts": [
-    {
-      "statement": "Plants need water, air and sunlight to grow.",
-      "chapter": "Plants"
-    },
-    {
-      "statement": "A plant has roots, a stem and leaves.",
-      "chapter": "Plants"
-    },
-    {
-      "statement": "We should always drink clean water.",
-      "chapter": "My Needs - Water"
-    },
-    {
-      "statement": "Water has no colour of its own.",
-      "chapter": "My Needs - Water"
-    },
-    {
-      "statement": "We have two eyes, two ears and one nose.",
-      "chapter": "About Me"
-    },
-    {
-      "statement": "We should wash our hands before we eat.",
-      "chapter": "Keeping Oneself Clean, Safe and Healthy"
-    },
-    {
-      "statement": "The cow gives us milk.",
-      "chapter": "Animals"
-    },
-    {
-      "statement": "The Sun gives us light and heat.",
-      "chapter": "The World around Me (Sun, Moon, Sky and Stars)"
-    },
-    {
-      "statement": "We can see the Moon and the stars in the sky at night.",
-      "chapter": "The World around Me (Sun, Moon, Sky and Stars)"
-    },
-    {
-      "statement": "We breathe in air to stay alive.",
-      "chapter": "My Needs - Air"
-    },
-    {
-      "statement": "A bird has two wings and can fly.",
-      "chapter": "Animals"
-    },
-    {
-      "statement": "We eat food to grow big and strong.",
-      "chapter": "My Needs - Food We Eat"
-    }
-  ]
+  {
+   "name": "fruits",
+   "label": "a fruit",
+   "chapter": "My Needs - Food We Eat",
+   "members": [
+    "mango",
+    "banana",
+    "apple",
+    "orange",
+    "guava",
+    "pear"
+   ]
+  },
+  {
+   "name": "vegetables",
+   "label": "a vegetable",
+   "chapter": "My Needs - Food We Eat",
+   "members": [
+    "potato",
+    "onion",
+    "carrot",
+    "brinjal",
+    "cabbage",
+    "radish"
+   ]
+  },
+  {
+   "name": "wild_animals",
+   "label": "a wild animal",
+   "chapter": "Animals",
+   "members": [
+    "lion",
+    "tiger",
+    "elephant",
+    "monkey",
+    "bear",
+    "zebra"
+   ]
+  },
+  {
+   "name": "vehicles",
+   "label": "a vehicle",
+   "chapter": "Transport",
+   "members": [
+    "car",
+    "bus",
+    "truck",
+    "train",
+    "bicycle",
+    "aeroplane"
+   ]
+  },
+  {
+   "name": "water_sources",
+   "label": "a source of water",
+   "chapter": "My Needs - Water",
+   "members": [
+    "river",
+    "pond",
+    "lake",
+    "well",
+    "rain",
+    "sea"
+   ]
+  },
+  {
+   "name": "Farm animals",
+   "label": "a farm animal",
+   "chapter": "Animals",
+   "members": [
+    "Cow",
+    "Goat",
+    "Hen",
+    "Duck",
+    "Sheep",
+    "Horse"
+   ]
+  },
+  {
+   "name": "Things at school",
+   "label": "a school thing",
+   "chapter": "School",
+   "members": [
+    "Bag",
+    "Pencil",
+    "Book",
+    "Slate",
+    "Chalk",
+    "Board"
+   ]
+  }
+ ],
+ "groupings": [
+  {
+   "name": "living_nonliving",
+   "chapter": "Others in my World",
+   "sort_instruction": "Sort each thing into living or non-living.",
+   "tf_template": "{art} {item} is a {bin}.",
+   "bins": {
+    "living thing": [
+     "dog",
+     "cat",
+     "cow",
+     "bird",
+     "fish",
+     "tree"
+    ],
+    "non-living thing": [
+     "chair",
+     "table",
+     "ball",
+     "book",
+     "stone",
+     "car"
+    ]
+   }
+  },
+  {
+   "name": "wild_domestic",
+   "chapter": "Animals",
+   "sort_instruction": "Sort each animal into wild or domestic.",
+   "tf_template": "{art} {item} is a {bin}.",
+   "bins": {
+    "wild animal": [
+     "lion",
+     "tiger",
+     "elephant",
+     "monkey",
+     "bear",
+     "deer"
+    ],
+    "domestic animal": [
+     "cow",
+     "dog",
+     "cat",
+     "goat",
+     "hen",
+     "horse"
+    ]
+   }
+  },
+  {
+   "name": "fruit_vegetable",
+   "chapter": "My Needs - Food We Eat",
+   "sort_instruction": "Sort each food into fruit or vegetable.",
+   "tf_template": "{art} {item} is a {bin}.",
+   "bins": {
+    "fruit": [
+     "mango",
+     "apple",
+     "banana",
+     "orange",
+     "guava",
+     "pear"
+    ],
+    "vegetable": [
+     "potato",
+     "onion",
+     "carrot",
+     "brinjal",
+     "cabbage",
+     "radish"
+    ]
+   }
+  }
+ ],
+ "relations": [
+  {
+   "name": "animal_home",
+   "chapter": "Animals",
+   "a_label": "animal",
+   "b_label": "home",
+   "tf_template": "The home of a {a} is a {b}.",
+   "cloze_template": "The home of a {a} is a ___.",
+   "match_instruction": "Match each animal to its home.",
+   "pairs": [
+    [
+     "dog",
+     "kennel"
+    ],
+    [
+     "lion",
+     "den"
+    ],
+    [
+     "bird",
+     "nest"
+    ],
+    [
+     "bee",
+     "hive"
+    ],
+    [
+     "horse",
+     "stable"
+    ],
+    [
+     "hen",
+     "coop"
+    ],
+    [
+     "rabbit",
+     "burrow"
+    ],
+    [
+     "cow",
+     "shed"
+    ]
+   ]
+  },
+  {
+   "name": "animal_sound",
+   "chapter": "Animals",
+   "a_label": "animal",
+   "b_label": "sound",
+   "tf_template": "A {a} {b}.",
+   "cloze_template": "A {a} ___.",
+   "match_instruction": "Match each animal to the sound it makes.",
+   "pairs": [
+    [
+     "dog",
+     "barks"
+    ],
+    [
+     "cat",
+     "mews"
+    ],
+    [
+     "cow",
+     "moos"
+    ],
+    [
+     "lion",
+     "roars"
+    ],
+    [
+     "duck",
+     "quacks"
+    ],
+    [
+     "horse",
+     "neighs"
+    ],
+    [
+     "hen",
+     "clucks"
+    ],
+    [
+     "snake",
+     "hisses"
+    ],
+    [
+     "sheep",
+     "baa"
+    ]
+   ]
+  },
+  {
+   "name": "body_part_job",
+   "chapter": "About Me",
+   "a_label": "body part",
+   "b_label": "job",
+   "tf_template": "We {b} with our {a}.",
+   "cloze_template": "We ___ with our {a}.",
+   "match_instruction": "Match each body part to what it does.",
+   "pairs": [
+    [
+     "eyes",
+     "see"
+    ],
+    [
+     "ears",
+     "hear"
+    ],
+    [
+     "nose",
+     "smell"
+    ],
+    [
+     "tongue",
+     "taste"
+    ],
+    [
+     "legs",
+     "walk"
+    ],
+    [
+     "hands",
+     "hold"
+    ],
+    [
+     "teeth",
+     "chew"
+    ],
+    [
+     "skin",
+     "feel"
+    ]
+   ]
+  },
+  {
+   "name": "worker_tool",
+   "chapter": "Others in my World",
+   "a_label": "worker",
+   "b_label": "tool",
+   "tf_template": "A {a} uses a {b}.",
+   "cloze_template": "A {a} uses a ___.",
+   "match_instruction": "Match each worker to the tool they use.",
+   "pairs": [
+    [
+     "doctor",
+     "stethoscope"
+    ],
+    [
+     "carpenter",
+     "hammer"
+    ],
+    [
+     "farmer",
+     "plough"
+    ],
+    [
+     "tailor",
+     "needle"
+    ],
+    [
+     "barber",
+     "comb"
+    ],
+    [
+     "painter",
+     "brush"
+    ],
+    [
+     "gardener",
+     "spade"
+    ],
+    [
+     "sweeper",
+     "broom"
+    ]
+   ]
+  },
+  {
+   "name": "animal_baby",
+   "chapter": "Animals",
+   "a_label": "animal",
+   "b_label": "baby",
+   "tf_template": "The baby of a {a} is a {b}.",
+   "cloze_template": "The baby of a {a} is a ___.",
+   "match_instruction": "Match each animal to its baby.",
+   "pairs": [
+    [
+     "cow",
+     "calf"
+    ],
+    [
+     "dog",
+     "puppy"
+    ],
+    [
+     "cat",
+     "kitten"
+    ],
+    [
+     "hen",
+     "chick"
+    ],
+    [
+     "horse",
+     "foal"
+    ],
+    [
+     "lion",
+     "cub"
+    ],
+    [
+     "goat",
+     "kid"
+    ],
+    [
+     "sheep",
+     "lamb"
+    ]
+   ]
+  },
+  {
+   "name": "sense_organ",
+   "chapter": "Human Body",
+   "a_label": "sense",
+   "b_label": "body part",
+   "tf_template": "We {a} with our {b}.",
+   "cloze_template": "We {a} with our ___.",
+   "match_instruction": "Match each sense with the right body part.",
+   "pairs": [
+    [
+     "see",
+     "eyes"
+    ],
+    [
+     "hear",
+     "ears"
+    ],
+    [
+     "smell",
+     "nose"
+    ],
+    [
+     "taste",
+     "tongue"
+    ],
+    [
+     "touch",
+     "skin"
+    ]
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "statement": "Plants need water, air and sunlight to grow.",
+   "chapter": "Plants"
+  },
+  {
+   "statement": "A plant has roots, a stem and leaves.",
+   "chapter": "Plants"
+  },
+  {
+   "statement": "We should always drink clean water.",
+   "chapter": "My Needs - Water"
+  },
+  {
+   "statement": "Water has no colour of its own.",
+   "chapter": "My Needs - Water"
+  },
+  {
+   "statement": "We have two eyes, two ears and one nose.",
+   "chapter": "About Me"
+  },
+  {
+   "statement": "We should wash our hands before we eat.",
+   "chapter": "Keeping Oneself Clean, Safe and Healthy"
+  },
+  {
+   "statement": "The cow gives us milk.",
+   "chapter": "Animals"
+  },
+  {
+   "statement": "The Sun gives us light and heat.",
+   "chapter": "The World around Me (Sun, Moon, Sky and Stars)"
+  },
+  {
+   "statement": "We can see the Moon and the stars in the sky at night.",
+   "chapter": "The World around Me (Sun, Moon, Sky and Stars)"
+  },
+  {
+   "statement": "We breathe in air to stay alive.",
+   "chapter": "My Needs - Air"
+  },
+  {
+   "statement": "A bird has two wings and can fly.",
+   "chapter": "Animals"
+  },
+  {
+   "statement": "We eat food to grow big and strong.",
+   "chapter": "My Needs - Food We Eat"
+  },
+  {
+   "statement": "We need water to drink.",
+   "chapter": "Water"
+  },
+  {
+   "statement": "The sun gives us light.",
+   "chapter": "Sun"
+  },
+  {
+   "statement": "We use our eyes to see.",
+   "chapter": "Human Body"
+  },
+  {
+   "statement": "A cow gives us milk.",
+   "chapter": "Animals"
+  },
+  {
+   "statement": "Plants need water to grow.",
+   "chapter": "Plants"
+  },
+  {
+   "statement": "We should wash our hands before eating.",
+   "chapter": "Health"
+  }
+ ]
 }

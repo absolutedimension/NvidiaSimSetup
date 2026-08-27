@@ -1,461 +1,527 @@
 {
-  "subject": "English",
-  "class": 1,
-  "strings": {
-    "kb_title": "Grade 1 English Knowledge Base",
-    "grade_note": "Age ~6, CBSE/ICSE primary. Simplest concrete vocabulary; distinct from higher grades."
+ "subject": "English",
+ "class": 1,
+ "strings": {
+  "kb_title": "Grade 1 English Knowledge Base",
+  "grade_note": "Age ~6, CBSE/ICSE primary. Simplest concrete vocabulary; distinct from higher grades."
+ },
+ "categories": [
+  {
+   "name": "family_members",
+   "label": "a family member",
+   "chapter": "Unit 1: My Family and Me",
+   "members": [
+    "mother",
+    "father",
+    "sister",
+    "brother",
+    "grandmother",
+    "grandfather"
+   ]
   },
-  "categories": [
-    {
-      "name": "family_members",
-      "label": "a family member",
-      "chapter": "Unit 1: My Family and Me",
-      "members": [
-        "mother",
-        "father",
-        "sister",
-        "brother",
-        "grandmother",
-        "grandfather"
-      ]
-    },
-    {
-      "name": "body_parts",
-      "label": "a body part",
-      "chapter": "Unit 1: My Family and Me",
-      "members": [
-        "hand",
-        "leg",
-        "eye",
-        "ear",
-        "nose",
-        "mouth"
-      ]
-    },
-    {
-      "name": "fruits",
-      "label": "a fruit",
-      "chapter": "Unit 3: Food",
-      "members": [
-        "apple",
-        "banana",
-        "mango",
-        "orange",
-        "grapes",
-        "guava"
-      ]
-    },
-    {
-      "name": "vegetables",
-      "label": "a vegetable",
-      "chapter": "Unit 3: Food",
-      "members": [
-        "potato",
-        "tomato",
-        "carrot",
-        "onion",
-        "peas",
-        "cabbage"
-      ]
-    },
-    {
-      "name": "animals",
-      "label": "an animal",
-      "chapter": "Unit 2: Life Around Us",
-      "members": [
-        "dog",
-        "cat",
-        "cow",
-        "goat",
-        "horse",
-        "lion"
-      ]
-    },
-    {
-      "name": "colour_words",
-      "label": "a colour",
-      "chapter": "Unit 2: Life Around Us",
-      "members": [
-        "red",
-        "blue",
-        "green",
-        "yellow",
-        "black",
-        "white"
-      ]
-    }
-  ],
-  "groupings": [
-    {
-      "name": "naming_vs_doing_words",
-      "chapter": "Unit 2: Life Around Us",
-      "sort_instruction": "Sort each word into a naming word or a doing word.",
-      "tf_template": "{art} '{item}' is a {bin}.",
-      "bins": {
-        "naming word": [
-          "apple",
-          "ball",
-          "chair",
-          "table",
-          "flower",
-          "tree"
-        ],
-        "doing word": [
-          "eat",
-          "sing",
-          "sleep",
-          "read",
-          "write",
-          "drink"
-        ]
-      }
-    },
-    {
-      "name": "a_vs_an",
-      "chapter": "Unit 2: Life Around Us",
-      "sort_instruction": "Sort each word by the word we put before it: 'a' or 'an'.",
-      "tf_template": "We use '{bin}' before the word '{item}'.",
-      "bins": {
-        "a": [
-          "ball",
-          "cat",
-          "dog",
-          "pen",
-          "book",
-          "table"
-        ],
-        "an": [
-          "apple",
-          "egg",
-          "orange",
-          "umbrella",
-          "ant",
-          "insect"
-        ]
-      }
-    },
-    {
-      "name": "rhyming_families",
-      "chapter": "Unit 2: Life Around Us",
-      "sort_instruction": "Sort each word into its rhyming family.",
-      "tf_template": "The word '{item}' is in the {bin}.",
-      "bins": {
-        "'-at' family": [
-          "cat",
-          "hat",
-          "bat",
-          "mat",
-          "rat",
-          "sat"
-        ],
-        "'-og' family": [
-          "dog",
-          "log",
-          "fog",
-          "frog",
-          "jog",
-          "hog"
-        ]
-      }
-    }
-  ],
-  "relations": [
-    {
-      "name": "opposites",
-      "chapter": "Unit 2: Life Around Us",
-      "a_label": "Word",
-      "b_label": "Opposite",
-      "tf_template": "The opposite of '{a}' is '{b}'.",
-      "cloze_template": "The opposite of '{a}' is ___.",
-      "match_instruction": "Match each word to its opposite.",
-      "pairs": [
-        [
-          "big",
-          "small"
-        ],
-        [
-          "hot",
-          "cold"
-        ],
-        [
-          "up",
-          "down"
-        ],
-        [
-          "day",
-          "night"
-        ],
-        [
-          "fast",
-          "slow"
-        ],
-        [
-          "tall",
-          "short"
-        ],
-        [
-          "happy",
-          "sad"
-        ],
-        [
-          "wet",
-          "dry"
-        ],
-        [
-          "old",
-          "new"
-        ],
-        [
-          "in",
-          "out"
-        ]
-      ]
-    },
-    {
-      "name": "singular_to_plural",
-      "chapter": "Unit 2: Life Around Us",
-      "a_label": "One",
-      "b_label": "Many",
-      "tf_template": "The plural of '{a}' is '{b}'.",
-      "cloze_template": "The plural of '{a}' is ___.",
-      "match_instruction": "Match each naming word to its plural.",
-      "pairs": [
-        [
-          "cat",
-          "cats"
-        ],
-        [
-          "dog",
-          "dogs"
-        ],
-        [
-          "book",
-          "books"
-        ],
-        [
-          "apple",
-          "apples"
-        ],
-        [
-          "ball",
-          "balls"
-        ],
-        [
-          "boy",
-          "boys"
-        ],
-        [
-          "girl",
-          "girls"
-        ],
-        [
-          "tree",
-          "trees"
-        ],
-        [
-          "box",
-          "boxes"
-        ],
-        [
-          "bus",
-          "buses"
-        ]
-      ]
-    },
-    {
-      "name": "gender_masculine_to_feminine",
-      "chapter": "Unit 1: My Family and Me",
-      "a_label": "Masculine",
-      "b_label": "Feminine",
-      "tf_template": "The opposite gender of '{a}' is '{b}'.",
-      "cloze_template": "The opposite gender of '{a}' is ___.",
-      "match_instruction": "Match each word to its opposite gender.",
-      "pairs": [
-        [
-          "boy",
-          "girl"
-        ],
-        [
-          "man",
-          "woman"
-        ],
-        [
-          "king",
-          "queen"
-        ],
-        [
-          "father",
-          "mother"
-        ],
-        [
-          "brother",
-          "sister"
-        ],
-        [
-          "uncle",
-          "aunt"
-        ],
-        [
-          "grandfather",
-          "grandmother"
-        ],
-        [
-          "son",
-          "daughter"
-        ]
-      ]
-    },
-    {
-      "name": "present_to_past_tense",
-      "chapter": "Unit 2: Life Around Us",
-      "a_label": "Present",
-      "b_label": "Past",
-      "tf_template": "The past tense of '{a}' is '{b}'.",
-      "cloze_template": "The past tense of '{a}' is ___.",
-      "match_instruction": "Match each doing word to its past tense.",
-      "pairs": [
-        [
-          "go",
-          "went"
-        ],
-        [
-          "eat",
-          "ate"
-        ],
-        [
-          "run",
-          "ran"
-        ],
-        [
-          "sit",
-          "sat"
-        ],
-        [
-          "come",
-          "came"
-        ],
-        [
-          "see",
-          "saw"
-        ],
-        [
-          "play",
-          "played"
-        ],
-        [
-          "jump",
-          "jumped"
-        ],
-        [
-          "look",
-          "looked"
-        ],
-        [
-          "sing",
-          "sang"
-        ]
-      ]
-    },
-    {
-      "name": "synonyms",
-      "chapter": "Unit 2: Life Around Us",
-      "a_label": "Word",
-      "b_label": "Same meaning",
-      "tf_template": "'{a}' means the same as '{b}'.",
-      "cloze_template": "'{a}' means the same as ___.",
-      "match_instruction": "Match each word to the word with the same meaning.",
-      "pairs": [
-        [
-          "big",
-          "large"
-        ],
-        [
-          "small",
-          "little"
-        ],
-        [
-          "happy",
-          "glad"
-        ],
-        [
-          "sad",
-          "unhappy"
-        ],
-        [
-          "fast",
-          "quick"
-        ],
-        [
-          "jump",
-          "hop"
-        ],
-        [
-          "begin",
-          "start"
-        ],
-        [
-          "shut",
-          "close"
-        ]
-      ]
-    }
-  ],
-  "facts": [
-    {
-      "statement": "The English alphabet has 26 letters.",
-      "chapter": "Unit 2: Life Around Us"
-    },
-    {
-      "statement": "The five vowels are a, e, i, o and u.",
-      "chapter": "Unit 2: Life Around Us"
-    },
-    {
-      "statement": "All the letters that are not vowels are called consonants.",
-      "chapter": "Unit 2: Life Around Us"
-    },
-    {
-      "statement": "A naming word is the name of a person, animal, place or thing.",
-      "chapter": "Unit 2: Life Around Us"
-    },
-    {
-      "statement": "A doing word tells us what someone or something does.",
-      "chapter": "Unit 2: Life Around Us"
-    },
-    {
-      "statement": "We use 'a' before words that begin with a consonant sound, like 'a ball'.",
-      "chapter": "Unit 2: Life Around Us"
-    },
-    {
-      "statement": "We use 'an' before words that begin with a vowel sound, like 'an apple'.",
-      "chapter": "Unit 3: Food"
-    },
-    {
-      "statement": "Every sentence begins with a capital letter.",
-      "chapter": "Unit 2: Life Around Us"
-    },
-    {
-      "statement": "A telling sentence ends with a full stop.",
-      "chapter": "Unit 2: Life Around Us"
-    },
-    {
-      "statement": "The word 'I' is always written as a capital letter.",
-      "chapter": "Unit 1: My Family and Me"
-    },
-    {
-      "statement": "The name of a person begins with a capital letter.",
-      "chapter": "Unit 1: My Family and Me"
-    },
-    {
-      "statement": "In summer the weather is very hot.",
-      "chapter": "Unit 4: Seasons"
-    },
-    {
-      "statement": "In winter the weather is very cold.",
-      "chapter": "Unit 4: Seasons"
-    },
-    {
-      "statement": "In the rainy season it rains a lot.",
-      "chapter": "Unit 4: Seasons"
-    }
-  ]
+  {
+   "name": "body_parts",
+   "label": "a body part",
+   "chapter": "Unit 1: My Family and Me",
+   "members": [
+    "hand",
+    "leg",
+    "eye",
+    "ear",
+    "nose",
+    "mouth"
+   ]
+  },
+  {
+   "name": "fruits",
+   "label": "a fruit",
+   "chapter": "Unit 3: Food",
+   "members": [
+    "apple",
+    "banana",
+    "mango",
+    "orange",
+    "grapes",
+    "guava"
+   ]
+  },
+  {
+   "name": "vegetables",
+   "label": "a vegetable",
+   "chapter": "Unit 3: Food",
+   "members": [
+    "potato",
+    "tomato",
+    "carrot",
+    "onion",
+    "peas",
+    "cabbage"
+   ]
+  },
+  {
+   "name": "animals",
+   "label": "an animal",
+   "chapter": "Unit 2: Life Around Us",
+   "members": [
+    "dog",
+    "cat",
+    "cow",
+    "goat",
+    "horse",
+    "lion"
+   ]
+  },
+  {
+   "name": "colour_words",
+   "label": "a colour",
+   "chapter": "Unit 2: Life Around Us",
+   "members": [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "black",
+    "white"
+   ]
+  },
+  {
+   "name": "action_words",
+   "label": "an action word",
+   "chapter": "Grammar",
+   "members": [
+    "run",
+    "jump",
+    "sing",
+    "eat",
+    "sleep",
+    "read"
+   ]
+  },
+  {
+   "name": "school_things",
+   "label": "a school thing",
+   "chapter": "Words",
+   "members": [
+    "pencil",
+    "book",
+    "bag",
+    "chalk",
+    "board",
+    "eraser"
+   ]
+  }
+ ],
+ "groupings": [
+  {
+   "name": "naming_vs_doing_words",
+   "chapter": "Unit 2: Life Around Us",
+   "sort_instruction": "Sort each word into a naming word or a doing word.",
+   "tf_template": "{art} '{item}' is a {bin}.",
+   "bins": {
+    "naming word": [
+     "apple",
+     "ball",
+     "chair",
+     "table",
+     "flower",
+     "tree"
+    ],
+    "doing word": [
+     "eat",
+     "sing",
+     "sleep",
+     "read",
+     "write",
+     "drink"
+    ]
+   }
+  },
+  {
+   "name": "a_vs_an",
+   "chapter": "Unit 2: Life Around Us",
+   "sort_instruction": "Sort each word by the word we put before it: 'a' or 'an'.",
+   "tf_template": "We use '{bin}' before the word '{item}'.",
+   "bins": {
+    "a": [
+     "ball",
+     "cat",
+     "dog",
+     "pen",
+     "book",
+     "table"
+    ],
+    "an": [
+     "apple",
+     "egg",
+     "orange",
+     "umbrella",
+     "ant",
+     "insect"
+    ]
+   }
+  },
+  {
+   "name": "rhyming_families",
+   "chapter": "Unit 2: Life Around Us",
+   "sort_instruction": "Sort each word into its rhyming family.",
+   "tf_template": "The word '{item}' is in the {bin}.",
+   "bins": {
+    "'-at' family": [
+     "cat",
+     "hat",
+     "bat",
+     "mat",
+     "rat",
+     "sat"
+    ],
+    "'-og' family": [
+     "dog",
+     "log",
+     "fog",
+     "frog",
+     "jog",
+     "hog"
+    ]
+   }
+  }
+ ],
+ "relations": [
+  {
+   "name": "opposites",
+   "chapter": "Unit 2: Life Around Us",
+   "a_label": "Word",
+   "b_label": "Opposite",
+   "tf_template": "The opposite of '{a}' is '{b}'.",
+   "cloze_template": "The opposite of '{a}' is ___.",
+   "match_instruction": "Match each word to its opposite.",
+   "pairs": [
+    [
+     "big",
+     "small"
+    ],
+    [
+     "hot",
+     "cold"
+    ],
+    [
+     "up",
+     "down"
+    ],
+    [
+     "day",
+     "night"
+    ],
+    [
+     "fast",
+     "slow"
+    ],
+    [
+     "tall",
+     "short"
+    ],
+    [
+     "happy",
+     "sad"
+    ],
+    [
+     "wet",
+     "dry"
+    ],
+    [
+     "old",
+     "new"
+    ],
+    [
+     "in",
+     "out"
+    ],
+    [
+     "yes",
+     "no"
+    ],
+    [
+     "stop",
+     "go"
+    ],
+    [
+     "open",
+     "shut"
+    ]
+   ]
+  },
+  {
+   "name": "singular_to_plural",
+   "chapter": "Unit 2: Life Around Us",
+   "a_label": "One",
+   "b_label": "Many",
+   "tf_template": "The plural of '{a}' is '{b}'.",
+   "cloze_template": "The plural of '{a}' is ___.",
+   "match_instruction": "Match each naming word to its plural.",
+   "pairs": [
+    [
+     "cat",
+     "cats"
+    ],
+    [
+     "dog",
+     "dogs"
+    ],
+    [
+     "book",
+     "books"
+    ],
+    [
+     "apple",
+     "apples"
+    ],
+    [
+     "ball",
+     "balls"
+    ],
+    [
+     "boy",
+     "boys"
+    ],
+    [
+     "girl",
+     "girls"
+    ],
+    [
+     "tree",
+     "trees"
+    ],
+    [
+     "box",
+     "boxes"
+    ],
+    [
+     "bus",
+     "buses"
+    ],
+    [
+     "pen",
+     "pens"
+    ],
+    [
+     "cup",
+     "cups"
+    ],
+    [
+     "hat",
+     "hats"
+    ],
+    [
+     "bag",
+     "bags"
+    ]
+   ]
+  },
+  {
+   "name": "gender_masculine_to_feminine",
+   "chapter": "Unit 1: My Family and Me",
+   "a_label": "Masculine",
+   "b_label": "Feminine",
+   "tf_template": "The opposite gender of '{a}' is '{b}'.",
+   "cloze_template": "The opposite gender of '{a}' is ___.",
+   "match_instruction": "Match each word to its opposite gender.",
+   "pairs": [
+    [
+     "boy",
+     "girl"
+    ],
+    [
+     "man",
+     "woman"
+    ],
+    [
+     "king",
+     "queen"
+    ],
+    [
+     "father",
+     "mother"
+    ],
+    [
+     "brother",
+     "sister"
+    ],
+    [
+     "uncle",
+     "aunt"
+    ],
+    [
+     "grandfather",
+     "grandmother"
+    ],
+    [
+     "son",
+     "daughter"
+    ]
+   ]
+  },
+  {
+   "name": "present_to_past_tense",
+   "chapter": "Unit 2: Life Around Us",
+   "a_label": "Present",
+   "b_label": "Past",
+   "tf_template": "The past tense of '{a}' is '{b}'.",
+   "cloze_template": "The past tense of '{a}' is ___.",
+   "match_instruction": "Match each doing word to its past tense.",
+   "pairs": [
+    [
+     "go",
+     "went"
+    ],
+    [
+     "eat",
+     "ate"
+    ],
+    [
+     "run",
+     "ran"
+    ],
+    [
+     "sit",
+     "sat"
+    ],
+    [
+     "come",
+     "came"
+    ],
+    [
+     "see",
+     "saw"
+    ],
+    [
+     "play",
+     "played"
+    ],
+    [
+     "jump",
+     "jumped"
+    ],
+    [
+     "look",
+     "looked"
+    ],
+    [
+     "sing",
+     "sang"
+    ]
+   ]
+  },
+  {
+   "name": "synonyms",
+   "chapter": "Unit 2: Life Around Us",
+   "a_label": "Word",
+   "b_label": "Same meaning",
+   "tf_template": "'{a}' means the same as '{b}'.",
+   "cloze_template": "'{a}' means the same as ___.",
+   "match_instruction": "Match each word to the word with the same meaning.",
+   "pairs": [
+    [
+     "big",
+     "large"
+    ],
+    [
+     "small",
+     "little"
+    ],
+    [
+     "happy",
+     "glad"
+    ],
+    [
+     "sad",
+     "unhappy"
+    ],
+    [
+     "fast",
+     "quick"
+    ],
+    [
+     "jump",
+     "hop"
+    ],
+    [
+     "begin",
+     "start"
+    ],
+    [
+     "shut",
+     "close"
+    ]
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "statement": "The English alphabet has 26 letters.",
+   "chapter": "Unit 2: Life Around Us"
+  },
+  {
+   "statement": "The five vowels are a, e, i, o and u.",
+   "chapter": "Unit 2: Life Around Us"
+  },
+  {
+   "statement": "All the letters that are not vowels are called consonants.",
+   "chapter": "Unit 2: Life Around Us"
+  },
+  {
+   "statement": "A naming word is the name of a person, animal, place or thing.",
+   "chapter": "Unit 2: Life Around Us"
+  },
+  {
+   "statement": "A doing word tells us what someone or something does.",
+   "chapter": "Unit 2: Life Around Us"
+  },
+  {
+   "statement": "We use 'a' before words that begin with a consonant sound, like 'a ball'.",
+   "chapter": "Unit 2: Life Around Us"
+  },
+  {
+   "statement": "We use 'an' before words that begin with a vowel sound, like 'an apple'.",
+   "chapter": "Unit 3: Food"
+  },
+  {
+   "statement": "Every sentence begins with a capital letter.",
+   "chapter": "Unit 2: Life Around Us"
+  },
+  {
+   "statement": "A telling sentence ends with a full stop.",
+   "chapter": "Unit 2: Life Around Us"
+  },
+  {
+   "statement": "The word 'I' is always written as a capital letter.",
+   "chapter": "Unit 1: My Family and Me"
+  },
+  {
+   "statement": "The name of a person begins with a capital letter.",
+   "chapter": "Unit 1: My Family and Me"
+  },
+  {
+   "statement": "In summer the weather is very hot.",
+   "chapter": "Unit 4: Seasons"
+  },
+  {
+   "statement": "In winter the weather is very cold.",
+   "chapter": "Unit 4: Seasons"
+  },
+  {
+   "statement": "In the rainy season it rains a lot.",
+   "chapter": "Unit 4: Seasons"
+  },
+  {
+   "statement": "There are five vowels: a, e, i, o and u.",
+   "chapter": "Alphabet"
+  },
+  {
+   "statement": "A sentence begins with a capital letter.",
+   "chapter": "Grammar"
+  },
+  {
+   "statement": "We add 's' to most naming words to mean more than one.",
+   "chapter": "Grammar"
+  }
+ ]
 }

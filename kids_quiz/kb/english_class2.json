@@ -1,491 +1,569 @@
 {
-  "subject": "English",
-  "class": 2,
-  "strings": {
-    "title": "Grade 2 English — Grammar & Vocabulary",
-    "grade_note": "Age ~7. Simple, concrete words a Grade 2 child meets in class: everyday opposites, easy synonyms, +s/+es plurals with a couple of common irregulars, familiar gender pairs, and simple past tenses. A step up from Grade 1, easier than Grade 4-5."
+ "subject": "English",
+ "class": 2,
+ "strings": {
+  "title": "Grade 2 English — Grammar & Vocabulary",
+  "grade_note": "Age ~7. Simple, concrete words a Grade 2 child meets in class: everyday opposites, easy synonyms, +s/+es plurals with a couple of common irregulars, familiar gender pairs, and simple past tenses. A step up from Grade 1, easier than Grade 4-5."
+ },
+ "categories": [
+  {
+   "name": "animals",
+   "label": "an animal",
+   "chapter": "Unit 4: Life Around Us",
+   "members": [
+    "dog",
+    "cat",
+    "cow",
+    "horse",
+    "goat",
+    "lion",
+    "tiger",
+    "elephant",
+    "monkey",
+    "rabbit"
+   ]
   },
-  "categories": [
-    {
-      "name": "animals",
-      "label": "an animal",
-      "chapter": "Unit 4: Life Around Us",
-      "members": [
-        "dog",
-        "cat",
-        "cow",
-        "horse",
-        "goat",
-        "lion",
-        "tiger",
-        "elephant",
-        "monkey",
-        "rabbit"
-      ]
-    },
-    {
-      "name": "fruits",
-      "label": "a fruit",
-      "chapter": "Unit 2: Welcome to My World",
-      "members": [
-        "apple",
-        "banana",
-        "mango",
-        "grapes",
-        "guava",
-        "papaya",
-        "watermelon",
-        "pear"
-      ]
-    },
-    {
-      "name": "colour_words",
-      "label": "a colour",
-      "chapter": "Unit 2: Welcome to My World",
-      "members": [
-        "red",
-        "blue",
-        "green",
-        "yellow",
-        "black",
-        "white",
-        "brown",
-        "purple",
-        "pink",
-        "orange"
-      ]
-    },
-    {
-      "name": "number_words",
-      "label": "a number word",
-      "chapter": "Unit 1: Fun with Friends",
-      "members": [
-        "one",
-        "two",
-        "three",
-        "four",
-        "five",
-        "six",
-        "seven",
-        "eight",
-        "nine",
-        "ten"
-      ]
-    },
-    {
-      "name": "vehicles",
-      "label": "a vehicle",
-      "chapter": "Unit 3: Going Places",
-      "members": [
-        "bus",
-        "car",
-        "train",
-        "truck",
-        "boat",
-        "ship",
-        "aeroplane",
-        "bicycle",
-        "scooter"
-      ]
-    },
-    {
-      "name": "body_parts",
-      "label": "a body part",
-      "chapter": "Unit 4: Life Around Us",
-      "members": [
-        "hand",
-        "leg",
-        "eye",
-        "ear",
-        "nose",
-        "arm",
-        "foot",
-        "head",
-        "mouth"
-      ]
-    }
-  ],
-  "groupings": [
-    {
-      "name": "a_or_an",
-      "chapter": "Unit 2: Welcome to My World",
-      "sort_instruction": "Sort each word by the little word we say before it: 'a' before a consonant sound, 'an' before a vowel sound (a, e, i, o, u).",
-      "tf_template": "We use '{bin}' before the word '{item}'.",
-      "bins": {
-        "a": [
-          "ball",
-          "cat",
-          "dog",
-          "table",
-          "pen",
-          "book",
-          "cup"
-        ],
-        "an": [
-          "apple",
-          "egg",
-          "orange",
-          "umbrella",
-          "elephant",
-          "ant",
-          "ink"
-        ]
-      }
-    },
-    {
-      "name": "naming_or_action_word",
-      "chapter": "Unit 1: Fun with Friends",
-      "sort_instruction": "Sort each word into naming words (names of people, animals or things) and action words (words that tell what someone does).",
-      "tf_template": "The word '{item}' is a {bin}.",
-      "bins": {
-        "naming word": [
-          "ball",
-          "dog",
-          "tree",
-          "chair",
-          "girl",
-          "apple"
-        ],
-        "action word": [
-          "run",
-          "jump",
-          "sing",
-          "eat",
-          "read",
-          "sit"
-        ]
-      }
-    },
-    {
-      "name": "vowel_or_consonant",
-      "chapter": "Unit 1: Fun with Friends",
-      "sort_instruction": "Sort each letter into vowels (a, e, i, o, u) and consonants (every other letter).",
-      "tf_template": "The letter '{item}' is a {bin}.",
-      "bins": {
-        "vowel": [
-          "a",
-          "e",
-          "i",
-          "o",
-          "u"
-        ],
-        "consonant": [
-          "b",
-          "c",
-          "d",
-          "f",
-          "g",
-          "m",
-          "n",
-          "p",
-          "s",
-          "t"
-        ]
-      }
-    }
-  ],
-  "relations": [
-    {
-      "name": "opposites",
-      "chapter": "Unit 1: Fun with Friends",
-      "a_label": "Word",
-      "b_label": "Opposite",
-      "tf_template": "The opposite of '{a}' is '{b}'.",
-      "cloze_template": "The opposite of '{a}' is ___.",
-      "match_instruction": "Match each word to its opposite.",
-      "invert": false,
-      "pairs": [
-        [
-          "big",
-          "small"
-        ],
-        [
-          "hot",
-          "cold"
-        ],
-        [
-          "up",
-          "down"
-        ],
-        [
-          "day",
-          "night"
-        ],
-        [
-          "happy",
-          "sad"
-        ],
-        [
-          "fast",
-          "slow"
-        ],
-        [
-          "tall",
-          "short"
-        ],
-        [
-          "old",
-          "new"
-        ],
-        [
-          "wet",
-          "dry"
-        ],
-        [
-          "open",
-          "shut"
-        ]
-      ]
-    },
-    {
-      "name": "synonyms",
-      "chapter": "Unit 5: Harmony",
-      "a_label": "Word",
-      "b_label": "Same meaning",
-      "tf_template": "'{a}' means the same as '{b}'.",
-      "cloze_template": "'{a}' means the same as ___.",
-      "match_instruction": "Match each word to a word that means the same.",
-      "invert": false,
-      "pairs": [
-        [
-          "big",
-          "large"
-        ],
-        [
-          "little",
-          "tiny"
-        ],
-        [
-          "happy",
-          "glad"
-        ],
-        [
-          "fast",
-          "quick"
-        ],
-        [
-          "sad",
-          "unhappy"
-        ],
-        [
-          "pretty",
-          "lovely"
-        ],
-        [
-          "begin",
-          "start"
-        ],
-        [
-          "jump",
-          "hop"
-        ],
-        [
-          "cold",
-          "chilly"
-        ],
-        [
-          "shout",
-          "yell"
-        ]
-      ]
-    },
-    {
-      "name": "plurals",
-      "chapter": "Unit 2: Welcome to My World",
-      "a_label": "One",
-      "b_label": "More than one",
-      "tf_template": "The plural of '{a}' is '{b}'.",
-      "cloze_template": "The plural of '{a}' is ___.",
-      "match_instruction": "Match each naming word to its plural (more than one).",
-      "invert": false,
-      "pairs": [
-        [
-          "cat",
-          "cats"
-        ],
-        [
-          "dog",
-          "dogs"
-        ],
-        [
-          "book",
-          "books"
-        ],
-        [
-          "tree",
-          "trees"
-        ],
-        [
-          "boy",
-          "boys"
-        ],
-        [
-          "box",
-          "boxes"
-        ],
-        [
-          "bus",
-          "buses"
-        ],
-        [
-          "baby",
-          "babies"
-        ],
-        [
-          "man",
-          "men"
-        ],
-        [
-          "child",
-          "children"
-        ]
-      ]
-    },
-    {
-      "name": "gender",
-      "chapter": "Unit 4: Life Around Us",
-      "a_label": "Masculine (male)",
-      "b_label": "Feminine (female)",
-      "tf_template": "The feminine of '{a}' is '{b}'.",
-      "cloze_template": "The feminine of '{a}' is ___.",
-      "match_instruction": "Match each male word to its female word.",
-      "invert": false,
-      "pairs": [
-        [
-          "boy",
-          "girl"
-        ],
-        [
-          "man",
-          "woman"
-        ],
-        [
-          "king",
-          "queen"
-        ],
-        [
-          "father",
-          "mother"
-        ],
-        [
-          "brother",
-          "sister"
-        ],
-        [
-          "uncle",
-          "aunt"
-        ],
-        [
-          "son",
-          "daughter"
-        ],
-        [
-          "prince",
-          "princess"
-        ]
-      ]
-    },
-    {
-      "name": "past_tense",
-      "chapter": "Unit 3: Going Places",
-      "a_label": "Now (present)",
-      "b_label": "Yesterday (past)",
-      "tf_template": "The past tense of '{a}' is '{b}'.",
-      "cloze_template": "The past tense of '{a}' is ___.",
-      "match_instruction": "Match each action word to its past tense (what happened yesterday).",
-      "invert": false,
-      "pairs": [
-        [
-          "play",
-          "played"
-        ],
-        [
-          "jump",
-          "jumped"
-        ],
-        [
-          "walk",
-          "walked"
-        ],
-        [
-          "go",
-          "went"
-        ],
-        [
-          "run",
-          "ran"
-        ],
-        [
-          "eat",
-          "ate"
-        ],
-        [
-          "sit",
-          "sat"
-        ],
-        [
-          "come",
-          "came"
-        ],
-        [
-          "see",
-          "saw"
-        ],
-        [
-          "make",
-          "made"
-        ]
-      ]
-    }
-  ],
-  "facts": [
-    {
-      "statement": "A naming word is the name of a person, place, animal, or thing.",
-      "chapter": "Unit 1: Fun with Friends"
-    },
-    {
-      "statement": "An action word tells what someone or something does.",
-      "chapter": "Unit 1: Fun with Friends"
-    },
-    {
-      "statement": "The five vowels are a, e, i, o, and u.",
-      "chapter": "Unit 1: Fun with Friends"
-    },
-    {
-      "statement": "Every letter that is not a vowel is a consonant.",
-      "chapter": "Unit 1: Fun with Friends"
-    },
-    {
-      "statement": "The English alphabet has twenty-six letters.",
-      "chapter": "Unit 1: Fun with Friends"
-    },
-    {
-      "statement": "We use 'an' before a word that begins with a vowel sound, like 'an apple'.",
-      "chapter": "Unit 2: Welcome to My World"
-    },
-    {
-      "statement": "We use 'a' before a word that begins with a consonant sound, like 'a ball'.",
-      "chapter": "Unit 2: Welcome to My World"
-    },
-    {
-      "statement": "We add 's' to many naming words to show more than one, like 'cat' and 'cats'.",
-      "chapter": "Unit 2: Welcome to My World"
-    },
-    {
-      "statement": "A sentence begins with a capital letter.",
-      "chapter": "Unit 3: Going Places"
-    },
-    {
-      "statement": "A telling sentence ends with a full stop.",
-      "chapter": "Unit 3: Going Places"
-    },
-    {
-      "statement": "A question ends with a question mark.",
-      "chapter": "Unit 3: Going Places"
-    },
-    {
-      "statement": "The word 'I' is always written as a capital letter.",
-      "chapter": "Unit 5: Harmony"
-    }
-  ]
+  {
+   "name": "fruits",
+   "label": "a fruit",
+   "chapter": "Unit 2: Welcome to My World",
+   "members": [
+    "apple",
+    "banana",
+    "mango",
+    "grapes",
+    "guava",
+    "papaya",
+    "watermelon",
+    "pear"
+   ]
+  },
+  {
+   "name": "colour_words",
+   "label": "a colour",
+   "chapter": "Unit 2: Welcome to My World",
+   "members": [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "black",
+    "white",
+    "brown",
+    "purple",
+    "pink",
+    "orange"
+   ]
+  },
+  {
+   "name": "number_words",
+   "label": "a number word",
+   "chapter": "Unit 1: Fun with Friends",
+   "members": [
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten"
+   ]
+  },
+  {
+   "name": "vehicles",
+   "label": "a vehicle",
+   "chapter": "Unit 3: Going Places",
+   "members": [
+    "bus",
+    "car",
+    "train",
+    "truck",
+    "boat",
+    "ship",
+    "aeroplane",
+    "bicycle",
+    "scooter"
+   ]
+  },
+  {
+   "name": "body_parts",
+   "label": "a body part",
+   "chapter": "Unit 4: Life Around Us",
+   "members": [
+    "hand",
+    "leg",
+    "eye",
+    "ear",
+    "nose",
+    "arm",
+    "foot",
+    "head",
+    "mouth"
+   ]
+  },
+  {
+   "name": "days_of_the_week",
+   "label": "a day",
+   "chapter": "Words",
+   "members": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+   ]
+  },
+  {
+   "name": "question_words",
+   "label": "a question word",
+   "chapter": "Grammar",
+   "members": [
+    "who",
+    "what",
+    "where",
+    "when",
+    "why",
+    "how"
+   ]
+  }
+ ],
+ "groupings": [
+  {
+   "name": "a_or_an",
+   "chapter": "Unit 2: Welcome to My World",
+   "sort_instruction": "Sort each word by the little word we say before it: 'a' before a consonant sound, 'an' before a vowel sound (a, e, i, o, u).",
+   "tf_template": "We use '{bin}' before the word '{item}'.",
+   "bins": {
+    "a": [
+     "ball",
+     "cat",
+     "dog",
+     "table",
+     "pen",
+     "book",
+     "cup"
+    ],
+    "an": [
+     "apple",
+     "egg",
+     "orange",
+     "umbrella",
+     "elephant",
+     "ant",
+     "ink"
+    ]
+   }
+  },
+  {
+   "name": "naming_or_action_word",
+   "chapter": "Unit 1: Fun with Friends",
+   "sort_instruction": "Sort each word into naming words (names of people, animals or things) and action words (words that tell what someone does).",
+   "tf_template": "The word '{item}' is a {bin}.",
+   "bins": {
+    "naming word": [
+     "ball",
+     "dog",
+     "tree",
+     "chair",
+     "girl",
+     "apple"
+    ],
+    "action word": [
+     "run",
+     "jump",
+     "sing",
+     "eat",
+     "read",
+     "sit"
+    ]
+   }
+  },
+  {
+   "name": "vowel_or_consonant",
+   "chapter": "Unit 1: Fun with Friends",
+   "sort_instruction": "Sort each letter into vowels (a, e, i, o, u) and consonants (every other letter).",
+   "tf_template": "The letter '{item}' is a {bin}.",
+   "bins": {
+    "vowel": [
+     "a",
+     "e",
+     "i",
+     "o",
+     "u"
+    ],
+    "consonant": [
+     "b",
+     "c",
+     "d",
+     "f",
+     "g",
+     "m",
+     "n",
+     "p",
+     "s",
+     "t"
+    ]
+   }
+  }
+ ],
+ "relations": [
+  {
+   "name": "opposites",
+   "chapter": "Unit 1: Fun with Friends",
+   "a_label": "Word",
+   "b_label": "Opposite",
+   "tf_template": "The opposite of '{a}' is '{b}'.",
+   "cloze_template": "The opposite of '{a}' is ___.",
+   "match_instruction": "Match each word to its opposite.",
+   "invert": false,
+   "pairs": [
+    [
+     "big",
+     "small"
+    ],
+    [
+     "hot",
+     "cold"
+    ],
+    [
+     "up",
+     "down"
+    ],
+    [
+     "day",
+     "night"
+    ],
+    [
+     "happy",
+     "sad"
+    ],
+    [
+     "fast",
+     "slow"
+    ],
+    [
+     "tall",
+     "short"
+    ],
+    [
+     "old",
+     "new"
+    ],
+    [
+     "wet",
+     "dry"
+    ],
+    [
+     "open",
+     "shut"
+    ],
+    [
+     "clean",
+     "dirty"
+    ],
+    [
+     "early",
+     "late"
+    ],
+    [
+     "full",
+     "empty"
+    ],
+    [
+     "light",
+     "heavy"
+    ],
+    [
+     "near",
+     "far"
+    ]
+   ]
+  },
+  {
+   "name": "synonyms",
+   "chapter": "Unit 5: Harmony",
+   "a_label": "Word",
+   "b_label": "Same meaning",
+   "tf_template": "'{a}' means the same as '{b}'.",
+   "cloze_template": "'{a}' means the same as ___.",
+   "match_instruction": "Match each word to a word that means the same.",
+   "invert": false,
+   "pairs": [
+    [
+     "big",
+     "large"
+    ],
+    [
+     "little",
+     "tiny"
+    ],
+    [
+     "happy",
+     "glad"
+    ],
+    [
+     "fast",
+     "quick"
+    ],
+    [
+     "sad",
+     "unhappy"
+    ],
+    [
+     "pretty",
+     "lovely"
+    ],
+    [
+     "begin",
+     "start"
+    ],
+    [
+     "jump",
+     "hop"
+    ],
+    [
+     "cold",
+     "chilly"
+    ],
+    [
+     "shout",
+     "yell"
+    ]
+   ]
+  },
+  {
+   "name": "plurals",
+   "chapter": "Unit 2: Welcome to My World",
+   "a_label": "One",
+   "b_label": "More than one",
+   "tf_template": "The plural of '{a}' is '{b}'.",
+   "cloze_template": "The plural of '{a}' is ___.",
+   "match_instruction": "Match each naming word to its plural (more than one).",
+   "invert": false,
+   "pairs": [
+    [
+     "cat",
+     "cats"
+    ],
+    [
+     "dog",
+     "dogs"
+    ],
+    [
+     "book",
+     "books"
+    ],
+    [
+     "tree",
+     "trees"
+    ],
+    [
+     "boy",
+     "boys"
+    ],
+    [
+     "box",
+     "boxes"
+    ],
+    [
+     "bus",
+     "buses"
+    ],
+    [
+     "baby",
+     "babies"
+    ],
+    [
+     "man",
+     "men"
+    ],
+    [
+     "child",
+     "children"
+    ],
+    [
+     "story",
+     "stories"
+    ],
+    [
+     "leaf",
+     "leaves"
+    ],
+    [
+     "knife",
+     "knives"
+    ],
+    [
+     "fox",
+     "foxes"
+    ]
+   ]
+  },
+  {
+   "name": "gender",
+   "chapter": "Unit 4: Life Around Us",
+   "a_label": "Masculine (male)",
+   "b_label": "Feminine (female)",
+   "tf_template": "The feminine of '{a}' is '{b}'.",
+   "cloze_template": "The feminine of '{a}' is ___.",
+   "match_instruction": "Match each male word to its female word.",
+   "invert": false,
+   "pairs": [
+    [
+     "boy",
+     "girl"
+    ],
+    [
+     "man",
+     "woman"
+    ],
+    [
+     "king",
+     "queen"
+    ],
+    [
+     "father",
+     "mother"
+    ],
+    [
+     "brother",
+     "sister"
+    ],
+    [
+     "uncle",
+     "aunt"
+    ],
+    [
+     "son",
+     "daughter"
+    ],
+    [
+     "prince",
+     "princess"
+    ]
+   ]
+  },
+  {
+   "name": "past_tense",
+   "chapter": "Unit 3: Going Places",
+   "a_label": "Now (present)",
+   "b_label": "Yesterday (past)",
+   "tf_template": "The past tense of '{a}' is '{b}'.",
+   "cloze_template": "The past tense of '{a}' is ___.",
+   "match_instruction": "Match each action word to its past tense (what happened yesterday).",
+   "invert": false,
+   "pairs": [
+    [
+     "play",
+     "played"
+    ],
+    [
+     "jump",
+     "jumped"
+    ],
+    [
+     "walk",
+     "walked"
+    ],
+    [
+     "go",
+     "went"
+    ],
+    [
+     "run",
+     "ran"
+    ],
+    [
+     "eat",
+     "ate"
+    ],
+    [
+     "sit",
+     "sat"
+    ],
+    [
+     "come",
+     "came"
+    ],
+    [
+     "see",
+     "saw"
+    ],
+    [
+     "make",
+     "made"
+    ],
+    [
+     "talk",
+     "talked"
+    ],
+    [
+     "look",
+     "looked"
+    ]
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "statement": "A naming word is the name of a person, place, animal, or thing.",
+   "chapter": "Unit 1: Fun with Friends"
+  },
+  {
+   "statement": "An action word tells what someone or something does.",
+   "chapter": "Unit 1: Fun with Friends"
+  },
+  {
+   "statement": "The five vowels are a, e, i, o, and u.",
+   "chapter": "Unit 1: Fun with Friends"
+  },
+  {
+   "statement": "Every letter that is not a vowel is a consonant.",
+   "chapter": "Unit 1: Fun with Friends"
+  },
+  {
+   "statement": "The English alphabet has twenty-six letters.",
+   "chapter": "Unit 1: Fun with Friends"
+  },
+  {
+   "statement": "We use 'an' before a word that begins with a vowel sound, like 'an apple'.",
+   "chapter": "Unit 2: Welcome to My World"
+  },
+  {
+   "statement": "We use 'a' before a word that begins with a consonant sound, like 'a ball'.",
+   "chapter": "Unit 2: Welcome to My World"
+  },
+  {
+   "statement": "We add 's' to many naming words to show more than one, like 'cat' and 'cats'.",
+   "chapter": "Unit 2: Welcome to My World"
+  },
+  {
+   "statement": "A sentence begins with a capital letter.",
+   "chapter": "Unit 3: Going Places"
+  },
+  {
+   "statement": "A telling sentence ends with a full stop.",
+   "chapter": "Unit 3: Going Places"
+  },
+  {
+   "statement": "A question ends with a question mark.",
+   "chapter": "Unit 3: Going Places"
+  },
+  {
+   "statement": "The word 'I' is always written as a capital letter.",
+   "chapter": "Unit 5: Harmony"
+  },
+  {
+   "statement": "There are seven days in a week.",
+   "chapter": "Words"
+  },
+  {
+   "statement": "'He' and 'she' are used in place of a name.",
+   "chapter": "Grammar"
+  }
+ ]
 }

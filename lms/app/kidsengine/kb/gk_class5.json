@@ -1,533 +1,619 @@
 {
-  "subject": "GK",
-  "class": 5,
-  "categories": [
-    {
-      "name": "planets",
-      "label": "a planet",
-      "chapter": "Science, Sports and Current Affairs",
-      "members": [
-        "Mercury",
-        "Venus",
-        "Earth",
-        "Mars",
-        "Jupiter",
-        "Saturn",
-        "Uranus",
-        "Neptune"
-      ]
-    },
-    {
-      "name": "continents",
-      "label": "a continent",
-      "chapter": "The Wider World",
-      "members": [
-        "Asia",
-        "Africa",
-        "Europe",
-        "Antarctica",
-        "Australia",
-        "North America",
-        "South America"
-      ]
-    },
-    {
-      "name": "fruits",
-      "label": "a fruit",
-      "chapter": "Science, Sports and Current Affairs",
-      "members": [
-        "mango",
-        "apple",
-        "banana",
-        "orange",
-        "guava",
-        "papaya",
-        "pomegranate",
-        "watermelon"
-      ]
-    },
-    {
-      "name": "birds",
-      "label": "a bird",
-      "chapter": "Science, Sports and Current Affairs",
-      "members": [
-        "peacock",
-        "parrot",
-        "sparrow",
-        "crow",
-        "eagle",
-        "pigeon",
-        "owl",
-        "ostrich"
-      ]
-    },
-    {
-      "name": "vehicles",
-      "label": "a vehicle",
-      "chapter": "The Wider World",
-      "members": [
-        "car",
-        "bus",
-        "train",
-        "aeroplane",
-        "bicycle",
-        "truck",
-        "ship",
-        "motorcycle"
-      ]
-    },
-    {
-      "name": "colours",
-      "label": "a colour",
-      "chapter": "Science, Sports and Current Affairs",
-      "members": [
-        "red",
-        "blue",
-        "green",
-        "yellow",
-        "purple",
-        "pink",
-        "brown",
-        "black"
-      ]
-    }
-  ],
-  "groupings": [
-    {
-      "name": "living_nonliving",
-      "chapter": "Science, Sports and Current Affairs",
-      "sort_instruction": "Decide whether each thing is living or non-living.",
-      "tf_template": "{art} {item} is {bin}.",
-      "bins": {
-        "a living thing": [
-          "mango tree",
-          "rose plant",
-          "goldfish",
-          "butterfly",
-          "earthworm",
-          "human being"
-        ],
-        "a non-living thing": [
-          "rock",
-          "chair",
-          "table",
-          "spoon",
-          "pencil",
-          "bottle"
-        ]
-      }
-    },
-    {
-      "name": "wild_domestic",
-      "chapter": "Science, Sports and Current Affairs",
-      "sort_instruction": "Sort each animal as wild or domestic.",
-      "tf_template": "{art} {item} is {bin}.",
-      "bins": {
-        "a wild animal": [
-          "tiger",
-          "lion",
-          "elephant",
-          "deer",
-          "fox",
-          "bear"
-        ],
-        "a domestic animal": [
-          "cow",
-          "dog",
-          "cat",
-          "horse",
-          "goat",
-          "buffalo"
-        ]
-      }
-    },
-    {
-      "name": "land_water_air",
-      "chapter": "Science, Sports and Current Affairs",
-      "sort_instruction": "Sort each animal by where it mainly lives - on land, in water, or in the air.",
-      "tf_template": "{art} {item} is {bin}.",
-      "bins": {
-        "a land animal": [
-          "camel",
-          "giraffe",
-          "zebra",
-          "kangaroo",
-          "tiger",
-          "rhinoceros"
-        ],
-        "a water animal": [
-          "fish",
-          "whale",
-          "dolphin",
-          "octopus",
-          "crab",
-          "shark"
-        ],
-        "an air animal": [
-          "eagle",
-          "sparrow",
-          "parrot",
-          "crow",
-          "pigeon",
-          "owl"
-        ]
-      }
-    }
-  ],
-  "relations": [
-    {
-      "name": "country_capital",
-      "chapter": "The Wider World",
-      "a_label": "a country",
-      "b_label": "a capital city",
-      "tf_template": "The capital of {a} is {b}.",
-      "cloze_template": "The capital of {a} is ___.",
-      "match_instruction": "Match each country to its capital city.",
-      "invert": false,
-      "pairs": [
-        [
-          "Japan",
-          "Tokyo"
-        ],
-        [
-          "France",
-          "Paris"
-        ],
-        [
-          "Italy",
-          "Rome"
-        ],
-        [
-          "Egypt",
-          "Cairo"
-        ],
-        [
-          "Australia",
-          "Canberra"
-        ],
-        [
-          "China",
-          "Beijing"
-        ],
-        [
-          "Canada",
-          "Ottawa"
-        ],
-        [
-          "Russia",
-          "Moscow"
-        ],
-        [
-          "Germany",
-          "Berlin"
-        ],
-        [
-          "Brazil",
-          "Brasilia"
-        ]
-      ]
-    },
-    {
-      "name": "india_national_symbols",
-      "chapter": "India: History and Geography",
-      "a_label": "a national symbol",
-      "b_label": "its name",
-      "tf_template": "India's {a} is {b}.",
-      "cloze_template": "India's {a} is ___.",
-      "match_instruction": "Match each national symbol of India to its name.",
-      "invert": false,
-      "pairs": [
-        [
-          "national animal",
-          "the tiger"
-        ],
-        [
-          "national bird",
-          "the peacock"
-        ],
-        [
-          "national flower",
-          "the lotus"
-        ],
-        [
-          "national fruit",
-          "the mango"
-        ],
-        [
-          "national tree",
-          "the banyan tree"
-        ],
-        [
-          "national river",
-          "the Ganga"
-        ],
-        [
-          "national aquatic animal",
-          "the Ganges river dolphin"
-        ],
-        [
-          "national heritage animal",
-          "the elephant"
-        ],
-        [
-          "national currency",
-          "the rupee"
-        ],
-        [
-          "national song",
-          "Vande Mataram"
-        ],
-        [
-          "national anthem",
-          "Jana Gana Mana"
-        ]
-      ]
-    },
-    {
-      "name": "famous_person_title",
-      "chapter": "India: History and Geography",
-      "a_label": "a famous person",
-      "b_label": "a title",
-      "tf_template": "{a} is known as {b}.",
-      "cloze_template": "{a} is known as ___.",
-      "match_instruction": "Match each famous Indian to the title they are known by.",
-      "invert": false,
-      "pairs": [
-        [
-          "Mahatma Gandhi",
-          "the Father of the Nation"
-        ],
-        [
-          "Sardar Vallabhbhai Patel",
-          "the Iron Man of India"
-        ],
-        [
-          "A. P. J. Abdul Kalam",
-          "the Missile Man of India"
-        ],
-        [
-          "Sarojini Naidu",
-          "the Nightingale of India"
-        ],
-        [
-          "Rani Lakshmibai",
-          "the Queen of Jhansi"
-        ],
-        [
-          "Subhas Chandra Bose",
-          "Netaji"
-        ],
-        [
-          "Bal Gangadhar Tilak",
-          "Lokmanya"
-        ],
-        [
-          "Bhagat Singh",
-          "Shaheed-e-Azam"
-        ],
-        [
-          "Dr. B. R. Ambedkar",
-          "the Father of the Indian Constitution"
-        ]
-      ]
-    },
-    {
-      "name": "planet_position",
-      "chapter": "Science, Sports and Current Affairs",
-      "a_label": "a planet",
-      "b_label": "its position from the Sun",
-      "tf_template": "{a} is the {b} from the Sun.",
-      "cloze_template": "{a} is the ___ from the Sun.",
-      "match_instruction": "Match each planet to its position from the Sun.",
-      "invert": false,
-      "pairs": [
-        [
-          "Mercury",
-          "first planet"
-        ],
-        [
-          "Venus",
-          "second planet"
-        ],
-        [
-          "Earth",
-          "third planet"
-        ],
-        [
-          "Mars",
-          "fourth planet"
-        ],
-        [
-          "Jupiter",
-          "fifth planet"
-        ],
-        [
-          "Saturn",
-          "sixth planet"
-        ],
-        [
-          "Uranus",
-          "seventh planet"
-        ],
-        [
-          "Neptune",
-          "eighth planet"
-        ]
-      ]
-    },
-    {
-      "name": "animal_home",
-      "chapter": "Science, Sports and Current Affairs",
-      "a_label": "an animal",
-      "b_label": "its home",
-      "tf_template": "A {a} lives in {b}.",
-      "cloze_template": "A {a} lives in ___.",
-      "match_instruction": "Match each animal to its home.",
-      "invert": false,
-      "pairs": [
-        [
-          "lion",
-          "a den"
-        ],
-        [
-          "bee",
-          "a hive"
-        ],
-        [
-          "horse",
-          "a stable"
-        ],
-        [
-          "dog",
-          "a kennel"
-        ],
-        [
-          "cow",
-          "a shed"
-        ],
-        [
-          "bird",
-          "a nest"
-        ],
-        [
-          "spider",
-          "a web"
-        ],
-        [
-          "rabbit",
-          "a burrow"
-        ],
-        [
-          "pig",
-          "a sty"
-        ]
-      ]
-    },
-    {
-      "name": "animal_baby",
-      "chapter": "Science, Sports and Current Affairs",
-      "a_label": "an animal",
-      "b_label": "its baby's name",
-      "tf_template": "A baby {a} is called {b}.",
-      "cloze_template": "A baby {a} is called ___.",
-      "match_instruction": "Match each animal to the name of its baby.",
-      "invert": false,
-      "pairs": [
-        [
-          "cow",
-          "a calf"
-        ],
-        [
-          "dog",
-          "a puppy"
-        ],
-        [
-          "cat",
-          "a kitten"
-        ],
-        [
-          "horse",
-          "a foal"
-        ],
-        [
-          "lion",
-          "a cub"
-        ],
-        [
-          "sheep",
-          "a lamb"
-        ],
-        [
-          "frog",
-          "a tadpole"
-        ],
-        [
-          "hen",
-          "a chick"
-        ],
-        [
-          "kangaroo",
-          "a joey"
-        ],
-        [
-          "deer",
-          "a fawn"
-        ]
-      ]
-    }
-  ],
-  "facts": [
-    {
-      "statement": "The Sun is a star and lies at the centre of our solar system.",
-      "chapter": "Science, Sports and Current Affairs"
-    },
-    {
-      "statement": "The Earth takes about 365 days to revolve once around the Sun.",
-      "chapter": "Science, Sports and Current Affairs"
-    },
-    {
-      "statement": "The Earth rotates once on its axis in about 24 hours, which gives us day and night.",
-      "chapter": "Science, Sports and Current Affairs"
-    },
-    {
-      "statement": "The Moon is the only natural satellite of the Earth.",
-      "chapter": "Science, Sports and Current Affairs"
-    },
-    {
-      "statement": "Jupiter is the largest planet in the solar system.",
-      "chapter": "Science, Sports and Current Affairs"
-    },
-    {
-      "statement": "There are seven continents on the Earth.",
-      "chapter": "The Wider World"
-    },
-    {
-      "statement": "The Pacific Ocean is the largest ocean on the Earth.",
-      "chapter": "The Wider World"
-    },
-    {
-      "statement": "Water covers about three-fourths of the Earth's surface.",
-      "chapter": "The Wider World"
-    },
-    {
-      "statement": "Mount Everest is the highest mountain in the world.",
-      "chapter": "The Wider World"
-    },
-    {
-      "statement": "New Delhi is the capital of India.",
-      "chapter": "India: History and Geography"
-    },
-    {
-      "statement": "India became an independent country on 15 August 1947.",
-      "chapter": "India: History and Geography"
-    },
-    {
-      "statement": "The Ganga is the longest river in India.",
-      "chapter": "India: History and Geography"
-    }
-  ],
-  "strings": {
-    "title": "Grade 5 General Knowledge",
-    "intro": "General Knowledge worksheets for Grade 5 (CBSE/ICSE, India): the wider world, India's history and geography, and science, sports and current affairs."
+ "subject": "GK",
+ "class": 5,
+ "categories": [
+  {
+   "name": "planets",
+   "label": "a planet",
+   "chapter": "Science, Sports and Current Affairs",
+   "members": [
+    "Mercury",
+    "Venus",
+    "Earth",
+    "Mars",
+    "Jupiter",
+    "Saturn",
+    "Uranus",
+    "Neptune"
+   ]
+  },
+  {
+   "name": "continents",
+   "label": "a continent",
+   "chapter": "The Wider World",
+   "members": [
+    "Asia",
+    "Africa",
+    "Europe",
+    "Antarctica",
+    "Australia",
+    "North America",
+    "South America"
+   ]
+  },
+  {
+   "name": "fruits",
+   "label": "a fruit",
+   "chapter": "Science, Sports and Current Affairs",
+   "members": [
+    "mango",
+    "apple",
+    "banana",
+    "orange",
+    "guava",
+    "papaya",
+    "pomegranate",
+    "watermelon"
+   ]
+  },
+  {
+   "name": "birds",
+   "label": "a bird",
+   "chapter": "Science, Sports and Current Affairs",
+   "members": [
+    "peacock",
+    "parrot",
+    "sparrow",
+    "crow",
+    "eagle",
+    "pigeon",
+    "owl",
+    "ostrich"
+   ]
+  },
+  {
+   "name": "vehicles",
+   "label": "a vehicle",
+   "chapter": "The Wider World",
+   "members": [
+    "car",
+    "bus",
+    "train",
+    "aeroplane",
+    "bicycle",
+    "truck",
+    "ship",
+    "motorcycle"
+   ]
+  },
+  {
+   "name": "colours",
+   "label": "a colour",
+   "chapter": "Science, Sports and Current Affairs",
+   "members": [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "purple",
+    "pink",
+    "brown",
+    "black"
+   ]
+  },
+  {
+   "name": "Indian scientists",
+   "label": "an Indian scientist",
+   "chapter": "India",
+   "members": [
+    "C. V. Raman",
+    "Homi Bhabha",
+    "Vikram Sarabhai",
+    "A. P. J. Abdul Kalam",
+    "Srinivasa Ramanujan"
+   ]
   }
+ ],
+ "groupings": [
+  {
+   "name": "living_nonliving",
+   "chapter": "Science, Sports and Current Affairs",
+   "sort_instruction": "Decide whether each thing is living or non-living.",
+   "tf_template": "{art} {item} is {bin}.",
+   "bins": {
+    "a living thing": [
+     "mango tree",
+     "rose plant",
+     "goldfish",
+     "butterfly",
+     "earthworm",
+     "human being"
+    ],
+    "a non-living thing": [
+     "rock",
+     "chair",
+     "table",
+     "spoon",
+     "pencil",
+     "bottle"
+    ]
+   }
+  },
+  {
+   "name": "wild_domestic",
+   "chapter": "Science, Sports and Current Affairs",
+   "sort_instruction": "Sort each animal as wild or domestic.",
+   "tf_template": "{art} {item} is {bin}.",
+   "bins": {
+    "a wild animal": [
+     "tiger",
+     "lion",
+     "elephant",
+     "deer",
+     "fox",
+     "bear"
+    ],
+    "a domestic animal": [
+     "cow",
+     "dog",
+     "cat",
+     "horse",
+     "goat",
+     "buffalo"
+    ]
+   }
+  },
+  {
+   "name": "land_water_air",
+   "chapter": "Science, Sports and Current Affairs",
+   "sort_instruction": "Sort each animal by where it mainly lives - on land, in water, or in the air.",
+   "tf_template": "{art} {item} is {bin}.",
+   "bins": {
+    "a land animal": [
+     "camel",
+     "giraffe",
+     "zebra",
+     "kangaroo",
+     "tiger",
+     "rhinoceros"
+    ],
+    "a water animal": [
+     "fish",
+     "whale",
+     "dolphin",
+     "octopus",
+     "crab",
+     "shark"
+    ],
+    "an air animal": [
+     "eagle",
+     "sparrow",
+     "parrot",
+     "crow",
+     "pigeon",
+     "owl"
+    ]
+   }
+  }
+ ],
+ "relations": [
+  {
+   "name": "country_capital",
+   "chapter": "The Wider World",
+   "a_label": "a country",
+   "b_label": "a capital city",
+   "tf_template": "The capital of {a} is {b}.",
+   "cloze_template": "The capital of {a} is ___.",
+   "match_instruction": "Match each country to its capital city.",
+   "invert": false,
+   "pairs": [
+    [
+     "Japan",
+     "Tokyo"
+    ],
+    [
+     "France",
+     "Paris"
+    ],
+    [
+     "Italy",
+     "Rome"
+    ],
+    [
+     "Egypt",
+     "Cairo"
+    ],
+    [
+     "Australia",
+     "Canberra"
+    ],
+    [
+     "China",
+     "Beijing"
+    ],
+    [
+     "Canada",
+     "Ottawa"
+    ],
+    [
+     "Russia",
+     "Moscow"
+    ],
+    [
+     "Germany",
+     "Berlin"
+    ],
+    [
+     "Brazil",
+     "Brasilia"
+    ]
+   ]
+  },
+  {
+   "name": "india_national_symbols",
+   "chapter": "India: History and Geography",
+   "a_label": "a national symbol",
+   "b_label": "its name",
+   "tf_template": "India's {a} is {b}.",
+   "cloze_template": "India's {a} is ___.",
+   "match_instruction": "Match each national symbol of India to its name.",
+   "invert": false,
+   "pairs": [
+    [
+     "national animal",
+     "the tiger"
+    ],
+    [
+     "national bird",
+     "the peacock"
+    ],
+    [
+     "national flower",
+     "the lotus"
+    ],
+    [
+     "national fruit",
+     "the mango"
+    ],
+    [
+     "national tree",
+     "the banyan tree"
+    ],
+    [
+     "national river",
+     "the Ganga"
+    ],
+    [
+     "national aquatic animal",
+     "the Ganges river dolphin"
+    ],
+    [
+     "national heritage animal",
+     "the elephant"
+    ],
+    [
+     "national currency",
+     "the rupee"
+    ],
+    [
+     "national song",
+     "Vande Mataram"
+    ],
+    [
+     "national anthem",
+     "Jana Gana Mana"
+    ]
+   ]
+  },
+  {
+   "name": "famous_person_title",
+   "chapter": "India: History and Geography",
+   "a_label": "a famous person",
+   "b_label": "a title",
+   "tf_template": "{a} is known as {b}.",
+   "cloze_template": "{a} is known as ___.",
+   "match_instruction": "Match each famous Indian to the title they are known by.",
+   "invert": false,
+   "pairs": [
+    [
+     "Mahatma Gandhi",
+     "the Father of the Nation"
+    ],
+    [
+     "Sardar Vallabhbhai Patel",
+     "the Iron Man of India"
+    ],
+    [
+     "A. P. J. Abdul Kalam",
+     "the Missile Man of India"
+    ],
+    [
+     "Sarojini Naidu",
+     "the Nightingale of India"
+    ],
+    [
+     "Rani Lakshmibai",
+     "the Queen of Jhansi"
+    ],
+    [
+     "Subhas Chandra Bose",
+     "Netaji"
+    ],
+    [
+     "Bal Gangadhar Tilak",
+     "Lokmanya"
+    ],
+    [
+     "Bhagat Singh",
+     "Shaheed-e-Azam"
+    ],
+    [
+     "Dr. B. R. Ambedkar",
+     "the Father of the Indian Constitution"
+    ]
+   ]
+  },
+  {
+   "name": "planet_position",
+   "chapter": "Science, Sports and Current Affairs",
+   "a_label": "a planet",
+   "b_label": "its position from the Sun",
+   "tf_template": "{a} is the {b} from the Sun.",
+   "cloze_template": "{a} is the ___ from the Sun.",
+   "match_instruction": "Match each planet to its position from the Sun.",
+   "invert": false,
+   "pairs": [
+    [
+     "Mercury",
+     "first planet"
+    ],
+    [
+     "Venus",
+     "second planet"
+    ],
+    [
+     "Earth",
+     "third planet"
+    ],
+    [
+     "Mars",
+     "fourth planet"
+    ],
+    [
+     "Jupiter",
+     "fifth planet"
+    ],
+    [
+     "Saturn",
+     "sixth planet"
+    ],
+    [
+     "Uranus",
+     "seventh planet"
+    ],
+    [
+     "Neptune",
+     "eighth planet"
+    ]
+   ]
+  },
+  {
+   "name": "animal_home",
+   "chapter": "Science, Sports and Current Affairs",
+   "a_label": "an animal",
+   "b_label": "its home",
+   "tf_template": "A {a} lives in {b}.",
+   "cloze_template": "A {a} lives in ___.",
+   "match_instruction": "Match each animal to its home.",
+   "invert": false,
+   "pairs": [
+    [
+     "lion",
+     "a den"
+    ],
+    [
+     "bee",
+     "a hive"
+    ],
+    [
+     "horse",
+     "a stable"
+    ],
+    [
+     "dog",
+     "a kennel"
+    ],
+    [
+     "cow",
+     "a shed"
+    ],
+    [
+     "bird",
+     "a nest"
+    ],
+    [
+     "spider",
+     "a web"
+    ],
+    [
+     "rabbit",
+     "a burrow"
+    ],
+    [
+     "pig",
+     "a sty"
+    ]
+   ]
+  },
+  {
+   "name": "animal_baby",
+   "chapter": "Science, Sports and Current Affairs",
+   "a_label": "an animal",
+   "b_label": "its baby's name",
+   "tf_template": "A baby {a} is called {b}.",
+   "cloze_template": "A baby {a} is called ___.",
+   "match_instruction": "Match each animal to the name of its baby.",
+   "invert": false,
+   "pairs": [
+    [
+     "cow",
+     "a calf"
+    ],
+    [
+     "dog",
+     "a puppy"
+    ],
+    [
+     "cat",
+     "a kitten"
+    ],
+    [
+     "horse",
+     "a foal"
+    ],
+    [
+     "lion",
+     "a cub"
+    ],
+    [
+     "sheep",
+     "a lamb"
+    ],
+    [
+     "frog",
+     "a tadpole"
+    ],
+    [
+     "hen",
+     "a chick"
+    ],
+    [
+     "kangaroo",
+     "a joey"
+    ],
+    [
+     "deer",
+     "a fawn"
+    ]
+   ]
+  },
+  {
+   "name": "country_capital2",
+   "chapter": "World",
+   "a_label": "country",
+   "b_label": "capital",
+   "tf_template": "The capital of {a} is {b}.",
+   "cloze_template": "The capital of {a} is ___.",
+   "match_instruction": "Match each country with its capital.",
+   "pairs": [
+    [
+     "Nepal",
+     "Kathmandu"
+    ],
+    [
+     "Bhutan",
+     "Thimphu"
+    ],
+    [
+     "Sri Lanka",
+     "Colombo"
+    ],
+    [
+     "China",
+     "Beijing"
+    ],
+    [
+     "France",
+     "Paris"
+    ]
+   ]
+  },
+  {
+   "name": "scientist_field",
+   "chapter": "Science",
+   "a_label": "scientist",
+   "b_label": "known for",
+   "tf_template": "{a} is known for {b}.",
+   "cloze_template": "{a} is known for ___.",
+   "match_instruction": "Match each scientist with their work.",
+   "pairs": [
+    [
+     "C. V. Raman",
+     "the study of light"
+    ],
+    [
+     "Srinivasa Ramanujan",
+     "mathematics"
+    ],
+    [
+     "Vikram Sarabhai",
+     "India's space programme"
+    ],
+    [
+     "Jagadish Chandra Bose",
+     "the study of plants"
+    ]
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "statement": "The Sun is a star and lies at the centre of our solar system.",
+   "chapter": "Science, Sports and Current Affairs"
+  },
+  {
+   "statement": "The Earth takes about 365 days to revolve once around the Sun.",
+   "chapter": "Science, Sports and Current Affairs"
+  },
+  {
+   "statement": "The Earth rotates once on its axis in about 24 hours, which gives us day and night.",
+   "chapter": "Science, Sports and Current Affairs"
+  },
+  {
+   "statement": "The Moon is the only natural satellite of the Earth.",
+   "chapter": "Science, Sports and Current Affairs"
+  },
+  {
+   "statement": "Jupiter is the largest planet in the solar system.",
+   "chapter": "Science, Sports and Current Affairs"
+  },
+  {
+   "statement": "There are seven continents on the Earth.",
+   "chapter": "The Wider World"
+  },
+  {
+   "statement": "The Pacific Ocean is the largest ocean on the Earth.",
+   "chapter": "The Wider World"
+  },
+  {
+   "statement": "Water covers about three-fourths of the Earth's surface.",
+   "chapter": "The Wider World"
+  },
+  {
+   "statement": "Mount Everest is the highest mountain in the world.",
+   "chapter": "The Wider World"
+  },
+  {
+   "statement": "New Delhi is the capital of India.",
+   "chapter": "India: History and Geography"
+  },
+  {
+   "statement": "India became an independent country on 15 August 1947.",
+   "chapter": "India: History and Geography"
+  },
+  {
+   "statement": "The Ganga is the longest river in India.",
+   "chapter": "India: History and Geography"
+  },
+  {
+   "statement": "Earth is the third planet from the Sun.",
+   "chapter": "Space"
+  },
+  {
+   "statement": "Jupiter is the largest planet in our solar system.",
+   "chapter": "Space"
+  },
+  {
+   "statement": "C. V. Raman won the Nobel Prize for Physics.",
+   "chapter": "India"
+  },
+  {
+   "statement": "The Moon has no light of its own.",
+   "chapter": "Space"
+  }
+ ],
+ "strings": {
+  "title": "Grade 5 General Knowledge",
+  "intro": "General Knowledge worksheets for Grade 5 (CBSE/ICSE, India): the wider world, India's history and geography, and science, sports and current affairs."
+ }
 }
