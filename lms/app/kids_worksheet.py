@@ -302,7 +302,12 @@ def serve(db, student, board, cls, subject, chapter, n=8):
     pool, chapter_scope, on_theme = [], ("chapter" if chapter else "all"), 0
     try:
         if is_math:
-            pool = WE.generate(board, cls, subject, chapter, n=max(n * 2, 12))
+            # WE.generate defaults to seed=7 and serve() never passed one, so the "computed,
+            # therefore unlimited" subject returned the SAME dozen questions on every request,
+            # for every child, forever — 5 distinct across 48 questions when measured. The
+            # generator was never the problem; nobody was turning the handle.
+            pool = WE.generate(board, cls, subject, chapter, n=max(n * 4, 40),
+                               seed=random.randrange(1 << 30))
         else:
             # LIVE from the verified KB — a fresh candidate set every request, so the same child
             # practising the same topic keeps getting new questions. Ask for many more than the
@@ -311,7 +316,8 @@ def serve(db, student, board, cls, subject, chapter, n=8):
             if not pool:                      # no KB for this cell → the pre-pooled bank
                 pool = _bank_items(board, cls, subject, chapter)
             if not pool:
-                pool = WE.generate(board, cls, subject, chapter, n=max(n * 2, 12))
+                pool = WE.generate(board, cls, subject, chapter, n=max(n * 4, 40),
+                                   seed=random.randrange(1 << 30))
     except Exception:
         pool = _bank_items(board, cls, subject, chapter)
     pool = [it for it in (pool or []) if it]
