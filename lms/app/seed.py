@@ -367,6 +367,8 @@ def _migrate():
         "ALTER TABLE assignments ADD COLUMN IF NOT EXISTS pack JSON NULL",
         # shareable per-assignment link (/a/<code>). Existing rows get one backfilled below so a
         # teacher's older assignments become shareable too, not just newly-created ones.
+        # per-child "already shown" memory for the kids worksheet (never-repeat)
+        "ALTER TABLE kids_skill_state ADD COLUMN IF NOT EXISTS seen JSON DEFAULT '[]'::json",
         "ALTER TABLE assignments ADD COLUMN IF NOT EXISTS code VARCHAR(12) DEFAULT ''",
         "CREATE INDEX IF NOT EXISTS ix_assignments_code ON assignments (code)",
         # GRANDFATHER (one-time): every student that exists when the column is first added is

@@ -273,7 +273,8 @@ def _load_state(db, student_id, skill):
     if row:
         s = AE.new_state(skill, theta=row.theta)
         s.update({"p_mastery": row.p_mastery, "ema": row.ema, "target_b": row.target_b,
-                  "n": row.n, "n_correct": row.n_correct, "misconceptions": dict(row.misconceptions or {})})
+                  "n": row.n, "n_correct": row.n_correct, "misconceptions": dict(row.misconceptions or {}),
+                  "seen": list(row.seen or [])})
         return row, s
     return None, AE.new_state(skill)
 
@@ -286,6 +287,34 @@ def _save_state(db, student_id, skill, s, row):
     row.n, row.n_correct, row.misconceptions = s["n"], s["n_correct"], s["misconceptions"]
     db.commit()
 
+
+
+# ---------- never-repeat memory ----------
+# How many recent questions to remember per (child, skill). Sized against the real limiter: a
+# request narrows to the ~40 candidates nearest target_b, so the effective pool is the BAND, not
+# the knowledge base. Remembering the last few hundred covers many sittings without ever
+# starving the band.
+SEEN_MAX = 400
+
+
+def _sig(item):
+    """Short, stable id for a question — same (type, payload) means the same question."""
+    import hashlib, json as _j
+    raw = _j.dumps({"t": item.get("type"), "p": item.get("payload")}, sort_keys=True, ensure_ascii=False)
+    return hashlib.blake2b(raw.encode("utf-8"), digest_size=6).hexdigest()
+
+
+def _unseen(pool, seen, need):
+    """Drop anything this child has already been shown — unless that leaves too little to build
+    a sheet, in which case serve the freshest we have rather than refusing. Repeating beats an
+    empty worksheet, and it only happens once the child has genuinely worked through the band."""
+    if not seen:
+        return pool, False
+    s = set(seen)
+    fresh = [it for it in pool if _sig(it) not in s]
+    if len(fresh) >= need:
+        return fresh, False
+    return pool, True          # exhausted → allow repeats for this sheet
 
 # ---------- serve an adaptive worksheet ----------
 def serve(db, student, board, cls, subject, chapter, n=8):
@@ -331,6 +360,9 @@ def serve(db, student, board, cls, subject, chapter, n=8):
     # Draw n items RANDOMLY from a band of candidates near the target difficulty — NOT the strict
     # n-closest (that returned the same sheet every time). With a big pool this gives real variety
     # (a fresh sheet each visit) while still targeting the right difficulty.
+    # never-repeat: drop what this child has already been shown for this skill
+    pool, exhausted = _unseen(pool, state.get("seen") or [], n)
+
     def _near(cands, k):
         """k items sampled from the candidates nearest the target difficulty."""
         c = sorted(cands, key=lambda it: abs(it.get("difficulty", 0.0) - target_b))
@@ -350,8 +382,23 @@ def serve(db, student, board, cls, subject, chapter, n=8):
         if chapter_scope == "chapter":
             on_theme = len(items)
     random.shuffle(items)                         # and don't present them difficulty-ordered
+    # remember what we just showed, so the next sheet is genuinely new
+    if sid:
+        try:
+            row2 = db.query(KidsSkillState).filter_by(student_id=sid, skill=skill).first()
+            if row2 is None:
+                row2 = KidsSkillState(student_id=sid, skill=skill)
+                db.add(row2)
+            memo = list(row2.seen or []) + [_sig(it) for it in items]
+            row2.seen = memo[-SEEN_MAX:]
+            db.commit()
+        except Exception as exc:
+            db.rollback()
+            print(f"[kids] could not record seen questions: {str(exc)[:100]}")
+
     return {"skill": skill, "board": board, "class": cls, "subject": subject, "chapter": chapter or "all",
             "items": items, "target_b": round(target_b, 2), "chapter_scope": chapter_scope, "on_theme": on_theme,
+            "exhausted": exhausted,
             "mastery": round(state["p_mastery"], 3), "attempts": state["n"]}
 
 

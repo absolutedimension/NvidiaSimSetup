@@ -475,6 +475,11 @@ class KidsSkillState(Base):
     n: Mapped[int] = mapped_column(Integer, default=0)
     n_correct: Mapped[int] = mapped_column(Integer, default=0)
     misconceptions: Mapped[dict] = mapped_column(JSON, default=dict)
+    # Short signatures of the questions this child has already been SHOWN for this skill, newest
+    # last. More content does not stop repeats on its own: serving narrows every request to the
+    # ~40 candidates nearest target_b, so the effective pool is the band (~400), not the 34k
+    # knowledge base. Remembering what was served is the only thing that actually guarantees it.
+    seen: Mapped[list] = mapped_column(JSON, default=list)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=now)
 
 
